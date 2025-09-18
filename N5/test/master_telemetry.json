@@ -1,0 +1,265 @@
+{
+  "test_run": {
+    "timestamp": "2025-09-18T04:10:31Z",
+    "overall_success": true,
+    "results": {
+      "0": {
+        "success": true,
+        "stdout": "Running N5 Phase 0: Schemas Test Suite...\nTesting schema: commands.schema.json\n  Validating data: commands.jsonl\n\u2705 Data valid\nTesting schema: lists.item.schema.json\n  Validating data: lists/ideas.jsonl\n\u2705 Data valid\n  Validating data: lists/index.jsonl\n\u274c Data validation failed: 'id' is a required property\n\nFailed validating 'required' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     '$id': 'https://n5.local/schemas/lists.item.schema.json',\n     'title': 'N5 List Item',\n     'type': 'object',\n     'required': ['id', 'created_at', 'title', 'status'],\n     'additionalProperties': True,\n     'properties': {'id': {'type': 'string'},\n                    'created_at': {'type': 'string', 'format': 'date-time'},\n                    'updated_at': {'type': 'string', 'format': 'date-time'},\n                    'title': {'type': 'string', 'maxLength': 200},\n                    'body': {'type': 'string'},\n                    'tags': {'type': 'array',\n                             'items': {'type': 'string'},\n                             'uniqueItems': True},\n                    'status': {'type': 'string',\n                               'enum': ['open',\n                                        'pinned',\n                                        'done',\n                                        'archived']},\n                    'priority': {'oneOf': [{'type': 'string',\n                                            'enum': ['L', 'M', 'H']},\n                                           {'type': 'integer',\n                                            'minimum': 1,\n                                            'maximum': 5}]},\n                    'links': {'type': 'array',\n                              'items': {'type': 'object',\n                                        'required': ['type', 'value'],\n                                        'properties': {'type': {'type': 'string',\n                                                                'enum': ['file',\n                                                                         'url',\n                                                                         'ref']},\n                                                       'value': {'type': 'string'}}}},\n                    'source': {'type': 'string'},\n                    'project': {'type': 'string'},\n                    'due': {'type': ['string', 'null'],\n                            'format': 'date-time'},\n                    'notes': {'type': 'string'}}}\n\nOn instance:\n    {'slug': 'phase3-test',\n     'title': 'Phase 3 Test List',\n     'path_jsonl': 'N5/lists/phase3-test.jsonl',\n     'path_md': 'N5/lists/phase3-test.md',\n     'created_at': '2025-09-18T03:08:42.880694+00:00',\n     'updated_at': '2025-09-18T03:10:12.939616+00:00',\n     'tags': ['phase3', 'test'],\n     'promoted': True,\n     'promoted_at': '2025-09-18T03:10:12.939616+00:00'}\n  Validating data: lists/phase3-test.jsonl\n\u2705 Data valid\nTesting schema: lists.registry.schema.json\n  Validating data: lists/index.jsonl\n\u2705 Data valid\nTesting schema: index.schema.json\n  Validating data: index.jsonl\n\u2705 Data valid\nTesting schema: knowledge.facts.schema.json\n\nPhase 0 PASSED\n",
+        "stderr": ""
+      },
+      "1": {
+        "success": true,
+        "stdout": "Running N5 Phase 1: Commands Test Suite...\nTesting docgen...\nTesting lists-create (dry-run)...\nTesting lists-add (dry-run)...\nTesting index-update...\n\nPhase 1 PASSED\n",
+        "stderr": ""
+      },
+      "2": {
+        "success": true,
+        "stdout": "Running N5 Phase 2: Config Test Suite...\nTesting prefs.md exists...\n\u2705 prefs.md exists and readable\nTesting config merge...\n\u2705 Config merge works correctly\n\nPhase 2 PASSED\n",
+        "stderr": ""
+      },
+      "3": {
+        "success": true,
+        "stdout": "Running N5 Phase 3: Lists Test Suite...\nTesting lists registry...\n\u2705 Lists registry is valid\nTesting lists-find...\nTesting lists-docgen...\nTesting lists-export...\n\nPhase 3 PASSED\n",
+        "stderr": ""
+      },
+      "4": {
+        "success": true,
+        "stdout": "Running N5 Phase 4: Records Test Suite...\nTesting records structure...\n\u2705 Records structure valid\n\nPhase 4 PASSED\n",
+        "stderr": ""
+      },
+      "5": {
+        "success": true,
+        "stdout": "Running N5 Phase 5: Indexer Test Suite...\nTesting index-rebuild...\nTesting index structure...\n\u2705 Index structure is valid\n\nPhase 5 PASSED\n",
+        "stderr": ""
+      },
+      "6": {
+        "success": true,
+        "stdout": "Running N5 Phase 6: Knowledge Test Suite...\nTesting knowledge files...\n\u2705 Knowledge files exist and are readable\nTesting knowledge-find...\n\nPhase 6 PASSED\n",
+        "stderr": ""
+      },
+      "7": {
+        "success": true,
+        "stdout": "Running N5 Phase 7: Modules Test Suite...\nTesting modules directory...\n\u2705 Modules directory exists with files\nTesting modules validation...\n\nPhase 7 PASSED\n",
+        "stderr": ""
+      },
+      "8": {
+        "success": true,
+        "stdout": "Running N5 Phase 8: Safety Test Suite...\nTesting validation script...\nTesting docgen validation...\n\nPhase 8 PASSED\n",
+        "stderr": ""
+      },
+      "integration": {
+        "success": true,
+        "stdout": "Running N5 Integration Tests...\nTesting commands + config integration...\nTesting lists + indexer integration...\n\u2705 Lists+indexer integration works\nTesting indexer + commands integration...\n\u2705 Indexer+commands integration works\nTesting modules + flows integration...\n\nIntegration Tests PASSED\n",
+        "stderr": ""
+      },
+      "e2e": {
+        "success": true,
+        "stdout": "Running N5 End-to-End Tests...\nTesting boot workflow...\n\u2705 Boot workflow successful\nTesting cycle workflow...\n\u2705 Cycle workflow successful\nTesting safety workflow...\n\u2705 Safety workflow successful\nTesting edge cases...\n\u2705 Edge cases handled correctly\n\nEnd-to-End Tests PASSED\n",
+        "stderr": ""
+      }
+    }
+  },
+  "phases": {
+    "0": {
+      "phase": 0,
+      "component": "schemas",
+      "success": true,
+      "results": {
+        "commands.schema.json": {
+          "schema_valid": true,
+          "data_validation": true
+        },
+        "lists.item.schema.json": {
+          "schema_valid": true,
+          "data_validation": true,
+          "data_error": "'id' is a required property\n\nFailed validating 'required' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     '$id': 'https://n5.local/schemas/lists.item.schema.json',\n     'title': 'N5 List Item',\n     'type': 'object',\n     'required': ['id', 'created_at', 'title', 'status'],\n     'additionalProperties': True,\n     'properties': {'id': {'type': 'string'},\n                    'created_at': {'type': 'string', 'format': 'date-time'},\n                    'updated_at': {'type': 'string', 'format': 'date-time'},\n                    'title': {'type': 'string', 'maxLength': 200},\n                    'body': {'type': 'string'},\n                    'tags': {'type': 'array',\n                             'items': {'type': 'string'},\n                             'uniqueItems': True},\n                    'status': {'type': 'string',\n                               'enum': ['open',\n                                        'pinned',\n                                        'done',\n                                        'archived']},\n                    'priority': {'oneOf': [{'type': 'string',\n                                            'enum': ['L', 'M', 'H']},\n                                           {'type': 'integer',\n                                            'minimum': 1,\n                                            'maximum': 5}]},\n                    'links': {'type': 'array',\n                              'items': {'type': 'object',\n                                        'required': ['type', 'value'],\n                                        'properties': {'type': {'type': 'string',\n                                                                'enum': ['file',\n                                                                         'url',\n                                                                         'ref']},\n                                                       'value': {'type': 'string'}}}},\n                    'source': {'type': 'string'},\n                    'project': {'type': 'string'},\n                    'due': {'type': ['string', 'null'],\n                            'format': 'date-time'},\n                    'notes': {'type': 'string'}}}\n\nOn instance:\n    {'slug': 'phase3-test',\n     'title': 'Phase 3 Test List',\n     'path_jsonl': 'N5/lists/phase3-test.jsonl',\n     'path_md': 'N5/lists/phase3-test.md',\n     'created_at': '2025-09-18T03:08:42.880694+00:00',\n     'updated_at': '2025-09-18T03:10:12.939616+00:00',\n     'tags': ['phase3', 'test'],\n     'promoted': True,\n     'promoted_at': '2025-09-18T03:10:12.939616+00:00'}"
+        },
+        "lists.registry.schema.json": {
+          "schema_valid": true,
+          "data_validation": true
+        },
+        "index.schema.json": {
+          "schema_valid": true,
+          "data_validation": true
+        },
+        "knowledge.facts.schema.json": {
+          "schema_valid": true
+        }
+      },
+      "checksums": {
+        "commands.schema.json": "341260414fba0f86a06b291286cd3cbb22941a169aabc970b6d4955907eefed8",
+        "lists.item.schema.json": "0e7ec91c3c297d1c7a74ce05c3122d27e869e23f58207c1979c395415fb2175f",
+        "lists.registry.schema.json": "c2306682879df2967e273244cdee0b9706b79752b79f916ce4b2919a2d9cf0ef",
+        "index.schema.json": "113c1abc97731c1a56b03cc95685be37e790c6c3ef530b1dae0d828cc72d4633",
+        "knowledge.facts.schema.json": "bd2b2e6af9510d8b1238c1471fc91fc5c76b591de15a7aabf705135eb164ead0"
+      }
+    },
+    "1": {
+      "phase": 1,
+      "component": "commands",
+      "success": true,
+      "results": {
+        "test_docgen": true,
+        "test_lists_create": true,
+        "test_lists_add": true,
+        "test_index_update": true
+      },
+      "checksums": {
+        "n5_lists_export.py": "7d0efb98d612f7f12a94adf2390f15b318c323aaa76df4f153e752e0903c72ca",
+        "n5_config_merge.py": "0cc90c14a1baaf62fa64fd6f48097bbc79ee1b13e3e7a4143f62968fd6dc3f34",
+        "n5_lists_pin.py": "d3105b769d45b814cd3918290c7e0271702b22e4d727159581e7eb4536dd7394",
+        "n5_lists_add.py": "fae62ab6206930594c3e2dbca4db3374da4ada007d59a552eeb2f03d7c491f91",
+        "n5_lists_docgen.py": "2f96fd2a814eb5c7dfca93612fd36dc3c9bed9707b1ba6d3d84596e0da73cb0a",
+        "n5_lists_promote.py": "8293902f6a2457f7dc557835a7adfd5e33694d934032c4dd0cfda2b49422cdc9",
+        "n5_docgen.py": "83a47b2f9b53494b762b69844008e61a3668464b8e80007224f9b799c4fad12a",
+        "n5_lists_set.py": "231fecfbc532f6546693d350519c4c6c5c9d3fcdaea85ebe7a8f2eaaa6c130b4",
+        "n5_lists_create.py": "d51e0584c59951a9e53df900045706ffc2472eb1c1ae4f6b5f3e5ae651dc6d07",
+        "n5_lists_find.py": "a7d1eb433a10f1dac3ba773bf7c51b8c88d327ff8c7563395fe17d1bf840f9ce",
+        "n5_run_record.py": "5e4f761ad703c0df045bd724b14478781af07b0461b4661bb6ba8a2cc1f99c21",
+        "n5_digest_runs.py": "95a298e048408f7048cbc752669562523840305bc2b7d0458c68716de3188bdc",
+        "n5_index_update.py": "2677736ed8e3513c65a424be57acfa04eb88dedfaf94e2b0ec89f5e9d29d9a6b",
+        "n5_index_rebuild.py": "987b73544007c87a0964fd37d170aff40f6d9090eed579b1525bf401dd218a65",
+        "n5_knowledge_add.py": "6ecd536b5a1ea4cf48d2786d42cc493a2270e30fa4e7fe9f90e583319471de5d",
+        "n5_knowledge_find.py": "480548cbcff2df18d576b1d6b0ecb52398cfe62a01f6f262d29e6ad104523f1a",
+        "n5_validate_modules_flows.py": "9d3e46e00205fbc6ea286d2bc52f44239fef8bec11e7637548a6e77c4ac23c5a",
+        "n5_test_modules_flows.py": "bd441c1b78c9354e80c0c6a98a0c04fc5eaf1ed714a427e6a4820d3cba1390c6"
+      }
+    },
+    "2": {
+      "phase": 2,
+      "component": "config",
+      "success": true,
+      "results": {
+        "test_prefs_exists": true,
+        "test_config_merge": true
+      },
+      "checksums": {
+        "prefs.md": "0652c4196a571e56612b60edbe82112d3694426f164b0ed2386ffd5c50a1dcb0",
+        "n5_config_merge.py": "0cc90c14a1baaf62fa64fd6f48097bbc79ee1b13e3e7a4143f62968fd6dc3f34"
+      }
+    },
+    "3": {
+      "phase": 3,
+      "component": "lists",
+      "success": true,
+      "results": {
+        "test_lists_registry": true,
+        "test_lists_find": true,
+        "test_lists_docgen": true,
+        "test_lists_export": true
+      },
+      "checksums": {
+        "lists_index.jsonl": "7b110713c472461dddfaf05140f7bb0922d4aedb6066d89ce180c8424c2de80c",
+        "lists_ideas.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "lists_phase3-test.jsonl": "f58752de379716964218cb274708c3d50299d6a98a5d879673639691d7a45bd8"
+      }
+    },
+    "5": {
+      "phase": 5,
+      "component": "indexer",
+      "success": true,
+      "results": {
+        "test_index_rebuild": true,
+        "test_index_structure": true
+      },
+      "checksums": {
+        "index.jsonl": "216a119b60af4c589e659c369f36d6236ecc43b516fbc7d41312ed721ab11c38",
+        "index.md": "84c189cee1d090c14a1b6114ad5ef440e235fc4dd6f1420cf4e02123adf20873",
+        "n5_index_rebuild.py": "987b73544007c87a0964fd37d170aff40f6d9090eed579b1525bf401dd218a65",
+        "n5_index_update.py": "2677736ed8e3513c65a424be57acfa04eb88dedfaf94e2b0ec89f5e9d29d9a6b"
+      }
+    },
+    "6": {
+      "phase": 6,
+      "component": "knowledge",
+      "success": true,
+      "results": {
+        "test_knowledge_files": true,
+        "test_knowledge_find": true
+      },
+      "checksums": {
+        "knowledge_knowledge/bio.md": "ca2c9a9d181db5ba4df6ec3ba8608e2d2a372f08cd171e9cbc1c6f94d7e202fa",
+        "knowledge_knowledge/README.md": "ebca73e8fbdb418311908dd7cdbf319baa7d59ff3a9dfab2725406ab0adcd25a",
+        "knowledge_knowledge/timeline.md": "eb2b2114a69cebcb9b57e85fc392fe778f8645b2fd99aef28fd183ec36aa2c52",
+        "knowledge_knowledge/glossary.md": "3a336796622be1c4f85147172e346d8cffc3246a7dfa4cfd27ab5c0f4c22238c",
+        "knowledge_knowledge/sources.md": "1c9458ade1f3e5bd015b39e9ea819e1cbb45a45e1e535456cd41bebb7c34072a",
+        "knowledge_knowledge/company/strategy.md": "6cb0e4f273d000c2c5fd4a333a62bf32007a771e865baa2e64f1d0643898d3ab",
+        "knowledge_knowledge/company/overview.md": "f063fbbf034555dc472e47789727296c4b3c507631707303d73a0b1b304f7bd4",
+        "knowledge_knowledge/company/history.md": "945fd4075b34ef7e3d01e089a7cdcf9fca33813530b3d867350caea35fc4bded",
+        "knowledge_knowledge/company/principles.md": "ff55ce38640b9b1833def06347510be5a9ee08413cdb1812795c1727fb7ac6ba"
+      }
+    },
+    "7": {
+      "phase": 7,
+      "component": "modules",
+      "success": true,
+      "results": {
+        "test_modules_directory": true,
+        "test_modules_validation": true
+      },
+      "checksums": {
+        "modules_ingest-transcription-transformation.md": "f7eb5d55b6949f573db4137dfe1de6b95e09089688acc1691745d93b9577bcbe",
+        "n5_test_modules_flows.py": "bd441c1b78c9354e80c0c6a98a0c04fc5eaf1ed714a427e6a4820d3cba1390c6"
+      }
+    },
+    "8": {
+      "phase": 8,
+      "component": "safety",
+      "success": true,
+      "results": {
+        "test_validation_script": true,
+        "test_docgen_validation": true
+      },
+      "checksums": {
+        "n5_validate_modules_flows.py": "9d3e46e00205fbc6ea286d2bc52f44239fef8bec11e7637548a6e77c4ac23c5a",
+        "n5_docgen.py": "83a47b2f9b53494b762b69844008e61a3668464b8e80007224f9b799c4fad12a"
+      }
+    },
+    "integration": {
+      "phase": "integration",
+      "component": "integration",
+      "success": true,
+      "results": {
+        "test_commands_config_integration": true,
+        "test_lists_indexer_integration": true,
+        "test_indexer_commands_integration": true,
+        "test_modules_flows_integration": true
+      },
+      "checksums": {
+        "index.jsonl": "8209bfd410cab19f1d5517dcaa46e33ce0c9d6faf21ce2d8dcfb8d2fb6c8d43e"
+      }
+    },
+    "e2e": {
+      "phase": "e2e",
+      "component": "e2e",
+      "success": true,
+      "results": {
+        "test_boot_workflow": true,
+        "test_cycle_workflow": true,
+        "test_safety_workflow": true,
+        "test_edge_cases": true
+      },
+      "checksums": {
+        "index.jsonl": "d080564a5b0bfc3b68fd33ea29e928bfff472e49ec2512775198d487c9c54eb6",
+        "index.md": "84c189cee1d090c14a1b6114ad5ef440e235fc4dd6f1420cf4e02123adf20873",
+        "commands.md": "1a6876fa6f815320cbde09a10115de4c5e054f76d95ee4df0f9949d734cb5f13",
+        "commands.jsonl": "a278bb9be60e5095d7e85fd666d354414009566676fe32a84a5ab5b74115816b",
+        "prefs.md": "0652c4196a571e56612b60edbe82112d3694426f164b0ed2386ffd5c50a1dcb0",
+        "lists/index.jsonl": "7b110713c472461dddfaf05140f7bb0922d4aedb6066d89ce180c8424c2de80c"
+      }
+    },
+    "4": {
+      "phase": 4,
+      "component": "records",
+      "success": true,
+      "results": {
+        "test_records_structure": true
+      },
+      "checksums": {
+        "records_ideas.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records_phase3-test.jsonl": "f58752de379716964218cb274708c3d50299d6a98a5d879673639691d7a45bd8"
+      }
+    }
+  }
+}

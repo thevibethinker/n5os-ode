@@ -1,0 +1,13 @@
+{
+  "phase": 7,
+  "component": "modules",
+  "success": true,
+  "results": {
+    "test_modules_directory": true,
+    "test_modules_validation": true
+  },
+  "checksums": {
+    "modules_ingest-transcription-transformation.md": "f7eb5d55b6949f573db4137dfe1de6b95e09089688acc1691745d93b9577bcbe",
+    "n5_test_modules_flows.py": "bd441c1b78c9354e80c0c6a98a0c04fc5eaf1ed714a427e6a4820d3cba1390c6"
+  }
+}

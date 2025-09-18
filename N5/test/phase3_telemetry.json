@@ -1,0 +1,16 @@
+{
+  "phase": 3,
+  "component": "lists",
+  "success": true,
+  "results": {
+    "test_lists_registry": true,
+    "test_lists_find": true,
+    "test_lists_docgen": true,
+    "test_lists_export": true
+  },
+  "checksums": {
+    "lists_index.jsonl": "7b110713c472461dddfaf05140f7bb0922d4aedb6066d89ce180c8424c2de80c",
+    "lists_ideas.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lists_phase3-test.jsonl": "f58752de379716964218cb274708c3d50299d6a98a5d879673639691d7a45bd8"
+  }
+}

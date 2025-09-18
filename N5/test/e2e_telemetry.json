@@ -1,0 +1,19 @@
+{
+  "phase": "e2e",
+  "component": "e2e",
+  "success": false,
+  "results": {
+    "test_boot_workflow": false,
+    "test_cycle_workflow": true,
+    "test_safety_workflow": true,
+    "test_edge_cases": true
+  },
+  "checksums": {
+    "index.jsonl": "3c9a556ca5a817ee544ee637c22c606ab1d88e59e7b525e86dd572f75b0c60b9",
+    "index.md": "b444107dd13776b5e192675d72182cd904a520b463b086ab5f8f0cb2cef9cf5f",
+    "commands.md": "1a6876fa6f815320cbde09a10115de4c5e054f76d95ee4df0f9949d734cb5f13",
+    "commands.jsonl": "a278bb9be60e5095d7e85fd666d354414009566676fe32a84a5ab5b74115816b",
+    "prefs.md": "0652c4196a571e56612b60edbe82112d3694426f164b0ed2386ffd5c50a1dcb0",
+    "lists/index.jsonl": "7b110713c472461dddfaf05140f7bb0922d4aedb6066d89ce180c8424c2de80c"
+  }
+}
