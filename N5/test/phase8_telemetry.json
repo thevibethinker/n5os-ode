@@ -1,0 +1,13 @@
+{
+  "phase": 8,
+  "component": "safety",
+  "success": true,
+  "results": {
+    "test_validation_script": true,
+    "test_docgen_validation": true
+  },
+  "checksums": {
+    "n5_validate_modules_flows.py": "9d3e46e00205fbc6ea286d2bc52f44239fef8bec11e7637548a6e77c4ac23c5a",
+    "n5_docgen.py": "da3db9d34df16eba806ac59ff5a5aff5e3bf9aa67c8f8303c1d8d611ccbb6714"
+  }
+}

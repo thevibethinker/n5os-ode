@@ -1,0 +1,12 @@
+{
+  "phase": 4,
+  "component": "records",
+  "success": true,
+  "results": {
+    "test_records_structure": true
+  },
+  "checksums": {
+    "records_ideas.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "records_phase3-test.jsonl": "f58752de379716964218cb274708c3d50299d6a98a5d879673639691d7a45bd8"
+  }
+}

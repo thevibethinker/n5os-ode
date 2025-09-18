@@ -1,0 +1,14 @@
+{
+  "phase": "integration",
+  "component": "integration",
+  "success": false,
+  "results": {
+    "test_commands_config_integration": true,
+    "test_lists_indexer_integration": true,
+    "test_indexer_commands_integration": false,
+    "test_modules_flows_integration": true
+  },
+  "checksums": {
+    "index.jsonl": "1cd065f73cd83e1d297ce0ca03781b56d5e9ea93bb4cc96c66582ab62a1bceeb"
+  }
+}

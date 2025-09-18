@@ -1,0 +1,16 @@
+{
+  "id": "2025-09-18-knowledge-ingestion-impl",
+  "title": "Knowledge Ingestion System Enhancements",
+  "summary": "Implement append-only ingestion for facts, glossary, timeline, sources; safe command appending; conflict resolution policy; adaptive suggestion engine; and company information replacement policy.",
+  "status": "planned",
+  "created_at": "2025-09-18T20:15:00Z",
+  "priority": "high",
+  "tasks": [
+    "Implement append-only ingestion script enhancements",
+    "Develop safe command appending tooling",
+    "Design and implement conflict resolution and replacement policy",
+    "Build adaptive suggestion and reservoir expansion engine",
+    "Define and implement company info replacement guidelines"
+  ]
+}
+{"id": "2025-09-18-document-redistillation-function","title": "Document Redistillation Function","summary": "A discrete function to redistil documents appended over time. Rewrites to preserve all information while streamlining: adjust categories, amend phrasing/language, add ideas. Nothing dropped. If contradictions emerge, surface them in a pre-finalization step for user resolution via conversational engagement with AI. For example, rewrite accumulated personal facts into a coherent document, merging/streamlining, removing contradictions by surfacing and resolving with user.","status": "planned","created_at": "2025-09-18T20:17:09+00:00","priority": "medium","tasks": []}

@@ -1,0 +1,20 @@
+{
+  "phase": 6,
+  "component": "knowledge",
+  "success": true,
+  "results": {
+    "test_knowledge_files": true,
+    "test_knowledge_find": true
+  },
+  "checksums": {
+    "knowledge_knowledge/bio.md": "ca2c9a9d181db5ba4df6ec3ba8608e2d2a372f08cd171e9cbc1c6f94d7e202fa",
+    "knowledge_knowledge/README.md": "ebca73e8fbdb418311908dd7cdbf319baa7d59ff3a9dfab2725406ab0adcd25a",
+    "knowledge_knowledge/timeline.md": "eb2b2114a69cebcb9b57e85fc392fe778f8645b2fd99aef28fd183ec36aa2c52",
+    "knowledge_knowledge/glossary.md": "3a336796622be1c4f85147172e346d8cffc3246a7dfa4cfd27ab5c0f4c22238c",
+    "knowledge_knowledge/sources.md": "1c9458ade1f3e5bd015b39e9ea819e1cbb45a45e1e535456cd41bebb7c34072a",
+    "knowledge_knowledge/company/strategy.md": "6cb0e4f273d000c2c5fd4a333a62bf32007a771e865baa2e64f1d0643898d3ab",
+    "knowledge_knowledge/company/overview.md": "f063fbbf034555dc472e47789727296c4b3c507631707303d73a0b1b304f7bd4",
+    "knowledge_knowledge/company/history.md": "945fd4075b34ef7e3d01e089a7cdcf9fca33813530b3d867350caea35fc4bded",
+    "knowledge_knowledge/company/principles.md": "ff55ce38640b9b1833def06347510be5a9ee08413cdb1812795c1727fb7ac6ba"
+  }
+}
