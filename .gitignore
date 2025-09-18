@@ -1,0 +1,34 @@
+# Ignore common temp and backup files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore automatically generated command catalogs
+commands.jsonl
+
+# Ignore output from digest-run and similar reports
+output/
+
+# Ignore user-specific preference backups
+Backups/
+
+# Ignore all files in data/cache or other transient dirs
+data/cache/
+
+# Ignore node_modules or other dependency folders if applicable
+node_modules/
+
+# Track only core knowledge files, preferences, and manually managed lists
+# You can explicitly add overrides if needed
+
+# Example: track .md and .jsonl in N5 folder
+!N5/*.md
+!N5/*.jsonl
+
+# If there are any generated .md files, ignore those if you prefer:
+# N5/generated/
+
+# If you want, create a separate folder for manually maintained prefs, and only track that
+
+# Always explicitly add individual files or folders you want to track beyond defaults
