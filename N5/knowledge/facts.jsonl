@@ -1,3 +1,32 @@
-{"id":"test_fact","subject":"N5","predicate":"is","object":"Neural Network OS","source":"test","confidence":1.0,"tags":["test"],"created_at":"2025-09-18T03:35:52Z","updated_at":"2025-09-18T03:35:52Z"}
-{"id":"list_ideas_promoted","subject":"ideas","predicate":"is_promoted","object":"true","source":"lists_promote","confidence":1.0,"tags":["list","promoted"],"created_at":"2025-09-18T03:36:20.600853+00:00","updated_at":"2025-09-18T03:36:20.600853+00:00"}
-{"id":"1c8746c8","subject":"N5","predicate":"version","object":"0.1.0","source":"manual","confidence":1.0,"tags":["system","version"],"created_at":"2025-09-18T03:36:41.728167+00:00","updated_at":"2025-09-18T03:36:41.728167+00:00"}
+{"subject":"Careerspan","predicate":"founded_by","object":"Vrijen Attawar and Logan Currie","confidence":1.0,"source":"Company Overview","entities":["person:Vrijen","person:Logan","company:Careerspan"]}
+{"subject":"Careerspan","predicate":"rebranded_from","object":"The ApplyAI","confidence":1.0,"source":"Company History","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"focuses_on","object":"building richer human data layer for hiring","confidence":1.0,"source":"Company Overview","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"uses","object":"guided conversations to capture 3D profiles","confidence":1.0,"source":"Company Overview","entities":["company:Careerspan"]}
+{"subject":"Vrijen Attawar","predicate":"has_experience","object":"decade of coaching and education","confidence":0.95,"source":"Founder Profiles","entities":["person:Vrijen"]}
+{"subject":"Logan Currie","predicate":"has_experience","object":"decade of coaching and education","confidence":0.95,"source":"Founder Profiles","entities":["person:Logan"]}
+{"subject":"Careerspan","predicate":"launched","object":"The ApplyAI in 2023","confidence":1.0,"source":"Key History","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"rebranded","object":"in early 2024","confidence":1.0,"source":"Key History","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"implements","object":"B2B2C integrations and pilots in 2025","confidence":1.0,"source":"Key History","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"pivoted_GTM","object":"to Career Agent wedge in September 2025","confidence":1.0,"source":"Key History","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"mission","object":"candidate-first, evidence-first approach","confidence":1.0,"source":"Mission","entities":["company:Careerspan"]}
+{"subject":"Hiring crisis","predicate":"is","object":"informational problem not algorithmic problem","confidence":0.9,"source":"Mission","entities":["concept:hiring_crisis"]}
+{"subject":"Careerspan","predicate":"strategy","object":"build and own qualitative talent data layer","confidence":1.0,"source":"Current Strategy","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"pillar_1","object":"AI-mediated coaching for proprietary data","confidence":1.0,"source":"Strategic Pillars","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"pillar_2","object":"opportunity matching prioritizing mindset and values","confidence":1.0,"source":"Strategic Pillars","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"pillar_3","object":"Career Agent wedge for employer GTM","confidence":1.0,"source":"Strategic Pillars","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"pillar_4","object":"community-led supply and integrations","confidence":1.0,"source":"Strategic Pillars","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"uses","object":"Truths-Lenses-Interpretations-Decisions pipeline","confidence":1.0,"source":"Product Model","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"uses","object":"AISS semantic optimization","confidence":1.0,"source":"Product Model","entities":["company:Careerspan"]}
+{"subject":"Vrijen Attawar","predicate":"communication_style","object":"conviction-forward, data-anchored brevity","confidence":0.95,"source":"Communications Style","entities":["person:Vrijen"]}
+{"subject":"Vrijen Attawar","predicate":"email_length","object":"75-90 words for investor communications","confidence":0.9,"source":"Communications Style","entities":["person:Vrijen"]}
+{"subject":"Careerspan","predicate":"principle_1","object":"candidate-first and authenticity over spin","confidence":1.0,"source":"Operating Principles","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"principle_2","object":"evidence over optics","confidence":1.0,"source":"Operating Principles","entities":["company:Careerspan"]}
+{"subject":"Careerspan","predicate":"principle_3","object":"bias reduction via Lenses and transparent Interpretations","confidence":1.0,"source":"Operating Principles","entities":["company:Careerspan"]}
+{"subject":"Resumes","predicate":"conversion_rate","object":"~2% lead to interviews","confidence":0.9,"source":"Market Data","entities":["concept:resumes"]}
+{"subject":"Recruiters","predicate":"scan_time","object":"6-7 seconds on first resume scan","confidence":0.9,"source":"Market Data","entities":["concept:recruiters"]}
+{"subject":"New hires","predicate":"failure_rate","object":"46% fail within 18 months","confidence":0.9,"source":"Market Data","entities":["concept:new_hires"]}
+{"subject":"New hire failures","predicate":"primary_cause","object":"89% attitudinal/culture reasons","confidence":0.85,"source":"Market Data","entities":["concept:new_hire_failures"]}
+{"subject":"Employers","predicate":"dissatisfaction","object":"87% with resumes as hiring tool","confidence":0.9,"source":"Market Data","entities":["concept:employers"]}
+{"subject":"Resume","predicate":"is","object":"lossy compression of human capabilities","confidence":0.9,"source":"Beliefs","entities":["concept:resume"]}
+{"subject":"Interviews","predicate":"over-reward","object":"rehearsed storytelling","confidence":0.85,"source":"Beliefs","entities":["concept:interviews"]}
+{"subject":"Structured reasoning","predicate":"wins","object":"employer trust and scales matching ethically","confidence":0.9,"source":"Beliefs","entities":["concept:structured_reasoning"]}
