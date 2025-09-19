@@ -21,6 +21,7 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 - `lists-promote` — Promote a list with explicit approval. (see ./commands/lists-promote.md)
 - `lists-set` — Update fields of an item in a list. (see ./commands/lists-set.md)
 - `git-audit` — Scan workspace for files that should be tracked by Git but are untracked, and generate commands to add them.
+- `direct-knowledge-ingest` — Process large documents directly using conversational LLM (default method). (see ./commands/direct-knowledge-ingest.md)
 
 ## Review & Safety
 

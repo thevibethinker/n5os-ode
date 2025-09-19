@@ -3,7 +3,8 @@
 N5 Knowledge Ingest Script
 
 Ingests a chunk of biographical/historical/strategic information about V and Careerspan,
-analyzes it with LLM, breaks it down into components, and stores across knowledge reservoirs.
+analyzes it with direct LLM processing (bypassing deep_research limitations), breaks it down into components, 
+and stores across knowledge reservoirs.
 
 Append-only update for facts, glossary, timeline, sources.
 Controlled overwrite for bio and company files with future plan to handle merging.
@@ -21,14 +22,12 @@ ROOT = Path(__file__).resolve().parents[1]
 KNOWLEDGE_DIR = ROOT / "knowledge"
 FACTS_FILE = KNOWLEDGE_DIR / "facts.jsonl"
 
-from scripts.n5_knowledge_adaptive_suggestions import call_llm_for_suggestions
-from scripts.n5_knowledge_adaptive_suggestions_expand import parse_suggestions, validate_and_apply_suggestions
-
+# Import direct processing mechanism
+from scripts.direct_ingestion_mechanism import DirectKnowledgeIngestion
 
 def load_schema():
     with open(ROOT / "schemas" / "ingest.plan.schema.json") as f:
         return json.load(f)
-
 
 def validate_plan(plan):
     schema = load_schema()
@@ -42,31 +41,41 @@ def validate_plan(plan):
                 print(f"Warning: Invalid suggestion: {suggestion}")
     return plan
 
-
-def call_deep_research(input_text):
-    schema = load_schema()
-    instructions = f"""
-Analyze the following text about V and Careerspan, break into mutually exclusive, collectively exhaustive components per ingestion standards 'N5/knowledge/ingestion_standards.md'.
-Focus on biographical info, recurring characters, company details, strategic/historical context.
-Exclude operational, sensitive, unverified data.
-Output JSON matching the provided schema.
-Input:
-{input_text}
-"""
-    # For now, return a template structure - this will be replaced with actual deep_research call
-    # when the script is invoked through the AI assistant
-    print("Note: deep_research analysis would be performed here")
-    return {
+def process_direct_ingestion(input_text: str, source_name: str = "direct_ingestion") -> dict:
+    """
+    Process content using direct LLM processing instead of deep_research
+    This is now the default approach for knowledge ingestion
+    """
+    print("🔄 Using direct LLM processing (default) - no deep_research limitations")
+    
+    # Initialize direct processing mechanism
+    ingestion = DirectKnowledgeIngestion()
+    
+    # Process the content directly
+    structured_data = ingestion.process_large_document(input_text, source_name)
+    
+    # Convert to plan format for compatibility
+    plan = {
         "prefs": {},
-        "bio": {"summary": "Analysis pending - run through AI assistant"},
-        "timeline": [],
-        "glossary": [],
-        "sources": [],
-        "company": {},
-        "facts": [],
-        "suggestions": []
+        "bio": {"summary": structured_data.get("bio", {}).get("summary", "")} if structured_data.get("bio") else {"summary": ""},
+        "timeline": structured_data.get("timeline", []),
+        "glossary": structured_data.get("glossary", []),
+        "sources": structured_data.get("sources", []),
+        "company": {
+            "overview": structured_data.get("company_overview", ""),
+            "history": structured_data.get("company_history", ""),
+            "strategy": {
+                "summary": structured_data.get("strategy_summary", ""),
+                "pillars": structured_data.get("strategy_pillars", [])
+            },
+            "principles": structured_data.get("operating_principles", []),
+            "market_rationale": structured_data.get("market_data", "")
+        },
+        "facts": structured_data.get("facts", []),
+        "suggestions": structured_data.get("suggestions", [])
     }
-
+    
+    return validate_plan(plan)
 
 def apply_plan(plan, dry_run=False):
     if dry_run:
@@ -168,14 +177,18 @@ async def main_async(dry_run=False, input_text=None):
 
     print(f"Processing {len(input_text)} characters of input...")
 
-    # Analyze with LLM
-    plan = call_deep_research(input_text)
+    # Use direct processing as default (no deep_research limitations)
+    plan = process_direct_ingestion(input_text)
     plan = validate_plan(plan)
 
     if not dry_run:
         apply_plan(plan, dry_run=dry_run)
 
-    await run_adaptive_suggestions()
+    # Optional: Run adaptive suggestions if available
+    try:
+        await run_adaptive_suggestions()
+    except Exception as e:
+        print(f"Adaptive suggestions not available: {e}")
 
     print("Ingestion complete.")
 
