@@ -15,10 +15,14 @@ import argparse
 from pathlib import Path
 from datetime import datetime, timezone
 import uuid
+import asyncio
 
 ROOT = Path(__file__).resolve().parents[1]
 KNOWLEDGE_DIR = ROOT / "knowledge"
 FACTS_FILE = KNOWLEDGE_DIR / "facts.jsonl"
+
+from scripts.n5_knowledge_adaptive_suggestions import call_llm_for_suggestions
+from scripts.n5_knowledge_adaptive_suggestions_expand import parse_suggestions, validate_and_apply_suggestions
 
 
 def load_schema():
@@ -40,18 +44,21 @@ def validate_plan(plan):
 
 
 def call_deep_research(input_text):
+    schema = load_schema()
     instructions = f"""
 Analyze the following text about V and Careerspan, break into mutually exclusive, collectively exhaustive components per ingestion standards 'N5/knowledge/ingestion_standards.md'.
 Focus on biographical info, recurring characters, company details, strategic/historical context.
 Exclude operational, sensitive, unverified data.
-Output JSON matching 'ingest.plan.schema.json', include suggestions for new reservoirs/subcategories.
+Output JSON matching the provided schema.
 Input:
 {input_text}
 """
-    # Placeholder for actual deep_research tool call
+    # For now, return a template structure - this will be replaced with actual deep_research call
+    # when the script is invoked through the AI assistant
+    print("Note: deep_research analysis would be performed here")
     return {
         "prefs": {},
-        "bio": {},
+        "bio": {"summary": "Analysis pending - run through AI assistant"},
         "timeline": [],
         "glossary": [],
         "sources": [],
@@ -132,11 +139,54 @@ def apply_plan(plan, dry_run=False):
             print(f"- {suggestion['type']}: {suggestion['name']} - {suggestion['rationale']}")
 
 
+async def run_adaptive_suggestions():
+    schema = load_schema()
+    schema_text = json.dumps(schema, indent=2)
+    print("Getting adaptive knowledge reservoir suggestions from LLM...")
+    suggestion_text = await call_llm_for_suggestions(schema_text)
+    print("Received adaptive suggestions.")
+    suggestions = parse_suggestions(suggestion_text)
+    if not suggestions:
+        print("No suggestions parsed.")
+        return
+
+    print(f"Parsed {len(suggestions)} suggestions:")
+    for s in suggestions:
+        print(f"- {s['type']}: {s['name']} - {s['rationale']}")
+
+    confirm = input("Apply these schema updates? (yes/no): ")
+    if confirm.lower() in ['yes', 'y']:
+        validate_and_apply_suggestions(suggestions, schema)
+    else:
+        print("Schema update aborted by user.")
+
+
+async def main_async(dry_run=False, input_text=None):
+    if not input_text:
+        print("Error: No input text provided.")
+        return
+
+    print(f"Processing {len(input_text)} characters of input...")
+
+    # Analyze with LLM
+    plan = call_deep_research(input_text)
+    plan = validate_plan(plan)
+
+    if not dry_run:
+        apply_plan(plan, dry_run=dry_run)
+
+    await run_adaptive_suggestions()
+
+    print("Ingestion complete.")
+
+
 def main():
+    import sys
+    import argparse
+
     parser = argparse.ArgumentParser(description="Ingest knowledge about V and Careerspan")
     parser.add_argument("--input_text", help="Text to ingest")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be done")
-
     args = parser.parse_args()
 
     input_text = args.input_text
@@ -147,15 +197,7 @@ def main():
             print("Error: No input text provided. Use --input_text or pipe input.")
             sys.exit(1)
 
-    print(f"Processing {len(input_text)} characters of input...")
-
-    plan = call_deep_research(input_text)
-
-    plan = validate_plan(plan)
-
-    apply_plan(plan, dry_run=args.dry_run)
-
-    print("Ingestion complete.")
+    asyncio.run(main_async(dry_run=args.dry_run, input_text=input_text))
 
 
 if __name__ == "__main__":

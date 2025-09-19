@@ -4,6 +4,7 @@ Append a command entry to commands.jsonl safely with validation and duplication 
 """
 import json
 import sys
+import argparse
 from pathlib import Path
 
 CMD_FILE = Path(__file__).resolve().parents[1] / "commands.jsonl"
@@ -74,8 +75,18 @@ def append_command(new_cmd):
 
 
 def main():
-    append_command(NEW_COMMAND)
+    parser = argparse.ArgumentParser(description="Append JSON command to commands.jsonl safely")
+    parser.add_argument('--command_json', required=True, help='JSON string of command to append')
+    args = parser.parse_args()
+
+    try:
+        new_cmd = json.loads(args.command_json)
+    except Exception as e:
+        print(f"Error parsing command JSON: {e}")
+        return
+
+    append_command(new_cmd)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
