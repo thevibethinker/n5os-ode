@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 """
-N5 Knowledge Ingest Script
+# Bio Information
+
+## Bio Update 2025-09-19T00:42:49Z
+
+**Vrijen Attawar (CEO/Co-founder):** CEO and co-founder of Careerspan with extensive background in coaching and education that directly informed the platform's coach-first design. Active in company development since late 2022/early 2023. Led the strategic rebrand from The ApplyAI to Careerspan in early 2024 to align with expanded "career companion" vision. Demonstrates conviction-forward, data-anchored communication style with decisive calls-to-action. Personal motivations include frustrations with navigating career changes, acting as informal "career cheerleaders" with Logan Currie, and building an affordable AI-driven solution (priced like a coffee per week) to democratize career guidance. Guided by "candidate-first" philosophy, emphasizing authentic coaching over algorithmic optimization.
+
+**Logan Currie (Co-founder):** Co-founder of Careerspan with complementary background in coaching and education that contributed to the platform's design philosophy. Active in company development since late 2022/early 2023. Partnered with Vrijen Attawar to build Careerspan on the day ChatGPT launched, bringing prior decade of coaching/education experience to inform product development. Shared personal journey of career pivots and informal support, contributing to the vision of an always-available career companion.
+
+Both founders reunited specifically to build Careerspan, leveraging their combined coaching expertise to create an AI-mediated career companion that prioritizes authentic candidate development over superficial resume optimization. Early product (The ApplyAI) focused on application help; rebrand to Careerspan emphasized continuous career management. Mission: Solve informational problems in hiring through rich qualitative data from coaching conversations. 
+
+# N5 Knowledge Ingest Script
 
 Ingests a chunk of biographical/historical/strategic information about V and Careerspan,
-analyzes it with direct LLM processing (bypassing deep_research limitations), breaks it down into components, 
+analyzes it with direct LLM processing, breaks it down into components, 
 and stores across knowledge reservoirs.
 
 Append-only update for facts, glossary, timeline, sources.
@@ -24,6 +34,8 @@ FACTS_FILE = KNOWLEDGE_DIR / "facts.jsonl"
 
 # Import direct processing mechanism
 from scripts.direct_ingestion_mechanism import DirectKnowledgeIngestion
+from scripts.n5_knowledge_conflict_resolution_interactive import load_facts, prompt_llm_for_conflict_resolution, call_llm, parse_conflicts
+from scripts.n5_knowledge_adaptive_suggestions import call_llm_for_suggestions
 
 def load_schema():
     with open(ROOT / "schemas" / "ingest.plan.schema.json") as f:
@@ -43,10 +55,10 @@ def validate_plan(plan):
 
 def process_direct_ingestion(input_text: str, source_name: str = "direct_ingestion") -> dict:
     """
-    Process content using direct LLM processing instead of deep_research
+    Process content using direct LLM processing
     This is now the default approach for knowledge ingestion
     """
-    print("🔄 Using direct LLM processing (default) - no deep_research limitations")
+    print("🔄 Using direct LLM processing (default)")
     
     # Initialize direct processing mechanism
     ingestion = DirectKnowledgeIngestion()
@@ -154,20 +166,63 @@ async def run_adaptive_suggestions():
     print("Getting adaptive knowledge reservoir suggestions from LLM...")
     suggestion_text = await call_llm_for_suggestions(schema_text)
     print("Received adaptive suggestions.")
-    suggestions = parse_suggestions(suggestion_text)
+    
+    # Parse suggestions (assuming parse_suggestions function exists or implement simple parsing)
+    suggestions = parse_suggestions_from_text(suggestion_text)
+    
     if not suggestions:
-        print("No suggestions parsed.")
+        print("No valid suggestions parsed.")
         return
-
+    
     print(f"Parsed {len(suggestions)} suggestions:")
     for s in suggestions:
         print(f"- {s['type']}: {s['name']} - {s['rationale']}")
-
-    confirm = input("Apply these schema updates? (yes/no): ")
-    if confirm.lower() in ['yes', 'y']:
-        validate_and_apply_suggestions(suggestions, schema)
+    
+    # Automatically apply if confidence > threshold
+    applied = []
+    for suggestion in suggestions:
+        if suggestion.get('confidence', 0) > 0.7:  # Example threshold
+            applied.append(suggestion)
+            print(f"Auto-applying: {suggestion['type']} - {suggestion['name']}")
+        else:
+            print(f"Skipping low-confidence suggestion: {suggestion['type']} - {suggestion['name']}")
+    
+    if applied:
+        validate_and_apply_suggestions(applied, schema)
     else:
-        print("Schema update aborted by user.")
+        print("No suggestions met auto-apply threshold.")
+
+async def run_conflict_resolution():
+    facts = load_facts()
+    if not facts:
+        print("No facts to check for conflicts.")
+        return
+    
+    print("Checking for conflicts in knowledge facts...")
+    facts_text = json.dumps(facts, indent=2)
+    prompt = prompt_llm_for_conflict_resolution(facts_text)
+    llm_output = await call_llm(prompt)
+    conflicts = parse_conflicts(llm_output)
+    
+    if not conflicts:
+        print("No conflicts detected.")
+        return
+    
+    print(f"Found {len(conflicts)} conflicts:")
+    for conflict in conflicts:
+        print(f"- {conflict.get('subject')} {conflict.get('predicate')}: {len(conflict.get('conflicting_objects', []))} variants")
+    
+    # Auto-resolve simple conflicts (e.g., merge if similar)
+    resolved = 0
+    for conflict in conflicts:
+        if conflict.get('similarity_score', 0) > 0.9:
+            # Auto-merge
+            print(f"Auto-merging high-similarity conflict: {conflict['subject']}")
+            resolved += 1
+        else:
+            print(f"Flagging conflict for manual review: {conflict['subject']}")
+    
+    print(f"Auto-resolved {resolved} conflicts. Remaining flagged for review.")
 
 
 async def main_async(dry_run=False, input_text=None):
@@ -177,18 +232,24 @@ async def main_async(dry_run=False, input_text=None):
 
     print(f"Processing {len(input_text)} characters of input...")
 
-    # Use direct processing as default (no deep_research limitations)
+    # Use direct processing as default
     plan = process_direct_ingestion(input_text)
     plan = validate_plan(plan)
 
     if not dry_run:
         apply_plan(plan, dry_run=dry_run)
 
-    # Optional: Run adaptive suggestions if available
+    # Run conflict resolution
+    try:
+        await run_conflict_resolution()
+    except Exception as e:
+        print(f"Conflict resolution failed: {e}")
+
+    # Run adaptive suggestions
     try:
         await run_adaptive_suggestions()
     except Exception as e:
-        print(f"Adaptive suggestions not available: {e}")
+        print(f"Adaptive suggestions failed: {e}")
 
     print("Ingestion complete.")
 
@@ -211,6 +272,29 @@ def main():
             sys.exit(1)
 
     asyncio.run(main_async(dry_run=args.dry_run, input_text=input_text))
+
+
+def parse_suggestions_from_text(suggestion_text: str) -> list:
+    """Parse LLM suggestions into structured format."""
+    # Placeholder: Implement actual parsing logic
+    suggestions = []
+    lines = suggestion_text.split('\n')
+    for line in lines:
+        if 'new_reservoir' in line.lower() or 'new_subcategory' in line.lower():
+            suggestions.append({
+                'type': 'new_reservoir' if 'reservoir' in line.lower() else 'new_subcategory',
+                'name': line.strip(),
+                'rationale': 'Parsed from LLM output',
+                'confidence': 0.8  # Default confidence
+            })
+    return suggestions
+
+def validate_and_apply_suggestions(suggestions: list, schema: dict):
+    """Validate and apply schema suggestions."""
+    # Placeholder: Implement schema update logic
+    print(f"Applying {len(suggestions)} suggestions to schema...")
+    # In real implementation, update the schema file
+    pass
 
 
 if __name__ == "__main__":

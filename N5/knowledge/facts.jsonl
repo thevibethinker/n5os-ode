@@ -29,4 +29,19 @@
 {"subject":"Employers","predicate":"dissatisfaction","object":"87% with resumes as hiring tool","confidence":0.9,"source":"Market Data","entities":["concept:employers"]}
 {"subject":"Resume","predicate":"is","object":"lossy compression of human capabilities","confidence":0.9,"source":"Beliefs","entities":["concept:resume"]}
 {"subject":"Interviews","predicate":"over-reward","object":"rehearsed storytelling","confidence":0.85,"source":"Beliefs","entities":["concept:interviews"]}
-{"subject":"Structured reasoning","predicate":"wins","object":"employer trust and scales matching ethically","confidence":0.9,"source":"Beliefs","entities":["concept:structured_reasoning"]}
+{"subject":"Structured reasoning","predicate":"wins","object":"employer trust and scales matching ethically","confidence":0.9,"source":"Beliefs","entities":["concept:structured_reasoning"]}{"subject":"Job search","predicate":"average_duration","object":"5 months","confidence":0.9,"source":"MarketSplash 2023","entities":["concept:job_search"]}
+{"subject":"Job posting","predicate":"average_applications","object":"250","confidence":0.9,"source":"MarketSplash 2023","entities":["concept:job_posting"]}
+{"subject":"Resume","predicate":"interview_conversion","object":"2%","confidence":0.9,"source":"Zippia 2023","entities":["concept:resume"]}
+{"subject":"Recruiter","predicate":"resume_scan_time","object":"6-7 seconds","confidence":0.9,"source":"Indeed 2018","entities":["concept:recruiter"]}
+{"subject":"Employer","predicate":"resume_dissatisfaction","object":"87%","confidence":0.9,"source":"ResumeBuilder 2023","entities":["concept:employer"]}
+{"subject":"Education-performance correlation","predicate":"strength","object":"r ≈ 0.1","confidence":0.9,"source":"ResumeBuilder 2023","entities":["concept:correlation"]}
+{"subject":"New hire","predicate":"failure_rate","object":"46% within 18 months","confidence":0.9,"source":"Leadership IQ 2014","entities":["concept:new_hire"]}
+{"subject":"New hire failure","predicate":"primary_cause","object":"89% attitudinal/culture","confidence":0.85,"source":"Leadership IQ 2014","entities":["concept:new_hire_failure"]}
+{"subject":"Entry-level job","predicate":"share_decline","object":"~7% between 2022-2024","confidence":0.9,"source":"Indeed 2024","entities":["concept:entry_level_job"]}
+{"subject":"Tech entry-level","predicate":"experience_requirement","object":"94% require prior experience","confidence":0.9,"source":"Generation 2023","entities":["concept:tech_entry_level"]}
+{"subject":"Entry-level posting","predicate":"experience_threshold","object":"3+ years in 33%","confidence":0.9,"source":"Generation 2023","entities":["concept:entry_level_posting"]}
+{"subject":"College graduate","predicate":"underemployment_rate","object":"50%","confidence":0.9,"source":"Strada 2022","entities":["concept:college_graduate"]}
+{"subject":"Career coaching","predicate":"average_cost","object":"70/hour","confidence":0.9,"source":"Fidelity 2023","entities":["concept:career_coaching"]}
+{"subject":"AI career advice","predicate":"openness","object":"50% of Millennials/Gen-Z","confidence":0.9,"source":"Fidelity 2023","entities":["concept:ai_career_advice"]}
+{"subject":"University career service","predicate":"usage_rate","object":"24% of students","confidence":0.9,"source":"NACE 2022","entities":["concept:university_career_service"]}
+{"subject":"University career counselor","predicate":"student_ratio","object":"1:2400","confidence":0.9,"source":"NACE 2022","entities":["concept:university_career_counselor"]}

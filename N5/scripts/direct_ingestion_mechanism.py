@@ -84,79 +84,18 @@ class DirectKnowledgeIngestion:
         # Direct LLM processing for suggestions
         return []
 
-    def save_to_reservoirs(self, structured_data: dict, suffix: str = "_direct"):
-        """Save structured data to knowledge reservoirs"""
-        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    def sync_with_existing(self, structured_data: dict):
+        """
+        Sync new structured data with existing reservoirs using sync mechanism
+        """
+        from sync_mechanism import KnowledgeSyncMechanism
 
-        # Save bio
-        if structured_data.get("bio"):
-            bio_file = self.knowledge_dir / f"bio{suffix}.md"
-            with open(bio_file, 'w') as f:
-                f.write(f"# Direct Processing Bio Information\n\n## Bio Update {timestamp}\n\n")
-                if isinstance(structured_data["bio"], dict) and "summary" in structured_data["bio"]:
-                    f.write(structured_data["bio"]["summary"])
-                f.write("\n")
+        sync = KnowledgeSyncMechanism()
+        existing = sync.load_existing_data()  # Load base files
+        report = sync.generate_sync_report(existing, structured_data)
 
-        # Save timeline
-        if structured_data.get("timeline"):
-            timeline_file = self.knowledge_dir / f"timeline{suffix}.md"
-            with open(timeline_file, 'w') as f:
-                f.write("# Direct Processing Timeline\n\n")
-                for event in structured_data["timeline"]:
-                    if isinstance(event, dict):
-                        f.write(f"## {event.get('date', 'Unknown')}: {event.get('title', 'Unknown')}\n")
-                        f.write(f"{event.get('description', '')}\n\n")
-
-        # Save glossary
-        if structured_data.get("glossary"):
-            glossary_file = self.knowledge_dir / f"glossary{suffix}.md"
-            with open(glossary_file, 'w') as f:
-                f.write("# Direct Processing Glossary\n\n")
-                for term in structured_data["glossary"]:
-                    if isinstance(term, dict):
-                        f.write(f"## {term.get('term', 'Unknown')}\n")
-                        f.write(f"{term.get('definition', '')}\n\n")
-                        if term.get('aliases'):
-                            f.write(f"Aliases: {', '.join(term['aliases'])}\n\n")
-
-        # Save sources
-        if structured_data.get("sources"):
-            sources_file = self.knowledge_dir / f"sources{suffix}.md"
-            with open(sources_file, 'w') as f:
-                f.write("# Direct Processing Sources\n\n")
-                for source in structured_data["sources"]:
-                    if isinstance(source, dict):
-                        f.write(f"## {source.get('title', 'Unknown')}\n")
-                        if source.get('url'):
-                            f.write(f"{source['url']}\n")
-                        if source.get('description'):
-                            f.write(f"{source['description']}\n")
-                        f.write("\n")
-
-        # Save company info
-        if structured_data.get("company"):
-            company_file = self.knowledge_dir / f"company{suffix}.md"
-            with open(company_file, 'w') as f:
-                f.write("# Direct Processing Company Information\n\n")
-                for key, value in structured_data["company"].items():
-                    f.write(f"## {key.replace('_', ' ').title()}\n")
-                    if isinstance(value, list):
-                        for item in value:
-                            f.write(f"- {item}\n")
-                    else:
-                        f.write(f"{value}\n")
-                    f.write("\n")
-
-        # Save facts
-        if structured_data.get("facts"):
-            facts_file = self.knowledge_dir / f"facts{suffix}.jsonl"
-            with open(facts_file, 'w') as f:
-                for fact in structured_data["facts"]:
-                    if isinstance(fact, dict):
-                        json.dump(fact, f)
-                        f.write('\n')
-
-        print(f"💾 Knowledge saved to reservoirs with suffix: {suffix}")
+        print("🔄 Sync report generated. Manual reconciliation required.")
+        return report
 
 def main():
     """Main function for command-line usage"""
@@ -175,11 +114,13 @@ def main():
     # Process content
     structured_data = ingestion.process_large_document(content, source_name)
 
-    # Save to reservoirs
-    ingestion.save_to_reservoirs(structured_data, f"_{source_name}")
+    # Sync with existing
+    report = ingestion.sync_with_existing(structured_data)
 
-    print("🎉 Direct knowledge ingestion complete!")
-    print(f"📁 Files saved in: {KNOWLEDGE_DIR}")
+    print("🎉 Direct knowledge ingestion processed!")
+    print("📋 Sync report:")
+    print(json.dumps(report, indent=2))
+    print("\nManual reconciliation needed before applying updates.")
 
 if __name__ == "__main__":
     main()
