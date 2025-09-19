@@ -4,24 +4,8 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 
 ## Command Index (top)
 
-- `digest-runs` — Generate digest reports from run records for analysis and monitoring. (see ./commands/digest-runs.md)
-- `docgen` — Generate command catalog and update prefs Command Index from commands.jsonl. (see ./commands/docgen.md)
-- `docgen-with-schedule-wrapper` — Docgen command wrapped with scheduling wrapper for retries/lock/timezone/missed-run. (see ./commands/docgen-with-schedule-wrapper.md)
-- `flow-run` — Execute a flow by chaining modules in sequence. (see ./commands/flow-run.md)
-- `index-rebuild` — Rebuild the N5 index from scratch and regenerate MD view. (see ./commands/index-rebuild.md)
-- `index-update` — Update the N5 index incrementally, scanning only changed files. (see ./commands/index-update.md)
-- `knowledge-add` — Add a fact to the knowledge base. (see ./commands/knowledge-add.md)
-- `knowledge-find` — Search and filter facts in the knowledge base. (see ./commands/knowledge-find.md)
-- `lists-add` — Add an item to a list (JSONL canonical), e.g., the ideas list. (see ./commands/lists-add.md)
-- `lists-create` — Create a new list registry entry with JSONL and MD files. (see ./commands/lists-create.md)
-- `lists-docgen` — Regenerate MD views from JSONL for lists. (see ./commands/lists-docgen.md)
-- `lists-export` — Export a list to MD or CSV format. (see ./commands/lists-export.md)
-- `lists-find` — Search and filter items in a list. (see ./commands/lists-find.md)
-- `lists-pin` — Pin or unpin an item in a list. (see ./commands/lists-pin.md)
-- `lists-promote` — Promote a list with explicit approval. (see ./commands/lists-promote.md)
-- `lists-set` — Update fields of an item in a list. (see ./commands/lists-set.md)
-- `git-audit` — Scan workspace for files that should be tracked by Git but are untracked, and generate commands to add them.
-- `direct-knowledge-ingest` — Process large documents directly using conversational LLM (default method). (see ./commands/direct-knowledge-ingest.md)
+- `docgen` — Generate command catalog and update prefs Command Index from commands.jsonl (see ./commands/docgen.md)
+- `lists-add` — Add an item to a list with intelligent assignment (see ./commands/lists-add.md)
 
 ## Review & Safety
 
@@ -66,3 +50,7 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 ## Resolution Order
 
 Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does not override.
+
+## Knowledge Lookup
+
+- Topic: career spans / Careerspan — Always check ./N5/knowledge before answering; prefer facts from there and update if gaps are found.

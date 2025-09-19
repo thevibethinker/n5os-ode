@@ -39,9 +39,16 @@ def read_jsonl(p: Path):
 
 def write_jsonl(p: Path, items):
     p.parent.mkdir(parents=True, exist_ok=True)
-    with p.open("w", encoding="utf-8") as f:
-        for item in items:
-            f.write(json.dumps(item, separators=(',', ':')) + '\n')
+    temp_file = p.with_suffix('.tmp')
+    try:
+        with temp_file.open("w", encoding="utf-8") as f:
+            for item in items:
+                f.write(json.dumps(item, separators=(',', ':')) + '\n')
+        temp_file.replace(p)  # Atomic move
+    except Exception as e:
+        if temp_file.exists():
+            temp_file.unlink()
+        raise SystemExit(f"Failed to write JSONL: {e}")
 
 def validate_item(item, schema):
     v = Draft202012Validator(schema)
@@ -52,7 +59,7 @@ def validate_item(item, schema):
 
 def main():
     parser = argparse.ArgumentParser(description="Add an item to an N5 list.")
-    parser.add_argument("list", help="List slug")
+    parser.add_argument("list", nargs='?', help="List slug (optional; auto-assigned if omitted)")
     parser.add_argument("title", help="Item title")
     parser.add_argument("--body", help="Item body")
     parser.add_argument("--tags", nargs='*', default=[], help="Tags")
@@ -68,21 +75,42 @@ def main():
     command_spec = load_command_spec("lists-add")
 
     def execute_lists_add(args):
-        slug = args.list.strip()
-        if not slug:
-            raise SystemExit("List cannot be empty")
-
+        # Load registry
         registry = read_jsonl(INDEX_FILE)
+        available_slugs = [r.get("slug") for r in registry if r.get("slug")]
+        if not registry:
+            raise SystemExit("No lists defined in registry")
+
+        # Determine slug via argument or classifier
+        slug_arg = (args.list or '').strip() if hasattr(args, 'list') else ''
+        slug = None
+        rationale = None
+        if not slug_arg:
+            try:
+                from listclassifier import classify_list as classify
+                cls = classify(args.title, available_slugs)
+                slug = cls[0]
+                rationale = cls[1]
+            except Exception:
+                slug = 'ideas' if 'ideas' in available_slugs else (available_slugs[0] if available_slugs else 'ideas')
+                rationale = 'classifier unavailable; defaulted'
+        else:
+            slug = slug_arg
+            rationale = 'explicit list provided'
+
+        if not slug:
+            raise SystemExit("Unable to determine target list")
+
         reg_item = next((r for r in registry if r.get("slug") == slug), None)
         if not reg_item:
             raise SystemExit(f"List '{slug}' not found in registry")
 
-        jsonl_file = LISTS_DIR / f"{slug}.jsonl"
+        jsonl_file = (LISTS_DIR / f"{slug}.jsonl").resolve()
         items = read_jsonl(jsonl_file)
 
         title = args.title.strip()
         if not title:
-            raise SystemExit("Title cannot be empty")
+            raise SystemExit("Corrupt input: Title cannot be empty")
 
         now = datetime.now(timezone.utc).isoformat()
         item_id = str(uuid.uuid4())
@@ -95,9 +123,17 @@ def main():
             "status": args.status
         }
 
+        # Validate and parse optional fields for corrupt inputs
         if args.body:
-            item["body"] = args.body
+            try:
+                # If body is meant to be JSON, validate; else treat as string
+                json.loads(args.body)
+                item["body"] = args.body
+            except json.JSONDecodeError:
+                item["body"] = args.body  # Treat as plain text if not JSON
         if args.tags:
+            if not isinstance(args.tags, list) or any(not isinstance(t, str) for t in args.tags):
+                raise SystemExit("Corrupt input: Tags must be list of strings")
             item["tags"] = args.tags
         if args.priority:
             item["priority"] = args.priority
@@ -106,12 +142,21 @@ def main():
         if args.due:
             item["due"] = args.due
         if args.notes:
-            item["notes"] = args.notes
+            try:
+                # If notes is meant to be JSON, validate; else treat as string
+                json.loads(args.notes)
+                item["notes"] = args.notes
+            except json.JSONDecodeError:
+                item["notes"] = args.notes  # Treat as plain text
 
         schema = load_schema(SCHEMAS / "lists.item.schema.json")
         validate_item(item, schema)
 
         items.append(item)
+
+        # Output assignment info without prompts
+        print(f"Assigned list: {slug}")
+        print(f"Rationale: {rationale}")
 
         if not args.dry_run:
             write_jsonl(jsonl_file, items)
