@@ -7,6 +7,7 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 - `docgen` — Generate command catalog and update prefs Command Index from commands.jsonl (see ./commands/docgen.md)
 - `git-check` — Quick audit for overwrites or data loss in staged Git changes (see ./commands/git-check.md)
 - `lists-add` — Add an item to a list with intelligent assignment (see ./commands/lists-add.md)
+- `lists-move` — Move an item from one list to another atomically (see ./commands/lists-move.md)
 
 ## Review & Safety
 
