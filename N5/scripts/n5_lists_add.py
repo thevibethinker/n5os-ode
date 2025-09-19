@@ -135,6 +135,17 @@ def main():
             if not isinstance(args.tags, list) or any(not isinstance(t, str) for t in args.tags):
                 raise SystemExit("Corrupt input: Tags must be list of strings")
             item["tags"] = args.tags
+        elif not slug_arg:  # Extract tags only if auto-assigning and no tags provided
+            try:
+                from listclassifier import extract_tags
+                content_for_tags = args.title
+                if args.body:
+                    content_for_tags += " " + args.body
+                extracted = extract_tags(content_for_tags)
+                if extracted:
+                    item["tags"] = extracted
+            except Exception:
+                pass  # Ignore if extraction fails
         if args.priority:
             item["priority"] = args.priority
         if args.project:
