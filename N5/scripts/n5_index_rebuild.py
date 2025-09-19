@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import subprocess
 import hashlib
 import argparse
+import fcntl
 
 try:
     from jsonschema import Draft202012Validator
@@ -186,23 +187,31 @@ def scan_file(path: Path, relative: str):
 
 def rebuild_index():
     """Rebuild index from scratch."""
-    entries = []
-    
-    for path in ROOT.rglob("*"):
-        if path.is_file():
-            relative = str(path.relative_to(ROOT))
-            if should_exclude(path, relative):
-                continue
-            entry = scan_file(path, relative)
-            entries.append(entry)
-    
-    # write index
-    with INDEX_FILE.open("w", encoding="utf-8") as f:
-        for entry in sorted(entries, key=lambda x: x["path"]):
-            json.dump(entry, f, ensure_ascii=False)
-            f.write("\n")
-    
-    return len(entries)
+    # Acquire lock on index file
+    lock_file = INDEX_FILE.with_suffix('.lock')
+    with lock_file.open('w') as lf:
+        fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+        try:
+            entries = []
+            
+            for path in ROOT.rglob("*"):
+                if path.is_file():
+                    relative = str(path.relative_to(ROOT))
+                    if should_exclude(path, relative):
+                        continue
+                    entry = scan_file(path, relative)
+                    entries.append(entry)
+            
+            # write index
+            with INDEX_FILE.open("w", encoding="utf-8") as f:
+                for entry in sorted(entries, key=lambda x: x["path"]):
+                    json.dump(entry, f, ensure_ascii=False)
+                    f.write("\n")
+            
+            return len(entries)
+        finally:
+            fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
+            lock_file.unlink(missing_ok=True)
 
 def regenerate_md():
     """Regenerate index.md from index.jsonl."""

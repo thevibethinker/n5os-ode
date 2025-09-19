@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import subprocess
 import hashlib
 import mimetypes
+import fcntl
 
 try:
     from jsonschema import Draft202012Validator
@@ -201,42 +202,50 @@ def scan_file(path: Path, relative: str, existing_entry=None):
 
 def update_index():
     """Incremental update of index."""
-    existing = load_existing_index()
-    updated = []
-    removed = []
-    
-    # scan all files
-    all_files = set()
-    for path in ROOT.rglob("*"):
-        if path.is_file():
-            relative = str(path.relative_to(ROOT))
-            if should_exclude(path, relative):
-                continue
-            all_files.add(relative)
-            entry = scan_file(path, relative, existing.get(relative))
-            if entry != existing.get(relative):
-                updated.append(entry)
-    
-    # find removed
-    for rel in existing:
-        if rel not in all_files:
-            removed.append(rel)
-    
-    # write new index
-    new_index = {}
-    for rel, entry in existing.items():
-        if rel not in removed:
-            new_index[rel] = entry
-    
-    for entry in updated:
-        new_index[entry["path"]] = entry
-    
-    with INDEX_FILE.open("w", encoding="utf-8") as f:
-        for entry in sorted(new_index.values(), key=lambda x: x["path"]):
-            json.dump(entry, f, ensure_ascii=False)
-            f.write("\n")
-    
-    return len(updated), len(removed)
+    # Acquire lock on index file
+    lock_file = INDEX_FILE.with_suffix('.lock')
+    with lock_file.open('w') as lf:
+        fcntl.flock(lf.fileno(), fcntl.LOCK_EX)
+        try:
+            existing = load_existing_index()
+            updated = []
+            removed = []
+            
+            # scan all files
+            all_files = set()
+            for path in ROOT.rglob("*"):
+                if path.is_file():
+                    relative = str(path.relative_to(ROOT))
+                    if should_exclude(path, relative):
+                        continue
+                    all_files.add(relative)
+                    entry = scan_file(path, relative, existing.get(relative))
+                    if entry != existing.get(relative):
+                        updated.append(entry)
+            
+            # find removed
+            for rel in existing:
+                if rel not in all_files:
+                    removed.append(rel)
+            
+            # write new index
+            new_index = {}
+            for rel, entry in existing.items():
+                if rel not in removed:
+                    new_index[rel] = entry
+            
+            for entry in updated:
+                new_index[entry["path"]] = entry
+            
+            with INDEX_FILE.open("w", encoding="utf-8") as f:
+                for entry in sorted(new_index.values(), key=lambda x: x["path"]):
+                    json.dump(entry, f, ensure_ascii=False)
+                    f.write("\n")
+            
+            return len(updated), len(removed)
+        finally:
+            fcntl.flock(lf.fileno(), fcntl.LOCK_UN)
+            lock_file.unlink(missing_ok=True)
 
 def record_run(inputs, layers_used, status="success", artifacts=None, errors=None):
     """Record the run using the run recorder script."""
