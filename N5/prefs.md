@@ -5,6 +5,7 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 ## Command Index (top)
 
 - `docgen` — Generate command catalog and update prefs Command Index from commands.jsonl (see ./commands/docgen.md)
+- `git-check` — Quick audit for overwrites or data loss in staged Git changes (see ./commands/git-check.md)
 - `lists-add` — Add an item to a list with intelligent assignment (see ./commands/lists-add.md)
 
 ## Review & Safety
@@ -12,6 +13,7 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 - Never schedule anything without explicit consent.
 - Always support --dry-run; sticky safety may enforce it.
 - Require explicit approval for side-effect actions (email, external API, creating services, deleting files).
+- Always search for existing protocols or processes for categorizing/storing documents before creating new ones. Prefer placing under existing structure (e.g., lists) to avoid bloat.
 
 ## Git Governance
 
@@ -54,3 +56,13 @@ Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does
 ## Knowledge Lookup
 
 - Topic: career spans / Careerspan — Always check ./N5/knowledge before answering; prefer facts from there and update if gaps are found.
+
+## Google Drive Access
+
+- **Preference**: Always first try to access Google Drive related content through the integration first, versus through a web browser or consumer access.
+- **Steps for Accessing Google Drive Files**:
+  1. Verify the Google Drive app integration is connected using `list_app_tools(app_slug="google_drive")`.
+  2. Retrieve file metadata using `use_app_google_drive` with `tool_name="google_drive-get-file-by-id"` and the file ID.
+  3. Download the file content using `use_app_google_drive` with `tool_name="google_drive-download-file"`, specifying the file ID, filePath (e.g., "/tmp/filename.txt"), and mimeType (e.g., "text/plain" for Google Docs export).
+  4. If the tool returns a download URL, use `run_bash_command` with curl to fetch it to the workspace (e.g., "/home/workspace/filename.txt").
+  5. Read the downloaded file using `read_file` with the absolute path.
