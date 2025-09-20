@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import logging
 from unittest.mock import patch, mock_open
+from subprocess import run, PIPE
 
 # Import modules to test
 from .conversation_parser import parse_conversation, validate_segments
@@ -455,6 +456,30 @@ class TestIntegration(unittest.TestCase):
         # Subsequent steps should handle errors
         structured_command = generate_command_structure(scoped_draft)
         self.assertIn('error', structured_command)
+
+
+class TestCommandAuthoringIntegration(unittest.TestCase):
+    def setUp(self):
+        self.conversation_path = '/home/workspace/N5/tmp_execution/sample_conversation.txt'
+        self.command_author_path = '/home/workspace/N5/scripts/author-command/author-command'
+        self.telemetry_file = Path('/home/workspace/command_authoring_telemetry.json')
+
+    def test_full_pipeline_success(self):
+        result = run(['python3', self.command_author_path, self.conversation_path], stdout=PIPE, stderr=PIPE, text=True)
+        self.assertEqual(result.returncode, 0, f"Command execution failed: {result.stderr}")
+        self.assertIn('Command authoring completed successfully', result.stdout)
+
+    def test_telemetry_file_created(self):
+        if self.telemetry_file.exists():
+            self.telemetry_file.unlink()
+
+        run(['python3', self.command_author_path, self.conversation_path], stdout=PIPE, stderr=PIPE, text=True)
+        self.assertTrue(self.telemetry_file.exists(), "Telemetry file not created")
+
+        with open(self.telemetry_file, 'r') as f:
+            data = json.load(f)
+        self.assertIn('metrics', data)
+        self.assertIn('performance_report', data)
 
 
 def run_all_tests():

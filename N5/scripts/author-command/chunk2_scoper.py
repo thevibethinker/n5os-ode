@@ -134,34 +134,25 @@ class LLMScopingAgent:
         return '\n'.join(conversation_lines)
     
     async def _llm_analyze_workflow(self, conversation_text: str) -> WorkflowScope:
-        """Mock LLM analysis of the conversation workflow"""
+        """Analyze conversation workflow with improved LLM simulation"""
         logger.info("Performing initial LLM workflow analysis")
         query_start = time.time()
         
         # Simulate LLM processing time
         await asyncio.sleep(0.1)
         
-        # Mock LLM response based on conversation content
-        intent = "command_creation"
-        steps = [
-            "Analyze user requirements",
-            "Check for existing similar commands",
-            "Generate command structure",
-            "Validate command",
-            "Perform dry run testing",
-            "Handle user feedback",
-            "Add error handling",
-            "Export to command registry"
-        ]
-        caveats = [
-            "Ensure no naming conflicts",
-            "Validate file paths",
-            "Handle missing dependencies",
-            "Test with various input types"
-        ]
-        complexity = "medium"
-        tools_used = ["grep_search", "create_command_draft", "validate_command", 
-                     "dry_run_command", "update_command", "export_command"]
+        # Extract actual tools from conversation
+        tools_mentioned = self._extract_tools_from_conversation(conversation_text)
+        
+        # Analyze conversation to determine intent and complexity
+        intent = self._determine_intent(conversation_text)
+        complexity = self._assess_complexity(conversation_text)
+        
+        # Generate workflow steps based on conversation content
+        steps = self._generate_workflow_steps(conversation_text, tools_mentioned)
+        
+        # Generate caveats based on conversation patterns
+        caveats = self._generate_caveats(conversation_text)
         
         query_time = time.time() - query_start
         self.llm_queries += 1
@@ -174,7 +165,7 @@ class LLMScopingAgent:
             steps=steps,
             caveats=caveats,
             complexity=complexity,
-            tools_used=tools_used,
+            tools_used=tools_mentioned,
             clarifications=[]
         )
     
@@ -184,26 +175,22 @@ class LLMScopingAgent:
         logger.info("Starting Socratic clarification process")
         
         clarifications = []
-        max_loops = 3
         
-        for loop in range(max_loops):
-            self.clarification_loops += 1
-            
-            # Generate clarification questions
-            questions = await self._generate_clarification_questions(initial_scope)
-            
-            if not questions:
-                break
-            
+        # Single clarification loop to avoid duplication
+        self.clarification_loops += 1
+        
+        # Generate clarification questions based on scope
+        questions = await self._generate_clarification_questions(initial_scope)
+        
+        if questions:
             # Simulate user responses (in real implementation, this would be interactive)
             responses = await self._simulate_user_responses(questions)
-            
             clarifications.extend(responses)
             
             # Update scope based on clarifications
             await self._update_scope_from_clarifications(initial_scope, responses)
             
-            logger.info(f"Clarification loop {loop + 1}: {len(responses)} responses")
+            logger.info(f"Clarification completed: {len(responses)} responses")
         
         logger.info(f"Socratic clarification completed with {len(clarifications)} clarifications")
         return clarifications
@@ -213,12 +200,19 @@ class LLMScopingAgent:
         query_start = time.time()
         await asyncio.sleep(0.05)  # Simulate LLM processing
         
-        questions = [
-            "What specific error handling should be included?",
-            "Are there any specific file formats that need special consideration?",
-            "Should the command support batch processing of multiple files?",
-            "What validation rules are most important for this workflow?"
-        ]
+        questions = []
+        
+        # Generate questions based on scope complexity and intent
+        if scope.complexity in ['medium', 'high']:
+            questions.append("What specific error handling should be included?")
+        
+        if 'file' in scope.intent.lower() or any('file' in tool.lower() for tool in scope.tools_used):
+            questions.append("Are there any specific file formats that need special consideration?")
+        
+        if scope.complexity == 'high':
+            questions.append("Should the command support batch processing of multiple files?")
+        
+        questions.append("What validation rules are most important for this workflow?")
         
         query_time = time.time() - query_start
         self.llm_queries += 1
@@ -228,12 +222,24 @@ class LLMScopingAgent:
     
     async def _simulate_user_responses(self, questions: List[str]) -> List[str]:
         """Simulate user responses to clarification questions"""
-        responses = [
-            "Include comprehensive error handling for file not found and permission errors",
-            "Focus on text files (.txt, .md) primarily, but allow any readable file",
-            "Yes, batch processing would be useful for analyzing multiple files",
-            "Validate that input paths exist and are readable, check command parameters"
-        ]
+        response_templates = {
+            "error handling": "Include comprehensive error handling for file not found and permission errors",
+            "file formats": "Focus on text files (.txt, .md) primarily, but allow any readable file",
+            "batch processing": "Yes, batch processing would be useful for analyzing multiple files",
+            "validation": "Validate that input paths exist and are readable, check command parameters"
+        }
+        
+        responses = []
+        for question in questions:
+            question_lower = question.lower()
+            if "error" in question_lower:
+                responses.append(response_templates["error handling"])
+            elif "format" in question_lower:
+                responses.append(response_templates["file formats"])
+            elif "batch" in question_lower:
+                responses.append(response_templates["batch processing"])
+            elif "validation" in question_lower:
+                responses.append(response_templates["validation"])
         
         self.user_interactions += len(responses)
         return responses
@@ -241,17 +247,30 @@ class LLMScopingAgent:
     async def _update_scope_from_clarifications(self, scope: WorkflowScope, 
                                               clarifications: List[str]):
         """Update workflow scope based on clarification responses"""
+        # Keep track of what's been added to avoid duplicates
+        added_caveats = set(scope.caveats)
+        added_steps = set(scope.steps)
+        
         # Add clarification-based caveats
         for clarification in clarifications:
             if "error handling" in clarification.lower():
-                if "file not found" in clarification:
-                    scope.caveats.append("Handle file not found errors gracefully")
-                if "permission" in clarification:
-                    scope.caveats.append("Check file permissions before processing")
+                if "file not found" in clarification.lower():
+                    caveat = "Handle file not found errors gracefully"
+                    if caveat not in added_caveats:
+                        scope.caveats.append(caveat)
+                        added_caveats.add(caveat)
+                if "permission" in clarification.lower():
+                    caveat = "Check file permissions before processing"
+                    if caveat not in added_caveats:
+                        scope.caveats.append(caveat)
+                        added_caveats.add(caveat)
             
             if "batch processing" in clarification.lower():
-                scope.steps.append("Support batch processing of multiple files")
-                scope.complexity = "high"
+                step = "Support batch processing of multiple files"
+                if step not in added_steps:
+                    scope.steps.append(step)
+                    added_steps.add(step)
+                    scope.complexity = "high"
     
     async def _finalize_workflow_scope(self, initial_scope: WorkflowScope, 
                                      clarifications: List[str]) -> WorkflowScope:
@@ -272,6 +291,106 @@ class LLMScopingAgent:
         logger.info(f"Final workflow scope: {len(final_scope.steps)} steps, {len(final_scope.caveats)} caveats")
         
         return final_scope
+    
+    def _extract_tools_from_conversation(self, conversation_text: str) -> List[str]:
+        """Extract tool names mentioned in the conversation"""
+        tools = []
+        lines = conversation_text.split('\n')
+        
+        for line in lines:
+            if line.strip().startswith('Tool:'):
+                tool_name = line.strip()[5:].strip()  # Remove "Tool: " prefix
+                if tool_name and tool_name not in tools:
+                    tools.append(tool_name)
+        
+        return tools
+    
+    def _determine_intent(self, conversation_text: str) -> str:
+        """Determine the primary intent from conversation"""
+        text_lower = conversation_text.lower()
+        
+        if 'create' in text_lower and 'command' in text_lower:
+            return 'command_creation'
+        elif 'analyze' in text_lower or 'analysis' in text_lower:
+            return 'data_analysis'
+        elif 'process' in text_lower or 'processing' in text_lower:
+            return 'data_processing'
+        elif 'search' in text_lower or 'find' in text_lower:
+            return 'information_retrieval'
+        else:
+            return 'general_task'
+    
+    def _assess_complexity(self, conversation_text: str) -> str:
+        """Assess workflow complexity based on conversation content"""
+        text_lower = conversation_text.lower()
+        
+        # Count complexity indicators
+        complexity_indicators = [
+            'error handling', 'batch processing', 'multiple files',
+            'validation', 'dry run', 'export', 'update'
+        ]
+        
+        indicator_count = sum(1 for indicator in complexity_indicators 
+                            if indicator in text_lower)
+        
+        if indicator_count >= 5:
+            return 'high'
+        elif indicator_count >= 3:
+            return 'medium'
+        else:
+            return 'low'
+    
+    def _generate_workflow_steps(self, conversation_text: str, tools: List[str]) -> List[str]:
+        """Generate workflow steps based on conversation and tools"""
+        steps = [
+            "Analyze user requirements",
+            "Validate input parameters"
+        ]
+        
+        # Add steps based on tools mentioned
+        tool_step_mapping = {
+            'grep_search': "Search for existing similar implementations",
+            'create_command_draft': "Generate command structure",
+            'validate_command': "Validate command specification",
+            'dry_run_command': "Perform testing and validation",
+            'update_command': "Incorporate user feedback and improvements",
+            'export_command': "Export to command registry"
+        }
+        
+        for tool in tools:
+            if tool in tool_step_mapping:
+                step = tool_step_mapping[tool]
+                if step not in steps:
+                    steps.append(step)
+        
+        # Add general completion steps
+        if "Export to command registry" not in steps:
+            steps.append("Export to command registry")
+        
+        return steps
+    
+    def _generate_caveats(self, conversation_text: str) -> List[str]:
+        """Generate caveats based on conversation content"""
+        caveats = [
+            "Ensure input validation",
+            "Handle edge cases appropriately"
+        ]
+        
+        text_lower = conversation_text.lower()
+        
+        if 'file' in text_lower:
+            caveats.extend([
+                "Validate file paths and permissions",
+                "Handle file I/O errors gracefully"
+            ])
+        
+        if 'error' in text_lower or 'handling' in text_lower:
+            caveats.append("Implement comprehensive error handling")
+        
+        if 'batch' in text_lower or 'multiple' in text_lower:
+            caveats.append("Consider performance for large datasets")
+        
+        return caveats
 
 
 async def main():

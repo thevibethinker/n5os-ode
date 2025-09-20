@@ -18,6 +18,19 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 - Always support --dry-run; sticky safety may enforce it.
 - Require explicit approval for side-effect actions (email, external API, creating services, deleting files).
 - Always search for existing protocols or processes for categorizing/storing documents before creating new ones. Prefer placing under existing structure (e.g., lists) to avoid bloat.
+- Whenever a new file is created, always ask me where the file should be located. Do not create any file without asking me the location.
+
+## Folder Policy Principle
+
+**Highest Priority Governance**: Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted in the policy file itself (e.g., "Exempts: Safety Overrides"). Policies govern the collective interpretation and handling of folder contents as programs, databases, or dynamic entities.
+
+- **Mandatory Check**: Always scan for and consult POLICY.md in the target folder before any interaction (read, edit, add, delete). If absent, default to this global prefs.md but flag for policy creation.
+- **Anchors System**: Each POLICY.md must include an "Anchors" section linking to root N5/prefs.md, related issues, or parent policies for cross-referencing and system coherence.
+- **Overrides Mechanism**: Folder policies can override any global rule; document exemptions clearly. Conflicts resolved by escalating to root POLICY.md or user arbitration.
+- **Naming Convention**: Use "POLICY.md" for consistency and easy sourcing by title (e.g., search for "POLICY.md" in folder tree).
+- **Creation Protocol**: When creating a new folder, always generate POLICY.md first. Include purpose, handling rules, safety flags, dependencies, and anchors.
+
+- **Enforcement**: Automated checks (future N5 command) will validate policy adherence. Manual overrides require timeline logging.
 
 ## File Protection & Safety
 
@@ -94,6 +107,18 @@ Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does
 
 - Topic: career spans / Careerspan — Always check ./N5/knowledge before answering; prefer facts from there and update if gaps are found.
 
+## Knowledge Ingestion Standards
+
+- **Reference Requirement**: Before initiating any action that could impact the epistemic reservoirs or knowledge base (e.g., ingesting new information, updating facts, or restructuring knowledge), explicitly reference the N5 Knowledge Ingestion Standards (./N5/knowledge/ingestion_standards.md).
+- **Alignment Check**: Ensure all actions align semantically and epistemically with the established standards, including inclusion criteria, MECE principles, and adaptive suggestions.
+- **Purpose**: Maintain consistency in building out the complete understanding of V and Careerspan, focusing on biographical, historical, and strategic aspects.
+
+## Naming Conventions
+
+- **Location**: ./N5/prefs/naming-conventions.md
+- **Purpose**: Human-readable, greppable naming for files and folders.
+- **Quick Access**: Reference here for all naming rules in N5 OS.
+
 ## Google Drive Access
 
 - **Preference**: Always first try to access Google Drive related content through the integration first, versus through a web browser or consumer access.
@@ -103,3 +128,10 @@ Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does
   3. Download the file content using `use_app_google_drive` with `tool_name="google_drive-download-file"`, specifying the file ID, filePath (e.g., "/tmp/filename.txt"), and mimeType (e.g., "text/plain" for Google Docs export).
   4. If the tool returns a download URL, use `run_bash_command` with curl to fetch it to the workspace (e.g., "/home/workspace/filename.txt").
   5. Read the downloaded file using `read_file` with the absolute path.
+
+## Coding Agent Preference
+
+- **Preference**: Always launch a coding agent (perform_coding_task tool) whenever possible for coding tasks because it leads to better outcomes.
+- **Application**: Use for planning, processing, and executing coding tasks; any task involving substantial code changes; ambiguous or complex coding requirements.
+- **Type**: Soft preference that guides decision-making but allows flexibility when direct editing is more appropriate for simple changes.
+- **Rationale**: The coding agent provides specialized capabilities for comprehensive code analysis, planning, and implementation that produce higher quality results.
