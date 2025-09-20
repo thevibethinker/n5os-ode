@@ -20,7 +20,7 @@
       "confidence": 0.6,
       "due_date_48h_utc": "2025-09-21T19:20:31Z",
       "due_date_2biz_utc": "2025-09-23T19:20:31Z",
-      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+      "due_date_suggested_utc": "2025-09-23T19:20:31Z"
     },
     {
       "owner": "Shujaat Ahmad",
@@ -30,7 +30,7 @@
       "confidence": 0.75,
       "due_date_48h_utc": "2025-09-21T19:20:31Z",
       "due_date_2biz_utc": "2025-09-23T19:20:31Z",
-      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+      "due_date_suggested_utc": "2025-09-23T19:20:31Z"
     },
     {
       "owner": "Logan Currie",
@@ -40,7 +40,7 @@
       "confidence": 0.9,
       "due_date_48h_utc": "2025-09-21T19:20:31Z",
       "due_date_2biz_utc": "2025-09-23T19:20:31Z",
-      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+      "due_date_suggested_utc": "2025-09-23T19:20:31Z"
     },
     {
       "owner": "Logan Currie",
@@ -50,7 +50,7 @@
       "confidence": 0.9,
       "due_date_48h_utc": "2025-09-21T19:20:31Z",
       "due_date_2biz_utc": "2025-09-23T19:20:31Z",
-      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+      "due_date_suggested_utc": "2025-09-23T19:20:31Z"
     },
     {
       "owner": "Vrijen Attawar",
@@ -60,7 +60,7 @@
       "confidence": 0.9,
       "due_date_48h_utc": "2025-09-21T19:20:31Z",
       "due_date_2biz_utc": "2025-09-23T19:20:31Z",
-      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+      "due_date_suggested_utc": "2025-09-23T19:20:31Z"
     },
     {
       "owner": "Vrijen/All",
@@ -70,7 +70,7 @@
       "confidence": 0.9,
       "due_date_48h_utc": "2025-09-21T19:20:31Z",
       "due_date_2biz_utc": "2025-09-23T19:20:31Z",
-      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+      "due_date_suggested_utc": "2025-09-23T19:20:31Z"
     }
   ],
   "decisions": [
@@ -801,7 +801,7 @@
     ]
   },
   "clarification_policy": {
-    "doubt_gate": 0.3,
+    "doubt_gate": 0.2,
     "ask_user_when": [
       "Owner unclear or role-policy mismatch",
       "Missing due date/scope for actionable in external mode",
@@ -822,8 +822,8 @@
     }
   ],
   "due_date_policy": {
-    "default": "within_48h_or_two_business_days",
-    "notes": "Compute both; suggest the earlier; override as needed."
+    "default": "later_of_48h_or_two_business_days",
+    "notes": "Compute both from meeting_datetime; suggest the later; override as needed."
   },
   "speech_acts": [
     {
