@@ -1,0 +1,97 @@
+{
+  "schema": "n5os.knowledge_ingestion",
+  "generated_at": "2025-09-20T22:49:30.567222+00:00",
+  "facts": [
+    {
+      "subject": "Careerspan",
+      "predicate": "ICP",
+      "object": "Product Managers",
+      "anchor": {
+        "pointer": "#/topics/3",
+        "time": "22:52\u201324:41",
+        "speaker": "Vrijen Attawar"
+      }
+    },
+    {
+      "subject": "Buyers",
+      "predicate": "likely_segment",
+      "object": "Seed\u2013Series A\u2013C companies",
+      "anchor": {
+        "pointer": "#/topics/3",
+        "time": "22:52\u201324:41",
+        "speaker": "Vrijen Attawar"
+      }
+    },
+    {
+      "subject": "Logan Currie",
+      "predicate": "will_send",
+      "object": "Self-determination theory paper",
+      "anchor": {
+        "pointer": "#/ctas/0",
+        "time": "18:56",
+        "speaker": "Logan Currie"
+      }
+    },
+    {
+      "subject": "Logan Currie",
+      "predicate": "will_send",
+      "object": "Quick follow-up",
+      "anchor": {
+        "pointer": "#/ctas/3",
+        "time": "29:48",
+        "speaker": "Logan Currie"
+      }
+    },
+    {
+      "subject": "Vrijen Attawar",
+      "predicate": "will_send",
+      "object": "Involvement details/tiers",
+      "anchor": {
+        "pointer": "#/ctas/4",
+        "time": "36:02",
+        "speaker": "Vrijen Attawar"
+      }
+    }
+  ],
+  "insights": [
+    {
+      "text": "International experience functions as resilience training that compounds career optionality for PMs.",
+      "pointer": "#/topics/0"
+    },
+    {
+      "text": "Soft skills act as the substrate on which tool\u2011specific skills are learned and retained.",
+      "pointer": "#/topics/1"
+    },
+    {
+      "text": "Outcome quality with AI correlates with user judgment and review discipline, not model choice alone.",
+      "pointer": "#/topics/2"
+    }
+  ],
+  "open_questions": [
+    {
+      "text": "Which pilot (myth\u2011busting vs. base\u2011athleticism) delivers a faster first \u201cwin\u201d for Shujaat\u2019s audience?",
+      "pointer": "#/topics/4"
+    },
+    {
+      "text": "What success metrics should we track for PM skill adoption (leading indicators vs. outcomes)?",
+      "pointer": "#/topics/1"
+    }
+  ],
+  "next_actions": [
+    {
+      "pointer": "#/ctas/0",
+      "summary": "Send SDT paper"
+    },
+    {
+      "pointer": "#/ctas/3",
+      "summary": "Send quick follow\u2011up with 1\u2011pager"
+    },
+    {
+      "pointer": "#/ctas/4",
+      "summary": "Share involvement tiers/options"
+    }
+  ],
+  "provenance": {
+    "content_map": "content_map.json"
+  }
+}

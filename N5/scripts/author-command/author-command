@@ -1,0 +1,353 @@
+#!/usr/bin/env python3
+"""
+Main Orchestration Script: author-command
+
+CLI wrapper that orchestrates the complete command authoring workflow.
+Chains all chunks together: Parser → Scoper → Generator → Validator → Resolver → Exporter
+"""
+
+import argparse
+import json
+import logging
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+from typing import Dict, List, Optional, Any
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)sZ %(levelname)s %(name)s %(message)s',
+    handlers=[
+        logging.FileHandler('/home/workspace/command_authoring.log', mode='a'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger('author_command')
+
+
+class CommandAuthorOrchestrator:
+    """Orchestrates the complete command authoring workflow"""
+    
+    def __init__(self):
+        self.total_execution_time = 0.0
+        self.chunk_completion_status = {}
+        self.error_chain = []
+        self.user_interactions = 0
+    
+    def orchestrate_workflow(self, conversation_path: str, interactive: bool = False) -> Dict[str, Any]:
+        """
+        Orchestrate the complete command authoring workflow
+        
+        Args:
+            conversation_path: Path to conversation file to analyze
+            interactive: Whether to run in interactive mode
+            
+        Returns:
+            Dict containing final results and telemetry
+        """
+        logger.info("Starting Command Authoring Orchestration")
+        logger.info(f"Input conversation: {conversation_path}")
+        logger.info(f"Interactive mode: {interactive}")
+        
+        start_time = time.time()
+        workflow_results = {
+            'success': False,
+            'final_command': None,
+            'error_summary': [],
+            'telemetry_summary': {}
+        }
+        
+        try:
+            # Step 1: Parse conversation
+            logger.info("=== STEP 1: Conversation Parsing ===")
+            parsed_data = self._execute_chunk1(conversation_path)
+            self.chunk_completion_status['chunk1'] = 'completed'
+            
+            # Step 2: LLM Scoping
+            logger.info("=== STEP 2: LLM Scoping and Clarification ===")
+            scoped_data = self._execute_chunk2(parsed_data)
+            self.chunk_completion_status['chunk2'] = 'completed'
+            
+            # Step 3: Command Generation
+            logger.info("=== STEP 3: Command Structure Generation ===")
+            command_draft = self._execute_chunk3(scoped_data)
+            self.chunk_completion_status['chunk3'] = 'completed'
+            
+            # Step 4: Validation and Enhancement
+            logger.info("=== STEP 4: Validation and Enhancement ===")
+            validated_command = self._execute_chunk4(command_draft)
+            self.chunk_completion_status['chunk4'] = 'completed'
+            
+            # Step 5: Conflict Resolution
+            logger.info("=== STEP 5: Conflict Resolution ===")
+            resolved_command = self._execute_chunk5(validated_command)
+            self.chunk_completion_status['chunk5'] = 'completed'
+            
+            # Step 6: Safe Export
+            logger.info("=== STEP 6: Safe Export and Integration ===")
+            export_results = self._execute_chunk6(resolved_command)
+            self.chunk_completion_status['chunk6'] = 'completed'
+            
+            # Success!
+            workflow_results['success'] = True
+            workflow_results['final_command'] = resolved_command.get('resolved_command', {})
+            
+            logger.info("=== WORKFLOW COMPLETED SUCCESSFULLY ===")
+            logger.info(f"Generated command: {workflow_results['final_command'].get('name', 'unknown')}")
+            
+        except Exception as e:
+            logger.error(f"Workflow failed: {e}")
+            workflow_results['error_summary'].append(str(e))
+            self.error_chain.append({
+                'step': 'orchestration',
+                'error': str(e),
+                'timestamp': time.time()
+            })
+        
+        self.total_execution_time = time.time() - start_time
+        
+        # Compile telemetry summary
+        workflow_results['telemetry_summary'] = {
+            'total_execution_time': self.total_execution_time,
+            'chunks_completed': len([s for s in self.chunk_completion_status.values() if s == 'completed']),
+            'error_chain_length': len(self.error_chain),
+            'user_interactions': self.user_interactions,
+            'chunk_status': self.chunk_completion_status
+        }
+        
+        logger.info(f"Total execution time: {self.total_execution_time:.2f}s")
+        logger.info(f"Chunks completed: {workflow_results['telemetry_summary']['chunks_completed']}/6")
+        
+        return workflow_results
+    
+    def _execute_chunk1(self, conversation_path: str) -> Dict[str, Any]:
+        """Execute Chunk 1: Conversation Parser"""
+        chunk_script = Path(__file__).parent / 'chunk1_parser.py'
+        
+        if not chunk_script.exists():
+            raise FileNotFoundError(f"Chunk 1 script not found: {chunk_script}")
+        
+        # Run chunk1
+        cmd = ['python3', str(chunk_script), conversation_path]
+        result = subprocess.run(cmd, capture_output=True, text=True, cwd=chunk_script.parent)
+        
+        if result.returncode != 0:
+            error_msg = f"Chunk 1 failed: {result.stderr}"
+            logger.error(error_msg)
+            self.error_chain.append({'chunk': '1', 'error': error_msg})
+            raise RuntimeError(error_msg)
+        
+        try:
+            return json.loads(result.stdout)
+        except json.JSONDecodeError as e:
+            error_msg = f"Chunk 1 output parsing failed: {e}"
+            logger.error(error_msg)
+            self.error_chain.append({'chunk': '1', 'error': error_msg})
+            raise RuntimeError(error_msg)
+    
+    def _execute_chunk2(self, parsed_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute Chunk 2: LLM Scoping Agent"""
+        chunk_script = Path(__file__).parent / 'chunk2_scoper.py'
+        
+        # Write parsed data to temp file
+        temp_file = Path(__file__).parent / 'temp_parsed.json'
+        with open(temp_file, 'w') as f:
+            json.dump(parsed_data, f)
+        
+        try:
+            # Run chunk2
+            cmd = ['python3', str(chunk_script), str(temp_file)]
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=chunk_script.parent)
+            
+            if result.returncode != 0:
+                error_msg = f"Chunk 2 failed: {result.stderr}"
+                logger.error(error_msg)
+                self.error_chain.append({'chunk': '2', 'error': error_msg})
+                raise RuntimeError(error_msg)
+            
+            return json.loads(result.stdout)
+            
+        finally:
+            # Clean up temp file
+            if temp_file.exists():
+                temp_file.unlink()
+    
+    def _execute_chunk3(self, scoped_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute Chunk 3: Command Structure Generator"""
+        chunk_script = Path(__file__).parent / 'chunk3_generator.py'
+        
+        # Write scoped data to temp file
+        temp_file = Path(__file__).parent / 'temp_scoped.json'
+        with open(temp_file, 'w') as f:
+            json.dump(scoped_data, f)
+        
+        try:
+            # Run chunk3
+            cmd = ['python3', str(chunk_script), str(temp_file)]
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=chunk_script.parent)
+            
+            if result.returncode != 0:
+                error_msg = f"Chunk 3 failed: {result.stderr}"
+                logger.error(error_msg)
+                self.error_chain.append({'chunk': '3', 'error': error_msg})
+                raise RuntimeError(error_msg)
+            
+            return json.loads(result.stdout)
+            
+        finally:
+            # Clean up temp file
+            if temp_file.exists():
+                temp_file.unlink()
+    
+    def _execute_chunk4(self, command_draft: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute Chunk 4: Validation and Enhancement Layer"""
+        chunk_script = Path(__file__).parent / 'chunk4_validator.py'
+        
+        # Write command draft to temp file
+        temp_file = Path(__file__).parent / 'temp_draft.json'
+        with open(temp_file, 'w') as f:
+            json.dump(command_draft, f)
+        
+        try:
+            # Run chunk4
+            cmd = ['python3', str(chunk_script), str(temp_file)]
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=chunk_script.parent)
+            
+            if result.returncode != 0:
+                error_msg = f"Chunk 4 failed: {result.stderr}"
+                logger.error(error_msg)
+                self.error_chain.append({'chunk': '4', 'error': error_msg})
+                raise RuntimeError(error_msg)
+            
+            return json.loads(result.stdout)
+            
+        finally:
+            # Clean up temp file
+            if temp_file.exists():
+                temp_file.unlink()
+    
+    def _execute_chunk5(self, validated_command: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute Chunk 5: Conflict Resolution and Suggestion Engine"""
+        chunk_script = Path(__file__).parent / 'chunk5_resolver.py'
+        
+        # Write validated command to temp file
+        temp_file = Path(__file__).parent / 'temp_validated.json'
+        with open(temp_file, 'w') as f:
+            json.dump(validated_command, f)
+        
+        try:
+            # Run chunk5
+            cmd = ['python3', str(chunk_script), str(temp_file)]
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=chunk_script.parent)
+            
+            if result.returncode != 0:
+                error_msg = f"Chunk 5 failed: {result.stderr}"
+                logger.error(error_msg)
+                self.error_chain.append({'chunk': '5', 'error': error_msg})
+                raise RuntimeError(error_msg)
+            
+            return json.loads(result.stdout)
+            
+        finally:
+            # Clean up temp file
+            if temp_file.exists():
+                temp_file.unlink()
+    
+    def _execute_chunk6(self, resolved_command: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute Chunk 6: Safe Export and Integration Handler"""
+        chunk_script = Path(__file__).parent / 'chunk6_exporter.py'
+        
+        # Write resolved command to temp file
+        temp_file = Path(__file__).parent / 'temp_resolved.json'
+        with open(temp_file, 'w') as f:
+            json.dump(resolved_command, f)
+        
+        try:
+            # Run chunk6
+            cmd = ['python3', str(chunk_script), str(temp_file)]
+            result = subprocess.run(cmd, capture_output=True, text=True, cwd=chunk_script.parent)
+            
+            if result.returncode != 0:
+                error_msg = f"Chunk 6 failed: {result.stderr}"
+                logger.error(error_msg)
+                self.error_chain.append({'chunk': '6', 'error': error_msg})
+                raise RuntimeError(error_msg)
+            
+            return json.loads(result.stdout)
+            
+        finally:
+            # Clean up temp file
+            if temp_file.exists():
+                temp_file.unlink()
+
+
+def main():
+    """Main CLI entry point"""
+    parser = argparse.ArgumentParser(
+        description='N5 OS Command Authoring Tool',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Analyze a conversation and generate a command
+  ./author-command /path/to/conversation.txt
+  
+  # Interactive mode for clarification
+  ./author-command --interactive /path/to/conversation.txt
+  
+  # Show help
+  ./author-command --help
+        """
+    )
+    
+    parser.add_argument(
+        'conversation_file',
+        nargs='?',
+        help='Path to conversation file to analyze'
+    )
+    
+    parser.add_argument(
+        '--interactive', '-i',
+        action='store_true',
+        help='Run in interactive mode for clarifications'
+    )
+    
+    parser.add_argument(
+        '--workflow', '-w',
+        choices=['full', 'parse-only', 'generate-only'],
+        default='full',
+        help='Workflow type (default: full)'
+    )
+    
+    args = parser.parse_args()
+    
+    if not args.conversation_file:
+        parser.print_help()
+        sys.exit(1)
+    
+    if not os.path.exists(args.conversation_file):
+        logger.error(f"Conversation file not found: {args.conversation_file}")
+        sys.exit(1)
+    
+    # Execute workflow
+    orchestrator = CommandAuthorOrchestrator()
+    results = orchestrator.orchestrate_workflow(args.conversation_file, args.interactive)
+    
+    # Output results
+    if results['success']:
+        print("\n🎉 Command authoring completed successfully!")
+        print(f"📝 Generated command: {results['final_command'].get('name', 'unknown')}")
+        print(f"⏱️  Total execution time: {results['telemetry_summary']['total_execution_time']:.2f}s")
+        print(f"🔧 Chunks completed: {results['telemetry_summary']['chunks_completed']}/6")
+    else:
+        print("\n❌ Command authoring failed!")
+        print("Error summary:")
+        for error in results['error_summary']:
+            print(f"  - {error}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

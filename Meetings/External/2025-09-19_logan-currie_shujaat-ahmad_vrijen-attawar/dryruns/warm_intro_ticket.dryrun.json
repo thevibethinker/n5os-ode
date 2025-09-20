@@ -1,0 +1,24 @@
+{
+  "schema": "n5os.warm_intro_ticket.dryrun",
+  "generated_at": "2025-09-20T22:43:14.060332+00:00",
+  "tickets": [
+    {
+      "id": "warm_intro_candidate_1",
+      "intro_type": "collaborative_introduction",
+      "participants": [
+        "Logan Currie",
+        "Shujaat Ahmad",
+        "Vrijen Attawar"
+      ],
+      "confidence_score": 0.7,
+      "evidence": {
+        "topic_pointer": "#/topics/4",
+        "title": "Engagement scope with Shujaat: involvement tiers, follow-ups, next call"
+      },
+      "notes": "No explicit warm_intro_opportunities; inferred from collaboration discussion."
+    }
+  ],
+  "provenance": {
+    "content_map": "content_map.json"
+  }
+}

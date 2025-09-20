@@ -1,0 +1,208 @@
+{
+  "schema": "n5os.segment_summaries",
+  "schema_version": "1.0.0",
+  "generated_at": "2025-09-20T22:40:12.862481+00:00",
+  "source_content_map": "content_map.json",
+  "source_transcript": "attachments/transcript.txt",
+  "segments": [
+    {
+      "id": "seg_1",
+      "time_range": [
+        "00:00",
+        "09:50"
+      ],
+      "seconds_range": [
+        0,
+        599
+      ],
+      "speakers": [
+        "Logan Currie",
+        "Shujaat Ahmad",
+        "Vrijen Attawar"
+      ],
+      "excerpts": {
+        "head": "No. So I was in lots of startups, basically, but all in Asia. So I lived in. I grew up in Charlotte, but then I moved to Thailand and then China and Singapore when I was like, 21, so right after graduation. And so I was in China for Shanghai for eight years, Singapore for four years. Like, Thailand briefly in between. So lots of, like, ed tech startups, like, a few, like, solo ventures and. Yeah. And then I moved back to the States just over three. Yeah, three years ago. So kind of freshly back. You had kids outside during the pandemic and then you had kids outside as well.",
+        "tail": "I mean, it's. It's the delivery. I think the shell of the delivery mechanism shouldn't be discarded. You know, like we have an education delivery mechanism that is well distributed. It's not fucking equitable in the least, but okay, it's at least there and it's. It's, you know, extant. I think what we need to do is sort of convey to folks what is the underlying. We've used. Like, we've approached so many problems with that like meta lens that I think it's almost per. Jumping off the call. I was just on about a pan going to be on. Like, is it about the underlying Cognitive principles and skills"
+      },
+      "pointers": {
+        "ctas": [],
+        "decisions": [],
+        "topics": [
+          {
+            "pointer": "#/topics/0",
+            "title": "International experience \u2192 resilience and adaptability"
+          },
+          {
+            "pointer": "#/topics/1",
+            "title": "Soft skills as \u201cbase athleticism\u201d: learn how to learn, connect with people"
+          },
+          {
+            "pointer": "#/topics/2",
+            "title": "AI usage: judgment, context-window intuition, scalpel vs. stick"
+          }
+        ]
+      },
+      "summary": "Backgrounds and context setting; Logan describes extensive time in Asia and the resulting resilience/adaptability; discussion of Interstate 60 as a metaphor for seeking disproportionate opportunity at the frontier; introduction of \"soft skills as base athleticism\" and the idea that learning-how-to-learn and connection outperform narrow hard-skill checklists.",
+      "key_points": [
+        "International experience \u2192 resilience and adaptability",
+        "Frontier mindset: outsized opportunity at the edge",
+        "Soft skills as base athleticism; learn to learn; connect with people"
+      ],
+      "notable_quotes": [
+        "\u201cJust we've trained to be cockroaches. We will survive.\u201d",
+        "\u201cOpportunity exists at the frontier.\u201d"
+      ]
+    },
+    {
+      "id": "seg_2",
+      "time_range": [
+        "10:14",
+        "19:49"
+      ],
+      "seconds_range": [
+        600,
+        1199
+      ],
+      "speakers": [
+        "Logan Currie",
+        "Shujaat Ahmad",
+        "Vrijen Attawar"
+      ],
+      "excerpts": {
+        "head": "This is reading for later. I've read it approximately eight to 10 times because it takes a while to wrap your head around. But it's all about propositional knowledge. And that idea, what you're talking about. I love this very time I, we just, I started and as a moment of inspiration I'd be sitting on not, you know, as a delaying, putting stuff on YouTube and like, all right, screw this, I'm going to do the first one. There's, the first one around. There's so many reports out there about AI taking away entry level jobs and I'm like, no bs, let's break into this. So I did a takedown of those fir",
+        "tail": "Ahead please send it to me. So give you an idea. The four part. All right, so let's start with. Okay so I so even when I was doing business disruption right. So prior to Talend I was in strategy consulting and at Deloitte it's now they've wrapped it up there was a center for the edge. It was the antagonistic anti Deloitte center. So the two people who ran it, both of them had predicted Amazon 10 years before Amazon happened. One of them was head of McKinsey's E commerce practice when email did not exist. So they were crazy. The both of them are crazy visionaries. They're almost on every board."
+      },
+      "pointers": {
+        "ctas": [
+          {
+            "pointer": "#/ctas/0",
+            "time": "18:56",
+            "owner": "Logan Currie"
+          },
+          {
+            "pointer": "#/ctas/1",
+            "time": "18:53",
+            "owner": "Shujaat Ahmad"
+          }
+        ],
+        "decisions": [],
+        "topics": [
+          {
+            "pointer": "#/topics/2",
+            "title": "AI usage: judgment, context-window intuition, scalpel vs. stick"
+          }
+        ]
+      },
+      "summary": "Shujaat outlines a public learning cadence (videos) interrogating AI/job narratives; the group surfaces self-determination theory as a useful frame; Logan proposes to share an SDT paper; they explore how soft skills and judgment mediate value with AI.",
+      "key_points": [
+        "Public cadence: myth-busting AI/job claims",
+        "Self-determination theory as a lens for motivation and learning",
+        "Next step: share SDT paper for review"
+      ],
+      "notable_quotes": []
+    },
+    {
+      "id": "seg_3",
+      "time_range": [
+        "20:38",
+        "29:59"
+      ],
+      "seconds_range": [
+        1200,
+        1799
+      ],
+      "speakers": [
+        "Logan Currie",
+        "Shujaat Ahmad",
+        "Vrijen Attawar"
+      ],
+      "excerpts": {
+        "head": "And lastly, do I want to do something about it? So were going through this series on this YouTube spot as well. All right, so should I, let's look at the market then, could I? So I was thinking about the would I? And my professor, he just published, he's like this. And I we don't have practical, but we've just looked at literature on self determination theory on why would someone want to invest in educating themselves, for example, or they want to go and change the way they've learned before. And so that's what I'm going to leverage for the would I part. Right? Like, okay, how would I respond ",
+        "tail": "Yeah, I just, all the time I do have to jump, but V, you can like finish up here. Such a delight. I have enjoyed every single minute of this conversation. I'll send a quick follow up. Would love to geek out a little bit. Yeah, yeah, I know, I'd love to read that paper."
+      },
+      "pointers": {
+        "ctas": [
+          {
+            "pointer": "#/ctas/2",
+            "time": "22:45",
+            "owner": "Logan Currie"
+          },
+          {
+            "pointer": "#/ctas/3",
+            "time": "29:48",
+            "owner": "Logan Currie"
+          }
+        ],
+        "decisions": [
+          {
+            "pointer": "#/decisions/0",
+            "time": "22:52\u201323:30"
+          }
+        ],
+        "topics": [
+          {
+            "pointer": "#/topics/3",
+            "title": "Go-to-market focus: ICP PMs; buyer segment Seed\u2013Series A\u2013C"
+          }
+        ]
+      },
+      "summary": "Go-to-market sharpening: focus ICP on Product Managers; buyers likely Seed\u2013Series A\u2013C; Logan commits to share SDT paper and a quick follow-up to propose next steps.",
+      "key_points": [
+        "ICP: Product Managers; Seed\u2013Series A\u2013C buyers",
+        "CTAs: share SDT paper; send quick follow-up"
+      ],
+      "notable_quotes": [
+        "\u201cI'll send it to you\u2026 I would be curious to hear your thoughts.\u201d"
+      ]
+    },
+    {
+      "id": "seg_4",
+      "time_range": [
+        "30:01",
+        "38:42"
+      ],
+      "seconds_range": [
+        1800,
+        3600
+      ],
+      "speakers": [
+        "Logan Currie",
+        "Shujaat Ahmad",
+        "Vrijen Attawar"
+      ],
+      "excerpts": {
+        "head": "Yeah. Awesome. Sounds good. All right, lovely to meet you. Bye bye.",
+        "tail": "I hope you love it. I hope to talk to you about it next time. Yeah, we'll do amazing. Catch you later. All right, bye."
+      },
+      "pointers": {
+        "ctas": [
+          {
+            "pointer": "#/ctas/4",
+            "time": "36:02",
+            "owner": "Vrijen Attawar"
+          },
+          {
+            "pointer": "#/ctas/5",
+            "time": "38:49",
+            "owner": "Vrijen/All"
+          }
+        ],
+        "decisions": [],
+        "topics": [
+          {
+            "pointer": "#/topics/4",
+            "title": "Engagement scope with Shujaat: involvement tiers, follow-ups, next call"
+          }
+        ]
+      },
+      "summary": "Engagement scope with Shujaat: send involvement tiers/options; keep momentum and plan for a future conversation to deepen collaboration; meeting close.",
+      "key_points": [
+        "Vrijen to send involvement tiers/options",
+        "Plan next conversation; maintain cadence"
+      ],
+      "notable_quotes": [
+        "\u201cLet me send you details\u2026 optionality for involvement, varying tiers.\u201d"
+      ]
+    }
+  ]
+}

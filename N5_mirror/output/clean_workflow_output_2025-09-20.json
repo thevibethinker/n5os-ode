@@ -1,0 +1,86 @@
+{
+  "content_map": {
+    "meeting_datetime": "2025-09-20 21:51:27.362401",
+    "deliverables": [],
+    "ctas": [
+      "y, but all in Asia. So I lived",
+      "you. I\u2019m"
+    ],
+    "decisions": [
+      ". You know, it\u2019s. We had. We do my course and I on our"
+    ],
+    "resonance_details": [
+      "things considered. But, you know, just really people enthusiastic about"
+    ],
+    "speaker_quotes": [],
+    "warm_intro_opportunities": [
+      {
+        "trigger_line": "skills, communication skills. Right. How do I connect with others?",
+        "context": "with others?",
+        "line_number": 177,
+        "participants_involved": [],
+        "confidence_score": 0.4,
+        "intro_type": "general_introduction"
+      }
+    ]
+  },
+  "tickets": [
+    {
+      "id": "cta_1",
+      "type": "action_item",
+      "content": "y, but all in Asia. So I lived",
+      "status": "pending",
+      "priority": "medium"
+    },
+    {
+      "id": "cta_2",
+      "type": "action_item",
+      "content": "you. I\u2019m",
+      "status": "pending",
+      "priority": "medium"
+    },
+    {
+      "id": "warm_intro_1_general",
+      "type": "warm_introduction",
+      "content": "Explore introduction opportunities for participant - with others?",
+      "status": "pending",
+      "priority": "low",
+      "intro_type": "general_introduction",
+      "participants": [],
+      "trigger_context": "skills, communication skills. Right. How do I connect with others?",
+      "confidence_score": 0.4
+    }
+  ],
+  "blurbs": [
+    "Key resonance points: things considered. But, you know, just really people enthusiastic about",
+    "Decisions made: . You know, it\u2019s. We had. We do my course and I on our",
+    "Warm introduction opportunities identified: 1 general introduction (1 total)"
+  ],
+  "email_draft": {
+    "subject_line": "Follow-Up Email \u2013 Recipient x Careerspan [follow \u2022 up]",
+    "greeting": "Hey Recipient,",
+    "body": "I wanted to follow up on our recent discussion. I particularly appreciated your thoughts on:\n\n\u2022 things considered. But, you know, just really people enthusiastic about\n\n\nNext steps:\n\n\u2022 y, but all in Asia. So I lived\n\n\u2022 you. I\u2019m",
+    "signoff": "Best,",
+    "full_email": "Hey Recipient,\n\nI wanted to follow up on our recent discussion. I particularly appreciated your thoughts on:\n\n\u2022 things considered. But, you know, just really people enthusiastic about\n\n\nNext steps:\n\n\u2022 y, but all in Asia. So I lived\n\n\u2022 you. I\u2019m\n\nBest,",
+    "days_elapsed": 0
+  },
+  "voice_context": {
+    "relationshipDepth": 1,
+    "medium": "email",
+    "formality": "balanced",
+    "ctaRigour": "balanced"
+  },
+  "telemetry": {
+    "start_time": "2025-09-20 21:51:27.362209",
+    "end_time": "2025-09-20 21:51:27.364084",
+    "input_size": 7205,
+    "processing_steps": [
+      "transcript_loaded",
+      "voice_context_set",
+      "content_mapped",
+      "tickets_generated",
+      "email_generated"
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,25 @@
+# N5 OS .gitignore: Track core functional files, exclude knowledge/docs/runtime
+
+# Exclude entire knowledge directory except key files
+knowledge/
+!knowledge/bio.md  # Keep important bio info
+
+# Exclude docs (generated or non-core)
+docs/
+
+# Exclude runtime logs (can be regenerated)
+runtime/
+
+# Exclude test directories (if not core)
+test/
+
+# Exclude flows (if not operational core)
+flows/
+
+# Exclude any temp or backup files
+*.tmp
+*.bak
+*~
+
+# Exclude logs
+*.log

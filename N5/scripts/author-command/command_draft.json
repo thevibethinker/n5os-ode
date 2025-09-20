@@ -1,0 +1,78 @@
+{
+  "command_draft": {
+    "name": "grep-search-command_creation",
+    "version": "0.1.0",
+    "description": "Automated command_creation workflow using grep_search, create_command_draft, validate_command",
+    "workflow": "automation",
+    "parameters": [
+      {
+        "name": "file_path",
+        "type": "string",
+        "required": true,
+        "description": "Path to the file for processing"
+      },
+      {
+        "name": "path_path",
+        "type": "string",
+        "required": true,
+        "description": "Path to the path for processing"
+      },
+      {
+        "name": "input_path",
+        "type": "string",
+        "required": true,
+        "description": "Path to the input for processing"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "description": "Optional type specification",
+        "default": "default"
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "required": true,
+        "description": "The message to process"
+      }
+    ],
+    "examples": [
+      "python3 grep-search-command_creation.py --file_path <value> --path_path <value> --input_path <value> [--type <value>] --message <value>",
+      "python3 grep-search-command_creation.py --file_path /home/workspace/example.txt --path_path /home/workspace/example.txt"
+    ],
+    "validation_rules": [
+      "Handle missing dependencies gracefully",
+      "Provide clear error messages for all failure cases",
+      "Check file permissions for read/write operations",
+      "Provide clear error messages for all failure cases",
+      "Check file permissions for read/write operations",
+      "Provide clear error messages for all failure cases",
+      "Check file permissions for read/write operations",
+      "Provide clear error messages for all failure cases",
+      "Validate file_path is a valid file path",
+      "Validate path_path is a valid file path",
+      "Validate input_path is a valid file path",
+      "Ensure message parameter is provided"
+    ],
+    "side_effects": [
+      "executes:command",
+      "atomic:operations"
+    ],
+    "permissions": [
+      "filesystem:read",
+      "filesystem:read",
+      "filesystem:read",
+      "tools:execute"
+    ],
+    "generated_at": "2025-09-20T04:54:48.154615",
+    "source": "conversation_analysis"
+  },
+  "telemetry": {
+    "generation_time": 0.00017213821411132812,
+    "command_complexity": 28,
+    "schema_compliance_score": 1.0,
+    "generation_errors": 0,
+    "error_details": []
+  }
+}

@@ -1,3 +1,16 @@
+---
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
+checksum: dd2749dcf98bc787a1043a008f60fd32
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors: 
+input: null
+output: /home/workspace/N5_mirror/lists/system-upgrades.md
+---
 # System Upgrades List
 
 <!-- Generated MD view of JSONL -->
@@ -290,4 +303,11 @@ Create a concrete end step for conversations where specific actions are implemen
 - **Perform Final Validation and Auditing**: Run comprehensive checks to validate the end state, including integrity verification, compliance audits, and logging of all actions taken, generating a summary report for review and future reference.
 - **Notify Relevant Stakeholders**: Send notifications or summaries to users, admins, or integrated systems about the conversation's conclusion, including key outcomes and any follow-up actions required.
 - **Archive Conversation Thread**: Package and store the entire conversation thread in a retrievable format, including all messages, actions, and outcomes, for historical reference and potential reactivation.
+
+### Front Matter System Enhancements
+
+- Implement scheduled tasks for periodic front matter re-validation and compliance audits.
+- Extend metadata schemas and LLM prompts for new N5 data types and evolving requirements.
+- Build user interfaces and search tools optimized for structured metadata exploration.
+- Develop monitoring dashboards for link integrity and metadata quality control.
 

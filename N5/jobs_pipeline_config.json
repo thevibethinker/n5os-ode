@@ -1,0 +1,59 @@
+{
+  "pipeline_name": "N5_ATS_Jobs_Ingestion",
+  "version": "1.0.0",
+  "description": "ATS-based job ingestion pipeline for N5 OS",
+  "supported_ats": {
+    "ashby": {
+      "enabled": true,
+      "api_base": "https://api.ashbyhq.com",
+      "public_base": "https://jobs.ashbyhq.com",
+      "rate_limit": 60
+    },
+    "greenhouse": {
+      "enabled": true,
+      "api_base": "https://harvest.greenhouse.io/v1",
+      "public_base": "https://boards.greenhouse.io",
+      "rate_limit": 100
+    },
+    "lever": {
+      "enabled": true,
+      "api_base": "https://api.lever.co/v0",
+      "public_base": "https://jobs.lever.co",
+      "rate_limit": 120
+    },
+    "workday": {
+      "enabled": true,
+      "api_base": "https://myworkdayjobs.com",
+      "public_base": "https://myworkdayjobs.com",
+      "rate_limit": 60
+    },
+    "smartrecruiters": {
+      "enabled": true,
+      "api_base": "https://www.smartrecruiters.com",
+      "public_base": "https://www.smartrecruiters.com",
+      "rate_limit": 60
+    },
+    "apple": {
+      "enabled": true,
+      "api_base": "https://jobs.apple.com",
+      "public_base": "https://jobs.apple.com",
+      "rate_limit": 30
+    }
+  },
+  "data_dirs": {
+    "raw": "/home/workspace/N5/jobs_data/raw",
+    "processed": "/home/workspace/N5/jobs_data/processed",
+    "config": "/home/workspace/N5/jobs/config",
+    "logs": "/home/workspace/N5/logs"
+  },
+  "workflow_integration": {
+    "command_authoring": true,
+    "telemetry": true,
+    "validation": true
+  },
+  "output_formats": [
+    "jsonl",
+    "json"
+  ],
+  "created_at": "2025-09-20T12:42:58.733305"
+}

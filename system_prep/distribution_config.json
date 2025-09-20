@@ -1,0 +1,37 @@
+{
+  "destinations": {
+    "local_folders": {
+      "documents": "/home/workspace/Documents",
+      "archive": "/home/workspace/Archive",
+      "reports": "/home/workspace/Reports"
+    },
+    "email": {
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "username": "",
+      "password": ""
+    }
+  },
+  "rules": [
+    {
+      "category": "job_search",
+      "destinations": ["documents", "archive"],
+      "conditions": {}
+    },
+    {
+      "category": "reports",
+      "destinations": ["reports"],
+      "conditions": {}
+    },
+    {
+      "category": "temporary",
+      "destinations": ["archive"],
+      "conditions": {}
+    }
+  ],
+  "auto_cleanup": {
+    "enabled": true,
+    "days": 7,
+    "categories": ["temporary"]
+  }
+}

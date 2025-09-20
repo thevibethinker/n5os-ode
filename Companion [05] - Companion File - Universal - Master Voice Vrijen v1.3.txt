@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "author": "Vrijen Attawar",
+    "entity": "",
+    "fileType": "MasterVoiceSchema",
+    "version": "1.3",
+    "lastUpdated": "2025-07-01",
+    "requiredBy": ["FollowUpEmailGenerator>=v10.1", "TranscriptAnalyzer>=v1.0", "StylisticTransformer>=v1.0"],
+    "checksum": "SHA256-TO_BE_FILLED_BY_PIPELINE"
+  },
+
+  "contextCalibration": {
+    "dials": {
+      "relationshipDepth": ["0-Stranger", "1-New Contact", "2-Warm Contact", "3-Partner", "4-Inner Circle"],
+      "medium": ["spoken", "email", "dm", "social"],
+      "formality": ["casual", "balanced", "formal"],
+      "ctaRigour": ["soft", "balanced", "direct"]
+    },
+    "relationalModifiers": {
+      "familiarityScore→depth": {
+        "-1": 0,
+        "0": 1,
+        "1": 2
+      },
+      "warmthScore→formality": {
+        "-1": "formal",
+        "0": "balanced",
+        "1": "casual"
+      }
+    },
+    "default": {
+      "relationshipDepth": 1,
+      "medium": "email",
+      "formality": "balanced",
+      "ctaRigour": "balanced"
+    }
+  },
+
+  "followUpTypeRules": {
+    "Pro-Forma + Regards": {
+      "tone": "respectful",
+      "formality": "balanced",
+      "ctaRigour": "soft",
+      "structure": "gratitude → reiterate alignment → warm sign-off"
+    },
+    "CTA + Next Steps (Sales)": {
+      "tone": "confident",
+      "formality": "balanced",
+      "ctaRigour": "direct",
+      "structure": "recap → bullet CTAs → clear ask"
+    },
+    "CTA + Next Steps (Personal)": {
+      "tone": "warm",
+      "formality": "casual",
+      "ctaRigour": "balanced",
+      "structure": "resonance → support offer → open CTA"
+    },
+    "Warm Introduction Facilitation": {
+      "tone": "connector-style",
+      "formality": "balanced",
+      "ctaRigour": "soft",
+      "structure": "brief intro → context handoff → nudge both sides"
+    },
+    "Reiteration of Discussion": {
+      "tone": "reflective",
+      "formality": "balanced",
+      "ctaRigour": "light",
+      "structure": "summary → shared insight → optional next step"
+    }
+  },
+
+  "doubleCheckLanguage": {
+    "missingLink": "Let me know if the link came through cleanly.",
+    "unspecifiedDueDate": "Open to your timeline—just flag when you're ready.",
+    "noExplicitCTA": "No pressure on next steps—just wanted to share these.",
+    "lightNudge": "When it feels right, I’d love your thoughts.",
+    "gratitudeFallback": "Appreciate you being open to this conversation."
+  },
+
+  "writingOptimized": {
+    "metrics": {
+      "fkGrade": "10-12",
+      "avgSentenceWords": "16-22",
+      "readabilityGuards": {
+        "maxSentenceWords": 32,
+        "fleschReadingEase": "55-65"
+      }
+    },
+    "toneWeights": {
+      "warmth": 0.80,
+      "confidence": 0.70,
+      "humility": 0.40
+    },
+    "skeleton": ["Greeting", "Gratitude", "RecapOrBullets", "NextSteps_CTAs", "WarmSignOff"],
+    "lexicon": {
+      "preferredVerbs": ["align", "surface", "iterate", "ship", "de-risk"],
+      "positiveAdjectives": ["meaningful", "scalable", "human-centric"],
+      "slang": { "allowedAtDepth": 4, "terms": ["jam-pack", "deep-dive"] },
+      "stopVerbs": ["get", "make", "take", "go", "have", "do"]
+    },
+    "ctaLibrary": {
+      "infoRequest":      { "default": "Could you share…?",           "firmnessDial": ["soft","balanced"] },
+      "calendarInvite":   { "default": "Feel free to grab a slot…",   "firmnessDial": ["soft"] },
+      "decisionPrompt":   { "default": "Let’s decide by {{date}}…",   "firmnessDial": ["balanced","direct"] },
+      "offerHelp":        { "default": "Happy to draft X if helpful", "firmnessDial": ["soft"] },
+      "followUpReminder": { "default": "Just flagging this thread…",  "firmnessDial": ["balanced"] },
+      "dealClose":        { "default": "Ready to kick off?",          "firmnessDial": ["direct"] },
+      "decisiveVerbs":    ["finalize", "confirm", "approve", "commit", "launch"],
+      "maxPerMessage": 2
+    },
+    "greetings": {
+      "0-1": { "formal": "Hi {{name}},",  "balanced": "Hey {{name}},",     "casual": "Hey {{name}}—" },
+      "2-3": { "formal": "Hello {{name}},","balanced": "Hey {{name}},",    "casual": "Hey {{name}}—" },
+      "4":   { "formal": "Hey {{name}},", "balanced": "Hey {{name}}—",     "casual": "Hey {{name}} 😊" }
+    },
+    "signOffs": {
+      "0-1": { "formal": "Best regards,", "balanced": "Best,",             "casual": "Best," },
+      "2-3": { "formal": "Warm regards,", "balanced": "Warmly,",           "casual": "Cheers," },
+      "4":   { "formal": "Warm regards,", "balanced": "Cheers,",           "casual": "✌️," }
+    }
+  },
+
+  "styleFunctionContract": {
+    "requiredFields": ["meta", "contextCalibration", "writingOptimized"],
+    "exposedDials": ["relationshipDepth", "medium", "formality", "ctaRigour"],
+    "compatibleFunctions": ["TranscriptAnalyzer>=v1.0", "StylisticTransformer>=v1.0", "FollowUpEmailGenerator>=v10.1"]
+  }
+}

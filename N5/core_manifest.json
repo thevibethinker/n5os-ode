@@ -1,0 +1,55 @@
+{
+  "$schema": "https://n5.example.com/schema/core-manifest/v1",
+  "core_files": [
+    {
+      "path": "N5/scripts/direct_ingestion_mechanism.py",
+      "min_bytes": 1,
+      "must_be_tracked": true,
+      "description": "Default engine for large-doc knowledge ingestion"
+    },
+    {
+      "path": "N5/scripts/run_direct_ingestion.py",
+      "min_bytes": 1,
+      "must_be_tracked": true,
+      "description": "CLI runner for direct-knowledge-ingest command"
+    },
+    {
+      "path": "N5/scripts/n5_knowledge_ingest.py",
+      "min_bytes": 1,
+      "must_be_tracked": true,
+      "description": "Entry point that defaults to direct processing"
+    },
+    {
+      "path": "N5/commands/direct-knowledge-ingest.md",
+      "min_bytes": 1,
+      "must_be_tracked": true,
+      "description": "Command documentation for direct ingestion"
+    },
+    {
+      "path": "N5/test/test_direct_ingestion.py",
+      "min_bytes": 1,
+      "must_be_tracked": true,
+      "description": "Test coverage for direct mechanism"
+    },
+    {
+      "path": "N5/prefs_20250920_132252.md",
+      "min_bytes": 1,
+      "must_contain_regex": "direct_processing|Default Ingestion Method",
+      "must_be_tracked": true,
+      "description": "Prefs declaring direct_processing default"
+    }
+  ],
+  "command_registry_checks": [
+    {
+      "registry_file": "N5/commands_20250920_132219.jsonl",
+      "must_contain_command": "direct-knowledge-ingest",
+      "description": "Ensure command is discoverable by run-system"
+    }
+  ],
+  "append_only_reservoirs": [
+    "N5/knowledge/facts.jsonl",
+    "N5/knowledge/timeline.md",
+    "N5/knowledge/sources.md",
+    "N5/knowledge/glossary.md"
+  ]
+}

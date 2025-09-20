@@ -1,0 +1,84 @@
+{
+  "schema": "n5os.blurb_generation.dryrun",
+  "generated_at": "2025-09-20T22:43:14.060332+00:00",
+  "items": [
+    {
+      "topic_pointer": "#/topics/0",
+      "title": "International experience \u2192 resilience and adaptability",
+      "time_range": [
+        "00:40",
+        "02:39"
+      ],
+      "blurb": "International experience \u2192 resilience and adaptability. It was an adventure... resilience, adaptability... I am so prepared...",
+      "evidence_pointers": [
+        {
+          "time": "00:42",
+          "speaker": "Logan Currie"
+        }
+      ]
+    },
+    {
+      "topic_pointer": "#/topics/1",
+      "title": "Soft skills as \u201cbase athleticism\u201d: learn how to learn, connect with people",
+      "time_range": [
+        "07:21",
+        "08:57"
+      ],
+      "blurb": "Soft skills as \u201cbase athleticism\u201d: learn how to learn, connect with people. ... adaptability, learning how to learn, and your ability to connect...",
+      "evidence_pointers": [
+        {
+          "time": "08:23",
+          "speaker": "Logan Currie"
+        }
+      ]
+    },
+    {
+      "topic_pointer": "#/topics/2",
+      "title": "AI usage: judgment, context-window intuition, scalpel vs. stick",
+      "time_range": [
+        "09:45",
+        "11:35"
+      ],
+      "blurb": "AI usage: judgment, context-window intuition, scalpel vs. stick. ...building an intuition for when you're hitting your context window...",
+      "evidence_pointers": [
+        {
+          "time": "09:50",
+          "speaker": "Vrijen Attawar"
+        }
+      ]
+    },
+    {
+      "topic_pointer": "#/topics/3",
+      "title": "Go-to-market focus: ICP PMs; buyer segment Seed\u2013Series A\u2013C",
+      "time_range": [
+        "22:52",
+        "24:41"
+      ],
+      "blurb": "Go-to-market focus: ICP PMs; buyer segment Seed\u2013Series A\u2013C. Buyer side... Seed to Series A\u2013C companies...",
+      "evidence_pointers": [
+        {
+          "time": "23:30",
+          "speaker": "Vrijen Attawar"
+        }
+      ]
+    },
+    {
+      "topic_pointer": "#/topics/4",
+      "title": "Engagement scope with Shujaat: involvement tiers, follow-ups, next call",
+      "time_range": [
+        "31:15",
+        "36:18"
+      ],
+      "blurb": "Engagement scope with Shujaat: involvement tiers, follow-ups, next call. Let me send you details... optionality for involvement, varying tiers.",
+      "evidence_pointers": [
+        {
+          "time": "36:02",
+          "speaker": "Vrijen Attawar"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "content_map": "content_map.json"
+  }
+}

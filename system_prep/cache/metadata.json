@@ -1,0 +1,272 @@
+{
+  "files": {
+    "job_search_20250920_135005_a6f75a68.txt": {
+      "original_path": "/tmp/sample_doc.txt",
+      "category": "job_search",
+      "timestamp": "20250920_135005",
+      "hash": "a6f75a68",
+      "size": 41
+    },
+    "conversation_20250920_182439_f53328e5.txt": {
+      "original_path": "/home/workspace/sample_conversation.txt",
+      "category": "conversation",
+      "timestamp": "20250920_182439",
+      "hash": "f53328e5",
+      "size": 883
+    },
+    "logs_20250920_182442_d1e7f631.log": {
+      "original_path": "/home/workspace/command_authoring.log",
+      "category": "logs",
+      "timestamp": "20250920_182442",
+      "hash": "d1e7f631",
+      "size": 77526
+    },
+    "conversation_20250920_182457_f53328e5.txt": {
+      "original_path": "/home/workspace/sample_conversation.txt",
+      "category": "conversation",
+      "timestamp": "20250920_182457",
+      "hash": "f53328e5",
+      "size": 883
+    },
+    "logs_20250920_182457_d1e7f631.log": {
+      "original_path": "/home/workspace/command_authoring.log",
+      "category": "logs",
+      "timestamp": "20250920_182457",
+      "hash": "d1e7f631",
+      "size": 77526
+    },
+    "backups_20250920_182457_f5d59b11.jsonl": {
+      "original_path": "/home/workspace/N5_mirror/N5/commands.backup_20250920_040316.jsonl",
+      "category": "backups",
+      "timestamp": "20250920_182457",
+      "hash": "f5d59b11",
+      "size": 35070
+    },
+    "backups_20250920_182457_d63d9bac.backup": {
+      "original_path": "/home/workspace/N5_mirror/lists/little-bird-functionality-updates.md.backup",
+      "category": "backups",
+      "timestamp": "20250920_182457",
+      "hash": "d63d9bac",
+      "size": 270
+    },
+    "conversation_20250920_182457_fb16c75d.py": {
+      "original_path": "/home/workspace/N5_mirror/command_authoring/conversation_parser.py",
+      "category": "conversation",
+      "timestamp": "20250920_182457",
+      "hash": "fb16c75d",
+      "size": 6281
+    },
+    "backups_20250920_182457_23875860.jsonl": {
+      "original_path": "/home/workspace/N5_mirror/commands.backup_20250920_101843.jsonl",
+      "category": "backups",
+      "timestamp": "20250920_182457",
+      "hash": "23875860",
+      "size": 9001
+    },
+    "logs_20250920_182457_1ca722f6.log": {
+      "original_path": "/home/workspace/N5_mirror/tmp_execution/logs/execution_manager.log",
+      "category": "logs",
+      "timestamp": "20250920_182457",
+      "hash": "1ca722f6",
+      "size": 23637
+    },
+    "backups_20250920_182457_00cfcf7f.backup": {
+      "original_path": "/home/workspace/N5_mirror/commands/direct-knowledge-ingest.md.backup",
+      "category": "backups",
+      "timestamp": "20250920_182457",
+      "hash": "00cfcf7f",
+      "size": 3205
+    },
+    "backups_20250920_182458_17cd773d.backup_20250920_071417": {
+      "original_path": "/home/workspace/N5_mirror/commands.md.backup_20250920_071417",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "17cd773d",
+      "size": 1453
+    },
+    "temporary_20250920_182458_a564efce.md": {
+      "original_path": "/home/workspace/N5_mirror/system_docs/templates/feature-documentation-template.md",
+      "category": "temporary",
+      "timestamp": "20250920_182458",
+      "hash": "a564efce",
+      "size": 2005
+    },
+    "backups_20250920_182458_dd11f0af.py": {
+      "original_path": "/home/workspace/N5_mirror/scripts/system_upgrades_backup_manager.py",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "dd11f0af",
+      "size": 9178
+    },
+    "generated_20250920_182458_7e124748.json": {
+      "original_path": "/home/workspace/N5/scripts/author-command/scoped_output_20250920_132252.json",
+      "category": "generated",
+      "timestamp": "20250920_182458",
+      "hash": "7e124748",
+      "size": 2586
+    },
+    "generated_20250920_182458_70d6378e.json": {
+      "original_path": "/home/workspace/N5/scripts/author-command/parsed_output_20250920_132252.json",
+      "category": "generated",
+      "timestamp": "20250920_182458",
+      "hash": "70d6378e",
+      "size": 6126
+    },
+    "temporary_20250920_182458_6314e1ac.py": {
+      "original_path": "/home/workspace/N5_mirror/scripts/direct_ingestion_template.py",
+      "category": "temporary",
+      "timestamp": "20250920_182458",
+      "hash": "6314e1ac",
+      "size": 1580
+    },
+    "backups_20250920_182458_2d56f0e6.py": {
+      "original_path": "/home/workspace/N5/scripts/lib/system_upgrades_backup_manager_20250920_132252.py",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "2d56f0e6",
+      "size": 8534
+    },
+    "backups_20250920_182458_bc8ed4bd.py": {
+      "original_path": "/home/workspace/N5_mirror/tests/test_system_upgrades_backup_manager.py",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "bc8ed4bd",
+      "size": 1853
+    },
+    "backups_20250920_182458_38f4e6a9.txt": {
+      "original_path": "/home/workspace/Backups/zo-backup-20250918-012342Z.contents.txt",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "38f4e6a9",
+      "size": 331515
+    },
+    "backups_20250920_182458_8b3f5b54.gz": {
+      "original_path": "/home/workspace/Backups/zo-backup-20250918-012342Z.tar.gz",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "8b3f5b54",
+      "size": 21079399
+    },
+    "backups_20250920_182458_2df40f10.bytes": {
+      "original_path": "/home/workspace/Backups/zo-backup-20250918-012342Z.tar.gz.bytes",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "2df40f10",
+      "size": 9
+    },
+    "backups_20250920_182458_b456e236.md": {
+      "original_path": "/home/workspace/Backups/zo-backup-20250918-012342Z.README.md",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "b456e236",
+      "size": 659
+    },
+    "backups_20250920_182458_57c0bc58.sha256": {
+      "original_path": "/home/workspace/Backups/zo-backup-20250918-012342Z.tar.gz.sha256",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "57c0bc58",
+      "size": 65
+    },
+    "conversation_20250920_182458_fb16c75d.py": {
+      "original_path": "/home/workspace/N5/command_authoring/conversation_parser_20250920_132252.py",
+      "category": "conversation",
+      "timestamp": "20250920_182458",
+      "hash": "fb16c75d",
+      "size": 6281
+    },
+    "backups_20250920_182458_d41d8cd9.backup": {
+      "original_path": "/home/workspace/N5/lists/little_bird_functionality_updates_20250920_132252.md.backup",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "d41d8cd9",
+      "size": 0
+    },
+    "backups_20250920_182458_b7eb775f.bak": {
+      "original_path": "/home/workspace/N5/scripts/n5_validate_modules_flows.py.bak",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "b7eb775f",
+      "size": 6517
+    },
+    "backups_20250920_182458_508fcafd.bak": {
+      "original_path": "/home/workspace/N5/scripts/n5_safety.py.bak",
+      "category": "backups",
+      "timestamp": "20250920_182458",
+      "hash": "508fcafd",
+      "size": 5632
+    },
+    "backups_20250920_182459_f91df7e1.py": {
+      "original_path": "/home/workspace/N5/scripts/system_upgrades_backup_manager_20250920_132252.py",
+      "category": "backups",
+      "timestamp": "20250920_182459",
+      "hash": "f91df7e1",
+      "size": 9195
+    },
+    "temporary_20250920_182459_32e49f44.py": {
+      "original_path": "/home/workspace/N5/scripts/direct_ingestion_template_20250920_132252.py",
+      "category": "temporary",
+      "timestamp": "20250920_182459",
+      "hash": "32e49f44",
+      "size": 1597
+    },
+    "backups_20250920_182459_f5d59b11.jsonl": {
+      "original_path": "/home/workspace/N5/N5/commands.backup_20250920_040316_20250920_132252.jsonl",
+      "category": "backups",
+      "timestamp": "20250920_182459",
+      "hash": "f5d59b11",
+      "size": 35070
+    },
+    "temporary_20250920_182459_057e3a52.txt": {
+      "original_path": "/home/workspace/N5/tmp_execution/sample_conversation_20250920_132252.txt",
+      "category": "temporary",
+      "timestamp": "20250920_182459",
+      "hash": "057e3a52",
+      "size": 1847
+    },
+    "logs_20250920_182459_1ca722f6.log": {
+      "original_path": "/home/workspace/N5/tmp_execution/logs/execution_manager_20250920_132252.log",
+      "category": "logs",
+      "timestamp": "20250920_182459",
+      "hash": "1ca722f6",
+      "size": 23637
+    },
+    "backups_20250920_182459_c62e4cf4.bak": {
+      "original_path": "/home/workspace/N5/commands.jsonl.bak",
+      "category": "backups",
+      "timestamp": "20250920_182459",
+      "hash": "c62e4cf4",
+      "size": 7833
+    },
+    "temporary_20250920_182459_a564efce.md": {
+      "original_path": "/home/workspace/N5/system_docs/templates/feature_documentation_template_20250920_132252.md",
+      "category": "temporary",
+      "timestamp": "20250920_182459",
+      "hash": "a564efce",
+      "size": 2005
+    },
+    "backups_20250920_182459_bc8ed4bd.py": {
+      "original_path": "/home/workspace/N5/tests/test_system_upgrades_backup_manager_20250920_132252.py",
+      "category": "backups",
+      "timestamp": "20250920_182459",
+      "hash": "bc8ed4bd",
+      "size": 1853
+    },
+    "backups_20250920_182459_23875860.jsonl": {
+      "original_path": "/home/workspace/N5/commands.backup_20250920_101843_20250920_132252.jsonl",
+      "category": "backups",
+      "timestamp": "20250920_182459",
+      "hash": "23875860",
+      "size": 9001
+    },
+    "backups_20250920_182459_17cd773d.backup_20250920_071417": {
+      "original_path": "/home/workspace/N5/commands.md_20250920_132252.backup_20250920_071417",
+      "category": "backups",
+      "timestamp": "20250920_182459",
+      "hash": "17cd773d",
+      "size": 1453
+    }
+  },
+  "created_at": "2025-09-20T13:50:01+00:00",
+  "system_info": "Zo Computer Cache System v1.0"
+}

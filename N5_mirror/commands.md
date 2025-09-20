@@ -1,3 +1,16 @@
+---
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
+checksum: 73b000f736ebb07772339cb0e07e3606
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors:
+  input: null
+  output: /home/workspace/N5_mirror/commands.md
+---
 # N5 Command Catalog
 Generated from commands.jsonl. Do not edit by hand.
 
