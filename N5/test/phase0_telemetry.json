@@ -3,32 +3,39 @@
   "component": "schemas",
   "success": true,
   "results": {
-    "commands.schema.json": {
+    "index.schema.json": {
       "schema_valid": true,
       "data_validation": true
     },
     "lists.item.schema.json": {
       "schema_valid": true,
-      "data_validation": true,
-      "data_error": "'id' is a required property\n\nFailed validating 'required' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     '$id': 'https://n5.local/schemas/lists.item.schema.json',\n     'title': 'N5 List Item',\n     'type': 'object',\n     'required': ['id', 'created_at', 'title', 'status'],\n     'additionalProperties': True,\n     'properties': {'id': {'type': 'string'},\n                    'created_at': {'type': 'string', 'format': 'date-time'},\n                    'updated_at': {'type': 'string', 'format': 'date-time'},\n                    'title': {'type': 'string', 'maxLength': 200},\n                    'body': {'type': 'string'},\n                    'tags': {'type': 'array',\n                             'items': {'type': 'string'},\n                             'uniqueItems': True},\n                    'status': {'type': 'string',\n                               'enum': ['open',\n                                        'pinned',\n                                        'done',\n                                        'archived']},\n                    'priority': {'oneOf': [{'type': 'string',\n                                            'enum': ['L', 'M', 'H']},\n                                           {'type': 'integer',\n                                            'minimum': 1,\n                                            'maximum': 5}]},\n                    'links': {'type': 'array',\n                              'items': {'type': 'object',\n                                        'required': ['type', 'value'],\n                                        'properties': {'type': {'type': 'string',\n                                                                'enum': ['file',\n                                                                         'url',\n                                                                         'ref']},\n                                                       'value': {'type': 'string'}}}},\n                    'source': {'type': 'string'},\n                    'project': {'type': 'string'},\n                    'due': {'type': ['string', 'null'],\n                            'format': 'date-time'},\n                    'notes': {'type': 'string'}}}\n\nOn instance:\n    {'slug': 'phase3-test',\n     'title': 'Phase 3 Test List',\n     'path_jsonl': 'N5/lists/phase3-test.jsonl',\n     'path_md': 'N5/lists/phase3-test.md',\n     'created_at': '2025-09-18T03:08:42.880694+00:00',\n     'updated_at': '2025-09-18T03:10:12.939616+00:00',\n     'tags': ['phase3', 'test'],\n     'promoted': True,\n     'promoted_at': '2025-09-18T03:10:12.939616+00:00'}"
+      "data_validation": true
+    },
+    "knowledge.facts.schema.json": {
+      "schema_valid": true
     },
     "lists.registry.schema.json": {
       "schema_valid": true,
       "data_validation": true
     },
-    "index.schema.json": {
+    "commands.schema.json": {
       "schema_valid": true,
       "data_validation": true
     },
-    "knowledge.facts.schema.json": {
+    "ingest.plan.schema.json": {
+      "schema_valid": true
+    },
+    "system-upgrades.schema.json": {
       "schema_valid": true
     }
   },
   "checksums": {
-    "commands.schema.json": "341260414fba0f86a06b291286cd3cbb22941a169aabc970b6d4955907eefed8",
-    "lists.item.schema.json": "0e7ec91c3c297d1c7a74ce05c3122d27e869e23f58207c1979c395415fb2175f",
-    "lists.registry.schema.json": "c2306682879df2967e273244cdee0b9706b79752b79f916ce4b2919a2d9cf0ef",
     "index.schema.json": "113c1abc97731c1a56b03cc95685be37e790c6c3ef530b1dae0d828cc72d4633",
-    "knowledge.facts.schema.json": "bd2b2e6af9510d8b1238c1471fc91fc5c76b591de15a7aabf705135eb164ead0"
+    "lists.item.schema.json": "9d7d05e97540bfbcb28d484add5c0ce0e8fb196e0c01a794f022babd2debc7c5",
+    "knowledge.facts.schema.json": "bd2b2e6af9510d8b1238c1471fc91fc5c76b591de15a7aabf705135eb164ead0",
+    "lists.registry.schema.json": "c2306682879df2967e273244cdee0b9706b79752b79f916ce4b2919a2d9cf0ef",
+    "commands.schema.json": "ba3b135289018b84284529f61662e4c55716499049ec68424dc7660d11fffe41",
+    "ingest.plan.schema.json": "001238891187880cccd536344daac4fec6a2f288338d4c4947de89a1ea06a7b9",
+    "system-upgrades.schema.json": "ce3dd898d157b5d977ef9fb97a60380ce12a8d360bcbdb7eb7149ce7871737de"
   }
 }

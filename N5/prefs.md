@@ -6,11 +6,13 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 
 - `docgen` — Generate command catalog and update prefs Command Index from commands.jsonl (see ./commands/docgen.md)
 - `git-check` — Quick audit for overwrites or data loss in staged Git changes (see ./commands/git-check.md)
+- `grep-search-command-creation` — Automated command_creation workflow using grep_search, create_command_draft, validate_command (see ./commands/grep-search-command-creation.md)
+- `index-rebuild` — Rebuild the N5 system index from source files (see ./commands/index-rebuild.md)
 - `lists-add` — Add an item to a list with intelligent assignment (see ./commands/lists-add.md)
 - `lists-move` — Move an item from one list to another atomically (see ./commands/lists-move.md)
+- `system-upgrades-add` — Interactive command for adding items to the N5 system upgrades list with validation and safety features (see ./commands/system-upgrades-add.md)
 - `timeline` — View n5.os development timeline and system history (see ./commands/timeline.md)
-- `timeline-add` — Add new entry to n5.os development timeline (see ./commands/timeline.md)
-- `file-protector` — Check file safety before overwrite operations (see ./scripts/file_protector.py)
+- `timeline-add` — Add new entry to n5.os development timeline (see ./commands/timeline-add.md)
 
 ## Review & Safety
 

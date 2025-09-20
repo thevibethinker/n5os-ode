@@ -27,6 +27,9 @@ def send_email_approval_request(command: str, details: Dict[str, Any]) -> bool:
 
 def check_permissions(command_spec: Dict[str, Any], args: argparse.Namespace) -> bool:
     """Check if command has required permissions and obtain approvals."""
+    if command_spec is None:
+        return True
+    
     permissions = command_spec.get("permissions_required", [])
     if not permissions:
         return True
