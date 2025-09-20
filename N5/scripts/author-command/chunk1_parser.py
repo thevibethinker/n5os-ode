@@ -9,6 +9,7 @@ Implements telemetry logging for diagnostics.
 import json
 import logging
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -66,6 +67,49 @@ class ConversationParser:
         self.parse_time = 0.0
         self.error_count = 0
         self.input_size = 0
+    
+    def _validate_file_path(self, file_path: str) -> bool:
+        """Validate file path for security"""
+        try:
+            # Normalize and resolve path
+            resolved_path = Path(file_path).resolve()
+            
+            # Check for path traversal attempts  
+            if '..' in str(resolved_path):
+                logger.warning(f"Path traversal attempt detected: {file_path}")
+                return False
+            
+            # Check if path is within allowed directories
+            allowed_dirs = [
+                Path("/home/workspace/N5/tmp_execution").resolve(),
+                Path("/home/workspace/N5/test").resolve()
+            ]
+            
+            if not any(str(resolved_path).startswith(str(allowed_dir)) for allowed_dir in allowed_dirs):
+                logger.warning(f"File path outside allowed directories: {file_path}")
+                return False
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"Path validation error: {e}")
+            return False
+    
+    def _check_file_size(self, file_path: str, max_size_mb: int = 10) -> bool:
+        """Check if file size is within limits"""
+        try:
+            file_size = os.path.getsize(file_path)
+            max_size_bytes = max_size_mb * 1024 * 1024
+            
+            if file_size > max_size_bytes:
+                logger.warning(f"File too large: {file_size} bytes (max: {max_size_bytes})")
+                return False
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"File size check error: {e}")
+            return False
     
     def parse_conversation(self, conversation_path: str) -> Dict[str, Any]:
         """
@@ -127,14 +171,20 @@ class ConversationParser:
         current_content = []
         segment_id_counter = 0
         
-        for line in lines:
+        for line_num, line in enumerate(lines):
             line = line.strip()
             if not line:
                 continue
             
             # Identify segment boundaries
             if self._is_new_segment(line):
-                if current_segment:
+                # Finalize previous segment
+                if current_segment and current_content:
+                    current_segment.content = '\n'.join(current_content)
+                    # Parse tool parameters if it's a tool call
+                    if current_segment.segment_type == 'tool_call':
+                        current_segment.parameters = self._extract_tool_parameters(current_segment.content)
+                        current_segment.tool_name = self._extract_tool_name(current_segment.content)
                     segments.append(current_segment)
                 
                 segment_type, tool_name = self._classify_segment(line)
@@ -150,48 +200,83 @@ class ConversationParser:
                 
             elif current_segment:
                 current_content.append(line)
-                current_segment.content = '\n'.join(current_content)
         
         # Add final segment
-        if current_segment:
+        if current_segment and current_content:
+            current_segment.content = '\n'.join(current_content)
+            if current_segment.segment_type == 'tool_call':
+                current_segment.parameters = self._extract_tool_parameters(current_segment.content)
+                current_segment.tool_name = self._extract_tool_name(current_segment.content)
             segments.append(current_segment)
         
         return segments
     
     def _is_new_segment(self, line: str) -> bool:
         """Determine if line starts a new segment"""
-        return (
-            line.startswith('User:') or 
-            line.startswith('Assistant:') or
-            line.startswith('Human:') or
-            line.startswith('AI:') or
-            line.startswith('Tool:') or
-            'function_call' in line.lower()
-        )
+        segment_patterns = [
+            r'^User:',
+            r'^Assistant:',
+            r'^Human:',
+            r'^AI:',
+            r'^Tool:',
+            r'function_call',
+            r'^\[\d{2}:\d{2}:\d{2}\]',  # Timestamp format [HH:MM:SS]
+            r'^\d{4}-\d{2}-\d{2}',      # Date format YYYY-MM-DD
+        ]
+        
+        for pattern in segment_patterns:
+            if re.search(pattern, line, re.IGNORECASE):
+                return True
+        return False
     
     def _classify_segment(self, line: str) -> tuple[str, Optional[str]]:
         """Classify segment type and extract tool name if applicable"""
-        if 'User:' in line or 'Human:' in line:
+        line_lower = line.lower()
+        
+        if re.match(r'^(user|human):', line, re.IGNORECASE):
             return 'user_query', None
-        elif 'Assistant:' in line or 'AI:' in line:
+        elif re.match(r'^(assistant|ai):', line, re.IGNORECASE):
             return 'assistant_response', None
-        elif 'Tool:' in line or 'function_call' in line.lower():
-            # Extract tool name from line
-            tool_name = self._extract_tool_name(line)
-            return 'tool_call', tool_name
+        elif re.match(r'^tool:', line, re.IGNORECASE) or 'function_call' in line_lower:
+            return 'tool_call', None  # Tool name extracted later
+        elif re.match(r'^\[\d{2}:\d{2}:\d{2}\]', line):
+            return 'timestamp_marker', None
+        elif re.match(r'^\d{4}-\d{2}-\d{2}', line):
+            return 'date_marker', None
+        elif line.startswith('#') or line.startswith('##'):
+            return 'section_header', None
         else:
-            return 'unknown', None
+            return 'continuation', None  # Content continuing previous segment
     
-    def _extract_tool_name(self, line: str) -> Optional[str]:
-        """Extract tool name from tool call line"""
-        # Simple extraction - adjust based on actual format
-        if 'name=' in line:
-            # Assume format like: function_call name="tool_name"
-            parts = line.split('name=')
-            if len(parts) > 1:
-                tool_part = parts[1].split()[0].strip('"\'')
+    def _extract_tool_name(self, content: str) -> Optional[str]:
+        """Extract tool name from tool call content"""
+        lines = content.split('\n')
+        for line in lines:
+            line = line.strip()
+            if line.startswith('Tool:'):
+                # Extract tool name from "Tool: tool_name" format
+                tool_part = line[5:].strip()  # Remove "Tool: " prefix
                 return tool_part
         return None
+    
+    def _extract_tool_parameters(self, content: str) -> Dict[str, Any]:
+        """Extract parameters from tool call content"""
+        parameters = {}
+        lines = content.split('\n')
+        
+        for line in lines:
+            line = line.strip()
+            if line.startswith('Parameters:'):
+                # Extract JSON parameters
+                param_part = line[11:].strip()  # Remove "Parameters: " prefix
+                try:
+                    parameters = json.loads(param_part)
+                except json.JSONDecodeError as e:
+                    logger.warning(f"Failed to parse tool parameters: {e}")
+                    parameters = {'raw_parameters': param_part}
+                break
+        
+        return parameters
 
 
 def main():

@@ -72,6 +72,13 @@ Criteria (weights sum to 100%)
 - 5: Sparse notes
 - 0: None
 
+7) Folder Policy Architecture — 8%
+- 10: POLICY.md files implemented in all folders; overrides prefs.md correctly; anchors link to root; mandatory checks enforced
+- 7: Policies exist in key folders but some gaps; overrides partial; anchors present but incomplete
+- 4: Basic policies drafted but not consistently applied; overrides unclear
+- 1: Policies mentioned but not implemented
+- 0: No folder policy system
+
 How to score
 - Use file N5/zo_setup_rubric.sheet.json. Enter a 0–10 score per criterion; the sheet computes a weighted total (0–10).
 - Keep brief notes/evidence in the Notes column. Where possible, link to files (e.g., file N5/index.md, file N5/prefs.md).
