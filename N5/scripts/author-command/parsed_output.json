@@ -1,0 +1,154 @@
+{
+  "segments": [
+    {
+      "id": "seg_0",
+      "timestamp": "2025-09-20T04:53:36.729903",
+      "content": "",
+      "segment_type": "user_query",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_1",
+      "timestamp": "2025-09-20T04:53:36.729911",
+      "content": "Assistant: I'd be happy to help you create a command for analyzing text files. Let me understand what you need first.\nWhat kind of analysis would you like to perform on the text files? For example:\n- Word count\n- Line count\n- Search for specific patterns\n- Generate summaries",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_2",
+      "timestamp": "2025-09-20T04:53:36.729921",
+      "content": "",
+      "segment_type": "user_query",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_3",
+      "timestamp": "2025-09-20T04:53:36.729924",
+      "content": "Assistant: Perfect! I'll create a command that analyzes text files and provides word count, line count, and basic statistics.\nFirst, let me check if there are any existing similar commands in the system.",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_4",
+      "timestamp": "2025-09-20T04:53:36.729928",
+      "content": "Tool: grep_search\nParameters: {\"query\": \"word.*count|line.*count\", \"location\": \"USER\"}",
+      "segment_type": "tool_call",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_5",
+      "timestamp": "2025-09-20T04:53:36.729931",
+      "content": "Assistant: The search shows no existing commands for word/line counting. Good, we can proceed.\nNow let me generate the command structure.",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_6",
+      "timestamp": "2025-09-20T04:53:36.729934",
+      "content": "Tool: create_command_draft\nParameters: {\"name\": \"analyze-text\", \"description\": \"Analyze text files for word count, line count, and statistics\", \"parameters\": [\"file_path\"]}",
+      "segment_type": "tool_call",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_7",
+      "timestamp": "2025-09-20T04:53:36.729937",
+      "content": "",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_8",
+      "timestamp": "2025-09-20T04:53:36.729939",
+      "content": "Tool: validate_command\nParameters: {\"command\": \"analyze-text\"}",
+      "segment_type": "tool_call",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_9",
+      "timestamp": "2025-09-20T04:53:36.729942",
+      "content": "",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_10",
+      "timestamp": "2025-09-20T04:53:36.729943",
+      "content": "Tool: dry_run_command\nParameters: {\"command\": \"analyze-text\", \"args\": [\"/home/workspace/sample.txt\"]}",
+      "segment_type": "tool_call",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_11",
+      "timestamp": "2025-09-20T04:53:36.729946",
+      "content": "",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_12",
+      "timestamp": "2025-09-20T04:53:36.729947",
+      "content": "",
+      "segment_type": "user_query",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_13",
+      "timestamp": "2025-09-20T04:53:36.729949",
+      "content": "",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_14",
+      "timestamp": "2025-09-20T04:53:36.729951",
+      "content": "Tool: update_command\nParameters: {\"command\": \"analyze-text\", \"add_error_handling\": true}",
+      "segment_type": "tool_call",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_15",
+      "timestamp": "2025-09-20T04:53:36.729953",
+      "content": "",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_16",
+      "timestamp": "2025-09-20T04:53:36.729955",
+      "content": "Tool: export_command\nParameters: {\"command\": \"analyze-text\", \"target\": \"commands.jsonl\"}",
+      "segment_type": "tool_call",
+      "tool_name": null,
+      "parameters": {}
+    },
+    {
+      "id": "seg_17",
+      "timestamp": "2025-09-20T04:53:36.729957",
+      "content": "",
+      "segment_type": "assistant_response",
+      "tool_name": null,
+      "parameters": {}
+    }
+  ],
+  "telemetry": {
+    "segment_count": 18,
+    "parse_time": 0.0002884864807128906,
+    "error_count": 0,
+    "input_size": 1847
+  }
+}
