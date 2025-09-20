@@ -1,3 +1,16 @@
+---
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
+checksum: 8b07ded808a5b3fdaa759fca3b3fbdc9
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors:
+  input: null
+  output: /home/workspace/N5_mirror/index.md
+---
 # N5 OS Index
 
 Generated from index.jsonl. Do not edit by hand.

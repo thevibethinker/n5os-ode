@@ -1,0 +1,51 @@
+{
+  "schema": "n5os.calendar_followups",
+  "generated_at": "2025-09-20T22:49:30.567222+00:00",
+  "items": [
+    {
+      "cta_pointer": "#/ctas/0",
+      "owner": "Logan Currie",
+      "time": "18:56",
+      "action": "Send self\u2011determination theory paper to the group",
+      "prompt": "Propose 2\u20133 meeting windows for Logan Currie to advance: 'Send self\u2011determination theory paper to the group' (source 18:56). Include a brief agenda and link to content_map.json \u2192 0 if relevant."
+    },
+    {
+      "cta_pointer": "#/ctas/1",
+      "owner": "Shujaat Ahmad",
+      "time": "18:53",
+      "action": "Read Logan\u2019s self\u2011determination theory paper once shared",
+      "prompt": "Propose 2\u20133 meeting windows for Shujaat Ahmad to advance: 'Read Logan\u2019s self\u2011determination theory paper once shared' (source 18:53). Include a brief agenda and link to content_map.json \u2192 1 if relevant."
+    },
+    {
+      "cta_pointer": "#/ctas/2",
+      "owner": "Logan Currie",
+      "time": "22:45",
+      "action": "Share the paper and invite feedback",
+      "prompt": "Propose 2\u20133 meeting windows for Logan Currie to advance: 'Share the paper and invite feedback' (source 22:45). Include a brief agenda and link to content_map.json \u2192 2 if relevant."
+    },
+    {
+      "cta_pointer": "#/ctas/3",
+      "owner": "Logan Currie",
+      "time": "29:48",
+      "action": "Send a quick follow\u2011up and propose next steps",
+      "prompt": "Propose 2\u20133 meeting windows for Logan Currie to advance: 'Send a quick follow\u2011up and propose next steps' (source 29:48). Include a brief agenda and link to content_map.json \u2192 3 if relevant."
+    },
+    {
+      "cta_pointer": "#/ctas/4",
+      "owner": "Vrijen Attawar",
+      "time": "36:02",
+      "action": "Send details/context and optionality for involvement (tiers)",
+      "prompt": "Propose 2\u20133 meeting windows for Vrijen Attawar to advance: 'Send details/context and optionality for involvement (tiers)' (source 36:02). Include a brief agenda and link to content_map.json \u2192 4 if relevant."
+    },
+    {
+      "cta_pointer": "#/ctas/5",
+      "owner": "Vrijen/All",
+      "time": "38:49",
+      "action": "Plan a future conversation",
+      "prompt": "Propose 2\u20133 meeting windows for Vrijen/All to advance: 'Plan a future conversation' (source 38:49). Include a brief agenda and link to content_map.json \u2192 5 if relevant."
+    }
+  ],
+  "provenance": {
+    "content_map": "content_map.json"
+  }
+}

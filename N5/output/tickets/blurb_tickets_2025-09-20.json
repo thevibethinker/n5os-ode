@@ -1,0 +1,27 @@
+[
+  {
+    "id": "cta_1",
+    "type": "action_item",
+    "content": "So I was in lots of startups, basically, but all in Asia",
+    "status": "pending",
+    "priority": "medium"
+  },
+  {
+    "id": "cta_2",
+    "type": "action_item",
+    "content": "How do I connect with others?",
+    "status": "pending",
+    "priority": "medium"
+  },
+  {
+    "id": "warm_intro_1_general",
+    "type": "warm_introduction",
+    "content": "Explore introduction opportunities for participant - with others?",
+    "status": "pending",
+    "priority": "medium",
+    "intro_type": "networking_introduction",
+    "participants": [],
+    "trigger_context": "skills, communication skills. Right. How do I connect with others?",
+    "confidence_score": 0.7
+  }
+]

@@ -24,6 +24,10 @@ class FileProtector:
     MEDIUM_PROTECTION_FILES = [
         "/home/workspace/N5/commands.jsonl",  # Command registry (curated)
         "/home/workspace/N5/lists/*.jsonl",   # User data (curated)
+        "/home/workspace/N5/lists/little_bird_functionality_updates_*.md",  # Specific list (curated)
+        "/home/workspace/N5_mirror/lists/little-bird-functionality-updates.md",  # Mirror list (curated)
+        "/home/workspace/N5/commands/direct_knowledge_ingest_*.md",  # Direct ingest command (curated)
+        "/home/workspace/N5_mirror/commands/direct-knowledge-ingest.md",  # Mirror command (curated)
         "/home/workspace/N5/timeline/*.jsonl", # Timeline entries (curated)
     ]
     

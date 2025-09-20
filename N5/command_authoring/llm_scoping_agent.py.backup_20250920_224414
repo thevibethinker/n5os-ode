@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""
+LLM Scoping Agent Module for N5 Command Authoring System
+
+Uses LLM to scope and clarify command requirements from parsed segments.
+"""
+
+from typing import Dict, Any, List
+import json
+
+def query_llm(prompt: str) -> str:
+    """
+    Query LLM with a prompt (mock implementation).
+
+    Args:
+        prompt: The prompt to send to LLM
+
+    Returns:
+        LLM response string
+    """
+    # Mock LLM response for development
+    if "scope" in prompt.lower():
+        return json.dumps({
+            "steps": [
+                {"id": 1, "description": "Parse input parameters", "type": "action"},
+                {"id": 2, "description": "Validate data", "type": "validation"},
+                {"id": 3, "description": "Store in database", "type": "action"}
+            ],
+            "confidence": 0.8
+        })
+    else:
+        return "Mock LLM response: " + prompt[:50]
+
+def scope_and_clarify_segments(segments: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Scope and clarify command requirements from segments.
+
+    Args:
+        segments: Parsed conversation segments
+
+    Returns:
+        Scoped draft with steps and clarification
+    """
+    if not segments:
+        return {'error': 'No segments provided'}
+
+    # Extract main task from segments
+    main_task = ""
+    for segment in segments:
+        if segment.get('type') == 'task':
+            main_task = segment.get('content', '')
+            break
+
+    if not main_task:
+        return {'error': 'No task found in segments'}
+
+    # Mock scoping based on task content
+    if 'essential-links-add' in main_task.lower():
+        return {
+            'original_segments': segments,
+            'scoped_steps': [
+                {'id': 1, 'description': 'Parse URL, category, title, description from input', 'type': 'action', 'details': ['Validate URL format', 'Check required fields']},
+                {'id': 2, 'description': 'Create link record with metadata', 'type': 'action', 'details': ['Generate UID', 'Add timestamps', 'Set status']},
+                {'id': 3, 'description': 'Validate link record', 'type': 'validation', 'details': ['Check duplicates', 'Validate data types']},
+                {'id': 4, 'description': 'Append to JSONL file', 'type': 'action', 'details': ['Atomic write', 'Backup creation', 'Error handling']}
+            ],
+            'confidence': 0.9,
+            'clarification_loops': 0
+        }
+
+    # Generic fallback
+    return {
+        'original_segments': segments,
+        'scoped_steps': [
+            {'id': 1, 'description': 'Parse input parameters', 'type': 'action'},
+            {'id': 2, 'description': 'Validate and process data', 'type': 'validation'},
+            {'id': 3, 'description': 'Execute main operation', 'type': 'action'}
+        ],
+        'confidence': 0.7,
+        'clarification_loops': 1
+    }

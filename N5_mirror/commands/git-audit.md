@@ -1,1 +1,14 @@
+---
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
+checksum: 7d5e078db29ed8b92e6a66414aa91f49
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors:
+  input: null
+  output: /home/workspace/N5_mirror/commands/git-audit.md
+---
 # `git-audit`\n\nVersion: 0.1.0\n\nSummary: Scan the workspace for files that should be tracked by Git but are untracked, and generate commands to add them.\n\nWorkflow: ops\n\nTags: git, audit\n\n## Examples\n- N5: run git-audit\n\n## Related Components\n\n**Related Commands**: [`docgen`](../commands/docgen.md), [`index-update`](../commands/index-update.md), [`index-rebuild`](../commands/index-rebuild.md), [`digest-runs`](../commands/digest-runs.md)\n\n**Examples**: See [Examples Library](../examples/) for usage patterns\n\n

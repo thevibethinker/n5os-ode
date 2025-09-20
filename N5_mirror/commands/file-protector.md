@@ -1,3 +1,16 @@
+---
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
+checksum: 4c6ec1ca89ad1d3c857e17e7555ea652
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors:
+  input: /home/workspace/N5/prefs.md
+  output: /home/workspace/N5_mirror/commands/file-protector.md
+---
 # file-protector command
 
 Check file safety before overwrite operations to prevent accidental data loss.
