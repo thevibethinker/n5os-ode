@@ -1,0 +1,16 @@
+# N5 Command Catalog
+Generated from commands.jsonl. Do not edit by hand.
+
+| Name | Version | Workflow | Summary | Side Effects | Permissions |
+| --- | --- | --- | --- | --- | --- |
+| [`docgen`](./docgen.md) | 0.1.0 | ops | Generate command catalog and update prefs Command Index from commands.jsonl | writes:file, modifies:file |  |
+| [`git-check`](./git-check.md) | 0.1.0 | ops | Quick audit for overwrites or data loss in staged Git changes |  |  |
+| [`lists-add`](./lists-add.md) | 0.2.0 | lists | Add an item to a list with intelligent assignment | writes:file, modifies:file |  |
+| [`lists-move`](./lists-move.md) | 0.1.0 | lists | Move an item from one list to another atomically | modifies:file, writes:file |  |
+| grep-search-command_creation | 0.1.0 | automation | Automated command_creation workflow using grep_search, create_command_draft, validate_command | executes:command, atomic:operations | filesystem:read, filesystem:read, filesystem:read, tools:execute |
+| grep-search-command_creation_v2 | 0.1.0 | automation | Automated command_creation workflow using grep_search, create_command_draft, validate_command | executes:command, atomic:operations | filesystem:read, filesystem:read, filesystem:read, tools:execute |
+
+
+---
+
+*Note: This file is automatically updated from the commands.jsonl datastore. Commands include metadata with knowledge linking to external reservoirs and cross-references to enhance discoverability and usability.*

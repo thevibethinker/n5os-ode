@@ -1,0 +1,2 @@
+# Secrets for job ingestion subsystem
+*.env

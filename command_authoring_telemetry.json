@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-09-20T07:09:47.122074",
+  "metrics": {
+    "execution_times": [
+      {
+        "component": "parser",
+        "duration": 0.1,
+        "timestamp": "2025-09-20T07:09:46.617165",
+        "success": true
+      },
+      {
+        "component": "generator",
+        "duration": 0.3,
+        "timestamp": "2025-09-20T07:09:46.617255",
+        "success": false
+      },
+      {
+        "component": "parser",
+        "duration": 0.2,
+        "timestamp": "2025-09-20T07:09:46.718250",
+        "success": true
+      },
+      {
+        "component": "generator",
+        "duration": 0.4,
+        "timestamp": "2025-09-20T07:09:46.718330",
+        "success": false
+      },
+      {
+        "component": "parser",
+        "duration": 0.30000000000000004,
+        "timestamp": "2025-09-20T07:09:46.818823",
+        "success": true
+      },
+      {
+        "component": "generator",
+        "duration": 0.5,
+        "timestamp": "2025-09-20T07:09:46.818876",
+        "success": true
+      },
+      {
+        "component": "parser",
+        "duration": 0.4,
+        "timestamp": "2025-09-20T07:09:46.920036",
+        "success": true
+      },
+      {
+        "component": "generator",
+        "duration": 0.6000000000000001,
+        "timestamp": "2025-09-20T07:09:46.920134",
+        "success": true
+      },
+      {
+        "component": "parser",
+        "duration": 0.5,
+        "timestamp": "2025-09-20T07:09:47.020994",
+        "success": true
+      },
+      {
+        "component": "generator",
+        "duration": 0.7,
+        "timestamp": "2025-09-20T07:09:47.021068",
+        "success": true
+      }
+    ],
+    "success_rates": {
+      "parser": {
+        "total": 5,
+        "successful": 5
+      },
+      "generator": {
+        "total": 5,
+        "successful": 3
+      }
+    },
+    "error_types": {
+      "file_not_found": [
+        {
+          "component": "validator",
+          "details": "Missing file in iteration 0",
+          "timestamp": "2025-09-20T07:09:46.617310"
+        },
+        {
+          "component": "validator",
+          "details": "Missing file in iteration 2",
+          "timestamp": "2025-09-20T07:09:46.818908"
+        },
+        {
+          "component": "validator",
+          "details": "Missing file in iteration 4",
+          "timestamp": "2025-09-20T07:09:47.021275"
+        }
+      ]
+    },
+    "component_health": {
+      "validator": "error"
+    },
+    "resource_usage": {},
+    "user_interactions": 0
+  },
+  "performance_report": {
+    "session_duration": 0.505107,
+    "total_interactions": 0,
+    "success_rates_summary": {
+      "parser": {
+        "total_executions": 5,
+        "successful": 5,
+        "success_rate": 1.0
+      },
+      "generator": {
+        "total_executions": 5,
+        "successful": 3,
+        "success_rate": 0.6
+      }
+    },
+    "performance_metrics": {
+      "average_execution_time": 0.41250000000000003,
+      "max_execution_time": 0.7,
+      "min_execution_time": 0.1,
+      "total_executions": 8
+    },
+    "error_summary": {
+      "file_not_found": {
+        "count": 3,
+        "components": [
+          "validator"
+        ]
+      }
+    }
+  }
+}

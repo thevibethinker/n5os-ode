@@ -1,0 +1,2 @@
+echo 'Hello from thread 1'
+echo 'Hello from thread 2'
