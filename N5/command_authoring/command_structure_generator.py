@@ -36,7 +36,7 @@ def generate_command_structure(scoped_draft: Dict[str, Any]) -> Dict[str, Any]:
         # Build structured command
         structured_command = {
             'id': command_id,
-            'command': command_name,
+            'name': command_name,
             'version': '1.0.0',
             'created_at': datetime.now().isoformat(),
             'source': 'conversation_authoring',

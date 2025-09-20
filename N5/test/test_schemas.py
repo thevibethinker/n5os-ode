@@ -69,7 +69,7 @@ def test_schemas():
         if 'commands' in schema_file.name:
             data_files = [n5_root / 'commands.jsonl']
         elif 'lists.item' in schema_file.name:
-            data_files = list((n5_root / 'lists').glob('*.jsonl'))
+            data_files = [f for f in (n5_root / 'lists').glob('*.jsonl') if f.name != 'index.jsonl']
         elif 'lists.registry' in schema_file.name:
             data_files = [n5_root / 'lists' / 'index.jsonl']
         elif 'index' in schema_file.name:

@@ -1,19 +1,19 @@
 {
   "phase": "e2e",
   "component": "e2e",
-  "success": false,
+  "success": true,
   "results": {
-    "test_boot_workflow": false,
+    "test_boot_workflow": true,
     "test_cycle_workflow": true,
     "test_safety_workflow": true,
     "test_edge_cases": true
   },
   "checksums": {
-    "index.jsonl": "3c9a556ca5a817ee544ee637c22c606ab1d88e59e7b525e86dd572f75b0c60b9",
-    "index.md": "b444107dd13776b5e192675d72182cd904a520b463b086ab5f8f0cb2cef9cf5f",
-    "commands.md": "1a6876fa6f815320cbde09a10115de4c5e054f76d95ee4df0f9949d734cb5f13",
-    "commands.jsonl": "a278bb9be60e5095d7e85fd666d354414009566676fe32a84a5ab5b74115816b",
-    "prefs.md": "0652c4196a571e56612b60edbe82112d3694426f164b0ed2386ffd5c50a1dcb0",
-    "lists/index.jsonl": "7b110713c472461dddfaf05140f7bb0922d4aedb6066d89ce180c8424c2de80c"
+    "index.jsonl": "445eca6dd889b331b6b3a20e126168bf999fc181540cd9618ec573a2f5570dd1",
+    "index.md": "f5396b0785e9a76699d16c050aa9907e734a0cab611263da87b1dffcf5e2daf7",
+    "commands.md": "6fdfceb130f25dd97eeceac7cfbd97bbf9cbff09aff14f6545e532098c2a917d",
+    "commands.jsonl": "83760e844fed20471ab08260d1f7b2c8d25f859d568bb3b665f66ec9cb5452dd",
+    "prefs.md": "c9f4a1346302531f1061ec3e344b5b6a1536a0167ec3f96e832d0cd009bb3725",
+    "lists/index.jsonl": "317d3cfde04354ae734aa77543f87438197f3045320d46c8655dbc9bc4a04ed0"
   }
 }

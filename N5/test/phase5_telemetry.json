@@ -1,15 +1,15 @@
 {
   "phase": 5,
   "component": "indexer",
-  "success": false,
+  "success": true,
   "results": {
-    "test_index_rebuild": false,
+    "test_index_rebuild": true,
     "test_index_structure": true
   },
   "checksums": {
-    "index.jsonl": "7531437098982c40ee73feb5257c0cbad06592126f7ee7b73259e2dcc6440d96",
-    "index.md": "b444107dd13776b5e192675d72182cd904a520b463b086ab5f8f0cb2cef9cf5f",
-    "n5_index_rebuild.py": "3bab3df1c163f04a66e818f0a83ff1e178e20a91058f419fc97a25973522b376",
-    "n5_index_update.py": "2677736ed8e3513c65a424be57acfa04eb88dedfaf94e2b0ec89f5e9d29d9a6b"
+    "index.jsonl": "fa6685ef2db7665dc78c890ddb7a13bd470c258c387ef67bbed69c39e1a3b6af",
+    "index.md": "f5396b0785e9a76699d16c050aa9907e734a0cab611263da87b1dffcf5e2daf7",
+    "n5_index_rebuild.py": "8efc29adc257faa1c12bf6b0c3b3f57b05bac1a971c7d733956f683d7048e9dc",
+    "n5_index_update.py": "5cbbd4f5273ad3b412268b565493784625a429d3ae295f92aef2969fa7973158"
   }
 }

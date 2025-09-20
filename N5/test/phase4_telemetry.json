@@ -6,7 +6,10 @@
     "test_records_structure": true
   },
   "checksums": {
-    "records_ideas.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "records_phase3-test.jsonl": "f58752de379716964218cb274708c3d50299d6a98a5d879673639691d7a45bd8"
+    "records_phase3-test.jsonl": "f58752de379716964218cb274708c3d50299d6a98a5d879673639691d7a45bd8",
+    "records_system-upgrades.jsonl": "79ff107d3bfacf64b054fba7684663bbce2ef2ae753e050b4ae93ecd5018f2bc",
+    "records_ideas.jsonl": "acbef9d0f0535e032bfcc1d0cb0eaef55c8e41b52c8f3c526ceefe66276951de",
+    "records_social_media_ideas.jsonl": "73aeaab7c3d41439118a4e6133342607b361f0cc840b625168c44d57558a5aa7",
+    "records_squawk.jsonl": "8f71bbfc747ec9955525f52cee3341d7d2b901ab1bda7adbd1a730b0b1d48b95"
   }
 }
