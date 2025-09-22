@@ -495,3 +495,4 @@ Use 24-hour format system-wide (e.g., 16:00 instead of 4:00 pm).
 - Persistence: This file serves as the core reference; updates logged here.
 - Testing: Use sample inputs to validate; feedback loops active.
 - Change Log (Appends): Restored to original full version; added safeguard note and military time override.
+When referring to lists, always check /home/workspace/N5/lists/

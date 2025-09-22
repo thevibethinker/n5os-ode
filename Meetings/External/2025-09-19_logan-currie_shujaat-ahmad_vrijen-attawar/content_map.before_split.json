@@ -1,0 +1,891 @@
+{
+  "source_file": "Meetings/External/2025-09-19_logan-currie_shujaat-ahmad_vrijen-attawar/attachments/transcript.txt",
+  "meeting_datetime": "2025-09-19T19:20:31Z",
+  "participants": [
+    "Logan Currie",
+    "Shujaat Ahmad",
+    "Vrijen Attawar"
+  ],
+  "duration_seconds": 2322,
+  "deliverables": [
+    "Self\u2011determination theory paper (from Logan)",
+    "Details/context for involvement and tiers (from Vrijen)"
+  ],
+  "ctas": [
+    {
+      "owner": "Logan Currie",
+      "time": "18:56",
+      "text": "Send self\u2011determination theory paper to the group",
+      "verbatim": "I was literally just thinking I wanted to send it to you because I haven't published it yet but I was like my professor like yeah, anyway, go.",
+      "confidence": 0.6,
+      "due_date_48h_utc": "2025-09-21T19:20:31Z",
+      "due_date_2biz_utc": "2025-09-23T19:20:31Z",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+    },
+    {
+      "owner": "Shujaat Ahmad",
+      "time": "18:53",
+      "text": "Read Logan\u2019s self\u2011determination theory paper once shared",
+      "verbatim": "Okay if it's public I would love to read that.",
+      "confidence": 0.75,
+      "due_date_48h_utc": "2025-09-21T19:20:31Z",
+      "due_date_2biz_utc": "2025-09-23T19:20:31Z",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+    },
+    {
+      "owner": "Logan Currie",
+      "time": "22:45",
+      "text": "Share the paper and invite feedback",
+      "verbatim": "I'll send it to you. I would be curious to hear your thoughts too, because it was essential.",
+      "confidence": 0.9,
+      "due_date_48h_utc": "2025-09-21T19:20:31Z",
+      "due_date_2biz_utc": "2025-09-23T19:20:31Z",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+    },
+    {
+      "owner": "Logan Currie",
+      "time": "29:48",
+      "text": "Send a quick follow\u2011up and propose next steps",
+      "verbatim": "I'll send a quick follow up. Would love to geek out a little bit.",
+      "confidence": 0.9,
+      "due_date_48h_utc": "2025-09-21T19:20:31Z",
+      "due_date_2biz_utc": "2025-09-23T19:20:31Z",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+    },
+    {
+      "owner": "Vrijen Attawar",
+      "time": "36:02",
+      "text": "Send details/context and optionality for involvement (tiers)",
+      "verbatim": "Absolutely. No, this sounds good. Let me send you details. Context optionality for involvement, varying tiers. And then you just let us know we'll communicate directly.",
+      "confidence": 0.9,
+      "due_date_48h_utc": "2025-09-21T19:20:31Z",
+      "due_date_2biz_utc": "2025-09-23T19:20:31Z",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+    },
+    {
+      "owner": "Vrijen/All",
+      "time": "38:49",
+      "text": "Plan a future conversation",
+      "verbatim": "I hope to talk to you about it next time. Yeah, we'll do amazing. Catch you later.",
+      "confidence": 0.9,
+      "due_date_48h_utc": "2025-09-21T19:20:31Z",
+      "due_date_2biz_utc": "2025-09-23T19:20:31Z",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z"
+    }
+  ],
+  "decisions": [
+    {
+      "time": "22:52\u201323:30",
+      "speaker": "Vrijen Attawar",
+      "decision": "Initial ICP focus on Product Managers; buyer side likely Seed to Series A\u2013C companies",
+      "verbatim": "...keen on making Careerspan the next big thing ... we\u2019ve honed in on the product manager product as sort of an ICP ... buyer side ... most likely Seed ... Series A through C companies ...",
+      "confidence": 0.85
+    }
+  ],
+  "resonance_details": [
+    {
+      "speaker": "Logan Currie",
+      "time": "00:42",
+      "text": "It was. It was an adventure, I tell you that much ... resilience, adaptability, and I'm like, I am so prepared ... I will find friends and I will make something happen."
+    },
+    {
+      "speaker": "Vrijen Attawar",
+      "time": "03:19",
+      "text": "... the message of the movie is opportunity exists at the frontier ... reflected in the reality of startups ..."
+    },
+    {
+      "speaker": "Logan Currie",
+      "time": "08:23",
+      "text": "... adaptability, learning how to learn, and your ability to connect with other people ... it's not higher education, I tell you that much."
+    }
+  ],
+  "speaker_quotes": [
+    "Just we've trained to be cockroaches. We will survive.",
+    "Trained to be cockroaches? Yeah. We'll survive anywhere.",
+    "So it's just a bet that you make and you have to make bets at the frontier.",
+    "Legend of Korra is incredible.",
+    "I'll send a quick follow up. Would love to geek out a little bit."
+  ],
+  "warm_intro_opportunities": [],
+  "metadata": {
+    "schema": "n5os.content_map",
+    "schema_version": "1.1.0",
+    "version": "1.1",
+    "generated_at": "2025-09-20T22:28:57.901728+00:00",
+    "source_file": "Temp/gdoc_transcript.txt",
+    "processing": {
+      "method": "LLM-guided (time-anchored)",
+      "anchoring": "timecodes + verbatim quotes",
+      "logging": "disabled on stdout during JSON emission",
+      "validation": "manual spot-check against transcript"
+    },
+    "meeting_type": "external",
+    "roles_policy": {
+      "Logan Currie": "source_docs",
+      "Vrijen Attawar": "proposals",
+      "Shujaat Ahmad": "review_select"
+    }
+  },
+  "lessons_learned": [
+    "Use LLM-only extraction with strict time anchoring; avoid regex/keyword heuristics.",
+    "Do not write logs to stdout when emitting JSON artifacts; keep outputs clean.",
+    "Establish a single canonical transcript source and verify it end-to-end before processing.",
+    "Attach verbatim quotes and timestamps for every actionable/decisional item to aid review.",
+    "Provide a TOC and indices so downstream workflows can reference JSON Pointers precisely."
+  ],
+  "entities": {
+    "people": [
+      {
+        "name": "Logan Currie",
+        "role": "speaker"
+      },
+      {
+        "name": "Shujaat Ahmad",
+        "role": "speaker"
+      },
+      {
+        "name": "Vrijen Attawar",
+        "role": "speaker"
+      }
+    ],
+    "organizations": [
+      {
+        "name": "Careerspan",
+        "role": "company"
+      }
+    ]
+  },
+  "summary": "Conversation on career development, international experience as resilience training, soft-skills \u201cbase athleticism,\u201d effective AI usage, and practical next steps to engage with Careerspan (ICP focus on PMs; buyers Seed\u2013Series A\u2013C).",
+  "topics": [
+    {
+      "id": "topic_1",
+      "title": "International experience \u2192 resilience and adaptability",
+      "time_range": [
+        "00:40",
+        "02:39"
+      ],
+      "evidence": [
+        {
+          "time": "00:42",
+          "speaker": "Logan Currie",
+          "quote": "It was an adventure... resilience, adaptability... I am so prepared..."
+        }
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "topic_2",
+      "title": "Soft skills as \u201cbase athleticism\u201d: learn how to learn, connect with people",
+      "time_range": [
+        "07:21",
+        "08:57"
+      ],
+      "evidence": [
+        {
+          "time": "08:23",
+          "speaker": "Logan Currie",
+          "quote": "... adaptability, learning how to learn, and your ability to connect..."
+        }
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "topic_3",
+      "title": "AI usage: judgment, context-window intuition, scalpel vs. stick",
+      "time_range": [
+        "09:45",
+        "11:35"
+      ],
+      "evidence": [
+        {
+          "time": "09:50",
+          "speaker": "Vrijen Attawar",
+          "quote": "...building an intuition for when you're hitting your context window..."
+        }
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "topic_4",
+      "title": "Go-to-market focus: ICP PMs; buyer segment Seed\u2013Series A\u2013C",
+      "time_range": [
+        "22:52",
+        "24:41"
+      ],
+      "evidence": [
+        {
+          "time": "23:30",
+          "speaker": "Vrijen Attawar",
+          "quote": "Buyer side... Seed to Series A\u2013C companies..."
+        }
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "topic_5",
+      "title": "Engagement scope with Shujaat: involvement tiers, follow-ups, next call",
+      "time_range": [
+        "31:15",
+        "36:18"
+      ],
+      "evidence": [
+        {
+          "time": "36:02",
+          "speaker": "Vrijen Attawar",
+          "quote": "Let me send you details... optionality for involvement, varying tiers."
+        }
+      ],
+      "confidence": 0.8
+    }
+  ],
+  "indices": {
+    "cta_index": [
+      {
+        "pointer": "#/ctas/0",
+        "owner": "Logan Currie",
+        "time": "18:56",
+        "summary": "Send self\u2011determination theory paper to the group"
+      },
+      {
+        "pointer": "#/ctas/1",
+        "owner": "Shujaat Ahmad",
+        "time": "18:53",
+        "summary": "Read Logan\u2019s self\u2011determination theory paper once shared"
+      },
+      {
+        "pointer": "#/ctas/2",
+        "owner": "Logan Currie",
+        "time": "22:45",
+        "summary": "Share the paper and invite feedback"
+      },
+      {
+        "pointer": "#/ctas/3",
+        "owner": "Logan Currie",
+        "time": "29:48",
+        "summary": "Send a quick follow\u2011up and propose next steps"
+      },
+      {
+        "pointer": "#/ctas/4",
+        "owner": "Vrijen Attawar",
+        "time": "36:02",
+        "summary": "Send details/context and optionality for involvement (tiers)"
+      },
+      {
+        "pointer": "#/ctas/5",
+        "owner": "Vrijen/All",
+        "time": "38:49",
+        "summary": "Plan a future conversation"
+      }
+    ],
+    "decision_index": [
+      {
+        "pointer": "#/decisions/0",
+        "time": "22:52\u201323:30",
+        "summary": "Initial ICP focus on Product Managers; buyer side likely Seed to Series A\u2013C companies"
+      }
+    ],
+    "quote_index": [
+      {
+        "pointer": "#/speaker_quotes/0",
+        "text": "Just we've trained to be cockroaches. We will survive."
+      },
+      {
+        "pointer": "#/speaker_quotes/1",
+        "text": "Trained to be cockroaches? Yeah. We'll survive anywhere."
+      },
+      {
+        "pointer": "#/speaker_quotes/2",
+        "text": "So it's just a bet that you make and you have to make bets at the frontier."
+      },
+      {
+        "pointer": "#/speaker_quotes/3",
+        "text": "Legend of Korra is incredible."
+      },
+      {
+        "pointer": "#/speaker_quotes/4",
+        "text": "I'll send a quick follow up. Would love to geek out a little bit."
+      }
+    ],
+    "topic_index": [
+      {
+        "pointer": "#/topics/0",
+        "title": "International experience \u2192 resilience and adaptability",
+        "time_range": [
+          "00:40",
+          "02:39"
+        ]
+      },
+      {
+        "pointer": "#/topics/1",
+        "title": "Soft skills as \u201cbase athleticism\u201d: learn how to learn, connect with people",
+        "time_range": [
+          "07:21",
+          "08:57"
+        ]
+      },
+      {
+        "pointer": "#/topics/2",
+        "title": "AI usage: judgment, context-window intuition, scalpel vs. stick",
+        "time_range": [
+          "09:45",
+          "11:35"
+        ]
+      },
+      {
+        "pointer": "#/topics/3",
+        "title": "Go-to-market focus: ICP PMs; buyer segment Seed\u2013Series A\u2013C",
+        "time_range": [
+          "22:52",
+          "24:41"
+        ]
+      },
+      {
+        "pointer": "#/topics/4",
+        "title": "Engagement scope with Shujaat: involvement tiers, follow-ups, next call",
+        "time_range": [
+          "31:15",
+          "36:18"
+        ]
+      }
+    ],
+    "risk_index": [
+      {
+        "pointer": "#/risks/0",
+        "title": "Over-indexing on hard skills while soft-skill \u201cathleticism\u201d is decisive"
+      },
+      {
+        "pointer": "#/risks/1",
+        "title": "Using AI without judgment/context-window intuition reduces outcomes"
+      },
+      {
+        "pointer": "#/risks/2",
+        "title": "Buyer ambiguity (Seed\u2013Series C) could dilute GTM focus"
+      }
+    ],
+    "opportunity_index": [
+      {
+        "pointer": "#/opportunities/0",
+        "title": "Own the \u201cbase athleticism\u201d (soft skills) narrative for PMs"
+      },
+      {
+        "pointer": "#/opportunities/1",
+        "title": "Leverage frontier/International experience as resilience story"
+      },
+      {
+        "pointer": "#/opportunities/2",
+        "title": "Engage Shujaat via defined involvement tiers"
+      }
+    ],
+    "fact_index": [
+      {
+        "pointer": "#/key_facts/0",
+        "spo": "Careerspan|ICP|Product Managers"
+      },
+      {
+        "pointer": "#/key_facts/1",
+        "spo": "Buyers|likely_segment|Seed\u2013Series A\u2013C companies"
+      },
+      {
+        "pointer": "#/key_facts/2",
+        "spo": "Logan Currie|will_send|Self-determination theory paper"
+      },
+      {
+        "pointer": "#/key_facts/3",
+        "spo": "Logan Currie|will_send|Quick follow-up"
+      },
+      {
+        "pointer": "#/key_facts/4",
+        "spo": "Vrijen Attawar|will_send|Involvement details/tiers"
+      }
+    ]
+  },
+  "toc": {
+    "participants": "#/participants",
+    "entities": "#/entities",
+    "deliverables": "#/deliverables",
+    "ctas": "#/ctas",
+    "decisions": "#/decisions",
+    "resonance": "#/resonance_details",
+    "quotes": "#/speaker_quotes",
+    "topics": "#/topics",
+    "indices": "#/indices",
+    "workflow_guide": "#/workflow_guide",
+    "metadata": "#/metadata",
+    "lessons_learned": "#/lessons_learned",
+    "risks": "#/risks",
+    "opportunities": "#/opportunities",
+    "key_facts": "#/key_facts",
+    "speaker_index": "#/speaker_index",
+    "field_index": "#/field_index",
+    "timeline": "#/timeline"
+  },
+  "workflow_guide": {
+    "follow_up_email": {
+      "use": [
+        "#/ctas",
+        "#/resonance_details",
+        "#/speaker_quotes",
+        "#/decisions"
+      ],
+      "notes": "Prioritize CTAs owned by Logan; include 1\u20132 resonance details and a pithy quote."
+    },
+    "warm_intro_ticketing": {
+      "use": [
+        "#/warm_intro_opportunities",
+        "#/participants",
+        "#/resonance_details"
+      ],
+      "notes": "If empty, scan topics for collaboration cues and create candidate intros."
+    },
+    "blurb_generation": {
+      "use": [
+        "#/topics",
+        "#/speaker_quotes",
+        "#/resonance_details"
+      ],
+      "notes": "1\u20133 sentence blurbs per topic with an anchor quote."
+    },
+    "knowledge_ingestion": {
+      "use": [
+        "#/topics",
+        "#/decisions",
+        "#/deliverables"
+      ],
+      "notes": "Populate knowledge base with time-anchored facts and decisions."
+    },
+    "calendar_followups": {
+      "use": [
+        "#/ctas"
+      ],
+      "notes": "Map owner/time to scheduling prompts; request dates if absent."
+    }
+  },
+  "validation": {
+    "n5os_compliant": true,
+    "status": "spot-checked",
+    "open_questions": []
+  },
+  "risks": [
+    {
+      "id": "risk_1",
+      "title": "Over-indexing on hard skills while soft-skill \u201cathleticism\u201d is decisive",
+      "likelihood": "medium",
+      "impact": "high",
+      "evidence": [
+        {
+          "time": "07:21\u201308:57",
+          "pointer": "#/topics/1",
+          "speaker": "Logan Currie",
+          "quote": "...soft skills as base athleticism... adaptability, learning how to learn, connect with people."
+        }
+      ],
+      "mitigation": "Embed soft-skill calibration in product narrative and onboarding."
+    },
+    {
+      "id": "risk_2",
+      "title": "Using AI without judgment/context-window intuition reduces outcomes",
+      "likelihood": "medium",
+      "impact": "medium",
+      "evidence": [
+        {
+          "time": "09:50",
+          "pointer": "#/topics/2",
+          "speaker": "Vrijen Attawar",
+          "quote": "...build an intuition for when you're hitting your context window..."
+        }
+      ],
+      "mitigation": "Teach prompt+review patterns; instrument feedback loops."
+    },
+    {
+      "id": "risk_3",
+      "title": "Buyer ambiguity (Seed\u2013Series C) could dilute GTM focus",
+      "likelihood": "low",
+      "impact": "medium",
+      "evidence": [
+        {
+          "time": "22:52\u201324:41",
+          "pointer": "#/topics/3",
+          "speaker": "Vrijen Attawar",
+          "quote": "ICP PMs; buyer side Seed\u2013Series A\u2013C."
+        }
+      ],
+      "mitigation": "Start with highest-signal subsegment; validate messaging via pilots."
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "opp_1",
+      "title": "Own the \u201cbase athleticism\u201d (soft skills) narrative for PMs",
+      "evidence": [
+        {
+          "pointer": "#/topics/1",
+          "time": "07:21\u201308:57"
+        }
+      ],
+      "actions": [
+        {
+          "pointer": "#/ctas/3",
+          "summary": "Logan follow-up to propose next steps"
+        }
+      ]
+    },
+    {
+      "id": "opp_2",
+      "title": "Leverage frontier/International experience as resilience story",
+      "evidence": [
+        {
+          "pointer": "#/topics/0",
+          "time": "00:40\u201302:39"
+        }
+      ],
+      "actions": [
+        {
+          "pointer": "#/deliverables/0",
+          "summary": "Share SDT paper to ground theory-to-practice"
+        }
+      ]
+    },
+    {
+      "id": "opp_3",
+      "title": "Engage Shujaat via defined involvement tiers",
+      "evidence": [
+        {
+          "pointer": "#/topics/4",
+          "time": "31:15\u201336:18"
+        }
+      ],
+      "actions": [
+        {
+          "pointer": "#/ctas/4",
+          "summary": "Vrijen to send details/tiers"
+        }
+      ]
+    }
+  ],
+  "key_facts": [
+    {
+      "subject": "Careerspan",
+      "predicate": "ICP",
+      "object": "Product Managers",
+      "anchor": {
+        "pointer": "#/topics/3",
+        "time": "22:52\u201324:41",
+        "speaker": "Vrijen Attawar"
+      },
+      "confidence": 0.85
+    },
+    {
+      "subject": "Buyers",
+      "predicate": "likely_segment",
+      "object": "Seed\u2013Series A\u2013C companies",
+      "anchor": {
+        "pointer": "#/topics/3",
+        "time": "22:52\u201324:41",
+        "speaker": "Vrijen Attawar"
+      },
+      "confidence": 0.85
+    },
+    {
+      "subject": "Logan Currie",
+      "predicate": "will_send",
+      "object": "Self-determination theory paper",
+      "anchor": {
+        "pointer": "#/ctas/0",
+        "time": "18:56",
+        "speaker": "Logan Currie"
+      },
+      "confidence": 0.85
+    },
+    {
+      "subject": "Logan Currie",
+      "predicate": "will_send",
+      "object": "Quick follow-up",
+      "anchor": {
+        "pointer": "#/ctas/3",
+        "time": "29:48",
+        "speaker": "Logan Currie"
+      },
+      "confidence": 0.85
+    },
+    {
+      "subject": "Vrijen Attawar",
+      "predicate": "will_send",
+      "object": "Involvement details/tiers",
+      "anchor": {
+        "pointer": "#/ctas/4",
+        "time": "36:02",
+        "speaker": "Vrijen Attawar"
+      },
+      "confidence": 0.85
+    }
+  ],
+  "speaker_index": {
+    "Logan Currie": {
+      "ctas": [
+        {
+          "pointer": "#/ctas/0",
+          "time": "18:56"
+        },
+        {
+          "pointer": "#/ctas/2",
+          "time": "22:45"
+        },
+        {
+          "pointer": "#/ctas/3",
+          "time": "29:48"
+        }
+      ],
+      "quotes": [],
+      "resonance": [
+        {
+          "pointer": "#/resonance_details/0",
+          "time": "00:42"
+        },
+        {
+          "pointer": "#/resonance_details/2",
+          "time": "08:23"
+        }
+      ]
+    },
+    "Shujaat Ahmad": {
+      "ctas": [
+        {
+          "pointer": "#/ctas/1",
+          "time": "18:53"
+        }
+      ],
+      "quotes": [],
+      "resonance": []
+    },
+    "Vrijen Attawar": {
+      "ctas": [
+        {
+          "pointer": "#/ctas/4",
+          "time": "36:02"
+        }
+      ],
+      "quotes": [],
+      "resonance": [
+        {
+          "pointer": "#/resonance_details/1",
+          "time": "03:19"
+        }
+      ]
+    },
+    "Vrijen/All": {
+      "ctas": [
+        {
+          "pointer": "#/ctas/5",
+          "time": "38:49"
+        }
+      ],
+      "quotes": [],
+      "resonance": []
+    },
+    "Unattributed": {
+      "ctas": [],
+      "quotes": [
+        {
+          "pointer": "#/speaker_quotes/0"
+        },
+        {
+          "pointer": "#/speaker_quotes/1"
+        },
+        {
+          "pointer": "#/speaker_quotes/2"
+        },
+        {
+          "pointer": "#/speaker_quotes/3"
+        },
+        {
+          "pointer": "#/speaker_quotes/4"
+        }
+      ],
+      "resonance": []
+    }
+  },
+  "timeline": [
+    {
+      "type": "cta",
+      "pointer": "#/ctas/1",
+      "time": "18:53",
+      "summary": "Read Logan\u2019s self\u2011determination theory paper once shared"
+    },
+    {
+      "type": "cta",
+      "pointer": "#/ctas/0",
+      "time": "18:56",
+      "summary": "Send self\u2011determination theory paper to the group"
+    },
+    {
+      "type": "cta",
+      "pointer": "#/ctas/2",
+      "time": "22:45",
+      "summary": "Share the paper and invite feedback"
+    },
+    {
+      "type": "decision",
+      "pointer": "#/decisions/0",
+      "time": "22:52\u201323:30",
+      "summary": "Initial ICP focus on Product Managers; buyer side likely Seed to Series A\u2013C companies"
+    },
+    {
+      "type": "cta",
+      "pointer": "#/ctas/3",
+      "time": "29:48",
+      "summary": "Send a quick follow\u2011up and propose next steps"
+    },
+    {
+      "type": "cta",
+      "pointer": "#/ctas/4",
+      "time": "36:02",
+      "summary": "Send details/context and optionality for involvement (tiers)"
+    },
+    {
+      "type": "cta",
+      "pointer": "#/ctas/5",
+      "time": "38:49",
+      "summary": "Plan a future conversation"
+    }
+  ],
+  "field_index": {
+    "participants": "#/participants",
+    "entities.people": "#/entities/people",
+    "entities.organizations": "#/entities/organizations",
+    "deliverables": "#/deliverables",
+    "ctas": "#/ctas",
+    "decisions": "#/decisions",
+    "topics": "#/topics",
+    "risks": "#/risks",
+    "opportunities": "#/opportunities",
+    "key_facts": "#/key_facts",
+    "resonance_details": "#/resonance_details",
+    "speaker_quotes": "#/speaker_quotes",
+    "indices.cta_index": "#/indices/cta_index",
+    "indices.decision_index": "#/indices/decision_index",
+    "indices.topic_index": "#/indices/topic_index",
+    "indices.quote_index": "#/indices/quote_index",
+    "timeline": "#/timeline",
+    "workflow_guide": "#/workflow_guide",
+    "lessons_learned": "#/lessons_learned",
+    "metadata": "#/metadata"
+  },
+  "attachments": [
+    {
+      "id": "src_canonical",
+      "kind": "transcript_text",
+      "path": "Meetings/External/2025-09-19_logan-currie_shujaat-ahmad_vrijen-attawar/attachments/transcript.txt",
+      "mime": "text/plain",
+      "bytes": 41404,
+      "lines": 1054,
+      "words": 7581,
+      "sha256": "19823b603bdf1eb71a32050281ce3b555f2fae1ef1c42f9807b64d6e9cd2d025"
+    },
+    {
+      "id": "src_gdoc",
+      "kind": "google_doc",
+      "url": "https://docs.google.com/document/d/11tCN7cYjCiukW535jOpyI1lylwb3GRJt/edit",
+      "fileId": "11tCN7cYjCiukW535jOpyI1lylwb3GRJt"
+    }
+  ],
+  "confidence_policy": {
+    "scales": {
+      "high": 0.85,
+      "medium": 0.7,
+      "low": 0.5
+    },
+    "rules": [
+      "High: direct first-person commitment with timestamp + verbatim",
+      "Medium: implied commitment or acceptance language with timestamp",
+      "Low: inferred from context; requires confirmation before externalizing"
+    ]
+  },
+  "clarification_policy": {
+    "doubt_gate": 0.3,
+    "ask_user_when": [
+      "Owner unclear or role-policy mismatch",
+      "Missing due date/scope for actionable in external mode",
+      "Conflicting statements between speakers"
+    ]
+  },
+  "clarification_queue": [],
+  "themes": [
+    {
+      "name": "base_athleticism",
+      "introduced_by": null,
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "pointer": "#/topics/1"
+        }
+      ]
+    }
+  ],
+  "due_date_policy": {
+    "default": "within_48h_or_two_business_days",
+    "notes": "Compute both; suggest the earlier; override as needed."
+  },
+  "speech_acts": [
+    {
+      "time": "22:45",
+      "speaker": "Logan Currie",
+      "type": "commitment",
+      "target": null,
+      "text": "Send SDT paper; invite feedback",
+      "confidence": 0.9
+    },
+    {
+      "time": "29:48",
+      "speaker": "Logan Currie",
+      "type": "commitment",
+      "target": null,
+      "text": "Send quick follow-up",
+      "confidence": 0.9
+    },
+    {
+      "time": "36:02",
+      "speaker": "Vrijen Attawar",
+      "type": "commitment",
+      "target": "Shujaat Ahmad",
+      "text": "Send details/options/tiers for involvement",
+      "confidence": 0.85
+    },
+    {
+      "time": "18:53",
+      "speaker": "Shujaat Ahmad",
+      "type": "agreement",
+      "target": "Logan Currie",
+      "text": "Read SDT once shared",
+      "confidence": 0.75
+    }
+  ],
+  "handoff_graph": [
+    {
+      "id": "options_memo",
+      "origin": "Shujaat Ahmad",
+      "request_text": "Provide options for collaboration/pilot",
+      "chain": [
+        {
+          "state": "proposed_owner",
+          "actor": "Vrijen Attawar",
+          "time": "36:02",
+          "evidence": "Let me send you details..."
+        }
+      ],
+      "final_owner": "Vrijen Attawar",
+      "status": "accepted_by_owner",
+      "confidence": 0.85
+    }
+  ],
+  "required_nexts": [
+    {
+      "id": "req_next_options_memo",
+      "owner": "Vrijen Attawar",
+      "summary": "Prepare and send 1\u2011pager with 1\u20132 pilot options, scope/tiers, and success metrics",
+      "anchor_cta_pointer": "#/ctas/4",
+      "due_date_suggested_utc": "2025-09-21T19:20:31Z",
+      "confidence": 0.85,
+      "status": "open"
+    }
+  ]
+}

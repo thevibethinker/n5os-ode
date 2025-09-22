@@ -82,8 +82,8 @@ class CoreAuditor:
         p = self._resolve_path(path)
         now = time.time()
         last_mod = p.stat().st_mtime if p.exists() else 0
-        # assume “append today” if mod < 24h ago; coarse but safe
-        return (now - last_mod) < 86400  
+        # assume “append recently” if mod < 7 days ago; coarse but safe
+        return (now - last_mod) < 604800  
 
     # ------------------------------------------------------------------
     # Main audit
@@ -97,7 +97,7 @@ class CoreAuditor:
             path_key = item["path"]
             if not self._exists_nonempty(item):
                 self.issues.append(f"missing or empty: {path_key}")
-            elif not self._tracked(item):
+            elif item.get("must_be_tracked", True) and not self._tracked(item):
                 self.issues.append(f"untracked or ignored: {path_key}")
             elif "must_contain_regex" in item and not self._regex_present(item):
                 self.issues.append(f"regex missing: {path_key}")

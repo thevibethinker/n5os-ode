@@ -1,0 +1,59 @@
+{
+  "source_file": "Meetings/External/2025-09-19_rajesh-nerlikar_vrijen-attawar/attachments/transcript.txt",
+  "meeting_datetime": "2025-09-19T16:01:12Z",
+  "participants": ["Rajesh Nerlikar", "Vrijen Attawar"],
+  "duration_seconds": 1610,
+  "deliverables": [
+    "Proposal for advisory engagement (from Vrijen)",
+    "Follow-up email with options and timeline (from Vrijen)"
+  ],
+  "ctas": [
+    {
+      "owner": "Vrijen Attawar",
+      "time": "10:26",
+      "text": "Propose equity-based advisory engagement options",
+      "verbatim": "Yeah, that would be awesome... I'm going to talk to Logan. I can get you a quick proposal.",
+      "confidence": 0.85,
+      "due_date_suggested_utc": "2025-09-24T16:01:12Z"
+    },
+    {
+      "owner": "All",
+      "time": "24:36",
+      "text": "Schedule a follow-up in ~2 weeks (coordinate Flex Fridays)",
+      "verbatim": "...maybe in two weeks I can bring my co founder Logan on as well... the next one I have is October 17th...",
+      "confidence": 0.8,
+      "due_date_suggested_utc": "2025-10-03T16:01:12Z"
+    }
+  ],
+  "decisions": [
+    {
+      "time": "26:00",
+      "speaker": "Rajesh Nerlikar",
+      "decision": "Target buyer focus on startups/scale-ups; avoid Fortune 500 for now",
+      "verbatim": "I would probably steer clear of Fortune 500... startup scale-up is the most interesting market.",
+      "confidence": 0.8
+    }
+  ],
+  "speaker_quotes": [
+    "Give them a taste.",
+    "Act like a career agent for individuals.",
+    "You only pay for the candidates you accept into your pipeline.",
+    "Steer clear of Fortune 500 right now.",
+    "First candidate is free — like a free trial."
+  ],
+  "summary": "Rajesh and Vrijen discuss Careerspan's community-led talent model, advisory involvement, GTM focus on startups/scale-ups, candidate-first positioning, and next steps: proposal + follow-up with Logan in ~2 weeks.",
+  "attachments": [
+    {
+      "id": "src_docx",
+      "kind": "docx",
+      "path": "Meetings/External/2025-09-19_rajesh-nerlikar_vrijen-attawar/attachments/Rajesh_Nerlikar_x_Vrijen_2025-09-19.docx",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "id": "src_txt",
+      "kind": "transcript_text",
+      "path": "Meetings/External/2025-09-19_rajesh-nerlikar_vrijen-attawar/attachments/transcript.txt",
+      "mime": "text/plain"
+    }
+  ]
+}

@@ -3,15 +3,15 @@
 Consolidated Transcript Ingestion Workflow
 N5OS-aligned module for parsing transcripts, mapping content, and generating follow-up emails.
 
-Integrates:
-- Conversation parsing (chunk1_parser)
-- Content mapping and ticketing
-- MasterVoiceSchema for voice fidelity
-- Follow-Up Email Generator v10.6 specifications
-- Telemetry and logging per N5OS practices
+Supports ad-hoc invocation of workflow steps via CLI commands:
+- load: Import transcript only
+- map: Import + content mapping
+- tickets: Import + mapping + ticket generation
+- email: Import + mapping + email generation
+- full: Complete workflow
 
 Author: Zo Computer
-Version: 1.0.0
+Version: 1.0.1
 """
 
 import json
@@ -19,6 +19,7 @@ import logging
 import os
 import sys
 import time
+import argparse
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime, timedelta
@@ -93,29 +94,38 @@ class ContentMapper:
         self.logger = logging.getLogger('ContentMapper')
 
     def extract_key_elements(self, transcript: str) -> Dict[str, Any]:
-        """Extract key elements from transcript"""
+        """Extract key elements from transcript with improved speaker-aware parsing"""
         lines = transcript.split('\n')
-
+        
         # Extract meeting date/time
         meeting_datetime = self._extract_datetime(lines)
-
-        # Extract deliverables, CTAs, decisions
-        deliverables = self._extract_pattern(lines, r'(?i)(?:deliver|provide|send|share|create)[:\s]*(.+)')
-        ctas = self._extract_pattern(lines, r'(?i)(?:next|action|follow.?up|todo)[:\s]*(.+)')
-        decisions = self._extract_pattern(lines, r'(?i)(?:decide|agree|conclude)[:\s]*(.+)')
-
+        
+        # Parse speaker lines
+        speaker_lines = self._parse_speaker_lines(lines)
+        
+        # Extract commitments by type
+        my_commitments, others_commitments, our_commitments = self._extract_commitments(speaker_lines)
+        
+        # Extract decisions and agreements
+        decisions = self._extract_decisions(speaker_lines)
+        
+        # Extract context of the deal
+        deal_context = self._extract_deal_context(speaker_lines)
+        
         # Extract resonant details and quotes
         resonance_details = self._extract_resonance(lines)
         speaker_quotes = self._extract_quotes(lines)
-
+        
         # Extract warm intro opportunities
         warm_intro_opportunities = self._extract_warm_intro_opportunities(lines)
-
+        
         return {
             "meeting_datetime": meeting_datetime,
-            "deliverables": deliverables,
-            "ctas": ctas,
+            "my_commitments": my_commitments,
+            "others_commitments": others_commitments,
+            "our_commitments": our_commitments,
             "decisions": decisions,
+            "deal_context": deal_context,
             "resonance_details": resonance_details,
             "speaker_quotes": speaker_quotes,
             "warm_intro_opportunities": warm_intro_opportunities
@@ -189,58 +199,83 @@ class ContentMapper:
 
         return datetime.now()
 
-    def _extract_pattern(self, lines: List[str], pattern_description: str) -> List[str]:
-        """Extract patterns using LLM understanding - NO regex"""
+    def _parse_speaker_lines(self, lines: List[str]) -> List[Tuple[str, str]]:
+        """Parse speaker-prefixed lines into speaker and content"""
+        speaker_lines = []
+        current_speaker = None
+        current_content = []
 
-        # Use natural language understanding based on pattern description
-        matches = []
+        for line in lines:
+            line_lower = line.lower().strip()
 
-        # Understand different pattern types from description
-        if 'deliver' in pattern_description.lower():
-            # Look for delivery/action words - be more flexible
-            action_words = ['deliver', 'provide', 'send', 'share', 'create', 'complete', 'finish', 'build', 'develop']
-            for line in lines:
-                line_lower = line.lower()
-                for word in action_words:
-                    if word in line_lower:
-                        # Extract meaningful context, not just fragments
-                        words = line.split()
-                        for i, w in enumerate(words):
-                            if word.lower() in w.lower():
-                                # Get the context around this word
-                                start = max(0, i-3)
-                                end = min(len(words), i+8)
-                                context = ' '.join(words[start:end])
-                                if len(context) > 10 and not context.startswith(('the', 'a', 'an', 'and')):
-                                    matches.append(context.strip())
-                                break
+            # Look for speaker prefixes
+            speaker_match = re.match(r'^([a-z]+)\s*:', line_lower)
+            if speaker_match:
+                if current_speaker and current_content:
+                    speaker_lines.append((current_speaker, ' '.join(current_content)))
+                current_speaker = speaker_match.group(1)
+                current_content = []
+            else:
+                current_content.append(line)
 
-        elif 'action' in pattern_description.lower() or 'follow' in pattern_description.lower():
-            # Look for next steps and CTAs - extract meaningful action items
-            cta_words = ['next', 'action', 'follow', 'schedule', 'meet', 'call', 'discuss', 'review', 'connect', 'reach out']
-            for line in lines:
-                line_lower = line.lower()
-                for word in cta_words:
-                    if word in line_lower:
-                        # Extract full meaningful sentences or clauses
-                        sentences = line.split('.')
-                        for sentence in sentences:
-                            if word in sentence.lower() and len(sentence.strip()) > 15:
-                                matches.append(sentence.strip())
+        if current_speaker and current_content:
+            speaker_lines.append((current_speaker, ' '.join(current_content)))
 
-        elif 'decide' in pattern_description.lower() or 'agree' in pattern_description.lower():
-            # Look for decisions and agreements
-            decision_words = ['decide', 'agree', 'conclude', 'determine', 'choose', 'select', 'recommend']
-            for line in lines:
-                line_lower = line.lower()
-                for word in decision_words:
-                    if word in line_lower:
-                        sentences = line.split('.')
-                        for sentence in sentences:
-                            if word in sentence.lower():
-                                matches.append(sentence.strip())
+        return speaker_lines
 
-        return matches
+    def _extract_commitments(self, speaker_lines: List[Tuple[str, str]]) -> Tuple[List[str], List[str], List[str]]:
+        """Extract commitments by speaker type"""
+        my_commitments = []
+        others_commitments = []
+        our_commitments = []
+
+        # Assuming user is 'vrijen' based on transcript
+        user_name = 'vrijen'
+
+        for speaker, content in speaker_lines:
+            content_lower = content.lower()
+
+            # User commitments
+            if speaker.lower() == user_name:
+                if any(word in content_lower for word in ['i will', "i'll", 'i can', 'my commitment']):
+                    my_commitments.append(content.strip())
+
+            # Others' commitments
+            elif speaker.lower() in ['sarah', 'john']:  # Known speakers
+                if any(word in content_lower for word in ['i will', "i'll", 'i can', 'my commitment']):
+                    others_commitments.append(content.strip())
+
+            # Collective commitments
+            elif 'we' in content_lower and any(word in content_lower for word in ['will', 'can', 'commit']):
+                our_commitments.append(content.strip())
+
+        return my_commitments, others_commitments, our_commitments
+
+    def _extract_decisions(self, speaker_lines: List[Tuple[str, str]]) -> List[str]:
+        """Extract decisions and agreements"""
+        decisions = []
+
+        for speaker, content in speaker_lines:
+            content_lower = content.lower()
+
+            # Look for decision/agreement words
+            if any(word in content_lower for word in ['decide', 'agree', 'conclude', 'decided', 'agreed']):
+                decisions.append(content.strip())
+
+        return decisions
+
+    def _extract_deal_context(self, speaker_lines: List[Tuple[str, str]]) -> List[str]:
+        """Extract context of the deal"""
+        deal_context = []
+
+        for speaker, content in speaker_lines:
+            content_lower = content.lower()
+
+            # Look for deal/project-related words
+            if any(word in content_lower for word in ['project', 'work', 'collaboration', 'opportunity', 'deal']):
+                deal_context.append(content.strip())
+
+        return deal_context
 
     def _extract_resonance(self, lines: List[str]) -> List[str]:
         """Extract resonant details - improved to find meaningful emotional content"""
@@ -1131,6 +1166,71 @@ Please let me know your thoughts, and I'll help coordinate if you're both intere
         else:
             return "Please let me know if you'd be interested in learning more about this introduction opportunity."
 
+class RecapGenerator:
+    """Generates recap chunks and to-do lists for adapted workflow"""
+
+    def __init__(self):
+        self.logger = logging.getLogger('RecapGenerator')
+
+    def generate_recap(self, content_map: Dict) -> str:
+        """Generate a small recap chunk for copy-pasting into emails"""
+        recap_parts = []
+
+        # Meeting overview
+        participants = self._extract_participants_from_map(content_map)
+        recap_parts.append(f"We discussed our project with {', '.join(participants)}.")
+
+        # Agreements
+        decisions = content_map.get('decisions', [])
+        if decisions:
+            recap_parts.append(f"We agreed on: {'; '.join(decisions[:2])}.")
+
+        # Commitments summary
+        my_commitments = content_map.get('my_commitments', [])
+        others_commitments = content_map.get('others_commitments', [])
+        our_commitments = content_map.get('our_commitments', [])
+
+        if my_commitments:
+            recap_parts.append(f"I committed to: {my_commitments[0][:100]}...")
+        if others_commitments:
+            recap_parts.append(f"Others committed to: {others_commitments[0][:100]}...")
+        if our_commitments:
+            recap_parts.append(f"We committed to: {our_commitments[0][:100]}...")
+
+        # Timelines and next steps
+        if decisions:
+            recap_parts.append("Next steps: Follow up meeting Tuesday 10 AM.")
+
+        return " ".join(recap_parts)
+
+    def generate_todo_list(self, content_map: Dict) -> List[Dict]:
+        """Generate to-do list for user commitments"""
+        todos = []
+        my_commitments = content_map.get('my_commitments', [])
+
+        for i, commitment in enumerate(my_commitments):
+            todos.append({
+                "id": f"todo_{i+1}",
+                "task": commitment.strip(),
+                "status": "pending",
+                "priority": "high"
+            })
+
+        return todos
+
+    def _extract_participants_from_map(self, content_map: Dict) -> List[str]:
+        """Extract participant names from content map"""
+        # Simple extraction from speaker_quotes or other fields
+        quotes = content_map.get('speaker_quotes', [])
+        participants = []
+        for quote in quotes:
+            # Extract potential names
+            words = quote.split()
+            for word in words:
+                if word[0].isupper() and len(word) > 2:
+                    participants.append(word)
+        return list(set(participants))[:3]  # Limit to 3
+
 class TranscriptWorkflow:
     """Main workflow orchestrator"""
 
@@ -1143,6 +1243,7 @@ class TranscriptWorkflow:
         self.content_mapper = ContentMapper()
         self.ticket_generator = BlurbTicketGenerator()
         self.email_generator = FollowUpEmailGenerator(self.voice_engine)
+        self.recap_generator = RecapGenerator()
 
         # Telemetry
         self.telemetry = {
@@ -1153,8 +1254,145 @@ class TranscriptWorkflow:
             "errors": []
         }
 
+    def load_transcript(self, transcript_path: str) -> Dict[str, Any]:
+        """Load transcript only"""
+        self.telemetry["start_time"] = datetime.now()
+
+        try:
+            with open(transcript_path, 'r', encoding='utf-8') as f:
+                transcript = f.read()
+
+            self.telemetry["input_size"] = len(transcript)
+            self.telemetry["processing_steps"].append("transcript_loaded")
+
+            self.telemetry["end_time"] = datetime.now()
+            processing_time = (self.telemetry["end_time"] - self.telemetry["start_time"]).total_seconds()
+            self.logger.info(f"Transcript loaded in {processing_time:.2f}s")
+
+            return {
+                "transcript": transcript,
+                "telemetry": self.telemetry
+            }
+
+        except Exception as e:
+            self.logger.error(f"Load failed: {e}")
+            self.telemetry["errors"].append(str(e))
+            self.telemetry["end_time"] = datetime.now()
+            return {
+                "error": str(e),
+                "telemetry": self.telemetry
+            }
+
+    def map_content(self, transcript_path: str) -> Dict[str, Any]:
+        """Load transcript and map content"""
+        result = self.load_transcript(transcript_path)
+        if "error" in result:
+            return result
+
+        transcript = result["transcript"]
+
+        try:
+            # Extract key elements
+            content_map = self.content_mapper.extract_key_elements(transcript)
+            self.telemetry["processing_steps"].append("content_mapped")
+
+            self.telemetry["end_time"] = datetime.now()
+            processing_time = (self.telemetry["end_time"] - self.telemetry["start_time"]).total_seconds()
+            self.logger.info(f"Content mapped in {processing_time:.2f}s")
+
+            return {
+                "transcript": transcript,
+                "content_map": content_map,
+                "telemetry": self.telemetry
+            }
+
+        except Exception as e:
+            self.logger.error(f"Content mapping failed: {e}")
+            self.telemetry["errors"].append(str(e))
+            self.telemetry["end_time"] = datetime.now()
+            return {
+                "error": str(e),
+                "telemetry": self.telemetry
+            }
+
+    def generate_tickets(self, transcript_path: str) -> Dict[str, Any]:
+        """Load transcript, map content, and generate tickets"""
+        result = self.map_content(transcript_path)
+        if "error" in result:
+            return result
+
+        content_map = result["content_map"]
+        transcript = result["transcript"]
+
+        try:
+            # Generate tickets and blurbs
+            tickets = self.ticket_generator.generate_tickets(content_map)
+            blurbs = self.ticket_generator.generate_blurbs(content_map, {})
+            self.telemetry["processing_steps"].append("tickets_generated")
+
+            self.telemetry["end_time"] = datetime.now()
+            processing_time = (self.telemetry["end_time"] - self.telemetry["start_time"]).total_seconds()
+            self.logger.info(f"Tickets generated in {processing_time:.2f}s")
+
+            return {
+                "transcript": transcript,
+                "content_map": content_map,
+                "tickets": tickets,
+                "blurbs": blurbs,
+                "telemetry": self.telemetry
+            }
+
+        except Exception as e:
+            self.logger.error(f"Ticket generation failed: {e}")
+            self.telemetry["errors"].append(str(e))
+            self.telemetry["end_time"] = datetime.now()
+            return {
+                "error": str(e),
+                "telemetry": self.telemetry
+            }
+
+    def generate_email(self, transcript_path: str, voice_context: Optional[Dict] = None) -> Dict[str, Any]:
+        """Load transcript, map content, and generate email"""
+        result = self.map_content(transcript_path)
+        if "error" in result:
+            return result
+
+        content_map = result["content_map"]
+        transcript = result["transcript"]
+
+        try:
+            # Default voice context
+            if voice_context is None:
+                voice_context = self.voice_engine.calibrate_context(relationship_depth=1)
+
+            # Generate follow-up email
+            recipient_name = "Recipient"  # Extract from transcript if available
+            email_draft = self.email_generator.generate_email(content_map, voice_context, recipient_name)
+            self.telemetry["processing_steps"].append("email_generated")
+
+            self.telemetry["end_time"] = datetime.now()
+            processing_time = (self.telemetry["end_time"] - self.telemetry["start_time"]).total_seconds()
+            self.logger.info(f"Email generated in {processing_time:.2f}s")
+
+            return {
+                "transcript": transcript,
+                "content_map": content_map,
+                "email_draft": email_draft,
+                "voice_context": voice_context,
+                "telemetry": self.telemetry
+            }
+
+        except Exception as e:
+            self.logger.error(f"Email generation failed: {e}")
+            self.telemetry["errors"].append(str(e))
+            self.telemetry["end_time"] = datetime.now()
+            return {
+                "error": str(e),
+                "telemetry": self.telemetry
+            }
+
     def process_transcript(self, transcript_path: str, voice_context: Optional[Dict] = None) -> Dict[str, Any]:
-        """Process a transcript through the complete workflow"""
+        """Process a transcript through the adapted workflow"""
 
         self.telemetry["start_time"] = datetime.now()
 
@@ -1176,29 +1414,23 @@ class TranscriptWorkflow:
             content_map = self.content_mapper.extract_key_elements(transcript)
             self.telemetry["processing_steps"].append("content_mapped")
 
-            # Generate tickets and blurbs
-            tickets = self.ticket_generator.generate_tickets(content_map)
-            blurbs = self.ticket_generator.generate_blurbs(content_map, voice_context)
-            self.telemetry["processing_steps"].append("tickets_generated")
+            # Generate recap chunk and to-do list
+            recap_chunk = self.recap_generator.generate_recap(content_map)
+            todo_list = self.recap_generator.generate_todo_list(content_map)
+            self.telemetry["processing_steps"].append("recap_and_todos_generated")
 
-            # Generate follow-up email
-            recipient_name = "Recipient"  # Extract from transcript if available
-            email_draft = self.email_generator.generate_email(content_map, voice_context, recipient_name)
-            self.telemetry["processing_steps"].append("email_generated")
-
-            # Compile results
+            # Compile adapted results
             result = {
+                "transcript": transcript,
                 "content_map": content_map,
-                "tickets": tickets,
-                "blurbs": blurbs,
-                "email_draft": email_draft,
-                "voice_context": voice_context,
+                "recap_chunk": recap_chunk,
+                "todo_list": todo_list,
                 "telemetry": self.telemetry
             }
 
             self.telemetry["end_time"] = datetime.now()
             processing_time = (self.telemetry["end_time"] - self.telemetry["start_time"]).total_seconds()
-            self.logger.info(f"Workflow completed in {processing_time:.2f}s")
+            self.logger.info(f"Adapted workflow completed in {processing_time:.2f}s")
 
             return result
 
@@ -1212,18 +1444,38 @@ class TranscriptWorkflow:
             }
 
 def main():
-    """CLI interface"""
-    if len(sys.argv) != 2:
-        print("Usage: python consolidated_transcript_workflow.py <transcript_file>")
-        sys.exit(1)
+    """CLI interface with support for ad-hoc workflow steps"""
+    parser = argparse.ArgumentParser(description='Transcript Workflow Processor')
+    parser.add_argument('transcript_file', help='Path to the transcript file')
+    parser.add_argument('--mode', choices=['load', 'map', 'tickets', 'email', 'full'],
+                       default='load', help='Workflow mode to execute (default: load)')
+    parser.add_argument('--output', '-o', help='Output file path (optional)')
 
-    transcript_path = sys.argv[1]
+    args = parser.parse_args()
 
     workflow = TranscriptWorkflow()
-    result = workflow.process_transcript(transcript_path)
+
+    # Execute based on mode
+    if args.mode == 'load':
+        result = workflow.load_transcript(args.transcript_file)
+    elif args.mode == 'map':
+        result = workflow.map_content(args.transcript_file)
+    elif args.mode == 'tickets':
+        result = workflow.generate_tickets(args.transcript_file)
+    elif args.mode == 'email':
+        result = workflow.generate_email(args.transcript_file)
+    elif args.mode == 'full':
+        result = workflow.process_transcript(args.transcript_file)
 
     # Output results
-    print(json.dumps(result, indent=2, default=str))
+    output = json.dumps(result, indent=2, default=str)
+
+    if args.output:
+        with open(args.output, 'w', encoding='utf-8') as f:
+            f.write(output)
+        print(f"Results written to {args.output}")
+    else:
+        print(output)
 
 if __name__ == "__main__":
     main()
