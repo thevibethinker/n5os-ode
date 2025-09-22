@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/commands.schema.json",
+  "title": "N5 Command Spec",
+  "type": "object",
+  "required": ["name", "version", "summary"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "aliases": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"},
+    "summary": {"type": "string", "maxLength": 180},
+    "workflow": {"type": "string", "enum": ["writing", "research", "data", "ops", "knowledge", "lists", "index", "email", "media", "code", "misc", "automation"]},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "additionalProperties": true,
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "type": {"type": "string", "enum": ["string", "number", "integer", "boolean", "file", "path", "url", "enum", "date", "datetime", "json", "text"]},
+          "required": {"type": "boolean"},
+          "default": {},
+          "description": {"type": "string"},
+          "enum": {"type": "array", "items": {"type": ["string", "number"]}},
+          "pattern": {"type": "string"},
+          "min": {"type": "number"},
+          "max": {"type": "number"}
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "additionalProperties": true,
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"},
+          "type": {"type": "string", "enum": ["file", "path", "url", "json", "text", "table", "image", "video", "audio", "array", "number", "integer"]},
+          "format": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "uses": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "modules": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true},
+        "commands": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true}
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ref"],
+        "additionalProperties": true,
+        "properties": {
+          "ref": {"type": "string"},
+          "with": {"type": "object", "additionalProperties": true}
+        }
+      }
+    },
+    "side_effects": {
+      "type": "array",
+      "items": {"type": "string", "enum": [
+        "writes:file", "writes:dir", "modifies:file", "deletes:file",
+        "starts:service", "stops:service", "sends:email", "posts:web", "external:api", "creates:backup", "atomic:operations", "executes:command"
+      ]},
+      "uniqueItems": true
+    },
+    "permissions_required": {
+      "type": "array",
+      "items": {"type": "string", "enum": [
+        "email_approval", "create_service", "external_api", "network_access", "file_delete", "file_overwrite"
+      ]},
+      "uniqueItems": true
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dry_run": {"type": "boolean"},
+        "require_auth": {"type": "boolean"}
+      }
+    },
+    "examples": {"type": "array", "items": {"type": "string"}},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "failure_modes": {"type": "array", "items": {"type": "string"}},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}

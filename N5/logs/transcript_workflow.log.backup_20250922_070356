@@ -1,0 +1,24 @@
+2025-09-20 20:55:01,012Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:04:48,574Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:06:21,590Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:06:44,788Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:06:54,584Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:07:19,030Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:08:06,166Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:08:17,422Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:08:28,138Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:09:46,583Z ERROR TranscriptWorkflow Workflow failed: 'ContentMapper' object has no attribute '_extract_participants'
+2025-09-20 21:09:51,760Z ERROR TranscriptWorkflow Workflow failed: 'ContentMapper' object has no attribute '_extract_participants'
+2025-09-20 21:09:57,222Z ERROR TranscriptWorkflow Workflow failed: 'ContentMapper' object has no attribute '_extract_participants'
+2025-09-20 21:10:01,253Z ERROR TranscriptWorkflow Workflow failed: 'ContentMapper' object has no attribute '_extract_participants'
+2025-09-20 21:10:55,553Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:11:14,604Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:11:22,164Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:47:24,571Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:48:26,352Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:49:04,017Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:51:27,364Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 21:53:52,632Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-20 22:08:02,072Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-21 00:58:09,809Z INFO TranscriptWorkflow Workflow completed in 0.00s
+2025-09-21 03:45:29,618Z INFO TranscriptWorkflow Adapted workflow completed in 0.00s

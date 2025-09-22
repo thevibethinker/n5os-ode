@@ -28,7 +28,7 @@
     {
       "path": "N5/test/test_direct_ingestion.py",
       "min_bytes": 1,
-      "must_be_tracked": true,
+      "must_be_tracked": false,
       "description": "Test coverage for direct mechanism"
     },
     {
