@@ -1,0 +1,171 @@
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [02] - Follow - Up Email Generator v10.6.txt -> /home/workspace/Documents/Function [02] - Follow - Up Email Generator v10.6.txt
+2025-09-24 05:43:22 - Moved to data: /home/workspace/jobs_aggregation_2025-09-22_with_JD.csv -> /home/workspace/Data/jobs_aggregation_2025-09-22_with_JD.csv
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [05] - Companion File - Universal - Master Voice Vrijen v1.3.txt -> /home/workspace/Documents/Companion [05] - Companion File - Universal - Master Voice Vrijen v1.3.txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/content_map_comparison_analysis.md -> /home/workspace/Documents/content_map_comparison_analysis.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Fwd Re Howie Q&A [Thread].md -> /home/workspace/Documents/Fwd Re Howie Q&A [Thread].md
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/github_authenticator.sh -> /home/workspace/Scripts/github_authenticator.sh
+2025-09-24 05:43:22 - Moved to data: /home/workspace/jobs_enriched.csv -> /home/workspace/Data/jobs_enriched_1.csv
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/enrich_job_descriptions.py -> /home/workspace/Scripts/enrich_job_descriptions_1.py
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Deep Research Due Diligence v0.3 (1).txt -> /home/workspace/Documents/Function [01] - Deep Research Due Diligence v0.3 (1).txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [05] - Universal Nuance Manifest v1.0.txt -> /home/workspace/Documents/Companion [05] - Universal Nuance Manifest v1.0.txt
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/add_within_3_days_column.py -> /home/workspace/Scripts/add_within_3_days_column.py
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Laura Close - Draft Advisor Proposal-L_Unsigned (2).pdf -> /home/workspace/Documents/Laura Close - Draft Advisor Proposal-L_Unsigned (2).pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/simple_push_guide.md -> /home/workspace/Documents/simple_push_guide.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [05] - Universal Nuance Manifest v1.0 (1).txt -> /home/workspace/Documents/Companion [05] - Universal Nuance Manifest v1.0 (1).txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5.md -> /home/workspace/Documents/N5_1.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/sample_transcript_realistic.txt -> /home/workspace/Documents/sample_transcript_realistic.txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/github_setup_guide.md -> /home/workspace/Documents/github_setup_guide.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [02] - Follow - Up Email Generator v10.6 (1).txt -> /home/workspace/Documents/Function [02] - Follow - Up Email Generator v10.6 (1).txt
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/push_all_history.sh -> /home/workspace/Scripts/push_all_history.sh
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/customer_success_fintech_nyc.md -> /home/workspace/Documents/customer_success_fintech_nyc_1.md
+2025-09-24 05:43:22 - Moved to data: /home/workspace/jobs_export.csv -> /home/workspace/Data/jobs_export_1.csv
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - JTBD Plus Interview Extractor v1.0 (1).pdf -> /home/workspace/Documents/Function [01] - JTBD Plus Interview Extractor v1.0 (1).pdf
+2025-09-24 05:43:22 - Moved to data: /home/workspace/Function [00] - Function Builder (metaprompter) For LLM - Ready Prompt Generation v6.2.json -> /home/workspace/Data/Function [00] - Function Builder (metaprompter) For LLM - Ready Prompt Generation v6.2.json
+2025-09-24 05:43:22 - Moved to data: /home/workspace/knowledge_base.json -> /home/workspace/Data/knowledge_base.json
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/sample_transcript.txt -> /home/workspace/Documents/sample_transcript.txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0.pdf -> /home/workspace/Documents/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0.pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [05] - Companion File - Universal - Master Voice Vrijen v1.3 (1).txt -> /home/workspace/Documents/Companion [05] - Companion File - Universal - Master Voice Vrijen v1.3 (1).txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [01] - Companion File - Universal - Intellectual_priority_ontology v1.0.txt -> /home/workspace/Documents/Companion [01] - Companion File - Universal - Intellectual_priority_ontology v1.0.txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (1).pdf -> /home/workspace/Documents/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (1).pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - PR - Intel - Extractor v1.1.txt -> /home/workspace/Documents/Function [01] - PR - Intel - Extractor v1.1.txt
+2025-09-24 05:43:22 - Moved to data: /home/workspace/customer_success_fintech_nyc_roles.sheet.json -> /home/workspace/Data/customer_success_fintech_nyc_roles.sheet.json
+2025-09-24 05:43:22 - Moved to logs: /home/workspace/command_authoring.log -> /home/workspace/Logs/command_authoring.log
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/first_github_commit.sh -> /home/workspace/Scripts/first_github_commit.sh
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/lessons_ledger.md -> /home/workspace/Documents/lessons_ledger_1.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/content_map_evaluation_rubric.md -> /home/workspace/Documents/content_map_evaluation_rubric.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/completing_email_ingestion_thread_summary.md -> /home/workspace/Documents/completing_email_ingestion_thread_summary.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/github_ssh_setup_guide.md -> /home/workspace/Documents/github_ssh_setup_guide.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Functions - B2C Marketing And Sales Collateral Generator (job Seeker) v1.0 (1).pdf -> /home/workspace/Documents/Function [01] - Functions - B2C Marketing And Sales Collateral Generator (job Seeker) v1.0 (1).pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Laura Close - Draft Advisor Proposal-L_Unsigned.pdf -> /home/workspace/Documents/Laura Close - Draft Advisor Proposal-L_Unsigned.pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/gdrive_transcript_ingestion_guide.md -> /home/workspace/Documents/gdrive_transcript_ingestion_guide.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Laura Close - Draft Advisor Proposal-L_Unsigned (1).pdf -> /home/workspace/Documents/Laura Close - Draft Advisor Proposal-L_Unsigned (1).pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Laura Close - Draft Advisor Proposal-L_Unsigned (3).pdf -> /home/workspace/Documents/Laura Close - Draft Advisor Proposal-L_Unsigned (3).pdf
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/test_sourcestack.py -> /home/workspace/Scripts/test_sourcestack_1.py
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/sample_transcript_with_warm_intro.txt -> /home/workspace/Documents/sample_transcript_with_warm_intro.txt
+2025-09-24 05:43:22 - Moved to data: /home/workspace/jobs_aggregation_2025-09-22_augmented.csv -> /home/workspace/Data/jobs_aggregation_2025-09-22_augmented.csv
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Functions - B2C Marketing And Sales Collateral Generator (job Seeker) v1.0.pdf -> /home/workspace/Documents/Function [01] - Functions - B2C Marketing And Sales Collateral Generator (job Seeker) v1.0.pdf
+2025-09-24 05:43:22 - Moved to data: /home/workspace/jobs_aggregation_2025-09-22.csv -> /home/workspace/Data/jobs_aggregation_2025-09-22.csv
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/ssh_config_github -> /home/workspace/Misc/ssh_config_github
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Deep Research Due Diligence v0.3.txt -> /home/workspace/Documents/Function [01] - Deep Research Due Diligence v0.3.txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [01] - Companion File - Universal - Intellectual_priority_ontology v1.0 (2).txt -> /home/workspace/Documents/Companion [01] - Companion File - Universal - Intellectual_priority_ontology v1.0 (2).txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - JTBD Plus Interview Extractor v1.0.pdf -> /home/workspace/Documents/Function [01] - JTBD Plus Interview Extractor v1.0.pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Rajesh_Meeting_Summary.md -> /home/workspace/Documents/Rajesh_Meeting_Summary.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - PR - Intel - Extractor v1.1 (1).txt -> /home/workspace/Documents/Function [01] - PR - Intel - Extractor v1.1 (1).txt
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/setup_github_safe.sh -> /home/workspace/Scripts/setup_github_safe.sh
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z.docx -> /home/workspace/Documents/Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z.docx
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Stakeholder Pain Point Extractor v1.0.pdf -> /home/workspace/Documents/Function [01] - Stakeholder Pain Point Extractor v1.0.pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Function [01] - Stakeholder Pain Point Extractor v1.0 (1).pdf -> /home/workspace/Documents/Function [01] - Stakeholder Pain Point Extractor v1.0 (1).pdf
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/evidence_verification_examples.md -> /home/workspace/Documents/evidence_verification_examples.md
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/trial.zoroutine -> /home/workspace/Misc/trial.zoroutine
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/Companion [01] - Companion File - Universal - Intellectual_priority_ontology v1.0 (1).txt -> /home/workspace/Documents/Companion [01] - Companion File - Universal - Intellectual_priority_ontology v1.0 (1).txt
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/after_action_report_20250920_132252.md -> /home/workspace/N5/Documents/after_action_report_20250920_132252.md
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.jsonl.backup_20250922_070356 -> /home/workspace/N5/Misc/commands.jsonl.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/zo_setup_rubric.md -> /home/workspace/N5/Documents/zo_setup_rubric.md
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/N5/jobs_ingestion_cli.py -> /home/workspace/N5/Scripts/jobs_ingestion_cli.py
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/n5_os.md -> /home/workspace/N5/Documents/n5_os.md
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/zo_setup_rubric_nontech.sheet_20250920_132252.json -> /home/workspace/N5/Data/zo_setup_rubric_nontech.sheet_20250920_132252.json
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric.md.backup_20250922_070356 -> /home/workspace/N5/Misc/zo_setup_rubric.md.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/policy_20250920_132219.md -> /home/workspace/N5/Documents/policy_20250920_132219.md
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.md.backup_20250922_070356 -> /home/workspace/N5/Misc/commands.md.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/workflows_register.md.backup_20250921_070145 -> /home/workspace/N5/Misc/workflows_register.md.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json.backup_20250921_070145 -> /home/workspace/N5/Misc/zo_setup_rubric_nontech.sheet.json.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/zo_setup_rubric_20250920_132219.md -> /home/workspace/N5/Documents/zo_setup_rubric_20250920_132219.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/POLICY.md -> /home/workspace/N5/Documents/POLICY.md
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/core_manifest.json -> /home/workspace/N5/Data/core_manifest.json
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.jsonl.backup_20250921_070145 -> /home/workspace/N5/Misc/commands.jsonl.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/prefs.md.backup_20250921_070145 -> /home/workspace/N5/Misc/prefs.md.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric.sheet.json.backup_20250922_070356 -> /home/workspace/N5/Misc/zo_setup_rubric.sheet.json.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/jobs_pipeline_config_20250920_132252.json -> /home/workspace/N5/Data/jobs_pipeline_config_20250920_132252.json
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/prefs_20250920_132252.md -> /home/workspace/N5/Documents/prefs_20250920_132252.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/workflows_register.md -> /home/workspace/N5/Documents/workflows_register.md
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/test_commands_20250920_132252.jsonl -> /home/workspace/N5/Data/test_commands_20250920_132252.jsonl
+2025-09-24 05:43:22 - Moved to backup: /home/workspace/N5/commands.jsonl.backup -> /home/workspace/N5/Backups/commands.jsonl.backup
+2025-09-24 05:43:22 - Moved to scripts: /home/workspace/N5/jobs_ingestion_cli_20250920_132252.py -> /home/workspace/N5/Scripts/jobs_ingestion_cli_20250920_132252.py
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/POLICY.md.backup_20250922_070356 -> /home/workspace/N5/Misc/POLICY.md.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/jobs_pipeline_config.json -> /home/workspace/N5/Data/jobs_pipeline_config.json
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_nontech.sheet.json
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/n5_os_formalized.md -> /home/workspace/N5/Documents/n5_os_formalized.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/after_action_report.md -> /home/workspace/N5/Documents/after_action_report.md
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json.backup_20250922_070356 -> /home/workspace/N5/Misc/zo_setup_rubric_adjusted.sheet.json.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/index.jsonl.backup_20250921_070145 -> /home/workspace/N5/Misc/index.jsonl.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/commands.backup_20250920_101843_20250920_132252.jsonl -> /home/workspace/N5/Data/commands.backup_20250920_101843_20250920_132252.jsonl
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/commands.jsonl -> /home/workspace/N5/Data/commands.jsonl
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.jsonl.backup_20250920_224414 -> /home/workspace/N5/Misc/commands.jsonl.backup_20250920_224414
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/index_20250920_132252.md -> /home/workspace/N5/Documents/index_20250920_132252.md
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/index.jsonl -> /home/workspace/N5/Data/index.jsonl
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/zo_setup_rubric_adjusted.sheet_20250920_132219_20250920_132252.json -> /home/workspace/N5/Data/zo_setup_rubric_adjusted.sheet_20250920_132219_20250920_132252.json
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/index_20250920_132219.jsonl -> /home/workspace/N5/Data/index_20250920_132219.jsonl
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/index.jsonl.backup_20250922_070356 -> /home/workspace/N5/Misc/index.jsonl.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/prefs.md.backup_20250922_070356 -> /home/workspace/N5/Misc/prefs.md.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/zo_setup_rubric.sheet_20250920_132219_20250920_132252.json -> /home/workspace/N5/Data/zo_setup_rubric.sheet_20250920_132219_20250920_132252.json
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/POLICY.md.backup_20250921_070145 -> /home/workspace/N5/Misc/POLICY.md.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json.backup_20250922_070356 -> /home/workspace/N5/Misc/zo_setup_rubric_nontech.sheet.json.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric.md.backup_20250921_070145 -> /home/workspace/N5/Misc/zo_setup_rubric.md.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/jobs_ingestion_workflow_20250920_132252.json -> /home/workspace/N5/Data/jobs_ingestion_workflow_20250920_132252.json
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/commands.md -> /home/workspace/N5/Documents/commands.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/workflows_register_20250920_132219.md -> /home/workspace/N5/Documents/workflows_register_20250920_132219.md
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric.sheet.json.backup_20250921_070145 -> /home/workspace/N5/Misc/zo_setup_rubric.sheet.json.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to backup: /home/workspace/N5/commands.bak -> /home/workspace/N5/Backups/commands.bak
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json.backup_20250921_070145 -> /home/workspace/N5/Misc/zo_setup_rubric_adjusted.sheet.json.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/transcript_ingestion_systematization.md -> /home/workspace/N5/Documents/transcript_ingestion_systematization.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/commands_20250920_132219.md -> /home/workspace/N5/Documents/commands_20250920_132219.md
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/prefs.md.backup_20250920_224414 -> /home/workspace/N5/Misc/prefs.md.backup_20250920_224414
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_adjusted.sheet.json
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/commands_20250920_132219.jsonl -> /home/workspace/N5/Data/commands_20250920_132219.jsonl
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.md_20250920_132252.backup_20250920_071417 -> /home/workspace/N5/Misc/commands.md_20250920_132252.backup_20250920_071417
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/index.md.backup_20250922_070356 -> /home/workspace/N5/Misc/index.md.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.md.backup_20250920_224414 -> /home/workspace/N5/Misc/commands.md.backup_20250920_224414
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/prefs.md -> /home/workspace/N5/Documents/prefs.md
+2025-09-24 05:43:22 - Moved to documents: /home/workspace/N5/index.md -> /home/workspace/N5/Documents/index.md
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/zo_setup_rubric.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric.sheet.json
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/commands.md.backup_20250921_070145 -> /home/workspace/N5/Misc/commands.md.backup_20250921_070145
+2025-09-24 05:43:22 - Moved to data: /home/workspace/N5/jobs_ingestion_workflow.json -> /home/workspace/N5/Data/jobs_ingestion_workflow.json
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/workflows_register.md.backup_20250922_070356 -> /home/workspace/N5/Misc/workflows_register.md.backup_20250922_070356
+2025-09-24 05:43:22 - Moved to misc: /home/workspace/N5/index.md.backup_20250921_070145 -> /home/workspace/N5/Misc/index.md.backup_20250921_070145
+2025-09-25 04:01:20 - Moved to documents: /home/workspace/N5/index.md -> /home/workspace/N5/Documents/index_1.md
+2025-09-25 04:01:20 - Moved to documents: /home/workspace/N5/commands.md -> /home/workspace/N5/Documents/commands_1.md
+2025-09-25 04:01:20 - Moved to documents: /home/workspace/N5/POLICY.md -> /home/workspace/N5/Documents/POLICY_1.md
+2025-09-25 04:01:20 - Moved to data: /home/workspace/N5/index.jsonl -> /home/workspace/N5/Data/index_1.jsonl
+2025-09-25 04:01:20 - Moved to documents: /home/workspace/N5/workflows_register.md -> /home/workspace/N5/Documents/workflows_register_1.md
+2025-09-25 04:01:20 - Moved to documents: /home/workspace/N5/zo_setup_rubric.md -> /home/workspace/N5/Documents/zo_setup_rubric_1.md
+2025-09-25 04:01:20 - Moved to data: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_adjusted.sheet_1.json
+2025-09-25 04:01:20 - Moved to data: /home/workspace/N5/zo_setup_rubric.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric.sheet_1.json
+2025-09-25 04:01:20 - Moved to data: /home/workspace/N5/commands.jsonl -> /home/workspace/N5/Data/commands_1.jsonl
+2025-09-25 04:01:20 - Moved to data: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_nontech.sheet_1.json
+2025-09-25 04:01:20 - Moved to data: /home/workspace/N5/core_manifest.json -> /home/workspace/N5/Data/core_manifest_1.json
+2025-09-25 04:01:20 - Moved to documents: /home/workspace/N5/prefs.md -> /home/workspace/N5/Documents/prefs_1.md
+2025-09-26 04:01:13 - Moved to data: /home/workspace/N5/commands.jsonl -> /home/workspace/N5/Data/commands_2.jsonl
+2025-09-26 04:01:13 - Moved to documents: /home/workspace/N5/POLICY.md -> /home/workspace/N5/Documents/POLICY_2.md
+2025-09-26 04:01:13 - Moved to data: /home/workspace/N5/zo_setup_rubric.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric.sheet_2.json
+2025-09-26 04:01:13 - Moved to data: /home/workspace/N5/index.jsonl -> /home/workspace/N5/Data/index_2.jsonl
+2025-09-26 04:01:13 - Moved to documents: /home/workspace/N5/workflows_register.md -> /home/workspace/N5/Documents/workflows_register_2.md
+2025-09-26 04:01:13 - Moved to data: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_nontech.sheet_2.json
+2025-09-26 04:01:13 - Moved to documents: /home/workspace/N5/zo_setup_rubric.md -> /home/workspace/N5/Documents/zo_setup_rubric_2.md
+2025-09-26 04:01:13 - Moved to documents: /home/workspace/N5/prefs.md -> /home/workspace/N5/Documents/prefs_2.md
+2025-09-26 04:01:13 - Moved to documents: /home/workspace/N5/commands.md -> /home/workspace/N5/Documents/commands_2.md
+2025-09-26 04:01:13 - Moved to documents: /home/workspace/N5/index.md -> /home/workspace/N5/Documents/index_2.md
+2025-09-26 04:01:13 - Moved to data: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_adjusted.sheet_2.json
+2025-09-27 04:01:21 - Moved to data: /home/workspace/N5/commands.jsonl -> /home/workspace/N5/Data/commands_3.jsonl
+2025-09-27 04:01:21 - Moved to data: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_nontech.sheet_3.json
+2025-09-27 04:01:21 - Moved to data: /home/workspace/N5/zo_setup_rubric.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric.sheet_3.json
+2025-09-27 04:01:21 - Moved to documents: /home/workspace/N5/POLICY.md -> /home/workspace/N5/Documents/POLICY_3.md
+2025-09-27 04:01:21 - Moved to data: /home/workspace/N5/index.jsonl -> /home/workspace/N5/Data/index_3.jsonl
+2025-09-27 04:01:21 - Moved to documents: /home/workspace/N5/zo_setup_rubric.md -> /home/workspace/N5/Documents/zo_setup_rubric_3.md
+2025-09-27 04:01:21 - Moved to data: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_adjusted.sheet_3.json
+2025-09-27 04:01:21 - Moved to documents: /home/workspace/N5/prefs.md -> /home/workspace/N5/Documents/prefs_3.md
+2025-09-27 04:01:21 - Moved to documents: /home/workspace/N5/workflows_register.md -> /home/workspace/N5/Documents/workflows_register_3.md
+2025-09-27 04:01:21 - Moved to documents: /home/workspace/N5/commands.md -> /home/workspace/N5/Documents/commands_3.md
+2025-09-27 04:01:21 - Moved to documents: /home/workspace/N5/index.md -> /home/workspace/N5/Documents/index_3.md
+2025-09-28 01:36:05 - Moved to documents: /home/workspace/N5/commands.md -> /home/workspace/N5/Documents/commands_4.md
+2025-09-28 01:36:05 - Moved to documents: /home/workspace/N5/prefs.md -> /home/workspace/N5/Documents/prefs_4.md
+2025-09-28 01:36:05 - Moved to documents: /home/workspace/N5/index.md -> /home/workspace/N5/Documents/index_4.md
+2025-09-28 01:36:05 - Moved to documents: /home/workspace/N5/workflows_register.md -> /home/workspace/N5/Documents/workflows_register_4.md
+2025-09-28 01:36:05 - Moved to documents: /home/workspace/N5/POLICY.md -> /home/workspace/N5/Documents/POLICY_4.md
+2025-09-28 01:36:05 - Moved to data: /home/workspace/N5/index.jsonl -> /home/workspace/N5/Data/index_4.jsonl
+2025-09-28 01:36:05 - Moved to data: /home/workspace/N5/zo_setup_rubric_nontech.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_nontech.sheet_4.json
+2025-09-28 01:36:05 - Moved to data: /home/workspace/N5/zo_setup_rubric.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric.sheet_4.json
+2025-09-28 01:36:05 - Moved to documents: /home/workspace/N5/zo_setup_rubric.md -> /home/workspace/N5/Documents/zo_setup_rubric_4.md
+2025-09-28 01:36:05 - Moved to data: /home/workspace/N5/commands.jsonl -> /home/workspace/N5/Data/commands_4.jsonl
+2025-09-28 01:36:05 - Moved to data: /home/workspace/N5/zo_setup_rubric_adjusted.sheet.json -> /home/workspace/N5/Data/zo_setup_rubric_adjusted.sheet_4.json
+2025-09-29 04:01:17 - Moved to scripts: /home/workspace/debug_audit.py -> /home/workspace/Scripts/debug_audit.py
+2025-09-29 04:01:17 - Moved to scripts: /home/workspace/test_log.py -> /home/workspace/Scripts/test_log.py

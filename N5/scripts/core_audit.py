@@ -12,8 +12,8 @@ import typing
 from pathlib import Path
 import re
 
-ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "core_manifest.json"
+ROOT = Path(__file__).resolve().parents[2]
+MANIFEST = ROOT / "Data" / "core_manifest.json"
 AUDIT_LOG = ROOT / "runtime" / "audit" / "core_audit.log"
 
 # Ensure audit directory exists (logs are append-only)
@@ -38,7 +38,7 @@ class CoreAuditor:
         """Convert manifest path to absolute Path object"""
         # For registry files that start with N5/, use the workspace root
         if path.startswith("N5/"):
-            return ROOT / path[3:]  # Remove N5/ prefix
+            return ROOT / path  # Keep the N5/ prefix
         return ROOT / path
 
     def _exists_nonempty(self, entry: dict) -> bool:
@@ -108,7 +108,9 @@ class CoreAuditor:
 
         for path in reservoirs:
             if not self._reservoir_append_safe(path):
-                self.issues.append(f"possible overwrite: {path} (recent modification)")
+                self.issues.append(f"possible overwrite: {path} (no recent modification)")
+            else:
+                self.issues.append(f"OK: {path} (recent modification)")
 
         return {"pass": len(self.issues) == 0, "timestamp": time.time(), "issues": self.issues}
 
