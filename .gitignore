@@ -46,3 +46,6 @@ N5/lists/*.md
 !N5/examples/
 !N5/lists/*.jsonl
 !N5/commands.jsonlsourcestack/credentials.md
+
+# Whitelist core command doc required by audit
+!N5/commands/direct-knowledge-ingest.md
