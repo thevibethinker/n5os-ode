@@ -1,0 +1,143 @@
+{
+  "id": "transcript_ingestion",
+  "version": "1.0.0",
+  "owner": "V",
+  "name": "Transcript Ingestion Workflow",
+  "description": "Complete workflow for ingesting transcripts from files or Google Drive, processing content mapping, generating tickets and communication drafts, and integrating with N5 knowledge system.",
+  "tags": ["transcript", "ingestion", "content-mapping", "gdrive", "communication"],
+  "triggers": ["cli", "schedule", "file-watch"],
+  "inputs": {
+    "transcript_source": {
+      "type": "string",
+      "description": "Path to transcript file or Google Drive folder ID",
+      "required": true
+    },
+    "mode": {
+      "type": "string",
+      "description": "Processing mode",
+      "enum": ["load", "map", "tickets", "email", "full"],
+      "default": "full"
+    },
+    "output_directory": {
+      "type": "string",
+      "description": "Directory for output files",
+      "default": "/home/workspace/N5/output"
+    },
+    "gdrive_integration": {
+      "type": "boolean",
+      "description": "Enable Google Drive folder processing",
+      "default": false
+    }
+  },
+  "steps": [
+    {
+      "name": "validate-input",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/consolidated_transcript_workflow.py", "--validate", "$transcript_source"],
+      "description": "Validate transcript source and prerequisites"
+    },
+    {
+      "name": "load-transcript",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/consolidated_transcript_workflow.py", "$transcript_source", "--mode", "load", "--output-dir", "$output_directory"],
+      "description": "Load and parse transcript content",
+      "depends_on": ["validate-input"]
+    },
+    {
+      "name": "content-mapping",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/consolidated_transcript_workflow.py", "$transcript_source", "--mode", "map", "--output-dir", "$output_directory"],
+      "description": "Generate content map with meetings, commitments, decisions, and resonance analysis",
+      "depends_on": ["load-transcript"]
+    },
+    {
+      "name": "generate-tickets",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/consolidated_transcript_workflow.py", "$transcript_source", "--mode", "tickets", "--output-dir", "$output_directory"],
+      "description": "Create action items and deliverables tickets",
+      "depends_on": ["content-mapping"]
+    },
+    {
+      "name": "generate-communications",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/consolidated_transcript_workflow.py", "$transcript_source", "--mode", "email", "--output-dir", "$output_directory"],
+      "description": "Generate follow-up emails and communication drafts using MasterVoiceSchema",
+      "depends_on": ["content-mapping"]
+    },
+    {
+      "name": "gdrive-batch-processing",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/gdrive_transcript_workflow.py", "$transcript_source", "--output-dir", "$output_directory"],
+      "description": "Process multiple transcripts from Google Drive folder",
+      "condition": "$gdrive_integration == true",
+      "depends_on": ["validate-input"]
+    },
+    {
+      "name": "knowledge-integration",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/direct_ingestion_mechanism.py", "--source", "$output_directory/content_maps", "--target", "/home/workspace/N5/knowledge"],
+      "description": "Integrate processed content into N5 knowledge reservoirs (bio, timeline, facts, sources)",
+      "depends_on": ["content-mapping", "generate-tickets", "generate-communications"]
+    },
+    {
+      "name": "generate-summary",
+      "command": "python3",
+      "args": ["/home/workspace/N5/scripts/consolidated_transcript_workflow.py", "$transcript_source", "--mode", "summary", "--output-dir", "$output_directory"],
+      "description": "Generate comprehensive workflow summary and blurbs",
+      "depends_on": ["knowledge-integration"]
+    }
+  ],
+  "outputs": {
+    "content_map": {
+      "path": "$output_directory/content_maps/transcript_content_map_*.json",
+      "description": "Structured content analysis with meetings, commitments, decisions, resonance"
+    },
+    "tickets": {
+      "path": "$output_directory/tickets/transcript_tickets_*.json",
+      "description": "Action items for deliverables and warm introductions"
+    },
+    "communications": {
+      "path": "$output_directory/communications/transcript_emails_*.md",
+      "description": "Follow-up emails and communication drafts"
+    },
+    "knowledge_updates": {
+      "path": "/home/workspace/N5/knowledge/",
+      "description": "Integrated knowledge in bio, timeline, facts, and sources reservoirs"
+    },
+    "summary": {
+      "path": "$output_directory/summaries/transcript_summary_*.md",
+      "description": "Comprehensive workflow execution summary"
+    }
+  },
+  "policy": {
+    "dry_run_required": false,
+    "retry_policy": {
+      "max_retries": 2,
+      "backoff": "exponential"
+    },
+    "concurrency": 1,
+    "safety": "medium",
+    "data_integrity": {
+      "backup_required": true,
+      "conflict_resolution": "manual_review"
+    }
+  },
+  "audit": {
+    "telemetry": true,
+    "execution_log": "/home/workspace/N5/logs/workflow_execution.jsonl",
+    "performance_metrics": true
+  },
+  "review_gate": {
+    "enabled": false,
+    "auto_approve_threshold": 0.95
+  },
+  "error_handling": {
+    "fallback_mode": "partial_processing",
+    "cleanup_on_failure": true,
+    "notification_channels": ["email", "log"]
+  },
+  "dependencies": {
+    "external": ["google-api-python-client", "openai"],
+    "internal": ["n5_safety.py", "MasterVoiceSchema"]
+  }
+}

@@ -1,0 +1,29 @@
+---
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
+checksum: 35c1ccc2c54e13924c92eee225970098
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors:
+  input: null
+  output: /home/workspace/N5_mirror/backups/system-upgrades/system-upgrades_20250920_060718.md
+---
+# System Upgrades
+
+## Planned
+
+### Knowledge Ingestion System Enhancements
+
+Implement append-only ingestion for facts, glossary, timeline,  ... , and relationship management.
+
+### System Upgrades Command — Resilience & Finalization
+- Description: Close gaps from after-action report — implement dual-store (Markdown+JSONL) sync, dry-run/verify/rollback, duplicate detection tuning, backup retention, telemetry roll-ups, and record integration.
+- Plan: See file 'N5/tmp_execution/n5_system_upgrades_command_closure_plan.md'
+- Status: Planned
+
+## In Progress
+
+## Done

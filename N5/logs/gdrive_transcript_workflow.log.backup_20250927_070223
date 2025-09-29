@@ -1,0 +1,10 @@
+2025-09-20 20:58:35,011Z INFO GoogleDriveConnector Would list files in folder mock_folder_123 with pattern *.txt
+2025-09-20 20:58:35,011Z INFO GoogleDriveTranscriptWorkflow Processing 2 transcript files from Google Drive
+2025-09-20 20:58:35,011Z INFO GoogleDriveConnector Would download file mock_file_1 to /tmp/meeting_transcript_2025-09-15.txt
+2025-09-20 20:58:35,014Z INFO GoogleDriveConnector Would download file mock_file_2 to /tmp/project_discussion_2025-09-16.txt
+2025-09-20 20:58:35,016Z INFO GoogleDriveTranscriptWorkflow Batch processing completed in 0.01s
+2025-09-20 21:05:07,408Z INFO GoogleDriveConnector Would list files in folder mock_folder_123 with pattern *.txt
+2025-09-20 21:05:07,409Z INFO GoogleDriveTranscriptWorkflow Processing 2 transcript files from Google Drive
+2025-09-20 21:05:07,409Z INFO GoogleDriveConnector Would download file mock_file_1 to /tmp/meeting_transcript_2025-09-15.txt
+2025-09-20 21:05:07,412Z INFO GoogleDriveConnector Would download file mock_file_2 to /tmp/project_discussion_2025-09-16.txt
+2025-09-20 21:05:07,414Z INFO GoogleDriveTranscriptWorkflow Batch processing completed in 0.01s
