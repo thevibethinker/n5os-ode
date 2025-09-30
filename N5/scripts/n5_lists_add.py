@@ -163,7 +163,7 @@ def main():
         schema = load_schema(SCHEMAS / "lists.item.schema.json")
         validate_item(item, schema)
 
-        items.append(item)
+        items.insert(0, item)  # Insert at beginning for reverse chronological order
 
         # Output assignment info without prompts
         print(f"Assigned list: {slug}")
