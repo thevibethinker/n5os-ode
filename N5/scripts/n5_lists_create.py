@@ -3,6 +3,7 @@ import json, sys, argparse
 from pathlib import Path
 from datetime import datetime, timezone
 import uuid
+import re
 
 try:
     from jsonschema import Draft202012Validator
@@ -14,6 +15,31 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
 LISTS_DIR = ROOT / "lists"
 INDEX_FILE = LISTS_DIR / "index.jsonl"
+
+def generate_slug(title: str) -> str:
+    # Basic cleanup: lowercase, replace spaces with hyphens, remove special chars
+    slug = re.sub(r'[^\w\s-]', '', title.lower())
+    slug = re.sub(r'[-\s]+', '-', slug).strip('-')
+    if not slug:
+        return "list"
+    if len(slug) > 30:
+        words = slug.split('-')[:4]
+        slug = '-'.join(words)
+    return slug
+
+def find_similar_lists(registry, title, slug):
+    similar = []
+    title_lower = title.lower()
+    for item in registry:
+        existing_title = item.get('title', '').lower()
+        existing_slug = item.get('slug', '')
+        if existing_title == title_lower or existing_slug == slug:
+            similar.append(('exact', item))
+        elif existing_title in title_lower or title_lower in existing_title:
+            similar.append(('partial_title', item))
+        elif existing_slug in slug or slug in existing_slug:
+            similar.append(('partial_slug', item))
+    return similar
 
 def load_schema(p: Path):
     with p.open("r", encoding="utf-8") as f:
@@ -36,7 +62,7 @@ def read_jsonl(p: Path):
 
 def write_jsonl(p: Path, items):
     p.parent.mkdir(parents=True, exist_ok=True)
-    with p.open("w", encoding="utf-8") as f:
+    with p.open("a", encoding="utf-8") as f:
         for item in items:
             f.write(json.dumps(item, separators=(',', ':')) + '\n')
 
@@ -89,10 +115,8 @@ def main():
 
     validate_registry_item(item, schema)
 
-    registry.append(item)
-
     if not args.dry_run:
-        write_jsonl(INDEX_FILE, registry)
+        write_jsonl(INDEX_FILE, [item])
         # Create empty files
         jsonl_file = LISTS_DIR / f"{slug}.jsonl"
         md_file = LISTS_DIR / f"{slug}.md"
