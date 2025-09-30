@@ -85,6 +85,24 @@ class CoreAuditor:
         # assume “append recently” if mod < 7 days ago; coarse but safe
         return (now - last_mod) < 604800  
 
+    def _check_misclassification(self, path: str) -> str | None:
+        """Check if recent Git changes include deletions (not just appends). Return issue desc or None."""
+        import subprocess
+        p = self._resolve_path(path)
+        try:
+            result = subprocess.run([
+                'git', '-C', str(ROOT), 'log', '-p', '--since=7 days', '--follow', '--', str(p.relative_to(ROOT))
+            ], capture_output=True, text=True, timeout=10)
+            if result.returncode != 0 or not result.stdout:
+                return None  # No commits or error
+            lines = result.stdout.split('\n')
+            deletions = [l for l in lines if l.startswith('-') and not l.startswith('---')]
+            if deletions:
+                return f"recent changes include {len(deletions)} deletions, not just appends"
+        except Exception:
+            pass  # Ignore errors (e.g., no Git)
+        return None
+
     # ------------------------------------------------------------------
     # Main audit
     # ------------------------------------------------------------------
@@ -107,12 +125,16 @@ class CoreAuditor:
                 self.issues.append(f"command entry missing: {item['must_contain_command']}")
 
         for path in reservoirs:
-            if not self._reservoir_append_safe(path):
+            misclass = self._check_misclassification(path)
+            if misclass:
+                self.issues.append(f"misclassification: {path} ({misclass})")
+            elif not self._reservoir_append_safe(path):
                 self.issues.append(f"possible overwrite: {path} (no recent modification)")
             else:
-                self.issues.append(f"OK: {path} (recent modification)")
+                self.issues.append(f"OK: {path} (append-only)")
 
-        return {"pass": len(self.issues) == 0, "timestamp": time.time(), "issues": self.issues}
+        bad_issues = [i for i in self.issues if not i.startswith("OK: ")]
+        return {"pass": len(bad_issues) == 0, "timestamp": time.time(), "issues": self.issues}
 
     # ------------------------------------------------------------------
     # Logging (append-only)
