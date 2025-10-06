@@ -1,15 +1,17 @@
+[//]: # (Default Ingestion Method: direct_processing)
+
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: dd9c061334a6e850d73b886074ce815b
 tags: []
 category: unknown
 priority: medium
 related_files: []
-anchors:
-  input: null
-  output: /home/workspace/N5_mirror/prefs.md
+anchors: 
+input: null
+output: /home/workspace/N5_mirror/prefs.md
 ---
 # N5 OS Preferences (Global)
 

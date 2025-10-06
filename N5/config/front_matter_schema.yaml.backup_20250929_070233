@@ -1,9 +1,0 @@
-doc:
-  default_version: "1.0"
-  required: [title, date, version, status, tags]
-  optional: [category, related_files, anchors, validation, last-tested]
-
-output:
-  default_version: "1.0"
-  required: [source, generated_date, tags]
-  optional: [priority, related_files, voice_schema, checksum]

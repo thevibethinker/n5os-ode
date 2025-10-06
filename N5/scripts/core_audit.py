@@ -82,16 +82,17 @@ class CoreAuditor:
         p = self._resolve_path(path)
         now = time.time()
         last_mod = p.stat().st_mtime if p.exists() else 0
-        # assume “append recently” if mod < 7 days ago; coarse but safe
-        return (now - last_mod) < 604800  
+        # extend window to 30 days (was 7) for long-lived append-only logs
+        return (now - last_mod) < 2_592_000  # 30 * 24 * 60 * 60
 
     def _check_misclassification(self, path: str) -> str | None:
         """Check if recent Git changes include deletions (not just appends). Return issue desc or None."""
         import subprocess
         p = self._resolve_path(path)
         try:
+            # widen git look-back to 30 days to match the new heuristic
             result = subprocess.run([
-                'git', '-C', str(ROOT), 'log', '-p', '--since=7 days', '--follow', '--', str(p.relative_to(ROOT))
+                'git', '-C', str(ROOT), 'log', '-p', '--since=30 days', '--follow', '--', str(p.relative_to(ROOT))
             ], capture_output=True, text=True, timeout=10)
             if result.returncode != 0 or not result.stdout:
                 return None  # No commits or error

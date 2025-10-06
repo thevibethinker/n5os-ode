@@ -4,6 +4,7 @@ import shutil
 from pathlib import Path
 from typing import Dict, Callable
 import logging
+import hashlib
 
 class FileHandlerStrategy:
     def __init__(self, log_file: str):
@@ -16,6 +17,26 @@ class FileHandlerStrategy:
         with open(self.log_file, 'a') as f:
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
             f.write(f"{timestamp} - {action}: {file_path} -> {target}\n")
+
+    def compute_hash(self, file_path: Path) -> str:
+        """Compute SHA256 hash of the file content."""
+        hash_sha256 = hashlib.sha256()
+        with file_path.open("rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                hash_sha256.update(chunk)
+        return hash_sha256.hexdigest()
+
+    def is_duplicate(self, source_path: Path, target_dir: Path) -> bool:
+        """Check if source file is a duplicate of any file in target_dir."""
+        source_hash = self.compute_hash(source_path)
+        for existing_file in target_dir.iterdir():
+            if existing_file.is_file():
+                try:
+                    if self.compute_hash(existing_file) == source_hash:
+                        return True
+                except:
+                    pass
+        return False
 
 class TempFileStrategy(FileHandlerStrategy):
     def handle(self, file_path: Path) -> None:
@@ -41,15 +62,19 @@ class DocumentStrategy(FileHandlerStrategy):
         os.makedirs(self.doc_dir, exist_ok=True)
 
     def handle(self, file_path: Path) -> None:
-        target = self.doc_dir / file_path.name
-        counter = 1
-        while target.exists():
-            stem = file_path.stem
-            suffix = file_path.suffix
-            target = self.doc_dir / f"{stem}_{counter}{suffix}"
-            counter += 1
-        shutil.move(str(file_path), target)
-        self.log_action("Moved to documents", file_path, str(target))
+        if self.is_duplicate(file_path, self.doc_dir):
+            os.remove(file_path)
+            self.log_action("Deleted duplicate document", file_path)
+        else:
+            target = self.doc_dir / file_path.name
+            counter = 1
+            while target.exists():
+                stem = file_path.stem
+                suffix = file_path.suffix
+                target = self.doc_dir / f"{stem}_{counter}{suffix}"
+                counter += 1
+            shutil.move(str(file_path), target)
+            self.log_action("Moved to documents", file_path, str(target))
 
 class ImageStrategy(FileHandlerStrategy):
     def __init__(self, log_file: str, root: str):
@@ -58,15 +83,19 @@ class ImageStrategy(FileHandlerStrategy):
         os.makedirs(self.img_dir, exist_ok=True)
 
     def handle(self, file_path: Path) -> None:
-        target = self.img_dir / file_path.name
-        counter = 1
-        while target.exists():
-            stem = file_path.stem
-            suffix = file_path.suffix
-            target = self.img_dir / f"{stem}_{counter}{suffix}"
-            counter += 1
-        shutil.move(str(file_path), target)
-        self.log_action("Moved to images", file_path, str(target))
+        if self.is_duplicate(file_path, self.img_dir):
+            os.remove(file_path)
+            self.log_action("Deleted duplicate image", file_path)
+        else:
+            target = self.img_dir / file_path.name
+            counter = 1
+            while target.exists():
+                stem = file_path.stem
+                suffix = file_path.suffix
+                target = self.img_dir / f"{stem}_{counter}{suffix}"
+                counter += 1
+            shutil.move(str(file_path), target)
+            self.log_action("Moved to images", file_path, str(target))
 
 class ScriptStrategy(FileHandlerStrategy):
     def __init__(self, log_file: str, root: str):
@@ -75,15 +104,19 @@ class ScriptStrategy(FileHandlerStrategy):
         os.makedirs(self.script_dir, exist_ok=True)
 
     def handle(self, file_path: Path) -> None:
-        target = self.script_dir / file_path.name
-        counter = 1
-        while target.exists():
-            stem = file_path.stem
-            suffix = file_path.suffix
-            target = self.script_dir / f"{stem}_{counter}{suffix}"
-            counter += 1
-        shutil.move(str(file_path), target)
-        self.log_action("Moved to scripts", file_path, str(target))
+        if self.is_duplicate(file_path, self.script_dir):
+            os.remove(file_path)
+            self.log_action("Deleted duplicate script", file_path)
+        else:
+            target = self.script_dir / file_path.name
+            counter = 1
+            while target.exists():
+                stem = file_path.stem
+                suffix = file_path.suffix
+                target = self.script_dir / f"{stem}_{counter}{suffix}"
+                counter += 1
+            shutil.move(str(file_path), target)
+            self.log_action("Moved to scripts", file_path, str(target))
 
 class LogStrategy(FileHandlerStrategy):
     def __init__(self, log_file: str, root: str):
@@ -92,15 +125,19 @@ class LogStrategy(FileHandlerStrategy):
         os.makedirs(self.log_dir, exist_ok=True)
 
     def handle(self, file_path: Path) -> None:
-        target = self.log_dir / file_path.name
-        counter = 1
-        while target.exists():
-            stem = file_path.stem
-            suffix = file_path.suffix
-            target = self.log_dir / f"{stem}_{counter}{suffix}"
-            counter += 1
-        shutil.move(str(file_path), target)
-        self.log_action("Moved to logs", file_path, str(target))
+        if self.is_duplicate(file_path, self.log_dir):
+            os.remove(file_path)
+            self.log_action("Deleted duplicate log", file_path)
+        else:
+            target = self.log_dir / file_path.name
+            counter = 1
+            while target.exists():
+                stem = file_path.stem
+                suffix = file_path.suffix
+                target = self.log_dir / f"{stem}_{counter}{suffix}"
+                counter += 1
+            shutil.move(str(file_path), target)
+            self.log_action("Moved to logs", file_path, str(target))
 
 class DataStrategy(FileHandlerStrategy):
     def __init__(self, log_file: str, root: str):
@@ -109,15 +146,19 @@ class DataStrategy(FileHandlerStrategy):
         os.makedirs(self.data_dir, exist_ok=True)
 
     def handle(self, file_path: Path) -> None:
-        target = self.data_dir / file_path.name
-        counter = 1
-        while target.exists():
-            stem = file_path.stem
-            suffix = file_path.suffix
-            target = self.data_dir / f"{stem}_{counter}{suffix}"
-            counter += 1
-        shutil.move(str(file_path), target)
-        self.log_action("Moved to data", file_path, str(target))
+        if self.is_duplicate(file_path, self.data_dir):
+            os.remove(file_path)
+            self.log_action("Deleted duplicate data", file_path)
+        else:
+            target = self.data_dir / file_path.name
+            counter = 1
+            while target.exists():
+                stem = file_path.stem
+                suffix = file_path.suffix
+                target = self.data_dir / f"{stem}_{counter}{suffix}"
+                counter += 1
+            shutil.move(str(file_path), target)
+            self.log_action("Moved to data", file_path, str(target))
 
 class OtherStrategy(FileHandlerStrategy):
     def __init__(self, log_file: str, root: str):
@@ -126,15 +167,19 @@ class OtherStrategy(FileHandlerStrategy):
         os.makedirs(self.other_dir, exist_ok=True)
 
     def handle(self, file_path: Path) -> None:
-        target = self.other_dir / file_path.name
-        counter = 1
-        while target.exists():
-            stem = file_path.stem
-            suffix = file_path.suffix
-            target = self.other_dir / f"{stem}_{counter}{suffix}"
-            counter += 1
-        shutil.move(str(file_path), target)
-        self.log_action("Moved to misc", file_path, str(target))
+        if self.is_duplicate(file_path, self.other_dir):
+            os.remove(file_path)
+            self.log_action("Deleted duplicate misc", file_path)
+        else:
+            target = self.other_dir / file_path.name
+            counter = 1
+            while target.exists():
+                stem = file_path.stem
+                suffix = file_path.suffix
+                target = self.other_dir / f"{stem}_{counter}{suffix}"
+                counter += 1
+            shutil.move(str(file_path), target)
+            self.log_action("Moved to misc", file_path, str(target))
 
 # Add more strategies as needed
 
@@ -188,7 +233,7 @@ class FileManager:
             }
         return cls._instance
 
-    def categorize_and_handle(self, roots: list = ['/home/workspace', '/home/workspace/N5']):
+    def categorize_and_handle(self, roots: list = ['/home/workspace']):
         log_file = '/home/workspace/file_hygiene_log.txt'
         for root in roots:
             root_path = Path(root)

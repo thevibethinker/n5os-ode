@@ -36,3 +36,54 @@ _[Add your notes here]_
 ## Recent Activity
 
 _[DD findings will be appended here]_
+
+
+###  — Quick web check (last 7 days)
+
+Sources: Varun Mayya social posts & press.
+
+Findings:
+- Several social posts and short videos referencing Sora 2, Nano Banana, and AI image/video models; Varun commented on risks of deepfakes and AI scams.
+- No major news articles specifically about Varun in the last 7 days besides social posts and reposts.
+
+Notes: Social activity detected (Instagram, Threads, YouTube shorts). If you want full links, I can fetch and append them.
+
+
+###  — Quick web check (last 7 days)
+
+Sources: LiveMint, Threads, Instagram.
+
+Findings:
+- Several short social posts referencing Sora 2 / Nano Banana and AI image/video models; Varun warned about deepfake/scam risk.
+- No major press articles in the last 7 days; activity limited to social/video posts and reposts.
+
+References:
+- https://www.livemint.com/technology/tech-influencer-warns-about-rapidly-advancing-ai-tools-scams-are-only-going-to-get-more-creative-11759094489397.html
+- https://www.threads.com/@thevarunmayya
+- https://www.instagram.com/thevarunmayya/
+
+
+###  — Quick web check (last 7 days)
+
+Sources: LiveMint, Threads, Instagram.
+
+Findings:
+- Several short social posts referencing Sora 2 / Nano Banana and AI image/video models; Varun warned about deepfake/scam risk.
+- No major press articles in the last 7 days beyond social posts and reposts.
+
+References:
+- https://www.livemint.com/technology/tech-influencer-warns-about-rapidly-advancing-ai-tools-scams-are-only-going-to-get-more-creative-11759094489397.html
+- https://www.threads.com/@thevarunmayya
+- https://www.instagram.com/thevarunmayya/
+###  — Quick web check (last 7 days)
+
+Sources: LiveMint, Threads, Instagram.
+
+Findings:
+- Several short social posts referencing Sora 2 / Nano Banana and AI image/video models; Varun warned about deepfake/scam risk.
+- No major press articles in the last 7 days beyond social posts and reposts.
+
+References:
+- https://www.livemint.com/technology/tech-influencer-warns-about-rapidly-advancing-ai-tools-scams-are-only-going-to-get-more-creative-11759094489397.html
+- https://www.threads.com/@thevarunmayya
+- https://www.instagram.com/thevarunmayya/

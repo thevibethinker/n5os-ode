@@ -36,3 +36,57 @@ _[Add your notes here]_
 ## Recent Activity
 
 _[DD findings will be appended here]_
+
+
+###  — Quick web check (last 7 days)
+
+Sources: Nate B Jones social posts & Substack.
+
+Findings:
+- Nate posted short-form content on TikTok/X about Excel AI and other AI product updates; link to Substack weekly digest remains available.
+- No major news articles; activity appears limited to social/video posts and newsletter content.
+
+Notes: Social activity detected (TikTok, X, Substack). If you want exact links, I can fetch and append them.
+
+
+###  — Quick web check (last 7 days)
+
+Sources: Nate B Jones Substack, X, TikTok, YouTube.
+
+Findings:
+- Nate posted short-form content (TikTok/X) about Excel AI and product updates; Substack weekly digest available.
+- No major news articles in the last 7 days; activity primarily newsletter + social.
+
+References:
+- https://natesnewsletter.substack.com/p/i-spent-20-hours-reading-ai-newsheres
+- https://x.com/natebjones/status/1974553489792798974
+- https://www.tiktok.com/@nate.b.jones/video/7557244944524659998
+- https://www.youtube.com/@NateBJones
+
+
+###  — Quick web check (last 7 days)
+
+Sources: Nate B Jones Substack, X, TikTok, YouTube.
+
+Findings:
+- Short-form posts (TikTok/X) about Excel AI and product updates; Substack weekly digest available.
+- No major news articles in the last 7 days; activity primarily newsletter + social.
+
+References:
+- https://natesnewsletter.substack.com/p/i-spent-20-hours-reading-ai-newsheres
+- https://x.com/natebjones/status/1974553489792798974
+- https://www.tiktok.com/@nate.b.jones/video/7557244944524659998
+- https://www.youtube.com/@NateBJones
+###  — Quick web check (last 7 days)
+
+Sources: Nate B Jones Substack, X, TikTok, YouTube.
+
+Findings:
+- Short-form posts (TikTok/X) about Excel AI and product updates; Substack weekly digest available.
+- No major news articles in the last 7 days; activity primarily newsletter + social.
+
+References:
+- https://natesnewsletter.substack.com/p/i-spent-20-hours-reading-ai-newsheres
+- https://x.com/natebjones/status/1974553489792798974
+- https://www.tiktok.com/@nate.b.jones/video/7557244944524659998
+- https://www.youtube.com/@NateBJones
