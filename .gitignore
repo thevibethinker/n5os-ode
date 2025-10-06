@@ -4,6 +4,20 @@
 *.tmp
 *.bak
 *.swp
+*.backup
+*.backup_*
+*_[0-9].json
+*_[0-9].jsonl
+*_[0-9].md
+*_[0-9].py
+*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9]*
+
+# Ignore backup and temporary directories
+BackupArchive/
+Backups/
+Misc/
+N5/backups/
+N5/archives/
 
 # Ignore runtime logs and transient data
 N5/runtime/

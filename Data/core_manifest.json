@@ -32,7 +32,7 @@
       "description": "Test coverage for direct mechanism"
     },
     {
-      "path": "N5/Documents/prefs_20250920_132252.md",
+      "path": "N5/prefs.md",
       "min_bytes": 1,
       "must_contain_regex": "direct_processing|Default Ingestion Method",
       "must_be_tracked": true,
@@ -41,15 +41,10 @@
   ],
   "command_registry_checks": [
     {
-      "registry_file": "N5/Data/commands_20250920_132219.jsonl",
+      "registry_file": "Data/commands_20250920_132219.jsonl",
       "must_contain_command": "direct-knowledge-ingest",
       "description": "Ensure command is discoverable by run-system"
     }
   ],
-  "append_only_reservoirs": [
-    "N5/knowledge/facts.jsonl",
-    "N5/knowledge/timeline.md",
-    "N5/knowledge/sources.md",
-    "N5/knowledge/glossary.md"
-  ]
+  "append_only_reservoirs": []
 }
