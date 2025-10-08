@@ -1,0 +1,193 @@
+# Document Inbox
+
+**Purpose**: Default landing zone for ALL documents until properly processed and filed.
+
+---
+
+## Core Principle
+
+**DEFAULT BEHAVIOR**: Any document provided to the system is stored here FIRST, then processed later.
+
+This prevents interrupting workflow to decide "where should this go?" - just drop it in the inbox, deal with it during processing.
+
+---
+
+## Directory Structure
+
+```
+Document Inbox/
+├── Company/
+│   ├── meetings/       - Raw meeting transcripts
+│   ├── emails/         - Important emails
+│   ├── documents/      - Documents needing review
+│   └── inbox/          - General company intake
+├── Personal/
+│   ├── notes/          - Personal notes
+│   └── inbox/          - Personal intake
+├── Temporary/          - Short-term files (7-day retention)
+└── README.md           - This file
+```
+
+---
+
+## Processing Workflow
+
+### 1. Intake (Automatic)
+**All documents land here first**:
+- Web articles saved
+- Meeting transcripts uploaded
+- Emails forwarded
+- Documents downloaded
+- Screenshots/images captured
+- Any file created during conversation
+
+### 2. Review (Periodic)
+Check inbox daily/weekly:
+- Scan Company/inbox/ and Personal/inbox/
+- Identify what needs processing
+- Prioritize by urgency
+
+### 3. Process (Manual or Automated)
+For each document, decide destination:
+
+**→ Knowledge/** (AI context)
+- Extract insights, facts, principles
+- Process with `direct-knowledge-ingest`
+- Structured, AI-consumable format
+- Example: Meeting insights → Knowledge/facts.jsonl
+
+**→ Documents/** (Reference filing)
+- Keep original for reference
+- File by category (Contracts/, Meetings/, Expenses/)
+- Example: Contract PDF → Documents/Contracts/
+
+**→ Careerspan/** (Company work)
+- Company-specific materials
+- Example: Product specs → Careerspan/Product/
+
+**→ DELETE**
+- No longer needed after processing
+- Insights extracted and stored elsewhere
+
+### 4. Archive or Delete
+After processing:
+- Delete if insights extracted and no reference value
+- Archive externally if needed for compliance/legal
+- Move to Documents/ if reference copy needed
+
+---
+
+## Retention Policy
+
+### Company/
+- **meetings/**: Process within 48 hours, archive after processing
+- **emails/**: Process within 24 hours, delete after processing
+- **documents/**: Process within 7 days, file or delete
+- **inbox/**: Process within 24 hours
+
+### Personal/
+- **notes/**: Process within 7 days
+- **inbox/**: Process within 48 hours
+
+### Temporary/
+- **Auto-cleanup**: Files older than 7 days deleted automatically
+- Use for: Downloads, intermediate files, conversation artifacts
+
+---
+
+## Examples
+
+### Example 1: Meeting Transcript
+```
+1. Upload → Document Inbox/Company/meetings/2025-10-08-board-meeting.md
+2. Process: Extract insights via direct-knowledge-ingest
+3a. Insights → Knowledge/facts.jsonl
+3b. Action items → Lists/must-contact.jsonl  
+3c. Original → Documents/Meetings/2025-10-08-board-meeting.md (reference)
+4. Delete from inbox
+```
+
+### Example 2: Contract
+```
+1. Receive → Document Inbox/Company/documents/advisor-agreement.pdf
+2. Process: Review key terms
+3a. Key terms → Knowledge/contracts.md (if AI needs context)
+3b. Original → Documents/Contracts/Advisors/laura-close-2025.pdf
+4. Delete from inbox
+```
+
+### Example 3: Expense Receipt
+```
+1. Screenshot → Document Inbox/Company/documents/receipt.jpg
+2. Process: Record expense
+3. File → Documents/Expenses/2025-10/uber-receipt.jpg
+4. Delete from inbox
+```
+
+### Example 4: Article
+```
+1. Save webpage → Document Inbox/Temporary/article-ai-trends.md
+2. Process: Read and extract insights
+3a. Key insights → Knowledge/facts.jsonl
+3b. Full article → Articles/ai-trends-2025.md
+4. Delete from inbox
+```
+
+---
+
+## Commands
+
+### Process Files
+- `process-document [file]` - Process single document
+- `process-inbox [folder]` - Process entire inbox
+- `review-inbox` - Show files needing processing
+
+### Organization
+- `organize-files` - Trigger file organization
+- `conversation-end` - Process all conversation files
+
+### Cleanup
+- `cleanup-inbox` - Delete processed files
+- `cleanup-temp` - Delete old temporary files
+
+---
+
+## Best Practices
+
+### DO:
+✅ Drop ALL documents here first (default behavior)
+✅ Process regularly (don't let it pile up)
+✅ Delete after processing (inbox is temporary)
+✅ Use descriptive filenames with dates
+✅ Check inbox daily
+
+### DON'T:
+❌ Store permanently here (process and move)
+❌ Let files accumulate unprocessed
+❌ Skip the inbox (always use it first)
+❌ Leave without processing decision
+
+---
+
+## Integration with Conversation End-Step
+
+At conversation end, all files in conversation workspace are:
+1. Reviewed and classified
+2. Moved to Document Inbox/Temporary/
+3. Then processed to final destinations
+4. Conversation workspace cleaned
+
+This ensures no files are lost and everything gets properly filed.
+
+---
+
+## Related Documentation
+
+- `file 'Knowledge/README.md'` - AI context storage (future)
+- `file 'Documents/README.md'` - Reference filing (future)
+- `file 'N5/prefs.md'` - File saving policy
+- `file 'Documents/N5.md'` - System entry point
+
+---
+
+*Document Inbox: The gateway to organized information*
