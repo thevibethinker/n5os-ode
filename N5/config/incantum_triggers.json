@@ -349,5 +349,16 @@
       "follow up"
     ],
     "command": "follow-up-email-generator"
+  },
+  {
+    "trigger": "end conversation",
+    "aliases": [
+      "conversation end",
+      "close thread",
+      "wrap up",
+      "end step",
+      "we're done"
+    ],
+    "command": "conversation-end"
   }
 ]
