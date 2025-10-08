@@ -102,7 +102,7 @@ def apply_plan(plan, dry_run=False):
         print(f"Appended to {bio_file}")
 
     if plan.get("timeline"):
-        timeline_file = KNOWLEDGE_DIR / "timeline.md"
+        timeline_file = KNOWLEDGE_DIR / "careerspan-timeline.md"
         with open(timeline_file, "a") as f:
             for entry in sorted(plan["timeline"], key=lambda x: x["date"]):
                 f.write(f"## {entry['date']}: {entry['title']}\n")

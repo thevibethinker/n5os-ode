@@ -1,0 +1,14 @@
+{
+  "content_map": "Transcript: Meeting focused on hiring partners and community engagement. Discussion about new customer onboarding process and networking opportunities.",
+  "core_map": "Hiring partner strategy and community networking planning for Careerspan.",
+  "operations_map": "Operational tasks: Draft hiring partner agreements, plan community event, follow up on networking leads.",
+  "metadata": {
+    "participants": ["Alice", "John", "Sarah"],
+    "roles": {
+      "Alice": "Community Manager",
+      "John": "Project Manager",
+      "Sarah": "Designer"
+    },
+    "deliverables": ["Partnership Agreements", "Event Plan", "Networking Follow-ups"]
+  }
+}

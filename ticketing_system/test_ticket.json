@@ -1,0 +1,57 @@
+{
+  "id": "8ca5ebf2-d1f7-4f49-8fe8-68bcb891d235",
+  "title": "Hiring partner strategy and community networking planning for Careerspan.",
+  "description": "Hiring partner strategy and community networking planning for Careerspan.",
+  "meeting_metadata": {
+    "participants": [
+      "Alice",
+      "John",
+      "Sarah"
+    ],
+    "roles": {
+      "Alice": "Community Manager",
+      "John": "Project Manager",
+      "Sarah": "Designer"
+    },
+    "deliverables": [
+      "Partnership Agreements",
+      "Event Plan",
+      "Networking Follow-ups"
+    ]
+  },
+  "version": "1.0",
+  "actionable_items": [],
+  "blurbs": [],
+  "warm_intro_cues": [],
+  "priority": "medium",
+  "output_type": "report",
+  "categories": [
+    "community partner",
+    "hiring partner (a customer)",
+    "networking relationship",
+    "general lead or miscellaneous lead"
+  ],
+  "context_summary": "This ticket covers Hiring partner strategy and community networking planning for Careerspan.. Participants: Alice, John, Sarah. Key focus areas: community partner, hiring partner (a customer), networking relationship, general lead or miscellaneous lead. Priority: medium.",
+  "content_creation_hints": [
+    "Develop community engagement content or partnership proposals",
+    "Create collaborative project outlines or shared initiatives",
+    "Prepare hiring strategy documents or candidate profiles",
+    "Draft customer-focused communications or service agreements",
+    "Build networking event summaries or relationship maps",
+    "Generate follow-up communications for relationship building",
+    "Create lead nurturing content or opportunity assessments",
+    "Develop miscellaneous reports or general follow-ups",
+    "Generate a report summarizing the meeting outcomes and next steps"
+  ],
+  "contextual_enrichment": "Community Manager building partnerships Project Manager overseeing delivery Lead Designer focusing on UI/UX Project on track; next milestone UI redesign due Monday.",
+  "llm_instructions": "Generate a report based on this ticket.",
+  "assignee": "John",
+  "status": "open",
+  "progress": 0,
+  "quality_score": 5,
+  "feedback": [],
+  "due_date": "2025-10-07",
+  "related_tickets": [
+    "d17c7423-c7a8-4f09-85f4-05f793b7946e"
+  ]
+}

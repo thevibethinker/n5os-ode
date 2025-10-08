@@ -27,7 +27,7 @@ def main():
         print(f"- Source: {args.source_name}")
         print("- Would create/update knowledge reservoirs:")
         print("  - bio.md (append)")
-        print("  - timeline.md (append)")
+        print("  - careerspan-timeline.md (append)")
         print("  - glossary.md (append)")
         print("  - sources.md (append)")
         print("  - facts.jsonl (append)")
