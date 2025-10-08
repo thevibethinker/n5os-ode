@@ -22,7 +22,8 @@ class FileProtector:
     MEDIUM_PROTECTION_FILES = [
         "/home/workspace/N5/commands.jsonl",  # Command registry (curated)
         "/home/workspace/N5/lists/*.jsonl",   # User data (curated)
-        "/home/workspace/N5/timeline/*.jsonl", # Timeline entries (curated)
+        "/home/workspace/N5/timeline/system-timeline.jsonl", # System development timeline (curated)
+        "/home/workspace/N5/knowledge/careerspan-timeline.md", # Company & life timeline (curated)
     ]
     
     AUTO_GENERATED_PATTERNS = [

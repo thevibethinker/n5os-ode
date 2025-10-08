@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-N5 Timeline Add - Add new entry to development timeline
+N5 System Timeline Add - Add new entry to N5 OS system development timeline
 """
 
 import json
@@ -13,7 +13,7 @@ from typing import Dict, List, Optional
 
 
 class TimelineAdder:
-    def __init__(self, timeline_path: str = "/home/workspace/N5/timeline/timeline.jsonl"):
+    def __init__(self, timeline_path: str = "/home/workspace/N5/timeline/system-timeline.jsonl"):
         self.timeline_path = Path(timeline_path)
         # Ensure directory exists
         self.timeline_path.parent.mkdir(parents=True, exist_ok=True)
@@ -73,7 +73,7 @@ class TimelineAdder:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Add entry to n5.os development timeline")
+    parser = argparse.ArgumentParser(description="Add entry to N5 OS system development timeline")
     parser.add_argument("--title", required=True, help="Brief title of the change/feature")
     parser.add_argument("--description", required=True, help="Detailed description")
     parser.add_argument("--category", required=True, 

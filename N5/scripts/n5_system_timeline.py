@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-N5 Timeline Management - View and search timeline entries
+N5 System Timeline Management - View and search N5 OS development timeline entries
 """
 
 import json
@@ -12,7 +12,7 @@ from typing import List, Dict, Optional
 
 
 class TimelineViewer:
-    def __init__(self, timeline_path: str = "/home/workspace/N5/timeline/timeline.jsonl"):
+    def __init__(self, timeline_path: str = "/home/workspace/N5/timeline/system-timeline.jsonl"):
         self.timeline_path = Path(timeline_path)
         self.entries = []
         self.load_entries()
@@ -72,7 +72,7 @@ class TimelineViewer:
             return "No timeline entries found."
         
         output = []
-        output.append("n5.os Development Timeline")
+        output.append("N5 OS System Development Timeline")
         output.append("=" * 80)
         output.append("")
         
@@ -123,7 +123,7 @@ class TimelineViewer:
             return "No timeline entries found."
         
         output = []
-        output.append("# n5.os Development Timeline")
+        output.append("# N5 OS System Development Timeline")
         output.append("")
         
         for entry in entries:
@@ -158,7 +158,7 @@ class TimelineViewer:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="View n5.os development timeline")
+    parser = argparse.ArgumentParser(description="View N5 OS system development timeline")
     parser.add_argument("--category", help="Filter by category")
     parser.add_argument("--from", dest="from_date", help="Start date (ISO format)")
     parser.add_argument("--to", dest="to_date", help="End date (ISO format)")
