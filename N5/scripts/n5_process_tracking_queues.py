@@ -3,9 +3,9 @@
 Process the individuals_queue.jsonl and organizations_queue.jsonl lists and create their respective markdown files.
 
 This script:
-1. Reads entries from N5/lists/individuals_queue.jsonl and N5/lists/organizations_queue.jsonl
+1. Reads entries from Lists/individuals_queue.jsonl and Lists/organizations_queue.jsonl
 2. Creates a markdown file for each new individual/organization based on templates
-3. Archives processed entries to N5/lists/processed_archive.jsonl
+3. Archives processed entries to Lists/processed_archive.jsonl
 4. Logs what was created/skipped
 """
 
@@ -173,7 +173,7 @@ def process_queue(
 
 def main():
     base_dir = Path("/home/workspace")
-    lists_dir = base_dir / "N5/lists"
+    lists_dir = base_dir / "Lists"
     si_dir = base_dir / "Startup Intelligence"
     archive_path = lists_dir / "processed_archive.jsonl"
     today = datetime.now().strftime("%Y-%m-%d")

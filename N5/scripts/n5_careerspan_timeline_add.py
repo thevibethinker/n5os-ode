@@ -11,7 +11,7 @@ from typing import Optional
 
 
 class CareerspanTimelineAdder:
-    def __init__(self, timeline_path: str = "/home/workspace/N5/knowledge/careerspan-timeline.md"):
+    def __init__(self, timeline_path: str = "/home/workspace/Knowledge/careerspan-timeline.md"):
         self.timeline_path = Path(timeline_path)
         # Ensure file exists
         if not self.timeline_path.exists():

@@ -23,7 +23,7 @@ def run_sync_script(dry_run: bool = True) -> Dict:
         return None
     # The sync script logs but does not output JSON, so assuming log file is final report
     # We'll read the latest report file from N5
-    report_dir = Path("/home/workspace/N5/knowledge/sync_reports")
+    report_dir = Path("/home/workspace/Knowledge/sync_reports")
     if not report_dir.exists():
         print("No sync report directory found")
         return None

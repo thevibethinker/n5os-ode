@@ -301,7 +301,7 @@ class ConversationParser:
     
     def save_to_reservoirs(self, structured_data: Dict[str, Any]):
         """Save processed data to knowledge reservoirs"""
-        self.knowledge_dir = Path("/home/workspace/N5/knowledge_reservoirs")
+        self.knowledge_dir = Path("/home/workspace/Knowledge_reservoirs")
         self.knowledge_dir.mkdir(exist_ok=True)
         
         source_name = structured_data.get('source_name', 'unknown')

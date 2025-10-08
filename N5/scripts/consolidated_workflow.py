@@ -16,7 +16,7 @@ import threading
 import front_matter_manager as fmm  # Assuming it's in same dir
 
 # Setup N5OS logging
-LOG_DIR = '/home/workspace/N5/knowledge/logs/Email'
+LOG_DIR = '/home/workspace/Knowledge/logs/Email'
 os.makedirs(LOG_DIR, exist_ok=True)
 log_file = os.path.join(LOG_DIR, f"{datetime.now().strftime('%Y%m%d')}.log")
 logging.basicConfig(

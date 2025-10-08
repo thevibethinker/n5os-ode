@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 def generate_markdown():
-    calendar_file = Path("/home/workspace/N5/lists/opportunity-calendar.jsonl")
+    calendar_file = Path("/home/workspace/Lists/opportunity-calendar.jsonl")
 
     opportunities = []
     if calendar_file.exists():
@@ -114,7 +114,7 @@ def generate_markdown():
     markdown += "*Last updated: " + datetime.now().strftime("%Y-%m-%d") + "*"
 
     # Write to file
-    md_file = Path("/home/workspace/N5/lists/opportunity-calendar.md")
+    md_file = Path("/home/workspace/Lists/opportunity-calendar.md")
     with open(md_file, 'w') as f:
         f.write(markdown)
 

@@ -37,7 +37,7 @@ def add_opportunity(title, organization, deadline=None, opp_type="funding", stag
     }
 
     # Add to JSONL file
-    calendar_file = Path("/home/workspace/N5/lists/opportunity-calendar.jsonl")
+    calendar_file = Path("/home/workspace/Lists/opportunity-calendar.jsonl")
     with open(calendar_file, 'a') as f:
         f.write(json.dumps(opportunity) + '\n')
 
