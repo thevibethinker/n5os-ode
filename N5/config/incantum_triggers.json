@@ -286,5 +286,68 @@
       "add transcript"
     ],
     "command": "transcript-ingest"
+  },
+  {
+    "trigger": "deep research due diligence",
+    "aliases": [
+      "deep research due diligence",
+      "deep research due diligence",
+      "deep research"
+    ],
+    "command": "deep-research-due-diligence"
+  },
+  {
+    "trigger": "functions b2c marketing and sales collateral generator job seeker",
+    "aliases": [
+      "functions b2c marketing and sales collateral generator job seeker",
+      "functions - b2c marketing and sales collateral generator (job seeker)",
+      "functions b2c"
+    ],
+    "command": "functions-b2c-marketing-and-sales-collateral-generator-job-seeker"
+  },
+  {
+    "trigger": "jtbd plus interview extractor",
+    "aliases": [
+      "jtbd plus interview extractor",
+      "jtbd plus interview extractor",
+      "jtbd plus"
+    ],
+    "command": "jtbd-plus-interview-extractor"
+  },
+  {
+    "trigger": "pr intel extractor",
+    "aliases": [
+      "pr intel extractor",
+      "pr - intel - extractor",
+      "pr intel"
+    ],
+    "command": "pr-intel-extractor"
+  },
+  {
+    "trigger": "stakeholder pain point extractor",
+    "aliases": [
+      "stakeholder pain point extractor",
+      "stakeholder pain point extractor",
+      "stakeholder pain"
+    ],
+    "command": "stakeholder-pain-point-extractor"
+  },
+  {
+    "trigger": "stakeholder qa extractor and analyzer",
+    "aliases": [
+      "stakeholder qa extractor and analyzer",
+      "stakeholder q&a extractor and analyzer",
+      "stakeholder qa"
+    ],
+    "command": "stakeholder-qa-extractor-and-analyzer"
+  },
+  {
+    "trigger": "follow up email generator",
+    "aliases": [
+      "follow up email generator",
+      "follow - up email generator",
+      "follow up"
+    ],
+    "command": "follow-up-email-generator"
   }
 ]
