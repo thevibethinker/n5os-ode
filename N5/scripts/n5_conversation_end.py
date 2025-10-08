@@ -1,0 +1,330 @@
+#!/usr/bin/env python3
+"""
+N5 Conversation End-Step
+Formal conversation close with file organization and cleanup
+
+This is the "end step" (like Magic: The Gathering) where all conversation
+effects are resolved - files are reviewed, organized, and cleaned up.
+"""
+
+import os
+import sys
+import json
+import shutil
+from pathlib import Path
+from datetime import datetime
+from collections import defaultdict
+
+# Paths
+WORKSPACE = Path("/home/workspace")
+CONVERSATION_WS = Path(os.getenv("CONVERSATION_WORKSPACE", "/home/.z/workspaces/con_current"))
+DOCUMENT_INBOX = WORKSPACE / "Document Inbox/Temporary"
+LOG_FILE = WORKSPACE / "N5/runtime/conversation_ends.log"
+
+
+def log_action(message):
+    """Log to file and print"""
+    timestamp = datetime.now().isoformat()
+    log_line = f"[{timestamp}] {message}"
+    print(message)
+    
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(LOG_FILE, 'a') as f:
+        f.write(log_line + '\n')
+
+
+def classify_file(filepath):
+    """
+    Classify file by type and content to determine destination
+    
+    Returns: (destination, action, reason)
+        destination: Path or None
+        action: "move" | "delete" | "ask"
+        reason: Explanation
+    """
+    name = filepath.name.lower()
+    ext = filepath.suffix.lower()
+    
+    # Classification rules
+    
+    # Images
+    if ext in ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp']:
+        if any(x in name for x in ['temp', 'test', 'chart', 'viz']):
+            return (None, "delete", "Temporary visualization")
+        else:
+            dest = WORKSPACE / "Images" / filepath.name
+            return (dest, "move", "Generated/downloaded image")
+    
+    # Meeting transcripts
+    if any(x in name for x in ['transcript', 'meeting']):
+        dest = DOCUMENT_INBOX.parent / "Company/meetings" / filepath.name
+        return (dest, "move", "Meeting transcript for processing")
+    
+    # Analysis/reports
+    if any(x in name for x in ['analysis', 'report', 'summary']):
+        dest = WORKSPACE / "Documents" / filepath.name
+        return (dest, "move", "Analysis/report document")
+    
+    # Scripts
+    if ext in ['.py', '.sh', '.js']:
+        if any(x in name for x in ['temp', 'test', 'tmp']):
+            return (None, "delete", "Temporary script")
+        else:
+            return (None, "ask", "Script - determine if permanent")
+    
+    # Data exports
+    if ext in ['.csv', '.json', '.jsonl']:
+        if any(x in name for x in ['temp', 'test', 'intermediate']):
+            return (None, "delete", "Temporary data file")
+        else:
+            dest = WORKSPACE / "Exports" / filepath.name
+            return (dest, "move", "Data export")
+    
+    # Documents
+    if ext in ['.md', '.txt', '.pdf', '.docx']:
+        if any(x in name for x in ['temp', 'test', 'draft', 'scratch']):
+            return (None, "delete", "Temporary document")
+        else:
+            # Default to Document Inbox for review
+            dest = DOCUMENT_INBOX / filepath.name
+            return (dest, "move", "Document for review")
+    
+    # Default: Ask user
+    return (None, "ask", "Unknown file type")
+
+
+def inventory_workspace():
+    """
+    Inventory all files in conversation workspace
+    
+    Returns: dict of {category: [files]}
+    """
+    if not CONVERSATION_WS.exists():
+        print(f"⚠️  Conversation workspace not found: {CONVERSATION_WS}")
+        print("   Using current directory for demonstration")
+        return {}
+    
+    files_by_category = defaultdict(list)
+    
+    for filepath in CONVERSATION_WS.rglob("*"):
+        if filepath.is_file():
+            dest, action, reason = classify_file(filepath)
+            category = f"{action.upper()}"
+            files_by_category[category].append({
+                "file": filepath,
+                "dest": dest,
+                "reason": reason
+            })
+    
+    return files_by_category
+
+
+def propose_organization(files_by_category):
+    """
+    Propose file organization to user
+    
+    Returns formatted proposal
+    """
+    proposal = []
+    proposal.append("\n" + "="*70)
+    proposal.append("CONVERSATION END-STEP: File Organization")
+    proposal.append("="*70)
+    
+    total_files = sum(len(files) for files in files_by_category.values())
+    proposal.append(f"\nFiles created this conversation: {total_files}\n")
+    
+    # Group by action
+    for action in ["MOVE", "DELETE", "ASK"]:
+        files = files_by_category.get(action, [])
+        if not files:
+            continue
+        
+        if action == "MOVE":
+            proposal.append(f"\n📁 FILES TO MOVE ({len(files)} files)")
+            proposal.append("-" * 70)
+            
+            # Group by destination
+            by_dest = defaultdict(list)
+            for item in files:
+                dest_dir = item['dest'].parent if item['dest'] else "Unknown"
+                by_dest[dest_dir].append(item)
+            
+            for dest_dir, items in sorted(by_dest.items()):
+                proposal.append(f"\n  → {dest_dir}/")
+                for item in sorted(items, key=lambda x: x['file'].name):
+                    proposal.append(f"     ✓ {item['file'].name}")
+                    proposal.append(f"        ({item['reason']})")
+        
+        elif action == "DELETE":
+            proposal.append(f"\n🗑️  FILES TO DELETE ({len(files)} files)")
+            proposal.append("-" * 70)
+            for item in sorted(files, key=lambda x: x['file'].name):
+                proposal.append(f"  ✗ {item['file'].name}")
+                proposal.append(f"     ({item['reason']})")
+        
+        elif action == "ASK":
+            proposal.append(f"\n❓ FILES NEEDING DECISION ({len(files)} files)")
+            proposal.append("-" * 70)
+            for item in sorted(files, key=lambda x: x['file'].name):
+                proposal.append(f"  ? {item['file'].name}")
+                proposal.append(f"     ({item['reason']})")
+    
+    # Summary
+    move_count = len(files_by_category.get("MOVE", []))
+    delete_count = len(files_by_category.get("DELETE", []))
+    ask_count = len(files_by_category.get("ASK", []))
+    
+    proposal.append("\n" + "="*70)
+    proposal.append(f"SUMMARY: {move_count} move, {delete_count} delete, {ask_count} need decision")
+    proposal.append("="*70)
+    proposal.append("\nProceed with moves and deletions? (Y/n)")
+    
+    return "\n".join(proposal)
+
+
+def execute_organization(files_by_category, confirmed=True):
+    """
+    Execute file moves and deletions
+    """
+    if not confirmed:
+        print("❌ Organization cancelled by user")
+        return
+    
+    print("\n" + "="*70)
+    print("EXECUTING FILE ORGANIZATION")
+    print("="*70 + "\n")
+    
+    moved_count = 0
+    deleted_count = 0
+    errors = []
+    
+    # Execute moves
+    for item in files_by_category.get("MOVE", []):
+        try:
+            # Create destination directory
+            item['dest'].parent.mkdir(parents=True, exist_ok=True)
+            
+            # Move file
+            shutil.move(str(item['file']), str(item['dest']))
+            
+            moved_count += 1
+            log_action(f"Moved: {item['file'].name} → {item['dest'].relative_to(WORKSPACE)}")
+            
+        except Exception as e:
+            errors.append(f"{item['file'].name}: {e}")
+    
+    # Execute deletions
+    for item in files_by_category.get("DELETE", []):
+        try:
+            item['file'].unlink()
+            deleted_count += 1
+            log_action(f"Deleted: {item['file'].name} (temporary)")
+        except Exception as e:
+            errors.append(f"{item['file'].name}: {e}")
+    
+    # Report
+    print(f"✓ Moved {moved_count} files")
+    print(f"✗ Deleted {deleted_count} files")
+    
+    if errors:
+        print(f"\n⚠️  {len(errors)} errors:")
+        for err in errors[:10]:
+            print(f"  - {err}")
+    
+    # Handle ASK files
+    ask_files = files_by_category.get("ASK", [])
+    if ask_files:
+        print(f"\n❓ {len(ask_files)} files need manual decision")
+        print("   Keeping in conversation workspace for now")
+    
+    print("\n" + "="*70)
+    print("✅ CONVERSATION END-STEP COMPLETE")
+    print("="*70)
+    
+    return {
+        "moved": moved_count,
+        "deleted": deleted_count,
+        "errors": len(errors),
+        "pending": len(ask_files)
+    }
+
+
+def demo_mode():
+    """
+    Demo mode - show what would happen without actual conversation workspace
+    """
+    print("\n" + "="*70)
+    print("CONVERSATION END-STEP (DEMO MODE)")
+    print("="*70)
+    print("\nThis command will:")
+    print("  1. Inventory conversation workspace files")
+    print("  2. Classify each file (move, delete, ask)")
+    print("  3. Propose organization")
+    print("  4. Execute on confirmation")
+    print("\nExample output:")
+    print("""
+📁 FILES TO MOVE (5 files)
+  → Images/
+     ✓ concept_design.png (Generated image)
+     ✓ wireframe.png (Generated image)
+  
+  → Document Inbox/Temporary/
+     ✓ analysis.md (Document for review)
+
+🗑️  FILES TO DELETE (2 files)
+  ✗ temp_chart.png (Temporary visualization)
+  ✗ test_script.py (Temporary script)
+
+❓ FILES NEEDING DECISION (1 file)
+  ? important_script.py (Script - determine if permanent)
+
+SUMMARY: 3 move, 2 delete, 1 need decision
+Proceed? (Y/n)
+""")
+    print("\nNote: Run this at actual conversation end for full functionality")
+
+
+def main():
+    """Main execution"""
+    
+    # Check if we're in a real conversation context
+    if not CONVERSATION_WS.exists() or str(CONVERSATION_WS) == "/home/.z/workspaces/con_current":
+        demo_mode()
+        return
+    
+    print("\n" + "="*70)
+    print("N5 CONVERSATION END-STEP")
+    print("="*70)
+    print(f"\nConversation workspace: {CONVERSATION_WS}")
+    
+    # Step 1: Inventory
+    print("\nStep 1: Inventorying files...")
+    files_by_category = inventory_workspace()
+    
+    if not any(files_by_category.values()):
+        print("\n✓ No files to organize - conversation workspace is clean")
+        return
+    
+    # Step 2: Propose
+    proposal = propose_organization(files_by_category)
+    print(proposal)
+    
+    # Step 3: Get confirmation
+    if "--auto" in sys.argv or "--yes" in sys.argv:
+        confirmed = True
+    else:
+        response = input("\n> ").strip().lower()
+        confirmed = response in ['y', 'yes', '']
+    
+    # Step 4: Execute
+    if confirmed:
+        result = execute_organization(files_by_category, confirmed=True)
+        
+        # Log conversation end
+        log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
+    else:
+        print("\n✓ Organization cancelled - files remain in conversation workspace")
+
+
+if __name__ == "__main__":
+    main()
