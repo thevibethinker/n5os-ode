@@ -1,8 +1,0 @@
-{"timestamp": "2025-09-20T13:22:19.060737", "type": "rename", "details": {"old": "/home/workspace/N5/POLICY.md", "new": "/home/workspace/N5/policy_20250920_132219.md"}}
-{"timestamp": "2025-09-20T13:22:19.061839", "type": "rename", "details": {"old": "/home/workspace/N5/index.jsonl", "new": "/home/workspace/N5/index_20250920_132219.jsonl"}}
-{"timestamp": "2025-09-20T13:22:19.062376", "type": "rename", "details": {"old": "/home/workspace/N5/commands.md", "new": "/home/workspace/N5/commands_20250920_132219.md"}}
-{"timestamp": "2025-09-20T13:22:19.062773", "type": "rename", "details": {"old": "/home/workspace/N5/zo_setup_rubric.md", "new": "/home/workspace/N5/zo_setup_rubric_20250920_132219.md"}}
-{"timestamp": "2025-09-20T13:22:19.063045", "type": "rename", "details": {"old": "/home/workspace/N5/commands.jsonl", "new": "/home/workspace/N5/commands_20250920_132219.jsonl"}}
-{"timestamp": "2025-09-20T13:22:19.063400", "type": "rename", "details": {"old": "/home/workspace/N5/workflows_register.md", "new": "/home/workspace/N5/workflows_register_20250920_132219.md"}}
-{"timestamp": "2025-09-20T13:22:19.063828", "type": "rename", "details": {"old": "/home/workspace/N5/zo_setup_rubric_adjusted.sheet.json", "new": "/home/workspace/N5/zo_setup_rubric_adjusted.sheet_20250920_132219.json"}}
-{"timestamp": "2025-09-20T13:22:19.064184", "type": "rename", "details": {"old": "/home/workspace/N5/zo_setup_rubric.sheet.json", "new": "/home/workspace/N5/zo_setup_rubric.sheet_20250920_132219.json"}}
