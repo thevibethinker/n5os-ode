@@ -1,15 +1,15 @@
 ---
-date: "2025-09-20T22:24:55Z"
-last-tested: "2025-09-20T22:24:55Z"
-generated_date: "2025-09-20T22:24:55Z"
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
 checksum: c648c1c73c6b9d6599506f55f3cc5371
 tags: []
 category: unknown
 priority: medium
 related_files: []
-anchors: 
-input: null
-output: /home/workspace/N5_mirror/workflows_register.md
+anchors:
+  input: null
+  output: /home/workspace/N5_mirror/workflows_register.md
 ---
 # N5 Workflows Register
 
@@ -104,69 +104,3 @@ This register documents workflows for enriching influencer dossiers in `Startup 
 ### Alignment
 - Follows ingestion standards: Exhaustive lessons, no overlap, single source.
 - Adaptive: Suggest new lesson categories if themes evolve.
-## Workflow: Transcript Ingestion and Processing
-
-### Trigger
-- CLI command: `transcript-ingest <transcript_source>`
-- File upload or Google Drive folder monitoring
-- Scheduled batch processing of new transcripts
-
-### Steps
-1. **Validate Input**: Confirm transcript source exists and is accessible
-2. **Load & Parse**: Extract meeting metadata, speaker lines, and timestamps
-3. **Content Mapping**: Generate structured analysis including:
-   - Meeting datetime and participants
-   - Commitments (my/others/our), decisions, deal context
-   - Resonance analysis and warm introduction opportunities
-   - Speaker-aware parsing and attribution
-4. **Generate Outputs**:
-   - Content maps (JSON) with structured metadata
-   - Action tickets for deliverables and introductions
-   - Communication drafts using MasterVoiceSchema
-   - Summary blurbs and workflow reports
-5. **Knowledge Integration**: Feed results into N5 knowledge reservoirs
-6. **Cleanup**: Remove temporary files and log completion
-
-### Modes
-- `load`: Basic parsing and validation
-- `map`: Full content mapping and analysis
-- `tickets`: Generate action items and deliverables
-- `email`: Create communication drafts
-- `full`: Complete end-to-end processing
-
-### Tools Used
-- `consolidated_transcript_workflow.py`: Main processing engine
-- `gdrive_transcript_workflow.py`: Google Drive integration
-- `direct_ingestion_mechanism.py`: Knowledge system integration
-- `MasterVoiceSchema`: Voice consistency for communications
-
-### Outputs
-- Content maps: `/N5/output/content_maps/transcript_content_map_*.json`
-- Tickets: `/N5/output/tickets/transcript_tickets_*.json`
-- Communications: `/N5/output/communications/transcript_emails_*.md`
-- Knowledge updates: Integrated into bio, timeline, facts, sources reservoirs
-
-### Integration Points
-- N5 knowledge system (bio, timeline, glossary, sources)
-- Google Drive API for folder processing
-- MasterVoiceSchema for communication consistency
-- Safety layer via `n5_safety.py`
-- Execution telemetry via `n5_run_record.py`
-
-### Edge Cases
-- Malformed transcripts: Graceful error handling with partial processing
-- Speaker identification issues: Manual review prompts
-- Large batch processing: Chunked processing with progress tracking
-- API rate limits: Exponential backoff and retry logic
-
-### Command Interface
-```bash
-transcript-ingest /path/to/transcript.txt --mode full
-transcript-ingest folder_id --gdrive --output-dir /custom/path
-```
-
-### Future Enhancements
-- Real-time processing triggers
-- Multi-language transcript support
-- Advanced speaker diarization
-- Integration with calendar systems for meeting context
