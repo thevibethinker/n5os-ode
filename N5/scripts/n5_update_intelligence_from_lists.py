@@ -2,7 +2,7 @@
 import os
 
 def main():
-    list_file = "/home/workspace/N5/lists/content_creators_to_add.md"
+    list_file = "/home/workspace/Lists/content_creators_to_add.md"
     creators_dir = "/home/workspace/Startup Intelligence/Content Creators"
 
     with open(list_file, "r") as f:

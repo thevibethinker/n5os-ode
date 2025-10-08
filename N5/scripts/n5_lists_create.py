@@ -105,8 +105,8 @@ def main():
     item = {
         "slug": slug,
         "title": title,
-        "path_jsonl": f"N5/lists/{slug}.jsonl",
-        "path_md": f"N5/lists/{slug}.md",
+        "path_jsonl": f"Lists/{slug}.jsonl",
+        "path_md": f"Lists/{slug}.md",
         "created_at": now,
         "updated_at": now
     }

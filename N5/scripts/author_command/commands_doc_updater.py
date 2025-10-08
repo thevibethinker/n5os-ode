@@ -23,7 +23,7 @@ class CommandsDocUpdater:
                  commands_md_path: str = "/home/workspace/N5/commands.md"):
         self.commands_jsonl_path = Path(commands_jsonl_path)
         self.commands_md_path = Path(commands_md_path)
-        self.knowledge_base_path = Path("/home/workspace/N5/knowledge")
+        self.knowledge_base_path = Path("/home/workspace/Knowledge")
         self.commands_dir = Path("/home/workspace/N5/commands")
     
     def update_commands_documentation(self) -> Dict[str, Any]:

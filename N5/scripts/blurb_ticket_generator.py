@@ -9,7 +9,7 @@ import aiohttp
 import hashlib
 
 # Setup logging per N5OS
-LOG_DIR = '/home/workspace/N5/knowledge/logs/Email'
+LOG_DIR = '/home/workspace/Knowledge/logs/Email'
 os.makedirs(LOG_DIR, exist_ok=True)
 log_file = os.path.join(LOG_DIR, f"{datetime.now().strftime('%Y%m%d')}.log")
 logging.basicConfig(

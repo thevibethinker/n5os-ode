@@ -10,7 +10,7 @@ import logging
 from datetime import datetime
 
 # Setup logging
-log_dir = Path("/home/workspace/N5/knowledge/logs/Sync")
+log_dir = Path("/home/workspace/Knowledge/logs/Sync")
 log_dir.mkdir(parents=True, exist_ok=True)
 log_file = log_dir / f"full_sync_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 

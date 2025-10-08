@@ -21,9 +21,9 @@ class FileProtector:
     
     MEDIUM_PROTECTION_FILES = [
         "/home/workspace/N5/commands.jsonl",  # Command registry (curated)
-        "/home/workspace/N5/lists/*.jsonl",   # User data (curated)
+        "/home/workspace/Lists/*.jsonl",   # User data (curated)
         "/home/workspace/N5/timeline/system-timeline.jsonl", # System development timeline (curated)
-        "/home/workspace/N5/knowledge/careerspan-timeline.md", # Company & life timeline (curated)
+        "/home/workspace/Knowledge/careerspan-timeline.md", # Company & life timeline (curated)
     ]
     
     AUTO_GENERATED_PATTERNS = [
@@ -53,8 +53,8 @@ class FileProtector:
             if pattern in str_path:
                 return {"protection_level": "none", "regeneratable": True, "classification": "auto-generated"}
         
-        # Check if under N5/knowledge (manually authored)
-        if "/N5/knowledge/" in str_path:
+        # Check if under Knowledge (manually authored)
+        if "/Knowledge/" in str_path:
             return {"protection_level": "medium", "regeneratable": False, "classification": "knowledge-content"}
         
         # Default classification

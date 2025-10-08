@@ -8,8 +8,8 @@ import shlex
 TRACKED_PATHS = [
     'N5/prefs.md',
     'N5/commands.jsonl',
-    'N5/lists',
-    'N5/knowledge',
+    'Lists',
+    'Knowledge',
     'N5/modules',
     'N5/flows',
     'N5/schemas',
