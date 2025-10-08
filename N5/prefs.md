@@ -37,6 +37,226 @@ This governs defaults and rules. Workflow sub-preferences may override; project 
 - Always search for existing protocols or processes for categorizing/storing documents before creating new ones. Prefer placing under existing structure (e.g., lists) to avoid bloat.
 - Whenever a new file is created, always ask me where the file should be located. Do not create any file without asking me the location.
 
+## File Saving Policy
+
+**CRITICAL**: This policy addresses workspace bloat by deferring file organization until conversation end.
+
+### Core Philosophy
+
+**During Conversation**:
+- Save ALL files to conversation workspace (temp folder with conversation ID)
+- Do NOT interrupt flow to ask about file locations
+- Focus on productivity and natural conversation
+
+**At Conversation End**:
+- Study the conversation workspace file structure
+- Propose destinations based on file type and content
+- Move files to appropriate permanent locations
+- Cleanup conversation workspace
+
+### Conversation Workspace Structure
+
+Each conversation has a dedicated workspace:
+```
+/home/.z/workspaces/con_[CONVERSATION_ID]/
+├── scripts/           - Generated scripts
+├── data/              - Data files, CSVs, JSON
+├── images/            - Generated/downloaded images
+├── documents/         - Text documents, markdown
+├── exports/           - Exported data
+└── temp/              - Truly temporary files
+```
+
+**During Conversation**: All files saved here automatically.
+
+### Default Permanent Locations by File Type
+
+| File Type | Permanent Location | Criteria |
+|-----------|-------------------|----------|
+| Generated images | `/home/workspace/Images/` | All .png, .jpg, .gif files |
+| Meeting notes/transcripts | `/home/workspace/Meetings/` | Files with meeting content |
+| Company documents | `/home/workspace/Careerspan/` | Company-related content |
+| Saved articles | `/home/workspace/Articles/` | Web articles, saved pages |
+| Code/scripts (permanent) | `/home/workspace/Code/` | User-requested code only |
+| Exports (lists, data) | `/home/workspace/Exports/` | CSV, JSON, data exports |
+| Meeting transcripts (raw) | `/home/workspace/Records/Company/meetings/` | Raw transcripts before processing |
+| Emails (raw) | `/home/workspace/Records/Company/emails/` | Email content before processing |
+| Documents (raw) | `/home/workspace/Records/Company/documents/` | Documents before processing |
+| Analysis/reports | `/home/workspace/Documents/` | Analysis, reports, summaries |
+| System documentation | `/home/workspace/Documents/System/` | N5 system docs, guides |
+| Temporary files | DELETE | Truly temporary, no value |
+
+### Conversation End Workflow
+
+**Step 1: Inventory**
+```bash
+# List all files created in conversation workspace
+find /home/.z/workspaces/con_[ID]/ -type f -newer [START_TIME]
+```
+
+**Step 2: Classify**
+For each file, determine:
+- File type (extension, content)
+- Purpose (what was it created for?)
+- Value (permanent vs temporary)
+- Context (what conversation topic?)
+
+**Step 3: Propose Destinations**
+```markdown
+## Files Created This Conversation
+
+### Images (3 files)
+- rocket_design.png → Images/rocket_design_20251008.png
+- logo_draft.png → Images/logo_draft_20251008.png
+- chart.png → DELETE (temporary visualization)
+
+### Documents (2 files)
+- meeting_summary.md → Records/Company/meetings/2025-10-08-board-meeting.md
+- analysis_report.md → Documents/Company_Analysis_20251008.md
+
+### Scripts (1 file)
+- data_processor.py → DELETE (temporary script for one-time task)
+
+**Confirm these moves? (Y/n)**
+```
+
+**Step 4: Execute Moves**
+```bash
+# Move permanent files to destinations
+mv [source] [destination]
+
+# Delete temporary files
+rm [temp_files]
+
+# Log moves to audit trail
+echo "[timestamp] Moved [files] from conversation [ID]" >> N5/runtime/file_moves.log
+```
+
+**Step 5: Cleanup**
+```bash
+# Remove empty conversation workspace
+rmdir /home/.z/workspaces/con_[ID]/
+```
+
+### Classification Rules
+
+**Images**:
+- User-requested generations → Images/
+- Temporary visualizations → DELETE
+- Charts for reports → Images/ (with descriptive name)
+
+**Documents**:
+- Meeting transcripts → Records/Company/meetings/
+- Analysis/reports → Documents/
+- Notes → Meetings/ or Records/Personal/notes/
+- Temporary drafts → DELETE
+
+**Code/Scripts**:
+- User-requested → Code/
+- One-time automation → DELETE
+- Reusable utilities → Code/
+
+**Data Files**:
+- User-requested exports → Exports/
+- Processing intermediates → DELETE
+- Raw data for ingestion → Records/[Category]/inbox/
+
+**Articles/Web Content**:
+- Saved for reference → Articles/
+- Temporary research → DELETE
+
+### Override Mechanism
+
+User can specify permanent location during conversation:
+```
+User: "Save this to Careerspan/Strategy/"
+Zo: [saves to specified location, bypassing conversation workspace]
+```
+
+This should be rare - default is conversation workspace.
+
+### Enforcement Rules
+
+**RULE 1**: During conversation, ALWAYS save to conversation workspace unless user specifies otherwise.
+
+**RULE 2**: At conversation end, ALWAYS propose file destinations before moving.
+
+**RULE 3**: If conversation ends without user confirmation, files stay in conversation workspace (safe default).
+
+**RULE 4**: Conversation workspace is retained for 7 days, then archived/deleted.
+
+**RULE 5**: User can manually trigger file organization mid-conversation: `N5: organize-files`
+
+### Examples
+
+**Example 1: Research Session**
+```
+During conversation:
+- Generated 5 images → /home/.z/workspaces/con_ABC/images/
+- Downloaded 3 articles → /home/.z/workspaces/con_ABC/documents/
+- Created 1 summary → /home/.z/workspaces/con_ABC/documents/
+
+At conversation end:
+"I created 9 files. Here's what I recommend:
+
+Images (5):
+- concept_1.png → Images/product_concept_1_20251008.png
+- concept_2.png → Images/product_concept_2_20251008.png
+- wireframe.png → Images/wireframe_20251008.png
+- temp_chart.png → DELETE (temporary)
+- analysis_viz.png → DELETE (temporary)
+
+Articles (3):
+- ai_trends_2025.md → Articles/ai_trends_2025.md
+- competitor_analysis.md → Articles/competitor_analysis.md
+- market_research.md → DELETE (extracted to Knowledge/)
+
+Summary (1):
+- research_summary.md → Documents/Research_Summary_20251008.md
+
+Total: 6 files moved, 3 deleted.
+Proceed? (Y/n)"
+```
+
+**Example 2: Meeting Processing**
+```
+During conversation:
+- Transcript uploaded → /home/.z/workspaces/con_XYZ/
+- Generated summary → /home/.z/workspaces/con_XYZ/
+- Extracted action items → Lists/must-contact.jsonl (direct write)
+
+At conversation end:
+"I created 2 files in conversation workspace:
+
+Documents (2):
+- board_meeting_transcript.md → Records/Company/meetings/2025-10-08-board-meeting-transcript.md
+- board_meeting_summary.md → Meetings/2025-10-08-Board-Meeting-Summary.md
+
+Note: Action items already written to Lists/must-contact.jsonl
+
+Proceed? (Y/n)"
+```
+
+### Integration with N5 Commands
+
+**New Commands Needed**:
+- `organize-files` - Trigger file organization mid-conversation
+- `conversation-end` - Formal conversation close with file organization
+- `review-workspace` - Show files in conversation workspace
+- `cleanup-temp` - Delete old conversation workspaces
+
+**Existing Commands**:
+- All N5 commands continue writing to Knowledge/, Lists/ directly
+- Only ad-hoc files (images, documents, exports) go to conversation workspace
+
+### Related Documentation
+
+- `file 'Records/README.md'` - Records intake and processing
+- N5/runtime/file_moves.log - Audit trail of file movements
+- Conversation workspace retention policy
+
+---
+
 ## Folder Policy Principle
 
 **Highest Priority Governance**: Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted in the policy file itself (e.g., "Exempts: Safety Overrides"). Policies govern the collective interpretation and handling of folder contents as programs, databases, or dynamic entities.
