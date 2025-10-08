@@ -1,3 +1,0 @@
-id,title,status,priority,tags,project,due,body,notes,created_at,updated_at
-0655ab5e-c735-4207-88ec-61b89e47d105,First item,done,H,important,,,Description of first,Completed,2025-09-18T03:09:03.103362+00:00,2025-09-18T03:09:20.006125+00:00
-e5d60656-e588-48c3-a84e-2cd8346ab973,Second item,pinned,,urgent,,,,,2025-09-18T03:09:13.060694+00:00,2025-09-18T03:09:30.724664+00:00
