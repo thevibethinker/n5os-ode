@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Key Insights Extractor
-Extracts key insights, learnings, and advice from meetings.
+Key Insights Extractor (LLM-powered)
+Extracts key insights, learnings, and advice from meetings using LLM.
 """
 import logging
-import re
+import json
 from pathlib import Path
 from typing import Dict, Any, List
+from blocks.llm_client import get_client
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +18,7 @@ async def generate_key_insights(
     output_dir: Path
 ) -> bool:
     """
-    Extract key insights from transcript and generate detailed-notes.md.
+    Extract key insights from transcript using LLM and generate detailed-notes.md.
     
     Args:
         transcript: Full meeting transcript text
@@ -28,20 +29,87 @@ async def generate_key_insights(
         True if successful, False otherwise
     """
     try:
-        logger.info("Extracting key insights from transcript")
+        logger.info("Extracting key insights from transcript using LLM")
         
-        # Parse transcript
-        statements = _parse_transcript(transcript)
+        llm = get_client()
         
-        # Extract different types of insights
-        insights = _extract_insights(statements)
-        advice = _extract_advice(statements)
-        realizations = _extract_realizations(statements)
+        system_prompt = """You are an expert meeting analyst specializing in insight extraction.
+
+Extract three types of valuable content:
+1. **Key Insights**: Important realizations, validations, new perspectives, strategic observations
+2. **Advice & Recommendations**: Guidance, suggestions, best practices shared
+3. **Realizations & Aha Moments**: Breakthroughs, connections made, problem clarifications
+
+For each item, identify:
+- The content/statement
+- Who said it
+- Category: Product, Market, Strategy, Operations, People, Personal, or General
+- Why it matters (implication)
+
+Prioritize high-value, actionable, or transformative content.
+
+Return valid JSON only."""
+
+        date = meeting_info.get('date', 'Unknown')
+        participants = meeting_info.get('participants', [])
         
-        # Generate markdown
+        user_prompt = f"""Analyze this meeting transcript and extract key insights, advice, and realizations.
+
+Meeting Date: {date}
+Participants: {', '.join(participants) if participants else 'Unknown'}
+
+Transcript:
+{transcript[:15000]}
+
+Return a JSON object:
+{{
+  "insights": [
+    {{
+      "content": "The insight statement",
+      "speaker": "Who said it",
+      "category": "Product|Market|Strategy|Operations|People|Personal|General",
+      "implication": "Why this matters or what it means"
+    }}
+  ],
+  "advice": [
+    {{
+      "content": "The advice or recommendation",
+      "speaker": "Who gave it",
+      "category": "Product|Market|Strategy|Operations|People|Personal|General"
+    }}
+  ],
+  "realizations": [
+    {{
+      "content": "The realization or aha moment",
+      "speaker": "Who had it"
+    }}
+  ]
+}}
+
+Focus on substantive, meaningful content that provides value."""
+
+        response = await llm.generate(
+            prompt=user_prompt,
+            system=system_prompt,
+            max_tokens=4000,
+            temperature=0.4,
+            response_format="json"
+        )
+        
+        try:
+            data = json.loads(response)
+            insights = data.get("insights", [])
+            advice = data.get("advice", [])
+            realizations = data.get("realizations", [])
+        except json.JSONDecodeError:
+            logger.warning("Failed to parse JSON, attempting fallback")
+            data = _fallback_parse(response)
+            insights = data.get("insights", [])
+            advice = data.get("advice", [])
+            realizations = data.get("realizations", [])
+        
         markdown = _generate_markdown(insights, advice, realizations, meeting_info)
         
-        # Write output
         output_path = output_dir / "detailed-notes.md"
         output_path.write_text(markdown, encoding='utf-8')
         
@@ -54,152 +122,17 @@ async def generate_key_insights(
         return False
 
 
-def _parse_transcript(transcript: str) -> List[Dict[str, Any]]:
-    """Parse transcript into speaker-attributed statements."""
-    statements = []
-    lines = transcript.strip().split('\n')
-    
-    current_speaker = None
-    current_content = []
-    
-    for line in lines:
-        line = line.strip()
-        if not line:
-            continue
-            
-        if _is_likely_speaker(line):
-            if current_speaker and current_content:
-                statements.append({
-                    "speaker": current_speaker,
-                    "content": " ".join(current_content)
-                })
-            current_speaker = line
-            current_content = []
-        else:
-            current_content.append(line)
-    
-    if current_speaker and current_content:
-        statements.append({
-            "speaker": current_speaker,
-            "content": " ".join(current_content)
-        })
-    
-    return statements
-
-
-def _is_likely_speaker(text: str) -> bool:
-    """Check if text line is likely a speaker name."""
-    if len(text) > 50:
-        return False
-    if any(word in text.lower() for word in ["think", "should", "would", "realized"]):
-        return False
-    if re.match(r'^[A-Z][a-z]+ [A-Z][a-z]+$', text):
-        return True
-    if re.match(r'^[A-Z][a-z]+$', text) and len(text) < 20:
-        return True
-    return False
-
-
-def _extract_insights(statements: List[Dict]) -> List[Dict]:
-    """Extract key insights from statements."""
-    insights = []
-    
-    insight_indicators = [
-        "key insight", "important to note", "realize", "realized",
-        "learned", "learning", "discovered", "insight",
-        "interesting", "notable", "significant"
-    ]
-    
-    for stmt in statements:
-        content = stmt["content"]
-        content_lower = content.lower()
-        
-        # High-value content (longer, substantive statements)
-        if len(content) > 100:
-            for indicator in insight_indicators:
-                if indicator in content_lower:
-                    insight = {
-                        "content": content,
-                        "speaker": stmt["speaker"],
-                        "type": "insight",
-                        "category": _categorize_insight(content)
-                    }
-                    insights.append(insight)
-                    break
-    
-    return insights
-
-
-def _extract_advice(statements: List[Dict]) -> List[Dict]:
-    """Extract advice given during meeting."""
-    advice_items = []
-    
-    advice_indicators = [
-        "you should", "i'd recommend", "i recommend", "advice",
-        "suggest", "my suggestion", "what i'd do", "i think you should",
-        "try", "consider", "might want to"
-    ]
-    
-    for stmt in statements:
-        content = stmt["content"]
-        content_lower = content.lower()
-        
-        for indicator in advice_indicators:
-            if indicator in content_lower:
-                advice = {
-                    "content": content,
-                    "speaker": stmt["speaker"],
-                    "type": "advice",
-                    "category": _categorize_insight(content)
-                }
-                advice_items.append(advice)
-                break
-    
-    return advice_items
-
-
-def _extract_realizations(statements: List[Dict]) -> List[Dict]:
-    """Extract realizations and aha moments."""
-    realizations = []
-    
-    realization_indicators = [
-        "aha", "oh", "i see", "that makes sense", "good point",
-        "you're right", "exactly", "that's it", "now i understand"
-    ]
-    
-    for stmt in statements:
-        content = stmt["content"]
-        content_lower = content.lower()
-        
-        for indicator in realization_indicators:
-            if indicator in content_lower and len(content) > 50:
-                realization = {
-                    "content": content,
-                    "speaker": stmt["speaker"],
-                    "type": "realization"
-                }
-                realizations.append(realization)
-                break
-    
-    return realizations
-
-
-def _categorize_insight(content: str) -> str:
-    """Categorize insight by topic."""
-    content_lower = content.lower()
-    
-    if any(word in content_lower for word in ["product", "feature", "ui", "ux", "design"]):
-        return "Product"
-    if any(word in content_lower for word in ["market", "customer", "user", "buyer"]):
-        return "Market"
-    if any(word in content_lower for word in ["strategy", "approach", "direction", "positioning"]):
-        return "Strategy"
-    if any(word in content_lower for word in ["process", "workflow", "operation", "execution"]):
-        return "Operations"
-    if any(word in content_lower for word in ["hire", "team", "people", "culture"]):
-        return "People"
-    
-    return "General"
+def _fallback_parse(text: str) -> Dict:
+    """Fallback parser if JSON fails."""
+    if "```json" in text:
+        start = text.find("```json") + 7
+        end = text.find("```", start)
+        if end > start:
+            try:
+                return json.loads(text[start:end].strip())
+            except:
+                pass
+    return {"insights": [], "advice": [], "realizations": []}
 
 
 def _generate_markdown(
@@ -209,10 +142,10 @@ def _generate_markdown(
     meeting_info: Dict
 ) -> str:
     """Generate markdown output for insights."""
-    title = f"Key Insights & Detailed Notes: {meeting_info.get('stakeholder_primary', 'Meeting')}"
+    stakeholder = meeting_info.get('stakeholder_primary', 'Meeting')
     date = meeting_info.get('date', 'Unknown Date')
     
-    md = f"# {title}\n"
+    md = f"# Key Insights & Detailed Notes: {stakeholder}\n"
     md += f"**Date**: {date}\n\n"
     md += "---\n\n"
     
@@ -228,10 +161,12 @@ def _generate_markdown(
                 by_category[category] = []
             by_category[category].append(insight)
         
-        for category, items in by_category.items():
+        for category, items in sorted(by_category.items()):
             md += f"### {category}\n\n"
             for item in items:
-                md += f"**{item['speaker']}**: {item['content']}\n\n"
+                md += f"**{item.get('speaker', 'Unknown')}**: {item['content']}\n\n"
+                if item.get('implication'):
+                    md += f"_Implication: {item['implication']}_\n\n"
     
     # Advice Section
     if advice:
@@ -244,16 +179,16 @@ def _generate_markdown(
                 by_category[category] = []
             by_category[category].append(item)
         
-        for category, items in by_category.items():
+        for category, items in sorted(by_category.items()):
             md += f"### {category}\n\n"
             for item in items:
-                md += f"**{item['speaker']}**: {item['content']}\n\n"
+                md += f"**{item.get('speaker', 'Unknown')}**: {item['content']}\n\n"
     
     # Realizations Section
     if realizations:
         md += "## ✨ Realizations & Aha Moments\n\n"
         for item in realizations:
-            md += f"**{item['speaker']}**: {item['content']}\n\n"
+            md += f"**{item.get('speaker', 'Unknown')}**: {item['content']}\n\n"
     
     if not (insights or advice or realizations):
         md += "_No explicit insights or advice extracted from this meeting._\n"
