@@ -9,14 +9,22 @@ import subprocess
 from pathlib import Path
 from typing import Optional, List
 
+# Import backup system
+try:
+    from file_backup import FileBackupSystem
+    BACKUP_AVAILABLE = True
+except ImportError:
+    BACKUP_AVAILABLE = False
+    print("⚠️  Backup system not available")
+
 
 class FileProtector:
     """Enhanced file protection for N5 OS based on architectural role"""
     
     # File classification based on your actual architecture
     HARD_PROTECTION_FILES = [
-        "/home/workspace/N5.md",           # Core system index (hand-authored)
-        "/home/workspace/N5/prefs.md",     # System preferences (hand-authored)
+        "/home/workspace/Documents/N5.md",     # Core system index (hand-authored)
+        "/home/workspace/N5/prefs/prefs.md",   # System preferences (hand-authored)
     ]
     
     MEDIUM_PROTECTION_FILES = [
@@ -135,6 +143,16 @@ class FileProtector:
         
         for warning in integrity["warnings"]:
             print(f"⚠️  {warning}")
+        
+        # Create automatic backup for protected files
+        if BACKUP_AVAILABLE and integrity["has_content"] and classification["protection_level"] in ["hard", "medium"]:
+            print(f"\n🔒 Creating automatic backup before {operation}...")
+            backup_system = FileBackupSystem()
+            backup_path = backup_system.create_backup(file_path, operation)
+            if backup_path:
+                print(f"✅ Backup secured: {backup_path.name}")
+            else:
+                print(f"❌ Backup failed - recommend manual backup before proceeding")
         
         if classification["protection_level"] == "hard":
             print(f"\n❌ HARD PROTECTION ACTIVE")

@@ -1,15 +1,14 @@
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: 0332d6ced982c42b997b303b800def1f
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
+related_files: 
 anchors:
-  input: null
-  output: /home/workspace/N5_mirror/knowledge/glossary.md
+  - object Object
 ---
 # Glossary
 
