@@ -1,0 +1,46 @@
+{
+  "meeting_id": "4dd2c2",
+  "date": "2025-10-09",
+  "time": "03:19",
+  "timezone": "America/New_York",
+  "meeting_type": [
+    "coaching"
+  ],
+  "stakeholder_primary": "unknown",
+  "stakeholders_all": [],
+  "stakeholder_types": [
+    "advisor"
+  ],
+  "organization": "Arizona",
+  "participants_count": 0,
+  "duration_minutes": 59,
+  "previous_meetings_count": 0,
+  "previous_meeting_ids": [],
+  "email_history_found": false,
+  "intelligence": {
+    "risks_count": 0,
+    "opportunities_count": 0,
+    "warm_intros_count": 0,
+    "decisions_count": 0,
+    "action_items_count": 0,
+    "insights_count": 0
+  },
+  "processing": {
+    "version": "2.0.0",
+    "mode": "full",
+    "duration_seconds": 0,
+    "blocks_generated": 6,
+    "timestamp": "2025-10-09T18:21:37.677868+00:00",
+    "errors": []
+  },
+  "transcript_source": {
+    "type": "local_file",
+    "identifier": "/home/workspace/alex_meeting_2025-10-09.txt",
+    "sha256": "a7b247e8b84fb709d10faa44f9c7d350817ded98dd5ca058ae0f15b8869d2ef6",
+    "size_bytes": 57922,
+    "line_count": 632
+  },
+  "approval": {
+    "status": "pending_review"
+  }
+}

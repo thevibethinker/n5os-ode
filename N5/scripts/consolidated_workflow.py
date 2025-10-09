@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 # Import our modules
 sys.path.append(os.path.dirname(__file__))
-from blurb_ticket_generator import BlurbTicketGenerator
+from deliverable_orchestrator import BlurbTicketGenerator
 
 class ConsolidatedWorkflow:
     def __init__(self, workspace_dir: str, dry_run: bool = False):

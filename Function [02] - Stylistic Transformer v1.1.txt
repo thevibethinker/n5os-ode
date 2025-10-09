@@ -1,0 +1,101 @@
+<functionArtifact>
+  <artifactTitle>Stylistic Transformer & Composer — v1.1</artifactTitle>
+
+  <corePrinciples>
+    <principle>Single-Shot Optimized — generates email output in one deterministic pass.</principle>
+    <principle>Voice-Echoing — mirrors user phrasing from transcript when confidence allows.</principle>
+    <principle>Companion-Calibrated — honors tone, structure, and CTA patterns from MasterVoice schema.</principle>
+    <principle>Audit-Ready — returns full metadata trace and flags gaps (e.g. link missing).</principle>
+  </corePrinciples>
+
+  <inputs>
+    <input>followUpStrategyObject (object, required)</input>
+    <input>Companion File—MasterVoice (v≥1.3, required)</input>
+    <input>Companion File—EssentialLinks (optional)</input>
+    <input>styleOverrides (object, optional)</input>
+  </inputs>
+
+  <outputs>
+    <output>draftEmail (formatted, send-ready)</output>
+    <output>voiceConfigUsed (snapshot of dials + voice schema reference)</output>
+    <output>dialInferenceReport (formality, CTA style, tone mix)</output>
+    <output>MissingContentWarnings[]</output>
+    <output>LinkMap[]</output>
+    <output>revisionHistory[]</output>
+  </outputs>
+
+  <steps>
+    <step>
+      <title>Companion File Resolution</title>
+      <description>
+        • Load Companion File—MasterVoice v≥1.3 and EssentialLinks if present.  
+        • Extract CTA phrasing rules, greetings, tone weights, formality defaults.  
+        • Halt if voice schema invalid or missing required fields.
+      </description>
+    </step>
+
+    <step>
+      <title>Dial Application & Style Mapping</title>
+      <description>
+        • Use warmthScore and familiarityScore to derive relationshipDepth and formality.  
+        • Map followUpType to tone and CTA rigour via MasterVoice `followUpTypeRules`.  
+        • Merge optional `styleOverrides` (e.g. forced bullet summary, sign-off variant).  
+        • Apply MasterVoice constraints on sentence length, word choice, and CTA caps.
+      </description>
+    </step>
+
+    <step>
+      <title>Transcript Language Echoing</title>
+      <description>
+        • Extract up to 4 phrases or expressions used by Vrijen in the transcript with confidence ≥ 0.75.  
+        • Examples: “scaffolded reflection”, “values-based signals”, “jam on this”, “de-risk it”.  
+        • Incorporate at most 2 into the recap or CTA section to preserve continuity and authenticity.  
+        • Avoid back-to-back repetitions; diversify tone to avoid overfitting.  
+        • Never replicate phrases from other speakers unless they were echoed by Vrijen.
+      </description>
+    </step>
+
+    <step>
+      <title>Draft Email Construction</title>
+      <description>
+        • Structure:  
+          Greeting → Resonant Detail → SummaryRecap (bullets optional) → Deliverables (auto-insert) → CTAs (≤2) → Warm Sign-Off.  
+        • Respect tone and word count guardrails from MasterVoice (e.g., FK ≤ 10, 16–22 words/sentence).  
+        • Mirror relational tone (e.g. gratitude, confidence, humility) as shaped by strategy object and voiceNotes.  
+        • Avoid disallowed phrases or DEI violations.
+      </description>
+    </step>
+
+    <step>
+      <title>Link Autofill & Mapping</title>
+      <description>
+        • Match deliverables and CTA items against Companion File—EssentialLinks.  
+        • Insert links inline where confidence ≥ 0.75.  
+        • Mark missing links as [[MISSING: link]] and include full LinkMap object.
+      </description>
+    </step>
+
+    <step>
+      <title>Audit Layer: Double-Check & Risk Sweep</title>
+      <description>
+        • Validate that all deliverables with confidence ≥ 0.8 are reflected in the body.  
+        • Flag `MissingContentWarnings[]` for items with no due date, low specificity, or missing URLs.  
+        • Confirm tone alignment with `objective`, and style alignment with `followUpTypeRules`.  
+        • Return voiceConfigUsed and dialInferenceReport for transparency.
+      </description>
+    </step>
+
+    <step>
+      <title>Output Assembly</title>
+      <description>
+        • Package and return final email plus metadata outputs.  
+        • Include revisionHistory only if fallbacks were triggered or transcript-phrasing was overridden due to conflict.  
+        • Ensure formatting is plaintext or Markdown-ready (not HTML).
+      </description>
+    </step>
+  </steps>
+
+  <finalGoal>
+    Generate a polished follow-up email that reflects Vrijen’s distinctive tone and diction—rooted in the transcript’s actual language, relational context, and strategic objectives—while conforming to brand-safe audit and readability constraints.
+  </finalGoal>
+</functionArtifact>

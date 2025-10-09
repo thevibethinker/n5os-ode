@@ -67,10 +67,12 @@ class MeetingOrchestrator:
             
             # Step 1: Fetch transcript
             transcript_content, transcript_meta = await self._fetch_transcript()
+            self.transcript_content = transcript_content  # store for downstream
             logger.info(f"Transcript fetched: {transcript_meta['size_bytes']} bytes, {transcript_meta['line_count']} lines")
             
             # Step 2: Extract meeting metadata
             meeting_info = await self._extract_meeting_info(transcript_content)
+            self.meeting_info = meeting_info  # store for downstream
             logger.info(f"Meeting info extracted: {meeting_info['participants_count']} participants")
             
             # Step 3: Create output directory
@@ -101,12 +103,16 @@ class MeetingOrchestrator:
             # Step 8: Generate dashboard
             await self._generate_dashboard(blocks_generated, meeting_info)
             logger.info("Dashboard generated")
-            
-            # Step 9: Integrate with lists
+
+            # Step 9: Generate Deliverables
+            await self._generate_deliverables_step()
+            logger.info("Deliverable generation complete")
+
+            # Step 10: Integrate with lists
             await self._integrate_lists(blocks_generated)
             logger.info("Lists integration complete")
             
-            # Step 10: Save metadata
+            # Step 11: Save metadata
             await self._save_metadata(
                 meeting_info,
                 transcript_meta,
@@ -126,6 +132,38 @@ class MeetingOrchestrator:
             self._log_error("orchestrator", str(e), "critical")
             raise
     
+    async def _generate_deliverables_step(self):
+        """Initializes and runs the DeliverableOrchestrator."""
+        logger.info("Kicking off deliverable generation...")
+        try:
+            from deliverable_orchestrator import DeliverableOrchestrator
+            
+            # Prepare context defensively (attributes may not exist if earlier steps failed)
+            transcript_content = getattr(self, 'transcript_content', '')
+            meeting_info = getattr(self, 'meeting_info', {})
+
+            deliverable_context = {
+                "transcript_content": transcript_content,
+                "meeting_info": meeting_info,
+                "meeting_types": self.meeting_types,
+                "stakeholder_types": self.stakeholder_types,
+                "output_dir": str(self.output_dir / "DELIVERABLES")
+            }
+
+            orchestrator = DeliverableOrchestrator(deliverable_context)
+            generated_deliverables = await orchestrator.generate_deliverables()
+
+            if generated_deliverables:
+                logger.info(f"Successfully generated {len(generated_deliverables)} deliverables.")
+                self.metadata.setdefault("deliverables", []).extend(generated_deliverables)
+            else:
+                logger.info("No deliverables were generated for this meeting.")
+
+        except Exception as e:
+            logger.error(f"Deliverable generation step failed: {e}", exc_info=True)
+            self._log_error("deliverable_orchestrator", str(e), "error")
+            # This is a non-critical step, so we log the error but don't raise it further
+
     async def _fetch_transcript(self) -> Tuple[str, Dict[str, Any]]:
         """Fetch transcript from source."""
         # Check if Google Drive ID
