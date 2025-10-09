@@ -161,6 +161,41 @@ Scale: 0.0 to 1.0
 
 ---
 
+## Default Authorship Assumption
+
+**For all generated communications (emails, messages, etc.):**
+
+### Default: Vrijen's Perspective
+
+Unless explicitly instructed otherwise, always write from Vrijen's first-person perspective:
+- ✅ "I'll connect you with..."
+- ✅ "We're excited to..."
+- ✅ Sign as "Vrijen"
+
+### When to Use Other Perspectives
+
+**Logan's Perspective:**
+- When explicitly requested
+- When Logan has been the sole point of contact
+- When handoff is complete and documented
+
+**Joint/Team Perspective:**
+- When explicitly requested for co-signed communications
+- Use "we" throughout and sign "Vrijen & Logan" or "The Careerspan Team"
+
+### Meeting Follow-Ups Specifically
+
+**Default:** Vrijen authors follow-up emails even when:
+- Vrijen initiated the relationship but delegated mid-meeting
+- Logan is leading implementation
+- Multiple team members were present
+
+**Rationale:** Vrijen as CEO owns strategic relationships; Logan's execution leadership doesn't change relationship ownership.
+
+**Exception:** If Logan has been the exclusive contact (no Vrijen involvement), default to Logan's perspective.
+
+---
+
 ## Related Files
 
 - **Templates:** `file 'N5/prefs/communication/templates.md'`
