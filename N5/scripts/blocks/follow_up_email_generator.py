@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Follow-Up Email Generator
-Generates follow-up email drafts from meeting transcripts.
+Follow-Up Email Generator (LLM-powered)
+Generates follow-up email drafts from meeting transcripts using LLM.
 """
 import logging
 from pathlib import Path
 from typing import Dict, Any, List, Optional
+from blocks.llm_client import get_client
 
 logger = logging.getLogger(__name__)
 
@@ -19,7 +20,7 @@ async def generate_follow_up_email(
     output_dir: Path
 ) -> bool:
     """
-    Generate follow-up email draft from meeting.
+    Generate follow-up email draft using LLM.
     
     Args:
         transcript: Full meeting transcript text
@@ -33,27 +34,80 @@ async def generate_follow_up_email(
         True if successful, False otherwise
     """
     try:
-        logger.info("Generating follow-up email")
+        logger.info("Generating follow-up email using LLM")
         
-        # Read action items and decisions
+        llm = get_client()
+        
+        # Read action items and decisions if available
         action_items = _read_file(output_dir / "action-items.md")
         decisions = _read_file(output_dir / "decisions.md")
         
-        # Extract key points for email
-        key_actions = _extract_actions_for_email(action_items, 3)
-        key_decisions = _extract_decisions_for_email(decisions, 2)
+        # Determine relationship context
+        relationship_stage = "new" if len(meeting_history) == 0 else \
+                           "developing" if len(meeting_history) <= 2 else "established"
         
-        # Determine tone based on stakeholder
-        tone = _determine_tone(meeting_types, meeting_history)
+        meeting_type_str = ', '.join(meeting_types) if meeting_types else "general"
         
-        # Generate email content
-        email_content = _generate_email(
-            meeting_info, key_actions, key_decisions, tone
+        system_prompt = f"""You are an expert at writing professional follow-up emails after meetings.
+
+Context:
+- Meeting type: {meeting_type_str}
+- Relationship stage: {relationship_stage}
+- Previous meetings: {len(meeting_history)}
+
+Write a follow-up email that:
+1. Thanks them for their time
+2. Recaps key points discussed
+3. Confirms next steps and action items
+4. Maintains appropriate tone for the relationship
+5. Is concise and actionable
+
+For coaching meetings: be warm and supportive
+For sales/partnerships: be professional and value-focused
+For established relationships: be familiar but respectful"""
+
+        stakeholder = meeting_info.get('stakeholder_primary', 'Unknown')
+        date = meeting_info.get('date', 'today')
+        participants = meeting_info.get('participants', [])
+        
+        user_prompt = f"""Generate a follow-up email for this meeting.
+
+Meeting Date: {date}
+Stakeholder: {stakeholder}
+Participants: {', '.join(participants) if participants else 'Unknown'}
+
+Meeting Transcript (for context):
+{transcript[:10000]}
+
+Action Items Summary:
+{action_items[:2000] if action_items else "No action items file available"}
+
+Decisions Summary:
+{decisions[:2000] if decisions else "No decisions file available"}
+
+Generate the email with:
+- Subject line
+- Appropriate greeting
+- Brief recap paragraph
+- Key decisions (if any)
+- Next steps/action items
+- Appropriate closing
+
+Return the email in markdown format with clear sections."""
+
+        response = await llm.generate(
+            prompt=user_prompt,
+            system=system_prompt,
+            max_tokens=1500,
+            temperature=0.7
         )
+        
+        # Format the response
+        markdown = _format_email_markdown(response, stakeholder, date)
         
         # Write output
         output_path = output_dir / "follow-up-email.md"
-        output_path.write_text(email_content, encoding='utf-8')
+        output_path.write_text(markdown, encoding='utf-8')
         
         logger.info("Generated follow-up email draft")
         return True
@@ -71,110 +125,13 @@ def _read_file(path: Path) -> str:
         return ""
 
 
-def _extract_actions_for_email(content: str, limit: int) -> List[str]:
-    """Extract key actions for email."""
-    actions = []
-    lines = content.split('\n')
-    
-    for line in lines:
-        if line.strip().startswith('- [ ] **'):
-            action = line.strip()[9:]
-            if '**' in action:
-                action = action[:action.index('**')]
-            actions.append(action)
-            if len(actions) >= limit:
-                break
-    
-    return actions
-
-
-def _extract_decisions_for_email(content: str, limit: int) -> List[str]:
-    """Extract key decisions for email."""
-    decisions = []
-    lines = content.split('\n')
-    
-    for i, line in enumerate(lines):
-        if line.startswith('**Decision**:'):
-            decision = line[13:].strip()
-            decisions.append(decision)
-            if len(decisions) >= limit:
-                break
-    
-    return decisions
-
-
-def _determine_tone(meeting_types: List[str], meeting_history: List[Dict]) -> str:
-    """Determine appropriate email tone."""
-    if "coaching" in meeting_types or "networking" in meeting_types:
-        return "warm"
-    elif "sales" in meeting_types or "fundraising" in meeting_types:
-        return "professional"
-    elif len(meeting_history) > 3:
-        return "familiar"
-    else:
-        return "professional"
-
-
-def _generate_email(
-    meeting_info: Dict,
-    key_actions: List[str],
-    key_decisions: List[str],
-    tone: str
-) -> str:
-    """Generate email markdown content."""
-    stakeholder = meeting_info.get('stakeholder_primary', 'Unknown')
-    participants = meeting_info.get('participants', [])
-    date = meeting_info.get('date', 'today')
-    
-    # Extract external participants (not Vrijen)
-    external = [p for p in participants if 'vrijen' not in p.lower()]
-    
+def _format_email_markdown(content: str, stakeholder: str, date: str) -> str:
+    """Format email content as structured markdown."""
     md = "# Follow-Up Email Draft\n\n"
-    md += f"**To**: {', '.join(external) if external else stakeholder}\n"
-    md += f"**Subject**: Following up from our meeting on {date}\n\n"
+    md += f"**Stakeholder**: {stakeholder}\n"
+    md += f"**Meeting Date**: {date}\n\n"
     md += "---\n\n"
-    md += "## Email Body\n\n"
-    
-    # Greeting
-    if tone == "warm":
-        md += f"Hi {stakeholder.split()[0] if ' ' in stakeholder else stakeholder},\n\n"
-    elif tone == "familiar":
-        md += f"Hi {stakeholder.split()[0] if ' ' in stakeholder else stakeholder},\n\n"
-    else:
-        md += f"Dear {stakeholder},\n\n"
-    
-    # Recap
-    md += f"Thanks for taking the time to meet on {date}. "
-    md += "I wanted to follow up on our conversation and confirm next steps.\n\n"
-    
-    # Key Points
-    if key_decisions:
-        md += "### Key Decisions\n\n"
-        for decision in key_decisions:
-            md += f"- {decision}\n"
-        md += "\n"
-    
-    # Next Steps
-    if key_actions:
-        md += "### Next Steps\n\n"
-        for action in key_actions:
-            md += f"- {action}\n"
-        md += "\n"
-    
-    # Closing
-    if tone == "warm":
-        md += "Looking forward to staying in touch!\n\n"
-        md += "Best,\n"
-    elif tone == "familiar":
-        md += "Let me know if you have any questions.\n\n"
-        md += "Best,\n"
-    else:
-        md += "Please let me know if you have any questions or need clarification on any of these points.\n\n"
-        md += "Best regards,\n"
-    
-    md += "Vrijen\n\n"
-    
-    md += "---\n\n"
-    md += "_Note: This is a draft. Please review and customize before sending._\n"
-    
+    md += content
+    md += "\n\n---\n\n"
+    md += "_Note: This is a draft generated by AI. Please review and customize before sending._\n"
     return md
