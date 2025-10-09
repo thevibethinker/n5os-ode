@@ -38,7 +38,7 @@ class N5SyncManager:
 
         # Define priority sync items - these are the automation tools we need
         self.priority_scripts = [
-            "blurb_ticket_generator.py",
+            "deliverable_orchestrator.py",
             "consolidated_workflow.py",
             "front_matter_manager.py",
             "file_protector.py",

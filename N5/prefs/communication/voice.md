@@ -1,8 +1,9 @@
 # Communication Voice & Style
 
 **Module:** Communication  
-**Version:** 2.0.0  
-**Date:** 2025-10-09
+**Version:** 3.0.0 (Merged with MasterVoiceSchema v1.3)  
+**Date:** 2025-10-09  
+**Source**: Consolidated from external MasterVoiceSchema v1.3
 
 ---
 
@@ -18,133 +19,206 @@
 
 ---
 
-## Relationship Depth by Medium
+## Context Calibration
 
-Scale: 0 = Stranger → 4 = Inner Circle
+### Relationship Depth Scale
 
-### Email
+**Range:** 0 (Stranger) → 4 (Inner Circle)
+
+**Levels**:
+- **0 - Stranger**: First contact, cold outreach
+- **1 - New Contact**: Initial warm introduction, early rapport
+- **2 - Warm Contact**: Established colleague/partner
+- **3 - Partner**: Repeat collaborator, trusted relationship
+- **4 - Inner Circle**: Close confidant, family-tier trust
+
+### Medium-Specific Baselines
+
+#### Email
 - **Baseline:** 2.0 to 2.5 (Colleague/Partner)
 - **Rises to:** 3 with repeat collaborators
 - **Drops to:** 1.5 to 2 for cold outreach or exec audiences until rapport is built
 
-### Spoken (Live/Voice)
+#### Spoken (Live/Voice)
 - **Range:** 2.5 to 3
 - **Characteristics:** Warmer, faster trust-building; favors direct alignment and decision-making
 
-### DM/Chat (Slack/Texts)
+#### DM/Chat (Slack/Texts)
 - **Close collaborators:** 3
 - **New contacts:** 2
 - **Style:** Efficient, tactical, occasionally playful
 
-### Shift Rules
-- **Increase depth:** With trust/history and when speed matters
-- **Decrease depth:** With formality needs, external optics, or sensitive topics
-
----
-
-## Formality & CTA Rigor
+#### Social Media
+- **Range:** 1 to 2
+- **Tone:** Professional yet approachable
 
 ### Formality Levels
 
-**Balanced baseline** — Shift based on:
-- **More formal:** External/policy/legal, high-scrutiny threads
-- **More casual:** Internal brainstorms, trusted collaborators
+**Scale:** Casual | Balanced | Formal
+
+**Default:** Balanced
+
+**Modifiers**:
+- **Warmth Score → Formality**:
+  - High warmth (-1) → Casual
+  - Neutral (0) → Balanced
+  - Low warmth (+1) → Formal
+  
+**Shift Rules**:
+- **More formal:** External/policy/legal, high-scrutiny threads, exec audiences
+- **More casual:** Internal brainstorms, trusted collaborators (depth ≥ 3)
 
 ### CTA Rigor
 
-**How hard the ask is:**
-- **Balanced to Direct** as stakes/time pressure rise
-- **Use explicit owner + due date** when commitment is needed
+**Scale:** Soft | Balanced | Direct
 
-### Triggers for Adjustment
+**Default:** Balanced
+
+**When to shift Direct**:
+- High stakes/time pressure
+- Decision deadlines approaching
+- Misalignment risk
+- Deal closure moments
+
+**Triggers for Adjustment**:
 - Recipient seniority
 - Public vs. private channel
 - Urgency level
-- Misalignment risk
-- Thread "warmth score" (if tense or low-warmth, keep language kind but keep the ask crisp)
+- Thread "warmth score" (if tense, keep language kind but ask crisp)
 
 ---
 
-## Follow-Up Structures
+## Follow-Up Type Rules
 
-### Most Used
+### Pro-Forma + Regards
+- **Tone:** Respectful
+- **Formality:** Balanced
+- **CTA Rigor:** Soft
+- **Structure:** Gratitude → reiterate alignment → warm sign-off
+- **Note:** Avoid unless necessary; prefer value-adding follow-ups
 
-1. **CTA + Next Steps (Sales-lite)**
-   - Thanks → 1 line value → specific ask → owner & date → fallback option
+### CTA + Next Steps (Sales)
+- **Tone:** Confident
+- **Formality:** Balanced
+- **CTA Rigor:** Direct
+- **Structure:** Recap → bullet CTAs → clear ask (owner + date)
+- **Best for:** Prospect meetings, partnership discussions, deal progression
 
-2. **Summary → Decision → Next Steps**
-   - Bullet what we heard → decision needed: 1-3 actions with owners/time
+### CTA + Next Steps (Personal)
+- **Tone:** Warm
+- **Formality:** Casual
+- **CTA Rigor:** Balanced
+- **Structure:** Resonance → support offer → open CTA
+- **Best for:** 1-on-1 coaching, mentoring, internal team
 
-3. **Gentle Nudge**
-   - Warm anchor → status check → single next action
+### Warm Introduction Facilitation
+- **Tone:** Connector-style
+- **Formality:** Balanced
+- **CTA Rigor:** Soft
+- **Structure:** Brief intro → context handoff → nudge both sides
 
-### Best-Performing Structure
+### Reiteration of Discussion
+- **Tone:** Reflective
+- **Formality:** Balanced
+- **CTA Rigor:** Light
+- **Structure:** Summary → shared insight → optional next step
+
+### Most Used Structure (General)
 
 **Gratitude → Reiterate outcome → Single, concrete ask (owner+when) → Close with warmth**
-
-### Less Used
-
-Pro-forma "Regards" follow-ups with no new information — avoid these.
 
 ---
 
 ## Tone Weights
 
-Scale: 0.0 to 1.0
+**Scale:** 0.0 to 1.0
 
-| Dimension | Weight | Notes |
-|-----------|--------|-------|
-| **Warmth** | 0.80 - 0.85 | High warmth, approachable |
-| **Confidence** | 0.72 - 0.80 | Competent, assured |
-| **Humility** | 0.55 - 0.65 | Coachable, open |
-
-**Compared to schema baseline (0.80 / 0.70 / 0.40):**
-- Similar warmth
-- Slightly higher confidence
-- Noticeably higher humility
+| Dimension | V's Preference | Schema Baseline | Notes |
+|-----------|----------------|-----------------|-------|
+| **Warmth** | 0.80 - 0.85 | 0.80 | High warmth, approachable |
+| **Confidence** | 0.72 - 0.80 | 0.70 | Competent, assured |
+| **Humility** | 0.55 - 0.65 | 0.40 | Coachable, open — *distinctive* |
 
 **Summary tone:** "Confident but coachable"
 
+**Key Distinction:** Higher humility than typical founder/CEO voice
+
 ---
 
-## Lexicon Preferences
+## Writing Optimized Guidelines
+
+### Readability Metrics
+
+**Target Ranges**:
+- **Flesch-Kincaid Grade:** 10-12
+- **Flesch Reading Ease:** 55-65
+- **Avg Sentence Length:** 16-22 words
+- **Max Sentence Length:** 32 words
+
+### Structure Skeleton
+
+1. **Greeting** (relationship-depth calibrated)
+2. **Gratitude** or **Resonance Anchor**
+3. **Recap or Bullets** (context refresh)
+4. **Next Steps / CTAs** (max 2 per message)
+5. **Warm Sign-Off** (relationship-depth calibrated)
+
+### Greetings (by Relationship Depth)
+
+| Depth | Formal | Balanced | Casual |
+|-------|--------|----------|--------|
+| 0-1 | Hi {{name}}, | Hey {{name}}, | Hey {{name}}— |
+| 2-3 | Hello {{name}}, | Hey {{name}}, | Hey {{name}}— |
+| 4 | Hey {{name}}, | Hey {{name}}— | Hey {{name}} 😊 |
+
+### Sign-Offs (by Relationship Depth)
+
+| Depth | Formal | Balanced | Casual |
+|-------|--------|----------|--------|
+| 0-1 | Best regards, | Best, | Best, |
+| 2-3 | Warm regards, | Warmly, | Cheers, |
+| 4 | Warm regards, | Cheers, | ✌️, |
+
+---
+
+## Lexicon
 
 ### Preferred Verbs
-- surface, distill, scaffold, tighten
-- instrument, calibrate, stress-test
-- reconcile, notarize, nudge, ship
+
+**Primary**: surface, distill, scaffold, tighten, instrument, calibrate, stress-test, reconcile, notarize, nudge, ship
+
+**Secondary (from schema)**: align, iterate, de-risk
 
 ### Preferred Nouns
-- yardstick, ledger, brief, rubric
-- shortlist, OMTM (one metric to move)
 
-### Avoid / Replace
+yardstick, ledger, brief, rubric, shortlist, OMTM (one metric to move)
+
+### Preferred Adjectives
+
+meaningful, scalable, human-centric
+
+### Stop Verbs (Avoid)
+
+get, make, take, go, have, do
+
+**Why:** Generic, vague, overused
+
+### Replacements
 
 | Avoid | Replace With |
-|-------|--------------|
+|-------|--------------| 
 | have to | hold, own |
 | leverage | use, apply |
 | reach out | get in touch |
 | ASAP | by [absolute date/time] |
 | circling back | following up on [topic] |
 
-### Time Phrasing
+### Slang (Allowed at Depth ≥ 3-4)
 
-**Always use absolute dates/times:**
-- ✅ "Sep 22, 4:00 pm ET"
-- ✅ "2025-09-22 16:00 ET"
-- ❌ "tomorrow" (without date)
-- ❌ "next week" (without specific date)
-
-### Slang (Depth ≥ 3)
-- spicy take
-- ship it
-- bad-first-version
-- rails-not-rules
-- vibe check
-- brain dump
+spicy take, ship it, bad-first-version, rails-not-rules, vibe check, brain dump, jam-pack, deep-dive
 
 ### Formatting Tics
+
 - Use bullets for lists
 - 1-2 sentence paragraphs
 - Bold sparingly for anchors
@@ -152,18 +226,61 @@ Scale: 0.0 to 1.0
 
 ---
 
-## Military Time Override
+## CTA Library
+
+### Standard CTAs (by Type)
+
+| CTA Type | Default Phrasing | Firmness Dial | Max Per Message |
+|----------|------------------|---------------|-----------------|
+| **Info Request** | "Could you share...?" | Soft, Balanced | 2 |
+| **Calendar Invite** | "Feel free to grab a slot..." | Soft | 2 |
+| **Decision Prompt** | "Let's decide by {{date}}..." | Balanced, Direct | 2 |
+| **Offer Help** | "Happy to draft X if helpful" | Soft | 2 |
+| **Follow-Up Reminder** | "Just flagging this thread..." | Balanced | 2 |
+| **Deal Close** | "Ready to kick off?" | Direct | 2 |
+
+### Decisive Verbs (for Direct CTAs)
+
+finalize, confirm, approve, commit, launch
+
+**Max CTAs Per Message:** 2
+
+---
+
+## Double-Check Language
+
+**Use when uncertainty exists:**
+
+| Situation | Suggested Phrasing |
+|-----------|-------------------|
+| **Missing Link** | "Let me know if the link came through cleanly." |
+| **Unspecified Due Date** | "Open to your timeline—just flag when you're ready." |
+| **No Explicit CTA** | "No pressure on next steps—just wanted to share these." |
+| **Light Nudge** | "When it feels right, I'd love your thoughts." |
+| **Gratitude Fallback** | "Appreciate you being open to this conversation." |
+
+---
+
+## Time Phrasing (Military Time Override)
 
 **Use 24-hour format system-wide:**
-- ✅ 16:00 instead of 4:00 pm
-- ✅ 09:30 instead of 9:30 am
-- Always include timezone: "16:00 ET"
+
+✅ **Correct**:
+- "16:00 ET" instead of "4:00 pm ET"
+- "09:30 ET" instead of "9:30 am ET"
+- "Sep 22, 2025 16:00 ET"
+- "2025-09-22 16:00 ET"
+
+❌ **Avoid**:
+- "tomorrow" (without date)
+- "next week" (without specific date)
+- 12-hour format without 24-hour alternative
+
+**Always include timezone:** ET, PT, UTC
 
 ---
 
 ## Default Authorship Assumption
-
-**For all generated communications (emails, messages, etc.):**
 
 ### Default: Vrijen's Perspective
 
@@ -196,17 +313,73 @@ Unless explicitly instructed otherwise, always write from Vrijen's first-person 
 
 ---
 
+## Integration Notes
+
+### Compatible Functions
+
+This voice schema is required by:
+- `FollowUpEmailGenerator >= v10.1`
+- `TranscriptAnalyzer >= v1.0`
+- `StylisticTransformer >= v1.0`
+
+### Exposed Dials (for Programmatic Use)
+
+When integrating with automated workflows, expose these calibration dials:
+- `relationshipDepth` (0-4)
+- `medium` (spoken, email, dm, social)
+- `formality` (casual, balanced, formal)
+- `ctaRigour` (soft, balanced, direct)
+
+---
+
+## Essential Links
+
+**Canonical Source**: `file 'N5/prefs/communication/essential-links.json'`
+
+**Purpose**: Frequently-used Vrijen and Careerspan links for embedding in emails, responses, and communications.
+
+**Categories**:
+- **Meeting Booking**: Calendly links (Vrijen solo, Founders joint)
+- **Careerspan Trial Codes**: General, friends/family, career centers, non-profit
+- **Demos**: Product walkthrough, customer demo video
+- **Marketing Assets**: Homepage, LinkedIn
+- **Investor Assets**: Pitch deck preview
+- **Proposals**: Screening tool pilot
+- **Reports**: Sample alignment reports
+- **Community**: Future CareerTech founders signup
+- **Tools**: BS Detector
+
+**Usage**:
+- Always reference this file when including links in generated content
+- Use appropriate link based on context (e.g., meeting booking for follow-ups, trial codes for prospects)
+- Links are up-to-date and maintained as canonical source
+
+---
+
 ## Related Files
 
+- **Essential Links:** `file 'N5/prefs/communication/essential-links.json'` (see above)
 - **Templates:** `file 'N5/prefs/communication/templates.md'`
 - **Meta-Prompting:** `file 'N5/prefs/communication/meta-prompting.md'`
 - **Email Processing:** `file 'N5/prefs/communication/email.md'`
 - **Bio (Personal Context):** `file 'Knowledge/stable/bio.md'`
-- **Howie Preferences (Reference):** `file 'Knowledge/context/howie_instructions/preferences.md'`
 
 ---
 
 ## Change Log
+
+### v3.0.0 — 2025-10-09
+- **Major:** Merged with MasterVoiceSchema v1.3 (external Companion file)
+- Added Context Calibration section with relationship depth scales
+- Added Follow-Up Type Rules from schema
+- Added Tone Weights comparison table
+- Added Writing Optimized Guidelines (readability metrics, skeleton)
+- Added CTA Library with firmness dials
+- Added Double-Check Language section
+- Added Integration Notes for compatible functions
+- Consolidated all lexicon data from both sources
+- Preserved all distinctive V preferences (higher humility, military time)
+- **Archived:** `Knowledge/context/Companion [05] - Master Voice Vrijen v1.3.txt` → `Documents/Archive/ingested/2025-10-09/`
 
 ### v2.0.0 — 2025-10-09
 - Extracted from monolithic prefs.md

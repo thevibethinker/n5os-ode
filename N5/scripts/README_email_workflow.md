@@ -24,7 +24,7 @@ This consolidated workflow processes transcripts into structured content maps an
 - **Output**: JSON file with original chunks and AI-generated summaries
 - **Voice**: Applies MasterVoiceSchema tone for reflective, balanced summaries
 
-### 2. `blurb_ticket_generator.py` 
+### 2. `deliverable_orchestrator.py` 
 - **Purpose**: Generates blurbs, follow-up emails, and warm introduction tickets from content maps
 - **Features**:
   - LLM-based warm intro opportunity detection (no regex)
@@ -56,7 +56,7 @@ python3 consolidated_workflow.py /path/to/transcript.txt --workspace ./output
 python3 summarize_segments.py transcript.txt segments.json --dry-run
 
 # Generate tickets from existing content map  
-python3 blurb_ticket_generator.py content_map.json --output-dir ./tickets
+python3 deliverable_orchestrator.py content_map.json --output-dir ./tickets
 ```
 
 ## N5OS Compliance Features

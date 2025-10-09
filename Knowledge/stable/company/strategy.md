@@ -1,15 +1,13 @@
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: bb6ad286c9b4353c14ff4f4312ef449e
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
-anchors:
-  input: null
-  output: /home/workspace/N5_mirror/knowledge/company/strategy.md
+related_files:
+anchors: [object Object]
 ---
 # Company Strategy — Careerspan
 
