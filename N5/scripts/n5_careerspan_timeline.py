@@ -12,7 +12,7 @@ from typing import List, Dict, Optional
 
 
 class CareerspanTimelineViewer:
-    def __init__(self, timeline_path: str = "/home/workspace/Knowledge/careerspan-timeline.md"):
+    def __init__(self, timeline_path: str = "/home/workspace/Knowledge/stable/careerspan-timeline.md"):
         self.timeline_path = Path(timeline_path)
         self.entries = []
         self.load_entries()

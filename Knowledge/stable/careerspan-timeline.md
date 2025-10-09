@@ -1,15 +1,13 @@
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: 6a31400c4557b4af3fac76b68af86e8e
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
-anchors:
-  input: null
-  output: /home/workspace/N5_mirror/knowledge/timeline.md
+related_files:
+anchors: [object Object]
 ---
 # Careerspan Timeline
 

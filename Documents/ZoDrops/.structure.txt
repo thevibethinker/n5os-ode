@@ -1,0 +1,22 @@
+ZoDrops Collection Structure
+============================
+
+📁 Documents/ZoDrops/
+├── 📄 README.md                      (Collection overview & guidelines)
+├── 📄 streaming-player-setup.md      (ZoDrop #1: Movie/TV streaming)
+└── 📄 .structure.txt                 (This file - folder structure reference)
+
+📁 Knowledge/stable/
+└── 📄 zodrops-index.md               (Quick reference index in knowledge base)
+
+Sharing Instructions:
+---------------------
+1. Share individual ZoDrop files directly with community members
+2. Point newcomers to README.md for the full collection
+3. Use zodrops-index.md for your personal quick reference
+4. Each ZoDrop is self-contained and ready to share!
+
+Community Links:
+----------------
+- Zo Discord: https://discord.gg/zocomputer
+- Tag: @va for questions about ZoDrops

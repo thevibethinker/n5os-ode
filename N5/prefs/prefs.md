@@ -1,5 +1,41 @@
 # Prefs (Central Reference) — Optimized Version {#prefs-central-reference}
 
+---
+
+## ⚠️ CRITICAL FILE PROTECTION WARNING ⚠️
+
+**BEFORE ANY FILE WRITE OPERATION ON PROTECTED FILES:**
+
+1. **Read the file first** to verify current content
+2. **If file has content (>0 bytes)**, STOP and ask for explicit user permission
+3. **Show user what will be lost** if proceeding
+4. **Require user to type "APPROVED"** before proceeding with write
+5. **Create automatic backup** before any write (system does this automatically)
+
+**HARD PROTECTED FILES (Never overwrite without explicit approval):**
+- `Documents/N5.md` - System entry point (71 lines of curated content)
+- `N5/prefs/prefs.md` - System preferences (hand-authored)
+- `N5/config/commands.jsonl` - Command registry (manually curated)
+
+**INCIDENT HISTORY:**
+- 2025-09-20: N5.md overwritten to empty during timeline system work
+- 2025-10-09: N5.md overwritten to empty (cause unknown)
+- Both times recovered from git, but PREVENTION is critical
+
+**NEVER use `create_or_rewrite_file` on these files without:**
+- Reading current content first
+- Showing user preview
+- Getting explicit "APPROVED" confirmation
+- Automatic backup (handled by system)
+
+**Protection systems active:**
+- ✅ Git pre-commit hook (blocks empty files)
+- ✅ Automatic backup system (creates timestamped backups)
+- ✅ File watcher daemon (monitors for suspicious changes)
+- ✅ File protector script (validates operations)
+
+---
+
 ## Table of Contents {#table-of-contents}
 
 - [Navigation System](#navigation-system)
@@ -15,6 +51,7 @@
   - [Knowledge Lookup](#knowledge-lookup)
   - [Knowledge Ingestion Standards](#knowledge-ingestion-standards)
   - [Naming Conventions](#naming-conventions)
+  - [Engagement Definitions](#engagement-definitions)
   - [Google Drive Access](#google-drive-access)
   - [Coding Agent Preference](#coding-agent-preference)
 - [Personal Communication](#personal-communication)
@@ -67,12 +104,12 @@ This governs navigation anchors, table of contents, and cross-references for the
 
 ### Folder Policy Principle {#folder-policy-principle}
 
-**Highest Priority Governance**: Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted in the policy file itself (e.g., "Exempts: Safety Overrides"). Policies govern the collective interpretation and handling of folder contents as programs, databases, or dynamic entities.
+**Highest Priority Governance**: Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted in the policy file itself (e.g., \"Exempts: Safety Overrides\"). Policies govern the collective interpretation and handling of folder contents as programs, databases, or dynamic entities.
 
 - **Mandatory Check**: Always scan for and consult POLICY.md in the target folder before any interaction (read, edit, add, delete). If absent, default to this global prefs.md but flag for policy creation.
-- **Anchors System**: Each POLICY.md must include an "Anchors" section linking to root N5/prefs.md, related issues, or parent policies for cross-referencing and system coherence.
+- **Anchors System**: Each POLICY.md must include an \"Anchors\" section linking to root N5/prefs.md, related issues, or parent policies for cross-referencing and system coherence.
 - **Overrides Mechanism**: Folder policies can override any global rule; document exemptions clearly. Conflicts resolved by escalating to root POLICY.md or user arbitration.
-- **Naming Convention**: Use "POLICY.md" for consistency and easy sourcing by title (e.g., search for "POLICY.md" in folder tree).
+- **Naming Convention**: Use \"POLICY.md\" for consistency and easy sourcing by title (e.g., search for \"POLICY.md\" in folder tree).
 - **Creation Protocol**: When creating a new folder, always generate POLICY.md first. Include purpose, handling rules, safety flags, dependencies, and anchors.
 - **Enforcement**: Automated checks (future N5 command) will validate policy adherence. Manual overrides require timeline logging.
 
@@ -176,9 +213,17 @@ Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does
 
 ### Naming Conventions {#naming-conventions}
 
-- **Location**: ./N5/prefs/naming-conventions.md
+- **Location**: ./naming-conventions.md
 - **Purpose**: Human-readable, greppable naming for files and folders.
 - **Quick Access**: Reference here for all naming rules in N5 OS.
+
+[Back to Top](#table-of-contents)
+
+### Engagement Definitions {#engagement-definitions}
+
+- **Location**: ./engagement_definitions.md
+- **Purpose**: Defines engagement patterns and definitions for N5 OS interactions.
+- **Quick Access**: Reference here for engagement rules.
 
 [Back to Top](#table-of-contents)
 
@@ -186,10 +231,10 @@ Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does
 
 - **Preference**: Always first try to access Google Drive related content through the integration first, versus through a web browser or consumer access.
 - **Steps for Accessing Google Drive Files**:
-  1. Verify the Google Drive app integration is connected using `list_app_tools(app_slug="google_drive")`.
-  2. Retrieve file metadata using `use_app_google_drive` with `tool_name="google_drive-get-file-by-id"` and the file ID.
-  3. Download the file content using `use_app_google_drive` with `tool_name="google_drive-download-file"`, specifying the file ID, filePath (e.g., "/tmp/filename.txt"), and mimeType (e.g., "text/plain" for Google Docs export).
-  4. If the tool returns a download URL, use `run_bash_command` with curl to fetch it to the workspace (e.g., "/home/workspace/filename.txt").
+  1. Verify the Google Drive app integration is connected using `list_app_tools(app_slug=\"google_drive\")`.
+  2. Retrieve file metadata using `use_app_google_drive` with `tool_name=\"google_drive-get-file-by-id\"` and the file ID.
+  3. Download the file content using `use_app_google_drive` with `tool_name=\"google_drive-download-file\"`, specifying the file ID, filePath (e.g., \"/tmp/filename.txt\"), and mimeType (e.g., \"text/plain\" for Google Docs export).
+  4. If the tool returns a download URL, use `run_bash_command` with curl to fetch it to the workspace (e.g., \"/home/workspace/filename.txt\").
   5. Read the downloaded file using `read_file` with the absolute path.
 
 [Back to Top](#table-of-contents)
@@ -209,7 +254,7 @@ Project _prefs.md > Workflow sub-pref > Global prefs.md. Knowledge informs, does
 
 - **Auto-Process Forwarded Emails**: true (trigger Process Emails command on new Queue/Email/*.json)
 - **Auto-Scan Gmail for Digests**: daily (run Scan Gmail for Digests at 6 AM ET)
-- **Thread Creation Trigger**: If new Gmail thread contains "newsletter" or "article", process via Process Newsletter command
+- **Thread Creation Trigger**: If new Gmail thread contains \"newsletter\" or \"article\", process via Process Newsletter command
 - **Detection Rules Path**: file N5/lists/detection_rules.md
 - **Article Tracker Path**: file N5/knowledge/article_reads.jsonl
 - **Digest Path**: file N5/knowledge/digests/{date}.md
@@ -226,15 +271,15 @@ Defaults: Outcome-first prompts; balanced formality; direct CTAs when stakes/tim
 
 Structure love: Version tags, headings, checklists, and reversible next steps.
 
-Anti-patterns: Ambiguous timing (e.g., "tomorrow"), vague asks, and overwrought prose.
+Anti-patterns: Ambiguous timing (e.g., \"tomorrow\"), vague asks, and overwrought prose.
 
 ### 1) Communication Style & Voice (Master Voice) {#communication-style--voice-master-voice}
 
 Relationship depth by medium (0=Stranger to 4=Inner Circle)
 
-Email: 2.0 to2.5 (Colleague/Partner) by default. Rises to 3 with repeat collaborators, drops to 1.5 to2 for cold outreach or exec audiences until rapport is built.
+Email: 2.0 to 2.5 (Colleague/Partner) by default. Rises to 3 with repeat collaborators, drops to 1.5 to 2 for cold outreach or exec audiences until rapport is built.
 
-Spoken (live/voice): 2.5 to3. Warmer, faster trust-building; favors direct alignment and decision-making.
+Spoken (live/voice): 2.5 to 3. Warmer, faster trust-building; favors direct alignment and decision-making.
 
 DM/Chat (Slack/Texts): 3 with close collaborators; 2 with new contacts. Efficient, tactical, occasionally playful.
 
@@ -254,11 +299,11 @@ Most used:
 
 CTA + Next Steps (Sales-lite): Thanks to 1 line value to specific ask to owner & date to fallback option.
 
-Summary to Decision to Next Steps: Bullet what we heard to decision needed to 1 to3 actions with owners/time.
+Summary to Decision to Next Steps: Bullet what we heard to decision needed: 1 to 3 actions with owners/time.
 
 Gentle Nudge: Warm anchor to status check to single next action.
 
-Less used: Pro-forma “Regards” follow-ups with no new information.
+Less used: Pro-forma "Regards" follow-ups with no new information.
 
 Best-performing structure: Gratitude to Reiterate outcome to Single, concrete ask (owner+when) to Close with warmth.
 
@@ -270,7 +315,7 @@ Confidence: 0.72 to 0.80
 
 Humility: 0.55 to 0.65
 
-Compared to schema 0.80 / 0.70 / 0.40: Similar warmth, slightly higher confidence, noticeably higher humility. The mix is “confident but coachable.”
+Compared to schema 0.80 / 0.70 / 0.40: Similar warmth, slightly higher confidence, noticeably higher humility. The mix is "confident but coachable."
 
 Lexicon preferences
 
@@ -282,7 +327,7 @@ Avoid / replace:
 
 have to hold/own; leverage to use/apply; reach out to get in touch; ASAP to by <absolute date/time>; circling back to following up on .
 
-Time phrasing: Always absolute dates/times (e.g., “Sep 22, 4:00 pm ET”), never “tomorrow/next week” without the exact date.
+Time phrasing: Always absolute dates/times (e.g., "Sep 22, 4:00 pm ET"), never "tomorrow/next week" without the exact date.
 
 Slang (depth greater or equal 3): spicy take, ship it, bad-first-version, rails-not-rules, vibe check, brain dump.
 
@@ -292,7 +337,7 @@ Formatting tics: Use bullets, 1 to 2 sentence paragraphs, bold sparingly for anc
 
 Outcome-first interrogatories that work
 
-Start with the job of the text: “What decision should this drive, and for whom?”
+Start with the job of the text: "What decision should this drive, and for whom?"
 
 Define success: metric, audience, time horizon, constraints.
 
@@ -338,13 +383,13 @@ PDF only for final share-outs.
 
 Safeguards & catches (examples)
 
-Version bump guard: Don’t overwrite; bump and log changes.
+Version bump guard: Don't overwrite; bump and log changes.
 
 Contradiction checks: Flag mismatched numbers/dates or vague time words.
 
-Missing field guard: Catch empty sections in templates (e.g., “Risks” or “Next Steps”).
+Missing field guard: Catch empty sections in templates (e.g., "Risks" or "Next Steps").
 
-Privacy/ethics nudge: Warn on personal/medical claims; guidance provided with disclaimers and clear “see a clinician” advice.
+Privacy/ethics nudge: Warn on personal/medical claims; guidance provided with disclaimers and clear "see a clinician" advice.
 
 ### 3) Nuances & Safeguards (Nuance Manifest) {#nuances--safeguards-nuance-manifest}
 
@@ -366,7 +411,7 @@ Nuance harvests added (examples): rails-not-rules, bad-first-version, 24-hour sh
 
 Adaptive interrogatory behaviors
 
-Probes that clarify fast: audience, decision owner, OMTM (one metric to move), time horizon, privacy/compliance constraints, and “what to explicitly exclude.”
+Probes that clarify fast: audience, decision owner, OMTM (one metric to move), time horizon, privacy/compliance constraints, and "what to explicitly exclude."
 
 Decision hygiene: Include disconfirmers and counter-examples when recommending.
 
@@ -392,7 +437,7 @@ Operating rules
 
 Ask 3 clarifiers only when ambiguity would materially harm the output; otherwise state assumptions and proceed.
 
-Prefer facilitation (structured workflow) unless explicitly told “just answer.”
+Prefer facilitation (structured workflow) unless explicitly told "just answer."
 
 End deliverables with a single concrete next step when appropriate.
 
@@ -406,7 +451,7 @@ Target Flesch-Kincaid Grade 10-12; average sentence length 16-22 words; favor bu
 
 Overrides & feedback loops
 
-Iterative loops with plus/minus notes; “regenerate with X constraint” works well.
+Iterative loops with plus/minus notes; "regenerate with X constraint" works well.
 
 Persistent modules capture strategy (e.g., Careerspan GTM hypothesis), productivity (e.g., Block Breaker Playbook), and preferences.
 
@@ -426,7 +471,7 @@ One-page external style guide (tone, CTAs, sign-offs, examples).
 
 CTA snippet library (book a call, share a doc, confirm a decision).
 
-Stable lexicon “allow/avoid” card with 30-40 items.
+Stable lexicon "allow/avoid" card with 30-40 items.
 
 ### 5) Compatibility Cheat-Sheet (for other AIs) {#compatibility-cheat-sheet-for-other-ais}
 
@@ -440,7 +485,7 @@ Cite recent facts and label hypotheses with confidence.
 
 Prefer reversible recommendations; show 1 disconfirming angle.
 
-Don’t:
+Don't:
 
 Use vague time words, filler, or florid prose.
 
@@ -450,11 +495,11 @@ Skip a version tag on long/iterative outputs.
 
 Formatting defaults: Markdown or YAML; headings; bullets; vX.Y + date.
 
-Tone defaults: Warm (0.8), confident (0.75), humble (0.6). “Competent, kind, unpretentious.”
+Tone defaults: Warm (0.8), confident (0.75), humble (0.6). "Competent, kind, unpretentious."
 
 ### 6) Sample Micro-Templates {#sample-micro-templates}
 
-Follow-up (CTA + Next Steps):Thanks for . To move this forward, could you  by ? If that timing’s tight, . Happy to adjust as needed.
+Follow-up (CTA + Next Steps):Thanks for . To move this forward, could you  by ? If that timing's tight, . Happy to adjust as needed.
 
 Summary - Decision - Next Steps:We aligned on <1-2 bullets>. Decision needed: . Next steps: <A (owner/date)>, <B (owner/date)>.
 
@@ -486,4 +531,4 @@ Use 24-hour format system-wide (e.g., 16:00 instead of 4:00 pm).
 - Persistence: This file serves as the core reference; updates logged here.
 - Testing: Use sample inputs to validate; feedback loops active.
 - Change Log (Appends): Restored to original full version; added safeguard note and military time override.
-
+When referring to lists, always check /home/workspace/N5/lists/

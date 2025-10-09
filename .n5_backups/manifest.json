@@ -1,0 +1,12 @@
+{
+  "backups": {
+    "/home/workspace/Documents/N5.md": [
+      {
+        "backup_path": "/home/workspace/.n5_backups/Documents_N5.md.20251009_054435.backup",
+        "timestamp": "2025-10-09T05:44:35.462353",
+        "operation": "initial-backup",
+        "size_bytes": 2407
+      }
+    ]
+  }
+}

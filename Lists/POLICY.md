@@ -1,15 +1,13 @@
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: 8d77372a364301427c38385916bc0aab
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
-anchors:
-  input: null
-  output: /home/workspace/N5_mirror/lists/POLICY.md
+related_files:
+anchors: [object Object]
 ---
 # Lists Subfolder Policy
 
