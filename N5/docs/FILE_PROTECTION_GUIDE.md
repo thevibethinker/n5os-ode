@@ -337,3 +337,11 @@ If you experience issues or have questions about the file protection system:
 4. Test each protection layer individually
 
 **Remember:** Multiple failures must occur simultaneously for data loss. The system is designed with redundancy.
+
+## Full Documentation
+
+See: `N5/docs/FILE_PROTECTION_GUIDE.md`
+
+**Quick Reference:** `file 'N5/docs/protection-quick-ref.md'`
+
+**Incident Analysis:** `file 'Documents/Archive/2025-10-09-N5-Protection/incident_analysis.md'`
