@@ -14,6 +14,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 from dataclasses import dataclass, asdict
+import sqlite3
 
 # Add N5 scripts to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -35,6 +36,105 @@ EVENTS_INDEX = CRM_BASE / "events" / "index.jsonl"
 NETWORKING_LIST = WORKSPACE / "N5" / "lists" / "networking-contacts.jsonl"
 ESSENTIAL_LINKS = WORKSPACE / "N5" / "prefs" / "communication" / "essential-links.json"
 VOICE_PREFS = WORKSPACE / "N5" / "prefs" / "communication" / "voice.md"
+DB_PATH = WORKSPACE / "Knowledge" / "crm" / "crm.db"
+
+
+def get_db_conn():
+    """Get database connection with Row factory"""
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def upsert_individual(conn, individual):
+    """
+    Insert or update individual record.
+    Returns individual_id.
+    
+    Args:
+        individual: dict with keys: full_name, email, title, company,
+                   primary_category, status, tags, source_type, notes,
+                   markdown_file_path, etc.
+    """
+    cursor = conn.cursor()
+    
+    # Try to find existing by email or name
+    if individual.get('email'):
+        cursor.execute("SELECT id FROM individuals WHERE email = ?", 
+                      (individual['email'],))
+    else:
+        cursor.execute("SELECT id FROM individuals WHERE full_name = ?", 
+                      (individual['full_name'],))
+    
+    row = cursor.fetchone()
+    
+    if row:
+        # Update existing
+        individual_id = row['id']
+        cursor.execute("""
+            UPDATE individuals SET
+                title = ?, company = ?, email = ?,
+                primary_category = ?, status = ?, tags = ?,
+                notes = ?, markdown_file_path = ?
+            WHERE id = ?
+        """, (
+            individual.get('title'),
+            individual.get('company'),
+            individual.get('email'),
+            individual.get('primary_category', 'other'),
+            individual.get('status', 'prospect'),
+            individual.get('tags'),
+            individual.get('notes'),
+            individual.get('markdown_file_path'),
+            individual_id
+        ))
+    else:
+        # Insert new
+        cursor.execute("""
+            INSERT INTO individuals (
+                full_name, title, company, email, 
+                primary_category, status, tags, source_type,
+                notes, markdown_file_path
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            individual['full_name'],
+            individual.get('title'),
+            individual.get('company'),
+            individual.get('email'),
+            individual.get('primary_category', 'other'),
+            individual.get('status', 'prospect'),
+            individual.get('tags'),
+            individual.get('source_type'),
+            individual.get('notes'),
+            individual.get('markdown_file_path')
+        ))
+        individual_id = cursor.lastrowid
+    
+    return individual_id
+
+def insert_interaction(conn, individual_id, interaction):
+    """
+    Insert interaction record.
+    
+    Args:
+        individual_id: FK to individuals table
+        interaction: dict with keys: interaction_type, interaction_date,
+                    subject, summary, notes_file_path
+    """
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO interactions (
+            individual_id, interaction_type, interaction_date,
+            subject, summary, notes_file_path
+        ) VALUES (?, ?, ?, ?, ?, ?)
+    """, (
+        individual_id,
+        interaction['interaction_type'],
+        interaction['interaction_date'],
+        interaction.get('subject'),
+        interaction.get('summary'),
+        interaction.get('notes_file_path')
+    ))
+    return cursor.lastrowid
 
 
 @dataclass
@@ -326,12 +426,12 @@ Return ONLY valid JSON, no other text.
     async def _create_individual(self, extracted: Dict[str, Any], event_data: Dict[str, Any]) -> Dict[str, Any]:
         """Create new individual profile."""
         
-        individual_id = self._slugify(extracted['name'])
-        profile_path = CRM_INDIVIDUALS / f"{individual_id}.md"
+        individual_id_slug = self._slugify(extracted['name'])
+        profile_path = CRM_INDIVIDUALS / f"{individual_id_slug}.md"
         
         # Build individual object
         individual = Individual(
-            id=individual_id,
+            id=individual_id_slug,
             name=extracted['name'],
             context=extracted.get('context', ''),
             company=extracted.get('company', 'Unknown'),
@@ -352,8 +452,46 @@ Return ONLY valid JSON, no other text.
         # Write profile markdown
         await self._write_individual_profile(individual, extracted, event_data)
         
+        # NEW: Also write to database
+        conn = get_db_conn()
+        try:
+            db_individual = {
+                'full_name': extracted['name'],
+                'title': extracted.get('role'),
+                'company': extracted.get('company'),
+                'email': next((ch for ch in extracted.get('connection_channels', []) if '@' in ch), None),
+                'primary_category': extracted.get('tags', ['prospect'])[0],
+                'status': 'active',
+                'tags': ','.join(extracted.get('tags', [])),
+                'source_type': 'event',
+                'notes': extracted.get('context'),
+                'markdown_file_path': str(profile_path.relative_to(WORKSPACE))
+            }
+            
+            individual_id_db = upsert_individual(conn, db_individual)
+            
+            # Record the event interaction
+            interaction = {
+                'interaction_type': 'event',
+                'interaction_date': event_data['date'],
+                'subject': f"Met at {event_data.get('name')}",
+                'summary': extracted.get('context'),
+                'notes_file_path': str(profile_path.relative_to(WORKSPACE))
+            }
+            
+            insert_interaction(conn, individual_id_db, interaction)
+            
+            conn.commit()
+            logger.info(f"✓ Added {db_individual['full_name']} to CRM database")
+            
+        except Exception as e:
+            conn.rollback()
+            logger.error(f"✗ Database error: {e}")
+        finally:
+            conn.close()
+
         # Update index
-        self.individuals_index[individual_id] = asdict(individual)
+        self.individuals_index[individual_id_slug] = asdict(individual)
         self._save_index(self.individuals_index, CRM_INDEX)
         
         # Add to networking list
@@ -380,6 +518,43 @@ Return ONLY valid JSON, no other text.
         # Re-write profile with updated relationship history
         await self._append_relationship_history(existing, extracted, event_data)
         
+        # NEW: Also write to database
+        conn = get_db_conn()
+        try:
+            db_individual = {
+                'full_name': existing['name'],
+                'title': existing.get('role'),
+                'company': existing.get('company'),
+                'email': next((ch for ch in existing.get('connection_channels', []) if '@' in ch), None),
+                'primary_category': existing.get('tags', ['prospect'])[0],
+                'status': existing.get('status'),
+                'tags': ','.join(existing.get('tags', [])),
+                'notes': extracted.get('context'),
+                'markdown_file_path': existing['profile_path']
+            }
+
+            individual_id_db = upsert_individual(conn, db_individual)
+
+            # Record the event interaction
+            interaction = {
+                'interaction_type': 'event',
+                'interaction_date': event_data['date'],
+                'subject': f"Follow-up at {event_data.get('name')}",
+                'summary': extracted.get('context'),
+                'notes_file_path': existing['profile_path']
+            }
+
+            insert_interaction(conn, individual_id_db, interaction)
+
+            conn.commit()
+            logger.info(f"✓ Updated {db_individual['full_name']} in CRM database")
+
+        except Exception as e:
+            conn.rollback()
+            logger.error(f"✗ Database error on update: {e}")
+        finally:
+            conn.close()
+
         # Update index
         self.individuals_index[existing['id']] = existing
         self._save_index(self.individuals_index, CRM_INDEX)
