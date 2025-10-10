@@ -1,0 +1,225 @@
+{
+  "artifact": "Block Type Registry",
+  "type": "Companion",
+  "code": "05",
+  "short_name": "Block_Registry",
+  "version": "1.0",
+  "proposed_save_filename": "Companion [05] - Block Type Registry v1.0.json",
+  "purpose": "Define all block types, formats, and stakeholder combinations for Meeting Intelligence Orchestrator",
+  
+  "blocks": {
+    "B01": {
+      "name": "DETAILED_RECAP",
+      "purpose": "Comprehensive decision and agreement summary",
+      "when": "Every meeting (required)",
+      "priority": "REQUIRED",
+      "format": "Key decisions and agreements:\n• We aligned on [specific outcome with context]\n• You confirmed [exact commitment with rationale]\n• Both sides agreed that [mutual understanding]\n• Next critical step is [specific milestone]",
+      "variables": ["outcomes", "confirmations", "agreements", "next_step"],
+      "detail_level": "high"
+    },
+    
+    "B02": {
+      "name": "COMMITMENTS_CONTEXTUAL",
+      "purpose": "Who owns what by when with dependencies",
+      "when": "Any meeting with action items",
+      "priority": "HIGH",
+      "format": "| Owner | Deliverable | Context/Why | Due Date | Dependencies |\n|-------|------------|------------|----------|--------------|",
+      "variables": ["owner", "deliverable", "context", "due_date", "dependencies"],
+      "rules": {
+        "owner_classification": "Vrijen/Logan/Careerspan team = 'We', Others = Name (your side)",
+        "date_format": "Preserve as stated (EOD Friday, early next week, etc.)",
+        "missing_date": "Flag with [Date TBD]"
+      }
+    },
+    
+    "B04": {
+      "name": "LINKS_WITH_CONTEXT",
+      "purpose": "Resources with explanation of relevance",
+      "when": "Any links/documents discussed",
+      "priority": "MEDIUM",
+      "format": "• **[Resource Name]** — [Why this matters to them]\n  → [URL or 'Link to follow']",
+      "variables": ["resource_name", "relevance", "url"],
+      "integration": "Pull from Essential Links companion if available"
+    },
+    
+    "B05": {
+      "name": "OUTSTANDING_QUESTIONS",
+      "purpose": "Unresolved items with blocker identification",
+      "when": "ANY meeting with open loops",
+      "priority": "HIGH",
+      "format": "**Outstanding questions:**\n• [Question]\n  → Owner: [Name]\n  → Needed by: [Date/Trigger]\n  → Blocker type: [WAITING_ON_DATA / NEEDS_DECISION / UNCLEAR_REQUIREMENT / DEPENDENCY]\n  → Unblocking action: [Specific step to resolve]\n  → Impact if delayed: [What gets stuck]",
+      "variables": ["question", "owner", "deadline", "blocker_type", "unblocking_action", "impact"],
+      "blocker_types": {
+        "WAITING_ON_DATA": "Information needed from someone",
+        "NEEDS_DECISION": "Choice required to proceed",
+        "UNCLEAR_REQUIREMENT": "Ambiguity needs clarification",
+        "DEPENDENCY": "Waiting on another task/event"
+      }
+    },
+    
+    "B06": {
+      "name": "PILOT_INTELLIGENCE",
+      "purpose": "Pilot details with confidence scoring",
+      "when": "ONLY if pilot explicitly discussed",
+      "priority": "CONDITIONAL",
+      "format": "**Pilot Discussion:**\n\nSpecificity: [Hypothetical / Outlined / Detailed]\nCommitment Level: [Exploring / Interested / Ready to proceed]\n\n*Parameters discussed:*\n• Scope: [X units] (firm/tentative)\n• Timeline: [duration] (firm/tentative)\n• Success criteria: [metrics] (defined/TBD)\n• Investment: [amount/effort] (agreed/TBD)\n\n*Next steps for pilot:*\n[Specific action] to move from [current state] to [next state]",
+      "confidence_indicators": true,
+      "variables": ["specificity", "commitment_level", "scope", "timeline", "success_criteria", "investment", "next_steps"]
+    },
+    
+    "B07": {
+      "name": "WARM_INTRO_BIDIRECTIONAL",
+      "purpose": "Facilitate connections in either direction",
+      "when": "Almost every meeting (standard practice)",
+      "priority": "HIGH",
+      "variants": {
+        "vrijen_introduces": {
+          "detection": ["I'll introduce you to", "I know someone who", "let me connect you with"],
+          "format": "**Connecting you with [Name]**\n\nContext: [Name] leads [role] at [company] and has deep experience in [relevant area]. Given your discussion about [specific topic], they could provide insight on [specific value].\n\nI'll introduce you both with context about [mutual interest point]. They're typically responsive to [communication preference].\n\nAlternatively, happy to share their LinkedIn for direct outreach: [Link or TBD]"
+        },
+        "they_introduce_vrijen": {
+          "detection": ["I can introduce you to", "I'll connect you with", "let me put you in touch with"],
+          "format": "**Introduction to [Name] via [Introducer]**\n\n[Introducer] offered to connect me with [Name] who [relevance to Careerspan]. This could help with [specific opportunity/value].\n\nFor the introduction, you'll position me as [angle that resonates with target].\n\n*If you need a blurb about me/Careerspan for this intro, see B14 below.*",
+          "linked_blocks": ["B14"]
+        },
+        "mutual": {
+          "detection": ["we should connect X and Y", "let's introduce them"],
+          "format": "**Cross-Introduction: [Name A] ← → [Name B]**\n\nFacilitating connection between:\n• [Name A]: [Why B valuable to A]\n• [Name B]: [Why A valuable to B]\n\nI'll introduce with context about [mutual value prop].\nBoth parties expecting intro by [timeline]."
+        }
+      }
+    },
+    
+    "B08": {
+      "name": "RESONANCE_POINTS",
+      "purpose": "What got energy/enthusiasm",
+      "when": "Relationship building meetings",
+      "priority": "MEDIUM",
+      "format": "Particularly resonated: [specific moment/topic with full context]",
+      "variables": ["moment", "why_it_mattered"]
+    },
+    
+    "B11": {
+      "name": "METRICS_SNAPSHOT",
+      "purpose": "Numbers discussed",
+      "when": "Data-heavy or ROI discussions",
+      "priority": "CONDITIONAL",
+      "format": "Key metrics:\n• [Metric]: [Value]\n• [Benchmark]: [Comparison]\n• [Target]: [Goal if discussed]",
+      "variables": ["metrics", "values", "comparisons"]
+    },
+    
+    "B13": {
+      "name": "PLAN_OF_ACTION",
+      "purpose": "Execution roadmap with confidence indicator",
+      "when": "Complex initiatives needing structure",
+      "priority": "HIGH",
+      "format": "**Plan of Action: [Initiative]** *(Confidence: [LEVEL])*\n\n*Immediate* (This week):\n→ [Action] to achieve [outcome]\n\n*Near-term* (Next 2-3 weeks):\n→ If [condition], then [action]\n→ In parallel: [supporting action]\n\n*Checkpoint*: [Date/trigger]\n→ Evaluate: [metrics]\n→ Decision: [Next phase options]\n\n*End state*: [Success definition]",
+      "confidence_levels": {
+        "FIRM": "Specific dates, resources allocated, both committed",
+        "TENTATIVE": "General timeline, pending approvals",
+        "EXPLORATORY": "Hypothetical, multiple options, no commitments"
+      }
+    },
+    
+    "B14": {
+      "name": "BLURBS_REQUESTED",
+      "purpose": "Placeholder for company/person descriptions",
+      "when": "Promised to send info about entities",
+      "priority": "MEDIUM",
+      "format": "**Blurbs to generate:**\n• [Company/Person Name]: [1-line context of why needed]\n  └─ Focus on: [specific angle they care about]\n  └─ [PASTE BLURB HERE]\n\n• [Second entity]: [context]\n  └─ [PASTE BLURB HERE]",
+      "linked_to": "B07 when they_introduce_vrijen variant detected",
+      "auto_detection": ["send me a blurb", "how should I describe", "what should I say about"]
+    },
+    
+    "B15": {
+      "name": "STAKEHOLDER_MAP",
+      "purpose": "Who's who and their interests",
+      "when": "Multiple stakeholders or complex dynamics",
+      "priority": "CONDITIONAL",
+      "format": "**Key Players:**\n• [Name] ([Title]) — Champion: [what they want]\n• [Name] ([Title]) — Decision Maker: [their concern]\n• [Name] ([Title]) — Influencer: [their angle]",
+      "variables": ["names", "titles", "roles", "interests"]
+    },
+    
+    "B16": {
+      "name": "MOMENTUM_MARKERS",
+      "purpose": "Signs of deal progression",
+      "when": "Sales/investment conversations",
+      "priority": "CONDITIONAL",
+      "format": "**Positive signals:**\n• [Specific thing they said/did]\n• [Timeline compression indicator]\n• [Resource allocation sign]\n\n**Watch points:**\n• [Potential blocker to monitor]",
+      "variables": ["positive_signals", "watch_points"]
+    },
+    
+    "B17": {
+      "name": "COMMUNITY_METRICS",
+      "purpose": "Success metrics for community management",
+      "when": "Community partner discussions",
+      "priority": "CONDITIONAL",
+      "format": "**Community Success Framework:**\n\n*Baseline metrics:*\n• Current size: [number]\n• Current engagement: [metric]\n• Current value delivery: [description]\n\n*Our proposed improvements:*\n• Target: [new metric] within [timeframe]\n• Method: [specific approach]\n• Measurement: [how we'll track]\n\n*Value proposition:*\n[Specific business outcome] through [our unique approach]",
+      "stakeholder_specific": "COMMUNITY_PARTNER"
+    },
+    
+    "B18": {
+      "name": "CANDIDATE_RESOURCES",
+      "purpose": "Career resources and guidance for candidates",
+      "when": "Meeting with individual job seekers",
+      "priority": "CONDITIONAL",
+      "format": "**Resources for your search:**\n\n*Materials to review:*\n• [Resource]: [Why it helps your situation]\n• [Framework]: [How to apply to your case]\n\n*People to connect with:*\n• [Name]: [Why relevant to your goals]\n\n*Action items for you:*\n□ [Specific step] by [timeframe]\n□ [Follow-up item] after [trigger]\n\n*Our next check-in:*\n[What we'll review] in [timeframe]",
+      "stakeholder_specific": "CANDIDATE"
+    }
+  },
+  
+  "stakeholder_combinations": {
+    "INVESTOR": {
+      "block_ids": ["B01", "B16", "B11", "B13", "B02", "B07", "B04", "B05"],
+      "emphasis": "Metrics, momentum, strategic vision"
+    },
+    "HIRING_PARTNER": {
+      "block_ids": ["B01", "B02", "B06", "B13", "B14", "B07", "B04", "B05"],
+      "emphasis": "Talent pipeline, pilot structure, commitments"
+    },
+    "COMMUNITY_PARTNER": {
+      "block_ids": ["B01", "B17", "B13", "B07", "B02", "B04", "B05"],
+      "emphasis": "Engagement metrics, value delivery"
+    },
+    "CANDIDATE": {
+      "block_ids": ["B18", "B07", "B04", "B01"],
+      "emphasis": "Resources, connections, action items"
+    },
+    "CHANNEL_PARTNER": {
+      "block_ids": ["B01", "B15", "B13", "B02", "B07", "B04", "B05"],
+      "emphasis": "Partnership structure, stakeholder alignment"
+    },
+    "NETWORKING": {
+      "block_ids": ["B08", "B07", "B14", "B04"],
+      "emphasis": "Relationships, connections, resonance"
+    },
+    "HYBRID": {
+      "note": "Combine primary and secondary stakeholder blocks",
+      "rule": "Union of both block sets, prioritize primary"
+    }
+  },
+  
+  "output_order": [
+    "B01 (always first)",
+    "B05 (if exists)",
+    "B02",
+    "B13",
+    "B06 (if pilot)",
+    "B03 (if exists)",
+    "B07",
+    "B14",
+    "B04",
+    "B11 (if metrics)",
+    "B15 (if multiple stakeholders)",
+    "B16 (if sales)",
+    "B17 (if community)",
+    "B18 (if candidate)",
+    "B08 (if networking)"
+  ],
+  
+  "metadata": {
+    "compatible_with": ["Function [03] - Meeting Intelligence Orchestrator v1.0+"],
+    "author": "Metaprompter v6.2",
+    "created": "2025-01-21",
+    "owner": "Vrijen Attawar"
+  }
+}

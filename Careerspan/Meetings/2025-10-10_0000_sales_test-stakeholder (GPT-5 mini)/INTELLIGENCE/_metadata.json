@@ -1,0 +1,21 @@
+{
+  "meeting_date": "2025-10-10",
+  "meeting_type": "sales",
+  "transcript_path": "/home/workspace/Careerspan/Meetings/2025-10-10_0000_sales_test-stakeholder/transcript.txt",
+  "processing_timestamp": "2025-10-10T14:54:42Z",
+  "participants": [
+    "Malvika Jethmalani",
+    "(other participant: V / unnamed)"
+  ],
+  "generated_files": [
+    "INTELLIGENCE/action-items.md",
+    "INTELLIGENCE/decisions.md",
+    "INTELLIGENCE/detailed-notes.md",
+    "INTELLIGENCE/REVIEW_FIRST.md",
+    "INTELLIGENCE/content-map.md",
+    "INTELLIGENCE/RECOMMENDED_DELIVERABLES.md",
+    "INTELLIGENCE/stakeholder-profile.md"
+  ],
+  "confidence_overall": 0.90,
+  "notes": "Phase 1 essentials generated. Deliverables (phase 2) are available on demand. All extractions are drawn directly from the provided transcript; timestamps included where relevant."
+}

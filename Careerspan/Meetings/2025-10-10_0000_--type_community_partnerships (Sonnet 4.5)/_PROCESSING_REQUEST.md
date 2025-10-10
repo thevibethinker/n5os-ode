@@ -1,0 +1,637 @@
+# MEETING PROCESSING REQUEST
+
+**Timestamp**: 2025-10-10T14:57:03.966040Z
+**Transcript**: /home/.z/workspaces/con_8HHzyiRQDIHek2gc/meeting_doc.txt
+**Output Directory**: /home/workspace/Careerspan/Meetings/2025-10-10_0000_--type_community_partnerships
+**Meeting Type**: --type
+
+---
+
+## INSTRUCTIONS FOR ZO
+
+Please semantically analyze the transcript below and generate the following intelligence files in `/home/workspace/Careerspan/Meetings/2025-10-10_0000_--type_community_partnerships/INTELLIGENCE`:
+
+### Required Outputs:
+
+1. **action-items.md** - Extract all action items with:
+   - Owner (actual person's name from transcript)
+   - Deadline (inferred from context)
+   - Priority level
+   - Context/rationale
+   - Categorize by timeframe (Immediate, Short-term, Medium-term, Long-term)
+
+2. **decisions.md** - Extract all decisions made with:
+   - Clear decision statement
+   - Who decided
+   - Rationale/reasoning
+   - Impact assessment
+   - Category (Strategic, Tactical, Resource Allocation, etc.)
+
+3. **detailed-notes.md** - Extract key insights including:
+   - Important quotes with attribution
+   - Pain points identified
+   - Advice and recommendations shared
+   - Realizations/aha moments
+   - Market insights
+   - Numbers, metrics, facts mentioned
+
+### Requirements:
+
+- **Use REAL content from the transcript** - no generic stubs or placeholders
+- **Attribute quotes accurately** - use actual names from the transcript
+- **Extract semantic meaning** - understand context, not just keyword matching
+- **Be comprehensive** - don't miss important items
+- **Format professionally** - use clear markdown structure
+
+---
+
+## TRANSCRIPT
+
+```
+00:02
+Vrijen Attawar
+Hi there.
+
+00:03
+Usha Srinivasan
+Hi. Good morning. How are you?
+
+00:05
+Vrijen Attawar
+Oh, just one second.
+
+00:11
+Usha Srinivasan
+Can you hear me now? Nope.
+
+00:18
+Vrijen Attawar
+Oh, okay. I think I should be good.
+
+00:21
+Usha Srinivasan
+Yeah, I can hear you.
+
+00:22
+Vrijen Attawar
+Yeah, Sorry, one more time, please.
+
+00:25
+Usha Srinivasan
+Can I. I can hear you, but I'm not sure you can. Okay. There you go.
+
+00:28
+Vrijen Attawar
+Okay, we're good. We're good. Yeah, just, you know, one setting after
+the other needed to be fixed. Just one of those days.
+
+00:37
+Usha Srinivasan
+Not a problem. So, so how do you know Gina? You're friends with her?
+
+00:42
+Vrijen Attawar
+That's right. Yeah. We, we sort of met through LinkedIn, sort of
+engaging with each other on posts, but she actually was very proactive
+and sort of suggested that I speak with you, which it's a real honor,
+honestly. It's, it's very cool to speak to someone that's been so
+heavily involved in, you know, something that's very close to me and my
+co founder's heart, which is sort of fair. Hiring, hiring for the whole
+person, not just for the signifiers, which I think is in this moment. We
+have a great moment to change a lot of that with AI coming through. So
+hoping we can do that.
+
+01:26
+Usha Srinivasan
+Tell me more about your background and then how long have you been
+building or maybe you've been there doing that for a while now.
+
+01:35
+Vrijen Attawar
+It's been a minute. It's been a minute. By the way, my little one, Gary,
+is going to join for the conversation, so I apologize if you see a tail
+squishing.
+
+01:42
+Usha Srinivasan
+I see his tail.
+
+01:44
+Vrijen Attawar
+Yep, yep. So that's, that's who that is. You know, we've been doing this
+for a while. It's been almost two and a half years. We started as a
+career coaching tool and I think built an incredibly good career
+coaching tool, you know, based on the metrics and sort of the user love
+that we're getting. But we've realized very quickly that, you know,
+providing advice is good. Giving someone a new resume is great. What is
+best or sort of what is ideal is actually taking them by the hand and
+saying, hey, this is the job for you. Right. Or sort of materially
+improving their chances of getting the job through structural means, not
+just through sort of optimizing their materials, which is essentially
+just, you know, varying degrees of a coin toss.
+
+02:34
+Vrijen Attawar
+And so once we sort of had that realization, click, we pivoted the
+product towards selling to employers. So now what we do is we go to
+communities with high signal talent. We offer them our coaching tool for
+free. It is a guided self reflection tool that helps you hone in on your
+best attributes and experiences and so that we provide for free and we
+take the data from those sort of interactions and use that to match
+people to employers and we charge employers to access this pool of
+talent.
+
+03:10
+Usha Srinivasan
+Okay, awesome. And it's one. So you're based out of Toronto?
+
+03:16
+Vrijen Attawar
+I'm based out of Brooklyn. My co founder is based out of Boston.
+
+03:20
+Usha Srinivasan
+Oh, you're in the U.S. sorry.
+
+03:22
+Vrijen Attawar
+Yeah, that's right. No, all good.
+
+03:25
+Usha Srinivasan
+So have you been trying to raise funds for it or.
+
+03:29
+Vrijen Attawar
+We have, we have. So we've raised a pre. We raised a million in pre seed
+I think, you know, got very fortunate there. We have great invest a
+family office india that's still willing to support us. But you know, at
+this point we're looking for sort of smart capitals. We've, we have put
+the bridge round raise down a little bit just to focus on go to market
+and to really nail that down and sort of start bringing in more revenue.
+But you know, long and the short of it is we are still hoping to start
+collecting checks, maybe just some more checks in about three or so
+months. And there's two cats on my lap now.
+
+04:09
+Usha Srinivasan
+Oh good.
+
+04:10
+Vrijen Attawar
+Sorry about that.
+
+04:12
+Usha Srinivasan
+That's okay. That's great. That's great to hear. Tell me more about like
+the, just the demographic or the employer size. Do you focus on a
+particular types of employers or the size of company or on the tech side
+like sort of talent side, does it matter what kind of roles that they're
+looking for?
+
+04:34
+Vrijen Attawar
+So we are in the process of sort of evaluating various attempts to niche
+or various types of niching down. I think on the candidate side we're
+thinking, you know, engineer, product growth. Those are sort of the
+positions where you know, they're sort of high value. They are, you
+know, high paying. So you can make obviously a good amount as a cut. But
+they are also qualitative enough or at least product and growth are that
+there aren't very good systems of evaluating candidates for that kind of
+stuff. Right. I think with engineers the appeal is obviously just the
+volume of engineers. We weren't thinking necessarily of industry, but
+maybe geographically Boston and New York because we have a sort of
+founder presence there. Right.
+
+05:28
+Vrijen Attawar
+On the company side we're basically down to either companies where you
+have a talent team of three or under where we can essentially go and say
+hey, you know, take a first look at career spans candidates. Right, Take
+a first look at career spans candidates. Maybe you'll find someone good
+there. You just have to, you know, pay this amount to sort of scan x
+many folks. And we're actually going to communities, as I said, because
+that's where sort of the talent is bringing those folks into career span
+and therefore giving them the ability to quick scan all of these
+individuals. In many ways we're like a virtual in house recruiter for
+these communities.
+
+06:14
+Usha Srinivasan
+Okay, understood. And are the, the employers are small, they're like
+less, smaller than three. So I'm assuming who's paying for the platform
+the employers are not playing because are they playing paying per
+candidate they're finding or how are they paying?
+
+06:31
+Vrijen Attawar
+So that's something that we're hoping to eventually get to a per
+placement situation. But the way we're hoping to sort of bootstrap our
+way there is to first charge for either a scan of our database and
+charge a fixed amount for that or provide the scan for free and
+essentially charge for warm intros to the individuals. So we'll
+anonymize their information and sort of provide it. And so that is sort
+of broadly speaking the thinking. You know, there are situations where
+we, you know, we recognize the very real potential for a system that I'm
+describing to devolve into just sheer elitism. And I want to be clear
+that, you know, the growth tactic is not the values necessarily.
+
+07:21
+Vrijen Attawar
+I think where we eventually hope to take it and sort of help realign
+some of that stuff is to actually bring in communities where there's
+still what I would consider and you would consider really high signal
+talent and essentially incentivize companies to scan those places first.
+Right. So almost saying, hey, this community filled with great folks, we
+won't charge you anything to scan these folks. Right.
+
+07:51
+Usha Srinivasan
+What is the tool? Is it some kind of algorithm you've written that the
+specific match to something there are the, are you capturing from the
+employer certain criteria or job description or something that matches
+them?
+
+08:06
+Vrijen Attawar
+That's right. So initially it's on the employee side, initially it's a
+job description. Eventually we hope to have a dedicated coaching
+conversation for the employer to sort of gather that information. On the
+candidate side, it is a combination of their resume and the coaching
+conversations that they've had that we also sort of deconstruct and
+index in a way where you have sort of maximum traceability. Right. You
+can actually say, hey, this person at this trait because this situation
+where they did this thing that exhibited that quality. So that's the
+level of traceability that our system sort of has. And you know, we're
+effectively Right now just looking for either communities of talent that
+are looking to have that sort of virtual in house recruiter for facility
+to sort of use this to route jobs to them.
+
+08:56
+Vrijen Attawar
+You know, there's obviously as I mentioned, ways in which we can sort of
+incentivize certain communities getting scanned before others. But then
+I think most importantly the goal is to build out trust in our matching
+system because I think honestly you would love it. You know, it's
+really, it really does a lot more than just sort of keywords. It
+actually breaks down the role and tries to figure out what kind of
+individual or kinds of individual would be suited for this role as sort
+of a composite of qualities. And then that's what it sort of scans you
+against on a semantic basis. So it's actually quite a sophisticated sort
+of way of figuring out if someone is fit for the role.
+
+09:40
+Usha Srinivasan
+And, and are you the tech person in the. Are you have co founders or
+tech.
+
+09:47
+Vrijen Attawar
+We have a, we have a head of, we have a cto. So we have two non
+technical co founders and the cto.
+
+09:53
+Usha Srinivasan
+Okay, awesome. Awesome. Yeah, but you need both, right?
+
+09:57
+Vrijen Attawar
+It takes all kinds of folks, you know, but yeah, I mean, you know, would
+love your thoughts. Happy to answer any more questions. I think it's an
+interesting space obviously. So yeah, I'm all ready to talk.
+
+10:11
+Usha Srinivasan
+Kudos for putting this together. So, and the thought process,
+surprisingly, I have been in Canada doing the same thing, but in a not
+for profit way.
+
+10:21
+Vrijen Attawar
+Right.
+
+10:22
+Usha Srinivasan
+And I'm, I haven't been. I guess our trajectory is. I guess I've been
+around for about a year and a year, I guess about a year but within a
+university setting. So I started this. There are some slight variations
+in how we operate I guess first is the biggest thing is I am operating
+as a not for profit because for me the problem area, why I, I decided to
+start this is I'm an immigrant to Canada. And as you know, Canada is a
+land of immigrants. We have a lot of people coming here, highly
+qualified people through express entry visa program or through
+international student kind of routes or startup visa program, all of
+those.
+
+11:08
+Usha Srinivasan
+But increasingly it's just the climate, the way things are here in
+Canada, there's either a disconnect between them understanding when
+they're new to the country, if what opportunity opportunities there are.
+And we're not talking about just startups, but a lot of US prices for
+manufacturing or food processing. Right, right in Canada. And so when
+they're new to the country, they apply to large companies that's the
+brand that they see and they feel like, oh it's a prestige thing, you
+know, like I've arrived, I have landed a job in Google big bank or
+something like that. And so it's a perception change for them to
+actually think about small businesses as an opportunity. And on the
+other side, as you know, I'm dealing with companies that are under 200
+employees, slightly larger companies, I mean not very large but still.
+
+12:10
+Usha Srinivasan
+So I'm not only operating in the startup space but SME space but those
+are the companies that are looking for an IT person or you could be a
+marketing person. So the breadth of people that they're looking for is
+bigger. Like who they still don't deal with union roles or fractional
+roles. And so our platform works sort of similar I guess. You know, in
+the front end, you know, we capture, they upload their resume and we
+have a one minute video about the individual answering a critical
+thinking question in a 500 word pitch and then that's it that they
+complete their profile and they're not applying for any jobs. There's no
+jobs to apply. And then on the employer side it's the same as yourself.
+Like there's a, they use their job description to search the database
+and it's similar to yourself.
+
+13:07
+Usha Srinivasan
+Let's say, you know, there's an algorithm to search and then there's a
+green, yellow, red kind of percent match. We scrub the name of the
+individual so they don't get to see their name.
+
+13:21
+Vrijen Attawar
+Right, right.
+
+13:22
+Usha Srinivasan
+And they can click to interview the candidate from the platform and they
+can accept or decline. I mean I have very modest numbers since we've
+only been around for a year and I was inside the university so there's
+only so much we could do. So I left the university, I have another
+business I'm building. But this was something was more, you know, for me
+it's like giving back to the community. This is why it's a not for
+profit. I'm not here to ring horns or you know, go at the VC track and
+make. I just want people to get jobs. That's it. That, that's goal and
+help them settle in Canada faster. I also have other partners who help
+with housing, credit scoring. So it's a social enterprise. You know mine
+is.
+
+14:12
+Usha Srinivasan
+So it's not a VC track enterprise but I have tech in it only to make it
+more efficient my focus. To be honest, tech is just an enabler for me.
+It's the more of the engagement with the chambers or the municipalities
+about or the talent and helping them, you know, better at. For us, it's
+not about the technical skills, it's more. They already have the
+technical skills. What we focus on more on is their soft skills. They
+don't know how to interview, they have language challenges. You don't
+know the business etiquettes in Canada.
+
+14:47
+Vrijen Attawar
+Right.
+
+14:47
+Usha Srinivasan
+It's very different kind of things that the talent need.
+
+14:52
+Vrijen Attawar
+Right.
+
+14:52
+Usha Srinivasan
+I'm not going to teach them one more AI course and one more
+cybersecurity course because.
+
+14:59
+Vrijen Attawar
+Yeah, no, totally.
+
+15:01
+Usha Srinivasan
+So that's briefly how my platform works. Be ready works.
+
+15:06
+Vrijen Attawar
+Gotcha, gotcha. No, I mean it's a great example of sort of convergent
+thinking as far as the problem and sort of the solution is concerned.
+So, you know, on that basis alone, I'm very down with it. And I would
+love to explore ways for us to sort of work together or collaborate
+because I think that, you know, to your point, the, at the end of the
+day, the goal is to help people get jobs, right? And to the extent that,
+you know, folks can, it's in sort of all of our interests to specialize
+in certain areas and sort of wash our hands of others. You know, I think
+that is, is sort of the immediate thing that comes to mind is, hey, do
+you want to even take on the tech burden of.
+
+15:51
+Vrijen Attawar
+Of sort of developing a lot of this functionality or assuming that the
+kind of roles that you are putting through to the system are sort of
+aligned with careerspan? Does it make more sense to just spare yourself
+the efforts of a dev and just sort of use us?
+
+16:09
+Usha Srinivasan
+I have to think, yeah, I already have. Not my own internal. I'm an
+employee of one team at the moment because I just spun out of the
+university. I have a marketing team and essentially my daughter is
+helping me with a little bit of ops.
+
+16:28
+Vrijen Attawar
+Love it, love it. Keep it in the family.
+
+16:30
+Usha Srinivasan
+Just doing it all by myself for now because I have a consulting
+business. My focus is in other things as well. I did work with a two are
+younger than me people, but maybe older than you. My tech people who
+built the platform for me, they had other solutions. They came to Canada
+through their startup visa program. So they had a technology background,
+AI background. They're developers basically. They came to Canada to
+settle in Canada. They have a kind of a developer business. You know,
+they're doing other projects and whatnot. And we're actually close to
+filing a. Just the algorithm and so on. Canada gives us funding for IP
+filing, so doing that but regardless though, to be honest with your
+question is very valid. I want a team that knows what they're doing and
+very forward thinking and can build something.
+
+17:36
+Usha Srinivasan
+And I don't care where it kind of comes from, but maybe I need some time
+because I've literally just started and I'm not sure if you're in a
+place where you can white label things or. I don't know what that looks
+like.
+
+17:51
+Vrijen Attawar
+Oh, totally, we can very much so. That was the first thing I was going
+to say was we can very much white label it. That's not an issue at all.
+I think there are some nuances around, you know, how we sort of continue
+engaging with folks or how we sort of maintain the relationship with the
+user in the long run. Because part of how career span is set up is to
+directly engage with the user, if only so that they have total control
+over their data. Right. And so that's something that hopefully you will
+be very relieved to hear is that all of the data sort of rights are
+centered in the individual, but that also sort of constrains us into
+sort of working with them directly in some capacity.
+
+18:33
+Vrijen Attawar
+But I mean, those sort of edge case things aside, you know, I think what
+we already have the capacity to do is to bring people on, to engage in
+these coaching conversations. Accepts 50 different languages, by the
+way, and outputs English. So it's very sort of inclusive in that regard,
+especially for immigrants, you know, gives you output in English, gives
+you resume bullets, interview answers, all of that stuff. In fact, I'll
+send you a trial link if and when you have time. I know you're very
+busy.
+
+19:04
+Usha Srinivasan
+Trial link would be great. But I just want to be honest with you, like
+I, I'm not ready to change my platform at the moment, you know.
+
+19:11
+Vrijen Attawar
+Yeah, yeah, totally.
+
+19:13
+Usha Srinivasan
+Early stages. We're still, you know, growing within our own communities
+here in Ontario and people have a modest number. I have about 1200
+talent on the platform and about 145 employers and about 45 people have
+been hired from my platform. So it's still very modest numbers.
+
+19:34
+Vrijen Attawar
+Right.
+
+19:35
+Usha Srinivasan
+Or for one year. But you know, we're slowly growing, so I don't want to
+rock the boat. And I have a sort of an agreement with these, with this
+tech team at the moment. So I just totally I appreciate.
+
+19:47
+Vrijen Attawar
+You being upfront about that. So I'll send you, I'll tell you what, I'll
+send you an email with a trial code, with a demo and with a brief
+explanation of like, you know, sort of what we're currently capable of
+and what we're going to build out. Just so you have that context,
+obviously, absolutely no assumptions made, just that you have a sense
+of, okay, where are these folks taking this product? So that when you're
+doing your planning, you can sort of have that as reference. I would say
+beyond that, you know, would love to be helpful in any other way that I
+can be. You know, my contacts and sort of relationships in Canada are
+relatively limited. But if there is anyone in my network that I can put
+you in touch with, you know, happy to help.
+
+20:26
+Vrijen Attawar
+But obviously you're very established person yourself, so, you know, if
+it comes down, I'd be happy to help.
+
+20:33
+Usha Srinivasan
+Canada. I'm good with US so I'm slowly getting there. It's just, you
+know, I, I used to do a. I used to work for a company called Frost and
+Sullivan which was based. Yeah, do you know Frost and Solid?
+
+20:44
+Vrijen Attawar
+Yeah, yeah, I've heard of that. I believe I applied for a job there in
+college.
+
+20:48
+Usha Srinivasan
+Did you? Okay.
+
+20:50
+Vrijen Attawar
+Yeah.
+
+20:51
+Usha Srinivasan
+Based out of Palo Alto, Right. Globally. And so I used to be in their
+Canada office. I traveled in the US A lot. I, I did my first full
+postdoc in the US EPA in Cincinnati. So I, I know the US Fairly well,
+but I think not in the startup side as much more on the large enterprise
+side.
+
+21:12
+Vrijen Attawar
+Well, let me give you your very first lead for breaking into the. Or not
+breaking into, obviously, but expanding your US network. There's an org
+called Fohee. F O H e dot org. Are you part of them already?
+
+21:27
+Usha Srinivasan
+Nope.
+
+21:28
+Vrijen Attawar
+You should absolutely join. You can use my name as a referral. Fohee is
+a wonderful org. Lots of great future of work, sort of thinkers,
+practitioners, folks from all over the world. I'm fairly certain they'll
+have a local chapter for a city as large as Toronto as well. So, yeah,
+very much worth checking out. Fohe.org H E. Okay.
+
+21:57
+Usha Srinivasan
+Great. I will, I will check that out. Future of work.
+
+21:59
+Vrijen Attawar
+Okay, check them out. Yeah, this is a big part of sort of my network is
+fohy, folks. And then. Yeah, absolutely. If there's anyone in the US
+you'd like an intro to, I'm your guy.
+
+22:09
+Usha Srinivasan
+Okay. Awesome. It was a pleasure to speak with you. How do you pronounce
+your name again?
+
+22:15
+Vrijen Attawar
+Vrijan. Okay, yeah, pleasure's all mine.
+
+22:19
+Usha Srinivasan
+Yeah. Did you say you were in Boston?
+
+22:22
+Vrijen Attawar
+I'm in Brooklyn. My co. Founder's in Boston.
+
+22:24
+Usha Srinivasan
+Boston. Okay, got it. Yeah, I've been to probably both cities, but more
+recently to Boston.
+
+22:32
+Vrijen Attawar
+More recently to Boston. Okay, fair enough. Yeah. Well, if you're ever
+in town, let us know.
+
+22:36
+Usha Srinivasan
+Thank you. Thank you. Take care. Look forward to seeing what that pilot
+trial looks like.
+
+22:43
+Vrijen Attawar
+Sounds good. Catch you soon. Bye.
+
+22:45
+Usha Srinivasan
+Bye.
+
+```
+
+---
+
+**PROCESS THIS NOW**

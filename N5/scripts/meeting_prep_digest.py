@@ -30,7 +30,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-INTERNAL_DOMAINS = ["mycareerspan.com", "apply.ai"]
+INTERNAL_DOMAINS = ["mycareerspan.com", "theapply.ai"]
 PERSONAL_EMAIL_DOMAINS = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "icloud.com"]
 DIGESTS_DIR = Path("/home/workspace/N5/digests")
 
@@ -157,7 +157,7 @@ def filter_external_meetings(meetings: List[Dict[str, Any]]) -> List[Dict[str, A
     Filter for external meetings only.
     
     Excludes:
-    - All-internal meetings (all attendees @mycareerspan.com or @apply.ai)
+    - All-internal meetings (all attendees @mycareerspan.com or @theapply.ai)
     - Internal 1:1s (2 attendees, both internal)
     - All-day events
     - Declined meetings
@@ -198,7 +198,7 @@ def filter_external_meetings(meetings: List[Dict[str, Any]]) -> List[Dict[str, A
 
 
 def is_internal_email(email: str) -> bool:
-    """Check if email is internal (@mycareerspan.com or @apply.ai)."""
+    """Check if email is internal (@mycareerspan.com or @theapply.ai)."""
     domain = email.split("@")[-1].lower()
     return domain in INTERNAL_DOMAINS
 
