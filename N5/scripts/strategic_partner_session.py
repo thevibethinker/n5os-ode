@@ -17,6 +17,9 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 import argparse
 
+# Real-time state tracking
+from realtime_state_tracker import RealTimeStateTracker
+
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -67,18 +70,26 @@ class StrategicPartnerSession:
     def __init__(self, audio_file: Optional[Path] = None, 
                  transcript_file: Optional[Path] = None,
                  mode: Optional[str] = None,
-                 dials: Optional[Dict[str, int]] = None):
+                 dials: Optional[Dict[str, int]] = None,
+                 realtime: bool = False):
         
         self.audio_file = audio_file
         self.transcript_file = transcript_file
         self.mode = mode or CAREERSPAN_DEFAULT_MODE
         self.dials = dials or CAREERSPAN_DEFAULT_DIALS.copy()
+        self.realtime = realtime
         
         self.session_id = self._generate_session_id()
         self.transcript_content = None
         self.detected_topic = None
         self.loaded_context = {}
         self.session_notes = []
+        
+        # Initialize real-time tracker if enabled
+        self.realtime_tracker = None
+        if self.realtime:
+            self.realtime_tracker = RealTimeStateTracker(self.session_id)
+            logger.info("Real-time mode ENABLED")
         
         logger.info(f"Initialized Strategic Partner session: {self.session_id}")
     
@@ -234,10 +245,14 @@ class StrategicPartnerSession:
         """Begin strategic dialogue (would be interactive in real implementation)"""
         logger.info("=" * 70)
         logger.info("STRATEGIC PARTNER SESSION")
+        if self.realtime:
+            logger.info("REAL-TIME MODE ENABLED")
         logger.info("=" * 70)
         
         print(f"\nSession ID: {self.session_id}")
         print(f"Mode: {self.mode}")
+        if self.realtime:
+            print(f"Real-time: ENABLED (hotwords active)")
         print(f"Dials: challenge={self.dials['challenge']}, novel={self.dials['novel']}, structure={self.dials['structure']}")
         
         if self.detected_topic:
@@ -248,13 +263,33 @@ class StrategicPartnerSession:
             if value:
                 print(f"  ✓ {key}")
         
+        if self.realtime:
+            print("\nReal-time features active:")
+            print("  • Hotwords: Objective, Subject, Idea, Mark, Snapshot, Clear Objective")
+            print("  • Turn-by-turn tracking with compression")
+            print("  • Ideas deduplication (max 6)")
+            print("  • State snapshots available")
+        
         print("\n" + "=" * 70)
         print("DIALOGUE PHASE")
         print("=" * 70)
         print("\nIn production, this is where the interactive strategic dialogue occurs.")
-        print("The AI would engage with you using the selected mode and dials,")
-        print("applying active nuances (blind_spot_scanner, contradiction_detector, etc.)")
-        print("and tracking session quality metrics.")
+        
+        if self.realtime:
+            print("\nReal-time mode: Processing transcript with hotword detection...")
+            
+            # Process transcript turn-by-turn if realtime
+            if self.transcript_content:
+                turns = self.transcript_content.split('\n\n')  # Simple turn splitting
+                for turn in turns:
+                    if turn.strip():
+                        updates = self.realtime_tracker.process_turn(turn)
+                        if updates["hotwords_executed"]:
+                            print(f"  ✓ {', '.join(updates['hotwords_executed'])}")
+                
+                # Deduplicate ideas
+                self.realtime_tracker.deduplicate_ideas()
+        
         print("\n[MVP: Dialog happens in main Zo conversation interface]")
         
         # Simulate session metadata
@@ -476,6 +511,22 @@ Use `review-pending-updates` to review and approve changes to knowledge base.
         ]
         self.update_topics_to_revisit(sample_topics)
         
+        # Step 8: Save real-time state if enabled
+        realtime_outputs = {}
+        if self.realtime and self.realtime_tracker:
+            state_file = SESSIONS_DIR / f"{self.session_id}-state.json"
+            chrono_file = SESSIONS_DIR / f"{self.session_id}-chrono.jsonl"
+            
+            self.realtime_tracker.save_state(state_file)
+            self.realtime_tracker.save_chrono_log(chrono_file)
+            
+            realtime_outputs = {
+                "state": str(state_file),
+                "chrono": str(chrono_file),
+                "ideas_captured": len(self.realtime_tracker.state["ideas"]),
+                "marked_turns": len(self.realtime_tracker.state["marked_turns"])
+            }
+        
         # Summary
         print("\n" + "=" * 70)
         print("SESSION COMPLETE")
@@ -484,19 +535,41 @@ Use `review-pending-updates` to review and approve changes to knowledge base.
         print(f"Synthesis: {synthesis_file.relative_to(WORKSPACE)}")
         print(f"Pending updates: {pending_file.relative_to(WORKSPACE)}")
         print(f"Topics added to weekly review: {len(sample_topics)}")
+        
+        if self.realtime:
+            print(f"\nReal-time outputs:")
+            print(f"  State: {realtime_outputs.get('state', 'N/A')}")
+            print(f"  Chrono log: {realtime_outputs.get('chrono', 'N/A')}")
+            print(f"  Ideas captured: {realtime_outputs.get('ideas_captured', 0)}")
+            print(f"  Marked turns: {realtime_outputs.get('marked_turns', 0)}")
+            
+            # Show snapshot
+            if self.realtime_tracker:
+                print(f"\nSnapshot:")
+                print(self.realtime_tracker.get_snapshot())
+        
         print("\nNext steps:")
         print("  1. Review session synthesis")
-        print("  2. Use `review-pending-updates` to approve knowledge changes")
+        if self.realtime:
+            print("  2. Review real-time state and captured ideas")
+            print("  3. Use `review-pending-updates` to approve knowledge changes")
+        else:
+            print("  2. Use `review-pending-updates` to approve knowledge changes")
         print("  3. Topics will resurface in weekend strategic review")
         print("\n" + "=" * 70)
         
-        return {
+        result = {
             "success": True,
             "session_id": self.session_id,
             "synthesis_file": str(synthesis_file),
             "pending_updates_file": str(pending_file),
             "topics_added": len(sample_topics)
         }
+        
+        if self.realtime:
+            result["realtime"] = realtime_outputs
+        
+        return result
 
 
 def main():
@@ -520,6 +593,10 @@ def main():
                        help='Novel perspective intensity (0-10)')
     parser.add_argument('--structure', type=int, choices=range(11), 
                        help='Structure level (0-10)')
+    
+    # Real-time mode
+    parser.add_argument('--realtime', action='store_true',
+                       help='Enable real-time mode with hotwords and turn tracking')
     
     args = parser.parse_args()
     
@@ -562,7 +639,8 @@ def main():
         audio_file=args.audio,
         transcript_file=args.transcript,
         mode=args.mode,
-        dials=dials
+        dials=dials,
+        realtime=args.realtime
     )
     
     result = session.run()
