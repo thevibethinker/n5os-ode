@@ -22,7 +22,24 @@ logger = logging.getLogger(__name__)
 
 # Paths
 WORKSPACE = Path("/home/workspace")
-CONVERSATION_WS = Path(os.getenv("CONVERSATION_WORKSPACE", "/home/.z/workspaces/con_current"))
+
+# Detect conversation workspace from environment or by finding the workspace we're in
+CONVERSATION_WS_ENV = os.getenv("CONVERSATION_WORKSPACE")
+if CONVERSATION_WS_ENV:
+    CONVERSATION_WS = Path(CONVERSATION_WS_ENV)
+else:
+    # Try to detect from common patterns
+    workspaces_dir = Path("/home/.z/workspaces")
+    if workspaces_dir.exists():
+        # Find most recently modified workspace
+        workspaces = [d for d in workspaces_dir.iterdir() if d.is_dir() and d.name.startswith("con_")]
+        if workspaces:
+            CONVERSATION_WS = max(workspaces, key=lambda d: d.stat().st_mtime)
+        else:
+            CONVERSATION_WS = None
+    else:
+        CONVERSATION_WS = None
+
 DOCUMENT_INBOX = WORKSPACE / "Document Inbox/Temporary"
 LOG_FILE = WORKSPACE / "N5/runtime/conversation_ends.log"
 
@@ -254,48 +271,22 @@ def execute_organization(files_by_category, confirmed=True):
     }
 
 
-def demo_mode():
-    """
-    Demo mode - show what would happen without actual conversation workspace
-    """
-    print("\n" + "="*70)
-    print("CONVERSATION END-STEP (DEMO MODE)")
-    print("="*70)
-    print("\nThis command will:")
-    print("  1. Inventory conversation workspace files")
-    print("  2. Classify each file (move, delete, ask)")
-    print("  3. Propose organization")
-    print("  4. Execute on confirmation")
-    print("\nExample output:")
-    print("""
-📁 FILES TO MOVE (5 files)
-  → Images/
-     ✓ concept_design.png (Generated image)
-     ✓ wireframe.png (Generated image)
-  
-  → Document Inbox/Temporary/
-     ✓ analysis.md (Document for review)
-
-🗑️  FILES TO DELETE (2 files)
-  ✗ temp_chart.png (Temporary visualization)
-  ✗ test_script.py (Temporary script)
-
-❓ FILES NEEDING DECISION (1 file)
-  ? important_script.py (Script - determine if permanent)
-
-SUMMARY: 3 move, 2 delete, 1 need decision
-Proceed? (Y/n)
-""")
-    print("\nNote: Run this at actual conversation end for full functionality")
-
-
 def main():
     """Main execution"""
     
     # Check if we're in a real conversation context
-    if not CONVERSATION_WS.exists() or str(CONVERSATION_WS) == "/home/.z/workspaces/con_current":
-        demo_mode()
-        return
+    if not CONVERSATION_WS or not CONVERSATION_WS.exists():
+        print("\n" + "="*70)
+        print("❌ CONVERSATION WORKSPACE NOT FOUND")
+        print("="*70)
+        print(f"\nSearched: {CONVERSATION_WS}")
+        print("\nThis command organizes files created during the conversation.")
+        print("It appears no conversation workspace was detected.")
+        print("\nPossible reasons:")
+        print("  - Not running in a conversation context")
+        print("  - Workspace directory doesn't exist")
+        print("  - Environment variable CONVERSATION_WORKSPACE not set")
+        return 1
     
     print("\n" + "="*70)
     print("N5 CONVERSATION END-STEP")
