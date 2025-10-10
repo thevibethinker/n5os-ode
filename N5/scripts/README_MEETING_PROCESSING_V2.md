@@ -5,23 +5,18 @@
 
 ---
 
-## What Changed
+## What's Changed
 
-### ❌ OLD SYSTEM (Deprecated)
-- Complex regex-based extraction
-- LLM client that returned hardcoded stubs
-- Fragile parsing that broke on real transcripts
-- Generated generic shells with no real content
+### Old System (DEPRECATED)
+- `meeting_orchestrator.py` - Old orchestration system
+- Monolithic block generation
+- Direct LLM calls via removed modules
 
-**Result**: "Review and process meeting transcript fully" (useless stub)
-
-### ✅ NEW SYSTEM (Current)
-- Simple delegation to Zo for semantic processing
-- No regex, no parsing, no stubs
-- Zo reads and understands transcript directly
-- Generates real, contextualized content
-
-**Result**: "Allie: Send 4 tech role JDs to Careerspan (SRE, ML Engineer, Full Stack)" (real action item)
+### New System (CURRENT)
+- `meeting_intelligence_orchestrator.py` - Modern registry-based system
+- Extraction request pattern
+- Block registry configuration
+- Simulation mode for testing
 
 ---
 
