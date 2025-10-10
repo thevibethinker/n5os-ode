@@ -13,7 +13,8 @@ priority: p0
 related_files:
   - N5/scripts/strategic_partner_session.py
   - N5/intelligence/personal-understanding.json
-anchors: [object Object]
+anchors:
+  - object Object
 ---
 # `strategic-partner`
 
