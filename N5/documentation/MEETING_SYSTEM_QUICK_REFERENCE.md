@@ -99,7 +99,7 @@ N5: transcript-ingest <gdrive_folder_id> \
 - Follow-up generator: `file 'N5/commands/follow-up-email-generator.md'`
 
 ### Scripts
-- **Orchestrator:** `file 'N5/scripts/meeting_orchestrator.py'`
+- **Orchestrator:** `file 'N5/scripts/meeting_intelligence_orchestrator.py'`
 - **Blocks:** `file 'N5/scripts/blocks/'`
   - `meeting_info_extractor.py`
   - `follow_up_email_generator.py`

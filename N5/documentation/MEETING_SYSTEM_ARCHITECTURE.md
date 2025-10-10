@@ -47,16 +47,15 @@ The N5 Meeting Processing System transforms raw meeting transcripts into **actio
 
 #### `meeting-process`
 **Location:** `file 'N5/commands/meeting-process.md'`  
-**Script:** `file 'N5/scripts/meeting_orchestrator.py'`  
+**Script:** `file 'N5/scripts/meeting_intelligence_orchestrator.py'`  
 **Purpose:** Main entry point for processing meeting transcripts
 
 **Usage:**
 ```bash
-N5: meeting-process <transcript_source> \
-  --type <meeting_type> \
-  --stakeholder <stakeholder_type> \
-  [--mode full|essential|quick] \
-  [--output-format markdown|gmail-draft]
+# Direct script usage
+python3 /home/workspace/N5/scripts/meeting_intelligence_orchestrator.py \
+  --transcript_path <path> \
+  --meeting_id <id>
 ```
 
 **Parameters:**
@@ -91,34 +90,20 @@ N5: transcript-ingest <gdrive_folder_id> \
 
 ### Main Orchestrator
 
-#### `meeting_orchestrator.py`
-**Location:** `file 'N5/scripts/meeting_orchestrator.py'`  
-**Class:** `MeetingOrchestrator`  
-**Version:** 2.0.0
+#### `meeting_intelligence_orchestrator.py`
+**Location:** `file 'N5/scripts/meeting_intelligence_orchestrator.py'`  
+**Class:** `MeetingIntelligenceOrchestrator`  
+**Version:** 3.0.0 (Registry-based extraction system)
 
 **Pipeline Steps:**
-1. **Fetch transcript** from source (local/GDrive)
-2. **Extract meeting metadata** (participants, date, duration)
-3. **Create output directory** with structured naming
-4. **Save transcript** to output location
-5. **Lookup meeting history** with stakeholder
-6. **Fetch email history** with participants
-7. **Generate blocks** (conditional based on mode & type)
-8. **Generate dashboard** (REVIEW_FIRST.md)
-9. **Integrate with lists** (action items, warm intros, etc.)
-10. **Save metadata** (_metadata.json)
+1. **Load configuration** (block registry, essential links)
+2. **Read transcript** from file
+3. **Create extraction requests** for LLM processing
+4. **Generate intelligence blocks** based on registry
+5. **Write outputs** to meeting directory
+6. **Log processing** for debugging
 
-**Key Methods:**
-- `process()` - Main pipeline execution
-- `_fetch_transcript()` - Multi-source transcript retrieval
-- `_extract_meeting_info()` - Metadata extraction
-- `_generate_blocks()` - Orchestrates block generation
-- `_integrate_lists()` - N5 lists integration
-
-**Error Handling:**
-- Graceful degradation for optional components
-- All errors logged to `errors` array in metadata
-- Non-critical failures don't block pipeline
+**Output Location:** `/home/workspace/N5/records/meetings/{meeting_id}/`
 
 ### Legacy Workflows
 
@@ -793,7 +778,7 @@ N5: transcript-ingest <gdrive_folder_id> \
 ## System Status
 
 ### Implemented ✅
-- Core orchestrator (`meeting_orchestrator.py`)
+- Core orchestrator (`meeting_intelligence_orchestrator.py`)
 - Meeting metadata extraction
 - Universal blocks (follow-up, action items, decisions, insights, stakeholder profile)
 - Metadata schema & validation
@@ -822,7 +807,7 @@ N5: transcript-ingest <gdrive_folder_id> \
 
 - **Commands:** `file 'N5/commands/meeting-process.md'`, `file 'N5/commands/transcript-ingest.md'`
 - **Schemas:** `file 'N5/schemas/meeting-metadata.schema.json'`
-- **Scripts:** `file 'N5/scripts/meeting_orchestrator.py'`
+- **Scripts:** `file 'N5/scripts/meeting_intelligence_orchestrator.py'`
 - **Examples:** `file 'Careerspan/Meetings/External/2025-09-19_logan-currie_shujaat-ahmad_vrijen-attawar/'`
 
 ---

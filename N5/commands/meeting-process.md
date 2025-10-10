@@ -78,15 +78,48 @@ N5: generate-deliverables <meeting-folder> --all
 
 ## Implementation
 
-**Script:** `/home/workspace/N5/scripts/meeting_orchestrator.py`
+**Script:** `/home/workspace/N5/scripts/meeting_intelligence_orchestrator.py`
+
+**Required Arguments:**
+- `--transcript_path PATH` - Path to meeting transcript file (.txt, .md, .docx)
+- `--meeting_id ID` - Unique meeting identifier (e.g., "meeting-20251010-1400")
+
+**Optional Arguments:**
+- `--essential_links_path PATH` - Path to essential links JSON (default: `/home/workspace/N5/prefs/communication/essential-links.json`)
+- `--block_registry_path PATH` - Path to block registry JSON (default: `/home/workspace/N5/prefs/block_type_registry.json`)
+- `--use-simulation` - Use simulated LLM responses for testing
+
+**Output Directory:** `/home/workspace/N5/records/meetings/{meeting_id}/`
 
 The script:
-1. Extracts participants, companies, topics from transcript
-2. Validates extracted parameters with confidence scoring
-3. Generates essential intelligence blocks
-4. Recommends useful deliverables
-5. Sends SMS notification with summary
-6. Waits for your request to generate additional outputs
+1. Loads transcript and configuration files (block registry, essential links)
+2. Creates extraction request files for LLM processing
+3. Generates intelligence blocks based on registry definitions
+4. Writes structured outputs to meeting directory
+5. Logs processing details for debugging
+
+**Direct Usage Example:**
+```bash
+# Generate meeting ID
+MEETING_ID="meeting-$(date +%Y%m%d-%H%M%S)"
+
+# Run orchestrator
+python3 /home/workspace/N5/scripts/meeting_intelligence_orchestrator.py \
+  --transcript_path "path/to/transcript.txt" \
+  --meeting_id "$MEETING_ID"
+
+# View outputs
+ls -la /home/workspace/N5/records/meetings/$MEETING_ID/
+```
+
+**Testing Mode:**
+```bash
+# Use simulation mode (no real LLM calls)
+python3 /home/workspace/N5/scripts/meeting_intelligence_orchestrator.py \
+  --transcript_path "test_transcript.txt" \
+  --meeting_id "test-meeting" \
+  --use-simulation
+```
 
 ## Key Features
 
