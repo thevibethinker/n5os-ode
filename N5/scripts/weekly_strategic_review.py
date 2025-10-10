@@ -24,6 +24,11 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 from collections import defaultdict
 
+# Import analysis modules
+sys.path.insert(0, str(Path(__file__).parent))
+from contradiction_detector import ContradictionDetector
+from strategy_evolution_tracker import StrategyEvolutionTracker
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)sZ %(levelname)s %(message)s',
@@ -67,6 +72,7 @@ class WeeklyStrategicReview:
         self.contradictions = []
         self.critical_decisions = []
         self.patterns = []
+        self.strategy_evolution = None  # Will hold evolution analysis
         
         logger.info(f"Weekly Review initialized: {self.review_id}")
         logger.info(f"Period: {self.start_date.strftime('%Y-%m-%d')} to {self.end_date.strftime('%Y-%m-%d')}")
@@ -150,21 +156,51 @@ class WeeklyStrategicReview:
             return []
     
     def detect_contradictions(self) -> List[Dict]:
-        """Detect emerging contradictions across sessions"""
-        logger.info("Detecting contradictions...")
+        """Detect emerging contradictions across sessions (ENHANCED)"""
+        logger.info("Detecting contradictions (enhanced)...")
         
-        # In production, would analyze session content for contradictions
-        # For MVP, placeholder logic
+        if not self.sessions:
+            logger.warning("No sessions to analyze")
+            return []
         
-        contradictions = []
+        # Use enhanced contradiction detector
+        detector = ContradictionDetector()
+        results = detector.analyze_sessions(self.sessions)
         
-        # Example contradiction detection logic (placeholder)
-        # Would analyze session syntheses for conflicting statements
+        # Filter for new contradictions this week
+        new_contradictions = results.get('new_contradictions', [])
         
-        logger.info(f"Detected {len(contradictions)} contradictions")
-        self.contradictions = contradictions
+        logger.info(f"Detected {len(new_contradictions)} contradictions")
+        self.contradictions = new_contradictions
         
-        return contradictions
+        return new_contradictions
+    
+    def run_strategy_evolution(self) -> Optional[Dict]:
+        """Run strategy evolution analysis"""
+        logger.info("Running strategy evolution analysis...")
+        
+        if not self.sessions:
+            logger.warning("No sessions to analyze")
+            return None
+        
+        try:
+            # Create tracker
+            tracker = StrategyEvolutionTracker()
+            
+            # Run analysis
+            evolution = tracker.analyze(self.start_date, self.end_date)
+            
+            self.strategy_evolution = evolution
+            
+            logger.info(f"✓ Strategy evolution analysis complete")
+            logger.info(f"  Themes: {len(evolution.get('themes', {}))}")
+            logger.info(f"  Cohesion: {evolution.get('cohesion_index', 0.0)}")
+            
+            return evolution
+        
+        except Exception as e:
+            logger.error(f"Strategy evolution analysis failed: {e}")
+            return None
     
     def identify_critical_decisions(self) -> List[Dict]:
         """Identify critical decisions needing resolution"""
@@ -436,22 +472,25 @@ This week you had {len(self.sessions)} strategic partner session(s)"""
         # Step 2: Load topics to revisit
         self.load_topics_to_revisit()
         
-        # Step 3: Detect contradictions
+        # Step 3: Run strategy evolution analysis (NEW)
+        self.run_strategy_evolution()
+        
+        # Step 4: Detect contradictions (ENHANCED)
         self.detect_contradictions()
         
-        # Step 4: Identify critical decisions
+        # Step 5: Identify critical decisions
         self.identify_critical_decisions()
         
-        # Step 5: Synthesize patterns
+        # Step 6: Synthesize patterns
         self.synthesize_patterns()
         
-        # Step 6: Generate review agenda
+        # Step 7: Generate review agenda
         agenda = self.generate_review_agenda()
         
-        # Step 7: Save agenda
+        # Step 8: Save agenda
         agenda_file = self.save_agenda(agenda)
         
-        # Step 8: Trigger personal intelligence weekly update
+        # Step 9: Trigger personal intelligence weekly update
         self.trigger_personal_intelligence_update()
         
         # Step 9: Generate notification if requested
