@@ -1,0 +1,220 @@
+# Careerspan — Meeting & Opportunity Automations · Single‑File Suite v1.0
+# Generated: 2025-08-19T17:03:44Z
+# Purpose: A single, self-contained file to set up thread automations for meetings:
+#          - Recurring Extractor (loader) → runs Meeting Processor on latest unprocessed meeting
+#          - Inbox & Ledger Aggregator (hourly, low-noise)
+#          - Reconciler (12-hour approvals, no cap; paginated)
+# This file embeds: ER‑Kit (preamble), schemas, Meeting Processor, and ready-to-paste payloads.
+# Usage: upload to your KB and use this file's path as {KB_ITEM_PATH} in the extractor setup.
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 1 — ER‑Kit v0.1 (Preamble for all tasks)
+──────────────────────────────────────────────────────────────────────────────
+[ER-Kit v0.1]
+STATE HEADER (one line, always print)
+  ▣ {Header} · Run:{ISO8601Z+nonce} · Item:{code|*} · Outcome:{done|skip|no-change|error} · Duration:{ms} · Next:{one-liner}
+
+MODE
+  - Deep-Read: skim → close read; keep intermediate notes private.
+  - Self-check: verify inputs/constraints/output contract before emitting; silently fix format issues.
+
+RUN-GUARD
+  - Meeting Code format: M-YYYYMMDD-HHMM-ABC
+  - If a prior state header shows Item:{code} in this thread → Outcome:skip:already-processed
+
+ISOLATION & RESET
+  - Operate ONLY on the cited item(s) in THIS thread.
+  - Scoped Reset: reset transcript_content only; preserve artifacts posted in-thread (Facts, Opps, People, Ledgers).
+
+LOW-NOISE
+  - Post the state header every run.
+  - Emit a body ONLY when there is a change since last run or an error.
+
+OBSERVABILITY
+  - Include Duration; may include count of pending items if relevant.
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 2 — Artifacts & Ledgers (Lite Schemas) · v2.2
+──────────────────────────────────────────────────────────────────────────────
+FACT (dated; verbatim; token-light)
+  [FACT v2.2] id:{12hex} | subject:{vrijen|careerspan|logan|rochel|ilse|danny|tracked:<person_id>} | date:YYYY-MM-DD | text:"<verbatim fact>" | src:{code[@HH:MM:SS]?}
+  id = first 12 hex of sha256(subject + "|" + lowercase(trim(text)))
+
+OPPORTUNITY (single-line; minimal)
+  [OPP v1] id:{12hex} | type:{sales|partnership|network|connection|investor|hiring|other} | who:"<Name/Org>" | person:{pid?} | gist:"<≤18w>" | stage:{Sourcing|Discovery|Proposal|Negotiation|Committed|Won|Lost|Dormant} | owner:{V|L|R|I|D|U} | next:"<≤10w>" | due:YYYY-MM-DD? | src:{code[@HH:MM:SS]?}
+  id = first 12 hex of sha256(type + "|" + lowercase(who) + "|" + lowercase(trim(gist)))
+
+PERSON PROPOSAL (parseable one-liner)
+  [PERSON_PROPOSE v1] name:"<Full Name>" | title:"<Title>" | company:"<Company>" | context:"<how we know>" | last_event:YYYY-MM-DD
+
+LEDGERS (thread-local, compact)
+  - Meeting Ledger: code | title | when | status | last_run   (≤25 active; History last 5)
+  - Facts Inbox: newest-first list of [FACT v2.2] (deduped by id)
+  - Opportunity Ledger: ID · Who · Type · Stage · Owner · Next · Due · src   (≤40 active; History last 10)
+  - Tracked People: person_id | name | title | company | context | last_event
+
+Normalization
+  - Dates: YYYY-MM-DD; Timestamps: HH:MM:SS
+  - Owner codes: V=Vrijen, L=Logan, R=Rochel, I=Ilse, D=Danny, U=Unknown
+  - Enums lower-case; preserve case inside quoted text
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 3 — Meeting Transcript Processor (Integrated) · v1.4
+──────────────────────────────────────────────────────────────────────────────
+PROMPT NAME: Function – Meeting Transcript Processor v1.4
+
+PURPOSE
+  Convert meeting transcripts into structured Markdown takeaways and token-light appendices for automations.
+
+INPUTS
+  - transcript: full transcript with timestamps HH:MM:SS and speaker IDs
+  - context (optional): managed individuals (for name/title/company recognition)
+
+TAXONOMY (inline; no external dependency)
+  internal: [cofounder_sync, team_ops, strategic_planning]
+  external: [market_research, sales, partnerships, networking_advisory, investor_diligence]
+
+OUTPUT STRUCTURE (Markdown)
+  1) Meeting Classification & Context
+  2) Chronological Summary
+  3) Decisions & Action Items (Deliverables Content Map)
+  4) Open Questions
+  5) Themes & Insights (includes performance commentary & resonance pool)
+  6) Appendices (Facts, Opportunities, People)
+
+EXECUTION STEPS
+  (1) Meeting Classification & Context
+      - Classify using taxonomy above; list participants with role/title.
+      - Emit a line: "Meeting Code: M-YYYYMMDD-HHMM-ABC"
+
+  (2) Chronological Summary
+      - Strictly sort notes by ascending timestamp.
+      - Speaker-attributed notes; mark trigger phrases (e.g., "that's interesting", "we should note this").
+      - Preserve key quotes ≤25 words; include [HH:MM:SS].
+
+  (3) Decisions & Action Items
+      - Format each: Owner · Action · Due(YYYY-MM-DD)
+      - Sort by Due ascending, then Owner code.
+
+  (4) Open Questions
+      - One line each; include owner if known.
+
+  (5) Themes & Insights
+      - Summarize new market/competitive intel vs internal perspective.
+      - Brief speaker dynamics/performance.
+      - End with 'Resonance Pool' (personal chatter) kept separate from core summary.
+
+  (6) Appendices (token-light; schema-only; one per line; no extra prose)
+      - FACTS (only if subject relates to Vrijen, Careerspan, coworkers, or tracked person):
+        [FACT v2.2] id:{12hex} | subject:{vrijen|careerspan|logan|rochel|ilse|danny|tracked:<person_id>} | date:YYYY-MM-DD | text:"<verbatim fact>" | src:{code[@HH:MM:SS]?}
+      - OPPORTUNITIES:
+        [OPP v1] id:{12hex} | type:{sales|partnership|network|connection|investor|hiring|other} | who:"<Name/Org>" | person:{pid?} | gist:"<≤18w>" | stage:{Sourcing|Discovery|Proposal|Negotiation|Committed|Won|Lost|Dormant} | owner:{V|L|R|I|D|U} | next:"<≤10w>" | due:YYYY-MM-DD? | src:{code[@HH:MM:SS]?}
+      - PEOPLE PROPOSALS:
+        [PERSON_PROPOSE v1] name:"<Full Name>" | title:"<Title>" | company:"<Company>" | context:"<how we know>" | last_event:YYYY-MM-DD
+
+RULES
+  - quotes_preserved=true; quote_max_words=25
+  - timestamps_required=true; timestamp_format=HH:MM:SS
+  - speaker_tracking=true
+  - exclude_small_talk_from_main=true
+  - appendices_schema_only=true
+  - sorting: chronology=timestamp_asc; decisions=due_asc_owner_asc; appendices=by_id_asc
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 4 — Automations (ready-to-paste payloads)
+──────────────────────────────────────────────────────────────────────────────
+A) RECURRING EXTRACTOR — Meeting Watch (every 20 min)
+TITLE: Recurring Extractor — Meeting Watch
+SCHEDULE (ET):
+BEGIN:VEVENT
+RRULE:FREQ=MINUTELY;INTERVAL=20;BYSECOND=0
+END:VEVENT
+PROMPT:
+[ER-Kit v0.1 preamble is assumed]
+
+OBJECTIVE
+Load this file’s Meeting Transcript Processor (Section 3) via the KB path you set for this file and apply it to the MOST RECENT UNPROCESSED meeting in THIS thread.
+
+RUN-GUARD
+- Identify latest meeting block; derive/assign Meeting Code (M-YYYYMMDD-HHMM-ABC).
+- If any prior state header shows Item:{code}, set Outcome:skip:already-processed and stop.
+
+OUTPUT (on change)
+- Ingredients (bullets).
+- Emit dated Facts as [FACT v2.2] lines for anything about Vrijen, Careerspan, or coworkers (Logan, Rochel, Ilse, Danny), or tracked:<person_id>.
+- Emit Opportunities as [OPP v1] lines (type, who, gist, stage guess, owner, next, due, src).
+- Propose tracked persons as [PERSON_PROPOSE v1] one-liners when warranted.
+- Update/append the Meeting Ledger row for {code}.
+
+RESET
+Scoped Reset: transcript_content only.
+
+B) INBOX & LEDGER AGGREGATOR — hourly (low-noise)
+TITLE: Aggregator — Facts & Opportunities (Low-Noise)
+SCHEDULE (ET):
+BEGIN:VEVENT
+RRULE:FREQ=HOURLY;BYMINUTE=17;BYSECOND=0
+END:VEVENT
+PROMPT:
+[ER-Kit v0.1 preamble + Low-Noise]
+
+OBJECTIVE
+Sweep new [FACT v2.2] and [OPP v1] since last_run_time-10m. Dedupe by id. Maintain the Facts Inbox and Opportunity Ledger. Print a 3–5 bullet insights roll-up only if changed.
+
+OUTPUT
+- If changed:
+  - Facts Inbox (updated): newest-first [FACT v2.2] lines.
+  - Opportunity Ledger (updated): compact table (ID · Who · Type · Stage · Owner · Next · Due · src).
+  - Insights roll-up (≤5 bullets).
+- Else: print only the state header with “(no changes)”.
+
+C) RECONCILER — approvals (12-hour; no cap; paginated)
+TITLE: Reconciler — Facts, Opportunities & People (12h)
+SCHEDULE (ET):
+BEGIN:VEVENT
+RRULE:FREQ=DAILY;BYHOUR=9,21;BYMINUTE=0;BYSECOND=0
+END:VEVENT
+PROMPT:
+[ER-Kit v0.1 preamble]
+
+OBJECTIVE
+Present ALL unapproved Facts, Opportunities, and People proposals for decision; on approval, write to managed memory (append-only).
+
+OUTPUT
+- Candidates — Facts: show each [FACT v2.2] with controls: Yes / Edit / No / Never
+- Candidates — Opportunities: show each [OPP v1] with controls: Yes / Edit / No / Never
+- Candidates — People: show each [PERSON_PROPOSE v1] with controls: Yes / Edit / No
+- Pagination: if >50 items, output Page 1/… and “reply ‘next’ for more”.
+- At 09:00 runs, append “Yesterday’s Report” (what was added/approved/updated).
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 5 — QuickStart (paste in new thread)
+──────────────────────────────────────────────────────────────────────────────
+Setup Thread Automations · QuickStart
+
+Thread short title: <e.g., “Meetings-East”>
+KB item path (this file): <paste the KB path for THIS file>
+Timezone: ET
+Watcher interval: every 20 minutes at :00/:20/:40
+Aggregator cadence: hourly at :17
+Reconciler cadence: 09:00 and 21:00 daily
+Enable: People tracking = on, Opportunity detection = on, Low-noise = on
+Owner codes: V=Vrijen, L=Logan, R=Rochel, I=Ilse, D=Danny, U=Unknown
+
+Action:
+1) Create the three automations in THIS thread using payloads in Section 4.
+2) After creation, create a “Task Index” and fill jawbone_id values as returned.
+
+Task Index (scaffold)
+  - Recurring Extractor — Meeting Watch  … jawbone_id: ______
+  - Aggregator — Facts & Opportunities   … jawbone_id: ______
+  - Reconciler — Facts/Opps/People (12h) … jawbone_id: ______
+
+──────────────────────────────────────────────────────────────────────────────
+SECTION 6 — Validation checklist (run once per thread)
+──────────────────────────────────────────────────────────────────────────────
+[ ] Post a small meeting; Extractor processes once; second pass skips (run-guard PASS).
+[ ] Aggregator at :17 ingests artifacts and updates ledgers; next hour shows header-only “(no changes)”.
+[ ] Reconciler at 09:00 lists ALL unapproved items; approves write to memory; pagination works for >50.
+[ ] People approval yields person_id; subsequent Opportunities may reference person:{pid}.
+[ ] Scoped Reset: next Extractor run cannot recall specifics from prior meeting; else print Outcome:error:memory-leak.
