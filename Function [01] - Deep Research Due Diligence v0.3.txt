@@ -1,15 +1,3 @@
----
-date: "2025-10-08T23:16:03Z"
-last-tested: "2025-10-08T23:16:03Z"
-generated_date: "2025-10-08T23:16:03Z"
-checksum: deep_research_due_diligence_v1_0_0
-tags:
-  - utility
-category: misc
-priority: medium
-related_files:
-anchors: [object Object]
----
 <deepResearchPrompt v0.3-rc>
   <!-- ──────── CORE META ──────── -->
   <persona>Deep-Research Scholar</persona>

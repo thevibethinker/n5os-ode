@@ -11,9 +11,14 @@ import os
 import sys
 import json
 import shutil
+import logging
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
+
+# Setup logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Paths
 WORKSPACE = Path("/home/workspace")
@@ -322,6 +327,16 @@ def main():
         
         # Log conversation end
         log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
+        
+        # NEW: Update personal intelligence (autonomous)
+        try:
+            import subprocess
+            intelligence_script = WORKSPACE / "N5/scripts/update_personal_intelligence.py"
+            if intelligence_script.exists():
+                logger.info("Updating personal intelligence layer (autonomous)...")
+                subprocess.run([sys.executable, str(intelligence_script)], check=False)
+        except Exception as e:
+            logger.warning(f"Personal intelligence update skipped: {e}")
     else:
         print("\n✓ Organization cancelled - files remain in conversation workspace")
 
