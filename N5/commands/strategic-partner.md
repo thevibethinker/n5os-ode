@@ -102,6 +102,171 @@ strategic-partner --audio memo.wav --challenge 8 --novel 6 --structure 4
 - `--novel` - Novel perspective intensity (default: 5)
 - `--structure` - Structured output level (default: 3)
 
+### Advanced: Real-Time Mode (NEW)
+
+```bash
+strategic-partner --audio memo.wav --realtime
+strategic-partner --transcript notes.txt --realtime
+strategic-partner --interactive --realtime
+```
+
+**Real-time mode adds:**
+- **Voice hotwords** - "Objective:", "Idea:", "Mark", "Snapshot"
+- **Turn-by-turn tracking** - Chronological log with compression
+- **Ideas capture** - Automatic deduplication (max 6)
+- **State snapshots** - Get current thinking state anytime
+- **Enhanced outputs** - State JSON + chrono log alongside synthesis
+
+**Voice hotwords recognized:**
+- `"Objective: <text>"` - Set session objective
+- `"Subject: <type> <name>"` - Set subject (person|concept|organization|trend)
+- `"Idea: <text>"` - Capture idea on the fly
+- `"Mark"` - Flag important moment
+- `"Snapshot"` - Get current state dump
+- `"Clear Objective"` - Reset objective
+
+**Example with hotwords:**
+```
+I'm thinking about partnerships.
+
+Objective: Evaluate TalentOS white-label deal
+
+The revenue share seems low at 20%.
+
+Idea: Counter with 35% rev share instead
+
+We should also clarify exclusivity terms.
+
+Mark
+
+What's the opportunity cost of 3 months dev time?
+```
+
+**System processes:**
+- Detects "Objective: Evaluate TalentOS white-label deal"
+- Captures "Idea: Counter with 35% rev share instead"
+- Marks turn with "What's the opportunity cost"
+- All ideas deduplicated and tracked
+- State snapshot available anytime
+
+**Outputs (real-time mode):**
+1. Standard synthesis (decision memo format)
+2. Real-time state JSON (`[ID]-state.json`)
+3. Chronological log (`[ID]-chrono.jsonl`)
+4. Captured ideas list
+5. Marked turns for review
+
+---
+
+## Real-Time Mode Details
+
+### Turn-by-Turn Tracking
+
+**What's tracked:**
+- Chronological log of utterances (last 14 kept, older compressed)
+- Running summary (≤120 words)
+- Ideas captured with deduplication (max 6)
+- Directions suggested (max 3)
+- Next questions (max 5)
+- Marked turns for emphasis
+
+**Compression:**
+When session exceeds 14 turns, older turns automatically compressed into archive summary (≤80 words). This keeps token count manageable for long sessions.
+
+### Voice Hotwords
+
+**Objective Setting:**
+```
+Objective: Decide on TalentOS partnership terms
+```
+
+Sets session objective. All subsequent analysis framed through this lens.
+
+**Idea Capture:**
+```
+Idea: 35% rev share is market standard for white-label SaaS
+```
+
+Captures idea without interrupting flow. Ideas deduplicated automatically.
+
+**Subject Focus:**
+```
+Subject: company TalentOS
+Subject: concept product-market fit
+Subject: person Sarah (potential hire)
+```
+
+Sets subject for context-aware processing.
+
+**Mark Important Moments:**
+```
+Mark
+```
+
+Flags the previous turn as noteworthy for later review.
+
+**Get State Snapshot:**
+```
+Snapshot
+```
+
+Returns current state block with objective, ideas, questions, summary.
+
+### Real-Time State Format
+
+**State JSON structure:**
+```json
+{
+  "session_id": "2025-10-09-session-1",
+  "objective": "Evaluate TalentOS partnership",
+  "subject": {
+    "type": "company",
+    "name": "TalentOS"
+  },
+  "chrono_log": [
+    {"id": 1, "text": "...", "tags": [], "timestamp": "..."},
+    ...
+  ],
+  "archive_summary": "...",
+  "running_summary": "...",
+  "ideas": [
+    {
+      "id": "I1",
+      "idea": "Counter with 35% rev share",
+      "why_now": "Captured from voice",
+      "status": "open"
+    },
+    ...
+  ],
+  "directions": [...],
+  "next_questions": [...],
+  "marked_turns": [3, 7, 12]
+}
+```
+
+### Use Cases for Real-Time Mode
+
+**Use Case 1: Voice Memo Processing**
+- Record 10-minute voice memo on partnership decision
+- Use hotwords throughout: "Objective:", "Idea:", "Mark"
+- System tracks all turns, captures ideas, marks key moments
+- Get snapshot mid-session to see current thinking
+- End with complete state + standard synthesis
+
+**Use Case 2: Brainstorming Session**
+- Interactive mode with real-time enabled
+- Paste scattered thoughts as they come
+- Say "Idea:" to capture specific ideas
+- Ideas automatically deduplicated
+- Get structured output + captured ideas list
+
+**Use Case 3: Long Strategic Session**
+- Hour-long strategic dialogue
+- Real-time compression keeps token count manageable
+- Mark important breakthroughs as they happen
+- Snapshot available throughout
+- Complete state preserved for weekly review
+
 ---
 
 ## Careerspan Priority Modes
