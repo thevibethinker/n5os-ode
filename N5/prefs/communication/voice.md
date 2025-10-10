@@ -1,8 +1,8 @@
 # Communication Voice & Style
 
-**Module:** Communication  
-**Version:** 3.0.0 (Merged with MasterVoiceSchema v1.3)  
-**Date:** 2025-10-09  
+**Module:** Communication\
+**Version:** 3.0.0 (Merged with MasterVoiceSchema v1.3)\
+**Date:** 2025-10-09\
 **Source**: Consolidated from external MasterVoiceSchema v1.3
 
 ---
@@ -26,6 +26,7 @@
 **Range:** 0 (Stranger) → 4 (Inner Circle)
 
 **Levels**:
+
 - **0 - Stranger**: First contact, cold outreach
 - **1 - New Contact**: Initial warm introduction, early rapport
 - **2 - Warm Contact**: Established colleague/partner
@@ -35,20 +36,24 @@
 ### Medium-Specific Baselines
 
 #### Email
+
 - **Baseline:** 2.0 to 2.5 (Colleague/Partner)
 - **Rises to:** 3 with repeat collaborators
 - **Drops to:** 1.5 to 2 for cold outreach or exec audiences until rapport is built
 
 #### Spoken (Live/Voice)
+
 - **Range:** 2.5 to 3
 - **Characteristics:** Warmer, faster trust-building; favors direct alignment and decision-making
 
 #### DM/Chat (Slack/Texts)
+
 - **Close collaborators:** 3
 - **New contacts:** 2
 - **Style:** Efficient, tactical, occasionally playful
 
 #### Social Media
+
 - **Range:** 1 to 2
 - **Tone:** Professional yet approachable
 
@@ -59,12 +64,14 @@
 **Default:** Balanced
 
 **Modifiers**:
-- **Warmth Score → Formality**:
+
+- **Warmth Score → Formality**: 
   - High warmth (-1) → Casual
   - Neutral (0) → Balanced
   - Low warmth (+1) → Formal
-  
+
 **Shift Rules**:
+
 - **More formal:** External/policy/legal, high-scrutiny threads, exec audiences
 - **More casual:** Internal brainstorms, trusted collaborators (depth ≥ 3)
 
@@ -75,12 +82,14 @@
 **Default:** Balanced
 
 **When to shift Direct**:
+
 - High stakes/time pressure
 - Decision deadlines approaching
 - Misalignment risk
 - Deal closure moments
 
 **Triggers for Adjustment**:
+
 - Recipient seniority
 - Public vs. private channel
 - Urgency level
@@ -91,6 +100,7 @@
 ## Follow-Up Type Rules
 
 ### Pro-Forma + Regards
+
 - **Tone:** Respectful
 - **Formality:** Balanced
 - **CTA Rigor:** Soft
@@ -98,6 +108,7 @@
 - **Note:** Avoid unless necessary; prefer value-adding follow-ups
 
 ### CTA + Next Steps (Sales)
+
 - **Tone:** Confident
 - **Formality:** Balanced
 - **CTA Rigor:** Direct
@@ -105,6 +116,7 @@
 - **Best for:** Prospect meetings, partnership discussions, deal progression
 
 ### CTA + Next Steps (Personal)
+
 - **Tone:** Warm
 - **Formality:** Casual
 - **CTA Rigor:** Balanced
@@ -112,12 +124,14 @@
 - **Best for:** 1-on-1 coaching, mentoring, internal team
 
 ### Warm Introduction Facilitation
+
 - **Tone:** Connector-style
 - **Formality:** Balanced
 - **CTA Rigor:** Soft
 - **Structure:** Brief intro → context handoff → nudge both sides
 
 ### Reiteration of Discussion
+
 - **Tone:** Reflective
 - **Formality:** Balanced
 - **CTA Rigor:** Light
@@ -134,7 +148,7 @@
 **Scale:** 0.0 to 1.0
 
 | Dimension | V's Preference | Schema Baseline | Notes |
-|-----------|----------------|-----------------|-------|
+| --- | --- | --- | --- |
 | **Warmth** | 0.80 - 0.85 | 0.80 | High warmth, approachable |
 | **Confidence** | 0.72 - 0.80 | 0.70 | Competent, assured |
 | **Humility** | 0.55 - 0.65 | 0.40 | Coachable, open — *distinctive* |
@@ -150,6 +164,7 @@
 ### Readability Metrics
 
 **Target Ranges**:
+
 - **Flesch-Kincaid Grade:** 10-12
 - **Flesch Reading Ease:** 55-65
 - **Avg Sentence Length:** 16-22 words
@@ -166,7 +181,7 @@
 ### Greetings (by Relationship Depth)
 
 | Depth | Formal | Balanced | Casual |
-|-------|--------|----------|--------|
+| --- | --- | --- | --- |
 | 0-1 | Hi {{name}}, | Hey {{name}}, | Hey {{name}}— |
 | 2-3 | Hello {{name}}, | Hey {{name}}, | Hey {{name}}— |
 | 4 | Hey {{name}}, | Hey {{name}}— | Hey {{name}} 😊 |
@@ -174,7 +189,7 @@
 ### Sign-Offs (by Relationship Depth)
 
 | Depth | Formal | Balanced | Casual |
-|-------|--------|----------|--------|
+| --- | --- | --- | --- |
 | 0-1 | Best regards, | Best, | Best, |
 | 2-3 | Warm regards, | Warmly, | Cheers, |
 | 4 | Warm regards, | Cheers, | ✌️, |
@@ -206,12 +221,12 @@ get, make, take, go, have, do
 ### Replacements
 
 | Avoid | Replace With |
-|-------|--------------| 
+| --- | --- |
 | have to | hold, own |
 | leverage | use, apply |
 | reach out | get in touch |
-| ASAP | by [absolute date/time] |
-| circling back | following up on [topic] |
+| ASAP | by \[absolute date/time\] |
+| circling back | following up on \[topic\] |
 
 ### Slang (Allowed at Depth ≥ 3-4)
 
@@ -222,7 +237,7 @@ spicy take, ship it, bad-first-version, rails-not-rules, vibe check, brain dump,
 - Use bullets for lists
 - 1-2 sentence paragraphs
 - Bold sparingly for anchors
-- Code-style ticks for precise terms (e.g., `N5.md`, `lists-add`)
+- Code-style ticks for precise terms (e.g., `file N5.md` , `lists-add`)
 
 ---
 
@@ -231,7 +246,7 @@ spicy take, ship it, bad-first-version, rails-not-rules, vibe check, brain dump,
 ### Standard CTAs (by Type)
 
 | CTA Type | Default Phrasing | Firmness Dial | Max Per Message |
-|----------|------------------|---------------|-----------------|
+| --- | --- | --- | --- |
 | **Info Request** | "Could you share...?" | Soft, Balanced | 2 |
 | **Calendar Invite** | "Feel free to grab a slot..." | Soft | 2 |
 | **Decision Prompt** | "Let's decide by {{date}}..." | Balanced, Direct | 2 |
@@ -252,7 +267,7 @@ finalize, confirm, approve, commit, launch
 **Use when uncertainty exists:**
 
 | Situation | Suggested Phrasing |
-|-----------|-------------------|
+| --- | --- |
 | **Missing Link** | "Let me know if the link came through cleanly." |
 | **Unspecified Due Date** | "Open to your timeline—just flag when you're ready." |
 | **No Explicit CTA** | "No pressure on next steps—just wanted to share these." |
@@ -266,12 +281,14 @@ finalize, confirm, approve, commit, launch
 **Use 24-hour format system-wide:**
 
 ✅ **Correct**:
+
 - "16:00 ET" instead of "4:00 pm ET"
 - "09:30 ET" instead of "9:30 am ET"
 - "Sep 22, 2025 16:00 ET"
 - "2025-09-22 16:00 ET"
 
 ❌ **Avoid**:
+
 - "tomorrow" (without date)
 - "next week" (without specific date)
 - 12-hour format without 24-hour alternative
@@ -285,6 +302,7 @@ finalize, confirm, approve, commit, launch
 ### Default: Vrijen's Perspective
 
 Unless explicitly instructed otherwise, always write from Vrijen's first-person perspective:
+
 - ✅ "I'll connect you with..."
 - ✅ "We're excited to..."
 - ✅ Sign as "Vrijen"
@@ -292,17 +310,20 @@ Unless explicitly instructed otherwise, always write from Vrijen's first-person 
 ### When to Use Other Perspectives
 
 **Logan's Perspective:**
+
 - When explicitly requested
 - When Logan has been the sole point of contact
 - When handoff is complete and documented
 
 **Joint/Team Perspective:**
+
 - When explicitly requested for co-signed communications
 - Use "we" throughout and sign "Vrijen & Logan" or "The Careerspan Team"
 
 ### Meeting Follow-Ups Specifically
 
 **Default:** Vrijen authors follow-up emails even when:
+
 - Vrijen initiated the relationship but delegated mid-meeting
 - Logan is leading implementation
 - Multiple team members were present
@@ -318,6 +339,7 @@ Unless explicitly instructed otherwise, always write from Vrijen's first-person 
 ### Compatible Functions
 
 This voice schema is required by:
+
 - `FollowUpEmailGenerator >= v10.1`
 - `TranscriptAnalyzer >= v1.0`
 - `StylisticTransformer >= v1.0`
@@ -325,6 +347,7 @@ This voice schema is required by:
 ### Exposed Dials (for Programmatic Use)
 
 When integrating with automated workflows, expose these calibration dials:
+
 - `relationshipDepth` (0-4)
 - `medium` (spoken, email, dm, social)
 - `formality` (casual, balanced, formal)
@@ -334,11 +357,12 @@ When integrating with automated workflows, expose these calibration dials:
 
 ## Essential Links
 
-**Canonical Source**: `file 'N5/prefs/communication/essential-links.json'`
+**Canonical Source**: `file N5/prefs/communication/essential-links.json` 
 
 **Purpose**: Frequently-used Vrijen and Careerspan links for embedding in emails, responses, and communications.
 
 **Categories**:
+
 - **Meeting Booking**: Calendly links (Vrijen solo, Founders joint)
 - **Careerspan Trial Codes**: General, friends/family, career centers, non-profit
 - **Demos**: Product walkthrough, customer demo video
@@ -350,6 +374,7 @@ When integrating with automated workflows, expose these calibration dials:
 - **Tools**: BS Detector
 
 **Usage**:
+
 - Always reference this file when including links in generated content
 - Use appropriate link based on context (e.g., meeting booking for follow-ups, trial codes for prospects)
 - Links are up-to-date and maintained as canonical source
@@ -358,17 +383,18 @@ When integrating with automated workflows, expose these calibration dials:
 
 ## Related Files
 
-- **Essential Links:** `file 'N5/prefs/communication/essential-links.json'` (see above)
-- **Templates:** `file 'N5/prefs/communication/templates.md'`
-- **Meta-Prompting:** `file 'N5/prefs/communication/meta-prompting.md'`
-- **Email Processing:** `file 'N5/prefs/communication/email.md'`
-- **Bio (Personal Context):** `file 'Knowledge/stable/bio.md'`
+- **Essential Links:** `file N5/prefs/communication/essential-links.json`  (see above)
+- **Templates:** `file N5/prefs/communication/templates.md` 
+- **Meta-Prompting:** `file N5/prefs/communication/meta-prompting.md` 
+- **Email Processing:** `file N5/prefs/communication/email.md` 
+- **Bio (Personal Context):** `file Knowledge/stable/bio.md` 
 
 ---
 
 ## Change Log
 
 ### v3.0.0 — 2025-10-09
+
 - **Major:** Merged with MasterVoiceSchema v1.3 (external Companion file)
 - Added Context Calibration section with relationship depth scales
 - Added Follow-Up Type Rules from schema
@@ -382,7 +408,8 @@ When integrating with automated workflows, expose these calibration dials:
 - **Archived:** `Knowledge/context/Companion [05] - Master Voice Vrijen v1.3.txt` → `Documents/Archive/ingested/2025-10-09/`
 
 ### v2.0.0 — 2025-10-09
-- Extracted from monolithic prefs.md
+
+- Extracted from monolithic [prefs.md](http://prefs.md)
 - Added military time override section
 - Organized into clear sections with tables
 - Added explicit anti-patterns

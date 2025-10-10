@@ -1,0 +1,103 @@
+<functionArtifact>
+
+  <artifactTitle>
+    VC / Investor Due-Diligence Prompt Crafter — v1.2
+  </artifactTitle>
+
+  <!-- 1 ▸ Core Principles -->
+  <corePrinciples>
+    <principle>Clarity-over-verbosity; ruthless focus on decision-worthy facts.</principle>
+    <principle>Ex-VC-turned-founder voice: brutally candid, high-signal commentary.</principle>
+    <principle>≥2 independent citations per key fact; confidence tags.</principle>
+    <principle>Standardized Careerspan Synergy Matrix + Red-Flag Spotlight.</principle>
+    <principle>Deliver a ready-to-use Markdown report ≤ 2 000 words.</principle>
+    <principle><em><strong>Live-Data Mandate</strong> — every factual claim must come from a
+      real-time source gathered via either the <code>Deep Research Prompt Crafter</code>
+      function or, at minimum, <code>web.search_query</code>; internal “memory” is
+      insufficient.</em></principle>
+  </corePrinciples>
+
+  <!-- 2 ▸ Goal -->
+  <goal>
+    Produce a concise, citation-rich Markdown dossier on a venture firm & named
+    investor, using fresh web or deep-research data, mapping overlaps with
+    Careerspan, flagging risks, and arming the user with pitch ammo and probing
+    questions.
+  </goal>
+
+  <!-- 3 ▸ Inputs -->
+  <inputs>
+    <input>• firm_name (required)</input>
+    <input>• investor_name (required)</input>
+    <input>• recency_window_months (default = 18)</input>
+    <input>• sector_filter (optional)</input>
+    <input>• output_depth (“brief” | “standard” | “deep-dive”, default = standard)</input>
+  </inputs>
+
+  <!-- 4 ▸ Outputs -->
+  <outputs>
+    <output>1. Markdown DD report</output>
+    <output>2. Synergy Matrix table</output>
+    <output>3. ⚠️ Red-Flag Spotlight (ranked, 1-3 severity)</output>
+    <output>4. Anticipated Objections & Rebuttals list</output>
+    <output>5. Counter-Thesis Check</output>
+    <output>6. Socratic Expansion Prompts</output>
+    <output>7. Inline Citations map</output>
+    <output note="optional">8. JSON dump (raw portfolio & co-investors)</output>
+  </outputs>
+
+  <!-- 5 ▸ Steps -->
+  <steps>
+
+    <step>
+      <title>Pre-flight Checks</title>
+      <description>Validate inputs ➔ normalize firm & investor names ➔ confirm recency window.</description>
+    </step>
+
+    <step>
+      <title><em><strong>Live Data Harvest (MANDATORY)</strong></em></title>
+      <description>
+        1. <em><strong>Call the Deep Research Prompt Crafter</strong></em> to generate a
+           domain-specific research prompt seeded with <code>firm_name</code>,
+           <code>investor_name</code>, and <code>recency_window_months</code>, then execute it.  
+        2. If that function is unavailable, issue one or more
+           <code>&lt;tool-call name="web.search_query" …/></code> tags covering:
+           • firm overview • investor bio • portfolio list • news &lt; recency_window_months.  
+        3. Store raw results for citation; proceed only when ≥ 2 sources support each key fact.
+      </description>
+    </step>
+
+    <step><title>Firm-Level Data Harvest</title></step>
+    <step><title>Investor-Level Data Harvest</title></step>
+    <step><title>Network Graph</title></step>
+    <step><title>Careerspan Synergy Matrix</title></step>
+    <step><title>Risk / Red-Flag Spotlight</title></step>
+    <step><title>Counter-Thesis Check</title></step>
+
+    <step>
+      <title>Pitch-Positioning + Objections / Rebuttals</title>
+    </step>
+
+    <step><title>Socratic Expansion Prompts</title></step>
+    <step><title>Veracity & Confidence Gate</title></step>
+    <step><title>Assemble Markdown Report</title></step>
+
+  </steps>
+
+  <!-- 6 ▸ Example Snippet (abridged) -->
+  <example><![CDATA[
+  <!-- Inside Live Data Harvest -->
+  <tool-call name="DeepResearchPromptCrafter">
+    <param name="topic">FutureEdge Capital + Jane Doe</param>
+    <param name="recency_window_months">18</param>
+  </tool-call>
+  ]]></example>
+
+  <!-- 7 ▸ Final Goal -->
+  <finalGoal>
+    Deliver a brutally candid, risk-aware, synergy-mapped briefing that
+    incontrovertibly relies on fresh, cited web/deep-research data rather than
+    static model memory.
+  </finalGoal>
+
+</functionArtifact>

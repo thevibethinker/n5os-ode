@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "templates": [
+    {
+      "id": "2025-06-19-001",
+      "author": "unknown",
+      "created": "2025-06-19T22:45:00Z",
+      "sourceUrl": null,
+      "schemaConfidence": 0.8,
+      "structurePattern": "observational-complaint \u2192 exaggerated-wish \u2192 reality-check \u2192 CTA",
+      "lengthBucket": "100-150",
+      "ctaPresence": true,
+      "peakMoment": "Why has nobody invented Uber for videographers?!",
+      "humorDevices": [
+        "rhetorical question",
+        "hyperbole",
+        "contrast",
+        "callback"
+      ],
+      "ironyLevel": "mild",
+      "sarcasmDensity": 0.25,
+      "satireTarget": [
+        "freelance hiring platforms",
+        "gig-economy hype"
+      ],
+      "edgeLevel": "mild",
+      "profanityMaskUsed": false,
+      "topicTags": [
+        "content-creation",
+        "gig-economy",
+        "videography"
+      ],
+      "audienceLens": [
+        "freelance videographers",
+        "content creators"
+      ],
+      "coreMessage": "Matching creators with quick-response camera talent should be easy; join my NYC videographer community.",
+      "tone": {
+        "formality": "informal",
+        "warmth": "warm",
+        "snark": 0.3
+      },
+      "pacing": "short paragraphs",
+      "emojiUsage": "light",
+      "templateSkeleton": [
+        "Hook: \"Why has nobody invented {BrandProxy} for {Xplural}?\"",
+        "Pain Point: \"Any {PlatformType} makes you do a {LongProcess} just to {SimpleTask}.\"",
+        "Exaggeration: \"So many people would happily {SimpleTask} for a creator\u2014and get paid!\"",
+        "Creator Benefit: \"Spontaneity is where the magic happens! I could {SpontaneousAction}.\"",
+        "Reality Check: \"We don't have {BrandProxy} for {Xplural} yet, but\u2026\"",
+        "CTA: \"If you're a {TargetRole} in {Location}, join my {CommunityName}!\"",
+        "Collab Close: \"Let's win together {EmojiSet}\""
+      ],
+      "variableSlots": {
+        "BrandProxy": "Uber",
+        "Xplural": "videographers",
+        "PlatformType": "freelance platform",
+        "LongProcess": "10-step sign-up",
+        "SimpleTask": "hold an iPhone",
+        "SpontaneousAction": "film my weird ideas spontaneously",
+        "TargetRole": "camera-curious person",
+        "Location": "NYC",
+        "CommunityName": "content-videographers community",
+        "EmojiSet": "\ud83c\udfa5\ud83d\udcf1"
+      },
+      "sampleLines": {
+        "hook": "Why has nobody invented Uber for videographers?!",
+        "humorBeat": "Just to hold an iPhone for you.",
+        "closingThought": "Let's win together \ud83c\udfa5\ud83d\udcf1"
+      },
+      "notes": "Humor relies on exaggerating the hiring friction and pivoting to a community CTA."
+    }
+  ]
+}

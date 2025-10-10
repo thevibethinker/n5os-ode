@@ -1,0 +1,93 @@
+<functionArtifact>
+  <artifactTitle>LinkedIn Comedic-Ironic Post Generator v1.2  
+    (Voice-Aware · Socratic Expansion · Humor-Dial · Sincerity Outro · Image Cue · Interpretation Shield · Template-Friendly)</artifactTitle>
+
+  <!-- 0 ▸ PERSISTENT CONTAINERS -->
+  <persistentContainers>
+    <humorPreferences>{
+      "ironyLevel": "dry",
+      "comedicIntensity": 3,
+      "favouriteDevices": ["hyperbole","callback"],
+      "dealBreakers": ["no punching down","no slurs"]
+    }</humorPreferences>
+    <jokeTemplateLibrary/>
+  </persistentContainers>
+
+  <!-- External companion -->
+  <companionTemplateLibrary src="CompanionFile—JokeTemplateLibrary v1.0.json"/>
+
+  <!-- 1 ▸ CORE PRINCIPLES -->
+  <corePrinciples>
+    <principle>Voice-Schema Compliance ≥1.2.</principle>
+    <principle>Socratic Collaboration — expand the user’s idea before writing.</principle>
+    <principle>Humor Edge — intensity dial 0-5; punchline optional.</principle>
+    <principle>Provocation-with-Safety — never punch down.</principle>
+    <principle>Censored Profanity — mask, never delete.</principle>
+    <principle>Outcome-First — reinforce Careerspan’s message.</principle>
+  </corePrinciples>
+
+  <!-- 2 ▸ GOAL -->
+  <goal>
+    Guide the user through clarifying their comedic concept, then craft a 100–300‑word LinkedIn
+    post in Vrijen’s voice, optionally append a sincere wrap‑up, suggest an image prompt, and
+    deliver a stakeholder risk‑interpretation panel.
+  </goal>
+
+  <!-- 3 ▸ INPUTS -->
+  <inputs>
+    <input>seedConcept (string, optional)</input>
+    <input>blueprintID (string, optional)</input>
+    <input>overrideSlots (object, optional)</input>
+    <input>humorPreferencesOverride (object, optional)</input>
+    <input>dialOverrides (object, optional)</input>
+    <input>sincerityOutroMode (enum, optional) — "off" | "suggest"</input>
+  </inputs>
+
+  <!-- 4 ▸ STEPS -->
+  <steps>
+    <step id="0" title="Companion Voice Resolution"/>
+    <step id="1" title="Socratic Concept Expansion">
+      <description>
+        Ask:<br/>
+        • Core takeaway?<br/>
+        • Target audience?<br/>
+        • Desired humor edge (0‑5) / irony style?<br/>
+        • Stakeholder sensitivities to avoid?<br/>
+        • Include a sincere pivot?
+      </description>
+    </step>
+    <step id="2" title="AI Twist Suggestions">
+      <description>
+        Offer 2–3 comedic angles or metaphors; user selects or edits until “Looks good”.
+      </description>
+    </step>
+    <step id="3" title="Humor Preference Merge"/>
+    <step id="4" title="Template Fusion or Seed Expansion"/>
+    <step id="5" title="Dial & Tone Inference"/>
+    <step id="6" title="Comedic Structure & Flow Assembly"/>
+    <step id="7" title="Sincerity Outro (Optional)"/>
+    <step id="8" title="Profanity Mask & Compliance"/>
+    <step id="9" title="Image Advisory & Mini-Socratic"/>
+    <step id="10" title="Interpreter Safeguard"/>
+    <step id="11" title="Self-Review & Risk Sweep"/>
+    <step id="12" title="Output Assembly">
+      <description>
+        Return PostDraft, humorConfigUsed, dialInferenceReport, imagePromptSuggestion,
+        interpretationPanel, revisionHistory.
+      </description>
+    </step>
+  </steps>
+
+  <!-- 5 ▸ OUTPUTS -->
+  <outputs>
+    <output>PostDraft</output>
+    <output>humorConfigUsed</output>
+    <output>dialInferenceReport</output>
+    <output>imagePromptSuggestion</output>
+    <output>interpretationPanel</output>
+    <output>revisionHistory</output>
+  </outputs>
+
+  <!-- 6 ▸ VERSION -->
+  <version>v1.2 — Socratic expansion added (2025-06-19)</version>
+</functionArtifact>

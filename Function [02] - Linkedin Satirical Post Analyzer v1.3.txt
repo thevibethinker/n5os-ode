@@ -1,0 +1,103 @@
+<functionArtifact>
+  <artifactTitle>LinkedIn Satirical Post Analyzer v1.3
+    (Blueprint Extractor · Template Library Writer · Risk Lens · Library Export · Skeleton+Slots)</artifactTitle>
+
+  <!-- 0 ▸ PERSISTENT CONTAINERS -->
+  <persistentContainers>
+    <jokeTemplateLibrary/>
+  </persistentContainers>
+
+  <!-- External companion -->
+  <companionTemplateLibrary src="CompanionFile—JokeTemplateLibrary v1.0.json"/>
+
+  <!-- 1 ▸ CORE PRINCIPLES -->
+  <corePrinciples>
+    <principle>Analyze-only; never generate content.</principle>
+    <principle>Capture reusable comedic DNA: structure, devices, tone, and abstract skeleton with variable slots.</principle>
+    <principle>Persist templates safely; refuse slurs or punch‑down.</principle>
+    <principle>Export-on-demand — write updated JSON library when requested.</principle>
+  </corePrinciples>
+
+  <!-- 2 ▸ GOAL -->
+  <goal>
+    Parse an existing LinkedIn joke/satire post, create a rich blueprint including
+    <code>templateSkeleton</code> and <code>variableSlots</code>, append it to the shared
+    JokeTemplateLibrary, and (optionally) export the full, version‑bumped JSON library.
+  </goal>
+
+  <!-- 3 ▸ INPUTS -->
+  <inputs>
+    <input>existingPostText (string, required)</input>
+    <input>optionalNotes (string, optional)</input>
+    <input>exportLibrary (boolean, optional) — if true, trigger JSON export</input>
+  </inputs>
+
+  <!-- 4 ▸ STEPS -->
+  <steps>
+    <step id="0" title="Validation & Sanitisation">
+      <description>Ensure length ≤3 000 tokens; strip metadata; refuse policy‑violating content.</description>
+    </step>
+
+    <step id="1" title="Blueprint Extraction">
+      <description>
+        • Detect <code>structurePattern</code>, <code>humorDevices[]</code>, <code>ironyLevel</code>,
+          <code>sarcasmDensity</code>, <code>satireTarget</code>, tone, pacing, emoji usage.<br/>
+        • Generate <code>templateSkeleton</code> — ordered list with <code>{placeholders}</code> where
+          nouns/phrases can be swapped.<br/>
+        • Populate <code>variableSlots</code> with concrete values from the original post.<br/>
+        • Identify <code>topicTags</code>, <code>audienceLens</code>, <code>coreMessage</code>.<br/>
+        • Capture optional <code>peakMoment</code> (distinct high‑impact line).
+      </description>
+    </step>
+
+    <step id="2" title="Template Record Construction">
+      <description>
+        Build JSON record following the baseline schema (v1.0) including skeleton and slots; add
+        <code>schemaConfidence</code>.
+      </description>
+    </step>
+
+    <step id="3" title="Save to Library">
+      <description>
+        Append record to <code>CompanionFile—JokeTemplateLibrary v*.json</code>;
+        increment the file's <code>"version"</code> minor digit.
+      </description>
+    </step>
+
+    <step id="4" title="Risk-Lens Panel">
+      <description>
+        Produce stakeholder & DEI sensitivity analysis; does not block saving.
+      </description>
+    </step>
+
+    <step id="5" title="Library Export (Conditional)">
+      <description>
+        If <code>exportLibrary=true</code> → write the updated JSON to
+        <code>JokeTemplateLibrary v&nbsp;&lt;newVersion&gt;.json</code> and emit download link.
+      </description>
+    </step>
+
+    <step id="6" title="Output Assembly">
+      <description>
+        Return:<br/>
+        • <code>blueprintRecord</code><br/>
+        • <code>saveConfirmation</code><br/>
+        • <code>analysisReport</code><br/>
+        • <code>riskLensPanel</code><br/>
+        • <code>libraryDownloadLink</code> (if exported)
+      </description>
+    </step>
+  </steps>
+
+  <!-- 5 ▸ OUTPUTS -->
+  <outputs>
+    <output>blueprintRecord</output>
+    <output>saveConfirmation</output>
+    <output>analysisReport</output>
+    <output>riskLensPanel</output>
+    <output>libraryDownloadLink</output>
+  </outputs>
+
+  <!-- 6 ▸ VERSION -->
+  <version>v1.3 — skeleton & slots schema (2025-06-19)</version>
+</functionArtifact>
