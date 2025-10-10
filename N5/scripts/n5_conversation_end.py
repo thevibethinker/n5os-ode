@@ -12,6 +12,7 @@ import sys
 import json
 import shutil
 import logging
+import subprocess
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
@@ -259,16 +260,49 @@ def execute_organization(files_by_category, confirmed=True):
         print(f"\n❓ {len(ask_files)} files need manual decision")
         print("   Keeping in conversation workspace for now")
     
-    print("\n" + "="*70)
-    print("✅ CONVERSATION END-STEP COMPLETE")
-    print("="*70)
-    
     return {
         "moved": moved_count,
         "deleted": deleted_count,
         "errors": len(errors),
         "pending": len(ask_files)
     }
+
+
+def cleanup_workspace_root():
+    """
+    Clean up workspace root files (conversation artifacts).
+    This is Phase 2 of conversation-end cleanup.
+    """
+    print("\n" + "="*70)
+    print("PHASE 2: WORKSPACE ROOT CLEANUP")
+    print("="*70)
+    print("\nScanning for conversation artifacts in workspace root...\n")
+    
+    cleanup_script = WORKSPACE / "N5/scripts/n5_workspace_root_cleanup.py"
+    
+    if not cleanup_script.exists():
+        print("⚠️  Cleanup script not found, skipping workspace root cleanup")
+        return
+    
+    try:
+        # Run cleanup with auto-execute
+        result = subprocess.run(
+            [sys.executable, str(cleanup_script), "--execute"],
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        
+        # Print output
+        print(result.stdout)
+        
+        if result.returncode != 0:
+            print(f"⚠️  Cleanup completed with warnings")
+            if result.stderr:
+                print(f"Errors: {result.stderr}")
+        
+    except Exception as e:
+        print(f"⚠️  Workspace root cleanup skipped: {e}")
 
 
 def main():
@@ -319,15 +353,30 @@ def main():
         # Log conversation end
         log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
         
-        # NEW: Update personal intelligence (autonomous)
+        # NEW: Phase 2 - Workspace root cleanup
+        print("\n" + "="*70)
+        print("CONTINUING TO WORKSPACE ROOT CLEANUP...")
+        print("="*70)
+        cleanup_workspace_root()
+        
+        # Personal intelligence update (autonomous)
+        print("\n" + "="*70)
+        print("PHASE 3: PERSONAL INTELLIGENCE UPDATE")
+        print("="*70)
         try:
-            import subprocess
             intelligence_script = WORKSPACE / "N5/scripts/update_personal_intelligence.py"
             if intelligence_script.exists():
                 logger.info("Updating personal intelligence layer (autonomous)...")
                 subprocess.run([sys.executable, str(intelligence_script)], check=False)
+            else:
+                print("⚠️  Personal intelligence script not found, skipping")
         except Exception as e:
             logger.warning(f"Personal intelligence update skipped: {e}")
+        
+        # Final summary
+        print("\n" + "="*70)
+        print("✅ CONVERSATION END-STEP COMPLETE")
+        print("="*70)
     else:
         print("\n✓ Organization cancelled - files remain in conversation workspace")
 

@@ -12,6 +12,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
+import sqlite3
 
 # Configure logging
 logging.basicConfig(
@@ -26,11 +27,110 @@ WORKSPACE = Path("/home/workspace")
 MEETINGS_DIR = WORKSPACE / "Careerspan" / "Meetings"
 LISTS_DIR = WORKSPACE / "N5" / "lists"
 LOGS_DIR = WORKSPACE / "N5" / "logs" / "meeting-process"
+DB_PATH = WORKSPACE / "Knowledge" / "crm" / "crm.db"
 
 # Ensure directories exist
 MEETINGS_DIR.mkdir(parents=True, exist_ok=True)
 LISTS_DIR.mkdir(parents=True, exist_ok=True)
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def get_db_conn():
+    """Get database connection with Row factory"""
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def upsert_individual(conn, individual):
+    """
+    Insert or update individual record.
+    Returns individual_id.
+    
+    Args:
+        individual: dict with keys: full_name, email, title, company,
+                   primary_category, status, tags, source_type, notes,
+                   markdown_file_path, etc.
+    """
+    cursor = conn.cursor()
+    
+    # Try to find existing by email or name
+    if individual.get('email'):
+        cursor.execute("SELECT id FROM individuals WHERE email = ?", 
+                      (individual['email'],))
+    else:
+        cursor.execute("SELECT id FROM individuals WHERE full_name = ?", 
+                      (individual['full_name'],))
+    
+    row = cursor.fetchone()
+    
+    if row:
+        # Update existing
+        individual_id = row['id']
+        cursor.execute("""
+            UPDATE individuals SET
+                title = ?, company = ?, email = ?,
+                primary_category = ?, status = ?, tags = ?,
+                notes = ?, markdown_file_path = ?
+            WHERE id = ?
+        """, (
+            individual.get('title'),
+            individual.get('company'),
+            individual.get('email'),
+            individual.get('primary_category', 'other'),
+            individual.get('status', 'prospect'),
+            individual.get('tags'),
+            individual.get('notes'),
+            individual.get('markdown_file_path'),
+            individual_id
+        ))
+    else:
+        # Insert new
+        cursor.execute("""
+            INSERT INTO individuals (
+                full_name, title, company, email, 
+                primary_category, status, tags, source_type,
+                notes, markdown_file_path
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            individual['full_name'],
+            individual.get('title'),
+            individual.get('company'),
+            individual.get('email'),
+            individual.get('primary_category', 'other'),
+            individual.get('status', 'prospect'),
+            individual.get('tags'),
+            individual.get('source_type'),
+            individual.get('notes'),
+            individual.get('markdown_file_path')
+        ))
+        individual_id = cursor.lastrowid
+    
+    return individual_id
+
+def insert_interaction(conn, individual_id, interaction):
+    """
+    Insert interaction record.
+    
+    Args:
+        individual_id: FK to individuals table
+        interaction: dict with keys: interaction_type, interaction_date,
+                    subject, summary, notes_file_path
+    """
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO interactions (
+            individual_id, interaction_type, interaction_date,
+            subject, summary, notes_file_path
+        ) VALUES (?, ?, ?, ?, ?, ?)
+    """, (
+        individual_id,
+        interaction['interaction_type'],
+        interaction['interaction_date'],
+        interaction.get('subject'),
+        interaction.get('summary'),
+        interaction.get('notes_file_path')
+    ))
+    return cursor.lastrowid
 
 
 class MeetingOrchestrator:
@@ -78,6 +178,9 @@ class MeetingOrchestrator:
             # Step 3: Create output directory
             self.output_dir = await self._create_output_directory(meeting_info)
             logger.info(f"Output directory: {self.output_dir}")
+
+            # NEW STEP: Update CRM
+            await self._update_crm_database(meeting_info)
             
             # Step 4: Save transcript
             await self._save_transcript(transcript_content, self.output_dir)
@@ -131,6 +234,50 @@ class MeetingOrchestrator:
             logger.error(f"Processing failed: {e}", exc_info=True)
             self._log_error("orchestrator", str(e), "critical")
             raise
+    
+    async def _update_crm_database(self, meeting_info: Dict[str, Any]):
+        """Update the CRM database with meeting attendees."""
+        if not self.output_dir:
+            logger.warning("Output directory not set, skipping CRM database update.")
+            return
+
+        conn = get_db_conn()
+        try:
+            participants = meeting_info.get("participants", [])
+            if not participants:
+                logger.info("No participants found in meeting info to update CRM.")
+                return
+
+            for participant_name in participants:
+                # Filter out own name
+                if "vrijen" in participant_name.lower():
+                    continue
+
+                individual_data = {
+                    'full_name': participant_name,
+                    'status': 'active'
+                }
+
+                individual_id = upsert_individual(conn, individual_data)
+
+                interaction_data = {
+                    'interaction_type': 'meeting',
+                    'interaction_date': meeting_info.get("date"),
+                    'subject': f"Meeting: {meeting_info.get('stakeholder_primary', 'General')}",
+                    'summary': f"Attended meeting on {meeting_info.get('date')}. Meeting type: {', '.join(self.meeting_types)}",
+                    'notes_file_path': str(self.output_dir.relative_to(WORKSPACE))
+                }
+                insert_interaction(conn, individual_id, interaction_data)
+
+            conn.commit()
+            logger.info(f"Successfully updated CRM for {len(participants)} participants.")
+
+        except Exception as e:
+            conn.rollback()
+            logger.error(f"Failed to update CRM database: {e}", exc_info=True)
+            self._log_error("crm_integrator", str(e), "warning") # Non-critical
+        finally:
+            conn.close()
     
     async def _generate_deliverables_step(self):
         """Initializes and runs the DeliverableOrchestrator."""

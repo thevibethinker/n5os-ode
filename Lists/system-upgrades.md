@@ -3,12 +3,12 @@ date: "2025-09-20T22:24:55Z"
 last-tested: "2025-09-20T22:24:55Z"
 generated_date: "2025-09-20T22:24:55Z"
 checksum: dd2749dcf98bc787a1043a008f60fd32
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
+related_files: 
 anchors: 
-input: null
+input: 
 output: /home/workspace/N5_mirror/lists/system-upgrades.md
 ---
 # System Upgrades List
