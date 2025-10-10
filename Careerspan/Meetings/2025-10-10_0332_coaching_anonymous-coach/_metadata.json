@@ -1,0 +1,36 @@
+{
+  "meeting_id": "burn10",
+  "date": "2025-10-10",
+  "time": "03:32",
+  "timezone": "America/New_York",
+  "meeting_type": ["coaching"],
+  "stakeholder_primary": "anonymous-coach",
+  "participants_count": 2,
+  "duration_minutes": 30,
+  "intelligence": {
+    "buying_signal": 0,
+    "risks_count": 4,
+    "opportunities_count": 5,
+    "warm_intros_count": 3,
+    "decisions_count": 6,
+    "action_items_count": 12,
+    "insights_count": 12
+  },
+  "processing": {
+    "version": "meeting-process-v1",
+    "mode": "full",
+    "duration_seconds": 300,
+    "blocks_generated": 16,
+    "timestamp": "2025-10-10T04:27:28Z"
+  },
+  "transcript_source": {
+    "type": "google_drive",
+    "identifier": "17E2TYNr6PEK_mOecHADzI1GOSQKw1bSVv_gT2Eqpcck",
+    "sha256": "0d993f581051529c153e61fd454d84dba4e65cb1a945040cc22e95ffa2274ead",
+    "size_bytes": 6561,
+    "line_count": 190
+  },
+  "approval": {
+    "status": "pending_review"
+  }
+}

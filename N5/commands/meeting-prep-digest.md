@@ -29,7 +29,7 @@ Automated daily meeting prep that scans your calendar, filters for external meet
 6. **Context Injection** - Parses meeting titles for relevant framing
 
 **Exclusions:**
-- Internal events (all attendees @mycareerspan.com or @apply.ai)
+- Internal events (all attendees @mycareerspan.com or @theapply.ai)
 - Internal 1:1s (2 attendees, both internal)
 - All-day events
 - Declined meetings

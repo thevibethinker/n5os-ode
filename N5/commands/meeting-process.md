@@ -1,56 +1,105 @@
 # `meeting-process`
 
-Process a meeting transcript end-to-end using the Meeting Orchestrator.
+Process a meeting transcript end-to-end using the phased workflow.
+
+**Version:** 2.1 (Phased - essentials first, deliverables on-demand)
+
+## Overview
+
+The meeting processor now uses a smart, phased approach:
+- **Phase 1 (automatic):** Generate only essential intelligence
+- **Phase 2 (on-demand):** Generate deliverables you request
+
+This saves time and reduces cognitive load while still providing everything you need.
 
 ## Usage
 
 ```bash
-N5: meeting-process <transcript_source> \
-  --type <types...> \
-  --stakeholder <roles...> \
-  [--mode full|essential|quick]
+N5: meeting-process <transcript-path> [--type TYPE] [--stakeholder STAKEHOLDER]
 ```
 
-- `transcript_source`: Path to transcript or meeting folder.
-- `--type`: Meeting classification (e.g., `sales`, `networking`).
-- `--stakeholder`: Role of the primary stakeholder (e.g., `customer_founder`).
-- `--mode`: Processing depth. `full` is default.
+## Examples
 
-## Description
+```bash
+# Process a sales meeting
+N5: meeting-process "path/to/transcript.txt" --type sales --stakeholder business_partner
 
-This command runs the entire meeting intelligence pipeline, which now includes the automatic generation of deliverables as its final step.
+# Process a community partnerships meeting
+N5: meeting-process "path/to/transcript.txt" --type community_partnerships
 
-## What Gets Generated
+# Process with just the transcript (will infer type)
+N5: meeting-process "path/to/transcript.txt"
+```
 
-The Meeting Orchestrator generates a comprehensive meeting intelligence package with 15-20+ blocks:
+## What Gets Generated (Phase 1)
 
-### Core Blocks (7 - always generated)
-- `action-items.md` - 10-20 action items with owners, deadlines, priorities
-- `decisions.md` - 5-8 key decisions (strategic, process, product)
-- `key-insights.md` - 10-15 strategic insights across hiring, wellness, product themes
-- `stakeholder-profile.md` - Comprehensive participant profile
-- `follow-up-email.md` - Draft follow-up with specific next steps
-- `REVIEW_FIRST.md` - Executive dashboard
-- `transcript.txt` - Full transcript copy
+**Essential Intelligence:**
+- `REVIEW_FIRST.md` - Executive dashboard with summary, action items, decisions
+- `content-map.md` - Extraction details, parameters, confidence scores
+- `RECOMMENDED_DELIVERABLES.md` - Smart suggestions for what to generate
+- `action-items.md` - Critical action items
+- `decisions.md` - Key decisions made
+- `stakeholder-profile.md` - Participant information
+- `_metadata.json` - Processing metadata
 
-### Intelligence Blocks (in INTELLIGENCE/ subfolder - conditional)
-- `warm-intros.md` - Warm introduction opportunities
-- `risks.md` - Identified risks and concerns
-- `opportunities.md` - Business opportunities
-- `user-research.md` - User pain points and insights
-- `competitive-intel.md` - Competitor intelligence
-- `career-insights.md` - Career development themes (coaching/networking)
-- `deal-intelligence.md` - Deal analysis (sales)
-- `investor-thesis.md` - Investor alignment (fundraising)
-- `partnership-scope.md` - Partnership framework (partnerships)
+**Time:** ~30 seconds
 
-### Deliverables (in DELIVERABLES/ subfolder - conditional)
-Generated automatically based on meeting type and content:
-- `DELIVERABLES/blurbs/blurb_YYYY-MM-DD.md` - Company/product blurb
-- `DELIVERABLES/one_pagers/one_pager_YYYY-MM-DD.md` - Executive one-pager
-- `DELIVERABLES/proposals_pricing/proposal_pricing_YYYY-MM-DD.md` - Pricing proposal
+**Notification:** SMS sent with summary and recommendations
 
-### Metadata
-- `_metadata.json` - Meeting metadata with SHA256 checksums, intelligence counts
+## Generate Additional Deliverables (Phase 2)
 
-**Total: 15-20+ blocks per meeting depending on content and meeting type**
+After reviewing Phase 1 outputs, request deliverables:
+
+```bash
+# Generate specific deliverables
+N5: generate-deliverables <meeting-folder> --deliverables blurb,follow_up_email
+
+# Generate all recommended
+N5: generate-deliverables <meeting-folder> --recommended
+
+# Generate everything
+N5: generate-deliverables <meeting-folder> --all
+```
+
+## Available Deliverables (on-demand)
+
+- `blurb` - Company introduction for external sharing
+- `follow_up_email` - Draft email to participants
+- `one_pager_memo` - Executive summary document
+- `proposal_pricing` - Pricing proposal (if applicable)
+
+## Meeting Types
+
+- `sales` - Sales/business development meetings
+- `fundraising` - Investor meetings
+- `community_partnerships` - Community/partnership discussions
+- `coaching` - Career coaching sessions
+- `internal` - Internal team meetings
+
+## Implementation
+
+**Script:** `/home/workspace/N5/scripts/meeting_orchestrator.py`
+
+The script:
+1. Extracts participants, companies, topics from transcript
+2. Validates extracted parameters with confidence scoring
+3. Generates essential intelligence blocks
+4. Recommends useful deliverables
+5. Sends SMS notification with summary
+6. Waits for your request to generate additional outputs
+
+## Key Features
+
+- ✅ **Fast initial processing** (~30 seconds vs 2-3 minutes)
+- ✅ **Smart recommendations** based on meeting content
+- ✅ **Validated extractions** (no more wrong context)
+- ✅ **Confidence scores** for all inferences
+- ✅ **SMS notifications** with actionable summary
+- ✅ **On-demand deliverables** (generate only what you need)
+
+## Notes
+
+- Old workflow (v1) has been deprecated
+- All meetings now use the phased approach
+- Deliverables are generated fast (~30-60s) when requested
+- System learns from your choices to improve recommendations

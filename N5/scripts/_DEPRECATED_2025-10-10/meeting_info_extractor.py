@@ -1,8 +1,14 @@
 """Extract meeting metadata from transcript."""
 import logging
 import re
+import sys
 from datetime import datetime
 from typing import Dict, List, Any
+from pathlib import Path
+
+# Import the proper extraction functions from llm_utils
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from llm_utils import extract_participants_from_transcript, extract_company_names
 
 logger = logging.getLogger(__name__)
 
@@ -18,22 +24,22 @@ async def extract_meeting_info(transcript: str) -> Dict[str, Any]:
         - participants_count: Integer
         - duration_minutes: Integer
         - stakeholder_primary: Inferred primary stakeholder
-        - organization: Company/org if mentioned
+        - companies: List of company names
     """
     # Parse transcript for basic structure
     lines = [line.strip() for line in transcript.splitlines() if line.strip()]
     
-    # Extract participants from speaker patterns
-    participants = _extract_participants(lines)
+    # Extract participants using proper extraction logic from llm_utils
+    participants = extract_participants_from_transcript(transcript)
+    
+    # Extract companies using proper extraction logic from llm_utils
+    companies = extract_company_names(transcript)
     
     # Try to extract date/time from transcript header or content
     date, time = _extract_datetime(lines)
     
     # Estimate duration from timestamps if present
     duration_minutes = _estimate_duration(lines)
-    
-    # Infer organization from context
-    organization = _extract_organization(lines)
     
     # Determine primary stakeholder (non-Vrijen participant most mentioned)
     stakeholder_primary = _determine_primary_stakeholder(participants, lines)
@@ -42,29 +48,11 @@ async def extract_meeting_info(transcript: str) -> Dict[str, Any]:
         "date": date,
         "time": time,
         "participants": participants,
+        "companies": companies,
         "participants_count": len(participants),
         "duration_minutes": duration_minutes,
         "stakeholder_primary": stakeholder_primary,
-        "organization": organization
     }
-
-
-def _extract_participants(lines: List[str]) -> List[str]:
-    """Extract participant names from speaker patterns."""
-    participants = set()
-    
-    # Common patterns: "Name:", "Name [time]:", "[Name]:", "Name (Company):"
-    speaker_pattern = re.compile(r'^([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\s*(?:\[|\(|:)')
-    
-    for line in lines[:100]:  # Check first 100 lines
-        match = speaker_pattern.match(line)
-        if match:
-            name = match.group(1)
-            # Filter out common false positives
-            if name not in ["Transcript", "Meeting", "Date", "Time", "Duration"]:
-                participants.add(name)
-    
-    return sorted(list(participants))
 
 
 def _extract_datetime(lines: List[str]) -> tuple[str, str]:
@@ -142,27 +130,6 @@ def _estimate_duration(lines: List[str]) -> int:
     
     # Default estimate based on line count
     return max(30, len(lines) // 20)  # Rough estimate: 20 lines per minute
-
-
-def _extract_organization(lines: List[str]) -> str:
-    """Extract organization/company name from context."""
-    # Look for mentions of company names in first 50 lines
-    # Common patterns: "from X Company", "at X", "X team"
-    org_patterns = [
-        r'(?:from|at|with)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?(?:\s+Inc|Corp|LLC|Ltd)?)',
-        r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+(?:team|company|organization)',
-    ]
-    
-    for line in lines[:50]:
-        for pattern in org_patterns:
-            match = re.search(pattern, line)
-            if match:
-                org = match.group(1)
-                # Filter out common false positives
-                if org not in ["Meeting", "Transcript", "Call", "Zoom", "Google", "Microsoft"]:
-                    return org
-    
-    return ""
 
 
 def _determine_primary_stakeholder(participants: List[str], lines: List[str]) -> str:
