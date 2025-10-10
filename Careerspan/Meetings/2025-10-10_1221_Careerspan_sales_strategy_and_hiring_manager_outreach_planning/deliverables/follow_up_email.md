@@ -1,4 +1,4 @@
-Subject: Pilot proposal — Careerspan hiring flow for [Organization / Meg]
+Subject: Pilot proposal — Careerspan hiring flow for Meg
 
 Hi Meg,
 
@@ -17,8 +17,6 @@ What I’m proposing (pilot):
 What I need from you to get started:
 1. A quick confirmation that HR is open to a pilot and can approve one live listing.
 2. A short hiring-manager note (or 10–15 minute call) to capture top priorities for each role.
-
-If that sounds good I’ll send a one‑pager that lays out the pilot, timeline, and success criteria for HR (attached). Would you be available for a 30‑minute kickoff call next week? I’m free Tue/Wed afternoon — happy to work around your schedule.
 
 Thanks — looking forward to it.
 
