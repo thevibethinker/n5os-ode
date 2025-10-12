@@ -26,7 +26,7 @@ Files WITHOUT `[ZO-PROCESSED]` prefix = new/unprocessed (download & queue)
 
 ### 2. Filter for Unprocessed Transcripts
 - **Skip**: Any filename starting with `[ZO-PROCESSED]`
-- **Keep**: Files containing "transcript" OR ending in `.docx`
+- **Process**: ALL other files (folder contains only transcripts)
 
 ### 3. Check for Duplicates (CRITICAL)
 Before processing ANY file, check if it already exists:

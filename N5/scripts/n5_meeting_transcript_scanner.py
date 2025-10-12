@@ -85,6 +85,42 @@ def generate_meeting_id(date_str, classification, external_name, timestamp=None)
     return base_id
 
 
+def parse_transcript_filename(filename: str) -> dict:
+    """Extract meeting info from Fireflies transcript filename."""
+    # Remove [ZO-PROCESSED] prefix if present
+    clean_name = filename.replace('[ZO-PROCESSED] ', '')
+    
+    # Pattern: "Name x Name-transcript-2025-09-23T21-04-28.138Z.docx"
+    match = re.search(r'(.+?)-transcript-(\d{4}-\d{2}-\d{2})', clean_name)
+    
+    if match:
+        participants = match.group(1).strip()
+        date_str = match.group(2)
+        
+        # Create clean ID
+        participants_clean = participants.replace(' x ', '-').replace(' ', '-').lower()
+        participants_clean = re.sub(r'[^a-z0-9-]', '', participants_clean)[:50]
+        
+        meeting_id = f"{date_str}_{participants_clean}"
+        
+        return {
+            "meeting_id": meeting_id,
+            "participants": participants,
+            "date": date_str,
+            "original_filename": filename,
+            "is_processed": filename.startswith('[ZO-PROCESSED]')
+        }
+    
+    # Fallback for non-standard names (e.g., GRANOLA VERSION files)
+    return {
+        "meeting_id": f"meeting-{clean_name[:40]}",
+        "participants": "unknown",
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "original_filename": filename,
+        "is_processed": filename.startswith('[ZO-PROCESSED]')
+    }
+
+
 def load_existing_gdrive_ids():
     """Load all gdrive_ids from existing requests and processed meetings."""
     existing = set()
@@ -136,6 +172,37 @@ def load_existing_gdrive_ids():
                         pass
     
     return existing
+
+
+def filter_unprocessed(files_list: list) -> list:
+    """
+    Filter out processed transcripts.
+    
+    Args:
+        files_list: List of dicts with 'name' and 'id' keys from Google Drive
+    
+    Returns:
+        List of unprocessed file dicts with parsed metadata
+    """
+    unprocessed = []
+    
+    for file_info in files_list:
+        filename = file_info.get('name', '')
+        
+        # Skip if already processed
+        # ALL files in Fireflies/Transcripts folder are transcripts—no additional filtering needed
+        if filename.startswith('[ZO-PROCESSED]'):
+            continue
+        
+        # Parse and add metadata
+        parsed = parse_transcript_filename(filename)
+        parsed['gdrive_id'] = file_info.get('id')
+        parsed['gdrive_link'] = file_info.get('webViewLink')
+        parsed['modified_time'] = file_info.get('modifiedTime')
+        
+        unprocessed.append(parsed)
+    
+    return unprocessed
 
 
 def main():
