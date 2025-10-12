@@ -158,7 +158,7 @@ Built a comprehensive stakeholder profile management system that progressively a
 ### Documentation
 5. **`N5/stakeholders/README.md`** — System overview
 6. **`N5/docs/stakeholder-profile-update-safeguards.md`** — Protection details
-7. **`N5/handoffs/2025-10-12-stakeholder-reservoir-system-built.md`** — This handoff
+7. **`N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-system-built.md`** — This handoff
 
 ---
 

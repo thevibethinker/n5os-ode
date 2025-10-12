@@ -14,7 +14,7 @@
 3. Set up post-meeting auto-update workflow
 4. Monitor and refine over first week
 
-**OR** review the detailed implementation plan first: `file 'N5/handoffs/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`
+**OR** review the detailed implementation plan first: `file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`
 
 ---
 
@@ -78,7 +78,7 @@
 ### Option 2: **Review First**
 
 **Read these files first:**
-1. **`file 'N5/handoffs/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`** — Full implementation roadmap
+1. **`file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`** — Full implementation roadmap
 2. **`file 'N5/STAKEHOLDER_SYSTEM_OVERVIEW.md'`** — How the system works
 3. **`file 'N5/ACTION-SUMMARY-stakeholder-system-2025-10-12.md'`** — What's been done
 
@@ -166,7 +166,7 @@
 ### System Documentation
 - `file 'N5/STAKEHOLDER_SYSTEM_OVERVIEW.md'` — How it all works
 - `file 'N5/stakeholders/README.md'` — Complete system docs
-- `file 'N5/handoffs/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'` — Execution roadmap
+- `file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'` — Execution roadmap
 
 ### Core Scripts (Already Built)
 - `file 'N5/scripts/stakeholder_manager.py'` — Profile operations

@@ -69,8 +69,8 @@ Built and tested a complete stakeholder profile management system that progressi
 - `N5/STAKEHOLDER_SYSTEM_OVERVIEW.md` — Quick start for V
 
 **Implementation Handoffs:**
-- `N5/handoffs/2025-10-12-stakeholder-reservoir-implementation.md`
-- `N5/handoffs/2025-10-12-stakeholder-reservoir-system-built.md`
+- `N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-implementation.md`
+- `N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-system-built.md`
 
 **Test Results:**
 - `N5/tests/stakeholder-system-test-results-2025-10-12.md`
@@ -273,8 +273,8 @@ Built and tested a complete stakeholder profile management system that progressi
 14. `N5/tests/BEFORE-AFTER-meeting-prep-comparison.md` — Impact demo
 
 ### Handoffs
-15. `N5/handoffs/2025-10-12-stakeholder-reservoir-implementation.md` — Implementation
-16. `N5/handoffs/2025-10-12-stakeholder-reservoir-system-built.md` — Build complete
+15. `N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-implementation.md` — Implementation
+16. `N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-system-built.md` — Build complete
 17. `N5/stakeholders/PROFILE-UPDATES-2025-10-12.md` — V's input captured
 
 ### Action Items
