@@ -1,0 +1,73 @@
+{
+  "scan_date": "2025-10-12T21:38:45.243661",
+  "lookback_days": 21,
+  "total_contacts": 6,
+  "contacts": [
+    {
+      "email": "lc465@cornell.edu",
+      "name": "Tony Chen",
+      "domain": "cornell.edu",
+      "company": "Cornell",
+      "first_seen": "2025-10-12T21:38:45.243370",
+      "email_count": 1,
+      "subjects": [
+        "Cornellians at NYC Food Court"
+      ]
+    },
+    {
+      "email": "klil@junojourney.com",
+      "name": "Klil Nevo",
+      "domain": "junojourney.com",
+      "company": "Junojourney",
+      "first_seen": "2025-10-12T21:38:45.243400",
+      "email_count": 1,
+      "subjects": [
+        "AI-Driven Skills Economy meetup"
+      ]
+    },
+    {
+      "email": "shivani@fohe.org",
+      "name": "Shivani Mathur",
+      "domain": "fohe.org",
+      "company": "Fohe",
+      "first_seen": "2025-10-12T21:38:45.243411",
+      "email_count": 1,
+      "subjects": [
+        "FOHE x Careerspan"
+      ]
+    },
+    {
+      "email": "jake@fohe.org",
+      "name": "jake",
+      "domain": "fohe.org",
+      "company": "Fohe",
+      "first_seen": "2025-10-12T21:38:45.243420",
+      "email_count": 1,
+      "subjects": [
+        "FOHE x Careerspan"
+      ]
+    },
+    {
+      "email": "ray@fohe.org",
+      "name": "ray",
+      "domain": "fohe.org",
+      "company": "Fohe",
+      "first_seen": "2025-10-12T21:38:45.243426",
+      "email_count": 1,
+      "subjects": [
+        "FOHE x Careerspan"
+      ]
+    },
+    {
+      "email": "tim@cherrytree.app",
+      "name": "tim",
+      "domain": "cherrytree.app",
+      "company": "Cherrytree",
+      "first_seen": "2025-10-12T21:38:45.243435",
+      "email_count": 1,
+      "subjects": [
+        "Great meeting you"
+      ]
+    }
+  ]
+}

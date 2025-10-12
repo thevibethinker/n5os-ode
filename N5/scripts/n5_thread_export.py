@@ -54,12 +54,19 @@ class ThreadExporter:
         self.aar_data = {}
         self.artifacts = []
         
-        # Archive directory (descriptive name)
+        # Archive directory (new chronological naming convention)
+        now = datetime.now()
+        timestamp = now.strftime("%Y-%m-%d-%H%M")
+        thread_suffix = thread_id[-4:] if len(thread_id) >= 4 else thread_id
+        
         if title:
             safe_title = self._sanitize_title(title)
-            self.archive_dir = LOGS_DIR / f"{thread_id}-{safe_title}"
+            self.archive_dir = LOGS_DIR / f"{timestamp}_{safe_title}_{thread_suffix}"
         else:
-            self.archive_dir = LOGS_DIR / thread_id
+            # Auto-generate title from conversation type
+            auto_title = "conversation"  # Will be improved by detect_conversation_type later
+            safe_title = self._sanitize_title(auto_title)
+            self.archive_dir = LOGS_DIR / f"{timestamp}_{safe_title}_{thread_suffix}"
         
         self.aar_json_path = self.archive_dir / f"aar-{datetime.now().strftime('%Y-%m-%d')}.json"
         self.aar_md_path = self.archive_dir / f"aar-{datetime.now().strftime('%Y-%m-%d')}.md"
@@ -67,13 +74,18 @@ class ThreadExporter:
         self.checkpoint_path = self.archive_dir / f"checkpoint-{datetime.now().strftime('%Y-%m-%d-%H%M%S')}.json"
     
     def _sanitize_title(self, title: str) -> str:
-        """Convert title to filesystem-safe string"""
-        # Replace spaces with hyphens, remove special chars
-        safe = title.lower()
+        """Convert title to filesystem-safe string (preserves readability)"""
+        import re
+        # Remove filesystem-unsafe characters only
+        safe = re.sub(r'[<>:"/\\|?*]', '', title)
+        # Replace spaces with hyphens
         safe = safe.replace(' ', '-')
-        safe = ''.join(c for c in safe if c.isalnum() or c == '-')
-        safe = '-'.join(filter(None, safe.split('-')))  # Remove consecutive hyphens
-        return safe[:60]  # Limit length
+        # Collapse multiple hyphens
+        safe = re.sub(r'-+', '-', safe)
+        # Remove leading/trailing hyphens
+        safe = safe.strip('-')
+        # Limit length (increased from 60 to 80)
+        return safe[:80]
     
     def detect_thread_id(self) -> Optional[str]:
         """Auto-detect current conversation thread ID"""
