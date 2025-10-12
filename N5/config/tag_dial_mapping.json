@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "description": "Hashtag to email dial settings mapping for follow-up email generation",
+  "relationship_mappings": {
+    "#relationship:new": {
+      "relationshipDepth": 0,
+      "formality": 8,
+      "warmth": 4,
+      "ctaRigour": 2,
+      "description": "Stranger/first meeting - formal, cautious"
+    },
+    "#relationship:warm": {
+      "relationshipDepth": 2,
+      "formality": 6,
+      "warmth": 7,
+      "ctaRigour": 3,
+      "description": "Warm contact - balanced, direct"
+    },
+    "#relationship:active": {
+      "relationshipDepth": 3,
+      "formality": 5,
+      "warmth": 8,
+      "ctaRigour": 4,
+      "description": "Partner - informal, clear asks"
+    },
+    "#relationship:cold": {
+      "relationshipDepth": 1,
+      "formality": 7,
+      "warmth": 5,
+      "ctaRigour": 2,
+      "description": "Stalled - gentle re-engagement"
+    }
+  },
+  "stakeholder_adjustments": {
+    "#stakeholder:investor": {
+      "formality_boost": 1,
+      "description": "Investors require more formality"
+    },
+    "#stakeholder:partner:collaboration": {
+      "formality_boost": 0,
+      "description": "Partners use standard formality"
+    },
+    "#stakeholder:advisor": {
+      "formality_boost": -1,
+      "description": "Advisors allow more casual tone"
+    }
+  },
+  "priority_adjustments": {
+    "#priority:critical": {
+      "urgency": "high",
+      "description": "Fast response expected"
+    },
+    "#priority:high": {
+      "urgency": "moderate",
+      "description": "Timely response expected"
+    },
+    "#priority:normal": {
+      "urgency": "standard",
+      "description": "Normal response timing"
+    }
+  },
+  "defaults": {
+    "relationshipDepth": 1,
+    "formality": 7,
+    "warmth": 5,
+    "ctaRigour": 2,
+    "description": "Default when no tags available"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-10-12",
+  "description": "Business rules for stakeholder classification and tagging",
+  
+  "dual_tags": {
+    "enabled": true,
+    "description": "Allow contacts to have multiple stakeholder types",
+    "examples": [
+      {
+        "contact": "Kim Wilkes",
+        "tags": ["#stakeholder:community", "#stakeholder:job_seeker"],
+        "reasoning": "Community leader AND product user (job seeking)"
+      }
+    ]
+  },
+  
+  "excluded_types": {
+    "hiring_candidates": {
+      "exclude": true,
+      "reasoning": "Internal hiring candidates should not be tracked in stakeholder system",
+      "detection": [
+        "Email threads about job interviews, compensation, start dates",
+        "Coordination with Ilse/Logan about hiring",
+        "Keywords: 'candidate', 'interview', 'hire', 'start date', 'compensation'"
+      ],
+      "action": "Exclude from stakeholder system (do not create profiles, do not include in weekly reviews)",
+      "exception": "Specific individuals who V sees as networking relationships beyond hiring context can be classified as networking contacts"
+    },
+    "internal_team": {
+      "exclude": true,
+      "reasoning": "Internal Careerspan team members",
+      "domains": ["mycareerspan.com", "careerspan.com"]
+    }
+  },
+  
+  "email_handling": {
+    "personal_emails": {
+      "strategy": "auxiliary_email",
+      "description": "When contact uses personal email (gmail.com, mac.com, etc.), track as auxiliary but prioritize professional email as primary key",
+      "personal_email_indicators": [
+        "gmail.com",
+        "yahoo.com",
+        "hotmail.com",
+        "outlook.com",
+        "mac.com",
+        "icloud.com",
+        "me.com"
+      ],
+      "action": "Store personal email in 'auxiliary_emails' field, fetch professional email from LinkedIn/web search"
+    },
+    "primary_email_priority": {
+      "1": "Professional email (company domain)",
+      "2": "LinkedIn-verified email",
+      "3": "Most recent email used in communication",
+      "4": "Personal email (fallback)"
+    }
+  },
+  
+  "stakeholder_inference_rules": {
+    "advisor": {
+      "indicators": [
+        "Provides strategic advice/coaching",
+        "No transactional relationship (not paying, not being paid)",
+        "Regular engagement (weekly/monthly check-ins)",
+        "GTM insights, strategy validation",
+        "Former executive/hiring manager sharing expertise",
+        "Enterprise HR expertise, alumni network partnerships"
+      ],
+      "examples": ["Alex Caveny", "Carly Ackerman"]
+    },
+    "networking_contact": {
+      "indicators": [
+        "Relationship value beyond transactional context",
+        "V sees connection potential independent of business role",
+        "May have business context (hiring, sales) but relationship is broader",
+        "General relationship building, mutual support"
+      ],
+      "examples": ["Tim He - hiring candidate but also networking relationship"],
+      "priority_default": "normal",
+      "note": "Distinct from 'prospect' (which implies business opportunity); networking is relational, not transactional"
+    },
+    "partner_collaboration": {
+      "indicators": [
+        "Organization-to-organization relationship",
+        "Integration/co-marketing discussions",
+        "Partnership exploration emails",
+        "Not resale/distribution (that's channel)"
+      ],
+      "internal_facilitators": {
+        "description": "Employees of partner organization who facilitate intro",
+        "classification": "Tag with partner organization's stakeholder type",
+        "example": "Heather Wixson (Landidly employee) → #stakeholder:partner:collaboration"
+      }
+    },
+    "community": {
+      "indicators": [
+        "Leads/active in community networks",
+        "Offers access to groups (Elpha, Tech Ladies, etc.)",
+        "Community partnership discussions",
+        "Nonprofit/social impact focus"
+      ],
+      "can_be_dual": true,
+      "dual_with": ["job_seeker", "customer"]
+    }
+  },
+  
+  "priority_auto_inheritance": {
+    "investor": "critical",
+    "advisor": "high",
+    "customer": "high",
+    "community": "normal",
+    "partner:collaboration": "normal",
+    "partner:channel": "normal",
+    "prospect": "normal",
+    "job_seeker": "normal"
+  }
+}
