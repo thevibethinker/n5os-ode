@@ -14,7 +14,7 @@
 ### Verified (Last reviewed: 2025-10-12)
 - `#stakeholder:advisor` — Strategic coaching and GTM insights
 - `#relationship:active` — Ongoing twice-monthly coaching sessions
-- `#priority:high` — Strategic value, insights shaped company GTM strategy
+- `#priority:critical` — Strategic advisors are business-critical (auto-inherited)
 - `#context:enterprise` — Former hiring manager perspective
 - `#engagement:responsive` — High engagement, quality insights
 
