@@ -99,7 +99,7 @@ Extract strategic insights from research with:
 - `file 'N5/scripts/research_prompt_generator.py'`
 - `file 'N5/scripts/careerspan_insights_extractor.py'`
 
-**User Guide:** `file 'N5/documentation/RESEARCH-FUNCTIONS-GUIDE.md'`
+**User Guide:** `file 'N5/System Documentation/RESEARCH-FUNCTIONS-GUIDE.md'`
 
 **Import Summary:** `file 'N5/FUNCTION-IMPORT-COMPLETE.md'`
 

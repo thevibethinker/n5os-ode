@@ -62,7 +62,7 @@ extract-careerspan-insights --input research-results.txt
 
 **Scripts:** `N5/scripts/meeting_prep_digest.py`, `research_prompt_generator.py`, `careerspan_insights_extractor.py`
 
-**Documentation:** `file 'N5/documentation/RESEARCH-FUNCTIONS-GUIDE.md'` (comprehensive guide)
+**Documentation:** `file 'N5/System Documentation/RESEARCH-FUNCTIONS-GUIDE.md'` (comprehensive guide)
 
 **Digests:** `N5/digests/` (daily digests generated here)
 
@@ -110,4 +110,4 @@ extract-careerspan-insights --input research-results.txt
 
 **Status:** ✅ COMPLETE - Ready to use immediately!
 
-For detailed usage instructions, see: `file 'N5/documentation/RESEARCH-FUNCTIONS-GUIDE.md'`
+For detailed usage instructions, see: `file 'N5/System Documentation/RESEARCH-FUNCTIONS-GUIDE.md'`

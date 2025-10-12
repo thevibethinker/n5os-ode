@@ -1,0 +1,11 @@
+{
+  "meeting_id": "2025-09-24-18-03-10_alex-x-vrijen-wisdom-partners-coaching",
+  "processed_date": "2025-10-11T01:38:21Z",
+  "transcript_path": "/home/workspace/N5/inbox/transcripts/2025-09-24-18-03-10_alex-x-vrijen-wisdom-partners-coaching.txt",
+  "stakeholder_classification": "NETWORKING",
+  "participants": ["Vrijen Attawar", "Alex Caveny"],
+  "blocks_generated": ["B26", "B01", "B08", "B21", "B29", "B02", "B25"],
+  "templates_used": ["MEETING_METADATA_SUMMARY", "DETAILED_RECAP", "RESONANCE_POINTS", "SALIENT_QUESTIONS", "KEY_QUOTES_HIGHLIGHTS", "COMMITMENTS_CONTEXTUAL", "DELIVERABLE_CONTENT_MAP"],
+  "processing_duration_seconds": 0,
+  "granola_diarization": false
+}

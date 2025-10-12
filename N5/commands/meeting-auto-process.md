@@ -23,7 +23,7 @@ Each line is a JSON record:
   "discovered_at": "2025-10-09T19:30:00Z",
   "status": "downloaded",
   "processed_at": "2025-10-09T19:35:00Z",
-  "output_dir": "/home/workspace/Careerspan/Meetings/2025-10-09_Alex-Caveny-Coaching"
+  "output_dir": "/home/workspace/N5/records/meetings/2025-10-09_Alex-Caveny-Coaching"
 }
 ```
 

@@ -72,13 +72,13 @@
 
 ## Documentation Created
 
-1. **`file 'N5/documentation/SEMI_STABLE_INFORMATION_SPEC.md'`**
+1. **`file 'N5/System Documentation/SEMI_STABLE_INFORMATION_SPEC.md'`**
    - Complete specification of what semi-stable info is
    - Extraction process and quality criteria
    - Examples from real meeting (Alex session)
    - Output format templates
 
-2. **`file 'N5/documentation/MEETING_PROCESS_CHANGELOG.md'`**
+2. **`file 'N5/System Documentation/MEETING_PROCESS_CHANGELOG.md'`**
    - Version history with rationale
    - Implementation notes for future script development
    - Testing checklist
@@ -238,8 +238,8 @@ From first production use (Alex session):
 ## Files to Review
 
 - `file 'N5/commands/meeting-process.md'` - Updated command documentation (v2.1)
-- `file 'N5/documentation/SEMI_STABLE_INFORMATION_SPEC.md'` - Specification and examples
-- `file 'N5/documentation/MEETING_PROCESS_CHANGELOG.md'` - Complete changelog
+- `file 'N5/System Documentation/SEMI_STABLE_INFORMATION_SPEC.md'` - Specification and examples
+- `file 'N5/System Documentation/MEETING_PROCESS_CHANGELOG.md'` - Complete changelog
 - `file 'Careerspan/Meetings/2025-09-24_Alex-Caveny-Coaching/semi-stable-updates.md'` - Example output
 
 ---

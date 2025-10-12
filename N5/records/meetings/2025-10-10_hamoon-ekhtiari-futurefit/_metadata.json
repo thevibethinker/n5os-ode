@@ -1,0 +1,59 @@
+{
+  "meeting_id": "2025-10-10_hamoon-ekhtiari-futurefit",
+  "date": "2025-10-10",
+  "stakeholder_primary": "Hamoon Ekhtiari",
+  "company": "FutureFit",
+  "email": "hamoon@futurefit.ai",
+  "classification": "external",
+  "meeting_type": "partnership_exploration",
+  "participants": [
+    "Vrijen Attawar (Careerspan)",
+    "Hamoon Ekhtiari (FutureFit)"
+  ],
+  "source": "google_drive",
+  "calendar_event_id": "b98mvpvhcfv6vsncsdvrhuok3o",
+  "transcript_path": "/home/workspace/N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit/transcript.txt",
+  "processing_date": "2025-10-11T04:42:09Z",
+  "blocks_generated": [
+    "detailed_recap",
+    "resonance_points",
+    "salient_questions",
+    "stakeholder_profile",
+    "deliverable_content_map",
+    "intro_email_template",
+    "key_quotes"
+  ],
+  "priority_level": "high",
+  "follow_up_timeline": "2_weeks",
+  "follow_up_owner": "Vrijen",
+  "follow_up_action": "Send concrete use case note with 1-2 specific scenarios",
+  "strategic_context": {
+    "futurefit_scale": "200K users annually",
+    "partnership_models_discussed": [
+      "embedded_point_solution",
+      "data_layer_api",
+      "acquisition_acquihire"
+    ],
+    "key_pain_points": [
+      "employer_side_data_scarcity",
+      "ux_fragmentation_from_integrations",
+      "signal_quality_at_scale"
+    ],
+    "careerspan_differentiators": [
+      "qualitative_100_datapoint_profiling",
+      "conversational_ai_for_hiring_managers",
+      "high_signal_community_access",
+      "no_fake_candidates"
+    ]
+  },
+  "risk_assessment": "medium_low",
+  "next_milestone": "hamoon_response_to_use_case_note",
+  "tags": [
+    "partnership",
+    "b2b",
+    "futurefit",
+    "data_layer",
+    "embedded_integration",
+    "workforce_development"
+  ]
+}

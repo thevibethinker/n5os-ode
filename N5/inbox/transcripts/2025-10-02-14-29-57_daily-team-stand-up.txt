@@ -1,0 +1,733 @@
+00:01
+Ilse Funkhouser
+Yes. Like, I live. I heard a small crack, like, two days ago, and I'm
+like, oh, I couldn't tell. I felt like as soon that just, like, one of
+the captors themselves finally started to give way. Well, it was a
+stress fracture here. So I'm just like, my feet are up. Like, you've
+seen me before where my feet are up on that. Like, I don't know if you
+have it. So, like, I just have the laptop on my lap. My feet are up
+above my head. I'm leaning back. I just hear this crack, and I just
+start falling sideways. It was like one of the two feet that was like.
+Like one of the two feet that was popping up. My chair gave so I
+wouldn't. All right, that way. Yeah.
+
+00:44
+Logan Currie
+Are you okay? I hurt, but I'm sorry to laugh.
+
+00:51
+Ilse Funkhouser
+No, it's fine. It's hilarious. It's out of. It's out of.
+
+00:57
+Logan Currie
+That's like some slapstick right there. Yeah, that's.
+
+01:01
+Danny Williams
+That's good.
+
+01:02
+Ilse Funkhouser
+It's like. It especially, like, hits home for me because, like. Because
+I used to be so fat. Because I used, like, in. In high school or like,
+whatever in college, like, my. I popped out of, like, over 320. I'm
+always careful about, like, sitting down in chairs. Still to the stakes.
+I'm like. I don't want them to collapse. And of course a chair collapses
+on me. But it's my own fault. I get that.
+
+01:27
+Logan Currie
+I really lean back. So my chair is one of those, like, crazy. Like, it's
+the one where you can. It's got like three levels. So you can, like, sit
+cross legged.
+
+01:36
+Ilse Funkhouser
+Oh, yeah.
+
+01:37
+Logan Currie
+And, like, go this way or that way or up or down or whatever. But I
+never actually. My hips were hurting. I was like, why am I so old? But I
+realized that I don't sit properly. Like, I just kind of, like, crouch
+like a gremlin. I don't do, like, the ergonomic shit that I'm supposed
+to do. So I will. I'm currently sitting kind of like, in it, basically,
+but I think.
+
+02:03
+Ilse Funkhouser
+The bisexual fit sitting in the chair anyway. But the right way.
+
+02:08
+Logan Currie
+Yeah.
+
+02:10
+Ilse Funkhouser
+So I'm sitting on this chair now on the ground. You can tell this is
+supposed to be the bus. That's why I can, like, roll around.
+
+02:17
+Danny Williams
+That's.
+
+02:18
+Logan Currie
+That's what we. That's what we all need. I never sit in the same. I
+like. I have four places to sit in this office, and I go sit at, like,
+anywhere but this. This chair half the time. But anyway. Well, it's just
+us on standby.
+
+02:33
+Ilse Funkhouser
+Danny's on his way or, and. Or not gonna make it. He was like kind of
+hurrying back. He didn't respond yet, but so I know he's planning on
+coming. This migration to get rid of the game plan, which saves us time
+and money and like, it's cleaner because now our role match score is
+aligned with someone's role preferences, not with just the one target
+job they did in onboarding. So it's all good things. But it took up most
+of my day yesterday and today to like finish it out with Danny. We still
+have to do the migration when it gets back today. So I'm pretty far
+behind on actually getting AI confidence or the gender thing out the
+door.
+
+03:24
+Danny Williams
+Yeah.
+
+03:25
+Ilse Funkhouser
+Just so you're aware, I think the.
+
+03:27
+Logan Currie
+Game plan thing seems like more of a priority anyway just because I feel
+like it does. It just makes sense for that to be the way that it is now.
+So cool.
+
+03:39
+Ilse Funkhouser
+He brought up a really interesting point that's worth discussing with
+you. He was like, why are we having salary range via text input? And my
+explanation to that was, well, if I, you know, I'm willing to take a
+salary of 300k for a head of product role if it's on site, 200k if it's
+remote and you know, like they're saying like, okay, but if it's a
+project management role, 150, 180, like there is so much variation that
+just bands don't quality don't cut us for.
+
+04:17
+Logan Currie
+Yeah.
+
+04:17
+Ilse Funkhouser
+He rightfully pointed out that makes our job hard and expensive because
+it's really easy to just filter by is salary of job in this range. You
+don't need AI to do that. But as soon as you need it to semantically
+parse. Yeah. Then suddenly, even if it costs a tenth of a penny, that's
+nickels and dimes up to death.
+
+04:41
+Logan Currie
+Yeah.
+
+04:41
+Ilse Funkhouser
+So he's totally right. My reasoning for that is we don't have a lot of
+users right now. And if I get my way, it won't matter because a company
+will pay for us to vet and analyze up to 500 candidates. And we know
+that the margins will be okay on that whatever, you know, whatever
+routine. So in any world, that'll never matter in the different, you
+know, except for like, you know, okay, cool, just for them doing their
+own thing, whatever. In the world where we end up doing what B wants to
+do to succeed, like we have a big user base and we're still sending jobs
+out. My point of view is that capturing those details now is better
+because that way I can always parse that once instead of having to parse
+it per job.
+
+05:31
+Ilse Funkhouser
+I can always parse that once per user and say, hey, cool. I know that
+based on what they input. If the role is this, if the role is this, then
+I have multiple bands, not just one band. So this is kind of like it.
+It's, it's going to better for us in the long run because now we have
+that additional information.
+
+05:55
+Logan Currie
+Can I ask where we are collecting this? Like, is it in the.
+
+05:59
+Danny Williams
+Like.
+
+05:59
+Logan Currie
+At what point will the user see that? Whether it's onboarding?
+
+06:04
+Ilse Funkhouser
+Well, oh well, they'll never see it as a band. It literally says like,
+hey, do you have any seller requirements? Type it out as a full stream.
+Just type out your thoughts. So it's in onboarding, then it's in their
+settings. I can actually show you. Danny just messaged me, so I assume
+he'll get on in a second.
+
+06:22
+Danny Williams
+Of course.
+
+06:24
+Ilse Funkhouser
+So if I go to. No, no, Danny, just join anyway. So you have role
+interest, salary requirements, location preferences and other
+preferences. So all of this stuff here, they'll be able to edit
+directly. Something that's on my list but I haven't gotten anywhere near
+towards is cleaning the hell out of posthog. Diane. This is something
+that I'll have to figure out with Danny as well because it's something
+that the backend needs to do of when they update this information. You
+need that information in post hog and then I can set it up so that
+information goes to loops as well. But going forward, that's literally
+part of onboarding.
+
+07:29
+Danny Williams
+So that's good. Okay.
+
+07:31
+Logan Currie
+Yeah. All right. Yeah. Just to clarify though, it's not the salary
+requirements, does this, is this then like conditional for the jobs that
+we send them? Meaning like we would not send them a job that matches
+them if it's outside of their salary band.
+
+07:54
+Ilse Funkhouser
+So yes and no. I know that it's awful to hear if it's. So if it's a hard
+requirement and the way I've set it up, if that's a hard requirement
+that aligns with the role. So if their salary is just like never below
+200k, if we are the ones emitting the job, radiating the job outward
+when we do the super cheap, super quick check, hey, does this role align
+with what is in their role interest in their salary in their locations?
+That's the easiest way for us to say, hey, no roles in North Carolina.
+
+08:34
+Ilse Funkhouser
+They say that they're not willing to Work, they say they're only willing
+to work in Washington, that right then and there will cut it off so that
+we don't send that job to them because we know that it's not in their
+location, we know it's not in their salary requirements, we know,
+whatever, if it's a loose requirement, like I really don't want it,
+whatever, it'll be a little more of a crapshoot. And then that'll also
+be reflected in the roll match score. And I don't think it'll be
+reflected in the fitness score in the roll match score if it is so
+clearly not like either, like the salary is way below expectations or
+the role doesn't align with your role interests. And if your role
+interests are empty, it just defaults to like, does it align with their
+job history?
+
+09:32
+Ilse Funkhouser
+So if all of those things are true, and I just ran a migration that
+basically whatever someone's target role was, I added that as their role
+interest plus. But I'm open to more roles that you know that you think
+are a good fit for me.
+
+09:47
+Logan Currie
+Right.
+
+09:47
+Ilse Funkhouser
+So I added into like, hey, this is my initial thing, but I'm open to
+others. So I just ran that migration for production. So no users should
+be totally closed off by that. But if it's a big deal, then the score
+will be low enough that we will not automatically proceed to generate
+the full analysis. Which means if we're running magic links or one off
+roles and we want to fill this position, it's not deterministic. But
+like, there's a good chance then that if someone says I'm only willing
+to work in the state of Washington and the role is in North Carolina,
+there's a good chance that it won't even get to the point where we do
+that full analysis for them because the role is not a good fit for them.
+
+10:37
+Ilse Funkhouser
+If they click the magic link themselves, they somehow have access to the
+magic link, then. Fuck yeah. Like, then, you know, it will have it
+anyway.
+
+10:47
+Danny Williams
+Yeah.
+
+10:48
+Ilse Funkhouser
+If they opt in, it's never that. That sort of thing will never actually
+stop them from being able to proceed.
+
+10:59
+Logan Currie
+Got it.
+
+10:59
+Danny Williams
+Okay.
+
+11:01
+Logan Currie
+Does that make sense to me?
+
+11:02
+Ilse Funkhouser
+Yeah.
+
+11:02
+Logan Currie
+I mean, basically, like, I just don't have as much. I'm trying to weigh
+what I know about like levels of willingness, desperation and like money
+requirements. Like in terms of like people I know who are like, oh yeah,
+I would move for, I wouldn't move for less than this amount of money.
+And then they, there's a certain amount of like on month two of job
+Applications. Like, actually I would probably move for, you know, like,
+in terms of like. And that's why I think having it be like whether or
+not a job gets delivered, it can be like, we know that this is outside
+of your range. We're letting you know about it. Like, yeah, I don't
+know, like, I don't think it's not our, it's not a huge piece of our
+like value prop.
+
+11:52
+Logan Currie
+I would say to a user to like really match the salary. Like, it's not
+all jobs either salary range either. Right. So it's like end of the day,
+it's like we are trying to find a role that's aligned with what you're.
+
+12:02
+Ilse Funkhouser
+Looking for and your skill set is or whatever.
+
+12:04
+Logan Currie
+So like that's the main, like. So I don't want it to be too much, like
+to go down too much of a rabbit hole basically with salary because
+there's so many. Oh yeah, like, you know, exceptions and like there's a
+lot of data around the fact that salary is actually not even the driving
+force for most people when they pick a job. So like it's anyway, like, I
+like having it, but I don't want it to be too much of like a
+complicating factor is what I would just overall say.
+
+12:34
+Ilse Funkhouser
+Yeah, I'll add something in that makes sure that we're not over indexing
+on.
+
+12:38
+Logan Currie
+That.
+
+12:42
+Ilse Funkhouser
+Index on salary when doing the initial cutoff stuff.
+
+12:48
+Danny Williams
+Cool.
+
+12:49
+Ilse Funkhouser
+Yeah, it's. It's also kind of weird that like this. Yeah, well,
+whatever. I'm not going to get into like product level decisions about
+this anymore. But like, hopefully it becomes less and less important
+because we are reaching out less and less over time.
+
+13:13
+Logan Currie
+Yeah.
+
+13:15
+Ilse Funkhouser
+Like it shouldn't.
+
+13:16
+Logan Currie
+It also, not only do I not want to complicate things from like a, you
+know, B2C complexity perspective, but also just from a. Hopefully this
+isn't that relevant to us either because the company is kind of like
+it's company driven. Regardless. Anyway, I'm just packing up to go take
+the dog to the vet. Ella, you ready to go look at this stuff? Vet face?
+
+13:45
+Ilse Funkhouser
+She's like, yeah, I'm ready. Yeah.
+
+13:51
+Logan Currie
+She has an infected ear, Danny, so that's like bleeding on the inside,
+but her ears are so floppy that I didn't see it. And now I'm feeling
+like a bad pet owner. But I'm gonna take her to the vet. I got her
+rabies proof from a few months ago. But anyway, I will be on my back
+online. I'M bringing my laptop so I can be accessible for anything. I'm
+gonna be doing a demo and giving that out to two of the communities,
+but, yeah.
+
+14:23
+Danny Williams
+Anything else?
+
+14:24
+Logan Currie
+Are we good to go? Is Rahul's back today, right? She's back.
+
+14:27
+Ilse Funkhouser
+I have no idea. I haven't seen her all day. Yeah, so maybe tomorrow
+we'll find out.
+
+14:34
+Danny Williams
+Yeah.
+
+14:35
+Ilse Funkhouser
+It is her holiday season.
+
+14:37
+Danny Williams
+Cool.
+
+14:37
+Ilse Funkhouser
+Danny, say something.
+
+14:39
+Logan Currie
+Hi, Danny. Bye, Danny.
+
+14:41
+Ilse Funkhouser
+Oh, we can't hear you. If you've been talking at all. If you've been.
+
+14:44
+Logan Currie
+Yeah, I hope.
+
+14:44
+Danny Williams
+I hope.
+
+14:45
+Ilse Funkhouser
+I thought you were kind of silent.
+
+14:47
+Danny Williams
+Yeah, no, my bad. I didn't realize I had it, like, muted here.
+
+14:51
+Ilse Funkhouser
+All right, bye, Logan. Daniel. I'll keep you around.
+
+14:56
+Danny Williams
+See you.
+
+14:58
+Ilse Funkhouser
+All right, so first things first. How are you doing?
+
+15:04
+Danny Williams
+I'm good. How are you?
+
+15:06
+Ilse Funkhouser
+I'm good. Second thing, I am able to reproduce an error on staging. I
+messaged you. Oh, fuck. We have a meeting in 10 minutes. Okay, well,
+fuck it, let's. Yeah, whatever. I'll just. I'll go over the. The issue
+is, I think that during resume transcription, the first try timed out
+and then the second try initialized, but then the first try completed.
+So I think there's a mismatch between the data that is in onboarding in
+the data that is, like, recognized on the back end or something. Because
+now I am unable to save jobs. I mean, I'm unable to edit my job history.
+It was still in work confirmation.
+
+16:18
+Danny Williams
+I mean, that doesn't make a lot of sense to me because.
+
+16:24
+Danny Williams
+Like, what.
+
+16:24
+Danny Williams
+You'Re seeing is the document in Firestore.
+
+16:28
+Danny Williams
+Right?
+
+16:29
+Ilse Funkhouser
+Which document?
+
+16:32
+Danny Williams
+The job.
+
+16:33
+Danny Williams
+Right.
+
+16:35
+Ilse Funkhouser
+That's a good point. Yeah. But anyway, failed to see what's the error. I
+posted it in the engineering channel.
+
+16:49
+Danny Williams
+It's.
+
+16:53
+Ilse Funkhouser
+Bad request for update job. I think I'm going to end up.
+
+17:03
+Danny Williams
+Being right, but I don't think so. I mean.
+
+17:07
+Danny Williams
+What?
+
+17:08
+Danny Williams
+Well, it's weird because it's update job as, like, an endpoint. Why are
+we doing that?
+
+17:13
+Logan Currie
+Brady?
+
+17:17
+Danny Williams
+God damn it.
+
+17:19
+Danny Williams
+Yeah.
+
+17:23
+Ilse Funkhouser
+I might be able to address this if I can find a faster or more reliable
+PDF adjacent resume transcriber. So I'll see if I can find a faster or
+more reliable one as well so that we can both work on. Work on it on
+both ends. But I'm pretty sure this is the issue is because I remember I
+even saw that the error. The. Not the error, but the like, hey, this is
+taking a really long time. You could, you know, wait, or you can click
+here to restart and they didn't restart it. Eventually finished.
+
+18:01
+Danny Williams
+Yeah, but that's kind of like an arbitrary message because it just shows
+after a certain amount of time.
+
+18:06
+Danny Williams
+Okay.
+
+18:10
+Danny Williams
+Yeah, let me see. I'm gonna have to look at what this update job
+function does.
+
+18:23
+Danny Williams
+Uhuh.
+
+18:27
+Danny Williams
+I think it's like update past job or something. Oh, it's just update
+job. Like it doesn't make sense to me because like, if you refresh, does
+it still not work?
+
+18:49
+Ilse Funkhouser
+Yeah. I've also been able to impersonate the user who reported this
+error on production. Obviously do hard refreshes and stuff and I still
+run into that issue.
+
+19:01
+Danny Williams
+But like the thing is, you're getting a bad request error, which is like
+not a specific error. It's like, oh, you sent the wrong things, right?
+Yeah, like you sent the wrong parameters or whatever. Did you not? Is
+that like something that's not set? Like one of the values, like the
+began or ended at. Because they're supposed to be optional, but I don't
+think they are.
+
+19:33
+Ilse Funkhouser
+Oh, end date is optional. Everything else is.
+
+19:36
+Danny Williams
+No, no, I'm saying they're supposed to be, but I don't think they are.
+
+19:41
+Ilse Funkhouser
+End date is definitely optional.
+
+19:44
+Danny Williams
+No, but you might want them to be. But if the back end doesn't say that
+they are, then they're not.
+
+19:52
+Danny Williams
+Right.
+
+19:53
+Danny Williams
+Like they're required in the background. I can see on the endpoint that
+they're required.
+
+20:03
+Ilse Funkhouser
+Oh, holy. Got this on my staging. User double checking that. Oh yeah,
+dude, that was fucking it. You're totally right.
+
+20:18
+Danny Williams
+So cool.
+
+20:20
+Ilse Funkhouser
+So we have two issues with. Okay, so that's one issue. The other issue
+is that for some reason there is a 500 character limit on job summary.
+Please make that like 2000. But. Okay, cool. You solved the problem.
+Thank you.
+
+20:36
+Danny Williams
+Well, I still have to solve it, but we know what it is.
+
+20:39
+Ilse Funkhouser
+You solved the mystery, but you didn't solve the problem.
+
+20:43
+Danny Williams
+Yeah.
+
+20:43
+Ilse Funkhouser
+All right, cool. And then after we talk with Matt, we will deploy the
+prod. Or you want to fix this issue first? Doesn't matter. Oh, that's
+fucking rude.
+
+20:56
+Danny Williams
+Well, the thing that I want to do is like, before we go into this call.
+Yeah, just like bring up the app maybe. I don't know. Like, the thing
+is, I don't know how much it's worth to like actually show him the old
+app. Like, do we care?
+
+21:19
+Ilse Funkhouser
+We could ask him. We could ask him if he cares and if he cares, we'll,
+you know. Yeah.
+
+21:23
+Danny Williams
+The problem is that it might like take a little while to boot up. So
+it's just like meh.
+
+21:28
+Ilse Funkhouser
+Well, that sounds like a great thing to do on a. Around a second call
+then, right. Like, if he's actually interested, we could.
+
+21:37
+Danny Williams
+Just talk generally, I think. And like, I think what he wants to know
+is, like, how is it going to work in terms of.
+
+21:48
+Danny Williams
+Like.
+
+21:50
+Danny Williams
+How will we do things? Like, how is he going to give us hours? Like,
+what's the. Is there a limit on how many hours you can do? Like, this
+type of stuff, I guess, will be the information also, like, how will we
+work? Like, how. You know, like, who gets. Who makes the decisions?
+
+22:09
+Danny Williams
+Who.
+
+22:10
+Danny Williams
+Yeah, whatever.
+
+22:11
+Danny Williams
+Like.
+
+22:12
+Danny Williams
+And I think we all know the answer to that. It's just like. Well, I
+don't know. Whoever. Whoever wants to.
+
+22:17
+Ilse Funkhouser
+Like, if he wants to. If he wants to, he'll do it. If he wants me to,
+I'll do it. You know, like, it. I've said the same thing to you multiple
+times. You know, like, it's just cool. Make a decision.
+
+22:30
+Danny Williams
+They.
+
+22:31
+Ilse Funkhouser
+They need something and they need it. Not super expensively.
+
+22:41
+Danny Williams
+Okay.
+
+22:53
+Danny Williams
+Okay. So.
+
+22:58
+Danny Williams
+Yeah, I mean, I guess let's just jump in that meet and then wait for him
+there, I suppose.
+
+23:03
+Ilse Funkhouser
+Sounds good.
+
+23:04
+Danny Williams
+I think I invited your other email.
+
+23:08
+Ilse Funkhouser
+Yeah, I'll figure it out. It's on a calendar. That's what matters.
+
+23:12
+Danny Williams
+Yeah, let me see.
+
+23:15
+Ilse Funkhouser
+In a sec.
+
+23:16
+Danny Williams
+All right. See it.

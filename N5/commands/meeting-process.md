@@ -1,138 +1,121 @@
 # `meeting-process`
 
-Process a meeting transcript end-to-end using the phased workflow.
+**Version**: 3.0.0  
+**Category**: Meeting Intelligence  
+**Workflow**: Automation  
+**Script**: `N5/scripts/meeting_intelligence_orchestrator.py`
 
-**Version:** 2.1 (Phased - essentials first, deliverables on-demand)
+## Purpose
 
-## Overview
+This command processes meeting transcripts that have been queued in the meeting requests inbox. When invoked (typically by a scheduled task), Zo processes ONE transcript at a time, generating comprehensive "Smart Blocks" that provide structured meeting intelligence.
 
-The meeting processor now uses a smart, phased approach:
-- **Phase 1 (automatic):** Generate only essential intelligence
-- **Phase 2 (on-demand):** Generate deliverables you request
+## Architecture
 
-This saves time and reduces cognitive load while still providing everything you need.
+**Key Principle:** Zo processes content directly using native LLM capabilities with template guidance from the TemplateManager.
+
+```
+Processing Request (JSON) → Zo Loads Templates → Zo Analyzes Transcript → Smart Blocks Generated
+```
+
+## What This Command Does
+
+**CRITICAL:** Process **ONLY ONE** transcript per invocation to avoid context window issues.
+
+When invoked (via scheduled task or manually), Zo will:
+
+1. **Check for pending requests** in `N5/inbox/meeting_requests/`
+2. **Select the OLDEST request** (by filename/timestamp) to maintain FIFO ordering
+3. **Process ONLY that single request:**
+   - Load the processing request JSON to get transcript details (gdrive_id, classification, participants)
+   - Download transcript from Google Drive using the gdrive_id
+   - Save transcript to `N5/inbox/transcripts/{meeting_id}.txt`
+   - Initialize TemplateManager with meeting_id and stakeholder classification
+   - Load appropriate templates based on classification (internal vs external)
+   - Generate Smart Blocks using native LLM analysis
+   - Save all blocks to `N5/records/meetings/{meeting_id}/`
+   - Create `_metadata.json` with full processing context
+   - Mark the Google Drive file as processed by adding `[ZO-PROCESSED]` prefix
+   - Move request to `N5/inbox/meeting_requests/processed/`
+4. **Stop after one transcript** — next invocation (10 min later) will process the next one
+
+## Processing Request Format
+
+Each request in `N5/inbox/meeting_requests/{meeting-id}_request.json` contains:
+
+```json
+{
+  "meeting_id": "2025-10-10_stakeholder-name",
+  "gdrive_id": "1abc...",
+  "gdrive_link": "https://drive.google.com/...",
+  "stakeholder_classification": "internal" or "external",
+  "participants": ["Vrijen", "Other Person"],
+  "detected_date": "2025-10-10T19:00:00Z",
+  "source": "google_drive"
+}
+```
+
+## Smart Blocks Generated
+
+### Internal Meeting Blocks (Priority Order)
+- **B01: DETAILED_RECAP** (required) - Key decisions and agreements
+- **B08: RESONANCE_POINTS** (required) - Moments of connection and enthusiasm
+- **B21: SALIENT_QUESTIONS** (high priority) - Strategic questions from the meeting
+- **B22: DEBATE_TENSION_ANALYSIS** (high priority) - Areas of disagreement
+- **B24: PRODUCT_IDEA_EXTRACTION** (conditional) - Product/feature ideas discussed
+- **B29: KEY_QUOTES_HIGHLIGHTS** (medium priority) - Significant verbatim quotes
+
+### External Meeting Blocks (Priority Order)
+- **B01: DETAILED_RECAP** (required) - Key decisions and agreements
+- **B08: RESONANCE_POINTS** (required) - Moments of connection and enthusiasm
+- **B21: SALIENT_QUESTIONS** (high priority) - Strategic questions from the meeting
+- **B25: DELIVERABLE_CONTENT_MAP** (high priority) - Promised deliverables
+- **B28: FOUNDER_PROFILE_SUMMARY** (external only) - Founder/company profile
+- **B14: BLURBS_REQUESTED** (medium priority) - Intro blurbs for warm intros
+- **B30: INTRO_EMAIL_TEMPLATE** (conditional) - Introduction email template
 
 ## Usage
 
+### Via Scheduled Task (Recommended)
+The scheduled task runs every 10 minutes and automatically processes pending transcripts one at a time.
+
+### Manual Invocation
 ```bash
-N5: meeting-process <transcript-path> [--type TYPE] [--stakeholder STAKEHOLDER]
+# Process the next pending transcript
+command 'meeting-process'
 ```
 
-## Examples
+## Integration Points
 
-```bash
-# Process a sales meeting
-N5: meeting-process "path/to/transcript.txt" --type sales --stakeholder business_partner
+- **Upstream**: `transcript-auto-processor` creates request files in the inbox
+- **Downstream**: 
+  - `meeting-approve` displays generated blocks for review
+  - `deliverable-generate` uses blocks to create deliverables
+  - `follow-up-email-generator` consumes block data for email drafting
 
-# Process a community partnerships meeting
-N5: meeting-process "path/to/transcript.txt" --type community_partnerships
+## Files and Directories
 
-# Process with just the transcript (will infer type)
-N5: meeting-process "path/to/transcript.txt"
-```
+### Input
+- `N5/inbox/meeting_requests/*.json` - Pending processing requests
 
-## What Gets Generated (Phase 1)
+### Output
+- `N5/records/meetings/{meeting_id}/` - Meeting directory with all blocks
+- `N5/inbox/transcripts/{meeting_id}.txt` - Downloaded transcript
+- `N5/inbox/meeting_requests/processed/` - Completed requests
 
-**Essential Intelligence:**
-- `REVIEW_FIRST.md` - Executive dashboard with summary, action items, decisions
-- `content-map.md` - Extraction details, parameters, confidence scores
-- `RECOMMENDED_DELIVERABLES.md` - Smart suggestions for what to generate
-- `action-items.md` - Critical action items
-- `decisions.md` - Key decisions made
-- `stakeholder-profile.md` - Participant information
-- `_metadata.json` - Processing metadata
+### Templates
+- `N5/prefs/block_templates/internal/` - Templates for internal meetings
+- `N5/prefs/block_templates/external/` - Templates for external meetings
 
-**Time:** ~30 seconds
+## Related Commands
 
-**Notification:** SMS sent with summary and recommendations
-
-## Generate Additional Deliverables (Phase 2)
-
-After reviewing Phase 1 outputs, request deliverables:
-
-```bash
-# Generate specific deliverables
-N5: generate-deliverables <meeting-folder> --deliverables blurb,follow_up_email
-
-# Generate all recommended
-N5: generate-deliverables <meeting-folder> --recommended
-
-# Generate everything
-N5: generate-deliverables <meeting-folder> --all
-```
-
-## Available Deliverables (on-demand)
-
-- `blurb` - Company introduction for external sharing
-- `follow_up_email` - Draft email to participants
-- `one_pager_memo` - Executive summary document
-- `proposal_pricing` - Pricing proposal (if applicable)
-
-## Meeting Types
-
-- `sales` - Sales/business development meetings
-- `fundraising` - Investor meetings
-- `community_partnerships` - Community/partnership discussions
-- `coaching` - Career coaching sessions
-- `internal` - Internal team meetings
-
-## Implementation
-
-**Script:** `/home/workspace/N5/scripts/meeting_intelligence_orchestrator.py`
-
-**Required Arguments:**
-- `--transcript_path PATH` - Path to meeting transcript file (.txt, .md, .docx)
-- `--meeting_id ID` - Unique meeting identifier (e.g., "meeting-20251010-1400")
-
-**Optional Arguments:**
-- `--essential_links_path PATH` - Path to essential links JSON (default: `/home/workspace/N5/prefs/communication/essential-links.json`)
-- `--block_registry_path PATH` - Path to block registry JSON (default: `/home/workspace/N5/prefs/block_type_registry.json`)
-- `--use-simulation` - Use simulated LLM responses for testing
-
-**Output Directory:** `/home/workspace/N5/records/meetings/{meeting_id}/`
-
-The script:
-1. Loads transcript and configuration files (block registry, essential links)
-2. Creates extraction request files for LLM processing
-3. Generates intelligence blocks based on registry definitions
-4. Writes structured outputs to meeting directory
-5. Logs processing details for debugging
-
-**Direct Usage Example:**
-```bash
-# Generate meeting ID
-MEETING_ID="meeting-$(date +%Y%m%d-%H%M%S)"
-
-# Run orchestrator
-python3 /home/workspace/N5/scripts/meeting_intelligence_orchestrator.py \
-  --transcript_path "path/to/transcript.txt" \
-  --meeting_id "$MEETING_ID"
-
-# View outputs
-ls -la /home/workspace/N5/records/meetings/$MEETING_ID/
-```
-
-**Testing Mode:**
-```bash
-# Use simulation mode (no real LLM calls)
-python3 /home/workspace/N5/scripts/meeting_intelligence_orchestrator.py \
-  --transcript_path "test_transcript.txt" \
-  --meeting_id "test-meeting" \
-  --use-simulation
-```
-
-## Key Features
-
-- ✅ **Fast initial processing** (~30 seconds vs 2-3 minutes)
-- ✅ **Smart recommendations** based on meeting content
-- ✅ **Validated extractions** (no more wrong context)
-- ✅ **Confidence scores** for all inferences
-- ✅ **SMS notifications** with actionable summary
-- ✅ **On-demand deliverables** (generate only what you need)
+- `meeting-intelligence-orchestrator` (alias: `mio`) - Direct invocation with explicit parameters
+- `meeting-approve` - Review and approve generated blocks
+- `deliverable-generate` - Generate deliverables from blocks
+- `transcript-ingest` - Manual transcript ingestion
 
 ## Notes
 
-- Old workflow (v1) has been deprecated
-- All meetings now use the phased approach
-- Deliverables are generated fast (~30-60s) when requested
-- System learns from your choices to improve recommendations
+- Processing one transcript at a time ensures predictable resource usage and prevents context window overflow
+- FIFO ordering ensures meetings are processed in the order they were received
+- The TemplateManager provides structure and guidance, but Zo performs the actual content extraction
+- Templates are customized based on stakeholder classification to generate relevant intelligence blocks

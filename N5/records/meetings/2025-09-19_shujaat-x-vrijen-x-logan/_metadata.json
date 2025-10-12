@@ -1,0 +1,32 @@
+{
+  "meeting_id": "2025-09-19_shujaat-x-vrijen-x-logan",
+  "processed_date": "2025-10-11T03:08:00Z",
+  "transcript_path": "/home/workspace/N5/inbox/transcripts/2025-09-19_shujaat-x-vrijen-x-logan.txt",
+  "stakeholder_classification": "external",
+  "participants": ["Vrijen Attawar", "Logan Currie", "Shujaat Ahmad"],
+  "blocks_generated": [
+    "REVIEW_FIRST",
+    "action-items",
+    "decisions",
+    "key-insights",
+    "stakeholder-profile",
+    "follow-up-email"
+  ],
+  "templates_used": [
+    "REVIEW_FIRST",
+    "action-items",
+    "decisions",
+    "key-insights",
+    "stakeholder-profile",
+    "follow-up-email"
+  ],
+  "processing_method": "zo_native_llm",
+  "subprocess_calls": 0,
+  "processing_duration_seconds": 60,
+  "granola_diarization": false,
+  "classification_confidence": "medium",
+  "source": "google_drive",
+  "original_filename": "Shujaat x Vrijen x Logan-transcript-2025-09-19T19-20-31.336Z.docx",
+  "gdrive_id": "11tCN7cYjCiukW535jOpyI1lylwb3GRJt",
+  "architecture_version": "2.0_command_based"
+}

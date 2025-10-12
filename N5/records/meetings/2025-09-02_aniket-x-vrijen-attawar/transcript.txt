@@ -1,0 +1,640 @@
+00:25
+Speaker 1
+Sam. Hey.
+
+01:00
+Speaker 2
+Hello. Hello.
+
+01:02
+Speaker 1
+How's it going? Sorry about that.
+
+01:06
+Speaker 2
+Good, good. No worries.
+
+01:08
+Speaker 1
+How are you? How are you?
+
+01:10
+Speaker 2
+Good, Doing good.
+
+01:11
+Speaker 1
+How are you? Doing well. Doing well, yeah. Was on a little bit of a
+Labor Day vacation with family and sort of everyone's back home now,
+which is lots of chaos, as you might imagine.
+
+01:27
+Speaker 2
+How did you go? Did you travel somewhere?
+
+01:31
+Speaker 1
+We went pretty close by. We went to Monroe, New York. I don't know if
+you're in the New York area.
+
+01:38
+Speaker 2
+No, I'm in Seattle.
+
+01:40
+Speaker 1
+Nice. Okay. Yeah, Seattle's. Seattle's awesome. I have some good friends
+that have lived there. Live there currently. Currently.
+
+01:49
+Speaker 2
+Nice. It sounds like a good, relaxing family. Long weekend for you?
+
+01:57
+Speaker 1
+Yeah, I mean, relaxing enough, I will say, you know, somewhere between
+relaxing and not, but it was a good time nonetheless. It's great to.
+It's great to be chatting, man. I was just checking out your site and
+sort of the company, but yeah, it's cool to meet you and remind me again
+what was the context of us connecting? It was Andy that put us in touch.
+
+02:21
+Speaker 2
+Right? That's right.
+
+02:23
+Speaker 1
+That's right, yeah. How'd you get to know Andy?
+
+02:29
+Speaker 2
+I think we connected on LinkedIn. I haven't. It mostly was from. I think
+were commenting on the same posts and then we exchanged dms and then we
+just connected over like a Zoom call.
+
+02:53
+Speaker 1
+Gotcha. Gotcha. Yeah, he's a. He's a really good guy. He's been. He's
+been a big sort of friend over the last few months, I suppose, of
+getting to know him and it's been cool to have him at the roundtables as
+well.
+
+03:09
+Speaker 2
+Yeah, yeah, we had a good. We had a good conversation. He's. He's in the
+same or similar enough space and it was. It was good. Yeah, I think he.
+He mentioned he do an intro and it'd be. It'd be great for me to
+connect. I was like, yeah, always open to intros.
+
+03:33
+Speaker 1
+So. Yeah, no, that's awesome. Well, tell me a little bit more about
+yourself. I think it's always more meaningful or informative to have the
+founders sort of like paint the vision themselves versus what's on the
+website, which I know can vary from time to time.
+
+03:51
+Speaker 2
+Oh, yeah, yeah. And our website, we haven't updated it in a bit
+actually. So my background, I. I started. Actually I've been. I've
+worked in startups for a bit and this is where I wanted to do something
+by myself and so I set out and set out with a few different ideas. And
+this one was the one that got some organic traction. And so I decided
+I'm going to double down on this. And the problems that we solve for, we
+solve in the recruiting and talent acquisition space. So if you're a
+recruiter, we help you source people, source candidates.
+
+04:39
+Speaker 1
+And I'm sorry, I've been here, by the way, the whole time. I just
+realized my camera has been off, so. So my apologies, I. Oh, no worries,
+no worries.
+
+04:48
+Speaker 2
+Oh, it was on. It just went off for a bit. I, I thought, I don't know,
+maybe you were like coughing or sneezing or getting a sip of water or
+something.
+
+04:56
+Speaker 1
+Yeah, yeah, my cat, I think, jumped over me and sort of must have
+pressed the bar.
+
+05:06
+Speaker 2
+Yeah, it was on. It was on and then it just went off for a bit and then.
+Yeah, all good. So, yeah, that's what we do for recruiters and then for
+candidates. We help them stand out from the crowd by giving them a way
+to tell their story using video and present all of their experience in
+one single profile, whether they're technical or non technical. If
+you're technical, your GitHub and whatever else you might have done,
+your blogs, et cetera, it's all together in one place that we summarize
+and make it presented in a manner that's easy for a recruiter to digest
+super quickly with the goal of landing this person a interview.
+Basically from that point on, they're kind of on their own.
+
+06:06
+Speaker 1
+Gotcha. Gotcha. And who are the. How do you plan on monetizing or what's
+the sort of goal as far as who to charge and how to. How much to charge?
+
+06:18
+Speaker 2
+Charge? Yeah, the, the paying customers end up being recruiters, the
+candidates. That's not really a paid thing. It's mostly to help them
+out. The paid customers are. Yeah, recruiters. It. By helping save them
+hours and days in sourcing candidates and vetting them and saving them
+the pain from like fake candidates and fake job applications or mass
+applications is basically a cheap way for them to buy back time and
+guarantees that what they're spending their time on isn't going to be
+throwaway work.
+
+07:06
+Speaker 1
+Right, right, Absolutely. I mean that's very much the need that we have
+also observed and sort of identified as being the one to treat. Right.
+There is a lot of BS out there. There's a lot of sort of froth out there
+and not the kind as far as employers are concerned. Yeah, I think for
+our part, you know, you could describe our Product Very similarly, our
+goal is to more so focus on the strength of our matching system and sort
+of rely on that as the distinguisher between us and sort of other
+solutions because we do feel very confident that the average career span
+user can be matched more effectively through our system. And that's.
+It's, it's a sort of technological play at the end of the day.
+
+07:59
+Speaker 2
+Yeah, yeah, that makes sense. And so for you, it seems you focus more on
+the candidate experience, is that.
+
+08:08
+Speaker 1
+That's hard to say. That's right. Yeah, we focus more on the candidate
+experience and believe that helping the candidate is the main way to
+sort of help the. Yeah, help the employer.
+
+08:21
+Speaker 2
+Yeah, I, I totally empathize with that because there's. And I think the
+way that you're doing it is actually respectful of the recruiter's time
+and energy.
+
+08:39
+Speaker 1
+Thank you.
+
+08:41
+Speaker 2
+Yeah, because I don't think you don't do like we'll go and mass apply to
+like 500 jobs for you.
+
+08:50
+Speaker 1
+No, not at all. I'm pretty against sort of mass applying myself. I think
+it's more about a better fit. And a lot of people run away from that.
+Yeah, and a lot of people run away from that because the unit economics
+of IT are not enviable. But I firmly believe that is what the market
+wants.
+
+09:13
+Speaker 2
+Yeah, exactly. And I think that's the thing is there are a bunch of the
+other tools that will like go and apply to whatever, hundreds of jobs
+for you on your behalf. And it's actually the reason why the hiring
+ecosystem is a big mess right now is through mass applications. You've
+probably seen like apply all.com.
+
+09:43
+Speaker 1
+Oh yeah, no, I'm actually speaking to a few auto apply companies right
+now just to sort of keep lines of communication open. But yeah, I think
+they're a menace. I really do, you know. Yeah, I think they suck.
+
+10:02
+Speaker 2
+So this. Tell me then, how do you. So once users come and they create
+their profile on your platform, on career span there, how do they
+benefit from doing that? Like do you find jobs that are like better
+matches for them or do you. Is there a way for recruiters to go on and
+say, hey, give me these kind of candidates?
+
+10:41
+Speaker 1
+We. That is part of the question of what we're building out. I think we
+could very easily offer it to recruiters, but I think for now the
+priority is to go to companies first and give them a alternate avenue to
+almost give them an alternate avenue to recruiters themselves by being
+able to get like a list of candidates that is well Curated and that they
+can sort of leverage right away, which is only really possible with the
+expanded data set that we collect through the. Through the coaching.
+Coaching.
+
+11:23
+Speaker 2
+Yeah, yeah, I got it. That makes sense. That, that makes sense.
+
+11:31
+Speaker 1
+Yeah.
+
+11:32
+Speaker 2
+You're targeting more like a hiring manager, basically.
+
+11:37
+Speaker 1
+Effectively. Yeah, we're. We're offering to put sort of like.
+
+11:41
+Speaker 2
+A founder who's looking for like a dev or somebody like that.
+
+11:46
+Speaker 1
+Precisely. Yeah. That's one of our ICPs. So we're still testing out.
+There's a couple of different. Different specific customer Personas that
+we could go for. I think what's been promising is that the. Yeah, the
+overall hypothesis, we've only been at it for maybe three weeks or so,
+but it's coming together quite well. We have a bunch of companies that
+are already posting exclusively on Careerspan and we've seen almost like
+us, like 30 to 50% improvement in engagement from folks that. Yeah. That
+get these tailored job recommended to them. So it's really awesome to
+see that, like, okay, we just need to connect these little pieces and
+we're there.
+
+12:37
+Speaker 2
+Nice. Yeah, that makes sense. That makes sense.
+
+12:42
+Speaker 1
+Yeah. It makes sense to try to start a coexist in the ecosystem with all
+these recruiters and just offer something they can, which is speed.
+
+12:52
+Speaker 2
+Yeah, yeah, that. I think the current market is interesting. Recruiters
+are taking. And they're no longer taking 25%, but they're still taking
+20% of like, first year's base pay. Right. To place people. And it still
+takes a lot. And it's like multiple months to do that.
+
+13:18
+Speaker 1
+Yeah, it's a lot. With hiring going down and smaller teams becoming the
+norm, I think they're going to start getting starved. And so I think it
+makes sense to sort of try to rise above the fray. At least that's our
+perspective on things. Obviously it could go many different ways, but I
+do think recruiters in general are in a tough spot.
+
+13:48
+Speaker 2
+Yeah, yeah. I mean, there's been plenty of layoffs there too.
+
+13:53
+Speaker 1
+Yeah. But that's where tools that sort of like, make their lives easier
+can really shine, you know, where like, in these sort of, like, market
+conditions, there's more openness to new shit and there's more openness
+to, like, changing your process than there ever is. So I reckon there's.
+There's a lot of positive there.
+
+14:16
+Speaker 2
+Yeah, yeah, yeah. No, absolutely. Absolutely, man. Nice. How long, how
+long have you been on this overall?
+
+14:26
+Speaker 1
+We've been on this grind for about two and a half years now.
+
+14:32
+Speaker 2
+Nice. Wow.
+
+14:33
+Speaker 1
+Yeah, yeah, it's been a long one. It's been a lot of. It's been a long
+time. It feels.
+
+14:41
+Speaker 2
+Yeah. Wow. Yeah, it's been quite a bit then.
+
+14:45
+Speaker 1
+Yeah, no, absolutely. I think we've built out a really great consumer
+product and we're getting sort of consumer engagement and retention
+numbers, albeit on a free product.
+
+14:59
+Speaker 2
+Yeah.
+
+15:00
+Speaker 1
+But the, you know, you hit the nail on the head. We don't want to charge
+the candidate. It doesn't make sense to try to like squeeze more money
+out of them. I think it's more important to. What do you call it? To.
+Yeah. To get the employers to sort of shell out and ideally even split
+that revenue with other people in the chain.
+
+15:27
+Speaker 2
+Yeah, yeah, I think there is.
+
+15:31
+Speaker 1
+There.
+
+15:32
+Speaker 2
+Is definitely a consumer play. Like I've had people come up and be like,
+yeah, I'll pay you if you can do X. Like help me achieve X outcome.
+Right. The, the challenge is there has to be a pretty. Like the consumer
+has to see that, like there has to be a very clear line that you can
+draw.
+
+15:54
+Speaker 1
+Yeah.
+
+15:55
+Speaker 2
+Not, not through like some indirect, like, okay, it's going to help you,
+but it's going to take like a month for you to see that. Then that
+becomes tricky.
+
+16:06
+Speaker 1
+Exactly.
+
+16:07
+Speaker 2
+And that's why like apply all. And all of these can immediately start
+charging and actually charge a lot of money. Because whether or not it
+gives you like gets your job, it gets like, it gets that checkbox. Hey,
+I applied to like 50 jobs for you.
+
+16:23
+Speaker 1
+Yeah.
+
+16:24
+Speaker 2
+The person. Okay, all right, here's 50 bucks. Right.
+
+16:26
+Speaker 1
+It gives you the dopamine hit. It gives you the dopamine hit that you're
+craving. Your analysis is completely correct. And I think that is
+precisely why we did not want to do a consumer product. Because what
+were coming to people with was self reflection. Right. Sort of like
+yourself. I'm coming to you with something that's good for you and it is
+such a challenge to sort of crack that. Like it's good for you, but the
+pain is also immediate enough that you're willing to sort of act on it.
+Right. And that's that small gap is where all the difference lies in
+this line of business.
+
+17:02
+Speaker 2
+Yeah. Yeah. Nice, man. Well, this is good. Have you raised funding?
+
+17:11
+Speaker 1
+Yeah, we raised. We re. We raised a pre seed last year.
+
+17:17
+Speaker 2
+Nice.
+
+17:17
+Speaker 1
+Yeah. So that was about a million and we've taken on another maybe 200k
+from our existing investors.
+
+17:27
+Speaker 2
+Nice.
+
+17:28
+Speaker 1
+Yeah. But we're hoping to get some sizable revenue through the door. In
+the next two months. So trying to ride on that for now.
+
+17:36
+Speaker 2
+Nice. Nice. Good. That's great, man. Like, yeah. In this current state,
+being able to raise is not. It's not easy. It is not easy.
+
+17:46
+Speaker 1
+It's rough out there. It's rough out there. But, you know, luckily, I
+think we. We have original investors that are willing to believe in us,
+and we also have a good amount of momentum on our side. I think the
+question is just going to be how do we really turn that into something
+that is. Yeah. More revenue and less likely.
+
+18:09
+Speaker 2
+Yeah, yeah, yeah, yeah. I. I think that's. That's the interesting
+question. And it's a lot. There's a bunch that is going on in this
+space, though. I think it's. There's a lot of, like, video interviewing
+and will help you for inbound, like, rank your resumes, which I think is
+fine.
+
+18:47
+Speaker 1
+But give me your honest opinion. Is it fine?
+
+18:53
+Speaker 2
+It's fine.
+
+18:54
+Speaker 1
+It's terrible.
+
+18:55
+Speaker 2
+I mean, it's fine as in if that's. Because the thing is, like, it'll
+take anyone who has, like, you don't even need to be technical, Right?
+
+19:06
+Speaker 1
+Totally.
+
+19:07
+Speaker 2
+You can do this in lovable in an hour, right. You can say, hey, go build
+me this thing. And what I want to do is I want to, like, upload a bunch
+of resumes or even in cursor, say, like, I want to give it, write a
+script, and I'll dump a bunch of, like, resumes in a folder and go parse
+and rank and score and do all of that shit for me and then dump it in,
+like, a spreadsheet. Or you could even say, like, go dump it in my ats,
+or, like, go update my. And I'll build that script for you.
+
+19:40
+Speaker 1
+I think. I think without like, catching my own product in the blast
+radius of this statement necessarily, a lot of it is just, like, voodoo,
+right? Like, realistically, especially if you do it. And I do think
+there exists a spectrum, like, we spent a good amount of time and a lot
+of committed expertise towards the product. I think anything you can
+spin up in that point of time, the failure rate is going to be so high
+that employers don't have a lot of patience. They need it to hit, and
+they need it to hit reliably right away is sort of the. The ideal.
+
+20:19
+Speaker 2
+Yeah.
+
+20:20
+Speaker 1
+And I think it's very hard to, you know, it's very easy to impress a
+founder once, but to do that week in, week out with what you deliver is
+much harder. So that's a little bit where the Wariness with founders
+comes in. We are looking at talent professionals and sort of, you know,
+teams of three or smaller, two or smaller where there's no dedicated
+person that sort of job hunts. That's where we can sort of come in. But
+I mean there's also a, a case to be made for like sourcing from other
+platforms. So I do want to keep that window sort of open.
+
+21:02
+Speaker 1
+If you know there's enough sort of fruitful revenue then we can abso
+share that at some point and instead have you know, at least like co
+direct folks to Career span as well as part of getting recruiting sort
+of fees from. From us instead of recruiter.
+
+21:22
+Speaker 2
+Yeah, I think though I, I think we are on the same page there. This, I
+think space isn't going to consolidate for a bit this the. For the same
+reasons that there are so many recruiting agencies. Like pick any zip
+code, you probably might find like half a dozen, like literally any and
+if you're in a dense enough city, maybe you might find well over a
+dozen. Right. And, and they're all, they all exist. Maybe they're
+hurting a bit right now, but they've survived for decades and so I think
+they'll continue to do that, which I think is the same situation I think
+that we're going to be in and the ones.
+
+22:18
+Speaker 1
+That.
+
+22:21
+Speaker 2
+Band together have a higher chance as opposed to like going at it solo
+because even in the recruiting space people share their candidate flows
+and people share their sourcing stuff for all of the same reasons.
+
+22:46
+Speaker 1
+Right, Exactly. If you can guaranteed make some money that's like
+smaller, you know, why not. So I think there's, there is merit in
+streamlining that process even. But yeah, to a large extent we want to
+be able to connect employers directly to that sort of talent pool and we
+want to give the talent pool a good incentive to keep their stuff up to
+date with engaging with Career Span is. So I think it has all the
+ingredients for sort of creating that flywheel that lends itself to
+employers preferentially posting on Career Span first.
+
+23:25
+Speaker 2
+Yeah, that makes sense. I might have some job wrecks come up. Is there a
+way to search for me or do I need to like send you a wreck and then you
+can search. Is there a like self serve?
+
+23:48
+Speaker 1
+There's no self serve for job racks yet. If you just send me a JD or
+send me as many JDs as you'd like within the same day, I can see which
+candidates are available and I can give them to you in a sort of
+anonymized on, like an honor system sort of capacity.
+
+24:06
+Speaker 2
+Sure, sure.
+
+24:06
+Speaker 1
+Yeah, yeah. And you can take a look at them and essentially see, hey,
+are these folks that we can. We can sort of pass along and. And sort of
+collect some revenue along the way. So, yeah, I'm happy to run that by.
+I think from our perspective, we would want to be able to handle the
+warm intro to you or to the sort of employer. Yeah, that's part of our
+value prop. And I think it would also be good to be able to. Oh, damn
+it. Just lost that thought. Anyway, the. The note taker is sort of
+going. I'll. I'll make sure that the. The details sort of get captured
+in the. In the post game, but. Yeah, that sounds good to me. If you can
+just send me those job racks, I'll be able to search up candidates for
+you pretty quickly.
+
+24:51
+Speaker 1
+Pretty quickly. How many do you expect to be able to send? Because I can
+even do a few if you have any on hand. Just to show you the caliber of
+candidates that come out, we sort of specialize in product.
+
+25:03
+Speaker 2
+Okay. I. I don't have the JD yet, and that's why I was saying, like,
+it'll take me a bit, but I'm looking for data bricks, like data
+engineers with experience and data bricks.
+
+25:16
+Speaker 1
+I believe there are a few of those in our. In our database. Whenever you
+can, just send me the job rack and I'll do it again.
+
+25:24
+Speaker 2
+Okay, got it. Yeah. And do you typically look at like us, or are you
+looking at global?
+
+25:31
+Speaker 1
+We are honestly open to going wherever someone will pay us, but I think
+the bulk of our candidates and our strengths will most likely be us.
+
+25:39
+Speaker 2
+Okay. Okay.
+
+25:40
+Speaker 1
+Yeah.
+
+25:41
+Speaker 2
+Okay. So when I have a jd, I'll. I'll shoot it your way and then let me
+know and we can go at it from there.
+
+25:51
+Speaker 1
+Sounds good. Sounds good.
+
+25:53
+Speaker 2
+Sounds good. All right, man. It was great chatting with you.
+
+25:56
+Speaker 1
+Yeah.
+
+25:57
+Speaker 2
+Have a good rest of your day.
+
+25:58
+Speaker 1
+Take care.
+
+25:58
+Speaker 2
+Take care. Bye.
+
+25:59
+Speaker 1
+Bye.
