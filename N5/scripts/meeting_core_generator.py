@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# ⚠️  DEPRECATED: This template-based script has been superseded by the Registry System.
+# ⚠️  See: N5/prefs/block_type_registry.json (v1.3+) and N5/commands/meeting-process.md (v4.0.0+)
+# ⚠️  Preserved for historical reference only.
+#
+#!/usr/bin/env python3
 """
 Meeting Core Generator
 Generates 7 core meeting intelligence blocks based on internal/external classification.
@@ -16,7 +21,8 @@ from pathlib import Path
 sys.path.insert(0, '/home/workspace/N5/scripts/utils')
 from stakeholder_classifier import classify_meeting, get_participant_details
 
-TEMPLATES_DIR = Path("/home/workspace/N5/prefs/block_templates")
+# DEPRECATED: Templates moved to Archive/block_templates_deprecated_2025-10-12
+TEMPLATES_DIR = Path("/home/workspace/N5/prefs/Archive/block_templates_deprecated_2025-10-12/block_templates")
 METADATA_SCHEMA = Path("/home/workspace/N5/schemas/meeting-metadata.schema.json")
 
 

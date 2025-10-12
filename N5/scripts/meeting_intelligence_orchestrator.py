@@ -1,21 +1,28 @@
 """
 Meeting Intelligence Orchestrator - Template Manager
 
-This module serves as a TEMPLATE MANAGER and DATA STRUCTURE PROVIDER ONLY.
+⚠️  DEPRECATED: This template-based approach has been superseded by the Registry System.
+⚠️  See: N5/prefs/block_type_registry.json (v1.3+) and N5/commands/meeting-process.md (v4.0.0+)
+⚠️  Preserved for historical reference only.
+
+This module served as a TEMPLATE MANAGER and DATA STRUCTURE PROVIDER ONLY.
 It does NOT call LLMs or perform content extraction.
 
-Purpose:
+Old Purpose:
 - Load appropriate templates based on stakeholder classification
 - Provide data structures for block definitions
 - Manage file paths and meeting directory structure
 - Load essential links and registry data
 
 The LLM extraction work is done by Zo directly when invoked via:
-- command 'meeting-process'
+- command 'meeting-process' (now uses registry directly)
 - Scheduled tasks
 - Manual invocation
 
-Architecture:
+New Architecture (2025-10-12):
+  Processing Request → Load Registry → Zo Analyzes → B##_BLOCKNAME.md files generated
+
+Old Architecture (Deprecated):
   Python Script → Metadata/Templates → Zo invoked → Zo processes directly
 """
 
@@ -26,7 +33,8 @@ from pathlib import Path
 
 BLOCK_REGISTRY_DEFAULT = "/home/workspace/N5/prefs/block_type_registry.json"
 ESSENTIAL_LINKS_DEFAULT = "/home/workspace/N5/prefs/communication/essential-links.json"
-BLOCK_TEMPLATES_DIR = "/home/workspace/N5/prefs/block_templates"
+# DEPRECATED: Templates moved to Archive/block_templates_deprecated_2025-10-12
+BLOCK_TEMPLATES_DIR = "/home/workspace/N5/prefs/Archive/block_templates_deprecated_2025-10-12/block_templates"
 LOG_DIR = "/home/workspace/N5/logs"
 
 

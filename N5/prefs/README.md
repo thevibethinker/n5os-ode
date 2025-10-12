@@ -11,7 +11,7 @@
 
 **Primary entry point:**
 ```
-Load: file 'N5/prefs/index.md'
+Load: file 'N5/prefs/prefs.md'
 ```
 
 This lightweight index (~1-2K tokens) contains:
@@ -34,7 +34,7 @@ This lightweight index (~1-2K tokens) contains:
 
 ```
 N5/prefs/
-├── index.md                      ← Start here
+├── prefs.md                      ← Start here
 ├── README.md                     ← This file
 ├── naming-conventions.md         
 ├── engagement_definitions.md     
@@ -71,7 +71,7 @@ Each module has single responsibility, making it easy to find and update specifi
 
 ### 2. Selective Loading
 Load only what's needed for the current context:
-- Base: index.md (~1-2K tokens)
+- Base: prefs.md (~1-2K tokens)
 - Add modules as needed (~1K each)
 - 60-70% reduction in token overhead vs. monolithic
 
@@ -105,7 +105,7 @@ Conflicts resolved through explicit precedence order (see `operations/resolution
 
 ## Critical Always-Load Rules
 
-These rules apply universally (from `index.md`):
+These rules apply universally (from `prefs.md`):
 
 ### Safety
 - Never schedule without explicit consent
@@ -170,6 +170,13 @@ Preferences reference (not duplicate) these stable knowledge files:
 
 ## Migration from v1
 
+If you're coming from the old monolithic system:
+
+### What Changed
+- **Entry point:**
+  - Old: `Load file 'N5/prefs/prefs.md'` (650-line monolith)
+  - New: `Load file 'N5/prefs/prefs.md'` (284-line index)
+
 **Original file preserved in Git history**
 
 **Historical migration details:** See `file 'N5/prefs/Archive/MIGRATION_GUIDE.md'`
@@ -178,13 +185,21 @@ Preferences reference (not duplicate) these stable knowledge files:
 
 **Rollback available:** Copy v1_backup to prefs.md if needed
 
+```bash
+# View the v3 entry point
+cat N5/prefs/prefs.md
+
+# If needed, restore historical versions from Git:
+git log --all --full-history -- N5/prefs/prefs.md
+```
+
 ---
 
 ## Next Steps for System Update
 
 1. **Update system prompt reference:**
    - Old: `Load file 'N5/prefs/prefs.md'`
-   - New: `Load file 'N5/prefs/index.md'`
+   - New: `Load file 'N5/prefs/prefs.md'`
 
 2. **Add new modules to Git tracking:**
    ```bash
@@ -193,7 +208,7 @@ Preferences reference (not duplicate) these stable knowledge files:
    git add N5/prefs/communication/*.md
    git add N5/prefs/integration/*.md
    git add N5/prefs/knowledge/*.md
-   git add N5/prefs/index.md
+   git add N5/prefs/prefs.md
    git add N5/prefs/README.md
    git add N5/prefs/MIGRATION_GUIDE.md
    ```
