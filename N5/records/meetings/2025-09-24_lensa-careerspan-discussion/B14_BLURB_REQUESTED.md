@@ -1,3 +1,0 @@
-# B14: Blurb (External Intro)
-
-Careerspan helps high-signal professionals get matched to roles they actually want by turning their career stories into structured signal. We partner with organizations to bring those candidates jobs they’ll care about, with engagement rates that reflect the fit. For distribution partners, we start focused (e.g., product roles in key geos) and expand based on measured ROI.

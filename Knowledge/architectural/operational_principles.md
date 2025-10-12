@@ -18,6 +18,12 @@ These principles are sourced on every run. They define how Zo should process inf
 - Do not load additional prefs/voice files. If a third is needed, stop and ask.
 - Order of precedence for conflicts: Operational Principles > Ingestion Standards > ephemeral instructions.
 
+## 0.1) LLM-First for Analysis and Synthesis
+- When solving problems, analyzing content, or generating insights, default to LLM reasoning over templated/scripted approaches.
+- Scripts and templates are for technical execution (data processing, API calls, deterministic computation), not for analysis or creative problem-solving.
+- If the task involves understanding, evaluating, or synthesizing information, use LLM capabilities directly rather than creating fill-in-the-blank frameworks.
+- Rationale: LLMs provide nuanced analysis and insight; templates provide mechanical structure. Choose the tool that matches the task.
+
 ## 1) Human-Readable First
 - Generate human-readable outputs before any machine format.
 - JSON skeletons are derived from the human text, not vice versa.

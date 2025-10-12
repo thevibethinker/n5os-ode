@@ -1,0 +1,17 @@
+{
+  "last_generated": "2025-10-12T18:00:00Z",
+  "generation_history": [
+    {
+      "date": "2025-10-12",
+      "week_start": "2025-10-14",
+      "week_end": "2025-10-20",
+      "events_included": 13,
+      "emails_analyzed": 5,
+      "profiles_updated": 0,
+      "status": "success_test_run",
+      "digest_path": "N5/digests/weekly-summary-2025-10-14.md",
+      "notes": "Full API integration test - APIs validated, digest generated"
+    }
+  ],
+  "next_scheduled": "2025-10-13T20:00:00Z"
+}

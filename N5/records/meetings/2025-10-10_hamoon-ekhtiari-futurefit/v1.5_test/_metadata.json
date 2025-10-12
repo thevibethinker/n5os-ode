@@ -1,0 +1,41 @@
+{
+  "test_version": "v1.5",
+  "registry_version": "1.5",
+  "command_version": "5.1.0",
+  "test_date": "2025-10-12",
+  "meeting_date": "2025-10-10",
+  "stakeholder_type": "FOUNDER",
+  "blocks_generated": 13,
+  "blocks_list": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B13_PLAN_OF_ACTION",
+    "B14_BLURBS_REQUESTED",
+    "B24_PRODUCT_IDEA_EXTRACTION",
+    "B27_KEY_MESSAGING"
+  ],
+  "required_blocks": 7,
+  "high_priority_blocks": 6,
+  "conditional_blocks": 0,
+  "new_features_tested": [
+    "CRM integration in B08",
+    "Howie V-OS tags in B08 and B26",
+    "Stakeholder research (B31)",
+    "Merged quotes + questions (B21)",
+    "Follow-up email in B25",
+    "Momentum section in B13",
+    "Split blurbs (B14) and messaging (B27)"
+  ],
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/hamoon-ekhtiari.md",
+  "enrichment_priority": "HIGH",
+  "howie_tags": "[LD-NET] [GPT-E] [A-2]",
+  "test_notes": "Full FOUNDER stakeholder processing with all v1.5 enhancements. Validates block consolidation, CRM integration, and Howie harmonization."
+}

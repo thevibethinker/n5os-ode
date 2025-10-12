@@ -1,0 +1,60 @@
+{
+  "thread_id": "con_RC9h1hAcnQcIu9bn",
+  "archived_date": "2025-10-12",
+  "title": "weekly-summary-api-test-production-validation",
+  "executive_summary": {
+    "purpose": "Create and organize document artifacts for weekly-summary-api-test-production-validation",
+    "outcome": "Created 2 artifacts (2 document(s)) totaling 20.5KB"
+  },
+  "key_events": [
+    {
+      "description": "Completed general work session",
+      "rationale": "Key decision made during conversation",
+      "type": "decision"
+    },
+    {
+      "description": "Created focused set of 2 artifact(s)",
+      "rationale": "Key decision made during conversation",
+      "type": "decision"
+    }
+  ],
+  "final_state": {
+    "summary": "Created 2 artifacts during conversation",
+    "artifacts": [
+      {
+        "filename": "dedup_sources.txt",
+        "description": "Document file created during conversation",
+        "type": "document",
+        "size_bytes": 17377,
+        "created_at": "2025-10-12T18:04:07.142976+00:00",
+        "modified_at": "2025-10-12T18:04:07.142976+00:00"
+      },
+      {
+        "filename": "existing_gdrive_ids.txt",
+        "description": "Document file created during conversation",
+        "type": "document",
+        "size_bytes": 3570,
+        "created_at": "2025-10-12T18:04:58.483217+00:00",
+        "modified_at": "2025-10-12T18:04:58.483217+00:00"
+      }
+    ]
+  },
+  "primary_objective": "Review work completed, determine next priorities",
+  "next_steps": [
+    {
+      "action": "Review work completed, determine next priorities",
+      "details": "Primary continuation objective from AAR",
+      "priority": "H"
+    }
+  ],
+  "aar_version": "2.2",
+  "telemetry": {
+    "artifacts_created": 2,
+    "total_size_bytes": 20947,
+    "aar_generated_by": "Vrijen The Vibe Thinker (Zo)",
+    "aar_generation_method": "smart_extraction"
+  },
+  "metadata": {
+    "ended_at": "2025-10-12T18:21:09.686388+00:00"
+  }
+}

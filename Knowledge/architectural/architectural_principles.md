@@ -1,93 +1,166 @@
 ---
-date: "2025-09-21T00:00:00Z"
-last-tested: "2025-09-21T00:00:00Z"
-generated_date: "2025-09-21T00:00:00Z"
-version: 1
+date: "2025-10-12T00:00:00Z"
+version: 2.2
 category: core
 priority: high
 related_files: "['N5/knowledge/ingestion_standards.md']"
 ---
-# N5 Architectural Principles
+# N5 Architectural Principles Index
 
-These principles are sourced on every run. They define how Zo should process information, what to load into context, and how to prevent data loss and drift.
+**Version 2.2 - Modular Structure**
 
-## 0) LLM Sourcing Directive (Rule-of-Two)
-- Always load at most two preference/config files in context:
-  1. `file 'N5/knowledge/ingestion_standards.md'`
-  2. `file 'N5/knowledge/architectural_principles.md'`
-- Do not load additional prefs/voice files. If a third is needed, stop and ask.
-- Order of precedence for conflicts: Architectural Principles > Ingestion Standards > ephemeral instructions.
-
-## 1) Human-Readable First
-- Generate human-readable outputs before any machine format.
-- JSON skeletons are derived from the human text, not vice versa.
-
-## 2) Single Source of Truth (SSOT)
-- Each fact lives in exactly one reservoir file, linked everywhere else.
-- Prefer updating the canonical location over duplicating content.
-
-## 3) Voice Integration Policy (Tiered + Tags)
-- Voice is applied by tier:
-  - Primary (Semantic Chunks): `<voice_level>none</voice_level>`
-  - Primary (Resonant Details): `<voice_level>light</voice_level>`
-  - Secondary (Action Items): `<voice_level>none</voice_level>`
-  - Secondary (Outstanding Questions): `<voice_level>light</voice_level>`
-  - Tertiary (Insights): `<voice_level>none</voice_level>`
-  - Tertiary (Sentiment): `<voice_level>none</voice_level>`
-  - Quaternary (Outputs/Copyable Blocks): `<voice_level>full</voice_level>`
-- Rationale: Extraction stays neutral; copyable blocks adopt V’s voice.
-
-## 4) Ontology-Weighted Analysis
-- Use the Intellectual Priorities Ontology (P1–P19) to weight extraction.
-- Emphasize P1–P7; de-emphasize P15–P19 unless explicitly requested.
-
-## 5) Safety, Determinism, and Anti-Overwrite
-- Never overwrite protected files without explicit confirmation.
-- If a filename conflict exists, auto-version: `_v2`, `_v3`, … and log.
-- Keep a rolling backup and write an audit line per operation.
-
-## 6) Mirror Sync Hygiene
-- If a file suddenly appears empty or truncated, suspect mirror sync.
-- Action: halt writes, snapshot directory, compare against last known checksums, then proceed.
-
-## 7) Idempotence and Dry-Run by Default
-- Support `dry-run` mode for any workflow that writes files or schedules events.
-- Re-running the same instruction should produce identical end-state unless inputs changed.
-
-## 8) Minimal Context, Maximal Clarity
-- Keep prompts self-contained; avoid excessive file loading.
-- Summon only what is needed to execute with precision (Rule-of-Two enforced).
-
-## 9) Copyable Blocks Philosophy
-- Provide crisp, ready-to-paste blocks for follow-ups and questions.
-- Avoid boilerplate; surface the crux and let V add connective tissue.
-
-## 10) Calendar & Time Semantics
-- When creating follow-ups, propose calendar entries with clear descriptions like: “Processed via N5 Ingestion – [Component]”.
-- Respect the user’s timezone; never auto-schedule without confirmation.
-
-## 11) Failure Modes and Recovery
-- If transcript quality is low or uncertainty >25%, pause for better input.
-- On any exception, write a minimal incident note to logs and stop before destructive actions.
-
-## 12) Testing in Fresh Threads
-- To validate changes, run workflows in a new thread to guarantee only declared files are in context.
-
-## 13) Naming and Placement
-- Meetings go under `/home/workspace/Meetings/` using `{type}_{date}_{topic}.md`.
-- Ask for location if ambiguous; never create new roots without consent.
-
-## 14) Change Tracking
-- Append a concise change log in standards files.
-- Example: `2025-09-21 — Added Rule-of-Two, tiered voice policy, anti-overwrite.`
+This index provides quick reference to all architectural principles. Load specific modules based on task context to minimize token usage and maintain focus.
 
 ---
 
-## Execution Checklist (Per Run)
-- [ ] Load Rule-of-Two files (this file + ingestion standards).
-- [ ] Apply tiered voice tags per component.
-- [ ] Weight extraction via ontology (P1–P7 prioritized).
-- [ ] Generate human-readable first; derive JSON after.
-- [ ] Use anti-overwrite and logging; dry-run until approved.
-- [ ] Offer calendar adds for action items; do not auto-send.
-- [ ] Store outputs in correct folders with naming convention.
+## How to Use This Index
+
+**For most operations:** Load this index file only for quick reference.
+
+**For specific tasks:** Load the relevant module(s) alongside this index:
+- **System changes/scripts**: Load `core.md`, `safety.md`, `quality.md`
+- **Design reviews**: Load `core.md`, `design.md`
+- **Operations/deployments**: Load `operations.md`, `safety.md`
+- **Troubleshooting**: Load `safety.md`, `quality.md`
+
+**Rule-of-Two compliance:** Load at most 2 files:
+1. This index OR a specific module
+2. `file 'N5/knowledge/ingestion_standards.md'` (if needed)
+
+---
+
+## Principle Modules
+
+### Core Principles → `file 'Knowledge/architectural/principles/core.md'`
+**Load for:** All operations, foundational rules
+
+- **Principle 0:** LLM Sourcing Directive (Rule-of-Two)
+- **Principle 2:** Single Source of Truth (SSOT)
+
+**Key concept:** Minimal context loading + eliminate duplication
+
+---
+
+### Safety Principles → `file 'Knowledge/architectural/principles/safety.md'`
+**Load for:** File operations, automation, destructive actions
+
+- **Principle 5:** Safety, Determinism, and Anti-Overwrite
+- **Principle 7:** Idempotence and Dry-Run by Default
+- **Principle 11:** Failure Modes and Recovery
+- **Principle 19:** Error Handling is Not Optional
+
+**Key concept:** Prevent data loss, enable recovery, handle errors gracefully
+
+---
+
+### Quality Principles → `file 'Knowledge/architectural/principles/quality.md'`
+**Load for:** Implementations, documentation, verification
+
+- **Principle 1:** Human-Readable First
+- **Principle 15:** Complete Before Claiming Complete
+- **Principle 16:** Accuracy Over Sophistication
+- **Principle 18:** State Verification is Mandatory
+- **Principle 21:** Document All Assumptions, Placeholders, and Stubs
+
+**Key concept:** Accurate, complete, verifiable outputs
+
+---
+
+### Design Principles → `file 'Knowledge/architectural/principles/design.md'`
+**Load for:** Architecture, system design, content structure
+
+- **Principle 3:** Voice Integration Policy (Tiered + Tags)
+- **Principle 4:** Ontology-Weighted Analysis
+- **Principle 8:** Minimal Context, Maximal Clarity
+- **Principle 20:** Modular Design for Context Efficiency
+
+**Key concept:** Efficient, selective, purpose-driven design
+
+---
+
+### Operations Principles → `file 'Knowledge/architectural/principles/operations.md'`
+**Load for:** Day-to-day ops, testing, maintenance
+
+- **Principle 6:** Mirror Sync Hygiene
+- **Principle 9:** Copyable Blocks Philosophy
+- **Principle 10:** Calendar & Time Semantics
+- **Principle 12:** Testing in Fresh Threads
+- **Principle 13:** Naming and Placement
+- **Principle 14:** Change Tracking
+- **Principle 17:** Test with Production Configuration
+
+**Key concept:** Operational excellence, consistent processes
+
+---
+
+## Quick Reference: When to Load What
+
+| Task Type | Load Modules |
+|-----------|-------------|
+| System implementation | `core.md`, `safety.md`, `quality.md` |
+| Design review | `core.md`, `design.md` |
+| Automation workflow | `safety.md`, `operations.md` |
+| File operations | `safety.md`, `quality.md` |
+| Documentation | `quality.md`, `design.md` |
+| Troubleshooting | `safety.md`, `quality.md` |
+| Quick check | This index only |
+
+---
+
+## Execution Checklist (Major System Changes)
+
+Before implementing scripts, workflows, or infrastructure:
+
+### Pre-Implementation
+- [ ] Load `file 'Knowledge/architectural/principles/core.md'`
+- [ ] Load `file 'Knowledge/architectural/principles/safety.md'`
+- [ ] Load `file 'Knowledge/architectural/principles/quality.md'`
+- [ ] Review relevant principles (especially 5, 7, 11, 15-20)
+- [ ] Define "complete" explicitly before starting
+
+### During Implementation
+- [ ] Ensure dry-run mode supported (Principle 7)
+- [ ] Add error handling and recovery paths (Principle 19)
+- [ ] Apply Rule-of-Two for context loading (Principle 0)
+- [ ] Generate human-readable first (Principle 1)
+- [ ] Use anti-overwrite protection (Principle 5)
+
+### Post-Implementation
+- [ ] Test with production configuration (Principle 17)
+- [ ] Verify state writes succeeded (Principle 18)
+- [ ] Confirm all objectives met (Principle 15)
+- [ ] Test in fresh thread (Principle 12)
+- [ ] Update change logs (Principle 14)
+
+---
+
+## Change Log
+
+### 2025-10-12 (v2.2)
+- **Added Principle 21:** Document All Assumptions, Placeholders, and Stubs
+- **Enhanced Principle 16:** Added critical anti-pattern about false API limitations (Gmail API example)
+- Both lessons from recurring mistakes in implementation work
+
+### 2025-10-12 (v2.1)
+- **BREAKING:** Modularized monolithic document into 5 focused modules
+- Created `Knowledge/architectural/principles/` directory
+- Split principles into: core, safety, quality, design, operations
+- Converted main file to lightweight index
+- Enabled selective loading for context efficiency
+- Updated execution checklist with module references
+
+### 2025-10-12 (v2.0)
+- Added Principles 15-20 based on thread export refactoring and meeting digest lessons
+- **Principle 15:** Complete before claiming complete
+- **Principle 16:** Accuracy over sophistication
+- **Principle 17:** Test with production configuration
+- **Principle 18:** State verification is mandatory
+- **Principle 19:** Error handling is not optional
+- **Principle 20:** Modular design for context efficiency
+- Added "For Major System Changes" checklist to execution section
+
+### 2025-09-21 (v1.0)
+- Initial principles document
+- Established Rule-of-Two (Principle 0)
+- Defined core principles 1-14
+- Created execution checklist

@@ -48,6 +48,47 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 
 ## End-Step Workflow
 
+### Phase 0: Lesson Extraction (If Significant)
+
+**Performed by:** The LLM directly (before running script)
+
+Before executing the conversation-end script, analyze the conversation for significant lessons:
+
+1. **Check significance:**
+   - Were there errors or troubleshooting?
+   - System changes or refactoring?
+   - Novel techniques or creative approaches?
+   - Multiple iterations indicating learning?
+
+2. **If significant, extract lessons:**
+   - Analyze conversation workspace and transcript
+   - Identify techniques, strategies, patterns, troubleshooting
+   - Generate structured lesson records
+   - Write to `N5/lessons/pending/YYYY-MM-DD_thread-id.lessons.jsonl`
+
+3. **Lesson format:**
+   ```json
+   {
+     "lesson_id": "uuid",
+     "thread_id": "con_XXX",
+     "timestamp": "ISO-8601",
+     "type": "technique|strategy|design_pattern|troubleshooting|anti_pattern",
+     "title": "Brief title",
+     "description": "What we did",
+     "context": "Why it was needed",
+     "outcome": "Result achieved",
+     "principle_refs": ["15", "18"],
+     "tags": ["error-handling", "file-io"],
+     "status": "pending"
+   }
+   ```
+
+4. **Then continue to Phase 1** (Inventory)
+
+**Note:** This is done BY THE LLM before the script runs, not by the script itself. The LLM has full conversation context and can do meaningful analysis.
+
+---
+
 ### Phase 1: Inventory
 ```bash
 # List all files created during conversation
@@ -83,7 +124,7 @@ Classification matrix:
 | *article*.md, saved_page.md | Saved article | Articles/ | Move |
 | *.md (draft) | Temporary note | - | Delete or ask |
 
-### Phase 3: Propose Moves
+**Propose Moves**:
 ```markdown
 ## Conversation End-Step: File Resolution
 
@@ -111,7 +152,7 @@ Classification matrix:
 If ambiguous files exist, resolve those first.
 ```
 
-### Phase 4: Execute
+**Execute File Organization**:
 ```bash
 # Move permanent files
 for file in permanent_files:
@@ -127,6 +168,83 @@ for file in temp_files:
 echo "Conversation [ID] closed: [N] files moved, [M] deleted" >> N5/runtime/conversations.log
 ```
 
+**Workspace Root Cleanup**:
+```bash
+# Clean up conversation artifacts from workspace root
+n5_workspace_root_cleanup.py --execute
+```
+
+---
+
+### Phase 3: Personal Intelligence Update (Autonomous)
+```bash
+# Update personal intelligence layer with conversation insights
+# This is autonomous and runs in background
+update_personal_intelligence.py
+```
+
+---
+
+### Phase 4: Git Status Check (Interactive)
+
+**Purpose**: Ensure all work is committed to git before closing the conversation - prevents losing progress between threads.
+
+**Workflow**:
+1. Check git status for uncommitted changes
+2. If changes detected:
+   - Display `git status --short` output
+   - Run `git-check` audit to check for overwrites/data loss
+   - Prompt user: "Commit changes before ending conversation? (Y/n)"
+3. If user confirms:
+   - Prompt for commit message (default: "conversation-end: save progress")
+   - Stage all changes with `git add -A`
+   - Commit with provided message
+   - Display commit summary
+4. If no changes: Report clean status and continue
+
+**Rationale**: 
+- Adds intentional friction to prevent losing uncommitted work
+- Works with assumption that lessons/context carry over via thread-export
+- Every conversation-end becomes a checkpoint for git state
+- User explicitly confirms commit, no auto-commit surprises
+
+**Example output**:
+```
+======================================================================
+PHASE 4: GIT STATUS CHECK
+======================================================================
+
+Checking for uncommitted changes...
+
+📝 Uncommitted changes detected:
+
+ M N5/scripts/n5_conversation_end.py
+ M N5/commands/conversation-end.md
+?? N5/temp_notes.md
+
+----------------------------------------------------------------------
+Running git-check audit...
+
+✅ No obvious overwrites or major losses detected in staged changes.
+----------------------------------------------------------------------
+
+⚠️  You have uncommitted changes.
+Commit changes before ending conversation? (Y/n): y
+
+Enter commit message (or press Enter for default):
+> Add git check to conversation-end workflow
+
+Staging all changes...
+✓ Changes staged
+Committing with message: 'Add git check to conversation-end workflow'...
+✅ Changes committed successfully
+
+[main abc1234] Add git check to conversation-end workflow
+ 2 files changed, 95 insertions(+), 5 deletions(-)
+```
+
+---
+
 ### Phase 5: Archive (Optional)
 ```bash
 # If user requested conversation export/archive
@@ -141,118 +259,11 @@ conversation_metadata.json → N5/runtime/conversations/con_[ID].json
 - Duration, message count
 ```
 
-### Phase 6: Cleanup
+### Phase 6: Cleanup (Optional)
 ```bash
-# Remove conversation workspace
+# Remove conversation workspace (optional - done manually or via system cleanup)
 rm -rf /home/.z/workspaces/con_[ID]/
 
 # Verify cleanup
 test -d /home/.z/workspaces/con_[ID]/ || echo "✓ Workspace cleaned"
 ```
-
----
-
-## Examples
-
-### Example 1: Research Session
-```
-User: "conversation-end"
-
-Zo: "## Conversation End-Step
-
-I created 8 files during this research session:
-
-Images (5):
-✓ product_concept_1.png → Images/product_concept_1_20251008.png
-✓ product_concept_2.png → Images/product_concept_2_20251008.png
-✓ wireframe.png → Images/wireframe_draft_20251008.png
-✗ temp_comparison.png → DELETE
-✗ quick_viz.png → DELETE
-
-Documents (3):
-✓ competitor_analysis.md → Articles/competitor_analysis_20251008.md
-✓ research_summary.md → Documents/Product_Research_Summary_20251008.md
-✗ rough_notes.md → DELETE
-
-Total: 5 files moving to permanent locations, 3 deleting.
-
-Proceed? (Y/n)"
-
-User: "Y"
-
-Zo: "✓ Moved 5 files to permanent locations
-✓ Deleted 3 temporary files
-✓ Conversation workspace cleaned
-✓ Logged to N5/runtime/file_moves.log
-
-Conversation closed. See you next time!"
-```
-
-### Example 2: Meeting Processing
-```
-User: "End thread and archive"
-
-Zo: "## Conversation End-Step + Archive
-
-Files created:
-
-Documents (3):
-✓ board_meeting_transcript.md → Records/Company/meetings/2025-10-08-board-meeting-transcript.md
-✓ board_meeting_summary.md → Meetings/2025-10-08-Board-Meeting-Summary.md
-✗ processing_notes.md → DELETE
-
-Note: Action items already written to Lists/must-contact.jsonl
-
-Archive:
-✓ Conversation summary → Documents/Conversations/2025-10-08-Board-Meeting-Processing.md
-
-Total: 2 files moved, 1 deleted, 1 archived.
-
-Proceed? (Y/n)"
-```
-
----
-
-## Integration
-
-### Conversation Export
-When user exports conversation, automatically trigger conversation-end:
-1. Export conversation to file
-2. Trigger conversation-end workflow
-3. Include file moves in export summary
-4. Package conversation archive
-
-### Natural Language Triggers
-- "end conversation"
-- "close thread"
-- "wrap up"
-- "we're done here"
-- "conversation-end"
-- "export and close"
-
-### System Integration
-- Incantum Engine recognizes end-step triggers
-- Commands continue working normally during conversation
-- End-step is separate from command execution
-
----
-
-## Related Commands
-
-- `review-workspace` - Preview files before end-step
-- `organize-files` - Manual file organization mid-conversation
-- `cleanup-temp` - Clean old conversation workspaces (maintenance)
-
----
-
-## Notes
-
-- This is a **formal phase**, not automatic cleanup
-- User must trigger it explicitly (or confirm implicit trigger)
-- Safe default: Files stay in conversation workspace if end-step not executed
-- Conversation workspace retained for 7 days if end-step not completed
-- Can be executed mid-conversation if needed (then continue)
-
----
-
-*The conversation end-step: where all effects are resolved and the board state is cleaned.*

@@ -1,12 +1,12 @@
 {
   "meeting_id": "2025-10-09_external-alex-wisdom-partners-coaching",
+  "classification": "external",
   "participants": "Alex x Vrijen - Wisdom Partners Coaching",
   "date": "2025-10-09",
   "gdrive_id": "1tpIPt-xvE6sLP7_aFLBHFXR2P_1-dDp5",
   "gdrive_link": "https://docs.google.com/document/d/1tpIPt-xvE6sLP7_aFLBHFXR2P_1-dDp5/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Alex x Vrijen - Wisdom Partners Coaching-transcript-2025-10-09T18-06-05.257Z.docx",
-  "created_at": "2025-10-11T03:31:02.102987Z",
-  "status": "pending",
-  "classification": "external",
-  "external_participant": "alex-wisdom-partners-coaching"
+  "external_participant": "alex-wisdom-partners-coaching",
+  "created_at": "2025-10-12T09:57:25.994516+00:00",
+  "status": "pending"
 }
