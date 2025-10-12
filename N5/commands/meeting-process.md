@@ -1,429 +1,486 @@
 # `meeting-process`
 
-**Version**: 4.0.0  
+**Version**: 5.1.0  
 **Category**: Meeting Intelligence  
-**Workflow**: AI-Driven Processing (Registry-Based)  
-**Registry**: `N5/prefs/block_type_registry.json` (v1.3+)
+**Workflow**: AI-Driven Processing (Guidance-Based)  
+**Registry Version**: 1.5+  
+**Philosophy**: Natural language guidance, contextual intelligence, strategic depth, CRM integration, Howie harmonization
+
+---
 
 ## Purpose
 
-This command processes meeting transcripts using a **registry-based system** to generate standardized "Smart Blocks" that provide structured meeting intelligence. Each block follows exact specifications defined in the Block Type Registry.
-
-## Critical Principle: Registry as Source of Truth
-
-**YOU MUST load and strictly follow** `N5/prefs/block_type_registry.json` for ALL block generation. The registry defines:
-- All 30+ block types (B01-B30) with exact specifications
-- Priority levels (REQUIRED, HIGH, MEDIUM, CONDITIONAL)
-- When each block should be generated
-- Exact format specifications with feedback markers
-- Stakeholder-specific block combinations
-
-**DO NOT improvise block formats or names.** Follow the registry exactly.
-
-**CRITICAL: Understanding Format Strings**
-
-**READ THIS:** `N5/prefs/REGISTRY_FORMAT_GUIDE.md` explains how to interpret format strings correctly.
-
-**Key principle:** Text in `[square brackets]` within format strings are **extraction instructions**, NOT literal text to copy.
-
-🚫 **NEVER copy placeholder text from format strings verbatim**  
-🚫 **NEVER simulate or invent content not in the transcript**  
-🚫 **NEVER use example/dummy data**
-
-✅ **DO extract real content from transcript and format according to specification**  
-✅ **DO use "[Unknown]" or "[Not discussed]" for missing information**  
-✅ **DO follow block-specific rules from registry**
+Process meeting transcripts into structured, strategically valuable intelligence blocks. Each block should provide actionable insight, not just information extraction. You are transforming raw conversation into decision-support tools with integrated CRM enrichment and Howie scheduling harmonization.
 
 ---
 
-## Processing Workflow
+## Core Principles
 
-### Step 1: Check for Pending Requests
+### 1. **Strategic Depth Over Rigid Formatting**
+- Don't just extract - interpret and contextualize
+- Ask yourself: "How does this help Vrijen make better decisions?"
+- Include narrative sections when they add value (Strategic Context, Critical Next Action, etc.)
+- Balance structure with intelligence
 
-Look in `N5/inbox/meeting_requests/` for JSON files.
+### 2. **Proactive Value Generation**
+- Generate useful content even when not explicitly "requested" in transcript
+- Example: Create messaging blurbs after founder meetings even if no intro was promised
+- Example: Identify implicit questions and tensions even if not verbalized
+- Your job is to surface what's strategically important, not just what was said
 
-**CRITICAL:** Process **ONLY ONE** transcript per invocation to avoid context window issues.
+### 3. **Contextual Intelligence**
+- Use the guidance principles in the registry as starting points, not rigid templates
+- Adapt based on the meeting context - founder meeting vs. investor pitch vs. networking call
+- Add sections, structure, or analysis when it makes the output more useful
+- Follow the spirit of each block's purpose, not just the letter of the guidance
 
-Select the **OLDEST request** by filename/timestamp (FIFO ordering).
+### 4. **No Placeholders or Invented Content**
+- Extract from the transcript, don't simulate
+- If information isn't present, note it as "[Unknown]" or omit the field
+- Never copy placeholder text from guidance (like "[specific outcome with context]")
+- Real content only
 
-### Step 2: Load Processing Request
-
-Read the request JSON to get:
-```json
-{
-  "meeting_id": "YYYY-MM-DD_stakeholder-name",
-  "gdrive_id": "1abc...",
-  "gdrive_link": "https://drive.google.com/...",
-  "stakeholder_classification": "internal" | "external",
-  "participants": ["Vrijen", "Other Person"],
-  "detected_date": "ISO-8601 timestamp",
-  "source": "google_drive"
-}
-```
-
-### Step 3: Download Transcript
-
-Use `use_app_google_drive` to download the transcript using the `gdrive_id`.
-
-Save to: `N5/inbox/transcripts/{meeting_id}.txt`
-
-### Step 4: Load Block Type Registry
-
-**REQUIRED:** Load `N5/prefs/block_type_registry.json` into your working context.
-
-This registry contains the complete specification for all blocks. You will reference it throughout processing.
-
-### Step 5: Analyze Transcript & Determine Blocks
-
-Read the transcript thoroughly and:
-
-1. **Classify meeting type** (if not already classified):
-   - Is this internal (Careerspan team only) or external?
-   - Can you detect stakeholder type? (INVESTOR, NETWORKING, FOUNDER, COMMUNITY_PARTNER, etc.)
-
-2. **Determine which blocks to generate** using this logic:
-
-   **A. If stakeholder type is detected:**
-   - Use the `stakeholder_combinations` section of registry
-   - Generate blocks listed in that stakeholder's `block_ids` array
-   - Example: `INVESTOR` → ["B26", "B01", "B08", "B16", "B11", "B13", "B02", "B07", "B04", "B05"]
-
-   **B. If stakeholder type is NOT detected:**
-   - Use priority-based selection:
-     - **REQUIRED**: Always generate (e.g., B01, B08, B26)
-     - **HIGH**: Generate unless clearly irrelevant to this meeting
-     - **MEDIUM**: Generate only if substantial relevant content exists
-     - **CONDITIONAL**: Generate ONLY if specific trigger is detected
-   
-3. **Check conditional triggers:**
-   
-   For each CONDITIONAL block, check if its "when" condition is met:
-   
-   - **B06 (PILOT_INTELLIGENCE)**: Only if pilot explicitly discussed
-   - **B07 (WARM_INTRO_BIDIRECTIONAL)**: Only if warm intro mentioned
-   - **B11 (METRICS_SNAPSHOT)**: Only if data/ROI/metrics discussed
-   - **B13 (PLAN_OF_ACTION)**: Only for complex initiatives with multi-step execution
-   - **B14 (BLURBS_REQUESTED)**: Only if someone requested a blurb or offered to introduce Vrijen
-   - **B15 (STAKEHOLDER_MAP)**: Only if multiple stakeholders with different roles/interests
-   - **B16 (MOMENTUM_MARKERS)**: Only for sales/investment conversations
-   - **B17-B19 (Community/Product/Sales specific)**: Only if topic explicitly discussed
-   - **B30 (INTRO_EMAIL_TEMPLATE)**: Only if Vrijen is introducing someone (not being introduced)
-
-### Step 6: Generate Blocks
-
-For each block you determined should be generated:
-
-1. **Load the block specification** from the registry:
-   - Block name (e.g., "DETAILED_RECAP")
-   - Format specification (exact markdown structure)
-   - Variables to populate
-   - Special rules (if any)
-   - Feedback enabled (yes/no)
-
-2. **Extract relevant content** from the transcript according to the block's "purpose" and "variables"
-
-3. **Format the block** following the EXACT format string from the registry:
-   
-   **Standard format structure:**
-   ```markdown
-   ### BLOCKNAME
-   ---
-   **Feedback**: - [ ] Useful
-   ---
-   
-   [Block-specific content following format specification]
-   ```
-   
-   **Notes on formatting:**
-   - Use the block's "name" field for the header (all UPPERCASE)
-   - Include feedback checkbox ONLY if `"feedback_enabled": true` in registry
-   - Follow the format specification exactly (preserve markdown structure, tables, bullets)
-   - Populate all variables listed in the "variables" array
-   - Apply any special "rules" defined in the block specification
-
-4. **Apply stakeholder-specific rules:**
-   
-   From B02 (COMMITMENTS_CONTEXTUAL) example:
-   - "Vrijen/Logan/Careerspan team = 'We', Others = Name (your side)"
-   - Preserve date formats as stated ("EOD Friday", "early next week")
-   - Flag missing dates with "[Date TBD]"
-
-5. **Save each block as a separate file:**
-   
-   **File naming convention:** `B##_BLOCKNAME.md`
-   - Two-digit block number with leading zero (B01, B08, B21)
-   - Underscore separator
-   - Block name in UPPERCASE from registry
-   - `.md` extension
-   
-   **Location:** `N5/records/meetings/{meeting_id}/B##_BLOCKNAME.md`
-
-### Step 7: Create Metadata File
-
-Create `N5/records/meetings/{meeting_id}/_metadata.json`:
-
-```json
-{
-  "meeting_id": "YYYY-MM-DD_stakeholder-name",
-  "processed_date": "ISO-8601 timestamp",
-  "transcript_path": "/absolute/path/to/transcript.txt",
-  "stakeholder_classification": "internal" | "external",
-  "stakeholder_type": "INVESTOR" | "NETWORKING" | "FOUNDER" | null,
-  "participants": ["Name 1", "Name 2"],
-  "blocks_generated": ["B01", "B08", "B21", "B25", "B26", "B29"],
-  "processing_duration_seconds": 60,
-  "registry_version": "1.3",
-  "granola_diarization": true | false
-}
-```
-
-**Important:** List blocks in the order they were generated (use `output_order` from registry as reference).
-
-### Step 8: Mark as Processed
-
-1. **Update Google Drive file:**
-   - Rename file by adding `[ZO-PROCESSED]` prefix
-   - This prevents reprocessing
-
-2. **Move request file:**
-   - Move from `N5/inbox/meeting_requests/{meeting_id}_request.json`
-   - To `N5/inbox/meeting_requests/processed/{meeting_id}_request.json`
-
-### Step 9: Confirm Completion
-
-Report to V:
-- Meeting ID processed
-- Number of blocks generated
-- List of block codes (B01, B08, etc.)
-- Location of output directory
+### 5. **CRM & Howie Integration** ⭐ NEW in v5.1
+- Auto-create CRM profiles for FOUNDER, INVESTOR, CUSTOMER, COMMUNITY, NETWORKING stakeholders
+- Skip CRM for JOB_SEEKER (recruitment workflow)
+- Generate Howie V-OS tag recommendations for ALL stakeholders for future scheduling
+- Mark enrichment priorities (HIGH/MEDIUM/LOW) based on deal stage and relationship
+- LinkedIn enrichment is READ-ONLY (never post, message, or interact)
 
 ---
 
-## Block Selection Logic (Detailed)
+## Processing Steps
 
-### Internal Meetings
-**Core blocks (always generate):**
-- B26: MEETING_METADATA_SUMMARY (required)
-- B01: DETAILED_RECAP (required)
-- B08: RESONANCE_POINTS (required)
+### Step 1: Load the Registry
 
-**High priority (usually generate):**
-- B21: SALIENT_QUESTIONS
-- B22: DEBATE_TENSION_ANALYSIS
-- B23: STRATEGIC_PRIORITIES_ALIGNMENT
-- B05: OUTSTANDING_QUESTIONS (if any open loops)
-- B02: COMMITMENTS_CONTEXTUAL (if action items exist)
+Load `N5/prefs/block_type_registry.json` (v1.5 or later).
 
-**Conditional:**
-- B24: PRODUCT_IDEA_EXTRACTION (only if product ideas discussed)
-- B25: DELIVERABLE_CONTENT_MAP (only if deliverables mentioned)
-- B29: KEY_QUOTES_HIGHLIGHTS (if significant quotes exist)
+This registry defines:
+- **All available blocks** with guidance principles
+- **Stakeholder combinations** (which blocks for which meeting types)
+- **Priority levels** (REQUIRED, HIGH, CONDITIONAL)
+- **Output order** (how to sequence the blocks)
 
-### External Meetings
-**Core blocks (always generate):**
-- B26: MEETING_METADATA_SUMMARY (required)
-- B01: DETAILED_RECAP (required)
-- B08: RESONANCE_POINTS (required)
+The registry provides **guidance, not templates**. Use your intelligence to create high-quality outputs.
 
-**High priority (usually generate):**
-- B21: SALIENT_QUESTIONS
-- B28: FOUNDER_PROFILE_SUMMARY (external only)
-- B25: DELIVERABLE_CONTENT_MAP (if deliverables mentioned)
-- B05: OUTSTANDING_QUESTIONS (if any open loops)
-- B02: COMMITMENTS_CONTEXTUAL (if action items exist)
-
-**Medium priority:**
-- B29: KEY_QUOTES_HIGHLIGHTS (if significant quotes)
-- B04: LINKS_WITH_CONTEXT (if resources shared)
-
-**Conditional:**
-- B06: PILOT_INTELLIGENCE (only if pilot discussed)
-- B07: WARM_INTRO_BIDIRECTIONAL (only if intros mentioned)
-- B11: METRICS_SNAPSHOT (only if data/ROI discussed)
-- B13: PLAN_OF_ACTION (only for complex initiatives)
-- B14: BLURBS_REQUESTED (only if blurb requested/intro offered)
-- B30: INTRO_EMAIL_TEMPLATE (only if Vrijen is introducer)
-
-### Stakeholder-Specific Combinations
-
-If you can confidently identify the stakeholder type, use these predefined combinations from the registry:
-
-**INVESTOR:**
-`["B26", "B01", "B08", "B16", "B11", "B13", "B02", "B07", "B04", "B05"]`
-
-**NETWORKING:**
-`["B26", "B01", "B08", "B07", "B14", "B04", "B05"]`
-
-**FOUNDER:**
-`["B26", "B01", "B08", "B28", "B29", "B24", "B05", "B07", "B14"]`
-
-**COMMUNITY_PARTNER:**
-`["B26", "B01", "B08", "B17", "B28", "B02", "B05"]`
+**v1.5 Changes:**
+- 15 blocks total (down from 19)
+- B08 now includes CRM + Howie integration
+- B21 combines quotes + questions
+- B25 includes follow-up email generation
+- B31 is NEW (stakeholder research/landscape insights)
 
 ---
 
-## Output Format Requirements
+### Step 2: Analyze the Transcript
 
-### Directory Structure
+Read the full transcript and determine:
+
+1. **Stakeholder Type**: Who is this meeting with?
+   - FOUNDER: Exploring partnership/collaboration with another founder
+   - INVESTOR: Fundraising or investor relationship
+   - NETWORKING: General networking, informational
+   - CUSTOMER: User research, sales meeting, customer discovery
+   - COMMUNITY: Alumni group, professional community, network partner
+   - CANDIDATE: Individual job seeker (skip CRM, use recruitment workflow)
+   - (If unclear, use best judgment)
+
+2. **Meeting Dynamics**: What was the vibe?
+   - Strategic depth (exploratory, detailed, ready to act)?
+   - Energy level (enthusiastic, reserved, tense)?
+   - Decision made or still exploring?
+
+3. **Content Triggers**: What blocks are relevant?
+   - Were 3+ substantive metrics discussed? (→ B11)
+   - Pilot details? (→ B06)
+   - Warm intros promised? (→ B07, B14)
+   - Product ideas surfaced? (→ B24)
+   - Complex plan emerging? (→ B13)
+   - Partnership/deal signals? (→ momentum section in B13)
+
+---
+
+### Step 3: Select Blocks to Generate
+
+Use this 3-tier logic:
+
+#### Tier 1: REQUIRED Blocks (Always Generate)
+- **B26** - Meeting Metadata Summary (includes V-OS tags)
+- **B01** - Detailed Recap
+- **B02** - Commitments Contextual (action items - elevated to REQUIRED in v1.5)
+- **B08** - Stakeholder Intelligence (profile + resonance + CRM + Howie)
+- **B21** - Key Moments (quotes + questions merged in v1.5)
+- **B31** - Stakeholder Research (landscape insights - NEW in v1.5)
+- **B25** - Deliverable Content Map + Follow-Up Email
+
+**Total: 7 REQUIRED blocks** (always generate these)
+
+#### Tier 2: Stakeholder-Specific HIGH Priority
+
+Consult `stakeholder_combinations` in registry for the detected stakeholder type.
+
+**FOUNDER** meetings (13 blocks total):
+- B26, B01, B02, B08, B21, B31, B25 (required)
+- B05, B24, B13, B07, B14, B27 (high priority)
+
+**INVESTOR** meetings (11 blocks total):
+- B26, B01, B02, B08, B21, B31, B25 (required)
+- B05, B13, B07, B27 (high priority)
+
+**NETWORKING** meetings (9 blocks total):
+- B26, B01, B02, B08, B21, B31, B25 (required)
+- B07, B05 (high priority)
+
+**CUSTOMER** meetings (11 blocks total):
+- B26, B01, B02, B08, B21, B31, B25 (required)
+- B24, B05, B13, B27 (high priority)
+
+**COMMUNITY** meetings (9 blocks total):
+- B26, B01, B02, B08, B21, B31, B25 (required)
+- B05, B07 (high priority)
+
+#### Tier 3: CONDITIONAL Blocks
+
+Generate these ONLY when explicitly triggered:
+
+- **B06** (Pilot Intelligence): Only if pilot was explicitly discussed with specifics
+- **B11** (Metrics Snapshot): Only if 3+ substantive metrics were discussed
+- **B15** (Stakeholder Map): Only if multiple stakeholders with complex dynamics
+
+---
+
+### Step 4: Generate Each Block
+
+For each selected block:
+
+1. **Read the guidance principles** in the registry for that block
+2. **Apply contextual intelligence** - don't follow guidance robotically
+3. **Add structure as needed** - sections, tables, bullet formats that enhance clarity
+4. **Extract with depth** - include context, rationale, strategic implications
+5. **Make it actionable** - how does this help Vrijen act on the information?
+
+---
+
+## Block-Specific Guidance (v1.5 Updates)
+
+### B01 - DETAILED_RECAP ✅ REQUIRED
+- Structure with 3 sections: "Key Decisions and Agreements" + "Strategic Context" + "Critical Next Action"
+- Each decision bullet: specific outcome + why it matters + rationale
+- Strategic Context: narrative about positioning, pain points, competitive landscape
+- Critical Next Action: Owner, Deliverable, Timeline, Purpose (make it crystal clear)
+- This is your most important block - invest time in quality
+
+### B02 - COMMITMENTS_CONTEXTUAL ✅ REQUIRED (elevated in v1.5)
+- Table format: Owner | Deliverable | Context/Why | Due Date | Dependencies
+- Owner classification: "We" (Vrijen/team) vs. their name
+- If no action items: note "No explicit action items or commitments discussed"
+- This is now REQUIRED because action items are critical for every meeting
+
+### B08 - STAKEHOLDER_INTELLIGENCE ✅ REQUIRED (major enhancement in v1.5)
+
+**Four Sections:**
+
+**1. FOUNDATIONAL PROFILE** (replaces old B28)
+- Company/Organization, Product/Service, Motivation, Funding Status, Key Challenges, Standout Quote
+- Make it comprehensive enough to brief someone who's never met them
+
+**2. WHAT RESONATED** (old B08 content)
+- 3-5 moments of genuine enthusiasm, energy, or strong reaction
+- For each: quote + why it resonated + what it signals
+- Balance positives with negatives (concerns, hesitations)
+
+**3. CRM INTEGRATION** ⭐ NEW
+- **Auto-create profile** for: FOUNDER, INVESTOR, CUSTOMER, COMMUNITY, NETWORKING
+- **Skip for**: JOB_SEEKER (goes to recruitment workflow)
+- Profile path: `Knowledge/crm/individuals/[firstname-lastname].md`
+- Status: Note if profile was created
+- Mutual Acquaintances: List if identified, mark [None identified - needs enrichment]
+- **Enrichment Priority**:
+  - HIGH = active partnership/investment discussion
+  - MEDIUM = warm contact, potential future value
+  - LOW = networking contact, no immediate follow-up
+- **Next Actions**: 2-3 enrichment tasks (LinkedIn research, company research, mutual connections)
+
+**4. HOWIE INTEGRATION** ⭐ NEW
+- **Recommended V-OS Tags** for future Howie scheduling
+- Format: `[LD-XXX] [GPT-X] [A-X]`
+- Tag categories:
+  - **LD** (Lead type): INV (investor), NET (networking), COM (community), CUS (customer), FND (founder)
+  - **GPT** (Goal/Phase/Timeline): E (exploratory), M (mid-stage), C (critical/closing)
+  - **A** (Accommodation level): 1 (rigid), 2 (flexible), 3 (accommodating), 4 (highly flexible)
+- **Rationale**: Explain why each tag applies
+- **Priority**: Critical / Important / Non-critical
+- Generate for ALL stakeholders prophylactically
+
+**LinkedIn Restrictions (READ-ONLY):**
+- ⛔ NEVER: Post, send messages, change profile, open notifications, endorse, react, join groups, accept connections
+- ✅ ALLOWED: View profiles, view company pages, read posts, scan connections, extract background
+
+### B21 - KEY_MOMENTS ✅ REQUIRED (merged B29 + B21 in v1.5)
+
+**Two Sections:**
+
+**1. MEMORABLE QUOTES**
+- 3-5 most impactful verbatim quotes
+- For each: Quote + Who said it + When + Context (why it mattered, what it reveals)
+- Good quotes reveal values, show enthusiasm, express concerns, provide insights
+
+**2. SALIENT QUESTIONS**
+- 3-5 most strategically important questions (asked or implied)
+- For each: Question + Why it matters + Who asked + Action hint
+- Action hints should be SPECIFIC: "Demo the hiring manager AI" not "follow up"
+- Prioritize strategic implications over tactical clarifications
+
+### B31 - STAKEHOLDER_RESEARCH ✅ REQUIRED (NEW in v1.5)
+
+**Purpose:** Capture landscape insights - intelligence about the WORLD, not just about THEM
+
+**What to Extract:**
+- When they speak for their **ORGANIZATION**: strategy, priorities, internal challenges, decision-making
+- When they speak for their **INDUSTRY**: trends, competitive dynamics, emerging patterns, market shifts
+- When they speak as **STAKEHOLDER TYPE**: what they care about, decision criteria, common objections, patterns
+
+**Structure:**
+- Perspective: Speaking as [career tech founder / early-stage investor / etc]
+- 3-5 key insights per meeting
+- For each: Observation + Implication + Strategic Value
+
+**Focus on Non-Obvious Info:**
+- Things you couldn't get from Google
+- Inside perspective on how decisions are made
+- Unwritten rules or hidden dynamics
+- Emerging trends not yet widely known
+
+**Examples:**
+- "Most career platforms getting acquired" → Window for independent players narrowing
+- "Integration tax is brutal" → Being data layer more defensible than platform
+- "Series A valuations compressed 40%" → Need stronger traction for funding
+
+### B25 - DELIVERABLE_CONTENT_MAP + FOLLOW-UP EMAIL ✅ REQUIRED (dual-purpose in v1.5)
+
+**Section 1: Deliverable Content Map (TABLE)**
+- Format: Item | Promised By | Promised When | Status | Link/File | Send with Email
+- Status: HAVE (ready) or NEED (must create)
+- Include items promised by BOTH parties
+
+**Section 2: Follow-Up Email Draft** ⭐ ENHANCED
+- Use follow-up-email-generator.md command (v11.0.0) system
+- **Structure**: Greeting → Resonant Detail → Recap → Next Steps (max 2 CTAs) → Sign-Off
+- **Markdown links**: [text](URL) not raw URLs
+- **Distinctive phrases**: Incorporate max 2 from transcript (confidence ≥ 0.75)
+- **Relationship dials**: Calculate warmth + familiarity scores → formality/CTA rigour
+- **Resonant details**: 1-2 from conversation (personal anecdotes, shared values, humor, insights)
+- **Reference deliverables**: From Section 1 table
+- **Readability**: FK ≤ 10, avg 16-22 words/sentence, max 32 words/sentence, max 4 sentences/paragraph
+- **Delay sensitivity**: If >2 days, include brief apology
+- **Subject line**: "Follow-Up: [Name] x Careerspan [keyword1 • keyword2]"
+
+### B14 - BLURBS_REQUESTED (split in v1.5)
+- Now handles ONLY actual blurb requests (split from old dual-purpose B14)
+- Detection phrases: "send me a blurb", "I'll introduce you", "forward me something about what you do"
+- Generate forwarding-ready blurb (1-2 paragraphs) when detected
+- If no blurb requested: note "No blurbs explicitly requested in this meeting"
+
+### B27 - KEY_MESSAGING ⭐ NEW (split from old B14)
+- Strategic messaging & talking points (proactive generation)
+- Generate 5-10 reusable narrative blurbs after strategic meetings
+- Types: Value prop, Technical credibility, Mission alignment, Specific fit, Differentiation, Stats/traction
+- Tailor to what RESONATED in this meeting
+- Label each with usage context
+- Include "What Resonated" analysis section
+
+### B13 - PLAN_OF_ACTION (enhanced in v1.5)
+- Structure: Title with confidence + Immediate + Near-term + Checkpoint + End state
+- **Add MOMENTUM section** when relevant (replaces old B16):
+  - Two subsections: Positive Signals + Watch Points
+  - Positive: detailed questions, timeline compression, resource allocation, enthusiasm
+  - Watch Points: blockers, hesitations, non-commitments, concerns
+  - Focus on SIGNALS not just content
+
+### B26 - MEETING_METADATA_SUMMARY ✅ REQUIRED (enhanced in v1.5)
+- Generate: Title, Email subject, Delay sensitivity, Stakeholder type, **V-OS tags**, Confidence score, Transcript quality
+- **V-OS Tags**: Apply Howie's tag system `[LD-XXX] [GPT-X] [A-X]` for categorization
+- This enables harmonization with Howie's scheduling system
+
+---
+
+## v1.5 Deleted Blocks
+
+These blocks have been removed in v1.5:
+
+- **B04** (Links with Context) → Links now in B25 follow-up email
+- **B16** (Momentum Markers) → Absorbed into B13 momentum section
+- **B28** (Founder Profile) → Merged into B08 section 1
+- **B29** (Key Quotes) → Merged into B21 section 1
+- **B30** (Intro Email Template) → Generate ad-hoc when needed
+
+---
+
+## Output Format
+
+### File Structure
 ```
-N5/records/meetings/YYYY-MM-DD_stakeholder-name/
+meeting_folder/
+├── B26_MEETING_METADATA_SUMMARY.md
 ├── B01_DETAILED_RECAP.md
 ├── B02_COMMITMENTS_CONTEXTUAL.md
-├── B05_OUTSTANDING_QUESTIONS.md
-├── B08_RESONANCE_POINTS.md
-├── B21_SALIENT_QUESTIONS.md
+├── B08_STAKEHOLDER_INTELLIGENCE.md
+├── B21_KEY_MOMENTS.md
+├── B31_STAKEHOLDER_RESEARCH.md
 ├── B25_DELIVERABLE_CONTENT_MAP.md
-├── B26_MEETING_METADATA_SUMMARY.md
-├── B28_FOUNDER_PROFILE_SUMMARY.md
-├── B29_KEY_QUOTES_HIGHLIGHTS.md
-├── _metadata.json
-└── transcript.txt (copied from inbox)
+├── B05_OUTSTANDING_QUESTIONS.md
+├── ... (other blocks based on stakeholder type)
+└── _metadata.json
 ```
 
-### Block File Format
+### File Naming
+- Pattern: `B##_BLOCKNAME.md`
+- Two digits with leading zero (B01, not B1)
+- UPPERCASE names with underscores
+- Example: `B08_STAKEHOLDER_INTELLIGENCE.md`
 
-**With Feedback (when `feedback_enabled: true`):**
+### Feedback Checkboxes
+For blocks with `feedback_enabled: true`:
 ```markdown
-### DETAILED_RECAP
+---
+**Feedback**: - [ ] Useful
+---
+```
+
+---
+
+## Quality Checks
+
+Before finalizing, verify:
+
+1. ✅ All REQUIRED blocks generated (7 total)
+2. ✅ Stakeholder-appropriate HIGH priority blocks included
+3. ✅ CONDITIONAL blocks only when triggered
+4. ✅ No placeholder text or invented content
+5. ✅ Strategic depth present (not just extraction)
+6. ✅ CRM profile created for eligible stakeholders (not JOB_SEEKER)
+7. ✅ Howie V-OS tags generated in B08 and B26
+8. ✅ Follow-up email included in B25
+9. ✅ Stakeholder research insights captured in B31
+10. ✅ Feedback checkboxes on enabled blocks
+
+---
+
+## Example High-Quality Outputs
+
+### B08 Example - Stakeholder Intelligence
+
+```markdown
+## STAKEHOLDER_INTELLIGENCE
+
 ---
 **Feedback**: - [ ] Useful
 ---
 
-Key decisions and agreements:
-• We aligned on [specific outcome with context]
-• You confirmed [exact commitment with rationale]
-• Both sides agreed that [mutual understanding]
-• Next critical step is [specific milestone]
+### Foundational Profile
+
+**Company:** FutureFit  
+**Product/Service:** Career transition platform serving 200k+ users annually  
+**Motivation:** Aggregate fragmented career supports, simplify integration for external tools  
+**Funding Status:** [Unknown - needs enrichment]  
+**Key Challenges:** User complexity from multiple front-ends, integration overhead for partners  
+**Standout Quote:** "We're not chasing easy money—we're solving hard problems in career tech"
+
+### What Resonated
+
+1. **Data layer vision** - Hamoon lit up when discussing "becoming data layer for hiring ecosystem"
+   - Why it mattered: Aligns with FutureFit's integration pain points
+   - Signal: Asked detailed technical questions about API structure, data schemas
+
+2. **Embedded point solutions** - Strong interest in "vibe check" widget concept
+   - Why it mattered: Solves their UX fragmentation problem
+   - Signal: Immediately sketched integration architecture on napkin, mentioned "this is exactly what we need"
+
+3. **Alignment-first philosophy** - Connected deeply with scaffolded reflection approach
+   - Why it mattered: Differentiates from directive career coaching
+   - Signal: Referenced own product philosophy multiple times, said "we're building for the same user"
+
+### CRM Integration
+
+**Status:** ✅ Profile created at `Knowledge/crm/individuals/hamoon-ekhtiari.md`  
+**Mutual Acquaintances:** [None identified - needs enrichment]  
+**Enrichment Priority:** HIGH (active partnership exploration, strong product fit signals)  
+
+**Next Actions:**
+- [ ] LinkedIn research on Hamoon's background and FutureFit journey
+- [ ] Company research: FutureFit funding status, traction metrics, recent news
+- [ ] Scan mutual connections in career tech ecosystem
+
+### Howie Integration
+
+**Recommended Tags for Future Meetings:** `[LD-NET] [GPT-E] [A-2]`  
+
+**Rationale:**
+- `[LD-NET]`: Business partnership lead (not investor or customer yet)
+- `[GPT-E]`: Exploratory phase (assessing fit, not critical deadline)
+- `[A-2]`: Flexible accommodation (warm relationship, can reschedule if needed)
+
+**Priority:** Important (strong fit signals warrant priority, but not yet critical)
 ```
 
-**Without Feedback (when `feedback_enabled: false`):**
+### B31 Example - Stakeholder Research
+
 ```markdown
-### COMMITMENTS_CONTEXTUAL
+## STAKEHOLDER_RESEARCH
 
-| Owner | Deliverable | Context/Why | Due Date | Dependencies |
-|-------|------------|-------------|----------|--------------|
-| We | [deliverable] | [context] | [date] | [dependencies] |
-| [Name] | [deliverable] | [context] | [date] | [dependencies] |
+---
+**Feedback**: - [ ] Useful
+---
+
+**Perspective:** Speaking as career tech founder (FutureFit)
+
+### Industry Landscape Insights
+
+1. **Career platform consolidation trend**
+   - Observation: "Most career platforms are getting acquired by larger players like LinkedIn, Indeed"
+   - Implication: Window for independent platforms is narrowing; need strong differentiation or niche
+   - Strategic Value: Validates our aggregation/data layer positioning vs. trying to be another platform
+
+2. **Integration complexity as competitive moat**
+   - Observation: "Everyone wants to build the platform, but integration tax is brutal—that's why we have multiple front-ends"
+   - Implication: Being the data layer is more defensible than being an end-user platform
+   - Strategic Value: Confirms our API-first strategy; partners will pay to avoid building integrations themselves
+
+3. **User sophistication in career tools**
+   - Observation: "Users don't want directive advice anymore—they want tools that help them think through their own decisions"
+   - Implication: Market shifting from expert-driven to scaffolded self-reflection
+   - Strategic Value: Our alignment-first approach is ahead of the curve; this is where the market is going
+
+4. **Partnership dynamics in HR tech**
+   - Observation: "We're not competitive with tool providers—we're the distribution channel. They need us more than we need any single tool."
+   - Implication: Aggregators like FutureFit hold power in partnership negotiations; need to offer clear value beyond just another integration
+   - Strategic Value: We need to emphasize unique value prop (AI coaching, better matching) not just "another tool to integrate"
 ```
 
 ---
 
-## Special Format Requirements
+## v5.1.0 Changelog
 
-### Tables (B02, B11, etc.)
-- Use proper markdown table syntax
-- Align columns for readability
-- Include all columns specified in format
+**Release Date:** 2025-10-12
 
-### Lists (B01, B04, B05, B08, etc.)
-- Use bullet points (•) or markdown bullets (-)
-- Maintain consistent indentation
-- Use nested bullets for sub-items (→)
+**Major Changes:**
+- Updated for registry v1.5 (15 blocks, down from 19)
+- Added CRM integration instructions for B08
+- Added Howie V-OS tag harmonization guidance
+- Added B31 stakeholder research guidance
+- Updated block selection logic (7 REQUIRED blocks)
+- Enhanced B25 with follow-up email generation details
+- Added LinkedIn read-only restrictions
+- Updated stakeholder combinations for CUSTOMER and COMMUNITY
+- Documented deleted blocks (B04, B16, B28, B29, B30)
 
-### Headers
-- Use `###` (h3) for block name
-- Use horizontal rules (`---`) to separate feedback section
-- Use `**bold**` for field labels
-
-### Quotes (B29)
-- Use markdown blockquotes (>) for verbatim quotes
-- Include speaker attribution
-- Provide context for why the quote matters
-
----
-
-## Validation Checklist
-
-Before marking a meeting as processed, verify:
-
-- [ ] All REQUIRED blocks generated (B01, B08, B26)
-- [ ] Block files use `B##_BLOCKNAME.md` naming convention
-- [ ] All blocks follow exact format from registry
-- [ ] Feedback checkboxes included where `feedback_enabled: true`
-- [ ] No template system artifacts (no lowercase_underscored names)
-- [ ] No consolidated `blocks.md` file (each block separate)
-- [ ] `_metadata.json` includes `blocks_generated` array
-- [ ] `_metadata.json` includes `registry_version: "1.3"`
-- [ ] Transcript copied to meeting directory
-- [ ] Google Drive file marked with `[ZO-PROCESSED]`
-- [ ] Request moved to `processed/` folder
+**Minor Changes:**
+- Clarified B14/B27 split (blurbs vs. messaging)
+- Enhanced B13 with momentum section guidance
+- Updated B21 with merged quotes + questions structure
+- Added enrichment priority definitions
+- Improved quality checklist
 
 ---
 
-## Error Handling
-
-### If transcript download fails:
-- Log error to conversation workspace
-- Do NOT move request to processed
-- Report to V with specific error
-- Leave request for retry
-
-### If block generation fails:
-- Log which blocks were successfully generated
-- Save partial results
-- Report to V with specific error
-- Do NOT mark as processed
-
-### If meeting_id is malformed:
-- Report to V immediately
-- Do NOT process
-- Ask for manual intervention
-
----
-
-## Integration Points
-
-### Upstream
-- **`transcript-auto-processor`**: Creates request files in inbox
-
-### Downstream
-- **`meeting-approve`**: Displays generated blocks for review
-- **`deliverable-generate`**: Uses blocks to create deliverables
-- **`follow-up-email-generator`**: Consumes block data for emails
-
----
-
-## Related Commands
-
-- `meeting-approve` - Review and approve generated blocks
-- `deliverable-generate` - Generate deliverables from blocks
-- `transcript-ingest` - Manual transcript ingestion
-
----
-
-## Version History
-
-### v4.0.0 (2025-10-12)
-- **BREAKING CHANGE**: Switched from template system to registry-based system
-- All blocks now follow `block_type_registry.json` specifications
-- Standardized output format: `B##_BLOCKNAME.md`
-- Added feedback checkboxes for enabled blocks
-- Removed all template system references
-- Added comprehensive block selection logic
-- Added stakeholder-specific block combinations
-
-### v3.0.0 (Previous)
-- Template-based system (deprecated)
-
----
-
-## Notes for AI Processors (Zo)
-
-**Remember:**
-1. You ARE the processor - this is an instruction manual for YOU
-2. The registry is your specification - follow it exactly
-3. When in doubt, favor generating a block rather than skipping (unless clearly irrelevant)
-4. Quality over speed - take time to extract accurate information
-5. If you're unsure about a stakeholder type, use priority-based selection
-6. Check conditional triggers carefully - don't generate blocks that don't apply
-7. Preserve exact wording from transcript for quotes and key phrases
-8. Use judgment for "context" fields - explain WHY things matter, not just WHAT was said
-
-**Common pitfalls to avoid:**
-- ❌ Creating a single consolidated `blocks.md` file
-- ❌ Using lowercase_underscored naming (old format)
-- ❌ Improvising block formats instead of following registry
-- ❌ Skipping feedback checkboxes when enabled
-- ❌ Generating conditional blocks without triggers
-- ❌ Missing required blocks (B01, B08, B26)
-- ❌ Incorrect file naming (must be `B##_BLOCKNAME.md`)
+**You are transforming meetings into strategic intelligence. Act accordingly.**

@@ -3,78 +3,53 @@
   "type": "Companion",
   "code": "05",
   "short_name": "Block_Registry",
-  "version": "1.3",
-  "purpose": "Define all block types, formats, and stakeholder combinations for Meeting Intelligence Orchestrator",
+  "version": "1.5",
+  "purpose": "Define all block types with guidance principles (not rigid formats) for Meeting Intelligence Orchestrator. v1.5 adds CRM integration, Howie harmonization, and streamlined block count.",
   "blocks": {
     "B01": {
       "name": "DETAILED_RECAP",
-      "purpose": "Comprehensive decision and agreement summary",
+      "purpose": "Comprehensive decision and agreement summary with strategic depth",
       "when": "Every meeting (required)",
       "priority": "REQUIRED",
-      "format": "### DETAILED_RECAP\n---\n**Feedback**: - [ ] Useful\n---\nKey decisions and agreements:\n\u2022 We aligned on [specific outcome with context]\n\u2022 You confirmed [exact commitment with rationale]\n\u2022 Both sides agreed that [mutual understanding]\n\u2022 Next critical step is [specific milestone]",
-      "variables": [
-        "outcomes",
-        "confirmations",
-        "agreements",
-        "next_step"
+      "guidance": [
+        "Extract key decisions and agreements with FULL context - not just what was decided, but why it matters",
+        "Structure with sections: 'Key Decisions and Agreements' (bullet format) + 'Strategic Context' (narrative) + 'Critical Next Action' (structured)",
+        "Each decision bullet should include: the specific outcome, the rationale/context, and why both parties care",
+        "Strategic Context section should capture: positioning, pain points mentioned, competitive landscape if discussed, underlying motivations",
+        "Critical Next Action should be highly structured: Owner, Deliverable, Timeline, Purpose - make it crystal clear what needs to happen",
+        "Balance conciseness with depth - this isn't just meeting notes, it's strategic intelligence"
       ],
-      "detail_level": "high",
       "feedback_enabled": true
     },
     "B02": {
       "name": "COMMITMENTS_CONTEXTUAL",
-      "purpose": "Who owns what by when with dependencies",
-      "when": "Any meeting with action items",
-      "priority": "HIGH",
-      "format": "| Owner | Deliverable | Context/Why | Due Date | Dependencies |\n|-------|------------|------------|----------|--------------|\n",
-      "variables": [
-        "owner",
-        "deliverable",
-        "context",
-        "due_date",
-        "dependencies"
+      "purpose": "Who owns what by when with dependencies - action items with accountability",
+      "when": "Every meeting (required - elevated from HIGH to REQUIRED)",
+      "priority": "REQUIRED",
+      "guidance": [
+        "Use table format: Owner | Deliverable | Context/Why | Due Date | Dependencies",
+        "Owner classification: Vrijen/Logan/Careerspan team = 'We', Others = Use their name",
+        "Preserve date format as stated in transcript (EOD Friday, early next week, etc.)",
+        "If no date mentioned, flag with [Date TBD]",
+        "Context/Why column should explain the strategic importance, not just repeat the deliverable",
+        "Dependencies: identify what's blocking this or what this blocks",
+        "This is now REQUIRED because action items are critical follow-through for every meeting",
+        "If no action items were discussed, create file but note: 'No explicit action items or commitments discussed in this meeting'"
       ],
-      "rules": {
-        "owner_classification": "Vrijen/Logan/Careerspan team = 'We', Others = Name (your side)",
-        "date_format": "Preserve as stated (EOD Friday, early next week, etc.)",
-        "missing_date": "Flag with [Date TBD]"
-      },
-      "feedback_enabled": false
-    },
-    "B04": {
-      "name": "LINKS_WITH_CONTEXT",
-      "purpose": "Resources with explanation of relevance",
-      "when": "Any links/documents discussed",
-      "priority": "MEDIUM",
-      "format": "\u2022 **[Resource Name]** \u2014 [Why this matters to them]\n  \u2192 [URL or 'Link to follow']",
-      "variables": [
-        "resource_name",
-        "relevance",
-        "url"
-      ],
-      "integration": "Pull from Essential Links companion if available",
       "feedback_enabled": false
     },
     "B05": {
       "name": "OUTSTANDING_QUESTIONS",
-      "purpose": "Unresolved items with blocker identification",
+      "purpose": "Unresolved items with blocker identification and unblocking paths",
       "when": "ANY meeting with open loops",
       "priority": "HIGH",
-      "format": "### OUTSTANDING_QUESTIONS\n---\n**Feedback**: - [ ] Useful\n---\n**Outstanding questions:**\n\u2022 [Question]\n  \u2192 Owner: [Name]\n  \u2192 Needed by: [Date/Trigger]\n  \u2192 Blocker type: [WAITING_ON_DATA / NEEDS_DECISION / UNCLEAR_REQUIREMENT / DEPENDENCY]\n  \u2192 Unblocking action: [Specific step to resolve]\n  \u2192 Impact if delayed: [What gets stuck]",
-      "variables": [
-        "question",
-        "owner",
-        "deadline",
-        "blocker_type",
-        "unblocking_action",
-        "impact"
+      "guidance": [
+        "For each question, include: The question itself, Owner, Needed by (date/trigger), Blocker type, Unblocking action, Impact if delayed",
+        "Blocker types: WAITING_ON_DATA (info needed), NEEDS_DECISION (choice required), UNCLEAR_REQUIREMENT (ambiguity), DEPENDENCY (waiting on task/event)",
+        "Unblocking action should be SPECIFIC - not 'follow up' but 'Schedule call with X to clarify Y'",
+        "Impact if delayed should explain what gets stuck or what opportunity is lost",
+        "This block transforms vague open loops into actionable items with clear accountability"
       ],
-      "blocker_types": {
-        "WAITING_ON_DATA": "Information needed from someone",
-        "NEEDS_DECISION": "Choice required to proceed",
-        "UNCLEAR_REQUIREMENT": "Ambiguity needs clarification",
-        "DEPENDENCY": "Waiting on another task/event"
-      },
       "feedback_enabled": true
     },
     "B06": {
@@ -82,409 +57,477 @@
       "purpose": "Pilot details with confidence scoring",
       "when": "ONLY if pilot explicitly discussed",
       "priority": "CONDITIONAL",
-      "format": "**Pilot Discussion:**\n\nSpecificity: [Hypothetical / Outlined / Detailed]\nCommitment Level: [Exploring / Interested / Ready to proceed]\n\n*Parameters discussed:*\n\u2022 Scope: [X units] (firm/tentative)\n\u2022 Timeline: [duration] (firm/tentative)\n\u2022 Success criteria: [metrics] (defined/TBD)\n\u2022 Investment: [amount/effort] (agreed/TBD)\n\n*Next steps for pilot:*\n[Specific action] to move from [current state] to [next state]",
-      "confidence_indicators": true,
-      "variables": [
-        "specificity",
-        "commitment_level",
-        "scope",
-        "timeline",
-        "success_criteria",
-        "investment",
-        "next_steps"
+      "guidance": [
+        "Include: Specificity level (Hypothetical/Outlined/Detailed), Commitment Level (Exploring/Interested/Ready to proceed)",
+        "Parameters: Scope (with firm/tentative flag), Timeline (with firm/tentative flag), Success criteria (defined/TBD), Investment (agreed/TBD)",
+        "Add 'Next steps for pilot' - specific action to move from current state to next state",
+        "Use confidence indicators to help assess deal progression likelihood"
       ],
       "feedback_enabled": false
     },
     "B07": {
       "name": "WARM_INTRO_BIDIRECTIONAL",
       "purpose": "Facilitate connections in either direction",
-      "when": "Detected in transcript",
+      "when": "When any intro is promised or discussed",
       "priority": "HIGH",
-      "variants": {
-        "vrijen_introduces": {
-          "detection": [
-            "I'll introduce",
-            "I'll connect",
-            "let me connect",
-            "I'll forward your email"
-          ],
-          "format": "**Introduction to [Name] via Vrijen**\n\nContext: [Why relevant].\nI'll introduce with context about [mutual value].",
-          "linked_blocks": [
-            "B30"
-          ],
-          "notes": "When Vrijen introduces, generate a forwardable intro email (B30)."
-        },
-        "they_introduce_vrijen": {
-          "detection": [
-            "I can introduce you",
-            "I'll connect you with",
-            "let me put you in touch",
-            "send me a blurb"
-          ],
-          "format": "**Introduction to Vrijen via [Introducer]**\n\n[Introducer] will connect Vrijen with [Name] ([why relevant]).",
-          "linked_blocks": [
-            "B14"
-          ],
-          "notes": "When they introduce Vrijen, generate a single\u2011paragraph blurb by default (B14)."
-        }
-      },
+      "guidance": [
+        "Two variants: (1) Vrijen introduces someone, (2) They introduce Vrijen",
+        "When Vrijen introduces: note who to whom, why relevant, what context to include",
+        "When they introduce Vrijen: note who's introducing, to whom, why it matters. Links to B14 (blurb needed)",
+        "Even if intro is tentative ('maybe I could connect you...'), capture it",
+        "If no intros discussed, create file but note 'No explicit warm introductions discussed in this meeting'"
+      ],
       "feedback_enabled": false
     },
     "B08": {
-      "name": "RESONANCE_POINTS",
-      "purpose": "What got energy/enthusiasm",
-      "when": "Always",
+      "name": "STAKEHOLDER_INTELLIGENCE",
+      "purpose": "Unified stakeholder intelligence: foundational profile + resonance + CRM integration + Howie scheduling tags",
+      "when": "Every meeting (required)",
       "priority": "REQUIRED",
-      "format": "### RESONANCE_POINTS\n---\n**Feedback**: - [ ] Useful\n---\nParticularly resonated: [specific moment/topic with full context]",
-      "variables": [
-        "moment",
-        "why_it_mattered"
+      "guidance": [
+        "This block REPLACES the old B08 (Resonance Points) and B28 (Founder Profile) - it combines both plus adds CRM/Howie integration",
+        "",
+        "SECTION 1: FOUNDATIONAL PROFILE",
+        "- Company/Organization (or individual if no company)",
+        "- Product/Service: what they do in 1-2 sentences",
+        "- Motivation: why they're doing this, what drives them",
+        "- Funding Status: if discussed (or mark [Unknown - needs enrichment])",
+        "- Key Challenges: main pain points they mentioned",
+        "- Standout Quote: something memorable they said that captures their approach/values",
+        "",
+        "SECTION 2: WHAT RESONATED",
+        "- Identify 3-5 moments where either party showed genuine enthusiasm, energy, or strong agreement",
+        "- For each: quote the specific thing that was said, explain WHY it resonated, what it signals about priorities/fit",
+        "- Look for: tone shifts, 'I love that', repeated emphasis, extended discussion on one topic, asking detailed follow-up questions",
+        "- Balance positives (excitement) with negatives (concerns, hesitations) if present",
+        "- This helps identify what truly matters to them beyond stated priorities",
+        "",
+        "SECTION 3: CRM INTEGRATION",
+        "- Auto-generate for: FOUNDER, INVESTOR, CUSTOMER, COMMUNITY, NETWORKING stakeholders",
+        "- Skip for: JOB_SEEKER (goes to recruitment workflow instead)",
+        "- Status: Note if profile was created at `Knowledge/crm/individuals/[name].md`",
+        "- Mutual Acquaintances: List if identified, otherwise note [None identified - needs enrichment]",
+        "- Enrichment Priority: HIGH (active partnership/investment discussion), MEDIUM (warm contact, potential future value), LOW (networking contact, no immediate follow-up)",
+        "- Next Actions: List 2-3 enrichment tasks (LinkedIn research, company research, mutual connection identification)",
+        "",
+        "SECTION 4: HOWIE INTEGRATION",
+        "- Recommended Tags for Future Meetings: Generate V-OS tags for when Howie schedules future meetings",
+        "- Format: [LD-XXX] [GPT-X] [A-X]",
+        "- Tag categories: LD (Lead type: INV/NET/COM/etc), GPT (Goal/Phase/Timeline: E/M/C/etc), A (Accommodation: 1-4)",
+        "- Rationale: Explain why each tag applies based on stakeholder type, urgency, relationship depth",
+        "- Include Priority assessment: Critical/Important/Non-critical (can reschedule if needed)",
+        "",
+        "CRM AUTO-CREATE RULES:",
+        "- Create profile for all stakeholders EXCEPT JOB_SEEKER",
+        "- Profile path: `Knowledge/crm/individuals/[firstname-lastname].md`",
+        "- Mark enrichment priority based on: active deals = HIGH, warm contacts = MEDIUM, networking = LOW",
+        "",
+        "LINKEDIN ENRICHMENT - READ-ONLY RESTRICTIONS:",
+        "⛔ NEVER: Post, send messages, make profile changes, open notifications, endorse skills, react to posts, join groups, accept connections",
+        "✅ ALLOWED: View public profiles, view company pages, read posts (don't interact), scan connections (mutual acquaintances), extract background/experience",
+        "",
+        "HOWIE TAG RECOMMENDATIONS - INCLUDE FOR ALL STAKEHOLDERS:",
+        "- Always generate recommended V-OS tags even if no future meeting is scheduled yet",
+        "- Use this to pre-populate Howie's scheduling context for future interactions"
       ],
       "feedback_enabled": true
     },
     "B11": {
       "name": "METRICS_SNAPSHOT",
-      "purpose": "Numbers discussed",
-      "when": "Data-heavy or ROI discussions",
+      "purpose": "All numbers discussed - user counts, revenue, timelines, percentages, budgets",
+      "when": "ONLY if 3+ substantive metrics discussed (moved to CONDITIONAL-ONLY)",
       "priority": "CONDITIONAL",
-      "format": "Key metrics:\n\u2022 [Metric]: [Value]\n\u2022 [Benchmark]: [Comparison]\n\u2022 [Target]: [Goal if discussed]",
-      "variables": [
-        "metrics",
-        "values",
-        "comparisons"
+      "guidance": [
+        "Extract ALL numbers mentioned: user counts, revenue, timelines, percentages, budgets, growth rates, team sizes",
+        "Format: • **[Metric]**: [Value] (with context if needed)",
+        "Include comparisons or benchmarks if discussed",
+        "This is a reference block - comprehensive is better than selective",
+        "Trigger condition: Generate ONLY if 3 or more substantive metrics were discussed (not trivial numbers like 'met 2 weeks ago')"
       ],
       "feedback_enabled": false
     },
     "B13": {
       "name": "PLAN_OF_ACTION",
-      "purpose": "Execution roadmap with confidence indicator",
-      "when": "Complex initiatives needing structure",
+      "purpose": "Phased execution roadmap with confidence indicator, decision gates, and momentum analysis",
+      "when": "Complex initiatives or partnerships that need structured planning",
       "priority": "HIGH",
-      "format": "**Plan of Action: [Initiative]** *(Confidence: [LEVEL])*\n\n*Immediate* (This week):\n\u2192 [Action] to achieve [outcome]\n\n*Near-term* (Next 2-3 weeks):\n\u2192 If [condition], then [action]\n\u2192 In parallel: [supporting action]\n\n*Checkpoint*: [Date/trigger]\n\u2192 Evaluate: [metrics]\n\u2192 Decision: [Next phase options]\n\n*End state*: [Success definition]",
-      "confidence_levels": {
-        "FIRM": "Specific dates, resources allocated, both committed",
-        "TENTATIVE": "General timeline, pending approvals",
-        "EXPLORATORY": "Hypothetical, multiple options, no commitments"
-      },
+      "guidance": [
+        "Structure: Title with confidence level (FIRM/TENTATIVE/EXPLORATORY), then phases: Immediate (this week), Near-term (2-4 weeks), Checkpoint (decision point), End state",
+        "Each phase: specific actions with expected outcomes, if-then logic where relevant",
+        "Checkpoint should include: What to evaluate, What decision to make, Options based on outcomes",
+        "End state: define what success looks like concretely",
+        "Confidence levels: FIRM (dates/resources allocated), TENTATIVE (general timeline), EXPLORATORY (hypothetical)",
+        "",
+        "MOMENTUM SECTION (separate section within this block):",
+        "- Include when relevant for sales/partnership/investment conversations",
+        "- Two subsections: 'Positive Signals' and 'Watch Points'",
+        "- Positive Signals: specific things they said/did that indicate movement (detailed questions, timeline compression, resource allocation, enthusiasm)",
+        "- Watch Points: potential blockers, hesitations, non-commitments, concerns raised",
+        "- Focus on SIGNALS not just content - how they responded, what they prioritized, what they avoided",
+        "- This replaces the old B16 (Momentum Markers) which has been deleted and absorbed here"
+      ],
       "feedback_enabled": false
     },
     "B14": {
       "name": "BLURBS_REQUESTED",
-      "purpose": "Blurb content for when someone else introduces Vrijen/Careerspan",
-      "when": "Warm intro promised by other party or blurb requested",
+      "purpose": "ONLY actual blurbs explicitly requested during meeting (SPLIT from old B14)",
+      "when": "Intro promised by other party OR explicit blurb request detected",
       "priority": "HIGH",
-      "format": "### BLURBS_REQUESTED\n---\n**Feedback**: - [ ] Useful\n---\n\u2022 Vrijen Attawar (Careerspan): [single\u2011paragraph blurb]\n\n\u2022 Optional additional blurbs: [entity and angle, if requested]",
-      "linked_to": "B07 when they_introduce_vrijen variant detected",
+      "guidance": [
+        "This block now handles ONLY actual blurbs that were explicitly requested - strategic messaging has been moved to B27",
+        "",
+        "DETECTION PHRASES:",
+        "- Listen for: 'send me a blurb', 'I'll introduce you', 'I'll put you in touch', 'forward me something about what you do', 'I'll share your info with X'",
+        "",
+        "WHEN DETECTED:",
+        "- Extract: (a) Who Vrijen/Careerspan promised to send blurb to, (b) Context: who will they forward it to, (c) Goal: what's the introduction trying to achieve",
+        "- Generate a forwarding-ready blurb (1-2 paragraphs) tailored to: the recipient, the goal, and what resonated in THIS meeting",
+        "- Make it copy-pasteable - Vrijen should be able to send it as-is",
+        "",
+        "IF NO BLURB REQUESTED:",
+        "- Create file but note: 'No blurbs explicitly requested in this meeting'",
+        "- Do NOT generate proactive messaging here - that's now in B27"
+      ],
       "feedback_enabled": true
     },
     "B15": {
       "name": "STAKEHOLDER_MAP",
-      "purpose": "Who's who and their interests",
-      "when": "Multiple stakeholders or complex dynamics",
+      "purpose": "Who's who and their interests in complex multi-party situations",
+      "when": "Multiple stakeholders or complex organizational dynamics",
       "priority": "CONDITIONAL",
-      "format": "**Key Players:**\n\u2022 [Name] ([Title]) \u2014 Champion: [what they want]\n\u2022 [Name] ([Title]) \u2014 Decision Maker: [their concern]\n\u2022 [Name] ([Title]) \u2014 Influencer: [their angle]",
-      "variables": [
-        "names",
-        "titles",
-        "roles",
-        "interests"
+      "guidance": [
+        "List each key player with: Name, Title, Role (Champion/Decision Maker/Influencer/Blocker/User), Their specific interest/concern",
+        "Explain the power dynamics - who has final say, who influences whom",
+        "Note any tensions or misalignments between stakeholders",
+        "This helps navigate complex org politics"
       ],
       "feedback_enabled": false
-    },
-    "B16": {
-      "name": "MOMENTUM_MARKERS",
-      "purpose": "Signs of deal progression",
-      "when": "Sales/investment conversations",
-      "priority": "CONDITIONAL",
-      "format": "**Positive signals:**\n\u2022 [Specific thing they said/did]\n\u2022 [Timeline compression indicator]\n\u2022 [Resource allocation sign]\n\n**Watch points:**\n\u2022 [Potential blocker to monitor]",
-      "variables": [
-        "positive_signals",
-        "watch_points"
-      ],
-      "feedback_enabled": false
-    },
-    "B17": {
-      "name": "COMMUNITY_METRICS",
-      "purpose": "Success metrics for community management",
-      "when": "Community partner discussions",
-      "priority": "CONDITIONAL",
-      "format": "**Community Success Framework:**\n\n*Baseline metrics:*\n\u2022 Current size: [number]\n\u2022 Current engagement: [metric]\n\u2022 Current value delivery: [description]\n\n*Our proposed improvements:*\n\u2022 Target: [new metric] within [timeframe]\n\u2022 Method: [specific approach]\n\u2022 Measurement: [how we'll track]",
-      "stakeholder_specific": "COMMUNITY_PARTNER",
-      "feedback_enabled": false
-    },
-    "B18": {
-      "name": "CANDIDATE_RESOURCES",
-      "purpose": "Career resources and guidance for candidates",
-      "when": "Meeting with individual job seekers",
-      "priority": "CONDITIONAL",
-      "format": "**Resources for your search:**\n\n*Materials to review:*\n\u2022 [Resource]: [Why it helps your situation]\n\u2022 [Framework]: [How to apply to your case]\n\n*People to connect with:*\n\u2022 [Name]: [Why relevant to your goals]",
-      "stakeholder_specific": "CANDIDATE",
-      "feedback_enabled": false
-    },
-    "B19": {
-      "name": "MEETING_SUMMARY_AUTO",
-      "purpose": "Automated meeting summary for aged meetings",
-      "when": "days_since_meeting > 2",
-      "priority": "REQUIRED_CONDITIONAL",
-      "format": "### MEETING_SUMMARY_AUTO\n---\n**Feedback**: - [ ] Useful\n---\n**Meeting Summary ([DATE], [X] days ago):**\n[Brief summary].",
-      "variables": [
-        "date",
-        "days_ago",
-        "summary_content"
-      ],
-      "feedback_enabled": true
-    },
-    "B20": {
-      "name": "NOTES_FOR_ME_PRIVATE",
-      "purpose": "Personal, private notes for Vrijen only",
-      "when": "If Vrijen provides notes during Socratic clarification",
-      "priority": "CONDITIONAL",
-      "format": "### [PRIVATE \u2014 Notes for Me]\n---\n**Feedback**: - [ ] Useful\n---\n[VERBATIM_NOTES]",
-      "variables": [
-        "VERBATIM_NOTES"
-      ],
-      "private": true,
-      "feedback_enabled": true
     },
     "B21": {
-      "name": "SALIENT_QUESTIONS",
-      "purpose": "Summarizes the most critical questions (explicit or implicit) from a meeting, providing strategic focus and action hints.",
-      "when": "Detects questions with high strategic importance or uncertainty.",
-      "priority": "HIGH",
-      "format": "### SALIENT_QUESTIONS\n---\n**Feedback**: - [ ] Useful\n---\n### Top Five Salient Questions\n1. **[Question]** \u2014 *[Why it matters]* (source: [Speaker] @ [Timestamp])\n   **Action Hint:** [Specific hint]\n2. ",
-      "variables": [
-        "question",
-        "why_it_mattered",
-        "speaker",
-        "timestamp",
-        "action_hint",
-        "origin",
-        "secondary_questions"
-      ],
-      "feedback_enabled": true
-    },
-    "B22": {
-      "name": "DEBATE_TENSION_ANALYSIS",
-      "purpose": "Identifies and structures key points of disagreement, tension, or unresolved discussion within a meeting.",
-      "when": "Conflicting viewpoints detected (internal or external)",
-      "priority": "HIGH",
-      "format": "### DEBATE_TENSION_ANALYSIS\n---\n**Feedback**: - [ ] Useful\n---\n* **Topic**: [topic]\n  * **Perspective A**: \"[quote]\" ([speaker])\n  * **Perspective B**: \"[quote]\" ([speaker])\n  * **Status**: [Open/Decision Pending/Resolved]\n  * **Impact**: [impact]\n  * **Resolution Owner**: [owner]",
-      "variables": [
-        "topic",
-        "perspective_a_quote",
-        "perspective_a_speaker",
-        "perspective_b_quote",
-        "perspective_b_speaker",
-        "status",
-        "impact",
-        "resolution_owner"
-      ],
-      "feedback_enabled": true
-    },
-    "B23": {
-      "name": "USER_FEEDBACK_SUMMARY",
-      "purpose": "Synthesizes key themes, sentiment, and direct quotes from user/customer feedback within a transcript.",
-      "when": "Customer/user feedback session",
-      "priority": "MEDIUM",
-      "format": "### USER_FEEDBACK_SUMMARY\n---\n**Feedback**: - [ ] Useful\n---\n* **Key Theme**: [theme]\n  * **Sentiment**: [sentiment]\n  * **Evidence**: \"[quote]\" ([speaker], [timestamp])\n  * **Feature Request**: [request]",
-      "variables": [
-        "theme",
-        "sentiment",
-        "evidence_quote",
-        "speaker",
-        "timestamp",
-        "feature_request"
+      "name": "KEY_MOMENTS",
+      "purpose": "Impactful quotes + strategically important questions (MERGED B29 + B21)",
+      "when": "Every meeting (required - elevated from HIGH)",
+      "priority": "REQUIRED",
+      "guidance": [
+        "This block combines the old B29 (Key Quotes) and B21 (Salient Questions) into a unified 'Key Moments' block",
+        "",
+        "SECTION 1: MEMORABLE QUOTES",
+        "- Select 3-5 most impactful verbatim quotes from the conversation",
+        "- For each: The exact quote, Who said it, When (timestamp or phase), Context (why it mattered, what it reveals)",
+        "- Good quotes: reveal values, show enthusiasm, make commitments, express concerns, provide insight into thinking",
+        "- Context should interpret: 'This shows they value X' or 'This signals concern about Y'",
+        "- Balance quotes between parties if it's a two-way conversation",
+        "",
+        "SECTION 2: SALIENT QUESTIONS",
+        "- Identify top 3-5 questions that were most strategically important - either asked directly or implied by the discussion",
+        "- For each: The question, Why it matters, Who asked (with timestamp), Action hint (what to do with this question)",
+        "- Action hints should be specific: 'Demo the hiring manager AI' not 'follow up'",
+        "- Questions can be theirs ('How would you determine job values?') or yours ('Should we focus on API or embedded widget?')",
+        "- Prioritize questions that have strategic implications over tactical clarifications",
+        "",
+        "This unified block captures the most memorable and strategically important conversational moments"
       ],
       "feedback_enabled": true
     },
     "B24": {
       "name": "PRODUCT_IDEA_EXTRACTION",
-      "purpose": "Extracts and briefly describes product or feature ideas, with supporting evidence and rationale.",
-      "when": "Ideation/product discussion detected",
+      "purpose": "Feature/product ideas mentioned with confidence scoring",
+      "when": "Product/ideation discussions",
       "priority": "MEDIUM",
-      "format": "### PRODUCT_IDEA_EXTRACTION\n---\n**Feedback**: - [ ] Useful\n---\n* **Idea**: [name]\n  * **Description**: [desc]\n  * **Rationale**: [why]\n  * **Source**: \"[quote]\" ([speaker], [timestamp])\n  * **Confidence**: [High/Medium/Low]",
-      "variables": [
-        "idea_name",
-        "description",
-        "rationale",
-        "source_quote",
-        "speaker",
-        "timestamp",
-        "confidence"
+      "guidance": [
+        "Extract all feature or product ideas discussed - whether from them or us",
+        "For each: Idea name, Description, Rationale (why it would help), Source (who said it, with quote), Confidence (High/Medium/Low)",
+        "Confidence = How validated is this? High = explicitly requested/confirmed fit, Medium = suggested as possibility, Low = speculative",
+        "Include ideas even if not immediately feasible - this is an idea capture mechanism",
+        "Focus on ideas that have strategic value, not minor tweaks"
       ],
       "feedback_enabled": true
     },
     "B25": {
       "name": "DELIVERABLE_CONTENT_MAP",
-      "purpose": "Attachment-ready map of promised deliverables with status and links.",
-      "when": "Any meeting with action items or promised follow-ups.",
+      "purpose": "Deliverables table + send-ready follow-up email draft (DUAL PURPOSE BLOCK)",
+      "when": "Every meeting (required)",
       "priority": "REQUIRED",
-      "format": "### DELIVERABLE_CONTENT_MAP\n---\n**Feedback**: - [ ] Useful\n---\n| Item | Promised By | Promised When | Status | Link/File (if HAVE) | Send with Email |\n|---|---|---|---|---|---|",
-      "variables": [
-        "label",
-        "promised_by",
-        "promised_when",
-        "status",
-        "link_or_file_id",
-        "send_with_email"
+      "guidance": [
+        "This block has TWO sections that work together:",
+        "",
+        "SECTION 1: DELIVERABLE CONTENT MAP (TABLE)",
+        "- Table format: Item | Promised By | Promised When | Status | Link/File | Send with Email",
+        "- Status: HAVE (ready to send) or NEED (must create/find)",
+        "- Send with Email: True if attach to follow-up email, False if separate/later delivery",
+        "- Include items promised by BOTH parties (what we owe them, what they owe us)",
+        "- This serves as the checklist for follow-up execution",
+        "",
+        "SECTION 2: FOLLOW-UP EMAIL DRAFT",
+        "- Generate using the follow-up-email-generator.md command (v11.0.0) system",
+        "- Email structure: Greeting → Resonant Detail (1-2 sentences referencing personal moment) → Gratitude/Transition → Recap (bullets) → Next Steps/CTAs (max 2) → Sign-Off",
+        "- Use Markdown format with inline links: [text](URL) not raw URLs",
+        "- Incorporate distinctive phrases from transcript (max 2, confidence ≥ 0.75)",
+        "- Apply relationship depth dials: calculate warmth score + familiarity score → map to formality/CTA rigour",
+        "- Include 1-2 resonant details from conversation (personal anecdotes, shared values, humor, insights)",
+        "- Reference deliverables from Section 1 table - attach/mention as appropriate",
+        "- Readability constraints: Flesch-Kincaid ≤ 10, avg sentence 16-22 words, max 32 words per sentence, max 4 sentences per paragraph",
+        "- Delay sensitivity: If >2 days since meeting, include brief apology for delay",
+        "- Subject line pattern: 'Follow-Up: [RecipientName] x Careerspan [keyword1 • keyword2]'",
+        "",
+        "INTEGRATION:",
+        "- The email should reference deliverables from the table",
+        "- The table tells you what to attach to the email",
+        "- Together they create a complete follow-up package"
       ],
-      "rules": {
-        "status": "HAVE if link/file resolved; else NEED",
-        "send_with_email": "True if intended for direct attachment/inclusion"
-      },
       "feedback_enabled": true
     },
     "B26": {
       "name": "MEETING_METADATA_SUMMARY",
-      "purpose": "Consolidated metadata for quick review and email generation.",
-      "when": "Every meeting",
+      "purpose": "Quick-reference metadata for email generation, filing, and V-OS tag harmonization",
+      "when": "Every meeting (required)",
       "priority": "REQUIRED",
-      "format": "### MEETING_METADATA_SUMMARY\n---\n**Feedback**: - [ ] Useful\n---\n* **Generated Title**: [title]\n* **Subject Line**: \"[subject]\"\n* **Delay Sensitivity**: [NONE/SOFT/APOLOGY]\n* **Stakeholder Type**: [type]\n* **Confidence Score**: [score]%\n* **Transcript Match**: [match]%\n* **Granola Diarization**: [true/false]",
-      "variables": [
-        "title",
-        "subject",
-        "delay_sensitivity",
-        "type",
-        "score",
-        "match",
-        "granola_diarization"
+      "guidance": [
+        "Generate: Title for this meeting, Email subject line, Delay sensitivity, Stakeholder type, V-OS tags (Howie harmonization), Confidence score, Transcript quality",
+        "Title should be descriptive: 'FutureFit Partnership Exploration - Hamoon Ekhtiari' not 'Meeting with Hamoon'",
+        "Subject line should be action-oriented and contextual: 'Following up: FutureFit integration possibilities'",
+        "Delay sensitivity: NONE (<24hr), SOFT (24-72hr, acknowledge time), APOLOGY (>3 days, apologize explicitly)",
+        "Stakeholder type: FOUNDER/INVESTOR/NETWORKING/CANDIDATE/COMMUNITY/CUSTOMER based on conversation dynamics",
+        "V-OS Tags: Apply Howie's tag system - [LD-XXX] [GPT-X] [A-X] format for meeting categorization and future scheduling",
+        "Confidence score: How confident are you in the accuracy of this processing? (High/Medium/Low)",
+        "Transcript quality: Rate the transcript (Excellent/Good/Fair/Poor) to calibrate confidence"
       ],
       "feedback_enabled": true
     },
     "B27": {
-      "name": "PRIVATE_NOTES_FOR_ME",
-      "purpose": "Personal, private notes for Vrijen only",
-      "when": "If Vrijen provides notes",
-      "priority": "CONDITIONAL",
-      "format": "### [PRIVATE \u2014 Notes for Me]\n---\n**Feedback**: - [ ] Useful\n---\n[VERBATIM_NOTES]",
-      "variables": [
-        "VERBATIM_NOTES"
-      ],
-      "private": true,
-      "feedback_enabled": true
-    },
-    "B28": {
-      "name": "FOUNDER_PROFILE_SUMMARY",
-      "purpose": "Structured summary of a non-Careerspan founder's venture and personal context.",
-      "when": "Founder meeting",
+      "name": "KEY_MESSAGING",
+      "purpose": "Strategic messaging & talking points (SPLIT from old B14)",
+      "when": "Strategic meetings (founder/investor/partnership) - generate proactively",
       "priority": "HIGH",
-      "format": "### FOUNDER_PROFILE_SUMMARY\n---\n**Feedback**: - [ ] Useful\n---\n* **Company**: [company]\n* **Product/Service**: [product]\n* **Motivation**: [motivation]\n* **Funding Status**: [funding]\n* **Key Challenges**: [challenges]\n* **Standout Quote**: [quote]",
-      "variables": [
-        "company",
-        "product",
-        "motivation",
-        "funding",
-        "challenges",
-        "quote"
+      "guidance": [
+        "This block contains PROACTIVE strategic messaging generation - split from old B14 which had two purposes",
+        "",
+        "ALWAYS generate 5-10 strategic messaging blurbs after founder/investor/partnership meetings",
+        "These are reusable narratives that Vrijen can deploy in various contexts",
+        "",
+        "TYPES TO GENERATE:",
+        "- Value prop (30-sec elevator pitch)",
+        "- Technical credibility blurb",
+        "- Mission alignment narrative",
+        "- Specific fit for their situation",
+        "- Differentiation points (vs competitors or status quo)",
+        "- Stats/traction snapshot",
+        "",
+        "TAILOR EACH TO WHAT RESONATED:",
+        "- Reference specific discussion points from THIS meeting to make it contextual",
+        "- Label each with usage context: 'For follow-up emails', 'When asked about our approach', 'For objection handling'",
+        "",
+        "INCLUDE 'WHAT RESONATED' ANALYSIS:",
+        "- Brief section interpreting what the messaging tells us about Careerspan's positioning",
+        "- What this stakeholder's priorities reveal about the market/opportunity",
+        "",
+        "This is ALWAYS generated for strategic meetings, even if no explicit blurb was requested"
       ],
       "feedback_enabled": true
     },
-    "B29": {
-      "name": "KEY_QUOTES_HIGHLIGHTS",
-      "purpose": "Salient, verbatim quotes with speaker, timestamp, and context.",
-      "when": "Impactful statements detected",
-      "priority": "MEDIUM",
-      "format": "### KEY_QUOTES_HIGHLIGHTS\n---\n**Feedback**: - [ ] Useful\n---\n* \"[quote]\" ([speaker], [timestamp])\n  * *Context*: [context]",
-      "variables": [
-        "quote",
-        "speaker",
-        "timestamp",
-        "context"
-      ],
-      "feedback_enabled": true
-    },
-    "B30": {
-      "name": "INTRO_EMAIL_TEMPLATE",
-      "purpose": "Forwardable intro email when Vrijen is the introducer.",
-      "when": "Warm intro by Vrijen detected or preferred",
-      "priority": "HIGH",
-      "format": "### INTRO_EMAIL_TEMPLATE\n---\n**Feedback**: - [ ] Useful\n---\nSubject: Intro: [Person A] x [Person B] \u2014 [Hook]\n\nHi [Introducee],\n\nAs discussed, I\u2019d love to connect you with [Target] ([why relevant]). Here\u2019s a quick line: [one-liner].\n\n[Optional context bullets]\n\nIf helpful, feel free to forward as-is. Happy to make a direct intro too.\n\n\u2014 Vrijen",
-      "variables": [
-        "person_a",
-        "person_b",
-        "hook",
-        "introducee",
-        "target",
-        "why",
-        "one_liner",
-        "bullets"
+    "B31": {
+      "name": "STAKEHOLDER_RESEARCH",
+      "purpose": "Landscape insights from this stakeholder's perspective - intelligence gathering about the WORLD not just about THEM",
+      "when": "Every meeting (required - NEW BLOCK)",
+      "priority": "REQUIRED",
+      "guidance": [
+        "Extract critical insights about the landscape from this stakeholder's perspective",
+        "This is intelligence gathering - what did we learn about the WORLD from this conversation?",
+        "",
+        "WHAT TO EXTRACT:",
+        "- When they speak for their ORGANIZATION: company strategy, priorities, internal challenges, decision-making process",
+        "- When they speak for their INDUSTRY: trends, competitive dynamics, emerging patterns, market shifts",
+        "- When they speak as STAKEHOLDER TYPE: what investors/customers/partners care about, decision criteria, common objections, buying/funding patterns",
+        "",
+        "STRUCTURE:",
+        "- Perspective: Speaking as [career tech founder / early-stage investor / HR executive / etc]",
+        "- 3-5 key insights per meeting",
+        "- For each insight: Observation (what they said), Implication (what it means), Strategic value (how we can use this)",
+        "",
+        "FOCUS ON NON-OBVIOUS INFORMATION:",
+        "- Things you couldn't get from Google",
+        "- Inside perspective on how decisions are made",
+        "- Unwritten rules or hidden dynamics",
+        "- Emerging trends not yet widely known",
+        "",
+        "EXAMPLES:",
+        "- 'Most career platforms are getting acquired by larger players' → Window for independent players is narrowing",
+        "- 'Integration tax is brutal' → Being the data layer is more defensible than being a platform",
+        "- 'Series A valuations have compressed 40%' → Investors are more conservative, need stronger traction",
+        "",
+        "STAKEHOLDER VARIATIONS:",
+        "- Investors: Market trends, deal flow patterns, sector dynamics, what's getting funded",
+        "- Founders: Product/market insights, competitive intelligence, user behavior patterns, what's working/not working",
+        "- Customers: Industry pain points, buying criteria, organizational challenges, budget dynamics",
+        "- Community: Network dynamics, member needs, partnership opportunities, engagement patterns",
+        "",
+        "This block captures learnings that inform Careerspan's strategy beyond this individual relationship"
       ],
       "feedback_enabled": true
     }
   },
   "stakeholder_combinations": {
     "INVESTOR": {
+      "description": "Investor/VC meetings focused on fundraising, deal progression, market validation",
       "block_ids": [
         "B26",
         "B01",
-        "B08",
-        "B16",
-        "B11",
-        "B13",
         "B02",
-        "B07",
-        "B04",
-        "B05"
-      ]
-    },
-    "NETWORKING": {
-      "block_ids": [
-        "B26",
-        "B01",
         "B08",
+        "B21",
+        "B31",
+        "B25",
+        "B05",
+        "B13",
         "B07",
-        "B14",
-        "B04",
-        "B05"
+        "B27"
       ]
     },
     "FOUNDER": {
+      "description": "Founder/partnership meetings for potential collaborations, integrations, strategic alignment",
       "block_ids": [
         "B26",
         "B01",
+        "B02",
         "B08",
-        "B28",
-        "B29",
+        "B21",
+        "B31",
+        "B25",
+        "B05",
+        "B24",
+        "B13",
+        "B07",
+        "B14",
+        "B27"
+      ]
+    },
+    "NETWORKING": {
+      "description": "General networking meetings, warm contacts, exploratory conversations",
+      "block_ids": [
+        "B26",
+        "B01",
+        "B02",
+        "B08",
+        "B21",
+        "B31",
+        "B25",
+        "B07",
+        "B05"
+      ]
+    },
+    "CUSTOMER": {
+      "description": "Customer discovery, user research, or sales meetings",
+      "block_ids": [
+        "B26",
+        "B01",
+        "B02",
+        "B08",
+        "B21",
+        "B31",
+        "B25",
         "B24",
         "B05",
-        "B07",
-        "B14"
+        "B13",
+        "B27"
+      ]
+    },
+    "COMMUNITY": {
+      "description": "Community partner meetings for network building, member engagement",
+      "block_ids": [
+        "B26",
+        "B01",
+        "B02",
+        "B08",
+        "B21",
+        "B31",
+        "B25",
+        "B05",
+        "B07"
       ]
     }
   },
   "output_order": [
     "B26",
     "B01",
+    "B02",
     "B08",
     "B21",
-    "B22",
-    "B23",
-    "B24",
-    "B29",
+    "B31",
     "B25",
     "B05",
-    "B02",
     "B13",
     "B06",
     "B07",
     "B14",
-    "B30",
-    "B04",
+    "B27",
     "B11",
     "B15",
-    "B16",
-    "B17",
-    "B18",
-    "B19",
-    "B27"
+    "B24"
   ],
+  "deleted_blocks": {
+    "B04": {
+      "name": "LINKS_WITH_CONTEXT",
+      "reason": "Deleted - links now included directly in B25 follow-up email",
+      "deleted_in_version": "1.5"
+    },
+    "B16": {
+      "name": "MOMENTUM_MARKERS",
+      "reason": "Deleted - content absorbed into B13 (Plan of Action) as 'Momentum' section",
+      "deleted_in_version": "1.5"
+    },
+    "B28": {
+      "name": "FOUNDER_PROFILE_SUMMARY",
+      "reason": "Merged into B08 (Stakeholder Intelligence) - foundational profile section",
+      "deleted_in_version": "1.5"
+    },
+    "B29": {
+      "name": "KEY_QUOTES_HIGHLIGHTS",
+      "reason": "Merged into B21 (Key Moments) along with Salient Questions",
+      "deleted_in_version": "1.5"
+    },
+    "B30": {
+      "name": "INTRO_EMAIL_TEMPLATE",
+      "reason": "Deleted - intro emails generated ad-hoc when needed, not as standard block",
+      "deleted_in_version": "1.5"
+    }
+  },
   "metadata": {
     "compatible_with": [
-      "Function [03] - Meeting Intelligence Orchestrator v1.5+"
+      "Meeting Intelligence Orchestrator v2.0+"
     ],
-    "author": "Metaprompter v6.2",
+    "philosophy": "Guidance-based, not template-based. Let AI use contextual intelligence with detailed principles.",
+    "version_notes": "v1.5 major consolidation: reduced from 19 to 15 blocks. Added CRM integration (B08), Howie V-OS tag harmonization (B08, B26), stakeholder research (B31). Merged B28+B08, B29+B21. Split B14 into B14+B27. Deleted B04, B16, B30. Elevated B02 and B21 to REQUIRED. Enhanced B25 with follow-up email generation.",
     "created": "2025-01-21",
-    "updated": "2025-10-09",
-    "owner": "Vrijen Attawar"
+    "updated": "2025-10-12",
+    "owner": "Vrijen Attawar",
+    "changelog": {
+      "1.5": {
+        "date": "2025-10-12",
+        "changes": [
+          "Reduced total blocks from 19 to 15",
+          "Added B31: STAKEHOLDER_RESEARCH (landscape insights)",
+          "Enhanced B08: STAKEHOLDER_INTELLIGENCE (merged B28, added CRM + Howie)",
+          "Merged B29 + B21 into B21: KEY_MOMENTS",
+          "Split B14 into B14 (blurbs only) + B27 (key messaging)",
+          "Enhanced B25: Added follow-up email generation (dual-purpose block)",
+          "Enhanced B13: Added momentum analysis section (absorbed B16)",
+          "Elevated B02 to REQUIRED (action items always critical)",
+          "Elevated B21 to REQUIRED (key moments always valuable)",
+          "Made B11 conditional-only (3+ metrics trigger)",
+          "Deleted B04, B16, B28, B29, B30",
+          "Added stakeholder_combinations for CUSTOMER and COMMUNITY",
+          "Added CRM auto-create rules and LinkedIn restrictions",
+          "Added Howie V-OS tag recommendation system"
+        ]
+      },
+      "1.4": {
+        "date": "2025-10-12",
+        "changes": [
+          "Removed rigid format strings",
+          "Replaced with natural language guidance principles",
+          "Philosophy shift: determinism through intelligent prompting"
+        ]
+      }
+    }
   }
 }
