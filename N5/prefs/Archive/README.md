@@ -28,6 +28,22 @@
 
 ---
 
+## Backup Files Status
+
+**As of 2025-10-12:** All backup files have been removed from the filesystem during cleanup.
+
+**Removed files:**
+- `prefs.md.old` (383 lines)
+- `prefs.md.v1_backup` (498 lines)
+- `prefs.md.v2_monolithic_backup` (542 lines)
+- `index.md.deprecated` (239 lines)
+
+**Total removed:** 1,662 lines of redundant content
+
+**⚠️ Important:** These backups are NO LONGER available as physical files. However, all content is preserved in Git history and can be recovered if needed.
+
+---
+
 ## Preference System Evolution Timeline
 
 ### v1 (Pre-2025-10-09)
@@ -70,16 +86,39 @@ For current preferences documentation, see:
 
 ## Recovery Instructions
 
-If you need to reference old structures or rollback:
+**If you need to restore any historical version:**
 
-### View Old Monolithic Structure
+### View Historical Content
+
 ```bash
-# v1 backup (if still in git history)
+# View the current prefs.md at a specific commit
 git show 6972e45:N5/prefs/prefs.md
 
-# v2 backup (if still in git history)  
-git show <commit>:N5/prefs/prefs.md.v2_monolithic_backup
+# View deleted backup files (no longer exist as files)
+git log --all --full-history -- N5/prefs/prefs.md.v2_monolithic_backup
+git log --all --full-history -- N5/prefs/prefs.md.v1_backup
+git log --all --full-history -- N5/prefs/prefs.md.old
+git log --all --full-history -- N5/prefs/index.md.deprecated
 ```
 
-### Extract Specific Content
-All content from old versions exists in current modular structure. Use the MIGRATION_GUIDE.md in this folder to map old sections to new modules.
+### Restore from Git
+
+```bash
+# Restore a specific historical version
+git show <commit-hash>:N5/prefs/prefs.md > /tmp/restored_prefs.md
+
+# Compare with current version
+diff /tmp/restored_prefs.md N5/prefs/prefs.md
+```
+
+---
+
+## Cleanup Log
+
+### 2025-10-12: Backup File Removal
+- ✅ Removed 4 backup files (1,662 total lines)
+- ✅ Archived MIGRATION_GUIDE.md and OPTIMIZATION_SUMMARY.md
+- ✅ Recovered engagement_definitions.md from Git (commit 6972e45)
+- ✅ Updated all references from `index.md` → `prefs.md`
+- ✅ Removed stale backup references from active documentation
+- Status: All content preserved in Git history

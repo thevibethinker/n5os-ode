@@ -1,4 +1,4 @@
-# Folder Policy Principle
+# Folder Policy System
 
 **Module:** System Governance  
 **Version:** 2.0.0  
@@ -9,9 +9,9 @@
 
 ## Core Principle
 
-**Folder-specific POLICY.md files take precedence over global preferences** unless explicitly exempted in the policy file itself (e.g., "Exempts: Safety Overrides").
+**Folder-specific POLICY.md files take precedence over global preferences.**
 
-Policies govern the collective interpretation and handling of folder contents as programs, databases, or dynamic entities.
+If absent, default to global preferences in `file 'N5/prefs/prefs.md'` but flag for policy creation.
 
 ---
 
@@ -19,7 +19,7 @@ Policies govern the collective interpretation and handling of folder contents as
 
 **Always scan for and consult POLICY.md in the target folder before any interaction** (read, edit, add, delete).
 
-If absent, default to global preferences in `file 'N5/prefs/index.md'` but flag for policy creation.
+If absent, default to global preferences in `file 'N5/prefs/prefs.md'` but flag for policy creation.
 
 ---
 
@@ -51,7 +51,7 @@ If absent, default to global preferences in `file 'N5/prefs/index.md'` but flag 
    - Explicit exemptions (what still applies)
 
 6. **Anchors**
-   - Links to root N5/prefs/index.md
+   - Links to root N5/prefs/prefs.md
    - Related issues or problems
    - Parent or child policies
 
@@ -80,7 +80,7 @@ Brief description of folder role and contents.
 - Exempts: [Still-applicable rules]
 
 ## Anchors
-- [Root Policy](../N5/prefs/index.md)
+- [Root Policy](../N5/prefs/prefs.md)
 - [Related Schema](../schemas/xyz.schema.json)
 - Related Problems: [Issues this addresses]
 ```
@@ -104,7 +104,7 @@ When creating a new folder for structured content:
 3. **Define handling rules explicitly** (commands vs. direct edits)
 4. **Specify safety requirements** (validation, backups, dry-run)
 5. **Link to relevant schemas** in N5/schemas/ or subfolder schemas/
-6. **Anchor to parent policy** (usually N5/prefs/index.md)
+6. **Anchor to parent policy** (usually N5/prefs/prefs.md)
 
 ---
 
@@ -115,7 +115,7 @@ Folder policies can override **any global rule**. Document exemptions clearly.
 ### Precedence Hierarchy
 
 1. **Folder POLICY.md** (highest precedence)
-2. **N5/prefs/index.md** critical rules (safety overrides)
+2. **N5/prefs/prefs.md** critical rules (safety overrides)
 3. **Specialized preference modules** (system, operations, communication)
 4. **Global defaults** (lowest precedence)
 

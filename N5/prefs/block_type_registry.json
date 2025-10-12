@@ -3,7 +3,7 @@
   "type": "Companion",
   "code": "05",
   "short_name": "Block_Registry",
-  "version": "1.2",
+  "version": "1.3",
   "purpose": "Define all block types, formats, and stakeholder combinations for Meeting Intelligence Orchestrator",
   "blocks": {
     "B01": {
@@ -11,8 +11,13 @@
       "purpose": "Comprehensive decision and agreement summary",
       "when": "Every meeting (required)",
       "priority": "REQUIRED",
-      "format": "### DETAILED_RECAP\n---\n**Feedback**: [Useful/Not Useful]\n---\nKey decisions and agreements:\n• We aligned on [specific outcome with context]\n• You confirmed [exact commitment with rationale]\n• Both sides agreed that [mutual understanding]\n• Next critical step is [specific milestone]",
-      "variables": ["outcomes", "confirmations", "agreements", "next_step"],
+      "format": "### DETAILED_RECAP\n---\n**Feedback**: - [ ] Useful\n---\nKey decisions and agreements:\n\u2022 We aligned on [specific outcome with context]\n\u2022 You confirmed [exact commitment with rationale]\n\u2022 Both sides agreed that [mutual understanding]\n\u2022 Next critical step is [specific milestone]",
+      "variables": [
+        "outcomes",
+        "confirmations",
+        "agreements",
+        "next_step"
+      ],
       "detail_level": "high",
       "feedback_enabled": true
     },
@@ -22,7 +27,13 @@
       "when": "Any meeting with action items",
       "priority": "HIGH",
       "format": "| Owner | Deliverable | Context/Why | Due Date | Dependencies |\n|-------|------------|------------|----------|--------------|\n",
-      "variables": ["owner", "deliverable", "context", "due_date", "dependencies"],
+      "variables": [
+        "owner",
+        "deliverable",
+        "context",
+        "due_date",
+        "dependencies"
+      ],
       "rules": {
         "owner_classification": "Vrijen/Logan/Careerspan team = 'We', Others = Name (your side)",
         "date_format": "Preserve as stated (EOD Friday, early next week, etc.)",
@@ -35,8 +46,12 @@
       "purpose": "Resources with explanation of relevance",
       "when": "Any links/documents discussed",
       "priority": "MEDIUM",
-      "format": "• **[Resource Name]** — [Why this matters to them]\n  → [URL or 'Link to follow']",
-      "variables": ["resource_name", "relevance", "url"],
+      "format": "\u2022 **[Resource Name]** \u2014 [Why this matters to them]\n  \u2192 [URL or 'Link to follow']",
+      "variables": [
+        "resource_name",
+        "relevance",
+        "url"
+      ],
       "integration": "Pull from Essential Links companion if available",
       "feedback_enabled": false
     },
@@ -45,8 +60,15 @@
       "purpose": "Unresolved items with blocker identification",
       "when": "ANY meeting with open loops",
       "priority": "HIGH",
-      "format": "### OUTSTANDING_QUESTIONS\n---\n**Feedback**: [Useful/Not Useful]\n---\n**Outstanding questions:**\n• [Question]\n  → Owner: [Name]\n  → Needed by: [Date/Trigger]\n  → Blocker type: [WAITING_ON_DATA / NEEDS_DECISION / UNCLEAR_REQUIREMENT / DEPENDENCY]\n  → Unblocking action: [Specific step to resolve]\n  → Impact if delayed: [What gets stuck]",
-      "variables": ["question", "owner", "deadline", "blocker_type", "unblocking_action", "impact"],
+      "format": "### OUTSTANDING_QUESTIONS\n---\n**Feedback**: - [ ] Useful\n---\n**Outstanding questions:**\n\u2022 [Question]\n  \u2192 Owner: [Name]\n  \u2192 Needed by: [Date/Trigger]\n  \u2192 Blocker type: [WAITING_ON_DATA / NEEDS_DECISION / UNCLEAR_REQUIREMENT / DEPENDENCY]\n  \u2192 Unblocking action: [Specific step to resolve]\n  \u2192 Impact if delayed: [What gets stuck]",
+      "variables": [
+        "question",
+        "owner",
+        "deadline",
+        "blocker_type",
+        "unblocking_action",
+        "impact"
+      ],
       "blocker_types": {
         "WAITING_ON_DATA": "Information needed from someone",
         "NEEDS_DECISION": "Choice required to proceed",
@@ -60,9 +82,17 @@
       "purpose": "Pilot details with confidence scoring",
       "when": "ONLY if pilot explicitly discussed",
       "priority": "CONDITIONAL",
-      "format": "**Pilot Discussion:**\n\nSpecificity: [Hypothetical / Outlined / Detailed]\nCommitment Level: [Exploring / Interested / Ready to proceed]\n\n*Parameters discussed:*\n• Scope: [X units] (firm/tentative)\n• Timeline: [duration] (firm/tentative)\n• Success criteria: [metrics] (defined/TBD)\n• Investment: [amount/effort] (agreed/TBD)\n\n*Next steps for pilot:*\n[Specific action] to move from [current state] to [next state]",
+      "format": "**Pilot Discussion:**\n\nSpecificity: [Hypothetical / Outlined / Detailed]\nCommitment Level: [Exploring / Interested / Ready to proceed]\n\n*Parameters discussed:*\n\u2022 Scope: [X units] (firm/tentative)\n\u2022 Timeline: [duration] (firm/tentative)\n\u2022 Success criteria: [metrics] (defined/TBD)\n\u2022 Investment: [amount/effort] (agreed/TBD)\n\n*Next steps for pilot:*\n[Specific action] to move from [current state] to [next state]",
       "confidence_indicators": true,
-      "variables": ["specificity", "commitment_level", "scope", "timeline", "success_criteria", "investment", "next_steps"],
+      "variables": [
+        "specificity",
+        "commitment_level",
+        "scope",
+        "timeline",
+        "success_criteria",
+        "investment",
+        "next_steps"
+      ],
       "feedback_enabled": false
     },
     "B07": {
@@ -72,16 +102,30 @@
       "priority": "HIGH",
       "variants": {
         "vrijen_introduces": {
-          "detection": ["I'll introduce", "I'll connect", "let me connect", "I'll forward your email"],
+          "detection": [
+            "I'll introduce",
+            "I'll connect",
+            "let me connect",
+            "I'll forward your email"
+          ],
           "format": "**Introduction to [Name] via Vrijen**\n\nContext: [Why relevant].\nI'll introduce with context about [mutual value].",
-          "linked_blocks": ["B30"],
+          "linked_blocks": [
+            "B30"
+          ],
           "notes": "When Vrijen introduces, generate a forwardable intro email (B30)."
         },
         "they_introduce_vrijen": {
-          "detection": ["I can introduce you", "I'll connect you with", "let me put you in touch", "send me a blurb"],
+          "detection": [
+            "I can introduce you",
+            "I'll connect you with",
+            "let me put you in touch",
+            "send me a blurb"
+          ],
           "format": "**Introduction to Vrijen via [Introducer]**\n\n[Introducer] will connect Vrijen with [Name] ([why relevant]).",
-          "linked_blocks": ["B14"],
-          "notes": "When they introduce Vrijen, generate a single‑paragraph blurb by default (B14)."
+          "linked_blocks": [
+            "B14"
+          ],
+          "notes": "When they introduce Vrijen, generate a single\u2011paragraph blurb by default (B14)."
         }
       },
       "feedback_enabled": false
@@ -91,8 +135,11 @@
       "purpose": "What got energy/enthusiasm",
       "when": "Always",
       "priority": "REQUIRED",
-      "format": "### RESONANCE_POINTS\n---\n**Feedback**: [Useful/Not Useful]\n---\nParticularly resonated: [specific moment/topic with full context]",
-      "variables": ["moment", "why_it_mattered"],
+      "format": "### RESONANCE_POINTS\n---\n**Feedback**: - [ ] Useful\n---\nParticularly resonated: [specific moment/topic with full context]",
+      "variables": [
+        "moment",
+        "why_it_mattered"
+      ],
       "feedback_enabled": true
     },
     "B11": {
@@ -100,8 +147,12 @@
       "purpose": "Numbers discussed",
       "when": "Data-heavy or ROI discussions",
       "priority": "CONDITIONAL",
-      "format": "Key metrics:\n• [Metric]: [Value]\n• [Benchmark]: [Comparison]\n• [Target]: [Goal if discussed]",
-      "variables": ["metrics", "values", "comparisons"],
+      "format": "Key metrics:\n\u2022 [Metric]: [Value]\n\u2022 [Benchmark]: [Comparison]\n\u2022 [Target]: [Goal if discussed]",
+      "variables": [
+        "metrics",
+        "values",
+        "comparisons"
+      ],
       "feedback_enabled": false
     },
     "B13": {
@@ -109,7 +160,7 @@
       "purpose": "Execution roadmap with confidence indicator",
       "when": "Complex initiatives needing structure",
       "priority": "HIGH",
-      "format": "**Plan of Action: [Initiative]** *(Confidence: [LEVEL])*\n\n*Immediate* (This week):\n→ [Action] to achieve [outcome]\n\n*Near-term* (Next 2-3 weeks):\n→ If [condition], then [action]\n→ In parallel: [supporting action]\n\n*Checkpoint*: [Date/trigger]\n→ Evaluate: [metrics]\n→ Decision: [Next phase options]\n\n*End state*: [Success definition]",
+      "format": "**Plan of Action: [Initiative]** *(Confidence: [LEVEL])*\n\n*Immediate* (This week):\n\u2192 [Action] to achieve [outcome]\n\n*Near-term* (Next 2-3 weeks):\n\u2192 If [condition], then [action]\n\u2192 In parallel: [supporting action]\n\n*Checkpoint*: [Date/trigger]\n\u2192 Evaluate: [metrics]\n\u2192 Decision: [Next phase options]\n\n*End state*: [Success definition]",
       "confidence_levels": {
         "FIRM": "Specific dates, resources allocated, both committed",
         "TENTATIVE": "General timeline, pending approvals",
@@ -122,7 +173,7 @@
       "purpose": "Blurb content for when someone else introduces Vrijen/Careerspan",
       "when": "Warm intro promised by other party or blurb requested",
       "priority": "HIGH",
-      "format": "### BLURBS_REQUESTED\n---\n**Feedback**: [Useful/Not Useful]\n---\n• Vrijen Attawar (Careerspan): [single‑paragraph blurb]\n\n• Optional additional blurbs: [entity and angle, if requested]",
+      "format": "### BLURBS_REQUESTED\n---\n**Feedback**: - [ ] Useful\n---\n\u2022 Vrijen Attawar (Careerspan): [single\u2011paragraph blurb]\n\n\u2022 Optional additional blurbs: [entity and angle, if requested]",
       "linked_to": "B07 when they_introduce_vrijen variant detected",
       "feedback_enabled": true
     },
@@ -131,8 +182,13 @@
       "purpose": "Who's who and their interests",
       "when": "Multiple stakeholders or complex dynamics",
       "priority": "CONDITIONAL",
-      "format": "**Key Players:**\n• [Name] ([Title]) — Champion: [what they want]\n• [Name] ([Title]) — Decision Maker: [their concern]\n• [Name] ([Title]) — Influencer: [their angle]",
-      "variables": ["names", "titles", "roles", "interests"],
+      "format": "**Key Players:**\n\u2022 [Name] ([Title]) \u2014 Champion: [what they want]\n\u2022 [Name] ([Title]) \u2014 Decision Maker: [their concern]\n\u2022 [Name] ([Title]) \u2014 Influencer: [their angle]",
+      "variables": [
+        "names",
+        "titles",
+        "roles",
+        "interests"
+      ],
       "feedback_enabled": false
     },
     "B16": {
@@ -140,8 +196,11 @@
       "purpose": "Signs of deal progression",
       "when": "Sales/investment conversations",
       "priority": "CONDITIONAL",
-      "format": "**Positive signals:**\n• [Specific thing they said/did]\n• [Timeline compression indicator]\n• [Resource allocation sign]\n\n**Watch points:**\n• [Potential blocker to monitor]",
-      "variables": ["positive_signals", "watch_points"],
+      "format": "**Positive signals:**\n\u2022 [Specific thing they said/did]\n\u2022 [Timeline compression indicator]\n\u2022 [Resource allocation sign]\n\n**Watch points:**\n\u2022 [Potential blocker to monitor]",
+      "variables": [
+        "positive_signals",
+        "watch_points"
+      ],
       "feedback_enabled": false
     },
     "B17": {
@@ -149,7 +208,7 @@
       "purpose": "Success metrics for community management",
       "when": "Community partner discussions",
       "priority": "CONDITIONAL",
-      "format": "**Community Success Framework:**\n\n*Baseline metrics:*\n• Current size: [number]\n• Current engagement: [metric]\n• Current value delivery: [description]\n\n*Our proposed improvements:*\n• Target: [new metric] within [timeframe]\n• Method: [specific approach]\n• Measurement: [how we'll track]",
+      "format": "**Community Success Framework:**\n\n*Baseline metrics:*\n\u2022 Current size: [number]\n\u2022 Current engagement: [metric]\n\u2022 Current value delivery: [description]\n\n*Our proposed improvements:*\n\u2022 Target: [new metric] within [timeframe]\n\u2022 Method: [specific approach]\n\u2022 Measurement: [how we'll track]",
       "stakeholder_specific": "COMMUNITY_PARTNER",
       "feedback_enabled": false
     },
@@ -158,7 +217,7 @@
       "purpose": "Career resources and guidance for candidates",
       "when": "Meeting with individual job seekers",
       "priority": "CONDITIONAL",
-      "format": "**Resources for your search:**\n\n*Materials to review:*\n• [Resource]: [Why it helps your situation]\n• [Framework]: [How to apply to your case]\n\n*People to connect with:*\n• [Name]: [Why relevant to your goals]",
+      "format": "**Resources for your search:**\n\n*Materials to review:*\n\u2022 [Resource]: [Why it helps your situation]\n\u2022 [Framework]: [How to apply to your case]\n\n*People to connect with:*\n\u2022 [Name]: [Why relevant to your goals]",
       "stakeholder_specific": "CANDIDATE",
       "feedback_enabled": false
     },
@@ -167,8 +226,12 @@
       "purpose": "Automated meeting summary for aged meetings",
       "when": "days_since_meeting > 2",
       "priority": "REQUIRED_CONDITIONAL",
-      "format": "### MEETING_SUMMARY_AUTO\n---\n**Feedback**: [Useful/Not Useful]\n---\n**Meeting Summary ([DATE], [X] days ago):**\n[Brief summary].",
-      "variables": ["date", "days_ago", "summary_content"],
+      "format": "### MEETING_SUMMARY_AUTO\n---\n**Feedback**: - [ ] Useful\n---\n**Meeting Summary ([DATE], [X] days ago):**\n[Brief summary].",
+      "variables": [
+        "date",
+        "days_ago",
+        "summary_content"
+      ],
       "feedback_enabled": true
     },
     "B20": {
@@ -176,8 +239,10 @@
       "purpose": "Personal, private notes for Vrijen only",
       "when": "If Vrijen provides notes during Socratic clarification",
       "priority": "CONDITIONAL",
-      "format": "### [PRIVATE — Notes for Me]\n---\n**Feedback**: [Useful/Not Useful]\n---\n[VERBATIM_NOTES]",
-      "variables": ["VERBATIM_NOTES"],
+      "format": "### [PRIVATE \u2014 Notes for Me]\n---\n**Feedback**: - [ ] Useful\n---\n[VERBATIM_NOTES]",
+      "variables": [
+        "VERBATIM_NOTES"
+      ],
       "private": true,
       "feedback_enabled": true
     },
@@ -186,8 +251,16 @@
       "purpose": "Summarizes the most critical questions (explicit or implicit) from a meeting, providing strategic focus and action hints.",
       "when": "Detects questions with high strategic importance or uncertainty.",
       "priority": "HIGH",
-      "format": "### SALIENT_QUESTIONS\n---\n**Feedback**: [Useful/Not Useful]\n---\n### Top Five Salient Questions\n1. **[Question]** — *[Why it matters]* (source: [Speaker] @ [Timestamp])\n   **Action Hint:** [Specific hint]\n2. ",
-      "variables": ["question", "why_it_mattered", "speaker", "timestamp", "action_hint", "origin", "secondary_questions"],
+      "format": "### SALIENT_QUESTIONS\n---\n**Feedback**: - [ ] Useful\n---\n### Top Five Salient Questions\n1. **[Question]** \u2014 *[Why it matters]* (source: [Speaker] @ [Timestamp])\n   **Action Hint:** [Specific hint]\n2. ",
+      "variables": [
+        "question",
+        "why_it_mattered",
+        "speaker",
+        "timestamp",
+        "action_hint",
+        "origin",
+        "secondary_questions"
+      ],
       "feedback_enabled": true
     },
     "B22": {
@@ -195,8 +268,17 @@
       "purpose": "Identifies and structures key points of disagreement, tension, or unresolved discussion within a meeting.",
       "when": "Conflicting viewpoints detected (internal or external)",
       "priority": "HIGH",
-      "format": "### DEBATE_TENSION_ANALYSIS\n---\n**Feedback**: [Useful/Not Useful]\n---\n* **Topic**: [topic]\n  * **Perspective A**: \"[quote]\" ([speaker])\n  * **Perspective B**: \"[quote]\" ([speaker])\n  * **Status**: [Open/Decision Pending/Resolved]\n  * **Impact**: [impact]\n  * **Resolution Owner**: [owner]",
-      "variables": ["topic", "perspective_a_quote", "perspective_a_speaker", "perspective_b_quote", "perspective_b_speaker", "status", "impact", "resolution_owner"],
+      "format": "### DEBATE_TENSION_ANALYSIS\n---\n**Feedback**: - [ ] Useful\n---\n* **Topic**: [topic]\n  * **Perspective A**: \"[quote]\" ([speaker])\n  * **Perspective B**: \"[quote]\" ([speaker])\n  * **Status**: [Open/Decision Pending/Resolved]\n  * **Impact**: [impact]\n  * **Resolution Owner**: [owner]",
+      "variables": [
+        "topic",
+        "perspective_a_quote",
+        "perspective_a_speaker",
+        "perspective_b_quote",
+        "perspective_b_speaker",
+        "status",
+        "impact",
+        "resolution_owner"
+      ],
       "feedback_enabled": true
     },
     "B23": {
@@ -204,8 +286,15 @@
       "purpose": "Synthesizes key themes, sentiment, and direct quotes from user/customer feedback within a transcript.",
       "when": "Customer/user feedback session",
       "priority": "MEDIUM",
-      "format": "### USER_FEEDBACK_SUMMARY\n---\n**Feedback**: [Useful/Not Useful]\n---\n* **Key Theme**: [theme]\n  * **Sentiment**: [sentiment]\n  * **Evidence**: \"[quote]\" ([speaker], [timestamp])\n  * **Feature Request**: [request]",
-      "variables": ["theme", "sentiment", "evidence_quote", "speaker", "timestamp", "feature_request"],
+      "format": "### USER_FEEDBACK_SUMMARY\n---\n**Feedback**: - [ ] Useful\n---\n* **Key Theme**: [theme]\n  * **Sentiment**: [sentiment]\n  * **Evidence**: \"[quote]\" ([speaker], [timestamp])\n  * **Feature Request**: [request]",
+      "variables": [
+        "theme",
+        "sentiment",
+        "evidence_quote",
+        "speaker",
+        "timestamp",
+        "feature_request"
+      ],
       "feedback_enabled": true
     },
     "B24": {
@@ -213,8 +302,16 @@
       "purpose": "Extracts and briefly describes product or feature ideas, with supporting evidence and rationale.",
       "when": "Ideation/product discussion detected",
       "priority": "MEDIUM",
-      "format": "### PRODUCT_IDEA_EXTRACTION\n---\n**Feedback**: [Useful/Not Useful]\n---\n* **Idea**: [name]\n  * **Description**: [desc]\n  * **Rationale**: [why]\n  * **Source**: \"[quote]\" ([speaker], [timestamp])\n  * **Confidence**: [High/Medium/Low]",
-      "variables": ["idea_name", "description", "rationale", "source_quote", "speaker", "timestamp", "confidence"],
+      "format": "### PRODUCT_IDEA_EXTRACTION\n---\n**Feedback**: - [ ] Useful\n---\n* **Idea**: [name]\n  * **Description**: [desc]\n  * **Rationale**: [why]\n  * **Source**: \"[quote]\" ([speaker], [timestamp])\n  * **Confidence**: [High/Medium/Low]",
+      "variables": [
+        "idea_name",
+        "description",
+        "rationale",
+        "source_quote",
+        "speaker",
+        "timestamp",
+        "confidence"
+      ],
       "feedback_enabled": true
     },
     "B25": {
@@ -222,8 +319,15 @@
       "purpose": "Attachment-ready map of promised deliverables with status and links.",
       "when": "Any meeting with action items or promised follow-ups.",
       "priority": "REQUIRED",
-      "format": "### DELIVERABLE_CONTENT_MAP\n---\n**Feedback**: [Useful/Not Useful]\n---\n| Item | Promised By | Promised When | Status | Link/File (if HAVE) | Send with Email |\n|---|---|---|---|---|---|",
-      "variables": ["label", "promised_by", "promised_when", "status", "link_or_file_id", "send_with_email"],
+      "format": "### DELIVERABLE_CONTENT_MAP\n---\n**Feedback**: - [ ] Useful\n---\n| Item | Promised By | Promised When | Status | Link/File (if HAVE) | Send with Email |\n|---|---|---|---|---|---|",
+      "variables": [
+        "label",
+        "promised_by",
+        "promised_when",
+        "status",
+        "link_or_file_id",
+        "send_with_email"
+      ],
       "rules": {
         "status": "HAVE if link/file resolved; else NEED",
         "send_with_email": "True if intended for direct attachment/inclusion"
@@ -235,8 +339,16 @@
       "purpose": "Consolidated metadata for quick review and email generation.",
       "when": "Every meeting",
       "priority": "REQUIRED",
-      "format": "### MEETING_METADATA_SUMMARY\n---\n**Feedback**: [Useful/Not Useful]\n---\n* **Generated Title**: [title]\n* **Subject Line**: \"[subject]\"\n* **Delay Sensitivity**: [NONE/SOFT/APOLOGY]\n* **Stakeholder Type**: [type]\n* **Confidence Score**: [score]%\n* **Transcript Match**: [match]%\n* **Granola Diarization**: [true/false]",
-      "variables": ["title", "subject", "delay_sensitivity", "type", "score", "match", "granola_diarization"],
+      "format": "### MEETING_METADATA_SUMMARY\n---\n**Feedback**: - [ ] Useful\n---\n* **Generated Title**: [title]\n* **Subject Line**: \"[subject]\"\n* **Delay Sensitivity**: [NONE/SOFT/APOLOGY]\n* **Stakeholder Type**: [type]\n* **Confidence Score**: [score]%\n* **Transcript Match**: [match]%\n* **Granola Diarization**: [true/false]",
+      "variables": [
+        "title",
+        "subject",
+        "delay_sensitivity",
+        "type",
+        "score",
+        "match",
+        "granola_diarization"
+      ],
       "feedback_enabled": true
     },
     "B27": {
@@ -244,8 +356,10 @@
       "purpose": "Personal, private notes for Vrijen only",
       "when": "If Vrijen provides notes",
       "priority": "CONDITIONAL",
-      "format": "### [PRIVATE — Notes for Me]\n---\n**Feedback**: [Useful/Not Useful]\n---\n[VERBATIM_NOTES]",
-      "variables": ["VERBATIM_NOTES"],
+      "format": "### [PRIVATE \u2014 Notes for Me]\n---\n**Feedback**: - [ ] Useful\n---\n[VERBATIM_NOTES]",
+      "variables": [
+        "VERBATIM_NOTES"
+      ],
       "private": true,
       "feedback_enabled": true
     },
@@ -254,8 +368,15 @@
       "purpose": "Structured summary of a non-Careerspan founder's venture and personal context.",
       "when": "Founder meeting",
       "priority": "HIGH",
-      "format": "### FOUNDER_PROFILE_SUMMARY\n---\n**Feedback**: [Useful/Not Useful]\n---\n* **Company**: [company]\n* **Product/Service**: [product]\n* **Motivation**: [motivation]\n* **Funding Status**: [funding]\n* **Key Challenges**: [challenges]\n* **Standout Quote**: [quote]",
-      "variables": ["company", "product", "motivation", "funding", "challenges", "quote"],
+      "format": "### FOUNDER_PROFILE_SUMMARY\n---\n**Feedback**: - [ ] Useful\n---\n* **Company**: [company]\n* **Product/Service**: [product]\n* **Motivation**: [motivation]\n* **Funding Status**: [funding]\n* **Key Challenges**: [challenges]\n* **Standout Quote**: [quote]",
+      "variables": [
+        "company",
+        "product",
+        "motivation",
+        "funding",
+        "challenges",
+        "quote"
+      ],
       "feedback_enabled": true
     },
     "B29": {
@@ -263,8 +384,13 @@
       "purpose": "Salient, verbatim quotes with speaker, timestamp, and context.",
       "when": "Impactful statements detected",
       "priority": "MEDIUM",
-      "format": "### KEY_QUOTES_HIGHLIGHTS\n---\n**Feedback**: [Useful/Not Useful]\n---\n* \"[quote]\" ([speaker], [timestamp])\n  * *Context*: [context]",
-      "variables": ["quote", "speaker", "timestamp", "context"],
+      "format": "### KEY_QUOTES_HIGHLIGHTS\n---\n**Feedback**: - [ ] Useful\n---\n* \"[quote]\" ([speaker], [timestamp])\n  * *Context*: [context]",
+      "variables": [
+        "quote",
+        "speaker",
+        "timestamp",
+        "context"
+      ],
       "feedback_enabled": true
     },
     "B30": {
@@ -272,15 +398,59 @@
       "purpose": "Forwardable intro email when Vrijen is the introducer.",
       "when": "Warm intro by Vrijen detected or preferred",
       "priority": "HIGH",
-      "format": "### INTRO_EMAIL_TEMPLATE\n---\n**Feedback**: [Useful/Not Useful]\n---\nSubject: Intro: [Person A] x [Person B] — [Hook]\n\nHi [Introducee],\n\nAs discussed, I’d love to connect you with [Target] ([why relevant]). Here’s a quick line: [one-liner].\n\n[Optional context bullets]\n\nIf helpful, feel free to forward as-is. Happy to make a direct intro too.\n\n— Vrijen",
-      "variables": ["person_a", "person_b", "hook", "introducee", "target", "why", "one_liner", "bullets"],
+      "format": "### INTRO_EMAIL_TEMPLATE\n---\n**Feedback**: - [ ] Useful\n---\nSubject: Intro: [Person A] x [Person B] \u2014 [Hook]\n\nHi [Introducee],\n\nAs discussed, I\u2019d love to connect you with [Target] ([why relevant]). Here\u2019s a quick line: [one-liner].\n\n[Optional context bullets]\n\nIf helpful, feel free to forward as-is. Happy to make a direct intro too.\n\n\u2014 Vrijen",
+      "variables": [
+        "person_a",
+        "person_b",
+        "hook",
+        "introducee",
+        "target",
+        "why",
+        "one_liner",
+        "bullets"
+      ],
       "feedback_enabled": true
     }
   },
   "stakeholder_combinations": {
-    "INVESTOR": {"block_ids": ["B26", "B01", "B08", "B16", "B11", "B13", "B02", "B07", "B04", "B05"]},
-    "NETWORKING": {"block_ids": ["B26", "B01", "B08", "B07", "B14", "B04", "B05"]},
-    "FOUNDER": {"block_ids": ["B26", "B01", "B08", "B28", "B29", "B24", "B05", "B07", "B14"]}
+    "INVESTOR": {
+      "block_ids": [
+        "B26",
+        "B01",
+        "B08",
+        "B16",
+        "B11",
+        "B13",
+        "B02",
+        "B07",
+        "B04",
+        "B05"
+      ]
+    },
+    "NETWORKING": {
+      "block_ids": [
+        "B26",
+        "B01",
+        "B08",
+        "B07",
+        "B14",
+        "B04",
+        "B05"
+      ]
+    },
+    "FOUNDER": {
+      "block_ids": [
+        "B26",
+        "B01",
+        "B08",
+        "B28",
+        "B29",
+        "B24",
+        "B05",
+        "B07",
+        "B14"
+      ]
+    }
   },
   "output_order": [
     "B26",
@@ -309,7 +479,9 @@
     "B27"
   ],
   "metadata": {
-    "compatible_with": ["Function [03] - Meeting Intelligence Orchestrator v1.5+"],
+    "compatible_with": [
+      "Function [03] - Meeting Intelligence Orchestrator v1.5+"
+    ],
     "author": "Metaprompter v6.2",
     "created": "2025-01-21",
     "updated": "2025-10-09",

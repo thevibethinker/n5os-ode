@@ -261,7 +261,6 @@ When referring to lists, always check `/home/workspace/N5/lists/` and `/home/wor
 - Moved organization identity to `operations/careerspan.md`
 - Added clear loading contexts for communication modules (only for distributed output)
 - Deprecated old `index.md` in favor of this streamlined `prefs.md`
-- Backed up monolithic version to `prefs.md.v2_monolithic_backup`
 
 ### v2.0.0 — 2025-10-09
 - Refactored into modular structure with system/, operations/, communication/, integration/, knowledge/ subdirectories
@@ -275,10 +274,6 @@ When referring to lists, always check `/home/workspace/N5/lists/` and `/home/wor
 
 ---
 
-## Migration Notes
+**For full details on each module, see the module files directly or consult `file 'N5/prefs/README.md'`.**
 
-**Previous monolithic file preserved at:** `file 'N5/prefs/prefs.md.v2_monolithic_backup'`
-
-**Backward compatibility:** This index file serves as the main entry point. All original content preserved in focused modules.
-
-**Validation:** All rules from previous versions preserved across new modules; no functionality lost.
+**For historical context on preference system evolution, see `file 'N5/prefs/Archive/README.md'`.**

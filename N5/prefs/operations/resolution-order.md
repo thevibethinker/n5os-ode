@@ -61,7 +61,7 @@ Modules in `N5/prefs/` hierarchy:
 ---
 
 ### 7. Global Preferences Index
-`file 'N5/prefs/index.md'` — Base defaults
+`file 'N5/prefs/prefs.md'` — Base defaults
 
 ---
 
