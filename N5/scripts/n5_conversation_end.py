@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 N5 Conversation End-Step
-Formal conversation close with file organization and cleanup
+Formal conversation close with AAR generation, file organization and cleanup
 
 This is the "end step" (like Magic: The Gathering) where all conversation
-effects are resolved - files are reviewed, organized, and cleaned up.
+effects are resolved - AAR generated, files reviewed, organized, and cleaned up.
 """
 
 import os
@@ -305,6 +305,50 @@ def cleanup_workspace_root():
         print(f"⚠️  Workspace root cleanup skipped: {e}")
 
 
+def generate_aar():
+    """
+    Generate After-Action Report (AAR) for this conversation
+    This is Phase 0 - captures conversation context before cleanup
+    """
+    print("\n" + "="*70)
+    print("PHASE 0: AFTER-ACTION REPORT (AAR) GENERATION")
+    print("="*70)
+    print("\nCapturing conversation context and decisions...\n")
+    
+    aar_script = WORKSPACE / "N5/scripts/n5_thread_export.py"
+    
+    if not aar_script.exists():
+        print("⚠️  AAR script not found, skipping AAR generation")
+        print(f"   Expected: {aar_script}")
+        return
+    
+    try:
+        # Run AAR export with auto-detect and auto-confirm (--yes flag for non-interactive)
+        result = subprocess.run(
+            [sys.executable, str(aar_script), "--auto", "--yes"],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=300  # 5 minute timeout
+        )
+        
+        # Print output
+        if result.stdout:
+            print(result.stdout)
+        
+        if result.returncode == 0:
+            print("\n✓ AAR generated successfully")
+        else:
+            print(f"\n⚠️  AAR generation completed with warnings")
+            if result.stderr:
+                print(f"Errors: {result.stderr}")
+        
+    except subprocess.TimeoutExpired:
+        print("⚠️  AAR generation timed out (>5min), continuing with cleanup...")
+    except Exception as e:
+        print(f"⚠️  AAR generation skipped: {e}")
+
+
 def main():
     """Main execution"""
     
@@ -327,7 +371,13 @@ def main():
     print("="*70)
     print(f"\nConversation workspace: {CONVERSATION_WS}")
     
+    # NEW: Phase 0 - Generate AAR
+    generate_aar()
+    
     # Step 1: Inventory
+    print("\n" + "="*70)
+    print("PHASE 1: FILE ORGANIZATION")
+    print("="*70)
     print("\nStep 1: Inventorying files...")
     files_by_category = inventory_workspace()
     

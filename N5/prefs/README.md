@@ -36,8 +36,6 @@ This lightweight index (~1-2K tokens) contains:
 N5/prefs/
 ├── index.md                      ← Start here
 ├── README.md                     ← This file
-├── MIGRATION_GUIDE.md            ← v1→v2 migration details
-├── prefs.md.v1_backup            ← Original monolithic file
 ├── naming-conventions.md         
 ├── engagement_definitions.md     
 ├── system/                       ← System governance
@@ -56,8 +54,12 @@ N5/prefs/
 ├── integration/                  ← Tool integrations
 │   ├── google-drive.md
 │   └── coding-agent.md
-└── knowledge/                    ← Knowledge management
-    └── lookup.md
+├── knowledge/                    ← Knowledge management
+│   └── lookup.md
+└── Archive/                      ← Historical documentation
+    ├── README.md
+    ├── MIGRATION_GUIDE.md
+    └── OPTIMIZATION_SUMMARY.md
 ```
 
 ---
@@ -168,9 +170,9 @@ Preferences reference (not duplicate) these stable knowledge files:
 
 ## Migration from v1
 
-**Original file preserved:** `prefs.md.v1_backup`
+**Original file preserved in Git history**
 
-**Full migration details:** See `MIGRATION_GUIDE.md`
+**Historical migration details:** See `file 'N5/prefs/Archive/MIGRATION_GUIDE.md'`
 
 **All content preserved:** Every rule from v1 is in v2, just reorganized
 
@@ -205,8 +207,8 @@ Preferences reference (not duplicate) these stable knowledge files:
 ## Support
 
 Questions or issues with the new structure?
-1. Check `MIGRATION_GUIDE.md` for details
-2. Verify content in `prefs.md.v1_backup`
+1. Check `file 'N5/prefs/Archive/MIGRATION_GUIDE.md'` for historical context
+2. Verify content mapping between versions
 3. Test specific module loading
 4. Raise issue with Zo team if needed
 

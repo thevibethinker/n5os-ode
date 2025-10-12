@@ -1,0 +1,302 @@
+{
+  "artifact": "Meeting Intelligence Orchestrator",
+  "type": "Function",
+  "code": "03",
+  "short_name": "Meeting_Intel_Orchestrator",
+  "version": "1.5",
+  "proposed_save_filename": "Function [03] - Meeting Intelligence Orchestrator v1.5.json",
+  "purpose": "Extract and organize meeting information into modular, copyable blocks for email follow-ups without voice styling; emit subject line and attachment-ready deliverables map compatible with Follow-Up Email Generator v10.6",
+
+  "metaprompter_header": {
+    "template": "╭─ Metaprompter State ───────────────────────────────────────────────
+│ Step: <<stepNum>> / 10 – <<stepName>>
+│ Stakeholder Confidence: <<stakeholderConfidence>>%
+│ Blocks Generated: <<blocksGenerated>>/<<totalBlocks>>
+│ Socratic Answers: <<socraticAnswers>>/6
+│ Calendar Tag: <<calendarTag>>
+│ Transcript Match: <<transcriptMatchScore>>%
+│ Proposed Title: <<proposedTitle>>
+│ Proposed Subject: <<subjectLine>>
+│ Delay Sensitivity: <<delaySensitivity>>
+│ Next Trigger: <<nextTrigger>>
+│ Missing Required: <<missingRequired>>
+│ Pending Tool Calls: <<pendingTools>>
+╰────────────────────────────────────────────────────────────────────",
+    "runtime_values": "Auto-populated during execution"
+  },
+
+  "inputs": {
+    "required": [
+      "meeting_date_or_range",
+      "user_confirmation_for_socratic"
+    ],
+    "optional": [
+      "specific_transcript_url",
+      "stakeholder_override",
+      "block_preferences",
+      "title_style_override",
+      "recipient_first_name_override"
+    ],
+    "companion_files_required": [
+      "Companion [05] - Block Type Registry v1.2.json"
+    ],
+    "companion_files_optional": [
+      "Companion [05] - Essential Links (latest)",
+      "Master Voice Companion (>=1.2)"
+    ],
+    "block_registry_requirements": {
+      "min_version": "1.2",
+      "must_include_blocks": ["B19", "B20"]
+    }
+  },
+
+  "runtime_output_contract": {
+    "format": "modular_blocks",
+    "structure": {
+      "hypothesis": "stakeholder and meeting analysis",
+      "socratic_questions": "max 6 clarifying questions",
+      "generated_blocks": "array of independently copyable text blocks from registry (external only)",
+      "generated_private_blocks": "array of private blocks (e.g., B20) rendered in a separate PRIVATE section",
+      "auxiliary_maps": {
+        "DeliverableContentMap": [
+          {
+            "label": "string (e.g., Deck, Case Study)",
+            "description": "string",
+            "promised_by": "Vrijen|Logan|Careerspan",
+            "promised_when": "verbatim timing from meeting",
+            "source_hint": "token from Essential Links (if any)",
+            "link": "resolved URL if found",
+            "file_id": "drive id if found",
+            "status": "HAVE|NEED",
+            "send_with_email": "boolean",
+            "notes": "string"
+          }
+        ],
+        "ResonancePool": "array",
+        "SpeakerQuoteMap": "array"
+      },
+      "metadata": {
+        "stakeholder_type": "string",
+        "confidence_score": "number",
+        "blocks_used": "array of block IDs",
+        "outstanding_items": "count",
+        "days_since_meeting": "integer",
+        "speaker_attribution_risk": "LOW|MEDIUM|HIGH",
+        "transcript_match_score": "number",
+        "notes_for_me_present": "boolean",
+        "notes_item_count": "integer",
+        "generated_title": "string",
+        "title_slug": "string",
+        "subject_line": "string",
+        "subject_line_strategy": "Follow-Up Email – <RecipientFirstName> x Careerspan [<kw1> • <kw2> • <kw3>]",
+        "subject_keywords": "array",
+        "delay_sensitivity": "NONE|SOFT|APOLOGY"
+      }
+    }
+  },
+
+  "steps": [
+    {
+      "id": 0,
+      "name": "Initialize",
+      "actions": [
+        "Display metaprompter state header",
+        "Load Block Type Registry companion file (REQUIRED)",
+        "Load Essential Links companion file (OPTIONAL)",
+        "(Optional) Load Master Voice Companion for downstream compatibility",
+        "Validate block registry loaded successfully and version >= 1.2 with B19 & B20",
+        "Set telemetry tracking"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Data Acquisition",
+      "actions": [
+        "Call Google Calendar API for meeting codes and attendees",
+        "Extract calendar tags [LD-XXX]",
+        "Call Google Drive API for transcript search",
+        "Execute transcript_calendar_matching logic"
+      ],
+      "transcript_matching_logic": {
+        "search_window": "±2 hours from calendar event",
+        "confidence_scoring": {"attendee_name_match": 40, "title_match": 30, "time_proximity": 20, "calendar_code_present": 10},
+        "thresholds": {"auto_proceed": "Never (always Socratic)", "high_confidence": ">= 70%", "medium_confidence": "50-70%", "manual_selection": "< 50%"}
+      }
+    },
+    {
+      "id": 2,
+      "name": "Stakeholder Analysis",
+      "actions": ["Analyze pitch direction (who's pitching to whom)", "Detect stakeholder signals from transcript", "Cross-reference with calendar tags", "Generate stakeholder hypothesis with confidence score"],
+      "stakeholder_detection": {"primary_signal": "pitch_direction", "categories": {"INVESTOR": {"tag": "LD-INV", "signals": ["we pitch metrics/vision", "portfolio", "fund"], "block_ids": ["B01", "B16", "B11", "B13", "B02", "B07", "B04"]}, "HIRING_PARTNER": {"tag": "LD-HIR", "signals": ["they have roles", "headcount", "talent pipeline"], "block_ids": ["B01", "B02", "B06", "B13", "B14", "B07", "B04", "B05"]}, "COMMUNITY_PARTNER": {"tag": "LD-COM", "signals": ["we pitch community management", "member engagement"], "block_ids": ["B01", "B17", "B13", "B07", "B02", "B04", "B05"]}, "CANDIDATE": {"tag": "LD-CAN", "signals": ["individual career", "my next role", "resume review"], "block_ids": ["B18", "B07", "B04", "B01"]}, "CHANNEL_PARTNER": {"tag": "LD-CHA", "signals": ["strategic distribution", "partnership framework"], "block_ids": ["B01", "B15", "B13", "B02", "B07", "B04"]}, "NETWORKING": {"tag": "LD-NET", "signals": ["exploratory", "getting to know", "no specific agenda"], "block_ids": ["B08", "B07", "B14", "B04"]}}}
+    },
+    {
+      "id": 3,
+      "name": "Socratic Clarification (MANDATORY)",
+      "actions": [
+        "Display stakeholder hypothesis with confidence breakdown",
+        "Present 3-6 clarifying questions",
+        "Wait for user input (no auto-proceed)",
+        "Update hypothesis based on answers",
+        "Confirm final stakeholder classification",
+        "Capture Notes-for-Me entries (if provided) for private block generation"
+      ],
+      "question_hierarchy": {
+        "always_ask": [
+          "Is [stakeholder hypothesis] correct or should I adjust?",
+          "Primary goal for this follow-up?",
+          "Urgency level: Next 48hrs / This week / No rush?",
+          "Delay sensitivity check: Should we include a brief apology for delay based on days_since_meeting? (Yes/No/Soft)"
+        ],
+        "conditional": ["Decision maker vs influencer clarification", "Pilot framing (if discussed)", "Budget/pricing discussion handling"],
+        "speaker_clarification": {"trigger": "Poor speaker attribution detected", "display": "**⚠️ SPEAKER CLARIFICATION NEEDED:**
+Transcript has ambiguous speaker labels (likely from generic diarization).
+Please help identify who said what:", "questions": ["The transcript shows 'they' - who specifically was this? (Name/Role)", "Multiple speakers detected - can you identify: Speaker 1 = [?], Speaker 2 = [?]", "Which statements were from [primary stakeholder] vs others?", "Any critical commitments I should attribute to specific people?"]},
+        "notes_for_me": {"display": "**🗒️ NOTES-FOR-ME (PRIVATE):**
+Add any personal notes you want captured but NOT sent. Use short bullets and optional tags (e.g., @idea, @gotcha, @draftline, @experiment).", "prompt": ["Any @idea items to test later?", "Any @gotcha risks or watch-outs you want me to remember?", "Any @draftline snippets you want to reuse in outreach?", "Self-assignments for you-only (not sent)?"], "capture_rule": "Store verbatim bullets; do not rewrite or style; emit as B20 in PRIVATE section only"}
+      }
+    },
+    {
+      "id": 4,
+      "name": "Block Selection",
+      "actions": ["Load stakeholder-specific block combination from registry", "Apply meeting-specific adjustments", "Check for required conditional blocks", "Build generation queue with block IDs"]
+    },
+    {
+      "id": 5,
+      "name": "Information Extraction",
+      "actions": [
+        "Calculate days_since_meeting",
+        "IF days_since_meeting > 2: Auto-generate B19 (Meeting Summary)",
+        "Parse transcript for each selected block type",
+        "Build DeliverableContentMap (attachment-focused)",
+        "CHECK: Speaker attribution quality",
+        "IF speakers ambiguous: Flag for Socratic clarification",
+        "Extract commitments with speaker fidelity (we/you rules)",
+        "Identify outstanding questions with blockers",
+        "Detect warm intro directions",
+        "Flag blurb requirements",
+        "Resolve links from Essential Links file if available",
+        "Stage B20 (Notes-for-Me) from captured Socratic notes, if any"
+      ],
+      "deliverable_extraction": {
+        "patterns": [
+          "(i|we)'?ll send",
+          "(i|we) can send",
+          "(i|we) will share",
+          "attaching|attached",
+          "send over the (deck|case study|one-pager|pricing|pilot scope|JD|resume|demo|recording)"
+        ],
+        "types": ["Deck", "Case Study", "One-Pager", "Pricing", "Pilot Scope", "JD", "Resume", "Demo", "Recording", "Report"],
+        "status_rules": {
+          "HAVE": "Essential Links token or Drive file match found",
+          "NEED": "Mentioned but unresolved link/file"
+        },
+        "link_resolution": {
+          "sources": ["Essential Links", "Calendar description", "Transcript URLs", "Recent Drive uploads"],
+          "fallback": "leave link empty and mark status=NEED"
+        }
+      },
+      "extraction_rules": {"speaker_fidelity": "Never conflate Vrijen/Logan/Others", "we_includes": ["Vrijen", "Logan", "any Careerspan employee"], "you_means": "Anyone external to Careerspan", "time_preservation": "Keep soft timing as stated", "uncertainty_flags": "Mark with [?] when unclear"},
+      "speaker_detection": {"quality_check": {"red_flags": ["Only 'they' and 'me' labels", "Multiple people under single 'they'", "'Speaker 1', 'Speaker 2' generic labels", "Granola-style transcript markers"], "when_detected": "Add speaker clarification to Socratic step"}},
+      "time_calculation": {"logic": "current_date - meeting_date", "threshold": "2 days", "action": "Prepend B19 to external block list"}
+    },
+    {
+      "id": 6,
+      "name": "Block Generation",
+      "actions": ["Retrieve block templates from registry", "Populate templates with extracted information", "Apply confidence indicators where specified", "Format each block for independent copying", "Add [COPY] indicator for user", "Generate B20 private block from captured notes (if present)"]
+    },
+    {
+      "id": 7,
+      "name": "Title & Subject Generation",
+      "actions": [
+        "Title: run Step 7 (v1.3) logic to produce generated_title & title_slug",
+        "Subject (imported from Follow-Up Email Generator v10.6):",
+        "— Derive RecipientFirstName: use explicit override if provided; else first proper noun after greeting heuristics; else calendar attendee first name",
+        "— Extract up to 3 high-salience next-step nouns/verbs from DeliverableContentMap + CTAs",
+        "— Compose EXACT pattern: 'Follow-Up Email – <RecipientFirstName> x Careerspan [<kw1> • <kw2> • <kw3>]', enforcing ≤ 90 chars",
+        "— Store as metadata.subject_line and metadata.subject_keywords"
+      ],
+      "config": {"subject_max_length": 90, "pattern": "Follow-Up Email – <RecipientFirstName> x Careerspan [<kw1> • <kw2> • <kw3>]", "keyword_source_priority": ["DeliverableContentMap", "CTAs", "Pilot/Next Step nouns", "Meeting tags"], "allow_three_keywords": true}
+    },
+    {
+      "id": 8,
+      "name": "Quality Validation",
+      "actions": [
+        "Verify no voice styling applied",
+        "Check commitment completeness",
+        "Validate link status",
+        "Confirm blocker analysis included for B05",
+        "Ensure language consistency",
+        "If B19 present: verify placement is FIRST and content includes meeting date and 'days ago' value",
+        "If B20 present: verify it is flagged PRIVATE and excluded from external block ordering",
+        "Verify DeliverableContentMap items have status and send_with_email flags",
+        "Verify subject_line matches EXACT imported pattern and ≤ max length",
+        "Set metadata.delay_sensitivity from Socratic answer (NONE|SOFT|APOLOGY)"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Output Assembly",
+      "actions": [
+        "Display external blocks in final order (B19 first when days_since_meeting > 2, else registry order)",
+        "Render a separate **[PRIVATE — Notes for Me]** section containing B20 (if present)",
+        "Render **Deliverables to Attach** table from DeliverableContentMap (label • status • link/file • promised_when • send_with_email)",
+        "Show metadata (including subject_line, generated_title, title_slug, delay_sensitivity) and confidence scores",
+        "Provide copy instructions",
+        "Log telemetry data including reason-codes for block ordering, subject selection, and deliverable detection"
+      ]
+    }
+  ],
+
+  "guardrails": [
+    "NEVER auto-proceed past Socratic clarification",
+    "NEVER apply voice styling or personality",
+    "NEVER generate greetings or sign-offs",
+    "NEVER conflate Vrijen and Logan (both are 'we')",
+    "ALWAYS load Block Type Registry before proceeding",
+    "ALWAYS preserve speaker fidelity",
+    "ALWAYS make blocks independently copyable",
+    "MAXIMUM 6 Socratic questions",
+    "B20 is PRIVATE-ONLY; never include in emails or shared blocks",
+    "Titles/Subjects must be factual/neutral and respect max length",
+    "DeliverableContentMap is authoritative for attachments; email generator should attach only items flagged send_with_email=true"
+  ],
+
+  "eval": {
+    "success_metrics": [
+      "Block registry successfully loaded (>= v1.2 with B19 & B20)",
+      "Stakeholder correctly identified >= 80%",
+      "All commitments have owner + deliverable + date",
+      "DeliverableContentMap includes all promised items with HAVE/NEED status",
+      "Outstanding questions include blocker analysis",
+      "Each external block independently copyable",
+      "B19 generated and placed first when meeting_date > 2 days",
+      "Speaker clarification questions triggered when attribution ambiguous",
+      "Subject generated EXACTLY per imported pattern and ≤ 90 chars",
+      "Delay sensitivity captured and exposed in metadata"
+    ]
+  },
+
+  "routing": {
+    "triggers": ["Meeting completed with transcript available", "User requests follow-up email components", "Batch processing of multiple meetings"],
+    "hooks": {
+      "warm_intro_generator": "Future function for detailed intros",
+      "blurb_generator": "Future function for entity descriptions",
+      "strategic_analyzer": "Existing function for insights",
+      "map_archive_hook": "OPTIONAL — forward distilled insights when approved in downstream email function"
+    }
+  },
+
+  "dependencies": {
+    "tools": ["Google Calendar API", "Google Drive API"],
+    "companion_files": {"required": ["Companion [05] - Block Type Registry v1.2.json"], "optional": ["Companion [05] - Essential Links (latest)", "Master Voice Companion (>=1.2)"]}
+  },
+
+  "metadata": {
+    "author": "Metaprompter v6.2",
+    "created": "2025-01-21",
+    "updated": "2025-09-21",
+    "owner": "Vrijen Attawar",
+    "classification": "Analysis and Reflection",
+    "keywords": ["transcript", "meeting", "follow-up", "orchestrator", "modular", "stakeholder", "notes-for-me", "private", "title-generation", "subject-generation", "deliverable-content-map"]
+  }
+}

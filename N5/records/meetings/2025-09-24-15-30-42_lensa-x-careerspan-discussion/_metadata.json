@@ -1,0 +1,15 @@
+{
+  "meeting_id": "2025-09-24-15-30-42_lensa-x-careerspan-discussion",
+  "processed_date": "2025-10-11T01:31:30Z",
+  "transcript_path": "/tmp/2025-09-24-15-30-42_lensa-x-careerspan-discussion_extracted.txt",
+  "stakeholder_classification": "external",
+  "participants": ["Vrijen Attawar", "Mai Flynn"],
+  "blocks_generated": ["B01", "B08", "B21", "B25", "B28", "B29"],
+  "templates_used": ["detailed-recap", "resonance-points", "salient-questions", "deliverable-content-map", "founder-profile-summary", "key-quotes-highlights"],
+  "processing_duration_seconds": 0,
+  "granola_diarization": false,
+  "source": {
+    "gdrive_id": "1IWfolK34TFJ-1Ahzz7V8FKdTJpFMLMEc",
+    "gdrive_link": "https://docs.google.com/document/d/1IWfolK34TFJ-1Ahzz7V8FKdTJpFMLMEc/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "meeting_id": "2025-09-21_meeting-sample",
+  "processed_date": "2025-10-11T03:29:52Z",
+  "transcript_path": "/home/workspace/N5/records/meetings/2025-09-21_meeting-sample/transcript.txt",
+  "stakeholder_classification": "internal",
+  "participants": ["Vrijen", "Sarah", "John"],
+  "blocks_generated": ["B26", "B01", "B08", "B21", "B22", "B29", "B25"],
+  "templates_used": [
+    "meeting_metadata_summary",
+    "detailed_recap",
+    "resonance_points",
+    "salient_questions",
+    "debate_tension_analysis",
+    "key_quotes_highlights",
+    "deliverable_content_map"
+  ],
+  "processing_duration_seconds": 2,
+  "granola_diarization": false
+}

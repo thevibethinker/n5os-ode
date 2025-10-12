@@ -46,6 +46,31 @@
       "minItems": 1,
       "description": "Meeting type(s) - supports multi-classification"
     },
+    "stakeholder_classification": {
+      "type": "string",
+      "enum": ["internal", "external"],
+      "description": "Meeting classification based on participant domains. Internal if ALL participants are @mycareerspan.com or @theapply.ai, External if ANY participant is from external domain"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["internal", "external"]
+          }
+        }
+      },
+      "description": "Detailed participant information with classification"
+    },
     "stakeholder_primary": {
       "type": "string",
       "description": "Primary stakeholder identifier (lowercase, hyphenated)"

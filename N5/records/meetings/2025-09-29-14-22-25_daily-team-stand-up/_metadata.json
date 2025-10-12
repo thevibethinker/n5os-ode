@@ -1,0 +1,13 @@
+{
+  "meeting_id": "2025-09-29-14-22-25_daily-team-stand-up",
+  "processed_date": "2025-10-11T02:34:12Z",
+  "transcript_path": "/home/workspace/N5/inbox/transcripts/2025-09-29-14-22-25_daily-team-stand-up.txt",
+  "stakeholder_classification": "internal",
+  "participants": ["Daily team"],
+  "blocks_generated": ["B01", "B08", "B21", "B22", "B29"],
+  "templates_used": ["detailed-recap", "resonance-points", "salient-questions", "debate-tension-analysis", "key-quotes-highlights"],
+  "processing_duration_seconds": 0,
+  "granola_diarization": false,
+  "source": "google_drive",
+  "request_file": "N5/inbox/meeting_requests/2025-09-29-14-22-25_daily-team-stand-up_request.json"
+}

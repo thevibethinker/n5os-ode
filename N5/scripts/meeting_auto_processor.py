@@ -2,6 +2,7 @@
 """
 Meeting Auto-Processor for N5
 Monitors for new meeting transcripts and creates processing requests for Zo.
+Includes stakeholder classification (internal vs external).
 """
 import os
 import json
@@ -11,16 +12,27 @@ from datetime import datetime
 import time
 import sys
 
+# Import stakeholder classifier
+sys.path.insert(0, str(Path(__file__).parent))
+from utils.stakeholder_classifier import classify_meeting, get_participant_details, extract_emails_from_text
+
 WATCH_DIR = Path("/home/workspace/Document Inbox")
 PROCESSED_LOG = Path("/home/workspace/N5/logs/processed_meetings.jsonl")
 CHECK_INTERVAL = 60  # seconds
 
 def extract_meeting_info(filepath: Path) -> dict:
-    """Extract meeting metadata from transcript filename."""
+    """Extract meeting metadata from transcript filename and content."""
     filename = filepath.stem
     
     # Pattern: "Name x Name-transcript-2025-09-23T21-04-28.138Z"
     match = re.search(r'(.+?)-transcript-(\d{4}-\d{2}-\d{2})', filename)
+    
+    # Read transcript content to extract emails
+    try:
+        transcript_text = filepath.read_text(encoding='utf-8', errors='ignore')
+    except Exception as e:
+        print(f"⚠️  Warning: Could not read transcript content: {e}")
+        transcript_text = ""
     
     if match:
         participants = match.group(1)
@@ -30,23 +42,45 @@ def extract_meeting_info(filepath: Path) -> dict:
         participants_clean = participants.replace(' x ', '-').replace(' ', '-').lower()
         participants_clean = re.sub(r'[^a-z0-9-]', '', participants_clean)
         
-        meeting_id = f"{participants_clean}-{date_str}"
+        # Classify meeting based on participants and transcript
+        classification_details = get_participant_details(participants, transcript_text)
+        meeting_type = classification_details['meeting_type']
+        
+        # Create meeting ID with classification suffix
+        if meeting_type == 'internal':
+            meeting_id = f"{date_str}_internal"
+        else:
+            # For external meetings, use first external participant name
+            if classification_details['external_emails']:
+                first_external = classification_details['external_emails'][0]
+                external_name = first_external.split('@')[0].replace('.', '-')
+                meeting_id = f"{date_str}_{external_name}"
+            else:
+                meeting_id = f"{date_str}_{participants_clean}"
         
         return {
             "meeting_id": meeting_id,
             "participants": participants,
             "date": date_str,
             "filepath": str(filepath),
-            "detected_at": datetime.now().isoformat()
+            "detected_at": datetime.now().isoformat(),
+            "stakeholder_classification": meeting_type,
+            "participant_details": classification_details
         }
     
     # Fallback for non-standard filenames
+    # Try to classify anyway using transcript content
+    classification_details = get_participant_details("", transcript_text)
+    meeting_type = classification_details['meeting_type']
+    
     return {
         "meeting_id": f"meeting-{filepath.stem[:30]}",
         "participants": "unknown",
         "date": datetime.now().strftime("%Y-%m-%d"),
         "filepath": str(filepath),
-        "detected_at": datetime.now().isoformat()
+        "detected_at": datetime.now().isoformat(),
+        "stakeholder_classification": meeting_type,
+        "participant_details": classification_details
     }
 
 def is_processed(filepath: Path) -> bool:
@@ -86,7 +120,8 @@ def create_processing_request(meeting_info: dict):
     with open(request_file, 'w') as f:
         json.dump(request_data, f, indent=2)
     
-    print(f"✅ Created processing request: {request_file.name}")
+    classification_icon = "🏢" if meeting_info.get('stakeholder_classification') == 'internal' else "🌐"
+    print(f"✅ Created processing request: {request_file.name} {classification_icon} {meeting_info.get('stakeholder_classification', 'unknown').upper()}")
     return request_file
 
 def scan_for_transcripts():

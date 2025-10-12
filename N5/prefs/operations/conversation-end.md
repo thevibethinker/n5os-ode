@@ -70,7 +70,7 @@ ls -la /home/.z/workspaces/con_<ID>/
 
 **For N5 system documentation:**
 ```
-N5/docs/
+N5/System Documentation/
 ├── feature-guides/          # How-to guides for N5 features
 ├── technical-guides/        # Technical implementation details
 ├── quick-refs/              # Quick reference cards
@@ -153,7 +153,7 @@ Examples:
 
 ### System Documentation
 ```
-N5/docs/
+N5/System Documentation/
 ├── [feature-name]-guide.md         # Major feature guides
 ├── [feature-name]-quick-ref.md     # Quick references
 └── [topic]/                        # Grouped documentation
@@ -205,7 +205,7 @@ Documents/Archive/2025-10-09-N5-Protection/
 
 **Phase 3:** Integrated system docs
 ```
-N5/docs/
+N5/System Documentation/
 ├── FILE_PROTECTION_GUIDE.md (created during thread)
 └── protection-quick-ref.md (moved from N5 root)
 ```
@@ -219,7 +219,7 @@ N5/docs/
 ### Example 2: New Command Implementation
 
 **Archive:** `Documents/Archive/2025-XX-XX-CommandName/`
-**System Docs:** Update `N5/docs/commands-catalog.md`
+**System Docs:** Update `N5/System Documentation/commands-catalog.md`
 **Timeline:** Add entry for new command
 **Components:** `N5/commands/command-name.md`, `N5/config/commands.jsonl`
 

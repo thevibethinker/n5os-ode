@@ -1,0 +1,38 @@
+{
+  "meeting_id": "2025-10-10_internal-strategy",
+  "processed_date": "2025-10-10T23:23:49.967686Z",
+  "transcript_path": "/home/workspace/N5/test/sample_internal_transcript.txt",
+  "stakeholder_classification": "internal",
+  "participants": [
+    "Vrijen Attawar",
+    "Logan"
+  ],
+  "participant_emails": [
+    "vrijen@mycareerspan.com",
+    "logan@theapply.ai"
+  ],
+  "blocks_generated": [
+    "REVIEW_FIRST",
+    "action-items",
+    "decisions",
+    "key-insights",
+    "debate-points",
+    "memo"
+  ],
+  "templates_used": [
+    "REVIEW_FIRST",
+    "action-items",
+    "decisions",
+    "key-insights",
+    "debate-points",
+    "memo"
+  ],
+  "processing_method": "zo_native_llm",
+  "subprocess_calls": 0,
+  "processing_duration_seconds": 180,
+  "granola_diarization": false,
+  "classification_confidence": "high",
+  "source": "test",
+  "architecture_version": "2.0_command_based",
+  "notes": "Architecture correction validation - processed using Zo native LLM capabilities without subprocess calls"
+}

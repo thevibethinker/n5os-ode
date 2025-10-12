@@ -1,0 +1,18 @@
+{
+  "meeting_id": "2025-09-24_ale-vrijen-wisdom-partners-coaching-2",
+  "processed_date": "2025-10-11T01:51:52Z",
+  "transcript_path": "/home/workspace/N5/inbox/transcripts/2025-09-24_ale-vrijen-wisdom-partners-coaching-2.txt",
+  "stakeholder_classification": "external",
+  "participants": ["Vrijen Attawar", "Alex Caveny"],
+  "blocks_generated": ["B01", "B08", "B21", "B25", "B28", "B29", "B14"],
+  "templates_used": ["DETAILED_RECAP", "RESONANCE_POINTS", "SALIENT_QUESTIONS", "DELIVERABLE_CONTENT_MAP", "FOUNDER_PROFILE_SUMMARY", "KEY_QUOTES_HIGHLIGHTS", "BLURB_REQUESTED"],
+  "processing_duration_seconds": 0,
+  "granola_diarization": false,
+  "transcript_source": {
+    "type": "local_file",
+    "identifier": "/home/workspace/N5/inbox/transcripts/2025-09-24_ale-vrijen-wisdom-partners-coaching-2.txt"
+  },
+  "approval": {
+    "status": "pending_review"
+  }
+}

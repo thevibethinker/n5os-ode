@@ -1,0 +1,16 @@
+{
+  "meeting_id": "2025-09-23-21-04-28_carly-x-careerspan",
+  "processed_date": "2025-10-11T00:54:15Z",
+  "transcript_path": "/home/.z/workspaces/con_61W1STYOHDWoygu4/2025-09-23-21-04-28_carly-x-careerspan.txt",
+  "stakeholder_classification": "external",
+  "participants": ["Vrijen Attawar", "Carly Ackerman"],
+  "blocks_generated": ["B01", "B08", "B21", "B25", "B29"],
+  "templates_used": ["detailed-recap", "resonance-points", "salient-questions", "deliverable-content-map", "key-quotes-highlights"],
+  "processing_duration_seconds": 0,
+  "granola_diarization": false,
+  "source": {
+    "gdrive_id": "1vjm60d8YtiUTKv7DZuZwN_cXKzWEnssE",
+    "gdrive_link": "https://docs.google.com/document/d/1vjm60d8YtiUTKv7DZuZwN_cXKzWEnssE/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
+    "original_filename": "Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z.docx"
+  }
+}

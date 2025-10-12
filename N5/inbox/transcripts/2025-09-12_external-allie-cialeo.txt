@@ -1,0 +1,774 @@
+01:49
+Allie Cialeo
+Hi there.
+
+01:51
+Vrijen Attawar
+Hey there. Can you hear me?
+
+01:53
+Allie Cialeo
+Yeah, I can. How's it going?
+
+01:55
+Vrijen Attawar
+I cannot hear you. Sorry. Mind trying again.
+
+01:59
+Allie Cialeo
+Hello?
+
+02:00
+Vrijen Attawar
+Hey, how are you?
+
+02:01
+Allie Cialeo
+I'm good. How are you doing?
+
+02:03
+Vrijen Attawar
+I'm good. It is great to meet you. Hey, Paul. How do y'. All.
+
+02:09
+Paul Lee
+Hey, how's it going?
+
+02:11
+Vrijen Attawar
+Good, good. How's. How's everyone's morning? Excited about the Friday?
+
+02:16
+Allie Cialeo
+Yeah, I have a couple more hours left or about an hour and a half left
+and then I'm in Cape Cod for a wedding, so Flight delays last night.
+Didn't get here until after midnight, but you know, all fun.
+
+02:28
+Vrijen Attawar
+Okay. Okay. Well, yeah, I hope you enjoy the heck out of the Cape this.
+This weekend. What about you, Paul? Any fun plans?
+
+02:37
+Paul Lee
+Staying local here in. In Brooklyn, but no, excited to kind of recharge,
+relax.
+
+02:43
+Vrijen Attawar
+Yeah, I bet. What part of Brooklyn are you in?
+
+02:47
+Paul Lee
+In? Greenpoint.
+
+02:48
+Vrijen Attawar
+Nice. Okay.
+
+02:49
+Paul Lee
+Yeah.
+
+02:50
+Vrijen Attawar
+Okay.
+
+02:51
+Paul Lee
+Yeah.
+
+02:53
+Vrijen Attawar
+The. The unlock that my wife recently revealed to me as though I was
+just living under a cave is there's this like, bath houses. There are
+these like, bath houses in Brooklyn that you can get like a day pass and
+just wander from like sauna to pool to whatever. So hey, if. If that
+sounds like something you need, Paul, you should try that out.
+
+03:14
+Paul Lee
+Yeah, it's not a bad idea. I've been. I've been overdue for. For a bath
+house visit. Yeah.
+
+03:19
+Vrijen Attawar
+Yeah, yeah. Well, hey, thanks. Thanks so much for joining. Really
+appreciate your time. I know that especially Poster A is. Is a very busy
+time at a company, so. Yeah, really appreciate y' all jumping on and
+sort of, you know, being open to. To chatting with us. Lokes. This is
+Lo. My co founder, Logan.
+
+03:41
+Logan Currie
+Logan, if you will. But logs. Logs is actually what James calls me as
+well. So that's.
+
+03:47
+Vrijen Attawar
+After, you know, Logan for long enough, you're just like, screw that
+last. We can just.
+
+03:51
+Logan Currie
+We can go straight in.
+
+03:52
+Vrijen Attawar
+Yeah, we go straight.
+
+03:54
+Logan Currie
+Have a good, like, nickname. That was always my, like, thing growing up,
+but yeah. Nice to meet you, Ali. Paul. How are y' all doing today?
+
+03:59
+Paul Lee
+Good, good. Nice to meet you.
+
+04:02
+Vrijen Attawar
+Yeah, yeah, no, it's. It's great to jump on, you know, for context for
+us. James has been such an incredible advisor, has been sort of
+providing us with. With such good guidance over the last two years.
+Really, he was the first person that we brought on and so, you know,
+it's. It's been great to have him as a resource and to give you context
+for the company. We started off as a career coaching tool and that's
+still a pretty significant part of what we do. So Logan and I are both
+career coaches. You know, spent thousands of hours helping people sort
+of build better careers. And along the way, sort of what we realized is
+that the big gap for most folks is how they put themselves forward.
+Right?
+
+04:43
+Vrijen Attawar
+You'd be the most qualified person in the world, but if you don't align
+yourself effectively, if you don't highlight the relevant things in your
+background, you kind of are stuck. And so that was the first problem
+that we decided to solve. Built a great coaching tool to help people do
+that. Realized along the way that in this process, we'd actually
+learned, we'd actually built a really great way to get to know people,
+right? Get to know them on a deeper level. Not just, you know, what
+achievement they had or what skill they've honed, but actually the
+traceability around how did they hone it, right? Letting you compare
+across context for folks. And when we sort of had that realization, we
+said, great. This way we can give the tool for free to candidates.
+
+05:26
+Vrijen Attawar
+It gives everyone a chance to sort of build out their best possible
+story and we can use that data to match them to employers that are
+looking for jobs. And that's effectively brings us to the present
+moment. We've built a decentralized talent network that draws from the
+best professional communities online. So think like Lenny's product
+community, you know, ex McKinsey, Stripe alumni, etc. Sort of bringing
+them all onto platform and giving you the ability to quick scan against
+the folks that have been onboarded onto careers and identify a great
+candidate. Sort of pause there, answer any questions, and then also
+allow Logan to fill in any gaps that I may have left behind.
+
+06:11
+Logan Currie
+I'm on coffee cup number one, so you take it away, my friend. I'll chime
+in when. When I have a strong opinion.
+
+06:18
+Vrijen Attawar
+Yeah, yeah, hopefully that's a good start.
+
+06:21
+Allie Cialeo
+I'd be curious. So in the past, Lenny's list has been an awesome kind of
+source for candidates and an awesome network. But on my last role, we
+use them in more of like an agency capacity to get intros to candidates
+through their professional network. And unfortunately, like, we felt
+like the bar for talent slipped quite a bit from once. It was like I.
+From the earlier stages of Lenny's. I think it just got almost too big.
+So I'd be curious, like how you navigate like one of these, like a space
+that truly is like really great, exceptional talent in one place, and
+then also how you prevent it from being super saturated with like, you
+know, a network of a wide network that maybe it's great for certain
+companies, just not everyone.
+
+07:09
+Vrijen Attawar
+I think that's a great question. So, you know, Logan, get to. Just a
+shot incoming for you. Present company notwithstanding, just because
+someone went to Harvard, just because someone went to. Is a contributing
+member to Lenny's. I think you raise an excellent point that there is
+this sort of selection problem, right? Especially as communities get
+larger, get more popular. The way that we sort of do that is actually
+through the matching system, which effectively the way that it works is
+it's not keyword based, it is not sort of shorthand or skills taxonomy
+based. What it effectively does is it decomposes your job description
+and any additional information you give us about, you know, the
+subjective stuff, let's say, about what you want in the role and the
+kind of person that you want, but you wouldn't put on the jd.
+
+08:00
+Vrijen Attawar
+We can take those two sources of information, break them down
+semantically into what is being looked for, and then our system will
+literally go through every resume and every story that every shortlisted
+candidate has ever told and effectively come up with a explanation. Now,
+what it also does is it gives the candidates enough of a head start to
+say, hey, these are gaps in your story. Maybe you can fill them, maybe
+you can't. If you can fill them, here's a certain amount of time for you
+to get that done and we'll update the employer and say, hey, actually
+this candidate is more fitted, right? Because that's the other sort of
+discrepancy that we noticed is that it's not just that some people just
+lack something, in which case, you know, we have systems to sort of
+tell, hey, is this person being legitimate?
+
+08:47
+Vrijen Attawar
+But for most folks, the problem is that they probably have something,
+they just haven't been able to highlight it, right, or they haven't been
+able to pull it across. So we actually address both and that's how.
+Because we embed with employers or with candidates over a long period of
+time. It's almost as though they spend a month filling out a workday
+profile, right? But you get to scan that in a second. It's sort of the
+best of both worlds where they can put in a ton of effort, but your
+actual amount read or stuff to go through doesn't increase.
+
+09:17
+Allie Cialeo
+Very cool. Awesome. Well, thanks for answering my question. I appreciate
+it.
+
+09:22
+Vrijen Attawar
+Yeah, I mean, I wanted to get a sense of what other sort of like,
+challenges, pain points have you been experiencing? I mean, just like
+the. Even the most nitty gritty stuff. Paul, you as well, like, you
+know, the candidates that you've seen, is there Something that you feel
+like just has been incomplete or imperfect about how you've.
+
+09:38
+Allie Cialeo
+Been getting candidates and is this only for product? I just want to be
+clear understanding there too.
+
+09:45
+Vrijen Attawar
+We are starting the sort of like talent pool filling with product and
+engineering. So we're just starting there. But the tool is embedded in
+generalist communities and is open for anyone to join. So we are hoping
+that will sort of fill out the rest of the pool over time.
+
+10:01
+Allie Cialeo
+Cool. Sorry to interrupt you.
+
+10:05
+Paul Lee
+Oh yeah, I. We kind of like our head of engineering now. There's most of
+the Eng hiring but I was helping a lot over the last kind of before he
+joined, which was a couple months ago. But I, I thought the biggest
+challenge was there's a lot of even people who have experience, they're
+just not as technically strong as they seem to be on paper. And I think
+that was just probably the biggest challenge was there was a lot of
+people who looked the part and could get through that initial phone
+screen. But once you got them on like a technical round became pretty
+obvious pretty fast.
+
+10:48
+Vrijen Attawar
+Do you think that is because of outright deception? Which is, but for
+the record something we're hearing. So like, you know, if that's what
+you feel by all means. Or do you think it is because the systems that
+you have in place right now to pre filter for technical talent aren't
+strong enough to sort of identify that.
+
+11:10
+Paul Lee
+Yeah, I'm sure there's always a mix of deception involved in some
+people, but I'll hope for the best in people's intentions. Yeah, I don't
+know, it's hard because obviously you'd want to like you could screen
+for something technical like pretty easily like you know, put out a
+problem or a prompt. But also it's kind of a lot to ask of someone with
+like no guarantee of moving on or even talking to an actual person. But
+I would say it's just like a different market now. I think a lot of
+places, us included, are looking for someone with a lot of experience
+and then a ton of those people are either spoken for, happy where they
+are or just really expensive.
+
+11:59
+Paul Lee
+You start to see somebody with the experience who's interested in like a
+startup that we still have a lot to, a lot of work to be done, you know,
+definitely certainly less stable than a big company. For me it's sort of
+like they're like trying to maybe jump into a faster moving environment
+where we need high quality and you know, there's probably, I think we're
+running, they're running out of places where there's Like, a lot of
+obviously rips happening across the industry, but, like, I think there's
+a lot of just, like, cutting up unnecessary first, probably. So now I
+feel like those people are kind of starting to bubble up more interviews
+and like, kind of be exposed not to.
+
+12:49
+Vrijen Attawar
+Right.
+
+12:50
+Paul Lee
+You know, we have this person who was, like, a staff engineer at
+Autodesk, which is, like, pretty, like, AEC Tac adjacent for us. And,
+like, it check so many boxes. And then this person's been there
+probably, like eight plus years. And I just remember this specific
+example. Like, our engineers were like, it was like the worst technical
+screen they've ever done in there. Like, this person's probably just
+been coasting there, you know, and it's just like, we're seeing a lot of
+that. That's why for me, I'm always, like, always referral as king, but
+just like, yeah, it's definitely been hard. Just, like, meet somebody
+completely random who's, like, amazing, and it doesn't come through some
+network or at least has some level of backing from. From somebody. Yeah.
+
+13:40
+Vrijen Attawar
+And what does that. What are the. If you could describe those pipelines,
+like, what are the. Where does that leave y' all now? Like, what have y'
+all sort of concluded? Okay, these are our most viable avenues, and
+these are the avenues or strategies that we're going to propose to,
+like, actually lock this person down. Like, based on what you've sort of
+described, how has that affected your approach to sourcing or kind of
+staffing for this position?
+
+14:08
+Paul Lee
+I might pass it to you, Ali, not to put you on the spot, but I'm a
+little more out of the loop on the current end funnel.
+
+14:14
+Allie Cialeo
+Yeah. So just to give you guys some context, I joined in mid July, so
+I'm still pretty new to greenlight. Thank you. I'm really excited.
+Excited to be here. But coming on board, were pausing quite a bit due to
+fundraising for hiring. Right. Just wanted to make sure we got to secure
+that next round. And all of our efforts were just focusing on due
+diligence and whatever they needed to get that done. But as soon as I
+started, it was like floodgates of recruiting open 22 across the
+company. And it's me, myself. So to be honest, my first focus from James
+and Ben has been on more so sales and our operations team, like, the
+client services side of things, just because those were the most
+important, the most urgent.
+
+15:06
+Allie Cialeo
+I just started digging into tech about a week ago, and our only funnel
+right now because I just don't have bandwidth still to source across all
+these roles is agency partners. So which at our head of engineering
+brought on himself, others that I've worked with in the past that I
+brought on about a week ago. But right now it's like they're not even
+talking to me. They're being vetted by the agencies and they're moving
+to a hiring manager call with Ed. And we just started these like late
+last week. So we're very early in our funnel. But the most important
+roles for us today are site reliability, a machine learning engineer,
+probably like senior, a staffer principal level and one to two full
+stack engineers as of today. Those are through the end of the year
+headcount as of now.
+
+16:02
+Allie Cialeo
+But I think if we find some like exceptional mid level engineer after we
+hire a senior staff level, you might be open to that. But where we are
+today and how we're sourcing, like my goal is to bring on a tech
+recruiter or a recruiter who maybe leans more technical could also help
+with my side of the business because I think it's kind of interesting
+that we also have like mechanical engineers and things like that on our
+team because that could be another way a tech recruiter helps in a
+different technical way than software engineering.
+
+16:32
+Vrijen Attawar
+Right? Yeah. Which on that point do not envy multidisciplinary companies
+like yourself that have like three different types of science involved
+in what you do. No, I think that makes a ton of sense. And then as far
+as procedurally would you say you have a preference for a stronger pre
+filter like an agency or a career span or someone? Would you prefer a
+higher filter threshold and then you're more open to screening people or
+is your preference? Hey, I am, you know, I have a lower threshold for
+screening. But to get past the screening is. Is where the real sort of
+like dip happens.
+
+17:15
+Allie Cialeo
+That's a good question. I think it's kind of early in the funnel to see
+to know what we are today. But I think the upfront screening is a big
+part of it. I want to. Ed is like screening the applicants for us like
+in terms of like once an agency puts someone forward, he's reviewing the
+resumes and telling me if he wants to speak to them. And I'm as I'm
+learning what his preferences are. Like he'll send feedback on why he
+likes them and like I'm kind of mental mapping remembering all of it so
+I could start helping as things kind of wind down on the other side of
+the business.
+
+17:48
+Allie Cialeo
+So I think the recruiters at the top of the funnel are super helpful for
+in a Volume, perspective and just being able to see like a diverse set
+of candidates come across our board and then figuring out a little
+deeper in the funnel, like after Ed's call, like where we need them to
+hit, you know, more deeply.
+
+18:05
+Vrijen Attawar
+Gotcha. And Ed is the head of engineering, is that right?
+
+18:08
+Allie Cialeo
+Yes.
+
+18:08
+Vrijen Attawar
+Okay, so here is actually before I dig into this log, any questions that
+have come to your mind. I mean you're way more like community
+interfacing and stuff. Is there like info that would be helpful to you?
+And then I can sort of suggest something.
+
+18:26
+Logan Currie
+I was just thinking back to your earlier question Ali, about like the
+kind of like lost signal in like a Lenny's community. Essentially. Like
+what? As soon as it starts to scale, you're kind of like this doesn't.
+Yeah, the same significance anymore. But like some of the things that
+I've been tapping into more is the kind of like micro communities is one
+way to say it. But it's like there are smaller cohorts of just people
+who are like listen, we're going to nerd out about this. Like, you know,
+it doesn't even have to be like completely. Oh, we're full stack
+engineers in Silicon Valley. Like there are a lot of like 100 to 300
+person communities where it's very, I'm seeing that it's more high
+signal but we're essentially trying to put some proof points behind
+that. Right. So it's kind of like.
+
+19:07
+Logan Currie
+And that's where to me, you know, it's more interesting to work with
+those community founders in some ways than like trying to go to Eleni
+because it's like, listen, that's a whole business in and of itself.
+Like whereas if you are working with a few, with somebody who has like a
+few hundred people who are talented and engaged and like hungry, that's
+where I'm seeing more potential right now. So anyway, that's kind of
+just a glimpse into where our thought processes is that it's going to be
+a combination of being able to scan across, let's say like whether this
+X amount of segment within Linnies versus you know, maybe not Autodesk
+because that's a bad. I wasn't going to use that as an example, but I
+will no longer use Autodesk as an example. But joking.
+
+19:52
+Logan Currie
+But then like two or three of these more like kind of niche communities
+is where I think the secret sauce is going to because it's like start
+proving out like where we're finding like anyway that is kind of because
+We've done a few. And I'm like, the combination is where it gets
+interesting.
+
+20:10
+Vrijen Attawar
+But yeah, and actually that's a great segue, Logan, to the point that I
+wanted to make, which was effectively, you know, what I'm hearing from
+y'.
+
+20:18
+Paul Lee
+All.
+
+20:18
+Vrijen Attawar
+And please correct me if this understanding is incorrect. You've got a
+buttload of roles. With the technical roles especially, there is a
+selection problem, whether due to folks misrepresenting or just, you
+know, being in a market where there are more sort of people reaching
+above their current level of competence than. Than what it is. But
+regardless, I think that's sort of one established problem. It also
+seems like you've got so many roles to manage that. Cultivating
+dedicated pipelines for certain roles by yourself, way too hard. At the
+same time, it seems like you have good agencies, you know, good
+partners. You're not.
+
+20:59
+Allie Cialeo
+Yeah, yeah.
+
+21:03
+Vrijen Attawar
+Right. But no, that was sort of what I was driving towards is
+essentially, you know, we want to, you know, we're at a stage of our
+business where we need to prove ourselves. Right. And I'm not about to
+come here, in here and tell you that I can solve your problem because
+I'm looking for those proof points myself. Right. But what I can suggest
+is something perhaps very low effort and passive on your part that
+nevertheless allows us to both practice this motion and potentially help
+you out. And so what I was going to suggest was a, you know, if you give
+us some JDs, we've already picked up a good amount. As far as your
+software preferences are concerned, if you, and these are the sort of
+like, if you want to participate in this, we can still do it without it.
+
+21:47
+Vrijen Attawar
+If you'd like to, or Ed would like to provide us additional, you know,
+subjective context that won't show up in the jd, but sort of affects how
+he or you or Paul look at these candidates, feel free to pass us that as
+well. And what we will do is effectively just keep scanning. So we're
+onboarding generally between 200 to 400 folks a week. As I said, the
+emphasis is on bringing them in as product folks and as engineering
+folks or at least focusing on those communities. And what we can
+effectively do is, you know, once a week or whatever cadence you prefer,
+just give you a list of names, right? We'll give you the names, we'll
+give you the analysis that we performed, and we'll give you the resume
+that they submitted.
+
+22:28
+Vrijen Attawar
+And if nothing else, you know, if you just say, hey, all X are not so
+good, try again. Ideally with some like, hey, these were lacking. We can
+actually take those things that you tell us we're lacking and add that
+to the algorithm next time. So we can have a constantly evolving and
+iterating search algorithm based on sort of the feedback that we get
+from y' all on an incremental basis. We'll do all of that for free.
+We'll do all the scanning for free. You literally just pay for an intro
+to the candidate that you like. So it's also priced in a way that
+obviously is very like upon delivery, upon success.
+
+23:07
+Allie Cialeo
+Yeah.
+
+23:08
+Vrijen Attawar
+Does that sound compatible with what y' all are doing? What your sort of
+goals or priorities would be? Are there ways that we can adjust what
+I've suggested to better fit your needs?
+
+23:18
+Allie Cialeo
+I think I'd be open to exploring that partnership and like doing a test
+run and seeing how we think it's going. I want to be sure that you guys
+know we are in person mainly in New York. So yeah, four days a week. And
+I just want to make sure that won't be any barrier either.
+
+23:34
+Vrijen Attawar
+Of course. We actually are trying to prioritize Boston SF New York roles
+as well. So if you think of it as like a two by three, it's product
+engineering, Boston Square, Boston SF New York.
+
+23:45
+Allie Cialeo
+Okay.
+
+23:45
+Vrijen Attawar
+Yeah.
+
+23:46
+Allie Cialeo
+Cool. Yeah, I'd be happy to explore and see what happens. I mean, there
+I don't see this as a loss of anything and I'm happy to chat and see if
+it works. And if it doesn't, I'll be honest and say like, hey, this is a
+lot for me to manage with our other agency partners, but it sounds like,
+you know, coming in a little higher pre vetted sounds pretty awesome to
+me.
+
+24:07
+Vrijen Attawar
+Right, Right, absolutely. We'll give you insight into the communities
+we're drawing from. We'll give you insight into sort of that expanded
+set. And then even for folks that you said, hey, maybe we're interested
+in the person, we'd like to know more about X, Y and Z. We will sort of
+white glove, pass that information on, get that person to update their
+profile and submit a incremental analysis to you.
+
+24:31
+Vrijen Attawar
+So it's, it should be, you know, I want to set a expectation of reducing
+your, the burden that we have on you and like 15 minutes a week max,
+we'll set that as an expectation for the amount of time that you or Ed
+would have to dedicate and then, you know, we can see from there if you
+do find us as sort of a promising avenue, we can figure out ways to
+further customize that experience. And make it more fit for purpose.
+
+24:54
+Allie Cialeo
+Yeah, that sounds good. And then long term, I'm sure we could get Paul
+involved too, as he starts. I don't think we have any product roles
+through the end of the year, but maybe some into 2026, no problem.
+
+25:05
+Vrijen Attawar
+Which, by the way, sounds like you guys locked down that product role,
+right? You happy about that?
+
+25:08
+Allie Cialeo
+Paul the designer, right?
+
+25:10
+Paul Lee
+Yeah, we have a designer that we just recently brought on, which is
+exciting. Literally her first week. So excited but early. But yeah, to
+Ali's point, no, like super pressing products opening that we have up on
+our site or anything, but, you know, always happy to meet compelling
+people and sort of like, I like to think of just keeping them on the
+bench as, you know, if. If we continue to grow. So that is.
+
+25:40
+Vrijen Attawar
+I saw that on Logan. You and I are on the same page. You go, you go. You
+got there first.
+
+25:43
+Logan Currie
+No, I just, it's. It's something that's come up in a lot of our
+conversations around this kind of like, obviously like the cultivation.
+Right. So it's like we might have somebody and like, to your point,
+Paul, around, like, you know, who's. Who's spoken for, who's going to be
+available. Like, we have kind of played around with more of like a, you
+know, a kind of not secret. Secret's the wrong word, but kind of like a
+little bit of a sidebar for people who would jump for the right
+opportunity kind of thing. And like, if you can kind of facilitate some
+of those conversations and do a little bit of that early matching. But
+like, how much is that? Like, how much of that is your focus as well? If
+you know that you might have a role open up in a few months?
+
+26:25
+Logan Currie
+Like, are you trying to build that out in terms of talking to people,
+like, sussing things out or like, what is your thought process around
+that?
+
+26:34
+Paul Lee
+Yeah, it's a good point. I wouldn't say it's like a P0, I think, always.
+It's more just like always open to expand the network and have a
+friendly conversation and then. Yeah, I don't know. For example, like, I
+know we just had an engineer that we had talked to like maybe six months
+ago, and then it kind of like filtered out, but then they kind of came
+back out of the woodworks. You know, just like things like that. Like,
+you never know. It's always worth a conversation, especially if the
+person is really sharp. Yeah, I think it's worth getting on both
+people's radars and sort of cultivating gardens together potentially in
+the future or you know, maybe we work together, we don't. Yeah, yeah.
+
+27:17
+Vrijen Attawar
+So I actually, I, I love that because to build on Logan's point, you
+actually mentioned this unsolicited, Paul, that the best folks are
+generally already employed. Right. That's just the way it is. They're
+not looking, they're busy kicking ass at their job. I think where
+Careerspan represents something very unique in this space is that
+because we lead with coaching, right? Because we lead with telling
+folks, hey, Careerspan is here to help you. More you share with
+Careerspan, the more it benefits you. We create a engine for ongoing
+engagement that we are eventually hoping to parlay into a sort of like
+long term matching, like a sort of like, you know, kind of process where
+you essentially can say, hey, in January, I have a product role.
+
+28:03
+Vrijen Attawar
+I want to put in no effort to find candidates and I want to get some
+great, interesting people from cool communities that I want to talk to
+and I want to spend no effort over and above that. That's effectively
+what we would do, right? We would take down your Paul as a PD or sort of
+a PM's preferences and then just run the scan and it's like Christmas
+every week, right? Maybe you get someone cool, maybe get someone
+interesting, you can have a chat with them. And that's something that we
+can do to effectively prevent the situation you found yourself in Ali,
+which is, oh my God, I've joined in July and Now I have 20, 22 roles to
+staff.
+
+28:40
+Allie Cialeo
+Yeah, I would actually love like passive talent just being sent our way,
+even if they're actually not looking. And we have to do some convincing
+of, like, how do we engage with this person over time? I think those
+best people, generally people.
+
+28:54
+Vrijen Attawar
+Those are the best people. And that's something that we are positioning
+ourselves to have down the pipeline. So, hey, I know we're coming close
+to time. Happy to answer any questions you might have, but, you know,
+regardless, let's start lightweight, let's start easy. Let's start with
+a place where y' all really only see upside and then we can sort of
+build things out from there.
+
+29:17
+Allie Cialeo
+Yeah, that sounds all good to me. And what, just out of curiosity, in
+the last few minutes, like, how does the pricing go for once you int to
+people and all of that.
+
+29:26
+Vrijen Attawar
+So for you guys and for green light, you know, like I said, we're just
+collecting proof points. We're thinking somewhere in the range of like
+300 for a warm intro for someone that you actually like, which again,
+hopefully will set a like Internal expectation of how much you need to
+like someone, but, you know, no fees associated with that. We do all the
+communication, we do all the sort of sourcing, and we actually, as of
+this week, will be manually going to community. So we have this thing
+called Magic Link System. We put your JD into the Magic Link and folks
+that sign up with the Magic Link have a greenlight application ready on
+their profile for consideration. Now, a couple of things here. One, if
+you'd like us to remove the company name and keep it stealth, we can do
+that.
+
+30:13
+Vrijen Attawar
+So that's one option. But if that's something you don't particularly
+care about, we would effectively be going and distributing the JD in
+these top communities in micro communities Logan mentioned. But it would
+all go through career spans. It's not going to fill up your ats. It's
+not going to sort of like send folks your way. We sort of like run
+through them and pass them along to you. If you would like them to go
+directly to you, we can do that as well if you just want us to be a sort
+of like lead gen for you. But sending them through careerspan lets us
+get you the better analysis.
+
+30:46
+Allie Cialeo
+My thing is that I feel like if you screen them out, they'll still
+probably try to apply to green light otherwise, which is interesting to
+me. So maybe confidential is better way of going about it.
+
+30:57
+Vrijen Attawar
+Okay, great. You got it. You got it. Yeah. We will only send the Magic
+Link, we'll stealth the company name and we will remove any other sort
+of obvious identifying information. We'll make it clear it's in person
+in New York four days.
+
+31:09
+Allie Cialeo
+Okay. And Monday, our Series B announcement goes live. So once we have
+that publication go, we'll send it your way because maybe that could
+help you with outreach and your message.
+
+31:20
+Vrijen Attawar
+Yeah, that would be huge.
+
+31:21
+Logan Currie
+Good timing.
+
+31:22
+Vrijen Attawar
+Yeah, amazing. Congratulations, y'. All.
+
+31:24
+Allie Cialeo
+Another round. Thank you.
+
+31:26
+Logan Currie
+Lovely to meet you both.
+
+31:27
+Allie Cialeo
+Yeah, looking forward to working together.
+
+31:32
+Vrijen Attawar
+Bye.

@@ -146,7 +146,7 @@ anchors: [object Object]
 ## 📚 Full Documentation
 
 - **System Overview:** `Knowledge/incantum_triggers.md`
-- **Integration Plan:** `N5/docs/incantum_system_plan.md`
+- **Integration Plan:** `N5/System Documentation/incantum_system_plan.md`
 - **Command Catalog:** `N5/commands.md`
 
 ---

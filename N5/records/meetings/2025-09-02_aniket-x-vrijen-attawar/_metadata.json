@@ -1,0 +1,29 @@
+{
+  "meeting_id": "2025-09-02_aniket-x-vrijen-attawar",
+  "processed_date": "2025-10-11T03:00:00Z",
+  "transcript_path": "/home/workspace/N5/records/meetings/2025-09-02_aniket-x-vrijen-attawar/transcript.txt",
+  "stakeholder_classification": "external",
+  "participants": ["Aniket", "Vrijen Attawar"],
+  "blocks_generated": [
+    "detailed_recap.md",
+    "resonance_points.md",
+    "salient_questions.md",
+    "deliverable_content_map.md",
+    "founder_profile_summary.md",
+    "blurbs_requested.md",
+    "intro_email_template.md"
+  ],
+  "templates_used": [
+    "detailed-recap",
+    "resonance-points",
+    "salient-questions",
+    "deliverable-content-map",
+    "founder-profile-summary",
+    "blurbs-requested",
+    "intro-email-template"
+  ],
+  "source": {
+    "gdrive_id": "1f0PRyOQkEJ-sdqzpZXm2lUB6squROera",
+    "original_filename": "Aniket x Vrijen Attawar-transcript-2025-09-02T16-59-20.052Z.docx"
+  }
+}
