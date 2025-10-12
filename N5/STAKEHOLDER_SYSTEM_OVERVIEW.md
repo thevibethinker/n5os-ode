@@ -187,7 +187,7 @@ Once you've reviewed and answered questions, I'll:
    - `file 'N5/stakeholders/michael-maher-cornell.md'`
    - `file 'N5/stakeholders/fei-ma-nira.md'`
    - `file 'N5/stakeholders/elaine-pak.md'`
-4. **Handoff details:** `file 'N5/handoffs/2025-10-12-stakeholder-reservoir-implementation.md'`
+4. **Handoff details:** `file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-implementation.md'`
 
 ---
 

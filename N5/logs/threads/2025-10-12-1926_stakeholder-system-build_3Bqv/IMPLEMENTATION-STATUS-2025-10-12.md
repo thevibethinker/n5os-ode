@@ -8,7 +8,7 @@
 
 I've set up comprehensive conditions for implementing the stakeholder system production deployment. See:
 
-📋 **`file 'N5/handoffs/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`**
+📋 **`file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`**
 
 ---
 
@@ -126,7 +126,7 @@ Once you provide input on the 4 items above, I'll immediately:
 ## 📁 Key Files
 
 ### Documentation
-- **Implementation Plan:** `file 'N5/handoffs/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`
+- **Implementation Plan:** `file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-system-IMPLEMENTATION-PLAN.md'`
 - **System Overview:** `file 'N5/STAKEHOLDER_SYSTEM_OVERVIEW.md'`
 - **Action Summary:** `file 'N5/ACTION-SUMMARY-stakeholder-system-2025-10-12.md'`
 

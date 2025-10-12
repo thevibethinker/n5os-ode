@@ -1,21 +1,20 @@
 ---
 **FOLLOW-UP EMAIL v11.1 TEST** (Moderate Compression)
-**Generated:** 2025-10-12 21:42:30 ET
-**Recipient:** hamoon@futurefit.ai
-**Meeting Date:** 2025-10-10
-**Days Elapsed:** 2 days
-**Profile:** N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit/stakeholder_profile.md
-**Tags Used:** #stakeholder:partner:collaboration, #relationship:new, #priority:normal, #engagement:needs_followup, #context:hr_tech
-**Dial Calibration:**
-  - relationshipDepth: 1 (New Contact)
-  - formality: Balanced
-  - warmth: 5/10
-  - ctaRigour: Balanced
-**V-OS Tags:** [LD-NET] [A-1] *
-**Word Count Target:** 400-550 words
-**Compression:** Moderate (20-30% reduction from baseline)
+**Generated: "** 2025-10-12 21:42:30 ET"
+**Recipient: ** hamoon@futurefit.ai
+**Meeting Date: ** 2025-10-10
+**Days Elapsed: ** 2 days
+**Profile: ** N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit/stakeholder_profile.md
+**Tags Used: "** #stakeholder:partner:collaboration, #relationship:new, #priority:normal, #engagement:needs_followup, #context:hr_tech"
+**Dial Calibration: **
+- relationshipDepth: 1 (New Contact)
+- formality: Balanced
+- warmth: 5/10
+- ctaRigour: Balanced
+**V-OS Tags: ** [LD-NET] [A-1] *
+**Word Count Target: ** 400-550 words
+**Compression: ** Moderate (20-30% reduction from baseline)
 ---
-
 📧 **REMINDER:** CC va@zo.computer when sending to enable response tracking
 
 ---
