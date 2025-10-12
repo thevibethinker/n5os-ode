@@ -1,0 +1,75 @@
+You are analyzing a conversation thread to extract lessons learned for improving system architecture and operational principles.
+
+THREAD CONTEXT:
+- Thread ID: {thread_id}
+- Significance reasons: {significance_reasons}
+- Conversation summary: {conversation_summary}
+
+YOUR TASK:
+Identify and extract lessons in the following categories:
+1. **Techniques** - Specific methods or approaches used
+2. **Strategies** - Higher-level decision-making patterns
+3. **Design Patterns** - Architectural or structural patterns applied
+4. **Troubleshooting** - Problem-solving approaches that worked
+5. **Anti-patterns** - Mistakes or approaches that failed
+
+FOR EACH LESSON, PROVIDE:
+- Type: technique|strategy|design_pattern|troubleshooting|anti_pattern
+- Title: Brief, descriptive (5-100 chars)
+- Description: What we did or encountered (10+ chars)
+- Context: Why it was needed, what led to this
+- Outcome: Result or resolution achieved
+- Principle refs: Array of principle numbers (0-20) this relates to
+- Tags: Relevant tags (e.g., error-handling, state-verification, file-io)
+
+PRINCIPLES REFERENCE:
+0: Rule-of-Two (minimal context loading)
+1: Human-readable first
+2: Single Source of Truth
+3: Voice integration policy
+4: Ontology-weighted analysis
+5: Safety and anti-overwrite
+6: Mirror sync hygiene
+7: Idempotence and dry-run
+8: Minimal context, maximal clarity
+9: Copyable blocks
+10: Calendar and time semantics
+11: Failure modes and recovery
+12: Testing in fresh threads
+13: Naming and placement
+14: Change tracking
+15: Complete before claiming complete
+16: Accuracy over sophistication
+17: Test with production configuration
+18: State verification is mandatory
+19: Error handling is not optional
+20: Modular design for context efficiency
+
+CRITERIA FOR EXTRACTION:
+- Only extract lessons that are meaningful and reusable
+- Skip routine operations or trivial actions
+- Focus on novel approaches, errors resolved, or patterns worth documenting
+- Prefer specific, actionable lessons over vague observations
+
+RESPOND WITH VALID JSON ARRAY:
+[
+  {{
+    "type": "troubleshooting",
+    "title": "Fix file write verification by adding size check",
+    "description": "When writing state files, only checking exists() missed truncated writes",
+    "context": "Files were being written but truncated due to process interruption",
+    "outcome": "Added exists() + size > 0 + valid structure checks. Caught 2 partial writes.",
+    "principle_refs": ["18"],
+    "tags": ["state-verification", "file-io", "error-handling"]
+  }}
+]
+
+If no meaningful lessons found, return empty array: []
+
+IMPORTANT:
+- Each lesson must be self-contained and understandable without thread context
+- Title should be concise but descriptive
+- Description should explain WHAT happened, not just reference it
+- Context should explain WHY it happened
+- Outcome should show RESULT/RESOLUTION
+- Be selective - quality over quantity

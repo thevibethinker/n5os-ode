@@ -111,7 +111,7 @@
         "- Next Actions: List 2-3 enrichment tasks (LinkedIn research, company research, mutual connection identification)",
         "",
         "SECTION 4: HOWIE INTEGRATION",
-        "- Recommended Tags for Future Meetings: Generate V-OS tags for when Howie schedules future meetings",
+        "- Recommended Tags for Future Meetings: Generate N5OS tags for when Howie schedules future meetings",
         "- Format: [LD-XXX] [GPT-X] [A-X]",
         "- Tag categories: LD (Lead type: INV/NET/COM/etc), GPT (Goal/Phase/Timeline: E/M/C/etc), A (Accommodation: 1-4)",
         "- Rationale: Explain why each tag applies based on stakeholder type, urgency, relationship depth",
@@ -127,7 +127,7 @@
         "✅ ALLOWED: View public profiles, view company pages, read posts (don't interact), scan connections (mutual acquaintances), extract background/experience",
         "",
         "HOWIE TAG RECOMMENDATIONS - INCLUDE FOR ALL STAKEHOLDERS:",
-        "- Always generate recommended V-OS tags even if no future meeting is scheduled yet",
+        "- Always generate recommended N5OS tags even if no future meeting is scheduled yet",
         "- Use this to pre-populate Howie's scheduling context for future interactions"
       ],
       "feedback_enabled": true
@@ -279,16 +279,16 @@
     },
     "B26": {
       "name": "MEETING_METADATA_SUMMARY",
-      "purpose": "Quick-reference metadata for email generation, filing, and V-OS tag harmonization",
+      "purpose": "Quick-reference metadata for email generation, filing, and N5OS tag harmonization",
       "when": "Every meeting (required)",
       "priority": "REQUIRED",
       "guidance": [
-        "Generate: Title for this meeting, Email subject line, Delay sensitivity, Stakeholder type, V-OS tags (Howie harmonization), Confidence score, Transcript quality",
+        "Generate: Title for this meeting, Email subject line, Delay sensitivity, Stakeholder type, N5OS tags (Howie harmonization), Confidence score, Transcript quality",
         "Title should be descriptive: 'FutureFit Partnership Exploration - Hamoon Ekhtiari' not 'Meeting with Hamoon'",
         "Subject line should be action-oriented and contextual: 'Following up: FutureFit integration possibilities'",
         "Delay sensitivity: NONE (<24hr), SOFT (24-72hr, acknowledge time), APOLOGY (>3 days, apologize explicitly)",
         "Stakeholder type: FOUNDER/INVESTOR/NETWORKING/CANDIDATE/COMMUNITY/CUSTOMER based on conversation dynamics",
-        "V-OS Tags: Apply Howie's tag system - [LD-XXX] [GPT-X] [A-X] format for meeting categorization and future scheduling",
+        "N5OS Tags: Apply Howie's tag system - [LD-XXX] [GPT-X] [A-X] format for meeting categorization and future scheduling",
         "Confidence score: How confident are you in the accuracy of this processing? (High/Medium/Low)",
         "Transcript quality: Rate the transcript (Excellent/Good/Fair/Poor) to calibrate confidence"
       ],
@@ -496,7 +496,7 @@
       "Meeting Intelligence Orchestrator v2.0+"
     ],
     "philosophy": "Guidance-based, not template-based. Let AI use contextual intelligence with detailed principles.",
-    "version_notes": "v1.5 major consolidation: reduced from 19 to 15 blocks. Added CRM integration (B08), Howie V-OS tag harmonization (B08, B26), stakeholder research (B31). Merged B28+B08, B29+B21. Split B14 into B14+B27. Deleted B04, B16, B30. Elevated B02 and B21 to REQUIRED. Enhanced B25 with follow-up email generation.",
+    "version_notes": "v1.5 major consolidation: reduced from 19 to 15 blocks. Added CRM integration (B08), Howie N5OS tag harmonization (B08, B26), stakeholder research (B31). Merged B28+B08, B29+B21. Split B14 into B14+B27. Deleted B04, B16, B30. Elevated B02 and B21 to REQUIRED. Enhanced B25 with follow-up email generation.",
     "created": "2025-01-21",
     "updated": "2025-10-12",
     "owner": "Vrijen Attawar",
@@ -517,7 +517,7 @@
           "Deleted B04, B16, B28, B29, B30",
           "Added stakeholder_combinations for CUSTOMER and COMMUNITY",
           "Added CRM auto-create rules and LinkedIn restrictions",
-          "Added Howie V-OS tag recommendation system"
+          "Added Howie N5OS tag recommendation system"
         ]
       },
       "1.4": {

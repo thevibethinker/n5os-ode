@@ -41,6 +41,24 @@ The following systems must treat these domains as one organization:
 
 ---
 
+## Team Members
+
+### Logan
+- **Role:** Co-founder, Chief Operating Officer (COO)
+- **Responsibilities:** Marketing and community engagement
+- **Coordination tag:** [LOG] in N5OS system
+
+### Ilse
+- **Role:** Chief Technology Officer (CTO), Head of AI Engineering
+- **Responsibilities:** Technology and AI engineering
+- **Coordination tag:** [ILS] in N5OS system
+
+### Vrijen (V)
+- **Role:** Founder
+- **Responsibilities:** Hiring, sales, and investment
+
+---
+
 ## Related Resources
 
 - Company overview → `file 'Knowledge/stable/company/overview.md'`

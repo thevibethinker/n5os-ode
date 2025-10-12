@@ -2,7 +2,7 @@
 
 Generate daily meeting intelligence digest with attendee research and email context.
 
-**Version:** 3.0.0 (V-OS Tag Support)  
+**Version:** 3.0.0 (N5OS Tag Support)  
 **Updated:** 2025-10-11
 
 ---
@@ -30,12 +30,12 @@ Automated daily meeting prep that scans your calendar, filters for **external st
 
 1. **Calendar Scan** — Fetches today's meetings from Google Calendar
 2. **Smart Filtering** — External stakeholders only; excludes internal/buffer/postponed events
-3. **V-OS Tag Recognition** — Reads V-OS tags from calendar descriptions (`[LD-INV]`, `[!!]`, etc.)
+3. **N5OS Tag Recognition** — Reads N5OS tags from calendar descriptions (`[LD-INV]`, `[!!]`, etc.)
 4. **Last 3 Interactions** — Pulls most recent Gmail threads with each stakeholder
 5. **Profile Check** — References existing stakeholder profiles from past meetings
 6. **Calendar Context** — Extracts meeting purpose and context from description
 7. **BLUF Format** — Bottom Line Up Front summaries for quick action
-8. **Smart Prep Actions** — Context-aware suggestions based on V-OS tags
+8. **Smart Prep Actions** — Context-aware suggestions based on N5OS tags
 
 **Exclusions:**
 - All-internal meetings (only @mycareerspan.com or @theapply.ai)
@@ -46,7 +46,7 @@ Automated daily meeting prep that scans your calendar, filters for **external st
 - All-day events
 
 **New in v3.0.0:**
-- ✅ **V-OS Tag Support** — Harmonized with Howie's V-OS tag system
+- ✅ **N5OS Tag Support** — Harmonized with Howie's N5OS tag system
 - ✅ **Binary Priority** — Critical (`!!` or `[LD-INV]`) vs non-critical
 - ✅ **Accommodation Awareness** — Prep actions adapt to `[A-0]`, `[A-1]`, `[A-2]`
 - ✅ **Stakeholder-Specific BLUFs** — Different formats for investors, hiring, partners
@@ -56,9 +56,9 @@ Automated daily meeting prep that scans your calendar, filters for **external st
 
 ---
 
-## V-OS Tag Support
+## N5OS Tag Support
 
-The digest recognizes and processes V-OS tags from calendar event descriptions.
+The digest recognizes and processes N5OS tags from calendar event descriptions.
 
 ### Supported Tag Categories
 
@@ -214,11 +214,11 @@ Please send pitch deck in advance to vrijen@mycareerspan.com.
 **Past notes:** `file 'path/to/stakeholder-profile.md'`
 
 **Prep actions:**
-1. [Context-aware action based on V-OS tags]
-2. [Context-aware action based on V-OS tags]
+1. [Context-aware action based on N5OS tags]
+2. [Context-aware action based on N5OS tags]
 3. Set explicit outcome: what decision or next step do you need?
 
-**Note:** [Coordination or weekend notes from V-OS tags]
+**Note:** [Coordination or weekend notes from N5OS tags]
 
 ---
 ```
@@ -350,7 +350,7 @@ Please send job descriptions in advance to vrijen@mycareerspan.com.
 
 ### Unit Tests
 ```bash
-# Test V-OS tag extraction
+# Test N5OS tag extraction
 python3 /home/.z/workspaces/con_Qqg3HjE36MRpwyYi/test_vos_tags.py
 ```
 
@@ -361,7 +361,7 @@ meeting-prep-digest --dry-run
 
 # Expected behavior:
 # - External meetings only
-# - V-OS tags extracted and processed
+# - N5OS tags extracted and processed
 # - Critical meetings flagged
 # - Prep actions adapted to tags
 # - Coordination notes included
@@ -386,7 +386,7 @@ meeting-prep-digest --dry-run
 
 ### Issue: Wrong prep actions
 **Solution:**
-1. Verify which V-OS tags are active
+1. Verify which N5OS tags are active
 2. Check stakeholder type mapping
 3. Adjust tags in calendar description
 4. Re-run digest
@@ -410,6 +410,6 @@ meeting-prep-digest --dry-run
 
 ---
 
-**Version:** 3.0.0 (V-OS Tag Support)  
+**Version:** 3.0.0 (N5OS Tag Support)  
 **Last Updated:** 2025-10-11  
 **Status:** Active — Phase 1 Complete

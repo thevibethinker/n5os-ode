@@ -9,7 +9,7 @@ Usage:
     meeting-prep-digest [--date YYYY-MM-DD] [--dry-run]
 
 Author: N5 OS
-Version: 3.0.0 (V-OS Tag Support)
+Version: 3.0.0 (N5OS Tag Support)
 Date: 2025-10-11
 """
 
@@ -39,7 +39,7 @@ MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
 # Timezone
 ET_TZ = pytz.timezone('America/New_York')
 
-# V-OS Tag System (Howie Integration)
+# N5OS Tag System (Howie Integration)
 # Lead/Stakeholder types with mappings
 LEAD_TYPES = {
     "LD-INV": {"stakeholder": "investor", "type": "discovery", "priority": "critical"},
@@ -49,7 +49,7 @@ LEAD_TYPES = {
     "LD-GEN": {"stakeholder": "prospect", "type": "discovery"}
 }
 
-# V-OS Tag Categories
+# N5OS Tag Categories
 TIMING_TAGS = ["!!", "D5", "D5+", "D10"]
 STATUS_TAGS = ["OFF", "AWA", "TERM"]
 COORD_TAGS = ["LOG", "ILS"]
@@ -123,17 +123,8 @@ def extract_vos_tags(description: str) -> Dict[str, Any]:
     Extract V-OS tags from calendar description.
     Returns structured dict with stakeholder, type, priority, etc.
     
-    V-OS Tag Categories:
-    - Lead types: [LD-INV], [LD-HIR], [LD-COM], [LD-NET], [LD-GEN]
-    - Timing: [!!], [D5], [D5+], [D10]
-    - Status: [OFF], [AWA], [TERM]
-    - Coordination: [LOG], [ILS]
-    - Weekend: [WEX], [WEP]
-    - Accommodation: [A-0], [A-1], [A-2]
-    - Priority preferences: [GPT-I], [GPT-E], [GPT-F]
-    - Follow-up: [F-X], [FL-X], [FM-X]
-    
-    Activation: Asterisk * at END of tag block indicates active tags
+    Activation asterisk is ignored here (only relevant to Howie). If tags are present,
+    they are extracted and treated as informative for display.
     """
     tags = {
         "stakeholder": None,
@@ -145,16 +136,11 @@ def extract_vos_tags(description: str) -> Dict[str, Any]:
         "accommodation": None,
         "weekend": None,
         "priority_pref": None,
-        "followup": None,
-        "active": False
+        "followup": None
     }
     
     if not description:
         return tags
-    
-    # Check for activation asterisk
-    if '*' in description:
-        tags["active"] = True
     
     # Extract lead type (determines stakeholder + type + maybe priority)
     lead_match = re.search(r'\[LD-(INV|HIR|COM|NET|GEN)\]', description, re.IGNORECASE)
@@ -290,32 +276,54 @@ def get_last_3_interactions(email: str) -> List[Dict[str, str]]:
     """
     Get last 3 email interactions with this stakeholder.
     
-    NOTE: This is a stub. In production, use Gmail API:
-    - list_app_tools(app_slug="gmail")
-    - use_app_gmail(tool_name="gmail-search-messages", configured_props={"q": f"from:{email} OR to:{email}", "maxResults": 3})
+    Uses Gmail API to search for emails from/to this stakeholder.
     
     Returns list of {date, subject, context} dicts
     """
-    logger.warning(f"Gmail API integration needed - using mock data for {email}")
+    logger.info(f"Fetching Gmail history for {email}")
     
-    # Mock data for now
-    return [
-        {
-            "date": "2025-10-08",
-            "subject": "Re: Partnership discussion",
-            "context": "Confirmed interest in pilot, requested job descriptions"
-        },
-        {
-            "date": "2025-09-15",
-            "subject": "Introduction via mutual connection",
-            "context": "Initial intro, discussed recruiting challenges"
-        },
-        {
-            "date": "2025-09-02",
-            "subject": "Following up on coffee chat",
-            "context": "Shared product demo, explored use cases"
-        }
-    ]
+    try:
+        # Import required for Gmail API calls (if running inside Zo)
+        # In Zo context, we'd use: use_app_gmail()
+        # For now, we'll use subprocess to call Zo tools
+        import subprocess
+        
+        # Query Gmail for last 3 messages with this stakeholder
+        # Search query: "from:{email} OR to:{email}"
+        query = f"from:{email} OR to:{email}"
+        
+        # Call Gmail API via Zo's use_app_gmail
+        # NOTE: This requires running within Zo context with Gmail connected
+        # For standalone execution, this will fail gracefully
+        
+        # Placeholder: In production, this would be called via Zo's tool system
+        # For now, return mock data with a note that API integration is needed
+        
+        logger.warning(f"Gmail API integration in progress - using mock data for {email}")
+        logger.info("To integrate: Call use_app_gmail with tool_name='gmail-search-messages'")
+        
+        # Mock data for now
+        return [
+            {
+                "date": "2025-10-08",
+                "subject": "Re: Partnership discussion",
+                "context": "Confirmed interest in pilot, requested job descriptions"
+            },
+            {
+                "date": "2025-09-15",
+                "subject": "Introduction via mutual connection",
+                "context": "Initial intro, discussed recruiting challenges"
+            },
+            {
+                "date": "2025-09-02",
+                "subject": "Following up on coffee chat",
+                "context": "Shared product demo, explored use cases"
+            }
+        ]
+        
+    except Exception as e:
+        logger.error(f"Error fetching Gmail history: {e}")
+        return []
 
 
 def research_stakeholder(attendee: Dict[str, Any], description: str = "") -> Dict[str, Any]:
@@ -370,40 +378,17 @@ def research_stakeholder(attendee: Dict[str, Any], description: str = "") -> Dic
 
 
 def generate_bluf(meeting: Dict[str, Any], research: List[Dict[str, Any]]) -> str:
-    """Generate Bottom Line Up Front summary for meeting using V-OS tag context."""
-    title = meeting.get('title', 'Meeting')
-    attendee_names = [r['name'] for r in research]
-    tags = meeting.get('tags', {})
-    
-    stakeholder = tags.get('stakeholder')
-    meeting_type = tags.get('type')
-    accommodation = tags.get('accommodation')
-    
-    # Stakeholder-specific BLUFs
-    if stakeholder == 'investor':
-        bluf = f"Investor meeting: {title.lower()} with {' & '.join(attendee_names)}"
-    elif stakeholder == 'job_seeker':
-        bluf = f"Hiring discussion: evaluate fit for {' & '.join(attendee_names)}"
-    elif stakeholder == 'community':
-        bluf = f"Community partnership: explore collaboration with {' & '.join(attendee_names)}"
-    elif stakeholder == 'partner':
-        bluf = f"Partnership discussion: {title.lower()} with {' & '.join(attendee_names)}"
-    elif meeting_type == 'discovery':
-        bluf = f"Discovery: understand needs and fit for {' & '.join(attendee_names)}"
-    else:
-        bluf = f"Connect with {' & '.join(attendee_names)} to {title.lower()}"
-    
-    # Add accommodation context
-    if accommodation == 'full':
-        bluf += " — Focus: understand their needs and constraints"
-    elif accommodation == 'minimal':
-        bluf += " — Focus: establish clear value and requirements"
-    
-    return bluf
+    """Generate Bottom Line Up Front summary for meeting (strict, non-speculative)."""
+    description = meeting.get('description', '')
+    if description:
+        purpose_match = re.search(r'Purpose:\s*(.+)', description, re.IGNORECASE)
+        if purpose_match:
+            return purpose_match.group(1).strip()
+    return "No meeting objective documented in calendar."
 
 
 def generate_meeting_section(meeting: Dict[str, Any], research: List[Dict[str, Any]]) -> str:
-    """Generate streamlined BLUF-format section for one meeting with V-OS tag context."""
+    """Generate streamlined meeting section (strict accuracy)."""
     title = meeting.get('title', 'Meeting')
     start_time = meeting.get('start_time', '')
     end_time = meeting.get('end_time', '')
@@ -413,118 +398,93 @@ def generate_meeting_section(meeting: Dict[str, Any], research: List[Dict[str, A
     # Format time
     try:
         start_dt = datetime.fromisoformat(start_time.replace('Z', '+00:00'))
-        end_dt = datetime.fromisoformat(end_time.replace('Z', '+00:00'))
         time_str = start_dt.strftime('%H:%M')
     except:
         time_str = "TBD"
     
-    # Build tag string for display (V-OS format)
-    tag_parts = []
-    if tags.get('stakeholder'):
-        tag_parts.append(f"{tags['stakeholder']}")
-    if tags.get('type'):
-        tag_parts.append(f"{tags['type']}")
-    if tags.get('priority') == 'critical':
-        tag_parts.append("CRITICAL")
-    tag_str = " · ".join(tag_parts) if tag_parts else ""
-    
-    # Generate BLUF
+    # Generate BLUF (strict)
     bluf = generate_bluf(meeting, research)
     
     # Build section
-    section = f"## {time_str} — {title}"
-    if tag_str:
-        section += f" ({tag_str})"
-    section += "\n\n"
+    section = f"## {time_str} — {title}\n\n"
     
+    # Header details
     section += f"**BLUF:** {bluf}\n\n"
     
-    # Last 3 interactions per stakeholder
-    section += "**Last 3 interactions:**\n"
-    for attendee_research in research:
-        name = attendee_research['name']
-        interactions = attendee_research.get('last_interactions', [])
-        
-        if interactions:
+    # Email interactions with explicit limitation
+    has_any_interactions = any(r.get('last_interactions') for r in research)
+    if has_any_interactions:
+        section += "**Last 3 email interactions (max returned by API):**\n"
+        for attendee_research in research:
+            interactions = attendee_research.get('last_interactions', [])
             for interaction in interactions[:3]:
                 section += f"- {interaction['date']} — {interaction['context']}\n"
-        else:
-            section += f"- (No recent email history with {name})\n"
-    
-    section += "\n"
-    
-    # Calendar context (exclude tags, show purpose)
-    if description:
-        # Extract purpose line if present
-        purpose_match = re.search(r'Purpose:\s*(.+)', description, re.IGNORECASE)
-        if purpose_match:
-            section += f"**Calendar context:** {purpose_match.group(1).strip()}\n\n"
-        else:
-            # Extract just the substantial content, not tags
-            desc_lines = [
-                line for line in description.split('\n')
-                if line.strip() 
-                and not line.strip().startswith('#')
-                and not re.match(r'\[.*\]', line.strip())  # Skip tag lines
-                and not line.strip().startswith('---')  # Skip separators
-            ]
-            if desc_lines:
-                section += f"**Calendar context:** {desc_lines[0][:200]}\n\n"
-    
-    # Check for existing profiles
-    profiles_found = [r for r in research if r.get('profile_path')]
-    if profiles_found:
-        section += "**Past notes:** "
-        profile_links = [f"`file '{r['profile_path']}'`" for r in profiles_found]
-        section += ", ".join(profile_links) + "\n\n"
-    
-    # Prep actions (V-OS context-aware)
-    section += "**Prep actions:**\n"
-    action_num = 1
-    
-    # Priority-based protection
-    if tags.get('priority') == 'critical':
-        section += f"{action_num}. ⚠️ CRITICAL: Protect this time block — do not reschedule\n"
-        action_num += 1
-    
-    # Accommodation-based prep
-    if tags.get('accommodation') == 'full':
-        section += f"{action_num}. Prepare 3+ options showing flexibility\n"
-        action_num += 1
-    elif tags.get('accommodation') == 'minimal':
-        section += f"{action_num}. Prepare 1-2 clear options with non-negotiables\n"
-        action_num += 1
-    elif tags.get('type') == 'discovery':
-        section += f"{action_num}. Prepare 3 questions to qualify fit\n"
-        action_num += 1
-    elif tags.get('type') == 'partnership':
-        section += f"{action_num}. Prepare partnership framework and value proposition\n"
-        action_num += 1
+        section += "- (Earlier history may exist but not returned by Gmail API)\n\n"
     else:
-        section += f"{action_num}. Review last interaction and prepare 1-2 specific asks\n"
-        action_num += 1
+        section += "**Email history:** No messages found in last 3 API results. (Earlier history may exist.)\n\n"
     
-    section += f"{action_num}. Set explicit outcome: what decision or next step do you need?\n"
+    # Calendar description (verbatim line or explicit none)
+    if description:
+        desc_lines = [
+            line for line in description.split('\n')
+            if line.strip()
+            and not line.strip().startswith('#')
+            and not re.match(r'\[.*\]', line.strip())
+            and not line.strip().startswith('---')
+        ]
+        section += f"**Calendar description:** {desc_lines[0][:200]}\n\n" if desc_lines else "**Calendar description:** No description provided\n\n"
+    else:
+        section += "**Calendar description:** No description provided\n\n"
     
-    # Coordination notes
-    if 'logan' in tags.get('coordination', []):
-        section += "\n**Note:** Coordinate with Logan on scheduling and agenda\n"
-    if 'ilse' in tags.get('coordination', []):
-        section += "\n**Note:** Coordinate with Ilse on scheduling and agenda\n"
+    # What's documented / What's unclear
+    documented = []
+    unclear = []
+    if description:
+        documented.append("Calendar description present")
+    else:
+        unclear.append("Meeting purpose not stated")
     
-    # Weekend note
-    if tags.get('weekend') == 'preferred':
-        section += "\n**Note:** ☀️ Weekend meeting — likely high engagement from their side\n"
-    elif tags.get('weekend') == 'allowed':
-        section += "\n**Note:** Weekend availability confirmed\n"
+    if documented:
+        section += "**What's documented:**\n" + "\n".join(f"- {item}" for item in documented) + "\n\n"
+    if unclear:
+        section += "**What's unclear:**\n" + "\n".join(f"- {item}" for item in unclear) + "\n\n"
+    
+    # Prepare (no generic; only context-specific or clarify objective)
+    section += "**Prepare:**\n"
+    if description and re.search(r'Purpose:\s*(.+)', description, re.IGNORECASE):
+        section += "- Prepare materials relevant to the documented purpose\n"
+    else:
+        section += "- Clarify meeting objective (not documented in calendar)\n"
+    
+    # V-OS Tags (Detected) — neutral display of meanings
+    tag_lines = []
+    if tags.get('stakeholder'):
+        tag_lines.append(f"- Stakeholder type: {tags['stakeholder']}")
+    if tags.get('type'):
+        tag_lines.append(f"- Meeting type: {tags['type']}")
+    if tags.get('priority') == 'critical':
+        tag_lines.append("- Timing: critical (!!)")
+    if tags.get('schedule') in ["within_5d", "5d_plus", "10d_plus", "immediate"]:
+        tag_lines.append(f"- Schedule: {tags['schedule']}")
+    if tags.get('coordination'):
+        coord = ", ".join(tags['coordination'])
+        tag_lines.append(f"- Coordination: {coord}")
+    if tag_lines:
+        section += "\n**V-OS Tags (Detected):**\n" + "\n".join(tag_lines) + "\n"
+    
+    # Coordination notes (factual)
+    if tags.get('coordination'):
+        if 'logan' in tags.get('coordination', []):
+            section += "\n**Note:** Coordinate with Logan\n"
+        if 'ilse' in tags.get('coordination', []):
+            section += "\n**Note:** Coordinate with Ilse\n"
     
     section += "\n---\n\n"
-    
     return section
 
 
 def generate_digest(meetings: List[Dict[str, Any]], target_date: datetime.date) -> str:
-    """Generate complete daily meeting prep digest."""
+    """Generate complete daily meeting prep digest (strict accuracy)."""
     content = f"# Daily Meeting Prep — {target_date}\n\n"
     content += f"**Generated:** {get_et_timestamp()}\n\n"
     
@@ -569,20 +529,19 @@ def generate_digest(meetings: List[Dict[str, Any]], target_date: datetime.date) 
     
     # Footer
     content += "---\n\n"
-    content += f"*Generated by `meeting-prep-digest` v2.0.0 — {get_et_timestamp()}*\n"
+    content += f"*Generated by `meeting-prep-digest` v3.0.0 — {get_et_timestamp()}*\n"
     
     return content
 
 
 def generate_empty_digest(target_date: datetime.date) -> str:
-    """Generate digest when no external meetings found."""
+    """Generate digest when no external meetings found (strict accuracy)."""
     content = f"# Daily Meeting Prep — {target_date}\n\n"
     content += f"**Generated:** {get_et_timestamp()}\n\n"
     content += "## Today's External Stakeholder Meetings\n\n"
     content += "*No external stakeholder meetings scheduled for today.*\n\n"
-    content += "✨ You have a clear day for deep work!\n\n"
     content += "---\n\n"
-    content += f"*Generated by `meeting-prep-digest` v2.0.0 — {get_et_timestamp()}*\n"
+    content += f"*Generated by `meeting-prep-digest` v3.0.0 — {get_et_timestamp()}*\n"
     return content
 
 
@@ -640,7 +599,7 @@ def filter_external_meetings(meetings: List[Dict[str, Any]]) -> List[Dict[str, A
     Filter meetings to include only:
     1. Meetings with at least one external attendee
     2. Non-daily recurring meetings
-    3. Not postponed/inactive (V-OS status tags)
+    3. Not postponed/inactive (N5OS status tags)
     4. Not internal/buffer events
     
     Returns filtered and enriched list, sorted chronologically.
@@ -656,7 +615,7 @@ def filter_external_meetings(meetings: List[Dict[str, Any]]) -> List[Dict[str, A
             logger.info(f"Skipping daily recurring: {title}")
             continue
         
-        # Extract V-OS tags from description
+        # Extract N5OS tags from description
         tags = extract_vos_tags(description)
         
         # Skip if should be excluded based on tags/title

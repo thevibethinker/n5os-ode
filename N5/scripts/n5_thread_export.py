@@ -16,6 +16,7 @@ import argparse
 from pathlib import Path
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Tuple
+import tempfile  # For atomic writes
 
 try:
     from jsonschema import Draft202012Validator
@@ -31,7 +32,13 @@ CONVERSATION_WS_ROOT = Path("/home/.z/workspaces")
 AAR_SCHEMA_PATH = SCHEMAS / "aar.schema.json"
 
 # Constants
-AAR_VERSION = "2.0"
+AAR_VERSION = "2.2"
+
+# Display/formatting constants
+MAX_PREVIEW_ARTIFACTS = 3
+MAX_NEXT_STEPS_DISPLAY = 5
+MAX_FILES_IN_TREE = 10
+MAX_DECISIONS_DISPLAY = 5
 
 
 class ThreadExporter:
@@ -130,6 +137,37 @@ class ThreadExporter:
             return "config"
         else:
             return "other"
+    
+    # ===== HELPER METHODS FOR MODULAR EXPORTS =====
+    
+    def _get_purpose(self, aar_data: Dict) -> str:
+        """Extract purpose from AAR data"""
+        return aar_data.get('executive_summary', {}).get('purpose', 'Thread work')
+    
+    def _get_outcome(self, aar_data: Dict) -> str:
+        """Extract outcome from AAR data"""
+        return aar_data.get('executive_summary', {}).get('outcome', 'Work completed')
+    
+    def _get_constraints(self, aar_data: Dict) -> List[str]:
+        """Extract constraints from AAR data"""
+        return aar_data.get('executive_summary', {}).get('constraints', [])
+    
+    def _get_artifacts_by_type(self, artifacts: List[Dict]) -> Dict[str, List[Dict]]:
+        """Group artifacts by type"""
+        by_type = {}
+        for artifact in artifacts:
+            atype = artifact.get('type', 'other')
+            by_type.setdefault(atype, []).append(artifact)
+        return by_type
+    
+    def _format_file_size(self, size_bytes: int) -> str:
+        """Format file size in human-readable form"""
+        if size_bytes < 1024:
+            return f"{size_bytes} B"
+        elif size_bytes < 1024 * 1024:
+            return f"{size_bytes / 1024:.1f} KB"
+        else:
+            return f"{size_bytes / (1024 * 1024):.1f} MB"
     
     def ask_interactive_questions(self) -> Dict:
         """Ask user 5 key questions for AAR"""
@@ -275,399 +313,71 @@ class ThreadExporter:
         return True, []
     
     def generate_markdown(self, aar_data: Dict) -> str:
-        """Generate markdown view from AAR JSON using v2.0 format specification"""
+        """Generate markdown view from AAR JSON (dual-write pattern)"""
         md = []
         
-        # Extract common data
-        title = aar_data.get('title', 'Thread Export')
-        thread_id = aar_data.get('thread_id', 'unknown')
-        export_date = aar_data.get('archived_date', datetime.now().strftime("%Y-%m-%d"))
-        topic = aar_data.get('executive_summary', {}).get('purpose', 'Thread export')
-        if len(topic) > 100:
-            topic = topic[:97] + "..."
-        status = "Complete"
-        artifacts = aar_data.get('final_state', {}).get('artifacts', [])
-        key_events = aar_data.get('key_events', [])
-        next_steps = aar_data.get('next_steps', [])
-        telemetry = aar_data.get('telemetry', {})
+        # Header
+        md.append(f"# After-Action Report: {aar_data['title']}")
+        md.append(f"\n**Thread ID:** `{aar_data['thread_id']}`  ")
+        md.append(f"**Archived:** {aar_data['archived_date']}  ")
+        md.append(f"**AAR Version:** {aar_data['aar_version']}  ")
+        md.append(f"\n---\n")
         
-        # HEADER
-        md.append(f"# Thread Export: {title}")
-        md.append("")
-        md.append(f"**Thread ID:** {thread_id}  ")
-        md.append(f"**Export Date:** {export_date}  ")
-        md.append(f"**Topic:** {topic}  ")
-        md.append(f"**Status:** {status}")
-        md.append("")
-        md.append("---")
-        md.append("")
+        # Executive Summary
+        md.append("## Executive Summary\n")
+        md.append(f"**Purpose:** {aar_data['executive_summary']['purpose']}\n")
+        md.append(f"**Outcome:** {aar_data['executive_summary']['outcome']}\n")
+        if aar_data['executive_summary'].get('context'):
+            md.append(f"**Context:** {aar_data['executive_summary']['context']}\n")
         
-        # SUMMARY
-        md.append("## Summary")
-        md.append("")
-        purpose = aar_data.get('executive_summary', {}).get('purpose', 'No objective specified')
-        outcome = aar_data.get('executive_summary', {}).get('outcome', 'No outcomes specified')
-        next_obj = aar_data.get('primary_objective', 'Review and determine next steps')
-        md.append(f"{purpose} {outcome} Next: {next_obj}")
-        md.append("")
-        md.append("---")
-        md.append("")
-        
-        # QUICK START
-        md.append("## Quick Start")
-        md.append("")
-        md.append("**First 10 minutes:**")
-        md.append("")
-        md.append("1. **Verify state** (2 min)")
-        md.append("   ```bash")
-        md.append("   # Check key files/resources exist")
-        if artifacts:
-            for f in [a['filename'] for a in artifacts[:3]]:
-                md.append(f"   ls -la {f}")
-        else:
-            md.append("   # No artifacts to verify")
-        md.append("   ```")
-        md.append("   Expected: Files should exist with appropriate sizes")
-        md.append("")
-        md.append("2. **Understand context** (3 min)")
-        md.append("   - Read \"Critical Constraints\" below")
-        md.append("   - Skim \"What Was Completed\"")
-        md.append("   - Note \"Known Issues\"")
-        md.append("")
-        md.append("3. **Start work** (5 min)")
-        if next_steps:
-            md.append(f"   - {next_steps[0].get('action', 'Review AAR and plan next actions')}")
-            md.append("   - Expected: Progress on primary objective")
-        else:
-            md.append("   - Review AAR and plan next actions")
-        md.append("")
-        md.append("---")
-        md.append("")
-        
-        # WHAT WAS COMPLETED
-        md.append("## What Was Completed")
-        md.append("")
-        if artifacts:
-            by_type = {}
-            for artifact in artifacts:
-                atype = artifact.get('type', 'other')
-                by_type.setdefault(atype, []).append(artifact)
-            
-            idx = 1
-            for atype, items in by_type.items():
-                md.append(f"### {idx}. {atype.capitalize()} Artifacts")
-                if len(items) == 1:
-                    a = items[0]
-                    md.append(f"- **File(s):** `file '{a['filename']}'`")
-                    md.append(f"- **Purpose:** {a.get('description', 'Artifact created during conversation')}")
-                    md.append("- **Status:** ✅ Complete")
-                else:
-                    md.append(f"- **File(s):** {len(items)} {atype} files")
-                    md.append(f"- **Purpose:** {atype.capitalize()} artifacts created during conversation")
-                    md.append("- **Files:**")
-                    for a in items:
-                        size_kb = a.get('size_bytes', 0) / 1024
-                        md.append(f"  - `{a['filename']}` ({size_kb:.1f} KB)")
-                    md.append("- **Status:** ✅ Complete")
-                md.append("")
-                idx += 1
-        else:
-            md.append("No artifacts were created during this conversation.")
-            md.append("")
-        md.append("---")
-        md.append("")
-        
-        # CRITICAL CONSTRAINTS
-        md.append("## Critical Constraints")
-        md.append("")
-        constraints = aar_data.get('executive_summary', {}).get('constraints', [])
-        decisions = aar_data.get('key_decisions', [])
-        if constraints or decisions:
-            md.append("**DO NOT CHANGE:**")
-            if constraints:
-                for constraint in constraints:
-                    md.append(f"- ❌ {constraint}")
-            else:
-                md.append("- ❌ (To be documented)")
-            md.append("")
-            md.append("**MUST PRESERVE:**")
-            md.append("- ✅ Existing functionality and interfaces")
-            md.append("- ✅ Data formats and schemas")
-            md.append("- ✅ Integration points with other systems")
-            md.append("")
-        else:
-            md.append("No specific constraints documented. Exercise caution when making changes.")
-            md.append("")
-        md.append("---")
-        md.append("")
-        
-        # KEY TECHNICAL DECISIONS
-        md.append("## Key Technical Decisions")
-        md.append("")
-        key_decisions = aar_data.get('key_decisions', [])
-        if key_decisions:
-            for i, decision in enumerate(key_decisions, 1):
-                if isinstance(decision, dict):
-                    md.append(f"### Decision {i}: {decision.get('topic', 'Technical Choice')}")
-                    md.append(f"- **Choice made:** {decision.get('decision', 'See details')}")
-                    md.append(f"- **Rationale:** {decision.get('rationale', 'Not documented')}")
-                    if decision.get('alternatives'):
-                        md.append("- **Alternatives considered:**")
-                        for alt in decision['alternatives']:
-                            md.append(f"  - {alt}")
-                    md.append("")
-                else:
-                    md.append(f"### Decision {i}")
-                    md.append(f"- {decision}")
-                    md.append("")
-        else:
-            md.append("No technical decisions explicitly documented in this thread.")
-            md.append("")
-        md.append("---")
-        md.append("")
-        
-        # KNOWN ISSUES / GOTCHAS
-        md.append("## Known Issues / Gotchas")
-        md.append("")
-        challenges = aar_data.get('challenges', [])
-        if challenges:
-            for challenge in challenges:
-                if isinstance(challenge, dict):
-                    issue_type = challenge.get('severity', 'Info')
-                    icon = "🐛" if "bug" in issue_type.lower() else "⚠️"
-                    md.append(f"### {icon} Issue: {challenge.get('title', 'Unknown')}")
-                    md.append(f"- **Problem:** {challenge.get('problem', 'Not specified')}")
-                    if challenge.get('workaround'):
-                        md.append(f"- **Workaround:** {challenge['workaround']}")
-                    if challenge.get('solution'):
-                        md.append(f"- **Solution:** {challenge['solution']}")
-                    md.append("")
-                else:
-                    md.append(f"### ⚠️ Note")
-                    md.append(f"- {challenge}")
-                    md.append("")
-        else:
-            md.append("No known issues or gotchas documented.")
-            md.append("")
-        md.append("---")
-        md.append("")
-        
-        # ANTI-PATTERNS / REJECTED APPROACHES
-        md.append("## Anti-Patterns / Rejected Approaches")
-        md.append("")
-        rejected = aar_data.get('rejected_approaches', [])
-        if rejected:
-            for approach in rejected:
-                if isinstance(approach, dict):
-                    md.append(f"### ❌ Approach: {approach.get('name', 'Unnamed')}")
-                    md.append(f"- **Why rejected:** {approach.get('reason', 'Not specified')}")
-                    if approach.get('lesson'):
-                        md.append(f"- **Lesson learned:** {approach['lesson']}")
-                    md.append("")
-                else:
-                    md.append(f"### ❌ {approach}")
-                    md.append("")
-        else:
-            md.append("No rejected approaches documented. All attempted approaches were successful or iteration is ongoing.")
-            md.append("")
-        md.append("---")
-        md.append("")
-        
-        # INTEGRATION POINTS & NEXT STEPS
-        md.append("## Integration Points & Next Steps")
-        md.append("")
-        next_steps_data = aar_data.get('next_steps', [])
-        if next_steps_data:
-            md.append("### Pending Actions")
-            md.append("")
-            for i, step in enumerate(next_steps_data, 1):
-                if isinstance(step, dict):
-                    action = step.get('action', 'Action not specified')
-                    priority = step.get('priority', 'M')
-                    md.append(f"#### {i}. {action}")
-                    if step.get('details'):
-                        md.append(f"- **Details:** {step['details']}")
-                    md.append(f"- **Priority:** {priority}")
-                    md.append(f"- **Status:** {step.get('status', '⏳ Pending')}")
-                    md.append("")
-                else:
-                    md.append(f"{i}. {step}")
-                    md.append("")
-        else:
-            md.append("No specific next steps documented. Review thread and determine appropriate actions.")
+        # Key Events
+        md.append("\n## Key Events & Decisions\n")
+        for idx, event in enumerate(aar_data['key_events'], 1):
+            event_type = event.get('type', 'event').upper()
+            md.append(f"{idx}. **[{event_type}]** {event['description']}")
+            if event.get('rationale'):
+                md.append(f"   - *Rationale:* {event['rationale']}")
             md.append("")
         
-        md.append("### Integration Points")
-        md.append("")
-        dependencies = aar_data.get('dependencies', [])
-        if dependencies:
-            md.append("**Systems/Components:**")
-            for dep in dependencies:
-                if isinstance(dep, dict):
-                    md.append(f"- **{dep.get('name', 'Unknown')}**: {dep.get('relationship', 'Related')}")
-                else:
-                    md.append(f"- {dep}")
+        # Final State & Artifacts
+        md.append("\n## Final State\n")
+        md.append(f"{aar_data['final_state']['summary']}\n")
+        
+        if aar_data['final_state']['artifacts']:
+            md.append("### Artifacts\n")
+            for artifact in aar_data['final_state']['artifacts']:
+                size_kb = artifact['size_bytes'] / 1024
+                md.append(f"- **`{artifact['filename']}`** ({artifact['type']}, {size_kb:.1f} KB)")
+                md.append(f"  - {artifact['description']}")
+        
+        # Primary Objective
+        md.append(f"\n## Primary Objective for Next Thread\n")
+        md.append(f"{aar_data['primary_objective']}\n")
+        
+        # Next Steps
+        md.append("## Actionable Next Steps\n")
+        for idx, step in enumerate(aar_data['next_steps'], 1):
+            priority = step.get('priority', '')
+            priority_str = f" **[{priority}]**" if priority else ""
+            md.append(f"{idx}.{priority_str} **{step['action']}**")
+            if step.get('details'):
+                md.append(f"   - {step['details']}")
+            if step.get('estimated_duration'):
+                md.append(f"   - *Est. duration:* {step['estimated_duration']}")
             md.append("")
-        else:
-            md.append("No explicit integration points documented.")
-            md.append("")
-        md.append("---")
-        md.append("")
         
-        # CODE PATTERNS / QUICK REFERENCE
-        md.append("## Code Patterns / Quick Reference")
-        md.append("")
-        code_examples = aar_data.get('code_patterns', [])
-        if code_examples:
-            for pattern in code_examples:
-                if isinstance(pattern, dict):
-                    md.append(f"### {pattern.get('category', 'Pattern')}")
-                    md.append("")
-                    md.append("```" + pattern.get('language', 'python'))
-                    md.append(pattern.get('code', '# Example code'))
-                    md.append("```")
-                    if pattern.get('description'):
-                        md.append(f"_{pattern['description']}_")
-                    md.append("")
-        else:
-            # Infer patterns from artifacts
-            scripts = [a for a in artifacts if a.get('type') == 'script']
-            if scripts:
-                md.append("### Common Operations")
-                md.append("")
-                md.append("| Task | Command | Notes |")
-                md.append("|------|---------|-------|")
-                for script in scripts[:5]:
-                    script_name = Path(script['filename']).name
-                    ext = Path(script['filename']).suffix
-                    if ext == '.py':
-                        md.append(f"| Run {script_name} | `python3 {script['filename']}` | Execute script |")
-                    elif ext == '.sh':
-                        md.append(f"| Run {script_name} | `bash {script['filename']}` | Execute script |")
-                md.append("")
-            else:
-                md.append("No code patterns documented in this thread.")
-                md.append("")
-        md.append("---")
-        md.append("")
-        
-        # STATE SNAPSHOT
-        md.append("## State Snapshot")
-        md.append("")
-        md.append(f"**As of export ({export_date}):**")
-        md.append("")
-        
-        md.append("### File System")
-        if artifacts:
+        # Metadata (collapsed)
+        if aar_data.get('telemetry'):
+            md.append("\n---\n")
+            md.append("<details>")
+            md.append("<summary>Metadata & Telemetry</summary>\n")
+            md.append("```json")
+            md.append(json.dumps(aar_data.get('telemetry', {}), indent=2))
+            if aar_data.get('metadata'):
+                md.append(json.dumps(aar_data.get('metadata', {}), indent=2))
             md.append("```")
-            by_type = {}
-            for a in artifacts:
-                atype = a.get('type', 'other')
-                by_type.setdefault(atype, []).append(a)
-            
-            for atype, files in sorted(by_type.items()):
-                if len(files) == 1:
-                    size_kb = files[0].get('size_bytes', 0) / 1024
-                    md.append(f"{files[0]['filename']} ({size_kb:.1f} KB)")
-                else:
-                    md.append(f"{atype}/")
-                    for f in files[:10]:
-                        size_kb = f.get('size_bytes', 0) / 1024
-                        fname = Path(f['filename']).name
-                        md.append(f"├── {fname} ({size_kb:.1f} KB)")
-                    if len(files) > 10:
-                        md.append(f"└── ... and {len(files) - 10} more")
-            md.append("```")
-            md.append("")
-        else:
-            md.append("No file system artifacts.")
-            md.append("")
+            md.append("</details>")
         
-        md.append("### Key Metrics")
-        artifact_count = telemetry.get('artifacts_created', len(artifacts))
-        total_bytes = telemetry.get('total_size_bytes', sum(a.get('size_bytes', 0) for a in artifacts))
-        total_mb = total_bytes / (1024 * 1024)
-        md.append(f"- **Artifacts created:** {artifact_count}")
-        md.append(f"- **Total size:** {total_mb:.2f} MB")
-        md.append(f"- **Generation method:** {telemetry.get('aar_generation_method', 'unknown')}")
-        md.append("")
-        md.append("---")
-        md.append("")
-        
-        # TESTING STATUS
-        md.append("## Testing Status")
-        md.append("")
-        test_status = aar_data.get('testing', {})
-        completed_tests = test_status.get('completed', [])
-        pending_tests = test_status.get('pending', [])
-        failed_tests = test_status.get('failed', [])
-        
-        if completed_tests or pending_tests or failed_tests:
-            if completed_tests:
-                md.append("### Completed Tests")
-                for test in completed_tests:
-                    md.append(f"✅ {test}")
-                md.append("")
-            
-            if pending_tests:
-                md.append("### Pending Tests")
-                for test in pending_tests:
-                    md.append(f"⏳ {test}")
-                md.append("")
-            
-            if failed_tests:
-                md.append("### Known Failures")
-                for test in failed_tests:
-                    md.append(f"❌ {test}")
-                md.append("")
-        else:
-            md.append("No formal testing documented for this thread.")
-            md.append("")
-            scripts = [a for a in artifacts if a.get('type') == 'script']
-            if scripts:
-                md.append("### Test Commands")
-                md.append("```bash")
-                md.append("# Verify scripts exist")
-                for script in scripts[:3]:
-                    md.append(f"ls -la {script['filename']}")
-                md.append("")
-                md.append("# Test execution (dry-run if available)")
-                for script in scripts[:3]:
-                    ext = Path(script['filename']).suffix
-                    if ext == '.py':
-                        md.append(f"python3 {script['filename']} --help")
-                md.append("```")
-                md.append("")
-        md.append("---")
-        md.append("")
-        
-        # OPEN QUESTIONS
-        md.append("## Open Questions")
-        md.append("")
-        questions = aar_data.get('open_questions', [])
-        if questions:
-            for i, question in enumerate(questions, 1):
-                if isinstance(question, dict):
-                    md.append(f"### {i}. {question.get('question', 'Question')}")
-                    if question.get('context'):
-                        md.append(f"- **Context:** {question['context']}")
-                    if question.get('options'):
-                        md.append("- **Options:**")
-                        for opt in question['options']:
-                            md.append(f"  - {opt}")
-                    if question.get('blocking'):
-                        md.append(f"- **Blocking:** {question['blocking']}")
-                    md.append("")
-                else:
-                    md.append(f"### {i}. {question}")
-                    md.append("")
-        else:
-            md.append("No open questions documented. All decisions have been made for the current scope.")
-            md.append("")
-        md.append("---")
-        md.append("")
-        
-        # Return joined markdown
         return '\n'.join(md)
     
     def copy_artifacts(self):
@@ -838,6 +548,9 @@ class ThreadExporter:
         elif conv_type == "analysis":
             return f"Analysis completed with {type_summary} containing results and visualizations."
         
+        elif conv_type == "strategy":
+            return f"Strategic plan developed with {type_summary} capturing decisions and rationale."
+        
         else:
             return f"Created {artifact_count} artifacts ({type_summary}) totaling {size_kb:.1f}KB"
     
@@ -921,6 +634,274 @@ class ThreadExporter:
         
         return current
     
+    # ===== MODULAR EXPORT GENERATION (v2.2) =====
+    
+    def generate_modular_exports(self, aar_data: Dict) -> Dict[str, str]:
+        """Generate modular markdown exports (v2.2 - 5-phase aligned)"""
+        return {
+            'INDEX.md': self._generate_index_md(aar_data),
+            'RESUME.md': self._generate_resume_md(aar_data),
+            'DESIGN.md': self._generate_design_md(aar_data),
+            'IMPLEMENTATION.md': self._generate_implementation_md(aar_data),
+            'VALIDATION.md': self._generate_validation_md(aar_data),
+            'CONTEXT.md': self._generate_context_md(aar_data)
+        }
+    
+    def _generate_index_md(self, aar_data: Dict) -> str:
+        """Generate INDEX.md - Navigation hub"""
+        thread_id = self.thread_id
+        export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        topic = self._get_purpose(aar_data)
+        if len(topic) > 80:
+            topic = topic[:77] + "..."
+        status = aar_data.get('status', 'Complete')
+        artifacts = self.artifacts
+        
+        md = []
+        md.append(f"# Thread Export Index")
+        md.append(f"\n**Thread:** {thread_id}  ")
+        md.append(f"**Date:** {export_date}  ")
+        md.append(f"**Topic:** {topic}  ")
+        md.append(f"**Status:** {status}  ")
+        md.append(f"\n---\n")
+        
+        md.append("## File Directory\n")
+        md.append("| File | Purpose | Primary Audience |")
+        md.append("|------|---------|------------------|")
+        md.append("| **RESUME.md** | Quick resume entry point | Resuming work |")
+        md.append("| **DESIGN.md** | Decisions & rationale | Understanding choices |")
+        md.append("| **IMPLEMENTATION.md** | Technical details | Implementation |")
+        md.append("| **VALIDATION.md** | Testing & troubleshooting | Debugging |")
+        md.append("| **CONTEXT.md** | Historical context | Background research |")
+        md.append("| **INDEX.md** | This file - navigation | Overview |")
+        
+        md.append("\n## Quick Start Workflow\n")
+        md.append("1. **Start here** - Read this INDEX")
+        md.append("2. **RESUME.md** - Get oriented (10-minute workflow)")
+        md.append("3. **DESIGN.md** - Understand key decisions")
+        md.append("4. **IMPLEMENTATION.md** - Technical implementation")
+        md.append("5. **VALIDATION.md** - If issues arise")
+        md.append("6. **CONTEXT.md** - For historical background")
+        
+        md.append("\n## File Statistics\n")
+        total_size = sum(a['size_bytes'] for a in artifacts)
+        md.append(f"- Total artifacts: {len(artifacts)}")
+        md.append(f"- Total size: {self._format_file_size(total_size)}")
+        md.append(f"- Export format: AAR v{AAR_VERSION}")
+        
+        md.append("\n---\n")
+        md.append(f"*Generated by Zo Thread Export System v{AAR_VERSION}*")
+        
+        return '\n'.join(md)
+    
+    def _generate_resume_md(self, aar_data: Dict) -> str:
+        """Generate RESUME.md - Quick resume entry point"""
+        thread_id = self.thread_id
+        export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        topic = self._get_purpose(aar_data)
+        status = aar_data.get('status', 'Complete')
+        outcome = self._get_outcome(aar_data)
+        artifacts = aar_data.get('final_state', {}).get('artifacts', [])
+        next_steps = aar_data.get('next_steps', [])
+        
+        md = []
+        md.append(f"# Thread Resume")
+        md.append(f"\n**Thread ID:** {thread_id}  ")
+        md.append(f"**Date:** {export_date}  ")
+        md.append(f"**Status:** {status}  ")
+        md.append(f"\n---\n")
+        
+        md.append("## Summary\n")
+        md.append(f"**Purpose:** {topic}\n")
+        md.append(f"**Outcome:** {outcome}\n")
+        
+        md.append("\n## Quick Start (10 Minutes)\n")
+        md.append("1. Read this summary (2 min)")
+        md.append("2. Review what was completed (3 min)")
+        md.append("3. Check next steps (2 min)")
+        md.append("4. Start with highest priority action (3 min)")
+        
+        md.append("\n## What Was Completed\n")
+        if artifacts:
+            by_type = self._get_artifacts_by_type(artifacts)
+            for atype, items in list(by_type.items())[:MAX_PREVIEW_ARTIFACTS]:
+                md.append(f"### {atype.capitalize()} Files ({len(items)})")
+                for item in items[:3]:
+                    size = self._format_file_size(item['size_bytes'])
+                    md.append(f"- `{item['filename']}` ({size})")
+                if len(items) > 3:
+                    md.append(f"  *(+{len(items) - 3} more)*")
+                md.append("")
+        
+        md.append("\n## Next Steps\n")
+        for idx, step in enumerate(next_steps[:MAX_NEXT_STEPS_DISPLAY], 1):
+            priority = step.get('priority', '')
+            priority_str = f" **[{priority}]**" if priority else ""
+            md.append(f"{idx}.{priority_str} {step['action']}")
+            if step.get('details'):
+                md.append(f"   - {step['details']}")
+        
+        md.append("\n---\n")
+        md.append("*For full details, see IMPLEMENTATION.md and DESIGN.md*")
+        
+        return '\n'.join(md)
+    
+    def _generate_design_md(self, aar_data: Dict) -> str:
+        """Generate DESIGN.md - Decisions and rationale"""
+        thread_id = self.thread_id
+        export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        key_events = aar_data.get('key_events', [])
+        constraints = self._get_constraints(aar_data)
+        
+        md = []
+        md.append(f"# Design & Decisions")
+        md.append(f"\n**Thread ID:** {thread_id}  ")
+        md.append(f"**Date:** {export_date}  ")
+        md.append(f"\n---\n")
+        
+        if constraints:
+            md.append("## Critical Constraints\n")
+            for constraint in constraints:
+                md.append(f"- {constraint}")
+            md.append("")
+        
+        md.append("## Key Technical Decisions\n")
+        for idx, event in enumerate(key_events[:MAX_DECISIONS_DISPLAY], 1):
+            event_type = event.get('type', 'decision').upper()
+            md.append(f"### Decision {idx}: {event['description']}")
+            md.append(f"**Type:** {event_type}\n")
+            if event.get('rationale'):
+                md.append(f"**Rationale:** {event['rationale']}\n")
+            if event.get('alternatives'):
+                md.append(f"**Alternatives Considered:** {event['alternatives']}\n")
+            if event.get('tradeoffs'):
+                md.append(f"**Trade-offs:** {event['tradeoffs']}\n")
+            md.append("")
+        
+        return '\n'.join(md)
+    
+    def _generate_implementation_md(self, aar_data: Dict) -> str:
+        """Generate IMPLEMENTATION.md - Technical details"""
+        thread_id = self.thread_id
+        export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        artifacts = aar_data.get('final_state', {}).get('artifacts', [])
+        outcome = self._get_outcome(aar_data)
+        
+        md = []
+        md.append(f"# Technical Implementation")
+        md.append(f"\n**Thread ID:** {thread_id}  ")
+        md.append(f"**Date:** {export_date}  ")
+        md.append(f"\n---\n")
+        
+        md.append("## What Was Completed\n")
+        md.append(f"{outcome}\n")
+        
+        md.append("## File Structure\n")
+        if artifacts:
+            by_type = self._get_artifacts_by_type(artifacts)
+            for atype in sorted(by_type.keys()):
+                items = by_type[atype]
+                md.append(f"### {atype.capitalize()} Files\n")
+                for item in items[:MAX_FILES_IN_TREE]:
+                    size = self._format_file_size(item['size_bytes'])
+                    md.append(f"- **`{item['filename']}`** ({size})")
+                    if item.get('description'):
+                        md.append(f"  - {item['description']}")
+                if len(items) > MAX_FILES_IN_TREE:
+                    md.append(f"  *(+{len(items) - MAX_FILES_IN_TREE} more files)*")
+                md.append("")
+        
+        return '\n'.join(md)
+    
+    def _generate_validation_md(self, aar_data: Dict) -> str:
+        """Generate VALIDATION.md - Testing and troubleshooting"""
+        thread_id = self.thread_id
+        export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        
+        md = []
+        md.append(f"# Validation & Troubleshooting")
+        md.append(f"\n**Thread ID:** {thread_id}  ")
+        md.append(f"**Date:** {export_date}  ")
+        md.append(f"\n---\n")
+        
+        md.append("## Testing Status\n")
+        md.append("*Testing details would be captured during implementation*\n")
+        
+        md.append("## Known Issues / Gotchas\n")
+        md.append("*Issues encountered during work would be documented here*\n")
+        
+        md.append("## Troubleshooting Guide\n")
+        md.append("*Common issues and solutions from the thread*\n")
+        
+        return '\n'.join(md)
+    
+    def _generate_context_md(self, aar_data: Dict) -> str:
+        """Generate CONTEXT.md - Historical context and metadata"""
+        thread_id = self.thread_id
+        export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        title = aar_data.get('title', 'Conversation')
+        telemetry = aar_data.get('telemetry', {})
+        metadata = aar_data.get('metadata', {})
+        
+        md = []
+        md.append(f"# Thread Context")
+        md.append(f"\n**Thread ID:** {thread_id}  ")
+        md.append(f"**Title:** {title}  ")
+        md.append(f"**Date:** {export_date}  ")
+        md.append(f"\n---\n")
+        
+        md.append("## Thread Lineage\n")
+        md.append("*Previous and related threads would be listed here*\n")
+        
+        md.append("## Metadata & Telemetry\n")
+        if telemetry:
+            md.append("```json")
+            md.append(json.dumps(telemetry, indent=2))
+            md.append("```\n")
+        
+        if metadata:
+            md.append("### Additional Metadata\n")
+            md.append("```json")
+            md.append(json.dumps(metadata, indent=2))
+            md.append("```")
+        
+        return '\n'.join(md)
+    
+    def save_modular_aar(self, aar_data: Dict):
+        """Save AAR in modular format (v2.2) with atomic writes"""
+        import tempfile
+        
+        self.archive_dir.mkdir(parents=True, exist_ok=True)
+        
+        try:
+            # Write JSON (source of truth)
+            if not self.dry_run:
+                with open(self.aar_json_path, 'w', encoding='utf-8') as f:
+                    json.dump(aar_data, f, indent=2, ensure_ascii=False)
+            print(f"  {'[DRY-RUN]' if self.dry_run else '✓'} Saved JSON: {self.aar_json_path.name}")
+            
+            # Generate modular markdown files
+            modular_exports = self.generate_modular_exports(aar_data)
+            
+            # Write markdown files atomically
+            for filename, content in modular_exports.items():
+                file_path = self.archive_dir / filename
+                if not self.dry_run:
+                    with tempfile.NamedTemporaryFile('w', encoding='utf-8',
+                                                    dir=file_path.parent,
+                                                    delete=False) as tmp:
+                        tmp.write(content)
+                        tmp_path = Path(tmp.name)
+                    tmp_path.rename(file_path)
+                print(f"  {'[DRY-RUN]' if self.dry_run else '✓'} Saved: {filename}")
+        
+        except IOError as e:
+            print(f"  ❌ Error writing files: {e}")
+            raise
+        except Exception as e:
+            print(f"  ❌ Unexpected error: {e}")
+            raise
+    
     def save_aar(self, aar_data: Dict, markdown: str):
         """Save AAR in both JSON and Markdown formats (dual-write)"""
         self.archive_dir.mkdir(parents=True, exist_ok=True)
@@ -937,8 +918,13 @@ class ThreadExporter:
                 f.write(markdown)
         print(f"  {'[DRY-RUN]' if self.dry_run else '✓'} Saved Markdown: {self.aar_md_path}")
     
-    def run(self, interactive=True):
-        """Execute full AAR export workflow"""
+    def run(self, interactive=True, export_format='modular'):
+        """Execute full AAR export workflow
+        
+        Args:
+            interactive: Whether to use interactive mode
+            export_format: 'single' for v2.0 format, 'modular' for v2.2 format
+        """
         
         print("\n" + "="*70)
         print(f"Thread Export: {self.thread_id}")
@@ -1000,11 +986,15 @@ class ThreadExporter:
         
         # Execute
         print("\nPhase 5: Create Archive")
-        self.save_aar(self.aar_data, markdown)
+        if export_format == 'modular':
+            self.save_modular_aar(self.aar_data)
+        else:
+            self.save_aar(self.aar_data, markdown)
         self.copy_artifacts()
         
         print(f"\n✅ AAR Export Complete!")
         print(f"   Archive: {self.archive_dir}")
+        print(f"   Format: {export_format} (v{AAR_VERSION})")
         
         return True
 
@@ -1043,6 +1033,12 @@ def main():
         action="store_true",
         help="Auto-confirm all prompts (for automated execution)"
     )
+    parser.add_argument(
+        "--format",
+        choices=["single", "modular"],
+        default="modular",
+        help="Export format: single file (v2.0) or modular (v2.2, default)"
+    )
     
     args = parser.parse_args()
     
@@ -1076,7 +1072,10 @@ def main():
     # Run export
     exporter = ThreadExporter(thread_id, title, args.dry_run)
     exporter.auto_confirm = args.yes  # Set auto-confirm flag
-    success = exporter.run(interactive=not args.non_interactive and not args.yes)
+    success = exporter.run(
+        interactive=not args.non_interactive and not args.yes,
+        export_format=args.format
+    )
     
     sys.exit(0 if success else 1)
 

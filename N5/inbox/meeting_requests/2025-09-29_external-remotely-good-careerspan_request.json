@@ -1,13 +1,12 @@
 {
   "meeting_id": "2025-09-29_external-remotely-good-careerspan",
-  "participants": "Remotely Good, CareerSpan",
+  "classification": "external",
+  "participants": "Remotely Good <> CareerSpan",
   "date": "2025-09-29",
   "gdrive_id": "1vFQ7XdCJfy71IJT4YXSCah9NzuCnt1RK",
   "gdrive_link": "https://docs.google.com/document/d/1vFQ7XdCJfy71IJT4YXSCah9NzuCnt1RK/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Remotely Good <> CareerSpan-transcript-2025-09-29T17-19-32.207Z.docx",
-  "created_at": "2025-10-11T03:01:45.162722+00:00",
-  "status": "pending",
-  "stakeholder_type": "unknown",
-  "classification": "external",
-  "external_participant": "remotely-good-careerspan"
+  "external_participant": "remotely-good-careerspan",
+  "created_at": "2025-10-12T09:57:25.994516+00:00",
+  "status": "pending"
 }

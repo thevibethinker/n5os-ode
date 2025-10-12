@@ -1,6 +1,6 @@
 # Thread Export Format Specification
 
-**Version:** 2.0  
+**Version:** 2.2  
 **Date:** 2025-10-12  
 **Purpose:** Standard format for thread exports to enable seamless resumption in new conversations
 
@@ -18,6 +18,133 @@ This document defines the standard structure for exporting conversation threads.
 - **Resumption-ready** - Designed for cold starts in new threads
 
 ---
+
+## Format Versions
+
+### v2.2 (Modular Format) - Current
+**Date:** 2025-10-12  
+**Status:** Production
+
+**Structure:** 6 modular markdown files + JSON
+- `INDEX.md` - Navigation hub and file directory
+- `RESUME.md` - Quick resume entry point (10-minute workflow)
+- `DESIGN.md` - Key decisions and rationale
+- `IMPLEMENTATION.md` - Technical details and code patterns
+- `VALIDATION.md` - Testing status and troubleshooting
+- `CONTEXT.md` - Thread lineage and metadata
+- `aar-YYYY-MM-DD.json` - JSON source of truth
+- `artifacts/` - Copied workspace files
+
+**Benefits:**
+- Faster navigation (read only relevant sections)
+- Clearer purpose for each file
+- Better for resumption (start with INDEX → RESUME)
+- Modular updates (edit one file without affecting others)
+
+**Usage:**
+```bash
+# Generate modular export (default)
+python3 N5/scripts/n5_thread_export.py --auto --title "My Thread"
+
+# Explicitly specify modular format
+python3 N5/scripts/n5_thread_export.py --auto --format modular
+```
+
+### v2.0 (Single File) - Legacy Compatible
+**Date:** 2025-10-12  
+**Status:** Maintained for backward compatibility
+
+**Structure:** 1 markdown file + JSON
+- `aar-YYYY-MM-DD.md` - Single comprehensive markdown
+- `aar-YYYY-MM-DD.json` - JSON source of truth
+- `artifacts/` - Copied workspace files
+
+**Usage:**
+```bash
+# Generate single-file export (backward compatible)
+python3 N5/scripts/n5_thread_export.py --auto --format single
+```
+
+---
+
+## V2.2 Modular File Specifications
+
+### INDEX.md
+**Purpose:** Navigation hub - first file to read when resuming
+
+**Contents:**
+- File directory table (what each file contains)
+- Quick start workflow (reading order)
+- File statistics (artifact count, sizes)
+- Export metadata
+
+**Audience:** Anyone resuming the thread
+
+### RESUME.md
+**Purpose:** Quick 10-minute resume entry point
+
+**Contents:**
+- Summary (purpose & outcome)
+- Quick start workflow (10-minute plan)
+- What was completed (key artifacts)
+- Critical constraints (what NOT to change)
+- Next steps (prioritized actions)
+- Context for resumption
+
+**Audience:** Resuming work immediately
+
+### DESIGN.md
+**Purpose:** Decision rationale and design choices
+
+**Contents:**
+- Critical constraints
+- Key technical decisions
+- Alternatives considered
+- Trade-offs made
+- Lessons learned
+
+**Audience:** Understanding why choices were made
+
+### IMPLEMENTATION.md
+**Purpose:** Technical implementation details
+
+**Contents:**
+- What was completed (detailed)
+- Code patterns and quick reference
+- File structure
+- Common operations
+- Integration points
+
+**Audience:** Implementing or modifying the system
+
+### VALIDATION.md
+**Purpose:** Testing and troubleshooting guide
+
+**Contents:**
+- Testing status
+- Known issues and gotchas
+- Troubleshooting guide
+- Debug commands
+- If stuck, check these
+
+**Audience:** Debugging or testing the system
+
+### CONTEXT.md
+**Purpose:** Historical context and metadata
+
+**Contents:**
+- Thread lineage (previous/related threads)
+- System architecture context
+- User preferences
+- Files created/modified
+- Metadata and telemetry
+
+**Audience:** Background research or understanding history
+
+---
+
+## V2.0 Single File Template (Legacy)
+
 
 ## Complete Template Structure
 

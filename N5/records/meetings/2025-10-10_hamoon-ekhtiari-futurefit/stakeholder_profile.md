@@ -8,6 +8,26 @@
 
 ---
 
+## Tags
+
+### Verified (Last reviewed: 2025-10-12)
+- `#stakeholder:partner:collaboration` — Integration/collaboration partnership (not resale/distribution)
+- `#relationship:new` — First meeting, exploratory phase
+- `#priority:normal` — Not urgent, appropriate for exploration
+- `#engagement:needs_followup` — V to send follow-up within 2 weeks with 1-2 concrete use cases
+- `#context:hr_tech` — Career support platform serving 200K+ users annually
+
+### Howie Sync
+**Recommended V-OS tags:** `[LD-NET] [A-1] *`  
+**Last sync:** 2025-10-12
+
+### Tag History
+- **2025-10-12:** Initial tags added and verified by V via retroactive tagging analysis
+  - Added: collaboration partner, new relationship, normal priority, needs followup, hr_tech context
+  - Source: Manual review of stakeholder profile and meeting notes
+
+---
+
 ## Product & Mission
 
 **What FutureFit does**: Large-scale career support platform serving 200,000+ people annually through organizational partnerships. Provides profiling, career pathways, skills training, job access, and tools (resume review, interview prep). Aggregates multiple support services into unified platform.

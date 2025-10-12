@@ -30,8 +30,8 @@
 
 **Special Cases**
 - [INC]: ignore the email entirely, regardless of activation symbol
-- Only act on V-OS tags marked with “*”; ignore unstarred tags
-- If multiple V-OS tags appear, process in order
+- Only act on N5OS tags marked with “*”; ignore unstarred tags
+- If multiple N5OS tags appear, process in order
 
 **Tag-based rules:**
 - [LD-INV]: Investor → prefer Tuesday or Thursday
@@ -51,7 +51,7 @@
 - [F-X]: after X business days, send a reminder only if no response, introducing yourself as Vrijen’s assistant; skip if they’ve replied
 - [FL-X]: if Logan hasn’t acted after X days, send her a private follow-up instead of cc’ing everyone
 - [FM-X]: after X business days without response, send a gentle reminder only to me, resurfacing the thread; do not send to any other participants
-- [TERM]: terminate Howie’s involvement; to reactivate, add a V-OS tag with “*”
+- [TERM]: terminate Howie’s involvement; to reactivate, add a N5OS tag with “*”
 - [A-X]: indicates accommodation level (0 = only on our terms, 1 = baseline, 2 = fully accommodating)
 - [GPT-I]: prioritize internal stakeholders’ scheduling preferences
 - [GPT-E]: prioritize external stakeholders’ scheduling preferences

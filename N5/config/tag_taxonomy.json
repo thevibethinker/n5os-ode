@@ -1,0 +1,241 @@
+{
+  "version": "3.0.0",
+  "format": "hashtag",
+  "last_updated": "2025-10-12",
+  "categories": {
+    "stakeholder": {
+      "prefix": "#stakeholder:",
+      "description": "Primary classification of external contacts",
+      "tags": {
+        "investor": {
+          "description": "Investors, VCs, funding sources",
+          "howie_bracket": "[LD-INV]",
+          "priority_default": "critical"
+        },
+        "job_seeker": {
+          "description": "Candidates, recruiting",
+          "howie_bracket": "[LD-HIR]",
+          "priority_default": "normal"
+        },
+        "community": {
+          "description": "Community partners, nonprofits",
+          "howie_bracket": "[LD-COM]",
+          "priority_default": "normal"
+        },
+        "partner:collaboration": {
+          "description": "Integration/collaboration partners",
+          "howie_bracket": "[LD-NET]",
+          "priority_default": "normal"
+        },
+        "partner:channel": {
+          "description": "Distribution/resale partners",
+          "howie_bracket": "[LD-NET]",
+          "priority_default": "normal"
+        },
+        "prospect": {
+          "description": "General leads, exploratory contacts",
+          "howie_bracket": "[LD-GEN]",
+          "priority_default": "normal"
+        },
+        "customer": {
+          "description": "Paying customers",
+          "howie_bracket": null,
+          "priority_default": "high",
+          "n5_only": true
+        },
+        "vendor": {
+          "description": "Service providers, suppliers",
+          "howie_bracket": null,
+          "priority_default": "normal",
+          "n5_only": true
+        },
+        "advisor": {
+          "description": "Strategic advisors, mentors",
+          "howie_bracket": null,
+          "priority_default": "high",
+          "n5_only": true
+        }
+      }
+    },
+    "relationship": {
+      "prefix": "#relationship:",
+      "description": "Current state of the relationship",
+      "n5_only": true,
+      "tags": {
+        "new": "First contact, no history",
+        "warm": "Active, engaged, responsive (5+ emails/month)",
+        "active": "Ongoing collaboration, regular meetings",
+        "cold": "No recent contact (30+ days)",
+        "dormant": "Past relationship, currently inactive"
+      }
+    },
+    "priority": {
+      "prefix": "#priority:",
+      "description": "Business priority and urgency",
+      "tags": {
+        "critical": {
+          "description": "Ultra-urgent, protect time",
+          "howie_bracket": "!!"
+        },
+        "high": {
+          "description": "Strategic value, high importance",
+          "howie_bracket": "[A-0]"
+        },
+        "normal": {
+          "description": "Standard priority (default)",
+          "howie_bracket": "[A-1]"
+        },
+        "low": {
+          "description": "Exploratory, low urgency",
+          "howie_bracket": "[A-2]"
+        }
+      }
+    },
+    "engagement": {
+      "prefix": "#engagement:",
+      "description": "Communication behavior and responsiveness",
+      "n5_only": true,
+      "tags": {
+        "responsive": "Quick replies (<4 hours avg)",
+        "slow": "Slow responses (>24 hours avg)",
+        "needs_followup": "Waiting on their response",
+        "waiting_on_us": "Waiting on our response"
+      }
+    },
+    "context": {
+      "prefix": "#context:",
+      "description": "Domain or industry classification",
+      "n5_only": true,
+      "extensible": true,
+      "tags": {
+        "hr_tech": "HR technology, recruiting tech",
+        "venture_capital": "VC firms, investment funds",
+        "saas": "SaaS companies",
+        "enterprise": "Enterprise buyers/users",
+        "startup": "Startup ecosystem",
+        "nonprofit": "Nonprofit, social impact"
+      }
+    },
+    "type": {
+      "prefix": "#type:",
+      "description": "Type of meeting or interaction",
+      "tags": {
+        "discovery": "First meeting, exploratory",
+        "partnership": "Partnership discussion",
+        "followup": "Follow-up meeting",
+        "recurring": "Regular recurring meeting"
+      }
+    },
+    "status": {
+      "prefix": "#status:",
+      "description": "Meeting or relationship status",
+      "tags": {
+        "postponed": {
+          "description": "Meeting postponed/rescheduled",
+          "howie_bracket": "[OFF]",
+          "skip_in_digest": true
+        },
+        "awaiting": {
+          "description": "Awaiting confirmation",
+          "howie_bracket": "[AWA]"
+        },
+        "inactive": {
+          "description": "Relationship terminated",
+          "howie_bracket": "[TERM]",
+          "skip_in_digest": true
+        },
+        "active": {
+          "description": "Currently active (default)",
+          "howie_bracket": null
+        }
+      }
+    },
+    "schedule": {
+      "prefix": "#schedule:",
+      "description": "Timing constraints for scheduling",
+      "tags": {
+        "within_5d": {
+          "description": "Schedule within 5 business days",
+          "howie_bracket": "[D5]"
+        },
+        "5d_plus": {
+          "description": "Schedule 5+ business days out",
+          "howie_bracket": "[D5+]"
+        },
+        "10d_plus": {
+          "description": "Schedule 10+ business days out",
+          "howie_bracket": "[D10]"
+        }
+      }
+    },
+    "align": {
+      "prefix": "#align:",
+      "description": "Internal coordination requirements",
+      "tags": {
+        "logan": {
+          "description": "Align with Logan's schedule",
+          "howie_bracket": "[LOG]"
+        },
+        "ilse": {
+          "description": "Align with Ilse's schedule",
+          "howie_bracket": "[ILS]"
+        },
+        "founders": {
+          "description": "Align with founders",
+          "howie_bracket": "[GPT-F]"
+        }
+      }
+    },
+    "accommodation": {
+      "prefix": "#accommodation:",
+      "description": "Flexibility and accommodation approach",
+      "tags": {
+        "minimal": {
+          "description": "On our terms only",
+          "howie_bracket": "[A-0]"
+        },
+        "baseline": {
+          "description": "Standard flexibility (default)",
+          "howie_bracket": "[A-1]"
+        },
+        "full": {
+          "description": "Fully accommodating",
+          "howie_bracket": "[A-2]"
+        }
+      }
+    },
+    "availability": {
+      "prefix": "#availability:",
+      "description": "Scheduling availability preferences",
+      "tags": {
+        "weekend_ok": {
+          "description": "Weekends allowed",
+          "howie_bracket": "[WEX]"
+        },
+        "weekend_preferred": {
+          "description": "Prefer weekends",
+          "howie_bracket": "[WEP]"
+        }
+      }
+    },
+    "followup": {
+      "prefix": "#followup:",
+      "description": "Automated follow-up reminders",
+      "pattern": "^#followup:(external|logan|vrijen)_(\\d+)$",
+      "tags": {
+        "external_N": {
+          "description": "Follow up with external party in N days",
+          "howie_pattern": "[F-N]"
+        },
+        "logan_N": {
+          "description": "Private follow-up to Logan in N days",
+          "howie_pattern": "[FL-N]"
+        },
+        "vrijen_N": {
+          "description": "Personal reminder in N days",
+          "howie_pattern": "[FM-N]"
+        }
+      }
+    }
+  }
+}

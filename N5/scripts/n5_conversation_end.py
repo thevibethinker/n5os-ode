@@ -305,6 +305,53 @@ def cleanup_workspace_root():
         print(f"⚠️  Workspace root cleanup skipped: {e}")
 
 
+def extract_lessons():
+    """
+    Extract lessons from this conversation (Phase -1)
+    This runs before AAR to capture techniques, patterns, and troubleshooting
+    """
+    print("\n" + "="*70)
+    print("PHASE -1: LESSON EXTRACTION")
+    print("="*70)
+    print("\nAnalyzing conversation for significant lessons...\n")
+    
+    lessons_script = WORKSPACE / "N5/scripts/n5_lessons_extract.py"
+    
+    if not lessons_script.exists():
+        print("⚠️  Lesson extraction script not found, skipping")
+        print(f"   Expected: {lessons_script}")
+        return
+    
+    try:
+        # Run lesson extraction (non-blocking, auto-detect thread)
+        result = subprocess.run(
+            [sys.executable, str(lessons_script)],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=120  # 2 minute timeout
+        )
+        
+        # Print output
+        if result.stdout:
+            print(result.stdout)
+        
+        if result.returncode == 0:
+            print("\n✓ Lessons extracted successfully")
+        elif "not significant" in result.stdout.lower():
+            print("\n→ Thread not significant for lesson extraction")
+        else:
+            print(f"\n→ Lesson extraction completed (no lessons found)")
+            if result.stderr:
+                logger.debug(f"Extraction details: {result.stderr}")
+        
+    except subprocess.TimeoutExpired:
+        print("⚠️  Lesson extraction timed out (>2min), continuing...")
+    except Exception as e:
+        print(f"⚠️  Lesson extraction skipped: {e}")
+        logger.debug(f"Extraction error details", exc_info=True)
+
+
 def generate_aar():
     """
     Generate After-Action Report (AAR) for this conversation
@@ -349,6 +396,120 @@ def generate_aar():
         print(f"⚠️  AAR generation skipped: {e}")
 
 
+def git_status_check():
+    """
+    Check git status and prompt for commit if there are uncommitted changes
+    This is Phase 4 - ensures work is saved before conversation ends
+    """
+    print("\n" + "="*70)
+    print("PHASE 4: GIT STATUS CHECK")
+    print("="*70)
+    print("\nChecking for uncommitted changes...\n")
+    
+    try:
+        # Check git status
+        status_result = subprocess.run(
+            ["git", "status", "--short"],
+            cwd=str(WORKSPACE),
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        
+        if status_result.returncode != 0:
+            print("⚠️  Git status check failed - not a git repository or git error")
+            return
+        
+        changes = status_result.stdout.strip()
+        
+        if not changes:
+            print("✅ No uncommitted changes - git is clean")
+            return
+        
+        # There are changes - show them
+        print("📝 Uncommitted changes detected:\n")
+        print(changes)
+        print()
+        
+        # Run git-check to audit staged changes
+        git_check_script = WORKSPACE / "N5/scripts/n5_git_check.py"
+        if git_check_script.exists():
+            print("-" * 70)
+            print("Running git-check audit...\n")
+            audit_result = subprocess.run(
+                [sys.executable, str(git_check_script)],
+                capture_output=True,
+                text=True,
+                check=False
+            )
+            if audit_result.stdout:
+                print(audit_result.stdout)
+            print("-" * 70)
+            print()
+        
+        # Prompt user to commit
+        print("⚠️  You have uncommitted changes.")
+        
+        # Check for --auto flag (skip prompt in auto mode)
+        if "--auto" in sys.argv or "--yes" in sys.argv:
+            print("   (Auto mode: skipping commit prompt)")
+            return
+        
+        response = input("Commit changes before ending conversation? (Y/n): ").strip().lower()
+        
+        if response not in ['y', 'yes', '']:
+            print("→ Skipping commit - changes remain uncommitted")
+            return
+        
+        # User wants to commit - get commit message
+        print("\nEnter commit message (or press Enter for default):")
+        commit_msg = input("> ").strip()
+        
+        if not commit_msg:
+            commit_msg = "conversation-end: save progress"
+        
+        # Stage all changes
+        print("\nStaging all changes...")
+        add_result = subprocess.run(
+            ["git", "add", "-A"],
+            cwd=str(WORKSPACE),
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        
+        if add_result.returncode != 0:
+            print(f"❌ Failed to stage changes: {add_result.stderr}")
+            return
+        
+        print("✓ Changes staged")
+        
+        # Commit
+        print(f"Committing with message: '{commit_msg}'...")
+        commit_result = subprocess.run(
+            ["git", "commit", "-m", commit_msg],
+            cwd=str(WORKSPACE),
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        
+        if commit_result.returncode != 0:
+            print(f"❌ Commit failed: {commit_result.stderr}")
+            return
+        
+        # Show commit summary
+        print("✅ Changes committed successfully\n")
+        print(commit_result.stdout)
+        
+        # Log the commit
+        log_action(f"Git commit: {commit_msg}")
+        
+    except Exception as e:
+        print(f"⚠️  Git status check failed: {e}")
+        logger.debug("Git check error details", exc_info=True)
+
+
 def main():
     """Main execution"""
     
@@ -370,6 +531,9 @@ def main():
     print("N5 CONVERSATION END-STEP")
     print("="*70)
     print(f"\nConversation workspace: {CONVERSATION_WS}")
+    
+    # NEW: Phase -1 - Extract lessons
+    extract_lessons()
     
     # NEW: Phase 0 - Generate AAR
     generate_aar()
@@ -422,6 +586,9 @@ def main():
                 print("⚠️  Personal intelligence script not found, skipping")
         except Exception as e:
             logger.warning(f"Personal intelligence update skipped: {e}")
+        
+        # NEW: Phase 4 - Git status check
+        git_status_check()
         
         # Final summary
         print("\n" + "="*70)

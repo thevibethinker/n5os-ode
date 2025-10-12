@@ -1,0 +1,16 @@
+{
+  "task_name": "meeting-monitor-cycle",
+  "description": "Run meeting monitor every 15 minutes to detect new meetings",
+  "schedule": {
+    "rrule": "FREQ=HOURLY;INTERVAL=0;BYMINUTE=0,15,30,45",
+    "description": "Every 15 minutes (on 0, 15, 30, 45 of each hour)"
+  },
+  "instruction": "Run a single cycle of the meeting monitor system:\n\n1. Call the meeting monitor to check for new meetings\n2. Process any meetings with N5OS tags\n3. Generate digest section if new meetings found\n4. Log all activity to N5/logs/meeting_monitor.log\n\nUse the run_meeting_monitor.py script with:\n- poll_interval_minutes: 15\n- lookahead_days: 7\n\nReport any errors or urgent meetings detected.",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "notes": [
+    "This task processes calendar events automatically",
+    "Urgent meetings (marked with *) are prioritized",
+    "Results are formatted for daily digest",
+    "State tracking prevents duplicate processing"
+  ]
+}

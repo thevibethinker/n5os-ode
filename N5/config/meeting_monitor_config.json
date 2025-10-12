@@ -1,0 +1,25 @@
+{
+  "deployment_date": "2025-10-12T12:17:05.865418-04:00",
+  "version": "1.0.0",
+  "monitoring": {
+    "poll_interval_minutes": 15,
+    "lookahead_days": 7,
+    "log_level": "INFO"
+  },
+  "health_checks": {
+    "max_cycle_gap_minutes": 60,
+    "max_errors_per_day": 10,
+    "max_api_failures": 5
+  },
+  "log_rotation": {
+    "retention_days": 30,
+    "compress_after_days": 7,
+    "rotation_hour_et": 0
+  },
+  "paths": {
+    "logs": "N5/logs",
+    "meetings": "N5/records/meetings",
+    "digests": "N5/records/digests",
+    "dashboards": "N5/records/dashboards"
+  }
+}
