@@ -1,12 +1,18 @@
 # Caleb Thornton
 
-- name: Caleb Thornton
-- organization: Seed to Table (reported in transcript)
-- role: Event Organizer / Investor Relations (as described)
-- source: N5/inbox/meeting_requests/2025-08-27_external-vrijen-attawar-and-caleb-thornton_205801_request.json
-- contact_email: [Unknown]
-- mutual_acquaintances: [Joseph, Adam Harder]
-- enrichment_priority: HIGH
-- notes:
-  - Runs investor-startup events; claimed metric: 60% of pitching companies find funding within 6–8 months.
-  - Offered Sept 9 AI event slot and sponsorship assistance; proposed scheduling call with Matt and Ryan to finalize logistics.
+- **Name:** Caleb Thornton
+- **Organization:** Seed to Table
+- **Role:** Event organizer / investor-connector
+- **Source:** Meeting (2025-08-27) with Vrijen Attawar
+- **Mutuals:** Joseph (introduced), Adam Harder
+- **Notes:** Runs investor pitch events; offers media (1-min video), photos, and post-event lead lists. Sponsorships often cover part of founder fee. Quoted: "It's Shark Tank meets a wedding."  
+- **Enrichment priority:** MEDIUM
+
+## Next enrichment tasks
+- [ ] LinkedIn profile scan (read-only)  
+- [ ] Confirm organization contact emails and sponsor partners  
+- [ ] Find Matt & Ryan contact info for logistics call
+
+## Files
+- Meeting record: /home/workspace/N5/records/meetings/2025-08-27_external-vrijen-attawar-and-caleb-thornton/
+

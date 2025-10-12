@@ -67,11 +67,8 @@ def filter_unprocessed(files_list: list) -> list:
         filename = file_info.get('name', '')
         
         # Skip if already processed
+        # ALL files in this folder are transcripts, no need for additional filtering
         if filename.startswith('[ZO-PROCESSED]'):
-            continue
-        
-        # Skip non-transcript files
-        if not ('transcript' in filename.lower() or filename.endswith('.docx')):
             continue
         
         # Parse and add metadata

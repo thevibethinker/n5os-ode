@@ -51,9 +51,10 @@ trashed: false
 unprocessed = [
     f for f in files 
     if not f['name'].startswith('[ZO-PROCESSED]')
-    and ('transcript' in f['name'].lower() or f['name'].endswith('.docx'))
 ]
 ```
+
+**Note:** ALL files in the folder are transcripts—no additional name/extension filtering needed.
 
 ### 3. For Each Unprocessed File
 
