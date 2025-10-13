@@ -1,0 +1,19 @@
+{
+  "meeting_id": "2025-09-15_internal-team",
+  "gdrive_id": "1kxU4Dv1szJAaZ85IJqmVzK4xmijWmJjq",
+  "original_filename": "Daily co-founder standup + check trello-transcript-2025-09-15T13-36-15.362Z.docx",
+  "processed_at_et": "2025-10-13T14:40:00 -04:00 EDT",
+  "stakeholder_type": "INTERNAL_STANDUP_COFOUNDER",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md"
+  ],
+  "crm_status": "skipped - internal meeting",
+  "enrichment_priority": "LOW",
+  "notes": "Processed per Registry System v1.5; CRM creation not applicable for internal meeting."
+}

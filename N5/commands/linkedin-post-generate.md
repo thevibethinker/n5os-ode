@@ -123,38 +123,55 @@ Knowledge/personal-brand/social-content/linkedin/
 ### 10-Step Process
 
 1. **Input Validation**: Verify seed content and parameters
-2. **Voice Schema Resolution**: Load `voice.md`, `essential-links.json`, `linkedin-stop-verbs.json`
+2. **Voice Schema Resolution**: Load `voice.md` (v3.1.0), `essential-links.json`, `linkedin-stop-verbs.json`
 3. **Seed Content Parsing**: Extract key ideas, stats, anecdotes, linguistic patterns
 4. **Auto-Dial Inference**: Detect formality, warmth, CTA rigour (unless overridden)
 5. **Structure Selection**: Choose post format (story, stat-lead, contrarian take)
 6. **Hook Crafting**: Create compelling first line
-7. **Voice Engine Application**: Apply distinctive verbs, readability guards, Careerspan positioning
+7. **Voice Engine Application**: Apply distinctive verbs, signature phrases, em-dashes, readability guards
 8. **CTA Crafting**: Generate 1-2 context-appropriate calls-to-action
-9. **Self-Review**: Validate readability, stop-verbs, structural quality
+9. **Self-Review**: Validate readability, stop-verbs, structural quality, voice consistency
 10. **Output Assembly**: Generate files and display summary
 
 ### Voice Integration
 
-**Primary Source**: `N5/prefs/communication/voice.md` (v3.0)
+**Primary Source**: `N5/prefs/communication/voice.md` (v3.1.0 - UPDATED)
 
 **Mapping**:
 - Formality levels → `voice.md` "Formality Levels" section
 - Relationship depth → `voice.md` "Relationship Depth Scale" section
-- Distinctive verbs → `voice.md` "Tonal Architecture → Assertive" section
+- Distinctive verbs → `voice.md` "Lexicon" section (preferred/avoid verbs)
+- **Signature phrases** → `voice.md` "Signature Phrases" section (40+ documented)
+- **Em-dash usage** → `voice.md` "Punctuation Style" section
 - CTA patterns → `voice.md` "Follow-Up Type Rules" section
 - Readability rules → `voice.md` "Readability Optimization" section
+- **Structure patterns** → `voice.md` "Email Structure Patterns" section
+
+**Word Count Targets (Aligned with Email System):**
+- LinkedIn post: 250-350 words (standard thought leadership)
+- Short-form post: 150-200 words (quick takes)
+- Long-form post: 350-450 words (deep dives, rare)
 
 **Prohibited Language**: `N5/prefs/communication/linkedin-stop-verbs.json`
+
+**Voice Consistency Rules:**
+1. Use signature phrases from voice.md where natural
+2. Apply em-dash usage for rhythm (V's signature style)
+3. Maintain tone weights (warmth 0.80-0.85, confidence 0.72-0.80, humility 0.55-0.65)
+4. Use lexicon preferences (tackle not "go after", resonate not "makes sense")
+5. Keep concise—V's natural style is compressed
 
 ### Validation Rules
 
 **Must Pass**:
 - ✅ Flesch-Kincaid Grade Level ≤ 12
-- ✅ Average sentence length ≤ 32 words
-- ✅ Word count: 150-400
+- ✅ Average sentence length ≤ 32 words (prefer 16-22)
+- ✅ Word count: 150-450 (target: 250-350 for standard)
 - ✅ CTA count: 1-2
 - ✅ Stop-verbs: ≤ 2 occurrences
 - ✅ Hook present (compelling first line)
+- ✅ **Voice consistency**: Signature phrases used naturally
+- ✅ **Em-dash usage**: Present (V's signature)
 
 **Warnings** (non-blocking):
 - ⚠️ Dial confidence < 0.70 → prompts user confirmation

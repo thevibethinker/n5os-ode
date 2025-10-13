@@ -182,9 +182,14 @@
 
 | Depth | Formal | Balanced | Casual |
 | --- | --- | --- | --- |
-| 0-1 | Hi {{name}}, | Hey {{name}}, | Hey {{name}}— |
-| 2-3 | Hello {{name}}, | Hey {{name}}, | Hey {{name}}— |
+| 0-1 | Hi {{name}}, | Hi {{name}}, | Hey {{name}}, |
+| 2-3 | Hi {{name}}, | Hey {{name}}, | Hey {{name}}— |
 | 4 | Hey {{name}}, | Hey {{name}}— | Hey {{name}} 😊 |
+
+**Usage Note:**  
+- **"Hi"** = New contacts, formal contexts, professional distance desired
+- **"Hey"** = Established warmth, comfortable relationship, repeat collaborators
+- V is intentionally using "Hi" more to maintain professional formality until warmth is established
 
 ### Sign-Offs (by Relationship Depth)
 
@@ -193,6 +198,167 @@
 | 0-1 | Best regards, | Best, | Best, |
 | 2-3 | Warm regards, | Warmly, | Cheers, |
 | 4 | Warm regards, | Cheers, | ✌️, |
+
+---
+
+## Punctuation Style
+
+### Em-Dash (—) Usage
+
+**V's Signature:** Heavy, intentional use of em-dashes for rhythm and clarity
+
+**Frequency:** High (replaces many commas and parentheses)
+
+**Patterns:**
+
+1. **After greetings (when warmth established):**
+   - "Hey Mark—"
+   - "Hey Hilary—"
+
+2. **In bullet lists (description — detail):**
+   - "Kamina Singh intro — She's been instrumental in..."
+   - "Career/HR tech founder roundtable — You'll love this crew"
+
+3. **For parenthetical information:**
+   - "Landidly struggles with their client tracking tool (Huntr) — potential opportunity..."
+   - "your immediate grasp of the aggregator model — was energizing"
+
+4. **For pauses and emphasis:**
+   - "Apologies for the radio silence — interacting with talent leads like yourself gave us..."
+   - "food for thought — as far as our strategy is concerned"
+
+5. **Replacing commas in lists:**
+   - "We're finalizing partnerships with great communities like Sidebar, Next Play, and Rhize — among others."
+
+**Rule:** Use em-dash liberally where others would use commas, colons, or parentheses. Creates distinctive rhythm.
+
+---
+
+## Signature Phrases (Running List)
+
+**Purpose:** Maintain voice consistency by using V's actual recurring expressions
+
+### Apologies & Delays
+- "Sorry about all the delays!"
+- "Apologies for the radio silence"
+- "First, my apologies for the delay in following up"
+- "Apologies for the delay on my end"
+- "it's been a whirlwind few days"
+
+### Gratitude & Opening
+- "Thanks for carving out time on [day]"
+- "Thanks for jumping on that call"
+- "Thanks for making time yesterday"
+- "It was great speaking with you last week"
+- "It was such a pleasure connecting last week"
+
+### Enthusiasm & Validation
+- "I loved your point about..."
+- "You nailed it when you said..."
+- "That's precisely what..."
+- "Really appreciated the depth of our conversation"
+- "I'm genuinely excited about..."
+- "your immediate grasp of [concept] — was energizing"
+
+### Transitions to Action
+- "As promised, here's..."
+- "Here's what I promised:"
+- "Quick updates on our action items:"
+- "Here's the follow-up items:"
+
+### Value Positioning
+- "That's precisely what our pre-processed talent communities deliver — quality over quantity"
+- "Looking forward to showing you how we can save you from that crushing pile of generic applications!"
+
+### Delegation & Coordination
+- "but I'm including @Logan if there's anything urgent"
+- "@Howie can you circle back to this message..."
+- "I'm away for the next week to handle some personal matters but @Logan will be around"
+
+### Colloquialisms (Casual-Professional Mix)
+- "Tinker around, test it with your use cases"
+- "whirlwind [time period]"
+- "(finally taking a well-deserved break!)"
+- "[time] and change" (e.g., "week and change")
+- "slam dunk"
+- "crushing pile"
+- "eye-opening (input)"
+- "food for thought"
+- "locked down (partnerships)"
+
+### Closing
+- "Best," (default for all contexts)
+- "Take care!" (casual, warm)
+- "Let's keep in touch"
+- "Let's compare notes after..."
+- "We can chat thereafter!"
+- "Hopefully, you'll have some good input from your students as well :)"
+
+### Special Patterns
+- **@ Mentions:** "@Logan if there's anything urgent", "@Howie can you circle back"
+- **Parenthetical Asides:** "(Huntr)", "(Peace Corps)", "(finally taking a well-deserved break!)"
+- **Direct Quotes:** "I loved your point about wanting candidates who 'actually make it to a manager conversation'"
+
+---
+
+## Email Structure Patterns (From Actual Usage)
+
+### Standard Follow-Up (~200-250 words)
+
+**Greeting** (Hi/Hey + name)
+
+**Opening** (20-40 words):
+- Gratitude or apology for delay
+- 1-2 sentence callback to conversation
+
+**Main Content:**
+- Use bullets with short prose, NOT paragraph exposition
+- 3-4 bullets per section max
+- Each bullet: "Item — supporting detail"
+
+**CTAs:**
+- "Next steps:" or "Action items:"
+- 2-3 bullets with owner/timing
+
+**Delegation (if needed):**
+- "@Name will..." or "I'm including @Name if..."
+
+**Closing:**
+- "Best," (or "Take care!" for warm contacts)
+
+### Partnership Email (~300-350 words)
+
+**Greeting** (Hi/Hey + name—)
+
+**Opening** (30-50 words):
+- Gratitude + extended callback
+- Transition to business
+
+**Summary Section:**
+- "Here's what I captured:" or "As promised, here's..."
+- Bullets with em-dash format
+
+**Details (1-2 use cases):**
+- **[Title]**
+- [1-2 sentence description]
+- "How it works:" + 3-4 bullets
+- "Why this matters:" [2-3 sentences as single paragraph, NOT bullets]
+
+**Integration/Options:**
+- Short paragraph or 2-3 bullets
+
+**Next steps:**
+- 2-3 bullets
+
+**Closing:**
+- "Best," or contextual
+
+### Key Patterns:
+- **Bullets with short prose** > paragraph exposition
+- **Em-dashes in bullets** for description — detail format
+- **@ mentions** for delegation
+- **Short paragraphs** (1-3 sentences max)
+- **Direct, active language**
 
 ---
 

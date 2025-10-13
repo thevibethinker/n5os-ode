@@ -1,15 +1,13 @@
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: 0eaaf3c46d02224c94392ae81b3b4f59
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
-anchors:
-  input: null
-  output: /home/workspace/N5_mirror/knowledge/ladder-principle.md
+related_files:
+anchors: [object Object]
 ---
 # LADDER Principle
 Light-weight · Atomic · Dry-run · Deduplicate · Easy-review · Reject-silently

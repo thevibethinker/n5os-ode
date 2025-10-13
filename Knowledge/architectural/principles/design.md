@@ -83,6 +83,34 @@ These principles guide system architecture and information design.
 - Email drafting
 - Document creation
 
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Split 400-line monolithic architectural principles document into 5 focused modules: core.md (principles 0,2), safety.md (5,7,11,19), quality.md (1,15,16,18,21), design.md (3,4,8,20), operations.md (6,9,10,12,13,14,17). Created lightweight index for navigation.
+- Context: Monolithic principles document was loaded entirely every time, wasting tokens and context window. Different tasks need different subsets of principles. User wanted Rule-of-Two compliance with selective loading.
+- Resolution: Achieved ~70% context reduction for typical operations. Can now load index + 1-2 relevant modules instead of entire document. Follows Principle 20 (Modular Design) and Principle 8 (Minimal Context).
+
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Split 400-line monolithic architectural principles document into 5 focused modules: core.md (principles 0,2), safety.md (5,7,11,19), quality.md (1,15,16,18,21), design.md (3,4,8,20), operations.md (6,9,10,12,13,14,17). Created lightweight index for navigation.
+- Context: Monolithic principles document was loaded entirely every time, wasting tokens and context window. Different tasks need different subsets of principles. User wanted Rule-of-Two compliance with selective loading.
+- Resolution: Achieved ~70% context reduction for typical operations. Can now load index + 1-2 relevant modules instead of entire document. Follows Principle 20 (Modular Design) and Principle 8 (Minimal Context).
+
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Split large monolithic configuration/principle documents into focused modules that can be loaded selectively based on task needs, reducing token usage and improving context efficiency.
+- Context: Architectural principles document was 400+ lines and loaded entirely every time, wasting tokens. Needed selective loading based on actual task requirements.
+- Resolution: Split into 5 focused modules (core, safety, quality, design, operations). Can now load index + 1-2 modules instead of entire document. Reduced context by ~70% for typical operations.
+
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Split large monolithic configuration/principle documents into focused modules that can be loaded selectively based on task needs, reducing token usage and improving context efficiency.
+- Context: Architectural principles document was 400+ lines and loaded entirely every time, wasting tokens. Needed selective loading based on actual task requirements.
+- Resolution: Split into 5 focused modules (core, safety, quality, design, operations). Can now load index + 1-2 modules instead of entire document. Reduced context by ~70% for typical operations.
+
 ---
 
 ## 4) Ontology-Weighted Analysis

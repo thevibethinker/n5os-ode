@@ -1,0 +1,18 @@
+{
+  "meeting_id": "2025-09-15_external-unknown",
+  "processed_at": "2025-10-13T14:08:14-04:00",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md"
+  ],
+  "stakeholder_inferred": "NETWORKING",
+  "crm_created": "/home/workspace/Knowledge/crm/individuals/external-unknown.md",
+  "crm_status": "created (needs enrichment)",
+  "transcript_source": "115MTMV-VCP51KGtZ4wlBOuiMioZsunh0vjOqxRPmf2c",
+  "notes": "Transcript contained insufficient content ('watch test'). Requested resend."
+}

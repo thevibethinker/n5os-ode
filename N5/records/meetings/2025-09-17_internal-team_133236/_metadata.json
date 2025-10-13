@@ -1,0 +1,16 @@
+{
+  "meeting_id": "2025-09-17_internal-team_133236",
+  "processed_at_et": "2025-10-13T16:10:07-04:00",
+  "processor": "Zo (Registry System v1.5)",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md"
+  ],
+  "crm_integration": "skipped (internal)",
+  "original_request_file": "N5/inbox/meeting_requests/2025-09-17_internal-team_133236_request.json"
+}

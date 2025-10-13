@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "applyai-dev",
+  "private_key_id": "e3121ce25d412fcd7e87d52e6ba82a23046b4368",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDul25KtjansfFj\nazakhJaFEMczpy5Pyj7GkknwO4r1p8NRtmj0WgbK9bSq6ImFMvnhutXPwPmelczj\nG48HoxtlmfpiiJHpLCiVe45TuM2JJHBtUAHwk3f45sj9U8gH0/Xl2gszfxiW/cJ8\noPvgtsosBH4x/NKdZCqCxgGxlW/9oXlvyIVT655UyZVtKa5GRTJbg55mafLdfApm\njOSLdDvvvDcgB9lyvflOVk0ulfWwuMm2PgyHYsU6+uj+a/2QupNQLZKXHX4TRDSw\nPB0dQO+h03pVEljm4N8aT//vaOO92JkwskQwU4hn4/0ZKvTdaEgJzpymDjayOtiO\ng7xmM46jAgMBAAECggEAHuMbY/BR2VodEfihDXbyq3hKvteaPw8YxbPOKZueYi3y\niFixHqJW9chi4qs8Plz6jMFCCRAGNgRWOWJpx5x9y/nn4wCjbwhd7/gbqp/7z7tt\naIwD1u/9seBiov+edND4/jrA2iJOfcw3yig8Y1DBPHs6a7Xl/Xp9pwoDfHNdmPuh\n+0VQl9Inl9P3nckI6Oz77e9UajulSPhAVs26XoQ7QEiYwsVWKPTuCN6capHSoyJd\n0SXefEETjnxRo5cdIzOEQVPYQtCC7Z/I8t6TmAgcF1eTcQKcY+fUc0OPeU7xL9Aq\n6pmCMbeNk8N5Poz8SZ/9k7B73lgA7WeMmPfVEKVouQKBgQD8Hu5HTAOyPH8R96yD\nhJtCph8xJwXhXH69xK1AT/8cNM56SHeZE3pnWJQy4RiDEmbwENRMm99GabIk6JnH\npOsfOEGLk3smN3jmORSAo7lf9GpdKvYzOMJd19SIIRaW5OAfvDs1zJ76AC8a6YWf\nWwxs+Fz7gYsIK6M/SYAYgUL+iwKBgQDyQzXDgslZQmbiNlnB0/9koTFxR2pRn/Y5\nbM0BA7abtDwSmuvQ69IzxK+kjxIaYFUcRQMW1QCJWKhwPrGtJMOOZlIZDF8O6MCf\nbWNAPr1cz41jsXp0G0V+b4Q2E39hTDbGyZkLEERi2sxVWpyLEIEk/6ts/L9FEsuy\n5tlJAZsLSQKBgQDzpViUYit4RepvDLEU8EOy5yNhttqB7Yc2ESl061oYghfAKOQb\ndK1nzjx55vpvQItmGH1yA3iEbYSREo/6VbA7HXyKTF5Iknct1Z+wqYht6KAZpXkE\nCyga1Ic5fvB7pnfJc3itBy/jXeYn1eEiHTUm4eXJ0Gjx3moGsRsvk0uQ/QKBgQCN\nA2gRBFi09vyx4Zb/Rqna5iTEXiBZoLWOmXD+jS3GlfN9lOV8dzekYHEoZQrRhY8k\n5Fq2+IbWa1+n7iY3tTWK9q4E3HmcUQiGBAMIizxoAHu5Mr4nRRR/UuPvIgw8E0Oz\nE/dcRDy6GcdkS1jhbVrusU8UIk4nI5ij6tFBOIkJ2QKBgCJgAeliz5e1IQnWeTJJ\njY1+FYv9rE3NVurUVI1SZfFsGmJvej3NcNrU44lLOXN/URTep8s88FP+J+C1n0pf\nLmHMA3ZdkmVKY6ZMOigiNj54OlTdcA55JbGcAAj6Rtf46oFaoHMwewSseo2JTUwN\npU6P2fLBeEp7g4JPWu9cz2vs\n-----END PRIVATE KEY-----\n",
+  "client_email": "job-sourcing-bot@applyai-dev.iam.gserviceaccount.com",
+  "client_id": "101634485294407821208",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/job-sourcing-bot%40applyai-dev.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

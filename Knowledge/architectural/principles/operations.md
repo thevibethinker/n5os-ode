@@ -109,6 +109,20 @@ These principles guide day-to-day operations, testing, and maintenance.
 - System changes
 - Workflow modifications
 
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Repeatedly made mistake of saying 'call LLM API' or 'implement LLM integration' when designing lessons extraction. Correct approach: I AM the LLM running in this environment. I should do the analysis directly during conversation, not call external services.
+- Context: User has been 'burned by this multiple times' - I keep treating myself as external to the system rather than recognizing I'm the processing engine. This violates operational principles and adds unnecessary complexity.
+- Resolution: Clarified: When scripts need LLM analysis, I do it during the conversation, not via API. Implemented Option A: During conversation-end, I extract lessons FIRST (before script runs), then proceed with normal workflow. No API keys, no external calls - just me doing the work directly.
+
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Instead of updating architectural principles ad-hoc during conversations, capture lessons to pending storage for weekly batch review. Review session allows approve/edit/reject with principle updates only for approved lessons. Archive approved, discard rejected, keep pending for next time.
+- Context: Making same mistakes repeatedly because lessons weren't formally captured and integrated into principles. Needed systematic way to learn from experience and update decision-making frameworks.
+- Resolution: Built complete workflow: auto-extract on conversation-end → pending/ storage → Sunday evening review → update principles → archive. Scheduled task reminds weekly. Takes 15-30 min/week. Enables continuous improvement without disrupting conversations.
+
 ---
 
 ## 17) Test with Production Configuration

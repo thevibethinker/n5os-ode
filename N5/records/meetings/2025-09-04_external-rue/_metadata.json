@@ -1,0 +1,11 @@
+{
+  "meeting_id": "2025-09-04_external-rue",
+  "source_request": "/home/workspace/N5/inbox/meeting_requests/2025-09-04_external-rue_request.json",
+  "gdrive_id": "1Llm0-LIEdVGxjrb5-RCIUdkgWtEYM-ga",
+  "stakeholder_type": "JOB_SEEKER",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25"],
+  "crm_status": "skipped",
+  "processed_at_et": "2025-10-13T05:38:54-04:00",
+  "processor": "Zo (Registry System v1.5)",
+  "transcript_path": "/home/workspace/N5/inbox/transcripts/2025-09-04_external-rue.cleaned.txt"
+}

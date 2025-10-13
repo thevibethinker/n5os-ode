@@ -1,0 +1,11 @@
+{
+  "meeting_id": "2025-08-26_external-joe-priode",
+  "processed_at": "2025-10-12T21:33:50-04:00",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25"],
+  "crm_status": "skipped - JOB_SEEKER",
+  "original_request": "N5/inbox/meeting_requests/2025-08-26_external-joe-priode_request.json",
+  "gdrive_id": "1j5g1bNk6h8NDbhmD5B9Vm9CxQ4TWBLI6",
+  "processor": "Zo",
+  "registry_version": "1.5",
+  "notes": "Transcript converted from docx; CRM creation intentionally skipped per workflow."
+}

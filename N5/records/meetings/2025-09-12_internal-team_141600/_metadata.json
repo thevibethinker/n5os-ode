@@ -1,0 +1,20 @@
+{
+  "meeting_id": "2025-09-12_internal-team_141600",
+  "processed_at": "2025-10-13T12:58:31-04:00",
+  "processor": "Zo (Registry System v1.5)",
+  "source_request": "/home/workspace/N5/inbox/meeting_requests/2025-09-12_internal-team_141600_request.json",
+  "gdrive_id": "1G5sVXJcfWb0DIDuRA8bKmRsrvNbq3TUf",
+  "original_filename": "Daily team stand-up-transcript-2025-09-12T14-16-00.878Z.docx",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md"
+  ],
+  "stakeholder_type": "INTERNAL",
+  "crm_status": "SKIPPED (internal team - excluded)",
+  "enrichment_priority": "LOW"
+}

@@ -1,0 +1,13 @@
+{
+  "meeting_id": "2025-09-04_external-general-call",
+  "processed_at": "2025-10-13T05:20:03-04:00",
+  "processor": "Zo",
+  "stakeholder_type": "COMMUNITY",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25","B05","B07"],
+  "blocks_count": 9,
+  "crm_created": true,
+  "enrichment_priority": "MEDIUM",
+  "source_transcript": "N5/inbox/transcripts/2025-09-04_external-general-call.txt",
+  "gdrive_id": "1UpPnkbdkK0WGvk6kTtAWFm0uiKs5KDoV",
+  "original_request": "N5/inbox/meeting_requests/2025-09-04_external-general-call_request.json"
+}

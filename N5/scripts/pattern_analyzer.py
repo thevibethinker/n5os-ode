@@ -65,7 +65,7 @@ class StakeholderPatternAnalyzer:
         
         suggested_tags = []
         
-        # 1. Stakeholder type (primary classification)
+        # 1. Stakeholder type (single, fundamental identity)
         stakeholder_tag = self._infer_stakeholder_type(contact_data, email_context, enrichment_data)
         if stakeholder_tag:
             suggested_tags.append(stakeholder_tag)
@@ -75,24 +75,24 @@ class StakeholderPatternAnalyzer:
         if relationship_tag:
             suggested_tags.append(relationship_tag)
         
-        # 3. Priority (binary: critical vs. non-critical)
+        # 3. Priority (binary: critical vs. non-critical, based on stakeholder type)
         priority_tag = self._infer_priority(stakeholder_tag, enrichment_data)
         if priority_tag:
             suggested_tags.append(priority_tag)
         
-        # 4. Engagement status
+        # 4. Job seeking status (orthogonal to stakeholder type)
+        job_seeking_tag = self._infer_job_seeking_status(email_context, enrichment_data)
+        if job_seeking_tag:
+            suggested_tags.append(job_seeking_tag)
+        
+        # 5. Engagement status
         engagement_tag = self._infer_engagement(email_context)
         if engagement_tag:
             suggested_tags.append(engagement_tag)
         
-        # 5. Context/industry
+        # 6. Context/industry
         context_tags = self._infer_context(contact_data, enrichment_data)
         suggested_tags.extend(context_tags)
-        
-        # 6. Check for dual classification
-        dual_tag = self._check_dual_classification(contact_data, email_context, enrichment_data)
-        if dual_tag:
-            suggested_tags.append(dual_tag)
         
         log.info(f"Generated {len(suggested_tags)} tag suggestions for {contact_data.get('name')}")
         return suggested_tags
@@ -104,7 +104,11 @@ class StakeholderPatternAnalyzer:
         enrichment_data: Optional[Dict]
     ) -> Optional[Dict[str, Any]]:
         """
-        Infer primary stakeholder type
+        Infer primary stakeholder type (single classification only)
+        
+        Types vs. States principle:
+        - Stakeholder type = fundamental identity/relationship
+        - Job seeking = state (separate tag #job_seeking:active)
         
         Signal priorities:
         1. LinkedIn job title (highest confidence)
@@ -127,9 +131,9 @@ class StakeholderPatternAnalyzer:
                     'source': 'linkedin_job_title'
                 }
             
-            # Advisor signals (executive, former leader)
-            if any(kw in current_role for kw in ['advisor', 'consultant', 'coach', 'former']) and \
-               any(kw in current_role for kw in ['ceo', 'cto', 'vp', 'director', 'head of']):
+            # Advisor signals (executive, former leader, coach)
+            if any(kw in current_role for kw in ['advisor', 'consultant', 'coach']) or \
+               ('former' in current_role and any(kw in current_role for kw in ['ceo', 'cto', 'vp', 'director'])):
                 return {
                     'tag': '#stakeholder:advisor',
                     'confidence': 0.85,
@@ -137,8 +141,8 @@ class StakeholderPatternAnalyzer:
                     'source': 'linkedin_job_title'
                 }
             
-            # Community leader signals
-            if any(kw in current_role for kw in ['community', 'network', 'association', 'nonprofit']):
+            # Community leader signals (talent attraction, employer brand, community manager)
+            if any(kw in current_role for kw in ['community', 'talent attraction', 'employer brand', 'network']):
                 return {
                     'tag': '#stakeholder:community',
                     'confidence': 0.85,
@@ -160,15 +164,6 @@ class StakeholderPatternAnalyzer:
                 'tag': '#stakeholder:investor',
                 'confidence': 0.90,
                 'reasoning': f'Known VC firm domain: {domain}',
-                'source': 'domain_analysis'
-            }
-        
-        # Check for recruiting/HR companies
-        if any(kw in domain for kw in ['recruiting', 'talent', 'hire', 'staffing', 'jobs']):
-            return {
-                'tag': '#stakeholder:job_seeker',
-                'confidence': 0.70,
-                'reasoning': f'Recruiting/HR company domain: {domain}',
                 'source': 'domain_analysis'
             }
         
@@ -210,6 +205,78 @@ class StakeholderPatternAnalyzer:
             'reasoning': 'Insufficient data to determine specific type, defaulting to prospect',
             'source': 'default'
         }
+    
+    def _infer_job_seeking_status(
+        self,
+        email_context: Optional[Dict],
+        enrichment_data: Optional[Dict]
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Infer job seeking status (orthogonal to stakeholder type)
+        
+        V's principle: Anyone can be job seeking regardless of stakeholder type
+        
+        Signals:
+        - Email keywords (interview, job search, applying)
+        - Using Careerspan product
+        - LinkedIn "Open to work" badge
+        - Recent job seeking activity
+        """
+        
+        # Check email context for job search keywords
+        if email_context and email_context.get('subjects'):
+            subjects = ' '.join(email_context['subjects']).lower()
+            
+            job_search_keywords = [
+                'interview', 'interviewing', 'job search', 'applying',
+                'looking for', 'career opportunity', 'resume', 'job hunt',
+                'using careerspan', 'product trial', 'final round'
+            ]
+            
+            if any(kw in subjects for kw in job_search_keywords):
+                return {
+                    'tag': '#job_seeking:active',
+                    'confidence': 0.85,
+                    'reasoning': 'Email threads indicate active job search',
+                    'source': 'email_keywords'
+                }
+        
+        # Check LinkedIn for "Open to work" or job seeking signals
+        if enrichment_data and enrichment_data.get('linkedin_data'):
+            linkedin = enrichment_data['linkedin_data']
+            
+            # Check for "Open to work" badge
+            if linkedin.get('open_to_work') or linkedin.get('seeking_opportunities'):
+                return {
+                    'tag': '#job_seeking:active',
+                    'confidence': 0.90,
+                    'reasoning': 'LinkedIn profile indicates open to opportunities',
+                    'source': 'linkedin_status'
+                }
+            
+            # Check recent activity for job search posts
+            recent_activity = str(linkedin.get('recent_activity', '')).lower()
+            if any(kw in recent_activity for kw in ['interviewing', 'job search', 'looking for']):
+                return {
+                    'tag': '#job_seeking:active',
+                    'confidence': 0.80,
+                    'reasoning': 'Recent LinkedIn activity indicates job search',
+                    'source': 'linkedin_activity'
+                }
+        
+        # Check if using Careerspan product (product usage = job seeking)
+        if email_context and email_context.get('subjects'):
+            subjects = ' '.join(email_context['subjects']).lower()
+            if any(kw in subjects for kw in ['careerspan', 'using your product', 'created story']):
+                return {
+                    'tag': '#job_seeking:active',
+                    'confidence': 0.90,
+                    'reasoning': 'Using Careerspan product indicates active job search',
+                    'source': 'product_usage'
+                }
+        
+        # No job seeking signals → Don't tag (assume inactive)
+        return None
     
     def _infer_relationship_status(self, email_context: Optional[Dict]) -> Optional[Dict[str, Any]]:
         """
@@ -418,59 +485,6 @@ class StakeholderPatternAnalyzer:
                 })
         
         return context_tags
-    
-    def _check_dual_classification(
-        self,
-        contact_data: Dict,
-        email_context: Optional[Dict],
-        enrichment_data: Optional[Dict]
-    ) -> Optional[Dict[str, Any]]:
-        """
-        Check if contact should have dual stakeholder classification
-        
-        Example: Community leader who is also job seeking (Kim Wilkes)
-        """
-        
-        # Pattern: Community leader + job seeker
-        is_community = False
-        is_job_seeker = False
-        
-        # Check for community signals
-        if email_context and email_context.get('subjects'):
-            subjects = ' '.join(email_context['subjects']).lower()
-            if any(kw in subjects for kw in ['community', 'network', 'women in tech', 'elpha', 'tech ladies']):
-                is_community = True
-        
-        # Check for job seeker signals
-        if email_context and email_context.get('subjects'):
-            subjects = ' '.join(email_context['subjects']).lower()
-            if any(kw in subjects for kw in ['interview', 'job search', 'using careerspan', 'product trial']):
-                is_job_seeker = True
-        
-        # Check LinkedIn for dual signals
-        if enrichment_data and enrichment_data.get('linkedin_data'):
-            linkedin = enrichment_data['linkedin_data']
-            
-            # Community leadership in role or activities
-            role = linkedin.get('current_role', '').lower()
-            if any(kw in role for kw in ['community', 'employer brand', 'talent attraction']):
-                is_community = True
-            
-            # Active job seeking in recent activity
-            if linkedin.get('recent_activity') and 'job' in str(linkedin.get('recent_activity')).lower():
-                is_job_seeker = True
-        
-        # If both signals present, suggest dual classification
-        if is_community and is_job_seeker:
-            return {
-                'tag': '#stakeholder:job_seeker',
-                'confidence': 0.80,
-                'reasoning': 'DUAL CLASSIFICATION: Contact shows both community leadership and job seeking signals',
-                'source': 'dual_classification_detection',
-                'note': 'Consider tagging as both #stakeholder:community (primary) and #stakeholder:job_seeker (secondary)'
-            }
-        
-        return None
     
     def _load_config(self, filename: str) -> Dict:
         """Load configuration file"""

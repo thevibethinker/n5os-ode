@@ -1,17 +1,16 @@
 ---
-name: "Hei-Yue Pang"
-email_primary: "hpang@yearupunited.org"
-email_aliases: []
-organization: "Year Up United"
-role: "Senior Director, Career Alliance | Talent Networks"
-first_contact: "2025-09-23"
-last_updated: "2025-10-12"
-lead_type: "LD-COM"
-status: "active"
+name: Hei-Yue Pang
+email_primary: hpang@yearupunited.org
+email_aliases:
+organization: Year Up United
+role: Senior Director, Career Alliance | Talent Networks
+first_contact: 2025-09-23
+last_updated: 2025-10-12
+lead_type: LD-COM
+status: active
 interaction_count: 6
-last_interaction: "2025-09-26"
+last_interaction: 2025-09-26
 ---
-
 # Hei-Yue Pang
 
 **Organization:** Year Up United  

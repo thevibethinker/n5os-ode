@@ -1,0 +1,26 @@
+{
+  "meeting_id": "2025-09-03_external-whitney-jones",
+  "gdrive_id": "1_zV0Ih1CWMWPYYBtvc5cPFr0kt9pwW8F",
+  "classification": "external",
+  "participants": "Whitney Jones x Vrijen Attawar",
+  "stakeholder_type": "CUSTOMER",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md",
+    "B24_PRODUCT_IDEA_EXTRACTION.md",
+    "B05_OUTSTANDING_QUESTIONS.md",
+    "B13_PLAN_OF_ACTION.md",
+    "B27_KEY_MESSAGING.md",
+    "B11_METRICS_SNAPSHOT.md"
+  ],
+  "blocks_count": 12,
+  "crm_created": "/home/workspace/Knowledge/crm/individuals/whitney-jones.md",
+  "enrichment_priority": "MEDIUM",
+  "processed_at_utc": "2025-10-13T07:00:59Z",
+  "processed_by": "Zo Computer - Registry System v1.5"
+}

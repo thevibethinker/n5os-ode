@@ -1,15 +1,17 @@
 ---
-date: '2025-09-24T01:36:00Z'
-last-tested: '2025-09-24T01:36:00Z'
-generated_date: '2025-09-24T01:36:00Z'
+date: "2025-09-24T01:36:00Z"
+last-tested: "2025-09-24T01:36:00Z"
+generated_date: "2025-09-24T01:36:00Z"
 checksum: jobs_add_v0_1_0
-tags: [jobs, careers, list-management]
+tags:
+  - jobs
+  - careers
+  - list-management
 category: data-ingestion
 priority: medium
-related_files: []
+related_files: 
 anchors:
-  input: null
-  output: /home/workspace/N5/commands/jobs-add.md
+  - object Object
 ---
 # `jobs-add`
 
