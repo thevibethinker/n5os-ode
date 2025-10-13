@@ -245,6 +245,68 @@ Committing with message: 'Add git check to conversation-end workflow'...
 
 ---
 
+### Phase 4.5: System Timeline Check (NEW)
+
+**Purpose**: Automatically detect and capture timeline-worthy system changes during conversation-end.
+
+**Workflow**:
+1. Scan workspace for high-signal file changes
+2. Detect new commands, modified scripts, critical infrastructure changes
+3. Generate suggested timeline entry if significant work detected
+4. Prompt user to review and optionally add to system timeline
+
+**Detection Signals**:
+- New command files in N5/commands/ (created in last hour)
+- Multiple modified scripts in N5/scripts/ (≥2 files)
+- Recent changes to critical infrastructure files
+
+**User Options**:
+- Y - Add to timeline as-is
+- e - Edit entry before adding
+- n - Skip timeline update
+
+**Example output**:
+```
+======================================================================
+PHASE 4.5: SYSTEM TIMELINE CHECK
+======================================================================
+
+Scanning for timeline-worthy changes...
+
+📊 SYSTEM TIMELINE UPDATE DETECTED
+
+Source: conversation-end
+
+Suggested timeline entry:
+  Title:       New command(s): timeline-automation
+  Category:    command
+  Impact:      medium
+  Status:      completed
+  Description: Created 1 new command(s): timeline-automation
+  Components:  1 affected
+    - N5/commands/timeline-automation.md
+
+----------------------------------------------------------------------
+Options:
+  Y - Add to timeline as-is
+  e - Edit before adding
+  n - Skip (don't add to timeline)
+----------------------------------------------------------------------
+
+Add to system timeline? (Y/e/n): Y
+
+✅ System timeline updated: New command(s): timeline-automation
+   Entry ID: 46f2c4c2-eae1-4ff7-8871-3aeba65def70
+```
+
+**Rationale**:
+- Lightweight check that catches high-impact changes
+- Runs during natural workflow pause (conversation end)
+- Complements thread-export's deeper AAR-based detection
+- User always has final say
+
+---
+
 ### Phase 5: Archive (Optional)
 ```bash
 # If user requested conversation export/archive

@@ -17,6 +17,14 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
+# Import timeline automation
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from timeline_automation_module import add_timeline_entry_from_workspace
+    TIMELINE_AUTOMATION_AVAILABLE = True
+except ImportError:
+    TIMELINE_AUTOMATION_AVAILABLE = False
+
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -510,6 +518,141 @@ def git_status_check():
         logger.debug("Git check error details", exc_info=True)
 
 
+def timeline_update_check():
+    """
+    Check for timeline-worthy changes and auto-write timeline entry
+    This is Phase 4.5 - captures system changes in timeline (AUTOMATIC, no prompts)
+    """
+    print("\n" + "="*70)
+    print("PHASE 4.5: SYSTEM TIMELINE AUTO-UPDATE")
+    print("="*70)
+    print("\nScanning for timeline-worthy changes...\n")
+    
+    if not TIMELINE_AUTOMATION_AVAILABLE:
+        print("  → Timeline automation not available, skipping")
+        return
+    
+    try:
+        # Use git status to find recently changed files (more accurate than time-based)
+        import subprocess
+        
+        # Get uncommitted changes
+        status_result = subprocess.run(
+            ["git", "status", "--short"],
+            cwd=str(WORKSPACE),
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        
+        if status_result.returncode != 0:
+            print("  → No git repository, using workspace scan")
+            # Fallback to workspace-based detection
+            from timeline_automation_module import TimelineDetector
+            detector = TimelineDetector()
+            
+            is_worthy, suggested_entry = detector.analyze_file_changes(WORKSPACE)
+            
+            if not is_worthy:
+                print("  → No timeline-worthy changes detected")
+                return
+            
+            # Auto-write (no prompt)
+            entry = detector.create_entry(**suggested_entry)
+            success = detector.write_entry(entry)
+            
+            if success:
+                print(f"  ✅ Timeline updated: {entry['title']}")
+                print(f"     Category: {entry['category']} | Impact: {entry['impact']}")
+                print(f"     Entry ID: {entry['entry_id']}")
+            return
+        
+        # Parse git status output for N5-relevant files
+        changes = status_result.stdout.strip()
+        
+        if not changes:
+            print("  → No changes detected")
+            return
+        
+        # Scan for high-signal N5 file changes
+        new_commands = []
+        modified_scripts = []
+        
+        for line in changes.split('\n'):
+            if not line.strip():
+                continue
+            
+            # Format: "XY filename"
+            parts = line.split(maxsplit=1)
+            if len(parts) < 2:
+                continue
+            
+            status_code = parts[0]
+            filepath = parts[1]
+            
+            # New command files
+            if 'N5/commands/' in filepath and filepath.endswith('.md'):
+                if status_code.startswith('?') or status_code.startswith('A'):
+                    cmd_name = Path(filepath).stem
+                    new_commands.append(cmd_name)
+            
+            # Modified scripts
+            if 'N5/scripts/' in filepath and filepath.startswith('n5_') and filepath.endswith('.py'):
+                if status_code.startswith('M') or status_code.startswith('A'):
+                    modified_scripts.append(Path(filepath).name)
+        
+        # Determine if timeline-worthy
+        has_new_commands = len(new_commands) > 0
+        has_multiple_scripts = len(modified_scripts) >= 2
+        
+        if not (has_new_commands or has_multiple_scripts):
+            print("  → No timeline-worthy changes detected")
+            return
+        
+        # Generate entry automatically
+        from timeline_automation_module import TimelineDetector
+        detector = TimelineDetector()
+        
+        if has_new_commands:
+            title = f"New command(s): {', '.join(new_commands)}"
+            description = f"Created {len(new_commands)} new command(s): {', '.join(new_commands)}"
+            category = "command"
+            components = [f"N5/commands/{cmd}.md" for cmd in new_commands]
+            impact = "medium"
+            tags = ["automation"]
+        else:
+            title = "System script updates"
+            description = f"Updated {len(modified_scripts)} system scripts: {', '.join(modified_scripts[:3])}"
+            category = "infrastructure"
+            components = modified_scripts
+            impact = "low"
+            tags = ["maintenance"]
+        
+        # Create and write entry (no prompt)
+        entry = detector.create_entry(
+            title=title,
+            description=description,
+            category=category,
+            components=components,
+            impact=impact,
+            status='completed',
+            tags=tags
+        )
+        
+        success = detector.write_entry(entry)
+        
+        if success:
+            print(f"  ✅ Timeline updated: {entry['title']}")
+            print(f"     Category: {entry['category']} | Impact: {entry['impact']}")
+            if components:
+                print(f"     Components: {len(components)} file(s)")
+            print(f"     Entry ID: {entry['entry_id']}")
+        
+    except Exception as e:
+        print(f"  ⚠️  Timeline check skipped: {e}")
+        logger.debug(f"Timeline check error details", exc_info=True)
+
+
 def main():
     """Main execution"""
     
@@ -589,6 +732,9 @@ def main():
         
         # NEW: Phase 4 - Git status check
         git_status_check()
+        
+        # NEW: Phase 4.5 - Timeline update check
+        timeline_update_check()
         
         # Final summary
         print("\n" + "="*70)
