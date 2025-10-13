@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 import json, sys, argparse
+import subprocess
+import logging
 from pathlib import Path
 from datetime import datetime, timezone
 import uuid
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
+logger = logging.getLogger(__name__)
 
 try:
     from jsonschema import Draft202012Validator
@@ -174,6 +179,19 @@ def main():
             print(f"Added item '{title}' to list '{slug}'")
             print(f"Item ID: {item_id}")
             print(f"File: {jsonl_file}")
+            
+            # Dual-write: Update markdown view
+            logger.info("Updating markdown view...")
+            docgen_script = Path(__file__).parent / "n5_lists_docgen.py"
+            result = subprocess.run(
+                [sys.executable, str(docgen_script), "--list", slug],
+                capture_output=True,
+                text=True
+            )
+            if result.returncode != 0:
+                logger.warning(f"MD generation failed: {result.stderr}")
+            else:
+                logger.info("✓ MD view updated")
         else:
             print("Dry run: would add item")
             print(json.dumps(item, indent=2))
