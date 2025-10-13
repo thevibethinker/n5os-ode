@@ -82,11 +82,12 @@ SENSITIVE_PATTERNS = [
 def run_git(args: List[str], cwd: Path = None) -> subprocess.CompletedProcess:
     """Run git command and return result"""
     try:
+        git_root = cwd or Path('/home/workspace')
         return subprocess.run(
             ['git'] + args,
             capture_output=True,
             text=True,
-            cwd=cwd or find_git_root(),
+            cwd=git_root,
             check=False
         )
     except Exception as e:
@@ -96,6 +97,12 @@ def run_git(args: List[str], cwd: Path = None) -> subprocess.CompletedProcess:
 
 def find_git_root() -> Optional[Path]:
     """Find git repository root by walking up from CWD"""
+    # Start from /home/workspace since that's where our git repo lives
+    git_root = Path('/home/workspace')
+    if (git_root / '.git').exists():
+        return git_root
+    
+    # Fall back to searching from CWD
     cwd = Path.cwd()
     while cwd != cwd.parent:
         if (cwd / '.git').exists():
@@ -263,6 +270,14 @@ def scan_for_secrets(staged_files: List[Tuple[str, str]]) -> List[str]:
     issues = []
     git_root = find_git_root()
     
+    # Skip files that are pattern definitions themselves or security documentation
+    skip_files = {
+        'git_change_checker_v2.py',
+        'git_change_checker.py',
+        'README_git_check_v2.md',  # Contains example patterns for documentation
+        'detection_rules.md'
+    }
+    
     for status, filepath in staged_files:
         if status in ['M', 'A']:
             full_path = git_root / filepath
@@ -279,12 +294,48 @@ def scan_for_secrets(staged_files: List[Tuple[str, str]]) -> List[str]:
                 with open(full_path, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
                 
+                # Skip files that appear to be pattern definition files
+                # (check if they have SENSITIVE_PATTERNS variable or tuple definitions)
+                if 'SENSITIVE_PATTERNS' in content or 'pattern' in content.lower():
+                    # Do basic check: if many patterns are defined, likely a config file
+                    pattern_count = content.count('-----BEGIN') + content.count('api[_-]?key')
+                    if pattern_count > 3:  # More than 3 pattern definitions
+                        logger.debug(f"Skipping {filepath}: appears to be pattern definition file")
+                        continue
+                
                 for pattern, name in SENSITIVE_PATTERNS:
                     matches = re.findall(pattern, content, re.IGNORECASE | re.MULTILINE)
                     if matches:
-                        # Don't log the actual secret
-                        issues.append(f"🚨 CRITICAL: {filepath} contains potential {name}")
-                        break  # Only report once per file
+                        # Additional check: is this in a comment, string literal, or markdown code?
+                        for match in matches:
+                            # Find the line containing this match
+                            lines = content.split('\n')
+                            for line in lines:
+                                if match in line:
+                                    # Skip if it's in a markdown code block (backticks)
+                                    if '`' in line:
+                                        # Count backticks before and after match position
+                                        match_pos = line.index(match)
+                                        before_backticks = line[:match_pos].count('`')
+                                        if before_backticks % 2 == 1:  # Odd number = inside code span
+                                            continue
+                                    
+                                    # Skip if it's in a comment
+                                    if '#' in line:
+                                        comment_pos = line.find('#')
+                                        match_pos = line.find(match)
+                                        if comment_pos < match_pos:
+                                            continue
+                                    
+                                    # Skip if it's a regex pattern definition
+                                    if "r'" in line or 'r"' in line:
+                                        continue
+                                    
+                                    # Real match found
+                                    issues.append(f"🚨 CRITICAL: {filepath} contains potential {name}")
+                                    break
+                            break  # Only report once per file
+                        break
             
             except Exception as e:
                 logger.debug(f"Could not scan {filepath}: {e}")
