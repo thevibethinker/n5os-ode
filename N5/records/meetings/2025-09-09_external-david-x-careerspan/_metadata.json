@@ -1,0 +1,11 @@
+{
+  "meeting_id": "2025-09-09_external-david-x-careerspan",
+  "source_request": "N5/inbox/meeting_requests/2025-09-09_external-david-x-careerspan_request.json",
+  "gdrive_id": "12qOj2eQaaST_t8cWtPn_FPzxDSlvQrPg",
+  "stakeholder_type": "COMMUNITY",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25"],
+  "crm_created": true,
+  "enrichment_priority": "HIGH",
+  "processed_at": "2025-10-13T11:57:42Z",
+  "processor": "Zo Computer (automated task)"
+}

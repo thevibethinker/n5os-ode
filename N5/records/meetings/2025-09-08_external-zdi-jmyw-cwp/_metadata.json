@@ -1,0 +1,21 @@
+{
+  "meeting_id": "2025-09-08_external-zdi-jmyw-cwp",
+  "processed_at": "2025-10-13T07:20:48-04:00",
+  "processor": "Zo",
+  "stakeholder_type": "COMMUNITY",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md",
+    "B05_OUTSTANDING_QUESTIONS.md",
+    "B07_WARM_INTRO_BIDIRECTIONAL.md",
+    "B14_BLURBS_REQUESTED.md"
+  ],
+  "crm_profile": "/home/workspace/Knowledge/crm/individuals/meera-krishnan.md",
+  "gdrive_file_id": "19-PzNWgUg1VLsM-BcMKImnJPNRhiI14w",
+  "original_request_file": "/home/workspace/N5/inbox/meeting_requests/2025-09-08_external-zdi-jmyw-cwp_request.json"
+}

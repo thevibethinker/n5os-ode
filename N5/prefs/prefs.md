@@ -30,6 +30,18 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - Always search for existing protocols before creating new ones
 - **Whenever a new file is created, always ask where the file should be located**
 
+### Command-First Operations
+**CRITICAL:** Always check for registered commands in `file 'N5/config/commands.jsonl'` before performing operations manually.
+
+**Specific Rules:**
+- **Thread exports:** When user requests "export this thread" or similar, ALWAYS use `command 'N5/commands/thread-export.md'`
+- **Thread export location:** ALL thread exports MUST go to `N5/logs/threads/` (enforced by thread-export command)
+- **NEVER** create ad-hoc export directories in workspace root (`/home/workspace/ExportedThreads/`, `/home/workspace/Exports/`, etc.)
+- **System operations:** Check commands.jsonl before manual implementation (lists, timeline, git, thread operations)
+- **Preference order:** Registered command > Manual script execution > Direct file operations
+
+**Rationale:** Maintains SSOT (P2), prevents directory proliferation, ensures consistent naming and structure
+
 ### Folder Policy Principle (Highest Priority)
 Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted.
 

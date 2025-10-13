@@ -1,0 +1,115 @@
+
+UPDATE AGGREGATED INSIGHTS
+
+You are updating the aggregated market intelligence document with new insights from a recent meeting.
+
+EXISTING DOCUMENT:
+---
+# Market Intelligence: Aggregated Research Insights
+
+**Last Updated:** 2025-10-13 20:36:32 ET  
+**Total Meetings Analyzed:** 0  
+**Total Insights:** 0
+
+---
+
+## Strong Signals (Verified ≥3 Primary Sources)
+
+*No strong signals identified yet.*
+
+---
+
+## Emerging Signals (Verified 2 Primary Sources)
+
+*No emerging signals identified yet.*
+
+---
+
+## Single-Source Insights (1 High-Quality Source)
+
+*No single-source insights yet.*
+
+---
+
+## Contradictions & Tensions
+
+*No contradictions identified yet.*
+
+---
+
+## Opportunity Map
+
+*No opportunities mapped yet.*
+
+---
+
+## Change Log
+
+**2025-10-13:** Initial aggregation file created
+
+---
+
+NEW INSIGHTS TO INTEGRATE (4 total):
+
+1. **Employers increasingly value front-loaded, high-signal candidate signals (async interviews, curated pools) over credentials alone — opportunity to price for signal quality.**
+   - Evidence: "None"
+   - Why it matters: Position Careerspan as a high-signal pipeline and charge a premium for quality applicants.
+   - Signal: ●●●○○ | Credibility: None
+   - Source type: UNKNOWN
+   - Category: Uncategorized
+   - From: Founder / advisor in talent/operations (Meeting: 2025-08-28_external-charles-jolley_170815)
+
+2. **There is a gap between ATS-driven volume approaches and curated, community-driven talent pools; embedding in trusted communities creates defensibility.**
+   - Evidence: "None"
+   - Why it matters: Prioritize formalizing partnerships with communities (contracts, exclusive pipelines).
+   - Signal: ●●●○○ | Credibility: None
+   - Source type: UNKNOWN
+   - Category: Uncategorized
+   - From: Founder / advisor in talent/operations (Meeting: 2025-08-28_external-charles-jolley_170815)
+
+3. **Screening modality matters: async/video-first approaches can compress hiring cycles and improve interview quality; candidate resistance to video interviews is a barrier but coaching can bridge that gap.**
+   - Evidence: "None"
+   - Why it matters: Combine coaching (to improve candidate signal) with async screening to maximize conversion and perceived value.
+   - Signal: ●●●○○ | Credibility: None
+   - Source type: UNKNOWN
+   - Category: Uncategorized
+   - From: Founder / advisor in talent/operations (Meeting: 2025-08-28_external-charles-jolley_170815)
+
+4. **Pricing framing matters: early-stage buyers expect lower-cost options; framing product as a high-signal filter justifies mid-to-high pricing tiers.**
+   - Evidence: "None"
+   - Why it matters: None
+   - Signal: ●●●○○ | Credibility: None
+   - Source type: UNKNOWN
+   - Category: Uncategorized
+   - From: Founder / advisor in talent/operations (Meeting: 2025-08-28_external-charles-jolley_170815)
+
+
+INSTRUCTIONS:
+
+1. **Cross-reference with existing insights:**
+   - Check if any new insights confirm/contradict existing ones
+   - If similar insight exists: UPDATE that section with additional verification
+   - If new insight: ADD to appropriate section
+
+2. **Signal strength promotion:**
+   - Single-source (●●●●○ or ●●●●●) from PRIMARY source → Add to "Single-Source Insights"
+   - If existing insight gains 2nd PRIMARY source → Promote to "Emerging Signals"
+   - If existing insight gains 3rd+ PRIMARY source → Promote to "Strong Signals"
+
+3. **Compaction:**
+   - If 5+ similar insights exist, compact them into one consolidated insight with "[X] sources confirm"
+
+4. **Contradictions:**
+   - Flag when two PRIMARY sources disagree on same topic
+   - Add to "Contradictions & Tensions" section
+
+5. **Opportunity Map:**
+   - When Strong Signal emerges, assess if it represents actionable opportunity
+   - Add to Opportunity Map with recommended action
+
+6. **Update metadata:**
+   - Increment total meetings analyzed
+   - Increment total insights
+   - Add change log entry with date and meeting ID
+
+OUTPUT: The complete updated aggregated_insights.md file.

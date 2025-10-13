@@ -13,17 +13,17 @@
 
 ## Tags
 
-### Verified (Last reviewed: 2025-10-12) — DUAL CLASSIFICATION
+### Verified (Last reviewed: 2025-10-12)
 
-**Primary Stakeholder Type:**
+**Stakeholder Type:**
 - `#stakeholder:community` — Active leader in women in tech communities, high-value network access
 
-**Secondary Stakeholder Type (DUAL TAG):**
-- `#stakeholder:job_seeker` — Currently interviewing, using Careerspan product
+**Employment Status:**
+- `#job_seeking:active` — Currently interviewing for Head of Talent Experience roles, using Careerspan product
 
 **Relationship & Engagement:**
 - `#relationship:active` — Ongoing conversations, trying product, offering partnership intros
-- `#priority:high` — High-value community access + potential product advocate
+- `#priority:critical` — High-value community access + potential product advocate
 - `#context:hr_tech` — Talent attraction leader, recruiting/employer brand expertise
 - `#engagement:responsive` — Detailed, thoughtful responses; proactive value-adds
 
@@ -32,11 +32,36 @@
 **Last sync:** 2025-10-12
 
 ### Tag History
-- **2025-10-12:** Initial profile created with DUAL tags (community + job_seeker)
-  - Added: Dual classification per V's approval ("allow for dual tags")
-  - Primary: Community (strategic partnership value, network access)
-  - Secondary: Job seeker (product user, interviewing for talent roles)
-  - Source: Email scanner + LinkedIn enrichment + V's classification
+- **2025-10-12:** Initial profile created with updated taxonomy
+  - Stakeholder type: Community (single, clear classification)
+  - Employment state: Job seeking active (orthogonal dimension)
+  - V's principle applied: "Job seeking is a state, not a stakeholder type"
+  - Previous approach: Dual stakeholder tags (community + job_seeker)
+  - New approach: Single stakeholder type + job_seeking status (cleaner)
+
+---
+
+## Dual Value Proposition
+
+**As Community Stakeholder:**
+- Access to 6+ women in tech networks (Elpha, Tech Ladies, PowerToFly, RemoteWoman, RemotePOC, Employ Connect)
+- 34,789 LinkedIn followers (significant reach)
+- Partnership intro capability (offered Employ Connect connection)
+- Thought leadership platform (webinars, podcasts)
+
+**As Product User (Job-Seeking):**
+- Currently interviewing for Head of Talent Experience roles
+- Using Careerspan product (created story, received recommendations)
+- Provides expert-level user feedback (talent attraction background)
+- Potential case study/testimonial if placement successful
+
+**Clean separation via tags:**
+- `#stakeholder:community` = WHO she is strategically to Careerspan
+- `#job_seeking_status:active` = WHAT she's doing currently (temporary state)
+
+**Tracking both values:**
+- Community partnerships: High priority, strategic
+- Product usage: Track for outcome (placed via Careerspan?)
 
 ---
 
@@ -115,11 +140,16 @@
 
 ---
 
-### Product Usage (Job Seeker Context)
+### Product Usage (Job Seeking Status)
 
-**Current status:** Job seeking — interviewing for Head of Talent Experience roles
+**Current employment status:** `#job_seeking:active`
 
-**Careerspan trial:**
+**Job search context:**
+- Currently interviewing for Head of Talent Experience roles
+- In final round interviews (as of email threads)
+- Target role: Senior talent leadership positions
+
+**Careerspan product trial:**
 > "I did try Careerspan! ...I created one story, and I received a job recommendation..."
 
 **Engagement level:**
@@ -128,35 +158,41 @@
 - Provided feedback on experience
 - Balancing job interviews with product trial
 
-**Interviews mentioned:**
-- "I had a few interviews to prep for... including a final round"
-- Actively in late-stage hiring processes
-- Target role: Head of Talent Experience (leadership level)
-
 **Value as product user:**
 - Real user feedback from talent attraction expert
 - Potential case study/testimonial if successfully placed via Careerspan
 - Credible voice for product validation (known in TA community)
 
+**Status tracking:**
+- `#job_seeking:active` → Monitor placement outcome
+- When placed → Update to `#job_seeking:inactive` (transition tracked)
+- Product impact: Did Careerspan help her get placed?
+
 ---
 
-## Dual Classification Management
+## Classification Management (Clean Taxonomy)
 
-### Primary: Community Stakeholder
-**Why primary:** Strategic partnership value outweighs individual product usage  
-**Value:** Network access to multiple communities, partnership intros (Employ Connect, etc.)  
-**Priority:** High (community partnerships are strategic)
+**Previous approach (complex):**
+- Dual stakeholder types: `#stakeholder:community` + `#stakeholder:job_seeker`
+- Primary/secondary distinction
+- Dual classification logic in system
 
-### Secondary: Job Seeker
-**Why secondary:** Personal use case, but also validates product  
-**Value:** Real user feedback, potential advocate/testimonial  
-**Tracking:** Monitor product experience, placement outcome
+**New approach (simple):**
+- **Stakeholder type:** `#stakeholder:community` (single, fundamental identity)
+- **Employment state:** `#job_seeking:active` (orthogonal, temporary status)
+- **Principle:** Types vs. states (V's insight)
 
-### System behavior:
-- Weekly review: Display both tags, note dual role
-- Priority: Use community (primary) for scheduling/engagement decisions
-- Profile: Dedicated sections for community partnerships AND product usage
-- Follow-ups: Track community intro progress + job search outcome
+**System behavior:**
+- **Priority:** Based on stakeholder type (community → non-critical by default, but Kim is critical due to strategic value)
+- **Enrichment:** Based on priority (critical → full enrichment)
+- **Product tracking:** Based on job_seeking status (track active → inactive transition)
+- **Partnership focus:** Primary stakeholder type determines engagement strategy
+
+**Benefits:**
+- Cleaner data model (no dual classifications)
+- Clear separation: who they are (type) vs. what they're doing (state)
+- Tracks career transitions naturally (active → inactive)
+- Extensible (can add other states: hiring, transitioning, sabbatical, etc.)
 
 ---
 

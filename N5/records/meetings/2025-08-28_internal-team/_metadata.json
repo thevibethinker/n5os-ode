@@ -1,0 +1,11 @@
+{
+  "meeting_id": "2025-08-28_internal-team",
+  "source_request": "/home/workspace/N5/inbox/meeting_requests/2025-08-28_internal-team_request.json",
+  "processed_by": "Zo",
+  "processed_at": "2025-10-12T23:39:15-04:00",
+  "stakeholder_type": "INTERNAL",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25"],
+  "blocks_count": 7,
+  "crm_status": "SKIPPED (internal_team excluded)",
+  "notes": "No CRM created per N5/config/stakeholder_rules.json excluded_types.internal_team"
+}

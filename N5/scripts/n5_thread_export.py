@@ -24,6 +24,13 @@ except ImportError:
     print("ERROR: jsonschema not installed. Run: pip install jsonschema", file=sys.stderr)
     sys.exit(1)
 
+# Timeline automation integration
+try:
+    from timeline_automation import add_timeline_entry_from_aar
+    TIMELINE_AVAILABLE = True
+except ImportError:
+    TIMELINE_AVAILABLE = False
+
 # Paths
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
@@ -983,6 +990,11 @@ class ThreadExporter:
         # Dry-run check
         if self.dry_run:
             print("\n[DRY-RUN MODE] - No files will be written")
+            print("\nPhase 6: Timeline Check")
+            if TIMELINE_AVAILABLE:
+                print("  [DRY-RUN] Timeline detection would analyze AAR for timeline-worthy changes")
+            else:
+                print("  [DRY-RUN] Timeline module not available")
             print("\nAAR Preview (first 1000 chars):")
             print("-" * 70)
             print(markdown[:1000])
@@ -1003,6 +1015,17 @@ class ThreadExporter:
         else:
             self.save_aar(self.aar_data, markdown)
         self.copy_artifacts()
+        
+        # Phase 6: Timeline Integration (if available)
+        if TIMELINE_AVAILABLE:
+            print("\nPhase 6: Timeline Check")
+            try:
+                timeline_added = add_timeline_entry_from_aar(self.aar_data)
+                if not timeline_added:
+                    print("  → No timeline entry created")
+            except Exception as e:
+                print(f"  ⚠️  Timeline check failed: {e}")
+                print("  → Continuing without timeline update")
         
         print(f"\n✅ AAR Export Complete!")
         print(f"   Archive: {self.archive_dir}")

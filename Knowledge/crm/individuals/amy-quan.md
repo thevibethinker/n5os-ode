@@ -1,16 +1,25 @@
 # Amy Quan
 
-- name: Amy Quan
-- role: Community / Events organizer
-- organization: [Unknown]
-- email: [Unknown - enrich via LinkedIn]
-- source: meeting transcript (2025-08-27)
-- notes: Organizer of curated founder/talent community events; partner relationships with JP Morgan, General Assembly referenced
-- enrichment_priority: MEDIUM
-- next_enrichment_tasks:
-  - Lookup LinkedIn and professional email
-  - Research prior events and sponsors
-  - Identify mutual connections in NYC founder community
+**Name:** Amy Quan
+**Stakeholder type:** community
+**Affiliation:** [Unknown — needs enrichment]
+**Role:** Community events organizer / partnerships
 
-**Created by:** Zo Processor
-**Created at (ET):** 2025-10-12 17:47:53
+## Contact
+- Email: [Unknown - enrich via LinkedIn]
+- LinkedIn: [Unknown - enrich]
+
+## Notes
+- Coordinates founder-facing events; partners with General Assembly and beverage/brand partners for venue/sponsorship.
+- Potential sponsor relationships (JP Morgan) surfaced in meeting.
+
+## Enrichment priority
+- MEDIUM
+
+## Suggested enrichment tasks
+- [ ] LinkedIn scan for current org & professional email
+- [ ] Confirm sponsorship history (JP Morgan, GA) and preferred contact
+- [ ] Identify mutual connections in NYC founder networks
+
+## Source
+- From meeting transcript: meeting_id `2025-08-27_external-amy-quan`

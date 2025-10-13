@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Troubleshoot authentication and authorization issues | Google Drive",
+    "url": "https://developers.google.com/workspace/drive/labels/troubleshoot-authentication-authorization",
+    "text": "* File not found error for credentials.json * File not found error for credentials.json ## `File not found error for credentials.json` file\" error message regarding credentials.json. This error occurs when you have not authorized the desktop application \"Token has been revoked\" error message. This error occurs when an access token from the Google Authorization Server has This error can occur in Mac OSX where the default installation of the `six` To fix the issue, add pip's install location to the `PYTHONPATH` 1. Determine pip's install location: pip install --upgrade httplib2 When running the `pip install` command, you might receive the following error: This error occurs on Mac OSX when pip attempts to upgrade the pre-installed * File not found error for credentials.json"
+  },
+  {
+    "title": "How to Fix pydrive.auth.RefreshError - YouTube",
+    "url": "https://www.youtube.com/watch?v=2Fz9OWVX7Ds",
+    "text": "Learn how to resolve the `RefreshError` encountered with PyDrive. This guide breaks down the solution step by step to help you regain access to Google Drive"
+  },
+  {
+    "title": "Troubleshoot authentication & authorization issues | Google Drive",
+    "url": "https://developers.google.com/workspace/drive/api/troubleshoot-authentication-authorization",
+    "text": "This error occurs when an access token from the Google Authorization Server has either expired or has been revoked. For information about potential causes and"
+  },
+  {
+    "title": "How to fix an apparently expired refresh token? - Stack Overflow",
+    "url": "https://stackoverflow.com/questions/79580274/how-to-fix-an-apparently-expired-refresh-token",
+    "text": "I have a python app that uses gspread, and I haven't run it in about a year, and I believe it is failing because of an authentication problem."
+  },
+  {
+    "title": "Check Google Drive API Quotas Limits and Debug Issues - MoldStud",
+    "url": "https://moldstud.com/articles/p-how-to-check-api-quotas-limits-and-debug-google-drive-issues",
+    "text": "Fixing Authentication and Authorization Errors. Confirm the validity of the OAuth 2.0 tokens being utilized. Tokens must not be expired; renew them as required."
+  },
+  {
+    "title": "Implementing a Non-Deprecated Google Drive Authorization API in ...",
+    "url": "https://medium.com/@python-javascript-php-html-css/implementing-a-non-deprecated-google-drive-authorization-api-in-android-88c410c550f8",
+    "text": "By including this in the authorization request, your app can obtain a refresh token, enabling background tasks such as automatic backups to Google Drive. This"
+  },
+  {
+    "title": "How to integrate with the Dropbox API via Python - Merge.dev",
+    "url": "https://www.merge.dev/blog/dropbox-api-python",
+    "text": "Dropbox uses OAuth 2.0 for authentication, but unlike many modern APIs, it doesn't provide refresh token rotation or simplified authentication flows. You"
+  },
+  {
+    "title": "Debugging Google Drive API Common Issues and Fixes - MoldStud",
+    "url": "https://moldstud.com/articles/p-debugging-google-drive-api-common-issues-and-fixes",
+    "text": "Explore common issues and solutions for debugging the Google Drive API, ensuring smooth integration and efficient troubleshooting."
+  },
+  {
+    "title": "Request had insufficient authentication scopes - Google Help",
+    "url": "https://support.google.com/business/thread/314636977/google-business-profile-api-error-request-had-insufficient-authentication-scopes?hl=en",
+    "text": "Google Business Profile # Google Business Profile API error: Request had insufficient authentication scopes We use the Google Business Profile API and in the past week we are having issues with the OAuth authentication. We haven't changed anything related to the OAuth setup, but for some reason now when refreshing the token, this error occurs mentioning insufficient scopes. We have also reached out to Google Business Profile support as we cannot see anything wrong with the OAuth side. Version 2.8.0 has shipped with code that breaks refresh tokens and it causes issues with the Google Provider OAuth class we use. Owner of https://gbp.academy - DIY Google Business Profile optimization Version 2.8.0 has shipped with code that breaks refresh tokens and it causes issues with the Google Provider OAuth class we use."
+  },
+  {
+    "title": "Refresh token for Google? : r/n8n - Reddit",
+    "url": "https://www.reddit.com/r/n8n/comments/1l2iq0v/refresh_token_for_google/",
+    "text": "Ensure “Access Type” is set to offline in your OAuth2 credentials. 2. Ensure “Prompt” is set to consent to force the refresh token to be returned. 3. After"
+  },
+  {
+    "title": "How to get a permanent Access Token? - SmartThings Community",
+    "url": "https://community.smartthings.com/t/how-to-get-a-permanent-access-token/300473",
+    "text": "Go to Google Cloud Console. Create a new project (e.g., “SmartThings Token Refresh”). Enable APIs. Google Drive API; Cloud Functions API; Cloud Scheduler API."
+  },
+  {
+    "title": "Google drive - Rclone",
+    "url": "https://rclone.org/drive/",
+    "text": "The initial setup for drive involves getting a token from Google drive which you need to do in your browser. rclone config walks you through it."
+  },
+  {
+    "title": "Authorize access to Google user data | Identity - Android Developers",
+    "url": "https://developer.android.com/identity/authorization",
+    "text": "# Authorize access to Google user data bookmark\\_borderbookmark Stay organized with collections Save and categorize content based on your preferences. access the user's Google Drive. If your app has features that can make use of Google API data, but are not You should request access to scopes that you need to access Google APIs only when the user performs an action that requires access to a particular API. example, you should request permission to access the user's Drive whenever the For authorizing actions that need access to user data stored by Google, we For example, if a user performs an action that requires access to their Drive // Access needs to be granted by the user"
+  },
+  {
+    "title": "Best practices for mitigating compromised OAuth tokens for Google ...",
+    "url": "https://cloud.google.com/architecture/bps-for-mitigating-gcloud-oauth-tokens",
+    "text": "An attacker can compromise these OAuth tokens if they gain access to an endpoint where a legitimate user account or service account has already authenticated with the gcloud CLI. The gcloud CLI uses OAuth 2.0 access tokens to authenticate requests for Google Cloud APIs. The OAuth flow varies by the credential types used, but generally the access token and other credentials are accessible locally. In particular, removing gcloud CLI credentials is the most effective method for a security team to address compromised OAuth tokens for user identities. The following sample code uses the Workspace Admin SDK to identify all user identities in your Google Workspace or Cloud Identity account who have access to the gcloud CLI."
+  },
+  {
+    "title": "Authenticate REST Requests | Firebase Realtime Database - Google",
+    "url": "https://firebase.google.com/docs/database/rest/auth",
+    "text": "data with a Google OAuth2 access token generated from a service account. 2. Authenticate with that access token. to generate a Google OAuth2 access token with the following required scopes: access tokens to authenticate to the Realtime Database REST API // on how to use the access token to send authenticated requests to // Use the Google credential to generate an access token // on how to use the access token to send authenticated requests to the ### Authenticate with an access token Google OAuth2 access token generated above as the Realtime Database and `<ACCESS_TOKEN>` with a Google OAuth2 access token. that ID token to authenticate the Realtime Database REST API and make requests on"
+  },
+  {
+    "title": "How to Resolve Expiry of Tokens in n8n Google Service Nodes ...",
+    "url": "https://www.reddit.com/r/n8n/comments/1l703us/how_to_resolve_expiry_of_tokens_in_n8n_google/",
+    "text": "This is often due to Google revoking the access token for security reasons. To resolve this, re-authenticate your Gmail credentials in n8n by reconnecting or re"
+  },
+  {
+    "title": "Unable to sign without access token - OAuth Google - n8n Community",
+    "url": "https://community.n8n.io/t/unable-to-sign-without-access-token-oauth-google/70813",
+    "text": "# Unable to sign without access token - OAuth Google gmail,google I’m working on automations and AI agents using Google Suite apps with n8n. And I am using Gmail with the same Google account, no error but, the difference is I just created the new credential for GA so I am wondering if it is linked with the last update of n8n? It also happens to me, with other local installations with older versions it works perfectly, but with 1.74.1, all connections to Google services appear with the message: “unable to sign without access token”. I’ve managed to get my Oauth 2 workflows working again, by removing proxying for my n8n domain on Cloudflare. * AI * Telegram AI Chatbot"
+  },
+  {
+    "title": "Get access without a user - Microsoft Graph",
+    "url": "https://learn.microsoft.com/en-us/graph/auth-v2-service",
+    "text": "In the OAuth 2.0 client credentials grant flow, use the application ID and client secret values that you saved when you registered your app to request an access token directly from the Microsoft identity platform `/token` endpoint. Specify the preconfigured permissions by passing `https://graph.microsoft.com/.default` as the value for the `scope` parameter in the token request. curl --location --request POST 'https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token' \\ --header 'Content-Type: application/x-www-form-urlencoded' \\ --data-urlencode 'client_id=535fb089-9ff3-47b6-9bfb-4f1264799865' \\ --data-urlencode 'scope=https://graph.microsoft.com/.default' \\ --data-urlencode 'client_secret=qWgdYA....L1qKv5bPX' \\ --data-urlencode 'grant_type=client_credentials'  This value informs the Microsoft identity platform endpoint to include in the access token all the app-level permissions the admin consented to. After you get an access token, the app uses it to call Microsoft Graph by attaching the access token as a **Bearer** token to the **Authorization** header in an HTTP request."
+  },
+  {
+    "title": "Gemini API quickstart - Google AI for Developers",
+    "url": "https://ai.google.dev/gemini-api/docs/quickstart",
+    "text": "[Skip to main content](https://ai.google.dev/gemini-api/docs/quickstart#main-content) *   [English](https://ai.google.dev/gemini-api/docs/quickstart) *   [Deutsch](https://ai.google.dev/gemini-api/docs/quickstart?hl=de) *   [Italiano](https://ai.google.dev/gemini-api/docs/quickstart?hl=it) *   [עברית](https://ai.google.dev/gemini-api/docs/quickstart?hl=he) *   [Overview](https://ai.google.dev/gemini-api/docs) *   [Quickstart](https://ai.google.dev/gemini-api/docs/quickstart) *   [Gemini](https://ai.google.dev/gemini-api/docs/models) *   [Text generation](https://ai.google.dev/gemini-api/docs/text-generation) *   [Thinking](https://ai.google.dev/gemini-api/docs/thinking) *   [Get Started](https://ai.google.dev/gemini-api/docs/live) *   [Capabilities](https://ai.google.dev/gemini-api/docs/live-guide) *   [Tool use](https://ai.google.dev/gemini-api/docs/live-tools) *   [Context caching](https://ai.google.dev/gemini-api/docs/caching) [](https://ai.google.dev/gemini-api/docs/quickstart)Safety  *   [Before you begin](https://ai.google.dev/gemini-api/docs/quickstart#before_you_begin) *   [\"Thinking\" is on by default on many of our code samples](https://ai.google.dev/gemini-api/docs/quickstart#thinking_is_on_by_default_on_many_of_our_code_samples) *   [What's next](https://ai.google.dev/gemini-api/docs/quickstart#what's-next) *   [Before you begin](https://ai.google.dev/gemini-api/docs/quickstart#before_you_begin) *   [\"Thinking\" is on by default on many of our code samples](https://ai.google.dev/gemini-api/docs/quickstart#thinking_is_on_by_default_on_many_of_our_code_samples) *   [What's next](https://ai.google.dev/gemini-api/docs/quickstart#what's-next) Here is an example that uses the [`generateContent`](https://ai.google.dev/api/generate-content#method:-models.generatecontent) method to send a request to the Gemini API using the Gemini 2.5 Flash model. For more details, see the [thinking guide](https://ai.google.dev/gemini-api/docs/thinking#set-budget). *   [Thinking](https://ai.google.dev/gemini-api/docs/thinking) *   [Text generation](https://ai.google.dev/gemini-api/docs/text-generation) *   [English](https://ai.google.dev/gemini-api/docs/quickstart) *   [Deutsch](https://ai.google.dev/gemini-api/docs/quickstart?hl=de) *   [Italiano](https://ai.google.dev/gemini-api/docs/quickstart?hl=it) *   [עברית](https://ai.google.dev/gemini-api/docs/quickstart?hl=he)"
+  }
+]

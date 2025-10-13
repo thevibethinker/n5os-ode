@@ -1,0 +1,13 @@
+{
+  "meeting_id": "2025-09-08_external-daniel-williams",
+  "processed_at": "2025-10-13T06:58:11-04:00",
+  "processor": "Zo (Registry System v1.5)",
+  "blocks_generated": [
+    "B26","B01","B02","B08","B21","B31","B25","B07","B05"
+  ],
+  "stakeholder_type": "NETWORKING",
+  "crm_created": "/home/workspace/Knowledge/crm/individuals/daniel-williams.md",
+  "enrichment_priority": "LOW",
+  "gdrive_id": "1ALfGyq6xcrqxnl1s0ysKrgibnfmFWHsd",
+  "notes": "Processed per Registry System v1.5; conditional blocks B07 and B05 generated based on transcript triggers."
+}

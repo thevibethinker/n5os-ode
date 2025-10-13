@@ -372,23 +372,24 @@ Step 6 — Apply Master Voice Engine (ENHANCED)
   - Max 4 sentences per paragraph
   - Auto-correct violations
 
-Step 6B — Compression Pass (MODERATE)
-▸ **Purpose**: Reduce verbosity while preserving professional structure and formal tone
-▸ **Target**: 20-30% word count reduction (not 40-50%)
+Step 6B — Match V's Natural Conciseness
+▸ **Purpose**: Generate emails matching V's natural 200-300 word style
+▸ **Target**: 200-300 words for standard follow-ups, 300-400 for complex partnerships
+▸ **Key Insight**: V's style is already compressed—don't add verbosity that needs cutting
 ▸ **Reference**: `file 'N5/docs/EMAIL_GENERATOR_STYLE_CONSTRAINTS.md'`
 
 ▸ **Core Principle**: Professional, structured, and concise
   - This is business correspondence, not casual messaging
-  - Maintain formal tone throughout
-  - Keep section headers and structured formatting
-  - Keep bullet points where they aid clarity
+  - Maintain professional tone throughout
+  - Keep bullets with short prose (V's natural format)
+  - Use em-dashes extensively (V's signature style)
 
 ▸ **What to KEEP**:
-  1. **Section Headers**: "What it is / How it works / Why it matters" structure is good
-  2. **Bullet Points**: 4-5 bullets per section is fine if information-dense
-  3. **Professional Structure**: Clear sections with headers for scanability
-  4. **Formal Tone**: Complete sentences, professional language
-  5. **Specificity**: Numbers, concrete details, technical terms
+  1. **Bullets with Short Prose**: V's preferred format over paragraph exposition
+  2. **Em-Dash Format**: "Description — supporting detail" in bullets
+  3. **Professional Tone**: Complete sentences, professional language
+  4. **Specificity**: Numbers, concrete details, technical terms
+  5. **@ Mentions**: For delegation ("@Logan if anything urgent")
 
 ▸ **What to CUT**:
   1. **Hedge Phrases**: "essentially", "basically", "in order to", "in a way"
@@ -396,61 +397,50 @@ Step 6B — Compression Pass (MODERATE)
   3. **Obvious Statements**: Trust recipient intelligence
   4. **Filler Words**: "would then", "directly", "actual", "really"
   5. **Over-Qualification**: Cut unnecessary modifiers and adjectives
+  6. **Formal "What it is:" headers** within use cases (just use title)
 
-▸ **Compression Rules** (Moderate, Not Aggressive):
-  1. **Opening Paragraph**: 40-60 words (not 80+)
-     - Keep warmth and context
+▸ **Compression Rules**:
+  1. **Opening Paragraph**: 20-40 words (NOT 40-60)
+     - Keep warmth and callback
      - Remove redundant politeness
-     - One clear transition to business content
+     - Direct transition to business
   
-  2. **Use Case Descriptions**: 100-120 words each (not 150+)
-     - KEEP "What/How/Why" structure with headers
-     - Tighten each section by removing redundancy
-     - Keep bullets for multi-step processes
-     - Remove repeated benefit statements
+  2. **Use Case Descriptions**: 70-90 words each (NOT 100-120)
+     - Title only (no "What it is:")
+     - 1-2 sentence description
+     - "How it works:" + 3-4 bullets
+     - "Why this matters:" 2-3 sentences (paragraph, NOT bullets)
+     - "Ready:" and "Needs work:" combined or adjacent
   
-  3. **Integration Options**: 60-80 words (not 100+)
-     - Clear options with technical details
+  3. **Integration Options**: 30-50 words (NOT 60-80)
+     - Short paragraph or 2-3 bullets
      - Remove obvious explanations
   
-  4. **Next Steps**: 60-80 words (not 100+)
-     - Keep 3 action items with detail
+  4. **Next Steps**: 40-60 words (NOT 60-80)
+     - 2-3 action bullets
      - Remove hedging language
   
-  5. **Closing**: 20-30 words (not 40+)
-     - Warm but concise
-     - Clear closing sentiment
+  5. **Closing**: 10-20 words (NOT 20-30)
+     - Concise and warm
 
-▸ **Total Email Target**: 400-550 words (down from 600+)
+▸ **Total Email Target**:
+  - Standard follow-up: 200-300 words
+  - Complex partnership (2+ use cases): 300-400 words
+  - Maximum: 450 words (rare)
 
-▸ **Sentence-Level Compression**:
-  - Average: 16-20 words per sentence
-  - Max: 30 words (hard limit)
-  - Remove hedge phrases mid-sentence
-  - Use em-dashes for clarity, not extra clauses
-
-▸ **Example Transformations**:
-  - **Before**: "FutureFit would pass basic candidate data (resume, target role) via our API"
-  - **After**: "FutureFit passes basic candidate data (resume, target role) via API"
-  - **Saved**: 2 words ("would" and "our")
-  
-  - **Before**: "This directly addresses the gap between basic profiling and actionable candidate insights"
-  - **After**: "Addresses the gap between basic profiling and actionable candidate insights"
-  - **Saved**: 2 words ("This directly")
-
-▸ **Preserve**:
-  - V's distinctive phrases (from phrasePool)
-  - Resonant details (from Resonance Pool)
-  - Specific numbers and concrete details
-  - Technical terminology
-  - Professional structure and formatting
-  - Formal business tone
-
-▸ **Validation**:
-  - Flag if total word count > 600 words (too verbose)
-  - Flag if total word count < 350 words (too compressed)
-  - Flag if formal structure is lost
-  - Ensure professional tone maintained
+▸ **V's Structure Preferences** (from actual emails):
+  1. **Greeting:** "Hi [name]," for new/formal, "Hey [name]," or "Hey [name]—" for warm/established
+  2. **Opening:** 20-40 words (gratitude + callback)
+  3. **Bullets with short prose** (NOT paragraph exposition)
+  4. **Em-dash format:** "Item — supporting detail"
+  5. **Use case structure:**
+     - Title (bold, no "What it is:" header)
+     - 1-2 sentence description
+     - "How it works:" + 3-4 bullets
+     - "Why this matters:" 2-3 sentences (paragraph, NOT bullets)
+     - "Ready:" / "Needs work:" combined or adjacent
+  6. **@ mentions:** For delegation ("@Logan if anything urgent")
+  7. **Closing:** "Best," (default)
 
 Step 6A — Delay Check  
 ▸ Calculate `daysElapsed`; set optional apology.
@@ -463,6 +453,12 @@ Step 7 — Subject Line Generation
 Step 7B — Draft Email  
 ▸ Structure: Greeting → (optional delay apology) → Resonance Intro → Recap bullets → Next-Steps bullets → Sign-off.  
 ▸ Inline links; no tables/emojis; flag unresolved.
+
+▸ **Greeting Selection** (per V's updated preference):
+  - "Hi {{name}}," for new contacts, formal contexts, or when professional distance desired
+  - "Hey {{name}}," for established warmth, comfortable relationships
+  - "Hey {{name}}—" for warm contexts with em-dash rhythm
+  - **Note:** V is intentionally using "Hi" more to maintain formality until warmth is established
 
 Step 8 — Self-Review & Risk Sweep  
 ▸ Validate formatting, tone, guardrails; ensure subjectLine length ≤ 90 chars.

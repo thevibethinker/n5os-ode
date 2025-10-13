@@ -17,43 +17,30 @@
         "investor": {
           "description": "Investors, VCs, funding sources",
           "howie_bracket": "[LD-INV]",
-          "priority_default": "critical",
-          "n5_only": false
-        },
-        "job_seeker": {
-          "description": "Candidates, recruiting",
-          "howie_bracket": "[LD-HIR]",
-          "priority_default": "non-critical",
-          "n5_only": false
+          "priority_default": "critical"
         },
         "community": {
           "description": "Community partners, nonprofits",
           "howie_bracket": "[LD-COM]",
-          "priority_default": "non-critical",
-          "n5_only": false
+          "priority_default": "normal"
         },
         "partner:collaboration": {
-          "description": "Integration/collaboration partners (APIs, co-marketing)",
+          "description": "Integration/collaboration partners",
           "howie_bracket": "[LD-NET]",
-          "priority_default": "context-dependent",
-          "n5_only": false,
-          "note": "Priority varies based on partnership strategic value"
+          "priority_default": "normal"
         },
         "partner:channel": {
-          "description": "Distribution/resale partners (referrals, resellers)",
+          "description": "Distribution/resale partners",
           "howie_bracket": "[LD-NET]",
-          "priority_default": "context-dependent",
-          "n5_only": false,
-          "note": "Priority varies based on channel reach and revenue potential"
+          "priority_default": "normal"
         },
         "prospect": {
           "description": "General leads, exploratory contacts",
           "howie_bracket": "[LD-GEN]",
-          "priority_default": "non-critical",
-          "n5_only": false
+          "priority_default": "normal"
         },
         "customer": {
-          "description": "Paying customers (enterprise buyers)",
+          "description": "Paying customers",
           "howie_bracket": null,
           "priority_default": "critical",
           "n5_only": true
@@ -61,16 +48,34 @@
         "vendor": {
           "description": "Service providers, suppliers",
           "howie_bracket": null,
-          "priority_default": "non-critical",
+          "priority_default": "normal",
           "n5_only": true
         },
         "advisor": {
-          "description": "Strategic advisors, mentors, coaches",
+          "description": "Strategic advisors, mentors",
           "howie_bracket": null,
           "priority_default": "critical",
           "n5_only": true
+        },
+        "networking_contact": {
+          "description": "Relationship beyond business context",
+          "howie_bracket": null,
+          "priority_default": "non-critical",
+          "n5_only": true
         }
       }
+    },
+
+    "job_seeking_status": {
+      "prefix": "#job_seeking_status:",
+      "description": "Current employment seeking state (orthogonal to stakeholder type)",
+      "n5_only": true,
+      "tags": {
+        "active": "Currently seeking employment (interviewing, applying, open to opportunities)",
+        "inactive": "Not seeking employment (happily employed, not in market)",
+        "placed": "Recently placed via Careerspan or other (track success, testimonial opportunity)"
+      },
+      "notes": "V's insight: Job seeking is a temporary state, not a fundamental stakeholder type. Anyone can be job seeking regardless of core stakeholder classification."
     },
     
     "relationship": {

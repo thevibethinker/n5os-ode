@@ -127,6 +127,27 @@ These principles ensure outputs are accurate, complete, and verifiable.
 - Not enough to `write(file, data)`
 - Must: `write() → verify_exists() → verify_size() → verify_structure()`
 
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Claimed Gmail API had a '3-message limit' when testing queries. Reality: Gmail API supports up to 500 results per query, pagination via pageToken for thousands more, date filters, and progressive searches. The '3-message limitation' was my own artificial test constraint, not a real API limit.
+- Context: While implementing email retrieval functionality, set maxResults=3 for testing purposes, then incorrectly documented this as an API constraint rather than a testing parameter.
+- Resolution: User corrected the mistake immediately. Added critical example to Principle 16 (Accuracy Over Sophistication) about never inventing technical limitations. Rule: Either cite documentation or explicitly state 'I don't know the actual limits'.
+
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Created lessons extraction system with placeholder LLM extraction function that returned empty list. Documented it in code comments but didn't create a central manifest tracking ALL assumptions, placeholders, and incomplete implementations across the entire system.
+- Context: Implemented complex system (lessons extraction + review) with multiple placeholder functions. Easy to forget what's incomplete when code is spread across multiple files. User specifically requested tracking of 'all the fucking' assumptions and placeholders.
+- Resolution: Created new Principle 21: Document All Assumptions, Placeholders, and Stubs. Created ASSUMPTIONS.md manifest listing every placeholder, stub, assumption, and known limitation. Format includes status, priority, estimated effort, and what's actually needed.
+
+
+**Example from lesson extraction (2025-10-12):**
+- Thread: con_JB5UD88QWtAkoaXF
+- Issue: Repeatedly made mistake of saying 'call LLM API' or 'implement LLM integration' when designing lessons extraction. Correct approach: I AM the LLM running in this environment. I should do the analysis directly during conversation, not call external services.
+- Context: User has been 'burned by this multiple times' - I keep treating myself as external to the system rather than recognizing I'm the processing engine. This violates operational principles and adds unnecessary complexity.
+- Resolution: Clarified: When scripts need LLM analysis, I do it during the conversation, not via API. Implemented Option A: During conversation-end, I extract lessons FIRST (before script runs), then proceed with normal workflow. No API keys, no external calls - just me doing the work directly.
+
 ---
 
 ## 21) Document All Assumptions, Placeholders, and Stubs

@@ -1,0 +1,21 @@
+{
+  "meeting_id": "2025-09-16_external-hold-for-virtual-offsite",
+  "processed_at": "2025-10-13T15:09:56-04:00",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md",
+    "B05_OUTSTANDING_QUESTIONS.md",
+    "B07_WARM_INTRO_BIDIRECTIONAL.md"
+  ],
+  "stakeholder_type": "COMMUNITY",
+  "crm_profiles_created": ["ilse-funkhouser.md"],
+  "crm_status": "Created 1 new profile; others existed (logan-currie.md, rochel-polter.md)",
+  "gdrive_file_id": "1PADhB4LxMDyTSoVTPhe4pFHQNAGAj5vf",
+  "original_filename": "Hold for virtual offsite (topics pending)-transcript-2025-09-16T14-58-55.616Z.docx",
+  "gdrive_new_name": "[ZO-PROCESSED]Hold for virtual offsite (topics pending)-transcript-2025-09-16T14-58-55.616Z.docx"
+}

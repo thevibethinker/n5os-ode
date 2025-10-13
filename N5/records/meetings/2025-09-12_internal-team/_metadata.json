@@ -1,0 +1,18 @@
+{
+  "meeting_id": "2025-09-12_internal-team",
+  "processed_at": "2025-10-13T13:08:53 EDT",
+  "stakeholder_type": "internal_team",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md"
+  ],
+  "blocks_count": 7,
+  "crm_status": "SKIPPED (internal_team)",
+  "processing_system": "Registry System v1.5",
+  "notes": "Internal meeting — CRM creation skipped per stakeholder rules."
+}

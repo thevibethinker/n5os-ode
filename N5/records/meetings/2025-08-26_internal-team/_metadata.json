@@ -1,0 +1,19 @@
+{
+  "meeting_id": "2025-08-26_internal-team",
+  "processed_at": "2025-10-12T21:48:20-04:00",
+  "processor": "Zo",
+  "registry_version": "1.5",
+  "stakeholder_type": "INTERNAL_TEAM",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md",
+    "B05_OUTSTANDING_QUESTIONS.md"
+  ],
+  "crm_integration": "SKIPPED - internal_team excluded per N5/config/stakeholder_rules.json",
+  "notes": "Processed one transcript. CRM profiles not created for internal team per business rules."
+}

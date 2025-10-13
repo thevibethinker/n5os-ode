@@ -1,0 +1,606 @@
+00:00
+Vrijen Attawar
+Sa.
+
+02:39
+Asher King-Abramson
+What's going on?
+
+02:58
+Vrijen Attawar
+Sam? So sorry my guy. I hope I didn't leave you hanging there for too
+long. Hope I didn't leave you hanging there for too long. Can you hear
+me?
+
+03:33
+Asher King-Abramson
+I can. There was a double echo, but I can hear you now. How you doing?
+
+03:37
+Vrijen Attawar
+Amazing. Okay. Yeah, sorry about that. I got sucked into one of the
+million different things going on, but no, I. I'm glad I didn't keep
+you. Hopefully didn't keep you waiting for too long.
+
+03:48
+Asher King-Abramson
+No worries, man. No worries at all.
+
+03:50
+Vrijen Attawar
+How's. How's the day going?
+
+03:52
+Asher King-Abramson
+Good. Doing all just. Just starting. Got got my email inbox full and
+ready to parse through. I saw you made an introduction so I will be
+responding to that soon.
+
+04:01
+Vrijen Attawar
+Nice. Yeah there were. Yeah Leanne's. Leanne's got a decent audience, I
+think. 12k she said so decent following. She's yeah. Hopefully all of
+them work out. Laura especially. I think you'll sort of appreciate
+interacting with Close Cohen sort of her like passion project almost
+like she just really cares about coaching and but is also like a very,
+let's just say colorful person in her description of the industry and of
+recruiters and a lot of folks. So yeah, you'll. You'll have a good
+conversation with her. Yeah, she's definitely like pretty keen on
+bringing some tech into. Into Close Cohen. But yeah, how are things
+going otherwise? Is your go to market landing effectively?
+
+04:51
+Asher King-Abramson
+Somewhat, yeah. Like I'm still getting good like some word of mouth
+which is always nice because that kind of scales with time. But I'd say
+I'm still, it's still pretty linear. Like I think there's things I need
+to do on the feature front to make it better because I'm looking at
+these like weekly retention numbers I have and it's like 35% weekly
+retention which isn't that bad for consumer products. But I'm still
+like, I think there's more to be built so I've been hacking on. There's
+a, I might have told you this, a Chrome extension that lets you see if
+you're on a job posting who you know at that company based on LinkedIn
+but also who the hiring team is and lets you easily search. Like with a
+couple clicks you can see who the hiring team likely is.
+
+05:30
+Asher King-Abramson
+So I think like the direction Warmer jobs is probably headed as tools
+that help you with the networking side of your job search and that's
+going to. And that could take many forms. But I think that's the
+direction I've been talking with David Spiegel, who all last week a lot
+around what exactly to build and what to build first. And so my plan is
+to prototype a bunch of this with warmer jobs users, but also use it as
+like a bunch of little launch experiments. You know, a good excuse for
+marketing and growth and stuff too.
+
+05:59
+Vrijen Attawar
+Yeah. I mean, right off the bat, that tech that you developed to figure
+out who the hiring manager is, we would love to get our hands on that
+because the angle that we're going for to sort of break into the
+consciousness of HR and founders is essentially saying, hey, I have X
+number of great candidates ready for you. Here's what, like, folks that
+have taken on career span candidates have been saying, you know, I'll
+pay you 100 bucks to take a look. Like, I was thinking of something even
+crazy.
+
+06:35
+Vrijen Attawar
+I'll pay you 100 bucks to take a look at the candidates and you know,
+where sort of even if you actually accept any of them into your
+pipeline, because I'm thinking the right now people are so overwhelmed
+with their ATS pipelines that I'm betting they're willing to take, like,
+shortcuts to filling out their pipeline without having to go through,
+like, they're the sort of second stage of their funnel instead of having
+to go through all of these fucking resumes.
+
+07:03
+Asher King-Abramson
+Yeah. Well, so actually I have a bunch of recruiters using warmer jobs
+to find open jobs in their network because then they can get the intro
+to the hiring manager, which is usually an easier pitch than an outs,
+like, outsourced recruiting firm. Like, I don't know how many emails
+you've gotten from, you know, headhunters or recruiting firms saying,
+like, I have candidates for you. Right.
+
+07:21
+Vrijen Attawar
+Yeah.
+
+07:22
+Asher King-Abramson
+If it come. If you're able to reach out to, you know, someone you worked
+with at McKinsey and they introduce you to the VP of Engineering. Much,
+much easier.
+
+07:29
+Vrijen Attawar
+Okay. I mean, that's an even better way of using warmer jobs. Yeah.
+Much, much less carnival barkery. Okay, fair enough. Yeah.
+
+07:37
+Asher King-Abramson
+I mean, but they're good, I think. But that's like, I actually have
+recruiters using it for BD specifically that way right now. So if it's
+interesting. Yeah. Feel free to play around with it. So.
+
+07:46
+Vrijen Attawar
+Yeah, yeah, absolutely. I'm, I'm definitely going to do that because I
+think that is, that's absolutely great. I mean, my network certainly
+expanded enough at this point that would be a very efficient use of it.
+Yeah, I think that's sort of what we're going for, is effectively Trying
+to give people that first look. The other piece of messaging were toying
+around was the idea of like, you know, use career span candidates, like
+set the bar almost. There's this like kind of mathematical truism or
+whatever that like 37% is the optimal number of options. You should look
+at some shit like the secretary problem. Yeah, yeah. So we're just
+playing around but the basic idea being like hey, you get to take this
+group of like well curated folks and then that's where the communities
+parts are going to come in.
+
+08:35
+Vrijen Attawar
+Is, is trying to get good communities on board. I think we're also. What
+are your thoughts of us like focusing on product roles specifically?
+Like what's your read on the product hiring market right now?
+
+08:50
+Asher King-Abramson
+I think it's wise from my standpoint of product people tend to pay for
+job search tools more like they're a good bulk of paid warmer job
+subscribers. And I think you compare that to project managers, customer
+success, whatever else there is out there. Product managers I have found
+tend to pay for products and you don't always find that with job
+searchers. And if you're charging the job searcher, that is one reason
+to focus on them I think. Aside from all the benefits of niching down
+and being in a vertical and all of that too.
+
+09:20
+Vrijen Attawar
+Right. Well, I mean that's honestly great because that sort of like
+elasticity in like usage is actually great for us because we would want
+to not only focus the jobs we distribute but also the folks we go out to
+and essentially build up a strong sort of defensible cohort in product.
+So that was one angle. The other one was like this trying to ride the go
+to market engineer hype. I don't know if you've seen that job being
+posted about or if you had any sort of thoughts on it.
+
+09:54
+Asher King-Abramson
+I don't. I mean I've worked with some GTM engineers because I, I've. And
+I technically was one at one point I guess.
+
+10:00
+Vrijen Attawar
+Right, right.
+
+10:01
+Asher King-Abramson
+Structure around growth makes sense to me that it's a role that's out
+there. If I ever became an engineer again, it's probably when I would
+look into just because I'm more familiar with it. But.
+
+10:11
+Vrijen Attawar
+Right, that's.
+
+10:12
+Asher King-Abramson
+Yeah, no, I think I could see that growing. I don't have a ton of
+thoughts on it aside from like. Yeah, I also see the job post up.
+
+10:19
+Vrijen Attawar
+Are you in any sort of growth communities or would be able to surface
+any growth communities that we can try other avenues into? Yeah.
+
+10:29
+Asher King-Abramson
+Let me See two that immediately jump to mind. One, Lenny's. If you're
+not in Lenny's right to. Who is Clay. You know the tool.
+
+10:39
+Vrijen Attawar
+Right.
+
+10:40
+Asher King-Abramson
+They have their Slack community and they have a bunch of GTME
+engineering folks in there.
+
+10:44
+Vrijen Attawar
+Oh, shit. So that's convenient because I know a GTM engineer at Clay
+that I've been trying to get time on our calendar. So this is a good
+sort of motivator to do that. Okay, sweet. Let me incorporate that into
+our thinking because I do think that's maybe an area where there's more
+like there's better prospects for signal to noise because not many folks
+are offering GTM engineers right now. If we can sort of be swift. We
+might be able to win the day. Yeah, I think that makes a ton of sense.
+Any thoughts on sort of putting us forward to any of the communities you
+mentioned last time or any of them, product focus that we could sort of
+engage with?
+
+11:36
+Asher King-Abramson
+Can you jog my brain? Which communities were we talking about?
+
+11:38
+Vrijen Attawar
+You mentioned Bogdan Leopard and a Bogdan Leopard and I believe a third
+one, although I can't recall necessarily. But I think you were saying
+there were ones where you had some decent amount of sort of luck.
+
+11:59
+Asher King-Abramson
+Yes, I think the best thing there is if you can send me a blurb that I
+can forward to.
+
+12:07
+Vrijen Attawar
+Blurb, right? Yeah, let me do that. Yeah, perfect. I'll get you a blurb
+over. Yeah, the. The. I can definitely do that because then the, you
+know, that sort of brings the other point. Spoke to Jeff as well. Spoke
+to those folks at NERA who are. Who sort of their whole go to market.
+This whole time has been communities. Essentially they're down to do
+some sort of like combined go to market, at least sort of trial it out.
+I'm thinking the best sort of like low pressure, low effort way of doing
+it as a start is to just have a one pager from you, one pager from Jeff
+saying like, hey, if you sign on to one or both of those folks, we'll
+honor like this sort of like support for your community based on
+whatever parameters you want to define.
+
+12:57
+Vrijen Attawar
+And effectively this that can just be like an add on that we put forward
+as like privileged access to insert product. And that way it's nice and
+lightweight for you. And it also sort of is beneficial to us being able
+to go and say, hey, we have a more holistic set of things to prepare
+your community or at least like sort of avenues. How do you feel about
+your sort of like free tier?
+
+13:24
+Asher King-Abramson
+So. So I said maybe Say more. What kind of, what do you mean? How do I
+feel about it?
+
+13:32
+Vrijen Attawar
+Like okay, I guess a more precise question would be like are you finding
+that folks are generally happy with the pre tier? Which is not to say
+that's a bad thing. If anything it's a good thing because that would
+make it easier to sort of put forward.
+
+13:46
+Asher King-Abramson
+Oh yeah, no, I think a bunch are happy. Yeah, like a bun. A good number
+of active users are just on the free tier and then some percentage of
+them. I should know the number off the top of my head. 5 to 10% maybe
+upgrade something like that.
+
+13:59
+Vrijen Attawar
+Nice.
+
+13:59
+Asher King-Abramson
+That's.
+
+14:00
+Vrijen Attawar
+That feels pretty good for consumer. No, it's not that bad.
+
+14:03
+Asher King-Abramson
+Yeah, I mean obviously want it higher but.
+
+14:05
+Vrijen Attawar
+Yeah, yeah, no, totally. We're definitely finding that like product
+returns are so much higher when you distribute jobs. I mean that's
+something that I feel incredibly validated about sort of pursuing that
+line of thinking because yeah, it's, it's been incredibly effective to.
+You know, we almost saw like 5 to 10 points sort of jump in the week on
+week retention just by like distributing jobs and we aren't even
+distributing that many jobs. I'm actually going to connect with that
+Alec dude that I had mentioned maybe at some point that sort of is a
+jobs broker and try to just like buy a bunch of like cleaned up jobs of
+like these specific cross sections of roles that you can just sort of
+package up and pipe through our system.
+
+15:01
+Vrijen Attawar
+But yeah, it's after that second, third month like career tools just
+have horrible shelf life.
+
+15:08
+Asher King-Abramson
+Yeah, yeah, that's true. That's, that's the tricky part with this
+industry, I think.
+
+15:12
+Vrijen Attawar
+Yeah, yeah, I think it's a, that's why I think it's a wise move on your
+part to make it a more holistic sort of networking thing because I think
+that is one of the few ways in which you can overcome the inflection
+point sort of problem with like how people deal with their careers.
+Right. And they only work on it when they're under pressure, which is
+obviously the worst time to work on it.
+
+15:40
+Asher King-Abramson
+Yeah, yeah. I would like one vision I have for it is it's like code
+academy for job searching and it's self paced. So even if you have a job
+and you don't want to be, you know, spending hours a day doing your job
+search, it's like you could do it for five minutes but you make a little
+progress. Here you've got a subscription, you can use it when you want
+That's, I think that's kind of an appealing. It's almost like Coursera,
+but hopefully a bit more in depth.
+
+16:02
+Vrijen Attawar
+So to clarify, is it targeting passive job seekers or is it targeting
+happily employed folks that want to just build on their network?
+
+16:13
+Asher King-Abramson
+It's more passive job seekers, but they could still have a job. Right.
+It's just, you do it at your own pace.
+
+16:18
+Vrijen Attawar
+Gotcha. Okay. No, and that's perfect because I see how that's like more
+immediately aligned with the existing functionality. And I don't know if
+that's. This is of sort of interest to you, but I think that there's
+analogy in. I'll send this over LinkedIn. I think there's definitely,
+like some basic inferences you can make from this, but where are we?
+Sure. I did these two surveys with two groups. One was with Ben Lang's
+community and the other was with the future of Higher Education
+community.
+
+17:04
+Asher King-Abramson
+Oh, with Ray.
+
+17:05
+Vrijen Attawar
+Yeah, with Ray. Yeah. Who I'm hoping is. He seemed pretty, he seemed
+pretty down to bring us on when I sort of spoke to him. So hopefully
+that pans out.
+
+17:17
+Asher King-Abramson
+Ray's a really good guy. I like Ray.
+
+17:19
+Vrijen Attawar
+Yeah, yeah, he's a really good guy. He was, he was very supportive too.
+He was like, yeah, if you can deliver what you're promising, like I am,
+this is a no brainer for us. Hold on, here we go. So this is kind of
+relatively small sample sizes, but just it has an indication of how much
+passive job seekers would pay for. How much passive job seekers would
+pay for being delivered jobs.
+
+17:49
+Vrijen Attawar
+And it was interesting as well to note that like fohee, where it's, I
+would say on average like very highly credentialed folks, but on average
+less job hunt savvy than with Next play where there's a lot more folks
+that are like, yeah, I wouldn't pay for it, but I do think a lot of
+folks are realizing, in other words, that like LinkedIn is a bad source,
+but they don't have the confidence to sort of venture forth into the
+Internet and like parse all these terrible job boards. So there's like a
+big, big. I think the trust factor you bring through warmer jobs is like
+pretty meaningful as well.
+
+18:30
+Asher King-Abramson
+Are you saying job seekers are willing to pay just to get like an email
+digest of jobs that fit whatever their background is?
+
+18:37
+Vrijen Attawar
+Yeah, so we caveat it a whole bunch. We were offering like a pretty sort
+of. I mean, our system's like pretty robust. Is the polite way of saying
+it overpowered and needlessly. So is the more accurate way of saying it
+on some level. But this is what were promising folks as a tailored
+resume service. I don't know what you think of, like, about 50% of folks
+saying that they would pay for something like this, but, yeah, this is.
+This is very much like what we can reliably guarantee once we get a
+source of jobs, because we can just. We have it within us to sort of
+like, automate all of the remaining parts pretty easily. But, yeah,
+people were absolutely saying that they'd be willing to pay even passive
+job seekers maybe a little bit less than active job seekers. But the.
+
+19:31
+Vrijen Attawar
+I will also caveat by saying I regularly got the same comment again and
+again, which is, if you can make an intro to an employer, I'll pay you
+whatever you want.
+
+19:41
+Asher King-Abramson
+Yeah, that makes more sense.
+
+19:42
+Vrijen Attawar
+Yeah. And. And that is why we ultimately went for the like. All right,
+let's try to get employers on this as well, because, like, at least that
+fulfills the real need a lot better than. Than, like, just delivering
+tailored jobs, no matter how tailored they are.
+
+20:00
+Asher King-Abramson
+It's still surprising to me. 50 of people would pay just to see because,
+like, you could set alerts on LinkedIn, on Google, on any. Any job
+search site. So that's. That's interesting. If they're really gonna, you
+know, if they back that up. That's very interesting. Yeah, the. The
+employer side's tricky because I've done. I've tried a few models where
+employees were involved, and you always end up. From my experience with,
+you have to do vetting. You have to specialize in particular roles that
+are hard to hire for, which usually means software engineers. And there
+are some inexec roles and stuff, too.
+
+20:30
+Vrijen Attawar
+Yeah.
+
+20:30
+Asher King-Abramson
+I have found that it's much more particular because it has to be the
+roles that employers struggle to find good candidates for.
+
+20:38
+Vrijen Attawar
+Right. Right. Yeah, no, totally. Give me just one second. Hi. You need
+me to take your Zelle, Right. Yeah. Can. Can you show me the. The Zell
+or. Yeah, yeah. Thank you. What's Your phone number? 9 to 9. Amazing.
+I'll send you a message. Amazing. Yep.
+
+21:22
+Asher King-Abramson
+Perfect.
+
+21:22
+Vrijen Attawar
+I'll send you after this call. Amazing. Thank you so much. Sorry, my
+parents are. My parents are visiting, so I had to get the. The place
+cleaned up nice. But, yeah, no, I. Yeah, I totally concur. Like, it's a.
+It's a weird thing where, like, there's. It's. Jobs are so plentiful.
+But I think what folks are sort of getting turned off by is the, like,
+thousand people applied in the last, like, 48 hours. Like, it's almost
+like they're looking for something that feels like it's a little bit of
+a hidden. Thank you. Bye. Bye. That feels like it's a little bit of a
+hidden gem. Right? Or just for them. Because did you ever use, like, way
+up or any of those tools when you were in school?
+
+22:08
+Asher King-Abramson
+No.
+
+22:09
+Vrijen Attawar
+So I went ham on, like, job boards, and one of the consistently most
+horrible features was the job recommendation. Like, it always sucked. It
+would. It would be like, oh, you want to work at, you know, Clorox plant
+in, like, Oshkosh or some shit? Like, it would just be completely
+random. But I do think the tailoring that we do is actually especially
+good at, like, targeting, because I guess that's where we sort of are.
+Is like, what part of this matching system can we prove out slash
+monetize on the consumer side? What part of it can we prove out or
+monetize on the employer side? It's still a little bit of an open
+question, but trying to. Trying to make it work.
+
+22:55
+Asher King-Abramson
+Sweet.
+
+22:56
+Vrijen Attawar
+Yeah. If, you know, if you know of any recruiters that would be open to
+having candidates referred to them for a cut or being able to, like,
+quick search our database, that would be super appreciated as well.
+
+23:12
+Asher King-Abramson
+So I don't have direct recruiters, but do you know, is it Terraform?
+
+23:22
+Vrijen Attawar
+Name sounds super familiar.
+
+23:23
+Asher King-Abramson
+I forget if it's paraform. Hang on. Give me. Give me one second. Let me
+do.
+
+23:27
+Vrijen Attawar
+Yeah, one sec.
+
+23:29
+Asher King-Abramson
+All right.
+
+23:54
+Vrijen Attawar
+Man. The Paraphorm website is sweet.
+
+24:12
+Asher King-Abramson
+Do they not, man? Why can't I find the. Okay, they at least used to do
+this, but what they do is recruiting bounties. If you source them, the
+right person. And then. Here we go. Here. Where's my. Just couldn't find
+the damn page on their site.
+
+24:40
+Vrijen Attawar
+Dude, you are the best. Yeah. Recruiting Boundies is exactly what we're
+looking for.
+
+24:45
+Asher King-Abramson
+And that way you don't have to talk with a bunch of people. You just
+sign up. You can start sending candidates and it's just like, way
+faster.
+
+24:51
+Vrijen Attawar
+Oh, hell yeah. Okay. Sweet.
+
+24:53
+Asher King-Abramson
+I think.
+
+24:53
+Vrijen Attawar
+Yeah.
+
+24:54
+Asher King-Abramson
+I just. I forget which page it is on which side of the marketplace, but
+there's.
+
+25:01
+Vrijen Attawar
+This is going to be sick for the team. I'm speaking to Tim from Twill as
+well, and trying to see if we can arrange a bounty situation there. So
+we'll make. We'll make one of those to happen. Dude, this is a great
+lead. Yeah. Any others come to mind, just let me know and I'll send you
+a blurb from my side with that. You can sort of pass along, see if
+there's interest. And then lastly, if you can send me a sort of like one
+pager that we can just tack on to any sort of communities we go to is
+like, hey, you know, as part of engaging with one of us, you get access
+to this sort of level of warmer jobs. That would be awesome. And I'll.
+I'll. I'll be sure to include that in whatever we pitch.
+
+25:55
+Asher King-Abramson
+Sweet. Can you. Is there a way you could send me just like, where.
+Either another example of a one pager that's good. Or like what the
+final. The thing looks like, just so I know how it fits in. And then I
+can send you.
+
+26:05
+Vrijen Attawar
+Yeah, yeah, absolutely. Yeah. Let me. Let me assemble. That's probably a
+good shout. Yeah. Let me assemble our stuff first. That should happen
+in. In the matter of days, and then I'll send that over to you.
+
+26:14
+Asher King-Abramson
+Cool.
+
+26:15
+Vrijen Attawar
+All right, sounds good, man. I'll talk you soon.
+
+26:18
+Asher King-Abramson
+Yeah, yeah, this is helpful. See ya. Bye.
+
+26:21
+Vrijen Attawar
+Bye.

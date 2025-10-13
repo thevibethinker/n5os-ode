@@ -1,0 +1,342 @@
+00:02
+Rochel Polter
+What time zone are you in?
+
+00:04
+Logan Currie
+Yeah, right.
+
+00:07
+Rochel Polter
+Literally Jared is back. If anyone is wondering.
+
+00:15
+Logan Currie
+Why do we have Jared and Fireflies?
+
+00:19
+Vrijen Attawar
+Jared is being transitioned out, but I just want like another day or two
+of making sure Fireflies doesn't up in some weird way.
+
+00:31
+Ilse Funkhouser
+V. Can you. Can one of you guys actually add my new account to Claude?
+Because it's telling me I need to like pay and create my own team, which
+doesn't sound right.
+
+00:41
+Vrijen Attawar
+That does not sound right at all.
+
+00:43
+Rochel Polter
+Yeah, let me fix that account. Actually.
+
+00:48
+Vrijen Attawar
+Come on over to the Claude account.
+
+00:51
+Rochel Polter
+To the dark side.
+
+00:53
+Vrijen Attawar
+Yeah, to the. Well, not according to Anthropic. The self righteous
+bastards.
+
+01:00
+Rochel Polter
+You're like, hey, it says my. My invite is invalid.
+
+01:06
+Vrijen Attawar
+Is it? Rockle is pending. I'm resending your invite.
+
+01:14
+Rochel Polter
+By the way, did you see the feedback that came in? I have people who
+like joining.
+
+01:24
+Logan Currie
+And.
+
+01:24
+Rochel Polter
+Someone said that like.
+
+01:29
+Vrijen Attawar
+Purchase a premium. You and Danny both need Claude code. Right? Talking
+to Ilsa, was that a yes?
+
+01:50
+Ilse Funkhouser
+Yeah, like it's. I. I use it constantly, so if it saves us money for me
+to use that. Yeah, I, I'll. I'm. I'm at the point where a premium speed
+will save money.
+
+02:01
+Vrijen Attawar
+Amazing. Yeah, no, that's. That's perfectly fine by me. Let me switch
+both you and Danny to. To premium.
+
+02:19
+Rochel Polter
+Someone said that she's trying to send precursor span and for some
+reason every time she tries to activate.
+
+02:29
+Ilse Funkhouser
+I can't hear you, but is that the email that we got from the user
+research feed?
+
+02:35
+Rochel Polter
+Yeah.
+
+02:37
+Ilse Funkhouser
+We. If that's someone who is from Aspire or were running into weird
+issues with translation and a bunch of other stuff, like definitely
+something. Okay.
+
+02:50
+Rochel Polter
+She's someone who just joined through. I know her. She just tried my
+link from Israel.
+
+02:56
+Ilse Funkhouser
+Okay, that sucks.
+
+03:04
+Rochel Polter
+Hi, Ola.
+
+03:07
+Ilse Funkhouser
+On.
+
+03:21
+Rochel Polter
+Are you doing our social now?
+
+03:26
+Logan Currie
+Once y' all are into Claude.
+
+03:31
+Ilse Funkhouser
+What the. Oh, I thought that was AI for a second.
+
+03:37
+Rochel Polter
+Guys, welcome to shoeboxing. I'm at like a rest stop right now. People
+behind me. Sorry.
+
+03:44
+Vrijen Attawar
+Hey, man.
+
+03:47
+Rochel Polter
+Yeah, they're all like. She's just sitting here pretending this is a
+wework. And I'm like, yeah, I have to go work.
+
+03:57
+Logan Currie
+Wait, what? Where are you right now?
+
+04:01
+Rochel Polter
+I'm at like, it's kind of like a rest. It's called Shula. It's like a
+rest stop of like soldiers who are like coming in and out. It's like
+just a place that they come and there's food for them. People are like
+volunteering or whatever. I'm sitting here working while my friends are
+volunteering. So they Keep telling me that I'm working, but I'm like,
+yeah, I have a job.
+
+04:28
+Logan Currie
+Once you guys are. Yeah. Virgin. You're muted. Oh, you're not.
+
+04:38
+Vrijen Attawar
+Yeah, I wasn't saying anything. All good.
+
+04:40
+Rochel Polter
+Okay, cool.
+
+04:42
+Ilse Funkhouser
+The.
+
+04:43
+Logan Currie
+I'm gonna put some of this in notion as well. Putting. Putting some
+communal Claude projects in with a bunch of like market research and
+competitor research. So I'll kind of try to summarize things in Slack,
+but it's my. I thought it was relevant for. I'll send through like the
+SWOT analysis maybe that I just put together and then Rahul, you and I
+can hop off or like maybe start our one one earlier to go through some
+messaging stuff. If that works.
+
+05:15
+Rochel Polter
+Yeah.
+
+05:26
+Logan Currie
+And then I'm going to book my other to do list is that I'm going to book
+my flight to Portugal shortly.
+
+05:34
+Ilse Funkhouser
+So thank you. By the way, V, can you try making me mad admin or
+something? Whenever I try to star that career span central project or
+interact with it in any way, I just get permission denied. Yeah, it
+doesn't show up in my projects either. I need to know that it exists.
+Also. Thank you for saying that you would make me an admin. Logan or V.
+
+06:14
+Logan Currie
+Yeah, I am.
+
+06:18
+Ilse Funkhouser
+Right now V is the only person. We are all just users and V is the owner
+and that doesn't sound good. V, you're still muted so I'm just.
+
+06:38
+Vrijen Attawar
+There can only be one primary owner, but we can make other folks owners
+too. But you've both been switched to admin.
+
+06:47
+Ilse Funkhouser
+Thank you.
+
+06:48
+Vrijen Attawar
+Sweet, sweet, sweet. And then you and Danny have premium which includes
+access to Claude code and yeah, that should hopefully match the usage
+level as well. From what I just anecdotally have used it, the just the
+regular sort of 30 bucks a month is kind of comparable to Claude Max 5X.
+It's a decent amount of. So I'm certainly starting on the lower one
+because it seems to fulfill my like a relatively taxing day's worth of
+usage.
+
+07:23
+Ilse Funkhouser
+I've been. Yeah, last month I used $160 worth of cloud code. Since I was
+on the API that was easy for me to track. I was on track this month to
+hit like 190. So it makes sense that getting to near that 200 level
+makes sense.
+
+07:42
+Rochel Polter
+So.
+
+07:43
+Vrijen Attawar
+Yeah, yeah, no, totally. I think this is going to be. Is going to be
+good for. For all. Is there any sort of collaborative element to Claude
+code that is going.
+
+07:53
+Ilse Funkhouser
+Not that I want to use? That sounds awful.
+
+07:57
+Vrijen Attawar
+No, yeah, no, I didn't know if that would like make your own Danny's
+lives easier. But certainly for us, the ability to have shared projects
+is going to be hugely important. And I'm. I'm actually. Yeah, Howie has
+been. Has been really helpful as well. I'm hoping to integrate that soon
+with. With some of this stuff so that meetings get recorded quite
+seamlessly as well.
+
+08:24
+Logan Currie
+But that's just Fireflies. You can just use the fireflies. Mcp. You
+don't need Howie.
+
+08:29
+Vrijen Attawar
+Oh, right, yeah, you can use Fireflies. There's some, like, cool stuff
+that you can. You can essentially reprogram Howie to, like, run things.
+I'm, like, trying to sound out the system because it's actually. I think
+they've, like, scaffolded it to be more powerful than it currently is.
+So there's some like. I'm basically just trying to. I'm like, tinkering
+with some of its latent capabilities. But yeah, you're. You're right. I
+actually do have the fireflies set up.
+
+08:54
+Logan Currie
+All I need you to do right now specifically is go through your. Well, I
+need you to. Specifically for the market research project, I want you to
+put in all of the transcripts.
+
+09:05
+Vrijen Attawar
+Right. Yeah, let me do that right now.
+
+09:07
+Logan Currie
+Yeah, that's like all the hiring manager discussions and stuff, because
+that's going to be helpful as I. I already put together the stuff for
+the icp, but like, we. I want to get some of the actual, like, customer,
+like, language basically. So if you can put in all.
+
+09:22
+Vrijen Attawar
+Is there a. Is there a prompt you need me to run them through to, like,
+clean and isolate that, or do you want me to just.
+
+09:30
+Logan Currie
+Basically. Yeah, because we'll be able to get more project files. Yeah.
+So if you. In the market research.
+
+09:37
+Vrijen Attawar
+Oh, I'm in competitive intelligence.
+
+09:39
+Logan Currie
+Yeah. In the market. Market research project, it's basically all the
+transcripts from calls involving hiring processes, pain points, like,
+anything in the, like from the employer side, essentially. Employer
+recruiter side. So then that way we can start to distill some of the
+messaging.
+
+09:59
+Vrijen Attawar
+Yep, you got it.
+
+10:01
+Logan Currie
+Gracias. Because that will be relevant to some of the, like, sales
+materials I'm putting together as well. Okay, then, Rahul, I will see
+you shortly for our meeting.
+
+10:24
+Rochel Polter
+Should we just hop on?
+
+10:25
+Logan Currie
+Yeah, well, I'm just gonna. I haven't eaten breakfast yet. I'm just
+gonna go very quickly.
+
+10:29
+Rochel Polter
+Yeah.
+
+10:32
+Logan Currie
+To continue. All right, all right.

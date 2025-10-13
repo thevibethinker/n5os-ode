@@ -1,0 +1,10 @@
+{
+  "meeting_id": "2025-08-29_internal-team_142310",
+  "request_file": "N5/inbox/meeting_requests/2025-08-29_internal-team_142310_request.json",
+  "gdrive_id": "1ZesjqJGuGAaTiYxfK6KXIAOI2zA24gxM",
+  "stakeholder_type": "INTERNAL_TEAM",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25"],
+  "crm_status": "SKIPPED - internal_team excluded",
+  "processed_at_ET": "2025-10-13T01:09:35-04:00",
+  "notes": "Processed by Registry System v1.5; required blocks generated. No CRM created for internal team."
+}

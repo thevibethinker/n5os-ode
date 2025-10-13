@@ -89,15 +89,46 @@ async def generate_deliverables(
                 logger.info(f"✓ Blurb generated: {path}")
                 
             elif deliverable_type == "follow_up_email":
-                from blocks import follow_up_email_generator
-                path = await follow_up_email_generator.generate_follow_up_email(
-                    transcript_content,
-                    meeting_info,
-                    knowledge_base,
-                    meeting_dir
-                )
-                generated.append({"type": "follow_up_email", "path": str(path)})
-                logger.info(f"✓ Follow-up email generated: {path}")
+                # Use command-based email generator (SSOT)
+                logger.info("Generating follow-up email via command system...")
+                
+                # Prepare context for command
+                context_note = f"""
+Generate follow-up email for meeting.
+
+Context:
+- Meeting folder: {meeting_dir}
+- Transcript available at: {meeting_dir / 'transcript.txt'}
+- Meeting info: {json.dumps(meeting_info, indent=2)}
+
+Reference: command 'N5/commands/follow-up-email-generator.md'
+
+Generate the email following all style constraints from:
+file 'N5/docs/EMAIL_GENERATOR_STYLE_CONSTRAINTS.md'
+
+Save output to: {meeting_dir}/follow-up-email-draft.md
+"""
+                
+                # Log that this requires manual invocation for now
+                logger.info("NOTE: Follow-up email generation uses command-based workflow.")
+                logger.info("Command file: N5/commands/follow-up-email-generator.md")
+                logger.info(f"Context for generation: {meeting_dir}")
+                
+                # Create placeholder file indicating command-based generation needed
+                placeholder_path = meeting_dir / "follow-up-email-draft.md"
+                with open(placeholder_path, 'w') as f:
+                    f.write("# Follow-Up Email Draft\n\n")
+                    f.write("**Status:** Pending generation via command system\n\n")
+                    f.write("To generate:\n")
+                    f.write(f"1. Load command 'N5/commands/follow-up-email-generator.md'\n")
+                    f.write(f"2. Reference meeting folder: {meeting_dir}\n")
+                    f.write(f"3. Use transcript: {meeting_dir / 'transcript.txt'}\n")
+                    f.write(f"4. Apply style constraints: N5/docs/EMAIL_GENERATOR_STYLE_CONSTRAINTS.md\n\n")
+                    f.write(context_note)
+                
+                generated.append({"type": "follow_up_email", "path": str(placeholder_path)})
+                logger.info(f"✓ Follow-up email placeholder created: {placeholder_path}")
+                logger.info("  Run command-based generator to complete email draft")
                 
             elif deliverable_type == "one_pager_memo":
                 from blocks.deliverables import one_pager_memo_generator

@@ -1,0 +1,12 @@
+{
+  "meeting_id": "2025-09-16_external-meet-jzp-anqv-zzu",
+  "processed_at": "2025-10-13T15:28:42-04:00",
+  "processor": "Zo",
+  "registry_version": "1.5",
+  "stakeholder_type": "INTERNAL_STANDUP_TEAM",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25"],
+  "blocks_count": 7,
+  "crm_status": "skipped (internal team)",
+  "original_gdrive_id": "1UqcpSTA8lygEJh_YRVWpJWyP5RjYOCNc",
+  "transcript_path": "N5/inbox/transcripts/2025-09-16_external-meet-jzp-anqv-zzu.txt"
+}

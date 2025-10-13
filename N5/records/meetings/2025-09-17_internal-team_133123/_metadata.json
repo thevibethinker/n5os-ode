@@ -1,0 +1,15 @@
+{
+  "meeting_id": "2025-09-17_internal-team_133123",
+  "stakeholder_type": "INTERNAL_STANDUP_COFOUNDER",
+  "created_blocks": [
+    "B26_MEETING_METADATA_SUMMARY.md",
+    "B01_DETAILED_RECAP.md",
+    "B02_COMMITMENTS_CONTEXTUAL.md",
+    "B08_STAKEHOLDER_INTELLIGENCE.md",
+    "B21_KEY_MOMENTS.md",
+    "B31_STAKEHOLDER_RESEARCH.md",
+    "B25_DELIVERABLE_CONTENT_MAP.md"
+  ],
+  "crm_status": "skipped-internal",
+  "source_request": "/home/workspace/N5/inbox/meeting_requests/2025-09-17_internal-team_133123_request.json"
+}

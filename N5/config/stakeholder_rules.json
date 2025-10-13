@@ -1,18 +1,46 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_updated": "2025-10-12",
   "description": "Business rules for stakeholder classification and tagging",
   
-  "dual_tags": {
-    "enabled": true,
-    "description": "Allow contacts to have multiple stakeholder types",
+  "taxonomy_principles": {
+    "types_vs_states": {
+      "principle": "Stakeholder types represent fundamental identity/relationship. States represent temporary conditions.",
+      "v_insight": "Job seeking is a state, not a stakeholder type. Anyone can be job seeking.",
+      "examples": {
+        "types": ["investor", "advisor", "community", "partner", "customer"],
+        "states": ["job_seeking:active", "relationship:warm", "engagement:responsive"]
+      },
+      "benefits": [
+        "Cleaner taxonomy (orthogonal dimensions)",
+        "No dual stakeholder classification needed",
+        "Tracks transitions over time (job_seeking:active → inactive)",
+        "Extensible (can add hiring:active, transitioning:active, etc.)"
+      ]
+    }
+  },
+  
+  "job_seeking_status": {
+    "category": "#job_seeking:*",
+    "description": "Employment seeking status (orthogonal to stakeholder type)",
+    "values": {
+      "active": "Currently seeking employment, interviewing, using job search products",
+      "inactive": "Not currently seeking, employed and settled"
+    },
+    "applies_to": "Anyone regardless of stakeholder type",
     "examples": [
       {
         "contact": "Kim Wilkes",
-        "tags": ["#stakeholder:community", "#stakeholder:job_seeker"],
-        "reasoning": "Community leader AND product user (job seeking)"
+        "tags": ["#stakeholder:community", "#job_seeking:active"],
+        "note": "Community leader who is also job seeking (clean, no dual stakeholder types)"
+      },
+      {
+        "contact": "Hypothetical investor",
+        "tags": ["#stakeholder:investor", "#job_seeking:active"],
+        "note": "Investor between roles (happens, trackable)"
       }
-    ]
+    ],
+    "product_tracking": "Track #job_seeking:active contacts for Careerspan product usage and placement outcomes"
   },
   
   "excluded_types": {
@@ -77,7 +105,7 @@
         "General relationship building, mutual support"
       ],
       "examples": ["Tim He - hiring candidate but also networking relationship"],
-      "priority_default": "normal",
+      "priority_default": "non-critical",
       "note": "Distinct from 'prospect' (which implies business opportunity); networking is relational, not transactional"
     },
     "partner_collaboration": {
@@ -100,19 +128,12 @@
         "Community partnership discussions",
         "Nonprofit/social impact focus"
       ],
-      "can_be_dual": true,
-      "dual_with": ["job_seeker", "customer"]
+      "note": "Can also have #job_seeking:active status (orthogonal, not dual stakeholder type)"
     }
   },
   
   "priority_auto_inheritance": {
-    "investor": "critical",
-    "advisor": "high",
-    "customer": "high",
-    "community": "normal",
-    "partner:collaboration": "normal",
-    "partner:channel": "normal",
-    "prospect": "normal",
-    "job_seeker": "normal"
+    "critical": ["investor", "advisor", "customer"],
+    "non-critical": ["community", "partner:collaboration", "partner:channel", "prospect", "vendor", "networking_contact"]
   }
 }
