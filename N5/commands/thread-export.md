@@ -84,9 +84,35 @@ This command implements the AAR v2.2 protocol for thread closure and continuatio
 3. **Dual-Write Pattern**: JSON is source of truth, Markdown is generated view
 4. **Schema Validation**: All AARs validated against `aar.schema.json`
 
+### Phase 6: System Timeline Update (NEW)
+
+After archive creation, thread-export automatically:
+1. Analyzes AAR data for timeline-worthy significance
+2. Detects high-impact work (new commands, infrastructure, features)
+3. Generates suggested timeline entry with category, impact, and components
+4. Prompts user to review and approve entry
+5. Writes to system-timeline.jsonl if approved
+
+**Skip Criteria:**
+- Low-impact conversational threads
+- Threads with minimal artifacts
+- General work sessions
+
+**Signals for Timeline Update:**
+- Impact keywords (implement, create, fix, critical, system)
+- Multiple artifacts created (≥3)
+- Key decisions documented
+- New scripts or commands created
+
+**User can:**
+- Accept suggestion as-is (Y)
+- Edit before accepting (e)
+- Skip timeline update (n)
+
 ### The AAR System Enables
 - Efficient thread closure with context preservation
 - Thread continuation across conversations
 - Progressive documentation during long conversations
 - Packed context window optimization
 - Modular knowledge navigation
+- **Automatic system timeline updates**
