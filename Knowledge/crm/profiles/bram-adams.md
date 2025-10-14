@@ -1,3 +1,17 @@
+---
+name: "Bram Adams"
+email_primary: ""
+email_aliases: []
+organization: "YCB"
+role: "Founder"
+first_contact: "2025-09-18"
+last_updated: "2025-10-14"
+lead_type: "LD-INV"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-18"
+---
+
 # Bram Adams
 
 **Name:** Bram Adams

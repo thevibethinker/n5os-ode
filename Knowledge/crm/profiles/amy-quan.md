@@ -1,3 +1,17 @@
+---
+name: "Amy Quan"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "Community events organizer / partnerships"
+first_contact: "2025-08-27"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-08-27"
+---
+
 # Amy Quan
 
 **Name:** Amy Quan

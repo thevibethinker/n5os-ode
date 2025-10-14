@@ -1,3 +1,17 @@
+---
+name: "Jason Cheung"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "Newsletter author & event curator"
+first_contact: "2025-09-04"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-04"
+---
+
 # Jason Cheung
 
 - Name: Jason Cheung

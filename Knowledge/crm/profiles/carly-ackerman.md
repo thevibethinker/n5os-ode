@@ -1,3 +1,17 @@
+---
+name: "Carly Ackerman"
+email_primary: ""
+email_aliases: []
+organization: "Referenced Coca Cola (enterprise context)"
+role: "Talent / Hiring Practitioner (hiring manager perspective)"
+first_contact: "2025-10-14"
+last_updated: "2025-10-14"
+lead_type: "LD-HIR"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-10-14"
+---
+
 # Carly Ackerman
 
 **Name:** Carly Ackerman

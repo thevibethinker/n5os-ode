@@ -1,17 +1,16 @@
 ---
-name: "Michael Maher"
-email_primary: "mmm429@cornell.edu"
-email_aliases: []
-organization: "Cornell University"
-role: "MBA Career Advisor - Tech, Career Management Center"
-first_contact: "2025-10-01"
-last_updated: "2025-10-12"
-lead_type: "LD-COM"
-status: "active"
+name: Michael Maher
+email_primary: mmm429@cornell.edu
+email_aliases:
+organization: Cornell University
+role: MBA Career Advisor - Tech, Career Management Center
+first_contact: 2025-10-01
+last_updated: 2025-10-12
+lead_type: LD-COM
+status: active
 interaction_count: 2
-last_interaction: "2025-10-02"
+last_interaction: 2025-10-02
 ---
-
 # Michael Maher
 
 **Organization:** Cornell University  

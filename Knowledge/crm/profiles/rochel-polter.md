@@ -1,3 +1,17 @@
+---
+name: "Rochel Polter"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: ""
+first_contact: "2025-09-09"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-09"
+---
+
 # Rochel Polter
 
 **Name:** Rochel Polter

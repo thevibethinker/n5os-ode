@@ -1,3 +1,17 @@
+---
+name: "Laura Close — CRM Profile"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "Founder (technology)"
+first_contact: "2025-08-28"
+last_updated: "2025-10-14"
+lead_type: "LD-INV"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-08-28"
+---
+
 # Laura Close — CRM Profile
 
 - Name: Laura Close

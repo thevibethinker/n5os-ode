@@ -1,3 +1,17 @@
+---
+name: "Michael Berlingo — CRM Profile"
+email_primary: ""
+email_aliases: []
+organization: "Starter U"
+role: "Founder (as described in meeting)"
+first_contact: "2025-09-12"
+last_updated: "2025-10-14"
+lead_type: "LD-INV"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-12"
+---
+
 # Michael Berlingo — CRM Profile
 
 **Name:** Michael Berlingo
