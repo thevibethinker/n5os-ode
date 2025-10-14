@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-14T07:39:34-04:00",
+  "staging_dir": "file 'Records/Temporary/email_staging'",
+  "discovery_dir": "file 'Records/stakeholder_discovery'",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": []
+}

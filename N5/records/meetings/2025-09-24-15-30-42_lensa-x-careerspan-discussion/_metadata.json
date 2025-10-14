@@ -1,0 +1,61 @@
+{
+  "meeting_id": "2025-09-24-15-30-42_lensa-x-careerspan-discussion",
+  "date": "2025-09-24",
+  "participants": [
+    {
+      "name": "Mai Flynn",
+      "company": "Lensa",
+      "role": "User Acquisition Manager"
+    },
+    {
+      "name": "Vrijen Attawar",
+      "company": "Careerspan",
+      "role": "Founder"
+    }
+  ],
+  "stakeholder_type": "PARTNER",
+  "meeting_type": "Partnership exploration - traffic acquisition test",
+  "processing": {
+    "processed_date": "2025-10-14T12:27:21Z",
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "blocks_generated": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP",
+      "B05_OUTSTANDING_QUESTIONS",
+      "B07_WARM_INTRO_BIDIRECTIONAL"
+    ],
+    "blocks_count": 9,
+    "transcript_quality": "Excellent",
+    "confidence_score": "High"
+  },
+  "crm": {
+    "profile_created": true,
+    "profile_path": "Knowledge/crm/individuals/mai-flynn.md",
+    "enrichment_priority": "HIGH",
+    "stakeholder_tags": [
+      "#stakeholder:partner:collaboration",
+      "#priority:important",
+      "#status:active"
+    ]
+  },
+  "outcomes": {
+    "partnership_test_agreed": true,
+    "test_budget": "$2,500 per feed",
+    "pricing_model": "15¢ CPC",
+    "target_start": "October 2025",
+    "follow_up_required": true,
+    "follow_up_overdue": true,
+    "overdue_days": 20
+  },
+  "transcript": {
+    "original_file": "N5/inbox/meeting_requests/2025-09-24-15-30-42_lensa-x-careerspan-discussion_request.json",
+    "gdrive_id": "1IWfolK34TFJ-1Ahzz7V8FKdTJpFMLMEc",
+    "converted_file": "N5/inbox/transcripts/2025-09-24-15-30-42_lensa-x-careerspan-discussion_converted.txt"
+  }
+}

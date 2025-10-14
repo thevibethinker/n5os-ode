@@ -2,11 +2,12 @@
 """
 Gmail Fetch to Staging - Phase 1 of Option B Architecture
 
-Fetches meeting-related emails from Gmail via service account and writes
-minimal parsed data to staging directory for LLM processing.
+Fetches meeting-related emails from Gmail (sent folder) via service account,
+parses V-OS bracket tags below signature, and writes minimal parsed data to 
+staging directory for LLM processing. Only processes emails with activation signal (*).
 
 Architecture:
-  Phase 1 (this script): Service Account → Gmail API → Staging JSON
+  Phase 1 (this script): Service Account → Gmail API → Parse V-OS Tags → Staging JSON
   Phase 2 (scheduled task): Read Staging → LLM Extract → Knowledge/Records
 """
 
@@ -43,6 +44,64 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 # Email domains to exclude (internal)
 INTERNAL_DOMAINS = ['mycareerspan.com', 'theapply.ai', 'zo.computer']
 
+# V-OS tag patterns (based on N5/config/tag_vos_mapping.json)
+VOS_BRACKET_PATTERN = re.compile(r'\[([^\]]+)\]')
+ACTIVATION_SIGNAL = '*'
+
+
+def parse_vos_tags(body: str) -> Optional[Dict]:
+    """
+    Parse V-OS bracket tags from email body below signature.
+    
+    Returns:
+        Dict with 'tags' and 'activated' keys, or None if no tags found
+        Example: {'tags': ['LD-INV', 'A-0'], 'activated': True}
+    """
+    if not body:
+        return None
+    
+    # Find signature delimiter (common patterns)
+    signature_patterns = [
+        '\n-- \n',  # Standard email signature
+        '\nBest,\n',
+        '\nThanks,\n',
+        '\nRegards,\n',
+        '\nVrijen\n',
+        '\n---\n'
+    ]
+    
+    below_signature = None
+    for pattern in signature_patterns:
+        if pattern in body:
+            parts = body.split(pattern, 1)
+            if len(parts) > 1:
+                below_signature = parts[1]
+                break
+    
+    # If no signature delimiter found, check last 500 chars for tags
+    if below_signature is None:
+        below_signature = body[-500:] if len(body) > 500 else body
+    
+    # Extract bracket tags
+    matches = VOS_BRACKET_PATTERN.findall(below_signature)
+    if not matches:
+        return None
+    
+    # Check for activation signal
+    activated = ACTIVATION_SIGNAL in below_signature
+    
+    # Clean and validate tags
+    tags = [tag.strip() for tag in matches if tag.strip()]
+    
+    if not tags:
+        return None
+    
+    return {
+        'tags': tags,
+        'activated': activated,
+        'raw_text': below_signature.strip()[:200]  # Keep snippet for debugging
+    }
+
 
 def load_state() -> Dict:
     """Load scanner state"""
@@ -63,7 +122,7 @@ def save_state(state: Dict) -> None:
 
 
 def build_gmail_query(last_scan_time: Optional[str]) -> str:
-    """Build Gmail search query for meeting-related emails"""
+    """Build Gmail search query for sent meeting-related emails"""
     
     # Time filter
     if last_scan_time:
@@ -79,8 +138,8 @@ def build_gmail_query(last_scan_time: Optional[str]) -> str:
     else:
         time_filter = "newer_than:7d"
     
-    # Meeting indicators - use simpler query
-    query = f"(meeting OR calendar OR invite OR invitation OR zoom OR scheduled) {time_filter}"
+    # Fetch from sent emails with meeting indicators
+    query = f"in:sent (meeting OR calendar OR invite OR invitation OR zoom OR scheduled) {time_filter}"
     
     return query
 
@@ -128,6 +187,7 @@ def get_message_body(payload: Dict) -> str:
 def parse_email_minimal(service, message_id: str) -> Optional[Dict]:
     """
     Fetch and parse email with minimal processing.
+    Extract V-OS tags below signature and check for activation signal.
     No LLM extraction - just structural data for staging.
     """
     try:
@@ -150,6 +210,14 @@ def parse_email_minimal(service, message_id: str) -> Optional[Dict]:
         # Get body
         body = get_message_body(msg['payload'])
         
+        # Parse V-OS tags
+        vos_data = parse_vos_tags(body)
+        
+        # Only process emails with activation signal
+        if not vos_data or not vos_data.get('activated'):
+            log.debug(f"   No activation signal in {message_id}")
+            return None
+        
         # Check if contains external participants
         all_emails = [from_email] + to_emails + cc_emails
         external_emails = [e for e in all_emails if is_external_email(e)]
@@ -166,6 +234,8 @@ def parse_email_minimal(service, message_id: str) -> Optional[Dict]:
             "cc": cc_emails,
             "date": date,
             "body": body,
+            "vos_tags": vos_data['tags'],
+            "vos_raw": vos_data['raw_text'],
             "external_emails": external_emails,
             "fetched_at": datetime.now(timezone.utc).isoformat()
         }
@@ -290,6 +360,7 @@ def fetch_gmail_to_staging(dry_run: bool = False) -> Dict:
             continue
         
         log.info(f"   Subject: {email_data['subject'][:60]}")
+        log.info(f"   V-OS Tags: {', '.join(email_data['vos_tags'])}")
         log.info(f"   External: {len(email_data['external_emails'])} participants")
         
         if dry_run:

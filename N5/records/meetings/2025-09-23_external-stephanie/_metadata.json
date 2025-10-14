@@ -1,0 +1,30 @@
+{
+  "meeting_id": "2025-09-23_external-stephanie",
+  "date": "2025-09-23",
+  "processed_at": "2025-10-14T09:51:43Z",
+  "stakeholder_type": "CUSTOMER",
+  "participants": "Stephanie Szuch (Education at Work) x Vrijen Attawar (Careerspan)",
+  "registry_version": "1.5",
+  "processing_version": "5.1.0",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B24_PRODUCT_IDEA_EXTRACTION",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B13_PLAN_OF_ACTION",
+    "B27_KEY_MESSAGING"
+  ],
+  "block_count": 11,
+  "transcript_source": "Google Drive",
+  "gdrive_id": "1KEvmxtNynZpM8BuLxgFgFrYkLYtUVYvD",
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/stephanie-szuch.md",
+  "enrichment_priority": "HIGH",
+  "v_os_tags": "[LD-CUS] [GPT-E] [A-2]",
+  "notes": "CUSTOMER stakeholder - EAW as institutional user of Careerspan for student career development and job placement. Near-term collaboration milestone: ASU event (date TBD). Q1 2026 target for deeper integration discussions."
+}

@@ -1,0 +1,28 @@
+{
+  "meeting_id": "2025-09-29-17-19-32_remotely-good-careerspan",
+  "date": "2025-09-29",
+  "participants": ["Theresa Anoje (Remotely Good / Social Impact SF)", "Vrijen Attawar", "Logan Currie"],
+  "stakeholder_type": "COMMUNITY",
+  "processing_date": "2025-10-14T03:59:23Z",
+  "registry_version": "1.5",
+  "workflow_version": "5.1.0",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B07_WARM_INTRO_BIDIRECTIONAL"
+  ],
+  "blocks_count": 9,
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/theresa-anoje.md",
+  "howie_tags": "[LD-COM] [GPT-E] [A-3]",
+  "enrichment_priority": "MEDIUM",
+  "transcript_quality": "Good",
+  "confidence": "High",
+  "notes": "Meeting was brief (~9min) as Vrijen had to leave for vet appointment. Logan continued discussion after Vrijen dropped off (not captured in transcript). Partnership framework established but operational details TBD in Logan's follow-up discussion."
+}

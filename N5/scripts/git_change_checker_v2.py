@@ -64,7 +64,7 @@ PROTECTED_PATTERNS = [
     
     # Critical N5 components
     'N5/intelligence/*.json',
-    'Knowledge/crm/profiles/index.jsonl'
+    'Knowledge/crm/individuals/index.jsonl'
 ]
 
 SENSITIVE_PATTERNS = [

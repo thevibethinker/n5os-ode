@@ -63,8 +63,8 @@
       "path": "/home/workspace/N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit/DELIVERABLES/follow_up_email_draft.md"
     }
   ],
-  "followup_status": "pending",
-  "followup_declined_at": "2025-10-13T23:57:49",
+  "followup_status": "declined",
+  "followup_declined_at": "2025-10-14T12:08:23",
   "followup_declined_reason": null,
   "followup_status_updated_at": "2025-10-13T23:57:49"
 }

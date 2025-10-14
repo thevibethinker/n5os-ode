@@ -1,241 +1,278 @@
-# Networking CRM
+# CRM System - Quick Reference
 
-**Version**: 1.0.0  
-**Created**: 2025-10-09  
-**Type**: Individual-Centric CRM with Event Cross-References
-
----
-
-## Purpose
-
-Manage networking contacts, track relationship history, and automate follow-ups. Structured around **individuals** (not events) with separate event logs for cross-referencing.
+**Last Updated:** 2025-10-14  
+**Status:** Active & Unified
 
 ---
 
-## Structure
+## Directory Structure
 
 ```
 Knowledge/crm/
-├── README.md            # This file
-├── index.jsonl         # Individual index (searchable)
-├── individuals/        # Individual profiles (one per person)
-│   ├── john-doe.md
-│   ├── jane-smith.md
-│   └── ...
-├── events/             # Event logs (month-organized)
-│   ├── 2025-10/
-│   │   ├── 2025-10-09_sf-tech-week.md
-│   │   └── ...
-│   ├── 2025-11/
-│   │   └── ...
-│   └── index.jsonl    # Event index
-└── follow-ups/         # Generated follow-up messages
-    ├── john-doe_2025-10-09_linkedin.md
-    ├── john-doe_2025-10-12_proposal.md
-    └── ...
+├── individuals/           # ✅ ACTIVE - All CRM profiles
+├── crm.db                # ✅ ACTIVE - SQLite database
+├── .archived_profiles_*/ # 📦 BACKUP - Historical archives
+└── README.md            # 📖 This file
 ```
 
 ---
 
-## Usage
+## Quick Start
 
-### Add Contacts from Networking Event
+### Adding a New Profile
 
+1. **Create markdown file:**
+   ```bash
+   touch Knowledge/crm/individuals/firstname-lastname.md
+   ```
+
+2. **Use standard template structure:**
+   ```markdown
+   # Full Name
+   
+   **Organization:** Company Name
+   **Role/Title:** Job Title
+   **Location:** City, State/Country
+   **Primary Email:** email@domain.com
+   **LinkedIn:** https://linkedin.com/in/username
+   
+   ---
+   
+   ## Profile Summary
+   [Brief description]
+   
+   ---
+   
+   ## Interaction History
+   ### 2025-10-14
+   - [Details]
+   ```
+
+3. **Add to database:**
+   ```python
+   import sqlite3
+   conn = sqlite3.connect('Knowledge/crm/crm.db')
+   cursor = conn.cursor()
+   cursor.execute("""
+       INSERT INTO individuals 
+       (full_name, email, linkedin_url, company, title, category, status, priority, markdown_path)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+   """, (
+       'Full Name',
+       'email@domain.com',
+       'https://linkedin.com/in/username',
+       'Company Name',
+       'Job Title',
+       'COMMUNITY',  # or FOUNDER, INVESTOR, CUSTOMER, NETWORKING, ADVISOR, PARTNER, OTHER
+       'active',     # or prospect, dormant, archived
+       'medium',     # or high, low
+       'Knowledge/crm/individuals/firstname-lastname.md'
+   ))
+   conn.commit()
+   conn.close()
+   ```
+
+### Finding a Profile
+
+**By name:**
 ```bash
-# Interactive mode (recommended)
-python N5/scripts/n5_networking_event_process.py
-
-# Or conversationally
-command 'N5/commands/networking-event-process.md'
+sqlite3 Knowledge/crm/crm.db "SELECT full_name, markdown_path FROM individuals WHERE full_name LIKE '%search%';"
 ```
 
-### Search Individuals
-
+**By company:**
 ```bash
-# Search by name/company/tag
-grep -r "VP Product" individuals/
-
-# Or use index
-cat index.jsonl | jq 'select(.company == "Acme Corp")'
+sqlite3 Knowledge/crm/crm.db "SELECT full_name, company, markdown_path FROM individuals WHERE company LIKE '%search%';"
 ```
 
-### View Event History
-
+**By category:**
 ```bash
-# List events by month
-ls events/2025-10/
-
-# View specific event
-cat events/2025-10/2025-10-09_sf-tech-week.md
+sqlite3 Knowledge/crm/crm.db "SELECT full_name, company, markdown_path FROM individuals WHERE category='INVESTOR';"
 ```
 
-### Find Follow-Ups
+### Updating a Profile
 
-```bash
-# List all generated follow-ups
-ls follow-ups/
+1. Edit markdown file directly
+2. Update database if core fields changed:
+   ```bash
+   sqlite3 Knowledge/crm/crm.db "UPDATE individuals SET email='new@email.com' WHERE full_name='Full Name';"
+   ```
 
-# Search by person
-ls follow-ups/john-doe*
+---
+
+## Database Schema
+
+### Table: `individuals`
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `id` | INTEGER | Primary key (auto-increment) |
+| `full_name` | TEXT | Full name (required) |
+| `email` | TEXT | Primary email address |
+| `linkedin_url` | TEXT | LinkedIn profile URL |
+| `company` | TEXT | Current company/organization |
+| `title` | TEXT | Job title/role |
+| `category` | TEXT | FOUNDER, INVESTOR, CUSTOMER, COMMUNITY, NETWORKING, ADVISOR, PARTNER, OTHER |
+| `status` | TEXT | active, prospect, dormant, archived |
+| `priority` | TEXT | high, medium, low |
+| `tags` | TEXT | JSON array of tags |
+| `first_contact_date` | TEXT | ISO date of first contact |
+| `last_contact_date` | TEXT | ISO date of last contact |
+| `markdown_path` | TEXT | Path to markdown file (UNIQUE, SSOT) |
+| `created_at` | TIMESTAMP | Auto-generated |
+| `updated_at` | TIMESTAMP | Auto-updated on changes |
+
+### Indexes
+
+- `idx_individuals_name` on `full_name`
+- `idx_individuals_company` on `company`
+- `idx_individuals_category` on `category`
+- `idx_individuals_status` on `status`
+- `idx_individuals_priority` on `priority`
+- `idx_individuals_last_contact` on `last_contact_date`
+
+---
+
+## Categories
+
+| Category | Use For |
+|----------|---------|
+| **FOUNDER** | Company founders, entrepreneurs |
+| **INVESTOR** | VCs, angels, investment professionals |
+| **CUSTOMER** | Current or potential customers |
+| **COMMUNITY** | Community members, ecosystem participants |
+| **NETWORKING** | General networking contacts |
+| **ADVISOR** | Advisors, mentors, consultants |
+| **PARTNER** | Business partners, strategic alliances |
+| **OTHER** | Miscellaneous contacts |
+
+---
+
+## Common Queries
+
+### Active high-priority contacts
+```sql
+SELECT full_name, company, category, last_contact_date 
+FROM individuals 
+WHERE status='active' AND priority='high'
+ORDER BY last_contact_date DESC;
+```
+
+### Investors by recent contact
+```sql
+SELECT full_name, company, last_contact_date 
+FROM individuals 
+WHERE category='INVESTOR' AND status='active'
+ORDER BY last_contact_date DESC;
+```
+
+### Contacts needing follow-up (no contact in 30+ days)
+```sql
+SELECT full_name, company, category, last_contact_date,
+       CAST((julianday('now') - julianday(last_contact_date)) AS INTEGER) as days_since_contact
+FROM individuals 
+WHERE status='active' 
+  AND last_contact_date IS NOT NULL
+  AND julianday('now') - julianday(last_contact_date) > 30
+ORDER BY last_contact_date ASC;
+```
+
+### Category distribution
+```sql
+SELECT category, COUNT(*) as count 
+FROM individuals 
+GROUP BY category 
+ORDER BY count DESC;
 ```
 
 ---
 
-## Individual Profile Schema
+## File Naming Convention
 
-Each individual profile includes:
-
-- **One-Line Context** - Quick reference summary
-- **Basic Info** - Company, role, connection channels
-- **Mutual Acquaintances** - Links to other CRM individuals
-- **Background & Experience**
-- **Interests & Focus Areas**
-- **Pain Points & Challenges**
-- **Opportunities & Needs**
-- **Key Quotes**
-- **Relationship History** - Event cross-references
-- **Follow-Ups & Action Items**
-- **Generated Materials** - Links to messages/proposals
-- **Enrichment Status** - Web research tracking
+Use kebab-case for filenames:
+- ✅ `firstname-lastname.md`
+- ✅ `firstname-middlename-lastname.md`
+- ❌ `FirstName_LastName.md`
+- ❌ `first name last name.md`
 
 ---
 
-## Event Log Schema
+## Integration Points
 
-Each event log includes:
+### Meeting Prep Digests
+- `N5/digests/daily-meeting-prep-*.md` references profiles
+- Path pattern: `file 'Knowledge/crm/individuals/name.md'`
 
-- **Event Metadata** - Date, location, type, purpose
-- **People Met** - Grouped by priority with context
-- **Event-Level Insights** - Themes, patterns, opportunities
-- **Event-Level Action Items**
-- **Cross-References** - Links to individual profiles
+### Stakeholder Discovery
+- `Records/stakeholder_discovery/*.jsonl` feeds into CRM
+- Use for initial capture, then promote to CRM
 
----
-
-## Integration
-
-### With N5 Lists
-
-Contacts are automatically added to `N5/lists/networking-contacts.jsonl` for:
-- List-based queries and filtering
-- Integration with other N5 list workflows
-
-### With Stakeholder Profile Generator
-
-Leverages existing `N5/scripts/blocks/stakeholder_profile_generator.py` for:
-- LLM-powered profile generation
-- Consistent profile structure
-- Meeting history integration
-
-### With Deliverable Orchestrator
-
-Integrates with `N5/scripts/deliverable_orchestrator.py` for:
-- Auto-generated proposals
-- One-pagers and memos
-- Pitch decks
-
-### With Voice Preferences
-
-Uses `N5/prefs/communication/voice.md` for:
-- Tone calibration in follow-up messages
-- Relationship depth mapping
-- CTA rigor adjustment
-
-### With Essential Links
-
-References `N5/prefs/communication/essential-links.json` for:
-- Auto-insertion of Calendly links
-- Trial codes for prospects
-- Demo links and resources
-
----
-
-## Post-Processing Enrichment
-
-After initial processing, enrich high-priority contacts:
-
-```bash
-# Enrich individual profile
-python N5/scripts/n5_networking_event_process.py --enrich john-doe
-```
-
-Enrichment sources:
-- LinkedIn profile (role, background, education)
-- Company info (size, funding, recent news)
-- Recent mentions/articles (Google/Perplexity)
-- Mutual connections discovery
-
----
-
-## Best Practices
-
-### When Adding Contacts
-
-1. **Paste everything upfront** - Don't hold back, dump all notes in bulk
-2. **Be conversational** - Verbal dumps don't need structure
-3. **Mention action items naturally** - "I said I'd send them X"
-4. **Name-drop mutual acquaintances** - "He knows Jane Smith"
-5. **Trust the clarifying question** - If asked, it's to fill a critical gap
-
-### When Following Up
-
-1. **Same-day LinkedIn messages** - Establishes record while fresh
-2. **Review before sending** - Always approve generated messages
-3. **Track action items** - Check profile for promised follow-ups
-4. **Update relationship history** - Log subsequent interactions
-
-### When Enriching
-
-1. **Prioritize high-value contacts** - Focus enrichment on prospects
-2. **Batch process** - Enrich multiple contacts at once
-3. **Update regularly** - Re-enrich quarterly for active relationships
+### Tags & Categorization
+- See: `file N5/config/tag_mapping.json`
+- Lead type tags (LD-*) map to categories
 
 ---
 
 ## Maintenance
 
-### Weekly
+### Backup Strategy
+- Automated backups via consolidation scripts
+- Archives stored in `.archived_profiles_YYYYMMDD/`
+- Keep for 30 days, then archive
 
-- Review pending follow-ups in `follow-ups/` folder
-- Update relationship histories for active contacts
-- Execute queued deliverables
+### Data Quality Checks
+Run periodically:
+```bash
+# Check for orphaned database records (no file)
+python3 -c "
+import sqlite3
+from pathlib import Path
+conn = sqlite3.connect('Knowledge/crm/crm.db')
+cursor = conn.cursor()
+cursor.execute('SELECT full_name, markdown_path FROM individuals')
+for name, path in cursor.fetchall():
+    if not Path(path).exists():
+        print(f'MISSING: {name} -> {path}')
+conn.close()
+"
 
-### Monthly
-
-- Run enrichment pass on high-priority contacts
-- Generate summary reports (contacts by company, role, tag)
-- Archive inactive contacts (status: "inactive")
-
-### Quarterly
-
-- Audit for duplicate entries
-- Reconcile with `N5/lists/networking-contacts.jsonl`
-- Update mutual acquaintances links
-
----
-
-## Related Files
-
-- **Command**: `N5/commands/networking-event-process.md`
-- **Script**: `N5/scripts/n5_networking_event_process.py`
-- **List**: `N5/lists/networking-contacts.jsonl`
-- **Voice Prefs**: `N5/prefs/communication/voice.md`
-- **Essential Links**: `N5/prefs/communication/essential-links.json`
-- **Stakeholder Profiler**: `N5/scripts/blocks/stakeholder_profile_generator.py`
-
----
-
-## Future Enhancements
-
-- [ ] Organizational CRM (separate from individuals)
-- [ ] Cross-reference individuals ↔ organizations
-- [ ] Automated enrichment scheduling
-- [ ] Relationship strength scoring
-- [ ] Follow-up reminder system
-- [ ] SQLite backend for faster queries (when >500 contacts)
-- [ ] Export to external CRM systems (HubSpot, Salesforce)
+# Check for orphaned files (no database record)
+python3 -c "
+import sqlite3
+from pathlib import Path
+conn = sqlite3.connect('Knowledge/crm/crm.db')
+cursor = conn.cursor()
+cursor.execute('SELECT markdown_path FROM individuals')
+db_paths = {p for (p,) in cursor.fetchall()}
+file_paths = {f'Knowledge/crm/individuals/{f.name}' for f in Path('Knowledge/crm/individuals').glob('*.md')}
+orphans = file_paths - db_paths
+for o in orphans:
+    print(f'ORPHAN: {o}')
+conn.close()
+"
+```
 
 ---
 
-**Last Updated**: 2025-10-09  
-**Maintainer**: V (via N5 OS)
+## Historical Notes
+
+### 2025-10-14: Consolidation Complete
+- Unified from `profiles/` → `individuals/`
+- 57 records migrated successfully
+- Full documentation: `file N5/logs/CRM_CONSOLIDATION_FINAL_SUMMARY.md`
+
+---
+
+## Support
+
+**For Issues:**
+- Report: Bottom of left sidebar → "Report an issue"
+- Discord: https://discord.gg/zocomputer
+
+**Related Documentation:**
+- Status Report: `file Documents/CRM_Consolidation_Status_Report.md`
+- Final Summary: `file N5/logs/CRM_CONSOLIDATION_FINAL_SUMMARY.md`
+- Thread Archive: `file N5/logs/threads/2025-10-14-1143_Meeting-Prep-Digest-V2-Phase-3-Complete_OIVq/`
+
+---
+
+*Quick Reference v1.0 | 2025-10-14*

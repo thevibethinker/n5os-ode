@@ -74,7 +74,7 @@
 I created 3 profiles from your Oct 14 meetings as examples:
 
 ### 1. Michael Maher (Cornell)
-**File:** `file 'Knowledge/crm/profiles/michael-maher-cornell.md'`
+**File:** `file 'Knowledge/crm/individuals/michael-maher-cornell.md'`
 
 **What I figured out:**
 - MBA Career Advisor - Tech at Cornell
@@ -87,7 +87,7 @@ I created 3 profiles from your Oct 14 meetings as examples:
 ---
 
 ### 2. Fei Ma (Nira)
-**File:** `file 'Knowledge/crm/profiles/fei-ma-nira.md'`
+**File:** `file 'Knowledge/crm/individuals/fei-ma-nira.md'`
 
 **What I figured out:**
 - Works at Nira (from email domain)
@@ -104,7 +104,7 @@ I created 3 profiles from your Oct 14 meetings as examples:
 ---
 
 ### 3. Elaine Pak
-**File:** `file 'Knowledge/crm/profiles/elaine-pak.md'`
+**File:** `file 'Knowledge/crm/individuals/elaine-pak.md'`
 
 **What I figured out:**
 - Personal Gmail (not company email)
@@ -139,9 +139,9 @@ Pick the best fit for each person:
 
 ### 1. Review the 3 Test Profiles
 Open and read:
-- `file 'Knowledge/crm/profiles/michael-maher-cornell.md'`
-- `file 'Knowledge/crm/profiles/fei-ma-nira.md'`
-- `file 'Knowledge/crm/profiles/elaine-pak.md'`
+- `file 'Knowledge/crm/individuals/michael-maher-cornell.md'`
+- `file 'Knowledge/crm/individuals/fei-ma-nira.md'`
+- `file 'Knowledge/crm/individuals/elaine-pak.md'`
 
 **Check:**
 - Is the format useful?
@@ -182,11 +182,11 @@ Once you've reviewed and answered questions, I'll:
 ## Files to Review
 
 1. **Overview (this file):** `file 'N5/STAKEHOLDER_SYSTEM_OVERVIEW.md'`
-2. **Full documentation:** `file 'Knowledge/crm/profiles/README.md'`
+2. **Full documentation:** `file 'Knowledge/crm/individuals/README.md'`
 3. **Test profiles:**
-   - `file 'Knowledge/crm/profiles/michael-maher-cornell.md'`
-   - `file 'Knowledge/crm/profiles/fei-ma-nira.md'`
-   - `file 'Knowledge/crm/profiles/elaine-pak.md'`
+   - `file 'Knowledge/crm/individuals/michael-maher-cornell.md'`
+   - `file 'Knowledge/crm/individuals/fei-ma-nira.md'`
+   - `file 'Knowledge/crm/individuals/elaine-pak.md'`
 4. **Handoff details:** `file 'N5/logs/threads/2025-10-12-1926_stakeholder-system-build_3Bqv/2025-10-12-stakeholder-reservoir-implementation.md'`
 
 ---

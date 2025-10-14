@@ -80,7 +80,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # Configuration
-CRM_PROFILES_DIR = Path("/home/workspace/Knowledge/crm/profiles")
+CRM_PROFILES_DIR = Path("/home/workspace/Knowledge/crm/individuals")
 INDEX_FILE = CRM_PROFILES_DIR / "index.jsonl"
 PENDING_DIR = CRM_PROFILES_DIR / ".pending_updates"
 STATE_FILE = Path("/home/workspace/N5/.state/email_scanner_state.json")

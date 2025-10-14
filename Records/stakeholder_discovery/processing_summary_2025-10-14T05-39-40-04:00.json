@@ -1,0 +1,8 @@
+{
+  "processed_at": "2025-10-14T05:39:40-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files present in /home/workspace/Records/Temporary/email_staging or its subfolders. No extraction performed."
+}

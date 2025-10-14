@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-14T08:10:27-04:00",
+  "staging_dir": "Records/Temporary/email_staging",
+  "discovery_dir": "Records/stakeholder_discovery",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No staging files present under 'Records/Temporary/email_staging'. No deletions performed."
+}
