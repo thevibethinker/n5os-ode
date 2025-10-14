@@ -192,7 +192,7 @@ For each selected block:
 **3. CRM INTEGRATION** ⭐ NEW
 - **Auto-create profile** for: FOUNDER, INVESTOR, CUSTOMER, COMMUNITY, NETWORKING
 - **Skip for**: JOB_SEEKER (goes to recruitment workflow)
-- Profile path: `Knowledge/crm/individuals/[firstname-lastname].md`
+- Profile path: `Knowledge/crm/profiles/[firstname-lastname].md`
 - Status: Note if profile was created
 - Mutual Acquaintances: List if identified, mark [None identified - needs enrichment]
 - **Enrichment Priority**:
@@ -398,7 +398,7 @@ Before finalizing, verify:
 
 ### CRM Integration
 
-**Status:** ✅ Profile created at `Knowledge/crm/individuals/hamoon-ekhtiari.md`  
+**Status:** ✅ Profile created at `Knowledge/crm/profiles/hamoon-ekhtiari.md`  
 **Mutual Acquaintances:** [None identified - needs enrichment]  
 **Enrichment Priority:** HIGH (active partnership exploration, strong product fit signals)  
 

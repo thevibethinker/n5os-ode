@@ -3,7 +3,7 @@
 Migration script to transfer existing CRM markdown files to SQLite database.
 
 This script:
-1. Scans Knowledge/crm/individuals/*.md files
+1. Scans Knowledge/crm/profiles/*.md files
 2. Extracts structured data from markdown
 3. Populates SQLite database
 4. Maintains links between DB records and markdown files
@@ -181,7 +181,7 @@ def generate_sample_data(conn):
             'tags': 'engineering, product, referral_source',
             'source_type': 'referral',
             'notes': 'Transitioned from advisor to potential talent referrer. Knows engineers/PMs.',
-            'markdown_file_path': 'Knowledge/crm/individuals/alex-caveny.md'
+            'markdown_file_path': 'Knowledge/crm/profiles/alex-caveny.md'
         },
         {
             'full_name': 'Jane Smith',
@@ -194,7 +194,7 @@ def generate_sample_data(conn):
             'tags': 'enterprise, saas, warm',
             'source_type': 'conference',
             'notes': 'Met at SaaStr 2023. Interested in platform for Q1 hiring.',
-            'markdown_file_path': 'Knowledge/crm/individuals/jane-smith.md'
+            'markdown_file_path': 'Knowledge/crm/profiles/jane-smith.md'
         }
     ]
     
@@ -300,7 +300,7 @@ def main():
     
     # Option to migrate existing markdown or create samples
     print("\nMigration options:")
-    print("1. Migrate existing markdown files from Knowledge/crm/individuals/")
+    print("1. Migrate existing markdown files from Knowledge/crm/profiles/")
     print("2. Create sample data for testing")
     print("3. Both (migrate existing + add samples)")
     print("4. Skip (just create empty database)")

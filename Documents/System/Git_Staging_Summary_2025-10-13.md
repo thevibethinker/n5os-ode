@@ -99,10 +99,10 @@ Successfully reviewed and staged all changes from recent work sessions. Changes 
 ### Knowledge Base Updates ✅
 
 **CRM Profiles (4 new):**
-- `Knowledge/crm/individuals/ayush-jain.md`
-- `Knowledge/crm/individuals/giovanna-ventola.md`
-- `Knowledge/crm/individuals/rajesh-nerlikar.md`
-- `Knowledge/crm/individuals/shujaat-ahmad.md`
+- `Knowledge/crm/profiles/ayush-jain.md`
+- `Knowledge/crm/profiles/giovanna-ventola.md`
+- `Knowledge/crm/profiles/rajesh-nerlikar.md`
+- `Knowledge/crm/profiles/shujaat-ahmad.md`
 
 **Market Intelligence:**
 - `aggregated_insights_GTM.md` - Primary v1.3
@@ -167,7 +167,7 @@ Successfully reviewed and staged all changes from recent work sessions. Changes 
 - `ExportedThreads/`
 
 **Still modified (needs resolution):**
-- `Knowledge/crm/individuals/giovanna-ventola.md` - Has unstaged changes
+- `Knowledge/crm/profiles/giovanna-ventola.md` - Has unstaged changes
 - `N5/logs/threads/2025-10-13-2138_conversation-20251013-213816_UvBk/RESUME.md`
 - `N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit/_metadata.json` - Modified again after staging
 

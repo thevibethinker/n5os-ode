@@ -21,8 +21,8 @@ logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
 STAKEHOLDERS_DIR = WORKSPACE / "N5/stakeholders"
-BACKUPS_DIR = WORKSPACE / "N5/stakeholders/.backups"
-REVIEW_DIR = WORKSPACE / "N5/stakeholders/.pending_updates"
+BACKUPS_DIR = WORKSPACE / "Knowledge/crm/profiles/.backups"
+REVIEW_DIR = WORKSPACE / "Knowledge/crm/profiles/.pending_updates"
 
 # Ensure directories exist
 BACKUPS_DIR.mkdir(parents=True, exist_ok=True)

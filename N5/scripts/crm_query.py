@@ -127,7 +127,7 @@ def add_individual(args):
     
     # Generate markdown file path from name
     md_filename = args.name.lower().replace(' ', '-') + '.md'
-    md_path = f'Knowledge/crm/individuals/{md_filename}'
+    md_path = f'Knowledge/crm/profiles/{md_filename}'
     
     cursor.execute("""
         INSERT INTO individuals (
@@ -162,7 +162,7 @@ def add_individual(args):
 
 def create_markdown_file(individual_id, args):
     """Create markdown file for individual"""
-    md_path = Path('/home/workspace') / f'Knowledge/crm/individuals/{args.name.lower().replace(" ", "-")}.md'
+    md_path = Path('/home/workspace') / f'Knowledge/crm/profiles/{args.name.lower().replace(" ", "-")}.md'
     md_path.parent.mkdir(parents=True, exist_ok=True)
     
     content = f"""---

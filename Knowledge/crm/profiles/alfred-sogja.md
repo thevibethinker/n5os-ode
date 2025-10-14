@@ -1,17 +1,16 @@
 ---
-name: "Alfred Sogja"
-email_primary: ""
-email_aliases: []
-organization: "Koretsu (mentioned)"
-role: "Community operator / project lead"
-first_contact: "2025-09-09"
-last_updated: "2025-10-14"
-lead_type: "LD-INV"
-status: "active"
+name: Alfred Sogja
+email_primary: 
+email_aliases:
+organization: Koretsu (mentioned)
+role: Community operator / project lead
+first_contact: 2025-09-09
+last_updated: 2025-10-14
+lead_type: LD-INV
+status: active
 interaction_count: 0
-last_interaction: "2025-09-09"
+last_interaction: 2025-09-09
 ---
-
 # Alfred Sogja
 
 **Name:** Alfred Sogja

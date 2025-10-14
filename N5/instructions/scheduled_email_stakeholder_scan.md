@@ -102,7 +102,7 @@ python3 scheduled_email_scan.py
 
 **Log File:** `N5/logs/email_scanner.log`  
 **State File:** `N5/.state/email_scanner_state.json`  
-**Queue Location:** `N5/stakeholders/.pending_updates/`
+**Queue Location:** `Knowledge/crm/profiles/.pending_updates/`
 
 ---
 
