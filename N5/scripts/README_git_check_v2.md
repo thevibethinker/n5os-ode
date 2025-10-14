@@ -1,5 +1,12 @@
 # Git Check v2 - Comprehensive Change Auditor
 
+# ======================================================================
+# DEPRECATED - Use Knowledge/crm/profiles/ and crm_query.py instead
+# This script is part of the legacy stakeholder system.
+# Retained for historical reference only.
+# ======================================================================
+
+
 **Version:** 2.0.0  
 **Date:** 2025-10-13  
 **Script:** `N5/scripts/git_change_checker_v2.py`
@@ -54,7 +61,7 @@ Flags modifications to critical system files:
 
 **Critical Components:**
 - `N5/intelligence/*.json`
-- `N5/stakeholders/index.jsonl`
+- `Knowledge/crm/profiles/index.jsonl`
 
 **Severity Levels:**
 - 🚨 CRITICAL: `.git/**`, secrets, credentials, `.env`
