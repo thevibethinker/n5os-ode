@@ -1,17 +1,16 @@
 ---
-name: "Graham Smith"
-email_primary: ""
-email_aliases: []
-organization: ""
-role: ""
-first_contact: "2025-08-26"
-last_updated: "2025-10-14"
-lead_type: "LD-INV"
-status: "active"
+name: Graham Smith
+email_primary: 
+email_aliases: 
+organization: 
+role: 
+first_contact: 2025-08-26
+last_updated: 2025-10-14
+lead_type: LD-INV
+status: active
 interaction_count: 0
-last_interaction: "2025-08-26"
+last_interaction: 2025-08-26
 ---
-
 # Graham Smith
 
 - **Name:** Graham Smith
