@@ -1,3 +1,17 @@
+---
+name: "Tim He"
+email_primary: ""
+email_aliases: []
+organization: "Twill (mentioned in meeting)"
+role: "Recruiting/hiring contact (inferred from discussion)"
+first_contact: "2025-09-03"
+last_updated: "2025-10-14"
+lead_type: "LD-HIR"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-03"
+---
+
 # Tim He
 
 - Organization: Twill (mentioned in meeting)

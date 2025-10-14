@@ -1,3 +1,17 @@
+---
+name: "Giovanna Ventola"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: ""
+first_contact: "2025-09-22"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-22"
+---
+
 # Giovanna Ventola
 
 **Name:** Giovanna Ventola

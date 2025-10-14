@@ -1,3 +1,17 @@
+---
+name: "Emily Nelson de Velasco"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "Founder — reverse-recruiting product (bootstrapped)"
+first_contact: "2025-10-14"
+last_updated: "2025-10-14"
+lead_type: "LD-HIR"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-10-14"
+---
+
 # Emily Nelson de Velasco
 
 - Name: Emily Nelson de Velasco

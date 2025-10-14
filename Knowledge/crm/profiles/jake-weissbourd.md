@@ -1,3 +1,17 @@
+---
+name: "Jake Weissbourd"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "FOHE participant / distribution stakeholder"
+first_contact: "2025-09-16"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-16"
+---
+
 # Jake Weissbourd
 
 - Role: FOHE participant / distribution stakeholder

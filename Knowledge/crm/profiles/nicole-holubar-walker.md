@@ -1,3 +1,17 @@
+---
+name: "Nicole Holubar Walker — CRM Profile"
+email_primary: ""
+email_aliases: []
+organization: "Emory University — Advancement & Alumni Engagement / Emory Alumni Association (EAA)"
+role: ""
+first_contact: "2025-09-05"
+last_updated: "2025-10-14"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-05"
+---
+
 # Nicole Holubar Walker — CRM Profile
 
 **Name:** Nicole Holubar Walker

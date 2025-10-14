@@ -1,3 +1,17 @@
+---
+name: "Caleb Thornton"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "** Event organizer / Founder"
+first_contact: "2025-09-11"
+last_updated: "2025-10-14"
+lead_type: "LD-NET"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-11"
+---
+
 # Caleb Thornton
 
 - **Name:** Caleb Thornton

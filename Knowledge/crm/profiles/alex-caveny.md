@@ -1,3 +1,17 @@
+---
+name: "Alex Caveny"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "Advisor / GTM coach"
+first_contact: "2025-09-08"
+last_updated: "2025-10-14"
+lead_type: "LD-HIR"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-08"
+---
+
 # Alex Caveny
 
 - Role: Advisor / GTM coach

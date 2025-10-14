@@ -1,3 +1,17 @@
+---
+name: "Mihir Makwana"
+email_primary: ""
+email_aliases: []
+organization: ""
+role: "Founder / GTM operator"
+first_contact: "2025-09-22"
+last_updated: "2025-10-14"
+lead_type: "LD-NET"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-22"
+---
+
 # Mihir Makwana
 
 - name: Mihir Makwana

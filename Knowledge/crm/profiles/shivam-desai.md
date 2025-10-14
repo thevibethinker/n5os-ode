@@ -1,3 +1,17 @@
+---
+name: "Shivam Desai"
+email_primary: ""
+email_aliases: []
+organization: "Pace (presumed)"
+role: "Community connector / events facilitator"
+first_contact: "2025-09-09"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-09"
+---
+
 # Shivam Desai
 
 - Organization: Pace (presumed)

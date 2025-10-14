@@ -1,3 +1,17 @@
+---
+name: "Jacob Bank"
+email_primary: ""
+email_aliases: []
+organization: "Relay App"
+role: ""
+first_contact: "2025-09-04"
+last_updated: "2025-10-14"
+lead_type: "LD-INV"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-04"
+---
+
 # Jacob Bank
 
 - Name: Jacob Bank

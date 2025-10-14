@@ -1,3 +1,17 @@
+---
+name: "Meera Krishnan — Support to Succeed"
+email_primary: ""
+email_aliases: []
+organization: "Support to Succeed"
+role: "Founder / Community Lead"
+first_contact: "2025-09-08"
+last_updated: "2025-10-14"
+lead_type: "LD-COM"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-08"
+---
+
 # Meera Krishnan — Support to Succeed
 
 - Name: Meera Krishnan

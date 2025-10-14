@@ -1,3 +1,17 @@
+---
+name: "Ulrik Soderstrom"
+email_primary: ""
+email_aliases: []
+organization: "McKinsey Alumni Founders Monthly"
+role: "Organizer, McKinsey Alumni Founders Monthly"
+first_contact: "2025-09-09"
+last_updated: "2025-10-14"
+lead_type: "LD-INV"
+status: "active"
+interaction_count: 0
+last_interaction: "2025-09-09"
+---
+
 # Ulrik Soderstrom
 
 - Role: Organizer, McKinsey Alumni Founders Monthly
