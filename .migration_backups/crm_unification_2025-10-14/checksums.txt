@@ -1,0 +1,4 @@
+ff6234f79f3954fc816f5c6d20f2b528  Knowledge_crm_backup.tar.gz
+bd93dd41847a6c1ebb6452efe4729621  N5_stakeholders_backup.tar.gz
+afdd94db055d847dd2314c2453fa630c  crm_backup.sql
+1244e0594417d93de983a4355de9ccd0  stakeholders_index.jsonl
