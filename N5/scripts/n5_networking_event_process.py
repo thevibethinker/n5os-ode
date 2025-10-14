@@ -920,7 +920,7 @@ Return ONLY the message text, no other formatting.
         print(f"   - Medium/General: {len(contacts) - len(high_priority)}")
         
         print(f"\n📁 Generated Files:")
-        print(f"   - Individual Profiles: {len(contacts)} files in Knowledge/crm/individuals/")
+        print(f"   - Individual Profiles: {len(contacts)} files in Knowledge/crm/profiles/")
         print(f"   - Event Log: Knowledge/crm/events/{event_data['date'][:7]}/{event_data['id']}.md")
         print(f"   - LinkedIn Messages: {len(contacts)} files in Knowledge/crm/follow-ups/")
         

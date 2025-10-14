@@ -20,7 +20,7 @@
 - ✅ Jake (FOHE) — Oct 15, 12:00 PM
 - ✅ Hei-Yue Pang (Year Up United) — Oct 16, 2:00 PM
 
-**All profiles:** `file 'N5/stakeholders/'`
+**All profiles:** `file 'Knowledge/crm/profiles/'`
 
 ---
 
@@ -152,7 +152,7 @@
 
 ### Profiles Created:
 ```
-N5/stakeholders/
+Knowledge/crm/profiles/
 ├── michael-maher-cornell.md       (existing)
 ├── fei-ma-nira.md                 (existing)
 ├── elaine-pak.md                  (existing)
@@ -258,7 +258,7 @@ ls -lh N5/records/crm/staging/
 
 ### View stakeholder index:
 ```bash
-cat N5/stakeholders/index.jsonl | jq -s .
+cat Knowledge/crm/profiles/index.jsonl | jq -s .
 ```
 
 ---

@@ -313,7 +313,7 @@ I just attended SF Tech Week. Here are my contacts:
 
 ### Paths
 - **CRM Base**: `Knowledge/crm/`
-- **Individuals**: `Knowledge/crm/individuals/`
+- **Individuals**: `Knowledge/crm/profiles/`
 - **Events**: `Knowledge/crm/events/YYYY-MM/`
 - **Follow-Ups**: `Knowledge/crm/follow-ups/`
 - **Indexes**: `Knowledge/crm/index.jsonl`, `Knowledge/crm/events/index.jsonl`

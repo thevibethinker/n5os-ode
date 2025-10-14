@@ -77,7 +77,7 @@ class StakeholderIndex:
             "lead_type": lead_type,
             "status": status,
             "last_updated": datetime.now().strftime("%Y-%m-%d"),
-            "file": f"N5/stakeholders/{slug}.md"
+            "file": f"Knowledge/crm/profiles/{slug}.md"
         }
         self.entries[email.lower()] = entry
         self.save()

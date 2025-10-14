@@ -87,7 +87,7 @@ git commit --no-verify
 
 ### Critical Components
 - `N5/intelligence/*.json`
-- `N5/stakeholders/index.jsonl`
+- `Knowledge/crm/profiles/index.jsonl`
 
 ## Detection Features
 

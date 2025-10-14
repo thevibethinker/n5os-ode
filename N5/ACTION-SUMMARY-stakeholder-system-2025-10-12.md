@@ -35,8 +35,8 @@
 
 ### For You (Optional Review)
 - **Review updated profiles:**
-  - `file 'N5/stakeholders/fei-ma-nira.md'` (Founder, co-selling partner)
-  - `file 'N5/stakeholders/elaine-pak.md'` (RAG chatbot interest)
+  - `file 'Knowledge/crm/profiles/fei-ma-nira.md'` (Founder, co-selling partner)
+  - `file 'Knowledge/crm/profiles/elaine-pak.md'` (RAG chatbot interest)
 - **Confirm:** Is the context accurate for Oct 14 meetings?
 
 ### For Me (This Week)
@@ -137,15 +137,15 @@ Michael Maher x Vrijen (3:00 PM)
 
 ### Documentation
 - **System overview:** `file 'N5/STAKEHOLDER_SYSTEM_OVERVIEW.md'`
-- **Full docs:** `file 'N5/stakeholders/README.md'`
+- **Full docs:** `file 'Knowledge/crm/profiles/README.md'`
 - **Safeguards:** `file 'N5/docs/stakeholder-profile-update-safeguards.md'`
 - **Test results:** `file 'N5/tests/stakeholder-system-test-results-2025-10-12.md'`
-- **Profile updates:** `file 'N5/stakeholders/PROFILE-UPDATES-2025-10-12.md'`
+- **Profile updates:** `file 'Knowledge/crm/profiles/PROFILE-UPDATES-2025-10-12.md'`
 
 ### Profiles
-- **Fei Ma:** `file 'N5/stakeholders/fei-ma-nira.md'`
-- **Elaine Pak:** `file 'N5/stakeholders/elaine-pak.md'`
-- **Michael Maher:** `file 'N5/stakeholders/michael-maher-cornell.md'`
+- **Fei Ma:** `file 'Knowledge/crm/profiles/fei-ma-nira.md'`
+- **Elaine Pak:** `file 'Knowledge/crm/profiles/elaine-pak.md'`
+- **Michael Maher:** `file 'Knowledge/crm/profiles/michael-maher-cornell.md'`
 
 ### Scripts
 - **Profile manager:** `file 'N5/scripts/stakeholder_manager.py'`
@@ -158,17 +158,17 @@ Michael Maher x Vrijen (3:00 PM)
 
 ### View a Profile
 ```bash
-cat N5/stakeholders/fei-ma-nira.md
+cat Knowledge/crm/profiles/fei-ma-nira.md
 ```
 
 ### Check Index
 ```bash
-cat N5/stakeholders/index.jsonl | jq
+cat Knowledge/crm/profiles/index.jsonl | jq
 ```
 
 ### List Backups
 ```bash
-ls -lh N5/stakeholders/.backups/
+ls -lh Knowledge/crm/profiles/.backups/
 ```
 
 ### Python Usage
