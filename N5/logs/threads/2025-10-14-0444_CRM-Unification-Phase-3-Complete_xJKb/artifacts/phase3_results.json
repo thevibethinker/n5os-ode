@@ -1,0 +1,42 @@
+{
+  "migrated": [
+    {
+      "slug": "michael-maher-cornell",
+      "email": "mmm429@cornell.edu",
+      "source": "/home/workspace/N5/stakeholders/michael-maher-cornell.md",
+      "target": "/home/workspace/Knowledge/crm/profiles/michael-maher-cornell.md"
+    },
+    {
+      "slug": "fei-ma-nira",
+      "email": "fei@withnira.com",
+      "source": "/home/workspace/N5/stakeholders/fei-ma-nira.md",
+      "target": "/home/workspace/Knowledge/crm/profiles/fei-ma-nira.md"
+    },
+    {
+      "slug": "elaine-pak",
+      "email": "epak171@gmail.com",
+      "source": "/home/workspace/N5/stakeholders/elaine-pak.md",
+      "target": "/home/workspace/Knowledge/crm/profiles/elaine-pak.md"
+    },
+    {
+      "slug": "kat-de-haen-fourth-effect",
+      "email": "kat@thefourtheffect.com",
+      "source": "/home/workspace/N5/stakeholders/kat-de-haen-fourth-effect.md",
+      "target": "/home/workspace/Knowledge/crm/profiles/kat-de-haen-fourth-effect.md"
+    },
+    {
+      "slug": "jake-fohe",
+      "email": "jake@fohe.org",
+      "source": "/home/workspace/N5/stakeholders/jake-fohe.md",
+      "target": "/home/workspace/Knowledge/crm/profiles/jake-fohe.md"
+    },
+    {
+      "slug": "hei-yue-pang-yuu",
+      "email": "hpang@yearupunited.org",
+      "source": "/home/workspace/N5/stakeholders/hei-yue-pang-yuu.md",
+      "target": "/home/workspace/Knowledge/crm/profiles/hei-yue-pang-yuu.md"
+    }
+  ],
+  "skipped_duplicates": [],
+  "errors": []
+}
