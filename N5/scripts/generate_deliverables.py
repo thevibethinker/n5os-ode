@@ -17,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-MEETINGS_DIR = WORKSPACE / "Careerspan" / "Meetings"
+MEETINGS_DIR = WORKSPACE / "N5" / "records" / "meetings"
 
 async def generate_deliverables(
     meeting_folder: str,
@@ -59,7 +59,8 @@ async def generate_deliverables(
         }
     
     # Load knowledge base if not provided
-    if knowledge_base is None:
+    # (Only needed for certain deliverable types, not email)
+    if knowledge_base is None and any(d in deliverable_types for d in ["blurb", "one_pager_memo", "proposal_pricing"]):
         from deliverable_orchestrator import DeliverableOrchestrator
         temp_orch = DeliverableOrchestrator(transcript_content, meeting_info, {})
         knowledge_base = temp_orch._load_knowledge_base()
@@ -89,46 +90,40 @@ async def generate_deliverables(
                 logger.info(f"✓ Blurb generated: {path}")
                 
             elif deliverable_type == "follow_up_email":
-                # Use command-based email generator (SSOT)
-                logger.info("Generating follow-up email via command system...")
+                # Use new CLI script for email generation
+                logger.info("Generating follow-up email via n5_follow_up_email_generator.py...")
                 
-                # Prepare context for command
-                context_note = f"""
-Generate follow-up email for meeting.
-
-Context:
-- Meeting folder: {meeting_dir}
-- Transcript available at: {meeting_dir / 'transcript.txt'}
-- Meeting info: {json.dumps(meeting_info, indent=2)}
-
-Reference: command 'N5/commands/follow-up-email-generator.md'
-
-Generate the email following all style constraints from:
-file 'N5/docs/EMAIL_GENERATOR_STYLE_CONSTRAINTS.md'
-
-Save output to: {meeting_dir}/follow-up-email-draft.md
-"""
+                import subprocess
                 
-                # Log that this requires manual invocation for now
-                logger.info("NOTE: Follow-up email generation uses command-based workflow.")
-                logger.info("Command file: N5/commands/follow-up-email-generator.md")
-                logger.info(f"Context for generation: {meeting_dir}")
+                script_path = WORKSPACE / "N5/scripts/n5_follow_up_email_generator.py"
+                output_dir = deliverables_dir
                 
-                # Create placeholder file indicating command-based generation needed
-                placeholder_path = meeting_dir / "follow-up-email-draft.md"
-                with open(placeholder_path, 'w') as f:
-                    f.write("# Follow-Up Email Draft\n\n")
-                    f.write("**Status:** Pending generation via command system\n\n")
-                    f.write("To generate:\n")
-                    f.write(f"1. Load command 'N5/commands/follow-up-email-generator.md'\n")
-                    f.write(f"2. Reference meeting folder: {meeting_dir}\n")
-                    f.write(f"3. Use transcript: {meeting_dir / 'transcript.txt'}\n")
-                    f.write(f"4. Apply style constraints: N5/docs/EMAIL_GENERATOR_STYLE_CONSTRAINTS.md\n\n")
-                    f.write(context_note)
-                
-                generated.append({"type": "follow_up_email", "path": str(placeholder_path)})
-                logger.info(f"✓ Follow-up email placeholder created: {placeholder_path}")
-                logger.info("  Run command-based generator to complete email draft")
+                try:
+                    result = subprocess.run(
+                        [
+                            "python3",
+                            str(script_path),
+                            "--meeting-folder", str(meeting_dir),
+                            "--output-dir", str(output_dir)
+                        ],
+                        capture_output=True,
+                        text=True,
+                        check=True
+                    )
+                    
+                    logger.info("✓ Email generator completed successfully")
+                    
+                    # Check for generated files
+                    draft_path = output_dir / "follow_up_email_draft.md"
+                    if draft_path.exists():
+                        generated.append({"type": "follow_up_email", "path": str(draft_path)})
+                        logger.info(f"✓ Follow-up email generated: {draft_path}")
+                    else:
+                        logger.warning("Email generator ran but draft not found")
+                        
+                except subprocess.CalledProcessError as e:
+                    logger.error(f"Email generator failed: {e.stderr}")
+                    raise
                 
             elif deliverable_type == "one_pager_memo":
                 from blocks.deliverables import one_pager_memo_generator
