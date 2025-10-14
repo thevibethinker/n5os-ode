@@ -106,6 +106,11 @@ Load modules selectively based on task context. **Do not load all modules by def
 - Email domains (mycareerspan.com, theapply.ai)
 - Employee canonicalization
 
+**CRM Usage** → `file 'N5/prefs/operations/crm-usage.md'`
+- When to query CRM database
+- How to find people and connections
+- Network intelligence and interaction tracking
+
 **Naming Conventions** → `file 'N5/prefs/naming-conventions.md'`
 - File and folder naming rules
 - Execution naming patterns

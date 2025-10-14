@@ -1,0 +1,78 @@
+{
+  "meeting_id": "2025-10-09-18-06-05_alex-x-vrijen-wisdom-partners-coaching",
+  "processing_context": {
+    "processed_date": "2025-10-14T05:38:54Z",
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "stakeholder_type": "ADVISOR",
+    "blocks_generated": 7,
+    "blocks_list": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP",
+      "B05_OUTSTANDING_QUESTIONS",
+      "B07_WARM_INTRO_BIDIRECTIONAL"
+    ]
+  },
+  "meeting_details": {
+    "date": "2025-10-09",
+    "participants": ["Alex Caveny", "Vrijen Attawar"],
+    "stakeholder_classification": "ADVISOR",
+    "meeting_type": "Regular check-in / Strategic coaching session",
+    "duration_estimate": "46+ minutes (transcript)",
+    "transcript_quality": "Excellent"
+  },
+  "crm_integration": {
+    "profile_created": true,
+    "profile_path": "Knowledge/crm/individuals/alex-caveny.md",
+    "enrichment_priority": "HIGH",
+    "enrichment_status": "pending",
+    "linkedin_research_required": true
+  },
+  "gdrive_update": {
+    "gdrive_id": "1tpIPt-xvE6sLP7_aFLBHFXR2P_1-dDp5",
+    "original_filename": "Alex x Vrijen - Wisdom Partners Coaching-transcript-2025-10-09T18-06-05.257Z.docx",
+    "rename_required": true,
+    "new_filename_prefix": "[ZO-PROCESSED]"
+  },
+  "deliverables": {
+    "by_alex": [
+      "PM community info/link (Ali Owens context)",
+      "Warm intro facilitation to Ali Owens"
+    ],
+    "by_vrijen": [
+      "Benchmark current mental/emotional state",
+      "Request warm intro to Ali Owens",
+      "Explore mood journaling system",
+      "Consider Ukrainian tech diaspora free access offer"
+    ]
+  },
+  "key_insights": [
+    "Burnout detection requires baseline benchmarking",
+    "Hiring decisions hinge on 'seeing someone in the role' visualization moment",
+    "First 10-15 seconds of human interaction contain disproportionate signal",
+    "Differentiation critical in crowded markets (selection fatigue)",
+    "Founders apply all-or-nothing mentality even to recovery"
+  ],
+  "strategic_questions": [
+    "What information enables hiring managers to 'see someone in the role'?",
+    "Subscription vs. transactional placement model?",
+    "How to implement FOMO mechanics without seeming manipulative?",
+    "What's ideal hiring manager deliverable format ('baseball card')?",
+    "How to differentiate Careerspan in crowded recruiting tech space?"
+  ],
+  "processing_notes": {
+    "conditional_blocks_generated": 0,
+    "conditional_blocks_skipped": [
+      "B06 (no pilot discussion)",
+      "B11 (fewer than 3 substantive metrics)",
+      "B15 (no complex multi-party dynamics)"
+    ],
+    "stakeholder_specific_blocks": 2,
+    "note": "ADVISOR stakeholder type not explicitly defined in registry v1.5, used closest match (NETWORKING 9-block structure) plus strategic advisory context"
+  }
+}
