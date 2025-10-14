@@ -1,0 +1,12 @@
+{
+  "meeting_id": "2025-09-22_external-heather-wixson",
+  "processed_at": "2025-10-14T00:49:41Z",
+  "processor": "Zo (Registry System v1.5)",
+  "blocks_generated": 13,
+  "required_blocks": ["B26","B01","B02","B08","B21","B31","B25"],
+  "additional_blocks": ["B05","B24","B13","B27","B07","B11"],
+  "stakeholder_type": "CUSTOMER / PARTNER",
+  "crm_profile_created": "Knowledge/crm/individuals/heather-wixson.md",
+  "gdrive_id": "18HLltbrjnrpFPNrIIZZ8PEbLCHrBrdNT",
+  "original_filename": "Heather Wixson x Vrijen-transcript-2025-09-22T17-54-04.998Z.docx"
+}

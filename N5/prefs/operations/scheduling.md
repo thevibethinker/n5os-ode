@@ -92,8 +92,8 @@
 
 ## Related Files
 
+- **Scheduled Task Protocol:** `file 'N5/prefs/operations/scheduled-task-protocol.md'` (creation standards)
 - **Safety Requirements:** `file 'N5/prefs/system/safety.md'`
-- **Howie Scheduling (Reference):** `file 'Knowledge/context/howie_instructions/preferences.md'`
 
 ---
 
