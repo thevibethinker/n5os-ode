@@ -1,14 +1,21 @@
 # Giovanna Ventola
 
-- Name: Giovanna Ventola
-- Role: Community leader / Founder of Rise; TikTok career creator
-- Source: Intro by Tim He; meeting 2025-09-22 with Careerspan
-- Stakeholder type: community
-- Enrichment priority: MEDIUM
-- Notes: Strong community engagement via TikTok; members are mid‑career (35–55), learning‑oriented; interested in private job distribution and resources for members
+**Name:** Giovanna Ventola
+**Source meeting:** 2025-09-22_giovanna-ventola-and-vrijen-attawar-logan-currie
 
-**Next enrichment tasks**:
-- LinkedIn profile lookup for professional email
-- Estimate Rise membership size / engagement metrics
-- Identify mutual connections (Tim He)
+**Roles / Notes:** Community leader (Rise); active TikTok creator since Jan 2024; focuses on mid-career professionals (35–55).
+
+**Contact / Links:**
+- [Profile enrichment needed — view LinkedIn publicly]
+
+**Enrichment priority:** HIGH
+
+**Initial notes:**
+- Interested in trying Careerspan trial for Rise members; receptive to revenue-sharing model for warm intros.
+- Follow-up: Vrijen to send trial code + BS detector and Logan to send resource.
+
+**Next enrichment tasks:**
+- LinkedIn view
+- Member count & engagement metrics for Rise
+- Identify mutual acquaintances (Tim)
 

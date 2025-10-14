@@ -1,0 +1,553 @@
+**\
+00:12**\
+Vrijen Attawar\
+Hey, Heather. Hi there. How are you? I\'m good, I\'m good. How are you?
+
+**\
+00:18**\
+Heather Wixson\
+I\'m okay.
+
+**\
+00:21**\
+Vrijen Attawar\
+Oh, man, it has been a minute. When did we speak? A couple of months
+ago.
+
+**\
+00:27**\
+Heather Wixson\
+It\'s been a while.
+
+**\
+00:29**\
+Vrijen Attawar\
+Yeah, yeah, it really has been. Sorry, I\'m just gonna go grab a coffee
+real quick and then I\'m gonna be right back with you. But how are you?
+Congratulations on Landed Lee. This is genuinely really great.
+
+**\
+00:42**\
+Heather Wixson\
+What\'s that?
+
+**\
+00:43**\
+Vrijen Attawar\
+I said landedly seems genuinely really great.
+
+**\
+00:47**\
+Heather Wixson\
+It\'s been really interesting so far, trying to just get. Lay in the
+land and see what they\'re doing.
+
+**\
+00:54**\
+Vrijen Attawar\
+And what\'s that, what have they got you doing?
+
+**\
+00:59**\
+Heather Wixson\
+Lots of career coaching. Mostly been talking to folks up to this point,
+you know, trying to figure out a way to help them get a little more
+organized. You know, the job seekers are generally like mid career folks
+struggling to move. And I was just thinking I\'m, you know, maybe
+there\'s a place for career span and in there kind of to help them out
+with that.
+
+**\
+01:33**\
+Vrijen Attawar\
+Absolutely. And so you\'ve been brought on your career coach. I saw that
+on their model. It\'s essentially folks that get the help up front and
+then they pay once they get the job, get the gig right. Or nine months,
+whatever comes sooner. Yep, yep, gotcha. And the. And, and you know, I,
+I recognize there are all sorts of business models in this sort of area,
+but as I\'m sure, you know, different ones sort of like have different
+incentives set up. Like what are the most importantly, what are the
+incentives for you? Like, like what makes your life easier, what makes
+it like, better for your students? Like, let\'s start there and then
+I\'ll ask about the company as well.
+
+**\
+02:21**\
+Heather Wixson\
+Yeah, well, I think where I\'m. What would be helpful to me is to have a
+view kind of where they\'re at, you know, a place where they, where I
+can see where, you know, where they are, where I can manage them.
+They\'re using Hunter right now as a platform and I\'m really struggling
+with it, but I haven\'t anybody really show me how they\'re using it
+either. But how many folks on your team? On my team total? Only about 15
+right now.
+
+**\
+02:59**\
+Vrijen Attawar\
+Wow. Okay. Oh, wow. 15 coaches.
+
+**\
+03:02**\
+Heather Wixson\
+Not 15 coaches. No, there\'s only about three coaches.
+
+**\
+03:05**\
+Vrijen Attawar\
+Gotcha. Okay. Yeah, I was gonna say that\'s like a fleet, like a small
+university.
+
+**\
+03:10**\
+Heather Wixson\
+No, no, there he is. No, there\'s.
+
+**\
+03:12**\
+Vrijen Attawar\
+Sorry about that.
+
+**\
+03:14**\
+Heather Wixson\
+No, no, there are some, you know, some folks that work with us who call
+them implementation specialists. They kind of, you know, help the
+clients, you know, move forward with suggestions that we make on their
+resumes and LinkedIn, you know, it\'s kind of this.
+
+**\
+03:29**\
+Vrijen Attawar\
+Right.
+
+**\
+03:30**\
+Heather Wixson\
+It\'s very interesting. Gotcha.
+
+**\
+03:32**\
+Vrijen Attawar\
+And, and how does, like, does Landedly also seek out employers and try
+to make that match happen? Is that where they get like, sort of money in
+the back end? I presume.
+
+**\
+03:45**\
+Heather Wixson\
+Think that\'s where they are headed. Right. You know, in full
+transparency. I was on board about a week before my supervisor went on
+vacation.
+
+**\
+03:56**\
+Vrijen Attawar\
+That\'ll happen.
+
+**\
+03:57**\
+Heather Wixson\
+I know, right. So he\'s back tomorrow and I\'m hoping we can really sit
+down and have some time, because right now what I\'ve been doing a lot
+of is kind of onboarding kind of new clients, talking to them resumes,
+LinkedIn, going through some ideas and, you know, where you want to end
+up in that kind of thing. But, you know, something I want to think about
+is like, then what? Right. You know, you\'ve done all this onboarding,
+all of this. You know, I\'d love them to have, you know, there\'s. Yeah,
+we can do a lot of this for them, but we\'re not gonna be able to sit in
+that interview.
+
+**\
+04:35**\
+Heather Wixson\
+And I think that\'s where career span, I always think of career span is
+really great interview prep, as well as kind of, you know, looking at
+job postings you\'re thinking of applying for and all kinds of just cool
+things. I was in there.
+
+**\
+04:49**\
+Vrijen Attawar\
+Gotcha. How big is the student base to the extent that you can share?
+
+**\
+04:59**\
+Heather Wixson\
+Think I\'m nuts, but I have no idea. I think we\'re looking at about
+right now. If I\'m looking in the.
+
+**\
+05:06**\
+Vrijen Attawar\
+Yeah. Hundreds, Thousands.
+
+**\
+05:08**\
+Heather Wixson\
+Dozens, I would say. Right. Currently, right now, probably hundreds.
+And. Yeah. And I don\'t. No, I know they\'re purposely like holding back
+a little bit on, you know, promotion and new clients right now because
+we\'re trying to work some things out. But yeah, I think right now we
+have 61 active job searchers. There we go.
+
+**\
+05:40**\
+Vrijen Attawar\
+Okay.
+
+**\
+05:41**\
+Heather Wixson\
+At this point.
+
+**\
+05:42**\
+Vrijen Attawar\
+Gotcha. Okay. No, no sweat. So I think that is. And then I presume, is
+there any sort of incentive or motivation to bring folks back to
+Landedly? I guess there\'s like a reactivation or a retention sort of
+thing. Is there any motivation there?
+
+**\
+05:59**\
+Heather Wixson\
+That is what I think I am trying to work out. Right. Because I know
+you\'re doing a lot on the front end. Right. And what I\'m starting to.
+And again, it sounds like I don\'t know a lot, but I\'m going to learn.
+
+**\
+06:13**\
+Vrijen Attawar\
+No, no, hey, I trust you. I trust you.
+
+**\
+06:16**\
+Heather Wixson\
+What I\'m starting to learn, right, is are some people and of course
+there are. Right. Who aren\'t landing. Right.
+
+**\
+06:24**\
+Vrijen Attawar\
+Right.
+
+**\
+06:25**\
+Heather Wixson\
+I want there to be, you know, a place for them things for them to do
+stuff like that. Right. So that. Yeah, so that. Yeah, there is some
+retention, there\'s some care put in there. Maybe. I don\'t know.
+
+**\
+06:40**\
+Vrijen Attawar\
+Let me, Let me show you where we are. I think you\'re going to be. I
+think you\'re going to be pretty impressed. Normally, I\'m a lot more.
+I\'m a lot more like, oh, it\'s fine. I actually, I. I do actually. I\'m
+very proud of what the team has gotten done so far.
+
+**\
+07:00**\
+Heather Wixson\
+So, I mean, the last time I was in here playing around, I was really
+impressed.
+
+**\
+07:04**\
+Vrijen Attawar\
+Thank you. Thank you. Yeah, it\'s. It\'s looking good. So we have a. You
+know, this is a. A account I will upgrade to pro for free. So right now,
+you know, for the record, like, anyone can just get a free account. We
+make it, like, easy. You don\'t have to put in your id, nothing. So to
+the extent that you just have folks that need help, by all means, you
+know, they can use the account. So still get to, you know, still get
+recommended stories. You can do the vibe check, which is an actual job
+description that you jump in and. And it actually compares you against
+that job and sort of tells you, hey, how good of a fit are you? Right.
+
+**\
+07:44**\
+Vrijen Attawar\
+Oh, this would be a career transition because this role was for a
+project manager and I put in a PM so it knew, hey, that would be you
+making a career transition. You have to. You actually have more to
+prove. You know, sort of little cues like that. It\'ll tell you, hey,
+how do we see your capability through the eyes of a hiring manager? Will
+we hire you or not? What are deal breakers that may apply to you that we
+will remember? So when you say you\'re authorized to work in the. Yes,
+you have said yes. Okay. So that deal breaker doesn\'t count, you know,
+and so it does all of that. It gives you little bits of advice as well.
+So for instance, oh, we got a 404. Oh, I gotta let the team know. One
+second, Just one second.
+
+**\
+08:31**\
+Vrijen Attawar\
+This is one of those things where I will forget if I don\'t just drop it
+in. This is for. Okay, sweet. Done. Okay. So right here. So yeah,
+you\'ll. It\'ll store the job description for you. It\'ll give you that
+summary. It\'ll give you a summary of the position. So this would be
+good for your folks that, you know, just need to be a little bit more
+independent, but also at the same time need some more scaffolding as far
+as what they should be doing. So you can go out and tell them, hey, now
+you can use Vibe Check to figure out whether you\'re a good fit or not.
+Then let\'s say you say, I still want to apply. You can fill in the
+gaps. So this is actually going to. Based on my profile, show me the
+gaps in my profile based on this.
+
+**\
+09:37**\
+Vrijen Attawar\
+Based on this job. So you\'ll see that in a second they can leave notes.
+This is going to connect to the narrative section, so we\'ll let that
+load as well. We have a company that we have a tie up with called Warmer
+Jobs that\'s pretty cool that you can share with folks. It\'s like this.
+It shows you jobs within your first degree network. I can get you all a
+discount, like a permanent discount for this place if you\'d like. I\'m
+happy to put you in touch with the founder, but yeah, Asher is great. So
+we have that. And then they can tailor their resume as. As always. So
+they can create a tailored resume. We don\'t actually create a cover
+letter for them. And then they can track whether or not they apply.
+Right.
+
+**\
+10:24**\
+Vrijen Attawar\
+So they can paste in the application link and sort of confirm, hey, this
+is where I applied. You get a little bit of. Yep. No. Let\'s see if
+these previous ones are done yet. No. So these are the stories. As I
+said, nothing much has changed over here. Resumes are all the same and
+it\'s mostly just this area where I am going to wait for this to load
+up, but once it does, it\'s going to be sweet. Okay, we\'ll give that a
+second. But yeah, any. Any questions so far? So resume tailoring is
+still there. Checking whether you\'re a good fit for a job is still
+there. Your fit improves the more stories you tell. Still plenty of
+optionality as far as telling stories is concerned. Yep.
+
+**\
+11:09**\
+Vrijen Attawar\
+And it will actually show you where the perceived gaps are, which
+you\'ll see in a second, so that you can fill those out in a targeted
+sense and recalculate the score.
+
+**\
+11:19**\
+Heather Wixson\
+Great. Now, I know you showed me this before. I think that how you can
+like manage a cohort in there is there. There\'s a way.
+
+**\
+11:31**\
+Vrijen Attawar\
+That\'s right. So you can go here to coaching mycareerspan.com and I\'ll
+pull up Amanda\'s account. Good old Bless Amanda. Yeah. So this is my
+wife\'s account. Yes. You can still access the stuff that they\'ve done.
+To be honest, we\'re not really going to be building this out. So
+you\'ll at most be able to see the stuff that they\'ve done. You\'ll be
+able to see the activity that they do, like how many jobs they post or
+how many resumes they tailor, how many. Yeah, this is actually just
+again the jobs they\'ve already had. So you\'ll be able to track some of
+this stuff. But candidly the direction that we\'re taking it is what we
+would like to do is essentially be hiring from communities and split
+that money with employers.
+
+**\
+12:20**\
+Vrijen Attawar\
+So if your org isn\'t already looking at that, like would you say like
+how would you describe the quality of candidate that comes into your
+program? Is it generally like more experienced, just need some help
+punching up? Like generally qualified? Right.
+
+**\
+12:33**\
+Heather Wixson\
+Most what I\'m seeing, yes, they just need a little bit of that help
+punching up. You know last week I had a couple of more entry level
+candidates but even they were incredibly impressive in a technical way.
+So I, Yeah, so they had a little bit, you know, less on that, what\'s
+the word I\'m looking for experience side, like what they want to do
+kind of thing. You know, one\'s really into autonomous vehicles and the
+other one\'s a UX designer. They just happen to be, you know, not have
+as much experience as others. But for the most part, like I\'m saying,
+they seem to be mid career and yeah, that punching up kind of thing kind
+of.
+
+**\
+13:15**\
+Vrijen Attawar\
+Yeah. So I think with this, the good thing is it lets you step outside
+of yourself. You get to see yourself broken down. You go, okay, these
+are the things I need to fill out. You know, let me see if it back up.
+You know it gives you something to hopefully. Oh gosh, it\'s still
+taking time. Let me see if there\'s something on staging. No, no. Okay,
+we\'ll see this in a second. It essentially just shows sort of those
+gaps and so it gives a structured way to sort of close those gaps. But
+the, the key for us is we\'re actually, I\'m actually going to companies
+and saying hey, we have the best product hires you want to hire through
+career span and it\'s in our interest to surface people.
+
+**\
+14:22**\
+Vrijen Attawar\
+So as long as you have good qualified mid career candidates, we\'d be
+happy to surface them. We can act as a way for landedly to distribute
+jobs that they get to everyone and It\'ll only surface to the most
+qualified one. So people aren\'t sort of, you know, edging each other
+out. And the benefit with careerspan is any product sourced through
+careerspan, you will go directly to the hiring manager\'s desk. So
+you\'ll skip the ats, skip everything generally even skip the screening.
+You just get straight into the hiring pipeline. So that\'s the agreement
+we have with companies. There\'s a few at the moment that we have that
+agreement with, but we do have a growing number that are going in
+through that, through that pathway. So almost about six or seven jobs
+now. We\'re trying to double that every week effectively.
+
+**\
+15:12**\
+Vrijen Attawar\
+So yeah, we\'re focusing on product roles initially, but we do have a
+good number of engineering roles that come our way as well. And then
+beyond that, you know. But anyone can use Career Span. So we can treat
+this as like y\' all are a community and use careers. You kind of give
+your folks careerspan, we just give you the coaching access for free and
+then your users use it and they apply through careerspan and ideally
+careerspan is able to place them in a job and we benefit. So it\'s
+really just what the incentives of your org are. What\'s that? What\'s
+their sort of grand scheme? Right. Are they trying to eventually have
+enough folks that they can sell the companies directly? In which case we
+may either help them speed that process along or be a competitor. Right.
+
+**\
+15:58**\
+Vrijen Attawar\
+Or is their goal just, hey, we want to scale this as aggressively as
+possible and we want people to be happy with us. In which case Career
+Span is perfect because people will be very happy in Career Span and
+it\'ll be able to help you and your teammates work better. So that\'s
+another benefit. Right. That\'s all possible.
+
+**\
+16:15**\
+Heather Wixson\
+Oh, I like that. I didn\'t realize you guys were moving in that
+direction, which is.
+
+**\
+16:18**\
+Vrijen Attawar\
+Yeah, yeah. So it\'s like going to great communities, gang grade talent.
+And anything filtered through Career Span you can trust is of a
+relatively high grade.
+
+**\
+16:29**\
+Heather Wixson\
+Interesting. Yeah. And it\'s product because I\'ve met with so many
+product people.
+
+**\
+16:34**\
+Vrijen Attawar\
+It\'s. Yeah, yeah, no, we\'re look, we\'re really. In fact, if you know
+some really talented product folks, you can do. Give them this link.
+Send it in chat. I\'ll send it in. I\'ll send it in LinkedIn. So if you
+could send them this link. I\'m just gonna turn this off. Yeah, if you
+could just send them this link and this will speed them. This will sort
+of short. What do you Call it direct them to the warm introduction
+program where if they\'re qualified for a role, we will introduce them
+to the hiring manager personally and sort of hit them up and say, hey,
+you\'re good fits. We help you fill in the gaps role by role.
+
+**\
+17:35**\
+Vrijen Attawar\
+You may not be a good fit for the first role because you have a bunch of
+stories to fill in, but over time, all of that gets counted in your
+favor, you know, so the longer you\'re on Careerspan, the higher your
+odds should be in theory, because you filled out more of your story.
+
+**\
+17:52**\
+Heather Wixson\
+And is this is the partnering with Warmly where you\'re getting these
+leads?
+
+**\
+17:57**\
+Vrijen Attawar\
+No, we\'re. So we\'re getting these leads from recruiters from like
+startups, directly from founders. Recruiters, Talent. We\'re sort of
+trying to. So that\'s sort of our advantage is we\'re connecting
+communities of talent with people that need it and acting as a more
+reliable signal than the resume.
+
+**\
+18:18**\
+Heather Wixson\
+I like it.
+
+**\
+18:20**\
+Vrijen Attawar\
+Yeah, we\'re gonna try. We\'re certainly gonna try.
+
+**\
+18:25**\
+Heather Wixson\
+All right, I would love to connect you and Weston.
+
+**\
+18:30**\
+Vrijen Attawar\
+Yeah, yeah, Weston seems great. I would love to chat with them
+regardless. I have a founder roundtable of about two dozen or so, almost
+30 at this point. Career tech founders, we meet up once a month. You
+know, I would love to invite him to that. So if you want to let him know
+that I would love to meet with him and I\'m happy to tell him about the
+founder roundtable and all of that. I think he\'ll, I think he\'ll be
+quite keen on it.
+
+**\
+18:55**\
+Heather Wixson\
+Yeah, I think so too. Awesome.
+
+**\
+18:58**\
+Vrijen Attawar\
+Great. Well, I\'ll send a follow up email and thank you so much.
+Heather.
+
+**\
+19:03**\
+Heather Wixson\
+Yeah. It was so good to see you. I\'m glad you guys.
+
+**\
+19:06**\
+Vrijen Attawar\
+I\'m glad you. I\'m glad everything\'s going okay.
+
+**\
+19:09**\
+Heather Wixson\
+Yeah, you know, it was like.
+
+**\
+19:12**\
+Vrijen Attawar\
+Yeah, well, you\'re a trooper up and down this.
+
+**\
+19:18**\
+Heather Wixson\
+Well, thank you. It was so good to see you. I, I really look forward to
+seeing what happens here. I think this could be a really good fit.
+
+**\
+19:26**\
+Vrijen Attawar\
+Yeah, absolutely. Catch you soon. Bye.

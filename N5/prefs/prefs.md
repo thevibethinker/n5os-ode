@@ -91,6 +91,12 @@ Load modules selectively based on task context. **Do not load all modules by def
 - Retry policies
 - Timezone handling
 
+**Scheduled Task Protocol** → `file 'N5/prefs/operations/scheduled-task-protocol.md'`
+- Task creation standards
+- Naming and instruction conventions
+- Testing and safety requirements
+- Digest integration patterns
+
 **Resolution Order** → `file 'N5/prefs/operations/resolution-order.md'`
 - Preference precedence hierarchy
 - Conflict resolution
@@ -212,6 +218,10 @@ Load modules selectively based on task context. **Do not load all modules by def
 **For list operations** (tasks, ideas, tracking):
 - Load: `Lists/POLICY.md`
 - Use commands: lists-add, lists-find, lists-move
+
+**For scheduled task operations** (creating, modifying tasks):
+- Load: `operations/scheduled-task-protocol`, `operations/scheduling`, `system/safety`
+- Reference: `operations/digest-creation-protocol` (if digest-related)
 
 **For Careerspan-specific context**:
 - Load: `operations/careerspan` (organization aliases, email domains)
