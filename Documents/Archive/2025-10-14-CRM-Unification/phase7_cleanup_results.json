@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-10-14T05:13:35.313426",
+  "dry_run": false,
+  "steps": {
+    "legacy_scripts": {
+      "fixed": [],
+      "deprecated": [
+        "N5/scripts/stakeholder_manager.py",
+        "N5/scripts/background_email_scanner.py",
+        "N5/scripts/safe_stakeholder_updater.py",
+        "N5/scripts/README_git_check_v2.md"
+      ]
+    },
+    "archive": {
+      "status": "archived",
+      "files": 13,
+      "size_kb": 49.2841796875,
+      "location": "/home/workspace/Documents/Archive/2025-10-14-CRM-Unification/N5_stakeholders_legacy"
+    },
+    "backup_compression": {
+      "status": "compressed",
+      "archive": "/home/workspace/migration_backups_20251014_051335.tar.gz",
+      "original_kb": 341.4072265625,
+      "compressed_kb": 135.451171875,
+      "ratio": 0.39674371640813383
+    },
+    "verification": {
+      "status": "clean",
+      "issues": []
+    }
+  }
+}

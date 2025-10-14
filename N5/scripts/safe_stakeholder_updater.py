@@ -4,6 +4,13 @@ Safe Stakeholder Profile Updater
 Implements append-only updates with conflict detection, backups, and review workflow.
 """
 
+# ======================================================================
+# DEPRECATED - Use Knowledge/crm/profiles/ and crm_query.py instead
+# This script is part of the legacy stakeholder system.
+# Retained for historical reference only.
+# ======================================================================
+
+
 import json
 import shutil
 from datetime import datetime
@@ -20,7 +27,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-STAKEHOLDERS_DIR = WORKSPACE / "N5/stakeholders"
+CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/profiles"
 BACKUPS_DIR = WORKSPACE / "Knowledge/crm/profiles/.backups"
 REVIEW_DIR = WORKSPACE / "Knowledge/crm/profiles/.pending_updates"
 

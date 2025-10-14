@@ -4,6 +4,13 @@ Stakeholder Profile Management System
 Auto-creates and updates stakeholder profiles from calendar events and emails.
 """
 
+# ======================================================================
+# DEPRECATED - Use Knowledge/crm/profiles/ and crm_query.py instead
+# This script is part of the legacy stakeholder system.
+# Retained for historical reference only.
+# ======================================================================
+
+
 import json
 import re
 from datetime import datetime
@@ -20,9 +27,9 @@ logger = logging.getLogger(__name__)
 
 # Paths
 WORKSPACE = Path("/home/workspace")
-STAKEHOLDERS_DIR = WORKSPACE / "N5/stakeholders"
-INDEX_FILE = STAKEHOLDERS_DIR / "index.jsonl"
-TEMPLATE_FILE = STAKEHOLDERS_DIR / "_template.md"
+CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/profiles"
+INDEX_FILE = CRM_PROFILES_DIR / "index.jsonl"
+TEMPLATE_FILE = CRM_PROFILES_DIR / "_template.md"
 
 # Domain patterns for external detection
 CAREERSPAN_DOMAINS = ["mycareerspan.com", "theapply.ai"]
@@ -242,7 +249,7 @@ def create_profile_file(
     """Create a new stakeholder profile file."""
     
     slug = generate_slug(name)
-    profile_path = STAKEHOLDERS_DIR / f"{slug}.md"
+    profile_path = CRM_PROFILES_DIR / f"{slug}.md"
     
     # Check if already exists
     if profile_path.exists():

@@ -10,6 +10,13 @@ Uses:
 - Comprehensive calendar invite detection
 """
 
+# ======================================================================
+# DEPRECATED - Use Knowledge/crm/profiles/ and crm_query.py instead
+# This script is part of the legacy stakeholder system.
+# Retained for historical reference only.
+# ======================================================================
+
+
 import logging
 import json
 import sys
@@ -73,9 +80,9 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # Configuration
-STAKEHOLDER_DIR = Path("/home/workspace/N5/stakeholders")
-INDEX_FILE = STAKEHOLDER_DIR / "index.jsonl"
-PENDING_DIR = STAKEHOLDER_DIR / ".pending_updates"
+CRM_PROFILES_DIR = Path("/home/workspace/Knowledge/crm/profiles")
+INDEX_FILE = CRM_PROFILES_DIR / "index.jsonl"
+PENDING_DIR = CRM_PROFILES_DIR / ".pending_updates"
 STATE_FILE = Path("/home/workspace/N5/.state/email_scanner_state.json")
 CREDENTIALS_PATH = Path("/home/workspace/N5/config/credentials/google_service_account.json")
 
