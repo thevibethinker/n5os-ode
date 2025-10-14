@@ -1,0 +1,26 @@
+ERROR LOG: Meeting Processing Failed
+=====================================
+
+Meeting ID: 2025-10-03-14-15-16_daily-team-stand-up
+Timestamp: 2025-10-14 02:52 ET
+Error Type: WRONG_STAKEHOLDER_TYPE
+
+REASON:
+This meeting is an internal team standup (participants: Ilse Funkhouser, Logan Currie, Danny Williams).
+
+The Registry System v1.5 workflow is designed for EXTERNAL stakeholder meetings:
+- FOUNDER (partnership/collaboration)
+- INVESTOR (fundraising)
+- CUSTOMER (user research/sales)
+- NETWORKING (general networking)
+- COMMUNITY (community partnerships)
+- JOB_SEEKER (recruitment)
+
+Internal team standups require different processing blocks (B40-B48) that are not part of the external stakeholder registry.
+
+ACTION REQUIRED:
+If internal standup processing is needed, a separate workflow should be created for INTERNAL_STANDUP_TEAM meetings.
+
+NEXT STEPS:
+- Consider creating separate processing workflow for internal team meetings
+- Or exclude internal standups from the meeting_requests inbox
