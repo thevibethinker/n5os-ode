@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS individuals (
     tags TEXT,  -- Comma-separated tags for flexible categorization
     
     -- Links to markdown files
-    markdown_file_path TEXT,  -- Relative path like 'Knowledge/crm/profiles/jane-smith.md'
+    markdown_file_path TEXT,  -- Relative path like 'Knowledge/crm/individuals/jane-smith.md'
     
     -- Metadata
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

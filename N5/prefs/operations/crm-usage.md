@@ -146,7 +146,7 @@ When user asks in natural language, translate to CRM queries:
 
 ## Data Sources
 
-**Profiles:** `file 'Knowledge/crm/profiles/'` (57 markdown files)  
+**Profiles:** `file 'Knowledge/crm/individuals/'` (57 markdown files)  
 **Database:** `file 'Knowledge/crm/crm.db'` (SQLite index)  
 **Query Helper:** `file 'N5/scripts/crm_query_helper.py'`  
 **Schema:** `file 'N5/schemas/crm_schema.sql'`

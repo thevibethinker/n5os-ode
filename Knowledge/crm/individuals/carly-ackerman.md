@@ -1,171 +1,69 @@
 # Carly Ackerman
 
-**Status:** Active Advisor  
-**Stakeholder Type:** #stakeholder:advisor  
-**Priority:** Important  
-**Enrichment Priority:** HIGH  
-**Last Contact:** 2025-09-23  
-**Next Action:** Follow up on intro commitments (no pressure, acknowledge 21-day delay)
-
----
-
-## Quick Summary
-
-Carly is a strategic advisor providing HR/TA expertise and GTM guidance for Careerspan. Currently in HR role at The Coca-Cola Company (F500 enterprise scale). Former Eightfold AI employee, On Deck fellowship alum. This is an ongoing relationship (meeting #2 recorded). Provides extremely valuable product feedback and has committed to intros (product candidates, hiring managers, communities, On Deck spinoff founder).
-
----
+## Profile Metadata
+**Created:** 2025-10-14  
+**Last Updated:** 2025-10-14  
+**Source:** Meeting transcript processing (2025-09-23 meeting)  
+**Enrichment Status:** Initial profile created, needs LinkedIn/web research
 
 ## Contact Information
-
-**Primary Email:** [Needs enrichment]  
+**Company:** The Coca-Cola Company  
+**Role:** Talent Acquisition / Recruiting Operations  
+**Email:** [Needs enrichment]  
 **LinkedIn:** [Needs enrichment]  
-**Phone:** [Needs enrichment]  
 **Location:** [Needs enrichment]
 
----
-
 ## Professional Background
-
-**Current Role:**
-- Company: The Coca-Cola Company
-- Role: HR function (specific title needs enrichment)
-- Responsibilities: Talent acquisition, job description writing, executive search management, HR budget planning
-- Scale: Global F500 enterprise operations
-
-**Previous Experience:**
-- Eightfold AI (talent intelligence platform)
-- On Deck fellowship (career transition track, not VC track)
-
----
+- Corporate talent acquisition professional at Coca-Cola
+- Responsible for VP-level executive hiring (Finance/Operations)
+- Works directly with executive recruiters and hiring managers
+- Translates unrealistic job requirements into realistic hiring strategies
+- Deep experience navigating "purple unicorn" candidate searches
 
 ## Relationship Context
-
-**How We Met:** [Needs enrichment - former colleague?]  
-**Relationship Depth:** Mid-stage (ongoing meetings, meeting #2)  
-**Value Exchange:**
-- **Carly provides:** Strategic HR/GTM feedback, product validation, intro commitments, enterprise buyer perspective
-- **Vrijen provides:** Interesting product conversations, inclusion in innovation discussions
-
+**Stakeholder Type:** Networking (with advisor characteristics)  
+**How We Met:** [Needs enrichment - unclear from transcript]  
 **Meeting History:**
-- 2025-09-23: Product demo + HR GTM strategy discussion → `file 'N5/records/meetings/2025-09-23_carly-careerspan-2'`
-- [Previous meeting #1 not yet processed]
+- 2025-09-23: Product demo + user research session (Careerspan hiring UX feedback)
 
----
+**Engagement Quality:** High - Carly provided detailed, candid feedback on product; asked probing questions about credibility and BS detection; engaged deeply with trade-off visibility concepts
 
-## Key Insights / What They Care About
+**Value Exchange:**
+- **From Carly:** Strategic product feedback from hiring manager perspective; validation of narrative-driven candidate presentation; identification of credibility risks (uniqueness metric, BS detection)
+- **To Carly:** Product insights; early access to Careerspan features; thought partnership on hiring UX innovation
 
-**Deep Expertise In:**
-- Enterprise HR budget dynamics and procurement politics
-- Talent acquisition operations at scale (500+ applications per role)
-- Executive search processes and pricing
-- Job description quality issues ("purple unicorn" problem)
-- Product manager hiring and assessment
-
+## Strategic Insights
 **Pain Points:**
-- HR budget always "first to go" in cuts
-- Hiring managers write "garbage" JDs that don't reflect actual needs
-- Need to surface trade-offs to leaders, not just filtered candidates
-- Balancing central vs. local tool procurement politics
-- Confidential search constraints
+- Job descriptions are "garbage"—binary requirements lists that don't reflect relative importance
+- Hiring managers want purple unicorns that don't exist
+- Need explicit trade-off visibility to show realistic candidate compromises
+- Lack of BS detection in recruiting tools undermines trust
 
-**What Resonates:**
-- Narrative candidate summaries with hyperlinked evidence ("nirvana")
-- Trade-off visibility tools (adjustable requirement dials)
-- BS detection / constructive but honest AI voice
-- Tools that help HR practitioners do their job (JD quality tools)
-- Quality over speed (willing to spend MORE time on BETTER data)
+**Product Feedback Highlights:**
+- Would "love nothing more" than narrative candidate summaries with hyperlinked evidence
+- Wants ability to "dial up and down" job requirement dimensions
+- Warned that subjective metrics (e.g., "uniqueness") will "get caught in the sniff test"
+- Emphasized that hiring managers will spend MORE time per candidate if data is more useful (not about speed)
 
-**Red Flags / Concerns:**
-- Skeptical of indefensible metrics (flagged "uniqueness")
-- Questions how to check for candidate BS
-- Worried about AI voice being too "hype person"
-- Aware of budget and procurement barriers
-
----
-
-## Strategic Value to Careerspan
-
-**Why This Relationship Matters:**
-1. **Buyer persona validation**: Carly IS the buyer (HR/TA professional at enterprise scale)
-2. **Product feedback quality**: Asks incisive questions that reveal product risks (uniqueness metric, BS detection, voice/tone)
-3. **GTM intelligence**: Provides insider view of HR budget dynamics, procurement politics, confidential search needs
-4. **Intro potential**: Committed to connecting Careerspan with candidates, hiring managers, and communities
-5. **Credibility signal**: F500 HR executive validation is powerful social proof
-
-**Intro Commitments (Pending):**
-- [ ] Badass product candidates
-- [ ] Product leaders currently hiring
-- [ ] Job seeker/talent communities
-- [ ] On Deck spinoff founder (career transition focus)
-
----
-
-## Howie Scheduling Tags
-
-**Recommended Tags:** `[LD-ADV] [GPT-M] [A-3]`
-- **LD-ADV**: Advisor relationship (strategic counsel, not transactional)
-- **GPT-M**: Mid-stage (established rhythm, ongoing feedback loops)
-- **A-3**: Accommodating (warm relationship, flexible on timing, not time-critical)
-
-**Priority:** Important (high-value feedback, but not deal-blocking if meeting reschedules)
-
-**Scheduling Notes:**
-- Works full-time at Coke, meetings likely evenings/weekends
-- Enjoys these conversations ("keep doing interesting stuff and including me")
-- No urgency pressure, relationship-building mode
-
----
+**Decision Criteria:** [Needs validation - appears to value transparency, evidence-based analysis, explicit trade-off visibility]
 
 ## Mutual Connections
+[None identified - needs enrichment via LinkedIn research]
 
-[Needs enrichment]
-- Likely: Eightfold AI network overlap
-- Likely: On Deck alumni network
-- Likely: HR tech / MPL Live community
-- Check: Stephen (MPL Live podcast)
+## Enrichment Priority
+**Level:** MEDIUM  
+**Rationale:** Valuable product feedback source and potential advisory relationship, but not critical deal path (not investor, customer, or revenue-generating partnership)
 
----
+## Next Actions
+- [ ] LinkedIn research: background, career trajectory, full job title
+- [ ] Company research: Coca-Cola TA org structure, recruiting tech stack, scale
+- [ ] Mutual connection scan: talent/HR tech ecosystem, recruiting operations professionals
+- [ ] Follow-up email: Send follow-up incorporating her feedback, offer to show next iteration
 
-## Enrichment Tasks
-
-**HIGH Priority:**
-- [ ] LinkedIn research: Full background, career progression, exact Coke title/role
-- [ ] Eightfold AI network research: Shared connections in talent tech space
-- [ ] On Deck alumni research: Career transition cohort connections
-- [ ] Find primary email and phone
-- [ ] Check Stephen (MPL Live) mutual connection
-- [ ] Document context of relationship origin (how did Vrijen and Carly originally connect?)
-
-**MEDIUM Priority:**
-- [ ] Research Carly's HR tech community involvement
-- [ ] Map out her decision-making authority at Coke
-- [ ] Understand her specific functional area (Corporate HR vs. Business Unit HR Partner)
-
----
-
-## Next Steps
-
-**Immediate:**
-1. Send follow-up email acknowledging 21-day delay, thanking for feedback, noting concrete changes made based on her input
-2. Soft reminder about intro commitments ("no pressure, whenever it surfaces naturally")
-3. Offer reciprocal help
-
-**Ongoing:**
-- Continue regular product feedback loops (quarterly or when major product updates)
-- Keep her posted on how her feedback shaped product/GTM decisions
-- Look for opportunities to reciprocate value (intros, insights, career support)
-
----
-
-## Notes
-
-- Carly said "I owe you" at end of conversation, suggesting she feels she's received value and wants to reciprocate
-- She's comfortable being direct and critical ("that one's likely to get caught in the sniff test") which is extremely valuable
-- Timing: Meeting was 2025-09-23, processing on 2025-10-14 (21-day delay requires apology in follow-up)
-- This is meeting #2 in a series (previous meeting not yet processed)
-
----
-
-**Last Updated:** 2025-10-14  
-**Last Updated By:** Meeting processing system (automated)  
-**Source:** `file 'N5/records/meetings/2025-09-23_carly-careerspan-2/B08_STAKEHOLDER_INTELLIGENCE.md'`
+## Tags
+#stakeholder:networking  
+#domain:talent-acquisition  
+#domain:corporate-recruiting  
+#value:product-feedback  
+#engagement:high  
+#enrichment:medium-priority

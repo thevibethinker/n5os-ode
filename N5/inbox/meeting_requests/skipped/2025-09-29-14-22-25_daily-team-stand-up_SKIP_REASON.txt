@@ -1,0 +1,16 @@
+SKIP REASON: Internal team standup meeting
+===================================
+
+Meeting: 2025-09-29-14-22-25_daily-team-stand-up
+Classification: INTERNAL_STANDUP_COFOUNDER
+Participants: Vrijen, Ilse, Rochel, Danny
+
+This transcript is an internal Careerspan team standup/sync meeting.
+
+The Registry System v1.5 is designed for EXTERNAL STAKEHOLDER MEETINGS (investors, founders, customers, networking, community).
+
+Internal meetings use blocks B40-B47 which are not defined in the current block_type_registry.json (v1.5).
+
+ACTION: Skipped processing. Moved to /skipped/ directory.
+
+Date: 2025-10-14 05:27:35 ET

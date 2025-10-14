@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 # Paths
 WORKSPACE = Path("/home/workspace")
-CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/profiles"
+CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/individuals"
 INDEX_FILE = CRM_PROFILES_DIR / "index.jsonl"
 TEMPLATE_FILE = CRM_PROFILES_DIR / "_template.md"
 
@@ -84,7 +84,7 @@ class StakeholderIndex:
             "lead_type": lead_type,
             "status": status,
             "last_updated": datetime.now().strftime("%Y-%m-%d"),
-            "file": f"Knowledge/crm/profiles/{slug}.md"
+            "file": f"Knowledge/crm/individuals/{slug}.md"
         }
         self.entries[email.lower()] = entry
         self.save()

@@ -27,9 +27,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/profiles"
-BACKUPS_DIR = WORKSPACE / "Knowledge/crm/profiles/.backups"
-REVIEW_DIR = WORKSPACE / "Knowledge/crm/profiles/.pending_updates"
+CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/individuals"
+BACKUPS_DIR = WORKSPACE / "Knowledge/crm/individuals/.backups"
+REVIEW_DIR = WORKSPACE / "Knowledge/crm/individuals/.pending_updates"
 
 # Ensure directories exist
 BACKUPS_DIR.mkdir(parents=True, exist_ok=True)

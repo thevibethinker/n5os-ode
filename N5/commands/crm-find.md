@@ -126,7 +126,7 @@ Database provides quick lookup; markdown has complete information.
 ## Data Sources
 
 - **Database:** `file 'Knowledge/crm/crm.db'` (57 profiles indexed)
-- **Profiles:** `file 'Knowledge/crm/profiles/'` (57 markdown files)
+- **Profiles:** `file 'Knowledge/crm/individuals/'` (57 markdown files)
 - **Schema:** `file 'N5/schemas/crm_schema.sql'`
 
 ---

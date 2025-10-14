@@ -1,6 +1,6 @@
 -- CRM Hybrid System Schema
 -- Purpose: Fast indexing + network intelligence
--- Source of Truth: Markdown files in Knowledge/crm/profiles/
+-- Source of Truth: Markdown files in Knowledge/crm/individuals/
 -- Database Role: Index + relationships for fast queries
 
 -- ============================================================================

@@ -275,7 +275,7 @@ Enriches:
 
 For each networking event, generates:
 
-1. **Individual Profiles** - `Knowledge/crm/profiles/{name}.md` (created or updated)
+1. **Individual Profiles** - `Knowledge/crm/individuals/{name}.md` (created or updated)
 2. **Event Log** - `Knowledge/crm/events/YYYY-MM/{date}_{event-name}.md`
 3. **LinkedIn Messages** - `Knowledge/crm/follow-ups/{name}_{date}_linkedin.md`
 4. **Deliverables** (if requested) - Proposals, one-pagers, etc.

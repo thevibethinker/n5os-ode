@@ -100,7 +100,7 @@ $ python3 N5/scripts/crm_query_helper.py --name "Bram"
   "full_name": "Bram Adams",
   "company": "YCB",
   "category": "INVESTOR",
-  "markdown_path": "Knowledge/crm/profiles/bram-adams.md"  ← Open this for full details
+  "markdown_path": "Knowledge/crm/individuals/bram-adams.md"  ← Open this for full details
 }
 ```
 
@@ -151,7 +151,7 @@ When asking me to find contacts, I can now:
 ### Core Files
 - **Database:** `file 'Knowledge/crm/crm.db'`
 - **Schema:** `file 'N5/schemas/crm_schema.sql'`
-- **Profiles:** `file 'Knowledge/crm/profiles/'` (57 markdown files)
+- **Profiles:** `file 'Knowledge/crm/individuals/'` (57 markdown files)
 
 ### Scripts
 - **Query Helper:** `file 'N5/scripts/crm_query_helper.py'` - Fast queries

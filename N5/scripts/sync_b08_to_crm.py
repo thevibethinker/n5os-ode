@@ -18,15 +18,15 @@ logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
 B08_PATTERN = WORKSPACE / "N5/records/meetings/*/B08_STAKEHOLDER_INTELLIGENCE.md"
-CRM_DIR = WORKSPACE / "Knowledge/crm/profiles"
+CRM_DIR = WORKSPACE / "Knowledge/crm/individuals"
 
 def extract_stakeholder_name(b08_path: Path) -> Optional[str]:
     """Extract stakeholder name from B08 content."""
     try:
         content = b08_path.read_text()
         
-        # Look for CRM Integration section with profile path
-        crm_match = re.search(r'Knowledge/crm/profiles/([a-z-]+)\.md', content)
+        # Look for CRM Integration section with profile path (supports both old profiles/ and new individuals/)
+        crm_match = re.search(r'Knowledge/crm/(?:profiles|individuals)/([a-z-]+)\.md', content)
         if crm_match:
             return crm_match.group(1)
         
