@@ -1,0 +1,17 @@
+{
+  "lesson_id": "les_persona_simplicity_2025-10-14",
+  "thread_id": "con_MsMBci4rhfwNiKqR",
+  "timestamp": "2025-10-14T04:42:00Z",
+  "type": "anti_pattern",
+  "title": "Over-engineering when simplicity is requested",
+  "description": "User asked for a repeatable way to generate personas like Vibe Builder. Initially responded with complex integration plan (work router, multi-phase rollout, validation system). User corrected: just needed simple template + command. Built that instead - template file, command spec, registry entry. Total: 3 files, ~5KB.",
+  "context": "After creating Vibe Builder persona successfully, user asked 'create something repeatable'. I interpreted this as needing full system integration with routing, validation, etc. User clarified: 'I don't need all of that. I just needed something to generate persona outputs... just like we made the Vibe Builder output.'",
+  "outcome": "Simplified to: (1) persona_creation_template.md - copy-paste template, (2) persona-create.md - command spec, (3) registry entry. User can now invoke 'n5 persona-create' and get a new persona. Simple, repeatable, complete.",
+  "anti_pattern": "Assuming 'repeatable' means 'complex system' when user just wants 'copy this successful pattern'. Generated integration_plan.md (7.7KB), work_router_draft.md (6.7KB), repeatability_plan_summary.md (4.5KB) - all unnecessary. User wanted template + command only.",
+  "corrective_action": "When user asks for 'repeatable' or 'systematic': (1) Ask clarifying question about scope before building, (2) Start with simplest interpretation, (3) Look for recent successful pattern to templatize, (4) Avoid building infrastructure when template suffices.",
+  "principle_refs": ["15", "8", "1", "20"],
+  "tags": ["requirements", "scope", "simplicity", "listen"],
+  "significance": "high",
+  "conversation_phase": "persona_creation_system",
+  "approved": false
+}
