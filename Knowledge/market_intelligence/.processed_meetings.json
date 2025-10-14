@@ -1,0 +1,79 @@
+{
+  "_schema_version": "1.0",
+  "_update_protocol": {
+    "description": "How this registry gets updated",
+    "rules": [
+      "Add meeting_id to category array ONLY after aggregation document is successfully generated",
+      "Include meeting_id, stakeholder_name, date_processed, and doc_version",
+      "Never remove meetings from registry (historical record)",
+      "When regenerating category, update last_run timestamp",
+      "Verify meeting_id not already in category before processing"
+    ],
+    "format": {
+      "meeting_id": "YYYY-MM-DD_type-stakeholder-name",
+      "stakeholder_name": "Human-readable name",
+      "date_processed": "ISO 8601 timestamp",
+      "doc_version": "Version of aggregated doc this was included in"
+    }
+  },
+  "GTM": {
+    "last_run": "2025-10-13T19:50:00-05:00",
+    "doc_path": "Knowledge/market_intelligence/aggregated_insights_GTM.md",
+    "doc_version": "1.3",
+    "total_meetings": 6,
+    "notes": "v1.3: Structural reformat - added signal strength scale, emoji attribution (🔷/🏠), standardized headers, expanded synthesis with pattern analysis/contradictions/segmentation/timeline/risks/10-week action plan. v1.2: Added Whitney Jones and David Speigel meetings via append workflow test.",
+    "meetings": [
+      {
+        "meeting_id": "2025-09-08_external-usha-srinivasan",
+        "stakeholder_name": "Usha Srinivasan",
+        "date_processed": "2025-10-13T22:14:00-05:00",
+        "doc_version": "1.3"
+      },
+      {
+        "meeting_id": "2025-09-09_external-and-krista-tan",
+        "stakeholder_name": "Krista Tan",
+        "date_processed": "2025-10-13T22:14:00-05:00",
+        "doc_version": "1.3"
+      },
+      {
+        "meeting_id": "2025-09-12_external-allie-cialeo",
+        "stakeholder_name": "Allie Cialeo",
+        "date_processed": "2025-10-13T22:14:00-05:00",
+        "doc_version": "1.3"
+      },
+      {
+        "meeting_id": "2025-09-19_external-rajesh-nerlikar",
+        "stakeholder_name": "Rajesh Nerlikar",
+        "date_processed": "2025-10-13T22:14:00-05:00",
+        "doc_version": "1.3"
+      },
+      {
+        "meeting_id": "2025-09-03_external-whitney-jones",
+        "stakeholder_name": "Whitney Jones",
+        "date_processed": "2025-10-13T23:01:00-05:00",
+        "doc_version": "1.3"
+      },
+      {
+        "meeting_id": "2025-09-02_external-david-speigel",
+        "stakeholder_name": "David Speigel",
+        "date_processed": "2025-10-13T23:01:00-05:00",
+        "doc_version": "1.3"
+      }
+    ],
+    "last_updated": "2025-10-13"
+  },
+  "PRODUCT": {
+    "last_run": null,
+    "doc_path": "Knowledge/market_intelligence/aggregated_insights_PRODUCT.md",
+    "doc_version": null,
+    "total_meetings": 0,
+    "meetings": []
+  },
+  "FUNDRAISING": {
+    "last_run": null,
+    "doc_path": "Knowledge/market_intelligence/aggregated_insights_FUNDRAISING.md",
+    "doc_version": null,
+    "total_meetings": 0,
+    "meetings": []
+  }
+}

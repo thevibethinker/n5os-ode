@@ -212,10 +212,6 @@ For each selected block:
 - **Priority**: Critical / Important / Non-critical
 - Generate for ALL stakeholders prophylactically
 
-**LinkedIn Restrictions (READ-ONLY):**
-- ⛔ NEVER: Post, send messages, change profile, open notifications, endorse, react, join groups, accept connections
-- ✅ ALLOWED: View profiles, view company pages, read posts, scan connections, extract background
-
 ### B21 - KEY_MOMENTS ✅ REQUIRED (merged B29 + B21 in v1.5)
 
 **Two Sections:**
@@ -484,3 +480,46 @@ Before finalizing, verify:
 ---
 
 **You are transforming meetings into strategic intelligence. Act accordingly.**
+
+---
+
+## FINAL STEP: Follow-Up Email Generation (External Meetings Only)
+
+After completing all blocks above, automatically generate follow-up email draft for **external stakeholder meetings**:
+
+```
+command 'email-post-process' for "{meeting_folder_name}"
+```
+
+**This command will:**
+1. Detect if meeting is external (`_external-` prefix)
+2. Check if email draft already exists
+3. Generate draft if needed → `DELIVERABLES/follow_up_email_copy_paste.txt`
+4. Send SMS notification when complete
+
+**SMS Notification:**
+```
+✅ Follow-up email ready: {meeting_name}
+
+Draft: DELIVERABLES/follow_up_email_copy_paste.txt
+
+Review and send when ready!
+```
+
+**For internal meetings:** Skipped automatically (no notification)
+
+**If already exists:** Skipped (idempotent, no duplicate notifications)
+
+**If generation fails:** SMS with error details
+
+**Manual override:** Skip entirely (no SMS)
+
+**Specification:** `command 'N5/commands/follow-up-email-generator.md'` (v11.0.1)
+
+---
+
+**Integration Notes:**
+- Email generation is AUTOMATIC for all external meetings
+- Manual review is REQUIRED before sending
+- Idempotent: Safe to rerun if needed
+- Non-blocking: Meeting processing completes successfully even if email generation fails

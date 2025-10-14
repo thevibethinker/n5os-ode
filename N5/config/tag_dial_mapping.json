@@ -3,11 +3,11 @@
   "description": "Hashtag to email dial settings mapping for follow-up email generation",
   "relationship_mappings": {
     "#relationship:new": {
-      "relationshipDepth": 0,
+      "relationshipDepth": 1,
       "formality": 8,
       "warmth": 4,
       "ctaRigour": 2,
-      "description": "Stranger/first meeting - formal, cautious"
+      "description": "New contact/first meeting - formal, cautious"
     },
     "#relationship:warm": {
       "relationshipDepth": 2,

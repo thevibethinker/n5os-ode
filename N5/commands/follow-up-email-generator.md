@@ -36,6 +36,14 @@ Function – Follow-Up Email Generator — Careerspan v11.0
 - References: `file 'N5/prefs/communication/voice.md'` (Relationship Depth scales, Tone Weights)  
 - Inspired by: Stylistic Transformer v1.1 function
 
+### v11.0.1 — 2025-10-13
+**Critical Fix: Link Verification Enforcement** 🔒  
+- Added mandatory link verification requirement to Step 2
+- **NEVER fabricate links** - all links must be verified against essential-links.json or sources.md
+- Added link validation to Self-Review (Step 7B)
+- P19 (Error Handling) + P16 (No Invented Facts) enforcement
+- References: `file 'N5/prefs/communication/essential-links.json'`, `file 'Knowledge/stable/sources.md'`
+
 ### v10.9.0 — 2025-10-09
 **Enhancement 3: Readability Guardrails** ⭐⭐⭐  
 - Added Step 6: Readability Constraints  
@@ -248,6 +256,23 @@ Step 2 — Essential Link Autofill → Link Map (ENHANCED)
   - Format: `{"category": "demo-link", "context": "I'll send the demo", "confidence": 0.65}`
   - Present to user for manual review after draft
 
+**CRITICAL REQUIREMENT:** 🔒  
+Before generating any links, MUST load and reference:
+- `file 'N5/prefs/communication/essential-links.json'` (v1.7.0+)
+- `file 'Knowledge/stable/sources.md'` (for additional references)
+
+**NEVER fabricate links.** If a link doesn't exist in essential-links.json or sources.md:
+1. Use company homepage (https://www.mycareerspan.com) as fallback
+2. Omit the specific link entirely
+3. Flag as [[MISSING: description]] for V to provide
+
+**Link Verification Process:**
+1. Load essential-links.json
+2. Identify relevant link categories from conversation
+3. Match conversation context to available links with confidence scoring
+4. Auto-insert ONLY if confidence ≥ 0.75 AND link exists in essential-links.json
+5. Flag any missing/uncertain links for manual review
+
 Step 3 — Auto-Dial Inference (ENHANCED)
 ▸ **Purpose**: Calculate relationship depth and tone dials from conversation signals
 ▸ **Load Reference**: `file 'N5/prefs/communication/voice.md'` (Relationship Depth scales, Tone Weights)
@@ -459,6 +484,11 @@ Step 7B — Draft Email
   - "Hey {{name}}," for established warmth, comfortable relationships
   - "Hey {{name}}—" for warm contexts with em-dash rhythm
   - **Note:** V is intentionally using "Hi" more to maintain formality until warmth is established
+
+**Additional Risk Checks:**
+- **Link Verification** 🔒: All links validated against essential-links.json or sources.md
+- **Link Fabrication Check**: No invented URLs (P16 + P19 enforcement)
+- **P.S. Policy**: No postscript sections unless V explicitly requests
 
 Step 8 — Self-Review & Risk Sweep  
 ▸ Validate formatting, tone, guardrails; ensure subjectLine length ≤ 90 chars.

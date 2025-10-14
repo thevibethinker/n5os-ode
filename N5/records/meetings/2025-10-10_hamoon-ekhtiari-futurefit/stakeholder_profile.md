@@ -13,7 +13,7 @@
 ### Verified (Last reviewed: 2025-10-12)
 - `#stakeholder:partner:collaboration` — Integration/collaboration partnership (not resale/distribution)
 - `#relationship:new` — First meeting, exploratory phase
-- `#priority:non-critical` — Partnership exploration, not business-critical
+- `#priority:normal` — Partnership exploration, not business-critical
 - `#engagement:needs_followup` — V to send follow-up within 2 weeks with 1-2 concrete use cases
 - `#context:hr_tech` — Career support platform serving 200K+ users annually
 

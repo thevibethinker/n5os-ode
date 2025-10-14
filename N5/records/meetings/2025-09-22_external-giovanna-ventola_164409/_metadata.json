@@ -1,0 +1,11 @@
+{
+  "meeting_id": "2025-09-22_external-giovanna-ventola_164409",
+  "processed_at": "2025-10-13T19:57:57-04:00",
+  "processor": "Zo",
+  "registry_version": "1.5",
+  "blocks_generated": ["B26","B01","B02","B08","B21","B31","B25","B05","B07"],
+  "stakeholder_type": "COMMUNITY",
+  "crm_profile_created": true,
+  "gdrive_id": "17wDui_378Rh0T8eMvcQj3QNFqw6SXT_6",
+  "notes": "No conditional blocks triggered (no pilot details; metrics < trigger)"
+}
