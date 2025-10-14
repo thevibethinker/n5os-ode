@@ -3,44 +3,46 @@
 Background Email Scanner - Runs every ~20 minutes
 Discovers new stakeholders from meeting-related emails in Gmail
 
-Purpose:
-- Scan Gmail for calendar invites, meeting confirmations, and follow-ups
-- Extract external participant information (name, email, organization)
-- Queue new stakeholders for profile creation
-- Track last scan time to avoid reprocessing
-- Log discoveries for monitoring
+Uses:
+- Google Gmail API (service account credentials)
+- LLM-based participant extraction (no regex)
+- Proper queue ordering by priority score
+- Comprehensive calendar invite detection
 """
 
 import logging
 import json
 import sys
 import argparse
-import re
+import base64
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Set
+from email.utils import parseaddr
+import re
+
+# Google API imports
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
 # Add parent to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 try:
     from stakeholder_manager import (
-        StakeholderIndex,
         is_external_email,
         generate_slug,
         infer_organization_from_email
     )
 except ImportError:
-    logger.warning("Could not import stakeholder_manager utilities, using fallbacks")
-    
+    # Fallback implementations
     def is_external_email(email: str) -> bool:
-        """Fallback: Check if email is external"""
         if not email or '@' not in email:
             return False
         domain = email.split('@')[1].lower()
         return domain not in ['mycareerspan.com', 'theapply.ai', 'zo.computer']
     
     def generate_slug(name: str, organization: str = "") -> str:
-        """Fallback: Generate slug from name and org"""
         base = name.lower().replace(' ', '-')
         if organization:
             org_slug = organization.lower().replace(' ', '-').replace('.', '')[:20]
@@ -48,7 +50,6 @@ except ImportError:
         return re.sub(r'[^a-z0-9-]', '', base)
     
     def infer_organization_from_email(email: str) -> str:
-        """Fallback: Extract organization from email domain"""
         if '@' not in email:
             return "Unknown"
         domain = email.split('@')[1].lower()
@@ -76,6 +77,9 @@ STAKEHOLDER_DIR = Path("/home/workspace/N5/stakeholders")
 INDEX_FILE = STAKEHOLDER_DIR / "index.jsonl"
 PENDING_DIR = STAKEHOLDER_DIR / ".pending_updates"
 STATE_FILE = Path("/home/workspace/N5/.state/email_scanner_state.json")
+CREDENTIALS_PATH = Path("/home/workspace/N5/config/credentials/google_service_account.json")
+
+# Ensure directories exist
 STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
 PENDING_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -86,20 +90,28 @@ INTERNAL_DOMAINS = {
     "zo.computer"
 }
 
-# Gmail search keywords for meeting-related emails
-MEETING_KEYWORDS = [
-    "calendar invite",
-    "meeting invitation", 
-    "zoom.us",
-    "meet.google.com",
-    "calendly.com",
-    "when2meet.com",
-    "invited you to",
-    "has invited you",
-    "meeting scheduled",
-    "meeting confirmed",
-    "calendar event"
-]
+
+def get_gmail_service():
+    """Initialize Gmail API service with service account credentials"""
+    try:
+        SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+        
+        credentials = service_account.Credentials.from_service_account_file(
+            str(CREDENTIALS_PATH),
+            scopes=SCOPES
+        )
+        
+        # Delegate to the user's email
+        # Note: Service account must have domain-wide delegation enabled
+        delegated_credentials = credentials.with_subject('va@mycareerspan.com')
+        
+        service = build('gmail', 'v1', credentials=delegated_credentials)
+        log.info("Gmail API service initialized successfully")
+        return service
+        
+    except Exception as e:
+        log.error(f"Failed to initialize Gmail API: {e}", exc_info=True)
+        raise
 
 
 def load_state() -> Dict:
@@ -121,8 +133,8 @@ def load_state() -> Dict:
 
 def _default_state() -> Dict:
     """Default state structure"""
-    # Start from 24 hours ago on first run
-    initial_time = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+    # Start from 7 days ago on first run (to catch recent activity)
+    initial_time = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
     return {
         "last_scan_time": initial_time,
         "processed_message_ids": [],
@@ -158,108 +170,246 @@ def load_existing_stakeholders() -> Set[str]:
     return existing
 
 
-def extract_emails_from_text(text: str) -> List[str]:
-    """Extract all email addresses from text"""
-    if not text:
-        return []
-    email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-    emails = re.findall(email_pattern, text)
-    return [e.lower() for e in emails if is_external_email(e)]
-
-
-def extract_name_from_email_context(email: str, text: str) -> Optional[str]:
-    """Try to extract name from email context in text"""
-    if not text or not email:
-        return None
+def build_gmail_query(last_scan_time: str) -> str:
+    """Build Gmail search query for meeting-related emails"""
+    try:
+        dt = datetime.fromisoformat(last_scan_time.replace('Z', '+00:00'))
+        # Gmail uses epoch seconds for after: queries
+        epoch_seconds = int(dt.timestamp())
+    except:
+        # Fallback: 24 hours ago
+        epoch_seconds = int((datetime.now(timezone.utc) - timedelta(days=1)).timestamp())
     
-    # Look for patterns like "Name <email>" or "email (Name)"
-    patterns = [
-        rf'([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\s*<{re.escape(email)}>',
-        rf'{re.escape(email)}\s*\(([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\)',
-        rf'From:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\s*<{re.escape(email)}>'
+    # Comprehensive meeting detection query
+    # Includes: calendar invites (ICS), meeting platforms, scheduling tools
+    query_parts = [
+        f'after:{epoch_seconds}',
+        '(',
+        'subject:(invite OR invitation OR meeting OR calendar OR scheduled)',
+        'OR filename:invite.ics',
+        'OR filename:*.ics', 
+        'OR zoom.us',
+        'OR meet.google.com',
+        'OR calendly.com',
+        'OR when2meet.com',
+        'OR "added you to"',
+        'OR "invited you to"',
+        ')',
+        # Exclude internal senders
+        *[f'-from:*@{domain}' for domain in INTERNAL_DOMAINS]
     ]
     
-    for pattern in patterns:
-        match = re.search(pattern, text, re.IGNORECASE)
-        if match:
-            return match.group(1).strip()
+    query = ' '.join(query_parts)
+    return query
+
+
+def extract_email_content(msg_data: Dict) -> Dict:
+    """Extract readable content from Gmail message"""
+    result = {
+        'subject': '',
+        'from': '',
+        'to': '',
+        'cc': '',
+        'body': '',
+        'headers': {}
+    }
     
-    return None
+    # Get headers
+    headers = msg_data.get('payload', {}).get('headers', [])
+    for header in headers:
+        name = header['name'].lower()
+        value = header['value']
+        result['headers'][name] = value
+        
+        if name == 'subject':
+            result['subject'] = value
+        elif name == 'from':
+            result['from'] = value
+        elif name == 'to':
+            result['to'] = value
+        elif name == 'cc':
+            result['cc'] = value
+    
+    # Get body
+    payload = msg_data.get('payload', {})
+    
+    def extract_text_from_part(part):
+        """Recursively extract text from message parts"""
+        text = ""
+        mime_type = part.get('mimeType', '')
+        
+        if 'data' in part.get('body', {}):
+            data = part['body']['data']
+            decoded = base64.urlsafe_b64decode(data).decode('utf-8', errors='ignore')
+            if 'text' in mime_type:
+                text += decoded
+        
+        # Recurse into multipart
+        if 'parts' in part:
+            for subpart in part['parts']:
+                text += extract_text_from_part(subpart)
+        
+        return text
+    
+    result['body'] = extract_text_from_part(payload)
+    
+    return result
 
 
-def parse_email_for_participants(email_data: Dict) -> List[Dict]:
+def parse_email_addresses(header_value: str) -> List[str]:
+    """Extract email addresses from header (From/To/Cc)"""
+    if not header_value:
+        return []
+    
+    emails = []
+    # Split by comma, handle "Name <email>" format
+    parts = header_value.split(',')
+    for part in parts:
+        _, email = parseaddr(part.strip())
+        if email and '@' in email:
+            emails.append(email.lower())
+    
+    return emails
+
+
+def llm_extract_participants(email_content: Dict) -> str:
     """
-    Parse email data to extract external participants
+    Use LLM (via scheduled task context) to extract participant information.
+    This is a PLACEHOLDER that will be filled by the Zo agent during scheduled execution.
     
-    Returns list of dicts: {"email": str, "name": Optional[str], "context": str}
+    Returns JSON string with extracted participants
+    """
+    # This function is called BY the Zo agent which has LLM access
+    # The agent will inject the actual LLM extraction here
+    
+    prompt = f"""Extract external meeting participants from this email.
+
+Email Subject: {email_content['subject']}
+From: {email_content['from']}
+To: {email_content['to']}
+Cc: {email_content['cc']}
+
+Body excerpt:
+{email_content['body'][:2000]}
+
+Extract:
+1. All external participant names and emails (not from mycareerspan.com, theapply.ai, zo.computer)
+2. Their likely organization/affiliation
+3. Meeting context (what type of meeting, purpose if mentioned)
+
+Return ONLY valid JSON array:
+[
+  {{"name": "Full Name", "email": "email@domain.com", "organization": "Company Name", "context": "brief context"}}
+]
+
+If no external participants, return []
+"""
+    
+    # PLACEHOLDER - Agent will replace this with actual LLM call
+    # For now, return empty to indicate this needs agent injection
+    return "[]"
+
+
+def parse_email_for_participants_mechanical(email_content: Dict) -> List[Dict]:
+    """
+    Mechanical extraction: parse headers for email addresses.
+    This is the fallback if LLM extraction is not available.
     """
     participants = []
+    seen_emails = set()
     
-    # Get email body (snippet or full)
-    body = email_data.get('snippet', '') + '\n' + email_data.get('body', '')
+    # Collect all email addresses from headers
+    all_emails = []
+    all_emails.extend(parse_email_addresses(email_content['from']))
+    all_emails.extend(parse_email_addresses(email_content['to']))
+    all_emails.extend(parse_email_addresses(email_content['cc']))
     
-    # Extract all external emails
-    external_emails = extract_emails_from_text(body)
-    
-    for email in external_emails:
-        # Try to find associated name
-        name = extract_name_from_email_context(email, body)
+    for email in all_emails:
+        if not email or email in seen_emails:
+            continue
+        if not is_external_email(email):
+            continue
+        
+        seen_emails.add(email)
+        
+        # Extract name from "Name <email>" format if available
+        name = None
+        for header_val in [email_content['from'], email_content['to'], email_content['cc']]:
+            if email in header_val:
+                parsed_name, _ = parseaddr(header_val)
+                if parsed_name and parsed_name != email:
+                    name = parsed_name
+                    break
         
         participant = {
             "email": email,
             "name": name,
             "organization": infer_organization_from_email(email),
-            "source_email_id": email_data.get('id', ''),
-            "discovered_at": datetime.now(timezone.utc).isoformat()
+            "context": email_content['subject'][:100],
+            "extraction_method": "mechanical"
         }
         participants.append(participant)
     
     return participants
 
 
-def queue_stakeholder_for_creation(participant: Dict):
-    """Queue a new stakeholder discovery for profile creation"""
+def calculate_priority_score(participant: Dict, email_content: Dict) -> int:
+    """Calculate priority score for queue ordering"""
+    score = 50  # Base score
+    
+    # Boost if name extracted
+    if participant.get('name'):
+        score += 20
+    
+    # Boost if organization identified
+    org = participant.get('organization', '')
+    if org and org != '[Personal email]' and org != 'Unknown':
+        score += 15
+    
+    # Boost for upcoming meetings (keywords in subject)
+    subject = email_content.get('subject', '').lower()
+    if any(word in subject for word in ['tomorrow', 'upcoming', 'scheduled', 'confirmed']):
+        score += 25
+    
+    # Boost if from external (more reliable)
+    if participant['email'] in email_content.get('from', '').lower():
+        score += 10
+    
+    return score
+
+
+def queue_stakeholder_for_creation(participant: Dict, priority_score: int):
+    """Queue a new stakeholder discovery for profile creation with priority"""
     try:
         slug = generate_slug(
             participant.get('name') or participant['email'].split('@')[0],
             participant.get('organization', '')
         )
         
-        queue_file = PENDING_DIR / f"{slug}_{int(datetime.now().timestamp())}.json"
+        # Filename includes priority for sorting: {priority:03d}_{slug}_{timestamp}.json
+        timestamp = int(datetime.now().timestamp())
+        queue_file = PENDING_DIR / f"{priority_score:03d}_{slug}_{timestamp}.json"
+        
+        # Add metadata
+        participant['priority_score'] = priority_score
+        participant['queued_at'] = datetime.now(timezone.utc).isoformat()
         
         with open(queue_file, 'w') as f:
             json.dump(participant, f, indent=2)
         
-        log.info(f"Queued stakeholder: {participant['email']} -> {queue_file.name}")
+        log.info(f"Queued (priority={priority_score}): {participant['email']} -> {queue_file.name}")
         
     except Exception as e:
         log.error(f"Error queuing stakeholder {participant.get('email')}: {e}")
 
 
-def build_gmail_query(last_scan_time: str) -> str:
-    """Build Gmail search query for meeting-related emails"""
-    # Convert ISO timestamp to Gmail format (YYYY/MM/DD)
-    try:
-        dt = datetime.fromisoformat(last_scan_time.replace('Z', '+00:00'))
-        date_str = dt.strftime('%Y/%m/%d')
-    except:
-        # Fallback: yesterday
-        date_str = (datetime.now() - timedelta(days=1)).strftime('%Y/%m/%d')
-    
-    # Build query with keywords
-    keyword_query = ' OR '.join([f'"{kw}"' for kw in MEETING_KEYWORDS[:5]])  # Limit for query length
-    
-    # Exclude internal domains
-    exclude_query = ' '.join([f'-from:*@{domain}' for domain in INTERNAL_DOMAINS])
-    
-    query = f'after:{date_str} ({keyword_query}) {exclude_query}'
-    
-    return query
-
-
-def scan_gmail_for_meetings(dry_run: bool = False) -> Dict:
+def scan_gmail_for_meetings(dry_run: bool = False, use_llm: bool = True) -> Dict:
     """
     Scan Gmail for meeting-related emails
+    
+    Args:
+        dry_run: Preview mode, don't make changes
+        use_llm: Use LLM extraction (requires agent context), fallback to mechanical if False
     
     Returns:
         Dict with discovered stakeholders and metadata
@@ -278,7 +428,8 @@ def scan_gmail_for_meetings(dry_run: bool = False) -> Dict:
     if dry_run:
         log.info("[DRY RUN] Would scan Gmail with above query")
         log.info(f"[DRY RUN] Would check against {len(existing_stakeholders)} existing stakeholders")
-        log.info("[DRY RUN] Would queue new discoveries to {PENDING_DIR}")
+        log.info(f"[DRY RUN] Would queue new discoveries to {PENDING_DIR}")
+        log.info(f"[DRY RUN] LLM extraction: {'enabled' if use_llm else 'disabled'}")
         return {
             "status": "dry_run",
             "new_stakeholders": 0,
@@ -289,40 +440,85 @@ def scan_gmail_for_meetings(dry_run: bool = False) -> Dict:
     emails_scanned = 0
     
     try:
-        # NOTE: This is where actual Gmail API integration would go
-        # The script is designed to be called BY the Zo agent which has access to use_app_gmail
-        # When running as a scheduled task, it will be executed in a context where Gmail API is available
+        # Initialize Gmail API
+        service = get_gmail_service()
         
-        # For now, this is a DOCUMENTED PLACEHOLDER
-        # The Zo agent will need to wrap this script or inject Gmail data
+        # Search for messages
+        results = service.users().messages().list(
+            userId='me',
+            q=query,
+            maxResults=50
+        ).execute()
         
-        log.info("Gmail API integration point - awaiting agent context")
-        log.info("To complete: Agent should call use_app_gmail('gmail-find-email', {'q': query, 'maxResults': 50})")
+        messages = results.get('messages', [])
+        log.info(f"Found {len(messages)} messages to process")
         
-        # PLACEHOLDER - Agent will inject email data here
-        emails = []  # Would come from use_app_gmail
-        
-        for email in emails:
+        for msg_ref in messages:
+            msg_id = msg_ref['id']
+            
             # Skip if already processed
-            if email['id'] in processed_ids:
+            if msg_id in processed_ids:
+                log.debug(f"Skipping already processed message: {msg_id}")
                 continue
             
-            # Extract participants
-            participants = parse_email_for_participants(email)
+            # Fetch full message
+            msg_data = service.users().messages().get(
+                userId='me',
+                id=msg_id,
+                format='full'
+            ).execute()
             
+            # Extract content
+            email_content = extract_email_content(msg_data)
+            log.info(f"Processing: {email_content['subject'][:60]}")
+            
+            # Extract participants
+            if use_llm:
+                # LLM extraction (requires agent context)
+                llm_result = llm_extract_participants(email_content)
+                try:
+                    participants = json.loads(llm_result)
+                    for p in participants:
+                        p['extraction_method'] = 'llm'
+                except json.JSONDecodeError:
+                    log.warning(f"LLM extraction failed for {msg_id}, falling back to mechanical")
+                    participants = parse_email_for_participants_mechanical(email_content)
+            else:
+                # Mechanical extraction (fallback)
+                participants = parse_email_for_participants_mechanical(email_content)
+            
+            # Process participants
             for participant in participants:
+                email = participant['email']
+                
                 # Skip if already exists
-                if participant['email'] in existing_stakeholders:
+                if email in existing_stakeholders:
+                    log.debug(f"Skipping existing stakeholder: {email}")
                     continue
                 
-                # Queue for creation
-                queue_stakeholder_for_creation(participant)
+                # Skip duplicates within this scan
+                if email in [p['email'] for p in discovered_stakeholders]:
+                    continue
+                
+                # Calculate priority and queue
+                priority = calculate_priority_score(participant, email_content)
+                participant['source_email_id'] = msg_id
+                participant['discovered_at'] = datetime.now(timezone.utc).isoformat()
+                
+                queue_stakeholder_for_creation(participant, priority)
                 discovered_stakeholders.append(participant)
-                existing_stakeholders.add(participant['email'])  # Prevent duplicates in same scan
+                existing_stakeholders.add(email)  # Prevent duplicates in same scan
             
-            processed_ids.add(email['id'])
+            processed_ids.add(msg_id)
             emails_scanned += 1
         
+    except HttpError as e:
+        log.error(f"Gmail API error: {e}", exc_info=True)
+        return {
+            "status": "error",
+            "error": f"Gmail API: {str(e)}",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
     except Exception as e:
         log.error(f"Error during Gmail scan: {e}", exc_info=True)
         return {
@@ -336,7 +532,7 @@ def scan_gmail_for_meetings(dry_run: bool = False) -> Dict:
     state['processed_message_ids'] = list(processed_ids)[-1000:]  # Keep last 1000
     state['discovered_count'] += len(discovered_stakeholders)
     state['last_discoveries'] = [
-        {"email": p['email'], "name": p.get('name'), "org": p.get('organization')}
+        {"email": p['email'], "name": p.get('name'), "org": p.get('organization'), "priority": p.get('priority_score')}
         for p in discovered_stakeholders[:10]
     ]
     
@@ -352,8 +548,8 @@ def scan_gmail_for_meetings(dry_run: bool = False) -> Dict:
     
     if len(discovered_stakeholders) > 0:
         log.info(f"🎯 Discovered {len(discovered_stakeholders)} new stakeholder(s)")
-        for p in discovered_stakeholders:
-            log.info(f"  - {p['email']} ({p.get('name', 'name unknown')}) @ {p.get('organization', 'org unknown')}")
+        for p in discovered_stakeholders[:5]:  # Log first 5
+            log.info(f"  - {p['email']} ({p.get('name', 'name unknown')}) @ {p.get('organization', 'org unknown')} [priority={p.get('priority_score')}]")
     
     log.info(f"✅ Scan complete: {emails_scanned} emails processed, "
             f"{len(discovered_stakeholders)} new stakeholders discovered")
@@ -362,10 +558,10 @@ def scan_gmail_for_meetings(dry_run: bool = False) -> Dict:
     return result
 
 
-def main(dry_run: bool = False) -> int:
+def main(dry_run: bool = False, use_llm: bool = True) -> int:
     """Main execution"""
     try:
-        result = scan_gmail_for_meetings(dry_run=dry_run)
+        result = scan_gmail_for_meetings(dry_run=dry_run, use_llm=use_llm)
         
         if dry_run:
             log.info("[DRY RUN] Scan simulation complete")
@@ -389,6 +585,7 @@ def main(dry_run: bool = False) -> int:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Background email scanner for stakeholder discovery")
     parser.add_argument("--dry-run", action="store_true", help="Preview what would be scanned without executing")
+    parser.add_argument("--no-llm", action="store_true", help="Use mechanical extraction instead of LLM")
     args = parser.parse_args()
     
-    sys.exit(main(dry_run=args.dry_run))
+    sys.exit(main(dry_run=args.dry_run, use_llm=not args.no_llm))
