@@ -1,0 +1,1490 @@
+# **Impromptu Google Meet Meeting - October 10**
+
+[**[VIEW RECORDING - 70 mins (No
+highlights)]{.underline}**](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt)
+
+[[\@0:00]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=0.0) -
+**Logan Currie**
+
+Well, turn on lights. Yo. Yo, Yo, yo.
+
+[[\@0:08]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=8.2) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yo, I\'m so excited to show you Zoe real quick. I was just running the
+meeting that we had through my little protocol to try to show you what
+it can sort of spin up in just a few minutes.
+
+Here we are. Oh, and I\'m off camera. One second. Hello.
+
+[[\@0:41]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=41.2) -
+**Logan Currie**
+
+Hello. Hello. Yes, comment would like to what?
+
+[[\@0:50]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=50.94) -
+**Vrijen Attawar (mycareerspan.com)**
+
+May have to restart. Boom. Okay. So meeting transcript process. Okay. So
+this is, so I\'ve gotten to the point where all I have to do is issue
+this command and finding process.
+
+I\'m trying to get it to the point where it doesn\'t have to ask me
+these questions, but essentially asks for some clarifications.
+
+And then it runs these commands. One tip for using it is occasionally it
+will time out. And so I set up a rule that specifically says when I say
+resume or give this instruction, that means you timed out.
+
+And it reminds it to like pick up from where it left off as opposed to
+just like kind of waking up out of a coma and not knowing what the to
+do.
+
+So I\'ve found that improves performance a little bit. But to show you
+what was processed previously. So I did this.
+
+It\'s with GPT-5 Mini, and what it does is it creates a meeting under
+the meetings folder where it generates all of the action items that were
+discussed with, like, notes and, like, specific information.
+
+It will give you, it will assess what are the deliverables that are
+recommended, so it identified, okay, maybe writing an email to Meg and
+maybe generating a one-pager.
+
+So it sort of will intelligently decide that. It\'ll summarize
+everything related to the meeting in this, like, one-shot, like, first
+look at this executive summary.
+
+You can get, like, a high-level overview, and then if I give it
+permission to proceed, which I did, in step two, it will actually
+generate those deliverables.
+
+So if I have a blurb that I want to generate, okay, this one didn\'t
+generate a blurb because it didn\'t, I know the blurb was needed.
+
+What did it say was needed? Oh, it said\... Oh yeah, and intelligence.
+Deliverables. Oh yeah, it said that, where are you at, where are you at,
+where are you at?
+
+Detailed notes. I think, oh, here it is. Follow-up email. Yep. It\'ll
+actually generate the follow-up email for you. And it\'s like a pretty,
+it\'s like a pretty natural sounding email.
+
+Like, yes, again, this, I wouldn\'t send this intro to Meg because I
+wouldn\'t tell Meg, thanks again for the time to chat.
+
+But like, for the average person, this is like, very passable, you know?
+Yeah, yeah. This requires like a very light touch to, to get going.
+
+And then eventually I can even get this to like, just have it drafted,
+ready in my account. And then what I can also do is have Howie, I
+actually had a, I set it up so that Howie had a conversation with Zoe.
+
+And it like, they back and forth settled on an. Yeah. Great set of rules
+for interacting with each other.
+
+It was so cool to see. Yeah, they were like, okay, I\'ll send you this.
+And then do you want this?
+
+Okay, I\'ll do this. And so they like agreed on a set of rules between
+themselves for like how to coordinate my schedule.
+
+wild, man.
+
+[[\@4:15]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=255.568) -
+**Logan Currie**
+
+We live in wild times.
+
+[[\@4:16]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=256.688) -
+**Vrijen Attawar (mycareerspan.com)**
+
+We live in insane times. I did not know this was like, it was like a
+dream, honestly, just being able to set some of this stuff up.
+
+Please enjoy a really quick sidebar.
+
+[[\@4:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=268.888) -
+**Logan Currie**
+
+The, where did I put this? I might need to, oh no, it in messages. So
+the Jeff Busking, like lecture yesterday was insane.
+
+Basically like, um, it was essentially the equivalent of like that class
+I took in the spring. Cause he and professor are like buddies, but all
+about, cause he also wrote like the experimentation machine.
+
+So it\'s like. All about like the 10X founder, the 10X developer, like
+whatever, whatever. But he was giving some insane examples of like
+three-person companies running like 5,000 agents and like that.
+
+But this, I\'m sending you a screenshot, a screenshot of a screenshot
+because my phone is charging. And he was talking about how companies
+that are targeting enterprise now are not just going after the software
+budget.
+
+I\'m going send you this graph, which is going to, if you\'re as
+horrified as I am, look at this graph.
+
+Okay. So AI software to software plus labor. So look, I don\'t know if
+you can zoom in, but essentially what that says is, so they\'re not
+within these enterprise companies.
+
+They have a certain amount of software budget, but what they\'re saying
+is, and the phrase used on that minute.
+
+Software payroll? So I want Automatable payroll, which is out of all the
+youth, all the land. Oh, God.
+
+[[\@6:07]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=367.912) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, that\'s gross. Isn\'t that gross?
+
+[[\@6:11]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=371.232) -
+**Logan Currie**
+
+Automatable payroll, Vrijen.
+
+[[\@6:15]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=375.792) -
+**Vrijen Attawar (mycareerspan.com)**
+
+They\'re saying half of society will basically be nixed by software.
+Well, I mean, Marc Andreessen was right. Software is eating the world.
+
+I hate to give that bald-headed any credit, but that was a good phrase.
+
+[[\@6:32]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=392.232) -
+**Logan Currie**
+
+I felt like I was just, I zoomed in on that and I was like, automatable
+payroll. Is that what we\'re calling it now?
+
+Like, I\...
+
+[[\@6:40]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=400.092) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Only, I mean, this is the kind of pioneering social science happening at
+Harvard, I\'ll tell you that. Oh, my God.
+
+[[\@6:46]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=406.112) -
+**Logan Currie**
+
+I\'m like, this fucker. I mean, it was very interesting otherwise. I
+bet. I mean, it\'s fascinating. I\'ll you some notes, but like when I
+put them all together, but like that\...
+
+worry, is he going to stick with me for a long time? Because I\'m just
+like\...
+
+[[\@6:58]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=418.912) -
+**Vrijen Attawar (mycareerspan.com)**
+
+we are, we are seeing\... Being like, this is, this, yeah, I mean, this
+is as close as you can get to the Industrial Revolution without actually
+being in the Industrial Revolution, right?
+
+We thought it was the internet, but it\'s most likely going to be this.
+But the interesting thing I will say, and maybe you feel the same way
+having like vibe coded more, I\'m more convinced in my opinion that
+large language models aren\'t it.
+
+Like, I don\'t, like, I think that they\'re going to get better. And I
+think that, but it\'s actually kind of perfect for people like you and
+me.
+
+It is actually the worst for the world because it is not good enough to
+be actually, it\'s not powerful enough or seamless enough to be actually
+democratizing.
+
+It is pseudo-democratizing. It is re-concentrating power in the hands of
+the people that can wield it. And have the money, like I was thinking,
+this guy\'s giving me an 80% discount on compute.
+
+He\'s essentially like, forexing my ability to like, deploy intelligence
+and like automate myself and like do in the world, right?
+
+And like, eventually, it will get to a point where that is effectively
+what it is. But right now, it\'s not, it still takes an load of effort
+to do this.
+
+And that\'s kind of perfect for us, because it was easy that everyone
+could do it. That\'s exactly what it is.
+
+[[\@8:33]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=513.136) -
+**Logan Currie**
+
+It\'s, and it\'s kind of funny, in some ways, because it\'s not just
+about being articulate, obviously, but the fact that it\'s language
+based.
+
+Yeah, I loved it so much. Rewards the yappers of the world, I tell you
+that much. Seriously. Yeah.
+
+[[\@8:50]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=530.636) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I have genuinely felt like as, as I\'ve started to lean into like being
+more, because you don\'t even need to be that precise.
+
+But I think if you can think in. And like, again, just reasoning, if you
+can reason linguistically, or you can reason sort of verbally, that has
+never been like more of a superpower than now.
+
+[[\@9:13]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=553.308) -
+**Logan Currie**
+
+So yeah, exciting stuff. I mean, hey, automatable payroll, automatable
+payroll, . Anyway, um, what were we talking about? Um, so, yeah, the
+other combo I had with Ilsa at some point was around, she was really
+one, very, very quick before I forget, because this was a short one from
+you.
+
+[[\@9:38]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=578.248) -
+**Vrijen Attawar (mycareerspan.com)**
+
+What was the call with the work tech sherm guy like?
+
+[[\@9:42]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=582.028) -
+**Logan Currie**
+
+Oh, like, we should apply, right?
+
+[[\@9:44]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=584.988) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I think we should apply.
+
+[[\@9:46]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=586.368) -
+**Logan Currie**
+
+He was very much just like, it was just kind of like a vibe. Like, he
+was there for, like, questions, I threw out a few, like, softballs,
+like, he likes what we\'re building, he seemed like a cool guy, he\'s
+only been with them for like a
+
+I was pissed the off.
+
+[[\@10:02]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=602.9) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I\'m actually almost glad I didn\'t take it, because I was pissed the
+off going into it, because they just never responded to us last time.
+
+So that was the main thing I wanted to ask him about, was like, hey, can
+I expect a response from you?
+
+I\'m happy to follow up with him.
+
+[[\@10:16]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=616.82) -
+**Logan Currie**
+
+He was quite nice. cool, right? Yeah. So, yeah, that one was a\... Laura
+just sent us that as well and said, hey, you should apply.
+
+Oh, nice. Okay, yeah.
+
+[[\@10:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=628.1) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, which we should roll her, and I got a male Shajat and Rajesh out,
+but I think we should roll them out soon as well.
+
+[[\@10:35]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=635.86) -
+**Logan Currie**
+
+Yep, I agree. The other\... Get us a little more attention. What was I
+going to say? Oh, Ilsa was\...
+
+Oh, yeah, yeah, Ilsa. Digging more into, like, runway and, like, that
+kind of stuff, and she was like, what\'s\...
+
+Like, what are our game plans? Like, In of like not being able to raise
+additional funds or whatever. And I was like, I think we can get anyway,
+I was kind of hedging in some ways, but I was like, I also didn\'t want
+to completely like, I think we got to get, I think we can get Rob\'s
+money.
+
+I think we might. Yeah. I mean, the fact that like maybe, um, maybe, but
+I, I think actually, no, I shouldn\'t have led with that.
+
+[[\@11:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=688.892) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I think we should get some money. And I think Rob would be, let\'s just
+like hit him up. But I think regardless, like as a, I think as a start,
+let\'s try to go with that.
+
+Go ahead ventures folks. We have a good deck. We have a good premise. I
+think I\'ve spoken to them and they said revenue wasn\'t an issue and we
+can frame it as like a recent pivot.
+
+Let\'s at least like try, right? That most, they require a deck and a
+recorded video. And I think we have some really powerful consumer
+numbers and they\'re used to seeing consumer products.
+
+[[\@12:00]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=720.292) -
+**Logan Currie**
+
+Let\'s out.
+
+[[\@12:00]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=720.384) -
+**Vrijen Attawar (mycareerspan.com)**
+
+So I think between that, let\'s try to see if we can swing. I think they
+do require someone else to go in with you.
+
+But I think between that, maybe original investors, maybe New York State
+Ventures, I think we could cobble together a proper bridge around now
+because we do have way better numbers and way better momentum on our
+side.
+
+We have bigger name advisors, all that .
+
+[[\@12:25]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=745.684) -
+**Logan Currie**
+
+I was basically like, I think we can get more money in. I do think that
+the open question that I would want to bring up is like, how responsible
+is it to get more money in without a like real revenue stream?
+
+my, like, I just want to, like, the phrase, the\... Bad money after
+good, right? Well, the phrase that stuck with me from this guy\'s
+workshop last night was like, you don\'t want to put money into a leaky
+bucket.
+
+Yeah. And I was like\... Yeah. like, again, I wanted to like the two,
+like, in terms of order of operations, like the three things that we
+want to be doing are like, okay, who\'s going to pay us money for the
+product that we have, like, is kind of the overriding, like, what\'s.
+
+[[\@13:16]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=796.976) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I think the, so this is where, this is the way that I would think about
+it, is can we, can we work towards a sale in the next year?
+
+And can we raise enough to just get some sort of like, flip, right? I
+think, or at least like, psychologically, we can tell the team that,
+that like, that is what we\'re going for.
+
+I think as far as like, any new investor that comes in realistically,
+like, it might be them over a little bit, but we\'ll get them their
+money back so quickly, like, I don\'t think it\'ll be that much of an
+issue.
+
+But I do think that, like, I genuinely believe in the distribution case.
+And I think, I almost think if we just say, it, we just want to sell
+this son of a in a year, then let\'s just honestly dump a bunch of,
+let\'s like raise enough revenue right now to keep some more money
+coming in the door.
+
+And then just like spend a shitload on distribution, eyeballs, volume,
+and just sell like a hundred thousand person, like, like, let\'s make a
+exit, like, like, that lady that, like a Frank lady, right?
+
+Except real.
+
+[[\@14:33]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=873.228) -
+**Logan Currie**
+
+Yeah, yeah. So I mean, like, I\'m, I\'m on board with that. I think
+like, what makes sense to me is looking really critically at where money
+is going in the market.
+
+And saying like, okay, who\'s, who\'s acquiring companies? What are they
+acquiring them for? I don\'t know if just users that might be one,
+right?
+
+But it\'s like, I think like in terms of. Running a process. I\'m
+thinking of like how Joe Burgess sold his company.
+
+He was like, I ran it exactly like I would run a fundraise in the sense
+that I knew that this company was investing in this type of tech.
+
+I knew who I was talking to, et cetera, et cetera. So it\'s like, I want
+to kind of whiteboard this at some point, but like, what are the
+categories of companies out there that are in the business of acquiring
+other companies that have high urgency and deep wallets?
+
+I have an idea. Okay.
+
+[[\@15:30]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=930.86) -
+**Vrijen Attawar (mycareerspan.com)**
+
+You may or may not like it. Okay. I\'m open to it. We are not an AI
+company. Okay. We are a roll-up company.
+
+Mm-hmm. And we are rolling up recruiting firms. Mm-hmm.-hmm. So we are
+essentially saying recruiting firms are a dying breed.
+
+Their only edge is their private little pocketbooks and their ability to
+make qualitative judgments about people. We can take over both.
+
+And so we essentially are looking for money to buy recruiting agencies
+to get recruiters to sell our network that we create using tech.
+
+So we need money to acquire recruiting agencies that we level up with
+our tech.
+
+[[\@16:46]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1006.25) -
+**Logan Currie**
+
+Hmm. That\'s expensive.
+
+[[\@16:50]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1010.63) -
+**Vrijen Attawar (mycareerspan.com)**
+
+It\'s a big dream, but luckily big dreams require big money and it\'s
+easier to raise big money than it is to raise small money.
+
+I know that, so the reason I had this idea was because I went to that
+Google Ventures, what\'s it called, Compadre Capital, they have some
+dumbass name, it\'s not bling, it\'s some silly name, but it was them
+and Google Ventures, David Ongchiocho or something, I think you\'ve seen
+his name probably.
+
+They were, they put forward three companies that day, was basically just
+a glorified like hiring mixer with engineers and three companies from
+their portfolio that they were trying to place the engineers with, and
+all three of them were roll-up companies.
+
+And they were essentially these dudes that had worked in PE, or had
+worked in like some sort of like industry that was all about getting
+efficiencies, and they\'re saying, hey, one of them was for accountants,
+another one was for like business automations of some sort.
+
+And they were both just roll up plays. And they\'re essentially just
+like, yeah, we come in, we modernize these places, we take over their
+like overhead, all that .
+
+And we like add them to our like growing matrix. Because if the let\'s
+think about it, if the whole problem is we don\'t want to sell to these
+we don\'t want to sell people to people, then we just buy the companies
+that do that and give them career span and put their on career span.
+
+[[\@18:31]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1111.94) -
+**Logan Currie**
+
+Right? I mean, the reason that PE companies can do that is because
+they\'ve got PE money.
+
+[[\@18:40]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1120.72) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Well, but there, but that\'s what I\'m saying. Like, I think there is a
+wave of these startups that are doing that.
+
+And they\'re specifically targeting these archaic industries. And
+there\'s a case to be made that like, we\'re kind of perfect for that,
+right?
+
+Because what are the costs associated? I mean, we can like sit down with
+a recruiter. But effectively, you generally need more recruiters than
+people because the recruiters have this pipeline to maintain, right?
+
+But if you can increase the ratio of candidates to recruiters through
+career span, then you can have fewer recruiters in a much more
+profitable organization.
+
+[[\@19:23]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1163.85) -
+**Logan Currie**
+
+That\'s one angle. I like it.
+
+[[\@19:26]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1166.41) -
+**Vrijen Attawar (mycareerspan.com)**
+
+It\'s a very coldly MBA angle. But in a sense, it\'s better for the
+world, right? What would be ideal for the world is like one mega
+recruiter that represented them in a personalized way.
+
+So in a sense, like, it\'s also more representative of what we know AI
+can actually achieve, right? Given what we just discussed about, it\'s
+like, overall implementation difficulty, something that is mediated by
+humans is probably still going to be more effective.
+
+I don\'t know. I don\'t don\'t know. don\'t don\'t But I think we I
+legitimately think we could raise money off of just that, that we have a
+technology, we can show that.
+
+I think what we just need to demonstrate is that we have the tech to
+back that up, right? This case study will go a long way, but I\'m
+wondering if experimenting with that narrative and just throwing a YOLO
+at Go Ahead Ventures or trying to sound that out might be interesting.
+
+Or actually, I would want to give a more high probability attempt for Go
+Ahead Ventures. But yeah, I\'m just wondering like what, this could be a
+way to like, sell the company.
+
+[[\@20:41]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1241.22) -
+**Logan Currie**
+
+But like, for argument\'s sake, because the issue with going
+institutional money is that they will expect like 10x returns, right?
+
+Like, that\'s, at this point in time, that\'s not the smartest move is
+what I would say, like, in terms of literal\...
+
+Like, if we wanted to, if we\'re an exit within a year, right, if we\'re
+an exit within a year, no, it\'s a very bad idea.
+
+Right? Because it\'s like, that\'s right. So like, I\'m the, well, I
+don\'t know what to tell you, Logan, the heart wants what the heart
+wants, the heart wants a billion dollars.
+
+But no, I see your point. I get it. So that is one. And I\'m not
+actually like, let\'s like, follow that through.
+
+I want to do research around that and like, kind of like, wrap my head
+around it. But it\'s like, That I think is like door B, right?
+
+Door C is. So like, door C would be, what do we have? Or what could we
+kind of like, really nail in terms of specific tech that is needed in
+the market that would essentially be worth buying?
+
+Because a company is trying to like win a market or win an area that
+would Take too long to like develop or whatever.
+
+Like, so what do we have?
+
+[[\@22:06]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1326.02) -
+**Vrijen Attawar (mycareerspan.com)**
+
+think it\'s, it\'s either the tech or the distribution.
+
+[[\@22:08]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1328.66) -
+**Logan Currie**
+
+Precisely, precisely. So it\'s like. It\'s the tech or the distribution.
+
+[[\@22:12]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1332.22) -
+**Vrijen Attawar (mycareerspan.com)**
+
+And I think the tech is, we have incredible tech. The thing is tech is
+harder to make a objective case for.
+
+Distribution is easier to make an objective case for. If we just, like,
+I\'m almost pitching to you, saying to, I\'m just going to come out
+right and say, saying to communities, basically do a one-year lock-in
+with us or a six-month lock-in.
+
+it, right? A six-month lock-in with us and get us embedded in your
+companies. And on this timeline, we will start delivering roles to you,
+right?
+
+And we do that. Maybe we lose FOHE, but whatever, right? We, we, we get,
+we get a few communities on board with that.
+
+Using those communities, we essentially. We make the case to someone
+that like, we have a brand, we have X many communities in the pipeline,
+we have Y communities onboarded, they represent X hundred thousand folks
+reach, right?
+
+So what we\'re essentially, I\'m saying the strongest, what is in our
+control, your and my control and playing to our strengths is our
+relationships and our networks, right?
+
+So even if we, in a highly informal LOI or word of mouth way, have a
+dozen logos of communities on our website, I think being able to go to
+any, go to Teal, it, go straight to like David Fano via your friend, or
+like my contacts at Flybridge and essentially just say, hey, buy us,
+right?
+
+Like we have distribution, like that would be the easiest thing in the
+world versus tech where like, it would be a your word against my word
+and we would have to trot out Ilsa and I
+
+I also think that, like, when all is said and done, we want the story to
+be told that it was our edge that, like, got everything out.
+
+So I think for that reason as well, I\'m, like, more keen on a pathway
+that involves, like, just being able to say, like, we already have a
+spire, right?
+
+So theoretically, we can say we have contracts where we have, like, a,
+we have a, like, superset of, like, 50,000, 70,000 users, right?
+
+[[\@24:29]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1469.27) -
+**Logan Currie**
+
+But, like, if you follow that to the logical conclusion, who\'s going to
+buy that?
+
+[[\@24:34]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1474.85) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I think who will buy that is any company that wants to, so, like, the
+potential buyers would be a recruiting firm would just buy the data,
+theoretically, all the way to, like, a future fit would buy that tech
+to, like, actually implement.
+
+Or someone else could, we could even .
+
+[[\@24:54]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1494.47) -
+**Logan Currie**
+
+You just said tech. So they would buy the tech.
+
+[[\@24:57]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1497.55) -
+**Vrijen Attawar (mycareerspan.com)**
+
+They would buy the tech, but they would buy the, it\'s the. Intersect.
+It\'s the fact that the tech is already embedded in these places, right?
+
+Because the hurdle, if the market hurdle for any new entrepreneur is
+establishing the relationships to have that distribution and having a
+product that gets excess data from those cohorts, right?
+
+And I think that\'s how we frame it is in terms of like, excess data,
+like in an AI world, you want like, unique, you know, coveted data on
+your users that you that that is like, solely yours, and that can be
+like leverage for better monetization, right?
+
+So I think we could like privately make a more craven case than we do
+publicly. But like, I think regardless, it\'s not like we\'re going to
+be selling it to like, you know, Cambridge Analytica, like we would be
+selling it to another work tech company, or like a workday or something,
+you know?
+
+Right.
+
+[[\@25:55]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1555.54) -
+**Logan Currie**
+
+But like, workday doesn\'t need more people is what I would say, like,
+I\'m just saying, I mean,
+
+[[\@26:00]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1560.83) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Again, I think that I think if we\'re selling to a I guess what it seems
+like is if we\'re selling to a company that\'s bigger than us, in the
+ATS HR space, it\'ll probably be for the tech.
+
+If we\'re selling to a more consumer or like future like future worky
+company that\'s trying to do something different.
+
+If it\'s on the hiring side, it\'ll be distribution. If it is on the HR
+tech side, it will be the tech, right?
+
+[[\@26:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1588.45) -
+**Logan Currie**
+
+So if you, so basically what I want to do, I don\'t know if you can come
+up to Boston next week or we can, I can.
+
+Yeah. Cause I think like, let\'s get to the iLab and like map this out.
+Yes. What I would say, because like, if it\'s category, like a, it\'s a
+work tech company or an HR tech company, because we need the deep
+pockets.
+
+We need it at least like, we need a floor at which we would sell, right?
+Like what is the absolute minimum?
+
+And then we can do the math on like, okay, what would this look like?
+And then. Because like, Teal doesn\'t have enough money to buy us.
+
+[[\@27:04]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1624.16) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, well, so luckily, with our investors, because they\'ve essentially
+invested flat, like everyone\'s on like common stock, we don\'t have any
+sort of complicated preferred math, which basically just means we need
+to pull out more money than we put in, right?
+
+[[\@27:24]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1644.26) -
+**Logan Currie**
+
+So ideally, we need to like, sell for two mil, two mil to three mil is
+what we need to sell So then it\'s like, okay, if that\'s the floor, but
+then like, let\'s say, okay, at this point, your distribution would be
+like, if we sold it for five mil, it\'s like, you get 1.5 million, which
+like, you know what I mean?
+
+So it\'s like, and then like, whatever, everybody gets a piece of the
+pie. So then you just do that math.
+
+And then you\'re like, cool. Okay. So then you work backwards and like,
+okay, where are the companies? We just do an entire ecosystem mapping of
+these are all the companies that want us for this piece.
+
+And so then. We essentially say, what are our proof points around what
+that is? smart, smart. So then it\'s like, okay, well, let\'s say that,
+like I did this exercise with Claude like a week and a half ago when I
+was kind of trying to think through this of like, you know, what is it
+that we have that could be either unique on the tech side?
+
+Because like right now, and like who would want what we have, right? So
+then you like, how would this slot in?
+
+What would that look like? meaning in all likelihood, we would need
+either like an SDK or an API where it\'s like, they can call to our
+system that it\'s just like slots in, but it gives them an unnatural
+advantage.
+
+So we\'re essentially doing competitive research on behalf of the
+company that we want to sell to. You see what I mean?
+
+So it\'s like, this is the reason that you need us in order to do A, B,
+and C or whatever it looks like.
+
+So then, then it could be tech for some people, or it could be
+distribution for other people. But meanwhile, we are working.
+
+Taking both of those angles to, like, you see what I mean? So we have
+Ilsa building towards XYZ. Right.
+
+Making sure that all of the due diligence is in the right place. We\'ve
+got the data room, we\'ve got the thing.
+
+And then you and I are on the phone. You know what I mean? Yeah.
+
+[[\@29:19]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1759.97) -
+**Vrijen Attawar (mycareerspan.com)**
+
+The other way to think about it, if we don\'t want to put in a bunch of
+money, is to essentially say, what is the state that we can get the
+product, at which point we drop everyone and just have a shell that we
+can sell and give people the money that they were promised.
+
+And we say, hey, we will like sell this and get you back. And like, we
+set you free, essentially.
+
+[[\@29:42]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1782.55) -
+**Logan Currie**
+
+Right. Exactly. I do not think we need Rockwell right now.
+
+[[\@29:47]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1787.19) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, we don\'t need Rockwell right now. And theoretically, if we don\'t
+want to put more money into the engine, we don\'t need anyone right now.
+
+Right. But maybe Ilsa on the tech side. Ilsa part time. Yeah. So I think
+I think here\'s, realistically, here\'s I think what needs to get done.
+
+I think we need to keep our promises to the team. And so I\'m going to
+speak to the folks and I\'m essentially going to tell them, look, we are
+going to try to sell the company.
+
+We want you guys to pay the team as much of the team as you can from
+here from India.
+
+Yep. And we will take the money in the US and run that as long as we
+can.
+
+[[\@30:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1828.6) -
+**Logan Currie**
+
+That gets us a few more months. We\'re going to aim for a sell.
+
+[[\@30:31]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1831.3) -
+**Vrijen Attawar (mycareerspan.com)**
+
+We\'re going to aim for a \$5 million sort of like sale, right? Or
+we\'ll aim to like, make 5 million out of it somehow.
+
+Right? Is effective. Yeah, like some of the some of the acquisitions.
+
+[[\@30:46]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1846.9) -
+**Logan Currie**
+
+So the reason I want to talk to the reason I think there\'s a case for
+the tech side is there\'s a ton happening on the on the background check
+and verification side, which I genuinely think like Ilsa has been
+testing some of
+
+This in terms of the consistency across resume to interview transcripts,
+she says she can do that, like, she can start doing with that, but
+she\'s starting with stories, basically, but like, that, like one
+company that I looked into, Checker, I think, just bought some other
+company for like, \$2 billion.
+
+Like, there\'s a bunch of the market in that, as you can imagine, like
+that.
+
+[[\@31:24]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1884.79) -
+**Vrijen Attawar (mycareerspan.com)**
+
+have any connections to the guy at Tofu? I think I have some connections
+to him.
+
+[[\@31:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1888.73) -
+**Logan Currie**
+
+So this is essentially, maybe you can come up, let\'s look at our
+calendar for next week, but it\'s like, if we war game this, um, yeah,
+let\'s do it.
+
+I don\'t have anything, like, Monday, Tuesday, really. Anyway, my
+week\'s pretty free. Thursday, I have like a fo-hee thing.
+
+Oh, wait, I have a dinner Monday night. But, um, then I could probably
+get you on the list too, you want, but like, yeah, um, anyway, like,
+next week, I have, um, Oh, I have, uh, that magic at tech.
+
+[[\@32:02]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1922.08) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Panel. Speakers.
+
+[[\@32:05]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1925.1) -
+**Logan Currie**
+
+Oh, that\'s the speaker sync.
+
+[[\@32:06]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1926.58) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I have to be back on Thursday because Bright Ventures has a whole all
+day thing.
+
+[[\@32:11]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1931.56) -
+**Logan Currie**
+
+Oh, nice. Yeah. That one\'s going to be really good to go to. So maybe
+you come up on either Monday or Tuesday, whichever one you want.
+
+Yeah. And then, but essentially, I think we can, I think we can really
+war game this scenario. And like, this is also a great use of our
+networks, because it\'s essentially, between the two of us, we know
+everybody at these companies.
+
+Yeah. Like, and so then it\'s, okay, this is the piece. And so I think
+then it\'s like, because I did a little bit of back of the table math,
+basically.
+
+And it\'s like, if we can get a \$5 million sale, that\'s like 1.3 for
+you. And as soon as you can just give the money back to the investors,
+like, you know, whatever.
+
+[[\@32:53]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1973.8) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, that\'s whatever.
+
+[[\@32:55]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=1975.68) -
+**Logan Currie**
+
+And then I think it\'s like 400k for Ilsa, which she would really,
+that\'s her house in Madeira, basically. I think if we dangle that, and
+we\'re like, listen, this would be your payout.
+
+It\'s what, like, maybe 600K or something like that. Yeah. Whatever.
+Like, it\'s enough that you\'re like, okay, we\'ve got an exit.
+
+Yeah. And we can sell that all day long. And then, like, we can do
+whatever the we want with that.
+
+Like, that\'s your ticket. That\'s my ticket. That\'s everybody\'s
+ticket to something at the next where it\'s like, okay, I think we\'ve
+said this so many times.
+
+I\'m game with this plan. Yeah. I\'m so , I\'m down with it.
+
+[[\@33:32]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2012.4) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Because, like, we\'ve, we\'ve gotten very deep along a particular path.
+And, like, I believe that we can make it work.
+
+But also, getting a reset will be nice. a reset.
+
+[[\@33:43]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2023.72) -
+**Logan Currie**
+
+It\'d be essentially like, listen, we can do this. If we wanted to solve
+this exact same problem. We could try again.
+
+Yeah. Try again. Like, I don\'t, like, you know what I mean? Where it\'s
+like, and then we can do it in a way.
+
+We\'ve learned so much. I feel like if we just, like, looked back at all
+the things that we have done, we would be like, oh,
+
+No, you don\'t do that. You do this. Yeah, totally.
+
+[[\@34:03]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2043.83) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Like a good year and a half we could have gotten back just from like
+100%.
+
+[[\@34:08]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2048.49) -
+**Logan Currie**
+
+And so then it\'s like, okay, like, and then you and I would both have,
+and Ilsa as well, like, we would have the personal runway to essentially
+network and all that.
+
+Like work on whatever it is that we want to work on next and then get
+the money.
+
+[[\@34:22]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2062.69) -
+**Vrijen Attawar (mycareerspan.com)**
+
+so much easier being an exited founder. No, I\'m game.
+
+[[\@34:25]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2065.73) -
+**Logan Currie**
+
+Let\'s do it. Okay, cool. I\'m really relieved because it\'s been like
+sitting on my head for the last like two weeks where I\'m just like, I
+feel like we, it\'s a little bit of a get out of jail free card, but I
+kind of want to get out of jail free card.
+
+[[\@34:39]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2079.67) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, no, now is the perfect time. If we wait for later, someone else
+can take our edge. Like I basically say, it.
+
+I honestly say we say whatever we need to say to get the momentum on our
+side to sell by the start of the year.
+
+Like, let\'s just get the out of Dodge.
+
+[[\@34:57]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2097.45) -
+**Logan Currie**
+
+Let\'s run this. We get some money. Money. We get an exit. Career Span
+is sold. Yeah. We can take a vacation, like a real vacation, dude.
+
+Like, seriously, like a week is not enough. Like, like, we\'ll go to
+Bali and we\'ll drink on the beach for a month, something like that.
+
+[[\@35:17]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2117.18) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, that\'ll be nice. I\'m totally game. I think, I think this is the,
+I think this is the, I think this is the best way to make the most of
+what we\'ve gotten so far.
+
+I think here\'s, here\'s what we do. I say we like, yeah, we basically
+just, I think we can, I think here\'s what we do.
+
+We, if we\'re just trying to sell, then our revenue kind of means
+nothing.
+
+[[\@35:47]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2147.34) -
+**Logan Currie**
+
+Very true.
+
+[[\@35:50]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2150.72) -
+**Vrijen Attawar (mycareerspan.com)**
+
+So, then I would say we should put literally every ounce, this is, this
+is what I was trying to get to.
+
+If revenue means nothing, then the only thing we index on is the The
+tech and the distribution. And the way to evidence the tech is to have a
+large number of people on it, using it, pumping data through it.
+
+So effectively, if we just go to, we go to these communities, we spin
+them a yarn about how we\'re setting up this big system.
+
+There\'s going to be like over a million, we\'re working towards a
+million people on CareerSpan. It\'s going to be the biggest talent
+network in the world, blah, blah, blah.
+
+You want to be on it. Sell them this big thing, get people on it. We
+have, we tell them, hey, we\'re only onboarding like X many users at a
+time.
+
+Like we create hype and stuff around it. And we just put basically all
+of our money and time around getting to that, like as close to that 1
+million figure by the end of the year.
+
+And then we just sell, right? Because I think that is where within this,
+we don\'t have the Gen Z swagger to pull off distribution at a clearly
+scale, but we do have the ability to be.
+
+Cool to HR, right? So I think we basically just big social media game,
+really loud, really obnoxious, making revenue.
+
+Let\'s just make noise and sell by the end of the year.
+
+[[\@37:22]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2242.58) -
+**Logan Currie**
+
+I want to think through I completely I\'m on board with that because
+that costs us nothing. So like, uh, like, absolutely.
+
+I do want to think because we what is the thing we have going for us?
+
+[[\@37:32]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2252.74) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Dude, people are coming back to our . We actually do have the irony is
+we have an amazing product.
+
+We have we\'ve somehow built an incredible product. I think that bigger
+numbers going through the system will make people\'s eyes pop out.
+
+So let\'s just increase the throughput. And worst case scenario, if
+needed, we can like, get rid of everyone get Ilsa to reprogram this to
+
+Workoff of Gemini, which is cheaper. And essentially just take the free
+Google credits that we\'re getting, which we have up to 50,000 credits
+in Google, like free AI credits.
+
+So if at some point, we just need a month where we\'re just like,
+pumping the like jobs through the system and like making everything look
+amazing.
+
+it, we can do that too.
+
+[[\@38:24]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2304.68) -
+**Logan Currie**
+
+Hmm. I think this sets us up well. I do. I am. I think we can get more
+than 5 million.
+
+Yeah. It\'s tech. I\'m just throwing that out there that like the I
+think people will pay for distribution. But I also think that if I
+don\'t I think we don\'t have to have it be either.
+
+think. So I think your point. Yeah. of tech and distribution, then like
+it gives us more optionality and it gets more potential money.
+
+So I\'m just going to throw that out there that it\'s like if Ilsa could
+come up with something because she she is the secret weapon in this.
+
+So like if she\'s on the next factor, he she can actually build. If we
+tell her that this is going to get us X value, we\'re going to be able
+to sell for more if we have this, she will get us there.
+
+You know what I mean? So my open question is if we need Dani part-time
+or not to help supplement her.
+
+I don\'t think that we do, but I think we can run that by her. I think
+we can run that by her.
+
+[[\@39:27]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2367.29) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I think the main thing is to reassure the team that we\'re not going to
+leave them hanging high and dry.
+
+So let\'s do this. Let me come to Boston ASAP. Let\'s get synchronized
+on this. Let\'s go to the team and essentially say, look, this is
+what\'s up.
+
+Like this is the guaranteed amount that we\'ve done the math. This is
+how much we guarantee payout.
+
+[[\@39:48]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2388.35) -
+**Logan Currie**
+
+This is how long we\'re going to pay you.
+
+[[\@39:49]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2389.93) -
+**Vrijen Attawar (mycareerspan.com)**
+
+This is what we\'re working towards. We\'re working towards a sale. All
+we need is Dani part-time and Ilsa. So this is your like X month notice,
+right?
+
+And we just dedicate the rest of the fund. To making sure that like the
+rest of the team has runway.
+
+And we essentially tell Ilsa, hey, we will find a way to like keep you
+paid. Yeah. And work towards like a big moonshot tech thing with us that
+we can use as a demonstrator to sell to our network.
+
+Yep.
+
+[[\@40:17]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2417.84) -
+**Logan Currie**
+
+Yep. Absolutely.
+
+[[\@40:20]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2420.2) -
+**Vrijen Attawar (mycareerspan.com)**
+
+And then at the same time, it costs us literally nothing to put the
+product in communities, right? Yeah, yeah, I think that is a good.
+
+[[\@40:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2428.48) -
+**Logan Currie**
+
+Yeah, that\'s a good run. I think that gets us. Yeah, that gets us
+places. The X factor here is I also have a meeting with that head of HBS
+Tuesday.
+
+Like, I do think depending on like, depending on how it goes or what
+they say, mean, it\'s slow moving, but like, that that could help one
+way or the other.
+
+a good run. That would be huge.
+
+[[\@41:02]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2462.73) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I think that would be massive, right? And if we especially if we like,
+unburden ourselves, and just think of it in terms of like, look, let\'s
+just be like, tech scumbags that want to like sell at the highest
+valuation.
+
+What gets us the highest valuation is being able to say, we have a
+synthetic pool of candidates that you will not get anywhere, certainly
+won\'t on LinkedIn.
+
+We have data on them that you won\'t get anywhere. We have a trust with
+them and a brand with them that you won\'t get anywhere else.
+
+Like all of a sudden, we\'re talking like \$10 million exit, as opposed
+to like, you know, like, I think if we really, I think if we hit this
+again, if we put social game, social game, showmanship, and like large
+numbers of growth in the next three, four months, I think sets us up for
+a January sale.
+
+[[\@41:54]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2514.01) -
+**Logan Currie**
+
+Yeah. Right?
+
+[[\@41:57]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2517.67) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Because at that, at that point, like, we\'re not really spending much on
+the company, you In Beyond Andrew\'s Good Graces for a while, I have
+Bank of Attawar, we really just need to pay ILSA, and we tell everyone,
+hey, we\'re selling, we\'re selling at the start of the year, this is
+all going to be over, right?
+
+**ACTION ITEM: Come to Boston Mon-Wed for CareerSpan sale strategy mtg.
+Book Amtrak tix. -**
+[**[WATCH]{.underline}**](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2537.9999)
+
+[[\@42:12]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2532.16) -
+**Logan Currie**
+
+Yeah. Yeah. Yep. Cool.
+
+[[\@42:21]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2541.48) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, I\'m totally fine with this. Okay, let\'s do it.
+
+[[\@42:25]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2545.4) -
+**Logan Currie**
+
+Let\'s do it. Okay, so you come up.
+
+[[\@42:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2548.04) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Let me know what\'s a good, let me know what\'s a good day. I can, I
+have to spend some time with Amanda this weekend, so let me coordinate
+with her, but I can be up as early as, like, Sunday night or Monday.
+
+Why don\'t you come up Monday?
+
+**ACTION ITEM: Research potential acquirers w/ deep pockets. Prep
+ecosystem map for Mon mtg. -**
+[**[WATCH]{.underline}**](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2561.9999)
+
+[[\@42:40]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2560.42) -
+**Logan Currie**
+
+Yeah. Come up Monday. Yep. We will, we have the iLab with all the
+whiteboards in the world, we can essentially, uh, wargame this out.
+
+What I want you to do, I think, I\'ll send you some research that I did,
+like, again. Please, yeah.
+
+was while ago, but, like, if you map it out, I just, I do want to, like,
+I don\'t think that just
+
+Distribution will hurt us because I think it will help like overall
+prove our clout in a way. You know what I mean?
+
+I don\'t think that that\'s, I completely agree with that process. What
+I would say is like, let\'s look at who has the deepest pockets.
+
+And I suspect that the distribution won\'t matter quite as much to the
+people with the deepest pockets. see your point.
+
+Yeah. Highest urgency. Does that make sense? So it\'s like for the
+companies that are like, we are pedal to the metal and we\'ve got the
+money in the bank to roll people up into our thing.
+
+They\'re not going to care as much about how many people are on our
+platform. But that\'s not to say that we can\'t divide and conquer.
+
+Yes. And to and the user base to team B and then the tech to team A.
+Smart. Yeah. I think it can be a little bit of have our cake and eat it
+too.
+
+to do. Yeah. Um, but yeah. And then the, I did some like research with
+perplexity and GPT on like what we would need for this to happen.
+
+And it will be pretty significant in terms of readying ourselves for a
+sale. like, yeah, the diligence process is pretty significant in any of
+these scenarios.
+
+So like the, like, so running people through the system is, is there,
+but like, we will need to be able to prove out like, you know, prove out
+what that looks like.
+
+from a, uh, dad, like the data room needs to be like spotless basically.
+But if we have all of that, like, then the due diligence process for an
+acquisition is not as it won\'t take as long.
+
+[[\@44:46]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2686.01) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I mean, the lucky, the good thing is finances are largely in order. We
+need to record a couple of things, but like, haven\'t done any
+embezzling.
+
+Not that I could tell. So I think the finances are good. We\'ve
+basically only said, and we haven\'t spent any dumb money.
+
+Yeah. So I think finances are good. In terms of paperwork, got it back
+from Surhee, got it back from Brady, got it back from Crystal.
+
+I\'m sure the lawyers will have some more tidying up that they\'ll want
+to do with them later. But given that we all left on positive terms, I
+think it should be fine.
+
+So equity is squared up. The only investors we have to worry about, I
+have an in with. So luckily, we\'re good.
+
+[[\@45:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2728.76) -
+**Logan Currie**
+
+So there\'s going to be no issues there.
+
+[[\@45:31]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2731.94) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, think genuinely the and the good thing is from a sale perspective,
+they\'re just taking it over, right? So they don\'t give a who stays on
+the cap table.
+
+So there\'s like, they\'re just like, as long as it\'s clean, and no
+one\'s gonna bother me, I\'m fine.
+
+[[\@45:45]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2745.16) -
+**Logan Currie**
+
+Yeah, so I mean, the because I did the math on Aquahire and not that
+Ilsa would even like, I don\'t even think necessarily want.
+
+Yeah. But like, Ilsa, Ilsa, don\'t think would agree with it. And it
+completely up. Like it basically. It\'s not what we want, basically.
+
+We want to be an asset purchase.
+
+[[\@46:11]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2771.81) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Which unfortunately makes tech harder, for the record. But I do feel
+you. We want to go with the best of everything we have, right?
+
+[[\@46:21]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2781.13) -
+**Logan Currie**
+
+Yeah, yeah. And Ilsa is very, Ilsa is very house motivated, I think.
+Genuinely, I think if we pick out a house.
+
+Yeah. Like. Tell us how much that is, and tell us how much it is, and
+we\'ll convert from there to your share.
+
+**ACTION ITEM: Review Ilsa\'s contract. Locate conversational tech
+carve-out clause. Prep for discussion. -**
+[**[WATCH]{.underline}**](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2801.9999)
+
+a long way towards ensuring that she\'s on board to build whatever we
+need to build. And so I do think, and she is our.
+
+[[\@46:48]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2808.51) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Ace in the hole. Ace in the hole.
+
+[[\@46:50]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2810.47) -
+**Logan Currie**
+
+She\'s a literal genius. Like, I think the thing that she did say, we
+need to look back on what the terminology is in terms of.
+
+Conversational that she brought over from One Roof.
+
+[[\@47:08]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2828.5) -
+**Vrijen Attawar (mycareerspan.com)**
+
+There was some kind of carve out clause in her original contract for-
+believe it basically says that she just gets to use that, she gets to
+use the conversational tech for One Roof specifically.
+
+And then she had like agreed on a rate to like buy it from her and her
+like collaborators, which we can basically just say, hey, if she\'s fine
+with that rate, we can just throw that rate on top of things.
+
+That\'s exactly what it would be, I think.
+
+[[\@47:35]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2855.32) -
+**Logan Currie**
+
+we would just want to have that like clear- In writing. So let\'s just
+have, I don\'t, I don\'t, I was, I don\'t have, I haven\'t gone back to
+look for it, but like, let\'s make sure that that, that would be the
+only, like, kind of thing that could duck us over, I think.
+
+Yeah, we want to decide that fair market value before we sell.
+
+[[\@47:53]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2873.38) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Exactly.
+
+[[\@47:54]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2874.08) -
+**Logan Currie**
+
+Exactly. Yeah, yeah, yeah, yeah. Okay, yeah.
+
+[[\@47:56]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2876.04) -
+**Vrijen Attawar (mycareerspan.com)**
+
+We\'ll make a note, yeah, this will make a note to, uh, to settle that
+with those, uh, that\'s. Important action item.
+
+[[\@48:02]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2882.76) -
+**Logan Currie**
+
+And then essentially we make a plan for like the tech requirements and
+she tells us if we\'ll need, she\'ll need Danny for that.
+
+Yep.
+
+[[\@48:15]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2895.0) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Sounds good. But we basically don\'t need Rahul for better or for worse.
+
+[[\@48:18]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2898.58) -
+**Logan Currie**
+
+Not that I wish any ill upon her, but like we don\'t need to be working
+on product right now.
+
+don\'t think. Yeah.
+
+[[\@48:25]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2905.1) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah. I think let\'s, let\'s hash this out together and then let\'s
+present it to the team end of next week.
+
+[[\@48:30]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2910.9) -
+**Logan Currie**
+
+Yeah. think that\'s a good thing.
+
+[[\@48:32]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2912.12) -
+**Vrijen Attawar (mycareerspan.com)**
+
+And do it in a concrete way. Yeah. Because I also don\'t want folks to
+feel like we\'re sweeping the rug from underneath their No, totally.
+
+[[\@48:39]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2919.22) -
+**Logan Currie**
+
+Yeah. I don\'t think like, and again, to me, this is not, the good thing
+about doing this right now is that we still have time to be very
+strategic about this.
+
+This is not like a fire sale. This is a strategic move. And it\'s a
+smart thing to do, I think, because we have the time, we have the
+ability to pick and choose the type.
+
+The deal that we want to take. Yeah.
+
+[[\@49:04]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2944.35) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Yeah, absolutely. Should I? Yeah. Okay. I agree. Let me book my
+Amtrak-a-roo for Monday through to Wednesday, and then we\'ll go from
+there.
+
+All right, dude.
+
+[[\@49:19]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2959.61) -
+**Logan Currie**
+
+Well, this has been a monumental discussion. Yeah. Yeah.
+
+[[\@49:22]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2962.65) -
+**Vrijen Attawar (mycareerspan.com)**
+
+seriously. I\'m going to go rest my jaw and my brain for a little bit.
+
+**ACTION ITEM: Contact Joe Burgess re: advice on company sale
+process/strategy -**
+[**[WATCH]{.underline}**](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2964.9999)
+
+[[\@49:25]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2965.79) -
+**Logan Currie**
+
+Yeah, yeah, yeah, yeah, yeah. But do some, get Zoe in deep research on
+this because I do, like, I\'m excited to kind of break down.
+
+[[\@49:35]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2975.17) -
+**Vrijen Attawar (mycareerspan.com)**
+
+And let\'s talk to some, like, Joe and a couple of other folks that have
+done sales.
+
+[[\@49:39]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2979.19) -
+**Logan Currie**
+
+If I can get Joe on the cal. Okay, cool.
+
+[[\@49:41]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2981.73) -
+**Vrijen Attawar (mycareerspan.com)**
+
+That would be awesome. Quick heads up. The Jennifer Ives thing is during
+one of the Bright Sessions, Bright Ventures Sessions.
+
+She\'s a big deal. Don\'t move her or can we move her? Yeah.
+
+[[\@49:56]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2996.17) -
+**Logan Currie**
+
+I\'ll figure it out. Yeah.
+
+[[\@49:58]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=2998.07) -
+**Vrijen Attawar (mycareerspan.com)**
+
+Because this is not a most essential. This is great wealth transfer
+harnessing. The economic and social power of the next generation.
+
+It\'s just a session. So I can just sneak away and put on headphones and
+record. I think she might be worth it.
+
+[[\@50:12]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=3012.02) -
+**Logan Currie**
+
+Again, on my list, in terms of publicity and in terms of what you said
+around just getting more people into the ecosystem, I will get some of
+these episodes out.
+
+Sounds good. Okay, cool. All right. Well, let\'s sell a company. Let\'s
+sell a company.
+
+[[\@50:28]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=3028.32) -
+**Vrijen Attawar (mycareerspan.com)**
+
+I\'m game. All right. Cool.
+
+[[\@50:30]{.underline}](https://fathom.video/share/vwi2MCzG4ufsxi_EU9F8iUdmv2hzc-rt?timestamp=3030.3) -
+**Logan Currie**
+
+See you on the beach in Bali. All right.
