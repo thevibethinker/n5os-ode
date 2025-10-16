@@ -14,8 +14,9 @@ import json
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 import pytz
+import re
 
 logging.basicConfig(
     level=logging.INFO,
@@ -26,6 +27,7 @@ logger = logging.getLogger(__name__)
 
 CONVO_WORKSPACES_ROOT = Path("/home/.z/workspaces")
 TEMPLATE_FILE = Path("/home/.z/workspaces/con_AFQURXo7KW89yWVw/SESSION_STATE_TEMPLATE.md")
+TEMPLATES_DIR = Path("/home/workspace/N5/templates/session_state")
 
 
 class SessionStateManager:
@@ -36,25 +38,112 @@ class SessionStateManager:
         
         self.workspace.mkdir(parents=True, exist_ok=True)
     
-    def init(self, convo_type: str = "discussion", mode: str = "", load_system: bool = False) -> bool:
+    @staticmethod
+    def classify_conversation(message: str) -> Tuple[str, float]:
+        """
+        Auto-classify conversation type from first user message.
+        
+        Returns: (type, confidence_score)
+        Types: build, research, discussion, planning
+        """
+        message_lower = message.lower()
+        
+        # Build indicators
+        build_keywords = [
+            "build", "implement", "code", "script", "create", "develop",
+            "write", "program", "function", "class", "api", "database",
+            "refactor", "debug", "fix", "error", "bug"
+        ]
+        build_score = sum(1 for kw in build_keywords if kw in message_lower)
+        
+        # Research indicators
+        research_keywords = [
+            "research", "analyze", "learn", "study", "investigate",
+            "understand", "explain", "how does", "what is", "compare",
+            "evaluate", "review", "explore options"
+        ]
+        research_score = sum(1 for kw in research_keywords if kw in message_lower)
+        
+        # Discussion indicators
+        discussion_keywords = [
+            "discuss", "think", "explore", "brainstorm", "consider",
+            "thoughts on", "what do you think", "perspective", "opinion",
+            "talk about", "let's explore"
+        ]
+        discussion_score = sum(1 for kw in discussion_keywords if kw in message_lower)
+        
+        # Planning indicators
+        planning_keywords = [
+            "plan", "strategy", "decide", "organize", "roadmap",
+            "schedule", "timeline", "prioritize", "outline", "design",
+            "architecture", "approach", "steps"
+        ]
+        planning_score = sum(1 for kw in planning_keywords if kw in message_lower)
+        
+        scores = {
+            "build": build_score,
+            "research": research_score,
+            "discussion": discussion_score,
+            "planning": planning_score
+        }
+        
+        max_type = max(scores, key=scores.get)
+        max_score = scores[max_type]
+        total_score = sum(scores.values())
+        
+        # Confidence: ratio of max score to total
+        confidence = max_score / total_score if total_score > 0 else 0.0
+        
+        # Default to discussion if no strong signals
+        if total_score == 0:
+            return "discussion", 0.0
+        
+        return max_type, round(confidence, 2)
+    
+    def init(self, convo_type: Optional[str] = None, mode: str = "", load_system: bool = False, user_message: str = "") -> bool:
         """Initialize SESSION_STATE.md for this conversation."""
         try:
             if self.state_file.exists():
                 logger.info(f"SESSION_STATE.md already exists for {self.convo_id}")
                 return True
             
+            # Auto-classify if no type provided and user message available
+            if not convo_type and user_message:
+                detected_type, confidence = self.classify_conversation(user_message)
+                logger.info(f"Auto-classified as '{detected_type}' (confidence: {confidence})")
+                convo_type = detected_type
+            
+            # Default to discussion
+            if not convo_type:
+                convo_type = "discussion"
+            
             now = datetime.now(timezone.utc)
             now_et = now.astimezone(pytz.timezone('America/New_York'))
+            start_time = now_et.strftime('%Y-%m-%d %H:%M ET')
             
-            content = f"""# Session State
+            # Check for type-specific template
+            template_path = TEMPLATES_DIR / f"{convo_type}.md"
+            if template_path.exists():
+                logger.info(f"Using {convo_type} template")
+                content = template_path.read_text()
+                # Replace placeholders
+                content = content.replace("{convo_id}", self.convo_id)
+                content = content.replace("{start_time}", start_time)
+                content = content.replace("{last_updated}", start_time)
+                content = content.replace("{mode}", mode)
+                content = content.replace("{focus}", "*What is this conversation specifically about?*")
+                content = content.replace("{objective}", "*What are we trying to accomplish?*")
+            else:
+                # Use generic template
+                content = f"""# Session State
 **Auto-generated | Updated continuously**
 
 ---
 
 ## Metadata
 **Conversation ID:** {self.convo_id}  
-**Started:** {now_et.strftime('%Y-%m-%d %H:%M %Z')}  
-**Last Updated:** {now_et.strftime('%Y-%m-%d %H:%M %Z')}  
+**Started:** {start_time}  
+**Last Updated:** {start_time}  
 **Status:** active  
 
 ---
@@ -98,7 +187,7 @@ class SessionStateManager:
 *Important realizations discovered during this session*
 
 ### Decisions Made
-**[{now_et}]** Decision 1 - Rationale
+**[{start_time}]** Decision 1 - Rationale
 
 ### Open Questions
 - Question 1?
@@ -143,7 +232,7 @@ class SessionStateManager:
 ## Timeline
 *High-level log of major updates*
 
-**[{now_et}]** Started conversation, initialized state
+**[{start_time}]** Started conversation, initialized state
 
 ---
 
@@ -250,15 +339,226 @@ class SessionStateManager:
         except Exception as e:
             logger.error(f"Failed to update SESSION_STATE.md: {e}", exc_info=True)
             return False
+    
+    def add_decision(self, decision: str, rationale: str, alternatives: str = "") -> bool:
+        """Add an architectural decision to the log."""
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            content = self.state_file.read_text()
+            now_et = datetime.now(timezone.utc).astimezone(pytz.timezone('America/New_York')).strftime("%Y-%m-%d %H:%M ET")
+            
+            # Format decision entry
+            entry = f"\n**[{now_et}] {decision}**\n"
+            entry += f"- Rationale: {rationale}\n"
+            if alternatives:
+                entry += f"- Alternatives: {alternatives}\n"
+            
+            # Find Architectural Decisions section
+            lines = content.split("\n")
+            for i, line in enumerate(lines):
+                if line.strip() == "## Architectural Decisions":
+                    # Skip header and description
+                    insert_pos = i + 3
+                    # Skip "No decisions" if present
+                    if insert_pos < len(lines) and "No decisions" in lines[insert_pos]:
+                        lines[insert_pos] = entry.strip()
+                    else:
+                        lines.insert(insert_pos, entry)
+                    break
+            
+            self.state_file.write_text("\n".join(lines))
+            logger.info(f"✓ Added decision: {decision}")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to add decision: {e}", exc_info=True)
+            return False
+    
+    def update_phase(self, phase: str, progress: int = None) -> bool:
+        """Update build phase and optional progress percentage."""
+        valid_phases = ["design", "implementation", "testing", "deployment", "complete"]
+        if phase not in valid_phases:
+            logger.error(f"Invalid phase: {phase}. Must be one of {valid_phases}")
+            return False
+        
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            for i, line in enumerate(lines):
+                if line.startswith("**Current Phase:**"):
+                    lines[i] = f"**Current Phase:** {phase}"
+                elif progress is not None and line.startswith("**Progress:**"):
+                    lines[i] = f"**Progress:** {progress}% complete"
+            
+            self.state_file.write_text("\n".join(lines))
+            logger.info(f"✓ Updated phase: {phase}" + (f" ({progress}%)" if progress else ""))
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to update phase: {e}", exc_info=True)
+            return False
+    
+    def add_file(self, filepath: str, status: str = "not started") -> bool:
+        """Add a file to the manifest with status."""
+        status_icons = {
+            "not started": "⏳",
+            "in progress": "🔄",
+            "complete": "✅",
+            "blocked": "⛔",
+            "tested": "✓"
+        }
+        
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            icon = status_icons.get(status, "⏳")
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            # Find Files section
+            for i, line in enumerate(lines):
+                if line.strip() == "## Files":
+                    # Find insertion point (after header, before legend)
+                    insert_pos = i + 3
+                    # Skip "No files" if present
+                    if insert_pos < len(lines) and "No files" in lines[insert_pos]:
+                        lines[insert_pos] = f"- {icon} `{filepath}` - {status}"
+                    else:
+                        # Insert before legend
+                        for j in range(insert_pos, len(lines)):
+                            if lines[j].startswith("**Status Legend:**"):
+                                lines.insert(j, f"- {icon} `{filepath}` - {status}")
+                                break
+                    break
+            
+            self.state_file.write_text("\n".join(lines))
+            logger.info(f"✓ Added file: {filepath} ({status})")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to add file: {e}", exc_info=True)
+            return False
+    
+    def update_file_status(self, filepath: str, new_status: str) -> bool:
+        """Update status of an existing file."""
+        status_icons = {
+            "not started": "⏳",
+            "in progress": "🔄",
+            "complete": "✅",
+            "blocked": "⛔",
+            "tested": "✓"
+        }
+        
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            icon = status_icons.get(new_status, "⏳")
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            updated = False
+            for i, line in enumerate(lines):
+                if f"`{filepath}`" in line and line.strip().startswith("-"):
+                    lines[i] = f"- {icon} `{filepath}` - {new_status}"
+                    updated = True
+                    break
+            
+            if updated:
+                self.state_file.write_text("\n".join(lines))
+                logger.info(f"✓ Updated file status: {filepath} → {new_status}")
+                return True
+            else:
+                logger.warning(f"File not found: {filepath}")
+                return False
+            
+        except Exception as e:
+            logger.error(f"Failed to update file status: {e}", exc_info=True)
+            return False
+    
+    def add_test(self, test_name: str, status: str = "not written") -> bool:
+        """Add a test to the checklist."""
+        icon = "✅" if status == "passing" else "⏳"
+        checked = "[x]" if status == "passing" else "[ ]"
+        
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            # Find Tests section
+            for i, line in enumerate(lines):
+                if line.strip() == "## Tests":
+                    insert_pos = i + 3
+                    # Skip "No tests" if present
+                    if insert_pos < len(lines) and "No tests" in lines[insert_pos]:
+                        lines[insert_pos] = f"- {checked} {test_name} ({status})"
+                    else:
+                        # Find next section header
+                        for j in range(insert_pos, len(lines)):
+                            if lines[j].startswith("##"):
+                                lines.insert(j - 1, f"- {checked} {test_name} ({status})")
+                                break
+                    break
+            
+            self.state_file.write_text("\n".join(lines))
+            logger.info(f"✓ Added test: {test_name} ({status})")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to add test: {e}", exc_info=True)
+            return False
+    
+    def update_rollback_plan(self, plan: str) -> bool:
+        """Update or set the rollback plan."""
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            # Find Rollback Plan section
+            for i, line in enumerate(lines):
+                if line.strip() == "## Rollback Plan":
+                    # Replace next non-empty line
+                    insert_pos = i + 3
+                    if insert_pos < len(lines):
+                        lines[insert_pos] = plan
+                    break
+            
+            self.state_file.write_text("\n".join(lines))
+            logger.info(f"✓ Updated rollback plan")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to update rollback plan: {e}", exc_info=True)
+            return False
 
 
 def main():
     parser = argparse.ArgumentParser(description="Session State Manager")
     parser.add_argument("action", choices=["init", "update", "read"])
     parser.add_argument("--convo-id", required=True)
-    parser.add_argument("--type", default="build", choices=["build", "research", "discussion", "planning"])
+    parser.add_argument("--type", default=None, choices=["build", "research", "discussion", "planning"])
     parser.add_argument("--mode", type=str, default="", help="Specific mode within type")
     parser.add_argument("--load-system", action="store_true", help="Output system files to load")
+    parser.add_argument("--message", type=str, default="", help="User message for auto-classification")
     parser.add_argument("--field", type=str, help="Field to update")
     parser.add_argument("--value", help="New value for field")
     
@@ -267,7 +567,7 @@ def main():
     manager = SessionStateManager(args.convo_id)
     
     if args.action == "init":
-        success = manager.init(convo_type=args.type, mode=args.mode, load_system=args.load_system)
+        success = manager.init(convo_type=args.type, mode=args.mode, load_system=args.load_system, user_message=args.message)
         return 0 if success else 1
     
     elif args.action == "read":

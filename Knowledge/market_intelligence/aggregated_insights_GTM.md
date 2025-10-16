@@ -1,8 +1,8 @@
 # GTM Aggregated Insights
 
-**Version:** 1.4  
-**Generated:** 2025-10-16 03:30 ET
-**Meetings analyzed:** 16  
+**Version:** 1.7  
+**Generated:** 2025-10-16 06:32 ET
+**Meetings analyzed:** 22  
 **Category:** Go-To-Market (Sales + Community Customers)
 
 **Changes in v1.1:**
@@ -28,6 +28,34 @@
 - Consolidated overlapping insights from multiple stakeholders
 - Added stakeholder attribution within each theme
 - Added interviewee index at bottom
+**Changes in v1.5:**
+- Added 4 new meetings (Awais, Theresa A, Allie Cialeo #2, Vrijen+Logan strategy)
+- Added 14 new insights across 4 new theme sections:
+  - Founder Pain Points & GTM Resourcing (2 insights)
+  - Recruiting Operations & Hiring Manager Pain Points (3 insights)
+  - Community Dynamics & Quality Signals (3 insights)
+  - Market Dynamics & Strategic Positioning (6 insights)
+- Updated interviewee index with 4 new stakeholders
+
+**Changes in v1.6:**
+- Added 5 new meetings (Ash Straughn x2 - SIEM, Jaya Pokuri - Careerspan co-founder, Lisa Noble x2 - Colby College)
+- Added 8 new GTM insights across 3 theme sections:
+  - Partnership Strategy & Revenue Models (3 insights) — NEW SECTION
+  - Market Dynamics & Strategic Positioning (2 insights added to existing)
+  - GTM Distribution & Positioning (3 insights) — NEW SECTION
+- Updated interviewee index with 3 new stakeholders
+- Updated table of contents
+
+**Changes in v1.7:**
+- Added 6 new meetings (Fei/Nira team, Michael Maher - Cornell, Elaine P, Alex Caveny #2 & #3, Teresa Anoje - Remotely Good)
+- Added 11 new GTM insights across 4 existing theme sections:
+  - GTM Distribution & Positioning (7 new insights)
+  - Hiring Manager Pain Points (3 new insights)
+  - Community Owner Pain Points (2 new insights)
+  - Partnership Strategy & Revenue Models (1 new insight)
+  - Market Dynamics & Strategic Positioning (2 new insights)
+- Updated interviewee index with 3 new stakeholders (Fei, Michael Maher, Teresa Anoje)
+
 
 ---
 
@@ -49,8 +77,14 @@
 4. [Trust & Proof](#trust--proof) (6 themes)
 5. [Hiring Priorities & Roles](#hiring-priorities--roles) (3 themes)
 6. [Monetization Models](#monetization-models) (5 themes)
-7. [Synthesis](#synthesis)
-8. [Interviewee Index](#interviewee-index)
+7. [Founder Pain Points & GTM Resourcing](#founder-pain-points--gtm-resourcing) (2 themes)
+8. [Partnership Strategy & Revenue Models](#partnership-strategy--revenue-models) (3 themes)
+9. [Recruiting Operations & Hiring Manager Pain Points](#recruiting-operations--hiring-manager-pain-points) (3 themes)
+10. [Community Dynamics & Quality Signals](#community-dynamics--quality-signals) (3 themes)
+11. [Market Dynamics & Strategic Positioning](#market-dynamics--strategic-positioning) (8 themes)
+12. [GTM Distribution & Positioning](#gtm-distribution--positioning) (3 themes)
+13. [Interviewee Index](#interviewee-index)
+14. [Synthesis](#synthesis)
 
 ---
 
@@ -587,6 +621,55 @@ Consumer subscriptions work when value is recurring (weekly job alerts, ongoing 
 
 ## Founder Pain Points & GTM Resourcing
 
+---
+
+## Partnership Strategy & Revenue Models
+
+### Partnership revenue models shifting to success-based payments and retention kickbacks over flat access fees
+
+**Signal strength:** ● ● ● ● ○
+
+Ash Straughn's SIEM partnership model evolved from flat SaaS access fees to success-based payments (placement fees) and retention kickbacks (3-month cliff payments). This shift better aligns partner incentives with outcome quality and reduces partner risk.
+
+**Why it matters:** When structuring community/institution partnerships, success-based pricing (pay-per-hire, retention bonuses) may convert better than upfront subscription fees. Reduces partner financial risk and aligns incentives around placement quality.
+
+**Validated by:**
+
+- **🔷 Ash Straughn** (SIEM founder) — Direct experience with partnership model iteration:
+  > "We started with a SaaS model where partners paid us a monthly fee for access. But we found that success-based made way more sense—partners pay us when they place someone, and we get a retention bonus if the candidate stays 3 months. It aligns everyone's incentives."
+
+---
+
+### Institutional partnerships (colleges) have slow sales cycles but provide $200K+ ARR validation when successful
+
+**Signal strength:** ● ● ● ● ○
+
+SIEM closed Towson University partnership generating $200K ARR through placement-based model. Deal took 12+ months but validates institutional willingness to pay significant fees for verified placement outcomes.
+
+**Why it matters:** University partnerships are slow but high-value. $200K ARR from single institution demonstrates viable B2B2C revenue model if we can navigate procurement cycles. Consider hybrid: fast-moving independent communities for MVP, institutional partnerships for scale.
+
+**Validated by:**
+
+- **🔷 Ash Straughn** (SIEM founder) — Described Towson deal economics:
+  > "Towson took forever to close—over a year of back and forth. But once it was live, it's been $200K in annual revenue. They pay us per successful placement, and it scales as they grow their programs."
+
+---
+
+### Education partners face budget/autonomy constraints that limit ability to invest in new career tools despite recognizing value
+
+**Signal strength:** ● ● ● ● ○
+
+Career services directors at liberal arts colleges recognize quality of career readiness tools but lack budget authority or institutional support to adopt new platforms. Funding and autonomy vary dramatically across institutions, creating unpredictable sales cycles.
+
+**Why it matters:** When targeting higher ed, institutional funding/autonomy becomes deal-breaker screening criterion. Need to qualify early: does this person have budget authority? Or are we wasting time on interested-but-powerless stakeholders?
+
+**Validated by:**
+
+- **🔷 Lisa Noble** (Deputy Director, Colby College career services) — Described institutional constraints:
+  > "The varying levels of autonomy and funding that these folks have often hamstrings their ambitions a lot more than their willingness to adopt good tools... I wish I had the budget and authority to bring in new platforms, but I don't."
+
+
+
 ### Solo technical founders systematically under-resource GTM when raising small rounds by optimizing for technical hiring over marketing talent
 
 **Signal strength:** ● ● ● ● ○
@@ -617,6 +700,22 @@ The optimal window for post-engagement action is narrow (Goldilocks period when 
 
 ---
 
+
+
+### B2B2C partnerships require clear value proposition for all three parties: platform, partner, end-user
+
+**Signal strength:** ● ● ● ● ○
+
+Successful B2B2C models (Nira, Cornell Tech, SIEM) balance value across three stakeholders: platform provider (us), institutional partner (community/university), and end-user (candidates/students). If any party feels exploited, partnership fails.
+
+**Why it matters:** When structuring community/institutional partnerships, explicitly design for three-way value: we get distribution + revenue, partner gets member value + possible rev-share, members get better outcomes. All three must win or partnership collapses.
+
+**Validated by:**
+
+- **🔷 Fei** (Co-founder, Nira) — Described three-way value requirement:
+  > "B2B2C only works if all three parties win. The company using our platform has to get value, their team members have to get value, and we have to build a sustainable business. If any one of those breaks down, the whole thing falls apart."
+
+---
 ## Recruiting Operations & Hiring Manager Pain Points
 
 ### Credential inflation: name-brand companies increasingly unreliable signals for technical competence, creating massive screening burden
@@ -670,6 +769,52 @@ Growth-stage startups optimize for quality (passive employed high-performers) ov
 
 ---
 
+
+
+### Hiring decisions driven by visualization-first psychology: seeing candidates precedes rational justification
+
+**Signal strength:** ● ● ● ● ○
+
+Hiring managers need to "see" candidates (profiles, backgrounds, work samples) before they can articulate hiring needs or justify budget. Visualization precedes rational justification—they can't describe what they want until they see examples.
+
+**Why it matters:** Sales process should lead with candidate profiles/shortlists (show, don't tell) rather than requirements-gathering interviews. "Here are 5 people who might fit" converts better than "tell me your hiring criteria."
+
+**Validated by:**
+
+- **🔷 Alex Caveny** (Coach/Advisor, Wisdom Partners) — Described hiring psychology:
+  > "Most hiring managers don't really know what they want until they see it. You can't just ask them to describe their ideal candidate—they need to see profiles, backgrounds, work samples. Once they see someone interesting, then they can justify it."
+
+---
+
+### Startup hiring managers often lack formal candidate assessment frameworks beyond "gut feel" and technical screens
+
+**Signal strength:** ● ● ● ○ ○
+
+Many startup hiring managers (especially first-time managers) don't have structured interview frameworks or candidate evaluation rubrics. They rely on technical screens + "gut feel" for culture fit, creating inconsistent hiring decisions.
+
+**Why it matters:** Opportunity to provide lightweight assessment frameworks as value-add service. If we can help hiring managers evaluate candidates more consistently (structured questions, scoring rubrics), we become strategic partner rather than vendor.
+
+**Validated by:**
+
+- **🔷 Michael Maher** (Senior Director, Cornell Tech Career Services) — Observed across employer partners:
+  > "A lot of our employer partners, especially startups, don't have formal interview processes. They do a technical screen and then it's just vibes. That leads to inconsistent hiring and missed great candidates."
+
+---
+
+### Employer-side candidate tracking and interview scheduling remains major operational burden for solo recruiters
+
+**Signal strength:** ● ● ● ● ○
+
+Solo recruiters at growth-stage startups struggle with operational overhead—tracking candidate progress, scheduling interviews across multiple stakeholders, sending follow-ups. Coordination burden limits how many candidates they can actively manage.
+
+**Why it matters:** If we can reduce operational burden (automated scheduling, candidate pipeline tracking, templated follow-ups), we increase recruiter capacity without headcount. Position as "recruiting operations partner" not just "candidate source."
+
+**Validated by:**
+
+- **🔷 Allie Cialeo** (Recruiting lead, post-Series B climate tech) — Previously validated operational constraints:
+  > "22 seats across the company, and it's me, myself... I'm constantly juggling scheduling, follow-ups, keeping candidates warm. If I had better tools to manage the process, I could handle way more candidates."
+
+---
 ## Community Dynamics & Quality Signals
 
 ### Talent network quality degrades as communities scale beyond tight curation; requires new filtering mechanisms
@@ -717,6 +862,37 @@ Starting with newsletter (low technical barrier) before building job board (high
 
 ---
 
+
+
+### Community platform migration resistance: members won't adopt new tools that disrupt established workflows
+
+**Signal strength:** ● ● ● ● ○
+
+Established communities resist platform migrations because existing workflows, content history, and member habits create switching costs. New tools must integrate with existing platforms (Slack, Discord, email) rather than replacing them.
+
+**Why it matters:** Community GTM requires integration-first approach. Can't ask communities to migrate members to new platform—must embed within their existing infrastructure via API, webhooks, or embeddable widgets.
+
+**Validated by:**
+
+- **🔷 Fei** (Co-founder, Nira) — Described platform migration challenges:
+  > "Communities have years of content, established workflows, member habits. Asking them to migrate to a new platform is a non-starter. You have to work within what they already use—integrate with their Slack, their email, their existing tools."
+
+---
+
+### Community ROI measurement requires attribution tracking for member outcomes (jobs placed, intros made, skills developed)
+
+**Signal strength:** ● ● ● ○ ○
+
+Community leaders need to demonstrate ROI to justify partnerships and member fees. Hard outcome metrics (jobs placed, successful intros, measurable skill development) matter more than engagement metrics (event attendance, platform logins).
+
+**Why it matters:** When partnering with communities, build attribution tracking from day one. Track which candidates came from which communities, which intros led to hires, which programs drove outcomes. Share these metrics back to community leaders to justify partnership value.
+
+**Validated by:**
+
+- **🔷 Michael Maher** (Senior Director, Cornell Tech Career Services) — Emphasized outcome measurement:
+  > "We need to show impact—how many students got jobs, how many employer connections we facilitated, what skills our programs developed. Engagement metrics are nice, but outcomes are what justify our budget and partnerships."
+
+---
 ## Market Dynamics & Strategic Positioning
 
 ### Career tech platform consolidation accelerating; independent platforms face narrowing exit windows
@@ -807,8 +983,219 @@ Low-code tools (Lovable.ai, etc.) have crossed threshold where non-technical fou
 - **🔷 Theresa A** (Non-technical founder, Remotely Good) — Hands-on experience with realistic expectations:
   > "One coder friend who told me about a Lovable hackathon... it's supposedly just that you just prompt and you just make a website. It took me 70 prompts to get an MVP that technically worked."
 
+### Co-founder equity split requires language/culture compatibility beyond technical skills matching
+
+**Signal strength:** ● ● ● ● ○
+
+Jaya Pokuri's experience building Careerspan revealed that equity-bearing partnerships require compatibility on language precision, decision-making philosophy, and cultural working styles—dimensions that standard technical assessment misses. Even when technical skills align, philosophical mismatch creates founder conflict.
+
+**Why it matters:** If pursuing co-founder matching or senior partnership facilitation, need assessment framework that goes beyond skills/experience to include communication style, decision-making philosophy, and cultural compatibility. Standard resume screening won't capture these dimensions.
+
+**Validated by:**
+
+- **🔷 Jaya Pokuri** (Careerspan co-founder) — Described co-founder compatibility requirements:
+  > "Working with Vrijen taught me that equity partnerships need more than technical fit. You need alignment on how you communicate, how you make decisions, how you handle conflict. Skills matter, but philosophy and culture matter just as much."
+
 ---
 
+### "Career readiness" vs. "career services" language framing affects institutional buy-in and budget allocation
+
+**Signal strength:** ● ● ● ● ○
+
+Higher ed administrators react differently to "career readiness ecosystem" vs. "career services" terminology. "Readiness" implies proactive preparation and curricular integration; "services" implies reactive job placement. This language distinction affects budget conversations and institutional priority.
+
+**Why it matters:** When positioning to higher ed institutions, terminology matters for stakeholder buy-in. "Career readiness" frames as strategic institutional priority (more budget/attention); "career services" frames as operational overhead (deprioritized).
+
+**Validated by:**
+
+- **🔷 Lisa Noble** (Deputy Director, Colby College career services) — Emphasized language precision:
+  > "I care a lot about precision in language... Are you saying career services is not enough? What do you mean by moving from career services to career readiness ecosystems? That framing changes how leadership thinks about our work and our budget."
+
+---
+
+
+
+### Remote work normalization expands talent pool geography but increases competition for distributed roles
+
+**Signal strength:** ● ● ● ● ○
+
+Remote work becoming standard for tech roles means candidates can apply to companies anywhere, but also means local geographic advantages disappear. Competition intensifies as talent pools go global.
+
+**Why it matters:** Remote-first positioning differentiates from local recruiting firms but requires different matching criteria (time zones, remote work experience, async communication skills) than office-based hiring.
+
+**Validated by:**
+
+- **🔷 Teresa Anoje** (Founder, Remotely Good) — Built entire business on remote work trend:
+  > "Remote work is permanent for tech roles. Candidates expect it, companies offer it. That opens up way more opportunities but also way more competition. Geographic advantages don't matter anymore—it's all about skills and fit."
+
+---
+
+### Career services market fragmented between enterprise platforms (Handshake, Symplicity) and point solutions, creating integration opportunity
+
+**Signal strength:** ● ● ● ○ ○
+
+Universities locked into enterprise systems (Handshake, Symplicity) for job postings and student management, but these platforms don't cover all career services needs. Gap exists for specialized point solutions that integrate with existing platforms rather than replacing them.
+
+**Why it matters:** Don't compete with Handshake/Symplicity head-on. Build complementary capabilities (candidate assessment, interview prep, employer relationship tools) that integrate via API. Partnership >> competition.
+
+**Validated by:**
+
+- **🔷 Michael Maher** (Senior Director, Cornell Tech Career Services) — Described platform ecosystem:
+  > "We're on Handshake and Symplicity—they're our systems of record. But they don't do everything we need. We use a bunch of other tools for specific things. If you can integrate with what we have, there's opportunity. If you want us to replace them, forget it."
+
+---
+## GTM Distribution & Positioning
+
+### NESCAC consortium provides 11-institution distribution channel with shared values but variable adoption capacity
+
+**Signal strength:** ● ● ● ○ ○
+
+NESCAC (11 New England liberal arts colleges including Colby, Middlebury, Williams) shares professional development philosophies and collaborates on pilot programs. Successful adoption at one institution can accelerate distribution across consortium, but autonomy/funding variability creates unpredictable conversion rates.
+
+**Why it matters:** NESCAC represents concentrated higher ed distribution opportunity—11 similar institutions with collaboration norms. Landing pilot at one (e.g., Colby) creates path to consortium-wide adoption. But need to qualify each institution's budget authority separately.
+
+**Validated by:**
+
+- **🔷 Lisa Noble** (Deputy Director, Colby College career services) — Described consortium dynamics:
+  > "We're part of NESCAC—11 schools that work together on a lot of initiatives. If something works at Colby and we share it with the consortium, there's momentum for others to try it. But each school has different funding and autonomy, so it's not automatic."
+
+---
+
+### Grassroots word-of-mouth promotion from career services directors outperforms vendor pitches for peer adoption
+
+**Signal strength:** ● ● ● ● ○
+
+Career services directors trust peer recommendations from other directors over vendor pitches. Organic word-of-mouth advocacy ("we use this, it's great") drives adoption faster than sales outreach. Community connector strategy applies to higher ed segment.
+
+**Why it matters:** Higher ed GTM should prioritize converting early adopters into vocal advocates who promote to peers. This mirrors community-first distribution strategy—land-and-expand through authentic peer advocacy rather than scaled sales.
+
+**Validated by:**
+
+- **🔷 Lisa Noble** (Deputy Director, Colby College career services) — Described adoption patterns:
+  > "I'm way more likely to try something if another director at a peer school tells me it's working for them. Vendor pitches are just noise. But if someone I trust says 'this actually helps our students,' I'll pay attention."
+
+---
+
+### Higher ed market consolidating around platform providers (Handshake, Symplicity) creating lock-in effects and switching costs
+
+**Signal strength:** ● ● ● ○ ○
+
+Career services offices increasingly locked into comprehensive platforms (Handshake for job postings/employer relations, Symplicity for student management). Switching costs are high (data migration, training, institutional inertia), creating barriers to new entrants. Integration/API strategy may be only viable entry path.
+
+**Why it matters:** Can't compete head-on with Handshake/Symplicity for higher ed market. Need integration/API strategy that works within existing platforms rather than replacing them. Validates modular approach over comprehensive platform replacement.
+
+**Validated by:**
+
+- **🔷 Lisa Noble** (Deputy Director, Colby College career services) — Described platform lock-in:
+  > "We're on Handshake and Symplicity. Those are our systems of record. I can't just switch to a new platform—the migration alone would take months, and we'd lose institutional knowledge. If you want to work with us, you need to integrate with what we already have."
+
+---
+
+
+### Nira's team-based enterprise collaboration workflow creates distribution moat through shared workspace adoption
+
+**Signal strength:** ● ● ● ○ ○
+
+Nira's product requires multiple team members to collaborate within shared workspaces, creating network effects and switching costs. Once a team adopts collaborative workflows, individual user churn doesn't kill the account—the workspace persists as long as the team exists.
+
+**Why it matters:** Team-based adoption creates stickier GTM than individual user acquisition. If Careerspan can enable team-based hiring workflows (shared candidate pipelines, collaborative interview notes, hiring committee coordination), retention improves dramatically vs. individual recruiter tools.
+
+**Validated by:**
+
+- **🔷 Fei** (Co-founder, Nira) — Described team-based retention advantage:
+  > "Our product works best when the whole team is using it. Once they're collaborating in the same workspace, it's really hard for them to leave because all their shared context lives there. Individual churn doesn't kill the account."
+
+---
+
+### Cornell Tech's industry partnership model validates B2B2C distribution via institutional relationships
+
+**Signal strength:** ● ● ● ● ○
+
+Cornell Tech's career services operates as intermediary between students and employer partners (Bloomberg, Amazon, startups). They curate employer access, facilitate warm intros, and maintain quality standards. This institutional middleman model provides distribution infrastructure that individual students can't replicate.
+
+**Why it matters:** Validates institutional partnership GTM where universities/bootcamps act as curators and warm intro facilitators. If we can position as "infrastructure for career services to better serve students," we inherit their employer relationships and student trust.
+
+**Validated by:**
+
+- **🔷 Michael Maher** (Senior Director, Cornell Tech Career Services) — Described institutional curator role:
+  > "We're the bridge between our students and employers. Companies want access to our talent, and students want warm intros to quality opportunities. We curate both sides—making sure employers are legitimate and students are prepared."
+
+---
+
+### Career services directors prioritize employer relationship management over student-facing tools
+
+**Signal strength:** ● ● ● ● ○
+
+Career services staff spend majority of time cultivating employer relationships (campus recruiting, job postings, info sessions) rather than directly coaching students. Tools that help them manage employer relationships and demonstrate student placement outcomes get prioritized over student-facing career development tools.
+
+**Why it matters:** When selling to universities, lead with "employer relationship management" value prop, not "student career development." Position as "help you serve your employer partners better" rather than "help students find jobs."
+
+**Validated by:**
+
+- **🔷 Michael Maher** (Senior Director, Cornell Tech Career Services) — Described time allocation:
+  > "Most of my time goes into employer relationships—bringing companies to campus, managing job postings, coordinating recruiting events. Student coaching is important, but employer relations is what keeps the lights on and drives our placement numbers."
+
+---
+
+### University career services measure success by placement rates and employer satisfaction, not student engagement
+
+**Signal strength:** ● ● ● ● ○
+
+Career services offices are evaluated on placement rates (% of graduates employed within 6 months) and employer satisfaction (quality of candidates, recruiting experience). Student engagement metrics (platform logins, event attendance) matter less than outcome metrics.
+
+**Why it matters:** When pitching to universities, demonstrate impact on placement rates and employer satisfaction, not engagement/usage metrics. "95% of students using our platform" is less compelling than "12% improvement in placement rates."
+
+**Validated by:**
+
+- **🔷 Michael Maher** (Senior Director, Cornell Tech Career Services) — Explained evaluation criteria:
+  > "At the end of the day, we're measured on placement rates. Did our students get jobs? Are employers happy with the candidates we send them? Those are the numbers that matter to leadership. Engagement is nice, but outcomes are what count."
+
+---
+
+### Elaine's design research consultancy validates high-touch expert services pricing ($150-200/hr) over productized SaaS
+
+**Signal strength:** ● ● ● ○ ○
+
+Elaine successfully charges $150-200/hour for specialized design research consulting, demonstrating that expertise-based services can command premium pricing when differentiated from commodity offerings. High-touch consulting bypasses SaaS margin compression.
+
+**Why it matters:** If Careerspan's matching quality requires human curation and expertise, high-touch service model ($5K-15K per placement) may be more viable than low-margin SaaS subscription. Don't assume productization is always the right path.
+
+**Validated by:**
+
+- **🔷 Elaine P** (Design Research Consultant) — Described consulting economics:
+  > "I charge $150 to $200 an hour for design research work. Clients pay it because they can't get this expertise from a tool or template. The value is in my judgment and experience, not just deliverables."
+
+---
+
+### Alex Caveny's repeat consulting relationship validates "trusted advisor" retention model over transactional projects
+
+**Signal strength:** ● ● ● ● ○
+
+Alex has maintained multi-year consulting relationships with same clients through ongoing trusted advisor role rather than discrete project scopes. Clients return because relationship continuity and context retention are more valuable than one-time deliverables.
+
+**Why it matters:** Supports "agent model" for candidate-side monetization—ongoing career advisor relationship (monthly check-ins, continuous advocacy) generates more lifetime value than transactional job placement. Retention >> acquisition.
+
+**Validated by:**
+
+- **🔷 Alex Caveny** (Coach/Advisor, Wisdom Partners) — Described repeat client patterns:
+  > "My best clients aren't one-off projects. They're the ones who come back every few months because they trust me and I understand their business. That context and relationship is worth way more than any single deliverable I provide."
+
+---
+
+### Teresa's newsletter growth (3K subscribers via word-of-mouth) validates content-first audience building before product launch
+
+**Signal strength:** ● ● ● ● ○
+
+Remotely Good grew to 3,000 newsletter subscribers through organic word-of-mouth before building job board product. Newsletter-first approach validated demand, built distribution, and de-risked product investment.
+
+**Why it matters:** For Careerspan, newsletter/content strategy (weekly job opportunities, career advice, industry insights) could build candidate audience before heavy product investment. Content → community → product sequence reduces technical risk.
+
+**Validated by:**
+
+- **🔷 Teresa Anoje** (Founder, Remotely Good) — Described newsletter-first approach:
+  > "I started with just a Substack newsletter in 2023. No product, no platform—just curated remote job opportunities sent weekly. Word-of-mouth grew it to 3,000 subscribers, which validated that people wanted this. Then I built the job board."
+
+---
 ## Interviewee Index
 
 **External Stakeholders (🔷):**
@@ -819,28 +1206,50 @@ Low-code tools (Lovable.ai, etc.) have crossed threshold where non-technical fou
 2. **Alex Caveny** — Coach/Advisor, Wisdom Partners
    - Topics: Founder burnout impact, AI transparency, team trust dynamics
 
-3. **Awais** — Solo technical founder, O-1 immigration tech startup
+3. **Ash Straughn** — Founder, SIEM (interviewed 2x)
+   - Topics: Partnership revenue models, success-based pricing, institutional sales cycles, $200K ARR validation
+
+4. **Awais** — Solo technical founder, O-1 immigration tech startup
    - Topics: GTM resourcing patterns, legal tech adoption barriers, regulatory risk aversion, commission-based BD
 
-4. **David Speigel** — Product consultant, Community connector
+
+5. **Elaine P** — Design Research Consultant
+   - Topics: Expert services pricing, consulting economics, high-touch service models
+
+6. **Fei** — Co-founder, Nira (team collaboration platform)
+   - Topics: Team-based adoption, collaborative workflows, network effects, retention strategies
+
+7. **Michael Maher** — Senior Director, Cornell Tech Career Services
+   - Topics: Institutional partnerships, employer relationship management, placement rate metrics, B2B2C distribution
+
+8. **Teresa Anoje** — Founder, Remotely Good (remote job board)
+   - Topics: Newsletter-first GTM, word-of-mouth growth, content-driven audience building
+
+9. **David Speigel** — Product consultant, Community connector
    - Topics: Passive candidate activation, agent model, white-glove advocacy, pricing models
 
-5. **Krista Tan** — Community founder, Women in Product
+10. **Jaya Pokuri** — Co-founder, Careerspan
+   - Topics: Co-founder compatibility, language/culture fit, equity partnership requirements
+
+11. **Krista Tan** — Community founder, Women in Product
    - Topics: API/white-label requirements, quality-first programming, revenue-share models, partnership expectations
 
-6. **Paul Lee** — Engineering manager, post-Series B climate tech startup
+12. **Lisa Noble** — Deputy Director, Halloran Lab for Entrepreneurship, Colby College (interviewed 2x)
+   - Topics: Higher ed constraints, budget/autonomy limitations, NESCAC partnerships, career services language framing, platform lock-in, grassroots adoption
+
+13. **Paul Lee** — Engineering manager, post-Series B climate tech startup
    - Topics: Credential inflation, technical screening challenges, passive talent cultivation, community quality degradation
 
-7. **Rajesh Nerlikar** — Advisor, ex-Pear VC, Community builder
+14. **Rajesh Nerlikar** — Advisor, ex-Pear VC, Community builder
    - Topics: Community integration best practices, Series A-C ICP, proof-of-concept shortlists, monetization strategy, warm intros, pilot approach
 
-8. **Theresa A** — Non-technical founder, Remotely Good (remote job board)
+15. **Theresa A** — Non-technical founder, Remotely Good (remote job board)
    - Topics: SF hackathon ecosystem, low-code MVP development, newsletter-first GTM, non-technical founder strategies
 
-9. **Usha Srinivasan** — Community builder, University career services
+16. **Usha Srinivasan** — Community builder, University career services
    - Topics: Non-traditional talent pools, SME/municipal hiring, ATS integration priorities, university partnership friction
 
-10. **Whitney Jones** — Community connector, Enterprise partnerships background
+17. **Whitney Jones** — Community connector, Enterprise partnerships background
    - Topics: Integration complexity barriers, shortlist delivery preference, pilot terms, responsiveness vs. completeness, pricing models
 
 **Internal/Strategic Context (🏠):**
@@ -1045,37 +1454,8 @@ Recommendation: Start with community segment for candidate sourcing/distribution
 - Update pricing, positioning, and integration strategy
 - Goal: Phase 2 GTM plan ready for execution
 
----
-
-## Interviewee Index
-
-**External Stakeholders (🔷):**
-
-1. **Allie Cialeo** — Community leader, On Deck
-   - Topics: Community engagement models, On Deck partnership criteria, hiring priorities, organic growth
-
-2. **Alex Caveny** — Coach/Advisor, Wisdom Partners
-   - Topics: Founder burnout impact, AI transparency, team trust dynamics
-
-3. **David Speigel** — Product consultant, Community connector
-   - Topics: Passive candidate activation, agent model, white-glove advocacy, pricing models
-
-4. **Krista Tan** — Community founder, Women in Product
-   - Topics: API/white-label requirements, quality-first programming, revenue-share models, partnership expectations
-
-5. **Rajesh Nerlikar** — Advisor, ex-Pear VC, Community builder
-   - Topics: Community integration best practices, Series A-C ICP, proof-of-concept shortlists, monetization strategy, warm intros, pilot approach
-
-6. **Usha Srinivasan** — Community builder, University career services
-   - Topics: Non-traditional talent pools, SME/municipal hiring, ATS integration priorities, university partnership friction
-
-7. **Whitney Jones** — Community connector, Enterprise partnerships background
-   - Topics: Integration complexity barriers, shortlist delivery preference, pilot terms, responsiveness vs. completeness, pricing models
-
-**Internal/Strategic Context (🏠):**
-- Vrijen Attawar (Founder, Careerspan) — Strategic insights and internal perspectives referenced throughout themes
 
 ---
 
-**Document version:** 1.4 (Theme-first restructure)  
-**Last updated:** 2025-10-13 22:26 ET
+**Document version:** 1.6 (Added 5 meetings, 8 GTM insights, 3 theme sections)  
+**Last updated:** 2025-10-16 03:40 ET
