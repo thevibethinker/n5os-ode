@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-16T09:40:17-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "discovery_path": "Records/stakeholder_discovery",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found in the provided staging directory. No processing performed."
+}

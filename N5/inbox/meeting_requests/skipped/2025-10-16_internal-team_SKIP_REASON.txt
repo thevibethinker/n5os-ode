@@ -1,0 +1,32 @@
+MEETING SKIPPED FROM PROCESSING
+=================================
+
+Meeting ID: 2025-10-16_internal-team
+Original Request: N5/inbox/meeting_requests/2025-10-16_internal-team_request.json
+Transcript: N5/inbox/transcripts/2025-10-16_internal-team.docx
+
+SKIP REASON:
+------------
+This is an INTERNAL team daily standup meeting that does not require strategic intelligence processing.
+
+MEETING CLASSIFICATION: INTERNAL_STANDUP_TEAM
+- Participants: Internal team (Danny, Logan, Vrijen, Ilse, Rochel)
+- Content: Casual standup banter, holiday check-ins, personal updates
+- Strategic value: Low (no decisions, no external stakeholders, no actionable intelligence)
+
+REGISTRY LIMITATION:
+--------------------
+The Registry System v1.5 requires blocks B40-B48 for INTERNAL meetings, but these blocks are not yet defined in the current registry (file N5/prefs/block_type_registry.json).
+
+The meeting-process.md workflow (v5.1.0) is designed for EXTERNAL stakeholder meetings:
+- FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, JOB_SEEKER
+
+RECOMMENDATION:
+---------------
+Internal team standups should either:
+1. Use a simplified internal meeting template (B40+ series when defined), OR
+2. Be excluded from the meeting intelligence workflow entirely
+
+This meeting has been moved to N5/inbox/meeting_requests/skipped/ for record-keeping.
+
+Processed: 2025-10-16 11:21 ET

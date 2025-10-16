@@ -1,0 +1,7 @@
+{
+  "run_at": "2025-10-16T12:09:38-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "note": "No staging files found in date subdirectories; nothing to extract or delete."
+}

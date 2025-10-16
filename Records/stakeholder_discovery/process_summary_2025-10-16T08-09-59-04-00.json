@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-16T12:09:59Z",
+  "run_tz": "America/New_York",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": [],
+  "total_files": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found in staging subdirectories. No discovery records created. No deletions performed."
+}

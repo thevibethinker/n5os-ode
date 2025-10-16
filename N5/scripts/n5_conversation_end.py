@@ -409,6 +409,77 @@ def placeholder_scan():
         return True
 
 
+def archive_build_tasks():
+    """
+    Archive completed tasks from build tracker (Phase 3.5).
+    Closes build session and generates archive of completed tasks.
+    """
+    print("\n" + "="*70)
+    print("PHASE 3.5: BUILD TRACKER ARCHIVAL")
+    print("="*70)
+    print("\nChecking for build tracking data to archive...\n")
+    
+    # Check if BUILD_MAP exists in conversation workspace
+    if not CONVERSATION_WS:
+        print("→ No conversation workspace detected, skipping build archival")
+        return
+    
+    build_map = CONVERSATION_WS / "BUILD_MAP.md"
+    if not build_map.exists():
+        print("→ No BUILD_MAP found, skipping build archival")
+        return
+    
+    # Import build tracker
+    try:
+        sys.path.insert(0, str(WORKSPACE / "N5/scripts"))
+        from build_tracker import BuildTracker
+    except ImportError as e:
+        print(f"⚠️  Could not import BuildTracker: {e}")
+        print("   Skipping build archival")
+        return
+    
+    try:
+        # Detect conversation ID
+        convo_id = CONVERSATION_WS.name if CONVERSATION_WS else "unknown"
+        tracker = BuildTracker(convo_id=convo_id)
+        
+        # Check if already closed
+        if tracker.is_session_closed():
+            print(f"✓ Build session already closed for {convo_id}")
+            return
+        
+        # Close session and generate archive
+        print(f"Closing build session: {convo_id}")
+        
+        # First, generate archive of completed tasks
+        archive_file = tracker.generate_archive(dry_run=False)
+        
+        # Then close the session
+        summary = tracker.close_session(dry_run=False)
+        
+        if summary.get("error"):
+            print(f"⚠️  {summary['error']}")
+            return
+        
+        # Report results
+        print(f"\n✓ Build session closed successfully")
+        print(f"  Total tasks: {summary['total']}")
+        print(f"  Completed (archived): {summary['complete']}")
+        print(f"  Active/Open: {summary['active'] + summary['open']}")
+        
+        if archive_file:
+            print(f"  Archive: {archive_file.name}")
+        
+        # Refresh BUILD_MAP to show only active tasks
+        if tracker.refresh():
+            print(f"\n✓ BUILD_MAP updated to hide completed tasks")
+        
+    except Exception as e:
+        print(f"⚠️  Build archival error: {e}")
+        logger.debug("Build archival error details", exc_info=True)
+        print("→ Continuing with conversation-end...")
+
+
 def extract_lessons():
     """
     Extract lessons from this conversation (Phase -1)
@@ -835,6 +906,9 @@ def main():
                 print("⚠️  Personal intelligence script not found, skipping")
         except Exception as e:
             logger.warning(f"Personal intelligence update skipped: {e}")
+        
+        # NEW: Phase 3.5 - Build tracker archival
+        archive_build_tasks()
         
         # NEW: Phase 4 - Git status check
         git_status_check()
