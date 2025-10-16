@@ -1,0 +1,9 @@
+{
+  "processed_at": "2025-10-15T09:13:09-04:00",
+  "source": "email_scanner_phase_2",
+  "files_processed_count": 0,
+  "processed_files": [],
+  "stakeholders_discovered_count": 0,
+  "stakeholders": [],
+  "notes": "No staging email files found in 'Records/Temporary/email_staging'. No extraction performed. No files deleted (destructive actions require explicit confirmation)."
+}

@@ -1,0 +1,16 @@
+MEETING SKIPPED - NOT PROCESSED
+
+Meeting ID: 2025-10-15_internal-team
+Classification: internal
+Date: 2025-10-15T13:34:14 EST
+
+REASON FOR SKIPPING:
+This is an internal team standup meeting with Careerspan team members only (Vrijen, Ilse, Danny, Rochel). 
+
+Per stakeholder_rules.json v1.1.0:
+- "internal_team": {"exclude": true, "reasoning": "Internal Careerspan team members"}
+- Internal meetings should not be tracked in the stakeholder system
+
+No external stakeholders were present. No business intelligence or strategic insights need to be extracted using the Registry System v1.5.
+
+DECISION: Skipped processing and moved to skipped/ folder.

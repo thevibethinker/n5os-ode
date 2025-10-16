@@ -1,0 +1,31 @@
+ERROR: Registry System Incomplete for Internal Meetings
+==========================================================
+
+Meeting ID: 2025-09-23_internal-team
+Timestamp: 2025-10-14 16:49:56 ET
+Classification: internal
+Participants: Daily team stand-up (Danny, Logan, Vrijen, Ilse)
+
+DETECTED STAKEHOLDER TYPE: INTERNAL_STANDUP_COFOUNDER
+
+PROBLEM:
+- Registry v1.5 defines stakeholder combination for INTERNAL_STANDUP_COFOUNDER
+- Required blocks: B26, B40, B41, B42, B43, B44, B45, B46, B47, B48
+- However, blocks B40-B48 are NOT DEFINED in the registry "blocks" section
+- Cannot process internal meetings without block definitions
+
+REQUIRED ACTION:
+- Update N5/prefs/block_type_registry.json to include B40-B48 block definitions
+- Add guidance for: purpose, when, priority, guidance principles, feedback_enabled
+- OR update meeting-process.md to handle internal meetings differently
+
+TRANSCRIPT LOCATION:
+- N5/inbox/transcripts/2025-09-23_internal-team_converted.txt
+
+REQUEST FILE MOVED TO:
+- N5/inbox/meeting_requests/failed/2025-09-23_internal-team_request.json
+
+NEXT STEPS:
+1. Define internal meeting block types (B40-B48) in registry
+2. Re-queue this meeting request for processing
+3. Or clarify if internal meetings should use different workflow

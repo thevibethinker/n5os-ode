@@ -1,0 +1,18 @@
+MEETING SKIPPED - NOT ELIGIBLE FOR REGISTRY PROCESSING
+
+Meeting ID: 2025-09-29_internal-team-143016
+Classification: internal
+Participants: Daily team stand-up
+
+REASON FOR SKIP:
+This is an internal Careerspan team standup meeting. According to stakeholder_rules.json, internal team meetings should be excluded from the stakeholder intelligence system.
+
+The Registry System v1.5 is designed for external stakeholder intelligence (FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, JOB_SEEKER). Internal operational meetings do not require this processing.
+
+CONTENT SUMMARY:
+- Product roadmap discussion (homepage removal, game plan removal, apply button)
+- Vrijen announcing 8-day burnout recovery break
+- Team coordination on feature prioritization
+
+Processed: 2025-10-15 04:02 ET
+Status: Skipped (internal meeting)

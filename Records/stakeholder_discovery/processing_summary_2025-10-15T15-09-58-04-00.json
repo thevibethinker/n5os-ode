@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-15T19:09:58Z",
+  "run_local_time": "2025-10-15T15:09:58-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staged email files present in staging subdirectories. No extraction performed. No files deleted."
+}

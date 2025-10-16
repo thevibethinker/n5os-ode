@@ -4,27 +4,16 @@
 **Feedback**: - [ ] Useful
 ---
 
-**Title:** Education at Work Partnership Strategy - Stephanie Szuch
+**Title:** Education at Work Partnership Exploration - Stephanie Szuch
 
-**Email Subject:** Following up: Career Span for EAW Students + ASU Session
+**Email Subject Line:** Following up: EAW x Careerspan partnership pathways
 
-**Delay Sensitivity:** SOFT (within 24-72 hours - acknowledge time passage)
+**Delay Sensitivity:** APOLOGY (21+ days - meeting was 2025-09-23, current date 2025-10-14)
 
-**Stakeholder Type:** CUSTOMER (Education at Work - potential customer for student placement/career development platform)
+**Stakeholder Type:** NETWORKING
 
-**V-OS Tags:** `[LD-CUS] [GPT-M] [A-3]`
+**N5OS Tags:** `[LD-NET] [GPT-E] [A-3]`
 
-**Tag Rationale:**
-- **LD-CUS**: Customer relationship (EAW evaluating Careerspan for students)
-- **GPT-M**: Mid-stage discussions (pilot completed, exploring deeper integration)
-- **A-3**: Accommodating (warm relationship, collaborative partner, flexible on timing)
+**Confidence Score:** High
 
-**Priority:** Important (strong product-market fit signals, partnership potential)
-
-**Confidence Score:** High (clear transcript, substantive discussion, clear action items)
-
-**Transcript Quality:** Good (complete conversation captured, minimal artifacts)
-
-**Meeting Date:** 2025-09-23
-
-**Duration:** ~35 minutes
+**Transcript Quality:** Excellent - clear audio, natural conversation flow, complete exchange

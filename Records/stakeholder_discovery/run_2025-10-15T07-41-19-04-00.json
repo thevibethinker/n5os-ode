@@ -1,0 +1,7 @@
+{
+  "run_at": "2025-10-15T07:41:19-04:00",
+  "source": "email_staging_processor",
+  "files_processed": 0,
+  "stakeholders_added": 0,
+  "notes": "No staging files present. No discovery records created."
+}

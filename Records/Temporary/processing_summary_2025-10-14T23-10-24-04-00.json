@@ -1,0 +1,8 @@
+{
+  "processed_at": "2025-10-14T23:10:24-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 1,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email files ready for extraction in staging subdirectories. Only existing process summaries present. No changes made."
+}

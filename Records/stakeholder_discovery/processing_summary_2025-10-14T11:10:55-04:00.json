@@ -1,0 +1,16 @@
+{
+  "run_at": "2025-10-14T11:10:55-04:00",
+  "staging_dir": "file 'Records/Temporary/email_staging'",
+  "discovery_dir": "file 'Records/stakeholder_discovery'",
+  "summary": {
+    "files_found": 0,
+    "files_processed": 0,
+    "stakeholders_discovered": 0
+  },
+  "notes": [
+    "No staging files present in file 'Records/Temporary/email_staging' beyond existing processing logs and empty dated subfolders.",
+    "No discovery records written.",
+    "No deletions performed."
+  ],
+  "next_steps": "Re-run when staging files are present. Ensure external participant emails are placed into the staging directory for extraction."
+}

@@ -1,0 +1,9 @@
+{
+  "processed_at": "2025-10-15T04:41:00-04:00",
+  "source": "email_scanner",
+  "processed_files": [],
+  "files_processed_count": 0,
+  "stakeholders_discovered": [],
+  "stakeholders_count": 0,
+  "note": "No external participants found because no staging email files were present."
+}

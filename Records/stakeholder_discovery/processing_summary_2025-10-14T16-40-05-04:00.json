@@ -1,0 +1,12 @@
+{
+  "processed_at": "2025-10-14T16:40:05-04:00",
+  "action": "email_staging_scan",
+  "staging_path": "Records/Temporary/email_staging/2025-10-14",
+  "files_found": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files present in the target directory. No extraction performed. No files deleted.",
+  "loaded_preferences": [
+    "Documents/N5.md",
+    "N5/prefs/prefs.md"
+  ]
+}

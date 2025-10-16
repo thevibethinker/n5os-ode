@@ -1,0 +1,10 @@
+{
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "action": "phase_2_email_staging_scan",
+  "scanned_path": "Records/Temporary/email_staging",
+  "files_found": 9,
+  "staging_files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email staging files present for extraction; only process_summary files found. No deletions performed.",
+  "run_at": "2025-10-15T08:41:04-04:00"
+}

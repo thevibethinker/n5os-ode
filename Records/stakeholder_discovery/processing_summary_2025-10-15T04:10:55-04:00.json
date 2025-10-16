@@ -1,0 +1,12 @@
+{
+  "processed_at": "2025-10-15T04:10:55-04:00",
+  "source_directory": "Records/Temporary/email_staging",
+  "files_found": [
+    "process_summary_2025-10-14T20-10-19.027504-04-00.json",
+    "process_summary_2025-10-15T00-09-47-04-00.json",
+    "process_summary_2025-10-15T03:11:33-04-00.json"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discovered_records_written": []
+}

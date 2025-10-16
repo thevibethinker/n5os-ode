@@ -8,7 +8,7 @@ List and quick-review generated deliverables for a meeting.
 N5: deliverable-review <meeting_folder>
 ```
 
-- `meeting_folder`: The name of the meeting directory in `Careerspan/Meetings/`.
+- `meeting_folder`: The name of the meeting directory in `N5/records/meetings/`.
 
 ## Description
 

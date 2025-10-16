@@ -1,0 +1,16 @@
+ERROR: Meeting type mismatch
+
+Meeting ID: 2025-09-29_daily-team-stand-up-3
+Error: Internal meeting detected but scheduled task configured for external stakeholder workflow
+
+Details:
+- This is a "Daily team stand-up" meeting (INTERNAL_STANDUP_TEAM type)
+- Registry v1.5 external workflow requires: FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, or JOB_SEEKER
+- Internal meetings require different block set (B40-B48) not covered by current scheduled task
+
+Participants: Daily team stand up
+Transcript speakers: Ilse Funkhouser, Rochel Polter, Danny Williams, Vrijen Attawar
+
+Resolution needed: Update scheduled task to handle internal meetings or create separate task for internal meeting processing
+
+Date: 2025-10-14 16:18 ET

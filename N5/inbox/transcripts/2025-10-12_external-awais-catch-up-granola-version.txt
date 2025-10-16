@@ -1,1457 +1,338 @@
-Meeting Title: Vrijen x Awais Catch Up
-
+﻿Meeting Title: Vrijen x Awais Catch Up
 Calendar Event ID:
+Attendee Emails: 
+Creator Email:vrijen@mycareerspan.com 
 
-Attendee Emails:
 
-Creator Email:vrijen@mycareerspan.com
+@VA.ZO IMPORTANT CAVEAT: GRANOLA TREATS ALL EXTERNAL SPEAKERS AS THEY; INFER BASED ON CONTEXT WHO IS SPEAKING OR ADDRESSED TO PROPERLY ATTRIBUTE SPEAKERS
 
-@VA.ZO IMPORTANT CAVEAT: GRANOLA TREATS ALL EXTERNAL SPEAKERS AS THEY;
-INFER BASED ON CONTEXT WHO IS SPEAKING OR ADDRESSED TO PROPERLY
-ATTRIBUTE SPEAKERS
 
 Transcript:
-
-Them: Hey, he did.
-
-Me: How's it going, man?
-
-Them: Hey. Yeah, it's been a while. How are things?
-
-Me: Oh, man. Busy, busy, busy. Busy as fuck. How about you?
-
-Them: Yeah, it's been pretty wild, I would say, as well. I feel like
-after the summer,
-
-Me: Summer.
-
-Them: And, yeah, just like, a lot of different things going on.
-
-Me: Yeah. Well, yeah. I mean, you had big stuff in your personal life
-and in your work life.
-
-Them: Yeah, we got married end of May, which feels like a long time ago
-now, but I guess not so long ago.
-
-Me: Yeah. Congratulations to you, too. I was. N't. Yeah. Thank you.
-
-Them: Yeah. Thank you. Yeah, it was really nice. I'll send you some
-pictures if you're curious.
-
-Me: Please. Yeah.
-
-Them: Yeah. It was just like, I have a lot of family in the uk. So it
-was nice that everyone was involved and. Yeah, I don't know, nice that
-we were able to do it.
-
-Me: That's lovely.
-
-Them: There so that people could join in. Here.
-
-Me: That's so nice. Yeah. I bet it was nice. I was almost going to say
-it was nice doing the wedding in India, but I don't actually have any
-family in India. It was nice doing the wedding in America, which is
-where I have my friends and most of the people I care about. But I do
-get that it was a really amazing day for me as well, so I'm glad that it
-was good for you, too.
-
-Them: Nice. Yours was in, like, the Hudson Valley, I think, right? Or
-like I remember.
-
-Me: Y. Eah.
-
-Them: Yeah.
-
-Me: It was in hudson valley. Was in fuck a monroe.
-
-Them: Next. Okay. Yeah. That's nice. Did you feel like a big difference
-before and after?
-
-Me: You know, we were. We were a Covid marriage. So it both felt, like,
-not that different, but I gotta say, like, doing it in front of
-everyone, like, it does. It does, like, make everything feel a lot more
-real, you know?
-
-Them: Yeah, I agree. Yeah, that's true.
-
-Me: So it was nice that way. Do you guys do a honeymoon yet?
-
-Them: Have, like, a little memento. Yeah, we went to Slovenia.
-
-Me: Hopefully.
-
-Them: Yeah, we need to be back in the US like two weeks after the
-wedding. And so it was a pretty tight timeline. So we wanted to go
-somewhere in Europe. And, yeah, Slovenia, kind of. We did a bunch of
-research, and it seemed like one of these hidden gems that was still
-really nice but less common to go to.
-
-Me: That's right. Yeah. I mean, I've heard. I've heard the countries in
-that sort of central Eastern. I guess I don't know precisely where
-Slovenia is, but in that sort of general Balticy area, Lots of hidden
-gems.
-
-Them: Here. Yes, exactly. Yeah, like borders, Italy. And so a lot of the
-kind of roads and countryside mountains are very similar to that rural
-Italian vibe.
-
-Me: Nice.
-
-Them: And it feels like a very young country because of all the
-communism stuff. So it has not been its own country for that long, and
-people are very proud. Slovenians.
-
-Me: Oh, yeah, that's cool. I know they're fucking aggro as hell in
-football.
-
-Them: Oh, nice. Yeah.
-
-Me: Yeah, man. How's the startup game been going for you?
-
-Them: Yeah, it's been interesting. I would say, like, lots of ups and
-downs. Yeah, I don't know. I switched to doing, like, 01 petitions end
-to end.
-
-Me: Nice.
-
-Them: So, like, actually helping clients? Like, charging? More like a
-higher ticket price. So charging like $5,000 plus. To do one. And, like,
-partnering with an immigration attorney. Yeah, it's pretty good. And,
-yeah, some, like, pretty solid. We're up to, like, five approvals now.
-So, like, pretty good. And, like, 100% approval rate, so that's been
-good. But I don't know, it just feels like it's like a. Like a real
-grind to get to that point. And so I'm like, yeah, I don't know. I'm
-trying to figure out if it's worth continuing or now is the time to
-just, like, go get a good engineering job somewhere.
-
-Me: Yeah. That's fair. I mean, hey, it's hard, right? Obviously, you and
-I are in a similar boat. We've been fucking. I mean, it's very similar
-in my end as well, where there are some promising signs. But Logan and I
-have also been talking about, like, okay. What is the legitimate exit
-strategy here? Because. I think it is reasonable to ask, right? Like two
-years in, where the fuck is this going? But. I will say that. It's a
-little frustrating because your space and MySpace, I feel like, are
-really just primed for massive disruption, and I'm just desperately
-hoping that our timing isn't off.
-
-Them: Right? Yeah.
-
-Me: Because just with everything politically that's happening, obviously
-things are getting charged up for you. And I'm actually really curious
-to get your thoughts on how the macro has sort of affected your
-thinking. But, yeah, from our perspective, that's very much a real fear,
-is that we're a little too early for the kind of change that we want to
-bring to hiring. A little stressful that way.
-
-Them: Yeah. Interesting. How are things going? Like, in general, I
-guess, before we dive into the analysis, like on your side.
-
-Me: I mean. On the good side, we have what is seemingly a fucking strong
-consumer product. Actually, no. You worked in fucking consumer. You must
-be somewhat familiar with the retention rates. We're doing somewhere
-between 18 to 25%, like D30 retention. From signups, which is fucking
-decent. And then it drops off to like 5, 6% by the three month mark. And
-we're seeing a lot of organic returns, like without any marketing spam,
-without anything. Folks are coming back two, three months later to
-deposit stories to use Careerspan. Like, the irony is that we've
-actually gotten a really great consumer product. We're not charging for
-it, and I think that obviously takes a little bit of a shine off of it.
-Right now we're a little bit wondering, like, hey, Is it almost too late
-for revenue? Is the Runway too short? That honestly, at this point, even
-revenue doesn't matter? Can we just make a scene? I've genuinely been
-brainstorming. How can we be a little more cluey? As like a business as
-that is to say?
-
-Them: Right.
-
-Me: How can we be a little bit more hype beast about getting our POV
-out? And getting people animated around a cause as opposed know, just
-like improving their careers.
-
-Them: Yeah, interesting.
-
-Me: Yeah. We basically shifted entirely away from consumer in that we
-still have a consumer product, we still give it to people. And it's
-still part of the strategy. But now what we're trying to do is
-essentially go to really good communities. So we would go to Lennie's
-product community or we're talking to hbs. Actually, the alumni group
-next week. So talk to hbs, let's say, right? And say, hey, we'll give
-free access to our tool to your alums. You can use it to drive their
-careers forward. And if we manage to place them through our network, we
-essentially get a cut. So basically becoming like a marketplace. With.
-Consumer product as the entry point to the system.
-
-Them: Right. Right? And then you're getting, like, recruiter revenues,
-basically.
-
-Me: Exactly. And we're giving folks an ongoing reason. I think the most
-truly exciting thing is that people are like a year later, six months
-later, they're coming back. Right. What does that say? That says that
-they're seeing like six months later to remember a product, to go back
-and self reflect to. I think that's a pretty powerful signal that
-something's clicking.
-
-Them: Right.
-
-Me: But, yeah, we've just been fucking horrible at making money off of
-it.
-
-Them: Yeah. I mean, I don't know. It's really tough because you try so
-many different things, and it's, like, not clear what is gonna work and
-what isn't. I don't know. It sounds like we're both in somewhat similar
-spaces.
-
-Me: Yeah. I took a leaf out of your book and came across someone who I
-was like, oh, like, coaching. Okay. And actually has been quite helpful.
-So I wanted to give you a little thanks for that because you opened me
-up to the idea of actually taking someone on, even just to fucking talk
-to makes such a huge difference.
-
-Them: Right. Yeah, I found that to be really helpful, especially if
-you're, like, a solo founder or, like, you know, like. I think being a
-founder is a pretty lonely journey in general because there's so much to
-think about. Where so many different things that you, you know, could
-focus your attention on. Yeah. Interesting. Yeah. I don't know. I mean.
-Like what would be most helpful to discuss? How much more? When do you
-have? Or like, where are you at the moment?
-
-Me: So from our perspective, Let me just sound this out, because this is
-the sort of bonsai strategy that I'm thinking. Is we actually have
-really good connections with communities. Like, a bunch of. Emery's
-alumni group is taking us on. Fohi, the Future of Higher Education group
-is, like, on board. They're gonna pilot with us. So we're getting good
-traction with communities. And my feeling is, instead of us trying to
-split our efforts and try to build out the marketplace like one side at
-a fucking time, And be beholden to everyone else's demands for revenue.
-Actually tell people no. Fuck Revenue. The way we achieve this is by
-becoming. By getting distribution right. And the way that you get
-distribution is, frankly, by subsidizing access to the product like the
-way we are. But it's worth it because the actual engagement and the
-caliber of data you get is extremely high.
-
-Them: Where?
-
-Me: You've met Ilsa. She's a pretty cautious. Maybe that's something you
-were necessarily but she's like a very cautious doesn't over promise
-when it comes to AI at all. But even someone like her has a lot of
-confidence that we have some really strong tech. That can match people
-effectively. So, basically, long story short, For the last two months,
-we've gotten a lot more focused. We've seen more sort of. Active
-interest from potential customers and stuff. People being like, okay, if
-you get me the candidates, I'll pay you. Like, if you show me the
-people, I'll pay you. But hiring is just so fucked right now that it
-feels like if we want to impress investors, It's going to be more
-impressive to get, like, 20, 30,000 users by the end of the year, which
-feels more possible than getting even 20, 30,000 in revenue.
-
-Them: Interesting. Yeah, that's true. That's tricky. And, yeah, I feel
-like you. You hit, like, a big headwind at the moment because, like, no
-one's really hiring. Whereas, like, very much like, companies market
-versus, like, I think if. Yeah, even if this was, like, 2021 or
-something, you would have tons of. Companies being like, find me the
-best people. And then your product would be really useful to find those.
-
-Me: Well, here's the interesting thing. And this may have eluded you,
-obviously, because you're not, like, paying attention to the space. But.
-Inbound is dead. Not just like, oh, everyone says inbound sucks, and
-you've applied to no, literally, because of AI, Inbound is broken. I
-fully suspect workday to have some real serious PR issues in a couple of
-months, if not a year.
-
-Them: Yeah. Right.
-
-Me: But anyway, the point being that even though there's more candidates
-than ever, I've actually noticed that the founders I speak to are having
-more trouble hiring than they've ever had. Because inbound is basically
-no longer an option. You get thousands of applications, and they're all
-trash. AI trash. So now you have to rely on your referrals. But
-referrals are very onerous and time consuming and take effort to
-cultivate. Wait. You were hiring manager, right?
-
-Them: No, but I did a lot of interviews.
-
-Me: Yeah. You were, like, involved. Yeah, I suppose you quite involved
-in hiring in some capacity, right?
-
-Them: With. Right. Yeah.
-
-Me: Maybe this is why I should be asking you. Logan had this interesting
-idea. Where we repurpose what we offer. As a hiring manager tool for
-hiring. So the idea of being that the hiring managers are nowadays
-frustrated because HR is even worse at their jobs. And their ability to
-discern is even shittier. And usually they get candidates that the flop
-rate in screenings is getting higher and higher, basically. So what
-Logan was proposing was saying, hey, people can post jobs on careers
-path like hiring managers. They can use Careerspan to distribute a link
-to their network that isn't just the ATS link, because who knows where
-that person will end up. And effectively just give your network a way to
-get in front of your eyeballs in, like, a highly personalized manner. I
-don't know if I'm explaining that well, but effectively being a mini ATS
-for the hiring manager that they can use to build a pipeline themselves.
-
-Them: I'm just. I'm just thinking through it. Like, I have a sense of.
-Like, the sense that I have is. Like companies are struggling to hire
-really good candidates. And if you can essentially, like, pitch yourself
-as a recruiting solution to them and say, like, hey, we will give you,
-like, five really high quality candidates per week or something. And
-then the question is like, okay, how are you gonna do that? And then the
-answer is, Well, we're not reading their resumes. Where. Doing this,
-like, AI enabled conversational thing that, like, extracts a lot more
-information out of them than, like, a resume screen would. And then to
-candidates. The. The pitch is, hey, like, get on the radar of these,
-like, 100 companies all in one go. Using our AI. Like, I think, yeah,
-like, I do think the value prop of what you described last time of,
-like, improve your career chances or, like, improve the way you look to
-companies, I think is, like, not as strong of a value proposition
-because I don't know. It's kind of hard to be like, okay, how much? You
-know, how much would I be willing to pay for that?
-
-Me: Yeah. And charging the job seeker. Back and forth on it so much, but
-it's just a dead end anytime you try to do it, frankly. I haven't seen
-that. Really hasn't been a unicorn sort of career company. That's job
-seeker oriented, to the best of my knowledge. From.
-
-Them: Right. Job seekers are also, like, especially frugal and, like,
-probably don't want to spend money until they have a job.
-
-Me: Exactly. Exactly. So interesting. By the way, this is a little bit
-neither here nor there, but I'm going to send you this link because it
-just popped into my head and I think you're going to fucking find the
-story insane. Have you heard of the Codesmith's drama?
-
-Them: No. I have not.
-
-Me: Are you familiar with code, Smith?
-
-Them: No. Where is it?
-
-Me: They are still, but they've taken a huge hit. Big boot camp, right?
-And what turns out is that there is a Reddit mod that also owns a
-competing boot camp that has basically been slandering these folks on
-Reddit. Through the coding Bootcamp subreddit.
-
-Them: Oh. Wow.
-
-Me: And because that feeds into. Because Reddit is the biggest sort of
-like basically one of the most easily retrieved LLM sources. Basically,
-this company was just being slandered for, like, a year. On every single
-LLM search platform because this dude was basically posting one hate
-comment a day for two years about this company.
-
-Them: Novati, the Reddit mod.
-
-Me: Yeah. Yeah. So. He's a Reddit mod and he's the owner of a competing
-boot camp.
-
-Them: Wow. It's called, like, fractional or something. Or, like. Yeah.
-
-Me: Yeah. Hilarious.
-
-Them: Wow. Okay, I'm not friends with that guy, but I've seen his post a
-bunch and he's like, oh, x Facebook. And his whole thing is. Like, we
-are a career camp, a coaching camp for, like, the top end of the
-software engineering market. So he's like, it's supposed to be, like, a
-very premium type boot camp. But it's not like. Oh, wow. That is
-interesting, though, that this is. Yeah, that's super unethical.
-
-Me: Right.
-
-Them: If he's doing that.
-
-Me: Absolute craziness. Absolute craziness. But. What was I going to
-say? Yeah. It's a fucked situation, dude. Tech is really going through
-it.
-
-Them: Yeah. But thanks for sharing that. I'm actually. Yeah, that
-actually updates me a lot on that guy, because I did think he. He seemed
-pretty impressive. In, like the way he posts on LinkedIn or on social
-media. So this updates me a lot. There is one thing like you on social
-media, you don't really get a good sense of who's good and who isn't.
-Like, it's so two dimensional or like. Yeah, you know, you don't know
-what they're really like.
-
-Me: Yeah. Well, I mean, I feel like I know. It's asymmetrical, right?
-Because I'm fairly certain the people I hate on social media I would
-hate in real life. But I have no doubt that there's people I love on
-social media that I would despise in real life if I actually.
-
-Them: Right. I mean, yeah, so many people, like, don't even write their
-own stuff. Like, they just have ghostwrite. Like it's like a marketing
-channel, not a self expression channel. Like, yeah, tons of lawyers I
-speak to are posting like every day or every other day. And they're not
-writing any of that content.
-
-Me: Yeah. Yeah. I mean, dude. I don't know. The quality of comments and
-writing. It's not like LinkedIn was ever. Standard of the Bard by any
-means, but it is just awful. Now. It's just terrible. But, I mean, what
-has sort of been, like, on your mind? Like, what are the sort of things
-top of mind for you? Anything you want to discuss, like, anything that's
-been sort of stressing you out.
-
-Them: Yeah. I don't know. I think. Where am I am at now? Is. Yeah, I
-don't know. Just. So got married in May and then was trying to figure
-out this, like, okay, doing O1 for people. And I basically was like,
-I'll just compete directly with the law firms and, you know, charge them
-less, build out the tech as I am doing these cases. So I hired a
-paralegal. Who's been helping me, but he's. I don't know. Like, he's
-still not at the level where I can just hand stuff off to him and he'll
-get it done. Like, I still have to review and, like, often improve his
-work. But. Yeah, I don't know. I think my biggest thing has just been.
-Like just a number of clients coming in hasn't been enough. For me to be
-able to, like, feel like the business. So, yeah, it's like I set some
-goals for myself for, like, July, August, September.
-
-Me: Is it a. Is that lead generation thing or a conversion thing? Sounds
-like generation, right?
-
-Them: More generation. Yeah. And I don't know, I just, like, haven't
-figured out the, like, marketing side, and it just feels kind of
-intimidating at this point.
-
-Me: Yeah. I'm not gonna lie to you, man. It is stressful. It is
-stressful, right? But. Yeah. I think on one hand, I would almost view it
-as. If you're gonna do a startup anytime in your life, you're gonna have
-to navigate, go to market anyway. And to the extent that you're already
-so deep in this, you are at least like, comparatively well positioned to
-at least improve your understanding of go to market motions.
-Particularly stuff that you may be less confident in, like marketing.
-Yeah, I actually reckon that in a kind of weird way, now might be a good
-time to stick with that. But yeah, at the same time. I can viscerally
-relate to what you're saying around like, hey man. It's just not moving
-fast enough. And things aren't closing. Swiftly enough to keep
-everything chugging away at the same speed. Regardless, I think,
-honestly, I think it's like a sign of great maturity that you're having
-those difficult conversations with yourself instead of just blindly
-going one way or the other in response to the situation.
-
-Them: Yeah. I don't know. I mean, it feels a bit like. Okay, I could get
-really good at marketing. But is that, like, something I want to do? I
-think this is, like, one argument for raising money. And, like, why?
-Like, I do think because I got the, like, 150k last year, which was,
-like, something helpful to get to where I am now, but I still feel like
-the Runway is, like, not really long enough. To, like, you know, try a
-bunch of stuff and. And see what. And also, like, I feel like I've been
-kind of frugal where, like, if I had raised more money, I would have
-just, like, hired someone good to help me with this stuff.
-
-Me: Right.
-
-Them: And so it's a bit like. Yeah, it just feels like, okay. I don't
-have the money to, like, hire someone who's actually good at this. Which
-then means, like, I would have to do a lot of the work myself. And then
-I just feel like even, you know, like, the more time I spend on
-marketing, the less I have to actually provide clients with a good
-experience. And there's. I don't know, it feels like there's this kind
-of, like, jigsaw puzzle that isn't fully solved. Where, like, all of the
-pieces have to be happening together.
-
-Me: Yeah.
-
-Them: And, yeah, that. That, like, feels challenging.
-
-Me: Yeah, I feel you. That's sort of where I'm coming from for the fuck
-the sale shit. Let's just accept that we're going to raise money, except
-that we're going to dilute and. Frankly play a little bit more of these
-scumbaggy side of the startup game. To get eyeballs on you. I feel more
-comfortable doing that because I believe in the product, and I know that
-anyone that uses it is going to come away better. So I'm personally fine
-with being, like, a little loud and obnoxious.
-
-Them: Right. Oh, yeah, very nice.
-
-Me: Because I think that, I think, frankly, that's what is needed in our
-industry. There's a bunch of founders in this space being quite vocal. I
-see them getting a lot of. Traction. And, yeah, quite frankly, a lot of
-them are basically just defending the status quo. So it's not even like
-they have that much to be super fucking vocal about.
-
-Them: Right.
-
-Me: So, yeah, I'm almost thinking, like, is it easier to spread? To 20
-communities by the end of the year than sell do 20 employers? I'm
-guessing so. Right. But if those 20 communities lead to us going from
-currently like just under a thousand folks that have used Careerspan
-meaningfully to like 10,000, that will move the needle for us.
-
-Them: Yeah. Interesting. I think the challenge is, like, if you. Do get
-into those communities, and then the number, like, doesn't materialize.
-
-Me: Yep.
-
-Them: Like, I think that would be the big risk because I don't know, I
-feel like I've been in this situation as well where I think, oh, I'm
-going to post on this newsletter that goes out to 20,000 people. And
-then I do, and it's like 10 people use the product or something like
-just the numbers don't quite add up. Like, I feel like that happens
-quite a bit.
-
-Me: Totally. And that's where we need job. That's the precariousness of
-ours, is that, folks. Use Careerspan more when there are jobs on
-Careerspan. Luckily we can get away with it's funny, even just
-distributing cleaned up jobs to our users saw our retention go from 25%
-in the non jobs delivered pool. To 20 ish percent. Non jobs delivered
-pool to over 40%. By d30. So it's comparatively small numbers, but it's
-still, like, very promising in that people are so desperate for a job
-that they will show up. If jobs pop into their inbox. That are good.
-
-Them: Right? Yeah. I mean, I guess my thought, like, hearing you
-describe all of this stuff. Is like. Like, who has this pain point? To
-such a big extent that they would be willing to pay a lot for it, or
-who, like. Like, who are the. Yeah. Like, who are the really strong
-believers here, basically? Who would be like, really sad if careers fan
-disappeared tomorrow, right? And my guess is that, like the people you
-find through the community, If you like, ship them your current product.
-They'll be like, oh, I see why this could potentially be interesting.
-But it doesn't feel like it will be something that they. Like. Yeah, I
-don't know.
-
-Me: I totally see what you mean, because we've had that experience
-multiple times. Albeit. When the product, albeit it's been less of a
-problem as the product has gotten more mature. But at the same time,
-yeah, you're fundamentally correct. We generally see like 10%, like 5%,
-even conversion.
-
-Them: Yeah.
-
-Me: And that's from the total pool of a community. That's from the folks
-that regularly show up. So it's very much pain point. But I think
-essentially the angle that I would argue is, hey, we're embedded in
-these communities. We have a first mover advantage with them.
-Increasingly as I'm even talking to you, I'm thinking, why am I just not
-talking to consumer vcs? If we have strong consumer numbers. Why talk
-to. Me to be fuckers. I don't know. I think we've fundamentally have so
-overcomplicated things from the beginning. And are also in such a
-fertile space that it's almost like analysis paralysis, frankly.
-
-Them: No, I mean, I think, yeah. Yeah. Like, I definitely feel similarly
-where I'm like, oh, if I could repeat the last year again, I feel like I
-would be a lot more focused and just, like, maybe even try and move a
-bit more slowly but more deliberately. With every step. And just, like,
-really pin down, like, okay, what is the. Like, why is this actually
-valuable? Yeah. I don't know. Like, I think. Yeah. Listening to you
-speak, like, the. The sense I get is, like, there's a. There is a
-business to be built in the, like, matching. Side where it's like
-helping employers find great candidates. Now that the Resume is dead
-and, like, they need an alternative. Like, I think that there's
-something in that. It reminds me of Triplebyte a little bit.
-
-Me: Y. Eah. I think you told me about triple bite way back in the
-beginning. That guy's right. YC Dudes hard.
-
-Them: Which. All right. Yeah, yeah. Hydrogen. Yeah. They're exactly the
-yc dudes. And they kind of, like, imploded famously, but I don't know,
-like, exactly. What the reasoning was. I think they wrote a blog post
-about it and explained, like, I know they made some stupid decisions,
-but seemed like a good idea.
-
-Me: Yeah. Yeah, I think hard. Just invested in one of our competitors,
-if I'm not mistaken.
-
-Them: Okay?
-
-Me: That's the other funny thing. There's, like other companies emerging
-with similar concepts as well. It's just they come from folks with such
-much stronger pedigree than ours. I think that is fundamentally the
-problem that you and I are almost hitting. The problem beneath all the
-problems is we're not super credentialed in our fields, right?
-
-Them: Yeah.
-
-Me: Or at least, I don't know if you feel like that affects you, but I
-definitely feel like that. 's been slowing us the fuck down. Go into
-hiring people and not necessarily being able to. Engage with them. And
-also, I don't have experience as a hiring manager. It's just a couple
-of. Gaps that we're still hoping to bridge.
-
-Them: Right? Yeah. I mean, I think, yeah, in immigration space, there
-are tons of competitors. Like, even just in the last, like, six months,
-I feel like there have been, like, 20 new companies launching. Like,
-there's a new one every day. Basically, so I'm not too worried about
-that. Like they're all kind of the same, and they're all, like, trying
-to offer the same value prop. They all face the same problems. I do
-think that, like, some companies have been able to break through. Like,
-there's a company called Lighthouse that I think has done pretty well.
-
-Me: Before. There's the alma. Super famous.
-
-Them: Yeah. Almost another one. Yeah, like so. Yeah. Different companies
-have been taking different approaches.
-
-Me: Is there any company that you rate besides Lighthouse that's, like,
-actually doing things well?
-
-Them: I'm not sure the challenge is like, it feels as though. You know,
-the. The status quo will just reset to a little bit better than it was.
-Like, I think this is one reason also. I'm, like, maybe a bit off the
-immigration industry, where it just feels like, okay. Like, let's say
-that you are absolutely amazing. And, you know, you bring the cost down
-100x, the people still have to pay the government fees, right? So, like,
-in fact, the overall improvement is like 50%. Or like the same for
-timelines. Like, if you're really quick and you can process an
-application really quickly, that's great. But if the government has like
-a six month wait as a result, Then, you know, like, you brought the
-timeline down from nine months to six months, but that's. I don't know,
-just like there are. There's a lot that you can't control.
-
-Me: Right.
-
-Them: And. Yeah. I don't know. Like, I think Lighthouse has done pretty
-well just based on their network. I think alma. Has done pretty well on
-the like marketing and customer acquisition side. Yeah. And then there's
-another company called Manifest. I don't know. It's a. It's a bit tricky
-because, like, it's possible that some of these companies have the right
-approach, which is figure out the marketing first, build the brand,
-like, get tons of clients, and then worry about the tech. And so it's
-hard to judge. Like, if I look at, you know, they're tech, and I'm like,
-oh, it's not good enough yet. Like, maybe they are. They are right and
-I'm wrong about this. But I think it's also about, like, founder market
-fit as well. And it's like, what you. What are you uniquely good at and
-most interested in building? Like, I think one thing I realized is that
-I don't really want to build a marketing first business. Or. I don't
-know. This doesn't excite me as much.
-
-Me: I totally get that. I completely get that. Because it's not the
-intellectually stimulating part, at least for me.
-
-Them: Right? Yeah.
-
-Me: Yeah, it feels more like a chore than. Something that I would
-intuitively want to get good at. Or instinctually want to get good at.
-
-Them: Right? Yeah. So I don't know. That's how. That's how I feel a
-little bit now when I'm like, I can feel my engineering skills, like,
-deteriorating the more time I spend on the startup. And I'm like, maybe
-I should just like. Okay, there's a lot of AI stuff. That I want to play
-around more with and, like, see how it works, basically. But then I
-don't know if getting a regular job will enable me to do more of that,
-so.
-
-Me: Yeah. I mean, I think maybe in the right startup, I think in the
-right environment, it absolutely could. And dude. I have, like, 10
-fucking founding engineer jobs that I'm not able to place. So frankly,
-give me the word that I can find you like shitloads of people that would
-crawl over glass to hire you. For what that's worth. Like top tier edge
-talent is just to reassure you, if that's at all a concern. Yeah, you're
-going to be perfectly fine. Especially someone with a strong network and
-pedigree like you, will be very good.
-
-Them: Yeah. It's kind of scary, though, because then I'm like, oh, I
-think there are downsides.
-
-Me: Totally.
-
-Them: To it. Yeah. Downsides to being a startup founder downtown is to
-being an employee, like somewhere else.
-
-Me: Yeah. I'm trying to think of if there's. Any. Thing I can think of
-that might be. Worth. While middle ground. I mean, I can get you in
-touch with Lev, those Russian dudes that were investing specifically in
-legal tech. That's why they stopped not stopped talking to us, but
-essentially said, like, hey, we like you guys. We think you're building
-cool shit, but we want to. Stay in the area that we know. If it just
-felt like valuable to talk to them. They seemed like very nice folks,
-him and his brother. Gray hair ventures, so I'm happy to do an intro.
-
-Them: Yeah, feel free. Maybe do an intro and I'll speak to them and see.
-What they think and what else they've seen in the industry.
-
-Me: Yeah. They seemed like. They seem like good folks and pretty sort of
-savvy as far as legal Tech was concerned.
-
-Them: I think the thing that would excite me is if I could somehow just.
-Earn the ability to do more engineering. Like, I just, like, want to
-get. If I could get to a place where the business. Is winning because of
-good tech. Like, I think that would be amazing. Like, I do think there
-is, like, some scope for this, but it's like, there's a lot of work.
-
-Me: At that point, wouldn't the trick be to get a strong co founder that
-can take that over? Because that's, like, ideally how you can do that
-with no. Theoretically, with no cash burn. Right. If they're able to
-pull their own weight.
-
-Them: Maybe. Right? Yeah. Yep. I think that would be, like, one option.
-
-Me: And there's plenty of. Grinders. I think there's plenty of folks
-that would be very excited to work with an engineer of your caliber. And
-would you? I do think you would. Early engineer at a unicorn like
-fucking Harvard. I think you should be in a really strong position to
-get a great founder. Especially since. Also, my understanding is. And
-you're the technical person, you tell me. But my understanding is that
-the big issue is always finding someone that knows the space. Well, you
-know the fucking space, right? You just need someone to do the parts of
-the job that are not appealing to you, but are appealing to them.
-
-Them: Right? Yeah. Yeah, I think that would be, like, one way forward is
-to find out. Another one is like, do you think I could hire someone and
-just pay them, like, commission and be like, okay. For however many
-people you find.
-
-Me: Wait. I haven't. I have a way better idea for you. What the fuck am
-I talking about? Dude. You should just take on STEM opt students or like
-F1 first year students. A couple of different avenues. Do that first, in
-your three years of stem opt. In the first year of stem opt, you don't
-need to be paid.
-
-Them: Okay?
-
-Me: And frankly, there's a lot of smart but also wealthy people in the
-US that are just fucking trying to stay here after college. Not getting
-jobs, especially right now. So while I've been telling folks to do when
-they need a spare hand is go to good MBA program, Go to the career
-center and just say, hey, do you have any folks that are still looking
-for a job? And the schools themselves. Actually, a lot of the schools
-have a discretionary fund that they can pay the individual as though it
-was a salary. For folks that have on the job, so you can basically have
-their university subsidize their work for you. And then that's usually
-the subsidize. Their work is usually over the summer. But once they
-graduate, yeah, you can bring them in on the cheat, you know, and the
-process of getting the opt, obviously you would be able to handle as
-easily as anyone else, but it's like very lightweight and easy.
-
-Them: Interesting. Yeah. Like, I mean, I think so. What do I. What do I
-want? I was like, I want someone who can go out and, like, knows how to
-find, like, qualified one candidates, basically. And then I think the
-ideal for me would be, like, I pay you based on the number of people you
-find who, like, end up working with me.
-
-Me: I. Got a guy. That maybe. Talked to. What's this fucking. Dude's
-name.
-
-Them: Like other people like this out there who will just, like, I think
-I could pay them, like, $1,000 per person that they like that signs.
-
-Me: Yeah. Tim about it. Tim's, like, on the hiring side. We're actually
-thinking of having that same deal with him to bring us business. So.
-Long story short, but I think the reason he came to mind is he's very
-embedded in sf. And he might know some folks that fit that bill. There's
-another guy. Who's starting a community where I suspect you may find
-it's like four internationals that want to stay in the US and excel.
-Blank. Ing on this guy's name. Log. An. Yeah, I'll pull this dude's name
-up in a bit and grab it for you. But, yeah, long story short. I think he
-might be the kind of person that could do that because he was looking
-for that. I mean, I know another dude in India that's been like, hitting
-me up constantly for trying to get. Do bd work for me. He seems kind of
-professional, but again, I suspect that with like an. You want to
-project a certain sort of polish, right, and try to get them in.
-
-Them: Right. Yeah.
-
-Me: I mean, you know what could be another interesting avenue is
-actually also communities for you. And this is something that,
-theoretically, we could help you out with. Just do intros. There's a lot
-of. We're talking to a lot of communities. Communities have a lot of
-internationals. And, oh, this is the intel you want. Essentially
-communities. The way to get into them is to offer them free workshops
-and free advice. Because they're always looking for programming for
-their community.
-
-Them: Oh, interesting.
-
-Me: That's the thing that they're looking to do because they're always
-trying to keep engagement high. They're also like people with day jobs
-and stretch thin. Right. So anytime someone can come in and say, hey,
-I'll do this highly engaging thing for your community members, they love
-that shit. So you could start with. I don't know. There's probably folks
-in your network that are part of these communities that could maybe give
-you a bridge in. I'm happy to intro you to fohi Future of Higher
-Education group. We're doing a pilot with them, so there's a couple of
-places I can just as a gimme, do some warm intros for you. But I don't
-know if that will help with your distribution in the way that you're
-trying to help. Have it help.
-
-Them: Now let me fill up their website. Accelerating innovation Post
-secondary education.
-
-Me: There's Fauxheed. There's Enrich, which is another big one. Which is
-mostly for high end tech individuals. So that actually might be the best
-one for you. There's next play, which is cheapest shit. It's like $12 a
-month. It's Ben Lang's community. If you know the notion guy.
-
-Them: The name rings a bell. Yeah.
-
-Me: Yeah, he's very like Twitter, LinkedIn famous. You'll recognize him
-by his display picture, but yeah, he's got a big ass community that's
-pretty active. Yeah. Long story short, I do think that there's some
-interesting stuff out there. The other thing that I would say, maybe if
-you don't want to. Shilling. This partially because I get 25 bucks out
-of it, but mostly because I do really believe in the company and the
-product. I have been using Zoe. As a way of creating agentic workflows
-for myself.
-
-Them: Okay?
-
-Me: It's essentially a computer in the cloud that you run by prompting.
-
-Them: Interesting. Okay?
-
-Me: Yeah. The founder. I think one of the founders is a fellow Harvard
-man like yourself. Really good guy. Ben. Ben Guo. Might be a little
-older than you. But, yeah, I've been using this tool fucking heavily. I
-basically just automated all of. My post meeting follow up email
-processing through this and that has been a huge unlock.
-
-Them: Oh, nice. Okay. Interesting.
-
-Me: So you could probably generate very decent, whether it's marketing
-copy or even just having it scheduled posts for you and stuff. And I
-don't know. I mean, you're a fucking coder. Like Zapier is probably baby
-shit for you, for whatever reason. Same year made no sense to me. Zoe,
-which is ostensibly less straightforward, has been working a lot more
-consistently.
-
-Them: Okay?
-
-Me: Yeah.
-
-Them: Yeah, that is interesting. I'll check it out. Thanks for the
-suggestion. Yeah, I definitely feel like I could integrate more AI into
-my, like, non coding workflows. Like. Okay, so I guess the specific
-things. Like, if I try to hire someone to just do this job for me, do
-you think there's any likelihood that they will do a good job of this or
-not really? Like you said, that you had mixed experiences with
-salespeople.
-
-Me: We've had mixed experiences. So in my understanding, because we were
-just doing this breakdown when we were trying to discuss Tim's relevance
-to us. Essentially, we're thinking, okay, this is either someone that
-comes in as an sdr. Which is. Or like a bd. Come in. Crank calls, crank
-emails.
-
-Them: Yeah.
-
-Me: And then that would theoretically address your lead generation
-issue. Ideally, if they were sad.
-
-Them: The dozen. Call it like, I feel like cold emailing and stuff is,
-like, pretty dead. Or do you think that it can still work?
-
-Me: I think cold emailing can still work if done right, but I suspect
-the best middle ground is actually still to leverage your network and
-build outwards.
-
-Them: Right? My sense is like, yeah, it's like, I got so many cold
-emails, and they all, like, I don't know. I mean, I haven't paid
-attention to any of them.
-
-Me: Yeah, I think the only cold. I mean, let's face it, like, 98% of
-cold emails are bad because they're, like, programmatically generated.
-Right. Like 9 out of 10 of them still call us the apply. AI. We haven't
-been the apply in, like, a year and a half.
-
-Them: Right.
-
-Me: But I think that. The one I would say identify where the problem is.
-You said earlier that it was lead generation. If it's lead generation,
-then the question should be what are the channels that I can tap into to
-get in front of people? And which of those channels are the most
-needlessly labor intensive? Right, Like a channel. Okay. LinkedIn
-actually would probably be, like, a prime avenue for you, but if they're
-just fucking Instagram. And you just had someone churn stuff out to just
-raise your visibility, I guess. Ultimately. It's a gamble. And it
-depends on how much Runway you have, because even getting them aligned
-with you and getting them to put out stuff that's not slop will take a
-bit of time. Right.
-
-Them: Yeah.
-
-Me: And you will still have to coordinate the overall strategic
-marketing plan. So the more complex parts of this will still kind of
-have to ride on you.
-
-Them: Right? Yeah, that's the part that I feel less comfortable. Like,
-or I just think. I just don't think I'm likely to do a good job on that.
-Like it feels like it will take, you know, several months to get that
-working correctly. But. Yeah, I don't know. Okay, so that. That's
-interesting. The idea I had was just to try and, like, sell a product to
-lawyers. Because, like, I think my observation was just. Yeah. Like
-building a brand for myself will take some time. I also, like, yeah,
-don't really love my company name and feel like I would want to change
-that. Which I. Which I could do later. But could do sooner. And then.
-Yeah. I don't know. Like. Like lawyers. I'm expecting that with all the
-H1B news that came out, like they will receive an increase in one
-inquiries. And so I'm wondering if I could just sell them, like, a
-$2,000 product or 1,000. Like, we'll just, like, take over their one
-preparation.
-
-Me: Is there a part of that process that you can tackle? First that
-lawyers would not be like savvy. And what's the low lift, high reward?
-Plugging into their line, I guess, is what I'm asking.
-
-Them: Right? Yeah, I don't. I mean, there definitely are companies out
-there already. That are like paralegals for hire, where it's like, If
-your workload is too much, we can, like, swoop in and help you. But as
-like a one off thing. So I feel like that would be the. The category
-that I would be positioning myself in.
-
-Me: Gotcha. Gotcha, Gotcha. Just to something to help them clear their
-volume. Is that right?
-
-Them: And. Yeah, exactly.
-
-Me: That makes a lot of sense because that is highly aligned with what
-you've already built.
-
-Them: Yes. And give me the opportunity to kind of continue building it
-out. To make it, like, actually good.
-
-Me: Yeah. And actually, that's actually exactly what I was driving
-towards is like, is it the end to end processing of the one. That is the
-pain you should be going for. Or is the pain you should be going for?
-Hey, we now have. It's almost the same as hiring. We now have so many
-people. That even processing them is not worth our time.
-
-Them: Right. I don't know. And yeah, I don't know if they will be at
-that stage yet, but.
-
-Me: Or is there a way to keep. Their I almost view it as a procedural
-innovation or. Are there processes to do with the one that are, like,
-dumb and boring and stupid? On unoptimized tools that you could make an
-optimized app for an optimized product for. Versus them using. Sheets
-and word and stuff.
-
-Them: Right? Yeah, exactly. So, I mean, I think the thing that I was
-thinking is, like, if they are willing to just, they can send me their
-client documents and I will send them, like a first draft of a prepared
-partition, which is like a 4e50 hour task for most law firms. And then
-we can use, like, the AI in the background to make it good and, like.
-Like, the thing I've heard from most. Most form firms is that the AI is
-like, not good enough yet, and so they don't really trust it. So I think
-I could imagine something working where I am, basically, it's the AI
-plus me and my paralegal or, like, the people on my team. To get over
-that, like, quality bar to make it worth it for them. But we'll see. I
-don't know. Like, that's what I'm. I was thinking as, like, the next
-thing to try as a way to reduce all of the, like, sales and marketing
-burden, which I think is, like, a much bigger project.
-
-Me: Yeah. And I mean, I think that's the nice thing about B2B, right?
-It's a much more straightforward marketing and selling process.
-
-Them: Right.
-
-Me: Yeah. I can try to see if one of the folks I know who's a seller,
-who's an ae. Sales, a good sleep, Little fried. He's an AE at Harvey, is
-what I was trying to say. I don't know if it would be helpful speaking
-to him. But I can try to get you some time on his calendar, if that
-would be helpful.
-
-Them: Probably not. I think for. Yeah, I think. I think the so. Well, I
-think selling from Harvey's perspective is quite a different approach.
-
-Me: Yeah. Totally.
-
-Them: Like, I think the. I think they're trying to sell to. Yeah, like,
-much bigger law firms. But, I mean, I know, like, tons of immigration
-lawyers at this point, so I. Yeah, I, like, put some feelers out last
-week, and I, like.
-
-Me: Yeah.
-
-Them: I mean, the main thing I just asked them was, like, one are you
-already using an AI solution? And many of them said, no, not really. And
-then two, like, have you seen an uptick in one interest? And like, the
-three people who responded said yes. So. I don't know. I mean, yeah,
-it's. It's one of those things where it's, like, really hard to tell.
-But it seems, like, somewhat promising. Yeah. I don't know. Like.
-Although the alternative is to somehow, like, I feel like I. So what did
-I do in September? I went to, like, tons of events and stuff in New York
-and a lot of people, one on one, and was basically like, oh, if you know
-anyone who needs an one, like, you can send them to me. That was, like,
-somewhat promising. I got, like, one or two calls out of that, but
-nothing. Converted. I mean. Yeah, the thing I'm seeing, like, is
-referrals I bought are by far the most the best way I get clients. So,
-like, someone who's worked with me in the past or, like, who knows me.
-But then. But then it's like. I don't know. Those sales calls, like,
-earlier in the year, I felt like they were going pretty well. And then
-last week, I had, like three or four sales calls that then none of them
-converted. And so I'm like, what's happening? I do think that there's,
-like, a shift because of the Trump stuff, where people are going to more
-established companies. Or like older lawyers.
-
-Me: Yeah, I guess. I mean. There's more like fud in the market.
-
-Them: Right.
-
-Me: So that sort of to be expected. And I guess people are sort of
-viewing it from the perspective of, like, well, it's gonna be more
-competitive than ever now.
-
-Them: Exactly. Or like you don't want something to go wrong, and then
-it's like, who do you have representing you?
-
-Me: But then maybe that is the edge, right? Maybe that's the branding
-that you need to do. Like, I'll be honest with you, buddy. You look like
-a very trustworthy person. So take advantage of it. Like, you look like
-a person that is not just through your pedigree, but just, like, the way
-you. Put yourself forward. You seem like a trustworthy person. Maybe
-that's the angle for you. Is like, hey, do you want an impersonal
-experience from? It's almost like that. There's always folks that are
-susceptible to the give me personalized care. And to the extent that if
-the initial way you set up your brand is around, a lot of trust in you.
-
-Them: Right.
-
-Me: Almost like not emphasizing the AI.
-
-Them: Yeah.
-
-Me: Maybe will be enough to get you the volume of clients that will
-support you parallel building your product and getting it out the door.
-
-Them: Yeah, I mean, I think this, this kind of gets to part of the
-problem, which is, like, one issue is, like, I just don't know if I can
-deliver the quality of service that I would want to give. So it's, it's
-a little like the, like spinning up a marketplace or something, or
-checking. In the egg where it's like, okay. I need more clients for the
-business to be successful. The more clients I have, the more time I have
-to spend, like preparing their cases. So then the less time I have to
-spend on everything else. Like sales, marketing, engineering. Which then
-means, like, the pipeline doesn't grow. And so it's, you know.
-
-Me: Here's a counterintuitive suggestion. What if you hired a coder? To
-do the work, and you're essentially a pm. And then you focus on. The
-business side.
-
-Them: Right? Yeah, I think that's an interesting idea.
-
-Me: Because then there's someone that's just, like, grinding away that
-you can oversee and sort of strategically course correct.
-
-Them: Yeah.
-
-Me: You could probably get. I mean, you're an experienced coder. You've
-managed projects. Like, you wouldn't have trouble managing even an
-overseas coder, right? Or, like, qualified enough. Could be cheap
-enough. Heck, literally, one of the dudes in our that were supporting
-for the OPT is like a software engineer that's just, like, looking for a
-job. You know, So I know that there's a lot of those folks out there
-that are just. You know, will just gladly give you 20, 30 hours a week
-in exchange for just registering them under your company for their opt.
-
-Them: But yeah, I mean, that. That sounds interesting, actually.
-
-Me: Ion. Because the thing that I've heard is, Don't lean away from the
-things that you hate doing. Is my understanding right? It's almost like
-if. You're the only person that's going to care to do the sucky stuff as
-much.
-
-Them: Right.
-
-Me: But, yeah, hopefully that was. A slightly out of the box way of
-looking at the situation.
-
-Them: Yeah, that was interesting. Yeah. And I almost did hire someone
-who then ended up getting a job at, like, he was. He was, like, pretty
-close to working for me, but he was in this period where he was still
-job hunting, and then just the timings didn't quite work out. Because he
-got. Yeah, so I almost hired someone, and that was in, like, February or
-something, which I think would have been pretty good. Yeah. I don't
-know. We'll see. I think. What? Yeah, maybe what I'll do is I'll like. I
-am interested in. I might like write a little job description. For
-someone who can help me find one candidates.
-
-Me: Nice.
-
-Them: And I'll send that to you. And if you like, know anyone who might
-be interested.
-
-Me: Actually send that to me and I'll just run it through our system so
-you will at least scan it again, 700 people, and see how much it. How it
-does so against those.
-
-Them: Right.
-
-Me: And actually, we do have a very heavy non technical bias.
-
-Them: Okay?
-
-Me: If that's the kind of person you're looking for. Theoretically could
-be in our group.
-
-Them: Okay?
-
-Me: We think almost 13% of our people are business developer sales in
-some capacity.
-
-Them: Oh, cool. Yeah, let's do. Let's do that. That'll be fun. Yeah,
-it'll be cool if we find a match. That'll be good validation of your
-hiring model.
-
-Me: Yeah. Exactly. Send me the. I'll run it through the system. I'll get
-you some reports and actually, it would be quite valuable to get your
-perspective on, like how the kind of data that you got back about folks.
-So. Yeah, I'll get il sauna tomorrow.
-
-Them: Great. Yeah. Yeah. Because I think if I can find someone who's,
-like, relatively independent, who can just, like, who gets paid based on
-the number of candidates they find me, like, I think that's, like,
-pretty incentive aligned and, like, yeah, I don't think I'll be able to
-coach them very much, but. If they have their own ideas for. For how to
-do this job.
-
-Me: Yeah.
-
-Them: Like. I think that could be pretty interesting. And then. Yeah,
-like, I think the specific guy you mentioned who you think would be a
-good software engineer, I would. I would be down to talk to him if.
-
-Me: Actually. I will introduce. You to tim. Because to me, that Tim has
-a founder community he's putting together of almost like a couple
-hundred founders.
-
-Them: Yeah.
-
-Me: That he's launching September.
-
-Them: Okay?
-
-Me: So I'll get you in touch with Timmy. Because that kickback for an
-intro would be totally good for him. He would be so fine with that, I'm
-fairly certain, because it's like, yeah, he's literally just introducing
-you to people that probably need. Right.
-
-Them: Yeah, that'd be great. Yeah, I can pay, like, 500 bucks per
-person.
-
-Me: I won't put everything up. I'll just say, like, you know, oasis
-wants to chat about this potentially.
-
-Them: Yeah.
-
-Me: I'll introduce you to him and have a chat with him. And he's a good,
-reasonable dude, so should be able to hash something out with him pretty
-straightforwardly.
-
-Them: Okay? Yeah, that'd be amazing. Yeah, and we've helped a bunch of
-founders as well, so that would actually be really well aligned.
-
-Me: I totally, totally do that.
-
-Them: Amazing. Cool. I really appreciate that.
-
-Me: No problem. Man.
-
-Them: Thank you.
-
-Me: And keep. I'll. I'll. I'm planning this with. With another friend of
-mine, another founder friend of mine. I want to do, like, a founder.
-Not. Not to be douchey, but, like, a founder zone, like, other ship
-thing, with some really, like, nice folks that I know in New York.
-
-Them: Oh, nice. Yeah.
-
-Me: This is like, hey, let's just blow off some steam and hang out with,
-like, other people that actually get what this shit is about.
-
-Them: Nice. So that's a good idea. Yeah.
-
-Me: Yeah. So I'll keep your eyes out for that. Probably be like a dozen
-of us. So I'll. I'll organize that and I'll let you know.
-
-Them: Oh, that'd be amazing. Yeah, that's. That's a great initiative.
-
-Me: Yeah.
-
-Them: Yeah, I feel like, yeah, New York is an interesting place. Like, I
-feel like there are so many people here, but everyone's doing something,
-like, slightly different. Yeah, it's like, yeah, I had a fun time, like,
-going to a bunch of events in September and just, like, trying to meet
-lots of different people.
-
-Me: Oh, yeah. Do you go?
-
-Them: I went to one at, like, Lumos House, and it was kind of
-underwhelming. It was like Andrew interviewing someone who had, like, an
-unconventional career path.
-
-Me: I think I remember seeing this one. Yeah. His events have always
-been pretty high. High signal for me. But say it's inversely correlated
-with the size.
-
-Them: Oh, really? Okay.
-
-Me: The larger his events are, the shittier the crowd is.
-
-Them: Interesting.
-
-Me: And he has, like a very. He has. There's definitely a tier system
-that they have for people.
-
-Them: Yeah.
-
-Me: That affect, like, which places, which events you get, like,
-accepted to or not. But, you know, as, like, kind of crummy as that is,
-I do think it helps maintain the. The quality of, like, some of the
-rooms.
-
-Them: Right? Yeah.
-
-Me: The next time there's, like, a. A good one. I will. I'll let you
-know. We can apply to it together.
-
-Them: Nice. Yeah, I think. Yeah. I feel like I'm not in the right tier
-for this right now, or like every time I apply, like, I do not get into
-the good one. So I haven't been going to his events as much. Like. Yeah,
-I think it's, like, hard to figure out, like, okay, what do you need to
-do in order to. Get into the more interesting events.
-
-Me: I very much lucked out. I think the best place to start would be one
-of the larger, more public ones is a good place to start. Because those
-ones are generally easier to get into. And. And, yeah, I'm happy to
-introduce you to Jacob as well. They've got pretty fucking large
-community too. So happy to intro you to Jacob, who's their head of head
-of community.
-
-Them: Oh. Nice.
-
-Me: Yeah. But, yeah, those events are decent. I found some slightly
-worse ones, but, yeah, I've kind of, like, phased out of events. October
-or in, like, September. I was doing a lot in August.
-
-Them: Yeah, yeah, yeah. And it was interesting. It's like, I feel like
-the events were useful. They were kind of energizing to, like, meet
-different people, hear about, like, you know, just even finding out,
-like, what do people know about the O1? What do people know about US
-immigration? But not the best channel to, like, actually convert people.
-So I don't know. Yeah, I think my takeaway is just that, like, on the go
-to market stuff. It's just a lot of work. There's, like, a bit. It's
-like a big project, and you basically have to, like, build your brand
-significantly through voice and messaging and, like, different platforms
-and all this kind of stuff. And then, like, once you're doing a good job
-of that, then you can, like, host events and people will show up or,
-like, you'll get invited to things.
-
-Me: Exactly. Exactly.
-
-Them: So.
-
-Me: It makes a big fucking difference, unfortunately.
-
-Them: Right? Yeah. And I feel like I just, like, kind of under resourced
-on that or, like, didn't appreciate how much of that was required. In
-order to get onto people's radar.
-
-Me: Yeah.
-
-Them: So.
-
-Me: Me too, man. I've only the last, like, two, three months have I
-started. I'm still really bad at it. Like, I've already gone, like,
-three weeks without posting, you know, so. It's stay consistent. But
-that's also why I'm basically setting up my Zoe.
-
-Them: Right. Yeah.
-
-Me: I'm trying to set up a system where I essentially just, like, word
-vomit and is trained on my style, and it just, like, gives me a first
-draft.
-
-Them: Right.
-
-Me: That is way better than anything else, you know that I could have,
-like, shat out.
-
-Them: Interesting. Yeah.
-
-Me: But certainly quicker.
-
-Them: I'm curious how that goes. Yeah, I've tried versions of that. Like
-there was one called Hoppy Copy or something, or Happy Copy. That was
-like. That was the. The Valid. The promise was like, teach us how you
-write. We'll write content in your style. But it never quite delivered
-for me, like it still felt.
-
-Me: I. 've had luck with spiral. Have you heard of every.
-
-Them: Every. Yeah, it's like Dan Trippo's thing.
-
-Me: Yeah, Dan Schipper's thing. So one of their products is called
-Spiral. And spiral was actually quite good.
-
-Them: Okay? Interesting.
-
-Me: Emulating. The thing with spiral is that the. The catch 22 is you
-need a certain corpus of content for it to be trained on. So that's a
-little tough if you don't already have writing.
-
-Them: Yeah.
-
-Me: However kind of a hack. Is to find folks whose writing patterns you
-like.
-
-Them: Right. Interesting.
-
-Me: Their feet of their stuff. It will extract the patterns. Like,
-summarize the patterns, and then you give it notes, and it will convert
-the notes into the thing.
-
-Them: Yeah. Interesting. That's cool. Yeah. Yeah. I think my plan is
-basically, like. Unfortunately, it's just not. Maybe not the best, but,
-like, just spend a bit more time on the engineering, and then once I'm,
-like, confident that if I get, like, five, you know, if I get, like,
-five candidates a week, like, would I be. Able to handle it. I think
-once I get to. Once I. If I can get the tech to a place where it's like,
-oh, now you know that the floodgates open.
-
-Me: Hold up.
-
-Them: We can handle it. Then I think I'll feel a lot more comfortable.
-Just like diving in. To the marketing side. Whereas, like, right now, I
-feel like when I get new clients, I'm a bit like, oh, shit. Me and my
-paralegal can only get so much done in a week. And so it's like there
-are people who've been waiting, like, three or four weeks first, like,
-to mail stuff, which I don't think is, like, the best experience.
-
-Me: Right. Right? Right.
-
-Them: And so it's like just balancing all of these different things.
-
-Me: Yeah, it's tough, man. There's only so many hours in the day, right?
-
-Them: Right? And I think it was fine. Like, you know, like the first
-case I did, I just worked 12 hour days and got it done, like, super
-quickly. And they had a great experience, but you can't really do that
-for every client. Because.
-
-Me: Yeah, don't scale. Don't scale.
-
-Them: Right. Exactly. So I think that's, like, the roadmap for me. And
-then, like, if this works out, like, if I can get the tech to be good.
-I'll, like, pitch it to some lawyers, see if anyone's willing to pay me,
-like, one or two K just to keep things ticking over. And then, like, if,
-if that, if I feel confident in that, then I think there might be some
-time in a month or two to, like, do a website redesign and, like. Really
-dive into the. The marketing and branding and positioning type stuff.
-
-Me: Yeah, I think that would be a strong signal if you're able to get
-that out of law.
-
-Them: Yeah, like. Or just get the tech working. But, yeah, I mean, and,
-yeah, coming back to your stuff, like it sounds. I don't know. Yeah,
-it's like, I think solving the hiring challenge is like, I think the
-most valuable. Thing in the space of just like, yeah, if you. If you can
-go to a company and be like, hey, we can actually find good people for
-you. Because we have this, like, tech thing that gets a lot deeper than,
-like, a resume screen.
-
-Me: Yeah. Yeah, no, totally. I think that is. The I think that's the
-answer is getting the word out. To the places that you want. I think
-that may be. The idea.
-
-Them: Yeah.
-
-Me: Yeah. Shit. You're going to send me down? Fucking think.
-
-Them: Well, I don't know. Like, where's your. Where's the tech at the
-moment? Like, I remember you showed me a demo, like, a while ago, which
-was, like, you had all the different prompts that were, like, perfectly
-tuned, and then you could have a. Like, the. The user could have a
-conversation with AI. And it would give them, like, recommendations for
-how to improve.
-
-Me: Yeah. The tech is in a great place, so the conversational stuff is
-singing. We have vibe checks where you drop in a job description, and it
-will map. You against the JD and tell you which skill components you're
-missing. It'll coach you in helping craft stories around it. It will.
-Essentially, the same system that we use to give them analysis is what
-we use to match. So we do semantic matching across attributes as opposed
-to needing every keyword to show up. Exactly. So that part is super
-fucking robust. We still have, like, resume tailoring people can track.
-A Kanban board style like job descriptions. The tools in like a sick
-place. Gang dollars.
-
-Them: Just who will pay for it? Yeah.
-
-Me: It's so fucking frustrating. I'm like, we've done the thing. We've
-built a product people love. Why is that not enough?
-
-Them: Right. Have you tried getting, like, job seekers to pay or, like,
-tried that as an experiment?
-
-Me: I mean, I think we're gonna have to try it again because. I think we
-have a higher chance of getting them to pay for it now. I just don't
-know if we want to turn that tap back on. But, hey, look, people are
-using it more than ever. Maybe there's some sort of like, hey, pay
-Careerspan, like 50 bucks to keep year round access to your stories,
-like, you know, share them whenever you want. I think we could convince
-a couple hundred folks, like 100, 200 folks, to pay eight bucks a month,
-let's say, or five bucks a month, let's say. You know, it's not a ton of
-money. But I think. I think it is feasible. So I'm actually going to
-Boston tomorrow. To just, like, do a little founder camp with Logan and
-essentially figure out, like, what are we doing with this company? This
-is actually timing, that we talked through all of this stuff.
-
-Them: Yeah. Yeah, I think that would be good. I think it'll be good to
-figure. Yeah. Like, it's so difficult. Like, I. I agree. It's like every
-step you take, you think it's the right one, and then it takes, like,
-two or three months, and you realize, like, oh, in fact, it does. It
-doesn't work for XYZ reason. And it's like, oh, if I just known that
-ahead of time. Yeah, but I feel like that's the whole point of being a
-founder in some ways, is, like, you have skin in the game, and so
-you're, like, way more engaged than, like, a typical employee would be,
-and, like, learning these lessons. But, yeah, I don't know. I'm like, I
-feel like if the tech is good enough to, like, evaluate the strength of
-someone's profile, which presumably it's doing, in order to provide
-recommendations to them, Like I could see that being incredibly useful
-to a company that's trying to hire great people.
-
-Me: Yeah, I mean, I definitely think so. I think we have the most robust
-and by far the best. Implementation. Of. Tech. Yeah. Best tech doesn't
-win always.
-
-Them: I guess the reasons to like it, why it might not work are, like,
-if you look at recruiting in general, like, it's a pretty competitive
-market already, right? Like, there are tons of recruiters out there who
-have their own. Like, I feel like I get emails all the time where it's
-like, here are 10 companies that you should consider interviewing at
-and. And the interviewer, like, talks or. Yeah. Or the recruiter will,
-like, talk to each person individually. Build up a profile of, like,
-what they. What they're good at, what they care about. Yeah. I don't
-know. Like, I wonder if you're. If you're a software can do that.
-
-Me: Let's precisely what we do. Right. So I think there's a ton of.
-
-Them: Yeah.
-
-Me: I think there is a ton of value in that. I'm just going to have to.
-Think through how. We? Yeah. How do we turn what we have into a
-marketplace? I think that's going to be the big question. Like build
-that marketplace or die trying.
-
-Them: I mean, even before Marketplace. I think you could do it. You
-could. Just build it as a recruiting service.
-
-Me: Yeah. Yeah. No, actually, yeah. That's totally fair. And then that
-is, I guess, like, what Logan's been driving towards is like, hey, let's
-not worry about the marketplace stuff as much right now. Let's just try
-to get in. Pokes his hands, right?
-
-Them: Well, building marketplaces is just, like, famously difficult.
-
-Me: Ludic. Rous. Yeah. God, it's such a fucked goddamn approach.
-
-Them: Right. Like. So. Yeah, so we actually. Are you still interested in
-discussing this, or do you feel like you're kind of have said everything
-that you care about? Around.
-
-Me: I mostly said my piece, but I think. A little bit of my lockup is
-also I did mention this. So I was away in Arizona for, like a week. I
-was just, like, so burnt out. I needed to get the fuck out. Went to
-wellness thing.
-
-Them: Yeah.
-
-Me: So I'm actually also a little bit out of the loop. As far where
-things have gotten in the last week.
-
-Them: Yeah.
-
-Me: So that's where. Just a ton of ambiguity. I think it's, like, funny
-both you and I are just in such a. Like, what do we do? Where do we go?
-
-Them: I. Mean?
-
-Me: At.
-
-Them: Yeah. No, that's nice. Yeah. I mean, the Arizona trip was probably
-a good idea, to be fair. I feel like it's nice to have those. Like,
-being out of the loop can be a good thing, I think.
+ 
+Them: Hey, he did.  
+Me: How's it going, man?  
+Them: Hey. Yeah, it's been a while. How are things?  
+Me: Oh, man. Busy, busy, busy. Busy as fuck. How about you?  
+Them: Yeah, it's been pretty wild, I would say, as well. I feel like after the summer,  
+Me: Summer.  
+Them: And, yeah, just like, a lot of different things going on.  
+Me: Yeah. Well, yeah. I mean, you had big stuff in your personal life and in your work life.  
+Them: Yeah, we got married end of May, which feels like a long time ago now, but I guess not so long ago.  
+Me: Yeah. Congratulations to you, too. I was. N't. Yeah. Thank you.  
+Them: Yeah. Thank you. Yeah, it was really nice. I'll send you some pictures if you're curious.  
+Me: Please. Yeah.  
+Them: Yeah. It was just like, I have a lot of family in the uk. So it was nice that everyone was involved and. Yeah, I don't know, nice that we were able to do it.  
+Me: That's lovely.  
+Them: There so that people could join in. Here.  
+Me: That's so nice. Yeah. I bet it was nice. I was almost going to say it was nice doing the wedding in India, but I don't actually have any family in India. It was nice doing the wedding in America, which is where I have my friends and most of the people I care about. But I do get that it was a really amazing day for me as well, so I'm glad that it was good for you, too.  
+Them: Nice. Yours was in, like, the Hudson Valley, I think, right? Or like I remember.  
+Me: Y. Eah.  
+Them: Yeah.  
+Me: It was in hudson valley. Was in fuck a monroe.  
+Them: Next. Okay. Yeah. That's nice. Did you feel like a big difference before and after?  
+Me: You know, we were. We were a Covid marriage. So it both felt, like, not that different, but I gotta say, like, doing it in front of everyone, like, it does. It does, like, make everything feel a lot more real, you know?  
+Them: Yeah, I agree. Yeah, that's true.  
+Me: So it was nice that way. Do you guys do a honeymoon yet?  
+Them: Have, like, a little memento. Yeah, we went to Slovenia.  
+Me: Hopefully.  
+Them: Yeah, we need to be back in the US like two weeks after the wedding. And so it was a pretty tight timeline. So we wanted to go somewhere in Europe. And, yeah, Slovenia, kind of. We did a bunch of research, and it seemed like one of these hidden gems that was still really nice but less common to go to.  
+Me: That's right. Yeah. I mean, I've heard. I've heard the countries in that sort of central Eastern. I guess I don't know precisely where Slovenia is, but in that sort of general Balticy area, Lots of hidden gems.  
+Them: Here. Yes, exactly. Yeah, like borders, Italy. And so a lot of the kind of roads and countryside mountains are very similar to that rural Italian vibe.  
+Me: Nice.  
+Them: And it feels like a very young country because of all the communism stuff. So it has not been its own country for that long, and people are very proud. Slovenians.  
+Me: Oh, yeah, that's cool. I know they're fucking aggro as hell in football.  
+Them: Oh, nice. Yeah.  
+Me: Yeah, man. How's the startup game been going for you?  
+Them: Yeah, it's been interesting. I would say, like, lots of ups and downs. Yeah, I don't know. I switched to doing, like, 01 petitions end to end.  
+Me: Nice.  
+Them: So, like, actually helping clients? Like, charging? More like a higher ticket price. So charging like $5,000 plus. To do one. And, like, partnering with an immigration attorney. Yeah, it's pretty good. And, yeah, some, like, pretty solid. We're up to, like, five approvals now. So, like, pretty good. And, like, 100% approval rate, so that's been good. But I don't know, it just feels like it's like a. Like a real grind to get to that point. And so I'm like, yeah, I don't know. I'm trying to figure out if it's worth continuing or now is the time to just, like, go get a good engineering job somewhere.  
+Me: Yeah. That's fair. I mean, hey, it's hard, right? Obviously, you and I are in a similar boat. We've been fucking. I mean, it's very similar in my end as well, where there are some promising signs. But Logan and I have also been talking about, like, okay. What is the legitimate exit strategy here? Because. I think it is reasonable to ask, right? Like two years in, where the fuck is this going? But. I will say that. It's a little frustrating because your space and MySpace, I feel like, are really just primed for massive disruption, and I'm just desperately hoping that our timing isn't off.  
+Them: Right? Yeah.  
+Me: Because just with everything politically that's happening, obviously things are getting charged up for you. And I'm actually really curious to get your thoughts on how the macro has sort of affected your thinking. But, yeah, from our perspective, that's very much a real fear, is that we're a little too early for the kind of change that we want to bring to hiring. A little stressful that way.  
+Them: Yeah. Interesting. How are things going? Like, in general, I guess, before we dive into the analysis, like on your side.  
+Me: I mean. On the good side, we have what is seemingly a fucking strong consumer product. Actually, no. You worked in fucking consumer. You must be somewhat familiar with the retention rates. We're doing somewhere between 18 to 25%, like D30 retention. From signups, which is fucking decent. And then it drops off to like 5, 6% by the three month mark. And we're seeing a lot of organic returns, like without any marketing spam, without anything. Folks are coming back two, three months later to deposit stories to use Careerspan. Like, the irony is that we've actually gotten a really great consumer product. We're not charging for it, and I think that obviously takes a little bit of a shine off of it. Right now we're a little bit wondering, like, hey, Is it almost too late for revenue? Is the Runway too short? That honestly, at this point, even revenue doesn't matter? Can we just make a scene? I've genuinely been brainstorming. How can we be a little more cluey? As like a business as that is to say?  
+Them: Right.  
+Me: How can we be a little bit more hype beast about getting our POV out? And getting people animated around a cause as opposed know, just like improving their careers.  
+Them: Yeah, interesting.  
+Me: Yeah. We basically shifted entirely away from consumer in that we still have a consumer product, we still give it to people. And it's still part of the strategy. But now what we're trying to do is essentially go to really good communities. So we would go to Lennie's product community or we're talking to hbs. Actually, the alumni group next week. So talk to hbs, let's say, right? And say, hey, we'll give free access to our tool to your alums. You can use it to drive their careers forward. And if we manage to place them through our network, we essentially get a cut. So basically becoming like a marketplace. With. Consumer product as the entry point to the system.  
+Them: Right. Right? And then you're getting, like, recruiter revenues, basically.  
+Me: Exactly. And we're giving folks an ongoing reason. I think the most truly exciting thing is that people are like a year later, six months later, they're coming back. Right. What does that say? That says that they're seeing like six months later to remember a product, to go back and self reflect to. I think that's a pretty powerful signal that something's clicking.  
+Them: Right.  
+Me: But, yeah, we've just been fucking horrible at making money off of it.  
+Them: Yeah. I mean, I don't know. It's really tough because you try so many different things, and it's, like, not clear what is gonna work and what isn't. I don't know. It sounds like we're both in somewhat similar spaces.  
+Me: Yeah. I took a leaf out of your book and came across someone who I was like, oh, like, coaching. Okay. And actually has been quite helpful. So I wanted to give you a little thanks for that because you opened me up to the idea of actually taking someone on, even just to fucking talk to makes such a huge difference.  
+Them: Right. Yeah, I found that to be really helpful, especially if you're, like, a solo founder or, like, you know, like. I think being a founder is a pretty lonely journey in general because there's so much to think about. Where so many different things that you, you know, could focus your attention on. Yeah. Interesting. Yeah. I don't know. I mean. Like what would be most helpful to discuss? How much more? When do you have? Or like, where are you at the moment?  
+Me: So from our perspective, Let me just sound this out, because this is the sort of bonsai strategy that I'm thinking. Is we actually have really good connections with communities. Like, a bunch of. Emery's alumni group is taking us on. Fohi, the Future of Higher Education group is, like, on board. They're gonna pilot with us. So we're getting good traction with communities. And my feeling is, instead of us trying to split our efforts and try to build out the marketplace like one side at a fucking time, And be beholden to everyone else's demands for revenue. Actually tell people no. Fuck Revenue. The way we achieve this is by becoming. By getting distribution right. And the way that you get distribution is, frankly, by subsidizing access to the product like the way we are. But it's worth it because the actual engagement and the caliber of data you get is extremely high.  
+Them: Where?  
+Me: You've met Ilsa. She's a pretty cautious. Maybe that's something you were necessarily but she's like a very cautious doesn't over promise when it comes to AI at all. But even someone like her has a lot of confidence that we have some really strong tech. That can match people effectively. So, basically, long story short, For the last two months, we've gotten a lot more focused. We've seen more sort of. Active interest from potential customers and stuff. People being like, okay, if you get me the candidates, I'll pay you. Like, if you show me the people, I'll pay you. But hiring is just so fucked right now that it feels like if we want to impress investors, It's going to be more impressive to get, like, 20, 30,000 users by the end of the year, which feels more possible than getting even 20, 30,000 in revenue.  
+Them: Interesting. Yeah, that's true. That's tricky. And, yeah, I feel like you. You hit, like, a big headwind at the moment because, like, no one's really hiring. Whereas, like, very much like, companies market versus, like, I think if. Yeah, even if this was, like, 2021 or something, you would have tons of. Companies being like, find me the best people. And then your product would be really useful to find those.  
+Me: Well, here's the interesting thing. And this may have eluded you, obviously, because you're not, like, paying attention to the space. But. Inbound is dead. Not just like, oh, everyone says inbound sucks, and you've applied to no, literally, because of AI, Inbound is broken. I fully suspect workday to have some real serious PR issues in a couple of months, if not a year.  
+Them: Yeah. Right.  
+Me: But anyway, the point being that even though there's more candidates than ever, I've actually noticed that the founders I speak to are having more trouble hiring than they've ever had. Because inbound is basically no longer an option. You get thousands of applications, and they're all trash. AI trash. So now you have to rely on your referrals. But referrals are very onerous and time consuming and take effort to cultivate. Wait. You were hiring manager, right?  
+Them: No, but I did a lot of interviews.  
+Me: Yeah. You were, like, involved. Yeah, I suppose you quite involved in hiring in some capacity, right?  
+Them: With. Right. Yeah.  
+Me: Maybe this is why I should be asking you. Logan had this interesting idea. Where we repurpose what we offer. As a hiring manager tool for hiring. So the idea of being that the hiring managers are nowadays frustrated because HR is even worse at their jobs. And their ability to discern is even shittier. And usually they get candidates that the flop rate in screenings is getting higher and higher, basically. So what Logan was proposing was saying, hey, people can post jobs on careers path like hiring managers. They can use Careerspan to distribute a link to their network that isn't just the ATS link, because who knows where that person will end up. And effectively just give your network a way to get in front of your eyeballs in, like, a highly personalized manner. I don't know if I'm explaining that well, but effectively being a mini ATS for the hiring manager that they can use to build a pipeline themselves.  
+Them: I'm just. I'm just thinking through it. Like, I have a sense of. Like, the sense that I have is. Like companies are struggling to hire really good candidates. And if you can essentially, like, pitch yourself as a recruiting solution to them and say, like, hey, we will give you, like, five really high quality candidates per week or something. And then the question is like, okay, how are you gonna do that? And then the answer is, Well, we're not reading their resumes. Where. Doing this, like, AI enabled conversational thing that, like, extracts a lot more information out of them than, like, a resume screen would. And then to candidates. The. The pitch is, hey, like, get on the radar of these, like, 100 companies all in one go. Using our AI. Like, I think, yeah, like, I do think the value prop of what you described last time of, like, improve your career chances or, like, improve the way you look to companies, I think is, like, not as strong of a value proposition because I don't know. It's kind of hard to be like, okay, how much? You know, how much would I be willing to pay for that?  
+Me: Yeah. And charging the job seeker. Back and forth on it so much, but it's just a dead end anytime you try to do it, frankly. I haven't seen that. Really hasn't been a unicorn sort of career company. That's job seeker oriented, to the best of my knowledge. From.  
+Them: Right. Job seekers are also, like, especially frugal and, like, probably don't want to spend money until they have a job.  
+Me: Exactly. Exactly. So interesting. By the way, this is a little bit neither here nor there, but I'm going to send you this link because it just popped into my head and I think you're going to fucking find the story insane. Have you heard of the Codesmith's drama?  
+Them: No. I have not.  
+Me: Are you familiar with code, Smith?  
+Them: No. Where is it?  
+Me: They are still, but they've taken a huge hit. Big boot camp, right? And what turns out is that there is a Reddit mod that also owns a competing boot camp that has basically been slandering these folks on Reddit. Through the coding Bootcamp subreddit.  
+Them: Oh. Wow.  
+Me: And because that feeds into. Because Reddit is the biggest sort of like basically one of the most easily retrieved LLM sources. Basically, this company was just being slandered for, like, a year. On every single LLM search platform because this dude was basically posting one hate comment a day for two years about this company.  
+Them: Novati, the Reddit mod.  
+Me: Yeah. Yeah. So. He's a Reddit mod and he's the owner of a competing boot camp.  
+Them: Wow. It's called, like, fractional or something. Or, like. Yeah.  
+Me: Yeah. Hilarious.  
+Them: Wow. Okay, I'm not friends with that guy, but I've seen his post a bunch and he's like, oh, x Facebook. And his whole thing is. Like, we are a career camp, a coaching camp for, like, the top end of the software engineering market. So he's like, it's supposed to be, like, a very premium type boot camp. But it's not like. Oh, wow. That is interesting, though, that this is. Yeah, that's super unethical.  
+Me: Right.  
+Them: If he's doing that.  
+Me: Absolute craziness. Absolute craziness. But. What was I going to say? Yeah. It's a fucked situation, dude. Tech is really going through it.  
+Them: Yeah. But thanks for sharing that. I'm actually. Yeah, that actually updates me a lot on that guy, because I did think he. He seemed pretty impressive. In, like the way he posts on LinkedIn or on social media. So this updates me a lot. There is one thing like you on social media, you don't really get a good sense of who's good and who isn't. Like, it's so two dimensional or like. Yeah, you know, you don't know what they're really like.  
+Me: Yeah. Well, I mean, I feel like I know. It's asymmetrical, right? Because I'm fairly certain the people I hate on social media I would hate in real life. But I have no doubt that there's people I love on social media that I would despise in real life if I actually.  
+Them: Right. I mean, yeah, so many people, like, don't even write their own stuff. Like, they just have ghostwrite. Like it's like a marketing channel, not a self expression channel. Like, yeah, tons of lawyers I speak to are posting like every day or every other day. And they're not writing any of that content.  
+Me: Yeah. Yeah. I mean, dude. I don't know. The quality of comments and writing. It's not like LinkedIn was ever. Standard of the Bard by any means, but it is just awful. Now. It's just terrible. But, I mean, what has sort of been, like, on your mind? Like, what are the sort of things top of mind for you? Anything you want to discuss, like, anything that's been sort of stressing you out.  
+Them: Yeah. I don't know. I think. Where am I am at now? Is. Yeah, I don't know. Just. So got married in May and then was trying to figure out this, like, okay, doing O1 for people. And I basically was like, I'll just compete directly with the law firms and, you know, charge them less, build out the tech as I am doing these cases. So I hired a paralegal. Who's been helping me, but he's. I don't know. Like, he's still not at the level where I can just hand stuff off to him and he'll get it done. Like, I still have to review and, like, often improve his work. But. Yeah, I don't know. I think my biggest thing has just been. Like just a number of clients coming in hasn't been enough. For me to be able to, like, feel like the business. So, yeah, it's like I set some goals for myself for, like, July, August, September.  
+Me: Is it a. Is that lead generation thing or a conversion thing? Sounds like generation, right?  
+Them: More generation. Yeah. And I don't know, I just, like, haven't figured out the, like, marketing side, and it just feels kind of intimidating at this point.  
+Me: Yeah. I'm not gonna lie to you, man. It is stressful. It is stressful, right? But. Yeah. I think on one hand, I would almost view it as. If you're gonna do a startup anytime in your life, you're gonna have to navigate, go to market anyway. And to the extent that you're already so deep in this, you are at least like, comparatively well positioned to at least improve your understanding of go to market motions. Particularly stuff that you may be less confident in, like marketing. Yeah, I actually reckon that in a kind of weird way, now might be a good time to stick with that. But yeah, at the same time. I can viscerally relate to what you're saying around like, hey man. It's just not moving fast enough. And things aren't closing. Swiftly enough to keep everything chugging away at the same speed. Regardless, I think, honestly, I think it's like a sign of great maturity that you're having those difficult conversations with yourself instead of just blindly going one way or the other in response to the situation.  
+Them: Yeah. I don't know. I mean, it feels a bit like. Okay, I could get really good at marketing. But is that, like, something I want to do? I think this is, like, one argument for raising money. And, like, why? Like, I do think because I got the, like, 150k last year, which was, like, something helpful to get to where I am now, but I still feel like the Runway is, like, not really long enough. To, like, you know, try a bunch of stuff and. And see what. And also, like, I feel like I've been kind of frugal where, like, if I had raised more money, I would have just, like, hired someone good to help me with this stuff.  
+Me: Right.  
+Them: And so it's a bit like. Yeah, it just feels like, okay. I don't have the money to, like, hire someone who's actually good at this. Which then means, like, I would have to do a lot of the work myself. And then I just feel like even, you know, like, the more time I spend on marketing, the less I have to actually provide clients with a good experience. And there's. I don't know, it feels like there's this kind of, like, jigsaw puzzle that isn't fully solved. Where, like, all of the pieces have to be happening together.  
+Me: Yeah.  
+Them: And, yeah, that. That, like, feels challenging.  
+Me: Yeah, I feel you. That's sort of where I'm coming from for the fuck the sale shit. Let's just accept that we're going to raise money, except that we're going to dilute and. Frankly play a little bit more of these scumbaggy side of the startup game. To get eyeballs on you. I feel more comfortable doing that because I believe in the product, and I know that anyone that uses it is going to come away better. So I'm personally fine with being, like, a little loud and obnoxious.  
+Them: Right. Oh, yeah, very nice.  
+Me: Because I think that, I think, frankly, that's what is needed in our industry. There's a bunch of founders in this space being quite vocal. I see them getting a lot of. Traction. And, yeah, quite frankly, a lot of them are basically just defending the status quo. So it's not even like they have that much to be super fucking vocal about.  
+Them: Right.  
+Me: So, yeah, I'm almost thinking, like, is it easier to spread? To 20 communities by the end of the year than sell do 20 employers? I'm guessing so. Right. But if those 20 communities lead to us going from currently like just under a thousand folks that have used Careerspan meaningfully to like 10,000, that will move the needle for us.  
+Them: Yeah. Interesting. I think the challenge is, like, if you. Do get into those communities, and then the number, like, doesn't materialize.  
+Me: Yep.  
+Them: Like, I think that would be the big risk because I don't know, I feel like I've been in this situation as well where I think, oh, I'm going to post on this newsletter that goes out to 20,000 people. And then I do, and it's like 10 people use the product or something like just the numbers don't quite add up. Like, I feel like that happens quite a bit.  
+Me: Totally. And that's where we need job. That's the precariousness of ours, is that, folks. Use Careerspan more when there are jobs on Careerspan. Luckily we can get away with it's funny, even just distributing cleaned up jobs to our users saw our retention go from 25% in the non jobs delivered pool. To 20 ish percent. Non jobs delivered pool to over 40%. By d30. So it's comparatively small numbers, but it's still, like, very promising in that people are so desperate for a job that they will show up. If jobs pop into their inbox. That are good.  
+Them: Right? Yeah. I mean, I guess my thought, like, hearing you describe all of this stuff. Is like. Like, who has this pain point? To such a big extent that they would be willing to pay a lot for it, or who, like. Like, who are the. Yeah. Like, who are the really strong believers here, basically? Who would be like, really sad if careers fan disappeared tomorrow, right? And my guess is that, like the people you find through the community, If you like, ship them your current product. They'll be like, oh, I see why this could potentially be interesting. But it doesn't feel like it will be something that they. Like. Yeah, I don't know.  
+Me: I totally see what you mean, because we've had that experience multiple times. Albeit. When the product, albeit it's been less of a problem as the product has gotten more mature. But at the same time, yeah, you're fundamentally correct. We generally see like 10%, like 5%, even conversion.  
+Them: Yeah.  
+Me: And that's from the total pool of a community. That's from the folks that regularly show up. So it's very much pain point. But I think essentially the angle that I would argue is, hey, we're embedded in these communities. We have a first mover advantage with them. Increasingly as I'm even talking to you, I'm thinking, why am I just not talking to consumer vcs? If we have strong consumer numbers. Why talk to. Me to be fuckers. I don't know. I think we've fundamentally have so overcomplicated things from the beginning. And are also in such a fertile space that it's almost like analysis paralysis, frankly.  
+Them: No, I mean, I think, yeah. Yeah. Like, I definitely feel similarly where I'm like, oh, if I could repeat the last year again, I feel like I would be a lot more focused and just, like, maybe even try and move a bit more slowly but more deliberately. With every step. And just, like, really pin down, like, okay, what is the. Like, why is this actually valuable? Yeah. I don't know. Like, I think. Yeah. Listening to you speak, like, the. The sense I get is, like, there's a. There is a business to be built in the, like, matching. Side where it's like helping employers find great candidates. Now that the Resume is dead and, like, they need an alternative. Like, I think that there's something in that. It reminds me of Triplebyte a little bit.  
+Me: Y. Eah. I think you told me about triple bite way back in the beginning. That guy's right. YC Dudes hard.  
+Them: Which. All right. Yeah, yeah. Hydrogen. Yeah. They're exactly the yc dudes. And they kind of, like, imploded famously, but I don't know, like, exactly. What the reasoning was. I think they wrote a blog post about it and explained, like, I know they made some stupid decisions, but seemed like a good idea.  
+Me: Yeah. Yeah, I think hard. Just invested in one of our competitors, if I'm not mistaken.  
+Them: Okay?  
+Me: That's the other funny thing. There's, like other companies emerging with similar concepts as well. It's just they come from folks with such much stronger pedigree than ours. I think that is fundamentally the problem that you and I are almost hitting. The problem beneath all the problems is we're not super credentialed in our fields, right?  
+Them: Yeah.  
+Me: Or at least, I don't know if you feel like that affects you, but I definitely feel like that. 's been slowing us the fuck down. Go into hiring people and not necessarily being able to. Engage with them. And also, I don't have experience as a hiring manager. It's just a couple of. Gaps that we're still hoping to bridge.  
+Them: Right? Yeah. I mean, I think, yeah, in immigration space, there are tons of competitors. Like, even just in the last, like, six months, I feel like there have been, like, 20 new companies launching. Like, there's a new one every day. Basically, so I'm not too worried about that. Like they're all kind of the same, and they're all, like, trying to offer the same value prop. They all face the same problems. I do think that, like, some companies have been able to break through. Like, there's a company called Lighthouse that I think has done pretty well.  
+Me: Before. There's the alma. Super famous.  
+Them: Yeah. Almost another one. Yeah, like so. Yeah. Different companies have been taking different approaches.  
+Me: Is there any company that you rate besides Lighthouse that's, like, actually doing things well?  
+Them: I'm not sure the challenge is like, it feels as though. You know, the. The status quo will just reset to a little bit better than it was. Like, I think this is one reason also. I'm, like, maybe a bit off the immigration industry, where it just feels like, okay. Like, let's say that you are absolutely amazing. And, you know, you bring the cost down 100x, the people still have to pay the government fees, right? So, like, in fact, the overall improvement is like 50%. Or like the same for timelines. Like, if you're really quick and you can process an application really quickly, that's great. But if the government has like a six month wait as a result, Then, you know, like, you brought the timeline down from nine months to six months, but that's. I don't know, just like there are. There's a lot that you can't control.  
+Me: Right.  
+Them: And. Yeah. I don't know. Like, I think Lighthouse has done pretty well just based on their network. I think alma. Has done pretty well on the like marketing and customer acquisition side. Yeah. And then there's another company called Manifest. I don't know. It's a. It's a bit tricky because, like, it's possible that some of these companies have the right approach, which is figure out the marketing first, build the brand, like, get tons of clients, and then worry about the tech. And so it's hard to judge. Like, if I look at, you know, they're tech, and I'm like, oh, it's not good enough yet. Like, maybe they are. They are right and I'm wrong about this. But I think it's also about, like, founder market fit as well. And it's like, what you. What are you uniquely good at and most interested in building? Like, I think one thing I realized is that I don't really want to build a marketing first business. Or. I don't know. This doesn't excite me as much.  
+Me: I totally get that. I completely get that. Because it's not the intellectually stimulating part, at least for me.  
+Them: Right? Yeah.  
+Me: Yeah, it feels more like a chore than. Something that I would intuitively want to get good at. Or instinctually want to get good at.  
+Them: Right? Yeah. So I don't know. That's how. That's how I feel a little bit now when I'm like, I can feel my engineering skills, like, deteriorating the more time I spend on the startup. And I'm like, maybe I should just like. Okay, there's a lot of AI stuff. That I want to play around more with and, like, see how it works, basically. But then I don't know if getting a regular job will enable me to do more of that, so.  
+Me: Yeah. I mean, I think maybe in the right startup, I think in the right environment, it absolutely could. And dude. I have, like, 10 fucking founding engineer jobs that I'm not able to place. So frankly, give me the word that I can find you like shitloads of people that would crawl over glass to hire you. For what that's worth. Like top tier edge talent is just to reassure you, if that's at all a concern. Yeah, you're going to be perfectly fine. Especially someone with a strong network and pedigree like you, will be very good.  
+Them: Yeah. It's kind of scary, though, because then I'm like, oh, I think there are downsides.  
+Me: Totally.  
+Them: To it. Yeah. Downsides to being a startup founder downtown is to being an employee, like somewhere else.  
+Me: Yeah. I'm trying to think of if there's. Any. Thing I can think of that might be. Worth. While middle ground. I mean, I can get you in touch with Lev, those Russian dudes that were investing specifically in legal tech. That's why they stopped not stopped talking to us, but essentially said, like, hey, we like you guys. We think you're building cool shit, but we want to. Stay in the area that we know. If it just felt like valuable to talk to them. They seemed like very nice folks, him and his brother. Gray hair ventures, so I'm happy to do an intro.  
+Them: Yeah, feel free. Maybe do an intro and I'll speak to them and see. What they think and what else they've seen in the industry.  
+Me: Yeah. They seemed like. They seem like good folks and pretty sort of savvy as far as legal Tech was concerned.  
+Them: I think the thing that would excite me is if I could somehow just. Earn the ability to do more engineering. Like, I just, like, want to get. If I could get to a place where the business. Is winning because of good tech. Like, I think that would be amazing. Like, I do think there is, like, some scope for this, but it's like, there's a lot of work.  
+Me: At that point, wouldn't the trick be to get a strong co founder that can take that over? Because that's, like, ideally how you can do that with no. Theoretically, with no cash burn. Right. If they're able to pull their own weight.  
+Them: Maybe. Right? Yeah. Yep. I think that would be, like, one option.  
+Me: And there's plenty of. Grinders. I think there's plenty of folks that would be very excited to work with an engineer of your caliber. And would you? I do think you would. Early engineer at a unicorn like fucking Harvard. I think you should be in a really strong position to get a great founder. Especially since. Also, my understanding is. And you're the technical person, you tell me. But my understanding is that the big issue is always finding someone that knows the space. Well, you know the fucking space, right? You just need someone to do the parts of the job that are not appealing to you, but are appealing to them.  
+Them: Right? Yeah. Yeah, I think that would be, like, one way forward is to find out. Another one is like, do you think I could hire someone and just pay them, like, commission and be like, okay. For however many people you find.  
+Me: Wait. I haven't. I have a way better idea for you. What the fuck am I talking about? Dude. You should just take on STEM opt students or like F1 first year students. A couple of different avenues. Do that first, in your three years of stem opt. In the first year of stem opt, you don't need to be paid.  
+Them: Okay?  
+Me: And frankly, there's a lot of smart but also wealthy people in the US that are just fucking trying to stay here after college. Not getting jobs, especially right now. So while I've been telling folks to do when they need a spare hand is go to good MBA program, Go to the career center and just say, hey, do you have any folks that are still looking for a job? And the schools themselves. Actually, a lot of the schools have a discretionary fund that they can pay the individual as though it was a salary. For folks that have on the job, so you can basically have their university subsidize their work for you. And then that's usually the subsidize. Their work is usually over the summer. But once they graduate, yeah, you can bring them in on the cheat, you know, and the process of getting the opt, obviously you would be able to handle as easily as anyone else, but it's like very lightweight and easy.  
+Them: Interesting. Yeah. Like, I mean, I think so. What do I. What do I want? I was like, I want someone who can go out and, like, knows how to find, like, qualified one candidates, basically. And then I think the ideal for me would be, like, I pay you based on the number of people you find who, like, end up working with me.  
+Me: I. Got a guy. That maybe. Talked to. What's this fucking. Dude's name.  
+Them: Like other people like this out there who will just, like, I think I could pay them, like, $1,000 per person that they like that signs.  
+Me: Yeah. Tim about it. Tim's, like, on the hiring side. We're actually thinking of having that same deal with him to bring us business. So. Long story short, but I think the reason he came to mind is he's very embedded in sf. And he might know some folks that fit that bill. There's another guy. Who's starting a community where I suspect you may find it's like four internationals that want to stay in the US and excel. Blank. Ing on this guy's name. Log. An. Yeah, I'll pull this dude's name up in a bit and grab it for you. But, yeah, long story short. I think he might be the kind of person that could do that because he was looking for that. I mean, I know another dude in India that's been like, hitting me up constantly for trying to get. Do bd work for me. He seems kind of professional, but again, I suspect that with like an. You want to project a certain sort of polish, right, and try to get them in.  
+Them: Right. Yeah.  
+Me: I mean, you know what could be another interesting avenue is actually also communities for you. And this is something that, theoretically, we could help you out with. Just do intros. There's a lot of. We're talking to a lot of communities. Communities have a lot of internationals. And, oh, this is the intel you want. Essentially communities. The way to get into them is to offer them free workshops and free advice. Because they're always looking for programming for their community.  
+Them: Oh, interesting.  
+Me: That's the thing that they're looking to do because they're always trying to keep engagement high. They're also like people with day jobs and stretch thin. Right. So anytime someone can come in and say, hey, I'll do this highly engaging thing for your community members, they love that shit. So you could start with. I don't know. There's probably folks in your network that are part of these communities that could maybe give you a bridge in. I'm happy to intro you to fohi Future of Higher Education group. We're doing a pilot with them, so there's a couple of places I can just as a gimme, do some warm intros for you. But I don't know if that will help with your distribution in the way that you're trying to help. Have it help.  
+Them: Now let me fill up their website. Accelerating innovation Post secondary education.  
+Me: There's Fauxheed. There's Enrich, which is another big one. Which is mostly for high end tech individuals. So that actually might be the best one for you. There's next play, which is cheapest shit. It's like $12 a month. It's Ben Lang's community. If you know the notion guy.  
+Them: The name rings a bell. Yeah.  
+Me: Yeah, he's very like Twitter, LinkedIn famous. You'll recognize him by his display picture, but yeah, he's got a big ass community that's pretty active. Yeah. Long story short, I do think that there's some interesting stuff out there. The other thing that I would say, maybe if you don't want to. Shilling. This partially because I get 25 bucks out of it, but mostly because I do really believe in the company and the product. I have been using Zoe. As a way of creating agentic workflows for myself.  
+Them: Okay?  
+Me: It's essentially a computer in the cloud that you run by prompting.  
+Them: Interesting. Okay?  
+Me: Yeah. The founder. I think one of the founders is a fellow Harvard man like yourself. Really good guy. Ben. Ben Guo. Might be a little older than you. But, yeah, I've been using this tool fucking heavily. I basically just automated all of. My post meeting follow up email processing through this and that has been a huge unlock.  
+Them: Oh, nice. Okay. Interesting.  
+Me: So you could probably generate very decent, whether it's marketing copy or even just having it scheduled posts for you and stuff. And I don't know. I mean, you're a fucking coder. Like Zapier is probably baby shit for you, for whatever reason. Same year made no sense to me. Zoe, which is ostensibly less straightforward, has been working a lot more consistently.  
+Them: Okay?  
+Me: Yeah.  
+Them: Yeah, that is interesting. I'll check it out. Thanks for the suggestion. Yeah, I definitely feel like I could integrate more AI into my, like, non coding workflows. Like. Okay, so I guess the specific things. Like, if I try to hire someone to just do this job for me, do you think there's any likelihood that they will do a good job of this or not really? Like you said, that you had mixed experiences with salespeople.  
+Me: We've had mixed experiences. So in my understanding, because we were just doing this breakdown when we were trying to discuss Tim's relevance to us. Essentially, we're thinking, okay, this is either someone that comes in as an sdr. Which is. Or like a bd. Come in. Crank calls, crank emails.  
+Them: Yeah.  
+Me: And then that would theoretically address your lead generation issue. Ideally, if they were sad.  
+Them: The dozen. Call it like, I feel like cold emailing and stuff is, like, pretty dead. Or do you think that it can still work?  
+Me: I think cold emailing can still work if done right, but I suspect the best middle ground is actually still to leverage your network and build outwards.  
+Them: Right? My sense is like, yeah, it's like, I got so many cold emails, and they all, like, I don't know. I mean, I haven't paid attention to any of them.  
+Me: Yeah, I think the only cold. I mean, let's face it, like, 98% of cold emails are bad because they're, like, programmatically generated. Right. Like 9 out of 10 of them still call us the apply. AI. We haven't been the apply in, like, a year and a half.  
+Them: Right.  
+Me: But I think that. The one I would say identify where the problem is. You said earlier that it was lead generation. If it's lead generation, then the question should be what are the channels that I can tap into to get in front of people? And which of those channels are the most needlessly labor intensive? Right, Like a channel. Okay. LinkedIn actually would probably be, like, a prime avenue for you, but if they're just fucking Instagram. And you just had someone churn stuff out to just raise your visibility, I guess. Ultimately. It's a gamble. And it depends on how much Runway you have, because even getting them aligned with you and getting them to put out stuff that's not slop will take a bit of time. Right.  
+Them: Yeah.  
+Me: And you will still have to coordinate the overall strategic marketing plan. So the more complex parts of this will still kind of have to ride on you.  
+Them: Right? Yeah, that's the part that I feel less comfortable. Like, or I just think. I just don't think I'm likely to do a good job on that. Like it feels like it will take, you know, several months to get that working correctly. But. Yeah, I don't know. Okay, so that. That's interesting. The idea I had was just to try and, like, sell a product to lawyers. Because, like, I think my observation was just. Yeah. Like building a brand for myself will take some time. I also, like, yeah, don't really love my company name and feel like I would want to change that. Which I. Which I could do later. But could do sooner. And then. Yeah. I don't know. Like. Like lawyers. I'm expecting that with all the H1B news that came out, like they will receive an increase in one inquiries. And so I'm wondering if I could just sell them, like, a $2,000 product or 1,000. Like, we'll just, like, take over their one preparation.  
+Me: Is there a part of that process that you can tackle? First that lawyers would not be like savvy. And what's the low lift, high reward? Plugging into their line, I guess, is what I'm asking.  
+Them: Right? Yeah, I don't. I mean, there definitely are companies out there already. That are like paralegals for hire, where it's like, If your workload is too much, we can, like, swoop in and help you. But as like a one off thing. So I feel like that would be the. The category that I would be positioning myself in.  
+Me: Gotcha. Gotcha, Gotcha. Just to something to help them clear their volume. Is that right?  
+Them: And. Yeah, exactly.  
+Me: That makes a lot of sense because that is highly aligned with what you've already built.  
+Them: Yes. And give me the opportunity to kind of continue building it out. To make it, like, actually good.  
+Me: Yeah. And actually, that's actually exactly what I was driving towards is like, is it the end to end processing of the one. That is the pain you should be going for. Or is the pain you should be going for? Hey, we now have. It's almost the same as hiring. We now have so many people. That even processing them is not worth our time.  
+Them: Right. I don't know. And yeah, I don't know if they will be at that stage yet, but.  
+Me: Or is there a way to keep. Their I almost view it as a procedural innovation or. Are there processes to do with the one that are, like, dumb and boring and stupid? On unoptimized tools that you could make an optimized app for an optimized product for. Versus them using. Sheets and word and stuff.  
+Them: Right? Yeah, exactly. So, I mean, I think the thing that I was thinking is, like, if they are willing to just, they can send me their client documents and I will send them, like a first draft of a prepared partition, which is like a 4e50 hour task for most law firms. And then we can use, like, the AI in the background to make it good and, like. Like, the thing I've heard from most. Most form firms is that the AI is like, not good enough yet, and so they don't really trust it. So I think I could imagine something working where I am, basically, it's the AI plus me and my paralegal or, like, the people on my team. To get over that, like, quality bar to make it worth it for them. But we'll see. I don't know. Like, that's what I'm. I was thinking as, like, the next thing to try as a way to reduce all of the, like, sales and marketing burden, which I think is, like, a much bigger project.  
+Me: Yeah. And I mean, I think that's the nice thing about B2B, right? It's a much more straightforward marketing and selling process.  
+Them: Right.  
+Me: Yeah. I can try to see if one of the folks I know who's a seller, who's an ae. Sales, a good sleep, Little fried. He's an AE at Harvey, is what I was trying to say. I don't know if it would be helpful speaking to him. But I can try to get you some time on his calendar, if that would be helpful.  
+Them: Probably not. I think for. Yeah, I think. I think the so. Well, I think selling from Harvey's perspective is quite a different approach.  
+Me: Yeah. Totally.  
+Them: Like, I think the. I think they're trying to sell to. Yeah, like, much bigger law firms. But, I mean, I know, like, tons of immigration lawyers at this point, so I. Yeah, I, like, put some feelers out last week, and I, like.  
+Me: Yeah.  
+Them: I mean, the main thing I just asked them was, like, one are you already using an AI solution? And many of them said, no, not really. And then two, like, have you seen an uptick in one interest? And like, the three people who responded said yes. So. I don't know. I mean, yeah, it's. It's one of those things where it's, like, really hard to tell. But it seems, like, somewhat promising. Yeah. I don't know. Like. Although the alternative is to somehow, like, I feel like I. So what did I do in September? I went to, like, tons of events and stuff in New York and a lot of people, one on one, and was basically like, oh, if you know anyone who needs an one, like, you can send them to me. That was, like, somewhat promising. I got, like, one or two calls out of that, but nothing. Converted. I mean. Yeah, the thing I'm seeing, like, is referrals I bought are by far the most the best way I get clients. So, like, someone who's worked with me in the past or, like, who knows me. But then. But then it's like. I don't know. Those sales calls, like, earlier in the year, I felt like they were going pretty well. And then last week, I had, like three or four sales calls that then none of them converted. And so I'm like, what's happening? I do think that there's, like, a shift because of the Trump stuff, where people are going to more established companies. Or like older lawyers.  
+Me: Yeah, I guess. I mean. There's more like fud in the market.  
+Them: Right.  
+Me: So that sort of to be expected. And I guess people are sort of viewing it from the perspective of, like, well, it's gonna be more competitive than ever now.  
+Them: Exactly. Or like you don't want something to go wrong, and then it's like, who do you have representing you?  
+Me: But then maybe that is the edge, right? Maybe that's the branding that you need to do. Like, I'll be honest with you, buddy. You look like a very trustworthy person. So take advantage of it. Like, you look like a person that is not just through your pedigree, but just, like, the way you. Put yourself forward. You seem like a trustworthy person. Maybe that's the angle for you. Is like, hey, do you want an impersonal experience from? It's almost like that. There's always folks that are susceptible to the give me personalized care. And to the extent that if the initial way you set up your brand is around, a lot of trust in you.  
+Them: Right.  
+Me: Almost like not emphasizing the AI.  
+Them: Yeah.  
+Me: Maybe will be enough to get you the volume of clients that will support you parallel building your product and getting it out the door.  
+Them: Yeah, I mean, I think this, this kind of gets to part of the problem, which is, like, one issue is, like, I just don't know if I can deliver the quality of service that I would want to give. So it's, it's a little like the, like spinning up a marketplace or something, or checking. In the egg where it's like, okay. I need more clients for the business to be successful. The more clients I have, the more time I have to spend, like preparing their cases. So then the less time I have to spend on everything else. Like sales, marketing, engineering. Which then means, like, the pipeline doesn't grow. And so it's, you know.  
+Me: Here's a counterintuitive suggestion. What if you hired a coder? To do the work, and you're essentially a pm. And then you focus on. The business side.  
+Them: Right? Yeah, I think that's an interesting idea.  
+Me: Because then there's someone that's just, like, grinding away that you can oversee and sort of strategically course correct.  
+Them: Yeah.  
+Me: You could probably get. I mean, you're an experienced coder. You've managed projects. Like, you wouldn't have trouble managing even an overseas coder, right? Or, like, qualified enough. Could be cheap enough. Heck, literally, one of the dudes in our that were supporting for the OPT is like a software engineer that's just, like, looking for a job. You know, So I know that there's a lot of those folks out there that are just. You know, will just gladly give you 20, 30 hours a week in exchange for just registering them under your company for their opt.  
+Them: But yeah, I mean, that. That sounds interesting, actually.  
+Me: Ion. Because the thing that I've heard is, Don't lean away from the things that you hate doing. Is my understanding right? It's almost like if. You're the only person that's going to care to do the sucky stuff as much.  
+Them: Right.  
+Me: But, yeah, hopefully that was. A slightly out of the box way of looking at the situation.  
+Them: Yeah, that was interesting. Yeah. And I almost did hire someone who then ended up getting a job at, like, he was. He was, like, pretty close to working for me, but he was in this period where he was still job hunting, and then just the timings didn't quite work out. Because he got. Yeah, so I almost hired someone, and that was in, like, February or something, which I think would have been pretty good. Yeah. I don't know. We'll see. I think. What? Yeah, maybe what I'll do is I'll like. I am interested in. I might like write a little job description. For someone who can help me find one candidates.  
+Me: Nice.  
+Them: And I'll send that to you. And if you like, know anyone who might be interested.  
+Me: Actually send that to me and I'll just run it through our system so you will at least scan it again, 700 people, and see how much it. How it does so against those.  
+Them: Right.  
+Me: And actually, we do have a very heavy non technical bias.  
+Them: Okay?  
+Me: If that's the kind of person you're looking for. Theoretically could be in our group.  
+Them: Okay?  
+Me: We think almost 13% of our people are business developer sales in some capacity.  
+Them: Oh, cool. Yeah, let's do. Let's do that. That'll be fun. Yeah, it'll be cool if we find a match. That'll be good validation of your hiring model.  
+Me: Yeah. Exactly. Send me the. I'll run it through the system. I'll get you some reports and actually, it would be quite valuable to get your perspective on, like how the kind of data that you got back about folks. So. Yeah, I'll get il sauna tomorrow.  
+Them: Great. Yeah. Yeah. Because I think if I can find someone who's, like, relatively independent, who can just, like, who gets paid based on the number of candidates they find me, like, I think that's, like, pretty incentive aligned and, like, yeah, I don't think I'll be able to coach them very much, but. If they have their own ideas for. For how to do this job.  
+Me: Yeah.  
+Them: Like. I think that could be pretty interesting. And then. Yeah, like, I think the specific guy you mentioned who you think would be a good software engineer, I would. I would be down to talk to him if.  
+Me: Actually. I will introduce. You to tim. Because to me, that Tim has a founder community he's putting together of almost like a couple hundred founders.  
+Them: Yeah.  
+Me: That he's launching September.  
+Them: Okay?  
+Me: So I'll get you in touch with Timmy. Because that kickback for an intro would be totally good for him. He would be so fine with that, I'm fairly certain, because it's like, yeah, he's literally just introducing you to people that probably need. Right.  
+Them: Yeah, that'd be great. Yeah, I can pay, like, 500 bucks per person.  
+Me: I won't put everything up. I'll just say, like, you know, oasis wants to chat about this potentially.  
+Them: Yeah.  
+Me: I'll introduce you to him and have a chat with him. And he's a good, reasonable dude, so should be able to hash something out with him pretty straightforwardly.  
+Them: Okay? Yeah, that'd be amazing. Yeah, and we've helped a bunch of founders as well, so that would actually be really well aligned.  
+Me: I totally, totally do that.  
+Them: Amazing. Cool. I really appreciate that.  
+Me: No problem. Man.  
+Them: Thank you.  
+Me: And keep. I'll. I'll. I'm planning this with. With another friend of mine, another founder friend of mine. I want to do, like, a founder. Not. Not to be douchey, but, like, a founder zone, like, other ship thing, with some really, like, nice folks that I know in New York.  
+Them: Oh, nice. Yeah.  
+Me: This is like, hey, let's just blow off some steam and hang out with, like, other people that actually get what this shit is about.  
+Them: Nice. So that's a good idea. Yeah.  
+Me: Yeah. So I'll keep your eyes out for that. Probably be like a dozen of us. So I'll. I'll organize that and I'll let you know.  
+Them: Oh, that'd be amazing. Yeah, that's. That's a great initiative.  
+Me: Yeah.  
+Them: Yeah, I feel like, yeah, New York is an interesting place. Like, I feel like there are so many people here, but everyone's doing something, like, slightly different. Yeah, it's like, yeah, I had a fun time, like, going to a bunch of events in September and just, like, trying to meet lots of different people.  
+Me: Oh, yeah. Do you go?  
+Them: I went to one at, like, Lumos House, and it was kind of underwhelming. It was like Andrew interviewing someone who had, like, an unconventional career path.  
+Me: I think I remember seeing this one. Yeah. His events have always been pretty high. High signal for me. But say it's inversely correlated with the size.  
+Them: Oh, really? Okay.  
+Me: The larger his events are, the shittier the crowd is.  
+Them: Interesting.  
+Me: And he has, like a very. He has. There's definitely a tier system that they have for people.  
+Them: Yeah.  
+Me: That affect, like, which places, which events you get, like, accepted to or not. But, you know, as, like, kind of crummy as that is, I do think it helps maintain the. The quality of, like, some of the rooms.  
+Them: Right? Yeah.  
+Me: The next time there's, like, a. A good one. I will. I'll let you know. We can apply to it together.  
+Them: Nice. Yeah, I think. Yeah. I feel like I'm not in the right tier for this right now, or like every time I apply, like, I do not get into the good one. So I haven't been going to his events as much. Like. Yeah, I think it's, like, hard to figure out, like, okay, what do you need to do in order to. Get into the more interesting events.  
+Me: I very much lucked out. I think the best place to start would be one of the larger, more public ones is a good place to start. Because those ones are generally easier to get into. And. And, yeah, I'm happy to introduce you to Jacob as well. They've got pretty fucking large community too. So happy to intro you to Jacob, who's their head of head of community.  
+Them: Oh. Nice.  
+Me: Yeah. But, yeah, those events are decent. I found some slightly worse ones, but, yeah, I've kind of, like, phased out of events. October or in, like, September. I was doing a lot in August.  
+Them: Yeah, yeah, yeah. And it was interesting. It's like, I feel like the events were useful. They were kind of energizing to, like, meet different people, hear about, like, you know, just even finding out, like, what do people know about the O1? What do people know about US immigration? But not the best channel to, like, actually convert people. So I don't know. Yeah, I think my takeaway is just that, like, on the go to market stuff. It's just a lot of work. There's, like, a bit. It's like a big project, and you basically have to, like, build your brand significantly through voice and messaging and, like, different platforms and all this kind of stuff. And then, like, once you're doing a good job of that, then you can, like, host events and people will show up or, like, you'll get invited to things.  
+Me: Exactly. Exactly.  
+Them: So.  
+Me: It makes a big fucking difference, unfortunately.  
+Them: Right? Yeah. And I feel like I just, like, kind of under resourced on that or, like, didn't appreciate how much of that was required. In order to get onto people's radar.  
+Me: Yeah.  
+Them: So.  
+Me: Me too, man. I've only the last, like, two, three months have I started. I'm still really bad at it. Like, I've already gone, like, three weeks without posting, you know, so. It's stay consistent. But that's also why I'm basically setting up my Zoe.  
+Them: Right. Yeah.  
+Me: I'm trying to set up a system where I essentially just, like, word vomit and is trained on my style, and it just, like, gives me a first draft.  
+Them: Right.  
+Me: That is way better than anything else, you know that I could have, like, shat out.  
+Them: Interesting. Yeah.  
+Me: But certainly quicker.  
+Them: I'm curious how that goes. Yeah, I've tried versions of that. Like there was one called Hoppy Copy or something, or Happy Copy. That was like. That was the. The Valid. The promise was like, teach us how you write. We'll write content in your style. But it never quite delivered for me, like it still felt.  
+Me: I. 've had luck with spiral. Have you heard of every.  
+Them: Every. Yeah, it's like Dan Trippo's thing.  
+Me: Yeah, Dan Schipper's thing. So one of their products is called Spiral. And spiral was actually quite good.  
+Them: Okay? Interesting.  
+Me: Emulating. The thing with spiral is that the. The catch 22 is you need a certain corpus of content for it to be trained on. So that's a little tough if you don't already have writing.  
+Them: Yeah.  
+Me: However kind of a hack. Is to find folks whose writing patterns you like.  
+Them: Right. Interesting.  
+Me: Their feet of their stuff. It will extract the patterns. Like, summarize the patterns, and then you give it notes, and it will convert the notes into the thing.  
+Them: Yeah. Interesting. That's cool. Yeah. Yeah. I think my plan is basically, like. Unfortunately, it's just not. Maybe not the best, but, like, just spend a bit more time on the engineering, and then once I'm, like, confident that if I get, like, five, you know, if I get, like, five candidates a week, like, would I be. Able to handle it. I think once I get to. Once I. If I can get the tech to a place where it's like, oh, now you know that the floodgates open.  
+Me: Hold up.  
+Them: We can handle it. Then I think I'll feel a lot more comfortable. Just like diving in. To the marketing side. Whereas, like, right now, I feel like when I get new clients, I'm a bit like, oh, shit. Me and my paralegal can only get so much done in a week. And so it's like there are people who've been waiting, like, three or four weeks first, like, to mail stuff, which I don't think is, like, the best experience.  
+Me: Right. Right? Right.  
+Them: And so it's like just balancing all of these different things.  
+Me: Yeah, it's tough, man. There's only so many hours in the day, right?  
+Them: Right? And I think it was fine. Like, you know, like the first case I did, I just worked 12 hour days and got it done, like, super quickly. And they had a great experience, but you can't really do that for every client. Because.  
+Me: Yeah, don't scale. Don't scale.  
+Them: Right. Exactly. So I think that's, like, the roadmap for me. And then, like, if this works out, like, if I can get the tech to be good. I'll, like, pitch it to some lawyers, see if anyone's willing to pay me, like, one or two K just to keep things ticking over. And then, like, if, if that, if I feel confident in that, then I think there might be some time in a month or two to, like, do a website redesign and, like. Really dive into the. The marketing and branding and positioning type stuff.  
+Me: Yeah, I think that would be a strong signal if you're able to get that out of law.  
+Them: Yeah, like. Or just get the tech working. But, yeah, I mean, and, yeah, coming back to your stuff, like it sounds. I don't know. Yeah, it's like, I think solving the hiring challenge is like, I think the most valuable. Thing in the space of just like, yeah, if you. If you can go to a company and be like, hey, we can actually find good people for you. Because we have this, like, tech thing that gets a lot deeper than, like, a resume screen.  
+Me: Yeah. Yeah, no, totally. I think that is. The I think that's the answer is getting the word out. To the places that you want. I think that may be. The idea.  
+Them: Yeah.  
+Me: Yeah. Shit. You're going to send me down? Fucking think.  
+Them: Well, I don't know. Like, where's your. Where's the tech at the moment? Like, I remember you showed me a demo, like, a while ago, which was, like, you had all the different prompts that were, like, perfectly tuned, and then you could have a. Like, the. The user could have a conversation with AI. And it would give them, like, recommendations for how to improve.  
+Me: Yeah. The tech is in a great place, so the conversational stuff is singing. We have vibe checks where you drop in a job description, and it will map. You against the JD and tell you which skill components you're missing. It'll coach you in helping craft stories around it. It will. Essentially, the same system that we use to give them analysis is what we use to match. So we do semantic matching across attributes as opposed to needing every keyword to show up. Exactly. So that part is super fucking robust. We still have, like, resume tailoring people can track. A Kanban board style like job descriptions. The tools in like a sick place. Gang dollars.  
+Them: Just who will pay for it? Yeah.  
+Me: It's so fucking frustrating. I'm like, we've done the thing. We've built a product people love. Why is that not enough?  
+Them: Right. Have you tried getting, like, job seekers to pay or, like, tried that as an experiment?  
+Me: I mean, I think we're gonna have to try it again because. I think we have a higher chance of getting them to pay for it now. I just don't know if we want to turn that tap back on. But, hey, look, people are using it more than ever. Maybe there's some sort of like, hey, pay Careerspan, like 50 bucks to keep year round access to your stories, like, you know, share them whenever you want. I think we could convince a couple hundred folks, like 100, 200 folks, to pay eight bucks a month, let's say, or five bucks a month, let's say. You know, it's not a ton of money. But I think. I think it is feasible. So I'm actually going to Boston tomorrow. To just, like, do a little founder camp with Logan and essentially figure out, like, what are we doing with this company? This is actually timing, that we talked through all of this stuff.  
+Them: Yeah. Yeah, I think that would be good. I think it'll be good to figure. Yeah. Like, it's so difficult. Like, I. I agree. It's like every step you take, you think it's the right one, and then it takes, like, two or three months, and you realize, like, oh, in fact, it does. It doesn't work for XYZ reason. And it's like, oh, if I just known that ahead of time. Yeah, but I feel like that's the whole point of being a founder in some ways, is, like, you have skin in the game, and so you're, like, way more engaged than, like, a typical employee would be, and, like, learning these lessons. But, yeah, I don't know. I'm like, I feel like if the tech is good enough to, like, evaluate the strength of someone's profile, which presumably it's doing, in order to provide recommendations to them, Like I could see that being incredibly useful to a company that's trying to hire great people.  
+Me: Yeah, I mean, I definitely think so. I think we have the most robust and by far the best. Implementation. Of. Tech. Yeah. Best tech doesn't win always.  
+Them: I guess the reasons to like it, why it might not work are, like, if you look at recruiting in general, like, it's a pretty competitive market already, right? Like, there are tons of recruiters out there who have their own. Like, I feel like I get emails all the time where it's like, here are 10 companies that you should consider interviewing at and. And the interviewer, like, talks or. Yeah. Or the recruiter will, like, talk to each person individually. Build up a profile of, like, what they. What they're good at, what they care about. Yeah. I don't know. Like, I wonder if you're. If you're a software can do that.  
+Me: Let's precisely what we do. Right. So I think there's a ton of.  
+Them: Yeah.  
+Me: I think there is a ton of value in that. I'm just going to have to. Think through how. We? Yeah. How do we turn what we have into a marketplace? I think that's going to be the big question. Like build that marketplace or die trying.  
+Them: I mean, even before Marketplace. I think you could do it. You could. Just build it as a recruiting service.  
+Me: Yeah. Yeah. No, actually, yeah. That's totally fair. And then that is, I guess, like, what Logan's been driving towards is like, hey, let's not worry about the marketplace stuff as much right now. Let's just try to get in. Pokes his hands, right?  
+Them: Well, building marketplaces is just, like, famously difficult.  
+Me: Ludic. Rous. Yeah. God, it's such a fucked goddamn approach.  
+Them: Right. Like. So. Yeah, so we actually. Are you still interested in discussing this, or do you feel like you're kind of have said everything that you care about? Around.  
+Me: I mostly said my piece, but I think. A little bit of my lockup is also I did mention this. So I was away in Arizona for, like a week. I was just, like, so burnt out. I needed to get the fuck out. Went to wellness thing.  
+Them: Yeah.  
+Me: So I'm actually also a little bit out of the loop. As far where things have gotten in the last week.  
+Them: Yeah.  
+Me: So that's where. Just a ton of ambiguity. I think it's, like, funny both you and I are just in such a. Like, what do we do? Where do we go?  
+Them: I. Mean?  
+Me: At.  
+Them: Yeah. No, that's nice. Yeah. I mean, the Arizona trip was probably a good idea, to be fair. I feel like it's nice to have those. Like, being out of the loop can be a good thing, I think.

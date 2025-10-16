@@ -1,0 +1,16 @@
+{
+  "run_at": "2025-10-14T13:19:32-04:00",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "staging_listing": [
+    "2025-10-14",
+    "process_log_2025-10-14T06-40-00-0400.md",
+    "process_log_2025-10-14T07-39:34-04:00.md",
+    "process_log_2025-10-14T10:10:42-04:00.md",
+    "process_log_2025-10-14T10:40:59-04:00.md"
+  ],
+  "files_processed": [],
+  "num_files_processed": 0,
+  "stakeholders_discovered": [],
+  "num_stakeholders_discovered": 0,
+  "note": "No email staging files found to process. Only process logs and an empty date directory were present."
+}

@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-14T15:43:07Z",
+  "timezone": "America/New_York",
+  "staging_dir": "Records/Temporary/email_staging",
+  "discovery_dir": "Records/stakeholder_discovery",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": []
+}

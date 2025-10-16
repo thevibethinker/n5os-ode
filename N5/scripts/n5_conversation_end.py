@@ -313,6 +313,102 @@ def cleanup_workspace_root():
         print(f"⚠️  Workspace root cleanup skipped: {e}")
 
 
+def placeholder_scan():
+    """
+    Scan conversation files for placeholders, stubs, and incomplete code
+    This is Phase 2.5 - enforces P16 (Accuracy) and P21 (Document Assumptions)
+    """
+    print("\n" + "="*70)
+    print("PHASE 2.5: PLACEHOLDER & STUB DETECTION")
+    print("="*70)
+    print("\nScanning for incomplete code and placeholders...\n")
+    
+    scan_script = WORKSPACE / "N5/scripts/n5_placeholder_scan.py"
+    
+    if not scan_script.exists():
+        print("⚠️  Placeholder scan script not found, skipping")
+        print(f"   Expected: {scan_script}")
+        return True
+    
+    try:
+        # Run placeholder scan
+        result = subprocess.run(
+            [sys.executable, str(scan_script)],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=60
+        )
+        
+        # Print scan results
+        if result.stdout:
+            print(result.stdout)
+        
+        # Exit code: 0 = clean, 1 = issues found, 2 = error
+        if result.returncode == 0:
+            print("✓ No placeholders detected - all clear\n")
+            return True
+        
+        elif result.returncode == 1:
+            # Issues found - require resolution
+            print("\n" + "="*70)
+            print("⚠️  RESOLUTION REQUIRED BEFORE CONVERSATION-END")
+            print("="*70)
+            print("\nYou must address these issues before closing the conversation.")
+            print("\nOptions:")
+            print("  1. Return to conversation and fix issues")
+            print("  2. Document as intentional (add '# DOCUMENTED:' prefix to lines)")
+            print("  3. Acknowledge and continue (will be logged for later)")
+            
+            # Check for auto mode
+            if "--auto" in sys.argv or "--yes" in sys.argv:
+                print("\n→ Auto mode: Logging issues and continuing...")
+                log_action("Placeholder scan: issues detected but auto-acknowledged")
+                return True
+            
+            print("\nHow would you like to proceed?")
+            print("  [F]ix now (abort conversation-end)")
+            print("  [A]cknowledge & continue (log issues)")
+            print("  [Q]uit (abort conversation-end)")
+            
+            while True:
+                response = input("\n> ").strip().lower()
+                
+                if response in ['f', 'fix']:
+                    print("\n❌ Conversation-end aborted - return to fix issues")
+                    log_action("Conversation-end aborted: placeholder scan issues")
+                    return False
+                
+                elif response in ['a', 'acknowledge', 'ack']:
+                    print("\n→ Issues acknowledged - logging for follow-up")
+                    log_action("Placeholder scan: issues acknowledged, continuing")
+                    return True
+                
+                elif response in ['q', 'quit', 'abort']:
+                    print("\n❌ Conversation-end aborted by user")
+                    return False
+                
+                else:
+                    print("Invalid choice. Please enter F (fix), A (acknowledge), or Q (quit)")
+        
+        else:
+            # Error in scan
+            print(f"⚠️  Placeholder scan failed with error code {result.returncode}")
+            if result.stderr:
+                logger.error(f"Scan error: {result.stderr}")
+            print("→ Continuing conversation-end despite scan error")
+            return True
+        
+    except subprocess.TimeoutExpired:
+        print("⚠️  Placeholder scan timed out (>60s), continuing...")
+        return True
+    
+    except Exception as e:
+        print(f"⚠️  Placeholder scan error: {e}")
+        logger.debug("Scan error details", exc_info=True)
+        return True
+
+
 def extract_lessons():
     """
     Extract lessons from this conversation (Phase -1)
@@ -715,6 +811,14 @@ def main():
         print("CONTINUING TO WORKSPACE ROOT CLEANUP...")
         print("="*70)
         cleanup_workspace_root()
+        
+        # NEW: Phase 2.5 - Placeholder scan
+        print("\n" + "="*70)
+        print("SCANNING FOR PLACEHOLDERS & STUBS...")
+        print("="*70)
+        if not placeholder_scan():
+            print("\n❌ Conversation-end aborted - return to fix issues")
+            return
         
         # Personal intelligence update (autonomous)
         print("\n" + "="*70)

@@ -1,0 +1,31 @@
+{
+  "meeting_id": "2025-09-29_remotely-good-careerspan",
+  "date": "2025-09-29",
+  "participants": ["Vrijen Attawar", "Logan Currie", "Teresa Anoje"],
+  "stakeholder_type": "COMMUNITY",
+  "organization": "Social Impact SF / Remotely Good",
+  "transcript_source": "Google Drive",
+  "transcript_quality": "POOR",
+  "transcript_notes": "Only 9 minutes captured - cuts off when Logan takes over conversation. Main discussion not recorded.",
+  "processing_date": "2025-10-15T01:55:45-04:00",
+  "processing_version": "Registry System v1.5",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B07_WARM_INTRO_BIDIRECTIONAL"
+  ],
+  "blocks_count": 9,
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/teresa-anoje.md",
+  "v_os_tags": "[LD-COM] [GPT-E] [A-3]",
+  "enrichment_priority": "MEDIUM",
+  "confidence_score": "LOW",
+  "incomplete_transcript": true,
+  "missing_content": "Main conversation between Logan and Teresa covering partnership mechanics, implementation details, Teresa's questions, next steps, and commitments"
+}

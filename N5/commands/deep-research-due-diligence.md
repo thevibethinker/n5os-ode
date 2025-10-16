@@ -7,8 +7,9 @@ tags:
   - utility
 category: misc
 priority: medium
-related_files:
-anchors: [object Object]
+related_files: 
+anchors:
+  - object Object
 ---
 <deepResearchPrompt v0.3-rc>
   <!-- ──────── CORE META ──────── -->
