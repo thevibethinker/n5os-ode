@@ -443,7 +443,6 @@ digest and email to user.
 
 | Principle | Requirement | Status | Evidence |
 |-----------|-------------|--------|----------|
-| P0 | Rule-of-Two (max 2 files) | ✅ PASS | Generator loads voice.md + essential-links.json |
 | P2 | SSOT | ✅ PASS | Links only from essential-links.json |
 | P5 | Anti-Overwrite | ✅ PASS | Reads before writing metadata |
 | P7 | Dry-Run | ✅ PASS | Generator + digest support `--dry-run` |

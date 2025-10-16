@@ -1,0 +1,11 @@
+{
+  "run_at": "2025-10-16T03:40:06-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "source_dirs_scanned": ["/home/workspace/Records/Temporary/email_staging"],
+  "files_processed": 0,
+  "processed_files_list": [],
+  "stakeholders_discovered": 0,
+  "stakeholders": [],
+  "notes": "No staging files found; email_staging contains only empty dated subdirectories. No discovery records created. No deletions performed. Preferences files loaded prior to processing.",
+  "prefs_loaded": ["/home/workspace/Documents/N5.md","/home/workspace/N5/prefs/prefs.md"]
+}

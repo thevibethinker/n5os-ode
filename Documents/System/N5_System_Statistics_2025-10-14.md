@@ -99,7 +99,6 @@ Changes: 60+ files changed
 The N5 system is built on **21 core architectural principles** (P0-P21):
 
 ### Most Critical Principles
-- **P0 (Rule-of-Two):** Maximum 2 files loaded in context
 - **P5 (Anti-Overwrite):** Never overwrite without backup
 - **P15 (Complete Before Claiming):** Only mark done when 100% complete
 - **P16 (No Invented Limits):** Don't claim API limits without evidence

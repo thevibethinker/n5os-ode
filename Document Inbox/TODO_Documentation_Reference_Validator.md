@@ -101,7 +101,6 @@ These 7 files reference deprecated `file meeting_prep_digest.py` :
 
 ## Principles to Apply
 
-- P0: Minimal Context (Rule-of-Two when loading files)
 - P7: Dry-Run First (test before committing)
 - P11: Failure Modes (handle missing dirs, permission errors)
 - P19: Error Handling (never swallow exceptions)

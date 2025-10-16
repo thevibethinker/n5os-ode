@@ -143,7 +143,6 @@ python3 N5/scripts/aggregate_b31_insights.py --full-rebuild --dry-run
 
 ## Principles
 
-**P0 (Rule-of-Two):** Incremental = max 2 files (existing doc + new B31)  
 **P2 (SSOT):** `aggregated_insights.md` is source of truth for validated insights  
 **P7 (Dry-Run):** Always available via `--dry-run` flag  
 **P15 (Complete Before Claiming):** Script generates instruction; LLM must complete update  

@@ -96,11 +96,11 @@ These principles guide day-to-day operations, testing, and maintenance.
 
 ## 14) Change Tracking
 
-**Purpose:** Document evolution
+**Purpose:** Maintain audit trail and evolution history
 
 **Rules:**
 - Append a concise change log in standards files.
-- Example: `2025-09-21 — Added Rule-of-Two, tiered voice policy, anti-overwrite.`
+- Example: `2025-09-21 — Added tiered voice policy, anti-overwrite.`
 - Include date, version, and summary of changes.
 
 **When to apply:**

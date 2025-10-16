@@ -470,7 +470,6 @@ add-digest --description "Bi-weekly sprint summary from Careerspan meetings and 
 ## Architectural Principles Applied
 
 **Core:**
-- **P0 (Rule-of-Two):** Load only protocol + one principles module at a time
 - **P2 (SSOT):** Reference protocol as single source, don't duplicate
 
 **Safety:**

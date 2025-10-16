@@ -81,7 +81,7 @@ Files in `Knowledge/architectural/` are treated as operational rules, not just i
 
 **High-precedence architectural files:**
 1. `file 'Knowledge/architectural/operational_principles.md'`
-   - Rule-of-Two (load at most 2 config files)
+
    - SSOT requirements
    - Anti-overwrite protocols
 

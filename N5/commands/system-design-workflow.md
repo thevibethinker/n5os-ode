@@ -53,8 +53,6 @@ Load
 
 **Why:** Ensures compliance with established principles and avoids repeating past mistakes.
 
-**Rule-of-Two:** For most implementations, load index + 2 modules (core + one other). If you need a third module, that's acceptable for system design.
-
 **Time:** 2-3 minutes
 
 ---
@@ -87,8 +85,6 @@ Load
 ### Phase 2: Architectural Review (10 min)
 
 **Check against principles:**
-
-- [ ]  **Principle 0:** Rule-of-Two - minimal context loading
 
 - [ ]  **Principle 2:** Single Source of Truth - no redundancy
 

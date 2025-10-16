@@ -786,25 +786,27 @@ def main():
     
     if not any(files_by_category.values()):
         print("\n✓ No files to organize - conversation workspace is clean")
-        return
-    
-    # Step 2: Propose
-    proposal = propose_organization(files_by_category)
-    print(proposal)
-    
-    # Step 3: Get confirmation
-    if "--auto" in sys.argv or "--yes" in sys.argv:
-        confirmed = True
+        # Continue to subsequent phases even when no files to organize
+        confirmed = True  # Skip to cleanup phases
     else:
-        response = input("\n> ").strip().lower()
-        confirmed = response in ['y', 'yes', '']
-    
-    # Step 4: Execute
-    if confirmed:
-        result = execute_organization(files_by_category, confirmed=True)
+        # Step 2: Propose
+        proposal = propose_organization(files_by_category)
+        print(proposal)
         
-        # Log conversation end
-        log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
+        # Step 3: Get confirmation
+        if "--auto" in sys.argv or "--yes" in sys.argv:
+            confirmed = True
+        else:
+            response = input("\n> ").strip().lower()
+            confirmed = response in ['y', 'yes', '']
+    
+    # Step 4: Execute (or skip if no files)
+    if confirmed:
+        if any(files_by_category.values()):
+            result = execute_organization(files_by_category, confirmed=True)
+            
+            # Log conversation end
+            log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
         
         # NEW: Phase 2 - Workspace root cleanup
         print("\n" + "="*70)

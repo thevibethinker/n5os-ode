@@ -28,8 +28,8 @@ Before starting, gather:
 6. **Success Criteria** — How do we know it's working?
 
 **Load Required Principles:**
-- `file 'Knowledge/architectural/principles/core.md'` (SSOT, Rule-of-Two)
-- `file 'Knowledge/architectural/principles/safety.md'` (Dry-run, Error handling)
+- `file 'Knowledge/architectural/principles/core.md'` (SSOT)
+- `file 'Knowledge/architectural/principles/safety.md'` (dry-run, error handling)
 - `file 'Knowledge/architectural/principles/quality.md'` (Complete, Verify state)
 
 ---
