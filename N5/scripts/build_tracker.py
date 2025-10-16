@@ -15,7 +15,8 @@ import argparse
 import json
 import logging
 import subprocess
-from datetime import datetime, timezone
+import sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -32,6 +33,13 @@ CONVO_TYPES_FILE = STATE_DIR / "conversation_types.json"
 SESSION_LOG_DIR = Path("/home/workspace/N5/logs/build-sessions")
 WORKSPACE_ROOT = Path("/home/workspace")
 CONVO_WORKSPACES_ROOT = Path("/home/.z/workspaces")
+
+# Import session state manager
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from session_state_manager import SessionStateManager
+except ImportError:
+    SessionStateManager = None
 
 
 class BuildTracker:
@@ -192,38 +200,45 @@ Initializing...
         except Exception as e:
             return {"error": str(e)}
     
+    def _scan_conversations(self, hours: int = 2) -> List[Dict]:
+        """Scan conversation workspaces for recent activity."""
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+        convos = []
+        
+        for convo_dir in sorted(CONVO_WORKSPACES_ROOT.iterdir(), 
+                               key=lambda p: p.stat().st_mtime, reverse=True)[:10]:
+            if not convo_dir.is_dir():
+                continue
+            
+            mtime = datetime.fromtimestamp(convo_dir.stat().st_mtime, timezone.utc)
+            if mtime < cutoff:
+                continue
+            
+            files = sorted(convo_dir.glob("*"), key=lambda p: p.stat().st_mtime, reverse=True)
+            if not files:
+                continue
+            
+            convo_id = convo_dir.name
+            recent_files = [f.name for f in files[:3]]
+            
+            # Try to read SESSION_STATE.md if it exists
+            session_info = None
+            if SessionStateManager:
+                manager = SessionStateManager(convo_id)
+                session_info = manager.read()
+            
+            convos.append({
+                "id": convo_id,
+                "mtime": mtime,
+                "files": recent_files,
+                "session_state": session_info
+            })
+        
+        return convos[:5]
+    
     def _get_build_conversations(self) -> List[Dict]:
         """Get recent build conversations."""
-        try:
-            convo_types = self._load_conversation_types()
-            recent_convos = []
-            
-            for convo_dir in sorted(CONVO_WORKSPACES_ROOT.iterdir(), 
-                                   key=lambda x: x.stat().st_mtime, 
-                                   reverse=True)[:5]:
-                if not convo_dir.is_dir():
-                    continue
-                
-                convo_id = convo_dir.name
-                is_build = convo_types.get(convo_id, {}).get("type") == "build"
-                
-                files = list(convo_dir.glob("*"))
-                recent_files = [
-                    f.name for f in sorted(files, key=lambda x: x.stat().st_mtime, reverse=True)[:5]
-                    if f.is_file()
-                ]
-                
-                recent_convos.append({
-                    "id": convo_id,
-                    "is_build": is_build,
-                    "recent_files": recent_files,
-                    "file_count": len(files)
-                })
-            
-            return recent_convos
-        except Exception as e:
-            logger.error(f"Error getting build conversations: {e}")
-            return []
+        return self._scan_conversations()
     
     def _load_conversation_types(self) -> Dict:
         """Load conversation type classifications."""
@@ -274,11 +289,23 @@ Initializing...
         
         content += "\n## Build Conversations\n\n"
         for convo in build_convos:
-            marker = "🔨" if convo["is_build"] else "💬"
             current = " **(current)**" if convo["id"] == self.convo_id else ""
-            content += f"{marker} `{convo['id']}`{current}\n"
-            if convo["recent_files"]:
-                content += f"  Recent: {', '.join(f'`{f}`' for f in convo['recent_files'][:3])}\n"
+            
+            # Add session state info if available
+            state_info = ""
+            if convo.get("session_state"):
+                ss = convo["session_state"]
+                convo_type = ss.get("type", "unknown")
+                mode = ss.get("mode", "")
+                focus = ss.get("focus", "").strip("*").strip()
+                if convo_type != "unknown":
+                    state_info = f" [{convo_type}:{mode}]" if mode else f" [{convo_type}]"
+                if focus and focus != "What is this conversation specifically about?":
+                    state_info += f" - {focus}"
+            
+            content += f"💬 `{convo['id']}`{current}{state_info}\n"
+            if convo.get("files"):
+                content += f"  Recent: {', '.join(f'`{f}`' for f in convo['files'][:3])}\n"
         
         content += """
 ---
