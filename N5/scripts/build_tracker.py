@@ -43,11 +43,12 @@ except ImportError:
 
 
 class BuildTracker:
-    def __init__(self, convo_id: Optional[str] = None):
+    def __init__(self, convo_id: Optional[str] = None, filter_type: str = "all"):
         self.convo_id = convo_id or self._detect_current_convo()
         self.workspace = CONVO_WORKSPACES_ROOT / self.convo_id
         self.build_map_file = self.workspace / "BUILD_MAP.md"
         self.session_file = self._get_session_file()
+        self.filter_type = filter_type
         
         STATE_DIR.mkdir(parents=True, exist_ok=True)
         SESSION_LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -238,7 +239,20 @@ Initializing...
     
     def _get_build_conversations(self) -> List[Dict]:
         """Get recent build conversations."""
-        return self._scan_conversations()
+        all_convos = self._scan_conversations()
+        
+        # Apply filter
+        if self.filter_type == "all":
+            return all_convos
+        
+        filtered = []
+        for convo in all_convos:
+            if convo.get("session_state"):
+                convo_type = convo["session_state"].get("type", "")
+                if convo_type == self.filter_type:
+                    filtered.append(convo)
+        
+        return filtered
     
     def _load_conversation_types(self) -> Dict:
         """Load conversation type classifications."""
@@ -333,12 +347,14 @@ def main():
     parser = argparse.ArgumentParser(description="Build Companion Tracker")
     parser.add_argument("action", choices=["activate", "refresh", "track", "status", "mark-build-convo", "classify"])
     parser.add_argument("task", nargs="?", help="Task name (for track/status actions)")
-    parser.add_argument("--state", choices=["open", "active", "complete", "paused", "abandoned"],
-                       help="Task state (for status action)")
-    parser.add_argument("--convo-id", help="Conversation ID (defaults to current)")
+    parser.add_argument("--state", choices=["open", "active", "complete", "paused", "abandoned"])
+    parser.add_argument("--convo-id", help="Conversation ID")
+    parser.add_argument("--filter", choices=["build", "research", "discussion", "planning", "all"], default="all",
+                       help="Filter conversations by type (default: all)")
     
     args = parser.parse_args()
-    tracker = BuildTracker(convo_id=args.convo_id)
+    
+    tracker = BuildTracker(args.convo_id, filter_type=args.filter)
     
     if args.action == "activate":
         success = tracker.activate()
