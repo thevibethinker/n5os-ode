@@ -1,83 +1,124 @@
 # Mai Flynn
 
-**Company:** Lensa  
-**Title:** User Acquisition Manager  
-**Email:** [Unknown - needs enrichment]  
-**LinkedIn:** [Unknown - needs enrichment]  
-**Location:** Philadelphia, PA  
-**Last Contact:** 2025-09-24 (meeting)  
-**Stakeholder Type:** #stakeholder:partner:collaboration  
-**Priority:** #priority:important  
-**Status:** #status:active  
-**Job Seeking Status:** #job_seeking:inactive
+**Organization**: Lensa  
+**Role**: User Acquisition Lead  
+**Location**: Philadelphia, PA (visits Brooklyn frequently)  
+**Email**: [Unknown - needs enrichment]  
+**LinkedIn**: [Unknown - needs enrichment]  
+**Auxiliary Emails**: []
 
 ---
 
-## Relationship Summary
+## Profile Type
+- [x] Customer (B2B Partnership)
+- [ ] Investor
+- [ ] Advisor
+- [ ] Community Leader
+- [ ] Partner/Collaborator
+- [ ] Networking Contact
 
-Mai Flynn is the user acquisition manager at Lensa, a major job board aggregator with ~25 million jobs. She's responsible for buying traffic from publishers via CPC/CPA partnerships. Met with Vrijen on 2025-09-24 to discuss a traffic partnership test where Careerspan would distribute Lensa's jobs via email to Careerspan's talent network in exchange for user registrations back to Lensa.
-
-**Partnership Stage:** Test agreement reached ($2,500/feed budget, 15¢ CPC, October 2025 start)  
-**Key Value Exchange:** Careerspan gets clean job data at scale; Lensa gets access to highly engaged job seekers from premium communities
+**Status**: #job_seeking:inactive (employed at Lensa)
 
 ---
 
-## Key Context
+## Relationship Context
 
-**Company Structure:**
-- Lensa is US-based (only buys/sells US traffic)
-- Wholly-owned subsidiary in Hungary handles all development/tech
-- ~25M jobs from multiple sources: Fortune 1000 organic scrapes, ATSs, direct agencies, syndicated content
+**First Contact**: 2025-09-24 (meeting via Peter referral)  
+**Relationship Stage**: Early Partnership (test phase)  
+**Last Interaction**: 2025-09-24 (partnership discussion call)
 
-**Mai's Role:**
-- Manages traffic acquisition partnerships
-- Negotiates CPC/CPA deals with publishers
-- Monitors ROI and scales/kills tests based on performance
-- Works with two analyst teams (direct content + lead gen content)
+**How We Met**: Referral from Peter (Lensa colleague) - context TBD [needs enrichment]
 
-**Pain Points:**
-- Job seeker churn: users "bounce from one platform to the next"
-- Need for fresh, engaged traffic sources
-- Typical traffic sources are recycled job seekers
+**Mutual Acquaintances**:
+- Peter (Lensa colleague who made introduction)
+- [Additional connections need LinkedIn enrichment]
 
-**What Resonated:**
-- Careerspan's retention metrics (2-3% monthly reactivation)
-- High email engagement (75-80% open rate, 15-16% CTR)
-- User activation depth (20+ min coaching engagement minimum)
-- "Fresh job seekers" from community-based acquisition
+---
+
+## Business Context
+
+**Company**: Lensa - American job board aggregator with 25M jobs  
+**Company Structure**: US-only traffic buying/selling, Hungary subsidiary for development/tech
+
+**Mai's Responsibilities**:
+- User acquisition strategy and execution
+- Traffic partnership management (CPC/CPA deals)
+- Appcast integration oversight
+- Performance monitoring with analyst team
+
+**Partnership Details**:
+- Test partnership: $2,500/feed starting budget, 15¢ CPC
+- Careerspan distributes Lensa jobs, sends traffic for user registration
+- Two analysts assigned (direct content + lead gen)
+- Initial focus: product roles, Boston/SF/NY, ≤3 days old
+- Performance-based scaling (ROI-driven budget adjustments)
 
 ---
 
 ## Enrichment Priority
 
-**Level:** HIGH
+**Priority Level**: MEDIUM
 
-**Rationale:** Active partnership test with $2,500 initial budget; critical for Careerspan's job distribution strategy; Lensa provides infrastructure (AppCast, XML feeds) that Careerspan urgently needs to avoid manual scraping
+**Rationale**: Active partnership with clear next steps and revenue implications ($2,500 test budget with scaling potential). However, modest starting investment suggests exploratory relationship, not yet high-value customer. Priority increases if test performs and budgets scale.
 
-**Outstanding Tasks:**
-- [ ] LinkedIn research on Mai's background in user acquisition and job board industry
-- [ ] Find professional email address (likely @lensa.com)
-- [ ] Company research: Lensa's parent company, market position, competitive landscape
-- [ ] Scan mutual connections in job board / HR tech ecosystem
-- [ ] **URGENT:** Follow up on overdue email with AppCast setup info (promised immediately after 2025-09-24 meeting)
-
----
-
-## Meeting History
-
-- **2025-09-24:** Initial partnership discussion → Test agreement reached (see `N5/records/meetings/2025-09-24-15-30-42_lensa-x-careerspan-discussion/`)
+**Enrichment Tasks**:
+- [ ] LinkedIn research: Mai Flynn's background, career path in job board industry
+- [ ] Company research: Lensa ownership, funding history, market position vs. competitors
+- [ ] Identify mutual connections in job board/HR tech ecosystem
+- [ ] Research Appcast platform and typical partnership structures
+- [ ] Identify other Lensa stakeholders (Peter + others in partnership/UA org)
 
 ---
 
-## Next Steps
+## N5OS Tags (Howie Integration)
 
-1. **Immediate:** Send follow-up email requesting AppCast account setup info and IO (20 days overdue)
-2. **After receiving setup info:** Complete AppCast master publisher account setup
-3. **Before October test:** Meet with Lensa analysts for optimization guidance
-4. **During test:** Monitor ROI metrics; be prepared to adjust volume/quality tradeoffs or shift to CPA model
+**Recommended Tags**: `[LD-CUS] [GPT-M] [A-2]`
+
+**Breakdown**:
+- `[LD-CUS]`: Customer relationship (Lensa paying for user acquisition)
+- `[GPT-M]`: Mid-stage (test partnership agreed, implementation phase)
+- `[A-2]`: Flexible accommodation (business partnership, not urgent/critical)
+
+**Scheduling Priority**: Important (active partnership, but test phase with modest budget)
 
 ---
 
-## Tags
+## Key Insights
 
-#stakeholder:partner:collaboration #priority:important #status:active #enrichment:high #job_seeking:inactive
+**What Resonates with Mai**:
+- "Fresh job seekers" outside typical job board circulation
+- High engagement metrics (75-80% open, 15-16% CTR)
+- Quality over volume traffic philosophy
+- Sustained user engagement beyond one-time job search
+
+**Communication Style**: Direct, accommodating, operationally focused. Moved quickly from exploratory to execution without approval chains—suggests decision authority within UA scope.
+
+**Pain Points**:
+- Job board industry user churn ("users bounce from platform to platform")
+- Saturated partner network ("little incestuous")
+- Need for differentiated traffic sources
+
+**Decision Criteria**: ROI-driven, performance-based scaling. Willing to test with new/small partners if engagement signals are strong.
+
+---
+
+## Next Actions
+
+- [ ] Return completed IO form when received (CRITICAL PATH)
+- [ ] Connect with two analysts once introduced
+- [ ] Monitor test performance metrics (CTR, registrations, ROI)
+- [ ] Check in after 2-3 weeks for early performance feedback
+- [ ] Prepare scaling discussion if performance meets/exceeds targets
+
+---
+
+## Meeting References
+
+- Meeting: 2025-09-24 (Lensa x Careerspan Discussion)
+- Blocks: `N5/records/meetings/2025-09-24_lensa-careerspan-discussion-2/`
+
+---
+
+**Profile Created**: 2025-10-14  
+**Last Updated**: 2025-10-14  
+**Enrichment Status**: Minimal (first meeting only)

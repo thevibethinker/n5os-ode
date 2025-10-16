@@ -174,6 +174,41 @@ echo "Conversation [ID] closed: [N] files moved, [M] deleted" >> N5/runtime/conv
 n5_workspace_root_cleanup.py --execute
 ```
 
+### Phase 2.5: Placeholder & Stub Detection (NEW)
+
+**Script:** `N5/scripts/n5_placeholder_scan.py`
+
+**Purpose:** Scan conversation workspace for incomplete code before it leaves conversation context
+
+**Enforces:** P16 (Accuracy), P21 (Document Assumptions)
+
+**Detection patterns:**
+- Comment placeholders (TODO, FIXME without explanation)
+- Fake data (test@example.com, 555-1234)
+- Function stubs without docstrings
+- Invented constraints ("API limit of 5 messages" without citation)
+- Hardcoded paths (/Users/john/)
+- Empty exception handlers (P19 violation)
+
+**Exit codes:**
+- 0 = Clean, continue workflow
+- 1 = Issues found, BLOCK conversation-end
+- 2 = Scan error, continue with warning
+
+**User options when issues found:**
+1. **Fix now** - Return to conversation, abort conversation-end
+2. **Document as intentional** - Add `# DOCUMENTED:` prefix
+3. **Acknowledge & continue** - Log issues for later follow-up
+
+**Blocking behavior:**
+- User MUST choose option before conversation-end can proceed
+- Prevents incomplete work from leaving conversation context
+- Maintains quality standards at critical transition point
+
+**Auto mode:** If `--auto` flag present, issues are logged but don't block
+
+See: `file 'N5/commands/placeholder-scan.md'` for full details
+
 ---
 
 ### Phase 3: Personal Intelligence Update (Autonomous)

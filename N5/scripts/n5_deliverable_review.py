@@ -7,13 +7,13 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(description="List and review generated deliverables.")
-    parser.add_argument("meeting_folder", help="Name of the meeting folder in Careerspan/Meetings/")
+    parser.add_argument("meeting_folder", help="Name of the meeting folder in N5/records/meetings/")
     args = parser.parse_args()
 
     print("## N5 Deliverable Review (Placeholder)")
     print(f"- Meeting: {args.meeting_folder}")
     
-    deliverables_dir = f"/home/workspace/Careerspan/Meetings/{args.meeting_folder}/DELIVERABLES"
+    deliverables_dir = f"/home/workspace/N5/records/meetings/{args.meeting_folder}/DELIVERABLES"
     if os.path.isdir(deliverables_dir):
         print("- Found deliverables:")
         for root, _, files in os.walk(deliverables_dir):

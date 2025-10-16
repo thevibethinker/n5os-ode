@@ -1,0 +1,53 @@
+{
+  "meeting_id": "2025-09-24_lensa-careerspan-discussion-2",
+  "date": "2025-09-24",
+  "participants": [
+    {
+      "name": "Mai Flynn",
+      "organization": "Lensa",
+      "role": "User Acquisition Lead"
+    },
+    {
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan",
+      "role": "Founder"
+    }
+  ],
+  "stakeholder_type": "CUSTOMER",
+  "processing_metadata": {
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "processed_date": "2025-10-14",
+    "blocks_generated": 11,
+    "blocks_list": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP",
+      "B05_OUTSTANDING_QUESTIONS",
+      "B24_PRODUCT_IDEA_EXTRACTION",
+      "B13_PLAN_OF_ACTION",
+      "B27_KEY_MESSAGING"
+    ],
+    "crm_profile_created": true,
+    "crm_profile_path": "Knowledge/crm/individuals/mai-flynn.md",
+    "transcript_source": "Google Drive",
+    "transcript_quality": "Good"
+  },
+  "business_context": {
+    "deal_type": "User Acquisition Partnership",
+    "starting_budget": "$2,500 per feed",
+    "pricing_model": "CPC (15¢ per click)",
+    "test_start_date": "October 2025",
+    "key_deliverable": "IO form completion"
+  },
+  "n5os_tags": {
+    "lead_type": "LD-CUS",
+    "goal_phase_timeline": "GPT-M",
+    "accommodation_level": "A-2",
+    "priority": "Important"
+  }
+}
