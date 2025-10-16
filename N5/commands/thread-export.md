@@ -125,6 +125,59 @@ After archive creation, thread-export automatically:
 - Edit before accepting (e)
 - Skip timeline update (n)
 
+### Phase 7: Thread Title Generation (NEW)
+
+After successful export, **automatically generate two titles**:
+
+1. **Current Thread Title** - For the thread just exported
+2. **Next Thread Title** - For continuing the work in a new thread
+
+**Title Generation Process:**
+
+1. Load `file 'N5/config/emoji-legend.json'` and `file 'N5/prefs/operations/thread-titling.md'`
+2. Analyze thread content, artifacts, and AAR data
+3. Generate 2-3 title options for current thread using:
+   - Entity-first structure (noun before verb)
+   - UI constraints (18-30 chars target, 35 max)
+   - Emoji selection based on priority rules
+   - Sequence number detection
+4. Generate next thread title by:
+   - Extracting base title from selected current title
+   - Incrementing sequence number (or adding #2 if current is #1 or no number)
+   - Using 🔗 chain emoji for linked threads
+5. Display both titles prominently with copy/paste instructions
+
+**Title Format:** `{emoji} {Entity} {Action} {#N}`
+
+**Examples:**
+- Current: `✅ CRM Refactor #1`
+- Next: `🔗 CRM Refactor #2`
+
+**Display Format:**
+```
+======================================================================
+📋 THREAD TITLES GENERATED
+======================================================================
+
+Current Thread (just exported):
+  ✅ Thread Titling System
+
+Next Thread (for continuation):
+  🔗 Thread Titling System #2
+
+💡 Copy the next thread title and use it when you load the RESUME.md
+   file to continue this work in a new conversation.
+======================================================================
+```
+
+**Rules:**
+- Always generate both titles (current + next)
+- Use centralized emoji legend for consistency
+- Follow noun-first principle
+- Respect UI constraints (collapsed sidebar shows ~24 chars)
+- Include sequence numbers for linked work
+- Display prominently for easy copy/paste
+
 ### The AAR System Enables
 
 - Efficient thread closure with context preservation

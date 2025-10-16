@@ -350,6 +350,55 @@ Committing with message: 'Add git check to conversation-end workflow'...
  2 files changed, 95 insertions(+), 5 deletions(-)
 ```
 
+**Decision point:** Commit changes now or defer?
+
+### Phase 5: Thread Title Generation (NEW)
+
+After organizing files and checking git status, **automatically generate two titles**:
+
+1. **Current Thread Title** - For this conversation
+2. **Next Thread Title** - For continuing the work
+
+**Title Generation Process:**
+
+1. Load `file 'N5/config/emoji-legend.json'` and `file 'N5/prefs/operations/thread-titling.md'`
+2. Analyze conversation content, created files, and work completed
+3. Generate 2-3 title options for current thread:
+   - Entity-first structure (noun before verb)
+   - UI constraints (18-30 chars target, 35 max)
+   - Emoji selection based on priority rules
+   - Sequence number detection
+4. Generate next thread title:
+   - Extract base title from selected current title
+   - Increment sequence number (or add #2 if current has no number)
+   - Use 🔗 chain emoji for linked threads
+5. Display both titles prominently for copy/paste
+
+**Title Format:** `{emoji} {Entity} {Action} {#N}`
+
+**Display:**
+```
+======================================================================
+📋 THREAD TITLES GENERATED
+======================================================================
+
+Current Thread:
+  ✅ Thread Titling System
+
+Next Thread (for continuation):
+  🔗 Thread Titling System #2
+
+💡 Use these titles when naming your threads in the Zo interface.
+======================================================================
+```
+
+**Rules:**
+- Always generate both titles (current + next)
+- Use centralized emoji legend for consistency
+- Follow noun-first principle (CRM Refactor, not Refactoring CRM)
+- Respect UI constraints (collapsed sidebar ~24 chars visible)
+- Include sequence numbers for linked work
+
 ---
 
 ### Phase 4.5: System Timeline Check (NEW)
