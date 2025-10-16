@@ -1,8 +1,8 @@
 # Conversation-End Workflow
 
 **Module:** Operations  
-**Version:** 1.0.0  
-**Date:** 2025-10-09
+**Version:** 2.0.0  
+**Date:** 2025-10-16
 
 ---
 
@@ -23,6 +23,76 @@ Execute this workflow when:
 ---
 
 ## Standard Procedure
+
+### Phase 0: Delta Detection (NEW)
+
+**Check if this conversation has been closed before:**
+
+```bash
+python3 /home/workspace/N5/scripts/closure_tracker.py delta-info \
+  --workspace /home/.z/workspaces/con_<ID>
+```
+
+**Output interpretation:**
+- `"is_delta": false` → First closure, process everything normally
+- `"is_delta": true` → Repeat closure, delta mode active
+  - `"previous_closure"` shows last closure details
+  - `"next_closure_num"` indicates which closure this will be
+
+**If delta mode (is_delta: true):**
+
+1. **Extract timestamp of last user message before this closure:**
+   ```bash
+   TIMESTAMP=$(python3 /home/workspace/N5/scripts/closure_tracker.py extract-timestamp \
+     --workspace /home/.z/workspaces/con_<ID>)
+   ```
+   
+   *Note: Auto-extracts from conversation exports or SESSION_STATE.md. Falls back to current time if not found.*
+
+2. **Note previous closure's end event:**
+   From `previous_closure.event_range`, extract the end number
+   Example: `"1-45"` → next delta starts at event 46
+
+3. **Create closure subdirectory:**
+   ```bash
+   # Example structure:
+   # Documents/Archive/2025-10-16-Topic/
+   #   ├── closure-1/     (first closure)
+   #   └── closure-2/     (this delta)
+   ```
+
+4. **In all subsequent phases:**
+   - Only process artifacts created/modified after `previous_closure.timestamp`
+   - Only capture conversations/events in new range (e.g., 46-current)
+   - Skip already-archived content
+
+**Error recovery:**
+If CLOSURE_MANIFEST.jsonl appears corrupted:
+```bash
+python3 /home/workspace/N5/scripts/closure_tracker.py repair \
+  --workspace /home/.z/workspaces/con_<ID>
+```
+
+**Result:** Phases 1-5 operate on delta range only
+
+**Delta Processing Rules:**
+- Phase 1: Only artifacts created since last closure
+- Phase 2: Create `closure-N/` subdirectory in existing archive
+- Phase 3: Only new/updated system documentation
+- Phase 4: Timeline entry notes this is a delta update
+- Phase 5: Verify only delta artifacts
+
+**Record this closure:**
+```bash
+python3 /home/workspace/N5/scripts/closure_tracker.py record \
+  --convo-workspace /home/.z/workspaces/con_<ID> \
+  --last-user-msg-timestamp "YYYY-MM-DDTHH:MM:SSZ" \
+  --last-event-id <event_num>
+```
+
+**Purpose:** Avoid duplicate processing. Each closure captures only new work since last closure.
+
+---
 
 ### Phase 1: Identify Conversation Artifacts
 
@@ -229,6 +299,99 @@ N5/System Documentation/
 **Timeline:** Optional, if significant
 **Commit:** Direct commit with fix
 
+### Example 4: Delta Closure (Second+ Closure in Same Thread)
+
+**Phase 0:** Detected previous closure
+- Closure count: 2
+- Last closure: 2025-10-16 10:30:00 ET (event 45)
+- Current closure: 2025-10-16 16:15:00 ET (event 50)
+- Delta range: events 46-50
+
+**Phase 1:** Only new artifacts (created after event 45)
+- updated_documentation.md (mtime after last closure)
+
+**Phase 2:** Created delta subdirectory
+```
+Documents/Archive/2025-10-16-Feature-Implementation/
+├── INDEX.md                         # Updated with closure 3 info
+├── closure-1/                       # Original work
+│   ├── README.md
+│   └── [original artifacts]
+├── closure-2/                       # First delta
+│   ├── README.md
+│   └── [delta artifacts]
+└── closure-3/                       # Current delta
+    ├── README.md
+    └── updated_documentation.md
+```
+
+**Phase 3:** Only updated system docs moved
+
+**Phase 4:** Timeline entry marked as delta
+```json
+{
+  "title": "Feature Implementation - Closure 3 (Delta)",
+  "description": "Documentation updates and final polish",
+  "closure_info": {
+    "number": 3,
+    "is_delta": true,
+    "previous_closure": "2025-10-16T14:30:00Z",
+    "events_range": "46-50"
+  }
+}
+```
+
+**Phase 5:** Verified delta artifacts only
+
+---
+
+## Delta Archive Structure
+
+**For conversations with multiple closures:**
+
+```
+Documents/Archive/YYYY-MM-DD-Topic/
+├── INDEX.md                         # Central manifest (all closures)
+├── closure-1/
+│   ├── README.md                   # Self-contained for closure 1
+│   ├── [artifacts from closure 1]
+│   └── ...
+├── closure-2/
+│   ├── README.md                   # Self-contained for closure 2
+│   ├── [artifacts from closure 2]
+│   └── ...
+└── closure-N/
+    ├── README.md                   # Self-contained for closure N
+    └── [artifacts from closure N]
+```
+
+**INDEX.md format:**
+```markdown
+# [Topic Name] - Archive Index
+
+Multiple closures for this conversation.
+
+## Closure 1
+- **Timestamp:** 2025-10-16 10:30:00 ET
+- **Events:** 1-45
+- **Summary:** Initial implementation
+- **Artifacts:** See `closure-1/README.md`
+
+## Closure 2
+- **Timestamp:** 2025-10-16 14:30:00 ET  
+- **Events:** 46-50 (delta from closure 1)
+- **Summary:** Bug fixes and testing
+- **Artifacts:** See `closure-2/README.md`
+
+## Closure 3
+- **Timestamp:** 2025-10-16 16:15:00 ET
+- **Events:** 51-55 (delta from closure 2)
+- **Summary:** Documentation polish
+- **Artifacts:** See `closure-3/README.md`
+```
+
+**Each closure README is self-contained** with full context for that delta.
+
 ---
 
 ## Common Mistakes to Avoid
@@ -295,6 +458,14 @@ This workflow extends the file saving policy documented in `N5/prefs/prefs.md`:
 ---
 
 ## Version History
+
+**2.0.0** (2025-10-16)
+- Added Phase 0: Delta Detection for repeat closures
+- Introduced closure-N/ subdirectory structure
+- Added INDEX.md for multi-closure archives
+- Delta-aware processing across all phases
+- Timestamp-based delta tracking
+- New Example 4 demonstrating delta closure
 
 **1.0.0** (2025-10-09)
 - Initial documentation

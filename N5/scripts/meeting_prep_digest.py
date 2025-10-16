@@ -19,6 +19,7 @@ import logging
 import re
 import sys
 import pytz
+import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Any, Tuple, Optional
@@ -683,6 +684,14 @@ def main():
             logger.info("DRY RUN - Digest preview:")
             print("\n" + digest_content)
         else:
+            # validate output file for placeholder text
+            result = subprocess.run(["python3", "/home/workspace/N5/scripts/validate_digest_output.py", str(DIGESTS_DIR / f"daily-meeting-prep-{target_date}.md")], capture_output=True, text=True)
+            if result.returncode != 0:
+                logger.error(f"Digest validation failed: {result.stdout.strip()}")
+                # Write validation failure log
+                with open('/home/workspace/N5/logs/digest_validation.log', 'a') as logf:
+                    logf.write(f"Validation failed for {DIGESTS_DIR / f'daily-meeting-prep-{target_date}.md'} at {datetime.now().isoformat()}\n")
+                raise RuntimeError(f"Digest validation failed for {DIGESTS_DIR / f'daily-meeting-prep-{target_date}.md'}")
             save_digest(digest_content, target_date)
             logger.info(f"✓ Digest generated: {DIGESTS_DIR / f'daily-meeting-prep-{target_date}.md'}")
         

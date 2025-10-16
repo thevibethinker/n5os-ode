@@ -178,6 +178,20 @@ Please send pitch deck in advance to vrijen@mycareerspan.com.
 
 ---
 
+## Anti-Patterns to Avoid
+
+- Writing placeholder explanatory notes such as:
+  - "Last 3 email interactions (max returned by API):"
+  - "(Earlier history may exist but not returned by Gmail API)"
+  - Any mention of "API limits" or "max returned by"
+  - Parenthetical meta-commentary about data sources or system behavior
+
+- Instead, state facts succinctly or indicate "No recent email interactions found" if none available.
+
+- Do not manually regenerate digest files; follow scheduled tasks and protocols strictly.
+
+---
+
 ## Arguments
 
 | Argument | Type | Default | Description |
