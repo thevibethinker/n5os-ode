@@ -15,24 +15,48 @@ Defines the auto-generation system for thread titles with emoji prefixes, enabli
 ## Title Format
 
 ```
-{emoji} {Entity} {Action/Type} {optional: #N}
+MMM DD | {emoji} {Entity} {Action/Type} {optional: #N}
 ```
 
 **Structure:**
-- **Entity-first** (noun): The primary subject (CRM, Email System, GTM, N5, etc.)
-- **Action/descriptor**: Refactor, Setup, Discussion, Fix, Build, etc.
-- **Sequence number**: #1, #2, #3 (for linked threads)
-
-**Length constraints:**
-- Target: 18-30 characters
-- Hard limit: 35 characters (before UI truncation)
-- Reason: Collapsed sidebar shows ~24 chars after `Oct 14 | 🔗 `
+- **Date prefix** (7 chars): "Oct 16 | " format for archive reference
+- **Emoji** (2 chars): Status/category indicator + space
+- **Entity-first** (noun): The primary subject (CRM, Email System, GTM, etc.)
+- **Action/Type**: Descriptive verb or category (Refactor, Setup, Discussion, etc.)
+- **Sequence**: Optional #N for linked threads
 
 **Examples:**
-- ✅ `✅ CRM Refactoring #1` (19 chars) ← Perfect
-- ✅ `🔗 Email Scanner Discussion` (26 chars) ← Good
-- ✅ `✅ Vibe Builder Persona Setup` (26 chars) ← Good
-- ⚠️ `✅ Log File Cleanup and Implementation Discussion` (48 chars) ← Too long, truncates
+- `Oct 16 | ✅ Thread Titling System` (32 chars)
+- `Oct 14 | 🔗 CRM Refactor #2` (26 chars)
+- `Oct 13 | 📰 GTM Strategy` (23 chars)
+- `Oct 16 | 🐛 Email System Fix` (27 chars)
+
+## Title Length Constraints
+
+**UI Reality (Collapsed Sidebar):**
+```
+Oct 14 | 🔗 CRM Refactoring #1
+         └─ ~24 chars visible after date+emoji
+```
+
+**Space breakdown (collapsed):**
+- Date: "Oct 16 | " (9 chars including space)
+- Emoji: "✅ " (2 chars including space)
+- **Available for title: ~24 chars**
+- **Total visible: ~35 chars**
+
+**Target Lengths:**
+- **Ideal: 18-30 chars** (full title, excluding date+emoji)
+- **Maximum: 35 chars** (before truncation with date+emoji)
+- **Critical: First 15 chars** (most visible)
+
+**Good Examples (with date):**
+- `Oct 16 | ✅ CRM Refactor` (24 chars total, 12 char title)
+- `Oct 13 | 🔗 Email Scanner #3` (28 chars total, 16 char title)
+- `Oct 14 | 📝 Vibe Builder Setup` (29 chars total, 17 char title)
+
+**Too Long:**
+- `Oct 16 | ✅ Refactoring Multiple System Components` (51 chars) ← Truncates badly
 
 ## Title Length Guidelines
 

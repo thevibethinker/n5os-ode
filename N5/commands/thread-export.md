@@ -127,31 +127,28 @@ After archive creation, thread-export automatically:
 
 ### Phase 7: Thread Title Generation (NEW)
 
-After successful export, **automatically generate two titles**:
+After export completion, automatically generate thread titles:
 
-1. **Current Thread Title** - For the thread just exported
-2. **Next Thread Title** - For continuing the work in a new thread
-
-**Title Generation Process:**
-
-1. Load `file 'N5/config/emoji-legend.json'` and `file 'N5/prefs/operations/thread-titling.md'`
-2. Analyze thread content, artifacts, and AAR data
-3. Generate 2-3 title options for current thread using:
-   - Entity-first structure (noun before verb)
-   - UI constraints (18-30 chars target, 35 max)
-   - Emoji selection based on priority rules
-   - Sequence number detection
-4. Generate next thread title by:
-   - Extracting base title from selected current title
-   - Incrementing sequence number (or adding #2 if current is #1 or no number)
+**Instructions:**
+1. Load `file 'N5/prefs/operations/thread-titling.md'` for format rules
+2. Load `file 'N5/config/emoji-legend.json'` for emoji selection
+3. Analyze thread content, AAR data, and artifacts
+4. Generate TWO titles:
+   - **Current thread title**: For the thread just exported
+   - **Next thread title**: For continuation (increment #N or add #2 if current has #1 or no number)
    - Using 🔗 chain emoji for linked threads
-5. Display both titles prominently with copy/paste instructions
+5. Display both titles prominently for copy/paste
 
-**Title Format:** `{emoji} {Entity} {Action} {#N}`
+**Title Format (REQUIRED):**
+```
+MMM DD | {emoji} {Title} {optional: #N}
+```
 
 **Examples:**
-- Current: `✅ CRM Refactor #1`
-- Next: `🔗 CRM Refactor #2`
+```
+Current Thread:  Oct 16 | ✅ Thread Titling System
+Next Thread:     Oct 16 | 🔗 Thread Titling System #2
+```
 
 **Display Format:**
 ```
@@ -159,14 +156,13 @@ After successful export, **automatically generate two titles**:
 📋 THREAD TITLES GENERATED
 ======================================================================
 
-Current Thread (just exported):
-  ✅ Thread Titling System
+Current Thread:
+  Oct 16 | ✅ Thread Titling System
 
 Next Thread (for continuation):
-  🔗 Thread Titling System #2
+  Oct 16 | 🔗 Thread Titling System #2
 
-💡 Copy the next thread title and use it when you load the RESUME.md
-   file to continue this work in a new conversation.
+💡 Copy these titles when naming threads in the Zo interface.
 ======================================================================
 ```
 
