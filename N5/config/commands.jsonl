@@ -82,3 +82,4 @@
 {"command": "pause-task", "file": "N5/commands/pause-task.md", "description": "Pause work on a task", "category": "build", "workflow": "automation", "script": "/home/workspace/N5/scripts/build_tracker.py"}
 {"command": "abandon-task", "file": "N5/commands/abandon-task.md", "description": "Mark a task as abandoned", "category": "build", "workflow": "automation", "script": "/home/workspace/N5/scripts/build_tracker.py"}
 {"command": "mark-build-convo", "file": "N5/commands/mark-build-convo.md", "description": "Manually mark this or another conversation as a build conversation", "category": "build", "workflow": "automation", "script": "/home/workspace/N5/scripts/build_tracker.py"}
+{"command": "list-view", "file": "N5/commands/list-view.md", "description": "View any list by generating on-demand markdown from JSONL source (SSOT enforcement)", "category": "lists", "workflow": "automation"}

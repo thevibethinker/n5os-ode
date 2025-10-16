@@ -10,6 +10,7 @@ The Lists system is V's extended memory, capturing and organizing information ac
 
 ### Core Philosophy
 
+- **Single Source of Truth (SSOT)**: JSONL files are the only source of truth; markdown views generated on-demand
 - **Intelligent Classification**: Items auto-assign to appropriate lists via URL/content analysis
 - **Dynamic Creation**: New lists created on-demand with barebones schema
 - **Schema Validation**: Every item validated against schema on write
@@ -28,7 +29,10 @@ Lists/
 │   └── system-upgrades.schema.json   # Custom schema for system tracking
 ├── POLICY.md                   # List governance rules
 ├── README.md                   # This file
-└── *.jsonl                     # Individual list files
+├── index.jsonl                 # List registry
+└── *.jsonl                     # Individual list files (SSOT)
+
+NOTE: .md files are NOT maintained. Use `n5 list-view {list-name}` to generate views on-demand.
 ```
 
 ---
@@ -39,11 +43,12 @@ Lists/
 |------|---------|-------|--------|
 | `ideas.jsonl` | General ideas and thoughts | Variable | Active |
 | `must-contact.jsonl` | People to reach out to | Variable | Active |
-| `system-upgrades.jsonl` | N5 OS improvements | 31+ | Active |
+| `system-upgrades.jsonl` | N5 OS improvements | 43+ | Active |
 | `fundraising-opportunity-tracker.jsonl` | Investors, rounds, stages | Variable | Active |
 | `areas-for-exploration.jsonl` | Topics to explore | Variable | Active |
-| `company_optimization_ideas.md` | Careerspan improvements | Variable | Active |
-| `detection_rules.md` | Security/safety rules | Variable | Active |
+| `social-media-ideas.jsonl` | Content ideas for social | Variable | Active |
+| `opportunity-calendar.jsonl` | Time-sensitive opportunities | Variable | Active |
+| `pending-knowledge-updates.jsonl` | Knowledge base updates queue | Variable | Active |
 | `[Custom Lists]` | User-defined trackers | Variable | Extensible |
 
 ---
@@ -76,6 +81,29 @@ Lists support `additionalProperties: true`, allowing custom fields per list:
 ---
 
 ## Usage
+
+### Viewing Lists
+
+**SSOT Enforcement**: Lists are stored as JSONL (single source of truth). Generate markdown views on-demand.
+
+**Command**: `n5 list-view {list-name}`
+
+**Examples**:
+```bash
+# View system upgrades
+n5 list-view system-upgrades
+
+# View with specific format
+n5 list-view ideas format=table
+
+# Export to file
+n5 list-view must-contact format=markdown > contacts-view.md
+```
+
+**Natural Language** (via Incantum):
+- "Show me my system upgrades"
+- "What's on my must-contact list?"
+- "Display my social media ideas"
 
 ### Adding Items
 
