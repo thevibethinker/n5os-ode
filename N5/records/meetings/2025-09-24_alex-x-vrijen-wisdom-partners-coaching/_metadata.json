@@ -35,5 +35,18 @@
     "HR vs. hiring manager buyer dynamics",
     "PM hiring chaos as strategic wedge"
   ],
-  "strategic_value": "Breakthrough session that completely reframed employer-side product approach; Alex's playing card concept is potentially game-changing differentiation from traditional recruiters"
+  "strategic_value": "Breakthrough session that completely reframed employer-side product approach; Alex's playing card concept is potentially game-changing differentiation from traditional recruiters",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-09-24_alex-x-vrijen-wisdom-partners-coaching/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.583565+00:00",
+      "backfilled": true,
+      "subject": "Following up: Playing Cards for Hiring Managers",
+      "email": "",
+      "stakeholder_name": "STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

@@ -12,6 +12,7 @@ Version: 1.1.0
 import argparse
 import json
 import logging
+import re
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -107,8 +108,9 @@ class UnsentFollowupsDigest:
             with open(metadata_path, 'r') as f:
                 metadata = json.loads(f.read())
             
-            # Skip if not external
-            if metadata.get('classification') != 'external':
+            # Skip if not external (check folder name since classification field varies)
+            is_external = 'external' in meeting_dir.name
+            if not is_external:
                 continue
             
             # Check if follow-up was generated
@@ -119,6 +121,53 @@ class UnsentFollowupsDigest:
                     followup_deliverable = deliv
                     break
             
+            # Fallback: scan B25 directly if no metadata entry
+            if not followup_deliverable:
+                logger.debug(f"No metadata entry, scanning B25 for {meeting_dir.name}")
+                b25_path = meeting_dir / "B25_DELIVERABLE_CONTENT_MAP.md"
+                try:
+                    if b25_path.exists():
+                        b25_content = b25_path.read_text()
+                        # Check for follow-up email section
+                        patterns = [
+                            r'###\s*Section 2:\s*Follow-Up Email',
+                            r'##\s*Follow-Up Email\s*Draft',
+                            r'##\s*Section 2.*Follow.*Up'
+                        ]
+                        
+                        if any(re.search(p, b25_content, re.IGNORECASE) for p in patterns):
+                            # Extract subject line
+                            subject_match = re.search(r'\*\*Subject\*\*:?\s*(.+?)(?:\n|$)', b25_content)
+                            subject = subject_match.group(1).strip() if subject_match else "Unknown Subject"
+                            
+                            # Extract email (look for email patterns)
+                            email_match = re.search(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', b25_content)
+                            email = email_match.group(0) if email_match else ""
+                            
+                            # Extract stakeholder name from B08 if available
+                            b08_path = meeting_dir / "B08_STAKEHOLDER_INTELLIGENCE.md"
+                            stakeholder_name = "Unknown"
+                            if b08_path.exists():
+                                b08_content = b08_path.read_text()
+                                # Try to get name from title or first heading
+                                name_match = re.search(r'^#\s*(.+?)(?:\n|$)', b08_content, re.MULTILINE)
+                                if name_match:
+                                    stakeholder_name = name_match.group(1).strip()
+                            
+                            followup_deliverable = {
+                                'type': 'follow_up_email',
+                                'path': str(b25_path.relative_to(Path('/home/workspace'))),
+                                'section': 'Section 2',
+                                'status': 'pending',
+                                'subject': subject,
+                                'email': email,
+                                'stakeholder_name': stakeholder_name,
+                                'backfilled': False,
+                                'fallback_detected': True
+                            }
+                except Exception as e:
+                    logger.debug(f"Error scanning B25 for {meeting_dir.name}: {e}")
+            
             if not followup_deliverable:
                 continue
             
@@ -128,7 +177,10 @@ class UnsentFollowupsDigest:
                 continue
             
             # Extract meeting info
-            meeting_date = datetime.strptime(metadata['date'], '%Y-%m-%d')
+            # Parse date from meeting_id (format: YYYY-MM-DD_...)
+            meeting_id = metadata.get('meeting_id', meeting_dir.name)
+            date_str = meeting_id.split('_')[0]  # Extract YYYY-MM-DD
+            meeting_date = datetime.strptime(date_str, '%Y-%m-%d')
             days_ago = (datetime.now() - meeting_date).days
             
             # Skip if older than 30 days
@@ -145,9 +197,17 @@ class UnsentFollowupsDigest:
             # Get action steps from metadata or deliverable map
             action_steps = metadata.get('follow_up_action', '')
             
+            # Override with deliverable metadata if available
+            if followup_deliverable.get('stakeholder_name'):
+                stakeholder_name = followup_deliverable['stakeholder_name']
+            if followup_deliverable.get('email'):
+                email = followup_deliverable['email']
+            if followup_deliverable.get('subject'):
+                subject_line = followup_deliverable['subject']
+
             meetings_with_followups.append({
-                'meeting_id': metadata['meeting_id'],
-                'meeting_date': metadata['date'],
+                'meeting_id': meeting_id,
+                'meeting_date': date_str,
                 'days_ago': days_ago,
                 'stakeholder_name': stakeholder_name,
                 'email': email,

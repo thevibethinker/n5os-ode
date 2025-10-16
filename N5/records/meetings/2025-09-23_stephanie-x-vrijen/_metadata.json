@@ -26,5 +26,18 @@
   "confidence_score": "High",
   "n5os_tags": "[LD-NET] [GPT-E] [A-3]",
   "enrichment_priority": "MEDIUM",
-  "notes": "Partnership exploration meeting. Career Span not ready for early-career scale until Q2 2026. Vrijen to intro Stephanie to Michael Berlingo (Starter U) as bridge solution. Strong strategic alignment on 'job placement promise' as activation lever."
+  "notes": "Partnership exploration meeting. Career Span not ready for early-career scale until Q2 2026. Vrijen to intro Stephanie to Michael Berlingo (Starter U) as bridge solution. Strong strategic alignment on 'job placement promise' as activation lever.",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-09-23_stephanie-x-vrijen/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.580040+00:00",
+      "backfilled": true,
+      "subject": "Unknown",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

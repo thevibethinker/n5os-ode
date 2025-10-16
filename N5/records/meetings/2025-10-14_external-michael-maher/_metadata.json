@@ -24,5 +24,18 @@
   "howie_tags": "[LD-NET] [GPT-E] [A-3]",
   "confidence_score": "High",
   "transcript_quality": "Excellent",
-  "notes": "Cornell Johnson CMC institutional opportunity - tool evaluation process 2-3 weeks out, Michael serving as internal advocate"
+  "notes": "Cornell Johnson CMC institutional opportunity - tool evaluation process 2-3 weeks out, Michael serving as internal advocate",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-10-14_external-michael-maher/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.611332+00:00",
+      "backfilled": true,
+      "subject": "Unknown",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

@@ -1,0 +1,123 @@
+
+UPDATE AGGREGATED INSIGHTS
+
+You are updating the aggregated market intelligence document with new insights from a recent meeting.
+
+EXISTING DOCUMENT:
+---
+# Market Intelligence: Aggregated Research Insights
+
+**Last Updated:** 2025-10-13 20:36:32 ET  
+**Total Meetings Analyzed:** 0  
+**Total Insights:** 0
+
+---
+
+## Strong Signals (Verified ≥3 Primary Sources)
+
+*No strong signals identified yet.*
+
+---
+
+## Emerging Signals (Verified 2 Primary Sources)
+
+*No emerging signals identified yet.*
+
+---
+
+## Single-Source Insights (1 High-Quality Source)
+
+*No single-source insights yet.*
+
+---
+
+## Contradictions & Tensions
+
+*No contradictions identified yet.*
+
+---
+
+## Opportunity Map
+
+*No opportunities mapped yet.*
+
+---
+
+## Change Log
+
+**2025-10-13:** Initial aggregation file created
+
+---
+
+NEW INSIGHTS TO INTEGRATE (5 total):
+
+1. **1. Success-based pricing increasingly preferred by recruiting platforms over per-candidate or subscription models**
+   - Evidence: "You get kickback up to 12 months, but you get it when we get paid is when you get paid... We're placing them afterwards... close to 200k ARR, with a, like, pipeline and a in active contract negotiation, another 1.3 in expansion."
+   - Why it matters: Validates long-term retention-based pricing as viable GTM strategy that aligns incentives and justifies premium pricing (reaching $200K ARR suggests strong unit economics).
+   - Signal: ● | Credibility: ●
+   - Source type: UNKNOWN
+   - Category: GTM & Distribution
+   - From: Speaking as recruiting tech founder (employer-side platform) (Meeting: 2025-10-15_external-sam-partnership-sync)
+
+2. **2. Recruiting partnerships increasingly structured around "smarter systems" integration rather than basic job board distribution**
+   - Evidence: "We want to move into more like, smarter partnerships with smarter systems similar to yours, where we give the kickback once they've been placed... Originally it was like job boards and like very basic partnerships."
+   - Why it matters: Shift from commodity job board access to differentiated candidate intelligence partnerships creates moat for platforms with proprietary vetting/matching systems.
+   - Signal: ● | Credibility: ●
+   - Source type: UNKNOWN
+   - Category: GTM & Distribution
+   - From: Speaking as recruiting tech founder (employer-side platform) (Meeting: 2025-10-15_external-sam-partnership-sync)
+
+3. **3. VCs systematically fail to understand job seeker economics and push founders toward charging unemployed users**
+   - Evidence: "I can't tell you how many times someone has said, like, oh, so are you charging the job seekers that join your talent network?... VCs don't know what they're looking for. They don't know what they're investing in."
+   - Why it matters: Reveals persistent VC blind spot around two-sided marketplace dynamics where subsidizing one side (job seekers) enables monetization of other side (employers); founders building against VC advice may have edge.
+   - Signal: ● | Credibility: ●
+   - Source type: UNKNOWN
+   - Category: Fundraising & Business Model
+   - From: Speaking as recruiting tech founder (employer-side platform) (Meeting: 2025-10-15_external-sam-partnership-sync)
+
+4. **4. Startup talent market has specific experience threshold (2+ years) that creates natural filtering criteria**
+   - Evidence: "Our talent has to have had startup experience of at least two years... it can be like big tech like Google, whatever because they have small odds, but it can. It's also preferable for them to be like early stage startup because that scrappy mentality."
+   - Why it matters: Defines quality bar for startup recruiting that goes beyond skills/credentials to cultural fit and operational experience; suggests 2-year minimum is industry pattern not arbitrary filter.
+   - Signal: ● | Credibility: ●
+   - Source type: UNKNOWN
+   - Category: Hiring Manager Pain Points
+   - From: Speaking as recruiting tech founder (employer-side platform) (Meeting: 2025-10-15_external-sam-partnership-sync)
+
+5. **5. Recruiting placement timelines compressing to 5-day onboarding cycles in tech startup market**
+   - Evidence: "Whoever they meet and they select gets placed in five days."
+   - Why it matters: If accurate, represents significant acceleration from traditional 2-4 week offer-to-start timelines; suggests competitive pressure or candidate quality allows faster decisions.
+   - Signal: ● | Credibility: ●
+   - Source type: UNKNOWN
+   - Category: Market Dynamics & Competition
+   - From: Speaking as recruiting tech founder (employer-side platform) (Meeting: 2025-10-15_external-sam-partnership-sync)
+
+
+INSTRUCTIONS:
+
+1. **Cross-reference with existing insights:**
+   - Check if any new insights confirm/contradict existing ones
+   - If similar insight exists: UPDATE that section with additional verification
+   - If new insight: ADD to appropriate section
+
+2. **Signal strength promotion:**
+   - Single-source (●●●●○ or ●●●●●) from PRIMARY source → Add to "Single-Source Insights"
+   - If existing insight gains 2nd PRIMARY source → Promote to "Emerging Signals"
+   - If existing insight gains 3rd+ PRIMARY source → Promote to "Strong Signals"
+
+3. **Compaction:**
+   - If 5+ similar insights exist, compact them into one consolidated insight with "[X] sources confirm"
+
+4. **Contradictions:**
+   - Flag when two PRIMARY sources disagree on same topic
+   - Add to "Contradictions & Tensions" section
+
+5. **Opportunity Map:**
+   - When Strong Signal emerges, assess if it represents actionable opportunity
+   - Add to Opportunity Map with recommended action
+
+6. **Update metadata:**
+   - Increment total meetings analyzed
+   - Increment total insights
+   - Add change log entry with date and meeting ID
+
+OUTPUT: The complete updated aggregated_insights.md file.

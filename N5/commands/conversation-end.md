@@ -212,11 +212,83 @@ See: `file 'N5/commands/placeholder-scan.md'` for full details
 ---
 
 ### Phase 3: Personal Intelligence Update (Autonomous)
+
+**Purpose**: Update the personal intelligence layer (`N5/intelligence/personal-understanding.json`) with observations from this conversation. Track V's intellectual, behavioral, emotional, and cognitive patterns.
+
+**What to Track:**
+- **Intellectual patterns**: Problem-solving approaches, learning style, knowledge gaps revealed, technical/non-technical boundary pushing
+- **Behavioral patterns**: Decision-making in action, speed vs. perfection tradeoffs, system-building vs. execution ratio
+- **Emotional patterns**: Energy levels, frustration triggers, excitement indicators, late-night work patterns
+- **Cognitive patterns**: How V processes information, asks questions, handles ambiguity, responds to feedback
+- **Hypothesis tracking**: Evidence that confirms or disconfirms active hypotheses about V's patterns
+
+**Analysis Framework:**
+1. **Conversation Context**
+   - What was V working on?
+   - What was the nature of the work? (strategic, tactical, system-building, execution)
+   - Time of day and duration
+   - V's energy and engagement level
+
+2. **Decision Points**
+   - What choices did V make?
+   - Speed vs. perfection: Did V ship quickly or build infrastructure first?
+   - Technical approach: Did V push technical boundaries or stay comfortable?
+   - Feedback response: How did V respond to suggestions or pushback?
+
+3. **Pattern Signals**
+   - **Confirming evidence**: Behaviors that match existing hypotheses
+   - **Disconfirming evidence**: Behaviors that contradict hypotheses
+   - **Novel observations**: New patterns not yet tracked
+
+4. **Hypothesis Updates**
+   - Review active hypotheses in `hypothesis_tracking.active_hypotheses`
+   - Add evidence_for or evidence_against based on conversation
+   - Update confidence levels
+   - Move to confirmed_patterns or disconfirmed_patterns if threshold reached
+
+**Execution:**
 ```bash
-# Update personal intelligence layer with conversation insights
-# This is autonomous and runs in background
-update_personal_intelligence.py
+# Run personal intelligence update script
+python3 /home/workspace/N5/scripts/update_personal_intelligence.py \
+  --conversation-id $CONVERSATION_ID \
+  --auto
+
+# Script should:
+# 1. Analyze conversation workspace for artifacts
+# 2. Review conversation context (if available)
+# 3. Extract behavioral/intellectual/emotional signals
+# 4. Update hypothesis tracking with new evidence
+# 5. Append new observation to observations_log
+# 6. Update meta.last_updated timestamp
 ```
+
+**Output Example:**
+```
+======================================================================
+PHASE 3: PERSONAL INTELLIGENCE UPDATE
+======================================================================
+
+Analyzing conversation patterns...
+
+📊 Observations from this conversation:
+- V initiated intelligence layer population at 3 AM (energy pattern)
+- Requested honest feedback with no glazing (openness to criticism)
+- Remembered forgotten system existed, persisted until found (persistence)
+- Explicitly requested dynamic hypothesis tracking (systems thinking)
+
+🔬 Hypothesis Updates:
+H004: V's growth responsiveness → CONFIRMING EVIDENCE
+  - Requested to track behavioral changes
+  - "hopefully you'll start seeing behavior that evidences I'm making better decisions"
+  - Confidence: medium → high
+
+✅ Personal intelligence updated
+   New observations: 2
+   Hypothesis updates: 1
+   Total conversations analyzed: 13
+```
+
+**Privacy Note**: This update is autonomous and private. V can request to see the intelligence layer anytime but it's not shown by default.
 
 ---
 

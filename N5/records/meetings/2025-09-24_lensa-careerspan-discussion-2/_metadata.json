@@ -40,7 +40,7 @@
   "business_context": {
     "deal_type": "User Acquisition Partnership",
     "starting_budget": "$2,500 per feed",
-    "pricing_model": "CPC (15¢ per click)",
+    "pricing_model": "CPC (15\u00a2 per click)",
     "test_start_date": "October 2025",
     "key_deliverable": "IO form completion"
   },
@@ -49,5 +49,18 @@
     "goal_phase_timeline": "GPT-M",
     "accommodation_level": "A-2",
     "priority": "Important"
-  }
+  },
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-09-24_lensa-careerspan-discussion-2/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.587875+00:00",
+      "backfilled": true,
+      "subject": "Following up: Lensa x Careerspan test partnership",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

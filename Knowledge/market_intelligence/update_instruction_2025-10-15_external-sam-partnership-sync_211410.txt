@@ -1,0 +1,91 @@
+
+UPDATE AGGREGATED INSIGHTS
+
+You are updating the aggregated market intelligence document with new insights from a recent meeting.
+
+EXISTING DOCUMENT:
+---
+# Market Intelligence: Aggregated Research Insights
+
+**Last Updated:** 2025-10-13 20:36:32 ET  
+**Total Meetings Analyzed:** 0  
+**Total Insights:** 0
+
+---
+
+## Strong Signals (Verified ≥3 Primary Sources)
+
+*No strong signals identified yet.*
+
+---
+
+## Emerging Signals (Verified 2 Primary Sources)
+
+*No emerging signals identified yet.*
+
+---
+
+## Single-Source Insights (1 High-Quality Source)
+
+*No single-source insights yet.*
+
+---
+
+## Contradictions & Tensions
+
+*No contradictions identified yet.*
+
+---
+
+## Opportunity Map
+
+*No opportunities mapped yet.*
+
+---
+
+## Change Log
+
+**2025-10-13:** Initial aggregation file created
+
+---
+
+NEW INSIGHTS TO INTEGRATE (1 total):
+
+1. **Industry Landscape Insights**
+   - Evidence: "VCs don't know what they're looking for. They don't know what they're investing in. They don't read your deck... If they have a shit ton of questions, they're interested... If they don't have a shit ton of questions, they're probably passing."
+   - Why it matters: VCs evaluate recruiting tech deals based on question volume (proxy for interest) rather than thesis-driven conviction, creating noisy/unpredictable fundraising processes that waste founder time and delay capital deployment.
+   - Signal: ● | Credibility: ●
+   - Source type: PRIMARY
+   - Category: Fundraising & Business Model
+   - From: Speaking as recruiting tech founder (SIEM) (Meeting: 2025-10-15_external-sam-partnership-sync_211410)
+
+
+INSTRUCTIONS:
+
+1. **Cross-reference with existing insights:**
+   - Check if any new insights confirm/contradict existing ones
+   - If similar insight exists: UPDATE that section with additional verification
+   - If new insight: ADD to appropriate section
+
+2. **Signal strength promotion:**
+   - Single-source (●●●●○ or ●●●●●) from PRIMARY source → Add to "Single-Source Insights"
+   - If existing insight gains 2nd PRIMARY source → Promote to "Emerging Signals"
+   - If existing insight gains 3rd+ PRIMARY source → Promote to "Strong Signals"
+
+3. **Compaction:**
+   - If 5+ similar insights exist, compact them into one consolidated insight with "[X] sources confirm"
+
+4. **Contradictions:**
+   - Flag when two PRIMARY sources disagree on same topic
+   - Add to "Contradictions & Tensions" section
+
+5. **Opportunity Map:**
+   - When Strong Signal emerges, assess if it represents actionable opportunity
+   - Add to Opportunity Map with recommended action
+
+6. **Update metadata:**
+   - Increment total meetings analyzed
+   - Increment total insights
+   - Add change log entry with date and meeting ID
+
+OUTPUT: The complete updated aggregated_insights.md file.

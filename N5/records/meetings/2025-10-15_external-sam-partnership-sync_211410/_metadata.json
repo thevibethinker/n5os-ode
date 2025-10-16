@@ -1,0 +1,56 @@
+{
+  "meeting_id": "2025-10-15_external-sam-partnership-sync_211410",
+  "meeting_date": "2025-10-15",
+  "classification": "external",
+  "stakeholder_type": "FOUNDER",
+  "participants": "Vrijen Attawar (Careerspan), Ash Straughn (SIEM)",
+  "company": "SIEM",
+  "processing_metadata": {
+    "processed_at": "2025-10-15T22:06:06-04:00",
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "transcript_source": "Google Drive",
+    "transcript_quality": "Excellent",
+    "processing_confidence": "High"
+  },
+  "blocks_generated": {
+    "required": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP"
+    ],
+    "high_priority": [
+      "B05_OUTSTANDING_QUESTIONS",
+      "B24_PRODUCT_IDEA_EXTRACTION",
+      "B13_PLAN_OF_ACTION",
+      "B07_WARM_INTRO_BIDIRECTIONAL",
+      "B14_BLURBS_REQUESTED",
+      "B27_KEY_MESSAGING"
+    ],
+    "conditional": [],
+    "total_count": 13
+  },
+  "crm_integration": {
+    "profile_created": true,
+    "profile_path": "Knowledge/crm/individuals/ash-straughn.md",
+    "enrichment_priority": "HIGH",
+    "status": "Active partnership exploration"
+  },
+  "howie_integration": {
+    "v_os_tags": "[LD-FND] [GPT-M] [A-3]",
+    "priority": "Important",
+    "scheduling_notes": "Warm founder relationship, flexible timeline, mid-stage exploration"
+  },
+  "key_outcomes": [
+    "Partnership model validated at founder level",
+    "Co-founder validation required as next gate",
+    "Technical integration and commercial terms need scoping",
+    "Complementary positioning confirmed (Careerspan = candidate-first, SIEM = employer-first)"
+  ],
+  "follow_up_required": true,
+  "gdrive_update_pending": true
+}

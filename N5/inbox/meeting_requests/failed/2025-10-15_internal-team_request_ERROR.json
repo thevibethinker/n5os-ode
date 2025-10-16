@@ -1,0 +1,15 @@
+{
+  "meeting_id": "2025-10-15_internal-team",
+  "classification": "internal",
+  "participants": "Daily team stand-up",
+  "date": "2025-10-15",
+  "gdrive_id": "1lO9Tryk4C1Iy5B6erWUq6gHpE9m5Cjt7",
+  "gdrive_link": "https://docs.google.com/document/d/1lO9Tryk4C1Iy5B6erWUq6gHpE9m5Cjt7/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
+  "original_filename": "Daily team stand-up-transcript-2025-10-15T14-29-58.226Z.docx",
+  "created_at": "2025-10-16T04:57:09.890624Z",
+  "status": "failed",
+  "error": "EXCLUSION_RULE_APPLIED",
+  "error_message": "Internal team meetings are excluded from stakeholder processing per N5/config/stakeholder_rules.json. Internal team members should not be tracked in the stakeholder system.",
+  "processed_at": "2025-10-16T05:29:11Z",
+  "action_taken": "Transcript downloaded but no blocks generated. Request moved to failed folder."
+}

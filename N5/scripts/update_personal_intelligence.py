@@ -2,13 +2,13 @@
 """
 Personal Intelligence Update Script
 
-Updates Zo's autonomous understanding of V during conversation-end.
-This is MY (Zo's) private intelligence layer that helps me serve V better.
-
-V has given me full autonomy to maintain this understanding.
+Updates N5/intelligence/personal-understanding.json with observations from conversations.
+Tracks intellectual, behavioral, emotional, and cognitive patterns.
+Updates hypothesis tracking with confirming/disconfirming evidence.
 """
 
 import json
+import argparse
 import logging
 from pathlib import Path
 from datetime import datetime
@@ -315,6 +315,158 @@ def main():
     return 0 if success else 1
 
 
+def analyze_conversation_patterns(conversation_id: str, intelligence: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Analyze conversation for behavioral patterns and hypothesis updates.
+    
+    This is a lightweight analysis - deep analysis happens via LLM during conversation-end.
+    This function prepares the structure and handles updates.
+    """
+    updates = {
+        "observations": [],
+        "hypothesis_updates": [],
+        "new_hypotheses": []
+    }
+    
+    # In full implementation, this would:
+    # 1. Scan conversation workspace for artifacts
+    # 2. Check file creation patterns (system-building vs execution)
+    # 3. Look for timing patterns (late night work, session duration)
+    # 4. Detect decision points in conversation logs
+    
+    # For now, this is a placeholder that can be called with manual observations
+    # The real analysis happens in the LLM during conversation-end
+    
+    return updates
+
+def update_hypothesis(hypothesis: Dict[str, Any], evidence: str, evidence_type: str, 
+                      confidence_change: Optional[str] = None) -> Dict[str, Any]:
+    """
+    Update a hypothesis with new evidence.
+    
+    Args:
+        hypothesis: The hypothesis dict to update
+        evidence: Description of the evidence
+        evidence_type: "for" or "against"
+        confidence_change: Optional new confidence level
+    """
+    if evidence_type == "for":
+        hypothesis["evidence_for"].append(evidence)
+    elif evidence_type == "against":
+        hypothesis["evidence_against"].append(evidence)
+    
+    if confidence_change:
+        hypothesis["confidence"] = confidence_change
+    
+    hypothesis["last_updated"] = datetime.utcnow().isoformat()
+    
+    return hypothesis
+
+def add_observation(intelligence: Dict[str, Any], observation: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Add a new observation to the observations log.
+    
+    Args:
+        intelligence: The intelligence dict
+        observation: Dict with keys: date, timestamp, observation, context, confidence, significance
+    """
+    if "observations_log" not in intelligence:
+        intelligence["observations_log"] = []
+    
+    # Ensure required fields
+    required = ["date", "timestamp", "observation", "context", "confidence", "significance"]
+    for field in required:
+        if field not in observation:
+            raise ValueError(f"Observation missing required field: {field}")
+    
+    intelligence["observations_log"].append(observation)
+    
+    return intelligence
+
+def manual_update(intelligence_path: Path, observation_data: Dict[str, Any]) -> None:
+    """
+    Manually add an observation and/or hypothesis update.
+    
+    observation_data format:
+    {
+        "observation": {...},  # Optional
+        "hypothesis_updates": [  # Optional
+            {
+                "hypothesis_id": "H001",
+                "evidence": "Description of evidence",
+                "evidence_type": "for" | "against",
+                "confidence_change": "low" | "medium" | "high" | "very low" | "very high"  # Optional
+            }
+        ]
+    }
+    """
+    intelligence = load_intelligence(intelligence_path)
+    
+    # Add observation if provided
+    if "observation" in observation_data:
+        intelligence = add_observation(intelligence, observation_data["observation"])
+        logger.info(f"✓ Added observation: {observation_data['observation']['observation'][:80]}")
+    
+    # Update hypotheses if provided
+    if "hypothesis_updates" in observation_data:
+        for update in observation_data["hypothesis_updates"]:
+            hyp_id = update["hypothesis_id"]
+            
+            # Find hypothesis
+            hypothesis = None
+            for h in intelligence.get("hypothesis_tracking", {}).get("active_hypotheses", []):
+                if h["id"] == hyp_id:
+                    hypothesis = h
+                    break
+            
+            if hypothesis:
+                update_hypothesis(
+                    hypothesis,
+                    update["evidence"],
+                    update["evidence_type"],
+                    update.get("confidence_change")
+                )
+                logger.info(f"✓ Updated {hyp_id}: {update['evidence'][:60]}")
+            else:
+                logger.warning(f"⚠ Hypothesis {hyp_id} not found")
+    
+    # Update meta
+    intelligence["_meta"]["last_updated"] = datetime.utcnow().isoformat()
+    intelligence["_meta"]["conversations_analyzed"] += 1
+    
+    # Save
+    save_intelligence(intelligence_path, intelligence)
+    logger.info(f"✅ Intelligence updated: {intelligence_path}")
+
+
 if __name__ == "__main__":
-    import sys
-    sys.exit(main())
+    parser = argparse.ArgumentParser(description="Update personal intelligence layer")
+    parser.add_argument("--conversation-id", help="Conversation ID for context")
+    parser.add_argument("--auto", action="store_true", help="Auto mode (no prompts)")
+    parser.add_argument("--test", action="store_true", help="Test mode (no writes)")
+    parser.add_argument("--manual", help="Path to JSON file with manual observation data")
+    
+    args = parser.parse_args()
+    
+    intelligence_path = Path("/home/workspace/N5/intelligence/personal-understanding.json")
+    
+    if args.test:
+        intelligence = load_intelligence(intelligence_path)
+        print("\n📊 Current Intelligence State:")
+        print(json.dumps(intelligence, indent=2))
+        print("\n✓ Test mode - no updates made")
+    elif args.manual:
+        manual_data_path = Path(args.manual)
+        if not manual_data_path.exists():
+            logger.error(f"Manual data file not found: {manual_data_path}")
+            exit(1)
+        
+        with open(manual_data_path) as f:
+            observation_data = json.load(f)
+        
+        manual_update(intelligence_path, observation_data)
+    else:
+        # Standard update mode
+        logger.info("Personal intelligence update - standard mode")
+        logger.info("Note: Deep analysis done by LLM during conversation-end")
+        logger.info("This script handles the data structure updates")

@@ -1,21 +1,12 @@
-SKIPPED: Internal team standup meeting
+SKIP REASON: Internal team meeting
+DATE: 2025-10-16T03:01:34Z
+MEETING_ID: 2025-10-15_internal-team_142958
 
-Meeting ID: 2025-10-15_internal-team_142958
 Classification: internal
 Participants: Daily team stand-up
-Date: 2025-10-15
 
-REASON FOR SKIP:
-This is an internal team standup meeting. The Registry System v1.5 is designed for external stakeholder meetings (FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, JOB_SEEKER).
+Per stakeholder_rules.json:
+- Internal team members should be excluded from stakeholder system
+- No processing, no CRM, no blocks generated
 
-The block_type_registry.json references INTERNAL_STANDUP_TEAM blocks (B40-B48), but these blocks are not yet defined in the registry system.
-
-RECOMMENDED ACTION:
-- Wait for Registry System v2.0 or later that includes internal meeting processing
-- OR manually process internal meetings using a different workflow
-- OR implement B40-B48 block definitions for internal meetings
-
-Transcript available at: N5/inbox/transcripts/2025-10-15_internal-team_142958_converted.txt
-
-Processed by: Zo (Scheduled Task)
-Timestamp: 2025-10-15 13:49:24 ET
+Action taken: Moved to skipped/ folder
