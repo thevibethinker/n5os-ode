@@ -18,7 +18,7 @@ import subprocess
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any
 
 logging.basicConfig(
     level=logging.INFO,
@@ -45,14 +45,16 @@ except ImportError:
 class BuildTracker:
     def __init__(self, convo_id: Optional[str] = None, filter_type: str = "all"):
         self.convo_id = convo_id or self._detect_current_convo()
-        self.workspace = CONVO_WORKSPACES_ROOT / self.convo_id
-        self.build_map_file = self.workspace / "BUILD_MAP.md"
-        self.session_file = self._get_session_file()
         self.filter_type = filter_type
+        self.workspace = Path("/home/workspace")
+        self.session_log_dir = self.workspace / "N5/logs/build-sessions"
+        self.archive_dir = self.session_log_dir / "archive"
+        self.session_file = self._get_session_file()
+        self.build_map_file = self._get_build_map_path()
         
-        STATE_DIR.mkdir(parents=True, exist_ok=True)
-        SESSION_LOG_DIR.mkdir(parents=True, exist_ok=True)
-        self.workspace.mkdir(parents=True, exist_ok=True)
+        # Ensure directories exist
+        self.session_log_dir.mkdir(parents=True, exist_ok=True)
+        self.archive_dir.mkdir(parents=True, exist_ok=True)
     
     def _detect_current_convo(self) -> str:
         cwd = Path.cwd()
@@ -63,6 +65,11 @@ class BuildTracker:
     def _get_session_file(self) -> Path:
         date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         return SESSION_LOG_DIR / f"session_{date_str}_{self.convo_id}.jsonl"
+    
+    def _get_build_map_path(self) -> Path:
+        """Get path to BUILD_MAP.md in conversation workspace."""
+        convo_ws = CONVO_WORKSPACES_ROOT / self.convo_id
+        return convo_ws / "BUILD_MAP.md"
     
     def _log_event(self, event: str, data: Dict = None):
         """Append event to session log."""
@@ -155,9 +162,17 @@ Initializing...
             return []
         
         tasks = {}
+        session_closed = False
+        
         with open(self.session_file) as f:
             for line in f:
                 event = json.loads(line.strip())
+                
+                # Check if session is closed
+                if event["event"] == "session_closed":
+                    session_closed = True
+                    continue
+                
                 if event["event"] == "task_added":
                     task_name = event["data"]["task"]
                     tasks[task_name] = {
@@ -171,7 +186,12 @@ Initializing...
                         tasks[task_name]["state"] = event["data"]["state"]
                         tasks[task_name]["updated_at"] = event["timestamp"]
         
-        return list(tasks.values())
+        # Filter completed tasks if session is closed
+        task_list = list(tasks.values())
+        if session_closed:
+            task_list = [t for t in task_list if t["state"] != "complete"]
+        
+        return task_list
     
     def _get_git_status(self) -> Dict:
         """Get git status from workspace."""
@@ -342,47 +362,167 @@ Initializing...
         logger.info(f"✓ Marked {target} as build conversation")
         return True
 
+    def is_session_closed(self) -> bool:
+        """Check if this session has been closed."""
+        if not self.session_file.exists():
+            return False
+        
+        with open(self.session_file) as f:
+            for line in f:
+                event = json.loads(line.strip())
+                if event.get("event") == "session_closed":
+                    return True
+        return False
+    
+    def close_session(self, dry_run: bool = False) -> Dict[str, Any]:
+        """
+        Close this build session and mark tasks as archived.
+        
+        Returns summary with counts of tasks by state.
+        """
+        if not self.session_file.exists():
+            return {"error": "No session file found", "closed": False}
+        
+        # Check if already closed
+        if self.is_session_closed():
+            return {"error": "Session already closed", "closed": True}
+        
+        # Load current tasks
+        tasks = self._load_tasks()
+        
+        # Count by state
+        summary = {
+            "total": len(tasks),
+            "complete": len([t for t in tasks if t["state"] == "complete"]),
+            "active": len([t for t in tasks if t["state"] == "active"]),
+            "open": len([t for t in tasks if t["state"] == "open"]),
+            "paused": len([t for t in tasks if t["state"] == "paused"]),
+            "abandoned": len([t for t in tasks if t["state"] == "abandoned"]),
+            "closed": True
+        }
+        
+        if dry_run:
+            print(f"[DRY RUN] Would close session {self.convo_id}")
+            print(f"  Total tasks: {summary['total']}")
+            print(f"  Complete: {summary['complete']}")
+            print(f"  Active/Open: {summary['active'] + summary['open']}")
+            return summary
+        
+        # Log session closed event
+        self._log_event("session_closed", {
+            "summary": summary,
+            "tasks": [t["name"] for t in tasks]
+        })
+        
+        return summary
+    
+    def generate_archive(self, dry_run: bool = False) -> Optional[Path]:
+        """
+        Generate archive file with completed tasks.
+        
+        Returns path to archive file or None if no completed tasks.
+        """
+        if not self.session_file.exists():
+            return None
+        
+        tasks = self._load_tasks()
+        completed_tasks = [t for t in tasks if t["state"] == "complete"]
+        
+        if not completed_tasks:
+            if not dry_run:
+                print("No completed tasks to archive")
+            return None
+        
+        archive_file = self.archive_dir / f"{self.convo_id}_completed.jsonl"
+        
+        if dry_run:
+            print(f"[DRY RUN] Would create archive: {archive_file}")
+            print(f"  Tasks to archive: {len(completed_tasks)}")
+            for task in completed_tasks:
+                print(f"    - {task['name']}")
+            return archive_file
+        
+        # Write archive
+        with open(archive_file, 'w') as f:
+            # Header
+            archive_header = {
+                "type": "session_archive",
+                "convo_id": self.convo_id,
+                "archived_at": datetime.now().isoformat(),
+                "task_count": len(completed_tasks)
+            }
+            f.write(json.dumps(archive_header) + '\n')
+            
+            # Tasks
+            for task in completed_tasks:
+                archive_entry = {
+                    "type": "task_completed",
+                    "task": task["name"],
+                    "added_at": task.get("added_at"),
+                    "completed_at": task.get("updated_at"),
+                    "state": task["state"]
+                }
+                f.write(json.dumps(archive_entry) + '\n')
+        
+        print(f"✓ Archived {len(completed_tasks)} completed tasks to {archive_file.name}")
+        return archive_file
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Build Companion Tracker")
-    parser.add_argument("action", choices=["activate", "refresh", "track", "status", "mark-build-convo", "classify"])
-    parser.add_argument("task", nargs="?", help="Task name (for track/status actions)")
+    parser = argparse.ArgumentParser(description="Build session tracker")
+    parser.add_argument("command", choices=["activate", "track", "status", "refresh", "mark", "close", "archive"])
+    parser.add_argument("task", nargs="?", help="Task name")
     parser.add_argument("--state", choices=["open", "active", "complete", "paused", "abandoned"])
-    parser.add_argument("--convo-id", help="Conversation ID")
-    parser.add_argument("--filter", choices=["build", "research", "discussion", "planning", "all"], default="all",
-                       help="Filter conversations by type (default: all)")
+    parser.add_argument("--convo-id", help="Specific conversation ID")
+    parser.add_argument("--filter", choices=["all", "build", "active"], default="all")
+    parser.add_argument("--dry-run", action="store_true", help="Preview changes without executing")
     
     args = parser.parse_args()
     
-    tracker = BuildTracker(args.convo_id, filter_type=args.filter)
+    tracker = BuildTracker(convo_id=args.convo_id, filter_type=args.filter)
     
-    if args.action == "activate":
+    if args.command == "activate":
         success = tracker.activate()
-        return 0 if success else 1
+        sys.exit(0 if success else 1)
     
-    elif args.action == "refresh":
-        success = tracker.refresh()
-        return 0 if success else 1
-    
-    elif args.action == "track":
+    elif args.command == "track":
         if not args.task:
-            logger.error("Task name required for 'track' action")
-            return 1
+            print("Error: task name required")
+            sys.exit(1)
         success = tracker.track_task(args.task)
-        return 0 if success else 1
+        sys.exit(0 if success else 1)
     
-    elif args.action == "status":
+    elif args.command == "status":
         if not args.task or not args.state:
-            logger.error("Task name and --state required for 'status' action")
-            return 1
+            print("Error: task name and --state required")
+            sys.exit(1)
         success = tracker.update_task_state(args.task, args.state)
-        return 0 if success else 1
+        sys.exit(0 if success else 1)
     
-    elif args.action == "mark-build-convo":
+    elif args.command == "refresh":
+        success = tracker.refresh()
+        sys.exit(0 if success else 1)
+    
+    elif args.command == "mark":
         success = tracker.mark_build_convo(args.convo_id)
-        return 0 if success else 1
+        sys.exit(0 if success else 1)
     
-    return 0
+    elif args.command == "close":
+        summary = tracker.close_session(dry_run=args.dry_run)
+        if summary.get("error"):
+            print(f"Error: {summary['error']}")
+            sys.exit(1)
+        print(f"✓ Session closed: {summary['total']} total tasks, {summary['complete']} completed")
+        sys.exit(0)
+    
+    elif args.command == "archive":
+        archive_file = tracker.generate_archive(dry_run=args.dry_run)
+        if archive_file:
+            print(f"✓ Archive created: {archive_file}")
+            sys.exit(0)
+        else:
+            print("No tasks to archive")
+            sys.exit(0)
 
 
 if __name__ == "__main__":

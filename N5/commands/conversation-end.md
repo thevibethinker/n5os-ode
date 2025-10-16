@@ -1,20 +1,20 @@
 ---
 date: '2025-10-08T22:41:14Z'
-last-tested: '2025-10-08T22:41:14Z'
+last-tested: '2025-10-16T19:00:00Z'
 generated_date: '2025-10-08T22:41:14Z'
-checksum: conversation_end_v1_0_0
+checksum: conversation_end_v1_1_0
 tags: ['conversation', 'workflow']
 category: productivity
 priority: medium
-related_files: []
+related_files: ['N5/scripts/n5_conversation_end.py', 'N5/scripts/build_tracker.py']
 anchors:
   input: null
   output: /home/workspace/N5/commands/conversation-end.md
 ---
 # `conversation-end`
 
-**Version**: 1.0.0  
-**Summary**: Formal conversation end-step - review temp files, propose organization, execute cleanup
+**Version**: 1.1.0  
+**Summary**: Formal conversation end-step - review temp files, propose organization, execute cleanup, archive build tracker
 
 ---
 
@@ -48,44 +48,102 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 
 ## End-Step Workflow
 
-### Phase 0: Lesson Extraction (If Significant)
+### Phase -1: Lesson Extraction
+**Auto-detect significant conversations and extract reusable lessons**
+- Scans conversation for system work, troubleshooting, patterns
+- Generates lesson entries for N5/knowledge/lessons/
+- Non-blocking (continues even if extraction times out)
 
-**Performed by:** The LLM directly (before running script)
+### Phase 0: After-Action Report (AAR)
+**Capture conversation context before cleanup**
+- Runs `thread-export` with auto-confirm
+- Generates AAR JSON + markdown
+- Archives to N5/logs/threads/
+- Non-blocking (skips if unavailable)
 
-Before executing the conversation-end script, analyze the conversation for significant lessons:
+### Phase 1: File Organization
+**Inventory & classify conversation files**
 
-1. **Check significance:**
-   - Were there errors or troubleshooting?
-   - System changes or refactoring?
-   - Novel techniques or creative approaches?
-   - Multiple iterations indicating learning?
+1. **Scan** conversation workspace for all files
+2. **Classify** by type and content:
+   - Images → Images/
+   - Transcripts → Document Inbox/Company/meetings/
+   - Reports → Documents/
+   - Scripts → Keep or delete based on name
+   - Data exports → Exports/
+   - Documents → Document Inbox/Temporary/
+3. **Propose** moves/deletions with rationale
+4. **Confirm** with user (Y/n)
+5. **Execute** batch file operations
+6. **Log** all actions to N5/runtime/conversation_ends.log
 
-2. **If significant, extract lessons:**
-   - Analyze conversation workspace and transcript
-   - Identify techniques, strategies, patterns, troubleshooting
-   - Generate structured lesson records
-   - Write to `N5/lessons/pending/YYYY-MM-DD_thread-id.lessons.jsonl`
+### Phase 2: Workspace Root Cleanup
+**Remove conversation artifacts from workspace root**
+- Runs `n5_workspace_root_cleanup.py --execute`
+- Removes temporary files, logs, caches
+- Preserves intentional files (marked or documented)
 
-3. **Lesson format:**
-   ```json
-   {
-     "lesson_id": "uuid",
-     "thread_id": "con_XXX",
-     "timestamp": "ISO-8601",
-     "type": "technique|strategy|design_pattern|troubleshooting|anti_pattern",
-     "title": "Brief title",
-     "description": "What we did",
-     "context": "Why it was needed",
-     "outcome": "Result achieved",
-     "principle_refs": ["15", "18"],
-     "tags": ["error-handling", "file-io"],
-     "status": "pending"
-   }
-   ```
+### Phase 2.5: Placeholder & Stub Detection
+**Enforce P16 (Accuracy) and P21 (Document Assumptions)**
+- Runs `n5_placeholder_scan.py`
+- Detects TODO, FIXME, placeholder comments
+- Flags incomplete implementations
+- **Requires resolution** before continuing (or acknowledgement)
+- User options: Fix now, Document as intentional, Acknowledge & log
 
-4. **Then continue to Phase 1** (Inventory)
+### Phase 3: Personal Intelligence Update
+**Update personal intelligence layer (autonomous)**
+- Runs `update_personal_intelligence.py`
+- Processes conversation artifacts
+- Updates knowledge graph/embeddings
+- Non-blocking (continues on error)
 
-**Note:** This is done BY THE LLM before the script runs, not by the script itself. The LLM has full conversation context and can do meaningful analysis.
+### Phase 3.5: Build Tracker Archival **[NEW]**
+**Archive completed tasks from build tracker**
+- **Detects** BUILD_MAP.md in conversation workspace
+- **Checks** if build session is already closed
+- **Generates archive** of completed tasks to `N5/logs/build-sessions/archive/{convo_id}_completed.jsonl`
+- **Closes session** by logging `session_closed` event
+- **Refreshes BUILD_MAP** to hide completed tasks (only shows active/open)
+- **Non-destructive**: Full session log preserved for audit trail
+- **Result**: Tracker stays focused, completed work archived
+
+**Archive Format:**
+```jsonl
+{"type": "session_archive", "convo_id": "con_XXX", "archived_at": "2025-10-16T19:00:00Z", "task_count": 3}
+{"type": "task_completed", "task": "Feature Implementation", "added_at": "...", "completed_at": "...", "state": "complete"}
+```
+
+**Impact:**
+- Completed tasks no longer appear in BUILD_MAP after conversation-end
+- Tracker can hold more than 5 items without getting cluttered
+- Historical record maintained in session log + archive
+- Future conversations see clean, focused task list
+
+### Phase 4: Git Status Check
+**Ensure work is saved**
+- Runs `git status --short`
+- If changes detected:
+  - Shows uncommitted files
+  - Runs `git-check` audit for staged changes
+  - Prompts user to commit (Y/n)
+  - Executes `git add -A` and `git commit` if confirmed
+- Logs commit to conversation_ends.log
+- Skipped in --auto mode
+
+### Phase 5: Thread Title Generation
+**Auto-generate descriptive thread title**
+- Analyzes conversation content
+- Generates concise, descriptive title
+- Updates thread metadata
+- Future feature (placeholder)
+
+### Phase 6: Optional Archive
+**Archive conversation for long-term storage**
+- Compress conversation workspace
+- Move to N5/archive/{date}/
+- Only if requested or conversation is significant
+- Future feature (placeholder)
 
 ---
 
@@ -292,6 +350,30 @@ H004: V's growth responsiveness → CONFIRMING EVIDENCE
 
 ---
 
+### Phase 3.5: Build Tracker Archival **[NEW]**
+**Archive completed tasks from build tracker**
+- **Detects** BUILD_MAP.md in conversation workspace
+- **Checks** if build session is already closed
+- **Generates archive** of completed tasks to `N5/logs/build-sessions/archive/{convo_id}_completed.jsonl`
+- **Closes session** by logging `session_closed` event
+- **Refreshes BUILD_MAP** to hide completed tasks (only shows active/open)
+- **Non-destructive**: Full session log preserved for audit trail
+- **Result**: Tracker stays focused, completed work archived
+
+**Archive Format:**
+```jsonl
+{"type": "session_archive", "convo_id": "con_XXX", "archived_at": "2025-10-16T19:00:00Z", "task_count": 3}
+{"type": "task_completed", "task": "Feature Implementation", "added_at": "...", "completed_at": "...", "state": "complete"}
+```
+
+**Impact:**
+- Completed tasks no longer appear in BUILD_MAP after conversation-end
+- Tracker can hold more than 5 items without getting cluttered
+- Historical record maintained in session log + archive
+- Future conversations see clean, focused task list
+
+---
+
 ### Phase 4: Git Status Check (Interactive)
 
 **Purpose**: Ensure all work is committed to git before closing the conversation - prevents losing progress between threads.
@@ -486,3 +568,19 @@ rm -rf /home/.z/workspaces/con_[ID]/
 # Verify cleanup
 test -d /home/.z/workspaces/con_[ID]/ || echo "✓ Workspace cleaned"
 ```
+
+## Version History
+
+### 1.1.0 (2025-10-16)
+- **Added Phase 3.5:** Build Tracker Archival
+- Integration with build_tracker.py for task cleanup
+- Completed tasks archived, BUILD_MAP updated
+- Non-destructive archival with full audit trail
+- Addresses V's requirement: "tracker won't get full as long as it drops items once end-command has been fully run"
+
+### 1.0.0 (2025-10-08)
+- Initial implementation
+- 6-phase workflow
+- File organization, workspace cleanup
+- Placeholder detection, git checks
+- AAR generation, lesson extraction
