@@ -11,13 +11,6 @@ related_files: "['N5/knowledge/ingestion_standards.md', 'N5/knowledge/operationa
 
 These principles are sourced on every run. They define how Zo should process information, what to load into context, and how to prevent data loss and drift.
 
-## 0) LLM Sourcing Directive (Rule-of-Two)
-- Always load at most two preference/config files in context:
-  1. `file 'N5/knowledge/ingestion_standards.md'`
-  2. `file 'N5/knowledge/operational_principles.md'`
-- Do not load additional prefs/voice files. If a third is needed, stop and ask.
-- Order of precedence for conflicts: Operational Principles > Ingestion Standards > ephemeral instructions.
-
 ## 0.1) LLM-First for Analysis and Synthesis
 - When solving problems, analyzing content, or generating insights, default to LLM reasoning over templated/scripted approaches.
 - Scripts and templates are for technical execution (data processing, API calls, deterministic computation), not for analysis or creative problem-solving.
@@ -62,7 +55,7 @@ These principles are sourced on every run. They define how Zo should process inf
 
 ## 8) Minimal Context, Maximal Clarity
 - Keep prompts self-contained; avoid excessive file loading.
-- Summon only what is needed to execute with precision (Rule-of-Two enforced).
+- Summon only what is needed to execute with precision.
 
 ## 9) Copyable Blocks Philosophy
 - Provide crisp, ready-to-paste blocks for follow-ups and questions.
@@ -85,12 +78,11 @@ These principles are sourced on every run. They define how Zo should process inf
 
 ## 14) Change Tracking
 - Append a concise change log in standards files.
-- Example: `2025-09-21 — Added Rule-of-Two, tiered voice policy, anti-overwrite.`
+- Example: `2025-09-21 — Added tiered voice policy, anti-overwrite.`
 
 ---
 
 ## Execution Checklist (Per Run)
-- [ ] Load Rule-of-Two files (this file + ingestion standards).
 - [ ] Apply tiered voice tags per component.
 - [ ] Weight extraction via ontology (P1–P7 prioritized).
 - [ ] Generate human-readable first; derive JSON after.

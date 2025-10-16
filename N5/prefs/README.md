@@ -132,7 +132,7 @@ Preferences reference (not duplicate) these stable knowledge files:
 - `file 'Knowledge/stable/glossary.md'` — Careerspan terminology
 
 ### Architectural
-- `file 'Knowledge/architectural/operational_principles.md'` — Rule-of-Two, SSOT, voice policy
+
 - `file 'Knowledge/architectural/ingestion_standards.md'` — What to ingest, MECE principles
 
 ### Lists & Policies

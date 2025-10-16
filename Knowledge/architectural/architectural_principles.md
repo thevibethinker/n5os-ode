@@ -23,10 +23,6 @@ This index provides quick reference to all architectural principles. Load specif
 - **Operations/deployments**: Load `operations.md`, `safety.md`
 - **Troubleshooting**: Load `safety.md`, `quality.md`
 
-**Rule-of-Two compliance:** Load at most 2 files:
-1. This index OR a specific module
-2. `file 'N5/knowledge/ingestion_standards.md'` (if needed)
-
 ---
 
 ## Principle Modules
@@ -34,10 +30,9 @@ This index provides quick reference to all architectural principles. Load specif
 ### Core Principles → `file 'Knowledge/architectural/principles/core.md'`
 **Load for:** All operations, foundational rules
 
-- **Principle 0:** LLM Sourcing Directive (Rule-of-Two)
 - **Principle 2:** Single Source of Truth (SSOT)
 
-**Key concept:** Minimal context loading + eliminate duplication
+**Key concept:** Eliminate duplication
 
 ---
 
@@ -121,7 +116,7 @@ Before implementing scripts, workflows, or infrastructure:
 ### During Implementation
 - [ ] Ensure dry-run mode supported (Principle 7)
 - [ ] Add error handling and recovery paths (Principle 19)
-- [ ] Apply Rule-of-Two for context loading (Principle 0)
+- [ ] Apply Minimal Context for context loading (Principle 8)
 - [ ] Generate human-readable first (Principle 1)
 - [ ] Use anti-overwrite protection (Principle 5)
 
@@ -161,6 +156,6 @@ Before implementing scripts, workflows, or infrastructure:
 
 ### 2025-09-21 (v1.0)
 - Initial principles document
-- Established Rule-of-Two (Principle 0)
+- Established core principles
 - Defined core principles 1-14
 - Created execution checklist

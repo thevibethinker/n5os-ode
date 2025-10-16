@@ -107,7 +107,6 @@
 - All 13 pipeline steps validated
 
 ### ✅ Architectural Principles Followed
-- **P0:** Minimal context (Rule-of-Two)
 - **P2:** Single Source of Truth (canonical paths)
 - **P5:** Anti-overwrite (dry-run support)
 - **P8:** Minimal context passing

@@ -1,16 +1,30 @@
-MEETING SKIPPED - NOT PROCESSED
+SKIPPED: Internal Team Meeting
 
 Meeting ID: 2025-10-15_internal-team
 Classification: internal
-Date: 2025-10-15T13:34:14 EST
+Participants: Daily team stand-up
 
-REASON FOR SKIPPING:
-This is an internal team standup meeting with Careerspan team members only (Vrijen, Ilse, Danny, Rochel). 
+REASON FOR SKIP:
+This is an internal Careerspan team standup meeting. Per stakeholder_rules.json:
+- "internal_team": { "exclude": true, "reasoning": "Internal Careerspan team members" }
 
-Per stakeholder_rules.json v1.1.0:
-- "internal_team": {"exclude": true, "reasoning": "Internal Careerspan team members"}
-- Internal meetings should not be tracked in the stakeholder system
+Internal team meetings should not be processed through the external stakeholder meeting intelligence system (Registry v1.5). These meetings:
+- Do not require CRM profiles
+- Do not require stakeholder intelligence analysis  
+- Do not require follow-up email generation
+- Do not require intro/blurb generation
+- Are not part of external relationship management
 
-No external stakeholders were present. No business intelligence or strategic insights need to be extracted using the Registry System v1.5.
+Participants identified: Vrijen, Ilse, Danny, Rochel (all internal team)
 
-DECISION: Skipped processing and moved to skipped/ folder.
+Processing Date: 2025-10-16T04:24:58 EST
+Action Taken: Moved to skipped folder, did not process blocks
+
+TRANSCRIPT CONTENT SUMMARY:
+- Team banter about Fireflies AI
+- Discussion of open source language maintenance (Ruby, JavaScript)
+- Holiday updates from Rochel
+- Work updates from team members:
+  - Danny: Apply button staging, website fixes
+  - Rochel: Framer work, Stories page design
+  - Ilse: Framework changes, application modal iteration

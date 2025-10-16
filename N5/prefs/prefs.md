@@ -34,6 +34,9 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 **CRITICAL:** Always check for registered commands in `file 'N5/config/commands.jsonl'` before performing operations manually.
 
 **Specific Rules:**
+- **Thread closure:** Load `file 'N5/prefs/operations/thread-closure-triggers.md'` to determine correct command
+  - User says "end conversation", "wrap up", "close thread" → `conversation-end` (file organization + cleanup)
+  - User says "export thread", "create AAR", "continue in new thread" → `thread-export` (documentation + AAR)
 - **Thread exports:** When user requests "export this thread" or similar, ALWAYS use `command 'N5/commands/thread-export.md'`
 - **Thread export location:** ALL thread exports MUST go to `N5/logs/threads/` (enforced by thread-export command)
 - **NEVER** create ad-hoc export directories in workspace root (`/home/workspace/ExportedThreads/`, `/home/workspace/Exports/`, etc.)
@@ -143,7 +146,6 @@ Load modules selectively based on task context. **Do not load all modules by def
 - Pointers and cross-references
 
 **Operational Principles** → `file 'Knowledge/architectural/operational_principles.md'`
-- Rule-of-Two (load at most 2 config files)
 - SSOT principles
 - Voice integration policy
 - Anti-overwrite safeguards

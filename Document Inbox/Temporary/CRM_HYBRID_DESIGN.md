@@ -134,7 +134,6 @@ Point back to Markdown for full details
 
 ## Principles Applied
 
-- P0: Rule-of-Two (loading only schema + 1 example profile at a time)
 - P2: SSOT (markdown is source, DB is index)
 - P5: Anti-Overwrite (backups before migration)
 - P7: Dry-Run (test migration first)

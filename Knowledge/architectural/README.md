@@ -17,7 +17,7 @@ Architectural knowledge defines the principles and standards governing the syste
 ## Files
 
 - **`architectural_principles.md`**: Core principles (HARD protection)
-  - Rule-of-Two (triangulate sources)
+
   - Single Source of Truth (SSOT)
   - Composability principles
   - Safety-first design
@@ -58,7 +58,6 @@ Referenced by:
 
 ## Key Principles
 
-### Rule-of-Two
 Triangulate information from multiple sources before accepting as fact.
 
 ### Single Source of Truth (SSOT)
