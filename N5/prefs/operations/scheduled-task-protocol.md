@@ -39,30 +39,51 @@ All dependencies, expected states, and edge cases must be explicitly documented.
 
 ## Task Naming Convention
 
+**IMPORTANT:** All scheduled task naming follows centralized conventions.
+
+**Source of Truth:** `file 'N5/prefs/naming-conventions.md'` (Section: Scheduled Task Naming)  
+**Emoji Legend:** `file 'N5/config/emoji-legend.json'` (machine-readable)  
+**Emoji Docs:** `file 'N5/prefs/emoji-legend.md'` (human-readable)
+
 ### Title Format
 
 ```
-[emoji] [Frequency] [Action] [Subject]
+{emoji} {Action} {Subject}
 ```
 
-**Emoji Guidelines:**
+**Emoji Selection (from centralized legend):**
 - 📰 Digests and reports
 - 💾 Data collection/sync
 - 🔧 Maintenance operations
 - 📊 Analytics/metrics
 - 🚨 Alerts/monitoring
 - 📝 Documentation updates
+- 🎯 Strategic/planning tasks
+- ⚡ Urgent/time-sensitive tasks
 
-**Frequency (optional for clarity):**
-- Daily, Weekly, Monthly (explicit in title only if ambiguous)
+**Action Verb:**
+- Clear, specific action (not generic "check" or "review")
+- Examples: Generate, Pull, Validate, Analyze, Alert
+
+**Subject:**
+- Noun-first principle (consistent with thread naming)
+- What is being acted upon
 
 **Examples:**
-- ✅ `📰 Daily Meeting Preparation Digest`
-- ✅ `💾 Gdrive Meeting Pull`
-- ✅ `🔧 Weekly List Health Check`
-- ✅ `📊 Monthly System Audit`
+- ✅ `📰 Daily Meeting Prep Digest` (report generation)
+- ✅ `💾 Gdrive Meeting Pull` (data collection)
+- ✅ `🔧 Weekly List Health Check` (maintenance)
+- ✅ `📊 Monthly System Audit` (analytics)
 - ❌ `meeting-monitor-cycle` (no emoji, unclear purpose)
 - ❌ `Scheduled Maintenance: Solution Proposal Generation` (verbose, inconsistent)
+
+**Guidelines:**
+- Follow centralized emoji selection from `file 'N5/config/emoji-legend.json'`
+- Use action verb + clear subject
+- No frequency in title (RRULE defines timing)
+- Consistent with universal naming principles
+
+**For full naming standards, see:** `file 'N5/prefs/naming-conventions.md'`
 
 ---
 
