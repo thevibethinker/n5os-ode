@@ -1,11 +1,9 @@
 {
-  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
-  "action": "Phase 2: Process Email Staging - Run Now",
-  "started_at": "2025-10-15T19:10:04-04:00",
-  "completed_at": "2025-10-15T19:10:04-04:00",
+  "run_at": "2025-10-16T05:10:23-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "staging_path": "Records/Temporary/email_staging",
   "files_processed": 0,
-  "processed_file_paths": [],
+  "processed_files": [],
   "stakeholders_discovered": 0,
-  "discovery_records_written": 0,
-  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging. No external participants processed."
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging. Directory contains date subfolders but they are empty. No extractions performed."
 }

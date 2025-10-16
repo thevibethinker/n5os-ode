@@ -1,6 +1,6 @@
 ---
-date: "2025-10-12T00:00:00Z"
-version: 2.0
+date: "2025-10-16T00:00:00Z"
+version: 2.1
 category: design
 priority: high
 ---
@@ -58,6 +58,51 @@ These principles guide system architecture and information design.
 - Arbitrary splits (by size rather than purpose)
 - Circular dependencies between modules
 - Modules that can't stand alone
+
+---
+
+## 22) Language Selection for Purpose
+
+**Purpose:** Choose the right language for the task's constraints
+
+**Decision Tree:**
+```
+Task involves:
+├─ 80%+ calling Unix tools → Shell
+├─ API-heavy + first-class SDK? → Node.js/TypeScript  
+├─ Performance-critical daemon? → Go (validate need first)
+├─ Complex logic/data processing → Python
+├─ Prototyping/vibe-coding → Python (LLM corpus advantage)
+└─ When in doubt → Python
+```
+
+**Key Trade-offs:**
+
+| Language | Best For | Avoid For | Notes |
+|----------|----------|-----------|-------|
+| **Shell** | Gluing Unix tools, simple pipelines | Complex logic, error handling | Fast to write, already installed |
+| **Python** | General default, data processing | High-performance daemons | Best LLM support, memory-intensive |
+| **Node.js** | Web APIs (Gmail, OpenAI, Stripe) | Unix tool orchestration | First-class async, native JSON |
+| **Go** | Performance-critical, concurrent | Rapid prototyping | High performance, worse ergonomics |
+
+**Database Selection:**
+- **SQLite:** Single-user, local-first, portable (N5 default) → File at `/path/to/data.db`
+- **PostgreSQL:** Multi-user, network access (rarely needed in N5)
+
+**SDK Consideration:** If a task heavily uses APIs (OpenAI, Gmail, Stripe), check which language has the best official SDK. First-class SDKs = less code, better error handling, automatic retries.
+
+**Vibe-Coding Factor:** Python has the largest LLM training corpus → better autocomplete, fewer hallucinations. Matters for rapid prototyping and learning.
+
+**When to apply:**
+- Choosing language for new scripts
+- Refactoring existing implementations
+- Evaluating performance vs development speed
+
+**Anti-patterns:**
+- Python for simple glue code (use shell)
+- Shell for complex logic (use Python)
+- Go for everything (premature optimization)
+- Ignoring SDK quality when building API-heavy tools
 
 ---
 

@@ -1,13 +1,13 @@
 ---
-date: "2025-10-12T00:00:00Z"
-version: 2.2
+date: "2025-10-16T00:00:00Z"
+version: 2.3
 category: core
 priority: high
 related_files: "['N5/knowledge/ingestion_standards.md']"
 ---
 # N5 Architectural Principles Index
 
-**Version 2.2 - Modular Structure**
+**Version 2.3 - Added Language Selection Principle**
 
 This index provides quick reference to all architectural principles. Load specific modules based on task context to minimize token usage and maintain focus.
 
@@ -62,14 +62,15 @@ This index provides quick reference to all architectural principles. Load specif
 ---
 
 ### Design Principles → `file 'Knowledge/architectural/principles/design.md'`
-**Load for:** Architecture, system design, content structure
+**Load for:** System architecture, information design, voice application
 
-- **Principle 3:** Voice Integration Policy (Tiered + Tags)
+- **Principle 3:** Voice Integration Policy  
 - **Principle 4:** Ontology-Weighted Analysis
 - **Principle 8:** Minimal Context, Maximal Clarity
 - **Principle 20:** Modular Design for Context Efficiency
+- **Principle 22:** Language Selection for Purpose (Shell, Python, Node.js, Go trade-offs)
 
-**Key concept:** Efficient, selective, purpose-driven design
+**Key concept:** Efficient design, appropriate tooling
 
 ---
 
@@ -130,6 +131,13 @@ Before implementing scripts, workflows, or infrastructure:
 ---
 
 ## Change Log
+
+### 2025-10-16 (v2.3)
+- **Added Principle 22:** Language Selection for Purpose
+- Created `Knowledge/architectural/principles/language_selection.md`
+- Covers: Shell vs Python vs Node.js vs Go trade-offs
+- Includes: SQLite vs server databases, SDK considerations, vibe-coding factors
+- Lesson from: Scripting language selection discussion
 
 ### 2025-10-12 (v2.2)
 - **Added Principle 21:** Document All Assumptions, Placeholders, and Stubs
