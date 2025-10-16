@@ -15,6 +15,7 @@ import logging
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Optional
+import pytz
 
 logging.basicConfig(
     level=logging.INFO,
@@ -35,15 +36,15 @@ class SessionStateManager:
         
         self.workspace.mkdir(parents=True, exist_ok=True)
     
-    def init(self, convo_type: str = "build", mode: str = "implementation") -> bool:
-        """Initialize SESSION_STATE.md from template."""
+    def init(self, convo_type: str = "discussion", mode: str = "", load_system: bool = False) -> bool:
+        """Initialize SESSION_STATE.md for this conversation."""
         try:
             if self.state_file.exists():
                 logger.info(f"SESSION_STATE.md already exists for {self.convo_id}")
                 return True
             
             now = datetime.now(timezone.utc)
-            now_et = now.astimezone().strftime("%Y-%m-%d %H:%M ET")
+            now_et = now.astimezone(pytz.timezone('America/New_York'))
             
             content = f"""# Session State
 **Auto-generated | Updated continuously**
@@ -52,8 +53,8 @@ class SessionStateManager:
 
 ## Metadata
 **Conversation ID:** {self.convo_id}  
-**Started:** {now_et}  
-**Last Updated:** {now_et}  
+**Started:** {now_et.strftime('%Y-%m-%d %H:%M %Z')}  
+**Last Updated:** {now_et.strftime('%Y-%m-%d %H:%M %Z')}  
 **Status:** active  
 
 ---
@@ -157,10 +158,15 @@ class SessionStateManager:
             
             self.state_file.write_text(content)
             logger.info(f"✓ Initialized SESSION_STATE.md for {self.convo_id}")
-            return True
             
+            if load_system:
+                logger.info("System files to load:")
+                logger.info("  - file 'Documents/N5.md'")
+                logger.info("  - file 'N5/prefs/prefs.md'")
+            
+            return True
         except Exception as e:
-            logger.error(f"Failed to initialize SESSION_STATE.md: {e}", exc_info=True)
+            logger.error(f"Failed to initialize SESSION_STATE: {e}")
             return False
     
     def read(self) -> Optional[Dict]:
@@ -251,8 +257,9 @@ def main():
     parser.add_argument("action", choices=["init", "update", "read"])
     parser.add_argument("--convo-id", required=True)
     parser.add_argument("--type", default="build", choices=["build", "research", "discussion", "planning"])
-    parser.add_argument("--mode", default="implementation")
-    parser.add_argument("--field", help="Field to update")
+    parser.add_argument("--mode", type=str, default="", help="Specific mode within type")
+    parser.add_argument("--load-system", action="store_true", help="Output system files to load")
+    parser.add_argument("--field", type=str, help="Field to update")
     parser.add_argument("--value", help="New value for field")
     
     args = parser.parse_args()
@@ -260,7 +267,7 @@ def main():
     manager = SessionStateManager(args.convo_id)
     
     if args.action == "init":
-        success = manager.init(convo_type=args.type, mode=args.mode)
+        success = manager.init(convo_type=args.type, mode=args.mode, load_system=args.load_system)
         return 0 if success else 1
     
     elif args.action == "read":
