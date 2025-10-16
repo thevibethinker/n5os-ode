@@ -1,0 +1,9 @@
+{
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at": "2025-10-16T02:39:54-04:00",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discovery_records_written": 0,
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging. No external participants processed."
+}

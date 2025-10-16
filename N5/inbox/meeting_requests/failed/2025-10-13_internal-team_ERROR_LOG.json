@@ -1,0 +1,16 @@
+{
+  "original_request": "N5/inbox/meeting_requests/2025-10-13_internal-team_request.json",
+  "meeting_id": "2025-10-13_internal-team",
+  "error_type": "NOT_PROCESSABLE",
+  "reason": "Transcript contains only technical testing of Fireflies tool, not a substantive meeting",
+  "details": {
+    "duration": "~3.5 minutes",
+    "content_summary": "User testing Fireflies.ai by asking math questions",
+    "strategic_value": "None",
+    "action_items": "None",
+    "participants": "Ilse Funkhouser (testing) + Fireflies.ai bot"
+  },
+  "recommendation": "Exclude internal test transcripts from meeting request pipeline",
+  "processing_timestamp": "2025-10-16T02:33:44-04:00",
+  "status": "EXCLUDED"
+}

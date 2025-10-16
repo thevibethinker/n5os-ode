@@ -52,5 +52,18 @@
     "gdrive_id": "1uZ34PQmYwcRktp8di_oIymXpKZ7yVPdp",
     "processed_filename_prefix": "[ZO-PROCESSED]",
     "status": "pending_rename"
-  }
+  },
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-10-15_external-careerspan-magic-edtech-panel-planning-speaker-sync/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.615235+00:00",
+      "backfilled": true,
+      "subject": "Follow-Up: Magic EdTech x Careerspan Panel [logistics \u2022 content strategy]",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

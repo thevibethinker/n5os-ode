@@ -1,3 +1,0 @@
----
-description: My new command
----

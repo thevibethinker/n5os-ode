@@ -20,5 +20,18 @@
   "crm_skip_reason": "Internal meeting - no external stakeholder",
   "processing_notes": "Internal co-founder strategic planning session discussing exit strategy, acquisition targets, fundraising options, and company positioning. Generated 7 REQUIRED blocks per Registry System v1.5. No CRM profile needed for internal meetings.",
   "registry_version": "1.5",
-  "workflow_version": "5.1.0"
+  "workflow_version": "5.1.0",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-10-10_spv-hmya-oeh/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.600084+00:00",
+      "backfilled": true,
+      "subject": "Unknown",
+      "email": "",
+      "stakeholder_name": "STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

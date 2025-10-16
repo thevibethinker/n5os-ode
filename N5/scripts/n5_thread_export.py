@@ -31,6 +31,13 @@ try:
 except ImportError:
     TIMELINE_AVAILABLE = False
 
+# Title generation
+try:
+    from n5_title_generator import TitleGenerator
+    TITLE_GENERATOR_AVAILABLE = True
+except ImportError:
+    TITLE_GENERATOR_AVAILABLE = False
+
 # Paths
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
@@ -655,11 +662,11 @@ class ThreadExporter:
     
     # ===== MODULAR EXPORT GENERATION (v2.2) =====
     
-    def generate_modular_exports(self, aar_data: Dict) -> Dict[str, str]:
+    def generate_modular_exports(self, aar_data: Dict, next_thread_title: Optional[str] = None) -> Dict[str, str]:
         """Generate modular markdown exports (v2.2 - 5-phase aligned)"""
         return {
             'INDEX.md': self._generate_index_md(aar_data),
-            'RESUME.md': self._generate_resume_md(aar_data),
+            'RESUME.md': self._generate_resume_md(aar_data, next_thread_title),
             'DESIGN.md': self._generate_design_md(aar_data),
             'IMPLEMENTATION.md': self._generate_implementation_md(aar_data),
             'VALIDATION.md': self._generate_validation_md(aar_data),
@@ -713,7 +720,7 @@ class ThreadExporter:
         
         return '\n'.join(md)
     
-    def _generate_resume_md(self, aar_data: Dict) -> str:
+    def _generate_resume_md(self, aar_data: Dict, next_thread_title: Optional[str] = None) -> str:
         """Generate RESUME.md - Quick resume entry point"""
         thread_id = self.thread_id
         export_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
@@ -759,6 +766,15 @@ class ThreadExporter:
             md.append(f"{idx}.{priority_str} {step['action']}")
             if step.get('details'):
                 md.append(f"   - {step['details']}")
+        
+        # Add next thread title suggestion
+        if next_thread_title:
+            md.append("\n---\n")
+            md.append("## 🔗 Resume in New Thread\n")
+            md.append(f"**Suggested Thread Title:** `{next_thread_title}`\n")
+            md.append("*Zo: When starting the next thread to continue this work, please name the thread:*\n")
+            md.append(f"**\"{next_thread_title}\"**\n")
+            md.append("\n*This ensures consistent sequential numbering and linkage between related threads.*")
         
         md.append("\n---\n")
         md.append("*For full details, see IMPLEMENTATION.md and DESIGN.md*")
@@ -886,7 +902,7 @@ class ThreadExporter:
         
         return '\n'.join(md)
     
-    def save_modular_aar(self, aar_data: Dict):
+    def save_modular_aar(self, aar_data: Dict, next_thread_title: Optional[str] = None):
         """Save AAR in modular format (v2.2) with atomic writes"""
         import tempfile
         
@@ -969,6 +985,17 @@ class ThreadExporter:
                 print("  [DRY-RUN] Preview mode - using smart extraction")
             self.aar_data = self.generate_smart_aar()
         
+        # Generate next thread title (if generator available and we have a current title)
+        next_thread_title = None
+        if TITLE_GENERATOR_AVAILABLE and self.title:
+            try:
+                title_generator = TitleGenerator()
+                next_thread_title = title_generator.generate_next_thread_title(self.title)
+                if next_thread_title:
+                    print(f"\n  📝 Generated next thread title: {next_thread_title}")
+            except Exception as e:
+                print(f"  ⚠️  Could not generate next thread title: {e}")
+        
         print("\nPhase 3: Validate AAR Data")
         valid, errors = self.validate_aar(self.aar_data)
         if not valid:
@@ -1011,7 +1038,7 @@ class ThreadExporter:
         # Execute
         print("\nPhase 5: Create Archive")
         if export_format == 'modular':
-            self.save_modular_aar(self.aar_data)
+            self.save_modular_aar(self.aar_data, next_thread_title)
         else:
             self.save_aar(self.aar_data, markdown)
         self.copy_artifacts()
@@ -1030,6 +1057,16 @@ class ThreadExporter:
         print(f"\n✅ AAR Export Complete!")
         print(f"   Archive: {self.archive_dir}")
         print(f"   Format: {export_format} (v{AAR_VERSION})")
+        
+        # Display next thread title prominently
+        if next_thread_title:
+            print("\n" + "="*70)
+            print("🔗 NEXT THREAD TITLE (Copy & Paste)")
+            print("="*70)
+            print(f"\n{next_thread_title}\n")
+            print("When resuming work in a new thread, use this title to maintain")
+            print("sequential numbering and thread linkage.")
+            print("="*70)
         
         return True
 
@@ -1094,14 +1131,53 @@ def main():
         print("   Expected: con_[16 characters]")
         sys.exit(1)
     
-    # Ask for title if not provided (unless auto-confirmed)
+    # Title generation workflow
     title = args.title
-    if not title and not args.dry_run and not args.yes:
+    
+    if not title and TITLE_GENERATOR_AVAILABLE and not args.dry_run:
+        # Generate title options automatically
+        print("\n" + "="*70)
+        print("TITLE GENERATION")
+        print("="*70)
+        print("\nAnalyzing thread content to generate title suggestions...")
+        
+        # Create temporary exporter to analyze artifacts
+        temp_exporter = ThreadExporter(thread_id, "temp", dry_run=True)
+        temp_exporter.discover_artifacts()
+        
+        # Generate smart AAR for content analysis
+        temp_aar = temp_exporter.generate_smart_aar()
+        
+        # Generate title options
+        title_generator = TitleGenerator()
+        title_options = title_generator.generate_titles(
+            temp_aar,
+            temp_exporter.artifacts
+        )
+        
+        if title_options and not args.yes:
+            # Interactive selection
+            title = title_generator.interactive_select(title_options)
+            if not title:
+                print("❌ Title generation cancelled.")
+                sys.exit(1)
+        elif title_options and args.yes:
+            # Auto-select first option
+            title = title_options[0]['title']
+            print(f"\n✓ Auto-selected title: {title}")
+        else:
+            # Fallback to default
+            title = f"conversation-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+            print(f"\n⚠️  No title options generated. Using: {title}")
+    
+    elif not title and not args.dry_run and not args.yes:
+        # Manual title entry (fallback if title generator unavailable)
         print("\nProvide a descriptive title for this thread:")
         print("(This will be used in the archive directory name)")
         title = input("Title: ").strip()
+    
     elif not title and args.yes:
-        # Generate default title for automated execution
+        # Generate default title for automated execution (ONLY if title generator unavailable)
         title = f"conversation-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     
     # Run export

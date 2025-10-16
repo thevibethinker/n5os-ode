@@ -70,5 +70,18 @@
     ]
   },
   "enrichment_priority": "MEDIUM",
-  "partnership_status": "pilot_initiated"
+  "partnership_status": "pilot_initiated",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-10-12_external-allie-cialeo/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.602856+00:00",
+      "backfilled": true,
+      "subject": "Unknown",
+      "email": "allie.cialeo@greenlite.com",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

@@ -13,8 +13,19 @@
     "Logan Currie (Careerspan)"
   ],
   "blocks_generated": {
-    "required": ["B26", "B01", "B02", "B08", "B21", "B31", "B25"],
-    "high_priority": ["B05", "B07"],
+    "required": [
+      "B26",
+      "B01",
+      "B02",
+      "B08",
+      "B21",
+      "B31",
+      "B25"
+    ],
+    "high_priority": [
+      "B05",
+      "B07"
+    ],
     "conditional": [],
     "total_count": 9
   },
@@ -24,5 +35,18 @@
   "n5os_tags": "[LD-COM] [GPT-E] [A-3]",
   "confidence": "High",
   "transcript_quality": "Excellent",
-  "processing_notes": "Meeting occurred 2025-09-29, processing on 2025-10-15 (16-day delay). Vrijen departed partway through for vet appointment; Logan continued implementation discussion using Ilsa's prep doc. Partnership positioned as pilot case for micro-community virtual recruiter model."
+  "processing_notes": "Meeting occurred 2025-09-29, processing on 2025-10-15 (16-day delay). Vrijen departed partway through for vet appointment; Logan continued implementation discussion using Ilsa's prep doc. Partnership positioned as pilot case for micro-community virtual recruiter model.",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-09-29_external-remotely-good-careerspan/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.590433+00:00",
+      "backfilled": true,
+      "subject": "Following Up: Teresa x Careerspan \u2022 Virtual Recruiter Pilot + MLH Intro",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

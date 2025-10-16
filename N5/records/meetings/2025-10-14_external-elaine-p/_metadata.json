@@ -24,5 +24,18 @@
   "gdrive_id": "1f1Se20t0rtYLuG6bjw1-yRajOJaOLmR2",
   "transcript_quality": "excellent",
   "confidence_score": "high",
-  "notes": "First meeting, networking/knowledge sharing focus, strong technical resonance, validated Careerspan pain points"
+  "notes": "First meeting, networking/knowledge sharing focus, strong technical resonance, validated Careerspan pain points",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-10-14_external-elaine-p/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.608630+00:00",
+      "backfilled": true,
+      "subject": "Follow-Up: Elaine P x Careerspan \u2022 AI Learning \u2022 Zo Platform",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }

@@ -1,0 +1,10 @@
+{
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at": "2025-10-15T21:09:43-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discovery_file_written": null,
+  "notes": "No staging files present in directory; nothing processed."
+}

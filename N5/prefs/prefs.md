@@ -82,6 +82,12 @@ Load modules selectively based on task context. **Do not load all modules by def
 - Most-used commands
 - Command registry pointers
 
+**Command Triggering** → `file 'N5/prefs/system/command-triggering.md'`
+- Two-layer system (formal + natural language)
+- Incantum triggers workflow
+- When to use commands.jsonl vs incantum_triggers.json
+- Troubleshooting command recognition
+
 ---
 
 ### Operations

@@ -1,0 +1,39 @@
+{
+  "meeting_id": "2025-09-24_alex-x-vrijen-wisdom-partners-coaching",
+  "participants": "Alex Caveny, Vrijen Attawar",
+  "date": "2025-09-24",
+  "stakeholder_type": "ADVISOR",
+  "processing_version": "Registry v1.5",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B13_PLAN_OF_ACTION",
+    "B24_PRODUCT_IDEA_EXTRACTION"
+  ],
+  "blocks_count": 10,
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/alex-caveny.md",
+  "enrichment_priority": "HIGH",
+  "howie_tags": "[LD-ADV] [GPT-E] [A-3]",
+  "transcript_source": "Google Drive",
+  "transcript_gdrive_id": "1SYaIG0Z0IeEyioZyw7kgFeDin_EIjXLC",
+  "transcript_local_path": "N5/inbox/transcripts/2025-09-24_alex-x-vrijen-wisdom-partners-coaching.docx",
+  "transcript_quality": "Excellent",
+  "confidence_score": "High",
+  "processing_timestamp": "2025-10-15T04:01:59Z",
+  "processed_by": "Zo AI",
+  "key_themes": [
+    "GTM strategy pivot to employer-side",
+    "Playing card candidate presentation concept",
+    "Direct-to-hiring-manager approach",
+    "HR vs. hiring manager buyer dynamics",
+    "PM hiring chaos as strategic wedge"
+  ],
+  "strategic_value": "Breakthrough session that completely reframed employer-side product approach; Alex's playing card concept is potentially game-changing differentiation from traditional recruiters"
+}

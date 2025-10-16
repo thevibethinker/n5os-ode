@@ -1,0 +1,28 @@
+{
+  "meeting_id": "2025-09-29_external-remotely-good-careerspan",
+  "processing_date": "2025-10-15T11:00:33Z",
+  "transcript_source": "gdrive_id:1vFQ7XdCJfy71IJT4YXSCah9NzuCnt1RK",
+  "registry_version": "1.5",
+  "workflow_version": "5.1.0",
+  "stakeholder_type": "COMMUNITY",
+  "stakeholder_name": "Teresa Anoje",
+  "organization": "Remotely Good / Social Impact SF",
+  "participants": [
+    "Teresa Anoje (Remotely Good)",
+    "Vrijen Attawar (Careerspan)",
+    "Logan Currie (Careerspan)"
+  ],
+  "blocks_generated": {
+    "required": ["B26", "B01", "B02", "B08", "B21", "B31", "B25"],
+    "high_priority": ["B05", "B07"],
+    "conditional": [],
+    "total_count": 9
+  },
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/teresa-anoje.md",
+  "enrichment_priority": "MEDIUM",
+  "n5os_tags": "[LD-COM] [GPT-E] [A-3]",
+  "confidence": "High",
+  "transcript_quality": "Excellent",
+  "processing_notes": "Meeting occurred 2025-09-29, processing on 2025-10-15 (16-day delay). Vrijen departed partway through for vet appointment; Logan continued implementation discussion using Ilsa's prep doc. Partnership positioned as pilot case for micro-community virtual recruiter model."
+}

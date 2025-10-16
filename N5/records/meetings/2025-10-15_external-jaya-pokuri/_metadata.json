@@ -25,5 +25,18 @@
   "transcript_quality": "Excellent",
   "confidence_score": "High",
   "howie_tags": "[LD-NET] [GPT-E] [A-3]",
-  "notes": "First meeting with Jaya in recent period. AI consulting portfolio-building conversation. No formal follow-up commitments."
+  "notes": "First meeting with Jaya in recent period. AI consulting portfolio-building conversation. No formal follow-up commitments.",
+  "generated_deliverables": [
+    {
+      "type": "follow_up_email",
+      "path": "N5/records/meetings/2025-10-15_external-jaya-pokuri/B25_DELIVERABLE_CONTENT_MAP.md",
+      "section": "Section 2",
+      "status": "pending",
+      "detected_at": "2025-10-16T00:46:56.617817+00:00",
+      "backfilled": true,
+      "subject": "Follow-Up: Jaya x Careerspan AI architecture \u2022 consulting",
+      "email": "",
+      "stakeholder_name": "# STAKEHOLDER_INTELLIGENCE"
+    }
+  ]
 }
