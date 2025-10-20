@@ -26,29 +26,81 @@ These principles ensure outputs are accurate, complete, and verifiable.
 
 ## 15) Complete Before Claiming Complete
 
-**Purpose:** Prevent premature "done" declarations
+**Purpose:** Report accurate progress, never claim completion prematurely
 
 **Rules:**
-- Never mark work as "complete" or "production-ready" until ALL stated objectives are met.
-- If implementing a design with 23 sections, ensure all 23 sections are present and functional.
-- Test with production configuration, not development proxies.
-- Define "complete" explicitly before starting work.
+- Only report tasks as "complete" when all requirements are met and verified.
+- Track progress explicitly with quantitative metrics (e.g., "13/23 complete, 56%").
+- If blocked or uncertain, state what remains rather than claiming done.
+- Test all success criteria before marking complete.
 
 **When to apply:**
-- System implementations
-- Feature development
-- Workflow automation
-- Documentation projects
+- Multi-phase projects
+- Automation workflows
+- System migrations
+- Integration work
 
 **Anti-patterns:**
-- Saying "v2.1 complete" when only 59% of sections are implemented
-- Marking as done when tests haven't been run
-- Shipping with known gaps and calling them "future enhancements"
+- "✓ Done" when only 59% complete
+- Claiming completion while significant work remains
+- Ambiguous status updates ("mostly done", "almost there")
+- Premature completion claims due to loss of context
 
-**Example from thread export refactoring (2025-10-12):**
-- Design specified 23 sections across 6 files
-- Must verify all 23 sections exist and function
-- Must test with production LLM, not development substitute
+**Lessons Learned:**
+
+**Dry-Run Early Return Ordering (2025-10-13):**
+- **Context:** Multi-phase scripts with dry-run mode
+- **Problem:** Original implementation returned early before displaying Phase 6 dry-run preview
+- **Solution:** Place dry-run early return AFTER displaying all phase previews, not before
+- **Rationale:** User needs complete picture of what will happen; partial preview defeats dry-run purpose
+- **Key insight:** In multi-phase dry-run, show ALL phases before early return
+
+**Dual Title Generation for Thread Continuity (2025-10-14):**
+- **Context:** Thread export workflow
+- **Pattern:** Generate BOTH current thread title AND next thread title during export
+- **Implementation:** Next title stored in RESUME.md and displayed prominently for copy/paste
+- **Rationale:** Enables seamless continuation; user doesn't need to think about naming
+- **Key insight:** Anticipate next step and prepare artifacts for continuation
+
+**Mock Data in Production (2025-10-18):**
+- **Context:** Daily meeting prep digest generating fabricated meeting data
+- **Problem:** Python script contained hardcoded mock data in functions meant to call real APIs
+- **Root cause:** Incomplete implementation - stub functions with mock returns never replaced with real logic
+- **Impact:** Scheduled task ran daily, generating plausible but fake data, eroding trust
+- **Prevention:** 
+  - Mark all stub/mock code with `# STUB:` comments
+  - Add assertions: `assert not IS_PRODUCTION or data_source == 'real_api'`
+  - Test in production mode before scheduling
+  - Document all placeholders explicitly (P21)
+- **Key insight:** Mock data looks plausible, making it dangerous; requires explicit guards
+
+**No Glazing - Honest Technical Feedback (2025-10-14):**
+- **Context:** Personal assessment request with explicit "no glazing, just cold hard facts"
+- **Implementation:** Delivered honest assessment including growth edges (over-engineering risk, technical ambition vs. execution gaps)
+- **Reception:** User validated directness, found it more valuable than softened feedback
+- **Key insight:** When user requests unvarnished assessment, honor that request; accuracy builds trust even when uncomfortable
+- **Application:** Technical reviews, progress assessments, risk analysis
+
+**Example from automated cleanup system (2025-10-14):**
+- **Problem:** System generated cleanup reports but never executed the cleanup
+- **Root cause:** Script only had report generation implemented; execution phase was TODO
+- **Impact:** User thought cleanup was complete when only planning phase worked
+- **Prevention:**
+  - Track completion percentage explicitly (e.g., "Phase 1/3 complete (33%)")
+  - Test full end-to-end workflow before claiming "done"
+  - Document incomplete phases explicitly: "Report generation: ✓ | Execution: TODO"
+- **Key insight:** Partial implementations are valuable but must be labeled accurately
+
+**Example from automated mode implementation (2025-10-16):**
+- **Problem:** Automated mode still prompted for interactive features (emoji selection, confirmations)
+- **Root cause:** Interactive features not disabled in automated code path
+- **Detection:** Scheduled task hung waiting for user input that would never come
+- **Prevention:**
+  - Test automated mode in non-interactive environment
+  - Add `--non-interactive` flag that disables ALL prompts
+  - Use reasonable defaults when automation flag is set
+  - Document which features are disabled in automated mode
+- **Key insight:** Interactive assumptions are invisible until tested headless
 
 ---
 
@@ -69,6 +121,9 @@ These principles ensure outputs are accurate, complete, and verifiable.
 - Data interpretation
 - Knowledge extraction
 - API and technical documentation
+- Input validation
+- Search and filtering
+- Security checks
 
 **Anti-patterns:**
 - Adding strategic context that "sounds smart" but isn't grounded in data
@@ -76,6 +131,17 @@ These principles ensure outputs are accurate, complete, and verifiable.
 - Embellishing facts to seem more insightful
 - Confusing speculation with analysis
 - **Inventing API limitations without checking documentation**
+- Shipping mock data to production (see P15 Mock Data lesson)
+
+**Lessons Learned:**
+
+**Quantitative Thresholds Over Boolean Checks (2025-10-13):**
+- **Context:** git-check v2 refactoring for deletion detection
+- **Problem:** Boolean check (ANY deletions) caused alert fatigue and false positives from minor edits
+- **Solution:** Quantitative threshold: >50 lines deleted AND >70% deletion ratio
+- **Result:** Eliminated false positives while catching significant data loss
+- **Key insight:** Smarter detection requires thresholds, not binary flags; reduces noise, increases signal
+- **Application:** Any pattern detection, validation, or monitoring system
 
 **Example from meeting digest accuracy issues (2025-10-12):**
 - Bad: "Strategic partnership aimed at market expansion" (speculative)
@@ -92,6 +158,16 @@ These principles ensure outputs are accurate, complete, and verifiable.
 - **Lesson:** If you don't know an API's actual limits, say so. Don't invent plausible-sounding limitations.
 - **Rule:** When working with APIs, either cite documentation or explicitly state "I don't know the actual limits"
 
+**Example from git-check refactoring (2025-10-13):**
+- Bad: Flag ANY file with deletions (boolean check) → alert fatigue, false positives
+- Good: Flag files with >50 lines deleted AND >70% deletion ratio → catches actual data loss
+- Principle: Quantitative thresholds eliminate false positives while catching real issues.
+
+**Example from sensitive data scanner (2025-10-13):**
+- Bad: Flag pattern matches anywhere in file → triggers on documentation examples
+- Good: Count markdown backticks, skip pattern matches inside code spans → context-aware detection
+- Principle: Content-aware scanning prevents false positives in documentation.
+
 ---
 
 ## 18) State Verification is Mandatory
@@ -99,22 +175,27 @@ These principles ensure outputs are accurate, complete, and verifiable.
 **Purpose:** Confirm operations succeeded
 
 **Rules:**
-- Systems that write state must verify writes succeeded.
-- Check that files exist, have expected content, and are not truncated.
-- Provide explicit verification steps in documentation.
-- Log verification results.
+- After any write operation, verify the result.
+- Check: file exists, size > 0, structure is valid, content matches intent.
+- For multi-step operations, checkpoint and verify after each step.
+- Don't assume writes succeeded—confirm them.
 
 **When to apply:**
-- File writes
-- Database updates
-- Configuration changes
-- State transitions in workflows
+- File I/O operations
+- Database writes
+- API calls
+- Multi-phase workflows
+
+**Implementation:**
+- Read-after-write verification
+- Checksums for integrity
+- Structure validation (JSON parsing, schema checks)
+- Size sanity checks
 
 **Anti-patterns:**
-- Writing state file and assuming success without checking
-- No post-write validation
-- Silent partial writes
-- Trusting error codes without content verification
+- Write and assume success
+- No verification between phases
+- Claiming complete without confirming state (see P15 Dry-Run Early Return lesson)
 
 **Implementation:**
 - After write: check file exists
@@ -147,6 +228,29 @@ These principles ensure outputs are accurate, complete, and verifiable.
 - Issue: Repeatedly made mistake of saying 'call LLM API' or 'implement LLM integration' when designing lessons extraction. Correct approach: I AM the LLM running in this environment. I should do the analysis directly during conversation, not call external services.
 - Context: User has been 'burned by this multiple times' - I keep treating myself as external to the system rather than recognizing I'm the processing engine. This violates operational principles and adds unnecessary complexity.
 - Resolution: Clarified: When scripts need LLM analysis, I do it during the conversation, not via API. Implemented Option A: During conversation-end, I extract lessons FIRST (before script runs), then proceed with normal workflow. No API keys, no external calls - just me doing the work directly.
+
+**Exit Codes for Blocking Behavior (2025-10-14):**
+- **Context:** git-check script needed to block upstream workflows on detection
+- **Pattern:** Use meaningful exit codes to signal state
+  - `exit 0` - Clean state, safe to proceed
+  - `exit 1` - Issues detected, block automation
+  - `exit 2` - Fatal error, cannot determine state
+- **Implementation:** Shell: `if git-check.sh; then proceed; else block; fi`
+- **Key insight:** Exit codes enable scripts to participate in larger control flow
+
+**Multi-Phase Resume Validation (2025-10-16):**
+- **Context:** Resuming multi-phase project after interruption
+- **Problem:** Hard to know what's complete, what's in-progress, what's broken
+- **Solution:**
+  1. Verify each phase's output artifacts exist and are valid
+  2. Check phase-specific state indicators (flags, markers, completion files)
+  3. Validate no partial/corrupt state from incomplete phases
+  4. Document current state explicitly before proceeding
+- **Example checklist:**
+  - Phase 1 (Export): Output file exists, size > 0, valid JSON structure
+  - Phase 2 (Transform): Transformed file exists, schema validates
+  - Phase 3 (Load): Database contains expected records, counts match
+- **Key insight:** State verification prevents building on broken foundations
 
 ---
 
@@ -200,8 +304,36 @@ These principles ensure outputs are accurate, complete, and verifiable.
 - Allows proper estimation of remaining effort
 - Reduces the chance of shipping placeholder code
 
+**Lessons Learned:**
+
+**Ask Clarifying Questions Before Implementation (2025-10-13):**
+- **Context:** Building git-check security scanner
+- **Process:** Identified 6 ambiguities (deletion threshold, file size limit, protected files, blocking behavior, scanning depth, glitch history) and asked targeted questions BEFORE building
+- **Result:** Prevented wasted work from wrong assumptions, got clear requirements upfront
+- **Key insight:** 5 minutes of questions saves hours of rework; ambiguity detection is a skill
+- **Pattern:** When encountering ANY ambiguity, stop and ask minimum 3 clarifying questions before proceeding
+- **Application:** Required for all system design, refactoring, and feature implementation (matches Vibe Builder persona requirement)
+
+**Document All Assumptions Explicitly (2025-10-12):**
+- **Context:** Created lessons extraction system with placeholder LLM function
+- **Good practice:** Documented in code comments AND dedicated ASSUMPTIONS.md file
+- **Format:** Clear marker (`# STUB:`), explanation of what's needed, where to implement
+- **Why it worked:** Made incomplete work visible; prevented shipping placeholder to production
+- **Key insight:** Assumptions hidden in code are invisible; explicit documentation makes them trackable
+
 **Example from lessons system implementation (2025-10-12):**
 - Created `extract_lessons_llm()` with placeholder
 - Documented it returns empty list
 - BUT: Didn't create manifest of ALL assumptions made
 - Should have: Listed every stub, every assumption, every TODO in one place
+
+**Running Scripts Before Manual Phases (2025-10-13):**
+- **Context:** conversation-end command has Phase 0 (Lesson Extraction) that must be done manually by LLM
+- **Anti-pattern:** Running `conversation-end.sh` script immediately when user requested it
+- **Problem:** Script doesn't have conversation context; only LLM does
+- **Correct approach:** 
+  1. Read command documentation FIRST
+  2. Identify manual prerequisite phases
+  3. Execute manual phases (e.g., lesson extraction)
+  4. THEN run automated script for remaining phases
+- **Key insight:** Don't assume workflow from memory; read implementation first before taking action

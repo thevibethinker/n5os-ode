@@ -1,0 +1,20 @@
+SKIPPED: Internal team meeting (daily stand-up)
+
+Meeting ID: 2025-10-17_internal-team
+Classification: internal
+Processed: 2025-10-17 16:27 ET
+
+REASON:
+Registry System v1.5 is designed for EXTERNAL stakeholder meetings only.
+This was an internal team stand-up between Danny, Ilse, and Logan.
+
+CONTENT SUMMARY:
+- Team health check (Danny on antibiotics, discussing medical care)
+- Technical discussion (MacOS/iOS updates, UI issues)
+- Customer conversation recap (Courtney/Meg meeting about Paylocity integration)
+- Performance concerns (job processing scale: 78 jobs taking 3.5+ hours)
+
+NO CRM PROFILES CREATED
+NO BLOCKS GENERATED
+
+If internal meeting analysis is needed, use a different workflow.

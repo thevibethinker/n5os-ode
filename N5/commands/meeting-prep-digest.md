@@ -192,6 +192,25 @@ Please send pitch deck in advance to vrijen@mycareerspan.com.
 
 ---
 
+## Scheduled Task Instruction Updates
+
+The scheduled task MUST NOT generate or allow any of the following placeholder or meta-commentary texts ANYWHERE in the digest output:
+- "(max returned by API)"
+- "(Earlier history may exist but not returned by Gmail API)"
+- "No meeting objective documented in calendar" (only if the calendar description field is present)
+- Parenthetical commentary explaining internal system details
+
+Explicitly prohibited:
+- Writing parenthetical or bracketed explanatory notes on data or API limitations
+- Placing comments about placeholders or system behavior inside the digest
+
+Manual regeneration of digest files is strictly forbidden.
+Any required fixes must be applied by modifying the scheduled task or underlying script.
+
+Violations must trigger validation failure and blocking of digest write.
+
+---
+
 ## Arguments
 
 | Argument | Type | Default | Description |

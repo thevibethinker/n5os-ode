@@ -6,6 +6,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1Of6T8OW7sis_1AUxqxuFuoCDuUa_Ancj/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Daily team stand-up-transcript-2025-10-02T14-29-57.640Z.docx",
   "created_at": "2025-10-11T03:01:44.863267+00:00",
-  "status": "pending",
-  "stakeholder_type": "unknown"
+  "status": "processed",
+  "stakeholder_type": "unknown",
+  "processed_at": "2025-10-11T03:01:44.863267+00:00"
 }

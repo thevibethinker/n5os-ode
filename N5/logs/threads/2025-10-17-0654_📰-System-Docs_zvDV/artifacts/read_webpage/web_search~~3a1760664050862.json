@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Google Transcription: 6 Handy Tools That Do It for Free - Riverside",
+    "url": "https://riverside.com/blog/google-transcription",
+    "text": "| Google Speech-to-Text API | Free (60 min/mo); then $0.006/15s | Cloud/API (tech setup required) | Advanced transcription needs; automation | 125+ languages; Highly accurate; Customizable | ### How to transcribe with Google Meet transcription Here’s how to use Google Meet transcription to transcribe your next meeting: **Step 4**: End your meeting by clicking **“Leave Call**.” An email with a link to the transcript (saved as a Google Doc) will be sent to the meeting organizer, co-hosts, and the person who started the transcription. ### How to transcribe with Google Keep Transcription **Step 4**: To save the transcript, select and copy the text to paste it into another document, such as Google Docs. The Google Recorder App is a powerful voice recording and real-time transcription tool, but it’s only available on Google Pixel phones (Pixel 2 and newer)."
+  },
+  {
+    "title": "Best Transcription Apps in 2025 - Appy Pie Automate",
+    "url": "https://www.appypieautomate.ai/blog/best-transcription-apps",
+    "text": "Google Drive and Rev Integration: Automatically upload completed transcripts to your Drive folders. ... API access for automation and bulk processing"
+  },
+  {
+    "title": "How to Transcribe Voice Memos to Texts | ClickUp",
+    "url": "https://clickup.com/blog/how-to-transcribe-voice-memos/",
+    "text": "The Google Recorder app is one of the best free tools out there for automatic transcription. Here's how it works: Open the Recorder app and start recording your"
+  },
+  {
+    "title": "Create Google Docs documents from new Otter.ai recordings - Zapier",
+    "url": "https://zapier.com/apps/google-docs/integrations/otterai/255611902/create-google-docs-documents-from-new-otterai-recordings",
+    "text": "When you complete a recording on Otter.ai, this automation creates a new document in Google Docs using your transcript text. This streamlines your note"
+  },
+  {
+    "title": "How to record a Google Meet meeting - 3 methods - News | Plaud US",
+    "url": "https://www.plaud.ai/blogs/news/record-google-meet-sessions-three-methods?srsltid=AfmBOorKAxgrlOjLavC9P2p9xq36puTtImWZl9X_sjYQHPhhl1auNDTC",
+    "text": "The automatic transcript and easy access make it ideal for documentation, compliance, or quick reviews. Method 2 - Record Google Meet using your own devices."
+  },
+  {
+    "title": "How to record a Google Meet meeting - 3 methods - News | Plaud US",
+    "url": "https://www.plaud.ai/blogs/news/record-google-meet-sessions-three-methods?srsltid=AfmBOoqrsPxdCcKLgeDOFYJ4oTiceOqO9glwCViwNVzSgRLmLmh5773W",
+    "text": "The automatic transcript and easy access make it ideal for documentation, compliance, or quick reviews. Method 2 - Record Google Meet using your own devices."
+  },
+  {
+    "title": "How to automate transcription and email process for recordings?",
+    "url": "https://www.facebook.com/groups/plaudcommunity/posts/637976899104900/",
+    "text": "Is there a way to automate the process further? I'd like my recordings to be transcribed and then emailed to me without having to manually open the app,"
+  },
+  {
+    "title": "The 7 Best Meeting Recorder Apps for Agencies in 2025 - Scribbl",
+    "url": "https://www.scribbl.co/post/best-meeting-recorder-app",
+    "text": "It offers unlimited free recordings and transcripts for Google Meet, Zoom, and Microsoft Teams, making it an incredibly accessible entry point for agencies wanting to capture every billable moment without immediate overhead. A client strategy session can be recorded, summarized by AI, and shared directly within Zoom Team Chat, with action items linked to a Zoom Doc. This tight integration ensures that critical client information never leaves the secure environment of your agency’s communication hub. A client strategy session can be recorded, summarized by AI, and shared directly within Zoom Team Chat, with action items linked to a Zoom Doc. This tight integration ensures that critical client information never leaves the secure environment of your agency’s communication hub."
+  },
+  {
+    "title": "How To Transcribe Voice Memos To Text - MeetGeek",
+    "url": "https://meetgeek.ai/blog/how-to-transcribe-voice-memos",
+    "text": "Simply export the recording in a supported format (such as M4A, MP3, or WAV), upload it to the tool, and let the AI transcription process convert it into an"
+  },
+  {
+    "title": "How to Automate Note-Taking During a Google Meet Meeting",
+    "url": "https://www.happyscribe.com/blog/how-to-automate-note-taking-during-a-google-meet-meeting",
+    "text": "Here is a step-by-step guide for setting up an automatic note-taking system for your Google Meet meetings. Step 1: Install Google Meet Transcripts or a similar"
+  },
+  {
+    "title": "Method: conferenceRecords.transcripts.entries.get | Google Meet",
+    "url": "https://developers.google.com/workspace/meet/api/reference/rest/v2/conferenceRecords.transcripts.entries/get",
+    "text": "* Español – América Latina * 中文 – 简体 * 中文 – 繁體 * Google Meet * Google Workspace * Google Meet * Path parameters * Request body * Authorization scopes Gets a `TranscriptEntry` resource by entry ID. Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. `GET https://meet.googleapis.com/v2/{name=conferenceRecords/*/transcripts/*/entries/*}` | Parameters | ### Request body The request body must be empty. If successful, the response body contains an instance of `TranscriptEntry`. ### Authorization scopes Requires one of the following OAuth scopes: * `https://www.googleapis.com/auth/meetings.space.created` * `https://www.googleapis.com/auth/meetings.space.readonly` [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-04-02 UTC.\"],[],[],null,[]]"
+  },
+  {
+    "title": "Best Call Transcription Software & Apps of 2025: Our Picks - Allo",
+    "url": "https://www.withallo.com/blog/best-call-transcription-software-apps",
+    "text": "Allô’s AI automatically records your calls, generates summaries and transcripts, takes notes, updates your CRM, sends SMS messages, handles after-hours calls, and remembers every word so your team can access the information later. **Rev Call Recorder** is a phone call transcription app for iPhone that lets you record both incoming and outgoing calls with no time limits or subscriptions. It supports automatic call recording for both phone and VoIP apps (like WhatsApp, Skype, Zoom) and offers transcription features for recorded calls. * Dialpad pricing starts at $15/user/month for the Standard plan, which includes unlimited calls, HD meetings, built-in messaging, live transcriptions, and AI-powered call summaries. * For **VoIP calls** (Zoom, Meet, etc.), apps like **Allô**, **Dialpad**, or **Otter.ai** can record and transcribe in real-time."
+  },
+  {
+    "title": "Automating meeting transcripts/summaries : r/AI_Agents - Reddit",
+    "url": "https://www.reddit.com/r/AI_Agents/comments/1j5q0r8/automating_meeting_transcriptssummaries/",
+    "text": "Automating meeting transcripts/summaries : r/AI_Agents Skip to main contentAutomating meeting transcripts/summaries : r/AI_Agents A place for discussion around the use of AI Agents and related tools. Automating meeting transcripts/summaries I’m trying to fully automate the process of recording an **in-person** meeting, transcribing it, summarising it with an LLM, and receiving a formatted summary via email. Initially I used **Otter.ai**, which works well for transcriptions, but automation is a nightmare. I looked at **Rev.com**, which offers an API on their automated transcription plan, but I’m running into issues: 1.   **Finding another transcription service** that actually works with API-driven automation without enterprise pricing. Best meeting summary automation tools *   Games  *   Other Games *   About Reddit"
+  },
+  {
+    "title": "Set up Speech-to-Text - Google Cloud",
+    "url": "https://cloud.google.com/speech-to-text/docs/before-you-begin",
+    "text": "* [Cloud Speech-to-Text](https://cloud.google.com/speech-to-text/docs) * [Cloud Speech-to-Text](https://cloud.google.com/speech-to-text/docs) Before you can begin sending requests to Speech-to-Text, you must enable the API in the Google Cloud console. * (Optional) Create a new Google Cloud Storage bucket to store your audio data. If you are new to coding, we recommend that you start with the [step-by-step in-console tutorials in Google Cloud Platform](/speech-to-text/docs/console-tutorials) before beginning this quickstart. ## Set up your Google Cloud project for Speech-to-Text To enable the Speech-to-Text API for use with your project, click **ENABLE**. If you intend to transcribe audio longer than 60 seconds or with a file size larger than 10 MB, you must store the audio data in a Cloud Storage bucket before you can transcribe it using Speech-to-Text."
+  },
+  {
+    "title": "Best APIs for recording Zoom, Microsoft Teams, and Google Meet ...",
+    "url": "https://www.nylas.com/blog/best-apis-for-recording-zoom-microsoft-teams-google-meet/",
+    "text": "This guide breaks down what developers need to know when selecting and implementing APIs for cross-platform recordings."
+  },
+  {
+    "title": "9 Best Transcript Summarizers Powered by AI - Notta",
+    "url": "https://www.notta.ai/en/blog/transcript-summarizer",
+    "text": "AssemblyAI Playground is an application that offers real-time transcription, which lets you record voice to generate transcripts and summaries. You can even"
+  },
+  {
+    "title": "Top 5 Free Automatic Transcription Tools to Use in 2025 - Tactiq",
+    "url": "https://tactiq.io/learn/free-automatic-transcription-tools",
+    "text": "This article highlights five of the best free automatic transcription tools to use to help you choose the perfect fit for your needs. ## Tactiq: The Best Free Automatic Transcription Tool to Use in 2025 Restream provides a free, AI-powered tool for converting videos into text, making it a top choice for those who need quick and accurate transcriptions. While free transcription tools offer great starting points, Tactiq takes things to the next level by combining advanced transcription with AI-powered features that simplify your workflow. Free automatic transcription tools transform how we capture and organize information from meetings, podcasts, and videos. Tactiq is a top choice for transcribing audio files, thanks to its accurate AI transcription, real-time processing, and customizable workflows that help you turn transcripts into actionable insights."
+  },
+  {
+    "title": "How to record meetings in your app with an AI meeting bot - Nylas",
+    "url": "https://www.nylas.com/blog/how-to-record-meetings-in-your-app-with-an-ai-meeting-bot/",
+    "text": "* Meeting bot APIs reduce engineering time for platform integrations, calendar syncing, and secure data infrastructure for compliance and permissions. This API lets you build an AI meeting bot that joins meetings, records audio and video, while also providing accurate transcriptions. curl --request POST \\ curl --request  POST  \\ --url \"https://api.us.nylas.com/v3/grants//notetakers\" \\ --url \"https://api.us.nylas.com/v3/grants//notetakers\"  \\ --header 'Accept: application/json, application/gzip' \\ --header 'Accept: application/json, application/gzip'  \\ --header 'Authorization: Bearer ' \\ --header 'Authorization: Bearer '  \\ --header 'Content-Type: application/json' \\ --header 'Content-Type: application/json'  \\ --data '{--data '{ \"meeting_link\": \"\", \"meeting_link\": \"\", \"name\": \"Nylas Notetaker\", \"name\": \"Nylas Notetaker\", \"join_time\": 1732657774, \"join_time\": 1732657774, \"meeting_settings\": { \"meeting_settings\": { \"video_recording\": true, \"video_recording\": true, \"audio_recording\": true,  \"audio_recording\": true,  \"transcription\": true \"transcription\": true } }}'}' The Nylas Notetaker API helps developers build and integrate AI meeting bots in the most productive and efficient way:"
+  },
+  {
+    "title": "Gemini 2.5 Pro for Audio Transcription - YouTube",
+    "url": "https://www.youtube.com/watch?v=LMhe2egLsrQ",
+    "text": "Gemini 2.5 Pro for Audio Transcription\nSam Witteveen\n103000 subscribers\n763 likes\n38341 views\n6 Apr 2025\nIn this video, I go through using the new Gemini 2.5 Pro for audio transcription and audio analysis tasks and show you how to get the best results out. \n\nColab: https://dripl.ink/mXQLh\nPricing: https://blog.google/products/gemini/gemini-preview-model-billing-update/\nGemini 2.5 Pro Capabilities: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#gemini-2.5-pro-exp-03-25\n\nFor more tutorials on using LLMs and building agents, check out my Patreon\nPatreon: https://www.patreon.com/SamWitteveen\nTwitter: https://x.com/Sam_Witteveen\n\n🕵️ Interested in building LLM Agents? Fill out the form below\nBuilding LLM Agents Form: https://drp.li/dIMes\n\n👨‍💻Github:\nhttps://github.com/samwit/llm-tutorials\n\n⏱️Time Stamps:\n00:00 Intro\n00:19 Gemini 2.5 Pro Experimental Blog\n01:03 Gemini 2.5 Pro Capabilities\n01:27 Output Tokens\n02:01 Pricing\n02:30 Supported Audio Formats\n02:43 Technical Details About Audio\n05:25 Demo (Colab)\n06:43 Audio Diarization Process\n74 comments\n"
+  },
+  {
+    "title": "Work with artifacts | Google Meet",
+    "url": "https://developers.google.com/workspace/meet/api/guides/artifacts",
+    "text": "This guide explains how to get details about the different meeting artifacts generated by a conference using the Google Meet REST API."
+  }
+]

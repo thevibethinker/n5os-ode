@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1jrfy78OteqF8QWVmbb4b45eAbf5sagqs",
   "original_filename": "Rajesh Nerlikar x Vrijen-transcript-2025-09-19T16-01-12.937Z.docx",
   "created_at": "2025-10-11T04:07:15.345863+00:00",
-  "status": "pending",
-  "external_participant": "rajesh-nerlikar"
+  "status": "processed",
+  "external_participant": "rajesh-nerlikar",
+  "processed_at": "2025-10-11T04:07:15.345863+00:00"
 }

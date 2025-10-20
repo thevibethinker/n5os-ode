@@ -1,0 +1,127 @@
+{
+  "tabs": true,
+  "toolbar": true,
+  "worksheets": [
+    {
+      "worksheetName": "Revenue Tracker",
+      "minDimensions": [8, 35],
+      "columns": [
+        {"type": "text", "title": "Week Of", "width": 120},
+        {"type": "text", "title": "Revenue Source", "width": 150},
+        {"type": "numeric", "title": "Amount", "width": 100, "mask": "$#,##0.00"},
+        {"type": "text", "title": "Status", "width": 100},
+        {"type": "text", "title": "Notes", "width": 200},
+        {"type": "numeric", "title": "Weekly Total", "width": 120, "mask": "$#,##0.00"},
+        {"type": "numeric", "title": "Monthly Total", "width": 120, "mask": "$#,##0.00"},
+        {"type": "numeric", "title": "Cumulative", "width": 120, "mask": "$#,##0.00"}
+      ],
+      "data": [
+        ["Oct 21-27", "Careerspan Select (Client 1)", 0, "Pipeline", "", "=SUM(C2:C7)", "=SUM(F2:F5)", "=F2"],
+        ["Oct 21-27", "V AI Consulting (Client 1)", 0, "Pipeline", "", "", "", "=H2+F3"],
+        ["Oct 21-27", "Logan Content Sale 1", 0, "Pipeline", "", "", "", "=H3+F4"],
+        ["Oct 21-27", "Other", 0, "Pipeline", "", "", "", "=H4+F5"],
+        ["Oct 28-Nov 3", "", 0, "", "", "=SUM(C6:C10)", "=SUM(F6:F9)", "=H5+F6"],
+        ["Oct 28-Nov 3", "", 0, "", "", "", "", "=H6+F7"],
+        ["Oct 28-Nov 3", "", 0, "", "", "", "", "=H7+F8"],
+        ["Oct 28-Nov 3", "", 0, "", "", "", "", "=H8+F9"],
+        ["Nov 4-10", "", 0, "", "", "=SUM(C10:C14)", "=SUM(F10:F13)", "=H9+F10"],
+        ["Nov 4-10", "", 0, "", "", "", "", "=H10+F11"],
+        ["", "", "", "", "", "", "", ""],
+        ["", "", "", "", "GOALS", "", "", ""],
+        ["", "", "", "", "Week 4 (Nov 11-17): $5k total", "", "", ""],
+        ["", "", "", "", "Week 8 (Dec 9-15): $12k total", "", "", ""],
+        ["", "", "", "", "Week 12 (Jan 6-12): $25k/mo run rate", "", "", ""]
+      ]
+    },
+    {
+      "worksheetName": "Energy Tracker",
+      "minDimensions": [6, 35],
+      "columns": [
+        {"type": "text", "title": "Week Of", "width": 120},
+        {"type": "text", "title": "V Energy (1-10)", "width": 100},
+        {"type": "text", "title": "Logan Energy (1-10)", "width": 120},
+        {"type": "text", "title": "What Energized", "width": 200},
+        {"type": "text", "title": "What Drained", "width": 200},
+        {"type": "text", "title": "Adjustment Needed", "width": 200}
+      ],
+      "data": [
+        ["Oct 21-27", "", "", "", "", ""],
+        ["Oct 28-Nov 3", "", "", "", "", ""],
+        ["Nov 4-10", "", "", "", "", ""],
+        ["Nov 11-17", "", "", "", "", ""],
+        ["", "", "", "", "", ""],
+        ["BASELINE (Target 7+/10 each)", "", "", "", "", ""],
+        ["If energy <6 two weeks in a row: PAUSE and diagnose", "", "", "", "", ""]
+      ]
+    },
+    {
+      "worksheetName": "User Growth Tracker",
+      "minDimensions": [7, 20],
+      "columns": [
+        {"type": "text", "title": "Week Of", "width": 120},
+        {"type": "numeric", "title": "Total Users", "width": 100},
+        {"type": "numeric", "title": "Week Growth", "width": 100},
+        {"type": "numeric", "title": "Active (7-day)", "width": 120},
+        {"type": "numeric", "title": "Stories Completed", "width": 140},
+        {"type": "text", "title": "Key Initiative This Week", "width": 200},
+        {"type": "text", "title": "Win/Learning", "width": 200}
+      ],
+      "data": [
+        ["Oct 21-27", 0, 0, 0, 0, "", ""],
+        ["Oct 28-Nov 3", 0, "=B3-B2", 0, 0, "", ""],
+        ["Nov 4-10", 0, "=B4-B3", 0, 0, "", ""],
+        ["", "", "", "", "", "", ""],
+        ["GOALS", "", "", "", "", "", ""],
+        ["Dec 31: 50k total users", "", "", "", "", "", ""],
+        ["June 1: 100k total users", "", "", "", "", "", ""]
+      ]
+    },
+    {
+      "worksheetName": "Placement Pipeline",
+      "minDimensions": [8, 25],
+      "columns": [
+        {"type": "text", "title": "Candidate Name", "width": 150},
+        {"type": "text", "title": "Source", "width": 100},
+        {"type": "text", "title": "Stage", "width": 120},
+        {"type": "text", "title": "Target Role", "width": 150},
+        {"type": "text", "title": "Companies Intro'd", "width": 140},
+        {"type": "text", "title": "Next Action", "width": 180},
+        {"type": "text", "title": "Target Close Date", "width": 120},
+        {"type": "text", "title": "Fee ($2k/placement)", "width": 120}
+      ],
+      "data": [
+        ["Danny", "Internal", "Intro Phase", "Engineering roles", "0", "Build profile + outreach list", "Dec 15", "$2,000"],
+        ["Rochel", "Internal", "Intro Phase", "Product/Ops roles", "0", "Build profile + outreach list", "Dec 15", "$2,000"],
+        ["", "", "", "", "", "", "", ""],
+        ["STAGES:", "1-Profile Build", "2-Intro Phase", "3-Interview Phase", "4-Offer Phase", "5-Placed", "", ""],
+        ["GOAL: 10 placements by Feb 1st = $20k revenue", "", "", "", "", "", "", ""]
+      ]
+    },
+    {
+      "worksheetName": "Action Items Master",
+      "minDimensions": [7, 30],
+      "columns": [
+        {"type": "text", "title": "Action Item", "width": 250},
+        {"type": "text", "title": "Owner", "width": 80},
+        {"type": "text", "title": "Deadline", "width": 100},
+        {"type": "text", "title": "Status", "width": 100},
+        {"type": "text", "title": "Priority (P0/P1/P2)", "width": 120},
+        {"type": "text", "title": "Blocker?", "width": 100},
+        {"type": "text", "title": "Notes", "width": 200}
+      ],
+      "data": [
+        ["Team wind-down communications (Danny/Rochel)", "V", "Oct 24", "Not Started", "P0", "No", ""],
+        ["Ilse retention offer conversation", "V", "Oct 24", "Not Started", "P0", "No", ""],
+        ["Investor update email (draft)", "V", "Oct 27", "Not Started", "P0", "No", ""],
+        ["First Careerspan Select outreach (20 contacts)", "V", "Oct 28", "Not Started", "P0", "No", ""],
+        ["First AI consulting client secured", "V", "Nov 1", "Not Started", "P0", "No", ""],
+        ["Logan: First content product launched", "Logan", "Nov 1", "Not Started", "P0", "No", ""],
+        ["Hiring manager network activation (Jaya call)", "V", "Oct 25", "Not Started", "P0", "No", ""],
+        ["Lensa partnership check-in", "V", "Oct 28", "Not Started", "P1", "No", ""],
+        ["", "", "", "", "", "", ""],
+        ["STATUS KEY:", "Not Started", "In Progress", "Blocked", "Complete", "", ""],
+        ["PRIORITY KEY:", "P0 = This Week", "P1 = Next 2 Weeks", "P2 = This Month", "", "", ""]
+      ]
+    }
+  ]
+}

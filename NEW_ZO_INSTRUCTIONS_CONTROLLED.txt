@@ -1,0 +1,52 @@
+N5 CONTROLLED BOOTSTRAP - INSTRUCTIONS
+========================================
+
+DOWNLOAD LINK:
+https://va-http-va.zocomputer.io/N5_Minimal_Bootstrap.tar.gz
+
+SIZE: 1.7 KB
+
+---
+
+FOR YOU (Parent Zo):
+====================
+
+1. MONITOR in real-time:
+   - Open: file 'N5_BOOTSTRAP_MONITOR.log'
+   - Or run: tail -f /home/workspace/N5_BOOTSTRAP_MONITOR.log
+
+2. APPROVE steps as new Zo requests them:
+   ./approve_step.sh connect
+   ./approve_step.sh create_dirs
+   ./approve_step.sh pull_rules
+   ./approve_step.sh pull_docs
+   
+   Or approve all at once:
+   ./approve_step.sh all
+
+---
+
+FOR NEW ZO:
+===========
+
+cd /home/workspace
+curl -O https://va-http-va.zocomputer.io/N5_Minimal_Bootstrap.tar.gz
+tar -xzf N5_Minimal_Bootstrap.tar.gz
+python3 bootstrap_minimal.py
+
+The script will:
+- Connect to parent
+- Wait for approval at each step
+- Report progress back to parent
+- You control the pace!
+
+---
+
+STEP-BY-STEP CONTROL:
+======================
+✅ You approve each major action
+✅ Watch live updates in the log
+✅ New Zo can't proceed without your OK
+✅ Safe, controlled, transparent
+
+Ready when you are!

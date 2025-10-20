@@ -7,6 +7,7 @@
   "gdrive_link": "https://drive.google.com/file/d/1zcQHdR_IrJVHERdn610oAEiPvodydzau/view",
   "original_filename": "Emily Nelson de Velasco x Vrijen-transcript-2025-08-29T19-42-43.199Z.docx",
   "created_at": "2025-10-11T19:01:11.574837Z",
-  "status": "pending",
-  "external_participant": "emily-nelson-de-velasco"
+  "status": "processed",
+  "external_participant": "emily-nelson-de-velasco",
+  "processed_at": "2025-10-11T19:01:11.574837Z"
 }

@@ -6,5 +6,6 @@
   "gdrive_link": "https://drive.google.com/file/d/1IiKZANoie-TzzS0QmWb02VxS63RDD3Xk/view?usp=drivesdk",
   "original_filename": "Meeting Transcript - Sample.txt",
   "created_at": "2025-10-11T02:47:42.387778Z",
-  "status": "pending"
+  "status": "processed",
+  "processed_at": "2025-10-11T02:47:42.387778Z"
 }

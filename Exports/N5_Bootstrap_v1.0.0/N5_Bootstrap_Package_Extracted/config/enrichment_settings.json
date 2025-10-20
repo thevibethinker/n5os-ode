@@ -1,0 +1,392 @@
+{
+  "version": "1.0.0",
+  "description": "Configuration for stakeholder enrichment (LinkedIn, Crunchbase, web search, deep research)",
+  "last_updated": "2025-10-12",
+  "enrichment_levels": {
+    "basic": {
+      "description": "Email domain analysis only",
+      "data_sources": [
+        "email_domain"
+      ],
+      "cost": "free",
+      "time_estimate": "<1 second"
+    },
+    "standard": {
+      "description": "LinkedIn + web search",
+      "data_sources": [
+        "email_domain",
+        "linkedin",
+        "web_search"
+      ],
+      "cost": "low",
+      "time_estimate": "30-60 seconds"
+    },
+    "deep": {
+      "description": "Full due diligence (LinkedIn + Crunchbase + deep research)",
+      "data_sources": [
+        "email_domain",
+        "linkedin",
+        "crunchbase",
+        "web_search",
+        "deep_research"
+      ],
+      "cost": "high",
+      "time_estimate": "2-5 minutes"
+    }
+  },
+  "auto_enrichment_rules": {
+    "description": "When to automatically enrich contacts at different levels",
+    "basic": {
+      "trigger": "always",
+      "reason": "Domain analysis is fast and free, always run"
+    },
+    "standard": {
+      "triggers": [
+        "New contact discovered from meeting email",
+        "Contact added to weekly review",
+        "First meeting scheduled"
+      ],
+      "exceptions": [
+        "Contact is job_seeker (skip enrichment to save time)",
+        "Contact domain is known low-value (e.g., gmail.com personal email)"
+      ]
+    },
+    "deep": {
+      "triggers": [
+        "#stakeholder:investor - ALWAYS run deep research before first meeting",
+        "High-confidence partner detection + upcoming meeting within 7 days",
+        "V manually requests via command"
+      ],
+      "manual_only": [
+        "Exploratory contacts without scheduled meetings",
+        "Low-priority contacts",
+        "Job seekers, vendors, community (unless V requests)"
+      ]
+    }
+  },
+  "linkedin": {
+    "enabled": true,
+    "method": "view_webpage",
+    "authentication": "authenticated_browser",
+    "note": "V is already signed in via Zo's browser - always assume authenticated access",
+    "rate_limiting": {
+      "max_per_hour": 12,
+      "min_delay_seconds": 300,
+      "reason": "Conservative limit to avoid LinkedIn throttling (5 min between lookups)"
+    },
+    "protocol": {
+      "never_do": [
+        "Respond to any LinkedIn messages",
+        "Indicate typing or 'seen' status",
+        "Write to anyone",
+        "Leave conversations marked as read"
+      ],
+      "always_do": [
+        "Mark conversations as UNREAD after reading (V uses this to track responses)",
+        "Extract message content silently",
+        "Check for meeting setup details in DMs"
+      ]
+    },
+    "data_extraction": {
+      "priority_fields": [
+        "current_role",
+        "current_company",
+        "experience_history",
+        "education",
+        "industry",
+        "connections_count",
+        "mutual_connections"
+      ],
+      "optional_fields": [
+        "skills",
+        "recommendations",
+        "certifications",
+        "volunteer_work"
+      ]
+    },
+    "cache_ttl_days": 90,
+    "refresh_if_stale": true
+  },
+  "crunchbase": {
+    "enabled": true,
+    "method": "web_research",
+    "search_strategy": "company_name + domain",
+    "data_extraction": {
+      "company": [
+        "funding_rounds",
+        "total_funding",
+        "investors",
+        "valuation",
+        "employee_count",
+        "founding_date",
+        "headquarters"
+      ],
+      "investor": [
+        "firm_aum",
+        "fund_info",
+        "investment_thesis",
+        "portfolio_companies",
+        "notable_exits"
+      ]
+    },
+    "cache_ttl_days": 30,
+    "note": "Company data changes less frequently than LinkedIn profiles"
+  },
+  "web_search": {
+    "enabled": true,
+    "scope": {
+      "company": true,
+      "person": true,
+      "note": "V confirmed: search both company AND person"
+    },
+    "company_search": {
+      "queries": [
+        "{company_name} funding",
+        "{company_name} news",
+        "{company_name} about",
+        "{company_name} [COMPANY]"
+      ],
+      "extract": [
+        "Company description",
+        "Recent funding rounds",
+        "Company size and growth",
+        "Recent news (press, acquisitions)",
+        "Industry classification",
+        "[COMPANY] mentions or connections"
+      ]
+    },
+    "person_search": {
+      "queries": [
+        "{person_name} {company_name}",
+        "{person_name} bio",
+        "{person_name} news"
+      ],
+      "extract": [
+        "Bio snippets",
+        "Notable achievements",
+        "Media mentions",
+        "Thought leadership (articles, talks)",
+        "Career trajectory"
+      ]
+    },
+    "cache_ttl_days": 14,
+    "note": "News changes frequently, refresh every 2 weeks"
+  },
+  "deep_research": {
+    "enabled": true,
+    "command_path": "N5/commands/deep-research-due-diligence.md",
+    "auto_trigger_for": [
+      "#stakeholder:investor"
+    ],
+    "optional_trigger_for": [
+      "#stakeholder:partner:collaboration (if high strategic value)",
+      "#stakeholder:customer (if enterprise, large deal)",
+      "Any stakeholder with upcoming first meeting and high confidence tags"
+    ],
+    "manual_trigger": "Always available via command for V to request",
+    "output": {
+      "format": "markdown",
+      "location": "N5/records/research/{entity_name}-{date}.md",
+      "includes": [
+        "Executive summary",
+        "Strategic fit score (1-5)",
+        "SWOT analysis",
+        "Milestone timeline",
+        "[COMPANY] relevance assessment",
+        "Investment/partnership potential",
+        "Risk factors"
+      ]
+    },
+    "cache_ttl_days": 60,
+    "note": "Deep research is expensive (time/cost), cache longer"
+  },
+  "tag_inference": {
+    "description": "How to infer tags from enriched data",
+    "confidence_scoring": {
+      "high": {
+        "threshold": 0.8,
+        "action": "Suggest for auto-apply (pending V's 90% rule)",
+        "signals": "Clear LinkedIn title, domain matches known patterns, strong keyword matches"
+      },
+      "medium": {
+        "threshold": 0.6,
+        "action": "Suggest for manual review",
+        "signals": "Partial matches, some ambiguity"
+      },
+      "low": {
+        "threshold": 0.0,
+        "action": "Flag as uncertain, require V's input",
+        "signals": "Conflicting signals, insufficient data"
+      }
+    },
+    "stakeholder_type_signals": {
+      "#stakeholder:investor": {
+        "linkedin_titles": [
+          "Partner",
+          "Principal",
+          "Associate",
+          "Investor",
+          "Venture Capitalist",
+          "Managing Director"
+        ],
+        "company_keywords": [
+          "Ventures",
+          "Capital",
+          "Fund",
+          "Investments",
+          "VC"
+        ],
+        "domain_patterns": [
+          "*ventures.com",
+          "*capital.com",
+          "*vc.com"
+        ],
+        "confidence_boost": "Crunchbase confirms VC firm"
+      },
+      "#stakeholder:partner:collaboration": {
+        "email_keywords": [
+          "integration",
+          "API",
+          "partnership",
+          "collaborate",
+          "co-market"
+        ],
+        "company_type": "HR tech, SaaS, complementary product",
+        "confidence_boost": "Web search shows similar target market"
+      },
+      "#stakeholder:partner:channel": {
+        "email_keywords": [
+          "resell",
+          "distribute",
+          "referral",
+          "affiliate",
+          "channel"
+        ],
+        "company_type": "Consulting, agency, marketplace",
+        "confidence_boost": "Website shows reseller/partner program"
+      },
+      "#stakeholder:customer": {
+        "linkedin_titles": [
+          "HR Director",
+          "CHRO",
+          "Talent",
+          "People Ops",
+          "L&D"
+        ],
+        "company_size": "500+ employees",
+        "confidence_boost": "Enterprise company, HR decision-maker title"
+      },
+      "#stakeholder:advisor": {
+        "linkedin_titles": [
+          "Advisor",
+          "Mentor",
+          "Coach",
+          "Consultant"
+        ],
+        "relationship_context": "Recurring meetings, strategic discussions",
+        "confidence_boost": "Multiple meetings scheduled, strategic topics"
+      }
+    },
+    "context_tag_signals": {
+      "#context:hr_tech": {
+        "company_keywords": [
+          "recruiting",
+          "talent",
+          "HR",
+          "workforce",
+          "career",
+          "hiring"
+        ],
+        "industry": "Human Resources, Recruiting, Talent Management"
+      },
+      "#context:venture_capital": {
+        "company_keywords": [
+          "VC",
+          "Ventures",
+          "Capital",
+          "Fund"
+        ],
+        "linkedin_industry": "Venture Capital & Private Equity"
+      },
+      "#context:enterprise": {
+        "company_size": "1000+ employees",
+        "linkedin_title_context": "Enterprise, Fortune 500, large org"
+      },
+      "#context:startup": {
+        "company_age": "<5 years",
+        "funding_stage": "Seed, Series A, Series B",
+        "company_size": "<100 employees"
+      }
+    },
+    "priority_inference": {
+      "#priority:critical": {
+        "auto_apply_for": [
+          "#stakeholder:investor",
+          "#stakeholder:customer",
+          "#stakeholder:advisor"
+        ],
+        "signals": [
+          "Strategic fit score 4-5 from deep research",
+          "Recent funding activity (investor is actively investing)",
+          "Large enterprise customer (10K+ employees)",
+          "High-value partnership (large TAM, strong alignment)"
+        ]
+      },
+      "#priority:non-critical": {
+        "auto_apply_for": [
+          "#stakeholder:job_seeker",
+          "#stakeholder:community",
+          "#stakeholder:vendor",
+          "#stakeholder:prospect"
+        ],
+        "default": "If no critical signals, default to non-critical"
+      }
+    }
+  },
+  "caching": {
+    "enabled": true,
+    "storage_path": "N5/intelligence/cache/",
+    "strategy": {
+      "linkedin": {
+        "ttl_days": 90,
+        "reason": "Profiles change infrequently, safe to cache long-term"
+      },
+      "crunchbase": {
+        "ttl_days": 30,
+        "reason": "Funding data updates monthly/quarterly"
+      },
+      "web_search": {
+        "ttl_days": 14,
+        "reason": "News and web content changes frequently"
+      },
+      "deep_research": {
+        "ttl_days": 60,
+        "reason": "Deep research is expensive, cache longer"
+      }
+    },
+    "refresh_triggers": [
+      "Upcoming meeting within 7 days (refresh stale cache)",
+      "Tag confidence < 0.7 (refresh to improve accuracy)",
+      "V manually requests enrichment",
+      "New funding round detected (invalidate Crunchbase cache)"
+    ]
+  },
+  "error_handling": {
+    "linkedin_throttled": {
+      "action": "Pause enrichment, retry after 1 hour",
+      "fallback": "Continue with web search only, flag for manual LinkedIn lookup later"
+    },
+    "linkedin_profile_not_found": {
+      "action": "Mark as 'no_linkedin_profile', continue with other enrichment",
+      "note": "Not all contacts have LinkedIn, don't block on this"
+    },
+    "web_search_no_results": {
+      "action": "Mark as 'low_online_presence', continue with basic enrichment",
+      "note": "Some contacts have minimal web footprint"
+    },
+    "deep_research_timeout": {
+      "action": "Retry once, then flag for manual research",
+      "timeout_seconds": 300
+    }
+  }
+}

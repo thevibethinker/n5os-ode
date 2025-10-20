@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "id": "Erika_call_2025-10-15_compressed",
+      "source": "/home/workspace/Erika_call_2025-10-15_compressed.mp3",
+      "ingested_at": "2025-10-18T17:28:56.859915",
+      "status": "awaiting-approval",
+      "outputs": {
+        "summary": "/home/workspace/N5/records/reflections/outputs/Erika_call_2025-10-15_compressed/summary.md",
+        "detail": "/home/workspace/N5/records/reflections/outputs/Erika_call_2025-10-15_compressed/detail.md",
+        "proposal": "/home/workspace/Records/Reflections/Proposals/Erika_call_2025-10-15_compressed_proposal.md"
+      }
+    },
+    {
+      "id": "2025-10-20_zo-system-gtm-brainstorm",
+      "source": "/home/workspace/N5/records/reflections/incoming/2025-10-20_zo-system-gtm-brainstorm.txt",
+      "ingested_at": "2025-10-20T10:03:24.582142",
+      "status": "awaiting-approval",
+      "outputs": {
+        "summary": "/home/workspace/N5/records/reflections/outputs/2025-10-20_zo-system-gtm-brainstorm/summary.md",
+        "detail": "/home/workspace/N5/records/reflections/outputs/2025-10-20_zo-system-gtm-brainstorm/detail.md",
+        "proposal": "/home/workspace/Records/Reflections/Proposals/2025-10-20_zo-system-gtm-brainstorm_proposal.md"
+      }
+    },
+    {
+      "id": "2025-10-20_zo-system-gtm",
+      "source": "/home/workspace/N5/records/reflections/incoming/2025-10-20_zo-system-gtm.txt",
+      "ingested_at": "2025-10-20T10:11:48.032043",
+      "status": "awaiting-approval",
+      "outputs": {
+        "summary": "/home/workspace/N5/records/reflections/outputs/2025-10-20_zo-system-gtm/summary.md",
+        "detail": "/home/workspace/N5/records/reflections/outputs/2025-10-20_zo-system-gtm/detail.md",
+        "proposal": "/home/workspace/Records/Reflections/Proposals/2025-10-20_zo-system-gtm_proposal.md"
+      }
+    }
+  ]
+}

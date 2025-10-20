@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/output-review.schema.json",
+  "title": "N5 Output Review Entry",
+  "type": "object",
+  "required": ["id", "created_at", "title", "type", "reference", "provenance", "review"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^or_[0-9]{8}_[a-z0-9]+$",
+      "description": "Unique identifier: or_YYYYMMDD_randomhex"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Brief description of the output"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["file", "message", "url", "image", "transcript"],
+      "description": "Type of output being tracked"
+    },
+    "reference": {
+      "type": "string",
+      "description": "File path (workspace-relative), URL, or message ID"
+    },
+    "content_hash": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA256 hash for files to detect changes"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["conversation_id", "timestamp"],
+      "properties": {
+        "conversation_id": {
+          "type": "string",
+          "description": "Zo conversation ID (con_XXX)"
+        },
+        "thread_id": {
+          "type": ["string", "null"],
+          "description": "Thread identifier if from logged thread"
+        },
+        "thread_title": {
+          "type": ["string", "null"],
+          "description": "Human-readable thread title"
+        },
+        "script_path": {
+          "type": ["string", "null"],
+          "description": "Path to script that generated this output"
+        },
+        "command_name": {
+          "type": ["string", "null"],
+          "description": "N5 command name if invoked via command"
+        },
+        "pipeline_run_id": {
+          "type": ["string", "null"],
+          "description": "Pipeline/run identifier for multi-step processes"
+        },
+        "parent_output_id": {
+          "type": ["string", "null"],
+          "pattern": "^or_[0-9]{8}_[a-z0-9]+$",
+          "description": "If this output was derived from another tracked output"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the output was generated"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["status", "sentiment"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["flagged", "under_review", "resolved", "archived"],
+          "description": "Current review status"
+        },
+        "sentiment": {
+          "type": "string",
+          "enum": ["excellent", "good", "issue", "bad"],
+          "description": "Quality assessment"
+        },
+        "flagged_by": {
+          "type": ["string", "null"],
+          "description": "Who flagged this output"
+        },
+        "flagged_reason": {
+          "type": ["string", "null"],
+          "description": "Why this output was flagged"
+        },
+        "reviewer": {
+          "type": ["string", "null"],
+          "description": "Who is reviewing or reviewed this"
+        },
+        "resolution_note": {
+          "type": ["string", "null"],
+          "description": "How the issue was resolved or pattern documented"
+        }
+      }
+    },
+    "quality_dimensions": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Flexible structure for quality assessment criteria (instruction_adherence, format_compliance, length_target, length_actual, style, tone, etc.)"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "description": "Tags for categorization and filtering"
+    },
+    "comment_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of comments on this output"
+    },
+    "latest_comment_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Timestamp of most recent comment"
+    }
+  }
+}

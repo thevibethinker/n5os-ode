@@ -1,0 +1,310 @@
+{
+  "version": "3.1.0",
+  "format": "hashtag",
+  "last_updated": "2025-10-12",
+  "changes": [
+    "v3.1.0: Priority is now N5-only, binary (critical/non-critical)",
+    "v3.1.0: Accommodation owns [A-*] brackets (meeting flexibility for Howie)",
+    "v3.1.0: Removed priority mappings to [A-0], [A-1], [A-2]",
+    "v3.1.0: Updated auto-inheritance defaults per business priorities"
+  ],
+  "categories": {
+    "stakeholder": {
+      "prefix": "#stakeholder:",
+      "description": "Primary classification of external contacts",
+      "tags": {
+        "investor": {
+          "description": "Investors, VCs, funding sources",
+          "howie_bracket": "[LD-INV]",
+          "priority_default": "critical"
+        },
+        "community": {
+          "description": "Community partners, nonprofits",
+          "howie_bracket": "[LD-COM]",
+          "priority_default": "normal"
+        },
+        "partner:collaboration": {
+          "description": "Integration/collaboration partners",
+          "howie_bracket": "[LD-NET]",
+          "priority_default": "normal"
+        },
+        "partner:channel": {
+          "description": "Distribution/resale partners",
+          "howie_bracket": "[LD-NET]",
+          "priority_default": "normal"
+        },
+        "prospect": {
+          "description": "General leads, exploratory contacts",
+          "howie_bracket": "[LD-GEN]",
+          "priority_default": "normal"
+        },
+        "customer": {
+          "description": "Paying customers",
+          "howie_bracket": null,
+          "priority_default": "critical",
+          "n5_only": true
+        },
+        "vendor": {
+          "description": "Service providers, suppliers",
+          "howie_bracket": null,
+          "priority_default": "normal",
+          "n5_only": true
+        },
+        "advisor": {
+          "description": "Strategic advisors, mentors",
+          "howie_bracket": null,
+          "priority_default": "critical",
+          "n5_only": true
+        },
+        "networking_contact": {
+          "description": "Relationship beyond business context",
+          "howie_bracket": null,
+          "priority_default": "non-critical",
+          "n5_only": true
+        }
+      }
+    },
+    "job_seeking_status": {
+      "prefix": "#job_seeking_status:",
+      "description": "Current employment seeking state (orthogonal to stakeholder type)",
+      "n5_only": true,
+      "tags": {
+        "active": "Currently seeking employment (interviewing, applying, open to opportunities)",
+        "inactive": "Not seeking employment (happily employed, not in market)",
+        "placed": "Recently placed via [COMPANY] or other (track success, testimonial opportunity)"
+      },
+      "notes": "V's insight: Job seeking is a temporary state, not a fundamental stakeholder type. Anyone can be job seeking regardless of core stakeholder classification."
+    },
+    "relationship": {
+      "prefix": "#relationship:",
+      "description": "Current state of the relationship",
+      "n5_only": true,
+      "howie_sync": false,
+      "tags": {
+        "new": {
+          "description": "First contact, no history",
+          "when_to_use": "First meeting or initial email exchange"
+        },
+        "warm": {
+          "description": "Active, engaged, responsive",
+          "when_to_use": "5+ emails/month, regular contact, building relationship"
+        },
+        "active": {
+          "description": "Ongoing collaboration, regular meetings",
+          "when_to_use": "Current partnership, recurring meetings, active work together"
+        },
+        "cold": {
+          "description": "No recent contact",
+          "when_to_use": "30+ days since last interaction"
+        },
+        "dormant": {
+          "description": "Past relationship, currently inactive",
+          "when_to_use": "Previous partnership/customer, no current engagement"
+        }
+      }
+    },
+    "priority": {
+      "prefix": "#priority:",
+      "description": "Business priority (N5-only, binary classification)",
+      "n5_only": true,
+      "howie_sync": false,
+      "note": "Priority is separate from accommodation. Priority = importance to business. Accommodation = meeting flexibility.",
+      "tags": {
+        "critical": {
+          "description": "Business-critical relationship (investors, customers, key advisors)",
+          "howie_bracket": "!!",
+          "when_to_use": "Investors, customers, strategic advisors, high-value partnerships",
+          "behavior": "Protect time, never let slip, high responsiveness required"
+        },
+        "non-critical": {
+          "description": "Important but not urgent (community, job seekers, exploratory)",
+          "howie_bracket": null,
+          "when_to_use": "Community partners, recruiting, exploratory leads, vendors",
+          "behavior": "Standard responsiveness, can defer if needed"
+        }
+      }
+    },
+    "engagement": {
+      "prefix": "#engagement:",
+      "description": "Communication behavior and responsiveness",
+      "n5_only": true,
+      "howie_sync": false,
+      "tags": {
+        "responsive": {
+          "description": "Quick replies, high engagement",
+          "signal": "<4 hours average response time"
+        },
+        "slow": {
+          "description": "Slow responses, low engagement",
+          "signal": ">24 hours average response time"
+        },
+        "needs_followup": {
+          "description": "Waiting on their response",
+          "signal": "V sent last email, awaiting their reply"
+        },
+        "waiting_on_us": {
+          "description": "Waiting on V's response",
+          "signal": "They sent last email, V needs to respond"
+        }
+      }
+    },
+    "context": {
+      "prefix": "#context:",
+      "description": "Domain or industry classification",
+      "n5_only": true,
+      "howie_sync": false,
+      "extensible": true,
+      "note": "Add new context tags as needed based on stakeholder industries",
+      "tags": {
+        "hr_tech": "HR technology, recruiting tech, talent management",
+        "venture_capital": "VC firms, investment funds, angel investors",
+        "saas": "SaaS companies (peers, partners, customers)",
+        "enterprise": "Enterprise buyers/users (Fortune 500, large orgs)",
+        "startup": "Startup ecosystem (founders, early-stage companies)",
+        "nonprofit": "Nonprofit, social impact, workforce development",
+        "education": "Universities, career centers, academic institutions",
+        "coaching": "Career coaching, executive coaching, professional development"
+      }
+    },
+    "type": {
+      "prefix": "#type:",
+      "description": "Type of meeting or interaction",
+      "tags": {
+        "discovery": {
+          "description": "First meeting, exploratory conversation",
+          "auto_add_logic": "Apply when: first meeting, intro email, exploratory language"
+        },
+        "partnership": {
+          "description": "Partnership discussion or negotiation",
+          "auto_add_logic": "Apply when: discussing collaboration, integration, channel partnership"
+        },
+        "followup": {
+          "description": "Follow-up meeting to previous conversation",
+          "auto_add_logic": "Apply when: 2nd+ meeting, continuing previous discussion"
+        },
+        "recurring": {
+          "description": "Regular recurring meeting (weekly, biweekly, monthly)",
+          "auto_add_logic": "Apply when: calendar shows recurring pattern"
+        }
+      }
+    },
+    "status": {
+      "prefix": "#status:",
+      "description": "Meeting or relationship status",
+      "tags": {
+        "postponed": {
+          "description": "Meeting postponed/rescheduled",
+          "howie_bracket": "[OFF]",
+          "skip_in_digest": true
+        },
+        "awaiting": {
+          "description": "Awaiting confirmation or response",
+          "howie_bracket": "[AWA]"
+        },
+        "inactive": {
+          "description": "Relationship terminated or closed",
+          "howie_bracket": "[TERM]",
+          "skip_in_digest": true
+        },
+        "active": {
+          "description": "Currently active (default state)",
+          "howie_bracket": null
+        }
+      }
+    },
+    "schedule": {
+      "prefix": "#schedule:",
+      "description": "Timing constraints for scheduling (Howie coordination)",
+      "tags": {
+        "within_5d": {
+          "description": "Schedule within 5 business days",
+          "howie_bracket": "[D5]"
+        },
+        "5d_plus": {
+          "description": "Schedule 5+ business days out",
+          "howie_bracket": "[D5+]"
+        },
+        "10d_plus": {
+          "description": "Schedule 10+ business days out",
+          "howie_bracket": "[D10]"
+        }
+      }
+    },
+    "align": {
+      "prefix": "#align:",
+      "description": "Internal coordination requirements",
+      "tags": {
+        "logan": {
+          "description": "Align with Logan's schedule",
+          "howie_bracket": "[LOG]"
+        },
+        "ilse": {
+          "description": "Align with Ilse's schedule",
+          "howie_bracket": "[ILS]"
+        },
+        "founders": {
+          "description": "Align with founders (group coordination)",
+          "howie_bracket": "[GPT-F]"
+        }
+      }
+    },
+    "accommodation": {
+      "prefix": "#accommodation:",
+      "description": "Meeting flexibility and accommodation approach (Howie's [A-*] system)",
+      "note": "This is SEPARATE from priority. Accommodation = how flexible we are with scheduling. Priority = how important they are to business.",
+      "tags": {
+        "minimal": {
+          "description": "On our terms only, minimal flexibility",
+          "howie_bracket": "[A-0]",
+          "when_to_use": "High-leverage relationships where we dictate terms"
+        },
+        "baseline": {
+          "description": "Standard flexibility (default)",
+          "howie_bracket": "[A-1]",
+          "when_to_use": "Normal business relationships, mutual accommodation"
+        },
+        "full": {
+          "description": "Fully accommodating, maximum flexibility",
+          "howie_bracket": "[A-2]",
+          "when_to_use": "When we need them more than they need us, or building new relationships"
+        }
+      }
+    },
+    "availability": {
+      "prefix": "#availability:",
+      "description": "Scheduling availability preferences",
+      "tags": {
+        "weekend_ok": {
+          "description": "Weekends allowed if needed",
+          "howie_bracket": "[WEX]"
+        },
+        "weekend_preferred": {
+          "description": "Prefer weekend meetings",
+          "howie_bracket": "[WEP]"
+        }
+      }
+    },
+    "followup": {
+      "prefix": "#followup:",
+      "description": "Automated follow-up reminders",
+      "pattern": "^#followup:(external|logan|vrijen)_(\\d+)$",
+      "tags": {
+        "external_N": {
+          "description": "Follow up with external party in N days",
+          "howie_pattern": "[F-N]",
+          "example": "#followup:external_7 \u2192 [F-7]"
+        },
+        "logan_N": {
+          "description": "Private follow-up to [STAKEHOLDER]in N days",
+          "howie_pattern": "[FL-N]",
+          "example": "#followup:logan_5 \u2192 [FL-5]"
+        },
+        "vrijen_N": {
+          "description": "Personal reminder to V in N days",
+          "howie_pattern": "[FM-N]",
+          "example": "#followup:vrijen_3 \u2192 [FM-3]"
+        }
+      }
+    }
+  }
+}

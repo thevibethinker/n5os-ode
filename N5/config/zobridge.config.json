@@ -1,0 +1,22 @@
+{
+  "system_name": "ParentZo",
+  "port": 3458,
+  "max_message_size_bytes": 102400,
+  "max_queue_depth": 100,
+  "rate_limit": {
+    "max_per_hour": 60,
+    "max_per_minute": 10
+  },
+  "checkpoint_interval_hours": 3,
+  "database_path": "/home/workspace/N5/data/zobridge.db",
+  "audit_log_path": "/home/workspace/N5/data/zobridge_audit.jsonl",
+  "remote_systems": {
+    "ChildZo": {
+      "url": "TO_BE_CONFIGURED",
+      "enabled": false
+    }
+  },
+  "auth": {
+    "shared_secret_env": "ZOBRIDGE_SECRET"
+  }
+}

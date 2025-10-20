@@ -1,13 +1,13 @@
 ---
-date: "2025-10-16T00:00:00Z"
-version: 2.3
+date: "2025-10-19T00:00:00Z"
+version: 2.6
 category: core
 priority: high
 related_files: "['N5/knowledge/ingestion_standards.md']"
 ---
 # N5 Architectural Principles Index
 
-**Version 2.3 - Added Language Selection Principle**
+**Version 2.6 - Complete Lessons Integration**
 
 This index provides quick reference to all architectural principles. Load specific modules based on task context to minimize token usage and maintain focus.
 
@@ -131,6 +131,35 @@ Before implementing scripts, workflows, or infrastructure:
 ---
 
 ## Change Log
+
+### 2025-10-19 (v2.6)
+- **Batch 3:** Integrated 11 final acceptable lessons (all remaining except speculative #13)
+- **Total integrated today:** 25 lessons (6 approved + 8 batch 2 + 11 batch 3)
+- **Coverage:** 96% of valid lessons (25/26) now integrated into principles
+- **Updated modules:**
+  - safety.md: Added protected file patterns (P5)
+  - quality.md: Added exit codes (P18/P19), multi-phase resume (P18/P15), automated cleanup execution (P15), automated mode (P15/P18), running scripts before manual phases (P21)
+  - core.md: Added centralized configuration pattern (P2)
+  - design.md: Added noun-first title structure (P1)
+- All lessons include concrete examples, implementation patterns, key insights, and applications
+
+### 2025-10-19 (v2.5)
+- Integrated 8 additional lessons from batch review (total 14 lessons integrated today)
+- **Safety principles** (safety.md):
+  - P7: Automated cleanup pattern, multi-phase cleanup operations
+  - P11: Graceful degradation for enhancements, post-archive timeline integration
+- **Quality principles** (quality.md):
+  - P15: Dry-run early return ordering, dual title generation, mock data in production, no glazing feedback
+  - P16: Quantitative thresholds over boolean checks
+  - P18: State verification cross-references
+  - P21: Ask clarifying questions pattern, document assumptions explicitly
+- All lessons include context, implementation patterns, and key insights for reuse
+
+### 2025-10-19 (v2.4)
+- Integrated 6 approved lessons from lessons review system
+- Added comprehensive case study to P20 (Modular Design) documenting architectural principles modularization
+- Enhanced P14 (Change Tracking) and P17 (Test with Production) with lessons learned examples
+- Quality principles (P15, P16, P21) already contained integrated lessons from Oct 12
 
 ### 2025-10-16 (v2.3)
 - **Added Principle 22:** Language Selection for Purpose

@@ -1,0 +1,24 @@
+{
+  "tabs": true,
+  "toolbar": true,
+  "worksheets": [
+    {
+      "worksheetName": "Output Reviews",
+      "minDimensions": [11, 10],
+      "columns": [
+        {"type": "text", "title": "ID", "width": 150},
+        {"type": "text", "title": "Title", "width": 300},
+        {"type": "text", "title": "Type", "width": 80},
+        {"type": "text", "title": "Status", "width": 120},
+        {"type": "text", "title": "Sentiment", "width": 100},
+        {"type": "text", "title": "Tags", "width": 200},
+        {"type": "text", "title": "Conversation", "width": 180},
+        {"type": "text", "title": "Script", "width": 200},
+        {"type": "text", "title": "Reference", "width": 250},
+        {"type": "text", "title": "Created", "width": 150},
+        {"type": "numeric", "title": "Comments", "width": 80}
+      ],
+      "data": []
+    }
+  ]
+}

@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1ALfGyq6xcrqxnl1s0ysKrgibnfmFWHsd",
   "original_filename": "Daniel Williams x Vrijen Attawar-transcript-2025-09-08T15-08-08.672Z.docx",
   "created_at": "2025-10-11T04:07:15.354143+00:00",
-  "status": "pending",
-  "external_participant": "daniel-williams"
+  "status": "processed",
+  "external_participant": "daniel-williams",
+  "processed_at": "2025-10-11T04:07:15.354143+00:00"
 }

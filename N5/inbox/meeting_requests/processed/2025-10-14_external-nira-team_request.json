@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1PMp1Yg56-4bkDiOvTj8N6m9i7az9vjp0/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Vrijen Attawar and Nira Team-transcript-2025-10-14T20-42-15.113Z.docx",
   "created_at": "2025-10-14T20:59:38Z",
-  "status": "pending",
-  "external_participant": "nira-team"
+  "status": "processed",
+  "external_participant": "nira-team",
+  "processed_at": "2025-10-14T20:59:38Z"
 }

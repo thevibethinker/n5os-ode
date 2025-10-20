@@ -1,0 +1,43 @@
+# Key Figure Frontmatter Schema
+# Used for all individuals tracked in Startup Intelligence/Key Figures/
+
+name: string              # Full name of the individual
+type: string              # Type classification (see types below)
+organizations: array      # List of associated organizations
+  - name: string          # Organization name
+    role: string          # Their role in the organization
+    category: string      # startup | company | community | investor | channel_partner
+linkedin: string          # LinkedIn profile URL (optional)
+twitter: string           # Twitter/X profile URL (optional)
+website: string           # Personal website (optional)
+github: string            # GitHub profile (optional)
+email: string             # Contact email (optional)
+last_updated: date        # Last time this file was updated (YYYY-MM-DD)
+
+# Valid 'type' values:
+# - founder
+# - investor
+# - community_leader
+# - recruiter
+# - notable_user
+# - executive
+# - engineer
+# - advisor
+# - thought_leader
+# - other
+
+# Example:
+# ---
+# name: "Jane Smith"
+# type: "founder"
+# organizations:
+#   - name: "Acme Corp"
+#     role: "CEO & Co-founder"
+#     category: "startup"
+#   - name: "Tech Community SF"
+#     role: "Member"
+#     category: "community"
+# linkedin: "https://linkedin.com/in/janesmith"
+# twitter: "https://twitter.com/janesmith"
+# last_updated: "2025-09-30"
+# ---

@@ -182,3 +182,10 @@ Next Thread (for continuation):
 - Packed context window optimization
 - Modular knowledge navigation
 - **Automatic system timeline updates**
+
+## Command Relationship (clarification)
+
+- thread-export focuses on AAR generation and modular exports for a thread.
+- When closing a thread, prefer `conversation-end` — it will run Phase -1 (lessons extraction) and then call `thread-export` as Phase 0.
+- Use `thread-export` standalone for mid-thread checkpoints, interim AARs, or when you explicitly do not want the full end-step workflow.
+- Lessons extraction is orchestrated by `conversation-end` (Phase -1) via `N5/scripts/n5_lessons_extract.py` and is not triggered by thread-export itself.

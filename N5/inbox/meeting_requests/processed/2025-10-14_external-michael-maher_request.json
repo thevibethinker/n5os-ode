@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1hoZOcbcR96VYYQuEZsotlvXoUwn_jSSc/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Michael Maher x Vrijen-transcript-2025-10-14T19-30-38.349Z.docx",
   "created_at": "2025-10-14T19:59:11Z",
-  "status": "pending",
-  "external_participant": "michael-maher"
+  "status": "processed",
+  "external_participant": "michael-maher",
+  "processed_at": "2025-10-14T19:59:11Z"
 }

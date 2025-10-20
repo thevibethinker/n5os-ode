@@ -493,38 +493,26 @@ def extract_lessons():
     lessons_script = WORKSPACE / "N5/scripts/n5_lessons_extract.py"
     
     if not lessons_script.exists():
-        print("⚠️  Lesson extraction script not found, skipping")
+        print("⚠️  Lessons extraction script not found. Skipping Phase -1.")
         print(f"   Expected: {lessons_script}")
         return
     
     try:
-        # Run lesson extraction (non-blocking, auto-detect thread)
         result = subprocess.run(
-            [sys.executable, str(lessons_script)],
+            [sys.executable, str(lessons_script), "--auto"],
             capture_output=True,
             text=True,
             check=False,
-            timeout=120  # 2 minute timeout
+            timeout=180
         )
-        
-        # Print output
         if result.stdout:
             print(result.stdout)
-        
-        if result.returncode == 0:
-            print("\n✓ Lessons extracted successfully")
-        elif "not significant" in result.stdout.lower():
-            print("\n→ Thread not significant for lesson extraction")
-        else:
-            print(f"\n→ Lesson extraction completed (no lessons found)")
-            if result.stderr:
-                logger.debug(f"Extraction details: {result.stderr}")
-        
-    except subprocess.TimeoutExpired:
-        print("⚠️  Lesson extraction timed out (>2min), continuing...")
+        if result.stderr:
+            print(result.stderr)
+        print("✓ Phase -1 complete (lessons extraction attempted)")
     except Exception as e:
-        print(f"⚠️  Lesson extraction skipped: {e}")
-        logger.debug(f"Extraction error details", exc_info=True)
+        print(f"⚠️  Lessons extraction error: {e}")
+        print("→ Continuing to Phase 0 (AAR)")
 
 
 def generate_aar():
@@ -557,18 +545,12 @@ def generate_aar():
         # Print output
         if result.stdout:
             print(result.stdout)
-        
-        if result.returncode == 0:
-            print("\n✓ AAR generated successfully")
-        else:
-            print(f"\n⚠️  AAR generation completed with warnings")
-            if result.stderr:
-                print(f"Errors: {result.stderr}")
-        
-    except subprocess.TimeoutExpired:
-        print("⚠️  AAR generation timed out (>5min), continuing with cleanup...")
+        if result.stderr:
+            print(result.stderr)
+        print("✓ Phase 0 complete (AAR generation attempted)")
     except Exception as e:
-        print(f"⚠️  AAR generation skipped: {e}")
+        print(f"⚠️  AAR generation error: {e}")
+        print("→ Continuing with conversation-end...")
 
 
 def git_status_check():

@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1IUYmhyt81EhaWsM3mwWATOdLMkNbuvNI",
   "original_filename": "General Call (Vrijen Attawar)-transcript-2025-09-04T20-01-53.805Z.docx",
   "created_at": "2025-10-11T04:07:15.355891+00:00",
-  "status": "pending",
-  "external_participant": "general-call"
+  "status": "processed",
+  "external_participant": "general-call",
+  "processed_at": "2025-10-11T04:07:15.355891+00:00"
 }

@@ -7,6 +7,7 @@
   "gdrive_link": "https://drive.google.com/file/d/1iYDVBcL7r-i4v8b5kXtBEIOQt2up2UfN/view",
   "original_filename": "Laura Close and Vrijen Attawar + Logan Currie-transcript-2025-08-28T20-33-09.713Z.docx",
   "created_at": "2025-10-11T19:03:14.077261Z",
-  "status": "pending",
-  "external_participant": "laura-close"
+  "status": "processed",
+  "external_participant": "laura-close",
+  "processed_at": "2025-10-11T19:03:14.077261Z"
 }

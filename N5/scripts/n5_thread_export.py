@@ -44,6 +44,7 @@ SCHEMAS = ROOT / "schemas"
 LOGS_DIR = ROOT / "logs" / "threads"
 CONVERSATION_WS_ROOT = Path("/home/.z/workspaces")
 AAR_SCHEMA_PATH = SCHEMAS / "aar.schema.json"
+LESSONS_DIR = ROOT / "lessons" / "archive"
 
 # Constants
 AAR_VERSION = "2.2"
@@ -338,6 +339,27 @@ class ThreadExporter:
         
         return True, []
     
+    def _load_thread_lessons(self) -> List[Dict]:
+        """Load lessons for this thread from N5/lessons/archive/*.lessons.jsonl"""
+        lessons = []
+        try:
+            if not LESSONS_DIR.exists():
+                return lessons
+            # glob possible monthly or dated files containing this thread_id
+            for f in LESSONS_DIR.glob("*.lessons.jsonl"):
+                try:
+                    for line in f.read_text().splitlines():
+                        if not line.strip():
+                            continue
+                        obj = json.loads(line)
+                        if obj.get("thread_id") == self.thread_id:
+                            lessons.append(obj)
+                except Exception:
+                    continue
+        except Exception:
+            pass
+        return lessons
+
     def generate_markdown(self, aar_data: Dict) -> str:
         """Generate markdown view from AAR JSON (dual-write pattern)"""
         md = []
@@ -365,7 +387,14 @@ class ThreadExporter:
                 md.append(f"   - *Rationale:* {event['rationale']}")
             md.append("")
         
-        # Final State & Artifacts
+        # Lessons (if any)
+        lessons = aar_data.get('metadata', {}).get('lessons', [])
+        if lessons:
+            md.append("\n## Lessons Learned (auto-imported)\n")
+            for i, les in enumerate(lessons[:10], 1):
+                md.append(f"- [{les.get('type','lesson')}] {les.get('title','(untitled)')}: {les.get('description','').strip()[:300]}")
+        
+        # Final State
         md.append("\n## Final State\n")
         md.append(f"{aar_data['final_state']['summary']}\n")
         
@@ -426,6 +455,25 @@ class ThreadExporter:
     def discover_artifacts(self):
         """Wrapper method for inventory_artifacts"""
         self.artifacts = self.inventory_artifacts()
+    
+    def generate_smart_aar(self) -> Dict:
+        """Generate intelligent AAR using content extraction (Phase 3)"""
+        smart_responses = {
+            'objective': self.extract_objective_from_artifacts(),
+            'decisions': self.extract_key_decisions(),
+            'outcomes': self.generate_smart_summary(),
+            'next_objective': self.infer_next_steps(),
+            'challenges': ''  # No way to infer challenges programmatically yet
+        }
+        aar = self.generate_aar_data(smart_responses)
+        # Attach lessons (non-schema field under metadata)
+        try:
+            lessons = self._load_thread_lessons()
+            if lessons:
+                aar.setdefault('metadata', {})['lessons'] = lessons
+        except Exception:
+            pass
+        return aar
     
     def generate_interactive_aar(self) -> Dict:
         """Generate AAR through interactive questions"""
@@ -605,10 +653,14 @@ class ThreadExporter:
             'next_objective': self.infer_next_steps(),
             'challenges': ''  # No way to infer challenges programmatically yet
         }
-        
         aar = self.generate_aar_data(smart_responses)
-        # Mark as smart-generated
-        aar['telemetry']['aar_generation_method'] = 'smart_extraction'
+        # Attach lessons (non-schema field under metadata)
+        try:
+            lessons = self._load_thread_lessons()
+            if lessons:
+                aar.setdefault('metadata', {})['lessons'] = lessons
+        except Exception:
+            pass
         return aar
     
     # ===== PHASE 3B: PROGRESSIVE DOCUMENTATION =====
