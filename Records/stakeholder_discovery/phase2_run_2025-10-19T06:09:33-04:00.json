@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-19T06:09:33-04:00",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": [],
+  "files_deleted": [],
+  "stakeholders_discovered_count": 0,
+  "stakeholders": []
+}

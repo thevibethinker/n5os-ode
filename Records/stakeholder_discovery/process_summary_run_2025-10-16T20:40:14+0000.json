@@ -1,0 +1,8 @@
+{
+  "discovered_at": "2025-10-16T20:40:14+0000",
+  "source": "email_scanner",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "no staging files found in Records/Temporary/email_staging"
+}

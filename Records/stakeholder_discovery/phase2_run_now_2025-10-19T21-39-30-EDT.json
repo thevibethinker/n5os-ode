@@ -1,0 +1,10 @@
+{
+  "run_started_at": "2025-10-19T21:39:30-04:00",
+  "run_utc": "2025-10-20T01:39:30Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_paths": [],
+  "notes": "No staging files present in subdirectories of /home/workspace/Records/Temporary/email_staging. No extraction performed."
+}

@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-20T01:40:01-04:00",
+  "source": "email_scanner",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "notes": "Staging directories exist but contain no files to process. No deletions performed."
+}

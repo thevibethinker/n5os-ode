@@ -7,6 +7,7 @@
   "gdrive_link": "https://drive.google.com/file/d/1t_osnDwhwCFXK5hcTruuoRb2Q4bqv8a7/view",
   "original_filename": "Charles Jolley x Vrijen Attawar-transcript-2025-08-28T17-09-31.100Z.docx",
   "created_at": "2025-10-11T19:03:15.571395Z",
-  "status": "pending",
-  "external_participant": "charles-jolley"
+  "status": "processed",
+  "external_participant": "charles-jolley",
+  "processed_at": "2025-10-11T19:03:15.571395Z"
 }

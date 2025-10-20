@@ -550,19 +550,73 @@ class SessionStateManager:
             logger.error(f"Failed to update rollback plan: {e}", exc_info=True)
             return False
 
+    def link_parent(self, parent_convo_id: str) -> bool:
+        """Link this worker conversation to its parent."""
+        try:
+            if not self.state_file.exists():
+                logger.error(f"SESSION_STATE.md not found. Run init first.")
+                return False
+            
+            content = self.state_file.read_text()
+            
+            # Find or create Parent Conversation section
+            parent_line = f"**Parent Conversation:** {parent_convo_id}"
+            
+            if "## Metadata" in content:
+                lines = content.split("\n")
+                for i, line in enumerate(lines):
+                    if line.startswith("## Metadata"):
+                        # Find end of existing metadata (next blank line or section)
+                        insert_idx = i + 1
+                        while insert_idx < len(lines) and lines[insert_idx].strip() != "" and not lines[insert_idx].startswith("##"):
+                            insert_idx += 1
+                        lines.insert(insert_idx, parent_line + "  ")
+                        break
+                content = "\n".join(lines)
+            else:
+                # Add new section after metadata header
+                content = content.replace("## Metadata", f"## Metadata\n\n{parent_line}", 1)
+            
+            self.state_file.write_text(content)
+            logger.info(f"✓ Linked to parent: {parent_convo_id}")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to link parent: {e}")
+            return False
+
 
 def main():
     parser = argparse.ArgumentParser(description="Session State Manager")
-    parser.add_argument("action", choices=["init", "update", "read"])
-    parser.add_argument("--convo-id", required=True)
+    parser.add_argument("action", choices=["init", "update", "read", "link-parent"])
+    parser.add_argument("--convo-id", help="Conversation ID (required for init/update/read)")
     parser.add_argument("--type", default=None, choices=["build", "research", "discussion", "planning"])
     parser.add_argument("--mode", type=str, default="", help="Specific mode within type")
     parser.add_argument("--load-system", action="store_true", help="Output system files to load")
     parser.add_argument("--message", type=str, default="", help="User message for auto-classification")
     parser.add_argument("--field", type=str, help="Field to update")
     parser.add_argument("--value", help="New value for field")
+    parser.add_argument("--parent", type=str, help="Parent conversation ID (for link-parent action)")
     
     args = parser.parse_args()
+    
+    if args.action == "link-parent":
+        if not args.parent:
+            logger.error("--parent required for link-parent action")
+            return 1
+        # Get current convo ID from environment or workspace
+        import os
+        current_convo = os.environ.get("ZO_CONVERSATION_ID", "")
+        if not current_convo:
+            logger.error("Cannot determine current conversation ID. Please run from within a Zo conversation.")
+            return 1
+        manager = SessionStateManager(current_convo)
+        success = manager.link_parent(args.parent)
+        return 0 if success else 1
+    
+    if not args.convo_id:
+        logger.error("--convo-id required for this action")
+        return 1
     
     manager = SessionStateManager(args.convo_id)
     

@@ -8,6 +8,41 @@ priority: high
 
 These principles guide system architecture and information design.
 
+## 1) Human-Readable First
+
+**Purpose:** Humans review and edit; machines consume
+
+**Rules:**
+- Generate outputs readable and editable by humans first.
+- JSON formats are derived from human text, never vice versa.
+- Markdown is preferred for all documentation.
+
+**When to apply:**
+- Documentation
+- Reports  
+- Data exports
+- System design
+
+**Anti-patterns:**
+- Generating machine formats first, then reverse-engineering human docs
+- Binary or encoded formats without human-readable source
+- Documentation as afterthought rather than primary artifact
+
+**Lessons Learned:**
+
+**Noun-First Title Structure for UI Constraints (2025-10-16):**
+- **Context:** Thread titles displayed in dropdown UI with limited width
+- **Problem:** Verb-first titles ("Building X", "Creating Y") look identical in narrow dropdown
+- **Solution:** Noun-first structure makes subjects immediately scannable ("API Design", "Database Schema")
+- **Examples:**
+  - ❌ "Building the conversational API system" → "Building..."
+  - ✅ "Conversational API Design and Implementation" → "Conversational..."
+- **Key insight:** UI constraints ARE architectural design considerations, not just stylistic preferences
+- **Application:** Any naming system where truncation is expected (file names, dropdown menus, tabs, logs with width limits)
+- **Pattern:** [Primary Noun/Subject] + [Context/Action] structure
+
+---
+
 ## 8) Minimal Context, Maximal Clarity
 
 **Purpose:** Efficient token usage, focused execution
@@ -58,6 +93,23 @@ These principles guide system architecture and information design.
 - Arbitrary splits (by size rather than purpose)
 - Circular dependencies between modules
 - Modules that can't stand alone
+
+**Lessons Learned:**
+
+**Case Study: Architectural Principles Modularization (Oct 2025-10-12)**
+- **Problem:** 400-line monolithic architectural principles document loaded entirely every time, wasting tokens and context window
+- **Solution:** Split into 5 focused modules based on usage patterns:
+  - `core.md` (P0, P2) - foundational rules
+  - `safety.md` (P5, P7, P11, P19) - file operations, automation
+  - `quality.md` (P1, P15, P16, P18, P21) - accuracy, completeness
+  - `design.md` (P3, P4, P8, P20, P22) - architecture, information design
+  - `operations.md` (P6, P9, P10, P12, P13, P14, P17) - workflows, deployments
+- **Index file:** Lightweight navigation + loading guidance
+- **Results:** 
+  - ~70% context reduction for typical operations
+  - Can load index + 1-2 relevant modules instead of entire document
+  - Follows Rule-of-Two: max 2 config files for most tasks
+- **Key insight:** Module boundaries should match actual usage patterns (when would someone need this?), not arbitrary size limits
 
 ---
 

@@ -1,0 +1,43 @@
+========================================
+INSTRUCTIONS FOR NEW ZO
+========================================
+
+Step 1: Report Your Status
+---------------------------
+curl -X POST https://n5-bootstrap-support-va.zocomputer.io/status \
+  -d "New Zo online. Directory structure created. Ready to build."
+
+
+Step 2: Pull Conditional Rules
+-------------------------------
+curl -s https://n5-bootstrap-support-va.zocomputer.io/configs/conditional_rules.md > /home/workspace/N5/CONDITIONAL_RULES.md
+
+Then tell parent:
+curl -X POST https://n5-bootstrap-support-va.zocomputer.io/status \
+  -d "Conditional rules downloaded. Adding to Zo settings now."
+
+
+Step 3: Add Rules to Zo Settings
+---------------------------------
+Copy the content from N5/CONDITIONAL_RULES.md and add them to your Zo settings under "Conditional Rules"
+
+Then confirm:
+curl -X POST https://n5-bootstrap-support-va.zocomputer.io/status \
+  -d "Conditional rules added to Zo settings. Rules active."
+
+
+Step 4: Wait for Parent Approval
+---------------------------------
+Parent will review and approve next steps.
+
+
+IMPORTANT RULES FOR NEW ZO:
+===========================
+1. You CAN pull files from parent (GET requests)
+2. You CAN report status to parent (POST /status)
+3. You CANNOT execute commands on parent
+4. You CANNOT modify parent's files
+5. Wait for parent approval between major steps
+6. Report all actions to parent via POST /status
+
+========================================

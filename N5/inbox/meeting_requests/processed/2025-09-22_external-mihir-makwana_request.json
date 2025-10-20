@@ -6,7 +6,8 @@
   "gdrive_link": "https://docs.google.com/document/d/1LDtI0ecuhJ8C2gZZdJl90HkNBz-EbdeX/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Mihir Makwana x Vrijen-transcript-2025-09-22T15-01-42.473Z.docx",
   "created_at": "2025-10-11T02:46:47.571114Z",
-  "status": "pending",
+  "status": "processed",
   "classification": "external",
-  "external_participant": "mihir-makwana"
+  "external_participant": "mihir-makwana",
+  "processed_at": "2025-10-11T02:46:47.571114Z"
 }

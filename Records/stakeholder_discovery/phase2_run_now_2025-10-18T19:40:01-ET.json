@@ -1,0 +1,14 @@
+{
+  "run_at": "2025-10-18T19:40:01-04:00",
+  "run_at_utc": "2025-10-18T23:40:01Z",
+  "staging_path": "Records/Temporary/email_staging",
+  "paths_checked": [
+    "Records/Temporary/email_staging",
+    "Records/Temporary/email_staging/2025-10-14",
+    "Records/Temporary/email_staging/2025-10-15"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "deletions_performed": 0,
+  "notes": "No staging files found to process. N5 preferences loaded: Documents/N5.md and N5/prefs/prefs.md."
+}

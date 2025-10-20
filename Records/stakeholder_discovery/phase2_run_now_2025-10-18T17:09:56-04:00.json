@@ -1,0 +1,18 @@
+{
+  "run_at": "2025-10-18T17:09:56-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "staging_files_listed": [
+    "process_report_2025-10-18T11:39:52-04:00.md",
+    "process_report_2025-10-18T12:20:07-EDT.md",
+    "process_report_2025-10-18T12:39:38Z.md",
+    "process_report_2025-10-18T14:19:39Z.md",
+    "process_report_2025-10-18T16:39:36-EDT.md"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "actions": {
+    "discovery_records_written": 0,
+    "staging_files_deleted": 0
+  },
+  "notes": "No email staging files containing external participants were found under Records/Temporary/email_staging. Existing files are processing reports only; no extraction performed."
+}

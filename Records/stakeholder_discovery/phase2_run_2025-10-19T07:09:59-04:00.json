@@ -1,0 +1,12 @@
+{
+  "run_at": "2025-10-19T07:09:59-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 11,
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries_written_to": "Records/stakeholder_discovery",
+  "notes": "No external staging email messages were present in Records/Temporary/email_staging. Existing files are processing reports and metadata; no extraction performed. No deletions performed (destructive actions require explicit approval)."
+}

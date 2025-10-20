@@ -1,0 +1,19 @@
+{
+  "run_at": "2025-10-18T13:50:05-04:00",
+  "run_at_utc": "2025-10-18T17:50:05Z",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_inspected": [
+    "Records/Temporary/email_staging",
+    "Records/Temporary/email_staging/2025-10-14",
+    "Records/Temporary/email_staging/2025-10-15",
+    "Records/Temporary/email_staging/process_report_2025-10-18T11:39:52-04:00.md",
+    "Records/Temporary/email_staging/process_report_2025-10-18T12:20:07-EDT.md",
+    "Records/Temporary/email_staging/process_report_2025-10-18T12:39:38Z.md",
+    "Records/Temporary/email_staging/process_report_2025-10-18T14:19:39Z.md"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discovery_records_created": [],
+  "deleted_files": [],
+  "notes": "No external participant emails found in staging. No extraction performed."
+}

@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1aQFGwfsEAKX2YF8L4Sd8MYJdWNRh-_kz",
   "original_filename": "Shujaat x Vrijen x Logan-transcript-2025-09-19T19-18-57.791Z.docx",
   "created_at": "2025-10-11T04:07:15.345044+00:00",
-  "status": "pending",
-  "external_participant": "shujaat-x-logan"
+  "status": "processed",
+  "external_participant": "shujaat-x-logan",
+  "processed_at": "2025-10-11T04:07:15.345044+00:00"
 }

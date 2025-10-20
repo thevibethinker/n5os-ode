@@ -20,6 +20,7 @@ import re
 import sys
 import pytz
 import subprocess
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Any, Tuple, Optional
@@ -379,12 +380,25 @@ def research_stakeholder(attendee: Dict[str, Any], description: str = "") -> Dic
 
 
 def generate_bluf(meeting: Dict[str, Any], research: List[Dict[str, Any]]) -> str:
-    """Generate Bottom Line Up Front summary for meeting (strict, non-speculative)."""
+    """Generate Bottom Line Up Front from calendar description if present; else explicit none."""
     description = meeting.get('description', '')
     if description:
+        # Prefer explicit Purpose: line
         purpose_match = re.search(r'Purpose:\s*(.+)', description, re.IGNORECASE)
         if purpose_match:
             return purpose_match.group(1).strip()
+        # Otherwise, take the first substantive non-tag line from description
+        for line in description.split('\n'):
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith('#'):
+                continue
+            if re.match(r'^\[.*\]$', line):
+                continue
+            if line.startswith('---'):
+                continue
+            return line[:200]
     return "No meeting objective documented in calendar."
 
 
@@ -412,19 +426,19 @@ def generate_meeting_section(meeting: Dict[str, Any], research: List[Dict[str, A
     # Header details
     section += f"**BLUF:** {bluf}\n\n"
     
-    # Email interactions with explicit limitation
+    # Email interactions (no explanatory placeholders)
     has_any_interactions = any(r.get('last_interactions') for r in research)
     if has_any_interactions:
-        section += "**Last 3 email interactions (max returned by API):**\n"
+        section += "**Last 3 email interactions:**\n"
         for attendee_research in research:
             interactions = attendee_research.get('last_interactions', [])
             for interaction in interactions[:3]:
                 section += f"- {interaction['date']} — {interaction['context']}\n"
-        section += "- (Earlier history may exist but not returned by Gmail API)\n\n"
+        section += "\n"
     else:
-        section += "**Email history:** No messages found in last 3 API results. (Earlier history may exist.)\n\n"
+        section += "**Email history:** No recent email interactions found.\n\n"
     
-    # Calendar description (verbatim line or explicit none)
+    # Calendar description (verbatim first useful line)
     if description:
         desc_lines = [
             line for line in description.split('\n')
@@ -452,7 +466,10 @@ def generate_meeting_section(meeting: Dict[str, Any], research: List[Dict[str, A
     
     # Prepare (no generic; only context-specific or clarify objective)
     section += "**Prepare:**\n"
-    if description and re.search(r'Purpose:\s*(.+)', description, re.IGNORECASE):
+    default_bluf = "No meeting objective documented in calendar."
+    if bluf != default_bluf:
+        section += "- Prepare materials relevant to the documented objective\n"
+    elif description and re.search(r'Purpose:\s*(.+)', description, re.IGNORECASE):
         section += "- Prepare materials relevant to the documented purpose\n"
     else:
         section += "- Clarify meeting objective (not documented in calendar)\n"
@@ -546,17 +563,34 @@ def generate_empty_digest(target_date: datetime.date) -> str:
     return content
 
 
-def save_digest(content: str, target_date: datetime.date):
-    """Save digest to file."""
+def save_digest_validated(content: str, target_date: datetime.date) -> None:
+    """Safely write digest via temp file, validate, then atomically move into place."""
     DIGESTS_DIR.mkdir(parents=True, exist_ok=True)
-    
-    filename = f"daily-meeting-prep-{target_date}.md"
-    filepath = DIGESTS_DIR / filename
-    
-    with open(filepath, 'w') as f:
+    final_path = DIGESTS_DIR / f"daily-meeting-prep-{target_date}.md"
+    tmp_path = DIGESTS_DIR / f".tmp_daily-meeting-prep-{target_date}.md"
+
+    # Write temp file
+    with open(tmp_path, 'w', encoding='utf-8') as f:
         f.write(content)
-    
-    logger.info(f"✓ Saved digest: {filepath}")
+
+    # Validate temp file
+    result = subprocess.run([
+        "python3",
+        "/home/workspace/N5/scripts/validate_digest_output.py",
+        str(tmp_path)
+    ], capture_output=True, text=True)
+
+    if result.returncode != 0:
+        # Keep rejected copy for audit
+        rejected_path = DIGESTS_DIR / f"daily-meeting-prep-{target_date}.rejected_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+        os.replace(tmp_path, rejected_path)
+        with open('/home/workspace/N5/logs/digest_validation.log', 'a', encoding='utf-8') as logf:
+            logf.write(f"Validation failed for {final_path} at {datetime.now().isoformat()} | kept {rejected_path.name}\n")
+        raise RuntimeError(f"Digest validation failed for {final_path}; see {rejected_path.name}")
+
+    # Move temp to final atomically
+    os.replace(tmp_path, final_path)
+    logger.info(f"✓ Saved digest: {final_path}")
 
 
 def fetch_calendar_events(target_date: datetime.date) -> List[Dict[str, Any]]:
@@ -684,15 +718,7 @@ def main():
             logger.info("DRY RUN - Digest preview:")
             print("\n" + digest_content)
         else:
-            # validate output file for placeholder text
-            result = subprocess.run(["python3", "/home/workspace/N5/scripts/validate_digest_output.py", str(DIGESTS_DIR / f"daily-meeting-prep-{target_date}.md")], capture_output=True, text=True)
-            if result.returncode != 0:
-                logger.error(f"Digest validation failed: {result.stdout.strip()}")
-                # Write validation failure log
-                with open('/home/workspace/N5/logs/digest_validation.log', 'a') as logf:
-                    logf.write(f"Validation failed for {DIGESTS_DIR / f'daily-meeting-prep-{target_date}.md'} at {datetime.now().isoformat()}\n")
-                raise RuntimeError(f"Digest validation failed for {DIGESTS_DIR / f'daily-meeting-prep-{target_date}.md'}")
-            save_digest(digest_content, target_date)
+            save_digest_validated(digest_content, target_date)
             logger.info(f"✓ Digest generated: {DIGESTS_DIR / f'daily-meeting-prep-{target_date}.md'}")
         
         return 0

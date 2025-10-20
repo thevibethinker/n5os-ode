@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/output-review.schema.json",
+  "title": "N5 Output Review Entry",
+  "type": "object",
+  "required": ["id", "created_at", "title", "type", "reference", "provenance", "review"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^out_[a-zA-Z0-9]{12}$",
+      "description": "Unique identifier (out_XXXXXXXXXXXX)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "archived_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Separate timestamp for archival"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Brief description of the output"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["file", "message", "url"],
+      "description": "Type of output being reviewed"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Path (file), content excerpt (message), or URL"
+    },
+    "content_hash": {
+      "type": ["string", "null"],
+      "description": "SHA256 hash for file integrity tracking"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["conversation_id"],
+      "properties": {
+        "conversation_id": {
+          "type": "string",
+          "description": "Conversation where output was generated"
+        },
+        "thread_id": {
+          "type": ["string", "null"],
+          "description": "Thread within conversation workspace"
+        },
+        "script_path": {
+          "type": ["string", "null"],
+          "description": "Path to script that generated output"
+        },
+        "command_name": {
+          "type": ["string", "null"],
+          "description": "N5 command that was invoked"
+        },
+        "pipeline_run_id": {
+          "type": ["string", "null"],
+          "description": "Pipeline/run identifier for multi-step processes"
+        },
+        "parent_output_id": {
+          "type": ["string", "null"],
+          "description": "ID of output this was derived from"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in_review", "needs_work", "approved", "training", "archived"],
+          "description": "Current workflow state"
+        },
+        "sentiment": {
+          "type": ["string", "null"],
+          "enum": ["excellent", "good", "neutral", "issue", "critical", null],
+          "description": "Quality assessment"
+        },
+        "reviewed_by": {
+          "type": ["string", "null"],
+          "description": "Person who reviewed (V, Zo, etc.)"
+        },
+        "reviewed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "quality_dimensions": {
+          "type": "object",
+          "properties": {
+            "instruction_adherence": {
+              "type": ["integer", "null"],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "format_structure": {
+              "type": ["integer", "null"],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "length_appropriateness": {
+              "type": ["integer", "null"],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "style_tone": {
+              "type": ["integer", "null"],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "technical_accuracy": {
+              "type": ["integer", "null"],
+              "minimum": 0,
+              "maximum": 10
+            }
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "description": "Categorization tags"
+    },
+    "notes": {
+      "type": "string",
+      "description": "General notes about this output"
+    },
+    "comment_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of comments on this output"
+    },
+    "latest_comment_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Timestamp of most recent comment"
+    }
+  }
+}

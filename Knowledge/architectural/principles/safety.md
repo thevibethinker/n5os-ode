@@ -27,6 +27,21 @@ These principles prevent data loss, corruption, and destructive actions.
 - Require explicit approval for hard-protected files
 - Always create backups before destructive operations
 
+**Protected File Patterns (2025-10-14):**
+- **Pattern:** Identify architecturally critical files that should never be auto-modified
+- **Examples:**
+  - `architectural_principles.md` - Core system design
+  - `commands.jsonl` - System command registry
+  - Schema files (`.schema.json`) - Data contracts
+  - Production configuration files
+- **Implementation:** 
+  - Maintain protected file list in config
+  - Scripts check against list before writes
+  - Require `--force` flag + explicit confirmation for protected files
+  - Log all attempted modifications to protected files
+- **Rationale:** Some files are foundational; accidental corruption cascades through system
+- **Key insight:** Protection is about blast radius, not just importance
+
 ---
 
 ## 7) Idempotence and Dry-Run by Default
@@ -41,6 +56,8 @@ These principles prevent data loss, corruption, and destructive actions.
 **When to apply:**
 - New automation workflows
 - Bulk file operations
+- Destructive changes
+- System migrations
 - System modifications
 - Scheduled tasks
 
@@ -49,27 +66,57 @@ These principles prevent data loss, corruption, and destructive actions.
 - Preview changes before applying
 - Log what would happen without executing
 
+**Lessons Learned:**
+
+**Automated Cleanup Pattern (2025-10-14):**
+- **Context:** Phase 7 cleanup after CRM consolidation
+- **Implementation:** Comprehensive dry-run preview showing all changes (21 files, 85 replacements, 13 archived files, 3 backup sets)
+- **Result:** User validated preview, zero errors, zero broken references after execution
+- **Key insight:** Dry-run validation prevents destructive mistakes; detailed preview builds confidence
+
+**Multi-Phase Cleanup Operations (2025-10-14):**
+- **Pattern:** Three discrete phases: (1) Deprecate legacy scripts with notices, (2) Archive legacy directories to Documents/Archive/ with metadata, (3) Compress migration artifacts
+- **Why it works:** Each phase is reversible; failures don't cascade; state is verifiable at each step
+- **Application:** Applies to any large-scale cleanup or migration operation
+
 ---
 
 ## 11) Failure Modes and Recovery
 
-**Purpose:** Handle errors gracefully and enable recovery
+**Purpose:** Design for predictable, recoverable failures
 
 **Rules:**
-- If transcript quality is low or uncertainty >25%, pause for better input.
-- On any exception, write a minimal incident note to logs and stop before destructive actions.
-- Document recovery steps for common failures.
+- Anticipate failure points in automation.
+- Provide recovery instructions or auto-resume capabilities.
+- Log failures with context for debugging.
 
 **When to apply:**
-- Ingestion workflows
-- Automated processing
-- Multi-step operations
+- Multi-step workflows
+- External API integrations
+- Long-running processes
+- Automated deployments
 
 **Implementation:**
-- Quality checks before processing
-- Checkpoint between major steps
-- Clear error messages with recovery instructions
-- Log files for post-mortem analysis
+- Checkpoint progress in multi-phase operations
+- Provide rollback mechanisms
+- Document recovery procedures
+- Design for graceful degradation
+
+**Lessons Learned:**
+
+**Graceful Degradation for Enhancement Integrations (2025-10-14):**
+- **Context:** Integrating timeline automation into thread export workflow
+- **Problem:** Core workflow should complete successfully even if enhancement features fail
+- **Solution:** Wrap enhancement imports in try/except, check availability flag before execution, log failures but continue
+- **Example:** `try: from enhancements import timeline; HAS_TIMELINE = True except: HAS_TIMELINE = False; log warning; continue core workflow`
+- **Key insight:** Core functionality must never be blocked by optional enhancements
+- **Application:** Any feature integration where base system should work independently
+
+**Post-Archive Timeline Integration (2025-10-14):**
+- **Context:** Placing timeline automation in export workflow
+- **Decision:** Timeline check (Phase 6) placed AFTER archive creation (Phase 5) but BEFORE completion message
+- **Rationale:** Archive is safe on disk before attempting risky timeline automation; if timeline fails, export still succeeds
+- **Key insight:** Order operations by criticality and reversibility
 
 ---
 

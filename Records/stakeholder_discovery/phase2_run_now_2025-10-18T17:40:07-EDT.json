@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-18T21:40:07Z",
+  "run_at_local": "2025-10-18T17:40:07-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found under Records/Temporary/email_staging; no extraction performed. N5 preferences loaded: file 'Documents/N5.md' and file 'N5/prefs/prefs.md'.",
+  "generated_by": "Zo Computer native LLM extraction runner"
+}

@@ -1,7 +1,7 @@
 # N5 Preferences Index
 
-**Version:** 3.0.0  
-**Last Updated:** 2025-10-10  
+**Version:** 3.1.0  
+**Last Updated:** 2025-10-20  
 **Purpose:** Lightweight index to modular preferences, loaded selectively by context
 
 ---
@@ -31,7 +31,16 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - **Whenever a new file is created, always ask where the file should be located**
 
 ### Command-First Operations
-**CRITICAL:** Always check for registered commands in `file 'N5/config/commands.jsonl'` before performing operations manually.
+**CRITICAL:** Before ANY workflow-related operation, check for registered commands in `file 'N5/config/commands.jsonl'` OR search `N5/commands/*.md` for relevant protocols.
+
+**Scope:** System operations, content processing, knowledge management, reflections, automation, scheduled tasks, integrations, file operations, and any workflow with established procedures.
+
+**Priority order:**
+1. Registered command in commands.jsonl
+2. Protocol documentation in N5/commands/
+3. Manual script execution
+4. Direct file operations
+5. Improvisation (last resort after confirming no protocol exists)
 
 **Specific Rules:**
 - **Thread closure:** Load `file 'N5/prefs/operations/thread-closure-triggers.md'` to determine correct command
@@ -41,9 +50,26 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - **Thread export location:** ALL thread exports MUST go to `N5/logs/threads/` (enforced by thread-export command)
 - **NEVER** create ad-hoc export directories in workspace root (`/home/workspace/ExportedThreads/`, `/home/workspace/Exports/`, etc.)
 - **System operations:** Check commands.jsonl before manual implementation (lists, timeline, git, thread operations)
-- **Preference order:** Registered command > Manual script execution > Direct file operations
+- **Reflections:** Subject "reflection-ingest" or "[Reflect]" → See "Reflection Processing" section below
+- **Content workflows:** Always search N5/commands/ before creating ad-hoc processes
+- **Preference order:** Registered command > Protocol documentation > Manual script execution > Direct file operations > Improvisation
 
-**Rationale:** Maintains SSOT (P2), prevents directory proliferation, ensures consistent naming and structure
+**Rationale:** Maintains SSOT (P2), prevents directory proliferation, ensures consistent naming and structure, leverages established workflows and their benefits (tracking, approval, integration)
+
+### Reflection Processing
+
+**When email subject contains "reflection-ingest", "[Reflect]", or "reflection-pipeline" OR when processing voice reflections:**
+
+1. STOP and load `file 'N5/commands/reflection-ingest.md'`
+2. Check for email attachments in conversation workspace (`/home/.z/workspaces/*/email_attachment/`)
+3. Stage files to `N5/records/reflections/incoming/`:
+   - For text files (.txt, .md): Create `.transcript.jsonl` wrapper if needed
+   - For audio files: Use transcribe_audio tool first
+4. Execute: `python3 /home/workspace/N5/scripts/reflection_ingest.py`
+5. Follow established approval workflow
+6. **DO NOT improvise alternate analysis approaches**
+
+**Rationale:** Reflections have established pipeline with registry, approval workflow, and synthesis protocols. Bypassing creates inconsistency and loses system benefits (tracking, classification, SSOT).
 
 ### Folder Policy Principle (Highest Priority)
 Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted.
@@ -289,6 +315,13 @@ When referring to lists, always check `/home/workspace/N5/lists/` and `/home/wor
 ---
 
 ## Change Log
+
+### v3.1.0 — 2025-10-20
+- **Protocol Enhancement:** Added explicit "Reflection Processing" conditional rule mapping email subjects to reflection pipeline
+- **Broadened Command-First:** Expanded scope from just system operations to ALL workflow types with clear priority order
+- **Updated reflection-ingest.md:** Added comprehensive AI workflow section with text transcript handling
+- **Updated reflection_worker.py:** Native text file support with auto-creation of transcript.jsonl wrappers
+- **Rationale:** Prevent protocol bypass incidents, make command-first approach systemic
 
 ### v3.0.0 — 2025-10-10
 - **Breaking change:** Converted prefs.md from monolithic document to lightweight index

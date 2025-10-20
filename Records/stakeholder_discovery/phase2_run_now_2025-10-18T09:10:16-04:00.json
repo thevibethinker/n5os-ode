@@ -1,0 +1,9 @@
+{
+  "discovered_at": "2025-10-18T09:10:16-04:00",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discovered_records": []
+}

@@ -1,0 +1,13 @@
+{
+  "run_at": "2025-10-18T14:10:12-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_checked": [
+    "process_report_2025-10-18T14:19:39Z.md",
+    "process_report_2025-10-18T12:39:38Z.md",
+    "process_report_2025-10-18T12:20:07-EDT.md",
+    "process_report_2025-10-18T11:39:52-04:00.md"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email staging files found under Records/Temporary/email_staging; only process reports present. No discovery records created; no files deleted."
+}

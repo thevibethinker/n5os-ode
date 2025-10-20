@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-19T10:40:17-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_checked": [],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No external staging email files found. No discovery records created. Destructive actions (deletions) were not performed.",
+  "focus": "external participants only; internal domains excluded: mycareerspan.com, theapply.ai, zo.computer"
+}

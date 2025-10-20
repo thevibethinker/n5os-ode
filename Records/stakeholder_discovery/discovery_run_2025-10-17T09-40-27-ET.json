@@ -1,0 +1,9 @@
+{
+  "run_started_at_utc": "2025-10-17T13:40:27Z",
+  "run_started_at_local": "2025-10-17T09:40:27-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging. No extractions performed."
+}

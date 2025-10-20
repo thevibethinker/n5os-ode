@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Reflection Processing Registry",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "ingested_at", "labels", "summary_path", "status"],
+        "properties": {
+          "id": {"type": "string"},
+          "source": {"type": "string"},
+          "ingested_at": {"type": "string"},
+          "labels": {"type": "array", "items": {"type": "string"}},
+          "summary_path": {"type": "string"},
+          "detail_path": {"type": "string"},
+          "proposal_path": {"type": "string"},
+          "status": {"type": "string", "enum": ["new", "awaiting-approval", "approved", "generated", "archived"]}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

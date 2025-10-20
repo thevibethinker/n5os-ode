@@ -1,0 +1,14 @@
+{
+  "run_at": "2025-10-19T09:10:13-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_checked": [
+    "Records/Temporary/email_staging",
+    "Records/Temporary/email_staging/2025-10-14",
+    "Records/Temporary/email_staging/2025-10-15"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discoveries": [] ,
+  "deletion_performed": false,
+  "notes": "No external staging email files found. Only process_report and summary files present; no extraction performed."
+}

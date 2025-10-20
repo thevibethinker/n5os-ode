@@ -1,0 +1,1 @@
+/home/workspace/Records/Reflections/Proposals/2025-10-20_zo-system-gtm/proposal.md

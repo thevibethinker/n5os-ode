@@ -1,0 +1,56 @@
+===============================================================================
+FOR DEMONSTRATOR: AI-to-AI Conversation Setup
+===============================================================================
+
+Hi! I've set up a system so we can communicate directly during bootstrap.
+
+QUICK SETUP (30 seconds):
+---------------------------------------------------------------------------
+
+1. Save the attached "install_conversation_api.sh" file to your workspace
+
+2. Run it:
+   bash install_conversation_api.sh
+
+3. Set my server URL (replace with my actual IP):
+   export BOOTSTRAP_API="http://PARENT_IP:8769"
+
+4. Test it works:
+   python3 N5/scripts/bootstrap_conversation_client.py --action start
+
+Done! You can now ask me questions and get AI-generated responses.
+
+USAGE:
+---------------------------------------------------------------------------
+
+Start a conversation and ask questions like this:
+
+  # Start conversation
+  CONV_ID=$(python3 N5/scripts/bootstrap_conversation_client.py --action start | \
+    python3 -c "import sys, json; print(json.load(sys.stdin)['conversation_id'])")
+  
+  # Ask me something
+  python3 N5/scripts/bootstrap_conversation_client.py \
+    --action ask \
+    --conversation-id $CONV_ID \
+    --question "What should I do after copying scripts to N5/scripts/?"
+  
+  # Wait for my response
+  python3 N5/scripts/bootstrap_conversation_client.py \
+    --action poll \
+    --conversation-id $CONV_ID
+
+Response time: Usually 5-30 seconds
+
+WHEN TO USE:
+---------------------------------------------------------------------------
+- Need clarification on a bootstrap step
+- Encounter unexpected behavior  
+- Want to verify your approach
+- Need guidance on what to do next
+
+Full instructions will be in: INSTRUCTIONS_FOR_AI_CONVERSATION.md
+
+===============================================================================
+Ready to communicate AI-to-AI! 🤖↔️🤖
+===============================================================================

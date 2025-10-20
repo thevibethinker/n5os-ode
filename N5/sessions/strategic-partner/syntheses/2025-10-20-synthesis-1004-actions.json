@@ -1,0 +1,58 @@
+[
+  {
+    "action": "Finalize Zoe Bridge functionality as reference implementation",
+    "why": "Zoe Bridge serves as the template for all customer deployments; must be production-ready before cloning",
+    "by_when": "2025-10-27",
+    "owner": "V",
+    "priority": "high",
+    "dependencies": []
+  },
+  {
+    "action": "Create demonstrator account with standard productivity kit",
+    "why": "Need cloneable template to enable scalable customer onboarding",
+    "by_when": "2025-11-03",
+    "owner": "V",
+    "priority": "high",
+    "dependencies": ["Finalize Zoe Bridge functionality"]
+  },
+  {
+    "action": "Document 8 core capabilities and integration points",
+    "why": "Clear product definition enables sales conversations and pricing discussions",
+    "by_when": "2025-10-25",
+    "owner": "V",
+    "priority": "high",
+    "dependencies": []
+  },
+  {
+    "action": "Generate demo using this reflection recording as proof of concept",
+    "why": "Meta-demo showcases reflection processing capability with minimal additional effort",
+    "by_when": "2025-10-22",
+    "owner": "V",
+    "priority": "high",
+    "dependencies": []
+  },
+  {
+    "action": "Define add-on pricing structure (voice optimization, email drafting, etc.)",
+    "why": "Need tiered pricing model to capture value from premium features",
+    "by_when": "2025-10-28",
+    "owner": "V",
+    "priority": "medium",
+    "dependencies": ["Document 8 core capabilities"]
+  },
+  {
+    "action": "Begin taking advanced orders for custom implementations",
+    "why": "Validate willingness-to-pay and generate early revenue before scaling operations",
+    "by_when": "2025-11-10",
+    "owner": "V",
+    "priority": "medium",
+    "dependencies": ["Create demonstrator account", "Define add-on pricing structure"]
+  },
+  {
+    "action": "Brainstorm additional necessary capabilities with AI assistance",
+    "why": "Ensure comprehensive feature set before locking in standard offering",
+    "by_when": "2025-10-23",
+    "owner": "V",
+    "priority": "low",
+    "dependencies": []
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-19T08:39:38Z",
+  "tz": "America/New_York",
+  "started_at_local": "2025-10-19T04:39:38-04:00",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No staging email files found in /home/workspace/Records/Temporary/email_staging. No discovery records created.",
+  "source": "email_scanner"
+}

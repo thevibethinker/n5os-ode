@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1BGPFe7VZVfrVVE1P6WcL8M36_NOIeL8p",
   "original_filename": "Usha Srinivasan x Vrijen Attawar-transcript-2025-09-08T13-56-53.014Z.docx",
   "created_at": "2025-10-11T04:07:15.354787+00:00",
-  "status": "pending",
-  "external_participant": "usha-srinivasan"
+  "status": "processed",
+  "external_participant": "usha-srinivasan",
+  "processed_at": "2025-10-11T04:07:15.354787+00:00"
 }

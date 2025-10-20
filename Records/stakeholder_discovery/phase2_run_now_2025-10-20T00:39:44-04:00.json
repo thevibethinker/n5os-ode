@@ -1,0 +1,10 @@
+{
+  "run_started_at": "2025-10-20T00:39:44-04:00",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries": [],
+  "notes": "No staging files found in the staging directory. No files deleted. Per safety policy, destructive actions require explicit confirmation before proceeding."
+}

@@ -1,0 +1,8 @@
+{
+  "processed_at": "2025-10-20T02:09:51-04:00",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "note": "No staging files found in Records/Temporary/email_staging. No extraction performed."
+}

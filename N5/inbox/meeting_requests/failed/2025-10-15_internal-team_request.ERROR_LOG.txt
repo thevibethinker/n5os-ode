@@ -1,0 +1,39 @@
+ERROR: Meeting Classification Mismatch
+Date: 2025-10-17 01:29 ET
+Meeting ID: 2025-10-15_internal-team
+Request File: 2025-10-15_internal-team_request.json
+
+ISSUE:
+Meeting classified as "internal" with participants "Daily team stand-up"
+This is an INTERNAL TEAM STANDUP, not an external stakeholder meeting.
+
+TRANSCRIPT ANALYSIS:
+- Participants: Vrijen, Ilse Funkhouser, Danny Williams, Rochel Polter, Logan (referenced)
+- Content: Team status updates, project coordination, technical discussions
+- Type: Daily standup/sync meeting
+
+STAKEHOLDER RULES (v1.1.0):
+Per N5/config/stakeholder_rules.json, section "excluded_types" > "internal_team":
+- Internal Careerspan team members should be EXCLUDED from stakeholder system
+- Reasoning: "Internal Careerspan team members"
+- Domains: ["mycareerspan.com", "careerspan.com"]
+
+WORKFLOW INCOMPATIBILITY:
+The Registry System v1.5 (meeting-process.md v5.1.0) is designed for EXTERNAL stakeholder meetings:
+- FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, JOB_SEEKER
+- Includes CRM profile creation
+- Includes Howie scheduling tags
+- Focuses on business development intelligence
+
+This workflow does NOT apply to internal team coordination meetings.
+
+RECOMMENDED ACTION:
+1. Create separate workflow for internal meeting processing if needed
+2. Do not route internal meetings through external stakeholder workflow
+3. Update meeting request generation logic to filter out internal meetings
+4. Consider alternative processing: simple action item extraction, project tracker updates
+
+NEXT STEPS:
+- This request has been moved to N5/inbox/meeting_requests/failed/
+- No blocks generated (inappropriate workflow)
+- System should not process internal meetings through Registry System v1.5

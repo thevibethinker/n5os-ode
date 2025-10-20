@@ -1,0 +1,43 @@
+# N5 Bootstrap - Required Dependencies
+
+## Python Packages (pip3)
+anthropic
+openai
+aiohttp
+python-dotenv
+pyyaml
+jsonschema
+requests
+beautifulsoup4
+
+## System Packages (apt)
+jq
+tree
+git
+curl
+wget
+
+## Installation Commands
+
+# Python packages (all at once)
+pip3 install anthropic openai aiohttp python-dotenv pyyaml jsonschema requests beautifulsoup4
+
+# System packages
+apt update && apt install -y jq tree git curl wget
+
+## Verification
+
+# Check Python packages
+python3 -c "import anthropic, openai, aiohttp, yaml, jsonschema; print('✓ All Python deps OK')"
+
+# Check system packages
+command -v jq && command -v tree && command -v git && echo "✓ All system deps OK"
+
+## Optional (for advanced features)
+
+# Node.js (for some integrations)
+# curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+# apt install -y nodejs
+
+# Bun (for web services)
+# curl -fsSL https://bun.sh/install | bash

@@ -1,0 +1,25 @@
+EXCLUSION REASON: Internal Team Meeting
+
+Meeting ID: 2025-10-16_internal-team
+Classification: internal
+Date: 2025-10-16
+Participants: Logan Currie, Ilse Funkhouser, Danny Williams, Rochel Polter, Vrijen Attawar
+
+REASON FOR EXCLUSION:
+This is an internal Careerspan team standup meeting, not a stakeholder meeting.
+
+Per N5/config/stakeholder_rules.json:
+- "internal_team": { "exclude": true, "reasoning": "Internal Careerspan team members" }
+
+Internal team meetings should NOT be processed through the stakeholder meeting intelligence workflow.
+
+ACTION TAKEN:
+- Request moved from N5/inbox/meeting_requests/ to N5/inbox/meeting_requests/failed/
+- No blocks generated
+- No CRM profile creation
+- Transcript preserved at: N5/inbox/transcripts/2025-10-16_internal-team.txt
+
+RECOMMENDATION:
+If internal team standups require processing, create a separate workflow with internal-specific block types (e.g., task updates, blockers, team morale, project status).
+
+Processed: 2025-10-17 00:31 UTC

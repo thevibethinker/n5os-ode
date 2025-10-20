@@ -1,0 +1,12 @@
+{
+  "run_at": "2025-10-17T20:39:27Z",
+  "staging_paths_scanned": [
+    "/home/workspace/Records/Temporary/email_staging/2025-10-14",
+    "/home/workspace/Records/Temporary/email_staging/2025-10-15"
+  ],
+  "files_processed_count": 0,
+  "files_processed": [],
+  "stakeholders_discovered_count": 0,
+  "stakeholders_discovered": [],
+  "notes": "No staging files found to process."
+}

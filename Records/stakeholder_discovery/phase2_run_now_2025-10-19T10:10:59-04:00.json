@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-19T10:10:59-04:00",
+  "run_at_utc": "2025-10-19T14:10:59Z",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "deleted_files": [],
+  "notes": "No external staging email files found under Records/Temporary/email_staging. Directories present but empty. No discovery records created. Destructive deletion not performed."
+}

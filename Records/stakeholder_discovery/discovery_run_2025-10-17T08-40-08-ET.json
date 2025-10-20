@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-17T08:40:08-04:00",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "deleted_files": [],
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging. No discovery records created."
+}

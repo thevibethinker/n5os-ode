@@ -1,0 +1,4 @@
+Run: 2025-10-19T15:09:39-04:00 ET
+No staging files found in /home/workspace/Records/Temporary/email_staging to process.
+Files processed: 0
+Stakeholders discovered: 0

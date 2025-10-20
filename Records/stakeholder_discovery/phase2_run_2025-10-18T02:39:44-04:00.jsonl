@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-18T02:39:44-04:00",
+  "stage_directory": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries_written_to": "Records/stakeholder_discovery",
+  "notes": "No staging files found. No discoveries created."
+}

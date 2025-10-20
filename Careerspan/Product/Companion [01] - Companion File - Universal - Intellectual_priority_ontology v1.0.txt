@@ -11,7 +11,7 @@
       "parse_hooks": {
         "keywords": ["hidden curriculum", "career profile", "reflective interview"],
         "regex": ["\\bcompetency(-|\\s?)mapping\\b"],
-        "llm_hint": "Surface any equity-impact claims or novel profiling frameworks."
+        "llm_hint": "Surface any eq uity-impact claims or novel profiling frameworks."
       }
     },
     {

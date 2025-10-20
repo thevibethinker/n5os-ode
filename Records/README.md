@@ -27,6 +27,10 @@ Records/
 │   └── inbox/          - General company intake queue
 ├── Personal/
 │   ├── notes/          - Personal notes
+│   ├── drafts/         - Ad hoc generated outputs (emails, documents)
+│   │   ├── emails/     - Email drafts
+│   │   ├── documents/  - Document drafts
+│   │   └── other/      - Miscellaneous generated content
 │   └── inbox/          - Personal intake queue
 ├── Temporary/          - Short-term processing queue (7-day auto-cleanup)
 └── README.md           - This file
@@ -58,8 +62,12 @@ N5: process-record Records/Company/meetings/2025-10-08-board-meeting.md
 # This extracts:
 # - Facts → Knowledge/facts.jsonl
 # - Company info → Knowledge/company.md
-# - Action items → Lists/must-contact.jsonl
-# - Timeline events → Knowledge/careerspan-timeline.md
+
+# Ad hoc generated drafts
+# - Created → Records/Personal/drafts/[type]/
+# - Review/edit in place
+# - Send/publish
+# - Archive or delete after action taken
 ```
 
 ### 4. Archive or Delete
@@ -203,10 +211,10 @@ Set up alerts for:
 
 ## Related Documentation
 
-- `file 'Knowledge/README.md'` - Where processed information lives
-- `file 'Lists/README.md'` - Where action items are tracked
-- `file 'N5/prefs.md'` - File saving policy
-- `file 'Documents/N5.md'` - System entry point
+- file 'Knowledge/README.md' - Where processed information lives
+- file 'Lists/README.md' - Where action items are tracked
+- file 'N5/prefs/prefs.md' - File saving policy
+- file 'Documents/N5.md' - System entry point
 
 ---
 

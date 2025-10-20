@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-19T07:39:55Z",
+  "run_at_local": "2025-10-19T03:39:55-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discovered": [],
+  "notes": "No external staging email files were found under Records/Temporary/email_staging. No discovery records created."
+}

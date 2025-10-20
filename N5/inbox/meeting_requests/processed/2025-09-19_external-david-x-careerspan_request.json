@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1iITzroTYUtj7ntM5pxqoxDjpoMBh5LhV",
   "original_filename": "David x Careerspan-transcript-2025-09-19T18-09-23.436Z.docx",
   "created_at": "2025-10-11T04:07:15.345218+00:00",
-  "status": "pending",
-  "external_participant": "david-x-careerspan"
+  "status": "processed",
+  "external_participant": "david-x-careerspan",
+  "processed_at": "2025-10-11T04:07:15.345218+00:00"
 }

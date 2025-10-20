@@ -51,7 +51,7 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 ### Phase -1: Lesson Extraction
 **Auto-detect significant conversations and extract reusable lessons**
 - Scans conversation for system work, troubleshooting, patterns
-- Generates lesson entries for N5/knowledge/lessons/
+- Generates lesson entries for N5/lessons/
 - Non-blocking (continues even if extraction times out)
 
 ### Phase 0: After-Action Report (AAR)
@@ -60,6 +60,19 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 - Generates AAR JSON + markdown
 - Archives to N5/logs/threads/
 - Non-blocking (skips if unavailable)
+
+---
+
+## Command Relationship (clarification)
+
+- conversation-end is the orchestrator for formal thread closure.
+  - It invokes Phase -1 (lessons extraction via `N5/scripts/n5_lessons_extract.py`).
+  - It invokes Phase 0 (AAR generation via `thread-export`, i.e., `N5/scripts/n5_thread_export.py`).
+- thread-export can be run standalone for mid-thread checkpoints or quick AARs without the full end-step.
+- If you are closing a thread, prefer running conversation-end; it will call thread-export for you.
+- If you only need an AAR snapshot during an ongoing thread, run thread-export directly.
+
+---
 
 ### Phase 1: File Organization
 **Inventory & classify conversation files**

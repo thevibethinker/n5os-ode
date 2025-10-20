@@ -4,22 +4,21 @@
 **Feedback**: - [ ] Useful
 ---
 
-**Title**: Daily Team Stand-Up (Oct 16, 2025)
+**Title:** Daily Team Standup - October 16, 2025
 
-**Meeting Type**: INTERNAL_STANDUP_TEAM
+**Email Subject Line:** N/A (Internal meeting)
 
-**Date**: 2025-10-16
+**Delay Sensitivity:** NONE (Internal standup - no external follow-up required)
 
-**Duration**: ~14 minutes
+**Stakeholder Type:** INTERNAL_STANDUP
 
-**Participants**: Vrijen, Logan, Ilse, Danny, Rochel
+**N5OS Tags:** `[LD-INT] [GPT-M] [A-4]`
+- `[LD-INT]`: Internal team meeting
+- `[GPT-M]`: Mid-stage operations (ongoing business)
+- `[A-4]`: Highly flexible (internal coordination)
 
-**Primary Topics**:
-- VC update (Rack House retainer opportunity)
-- Team check-ins and casual conversation
+**Confidence Score:** High (clear audio, casual team conversation)
 
-**Confidence Score**: High (clear audio, complete transcript)
+**Transcript Quality:** Good (some casual banter, but business content clear)
 
-**Transcript Quality**: Good (casual standup format, some cross-talk but intelligible)
-
-**Processing Notes**: Brief daily standup with one key business update (VC retainer discussion). No major strategic decisions requiring conditional blocks.
+**Processing Note:** Internal team standup with no external stakeholders. Lightweight processing applied per internal meeting protocol.

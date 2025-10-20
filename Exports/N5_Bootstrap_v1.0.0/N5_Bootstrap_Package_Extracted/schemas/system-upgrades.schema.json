@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://n5.local/schemas/system-upgrades.schema.json",
+  "title": "N5 System Upgrade Item",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "category",
+    "priority",
+    "created_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9._-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Planned", "In Progress", "Done"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["L", "M", "H"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_ -]+$",
+        "minLength": 1,
+        "maxLength": 50
+      },
+      "maxItems": 20
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "closed"],
+      "default": "open"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "body": {
+      "type": "string",
+      "maxLength": 10000
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "completed": {"type": "boolean"},
+          "created_at": {"type": "string", "format": "date-time"},
+          "completed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

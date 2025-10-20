@@ -1,32 +1,29 @@
-MEETING SKIPPED FROM PROCESSING
-=================================
+SKIPPED: 2025-10-16_internal-team
 
-Meeting ID: 2025-10-16_internal-team
-Original Request: N5/inbox/meeting_requests/2025-10-16_internal-team_request.json
-Transcript: N5/inbox/transcripts/2025-10-16_internal-team.docx
+REASON: Internal team meeting classification
 
-SKIP REASON:
-------------
-This is an INTERNAL team daily standup meeting that does not require strategic intelligence processing.
+DETAILS:
+- Meeting type: INTERNAL_STANDUP_TEAM (daily team stand-up)
+- Participants: Vrijen, Logan, Ilse, Rochel, Danny (all internal Careerspan team)
+- Classification: "internal" in request JSON
 
-MEETING CLASSIFICATION: INTERNAL_STANDUP_TEAM
-- Participants: Internal team (Danny, Logan, Vrijen, Ilse, Rochel)
-- Content: Casual standup banter, holiday check-ins, personal updates
-- Strategic value: Low (no decisions, no external stakeholders, no actionable intelligence)
+ISSUE:
+Registry System v1.5 is designed for external stakeholder meetings (FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, JOB_SEEKER).
 
-REGISTRY LIMITATION:
---------------------
-The Registry System v1.5 requires blocks B40-B48 for INTERNAL meetings, but these blocks are not yet defined in the current registry (file N5/prefs/block_type_registry.json).
-
-The meeting-process.md workflow (v5.1.0) is designed for EXTERNAL stakeholder meetings:
-- FOUNDER, INVESTOR, CUSTOMER, NETWORKING, COMMUNITY, JOB_SEEKER
+The registry references INTERNAL_STANDUP_TEAM with blocks B40-B48, but these blocks are not defined in block_type_registry.json v1.5.
 
 RECOMMENDATION:
----------------
-Internal team standups should either:
-1. Use a simplified internal meeting template (B40+ series when defined), OR
-2. Be excluded from the meeting intelligence workflow entirely
+1. Define B40-B48 internal meeting blocks in registry
+2. Create separate workflow for internal meetings in meeting-process.md
+3. Or: Establish that internal meetings should NOT be processed through this automated system
 
-This meeting has been moved to N5/inbox/meeting_requests/skipped/ for record-keeping.
+KEY BUSINESS CONTENT FROM MEETING (for manual review):
+- Vrijen had VC meeting with Rack House VC (founded by first Uber go-to-market person who invented surge pricing)
+- They want to discuss paying Careerspan a retainer for talent network approach as early as start of next week
+- "Exciting stuff being cooked up" teased for team within a few days
+- Logan mentioned writing article for Megan
 
-Processed: 2025-10-16 11:21 ET
+NEXT ACTION:
+Clarify internal meeting processing workflow with V.
+
+Timestamp: 2025-10-17T01:03:45Z

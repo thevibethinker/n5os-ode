@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-18T22:39:32Z",
+  "run_at_local": "2025-10-18T18:39:32 EDT",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": [],
+  "files_processed_count": 0,
+  "stakeholders": [],
+  "stakeholders_count": 0,
+  "notes": "No staging files found; no external participants detected; no discovery records created. N5 prefs loaded: Documents/N5.md and N5/prefs/prefs.md"
+}

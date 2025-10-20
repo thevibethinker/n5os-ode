@@ -1,0 +1,22 @@
+SKIP REASON: Internal team meeting (classification: "internal")
+
+This meeting was classified as "internal" with participants "Daily team stand-up".
+The meeting-process.md workflow (v5.1.0) and block_type_registry.json (v1.5) are designed for EXTERNAL stakeholders only:
+- FOUNDER
+- INVESTOR  
+- NETWORKING
+- CUSTOMER
+- COMMUNITY
+- JOB_SEEKER (recruitment workflow)
+
+Internal team meetings should use a different workflow/system.
+
+Meeting details:
+- meeting_id: 2025-10-17_internal-team
+- date: 2025-10-17
+- participants: Ilse Funkhouser, Danny Williams, Logan Currie (Careerspan team members)
+- content: Team standup discussing health issues, OS updates, pilot progress with Paylocity integration, scaling concerns, recruiting agency conversation
+
+Recommendation: Create separate internal meeting processing system or exclude from automated processing.
+
+Processed at: 2025-10-17 12:16:34 ET

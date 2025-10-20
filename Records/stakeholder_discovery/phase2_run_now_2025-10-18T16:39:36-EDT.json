@@ -1,0 +1,14 @@
+{
+  "run_at": "2025-10-18T20:39:36Z",
+  "run_at_local": "2025-10-18T16:39:36-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_paths_checked": [
+    "Records/Temporary/email_staging",
+    "Records/Temporary/email_staging/2025-10-14",
+    "Records/Temporary/email_staging/2025-10-15"
+  ],
+  "deleted_files": [],
+  "notes": "No staging files found; no external participants detected."
+}

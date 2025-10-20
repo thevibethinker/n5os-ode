@@ -1,0 +1,13 @@
+{
+  "run_id": "phase2_run_now_2025-10-18T19:09:45-ET",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-18T19:09:45-04:00",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_scanned": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging email files found in staging directory. No external participants processed.",
+  "actions": [
+    "No discovery records created",
+    "No files deleted"
+  ]
+}

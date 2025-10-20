@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1QHdrvQA6Wqv5ZrFO1Ni1PtjrZU8wvRSb",
   "original_filename": "FOHE x Careerspan-transcript-2025-09-02T18-32-16.515Z.docx",
   "created_at": "2025-10-11T04:07:15.357875+00:00",
-  "status": "pending",
-  "external_participant": "fohe-x-careerspan"
+  "status": "processed",
+  "external_participant": "fohe-x-careerspan",
+  "processed_at": "2025-10-11T04:07:15.357875+00:00"
 }

@@ -1,0 +1,26 @@
+{
+  "run_at": "2025-10-19T16:10:07Z",
+  "run_at_local": "2025-10-19T12:10:07-04:00",
+  "run_at_utc": "2025-10-19T16:10:07Z",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "staging_files_found": [
+    "process_report_2025-10-18T12:20:07-EDT.md",
+    "process_report_2025-10-19T02:40:02Z.md",
+    "process_report_2025-10-18T20:39:59-EDT.md",
+    "process_report_2025-10-19T02:09:39Z.md",
+    "process_report_2025-10-18T16:39:36-EDT.md",
+    "process_report_2025-10-18T12:39:38Z.md",
+    "process_report_2025-10-19T01:09:24-04:00.md",
+    "process_report_2025-10-18T11:39:52-04:00.md",
+    "deletion_dryrun_2025-10-19T01:40:03-04:00.txt",
+    "process_report_2025-10-18T18:10:06-EDT.md",
+    "process_report_2025-10-19T11:10:55-04:00.md",
+    "process_report_2025-10-18T14:19:39Z.md"
+  ],
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries": [],
+  "summary": "No external staging email files found; staging contains only process reports and dry-run notes. No discovery records created. No deletions performed (requires explicit approval)."
+}

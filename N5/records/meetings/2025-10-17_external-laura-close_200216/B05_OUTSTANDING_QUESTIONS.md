@@ -1,0 +1,13 @@
+## OUTSTANDING_QUESTIONS
+
+---
+**Feedback**: - [ ] Useful
+---
+
+| Question | Owner | Needed By | Blocker Type | Unblocking Action | Impact if Delayed |
+|----------|-------|-----------|--------------|-------------------|-------------------|
+| What specific partnerships should we prioritize for distribution? (Yoodly, Close Cohen, community partners, or others?) | Vrijen & Logan | Before three-way call with Laura | NEEDS_DECISION | Map partnership landscape: identify 3-5 potential partners with clear integration value prop and mutual benefit; prepare partnership strategy options for Laura discussion | Without partnership clarity, we'll default to DIY sales which burns runway without scale; Laura offered strategic time but needs us to come prepared with concrete options to evaluate |
+| How do we bridge "repository for me" value to "making money" outcome in user narrative? | Vrijen & Logan | Next 2-4 weeks (messaging refresh) | UNCLEAR_REQUIREMENT | User research: collect exact language from active users about how Careerspan helped them in interview/job process; build explicit narrative chain from repository → interview prep → job outcomes | Users understand emotional value but can't articulate practical ROI, which limits word-of-mouth growth and makes paid conversion harder to justify |
+| Should we charge candidates subscription fees or stay 100% free while pursuing partnership revenue? | Vrijen & Logan | Before three-way call with Laura | NEEDS_DECISION | Model out: (A) Partnership revenue only, (B) Freemium with premium features, (C) Community/network-based model; bring options to Laura for reaction | Revenue model ambiguity makes it impossible to evaluate partnership opportunities properly; partners need to know if they're paying for access to free users or referring paid users for rev-share |
+| Which Close Cohen pain points could Careerspan solve in pilot partnership? | Close Cohen / Laura | Three-way strategy call | WAITING_ON_DATA | In three-way call, ask Laura to walk through her intake→coaching→placement workflow and identify 2-3 specific bottlenecks where Careerspan integration would save time/cost | Without concrete use case, partnership remains theoretical; need to convert Laura's interest into testable pilot with measurable value |
+| What did Seattle competitor's "marriage" partnership actually look like structurally? | Laura Close | Three-way strategy call | WAITING_ON_DATA | Ask Laura for details: was it acquisition, white-label, co-marketing, data integration? What made it "marriage-level" vs loose partnership? | Strategy advice is less actionable without understanding the mechanics of the success case; need specifics to replicate playbook |

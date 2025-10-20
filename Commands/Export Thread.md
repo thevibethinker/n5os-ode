@@ -1,4 +1,9 @@
 ---
 description: Export Thread
+tags:
+  - threads
+  - export
+  - aar
 ---
-n5: export-thread 
+
+`file N5/commands/thread-export.md`

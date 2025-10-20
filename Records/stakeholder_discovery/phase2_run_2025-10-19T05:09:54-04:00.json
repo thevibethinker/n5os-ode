@@ -1,0 +1,23 @@
+{
+  "run_at": "2025-10-19T09:09:54Z",
+  "run_at_local": "2025-10-19T05:09:54-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed_count": 11,
+  "files_processed": [
+    "process_report_2025-10-18T16:39:36-EDT.md",
+    "process_report_2025-10-18T12:39:38Z.md",
+    "process_report_2025-10-19T02:09:39Z.md",
+    "process_report_2025-10-18T18:10:06-EDT.md",
+    "process_report_2025-10-18T20:39:59-EDT.md",
+    "process_report_2025-10-19T02:40:02Z.md",
+    "process_report_2025-10-19T01:09:24-04:00.md",
+    "process_report_2025-10-18T11:39:52-04:00.md",
+    "process_report_2025-10-18T14:19:39Z.md",
+    "process_report_2025-10-18T12:20:07-EDT.md",
+    "deletion_dryrun_2025-10-19T01:40:03-04:00.txt"
+  ],
+  "stakeholders_discovered_count": 0,
+  "stakeholder_records_written": [],
+  "files_deleted_count": 0,
+  "notes": "No external participants found in staging; no discovery records created."
+}

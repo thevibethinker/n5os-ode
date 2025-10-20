@@ -6,6 +6,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1foan3ozi4dDADwGuOHgJI8z-ICMoBDDH/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "spv-hmya-oeh-transcript-2025-10-10T17-51-00.314Z.docx",
   "created_at": "2025-10-11T03:01:43.811706+00:00",
-  "status": "pending",
-  "stakeholder_type": "unknown"
+  "status": "processed",
+  "stakeholder_type": "unknown",
+  "processed_at": "2025-10-11T03:01:43.811706+00:00"
 }

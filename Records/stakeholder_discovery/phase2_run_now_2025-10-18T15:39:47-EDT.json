@@ -1,0 +1,14 @@
+{
+  "run_started_at": "2025-10-18T15:39:47-04:00",
+  "source_staging_dir": "Records/Temporary/email_staging",
+  "files_found": 4,
+  "staging_files": [
+    "process_report_2025-10-18T11:39:52-04:00.md",
+    "process_report_2025-10-18T12:20:07-EDT.md",
+    "process_report_2025-10-18T12:39:38Z.md",
+    "process_report_2025-10-18T14:19:39Z.md"
+  ],
+  "processed_files": 0,
+  "discovered_stakeholders": 0,
+  "notes": "No email message files found in staging; only process_report logs present. No extraction performed. No files deleted."
+}

@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/11Cnkid-sA_EX5O8-ozDt9uuRmtG2dsI0",
   "original_filename": "Caleb x Vrijen-transcript-2025-09-11T14-57-22.174Z.docx",
   "created_at": "2025-10-11T04:07:15.351396+00:00",
-  "status": "pending",
-  "external_participant": "caleb"
+  "status": "processed",
+  "external_participant": "caleb",
+  "processed_at": "2025-10-11T04:07:15.351396+00:00"
 }

@@ -1,0 +1,26 @@
+N5 BOOTSTRAP - NEW ZO INSTRUCTIONS
+===================================
+
+DOWNLOAD LINK (give this to new Zo):
+https://va-http-va.zocomputer.io/N5_Minimal_Bootstrap.tar.gz
+
+SIZE: 1.7 KB
+CHECKSUM: 33e0ab23fcc77bb8eddff223a091c2ff5241f484afacd53059db18ae5f2785a8
+
+INSTALLATION COMMANDS (run in new Zo):
+---------------------------------------
+cd /home/workspace
+curl -O https://va-http-va.zocomputer.io/N5_Minimal_Bootstrap.tar.gz
+tar -xzf N5_Minimal_Bootstrap.tar.gz
+python3 bootstrap_minimal.py
+
+PARENT ZO SUPPORT:
+------------------
+https://n5-bootstrap-support-va.zocomputer.io
+
+The bootstrap script will automatically connect and pull what's needed.
+
+THAT'S IT!
+----------
+The Mobius Maneuver handles the rest. Parent Zo guides new Zo through setup.
+

@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1PexkhTKLjuEywi_8myZRj70KixIHMHzq/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
   "original_filename": "Vrijen Attawar and Caleb Thornton-transcript-2025-08-27T20-59-34.059Z.docx",
   "created_at": "2025-10-11T23:07:00.785272Z",
-  "status": "pending",
-  "external_participant": "vrijen-attawar-and-caleb-thornton"
+  "status": "processed",
+  "external_participant": "vrijen-attawar-and-caleb-thornton",
+  "processed_at": "2025-10-11T23:07:00.785272Z"
 }

@@ -1,0 +1,9 @@
+{
+  "processed_at_utc": "2025-10-19T21:10:21Z",
+  "processed_at_local": "2025-10-19T17:10:21-04:00",
+  "source_directory": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "deleted_files": 0,
+  "notes": "No staging files found in Records/Temporary/email_staging; no extraction performed."
+}

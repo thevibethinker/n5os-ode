@@ -1,0 +1,11 @@
+{
+  "run_at": "2025-10-20T06:39:55-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "action": "Phase 2: Process Email Staging with LLM Extraction",
+  "prefs_loaded": ["/home/workspace/Documents/N5.md","/home/workspace/N5/prefs/prefs.md"],
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "raw_email_files_found": 0,
+  "stakeholder_records_written": 0,
+  "processed_files_deleted": 0,
+  "notes": "No raw email files (.eml/.mbox/.jsonl/.txt/.html) found in staging directory. No external participants processed."
+}

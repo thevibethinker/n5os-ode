@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-19T16:39:42-04:00",
+  "source_dir": "/home/workspace/Records/Temporary/email_staging",
+  "files_processed_count": 0,
+  "processed_files": [],
+  "stakeholders_discovered_count": 0,
+  "discoveries": [],
+  "note": "No staging files found under the source directory; no extraction performed."
+}

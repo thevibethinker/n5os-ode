@@ -1,0 +1,14 @@
+---
+date: '2025-09-20T22:24:55Z'
+last-tested: '2025-09-20T22:24:55Z'
+generated_date: '2025-09-20T22:24:55Z'
+checksum: c2c58b3c1579c87349a44689508a164a
+tags: []
+category: unknown
+priority: medium
+related_files: []
+anchors:
+  input: null
+  output: /home/workspace/N5_mirror/commands/lists-add.md
+---
+# `lists-add`\n\nVersion: 0.2.0\n\nSummary: Add an item to a list with intelligent assignment\n\nWorkflow: lists\n\nTags: lists, ideas, auto-assign\n\n## Inputs\n- list : string — List slug (optional; auto-assigned if not provided)\n- title : text (required) — Item title\n- body : text — Item body\n- tags : json — Tags (optional)\n- priority : enum — Priority level\n- status : enum [default: open] — Item status\n- project : string — Associated project\n- due : date — Due date (ISO format)\n- notes : text — Additional notes\n\n## Outputs\n- item_id : text — Created item id\n- path : path — Absolute path to JSONL file\n\n## Uses\n- **Modules**: [`listclassifier`](../modules/listclassifier.md)\n\n## Side Effects\n- writes:file\n- modifies:file\n\n## Examples\n- N5: run lists-add title='Fix system workflow'\n- N5: run lists-add list=ideas title='New idea'\n\n## Failure Modes\n- List not found in registry\n- Schema validation failure\n- Corrupt JSONL file\n\n## Related Components\n\n**Related Commands**: [`lists-create`](../commands/lists-create.md), [`lists-set`](../commands/lists-set.md), [`lists-find`](../commands/lists-find.md), [`lists-docgen`](../commands/lists-docgen.md), [`lists-export`](../commands/lists-export.md)\n\n**Knowledge Areas**: [List Management](../knowledge/list-management.md)\n\n**Examples**: See [Examples Library](../examples/) for usage patterns\n\n

@@ -1,0 +1,12 @@
+{
+  "run_at": "2025-10-18T10:39:51-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "discovery_path": "Records/stakeholder_discovery",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries": [],
+  "summary": "No staging files found in Records/Temporary/email_staging; no stakeholders extracted."
+}

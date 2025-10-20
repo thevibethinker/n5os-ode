@@ -1,0 +1,9 @@
+{
+  "discovered_at": "2025-10-19T09:39:49-04:00",
+  "source": "email_scanner",
+  "source_dir": "/home/workspace/Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "notes": "No staging email files found to process. Only process_report and summary files present."
+}

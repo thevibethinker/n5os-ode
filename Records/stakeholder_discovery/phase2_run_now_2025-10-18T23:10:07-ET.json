@@ -1,0 +1,9 @@
+{
+  "run_at": "2025-10-18T23:10:07-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 11,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No external participant staging files found; only existing process_report files present. No discovery records created."
+}

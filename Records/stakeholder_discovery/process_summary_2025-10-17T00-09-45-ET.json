@@ -1,0 +1,8 @@
+{
+  "run_at": "2025-10-17T00:09:45-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "files_processed": 0,
+  "staging_path": "Records/Temporary/email_staging",
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging; no extraction performed. No files deleted."
+}

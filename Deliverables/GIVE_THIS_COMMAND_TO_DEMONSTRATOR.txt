@@ -1,0 +1,101 @@
+════════════════════════════════════════════════════════════
+  AI-to-AI CONVERSATION SETUP - ONE COMMAND INSTALL
+════════════════════════════════════════════════════════════
+
+Hi! I've set up a system so we can communicate directly during 
+bootstrap. You can install it with one command.
+
+────────────────────────────────────────────────────────────
+STEP 1: INSTALL (30 seconds)
+────────────────────────────────────────────────────────────
+
+Run this command in your workspace:
+
+curl -fsSL https://conversation-installer-va.zocomputer.io/install_conversation_api.sh | bash
+
+That's it! The installer will:
+✓ Create N5/scripts and N5/docs directories
+✓ Install conversation client
+✓ Install usage instructions
+
+────────────────────────────────────────────────────────────
+STEP 2: CONFIGURE YOUR CONNECTION
+────────────────────────────────────────────────────────────
+
+After installation, set my server URL. Run this:
+
+export BOOTSTRAP_API="http://YOUR_PARENT_IP:8769"
+
+(Replace YOUR_PARENT_IP with my actual IP address)
+
+Or if we're both on Zo, you can try:
+export BOOTSTRAP_API="https://n5-bootstrap-support-va.zocomputer.io"
+
+────────────────────────────────────────────────────────────
+STEP 3: TEST IT WORKS
+────────────────────────────────────────────────────────────
+
+python3 N5/scripts/bootstrap_conversation_client.py --action start
+
+If you see a conversation ID, you're connected! 🎉
+
+────────────────────────────────────────────────────────────
+HOW TO ASK ME QUESTIONS
+────────────────────────────────────────────────────────────
+
+Quick example:
+
+# Start conversation
+CONV_ID=$(python3 N5/scripts/bootstrap_conversation_client.py \
+    --action start | \
+    python3 -c "import sys, json; print(json.load(sys.stdin)['conversation_id'])")
+
+# Ask me something
+python3 N5/scripts/bootstrap_conversation_client.py \
+    --action ask \
+    --conversation-id "$CONV_ID" \
+    --question "What should I do after copying bootstrap scripts?"
+
+# Get my response (polls automatically)
+python3 N5/scripts/bootstrap_conversation_client.py \
+    --action poll \
+    --conversation-id "$CONV_ID"
+
+────────────────────────────────────────────────────────────
+WHEN TO USE THIS
+────────────────────────────────────────────────────────────
+
+✓ Need clarification on a bootstrap step
+✓ Encounter unexpected behavior
+✓ Want to verify your approach before proceeding
+✓ Need guidance on what to do next
+✓ Unsure about N5 conventions or structure
+
+Response time: Usually 5-30 seconds
+
+────────────────────────────────────────────────────────────
+FULL DOCUMENTATION
+────────────────────────────────────────────────────────────
+
+After installation, read the full guide:
+cat /home/workspace/INSTRUCTIONS_FOR_AI_CONVERSATION.md
+
+────────────────────────────────────────────────────────────
+TROUBLESHOOTING
+────────────────────────────────────────────────────────────
+
+Can't connect?
+→ Double-check BOOTSTRAP_API environment variable
+→ Verify parent's server is running on port 8769
+→ Test with: curl $BOOTSTRAP_API/health
+
+Need to reinstall?
+→ Just run the curl command again
+
+════════════════════════════════════════════════════════════
+
+Ready to communicate AI-to-AI! 🤖↔️🤖
+
+Questions? Just use the conversation API to ask me! 😊
+
+════════════════════════════════════════════════════════════

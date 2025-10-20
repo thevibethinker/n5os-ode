@@ -1,0 +1,7 @@
+{
+  "run_at": "2025-10-19T18:39:53Z",
+  "source": "email_scanner",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging; directories present but empty: 2025-10-14, 2025-10-15. No deletions performed."
+}

@@ -7,6 +7,7 @@
   "gdrive_link": "https://docs.google.com/document/d/1BDPrFRUmj2MrJUoxQxj3xUiA0UC4-vqy/edit",
   "original_filename": "Amy Quan x Vrijen Attawar-transcript-2025-08-27T14-48-24.255Z.docx",
   "created_at": "2025-10-12T22:44:08.701600+00:00",
-  "status": "pending",
-  "external_participant": "amy-quan"
+  "status": "processed",
+  "external_participant": "amy-quan",
+  "processed_at": "2025-10-12T22:44:08.701600+00:00"
 }

@@ -1,0 +1,14 @@
+{
+  "summary_for_run": "phase2_run_now",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "timestamp_et": "2025-10-18T07:09:59-04:00",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 0,
+  "stakeholders_total": 0,
+  "actions": [
+    "Loaded preferences: file 'Documents/N5.md' and file 'N5/prefs/prefs.md'",
+    "No staging files to process",
+    "No discovery records written",
+    "No deletions performed"
+  ]
+}
