@@ -4,122 +4,113 @@
 ---
 
 ## Metadata
-**Conversation ID:** con_zHxCoEAM2bJfYMpJ  
-**Started:** 2025-10-20 05:59 ET  
-**Last Updated:** 2025-10-20 06:03 ET  
-**Status:** complete  
+**Conversation ID:** con_HwBWi6sHFo48Eym0  
+**Started:** 2025-10-20 14:49 ET  
+**Last Updated:** 2025-10-20 16:38 ET  
+**Status:** active  
 
 ---
 
 ## Type & Mode
-**Primary Type:** planning  
-**Mode:** reflection-processing  
-**Focus:** Processed "Zo System GTM" brainstorm reflection - extracted strategy, features, pricing model, and next actions
+**Primary Type:** discussion  
+**Mode:**   
+**Focus:** Scan Google Drive (Fireflies/Transcripts) for new meeting transcripts, dedupe by existing gdrive_id across inbox/meeting_requests and records, download to N5/inbox/transcripts, and queue meeting_requests per naming convention.
 
 ---
 
 ## Objective
-**Goal:** Ingest and process reflection transcript about Zo system deployment strategy and GTM approach
+**Goal:** Create request JSONs only for new transcripts, with correct internal/external classification and IDs.
 
 **Success Criteria:**
-- [x] Extract core strategy and product offerings from reflection
-- [x] Identify features and capabilities mentioned
-- [x] Document pricing and positioning insights
-- [x] Create structured output with actionable next steps
-- [x] Register reflection in system with appropriate categorization
+- [ ] Existing gdrive_ids loaded from all specified paths
+- [ ] Duplicates skipped (no re-queued items)
+- [ ] New transcripts downloaded and converted to .txt
+- [ ] Requests created with proper naming and metadata
 
 ---
 
 ## Progress
 
 ### Current Task
-Complete - awaiting user selection of which outputs to generate
+Execute meeting-transcript-scan per N5/commands/meeting-transcript-scan.md
 
 ### Completed
-- ✅ Loaded N5 system files and preferences
-- ✅ Staged reflection file to incoming directory
-- ✅ Analyzed reflection transcript
-- ✅ Created comprehensive analysis document
-- ✅ Created structured proposal with output options
-- ✅ Extracted action items to Lists (system-upgrades + ideas)
-- ✅ Created processing summary document
+- ✅ Initialized session and loaded system prefs
+
+### Blocked
+- ⛔ None currently
 
 ### Next Actions
-1. User review of proposal document
-2. User selection of which outputs to generate (strategic docs, planning artifacts, knowledge integration)
-3. Answer clarifying questions about pricing, timeline, scope
+1. List Drive files in Fireflies/Transcripts (not trashed)
+2. Filter out [ZO-PROCESSED]* files
+3. Load known gdrive_ids from queue/processed paths
+4. For new items, download, convert to text, classify, and create requests
 
 ---
 
 ## Insights & Decisions
 
 ### Key Insights
-- Deployment model: Template-based demonstrator account cloning
-- Product architecture: Core features + modular add-ons
-- Critical blocker: "Zo Bridge functionality" needs completion
-- Self-referential demo opportunity: This reflection demonstrates reflection capability
-- Learnings from building own system directly inform product
+*Important realizations discovered during this session*
 
 ### Decisions Made
-**[2025-10-20 06:03 ET]** Created structured proposal for user to select desired outputs rather than generating all documents immediately
+**[2025-10-20 16:38 ET]** Proceed with command-first protocol and strict deduplication
 
 ### Open Questions
-- What is specific pricing point for base offering?
-- What is scope/definition of "Zo Bridge functionality"?
-- What timeline for demonstrator completion?
-- Are there example target customers for advanced orders?
+- 
 
 ---
 
 ## Outputs
 **Artifacts Created:**
-- `Records/Reflections/Proposals/2025-10-20_zo-system-gtm-brainstorm_proposal.md` - Structured proposal with output options
-- `/home/.z/workspaces/con_zHxCoEAM2bJfYMpJ/reflection_analysis.md` - Detailed analysis
-- `/home/.z/workspaces/con_zHxCoEAM2bJfYMpJ/reflection_summary.md` - Processing summary
+- 
 
 **Knowledge Generated:**
-- Zo system deployment strategy (demonstrator cloning model)
-- Product feature inventory (core + add-ons)
-- Business model insights (base + premium services)
-- Critical blockers and dependencies
+- 
 
-**Lists Updated:**
-- system-upgrades: +4 high/medium priority items
-- ideas: +1 item for capability brainstorming
+---
+
+## Relationships
+
+### Related Conversations
+*Links to other conversations on this topic*
+- 
+
+### Dependencies
+**Depends on:**
+- Google Drive access; pandoc available
+
+**Blocks:**
+- 
 
 ---
 
 ## Context
 
 ### Files in Context
-- Documents/N5.md (system overview)
-- N5/prefs/prefs.md (preferences)
-- Knowledge/stable/company/strategy.md (Careerspan strategy - for context)
-- N5/commands/reflection-ingest.md (command reference)
-- N5/scripts/reflection_ingest.py (processing script)
+*What files/docs are actively being used*
+- N5/commands/meeting-transcript-scan.md
+- Documents/N5.md
+- N5/prefs/prefs.md
 
 ### Principles Active
-- Command-first operations
-- Structured output with user choice
-- Action item extraction to Lists
-- Folder policy (Records/Reflections/ for proposals)
+*Which N5 principles are guiding this work*
+- Command-first operations; deduplication safeguards
 
 ---
 
 ## Timeline
+*High-level log of major updates*
 
-**[2025-10-20 05:59 ET]** Started conversation, initialized state  
-**[2025-10-20 06:00 ET]** Analyzed reflection transcript structure  
-**[2025-10-20 06:01 ET]** Created comprehensive analysis document  
-**[2025-10-20 06:02 ET]** Extracted action items to Lists  
-**[2025-10-20 06:03 ET]** Created proposal and summary documents
+**[2025-10-20 14:49 ET]** Started conversation, initialized state
+**[2025-10-20 16:38 ET]** Updated focus and plan for meeting-transcript-scan
 
 ---
 
 ## Tags
-#planning #complete #reflection-processing #zo-system #gtm #strategy
+#discussion #active #meetings #transcripts #gdrive #dedupe #automation
 
 ---
 
 ## Notes
-Reflection shows strong strategic clarity on deployment model (demonstrator cloning) and product architecture (core + add-ons), with identified blocker (Zo Bridge functionality). User now has structured proposal to select which outputs to generate next.
+*Free-form observations, reminders, context*

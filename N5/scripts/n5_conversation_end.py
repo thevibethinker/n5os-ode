@@ -409,6 +409,88 @@ def placeholder_scan():
         return True
 
 
+def output_review_check():
+    """Phase 2.75: Check output review tracking and remind about deliverables."""
+    try:
+        # Get conversation ID
+        convo_id = os.getenv("ZO_CONVERSATION_ID") or CONVERSATION_WS.name
+        
+        # Import review manager
+        sys.path.insert(0, str(WORKSPACE / "N5/scripts"))
+        from review_manager import ReviewManager
+        
+        manager = ReviewManager()
+        
+        # Get outputs flagged in this conversation
+        flagged_outputs = manager.list_reviews(conversation_id=convo_id)
+        
+        print(f"\n📊 Output Review Summary")
+        print(f"   Flagged in this conversation: {len(flagged_outputs)}")
+        
+        if flagged_outputs:
+            print(f"\n   Recent flagged outputs:")
+            for out in flagged_outputs[-5:]:  # Show last 5
+                status_emoji = {
+                    "pending": "⏸️",
+                    "in_review": "🔍",
+                    "approved": "✅",
+                    "issue": "⚠️ ",
+                    "training": "📚",
+                    "archived": "📦"
+                }.get(out['review']['status'], "•")
+                print(f"   {status_emoji} {out['title'][:60]}")
+                if out.get('improvement_notes'):
+                    print(f"      → Improve: {out['improvement_notes'][:70]}...")
+        
+        # Scan for major deliverables not flagged
+        unflagged_candidates = []
+        workspace_files = list(CONVERSATION_WS.rglob("*"))
+        
+        for file_path in workspace_files:
+            if not file_path.is_file():
+                continue
+            
+            # Skip system files
+            name = file_path.name
+            if name.startswith(("temp_", "test_", "scratch_", "BUILD_MAP", "SESSION_STATE", "AAR")):
+                continue
+            
+            # Check if already flagged
+            if any(out['reference'] == str(file_path) for out in flagged_outputs):
+                continue
+            
+            # Check if substantial (>100 words for text files)
+            if file_path.suffix in ['.md', '.txt', '.py', '.js', '.json', '.html']:
+                try:
+                    content = file_path.read_text()
+                    word_count = len(content.split())
+                    if word_count > 100:
+                        unflagged_candidates.append((file_path, word_count))
+                except:
+                    pass
+        
+        if unflagged_candidates:
+            print(f"\n   ⚠️  Found {len(unflagged_candidates)} substantial outputs NOT flagged for review:")
+            for file_path, wc in unflagged_candidates[:5]:  # Show first 5
+                rel_path = file_path.relative_to(CONVERSATION_WS)
+                print(f"      • {rel_path} ({wc} words)")
+            
+            print(f"\n   💡 To flag for quality review:")
+            print(f"      python3 N5/scripts/review_cli.py add <path> \\")
+            print(f"        --improve \"What to change\" \\")
+            print(f"        --optimal \"Ideal version description\"")
+            print(f"\n   Press Enter to continue (outputs remain unflagged)")
+            input(f"   > ")
+        else:
+            print(f"   ✓ No substantial unflagged outputs detected")
+        
+        logger.info("Output review check complete")
+        
+    except Exception as e:
+        print(f"   ⚠️  Output review check skipped: {e}")
+        logger.debug(f"Output review check error details", exc_info=True)
+
+
 def archive_build_tasks():
     """
     Archive completed tasks from build tracker (Phase 3.5).
@@ -874,6 +956,85 @@ def main():
         if not placeholder_scan():
             print("\n❌ Conversation-end aborted - return to fix issues")
             return
+
+        # NEW: Phase 2.75 - Output Review Summary & Reminder
+        print("\n" + "="*70)
+        print("PHASE 2.75: OUTPUT REVIEW SUMMARY")
+        print("="*70)
+        try:
+            from review_manager import ReviewManager
+            manager = ReviewManager()
+            # Attempt to detect conversation id
+            convo_id = os.getenv("N5_CONVERSATION_ID")
+            if not convo_id and CONVERSATION_WS:
+                convo_id = CONVERSATION_WS.name
+            tracked = manager.list_reviews(conversation_id=convo_id) if convo_id else []
+            if tracked:
+                print(f"\n📋 {len(tracked)} output(s) flagged for review in this conversation:\n")
+                for r in tracked[:10]:
+                    title = r.get('title') or r.get('reference')
+                    status = r['review'].get('status')
+                    sent = r['review'].get('sentiment') or '-'
+                    imp = r['review'].get('improvement_notes') or {}
+                    change = imp.get('what_to_change')
+                    optimal = imp.get('optimal_state')
+                    print(f" • {title}\n   Status: {status} | Sentiment: {sent}")
+                    if change:
+                        print(f"   📝 Change: {change}")
+                    if optimal:
+                        print(f"   📝 Optimal: {optimal}")
+                if len(tracked) > 10:
+                    print(f"   … and {len(tracked)-10} more")
+            else:
+                # No tracked outputs; scan for likely deliverables
+                candidates = []
+                patterns = [
+                    ("*.md", 100),
+                    ("*email*.md", 50),
+                    ("*follow*up*.md", 50),
+                    ("*report*.md", 500),
+                    ("*analysis*.md", 300),
+                    ("*.png", 0),
+                    ("*.jpg", 0),
+                ]
+                exclude = ["temp_", "test_", "scratch_", "BUILD_MAP", "SESSION_STATE"]
+                if CONVERSATION_WS and CONVERSATION_WS.exists():
+                    for ptn, min_words in patterns:
+                        for f in CONVERSATION_WS.rglob(ptn):
+                            if not f.is_file():
+                                continue
+                            name = f.name
+                            if any(x in name for x in exclude):
+                                continue
+                            if f.suffix.lower() == ".md":
+                                try:
+                                    text = f.read_text(errors='ignore')
+                                    words = len(text.split())
+                                    if words < min_words:
+                                        continue
+                                except Exception:
+                                    continue
+                            candidates.append((f, min_words))
+                if candidates:
+                    print("\n⚠️  DELIVERABLE REVIEW REMINDER\n")
+                    print("Found potential outputs to flag for review:")
+                    for f, _ in candidates[:5]:
+                        print(f" • {f}")
+                    if len(candidates) > 5:
+                        print(f"   … and {len(candidates)-5} more")
+                    print("\nTip: Flag now to capture improvement notes while context is fresh:")
+                    print("   n5 review add <file> --sentiment <rating> \\")
+                    print("     --improve '<what to change>' \\")
+                    print("     --optimal '<ideal state>'")
+                    if "--auto" not in sys.argv:
+                        choice = input("\nSkip reminder and continue? (Y/n): ").strip().lower()
+                        if choice not in ["", "y", "yes"]:
+                            print("Continuing without reminder acknowledged.")
+                else:
+                    print("\nNo tracked outputs and no deliverables detected.")
+        except Exception as e:
+            print(f"⚠️  Review summary skipped: {e}")
+            logger.debug("Review summary error", exc_info=True)
         
         # Personal intelligence update (autonomous)
         print("\n" + "="*70)

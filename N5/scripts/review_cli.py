@@ -62,6 +62,15 @@ def cmd_add(args):
             notes=args.notes
         )
         
+        # If improvement notes provided, update them immediately
+        if args.improve or args.optimal:
+            manager.update_improvement_notes(
+                output_id=review["id"],
+                what_to_change=args.improve,
+                optimal_state=args.optimal,
+                priority=args.priority
+            )
+        
         print(f"✓ Added review: {review['id']}")
         print(f"  Title: {review['title']}")
         print(f"  Type: {review['type']}")
@@ -155,6 +164,16 @@ def cmd_show(args):
             for dim, score in review['review']['quality_dimensions'].items():
                 print(f"  {dim}: {score}/10")
         
+        if review['review'].get('improvement_notes'):
+            imp = review['review']['improvement_notes']
+            print("\n--- Improvement Notes ---")
+            if imp.get('what_to_change'):
+                print(f"  Change: {imp['what_to_change']}")
+            if imp.get('optimal_state'):
+                print(f"  Optimal: {imp['optimal_state']}")
+            if imp.get('priority'):
+                print(f"  Priority: {imp['priority']}")
+        
         comments = manager.get_comments(review['id'])
         if comments:
             print(f"\n--- Comments ({len(comments)}) ---")
@@ -193,6 +212,15 @@ def cmd_status(args):
             quality_dimensions=quality_dims,
             notes=args.note
         )
+        
+        # Optional improvement update inline
+        if args.improve or args.optimal:
+            manager.update_improvement_notes(
+                output_id=args.output_id,
+                what_to_change=args.improve,
+                optimal_state=args.optimal,
+                priority=args.priority
+            )
         
         print(f"✓ Updated {args.output_id}")
         print(f"  Status: {updated['review']['status']}")
@@ -266,6 +294,25 @@ def cmd_export(args):
         return 1
 
 
+def cmd_improve(args):
+    """Update improvement notes for an output."""
+    manager = ReviewManager(dry_run=args.dry_run)
+    try:
+        updated = manager.update_improvement_notes(
+            output_id=args.output_id,
+            what_to_change=args.improve,
+            optimal_state=args.optimal,
+            priority=args.priority
+        )
+        print(f"✓ Updated improvement notes for {args.output_id}")
+        if not args.dry_run:
+            print(f"\nView with: n5 review show {args.output_id}")
+        return 0
+    except Exception as e:
+        logger.error(f"Failed to update improvement notes: {e}")
+        return 1
+
+
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
@@ -287,6 +334,9 @@ def main():
     add_parser.add_argument("--pipeline", help="Pipeline/run ID")
     add_parser.add_argument("--tags", help="Comma-separated tags")
     add_parser.add_argument("--notes", help="Notes")
+    add_parser.add_argument("--improve", help="What to change (improvement notes)")
+    add_parser.add_argument("--optimal", help="Optimal state description")
+    add_parser.add_argument("--priority", choices=["low", "medium", "high"], help="Improvement priority")
     add_parser.add_argument("--dry-run", action="store_true", help="Dry run mode")
     add_parser.set_defaults(func=cmd_add)
     
@@ -313,6 +363,9 @@ def main():
     status_parser.add_argument("--reviewer", help="Reviewer name")
     status_parser.add_argument("--score", action="append", help="Quality score (e.g., tone=8)")
     status_parser.add_argument("--note", help="Status note")
+    status_parser.add_argument("--improve", help="What to change (improvement notes)")
+    status_parser.add_argument("--optimal", help="Optimal state description")
+    status_parser.add_argument("--priority", choices=["low", "medium", "high"], help="Improvement priority")
     status_parser.add_argument("--dry-run", action="store_true", help="Dry run mode")
     status_parser.set_defaults(func=cmd_status)
     
@@ -334,6 +387,15 @@ def main():
     export_parser.add_argument("--output", help="Output file path")
     export_parser.add_argument("--dry-run", action="store_true", help="Dry run mode")
     export_parser.set_defaults(func=cmd_export)
+
+    # IMPROVE command
+    improve_parser = subparsers.add_parser("improve", help="Update improvement notes")
+    improve_parser.add_argument("output_id", help="Output ID")
+    improve_parser.add_argument("--improve", help="What to change (improvement notes)")
+    improve_parser.add_argument("--optimal", help="Optimal state description")
+    improve_parser.add_argument("--priority", choices=["low", "medium", "high"], help="Improvement priority")
+    improve_parser.add_argument("--dry-run", action="store_true", help="Dry run mode")
+    improve_parser.set_defaults(func=cmd_improve)
     
     args = parser.parse_args()
     

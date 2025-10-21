@@ -236,6 +236,12 @@
         "stakeholder_name": "Erika Underwood (Workforce development / HR tech)",
         "date_processed": "2025-10-19T13:12:57.510388+00:00",
         "doc_version": "2.1"
+      },
+      {
+        "meeting_id": "2025-10-15_external-sam-partnership-sync_211410",
+        "stakeholder_name": "Ash Straughn (SIEM)",
+        "date_processed": "2025-10-20T13:00:00-04:00",
+        "doc_version": "2.2"
       }
     ],
     "last_updated": "2025-10-17"

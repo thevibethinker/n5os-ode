@@ -1,5 +1,5 @@
 {
-  "last_processed_timestamp": "2025-10-20 10:11:31",
+  "last_processed_timestamp": "2025-10-20 11:55:09",
   "processed_messages": [
     "msg_002",
     "msg_100",
@@ -58,7 +58,10 @@
     "msg_999",
     "msg_1004",
     "msg_1003",
-    "resp_msg_101"
+    "resp_msg_101",
+    "resp_msg_8888888",
+    "msg_1000000",
+    "msg_1000001"
   ],
   "notifications_sent": [
     "msg_100",

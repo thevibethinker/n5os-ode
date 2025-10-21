@@ -47,6 +47,6 @@ python3 N5/scripts/spawn_worker.py \
 4. Creates `worker_updates/` directory in parent workspace
 
 **Next step:**\
-Open the generated `file WORKER_ASSIGNMENT_*.md`  file in a **new conversation**
+Open the generated `file WORKER_ASSIGNMENT_*.md`   file in a **new conversation**
 
 **Full docs:** `file Documents/System/WORKER_SPAWNING_SYSTEM.md` 

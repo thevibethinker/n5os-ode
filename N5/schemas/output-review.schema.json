@@ -31,7 +31,7 @@
     },
     "type": {
       "type": "string",
-      "enum": ["file", "message", "url"],
+      "enum": ["file", "message", "image", "video", "transcript", "url"],
       "description": "Type of output being reviewed"
     },
     "reference": {
@@ -78,12 +78,12 @@
       "properties": {
         "status": {
           "type": "string",
-          "enum": ["pending", "in_review", "needs_work", "approved", "training", "archived"],
+          "enum": ["pending", "in_review", "needs_work", "issue", "approved", "training", "archived"],
           "description": "Current workflow state"
         },
         "sentiment": {
           "type": ["string", "null"],
-          "enum": ["excellent", "good", "neutral", "issue", "critical", null],
+          "enum": ["excellent", "good", "acceptable", "issue", "neutral", "critical", null],
           "description": "Quality assessment"
         },
         "reviewed_by": {
@@ -123,8 +123,18 @@
               "maximum": 10
             }
           }
+        },
+        "improvement_notes": {
+          "type": "object",
+          "properties": {
+            "what_to_change": { "type": ["string", "null"] },
+            "optimal_state": { "type": ["string", "null"] },
+            "priority": { "type": "string", "enum": ["low", "medium", "high"] }
+          },
+          "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": true
     },
     "tags": {
       "type": "array",

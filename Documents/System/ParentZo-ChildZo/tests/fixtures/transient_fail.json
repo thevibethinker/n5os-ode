@@ -1,0 +1,17 @@
+{
+  "message_id": "msg_transient_001",
+  "schema_version": "1.0.0",
+  "event_type": "user.created",
+  "timestamp": "2025-10-20T14:02:00Z",
+  "payload": {
+    "user_id": "usr_transient",
+    "email": "transient@example.com",
+    "name": "Transient Failure User"
+  },
+  "_test_config": {
+    "fail_attempts": 3,
+    "error_type": "retriable",
+    "error_message": "Temporary database connection failure"
+  },
+  "_comment": "Will fail first 3 attempts, then succeed"
+}

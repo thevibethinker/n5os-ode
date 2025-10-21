@@ -32,6 +32,28 @@
         "detail": "/home/workspace/N5/records/reflections/outputs/2025-10-20_zo-system-gtm/detail.md",
         "proposal": "/home/workspace/Records/Reflections/Proposals/2025-10-20_zo-system-gtm_proposal.md"
       }
+    },
+    {
+      "id": "2025-10-20_logan-x-vrijen-morning-powwow",
+      "source": "/home/workspace/N5/records/reflections/incoming/2025-10-20_logan-x-vrijen-morning-powwow.txt",
+      "ingested_at": "2025-10-20T12:28:37.940942",
+      "status": "awaiting-approval",
+      "outputs": {
+        "summary": "/home/workspace/N5/records/reflections/outputs/2025-10-20_logan-x-vrijen-morning-powwow/summary.md",
+        "detail": "/home/workspace/N5/records/reflections/outputs/2025-10-20_logan-x-vrijen-morning-powwow/detail.md",
+        "proposal": "/home/workspace/Records/Reflections/Proposals/2025-10-20_logan-x-vrijen-morning-powwow_proposal.md"
+      }
+    },
+    {
+      "id": "2025-10-20_planning-for-n5-os-demo",
+      "source": "/home/workspace/N5/records/reflections/incoming/2025-10-20_planning-for-n5-os-demo.m4a",
+      "ingested_at": "2025-10-20T14:17:48.597936",
+      "status": "awaiting-approval",
+      "outputs": {
+        "summary": "/home/workspace/N5/records/reflections/outputs/2025-10-20_planning-for-n5-os-demo/summary.md",
+        "detail": "/home/workspace/N5/records/reflections/outputs/2025-10-20_planning-for-n5-os-demo/detail.md",
+        "proposal": "/home/workspace/Records/Reflections/Proposals/2025-10-20_planning-for-n5-os-demo_proposal.md"
+      }
     }
   ]
 }

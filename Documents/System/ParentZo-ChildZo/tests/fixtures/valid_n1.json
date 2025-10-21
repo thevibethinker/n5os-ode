@@ -1,0 +1,16 @@
+{
+  "message_id": "msg_n1_001",
+  "schema_version": "0.9.0",
+  "event_type": "user.updated",
+  "timestamp": "2025-10-20T14:01:00Z",
+  "payload": {
+    "user_id": "usr_789012",
+    "email": "updated@example.com",
+    "updated_at": "2025-10-20T14:01:00Z"
+  },
+  "metadata": {
+    "source": "api",
+    "trace_id": "trace_def456"
+  },
+  "_comment": "N-1 schema version for backward compatibility testing"
+}
