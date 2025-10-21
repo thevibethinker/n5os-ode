@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-20T09:39:32-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_listed": 8,
+  "raw_email_files_found": 0,
+  "stakeholder_records_created": 0,
+  "staging_files_deleted": 0,
+  "notes": "No raw email payload files (eml/mbox/plain text) present in staging subfolders. Only process/run summary logs found. No extraction performed."
+}

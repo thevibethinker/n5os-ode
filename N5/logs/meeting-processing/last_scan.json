@@ -1,0 +1,11 @@
+{
+  "run": "meeting-transcript-scan",
+  "timestamp": "2025-10-21T02:54:10Z",
+  "folder_id": "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV",
+  "total_listed": 100,
+  "unprocessed_detected": 1,
+  "duplicates_skipped": 1,
+  "downloaded": 0,
+  "queued_requests": 0,
+  "notes": "All unprocessed candidates already present in system per gdrive_id"
+}

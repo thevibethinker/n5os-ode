@@ -95,7 +95,7 @@ def edit_upgrade(jsonl_path: Path, item_id: str, patch: dict):
         atomic_write(jsonl_path.parent / "system-upgrades.md", md_content)
 
 
-from system_upgrades_validator import SystemUpgradesValidator
+from lib.system_upgrades_validator import SystemUpgradesValidator
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "schemas" / "system-upgrades.schema.json"
 
 original_list_upgrades = list_upgrades

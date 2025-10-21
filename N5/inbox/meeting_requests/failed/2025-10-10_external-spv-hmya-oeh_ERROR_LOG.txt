@@ -1,0 +1,34 @@
+ERROR LOG: 2025-10-10_external-spv-hmya-oeh
+Processing Date: 2025-10-20 14:35:00 ET
+Event ID: 3bfd7d14-ffd6-4049-bd30-1bd20c0ac2ab
+
+ERROR TYPE: Invalid Meeting Classification
+
+REASON: 
+This transcript is an INTERNAL co-founder standup between Vrijen and Logan, not an external stakeholder meeting.
+
+TRANSCRIPT CONTENT:
+- Discussion of meeting processing system demonstration
+- Internal fundraising strategy brainstorming
+- Exit strategy exploration (rollup company idea)
+- Internal operations and team coordination
+
+DETECTION SIGNALS:
+- Participants: Logan Currie (co-founder) and Vrijen Attawar
+- Conversation style: Internal strategy discussion, not external stakeholder meeting
+- No external stakeholder present
+- Topics: Internal systems, fundraising strategy, company direction
+
+CORRECT CLASSIFICATION:
+This should have been classified as "INTERNAL_STANDUP_COFOUNDER" not "external"
+
+REQUIRED ACTION:
+1. Request re-classification at intake stage
+2. Update meeting classification logic to detect internal vs external meetings
+3. Internal meetings may need different processing workflow (simpler action items, no CRM integration)
+
+RECOMMENDATION:
+Improve classification logic in meeting request generation to distinguish:
+- External stakeholder meetings → Full Registry System v1.5 processing
+- Internal standups → Simplified processing (action items + decisions only)
+- System demos/training → Archive only, no processing needed

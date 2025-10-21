@@ -1,22 +1,25 @@
 ## DETAILED_RECAP
 
 ---
-**Feedback**: - [ ] Useful
----
+
+## **Feedback**: - \[ \] Useful
 
 ### Key Decisions and Agreements
 
 • **Shift to candidate-centric sustainability model** - Vrijen shared burnout with VC-focused approach; Laura strongly validated pivoting to "Careerspan is for me" positioning (the repository/content creation hook) rather than diversifying into side products
-  - Rationale: Two UK competitors exist with better UX but worse data; US market capture opportunity exists if Careerspan stays alive and distributes
-  - Why it matters: Focus beats diversification; Laura warned against "getting creative" with revenue—stick to SME
+
+- Rationale: Two UK competitors exist with better UX but worse data; US market capture opportunity exists if Careerspan stays alive and distributes
+- Why it matters: Focus beats diversification; Laura warned against "getting creative" with revenue—stick to SME
 
 • **Partnership ecosystem as growth lever** - Laura emphasized partnerships over jobs marketplace positioning (everyone dangles jobs, nobody believes it anymore)
-  - Rationale: Superposition (Edmund) and others compete on job matching; Careerspan's unique value is the candidate repository
-  - Why it matters: Boolean example surfaced as potential partnership—they need candidate data repositories for mock interviews; this is a concrete monetization path
+
+- Rationale: Superposition (Edmund) and others compete on job matching; Careerspan's unique value is the candidate repository
+- Why it matters: Boolean example surfaced as potential partnership—they need candidate data repositories for mock interviews; this is a concrete monetization path
 
 • **Three-way call with Logan scheduled** - Laura offered to discuss short/medium-term runway strategy with both Vrijen and Logan
-  - Commitment: Laura will send Calendly link
-  - Why it matters: Laura has navigated tech winter survival; direct strategic support from experienced operator
+
+- Commitment: Laura will send Calendly link
+- Why it matters: Laura has navigated tech winter survival; direct strategic support from experienced operator
 
 ### Strategic Context
 
@@ -30,7 +33,7 @@
 
 ### Critical Next Action
 
-**Owner:** Vrijen  
-**Deliverable:** Schedule three-way call with Laura and Logan to workshop short/medium-term runway strategy  
-**Timeline:** Within 1 week (Laura will send Calendly)  
+**Owner:** Vrijen\
+**Deliverable:** Schedule three-way call with Laura and Logan to workshop short/medium-term runway strategy\
+**Timeline:** Within 1 week (Laura will send Calendly)\
 **Purpose:** Get experienced operator input on survival strategy that preserves candidate-first vision without diversification

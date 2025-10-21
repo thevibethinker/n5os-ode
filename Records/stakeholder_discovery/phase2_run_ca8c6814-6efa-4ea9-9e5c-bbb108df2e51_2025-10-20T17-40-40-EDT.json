@@ -1,0 +1,12 @@
+{
+  "discovered_at": "2025-10-20T17:40:40-04:00",
+  "source": "email_scanner",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_listed": 9,
+  "raw_email_files_found": 0,
+  "files_processed_for_extraction": 0,
+  "stakeholder_records_created": 0,
+  "staging_files_deleted": 0,
+  "notes": "No raw email payloads (EML/MIME/JSON) found under the staging path. No external participants extracted."
+}

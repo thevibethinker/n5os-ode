@@ -71,6 +71,24 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 
 **Rationale:** Reflections have established pipeline with registry, approval workflow, and synthesis protocols. Bypassing creates inconsistency and loses system benefits (tracking, classification, SSOT).
 
+### Output Review Reminder
+
+**At conversation-end (when user says "end conversation", "close thread", "wrap up"):**
+
+The `n5_conversation_end.py` script will automatically (Phase 2.75):
+1. List outputs flagged for review during this conversation
+2. Scan workspace for substantial deliverables (>100 words) not yet flagged
+3. Show summary and command to flag outputs with improvement notes
+
+**To manually flag outputs for quality review:**
+```bash
+python3 N5/scripts/review_cli.py add <path> \
+  --improve "What to change (e.g., 'Use warmer tone, cut to 150 words')" \
+  --optimal "Ideal version (e.g., 'Professional but friendly, 2-3 paras, clear CTA')"
+```
+
+**Rationale:** Captures "what to improve" and "optimal state" alongside outputs so future work can directly apply past feedback. Builds training data corpus for style refinement.
+
 ### Folder Policy Principle (Highest Priority)
 Folder-specific POLICY.md files take precedence over these global preferences unless explicitly exempted.
 

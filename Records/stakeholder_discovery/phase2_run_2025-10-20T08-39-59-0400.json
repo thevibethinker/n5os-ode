@@ -1,0 +1,15 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "discovered_at": "2025-10-20T08:39:59-04:00",
+  "source": "email_scanner",
+  "staging_dir": "Records/Temporary/email_staging",
+  "staging_files_enumerated": 9,
+  "raw_email_files_found": 0,
+  "stakeholders_discovered": 0,
+  "actions": [
+    "Loaded preferences: Documents/N5.md, N5/prefs/prefs.md",
+    "Enumerated staging directory and subfolders",
+    "No raw email files detected; no stakeholder extraction performed",
+    "No files deleted (per file-protection rules)"
+  ]
+}

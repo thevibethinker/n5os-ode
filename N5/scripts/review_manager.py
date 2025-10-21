@@ -190,6 +190,23 @@ class ReviewManager:
         
         return True
     
+    def _infer_title(self, reference: str, output_type: str) -> str:
+        """Infer title from reference if not provided."""
+        if output_type == "file":
+            return Path(reference).name
+        elif output_type == "url":
+            return reference[:80] + ("..." if len(reference) > 80 else "")
+        else:
+            return reference[:80] + ("..." if len(reference) > 80 else "")
+    
+    def _load_reviews(self) -> List[Dict[str, Any]]:
+        """Load all reviews from JSONL."""
+        return self.read_jsonl(REVIEWS_JSONL)
+    
+    def _save_reviews(self, reviews: List[Dict[str, Any]]):
+        """Save all reviews to JSONL."""
+        self.write_jsonl(REVIEWS_JSONL, reviews)
+    
     def add_review(
         self,
         title: str,
@@ -246,7 +263,12 @@ class ReviewManager:
                 "sentiment": None,
                 "reviewed_by": None,
                 "reviewed_at": None,
-                "quality_dimensions": {}
+                "quality_dimensions": {},
+                "improvement_notes": {
+                    "what_to_change": None,
+                    "optimal_state": None,
+                    "priority": "medium"
+                }
             },
             "tags": tags or [],
             "notes": notes or "",
@@ -430,6 +452,139 @@ class ReviewManager:
             review["comments"] = self.get_comments(review["id"])
         
         return json.dumps(reviews, indent=2)
+
+    def add_output(
+        self,
+        reference: str,
+        output_type: str,
+        title: Optional[str] = None,
+        conversation_id: Optional[str] = None,
+        tags: Optional[List[str]] = None,
+        notes: Optional[str] = None,
+        sentiment: Optional[str] = None,
+        improvement_notes: Optional[str] = None,
+        optimal_state: Optional[str] = None,
+        **provenance_kwargs
+    ) -> str:
+        """Add new output review entry."""
+        
+        # Validate type
+        if output_type not in VALID_TYPES:
+            raise ValueError(f"Invalid type: {output_type}. Must be one of {VALID_TYPES}")
+        
+        # Auto-detect conversation if not provided
+        if not conversation_id:
+            conversation_id = self.detect_conversation_id()
+        
+        if not conversation_id:
+            raise ValueError("conversation_id required and could not be auto-detected")
+        
+        # Compute content hash for files
+        content_hash = None
+        if output_type == "file":
+            content_hash = self.compute_hash(reference)
+        
+        # Build entry
+        now = datetime.now(timezone.utc).isoformat()
+        entry = {
+            "id": self.generate_id("out"),
+            "created_at": now,
+            "updated_at": now,
+            "archived_at": None,
+            "title": title or self._infer_title(reference, output_type),
+            "type": output_type,
+            "reference": reference,
+            "content_hash": content_hash,
+            "provenance": provenance_kwargs,
+            "review": {
+                "status": "pending",
+                "sentiment": sentiment,
+                "reviewed_by": None,
+                "reviewed_at": None,
+                "quality_dimensions": {}
+            },
+            "tags": tags or [],
+            "notes": notes,
+            "improvement_notes": improvement_notes,
+            "optimal_state": optimal_state,
+            "comment_count": 0,
+            "latest_comment_at": None
+        }
+        
+        # Validate against schema
+        if not self.validate_schema(entry, "review"):
+            raise ValueError("Entry failed schema validation")
+        
+        # Add to JSONL
+        entries = self.read_jsonl(REVIEWS_JSONL)
+        entries.append(entry)
+        self.write_jsonl(REVIEWS_JSONL, entries)
+        
+        logger.info(f"✓ Added review: {entry['id']} - {entry['title']}")
+        return entry["id"]
+    
+    def update_improvement(
+        self,
+        output_id: str,
+        improvement_notes: Optional[str] = None,
+        optimal_state: Optional[str] = None
+    ) -> bool:
+        """Update improvement notes for an existing output."""
+        if self.dry_run:
+            logger.info(f"[DRY RUN] Would update improvement notes for {output_id}")
+            return True
+        
+        try:
+            reviews = self._load_reviews()
+            
+            for review in reviews:
+                if review['id'] == output_id:
+                    if improvement_notes is not None:
+                        review['improvement_notes'] = improvement_notes
+                    if optimal_state is not None:
+                        review['optimal_state'] = optimal_state
+                    review['updated_at'] = datetime.utcnow().isoformat() + 'Z'
+                    
+                    self._save_reviews(reviews)
+                    logger.info(f"Updated improvement notes for {output_id}")
+                    return True
+            
+            logger.warning(f"Output not found: {output_id}")
+            return False
+            
+        except Exception as e:
+            logger.error(f"Failed to update improvement notes: {e}")
+            return False
+
+    def update_improvement_notes(
+        self,
+        output_id: str,
+        what_to_change: Optional[str] = None,
+        optimal_state: Optional[str] = None,
+        priority: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """Update structured improvement notes under review.improvement_notes."""
+        entries = self.read_jsonl(REVIEWS_JSONL)
+        entry = next((e for e in entries if e["id"] == output_id), None)
+        if not entry:
+            raise ValueError(f"Output not found: {output_id}")
+        now = datetime.now(timezone.utc).isoformat()
+        review_obj = entry.setdefault("review", {})
+        imp = review_obj.setdefault("improvement_notes", {
+            "what_to_change": None,
+            "optimal_state": None,
+            "priority": "medium"
+        })
+        if what_to_change is not None:
+            imp["what_to_change"] = what_to_change
+        if optimal_state is not None:
+            imp["optimal_state"] = optimal_state
+        if priority is not None:
+            imp["priority"] = priority
+        entry["updated_at"] = now
+        self.write_jsonl(REVIEWS_JSONL, entries)
+        logger.info(f"✓ Updated improvement notes for {output_id}")
+        return entry
 
 
 def main():

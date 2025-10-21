@@ -1,0 +1,20 @@
+{
+  "discovered_at": "2025-10-20T10:40:08-04:00",
+  "source": "email_scanner",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_listed": 8,
+  "raw_email_files_found": 0,
+  "stakeholder_records_created": 0,
+  "processed_files_deleted": 0,
+  "files_observed": [
+    "process_summary_2025-10-20T03-09-58-0400.md",
+    "process_run_2025-10-20T03-42-39-0400.md",
+    "process_run_2025-10-20T05-39-08-0400.md",
+    "process_run_2025-10-20T06-09-52-0400.md",
+    "process_run_2025-10-20T06-39-55-EDT.md",
+    "process_phase2_summary_2025-10-20T06-39-48-0400.md",
+    "process_phase2_summary_2025-10-20T08-39-59-EDT.md",
+    "process_run_2025-10-20T06-39-55-EDT.md"
+  ],
+  "notes": "No raw email payload files present in staging. No stakeholder extraction performed. Upstream pipeline should place email payloads into the staging directory or update staging path."
+}

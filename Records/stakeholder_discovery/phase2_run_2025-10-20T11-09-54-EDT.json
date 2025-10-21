@@ -1,0 +1,19 @@
+{
+  "run_at": "2025-10-20T11:09:54-04:00",
+  "source_staging_dir": "Records/Temporary/email_staging",
+  "files_enumerated": [
+    "process_summary_2025-10-20T03-09-58-0400.md",
+    "process_run_2025-10-20T03-42-39-0400.md",
+    "process_run_2025-10-20T05-39-08-0400.md",
+    "process_run_2025-10-20T06-09-52-0400.md",
+    "process_run_2025-10-20T06-39-55-EDT.md",
+    "process_phase2_summary_2025-10-20T06-39-48-0400.md",
+    "process_phase2_summary_2025-10-20T08-39-59-EDT.md"
+  ],
+  "raw_email_files_found": 0,
+  "stakeholder_records_written": 0,
+  "files_deleted": 0,
+  "notes": "No raw email message files found in file 'Records/Temporary/email_staging'. No external participants detected. No write or delete actions performed. To process emails, place raw email exports (EML/MIME) or Gmail JSON exports into file 'Records/Temporary/email_staging' and re-run Phase 2.",
+  "generated_by": "Zo",
+  "scheduled_task_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51"
+}

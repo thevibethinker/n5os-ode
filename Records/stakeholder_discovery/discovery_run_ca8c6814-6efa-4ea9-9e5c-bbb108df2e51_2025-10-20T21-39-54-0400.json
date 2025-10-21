@@ -1,0 +1,24 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "discovered_at": "2025-10-20T21:39:54-04:00",
+  "source": "email_scanner",
+  "staging_dir": "Records/Temporary/email_staging",
+  "processed_files": [
+    "2025-10-14",
+    "2025-10-15",
+    "process_phase2_summary_2025-10-20T06-39-48-0400.md",
+    "process_phase2_summary_2025-10-20T08-39-59-EDT.md",
+    "process_phase2_summary_2025-10-20T11-09-54-EDT.md",
+    "process_phase2_summary_2025-10-20T13-10-18-EDT.md",
+    "process_phase2_summary_2025-10-20T19-09-50-EDT.md",
+    "process_phase2_summary_2025-10-20T19-41-06-EDT.md",
+    "process_phase2_summary_2025-10-20T20-40-20-EDT.md",
+    "process_run_2025-10-20T03-42-39-0400.md",
+    "process_run_2025-10-20T05-39-08-0400.md",
+    "process_run_2025-10-20T06-09-52-0400.md",
+    "process_run_2025-10-20T06-39-55-EDT.md",
+    "process_summary_2025-10-20T03-09-58-0400.md"
+  ],
+  "stakeholders_discovered_count": 0,
+  "stakeholders": []
+}

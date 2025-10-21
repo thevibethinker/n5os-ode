@@ -1,0 +1,10 @@
+{
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at": "2025-10-20T13:10:18-04:00",
+  "source_dir": "/home/workspace/Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries_written": [],
+  "notes": "No staging email files found. Directory contained only log and summary files; no raw email staging files to process. No deletions performed."
+}

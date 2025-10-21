@@ -1,0 +1,11 @@
+{
+  "discovered_at": "2025-10-20T10:09:26-04:00",
+  "source": "email_scanner",
+  "summary": {
+    "files_processed": 0,
+    "stakeholders_discovered": 0,
+    "processed_files": [],
+    "discoveries": []
+  },
+  "note": "No staging email files found in /home/workspace/Records/Temporary/email_staging; only archive/run logs present. No deletions performed."
+}

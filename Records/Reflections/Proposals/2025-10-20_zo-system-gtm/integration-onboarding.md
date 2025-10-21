@@ -1,106 +1,187 @@
-# Integration Onboarding (Customer)
-**Context:** Sequestered deliverable for reflection 2025-10-20_zo-system-gtm  
-**Purpose:** Step-by-step guide for connecting Gmail, Google Drive, and Google Calendar to the Zo System demonstrator clone.
+# E2E Test Plan (Essential)
+
+Scenarios
+
+- Happy path (current + N-1 schema)
+- Duplicate delivery (same message_id) → exactly one effect; log duplicate_suppressed
+- Transient failure → retries then success; backoff bounds observed
+- Permanent failure → DLQ with reason + metadata
+- Slow downstream → visibility extension; no double-processing
+- Restart mid-flight → safe reprocessing; no lost ACKs
+- Replay from DLQ → idempotent re-apply; no duplicates
+
+Fixtures
+
+- valid_current.json, valid_n1.json, invalid_schema.json, transient_fail.json, permanent_fail.json
+
+CI
+
+- Run each scenario, assert metrics/logs conditions; archive golden logs
 
 ---
 
-## 0) Overview
-- Goal: Enable ingestion pipelines (Reflections + Meetings) using customer’s Google services.
-- Default posture: Read-only ingestion. No outbound sends without explicit approval.
-- Where to connect: Customer’s Zo Computer → Settings → Connected Apps (Gmail, Google Drive, Google Calendar)
+## Detailed Scenarios and Assertions
+
+Legend: E2E-### test IDs, MI = metrics increment, LG = log assertion
+
+### E2E-001 Happy path (current + N-1 schema)
+
+Given: producer publishes valid_current.json and valid_n1.json\
+When: consumer processes messages\
+Then:
+
+- Exactly one successful effect per message (idempotent apply) \[MI: processed_success_total += 2\]
+- LG: level=info event=processed message_id= schema_version in {current, n-1}
+- No DLQ entries \[MI: dlq_total unchanged\]
+
+### E2E-002 Duplicate delivery (same message_id)
+
+Given: two messages with identical message_id and payload valid_current.json\
+When: both are delivered (in any order)\
+Then:
+
+- Exactly one effect applied \[MI: processed_success_total += 1\]
+- Second delivery suppressed \[MI: duplicates_suppressed_total += 1\]
+- LG: event=duplicate_suppressed message_id=
+
+### E2E-003 Transient failure → retries then success
+
+Given: transient_fail.json causes first N attempts to fail with retriable error\
+When: consumer retries with backoff\
+Then:
+
+- LG: event=retry attempt=1..N backoff_ms within \[MIN_BACKOFF_MS, MAX_BACKOFF_MS\]
+- Final attempt succeeds \[MI: processed_success_total += 1\]
+- \[MI: processed_retry_total += N\]
+
+### E2E-004 Permanent failure → DLQ
+
+Given: permanent_fail.json triggers non-retriable error\
+When: processed once\
+Then:
+
+- Message moved to DLQ with reason and metadata captured \[MI: dlq_total += 1\]
+- LG: event=dlq message_id= reason=` metadata.contains(keys: schema_version, first_seen_at)`
+
+### `E2E-005 Slow downstream → visibility extension; no double-processing`
+
+`Given: handler sleeps > initial_visibility_timeout`\
+`When: processing in-flight`\
+`Then:`
+
+- `Visibility extended at least once [MI: visibility_extensions_total += 1]`
+- `No concurrent second consumer instance processes the same message [LG: no duplicate processing logs]`
+
+### `E2E-006 Restart mid-flight → safe reprocessing; no lost ACKs`
+
+`Given: consumer is terminated mid-processing (SIGTERM)`\
+`When: service restarts`\
+`Then:`
+
+- `In-flight message becomes available again after visibility timeout`
+- `Exactly one final successful effect [MI: processed_success_total += 1]`
+- `No lost ACKs [LG: event=ack_success appears exactly once]`
+
+### `E2E-007 Replay from DLQ → idempotent re-apply; no duplicates`
+
+`Given: one message in DLQ (from E2E-004)`\
+`When: DLQ replay tool republishes to main topic`\
+`Then:`
+
+- `If root cause fixed, exactly one effect; no duplicate side-effects`
+- `[MI: dlq_replayed_total += 1] and [MI: processed_success_total += 1]`
+- `LG: event=dlq_replay_success message_id=`
 
 ---
 
-## 1) Prerequisites
-- Customer admin/owner available to approve OAuth prompts for:
-  - Gmail (read-only for ingestion)
-  - Google Drive (read-only to a specific folder for reflections)
-  - Google Calendar (read access to selected calendars)
-- Demonstrator clone deployed and initialized
-- Folder created for reflections (if Drive is used)
+## `Metrics and Log Keys (Contract)`
+
+- `Metrics (counters): `
+  - `processed_success_total`
+  - `processed_retry_total`
+  - `duplicates_suppressed_total`
+  - `dlq_total`
+  - `dlq_replayed_total`
+  - `visibility_extensions_total`
+- `Gauges/Timers (optional): `
+  - `handler_duration_ms`
+  - `backoff_last_ms`
+- `Logs (structured): `
+  - `Common fields: ts, level, event, message_id, schema_version, attempt, backoff_ms, reason, metadata`
+
+`Env for backoff bounds:`
+
+- `MIN_BACKOFF_MS (e.g., 100)`
+- `MAX_BACKOFF_MS (e.g., 5000)`
+- `MAX_RETRY_ATTEMPTS (e.g., 5)`
 
 ---
 
-## 2) Gmail Integration (Reflections via Email)
-1. Open Zo app → Settings → Connect Gmail → approve access.
-2. Verify connection: tool list_app_tools(gmail) should enumerate tools (internal).
-3. Configure usage:
-   - Reflection emails should include subject tag: "[Reflect]"
-   - Attach audio (mp3/m4a/wav/opus) or paste text body; either is supported
-4. Test:
-   - Send an email to the connected Gmail with subject: "[Reflect] Test: Hello World"
-   - Run command 'N5/commands/reflection-ingest.md'
-   - Expected outputs:
-     - Registry entry: file 'N5/records/reflections/registry/registry.json'
-     - Outputs (summary/detail): file 'N5/records/reflections/outputs/<slug>/'
-     - Proposal (sequestered): file 'Records/Reflections/Proposals/<slug>_proposal.md' or in a dedicated folder if configured
+## `Test Fixtures Mapping`
 
-Notes:
-- Text-only reflections are wrapped into `.transcript.jsonl` automatically (worker updated).
-- No messages are sent out automatically.
+- `valid_current.json → schema=current, effect: create/update succeeds`
+- `valid_n1.json → schema=n-1, backward compatibility`
+- `invalid_schema.json → schema invalid, expect reject before processing`
+- `transient_fail.json → handler raises retriable error N times then succeeds`
+- `permanent_fail.json → handler raises non-retriable error immediately`
 
 ---
 
-## 3) Google Drive Integration (Optional Reflections via Drive)
-1. Open Zo app → Settings → Connect Google Drive → approve access.
-2. Create or choose a folder for reflections (e.g., "Reflections Inbox").
-3. Record folder ID and set in: file 'N5/config/reflection-sources.json' (key: drive_folder_id)
-4. Test:
-   - Drop a test file (audio or .txt/.md) into the Drive folder
-   - Run command 'N5/commands/reflection-ingest.md'
-   - Verify outputs as in Gmail test
+## `Test Harness Requirements`
 
-Notes:
-- Access is read-only; pipeline copies files into N5/records/reflections/incoming/ locally.
+- `Toggleable handler behavior based on fixture name`
+- `Idempotency key: message_id`
+- `DLQ interface: enqueue, list, replay`
+- `Visibility control: configurable timeout + extension hook`
+- `Deterministic logging with JSON lines`
 
 ---
 
-## 4) Google Calendar Integration (Meetings)
-1. Open Zo app → Settings → Connect Google Calendar → approve access.
-2. Select calendars to ingest (primary or specific team calendars).
-3. Run command 'N5/commands/auto-process-meetings.md' (or your meeting pipeline command).
-4. Test:
-   - Create a short meeting on the connected calendar within the ingest window
-   - Trigger the meeting processing command
-   - Verify notes/summaries saved under appropriate Records path (per command defaults)
+## `CI Execution`
 
-Notes:
-- Meeting ingestion should be part of the core package; ensure schedule/triggering cadence aligns with customer workflow.
+`Commands:`
 
----
+```markdown
+# Run all e2e tests
+pytest -q -m e2e_proce
 
-## 5) Smoke Tests (Quick)
-- Reflection (email): Send "[Reflect] Onboarding Smoke Test" → run reflection-ingest → confirm proposal created
-- Reflection (drive): Place test file in Drive folder → run reflection-ingest → confirm outputs
-- Meetings: Create a 5-minute test event → run meeting processor → confirm output
+# Or run individually
+pytest -q -k E2E_001
+pytest -q -k E2E_002
 
----
+# Archive golden logs (per run)
+RUN_DIR="Documents/System/ParentZo-ChildZo/tests/golden/$(date -u +%Y%m%dT%H%M%SZ)" \
+&& mkdir -p "$RUN_DIR" \
+&& cp -r /var/log/proce/* "$RUN_DIR" || true
+```
 
-## 6) Troubleshooting
-- Not seeing Gmail/Drive/Calendar tools? Reconnect in Settings, then re-run the command.
-- No files detected from Drive? Confirm folder ID in file 'N5/config/reflection-sources.json'.
-- Transcript missing errors? For audio, ensure reflection-ingest is used (it transcribes). For text, worker now auto-wraps.
-- Idempotence: You can safely re-run the ingest commands; duplicates are skipped via state tracking.
+`Pytest markers (suggested):`
 
----
+- `@pytest.mark.e2e_proce`
+- `@pytest.mark.flaky(reruns=0)  # should be stable`
 
-## 7) Security / Permissions
-- Default scopes are read-only for ingestion flows.
-- No automatic outbound email posting.
-- All generated content is sequestered locally; promotion to stable knowledge requires explicit approval.
+`Assertions (examples):`
+
+- `Metrics: scrape /metrics endpoint and assert deltas`
+- `Logs: jq filter for event keys and counts`
+- `DLQ: count after scenario, then after replay`
 
 ---
 
-## 8) Handoffs & Ownership
-- Customer Owner: Approves app connections and selects calendars/folders
-- Operator (you): Runs commands, verifies outputs, escalates issues
-- Support: Provide logs if needed (command output; see registry and outputs paths)
+## `Acceptance Criteria (Per Scenario)`
+
+- `E2E-001: 2 successes, 0 DLQ, no retries`
+- `E2E-002: 1 success, 1 duplicate_suppressed`
+- `E2E-003: 1 success, processed_retry_total == N, backoff within bounds`
+- `E2E-004: 0 success, 1 DLQ with reason+metadata`
+- `E2E-005: visibility_extensions_total >= 1, no double-processing artifacts`
+- `E2E-006: graceful restart, 1 final success, single ack_success`
+- `E2E-007: dlq_replayed_total += 1, exactly one side-effect, no duplicates`
 
 ---
 
-## 9) Reference Commands & Paths
-- Reflection ingest: command 'N5/commands/reflection-ingest.md'
-- Meeting processing: command 'N5/commands/auto-process-meetings.md'
-- Outputs (reflections): file 'N5/records/reflections/outputs/<slug>/'
-- Proposals (sequestered): file 'Records/Reflections/Proposals/<slug>/'
-- Sources config: file 'N5/config/reflection-sources.json'
+## `Notes`
+
+- `Golden logs must be archived per CI run with timestamped directory`
+- `For invalid_schema.json, ensure schema validation fails pre-handler and does not increment retries`
+- `Ensure all IDs and timestamps are present for provenance`

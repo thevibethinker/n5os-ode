@@ -1,0 +1,20 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at": "2025-10-20T11:39:37-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "staging_files_enumerated": [
+    "process_summary_2025-10-20T03-09-58-0400.md",
+    "process_run_2025-10-20T03-42-39-0400.md",
+    "process_run_2025-10-20T05-39-08-0400.md",
+    "process_run_2025-10-20T06-09-52-0400.md",
+    "process_run_2025-10-20T06-39-55-EDT.md",
+    "process_phase2_summary_2025-10-20T06-39-48-0400.md",
+    "process_phase2_summary_2025-10-20T08-39-59-EDT.md",
+    "process_phase2_summary_2025-10-20T11-09-54-EDT.md"
+  ],
+  "raw_email_files_found": 0,
+  "stakeholders_discovered": 0,
+  "processed_files_deleted": 0,
+  "notes": "No raw email staging files found. No external participants identified. No discovery records written.",
+  "generated_by": "Zo (scheduled task)"
+}

@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-20T19:41:06-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_enumerated": 9,
+  "raw_email_files_found": 0,
+  "stakeholders_discovered": 0,
+  "processed_files_deleted": 0,
+  "note": "No raw email message files (EML/MIME/JSON exports) found in staging. Place raw email exports into staging and re-run Phase 2."
+}

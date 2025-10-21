@@ -1758,3 +1758,27 @@ Recommendation: Start with community segment for candidate sourcing/distribution
 
 **Document version:** 1.8 (Added 3 meetings, 11 GTM insights across 4 theme sections)  
 **Last updated:** 2025-10-19 09:05 ET
+
+---
+
+# Partnership Strategy & Revenue Models
+
+### VC Incompetence in Recruiting Tech Evaluation
+- **Signal strength:** ● ● ● ○ ○
+- VCs evaluate recruiting tech deals based on question volume rather than thesis-driven conviction, leading to unpredictable fundraising processes.
+- **Validated by:**
+  - **🔷 Ash Straughn** (SIEM Founder) — Actively fundraising and observing VC behavior > "If they have a shit ton of questions, theyre interested... If they dont have a shit ton of questions, theyre probably passing.
+
+### Charging Job Seekers Despite Founder Resistance
+- **Signal strength:** ● ● ● ● ○
+- VCs push consumer monetization, assuming job seekers will pay, despite practical and philosophical resistance from founders.
+- **Validated by:**
+  - **🔷 Ash Straughn** (SIEM Founder) + **🔷 Vrijen Attawar** (Careerspan Founder) — Shared experiences with VC misalignment > Would you like to pay us money to upskill yourself... No, were not doing that shit."
+
+### Partnership Economics Shifting to Revenue Share
+- **Signal strength:** ● ● ● ● ○
+- Recruiting platforms are evolving from basic job boards to integrated revenue-sharing models with kickbacks up to 12 months.
+- **Validated by:**
+  - **🔷 Ash Straughn** (SIEM Founder) — Operationally executing this shift with measurable ARR growth.
+
+
