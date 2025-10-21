@@ -61,3 +61,12 @@ N5/lists/*.md
 
 # Whitelist core command doc required by audit
 !N5/commands/direct-knowledge-ingest.md
+
+# Large media files (meeting recordings, audio)
+*.wav
+*.mp3
+*.m4a
+*.mp4
+*.avi
+*.mov
+*.flv
