@@ -1,0 +1,71 @@
+{
+  "email": {
+    "name": "Professional Email",
+    "description": "Warm, direct, action-oriented professional communication",
+    "attributes": {
+      "warmth": 0.75,
+      "directness": 0.85,
+      "formality": 0.60,
+      "precision": 0.90
+    },
+    "structure": [
+      "Clear greeting appropriate to relationship",
+      "Direct statement of purpose in first paragraph",
+      "Supporting details in middle",
+      "Clear call-to-action or next steps",
+      "Professional closing"
+    ],
+    "voice_markers": [
+      "Active voice preferred",
+      "Specific over vague",
+      "Questions to drive engagement",
+      "Em-dashes for aside
+[truncated]
+xed",
+    "structure": [
+      "Flexible based on personal style",
+      "Capture speed prioritized over polish",
+      "Fragments and shortcuts acceptable",
+      "Structure emerges organically"
+    ],
+    "voice_markers": [
+      "Whatever works for quick capture",
+      "Personal shorthand okay",
+      "No performative elements"
+    ],
+    "avoid": [
+      "Over-structuring",
+      "Perfection paralysis",
+      "Unnecessary formality"
+    ]
+  },
+  "override": {
+    "name": "Neutral Professional",
+    "description": "Clean, professional, brand-safe tone with minimal personality",
+    "attributes": {
+      "warmth": 0.50,
+      "directness": 0.80,
+      "formality": 0.75,
+      "precision": 0.95
+    },
+    "structure": [
+      "Clear hierarchy",
+      "Standard business formatting",
+      "Logical flow",
+      "Professional conventions"
+    ],
+    "voice_markers": [
+      "Active voice",
+      "Clear, simple language",
+      "Standard punctuation",
+      "Minimal personality"
+    ],
+    "avoid": [
+      "Emojis",
+      "Humor",
+      "Informal language",
+      "Personal anecdotes",
+      "Contractions"
+    ]
+  }
+}
