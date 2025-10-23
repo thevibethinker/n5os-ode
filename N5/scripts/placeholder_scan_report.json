@@ -1,0 +1,5484 @@
+{
+  "timestamp": "/home/workspace",
+  "total_issues": 684,
+  "by_severity": {
+    "medium": [
+      {
+        "file": "email_postprocess.sh",
+        "line": 9,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "TMP=$(mktemp)"
+      },
+      {
+        "file": "demo_conversation.sh",
+        "line": 7,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "PARENT_URL=\"${1:-http://localhost:8769}\""
+      },
+      {
+        "file": "bootstrap_conversation_client.py",
+        "line": 89,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "attempts = 0"
+      },
+      {
+        "file": "bootstrap_conversation_client.py",
+        "line": 92,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "attempts += 1"
+      },
+      {
+        "file": "bootstrap_conversation_client.py",
+        "line": 107,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(f\"\u23f3 Polling attempt {attempts}, no response yet...\")"
+      },
+      {
+        "file": "process_email_staging_llm.py",
+        "line": 60,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This function is a PLACEHOLDER for LLM injection by the Zo agent."
+      },
+      {
+        "file": "process_email_staging_llm.py",
+        "line": 118,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log.info(\"   [LLM PLACEHOLDER] This will be replaced by agent LLM analysis\")"
+      },
+      {
+        "file": "process_email_staging_llm.py",
+        "line": 169,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log.warning(\"   LLM extraction returned None (placeholder mode)\")"
+      },
+      {
+        "file": "process_email_staging_llm.py",
+        "line": 33,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "STAGING_ROOT = WORKSPACE_ROOT / \"Records/Temporary/email_staging\""
+      },
+      {
+        "file": "file_watcher.py",
+        "line": 159,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"   Attempting emergency recovery...\")"
+      },
+      {
+        "file": "meeting_prep_digest_v2.py",
+        "line": 206,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "time = meeting.get('start_time', 'TBD')"
+      },
+      {
+        "file": "n5_networking_event_process.py",
+        "line": 905,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Integrate with deliverable_orchestrator.py"
+      },
+      {
+        "file": "n5_networking_event_process.py",
+        "line": 832,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return f\"- **[{contact['name']}]({profile_rel_path})** - {contact['role']} at {c"
+      },
+      {
+        "file": "aggregate_b31_insights.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create initial template"
+      },
+      {
+        "file": "aggregate_b31_insights.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template = f\"\"\"# Market Intelligence: Aggregated Research Insights"
+      },
+      {
+        "file": "aggregate_b31_insights.py",
+        "line": 78,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "AGGREGATED_FILE.write_text(template)"
+      },
+      {
+        "file": "aggregate_b31_insights.py",
+        "line": 79,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return template"
+      },
+      {
+        "file": "aggregate_b31_insights.py",
+        "line": 332,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create fresh template"
+      },
+      {
+        "file": "aggregate_b31_insights.py",
+        "line": 337,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(\"\u2705 Fresh template created. Add meetings incrementally.\")"
+      },
+      {
+        "file": "b_block_parser.py",
+        "line": 355,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "r'\\b(next step|action item|to-do|todo)\\b.{0,200}',"
+      },
+      {
+        "file": "summarize_segments.py",
+        "line": 38,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"temperature\": 0.7,"
+      },
+      {
+        "file": "n5_workspace_root_cleanup.py",
+        "line": 30,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Function templates (AI prompts - transient)"
+      },
+      {
+        "file": "n5_workspace_root_cleanup.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Temporary completion docs"
+      },
+      {
+        "file": "n5_workspace_root_cleanup.py",
+        "line": 44,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Temporary meeting docs (should be processed and moved)"
+      },
+      {
+        "file": "n5_workspace_root_cleanup.py",
+        "line": 157,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "reason = \"Function template (conversation artifact)\""
+      },
+      {
+        "file": "n5_workspace_root_cleanup.py",
+        "line": 161,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "reason = \"Temporary completion doc\""
+      },
+      {
+        "file": "n5_workspace_root_cleanup.py",
+        "line": 163,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "reason = \"Temporary meeting processing doc\""
+      },
+      {
+        "file": "scheduled_email_scan.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# PLACEHOLDER: This would be called by Zo agent with:"
+      },
+      {
+        "file": "n5_deployment_packager.py",
+        "line": 275,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(\"Use --force to overwrite (not implemented yet)\")"
+      },
+      {
+        "file": "n5_commands_manage.py",
+        "line": 20,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for Zo internal LLM call"
+      },
+      {
+        "file": "n5_commands_manage.py",
+        "line": 75,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"temperature\": 0.0,"
+      },
+      {
+        "file": "meeting_api_integrator.py",
+        "line": 171,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "purpose = \"TBD\""
+      },
+      {
+        "file": "meeting_api_integrator.py",
+        "line": 172,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "context = \"TBD\""
+      },
+      {
+        "file": "n5_lists_reorder_migration.py",
+        "line": 31,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = p.with_suffix('.tmp')"
+      },
+      {
+        "file": "n5_lists_reorder_migration.py",
+        "line": 33,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with temp_file.open(\"w\", encoding=\"utf-8\") as f:"
+      },
+      {
+        "file": "n5_lists_reorder_migration.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.replace(p)  # Atomic move"
+      },
+      {
+        "file": "n5_lists_reorder_migration.py",
+        "line": 38,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_file.exists():"
+      },
+      {
+        "file": "n5_lists_reorder_migration.py",
+        "line": 39,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.unlink()"
+      },
+      {
+        "file": "front_matter_manager_part2.py",
+        "line": 4,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "front_matter_manager_part2.py",
+        "line": 18,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature=0.2, max_tokens=150"
+      },
+      {
+        "file": "front_matter_manager_part2.py",
+        "line": 23,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as tmp:"
+      },
+      {
+        "file": "test_weekly_summary.py",
+        "line": 91,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log.info(\"API Call Templates\")"
+      },
+      {
+        "file": "orchestrator.py",
+        "line": 229,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Run integration tests (placeholder for now).\"\"\""
+      },
+      {
+        "file": "orchestrator.py",
+        "line": 233,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder - would run actual tests"
+      },
+      {
+        "file": "orchestrator.py",
+        "line": 220,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(\"  Note: Auto-merge not implemented yet - manual merge required\")"
+      },
+      {
+        "file": "orchestrator.py",
+        "line": 30,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVO_WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 47,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Replace placeholders"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 64,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "content = content.replace('CONTEXT_PLACEHOLDER', context_text)"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 7,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "2. Creates a markdown file for each new individual/organization based on templat"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 22,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def get_template_content(template_path: Path, entry_name: str, today_date: str, "
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 23,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Reads a template file and populates basic fields.\"\"\""
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 24,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not template_path.exists():"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 46,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "content = template_path.read_text()"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 70,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_map: Dict[str, Path],"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 104,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = None"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 108,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = template_map.get(\"key_figure\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 112,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = template_map.get(\"startup\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 115,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = template_map.get(\"company\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 118,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = template_map.get(\"community\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 121,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = template_map.get(\"investor\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 124,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_file = template_map.get(\"channel_partner\")"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 139,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_content = get_template_content(template_file, name, today_date, context"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 145,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_content = template_content.replace(old_type, new_type)"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 147,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For organizations, templates already have correct types"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 151,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "f.write(template_content)"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 181,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Define template paths"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 182,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_map = {"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 183,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"key_figure\": si_dir / \"Key Figures/_TEMPLATE.md\","
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 184,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"startup\": si_dir / \"Startups/_TEMPLATE.md\","
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 185,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"company\": si_dir / \"Companies/_TEMPLATE.md\","
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 186,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"community\": si_dir / \"Communities/_TEMPLATE.md\","
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 187,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"investor\": si_dir / \"Investors/_TEMPLATE.md\","
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 188,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"channel_partner\": si_dir / \"Channel Partners/_TEMPLATE.md\","
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 195,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_map=template_map,"
+      },
+      {
+        "file": "n5_process_tracking_queues.py",
+        "line": 205,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_map=template_map,"
+      },
+      {
+        "file": "post_write_digest_scan.py",
+        "line": 5,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Background scanner for detecting placeholder text in all digest files."
+      },
+      {
+        "file": "post_write_digest_scan.py",
+        "line": 42,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logging.error(f\"Placeholder detected in {digest_file}: {result.stdout.strip()}\")"
+      },
+      {
+        "file": "post_write_digest_scan.py",
+        "line": 43,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"[ALERT] Placeholder detected in {digest_file}\")"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 60,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Ensures pricing.md exists, creating it with placeholder content if not.\"\"\""
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 63,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.warning(f\"Pricing model file not found: {pricing_file_path}. Creating a p"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 65,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "placeholder_content = \"\"\"# Careerspan Pricing Model"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 100,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "pricing_file_path.write_text(placeholder_content, encoding='utf-8')"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 178,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Ensure pricing.md exists or create placeholder"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 135,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Extract Hypothesis Name (H-GTM-XXX) and Title"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 126,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "r\"(.*?)(?=\\n## H-GTM-\\d{3}:|\\n## Template for New Hypotheses|\\Z)\", # Content unt"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 176,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Protocol: always attempt to load core Knowledge files."
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 90,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "- **Rate:** TBD, dependent on features and usage tiers."
+      },
+      {
+        "file": "build_tracker.py",
+        "line": 98,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Initialize BUILD_MAP.md template.\"\"\""
+      },
+      {
+        "file": "build_tracker.py",
+        "line": 99,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template = f\"\"\"# Build Session Map"
+      },
+      {
+        "file": "build_tracker.py",
+        "line": 126,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.build_map_file.write_text(template)"
+      },
+      {
+        "file": "build_tracker.py",
+        "line": 35,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVO_WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "update_personal_intelligence.py",
+        "line": 76,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for conversation analysis"
+      },
+      {
+        "file": "update_personal_intelligence.py",
+        "line": 337,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For now, this is a placeholder that can be called with manual observations"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 137,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for attempt in range(max_retries + 1):"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 139,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"Executing command (attempt {attempt + 1}/{max_retries + 1})\")"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 158,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if attempt < max_retries:"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 159,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "backoff = backoff_seconds[attempt] if attempt < len(backoff_seconds) else backof"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 164,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"Command timed out (attempt {attempt + 1})\", file=sys.stderr)"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 165,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if attempt < max_retries:"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 166,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "backoff = backoff_seconds[attempt] if attempt < len(backoff_seconds) else backof"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 171,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if attempt < max_retries:"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 172,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "backoff = backoff_seconds[attempt] if attempt < len(backoff_seconds) else backof"
+      },
+      {
+        "file": "n5_schedule_wrapper.py",
+        "line": 176,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"All retry attempts failed\")"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 82,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Atomic write: write to temp file, then rename"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 83,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = STATE_FILE.with_suffix('.json.tmp')"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 86,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_file, 'w') as f:"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 90,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.replace(STATE_FILE)"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 93,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Clean up temp file if it exists"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 94,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_file.exists():"
+      },
+      {
+        "file": "meeting_state_manager.py",
+        "line": 95,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.unlink()"
+      },
+      {
+        "file": "n5_bootstrap_advisor_server.py",
+        "line": 318,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"Records\": \"Meeting and temporary files\","
+      },
+      {
+        "file": "gdrive_transcript_workflow.py",
+        "line": 173,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "ctas = self._extract_pattern(lines, r'(?i)(?:next|action|follow.?up|todo)[:\\s]*("
+      },
+      {
+        "file": "gdrive_transcript_workflow.py",
+        "line": 454,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create temporary local path"
+      },
+      {
+        "file": "gdrive_transcript_workflow.py",
+        "line": 489,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Clean up temporary file"
+      },
+      {
+        "file": "llm_utils_FIXED.py",
+        "line": 157,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "elif 'hackathon' in content_lower:"
+      },
+      {
+        "file": "llm_utils_FIXED.py",
+        "line": 158,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return \"hackathon talent acquisition and community engagement\""
+      },
+      {
+        "file": "llm_utils_FIXED.py",
+        "line": 205,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "response_template = ("
+      },
+      {
+        "file": "llm_utils_FIXED.py",
+        "line": 221,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return response_template"
+      },
+      {
+        "file": "auto_create_stakeholder_profiles.py",
+        "line": 44,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: In practice, this would call:"
+      },
+      {
+        "file": "auto_create_stakeholder_profiles.py",
+        "line": 86,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder"
+      },
+      {
+        "file": "auto_create_stakeholder_profiles.py",
+        "line": 138,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: Basic inference"
+      },
+      {
+        "file": "integrate_email_with_b25.py",
+        "line": 163,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Step 6: Build email body placeholder"
+      },
+      {
+        "file": "integrate_email_with_b25.py",
+        "line": 165,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "body_placeholder = f\"\"\"**Subject:** Follow-Up Email \u2013 [FirstName] x Careerspan ["
+      },
+      {
+        "file": "integrate_email_with_b25.py",
+        "line": 186,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "full_draft = header + body_placeholder + footer"
+      },
+      {
+        "file": "realtime_state_tracker.py",
+        "line": 221,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Step 5: Update running summary (placeholder - production would be smarter)"
+      },
+      {
+        "file": "realtime_state_tracker.py",
+        "line": 224,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Step 6-8: Update ideas, directions, questions (placeholder)"
+      },
+      {
+        "file": "realtime_state_tracker.py",
+        "line": 258,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: In production, would generate smart summary"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 603,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "class TodoListExtractor:"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 607,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.logger = logging.getLogger('TodoListExtractor')"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 609,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def extract_user_todos(self, content_map: Dict[str, Any], user_name: str = \"Vrij"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 612,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "todos = []"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 627,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "todo_item = {"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 628,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"id\": f\"commitment_{len(todos)+1}\","
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 636,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "todos.append(todo_item)"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 638,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return todos"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 650,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.todo_extractor = TodoListExtractor()"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 683,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "user_todos = self.todo_extractor.extract_user_todos(content_map, self.user_name)"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 684,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.telemetry[\"processing_steps\"].append(\"todos_extracted\")"
+      },
+      {
+        "file": "consolidated_transcript_workflow_v2.py",
+        "line": 690,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"user_todos\": user_todos,"
+      },
+      {
+        "file": "stakeholder_manager.py",
+        "line": 32,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "TEMPLATE_FILE = CRM_PROFILES_DIR / \"_template.md\""
+      },
+      {
+        "file": "safe_write_utils.py",
+        "line": 10,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path = file_path.with_suffix('.tmp')"
+      },
+      {
+        "file": "safe_write_utils.py",
+        "line": 11,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_path, 'w') as f:"
+      },
+      {
+        "file": "safe_write_utils.py",
+        "line": 13,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path.replace(file_path)"
+      },
+      {
+        "file": "safe_write_utils.py",
+        "line": 19,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path = file_path.with_suffix('.tmp')"
+      },
+      {
+        "file": "safe_write_utils.py",
+        "line": 22,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_path, 'w') as f:"
+      },
+      {
+        "file": "safe_write_utils.py",
+        "line": 24,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path.replace(file_path)"
+      },
+      {
+        "file": "n5_follow_up_email_generator.py",
+        "line": 428,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if \"[PLACEHOLDER\" in draft or \"[TBD\" in draft:"
+      },
+      {
+        "file": "n5_follow_up_email_generator.py",
+        "line": 429,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "issues.append(\"Contains placeholder links\")"
+      },
+      {
+        "file": "n5_follow_up_email_generator.py",
+        "line": 428,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if \"[PLACEHOLDER\" in draft or \"[TBD\" in draft:"
+      },
+      {
+        "file": "n5_gfetch.py",
+        "line": 55,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# NOTE: This is a placeholder that would use use_app_google_drive"
+      },
+      {
+        "file": "n5_gfetch.py",
+        "line": 69,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# NOTE: This is a placeholder that would use use_app_gmail"
+      },
+      {
+        "file": "n5_gfetch.py",
+        "line": 107,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "NOTE: This is a placeholder. The actual implementation should use:"
+      },
+      {
+        "file": "n5_gfetch.py",
+        "line": 110,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder implementation"
+      },
+      {
+        "file": "n5_gfetch.py",
+        "line": 116,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "NOTE: This is a placeholder. The actual implementation should use:"
+      },
+      {
+        "file": "n5_gfetch.py",
+        "line": 119,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder implementation"
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 175,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Handle both msg_XXX and resp_msg_XXX or resp_XXX formats"
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 17,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "SECRET = \"temp_shared_secret_2025\""
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 66,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Save to temp file"
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 67,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = f\"/tmp/{msg_id}.json\""
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 68,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_file, 'w') as f:"
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 76,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "'-d', f'@{temp_file}'"
+      },
+      {
+        "file": "zobridge_bootstrap_sender.py",
+        "line": 131,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Default template for other messages"
+      },
+      {
+        "file": "n5_workspace_maintenance.py",
+        "line": 21,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"templates\": WORKSPACE_ROOT / \"Documents\" / \"Templates\","
+      },
+      {
+        "file": "n5_workspace_maintenance.py",
+        "line": 27,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"temp_docs\": WORKSPACE_ROOT / \"Documents\" / \"Archive\" / \"Temp\","
+      },
+      {
+        "file": "n5_workspace_maintenance.py",
+        "line": 34,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Functions are prompt templates"
+      },
+      {
+        "file": "n5_workspace_maintenance.py",
+        "line": 44,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Temporary project completion docs"
+      },
+      {
+        "file": "n5_workspace_maintenance.py",
+        "line": 45,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "r\"^(AUTOMATED|COMPLETE|DOCUMENTATION|FINAL|SYSTEM|QUICK|README).+\\.(md|txt)$\": \""
+      },
+      {
+        "file": "n5_workspace_maintenance.py",
+        "line": 46,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "r\"^.*COMPLETE.*\\.md$\": \"temp_docs\","
+      },
+      {
+        "file": "integration_test_runner.py",
+        "line": 29,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 94,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\\n4. CLEANUP TEMPORARY FILES\")"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 102,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def show_tool_call_templates():"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 105,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\\nTOOL CALL TEMPLATES\")"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 108,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Template for listing files"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 109,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "list_files_template = {"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 118,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\\n1. List Files Template:\")"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 119,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(json.dumps(list_files_template, indent=2))"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 121,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Template for downloading file"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 122,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "download_template = {"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 130,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\\n2. Download File Template:\")"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 131,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(json.dumps(download_template, indent=2))"
+      },
+      {
+        "file": "gdrive_integration_example.py",
+        "line": 202,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "show_tool_call_templates()"
+      },
+      {
+        "file": "n5_knowledge_conflict_resolution.py",
+        "line": 71,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for implementing resolution workflows"
+      },
+      {
+        "file": "n5_lists_add.py",
+        "line": 47,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = p.with_suffix('.tmp')"
+      },
+      {
+        "file": "n5_lists_add.py",
+        "line": 49,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with temp_file.open(\"w\", encoding=\"utf-8\") as f:"
+      },
+      {
+        "file": "n5_lists_add.py",
+        "line": 52,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.replace(p)  # Atomic move"
+      },
+      {
+        "file": "n5_lists_add.py",
+        "line": 54,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_file.exists():"
+      },
+      {
+        "file": "n5_lists_add.py",
+        "line": 55,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.unlink()"
+      },
+      {
+        "file": "n5_knowledge_ingest.py",
+        "line": 279,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: Implement actual parsing logic"
+      },
+      {
+        "file": "n5_knowledge_ingest.py",
+        "line": 294,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: Implement schema update logic"
+      },
+      {
+        "file": "n5_meeting_approve.py",
+        "line": 400,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"reason\": \"Not implemented yet\""
+      },
+      {
+        "file": "n5_meeting_approve.py",
+        "line": 410,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"reason\": \"Not implemented yet\""
+      },
+      {
+        "file": "crm_migrate_profiles.py",
+        "line": 358,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "profile_files = [f for f in profile_files if f.name != \"_template.md\"]"
+      },
+      {
+        "file": "crm_migrate_profiles.py",
+        "line": 381,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "profile_files = [f for f in PROFILES_DIR.glob(\"*.md\") if f.name != \"_template.md"
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 84,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def _create_profile_template("
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 144,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template = f\"\"\"# {name} \u2014 {organization}"
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 203,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return template"
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 260,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "profile_content = _create_profile_template("
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 371,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Meeting History section doesn't exist - shouldn't happen with template"
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 102,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "purpose = \"TBD\""
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 103,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "context = \"TBD\""
+      },
+      {
+        "file": "stakeholder_profile_manager.py",
+        "line": 146,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "**Role:** TBD"
+      },
+      {
+        "file": "n5_careerspan_value_mapper.py",
+        "line": 61,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"Networking strategy and script templates\","
+      },
+      {
+        "file": "n5_careerspan_value_mapper.py",
+        "line": 132,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"Customer churn due to incomplete solutions\","
+      },
+      {
+        "file": "plaud_meeting_processor.py",
+        "line": 46,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For now, returning placeholder"
+      },
+      {
+        "file": "plaud_meeting_processor.py",
+        "line": 138,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For now, return placeholder"
+      },
+      {
+        "file": "task_deconstructor.py",
+        "line": 206,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "assumptions=[\"Files and dependencies TBD\"]"
+      },
+      {
+        "file": "task_deconstructor.py",
+        "line": 253,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Find modules with no incomplete dependencies"
+      },
+      {
+        "file": "task_deconstructor.py",
+        "line": 35,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVO_WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 127,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "action_words = ['need', 'should', 'todo', 'remember', 'follow up', 'call', 'emai"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 129,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if 'tasks' in available_slugs or 'todos' in available_slugs:"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 50,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = p.with_suffix('.tmp')"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 52,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with temp_file.open(\"w\", encoding=\"utf-8\") as f:"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 55,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.replace(p)  # Atomic move"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 57,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_file.exists():"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 58,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.unlink()"
+      },
+      {
+        "file": "n5_text_to_list_processor.py",
+        "line": 162,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Attempt automatic categorization"
+      },
+      {
+        "file": "strategic_partner_session.py",
+        "line": 123,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for transcription result"
+      },
+      {
+        "file": "strategic_partner_session.py",
+        "line": 623,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Save to temp file"
+      },
+      {
+        "file": "strategic_partner_session.py",
+        "line": 624,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = SESSIONS_DIR / \"temp_transcript.txt\""
+      },
+      {
+        "file": "strategic_partner_session.py",
+        "line": 625,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.write_text(transcript_content, encoding='utf-8')"
+      },
+      {
+        "file": "strategic_partner_session.py",
+        "line": 626,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "args.transcript = temp_file"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 316,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def placeholder_scan():"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 318,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Scan conversation files for placeholders, stubs, and incomplete code"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 322,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"PHASE 2.5: PLACEHOLDER & STUB DETECTION\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 324,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\\nScanning for incomplete code and placeholders...\\n\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 326,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "scan_script = WORKSPACE / \"N5/scripts/n5_placeholder_scan.py\""
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 329,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\u26a0\ufe0f  Placeholder scan script not found, skipping\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 334,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Run placeholder scan"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 349,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\u2713 No placeholders detected - all clear\\n\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 366,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log_action(\"Placeholder scan: issues detected but auto-acknowledged\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 379,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log_action(\"Conversation-end aborted: placeholder scan issues\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 384,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log_action(\"Placeholder scan: issues acknowledged, continuing\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 396,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"\u26a0\ufe0f  Placeholder scan failed with error code {result.returncode}\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 403,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\u26a0\ufe0f  Placeholder scan timed out (>60s), continuing...\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 407,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"\u26a0\ufe0f  Placeholder scan error: {e}\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 952,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# NEW: Phase 2.5 - Placeholder scan"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 954,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"SCANNING FOR PLACEHOLDERS & STUBS...\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 956,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not placeholder_scan():"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 52,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "DOCUMENT_INBOX = WORKSPACE / \"Document Inbox/Temporary\""
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 83,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if any(x in name for x in ['temp', 'test', 'chart', 'viz']):"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 84,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return (None, \"delete\", \"Temporary visualization\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 101,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if any(x in name for x in ['temp', 'test', 'tmp']):"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 102,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return (None, \"delete\", \"Temporary script\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 108,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if any(x in name for x in ['temp', 'test', 'intermediate']):"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 109,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return (None, \"delete\", \"Temporary data file\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 116,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if any(x in name for x in ['temp', 'test', 'draft', 'scratch']):"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 117,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return (None, \"delete\", \"Temporary document\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 252,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "log_action(f\"Deleted: {item['file'].name} (temporary)\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 455,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if name.startswith((\"temp_\", \"test_\", \"scratch_\", \"BUILD_MAP\", \"SESSION_STATE\", "
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 594,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\u2713 Phase -1 complete (lessons extraction attempted)\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 632,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\u2713 Phase 0 complete (AAR generation attempted)\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 967,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Attempt to detect conversation id"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 1000,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "exclude = [\"temp_\", \"test_\", \"scratch_\", \"BUILD_MAP\", \"SESSION_STATE\"]"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 318,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Scan conversation files for placeholders, stubs, and incomplete code"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 324,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\\nScanning for incomplete code and placeholders...\\n\")"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 41,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "workspaces_dir = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 301,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: In production, this would be called via Zo's tool system"
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 429,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Email interactions (no explanatory placeholders)"
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 567,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Safely write digest via temp file, validate, then atomically move into place."
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 572,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Write temp file"
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 576,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Validate temp file"
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 591,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Move temp to final atomically"
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 418,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "time_str = \"TBD\""
+      },
+      {
+        "file": "meeting_prep_digest.py",
+        "line": 526,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "time_str = \"TBD\""
+      },
+      {
+        "file": "sync_mechanism.py",
+        "line": 76,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"analysis\": \"LLM analysis would go here\",  # Placeholder"
+      },
+      {
+        "file": "sync_mechanism.py",
+        "line": 77,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"recommendations\": []  # Placeholder for contradictions/questions"
+      },
+      {
+        "file": "sync_mechanism.py",
+        "line": 133,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For demo, placeholder structured data"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 62,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "['bash', '-c', f'cat {prompt_file}'],  # Placeholder - replace with actual Zo in"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 98,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Fill template placeholders"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 2,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# \u26a0\ufe0f  DEPRECATED: This template-based script has been superseded by the Registry"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 24,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# DEPRECATED: Templates moved to Archive/block_templates_deprecated_2025-10-12"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 25,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "TEMPLATES_DIR = Path(\"/home/workspace/N5/prefs/Archive/block_templates_deprecate"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 29,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def load_template(meeting_type: str, block_name: str) -> str:"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 30,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Load a block template based on meeting type.\"\"\""
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 31,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_path = TEMPLATES_DIR / meeting_type / f\"{block_name}.template.md\""
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 33,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not template_path.exists():"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 34,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "raise FileNotFoundError(f\"Template not found: {template_path}\")"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(template_path, 'r') as f:"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 51,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create a temporary file for the prompt"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 52,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 54,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 74,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Clean up temp file"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 96,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template = load_template(meeting_type, \"action-items\")"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 98,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Fill template placeholders"
+      },
+      {
+        "file": "meeting_core_generator.py",
+        "line": 99,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# In real implementation, parse content and fill structured template"
+      },
+      {
+        "file": "strategy_evolution_tracker.py",
+        "line": 256,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Extract themes (placeholder logic)"
+      },
+      {
+        "file": "generate_deliverables.py",
+        "line": 65,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_orch = DeliverableOrchestrator(transcript_content, meeting_info, {})"
+      },
+      {
+        "file": "generate_deliverables.py",
+        "line": 66,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "knowledge_base = temp_orch._load_knowledge_base()"
+      },
+      {
+        "file": "n5_deliverable_review.py",
+        "line": 13,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"## N5 Deliverable Review (Placeholder)\")"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 131,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Actually copy to clipboard (requires pyperclip or similar)"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 179,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Get templates"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 180,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "base_template = get_base_template()"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 181,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "entity_template = get_entity_template(entity_type)"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 259,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "prompt_parts.append(entity_template)"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 305,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def get_base_template() -> str:"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 306,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Get base template structure.\"\"\""
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 311,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def get_entity_template(entity_type: str) -> str:"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 314,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "templates = {"
+      },
+      {
+        "file": "research_prompt_generator.py",
+        "line": 380,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return templates.get(entity_type, templates[\"company\"])"
+      },
+      {
+        "file": "weekly_summary.py",
+        "line": 220,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Look for N5OS tag patterns [LD-XXX], [!!], etc."
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 52,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Implement actual significance detection"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 118,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Call actual LLM API here"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 292,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Load actual thread content"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 49,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For now, return placeholder - in production this would analyze thread content"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 61,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder logic"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 125,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: In production, this would call LLM and parse JSON response"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 293,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "thread_content = \"\"  # Placeholder"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 44,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "- Multiple retry attempts"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 102,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Load extraction prompt template"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 103,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "prompt_template_path = WORKSPACE / \"N5/lessons/schemas/extraction_prompt.txt\""
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 104,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not prompt_template_path.exists():"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 105,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.warning(\"Extraction prompt template not found, using basic extraction\")"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 108,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(prompt_template_path, 'r') as f:"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 109,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "prompt_template = f.read()"
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 112,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "prompt = prompt_template.format("
+      },
+      {
+        "file": "n5_lessons_extract.py",
+        "line": 268,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "workspaces_dir = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "reflection_pipeline.py",
+        "line": 30,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# --- Drive placeholder: we rely on Zo's Google Drive connector at command level"
+      },
+      {
+        "file": "reflection_pipeline.py",
+        "line": 124,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "parser.add_argument(\"--pull\", action=\"store_true\", help=\"(Placeholder) Pull from"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 5,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Scans meeting prep digest markdown files to detect forbidden placeholder text."
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 6,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Rejects files with placeholders before write."
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 11,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Returns 0 on clean, 1 if placeholder detected."
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 17,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Forbidden placeholder regex patterns"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 18,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "PLACEHOLDER_PATTERNS = ["
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 23,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "re.compile(r\"\\([^)]*placeholder[^)]*\\)\", re.IGNORECASE),"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 27,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def check_for_placeholders(file_path):"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 30,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for pattern in PLACEHOLDER_PATTERNS:"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 42,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if check_for_placeholders(digest_file):"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 43,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"[ERROR] Placeholder text detected in {digest_file}\")"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 46,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"[OK] No placeholder text found in {digest_file}\")"
+      },
+      {
+        "file": "n5_test_modules_flows.py",
+        "line": 11,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "n5_test_modules_flows.py",
+        "line": 18,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.TemporaryDirectory() as tmpdir:"
+      },
+      {
+        "file": "n5_test_modules_flows.py",
+        "line": 55,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.TemporaryDirectory() as tmpdir:"
+      },
+      {
+        "file": "n5_test_modules_flows.py",
+        "line": 91,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.TemporaryDirectory() as tmpdir:"
+      },
+      {
+        "file": "n5_test_modules_flows.py",
+        "line": 119,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.TemporaryDirectory() as tmpdir:"
+      },
+      {
+        "file": "n5_test_modules_flows.py",
+        "line": 145,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.TemporaryDirectory() as tmpdir:"
+      },
+      {
+        "file": "reflection_auto_ingest.py",
+        "line": 43,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Add notification logic here if desired"
+      },
+      {
+        "file": "reflection_synthesizer.py",
+        "line": 176,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "f\"Implication: {ins.get('strategic_implication', 'TBD')}\""
+      },
+      {
+        "file": "reflection_synthesizer.py",
+        "line": 184,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "f\"   - Why: {act.get('why', 'TBD')}  \\n\""
+      },
+      {
+        "file": "reflection_synthesizer.py",
+        "line": 185,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "f\"   - By When: {act.get('by_when', 'TBD')}  \\n\""
+      },
+      {
+        "file": "reflection_synthesizer.py",
+        "line": 186,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "f\"   - Owner: {act.get('owner', 'TBD')}\""
+      },
+      {
+        "file": "test_conversation_api.py",
+        "line": 294,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "parser.add_argument(\"--url\", default=\"http://localhost:8769\", help=\"Server URL\")"
+      },
+      {
+        "file": "n5_knowledge_conflict_resolution_interactive.py",
+        "line": 94,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: merge logic here"
+      },
+      {
+        "file": "n5_knowledge_conflict_resolution_interactive.py",
+        "line": 97,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: reject logic here"
+      },
+      {
+        "file": "n5_knowledge_conflict_resolution_interactive.py",
+        "line": 93,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"Merging conflict facts (not implemented yet).\")"
+      },
+      {
+        "file": "n5_knowledge_conflict_resolution_interactive.py",
+        "line": 96,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"Rejecting conflict facts (not implemented yet).\")"
+      },
+      {
+        "file": "regenerate-opportunity-calendar.py",
+        "line": 40,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "deadline = opp.get(\"deadline\", \"TBD\")"
+      },
+      {
+        "file": "background_email_scanner.py",
+        "line": 285,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This is a PLACEHOLDER that will be filled by the Zo agent during scheduled execu"
+      },
+      {
+        "file": "background_email_scanner.py",
+        "line": 315,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# PLACEHOLDER - Agent will replace this with actual LLM call"
+      },
+      {
+        "file": "style_guide_manager.py",
+        "line": 26,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Style guide template"
+      },
+      {
+        "file": "style_guide_manager.py",
+        "line": 27,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "STYLE_GUIDE_TEMPLATE = \"\"\"---"
+      },
+      {
+        "file": "style_guide_manager.py",
+        "line": 139,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "content = STYLE_GUIDE_TEMPLATE.format("
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 81,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create placeholder file"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 82,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "placeholder = KNOWLEDGE_DIR / f\"{name}.md\""
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 83,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not placeholder.exists():"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 84,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "placeholder.write_text(f\"# {name} (New Reservoir)\\n\\nDescription pending.\")"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 85,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"Created placeholder file {placeholder}\")"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 92,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "placeholder = KNOWLEDGE_DIR / f\"{name}.md\""
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 93,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not placeholder.exists():"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 94,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "placeholder.write_text(f\"# {name} (New Subcategory)\\n\\nDescription pending.\")"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 95,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"Created placeholder file {placeholder}\")"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Temporarily save to a temp file for validation"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 37,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path = SCHEMA_FILE.with_suffix('.temp.json')"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 38,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_path, \"w\") as f:"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 41,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not validate_schema_file(temp_path):"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 43,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path.unlink()"
+      },
+      {
+        "file": "n5_knowledge_adaptive_suggestions_expand.py",
+        "line": 47,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path.rename(SCHEMA_FILE)"
+      },
+      {
+        "file": "n5_test_safety.py",
+        "line": 11,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 2,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Meeting Intelligence Orchestrator - Template Manager"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 4,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\u26a0\ufe0f  DEPRECATED: This template-based approach has been superseded by the Registry"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 8,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This module served as a TEMPLATE MANAGER and DATA STRUCTURE PROVIDER ONLY."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 12,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "- Load appropriate templates based on stakeholder classification"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 26,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Python Script \u2192 Metadata/Templates \u2192 Zo invoked \u2192 Zo processes directly"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# DEPRECATED: Templates moved to Archive/block_templates_deprecated_2025-10-12"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 37,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "BLOCK_TEMPLATES_DIR = \"/home/workspace/N5/prefs/Archive/block_templates_deprecat"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 41,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "class TemplateManager:"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 43,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Manages templates and data structures for meeting intelligence processing."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 46,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "It only loads templates, manages paths, and provides data structures."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 51,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Initialize the template manager."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 60,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.templates = {}"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 66,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.log_file = os.path.join(LOG_DIR, f\"template_manager_{self.meeting_id}.log\")"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 74,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def load_templates(self) -> dict:"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 76,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Load appropriate templates based on stakeholder classification."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 79,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "dict: Mapping of template names to their content"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 81,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_dir = Path(BLOCK_TEMPLATES_DIR) / self.stakeholder_classification"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 83,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if not template_dir.exists():"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 84,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self._log(f\"\u26a0\ufe0f  Template directory not found: {template_dir}, falling back to ex"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 85,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_dir = Path(BLOCK_TEMPLATES_DIR) / \"external\""
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 87,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self._log(f\"\ud83d\udcc1 Loading templates from: {template_dir}\")"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 89,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Load all .template.md files from the appropriate directory"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 90,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for template_file in template_dir.glob(\"*.template.md\"):"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 91,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_name = template_file.stem.replace('.template', '')"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 92,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.templates[template_name] = template_file.read_text()"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 93,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self._log(f\"  \u2713 Loaded template: {template_name}\")"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 95,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return self.templates"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 135,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def get_template(self, template_name: str) -> str:"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 137,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Get a specific template by name."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 140,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_name: Name of the template (without .template.md extension)"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 143,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "str: Template content or empty string if not found"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 145,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return self.templates.get(template_name, \"\")"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 159,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def list_available_templates(self) -> list:"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 161,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "List all available template names."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 164,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "list: Template names"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 166,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return list(self.templates.keys())"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 196,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Load all necessary data: templates, essential links, and registry."
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 202,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"templates\": self.load_templates(),"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 221,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "dict: Extraction instructions including prompt templates"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 335,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"name\": \"INTRO_EMAIL_TEMPLATE\","
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 356,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "parser = argparse.ArgumentParser(description=\"Template Manager for Meeting Intel"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 364,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "manager = TemplateManager(args.meeting_id, args.classification)"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 367,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"\\n\u2713 Loaded {len(data['templates'])} templates\")"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 370,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"\\nAvailable templates:\")"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 371,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for template_name in manager.list_available_templates():"
+      },
+      {
+        "file": "meeting_intelligence_orchestrator.py",
+        "line": 372,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"  - {template_name}\")"
+      },
+      {
+        "file": "message_queue.py",
+        "line": 29,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVO_WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "direct_ingestion_mechanism.py",
+        "line": 4,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Stored template for processing large documents directly using conversational LLM"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 79,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Filter placeholder question"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 81,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return \"Not specified (placeholder not filled)\""
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 138,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "2. If placeholders detected, fall back to workspace intelligence"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 142,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "has_placeholders = any("
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 143,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"placeholder\" in str(v).lower() or \"not specified\" in str(v).lower()"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 156,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# If SESSION_STATE has placeholders, do intelligent inference"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 157,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if has_placeholders:"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 158,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(\"SESSION_STATE has placeholders, inferring context from workspace..."
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 431,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Write worker assignment to Records/Temporary/.\"\"\""
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 436,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "output_path = WORKSPACE / \"Records\" / \"Temporary\" / filename"
+      },
+      {
+        "file": "spawn_worker.py",
+        "line": 32,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVERSATION_WORKSPACE_BASE = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "backfill_followup_metadata.py",
+        "line": 154,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path = metadata_path.with_suffix(\".json.tmp\")"
+      },
+      {
+        "file": "backfill_followup_metadata.py",
+        "line": 162,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Write to temp file"
+      },
+      {
+        "file": "backfill_followup_metadata.py",
+        "line": 163,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_path, 'w', encoding='utf-8') as f:"
+      },
+      {
+        "file": "backfill_followup_metadata.py",
+        "line": 167,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path.replace(metadata_path)"
+      },
+      {
+        "file": "backfill_followup_metadata.py",
+        "line": 172,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_path.exists():"
+      },
+      {
+        "file": "backfill_followup_metadata.py",
+        "line": 173,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path.unlink()"
+      },
+      {
+        "file": "gmail_monitor.py",
+        "line": 99,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Wire to actual use_app_gmail when ready"
+      },
+      {
+        "file": "gmail_monitor.py",
+        "line": 103,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: would call use_app_gmail here"
+      },
+      {
+        "file": "gmail_monitor.py",
+        "line": 106,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return None  # No match found (placeholder)"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 19,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile  # For atomic writes"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 571,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Type-specific objective templates"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 992,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1010,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.NamedTemporaryFile('w', encoding='utf-8',"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1229,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create temporary exporter to analyze artifacts"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1230,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_exporter = ThreadExporter(thread_id, \"temp\", dry_run=True)"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1231,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_exporter.discover_artifacts()"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1232,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "recent = temp_exporter.inventory_recent_workspace_artifacts(lookback_hours=6)"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1233,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "combined_artifacts = temp_exporter.artifacts + recent"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1236,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_aar = temp_exporter.generate_smart_aar()"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1237,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_aar[\"artifacts\"] = ["
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 1245,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_aar,"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 45,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVERSATION_WS_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "principle_violation_detector.py",
+        "line": 92,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "r\"TODO\","
+      },
+      {
+        "file": "principle_violation_detector.py",
+        "line": 93,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "r\"FIXME\","
+      },
+      {
+        "file": "principle_violation_detector.py",
+        "line": 33,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "front_matter_manager.py",
+        "line": 16,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "front_matter_manager.py",
+        "line": 64,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature=0.2, max_tokens=150"
+      },
+      {
+        "file": "front_matter_manager.py",
+        "line": 69,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as tmp:"
+      },
+      {
+        "file": "n5_lists_move.py",
+        "line": 45,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file = p.with_suffix('.tmp')"
+      },
+      {
+        "file": "n5_lists_move.py",
+        "line": 47,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with temp_file.open(\"w\", encoding=\"utf-8\") as f:"
+      },
+      {
+        "file": "n5_lists_move.py",
+        "line": 50,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.replace(p)  # Atomic move"
+      },
+      {
+        "file": "n5_lists_move.py",
+        "line": 52,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_file.exists():"
+      },
+      {
+        "file": "n5_lists_move.py",
+        "line": 53,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.unlink()"
+      },
+      {
+        "file": "enrich_stakeholder_contact.py",
+        "line": 365,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for web search tag inference"
+      },
+      {
+        "file": "enrich_stakeholder_contact.py",
+        "line": 374,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for LinkedIn tag inference"
+      },
+      {
+        "file": "enrich_stakeholder_contact.py",
+        "line": 388,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder: Would use web_search to find LinkedIn profile"
+      },
+      {
+        "file": "generate_followup_email_draft.py",
+        "line": 51,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generate_body: If True, generate full email body; if False, placeholder only"
+      },
+      {
+        "file": "generate_followup_email_draft.py",
+        "line": 144,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Step 5: Assemble email with generated or placeholder body"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1206,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def generate_todo_list(self, content_map: Dict) -> List[Dict]:"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1208,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "todos = []"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1212,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "todos.append({"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1213,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"id\": f\"todo_{i+1}\","
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1219,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return todos"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1419,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "todo_list = self.recap_generator.generate_todo_list(content_map)"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1420,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.telemetry[\"processing_steps\"].append(\"recap_and_todos_generated\")"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1427,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"todo_list\": todo_list,"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1117,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "context_templates = {"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1126,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return context_templates.get(intro_type, context_templates['general_introduction"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1144,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "benefit_templates = {"
+      },
+      {
+        "file": "consolidated_transcript_workflow.py",
+        "line": 1153,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return benefit_templates.get(intro_type)"
+      },
+      {
+        "file": "reflection_ingest.py",
+        "line": 43,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# NOTE: This is a placeholder for Zo's use_app_gmail tool"
+      },
+      {
+        "file": "reflection_ingest.py",
+        "line": 61,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# NOTE: This is a placeholder for Zo's use_app_google_drive tool"
+      },
+      {
+        "file": "reflection_ingest.py",
+        "line": 80,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# For now, create a placeholder that Zo will replace with actual transcription"
+      },
+      {
+        "file": "reflection_ingest.py",
+        "line": 85,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Create minimal placeholder so worker doesn't fail"
+      },
+      {
+        "file": "careerspan_insights_extractor.py",
+        "line": 472,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "{\"action\": \"Determine next steps based on objective\", \"owner\": \"Team\", \"timeline"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 3,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "N5 Placeholder Scanner"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 4,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Scans conversation workspace for placeholders, stubs, and incomplete code"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 26,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "CONFIG_FILE = WORKSPACE / \"N5/config/placeholder_patterns.json\""
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 100,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Scan a single file for placeholder patterns"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 199,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\u2551              PLACEHOLDER SCAN: \u2705 NO ISSUES FOUND                    \u2551"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 202,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "All files are clean. No placeholders, stubs, or fake data detected."
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 209,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "lines.append(\"\u26a0\ufe0f  PLACEHOLDER SCAN: ISSUES DETECTED\")"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 289,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "report_file = CONVERSATION_WS / \"placeholder_scan_report.json\""
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 303,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "parser = argparse.ArgumentParser(description=\"Scan for placeholders and incomple"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 4,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Scans conversation workspace for placeholders, stubs, and incomplete code"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 303,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "parser = argparse.ArgumentParser(description=\"Scan for placeholders and incomple"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 33,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "workspaces_dir = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "dependency_graph.py",
+        "line": 30,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 129,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Replace placeholders"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 7,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "python3 session_state_manager.py init --convo-id con_XXX [--type build|research|"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 8,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "python3 session_state_manager.py update --convo-id con_XXX --field status --valu"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 9,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "python3 session_state_manager.py read --convo-id con_XXX"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 211,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "- con_XXX - Description"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 29,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "TEMPLATE_FILE = Path(\"/home/.z/workspaces/con_AFQURXo7KW89yWVw/SESSION_STATE_TEM"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 30,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "TEMPLATES_DIR = Path(\"/home/workspace/N5/templates/session_state\")"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 124,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Check for type-specific template"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 125,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "template_path = TEMPLATES_DIR / f\"{convo_type}.md\""
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 126,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if template_path.exists():"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 127,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(f\"Using {convo_type} template\")"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 128,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "content = template_path.read_text()"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 137,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Use generic template"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 28,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "CONVO_WORKSPACES_ROOT = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "session_state_manager.py",
+        "line": 29,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "TEMPLATE_FILE = Path(\"/home/.z/workspaces/con_AFQURXo7KW89yWVw/SESSION_STATE_TEM"
+      },
+      {
+        "file": "meeting_transcript_watcher.py",
+        "line": 109,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Implement actual Google Drive API call"
+      },
+      {
+        "file": "email_body_generator.py",
+        "line": 247,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Implement more sophisticated matching"
+      },
+      {
+        "file": "system_upgrades_add.py",
+        "line": 103,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"\u001b[33mAttempting rollback from latest backup...\u001b[0m\")"
+      },
+      {
+        "file": "system_upgrades_add.py",
+        "line": 202,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"Attempting rollback...\")"
+      },
+      {
+        "file": "system_upgrades_add.py",
+        "line": 211,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"Attempting rollback...\")"
+      },
+      {
+        "file": "system_upgrades_add.py",
+        "line": 218,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(\"Attempting rollback...\")"
+      },
+      {
+        "file": "process_meeting_transcript.py",
+        "line": 119,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "- **Use REAL content from the transcript** - no generic stubs or placeholders"
+      },
+      {
+        "file": "reflection_worker.py",
+        "line": 95,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "summary_path = write_output(slug, \"summary.md\", f\"# Summary\\n\\nSource: {audio.na"
+      },
+      {
+        "file": "reflection_worker.py",
+        "line": 96,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "detail_path = write_output(slug, \"detail.md\", f\"# Detailed Recap\\n\\n(Generated r"
+      },
+      {
+        "file": "gmail_fetch_staging.py",
+        "line": 40,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "STAGING_ROOT = WORKSPACE_ROOT / \"Records/Temporary/email_staging\""
+      },
+      {
+        "file": "sync_to_drive.py",
+        "line": 197,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This is a placeholder that will be replaced with actual Drive API calls"
+      },
+      {
+        "file": "demo_conversation_flow.sh",
+        "line": 9,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "URL=\"http://localhost:8769\""
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 236,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Implement CRM query using crm_query_helper.py"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 821,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generated_outbound.append((intro, file_path or output_dir / \"placeholder.txt\"))"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 829,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generated_outbound.append((intro, file_path or output_dir / \"placeholder.txt\"))"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 838,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generated_outbound.append((intro, file_path or output_dir / \"placeholder.txt\"))"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 845,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generated_outbound.append((intro, file_path or output_dir / \"placeholder.txt\"))"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 856,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generated_outbound.append((intro, file_path or output_dir / \"placeholder.txt\"))"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 867,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "generated_inbound.append((intro, file_path or output_dir / \"placeholder.txt\"))"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 654,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Minimal profile template"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 659,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "**Role:** {role_org if role_org else \"TBD\"}"
+      },
+      {
+        "file": "warm_intro_generator.py",
+        "line": 660,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "**Organization:** TBD"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 157,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Save seed to temp file"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 158,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_seed = WORKSPACE / \".temp_idea_seed.md\""
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 159,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_seed, 'w', encoding='utf-8') as f:"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 165,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"--seed\", str(temp_seed),"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 173,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Clean up temp file"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 174,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_seed.unlink(missing_ok=True)"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 200,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_seed.unlink(missing_ok=True)"
+      },
+      {
+        "file": "n5_social_idea_generate.py",
+        "line": 204,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_seed.unlink(missing_ok=True)"
+      },
+      {
+        "file": "voice_transformer.py",
+        "line": 264,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if \"TODO\" in content or \"PLACEHOLDER\" in content:"
+      },
+      {
+        "file": "voice_transformer.py",
+        "line": 264,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if \"TODO\" in content or \"PLACEHOLDER\" in content:"
+      },
+      {
+        "file": "voice_transformer.py",
+        "line": 265,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "issues.append(\"Document contains placeholders\")"
+      },
+      {
+        "file": "angle_generator.py",
+        "line": 63,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Default angle templates per content type"
+      },
+      {
+        "file": "angle_generator.py",
+        "line": 201,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This returns the instruction template that will be executed."
+      },
+      {
+        "file": "modules/angle_analyzer.py",
+        "line": 16,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Predefined angle templates"
+      },
+      {
+        "file": "modules/angle_analyzer.py",
+        "line": 17,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "ANGLE_TEMPLATES = {"
+      },
+      {
+        "file": "modules/angle_analyzer.py",
+        "line": 66,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for angle_key, angle_data in self.ANGLE_TEMPLATES.items():"
+      },
+      {
+        "file": "blocks/stakeholder_profile_generator.py",
+        "line": 162,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature=0.5"
+      },
+      {
+        "file": "blocks/meeting_history_lookup.py",
+        "line": 5,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for actual implementation"
+      },
+      {
+        "file": "blocks/email_history_fetcher.py",
+        "line": 5,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder for actual implementation"
+      },
+      {
+        "file": "lib/system_upgrades_sync.py",
+        "line": 4,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "_ARCHIVE_2025-10/meeting_orchestrator_v1_DEPRECATED.py",
+        "line": 320,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# TODO: Implement Google Drive fetch"
+      },
+      {
+        "file": "utils/stakeholder_classifier.py",
+        "line": 242,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# This is placeholder logic - you may want to enhance this based on"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "issues.append(\"INCOMPLETE FRONTMATTER\")"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 68,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "incomplete = []"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 80,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "incomplete.append((filepath.name, issues))"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 88,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"  \u26a0\ufe0f  Issues: {len(empty) + len(missing_frontmatter) + len(incomplete)}\""
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 105,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if incomplete:"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 106,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "print(f\"\u26a0\ufe0f  INCOMPLETE STRUCTURE ({len(incomplete)}):\")"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 107,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for f, issues in incomplete:"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 117,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"issues\": len(empty) + len(missing_frontmatter) + len(incomplete),"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 120,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"incomplete\": [{\"file\": f, \"issues\": i} for f, i in incomplete],"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 128,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return len(empty) + len(missing_frontmatter) + len(incomplete)"
+      },
+      {
+        "file": "audit/audit_commands.py",
+        "line": 124,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "report_path = Path(\"/home/.z/workspaces/con_tY3K512yUo3sG7Iv/audit_report.json\")"
+      },
+      {
+        "file": "audit/batch_fix_frontmatter.py",
+        "line": 9,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "report_path = Path(\"/home/.z/workspaces/con_tY3K512yUo3sG7Iv/audit_report.json\")"
+      },
+      {
+        "file": "author_command/chunk2_scoper.py",
+        "line": 225,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "response_templates = {"
+      },
+      {
+        "file": "author_command/chunk2_scoper.py",
+        "line": 236,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"error handling\"])"
+      },
+      {
+        "file": "author_command/chunk2_scoper.py",
+        "line": 238,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"file formats\"])"
+      },
+      {
+        "file": "author_command/chunk2_scoper.py",
+        "line": 240,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"batch processing\"])"
+      },
+      {
+        "file": "author_command/chunk2_scoper.py",
+        "line": 242,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"validation\"])"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 193,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "timestamp=datetime.now(),  # Placeholder - extract from actual format if availab"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 77,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Check for path traversal attempts"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 79,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.warning(f\"Path traversal attempt detected: {file_path}\")"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 286,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Write to temp file and parse"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 287,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_path = f\"/tmp/{source_name}_temp.txt\""
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 288,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with open(temp_path, 'w', encoding='utf-8') as f:"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 292,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "result = self.parse_conversation(temp_path)"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 298,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Clean up temp file"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 299,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if os.path.exists(temp_path):"
+      },
+      {
+        "file": "author_command/chunk1_parser.py",
+        "line": 300,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "os.remove(temp_path)"
+      },
+      {
+        "file": "author_command/test_data_generator.py",
+        "line": 22,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.conversation_templates = ["
+      },
+      {
+        "file": "author_command/test_data_generator.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for i, template_func in enumerate(self.conversation_templates):"
+      },
+      {
+        "file": "author_command/test_data_generator.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "conversation_data = template_func()"
+      },
+      {
+        "file": "author_command/test_data_complete.py",
+        "line": 22,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.conversation_templates = ["
+      },
+      {
+        "file": "author_command/test_data_complete.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for i, template_func in enumerate(self.conversation_templates):"
+      },
+      {
+        "file": "author_command/test_data_complete.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "conversation_data = template_func()"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/action_items_extractor.py",
+        "line": 228,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "md += f\"  - **Deadline**: {item.get('deadline', 'TBD')}\\n\""
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/action_items_extractor.py",
+        "line": 241,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "md += f\"  - **Deadline**: {item.get('deadline', 'TBD')}\\n\""
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/action_items_extractor.py",
+        "line": 252,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "md += f\"  - **Deadline**: {item.get('deadline', 'TBD')}\\n\""
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/action_items_extractor.py",
+        "line": 261,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "md += f\"  - **Deadline**: {item.get('deadline', 'TBD')}\\n\""
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/action_items_extractor.py",
+        "line": 108,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Skip if too short or looks incomplete"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_FIXED.py",
+        "line": 157,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "elif 'hackathon' in content_lower:"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_FIXED.py",
+        "line": 158,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return \"hackathon talent acquisition and community engagement\""
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_FIXED.py",
+        "line": 205,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "response_template = ("
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_FIXED.py",
+        "line": 221,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return response_template"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 63,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Use Python to simulate LLM response (placeholder for Zo integration)"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 79,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This is a placeholder - in production, Zo would handle the actual LLM calls."
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 8,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 29,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature: float = 0.7,"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 39,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature: Sampling temperature (hint only)"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 55,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Write prompt to temp file"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client.py",
+        "line": 56,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client_real.py",
+        "line": 40,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "2. Return a placeholder indicating the file was created"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client_real.py",
+        "line": 51,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Generated text (placeholder in this implementation)"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client_real.py",
+        "line": 8,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "import tempfile"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client_real.py",
+        "line": 32,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature: float = 0.7,"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client_real.py",
+        "line": 47,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temperature: Sampling temperature (hint only)"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_client_real.py",
+        "line": 22,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "self.workspace = Path(\"/home/.z/workspaces/con_5H9347BR1kon8vUI\")"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils.py",
+        "line": 206,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "elif 'hackathon' in content_lower:"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils.py",
+        "line": 207,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return \"hackathon talent acquisition and community engagement\""
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils.py",
+        "line": 254,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "response_template = ("
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils.py",
+        "line": 270,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return response_template"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_BACKUP_20251010.py",
+        "line": 116,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# - Audience: MLH founder (for hackathon collab) or Theresa (for her community)."
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_BACKUP_20251010.py",
+        "line": 119,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# - Angle: Partnership synergy for hackathon recruitment/talent pool."
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_BACKUP_20251010.py",
+        "line": 123,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"intended_audience\": \"MLH Founder (for hackathon collaboration)\","
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_BACKUP_20251010.py",
+        "line": 125,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"angle\": \"Careerspan's support for MLH hackathon talent and community engagement"
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_BACKUP_20251010.py",
+        "line": 50,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "response_template = ("
+      },
+      {
+        "file": "_DEPRECATED_2025-10-10/llm_utils_BACKUP_20251010.py",
+        "line": 66,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "return response_template"
+      },
+      {
+        "file": "author-command/test_data_complete.py",
+        "line": 22,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.conversation_templates = ["
+      },
+      {
+        "file": "author-command/test_data_complete.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for i, template_func in enumerate(self.conversation_templates):"
+      },
+      {
+        "file": "author-command/test_data_complete.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "conversation_data = template_func()"
+      },
+      {
+        "file": "author-command/chunk2_scoper.py",
+        "line": 225,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "response_templates = {"
+      },
+      {
+        "file": "author-command/chunk2_scoper.py",
+        "line": 236,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"error handling\"])"
+      },
+      {
+        "file": "author-command/chunk2_scoper.py",
+        "line": 238,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"file formats\"])"
+      },
+      {
+        "file": "author-command/chunk2_scoper.py",
+        "line": 240,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"batch processing\"])"
+      },
+      {
+        "file": "author-command/chunk2_scoper.py",
+        "line": 242,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "responses.append(response_templates[\"validation\"])"
+      },
+      {
+        "file": "author-command/test_data_generator.py",
+        "line": 22,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "self.conversation_templates = ["
+      },
+      {
+        "file": "author-command/test_data_generator.py",
+        "line": 35,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for i, template_func in enumerate(self.conversation_templates):"
+      },
+      {
+        "file": "author-command/test_data_generator.py",
+        "line": 36,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "conversation_data = template_func()"
+      },
+      {
+        "file": "author-command/chunk1_parser.py",
+        "line": 193,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "timestamp=datetime.now(),  # Placeholder - extract from actual format if availab"
+      },
+      {
+        "file": "author-command/chunk1_parser.py",
+        "line": 77,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Check for path traversal attempts"
+      },
+      {
+        "file": "author-command/chunk1_parser.py",
+        "line": 79,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.warning(f\"Path traversal attempt detected: {file_path}\")"
+      },
+      {
+        "file": "maintenance/monthly_audit.py",
+        "line": 75,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Filter for important files (not generated/temp)"
+      },
+      {
+        "file": "maintenance/squawk_proposer.py",
+        "line": 220,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Placeholder sections for AI to fill in during scheduled task"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 3,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "Weekly Workspace Cleanup - Temporary File Management"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 32,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "TEMP_FILE_RETENTION_DAYS = 14"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 72,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "def clean_temp_files():"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 73,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"\"\"Clean temporary files older than retention period.\"\"\""
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 74,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(\"=== Cleaning Temporary Files ===\")"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 77,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "cutoff_time = datetime.now() - timedelta(days=TEMP_FILE_RETENTION_DAYS)"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 86,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "for temp_file in runtime_dir.rglob('*'):"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 87,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "if temp_file.is_file():"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 88,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "mtime = datetime.fromtimestamp(temp_file.stat().st_mtime)"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 92,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "size = temp_file.stat().st_size"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 93,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "temp_file.unlink()"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 97,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(f\"Deleted: {temp_file.relative_to(runtime_dir)}\")"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 99,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.error(f\"Failed to delete {temp_file}: {e}\")"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 101,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(f\"\u2713 Deleted {deleted_count} temp file(s), freed {space_freed // 1024"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 190,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.info(f\"  - Temp files: {TEMP_FILE_RETENTION_DAYS} days\")"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 196,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "\"Temp Files\": clean_temp_files(),"
+      },
+      {
+        "file": "maintenance/weekly_cleanup.py",
+        "line": 41,
+        "pattern": "hardcoded_paths",
+        "severity": "medium",
+        "message": "Hardcoded path that should be configurable",
+        "context": "workspaces_dir = Path(\"/home/.z/workspaces\")"
+      },
+      {
+        "file": "blocks/deliverables/blurb_generator.py",
+        "line": 66,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "f\"to enhance [specific area from transcript, e.g., hackathon talent acquisition]"
+      },
+      {
+        "file": "blocks/deliverables/blurb_generator.py",
+        "line": 44,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# This part replaces the previous static template with actual text generation ba"
+      }
+    ],
+    "high": [
+      {
+        "file": "meeting_prep_digest_v2.py",
+        "line": 43,
+        "pattern": "function_stubs",
+        "severity": "high",
+        "message": "Function stub without implementation or docstring",
+        "context": "def get_stakeholder_profile_path(email): return None"
+      },
+      {
+        "file": "meeting_prep_digest_v2.py",
+        "line": 40,
+        "pattern": "function_stubs",
+        "severity": "high",
+        "message": "Function stub without implementation or docstring",
+        "context": "def fetch_calendar_events(date): return []"
+      },
+      {
+        "file": "meeting_prep_digest_v2.py",
+        "line": 42,
+        "pattern": "function_stubs",
+        "severity": "high",
+        "message": "Function stub without implementation or docstring",
+        "context": "def get_last_3_interactions(email): return []"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 65,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "placeholder_content = \"\"\"# Careerspan Pricing Model"
+      },
+      {
+        "file": "deliverable_orchestrator.py",
+        "line": 100,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "pricing_file_path.write_text(placeholder_content, encoding='utf-8')"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 316,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def placeholder_scan():"
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 326,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "scan_script = WORKSPACE / \"N5/scripts/n5_placeholder_scan.py\""
+      },
+      {
+        "file": "n5_conversation_end.py",
+        "line": 956,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "if not placeholder_scan():"
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 18,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "PLACEHOLDER_PATTERNS = ["
+      },
+      {
+        "file": "validate_digest_output.py",
+        "line": 30,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "for pattern in PLACEHOLDER_PATTERNS:"
+      },
+      {
+        "file": "n5_test_safety.py",
+        "line": 127,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def dummy_execute(args):"
+      },
+      {
+        "file": "n5_test_safety.py",
+        "line": 130,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "result = execute_with_safety(self.test_command_spec, args, dummy_execute)"
+      },
+      {
+        "file": "n5_test_safety.py",
+        "line": 145,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def dummy_execute(args):"
+      },
+      {
+        "file": "n5_test_safety.py",
+        "line": 148,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "result = execute_with_safety(self.test_command_spec, args, dummy_execute)"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 516,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def generate_dummy_aar(self) -> Dict:"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 518,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "dummy_responses = {"
+      },
+      {
+        "file": "n5_thread_export.py",
+        "line": 525,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "return self.generate_aar_data(dummy_responses)"
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 26,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "CONFIG_FILE = WORKSPACE / \"N5/config/placeholder_patterns.json\""
+      },
+      {
+        "file": "n5_placeholder_scan.py",
+        "line": 289,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "report_file = CONVERSATION_WS / \"placeholder_scan_report.json\""
+      },
+      {
+        "file": "author_command/test_data_generator.py",
+        "line": 15,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "logger = logging.getLogger('test_data_generator')"
+      },
+      {
+        "file": "author_command/test_data_generator.py",
+        "line": 30,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def generate_all_test_conversations(self, output_dir: str = \"/home/workspace/N5/"
+      },
+      {
+        "file": "author_command/test_data_complete.py",
+        "line": 15,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "logger = logging.getLogger('test_data_generator')"
+      },
+      {
+        "file": "author_command/test_data_complete.py",
+        "line": 30,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def generate_all_test_conversations(self, output_dir: str = \"/home/workspace/N5/"
+      },
+      {
+        "file": "author-command/test_data_complete.py",
+        "line": 15,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "logger = logging.getLogger('test_data_generator')"
+      },
+      {
+        "file": "author-command/test_data_complete.py",
+        "line": 30,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def generate_all_test_conversations(self, output_dir: str = \"/home/workspace/N5/"
+      },
+      {
+        "file": "author-command/simple_test_gen.py",
+        "line": 13,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "test_dir = \"/home/workspace/N5/tmp_execution/test_data\""
+      },
+      {
+        "file": "author-command/test_data_generator.py",
+        "line": 15,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "logger = logging.getLogger('test_data_generator')"
+      },
+      {
+        "file": "author-command/test_data_generator.py",
+        "line": 30,
+        "pattern": "fake_data",
+        "severity": "high",
+        "message": "Fake or placeholder data detected",
+        "context": "def generate_all_test_conversations(self, output_dir: str = \"/home/workspace/N5/"
+      }
+    ],
+    "critical": [
+      {
+        "file": "LLM_INTEGRATION_GUIDE.md",
+        "line": 185,
+        "pattern": "invented_constraints",
+        "severity": "critical",
+        "message": "Potential invented constraint (P16 violation)",
+        "context": "- `\"LLM API call attempt 1/3\"` - API call started"
+      },
+      {
+        "file": "LLM_INTEGRATION_GUIDE.md",
+        "line": 234,
+        "pattern": "invented_constraints",
+        "severity": "critical",
+        "message": "Potential invented constraint (P16 violation)",
+        "context": "-d '{\"model\": \"claude-3-5-sonnet-20241022\", \"max_tokens\": 10, \"messages\": [{\"rol"
+      },
+      {
+        "file": "principle_violation_detector.py",
+        "line": 119,
+        "pattern": "invented_constraints",
+        "severity": "critical",
+        "message": "Potential invented constraint (P16 violation)",
+        "context": "(r\"gmail.*limit.*3\", \"Gmail 3-message limit (doesn't exist)\"),"
+      }
+    ]
+  }
+}
