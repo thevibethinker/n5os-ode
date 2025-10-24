@@ -70,3 +70,7 @@ N5/lists/*.md
 *.avi
 *.mov
 *.flv
+
+# Local project repos (ignored)
+projects/n5-system/n5-core/
+projects/n5-system/n5-launch/

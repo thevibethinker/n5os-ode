@@ -1,0 +1,34 @@
+{
+  "meeting_id": "2025-10-24_external-gabi-zo-demo",
+  "processing_date": "2025-10-24T16:51:26Z",
+  "transcript_source": "Google Drive (gdrive_id: 1ILqrVA8R27w10_KlOQKnGFXSpFBs5Jmm)",
+  "transcript_quality": "INCOMPLETE",
+  "transcript_note": "Only first 8:37 captured - meeting switched to Zoom due to Google Meet screen sharing issues",
+  "stakeholder_type": "NETWORKING",
+  "stakeholder_name": "Gabi Zijderveld",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B05_OUTSTANDING_QUESTIONS"
+  ],
+  "blocks_count": 9,
+  "registry_version": "1.5",
+  "processing_workflow_version": "5.1.0",
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/gabi-zijderveld.md",
+  "enrichment_priority": "MEDIUM",
+  "howie_tags": "[LD-NET] [GPT-E] [A-3]",
+  "confidence_score": "MEDIUM",
+  "processing_notes": [
+    "Transcript incomplete - demo portion not captured",
+    "CRM profile created with enrichment tasks",
+    "Limited landscape insights due to truncated conversation",
+    "Follow-up needed to capture full demo context and outcomes"
+  ]
+}

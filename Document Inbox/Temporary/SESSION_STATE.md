@@ -4,105 +4,65 @@
 ---
 
 ## Metadata
-**Conversation ID:** con_32H1TK63HMU6qx8U  
-**Started:** 2025-10-23 22:54 ET  
-**Last Updated:** 2025-10-23 22:54 ET  
+**Conversation ID:** con_4rT5MldNW4MNJzlJ  
+**Started:** 2025-10-24 03:45 ET  
+**Last Updated:** 2025-10-24 04:17 ET  
 **Status:** active  
 
 ---
 
 ## Type & Mode
-**Primary Type:** discussion  
+**Primary Type:** build  
 **Mode:**   
-**Focus:** *What is this conversation specifically about?*
+**Focus:** Execute meeting-transcript-scan per N5/commands/meeting-transcript-scan.md with strict dedup (gdrive_id), naming conventions, and queue-only behavior
 
 ---
 
 ## Objective
-**Goal:** *What are we trying to accomplish?*
+**Goal:**
+- Scan Fireflies/Transcripts (Drive) for unprocessed items (exclude [ZO-PROCESSED])
+- Load existing gdrive_ids from requests and records; skip duplicates
+- For NEW items, download, convert to .txt, classify (internal/external), and create meeting_requests
 
 **Success Criteria:**
-- [ ] Criterion 1
-- [ ] Criterion 2
+- No duplicates queued; only new requests created
+- Summary logged with counts (detected/downloaded/queued/skipped)
 
 ---
 
 ## Progress
 
 ### Current Task
-*What is actively being worked on right now*
+Meeting transcript scan executed
 
 ### Completed
-- ✅ Item 1
+- ✅ Loaded existing gdrive_ids for dedup
+- ✅ Listed Drive folder; filtered unprocessed by prefix
+- ✅ Found 0 new transcripts (1 candidate was a duplicate by gdrive_id)
 
 ### Blocked
-- ⛔ Item (reason)
+- ⛔ None
 
 ### Next Actions
-1. Action 1
-2. Action 2
+1. None (will re-run on next schedule)
 
 ---
 
 ## Insights & Decisions
 
 ### Key Insights
-*Important realizations discovered during this session*
+Strict gdrive_id dedup prevents re-queuing even if prefix markers are missing
 
 ### Decisions Made
-**[2025-10-23 22:54 ET]** Decision 1 - Rationale
-
-### Open Questions
-- Question 1?
-- Question 2?
+Default to external-unknown when classification is ambiguous (applies in future runs)
 
 ---
 
 ## Outputs
 **Artifacts Created:**
-- `path/to/file` - Description
-
-**Knowledge Generated:**
-- Key concept or pattern
-
----
-
-## Relationships
-
-### Related Conversations
-*Links to other conversations on this topic*
-- con_XXX - Description
-
-### Dependencies
-**Depends on:**
-- Thing 1
-
-**Blocks:**
-- Thing 2
-
----
-
-## Context
-
-### Files in Context
-*What files/docs are actively being used*
-
-### Principles Active
-*Which N5 principles are guiding this work*
-
----
-
-## Timeline
-*High-level log of major updates*
-
-**[2025-10-23 22:54 ET]** Started conversation, initialized state
+- None (no new transcripts)
 
 ---
 
 ## Tags
-#discussion #active
-
----
-
-## Notes
-*Free-form observations, reminders, context*
+#build #meetings #transcripts #gdrive #dedup #automation #scheduled-task
