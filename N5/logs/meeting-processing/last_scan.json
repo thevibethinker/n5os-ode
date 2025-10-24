@@ -1,11 +1,14 @@
 {
-  "timestamp": "2025-10-23T09:44:28-04:00",
-  "folderId": "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV",
-  "total_files_listed": 100,
-  "existing_gdrive_ids_count": 150,
-  "new_transcripts_detected": 0,
+  "run_at": "2025-10-23T23:10:00-04:00",
+  "folder_id": "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV",
+  "detected_unprocessed": 0,
   "downloaded": 0,
-  "requests_queued": 0,
-  "skipped_as_duplicate_or_processed": 100,
-  "notes": "All items either prefixed [ZO-PROCESSED] or already present by gdrive_id. No actions taken."
+  "queued_requests": 0,
+  "skipped_duplicates": 1,
+  "duplicates": [
+    {
+      "id": "143nK5I0Y7T6AhhkeYcDLEf2oSa1aemsT",
+      "name": "Daily team stand-up-transcript-2025-10-15T14-31-14.238Z.docx"
+    }
+  ]
 }
