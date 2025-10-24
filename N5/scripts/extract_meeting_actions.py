@@ -36,7 +36,6 @@ def extract_actions_from_blocks(meeting_dir: Path) -> List[Dict[str, Any]]:
         
         # Look for "Critical Next Action" section
         if "Critical Next Action" in text or "Key Decisions" in text:
-" in text:
             # Parse deliverable table or list
             for line in text.split('\n'):
                 if '|' in line and ('NEED' in line or 'TODO' in line):

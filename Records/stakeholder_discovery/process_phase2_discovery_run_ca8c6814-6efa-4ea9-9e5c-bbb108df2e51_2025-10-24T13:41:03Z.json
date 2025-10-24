@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-24T13:41:03Z",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "convo_id": "con_2KbBEbv0NFP15xhc",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_scanned": 0,
+  "stakeholders_discovered": 0,
+  "deleted_files": 0,
+  "notes": "No raw staging email files found; only process logs and metadata present. No extraction performed."
+}

@@ -12,15 +12,15 @@ tags:
 
 Please show me the N5 emoji legend. I want to:
 
-- [ ]    See all emojis with meanings
+- [ ]     See all emojis with meanings
 
-- [ ]    Search for emojis by keyword (specify: \________\_)
+- [ ]     Search for emojis by keyword (specify: \________\_)
 
-- [ ]    Find emojis for a specific context (threads/tasks/files/knowledge)
+- [ ]     Find emojis for a specific context (threads/tasks/files/knowledge)
 
-- [ ]    View detection rules and priorities
+- [ ]     View detection rules and priorities
 
-- [ ]    See usage examples
+- [ ]     See usage examples
 
 **Source Files:**
 

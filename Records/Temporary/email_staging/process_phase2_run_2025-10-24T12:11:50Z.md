@@ -1,0 +1,1 @@
+files_processed: 0\nstakeholders_discovered: 0\ndiscovery_artifact: /home/workspace/Records/stakeholder_discovery/discovery_20251024T121150Z_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_empty.jsonl

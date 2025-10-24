@@ -1,0 +1,43 @@
+================================================================================
+GMAIL MONITOR EXECUTION SUMMARY
+Timestamp: 2025-10-24T11:45:19Z
+================================================================================
+
+TASK EXECUTED:
+  Scan Gmail for sent follow-up emails matching generated drafts
+  Lookback period: 7 days
+  Registry: /home/workspace/N5/registry/generated_emails.jsonl
+
+RESULTS:
+  ✓ Emails scanned: 1 unsent draft
+  ✓ Sent emails detected in Gmail: 0
+  ✓ Registry entries updated: 0
+  ✓ Queued for factual correction: 0
+
+DETAILS:
+  Draft detected:
+    - ID: email_2025-10-22_brin_demo
+    - Meeting: 2025-10-22_external-brin
+    - To: brin@example.com (Brinleigh Murphy-Reuter)
+    - Generated: 2025-10-22T20:38:19.928715Z
+    - Status: GENERATED (awaiting send confirmation)
+    - Draft path: /home/workspace/N5/records/meetings/2025-10-22_external-brin/draft_v1.md
+    - Gmail query: to:brin@example.com after:2025/10/22 in:sent
+    
+  Result: No matching sent email found in Gmail
+
+ACTION ITEMS:
+  - The draft has not yet been sent to the recipient
+  - Follow-up window opens: 2025-10-24T20:38:19.928715Z
+  - Next scan should be run after send confirmation appears in Gmail
+
+NOTE:
+  The original instruction included '--apply' flag, but the actual script supports
+  '--dry-run' (default is live execution). The script was executed in LIVE mode,
+  which means registry updates would occur if sent emails were found.
+
+LOGS WRITTEN TO:
+  /home/workspace/N5/logs/gmail_monitor.log
+  /home/workspace/N5/logs/gmail_monitor_summary.txt
+
+================================================================================

@@ -1,0 +1,24 @@
+{
+  "run_at": "2025-10-24T12:41:51Z",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "source": "email_staging",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": [
+    "delete_plan.json",
+    "process_phase2_run_2025-10-24T01:10:36Z.md",
+    "process_phase2_run_2025-10-24T01:42:21Z.md",
+    "process_phase2_run_2025-10-24T02:11:14Z.md",
+    "process_phase2_run_2025-10-24T03:40:49Z.md",
+    "process_phase2_run_2025-10-24T09:11:15Z.md",
+    "process_phase2_run_2025-10-24T09:39:54Z.md",
+    "process_phase2_run_2025-10-24T10:10:50Z.md",
+    "process_phase2_run_2025-10-24T12:11:50Z.md",
+    "2025-10-14/",
+    "2025-10-15/",
+    "2025-10-22/",
+    "2025-10-23/"
+  ],
+  "processed_count": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email message files found in staging; only run logs and empty date directories. No external participants processed. No deletions performed."
+}

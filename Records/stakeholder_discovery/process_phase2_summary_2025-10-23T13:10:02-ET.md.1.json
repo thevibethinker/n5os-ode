@@ -1,0 +1,14 @@
+{
+  "discovered_at": "2025-10-24T04:11:48Z",
+  "source": "email_scanner",
+  "source_message_id": "process_phase2_summary_2025-10-23T13:10:02-ET.md",
+  "source_subject": null,
+  "stakeholder": {
+    "name": "Edmund Cuthbert",
+    "email": "edmund@superposition.ai",
+    "organization": "Superposition",
+    "title": null,
+    "context": null,
+    "is_decision_maker": null
+  }
+}

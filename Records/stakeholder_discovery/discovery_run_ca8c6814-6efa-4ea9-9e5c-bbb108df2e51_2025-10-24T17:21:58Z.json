@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-24T17:21:58Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email message files found in staging (only run logs and metadata). No discovery records created.",
+  "agent": "zo-llm"
+}

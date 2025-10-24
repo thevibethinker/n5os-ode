@@ -1,0 +1,8 @@
+{
+  "run_id": "con_gCWgUmUuJomJx1CC",
+  "discovered_at": "2025-10-24T03:40:32-04:00",
+  "source": "email_scanner",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found in /home/workspace/Records/Temporary/email_staging. No action performed."
+}
