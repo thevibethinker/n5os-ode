@@ -109,7 +109,7 @@ def main():
             write_jsonl(INDEX_FILE, registry)
             # Run docgen to update MD
             import subprocess
-            result = subprocess.run([sys.executable, str(SCRIPTS_DIR / "n5_lists_docgen.py"), "--list", slug],
+            result = subprocess.run([sys.executable, str(SCRIPTS_DIR / "n5_docgen.py"), "--lists", "--list", slug],
                                     capture_output=True, text=True, cwd=ROOT)
             if result.returncode != 0:
                 print("Docgen failed:", result.stderr)
