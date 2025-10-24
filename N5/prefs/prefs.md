@@ -48,6 +48,7 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
   - User says "export thread", "create AAR", "continue in new thread" → `thread-export` (documentation + AAR)
 - **Thread exports:** When user requests "export this thread" or similar, ALWAYS use `command 'N5/commands/thread-export.md'`
 - **Thread export location:** ALL thread exports MUST go to `N5/logs/threads/` (enforced by thread-export command)
+- **Incantum Commands:** When user message starts with "N5" or "incantum", follow `file 'N5/prefs/operations/incantum-protocol.md'` to parse and execute commands using natural language understanding
 - **NEVER** create ad-hoc export directories in workspace root (`/home/workspace/ExportedThreads/`, `/home/workspace/Exports/`, etc.)
 - **System operations:** Check commands.jsonl before manual implementation (lists, timeline, git, thread operations)
 - **Reflections:** Subject "reflection-ingest" or "[Reflect]" → See "Reflection Processing" section below
