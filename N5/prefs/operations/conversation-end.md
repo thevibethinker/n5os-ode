@@ -209,6 +209,41 @@ Use `N5/timeline/system-timeline.jsonl` to record:
 
 ---
 
+### Phase 6: Generate Thread Title
+
+**Generate title with date prefix:**
+```bash
+python3 /home/workspace/N5/scripts/n5_title_generator.py \
+  --convo-id con_<ID> \
+  --workspace /home/.z/workspaces/con_<ID> \
+  --auto
+```
+
+**Required format:** `MMM DD | {emoji} {Title}`
+
+**Example outputs:**
+- `Oct 23 | ✅ Akiflow Integration Complete`
+- `Oct 22 | 🔗 CRM Refactor #2`
+- `Oct 21 | 📰 Strategic Analysis`
+
+**The script will:**
+1. Extract date from last user message timestamp
+2. Analyze AAR data and artifacts
+3. Select appropriate emoji (✅ 🔗 📰 🎯 🔧 etc.)
+4. Generate 3 title options
+5. Present for selection or auto-apply if `--auto` flag used
+
+**Manual override:**
+```bash
+# Provide custom title (still adds date prefix)
+python3 /home/workspace/N5/scripts/n5_title_generator.py \
+  --convo-id con_<ID> \
+  --title "Custom Title" \
+  --emoji "✅"
+```
+
+---
+
 ## File Naming Conventions
 
 ### Archive Directories

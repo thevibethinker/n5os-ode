@@ -26,6 +26,32 @@ ROOT = Path(__file__).resolve().parents[1]
 EMOJI_LEGEND_PATH = ROOT / "config" / "emoji-legend.json"
 
 
+def get_date_prefix(convo_workspace: Path = None, timestamp: str = None) -> str:
+    """Extract date and format as 'MMM DD | ' prefix."""
+    from datetime import datetime
+    
+    if timestamp:
+        dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+    elif convo_workspace:
+        # Try to extract from SESSION_STATE or last message
+        session_file = convo_workspace / "SESSION_STATE.md"
+        if session_file.exists():
+            content = session_file.read_text()
+            # Extract date from "Started: YYYY-MM-DD" line
+            import re
+            match = re.search(r'Started:\*\* (\d{4}-\d{2}-\d{2})', content)
+            if match:
+                dt = datetime.fromisoformat(match.group(1))
+            else:
+                dt = datetime.now()
+        else:
+            dt = datetime.now()
+    else:
+        dt = datetime.now()
+    
+    return dt.strftime('%b %d | ')
+
+
 class TitleGenerator:
     """Generates thread titles using emoji legend and content analysis"""
     
@@ -53,18 +79,23 @@ class TitleGenerator:
         self, 
         aar_data: Dict, 
         artifacts: List[Dict],
-        max_options: int = 3
+        max_options: int = 3,
+        convo_workspace: Path = None,
+        timestamp: str = None
     ) -> List[Dict]:
         """
-        Generate title options based on thread content
+        Generate title options based on thread content with date prefix
         
         Returns list of dicts with:
-        - title: Full formatted title
+        - title: Full formatted title with date prefix
         - emoji: Selected emoji
-        - base_title: Title without emoji
+        - base_title: Title without emoji or date
         - reasoning: Why this title/emoji was selected
         - length: Character count
         """
+        # Get date prefix
+        date_prefix = get_date_prefix(convo_workspace, timestamp)
+        
         options = []
         
         # Extract content for analysis
@@ -91,15 +122,16 @@ class TitleGenerator:
             entity, action, sequence_num, max_variations=max_options
         )
         
-        # Phase 4: Build options
+        # Phase 4: Build options with date prefix
         for base_title in base_titles:
-            full_title = f"{selected_emoji['symbol']} {base_title}"
+            full_title = f"{date_prefix}{selected_emoji['symbol']} {base_title}"
             
             options.append({
                 "title": full_title,
                 "emoji": selected_emoji["symbol"],
                 "emoji_name": selected_emoji["name"],
                 "base_title": base_title,
+                "date_prefix": date_prefix,
                 "reasoning": {
                     "emoji": emoji_reasoning,
                     "entity": entity,
@@ -107,7 +139,7 @@ class TitleGenerator:
                     "sequence": sequence_num
                 },
                 "length": len(full_title),
-                "valid": len(full_title) <= 35
+                "valid": len(full_title) <= 45  # Increased for date prefix
             })
         
         # Sort by validity and length (prefer shorter)
@@ -182,6 +214,7 @@ class TitleGenerator:
         # Phase 2: Specific entity patterns (order matters - most specific first)
         entity_patterns = [
             # SPECIFIC system names (from common N5 components)
+            (r'\b(akiflow|aki)', "Akiflow Integration"),
             (r'\b(content library|content-library)', "Content Library"),
             (r'\b(email validation|email validator|email-validator)', "Email Validation"),
             (r'\b(meeting parser|meeting-parser)', "Meeting Parser"),
