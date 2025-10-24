@@ -1,0 +1,39 @@
+Emily Nelson: Hey Vrijen, thanks for taking the time.
+
+Vrijen: Of course! So tell me what's going on with the technical co-founder situation.
+
+Emily: Well, it's kind of like I'm going through a divorce. Brandon and I had this amazing collaborative flow, and now he's leaving to take a full-time role. It genuinely sucks.
+
+Vrijen: Oh wow, that's tough. Yeah, "going through a divorce" is the perfect way to describe it. Losing that collaborative relationship after building something together is really hard.
+
+Emily: Exactly. And I feel kind of helpless right now. I can't build the features I need, and I don't know if I should look for another technical co-founder or just hire contractors.
+
+Vrijen: Okay, so here's the thing - you're not actually helpless even though it feels that way right now. There are paths forward. Have you looked at YC Founder Match or Coffee Space?
+
+Emily: I've heard of YC Founder Match but not Coffee Space. What's that?
+
+Vrijen: Coffee Space is a co-founder matching platform. I don't personally love them, but for your use case it's probably the better option. Let me send you both links.
+
+Emily: That would be great.
+
+Vrijen: The other path is the Filipino contractor route you mentioned. Your $2k cap is smart. But here's my one thought - get a second technical opinion on scope before starting. Not questioning Brandon, just good practice to validate what's realistic with that budget.
+
+Emily: Makes sense. That's actually really helpful.
+
+Vrijen: The other thing is, have you considered using Zo Computer? It could give you more building leverage while you're searching for a co-founder.
+
+Emily: I keep hearing about Zo but I'm not sure what it actually does.
+
+Vrijen: Think of it this way - it's like having a really smart assistant that actually maintains context and can build things for you. It won't replace a technical co-founder, but it bridges the gap. The back-and-forth frustration you mentioned? That's exactly what it solves with better tagging systems.
+
+Emily: Oh interesting. How would I get started?
+
+Vrijen: I'll send you my referral code - it's 50% off API costs. Once you're set up, I'll also send you my Howie tagging system instructions. And I'll intro you to the Zo founders separately - they're actively looking for builders in their ecosystem and you're exactly the profile they want.
+
+Emily: That's perfect, thank you.
+
+Vrijen: Between Zo giving you more leverage and the co-founder search, you've got paths forward. You're not stuck. Happy to jam on any of this as you dig in.
+
+Emily: This is really helpful. Let me know when you're set up on Zo - I'm curious what you'll automate first.
+
+Vrijen: Will do. I'll follow up with all those links and the intro.

@@ -1,0 +1,44 @@
+{
+  "meeting_id": "2025-10-21_external-zoe-rose-schulte",
+  "date": "2025-10-21",
+  "stakeholder_type": "NETWORKING",
+  "participant_external": "Zoe Weber (Cornell Johnson MBA, Gorgeous Ventures)",
+  "transcript_source": "Google Drive",
+  "gdrive_id": "1bUt-937OUXIYw8S3DwsHyEB-oEtAFbgo",
+  "processing_context": {
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "processed_date": "2025-10-21",
+    "blocks_generated": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP",
+      "B05_OUTSTANDING_QUESTIONS",
+      "B07_WARM_INTRO_BIDIRECTIONAL"
+    ],
+    "blocks_required": 7,
+    "blocks_high_priority": 2,
+    "blocks_conditional": 0,
+    "total_blocks": 9,
+    "crm_profile_created": true,
+    "crm_profile_path": "Knowledge/crm/individuals/zoe-weber.md",
+    "enrichment_priority": "MEDIUM"
+  },
+  "key_themes": [
+    "Cornell Johnson alumni network re-engagement",
+    "VMock frustration / campus career services gaps",
+    "International student recruiting anxiety (H1B visa uncertainty)",
+    "Community distribution partnerships (Emory precedent)",
+    "Gorgeous Ventures evaluation (timing, monetization)",
+    "MBA continuous career maintenance"
+  ],
+  "follow_up_required": [
+    "Send survey link + case prep resources to Zoe",
+    "Clarify CMC evaluation status",
+    "Assess if Gorgeous Ventures wants updated conversation"
+  ]
+}

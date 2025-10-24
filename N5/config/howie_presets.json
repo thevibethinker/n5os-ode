@@ -1,0 +1,114 @@
+{
+  "presets": [
+    {
+      "name": "investor_high_priority",
+      "description": "Investor meeting - high urgency, accommodating",
+      "tags": {
+        "recipient_type": "investor",
+        "urgency": "high",
+        "priority": "external",
+        "accommodation": 2
+      },
+      "signature": "[LD-INV] [GPT-E] [A-2] [D5] *"
+    },
+    {
+      "name": "investor_urgent",
+      "description": "Investor meeting - urgent, this week",
+      "tags": {
+        "recipient_type": "investor",
+        "urgency": "urgent",
+        "priority": "external"
+      },
+      "signature": "[LD-INV] [GPT-E] [!!] *"
+    },
+    {
+      "name": "hire_standard",
+      "description": "Hiring candidate - standard timeline",
+      "tags": {
+        "recipient_type": "hire",
+        "urgency": "normal",
+        "accommodation": 1
+      },
+      "signature": "[LD-HIR] [A-1] [D5+] *"
+    },
+    {
+      "name": "hire_urgent",
+      "description": "Hiring candidate - urgent, need to move fast",
+      "tags": {
+        "recipient_type": "hire",
+        "urgency": "high",
+        "accommodation": 1
+      },
+      "signature": "[LD-HIR] [A-1] [D5] *"
+    },
+    {
+      "name": "community_logan",
+      "description": "Community/partner meeting with Logan",
+      "tags": {
+        "recipient_type": "community",
+        "priority": "founders",
+        "align_with_logan": true,
+        "follow_up_days": 5
+      },
+      "signature": "[LD-COM] [GPT-F] [LOG] [F-5] *"
+    },
+    {
+      "name": "networking_standard",
+      "description": "Networking meeting - standard",
+      "tags": {
+        "recipient_type": "networking",
+        "urgency": "normal",
+        "accommodation": 1
+      },
+      "signature": "[LD-NET] [A-1] [D5+] *"
+    },
+    {
+      "name": "general_flexible",
+      "description": "General meeting - flexible timing",
+      "tags": {
+        "recipient_type": "general",
+        "urgency": "low",
+        "flexible": true
+      },
+      "signature": "[LD-GEN] [D10] [FLX] *"
+    },
+    {
+      "name": "internal_logan",
+      "description": "Internal meeting with Logan",
+      "tags": {
+        "priority": "internal",
+        "align_with_logan": true,
+        "flexible": true
+      },
+      "signature": "[GPT-I] [LOG] [FLX] *"
+    },
+    {
+      "name": "founders_only",
+      "description": "Founders meeting (Vrijen + Logan)",
+      "tags": {
+        "priority": "founders",
+        "flexible": true
+      },
+      "signature": "[GPT-F] [FLX] *"
+    },
+    {
+      "name": "high_accommodation",
+      "description": "Maximum accommodation - their schedule, their terms",
+      "tags": {
+        "priority": "external",
+        "accommodation": 2,
+        "urgency": "normal"
+      },
+      "signature": "[GPT-E] [A-2] [D5+] *"
+    },
+    {
+      "name": "our_terms",
+      "description": "On our terms only - minimal accommodation",
+      "tags": {
+        "priority": "internal",
+        "accommodation": 0
+      },
+      "signature": "[GPT-I] [A-0] *"
+    }
+  ]
+}

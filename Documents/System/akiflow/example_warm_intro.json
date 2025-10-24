@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "title": "Draft intro: Sarah Chen → Marcus Rodriguez",
+      "when": "Today 3:00pm ET",
+      "duration": "15m",
+      "priority": "High",
+      "project": "Networking",
+      "tags": ["warm_intro", "draft"],
+      "notes": "Connect Sarah (Product lead) with Marcus (Recruiting leader). Context: both expanding teams Q1 2026. Draft double opt-in intro email."
+    },
+    {
+      "title": "Send intro: Sarah Chen → Marcus Rodriguez",
+      "when": "Today 4:00pm ET",
+      "duration": "5m",
+      "priority": "High",
+      "project": "Networking",
+      "tags": ["warm_intro", "send"],
+      "notes": "Review draft, finalize, and send double opt-in intro."
+    },
+    {
+      "title": "Follow-up: Sarah Chen ↔ Marcus Rodriguez",
+      "when": "2025-10-29 2:00pm ET",
+      "duration": "10m",
+      "priority": "Normal",
+      "project": "Networking",
+      "tags": ["warm_intro", "follow_up"],
+      "notes": "Check if they connected. If no response, gentle nudge."
+    }
+  ]
+}

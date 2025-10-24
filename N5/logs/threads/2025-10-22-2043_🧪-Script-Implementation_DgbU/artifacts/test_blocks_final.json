@@ -1,0 +1,79 @@
+{
+  "resources_explicit": [
+    {
+      "content": "https://www.ycombinator.com/cofounder-matching",
+      "title": "YC Founder Match",
+      "mentioned_by": null,
+      "context": "now. There are paths forward. Have you looked at YC Founder Match or Coffee Space?\n\nEmily: I've heard of YC Founder",
+      "confidence": "explicit",
+      "timestamp": null
+    },
+    {
+      "content": "https://www.coffeespace.com/",
+      "title": "Coffee Space",
+      "mentioned_by": null,
+      "context": "s forward. Have you looked at YC Founder Match or Coffee Space?\n\nEmily: I've heard of YC Founder Match but not C",
+      "confidence": "explicit",
+      "timestamp": null
+    },
+    {
+      "content": "VATT50",
+      "title": "Zo Computer Promo Code",
+      "mentioned_by": null,
+      "context": "en: The other thing is, have you considered using Zo Computer? It could give you more building leverage while y",
+      "confidence": "explicit",
+      "timestamp": null
+    },
+    {
+      "content": "I'll send you my",
+      "title": null,
+      "mentioned_by": null,
+      "context": "Oh interesting. How would I get started?\n\nVrijen: I'll send you my referral code - it's 50% off API costs. Once you're set up, I'll also send you my Howie tagging sys",
+      "confidence": "implicit",
+      "timestamp": null
+    }
+  ],
+  "resources_suggested": [
+    {
+      "content": "https://drive.google.com/open?id=18C2tUgvZb72boa9uy4LVGVyzXEiE6yge&usp=drive_fs",
+      "title": "Careerspan Coaching Product Walkthrough",
+      "mentioned_by": null,
+      "context": "Relevant to: product",
+      "confidence": "suggested",
+      "timestamp": null
+    }
+  ],
+  "eloquent_lines": [
+    {
+      "speaker": "Vrijen",
+      "text": "Okay, so here's the thing - you're not actually helpless even though it feels that way right now. There are paths forward. Have you looked at YC Founder Match or Coffee Space?",
+      "cleaned_text": "Okay, so here's the thing - you're not actually helpless even though it feels that way right now. There are paths forward. Have you looked at YC Founder Match or Coffee Space?",
+      "context": "Okay, so here's the thing - you're not actually helpless even though it feels that way right now. Th...",
+      "audience_reaction": null,
+      "timestamp": null
+    },
+    {
+      "speaker": "Vrijen",
+      "text": "Think of it this way - it's like having a really smart assistant that actually maintains context and can build things for you. It won't replace a technical co-founder, but it bridges the gap. The back-and-forth frustration you mentioned? That's exactly what it solves with better tagging systems.",
+      "cleaned_text": "Think of it this way - it's having a really smart assistant that actually maintains context and can build things for you. It won't replace a technical co-founder, but it bridges the gap. The back-and-forth frustration you mentioned? That's exactly what it solves with better tagging systems.",
+      "context": "Think of it this way - it's like having a really smart assistant that actually maintains context and...",
+      "audience_reaction": "positive",
+      "timestamp": null
+    }
+  ],
+  "key_decisions": [
+    "I'll send you my referral code - it's 50% off API costs. Once you're set up, I'll also send you my Howie tagging system instructions. And I'll intro you to the Zo founders separately - they're actively lo",
+    "I'll follow up with all those links and the intro."
+  ],
+  "action_items": [
+    "I'll send you my referral code - it's 50% off API costs. Once you're set up, I'll also send you my Howie tagging system instructions. And I'll intro you to the Zo founders separately - they're actively looking",
+    "I'll follow up with all those links and the intro."
+  ],
+  "questions": [
+    "Vrijen: Okay, so here's the thing - you're not actually helpless even though it feels that way right now. There are paths forward. Have you looked at YC Founder Match or Coffee Space?",
+    "Emily: I've heard of YC Founder Match but not Coffee Space. What's that?",
+    "Vrijen: The other thing is, have you considered using Zo Computer? It could give you more building leverage while you're searching for a co-founder.",
+    "Vrijen: Think of it this way - it's like having a really smart assistant that actually maintains context and can build things for you. It won't replace a technical co-founder, but it bridges the gap. The back-and-forth frustration you mentioned? That's exactly what it solves with better tagging systems.",
+    "Emily: Oh interesting. How would I get started?"
+  ]
+}

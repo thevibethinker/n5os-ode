@@ -1,0 +1,2 @@
+{"timestamp": "2025-10-24T02:56:04.288144Z", "natural_language": "checkpoint this", "commands": [{"name": "thread-export", "args": {}}], "context": {}, "success": true, "user_feedback": null}
+{"timestamp": "2025-10-24T03:05:22.879030Z", "natural_language": "lets wrap up here", "commands": [{"name": "conversation-end", "args": {}}], "context": {"trigger": "n5", "context": "end of thread after system work"}, "success": true, "user_feedback": "successful execution"}

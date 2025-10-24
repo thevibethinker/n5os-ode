@@ -1,0 +1,87 @@
+[
+  {
+    "title": "[PDF] LLMs as Method Actors: A Model for Prompt Engineering and ... - arXiv",
+    "url": "https://arxiv.org/pdf/2411.05778?",
+    "text": "Prompt engineering refers to techniques for writing individual prompts to elicit LLM responses that exhibit stronger performance at natural lan- guage tasks."
+  },
+  {
+    "title": "[PDF] A guide to prompt writing and engineering in higher education: A ...",
+    "url": "https://researchrepository.ul.ie/bitstreams/7f191b86-2887-452d-a941-4a947611f70e/download",
+    "text": "Whether you are a researcher exploring LLM capabilities or a developer seeking effective prompting techniques, this guide will provide valuable resources to"
+  },
+  {
+    "title": "Prompt Engineering for Chatbots - Medium",
+    "url": "https://medium.com/@aahana.khanal11/prompt-engineering-for-chatbots-3b02d4619f00",
+    "text": "The art and technical science of creating prompts for guiding AI models including LLMs which leads to desired output generation is known as prompt engineering."
+  },
+  {
+    "title": "Prompt engineering for accurate statistical reasoning with large ...",
+    "url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1658316/full",
+    "text": "# Prompt engineering for accurate statistical reasoning with large language models in medical research **Objective:** To evaluate the effectiveness of various prompt engineering strategies in guiding LLMs toward accurate and interpretable statistical reasoning in biomedical research. These strategies prompted the models to perform assumption checks, select appropriate statistical tests based on those checks, and provide comprehensive and contextually relevant interpretations. This alignment reinforces the reliability of the LLM-as-a-judge approach in this context and supports its use as a scalable yet accurate evaluation method for prompt engineering in statistical tasks. Keywords: prompt engineering, large language models, statistical reasoning, medical research, AI-assisted data analysis, evaluation frameworks, LLM-as-a-judge, statistical assumption checking Citation: Vilakati S (2025) Prompt engineering for accurate statistical reasoning with large language models in medical research."
+  },
+  {
+    "title": "Better AI Prompts: Master ChatGPT & LLM Communication Guide",
+    "url": "https://www.sentisight.ai/writing-better-prompts-chatgpt-ai-tools-guide/",
+    "text": "Learn expert techniques for writing effective AI prompts. Transform generic responses into targeted solutions with proven frameworks and strategies for"
+  },
+  {
+    "title": "How I Cracked the Code on AI-Assisted Qualitative Research",
+    "url": "https://lennartnacke.com/how-i-cracked-the-code-on-ai-assisted-qualitative-research/",
+    "text": "Prompt engineering determines your analysis quality. The difference between mediocre and exceptional AI-assisted analysis lies entirely in how you write your"
+  },
+  {
+    "title": "Scaling hermeneutics: a guide to qualitative coding with LLMs for ...",
+    "url": "https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-025-00548-8",
+    "text": "In this paper, we present a hybrid approach that preserves hermeneutic value while incorporating LLMs to scale the application of codes to large data sets."
+  },
+  {
+    "title": "Mastering Prompt Engineering for AI Innovation | Databricks",
+    "url": "https://www.databricks.com/glossary/prompt-engineering",
+    "text": "Prompt engineering is an emerging field at the forefront of artificial intelligence (AI) development that focuses on the critical processes of crafting effective inputs for generative AI (GenAI) models. Prompt engineering plays a crucial role in optimizing the performance of AI models by influencing their behavior and improving the quality of their outputs. 4. Enhancing creativity: Thoughtfully designed prompts can push AI models to generate more creative and diverse outputs, especially in tasks involving content creation or ideation. While effective prompt engineering can significantly enhance AI outputs, poorly designed prompts can lead to various failure modes. By mastering the art and science of prompt engineering, we can unlock the full potential of AI technologies, enabling more accurate, creative and useful AI-generated outputs."
+  },
+  {
+    "title": "Prompt Engineering in AI: A Comprehensive Report | by ByteBridge",
+    "url": "https://bytebridge.medium.com/prompt-engineering-in-artificial-intelligence-a-comprehensive-report-e6737c8f9098",
+    "text": "By addressing challenges such as language ambiguity, potential biases, and the necessity of a user-centric design, prompt engineering significantly improves the accuracy, relevance, and overall efficiency of AI outputs. * Models like GPT and BERT show enhanced performance metrics when guided by prompts that offer explicit clarity, detailed context, and structured examples. The overall result is increased operational efficiency and improved performance metrics across various AI domains, including text summarization, information extraction, question answering, text classification, chatbot conversations, and code generation. In summary, the systematic approach to prompt engineering not only enhances AI interactions with clear and structured prompts but also establishes a robust framework for continuous performance improvement and adaptation to new challenges in the field."
+  },
+  {
+    "title": "Navigating representation: utilizing prompt engineering to minimize ...",
+    "url": "https://link.springer.com/article/10.1007/s43681-025-00773-x",
+    "text": "To achieve this, we have developed three prompting strategies: Baseline Response generates unfiltered captions as a benchmark; Reactive Mitigation employs a feedback mechanism that revises initial captions using examples of harmful content; and Proactive Guidance integrates definitions and examples of harmful content prior to generating captions to guide the model toward more contextually aware outputs. In this article, we investigate how to optimize prompt engineering techniques to minimize representational harms in journalistic image captions, thus ensuring diverse social groups are represented accurately and respectfully. These findings highlight the importance of a hybrid approach, combining automated methods with human oversight to create a robust framework for generating captions that minimize representational harms while accurately representing social groups, particularly in politically and socially sensitive contexts."
+  },
+  {
+    "title": "Prompt Engineering and the Effectiveness of Large Language ...",
+    "url": "https://arxiv.org/html/2507.18638v2",
+    "text": "The results showed that users who followed more specific, more contextual prompts improved task efficiency and outcomes. These findings highlight the importance"
+  },
+  {
+    "title": "[PDF] AI, Prompt- Writing, & Instructional Design - Quality Matters",
+    "url": "https://www.qualitymatters.org/sites/default/files/presentations/AI,%20Prompt-Writing,%20&%20Instructional%20Design%20-%20an%20Ethics-Focused%20Overview%20by%20Jenny%20Roach%20MBA%20MLIS.pdf",
+    "text": "Students develop the ability to transfer knowledge into real- world applications, making learning more meaningful and lasting. A student writing a research."
+  },
+  {
+    "title": "Using large language models for narrative analysis: a novel ...",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2590260125000098",
+    "text": "# Using large language models for narrative analysis: a novel application of generative AI Author links open overlay panel, , , , , , , Researchers must discuss how large language models can assist qualitative analysis. It compared large language model (LLM)-conducted analysis with human analysis of the same qualitative data, explored optimisation of LLMs for narrative analysis and evaluated their benefits and drawbacks. The method was developed iteratively, combining Ipsos' artificial intelligence (AI) expertise and tools with researchers’ qualitative analysis expertise. Claude and GPT-o1 each conducted a narrative analysis of all 138 stories using the same analytic steps as the human researchers. Additionally, this study discusses ethical concerns surrounding responsible AI use in research and proposes a framework for using LLMs in qualitative analysis."
+  },
+  {
+    "title": "How Creative Writers Integrate AI into their Writing Practice",
+    "url": "https://dl.acm.org/doi/10.1145/3698061.3726910",
+    "text": "Creative writing is a deeply human craft, yet AI systems using large language models (LLMs) offer the automation of significant parts of the writing process. Through interviews and observed writing sessions with 18 creative writers who already use AI regularly in their writing practice, we find that creative writers are intentional about how they incorporate AI, making many deliberate decisions about when and how to engage AI based on their core values, such as authenticity and craftsmanship. * [b [...] or AI support, and values about writing](#core-Bib0023-2) * [c [...] AI-generated content to their vision](#core-Bib0034-3) * [a [...] AI-generated content to their vision](#core-Bib0045-1) AI as an Active Writer: Interaction Strategies with Generated Text in Human-AI Collaborative Fiction Writing 56-65."
+  },
+  {
+    "title": "Google's Viral Prompt Engineering Guide: Master AI in 2025 - LinkedIn",
+    "url": "https://www.linkedin.com/pulse/google-shares-viral-prompt-engineering-paper-ultimate-nantha-kumar-l-93jdc",
+    "text": "One-shot prompting uses a single example to guide AI responses. Iterative design is a crucial approach in crafting effective prompts for AI models. The iterative process helps identify patterns in AI responses and reveals which prompt elements generate the most accurate and relevant outputs. ### Contextual Prompting: Enhancing AI Responses Contextual prompting enhances AI responses by providing relevant background information and specific parameters. The combination of iterative design and contextual prompting creates a framework for developing increasingly effective AI interactions. Example Prompt for Code Generation: \"Generate a Python function that [specific task] with the following requirements: The standardization of prompts across different AI applications marks a critical step toward achieving consistent, reliable outputs from language models."
+  },
+  {
+    "title": "My Guide to Deep Research, Prompt Engineering, and Multi-Step ...",
+    "url": "https://www.reddit.com/r/ChatGPTPro/comments/1in87ic/mastering_aipowered_research_my_guide_to_deep/",
+    "text": "Below is everything I've learned, plus tips and best practices that have helped me unlock deeper, more reliable insights from AI."
+  },
+  {
+    "title": "AI Prompt Engineering Best Practices & Future Trends - Kanerika",
+    "url": "https://kanerika.com/blogs/ai-prompt-engineering-best-practices/",
+    "text": "We use cookies to give you the best experience. We use cookies to enhance your experience. Consenting allows us to process data like browsing behavior or unique IDs. Not consenting may affect site functionality. Preferences The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user. The technical storage or access that is used exclusively for statistical purposes. We use cookies to enhance your experience. Consenting allows us to process data like browsing behavior or unique IDs. Not consenting may affect site functionality. We use cookies to enhance your experience. Consenting allows us to process data like browsing behavior or unique IDs. Not consenting may affect site functionality. Manage options Manage services View preferences"
+  }
+]

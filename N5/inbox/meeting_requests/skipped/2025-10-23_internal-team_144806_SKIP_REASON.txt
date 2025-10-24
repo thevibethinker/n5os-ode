@@ -1,0 +1,30 @@
+MEETING SKIPPED - NOT APPLICABLE FOR REGISTRY SYSTEM v1.5
+
+Meeting ID: 2025-10-23_internal-team_144806
+Classification: internal
+Participants: Daily team stand-up
+
+REASON FOR SKIPPING:
+This is an internal team standup/social conversation between Careerspan team members (Vrijen, Ilse, Danny, Logan, Rochel). Content consists of:
+- Casual lunch discussions (chicken sandwiches, focaccia, coffee)
+- Music preferences (Brazilian music, K-pop)
+- General team banter and relationship building
+
+NO strategic content requiring:
+- Stakeholder intelligence (B08)
+- Stakeholder research insights (B31) 
+- Follow-up emails (B25)
+- CRM integration
+- Action items or commitments
+- Partnership/investment/customer intelligence
+
+The registry v1.5 has an INTERNAL_STANDUP_COFOUNDER stakeholder type but it is incomplete in the schema. Internal team meetings should have a separate, simpler processing workflow (if any) rather than the full external stakeholder intelligence system.
+
+RECOMMENDATION:
+Create a lightweight internal meeting processing workflow for team standups that focuses on:
+- Action items/task assignments only (if any)
+- Team decisions (if any)
+- Skip all stakeholder intelligence, research, and CRM components
+
+Processed by: Zo
+Date: 2025-10-23T21:05:26Z

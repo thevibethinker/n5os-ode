@@ -1,0 +1,28 @@
+{
+  "meeting_id": "2025-10-23_external-gja-nzqi-sxu",
+  "processed_at": "2025-10-23T21:07:57-04:00",
+  "processor_version": "Registry System v1.5",
+  "workflow_version": "meeting-process.md v5.1.0",
+  "stakeholder_type": "NETWORKING",
+  "stakeholder_name": "David Speigel",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B05_OUTSTANDING_QUESTIONS"
+  ],
+  "block_count": 9,
+  "transcript_source": "N5/inbox/transcripts/2025-10-23_external-gja-nzqi-sxu_converted.txt",
+  "transcript_quality": "Excellent",
+  "gdrive_id": "1PrYO2L0GuAJ5hlJT3hkxwRkHU5hQC5uE",
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/david-speigel.md",
+  "enrichment_priority": "MEDIUM",
+  "n5os_tags": "[LD-NET] [GPT-E] [A-3]",
+  "processing_notes": "Clean transcript, clear conversation flow. NETWORKING stakeholder - warm intro to Zo founders plus N5 system distribution. David represents ideal Zo Architect customer profile."
+}

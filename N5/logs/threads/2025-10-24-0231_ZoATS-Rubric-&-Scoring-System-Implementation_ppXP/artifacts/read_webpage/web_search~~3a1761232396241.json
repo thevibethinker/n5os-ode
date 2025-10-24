@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Security - How To Use Akiflow",
+    "url": "https://how-to-use-guide.akiflow.com/security",
+    "text": "In transit, we use TLS. Regarding API keys and authorization tokens. At rest, data is encrypted using industry-standard 256-bit AES encryption on our servers."
+  },
+  {
+    "title": "Authenticate with the REST API | Roboflow Docs",
+    "url": "https://docs.roboflow.com/developer/rest-api/authenticate-with-the-rest-api",
+    "text": "You can authenticate your request through the api_key parameter in the body and the query, via an authentication header, or with a query parameter."
+  },
+  {
+    "title": "Airflow API (2.4.1) | Documentation | Postman API Network",
+    "url": "https://www.postman.com/apache-airflow/team-workspace/documentation/ftplzcs/airflow-api-2-4-1",
+    "text": "The Airflow API uses REST endpoints for managing objects, with resources organized by type, and supports Create, Read, Update, and Delete operations."
+  },
+  {
+    "title": "Authenticating to a REST endpoint inside Airflow DAG - Stack Overflow",
+    "url": "https://stackoverflow.com/questions/72819311/authenticating-to-a-rest-endpoint-inside-airflow-dag",
+    "text": "I need to first authenticate/login to the API as a user, and then extract data by passing an access_token in the API call."
+  },
+  {
+    "title": "Airflow REST API Authentication - Feature Requests - Retool Forum",
+    "url": "https://community.retool.com/t/airflow-rest-api-authentication/26015",
+    "text": "When creating a Rest API resource, you can select Google Service Account as an authentication choice & provide the authentication json for the account."
+  },
+  {
+    "title": "Akiflow For Developers",
+    "url": "https://akiflow.com/developers",
+    "text": "#### Akiflow streamlines task and time management for developers, ensuring you can focus on what you do best — coding. Akiflow tackles common pain points faced by developers, enhancing your workflow and boosting productivity. **Akiflow uses AI to tailor task management to your unique developer workflow** Capture and manage all your tasks and meetings Synchronize Jira issues with Akiflow, ensuring your development tasks are always up-to-date and accessible. Integrate GitHub issues with Akiflow, ensuring your coding tasks are managed efficiently Integrate Linear issues with Akiflow, keeping your engineering tasks organized and on track. Now I have all of my tasks and calendar management in Akiflow.” Try Akiflow for free and experience the difference it makes in managing your development tasks and projects."
+  },
+  {
+    "title": "Authentication - The REST API basics - Akeneo API documentation",
+    "url": "https://api.akeneo.com/documentation/authentication.html",
+    "text": "Once you get its username and password, together with the client ID and the secret, you will eventually be able to generate a token for the REST API. The last information needed to use the REST API is the token. curl -X POST http://my-favorite-pim.com/api/oauth/v1/token \\ * `access_token` must be included in every request to the REST API for the client application to be authorized (see the example below). Use the token that you just got for every request to the REST API. A client application using an expired token will be unable to request the REST API. curl --location --request POST 'http://my-favorite-pim.com/api/oauth/v1/token' \\ You can then use this `access_token` for every REST API request you do within an hour."
+  },
+  {
+    "title": "Apache Airflow - rest API Authentication - Stack Overflow",
+    "url": "https://stackoverflow.com/questions/61329923/apache-airflow-rest-api-authentication",
+    "text": "1. Stack Overflow for Teams Where developers & technologists share private knowledge with coworkers # Apache Airflow - rest API Authentication Ask Question I am trying to trigger my dag with AirFlow rest API. 13.1k1515 gold badges9696 silver badges164164 bronze badges **Security disclaimer:** using `airflow.api.auth.backend.default` disables authentication, posing a security risk on publicly accessible Airflow webservers. Find the answer to your question by asking. Ask question Airflow - How to use security authorization of REST API 3\") Apache airflow REST API call fails with 403 forbidden when API authentication is enabled JWT Authentication with Airflow API Airflow api authentication example from the documentation is giving me a 401 1\") Authenticating to a REST endpoint inside Airflow DAG"
+  },
+  {
+    "title": "A guide to REST API authentication - Merge.dev",
+    "url": "https://www.merge.dev/blog/rest-api-authentication",
+    "text": "API authentication secures a REST API by ensuring that only authenticated users can access its resources. Additionally, REST enables its clients to choose their preferred authentication method from a list of standardized options, like API keys, tokens, or OAuth. There are several methods for implementing authentication in the REST API. To access the API endpoint, the user must send a username and password to the API provider in the authentication header of the request. Token-based authentication is one of the most secure methods of authenticating REST APIs. They minimize interception risk since they can be encrypted and are usually short-lived, and they can offer granular access control. BambooHR's REST API uses an API key for authentication. It ensures API security with token-based authentication."
+  },
+  {
+    "title": "Creating Plugin REST API endpoints with authentication #40024",
+    "url": "https://github.com/apache/airflow/discussions/40024",
+    "text": "I was trying to create a custom REST API endpoint as a plugin in airflow with authentication and this is my wip."
+  },
+  {
+    "title": "Public API — Airflow 3.1.0 Documentation",
+    "url": "https://airflow.apache.org/docs/apache-airflow/stable/security/api.html",
+    "text": "- Airflow public API authentication + Deprecation Notice for airflow.security.permissions * Airflow public API - Airflow public API authentication + Deprecation Notice for airflow.security.permissions * Airflow public API ## Airflow public API authentication¶ The Airflow public API uses JWT (JSON Web Token) for authenticating API requests. Each request made to the Airflow API must include a valid JWT token in the `Authorization` header to verify the identity and permissions of the client. To interact with the Airflow API, clients must first authenticate and obtain a JWT token. Use the JWT token to call Airflow public API The default is 100 items, but you can change it using `maximum_page_limit` option in `[api]` section in the `airflow.cfg` file."
+  },
+  {
+    "title": "Airflow REST API - Apache Airflow",
+    "url": "https://airflow.apache.org/docs/apache-airflow/2.2.0/stable-rest-api-ref.html",
+    "text": "The Airflow REST API uses JSON for most endpoints, supports Create, Read, Update, and Delete operations on resources, and uses plural camelCase resource names."
+  },
+  {
+    "title": "Definitive Answer: Akiflow is the BEST todo list+ planner - Reddit",
+    "url": "https://www.reddit.com/r/ProductivityApps/comments/1b3jmu7/definitive_answer_akiflow_is_the_best_todo_list/",
+    "text": "Akiflow reigns supreme. Customer support is incredibly responsive and supportive (they gave me a free month-long trial when I asked for an extension)"
+  },
+  {
+    "title": "Introduction | Webflow Developer Documentation",
+    "url": "https://developers.webflow.com/data/reference/rest-introduction",
+    "text": "This documentation is designed for developers looking to create advanced tools and applications for Webflow users by using an extensive set of RESTful APIs. Webflow’s Data APIs empower developers to seamlessly interact with and manage the resources of a Webflow site. Image 12Image 13 Work with form data Connect native Webflow forms to external data sources.Image 14Image 15 Manage the Webflow CMS Create and manage Webflow collections and items.Image 16Image 17 Add custom code to sites and pages Add and maintain custom JavaScript scripts on a Site or Page.Image 18Image 19 Localize site content Adjust page content for mutliple languages and locales.Image 20Image 21 Upload assets Add assets to the Webflow assets manager, or pull a list of all existing assets by ID or by Site."
+  },
+  {
+    "title": "Authenticating to the REST API - GitHub Docs",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "text": "*   [Workflow jobs](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Workflow runs](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [GitHub Apps](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Billing](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Branches](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Security campaigns](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Check runs](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Classroom](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Code scanning](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Codes of conduct](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Codespaces](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Organizations](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Organization secrets](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Repository secrets](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [User secrets](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Collaborators](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Commits](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Copilot metrics](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Copilot user management](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Repository access](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Deployments](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Emojis](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Enterprise teams](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Enterprise team members](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Gists](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Commits](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Gitignore](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Organization](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Issue dependencies](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Licenses](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Markdown](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Meta](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Organizations](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Organizations](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Outside collaborators](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Personal access tokens](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Packages](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Pages](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Projects](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Collaborators](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Pull requests](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Reactions](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Releases](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Release assets](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Search](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Secret scanning](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api) *   [Teams](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api)"
+  },
+  {
+    "title": "Intro to Webflow's APIs",
+    "url": "https://help.webflow.com/hc/en-us/articles/33961356296723-Intro-to-Webflow-s-APIs",
+    "text": "## Use Webflow’s APIs to build Apps or programmatically manage your static and dynamic site content. ## What can I do with Webflow’s APIs? * Assets API — add assets to Webflow’s Assets panel, create and assign assets to folders in the Assets panel, or retrieve a list of all existing assets by ID or site When you access Webflow’s APIs, you’ll need to provide an access token to authenticate with Webflow, which you can acquire by using OAuth or by generating a site API token. 4. Choose the permissions you want the API token to have for each of Webflow’s APIs (i.e., no access, read-only, or read and write) What can I do with Webflow’s APIs? * What can I do with Webflow’s APIs?"
+  },
+  {
+    "title": "OAuth Authorization and authentication - Apps | Akeneo APIs",
+    "url": "https://api.akeneo.com/apps/authentication-and-authorization.html",
+    "text": "To validate the App identity, Akeneo PIM requires a unique code challenge for each Access Token Request, Basically, with OpenID Connect, you use the same process as for Authorization, but you **request an additional scope** and you receive, alongside the Access Token, an **ID Token containing the information of the current user**. When a user connects to your app **for the first time**, and you want to authenticate them, you must ask for OpenID scopes during the Authorization request. If a user tries to access your App from their Akeneo Product Cloud, and you want to authenticate them, start an Authorization request, even if you already are connected to their Akeneo Product Cloud."
+  },
+  {
+    "title": "API Overview - Integrating Smartlook",
+    "url": "https://integrations.smartlook.com/docs/api-overview",
+    "text": "The Smartlook REST API uses tokens for authentication. You will need one if you are about to access the Smartlook REST API or you are integrating some of the"
+  },
+  {
+    "title": "Webflow API - NoCodeAPI",
+    "url": "https://nocodeapi.com/docs/webflow-api/",
+    "text": "How to connect with Webflow CMS API to get collection items, Add items into collections, Update items into collection, and delete items without coding with."
+  }
+]

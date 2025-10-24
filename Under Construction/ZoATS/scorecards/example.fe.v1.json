@@ -1,0 +1,24 @@
+{
+  "scorecard_id": "scorecard.fe.v1.example",
+  "rubric_id": "rubric.fe.seed.v1",
+  "role": "Founding Engineer",
+  "stage": "Seed",
+  "criteria": [
+    {"id": "criterion.ownership.v1", "score": null, "notes": "See anchors in criteria/criterion.ownership.v1.json"},
+    {"id": "criterion.speed.v1", "score": null, "notes": "See anchors in criteria/criterion.speed.v1.json"},
+    {"id": "criterion.systems.v1", "score": null, "notes": "See anchors in criteria/criterion.systems.v1.json"},
+    {"id": "criterion.productsense.v1", "score": null, "notes": "See anchors in criteria/criterion.productsense.v1.json"},
+    {"id": "criterion.collab.v1", "score": null, "notes": "See anchors in criteria/criterion.collab.v1.json"},
+    {"id": "criterion.comm.v1", "score": null, "notes": "See anchors in criteria/criterion.comm.v1.json"},
+    {"id": "criterion.techdepth.v1", "score": null, "notes": "See anchors in criteria/criterion.techdepth.v1.json"},
+    {"id": "criterion.craft.v1", "score": null, "notes": "See anchors in criteria/criterion.craft.v1.json"},
+    {"id": "criterion.resilience.v1", "score": null, "notes": "See anchors in criteria/criterion.resilience.v1.json"}
+  ],
+  "bias_guardrail_checklist": [
+    "Add one disconfirming example before final verdict",
+    "Anchor to behaviors (not vibe)",
+    "Time-box review; avoid contrast with previous candidate",
+    "If AI outputs used, require citations or validation notes"
+  ],
+  "notes_template_path": "templates/anchored_notes_template.md"
+}
