@@ -182,9 +182,8 @@ def main():
             
             # Dual-write: Update markdown view
             logger.info("Updating markdown view...")
-            docgen_script = Path(__file__).parent / "n5_lists_docgen.py"
-            result = subprocess.run(
-                [sys.executable, str(docgen_script), "--list", slug],
+            docgen_script = Path(__file__).parent / "n5_docgen.py"
+            result = subprocess.run([sys.executable, str(docgen_script), "--lists", "--list", slug],
                 capture_output=True,
                 text=True
             )

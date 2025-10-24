@@ -1,34 +1,52 @@
 {
   "meeting_id": "2025-10-24_external-gabi-zo-demo",
-  "processing_date": "2025-10-24T16:51:26Z",
-  "transcript_source": "Google Drive (gdrive_id: 1ILqrVA8R27w10_KlOQKnGFXSpFBs5Jmm)",
-  "transcript_quality": "INCOMPLETE",
-  "transcript_note": "Only first 8:37 captured - meeting switched to Zoom due to Google Meet screen sharing issues",
-  "stakeholder_type": "NETWORKING",
-  "stakeholder_name": "Gabi Zijderveld",
-  "blocks_generated": [
-    "B26_MEETING_METADATA_SUMMARY",
-    "B01_DETAILED_RECAP",
-    "B02_COMMITMENTS_CONTEXTUAL",
-    "B08_STAKEHOLDER_INTELLIGENCE",
-    "B21_KEY_MOMENTS",
-    "B31_STAKEHOLDER_RESEARCH",
-    "B25_DELIVERABLE_CONTENT_MAP",
-    "B07_WARM_INTRO_BIDIRECTIONAL",
-    "B05_OUTSTANDING_QUESTIONS"
-  ],
-  "blocks_count": 9,
-  "registry_version": "1.5",
-  "processing_workflow_version": "5.1.0",
-  "crm_profile_created": true,
-  "crm_profile_path": "Knowledge/crm/individuals/gabi-zijderveld.md",
-  "enrichment_priority": "MEDIUM",
-  "howie_tags": "[LD-NET] [GPT-E] [A-3]",
-  "confidence_score": "MEDIUM",
-  "processing_notes": [
-    "Transcript incomplete - demo portion not captured",
-    "CRM profile created with enrichment tasks",
-    "Limited landscape insights due to truncated conversation",
-    "Follow-up needed to capture full demo context and outcomes"
+  "processing_version": "Registry_v1.5",
+  "processed_at": "2025-10-24T15:47:06-04:00",
+  "processing_context": {
+    "workflow": "meeting-process.md v5.1.0",
+    "registry": "block_type_registry.json v1.5",
+    "stakeholder_rules": "stakeholder_rules.json v1.1.0"
+  },
+  "meeting_metadata": {
+    "date": "2025-10-24",
+    "classification": "external",
+    "participants": "Gabi Zijderveld x Vrijen",
+    "stakeholder_type": "NETWORKING",
+    "external_participant": "gabi-zijderveld",
+    "gdrive_id": "1ILqrVA8R27w10_KlOQKnGFXSpFBs5Jmm",
+    "transcript_quality": "Fair (cut off mid-demo due to platform switch)"
+  },
+  "blocks_generated": {
+    "required": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP"
+    ],
+    "high_priority": [
+      "B07_WARM_INTRO_BIDIRECTIONAL",
+      "B05_OUTSTANDING_QUESTIONS"
+    ],
+    "conditional": [],
+    "total_count": 9
+  },
+  "crm_integration": {
+    "profile_created": true,
+    "profile_path": "Knowledge/crm/individuals/gabi-zijderveld.md",
+    "enrichment_priority": "MEDIUM",
+    "stakeholder_type": "networking_contact"
+  },
+  "howie_integration": {
+    "v_os_tags_generated": true,
+    "recommended_tags": "[LD-NET] [GPT-E] [A-3]",
+    "priority": "Non-critical"
+  },
+  "notes": [
+    "Transcript incomplete - cut off when switched from Google Meet to Zoom",
+    "Demo was interrupted, may need follow-up session",
+    "50% Zo discount code promised but not delivered in transcript"
   ]
 }
