@@ -6,7 +6,7 @@ checksum: follow_up_email_generator_v11_0_0
 tags: ['extraction', 'analysis', 'ai', 'voice-echoing', 'language-matching', 'confidence-based-links', 'readability', 'enhanced-dials']
 category: data-processing
 priority: medium
-related_files: ['N5/prefs/communication/voice.md', 'N5/prefs/communication/essential-links.json']
+related_files: ['N5/prefs/communication/voice.md', 'N5/prefs/communication/content-library.json']
 anchors:
   input: null
   output: /home/workspace/N5/commands/follow-up-email-generator.md
@@ -39,10 +39,10 @@ Function – Follow-Up Email Generator — Careerspan v11.0
 ### v11.0.1 — 2025-10-13
 **Critical Fix: Link Verification Enforcement** 🔒  
 - Added mandatory link verification requirement to Step 2
-- **NEVER fabricate links** - all links must be verified against essential-links.json or sources.md
+- **NEVER fabricate links** - all links must be verified against content-library.json or sources.md
 - Added link validation to Self-Review (Step 7B)
 - P19 (Error Handling) + P16 (No Invented Facts) enforcement
-- References: `file 'N5/prefs/communication/essential-links.json'`, `file 'Knowledge/stable/sources.md'`
+- References: `file 'N5/prefs/communication/content-library.json'`, `file 'Knowledge/stable/sources.md'`
 
 ### v10.9.0 — 2025-10-09
 **Enhancement 3: Readability Guardrails** ⭐⭐⭐  
@@ -63,7 +63,7 @@ Function – Follow-Up Email Generator — Careerspan v11.0
 - Updated dialInferenceReport to include readability metrics and violations  
 - New output: dialInferenceReport.readabilityMetrics  
 - **Markdown Output Format**: All emails now use inline links `[text](URL)` instead of exposed URLs  
-- References: `file 'N5/prefs/communication/essential-links.json'`  
+- References: `file 'N5/prefs/communication/content-library.json'`  
 - Inspired by: Stylistic Transformer v1.1 function
 
 ### v10.8.0 — 2025-10-09
@@ -74,7 +74,7 @@ Function – Follow-Up Email Generator — Careerspan v11.0
 - Enhanced Link Map output with confidence scores and insertion decisions  
 - New output: Missing Links Array for tracking uncertain links  
 - **Markdown Output Format**: All emails now use inline links `[text](URL)` instead of exposed URLs  
-- References: `file 'N5/prefs/communication/essential-links.json'`  
+- References: `file 'N5/prefs/communication/content-library.json'`  
 - Inspired by: Stylistic Transformer v1.1 function
 
 ### v10.7.0 — 2025-10-09
@@ -146,14 +146,14 @@ Deliver a send-ready follow-up email that:
 ─────────────────────────────────────────────────────────────────────
 • Meeting transcript or notes (required)  
 • Voice & Style Schema: `file 'N5/prefs/communication/voice.md'` (v3.0.0, consolidated MasterVoiceSchema)
-• Essential Links: `file 'N5/prefs/communication/essential-links.json'`
+• Content Library: `file 'N5/prefs/communication/content-library.json'` (replaces essential-links.json)
 • Optional: Dial overrides
 
 ─────────────────────────────────────────────────────────────────────
 4 ▸ FUNCTION STEPS
 ─────────────────────────────────────────────────────────────────────
 Step 0 — Router-Aligned Companion File Resolution  
-▸ Ensure MasterVoice & Essential Links located; abort if missing.  
+▸ Ensure MasterVoice & Content Library located; abort if missing.  
 ▸ Prepend visible-state header (Step 0 → 0A).
 
 Step 0B — Current Time Capture  
@@ -222,11 +222,11 @@ Step 1 — Transcript Parsing → Harvest Phase (ENHANCED)
 ▸ **Output:** phrasePool[] — {phrase, confidence, speaker, used, placement}
 
 Step 2 — Essential Link Autofill → Link Map (ENHANCED)
-▸ **Load Essential Links**: `file 'N5/prefs/communication/essential-links.json'`
+▸ **Load Content Library**: `file 'N5/prefs/communication/content-library.json'`
 ▸ **Match tokens** from transcript/deliverables against link categories
 ▸ **Build Link Map with Confidence Scoring**:
   - Scan for keywords: "calendly", "meeting", "schedule", "demo", "trial", "deck", "report"
-  - Match against essential-links.json categories
+  - Match against content-library.json using tag-based search
   - Assign confidence score (0.0 to 1.0):
     * 1.0 = Exact keyword match + clear context (e.g., "grab time on my calendar")
     * 0.85 = Strong context match (e.g., "let's schedule a follow-up")
@@ -258,19 +258,19 @@ Step 2 — Essential Link Autofill → Link Map (ENHANCED)
 
 **CRITICAL REQUIREMENT:** 🔒  
 Before generating any links, MUST load and reference:
-- `file 'N5/prefs/communication/essential-links.json'` (v1.7.0+)
+- `file 'N5/prefs/communication/content-library.json'` (v1.0.0+)
 - `file 'Knowledge/stable/sources.md'` (for additional references)
 
-**NEVER fabricate links.** If a link doesn't exist in essential-links.json or sources.md:
+**NEVER fabricate links.** If a link doesn't exist in content-library.json or sources.md:
 1. Use company homepage (https://www.mycareerspan.com) as fallback
 2. Omit the specific link entirely
 3. Flag as [[MISSING: description]] for V to provide
 
 **Link Verification Process:**
-1. Load essential-links.json
+1. Load content-library.json
 2. Identify relevant link categories from conversation
 3. Match conversation context to available links with confidence scoring
-4. Auto-insert ONLY if confidence ≥ 0.75 AND link exists in essential-links.json
+4. Auto-insert ONLY if confidence ≥ 0.75 AND link exists in content-library.json
 5. Flag any missing/uncertain links for manual review
 
 Step 3 — Auto-Dial Inference (ENHANCED)
@@ -486,7 +486,7 @@ Step 7B — Draft Email
   - **Note:** V is intentionally using "Hi" more to maintain formality until warmth is established
 
 **Additional Risk Checks:**
-- **Link Verification** 🔒: All links validated against essential-links.json or sources.md
+- **Link Verification** 🔒: All links validated against content-library.json or sources.md
 - **Link Fabrication Check**: No invented URLs (P16 + P19 enforcement)
 - **P.S. Policy**: No postscript sections unless V explicitly requests
 

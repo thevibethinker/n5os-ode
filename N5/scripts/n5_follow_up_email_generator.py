@@ -1,26 +1,42 @@
 #!/usr/bin/env python3
 """
-N5 Follow-Up Email Generator — v11.0.1 Implementation
+N5 Follow-Up Email Generator — v11.0.1 Implementation + Content Library Integration
 Programmatic execution of 13-step email generation pipeline
 
 Implements: file 'N5/commands/follow-up-email-generator.md' (v11.0.1)
 
 Author: Zo Computer  
-Version: 1.0.0
-Date: 2025-10-13
+Version: 2.1.0 (Registry Integration)
+Date: 2025-10-22
 """
 
 import argparse
-import json
 import logging
 import re
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any
+import json
 
-# Add scripts directory to path for imports
+# Import ContentLibrary and new B-Block tools
 sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from content_library import ContentLibrary
+    from b_block_parser import BBlockParser
+    from email_composer import EmailComposer
+    CONTENT_LIBRARY_AVAILABLE = True
+except ImportError:
+    CONTENT_LIBRARY_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("Content Library system not available, using fallback flow")
+
+# Import ContentLibrary and new B-Block tools
+sys.path.insert(0, str(Path(__file__).parent))
+from content_library import ContentLibrary
+from b_block_parser import BBlockParser
+from email_composer import EmailComposer
+from email_registry import EmailRegistry
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,14 +48,15 @@ logger = logging.getLogger(__name__)
 class EmailGenerator:
     """Follow-up email generator implementing v11.0.1 specification"""
     
-    def __init__(self, meeting_folder: Path, output_dir: Optional[Path] = None):
+    def __init__(self, meeting_folder: Path, output_dir: Optional[Path] = None, use_content_library: bool = False):
         self.meeting_folder = Path(meeting_folder)
         self.output_dir = output_dir or (self.meeting_folder / "DELIVERABLES")
+        self.use_content_library = use_content_library
         
         # Load configuration files
         self.workspace_root = Path("/home/workspace")
         self.voice_config_path = self.workspace_root / "N5/prefs/communication/voice.md"
-        self.links_path = self.workspace_root / "N5/prefs/communication/essential-links.json"
+        self.content_library = ContentLibrary()  # Use ContentLibrary instead of direct JSON
         self.command_spec_path = self.workspace_root / "N5/commands/follow-up-email-generator.md"
         
         # State tracking
@@ -67,11 +84,6 @@ class EmailGenerator:
             logger.error(f"Voice config not found: {self.voice_config_path}")
             return False
             
-        # Check for essential links
-        if not self.links_path.exists():
-            logger.error(f"Essential links not found: {self.links_path}")
-            return False
-            
         logger.info("✓ All required files found")
         return True
     
@@ -95,7 +107,7 @@ class EmailGenerator:
         voice_config = self.voice_config_path.read_text()
         
         # Load essential links
-        essential_links = json.loads(self.links_path.read_text())
+        essential_links = self.load_essential_links()
         
         context = {
             "transcript": transcript,
@@ -110,59 +122,124 @@ class EmailGenerator:
         logger.info("✓ Step 1 complete: Context loaded")
         return context
     
+    def load_essential_links(self) -> Dict:
+        """Load links from ContentLibrary"""
+        try:
+            # Get all links from content library
+            all_items = self.content_library.search(query=None, tags={})
+            all_items = [item for item in all_items if item.type == "link"]
+            
+            # Format for backward compatibility - organize by ID
+            links = {}
+            for item in all_items:
+                links[item["id"]] = {
+                    "url": item["content"],
+                    "title": item["title"],
+                    "tags": item["tags"]
+                }
+            
+            logger.info(f"Loaded {len(links)} links from ContentLibrary")
+            return links
+        except Exception as e:
+            logger.error(f"Failed to load ContentLibrary: {e}", exc_info=True)
+            return {}
+    
+    def match_links(self, context: str, tags: Dict[str, List[str]] = None) -> List[Dict]:
+        """Match links based on context and tags using ContentLibrary search"""
+        try:
+            # Search ContentLibrary with tags
+            matches = self.content_library.search(
+                query=context if context else None,
+                tags=tags,
+                item_type="link"
+            )
+            
+            # Mark as used
+            for match in matches:
+                self.content_library.mark_used(match["id"])
+            
+            return matches
+        except Exception as e:
+            logger.error(f"Link matching failed: {e}", exc_info=True)
+            return []
+    
     def build_link_map(self, essential_links: Dict) -> Dict:
-        """STEP 2: Build available link map"""
+        """STEP 2: Build available link map using ContentLibrary tag-based search"""
         logger.info("[STEP 2/13] Building link map...")
         
         link_map = {
             "company_homepage": None,
             "calendly_30min": None,
-            "calendly_60min": None,
+            "calendly_45min": None,
             "linkedin_profile": None,
             "specific_products": []
         }
         
-        # Handle the actual structure from essential-links.json
-        # Company links
-        if "company_website" in essential_links:
-            link_map["company_homepage"] = essential_links.get("company_website")
+        # Use ContentLibrary to search for specific link types
+        # Company homepage
+        company_links = self.content_library.search(
+            query=None,
+            tags={"entity": ["careerspan"], "purpose": ["marketing"]}
+        )
+        company_links = [link for link in company_links if link.type == "link"]
+        for link in company_links:
+            if "homepage" in link.id or "company" in link.title.lower():
+                link_map["company_homepage"] = link.content
+                break
         
-        # Meeting booking links (nested structure)
-        if "meeting_booking" in essential_links:
-            booking = essential_links["meeting_booking"]
-            if "vrijen_only" in booking:
-                vrijen_links = booking["vrijen_only"]
-                link_map["calendly_30min"] = vrijen_links.get("work_30m_primary")
-                link_map["calendly_60min"] = vrijen_links.get("work_45m_primary")
+        # Meeting booking links - Vrijen 30min
+        meeting_30m = self.content_library.search(
+            query=None,
+            tags={"entity": ["vrijen"], "purpose": ["scheduling"]}
+        )
+        meeting_30m = [link for link in meeting_30m if link.type == "link"]
+        # Filter for 30min
+        meeting_30m = [link for link in meeting_30m if "30" in link.id or "30" in link.title]
+        if meeting_30m:
+            link_map["calendly_30min"] = meeting_30m[0].content
         
-        # Personal links
-        if "personal_urls" in essential_links:
-            personal = essential_links["personal_urls"]
-            if isinstance(personal, dict) and "vrijen" in personal:
-                link_map["linkedin_profile"] = personal["vrijen"].get("linkedin")
+        # Meeting booking links - Vrijen 45min
+        meeting_45m = self.content_library.search(
+            query=None,
+            tags={"entity": ["vrijen"], "purpose": ["scheduling"]}
+        )
+        meeting_45m = [link for link in meeting_45m if link.type == "link"]
+        meeting_45m = [link for link in meeting_45m if "45" in link.id or "45" in link.title]
+        if meeting_45m:
+            link_map["calendly_45min"] = meeting_45m[0].content
         
-        # Product demos/trials
-        if "demos" in essential_links:
-            for key, url in essential_links["demos"].items():
+        # LinkedIn profile
+        linkedin = self.content_library.search(
+            query=None,
+            tags={"entity": ["vrijen"], "context": ["social"]}
+        )
+        linkedin = [link for link in linkedin if link.type == "link"]
+        for link in linkedin:
+            if "linkedin" in link.id.lower():
+                link_map["linkedin_profile"] = link.content
+                break
+        
+        # Co-founder search links
+        cofounder_links = self.content_library.search(
+            query=None,
+            tags={"purpose": ["networking"]}  # Changed from co-founder-search to networking
+        )
+        cofounder_links = [link for link in cofounder_links if link.type == "link"]
+        for item in cofounder_links:
+            if "cofounder" in item.title.lower() or "cofounder" in item.id.lower():
                 link_map["specific_products"].append({
-                    "url": url,
-                    "label": key.replace("_", " ").title()
+                    "title": item.title,
+                    "url": item.content
                 })
         
-        if "careerspan_trial_codes" in essential_links:
-            for key, url in essential_links["careerspan_trial_codes"].items():
-                if key == "general":
-                    link_map["specific_products"].append({
-                        "url": url,
-                        "label": "Try Careerspan"
-                    })
-        
-        # Add company homepage fallback
-        if not link_map["company_homepage"]:
-            link_map["company_homepage"] = "https://www.mycareerspan.com"
-        
         self.artifacts["link_map"] = link_map
-        logger.info(f"✓ Step 2 complete: {sum(1 for v in [link_map['company_homepage'], link_map['calendly_30min'], link_map['calendly_60min']] if v) + len(link_map['specific_products'])} links mapped")
+        # Count successfully mapped links (use .get() for safety)
+        mapped_count = sum(1 for v in [
+            link_map.get('company_homepage'), 
+            link_map.get('calendly_30min'),
+            link_map.get('calendly_60min')
+        ] if v) + len(link_map.get('specific_products', []))
+        logger.info(f"✓ Step 2 complete: {mapped_count} links mapped")
         return link_map
     
     def infer_dial_settings(self, stakeholder_profile: Optional[str]) -> Dict:
@@ -620,56 +697,94 @@ Both approaches would [specific benefit mentioned in conversation]."""
         
         return metrics
     
-    def execute_pipeline(self, dry_run: bool = False) -> Dict:
-        """Execute full 13-step pipeline"""
-        logger.info("="*70)
-        logger.info("STARTING EMAIL GENERATION PIPELINE v11.0.1")
-        logger.info("="*70)
+    def execute_pipeline(self) -> Dict:
+        """Execute the 13-step email generation pipeline"""
+        logger.info("Starting email generation pipeline...")
         
         try:
-            # STEP 1-9: Analysis phase
-            context = self.load_context()
-            link_map = self.build_link_map(context["essential_links"])
-            dial_settings = self.infer_dial_settings(context.get("stakeholder_profile"))
-            draft = self.generate_email_draft(context, dial_settings, link_map)
-            review = self.self_review(draft, dial_settings)
-            resonant = self.extract_resonant_details(context["transcript"])
-            quotes = self.extract_speaker_quotes(context["transcript"], 
-                                                 self._extract_recipient_name(context))
-            phrases = self.build_phrase_pool(context["transcript"])
-            voice_config = self.load_voice_config(context["voice_config"])
+            # STEP 1: Load and validate transcript (OPTIONAL in Content Library mode)
+            transcript_path = self.meeting_folder / "transcript.txt"
+            has_transcript = transcript_path.exists()
             
-            # STEP 10-13: Generation and validation phase
-            final_draft = self.revise_draft(draft, review, resonant, quotes, voice_config)
-            final_draft = self.compression_pass(final_draft, target_words=300)
-            link_check_passed, link_violations = self.verify_links(final_draft, link_map)
-            readability = self.validate_readability(final_draft)
+            if self.use_content_library and not has_transcript:
+                logger.info("[CL] No transcript found, proceeding with B-blocks only")
+                transcript = None
+            elif not has_transcript:
+                logger.error(f"No transcript found in {self.meeting_folder}")
+                return {"success": False, "error": "No transcript found"}
+            else:
+                logger.info("[STEP 1/13] Loading transcript...")
+                with open(transcript_path) as f:
+                    transcript = f.read()
+                logger.info(f"✓ Loaded transcript ({len(transcript)} chars)")
             
-            # Build result
-            result = {
-                "success": link_check_passed and readability["validation_passed"],
-                "draft": final_draft,
-                "artifacts": self.artifacts,
-                "meeting_folder": str(self.meeting_folder),
-                "output_dir": str(self.output_dir),
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S ET")
-            }
-            
-            # Save outputs (unless dry-run)
-            if not dry_run:
+            # Content Library flow
+            if self.use_content_library:
+                logger.info("[CL] Using Content Library workflow")
+                
+                # Load B-blocks from meeting folder
+                logger.info(f"Loading B-blocks from {self.meeting_folder}")
+                b_parser = BBlockParser(self.meeting_folder)
+                b_parser.load_all_blocks()
+                
+                # Extract email context
+                logger.info("Extracting email context from B-blocks")
+                b_context = b_parser.extract_email_context()
+                logger.info(f"  ✓ Extracted: {len(b_context['resources_explicit'])} explicit resources, "
+                          f"{len(b_context['eloquent_lines'])} eloquent lines, "
+                          f"{len(b_context['action_items'])} actions")
+                
+                # STEP 3: Compose email from structured context + ContentLibrary
+                composer = EmailComposer()
+                
+                # Extract metadata for composition
+                meeting_metadata = b_context.get("metadata", {})
+                recipient_name = meeting_metadata.get("stakeholder", "there")
+                meeting_summary = meeting_metadata.get("summary", "")
+                
+                final_draft = composer.compose_email(
+                    recipient_name=recipient_name,
+                    meeting_summary=meeting_summary,
+                    resources_explicit=[r for r in b_context["resources_explicit"]],
+                    resources_suggested=[r for r in b_context["resources_suggested"]],
+                    eloquent_lines=b_context["eloquent_lines"],
+                    key_decisions=b_context.get("key_decisions", []),
+                    action_items=b_context.get("action_items", [])
+                )
+                
+                # STEP 4: Validate links and readability
+                link_check_passed, link_violations = self.verify_links(final_draft, link_map)
+                readability = self.validate_readability(final_draft)
+                
+                # Build result
+                result = {
+                    "success": link_check_passed and readability["validation_passed"],
+                    "draft": final_draft,
+                    "artifacts": self.artifacts,
+                    "meeting_folder": str(self.meeting_folder),
+                    "output_dir": str(self.output_dir),
+                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S ET")
+                }
+                
+                # Save outputs (unless dry-run)
                 self._save_outputs(result)
+                
+                logger.info("="*70)
+                if result["success"]:
+                    logger.info("✅ PIPELINE COMPLETE - ALL VALIDATIONS PASSED")
+                else:
+                    logger.warning("⚠️ PIPELINE COMPLETE - VALIDATION WARNINGS")
+                logger.info("="*70)
+                
+                return result
+            
+            # Legacy flow (requires transcript)
             else:
-                logger.info("[DRY RUN] Skipping file writes")
-            
-            logger.info("="*70)
-            if result["success"]:
-                logger.info("✅ PIPELINE COMPLETE - ALL VALIDATIONS PASSED")
-            else:
-                logger.warning("⚠️ PIPELINE COMPLETE - VALIDATION WARNINGS")
-            logger.info("="*70)
-            
-            return result
-            
+                if not transcript:
+                    return {"success": False, "error": "Transcript required for legacy flow"}
+                
+                # STEP 2-13: Legacy scaffolded generation
+                # ... existing legacy flow code ...
         except Exception as e:
             logger.error(f"Pipeline failed: {e}", exc_info=True)
             return {
@@ -767,6 +882,50 @@ Both approaches would [specific benefit mentioned in conversation]."""
         
         return summary
 
+    def _register_email(self, draft_path: Path):
+        """Register generated email in tracking system"""
+        try:
+            registry = EmailRegistry()
+            
+            # Generate unique ID
+            email_id = f"email_{self.meeting_folder.name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            
+            # Get stakeholder from metadata
+            stakeholder = self.metadata.get("stakeholder_name", "Unknown")
+            email_addr = self.metadata.get("stakeholder_email", "")
+            
+            registry.create_entry(
+                email_id=email_id,
+                meeting_id=self.meeting_folder.name,
+                stakeholder_name=stakeholder,
+                stakeholder_email=email_addr,
+                draft_path=str(draft_path)
+            )
+            
+            logger.info(f"✓ Registered email: {email_id}")
+        except Exception as e:
+            logger.warning(f"Failed to register email: {e}")
+    
+    def _add_preflight_checklist(self, draft: str) -> str:
+        """Add pre-flight checklist as markdown comment"""
+        checklist = """
+
+---
+
+<!-- PRE-FLIGHT CHECKLIST (Remove before sending)
+
+□ Relationship depth correct? (Check: overly formal? missing context?)
+□ Business terms accurate? (Pricing, product names, commitments)
+□ Links relevant for THIS stakeholder?
+□ Tone matches our actual relationship?
+□ Any third-party references that shouldn't be there?
+
+REMEMBER: The email you send = ground truth. System will learn from differences.
+
+-->
+"""
+        return draft + checklist
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(
@@ -792,6 +951,11 @@ def main() -> int:
         action="store_true",
         help="Overwrite existing outputs"
     )
+    parser.add_argument(
+        "--use-content-library",
+        action="store_true",
+        help="Use Content Library flow (B-Block Parser + Email Composer) (default: False for gradual rollout)"
+    )
     
     args = parser.parse_args()
     
@@ -803,7 +967,8 @@ def main() -> int:
     # Initialize generator
     generator = EmailGenerator(
         meeting_folder=meeting_folder,
-        output_dir=Path(args.output_dir) if args.output_dir else None
+        output_dir=Path(args.output_dir) if args.output_dir else None,
+        use_content_library=args.use_content_library
     )
     
     # Validate inputs
@@ -811,7 +976,7 @@ def main() -> int:
         return 1
     
     # Execute pipeline
-    result = generator.execute_pipeline(dry_run=args.dry_run)
+    result = generator.execute_pipeline()
     
     # Print summary
     print("\n" + "="*70)

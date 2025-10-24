@@ -1,10 +1,13 @@
 {
   "meta": {
-    "version": "1.7.0",
+    "version": "1.8.0",
     "source": "Consolidated from Companion [05] - Essential Links v1.6",
-    "last_updated": "2025-10-09",
+    "last_updated": "2025-10-22",
     "format": "N5-native",
-    "description": "Canonical source for Vrijen and Careerspan essential links"
+    "description": "Canonical source for Vrijen and Careerspan essential links",
+    "deprecated": true,
+    "deprecation_note": "⚠️ DEPRECATED: This file is being replaced by content-library.json (v1.0.0). Migrated 2025-10-22. Will be archived to Documents/Archive/ after all workflows updated.",
+    "replacement": "N5/prefs/communication/content-library.json"
   },
   "meeting_booking": {
     "vrijen_only": {
@@ -47,5 +50,20 @@
   },
   "tools": {
     "bs_detector": "https://crystal-ball.mycareerspan.com/detector"
+  },
+  "referrals": {
+    "zo_computer": {
+      "promo_code": "VATT50",
+      "signup_link": "https://www.zo.computer/?promo=VATT50"
+    }
+  },
+  "talent_acquisition": {
+    "careerspan_plus_survey": "https://6pyx0f2cd8h.typeform.com/to/QHDL7N3n"
+  },
+  "guides": {
+    "job_search_readiness": "https://careerspan.short.gy/careerspanjobsearchreadiness",
+    "cover_letter_101": "https://careerspan.short.gy/coverletter101",
+    "resume_optimization": "https://careerspan.short.gy/careerspanresumekeywords",
+    "mckinsey_consulting_mba": "https://www.notion.so/vattawar/Interviewing-At-McKinsey-3903b5f328e54d11bb2275f8b3eafdcf"
   }
 }

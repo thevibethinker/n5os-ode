@@ -123,7 +123,7 @@ Knowledge/personal-brand/social-content/linkedin/
 ### 10-Step Process
 
 1. **Input Validation**: Verify seed content and parameters
-2. **Voice Schema Resolution**: Load `voice.md` (v3.1.0), `essential-links.json`, `linkedin-stop-verbs.json`
+2. **Voice Schema Resolution**: Load `voice.md` (v3.1.0), `content-library.json`, `linkedin-stop-verbs.json`
 3. **Seed Content Parsing**: Extract key ideas, stats, anecdotes, linguistic patterns
 4. **Auto-Dial Inference**: Detect formality, warmth, CTA rigour (unless overridden)
 5. **Structure Selection**: Choose post format (story, stat-lead, contrarian take)
@@ -231,7 +231,7 @@ linkedin-post-generate \
 ### Prefs Dependencies
 
 - ✅ `N5/prefs/communication/voice.md` (v3.0)
-- ✅ `N5/prefs/communication/essential-links.json` (v1.7)
+- ✅ `N5/prefs/communication/content-library.json` (v1.7)
 - ✅ `N5/prefs/communication/linkedin-stop-verbs.json` (v1.0)
 
 ### Knowledge Output

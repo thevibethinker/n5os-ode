@@ -26,7 +26,7 @@ mio --transcript_path "/path/to/your/transcript.txt" --meeting_id "unique_meetin
 
 *   `--transcript_path`: Absolute path to the meeting transcript file (required).
 *   `--meeting_id`: A unique identifier for the meeting (e.g., a timestamp or a slug derived from the meeting title) (required).
-*   `--essential_links_path`: Path to the essential links JSON file. (Default: `/home/workspace/N5/prefs/communication/essential-links.json`)
+*   `--essential_links_path`: Path to the essential links JSON file. (Default: `/home/workspace/N5/prefs/communication/content-library.json`)
 *   `--block_registry_path`: Path to the block type registry JSON file. (Default: `/home/workspace/N5/prefs/block_type_registry.json`)
 
 ## Generated Smart Blocks

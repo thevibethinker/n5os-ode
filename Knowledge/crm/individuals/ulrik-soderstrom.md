@@ -1,36 +1,43 @@
----
-name: "Ulrik Soderstrom"
-email_primary: ""
-email_aliases: []
-organization: "McKinsey Alumni Founders Monthly"
-role: "Organizer, McKinsey Alumni Founders Monthly"
-first_contact: "2025-09-09"
-last_updated: "2025-10-14"
-lead_type: "LD-INV"
-status: "active"
-interaction_count: 0
-last_interaction: "2025-09-09"
----
-
 # Ulrik Soderstrom
 
-- Role: Organizer, McKinsey Alumni Founders Monthly
-- Organization: McKinsey Alumni Founders Monthly
-- Source: Meeting — McKinsey Alumni Founders Monthly (2025-09-09)
-- Contact notes: Host/organizer; maintains resource guide and coordinates pitch sessions
-- Enrichment priority: MEDIUM
-- Next enrichment tasks:
-  - [ ] LinkedIn profile lookup
-  - [ ] Confirm contact email for organizer/analyst (Matthew)
-  - [ ] Identify regular investor attendees
+## Profile
 
-**Raw source:** N5/inbox/meeting_requests/2025-09-09_external-mckinsey-alumni-founders-monthly_request.json
+**Organization**: Benchmark Labs (Founder/CEO)  
+**Role**: McKinsey Founders Orbit Co-organizer  
+**Primary Email**: [Unknown - needs enrichment]  
+**LinkedIn**: [Unknown - needs enrichment]  
+**Location**: [Unknown - needs enrichment]  
 
+## Relationship Context
 
----
+**Stakeholder Type**: #stakeholder:community  
+**Enrichment Priority**: MEDIUM  
+**First Contact**: 2025-10-23 (McKinsey Orbit Monthly Meeting)  
+**Last Contact**: 2025-10-23  
 
-## Domain Authority & Source Credibility
+**Relationship Summary**: Co-organizer of McKinsey Founders Orbit alongside Oscar. Founder of Benchmark Labs (climate/construction tech). Experienced navigator of policy-driven market shifts—pivoted from offshore wind to construction after 2024 election.
 
-**Primary contact / host observed:** Ulrik Soderstrom — organizer and active curator (reasonable authority within this community)
+## Key Insights
 
-**Credibility notes:** Community activities (resource guide, pitch sessions) are operational signals of a functioning founder network.
+- Climate tech founder who learned hard lesson about policy risk timing (lost full year on offshore wind pivot)
+- Currently working on construction sector after pivoting away from offshore wind
+- Strong facilitator for community discussions (led government contracting conversation)
+- McKinsey alum (mentioned living in D.C. previously, taking train to Silver Spring/Noaa)
+
+## Mutual Acquaintances
+
+[None identified - needs enrichment]
+
+## Next Actions
+
+- [ ] LinkedIn research on Ulrik's background and Benchmark Labs
+- [ ] Research Benchmark Labs pivot from offshore wind to construction
+- [ ] Identify mutual connections in McKinsey alumni network or climate tech ecosystem
+
+## Meeting History
+
+- 2025-10-23: McKinsey Founders Orbit Monthly Meeting (file N5/records/meetings/2025-10-23_external-mckinsey-founders-orbit-monthly-meeting/)
+
+## Tags
+
+#stakeholder:community #founder:climate-tech #case-study:policy-pivot

@@ -8,13 +8,15 @@
 
 **Who to whom:** Stephanie Szuch (Director at Education at Work) to Michael Berlingo (Founder, Starter U)
 
-**Why relevant:** 
+**Why relevant:**
+
 - Starter U focuses on "starter jobs" placement with dignity-first philosophy
 - Michael actively seeks large student populations and university partnerships
 - EAW needs employment pipeline for students/alumni post-program
 - Strong mission alignment: both focused on quality entry-level opportunities for underserved populations
 
 **Context to include:**
+
 - EAW recently joined ASA (American Student Assistance) as parent org, bringing significant resources and network access
 - EAW students are vetted, proven professionals with work experience (higher baseline than typical recent grads)
 - Stephanie is exploring partnerships to bridge gap between EAW program completion and alumni employment

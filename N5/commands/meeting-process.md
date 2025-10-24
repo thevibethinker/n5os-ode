@@ -543,6 +543,9 @@ command 'email-post-process' for "{meeting_folder_name}"
 2. Check if email draft already exists
 3. Generate draft if needed → `file DELIVERABLES/follow_up_email_copy_paste.txt` 
 4. Send SMS notification when complete
+5. Enforce output-only contract via `file 'N5/scripts/email_validator.py'` (rejects artifacts/code, requires ≥120 words)
+6. Store raw model output under `RAW/EMAIL.md`; logs under `LOGS/email_postprocess.log`
+7. Symlink standard (Option C): create/update `file 'Records/Company/emails/{meeting_id}_follow_up_email.txt'` → points to DELIVERABLES file
 
 **SMS Notification:**
 

@@ -1,59 +1,35 @@
-# Social Media Voice Profile for Vrijen Attawar
-
-**Version:** 1.0  
-**Last Updated:** 2025-10-17  
-**Purpose:** Tailored voice profile for LinkedIn posts, newsletters, external blogs, and public-facing marketing content.
+## WARM_INTRO_BIDIRECTIONAL
 
 ---
 
-## Core Attributes
+### Intros David Can Make (When Vrijen Gives Green Light - Early November)
 
-- Conversational yet deliberate
-- Warm and approachable tone
-- High confidence balanced with strategic vulnerability
-- Use of rhetorical questions and provocative framing
-- Frequent emoji use as structural and tonal markers
-- Preference for short paragraphs and line breaks to aid skimmability
-- Strategic repetition for emphasis
+**1. Shauna (Vibes - Chief People Officer)**
 
----
+- **Why relevant:** Community partnership for distributing Careerspan to Vibes network
+- **Context to include:** Vrijen is founder of Careerspan (career narrative platform), looking to partner with community leaders who serve job seekers; David has seen the product and believes Vibes members would benefit
+- **Timing:** Hold until early November when Careerspan has clean positioning
+- **Status:** Vrijen explicitly asked David to wait
 
-## Archetypes
+**2. HA (Sidebar)**
 
-- **Origin Story:** Vulnerable, narrative arc, personal confession
-- **Problem-Solution:** Clear pain point, product/service pitch
-- **Educational Threads:** Frameworks, mental models, process breakdowns
-- **Rants:** High edge, humor, community callouts
-- **Milestone Announcements:** Brief, celebratory, humble
+- **Why relevant:** Community partnership, potential collaboration on career coaching/support
+- **Context to include:** Careerspan's longitudinal narrative approach aligns with Sidebar's community values; David sees overlap in user base
+- **Timing:** Hold until early November
+- **Status:** Vrijen explicitly asked David to wait
+
+**David's Quote:** "What other intros can I make?" (32:54) - proactive offer showing strong relationship
 
 ---
 
-## Stylistic Techniques
+### Intros Vrijen Could Make (Not Discussed, But Potential)
 
-- Em-dash to create urgency or asides
-- Single-sentence paragraphs for impact
-- Humor and self-deprecation to humanize
-- Bulleted lists with emojis
-- Strategic question usage for engagement
+None explicitly discussed in this meeting.
 
 ---
 
-## Dimensional Metrics (approximate ranges)
+### Notes
 
-| Dimension      | Range                | Description
-|----------------|----------------------|------------
-| Warmth         | 0.80 - 0.85          | Friendly, inviting tone
-| Confidence     | 0.70 - 0.85          | Assertive but not arrogant
-| Humility       | 0.30 - 0.60          | Varies by post type
-| Edge/Provocation| 0.30 - 0.75         | Medium to high in rants
-| Precision      | 0.75 - 0.90          | Clear and direct language
-| Accessibility  | 0.80 - 0.90          | Simple, jargon-free
-| Rhythm         | High variation       | Mixing short and longer sentences
+Vrijen's explicit request to hold intros until November is strategic: "Let's hold intros for just a beat so that we can get internally organized around some of the issues that we discussed today. But I don't suspect that will be a process longer than the rest of October."
 
----
-
-## Usage Guidance
-
-Use this voice profile strictly for social media posts, newsletters, and external blogs.
-Avoid blending with professional email or internal communication voice.
-
+This is smart - don't waste warm intros with unclear positioning. Better to have confident, clean pitch in November than desperate, disorganized pitch now.

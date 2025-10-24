@@ -14,7 +14,7 @@ import json
 import shutil
 import argparse
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Dict, List, Optional, Tuple
 import tempfile  # For atomic writes
 
@@ -309,7 +309,7 @@ class ThreadExporter:
             "telemetry": {
                 "artifacts_created": len(artifacts_data),
                 "total_size_bytes": sum(a['size_bytes'] for a in self.artifacts),
-                "aar_generated_by": "Vrijen The Vibe Thinker (Zo)",
+                "aar_generated_by": "Vrijen The Vibe Strategist (Zo)",
                 "aar_generation_method": "interactive"
             },
             "metadata": {
@@ -456,6 +456,39 @@ class ThreadExporter:
         """Wrapper method for inventory_artifacts"""
         self.artifacts = self.inventory_artifacts()
     
+    def inventory_recent_workspace_artifacts(self, lookback_hours: int = 6) -> List[Dict]:
+        """Scan key workspace dirs for recently modified files to improve title specificity."""
+        now = datetime.now(timezone.utc)
+        cutoff = now - timedelta(hours=lookback_hours)
+        recent: List[Dict] = []
+        scan_dirs = [
+            ROOT / "N5" / "scripts",
+            ROOT / "N5" / "docs",
+            ROOT / "N5" / "prefs",
+            ROOT / "N5" / "commands",
+        ]
+        for d in scan_dirs:
+            if not d.exists():
+                continue
+            for fp in d.rglob("*"):
+                if not fp.is_file():
+                    continue
+                try:
+                    mtime = datetime.fromtimestamp(fp.stat().st_mtime, tz=timezone.utc)
+                    if mtime >= cutoff:
+                        recent.append({
+                            "filename": fp.name,
+                            "path": fp,
+                            "relative_path": fp.relative_to(ROOT),
+                            "size_bytes": fp.stat().st_size,
+                            "created_at": datetime.fromtimestamp(fp.stat().st_ctime, tz=timezone.utc).isoformat(),
+                            "modified_at": mtime.isoformat(),
+                            "type": self._classify_file(fp)
+                        })
+                except Exception:
+                    continue
+        return recent
+
     def generate_smart_aar(self) -> Dict:
         """Generate intelligent AAR using content extraction (Phase 3)"""
         smart_responses = {
@@ -1196,15 +1229,21 @@ def main():
         # Create temporary exporter to analyze artifacts
         temp_exporter = ThreadExporter(thread_id, "temp", dry_run=True)
         temp_exporter.discover_artifacts()
+        recent = temp_exporter.inventory_recent_workspace_artifacts(lookback_hours=6)
+        combined_artifacts = temp_exporter.artifacts + recent
         
-        # Generate smart AAR for content analysis
+        # Generate smart AAR for content analysis and inject combined artifacts
         temp_aar = temp_exporter.generate_smart_aar()
+        temp_aar["artifacts"] = [
+            {"type": a.get("type", "other"), "filename": str(a.get("relative_path", a.get("filename")))}
+            for a in combined_artifacts
+        ]
         
         # Generate title options
         title_generator = TitleGenerator()
         title_options = title_generator.generate_titles(
             temp_aar,
-            temp_exporter.artifacts
+            combined_artifacts
         )
         
         if title_options and not args.yes:

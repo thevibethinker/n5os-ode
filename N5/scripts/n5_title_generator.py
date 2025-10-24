@@ -116,50 +116,112 @@ class TitleGenerator:
         return options[:max_options]
     
     def _extract_primary_entity(self, text: str, aar_data: Dict) -> str:
-        """Extract main subject/entity (noun)"""
+        """Extract main subject/entity (noun) - BE SPECIFIC, avoid generic terms"""
         text_lower = text.lower()
         
-        # Common entities (order matters - most specific first)
+        # Phase 1: Scan artifacts for SPECIFIC system names
+        artifacts = aar_data.get('artifacts', [])
+        specific_systems = []
+        
+        # Low-signal filters
+        def is_low_signal(name: str) -> bool:
+            n = name.lower()
+            if n.endswith('.log') or n.endswith('.tmp') or n.endswith('.bak'):
+                return True
+            bad_terms = ['step', 'flow', 'generate', 'legacy', 'test', 'demo', 'sample']
+            return any(bt in n for bt in bad_terms)
+        
+        # Mapping from filename fragments to canonical system names
+        component_map = [
+            ('content_library', 'Content Library'),
+            ('content-library', 'Content Library'),
+            ('email_corrections', 'Email Validation'),
+            ('email-corrections', 'Email Validation'),
+            ('gmail_monitor', 'Gmail Monitor'),
+            ('gmail-monitor', 'Gmail Monitor'),
+            ('email_registry', 'Email Registry'),
+            ('email-registry', 'Email Registry'),
+            ('b_block_parser', 'B-Block Parser'),
+            ('b-block-parser', 'B-Block Parser'),
+            ('email_composer', 'Email Composer'),
+            ('email-composer', 'Email Composer'),
+            ('n5_follow_up_email_generator', 'Follow-Up Email Generator'),
+            ('follow_up_email_generator', 'Follow-Up Email Generator'),
+        ]
+        
+        # First pass: use component_map matches
+        for artifact in artifacts:
+            fname = str(artifact.get('filename', '') or artifact.get('relative_path', '')).lower()
+            if not fname or is_low_signal(fname):
+                continue
+            for frag, canon in component_map:
+                if frag in fname:
+                    if canon not in specific_systems:
+                        specific_systems.append(canon)
+        
+        # Second pass: derive names from filenames (capitalized words), still filtered
+        if not specific_systems:
+            for artifact in artifacts:
+                fname = str(artifact.get('filename', '') or artifact.get('relative_path', '')).lower()
+                if not fname or is_low_signal(fname):
+                    continue
+                base = fname.rsplit('.', 1)[0]
+                base = base.replace('_', ' ').replace('-', ' ')
+                words = [w.capitalize() for w in base.split() if len(w) > 2]
+                if words:
+                    candidate = ' '.join(words[:3])
+                    if candidate and candidate not in ['Script', 'Module', 'File'] and candidate not in specific_systems:
+                        specific_systems.append(candidate)
+        
+        # If we found multiple specific systems, combine them
+        if len(specific_systems) >= 2:
+            return f"{specific_systems[0]} + {specific_systems[1]}"
+        elif len(specific_systems) == 1:
+            return specific_systems[0]
+        
+        # Phase 2: Specific entity patterns (order matters - most specific first)
         entity_patterns = [
-            # System components
-            (r'\b(crm|customer relationship)', "CRM"),
-            (r'\b(gtm|go[- ]to[- ]market)', "GTM"),
-            (r'\b(n5|n5 os|n5 system)', "N5"),
-            (r'\b(email system|mail system)', "Email System"),
-            (r'\b(meeting system|meeting prep)', "Meeting System"),
-            (r'\b(thread|conversation)', "Thread"),
+            # SPECIFIC system names (from common N5 components)
+            (r'\b(content library|content-library)', "Content Library"),
+            (r'\b(email validation|email validator|email-validator)', "Email Validation"),
+            (r'\b(meeting parser|meeting-parser)', "Meeting Parser"),
+            (r'\b(b-block|bblock)', "B-Block Parser"),
+            (r'\b(email composer|email-composer)', "Email Composer"),
+            (r'\b(gmail monitor|gmail-monitor)', "Gmail Monitor"),
+            (r'\b(email registry|email-registry)', "Email Registry"),
+            (r'\b(follow[-_ ]up email generator)', 'Follow-Up Email Generator'),
+            (r'\b(crm consolidation|crm-consolidation)', "CRM Consolidation"),
+            (r'\b(meeting intelligence|meeting-intelligence)', "Meeting Intelligence"),
+            (r'\b(thread export|thread-export)', "Thread Export"),
+            (r'\b(timeline automation|timeline-automation)', "Timeline Automation"),
+            (r'\b(personal intelligence|personal-intelligence)', "Personal Intelligence"),
+            (r'\b(stakeholder enrichment|stakeholder-enrichment)', "Stakeholder Enrichment"),
             
-            # Content types
-            (r'\b(article|blog post)', "Article"),
-            (r'\b(persona|profile)', "Persona"),
-            (r'\b(command|workflow)', "Command"),
-            (r'\b(script|automation)', "Script"),
-            (r'\b(dashboard|report)', "Dashboard"),
-            (r'\b(linkedin|social media)', "LinkedIn"),
+            # Broader but still specific
+            (r'\b(crm system)', "CRM System"),
+            (r'\b(email system)', "Email System"),
+            (r'\b(meeting system)', "Meeting System"),
+            (r'\b(n5 os|n5 system)', "N5 OS"),
             
-            # Business
-            (r'\b(stakeholder|contact)', "Stakeholder"),
-            (r'\b(opportunity|deal)', "Opportunity"),
-            (r'\b(timeline|schedule)', "Timeline"),
-            (r'\b(deliverable|output)', "Deliverable"),
+            # Content types (still specific)
+            (r'\b(linkedin post|linkedin content)', "LinkedIn Post"),
+            (r'\b(system docs?)', "System Docs"),
+            (r'\b(command workflow)', "Command Workflow"),
+            (r'\b(automation script)', "Automation Script"),
         ]
         
         for pattern, entity in entity_patterns:
             if re.search(pattern, text_lower):
                 return entity
         
-        # Fallback: Extract first capitalized phrase from objective
+        # Phase 3: Extract from objective (look for capitalized multi-word phrases)
         objective = aar_data.get("objective", "")
-        words = objective.split()
-        if words:
-            # Find first noun-looking word (capitalized or important)
-            for word in words[:5]:  # Check first 5 words
-                if len(word) > 3 and (word[0].isupper() or word.lower() in [
-                    "system", "process", "workflow", "document", "feature"
-                ]):
-                    return word.capitalize()
+        capitalized_phrases = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)', objective)
+        if capitalized_phrases:
+            return capitalized_phrases[0]
         
-        return "System"
+        # Last resort fallback - but flag it as generic
+        return "System Work"  # This will trigger a warning that title needs improvement
     
     def _extract_primary_action(self, text: str, aar_data: Dict) -> str:
         """Extract main action/descriptor"""

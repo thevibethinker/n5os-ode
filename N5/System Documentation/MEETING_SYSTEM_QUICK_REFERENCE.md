@@ -440,10 +440,10 @@ For each processed transcript:
 - Ensure file exists
 
 **\"Configuration File Missing\"**
-**Error:** `FileNotFoundError: essential-links.json not found`  
+**Error:** `FileNotFoundError: content-library.json not found`  
 **Solution:**
 - Check default paths exist:
-  - `/home/workspace/N5/prefs/communication/essential-links.json`
+  - `/home/workspace/N5/prefs/communication/content-library.json`
   - `/home/workspace/N5/prefs/block_type_registry.json`
 - Use `--essential_links_path` and `--block_registry_path` arguments
 
@@ -642,7 +642,7 @@ ls -lt /home/workspace/N5/records/meetings/ | head -1
 
 ### Configuration
 - **Block Registry:** `file 'N5/prefs/block_type_registry.json'`
-- **Essential Links:** `file 'N5/prefs/communication/essential-links.json'`
+- **Essential Links:** `file 'N5/prefs/communication/content-library.json'`
 
 ### Schemas
 - **Metadata:** `file 'N5/schemas/meeting-metadata.schema.json'`

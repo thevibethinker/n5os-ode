@@ -1,19 +1,22 @@
 ---
-date: '2025-10-08T22:41:14Z'
-last-tested: '2025-10-16T19:00:00Z'
-generated_date: '2025-10-08T22:41:14Z'
+date: "2025-10-08T22:41:14Z"
+last-tested: "2025-10-16T19:00:00Z"
+generated_date: "2025-10-08T22:41:14Z"
 checksum: conversation_end_v1_1_0
-tags: ['conversation', 'workflow']
+tags:
+  - conversation
+  - workflow
 category: productivity
 priority: medium
-related_files: ['N5/scripts/n5_conversation_end.py', 'N5/scripts/build_tracker.py']
+related_files:
+  - N5/scripts/n5_conversation_end.py
+  - N5/scripts/build_tracker.py
 anchors:
-  input: null
-  output: /home/workspace/N5/commands/conversation-end.md
+  - object Object
 ---
 # `conversation-end`
 
-**Version**: 1.1.0  
+**Version**: 1.1.0\
 **Summary**: Formal conversation end-step - review temp files, propose organization, execute cleanup, archive build tracker
 
 ---
@@ -21,6 +24,7 @@ anchors:
 ## Purpose
 
 The **conversation end-step** is a formal phase (like Magic: The Gathering's end step) where all conversation effects are resolved:
+
 - Review files created in conversation workspace
 - Propose permanent locations based on file type and context
 - Execute batch file moves with user confirmation
@@ -35,11 +39,13 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 ## When to Use
 
 **Explicit triggers**:
+
 - User says: "End conversation", "Close thread", "Wrap up", "conversation-end"
 - User exports conversation (export includes end-step)
 - User marks conversation as "closed"
 
 **Implicit triggers** (with confirmation):
+
 - Conversation inactive for 24+ hours
 - User starts new conversation on unrelated topic
 - System detects natural conversation completion
@@ -49,13 +55,17 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 ## End-Step Workflow
 
 ### Phase -1: Lesson Extraction
+
 **Auto-detect significant conversations and extract reusable lessons**
+
 - Scans conversation for system work, troubleshooting, patterns
 - Generates lesson entries for N5/lessons/
 - Non-blocking (continues even if extraction times out)
 
 ### Phase 0: After-Action Report (AAR)
+
 **Capture conversation context before cleanup**
+
 - Runs `thread-export` with auto-confirm
 - Generates AAR JSON + markdown
 - Archives to N5/logs/threads/
@@ -63,11 +73,85 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 
 ---
 
+### Phase 0.5: Artifact Symlinking (NEW)
+
+**Link deliverables to AAR artifacts folder**
+
+**Purpose**: Maintain provenance between conversation and deliverables without duplicating files. All significant outputs from a conversation should be accessible from its AAR folder via symlinks.
+
+**What Qualifies as Artifact**:
+
+- **Created deliverables**: Scripts, commands, documents, reports, social posts
+- **Modified critical files**: Updated N5 infrastructure, knowledge files
+- **Workflow docs**: Debug notes, next-steps documents, design docs
+- **NOT artifacts**: Temp files, scratch work, conversation state (already in AAR)
+
+**Process**:
+
+1. **Identify** all deliverables created/modified during conversation
+2. **Verify** they're in correct N5 locations (Documents/, Knowledge/, N5/commands/, etc.)
+3. **Symlink** to `N5/logs/threads/{date}_{title}_{id}/artifacts/`
+4. **Use descriptive names** for symlinks (not just original filename)
+
+**Symlink Naming Conventions**:
+
+```bash
+# Original location → Symlink name pattern
+Documents/Drafts/X.md → artifact-name.md
+Documents/Social/LinkedIn/*.md → social_angle-description.md
+N5/commands/*.md → command_name.md
+N5/scripts/*.py → script_name.py
+Knowledge/**/*.md → category_name.md
+N5/digests/*.md → digest_name.md
+```
+
+**Example**:
+
+```bash
+cd /home/workspace/N5/logs/threads/2025-10-21-1210_✅-System-Work_kkgp/artifacts/
+
+# Demo materials
+ln -sf /home/workspace/Documents/Drafts/zo_demo_script.md ./demo_script.md
+ln -sf /home/workspace/N5/digests/COMPARISON-baseline-vs-enhanced.md ./comparison_materials.md
+
+# Social content (multiple angles)
+ln -sf /home/workspace/Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE1-founder-pain.md ./social_angle1_founder-pain.md
+ln -sf /home/workspace/Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE2-technical.md ./social_angle2_technical.md
+
+# Infrastructure
+ln -sf /home/workspace/Knowledge/personal-brand/bio.md ./bio.md
+ln -sf /home/workspace/N5/commands/social-post-generate-multi-angle.md ./command_social-multi-angle.md
+ln -sf /home/workspace/N5/scripts/modules/knowledge_scanner.py ./script_knowledge_scanner.py
+```
+
+**Verification**:
+
+```bash
+# Check all artifacts are symlinked
+ls -lah artifacts/
+# Should show: symlinks pointing to actual file locations, not copies
+
+# Verify originals are in correct N5 structure
+# Documents/Drafts/, Documents/Social/, Knowledge/, N5/commands/, N5/scripts/, etc.
+```
+
+**Benefits**:
+
+- ✅ Single source of truth (no file duplication)
+- ✅ AAR folder provides complete provenance
+- ✅ Files stay in correct N5 locations
+- ✅ Easy to see all outputs from a conversation
+- ✅ Symlinks survive file moves (absolute paths)
+
+**Enforcement**: P5 (Anti-Overwrite) - never copy files to AAR, always symlink.
+
+---
+
 ## Command Relationship (clarification)
 
-- conversation-end is the orchestrator for formal thread closure.
-  - It invokes Phase -1 (lessons extraction via `N5/scripts/n5_lessons_extract.py`).
-  - It invokes Phase 0 (AAR generation via `thread-export`, i.e., `N5/scripts/n5_thread_export.py`).
+- conversation-end is the orchestrator for formal thread closure. 
+  - It invokes Phase -1 (lessons extraction via `file N5/scripts/n5_lessons_extract.py`).
+  - It invokes Phase 0 (AAR generation via `thread-export`, i.e., `file N5/scripts/n5_thread_export.py`).
 - thread-export can be run standalone for mid-thread checkpoints or quick AARs without the full end-step.
 - If you are closing a thread, prefer running conversation-end; it will call thread-export for you.
 - If you only need an AAR snapshot during an ongoing thread, run thread-export directly.
@@ -75,10 +159,11 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 ---
 
 ### Phase 1: File Organization
+
 **Inventory & classify conversation files**
 
 1. **Scan** conversation workspace for all files
-2. **Classify** by type and content:
+2. **Classify** by type and content: 
    - Images → Images/
    - Transcripts → Document Inbox/Company/meetings/
    - Reports → Documents/
@@ -91,52 +176,64 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 6. **Log** all actions to N5/runtime/conversation_ends.log
 
 ### Phase 2: Workspace Root Cleanup
+
 **Remove conversation artifacts from workspace root**
+
 - Runs `n5_workspace_root_cleanup.py --execute`
 - Removes temporary files, logs, caches
 - Preserves intentional files (marked or documented)
 
 ### Phase 2.5: Placeholder & Stub Detection
+
 **Enforce P16 (Accuracy) and P21 (Document Assumptions)**
-- Runs `n5_placeholder_scan.py`
+
+- Runs `file n5_placeholder_scan.py`
 - Detects TODO, FIXME, placeholder comments
 - Flags incomplete implementations
 - **Requires resolution** before continuing (or acknowledgement)
 - User options: Fix now, Document as intentional, Acknowledge & log
 
 ### Phase 3: Personal Intelligence Update
+
 **Update personal intelligence layer (autonomous)**
-- Runs `update_personal_intelligence.py`
+
+- Runs `file update_personal_intelligence.py`
 - Processes conversation artifacts
 - Updates knowledge graph/embeddings
 - Non-blocking (continues on error)
 
-### Phase 3.5: Build Tracker Archival **[NEW]**
+### Phase 3.5: Build Tracker Archival **\[NEW\]**
+
 **Archive completed tasks from build tracker**
+
 - **Detects** BUILD_MAP.md in conversation workspace
 - **Checks** if build session is already closed
-- **Generates archive** of completed tasks to `N5/logs/build-sessions/archive/{convo_id}_completed.jsonl`
+- **Generates archive** of completed tasks to `file N5/logs/build-sessions/archive/{convo_id}_completed.jsonl`
 - **Closes session** by logging `session_closed` event
 - **Refreshes BUILD_MAP** to hide completed tasks (only shows active/open)
 - **Non-destructive**: Full session log preserved for audit trail
 - **Result**: Tracker stays focused, completed work archived
 
 **Archive Format:**
+
 ```jsonl
 {"type": "session_archive", "convo_id": "con_XXX", "archived_at": "2025-10-16T19:00:00Z", "task_count": 3}
 {"type": "task_completed", "task": "Feature Implementation", "added_at": "...", "completed_at": "...", "state": "complete"}
 ```
 
 **Impact:**
+
 - Completed tasks no longer appear in BUILD_MAP after conversation-end
 - Tracker can hold more than 5 items without getting cluttered
 - Historical record maintained in session log + archive
 - Future conversations see clean, focused task list
 
 ### Phase 4: Git Status Check
+
 **Ensure work is saved**
+
 - Runs `git status --short`
-- If changes detected:
+- If changes detected: 
   - Shows uncommitted files
   - Runs `git-check` audit for staged changes
   - Prompts user to commit (Y/n)
@@ -145,14 +242,18 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 - Skipped in --auto mode
 
 ### Phase 5: Thread Title Generation
+
 **Auto-generate descriptive thread title**
+
 - Analyzes conversation content
 - Generates concise, descriptive title
 - Updates thread metadata
 - Future feature (placeholder)
 
 ### Phase 6: Optional Archive
+
 **Archive conversation for long-term storage**
+
 - Compress conversation workspace
 - Move to N5/archive/{date}/
 - Only if requested or conversation is significant
@@ -161,6 +262,7 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 ---
 
 ### Phase 1: Inventory
+
 ```bash
 # List all files created during conversation
 find /home/.z/workspaces/con_[ID]/ -type f -newer [CONVERSATION_START]
@@ -175,27 +277,31 @@ find /home/.z/workspaces/con_[ID]/ -type f -newer [CONVERSATION_START]
 ```
 
 ### Phase 2: Classification
+
 For each file, determine:
+
 - **File type**: Extension, content analysis
 - **Purpose**: What was it created for? (from conversation context)
 - **Value**: Permanent vs temporary
 - **Destination**: Where should it live permanently?
 
 Classification matrix:
+
 | Pattern | Type | Destination | Action |
-|---------|------|-------------|--------|
-| *.png, *.jpg | Generated image | Images/ | Move with date prefix |
-| *.png (temp_*, chart_*) | Temp visualization | - | Delete |
+| --- | --- | --- | --- |
+| \*.png, \*.jpg | Generated image | Images/ | Move with date prefix |
+| *.png (temp\_*, chart\_\*) | Temp visualization | \- | Delete |
 | *meeting*.md, *transcript*.md | Meeting record | Records/Company/meetings/ | Move with date |
 | *analysis*.md, *report*.md | Analysis/report | Documents/ | Move with date |
-| *.py (user-requested) | Permanent script | Code/ | Move |
-| *.py (temporary) | Temp automation | - | Delete |
-| *.csv, *.json (export) | Data export | Exports/ | Move |
-| *.csv, *.json (intermediate) | Processing temp | - | Delete |
+| \*.py (user-requested) | Permanent script | Code/ | Move |
+| \*.py (temporary) | Temp automation | \- | Delete |
+| \*.csv, \*.json (export) | Data export | Exports/ | Move |
+| \*.csv, \*.json (intermediate) | Processing temp | \- | Delete |
 | *article*.md, saved_page.md | Saved article | Articles/ | Move |
-| *.md (draft) | Temporary note | - | Delete or ask |
+| \*.md (draft) | Temporary note | \- | Delete or ask |
 
 **Propose Moves**:
+
 ```markdown
 ## Conversation End-Step: File Resolution
 
@@ -224,6 +330,7 @@ If ambiguous files exist, resolve those first.
 ```
 
 **Execute File Organization**:
+
 ```bash
 # Move permanent files
 for file in permanent_files:
@@ -240,6 +347,7 @@ echo "Conversation [ID] closed: [N] files moved, [M] deleted" >> N5/runtime/conv
 ```
 
 **Workspace Root Cleanup**:
+
 ```bash
 # Clean up conversation artifacts from workspace root
 n5_workspace_root_cleanup.py --execute
@@ -247,46 +355,51 @@ n5_workspace_root_cleanup.py --execute
 
 ### Phase 2.5: Placeholder & Stub Detection (NEW)
 
-**Script:** `N5/scripts/n5_placeholder_scan.py`
+**Script:** `file N5/scripts/n5_placeholder_scan.py`
 
 **Purpose:** Scan conversation workspace for incomplete code before it leaves conversation context
 
 **Enforces:** P16 (Accuracy), P21 (Document Assumptions)
 
 **Detection patterns:**
+
 - Comment placeholders (TODO, FIXME without explanation)
-- Fake data (test@example.com, 555-1234)
+- Fake data ([test@example.com](mailto:test@example.com), 555-1234)
 - Function stubs without docstrings
 - Invented constraints ("API limit of 5 messages" without citation)
 - Hardcoded paths (/Users/john/)
 - Empty exception handlers (P19 violation)
 
 **Exit codes:**
+
 - 0 = Clean, continue workflow
 - 1 = Issues found, BLOCK conversation-end
 - 2 = Scan error, continue with warning
 
 **User options when issues found:**
+
 1. **Fix now** - Return to conversation, abort conversation-end
 2. **Document as intentional** - Add `# DOCUMENTED:` prefix
 3. **Acknowledge & continue** - Log issues for later follow-up
 
 **Blocking behavior:**
+
 - User MUST choose option before conversation-end can proceed
 - Prevents incomplete work from leaving conversation context
 - Maintains quality standards at critical transition point
 
 **Auto mode:** If `--auto` flag present, issues are logged but don't block
 
-See: `file 'N5/commands/placeholder-scan.md'` for full details
+See: `file N5/commands/placeholder-scan.md` for full details
 
 ---
 
 ### Phase 3: Personal Intelligence Update (Autonomous)
 
-**Purpose**: Update the personal intelligence layer (`N5/intelligence/personal-understanding.json`) with observations from this conversation. Track V's intellectual, behavioral, emotional, and cognitive patterns.
+**Purpose**: Update the personal intelligence layer (`file N5/intelligence/personal-understanding.json`) with observations from this conversation. Track V's intellectual, behavioral, emotional, and cognitive patterns.
 
 **What to Track:**
+
 - **Intellectual patterns**: Problem-solving approaches, learning style, knowledge gaps revealed, technical/non-technical boundary pushing
 - **Behavioral patterns**: Decision-making in action, speed vs. perfection tradeoffs, system-building vs. execution ratio
 - **Emotional patterns**: Energy levels, frustration triggers, excitement indicators, late-night work patterns
@@ -294,30 +407,36 @@ See: `file 'N5/commands/placeholder-scan.md'` for full details
 - **Hypothesis tracking**: Evidence that confirms or disconfirms active hypotheses about V's patterns
 
 **Analysis Framework:**
+
 1. **Conversation Context**
+
    - What was V working on?
    - What was the nature of the work? (strategic, tactical, system-building, execution)
    - Time of day and duration
    - V's energy and engagement level
 
 2. **Decision Points**
+
    - What choices did V make?
    - Speed vs. perfection: Did V ship quickly or build infrastructure first?
    - Technical approach: Did V push technical boundaries or stay comfortable?
    - Feedback response: How did V respond to suggestions or pushback?
 
 3. **Pattern Signals**
+
    - **Confirming evidence**: Behaviors that match existing hypotheses
    - **Disconfirming evidence**: Behaviors that contradict hypotheses
    - **Novel observations**: New patterns not yet tracked
 
 4. **Hypothesis Updates**
+
    - Review active hypotheses in `hypothesis_tracking.active_hypotheses`
    - Add evidence_for or evidence_against based on conversation
    - Update confidence levels
    - Move to confirmed_patterns or disconfirmed_patterns if threshold reached
 
 **Execution:**
+
 ```bash
 # Run personal intelligence update script
 python3 /home/workspace/N5/scripts/update_personal_intelligence.py \
@@ -334,7 +453,8 @@ python3 /home/workspace/N5/scripts/update_personal_intelligence.py \
 ```
 
 **Output Example:**
-```
+
+```markdown
 ======================================================================
 PHASE 3: PERSONAL INTELLIGENCE UPDATE
 ======================================================================
@@ -363,23 +483,27 @@ H004: V's growth responsiveness → CONFIRMING EVIDENCE
 
 ---
 
-### Phase 3.5: Build Tracker Archival **[NEW]**
+### Phase 3.5: Build Tracker Archival **\[NEW\]**
+
 **Archive completed tasks from build tracker**
+
 - **Detects** BUILD_MAP.md in conversation workspace
 - **Checks** if build session is already closed
-- **Generates archive** of completed tasks to `N5/logs/build-sessions/archive/{convo_id}_completed.jsonl`
+- **Generates archive** of completed tasks to `file N5/logs/build-sessions/archive/{convo_id}_completed.jsonl`
 - **Closes session** by logging `session_closed` event
 - **Refreshes BUILD_MAP** to hide completed tasks (only shows active/open)
 - **Non-destructive**: Full session log preserved for audit trail
 - **Result**: Tracker stays focused, completed work archived
 
 **Archive Format:**
+
 ```jsonl
 {"type": "session_archive", "convo_id": "con_XXX", "archived_at": "2025-10-16T19:00:00Z", "task_count": 3}
 {"type": "task_completed", "task": "Feature Implementation", "added_at": "...", "completed_at": "...", "state": "complete"}
 ```
 
 **Impact:**
+
 - Completed tasks no longer appear in BUILD_MAP after conversation-end
 - Tracker can hold more than 5 items without getting cluttered
 - Historical record maintained in session log + archive
@@ -392,26 +516,29 @@ H004: V's growth responsiveness → CONFIRMING EVIDENCE
 **Purpose**: Ensure all work is committed to git before closing the conversation - prevents losing progress between threads.
 
 **Workflow**:
+
 1. Check git status for uncommitted changes
-2. If changes detected:
+2. If changes detected: 
    - Display `git status --short` output
    - Run `git-check` audit to check for overwrites/data loss
    - Prompt user: "Commit changes before ending conversation? (Y/n)"
-3. If user confirms:
+3. If user confirms: 
    - Prompt for commit message (default: "conversation-end: save progress")
    - Stage all changes with `git add -A`
    - Commit with provided message
    - Display commit summary
 4. If no changes: Report clean status and continue
 
-**Rationale**: 
+**Rationale**:
+
 - Adds intentional friction to prevent losing uncommitted work
 - Works with assumption that lessons/context carry over via thread-export
 - Every conversation-end becomes a checkpoint for git state
 - User explicitly confirms commit, no auto-commit surprises
 
 **Example output**:
-```
+
+```markdown
 ======================================================================
 PHASE 4: GIT STATUS CHECK
 ======================================================================
@@ -454,7 +581,12 @@ After git check, automatically generate thread titles:
 **Instructions:**
 1. Load `file 'N5/prefs/operations/thread-titling.md'` for format rules
 2. Load `file 'N5/config/emoji-legend.json'` for emoji selection
-3. Analyze conversation content and artifacts
+3. **Analyze conversation deeply:** 
+   - Review ALL deliverables/artifacts created
+   - Extract 2-3 concrete nouns that describe what was built
+   - Identify the primary system/feature/component worked on
+   - Be SPECIFIC: "Content Library System" not "System Work"
+   - Include key integrations if relevant: "X + Y Integration"
 4. Generate TWO titles:
    - **Current thread title**: For this conversation
    - **Next thread title**: For continuation (increment #N or add #2 if current has #1 or no number)
@@ -463,13 +595,28 @@ After git check, automatically generate thread titles:
 
 **Title Format (REQUIRED):**
 ```
-MMM DD | {emoji} {Title} {optional: #N}
+MMM DD | {emoji} {Specific-Entity} {Action/Type} {optional: #N}
 ```
 
-**Examples:**
+**Entity Guidelines:**
+- **Specific system names:** "Content Library", "Email Validator", "CRM Sync Engine"
+- **Not generic terms:** Avoid "System", "Tool", "Feature" alone
+- **Combined systems:** Use "X + Y" for dual implementations
+- **Include key components:** "Meeting Parser", "B-Block Extractor"
+
+**Good Examples:**
 ```
-Current:  Oct 16 | ✅ Thread Titling System
-Next:     Oct 16 | 🔗 Thread Titling System #2
+Oct 22 | ✅ Content Library + Email Validation Systems
+Oct 16 | 🔧 Meeting Intelligence Multi-Block Generator  
+Oct 14 | 🔗 CRM Consolidation Phase 2
+Oct 13 | 📰 GTM Strategy Docs & Market Research
+```
+
+**Bad Examples (Too Generic):**
+```
+Oct 22 | ✅ System Work              ← What system?
+Oct 16 | ✅ Implementation           ← What implementation?
+Oct 14 | 🔧 Refactor                ← Refactor of what?
 ```
 
 **Display Format:**
@@ -479,10 +626,10 @@ Next:     Oct 16 | 🔗 Thread Titling System #2
 ======================================================================
 
 Current Thread:
-  Oct 16 | ✅ Thread Titling System
+  Oct 22 | ✅ Content Library + Email Validation Systems
 
 Next Thread (for continuation):
-  Oct 16 | 🔗 Thread Titling System #2
+  Oct 22 | 🔗 Content Library Enhancement #2
 
 💡 Use these when naming threads in the Zo interface.
 ======================================================================
@@ -491,9 +638,11 @@ Next Thread (for continuation):
 **Rules:**
 - Always include date prefix ("MMM DD | ")
 - Use centralized emoji legend
-- Follow noun-first principle
+- Follow noun-first principle with SPECIFIC nouns
+- Extract key deliverable names from artifacts
 - Respect UI constraints (collapsed sidebar ~24 chars visible)
 - Include sequence numbers for linked work
+- Prioritize clarity over brevity (within constraints)
 
 ---
 
@@ -502,23 +651,27 @@ Next Thread (for continuation):
 **Purpose**: Automatically detect and capture timeline-worthy system changes during conversation-end.
 
 **Workflow**:
+
 1. Scan workspace for high-signal file changes
 2. Detect new commands, modified scripts, critical infrastructure changes
 3. Generate suggested timeline entry if significant work detected
 4. Prompt user to review and optionally add to system timeline
 
 **Detection Signals**:
+
 - New command files in N5/commands/ (created in last hour)
 - Multiple modified scripts in N5/scripts/ (≥2 files)
 - Recent changes to critical infrastructure files
 
 **User Options**:
+
 - Y - Add to timeline as-is
 - e - Edit entry before adding
 - n - Skip timeline update
 
 **Example output**:
-```
+
+```markdown
 ======================================================================
 PHASE 4.5: SYSTEM TIMELINE CHECK
 ======================================================================
@@ -552,6 +705,7 @@ Add to system timeline? (Y/e/n): Y
 ```
 
 **Rationale**:
+
 - Lightweight check that catches high-impact changes
 - Runs during natural workflow pause (conversation end)
 - Complements thread-export's deeper AAR-based detection
@@ -560,6 +714,7 @@ Add to system timeline? (Y/e/n): Y
 ---
 
 ### Phase 5: Archive (Optional)
+
 ```bash
 # If user requested conversation export/archive
 conversation_summary.md → Documents/Conversations/2025-10-08-[topic].md
@@ -574,6 +729,7 @@ conversation_metadata.json → N5/runtime/conversations/con_[ID].json
 ```
 
 ### Phase 6: Cleanup (Optional)
+
 ```bash
 # Remove conversation workspace (optional - done manually or via system cleanup)
 rm -rf /home/.z/workspaces/con_[ID]/
@@ -585,6 +741,7 @@ test -d /home/.z/workspaces/con_[ID]/ || echo "✓ Workspace cleaned"
 ## Version History
 
 ### 1.1.0 (2025-10-16)
+
 - **Added Phase 3.5:** Build Tracker Archival
 - Integration with build_tracker.py for task cleanup
 - Completed tasks archived, BUILD_MAP updated
@@ -592,6 +749,7 @@ test -d /home/.z/workspaces/con_[ID]/ || echo "✓ Workspace cleaned"
 - Addresses V's requirement: "tracker won't get full as long as it drops items once end-command has been fully run"
 
 ### 1.0.0 (2025-10-08)
+
 - Initial implementation
 - 6-phase workflow
 - File organization, workspace cleanup
