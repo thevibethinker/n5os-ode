@@ -44,22 +44,36 @@ Impact summary:
 
 ## 2) Social post from a reflection (LinkedIn)
 
-Source reflection: file 'N5/records/reflections/outputs/2025-10-20_zo-system-gtm/detail.md'
-Generator command: command 'N5/commands/linkedin-post-generate.md'
+Source reflection: `N5/records/reflections/incoming/2025-10-20_zo-system-gtm.txt.transcript.jsonl`  
+Generator: command 'N5/commands/social-post-generate-multi-angle.md'
 
 ### Baseline (Naive, generic)
-“Today I was thinking about AI and productivity. The future is about tools that help us do more with less. Excited to keep building!”
+
+"Today I was thinking about AI and productivity. The future is about tools that help us do more with less. Excited to keep building!"
 
 Issues: platitude, zero artifact linkage, no POV.
 
-### Enhanced (Zo, artifact‑anchored)
-Target output (pre‑stage): file 'Documents/Social/LinkedIn/2025-10-20_zo-system-gtm_post.md'
+### Enhanced (Zo, artifact‑anchored + angle-driven)
 
-Pattern:
-- Hook from actual reflection insight (e.g., “files > SaaS silos”)
-- 2–3 bullet takeaways grounded in your reflection
-- 1 concrete example (e.g., voice memo → transcript → digest in file 'N5/digests/daily-meeting-prep-2025-10-20.md')
-- CTA that fits your voice (e.g., “If you want this running on your server in 48 hours, DM me.”)
+**Angle explored:** Founder pain point (tool sprawl → context loss)
+
+**Output:** file 'Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE1-founder-pain.md'
+
+**Pattern:**
+- Hook from actual pain point ("scattered across 8 tools")
+- Concrete system proof (77 profiles, 11 agents, daily digests)
+- Enrichment from knowledge ("decade coaching founders, 4 years in tech")
+- Specific example with file paths (`Knowledge/`, auto-processing)
+- CTA aligned with objective (DM for demo + 48hr setup)
+
+**Note:** Multiple angles can be explored sequentially (technical differentiation, build story, etc.)—each generated in separate session for full attention per angle.
+
+**Three angles generated from same reflection:**
+1. **Founder pain point** → `file 'Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE1-founder-pain.md'` (218 words)
+2. **Technical differentiation** → `file 'Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE2-technical.md'` (208 words)
+3. **Build story** → `file 'Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE3-build-story.md'` (183 words)
+
+Each explores distinct narrative while maintaining source alignment and demo objective (booking calls).
 
 ---
 
@@ -67,8 +81,12 @@ Pattern:
 - Context: Pulls relevant artifacts (CRM, reflections, digests) instead of hallucinating
 - Commands: Follows registered protocols (word count, sections, CTA) for consistency
 - Files: Outputs land as markdown with provenance for audit/edit
+- Knowledge enrichment: Scans stable knowledge for specific details (bio, system stats)
+- Angle-driven: Explores distinct perspectives rather than generic takes
 
 Prep notes for demo:
+
 - Open this file side‑by‑side with the enhanced artifact(s)
-- If needed, regenerate the LinkedIn post via command 'N5/commands/linkedin-post-generate.md' using the reflection above
-- Mention: “We can usually spin up your instance within 48 hours, schedule permitting.”
+- Show file 'Documents/Social/LinkedIn/2025-10-20_zo-gtm_ANGLE1-founder-pain.md' as the "after" example
+- Contrast word count: Naive ~25 words, Enhanced 218 words with concrete details
+- Mention: "We can usually spin up your instance within 48 hours, schedule permitting."

@@ -149,3 +149,51 @@ These principles guide day-to-day operations, testing, and maintenance.
 - Tested with Claude in interactive mode
 - Deployed with gpt-5-mini in scheduled task
 - Results differed; needed production testing
+
+---
+
+## 23) Artifact Provenance via Symlinks (P23)
+
+**Purpose:** Maintain complete provenance between conversations and deliverables without file duplication
+
+**Rules:**
+- ALL significant deliverables from a conversation MUST be symlinked to AAR artifacts folder
+- NEVER copy files to AAR—always symlink (enforces P5 Anti-Overwrite)
+- Files stay in correct N5 locations; AAR provides navigation/provenance
+- Use descriptive symlink names (not just original filename)
+
+**What qualifies as artifact:**
+- Created deliverables (scripts, commands, documents, reports, social posts)
+- Modified critical infrastructure (N5 commands, core scripts, knowledge files)
+- Workflow documentation (debug notes, design docs, next-steps)
+- NOT artifacts: temp files, scratch work, conversation state (already in AAR)
+
+**Process:**
+1. Identify all deliverables created/modified during conversation
+2. Verify they're in correct N5 locations (Documents/, Knowledge/, N5/commands/, etc.)
+3. Symlink to `N5/logs/threads/{date}_{title}_{id}/artifacts/`
+4. Use descriptive naming convention for symlinks
+
+**Symlink naming:**
+```bash
+# Original → Symlink pattern
+Documents/Drafts/X.md → artifact-name.md
+Documents/Social/LinkedIn/*.md → social_angle-description.md
+N5/commands/*.md → command_name.md
+N5/scripts/*.py → script_name.py
+Knowledge/**/*.md → category_name.md
+```
+
+**When to apply:**
+- Phase 0.5 of conversation-end workflow (after AAR generation)
+- Manual AAR review when artifacts missing
+- System work conversations
+- Any conversation producing deliverables
+
+**Benefits:**
+- Single source of truth (no duplication)
+- AAR folder shows complete conversation outputs
+- Files remain in correct N5 structure
+- Easy provenance tracking
+
+**Related:** `file 'N5/commands/conversation-end.md'` Phase 0.5

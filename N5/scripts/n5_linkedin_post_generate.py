@@ -449,6 +449,25 @@ class LinkedInPostGenerator:
         else:
             print("⚠️  Validation: Issues detected (see analysis report)\n")
         
+        # Auto-import hook: add the generated draft to the social post registry
+        try:
+            import subprocess
+            add_cmd = [
+                "python3", "/home/workspace/N5/scripts/n5_social_post.py", "add",
+                str(draft_file), "--platform", "linkedin", "--status", "draft",
+                "--source", "generated"
+            ]
+            print("🔗 Auto-importing generated draft into Social Post Registry...")
+            result = subprocess.run(add_cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                print("✅ Auto-import complete")
+            else:
+                print("⚠️ Auto-import failed (non-fatal). See details below:")
+                print(result.stdout)
+                print(result.stderr)
+        except Exception as e:
+            print(f"⚠️ Auto-import encountered an error (non-fatal): {e}")
+        
         return {
             "draft_file": str(draft_file),
             "metadata_file": str(metadata_file),

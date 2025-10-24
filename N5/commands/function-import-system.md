@@ -79,7 +79,7 @@ This framework provides a battle-tested, 5-phase process for taking external wor
 **Related Files**:
 - Commands: file 'N5/config/commands.jsonl'
 - Voice Prefs: file 'N5/prefs/communication/voice.md'
-- Links: file 'N5/prefs/communication/essential-links.json'
+- Links: file 'N5/prefs/communication/content-library.json'
 - Example: file 'N5/commands/follow-up-email-generator.md' (v11.0)
 
 ---

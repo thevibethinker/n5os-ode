@@ -8,7 +8,7 @@ category: networking
 priority: medium
 related_files: 
   - 'N5/prefs/communication/voice.md'
-  - 'N5/prefs/communication/essential-links.json'
+  - 'N5/prefs/communication/content-library.json'
   - 'N5/scripts/n5_networking_event_process.py'
   - 'N5/scripts/blocks/stakeholder_profile_generator.py'
   - 'N5/scripts/deliverable_orchestrator.py'
@@ -145,7 +145,7 @@ Generated messages follow `voice.md` guidelines:
   6. Soft CTA
   7. Sign-off (Vrijen)
 - **Strategic Function**: Same-day acknowledgment, buys time for deeper action items
-- **Auto-Link Insertion**: Pulls from `essential-links.json` when relevant
+- **Auto-Link Insertion**: Pulls from `content-library.json` when relevant
 
 ---
 
@@ -158,7 +158,7 @@ Generated messages follow `voice.md` guidelines:
 | `stakeholder-profile-generator` | Generate detailed profiles |
 | `deliverable-orchestrator` | Auto-generate proposals/one-pagers |
 | `lists-add` | Add contacts to networking list |
-| `essential-links.json` | Auto-insert Calendly/trial codes |
+| `content-library.json` | Auto-insert Calendly/trial codes |
 | `voice.md` | Calibrate message tone |
 | Knowledge files | Reference Careerspan context |
 | `web_search` / `web_research` | Post-processing enrichment |
@@ -182,7 +182,7 @@ For each person:
 5. System generates stakeholder profile
 6. System generates LinkedIn follow-up message
 7. System detects dynamic actions:
-   - "send them link X" → references `essential-links.json`
+   - "send them link X" → references `content-library.json`
    - "send proposal" → queues `deliverable-orchestrator`
    - "intro to Logan" → adds to action items
 8. System identifies mutual acquaintances and links them

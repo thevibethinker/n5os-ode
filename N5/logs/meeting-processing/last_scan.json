@@ -1,11 +1,11 @@
 {
-  "run": "meeting-transcript-scan",
-  "timestamp": "2025-10-21T02:54:10Z",
-  "folder_id": "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV",
-  "total_listed": 100,
-  "unprocessed_detected": 1,
-  "duplicates_skipped": 1,
+  "timestamp": "2025-10-23T09:44:28-04:00",
+  "folderId": "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV",
+  "total_files_listed": 100,
+  "existing_gdrive_ids_count": 150,
+  "new_transcripts_detected": 0,
   "downloaded": 0,
-  "queued_requests": 0,
-  "notes": "All unprocessed candidates already present in system per gdrive_id"
+  "requests_queued": 0,
+  "skipped_as_duplicate_or_processed": 100,
+  "notes": "All items either prefixed [ZO-PROCESSED] or already present by gdrive_id. No actions taken."
 }

@@ -1,8 +1,8 @@
 # Persona Management Protocol
 
 **Purpose:** Standardized workflow for creating, updating, and maintaining Zo personas  
-**Version:** 1.0  
-**Updated:** 2025-10-16
+**Version:** 1.1  
+**Updated:** 2025-10-22
 
 ---
 
@@ -236,8 +236,9 @@ Last used: {date}"
 | Persona | Version | Purpose | Primary Use Cases |
 |---------|---------|---------|-------------------|
 | **Vibe Teacher** | 1.0 | Technical learning | Explaining concepts, debugging mental models |
-| **Vibe Builder** | 1.0 | System building | Architecture, scripts, automation |
-| **Vibe Thinker** | 1.0 | Strategic thinking | Ideation, stress-testing, option generation |
+| **Vibe Builder** | 1.1 | System building | Architecture, scripts, automation |
+| **Vibe Strategist** | 2.0 | Strategic intelligence | Pattern analysis, ideation, decision frameworks |
+| **Vibe Writer** | 1.0 | Content creation | LinkedIn, newsletters, email campaigns |
 
 **Index:** `file 'Documents/System/PERSONAS_README.md'`
 
@@ -281,6 +282,10 @@ Before finalizing any persona (new or updated):
 ---
 
 ## Version History
+
+### v1.1 (2025-10-22)
+- Updated Current Active Personas table to reflect Vibe Strategist v2.0 (merged from Vibe Thinker + Vibe Analyst)
+- Added Vibe Writer persona to active roster
 
 ### v1.0 (2025-10-16)
 - Initial protocol

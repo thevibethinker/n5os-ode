@@ -523,7 +523,7 @@ When integrating with automated workflows, expose these calibration dials:
 
 ## Essential Links
 
-**Canonical Source**: `file N5/prefs/communication/essential-links.json` 
+**Canonical Source**: `file N5/prefs/communication/content-library.json` 
 
 **Purpose**: Frequently-used Vrijen and Careerspan links for embedding in emails, responses, and communications.
 
@@ -549,7 +549,7 @@ When integrating with automated workflows, expose these calibration dials:
 
 ## Related Files
 
-- **Essential Links:** `file N5/prefs/communication/essential-links.json`  (see above)
+- **Essential Links:** `file N5/prefs/communication/content-library.json`  (see above)
 - **Templates:** `file N5/prefs/communication/templates.md` 
 - **Meta-Prompting:** `file N5/prefs/communication/meta-prompting.md` 
 - **Email Processing:** `file N5/prefs/communication/email.md` 
