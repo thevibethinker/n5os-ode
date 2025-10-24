@@ -66,10 +66,13 @@ This is NOT just the conversation ending naturally - it's an **intentional comma
 
 **Capture conversation context before cleanup**
 
-- Runs `thread-export` with auto-confirm
-- Generates AAR JSON + markdown
-- Archives to N5/logs/threads/
+- Runs `thread-checkpoint` (alias: `thread-export`) with auto-confirm
+- Generates AAR JSON + modular markdown files (INDEX, RESUME, DESIGN, etc.)
+- Archives to `N5/logs/threads/{date}_{title}_{id}/`
+- **Non-destructive** - creates checkpoint before cleanup phases
 - Non-blocking (skips if unavailable)
+
+This phase ensures conversation state is preserved before any file moves or cleanup occur.
 
 ---
 

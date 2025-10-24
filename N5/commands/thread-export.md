@@ -22,6 +22,8 @@ Version: 2.2.0
 
 Summary: Generate After-Action Report (AAR) and export conversation thread with artifacts in modular format
 
+**Alias:** `thread-checkpoint` — Use this command to create a conversation checkpoint (non-destructive state save). For full conversation closure with file organization and cleanup, use `conversation-end` (which calls this command as Phase 0).
+
 Workflow: threads
 
 Tags: aar, threads, export, documentation
