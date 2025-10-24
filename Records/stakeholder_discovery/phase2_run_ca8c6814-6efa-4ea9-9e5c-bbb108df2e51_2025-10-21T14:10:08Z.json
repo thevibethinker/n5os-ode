@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at": "2025-10-21T14:10:08Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "staging_dirs": ["2025-10-14", "2025-10-15"],
+  "staging_files_found": ["process_log_2025-10-21T11:50:32Z.json","process_phase2_summary_2025-10-21T12:09:51Z.json"],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email messages found in staging directories; nothing to extract. No files deleted."
+}

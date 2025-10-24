@@ -1,0 +1,97 @@
+[
+  {
+    "title": "n8n Hosting Documentation and Guides | n8n Docs",
+    "url": "https://docs.n8n.io/hosting/",
+    "text": "# Self-hosting n8n# This section provides guidance on setting up n8n for both the Enterprise and Community self-hosted editions. Install n8n on any platform using npm or Docker. Learn how to configure n8n with environment variables. Choose and set up user authentication for your n8n instance. * **Securing n8n** Secure your n8n instance by setting up SSL, SSO, or 2FA or blocking or opting out of some data collection or features. Securing n8n guide Try our Self-hosted AI Starter Kit. Curated by n8n, it combines the self-hosted n8n platform with compatible AI products and components to get you started building self-hosted AI workflows. Self-hosting n8n requires technical knowledge, including: * Configuring n8n n8n recommends self-hosting for expert users."
+  },
+  {
+    "title": "Self-host n8n for FREE automations | Full setup tutorial - YouTube",
+    "url": "https://www.youtube.com/watch?v=uCe0IzejSBU&vl=en",
+    "text": "Self-host n8n for FREE automations | Full setup tutorial\nDigitalOcean\n57600 subscribers\n73 likes\n2010 views\n19 Aug 2025\nStop paying for expensive automation tools! In this tutorial, we show you how to self-host n8n, the powerful open-source workflow automation platform that you can use for free. Take back control of your data, avoid surprise price hikes, and unlock unlimited automations.\n\nWe guide you through two easy-to-follow methods, whether you're a beginner or a seasoned homelabber. By the end, you'll have a fully functional n8n instance and your first automated workflow up and running!\n\nLINKS FROM VIDEO:\n\n🚀 Get a DigitalOcean account and $200 in free credits:\nhttps://cloud.digitalocean.com/registrations/new?utm_source=youtube&utm_medium=organic_video&utm_campaign=digitalocean&utm_content=uCe0IzejSBU&refcode=f6fcd01aaffb\n\n✒️ Read the blog: https://www.digitalocean.com/community/tutorials/how-to-setup-n8n?utm_source=youtube&utm_medium=organic_video&utm_campaign=digitalocean&utm_content=uCe0IzejSBU\n\n📂 Docker Compose YAML: https://gist.github.com/oconnoob/66ea46eec7503b5aca1cea49b859bd35\n\n👇 **WHAT YOU'LL LEARN IN THIS VIDEO** 👇\n\n☁️ **Method 1: Cloud Hosting on DigitalOcean (The Easy Way)**\nWe use the 1-Click Droplet Marketplace app to get a secure, publicly accessible n8n instance running in minutes. Perfect for having your automations available anywhere, anytime.\n\n💻 **Method 2: Local Hosting with Docker (The Hacker Way)**\nFor homelab enthusiasts and developers who want 100% offline access and $0 (besides electricity) running costs. We'll use Docker and Docker Compose to spin up n8n on your own machine.\n\n🤖 **Your First Workflow**\nWe'll build a practical example workflow from scratch that pulls real-time data from three different APIs (weather, fun facts, and activities), merges the data, and prepares it for sending—a perfect introduction to the power of n8n.\n\n// STAY CONNECTED \n🌏 Follow our blog for the latest updates: https://www.digitalocean.com/blog\n🦈 Join our Developer Community on Discord: https://discord.com/invite/digitalocean\n🐥 Follow us on X/Twitter: https://x.com/digitalocean\n👩‍💻 We're Hiring! See open roles: http://grnh.se/aicoph1\n\n------------------\n\nTIMESTAMPS\n0:00 - n8n - free, private automations\n0:34 - Self-hosting n8n (two ways!)\n1:03 - Method 1: Cloud-Hosting n8n on a VPS\n2:08 - Authentication (SSH vs Password)\n3:31 - SSH and initial setup\n3:51 - Setting up DNS\n5:31 - n8n setup script\n6:21 - Method 2: Self-Hosting n8n Locally with Docker\n8:08 - Create an n8n owner account\n8:53 - Create your first workflow\n9:26 - Add a trigger node\n10:00 - Format a date\n11:24 - Node state\n12:54 - Mocking API response data\n13:54 - Copy and pasting nodes\n14:47 - Merging data\n15:47 - Editing data key names\n16:24 - Synthesize the daily message\n17:22 - Your Life is Now Automated!\n17:38 - Control infrastructure with natural language\n11 comments\n"
+  },
+  {
+    "title": "Install n8n locally in windows (Easiest way) | self host n8n - YouTube",
+    "url": "https://www.youtube.com/watch?v=Dl2fqXRcJJ4",
+    "text": "Install n8n locally in windows (Easiest way) | self host n8n\nTech With Abhi\n1330 subscribers\n28 likes\n4466 views\n8 Apr 2025\n🚀 Install n8n Locally on Windows | Step-by-Step Tutorial (2025 Guide)\n\nLooking for the easiest way to install n8n on your Windows machine? In this quick and beginner-friendly video, we walk you through the full process to get n8n self-hosted and running in just a few minutes!\n\nWhether you're building automated workflows, exploring n8n vs Zapier, or integrating tools like LangChain, LLama 3.1, or VAPI, this tutorial sets the foundation for all your n8n automation needs.\n\n✅ What you'll learn:\n\nHow to install n8n locally on Windows\n\nSetting up n8n as a self-hosted workflow automation tool\n\nBasic overview of the n8n interface and workflow creation\n\n🔗 Related topics covered:\n\nn8n vs Zapier\n\nn8n + LangChain integration\n\nn8n RAG and API workflows\n\nUsing n8n with Mautic, Vapi, and LLama 3.1\n\nExploring n8n community nodes and advanced automations\n\n📌 Keywords:\nn8n, n8n tutorial, n8n automation, n8n zapier, n8n vs zapier, n8n rag, n8n apis, n8n integrations, n8n cloud, mautic n8n, n8n review, n8n workflow automation, zapier vs n8n, n8n workflow, n8n overview, tutorial n8n, workflow n8n, n8n vale a pena, n8n automaçao, n8n + langchain, n8n self hosted, llama 3.1 in n8n, n8n vapi tutorial, n8n tutorial free, llama 3.1 n8n groq, n8n community nodes\n\n💡 Subscribe for more free n8n tutorials, tips, and automation ideas!\n\n#n8n #Automation #NoCodeTools #n8nTutorial #Windows #n8nSelfHosted\n8 comments\n"
+  },
+  {
+    "title": "How to self-host n8n: Setup, architecture, and pricing guide (2025)",
+    "url": "https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide",
+    "text": "![Image 1: Header image for blog post: How to self-host n8n: Setup, architecture, and pricing guide (2025)](https://assets.northflank.com/self_host_n8n_2_47ec9a2734.png?auto=avif&quality=100&width=937) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#-tldr) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#what-is-n8n) First we'll look at the architecture of self-hosted n8n, then we’ll create a deployment service utilizing the n8n container image and a PostgreSQL [add-on](https://northflank.com/docs/v1/application/databases-and-persistence/stateful-workloads-on-northflank) as an external database to persist data. [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#what-does-n8n-selfhosted-mean) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#n8n-selfhosted-architecture) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#prerequisites) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-in-one-click) [Deploy n8n now](https://app.northflank.com/s/account/stack-templates/deploy-n8n) [Deploy n8n with worker now](https://app.northflank.com/s/account/stack-templates/deploy-n8n-worker) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-n8n-with-postgresql) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-n8n) ![Image 3: Creating a n8n deployment on Northflank](https://assets.northflank.com/create_n8n_deployment_d34fa21e65.png) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-postgres) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#create-a-secret-group) ![Image 7: n8n deployed on Northflank](https://assets.northflank.com/n8n_service_0b2f7a2b35.png) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-a-n8n-worker) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-redis) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-n8n-worker) ![Image 9: Configuring an n8n worker on Northflank](https://assets.northflank.com/n8n_worker_create_3d807618c8.png) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#update-secret-group) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#configure-and-use-n8n) You can [add health checks](https://docs.n8n.io/hosting/logging-monitoring/monitoring/) to your services to handle redeployments gracefully, [scale your n8n deployment](https://northflank.com/docs/v1/application/scale/scale-on-northflank) up to meet demand, and [add custom domains](https://northflank.com/docs/v1/application/domains/domains-on-northflank). [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#n8n-selfhosted-pricing) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#conclusion) [](https://northflank.com/blog/how-to-self-host-n8n-setup-architecture-and-pricing-guide#deploy-on-northflank-for-free)"
+  },
+  {
+    "title": "How to Set Up n8n: A Step-by-Step Guide for Self-Hosted Workflow ...",
+    "url": "https://www.digitalocean.com/community/tutorials/how-to-setup-n8n",
+    "text": "1.   [Key Takeaways](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#key-takeaways) 2.   [What Is n8n and Why Should You Use It](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#what-is-n8n-and-why-should-you-use-it) 3.   [Choosing the Right Deployment Cloud vs SelfHosted](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#choosing-the-right-deployment-cloud-vs-self-hosted) 4.   [Prerequisites](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#prerequisites) 5.   [Step 1 Create Docker Compose Configuration](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#step-1-create-docker-compose-configuration) 6.   [Step 2 Start n8n and Verify Installation](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#step-2-start-n8n-and-verify-installation) 7.   [Step 3 Secure n8n with HTTPS](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#step-3-secure-n8n-with-https) 9.   [Step 4 Create Your First Workflow](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#step-4-create-your-first-workflow) [Example Workflow Server Downtime Recovery and Notification](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#example-workflow-server-downtime-recovery-and-notification) [Further Reading](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#further-reading) [Conclusion](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#conclusion) ![Image 2: How to Set Up n8n: A Step-by-Step Guide for Self-Hosted Workflow Automation](https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fdoimages.nyc3.cdn.digitaloceanspaces.com%2F007BlogBanners2024%2Fdroplet-docker-1%28kiwi%29.png&width=1920) [August 10, 2025](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n?comment=212028) *   [Key Takeaways](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#key-takeaways) *   [What Is n8n and Why Should You Use It?](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#what-is-n8n-and-why-should-you-use-it) Self-Hosted](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#choosing-the-right-deployment-cloud-vs-self-hosted) *   [Prerequisites](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#prerequisites) *   [Step 1 — Create Docker Compose Configuration](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#step-1-create-docker-compose-configuration) *   [Step 4 - Create Your First Workflow](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#step-4-create-your-first-workflow) *   [Example Workflow: Server Downtime Recovery and Notification](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#example-workflow-server-downtime-recovery-and-notification) *   [Further Reading](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#further-reading) *   [Conclusion](https://www.digitalocean.com/community/tutorials/how-to-setup-n8n#conclusion)"
+  },
+  {
+    "title": "Self-Host Your Own Automation Platform with n8n + Docker",
+    "url": "https://technotim.live/posts/n8n-self-hosted/",
+    "text": "# Self-Host Your Own Automation Platform with n8n + Docker Whether you’re just exploring n8n or ready to start building, this guide will help you get up and running with a flexible, powerful automation platform. ### Create the Docker Compose File | ``` 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  ``` | ``` services: n8n: image:n8nio/n8n:latest restart: always ports: - \"5678:5678\" env_file: -.env volumes: -./data:/home/node/.n8n -./files:/files depends_on: - postgres# labels:# - \"traefik.enable=true\"# - \"traefik.http.routers.${TRAEFIK_ROUTER_NAME}.rule=Host(`${TRAEFIK_DOMAIN}`)\"# - \"traefik.http.routers.${TRAEFIK_ROUTER_NAME}.entrypoints=websecure\"# - \"traefik.http.routers.${TRAEFIK_ROUTER_NAME}.tls.certresolver=${TRAEFIK_CERT_RESOLVER}\"# - \"traefik.http.services.${TRAEFIK_ROUTER_NAME}.loadbalancer.server.port=5678\"# If you're running your own external PostgreSQL instance, you can comment out this service postgres: image:postgres:15 restart: always env_file: -.env volumes: -./postgres-data:/var/lib/postgresql/data ``` |`"
+  },
+  {
+    "title": "Install self hosted n8n on a vm - Questions",
+    "url": "https://community.n8n.io/t/install-self-hosted-n8n-on-a-vm/155613",
+    "text": "# Install self hosted n8n on a vm want to self host n8n locally on a vm at home, do i just follow this guide npm install n8n -g and then you do not need to install the next version, unless you really need to, as in you want to try the pre-release or the beta version of n8n thanks @fahmiiireza as im selfhosting ollama aswell (with deepseek and openwebui) so can i use n8n with my self hosted ai | Connecting Apify to n8n  Questions | 2 | 79 | Jun 27 | * AI * Back Up Your n8n Workflows To Github * Telegram AI Chatbot"
+  },
+  {
+    "title": "How to Install and Self-Host n8n For Free - YouTube",
+    "url": "https://www.youtube.com/watch?v=fh5Mmi1fRBc",
+    "text": "How to Install and Self-Host n8n For Free\nhUndefined\n4350 subscribers\n951 likes\n33967 views\n11 Apr 2025\nIn this tutorial you'll learn how to install n8n on your local machine so you can use it for free.\n\nCommand in the video:\nnpm install n8n -g\n\nLinks from video:\nNodejs: https://nodejs.org/en/download\nn8n Docs: https://docs.n8n.io/hosting/installation/npm/\n\n#ai #n8n #nocode\n95 comments\n"
+  },
+  {
+    "title": "An easy step-by-step guide on how to self-host n8n - n8n Community",
+    "url": "https://community.n8n.io/t/an-easy-step-by-step-guide-on-how-to-self-host-n8n/6505",
+    "text": "# An easy step-by-step guide on how to self-host n8n However, as a person who doesn’t have that much coding experience, I was quite upset by the fact that n8n has a steep learning curve — mainly due to the fact that there are no easy step-by-step guides on how to self-host n8n on the cloud or even local machine (though, I need a cloud-based solution because my laptop doesn’t always have the internet connection!) cheap and easy. I do believe that n8n is an amazing piece of software, and many no-coders might enjoy it a lot — they just don’t know about it or cannot find any easy guides on how to deploy/host it."
+  },
+  {
+    "title": "Locally Self-Host n8n For FREE: From Zero to Production - Reddit",
+    "url": "https://www.reddit.com/r/n8n/comments/1lek72x/locally_selfhost_n8n_for_free_from_zero_to/",
+    "text": "Generate custom PDFs, host your own n8n on your computer, add public access, and more with this information-packed tutorial! This video"
+  },
+  {
+    "title": "I created a complete production-ready guide for self-hosting n8n on ...",
+    "url": "https://www.reddit.com/r/n8n/comments/1lgqmf5/i_created_a_complete_productionready_guide_for/",
+    "text": "I created a complete production-ready guide for self-hosting n8n on Google Cloud's free tier - zero monthly costs and enterprise-grade security."
+  },
+  {
+    "title": "Self-Host n8n for FREE – Complete Step-by-Step Guide - Skool",
+    "url": "https://www.skool.com/brendan/self-host-n8n-for-free-complete-step-by-step-guide",
+    "text": "Want to run your own automation workflows without paying a dime?I just dropped a full step-by-step guide on how to self-host n8n using Docker – for FREE!"
+  },
+  {
+    "title": "A Practical Guide to Self-Hosting n8n for Workflow Automation - Lab53",
+    "url": "https://lab53.uk/a-practical-guide-to-self-hosting-n8n-for-workflow-automation/",
+    "text": "After setup you will have a running n8n instance reachable from your network. You will know how to create, test and deploy a simple workflow."
+  },
+  {
+    "title": "An easy step-by-step guide on how to self-host n8n - Page 2",
+    "url": "https://community.n8n.io/t/an-easy-step-by-step-guide-on-how-to-self-host-n8n/6505?page=2",
+    "text": "An easy step-by-step guide on how to self-host n8n ... Hi @harshil1712 . Thank you for the guide above. I followed these steps and have however"
+  },
+  {
+    "title": "Self-host n8n | Complete Guide For Beginners - YouTube",
+    "url": "https://www.youtube.com/watch?v=CdIXhtn7Uqg",
+    "text": "how to self-host n8n on your laptop · how to self-hosting n8n on a vps, using an n8n image (easy) · how to self-host n8n on a vps from scratch,"
+  },
+  {
+    "title": "Self-Host n8n in 20 Minutes - Easiest & Cheapest Setup - YouTube",
+    "url": "https://www.youtube.com/watch?v=c9XyFfzRX8Q",
+    "text": "1 CONSULTING Book a time → https ... Self-Host n8n in 20 Minutes - Easiest & Cheapest Setup. 21K views"
+  },
+  {
+    "title": "Choose your n8n - n8n Docs",
+    "url": "https://docs.n8n.io/choose-n8n/",
+    "text": "n8n recommends self-hosting for expert users. Mistakes can lead to data loss, security issues, and downtime. If you aren't experienced at managing servers, n8n"
+  },
+  {
+    "title": "How To Set Up N8N Self Hosting In 3 Minutes (6 Ways) - YouTube",
+    "url": "https://www.youtube.com/watch?v=kq5bmrjPPAY",
+    "text": "Note: if you choose Render, and you don't anticipate much usage, make sure to add \"persistent storage\". Just head to your instance,"
+  },
+  {
+    "title": "Best setup for self hosting N8N locally without cloud/server costs",
+    "url": "https://www.reddit.com/r/n8n/comments/1gm0uy6/beginner_seeking_advice_best_setup_for_self/",
+    "text": "I'm just starting with N8N and want to get hands-on experience by running it locally on my Windows 11 machine. For now, I'm aiming to keep things cost-free."
+  }
+]

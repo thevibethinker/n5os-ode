@@ -1,0 +1,92 @@
+[
+  {
+    "title": "RAG-like Few-shot Learning for Large Language Model Role-playing",
+    "url": "https://arxiv.org/html/2509.12168v1",
+    "text": "This includes style transfer, but must also include a robust framework to prevent breaking character or Jail-breaking attempts from hostile users while"
+  },
+  {
+    "title": "Techniques for safer LLM use and accurate output - Facebook",
+    "url": "https://www.facebook.com/groups/698593531630485/posts/1338382347651597/",
+    "text": "Few-Shot or Zero-Shot Learning Few-Shot Learning: Provide examples of desired outputs to show the model what kind of response you expect. This works well"
+  },
+  {
+    "title": "[PDF] LLMs Still Struggle to Imitate the Implicit Writing Styles of Everyday ...",
+    "url": "https://arxiv.org/pdf/2509.14543",
+    "text": "We select few-shot examples from training samples to guide an LLM to generate novel text based on a test sample summary. (B) We evaluate the extent to which the"
+  },
+  {
+    "title": "How You Can Use Few-Shot Learning In LLM Prompting - DZone",
+    "url": "https://dzone.com/articles/how-you-can-use-few-shot-learning-in-llm-prompting",
+    "text": "### Few-shot learning helps guide AI models by showing them examples in your prompt. Few-shot learning sits in the middle, providing just enough guidance through examples without the complexity of full reasoning chains. ## **Few-Shot Examples That Work Well** A well-structured few-shot prompt contains clear sections and consistent formatting that makes the pattern easy for the model to detect. *Fig. 12: Example of a standard few-shot prompt, which might fail since there’s limited visibility into the thinking process* *Fig. 13: Example of a Chain-of-thought few-shot prompt to tackle complex questions* *Fig. 14: Example of a self-consistent few-shot prompt* *Fig. 15: Example of using prompts to instruct LLM to perform data cleaning*"
+  },
+  {
+    "title": "Accelerating Data Annotation with LLMs: A Practical Guide",
+    "url": "https://towardsai.net/p/artificial-intelligence/accelerating-data-annotation-with-llms-a-practical-guide",
+    "text": "1. Define annotation guidelines and examples (Few-shot prompting) · 2. Use LLMs to automatically annotate unlabeled data · 3. Filter results based on confidence"
+  },
+  {
+    "title": "How to Train AI Tools to Write Like Your Brand (Not a Robot) - No Fluff",
+    "url": "https://www.nofluff.in/blog/how-to-train-ai-tools-to-write-like-your-brand-(not-a-robot)",
+    "text": "Fine-tune an LLM on 30 to 50 top-performing samples, embed your voice pillars as system instructions, then run live A/B tests until reviewers cannot distinguish"
+  },
+  {
+    "title": "Harness the Power of LLMs: Zero-shot and Few-shot Prompting",
+    "url": "https://www.analyticsvidhya.com/blog/2023/09/power-of-llms-zero-shot-and-few-shot-prompting/",
+    "text": "Zero-shot prompting is a specific scenario of zero-shot learning unique to Generative LLMs. In zero-shot, we provide no labeled data to the model and expect the model to work on a completely new problem. In the Twitter US Airlines Sentiment classification task, BERT fine-tuning was done with over 10,000 examples, whereas few-shot prompting needed only 20 to 50 examples to get similar performance. To show the power of few-shot prompting, we have compared the performance with SOTA and fine-tuned language models like BERT on tasks across standardized language understanding, translation, and QA benchmarks in the sections below. Few-shot achieves similar or better performance across classification, language understanding, translation, and question-answering tasks by providing labeled examples within prompts."
+  },
+  {
+    "title": "Fine-tuning large language models (LLMs) in 2025 - SuperAnnotate",
+    "url": "https://www.superannotate.com/blog/llm-fine-tuning",
+    "text": "LLM fine-tuning is the process of taking a pre-trained Large Language Model (LLM) and training it on a smaller, task-specific dataset to specialize it for a particular use case. Supervised fine-tuning is the process of updating a pre-trained language model with labeled data in order to perform a specific task. Best practices for fine-tuning involve clearly defining the target task, choosing the most suitable pre-trained model, preparing a high-quality, diverse, and relevant dataset for both training and evaluation, carefully adjusting hyperparameters, closely monitoring performance to avoid overfitting through techniques such as early stopping and regularization, exploring methods like LoRA for more efficient tuning, and validating results on a separate validation set to ensure the model generalizes effectively to new, unseen data."
+  },
+  {
+    "title": "Techniques to elicit better responses or behavior from LLMs for ...",
+    "url": "https://www.linkedin.com/pulse/techniques-elicit-better-responses-behavior-from-llms-tanzeel-sarwar-b6mic",
+    "text": "This article delves into the techniques used to elicit better responses from LLMs, exploring the intricacies of prompt engineering, fine-tuning, and"
+  },
+  {
+    "title": "A review on NLP zero-shot and few-shot learning - SpringerLink",
+    "url": "https://link.springer.com/article/10.1007/s42452-025-07225-5",
+    "text": "Utilizing pre-trained language models for transfer learning emphasizes the robustness of contextual embedding in zero-shot scenarios, enabling models to understand subtle language patterns with minimal task-specific training [[24](https://link.springer.com/article/10.1007/s42452-025-07225-5#ref-CR24 \"Ohkuma T, Nakayama H. By utilizing supplementary data, zero-shot learning allows models to generalize to classes that have not yet been seen, in contrast to classical supervised learning, which requires explicit labelling of every class [[25](https://link.springer.com/article/10.1007/s42452-025-07225-5#ref-CR25 \"Bennequin E. Pre-trained Language Models: In a variety of natural language processing tasks, including zero-shot learning, models like BERT and GPT-3 are exhibiting outstanding performance, as shown in Table [3](https://link.springer.com/article/10.1007/s42452-025-07225-5#Tab3). For example, in few-shot image classification, a model trained on various datasets uses the principles of meta-learning to adjust to new classes with small sample sizes quickly [[46](https://link.springer.com/article/10.1007/s42452-025-07225-5#ref-CR46 \"Ma Y, Cambria E, Gao S."
+  },
+  {
+    "title": "Fine-tuning LLMs: overview and guide | Google Cloud",
+    "url": "https://cloud.google.com/use-cases/fine-tuning-ai-models",
+    "text": "[Large language models](https://cloud.google.com/ai/llms) (LLMs) are powerful tools that can help with a lot of different tasks, from writing emails to answering complex questions. Fine-tuning and [Retrieval Augmented Generation](https://cloud.google.com/use-cases/retrieval-augmented-generation) (RAG) are two different ways to adjust LLMs for specific uses. *   **Improve accuracy on a particular task:** Fine-tuning can significantly improve the model's performance if you need it to do a specific task, like classifying customer reviews or generating product descriptions These pre-trained [models](https://cloud.google.com/discover/what-is-an-ai-model) have already learned a huge amount of general language knowledge from massive datasets. It can significantly improve the accuracy and relevance of the model's output for your specific use case, potentially reducing [AI hallucinations](https://cloud.google.com/discover/what-are-ai-hallucinations)."
+  },
+  {
+    "title": "Zero-Shot, One-Shot, and Few-Shot Prompting: A Comparative Guide",
+    "url": "https://prajnaaiwisdom.medium.com/zero-shot-one-shot-and-few-shot-prompting-a-comparative-guide-ac38edd510d3",
+    "text": "Techniques like zero-shot, one-shot, and few-shot prompting allow models to generalize to new tasks or classes with little to no task-specific training examples. Zero-shot prompting is a technique in which an AI model is expected to solve a task without any examples provided for that specific task. One-shot prompting is a particular instance of few-shot learning where only a single example per new class or task is provided. Few-shot prompting involves providing the model with a small set (usually 2–5) of examples to clarify the task. Techniques such as N-way-K-shot classification illustrate this approach, where a model learns to classify data across multiple episodes of small tasks Zero-shot, one-shot, and few-shot prompting mark a transformative shift in how AI models approach learning from limited data."
+  },
+  {
+    "title": "LLM Training: Mastering the Art of Language Model Development",
+    "url": "https://www.wevolver.com/article/llm-training-mastering-the-art-of-language-model-development",
+    "text": "## Large Language Model (LLM) training involves teaching AI models to understand and generate human-like text by processing vast amounts of data, significantly enhancing their language comprehension and production capabilities. Training an LLM, often referred to as pre-training, involves teaching the model to understand and generate language using a large, diverse dataset. Demystifying LLM Architecture: The Foundation of TrainingNeural Network Basics for LLMsLLMs vs RNNsAttention Mechanisms and Self-AttentionTokenization and Embedding StrategiesCutting-Edge Training Techniques: Pushing LLM BoundariesPre-training StrategiesFine-tuning LLMs for Specific TasksAdvanced Optimization AlgorithmsOvercoming Training Hurdles: Tackling LLM ChallengesManaging Computational ResourcesAddressing Bias and FairnessScaling Laws and Model Size ConsiderationsReal-World Applications: LLMs in ActionNatural Language Processing TasksCode Generation and AnalysisCreative and Content GenerationConclusionFrequently Asked QuestionsWhat is the difference between training and fine-tuning an LLM?"
+  },
+  {
+    "title": "LLM evaluation: Metrics, frameworks, and best practices - Wandb",
+    "url": "https://wandb.ai/onlineinference/genai-research/reports/LLM-evaluation-Metrics-frameworks-and-best-practices--VmlldzoxMTMxNjQ4NA",
+    "text": "### Model-based evaluation metrics *   BERTScore: A metric that uses pre-trained language model embeddings (from BERT) to evaluate text similarity. The future likely holds integrated evals: e.g., an AI assistant that can see and talk might be evaluated on a scenario like \"Describe what you see and answer questions about it while being factual and not biased.\" This requires combining NLP metrics with vision metrics. *   Community and Crowdsourced Evaluation: Projects like Dynabench have users trying to stump models, and when they succeed, that example is added to the test set. Some current eval tasks (like the Chain-of-Thought Prompting evaluation) informally do this; but it could be formalized, like a metric for logical consistency between explanation and answer, or a human rating of explanation helpfulness."
+  },
+  {
+    "title": "Trustworthy Generative AI — Best Practices",
+    "url": "https://developers.liveperson.com/trustworthy-generative-ai-prompt-library-best-practices.html",
+    "text": "+ Conversational AI APIs + Agent Survey For Messaging Configuration API + Agent Survey For Messaging Runtime API * Messaging Conversation * Messaging API * Messaging API **Using Generative AI in Conversation Assist?** To fully test prompt changes and include the conversation context as input to the LLM, you’ll need to create a messaging bot in Conversation Builder. Use the Generative AI - Messaging bot template in specific. * **Generative AI in Conversation Assist**: First test via a Conversation Builder test bot. * **Generative AI in Conversation Builder bots**: We recommend you take advantage of Conversation Builder’s Release feature to control and manage how prompt changes are made live in your Production bots."
+  },
+  {
+    "title": "A Comprehensive Overview of Large Language Models",
+    "url": "https://dl.acm.org/doi/10.1145/3744746",
+    "text": "ChatGPT and the rise of large language models: The new AI-driven infodemic threat in public health. Contribution and performance of ChatGPT and other large language models (LLM) for scientific and research advancements: A double-edged sword. Can large language models provide feedback to students? Enhancing the quality of teaching and learning through ChatGPT and similar large language models: Challenges, future prospects, and ethical considerations in education, future prospects, and ethical considerations in education. J. C. Summary of ChatGPT-related research and perspective towards the future of large language models. LLM-BRAIn: AI-driven fast generation of robot behaviour tree based on large language model. You, and J. H. Yu, J. Olive: Accelerating large language models via hardware-friendly outlier-victim pair quantization In *Proceedings of the 50th Annual International Symposium on Computer Architecture*, 1–15."
+  },
+  {
+    "title": "Do large language models learn like humans: Interleaved and ...",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0001691825008315",
+    "text": "This study investigates fundamental differences in the acquisition of morphological patterns by humans and large language models (LLMs) within an artificial"
+  },
+  {
+    "title": "[PDF] Large Language Models are Miscalibrated In-Context Learners",
+    "url": "https://aclanthology.org/2025.findings-acl.603.pdf",
+    "text": "In this work, we deliver an in-depth anal- ysis of the behavior across different choices of learning methods from the perspective of both performance and"
+  }
+]

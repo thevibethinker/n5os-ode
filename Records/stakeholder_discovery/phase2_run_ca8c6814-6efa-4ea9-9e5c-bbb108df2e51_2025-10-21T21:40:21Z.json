@@ -1,0 +1,9 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "discovered_at": "2025-10-21T21:40:21Z",
+  "source": "email_scanner",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "notes": "No staging email files found in Records/Temporary/email_staging to process."
+}

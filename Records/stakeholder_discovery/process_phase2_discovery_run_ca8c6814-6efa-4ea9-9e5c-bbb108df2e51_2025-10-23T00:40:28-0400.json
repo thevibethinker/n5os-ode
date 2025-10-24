@@ -1,0 +1,9 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-23T00:40:28-04:00",
+  "source_dir": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No staging email files found in the source directory; only summary/log files and empty date folders present. No discoveries written."
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-23T12:40:39Z",
+  "source": "email_staging",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 11,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email staging files found in subdirectories; only summary/log files present. No external participants extracted. No deletions performed."
+}

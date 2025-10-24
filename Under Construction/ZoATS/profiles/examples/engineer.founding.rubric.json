@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "role": "Founding Engineer",
+  "must_haves": [
+    { "id": "e2e_builder", "criterion": "Builds end-to-end (frontend/backend/infra)", "weight": 1.0 },
+    { "id": "ships_solo", "criterion": "Ships independently in ambiguous contexts", "weight": 1.0 },
+    { "id": "debug_depth", "criterion": "Debugs deeply across stack", "weight": 0.8 }
+  ],
+  "nice_to_haves": [
+    { "id": "founder_exp", "criterion": "Prior early-stage or founder experience", "weight": 0.6 },
+    { "id": "ml_exp", "criterion": "LLM/ML product exposure", "weight": 0.4 }
+  ],
+  "story_signals": [
+    { "id": "artifact_trail", "signal": "Artifacts: repos, PRs, posts, demos, talks", "weight": 0.8 },
+    { "id": "hard_thing", "signal": "Specific hard things done (time/place/people)", "weight": 1.0 },
+    { "id": "iteration_speed", "signal": "Rapid iteration with users in loop", "weight": 0.7 }
+  ],
+  "deal_breakers": [
+    "Cannot work autonomously",
+    "No evidence of deep work",
+    "Generic AI-polished narrative, no specifics"
+  ],
+  "signals_required": [
+    "ai_gen_likelihood", "story_uniqueness", "crossref_hits"
+  ]
+}

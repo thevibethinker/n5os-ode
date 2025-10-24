@@ -1,0 +1,14 @@
+{
+  "discovered_at": "2025-10-23T13:10:02Z",
+  "source": "email_scanner",
+  "source_message_id": "19a0caaefcfdc105",
+  "source_subject": "Re: You're coming to my next dinner party",
+  "stakeholder": {
+    "name": "Howie",
+    "email": "howie@howie.ai",
+    "organization": null,
+    "title": null,
+    "context": "Mentioned as the person who will set up the invite for the dinner — likely support / scheduling role",
+    "is_decision_maker": false
+  }
+}

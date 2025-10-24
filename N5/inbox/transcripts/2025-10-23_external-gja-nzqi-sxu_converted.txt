@@ -1,0 +1,1742 @@
+08:00
+Vrijen Attawar
+David. David, how you doing?
+
+08:02
+David Speigel
+That was like so much more complicated than it should have been. But Now
+I have WhatsApp on my desktop.
+
+08:09
+Vrijen Attawar
+Oh fuck. I sent it to you on WhatsApp, didn't I? I was like, oh, it's
+taking a minute, I'm sorry. You had specifically. But now you have it on
+your desktop.
+
+08:19
+David Speigel
+It's. It's kind of funny. I'll just mention this quickly. So I'm. I need
+to get a WhatsApp group set up because my guys thread is on messages and
+there's one person out of like the 15 people in that guy's thread.
+
+08:34
+Vrijen Attawar
+Android, yeah.
+
+08:36
+David Speigel
+Up the whole thread and now there's like two of that thread sometimes
+and like I mute that thread because it's. So many people just jump in
+with shit. But then when it doubles it up, then the other one is not
+muted. And so like. And I kept telling them, I'll set up the WhatsApp
+thread, we'll all just move over to WhatsApp, then we can load pictures,
+it'll better, blah, blah. And I'm lazy. But now that I have it on my
+desktop, maybe I'll do it, you know.
+
+09:03
+Vrijen Attawar
+David. Can I call you David?
+
+09:05
+David Speigel
+Yes.
+
+09:06
+Vrijen Attawar
+David, it is striking to me that it is the. It is the fuck. Where is it?
+Where is she? It's the pixel users of the world, which obviously not
+very good at the dramatics because I would have had my phone in my hand
+and I raised that as I said that. But yes, it is a pixel user that is
+showing you a brighter, better future with WhatsApp and another one that
+actually gave you got you to get your shit together and do it.
+
+09:30
+David Speigel
+Are you a pixel user?
+
+09:32
+Vrijen Attawar
+I am, I am a, I'm an avowed pixel user. I think I have the watch, you
+know, just not like the other girls.
+
+09:40
+David Speigel
+I have the Samsung Note from like version two to version five or six or
+something. I had three or four of them, whatever it was. And I loved the
+Samsung Note before iPhone came out with the larger version and then one
+bigger iPhone came out. I'm like, all right, fine.
+
+09:55
+Vrijen Attawar
+No, well this, what I'm about to show you is pretty cool. It's, it's the
+kind of thing that would normally only appeal to a pixel user, but I
+think there's still hope for you. Hope for you yet, actually. I mean
+that it's, that's more true than you would think in a second, you'll
+see. So I have been fucking obsessed with this tool called Zoe, Heard of
+it? Am I sharing my screen yet? Screen. Screen time is activate.
+
+10:22
+David Speigel
+There, I see. Gmail integration complete.
+
+10:25
+Vrijen Attawar
+Yes, that is what I was working on most recently with. So have you. Have
+you heard of zo?
+
+10:30
+David Speigel
+No, I'm not.
+
+10:32
+Vrijen Attawar
+Zoe is an incredible company. It's started by two great founders, Ben
+and. Let me share this full screen. Ben Guo. It was early at Venmo, like
+close to founding team at Venmo, and then also pretty early at Stripe,
+and Rob, who was founding engineer at Substack. Credentials aside,
+they've built a great product. So this is what they've built. It's
+called Zoe. It is a computer in the cloud you can prompt. So when I say
+computer, I mean it is a fully functional UNIX device in the cloud, as
+you can see. Here it is. Oh, what the fuck happened here? How did I
+gobble up 300 gigabytes of memory? I'm gonna have to find that out.
+Jesus. But it's a. It's a fully functioning computer in the cloud. You
+can set up a variety of APIs for yourself through that.
+
+11:37
+Vrijen Attawar
+You can even set up a custom instance of N8N within ZO, which is what I
+did last night in less than 10 minutes.
+
+11:44
+David Speigel
+Okay, cool.
+
+11:45
+Vrijen Attawar
+And so what you can essentially do is create these fucking crazy
+workflows for yourself where you essentially like. So for example, we
+had a meeting earlier. Let's see if it processed. So the meeting that we
+had earlier, I believe it should have processed correctly, which means
+it should be here under meetings. They still haven't quite nailed the
+not real time. No, no, they haven't nailed the. The AI that they use is
+good at a lot of things, but it is very arbitrary with where it stores
+files. So it'll create like 10 different fucking meeting folders. It's
+one of the areas where they have to improve it. But essentially what we
+had a. Yeah, external David V. Careers fan meeting. So what you can.
+What I've programmed to do, one of the workflows that I care about is I
+want meetings processed in way.
+
+12:38
+Vrijen Attawar
+I want those meetings processed variably. Depending on who the
+stakeholder is, different types of analyses to happen. And I want all of
+that information to then be extracted, centralized, and added to a
+central repo of like, ongoing understanding of what the fuck Virgin is
+doing. That's a dream what I am describing, and we're getting close to
+that dream. So already through zo, I can have completely personal
+analysis set up. I haven't touched this workflow in days. It's just been
+running right it will identify what were the contextual commitments that
+we agreed to on this call. It will hey bi directional warm intro. It
+will identify all the folks that were discussed as being required to
+like be introduced to each other in the call. And I'm even later today
+setting this up to generate a completely organic warm intro email that
+is truly personalized.
+
+13:33
+Vrijen Attawar
+Not only because it does all of this stuff, but because just to show
+you, I even have this sucker set up so well that it uses a specific
+transformation based approach to personalize the voice content that I
+get. Nothing will ever sound like AI because it's patterned on my voice
+on an ongoing basis. It even checks against the actual email that I sent
+to update its style guide on an incremental basis. I mean what I'm
+describing is wild stuff.
+
+14:11
+David Speigel
+Yeah.
+
+14:12
+Vrijen Attawar
+So Zoe is cool.
+
+14:14
+David Speigel
+It doesn't just capture your voice, it captures like your latest voice
+because.
+
+14:18
+Vrijen Attawar
+Yes.
+
+14:19
+David Speigel
+Getting your current voice. Yeah.
+
+14:20
+Vrijen Attawar
+Right. So I am, I'm going to be working with ZO as like a solution. They
+think it was like Zoe Architect. They're like you can name yourself
+whatever you want. So I'm thinking I can like really pull a techno king
+here and have like a mega douchey title. But in essence what it's
+essentially what happened to me is that apparently I'm like kind of
+talented at vibe coding and can just like make Zo in particular do what
+I want to a reasonable extent. So what I'm hoping to do is build out
+these for people so I can clone my base layer of ZO and give it to you
+for free. And Zoe is confident enough in my building that they're
+willing to put their reputation behind and give you all sorts of perks
+for like setting up of origin setup platform on Zoe.
+
+15:09
+Vrijen Attawar
+But if you pay me extra money, I will personalize it for you and teach
+you how to personalize it yourself. And then you never have to like it's
+very. Teach a person to fish. Then the only reason you would want to pay
+me is to literally have access to all the cool shit that you can fucking
+know that I'll be building that will be synchronized to be set up in
+your platform so long as you maintain the base architecture. And I'm
+going to maintain the base architecture through GitHub. So you always
+have a core set of UX, Unix like kind of OS files that are largely
+maintained and monitored externally.
+
+15:45
+David Speigel
+Hang on. Maintain core GitHub. Yeah. Okay. So you. Okay, this is giving
+like Notion Template Marketplace.
+
+15:57
+Vrijen Attawar
+Yes, yes. Now this is where I want to bring you in and do you a solid.
+They are trying to figure out their go to market for this and they're.
+And I think their product is good, but I do genuinely think they could
+use a good perspective on product. I think they're very savvy founders
+and so the best I can do is sort of just. I think what would work great
+is like intro you in a casual context and just have you like show up and
+deliver like I know you can. But I think that certainly one way to get
+their attention is to be a power user. And I think I'm hypothesizing
+separate of all else that this is a great tool for product oriented
+folks that no longer want to fucking work somewhere else.
+
+16:40
+Vrijen Attawar
+Like I honest to God believe that this is the bridge that non technical
+people were looking for to build great complex products online.
+
+16:50
+David Speigel
+Let me. Okay, so hang on. Because now we're talking about two separate
+things.
+
+16:55
+Vrijen Attawar
+Yes.
+
+16:56
+David Speigel
+In my mind one was like the personal operating system, like you selling
+your instance of ZO that you've built for yourself. That's right, that's
+one. But then the other one is like what else can Zoe be used to do?
+Because it could do a lot of things and that would be for product people
+that don't want to build.
+
+17:19
+Vrijen Attawar
+That would. Yes.
+
+17:21
+David Speigel
+Who don't want to code.
+
+17:22
+Vrijen Attawar
+Who don't want to code. Who don't want to code. And it is actually. I
+mean I've built pretty complicated functionality here, as you can see.
+And it has been hard, don't get me wrong. Like this is not an easy
+process to get all this up and running. But it has been. I. You're not
+going to believe me when I say this, but I've built about 10 times as
+much as I've shown you in the last like three weeks. Mostly because I
+had a lot of that time off. I was supposed to be recuperating and like,
+yeah, fuck that. This was more fun and more rejuvenating and has more
+revenue potential, which is exciting. But I, I bring this up to you for
+a variety of reasons, one on a. And to lead with the one that's most
+relevant to your bottom line.
+
+18:08
+Vrijen Attawar
+I know that has to be the priority is to actually ensure. I like intro
+you to Ben and Rob think they got a whole product. I think you're the
+exact kind of person that would become a like a like exactly what I'm
+doing, which is use it and be a valuable resource to them to the extent
+that they just like want to have you help. So I think this is like
+perfectly teed up for you in that regard. And so while I can't promise
+anything because my relationship with them is also new, I think they're
+cool people that you can persuade. Second, I would say for your own
+personal projects, I wanted to introduce you to Zoe. And if you use my
+promo code, you'll get 50% off of token API rates.
+
+18:49
+Vrijen Attawar
+So very much take advantage of that while they're VC funded and don't
+have to give a fuck about cost.
+
+18:55
+David Speigel
+Exactly. Well, so what I was going to say on the. So on the first part.
+Intro. That's awesome. I appreciate that. I feel like you have a really
+strong network of founders and builders and that's who I'm like
+interested in talking with. So, yes, you've. You've definitely
+identified that and you know me well. We'll definitely take an intro on
+the second piece for using is like the way you're using it. I could
+describe to you. I don't want to go into detail, but I could describe to
+you a few of the use cases that I'm trying to build for myself and
+leverage AI. And honestly, like, it's. It's so bad. It's so weak right
+now and so sucks, right? What?
+
+19:41
+Vrijen Attawar
+Zapier sucks compared to how big the hype is.
+
+19:44
+David Speigel
+I'm not even, you see, I'm not even there yet. I'm not even like the
+make and N8N and Zapier stuff. I. I'm doing manually. I'm literally just
+like, I need all my calls, like I need all of my networking group calls
+in a custom GPT or custom project. I'm literally copying the transcripts
+and pasting them into Google Docs and then re uploading.
+
+20:06
+Vrijen Attawar
+Oh God, what a horrendous peasant life. My friend David. Come to the
+future.
+
+20:13
+David Speigel
+I'm doing some of the things that I should be doing, but it's certainly
+not automated. And so if you've already automated that and other things,
+then I'm interested.
+
+20:23
+Vrijen Attawar
+Gotcha. Okay, perfect. Yeah, let's.
+
+20:27
+David Speigel
+My level of automation is poor, but I'm willing to tinker and do it. I
+just haven't wanted to do it all from scratch.
+
+20:34
+Vrijen Attawar
+This will be way better for you. This will be way better for you. And
+what I can actually do is, what I would suggest is tinker with it, sign
+up, tinker with it, and I'm going to figure out how to flash it over to
+you today. So just play with it a little bit and then when you feel like
+you've gotten a Grasp of, like, at least how she runs. Let me know and
+we can jump on and I'll flash you over my N5 core system. I will ask on
+the honor code that you don't share that thing with me. I'm actually
+going to get folks to sign NDAs because I think at the outset I need to
+keep the IP advantage.
+
+21:17
+Vrijen Attawar
+But the direction I'm hoping to go in, and this is a very unique,
+everyone can scratch everyone's back sort of situation where I reckon I
+could be building this for VCs and founders and make some really get
+some really big IOUs, because none of them have the time or the patience
+to set this up like I do to get there. I'm happy to do that for folks
+that I know will be reliable power users. So, you know, for someone like
+you that's both a friend and falls in that category, I would love for
+you to just tinker with it, help me build it out, give me feedback,
+like, you know, again, perfect for those reasons. And then I think that
+will also be good for you because this could really be a, like, getting
+in on YouTube at the ground floor kind of thing.
+
+22:04
+Vrijen Attawar
+They're really keen on making it a marketplace. So I'm talking to their
+head of gtm, Tiff, who all. Who I'll make sure is around when we chat.
+And I was actually going to recommend to her, hey, aren't product
+managers who are jobless kind of the perfect group? Because you could
+definitely persuade that group to, like, vibe code some cool shit out of
+this. It's literally a function of your imagination.
+
+22:30
+David Speigel
+I mean, I'm the. I'm exactly what you're talking about. I'm not jobless,
+but, like, I'm a product manager who is always an early adopter. But I
+don't want to, like, dive in and build the stuff all from scratch.
+
+22:45
+Vrijen Attawar
+Yeah.
+
+22:45
+David Speigel
+Start with something that's already kind of started. I don't want to,
+like, build all my own because I help other people build stuff. I help
+them, like, improve what they have, but I don't necessarily want to
+spend all that time building each thing for myself. And so I kind of
+stop myself from doing that.
+
+23:02
+Vrijen Attawar
+Just so. Okay.
+
+23:05
+David Speigel
+To know that when I, like when I focus my attention on building
+something for myself, then I go down the rabbit hole. And so I don't. I.
+I don't necessarily do that as much anymore. So, yeah, there's a lot of
+product managers that are like that, where they could build things
+themselves, but they limit themselves from doing that because they know
+they'll get sucked in.
+
+23:25
+Vrijen Attawar
+Right? And I think, and I will be honest, now that I reflect on my
+comment of why I said jobless, I'm really going to reflect on that.
+Partially it's because career span is relevant. Partially it's because
+you know what? I think I'm insecure about calling myself technical.
+Right. Because I fall in that category. And I. Until Zoe. Which is why
+quite literally, they have that quote of mine on their website. It was
+intoxicating when I got my first Zo thing to just work and then three
+days later it was still working and I was like, oh my God, like every
+time I've set something up on Zapier, like a week, it lasts before it
+stops, before I just stop looking at it, before I stop even giving a
+shit. Because the other problem is.
+
+24:07
+Vrijen Attawar
+Well, my belief is that one, it's actually harder than you would think
+to set those things up. It's in their interest to make it sound easy and
+it's easier than like fucking coding, but it's actually not that easy
+and not that reliable. And it was way harder before AI. It was 10 times
+harder. And then I think two workflows are not useful in a vacuum.
+They're not useful like without the broader interrelated context.
+Workflows get powerful when the workflow that transforms my meetings
+into notes syncs with my workflow that extracts salient insights from my
+notes and adds it to a compounding understanding of who I am.
+
+24:49
+David Speigel
+Right. It has to go from a feature to a solution.
+
+24:52
+Vrijen Attawar
+Exactly, exactly. And yeah, I really, I really am like all in on this
+product in many ways. I hope I've gotten you as excited about it as I
+am.
+
+25:06
+David Speigel
+I am excited. I'm gonna go research the company and research their
+profiles. But what I really want to see is like what other use cases
+that you like solutions you have.
+
+25:15
+Vrijen Attawar
+I thought you.
+
+25:15
+David Speigel
+So one of them is the call recording and then follow up, which is great
+because that seems like it goes all the way from the call to the action
+items to bringing in some other pieces that then also help you do the
+action items and complete them with email with your tone.
+
+25:35
+Vrijen Attawar
+That's exactly right. Let me show you in this one because it should have
+deliverable content map. There we go. In this one, it generates the
+actual follow up email. It mentions this dynamic recap. Next steps, it
+tells you which resident detail it identified from the call that it
+should use to set up the intro paragraph.
+
+26:02
+David Speigel
+Oh, it shows you the email, but then it shows you why they put the email
+that way based on the.
+
+26:07
+Vrijen Attawar
+Of course, baby. It shows you the fucking Fleisch Kincaid scale, like,
+score. It used to develop the right tone.
+
+26:17
+David Speigel
+Wait, what is a flesh. I don't even know what that is.
+
+26:21
+Vrijen Attawar
+The Fleisch Kincaid score is a score for Lexile comprehension. Yeah.
+Basically how, like, complicated you sound. So, like, you want to Lexile
+around, like, the 8th to 9th grade level in most situations. At most,
+like, 10th to 11th grade level. If you're writing at a college level,
+you're trying too hard. So this is able to have that adhere to that.
+It's actually a very interesting. I like, don't mean to sound like I'm
+full of myself. I actually think I'm learning some, like, really cool
+shit about prompt engineering that I don't think anyone else is looking
+at. Where if you just say, like, warmth score of 7.
+
+27:01
+Vrijen Attawar
+I have learned that is better to tell the AI to validate against a
+numerical score, but to achieve the original, like, initial draft, it is
+better to start by having it generate a neutral draft and then applying
+a transformation, a stylistic transformation to the draft. So it's so.
+But then once you've done that, it's better to validate using the dials,
+if that makes sense.
+
+27:30
+David Speigel
+That does make sense because I often use to prompting phrases, but
+you're being way more specific and taking order into account. So the
+phrases that I use is rewrite this, like, at a X level. At X grade
+level.
+
+27:51
+Vrijen Attawar
+Right.
+
+27:52
+David Speigel
+This at a fifth grade level. And then I'll say, too wordy. Reduced by X
+percent, reduced by 5%. So that's what I usually do those two things.
+But you're using like, specific, like name scales and you're using the
+specific order of writing it neutral first and then going up or down,
+like, I'm just writing and then telling it to do those.
+
+28:11
+Vrijen Attawar
+Right. Which, while on the subject, what I'm doing, I'm just.
+
+28:15
+David Speigel
+I'm just picking a grade level that's like less than high school. And
+then I'm just like, picking a percentage level, like, I'm just throwing
+out there. But you've got it, like, seemingly scientific now.
+
+28:27
+Vrijen Attawar
+Yeah, I mean, I was. I really. I mean, to the extent. To the extent that
+to do this extraction process, I spent a good two hours building out,
+like, to build that part of that workflow. I spent two hours building
+out a voice extraction system for the config files for this workflow.
+
+28:50
+David Speigel
+You mean like a tone?
+
+28:52
+Vrijen Attawar
+So. Because now I could just run your writing through that. Or you could
+run Your own writing through that on your system. Once I flash you over
+my system and generate this for you. So it will just replace my analysis
+with your analysis.
+
+29:08
+David Speigel
+Yeah, What I've done with that is I've taken all my call recordings and
+then I've asked AI to tell me what my tone is. I'm like, go analyze all
+these transcripts and then describe David's tone.
+
+29:27
+Vrijen Attawar
+I would adapt that. Unless the amount of averaging that takes place
+there, I would say is going to lead to a less optimal outcome than if
+you were to curate with calls. It's hard, right? Because I recognize
+like thinking back to oh, what was the call where I was kick ass that
+one time is difficult. For the record, if you were using my system, you
+would be able to go back to that call and know which call you were kick
+ass on. I have a performance evaluation system in the wings that is like
+just inches away from being bootstrapped that is actually going to give
+me coaching every single call I do. So it'll tell me, hey, you probably
+shouldn't have said that. And I know because you keep doing that five
+fucking calls, right? So like it's. The possibilities are fucking
+endless.
+
+30:21
+Vrijen Attawar
+And so I would say, I mean just like so you know, the other stuff. So
+obviously it has all that stuff built out. I have daily digest, I have
+infrastructure for daily digests. I have the infrastructure for a CRM,
+like a squealite like database that is updated completely. Oh, this will
+be cool to see. Let's see what it has on you. Let's see what my.
+
+30:49
+David Speigel
+While you're doing that, let mention one thing. Since you're talking
+about like aggregating and deliverable lyzing or whatever you want to
+call it, like ongoing stuff. I have some thoughts on LinkedIn that I
+would like to build but I'm struggling to do it in an automated way. So
+like, tell me more. I follow people on LinkedIn because I just connect
+with them and it makes me follow them. But then I'll never see them
+again because LinkedIn show me their shit. So then instead of just
+following them when I connect with them, I look at their profile and if
+they've ever written a single piece of content that I like now I turn on
+all notifications. The reason I do that is because some people, if
+they've written, I want to connect with some people, I don't want to see
+their content.
+
+31:41
+David Speigel
+I don't care totally if somebody's ever written a good piece of content,
+then I want to follow all their content. Because in the hopes that at
+some point when I go to my notifications and see the people that I've
+turned on all notifications, that I would categorize them and make lists
+and then unfollow all their notifications. Yeah, I would visit the
+lists. So for instance, like here are two lists that I follow. I follow
+people who write about product led growth and I follow people who are a
+few lists. I follow VCs or investors, like heavy hitter investors. And
+then I follow career coaches.
+
+32:25
+Vrijen Attawar
+Right.
+
+32:28
+David Speigel
+I don't need LinkedIn to tell me which of those posts I should see. I
+want to see all of like Alex Reshevsky and Nancy Chu and Satish
+Mumaretti and Ben Eris is like, I want to see all of their posts on a
+regular basis without having to all of them. So I've created LinkedIn
+lists, but maintaining those lists is a pain in the ass.
+
+32:51
+Vrijen Attawar
+Okay, where do you maintain those lists?
+
+32:56
+David Speigel
+I literally maintain them in bookmarks.
+
+32:58
+Vrijen Attawar
+Okay.
+
+33:00
+David Speigel
+Because there's no way to.
+
+33:01
+Vrijen Attawar
+How much is it, how much is it worth to you for me to build that for
+you? I'm not even saying I'm going to charge that to you, but I just
+want to like gauge my own. Like it's important for me if I'm doing
+consulting, like start to gauge pricing in that regard.
+
+33:16
+David Speigel
+It depends because here's how I think about it. Because I'm actually
+working with out of work product manager who's trying to find shit to
+build. And I was talking with her. I don't even remember how I met up
+with her. She's in Europe. She built something called Scoops, I think
+it's called. Hang on. Yeah, Scoops. Scoops is find the stuff that you
+saved on LinkedIn instantly. So basically what she built was something
+that'll go back and catalog all of your saved posts.
+
+33:47
+Vrijen Attawar
+Fuck. How'd she get access to LinkedIn's API?
+
+33:50
+David Speigel
+She scrapes.
+
+33:52
+Vrijen Attawar
+Oh. Oh, fuck.
+
+33:54
+David Speigel
+So she just scrapes your saved post page. So you go to your saved posts
+when you've got this chrome extension turned on and it'll just pick. So
+it's a little bit, you know, risky wrecking your LinkedIn account. I'm
+aware of that.
+
+34:11
+Vrijen Attawar
+But.
+
+34:13
+David Speigel
+She'S created this. And so then you can tag your posts, you can create a
+collection and you could do a couple other things and so you could
+filter by authors. And so what I was trying. So I have like 2,000 saved
+posts or maybe she has 2,000. I mean, I only Have a thousand saved
+posts. I have a thousand saved posts. If I make a collection of saved
+posts, I could share that with somebody and I might want to charge them
+for it.
+
+34:42
+Vrijen Attawar
+Oh, so it's like a. Hey, you get to cut to the chase and see my list.
+Yep, gotcha. There's an interesting who the creators are.
+
+34:52
+David Speigel
+That you don't know about. That maybe they've written books, maybe
+they've got their own substacks. Maybe there's great posts on LinkedIn
+but like they write about your problem and you're like some specific
+posts in a category about that problem. I'll share that with you because
+it answers your questions. Like, I talk with a lot of people often and
+they're just like, David, I could talk you through that problem, but I
+learned about it from this book. Go read this book.
+
+35:17
+Vrijen Attawar
+Can you, can you hear me still?
+
+35:19
+David Speigel
+Yes, I can.
+
+35:20
+Vrijen Attawar
+Perfect. I actually have someone that would be interesting. User
+research of nothing or market research of nothing else. Actually spoke
+to a young lady today that's a student F F F I you who built a. So if
+you're looking for market validation, here it is. She built a TikTok
+brand around what she calls save your feed or like something your feed
+where she recommends influencers that you can follow based off of your
+career interests. And right now she's been focused specifically. Yeah.
+So I'm happy to introduce her. She's a great kid and she seems to be
+doing like very well intentioned stuff. I was giving her some little
+advice and then figuring out ways that we could get in front of her
+audience. But I say that to say both. Yes, she seems to have been
+experiencing a good amount of success with it.
+
+36:15
+Vrijen Attawar
+And I would say, why not like build on Zoe for both of our call
+recorders.
+
+36:25
+David Speigel
+Take an action item to introduce me to that person. I would like to talk
+with them. But to. So went down a couple tangents and threads. Let me
+come back to your question, which is what would I pay for someone to
+help me create LinkedIn lists of creators? I'm not sure, but it makes me
+feel like this scoops saved post thing. So I said I put the link in the
+chat, but the way that I would pay for it would be based on if I could
+sell it. That's the bottom line. Like, I'm not gonna pay for a service
+like that if it's just like David's whim.
+
+37:08
+Vrijen Attawar
+Well, I was gonna say even if you wanted it just for yourself. I'm
+pretty sure you could do that. How you do it in a scalable way. That
+would be interesting. I think it would be possible. But hey, tinker with
+it. Check it out. I mean if nothing else, like you'll. You'll certainly
+be able to spin up experiments related to that quite easily. With Zoe,
+it has the ability to spin up sites. If I literally tell it, hey, make a
+site about X, it will like do everything from spinning up that part of
+the server and maintaining it all the way to like putting up the website
+and helping you like deploy it on a particular URL.
+
+37:46
+David Speigel
+Wow.
+
+37:47
+Vrijen Attawar
+It's. It's super cool, dude. It like, it will like talk you through
+fucking everything.
+
+37:50
+David Speigel
+Like how is it different than like a lovable or like.
+
+37:55
+Vrijen Attawar
+Because lovable isn't a computer. Because for zo. Like, because for
+lovable that's like the whole point of lovable and for Zoe that's just
+one of like a hundred amazing things that you can do with it.
+
+38:06
+David Speigel
+Because this is lovable meets VMware.
+
+38:10
+Vrijen Attawar
+Yeah, yeah, like lovable replit. All that in one box.
+
+38:17
+David Speigel
+Interesting.
+
+38:20
+Vrijen Attawar
+Okay, so I'll just. So the last thing I'm building this is where this
+goes back to career span and sort of the career related interest. So
+what I've spent the last day building out is an ATS Enzo. And what I'm
+thinking is I am 150 positive that I can make a better ATS than any ATS
+out there just on. So I, I've no doubt I can do that. Partially because
+of a interesting approach that I'm trying to. I'm going to start writing
+a lot of thought work around thought leadership around which is this
+idea of like gestalt hiring. Essentially you are. Everyone intuitively
+thinks, including myself that if you want to rate someone you rank them
+on a list so you score them out of 100. This is the wrong way to think
+about is actually a question of trade offs.
+
+39:23
+Vrijen Attawar
+You could get David Spiegel and crush it at your company or you could
+get Virgin Adawar and crush it at your company. The question is who do
+you want sat next to you and how can we put the right people in the
+right places? Right. You know, so operating off the hypothesis it
+actually and I'll show you the kind of like analysis it's done. I just
+gave it like I'm still building this out. I kind of just gave it like
+four random resumes of admittedly like pretty good folks.
+
+39:52
+David Speigel
+There's also like a formula and this was like, for dating, where it's
+like, you know, how do you find the right person? Like, how many people
+do you need to date until you know you've met?
+
+40:04
+Vrijen Attawar
+It is 37%.
+
+40:06
+David Speigel
+Is that what it's called?
+
+40:07
+Vrijen Attawar
+That's what it is, yeah. How many things you need to see before you have
+enough of a sense of what is right or wrong?
+
+40:13
+David Speigel
+Yes. Okay, I'm glad you already knew of that and I didn't have to search
+it up. But yes, like that one. Like, you know, you need to see a certain
+number of things. But like once you see a certain number, then you kind
+of have a baseline and the next one that meets, like, that beats the
+baseline. Just accept.
+
+40:29
+Vrijen Attawar
+Yeah.
+
+40:30
+David Speigel
+Something along those lines.
+
+40:31
+Vrijen Attawar
+And if we can establish the baseline using the career span story data.
+Right, right.
+
+40:39
+David Speigel
+You got your baseline with a larger sample set and you're going to have
+a way higher, better baseline. So then if you just find the next person
+above that high baseline, you've. You've improved your chances.
+
+40:50
+Vrijen Attawar
+Right. And we can actually inform you where the bar should be. And
+that's what you want to pay for, is where you can normalize the.
+
+40:58
+David Speigel
+Baseline across all the different companies and help. Yeah.
+
+41:03
+Vrijen Attawar
+So what you actually pay for is. So what we can give you for free is the
+baseline and what you pay for is the candidate. Right. Because once we
+give you the baseline, what are you going to do? Take it to. Indeed. You
+can get a job description out of it, but you're not going to find the
+person.
+
+41:21
+David Speigel
+Right.
+
+41:22
+Vrijen Attawar
+So what are you going to do? Come to careers fan.
+
+41:25
+David Speigel
+I like it. I like it. I did, I did a proposal for a company in
+Deerfield, like a suburb away from here. It's like $100 million ARR
+company that does in person focus groups like taste tests for CPG
+products, like chips and all sorts of other stuff. And they developed
+this thing called the curion score. And it's basically like a bunch of
+taste adjectives that are across all different types of products. And
+then they score products on those adjectives and then they can kind of
+like do a score by category and all this different stuff.
+
+42:07
+Vrijen Attawar
+Right.
+
+42:08
+David Speigel
+And so they have this curion score and then you have a new CPG product
+and you can. And you can run it to curion and get your results. Then you
+can measure your results on your product against your Kurion score
+against like the category, whatever.
+
+42:22
+Vrijen Attawar
+Right. And what were doing. And so what I was literally just on a call
+with Logan about this has been a very. I think this might go down as one
+of the biggest days of the company's history, the way it's turned out.
+I. I was actually just talking to Logan and making the case that, like,
+we should be emphasizing the fact that career span users are over
+performers. Right. Look at this. Well, look at it, but then don't tell
+anyone I made you look at it because it's a privacy violation. But I'm
+excited. So I'm not going to show you the names of these people,
+obviously, but look at this, right? I can see if they are commensurate,
+if they are over performing or if they're underperforming.
+
+43:06
+David Speigel
+I'm still seeing Zo computer.
+
+43:08
+Vrijen Attawar
+Oh me. Okay, hold one second. This one. Check this out. So what I have
+here is a table of folks. These are span users, as you can.
+
+43:26
+David Speigel
+Now you can see it.
+
+43:27
+Vrijen Attawar
+So check this out, which I'll just take a moment to be super fucking
+proud that we have built a product where both an extruding machine
+operator and a chief executive officer and a consultant and a director
+of comms and someone that's a UI designer. There's a lot of people
+fucking represented.
+
+43:49
+David Speigel
+Yeah, right.
+
+43:50
+Vrijen Attawar
+That's a cool thing.
+
+43:51
+David Speigel
+M levels. That's cool.
+
+43:52
+Vrijen Attawar
+These are people telling fucking stories. These are people who you can
+say, yes, this is a IC that's performing commensurate, but this is a
+founder, you know, or this is a, you know, underperforming pa. But this
+is very much an overperforming engineer. Right? Yeah, we can use that to
+your point, normalize.
+
+44:12
+David Speigel
+Yep.
+
+44:13
+Vrijen Attawar
+And that is an incentive that creates an incentive for people to say,
+how do I stack up? Because if I stack up, I'll get a job. Right. And it
+creates a natural incentive to share your stories in the long run. As
+career insurance.
+
+44:27
+David Speigel
+This is a huge thing in the product manager interview process. Enormous
+thing. And I'm sure it's in every other level as well. Like in legal, if
+you want to get from, you know, council to senior counsel to, you know,
+whatever like is, are you performing at your level or above it? And even
+if you're performing above your level, are you performing at the next
+level? So you could be like a super high ic. You could be like the best
+IC there is. You could be massively over performing as an ic. But if you
+take the like, if you measure yourself as a group pm, you might be like
+tremendously underperforming because you just don't have those skills.
+
+45:14
+Vrijen Attawar
+And can you imagine how fucking crazy it would be if were able to Say
+this person is like a bargain. They're like 30 grand if we got people to
+share salaries. And it was like, oh, man, this person is like a fucking
+pickup. Okay, meet me in the middle, Give me half the money you're
+saving. Like, it's a. It could be a truly, genuinely egalitarian thing
+if, like, you're like, fuck it, fuck the recruiters, let's meet in the
+middle.
+
+45:43
+David Speigel
+I mean, or if you're an employee and you're looking to go from, you
+know, senior IC to group pm. When I was at Allstate, they had this thing
+called nine box, which you're probably familiar with since you're in
+this space. And some people would like, be privy to their nine box
+scores so that they could improve them and then be on the promotion
+track. And other people were like, you know what, we're not even gonna
+talk about this with you. You're doing a good job. You're at a good
+rate. Like, stay here for five years at that level or leave. We don't
+care. Like, only nine box info.
+
+46:17
+Vrijen Attawar
+Right.
+
+46:17
+David Speigel
+But if you gave everyone their nine box info, then they would know how
+they rank in their level and what they need to do to rank well in the
+next level in their function.
+
+46:32
+Vrijen Attawar
+Right? Everybody wins.
+
+46:35
+David Speigel
+Right.
+
+46:36
+Vrijen Attawar
+You get to know where you stand.
+
+46:39
+David Speigel
+Yep.
+
+46:39
+Vrijen Attawar
+You get to know where you stand. And you get to know what it's going to
+take to level you up, where your gaps are. You can use that information,
+negotiate for better pay yourself, or get on the waiver wire and see if
+anyone's poking about. Right. And you're incentivized to share what you
+do, which creates an incomparable data set of qualitative explanations
+of how people approach the same job and the same thing.
+
+47:08
+David Speigel
+I have to think that companies like Google and Meta, who have the
+meritocracy of interview, like where you have to pass the gauntlet and
+then you're basically in the matching round. You're still not given an
+offer. You're just like, you're on the bench of. Of pass. I have to
+think that companies like that have built stuff like this internally.
+
+47:29
+Vrijen Attawar
+Yeah. But here's the thing. Employees, the way they build them, they are
+always setting up adversarial incentives. Right. They're not going to
+share that information with you. You said it yourself in your previous
+example, right? Some people got told, some people didn't. Right. There's
+no. Corporate can never. Corporate wants the illusion of meritocracy. It
+cannot guarantee meritocracy because meritocracy is operationally.
+Inconvenient as shit.
+
+48:02
+David Speigel
+Interesting.
+
+48:02
+Vrijen Attawar
+If you said it yourself. If I have someone, pardon me, that's.
+
+48:07
+David Speigel
+A whole nother call to unpack that one.
+
+48:09
+Vrijen Attawar
+Right. But like you said it yourself, if I got an IC that I know is the
+only person that knows that system and it's going to be more of a pain
+for me to move that person than it is to give them the opportunity.
+Right. So a corporation is not. A corporation can never truly say that
+it's meritocratic. I can't honestly tell my co like my employees
+meritocratic because there are situations where yeah, I will want to put
+their professional interests behind mine. That's all good. They're
+signing up for me to do that on the short run so that we can achieve
+things together. But if they are dissatisfied with how I'm doing, that
+is on them is their right. No obligation to me.
+
+48:51
+Vrijen Attawar
+Sort that out and Career Span will then find you someone that will value
+you, that will enter that relationship knowing.
+
+48:57
+David Speigel
+Your value is vibes. Yeah, they don't have like an actual metric, a, an
+objective, normalized metric. I mean there's stuff out there but it's.
+Yeah, make about like a meta or a Google doing that. Is that like. Maybe
+they wouldn't trust career spans algorithm because they built their own,
+but most companies are not those companies. Most companies a career span
+and you're not looking to service everyone, you're looking to service a
+large tam, which would be most companies because they haven't built.
+
+49:33
+Vrijen Attawar
+Right. So I think that would be, that would actually be hyper feasible
+would be to say that creates a natural incentive to check your job.
+Right. So if I'm following the arc, I am a founder, I want to look for a
+job. I can use the free or cheap Career span tool to help me understand
+where the bar is. Because at this point Career span is large enough user
+base to actually tell you where the bar is as far as a certain product
+is concerned or a certain role and level is concerned. Right. You use
+that information to build out your jd so you think why the fuck not
+Careerspan is going to be able to do better analysis so I might as well
+check against their database. Right.
+
+50:13
+Vrijen Attawar
+And we could arrange the pricing such that you pay for one, you pay for
+the other. If you pay for the entry one, the second one is cheaper.
+Something like that. But I think that along with the framing of merit,
+like who's performing at what level, I think could be really powerful.
+
+50:30
+David Speigel
+Well, I like how you have this commensurate over performing
+underperforming Are those the three or there?
+
+50:35
+Vrijen Attawar
+Yeah, yeah. And it's. This is an imperfect analysis. Right. But being
+like, look at this, right?
+
+50:45
+David Speigel
+Using what rubric are you using to determine those things? You're using
+a specific rubric. Four functions, four levels, four fields.
+
+50:54
+Vrijen Attawar
+It is a. It is a generalized. My understanding is that it is a
+generalized rubric that in relative terms asks you to level set against
+the AI's understanding of what it is at that level. So it is riddled
+with bias. I'm not going to pretend otherwise, but it is riddled with
+one particular direction of bias, which I don't know how much you follow
+these things, but generally speaking, as far as biases, that's good. A
+consistent directional bias is a good thing. On a less tongue in cheek
+note, you don't have to fucking trust my system. It's gonna fucking
+explain to you why you should trust. Right. And I think that's what were
+missing is were trying to give people the same as what the resume was
+giving them. And I think that was a mistake. What people bowl.
+
+51:43
+Vrijen Attawar
+Ultimately what a hiring manager needs to do is this person worth having
+a conversation? Are they not going to be an outright waste of my time
+and are they going to be a viable enough candidate, someone that turns
+out to be fine, just not a good fit? No one regrets, Right? Right. So I
+think so long as you.
+
+52:03
+David Speigel
+Founder and like some of this other stuff because I can tell you like
+where people mess up. Like an example that you said with founder, like
+I've talked with founders who have built companies that they sold and
+they're struggling to get hired at top tech because they don't know how
+to reposition themselves.
+
+52:19
+Vrijen Attawar
+Yep.
+
+52:20
+David Speigel
+Talk to senior director PMs who've done three different. Three totally
+different things. Well, but they can't get hired because they've got all
+three of them listed and nobody wants jack of all trades. So like one
+person like did this huge integration and then they also did this M and
+A and then they also did this like go to market. And they've got all
+those things because those are the three biggest accomplishments on
+their resume. And like nobody wants an integration M and A go to market
+person. They want one of those things like all.
+
+52:56
+Vrijen Attawar
+So now you know, so I've explained to you that sort of gestalt
+philosophy. This is my dumb system for evaluating it. And let me just
+show you where is implement rubric. Rubric was implemented. Give me one
+second. Can I intake processor? No, One second. One of them was my
+resume. I Only searches the title stupid. One second. Okay, here we go.
+Right, so you'll see here as I was crafting this, right, we essentially
+got to a point where we had four folks that were varying degrees of it's
+glitching for a second it was showing us like varying degrees of like
+interview maybe strong.
+
+53:47
+Vrijen Attawar
+If you look at the explanations, it will actually, for one of them it
+was like, hey, this person has no direct consulting experience, but they
+were in the IDF and they have, they went to HBS and they did this other
+thing and they this so they have a spike, right? So like this is why. So
+it will explain to you why should I pay attention, right? That's
+ultimately if you're talking about true optimization of information. It
+is why should I give a shit is fundamentally what all messaging boils
+down to, right? And so I think the resume has been a system where you
+have to read it and figure out for yourself is this person telling the
+truth and should I give a shit? Career span is telling you just give us
+the job description. Only hear why you should give a shit.
+
+54:33
+Vrijen Attawar
+Only talk to people that you can trust will not burn you.
+
+54:37
+David Speigel
+I, I like that. I like that. The thing that I like the most is that your
+interaction with AI you seem to be consistent about having it give you
+the answer and also providing you why it gave you that answer. In this
+instance. Like, like when I read somebody who said yesterday, like blah,
+blah, blah. I did all this stuff and now I can write eight posts in 30
+minutes. And everybody that's posting on LinkedIn is like, God, it takes
+me like 30 minutes to write one post. Takes me an hour to write one
+post. And this guy's like, I can write eight posts in 30 minutes. And
+when I saw him say that, the first thing I thought was how many
+impressions do each one of those posts get?
+
+55:23
+Vrijen Attawar
+Yep, it's slop.
+
+55:25
+David Speigel
+Like measure it like you can, I can write it post in 30 minutes too. But
+I'm not talking about those types of posts. I'm talking about like ones.
+
+55:32
+Vrijen Attawar
+Yeah. And if you had better metrics, that is the implicit hierarchy of
+metrics is the best metric you use is the best metric you got. That's
+just what it is. It's always the best metric you use the best metric you
+got. So if that person's bragging about fucking output volume, which is
+a pathetic measure of content, I think that's a fair point. I would
+already be sketched out.
+
+55:57
+David Speigel
+And well, the point that I was making was not like to criticize him. It
+was to say, as soon as I look at that, I'm like, but how did they
+perform?
+
+56:05
+Vrijen Attawar
+Yeah.
+
+56:05
+David Speigel
+What's about what I see you doing with AI is, hey, AI, thanks for the
+answer, but how did you come up with that? So, like where my mind always
+says measure, measure, your mind is saying, prove it.
+
+56:19
+Vrijen Attawar
+Yeah.
+
+56:20
+David Speigel
+Helpful to know because like, AI could be hallucinating.
+
+56:23
+Vrijen Attawar
+Yeah. There are so many to prove it.
+
+56:26
+David Speigel
+Which is really nice. And something that I need to like.
+
+56:29
+Vrijen Attawar
+What I, what I would say, what I would encourage, what I try to
+encourage folks to do is to not think of it as learning AI, because I
+think that's setting yourself up for failure. I think, I think of it as
+developing a intuition for AI. So you have to develop like reflexes
+because it's too fluid of a thing. You're like dynamically engaging with
+the semi intelligent, ostensibly intelligent being. There's no rule set
+that can, that you can learn. Right. People try to teach folks all of
+these like, frameworks and it's almost like if the framework is a good
+place to start, but if you're using the framework like a month in,
+buddy, you got problems. Right? Like we, we. You have to understand the
+underlying essence of why the framework is being used. Yeah, but I think
+that's been the cool.
+
+57:23
+Vrijen Attawar
+I'm like, so infinitely grateful to my head of AI, who, yeah, was a,
+yeah, was an extremely good. I think I, I, I think I would have been
+much worse at AI if I did not have ILSA instilling very good values and
+really good discipline around using AI, which has made all the
+difference. Yeah, it's a cool, it's, there's so much cool shit that we
+can do here. Right? But I think that this is where like, so yeah, I'm
+basically going to try to get this ATS built out today. And what I'm
+thinking is I can essentially offer it to founders as a like lead gen
+thing where I say, hey, you know, use Career Span, right? Or like you
+like, use this, build relationships with them. Even folks that can't pay
+anything can at least be informed about Career span.
+
+58:23
+Vrijen Attawar
+Because it would be like, hey, I can set up the zo, which is easy and
+free and blah, blah. Or I could just use career span. Right? But I think
+what I've built is the exact kind of thing that would get attention in
+hardcore founder circles if I were to like, advertise it properly and
+like have a little bit of showmanship about It.
+
+58:42
+David Speigel
+Right. Because founders aren't going to be able to afford workday or
+whatever. Nope. They might not even have a person who's going to be able
+to, like, manage the implementation of all that. But if you have a
+lightweight thing that they can interface easily, then you're in and
+your brand is back. Those back?
+
+59:00
+Vrijen Attawar
+Yeah, those back. So, like, you can see.
+
+59:04
+David Speigel
+Or by the way, at the top of the hour.
+
+59:06
+Vrijen Attawar
+Drop at the top of the hour. Cool. No sweat. Let me see. Ei, Ei. Yeah,
+yeah. Do we have a David Spiegel entry? What do we know about David
+Spiegel?
+
+59:19
+David Speigel
+I don't know if I've gone through enough here.
+
+59:23
+Vrijen Attawar
+Yeah, I don't think you've been through enough meetings with me since I
+set the system up. Oh.
+
+59:27
+David Speigel
+I was gonna say, I thought you were looking up some career span stuff. I
+haven't. I haven't gone through, like.
+
+59:31
+Vrijen Attawar
+No. So this is. This is basically me pulling up what Zoe knows about you
+through the meetings that we've gone through.
+
+59:38
+David Speigel
+Got it. Okay.
+
+59:39
+Vrijen Attawar
+Yeah. So this is just because I think you'd mentioned that, but you see
+that this was completely built up. And now every time I meet with you,
+this is gonna be updated. So this is from today's meeting. Right.
+
+59:54
+David Speigel
+This is great.
+
+59:56
+Vrijen Attawar
+Strategic contributions. What resonated with David. Right. If you were
+just able to remember every single time, every conversation, if you
+remember what made me happy the last conversation. I mean, you're a
+fucking actual, like, person with actual networking talent. Like, I know
+this would be crazy in your hands.
+
+01:00:13
+David Speigel
+Yeah. So I'm looking at this and I'm already thinking like, there.
+
+01:00:17
+Vrijen Attawar
+The.
+
+01:00:18
+David Speigel
+The. There's. The personal CRM market is.
+
+01:00:24
+Vrijen Attawar
+Yes.
+
+01:00:24
+David Speigel
+And I'm telling you that as somebody who's searched for a personal CRM
+since the 90s, like, there used to be a tool called act, exclamation
+point. It was all caps. Act, exclamation point. It probably stood for
+something, but it. But it was like a personal CRM. Then there was the
+Palm Pilot, right? Where it was literally like a stylus and shit. And
+none of these things are anything better than a Rolodex. Maybe you get
+some fields with some notes, but they don't help you, like, follow up in
+a meaningful way. That's the key. The key is that you need to know the
+person's profile details, like the hard coded field or the fixed fields.
+But then there's a lot of dynamic fields that you need to know, which is
+what this is doing.
+
+01:01:09
+David Speigel
+And then you need to have those dynamic fields and you Also need a
+reminder system so that periodically you go back to people that you've
+connected with and you meaningfully reconnect with them at certain
+intervals.
+
+01:01:24
+Vrijen Attawar
+Yeah.
+
+01:01:25
+David Speigel
+Could be you want to meaningfully reconnect with personal contacts on
+anniversaries, birthdays, kids birthdays, that kind of stuff. Holidays.
+Could be that you want to reconnect on a meaningful different interval
+with professional people about what you talked about and if anything
+changed in your life or their life. Totally different, but similar
+concepts. But if you could have a rule set for that where it prompts the
+individual to do a little bit every day of reconnecting, that would be
+amazing.
+
+01:01:54
+Vrijen Attawar
+Yeah. Well, how about this? We're all sort of figuring this out as we go
+here. I use this, use my base layer for the CRM. There is too much
+functionality for me to build on zo. So what I propose is this. I
+propose that if you really take the zo, I will provide a consistent base
+layer of operation that I would like you to commit to aligning stuff you
+build with and what I essentially. And essentially, like just, you know,
+essentially I'll consider it like a fractional like charge to keep that
+central system up. And in exchange I say we collab. I never build
+anything networking related. I let you have all that functionality. We
+go out and we go to these founders and we go to these VCs and we sell
+this.
+
+01:02:55
+David Speigel
+Think about founder led sales. Yeah, founder led sales. How many
+founders are really good? You wouldn't. I mean, you're a founder, you
+hang with founders. Like how many founders are really good at keeping on
+top of following up with the people that they met?
+
+01:03:13
+Vrijen Attawar
+Yeah. Oh, I'm atrocious at it. That's why my company's not successful.
+
+01:03:18
+David Speigel
+In a personalized way. So that not only like everything I just said
+about personal versus professional and following up on all that, take
+all that across all of your touch points and then overlay your goal.
+
+01:03:32
+Vrijen Attawar
+Right.
+
+01:03:33
+David Speigel
+So David's goal, like I'll just tell you my personal goal. Yeah, my
+personal goal this week I'm trying to reformulate my advising business
+piece of my life. Right. So my goal right now is to reach out to anybody
+on LinkedIn that has, that's a first degree connection that has the
+title chief or something similar. Guy helped me a budget owning decision
+maker that could pay for advisory services. Right, Right. So I want to
+reach out to every one of them in my first degree network and ask them,
+hey, I do this type of product stuff, monetization, pricing, like that
+type of stuff, among other things.
+
+01:04:10
+David Speigel
+Could I talk with you and get information about any vendors that you've
+hired in the past six to 12 months and what was the pain point that
+caused you to go use an outside vendor and work with them? That's easy
+for me to formulate. That's my opener.
+
+01:04:25
+Vrijen Attawar
+Right.
+
+01:04:26
+David Speigel
+Like my informational interview opener.
+
+01:04:30
+Vrijen Attawar
+Right.
+
+01:04:32
+David Speigel
+But then I want to follow up with all these people because like in one
+week I could spam 500 people in my first degree with that opener.
+
+01:04:40
+Vrijen Attawar
+Right. You not only need to, you know.
+
+01:04:43
+David Speigel
+In three months there'll be two people that come out of that I actually
+follow up with and there should have been 50.
+
+01:04:49
+Vrijen Attawar
+So I have a post coming out about this love for you to support it or
+signal boost it. Essentially around the idea how the modern challenge
+around information for the modern professional is not one around the
+acquisition of information and it is no longer around the storage and
+retrieval of information. It is now around the selective acquisition and
+manipulation of the right information in a entirely automated way. That
+is where we need to move. Right. That's where the thing allows. So in
+the last five minutes I.
+
+01:05:30
+David Speigel
+Just want to acquire information and lots of people now can even store
+all that information. But the question is how do you take that
+information and align it towards your short term and long term goals and
+have something tell you based on those goals and the information, what
+should you do on an immediate and an ongoing basis? So like let's talk
+about your health. Hey, my stomach hurts. Well, you should go to the
+doctor today or hey, generally my stomach is hurting. Well, you should
+fix your diet, which means that on a daily basis you should eat more
+healthy. Well, you should exercise and I'm going to remind you on a
+weekly basis how have you. Did you create your exercise plan for the
+week and sticking to it. They're totally different things. One is urgent
+and one topic and one is ongoing.
+
+01:06:20
+David Speigel
+But they're both the same goal.
+
+01:06:21
+Vrijen Attawar
+I want to. The problem is. And the problem is that stuff gets stuck in
+different pools. Right? Information pools up in different places. So
+essentially what I have for several years now been thinking about. So
+it's like very gratifying that it's of kind coming together is
+information management as a whole. How do It? It's state and context
+management. Not. It's not an informational problem anymore. Right. We
+have plenty. You got too much information.
+
+01:06:49
+David Speigel
+Yeah, it's information, the goals and then the short and long term
+activity like the plan based on the information you have and your goals.
+
+01:06:58
+Vrijen Attawar
+So what I want to just get you noodling on is the idea that we. There
+are synergies between the areas of expertise that we have and there are
+synergies between the networks and variety of things that we have. So
+what I'm already going to do so that you know, like kind of what
+direction my ship is moving in is still trying to make careerspan a
+thing focused more on accreting value to the. Org and letting it just
+like fill up like a big ass balloon of money. Ideally on the personal
+side, how do I build the kind of relationships and networks that let me
+sell this fucker off in like six months, right? To achieve that, I need
+to essentially get into these rooms and in these conversations.
+
+01:07:44
+Vrijen Attawar
+I think it will be easier for me to do that with someone else that is
+producing an equivalently quality product that is a complimentary sort
+of professional solution. And I actually reckon if I'm going out there
+and selling these founders an ATS system, it would be very easy for you
+to build out something. Use all of my processes for like, you know,
+essentially like building out in Zoho and exporting in Zoho. You already
+have that infrastructure and you just sell that as your product, right?
+As your consulting thing. You can make it white glove. You can make it
+big. It's great. You can literally put up the GitHub repo and ask for
+Venmo requests after someone downloads it if you want it scalable. Or
+you could do total white glove, right?
+
+01:08:27
+Vrijen Attawar
+All of these fancy folks that you know, you can actually go to them and
+say, hey, I'm going to like change your fucking networking game with
+this because I bulk at the amount of functionality you would be able to
+build in to something that is optimized for networking with the broader
+operating system in place, right? To ingest meetings, to process
+meetings, to clean up files.
+
+01:08:52
+David Speigel
+The people who would really benefit from this type of a system would be
+solos. Yeah, like, because. Because if you're working for a company,
+your stuff's in that company, right? You got to do things the way the
+company does. So not you're not targeting employees. And if you're
+trying to find a job and you need a network to find the job, maybe
+you'll pay for this, but like you're not going to ongoingly pay for this
+to build your like personal CRM. You just want a job. Tell me the steps
+I need to take right now to network Warm and cold. Yeah, my warm sucks.
+But like, what do I do with the warm that I have? And like build the
+cold to land interviews and like so that like even job seekers, it's
+more the solos who maintain this strong network.
+
+01:09:36
+David Speigel
+Those are the ones who need it. Like the realtor or like a content
+marketer or whatever. The solos I think would be the market.
+
+01:09:45
+Vrijen Attawar
+Right. Right now there's a moment where it's all terra sort of nova.
+Right. It's all sort of like virgin territory as far as no one's really
+built in this. They literally, they're like, you can be the vanguard of
+our apps. Platform is where we are. This is like me showing up at the
+day and obviously I hope this company becomes even a fraction of this,
+but it feels very much like showing up at the first day of the app
+store. Being the first developer in the app store is the vibe I'm
+getting.
+
+01:10:15
+Vrijen Attawar
+And like to the extent that I know they have enough money to last at
+least another year or two, we can get in and get out setting up these
+consulting platforms for others and then I suspect I can charge
+essentially these high powered people a very decent amount of
+subscription money for feature updates. Right?
+
+01:10:33
+David Speigel
+Yeah.
+
+01:10:34
+Vrijen Attawar
+Paying Ridge in for new functionality that you never have to worry about
+that's integrated into your zo. You just fucking run it.
+
+01:10:40
+David Speigel
+Right? Yeah.
+
+01:10:43
+Vrijen Attawar
+So I think it could be. I think it could be an interesting space and
+certainly enough to do some experimentation with. So check this out. If
+this is interesting to you, I will, as an advance on our friendship, I
+will just flash you over the system. Also, I'm just looking for a person
+that's excited about this, wants to collaborate with me, so hopefully
+that will be good for you.
+
+01:11:08
+David Speigel
+Definitely. I want to research though. I'm going to look up Ben and Rob
+and you said tiff as well.
+
+01:11:13
+Vrijen Attawar
+Tiff. Yeah. And get on their discord. It's a, it's an open discord. Get
+on their discord, say hi. It's a really nice community. I go by their
+office and work there at times. They're just like. They're just like
+really nice people.
+
+01:11:29
+David Speigel
+Where is their office?
+
+01:11:31
+Vrijen Attawar
+Somewhere in Williamsburg in Brooklyn. Yeah. Cool. Yeah, check this
+stuff out. I gotta run too. I've like maxed out my voice points for
+today. I need to rest.
+
+01:11:43
+David Speigel
+I can hear it getting like weaker and weaker.
+
+01:11:46
+Vrijen Attawar
+Yeah, I know. I'm, I'm aging. I'm Benjamin buttoning in front of your
+eyes. Or the reverse, which is, I guess just aging.
+
+01:11:54
+David Speigel
+All right, I need to start an account with Zoe and then you'll send me
+over.
+
+01:12:01
+Vrijen Attawar
+Start an account with Zoe, Jump on the Discord and just message me when
+you're on the Discord, and I will, like, both ping you, and I'll intro
+you to one of the founders on Discord, and you can, like, you can name
+drop the massive celebrity that is v adawar in the 30, 40 person
+discord.
+
+01:12:19
+David Speigel
+First of his name.
+
+01:12:21
+Vrijen Attawar
+First of his name. Awesome. Good seeing you, dude.
+
+01:12:24
+David Speigel
+We're first, but yeah, it's a good one.
+
+01:12:27
+Vrijen Attawar
+It's a good one. I wish the first wasn't a thing that sounds painfully
+close to virgin, but, you know, it's built a lot of character over the
+years. I wouldn't have as good a sense of humor if I wasn't named this,
+I'll tell you that.
+
+01:12:38
+David Speigel
+I mean, why can't Johnny Cash. Boy Named Sue.
+
+01:12:45
+Vrijen Attawar
+Was this really.
+
+01:12:46
+David Speigel
+Have you heard that song?
+
+01:12:47
+Vrijen Attawar
+No.
+
+01:12:48
+David Speigel
+Oh, my God. This is gonna.
+
+01:12:50
+Vrijen Attawar
+I'm checking out.
+
+01:12:50
+David Speigel
+I love Johnny Cash because of your name. This song is gonna change your
+life.
+
+01:12:54
+Vrijen Attawar
+Okay, I, I, I'm listening to it right away.
+
+01:12:57
+David Speigel
+I mean, you know who Johnny Cash is, right?
+
+01:12:59
+Vrijen Attawar
+Yeah, I love his stuff. Well, I mean, I love the stuff I've heard. I've
+never sought him out, but.
+
+01:13:03
+David Speigel
+All right, Boy Named sue, you got it.
+
+01:13:07
+Vrijen Attawar
+I'll play it right after. It's good chatting, man. I won't keep you, but
+I hope this is exciting.
+
+01:13:12
+David Speigel
+All right. It is. Thank you so much.
+
+01:13:14
+Vrijen Attawar
+Ciao. Ciao, Skis. Bye.

@@ -1,0 +1,29 @@
+{
+  "id": "criterion.aifluency.v1",
+  "name": "AI Fluency (Practical Use in Workflow)",
+  "dimension": "Communication",
+  "description": "Ability to effectively leverage AI tools to improve speed, quality, and clarity across core tasks; includes prompt design, tool selection, and judgment about when not to use AI.",
+  "evidence_types": ["Portfolio","Code","DesignArtifact","TrialTask","InterviewNote"],
+  "levels": [
+    {"level":1, "label":"Emerging", "behavioral_indicators":[
+      "Generic or templated outputs without adaptation",
+      "Resume or artifacts show unedited AI artifacts (formatting tells, boilerplate)",
+      "Cannot explain prompt choices or tool trade-offs"
+    ]},
+    {"level":2, "label":"Solid", "behavioral_indicators":[
+      "Uses AI for drafting or research with basic editing",
+      "Some prompt clarity; inconsistent outcome quality",
+      "Occasional misapplication (uses AI where manual would be faster)"
+    ]},
+    {"level":3, "label":"Strong", "behavioral_indicators":[
+      "Demonstrates before/after improvement using AI in real work",
+      "Explains prompt strategies and guardrails (hallucination checks, citations)",
+      "Integrates AI into workflow to increase throughput without quality loss"
+    ]},
+    {"level":4, "label":"Exceptional", "behavioral_indicators":[
+      "Builds small internal tooling or repeatable patterns (macros, templates, scripts)",
+      "Shows domain-aware prompt engineering (style transfer, constraints, evals)",
+      "Clear judgment on when to avoid AI; produces audit-ready outputs"
+    ]}
+  ]
+}

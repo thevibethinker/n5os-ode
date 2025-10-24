@@ -1,0 +1,26 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-21T23:10:13-04:00",
+  "action": "phase2_process_email_staging",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": [
+    "process_log_2025-10-21T11:50:32Z.json",
+    "process_phase2_run_2025-10-21T15:44:18Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-21T20:39:53Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-21T22:09:59Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-21T22:41:59Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-21T23:10:43Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-21T23:40:31Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-22T00:10:54Z.json",
+    "process_phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51_2025-10-22T02:39:49Z.json",
+    "process_phase2_summary_2025-10-21T12:09:51Z.json",
+    "process_phase2_summary_2025-10-21T22:09:59Z.json",
+    "process_phase2_summary_run_2025-10-21T18:41:34Z.json",
+    "process_phase2_summary_2025-10-21T22:09:59Z.json",
+    "process_phase2_run_2025-10-21T..."
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No staging email message files found; directory contains process logs and summaries only. No external participants extracted. No files deleted.",
+  "completed_at": "2025-10-21T23:10:13-04:00"
+}

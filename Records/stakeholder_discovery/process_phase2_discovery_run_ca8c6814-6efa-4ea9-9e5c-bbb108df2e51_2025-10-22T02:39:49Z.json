@@ -1,0 +1,12 @@
+{
+  "run_id": "phase2_discovery_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-22T02:39:49Z",
+  "ended_at": "2025-10-22T02:39:49Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "discoveries_path": "/home/workspace/Records/stakeholder_discovery",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discoveries_written": [],
+  "notes": "No external staging email message files available for extraction."
+}

@@ -1,0 +1,10 @@
+{
+  "run_at": "2025-10-21T18:10:06Z",
+  "source": "email_scanner",
+  "files_in_staging_dir": [
+    "process_log_2025-10-21T11:50:32Z.json",
+    "process_phase2_summary_2025-10-21T12:09:51Z.json"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": []
+}

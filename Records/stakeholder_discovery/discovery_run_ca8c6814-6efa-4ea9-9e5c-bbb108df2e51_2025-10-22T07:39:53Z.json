@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-22T07:39:53Z",
+  "timezone": "ET",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_examined": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email staging files found to process in staging directory. Only process logs present.",
+  "action": "no-op"
+}

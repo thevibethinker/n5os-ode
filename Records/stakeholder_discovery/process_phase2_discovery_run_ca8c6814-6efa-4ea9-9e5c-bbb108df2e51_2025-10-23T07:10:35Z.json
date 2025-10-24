@@ -1,0 +1,12 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at_utc": "2025-10-23T07:10:35Z",
+  "started_at_et": "2025-10-23T03:10:35-04:00",
+  "staging_dir": "Records/Temporary/email_staging",
+  "files_found": [],
+  "files_processed_count": 0,
+  "stakeholders_discovered_count": 0,
+  "discovery_files_written": [],
+  "staging_files_deleted": [],
+  "notes": "No parsable email artifacts found in staging (only logs and empty date directories). No extraction performed. Recommended: verify upstream ingestion that populates Records/Temporary/email_staging and re-run Phase 2 when messages are present."
+}

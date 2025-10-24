@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-21T09:16:09Z",
+  "started_at_et": "2025-10-21T05:16:09-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "staging_files_found": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "notes": "No staging files found under Records/Temporary/email_staging. No extraction performed."
+}

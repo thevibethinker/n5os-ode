@@ -1,0 +1,10 @@
+{
+  "run_id": "phase2_discovery_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-22T04:41:35-04:00",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No external email message files present in staging (only process logs and empty dated directories). No discovery records written."
+}

@@ -1,0 +1,12 @@
+{
+  "run_at": "2025-10-21T12:41:59-04:00",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "source": "email_staging_phase2",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "staging_dirs": ["2025-10-14", "2025-10-15"],
+  "staging_files": ["process_log_2025-10-21T11:50:32Z.json","process_phase2_summary_2025-10-21T12:09:51Z.json"],
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email staging files found in date subdirectories; nothing to extract."
+}

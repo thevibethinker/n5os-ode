@@ -1,0 +1,9 @@
+{
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at_utc": "2025-10-22T06:44:23Z",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discoveries_written_to": "/home/workspace/Records/stakeholder_discovery",
+  "notes": "No email messages found in Records/Temporary/email_staging — directory contains only process logs and subfolders without files. No deletions performed."
+}

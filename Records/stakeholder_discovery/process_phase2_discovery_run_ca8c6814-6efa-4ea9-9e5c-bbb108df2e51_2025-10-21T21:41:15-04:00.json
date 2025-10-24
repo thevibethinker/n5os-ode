@@ -1,0 +1,11 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-22T01:41:15Z",
+  "started_at_local": "2025-10-21T21:41:15-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found_in_staging": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "processed_files": [],
+  "notes": "No staged email files found. No deletions performed — file-protection policy requires explicit approval before destructive actions."
+}

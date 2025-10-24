@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-22T08:11:04Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "discovery_path": "/home/workspace/Records/stakeholder_discovery",
+  "files_found_in_staging": 0,
+  "stakeholders_found": 0,
+  "status": "complete",
+  "notes": "No staging email files present; run completed without processing any messages."
+}

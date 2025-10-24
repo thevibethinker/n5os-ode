@@ -1,0 +1,11 @@
+{
+  "run_at": "2025-10-22T01:41:42Z",
+  "event_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "source": "email_staging_directory",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "processed_files": [],
+  "stakeholders_discovered": 0,
+  "discovery_records_written": [] ,
+  "notes": "No email staging files to process (directory contains process logs and empty date folders). No external participants discovered."
+}

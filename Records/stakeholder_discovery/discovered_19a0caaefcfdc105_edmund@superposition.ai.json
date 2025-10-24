@@ -1,0 +1,14 @@
+{
+  "discovered_at": "2025-10-23T13:10:02Z",
+  "source": "email_scanner",
+  "source_message_id": "19a0caaefcfdc105",
+  "source_subject": "Re: You're coming to my next dinner party",
+  "stakeholder": {
+    "name": "Edmund Cuthbert",
+    "email": "edmund@superposition.ai",
+    "organization": "Superposition",
+    "title": null,
+    "context": "Dinner at Devocion on Livingston — informal networking / social meeting",
+    "is_decision_maker": null
+  }
+}

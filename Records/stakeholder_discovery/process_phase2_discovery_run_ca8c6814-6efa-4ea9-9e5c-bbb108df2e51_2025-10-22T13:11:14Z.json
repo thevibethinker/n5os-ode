@@ -1,0 +1,11 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "timestamp": "2025-10-22T13:11:14Z",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_found": 1,
+  "files_processed": 1,
+  "deleted_staging_files": 1,
+  "stakeholders_discovered": 1,
+  "processed_files": ["/home/workspace/Records/Temporary/email_staging/2025-10-22/msg_19a0bc159e173271_20251022_130932.json"],
+  "discoveries": ["/home/workspace/Records/stakeholder_discovery/discovery_msg_19a0bc159e173271_2025-10-22T13:11:14Z.json"]
+}

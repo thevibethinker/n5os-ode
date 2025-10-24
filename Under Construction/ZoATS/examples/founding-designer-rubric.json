@@ -1,0 +1,381 @@
+{
+  "version": "1.0.0",
+  "job_id": "founding-designer-001",
+  "job_title": "Founding Designer",
+  "created_at": "2025-10-22T07:25:00-04:00",
+  "created_by": "ZoATS Example Template",
+  "meta": {
+    "company": "Example Startup",
+    "department": "Product & Design",
+    "team_size": 2,
+    "remote_policy": "remote",
+    "tags": ["founding", "product-design", "early-stage", "generalist"]
+  },
+  "criteria_groups": [
+    {
+      "id": "design_skills",
+      "name": "Design Skills",
+      "description": "Core design competency and craft quality",
+      "weight": 0.40,
+      "criteria": [
+        {
+          "id": "portfolio_quality",
+          "name": "Portfolio Quality",
+          "weight": 0.35,
+          "scale": {"min": 0, "max": 10},
+          "description": "Quality and depth of design work shown",
+          "evidence_types": ["portfolio", "work_samples", "case_studies"],
+          "evaluation_prompts": [
+            "Visual polish and attention to detail?",
+            "Clear design thinking process?",
+            "Before/after impact shown?",
+            "Depth beyond surface aesthetics?"
+          ],
+          "green_flags": [
+            "Case studies showing full process",
+            "Measurable impact metrics",
+            "Complex problem-solving evident",
+            "Strong visual hierarchy"
+          ],
+          "red_flags": [
+            "Only final screenshots, no process",
+            "All work from templates/courses",
+            "No context or problem definition",
+            "Style over substance"
+          ]
+        },
+        {
+          "id": "product_thinking",
+          "name": "Product Thinking",
+          "weight": 0.30,
+          "scale": {"min": 0, "max": 10},
+          "description": "Understanding of product strategy and user needs",
+          "evidence_types": ["portfolio", "cover_letter", "project_descriptions"],
+          "evaluation_prompts": [
+            "Do they understand the 'why' behind design decisions?",
+            "Evidence of user research or data-driven choices?",
+            "Balance of user needs vs business goals?",
+            "Strategic thinking beyond visual design?"
+          ],
+          "green_flags": [
+            "Mentions user research methods used",
+            "Discusses tradeoffs and constraints",
+            "Shows iteration based on feedback",
+            "Connects design to business outcomes"
+          ],
+          "red_flags": [
+            "Only aesthetic reasoning",
+            "No mention of users or research",
+            "Design in vacuum without context",
+            "Can't articulate design decisions"
+          ]
+        },
+        {
+          "id": "technical_literacy",
+          "name": "Technical Literacy",
+          "weight": 0.20,
+          "scale": {"min": 0, "max": 10},
+          "description": "Understanding of technical constraints and implementation",
+          "evidence_types": ["skills", "portfolio", "work_history"],
+          "evaluation_prompts": [
+            "Do they understand front-end technologies?",
+            "Can they code basic prototypes?",
+            "Design within technical constraints?",
+            "Good handoff practices evident?"
+          ],
+          "green_flags": [
+            "Lists HTML/CSS/JS skills",
+            "Mentions working with developers",
+            "Shows responsive/mobile consideration",
+            "Built functional prototypes"
+          ],
+          "red_flags": [
+            "No mention of technical considerations",
+            "Designs that ignore technical reality",
+            "Never worked with engineers",
+            "Only static mockups"
+          ]
+        },
+        {
+          "id": "range_versatility",
+          "name": "Range & Versatility",
+          "weight": 0.15,
+          "scale": {"min": 0, "max": 10},
+          "description": "Ability to handle diverse design challenges",
+          "evidence_types": ["portfolio", "work_history"],
+          "evaluation_prompts": [
+            "Can they do UI, UX, and branding?",
+            "Multiple types of projects shown?",
+            "Adaptable style or too rigid?",
+            "Evidence of learning new tools/methods?"
+          ],
+          "green_flags": [
+            "Portfolio shows variety (web, mobile, brand)",
+            "Different industries or problem types",
+            "Mentions learning new skills",
+            "Can justify style choices per context"
+          ],
+          "red_flags": [
+            "Only one type of work shown",
+            "Same aesthetic for every project",
+            "Narrow tool expertise",
+            "Resistant to different approaches"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "early_stage_fit",
+      "name": "Early-Stage Fit",
+      "description": "Ability to thrive in ambiguous, fast-paced startup environment",
+      "weight": 0.25,
+      "criteria": [
+        {
+          "id": "ownership_initiative",
+          "name": "Ownership & Initiative",
+          "weight": 0.40,
+          "scale": {"min": 0, "max": 10},
+          "description": "Self-direction and taking ownership beyond design",
+          "evidence_types": ["work_history", "side_projects", "cover_letter"],
+          "evaluation_prompts": [
+            "Do they drive projects independently?",
+            "Evidence of going beyond assigned tasks?",
+            "Own side projects or initiatives?",
+            "Comfortable with ambiguity?"
+          ],
+          "green_flags": [
+            "Started own projects/companies",
+            "Led initiatives without being asked",
+            "Describes taking ownership",
+            "Mentions wearing multiple hats"
+          ],
+          "red_flags": [
+            "Only executed others' directions",
+            "Needs heavy guidance",
+            "Waits to be told what to do",
+            "Avoids ambiguity"
+          ]
+        },
+        {
+          "id": "startup_experience",
+          "name": "Startup Experience",
+          "weight": 0.30,
+          "scale": {"min": 0, "max": 10},
+          "description": "Experience in early-stage or fast-paced environments",
+          "evidence_types": ["work_history", "company_info"],
+          "evaluation_prompts": [
+            "Prior startup experience at <50 person company?",
+            "Thrived in fast-paced environments?",
+            "Understands resource constraints?",
+            "Can prioritize ruthlessly?"
+          ],
+          "green_flags": [
+            "Early employee at startup (< employee #20)",
+            "Freelance/consultant background",
+            "Built products with limited resources",
+            "Agency experience with tight timelines"
+          ],
+          "red_flags": [
+            "Only big tech companies",
+            "Always had large teams/resources",
+            "Slow-moving organizations",
+            "Can't prioritize without analysis paralysis"
+          ]
+        },
+        {
+          "id": "speed_iteration",
+          "name": "Speed & Iteration",
+          "weight": 0.30,
+          "scale": {"min": 0, "max": 10},
+          "description": "Ability to ship fast and iterate based on feedback",
+          "evidence_types": ["portfolio", "work_history"],
+          "evaluation_prompts": [
+            "Do they value shipping over perfection?",
+            "Evidence of rapid iteration?",
+            "Comfortable with 'good enough'?",
+            "Learn from feedback quickly?"
+          ],
+          "green_flags": [
+            "Fast turnaround times mentioned",
+            "Portfolio shows iteration cycles",
+            "Mentions MVP approach",
+            "Values feedback and learning"
+          ],
+          "red_flags": [
+            "Perfectionist without pragmatism",
+            "Long project timelines",
+            "No iteration shown",
+            "Defensive about feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "collaboration_communication",
+      "name": "Collaboration & Communication",
+      "description": "Ability to work with founders and small team",
+      "weight": 0.20,
+      "criteria": [
+        {
+          "id": "communication_clarity",
+          "name": "Communication Clarity",
+          "weight": 0.50,
+          "scale": {"min": 0, "max": 10},
+          "description": "Ability to articulate design decisions clearly",
+          "evidence_types": ["cover_letter", "portfolio", "writing_samples"],
+          "evaluation_prompts": [
+            "Can they explain design decisions clearly?",
+            "Writing quality and structure?",
+            "Jargon-free communication?",
+            "Good storytelling?"
+          ],
+          "green_flags": [
+            "Clear case study narratives",
+            "Well-written cover letter",
+            "Explains tradeoffs and reasoning",
+            "Accessible to non-designers"
+          ],
+          "red_flags": [
+            "Unclear or verbose writing",
+            "Heavy jargon without explanation",
+            "Can't articulate 'why'",
+            "Poor structure in materials"
+          ]
+        },
+        {
+          "id": "collaborative_mindset",
+          "name": "Collaborative Mindset",
+          "weight": 0.50,
+          "scale": {"min": 0, "max": 10},
+          "description": "Evidence of working well with cross-functional teams",
+          "evidence_types": ["work_history", "portfolio", "references"],
+          "evaluation_prompts": [
+            "Do they mention working with others?",
+            "Give credit to teammates?",
+            "Seek input and feedback?",
+            "Ego-free approach?"
+          ],
+          "green_flags": [
+            "Credits teammates in portfolio",
+            "Mentions collaboration in cover letter",
+            "Seeks feedback proactively",
+            "'We' language over 'I'"
+          ],
+          "red_flags": [
+            "Takes all credit",
+            "No mention of teammates",
+            "Defensive or precious about work",
+            "Doesn't value others' input"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culture_alignment",
+      "name": "Culture & Motivation",
+      "description": "Alignment with mission and genuine interest",
+      "weight": 0.15,
+      "criteria": [
+        {
+          "id": "mission_alignment",
+          "name": "Mission Alignment",
+          "weight": 0.60,
+          "scale": {"min": 0, "max": 10},
+          "description": "Genuine connection to company mission",
+          "evidence_types": ["cover_letter", "application_responses"],
+          "evaluation_prompts": [
+            "Why this company specifically?",
+            "Personal connection to problem?",
+            "Research company deeply?",
+            "Authentic motivation?"
+          ],
+          "green_flags": [
+            "Specific references to company approach",
+            "Personal story connecting to mission",
+            "Deep understanding of product",
+            "Values alignment evident"
+          ],
+          "red_flags": [
+            "Generic motivation",
+            "Only mentions career growth",
+            "Hasn't used/researched product",
+            "Transactional tone"
+          ]
+        },
+        {
+          "id": "intrinsic_motivation",
+          "name": "Intrinsic Motivation",
+          "weight": 0.40,
+          "scale": {"min": 0, "max": 10},
+          "description": "Passion for design and problem-solving",
+          "evidence_types": ["side_projects", "portfolio", "cover_letter"],
+          "evaluation_prompts": [
+            "Do they design outside work?",
+            "Passion projects or just jobs?",
+            "Continuous learning evident?",
+            "Excited by craft?"
+          ],
+          "green_flags": [
+            "Side projects or personal work",
+            "Active in design community",
+            "Learning new skills regularly",
+            "Genuine enthusiasm in writing"
+          ],
+          "red_flags": [
+            "Only paid work shown",
+            "No personal projects",
+            "Stagnant skillset",
+            "Transactional career approach"
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring_config": {
+    "aggregation_method": "weighted_average",
+    "pass_threshold": 65,
+    "strong_threshold": 75,
+    "exceptional_threshold": 85,
+    "evidence_weights": {
+      "portfolio": 0.40,
+      "cover_letter": 0.15,
+      "work_history": 0.20,
+      "skills": 0.10,
+      "side_projects": 0.15
+    }
+  },
+  "thresholds": {
+    "auto_reject": 45,
+    "review_required": 65,
+    "auto_advance": 80,
+    "dealbreakers": [
+      {
+        "criterion_id": "portfolio_quality",
+        "threshold": 5,
+        "description": "Portfolio must show minimum quality bar"
+      }
+    ]
+  },
+  "bonus_criteria": [
+    {
+      "criterion": "Design system experience",
+      "bonus_points": 5,
+      "description": "Built or contributed to design system"
+    },
+    {
+      "criterion": "Previous founding designer",
+      "bonus_points": 10,
+      "description": "Was founding designer (employee 1-5) at funded startup"
+    },
+    {
+      "criterion": "Popular design work",
+      "bonus_points": 7,
+      "description": "Work featured on major design platforms (Dribbble top shot, etc.)"
+    },
+    {
+      "criterion": "Design community leader",
+      "bonus_points": 6,
+      "description": "Runs design community, writes influential blog, speaks at conferences"
+    }
+  ]
+}

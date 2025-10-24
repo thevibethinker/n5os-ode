@@ -1,0 +1,9 @@
+{
+  "discovered_at": "2025-10-21T17:10:46Z",
+  "run": "email_staging_phase2",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 4,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No email messages found in staging date directories; only process logs present. No discovery records created."
+}

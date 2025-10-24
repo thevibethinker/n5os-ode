@@ -1,0 +1,12 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "discovered_at": "2025-10-23T02:40:33Z",
+  "source": "email_scanner",
+  "files_processed": [],
+  "stakeholders_discovered": [],
+  "summary": {
+    "files_found_in_staging": 0,
+    "files_processed": 0,
+    "stakeholders_discovered": 0
+  }
+}

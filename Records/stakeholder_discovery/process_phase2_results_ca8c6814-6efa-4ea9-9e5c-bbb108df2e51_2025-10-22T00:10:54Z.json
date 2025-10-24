@@ -1,0 +1,9 @@
+{
+  "run_id": "phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "completed_at": "2025-10-22T00:10:54Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_written": 0,
+  "discoveries_file": "/home/workspace/Records/stakeholder_discovery/discoveries_2025-10-22T00:10:54Z.jsonl",
+  "notes": "No external email staging files found. No stakeholder discoveries created."
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-21T07:50:00-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "staging_entries_inspected": 2,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discoveries": [],
+  "notes": "No staging files found in staging subdirectories (directories present but empty). No extraction performed. No files deleted."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "criterion.ownership.v1",
+  "name": "Ownership under uncertainty",
+  "dimension": "Ownership",
+  "description": "Takes full responsibility for ambiguous problems; proactively scopes, executes, and closes loops without hand-holding.",
+  "evidence_types": ["Code","DesignArtifact","Demo","Reference","Scenario","TrialTask","InterviewNote"],
+  "levels": [
+    {"level":1, "label":"Emerging", "behavioral_indicators":["Waits for direction when scope shifts","Risks fall through without prompts"]},
+    {"level":2, "label":"Solid", "behavioral_indicators":["Handles clear tasks end-to-end","Surfaces blockers but needs steering on ambiguity"]},
+    {"level":3, "label":"Strong", "behavioral_indicators":["Re-scopes ambiguous problems into shippable chunks","Closes loops across functions"]},
+    {"level":4, "label":"Exceptional", "behavioral_indicators":["Anticipates undefined workstreams and leads them to outcomes","Creates leverage for others under high ambiguity"]}
+  ],
+  "weight_default": 0.12
+}

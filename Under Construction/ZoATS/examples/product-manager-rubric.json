@@ -1,0 +1,447 @@
+{
+  "version": "1.0.0",
+  "job_id": "product-manager-001",
+  "job_title": "Product Manager",
+  "created_at": "2025-10-22T07:30:00-04:00",
+  "created_by": "ZoATS Example Template",
+  "meta": {
+    "company": "Example Startup",
+    "department": "Product",
+    "team_size": 8,
+    "remote_policy": "hybrid",
+    "tags": ["product-management", "b2b", "technical-pm", "growth-stage"]
+  },
+  "criteria_groups": [
+    {
+      "id": "product_skills",
+      "name": "Product Management Skills",
+      "description": "Core PM competencies and execution",
+      "weight": 0.35,
+      "criteria": [
+        {
+          "id": "product_strategy",
+          "name": "Product Strategy",
+          "weight": 0.30,
+          "scale": {"min": 0, "max": 10},
+          "description": "Ability to develop and articulate product vision and strategy",
+          "evidence_types": ["cover_letter", "work_history", "portfolio"],
+          "evaluation_prompts": [
+            "Do they think strategically about products?",
+            "Connect product decisions to business goals?",
+            "Evidence of long-term thinking?",
+            "Understand market dynamics?"
+          ],
+          "green_flags": [
+            "Describes strategic initiatives led",
+            "Connects features to business outcomes",
+            "Mentions competitive analysis",
+            "Shows prioritization reasoning"
+          ],
+          "red_flags": [
+            "Only tactical execution mentioned",
+            "No business context in decisions",
+            "Feature factory mindset",
+            "Lacks market understanding"
+          ]
+        },
+        {
+          "id": "execution_delivery",
+          "name": "Execution & Delivery",
+          "weight": 0.25,
+          "scale": {"min": 0, "max": 10},
+          "description": "Track record of shipping products successfully",
+          "evidence_types": ["work_history", "portfolio", "achievements"],
+          "evaluation_prompts": [
+            "Do they ship consistently?",
+            "Evidence of managing full product lifecycle?",
+            "Handle blockers effectively?",
+            "Meet timelines and goals?"
+          ],
+          "green_flags": [
+            "Specific shipped products with timelines",
+            "Mentions overcoming obstacles",
+            "Clear project outcomes",
+            "Consistent delivery track record"
+          ],
+          "red_flags": [
+            "Vague product descriptions",
+            "No completed projects",
+            "Delays and missed deadlines",
+            "Only planning, no execution"
+          ]
+        },
+        {
+          "id": "data_driven_decisions",
+          "name": "Data-Driven Decisions",
+          "weight": 0.25,
+          "scale": {"min": 0, "max": 10},
+          "description": "Uses data and metrics to guide product decisions",
+          "evidence_types": ["work_history", "portfolio", "skills"],
+          "evaluation_prompts": [
+            "Do they use metrics to make decisions?",
+            "Comfortable with analytics tools?",
+            "Define success metrics clearly?",
+            "Balance data with intuition?"
+          ],
+          "green_flags": [
+            "Cites specific metrics and improvements",
+            "Lists analytics tools (Mixpanel, Amplitude, etc.)",
+            "Describes A/B tests or experiments",
+            "Shows data literacy"
+          ],
+          "red_flags": [
+            "No metrics mentioned",
+            "Decisions based only on opinion",
+            "Can't define success criteria",
+            "Avoids quantitative analysis"
+          ]
+        },
+        {
+          "id": "user_research",
+          "name": "User Research & Empathy",
+          "weight": 0.20,
+          "scale": {"min": 0, "max": 10},
+          "description": "Understanding user needs through research and empathy",
+          "evidence_types": ["work_history", "portfolio", "process_descriptions"],
+          "evaluation_prompts": [
+            "Do they conduct user research?",
+            "Talk to customers regularly?",
+            "Empathy for user problems?",
+            "Balance user needs vs business?"
+          ],
+          "green_flags": [
+            "Mentions user interviews/research",
+            "Describes customer feedback loops",
+            "Shows empathy in problem framing",
+            "Validates assumptions with users"
+          ],
+          "red_flags": [
+            "No mention of users or research",
+            "Assumes they know user needs",
+            "Only internal stakeholder focus",
+            "Ignores user feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technical_ability",
+      "name": "Technical Ability",
+      "description": "Technical literacy and ability to work with engineers",
+      "weight": 0.20,
+      "criteria": [
+        {
+          "id": "technical_fluency",
+          "name": "Technical Fluency",
+          "weight": 0.60,
+          "scale": {"min": 0, "max": 10},
+          "description": "Understanding of technical concepts and architecture",
+          "evidence_types": ["skills", "work_history", "education"],
+          "evaluation_prompts": [
+            "Do they understand technical architecture?",
+            "Can they write specs engineers can use?",
+            "Comfortable with technical discussions?",
+            "Engineering background or self-taught?"
+          ],
+          "green_flags": [
+            "Technical education or coding experience",
+            "Lists technical skills (SQL, APIs, etc.)",
+            "Worked closely with engineers",
+            "Understands technical tradeoffs"
+          ],
+          "red_flags": [
+            "No technical background or interest",
+            "Can't speak engineering language",
+            "Vague technical requirements",
+            "Intimidated by technical discussions"
+          ]
+        },
+        {
+          "id": "engineer_collaboration",
+          "name": "Engineer Collaboration",
+          "weight": 0.40,
+          "scale": {"min": 0, "max": 10},
+          "description": "Ability to work effectively with engineering teams",
+          "evidence_types": ["work_history", "references"],
+          "evaluation_prompts": [
+            "Do they have good relationships with engineers?",
+            "Respect technical constraints?",
+            "Balance business needs with engineering reality?",
+            "Facilitate vs dictate?"
+          ],
+          "green_flags": [
+            "Mentions partnership with engineering",
+            "Understands technical debt tradeoffs",
+            "Collaborative approach evident",
+            "Engineers would vouch for them"
+          ],
+          "red_flags": [
+            "Adversarial relationship with engineers",
+            "Ignores technical constraints",
+            "Demands without understanding effort",
+            "Poor technical communication"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "leadership_communication",
+      "name": "Leadership & Communication",
+      "description": "Ability to lead cross-functional teams and communicate effectively",
+      "weight": 0.25,
+      "criteria": [
+        {
+          "id": "stakeholder_management",
+          "name": "Stakeholder Management",
+          "weight": 0.35,
+          "scale": {"min": 0, "max": 10},
+          "description": "Managing expectations and building consensus",
+          "evidence_types": ["work_history", "achievements"],
+          "evaluation_prompts": [
+            "Do they manage stakeholders effectively?",
+            "Build consensus across teams?",
+            "Navigate organizational complexity?",
+            "Influence without authority?"
+          ],
+          "green_flags": [
+            "Describes managing executives/leadership",
+            "Cross-functional project leadership",
+            "Resolved conflicting priorities",
+            "Built buy-in successfully"
+          ],
+          "red_flags": [
+            "Poor stakeholder relationships",
+            "Avoids difficult conversations",
+            "Can't manage up",
+            "Creates organizational friction"
+          ]
+        },
+        {
+          "id": "communication_skills",
+          "name": "Communication Skills",
+          "weight": 0.35,
+          "scale": {"min": 0, "max": 10},
+          "description": "Clear written and verbal communication",
+          "evidence_types": ["cover_letter", "portfolio", "writing_samples"],
+          "evaluation_prompts": [
+            "Do they communicate clearly?",
+            "Writing quality strong?",
+            "Can explain complex ideas simply?",
+            "Tailor communication to audience?"
+          ],
+          "green_flags": [
+            "Clear, concise cover letter",
+            "Well-structured portfolio/docs",
+            "Strong writing samples",
+            "Explains concepts accessibly"
+          ],
+          "red_flags": [
+            "Unclear or verbose writing",
+            "Poor structure in materials",
+            "Jargon-heavy without clarity",
+            "Can't simplify complex ideas"
+          ]
+        },
+        {
+          "id": "team_leadership",
+          "name": "Team Leadership",
+          "weight": 0.30,
+          "scale": {"min": 0, "max": 10},
+          "description": "Ability to inspire and lead teams",
+          "evidence_types": ["work_history", "references", "achievements"],
+          "evaluation_prompts": [
+            "Do they inspire and motivate teams?",
+            "Evidence of people following them?",
+            "Develop others?",
+            "Handle conflict well?"
+          ],
+          "green_flags": [
+            "Led cross-functional teams",
+            "Mentions mentoring or developing others",
+            "Built strong team culture",
+            "Team members sought to work with them"
+          ],
+          "red_flags": [
+            "No leadership experience",
+            "Team friction or turnover",
+            "Command-and-control style",
+            "Doesn't invest in team development"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business_acumen",
+      "name": "Business Acumen",
+      "description": "Understanding of business model and market dynamics",
+      "weight": 0.10,
+      "criteria": [
+        {
+          "id": "business_impact",
+          "name": "Business Impact",
+          "weight": 0.60,
+          "scale": {"min": 0, "max": 10},
+          "description": "Track record of driving business outcomes",
+          "evidence_types": ["achievements", "work_history"],
+          "evaluation_prompts": [
+            "Do they tie work to business metrics?",
+            "Evidence of revenue/growth impact?",
+            "Understand unit economics?",
+            "Commercial mindset?"
+          ],
+          "green_flags": [
+            "Quantified business impact (revenue, users, etc.)",
+            "Mentions GTM strategy",
+            "Understands pricing/monetization",
+            "Commercial focus evident"
+          ],
+          "red_flags": [
+            "No business metrics mentioned",
+            "Pure feature focus without outcomes",
+            "Doesn't understand business model",
+            "Disconnected from commercial reality"
+          ]
+        },
+        {
+          "id": "market_understanding",
+          "name": "Market Understanding",
+          "weight": 0.40,
+          "scale": {"min": 0, "max": 10},
+          "description": "Knowledge of competitive landscape and market trends",
+          "evidence_types": ["cover_letter", "work_history"],
+          "evaluation_prompts": [
+            "Do they understand the market?",
+            "Aware of competitive dynamics?",
+            "Track industry trends?",
+            "Strategic market thinking?"
+          ],
+          "green_flags": [
+            "Mentions competitive analysis",
+            "Understands market positioning",
+            "References industry trends",
+            "Strategic market awareness"
+          ],
+          "red_flags": [
+            "No market awareness",
+            "Ignores competition",
+            "Doesn't follow industry",
+            "Myopic product view"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culture_motivation",
+      "name": "Culture & Motivation",
+      "description": "Alignment with company culture and intrinsic motivation",
+      "weight": 0.10,
+      "criteria": [
+        {
+          "id": "company_alignment",
+          "name": "Company Alignment",
+          "weight": 0.50,
+          "scale": {"min": 0, "max": 10},
+          "description": "Fit with company culture and values",
+          "evidence_types": ["cover_letter", "application_responses"],
+          "evaluation_prompts": [
+            "Why this company specifically?",
+            "Researched company thoroughly?",
+            "Values alignment?",
+            "Stage/size fit appropriate?"
+          ],
+          "green_flags": [
+            "Specific company references",
+            "Values alignment evident",
+            "Appropriate stage expectations",
+            "Genuine interest demonstrated"
+          ],
+          "red_flags": [
+            "Generic application",
+            "Wrong stage expectations",
+            "Values mismatch",
+            "Purely transactional"
+          ]
+        },
+        {
+          "id": "product_passion",
+          "name": "Product Passion",
+          "weight": 0.50,
+          "scale": {"min": 0, "max": 10},
+          "description": "Genuine passion for product management and building",
+          "evidence_types": ["cover_letter", "side_projects", "work_history"],
+          "evaluation_prompts": [
+            "Do they love building products?",
+            "Side projects or personal initiatives?",
+            "Continuous learning in PM?",
+            "Intrinsic motivation evident?"
+          ],
+          "green_flags": [
+            "Side projects or products built",
+            "Active in PM community",
+            "Continuous PM skill development",
+            "Enthusiasm for craft"
+          ],
+          "red_flags": [
+            "No personal product initiatives",
+            "Stagnant PM approach",
+            "Purely career-focused",
+            "Lacks curiosity"
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring_config": {
+    "aggregation_method": "weighted_average",
+    "pass_threshold": 65,
+    "strong_threshold": 75,
+    "exceptional_threshold": 85,
+    "evidence_weights": {
+      "work_history": 0.35,
+      "achievements": 0.25,
+      "cover_letter": 0.15,
+      "skills": 0.10,
+      "references": 0.10,
+      "portfolio": 0.05
+    }
+  },
+  "thresholds": {
+    "auto_reject": 45,
+    "review_required": 65,
+    "auto_advance": 78,
+    "dealbreakers": [
+      {
+        "criterion_id": "execution_delivery",
+        "threshold": 5,
+        "description": "Must have shipped products successfully"
+      },
+      {
+        "criterion_id": "stakeholder_management",
+        "threshold": 4,
+        "description": "Minimum stakeholder management capability required"
+      }
+    ]
+  },
+  "bonus_criteria": [
+    {
+      "criterion": "Founded company",
+      "bonus_points": 10,
+      "description": "Founded and ran company as PM/CEO"
+    },
+    {
+      "criterion": "0-1 product experience",
+      "bonus_points": 8,
+      "description": "Built product from scratch to significant scale"
+    },
+    {
+      "criterion": "Domain expertise",
+      "bonus_points": 7,
+      "description": "Deep expertise in our specific product domain"
+    },
+    {
+      "criterion": "PM community leader",
+      "bonus_points": 5,
+      "description": "Known PM writer, speaker, or community contributor"
+    }
+  ]
+}

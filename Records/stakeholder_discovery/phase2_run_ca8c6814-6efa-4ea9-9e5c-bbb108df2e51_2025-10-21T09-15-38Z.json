@@ -1,0 +1,11 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "convo_id": "con_m3sJUYniKjCIWj5c",
+  "discovered_at": "2025-10-21T09:15:38Z",
+  "discovered_at_est": "2025-10-21T05:15:38-04:00",
+  "staging_path": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "details": [],
+  "notes": "No staging files found in the staging directory; no extraction performed."
+}

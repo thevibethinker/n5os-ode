@@ -1,0 +1,12 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-21T13:10:39Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 2,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discovered_records_files": [],
+  "deletion_performed": false,
+  "deletion_skipped_reason": "User preference requires explicit confirmation before deletions. No confirmation obtained by scheduled task.",
+  "notes": "No individual email staging files present to process. Only process logs found in staging directory."
+}

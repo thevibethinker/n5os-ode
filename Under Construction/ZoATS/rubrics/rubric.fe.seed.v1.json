@@ -1,0 +1,21 @@
+{
+  "id": "rubric.fe.seed.v1",
+  "role": "Founding Engineer",
+  "stage": "Seed",
+  "criteria": [
+    "criterion.ownership.v1","criterion.speed.v1","criterion.systems.v1","criterion.productsense.v1","criterion.collab.v1","criterion.comm.v1","criterion.techdepth.v1","criterion.craft.v1","criterion.resilience.v1"
+  ],
+  "weights": {
+    "criterion.ownership.v1": 0.14,
+    "criterion.speed.v1": 0.10,
+    "criterion.systems.v1": 0.12,
+    "criterion.productsense.v1": 0.10,
+    "criterion.collab.v1": 0.08,
+    "criterion.comm.v1": 0.08,
+    "criterion.techdepth.v1": 0.12,
+    "criterion.craft.v1": 0.10,
+    "criterion.resilience.v1": 0.06
+  },
+  "pass_threshold": 0.72,
+  "notes": "Seed stage variant; same initial weights as Pre-Seed until tuned from founder input."
+}

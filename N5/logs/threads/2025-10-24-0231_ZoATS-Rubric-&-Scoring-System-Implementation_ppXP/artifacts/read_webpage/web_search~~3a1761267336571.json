@@ -1,0 +1,97 @@
+[
+  {
+    "title": "How to connect a webhook POST workflow from Zapier to n8n?",
+    "url": "https://www.facebook.com/groups/1430961228065015/posts/1466477774513360/",
+    "text": "Hey, I've worked on several webhook POST integrations between Zapier and n8n, so I can get this connected and running smoothly for you"
+  },
+  {
+    "title": "Automate Social Media Monitoring with KWatch.io, Zapier, and n8n",
+    "url": "https://kwatch.io/automate-social-media-monitoring-with-kwatch-zapier-and-n8n",
+    "text": "Select “Webhooks by Zapier” as the trigger and choose “Catch Hook.” • Copy the provided webhook URL and paste it into KWatch.io's webhook"
+  },
+  {
+    "title": "Is it possible to connect n8n (or alternative self host solution ... - Reddit",
+    "url": "https://www.reddit.com/r/selfhosted/comments/160ibc8/is_it_possible_to_connect_n8n_or_alternative_self/",
+    "text": "I use both N8N and Zapier quite a bit. You should be able to connect the two using basic webhooks."
+  },
+  {
+    "title": "Webhook and TRIGGERcmd: Automate Workflows with n8n",
+    "url": "https://n8n.io/integrations/webhook/and/triggercmd/",
+    "text": "Save yourself the work of writing custom integrations for Webhook and TRIGGERcmd and use n8n instead. Yes, Webhook can connect with TRIGGERcmd using n8n.io. With n8n, you can create workflows that automate tasks and transfer data between Webhook and TRIGGERcmd. Configure nodes for Webhook and TRIGGERcmd in the n8n interface, specifying actions and triggers to set up their connection. ### Is n8n secure for integrating Webhook and TRIGGERcmd? Yes, it is safe to use n8n to integrate Webhook and TRIGGERcmd. ### How to get started with Webhook and TRIGGERcmd integration in n8n.io? To start integrating Webhook and TRIGGERcmd in n8n, you have different options depending on how you intend to use it: ## Why use n8n to integrate Webhook with TRIGGERcmd"
+  },
+  {
+    "title": "Trigger N8N webhooks with Coda buttons - Making Packs",
+    "url": "https://community.coda.io/t/trigger-n8n-webhooks-with-coda-buttons/48296",
+    "text": "I have seen various packs that are able to trigger a webhook (Make.com, Zapier, etc.). As I know that Coda can connect only to one allowed domain."
+  },
+  {
+    "title": "What prevents N8N from having similar triggers like Zapier?",
+    "url": "https://community.n8n.io/t/what-prevents-n8n-from-having-similar-triggers-like-zapier/28228",
+    "text": "# What prevents N8N from having similar triggers like Zapier? I am working on transferring over several automations from Zapier over to N8N. Many are triggered based on external variables, such as when a new post is made on Wordpress do blank. ### WordPress Integrations | Connect Your Apps with Zapier WordPress integrates with 5,000 other apps on Zapier - it's the easiest way to automate your work. Not a deal breaker, but curious what Zapier does that N8N does not in situations like this. Then we have Polling, A polling workflow works on a schedule and will check for anything new and use the timestamp or other identifier depending on what the API has available to work out if it is different since the last run."
+  },
+  {
+    "title": "Best Ways to Automate Document Parsing in Zapier, Make & n8n ...",
+    "url": "https://parsio.io/blog/best-ways-to-automate-document-parsing-in-zapier-make-n8n/",
+    "text": "Use Parsio's webhook feature to push parsed data into n8n. Then use any of n8n's 500+ integrations to transform or sync the data. Example flows."
+  },
+  {
+    "title": "How to trigger webhooks from Notion databases - Make, Zapier, n8n ...",
+    "url": "https://www.youtube.com/watch?v=HQX4GlCPxEI",
+    "text": "How to trigger webhooks from Notion databases - Make, Zapier, n8n, Pipedream. 4.9K views · 1 year ago ...more"
+  },
+  {
+    "title": "How to get started with Webhooks by Zapier",
+    "url": "https://help.zapier.com/hc/en-us/articles/8496083355661-How-to-get-started-with-Webhooks-by-Zapier",
+    "text": "When you send the webhook, make sure to add something in the payload (or the url parameters if it's a GET request) so the Zap can trigger. So, give us a RequestBin URL by visiting their homepage and clicking \"Create a Request Bin\" and copying the Endpoint URL on the screen and paste it into Zapier's Webhook URL field when you are editing your new Zap. Again, they look kind of like this: The Retrieve Poll trigger option in the Webhook by Zapier app will let you query a REST API endpoint on the Internet and retrieve data being returned. Over 8,000 apps connect directly to Zapier, so you can copy contacts, appointments, form entries, and more without needing to worry about Webhooks URLs and data formats."
+  },
+  {
+    "title": "Using Zapier and n8n for Developers | by TechByRahmat - Medium",
+    "url": "https://medium.com/@baheer224/using-zapier-and-n8n-for-developers-59af8398b6e9",
+    "text": "Zapier is a no-code automation platform that connects thousands of apps (Slack, Gmail, Trello, Salesforce, etc.) through prebuilt integrations."
+  },
+  {
+    "title": "Webhook integrations | Workflow automation with n8n",
+    "url": "https://n8n.io/integrations/webhook/",
+    "text": "Integrate Webhook with hundreds of other apps. Create sophisticated automations between Webhook and your stack using n8n. Free and source-available."
+  },
+  {
+    "title": "N8N Integration - Feature Requests - Noloco community",
+    "url": "https://community.noloco.io/t/n8n-integration/1658",
+    "text": "A direct integration with N8N to create automations. I find it far superior to Zapier or Make when creating actual custom app automations."
+  },
+  {
+    "title": "Webhook and Forms On Fire: Automate Workflows with n8n",
+    "url": "https://n8n.io/integrations/webhook/and/forms-on-fire/",
+    "text": "Save yourself the work of writing custom integrations for Webhook and Forms On Fire and use n8n instead. With n8n, you can create workflows that automate tasks and transfer data between Webhook and Forms On Fire. ### Is n8n secure for integrating Webhook and Forms On Fire? Yes, it is safe to use n8n to integrate Webhook and Forms On Fire. ### How to get started with Webhook and Forms On Fire integration in n8n.io? To start integrating Webhook and Forms On Fire in n8n, you have different options depending on how you intend to use it: ## Looking to integrate Webhook and Forms On Fire in your company? ## Why use n8n to integrate Webhook with Forms On Fire"
+  },
+  {
+    "title": "n8n vs Zapier – Which is right for you?",
+    "url": "https://n8n.io/vs/zapier/",
+    "text": "If you've encountered limitations with Zapier's flexibility, feature gating, or the unpredictable scaling costs of task-based workflows, you might find n8n appealing. With n8n, you can build workflows using custom Javascript or Python code at any step for flexibility and granular control. With n8n's LangChain nodes, you can easily incorporate AI-powered features into your workflows. Simply speaking, n8n and Zapier are addressing similar needs – data integration and workflow automation – but are made for use cases with different levels of complexity and customization. If you’re ready to move beyond the limitations of task-based tools and build the powerful, cost-effective automations your business needs, n8n’s team can help migrate your existing workflows to a more flexible and scalable platform."
+  },
+  {
+    "title": "How To Use Webhooks or Catch Hooks With n8n ↩️ - YouTube",
+    "url": "https://www.youtube.com/watch?v=HPuFJ7FtFzY",
+    "text": "In this video, I'm lifting the lid on how to create a webhook and catchhook with n8n. If you're looking to API or webhook data to a client's"
+  },
+  {
+    "title": "Zapier to Make converter - n8n Community",
+    "url": "https://community.n8n.io/t/zapier-to-make-converter/134662",
+    "text": "It's simple: just drop your Zapier workflows export (no credentials or personal data - just workflow structure), and we'll convert it into an n8n workflow JSON."
+  },
+  {
+    "title": "Step-by-Step: N8N Webhooks (From Beginner to Pro) - YouTube",
+    "url": "https://www.youtube.com/watch?v=lK3veuZAg0c",
+    "text": "Step-by-Step: N8N Webhooks (From Beginner to Pro)\nNick Saraev\n174000 subscribers\n1346 likes\n56069 views\n23 Feb 2025\nJoin Maker School & get automation customer #1 + all my templates ⤵️\nhttps://www.skool.com/makerschool/about?ref=e525fc95e7c346999dcec8e0e870e55d\n\nWant to work with my team, automate your business, & scale? ⤵️\nhttps://cal.com/team/leftclick/discovery?source=youtube\n\nWatch me build my $300K/mo business live with daily videos + strategy ⤵️\nhttps://www.youtube.com/@nicksaraevdaily\n\nSummary ⤵️\nWant to learn how N8N webhooks work? In this tutorial, I'll give you a detailed walkthrough of how the N8N webhook node functions, including a breakdown of what webhooks are, the two major N8N webhook nodes, how to send & receive webhook messages (including JSON & HTML) in N8N, and more.\n\nMy software, tools, & deals (some give me kickbacks—thank you!)\n🚀 Instantly: https://link.nicksaraev.com/instantly-short\n📧 Anymailfinder: https://link.nicksaraev.com/amf-short\n🤖 Apify: https://console.apify.com/sign-up (30% off with code NICK30)\n🧑🏽💻 n8n: https://n8n.partnerlinks.io/h372ujv8cw80\n📈 Rize: https://link.nicksaraev.com/rize-short (25% off with promo code NICK)\n\nFollow me on other platforms 😈\n📸 Instagram: https://www.instagram.com/nick_saraev\n🕊️ Twitter/X: https://twitter.com/nicksaraev\n🤙 Blog: https://nicksaraev.com\n\nWhy watch?\nIf this is your first view—hi, I’m Nick! TLDR: I spent six years building automated businesses with Make.com (most notably 1SecondCopy, a content company that hit 7 figures). Today a lot of people talk about automation, but I’ve noticed that very few have practical, real world success making money with it. So this channel is me chiming in and showing you what *real* systems that make *real* revenue look like.\n\nHopefully I can help you improve your business, and in doing so, the rest of your life 🙏\n\nLike, subscribe, and leave me a comment if you have a specific request! Thanks.\n\nChapters\n66 comments\n"
+  },
+  {
+    "title": "n8n Tutorial: How To Use a Webhook or Catch hook - Flexxable",
+    "url": "https://flexxable.com/how-to-create-a-webhook-catch-hook-with-n8n/",
+    "text": "### This AI Bot WILL Beat Any Sales Team After 48 Hours 🤖 ### 5 Things I Learned From an AI-Powered Abandoned Cart Ecommerce Campaign 🛒 ### Database Reactivation with AI: What to Offer Clients When the Leads Run Out ### From Zero Tech Skills to AI Agency Pro: Aaron’s $55K/Month Journey ### how to run $100k+ campaigns for businesses & take $30k-$50k+ for yourself… with AI doing all the work ### how to run $100k+ campaigns for businesses & take $30k-$50k+ for yourself… with AI doing all the work You can do this over and over again, you don’t need tech skills, ads or funnels, and this **crushes** in the Brick & Mortar, Finance, E-Comm, B2B & Info-Product niches."
+  },
+  {
+    "title": "How to trigger webhooks from Notion databases and buttons",
+    "url": "https://www.simonesmerilli.com/life/webhook-notion",
+    "text": "You can trigger API automations from Notion databases or pages by sending a request to a webhook URL in a third-party service. ## How to add the webhook URL to Notion (and pass URL parameters) Once you have the webhook URL, you can add it to Notion on either a page or a database property. If you add a webhook URL to a Notion page, you can only pass *static* parameters (i.e., their value always remains the same). If you add a webhook URL to a Notion database property, you can pass *dynamic* parameters that reference the value of other properties. To add the webhook URL to a Notion database:"
+  }
+]

@@ -1,0 +1,24 @@
+MEETING REQUEST EXCLUDED - INTERNAL TEAM MEETING
+
+Meeting ID: 2025-10-23_internal-team
+Classification: internal
+Participants: Daily team stand-up (Vrijen, Logan, Ilse, Danny, Rochel)
+Date: 2025-10-23
+
+EXCLUSION REASON:
+This meeting involves only internal Careerspan team members and should not be processed through the external stakeholder intelligence workflow per stakeholder_rules.json.
+
+REGISTRY CONFIGURATION ISSUE:
+The block_type_registry.json v1.5 references "INTERNAL_STANDUP_TEAM" stakeholder combination with blocks B40-B48, but these blocks are NOT DEFINED in the current registry.
+
+REQUIRED ACTION:
+If internal meeting processing is desired, update block_type_registry.json to:
+1. Define blocks B40-B48 with appropriate guidance for internal meetings
+2. Or create a separate internal meeting workflow
+3. Or confirm that internal meetings should remain excluded
+
+TRANSCRIPT LOCATION:
+N5/inbox/transcripts/2025-10-23_internal-team.docx
+
+ERROR LOG:
+/home/.z/workspaces/con_s4tLk8g1CUuybtFo/processing_error.log

@@ -1,0 +1,14 @@
+{
+  "id": "criterion.designtaste.v1",
+  "name": "Design taste (role-relative)",
+  "dimension": "Design Taste",
+  "description": "Aesthetic judgment + usability; elevates product through details that matter.",
+  "evidence_types": ["DesignArtifact","Demo","Portfolio","Reference"],
+  "levels": [
+    {"level":1, "label":"Emerging", "behavioral_indicators":["Inconsistent visual hierarchy; unclear rationale"]},
+    {"level":2, "label":"Solid", "behavioral_indicators":["Clean patterns; occasional misprioritized detail"]},
+    {"level":3, "label":"Strong", "behavioral_indicators":["Good taste; consistently improves clarity and polish"]},
+    {"level":4, "label":"Exceptional", "behavioral_indicators":["Signature taste that still serves function; sets bar for team"]}
+  ],
+  "weight_default": 0.10
+}

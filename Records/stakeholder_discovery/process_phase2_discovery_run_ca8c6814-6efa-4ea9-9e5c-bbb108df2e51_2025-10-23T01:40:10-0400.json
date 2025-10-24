@@ -1,0 +1,9 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-23T01:40:10-04:00",
+  "staging_dir": "Records/Temporary/email_staging",
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "files_deleted": 0,
+  "notes": "No parsable email artifacts found in staging; no external participants extracted."
+}

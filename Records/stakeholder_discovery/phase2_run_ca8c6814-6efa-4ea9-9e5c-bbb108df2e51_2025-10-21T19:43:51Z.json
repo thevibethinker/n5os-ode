@@ -1,0 +1,14 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "convo_id": "con_65CUi6e5xiM1HQ5J",
+  "started_at": "2025-10-21T19:43:51Z",
+  "source_directory": "Records/Temporary/email_staging",
+  "files_discovered": [
+
+  ],
+  "files_processed_count": 0,
+  "stakeholders_discovered_count": 0,
+  "discovery_records_written": 0,
+  "deleted_staging_files_count": 0,
+  "notes": "No staging email files found for external-participant extraction. Only existing process/log files present in staging. No discovery records created."
+}

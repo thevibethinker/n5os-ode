@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "role": "Founding Designer",
+  "must_haves": [
+    { "id": "systems_thinking", "criterion": "Designs systems (not just screens)", "weight": 1.0 },
+    { "id": "end_to_end", "criterion": "End-to-end from research → UX → UI → ship", "weight": 1.0 },
+    { "id": "user_evidence", "criterion": "Evidence of user contact and iteration", "weight": 0.9 }
+  ],
+  "nice_to_haves": [
+    { "id": "brand_sense", "criterion": "Brand + product coherence", "weight": 0.5 },
+    { "id": "motion", "criterion": "Motion/interaction prototyping", "weight": 0.4 }
+  ],
+  "story_signals": [
+    { "id": "portfolio_depth", "signal": "Portfolio with before/after and tradeoffs", "weight": 1.0 },
+    { "id": "story_specifics", "signal": "Specific stories of constraints and choices", "weight": 0.8 }
+  ],
+  "deal_breakers": [
+    "No portfolio or thin case studies",
+    "Style over substance",
+    "No user iteration signals"
+  ],
+  "signals_required": [
+    "ai_gen_likelihood", "story_uniqueness", "crossref_hits"
+  ]
+}

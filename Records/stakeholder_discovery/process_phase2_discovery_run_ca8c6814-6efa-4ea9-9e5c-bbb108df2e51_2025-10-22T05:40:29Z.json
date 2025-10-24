@@ -1,0 +1,9 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "processed_staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "discovered_at": "2025-10-22T05:40:29Z",
+  "discoveries": [],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "notes": "No external participants found because there were no staging email files to process."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "rubric.pm.preseed.v1",
+  "role": "Founding PM",
+  "stage": "Pre-Seed",
+  "criteria": [
+    "criterion.ownership.v1","criterion.judgment.v1","criterion.productsense.v1","criterion.collab.v1","criterion.comm.v1","criterion.resilience.v1","criterion.speed.v1"
+  ],
+  "weights": {
+    "criterion.ownership.v1": 0.14,
+    "criterion.judgment.v1": 0.18,
+    "criterion.productsense.v1": 0.16,
+    "criterion.collab.v1": 0.12,
+    "criterion.comm.v1": 0.12,
+    "criterion.resilience.v1": 0.10,
+    "criterion.speed.v1": 0.08
+  },
+  "pass_threshold": 0.72,
+  "notes": "Initial weights; judgment/product sense emphasized for PM."
+}

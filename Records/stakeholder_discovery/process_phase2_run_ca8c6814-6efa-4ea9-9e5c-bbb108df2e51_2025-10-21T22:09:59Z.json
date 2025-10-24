@@ -1,0 +1,9 @@
+{
+  "run_id": "phase2_run_ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at": "2025-10-21T22:09:59Z",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "action": "noop",
+  "notes": "No external staging email message files available to process; created run record in stakeholder_discovery."
+}

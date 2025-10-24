@@ -1,0 +1,14 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "started_at_utc": "2025-10-23T07:40:56Z",
+  "started_at_et": "2025-10-23T03:40:56-04:00",
+  "staging_dir": "Records/Temporary/email_staging",
+  "files_present_in_staging": [
+    "process_phase2_log_2025-10-22T22:40:33Z.md",
+    "process_phase2_summary_2025-10-22T23:40:06-0500.md",
+    "process_phase2_summary_2025-10-23T00:40:28-0400.md"
+  ],
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "action": "No parsable email files found in staging; no deletions performed. Re-run after upstream ingestion populates staging."
+}

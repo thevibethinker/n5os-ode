@@ -1,0 +1,14 @@
+{
+  "weights": {
+    "must_have": 0.5,
+    "nice_to_have": 0.15,
+    "story_authenticity": 0.2,
+    "crossref_signals": 0.15
+  },
+  "thresholds": {
+    "quick_pass": 0.62,
+    "borderline": 0.48
+  },
+  "tiebreakers": ["story_authenticity", "must_have", "crossref_signals"],
+  "explanations": true
+}

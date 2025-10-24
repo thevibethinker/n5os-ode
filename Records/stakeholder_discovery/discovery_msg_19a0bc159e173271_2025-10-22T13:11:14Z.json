@@ -1,0 +1,14 @@
+{
+  "discovered_at": "2025-10-22T13:11:14Z",
+  "source": "email_scanner",
+  "source_message_id": "19a0bc159e173271",
+  "source_subject": "Tell everyone I'm meeting today that I'm sick",
+  "stakeholder": {
+    "name": "Howie",
+    "email": "howie@howie.ai",
+    "organization": "Howie.ai",
+    "title": null,
+    "context": "Requested by sender to cancel/notify guests for several meetings; responsible for scheduling/guest communication.",
+    "is_decision_maker": false
+  }
+}

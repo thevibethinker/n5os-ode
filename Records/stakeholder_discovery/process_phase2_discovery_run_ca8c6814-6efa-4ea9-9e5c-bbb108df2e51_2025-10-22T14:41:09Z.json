@@ -1,0 +1,10 @@
+{
+  "run_id": "ca8c6814-6efa-4ea9-9e5c-bbb108df2e51",
+  "run_at": "2025-10-22T14:41:09Z",
+  "staging_path": "/home/workspace/Records/Temporary/email_staging",
+  "files_found": 0,
+  "files_processed": 0,
+  "stakeholders_discovered": 0,
+  "discovery_file": "/home/workspace/Records/stakeholder_discovery/discovered_2025-10-22T14:41:09Z.jsonl",
+  "notes": "No staging email files found; nothing to extract."
+}

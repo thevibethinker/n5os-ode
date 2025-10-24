@@ -1,0 +1,14 @@
+{
+  "id": "criterion.collab.v1",
+  "name": "Cross-functional collaboration",
+  "dimension": "Collaboration",
+  "description": "Works fluidly with eng/design/PM; co-creates, negotiates trade-offs, and maintains momentum.",
+  "evidence_types": ["Reference","InterviewNote","Scenario","DesignArtifact","PR"],
+  "levels": [
+    {"level":1, "label":"Emerging", "behavioral_indicators":["Communication gaps stall work; avoids conflict"]},
+    {"level":2, "label":"Solid", "behavioral_indicators":["Participates and aligns once decisions are made"]},
+    {"level":3, "label":"Strong", "behavioral_indicators":["Drives alignment; proposes options with trade-offs"]},
+    {"level":4, "label":"Exceptional", "behavioral_indicators":["Unlocks stuck situations; builds durable trust across functions"]}
+  ],
+  "weight_default": 0.08
+}

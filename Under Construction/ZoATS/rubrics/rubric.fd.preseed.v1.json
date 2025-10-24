@@ -1,0 +1,20 @@
+{
+  "id": "rubric.fd.preseed.v1",
+  "role": "Founding Designer",
+  "stage": "Pre-Seed",
+  "criteria": [
+    "criterion.ownership.v1","criterion.speed.v1","criterion.productsense.v1","criterion.designtaste.v1","criterion.collab.v1","criterion.comm.v1","criterion.resilience.v1","criterion.craft.v1"
+  ],
+  "weights": {
+    "criterion.ownership.v1": 0.12,
+    "criterion.speed.v1": 0.10,
+    "criterion.productsense.v1": 0.14,
+    "criterion.designtaste.v1": 0.16,
+    "criterion.collab.v1": 0.10,
+    "criterion.comm.v1": 0.10,
+    "criterion.resilience.v1": 0.08,
+    "criterion.craft.v1": 0.10
+  },
+  "pass_threshold": 0.72,
+  "notes": "Initial weights; tune with founder perspective and portfolio signals."
+}
