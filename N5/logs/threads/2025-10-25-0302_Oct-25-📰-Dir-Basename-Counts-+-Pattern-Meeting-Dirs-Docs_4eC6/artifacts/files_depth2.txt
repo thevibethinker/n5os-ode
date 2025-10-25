@@ -1,0 +1,380 @@
+/home/workspace/.git/COMMIT_EDITMSG
+/home/workspace/.git/FETCH_HEAD
+/home/workspace/.git/HEAD
+/home/workspace/.git/ORIG_HEAD
+/home/workspace/.git/config
+/home/workspace/.git/description
+/home/workspace/.git/index
+/home/workspace/.git/packed-refs
+/home/workspace/.gitignore
+/home/workspace/.n5_backups/Documents_N5.md.20251009_054435.backup
+/home/workspace/.n5_backups/manifest.json
+/home/workspace/.n5_backups/watcher_alerts.jsonl
+/home/workspace/.n5_bootstrap_server/CONNECT_FROM_NEW_ZO.md
+/home/workspace/.n5_bootstrap_server/README.md
+/home/workspace/.n5_bootstrap_server/server.py
+/home/workspace/.n5_bootstrap_server/server.py.backup_1760835070
+/home/workspace/.sorted
+/home/workspace/1
+/home/workspace/1c21f85c835b-Niraj_Mistry_Ui_Ux_Visual_Designer_CV.pdf
+/home/workspace/Amanda Sachs-GP Resume-July 17 v1.docx
+/home/workspace/Amanda Sachs-GP Resume-July 17 v1.pdf
+/home/workspace/Articles/Velocity Coding presentation @ Microsoft :: www.linkedin.com.md
+/home/workspace/Articles/every.to :: every.to.md
+/home/workspace/Backups/N5_Minimal_Bootstrap.tar.gz
+/home/workspace/Backups/commands.jsonl.backup
+/home/workspace/Backups/n5_bootstrap_critical.tar.gz
+/home/workspace/Backups/n5_clean_verified.tar.gz
+/home/workspace/Backups/n5_complete.tar
+/home/workspace/Backups/n5_complete.tar.gz
+/home/workspace/Backups/n5_complete_bootstrap.tar.gz
+/home/workspace/Backups/n5_full_bootstrap_v2.tar.gz
+/home/workspace/Backups/n5_transfer_package.tar.gz
+/home/workspace/Backups/phase2_complete_20251008_221900.tar.gz
+/home/workspace/Backups/phase3_complete_20251008_222155.tar.gz
+/home/workspace/Backups/phase4_complete_20251008_222354.tar.gz
+/home/workspace/Backups/phase5_complete_20251008_223737.tar.gz
+/home/workspace/Backups/pre_folder_cleanup_20251008_224152.tar.gz
+/home/workspace/Backups/pre_folder_cleanup_20251008_224200.tar.gz
+/home/workspace/Backups/pre_refactor_20251008_221629.tar.gz
+/home/workspace/Backups/tmp_execution_archive_20251008.tar.gz
+/home/workspace/Backups/zo-filelist-20250918-012342Z.tsv
+/home/workspace/Backups/zo-sysinfo-20250918-012342Z.txt
+/home/workspace/Commands/Analyze Meeting.md
+/home/workspace/Commands/Build Review.md
+/home/workspace/Commands/Close Conversation.md
+/home/workspace/Commands/Emoji Legend.md
+/home/workspace/Commands/Export Thread.md
+/home/workspace/Commands/Process to Knowledge.md
+/home/workspace/Commands/Quick Classify.md
+/home/workspace/Commands/Resume.md
+/home/workspace/Commands/Safety Check.md
+/home/workspace/Commands/Session Review.md
+/home/workspace/Commands/spawn-worker.md
+/home/workspace/Document Inbox/Burnout-recovery-meditation-retreat-transcript.docx
+/home/workspace/Document Inbox/README.md.old
+/home/workspace/Document Inbox/TODO_Documentation_Reference_Validator.md
+/home/workspace/Document Inbox/carly_meeting_transcript.txt
+/home/workspace/Documents/2025-10-12_Lessons_System_COMPLETE.md
+/home/workspace/Documents/2025-10-12_Lessons_System_Implementation.md
+/home/workspace/Documents/COMPLETE_SUMMARY.md
+/home/workspace/Documents/COMPLETE_SYSTEM_SUMMARY.md
+/home/workspace/Documents/CONTENT_LIBRARY_SUMMARY.md
+/home/workspace/Documents/CONVERSATION_SUMMARY.md
+/home/workspace/Documents/CRM_CONSOLIDATION_FINAL.md
+/home/workspace/Documents/CRM_Consolidation_Integration_Complete.md
+/home/workspace/Documents/CRM_Consolidation_Status_Report.md
+/home/workspace/Documents/CRM_Project_Complete_Archive.md
+/home/workspace/Documents/CRM_Verification_Test_Results.md
+/home/workspace/Documents/DEPLOYMENT-SUMMARY.md
+/home/workspace/Documents/Drive_Sync_Setup_Complete.md
+/home/workspace/Documents/FINAL_IMPLEMENTATION_SUMMARY.md
+/home/workspace/Documents/FINAL_STATUS_REPORT.md
+/home/workspace/Documents/FINAL_SUMMARY.md
+/home/workspace/Documents/FINAL_VERIFICATION_REPORT.md
+/home/workspace/Documents/FIX_SUMMARY_20251010.md
+/home/workspace/Documents/FOLLOW_UP_EMAIL_INTEGRATION_SUMMARY.md
+/home/workspace/Documents/IMPLEMENTATION_SUMMARY.md
+/home/workspace/Documents/Meeting_Transcript_Ingestion_Complete_System_Map.md
+/home/workspace/Documents/N5.md
+/home/workspace/Documents/N5.md.backup.20251016-054011
+/home/workspace/Documents/N5_Quick_Overview.md
+/home/workspace/Documents/N5_Setup_Complete.md
+/home/workspace/Documents/N5_System_Tour.md
+/home/workspace/Documents/NEW_WORKFLOW_SUMMARY_20251010.md
+/home/workspace/Documents/NEXT_STEPS_SOCIAL_WORKFLOW.md
+/home/workspace/Documents/PANDOC_INTEGRATION_COMPLETE.md
+/home/workspace/Documents/PHASE-1-COMPLETE.md
+/home/workspace/Documents/Personal_Brand_Building_Framework.md
+/home/workspace/Documents/QUICK-START-next-function-import.md
+/home/workspace/Documents/QUICK-TEST-PROMPT.md
+/home/workspace/Documents/REFLECTIVE-STRATEGIC-PARTNER-RECOVERY.md
+/home/workspace/Documents/SOCIAL_POST_WORKFLOW_DEBUG.md
+/home/workspace/Documents/STRATEGIC-PARTNER-COMPLETE-ALL-PHASES.md
+/home/workspace/Documents/STRATEGIC-PARTNER-PHASE-1-COMPLETE.md
+/home/workspace/Documents/STRATEGIC-PARTNER-TEST-EXPORT.md
+/home/workspace/Documents/THREAD-EXPORT-function-import.md
+/home/workspace/Documents/Timeline_Automation_Implementation_Summary.md
+/home/workspace/Documents/V2_ORCHESTRATOR_FIX_PLAN.md
+/home/workspace/Documents/conversation_closure_analysis.md
+/home/workspace/Documents/fix_summary.md
+/home/workspace/Documents/hamoon_email_analysis.md
+/home/workspace/Documents/implementation_summary.md
+/home/workspace/Documents/job_sourcing_troubleshooting_analysis.md
+/home/workspace/Documents/meeting-digest-BUILD-PLAN.md
+/home/workspace/Documents/meeting-digest-FEATURE-PRIORITIZATION.md
+/home/workspace/Documents/meeting-digest-FINAL-BUILD-PLAN.md
+/home/workspace/Documents/meeting-digest-redesign-PLAN.md
+/home/workspace/Documents/meeting-process-gdoc.md
+/home/workspace/Documents/output-review-tracker.md
+/home/workspace/Documents/protocol_failure_analysis.md
+/home/workspace/Documents/protocol_fixes_summary.md
+/home/workspace/Documents/reflection_analysis.md
+/home/workspace/Documents/reflection_summary.md
+/home/workspace/Documents/root_cause_analysis.md
+/home/workspace/Documents/thread-closure-fix-summary.md
+/home/workspace/Documents/timeline_automation_analysis.md
+/home/workspace/Documents/tracker_closure_gap_analysis.md
+/home/workspace/Documents/weekly-summary-integration-analysis.md
+/home/workspace/Downloads/CHILDZO_DIRECT_INSTRUCTION.md
+/home/workspace/Downloads/CHILDZO_N5_INSTALL_INSTRUCTION.md
+/home/workspace/Downloads/CHILDZO_VERIFICATION_PROTOCOL.md
+/home/workspace/Downloads/COMPLETE_INSTALL_INSTRUCTIONS.md
+/home/workspace/Downloads/FINAL_BOOTSTRAP_STATUS.md
+/home/workspace/Downloads/INSTALL_INSTRUCTIONS.md
+/home/workspace/Downloads/MANUAL_VERIFICATION_SCRIPT.sh
+/home/workspace/Downloads/OPTION1_STATUS.md
+/home/workspace/Downloads/TRANSFER_COMPLETE.md
+/home/workspace/Downloads/TRANSFER_OPTIONS.md
+/home/workspace/Downloads/ZOBRIDGE_MESSAGE_TO_CHILDZO.md
+/home/workspace/Downloads/n5_bootstrap_critical.tar.gz
+/home/workspace/Downloads/n5_clean_verified.tar.gz
+/home/workspace/Downloads/n5_complete.tar.gz
+/home/workspace/Downloads/n5_complete_bootstrap.tar.gz
+/home/workspace/Downloads/n5_full_bootstrap_v2.tar.gz
+/home/workspace/Downloads/n5_manifest.txt
+/home/workspace/Erika Underwood's Resume #2.pdf
+/home/workspace/Exports/auto_pop_results.json
+/home/workspace/Exports/brin_context.json
+/home/workspace/Exports/corrections_demo.json
+/home/workspace/Exports/drive_files.json
+/home/workspace/Exports/emily_context.json
+/home/workspace/Exports/existing_ids.json
+/home/workspace/Images/Xnip2025-09-20_06-08-37 (1).jpg
+/home/workspace/Images/Xnip2025-09-20_06-08-37.jpg
+/home/workspace/Images/b31_enhancement_flow.png
+/home/workspace/Images/complete_b31_system.png
+/home/workspace/Images/email_generation_impact_map.png
+/home/workspace/Images/git_status_current.png
+/home/workspace/Images/incremental_aggregation_flow.png
+/home/workspace/Images/interactive-player-architecture.png
+/home/workspace/Images/meeting_monitor_impact_map.png
+/home/workspace/Images/meeting_system_architecture.png
+/home/workspace/Images/meeting_system_fix_impact_map.png
+/home/workspace/Images/n5_architecture_relationships.png
+/home/workspace/Images/n5_bootstrap_architecture.png
+/home/workspace/Images/n5_os_final_architecture.png
+/home/workspace/Images/n5os_cognition_system_diagram.png
+/home/workspace/Images/placeholder-fix-architecture.png
+/home/workspace/Images/prefs_architecture_v2.png
+/home/workspace/Images/prefs_structure_map.png
+/home/workspace/Images/received_image.png
+/home/workspace/Images/workspace_cleanup_system.png
+/home/workspace/Images/written_voice_system_architecture.png
+/home/workspace/Images/zoats_email_intake_flow.png
+/home/workspace/Images/zodrops-architecture.png
+/home/workspace/Knowledge/DIRECT_PROCESSING_README.md
+/home/workspace/Knowledge/README.md
+/home/workspace/Lists/POLICY.md
+/home/workspace/Lists/POLICY.md.n5-old
+/home/workspace/Lists/README.md
+/home/workspace/Lists/detection_rules.md
+/home/workspace/Lists/fundraising-opportunity-tracker.jsonl
+/home/workspace/Lists/ideas.jsonl
+/home/workspace/Lists/ideas.jsonl.backup
+/home/workspace/Lists/index.jsonl
+/home/workspace/Lists/individuals_queue.jsonl
+/home/workspace/Lists/must-contact.jsonl
+/home/workspace/Lists/opportunity-calendar.jsonl
+/home/workspace/Lists/organizations_queue.jsonl
+/home/workspace/Lists/output_reviews.jsonl
+/home/workspace/Lists/output_reviews.sheet.json
+/home/workspace/Lists/output_reviews_comments.jsonl
+/home/workspace/Lists/pending-knowledge-updates.jsonl
+/home/workspace/Lists/phase3-test.jsonl
+/home/workspace/Lists/phase3-test.jsonl.backup
+/home/workspace/Lists/processed_archive.jsonl
+/home/workspace/Lists/services.md
+/home/workspace/Lists/social-media-ideas.jsonl
+/home/workspace/Lists/social-media-ideas.md
+/home/workspace/Lists/social_media_ideas.jsonl
+/home/workspace/Lists/squawk.jsonl
+/home/workspace/Lists/squawk.jsonl.backup
+/home/workspace/Lists/system-upgrades.jsonl
+/home/workspace/Lists/system-upgrades.jsonl.backup
+/home/workspace/María José Guerrero resume.docx
+/home/workspace/Marla BUV Resume - ChatGPT Optimized_H_O (1).pdf
+/home/workspace/Marla BUV Resume - ChatGPT Optimized_H_O.pdf
+/home/workspace/N5/.gitignore
+/home/workspace/N5/ACTION-SUMMARY-stakeholder-system-2025-10-12.md
+/home/workspace/N5/BLOCK_SYSTEM_REALIGNMENT_COMPLETE.md
+/home/workspace/N5/CLEANUP_COMPLETE.md
+/home/workspace/N5/DEPLOYMENT-STATUS-2025-10-12.md
+/home/workspace/N5/DOCUMENTATION_MERGE_COMPLETE.md
+/home/workspace/N5/FINAL_AUDIT_REPORT.md
+/home/workspace/N5/FUNCTION-IMPORT-COMPLETE.md
+/home/workspace/N5/IMPLEMENTATION_SUMMARY.md
+/home/workspace/N5/INTERNAL_EXTERNAL_QUICKREF.md
+/home/workspace/N5/MAINTENANCE_SYSTEM.md
+/home/workspace/N5/MEETING_SYSTEM_NEXT_STEPS.md
+/home/workspace/N5/MERGE_AUDIT_REPORT.md
+/home/workspace/N5/MERGE_AUDIT_SUMMARY.md
+/home/workspace/N5/MERGE_STATUS_SUMMARY.md
+/home/workspace/N5/PROCESS_IMPROVEMENTS_2025-10-09.md
+/home/workspace/N5/PROTECTION_QUICK_REF.md
+/home/workspace/N5/README.md
+/home/workspace/N5/SESSION-SUMMARY-2025-10-09-strategic-partner.md
+/home/workspace/N5/SESSION-SUMMARY-2025-10-09.md
+/home/workspace/N5/STAKEHOLDER_SYSTEM_OVERVIEW.md
+/home/workspace/N5/STATUS_MEETING_DUPLICATION_FIX.md
+/home/workspace/N5/STATUS_MEETING_PROCESSING_FIX.md
+/home/workspace/N5/TODO_internal_stakeholder_system.md
+/home/workspace/N5/TROUBLESHOOTING_QUICK_REF.md
+/home/workspace/N5/ZOBRIDGE_FULL_AUDIT_2025-10-20.md
+/home/workspace/N5/commands.jsonl
+/home/workspace/N5/commands.md.old
+/home/workspace/N5_BOOTSTRAP_MONITOR.log
+/home/workspace/Notes/2025-10-21_reflections-on-n5-os.md
+/home/workspace/Records/README.md
+/home/workspace/Records/process_summary_run_now.json
+/home/workspace/Resume - Zihuan Nie.docx
+/home/workspace/Sogja, Alfred Resume_v7.docx
+/home/workspace/Sync/README.md
+/home/workspace/Trash/2025-10-22_cognitive-os-for-founders_medium.md
+/home/workspace/Trash/67069 (1).ogg
+/home/workspace/Trash/67069 (1)_1.ogg
+/home/workspace/Trash/AI_TO_AI_CONVERSATION_COMPLETE.md
+/home/workspace/Trash/AUTOMATED_MEETING_SYSTEM_COMPLETE.md
+/home/workspace/Trash/AUTOMATED_SETUP_COMPLETE.md
+/home/workspace/Trash/BLOCK_SYSTEM_V1.4_HANDOFF.md
+/home/workspace/Trash/BLOCK_SYSTEM_V1.5_IMPLEMENTATION_COMPLETE.md
+/home/workspace/Trash/COMPLETE_BLOCK_LIST.md
+/home/workspace/Trash/COMPLETE_SYSTEM_FIX_CHECKLIST.md
+/home/workspace/Trash/Careerspan's Technological Foundation [March 2025] (1).pdf
+/home/workspace/Trash/Companion [05] - Block Type Registry v1.0 (1).txt
+/home/workspace/Trash/Companion [05] - Block Type Registry v1.0 (2).txt
+/home/workspace/Trash/Companion [05] - Block Type Registry v1.0.txt
+/home/workspace/Trash/Companion [05] - Companion File - Joketemplatelibrary v1.0.txt
+/home/workspace/Trash/Companion [05] - Companion File - Personal Voice Emulation For Vrijen Attawar v1.0.xml
+/home/workspace/Trash/DOCUMENTATION_UPDATES_COMPLETE.md
+/home/workspace/Trash/EMAIL_VOICE_ANALYSIS_COMPLETE.md
+/home/workspace/Trash/FINAL_SYSTEM_COMPLETE.md
+/home/workspace/Trash/Function [00] - Adaptive Brainstorming Assistant v1.0.md
+/home/workspace/Trash/Function [00] - Idea Compounder v1.0.pdf
+/home/workspace/Trash/Function [01] - Deep Research Due Diligence v0.3.txt
+/home/workspace/Trash/Function [01] - Deep Research Prompt Crafter v4.pdf
+/home/workspace/Trash/Function [01] - JTBD Plus Interview Extractor v1.0 (1).pdf
+/home/workspace/Trash/Function [01] - JTBD Plus Interview Extractor v1.0.pdf
+/home/workspace/Trash/Function [01] - Stakeholder Pain Point Extractor v1.0 (1).pdf
+/home/workspace/Trash/Function [01] - Stakeholder Pain Point Extractor v1.0.pdf
+/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (1).pdf
+/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (2).pdf
+/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (3).pdf
+/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0.pdf
+/home/workspace/Trash/Function [01] - Vc Investor Due - Diligence Prompt Crafter v1.2.txt
+/home/workspace/Trash/Function [02] - Instruction Set - LinkedIn Post Builder v2 (1).pdf
+/home/workspace/Trash/Function [02] - Instruction Set - LinkedIn Post Builder v2.pdf
+/home/workspace/Trash/Function [02] - Linkedin Comedic - Ironic Post Generator v1.2 (1).txt
+/home/workspace/Trash/Function [02] - Linkedin Comedic - Ironic Post Generator v1.2.txt
+/home/workspace/Trash/Function [02] - Linkedin Satirical Post Analyzer v1.3 (1).txt
+/home/workspace/Trash/Function [02] - Linkedin Satirical Post Analyzer v1.3.txt
+/home/workspace/Trash/Function [02] - Linkedin Thought Leadership Post Generator v1.2 (1).txt
+/home/workspace/Trash/Function [02] - Linkedin Thought Leadership Post Generator v1.2.txt
+/home/workspace/Trash/Function [02] - Meeting Transcript Processor v3 (1).pdf
+/home/workspace/Trash/Function [02] - Meeting Transcript Processor v3.pdf
+/home/workspace/Trash/Function [02] - Post Conversation Insight Tracker v1.1 (1).pdf
+/home/workspace/Trash/Function [02] - Post Conversation Insight Tracker v1.1.pdf
+/home/workspace/Trash/Function [02] - Stylistic Transformer v1.1 (1).txt
+/home/workspace/Trash/Function [02] - Stylistic Transformer v1.1.txt
+/home/workspace/Trash/Function [02] - Transcript Analyzer v1.0 (1).txt
+/home/workspace/Trash/Function [02] - Transcript Analyzer v1.0 (2).txt
+/home/workspace/Trash/Function [02] - Transcript Analyzer v1.0 (3).txt
+/home/workspace/Trash/Function [02] - Transcript Analyzer v1.0.txt
+/home/workspace/Trash/Function [03] - Advice Extractor And Summarizer v1.0 (1).pdf
+/home/workspace/Trash/Function [03] - Advice Extractor And Summarizer v1.0.pdf
+/home/workspace/Trash/Function [03] - Careerspan Insight Extractor v1.0.pdf
+/home/workspace/Trash/Function [03] - General Reflection Synthesizer v1.1.txt
+/home/workspace/Trash/Function [03] - Learning - To - Priority Distiller v1.1.txt
+/home/workspace/Trash/Function [03] - Meeting Debate Parser v1.0 (1).pdf
+/home/workspace/Trash/Function [03] - Meeting Debate Parser v1.0 (2).pdf
+/home/workspace/Trash/Function [03] - Meeting Debate Parser v1.0 (3).pdf
+/home/workspace/Trash/Function [03] - Meeting Debate Parser v1.0.pdf
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (1).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (2).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (3).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (4).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (5).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (6).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5 (7).txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5.txt
+/home/workspace/Trash/Function [03] - Meeting Intelligence Orchestrator v1.5_1760151641197.txt
+/home/workspace/Trash/Function [03] - Networking Reflection And Action Builder v1.7 (1).pdf
+/home/workspace/Trash/Function [03] - Networking Reflection And Action Builder v1.7 (2).pdf
+/home/workspace/Trash/Function [03] - Networking Reflection And Action Builder v1.7 (3).pdf
+/home/workspace/Trash/Function [03] - Networking Reflection And Action Builder v1.7.pdf
+/home/workspace/Trash/Function [03] - Salient Question Extractor v1.1 (1).txt
+/home/workspace/Trash/Function [03] - Salient Question Extractor v1.1 (2).txt
+/home/workspace/Trash/Function [03] - Salient Question Extractor v1.1 (3).txt
+/home/workspace/Trash/Function [03] - Salient Question Extractor v1.1.txt
+/home/workspace/Trash/Function [03] - Socratic Interviewer v1.0.pdf
+/home/workspace/Trash/Function [03] - Socratic Talking Points Refiner v1.0.pdf
+/home/workspace/Trash/Function [03] - Strategic Thought Partner v2.0.txt
+/home/workspace/Trash/Function [03] - User Feedback Synthesizer (1).pdf
+/home/workspace/Trash/Function [03] - User Feedback Synthesizer (2).pdf
+/home/workspace/Trash/Function [03] - User Feedback Synthesizer (3).pdf
+/home/workspace/Trash/Function [03] - User Feedback Synthesizer.pdf
+/home/workspace/Trash/Function [04] - Product - Idea Extractor v1.0 (1).pdf
+/home/workspace/Trash/Function [04] - Product - Idea Extractor v1.0 (2).pdf
+/home/workspace/Trash/Function [04] - Product - Idea Extractor v1.0 (3).pdf
+/home/workspace/Trash/Function [04] - Product - Idea Extractor v1.0.pdf
+/home/workspace/Trash/Function [04] - Product Decision Advocater v1.0.pdf
+/home/workspace/Trash/Function [04] - Strategy Compounder And Evolution Mapper v1.0.pdf
+/home/workspace/Trash/Function [99] - Founder Startup Information Extractor v1.0.pdf
+/home/workspace/Trash/Function [99] - Key Quote Extraction v1.0.pdf
+/home/workspace/Trash/Hello.md
+/home/workspace/Trash/MEETING_PROCESS_ANALYSIS.md
+/home/workspace/Trash/MEETING_SYSTEM_FIX_EXECUTIVE_SUMMARY.md
+/home/workspace/Trash/MEETING_SYSTEM_FIX_SUMMARY.md
+/home/workspace/Trash/Marla BUV Resume - ChatGPT Optimized_H_O (1).pdf
+/home/workspace/Trash/QUICK_REFERENCE_MEETING_SYSTEM.md
+/home/workspace/Trash/README_AUTOMATED_MEETINGS.md
+/home/workspace/Trash/Real-Time_Thought_Partner_Careerspan_System_Prompt_v0.1 (1).txt
+/home/workspace/Trash/Real-Time_Thought_Partner_Careerspan_System_Prompt_v0.1.txt
+/home/workspace/Trash/SYSTEM_SETUP_COMPLETE.md
+/home/workspace/Trash/Temp note.md
+/home/workspace/Trash/Transcripts
+/home/workspace/Trash/Trial command.md
+/home/workspace/Trash/Trial.md
+/home/workspace/Trash/V1.4_REPROCESSING_COMPLETE.md
+/home/workspace/Trash/VOICE_TUNING_COMPLETE_SUMMARY.md
+/home/workspace/Trash/Veena Zillow TR (1).pdf
+/home/workspace/Trash/WORKSPACE_CLEANUP_READY.md
+/home/workspace/Trash/WRITTEN_VOICE_SYSTEM_COMPLETE.md
+/home/workspace/Trash/WRITTEN_VOICE_SYSTEM_COMPLETE_1.md
+/home/workspace/Trash/Xnip2025-10-09_19-56-17.jpg
+/home/workspace/Trash/automated-meeting-processing-setup.md
+/home/workspace/Trash/careerspan_meeting_automation_suite_v1_0 (1).txt
+/home/workspace/Trash/careerspan_meeting_automation_suite_v1_0.txt
+/home/workspace/Trash/crm.md
+/home/workspace/Trash/dummy_transcript.txt
+/home/workspace/Trash/founder-one-pager.md
+/home/workspace/Trash/meeting-process-complete.md
+/home/workspace/Trash/meeting-process-summary.md
+/home/workspace/Trash/scheduled_task_diagnostic.md
+/home/workspace/Trash/test_transcript.docx
+/home/workspace/Trash/test_transcript.txt
+/home/workspace/Trash/transcript.docx
+/home/workspace/Trash/transcript.txt
+/home/workspace/Trash/transcript_meeting.txt
+/home/workspace/Trash/v_mostrecentresume-FCH (1).pdf
+/home/workspace/Veena Zillow TR (1).pdf
+/home/workspace/Veena Zillow TR.pdf
+/home/workspace/Vrijen_Attawar-Tech Resume-Oct 26.docx
+/home/workspace/Zo Consultancy/POLICY.md
+/home/workspace/Zo Consultancy/README.md
+/home/workspace/ZoATS/.gitignore
+/home/workspace/ZoATS/ORCHESTRATOR_INBOX.md
+/home/workspace/ZoATS/PLACEHOLDER_SCAN_NIGHT1.md
+/home/workspace/ZoATS/README.md
+/home/workspace/ZoATS/VERSION
+/home/workspace/ZoATS/WORKERS_PLAN.md
+/home/workspace/ZoATS/WORKERS_PROTOCOL.md
+/home/workspace/ZoATS/WORKERS_STATUS_ACTUAL.md
+/home/workspace/ZoATS/WORKER_ASSIGNMENTS_GESTALT.md
+/home/workspace/ZoATS/WORKER_ASSIGNMENTS_PENDING.md
+/home/workspace/ZoATS/install.sh
+/home/workspace/ZoATS/placeholder_scan_report.json
+/home/workspace/ZoATS/requirements.txt
+/home/workspace/ZoATS/run_extraction_with_llm.py
+/home/workspace/ZoATS/test_with_llm.py
+/home/workspace/digest_validation.log
