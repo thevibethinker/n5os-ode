@@ -6,49 +6,49 @@
 
 ### Memorable Quotes
 
-1. **"For many of us our workflows are not sequential. It's not this, then that. It can be I'm doing this and then it goes here and maybe here and then it comes back here and then there and this and that and it's all in my brain."**
-   - **Who:** Gabi Zijderveld
-   - **When:** 05:35 (responding to Vrijen's workflow discussion)
-   - **Context:** This crystallizes the core problem Vrijen is solving with Zo - that traditional workflow automation fails for knowledge workers because their work is non-linear, context-dependent, and held mentally rather than systematically. This quote should be usable in Zo marketing/positioning.
+1. **"For many of us our workflows are not sequential. Yes. It's not this, then that. It can be. I'm doing this and then it goes here and maybe here and then it comes back here and then there and then this and that and it's all in my brain."**
+   - **Who**: Gabi Zijderveld
+   - **When**: ~05:35 mark, after Vrijen explained why discrete workflow tools don't work
+   - **Context**: This crystallizes the fundamental challenge of founder productivity - work doesn't follow linear automation logic. It reveals why traditional workflow tools (Zapier, etc.) fail for complex knowledge work. Shows Gabi has deep self-awareness about her own work patterns and immediately recognized why she hasn't implemented automation despite knowing she should.
 
-2. **"I'm so curious to see what you got cooked up and I have till noon."**
-   - **Who:** Gabi Zijderveld
-   - **When:** 00:30 (opening)
-   - **Context:** Sets enthusiastic tone and time boundary. Shows genuine interest despite limited advance context about what she's about to see.
+2. **"I'm confident. Want to sign up for this."**
+   - **Who**: Vrijen Attawar (referring to Gabi)
+   - **When**: ~02:01 mark, while pulling up signup code
+   - **Context**: Vrijen's confidence that Gabi will want to use Zo after seeing it. Reveals his strong conviction about Zo's value proposition and suggests he's had similar positive reactions from others he's shown the platform to. This isn't a hard sell - it's evangelism driven by genuine enthusiasm.
 
-3. **"For context, this is actually really sort of funnily very appropriate because I reckon you were essentially the first person outside of Logan who we won't count for these purposes to like actually set up something AI related for."**
-   - **Who:** Vrijen Attawar
-   - **When:** 00:39
-   - **Context:** Reveals existing relationship history - Vrijen helped Gabi with AI setup previously, making her a natural early user for Zo. Explains comfort level and trust in the relationship.
+3. **"I believe they're gonna be huge and I intend to support them as best as I can."**
+   - **Who**: Vrijen Attawar (about Zo Computer)
+   - **When**: ~01:50 mark, introducing Zo
+   - **Context**: Positions Vrijen not as a casual user but as an active supporter/evangelist. Shows he sees supporting early-stage companies he believes in as part of his role. This signals potential value for Careerspan - Vrijen is willing to champion tools/companies he thinks are important, which could extend to strategic partnerships or portfolio companies.
 
-4. **"These vendors, they have a real skill for calling at the annoying moments."**
-   - **Who:** Vrijen Attawar
-   - **When:** 00:25
-   - **Context:** Empathy moment responding to Gabi's insurance broker interruption. Small but shows rapport.
+4. **"What do you think of. Okay, well anyway, you're going to explain because what does that even mean?"**
+   - **Who**: Gabi Zijderveld
+   - **When**: ~02:16 mark, in response to "computer in the cloud you control by prompting"
+   - **Context**: Healthy skepticism and intellectual curiosity. She's not just accepting buzzwords - she wants real understanding. This quote shows she's a thoughtful evaluator, not an early adopter who jumps on trends. Good signal for Careerspan - she'll be similarly thoughtful about evaluating career tech products.
 
-5. **"I believe they're gonna be huge and I intend to support them as best as I can."**
-   - **Who:** Vrijen Attawar
-   - **When:** 01:51 (about Zo Computer company)
-   - **Context:** Strong conviction statement. Vrijen is positioning himself as supporter/evangelist for Zo, not just user. This level of enthusiasm is notable and may influence Gabi's perception.
+5. **"I have not been able to really figure out yet where would I automate the best workflows."**
+   - **Who**: Gabi Zijderveld
+   - **When**: ~04:25 mark, explaining why she hasn't built Zapier workflows
+   - **Context**: Admits the challenge isn't lack of awareness (she knows automation exists) but lack of clarity on where to apply it. This is the real blocker for many founders - not the tools but the strategic thinking about what to systematize. Creates opportunity for anyone who can provide that strategic layer (consulting, coaching, or tools that auto-detect automation opportunities).
 
 ### Salient Questions
 
-1. **"What does that even mean if you don't have the context?"**
-   - **Who asked:** Gabi (02:16)
-   - **Why it matters:** Recognizes she needs more explanation of "computer in the cloud you control by prompting" - indicates Vrijen's pitch may be too jargon-heavy for non-technical founders
-   - **Action hint:** Simplify positioning for demo - use concrete examples not abstract descriptions
+1. **"What does that even mean?" (re: computer in the cloud you control by prompting)**
+   - **Why it matters**: Tests if Zo's value prop can be communicated clearly to non-technical founders; if Vrijen can't explain it simply, adoption will be limited
+   - **Who asked**: Gabi Zijderveld (~02:16)
+   - **Action hint**: Practice simplified explanations of complex AI/productivity concepts; Vrijen should develop analogies that work for busy founders
 
 2. **"What pricing are you on or what plan if rather?"**
-   - **Who asked:** Gabi (03:12)
-   - **Why it matters:** Immediately evaluating cost/value before seeing full demo; shows practical business thinking
-   - **Action hint:** Be transparent about pricing structure and emphasize 50% discount to make adoption decision easier
+   - **Why it matters**: Economic feasibility is top of mind; she's evaluating cost-benefit before seeing the demo
+   - **Who asked**: Gabi Zijderveld (~03:12)
+   - **Action hint**: For future Zo demos, lead with pricing transparency and ROI framing; founders need to know TCO upfront
 
-3. **"Where would I automate the best workflows? What for me would be the best spot to do this?"**
-   - **Who asked:** Gabi (04:13, explaining why she hasn't used Zapier)
-   - **Why it matters:** Reveals core blocker for workflow automation adoption - paradox of needing to understand your workflows before you can automate them
-   - **Action hint:** Zo demo should show how to START with messy workflows and let AI help structure them, rather than requiring pre-defined process maps
+3. **"Always on agent mode, you said?"** (implied question - seeking clarification)**
+   - **Why it matters**: "Agent mode" is jargon that requires explanation; understanding execution model is key to grasping Zo's differentiation
+   - **Who asked**: Gabi Zijderveld (~02:50)
+   - **Action hint**: Break down technical concepts like "agent mode" with concrete examples (e.g., "it doesn't wait for you to ask - it can run tasks in the background while you sleep")
 
-4. **[Implied question: How does Zo solve the sequential workflow problem?]**
-   - **Context:** Gabi's comment about non-sequential workflows (05:35) implies the question
-   - **Why it matters:** This is the core value prop test - if Zo requires sequential thinking, it fails her use case
-   - **Action hint:** Demo must explicitly show how Zo handles branching, looping, context-switching workflows
+4. **"Where would I automate the best workflows?"** (stated as challenge, but fundamentally a question)**
+   - **Why it matters**: This is THE strategic question for productivity optimization - identifying highest-leverage automation opportunities
+   - **Who asked**: Gabi Zijderveld (~04:25)
+   - **Action hint**: Develop methodology for workflow audit/prioritization; this could be a valuable service offering (consulting or tool-based)

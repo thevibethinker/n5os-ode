@@ -5,100 +5,11 @@
   "meeting_path": "/home/workspace/Records/Company/Meetings/2025-10-23/Test_Leadership_Sync",
   "actions": [
     {
-      "text": "launch the new product feature by end of Q4",
-      "context": "# B01: Detailed Recap - Leadership Team Sync\n\n## Key Decisions\n\n1. We will launch the new product feature by end of Q4\n2. Need to hire two senior engineers by December\n3. Marketing budget will be incr",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_001",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Product",
-      "suggested_tags": []
-    },
-    {
-      "text": "hire two senior engineers by December",
-      "context": "- Leadership Team Sync\n\n## Key Decisions\n\n1. We will launch the new product feature by end of Q4\n2. Need to hire two senior engineers by December\n3. Marketing budget will be increased by 15% next quar",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_002",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Personnel",
-      "suggested_tags": []
-    },
-    {
-      "text": "be increased by 15% next quarter",
-      "context": "w product feature by end of Q4\n2. Need to hire two senior engineers by December\n3. Marketing budget will be increased by 15% next quarter\n\n## Discussion Points\n\n- Reviewed Q3 performance metrics\n- Dis",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_003",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Operations",
-      "suggested_tags": []
-    },
-    {
-      "text": "schedule a follow-up meeting next week to review the hiring pipeline",
-      "context": "V mentioned he needs to draft a recap and send it to the exec team by EOD tomorrow\n- Team agreed we should schedule a follow-up meeting next week to review the hiring pipeline\n\n## Action Items\n\n- Will",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_004",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Operations",
-      "suggested_tags": [
-        "meeting",
-        "follow_up"
-      ]
-    },
-    {
-      "text": "prepare interview questions for the engineering roles",
-      "context": "we should schedule a follow-up meeting next week to review the hiring pipeline\n\n## Action Items\n\n- Will prepare interview questions for the engineering roles\n- Need to reach out to Sarah Chen about th",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_005",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Operations",
-      "suggested_tags": []
-    },
-    {
-      "text": "reach out to Sarah Chen about the product collaboration",
-      "context": "he hiring pipeline\n\n## Action Items\n\n- Will prepare interview questions for the engineering roles\n- Need to reach out to Sarah Chen about the product collaboration\n- Must review the Q4 budget proposal",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_006",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Product",
-      "suggested_tags": []
-    },
-    {
-      "text": "review the Q4 budget proposal before Friday's board meeting",
-      "context": "tions for the engineering roles\n- Need to reach out to Sarah Chen about the product collaboration\n- Must review the Q4 budget proposal before Friday's board meeting",
-      "source_block": "B01",
-      "confidence": "medium",
-      "id": "act_007",
-      "suggested_when": "Saturday 2:00pm",
-      "suggested_priority": "Normal",
-      "suggested_duration": "30m",
-      "suggested_project": "Operations",
-      "suggested_tags": [
-        "meeting"
-      ]
-    },
-    {
       "text": "Draft recap document for leadership team (due tomorrow EOD)",
       "context": "Deliverable from meeting",
       "source_block": "B25",
       "confidence": "high",
-      "id": "act_008",
+      "id": "act_001",
       "suggested_when": "Tomorrow 10:00am",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
@@ -106,28 +17,32 @@
       "suggested_tags": [
         "meeting",
         "deliverable"
-      ]
+      ],
+      "when": "2025-10-25 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
     },
     {
       "text": "Updated hiring pipeline analysis (due Friday)",
       "context": "Deliverable from meeting",
       "source_block": "B25",
       "confidence": "high",
-      "id": "act_009",
+      "id": "act_002",
       "suggested_when": "Saturday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Operations",
       "suggested_tags": [
         "deliverable"
-      ]
+      ],
+      "when": "2025-10-25 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
     },
     {
       "text": "Q4 budget proposal review (due before Friday's board meeting)",
       "context": "Deliverable from meeting",
       "source_block": "B25",
       "confidence": "high",
-      "id": "act_010",
+      "id": "act_003",
       "suggested_when": "Saturday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
@@ -135,37 +50,43 @@
       "suggested_tags": [
         "meeting",
         "deliverable"
-      ]
+      ],
+      "when": "2025-10-25 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
     },
     {
       "text": "Product roadmap slides for next All-Hands (due next Monday)",
       "context": "Deliverable from meeting",
       "source_block": "B25",
       "confidence": "high",
-      "id": "act_011",
+      "id": "act_004",
       "suggested_when": "Saturday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Product",
       "suggested_tags": [
         "deliverable"
-      ]
+      ],
+      "when": "2025-10-25 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
     },
     {
       "text": "Customer feedback synthesis report (due next week)",
       "context": "Deliverable from meeting",
       "source_block": "B25",
       "confidence": "high",
-      "id": "act_012",
+      "id": "act_005",
       "suggested_when": "Saturday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Operations",
       "suggested_tags": [
         "deliverable"
-      ]
+      ],
+      "when": "2025-10-25 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
     }
   ],
-  "extracted_at": "2025-10-24T01:22:44.063317",
+  "extracted_at": "2025-10-24T21:20:20.667001",
   "status": "pending_review"
 }

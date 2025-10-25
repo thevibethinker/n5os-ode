@@ -1,0 +1,45 @@
+{
+  "meeting_id": "2025-10-24_external-sam-partnership-discovery-call_173330",
+  "date": "2025-10-24",
+  "participants": {
+    "careerspan": ["Vrijen Attawar"],
+    "sam": ["Ash Straughn", "Saul Garza", "Max Carmenar"]
+  },
+  "stakeholder_type": "FOUNDER",
+  "classification": "external",
+  "processing": {
+    "processed_at": "2025-10-24T22:58:39Z",
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "blocks_generated": 13,
+    "required_blocks": ["B26", "B01", "B02", "B08", "B21", "B31", "B25"],
+    "high_priority_blocks": ["B05", "B24", "B13", "B07", "B14", "B27"],
+    "conditional_blocks": []
+  },
+  "crm_integration": {
+    "profiles_created": [
+      "Knowledge/crm/individuals/ash-straughn.md",
+      "Knowledge/crm/individuals/saul-garza.md",
+      "Knowledge/crm/individuals/max-carmenar.md"
+    ],
+    "enrichment_priority": "HIGH",
+    "status": "Active partnership exploration + potential acquisition"
+  },
+  "key_outcomes": {
+    "decisions": [
+      "Partnership structure validated - Careerspan sourcing, Sam placement with 5% kickback",
+      "Acquisition discussions opened if Sam raises above $2M target",
+      "Next meeting scheduled for next week with Logan included"
+    ],
+    "follow_up_required": [
+      "Partnership implementation proposal",
+      "Acquisition framework outline",
+      "Schedule next meeting with Logan"
+    ]
+  },
+  "transcript_source": {
+    "gdrive_id": "19aLkFsaW2g1N9fUxdS_bZUz83jPDnG7d",
+    "original_filename": "Careerspan <> Sam - Partnership Discovery Call-transcript-2025-10-24T17-33-30.497Z.docx",
+    "local_path": "N5/inbox/transcripts/2025-10-24_external-sam-partnership-discovery-call_173330.txt"
+  }
+}

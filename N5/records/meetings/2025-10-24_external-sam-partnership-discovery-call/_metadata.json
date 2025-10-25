@@ -1,0 +1,40 @@
+{
+  "meeting_id": "2025-10-24_external-sam-partnership-discovery-call",
+  "processed_at": "2025-10-24T22:43:02Z",
+  "transcript_source": "gdrive_id:1_kP2sbRDQP1bVvvoF-bPoVIFGjp-phCW",
+  "original_filename": "Careerspan <> Sam - Partnership Discovery Call-transcript-2025-10-24T17-32-41.785Z.docx",
+  "meeting_date": "2025-10-24",
+  "classification": "external",
+  "stakeholder_type": "FOUNDER",
+  "participants": {
+    "careerspan": ["Vrijen Attawar"],
+    "external": ["Ash Straughn", "Saul Garza", "Max Carmenar"]
+  },
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B13_PLAN_OF_ACTION",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B14_BLURBS_REQUESTED",
+    "B27_KEY_MESSAGING",
+    "B24_PRODUCT_IDEA_EXTRACTION"
+  ],
+  "block_count": 13,
+  "crm_profiles_created": [
+    "Knowledge/crm/individuals/ash-straughn.md",
+    "Knowledge/crm/individuals/saul-garza.md",
+    "Knowledge/crm/individuals/max-carmenar.md"
+  ],
+  "enrichment_priority": "HIGH",
+  "v_os_tags": ["LD-FND", "GPT-M", "A-3"],
+  "processing_system": "Registry System v1.5",
+  "confidence": "High",
+  "transcript_quality": "Good",
+  "notes": "Partnership exploration + acquisition discussion with Sam recruiting platform. Strong alignment on sourcing partnership, serious acquisition interest contingent on Sam's fundraising progress."
+}

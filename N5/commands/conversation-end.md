@@ -582,33 +582,37 @@ Committing with message: 'Add git check to conversation-end workflow'...
 After git check, automatically generate thread titles:
 
 **Instructions:**
-1. Load `file 'N5/prefs/operations/thread-titling.md'` for format rules
-2. Load `file 'N5/config/emoji-legend.json'` for emoji selection
-3. **Analyze conversation deeply:** 
+
+1. Load `file N5/prefs/operations/thread-titling.md` for format rules
+2. Load `file N5/config/emoji-legend.json` for emoji selection
+3. **Analyze conversation deeply:**
    - Review ALL deliverables/artifacts created
    - Extract 2-3 concrete nouns that describe what was built
    - Identify the primary system/feature/component worked on
    - Be SPECIFIC: "Content Library System" not "System Work"
    - Include key integrations if relevant: "X + Y Integration"
-4. Generate TWO titles:
+4. Generate TWO titles: 
    - **Current thread title**: For this conversation
    - **Next thread title**: For continuation (increment #N or add #2 if current has #1 or no number)
    - Use 🔗 chain emoji for linked threads
 5. Display both titles prominently
 
 **Title Format (REQUIRED):**
-```
+
+```markdown
 MMM DD | {emoji} {Specific-Entity} {Action/Type} {optional: #N}
 ```
 
 **Entity Guidelines:**
+
 - **Specific system names:** "Content Library", "Email Validator", "CRM Sync Engine"
 - **Not generic terms:** Avoid "System", "Tool", "Feature" alone
 - **Combined systems:** Use "X + Y" for dual implementations
 - **Include key components:** "Meeting Parser", "B-Block Extractor"
 
 **Good Examples:**
-```
+
+```markdown
 Oct 22 | ✅ Content Library + Email Validation Systems
 Oct 16 | 🔧 Meeting Intelligence Multi-Block Generator  
 Oct 14 | 🔗 CRM Consolidation Phase 2
@@ -616,14 +620,16 @@ Oct 13 | 📰 GTM Strategy Docs & Market Research
 ```
 
 **Bad Examples (Too Generic):**
-```
+
+```markdown
 Oct 22 | ✅ System Work              ← What system?
 Oct 16 | ✅ Implementation           ← What implementation?
 Oct 14 | 🔧 Refactor                ← Refactor of what?
 ```
 
 **Display Format:**
-```
+
+```markdown
 ======================================================================
 📋 THREAD TITLES GENERATED
 ======================================================================
@@ -639,11 +645,12 @@ Next Thread (for continuation):
 ```
 
 **Rules:**
+
 - Always include date prefix ("MMM DD | ")
 - Use centralized emoji legend
 - Follow noun-first principle with SPECIFIC nouns
 - Extract key deliverable names from artifacts
-- Respect UI constraints (collapsed sidebar ~24 chars visible)
+- Respect UI constraints (collapsed sidebar \~24 chars visible)
 - Include sequence numbers for linked work
 - Prioritize clarity over brevity (within constraints)
 

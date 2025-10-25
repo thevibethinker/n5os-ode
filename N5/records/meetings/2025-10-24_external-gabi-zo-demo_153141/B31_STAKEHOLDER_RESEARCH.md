@@ -4,65 +4,65 @@
 **Feedback**: - [ ] Useful
 ---
 
-**Perspective:** Speaking as founder/executive managing complex operational workflows
+**Perspective**: Speaking as founder/entrepreneur (company/stage TBD)
 
-### Insight 1
+### Insight 1: Non-Sequential Workflow Complexity Blocks Automation Adoption for Founders
 
-**Title:** Workflow automation adoption fails for knowledge workers because tool-builders assume sequential processes, but founder/executive workflows are inherently non-linear, context-switching, and held mentally rather than systematically
+**Evidence**: "For many of us our workflows are not sequential. Yes. It's not this, then that. It can be. I'm doing this and then it goes here and maybe here and then it comes back here and then there and then this and that and it's all in my brain."
 
-**Evidence:** "For many of us our workflows are not sequential. It's not this, then that. It can be I'm doing this and then it goes here and maybe here and then it comes back here and then there and this and that and it's all in my brain."
+**Why it matters**: Reveals the fundamental mismatch between how automation tools are designed (linear, discrete workflows) and how founders actually work (interconnected, non-linear, context-dependent). This explains low automation adoption despite widespread awareness of tools like Zapier.
 
-**Why it matters:** This explains low Zapier/automation adoption among founders despite clear efficiency opportunity - the problem isn't lack of time or interest, it's fundamental paradigm mismatch between linear automation tools and non-linear knowledge work.
+**Signal strength**: ● ● ● ● ○
 
-**Signal strength:** ● ● ● ○ ○
+**Category**: Founder Pain Points
 
-**Category:** Founder Pain Points
+**Domain credibility**: ● ● ● ○ ○ (Gabi has operational founder experience but limited sample size on this specific topic)
 
-**Source Credibility:**
-- **Stakeholder:** Gabi Zijderveld → Link to B08
-- **Relevant experience:** Manages operational complexity (insurance, vendors, admin) while running company
-- **Source type:** PRIMARY (firsthand operational experience with this exact problem)
-- **Firsthand?** Yes - she's describing her own lived experience with workflow tools
-- **Weight justification:** Should weight moderately - this is genuine primary experience but from single source; need validation from other founders to assess if this is universal or specific to her context
-
----
-
-### Insight 2
-
-**Title:** The workflow automation adoption paradox - users need to pre-map their processes to use automation tools, but if processes were that well-defined, they wouldn't need help structuring them
-
-**Evidence:** "I have not been able to really figure out yet where would I automate the best workflows. Like, what for me would be the best spot to do this." (explaining why she hasn't implemented Zapier despite interest)
-
-**Why it matters:** Product design opportunity for AI workflow tools - solve discovery/structuring problem first, then automation becomes possible. Traditional tools assume users arrive with clear process maps.
-
-**Signal strength:** ● ● ● ● ○
-
-**Category:** Product Strategy
-
-**Source Credibility:**
-- **Stakeholder:** Gabi Zijderveld → Link to B08
-- **Relevant experience:** Has evaluated Zapier and other workflow tools but hasn't implemented despite seeing potential value
-- **Source type:** PRIMARY (direct experience as potential user who failed to adopt)
-- **Firsthand?** Yes - articulating her own blockers to adoption
-- **Weight justification:** Should weight heavily - this is critical user research insight that explains adoption friction; represents likely pattern among similar knowledge workers
+**Source Credibility**:
+- Stakeholder: Gabi Zijderveld → See file 'B08_STAKEHOLDER_INTELLIGENCE.md'
+- Relevant experience: Operating founder managing complex admin/operational workflows
+- Source type: PRIMARY (firsthand experience with workflow challenges)
+- Firsthand? Yes - This is her lived experience as a founder
+- Weight justification: High weight - This explains a widely observed pattern (low automation adoption among founders) with a clear causal mechanism. Her articulation suggests this is well-developed thinking, not a one-off observation.
 
 ---
 
-### Insight 3
+### Insight 2: Strategic Clarity on "What to Automate" is the Real Bottleneck, Not Tool Availability
 
-**Title:** Founder/VC workflows require context and state management across multiple concurrent workstreams, not just discrete task automation
+**Evidence**: "I have not been able to really figure out yet where would I automate the best workflows. Like, what for me would be the best spot to do this."
 
-**Evidence:** Vrijen stated: "For founders and VCs the problem is context and state. Right. How much context am I holding sort of in my head and sort of what is the state, so to speak, of all of the different bits of information that I need?" - Gabi did not object or correct this framing
+**Why it matters**: The blocker for productivity automation isn't awareness of tools (she knows about Zapier, saw others use it) but strategic analysis of which workflows to prioritize. This suggests a market opportunity for workflow audit/consulting or tools that auto-identify high-leverage automation opportunities.
 
-**Why it matters:** Positions the competitive landscape - tools that focus on task automation (Zapier, Make) miss the real problem, which is managing mental overhead of tracking status across many parallel initiatives.
+**Signal strength**: ● ● ● ○ ○
 
-**Signal strength:** ● ● ○ ○ ○
+**Category**: Founder Pain Points
 
-**Category:** Founder Pain Points
+**Domain credibility**: ● ● ● ○ ○ (Gabi's personal experience; unclear if this generalizes broadly)
 
-**Source Credibility:**
-- **Stakeholder:** Gabi Zijderveld (via agreement/non-objection) → Link to B08
-- **Relevant experience:** Manages multiple concurrent workstreams as founder/executive
-- **Source type:** SECONDARY (did not originate this framing, but validated it by not pushing back)
-- **Firsthand?** Partial - she experiences the problem but Vrijen articulated the diagnosis
-- **Weight justification:** Should weight lightly until validated with explicit confirmation from Gabi or other founders; this is Vrijen's interpretation that she didn't disagree with, not her stated view
+**Source Credibility**:
+- Stakeholder: Gabi Zijderveld → See file 'B08_STAKEHOLDER_INTELLIGENCE.md'
+- Relevant experience: Founder who has evaluated automation tools but hasn't implemented them
+- Source type: PRIMARY (firsthand decision-making challenge)
+- Firsthand? Yes - This is her direct experience with the adoption barrier
+- Weight justification: Medium-high weight - Explains inaction despite opportunity awareness. If validated across other founders, this points to a specific service/product gap in the productivity space. However, could also reflect lack of dedicated time/resources rather than fundamental gap.
+
+---
+
+### Insight 3: Founder Time Scarcity Creates "Annoying Moment" Vulnerability for Vendor Timing
+
+**Evidence**: "I was dealing, going back and forth with our insurance broker because a bunch of insurances are up for payment and then of course she calls me like five minutes before I call... these vendors, they have a real skill for calling at the annoying moments."
+
+**Why it matters**: Demonstrates how vendor/admin coordination creates cognitive interrupts at inopportune times, compounding time scarcity for founders. Suggests opportunity for tools/services that shield founders from poorly-timed vendor interactions or consolidate admin coordination.
+
+**Signal strength**: ● ● ○ ○ ○
+
+**Category**: Founder Pain Points
+
+**Domain credibility**: ● ● ○ ○ ○ (Common founder experience but not domain expertise)
+
+**Source Credibility**:
+- Stakeholder: Gabi Zijderveld → See file 'B08_STAKEHOLDER_INTELLIGENCE.md'
+- Relevant experience: Founder handling operational admin responsibilities
+- Source type: PRIMARY (direct experience with vendor coordination friction)
+- Firsthand? Yes - Literal example from moments before the meeting
+- Weight justification: Low-medium weight - This is a real friction point but relatively minor/universal. The insight isn't particularly novel (everyone experiences poorly-timed calls) and the strategic value is limited unless part of a broader pattern about founder time protection.

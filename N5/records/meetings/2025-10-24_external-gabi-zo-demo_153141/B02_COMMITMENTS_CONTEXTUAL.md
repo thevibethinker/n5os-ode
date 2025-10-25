@@ -2,7 +2,7 @@
 
 | Owner | Deliverable | Context/Why | Due Date | Dependencies |
 |-------|------------|-------------|----------|--------------|
-| We (Vrijen) | Complete Zo Computer platform demo | Show Gabi concrete use cases to convert her to user; she has till noon so time-bounded presentation | Within meeting (by noon) | Browser restart completion |
-| We (Vrijen) | Share sign-up code with Gabi | Enable her to register for Zo with 50% discount pricing | Within meeting | None |
+| We (Vrijen) | Complete Zo Computer demo walkthrough | Show practical application of system-based AI productivity approach; demonstrate value proposition that differentiates from Zapier/workflow tools | Within current meeting | Browser restart (technical issue) |
+| We (Vrijen) | Provide Zo signup code/referral | Enable Gabi to access platform with 50% API rate discount | Within current meeting | None |
 
-**Note:** Meeting transcript ended mid-demo during browser restart. Full commitment list may be incomplete pending demo continuation.
+**Notes**: Meeting was a demo/education session. Primary commitment is completing the demonstration itself. Gabi's time constraint (meeting until noon) creates implicit time boundary for the demo.
