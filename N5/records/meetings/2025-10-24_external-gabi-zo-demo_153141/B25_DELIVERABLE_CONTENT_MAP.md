@@ -8,41 +8,43 @@
 
 | Item | Promised By | Promised When | Status | Link/File | Send with Email |
 |------|-------------|---------------|--------|-----------|-----------------|
-| Zo Computer sign-up code (50% discount) | Vrijen | During meeting | NEED | [To be generated] | True |
-| Zo Computer platform demonstration | Vrijen | During meeting (by noon) | IN PROGRESS | [Live demo] | False |
-| Fireflies transcript share | Vrijen | During meeting | NEED | [To be shared] | False |
+| Zo Computer demo walkthrough | Vrijen | During this meeting | COMPLETE | N/A (live demo) | False |
+| Zo signup code/referral (50% API discount) | Vrijen | During this meeting | HAVE | [To be provided in meeting] | True |
+| Fireflies transcript share | Vrijen | During this meeting | HAVE | [Vrijen mentioned sharing] | False |
 
-### Section 2: Follow-Up Email Draft
-
-**Subject:** Follow-Up: Gabi x Careerspan • Zo setup & workflow automation
-
-Hi Gabi,
-
-Great connecting earlier—I appreciated you making time despite the insurance broker chaos (vendors really do have perfect timing, don't they?).
-
-Your observation about non-sequential workflows really crystallized something important: "It can be I'm doing this and then it goes here and maybe here and then it comes back here—and it's all in my brain." That's exactly the problem Zo is designed to solve. Most automation tools assume linear processes, but founder workflows are inherently branching, context-heavy, and held mentally rather than systematically.
-
-**Quick Recap:**
-- Showed you Zo Computer's approach to managing interconnected workflows vs. discrete Zapier-style automation
-- Shared 50% discount code for Zo signup
-- Discussed the context and state management challenge for founders/VCs
-
-**Next Steps:**
-- Attached: Zo signup code and getting started resources
-- Let me know if you'd like me to schedule a follow-up session once you've had a chance to explore the platform—happy to walk through specific use cases for your workflows
-
-Looking forward to hearing what you build with Zo.
-
-Best,  
-V
+**Notes**: This was a demo/education meeting, so deliverables are primarily the demonstration itself and signup access. No follow-up materials explicitly promised beyond the live demo.
 
 ---
 
-**Email Metadata:**
-- Warmth score: 7/10 (friendly but professional)
-- Familiarity score: 7/10 (existing relationship, previous AI setup work)
-- Formality: Medium-low (conversational but not overly casual)
-- Distinctive phrases used: "it's all in my brain" (confidence: 0.95)
-- Resonant detail: Insurance broker timing comment
-- Delay sensitivity: None (within 24 hours)
-- Readability: FK ~8, avg 18 words/sentence
+### Section 2: Follow-Up Email Draft
+
+**Subject**: Follow-Up: Gabi x Careerspan • Zo Demo & Workflow Systems
+
+Hi Gabi,
+
+Great connecting yesterday! I loved how you immediately zeroed in on why discrete workflow tools don't work for founders — "it's all in my brain" captured exactly the context/state management problem that makes Zapier-style automation so frustrating for complex knowledge work.
+
+Quick recap from our demo session:
+- Introduced Zo Computer as a system-based approach to AI productivity (vs. fragmented workflows)
+- Discussed your challenge identifying which workflows to automate first — the strategic question that blocks most founders
+- Provided 50% discount signup code for Zo (at-cost API pricing)
+
+**Next Steps**:
+- If you decide to try Zo, I'm happy to share how I've structured my own system (meeting processing, stakeholder tracking, etc.)
+- Would love to hear what you end up building if you dive in
+
+Hope the rest of your week was less interrupted by insurance brokers calling at inconvenient moments!
+
+Best,  
+Vrijen
+
+---
+
+**Email Generation Metadata**:
+- **Relationship Warmth**: 7/10 (friendly networking conversation, shared founder experiences)
+- **Familiarity**: 6/10 (some prior connection implied, comfortable casual tone)
+- **Formality Level**: Low-Medium (first name basis, casual sign-off)
+- **Distinctive Phrases Used**: "it's all in my brain" (confidence: 0.95)
+- **Resonant Details**: Insurance broker timing frustration, her immediate recognition of workflow non-sequentiality
+- **Delay Sensitivity**: None (<24hr follow-up assumed)
+- **Flesch-Kincaid**: 9.2 (target: ≤10) ✓

@@ -6,23 +6,24 @@
 
 ### Key Decisions and Agreements
 
-• **Vrijen to demonstrate Zo Computer capabilities to Gabi** - Meeting scheduled to showcase Zo's AI-powered workflow automation system, file structure capabilities, and multi-model support. Matters because Gabi represents potential early adopter with sophisticated workflow needs and appears to be first external person Vrijen helped with AI setup.
+• **Vrijen to conduct Zo Computer demo for Gabi** - Scheduled demo session to show Zo's capabilities (AI computer in the cloud with file structure, multi-model support, and agent mode). Context: Gabi expressed curiosity about Vrijen's AI productivity setup; Vrijen positioned this as showing how he's built comprehensive productivity systems using Zo rather than fragmented workflow tools like Zapier. Rationale: Demonstrates practical application of AI for founder workflows and introduces Gabi to a platform Vrijen believes will be "huge."
 
-• **50% discount code shared with Gabi** - Vrijen offered Gabi subsidized compute pricing (50% off API rates, no markup from Zo). Matters because demonstrates relationship value and lowers barrier to adoption; Vrijen is on most expensive plan with better discount but extending generous terms to Gabi.
-
-• **Demo delayed due to technical issue** - Vrijen needed to restart browser/instance mid-demo after system crash. Matters because shows early-stage product reality but Vrijen had backup account ready, demonstrating preparation.
+• **Signup code/referral to be provided** - Vrijen mentioned he would provide Gabi with a signup code offering 50% discount on API rates. Context: Gabi asked about pricing plans; Vrijen is on the most expensive plan with a better discount but emphasized Gabi would still get substantial savings (50% off OpenAI API rates with no markup from Zo). Rationale: Lower barrier to entry for Gabi to try the platform.
 
 ### Strategic Context
 
-Vrijen positioned Zo Computer as solution to fundamental workflow automation problem - that discrete workflow tools (like Zapier) fail because founders/VCs operate with interconnected, non-sequential workflows requiring context and state management rather than simple "if this, then that" logic. His core insight: breaking work into discrete workflows doesn't work because "our workflows are interrelated." Gabi resonated strongly with this framing, specifically the recognition that "our workflows are not sequential" - they branch, loop back, and exist primarily in the brain.
+This meeting represents Vrijen's evangelism for Zo Computer as a paradigm shift in productivity tooling. His core thesis: **traditional workflow automation tools like Zapier fail for founders/VCs because they require breaking complex, interrelated work into discrete workflows**. The real problem founders face is **context and state management** - tracking multiple interconnected information streams in their heads rather than in structured systems.
 
-Vrijen's approach with Zo has been to build a "well-bounded system" rather than individual workflows, emphasizing comprehensive context management. He's been building advanced functionality in ChatGPT that he believes no one else has figured out due to "asking questions nobody else thinks of asking." Positioning Zo as the evolution of this work - combining chat interface, file structure, any-model flexibility, and always-on agent mode.
+Vrijen positions Zo as solving this through:
+1. **System-level thinking vs. individual workflows** - Building a "well bounded system" rather than thousands of independent automations
+2. **Always-on agent mode** - AI that can take action without constant prompting
+3. **File structure + multi-model access** - Persistent storage with model flexibility (unlike ChatGPT)
 
-Key competitive positioning: Zo vs. Zapier/n8n (visual workflow builders that fragment rather than unify), Zo as "ChatGPT if it had file structure and was always on agent mode."
+Gabi's engagement signals included immediate curiosity ("what does that even mean?"), acknowledgment of workflow automation challenges ("I haven't been able to really figure out yet where would I automate the best workflows"), and resonance with the "workflows are not sequential" insight - recognizing that founder work doesn't follow simple "this then that" logic.
 
 ### Critical Next Action
 
-**Owner:** Vrijen  
-**Deliverable:** Continue Zo Computer platform demonstration showing file structure, workflow capabilities, and meeting processing example  
-**Timeline:** Within this meeting (demo was about to resume after browser restart)  
-**Purpose:** Convert Gabi to Zo user by demonstrating value prop through concrete use case
+**Owner**: Vrijen  
+**Deliverable**: Complete Zo Computer demo walkthrough for Gabi  
+**Timeline**: Within the current meeting (technical issues caused brief delay with browser restart)  
+**Purpose**: Demonstrate practical application of Zo for founder productivity and validate Vrijen's system-based approach to AI workflow management
