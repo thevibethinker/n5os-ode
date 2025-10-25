@@ -1,0 +1,225 @@
+{
+  "version": "2.0-zerodoc",
+  "generated_at": "2025-10-24T15:28:00Z",
+  "philosophy": "Zero-Doc: Files flow to canonical locations automatically; organization is artifact of flow, not separate activity",
+  "dry_run": true,
+  
+  "phase_1_immediate": {
+    "description": "Demo prep - eliminate root pools, consolidate duplicates",
+    "moves": [
+      {
+        "category": "resumes",
+        "action": "flow_to_canonical",
+        "files": [
+          {"src": "/home/workspace/1c21f85c835b-Niraj_Mistry_Ui_Ux_Visual_Designer_CV.pdf", "dst": "/home/workspace/Documents/Resumes/Niraj_Mistry_CV.pdf"},
+          {"src": "/home/workspace/Amanda Sachs-GP Resume-July 17 v1.docx", "dst": "/home/workspace/Documents/Resumes/Amanda_Sachs_Resume_2024-07.docx"},
+          {"src": "/home/workspace/Amanda Sachs-GP Resume-July 17 v1.pdf", "dst": "/home/workspace/Documents/Resumes/Amanda_Sachs_Resume_2024-07.pdf"},
+          {"src": "/home/workspace/Erika Underwood's Resume #2.pdf", "dst": "/home/workspace/Documents/Resumes/Erika_Underwood_Resume.pdf"},
+          {"src": "/home/workspace/María José Guerrero resume.docx", "dst": "/home/workspace/Documents/Resumes/Maria_Jose_Guerrero_Resume.docx"},
+          {"src": "/home/workspace/Marla BUV Resume - ChatGPT Optimized_H_O (1).pdf", "dst": "/home/workspace/Documents/Resumes/Marla_BUV_Resume_v2.pdf"},
+          {"src": "/home/workspace/Marla BUV Resume - ChatGPT Optimized_H_O.pdf", "dst": "/home/workspace/Documents/Resumes/Marla_BUV_Resume_v1.pdf"},
+          {"src": "/home/workspace/Resume - Zihuan Nie.docx", "dst": "/home/workspace/Documents/Resumes/Zihuan_Nie_Resume.docx"},
+          {"src": "/home/workspace/Sogja, Alfred Resume_v7.docx", "dst": "/home/workspace/Documents/Resumes/Alfred_Sogja_Resume.docx"},
+          {"src": "/home/workspace/Vrijen_Attawar-Tech Resume-Oct 26.docx", "dst": "/home/workspace/Documents/Resumes/Vrijen_Attawar_Tech_Resume_2024-10.docx"}
+        ]
+      },
+      {
+        "category": "logs",
+        "action": "flow_to_canonical",
+        "files": [
+          {"src": "/home/workspace/N5_BOOTSTRAP_MONITOR.log", "dst": "/home/workspace/N5/logs/N5_BOOTSTRAP_MONITOR_2024-10.log"},
+          {"src": "/home/workspace/digest_validation.log", "dst": "/home/workspace/N5/logs/digest_validation_2024-10.log"}
+        ]
+      },
+      {
+        "category": "meeting_notes",
+        "action": "flow_to_context_specific",
+        "note": "Need V to clarify: which business context for each note in Notes/?",
+        "files": [
+          {"src": "/home/workspace/Notes/", "dst_options": ["Careerspan/Meetings/", "Personal/Meetings/", "Zo Consultancy/Meetings/"], "action_required": "V_CLASSIFY"}
+        ]
+      }
+    ],
+    "folders": [
+      {
+        "category": "legacy_consolidation",
+        "action": "archive",
+        "src": "/home/workspace/Exports",
+        "dst": "/home/workspace/N5/exports/legacy_2025-10-24"
+      },
+      {
+        "category": "case_normalization",
+        "action": "merge",
+        "src": "/home/workspace/projects",
+        "dst": "/home/workspace/Projects",
+        "note": "Canonical is Projects/ (capital P)"
+      },
+      {
+        "category": "eliminate_pool",
+        "action": "migrate_and_delete",
+        "src": "/home/workspace/Notes",
+        "dst": "context_specific_meetings",
+        "note": "Generic catch-all → context flows"
+      }
+    ]
+  },
+  
+  "phase_2_infrastructure": {
+    "description": "Build Zero-Doc flow automation (post-demo, not executing now)",
+    "components": [
+      {
+        "module": "file_flow_router",
+        "path": "N5/scripts/file_flow_router.py",
+        "purpose": "Assess all files at root; auto-route to canonical locations via anchors.json",
+        "cadence": "every_5_minutes",
+        "stub": true
+      },
+      {
+        "module": "path_guard",
+        "path": "N5/scripts/path_guard.py",
+        "purpose": "Pre-flight check on mkdir/touch; validate against anchors.json; reject non-canonical",
+        "integration": "wrap_shell_commands",
+        "stub": true
+      },
+      {
+        "module": "file_hygiene_detector",
+        "path": "N5/scripts/file_hygiene_detector.py",
+        "purpose": "Nightly scan for anti-patterns; generate violations.json; surface in daily digest",
+        "cadence": "nightly_2am",
+        "stub": true
+      },
+      {
+        "module": "temporary_ttl_enforcer",
+        "path": "N5/scripts/temporary_ttl_enforcer.py",
+        "purpose": "Cleanup Records/Temporary (>48hrs) and flag Document Inbox/Temporary (>7days)",
+        "cadence": "nightly_3am",
+        "stub": true
+      }
+    ],
+    "config_updates": [
+      {
+        "file": "N5/config/anchors.json",
+        "status": "created",
+        "purpose": "Canonical path registry for all routing decisions"
+      },
+      {
+        "file": "N5/prefs/system/folder-policy.md",
+        "status": "updated",
+        "purpose": "Enforcement rules and exceptions"
+      }
+    ]
+  },
+  
+  "phase_3_modular_flows": {
+    "description": "Self-contained flow modules with AIR pattern (future, stubs only)",
+    "modules": [
+      {
+        "name": "resume-flow",
+        "path": "N5/modules/resume-flow/",
+        "air_stages": {
+          "assess": "Detect .pdf/.docx with 'resume'/'CV' content; extract candidate name",
+          "intervene": "Route to Documents/Resumes/{Name}_{Date}.{ext}",
+          "review": "Daily digest with auto-filed count; spot-check sample"
+        },
+        "stub": true
+      },
+      {
+        "name": "meeting-flow",
+        "path": "N5/modules/meeting-flow/",
+        "air_stages": {
+          "assess": "Transcribe audio/text; detect attendees/context keywords; classify business (Careerspan/Personal/Other)",
+          "intervene": "Route to {Business}/Meetings/{Date}_{Person}_{Topic}.md; extract action items to Lists/",
+          "review": "Daily digest with classification confidence; V confirms or corrects"
+        },
+        "stub": true
+      },
+      {
+        "name": "log-flow",
+        "path": "N5/modules/log-flow/",
+        "air_stages": {
+          "assess": "Detect .log files; parse origin script from filename/content",
+          "intervene": "Route to N5/logs/{script}_{timestamp}.log; rotate if >100MB",
+          "review": "Weekly digest with error flagging; V reviews critical errors only"
+        },
+        "stub": true
+      }
+    ],
+    "orchestration": {
+      "command": "N5/commands/file-flow.md",
+      "purpose": "Coordinate all flow modules; aggregate review queues; maintain flow audit log",
+      "stub": true
+    }
+  },
+  
+  "phase_4_review_rhythms": {
+    "description": "Maintenance > Organization - review flows, not files (future, stubs only)",
+    "cadences": [
+      {
+        "rhythm": "daily",
+        "duration_minutes": 5,
+        "content": "file_flow_router decisions + hygiene violations + classification confirmations",
+        "stub": true
+      },
+      {
+        "rhythm": "weekly",
+        "duration_minutes": 30,
+        "content": "Flow health report (routing accuracy, pool detection, stuck files) + review all flagged items",
+        "stub": true
+      },
+      {
+        "rhythm": "monthly",
+        "duration_minutes": 120,
+        "content": "Gestalt evaluation: what's pooling? what needs new channels? module performance? flow redesign?",
+        "stub": true
+      }
+    ],
+    "scheduled_tasks_stub": {
+      "note": "NOT creating scheduled tasks yet - just planning structure",
+      "tasks": [
+        {
+          "name": "file-hygiene-nightly",
+          "rrule": "FREQ=DAILY;BYHOUR=2;BYMINUTE=0",
+          "instruction": "Run N5/scripts/file_hygiene_detector.py; generate violations.json; email if critical issues found",
+          "stub": true
+        },
+        {
+          "name": "file-flow-router-daemon",
+          "rrule": "FREQ=MINUTELY;INTERVAL=5",
+          "instruction": "Run N5/scripts/file_flow_router.py; scan root for new files; auto-route via anchors.json; log to file_flow_log.jsonl",
+          "stub": true,
+          "note": "Daemon preferred over scheduled task for real-time responsiveness"
+        },
+        {
+          "name": "temporary-ttl-cleanup",
+          "rrule": "FREQ=DAILY;BYHOUR=3;BYMINUTE=0",
+          "instruction": "Run N5/scripts/temporary_ttl_enforcer.py; clean Records/Temporary >48hrs; flag Document Inbox/Temporary >7days",
+          "stub": true
+        }
+      ]
+    }
+  },
+  
+  "anti_patterns_addressed": [
+    {"id": "AP-001", "name": "Root file sprawl", "fix": "file_flow_router + Phase 1 moves"},
+    {"id": "AP-002", "name": "System artifacts at root", "fix": "path_guard + log-flow module"},
+    {"id": "AP-003", "name": "Case-variant siblings", "fix": "path_guard case normalization + Phase 1 merge"},
+    {"id": "AP-004", "name": "Conversation leakage", "fix": "Boundary rule in archival scripts"},
+    {"id": "AP-005", "name": "Generic catch-all folders", "fix": "Eliminate Notes/; force context-specific routing"},
+    {"id": "AP-006", "name": "Top-level sprawl", "fix": "path_guard whitelist + Phase 1 consolidation"}
+  ],
+  
+  "zero_doc_principles_applied": [
+    "Flow vs Pools - eliminate root pool, create flow channels with TTL",
+    "Organization Step Shouldn't Exist - file_flow_router does it automatically",
+    "AIR Pattern - modular flows implement Assess → Intervene → Review",
+    "Self-Healing - hygiene_detector flags violations automatically",
+    "Maintenance > Organization - review rhythms replace manual filing",
+    "Platform Orchestration - self-contained modules with command-layer intersection",
+    "Minimal Touch - V approves, system operates"
+  ],
+  
+  "rollback": {
+    "method": "Reverse all moves via this JSON; git revert for config changes",
+    "safety": "All moves logged to file_flow_log.jsonl with timestamps"
+  }
+}

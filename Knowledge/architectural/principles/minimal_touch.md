@@ -2,7 +2,7 @@
 
 **Category**: Operations  
 **Priority**: High  
-**Related**: P29 (Human-in-Loop), P25 (Automated Organization), ZD8 (Minimal Touch)
+**Related**: P29 (Human-in-Loop), P25 (Automated Organization), ZT8 (Minimal Touch)
 
 ---
 
@@ -14,7 +14,7 @@ Optimize for minimal human intervention in routine flows, not zero intervention.
 
 ## Rationale
 
-From Zero-Doc Principle 8: Goal isn't zero touch (impossible). Goal is minimal touch—reduce human interaction to approval of what matters most.
+From Zero-Touch Principle 8: Goal isn't zero touch (impossible). Goal is minimal touch—reduce human interaction to approval of what matters most.
 
 **Zero touch**: Fully autonomous (risky, no oversight)  
 **Minimal touch**: Strategic checkpoints only (efficient + controlled)
@@ -165,9 +165,9 @@ Minimal touch is working when:
 - **P29 (Human-in-Loop)**: Defines where human touch happens
 - **P28 (AIR Pattern)**: Review stage is the primary touch point
 - **P25 (Automated Organization)**: Automation reduces touch points
-- **ZD8 (Minimal Touch)**: Philosophical foundation
+- **ZT8 (Minimal Touch)**: Philosophical foundation
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD8)*
+*Source: Zero-Touch integration (ZT8)*

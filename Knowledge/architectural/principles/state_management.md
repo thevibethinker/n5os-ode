@@ -2,7 +2,7 @@
 
 **Category**: Design  
 **Priority**: High  
-**Related**: P18 (State Verification), ZD1 (Context + State Framework)
+**Related**: P18 (State Verification), ZT1 (Context + State Framework)
 
 ---
 
@@ -14,7 +14,7 @@ Every system component must maintain and expose its current state. State should 
 
 ## Rationale
 
-From Zero-Doc Principle 1: Knowledge work requires both Context (right information) and State (current condition of all information). Without state visibility:
+From Zero-Touch Principle 1: Knowledge work requires both Context (right information) and State (current condition of all information). Without state visibility:
 - You can't resume interrupted work efficiently
 - You can't debug failures
 - You can't trust the system
@@ -189,9 +189,9 @@ State management is working when:
 - **P18 (State Verification)**: Verify writes succeeded - tactical implementation of state tracking
 - **P11 (Failure Modes)**: State helps identify and recover from failures
 - **P26 (Maintenance-First)**: State visibility enables maintenance workflows
-- **ZD1 (Context + State)**: Philosophical foundation for this principle
+- **ZT1 (Context + State)**: Philosophical foundation for this principle
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD1)*
+*Source: Zero-Touch integration (ZT1)*

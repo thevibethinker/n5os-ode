@@ -319,23 +319,27 @@ class SessionStateManager:
 *Free-form observations, reminders, context*
 """
             
+            # Write to file
             self.state_file.write_text(content)
             logger.info(f"✓ Initialized SESSION_STATE.md for {self.convo_id}")
             
-            # Sync to registry
+            # Create in registry
             if self.sync_registry:
                 try:
                     self.registry.create(
                         self.convo_id,
                         type=convo_type,
+                        mode=mode,
                         status="active",
-                        mode=mode or "standalone",
                         workspace_path=str(self.workspace),
                         state_file_path=str(self.state_file)
                     )
+                    logger.info(f"✓ Registered conversation in registry")
+                    
+                    # Sync initial state
                     self._sync_to_registry()
                 except Exception as e:
-                    logger.warning(f"Registry sync failed: {e}")
+                    logger.warning(f"Registry creation failed: {e}")
             
             if load_system:
                 logger.info("System files to load:")

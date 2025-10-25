@@ -2,7 +2,7 @@
 
 **Category**: Operations  
 **Priority**: Critical  
-**Related**: P28 (AIR Pattern), ZD8 (Minimal Touch)
+**Related**: P28 (AIR Pattern), ZT8 (Minimal Touch)
 
 ---
 
@@ -14,7 +14,7 @@ Humans should be approvers of what matters most, not operators of routine proces
 
 ## Rationale
 
-From Zero-Doc Principle 8: You're not eliminating human intelligence—you're elevating it. From operator to conductor.
+From Zero-Touch Principle 8: You're not eliminating human intelligence—you're elevating it. From operator to conductor.
 
 **Before AI**: Human does repetitive work + strategic thinking  
 **With AI**: Human does only strategic thinking, AI handles repetitive work
@@ -127,9 +127,9 @@ Human-in-loop design is working when:
 - **P28 (AIR Pattern)**: Review stage is where human-in-loop happens
 - **P26 (Maintenance-First)**: Human reviews maintain system health
 - **P25 (Automated Organization)**: Automation frees human for higher-level work
-- **ZD8 (Minimal Touch)**: Philosophical foundation
+- **ZT8 (Minimal Touch)**: Philosophical foundation
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD8)*
+*Source: Zero-Touch integration (ZT8)*

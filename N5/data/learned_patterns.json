@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "updated": "2025-10-24",
+  "clients_careerspan": {
+    "entities": [],
+    "source": "to_be_learned_from_corrections",
+    "confidence_boost": 0.25
+  },
+  "personal_contacts": {
+    "entities": [],
+    "source": "to_be_learned_from_corrections",
+    "confidence_boost": 0.25
+  },
+  "resume_name_patterns": {
+    "patterns": [
+      "*Resume*.pdf",
+      "*Resume*.docx",
+      "*_CV.pdf",
+      "*CV*.docx"
+    ],
+    "accuracy": 1.0,
+    "examples": 11
+  },
+  "log_patterns": {
+    "extensions": [".log"],
+    "naming": ["*_MONITOR.log", "*_validation.log"],
+    "accuracy": 1.0,
+    "examples": 2
+  },
+  "meeting_note_structures": {
+    "careerspan_indicators": ["client", "revenue", "hiring", "candidate", "business", "strategy"],
+    "personal_indicators": ["family", "vacation", "personal", "health", "friend"],
+    "zo_consultancy_indicators": ["Zo", "consultancy", "consulting", "engagement"],
+    "accuracy": 0.0,
+    "needs_training": true,
+    "examples": 0
+  }
+}

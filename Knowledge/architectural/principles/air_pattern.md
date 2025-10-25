@@ -2,7 +2,7 @@
 
 **Category**: Operations  
 **Priority**: Critical  
-**Related**: P29 (Human-in-Loop), ZD7 (AIR Pattern)
+**Related**: P29 (Human-in-Loop), ZT7 (AIR Pattern)
 
 ---
 
@@ -14,7 +14,7 @@ Every information intake should follow the AIR pattern: Assess (categorize/route
 
 ## Rationale
 
-From Zero-Doc Principle 7: Information processing has three natural stages. Humans are terrible at first two (repetitive, pattern-matching) and essential for third (judgment, correction).
+From Zero-Touch Principle 7: Information processing has three natural stages. Humans are terrible at first two (repetitive, pattern-matching) and essential for third (judgment, correction).
 
 **Old way**: Human does all three stages → bottleneck, cognitive load  
 **AIR way**: AI does Assess + Intervene, human Reviews → efficiency, quality
@@ -93,9 +93,9 @@ AIR pattern is working when:
 - **P29 (Human-in-Loop)**: Review stage defines human role
 - **P25 (Automated Organization)**: Assess determines routing
 - **P24 (Information Flow)**: AIR implements flow stages
-- **ZD7 (AIR Pattern)**: Philosophical foundation
+- **ZT7 (AIR Pattern)**: Philosophical foundation
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD7)*
+*Source: Zero-Touch integration (ZT7)*

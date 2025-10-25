@@ -2,7 +2,7 @@
 
 **Category**: Design  
 **Priority**: High  
-**Related**: P20 (Modular Design), P30 (Platform Orchestration), ZD6 (Gestalt Evaluation)
+**Related**: P20 (Modular Design), P30 (Platform Orchestration), ZT6 (Gestalt Evaluation)
 
 ---
 
@@ -14,7 +14,7 @@ Optimize for system-wide effectiveness, not individual component excellence. Eva
 
 ## Rationale
 
-From Zero-Doc Principle 6: The question isn't "Is Notion better than Obsidian?" The question is "Does my information flow create the context and maintain the state I need to do my best work?"
+From Zero-Touch Principle 6: The question isn't "Is Notion better than Obsidian?" The question is "Does my information flow create the context and maintain the state I need to do my best work?"
 
 **Component optimization**: Make one tool perfect  
 **System optimization**: Make all tools work together perfectly
@@ -54,9 +54,9 @@ Before adding/changing any component:
 - **P20 (Modular Design)**: Modules must integrate, not just exist independently
 - **P30 (Platform Orchestration)**: Integration via orchestrator, not point-to-point
 - **P2 (SSOT)**: Integration enables single source, not duplication
-- **ZD6 (Gestalt Evaluation)**: Philosophical foundation
+- **ZT6 (Gestalt Evaluation)**: Philosophical foundation
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD6)*
+*Source: Zero-Touch integration (ZT6)*

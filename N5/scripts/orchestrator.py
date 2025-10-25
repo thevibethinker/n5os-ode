@@ -15,9 +15,18 @@ import argparse
 import json
 import logging
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+try:
+    from conversation_registry import ConversationRegistry
+    REGISTRY_AVAILABLE = True
+except ImportError:
+    REGISTRY_AVAILABLE = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -36,6 +45,11 @@ class Orchestrator:
     def __init__(self, orchestrator_id: str):
         self.orchestrator_id = orchestrator_id
         self.workspace = CONVO_WORKSPACES_ROOT / orchestrator_id
+        
+        if REGISTRY_AVAILABLE:
+            self.registry = ConversationRegistry()
+        else:
+            self.registry = None
         
         STATE_DIR.mkdir(parents=True, exist_ok=True)
         self.workspace.mkdir(parents=True, exist_ok=True)
@@ -85,6 +99,21 @@ class Orchestrator:
 """
             assignment_file.write_text(content)
             
+            # Register worker in registry
+            if self.registry:
+                try:
+                    self.registry.create(
+                        worker_id,
+                        type="build",  # or detect from task
+                        mode="worker",
+                        parent_id=self.orchestrator_id,
+                        focus=task_desc[:200],  # First 200 chars
+                        status="active"
+                    )
+                    logger.info(f"  ✓ Registered worker in registry")
+                except Exception as e:
+                    logger.warning(f"Registry registration failed: {e}")
+            
             logger.info(f"✓ Assigned task to {worker_id}")
             logger.info(f"  Task: {task_desc}")
             logger.info(f"  Assignment file: {assignment_file}")
@@ -126,6 +155,15 @@ class Orchestrator:
                         if lines[j].strip() and not lines[j].startswith("#"):
                             state["current_task"] = lines[j].strip()
                             break
+            
+            # Update registry with progress
+            if self.registry and state:
+                try:
+                    progress = state.get("progress_pct", 0)
+                    status = state.get("status", "active")
+                    self.registry.update(worker_id, progress_pct=progress, status=status)
+                except Exception as e:
+                    logger.debug(f"Registry update failed: {e}")
             
             logger.info(f"✓ Worker {worker_id} status: {state.get('status', 'unknown')}")
             if "current_task" in state:
@@ -214,6 +252,14 @@ class Orchestrator:
 {"✓ Changes have been merged into main workspace" if merge else "⚠️  Please coordinate with orchestrator for manual merge"}
 """
             approval_file.write_text(content)
+            
+            # Close worker in registry
+            if self.registry:
+                try:
+                    self.registry.close_conversation(worker_id)
+                    logger.info(f"  ✓ Closed worker in registry")
+                except Exception as e:
+                    logger.warning(f"Registry close failed: {e}")
             
             logger.info(f"✓ Approved work from {worker_id}")
             if merge:

@@ -34,10 +34,10 @@ SCHEMA = """
 -- Core conversations table
 CREATE TABLE IF NOT EXISTS conversations (
     id TEXT PRIMARY KEY,
+    title TEXT,
     type TEXT NOT NULL,
     status TEXT NOT NULL,
     mode TEXT,
-    title TEXT,
     
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL,
@@ -425,6 +425,32 @@ class ConversationRegistry:
                 "status": "complete",
                 "completed_at": now,
                 "updated_at": now
+            }
+            
+            if aar_path:
+                fields["aar_path"] = aar_path
+            
+            return self.update(convo_id, **fields)
+            
+        except Exception as e:
+            logger.error(f"Failed to close conversation {convo_id}: {e}", exc_info=True)
+            return False
+    
+    def close_conversation(self, convo_id: str, aar_path: Optional[str] = None) -> bool:
+        """
+        Close a conversation
+        
+        Args:
+            convo_id: Conversation ID
+            aar_path: Optional path to AAR file
+        
+        Returns:
+            True if successful
+        """
+        try:
+            fields = {
+                "status": "completed",
+                "completed_at": datetime.now(UTC).isoformat().replace('+00:00', 'Z')
             }
             
             if aar_path:

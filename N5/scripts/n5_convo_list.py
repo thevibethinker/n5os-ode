@@ -52,8 +52,6 @@ def main():
         filters["status"] = args.status
     if args.mode:
         filters["mode"] = args.mode
-    if args.starred:
-        filters["starred"] = 1
     if args.parent:
         filters["parent_id"] = args.parent
     
@@ -71,18 +69,18 @@ def main():
     else:
         # Table format
         print(f"\nFound {len(conversations)} conversation(s):\n")
-        print(f"ID                   Type         Status     Title                                    Updated          ")
+        print(f"Title                                    ID                   Type         Status     Updated          ")
         print("-" * 100)
         
         for convo in conversations:
             convo_id = convo["id"]
             type_str = convo["type"][:12]
             status = convo.get("status", "")[:10]
-            title = convo.get("title", convo.get("focus", ""))[:40]
+            title = (convo.get("title") or convo.get("focus") or "")[:40]
             updated = convo.get("updated_at", "")[:16]
             starred = "⭐" if convo.get("starred") else "  "
             
-            print(f"{starred} {convo_id:<18} {type_str:<12} {status:<10} {title:<40} {updated}")
+            print(f"{starred} {title:<40} {convo_id:<18} {type_str:<12} {status:<10} {updated}")
         
         print()
     
