@@ -1,0 +1,24 @@
+{
+  "generated_at": "2025-10-24T15:15:00Z",
+  "dry_run": true,
+  "moves": [
+    {"src": "/home/workspace/N5_BOOTSTRAP_MONITOR.log", "dst": "/home/workspace/N5/logs/N5_BOOTSTRAP_MONITOR.log"},
+    {"src": "/home/workspace/digest_validation.log", "dst": "/home/workspace/N5/logs/digest_validation.log"},
+
+    {"src": "/home/workspace/1c21f85c835b-Niraj_Mistry_Ui_Ux_Visual_Designer_CV.pdf", "dst": "/home/workspace/Documents/Resumes/1c21f85c835b-Niraj_Mistry_Ui_Ux_Visual_Designer_CV.pdf"},
+    {"src": "/home/workspace/Amanda Sachs-GP Resume-July 17 v1.docx", "dst": "/home/workspace/Documents/Resumes/Amanda Sachs-GP Resume-July 17 v1.docx"},
+    {"src": "/home/workspace/Amanda Sachs-GP Resume-July 17 v1.pdf", "dst": "/home/workspace/Documents/Resumes/Amanda Sachs-GP Resume-July 17 v1.pdf"},
+    {"src": "/home/workspace/Erika Underwood's Resume #2.pdf", "dst": "/home/workspace/Documents/Resumes/Erika Underwood's Resume #2.pdf"},
+    {"src": "/home/workspace/María José Guerrero resume.docx", "dst": "/home/workspace/Documents/Resumes/María José Guerrero resume.docx"},
+    {"src": "/home/workspace/Marla BUV Resume - ChatGPT Optimized_H_O (1).pdf", "dst": "/home/workspace/Documents/Resumes/Marla BUV Resume - ChatGPT Optimized_H_O (1).pdf"},
+    {"src": "/home/workspace/Marla BUV Resume - ChatGPT Optimized_H_O.pdf", "dst": "/home/workspace/Documents/Resumes/Marla BUV Resume - ChatGPT Optimized_H_O.pdf"},
+    {"src": "/home/workspace/Resume - Zihuan Nie.docx", "dst": "/home/workspace/Documents/Resumes/Resume - Zihuan Nie.docx"},
+    {"src": "/home/workspace/Sogja, Alfred Resume_v7.docx", "dst": "/home/workspace/Documents/Resumes/Sogja, Alfred Resume_v7.docx"},
+    {"src": "/home/workspace/Veena Zillow TR (1).pdf", "dst": "/home/workspace/Documents/Resumes/Veena Zillow TR (1).pdf"},
+    {"src": "/home/workspace/Veena Zillow TR.pdf", "dst": "/home/workspace/Documents/Resumes/Veena Zillow TR.pdf"},
+    {"src": "/home/workspace/Vrijen_Attawar-Tech Resume-Oct 26.docx", "dst": "/home/workspace/Documents/Resumes/Vrijen_Attawar-Tech Resume-Oct 26.docx"}
+  ],
+  "folders": [
+    {"action": "relocate", "src": "/home/workspace/Exports", "dst": "/home/workspace/N5/exports/legacy_2025-10-24"}
+  ]
+}

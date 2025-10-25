@@ -1,0 +1,71 @@
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/.n5_backups/Documents_N5.md.20251009_054435.backup
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/.n5_backups/manifest.json
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/.n5_backups/watcher_alerts.jsonl
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/.n5_bootstrap_server/CONNECT_FROM_NEW_ZO.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/.n5_bootstrap_server/server.py.backup_1760835070
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/N5_Minimal_Bootstrap.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/commands.jsonl.backup
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_bootstrap_critical.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_clean_verified.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_complete.tar
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_complete.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_complete_bootstrap.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_full_bootstrap_v2.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/n5_transfer_package.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/phase2_complete_20251008_221900.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/phase3_complete_20251008_222155.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/phase4_complete_20251008_222354.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/phase5_complete_20251008_223737.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/pre_folder_cleanup_20251008_224152.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/pre_folder_cleanup_20251008_224200.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/pre_refactor_20251008_221629.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/tmp_execution_archive_20251008.tar.gz
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/zo-filelist-20250918-012342Z.tsv
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Backups/zo-sysinfo-20250918-012342Z.txt
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Document Inbox/README.md.old
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/CRM_CONSOLIDATION_FINAL.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/FINAL_IMPLEMENTATION_SUMMARY.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/FINAL_STATUS_REPORT.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/FINAL_SUMMARY.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/FINAL_VERIFICATION_REPORT.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/N5.md.backup.20251016-054011
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/NEW_WORKFLOW_SUMMARY_20251010.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Documents/meeting-digest-FINAL-BUILD-PLAN.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Downloads/FINAL_BOOTSTRAP_STATUS.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Images/n5_os_final_architecture.png
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Images/placeholder-fix-architecture.png
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Lists/POLICY.md.n5-old
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Lists/ideas.jsonl.backup
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Lists/phase3-test.jsonl.backup
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Lists/squawk.jsonl.backup
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Lists/system-upgrades.jsonl.backup
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/N5/ACTION-SUMMARY-stakeholder-system-2025-10-12.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/N5/FINAL_AUDIT_REPORT.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/N5/STAKEHOLDER_SYSTEM_OVERVIEW.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/N5/TODO_internal_stakeholder_system.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/N5/commands.md.old
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/FINAL_SYSTEM_COMPLETE.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/Function [01] - Stakeholder Pain Point Extractor v1.0 (1).pdf
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/Function [01] - Stakeholder Pain Point Extractor v1.0.pdf
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (1).pdf
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (2).pdf
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0 (3).pdf
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/Trash/Function [01] - Stakeholder Q&A Extractor And Analyzer v1.0.pdf
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/ZoATS/PLACEHOLDER_SCAN_NIGHT1.md
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/files_depth2.txt:/home/workspace/ZoATS/placeholder_scan_report.json
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.migration_backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.migration_backups/crm_unification_2025-10-14
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.migration_backups/phase5_legacy_conversion_20251014_045608
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.migration_backups/phase6_path_fixes_20251014_050738
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.n5-ats-backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.n5-ats-backups/zoats-20251022-224941
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/.n5_backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Backups/n5_mirror_unique_files
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Documents/Backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Documents/Drafts
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Knowledge/.backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Knowledge/stakeholder_research
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/N5/backups
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/Records/stakeholder_discovery
+/home/.z/workspaces/con_VFOB1AJnLjWB4eC6/dirs_depth2.txt:/home/workspace/projects/Arizona Renewal Trip Oct 2025
