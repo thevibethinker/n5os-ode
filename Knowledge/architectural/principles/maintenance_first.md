@@ -2,7 +2,7 @@
 
 **Category**: Design  
 **Priority**: High  
-**Related**: P14 (Change Tracking), ZD4 (Maintenance > Organization)
+**Related**: P14 (Change Tracking), ZT4 (Maintenance > Organization)
 
 ---
 
@@ -14,7 +14,7 @@ Design for continuous maintenance, not one-time organization. Systems should inc
 
 ## Rationale
 
-From Zero-Doc Principle 4: You can't organize your way to productivity. Build systems that maintain themselves with you as quality control.
+From Zero-Touch Principle 4: You can't organize your way to productivity. Build systems that maintain themselves with you as quality control.
 
 **Organization = Static**: One-time event, creates structure, decays over time  
 **Maintenance = Dynamic**: Continuous process, adapts to change, improves over time
@@ -255,9 +255,9 @@ Don't try to build all loops at once. Start with daily health check, add weekly 
 - **P11 (Failure Modes)**: Maintenance detects failures early
 - **P18 (State Verification)**: Maintenance checks state is correct
 - **P24 (Information Flow)**: Maintenance ensures flows stay open
-- **ZD4 (Maintenance > Organization)**: Philosophical foundation
+- **ZT4 (Maintenance > Organization)**: Philosophical foundation
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD4)*
+*Source: Zero-Touch integration (ZT4)*

@@ -158,7 +158,7 @@
         "modified_at": "2025-10-25T03:00:09.627718+00:00"
       },
       {
-        "filename": "zero_doc_file_flow_analysis.md",
+        "filename": "zero_touch_file_flow_analysis.md",
         "description": "Document file created during conversation",
         "type": "document",
         "size_bytes": 10573,

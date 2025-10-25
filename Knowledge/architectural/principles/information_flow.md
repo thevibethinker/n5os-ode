@@ -2,7 +2,7 @@
 
 **Category**: Design  
 **Priority**: Critical  
-**Related**: P2 (SSOT), ZD2 (Flow vs. Pools)
+**Related**: P2 (SSOT), ZT2 (Flow vs. Pools)
 
 ---
 
@@ -14,7 +14,7 @@ Design systems for information flow, not information storage. Every category of 
 
 ## Rationale
 
-From Zero-Doc Principle 2: Information is like water—it either flows to where it creates value, or pools where it rots.
+From Zero-Touch Principle 2: Information is like water—it either flows to where it creates value, or pools where it rots.
 
 **Pools are graveyards**:
 - "Read Later" lists that never get read
@@ -267,9 +267,9 @@ If you have existing "storage-oriented" structure:
 - **P7 (Idempotence)**: Flows should be rerunnable without creating duplicates
 - **P11 (Failure Modes)**: Flows stall → needs recovery path
 - **P24 (AIR Pattern)**: Assess-Intervene-Review is the implementation of flow stages
-- **ZD2 (Flow vs. Pools)**: Philosophical foundation for this principle
+- **ZT2 (Flow vs. Pools)**: Philosophical foundation for this principle
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD2)*
+*Source: Zero-Touch integration (ZT2)*

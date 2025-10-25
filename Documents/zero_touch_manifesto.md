@@ -1,6 +1,6 @@
-# ZERO-DOC
+# ZERO-TOUCH
 ## Building Cognitive Infrastructure for the AI Age
-### A Founder's Guide to Post-Document Productivity
+### A Founder's Guide to Post-Organization Productivity
 
 **By Vrijen Attawar**
 
@@ -51,7 +51,7 @@ In the AI age, your system should do three things automatically:
 
 Notice what's missing? Organization. Tagging. Filing. All the bullshit that steals your time and fragments your attention.
 
-This is what I call **Zero-Doc productivity**: documentation and organization happen as artifacts of information flow, not as separate activities you must perform.
+This is what I call **Zero-Touch productivity**: documentation and organization happen as artifacts of information flow, not as separate activities you must perform.
 
 ## III. The Water System: Why Everything Pools
 
@@ -169,7 +169,7 @@ You create. The system organizes. You review. The system learns.
 
 This is only possible when AI is infrastructure, not a chatbot you visit occasionally. Your AI needs to be **embedded in every capture, every flow, every transition.**
 
-That's what makes it Zero-Doc: documentation and organization emerge from use, they're not separate activities.
+That's what makes it Zero-Touch: documentation and organization emerge from use, they're not separate activities.
 
 ## V. Building Your System: The Practical Path
 
@@ -268,13 +268,13 @@ That's what I'm doing. That's what you'll do if you build this.
 
 And here's the trajectory I see:
 
-**2024-2025**: High-discipline founders building custom Zero-Doc systems  
+**2024-2025**: High-discipline founders building custom Zero-Touch systems  
 **2025-2027**: Packaged solutions that implement these principles for knowledge workers  
 **2027-2030**: Consumer-grade AI-orchestrated cognitive infrastructure
 
 We're at the Unix stage. The patterns we discover now—Context + State, Flow vs. Pools, AIR, Self-Healing, Gestalt Evaluation—these will become the foundations that others productize and simplify.
 
-Just like GTD defined productivity for the information age, and Zettelkasten defined note-taking for the knowledge age, Zero-Doc thinking defines cognitive infrastructure for the AI age.
+Just like GTD defined productivity for the information age, and Zettelkasten defined note-taking for the knowledge age, Zero-Touch thinking defines cognitive infrastructure for the AI age.
 
 ## VIII. What This Isn't
 
@@ -296,7 +296,7 @@ What I AM saying is this:
 
 If we let AI do what it's good at (pattern matching, routing, summarizing, connecting), and we focus on what we're good at (judgment, creativity, strategy), we get a system that's greater than the sum of its parts.
 
-That's Zero-Doc. That's the future.
+That's Zero-Touch. That's the future.
 
 ## IX. Getting Started Tomorrow
 
@@ -351,7 +351,7 @@ The tools exist. The AI exists. The only thing missing is someone willing to do 
 
 That someone could be you.
 
-Welcome to Zero-Doc.
+Welcome to Zero-Touch.
 
 ---
 
@@ -359,22 +359,22 @@ Welcome to Zero-Doc.
 
 **NEW SECTION**
 
-Zero-Doc philosophy translates into concrete architectural patterns. Here's how the philosophy becomes practice:
+Zero-Touch philosophy translates into concrete architectural patterns. Here's how the philosophy becomes practice:
 
 ### From Philosophy to Architecture
 
-| Zero-Doc Principle | Architectural Implementation | Key Pattern |
+| Zero-Touch Principle | Architectural Implementation | Key Pattern |
 |-------------------|----------------------------|-------------|
-| **ZD1: Context + State** | P23: State Management | Every component exposes queryable state |
-| **ZD2: Flow vs. Pools** | P24: Information Flow Design | Track residence time, auto-alert on pools |
-| **ZD3: Organization Shouldn't Exist** | P25: Automated Organization | 85%+ auto-routed, <5% correction rate |
-| **ZD4: Maintenance > Organization** | P26: Maintenance-First Design | Daily/weekly/monthly review rhythms |
-| **ZD5: SSOT Always** | P2: Single Source of Truth | One canonical location per info type |
-| **ZD6: Gestalt Evaluation** | P27: System Integration | Measure end-to-end flow, not components |
-| **ZD7: AIR Pattern** | P28: Assess-Intervene-Review | AI automates, human reviews exceptions |
-| **ZD8: Minimal Touch** | P29 & P30: Human-in-Loop + Minimal Touch | Target <15% touch rate |
-| **ZD9: Self-Aware** | P26: Maintenance-First | System tracks its own health |
-| **ZD10: Platform Orchestration** | P27: System Integration | Best-in-class components, intelligent routing |
+| **ZT1: Context + State** | P23: State Management | Every component exposes queryable state |
+| **ZT2: Flow vs. Pools** | P24: Information Flow Design | Track residence time, auto-alert on pools |
+| **ZT3: Organization Shouldn't Exist** | P25: Automated Organization | 85%+ auto-routed, <5% correction rate |
+| **ZT4: Maintenance > Organization** | P26: Maintenance-First Design | Daily/weekly/monthly review rhythms |
+| **ZT5: SSOT Always** | P2: Single Source of Truth | One canonical location per info type |
+| **ZT6: Gestalt Evaluation** | P27: System Integration | Measure end-to-end flow, not components |
+| **ZT7: AIR Pattern** | P28: Assess-Intervene-Review | AI automates, human reviews exceptions |
+| **ZT8: Minimal Touch** | P29 & P30: Human-in-Loop + Minimal Touch | Target <15% touch rate |
+| **ZT9: Self-Aware** | P26: Maintenance-First | System tracks its own health |
+| **ZT10: Platform Orchestration** | P27: System Integration | Best-in-class components, intelligent routing |
 
 ### Critical Design Patterns
 
@@ -412,7 +412,7 @@ Monthly (2hr):  Is system working? Evaluate metrics + redesign
 
 **Pattern 4: System Health Metrics**
 
-Track these to know if Zero-Doc is working:
+Track these to know if Zero-Touch is working:
 
 - **Touch rate**: <15% (% items needing manual routing)
 - **Pool warnings**: <5% (items exceeding residence time)
@@ -422,7 +422,7 @@ Track these to know if Zero-Doc is working:
 
 ### Safety Principles
 
-Zero-Doc requires safeguards:
+Zero-Touch requires safeguards:
 
 - **P5: Anti-Overwrite Protection** – Prevent data loss during automation
 - **P7: Dry-Run by Default** – Test flows before execution
@@ -438,7 +438,7 @@ Individual principle files in: `file 'Knowledge/architectural/principles/'`
 
 ---
 
-## Appendix: The Zero-Doc Principles
+## Appendix: The Zero-Touch Principles
 
 For easy reference, here are the core tenets:
 

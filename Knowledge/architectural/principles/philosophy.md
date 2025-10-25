@@ -1,4 +1,4 @@
-# Zero-Doc Philosophy Principles
+# Zero-Touch Philosophy Principles
 
 **Status**: Core philosophical foundation  
 **Level**: Strategic (informs architectural principles)  
@@ -9,7 +9,7 @@
 
 ## Purpose
 
-This document defines the philosophical foundation that guides N5OS design. While architectural principles (P1-P30) provide tactical implementation rules, these Zero-Doc principles provide strategic direction.
+This document defines the philosophical foundation that guides N5OS design. While architectural principles (P1-P30) provide tactical implementation rules, these Zero-Touch principles provide strategic direction.
 
 **Relationship**: 
 - **Philosophy** (this doc) → Strategic "why"
@@ -18,9 +18,9 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-## The Ten Zero-Doc Principles
+## The Ten Zero-Touch Principles
 
-### ZD1: Context + State Framework
+### ZT1: Context + State Framework
 
 **Principle**: All knowledge work reduces to two variables: Context (right information at right time) and State (current condition of all information).
 
@@ -32,7 +32,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD2: Flow vs. Pools
+### ZT2: Flow vs. Pools
 
 **Principle**: Information either flows to where it creates value, or pools where it rots. Design for flow.
 
@@ -47,7 +47,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD3: Organization Step Shouldn't Exist
+### ZT3: Organization Step Shouldn't Exist
 
 **Principle**: In properly designed systems, organization emerges from capture and use, not as separate activity requiring cognitive load.
 
@@ -60,7 +60,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD4: Maintenance > Organization
+### ZT4: Maintenance > Organization
 
 **Principle**: You can't organize your way to productivity. Build systems that maintain themselves with you as quality control.
 
@@ -74,7 +74,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD5: Self-Healing by Design
+### ZT5: Self-Healing by Design
 
 **Principle**: Systems should detect their own failures and route them to human attention automatically.
 
@@ -90,7 +90,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD6: Gestalt Evaluation
+### ZT6: Gestalt Evaluation
 
 **Principle**: Optimize for system-wide effectiveness, not individual component excellence. Evaluate changes by total cognitive load impact, not isolated metrics.
 
@@ -105,7 +105,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD7: AIR Pattern (Assess → Intervene → Review)
+### ZT7: AIR Pattern (Assess → Intervene → Review)
 
 **Principle**: Every information intake follows three stages, with automation increasing and human touch decreasing through the funnel.
 
@@ -120,7 +120,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD8: Minimal Touch
+### ZT8: Minimal Touch
 
 **Principle**: Humans are approvers and exception handlers, not operators. System does routine work, humans provide judgment on edge cases.
 
@@ -135,7 +135,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD9: SSOT Always
+### ZT9: SSOT Always
 
 **Principle**: Every category of information has exactly one canonical location. Everything else is transformation, view, or temporary cache.
 
@@ -151,7 +151,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 
 ---
 
-### ZD10: Platform Orchestration
+### ZT10: Platform Orchestration
 
 **Principle**: Use best-in-class tools for specific jobs, orchestrated by intelligent routing. Avoid all-in-one solutions.
 
@@ -170,7 +170,7 @@ This document defines the philosophical foundation that guides N5OS design. Whil
 ## Principle Hierarchy
 
 ```
-Zero-Doc Philosophy (ZD1-ZD10)
+Zero-Touch Philosophy (ZT1-ZT10)
     ↓ informs
 Architectural Principles (P1-P30)
     ↓ implemented by
@@ -186,12 +186,12 @@ N5 Operating System
 When designing new system components, verify alignment:
 
 **Strategic (Philosophy)**:
-- [ ] Does this enable flow or create pools? (ZD2)
-- [ ] Does this reduce or increase manual organization? (ZD3)
-- [ ] Is this optimized for maintenance or one-time setup? (ZD4)
-- [ ] Does this improve system-wide or just local metrics? (ZD6)
-- [ ] Does this follow AIR pattern where applicable? (ZD7)
-- [ ] Does this minimize human touch for routine work? (ZD8)
+- [ ] Does this enable flow or create pools? (ZT2)
+- [ ] Does this reduce or increase manual organization? (ZT3)
+- [ ] Is this optimized for maintenance or one-time setup? (ZT4)
+- [ ] Does this improve system-wide or just local metrics? (ZT6)
+- [ ] Does this follow AIR pattern where applicable? (ZT7)
+- [ ] Does this minimize human touch for routine work? (ZT8)
 
 **Tactical (Architecture)**:
 - [ ] Load relevant architectural principles (P1-P30)
@@ -204,16 +204,16 @@ When designing new system components, verify alignment:
 ## Change Log
 
 ### 2025-10-24 (v1.0)
-- Initial philosophy document extracted from Zero-Doc manifesto
+- Initial philosophy document extracted from Zero-Touch manifesto
 - Mapped 10 principles to architectural principles
-- Identified 2 fully covered (ZD5, ZD9) and 8 requiring new architectural principles
+- Identified 2 fully covered (ZT5, ZT9) and 8 requiring new architectural principles
 - Established philosophical layer above architectural principles
 
 ---
 
 ## Related Documents
 
-- **Full manifesto**: `file 'Documents/zero_doc_manifesto.md'`
+- **Full manifesto**: `file 'Documents/zero_touch_manifesto.md'`
 - **Architectural principles index**: `file 'Knowledge/architectural/architectural_principles.md'`
 - **Integration analysis**: Conversation workspace (con_pedZbAB4OMUvIucI)
 - **Parallel flow work**: con_VFOB1AJnLjWB4eC6

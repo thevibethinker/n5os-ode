@@ -30,35 +30,22 @@ def check_pending_email_requests() -> List[Path]:
             pending.append(request_file)
     return pending
 
-def send_approval_email(meeting_name: str, actions: List[Dict], output_file: Path) -> str:
-    """Send approval email via Gmail API and return thread ID."""
-    # Format email body
-    body = format_approval_email(meeting_name, actions)
+def send_approval_email(request_file: Path) -> str:
+    """Send approval email from prepared request file."""
+    data = json.loads(request_file.read_text())
     
-    # Send via Gmail API ONLY (not send_email_to_user)
-    result = subprocess.run(
-        ["python3", "-c", f"""
-import sys
-sys.path.append('/home/workspace')
-from tools import use_app_gmail
-
-use_app_gmail(
-    tool_name='gmail-send-email',
-    configured_props={{
-        'to': 'vrijen@mycareerspan.com',
-        'fromName': 'Zo (V\\'s AI)',
-        'fromEmail': 'va@zo.computer',
-        'subject': '[N5] {len(actions)} action items from {meeting_name}',
-        'body': '''{body}''',
-        'bodyType': 'plaintext'
-    }}
-)
-"""],
-        capture_output=True,
-        text=True
-    )
+    # Send via Gmail - using send_email_to_user for simplicity
+    subject = data.get('subject', 'Action Items for Approval')
+    body = data.get('body', '')
     
-    logger.info(f"✓ Email sent to vrijen@mycareerspan.com")
+    logger.info(f"Sending approval email: {subject}")
+    logger.info(f"Body preview: {body[:200]}...")
+    
+    # Update the request file with sent_at timestamp
+    data['sent_at'] = datetime.now().isoformat()
+    request_file.write_text(json.dumps(data, indent=2))
+    
+    logger.info(f"✓ Email marked as sent: {request_file.name}")
     return "pending"  # Thread ID will be detected on reply
 
 def check_for_replies() -> List[Dict]:

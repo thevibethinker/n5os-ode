@@ -1,7 +1,7 @@
-# Zero-Doc Analysis: File Storage & Flow
+# Zero-Touch Analysis: File Storage & Flow
 
 Generated: 2025-10-24T15:25:00Z  
-Context: Applying Zero-Doc manifesto principles to N5 file storage architecture
+Context: Applying Zero-Touch manifesto principles to N5 file storage architecture
 
 ---
 
@@ -23,12 +23,12 @@ Context: Applying Zero-Doc manifesto principles to N5 file storage architecture
 
 ---
 
-## Zero-Doc Principles Applied to File Storage
+## Zero-Touch Principles Applied to File Storage
 
 ### Principle: "Organization Step Shouldn't Exist"
 
 **Current Reality**: Every file uploaded/created requires manual filing decision  
-**Zero-Doc Goal**: Files auto-route based on type/context/origin
+**Zero-Touch Goal**: Files auto-route based on type/context/origin
 
 **Implementation**:
 ```
@@ -64,7 +64,7 @@ Review: Surface in daily digest for confirmation
 ### Principle: "Maintenance > Organization"
 
 **Anti-Pattern**: "Organize everything once, then maintain"  
-**Zero-Doc Pattern**: "Build self-maintaining flows, review exceptions"
+**Zero-Touch Pattern**: "Build self-maintaining flows, review exceptions"
 
 **File maintenance rhythms**:
 - **Nightly**: Detect misplaced files (root sprawl, wrong folders)
@@ -128,7 +128,7 @@ Review: Surface in daily digest for confirmation
 
 **Current state**: Generic `Notes/` at root (POOL)
 
-**Zero-Doc structure**: Context-specific flows
+**Zero-Touch structure**: Context-specific flows
 
 ```
 Careerspan/Meetings/
@@ -156,7 +156,7 @@ Zo Consultancy/Meetings/  (if separate business)
 
 ## Anti-Patterns → Enforcement Mechanisms
 
-| Anti-Pattern | Root Cause | Zero-Doc Fix |
+| Anti-Pattern | Root Cause | Zero-Touch Fix |
 |--------------|------------|--------------|
 | AP-001: Root file sprawl | No default routing | File Flow Router (assess all new files at root) |
 | AP-002: System artifacts at root | Scripts write to CWD | Path Guard (scripts MUST use canonical paths) |
@@ -171,7 +171,7 @@ Zo Consultancy/Meetings/  (if separate business)
 
 **V's requirement**: Discrete modules, self-contained except for command intersection
 
-**Zero-Doc alignment**: "Platform Orchestration" - best-in-class components with intelligent routing
+**Zero-Touch alignment**: "Platform Orchestration" - best-in-class components with intelligent routing
 
 ### Module Structure
 ```
@@ -217,7 +217,7 @@ N5/commands/file-flow.md
 
 ---
 
-## Revised Cleanup Plan (Zero-Doc Edition)
+## Revised Cleanup Plan (Zero-Touch Edition)
 
 ### Phase 1: Immediate (Demo Prep)
 1. **Eliminate root pools**: Move resumes/logs to canonical locations
@@ -256,7 +256,7 @@ N5/commands/file-flow.md
 
 ---
 
-## Success Metrics (Zero-Doc Applied)
+## Success Metrics (Zero-Touch Applied)
 
 **Flow health**:
 - Files at root <3 at any time (whitelisted only)
@@ -291,7 +291,7 @@ N5/commands/file-flow.md
    - Migrate projects/* → Projects/*
    - Delete empty projects/ folder
 
-4. **Modular architecture**: Align with Zero-Doc platform orchestration
+4. **Modular architecture**: Align with Zero-Touch platform orchestration
    - Self-contained flow modules in N5/modules/
    - Command layer as orchestrator
    - Anchors.json as routing SSOT

@@ -7,7 +7,7 @@ related_files: "['N5/knowledge/ingestion_standards.md']"
 ---
 # N5 Architectural Principles
 
-**Version**: 2.0 (Zero-Doc Integration)
+**Version**: 2.0 (Zero-Touch Integration)
 **Last Updated**: 2025-10-24
 **Status**: Living document
 
@@ -17,26 +17,26 @@ related_files: "['N5/knowledge/ingestion_standards.md']"
 
 This document serves as the architectural foundation for N5OS—the operating system for AI-enabled knowledge work. These principles guide all system design decisions, workflow implementations, and tooling choices.
 
-**NEW (v2.0)**: Added philosophical foundation layer (Zero-Doc) and derived 8 new architectural principles.
+**NEW (v2.0)**: Added philosophical foundation layer (Zero-Touch) and derived 8 new architectural principles.
 
 ---
 
 ## Principle Hierarchy
 
-### Philosophy Layer (Zero-Doc)
+### Philosophy Layer (Zero-Touch)
 
 Strategic principles that define *why* we build systems this way:
 
-- **ZD1**: Context + State Framework
-- **ZD2**: Flow vs. Pools
-- **ZD3**: Organization Step Shouldn't Exist  
-- **ZD4**: Maintenance > Organization
-- **ZD5**: SSOT Always (Single Source of Truth)
-- **ZD6**: Gestalt Evaluation
-- **ZD7**: AIR Pattern (Assess-Intervene-Review)
-- **ZD8**: Minimal Touch
-- **ZD9**: Self-Aware Systems
-- **ZD10**: Platform Orchestration
+- **ZT1**: Context + State Framework
+- **ZT2**: Flow vs. Pools
+- **ZT3**: Organization Step Shouldn't Exist  
+- **ZT4**: Maintenance > Organization
+- **ZT5**: SSOT Always (Single Source of Truth)
+- **ZT6**: Gestalt Evaluation
+- **ZT7**: AIR Pattern (Assess-Intervene-Review)
+- **ZT8**: Minimal Touch
+- **ZT9**: Self-Aware Systems
+- **ZT10**: Platform Orchestration
 
 **See**: `file 'Knowledge/architectural/principles/philosophy.md'`
 
@@ -110,47 +110,47 @@ Strategic principles that define *why* we build systems this way:
 
 ---
 
-### Zero-Doc Integration Principles (23-30) **NEW**
+### Zero-Touch Integration Principles (23-30) **NEW**
 
 **P23: State Management Philosophy** (Design, High)
 - Every component must maintain and expose queryable, auditable state
 - `file 'Knowledge/architectural/principles/state_management.md'`
-- *Derived from: ZD1 (Context + State Framework)*
+- *Derived from: ZT1 (Context + State Framework)*
 
 **P24: Information Flow Design** (Design, Critical)
 - Design for flow, not storage; pools are system failures
 - `file 'Knowledge/architectural/principles/information_flow.md'`
-- *Derived from: ZD2 (Flow vs. Pools)*
+- *Derived from: ZT2 (Flow vs. Pools)*
 
 **P25: Automated Organization Philosophy** (Design, High)
 - Organization emerges from use; categorization should be automatic
 - `file 'Knowledge/architectural/principles/automated_organization.md'`
-- *Derived from: ZD3 (Organization Step Shouldn't Exist)*
+- *Derived from: ZT3 (Organization Step Shouldn't Exist)*
 
 **P26: Maintenance-First Design** (Design, High)
 - Design for continuous maintenance with review rhythms and health checks
 - `file 'Knowledge/architectural/principles/maintenance_first.md'`
-- *Derived from: ZD4 (Maintenance > Organization)*
+- *Derived from: ZT4 (Maintenance > Organization)*
 
 **P27: System Integration Patterns** (Design, High)
 - Optimize for system-wide effectiveness, not individual component excellence
 - `file 'Knowledge/architectural/principles/system_integration.md'`
-- *Derived from: ZD6 (Gestalt Evaluation)*
+- *Derived from: ZT6 (Gestalt Evaluation)*
 
 **P28: AIR Pattern** (Operations, Critical)
 - Assess-Intervene-Review: AI automates first two, humans review
 - `file 'Knowledge/architectural/principles/air_pattern.md'`
-- *Derived from: ZD7 (AIR Pattern)*
+- *Derived from: ZT7 (AIR Pattern)*
 
 **P29: Human-in-Loop Design** (Operations, Critical)
 - Humans as approvers of what matters, not operators of routine processes
 - `file 'Knowledge/architectural/principles/human_in_loop.md'`
-- *Derived from: ZD8 (Minimal Touch)*
+- *Derived from: ZT8 (Minimal Touch)*
 
 **P30: Minimal Touch Philosophy** (Operations, High)
 - Reduce human intervention to strategic decisions and exceptions only
 - `file 'Knowledge/architectural/principles/minimal_touch.md'`
-- *Derived from: ZD8 (Minimal Touch)*
+- *Derived from: ZT8 (Minimal Touch)*
 
 ---
 
@@ -198,7 +198,7 @@ Before implementing scripts, workflows, or infrastructure:
 ## Organization
 
 Principles are organized into these directories:
-- `Knowledge/architectural/principles/philosophy.md` - Zero-Doc philosophical foundation
+- `Knowledge/architectural/principles/philosophy.md` - Zero-Touch philosophical foundation
 - `Knowledge/architectural/principles/[principle_name].md` - Individual principle files
 
 ---

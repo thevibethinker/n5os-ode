@@ -2,7 +2,7 @@
 
 **Category**: Design  
 **Priority**: High  
-**Related**: P7 (Idempotence), ZD3 (Organization Step Shouldn't Exist)
+**Related**: P7 (Idempotence), ZT3 (Organization Step Shouldn't Exist)
 
 ---
 
@@ -14,7 +14,7 @@ Organization should emerge from capture and use, not require manual intervention
 
 ## Rationale
 
-From Zero-Doc Principle 3: In properly designed systems, you never stop work to organize information.
+From Zero-Touch Principle 3: In properly designed systems, you never stop work to organize information.
 
 **The cognitive cost of manual organization**:
 - Context switch: "What was I doing?" after filing
@@ -240,9 +240,9 @@ Don't force-migrate old files. Focus on new flows. Old structure can coexist tem
 - **P11 (Failure Modes)**: Handle mis-routing gracefully (easy to correct)
 - **P24 (Information Flow)**: Organization happens during flow transitions
 - **P28 (AIR Pattern)**: Assess stage determines routing
-- **ZD3 (Organization Step Shouldn't Exist)**: Philosophical foundation
+- **ZT3 (Organization Step Shouldn't Exist)**: Philosophical foundation
 
 ---
 
 *Added: 2025-10-24*  
-*Source: Zero-Doc integration (ZD3)*
+*Source: Zero-Touch integration (ZT3)*
