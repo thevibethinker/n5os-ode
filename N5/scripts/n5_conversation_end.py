@@ -12,6 +12,7 @@ import sys
 import json
 import shutil
 import logging
+import argparse
 import subprocess
 from pathlib import Path
 from datetime import datetime
@@ -597,42 +598,121 @@ def extract_lessons():
         print("→ Continuing to Phase 0 (AAR)")
 
 
-def generate_aar():
+
+def generate_thread_export():
     """
-    Generate After-Action Report (AAR) for this conversation
-    This is Phase 0 - captures conversation context before cleanup
+    Phase 0: Generate after-action report using n5_thread_export.py
     """
     print("\n" + "="*70)
     print("PHASE 0: AFTER-ACTION REPORT (AAR) GENERATION")
     print("="*70)
     print("\nCapturing conversation context and decisions...\n")
     
-    aar_script = WORKSPACE / "N5/scripts/n5_thread_export.py"
+    cmd = [
+        sys.executable,
+        str(WORKSPACE / "N5/scripts/n5_thread_export.py"),
+        "--auto",
+        "--yes"
+    ]
     
-    if not aar_script.exists():
-        print("⚠️  AAR script not found, skipping AAR generation")
-        print(f"   Expected: {aar_script}")
-        return
+    result = subprocess.run(cmd, capture_output=True, text=True)
     
-    try:
-        # Run AAR export with auto-detect and auto-confirm (--yes flag for non-interactive)
-        result = subprocess.run(
-            [sys.executable, str(aar_script), "--auto", "--yes"],
-            capture_output=True,
-            text=True,
-            check=False,
-            timeout=300  # 5 minute timeout
-        )
+    if result.returncode == 0:
+        print("✓ AAR generated successfully")
         
-        # Print output
-        if result.stdout:
-            print(result.stdout)
-        if result.stderr:
-            print(result.stderr)
-        print("✓ Phase 0 complete (AAR generation attempted)")
+        # NEW: Extract and save proposed title
+        save_proposed_title()
+        
+        return True
+    else:
+        print(f"⚠️  AAR generation had issues:\n{result.stderr}")
+        print("→ Continuing with next phase...")
+        return False
+
+def save_proposed_title():
+    """
+    Extract title from thread export and save to PROPOSED_TITLE.md
+    Also display it prominently to user
+    """
+    try:
+        # Import title generator
+        sys.path.insert(0, str(WORKSPACE / "N5/scripts"))
+        from n5_title_generator import TitleGenerator
+        
+        # Find latest thread archive
+        logs_dir = WORKSPACE / "N5/logs/threads"
+        if not logs_dir.exists():
+            return
+        
+        archives = sorted(logs_dir.glob("*"), key=lambda p: p.stat().st_mtime, reverse=True)
+        if not archives:
+            return
+        
+        latest_archive = archives[0]
+        
+        # Load AAR data
+        aar_file = latest_archive / "aar.json"
+        if not aar_file.exists():
+            return
+        
+        with open(aar_file, 'r') as f:
+            aar_data = json.load(f)
+        
+        # Collect artifacts info
+        artifacts_dir = latest_archive / "artifacts"
+        artifacts = []
+        if artifacts_dir.exists():
+            for item in artifacts_dir.rglob("*"):
+                if item.is_file():
+                    artifacts.append({
+                        "path": str(item.relative_to(artifacts_dir)),
+                        "size_bytes": item.stat().st_size
+                    })
+        
+        # Generate title
+        generator = TitleGenerator()
+        title_options = generator.generate_titles(aar_data, artifacts, max_options=4)
+        
+        if not title_options:
+            return
+        
+        # Write PROPOSED_TITLE.md
+        if CONVERSATION_WS:
+            proposed_file = CONVERSATION_WS / "PROPOSED_TITLE.md"
+            
+            md_content = ["# Proposed Conversation Title\n"]
+            md_content.append("## Recommended Title Options\n")
+            
+            for i, option in enumerate(title_options, 1):
+                md_content.append(f"### Option {i}: {option['title']}")
+                md_content.append(f"- **Length:** {option['length']} chars")
+                md_content.append(f"- **Emoji:** {option['reasoning'].get('emoji', 'N/A')}")
+                md_content.append(f"- **Reasoning:** {option['reasoning']}\n")
+            
+            md_content.append("\n---\n")
+            md_content.append("## FINAL RECOMMENDATION\n")
+            md_content.append(f"**{title_options[0]['title']}**\n")
+            md_content.append("\nTo apply this title, manually rename this conversation in the Zo interface.\n")
+            
+            with open(proposed_file, 'w') as f:
+                f.write('\n'.join(md_content))
+            
+            # Display prominently
+            print("\n" + "="*70)
+            print("📋 PROPOSED CONVERSATION TITLE")
+            print("="*70)
+            print(f"\n✨ RECOMMENDED: {title_options[0]['title']}\n")
+            print("Alternatives:")
+            for i, option in enumerate(title_options[1:], 2):
+                print(f"  {i}. {option['title']}")
+            print(f"\n💾 Full analysis saved to: {proposed_file.name}")
+            print("\n⚠️  MANUAL ACTION REQUIRED:")
+            print("    Please rename this conversation in the Zo interface")
+            print("="*70)
+            
     except Exception as e:
-        print(f"⚠️  AAR generation error: {e}")
-        print("→ Continuing with conversation-end...")
+        logger.debug(f"Title generation skipped: {e}", exc_info=True)
+        # Non-blocking - continue with conversation-end
 
 
 def git_status_check():
@@ -884,7 +964,7 @@ def timeline_update_check():
         logger.debug(f"Timeline check error details", exc_info=True)
 
 
-def main():
+def main(dry_run=False):
     """Main execution"""
     
     # Check if we're in a real conversation context
@@ -909,8 +989,8 @@ def main():
     # NEW: Phase -1 - Extract lessons
     extract_lessons()
     
-    # NEW: Phase 0 - Generate AAR
-    generate_aar()
+    # NEW: Phase 0 - Generate AAR with title generation
+    generate_thread_export()
     
     # Step 1: Inventory
     print("\n" + "="*70)
@@ -1068,4 +1148,28 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="N5 Conversation End-Step: AAR generation, file organization, cleanup"
+    )
+    parser.add_argument(
+        "--convo-id",
+        help="Specific conversation ID to close (e.g., con_6zEGRFp9KfYSn5ed). If not provided, auto-detects most recent."
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Preview changes without executing them"
+    )
+    args = parser.parse_args()
+    
+    # If convo-id specified, override auto-detection
+    if args.convo_id:
+        workspace_path = Path("/home/.z/workspaces") / args.convo_id
+        if not workspace_path.exists():
+            logger.error(f"Conversation workspace not found: {workspace_path}")
+            sys.exit(1)
+        CONVERSATION_WS = workspace_path
+        logger.info(f"Using specified conversation: {args.convo_id}")
+    
+    # Pass dry-run flag to main
+    main(dry_run=args.dry_run)

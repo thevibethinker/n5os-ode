@@ -355,6 +355,89 @@ Welcome to Zero-Doc.
 
 ---
 
+## X. Implementation Principles
+
+**NEW SECTION**
+
+Zero-Doc philosophy translates into concrete architectural patterns. Here's how the philosophy becomes practice:
+
+### From Philosophy to Architecture
+
+| Zero-Doc Principle | Architectural Implementation | Key Pattern |
+|-------------------|----------------------------|-------------|
+| **ZD1: Context + State** | P23: State Management | Every component exposes queryable state |
+| **ZD2: Flow vs. Pools** | P24: Information Flow Design | Track residence time, auto-alert on pools |
+| **ZD3: Organization Shouldn't Exist** | P25: Automated Organization | 85%+ auto-routed, <5% correction rate |
+| **ZD4: Maintenance > Organization** | P26: Maintenance-First Design | Daily/weekly/monthly review rhythms |
+| **ZD5: SSOT Always** | P2: Single Source of Truth | One canonical location per info type |
+| **ZD6: Gestalt Evaluation** | P27: System Integration | Measure end-to-end flow, not components |
+| **ZD7: AIR Pattern** | P28: Assess-Intervene-Review | AI automates, human reviews exceptions |
+| **ZD8: Minimal Touch** | P29 & P30: Human-in-Loop + Minimal Touch | Target <15% touch rate |
+| **ZD9: Self-Aware** | P26: Maintenance-First | System tracks its own health |
+| **ZD10: Platform Orchestration** | P27: System Integration | Best-in-class components, intelligent routing |
+
+### Critical Design Patterns
+
+**Pattern 1: Flow Mapping**
+
+Every information type needs explicit flow definition:
+
+```
+Entry → Transform → Destination → Archive/Delete
+  ↓         ↓           ↓              ↓
+24hr      7 days    permanent      removed
+
+If time > threshold → Alert (pool detected)
+```
+
+**Pattern 2: Confidence-Based Automation**
+
+Not everything needs human review:
+
+```
+Confidence >90%: Auto-complete (70-80% of items)
+Confidence 80-90%: Complete + flag (15-20%)
+Confidence <80%: Hold for review (5-10%)
+
+Tune based on correction rate
+```
+
+**Pattern 3: Maintenance Rhythms**
+
+```
+Daily (5min):   What broke? Automated health check
+Weekly (30min): What's pooling? Human review of flagged items
+Monthly (2hr):  Is system working? Evaluate metrics + redesign
+```
+
+**Pattern 4: System Health Metrics**
+
+Track these to know if Zero-Doc is working:
+
+- **Touch rate**: <15% (% items needing manual routing)
+- **Pool warnings**: <5% (items exceeding residence time)
+- **Flow time**: <10 days (entry → exit)
+- **Correction rate**: <5% (AI routes changed by human)
+- **Health score**: >85/100 (composite metric)
+
+### Safety Principles
+
+Zero-Doc requires safeguards:
+
+- **P5: Anti-Overwrite Protection** – Prevent data loss during automation
+- **P7: Dry-Run by Default** – Test flows before execution
+- **P11: Failure Modes** – Every flow needs recovery path
+- **P18: State Verification** – Verify writes succeeded
+- **P19: Error Handling** – Never silently fail
+
+### Architecture Reference
+
+Full architectural principles at: `file 'Knowledge/architectural/architectural_principles.md'`
+
+Individual principle files in: `file 'Knowledge/architectural/principles/'`
+
+---
+
 ## Appendix: The Zero-Doc Principles
 
 For easy reference, here are the core tenets:

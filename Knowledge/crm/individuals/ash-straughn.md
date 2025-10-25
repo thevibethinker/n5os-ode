@@ -1,75 +1,43 @@
 # Ash Straughn
 
-**Status:** Active  
-**Stakeholder Type:** #stakeholder:partner:collaboration  
-**Priority:** Important  
-**Created:** 2025-10-24  
-**Last Updated:** 2025-10-24
+**Organization**: Sam (recruiting platform)  
+**Role**: Co-founder  
+**Email**: [Unknown - needs enrichment]  
+**LinkedIn**: [Unknown - needs enrichment]  
+**Location**: [Unknown - needs enrichment]  
 
----
+## Overview
 
-## Contact Information
-
-**Primary Email:** [Unknown - needs enrichment]  
-**Company:** Sam (recruiting platform)  
-**Role:** Co-founder  
-**LinkedIn:** [Unknown - needs enrichment]
-
----
+Co-founder of Sam, a recruiting platform focused on connecting startup founders with vetted talent. Primary contact for Careerspan partnership discussions.
 
 ## Relationship Context
 
-**How We Met:** Founders event hosted by Andrew Young (rooftop)  
-**Meeting History:**
-- 2025-10-24: Partnership & acquisition exploration call (with Saul Garza, Max Carmenar)
-
-**Mutual Connections:**
-- Andrew Young (hosted event where we met)
-- Edmond from Superposition (both know him)
-
----
-
-## Company Overview
-
-**Sam** - Dual-sided recruiting marketplace connecting startup talent with founder network jobs. Currently raising at least $2M (checks coming in). Previously executed acquisition of Neighborly (prop tax platform) with creative structure (IP + assets + equity + cash components).
-
-**Decision-Making Structure:** Democratic co-founding model - "two thumbs up = yes, two thumbs down = no" among three co-founders (Ash, Saul, Max)
-
----
+- **First Met**: Founders event hosted by Andrew Young (rooftop event)
+- **Meeting Date**: 2025-10-24
+- **Meeting Type**: Partnership exploration + acquisition discussion
+- **Stakeholder Type**: FOUNDER (partnership/collaboration)
+- **Status**: Active partnership approved, acquisition track opened
 
 ## Key Insights
 
-**Focus Areas:**
-- Startup talent sourcing at scale
-- Partnership models that avoid dual-marketplace complexity
-- Potential acquisition targets that complement their employer distribution strength
+- Thoughtful about AI ethics and compliance (just participated in Newark Tech Summit AI ethics panel)
+- Democratic decision-maker (uses "two thumbs up = yes" model with co-founders)
+- Values founder-to-founder relationships and team chemistry
+- Currently raising $2M+ for Sam
+- Sees value in specialized plays (sourcing vs distribution) rather than dual-sided complexity
 
-**Pain Points:**
-- Sourcing high-quality candidates (acknowledged Careerspan's advantage)
-- Maintaining dual-marketplace without getting "muddy"
-- Differentiating from competitors (Superposition/Edmond)
+## Mutual Connections
 
-**What Resonated in Last Meeting:**
-- Clean division of labor: Careerspan sourcing, Sam placement (5% kickback model)
-- Cultural fit and team retention priorities over maximum financial exit
-- Depth of Careerspan's candidate intelligence (vibe check analysis)
-- User engagement metrics (40% D30 retention)
+- Andrew Young (hosted event where they met)
+- Edmund (Superposition founder) - Sam comparing notes with him
 
----
+## Next Actions
 
-## Enrichment Status
+- [ ] LinkedIn research on background and career trajectory
+- [ ] Identify additional mutual connections in startup/recruiting ecosystem
+- [ ] Track Sam's fundraising progress
+- [ ] Monitor for additional partnership/acquisition signals
 
-**Priority:** HIGH  
-**Reason:** Active partnership exploration + potential acquisition discussion; Sam is raising capital and evaluating strategic moves now
+## Enrichment Priority
 
-**Next Actions:**
-- [ ] LinkedIn research on Ash's background, prior ventures, founder network
-- [ ] Company research: Sam's current traction, team size, investor composition
-- [ ] Map mutual connections in startup recruiting/career tech ecosystem
-- [ ] Research Neighborly acquisition for precedent structure details
-
----
-
-## Tags
-
-#stakeholder:partner:collaboration #priority:important #enrichment:high #job_seeking:inactive
+**HIGH** - Active partnership negotiation with near-term execution timeline and potential acquisition in 3-6 months.

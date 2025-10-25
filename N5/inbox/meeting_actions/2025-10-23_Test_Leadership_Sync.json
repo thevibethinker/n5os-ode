@@ -27,7 +27,7 @@
       "source_block": "B25",
       "confidence": "high",
       "id": "act_002",
-      "suggested_when": "Saturday 2:00pm",
+      "suggested_when": "Sunday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Operations",
@@ -43,7 +43,7 @@
       "source_block": "B25",
       "confidence": "high",
       "id": "act_003",
-      "suggested_when": "Saturday 2:00pm",
+      "suggested_when": "Sunday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Operations",
@@ -60,7 +60,7 @@
       "source_block": "B25",
       "confidence": "high",
       "id": "act_004",
-      "suggested_when": "Saturday 2:00pm",
+      "suggested_when": "Sunday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Product",
@@ -76,7 +76,7 @@
       "source_block": "B25",
       "confidence": "high",
       "id": "act_005",
-      "suggested_when": "Saturday 2:00pm",
+      "suggested_when": "Sunday 2:00pm",
       "suggested_priority": "Normal",
       "suggested_duration": "30m",
       "suggested_project": "Operations",
@@ -87,6 +87,6 @@
       "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
     }
   ],
-  "extracted_at": "2025-10-24T21:20:20.667001",
+  "extracted_at": "2025-10-25T03:24:00.839998",
   "status": "pending_review"
 }

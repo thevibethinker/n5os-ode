@@ -1,0 +1,732 @@
+00:03
+Vrijen Attawar
+Hey, how's it going, Saul?
+
+00:05
+Saul Garza
+Hey, how are you doing? How do you pronounce your name? Sorry, I have to
+ask.
+
+00:09
+Vrijen Attawar
+Bridge.
+
+00:11
+Saul Garza
+Nice to meet you.
+
+00:12
+Vrijen Attawar
+Nice to meet you, man. Hey, Ash.
+
+00:14
+Ash Straughn
+Hey, what's up, dude?
+
+00:16
+Vrijen Attawar
+How's it going?
+
+00:17
+Ash Straughn
+Oh, Max is here. Max, we didn't even think you were joining.
+
+00:20
+Vrijen Attawar
+Hell.
+
+00:20
+Max Carmenar
+Yeah, I wasn't going to, but I had a slight delay this morning, so I
+have about 15 minutes to kill.
+
+00:28
+Ash Straughn
+Alright.
+
+00:29
+Vrijen Attawar
+Full house. I'm sorry I wasn't able to return the favor. Apparently were
+made of weaker stuff than y'. All. All three of us across three
+different cities are out with something, but I, I want to pull through.
+
+00:41
+Ash Straughn
+Oh, you guys are across different cities. So it wasn't that weird
+founder shit?
+
+00:45
+Vrijen Attawar
+No, no, it wasn't the weird founder shit. I'm trying to invite two more
+people on this call. Yo, we're trying to hang out with other founders.
+You're wrecking the plans, Ash. Now they're not gonna like me. They're
+gonna think I take people to weird, sick other shit. Shit.
+
+01:01
+Ash Straughn
+I mean, look, I. Hey, so this is me. We met at a founders event that
+Andrew Young hosted on a rooftop. He was building Career Span, which at
+the time was about the journey of someone kind of job seeking, capturing
+a lot of that information. Over the last few months, they went all in on
+sourcing talent. Unlocked around 1500 plus people on their platform.
+They capture information very similarly to how we capture information.
+And he kind of has already partnered with a founder that I know who
+introed us to full circle for that conversation. And so we're seeking a
+partnership to kind of see like, what that would look like if we partner
+with them, get access to that talent. Most of their talent is also X
+startup, X tech, et cetera, so unlocks a big section for us.
+
+01:54
+Ash Straughn
+And he is aware of the 5% kickback and how that works. Like, they get
+paid when we get paid, up to 12 months, you know, if it ends any earlier
+than that because the term ended. That's just what it was.
+
+02:04
+Vrijen Attawar
+Yep.
+
+02:05
+Ash Straughn
+And here we are.
+
+02:07
+Vrijen Attawar
+Yeah. Yeah. Great to meet y'. All. It's been a pleasure chatting with
+Ash so far. Really, really excited to kick things off. Yeah, happy to
+answer questions about us. We've done a fair amount of changing. So, you
+know, in case you saw like, sort of stuff that seems a little bit
+disconnected, there's been a lot of evolutions of Career Span. But yeah,
+right now, ash said, we have the tech to, you know, because we have a
+career coaching product that's at the heart of what we've built. We have
+the ability to provide that career coaching to folks at scale and then
+take the data from that and essentially contribute that as part of
+either our matching system or contribute that data to someone else's
+matching system. If you'd like to keep that tech in house.
+
+02:49
+Vrijen Attawar
+And we've sort of varying levels of partnerships or integrations with
+two job boards and another sort of like semi recruiting agency sort of
+thing that place a little smaller. So we also have a little bit of
+experience with this.
+
+03:02
+Ash Straughn
+Yeah, that's the. That's Superposition, right?
+
+03:05
+Vrijen Attawar
+Yeah, no, this is Starter. I'm talking to Superposition. I'll actually
+be talking to Edmund again next week. But where I think they're. They.
+Their thing with us is, hey, when we start getting product roles, we'll
+tap on you. So I haven't had a conversation with him yet about how, hey,
+we're not just focused on product roles. We're just, you know, anyone
+you want. If it's someone you pick up from us, you know, you can keep
+the vast majority of the take and just give us a kickback.
+
+03:29
+Ash Straughn
+Yeah, okay, that works. And then we also, like, light drizzled around
+the idea of, like, if we raise more than what we're looking for, they
+might be open to acquisition. So there's that whole thing that's at
+play. We can talk about, like, what you got looking for a little bit
+later in the call, but I would love for the guys to see the demo because
+I've seen it.
+
+03:46
+Vrijen Attawar
+Thank you. Thank you. Yeah, it's. It's fucking labor of love, let me
+tell you. So, you know, the product is working on it for about two years
+now. It's finally starting to get to a point where it's. It's really
+taking a lot of shape. And I'm happy to share some of those retention
+and engagement numbers as well. This is essentially where you land on
+career span. The idea is that you have conversational interactions with
+our AI coach. You really reflect on specific experiences in depth, and
+we're able to generate a lot more substantive, kind of have a more
+substantive understanding of who you are in terms of the functionality
+of the product itself. Obviously, there's the stories that you can have,
+you know, conversations with the AI. So you talk, you type, you know,
+stuff like that.
+
+04:32
+Vrijen Attawar
+You get these insights that are generated out of the way. So, you know,
+to the extent that it matters to you, all that, you know, there are
+borderline candidates that could, with a little bit of effort, be good
+Enough to like sell, you know, this is a good way to sort of bridge that
+gap for them. It's definitely built both with more care and with better
+reasoning than a lot of other career tech tools out there, I'd say
+because of Logan and my background. So that's pretty effective. Those
+stories are aggregated and contribute to the overall understanding of
+your, of you, who you are and which is how we're able to give them this
+sort of fit score assessment.
+
+05:08
+Vrijen Attawar
+Some of the language you're messaging around this is going to change,
+but the idea is essentially how well do you cover the gaps that this
+role implies? Right. So we intersect what we get out of their resume and
+what we get out of coaching conversations. We intersect that stuff and
+have those sort of details out here. And then we tell you, hey, maybe
+you have this on your resume but you haven't actually talked about it.
+How ready are you to actually deliver on it? Right. Versus something
+like this. This is just missing, Right? Makes sense. This is a school
+teacher, so they wouldn't have that. And there's no means of sort of
+bridging that. And then you also get, and this is the kind of, if you
+can imagine, because we're doing this with large language models.
+
+05:48
+Vrijen Attawar
+If you can think of this purely in terms of the information and not the
+specific output format, the information it contains is a pretty detailed
+assessment of how best to position this person for this role. Right.
+It's not trying to like cheat the employer. It's just saying if you were
+going to pay attention, what would you give a shit about? Right? Because
+in our research and our conversations, what we found was all you really
+need to do is tell them, why do I need to pay attention? If they trust
+that the source itself is filled with legitimate people, they're
+generally much more willing to do that. So we're able to output that
+stuff as well. And then there's like some vestigial stuff that we have
+left over from when were a career tech tool, like generating highly
+customers resumes.
+
+06:30
+Vrijen Attawar
+So these are again, these are semantically optimized. So there's like a
+30 step process and like almost half a dollar in compute that goes into
+making these, which is a reflection of the fact that they're pretty high
+quality. You know, it actually rethinks how to position you for that
+job. So, you know, the tech is good. We're open to an acquisition
+largely because we don't really want to play the VC game. We're also
+hoping to, you know, while we discuss that with y', all and with other
+folks, you know, essentially try to keep growing the network. Right. So
+later today, I'm on a call with Marvin ventures, which is McKinsey's
+founder alumni group. They're going to use us as a job board. So we're
+going to start seeing jobs come through from there as well.
+
+07:15
+Vrijen Attawar
+And then we're also hoping to turn that into access to the whole alumni
+community. And essentially we, you know, Logan and I just need to stay
+afloat so we can keep sequestering these communities and adding value to
+the network at a. At a low price. Gotcha.
+
+07:30
+Ash Straughn
+Can you show really quickly one of the things that you walked in, you
+walked with me, was looking at a candidate and kind of breaking down
+everything that you capture down to like the vibe of the person and
+everything else, right?
+
+07:43
+Vrijen Attawar
+Yeah, yeah. So let's see. That was. Pull up the link. I just have to
+find it in Slack. So in terms of what you're referring to, as far as
+that attribute analysis is concerned.
+
+08:05
+Saul Garza
+One second.
+
+08:24
+Vrijen Attawar
+I may need to look that up in a second or dedicatedly. Let me just ask
+for it and see if someone can get it for me. Yeah, one sec.
+
+08:36
+Max Carmenar
+While you're doing that, I actually do have to jump. My fire engagement
+just hit me back up. But it's a pleasure to meet you. I wish I could see
+the rest of it, but hopefully we'll. I'll be able to see more soon.
+
+08:46
+Vrijen Attawar
+Sounds good, Max. You take care. Have a great one.
+
+08:48
+Max Carmenar
+Absolutely.
+
+08:49
+Vrijen Attawar
+I'll talk to you guys later.
+
+08:51
+Max Carmenar
+Bye.
+
+08:53
+Vrijen Attawar
+Can you run down the link to the.
+
+09:01
+Ash Straughn
+Sweet while you do that? V? How are you guys. How are you guys sourcing
+your talent? Because the reason I ask is like we're very focused on kind
+of startup talent and making sure. Prepared for the startup environment.
+And so how are you guys kind of grabbing all of the talent? And is it
+broad? Is it mostly startup? What is it?
+
+09:22
+Vrijen Attawar
+So right now it's broad, right? We can refocus and are happy to refocus
+as the economic incentives sort of present themselves. But right now
+it's essentially been. Who are the. Let's start with the folks that we
+can absolutely lock in. So that's your Cornells, your Emory's, like our
+alma maters and orgs, we're associated with. So trying to lock down
+those. Then there's folks that we have sort of professional
+relationships with, like future of higher education, which is very like
+kind of industry focused, but does have a lot of really good startup
+talent within it. So we have some of these sort of miscellaneous
+communities. I'M being set up with a call with Ben Lang from next place.
+I'm going to try to like schmooze him as well.
+
+10:00
+Vrijen Attawar
+I think candidly, we are actually probably in a better position to go to
+these companies and to be able to say, hey, like previously were going
+to them and saying, hey, let's partner with you. Maybe we'll give you a
+kickback. We realized that's actually almost giving them too much right
+at the outset. We have a fucking incredible product. So for the
+retention numbers and, you know, again, happy to, you know, have you
+guys vet these. Essentially we see somewhere between a day 30 return of
+somewhere between like 20 to 40% depending on the month, depending on
+the cohort, depending on the feature subset. The folks that get
+recommended jobs through Career span, though, those folks come back at
+about a 40% rate at least one month later. They're folks that do an
+average of two conversations.
+
+10:48
+Vrijen Attawar
+You get at least 40 minutes worth of info with the AI. And I'm. Yep,
+here we go. Meg. Doc, this is. Let me put this here. Share this tab
+instead. So this is a analysis that we did of a job that were
+commissioned to set up a link for. So one of the capabilities we have is
+this what we call a magic link, right, where you essentially click the
+magic link. We've set up the magic link with a job on the background, so
+a job of yours, let's say. And then the magic link would essentially
+anyone can distribute it and you get filtered through careerspan.
+Careerspan basically acts like an ETS and only shows you the folks that
+survive our stuff.
+
+11:33
+Vrijen Attawar
+The other advantage is you could send me a voice note and say, hey, this
+is still on the job description, but these are the real requirements,
+right? And you can have those two be separate and it will semantically
+evaluate on that basis. And so that's another sort of cool feature. If
+you've got folks that are like, hey, I want to. My raise hasn't come
+through yet, but I want to start collecting candidates. We can do that.
+We can do a silent screen of everyone anonymously and just surface you
+names and essentially just say, hey, we can like mediate contact with
+these folks if you want.
+
+12:05
+Vrijen Attawar
+If you've been talking to Edmund, one thing, I'll give him a lot of
+credit for that he got me thinking about was the idea of like, is it
+just a bad idea to try to serve both sides of the market? And
+increasingly I've been thinking, man, are we like trying to be stupid,
+trying to go to employers, like maybe we should just focus on the
+sourcing. This gives us the ability to hedge that and essentially just
+have a really strong incentive to build out that distribution side.
+
+12:29
+Ash Straughn
+Yeah, for us I think it would definitely need to. If, if we did this
+partnership it would definitely have to be like you guys on the sourcing
+side us because we do dual sided. So it becomes really, really muddy for
+us where like obviously we capture very similar information, we get very
+similar. But you guys have that advantage as far as the amount of access
+to candidates, whereas we have the advantage on the same exact kind of
+description around employers but that access to like that founder
+network with a bunch of.
+
+13:01
+Vrijen Attawar
+Jobs and what we both want and is ultimately in some ways I think what
+no one is, has had the ability to crack besides us is the candidate
+side. Staying up to keeping shit up to date is so hard. Like you could
+have. Like what we've sort of observed is the best candidates are
+passive. They're not updating their LinkedIn, they're not working on
+their stuff. Their shit is out of date. So actually the candidates that
+you see out there is the visibly good ones are what we're all fighting
+over. And there's the invisible amazing ones that just need like oh,
+there is this opportunity. Let me actually put in the effort to update
+my stuff. Right. So I think it's very symbiotic in that regard. And
+yeah, I think it's a good system.
+
+13:48
+Ash Straughn
+Yeah, I think that works. And then I know you guys have this. I feel
+like there was another part on the site itself. Maybe it's under the gap
+analysis where it shows kind of the AI's breakout of all of their
+strengths. I think you showed it a little bit.
+
+14:08
+Vrijen Attawar
+Let me see if Little Bird has. Hold on. I got, I got an app for this. I
+got an app to remember. Okay, let's see if this is able to pull up. I
+know what you're referring to and that's actually the one I was hoping
+Logan would get just to sort of show you. I think this is just basically
+a word doc version of that where effectively our methodology is we
+decompose the. We basically take either just the JD or the JD plus your
+voice message and decompose it into requirements and then score them
+against the requirements and also understand what level do they need to
+be at in the requirements. So something could be like essential but you
+only need to be intermediate at it. Right, right.
+
+15:09
+Vrijen Attawar
+So it just adds another dimension of sort of granularity to it and then
+we're actually able to Give you an assessment for on each skill level.
+Like when I tell you my AI engineer goes hard. This is almost a hundred
+pages of fucking analysis. Most of it unnecessary, but all of which that
+you can draw from to create really compelling like pitches about people
+at scale.
+
+15:31
+Ash Straughn
+Yeah, that's fair. Is he, is he US based or is he like offshore?
+
+15:36
+Vrijen Attawar
+She is Portuguese. Oh no, she's American, but she's living in Portugal.
+
+15:40
+Ash Straughn
+Gotcha. Okay. Yeah, yeah, she did a really good job. Like ours is. I
+think he's Pakistan.
+
+15:48
+Vrijen Attawar
+Nice.
+
+15:49
+Ash Straughn
+And same thing. Kind of like crushing it on the build out.
+
+15:52
+Vrijen Attawar
+Love it.
+
+15:53
+Ash Straughn
+Yeah. I mean, but yeah, I think from what we're seeing, it looks good.
+How long did it take you guys to build out this section? Just so we can
+understand how much man hours kind of went into this thing. And it's not
+just not to disregard your.
+
+16:11
+Vrijen Attawar
+Yeah.
+
+16:12
+Ash Straughn
+Person. But that it's not just slapped together. How many man hours went
+into the idea of just building out the. Just this portion of like how.
+Because you can get a parser, right. And you can just have like high
+volt kind of like ats. Just have all the hard skills like parsed out
+like.
+
+16:26
+Vrijen Attawar
+So the, the real thing that speaking candidly, you would be paying for
+is Ilsa's ability as a reliability engineer. Not so like I'm sure you
+guys have heard at this point all of the whisperings around these
+companies fucking having crashing shit ass products that are vibe coded
+and barely work. I think with something like this and with the frankly
+legal pressure that is going to come at all of us when people realize
+just how broke the hiring market is. The thing that I can say ILSA has
+maximally worked on is the reliability of what is produced. Whether it
+is specific JSON schemas that will always run in your system or
+analyzing human beings in a consistent way that you can defend in a
+like, you know, sort of context where you have to justify it to a
+company.
+
+17:17
+Vrijen Attawar
+You know, I think that's really the most honest answer is that like a
+lot of this theory I came up with in like an afternoon and then Ilsa to
+make it work reliably took like months. And that's sort of the edge.
+
+17:31
+Ash Straughn
+Okay, so there was some, there was a lot of time put in. Okay, that's
+fair. And I had another question which just left my brain. It was
+important.
+
+17:43
+Vrijen Attawar
+Okay, well, all good.
+
+17:45
+Ash Straughn
+So if I think of it, I will bring it back up. But you mentioned, you
+know, you guys really don't want to do kind of like the Dual side of the
+marketplace. You really want to focus in on the sourcing and the
+candidates. I think there's a lot of strength in what you've built. And
+I'll lob to Saul as well for kind of his thoughts so far. We kind of
+talk into what you guys would be looking at for like how your
+partnerships currently work, what it would look, I know what it would
+look like from a compensation side of us, but like what integration
+would look like, et cetera and then potentially acquisition later. But I
+will pause there. So your thoughts on the tool?
+
+18:25
+Saul Garza
+I love it, man. Great stuff. I did ask some questions and you answered a
+few of them along the way. But one that comes top of mind. I mean again,
+this was like a quick, in a nutshell, product overview and stuff and I
+appreciate it. I just had something surrounding that. How do you ensure
+like the, I guess like the accuracy of candidates, like self reported
+data on your end? Like is that something that like you manually go
+through at some process or is it just kind of like a I trust the product
+and let's place them.
+
+18:56
+Vrijen Attawar
+No, it's. It's a great question. So there's a couple of factors to this
+and I'm glad I'm discussing it with founders because I think you'll
+understand which ones are like just reasonable assumptions. We are
+explicitly building out bullshit detectors. We have a bullshit detector
+on the JD side that I will have to fight ILSA to have a job bypass that.
+So hopefully all of your jobs survive that. But it's very much meant to
+be like, is it like potentially like coming up with unreasonable
+expectations? Is it not being clear about hours, that kind of stuff?
+We're building the same version of that about the candidates. And
+actually the way that we're doing is super interesting. We are
+benchmarking how the candidates describe themselves against initially
+the LLMs understanding.
+
+19:41
+Vrijen Attawar
+And then eventually once we have enough training data, we will actually
+have the world's largest reservoir of people talking about what makes
+them good professionals. Right. And so that point is where the magic
+happens where we can really properly benchmark people against that. But
+I think until then it generalized AI's understanding of like this person
+says they're senior PM. Do they sound like a senior PM? In our
+experience it's worked out to be pretty reliable. Like when folks have
+seen the people we surface, they're generally pretty happy with them.
+
+20:14
+Saul Garza
+Got it now. Yeah, that does make a lot of sense for sure. No, thank you
+for answering that one. And then one last one, it was kind of like right
+now at Sam, we're like trying to reengage our candidates who haven't
+quite gone through, like, you know, placements and things like that. How
+often do you re engage candidates who don't get place or do you have
+like.
+
+20:34
+Vrijen Attawar
+So that's the best part because careerspan is so aggressively pro
+candidate. We have folks, and it's actually, no, because we're pro
+candidate, we've built a tool that induces people to come back
+organically. So even with our user base, we see a like average of 2 to
+3% natural re engagement any given month, regardless of how long ago
+they last logged on. So Even around like 10, 12 months, around that
+mark, we're seeing the 2 to 3%, like folks just coming back organically
+storing stuff. The other advantage of doing this sort of, whoops, this
+application tracking system is we actually build an incremental
+understanding of who you are every time you add a job. So we are keeping
+an ongoing track of like, where you've fallen short, where you haven't,
+so that we don't have to recalculate that.
+
+21:29
+Vrijen Attawar
+And so it really is set up to build that incremental understanding that
+you can then keep tapping on. And I guess the good part is if we do make
+it symbiotic, instead of trying to do two sides of the marketplace, I
+think candidates are going to trust that more as well, you know.
+
+21:44
+Ash Straughn
+Yeah, I can see that. I remember my question now, which was surrounding
+the ethics and AI. So I just did a panel at the Newark Tech Summit.
+
+21:56
+Vrijen Attawar
+Yeah.
+
+21:57
+Ash Straughn
+And one of the things that were chatting through is that obviously we
+have these. We have an AI forward platform. Right. And so, yeah, the
+moments of where they can speak with the founders, but most of their
+engagement is through this platform, through this AI that's vetting
+them. How are you all, especially when utilizing your BS detector, how
+are you all ensuring or auditing your AI to make sure that it's not kind
+of doing the normal AI bias of someone has a strong accent. And so maybe
+they're not strong in a certain area or, you know, that type of stuff.
+
+22:30
+Vrijen Attawar
+Fair enough. So our. So with regards to accent in particular, because we
+go, we process, we turned into a transcript, intonation isn't captured.
+So that on that regard, it's. It's okay. With regards to general biases
+seeping and especially assessing, I'm pretty sure we scrub pii. I'm
+pretty sure it's either on the roadmap or if it's on the roadmap, we
+have like a clear idea of how to build it. But essentially I'm pretty
+sure we have either deployed it or it's on the roadmap. The, the, like a
+self audit, self check tool. But until then, Ilsa has been manually
+checking. I mean she does at least a couple of hours of just AI manually
+reviewing output to keep consistency high. And then I think we do want
+to develop more programmatic ways of checking over it. But folks haven't
+complained so far.
+
+23:22
+Vrijen Attawar
+Thus far, folks have generally been. And I mean I think this is evidence
+in the. Even like the, you know, trying to find. I'll pull it up. But I
+think the like last just this past month where finally I think we've
+cracked the UX for vibe checks. So now we're seeing about 30% of our
+users that complete sign up do a vibe check and 50% of them do two or
+more. So we're starting to see that is like a whole loop for folks where
+they like getting that feedback and then they like incorporating it. And
+we're also starting to see an average of like 1 like 0.5 to 1
+conversations added in response to being shown those gaps in what you
+have.
+
+24:09
+Ash Straughn
+Got it. Okay. I know we're short on time, so what I will do is say
+let's. I think we're. So are you good with the level of information that
+they capture and combining that with the level of information that we
+capture as to. As far as pursuing a partnership. Okay, awesome. So we've
+got two thumbs up. We do a democratic co founding thing. Two of us give
+thumbs up, it's a yes. Two of us give thumbs down, it's a no. So you're
+good on partnership. The. As far as your acquisition thought process, in
+the event, we raised more than we're anticipating. So right now we're
+raising at least 2.
+
+24:46
+Vrijen Attawar
+2 million.
+
+24:47
+Ash Straughn
+But you know, we may close it out early. For example, Edmund was raising
+2 million, I believe, and I think he closed it out around 1.2, 1.6,
+something like that. So we may do that, you know, just depending on how
+much we raised before holidays.
+
+25:01
+Vrijen Attawar
+Right.
+
+25:01
+Ash Straughn
+That said, what are you guys thinking of? Because as we think about our
+raise, we think about what it's going towards and fueling over the next
+18. But I want to know what you guys would be thinking about surrounding
+your acquisition.
+
+25:12
+Vrijen Attawar
+So for us the timescale would probably be like three to six months at
+least. You know, we want to go into low power mode and really build out
+the network and effectively like in a low cost way, like stop taking in
+More VC money and just try to like build momentum. I think what that
+leaves us with now, what I will say is if we're starting to discuss Aqua
+Hire seriously, you guys want Elsa? Like, I'm not even talking about me
+and Logan. Like, you want Elsa. I think for us, Aqua Heart with you guys
+versus some of the other options we've discussed are like fucking eats.
+If you're familiar with them, like fucking ets, the SAT people. Yeah, I
+would rather make less money and work with you guys 100 years. So I
+think the team would like feel the same way.
+
+25:58
+Vrijen Attawar
+I think what we've told the team right now is like, look, we have a
+great vibe and we work well together and like it's most impactful when
+people can be acquired together. So let's like discuss things where we
+don't need to all be paid out, but if we can have nice, stable, fun jobs
+at the end of it, we can work that out and I can. Luckily I have a good
+personal relationship with my investors. I can like, you know, live with
+them being disappointed or at least tell them that I'll make it back on
+the next one.
+
+26:25
+Ash Straughn
+Okay, so you're looking more merger than acquisition as far as like what
+that would look like for you guys.
+
+26:31
+Vrijen Attawar
+Essentially just looking at the valuation and saying how much is cash
+even being exchanged? I want to be realistic. Right. And at the same
+time, if it is, what's the value and who gets what? Right. So it's for
+us, it's like a very. We don't want to, we don't. We're willing to be
+very forthright and not be like very Machiavellian about it and
+transparent about what we're looking for. Which obviously, number one
+would be like a great fat ass sale that gets us not to worry about
+anything. But I think priorities right after that would be a stable,
+good exit where everyone in the team is taken care of and we all leave
+with dignity, which is also important.
+
+27:09
+Ash Straughn
+Got it. So it makes me think about the acquisition we did with
+Neighborly on the last venture.
+
+27:17
+Vrijen Attawar
+Nice.
+
+27:17
+Ash Straughn
+Where it was. We acquired a, with Neighborly we acquired a portion of
+their ip, a portion of like it was a prop text, also a portion of their,
+and like their assets for certain things. And there was a cash exchange
+for physical assets and then an equity stake towards that we purchased
+of it and then the rest was kind of. They could sell it companies if
+that's what they wanted to do with this. I think we would. We like the
+idea of the Acquisition with a team that knows exactly what they're
+building as well, the potential to keep scaling that side and have. Have
+you guys focus really on that sourcing and what we're looking to do.
+
+28:04
+Ash Straughn
+And I think the toughest part for you guys would be, should we do this
+acquisition, it becomes like very startup focused and, you know, kind of
+that broad sector of entry level people kind of looking to break in, the
+whole chicken or the egg job or experience thing goes away. Super senior
+people looking to be placed at exec jobs, they kind of end up going away
+as well. And so, yeah, about.
+
+28:27
+Vrijen Attawar
+But that's, that's okay. I think there's a non zero extent to which the
+team will, and certainly even I would lobby for like continuing to let
+folks access careerspan, even if that involves optimizing it to be low
+cost. Because I think it is. I think it is an extraordinary tool and I
+think it's the kind of tool that generates a lot of user love. Right.
+Which hopefully maybe you've seen on sort of our LinkedIn. We, we
+genuine. We genuinely get a lot of like, positive responses from our
+users. And so I think that's worth keeping around as an asset. But yeah,
+that works really well for us. I gotta jump as well, but this is like
+super exciting and I will make sure that it'll send Logan or on the call
+next time.
+
+29:09
+Ash Straughn
+Yeah, so let's set up a call for next week sometime to walk through what
+the next steps of the partnership look like. If you guys can wrap your
+head around something more solid thinking through acquisition also come
+prepared with that. And I think we can definitely, like, start talking
+about it because we're starting to get checks in.
+
+29:25
+Vrijen Attawar
+Hell yeah. Amazing. Let's do it.
+
+29:27
+Ash Straughn
+All right, sounds good. Talk soon.
+
+29:28
+Vrijen Attawar
+Catch you later. Right, we'll talk soon. V. Ciao.
