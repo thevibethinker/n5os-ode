@@ -5,27 +5,46 @@ category: core
 priority: high
 related_files: "['N5/knowledge/ingestion_standards.md']"
 ---
-# N5 Architectural Principles Index
+# N5 Architectural Principles
 
-**Version 2.6 - Complete Lessons Integration**
-
-This index provides quick reference to all architectural principles. Load specific modules based on task context to minimize token usage and maintain focus.
-
----
-
-## How to Use This Index
-
-**For most operations:** Load this index file only for quick reference.
-
-**For specific tasks:** Load the relevant module(s) alongside this index:
-- **System changes/scripts**: Load `core.md`, `safety.md`, `quality.md`
-- **Design reviews**: Load `core.md`, `design.md`
-- **Operations/deployments**: Load `operations.md`, `safety.md`
-- **Troubleshooting**: Load `safety.md`, `quality.md`
+**Version**: 2.0 (Zero-Doc Integration)
+**Last Updated**: 2025-10-24
+**Status**: Living document
 
 ---
 
-## Principle Modules
+## Purpose
+
+This document serves as the architectural foundation for N5OS—the operating system for AI-enabled knowledge work. These principles guide all system design decisions, workflow implementations, and tooling choices.
+
+**NEW (v2.0)**: Added philosophical foundation layer (Zero-Doc) and derived 8 new architectural principles.
+
+---
+
+## Principle Hierarchy
+
+### Philosophy Layer (Zero-Doc)
+
+Strategic principles that define *why* we build systems this way:
+
+- **ZD1**: Context + State Framework
+- **ZD2**: Flow vs. Pools
+- **ZD3**: Organization Step Shouldn't Exist  
+- **ZD4**: Maintenance > Organization
+- **ZD5**: SSOT Always (Single Source of Truth)
+- **ZD6**: Gestalt Evaluation
+- **ZD7**: AIR Pattern (Assess-Intervene-Review)
+- **ZD8**: Minimal Touch
+- **ZD9**: Self-Aware Systems
+- **ZD10**: Platform Orchestration
+
+**See**: `file 'Knowledge/architectural/principles/philosophy.md'`
+
+---
+
+## Principles Index
+
+### Design Principles (1-10)
 
 ### Core Principles → `file 'Knowledge/architectural/principles/core.md'`
 **Load for:** All operations, foundational rules
@@ -35,6 +54,8 @@ This index provides quick reference to all architectural principles. Load specif
 **Key concept:** Eliminate duplication
 
 ---
+
+### Safety Principles (11-15)  
 
 ### Safety Principles → `file 'Knowledge/architectural/principles/safety.md'`
 **Load for:** File operations, automation, destructive actions
@@ -89,6 +110,50 @@ This index provides quick reference to all architectural principles. Load specif
 
 ---
 
+### Zero-Doc Integration Principles (23-30) **NEW**
+
+**P23: State Management Philosophy** (Design, High)
+- Every component must maintain and expose queryable, auditable state
+- `file 'Knowledge/architectural/principles/state_management.md'`
+- *Derived from: ZD1 (Context + State Framework)*
+
+**P24: Information Flow Design** (Design, Critical)
+- Design for flow, not storage; pools are system failures
+- `file 'Knowledge/architectural/principles/information_flow.md'`
+- *Derived from: ZD2 (Flow vs. Pools)*
+
+**P25: Automated Organization Philosophy** (Design, High)
+- Organization emerges from use; categorization should be automatic
+- `file 'Knowledge/architectural/principles/automated_organization.md'`
+- *Derived from: ZD3 (Organization Step Shouldn't Exist)*
+
+**P26: Maintenance-First Design** (Design, High)
+- Design for continuous maintenance with review rhythms and health checks
+- `file 'Knowledge/architectural/principles/maintenance_first.md'`
+- *Derived from: ZD4 (Maintenance > Organization)*
+
+**P27: System Integration Patterns** (Design, High)
+- Optimize for system-wide effectiveness, not individual component excellence
+- `file 'Knowledge/architectural/principles/system_integration.md'`
+- *Derived from: ZD6 (Gestalt Evaluation)*
+
+**P28: AIR Pattern** (Operations, Critical)
+- Assess-Intervene-Review: AI automates first two, humans review
+- `file 'Knowledge/architectural/principles/air_pattern.md'`
+- *Derived from: ZD7 (AIR Pattern)*
+
+**P29: Human-in-Loop Design** (Operations, Critical)
+- Humans as approvers of what matters, not operators of routine processes
+- `file 'Knowledge/architectural/principles/human_in_loop.md'`
+- *Derived from: ZD8 (Minimal Touch)*
+
+**P30: Minimal Touch Philosophy** (Operations, High)
+- Reduce human intervention to strategic decisions and exceptions only
+- `file 'Knowledge/architectural/principles/minimal_touch.md'`
+- *Derived from: ZD8 (Minimal Touch)*
+
+---
+
 ## Quick Reference: When to Load What
 
 | Task Type | Load Modules |
@@ -127,6 +192,14 @@ Before implementing scripts, workflows, or infrastructure:
 - [ ] Confirm all objectives met (Principle 15)
 - [ ] Test in fresh thread (Principle 12)
 - [ ] Update change logs (Principle 14)
+
+---
+
+## Organization
+
+Principles are organized into these directories:
+- `Knowledge/architectural/principles/philosophy.md` - Zero-Doc philosophical foundation
+- `Knowledge/architectural/principles/[principle_name].md` - Individual principle files
 
 ---
 

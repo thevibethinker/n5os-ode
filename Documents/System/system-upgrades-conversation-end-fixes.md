@@ -2,7 +2,7 @@
 
 ## Issues Identified (2025-10-24)
 
-### Issue 1: Missing Command-Line Argument Support
+### Issue 1: Missing Command-Line Argument Support [✅ RESOLVED 2025-10-24]
 
 **Problem:** `n5_conversation_end.py` ignores `--convo-id` parameter and always auto-detects the most recently modified workspace.
 
@@ -16,6 +16,13 @@ python3 /home/workspace/N5/scripts/n5_conversation_end.py --convo-id con_6zEGRFp
 ```python
 CONVERSATION_WS = max(workspaces, key=lambda d: d.stat().st_mtime)
 ```
+
+**Resolution (2025-10-24):**
+- Added argparse support to `n5_conversation_end.py`
+- Now accepts `--convo-id` to specify exact conversation
+- Now accepts `--dry-run` to preview changes
+- Maintains backward compatibility with auto-detection
+- Help available via `--help`
 
 **Impact:**
 - Cannot close specific conversations on demand

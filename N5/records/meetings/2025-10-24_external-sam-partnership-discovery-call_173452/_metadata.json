@@ -1,0 +1,48 @@
+{
+  "meeting_id": "2025-10-24_external-sam-partnership-discovery-call_173452",
+  "date": "2025-10-24",
+  "stakeholder_type": "FOUNDER",
+  "participants": {
+    "careerspan": ["Vrijen Attawar"],
+    "external": [
+      "Ash Straughn (Sam)",
+      "Saul Garza (Sam)",
+      "Max Carmenar (Sam - partial attendance)"
+    ]
+  },
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B24_PRODUCT_IDEA_EXTRACTION",
+    "B13_PLAN_OF_ACTION",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B14_BLURBS_REQUESTED",
+    "B27_KEY_MESSAGING"
+  ],
+  "block_count": 13,
+  "crm_profiles_created": [
+    "ash-straughn",
+    "saul-garza",
+    "max-carmenar"
+  ],
+  "processing_metadata": {
+    "registry_version": "1.5",
+    "workflow_version": "5.1.0",
+    "processed_date": "2025-10-24",
+    "transcript_source": "Google Drive docx conversion",
+    "transcript_quality": "Good",
+    "confidence_level": "High"
+  },
+  "key_outcomes": {
+    "partnership_approved": true,
+    "acquisition_discussion_opened": true,
+    "next_steps_defined": true,
+    "follow_up_scheduled": "Week of Oct 28-Nov 1, 2025"
+  }
+}

@@ -17,6 +17,11 @@ from pathlib import Path
 from typing import Dict, Optional, Tuple
 import pytz
 import re
+import sys
+
+# Import conversation registry
+sys.path.insert(0, str(Path(__file__).parent))
+from conversation_registry import ConversationRegistry
 
 logging.basicConfig(
     level=logging.INFO,
@@ -31,10 +36,18 @@ TEMPLATES_DIR = Path("/home/workspace/N5/templates/session_state")
 
 
 class SessionStateManager:
-    def __init__(self, convo_id: str):
+    def __init__(self, convo_id: str, sync_registry: bool = True):
         self.convo_id = convo_id
         self.workspace = CONVO_WORKSPACES_ROOT / convo_id
         self.state_file = self.workspace / "SESSION_STATE.md"
+        self.sync_registry = sync_registry
+        
+        if self.sync_registry:
+            try:
+                self.registry = ConversationRegistry()
+            except Exception as e:
+                logger.warning(f"Registry init failed: {e}")
+                self.sync_registry = False
         
         self.workspace.mkdir(parents=True, exist_ok=True)
     
@@ -100,7 +113,68 @@ class SessionStateManager:
         
         return max_type, round(confidence, 2)
     
-    def init(self, convo_type: Optional[str] = None, mode: str = "", load_system: bool = False, user_message: str = "") -> bool:
+    def _sync_to_registry(self) -> bool:
+        """Extract metadata from SESSION_STATE.md and sync to registry"""
+        if not self.sync_registry:
+            return True
+            
+        try:
+            if not self.state_file.exists():
+                return True
+            
+            content = self.state_file.read_text()
+            
+            # Extract focus
+            focus = None
+            focus_match = re.search(r'\*\*Focus:\*\*\s*(.+)', content)
+            if focus_match:
+                focus = focus_match.group(1).strip()
+                if focus.startswith('*') or focus == '':
+                    focus = None
+            
+            # Extract objective
+            objective = None
+            obj_match = re.search(r'\*\*Goal:\*\*\s*(.+)', content)
+            if obj_match:
+                objective = obj_match.group(1).strip()
+                if objective.startswith('*') or objective == '':
+                    objective = None
+            
+            # Extract tags
+            tags = []
+            tags_match = re.search(r'\*\*Tags:\*\*\s*(.+)', content)
+            if tags_match:
+                tags_str = tags_match.group(1).strip()
+                tags = [t.strip() for t in tags_str.split(',') if t.strip()]
+            
+            # Extract type
+            convo_type = None
+            type_match = re.search(r'\*\*Primary Type:\*\*\s*(\w+)', content)
+            if type_match:
+                convo_type = type_match.group(1).strip()
+            
+            # Sync to registry
+            update_fields = {}
+            if focus:
+                update_fields['focus'] = focus
+            if objective:
+                update_fields['objective'] = objective
+            if tags:
+                update_fields['tags'] = tags
+            if convo_type:
+                update_fields['type'] = convo_type
+            
+            if update_fields:
+                self.registry.update(self.convo_id, **update_fields)
+                logger.debug(f"Synced to registry: {list(update_fields.keys())}")
+            
+            return True
+            
+        except Exception as e:
+            logger.warning(f"Registry sync failed: {e}")
+            return False
+    
+    def init(self, convo_type: str = "discussion", mode: str = "standalone", load_system: bool = False, user_message: str = "") -> bool:
         """Initialize SESSION_STATE.md for this conversation."""
         try:
             if self.state_file.exists():
@@ -248,6 +322,21 @@ class SessionStateManager:
             self.state_file.write_text(content)
             logger.info(f"✓ Initialized SESSION_STATE.md for {self.convo_id}")
             
+            # Sync to registry
+            if self.sync_registry:
+                try:
+                    self.registry.create(
+                        self.convo_id,
+                        type=convo_type,
+                        status="active",
+                        mode=mode or "standalone",
+                        workspace_path=str(self.workspace),
+                        state_file_path=str(self.state_file)
+                    )
+                    self._sync_to_registry()
+                except Exception as e:
+                    logger.warning(f"Registry sync failed: {e}")
+            
             if load_system:
                 logger.info("System files to load:")
                 logger.info("  - file 'Documents/N5.md'")
@@ -331,6 +420,7 @@ class SessionStateManager:
                 
                 self.state_file.write_text("\n".join(lines))
                 logger.info(f"✓ Updated {field} = {value}")
+                self._sync_to_registry()
                 return True
             else:
                 logger.warning(f"Field '{field}' not found in SESSION_STATE.md")
