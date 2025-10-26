@@ -1,125 +1,291 @@
-# Productivity Tracker - Email Scanner
+# Productivity Tracking System
 
-## Overview
+**Status:** ✅ Production Ready  
+**Version:** 1.0  
+**Last Updated:** 2025-10-26
 
-Simple email productivity tracking system that counts sent/incoming emails and tracks unreplied threads.
+---
 
 ## Components
 
-### 1. Email Scanner (`email_scanner.py`)
-Simple numerical tracking of email volumes across eras.
+### Worker 1: Database Setup
+**Script:** `db_setup.py`  
+**Status:** ✅ Complete  
+**Purpose:** SQLite database schema and tables
 
-**Features:**
-- Count sent emails (your productivity output)
-- Count incoming emails (your workload)
-- Filter trivial emails (< 10 words)
-- Categorize by subject line
-- Era tagging (pre-superhuman, post-superhuman, post-zo)
+### Worker 2: Email Scanner
+**Script:** `email_scanner.py`  
+**Status:** ✅ Complete  
+**Purpose:** Tracks sent emails from Gmail
 
-### 2. Unreplied Thread Tracker (`unreplied_tracker.py`) ⭐ NEW
-Tracks emails that haven't been replied to within 3 days.
+### Worker 3: Meeting Scanner
+**Script:** `meeting_scanner.py`  
+**Status:** ✅ Complete  
+**Purpose:** Scans Google Calendar for expected load
 
-**Features:**
-- Scans last 30 days of incoming emails
-- Checks for sent replies in same thread
-- Priority scoring (high/medium/low)
-- Daily digest generation
+### Worker 4: XP System
+**Script:** `xp_system.py`  
+**Status:** ✅ Complete  
+**Purpose:** Gamification layer with XP, levels, multipliers
 
-**Priority Rules:**
-- **High:** Contains urgent/investor/funding keywords OR 7+ days old
-- **Medium:** Contains partnership/hiring/customer keywords OR 5+ days old
-- **Low:** Everything else 3+ days old
+### Worker 5: RPI Calculator
+**Script:** `rpi_calculator.py`  
+**Status:** ✅ Complete  
+**Purpose:** Intelligence layer calculating Relative Productivity Index
 
-## Usage
+---
 
-### Track Unreplied Threads
+## Quick Start: RPI Calculator
+
+### Calculate RPI for Today
 ```bash
-python3 /home/workspace/N5/scripts/productivity/unreplied_tracker.py
-# Output: Lists/unreplied_digest.md
+python3 N5/scripts/productivity/rpi_calculator.py
 ```
 
-**Dry run mode:**
+### Calculate RPI for Specific Date
 ```bash
-python3 /home/workspace/N5/scripts/productivity/unreplied_tracker.py --dry-run
-# Preview without saving
+python3 N5/scripts/productivity/rpi_calculator.py --date 2025-10-26
 ```
 
-### Query Database
-```sql
--- Sent email volume by era
-SELECT era, COUNT(*) as total, 
-       COUNT(DISTINCT date) as days,
-       ROUND(CAST(COUNT(*) AS FLOAT) / COUNT(DISTINCT date), 1) as per_day
-FROM sent_emails 
-GROUP BY era;
+### Backfill Baseline Expectations
+```bash
+# Dry run first (recommended)
+python3 N5/scripts/productivity/rpi_calculator.py --backfill --dry-run
 
--- Current unreplied threads
-SELECT subject, from_email, days_pending, priority
-FROM unreplied_threads
-ORDER BY 
-    CASE priority WHEN 'high' THEN 1 WHEN 'medium' THEN 2 ELSE 3 END,
-    days_pending DESC;
-
--- High priority unreplied
-SELECT * FROM unreplied_threads WHERE priority = 'high';
+# Actual backfill
+python3 N5/scripts/productivity/rpi_calculator.py --backfill
 ```
 
-## Database Schema
+### Recalculate All Historical RPI
+```bash
+# Dry run first (recommended)
+python3 N5/scripts/productivity/rpi_calculator.py --recalculate --dry-run
 
-```sql
-sent_emails:
-  - gmail_id (unique)
-  - thread_id
-  - date
-  - subject
-  - word_count
-  - subject_category
-  - era
-
-incoming_emails:
-  - gmail_id (unique)
-  - thread_id
-  - date
-  - subject
-  - from_email
-  - era
-
-unreplied_threads:
-  - thread_id (unique)
-  - gmail_message_id
-  - subject
-  - sender (from_email)
-  - received_at
-  - days_pending
-  - priority (high/medium/low)
-  - last_checked
-```
-
-## Automation Ideas
-
-1. **Daily digest:** Schedule `unreplied_tracker.py` to run at 9AM
-2. **Email alerts:** Send digest to your email
-3. **Slack integration:** Post high-priority unreplied to Slack
-4. **Gmail sync:** Auto-populate database from Gmail API
-
-## Example Output
-
-```
-=== UNREPLIED THREADS ===
-
-HIGH PRIORITY (1):
-  [10d] Partnership opportunity - URGENT review needed
-      From: investor@example.com
-
-MEDIUM PRIORITY (2):
-  [5d] Interview scheduling for senior role
-      From: recruiter@bigtech.com
-  [7d] Customer feedback on your product
-      From: customer@company.com
+# Actual recalculation
+python3 N5/scripts/productivity/rpi_calculator.py --recalculate
 ```
 
 ---
 
-**Created:** 2025-10-25  
-**Worker:** con_SnJYaitDHV5TlSc8  
-**Orchestrator:** con_6NobvGrBPaGJQwZA
+## Understanding RPI
+
+### Formula
+```
+RPI = (actual_emails / expected_emails) × 100
+
+Where:
+  expected_emails = (meeting_hours × 3) + 5
+  
+  - 3 emails/hour: Meeting follow-up assumption
+  - 5 emails/day: Baseline minimum expectation
+```
+
+### Performance Tiers
+
+| RPI Range | Tier | XP Multiplier | Icon |
+|-----------|------|---------------|------|
+| ≥150% | Invincible Form | 1.5× | 🔥 |
+| 125-150% | Top Performance | 1.25× | ⭐ |
+| 100-125% | Meeting Expectations | 1.0× | ✅ |
+| 75-100% | Catch Up Needed | 0.9× | ⚠️ |
+| <75% | Behind Schedule | 0.75× | 🔻 |
+
+### Examples
+
+**Scenario 1: Light Meeting Day**
+- Meeting load: 1 hour
+- Expected: (1 × 3) + 5 = 8 emails
+- Actual: 12 emails sent
+- RPI: (12 / 8) × 100 = **150% (Invincible Form 🔥)**
+
+**Scenario 2: Heavy Meeting Day**
+- Meeting load: 6 hours
+- Expected: (6 × 3) + 5 = 23 emails
+- Actual: 18 emails sent
+- RPI: (18 / 23) × 100 = **78% (Catch Up Needed ⚠️)**
+
+**Scenario 3: No Meetings**
+- Meeting load: 0 hours
+- Expected: (0 × 3) + 5 = 5 emails (baseline)
+- Actual: 8 emails sent
+- RPI: (8 / 5) × 100 = **160% (Invincible Form 🔥)**
+
+---
+
+## Streak System
+
+### Rules
+A streak continues when:
+1. Current day has `emails_sent > 0`
+2. Previous day had `emails_sent > 0` AND `rpi >= 80%`
+3. Days are consecutive (no gaps)
+
+A streak breaks when:
+- Current day has `emails_sent == 0`
+- Previous day had `rpi < 80%`
+- There's a gap in dates
+
+---
+
+## Level Progression
+
+Levels are calculated from cumulative XP:
+
+```python
+level = floor(sqrt(total_xp / 100)) + 1
+```
+
+### Example Progression
+| Total XP | Level |
+|----------|-------|
+| 0-99 | 1 |
+| 100-399 | 2 |
+| 400-899 | 3 |
+| 900-1599 | 4 |
+| 1600-2499 | 5 |
+
+---
+
+## Database Queries
+
+### View Recent RPI
+```sql
+SELECT 
+    date,
+    emails_sent,
+    ROUND(expected_emails, 1) as expected,
+    ROUND(rpi, 1) as rpi_pct,
+    xp_earned,
+    level,
+    streak_days
+FROM daily_stats
+ORDER BY date DESC
+LIMIT 10;
+```
+
+### View RPI Distribution
+```sql
+SELECT 
+    CASE 
+        WHEN rpi >= 150 THEN 'Invincible (≥150%)'
+        WHEN rpi >= 125 THEN 'Top Performance (125-150%)'
+        WHEN rpi >= 100 THEN 'Meeting Expectations (100-125%)'
+        WHEN rpi >= 75 THEN 'Catch Up Needed (75-100%)'
+        ELSE 'Behind Schedule (<75%)'
+    END as tier,
+    COUNT(*) as days,
+    ROUND(AVG(rpi), 1) as avg_rpi
+FROM daily_stats
+WHERE emails_sent > 0
+GROUP BY tier
+ORDER BY avg_rpi DESC;
+```
+
+### View Current Streak
+```sql
+SELECT 
+    date,
+    emails_sent,
+    ROUND(rpi, 1) as rpi,
+    streak_days
+FROM daily_stats
+WHERE emails_sent > 0
+ORDER BY date DESC
+LIMIT 1;
+```
+
+---
+
+## System Architecture
+
+### Data Flow
+```
+Gmail API → email_scanner.py → sent_emails table
+                                      ↓
+Google Calendar → meeting_scanner.py → expected_load table
+                                      ↓
+                                xp_system.py → xp_ledger table
+                                      ↓
+                         rpi_calculator.py → daily_stats table
+```
+
+### Tables
+
+**Input Tables:**
+- `sent_emails` - Email output tracking
+- `expected_load` - Meeting hours and expectations
+- `xp_ledger` - XP transactions
+
+**Output Table:**
+- `daily_stats` - Aggregated RPI and metrics (SSOT)
+
+---
+
+## Maintenance
+
+### Daily Operations
+Run RPI calculator automatically (via cron or scheduled task):
+```bash
+0 23 * * * cd /home/workspace && python3 N5/scripts/productivity/rpi_calculator.py
+```
+
+### Weekly Health Check
+```bash
+# Verify data freshness
+sqlite3 productivity_tracker.db "SELECT MAX(date) FROM daily_stats;"
+
+# Check average RPI
+sqlite3 productivity_tracker.db "SELECT ROUND(AVG(rpi), 1) FROM daily_stats WHERE date >= date('now', '-7 days');"
+```
+
+### Monthly Recalculation
+```bash
+# Recalculate all historical data
+python3 N5/scripts/productivity/rpi_calculator.py --recalculate
+```
+
+---
+
+## Troubleshooting
+
+### No baseline expectations
+**Problem:** Dates with emails but no expected_load entries  
+**Solution:** Run backfill
+```bash
+python3 N5/scripts/productivity/rpi_calculator.py --backfill
+```
+
+### RPI seems wrong
+**Problem:** Incorrect RPI calculation  
+**Solution:** Recalculate historical data
+```bash
+python3 N5/scripts/productivity/rpi_calculator.py --recalculate
+```
+
+### Database locked
+**Problem:** SQLite database is locked  
+**Solution:** Close other connections, wait 30 seconds, retry
+
+---
+
+## Future Enhancements
+
+1. **Email Type Tracking:** Break down by new/follow-up/response
+2. **RPI Trends:** Moving averages and trend analysis
+3. **Goal Setting:** Custom RPI targets and alerts
+4. **Visualization:** Charts and performance dashboards
+5. **Weekly/Monthly Rollups:** Aggregate statistics
+
+---
+
+## Support
+
+**Documentation:** See worker specs in `N5/orchestration/productivity-tracker/`  
+**Issues:** Report to orchestrator conversation (con_6NobvGrBPaGJQwZA)  
+**Database:** `/home/workspace/productivity_tracker.db`
+
+---
+
+**Version:** 1.0  
+**Last Updated:** 2025-10-26  
+**Status:** ✅ Production Ready
