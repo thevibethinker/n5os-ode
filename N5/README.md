@@ -40,9 +40,9 @@ N5/
 
 ## Documentation
 
-- **Full System Tour:** `file 'Documents/N5_System_Tour.md'`
+- **Full System Tour:** `file 'Documents/N5.md'`
 - **Architecture:** `file 'Knowledge/architectural/architectural_principles.md'`
-- **Meeting System:** `file 'N5/System Documentation/MEETING_SYSTEM_QUICK_REFERENCE.md'`
+- **System Docs:** `file 'Documents/System/README.md'` (guides, architecture, personas)
 
 ---
 

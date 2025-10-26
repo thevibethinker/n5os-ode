@@ -2,9 +2,9 @@
 Auto-generated | Scheduled Task
 
 ## Metadata
-- Conversation ID: con_NIbYegVjVZAnwIKY
+- Conversation ID: con_Y1DWkI38yFLJv0dT
 - Status: active
-- Type: scheduled-task
+- Type: discussion
 
 ## Focus
 Execute AI-powered meeting transcript scan with semantic deduplication; wrap with pre/post LLM request handling and summarize counts.
@@ -23,5 +23,5 @@ Execute AI-powered meeting transcript scan with semantic deduplication; wrap wit
 - Scanner: initialized, dedup enabled
 - New transcripts detected: 0
 - Downloaded: 0 | Queued requests: 0 | Skipped as duplicates: 0
-- Notes: Completed scheduled execution; no pending LLM requests; scanner ran with semantic deduplication active; no new transcripts detected this run.
-- Updated: 2025-10-26 14:05 ET
+- Notes: No pending LLM requests; scanner ran with semantic dedup; no new transcripts detected this run.
+- Updated: 2025-10-26 19:14 ET

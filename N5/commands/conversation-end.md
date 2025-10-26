@@ -765,3 +765,27 @@ test -d /home/.z/workspaces/con_[ID]/ || echo "✓ Workspace cleaned"
 - File organization, workspace cleanup
 - Placeholder detection, git checks
 - AAR generation, lesson extraction
+
+## Phases
+
+1. **Phase -1**: Lesson extraction (reflection-worker if available)
+2. **Phase 0**: AAR Generation (n5_thread_export.py)
+3. **Phase 0.5**: Thread Title Generation & Registry Update
+4. **Phase 1-2**: (Interactive file organization - currently streamlined)
+5. **Phase 2.75**: Output Review Check (review_manager integration)
+6. **Phase 3**: Build Task Check (build-companion integration)
+7. **Phase 4**: Git Status Check (uncommitted changes alert)
+8. **Phase 4.5**: Timeline Update Check (auto-add significant events)
+9. **Phase 5**: Registry Closure (mark conversation complete)
+10. **Phase 6**: Archive Promotion (auto-copy to Documents/Archive if tagged)
+
+## Archive System
+
+**Two-tier architecture** (as of 2025-10-26):
+
+1. **N5/logs/threads/** - Complete archive (SSOT), all conversations, permanent
+2. **Documents/Archive/** - Curated portfolio (~20%), auto-promoted by tags
+
+**Promotion triggers**: `#worker`, `#deliverable`, `#shipped` tags
+
+See: `file 'N5/docs/archive-promotion-system.md'` for details

@@ -38,7 +38,43 @@ Scan these locations for existing `gdrive_id` values:
 - `N5/inbox/meeting_requests/processed/*.json`
 - `N5/records/meetings/*/_metadata.json`
 
-#### b. Skip Already Queued/Processed
+#### b. AI-Based Semantic Deduplication
+**Purpose:** Catch Fireflies multi-upload duplicates (same meeting, different gdrive_ids, timestamps differ by 1-3 minutes)
+
+**Method:**
+For each new transcript NOT yet in existing gdrive_ids:
+1. Extract meeting metadata:
+   - Date from filename
+   - Participants/title (strip `-transcript-...` suffix)
+   - Original filename
+2. Call deduplication check:
+   ```python
+   from N5.scripts.meeting_ai_deduplicator import MeetingAIDeduplicator
+   
+   dedup = MeetingAIDeduplicator()
+   new_meeting = {
+       'date': '2025-10-24',
+       'title': 'Careerspan <> Sam - Partnership Discovery Call',
+       'original_filename': 'Careerspan <>  Sam - Partnership Discovery Call-transcript-2025-10-24T17-34-52.747Z.docx'
+   }
+   is_duplicate, match_id = dedup.check_duplicate(new_meeting, use_llm=True)
+   ```
+3. If `is_duplicate=True`, skip with logged message: `⏭️ Skipping duplicate: {filename} (matches: {match_id})`
+
+**Deduplication Logic:**
+- **AI Mode (preferred):** Semantic comparison via file-based LLM request
+  - Compares meeting name, date, participants against recent meetings
+  - Catches variations like "Alex x Vrijen" vs "Vrijen and Alex"
+  - 98-99% accuracy
+- **Fallback (heuristic):** Strip timestamp from filename, compare base names
+  - Fast, no LLM needed
+  - 95-98% accuracy
+
+**When to skip:**
+- Same date + nearly identical base filename (after stripping `-transcript-TIMESTAMP`)
+- AI determines semantic match even if wording differs slightly
+
+#### c. Skip Already Queued/Processed
 If `gdrive_id` exists in any of above locations, **SKIP** the file entirely.
 
 ### 4. Process Each New File

@@ -110,47 +110,64 @@ Strategic principles that define *why* we build systems this way:
 
 ---
 
-### Zero-Touch Integration Principles (23-30) **NEW**
+### Velocity Coding Principles (P23-P33) **NEW**
 
-**P23: State Management Philosophy** (Design, High)
-- Every component must maintain and expose queryable, auditable state
-- `file 'Knowledge/architectural/principles/state_management.md'`
-- *Derived from: ZT1 (Context + State Framework)*
+**From Ben Guo's Velocity Coding philosophy—think, plan, execute framework**
 
-**P24: Information Flow Design** (Design, Critical)
-- Design for flow, not storage; pools are system failures
-- `file 'Knowledge/architectural/principles/information_flow.md'`
-- *Derived from: ZT2 (Flow vs. Pools)*
+**P23: Identify Trap Doors** (Design, Critical)
+- Explicitly identify and document irreversible decisions before making them
+- `file 'Knowledge/architectural/principles/P23-identify-trap-doors.md'`
+- *Core to Think phase: flag hard-to-reverse decisions, explore alternatives*
 
-**P25: Automated Organization Philosophy** (Design, High)
-- Organization emerges from use; categorization should be automatic
-- `file 'Knowledge/architectural/principles/automated_organization.md'`
-- *Derived from: ZT3 (Organization Step Shouldn't Exist)*
+**P24: Simulation Over Doing** (Strategy, High)
+- Model, prototype, and test ideas before building production systems
+- `file 'Knowledge/architectural/principles/P24-simulation-over-doing.md'`
+- *Simulation is faster than doing; write specs, prototype, then implement*
 
-**P26: Maintenance-First Design** (Design, High)
-- Design for continuous maintenance with review rhythms and health checks
-- `file 'Knowledge/architectural/principles/maintenance_first.md'`
-- *Derived from: ZT4 (Maintenance > Organization)*
+**P25: Code Is Free** (Strategy, Medium)
+- Generate, test, and discard code freely; architecture cost is what matters
+- `file 'Knowledge/architectural/principles/P25-code-is-free.md'`
+- *With AI, code generation is cheap—leverage for prototyping and refactoring*
 
-**P27: System Integration Patterns** (Design, High)
-- Optimize for system-wide effectiveness, not individual component excellence
-- `file 'Knowledge/architectural/principles/system_integration.md'`
-- *Derived from: ZT6 (Gestalt Evaluation)*
+**P26: Fast Feedback Loops** (Operations, High)
+- Design systems for immediate feedback; faster iteration enables flow
+- `file 'Knowledge/architectural/principles/P26-fast-feedback-loops.md'`
+- *Optimize action-to-outcome time; <10s ideal, >60s requires progress bars*
 
-**P28: AIR Pattern** (Operations, Critical)
-- Assess-Intervene-Review: AI automates first two, humans review
-- `file 'Knowledge/architectural/principles/air_pattern.md'`
-- *Derived from: ZT7 (AIR Pattern)*
+**P27: Nemawashi Mode** (Strategy, High)
+- Explore 2-3 alternatives before committing; build consensus with yourself
+- `file 'Knowledge/architectural/principles/P27-nemawashi-mode.md'`
+- *Japanese consensus-building applied to design: evaluate options explicitly*
 
-**P29: Human-in-Loop Design** (Operations, Critical)
-- Humans as approvers of what matters, not operators of routine processes
-- `file 'Knowledge/architectural/principles/human_in_loop.md'`
-- *Derived from: ZT8 (Minimal Touch)*
+**P28: Plans As Code DNA** (Strategy, Critical)
+- Code quality determined upstream in plans, not downstream in implementation
+- `file 'Knowledge/architectural/principles/P28-plans-as-code-dna.md'`
+- *Most important principle: plans generate code; care about plan quality*
 
-**P30: Minimal Touch Philosophy** (Operations, High)
-- Reduce human intervention to strategic decisions and exceptions only
-- `file 'Knowledge/architectural/principles/minimal_touch.md'`
-- *Derived from: ZT8 (Minimal Touch)*
+**P29: Focus Plus Parallel** (Operations, Medium)
+- One primary focus + one auxiliary parallel task; not zero, not five
+- `file 'Knowledge/architectural/principles/P29-focus-plus-parallel.md'`
+- *Strategic parallelism: you focus, AI works in background*
+
+**P30: Maintain Feel For Code** (Quality, High)
+- Stay connected to shape, quality, and craft of generated code
+- `file 'Knowledge/architectural/principles/P30-maintain-feel-for-code.md'`
+- *Read generated code, understand architecture; should feel mentally tired*
+
+**P31: Own The Planning Process** (Strategy, Critical)
+- YOU write plans, AI executes plans; never delegate planning to AI
+- `file 'Knowledge/architectural/principles/P31-own-the-planning-process.md'`
+- *Planning is strategic judgment; AI handles mechanical execution*
+
+**P32: Simple Over Easy** (Design Philosophy, Critical)
+- Choose simple (few braids) over easy (familiar); from Rich Hickey
+- `file 'Knowledge/architectural/principles/P32-simple-over-easy.md'`
+- *Simple Made Easy: disentangled concepts beat convenient frameworks*
+
+**P33: Old Tricks Still Work** (Quality, Medium)
+- Tests, types, linting, refactoring remain essential with AI coding
+- `file 'Knowledge/architectural/principles/P33-old-tricks-still-work.md'`
+- *Quality practices more important than ever; AI changes speed, not fundamentals*
 
 ---
 
@@ -204,6 +221,26 @@ Principles are organized into these directories:
 ---
 
 ## Change Log
+
+### 2025-10-26 (v2.7) **VELOCITY CODING INTEGRATION**
+- **Added 11 new principles (P23-P33):** Velocity Coding philosophy from Ben Guo
+- **Created Planning Prompt:** `file 'Knowledge/architectural/planning_prompt.md'` - philosophical DNA for system design
+- **Replaced previous P23-P30:** Zero-Touch integration principles superseded by velocity coding framework
+- **Key additions:**
+  - P23: Identify Trap Doors (irreversible decisions)
+  - P24: Simulation Over Doing (prototype first)
+  - P25: Code Is Free (leverage AI generation)
+  - P26: Fast Feedback Loops (<10s ideal)
+  - P27: Nemawashi Mode (explore alternatives)
+  - P28: Plans As Code DNA (MOST CRITICAL - quality is upstream)
+  - P29: Focus Plus Parallel (one + one optimal)
+  - P30: Maintain Feel For Code (understand what you generate)
+  - P31: Own The Planning Process (you plan, AI executes)
+  - P32: Simple Over Easy (Rich Hickey's principle)
+  - P33: Old Tricks Still Work (tests, types, linting)
+- **Framework:** Think (40%) → Plan (30%) → Execute (10%) → Review (20%)
+- **Integration complete:** Planning prompt auto-loads for system design work
+- **Updated:** Vibe Builder persona v1.2 with planning prompt integration
 
 ### 2025-10-19 (v2.6)
 - **Batch 3:** Integrated 11 final acceptable lessons (all remaining except speculative #13)
