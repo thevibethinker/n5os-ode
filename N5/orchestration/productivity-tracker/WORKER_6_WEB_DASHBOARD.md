@@ -1,8 +1,8 @@
 # Worker 6: Web Dashboard
 
-**Orchestrator:** con_6NobvGrBPaGJQwZA  
-**Task ID:** W6-WEB-DASHBOARD  
-**Estimated Time:** 2 hours  
+**Orchestrator:** con_6NobvGrBPaGJQwZA\
+**Task ID:** W6-WEB-DASHBOARD\
+**Estimated Time:** 2 hours\
 **Dependencies:** Worker 5 (RPI Calculator, all data available)
 
 ---
@@ -16,6 +16,7 @@ Build lo-fi Arsenal FC-themed web dashboard using Bun + Hono that displays real-
 ## Context
 
 The dashboard is the daily engagement point. It must be:
+
 - Fast and lightweight
 - Arsenal red/white themed
 - Mobile-friendly
@@ -50,7 +51,7 @@ Worker 5 complete (RPI calculator, daily_stats populated)
 
 ### Today View Components
 
-```
+```markdown
 ┌─────────────────────────────────────────┐
 │     ARSENAL PRODUCTIVITY TRACKER        │
 │              🔴 ⚪                       │
@@ -329,7 +330,7 @@ bun run index.tsx
 
 1. ✅ Dashboard site created
 2. ✅ Registered as user service
-3. ✅ Public URL: https://va-productivity.zo.computer
+3. ✅ Public URL: <https://va-productivity.zo.computer>
 4. ✅ Today view working
 5. ✅ Arsenal theme applied
 6. ✅ Auto-refresh working
@@ -337,5 +338,5 @@ bun run index.tsx
 
 ---
 
-**Orchestrator Contact:** con_6NobvGrBPaGJQwZA  
+**Orchestrator Contact:** con_6NobvGrBPaGJQwZA\
 **Created:** 2025-10-25 00:15 ET

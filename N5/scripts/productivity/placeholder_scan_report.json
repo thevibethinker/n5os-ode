@@ -1,0 +1,48 @@
+{
+  "timestamp": "/home/workspace",
+  "total_issues": 5,
+  "by_severity": {
+    "medium": [
+      {
+        "file": "db_setup.py",
+        "line": 217,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.error(\"Eras seed data incomplete: expected 3, found %d\", era_count)"
+      },
+      {
+        "file": "db_setup.py",
+        "line": 225,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "logger.error(\"Achievements seed data incomplete: expected 9, found %d\", achievem"
+      },
+      {
+        "file": "xp_system.py",
+        "line": 307,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "This is a temporary helper until Worker 3 (Email Activity Tracker) is built."
+      },
+      {
+        "file": "xp_system.py",
+        "line": 720,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "# Single date calculation not implemented yet"
+      },
+      {
+        "file": "rpi_calculator.py",
+        "line": 294,
+        "pattern": "comment_placeholders",
+        "severity": "medium",
+        "message": "Undocumented placeholder comment",
+        "context": "'streak_days': 0,  # Placeholder, calculated after insert"
+      }
+    ]
+  }
+}

@@ -681,7 +681,7 @@ def save_proposed_title():
         
         # Generate title
         generator = TitleGenerator()
-        titles = generator.generate_title_options(aar_data, artifacts)
+        titles = generator.generate_titles(aar_data, artifacts)
         
         if not titles:
             logger.debug("No titles generated")
