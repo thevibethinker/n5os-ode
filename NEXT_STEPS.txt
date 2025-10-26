@@ -1,0 +1,8 @@
+Please save the Zo testimonials screenshot to /home/workspace/n5-waitlist/public/zo-testimonials.png
+
+The testimonial carousel section from zo.computer showing:
+- 'Join the Zo Computer Club' heading
+- Cards with quotes from Becca (Factorial), Shreyans (Maven), Vrijen (Careerspan), Jesse (Stripe)
+- Horizontal scrolling layout
+
+Once saved, the site will automatically display it with 'From the Zo website' caption below.

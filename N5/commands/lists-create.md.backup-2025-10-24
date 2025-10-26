@@ -41,7 +41,7 @@ Tags: lists, registry
 
 ## Related Components
 
-**Related Commands**: [`lists-add`](../commands/lists-add.md), [`lists-set`](../commands/lists-set.md), [`lists-find`](../commands/lists-find.md), [`lists-docgen`](../commands/docgen.md), [`lists-export`](../commands/lists-export.md)
+**Related Commands**: [`lists-add`](../commands/lists-add.md), [`lists-set`](../commands/lists-set.md), [`lists-find`](../commands/lists-find.md), [`lists-docgen`](../commands/lists-docgen.md), [`lists-export`](../commands/lists-export.md)
 
 **Knowledge Areas**: [List Management](../knowledge/list-management.md)
 
