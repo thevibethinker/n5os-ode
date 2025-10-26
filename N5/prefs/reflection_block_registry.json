@@ -1,0 +1,173 @@
+{
+  "version": "1.0.0",
+  "artifact": "Reflection Block Registry",
+  "purpose": "Define reflection block types (B50-B99) for voice reflection processing pipeline",
+  "last_updated": "2025-10-25",
+  "blocks": {
+    "B50": {
+      "name": "Personal Reflection",
+      "description": "Stream-of-consciousness self-reflection for personal growth",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B50-personal-reflection.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["feeling", "personally", "struggling with", "learning about myself", "growth", "emotions", "mindset"],
+      "examples": [
+        "Personal growth journey",
+        "Emotional processing",
+        "Self-awareness development",
+        "Personal challenges"
+      ]
+    },
+    "B60": {
+      "name": "Learning & Synthesis",
+      "description": "Capture insights from research, reading, conversations",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B60-learning-synthesis.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["insight from", "learned that", "discovered", "synthesis", "aha moment", "understanding", "connecting dots"],
+      "examples": [
+        "Key insights from reading",
+        "Learning from conversations",
+        "Synthesizing multiple sources",
+        "Connecting patterns"
+      ]
+    },
+    "B70": {
+      "name": "Thought Leadership",
+      "description": "Original thinking on industry topics for professional audience",
+      "domain": "external_professional",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B70-thought-leadership.md",
+      "auto_approve_threshold": 5,
+      "keywords": ["industry", "trend", "future of", "prediction", "perspective on", "opinion about", "controversial"],
+      "examples": [
+        "Industry trend analysis",
+        "Future predictions",
+        "Contrarian perspectives",
+        "Thought pieces on career tech"
+      ]
+    },
+    "B71": {
+      "name": "Market Analysis",
+      "description": "Analysis of market trends, competitor landscape, opportunities",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B71-market-analysis.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["competitor", "market", "landscape", "positioning", "opportunity", "gap in market", "player"],
+      "examples": [
+        "Competitive landscape review",
+        "Market opportunity identification",
+        "Positioning analysis",
+        "Competitor moves"
+      ]
+    },
+    "B72": {
+      "name": "Product Analysis",
+      "description": "Deep dive on product decisions, features, roadmap",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B72-product-analysis.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["feature", "roadmap", "user", "product", "functionality", "MVP", "iteration", "build"],
+      "examples": [
+        "Feature prioritization",
+        "Roadmap thinking",
+        "User experience analysis",
+        "Product decisions"
+      ]
+    },
+    "B73": {
+      "name": "Strategic Thinking",
+      "description": "High-level strategy, positioning, long-term vision",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B73-strategic-thinking.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["strategy", "vision", "long-term", "positioning", "big picture", "strategic", "direction"],
+      "examples": [
+        "Strategic direction",
+        "Long-term vision",
+        "Positioning strategy",
+        "Big picture thinking"
+      ]
+    },
+    "B80": {
+      "name": "LinkedIn Post",
+      "description": "Social content for external professional audience",
+      "domain": "external_social",
+      "voice_profile": "N5/prefs/communication/social-media-voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/linkedin-posts.md",
+      "auto_approve_threshold": 0,
+      "keywords": ["announcement", "sharing", "excited to", "proud to", "post about", "social"],
+      "examples": [
+        "Professional updates",
+        "Company announcements",
+        "Industry insights for LinkedIn",
+        "Personal brand building"
+      ]
+    },
+    "B81": {
+      "name": "Blog Post",
+      "description": "Long-form content for Careerspan blog or external publication",
+      "domain": "external_professional",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B81-blog-post.md",
+      "auto_approve_threshold": 0,
+      "keywords": ["deep dive", "comprehensive", "detailed analysis", "blog", "article", "write about"],
+      "examples": [
+        "Long-form thought pieces",
+        "Detailed analysis articles",
+        "Careerspan blog content",
+        "External publications"
+      ]
+    },
+    "B82": {
+      "name": "Executive Memo",
+      "description": "Structured memo for internal stakeholders or external partners",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B82-executive-memo.md",
+      "auto_approve_threshold": 5,
+      "keywords": ["decision", "recommendation", "action items", "memo", "executive summary", "stakeholders"],
+      "examples": [
+        "Strategic memos",
+        "Decision documents",
+        "Partner communications",
+        "Executive summaries"
+      ]
+    },
+    "B90": {
+      "name": "Insight Compounding",
+      "description": "Synthesize patterns across multiple reflections over time",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B90-insight-compound.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["pattern across", "noticed over time", "evolution of", "recurring theme", "meta-pattern"],
+      "examples": [
+        "Pattern recognition across reflections",
+        "Longitudinal insights",
+        "Thematic synthesis",
+        "Evolution tracking"
+      ]
+    },
+    "B91": {
+      "name": "Meta-Reflection",
+      "description": "Reflection on reflection process itself, evolution of thinking",
+      "domain": "internal",
+      "voice_profile": "N5/prefs/communication/voice.md",
+      "style_guide": "N5/prefs/communication/style-guides/reflections/B91-meta-reflection.md",
+      "auto_approve_threshold": 10,
+      "keywords": ["reflection process", "how I think", "my thinking", "meta", "process itself", "methodology"],
+      "examples": [
+        "Reflection on reflection practice",
+        "Thinking about thinking",
+        "Process improvements",
+        "Meta-cognition"
+      ]
+    }
+  }
+}
