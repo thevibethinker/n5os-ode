@@ -1,5 +1,7 @@
 # ZERO-TOUCH
+
 ## Building Cognitive Infrastructure for the AI Age
+
 ### A Founder's Guide to Post-Organization Productivity
 
 **By Vrijen Attawar**
@@ -8,7 +10,7 @@
 
 ## I. The Problem Nobody's Naming
 
-Let me tell you what's actually killing your productivity. It's not your lack of discipline. It's not that you need another app, another system, another morning routine. 
+Let me tell you what's actually killing your productivity. It's not your lack of discipline. It's not that you need another app, another system, another morning routine.
 
 It's that **you're drowning in your own intelligence.**
 
@@ -30,7 +32,7 @@ The problem isn't you. The problem is that we're using pre-AI thinking in an AI-
 
 Everything in knowledge work reduces to two variables:
 
-**Context** = The right information in your head at the right time  
+**Context** = The right information in your head at the right time\
 **State** = The current condition of all information and how it's being processed
 
 That's it. That's the whole game.
@@ -38,6 +40,7 @@ That's it. That's the whole game.
 When you can't remember where you filed that crucial insight? Context problem. When you're staring at 47 browser tabs trying to figure out what you were doing? State problem. When you waste 20 minutes finding a document you saved last week? Both.
 
 Most productivity systems optimize for one or the other:
+
 - **GTD** optimizes for state (everything captured, nothing in your head)
 - **Zettelkasten** optimizes for context (everything linked, serendipitous discovery)
 - **PARA** tries to bridge both but assumes you'll do the organizing
@@ -45,8 +48,9 @@ Most productivity systems optimize for one or the other:
 None of them solve the fundamental issue: **maintaining context and state is cognitive overhead that shouldn't exist in the first place.**
 
 In the AI age, your system should do three things automatically:
+
 1. **Capture** everything without you thinking about it
-2. **Surface** what you need when you need it  
+2. **Surface** what you need when you need it
 3. **Flow** information to where it creates value
 
 Notice what's missing? Organization. Tagging. Filing. All the bullshit that steals your time and fragments your attention.
@@ -60,8 +64,9 @@ Here's the metaphor that changed how I think about knowledge:
 **Information is like water. It either flows or it pools. When it pools, it rots.**
 
 Every productivity system creates pools:
+
 - Your "Read Later" list (池 pool)
-- Your "Inbox Zero" archive (池 pool)  
+- Your "Inbox Zero" archive (池 pool)
 - Your perfectly organized folder structure (池 pool)
 - Your comprehensive Notion database (池 pool)
 
@@ -71,7 +76,7 @@ The reason? **You've optimized for organization, not retrieval.**
 
 A properly designed system doesn't have pools—it has **flow channels**:
 
-```
+```markdown
 Input → Triage → Processing → Knowledge/Action → Archive/Delete
 ```
 
@@ -85,11 +90,11 @@ The question isn't "Where should I file this?" The question is "Where does this 
 
 I've built and rebuilt my system a dozen times over the last few months. Here's what survived:
 
-### Principle 1: Maintenance > Organization
+### Principle 1: Maintenance &gt; Organization
 
 You will never "organize" your way to productivity. Organization is a one-time event. Maintenance is a continuous process.
 
-**Traditional thinking:** Spend a weekend building the perfect system, then maintain it.  
+**Traditional thinking:** Spend a weekend building the perfect system, then maintain it.\
 **Reality:** Build a system that maintains itself, with you as the quality control.
 
 In my system (N5OS), I don't organize files—I maintain flows. Every week, I review what moved through the system. What got stuck? What bypassed the normal flow? What needs a new channel?
@@ -103,7 +108,8 @@ Your system will break. You'll save things wrong. Files will end up in the wrong
 The question is: does your system detect and fix these breaks automatically?
 
 Example from N5OS:
-```
+
+```markdown
 IF file added to git is empty
 THEN flag for review + log error + notify user
 ```
@@ -111,22 +117,24 @@ THEN flag for review + log error + notify user
 This isn't about preventing errors—it's about **designing systems that catch their own failures and route them to human attention.**
 
 Your AI can check:
+
 - Empty files created
-- Duplicate entries in lists  
+- Duplicate entries in lists
 - Uncommitted changes older than 24 hours
 - Missing expected outputs from workflows
 
 Every one of these is a self-healing pattern that reduces cognitive load. You're not constantly checking if things worked—the system tells you when they didn't.
 
-### Principle 3: Gestalt Evaluation > Point Solutions
+### Principle 3: Gestalt Evaluation &gt; Point Solutions
 
 Stop optimizing individual apps. Start evaluating your entire cognitive infrastructure as a system.
 
 The question isn't "Is Notion better than Obsidian?" The question is "Does my information flow create the context and maintain the state I need to do my best work?"
 
 I use:
+
 - Zo (compute + AI)
-- N5OS (knowledge operating system)  
+- N5OS (knowledge operating system)
 - Git (version control + sync)
 - SQLite (structured data)
 - Markdown (everything else)
@@ -139,14 +147,15 @@ This is platform orchestration, not all-in-one solutions. Each component is best
 
 Every piece of information that enters your system should go through this cycle:
 
-**Assess**: Where does this belong? What's its purpose?  
-**Intervene**: What transformation or action does it need?  
+**Assess**: Where does this belong? What's its purpose?\
+**Intervene**: What transformation or action does it need?\
 **Review**: Did it flow correctly? Does the pattern hold?
 
 This isn't something you do manually—it's something your AI does automatically, with you reviewing the decisions.
 
 Example: I voice-record an insight.
-- **Assess**: AI transcribes, identifies it as "business strategy" based on content  
+
+- **Assess**: AI transcribes, identifies it as "business strategy" based on content
 - **Intervene**: Routes to `Records/Company/`, flags for weekly review
 - **Review**: On Friday, I see it in my review queue, confirm placement, promote to Knowledge if valuable
 
@@ -161,7 +170,8 @@ This is the radical idea that ties everything together:
 **In a properly designed system, you never stop what you're doing to organize information.**
 
 Organization happens as an artifact of capture and flow. The system knows:
-- What you're working on (context)  
+
+- What you're working on (context)
 - What needs to move where (routing rules)
 - When human judgment is required (review queues)
 
@@ -178,8 +188,9 @@ Enough philosophy. Let's build.
 ### Step 1: Map Your Information Flows (Week 1)
 
 Don't build anything yet. Just observe:
+
 - Where does information enter your world? (email, articles, meetings, ideas)
-- Where does it need to end up? (Knowledge, Actions, People, Archive)  
+- Where does it need to end up? (Knowledge, Actions, People, Archive)
 - What transformations does it need? (summarize, extract tasks, connect to projects)
 
 Track this for one week. You'll see patterns. These patterns are your flow channels.
@@ -189,7 +200,7 @@ Track this for one week. You'll see patterns. These patterns are your flow chann
 Single Source of Truth. Every category of information needs one canonical location:
 
 - **Knowledge**: Permanent insights, frameworks, principles → `Knowledge/`
-- **Actions**: Things to do, outcomes to track → `Lists/`  
+- **Actions**: Things to do, outcomes to track → `Lists/`
 - **Records**: Raw material, work-in-progress → `Records/`
 - **Systems**: How your system works → `N5/` (or your equivalent)
 
@@ -202,16 +213,19 @@ Everything else is either a transformation of SSOT data or a temporary view.
 Pick your three highest-volume information flows and build AIR patterns:
 
 **Example 1: Article Capture**
+
 - **Assess**: Save article → AI summarizes + extracts key points + determines category
-- **Intervene**: Routes to `Records/Reading/[category]/` + creates review entry  
+- **Intervene**: Routes to `Records/Reading/[category]/` + creates review entry
 - **Review**: Weekly review shows summary, you decide: Keep/Archive/Promote to Knowledge
 
-**Example 2: Meeting Notes**  
+**Example 2: Meeting Notes**
+
 - **Assess**: Meeting ends → AI transcribes + extracts action items + identifies attendees
 - **Intervene**: Creates/updates person files + adds tasks to Lists + files in Records
 - **Review**: You confirm action items, edit anything AI missed
 
 **Example 3: Ideas**
+
 - **Assess**: Voice note captured → AI transcribes + categorizes + checks for duplicates
 - **Intervene**: Routes to appropriate project folder + flags if connects to existing work
 - **Review**: Shows connections, you decide next action
@@ -221,7 +235,8 @@ These three flows probably handle 70% of your information intake. Nail these, ev
 ### Step 4: Self-Healing Patterns (Week 5-6)
 
 Add error detection:
-- Empty files check (runs nightly)  
+
+- Empty files check (runs nightly)
 - Orphaned tasks check (items in Lists with no recent activity)
 - Uncommitted changes check (files modified but not saved to sync)
 - Duplicate detection (similar content in multiple places)
@@ -232,8 +247,8 @@ These scripts run automatically. They don't fix—they flag for your review. You
 
 Set up three review cadences:
 
-**Daily** (5 min): What flowed today? Any breaks in the system?  
-**Weekly** (30 min): Review all flagged items, assess what got stuck, adjust routing  
+**Daily** (5 min): What flowed today? Any breaks in the system?\
+**Weekly** (30 min): Review all flagged items, assess what got stuck, adjust routing\
 **Monthly** (2 hrs): Evaluate the whole system. What's working? What's pooling? What needs new channels?
 
 This isn't maintenance burden—it's **building review muscle.** The more you review, the better your system gets at knowing what you value.
@@ -268,8 +283,8 @@ That's what I'm doing. That's what you'll do if you build this.
 
 And here's the trajectory I see:
 
-**2024-2025**: High-discipline founders building custom Zero-Touch systems  
-**2025-2027**: Packaged solutions that implement these principles for knowledge workers  
+**2024-2025**: High-discipline founders building custom Zero-Touch systems\
+**2025-2027**: Packaged solutions that implement these principles for knowledge workers\
 **2027-2030**: Consumer-grade AI-orchestrated cognitive infrastructure
 
 We're at the Unix stage. The patterns we discover now—Context + State, Flow vs. Pools, AIR, Self-Healing, Gestalt Evaluation—these will become the foundations that others productize and simplify.
@@ -307,9 +322,10 @@ You don't need to build everything at once. Start here:
 Pick your biggest information pool—probably "Read Later" or "Inbox."
 
 Empty it using this protocol:
+
 - Skim each item
 - If it sparks action: add to task list and delete
-- If it's reference: extract key point to knowledge base and delete  
+- If it's reference: extract key point to knowledge base and delete
 - If it's genuinely valuable and unprocessed: process it now or schedule specific time
 - Everything else: delete
 
@@ -320,7 +336,8 @@ Notice how liberating that feels? That's because **pools are cognitive weight.**
 Pick one high-volume information flow (probably articles or meeting notes).
 
 Build the simplest possible AIR pattern:
-- **Assess**: Save → AI summarizes  
+
+- **Assess**: Save → AI summarizes
 - **Intervene**: Summary goes to specific folder
 - **Review**: You read summaries weekly and decide keep/delete
 
@@ -331,8 +348,9 @@ Watch how it changes your relationship with that information type.
 ### Experiment 3: Track Context Switches (1 week)
 
 Every time you switch projects, note:
+
 - How long did it take to remember where you were?
-- What information did you need?  
+- What information did you need?
 - How long did it take to find it?
 
 At week's end, you'll see exactly where your cognitive infrastructure is failing you. Those are your highest-value optimization targets.
@@ -364,15 +382,15 @@ Zero-Touch philosophy translates into concrete architectural patterns. Here's ho
 ### From Philosophy to Architecture
 
 | Zero-Touch Principle | Architectural Implementation | Key Pattern |
-|-------------------|----------------------------|-------------|
+| --- | --- | --- |
 | **ZT1: Context + State** | P23: State Management | Every component exposes queryable state |
 | **ZT2: Flow vs. Pools** | P24: Information Flow Design | Track residence time, auto-alert on pools |
-| **ZT3: Organization Shouldn't Exist** | P25: Automated Organization | 85%+ auto-routed, <5% correction rate |
-| **ZT4: Maintenance > Organization** | P26: Maintenance-First Design | Daily/weekly/monthly review rhythms |
+| **ZT3: Organization Shouldn't Exist** | P25: Automated Organization | 85%+ auto-routed, &lt;5% correction rate |
+| **ZT4: Maintenance &gt; Organization** | P26: Maintenance-First Design | Daily/weekly/monthly review rhythms |
 | **ZT5: SSOT Always** | P2: Single Source of Truth | One canonical location per info type |
 | **ZT6: Gestalt Evaluation** | P27: System Integration | Measure end-to-end flow, not components |
 | **ZT7: AIR Pattern** | P28: Assess-Intervene-Review | AI automates, human reviews exceptions |
-| **ZT8: Minimal Touch** | P29 & P30: Human-in-Loop + Minimal Touch | Target <15% touch rate |
+| **ZT8: Minimal Touch** | P29 & P30: Human-in-Loop + Minimal Touch | Target &lt;15% touch rate |
 | **ZT9: Self-Aware** | P26: Maintenance-First | System tracks its own health |
 | **ZT10: Platform Orchestration** | P27: System Integration | Best-in-class components, intelligent routing |
 
@@ -382,7 +400,7 @@ Zero-Touch philosophy translates into concrete architectural patterns. Here's ho
 
 Every information type needs explicit flow definition:
 
-```
+```markdown
 Entry → Transform → Destination → Archive/Delete
   ↓         ↓           ↓              ↓
 24hr      7 days    permanent      removed
@@ -394,7 +412,7 @@ If time > threshold → Alert (pool detected)
 
 Not everything needs human review:
 
-```
+```markdown
 Confidence >90%: Auto-complete (70-80% of items)
 Confidence 80-90%: Complete + flag (15-20%)
 Confidence <80%: Hold for review (5-10%)
@@ -404,7 +422,7 @@ Tune based on correction rate
 
 **Pattern 3: Maintenance Rhythms**
 
-```
+```markdown
 Daily (5min):   What broke? Automated health check
 Weekly (30min): What's pooling? Human review of flagged items
 Monthly (2hr):  Is system working? Evaluate metrics + redesign
@@ -414,11 +432,11 @@ Monthly (2hr):  Is system working? Evaluate metrics + redesign
 
 Track these to know if Zero-Touch is working:
 
-- **Touch rate**: <15% (% items needing manual routing)
-- **Pool warnings**: <5% (items exceeding residence time)
-- **Flow time**: <10 days (entry → exit)
-- **Correction rate**: <5% (AI routes changed by human)
-- **Health score**: >85/100 (composite metric)
+- **Touch rate**: &lt;15% (% items needing manual routing)
+- **Pool warnings**: &lt;5% (items exceeding residence time)
+- **Flow time**: &lt;10 days (entry → exit)
+- **Correction rate**: &lt;5% (AI routes changed by human)
+- **Health score**: &gt;85/100 (composite metric)
 
 ### Safety Principles
 
@@ -432,9 +450,9 @@ Zero-Touch requires safeguards:
 
 ### Architecture Reference
 
-Full architectural principles at: `file 'Knowledge/architectural/architectural_principles.md'`
+Full architectural principles at: `file Knowledge/architectural/architectural_principles.md`
 
-Individual principle files in: `file 'Knowledge/architectural/principles/'`
+Individual principle files in: `file Knowledge/architectural/principles/`
 
 ---
 
@@ -442,28 +460,28 @@ Individual principle files in: `file 'Knowledge/architectural/principles/'`
 
 For easy reference, here are the core tenets:
 
-1. **Context + State Framework**: All knowledge work reduces to having the right information (context) and knowing the current state of all information (state).
+ 1. **Context + State Framework**: All knowledge work reduces to having the right information (context) and knowing the current state of all information (state).
 
-2. **Flow vs. Pools**: Information either flows to where it creates value or pools where it rots. Design for flow.
+ 2. **Flow vs. Pools**: Information either flows to where it creates value or pools where it rots. Design for flow.
 
-3. **Organization Step Shouldn't Exist**: In a properly designed system, organization happens as an artifact of capture and use, not as a separate activity.
+ 3. **Organization Step Shouldn't Exist**: In a properly designed system, organization happens as an artifact of capture and use, not as a separate activity.
 
-4. **Maintenance > Organization**: You can't organize your way to productivity. Build systems that maintain themselves with you as quality control.
+ 4. **Maintenance &gt; Organization**: You can't organize your way to productivity. Build systems that maintain themselves with you as quality control.
 
-5. **Self-Healing by Design**: Your system should detect its own failures and route them to human attention.
+ 5. **Self-Healing by Design**: Your system should detect its own failures and route them to human attention.
 
-6. **Gestalt Evaluation**: Evaluate your entire cognitive infrastructure as a system, not individual tools in isolation.
+ 6. **Gestalt Evaluation**: Evaluate your entire cognitive infrastructure as a system, not individual tools in isolation.
 
-7. **AIR Pattern**: Every piece of information goes through Assess → Intervene → Review, mostly automated.
+ 7. **AIR Pattern**: Every piece of information goes through Assess → Intervene → Review, mostly automated.
 
-8. **Minimal Touch**: You're an approver, not an operator. The system does the work, you provide judgment.
+ 8. **Minimal Touch**: You're an approver, not an operator. The system does the work, you provide judgment.
 
-9. **SSOT Always**: Every category of information has exactly one canonical location. Everything else is a transformation or view.
+ 9. **SSOT Always**: Every category of information has exactly one canonical location. Everything else is a transformation or view.
 
 10. **Platform Orchestration**: Best-in-class components with intelligent routing between them, not all-in-one solutions.
 
 ---
 
-**Want to go deeper?** Connect with me at [your contact info]. Let's build the future of knowledge work together.
+**Want to go deeper?** Connect with me at \[your contact info\]. Let's build the future of knowledge work together.
 
 *v1.0 | October 2024*

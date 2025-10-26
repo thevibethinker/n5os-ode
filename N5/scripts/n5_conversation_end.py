@@ -1057,6 +1057,134 @@ def registry_closure():
         logger.debug("Registry closure error", exc_info=True)
 
 
+def archive_promotion():
+    """
+    Phase 6: Archive Promotion
+    Auto-promote significant conversations to Documents/Archive based on rules
+    See: N5/prefs/operations/archive-promotion.md
+    """
+    print("\n" + "="*70)
+    print("PHASE 6: ARCHIVE PROMOTION CHECK")
+    print("="*70)
+    
+    if not CONVERSATION_REGISTRY_AVAILABLE:
+        print("⚠️  Conversation registry not available, skipping promotion")
+        return
+    
+    if not CONVERSATION_WS:
+        print("⚠️  Conversation workspace not detected, skipping promotion")
+        return
+    
+    try:
+        convo_id = CONVERSATION_WS.name
+        if not convo_id.startswith("con_"):
+            print(f"⚠️  Invalid conversation ID: {convo_id}")
+            return
+        
+        registry = ConversationRegistry()
+        convo = registry.get(convo_id)
+        
+        if not convo:
+            print(f"⚠️  Conversation {convo_id} not in registry, skipping promotion")
+            return
+        
+        # Check promotion rules
+        should_promote = False
+        promotion_reason = None
+        
+        # Rule 1: Worker tag
+        tags = convo.get('tags', '').split(',') if convo.get('tags') else []
+        tags = [t.strip().lower() for t in tags]
+        
+        if 'worker' in tags:
+            should_promote = True
+            promotion_reason = "worker completion"
+        
+        # Rule 2: Deliverable tag
+        if 'deliverable' in tags:
+            should_promote = True
+            promotion_reason = "explicit deliverable tag"
+        
+        # Rule 3: Check deliverables registry (future)
+        # TODO: Implement when deliverables registry API available
+        
+        if not should_promote:
+            print("  No promotion criteria met")
+            print("  → Archive remains in N5/logs/threads only")
+            return
+        
+        print(f"\n✨ Promotion criteria met: {promotion_reason}")
+        
+        # Find source archive in N5/logs/threads
+        threads_dir = WORKSPACE / "N5/logs/threads"
+        if not threads_dir.exists():
+            print("⚠️  N5/logs/threads directory not found")
+            return
+        
+        # Find most recent archive matching conversation
+        archives = sorted(threads_dir.glob(f"*_{convo_id[:4]}"), reverse=True)
+        if not archives:
+            print(f"⚠️  No archive found in N5/logs/threads for {convo_id}")
+            return
+        
+        source_archive = archives[0]
+        print(f"  Source: {source_archive.name}")
+        
+        # Generate target path in Documents/Archive
+        archive_name = source_archive.name
+        # Extract date and title parts
+        parts = archive_name.split('_', 2)
+        if len(parts) >= 3:
+            date_part = parts[0]  # YYYY-MM-DD-HHMM
+            title_part = parts[1]  # Title with emoji
+            # Clean for Documents/Archive (remove time, keep date)
+            clean_date = date_part[:10]  # YYYY-MM-DD only
+            target_name = f"{clean_date}-{title_part}"
+        else:
+            target_name = archive_name
+        
+        target_archive = WORKSPACE / "Documents/Archive" / target_name
+        
+        # Check if already promoted
+        if target_archive.exists():
+            print(f"  ✓ Already promoted to: {target_name}")
+            return
+        
+        print(f"  Target: Documents/Archive/{target_name}")
+        print(f"\n  Copying archive...")
+        
+        # Copy archive
+        shutil.copytree(source_archive, target_archive, dirs_exist_ok=False)
+        
+        # Update README with promotion metadata
+        readme_path = target_archive / "README.md"
+        if readme_path.exists():
+            with open(readme_path, 'r') as f:
+                content = f.read()
+            
+            # Add promotion metadata at top
+            metadata = f"""---
+promoted_from: N5/logs/threads/{source_archive.name}
+promoted_date: {datetime.now().isoformat()}
+promotion_reason: {promotion_reason}
+conversation_id: {convo_id}
+---
+
+"""
+            with open(readme_path, 'w') as f:
+                f.write(metadata + content)
+        
+        print(f"\n✅ Archive promoted successfully!")
+        print(f"   Location: Documents/Archive/{target_name}")
+        print(f"   Reason: {promotion_reason}")
+        print(f"   SSOT remains: N5/logs/threads/{source_archive.name}")
+        
+    except Exception as e:
+        logger.error(f"Archive promotion failed: {e}", exc_info=True)
+        print(f"⚠️  Archive promotion error: {e}")
+        print("   → Continuing without promotion")
+
+
 def main(dry_run=False):
     """Main execution"""
     
@@ -1234,6 +1362,9 @@ def main(dry_run=False):
         
         # NEW: Phase 5 - Registry closure
         registry_closure()
+        
+        # NEW: Phase 6 - Archive promotion
+        archive_promotion()
         
         # Final summary
         print("\n" + "="*70)

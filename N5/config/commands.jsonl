@@ -128,3 +128,4 @@
 {"name": "convo-list", "type": "alias", "script": "n5_convo_list.py", "description": "List conversations from registry"}
 {"name": "convo-search", "type": "alias", "script": "n5_convo_search.py", "description": "Search conversations by text"}
 {"name": "convo-show", "type": "alias", "script": "n5_convo_show.py", "description": "Show conversation details"}
+{"trigger": "archive-promotion-test", "description": "Test archive promotion logic without running conversation-end", "script": "test_archive_promotion.py", "category": "testing", "tags": ["archive", "testing", "validation"], "date_added": "2025-10-26"}
