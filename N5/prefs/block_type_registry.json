@@ -3,8 +3,9 @@
   "type": "Companion",
   "code": "05",
   "short_name": "Block_Registry",
-  "version": "1.5",
-  "purpose": "Define all block types with guidance principles (not rigid formats) for Meeting Intelligence Orchestrator. v1.5 adds CRM integration, Howie harmonization, and streamlined block count.",
+  "version": "1.6",
+  "purpose": "Define all block types with guidance principles (not rigid formats) for Meeting Intelligence Orchestrator and Reflection Processing. v1.6 adds reflection blocks (B50-B99) registry reference.",
+  "reflection_blocks_registry": "N5/prefs/reflection_block_registry.json",
   "blocks": {
     "B01": {
       "name": "DETAILED_RECAP",
