@@ -1,0 +1,5 @@
+---
+description: 'Command: knowledge-ingest'
+tags: []
+---
+# `knowledge-ingest`\n\nVersion: 0.1.0\n\nSummary: Ingest biographical/historical/strategic information about V and Careerspan, analyze with LLM, and store across knowledge reservoirs.\n\nWorkflow: knowledge\n\nTags: ingest, llm, analysis\n\n## Inputs\n- input_text : string (required) — The large text chunk to ingest\n\n## Side Effects\n- modifies:file\n- writes:file\n\n## Examples\n- N5: run knowledge-ingest --input_text '...'\n\n## Related Components\n\n**Related Commands**: [`knowledge-add`](../commands/knowledge-add.md), [`knowledge-find`](../commands/knowledge-find.md)\n\n**Examples**: See [Examples Library](../examples/) for usage patterns\n\n
