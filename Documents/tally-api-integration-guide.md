@@ -673,6 +673,157 @@ curl -X POST "https://api.tally.so/webhooks" \
 
 ---
 
+## Programmatic Form Creation
+
+### Can You Build Forms Entirely via API?
+
+**Yes!** Tally's API supports comprehensive form creation and modification programmatically. You can:
+
+1. **Describe a survey to Zo** → Zo translates requirements into API calls
+2. **Deploy completely via API** → No UI interaction required for basic forms
+3. **Polish and refine via API** → Most customizations available programmatically
+
+### What's Possible via API
+
+**✅ Fully Supported (No UI Required):**
+- Create forms with multiple block types
+- Configure form settings (title, description, status)
+- Add input fields with validation
+- Set up conditional logic
+- Configure submissions handling
+- Create and manage webhooks
+- Update existing forms
+- Delete forms and submissions
+
+**⚠️ May Require UI Polish:**
+- Advanced visual customization (custom CSS beyond API parameters)
+- Complex conditional branching (depending on complexity)
+- Some design template selections
+- Testing form appearance across devices
+
+### Available Block Types
+
+Based on API documentation, these block types are supported:
+
+**Input Fields:**
+- `INPUT_TEXT` - Text input
+- `INPUT_NUMBER` - Number input
+- `INPUT_EMAIL` - Email input with validation
+- `INPUT_LINK` - URL input
+- `INPUT_PHONE_NUMBER` - Phone number input
+- `INPUT_DATE` - Date picker
+- `INPUT_TIME` - Time picker
+- `TEXTAREA` - Multi-line text input
+- `FILE_UPLOAD` - File upload field
+
+**Selection Fields:**
+- `MULTIPLE_CHOICE` - Single selection from options
+- `MULTI_SELECT` - Multiple selections from dropdown
+- `DROPDOWN` - Dropdown selection
+- `LINEAR_SCALE` - Scale rating
+- `RATING` - Star/emoji rating
+
+**Display Blocks:**
+- `FORM_TITLE` - Form title and description
+- `TEXT` - Text content blocks
+
+**Advanced (availability may vary):**
+- `RANKING` - Ranking questions
+- `MATRIX` - Matrix questions
+- Electronic signatures
+- Payment blocks
+
+### API-First Workflow Example
+
+```python
+# 1. Describe survey requirements to Zo
+"Create a customer feedback form with:
+- Name (required text)
+- Email (required email)
+- Rating (1-5 scale)
+- Comments (optional textarea)
+- Would recommend (yes/no)"
+
+# 2. Zo translates to API calls
+form_data = {
+    "status": "PUBLISHED",
+    "blocks": [
+        {
+            "uuid": generate_uuid(),
+            "type": "FORM_TITLE",
+            "payload": {
+                "title": "Customer Feedback",
+                "html": "We value your feedback"
+            }
+        },
+        {
+            "uuid": generate_uuid(),
+            "type": "INPUT_TEXT",
+            "payload": {
+                "label": "Name",
+                "required": True
+            }
+        },
+        # ... additional blocks
+    ]
+}
+
+# 3. Deploy via API
+response = requests.post(
+    "https://api.tally.so/forms",
+    headers={"Authorization": f"Bearer {api_key}"},
+    json=form_data
+)
+```
+
+### When UI Is Beneficial
+
+While most forms can be created entirely via API, the UI is helpful for:
+
+1. **Visual Preview** - See exactly how form appears to respondents
+2. **Rapid Prototyping** - Quick adjustments to layout/design
+3. **Complex Logic** - Visual conditional branching builder
+4. **Theme Selection** - Choose from pre-built design templates
+5. **Testing** - Submit test responses and verify behavior
+
+### Recommended Workflow
+
+**For Maximum Flexibility:**
+
+1. **Initial Creation** → API (fast, repeatable, version-controlled)
+2. **Visual Polish** → UI (fine-tune appearance)
+3. **Updates** → API (automate ongoing changes)
+4. **Testing** → UI (verify user experience)
+
+**For Production at Scale:**
+
+1. Define form templates in code
+2. Generate forms via API based on requirements
+3. Store form configurations in version control
+4. Automate deployment through CI/CD
+5. Monitor via API/webhooks
+
+---
+
+## API Coverage Summary
+
+| Capability | API Support | Notes |
+|-----------|-------------|-------|
+| Create forms | ✅ Full | Complete programmatic creation |
+| Add all field types | ✅ Full | All input types supported |
+| Configure validation | ✅ Full | Required fields, patterns |
+| Set form settings | ✅ Full | Status, notifications, etc. |
+| Manage submissions | ✅ Full | Read, delete submissions |
+| Set up webhooks | ✅ Full | Real-time notifications |
+| Update forms | ✅ Full | PATCH endpoint available |
+| Custom CSS | ⚠️ Partial | Basic styling via API |
+| Visual themes | ⚠️ Partial | May need UI selection |
+| Complex branching | ⚠️ Partial | Simple logic via API |
+
+**Bottom Line:** You can create 90%+ of forms entirely via API. The remaining 10% is visual polish and advanced UX features that are easier in the UI but often not required for functional forms.
+
+---
+
 ## References
 
 [^1]: https://developers.tally.so/api-reference/introduction
