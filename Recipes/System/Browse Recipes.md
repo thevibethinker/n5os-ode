@@ -15,6 +15,22 @@ Discover and explore all available recipes in your N5 system.
 
 Lists all recipes with their descriptions, tags, and file references. Helps you find the right workflow for your needs.
 
+## What Happens
+
+1. **Scan Recipes Directory**
+   - Recursively find all .md files in `/home/workspace/Recipes/` including subdirectories
+   - Extract frontmatter (description, tags)
+
+2. **Parse & Organize**
+   - Parse description and tags
+   - Group by category (subdirectory)
+   - Show recipe name, description, category, and primary tags
+
+3. **Display**
+   - Organized by category: Meetings, Knowledge, System, Tools
+   - Searchable by name, tag, or description
+   - Show file path for reference
+
 ## Usage
 
 Simply invoke this recipe via `/browse-recipes` or ask "show me available recipes"

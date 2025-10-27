@@ -6,13 +6,25 @@ Uses correct n8n API v1 schema.
 import json
 import requests
 import logging
+import subprocess
 from typing import Dict, List
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
 N8N_URL = "https://n8n-va.zocomputer.io"
-API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxM2ZiZTJkYy01ZjdmLTQ5NGUtYWJlMy1hMDI1MWM3ZGYyZjUiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzYxMTg4MTMzfQ.gVElVtssClkiYukJd1juee7AxA44VvQKGNTM2ElVFbU"
+
+# Load API key from secrets manager (P34)
+try:
+    API_KEY = subprocess.check_output(
+        ["python3", "/home/workspace/N5/scripts/n5_secrets.py", "get", "n8n_api_key"],
+        stderr=subprocess.DEVNULL,
+        text=True
+    ).strip()
+    logger.info("✓ Loaded n8n_api_key from secrets manager")
+except subprocess.CalledProcessError as e:
+    logger.error(f"Failed to load n8n_api_key from secrets manager: {e}")
+    raise
 
 def create_workflow(name: str, nodes: List[Dict], connections: Dict) -> Dict:
     """Create a workflow via n8n API."""

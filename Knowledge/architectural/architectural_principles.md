@@ -169,6 +169,11 @@ Strategic principles that define *why* we build systems this way:
 - `file 'Knowledge/architectural/principles/P33-old-tricks-still-work.md'`
 - *Quality practices more important than ever; AI changes speed, not fundamentals*
 
+**P34: Centralized Secrets Management** (Security, Critical)
+- All API keys, tokens, and credentials stored in encrypted secrets manager
+- `file 'Knowledge/architectural/principles/P34-secrets-management.md'`
+- *Single source of truth with audit logging, rotation tracking, encryption at rest*
+
 ---
 
 ## Quick Reference: When to Load What
