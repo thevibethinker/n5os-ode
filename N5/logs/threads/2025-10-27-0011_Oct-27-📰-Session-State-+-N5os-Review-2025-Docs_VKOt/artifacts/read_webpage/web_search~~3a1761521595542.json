@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Mastering Code Quality with SonarQube: A Comprehensive Guide ...",
+    "url": "https://medium.com/@veronicakylie1/mastering-code-quality-with-sonarqube-a-comprehensive-guide-to-static-analysis-7a2c34264fd9",
+    "text": "Our setup integrates SonarQube with GitHub Actions for Python projects, providing automated code quality analysis on every push and pull request. This"
+  },
+  {
+    "title": "Top 10 Python Code Analysis Tools in 2025 to Improve Code Quality",
+    "url": "https://www.jit.io/resources/appsec-tools/top-python-code-analysis-tools-to-improve-code-quality",
+    "text": "# Top 10 Python Code Analysis Tools in 2025 to Improve Code Quality Improving code quality is a fundamental necessity for sustainable and secure software development in Python—an almost-impossible task without the right code analysis tool. This post dives into the top 10 Python code analysis tools of 2025 that every serious Python developer and team should consider leveraging to elevate their code quality. 2. **Best Python analysis tool for adherence to code standards**: Pylint﻿ 6. **Best Python analysis tool for prioritizing code consistency**: Black﻿ 9. **Best Python analysis tool for scanning custom, policy driven code**: Semgrep﻿ SonarQube uses both static code analysis and heuristic algorithms to detect security issues, bugs, and maintainability problems."
+  },
+  {
+    "title": "Top 7 Python Code Review Tools For Developers - Qodo",
+    "url": "https://www.qodo.ai/blog/python-code-review/",
+    "text": "CodeScene combines analytics and reviews, making it one of the most insightful code quality tools Python teams can use to track risky areas and plan refactors."
+  },
+  {
+    "title": "10 Best Code Audit Tools to Improve Code Quality & Security in 2025",
+    "url": "https://www.codeant.ai/blogs/10-best-code-audit-tools-to-improve-code-quality-security-in-2025",
+    "text": "Quality and coverage dashboards to track code health over time. Easy setup with GitHub, GitLab, Bitbucket, and other VCS tools."
+  },
+  {
+    "title": "Top 20 Python Static Analysis Tools in 2025: Improve Code Quality ...",
+    "url": "https://www.in-com.com/blog/top-20-python-static-analysis-tools-in-2025-improve-code-quality-and-performance/",
+    "text": "Radon is a static code analysis tool for measuring code complexity in Python projects. It provides insights into cyclomatic complexity, maintainability"
+  },
+  {
+    "title": "How to (easily) build a Python dashboard: From framework selection ...",
+    "url": "https://www.fabi.ai/blog/how-to-easily-build-a-python-dashboard-from-framework-selection-to-production",
+    "text": "Python dashboards can be built using frameworks like Streamlit or Plotly Dash, or easily in Fabi.ai in minutes, with options for production-grade applications."
+  },
+  {
+    "title": "Everything You Need to Know When Assessing Metrics Dashboards ...",
+    "url": "https://www.alooba.com/skills/tools/data-analysis-28/metrics-dashboards/",
+    "text": "What is Metrics Dashboards? Metrics dashboards are visual tools used to present important data in a simple way. They help people quickly see and understand"
+  },
+  {
+    "title": "Code Quality, Security & Static Analysis Tool with SonarQube | Sonar",
+    "url": "https://www.sonarsource.com/products/sonarqube/",
+    "text": "With integrations available for IDEs (via SonarLint), CI/CD pipelines, and cloud or on-premises deployments, SonarQube offers coverage for a broad range of use cases, ensuring high standards for code health and security throughout the software development lifecycle. SonarQube helps teams maintain consistent code quality and security standards by synchronizing coding rules and analysis settings across all environments—whether in individual IDEs or within CI/CD systems. SonarQube integrates seamlessly into CI/CD pipelines to provide automated static analysis and immediate feedback on code quality, security vulnerabilities, and compliance issues. SonarQube is well-suited to support vibe coding thanks to its real-time analysis, immediate feedback, and integration with both AI-powered and traditional IDEs. Its IDE plugin (formerly SonarLint) uncovers coding issues instantly, provides quick-fix suggestions, and synchronizes team rules to create a collaborative, high-velocity coding environment."
+  },
+  {
+    "title": "Custom Dashboards - Langfuse",
+    "url": "https://langfuse.com/docs/metrics/features/custom-dashboards",
+    "text": "Transform your LLM application data into actionable insights with Langfuse custom dashboards. Create personalized views that track the metrics that matter most to your team - from latency and cost optimization to quality monitoring and user behavior analysis. Whether you’re monitoring production performance, analyzing user feedback trends, or correlating costs with quality metrics, dashboards give you the visualization tools to make data-driven decisions. * **Flexible Query Engine**: Built on the Langfuse data model with support for complex aggregations across traces, observations, users, sessions, and scores * **Real-Time Updates**: Dashboards reflect live data from your LLM applications Widgets are individual visualization components that display specific metrics from your LLM application data. * **Latency Dashboard**: Monitor response times across models and user segments"
+  },
+  {
+    "title": "20 Best Code Analysis Tools in 2025 - The CTO Club",
+    "url": "https://thectoclub.com/tools/best-code-analysis-tools/",
+    "text": "The best code analysis tools help developers catch bugs earlier, improve code quality, and enforce standards automatically before problems hit production. | 2 | Aikido Security | Best for next-gen code reviews | Free plan available + free demo  Book DemoOpens new window | From $350/month Get Custom PricingOpens new window | Website | | 3 | Snyk Code | Best for security testing | Free plan available  Book DemoOpens new window | From $57/user/month Get Custom PricingOpens new window | Website | ## Best Code Analysis Tools Reviews Synopsys Coverity is a static code analysis tool that helps DevOps teams identify and address security risks early in the software development cycle. CodeScene is a code analysis and visualization tool designed to help development teams identify technical debt, improve code quality, and enhance team productivity."
+  },
+  {
+    "title": "Five Python Data Visualization Examples (2025 Guide) - Anaconda",
+    "url": "https://www.anaconda.com/topics/data-visualization-examples",
+    "text": "Technology companies leverage Python’s visualization capabilities to monitor application performance, user engagement metrics, and system reliability through comprehensive business intelligence dashboards that process real-time data streams. The Anaconda AI Platform provides a comprehensive foundation for Python-based data visualization in enterprise environments, addressing the critical challenges organizations face when deploying visualization solutions at scale. Python’s data visualization capabilities integrate seamlessly with modern data infrastructure, supporting real-time data processing, cloud deployment, and scalable analytics workflows that meet enterprise requirements for performance, security, and reliability. Request a demo to discover how the Anaconda AI Platform can accelerate your visualization development process, ensure enterprise security and governance requirements, and unlock the full potential of Python-based data analytics."
+  },
+  {
+    "title": "Tracing Python Applications - Datadog Docs",
+    "url": "https://docs.datadoghq.com/tracing/trace_collection/automatic_instrumentation/dd_libraries/python/",
+    "text": "* Metrics and Traces * Trace Metrics * Trace Metrics After you install and configure your Datadog Agent, the next step is to add the tracing library directly in the application to instrument it. Version 3.0.0 of `dd-trace-py` drops support for Python 3.7 and removes previously deprecated APIs. This guide provides steps to help you upgrade your application. These changes only apply to `dd-trace-py` configuration and not the Datadog Agent. While the core tracing library is compatible, some integrations may not be fully tested or supported in the latest version."
+  },
+  {
+    "title": "The 10 Best Data Quality Assessment Tools Of August 2025",
+    "url": "https://www.montecarlodata.com/blog-best-quality-assessment-tools/",
+    "text": "Data quality assessment tools are software solutions that automatically monitor, validate, and ensure your data remains accurate, complete, and reliable."
+  },
+  {
+    "title": "Model monitoring for ML in production: a comprehensive guide",
+    "url": "https://www.evidentlyai.com/ml-in-production/model-monitoring",
+    "text": "> **TL;DR:** Production ML monitoring tracks the quality of the model performance on live data. Model monitoring tracks the quality of individual ML models, which may involve checking their input data quality. Model monitoring covers various metrics and aspects of ML model quality on top of the quality of the input data – from model accuracy to prediction bias. Since an ML-based service goes beyond just the ML model, the ML system quality has several facets: software, data, model, and business KPIs. Each involves monitoring different groups of metrics. You can use data drift analysis as a monitoring and debugging technique for production ML models to evaluate if the model still operates in a familiar environment."
+  },
+  {
+    "title": "Software Quality Assurance Framework: Our Best Practices from 500 ...",
+    "url": "https://fullscale.io/blog/software-quality-assurance-framework/",
+    "text": "Our framework combines automated testing, continuous integration, and proven metrics that work for distributed teams. A software quality assurance framework is a structured approach to testing that ensures consistent software quality through defined processes, metrics, and tools. It includes test planning, automation strategies, quality metrics, and continuous improvement processes. ***Key Takeaway:*** *A well-structured software quality assurance framework reduces bugs by 75% while cutting testing time in half through automation and smart prioritization.* By implementing this test management framework, teams reduce planning time by 40% while improving test coverage. A software quality assurance framework is a structured approach to testing that defines processes, tools, metrics, and best practices for ensuring software quality."
+  },
+  {
+    "title": "Essential Guidelines for Creating Effective Dashboards",
+    "url": "https://www.certlibrary.com/blog/essential-guidelines-for-creating-effective-dashboards/",
+    "text": "In this article, we'll explore proven strategies for designing dashboards that combine both visual appeal and practical functionality."
+  },
+  {
+    "title": "Big-Scale Data Dashboards With Observable Framework - Appsilon",
+    "url": "https://www.appsilon.com/post/observable-framework-data-science-dashboards",
+    "text": "Build scalable dashboards with Observable Framework, combining speed, interactivity, and seamless data exploration."
+  },
+  {
+    "title": "Data Science Project Development Approach | The GitLab Handbook",
+    "url": "https://handbook.gitlab.com/handbook/enterprise-data/organization/data-science/project_dev_approach/",
+    "text": "Iterative    Requirements Gathering Review of Prior Analyses Review Data Sources and Exploratory Data Analysis Feature Engineering Modeling & Implementation Plan Train MVP Model Present Model Results and Insights to Stakeholders Operationalize Model Model Monitoring Project Retrospective **Purpose:** Putting together a modeling plan will allow you to communicate to the stakeholders how you intend to answer their problem statement using data science. * If you would like to use the Data Science Team model production process (see Phase 6), your code will need to be able to execute on the data science jupyter container. **Purpose:** In order to score a model independently of a training run – and on data outside of the training time period – we need to operationalize a scoring process and add it to the data science production pipeline"
+  },
+  {
+    "title": "Real-time Data Visualization: How to build faster dashboards",
+    "url": "https://www.tinybird.co/blog-posts/real-time-data-visualization",
+    "text": "Real-time Data Visualization: How to build faster dashboards # Real-time Data Visualization: How to build faster dashboards > This post discusses real-time data visualization: What makes dashboards slow, how to fix it, and strategies for designing a faster data model. In this post, I’ll explore the fundamentals of real-time data visualization: What makes dashboards slow, and how do you fix them? I’ll share some strategies for building faster analytics dashboards, starting with the underlying data architecture, so you can start gaining real-time insights from all those pies, bars, and lines. ## What is Real-time Data Visualization? Choose the right tools, design intuitive dashboards, and continuously refine your processes to unlock the full potential of real-time data visualization."
+  },
+  {
+    "title": "Custom AI Evaluations That Move the P&L — How C‑Suites use DIY ...",
+    "url": "https://medium.com/@adnanmasood/custom-ai-evaluations-that-move-the-p-l-how-c-suites-use-diy-ai-metrics-into-cost-savings-7d31ef7eb0e9",
+    "text": "# Custom AI Evaluations That Move the P&L — How C‑Suites use DIY AI Metrics into Cost Savings, Revenue Uplift, and Board‑Level ROI > **TL;DR Metric Alignment** is the single strongest predictor of AI program success: translate **technical scores** (e.g., *precision/recall, BLEU, latency*) into **financial KPIs** (e.g., *ROI, cost‑per‑interaction, revenue uplift*). Creating business‑aligned metrics is a repeatable discipline — below is the process senior technology leaders use to turn generic model scores into **board‑ready KPIs**, followed by… Dr. Adnan Masood is an Engineer, Thought Leader, Author, AI/ML PhD, Stanford Scholar, Harvard Alum, Microsoft Regional Director, and STEM Robotics Coach. Generative AI This new technique unlocks 2× more creativity from ANY AI model — no training required… Towards AI"
+  }
+]

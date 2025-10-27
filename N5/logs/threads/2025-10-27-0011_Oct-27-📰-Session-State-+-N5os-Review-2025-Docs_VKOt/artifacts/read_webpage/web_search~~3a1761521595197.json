@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Best Python Application Performance Monitoring (APM) Tools in 2025",
+    "url": "https://betterstack.com/community/comparisons/python-application-monitoring-tools/",
+    "text": "# Best Python Application Performance Monitoring (APM) Tools in 2025 Python Applications Performance Management and Monitoring tools enable code-level observability, faster recovery, troubleshooting, and easier maintenance of any python project. Paessler's python probes allow you to use probes to monitor Python applications and create a complex and custom APM solution for python apps. Stackify's APM for Python supports centralized logging, code profiling, error tracking, App and Server Monitoring, and RUM. Atatus allows you to monitor API failures, track python errors and exceptions, trace transactions, monitor external requests, monitor databases performance, and much more. During monitoring, it correlates transactions across environments and platforms and offers comprehensive, contextual performance metrics of Python apps in general. Prometheus is an open-source monitoring tool offering support for Python application monitoring."
+  },
+  {
+    "title": "The complete guide to OpenTelemetry in Python - Highlight.io",
+    "url": "https://www.highlight.io/blog/the-complete-guide-to-python-and-opentelemetry",
+    "text": "OpenTelemetry is an important specification that defines how we send telemetry data to observability backends like Highlight.io, Grafana, and others."
+  },
+  {
+    "title": "What is Observability: Benefits & Use Cases | New Relic",
+    "url": "https://newrelic.com/blog/best-practices/what-is-observability",
+    "text": "With rich data and an intelligent observability platform, IT and DevOps teams can flexibly investigate and explore the causes of issues beyond traditional monitoring. ### Observability and monitoring Observability tools encompass a range of capabilities that monitor and analyze data from a wide cross-section of infrastructure components and software. New Relic was nameda leader in the 2024 Gartner MagicQuadrant for Observability Platforms for the 12 th consecutive time, emphasizing our ongoing commitment to delivering the best observability tools and capabilities for customers. As infrastructures grow more complex and companies implement monitoring and other tools trying to keep up with the growth, building multiple observability dashboards can lengthen times to synthesize the data being shown."
+  },
+  {
+    "title": "Enhancing Serverless Observability With Python | Capital One",
+    "url": "https://www.capitalone.com/tech/software-engineering/serverless-observability/",
+    "text": "Discover how Python powers serverless observability with logging, metrics and telemetry. Learn design strategies and tools for effective cloud monitoring."
+  },
+  {
+    "title": "Top Distributed Tracing Tools [updated for 2025] - Uptrace",
+    "url": "https://uptrace.dev/tools/distributed-tracing-tools",
+    "text": "Distributed tracing tools are essential in modern software development and operations for monitoring, troubleshooting, and optimizing complex distributed systems. Tracing tools provide visibility into the end-to-end flow of requests across services, helping developers and operators understand system behavior, troubleshoot issues, and ensure optimal performance and reliability. SkyWalking provides features such as distributed tracing, application performance management (APM), and service mesh observability, all of which can be used to gain insights into the behavior and health of your applications. OpenTelemetry is an open-source observability framework that provides a vendor-neutral, standard way of collecting, processing, and exporting telemetry data, including distributed traces, metrics, and logs. OpenTelemetry supports several popular backends for storing and analyzing trace data, including Uptrace, Jaeger, Zipkin, and Prometheus."
+  },
+  {
+    "title": "Top 9 Observability Platforms for LLMs: Unlocking Advanced ...",
+    "url": "https://www.edenai.co/post/top-5-paid-observability-platforms-for-llms-unlocking-advanced-monitoring-for-ai-systems",
+    "text": "# Top 9 Observability Platforms for LLMs: Unlocking Advanced Monitoring for AI Systems *As with any ‘traditional’ software application, observability is a key success factor when you’re integrating AI into your systems. In this article we will first highlight the conventional aspects of observability and then explain the additional steps you need to monitor your AI application. Eden AI Observability & Monitoring Tools **Summary:** A comprehensive platform designed to enhance the performance, transparency, and reliability of AI systems, with advanced observability and monitoring tools. An open-source SDK built on OpenTelemetry, providing standardized data collection for AI model observability. An open-source Python library for ML and LLM evaluation and observability, supporting various data types and AI systems."
+  },
+  {
+    "title": "Best Observability Tools: Top 10 Software Observability Tools of 2025",
+    "url": "https://vfunction.com/blog/software-observability-tools/",
+    "text": "More than just monitoring 2.0, observability is the ability to infer the internal state and health of complex systems by analyzing the data they produce in the form of logs, metrics, and traces. In the context of modern software, especially distributed systems like microservices running in the cloud, observability means having the tools and data to understand *why* something is happening, not just *that* it’s happening (a staple of more traditional monitoring). When selecting an observability tool, ensure that the tool supports the essential data types (logs, metrics, traces) needed for your specific application and use case. Key capabilities of modern observability tools include infrastructure monitoring, distributed tracing, log management, and metrics collection. Observability tools collect, store, and analyze log data from a wide range of sources, including applications, infrastructure, and security systems."
+  },
+  {
+    "title": "Observability and OpenTelemetry: Seeing the Whole System | by Tahir",
+    "url": "https://medium.com/@tahirbalarabe2/observability-and-opentelemetry-seeing-the-whole-system-bc3e2ebc6d60",
+    "text": "# Observability and OpenTelemetry: Seeing the Whole System Unlike tools tied to specific products, OpenTelemetry is open and managed by the Cloud Native Computing Foundation. What is the difference between OpenTelemetry and other monitoring tools? OpenTelemetry is not a monitoring tool in itself but an open-source observability framework for generating, collecting, and transmitting telemetry data such as metrics, traces, and logs. While it shines in cloud-native and distributed applications, it can also be integrated into older, monolithic systems through manual instrumentation or by using OpenTelemetry SDKs. This allows IT teams to gain observability across their entire technology stack, ensuring visibility from newer microservices to decades-old mainframes. OpenTelemetry is poised to become the standard for observability across hybrid and cloud-native systems. Opentelemetry"
+  },
+  {
+    "title": "Implementing OpenTelemetry Metrics in Python Apps - Better Stack",
+    "url": "https://betterstack.com/community/guides/observability/otel-metrics-python/",
+    "text": "app = Flask(__name__) # Initialize OpenTelemetry SDK meter_provider = setup_otel_sdk() # Instrument Flask with OpenTelemetry FlaskInstrumentor().instrument_app(app) # Create a meter meter = metrics.get_meter(os.getenv(\"OTEL_SERVICE_NAME\", \"otel-metrics-demo\")) # Create a request counter request_counter = meter.create_counter( name=\"http.server.requests\", description=\"Total number of HTTP requests received.\", unit=\"{requests}\" ) @app.route('/') def hello(): # Increment the request counter with route attribute request_counter.add(1, {\"http.route\": request.path}) return \"Hello world!\" if __name__ == '__main__': app.run(host='0.0.0.0', port=8000, debug=True) "
+  },
+  {
+    "title": "OpenTelemetry vs. Prometheus: Key Differences & Use Cases",
+    "url": "https://www.groundcover.com/blog/opentelemetry-vs-prometheus",
+    "text": "Discover the differences between OpenTelemetry and Prometheus, their use cases, integration tips, and best practices for efficient observability workflows."
+  },
+  {
+    "title": "LLM Monitoring and Observability: Hands-on with Langfuse",
+    "url": "https://towardsdatascience.com/llm-monitoring-and-observability-hands-on-with-langfuse/",
+    "text": "Grafana: A classic and widely used monitoring tool which can be combined with OpenTelemetry to provide detailed LLM tracing and monitoring. ... Top Evaluation"
+  },
+  {
+    "title": "7 Best APM Tools Comparison: Full Guide - PFLB",
+    "url": "https://pflb.us/blog/best-apm-tools/",
+    "text": "The Dynatrace AI-powered observability platform has earned the status of the best APM tool according to Gartner, thanks to its monitoring capabilities across various applications and on-premises, cloud, and hybrid infrastructures. Next, we provide a comprehensive application performance monitoring tools comparison based on criteria, such as the complexity of interfaces, supported hosting models, user transaction tracking, data centralization, and customer support: In synergy with load testing for web applications or other platforms, these seven APM tools help stakeholders better understand the behavior of their solutions under high loads, quickly identify and fix bottlenecks, and deliver seamless performance around the clock. The list of the best application performance monitoring tools in 2025 can be endless and extend far beyond New Relic, CloudWatch, DataDog, Grafana Cloud, and other counterparts."
+  },
+  {
+    "title": "Top 10 Data Observability Tools According to G2 Ratings",
+    "url": "https://hevoacademy.com/tools-and-technologies/data-observability-tools/",
+    "text": "This comes with the help of data observability tools. Observability tools help to ensure data quality. ## Top Data Observability Tools Datadog is a modern data observability tool that provides AI-powered anomaly detection that allows issues to be solved at faster speeds. AccelData is another enterprise data observability tool on our list. Dynatrace is another popular data observability tool that offers infrastructure and application observability features. Databand is another Data observability tool that helps you trust your business data and ensure data quality. Honeycomb is a user-friendly data observability tool that helps improve engineering efficiency. Elastic is another data observability tool that provides real-time monitoring and analytics of various data sources."
+  },
+  {
+    "title": "Top 13 Open Source APM Tools [2025 Guide] - SigNoz",
+    "url": "https://signoz.io/blog/open-source-apm-tools/",
+    "text": "SigNoz is a unified open-source APM tool providing metrics, traces, and logs, built on OpenTelemetry for application and infrastructure monitoring. * Grafana: A versatile visualization tool offering customizable dashboards to display and analyze data from various sources, including metrics, logs, and traces. A straightforward open-source tool primarily focused on storing and graphing time-series data, commonly used for infrastructure and application metrics. An open-source APM tool primarily focused on providing deep performance analysis for Java and PHP applications, offering code-level visibility and transaction tracing. An open-source application performance monitoring tool with a focus on providing real-time monitoring and historical data analysis for Java applications, with some support for other languages and infrastructure components."
+  },
+  {
+    "title": "AI Agent Observability - Evolving Standards and Best Practices",
+    "url": "https://opentelemetry.io/blog/2025/ai-agent-observability/",
+    "text": "Today, the GenAI observability project within OpenTelemetry is actively working on defining semantic conventions to standardize AI agent observability. The initial AI agent semantic convention is based on Google’s AI agent white paper, providing a foundational framework for defining observability standards. By establishing these conventions, we ensure that AI agent frameworks can report standardized metrics, traces, and logs, making it easier to integrate observability solutions and compare performance across different frameworks. These instrumentation libraries can be imported into agents and configured to emit telemetry per OpenTelemetry semantic conventions. **NOTE:** Regardless of the approach taken, it is essential that all AI agent frameworks adopt the AI agent framework semantic convention to ensure interoperability and consistency in observability data."
+  },
+  {
+    "title": "What is observability? Not just logs, metrics, and traces - Dynatrace",
+    "url": "https://www.dynatrace.com/news/blog/what-is-observability-2/",
+    "text": "Full end-to-end observability enables organizations to get to the bottom of application performance issues much faster, including issues that arise from cloud-native and microservices environments. This unified observability-based approach can improve application uptime and performance, cut down the time required to pinpoint and resolve issues, detect cloud latency issues, optimize cloud resource utilization, and improve administration of their Kubernetes environments and modern cloud architectures. These open source solutions enhance observability for cloud-native applications and make it easier for developers and operations teams to achieve a consistent understanding of application health across multiple environments. Organizations need a single source of truth to gain complete observability across their application infrastructure and accurately pinpoint the root causes of performance issues."
+  },
+  {
+    "title": "The 8 Best Application Performance Monitoring (APM) Tools in 2025",
+    "url": "https://rollbar.com/blog/best-apm-tools/",
+    "text": "In this roundup, we'll review eight of the best APM tools available today, covering a mix of SaaS platforms and open-source solutions."
+  },
+  {
+    "title": "cheaper New Relic and datadog alternatives for Tracing/apm/profiling",
+    "url": "https://www.reddit.com/r/devops/comments/1ggjc61/cheaper_new_relic_and_datadog_alternatives_for/",
+    "text": "Coralogix is a solid tool, although they can be a bit pricey depending on how much data you're sending out. If you're willing to build out something manual, you"
+  },
+  {
+    "title": "State of enterprise network monitoring today? What are you guys ...",
+    "url": "https://www.reddit.com/r/networking/comments/1h6hclc/state_of_enterprise_network_monitoring_today_what/",
+    "text": "Where is the enterprise, in terms of network monitoring today? What are you guys using for SNMP based monitoring? How about for streaming telemetry?"
+  }
+]

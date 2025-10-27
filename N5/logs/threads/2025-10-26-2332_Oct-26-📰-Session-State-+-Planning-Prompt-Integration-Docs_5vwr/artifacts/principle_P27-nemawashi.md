@@ -1,0 +1,1 @@
+/home/workspace/Knowledge/architectural/principles/P27-nemawashi-mode.md

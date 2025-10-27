@@ -1,0 +1,1 @@
+/home/workspace/Knowledge/architectural/principles/P25-code-is-free.md
