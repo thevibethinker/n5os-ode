@@ -1,0 +1,11 @@
+{
+  "drive_file_name": "sourced jobs.csv",
+  "drive_file_id": "1LMShFZQ7IwZpsOxs1RWB67LHV1cFmClc",
+  "columns": ["Date","Full Role Title","Location","Full Job Description","Application URL"],
+  "append_mode": "append-only",
+  "convert_to_google_sheet": false,
+  "verification": {
+    "double_extract": true,
+    "hash_check": true
+  }
+}

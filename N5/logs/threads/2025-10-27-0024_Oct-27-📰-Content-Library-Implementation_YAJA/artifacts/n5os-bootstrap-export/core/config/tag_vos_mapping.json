@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "description": "Hashtag to Howie V-OS bracket translation mapping",
+  "stakeholder_mappings": {
+    "#stakeholder:investor": "[LD-INV]",
+    "#stakeholder:partner:collaboration": "[LD-NET]",
+    "#stakeholder:partner:channel": "[LD-NET]",
+    "#stakeholder:customer": "[LD-HIR]",
+    "#stakeholder:prospect": "[LD-GEN]",
+    "#stakeholder:community": "[LD-COM]",
+    "#stakeholder:advisor": null,
+    "#stakeholder:vendor": null
+  },
+  "priority_mappings": {
+    "#priority:critical": "[!!]",
+    "#priority:high": "[A-0]",
+    "#priority:normal": "[A-1]",
+    "#priority:low": "[A-2]"
+  },
+  "schedule_mappings": {
+    "#schedule:within_5d": "[D5]",
+    "#schedule:5d_plus": "[D5+]",
+    "#schedule:10d_plus": "[D10]"
+  },
+  "coordination_mappings": {
+    "#align:logan": "[LOG]",
+    "#align:ilse": "[ILS]"
+  },
+  "engagement_mappings": {
+    "#engagement:needs_followup": "*",
+    "#engagement:responsive": null,
+    "#engagement:slow": null
+  },
+  "auto_inheritance": {
+    "#stakeholder:investor": {
+      "add_tags": ["#priority:critical"],
+      "vos_tags": ["[!!]", "[A-0]"]
+    },
+    "#stakeholder:partner:collaboration": {
+      "vos_default_priority": "[A-1]"
+    },
+    "#stakeholder:partner:channel": {
+      "vos_default_priority": "[A-1]"
+    }
+  },
+  "n5_only_tags": [
+    "#relationship:new",
+    "#relationship:warm",
+    "#relationship:active",
+    "#relationship:cold",
+    "#relationship:dormant",
+    "#engagement:responsive",
+    "#engagement:slow",
+    "#context:hr_tech",
+    "#context:venture_capital",
+    "#context:enterprise",
+    "#context:education",
+    "#stakeholder:advisor",
+    "#stakeholder:vendor"
+  ]
+}

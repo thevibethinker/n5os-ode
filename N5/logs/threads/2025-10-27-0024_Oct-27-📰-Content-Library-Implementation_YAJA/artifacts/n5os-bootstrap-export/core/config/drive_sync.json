@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-10-16",
+  "drive_folder_name": "Careerspan Knowledge Sync",
+  "sync_mode": "delete_and_recreate",
+  "description": "Configuration for syncing Careerspan/Vrijen knowledge to Google Drive for external AI consumption",
+  "source_directories": [
+    {
+      "path": "/home/workspace/Knowledge/stable",
+      "target_path": "stable",
+      "include_patterns": ["*.md"],
+      "exclude_patterns": ["README.md"],
+      "recursive": true,
+      "description": "Stable biographical and historical knowledge"
+    },
+    {
+      "path": "/home/workspace/Knowledge/semi_stable",
+      "target_path": "semi_stable",
+      "include_patterns": ["*.md"],
+      "exclude_patterns": ["README.md"],
+      "recursive": true,
+      "description": "Current metrics, product state, team composition"
+    },
+    {
+      "path": "/home/workspace/Knowledge/hypotheses",
+      "target_path": "hypotheses",
+      "include_patterns": ["*.md"],
+      "exclude_patterns": ["README.md"],
+      "recursive": true,
+      "description": "Business and product hypotheses"
+    },
+    {
+      "path": "/home/workspace/Knowledge/market",
+      "target_path": "market",
+      "include_patterns": ["*.md"],
+      "exclude_patterns": ["README.md"],
+      "recursive": true,
+      "description": "Market intelligence and industry analysis"
+    },
+    {
+      "path": "/home/workspace/N5/prefs/operations",
+      "target_path": "company_ops",
+      "include_patterns": ["careerspan.md"],
+      "exclude_patterns": [],
+      "recursive": false,
+      "description": "Company identity, aliases, team reference"
+    }
+  ],
+  "verification": {
+    "verify_uploads": true,
+    "verify_deletions": true,
+    "log_all_operations": true
+  },
+  "safety": {
+    "require_confirmation_for_production": false,
+    "max_files_per_sync": 100,
+    "enable_checksum_verification": true
+  }
+}

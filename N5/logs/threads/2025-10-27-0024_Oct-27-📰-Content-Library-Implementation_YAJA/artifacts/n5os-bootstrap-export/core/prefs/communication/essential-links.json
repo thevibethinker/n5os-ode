@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "version": "1.8.0",
+    "source": "Consolidated from Companion [05] - Essential Links v1.6",
+    "last_updated": "2025-10-22",
+    "format": "N5-native",
+    "description": "Canonical source for Vrijen and Careerspan essential links",
+    "deprecated": true,
+    "deprecation_note": "⚠️ DEPRECATED: This file is being replaced by content-library.json (v1.0.0). Migrated 2025-10-22. Will be archived to Documents/Archive/ after all workflows updated.",
+    "replacement": "N5/prefs/communication/content-library.json"
+  },
+  "meeting_booking": {
+    "vrijen_only": {
+      "work_30m_primary": "https://calendly.com/v-at-careerspan/30min",
+      "work_30m_extended": "https://calendly.com/v-at-careerspan/check-in-with-vrij-careerspan-30m-extended",
+      "work_45m_primary": "https://calendly.com/v-at-careerspan/extended-discussion-with-vrijen",
+      "quick_sync_15m": "https://calendly.com/v-at-careerspan/touching-base-with-vrijen-15-min",
+      "friends_family_45m": "https://calendly.com/v-at-careerspan/friends-family-link-for-vrijen"
+    },
+    "founders_vrijen_logan": {
+      "check_in_30m": "https://calendly.com/d/3tw-swc-35s/check-in-with-careerspan-founders",
+      "extended_chat_45m": "https://calendly.com/d/42r-vhg-brj/extended-chat-with-careerspan-founders"
+    }
+  },
+  "careerspan_trial_codes": {
+    "general": "https://app.mycareerspan.com/create-account?oid=trycareerspan2025",
+    "friends_family": "https://app.mycareerspan.com/create-account?oid=FriendsAndFamily2025",
+    "career_centers": "https://app.mycareerspan.com/create-account?oid=rs3yAMYd",
+    "non_profit_employers": "https://app.mycareerspan.com/create-account?oid=trycareerspan2025"
+  },
+  "demos": {
+    "coaching_product_walkthrough": "https://drive.google.com/open?id=18C2tUgvZb72boa9uy4LVGVyzXEiE6yge&usp=drive_fs",
+    "customer_demo_video": "https://docsend.com/v/rmscp/careerspandemo-april2025"
+  },
+  "marketing_assets": {
+    "company_homepage": "https://www.mycareerspan.com",
+    "linkedin_page": "https://www.linkedin.com/company/careerspan"
+  },
+  "investor_assets": {
+    "preview_investor_deck": "https://docsend.com/v/rmscp/careerspanpitchdeckv3"
+  },
+  "proposals": {
+    "screening_tool_pilot_founders": "https://docsend.com/v/rmscp/secondary-screening-pilot"
+  },
+  "reports": {
+    "sample_alignment_report": "https://docsend.com/v/rmscp/samplecspananalysis-gina"
+  },
+  "community": {
+    "future_careertech_founders_signup": "https://tally.so/forms/wdeWZD"
+  },
+  "tools": {
+    "bs_detector": "https://crystal-ball.mycareerspan.com/detector"
+  },
+  "referrals": {
+    "zo_computer": {
+      "promo_code": "VATT50",
+      "signup_link": "https://www.zo.computer/?promo=VATT50"
+    }
+  },
+  "talent_acquisition": {
+    "careerspan_plus_survey": "https://6pyx0f2cd8h.typeform.com/to/QHDL7N3n"
+  },
+  "guides": {
+    "job_search_readiness": "https://careerspan.short.gy/careerspanjobsearchreadiness",
+    "cover_letter_101": "https://careerspan.short.gy/coverletter101",
+    "resume_optimization": "https://careerspan.short.gy/careerspanresumekeywords",
+    "mckinsey_consulting_mba": "https://www.notion.so/vattawar/Interviewing-At-McKinsey-3903b5f328e54d11bb2275f8b3eafdcf"
+  }
+}
