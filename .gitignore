@@ -74,3 +74,4 @@ N5/lists/*.md
 # Local project repos (ignored)
 projects/n5-system/n5-core/
 projects/n5-system/n5-launch/
+N5/config/tally_api_key.env
