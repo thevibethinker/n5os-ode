@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://n5os.local/schemas/inbox_feedback.schema.json",
+  "title": "Inbox Routing Feedback Entry",
+  "description": "Schema for human feedback on routing decisions",
+  "type": "object",
+  "required": ["timestamp", "file_path", "suggested_destination", "actual_destination", "feedback_type"],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of feedback"
+    },
+    "file_path": {
+      "type": "string",
+      "description": "Original file path in Inbox/"
+    },
+    "filename": {
+      "type": "string",
+      "description": "Original filename"
+    },
+    "suggested_destination": {
+      "type": "string",
+      "description": "AI-suggested destination"
+    },
+    "suggested_confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Original confidence score"
+    },
+    "actual_destination": {
+      "type": "string",
+      "description": "Where user actually moved the file"
+    },
+    "feedback_type": {
+      "type": "string",
+      "enum": ["correct", "incorrect", "ambiguous", "new_pattern"],
+      "description": "Type of feedback"
+    },
+    "notes": {
+      "type": "string",
+      "description": "User notes on why correction was needed"
+    },
+    "correction_reason": {
+      "type": "string",
+      "description": "Detailed reason for correction (for learning)"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "description": "Root cleanup configuration - defines protected directories and patterns",
+  "protected_directories": [
+    "Knowledge",
+    "Lists",
+    "Records",
+    "N5",
+    "Documents",
+    "Careerspan",
+    "Personal",
+    "Articles",
+    "Images",
+    "projects",
+    "Recipes",
+    "Inbox",
+    ".git"
+  ],
+  "ignore_patterns": [
+    ".*",
+    "*.log",
+    "*.tmp",
+    "__pycache__",
+    "node_modules",
+    "POLICY.md",
+    "QUICKSTART.md",
+    "REVIEW.md",
+    "VERIFICATION_CHECKLIST.md"
+  ],
+  "inbox_path": "/home/workspace/Inbox",
+  "move_with_timestamp": true,
+  "timestamp_format": "%Y%m%d-%H%M%S"
+}
