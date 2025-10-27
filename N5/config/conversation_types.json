@@ -1,0 +1,34 @@
+{
+  "types": [
+    {
+      "id": "worker",
+      "label": "Worker Thread",
+      "keywords_any": ["Worker ", "reflection_", "orchestrator", "deployment brief", "synthesizer", "block_suggester"],
+      "title_template": "{date} | ✅ Worker {worker_id} {focus}"
+    },
+    {
+      "id": "deployment",
+      "label": "Deployment",
+      "keywords_any": ["deploy", "deployment", "release", "rollout", "scheduled task", "commands.jsonl"],
+      "title_template": "{date} | 🚀 {focus} Deployment"
+    },
+    {
+      "id": "zoats",
+      "label": "ZoATS Pipeline",
+      "keywords_any": ["ZoATS", "pipeline", "smoke test", "candidates", "MVP"],
+      "title_template": "{date} | 🧪 ZoATS: {focus}"
+    },
+    {
+      "id": "meeting",
+      "label": "Meeting",
+      "keywords_any": ["meeting", "call", "agenda", "minutes", "attendees"],
+      "title_template": "{date} | 📅 {focus} Meeting"
+    },
+    {
+      "id": "system",
+      "label": "System Work",
+      "keywords_any": ["N5", "migration", "architecture", "refactor", "bootstrap", "secrets"],
+      "title_template": "{date} | ✅ {focus}"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "mapping": {
+    "System": [
+      "system",
+      "n5",
+      "core",
+      "hygiene",
+      "state-session",
+      "file",
+      "git",
+      "quality",
+      "index",
+      "orchestrator",
+      "grep"
+    ],
+    "Knowledge": [
+      "knowledge",
+      "research",
+      "digest",
+      "lessons",
+      "content"
+    ],
+    "Meetings": [
+      "meeting",
+      "meetings",
+      "transcript"
+    ],
+    "Tools": [
+      "akiflow",
+      "howie",
+      "linkedin",
+      "social-media",
+      "streaming",
+      "communication",
+      "follow-up"
+    ],
+    "Business": [
+      "careerspan",
+      "crm",
+      "deliverables",
+      "jobs",
+      "networking",
+      "intros"
+    ],
+    "Productivity": [
+      "lists",
+      "build",
+      "coordination",
+      "flow",
+      "threads",
+      "quick",
+      "personal",
+      "strategic",
+      "docgen",
+      "documentation",
+      "direct"
+    ]
+  },
+  "notes": "Proposed Recipes/ subdirectory structure based on command categories"
+}

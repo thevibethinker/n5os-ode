@@ -1,7 +1,7 @@
 # N5 Preferences Index
 
-**Version:** 3.1.0  
-**Last Updated:** 2025-10-20  
+**Version:** 3.2.0  
+**Last Updated:** 2025-10-27  
 **Purpose:** Lightweight index to modular preferences, loaded selectively by context
 
 ---
@@ -29,6 +29,25 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - Require explicit approval for side-effect actions (email, external API, creating services, deleting files)
 - Always search for existing protocols before creating new ones
 - **Whenever a new file is created, always ask where the file should be located**
+
+### System Bulletins for Troubleshooting
+**CRITICAL:** When encountering contradictions, irregularities, unexplained system behavior, missing files, or unexpected configurations:
+
+1. **Check system bulletins FIRST** before asking user or improvising
+2. Bulletins are auto-loaded in session init with `--load-system` flag
+3. If bulletins weren't loaded, manually load: `cat N5/data/system_bulletins.jsonl | jq -r '[.timestamp[:10], .significance, .change_type, .summary] | @tsv'`
+4. Look for recent changes (last 10 days) that explain the irregularity
+5. Reference bulletin_id and conversation_id when discussing the change with user
+
+**Scope:** File structure changes, script modifications, workflow updates, command changes, principle additions, architecture decisions, breaking changes
+
+**Rationale:** System bulletins provide AI transparency into recent evolution. Checking bulletins before asking prevents redundant questions and provides context for why something exists or changed.
+
+**Examples:**
+- "This script doesn't exist" → Check bulletins for file moves/deletions
+- "Workflow behavior changed" → Check bulletins for recent script updates
+- "Unexpected directory structure" → Check bulletins for reorganization
+- "Command not found" → Check bulletins for command registry changes
 
 ### Command-First Operations
 **CRITICAL:** Before ANY workflow-related operation, check for registered commands in `file 'Recipes/recipes.jsonl'` OR search `Recipes/**/*.md` for relevant protocols.
@@ -334,6 +353,12 @@ When referring to lists, always check `/home/workspace/N5/lists/` and `/home/wor
 ---
 
 ## Change Log
+
+### v3.2.0 — 2025-10-27
+- **System Bulletins Integration:** Added "System Bulletins for Troubleshooting" critical rule
+- **Behavioral Trigger:** AI must check bulletins FIRST when encountering irregularities
+- **Auto-load:** Bulletins automatically loaded in session init with `--load-system` flag
+- **Rationale:** Close the loop on bulletins infrastructure—provide explicit instruction to reference bulletins during troubleshooting
 
 ### v3.1.0 — 2025-10-20
 - **Protocol Enhancement:** Added explicit "Reflection Processing" conditional rule mapping email subjects to reflection pipeline

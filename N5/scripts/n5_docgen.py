@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 N5 Docgen - Unified documentation generator
-Version: 2.0.0 (consolidated from 3 separate commands)
-Modes: --commands (catalog), --lists (MD views), --scheduled (wrapper), --all
+Version: 3.0.0 (migrated to recipes.jsonl)
+Modes: --recipes (catalog), --lists (MD views), --scheduled (wrapper), --all
 """
 import json, sys, re, argparse
 from pathlib import Path
@@ -20,7 +20,7 @@ from n5_safety import execute_with_safety, load_command_spec
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
-COMMANDS_FILE = ROOT / "commands.jsonl"
+RECIPES_FILE = ROOT / "Recipes" / "recipes.jsonl"
 COMMANDS_DIR = ROOT / "commands"
 COMMANDS_MD = ROOT / "commands.md"
 PREFS_MD = ROOT / "prefs.md"
@@ -225,7 +225,7 @@ def generate_commands_catalog(dry_run=False):
     artifacts = []
     
     schema = load_schema(SCHEMAS / "commands.schema.json")
-    cmds = read_jsonl(COMMANDS_FILE)
+    cmds = read_jsonl(RECIPES_FILE)
     if not cmds:
         print("No commands in commands.jsonl; nothing to generate.")
         return artifacts

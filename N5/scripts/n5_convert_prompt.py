@@ -8,8 +8,8 @@ Usage:
 
 Process:
 1. Parse prompt file metadata (name, version, type)
-2. Copy to N5/commands/ with standardized naming
-3. Register in commands.jsonl
+2. Copy to Recipes/ with standardized naming
+3. Register in recipes.jsonl
 4. Create incantum triggers
 5. Move companion files to Knowledge/
 6. Report results
@@ -33,7 +33,7 @@ WORKSPACE = Path("/home/workspace")
 PROMPTS_DIR = WORKSPACE / "Personal/Prompts"
 COMMANDS_DIR = WORKSPACE / "N5/commands"
 KNOWLEDGE_DIR = WORKSPACE / "Knowledge"
-COMMANDS_FILE = WORKSPACE / "N5/config/commands.jsonl"
+COMMANDS_FILE = WORKSPACE / "N5/config/recipes.jsonl"
 TRIGGERS_FILE = WORKSPACE / "N5/config/incantum_triggers.json"
 LOG_FILE = WORKSPACE / "N5/runtime/prompt_conversion.log"
 
@@ -181,12 +181,12 @@ def convert_companion_file(filepath, metadata):
     return {"name": filepath.name, "location": "Knowledge/"}
 
 def update_registries(new_commands, new_triggers):
-    """Update commands.jsonl and incantum_triggers.json"""
+    """Update recipes.jsonl and incantum_triggers.json"""
     
     if not new_commands and not new_triggers:
         return
     
-    # Update commands.jsonl
+    # Update recipes.jsonl
     if new_commands:
         with open(COMMANDS_FILE, 'a') as f:
             for cmd in new_commands:

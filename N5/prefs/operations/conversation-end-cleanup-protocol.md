@@ -256,6 +256,56 @@ python3 N5/scripts/validate_cleanup.py --conversation-id {id}
 
 ---
 
+## Thread Archive Management
+
+**Purpose:** Keep N5/logs/threads manageable by archiving old thread directories
+
+**When:** Monthly or when N5/logs/threads exceeds ~50 directories
+
+### Archive Old Threads
+
+```bash
+# Preview what would be archived (threads >30 days old)
+python3 N5/scripts/n5_archive_threads.py --dry-run
+
+# Archive with confirmation
+python3 N5/scripts/n5_archive_threads.py
+
+# Custom age threshold
+python3 N5/scripts/n5_archive_threads.py --age-days 60
+```
+
+**What it does:**
+- Groups threads by year-month
+- Creates compressed tar.gz files: `YYYY-MM_threads_archive.tar.gz`
+- Maintains manifest in `N5/logs/thread_archives/archive_manifest.json`
+- Removes original directories after successful archive
+- Preserves ability to extract specific threads later
+
+### Extract Archived Thread
+
+```bash
+# List all archives
+python3 N5/scripts/n5_archive_threads.py --list
+
+# Extract specific thread back to N5/logs/threads
+python3 N5/scripts/n5_archive_threads.py --extract "2025-10-13-2028_conversation-20251013-202833_DEoO"
+```
+
+**Benefits:**
+- Reduces clutter in thread directory
+- Maintains complete history
+- Fast access to recent threads
+- Searchable archive manifest
+- Reversible (can extract anytime)
+
+**Recommended Schedule:**
+- Run monthly via scheduled task
+- Or when thread count exceeds 50
+- Keep last 30 days unarchived (quick access)
+
+---
+
 ## Notes
 
 - This protocol focuses on **file hygiene**, not content quality

@@ -213,7 +213,7 @@ def update_command_documentation():
     logger.info("UPDATING COMMAND DOCUMENTATION")
     logger.info("="*60 + "\n")
     
-    command_path = Path("/home/workspace/N5/commands/meeting-process.md")
+    command_path = Path("/home/workspace/Recipes/Meetings/Meeting Process.md")
     
     if not command_path.exists():
         logger.error(f"Command file not found: {command_path}")

@@ -2,7 +2,7 @@
 Meeting Intelligence Orchestrator - Template Manager
 
 ⚠️  DEPRECATED: This template-based approach has been superseded by the Registry System.
-⚠️  See: N5/prefs/block_type_registry.json (v1.3+) and N5/commands/meeting-process.md (v4.0.0+)
+⚠️  See: N5/prefs/block_type_registry.json (v1.3+) and Recipes/Meetings/Meeting Process.md (v4.0.0+)
 ⚠️  Preserved for historical reference only.
 
 This module served as a TEMPLATE MANAGER and DATA STRUCTURE PROVIDER ONLY.

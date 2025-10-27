@@ -1,25 +1,21 @@
 #!/usr/bin/env python3
 """
-Session State Manager
-Auto-initializes and updates SESSION_STATE.md for all conversations.
+Session State Manager - Conversation state tracking and management
 
-Usage:
-    python3 session_state_manager.py init --convo-id con_XXX [--type build|research|discussion|planning]
-    python3 session_state_manager.py update --convo-id con_XXX --field status --value active
-    python3 session_state_manager.py read --convo-id con_XXX
+Principles: P2 (SSOT), P7 (Dry-Run), P15 (Complete), P19 (Error Handling)
 """
 
 import argparse
 import json
 import logging
-from datetime import datetime, timezone
-from pathlib import Path
-from typing import Dict, Optional, Tuple
-import pytz
 import re
 import sys
+from datetime import datetime, UTC, timezone
+from pathlib import Path
+from typing import Optional, Tuple, Dict
+import pytz
 
-# Import conversation registry
+# Add scripts directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 from conversation_registry import ConversationRegistry
 
@@ -113,6 +109,58 @@ class SessionStateManager:
         
         return max_type, round(confidence, 2)
     
+    @staticmethod
+    def load_system_bulletins() -> str:
+        """Load last 10 days of system bulletins and format as markdown summary"""
+        bulletin_file = Path("/home/workspace/N5/data/system_bulletins.jsonl")
+        
+        if not bulletin_file.exists():
+            return "No system bulletins available."
+        
+        try:
+            bulletins = []
+            with open(bulletin_file) as f:
+                for line in f:
+                    if line.strip():
+                        bulletins.append(json.loads(line))
+            
+            if not bulletins:
+                return "No system bulletins available."
+            
+            # Sort by timestamp (newest first)
+            bulletins.sort(key=lambda b: b['timestamp'], reverse=True)
+            
+            # Group by significance
+            high = [b for b in bulletins if b['significance'] == 'high']
+            medium = [b for b in bulletins if b['significance'] == 'medium']
+            
+            output = ["# System Bulletins (Last 10 Days)", ""]
+            
+            if high:
+                output.append("## High Priority Changes")
+                for b in high[:10]:  # Limit to 10 most recent
+                    timestamp = b['timestamp'][:10]  # Just date
+                    output.append(f"- **[{timestamp}]** {b['change_type']}: {b['summary']}")
+                    if b.get('files_affected'):
+                        output.append(f"  - Files: {', '.join(b['files_affected'][:3])}")
+                output.append("")
+            
+            if medium:
+                output.append("## Medium Priority Changes")
+                for b in medium[:15]:  # More medium changes
+                    timestamp = b['timestamp'][:10]
+                    output.append(f"- **[{timestamp}]** {b['change_type']}: {b['summary']}")
+                output.append("")
+            
+            output.append(f"---")
+            output.append(f"Total bulletins: {len(bulletins)} | High: {len(high)} | Medium: {len(medium)}")
+            
+            return "\n".join(output)
+            
+        except Exception as e:
+            logger.warning(f"Failed to load bulletins: {e}")
+            return f"Error loading bulletins: {e}"
+    
     def _sync_to_registry(self) -> bool:
         """Extract metadata from SESSION_STATE.md and sync to registry"""
         if not self.sync_registry:
@@ -174,16 +222,16 @@ class SessionStateManager:
             logger.warning(f"Registry sync failed: {e}")
             return False
     
-    def init(self, convo_type: str = "discussion", mode: str = "standalone", load_system: bool = False, user_message: str = "") -> bool:
-        """Initialize SESSION_STATE.md for this conversation."""
+    def init(self, convo_type: Optional[str] = None, mode: Optional[str] = None, load_system: bool = False, message: Optional[str] = None) -> bool:
+        """Initialize SESSION_STATE.md and register in database."""
         try:
             if self.state_file.exists():
                 logger.info(f"SESSION_STATE.md already exists for {self.convo_id}")
                 return True
             
             # Auto-classify if no type provided and user message available
-            if not convo_type and user_message:
-                detected_type, confidence = self.classify_conversation(user_message)
+            if not convo_type and message:
+                detected_type, confidence = self.classify_conversation(message)
                 logger.info(f"Auto-classified as '{detected_type}' (confidence: {confidence})")
                 convo_type = detected_type
             
@@ -345,6 +393,13 @@ class SessionStateManager:
                 logger.info("System files to load:")
                 logger.info("  - file 'Documents/N5.md'")
                 logger.info("  - file 'N5/prefs/prefs.md'")
+                
+                # Output bulletin summary
+                bulletin_summary = self.load_system_bulletins()
+                logger.info("\nSystem Bulletins Summary:")
+                for line in bulletin_summary.split('\n'):
+                    if line.strip():
+                        logger.info(f"  {line}")
             
             return True
         except Exception as e:
@@ -645,12 +700,13 @@ class SessionStateManager:
             return False
 
     def link_parent(self, parent_convo_id: str) -> bool:
-        """Link this worker conversation to its parent."""
+        """Link this worker conversation to its parent in both markdown and database."""
         try:
             if not self.state_file.exists():
                 logger.error(f"SESSION_STATE.md not found. Run init first.")
                 return False
             
+            # Update SESSION_STATE.md
             content = self.state_file.read_text()
             
             # Find or create Parent Conversation section
@@ -672,7 +728,16 @@ class SessionStateManager:
                 content = content.replace("## Metadata", f"## Metadata\n\n{parent_line}", 1)
             
             self.state_file.write_text(content)
-            logger.info(f"✓ Linked to parent: {parent_convo_id}")
+            logger.info(f"✓ Linked to parent in SESSION_STATE: {parent_convo_id}")
+            
+            # Update database
+            try:
+                registry = ConversationRegistry()
+                registry.update(self.convo_id, parent_id=parent_convo_id, mode="worker")
+                logger.info(f"✓ Updated database parent_id: {parent_convo_id}")
+            except Exception as e:
+                logger.warning(f"Failed to update database: {e}")
+            
             return True
             
         except Exception as e:
@@ -715,7 +780,7 @@ def main():
     manager = SessionStateManager(args.convo_id)
     
     if args.action == "init":
-        success = manager.init(convo_type=args.type, mode=args.mode, load_system=args.load_system, user_message=args.message)
+        success = manager.init(convo_type=args.type, mode=args.mode, load_system=args.load_system, message=args.message)
         return 0 if success else 1
     
     elif args.action == "read":
