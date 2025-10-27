@@ -826,9 +826,6 @@ def write_and_display_title(titles, convo_id):
             logger.info(f"✓ Updated conversation registry with title")
         else:
             logger.debug(f"Conversation not in registry or update failed")
-    
-    except Exception as e:
-        logger.error(f"Error saving title: {e}")
 
 
 def git_status_check():
