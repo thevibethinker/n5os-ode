@@ -1,6 +1,6 @@
 ---
-description: 'Command: auto-process-meetings'
-tags: []
+description: "Command: auto-process-meetings"
+tags:
 ---
 # Auto-Process Meetings Command
 
@@ -11,7 +11,7 @@ Checks the N5 inbox for pending meeting transcript requests and processes them u
 ## Workflow
 
 1. **Check inbox**: `/home/workspace/N5/inbox/meeting_requests/`
-2. **For each pending request**:
+2. **For each pending request**: 
    - Download/convert transcript if needed
    - Read full transcript content
    - Generate comprehensive intelligence blocks using my LLM
@@ -22,13 +22,15 @@ Checks the N5 inbox for pending meeting transcript requests and processes them u
 ## Usage
 
 ### Manual Trigger:
-```
+
+```markdown
 User: "Process pending meeting requests"
 OR
 User: command 'N5/commands/auto-process-meetings.md'
 ```
 
 ### Automatic (Scheduled):
+
 Set up a scheduled task that runs this command every 10-30 minutes.
 
 ## Processing Logic
@@ -36,7 +38,9 @@ Set up a scheduled task that runs this command every 10-30 minutes.
 For each transcript, I will:
 
 1. **Read full transcript** (no token limits - I have full context)
+
 2. **Extract intelligence blocks**:
+
    - MEETING_METADATA_SUMMARY
    - DETAILED_RECAP
    - RESONANCE_POINTS
@@ -50,33 +54,39 @@ For each transcript, I will:
    - And more...
 
 3. **Generate comprehensive output** similar to the Carly meeting analysis
+
 4. **Save to proper location** in N5 records
+
 5. **Create notifications** for review
 
 ## Benefits Over External LLM APIs
 
-✅ **Full context** - I can read entire transcript at once
-✅ **No API costs** - Uses Zo's built-in capabilities
-✅ **Customizable** - Can adapt to your preferences in real-time
-✅ **Interactive** - Can ask clarifying questions if needed
-✅ **Consistent quality** - Same LLM that processes all your other work
+✅ **Full context** - I can read entire transcript at once\
+✅ **No API costs** - Uses Zo's built-in capabilities\
+✅ **Customizable** - Can adapt to your preferences in real-time\
+✅ **Interactive** - Can ask clarifying questions if needed\
+✅ **Consistent quality** - Same LLM that processes all your other work\
+✅ **Registry-driven** - Uses block_type_registry.json for dynamic templates
 
 ## Setup Instructions
 
 ### Step 1: Run Auto-Processor (Watcher)
+
 ```bash
 # Run in background to detect new transcripts
 nohup python3 /home/workspace/N5/scripts/meeting_auto_processor.py > /tmp/meeting_watcher.log 2>&1 &
 ```
 
 ### Step 2: Create Scheduled Task
-```
+
+```markdown
 Schedule: Every 10 minutes
 Command: "Check and process pending meeting requests at file 'N5/inbox/meeting_requests/'"
 ```
 
 ### Step 3: Test It
-```
+
+```markdown
 1. Drop a meeting transcript in Document Inbox
 2. Wait ~1 minute for detection
 3. Check N5/inbox/meeting_requests/ for new request
@@ -88,12 +98,12 @@ Command: "Check and process pending meeting requests at file 'N5/inbox/meeting_r
 
 - **Inbox**: `/home/workspace/N5/inbox/meeting_requests/` (pending requests)
 - **Output**: `/home/workspace/N5/records/meetings/{meeting_id}/` (processed intelligence)
-- **Logs**: `/home/workspace/N5/logs/processed_meetings.jsonl` (tracking)
+- **Logs**: `file N5/logs/processed_meetings.jsonl` (tracking)
 - **Watch**: `/home/workspace/Document Inbox/` (new transcripts)
 
 ## Example Flow
 
-```
+```markdown
 1. Fireflies uploads: "Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z.docx"
    ↓
 2. User downloads to Document Inbox (or auto-sync from Google Drive)
@@ -110,21 +120,6 @@ Command: "Check and process pending meeting requests at file 'N5/inbox/meeting_r
    ↓
 8. User gets notification: "Meeting intelligence ready for Carly x Careerspan (2025-09-23)"
 ```
-
-## Why This Is Better Than the Python Script
-
-The `meeting_intelligence_orchestrator.py` script:
-- ❌ Tries to call external LLM APIs
-- ❌ Falls back to placeholder content when APIs fail
-- ❌ Limited by API token windows
-- ❌ Requires API keys and configuration
-
-This command-based approach:
-- ✅ Uses Zo's built-in LLM (me!)
-- ✅ No external dependencies
-- ✅ Full transcript context always available
-- ✅ Adapts to your preferences
-- ✅ Can interact if clarification needed
 
 ## Next Steps
 
