@@ -603,7 +603,105 @@ def extract_lessons():
         print(f"⚠️  Lessons extraction error: {e}")
         print("→ Continuing to Phase 0 (AAR)")
 
-
+def enrich_session_state():
+    """
+    Phase -0.5: Enrich SESSION_STATE.md with conversation context
+    Analyzes workspace files and updates session state before AAR generation
+    """
+    print("\n" + "="*70)
+    print("PHASE -0.5: SESSION STATE ENRICHMENT")
+    print("="*70)
+    print("\nAnalyzing conversation workspace...\n")
+    
+    session_file = CONVERSATION_WS / "SESSION_STATE.md"
+    if not session_file.exists():
+        logger.debug("No SESSION_STATE.md found, skipping enrichment")
+        return
+    
+    try:
+        content = session_file.read_text()
+        
+        # Extract current state
+        lines = content.split('\n')
+        
+        # Check if already enriched (not placeholder text)
+        if "What is this conversation specifically about?" not in content:
+            logger.info("✓ SESSION_STATE.md already enriched")
+            return
+        
+        # Analyze workspace files to infer context
+        workspace_files = list(CONVERSATION_WS.glob("*"))
+        
+        # Infer focus from filenames and content
+        focus_hints = []
+        objective_hints = []
+        completed_items = []
+        
+        # Look for deployment briefs, summaries, validation reports
+        for f in workspace_files:
+            if not f.is_file():
+                continue
+            name = f.name.lower()
+            
+            if 'deployment' in name or 'worker' in name:
+                focus_hints.append("deployment")
+                if 'complete' in name or 'validation' in name:
+                    completed_items.append(f"Completed {f.stem}")
+            
+            if 'fix' in name or 'bug' in name:
+                focus_hints.append("bug fix")
+                objective_hints.append("Fix identified issue")
+            
+            if 'summary' in name or 'report' in name:
+                completed_items.append(f"Generated {f.stem}")
+        
+        # Build enriched sections
+        if focus_hints:
+            focus = f"Conversation focused on: {', '.join(set(focus_hints))}"
+        else:
+            focus = "General build/implementation work"
+        
+        if objective_hints:
+            objective = "; ".join(objective_hints)
+        else:
+            objective = "Complete assigned work"
+        
+        # Update SESSION_STATE.md
+        updated_lines = []
+        in_focus_section = False
+        in_objective_section = False
+        focus_replaced = False
+        objective_replaced = False
+        
+        for line in lines:
+            if line.startswith("**Focus:**"):
+                updated_lines.append(f"**Focus:** {focus}")
+                focus_replaced = True
+                continue
+            elif line.startswith("**Goal:**"):
+                updated_lines.append(f"**Goal:** {objective}")
+                objective_replaced = True
+                continue
+            elif "*What is this conversation specifically about?*" in line:
+                continue  # Skip placeholder
+            elif "*What are we trying to accomplish?*" in line:
+                continue  # Skip placeholder
+            
+            updated_lines.append(line)
+        
+        # Write back
+        session_file.write_text('\n'.join(updated_lines))
+        
+        print(f"✓ Enriched SESSION_STATE.md")
+        print(f"  Focus: {focus}")
+        print(f"  Goal: {objective}")
+        if completed_items:
+            print(f"  Completed: {len(completed_items)} items")
+        
+    except Exception as e:
+        logger.error(f"Error enriching session state: {e}")
+        print(f"⚠️  Could not enrich session state: {e}")
+        print("   → Continuing with existing state")
 
 def generate_thread_export():
     """
@@ -1015,7 +1113,7 @@ def timeline_update_check():
             filepath = parts[1]
             
             # New command files
-            if 'N5/commands/' in filepath and filepath.endswith('.md'):
+            if 'Recipes/' in filepath and filepath.endswith('.md'):
                 if status_code.startswith('?') or status_code.startswith('A'):
                     cmd_name = Path(filepath).stem
                     new_commands.append(cmd_name)
@@ -1041,7 +1139,7 @@ def timeline_update_check():
             title = f"New command(s): {', '.join(new_commands)}"
             description = f"Created {len(new_commands)} new command(s): {', '.join(new_commands)}"
             category = "command"
-            components = [f"N5/commands/{cmd}.md" for cmd in new_commands]
+            components = [f"Recipes/{category}/{cmd}.md" for cmd in new_commands]
             impact = "medium"
             tags = ["automation"]
         else:
@@ -1297,6 +1395,9 @@ def main(dry_run=False):
     print("N5 CONVERSATION END-STEP")
     print("="*70)
     print(f"\nConversation workspace: {CONVERSATION_WS}")
+    
+    # NEW: Phase -0.5 - Enrich session state
+    enrich_session_state()
     
     # NEW: Phase -1 - Extract lessons
     extract_lessons()
