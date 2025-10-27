@@ -1,0 +1,41 @@
+{
+  "reflection_id": "2025-10-21_reflections-on-n5-os",
+  "source_file": "2025-10-21_reflections-on-n5-os.m4a",
+  "classified_at_iso": "2025-10-27T01:36:00Z",
+  "classifications": [
+    {
+      "category": "strategic",
+      "confidence": 0.88,
+      "block_id": "B73",
+      "block_name": "Strategic Thinking",
+      "rationale": "Contains strategic vision, long-term thinking, and positioning concepts"
+    },
+    {
+      "category": "product_analysis",
+      "confidence": 0.75,
+      "block_id": "B72",
+      "block_name": "Product Analysis",
+      "rationale": "Discusses product features, functionality, and user experience"
+    },
+    {
+      "category": "thought_leadership",
+      "confidence": 0.68,
+      "block_id": "B70",
+      "block_name": "Thought Leadership",
+      "rationale": "Original thinking on AI workflows and cognitive frameworks"
+    }
+  ],
+  "recommended_blocks": [
+    "B73",
+    "B72",
+    "B70"
+  ],
+  "all_scores": {
+    "strategic": 0.88,
+    "product_analysis": 0.75,
+    "thought_leadership": 0.68,
+    "market_analysis": 0.52,
+    "learning": 0.42,
+    "personal": 0.28
+  }
+}

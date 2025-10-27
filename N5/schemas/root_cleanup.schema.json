@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://n5os.local/schemas/root_cleanup.schema.json",
+  "title": "Root Cleanup Log Entry",
+  "description": "Schema for root cleanup operation logs",
+  "type": "object",
+  "required": ["timestamp", "operation", "source", "destination", "status"],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of operation"
+    },
+    "operation": {
+      "type": "string",
+      "enum": ["move_to_inbox", "skip_protected", "skip_pattern"],
+      "description": "Type of operation performed"
+    },
+    "source": {
+      "type": "string",
+      "description": "Original path of item"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination path (if moved)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "error", "skipped"],
+      "description": "Operation outcome"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": ["file", "directory"],
+      "description": "Type of filesystem item"
+    },
+    "size_bytes": {
+      "type": "integer",
+      "description": "Size in bytes (files only)"
+    },
+    "error": {
+      "type": "string",
+      "description": "Error message if status is error"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "description": "Inbox routing configuration - confidence thresholds and destination mappings",
+  "confidence_thresholds": {
+    "auto_route": 0.85,
+    "suggest": 0.60,
+    "manual_only": 0.0
+  },
+  "valid_destinations": [
+    "Knowledge/",
+    "Lists/",
+    "Records/Company/",
+    "Records/Personal/",
+    "Records/Temporary/",
+    "Documents/",
+    "Documents/System/",
+    "Documents/Archive/",
+    "Careerspan/",
+    "Careerspan/Meetings/",
+    "Personal/",
+    "Personal/Meetings/",
+    "Articles/",
+    "Images/",
+    "projects/"
+  ],
+  "destination_descriptions": {
+    "Knowledge/": "Processed, structured information - stable reference material",
+    "Lists/": "Action items, tracking, JSONL data collections",
+    "Records/Company/": "Raw company data - meetings, emails, documents (staging area)",
+    "Records/Personal/": "Raw personal data (staging area)",
+    "Records/Temporary/": "Temporary files, 7-day retention",
+    "Documents/": "User documents, active work",
+    "Documents/System/": "System documentation and guides",
+    "Documents/Archive/": "Historical documents",
+    "Careerspan/": "Company-specific work",
+    "Careerspan/Meetings/": "Processed company meeting notes",
+    "Personal/": "Personal work",
+    "Personal/Meetings/": "Processed personal meeting notes",
+    "Articles/": "Saved articles for reference",
+    "Images/": "Generated or downloaded images",
+    "projects/": "Active development projects"
+  },
+  "inbox_ttl_days": 14,
+  "analysis_model": "gpt-5",
+  "analysis_prompt_template": "Analyze this file and determine where it belongs in the N5OS workspace.\n\nFile: {filename}\nSize: {size} bytes\nType: {file_type}\nPreview: {preview}\n\nN5OS Structure:\n{destination_descriptions}\n\nProvide your analysis in this format:\nDESTINATION: [path from valid list]\nCONFIDENCE: [0.0-1.0]\nREASONING: [2-3 sentences explaining your choice]"
+}

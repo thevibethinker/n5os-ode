@@ -1,8 +1,8 @@
 # Worker 3: Style Guide Generation
 
-**Mission:** Create specialized style guides for each reflection block type  
-**Time Estimate:** 90 minutes  
-**Dependencies:** Worker 2 (needs block registry)  
+**Mission:** Create specialized style guides for each reflection block type\
+**Time Estimate:** 90 minutes\
+**Dependencies:** Worker 2 (needs block registry)\
 **Parallelizable:** No
 
 ---
@@ -19,14 +19,16 @@
 ## Context
 
 **Existing Style Guide System:**
+
 - Location: `N5/prefs/communication/style-guides/`
 - Format: Markdown with structure, tone, lexicon, templates, QA checklist
-- Examples: `linkedin-posts.md`, `follow-up-emails.md`, `blurbs.md`
-- Foundation: `voice-transformation-system.md`, `transformation-pairs-library.md`
+- Examples: `file linkedin-posts.md`, `file follow-up-emails.md`, `file blurbs.md`
+- Foundation: `file voice-transformation-system.md`, `file transformation-pairs-library.md`
 
 **Voice Profiles:**
-- Internal/Professional: `N5/prefs/communication/voice.md`
-- External Social: `N5/prefs/communication/social-media-voice.md`
+
+- Internal/Professional: `file N5/prefs/communication/voice.md`
+- External Social: `file N5/prefs/communication/social-media-voice.md`
 
 ---
 
@@ -37,17 +39,18 @@
 **Directory:** `N5/prefs/communication/style-guides/reflections/`
 
 **Files to Create:**
-1. `B50-personal-reflection.md`
-2. `B60-learning-synthesis.md`
-3. `B70-thought-leadership.md`
-4. `B71-market-analysis.md`
-5. `B72-product-analysis.md`
-6. `B73-strategic-thinking.md`
-7. `B80-linkedin-post.md` (or symlink to existing)
-8. `B81-blog-post.md`
-9. `B82-executive-memo.md`
-10. `B90-insight-compound.md`
-11. `B91-meta-reflection.md`
+
+ 1. `file B50-personal-reflection.md`
+ 2. `file B60-learning-synthesis.md`
+ 3. `file B70-thought-leadership.md`
+ 4. `file B71-market-analysis.md`
+ 5. `file B72-product-analysis.md`
+ 6. `file B73-strategic-thinking.md`
+ 7. `file B80-linkedin-post.md` (or symlink to existing)
+ 8. `file B81-blog-post.md`
+ 9. `file B82-executive-memo.md`
+10. `file B90-insight-compound.md`
+11. `file B91-meta-reflection.md`
 
 ---
 
@@ -111,13 +114,17 @@ Example:
 
 ### Template 1: [Name]
 ```
-[Structure outline with placeholders]
-```
+
+\[Structure outline with placeholders\]
+
+```markdown
 
 ### Template 2: [Name]
 ```
-[Alternative structure]
-```
+
+\[Alternative structure\]
+
+```markdown
 
 ---
 
@@ -141,13 +148,17 @@ Example:
 
 **Raw Input:**
 ```
-[Stream-of-consciousness reflection excerpt]
-```
+
+\[Stream-of-consciousness reflection excerpt\]
+
+```markdown
 
 **Refined Output:**
 ```
-[Polished version following this guide]
-```
+
+\[Polished version following this guide\]
+
+```markdown
 
 ---
 
@@ -173,19 +184,25 @@ Before finalizing:
 ## Implementation Strategy
 
 ### Step 1: Study Existing Style Guides
+
 Load and analyze:
-- `N5/prefs/communication/style-guides/linkedin-posts.md`
-- `N5/prefs/communication/style-guides/follow-up-emails.md`
-- `N5/prefs/communication/style-guides/blurbs.md`
+
+- `file N5/prefs/communication/style-guides/linkedin-posts.md`
+- `file N5/prefs/communication/style-guides/follow-up-emails.md`
+- `file N5/prefs/communication/style-guides/blurbs.md`
 
 ### Step 2: Extract Voice Principles
+
 From:
-- `N5/prefs/communication/voice.md`
-- `N5/prefs/communication/social-media-voice.md`
-- `N5/prefs/communication/voice-transformation-system.md`
+
+- `file N5/prefs/communication/voice.md`
+- `file N5/prefs/communication/social-media-voice.md`
+- `file N5/prefs/communication/voice-transformation-system.md`
 
 ### Step 3: Generate Each Style Guide
+
 For each block type:
+
 1. Determine domain (internal, external_professional, external_social)
 2. Map to appropriate voice profile
 3. Define structure specific to block type
@@ -195,18 +212,21 @@ For each block type:
 7. Build QA checklist
 
 ### Step 4: Cross-Reference with Registry
-Ensure each style guide aligns with block definition in `N5/prefs/reflection_block_registry.json`
+
+Ensure each style guide aligns with block definition in `file N5/prefs/reflection_block_registry.json`
 
 ---
 
 ## Special Cases
 
 ### B80 (LinkedIn Post)
-- May already exist as `linkedin-posts.md`
+
+- May already exist as `file linkedin-posts.md`
 - If so, create symlink or reference in registry
 - If not, create following existing patterns
 
 ### B90 (Insight Compounding) & B91 (Meta-Reflection)
+
 - More experimental block types
 - Less rigid structure, more exploratory
 - Focus on synthesis and pattern recognition
@@ -217,6 +237,7 @@ Ensure each style guide aligns with block definition in `N5/prefs/reflection_blo
 ## Testing
 
 For each style guide:
+
 1. Verify follows template structure
 2. Check voice profile reference is correct
 3. Validate examples are clear
@@ -236,6 +257,7 @@ For each style guide:
 ## Success Criteria
 
 Worker 3 is complete when:
+
 1. ✅ All 11 style guides created
 2. ✅ Each follows template structure
 3. ✅ Voice profile references correct
@@ -245,5 +267,5 @@ Worker 3 is complete when:
 
 ---
 
-**Status:** Waiting for Worker 2  
+**Status:** Waiting for Worker 2\
 **Created:** 2025-10-24
