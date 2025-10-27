@@ -151,3 +151,51 @@ These principles prevent data loss, corruption, and destructive actions.
 **Example from thread export refactoring (2025-10-12):**
 - Bad: Assume file writes succeed
 - Good: Verify file exists, check size, validate structure after write
+
+## Summary
+
+Safety principles ensure that N5 operations are:
+- **Reversible**: Via dry-run and versioning
+- **Protected**: Via anti-overwrite and confirmation
+- **Recoverable**: Via failure modes and backups
+- **Resilient**: Via error handling
+
+**Always load these principles for:**
+- File operations
+- Automation workflows
+- Destructive actions
+- System-critical scripts
+
+---
+
+## 34) Secrets Management
+
+**Purpose:** Centralize and protect all API keys, tokens, and credentials
+
+**Rules:**
+- All secrets MUST be stored in encrypted secrets manager (`N5/scripts/n5_secrets.py`)
+- Never store secrets in plaintext files, `.env` files, or hardcoded in scripts
+- Zo-managed secrets (OPENAI_API_KEY, etc.) remain in environment
+- All secret access automatically logged to audit trail
+- Rotation tracking enforced per secret type
+
+**When to apply:**
+- Any script requiring third-party API authentication
+- Service account credentials
+- Database passwords
+- OAuth tokens
+- Internal authentication tokens
+
+**Implementation:**
+```python
+from n5_secrets import SecretsManager
+
+secrets = SecretsManager()
+api_key = secrets.get("service_api_key")
+# Use api_key...
+# Access automatically logged to N5/data/secrets_audit.jsonl
+```
+
+**Full specification:** `file 'Knowledge/architectural/principles/P34-secrets-management.md'`
+
+**Related:** P2 (SSOT), P5 (Anti-Overwrite), P19 (Error Handling)

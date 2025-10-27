@@ -75,3 +75,11 @@ N5/lists/*.md
 projects/n5-system/n5-core/
 projects/n5-system/n5-launch/
 N5/config/tally_api_key.env
+
+# Secrets Management (P23)
+N5/config/secrets.jsonl
+N5/config/.secrets.key
+N5/config/credentials/
+N5/services/n8n_processor/.env
+N5/services/*/config files
+N5/data/secrets_audit.jsonl
