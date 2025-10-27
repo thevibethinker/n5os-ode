@@ -1,0 +1,1 @@
+/home/workspace/Knowledge/architectural/principles/P33-old-tricks-still-work.md

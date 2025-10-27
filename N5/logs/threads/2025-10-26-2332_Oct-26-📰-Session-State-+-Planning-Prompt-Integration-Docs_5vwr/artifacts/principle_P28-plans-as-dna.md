@@ -1,0 +1,1 @@
+/home/workspace/Knowledge/architectural/principles/P28-plans-as-code-dna.md

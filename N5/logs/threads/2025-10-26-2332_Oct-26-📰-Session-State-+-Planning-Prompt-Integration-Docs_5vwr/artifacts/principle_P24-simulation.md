@@ -1,0 +1,1 @@
+/home/workspace/Knowledge/architectural/principles/P24-simulation-over-doing.md

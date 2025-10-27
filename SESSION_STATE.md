@@ -2,26 +2,26 @@
 Auto-generated | Scheduled Task
 
 ## Metadata
-- Conversation ID: con_Y1DWkI38yFLJv0dT
+- Conversation ID: con_Hg3oewLgGW2DBsMW
 - Status: active
 - Type: discussion
 
 ## Focus
-Execute AI-powered meeting transcript scan with semantic deduplication; wrap with pre/post LLM request handling and summarize counts.
+Run the weekly list health check across all JSONL lists, validating schema, identifying stale items (>30 days), detecting duplicates, computing health scores, and logging results.
 
 ## Objective
-- STEP 1: Check and handle any pending LLM requests via helpers/llm_request_handler.py
-- STEP 2: Run n5_meeting_transcript_scanner.py with semantic deduplication (same-day ±24h, participants, name, filename patterns)
-- STEP 3: Re-check for LLM requests created during the scan and handle
-- STEP 4: Report transcripts detected, downloaded, queued, and skipped (duplicates)
+- STEP 1: Use command-first approach; verify any registered command for list health; proceed with the specified weekly maintenance script
+- STEP 2: Execute /home/workspace/N5/scripts/maintenance/weekly_list_health.py
+- STEP 3: Confirm logs written to N5/logs/maintenance/weekly/ and capture summary counts
+- STEP 4: Report list totals, stale/duplicate counts, and average health score
 
 ## Tags
-#scheduled #meetings #transcripts #dedup #ai-dedup #automation #n5
+#scheduled #lists #health #jsonl #maintenance #automation #n5
 
 ## Run Summary
-- LLM requests (pre): 0 | (post): 0
-- Scanner: initialized, dedup enabled
-- New transcripts detected: 0
-- Downloaded: 0 | Queued requests: 0 | Skipped as duplicates: 0
-- Notes: No pending LLM requests; scanner ran with semantic dedup; no new transcripts detected this run.
-- Updated: 2025-10-26 19:14 ET
+- Lists checked: 16 | Successful: 16 | Avg health: 89.8/100
+- Stale items: 14 across 6 lists (notably ideas.jsonl: 4; system-upgrades.jsonl: 4)
+- Duplicates: 5 groups across 2 lists (system-upgrades.jsonl: 2; output_reviews.jsonl: 3)
+- Schema warnings: index.jsonl, organizations_queue.jsonl, output_reviews.jsonl, output_reviews_comments.jsonl
+- Log: file 'N5/logs/maintenance/weekly/lists_2025-10-27.log'
+- Updated: 2025-10-26 20:04 ET

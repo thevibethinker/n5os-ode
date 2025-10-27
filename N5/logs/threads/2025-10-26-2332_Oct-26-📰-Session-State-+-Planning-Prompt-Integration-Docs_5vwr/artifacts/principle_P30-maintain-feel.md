@@ -1,0 +1,1 @@
+/home/workspace/Knowledge/architectural/principles/P30-maintain-feel-for-code.md

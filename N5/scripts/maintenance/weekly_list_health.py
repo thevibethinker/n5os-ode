@@ -97,6 +97,9 @@ def find_stale_items(filepath, items):
         if date_field:
             try:
                 item_date = datetime.fromisoformat(date_field.replace('Z', '+00:00'))
+                # Normalize to naive for safe comparison (drop tzinfo if present)
+                if item_date.tzinfo is not None:
+                    item_date = item_date.replace(tzinfo=None)
                 
                 # Only flag open/pending items as stale
                 status = item.get('status', '').lower()
