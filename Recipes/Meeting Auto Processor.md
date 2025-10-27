@@ -1,7 +1,6 @@
 ---
-description: Process meeting transcripts automatically using Zo's LLM capabilities
-  instead of external API calls.
-tags: []
+description: "Process meeting transcripts automatically using Zo's LLM capabilities instead of external API calls."
+tags:
 ---
 # Meeting Auto-Processor Command
 
@@ -197,10 +196,8 @@ Zo: Downloads → Converts → Reads full transcript → Generates intelligence 
 
 ## Alternative: Direct Command Registration
 
-Register this as an N5 command:
+Register this as an N5 command using the registry-based approach:
 
-```jsonl
-{"command": "process-meeting", "description": "Process meeting transcript into intelligence blocks", "handler": "meeting_intelligence_orchestrator.py", "auto_trigger": "file_pattern:*-transcript-*.docx"}
-```
+See file 'N5/prefs/block_type_registry.json' for current meeting processing configuration.
 
-Then it runs automatically when matching files appear.
+Use file 'Recipes/Meetings/Meeting Process.md' for the current workflow instead of deprecated orchestrator scripts.
