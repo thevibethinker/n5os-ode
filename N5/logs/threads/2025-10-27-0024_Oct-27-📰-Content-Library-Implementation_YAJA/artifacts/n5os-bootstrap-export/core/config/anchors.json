@@ -1,0 +1,16 @@
+{
+  "version": "2025-10-24",
+  "anchors": {
+    "meetings_company": {"path": "Careerspan/Meetings", "synonyms": ["meeting", "meetings", "mtg"]},
+    "meetings_personal": {"path": "Personal/Meetings", "synonyms": ["meeting", "meetings", "mtg"]},
+    "projects": {"path": "Projects", "synonyms": ["project", "projects", "proj"], "deprecated_dirs": ["projects"]},
+    "temporary": {"path": "Records/Temporary", "synonyms": ["temp", "temporary", "tmp"]},
+    "logs": {"path": "N5/logs", "synonyms": ["log", "logs"]},
+    "deliverables": {"path": "Documents/Deliverables", "synonyms": ["deliverable", "deliverables"]},
+    "exports": {"path": "N5/exports", "synonyms": ["export", "exports"]},
+    "resumes": {"path": "Documents/Resumes", "synonyms": ["resume", "resumes", "cv", "c.v."]},
+    "documents": {"path": "Documents", "synonyms": ["docs", "documents"]},
+    "records_company": {"path": "Records/Company", "synonyms": ["company-records"]},
+    "records_personal": {"path": "Records/Personal", "synonyms": ["personal-records"]}
+  }
+}

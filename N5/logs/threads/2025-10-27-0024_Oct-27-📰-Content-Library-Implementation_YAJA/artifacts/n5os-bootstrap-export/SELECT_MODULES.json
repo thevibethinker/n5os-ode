@@ -1,0 +1,122 @@
+{
+  "version": "1.0",
+  "description": "N5 OS Module Selection",
+  "timestamp": "2025-10-26",
+  "modules": {
+    "core": {
+      "name": "Core Foundation",
+      "required": true,
+      "description": "Preferences architecture, schemas, command registry (required)",
+      "size_mb": 5,
+      "components": [
+        "prefs/ (modular preferences)",
+        "schemas/ (validation schemas)",
+        "config/ (command registry, incantum triggers)",
+        "commands/ (command documentation)"
+      ]
+    },
+    "lists": {
+      "name": "List Management System",
+      "required": false,
+      "default": true,
+      "description": "JSONL-based list system with POLICY, schemas, and structure",
+      "size_mb": 2,
+      "components": [
+        "Lists/POLICY.md",
+        "Lists/schemas/",
+        "Empty JSONL templates"
+      ]
+    },
+    "meetings": {
+      "name": "Meeting Ingestion Workflows",
+      "required": false,
+      "default": true,
+      "description": "Meeting processing protocols, templates, and integration",
+      "size_mb": 3,
+      "components": [
+        "Meeting workflow protocols",
+        "Processing templates",
+        "Output schemas"
+      ]
+    },
+    "knowledge": {
+      "name": "Knowledge Base Reference",
+      "required": false,
+      "default": false,
+      "description": "Architectural principles, glossary, bio (reference only)",
+      "size_mb": 4,
+      "components": [
+        "Architectural principles",
+        "Glossary",
+        "Bio and company info",
+        "Operational principles"
+      ]
+    },
+    "scripts_minimal": {
+      "name": "Scripts — Minimal",
+      "required": false,
+      "default": false,
+      "description": "Core utilities only (index, git, audit, conversion)",
+      "size_mb": 8,
+      "components": [
+        "index-rebuild.py",
+        "git-check.py",
+        "core-audit.py",
+        "n5_conversion_utility.py",
+        "Helper libraries"
+      ]
+    },
+    "scripts_standard": {
+      "name": "Scripts — Standard",
+      "required": false,
+      "default": true,
+      "description": "Core utilities + workflow scripts (standard setup)",
+      "size_mb": 45,
+      "components": [
+        "All minimal scripts",
+        "Meeting processing",
+        "List management",
+        "Reflection ingestion",
+        "Helper libraries"
+      ]
+    },
+    "scripts_full": {
+      "name": "Scripts — Full Suite",
+      "required": false,
+      "default": false,
+      "description": "All 259 scripts (complete implementation)",
+      "size_mb": 120,
+      "components": [
+        "All scripts",
+        "Deliverable generation",
+        "Email workflows",
+        "Timeline management",
+        "All helpers and utilities"
+      ]
+    },
+    "communications": {
+      "name": "Communication Templates",
+      "required": false,
+      "default": false,
+      "description": "Email templates, voice style guide, follow-up patterns",
+      "size_mb": 2,
+      "components": [
+        "Email templates",
+        "Voice and style guide",
+        "Communication preferences",
+        "Follow-up patterns"
+      ]
+    }
+  },
+  "defaults": {
+    "core": true,
+    "lists": true,
+    "meetings": true,
+    "knowledge": false,
+    "scripts_minimal": false,
+    "scripts_standard": true,
+    "scripts_full": false,
+    "communications": false
+  },
+  "total_size_recommended": "~55 MB (with defaults)"
+}

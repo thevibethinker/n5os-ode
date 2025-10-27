@@ -1,0 +1,209 @@
+{
+  "version": "2.0.0",
+  "description": "Bidirectional mapping between N5 hashtags and Howie V-OS brackets",
+  "last_updated": "2025-10-12",
+  "changes": [
+    "v2.0.0: Fixed semantic collision - Priority is now N5-only (binary: critical/non-critical)",
+    "v2.0.0: Accommodation owns [A-*] brackets (meeting flexibility)",
+    "v2.0.0: Added disambiguation hints for [LD-NET] → collaboration vs channel",
+    "v2.0.0: Updated auto-inheritance rules per V's confirmation"
+  ],
+  
+  "hashtag_to_bracket": {
+    "#stakeholder:investor": "[LD-INV]",
+    "#stakeholder:job_seeker": "[LD-HIR]",
+    "#stakeholder:community": "[LD-COM]",
+    "#stakeholder:partner:collaboration": "[LD-NET]",
+    "#stakeholder:partner:channel": "[LD-NET]",
+    "#stakeholder:partner": "[LD-NET]",
+    "#stakeholder:prospect": "[LD-GEN]",
+    "#schedule:within_5d": "[D5]",
+    "#schedule:5d_plus": "[D5+]",
+    "#schedule:10d_plus": "[D10]",
+    "#status:postponed": "[OFF]",
+    "#status:awaiting": "[AWA]",
+    "#status:inactive": "[TERM]",
+    "#align:logan": "[LOG]",
+    "#align:ilse": "[ILS]",
+    "#align:founders": "[GPT-F]",
+    "#accommodation:minimal": "[A-0]",
+    "#accommodation:baseline": "[A-1]",
+    "#accommodation:full": "[A-2]",
+    "#availability:weekend_ok": "[WEX]",
+    "#availability:weekend_preferred": "[WEP]",
+    "#priority:critical": "!!",
+    "#type:discovery": "",
+    "#type:partnership": "",
+    "#type:followup": "",
+    "#type:recurring": ""
+  },
+  
+  "bracket_to_hashtag": {
+    "[LD-INV]": "#stakeholder:investor",
+    "[LD-HIR]": "#stakeholder:job_seeker",
+    "[LD-COM]": "#stakeholder:community",
+    "[LD-NET]": "#stakeholder:partner:collaboration",
+    "[LD-GEN]": "#stakeholder:prospect",
+    "!!": "#priority:critical",
+    "[A-0]": "#accommodation:minimal",
+    "[A-1]": "#accommodation:baseline",
+    "[A-2]": "#accommodation:full",
+    "[D5]": "#schedule:within_5d",
+    "[D5+]": "#schedule:5d_plus",
+    "[D10]": "#schedule:10d_plus",
+    "[OFF]": "#status:postponed",
+    "[AWA]": "#status:awaiting",
+    "[TERM]": "#status:inactive",
+    "[LOG]": "#align:logan",
+    "[ILS]": "#align:ilse",
+    "[GPT-F]": "#align:founders",
+    "[WEX]": "#availability:weekend_ok",
+    "[WEP]": "#availability:weekend_preferred"
+  },
+  
+  "disambiguation_hints": {
+    "[LD-NET]": {
+      "default": "#stakeholder:partner:collaboration",
+      "description": "Default to collaboration partner unless context suggests channel",
+      "channel_keywords": [
+        "distribution",
+        "resale",
+        "reseller",
+        "referral partner",
+        "affiliate",
+        "channel partner",
+        "distributor"
+      ],
+      "collaboration_keywords": [
+        "integration",
+        "API",
+        "co-marketing",
+        "joint",
+        "embedded",
+        "partnership",
+        "co-develop"
+      ],
+      "fallback": "If ambiguous, default to collaboration and flag for manual review"
+    }
+  },
+  
+  "regex_patterns": {
+    "[F-(\\d+)]": "#followup:external_$1",
+    "[FL-(\\d+)]": "#followup:logan_$1",
+    "[FM-(\\d+)]": "#followup:vrijen_$1"
+  },
+  
+  "n5_only_tags": {
+    "description": "Tags that exist only in N5, not synced to Howie",
+    "patterns": [
+      "#relationship:*",
+      "#engagement:*",
+      "#context:*",
+      "#priority:non-critical",
+      "#stakeholder:customer",
+      "#stakeholder:vendor",
+      "#stakeholder:advisor"
+    ],
+    "note": "Priority is now N5-only (binary: critical/non-critical). Accommodation is Howie-synced (meeting flexibility)."
+  },
+  
+  "auto_inheritance_rules": {
+    "description": "Tags that are automatically added when a primary tag is applied or confirmed",
+    "timing": "Applied at tag confirmation time",
+    "update_existing": true,
+    "rules": {
+      "#stakeholder:investor": {
+        "inherits": ["#priority:critical"],
+        "reason": "All investors are business-critical by definition"
+      },
+      "#stakeholder:advisor": {
+        "inherits": ["#priority:critical"],
+        "reason": "Strategic advisors provide high-value guidance"
+      },
+      "#stakeholder:customer": {
+        "inherits": ["#priority:critical"],
+        "reason": "Paying customers are critical to business"
+      },
+      "#stakeholder:partner:collaboration": {
+        "inherits": [],
+        "reason": "Priority depends on specific partnership value"
+      },
+      "#stakeholder:partner:channel": {
+        "inherits": [],
+        "reason": "Priority depends on channel reach and value"
+      },
+      "#stakeholder:job_seeker": {
+        "inherits": ["#priority:non-critical"],
+        "reason": "Recruiting is important but not business-critical"
+      },
+      "#stakeholder:community": {
+        "inherits": ["#priority:non-critical"],
+        "reason": "Community relationships are valuable but not urgent"
+      },
+      "#stakeholder:prospect": {
+        "inherits": ["#priority:non-critical"],
+        "reason": "General leads start as exploratory, elevate as needed"
+      },
+      "#stakeholder:vendor": {
+        "inherits": ["#priority:non-critical"],
+        "reason": "Service providers are operational, not strategic"
+      }
+    },
+    "discovery_tag_logic": {
+      "description": "Auto-add #type:discovery based on context",
+      "when_to_apply": "At tag time or after first meeting",
+      "signals": {
+        "from_email": "Check email subject/body for keywords: intro, introduction, coffee, meet, explore, discuss",
+        "from_linkedin": "Check LinkedIn message for introduction context",
+        "from_calendar": "First meeting with this contact (no prior meetings)",
+        "from_transcript": "Meeting transcript shows exploratory/discovery language"
+      },
+      "confidence_threshold": 0.8,
+      "fallback": "If ambiguous, do not auto-add; suggest for V's review"
+    }
+  },
+  
+  "linkedin_protocol": {
+    "description": "Protocol for accessing LinkedIn messages when no email exists",
+    "never_do": [
+      "Respond to the person",
+      "Indicate typing or 'seen' status",
+      "Write to them in any way",
+      "Leave conversation marked as read"
+    ],
+    "always_do": [
+      "Mark conversation as UNREAD after reading",
+      "Extract message content for context",
+      "Check for introduction/meeting setup details",
+      "Note: V uses 'unread' status to track if he's responded yet"
+    ],
+    "use_case": "Discover meetings set up via LinkedIn DMs when no Gmail thread exists"
+  },
+  
+  "careerspan_context": {
+    "description": "Context for understanding stakeholder classification",
+    "business_model": "B2B SaaS platform for career development and coaching",
+    "target_customers": [
+      "Enterprise HR teams",
+      "Career coaches",
+      "Universities and career centers",
+      "Nonprofit workforce development orgs"
+    ],
+    "key_partnerships": [
+      "Integration partners (HR tech ecosystem)",
+      "Career coaching networks",
+      "University partnerships",
+      "Community organizations"
+    ],
+    "channel_vs_collaboration": {
+      "collaboration": "Companies building on/with Careerspan (APIs, integrations, co-marketing)",
+      "channel": "Organizations reselling or referring Careerspan to their audience"
+    },
+    "strategic_priorities": [
+      "Fundraising (investors = critical)",
+      "Enterprise customer acquisition",
+      "Strategic partnerships (HR tech ecosystem)",
+      "Advisor/mentor relationships"
+    ]
+  }
+}

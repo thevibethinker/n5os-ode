@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "last_updated": "2025-10-12",
+  "description": "Business rules for stakeholder classification and tagging",
+  
+  "taxonomy_principles": {
+    "types_vs_states": {
+      "principle": "Stakeholder types represent fundamental identity/relationship. States represent temporary conditions.",
+      "v_insight": "Job seeking is a state, not a stakeholder type. Anyone can be job seeking.",
+      "examples": {
+        "types": ["investor", "advisor", "community", "partner", "customer"],
+        "states": ["job_seeking:active", "relationship:warm", "engagement:responsive"]
+      },
+      "benefits": [
+        "Cleaner taxonomy (orthogonal dimensions)",
+        "No dual stakeholder classification needed",
+        "Tracks transitions over time (job_seeking:active → inactive)",
+        "Extensible (can add hiring:active, transitioning:active, etc.)"
+      ]
+    }
+  },
+  
+  "job_seeking_status": {
+    "category": "#job_seeking:*",
+    "description": "Employment seeking status (orthogonal to stakeholder type)",
+    "values": {
+      "active": "Currently seeking employment, interviewing, using job search products",
+      "inactive": "Not currently seeking, employed and settled"
+    },
+    "applies_to": "Anyone regardless of stakeholder type",
+    "examples": [
+      {
+        "contact": "Kim Wilkes",
+        "tags": ["#stakeholder:community", "#job_seeking:active"],
+        "note": "Community leader who is also job seeking (clean, no dual stakeholder types)"
+      },
+      {
+        "contact": "Hypothetical investor",
+        "tags": ["#stakeholder:investor", "#job_seeking:active"],
+        "note": "Investor between roles (happens, trackable)"
+      }
+    ],
+    "product_tracking": "Track #job_seeking:active contacts for Careerspan product usage and placement outcomes"
+  },
+  
+  "excluded_types": {
+    "hiring_candidates": {
+      "exclude": true,
+      "reasoning": "Internal hiring candidates should not be tracked in stakeholder system",
+      "detection": [
+        "Email threads about job interviews, compensation, start dates",
+        "Coordination with Ilse/Logan about hiring",
+        "Keywords: 'candidate', 'interview', 'hire', 'start date', 'compensation'"
+      ],
+      "action": "Exclude from stakeholder system (do not create profiles, do not include in weekly reviews)",
+      "exception": "Specific individuals who V sees as networking relationships beyond hiring context can be classified as networking contacts"
+    },
+    "internal_team": {
+      "exclude": true,
+      "reasoning": "Internal Careerspan team members",
+      "domains": ["mycareerspan.com", "careerspan.com"]
+    }
+  },
+  
+  "email_handling": {
+    "personal_emails": {
+      "strategy": "auxiliary_email",
+      "description": "When contact uses personal email (gmail.com, mac.com, etc.), track as auxiliary but prioritize professional email as primary key",
+      "personal_email_indicators": [
+        "gmail.com",
+        "yahoo.com",
+        "hotmail.com",
+        "outlook.com",
+        "mac.com",
+        "icloud.com",
+        "me.com"
+      ],
+      "action": "Store personal email in 'auxiliary_emails' field, fetch professional email from LinkedIn/web search"
+    },
+    "primary_email_priority": {
+      "1": "Professional email (company domain)",
+      "2": "LinkedIn-verified email",
+      "3": "Most recent email used in communication",
+      "4": "Personal email (fallback)"
+    }
+  },
+  
+  "stakeholder_inference_rules": {
+    "advisor": {
+      "indicators": [
+        "Provides strategic advice/coaching",
+        "No transactional relationship (not paying, not being paid)",
+        "Regular engagement (weekly/monthly check-ins)",
+        "GTM insights, strategy validation",
+        "Former executive/hiring manager sharing expertise",
+        "Enterprise HR expertise, alumni network partnerships"
+      ],
+      "examples": ["Alex Caveny", "Carly Ackerman"]
+    },
+    "networking_contact": {
+      "indicators": [
+        "Relationship value beyond transactional context",
+        "V sees connection potential independent of business role",
+        "May have business context (hiring, sales) but relationship is broader",
+        "General relationship building, mutual support"
+      ],
+      "examples": ["Tim He - hiring candidate but also networking relationship"],
+      "priority_default": "non-critical",
+      "note": "Distinct from 'prospect' (which implies business opportunity); networking is relational, not transactional"
+    },
+    "partner_collaboration": {
+      "indicators": [
+        "Organization-to-organization relationship",
+        "Integration/co-marketing discussions",
+        "Partnership exploration emails",
+        "Not resale/distribution (that's channel)"
+      ],
+      "internal_facilitators": {
+        "description": "Employees of partner organization who facilitate intro",
+        "classification": "Tag with partner organization's stakeholder type",
+        "example": "Heather Wixson (Landidly employee) → #stakeholder:partner:collaboration"
+      }
+    },
+    "community": {
+      "indicators": [
+        "Leads/active in community networks",
+        "Offers access to groups (Elpha, Tech Ladies, etc.)",
+        "Community partnership discussions",
+        "Nonprofit/social impact focus"
+      ],
+      "note": "Can also have #job_seeking:active status (orthogonal, not dual stakeholder type)"
+    }
+  },
+  
+  "priority_auto_inheritance": {
+    "critical": ["investor", "advisor", "customer"],
+    "non-critical": ["community", "partner:collaboration", "partner:channel", "prospect", "vendor", "networking_contact"]
+  }
+}
