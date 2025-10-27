@@ -157,7 +157,7 @@ def inventory_workspace():
     return files_by_category
 
 
-def propose_organization(files_by_category):
+def propose_organization(files_by_category, auto_mode=False):
     """
     Propose file organization to user
     
@@ -215,7 +215,11 @@ def propose_organization(files_by_category):
     proposal.append("\n" + "="*70)
     proposal.append(f"SUMMARY: {move_count} move, {delete_count} delete, {ask_count} need decision")
     proposal.append("="*70)
-    proposal.append("\nProceed with moves and deletions? (Y/n)")
+    
+    if not auto_mode:
+        proposal.append("\nProceed with moves and deletions? (Y/n)")
+    else:
+        proposal.append("\n→ Auto mode: Proceeding automatically")
     
     return "\n".join(proposal)
 
@@ -320,7 +324,7 @@ def cleanup_workspace_root():
         print(f"⚠️  Workspace root cleanup skipped: {e}")
 
 
-def placeholder_scan():
+def placeholder_scan(auto_mode=False):
     """
     Scan conversation files for placeholders, stubs, and incomplete code
     This is Phase 2.5 - enforces P16 (Accuracy) and P21 (Document Assumptions)
@@ -357,7 +361,7 @@ def placeholder_scan():
             return True
         
         elif result.returncode == 1:
-            # Issues found - require resolution
+            # Issues found
             print("\n" + "="*70)
             print("⚠️  RESOLUTION REQUIRED BEFORE CONVERSATION-END")
             print("="*70)
@@ -368,7 +372,7 @@ def placeholder_scan():
             print("  3. Acknowledge and continue (will be logged for later)")
             
             # Check for auto mode
-            if "--auto" in sys.argv or "--yes" in sys.argv:
+            if auto_mode:
                 print("\n→ Auto mode: Logging issues and continuing...")
                 log_action("Placeholder scan: issues detected but auto-acknowledged")
                 return True
@@ -416,7 +420,7 @@ def placeholder_scan():
         return True
 
 
-def output_review_check():
+def output_review_check(auto_mode=False):
     """Phase 2.75: Check output review tracking and remind about deliverables."""
     try:
         # Get conversation ID
@@ -486,8 +490,12 @@ def output_review_check():
             print(f"      python3 N5/scripts/review_cli.py add <path> \\")
             print(f"        --improve \"What to change\" \\")
             print(f"        --optimal \"Ideal version description\"")
-            print(f"\n   Press Enter to continue (outputs remain unflagged)")
-            input(f"   > ")
+            
+            if not auto_mode:
+                print(f"\n   Press Enter to continue (outputs remain unflagged)")
+                input(f"   > ")
+            else:
+                print(f"\n   → Auto mode: Continuing without flagging")
         else:
             print(f"   ✓ No substantial unflagged outputs detected")
         
@@ -1137,7 +1145,7 @@ def timeline_update_check():
         
         if has_new_commands:
             title = f"New command(s): {', '.join(new_commands)}"
-            description = f"Created {len(new_commands)} new command(s): {', '.join(new_commands)}"
+            description = f"Created {len(new_commands)} new command(s): {', '.join(new_commands[:3])}"
             category = "command"
             components = [f"Recipes/{category}/{cmd}.md" for cmd in new_commands]
             impact = "medium"
@@ -1374,8 +1382,33 @@ conversation_id: {convo_id}
         print("   → Continuing without promotion")
 
 
-def main(dry_run=False):
+def parse_args():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(description="N5 Conversation End-Step")
+    parser.add_argument("--auto", action="store_true", 
+                       help="Auto-approve all prompts (non-interactive mode)")
+    parser.add_argument("--dry-run", action="store_true",
+                       help="Show what would be done without executing")
+    parser.add_argument("--skip-cleanup", action="store_true",
+                       help="Skip workspace root cleanup phase")
+    parser.add_argument("--skip-placeholder-scan", action="store_true",
+                       help="Skip placeholder detection phase")
+    
+    args = parser.parse_args()
+    
+    # Auto-enable --auto if in automated environment
+    if os.getenv("ZO_AUTOMATED") == "true" or os.getenv("CI") == "true":
+        args.auto = True
+        logger.info("Auto mode enabled via environment")
+    
+    return args
+
+
+def main():
     """Main execution"""
+    args = parse_args()
+    
+    logger.info(f"Starting conversation-end (auto={args.auto}, dry_run={args.dry_run})")
     
     # Check if we're in a real conversation context
     if not CONVERSATION_WS or not CONVERSATION_WS.exists():
@@ -1418,11 +1451,11 @@ def main(dry_run=False):
         confirmed = True  # Skip to cleanup phases
     else:
         # Step 2: Propose
-        proposal = propose_organization(files_by_category)
+        proposal = propose_organization(files_by_category, auto_mode=args.auto)
         print(proposal)
         
         # Step 3: Get confirmation
-        if "--auto" in sys.argv or "--yes" in sys.argv:
+        if args.auto:
             confirmed = True
         else:
             response = input("\n> ").strip().lower()
@@ -1446,11 +1479,10 @@ def main(dry_run=False):
         print("\n" + "="*70)
         print("SCANNING FOR PLACEHOLDERS & STUBS...")
         print("="*70)
-        if not placeholder_scan():
-            print("\n❌ Conversation-end aborted - return to fix issues")
-            return
-
-        # NEW: Phase 2.75 - Output Review Summary & Reminder
+        if not placeholder_scan(auto_mode=args.auto):
+            sys.exit(1)
+        
+        # NEW: Phase 2.75 - Output review summary
         print("\n" + "="*70)
         print("PHASE 2.75: OUTPUT REVIEW SUMMARY")
         print("="*70)
@@ -1519,7 +1551,7 @@ def main(dry_run=False):
                     print("   n5 review add <file> --sentiment <rating> \\")
                     print("     --improve '<what to change>' \\")
                     print("     --optimal '<ideal state>'")
-                    if "--auto" not in sys.argv:
+                    if not args.auto:
                         choice = input("\nSkip reminder and continue? (Y/n): ").strip().lower()
                         if choice not in ["", "y", "yes"]:
                             print("Continuing without reminder acknowledged.")
@@ -1567,31 +1599,4 @@ def main(dry_run=False):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="N5 Conversation End-Step: AAR generation, file organization, cleanup"
-    )
-    parser.add_argument(
-        "--convo-id",
-        help="Specific conversation ID to close (e.g., con_6zEGRFp9KfYSn5ed). If not provided, auto-detects most recent."
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Preview changes without executing them"
-    )
-    args = parser.parse_args()
-    
-    # If convo-id specified, override auto-detection (MUST update global)
-    if args.convo_id:
-        workspace_path = Path("/home/.z/workspaces") / args.convo_id
-        if not workspace_path.exists():
-            logger.error(f"Conversation workspace not found: {workspace_path}")
-            sys.exit(1)
-        # Update the global CONVERSATION_WS variable
-        globals()['CONVERSATION_WS'] = workspace_path
-        CONVERSATION_WS = workspace_path  # Local assignment for clarity
-        logger.info(f"Using specified conversation: {args.convo_id}")
-        logger.info(f"  Path: {CONVERSATION_WS}")
-    
-    # Pass dry-run flag to main
-    main(dry_run=args.dry_run)
+    main()

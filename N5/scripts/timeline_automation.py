@@ -224,7 +224,7 @@ class TimelineDetector:
             title = f"New command(s): {', '.join(new_commands)}"
             description = f"Created {len(new_commands)} new command(s): {', '.join(new_commands)}"
             category = "command"
-            components = [f"N5/commands/{cmd}.md" for cmd in new_commands]
+            components = [f"Recipes/{determine_category(cmd)}/{cmd}.md" for cmd in new_commands]
             impact = "medium"
         else:
             title = "System script updates"
