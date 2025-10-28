@@ -1,95 +1,124 @@
 # David Speigel
 
-**Created**: 2025-10-23  
-**Last Updated**: 2025-10-23  
-**Source**: Meeting 2025-10-23_external-gja-nzqi-sxu
+**Status:** Active Advisory Relationship  
+**Stakeholder Type:** Advisor  
+**Enrichment Priority:** HIGH
 
-## Basic Information
+---
 
-**Primary Email**: [Unknown - needs enrichment]  
-**Phone**: [Unknown]  
-**LinkedIn**: [Unknown - needs enrichment]  
-**Location**: [Unknown]
+## Contact Information
 
-## Professional Profile
+**Primary Email:** [Unknown - needs enrichment]  
+**Phone:** [Unknown - needs enrichment]  
+**LinkedIn:** [Unknown - needs enrichment]  
+**Location:** Suburban area (near synagogue, not Brooklyn/Cambridge)
 
-**Current Role**: Product Manager (open to opportunities)  
-**Background**: Experienced product leader with focus on strategic advisory and product improvement  
-**Network**: Strong connections in founder/builder community  
-**Technology History**: Former Samsung Note user (versions 2-6), switched to iPhone
+---
+
+## Background
+
+**Current Role:** [Unknown - needs enrichment]
+
+**Past Experience:**
+- Worked at very early-stage startups (through acquisition)
+- Worked at larger startups that acquired other companies
+- Worked at VC firm (firm name unknown - needs enrichment)
+- Still connected to VC founder from that firm
+- Personally bought a business off Flippa using escrow.com
+
+**Domain Expertise:**
+- Startup acquisition process (buyer and seller side)
+- Valuation models (acquihire, asset purchase, revenue multiples)
+- Business broker marketplaces and Internet business investing ecosystem
+- VC firm operations and deal evaluation
+
+---
 
 ## Relationship Context
 
-**Stakeholder Type**: #stakeholder:networking_contact  
-**Status**: #job_seeking:active  
-**Relationship Depth**: Warm (existing relationship with comfortable banter)  
-**Last Contact**: 2025-10-23  
-**Meeting History**: 
-- 2025-10-23: Zo platform introduction and networking discussion
+**How We Met:** [Unknown - context suggests recurring advisory relationship]
 
-## Key Characteristics
+**Meeting History:**
+- 2025-10-27: Exit strategy advisory session (see file 'N5/records/meetings/2025-10-27_external-david/')
+- Previous conversation on 2025-10-22 or earlier (referenced "last Friday" pricing discussion)
 
-**Product Philosophy**: 
-- Prefers improving existing solutions over building from scratch
-- Strategic helper who guides others' products
-- Self-limits tool building despite technical capability to avoid "rabbit holes"
-- Early adopter who evaluates thoughtfully
+**Relationship Depth:** Advisory relationship - David is providing strategic counsel on Careerspan's acquisition strategy
 
-**Pain Points**:
-- Manual automation processes (copying call transcripts to Google Docs)
-- Existing automation tools (Zapier/Make/N8N) unreliable
-- Limited time/patience for ground-up builds
+**Value to Careerspan:**
+- Strategic guidance on exit options and valuation approaches
+- Access to James Camp / Nanoflips business broker ecosystem
+- Potential warm intros through VC network
+- Operational experience in acquisition scenarios
 
-**Values**:
-- "Feature to solution" thinking (systems over isolated features)
-- Access to founder/builder networks
-- Getting in early on promising platforms
-- Strategic improvement over obsessive building
+---
 
-## Opportunities
+## Key Intelligence
 
-**Immediate**:
-- Zo platform power user (ideal profile match)
-- Potential product advisor for Zo (GTM/strategy insights)
-- Template marketplace early adopter
+**Strategic Priorities:**
+- Helping Careerspan navigate acquisition process effectively
+- Connecting team to business broker marketplace ecosystem
+- Providing pricing/positioning counsel
 
-**Mutual Value**:
-- David gets: Platform access, networking with Zo founders, potential advisory role
-- Vrijen gets: Product feedback on N5 system, validation of Zo Architect model, access to David's founder network
+**Interaction Style:**
+- Thoughtful, asks probing questions about process rigor
+- Draws on operational experience and pattern recognition
+- Offers specific, actionable recommendations (not just theory)
+- Follows through on commitments (created action item for marketplace list)
+
+**Personal Context:**
+- Lives in suburbs, synagogue is main community hub
+- Expressed jealousy about Vrijen's Brooklyn co-working space access
+- Accidentally became leader of Sunday morning men's biking group despite not being the serious cyclist
+- Has family connection to Brooklyn (stepdad would "kill him" for calling Brooklyn a suburb)
+
+---
+
+## Network Intelligence
+
+**Known Connections:**
+- James Camp (Nanoflips founder) - David can access marketplace recommendations
+- VC founder from former firm (name/firm unknown - HIGH priority enrichment)
+- Dimitri (synagogue men's club, biking group member)
+
+**Potential Warm Intro Value:**
+- Could intro to James Camp for marketplace strategy
+- Could surface acquisition opportunities through VC network
+- Knows Internet business buyer ecosystem
+
+---
 
 ## Enrichment Tasks
 
-**Priority**: MEDIUM
+**HIGH Priority:**
+1. ✅ LinkedIn profile research: Identify current role, past companies, VC firm name
+2. ✅ Map VC network: Which VC firm? Who is the connected founder? Portfolio overlap with Careerspan targets?
+3. ✅ James Camp relationship: Direct connection or indirect? Can he facilitate intro?
 
-**Next Actions**:
-- [ ] LinkedIn research: current role status, past product roles, domain expertise
-- [ ] Identify mutual connections in founder/builder networks
-- [ ] Research professional background and career history
-- [ ] Obtain professional email (avoid personal email as primary)
+**MEDIUM Priority:**
+4. ✅ Contact information: Email, phone, LinkedIn profile URL
+5. ✅ Mutual connections: Who else in Careerspan network knows David?
 
-## Commitments & Follow-up
-
-**Our Commitments to David**:
-- Warm intro to Ben Guo, Rob, and Tiff at Zo (this week)
-- Provide Zo promo code (50% off tokens)
-- Flash N5 core system after initial tinkering
-- NDA for N5 system
-
-**David's Commitments**:
-- Sign up for Zo using promo code
-- Tinker with platform basics
-- Honor code/NDA for N5 system
-
-**Next Touch Point**: After David signs up and explores Zo basics
+---
 
 ## Tags
 
-#stakeholder:networking_contact #job_seeking:active #product_management #automation #zo_architect_prospect #enrichment_needed
+`#stakeholder:advisor` `#relationship:advisory` `#priority:important` `#expertise:acquisitions` `#expertise:valuation` `#network:vc` `#network:internet_business_buyers`
+
+---
+
+## Recent Activity
+
+**2025-10-27:** Exit strategy advisory session - recommended business broker marketplace strategy, validated dual-track approach (strategic buyers + revenue generation), committed to sending list of recommended marketplaces via James Camp research
+
+**Next Expected Action:** David to send list of business broker marketplaces (ASAP timeframe)
+
+---
 
 ## Notes
 
-- David explicitly stated: "I feel like you have a really strong network of founders and builders and that's who I'm interested in talking with"
-- Represents ideal Zo Architect customer profile: technical enough to customize but doesn't want to code everything
-- "Product manager who is always an early adopter" - exact quote describing his identity
-- Strong product thinking: immediately pattern-matched to Notion Template Marketplace model
-- Uses WhatsApp (desktop setup during call), manages large group threads
+David is highly credible on acquisition strategy (4/5 authority level based on firsthand operational experience). His recommendation to list on business broker marketplaces was a genuine blind spot for the team - expands buyer pool beyond just strategic acquirers to Internet business investors who buy/renovate/flip at revenue multiples. Strong follow-through on commitments (created action item during call). Advisory relationship appears consistent and engaged.
+
+---
+
+**Last Updated:** 2025-10-28T09:02:35Z  
+**Created:** 2025-10-28T09:02:35Z
