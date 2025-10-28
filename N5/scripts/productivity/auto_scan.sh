@@ -20,7 +20,7 @@ MEETING_EXIT=$?
 
 # Recalculate RPI
 echo "[$(date -Iseconds)] Recalculating RPI..." >> "$LOG_FILE"
-python3 /home/workspace/N5/scripts/productivity/rpi_calculator.py 2>&1 | tee -a "$LOG_FILE"
+python3 /home/workspace/N5/scripts/productivity/rpi_calculator.py --date "$(date +%Y-%m-%d)" 2>&1 | tee -a "$LOG_FILE"
 RPI_EXIT=$?
 
 # Summary

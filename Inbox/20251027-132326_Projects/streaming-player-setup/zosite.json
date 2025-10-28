@@ -1,0 +1,15 @@
+{
+  "name": "streaming-player-setup",
+  "local_port": 50650,
+  "entrypoint": "bun run --hot index.tsx",
+  "publish": {
+    "label": "streaming-player-setup",
+    "type": "http",
+    "entrypoint": "bun run index.tsx",
+    "published_port": 58477,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}

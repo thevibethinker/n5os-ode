@@ -1,15 +1,13 @@
 ---
-date: '2025-09-20T22:24:55Z'
-last-tested: '2025-09-20T22:24:55Z'
-generated_date: '2025-09-20T22:24:55Z'
+date: "2025-09-20T22:24:55Z"
+last-tested: "2025-09-20T22:24:55Z"
+generated_date: "2025-09-20T22:24:55Z"
 checksum: 3e4b7e43018441818963a5d2d960765c
-tags: []
+tags:
 category: unknown
 priority: medium
-related_files: []
-anchors:
-  input: null
-  output: /home/workspace/N5_mirror/knowledge/ingestion_standards.md
+related_files:
+anchors: [object Object]
 ---
 # N5 Knowledge Ingestion Standards
 

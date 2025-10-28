@@ -39,25 +39,331 @@ logger = logging.getLogger(__name__)
 # Paths
 WORKSPACE = Path("/home/workspace")
 
-# Detect conversation workspace from environment or by finding the workspace we're in
-CONVERSATION_WS_ENV = os.getenv("CONVERSATION_WORKSPACE")
-if CONVERSATION_WS_ENV:
-    CONVERSATION_WS = Path(CONVERSATION_WS_ENV)
-else:
-    # Try to detect from common patterns
-    workspaces_dir = Path("/home/.z/workspaces")
-    if workspaces_dir.exists():
-        # Find most recently modified workspace
-        workspaces = [d for d in workspaces_dir.iterdir() if d.is_dir() and d.name.startswith("con_")]
-        if workspaces:
-            CONVERSATION_WS = max(workspaces, key=lambda d: d.stat().st_mtime)
-        else:
-            CONVERSATION_WS = None
-    else:
-        CONVERSATION_WS = None
+# Conversation workspace - will be detected in main() after parsing args
+CONVERSATION_WS = None
 
 DOCUMENT_INBOX = WORKSPACE / "Document Inbox/Temporary"
 LOG_FILE = WORKSPACE / "N5/runtime/conversation_ends.log"
+
+
+def detect_conversation_workspace(convo_id: str = None) -> Path:
+    """
+    Detect conversation workspace using multiple methods:
+    1. Explicit --convo-id parameter
+    2. CONVERSATION_WORKSPACE environment variable
+    3. SESSION_STATE.md in current directory
+    4. Fallback: most recently modified workspace (with warning)
+    
+    Args:
+        convo_id: Optional conversation ID from --convo-id parameter
+    
+    Returns:
+        Path to conversation workspace or None if not found
+    """
+    # Method 1: Explicit convo-id parameter (highest priority)
+    if convo_id:
+        workspace_path = Path(f"/home/.z/workspaces/{convo_id}")
+        if workspace_path.exists() and workspace_path.is_dir():
+            logger.info(f"✓ Using workspace from --convo-id: {convo_id}")
+            return workspace_path
+        else:
+            logger.error(f"Workspace not found for conversation ID: {convo_id}")
+            logger.error(f"Expected path: {workspace_path}")
+            return None
+    
+    # Method 2: Environment variable
+    env_ws = os.getenv("CONVERSATION_WORKSPACE")
+    if env_ws:
+        ws_path = Path(env_ws)
+        if ws_path.exists():
+            logger.info(f"✓ Using workspace from CONVERSATION_WORKSPACE env: {ws_path.name}")
+            return ws_path
+    
+    # Method 3: SESSION_STATE.md in current directory
+    session_state = Path.cwd() / "SESSION_STATE.md"
+    if session_state.exists():
+        try:
+            content = session_state.read_text()
+            for line in content.split('\n'):
+                if line.startswith("**Conversation ID:**"):
+                    # Extract: **Conversation ID:** con_XXX
+                    parts = line.split("**Conversation ID:**", 1)[1].strip()
+                    session_convo_id = parts.split()[0].strip()
+                    if session_convo_id.startswith("con_"):
+                        ws_path = Path(f"/home/.z/workspaces/{session_convo_id}")
+                        if ws_path.exists():
+                            logger.info(f"✓ Detected workspace from SESSION_STATE.md: {session_convo_id}")
+                            return ws_path
+        except Exception as e:
+            logger.debug(f"Failed to parse SESSION_STATE.md: {e}")
+    
+    # Method 4: Fallback - most recently modified (WITH WARNING)
+    workspaces_dir = Path("/home/.z/workspaces")
+    if workspaces_dir.exists():
+        workspaces = [d for d in workspaces_dir.iterdir() 
+                     if d.is_dir() and d.name.startswith("con_")]
+        if workspaces:
+            workspace = max(workspaces, key=lambda d: d.stat().st_mtime)
+            logger.warning("⚠️  Using most recently modified workspace (fallback)")
+            logger.warning(f"   → {workspace.name}")
+            logger.warning("   ⚠️  This may NOT be the current conversation!")
+            logger.warning("   Recommended: Use --convo-id parameter for safety")
+            
+            # Prompt for confirmation (unless in auto mode)
+            if "--auto" not in sys.argv:
+                print("\n" + "="*70)
+                print("⚠️  WARNING: Workspace Detection Uncertainty")
+                print("="*70)
+                print(f"\nMost recently modified workspace: {workspace.name}")
+                print("\nThis may NOT be the current conversation workspace.")
+                print("It's safer to specify explicitly with --convo-id parameter.")
+                print("\nExample:")
+                print(f"  python3 {Path(__file__).name} --convo-id con_YOUR_ID")
+                print("\nContinue with this workspace? (y/N)")
+                
+                response = input("> ").strip().lower()
+                if response not in ['y', 'yes']:
+                    logger.info("User cancelled - workspace detection aborted")
+                    return None
+            
+            return workspace
+    
+    logger.error("Could not detect conversation workspace using any method")
+    return None
+
+
+# ===================================================================
+# MODULAR PIPELINE FUNCTIONS (W1-W3 Integration)
+# ===================================================================
+
+def run_modular_analyzer(workspace: Path, convo_id: str) -> Path:
+    """
+    Run modular analyzer (W1), return path to analysis JSON
+    
+    Returns: Path to analysis JSON or None on failure
+    """
+    logger.info("Running modular analyzer (W1)...")
+    
+    output_path = Path("/tmp/conversation-analysis.json")
+    analyzer_script = WORKSPACE / "N5/scripts/conversation_end_analyzer.py"
+    
+    if not analyzer_script.exists():
+        logger.warning(f"Analyzer not found: {analyzer_script}")
+        return None
+    
+    cmd = [
+        sys.executable,
+        str(analyzer_script),
+        "--workspace", str(workspace),
+        "--convo-id", convo_id,
+        "--output", str(output_path)
+    ]
+    
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=60)
+        
+        if output_path.exists() and output_path.stat().st_size > 0:
+            logger.info(f"✓ Analysis complete: {output_path}")
+            return output_path
+        else:
+            logger.error("Analyzer produced no output")
+            return None
+            
+    except subprocess.TimeoutExpired:
+        logger.error("Analyzer timed out")
+        return None
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Analyzer failed: {e.stderr}")
+        return None
+    except Exception as e:
+        logger.error(f"Analyzer error: {e}")
+        return None
+
+
+def run_modular_proposal(analysis_json: Path) -> tuple:
+    """
+    Generate proposal (W2), return (markdown_str, json_path)
+    
+    Returns: (proposal_markdown, proposal_json_path) or (None, None) on failure
+    """
+    logger.info("Generating modular proposal (W2)...")
+    
+    proposal_md_path = Path("/tmp/conversation-proposal.md")
+    proposal_json_path = Path("/tmp/conversation-proposal.json")
+    proposal_script = WORKSPACE / "N5/scripts/conversation_end_proposal.py"
+    
+    if not proposal_script.exists():
+        logger.warning(f"Proposal generator not found: {proposal_script}")
+        return (None, None)
+    
+    try:
+        # Generate markdown
+        cmd_md = [
+            sys.executable,
+            str(proposal_script),
+            "--analysis", str(analysis_json),
+            "--format", "markdown",
+            "--output", str(proposal_md_path)
+        ]
+        subprocess.run(cmd_md, capture_output=True, text=True, check=True, timeout=30)
+        
+        # Generate JSON
+        cmd_json = [
+            sys.executable,
+            str(proposal_script),
+            "--analysis", str(analysis_json),
+            "--format", "json",
+            "--output", str(proposal_json_path)
+        ]
+        subprocess.run(cmd_json, capture_output=True, text=True, check=True, timeout=30)
+        
+        if not proposal_md_path.exists() or not proposal_json_path.exists():
+            logger.error("Proposal generation incomplete")
+            return (None, None)
+        
+        proposal_md = proposal_md_path.read_text()
+        logger.info(f"✓ Proposal generated ({len(proposal_md)} chars)")
+        
+        return (proposal_md, proposal_json_path)
+        
+    except subprocess.TimeoutExpired:
+        logger.error("Proposal generation timed out")
+        return (None, None)
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Proposal generation failed: {e.stderr}")
+        return (None, None)
+    except Exception as e:
+        logger.error(f"Proposal generation error: {e}")
+        return (None, None)
+
+
+def run_modular_executor(proposal_json: Path, dry_run: bool = False) -> bool:
+    """
+    Execute proposal (W3)
+    
+    Returns: True on success, False on failure
+    """
+    phase_label = "DRY-RUN" if dry_run else "EXECUTION"
+    logger.info(f"Running modular executor (W3) - {phase_label}...")
+    
+    executor_script = WORKSPACE / "N5/scripts/conversation_end_executor.py"
+    
+    if not executor_script.exists():
+        logger.warning(f"Executor not found: {executor_script}")
+        return False
+    
+    cmd = [
+        sys.executable,
+        str(executor_script),
+        "--proposal", str(proposal_json)
+    ]
+    
+    if dry_run:
+        cmd.append("--dry-run")
+    
+    try:
+        result = subprocess.run(cmd, check=True, timeout=120)
+        logger.info(f"✓ {phase_label} complete")
+        return result.returncode == 0
+        
+    except subprocess.TimeoutExpired:
+        logger.error(f"{phase_label} timed out")
+        return False
+    except subprocess.CalledProcessError as e:
+        logger.error(f"{phase_label} failed: {e}")
+        return False
+    except Exception as e:
+        logger.error(f"{phase_label} error: {e}")
+        return False
+
+
+def display_modular_proposal(proposal_md: str):
+    """Display proposal with formatting"""
+    print("\n" + "="*70)
+    print(proposal_md)
+    print("="*70 + "\n")
+
+
+def get_modular_approval(proposal_json: Path, auto_mode: bool = False) -> Path:
+    """
+    Get approval for proposal - either interactive or auto
+    
+    Returns: Modified proposal JSON with approval flags, or None if cancelled
+    """
+    proposal_data = json.loads(proposal_json.read_text())
+    actions = proposal_data.get("proposed_actions", [])
+    
+    if not actions:
+        logger.info("No actions require approval")
+        return proposal_json
+    
+    if auto_mode:
+        # Auto-approve high-confidence actions
+        logger.info("Auto-approving high-confidence actions...")
+        approved_count = 0
+        
+        for action in actions:
+            confidence = action.get("confidence", "medium")
+            action_type = action.get("action_type", "")
+            has_conflict = action.get("conflict", False)
+            
+            if (confidence == "high" and 
+                action_type in ["move", "archive", "ignore"] and
+                not has_conflict):
+                action["approved"] = True
+                approved_count += 1
+            else:
+                action["approved"] = False
+        
+        logger.info(f"✓ Auto-approved: {approved_count}/{len(actions)} actions")
+        
+    else:
+        # Interactive approval
+        print("\n" + "="*70)
+        print("ACTION SELECTION")
+        print("="*70)
+        print("\nReview actions and approve (Enter 'all' or action numbers):\n")
+        
+        for idx, action in enumerate(actions, 1):
+            file_path = action.get("file_path", "unknown")
+            action_type = action.get("action_type", "unknown")
+            dest = action.get("destination", "N/A")
+            reason = action.get("reason", "")
+            
+            print(f"  [{idx}] {action_type.upper()}: {Path(file_path).name}")
+            if dest != "N/A":
+                print(f"      → {dest}")
+            print(f"      {reason}\n")
+        
+        selection = input("> ").strip().lower()
+        
+        if selection == "all":
+            for action in actions:
+                action["approved"] = True
+            logger.info(f"✓ Approved all {len(actions)} actions")
+        elif selection in ['n', 'no', 'cancel', 'abort']:
+            logger.info("❌ Approval cancelled")
+            return None
+        else:
+            try:
+                selected_indices = [int(x) for x in selection.split()]
+                for idx in selected_indices:
+                    if 1 <= idx <= len(actions):
+                        actions[idx - 1]["approved"] = True
+                
+                approved = sum(1 for a in actions if a.get("approved"))
+                logger.info(f"✓ Approved {approved}/{len(actions)} actions")
+                
+            except ValueError:
+                logger.error("Invalid input - no actions approved")
+                return None
+    
+    # Write approved proposal
+    approved_path = Path("/tmp/conversation-proposal-approved.json")
+    proposal_data["proposed_actions"] = actions
+    approved_path.write_text(json.dumps(proposal_data, indent=2))
+    
+    return approved_path
 
 
 def log_action(message):
@@ -1393,6 +1699,8 @@ def parse_args():
                        help="Skip workspace root cleanup phase")
     parser.add_argument("--skip-placeholder-scan", action="store_true",
                        help="Skip placeholder detection phase")
+    parser.add_argument("--convo-id", type=str, default=None,
+                       help="Specific conversation ID to process (e.g., con_XXX)")
     
     args = parser.parse_args()
     
@@ -1406,9 +1714,14 @@ def parse_args():
 
 def main():
     """Main execution"""
+    global CONVERSATION_WS
+    
     args = parse_args()
     
     logger.info(f"Starting conversation-end (auto={args.auto}, dry_run={args.dry_run})")
+    
+    # Detect conversation workspace using args
+    CONVERSATION_WS = detect_conversation_workspace(convo_id=args.convo_id)
     
     # Check if we're in a real conversation context
     if not CONVERSATION_WS or not CONVERSATION_WS.exists():
@@ -1422,6 +1735,8 @@ def main():
         print("  - Not running in a conversation context")
         print("  - Workspace directory doesn't exist")
         print("  - Environment variable CONVERSATION_WORKSPACE not set")
+        print("\nFor safety, use --convo-id parameter:")
+        print(f"  python3 {Path(__file__).name} --convo-id con_YOUR_ID")
         return 1
     
     print("\n" + "="*70)
@@ -1440,35 +1755,77 @@ def main():
     
     # Step 1: Inventory
     print("\n" + "="*70)
-    print("PHASE 1: FILE ORGANIZATION")
+    print("PHASE 1: FILE ORGANIZATION (MODULAR PIPELINE)")
     print("="*70)
-    print("\nStep 1: Inventorying files...")
-    files_by_category = inventory_workspace()
     
-    if not any(files_by_category.values()):
-        print("\n✓ No files to organize - conversation workspace is clean")
-        # Continue to subsequent phases even when no files to organize
-        confirmed = True  # Skip to cleanup phases
-    else:
-        # Step 2: Propose
-        proposal = propose_organization(files_by_category, auto_mode=args.auto)
-        print(proposal)
+    # Derive conversation ID
+    convo_id = CONVERSATION_WS.name
+    
+    # ===================================================================
+    # PHASE 1.1: ANALYSIS (W1)
+    # ===================================================================
+    analysis_json = run_modular_analyzer(CONVERSATION_WS, convo_id)
+    
+    if not analysis_json:
+        logger.warning("Modular analyzer not available or failed - falling back to legacy")
+        # Fallback to old logic
+        files_by_category = inventory_workspace()
         
-        # Step 3: Get confirmation
-        if args.auto:
+        if not any(files_by_category.values()):
+            print("\n✓ No files to organize - conversation workspace is clean")
             confirmed = True
         else:
-            response = input("\n> ").strip().lower()
-            confirmed = response in ['y', 'yes', '']
-    
-    # Step 4: Execute (or skip if no files)
-    if confirmed:
-        if any(files_by_category.values()):
-            result = execute_organization(files_by_category, confirmed=True)
+            proposal = propose_organization(files_by_category, auto_mode=args.auto)
+            print(proposal)
             
-            # Log conversation end
-            log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
+            if args.auto:
+                confirmed = True
+            else:
+                response = input("\n> ").strip().lower()
+                confirmed = response in ['y', 'yes', '']
         
+        if confirmed and any(files_by_category.values()):
+            result = execute_organization(files_by_category, confirmed=True)
+            log_action(f"Conversation ended: {result['moved']} moved, {result['deleted']} deleted")
+    
+    else:
+        # ===================================================================
+        # PHASE 1.2: PROPOSAL GENERATION (W2)
+        # ===================================================================
+        proposal_md, proposal_json = run_modular_proposal(analysis_json)
+        
+        if not proposal_md or not proposal_json:
+            logger.error("Proposal generation failed - aborting file organization")
+            print("\n⚠️  File organization skipped due to proposal generation failure")
+            confirmed = False
+        else:
+            # ===================================================================
+            # PHASE 1.3: DISPLAY & APPROVAL
+            # ===================================================================
+            display_modular_proposal(proposal_md)
+            
+            # Get approval (auto or interactive)
+            approved_proposal = get_modular_approval(proposal_json, auto_mode=args.auto)
+            
+            if not approved_proposal:
+                logger.info("File organization cancelled by user")
+                print("\n✓ File organization cancelled - files remain in place")
+                confirmed = False
+            else:
+                # ===================================================================
+                # PHASE 1.4: EXECUTION (W3)
+                # ===================================================================
+                success = run_modular_executor(approved_proposal, dry_run=args.dry_run)
+                
+                if success:
+                    logger.info("✓ File organization complete (modular pipeline)")
+                    confirmed = True
+                else:
+                    logger.error("File organization execution failed")
+                    confirmed = False
+    
+    # Continue to subsequent phases...
+    if confirmed:
         # NEW: Phase 2 - Workspace root cleanup
         print("\n" + "="*70)
         print("CONTINUING TO WORKSPACE ROOT CLEANUP...")

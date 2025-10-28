@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Obsidian
+Comment=Knowledge base and note-taking application
+Exec=/home/workspace/Apps/launch-obsidian.sh
+Icon=obsidian
+Type=Application
+Categories=Office;TextEditor;
+Terminal=false

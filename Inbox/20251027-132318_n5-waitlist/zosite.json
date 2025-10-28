@@ -1,0 +1,15 @@
+{
+  "name": "n5-waitlist",
+  "local_port": 50529,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "n5-waitlist",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 58246,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}

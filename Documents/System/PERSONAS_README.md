@@ -1,7 +1,7 @@
 # N5 Persona System
 
-**Version:** 2.0  
-**Last Updated:** 2025-10-22  
+**Version:** 2.2  
+**Last Updated:** 2025-10-28  
 **Location:** `/home/workspace/Documents/System/`
 
 ---
@@ -44,6 +44,20 @@ Personas are specialized configurations of Zo that activate different capabiliti
 
 **Invocation:** "Load Vibe Builder persona" or when starting system work
 
+#### Bootstrap Edition → `file 'Documents/System/personas/vibe_builder_persona_bootstrap_v2.0.md'`
+
+**Purpose:** Build N5 OS Core from scratch on fresh Zo environments  
+**Context:** Demonstrator accounts or new N5 installations with no existing structure
+
+**Key differences from standard:**
+- Incremental construction philosophy (minimal viable layer → test → extend)
+- Bootstrap-specific protocols (dependency mapping, production testing, learning loops)
+- Phase-based approach (Foundation → Intelligence → Operations → Integration)
+- Build-like-a-sysadmin mindset (testable, observable, reversible, documented)
+- Optimized for character count (9,175 chars vs 11,436)
+
+**Use when:** Setting up N5 from scratch, building core infrastructure, demonstrator environments
+
 ---
 
 ### 3. Vibe Strategist → `file 'Documents/System/vibe_strategist_persona.md'`
@@ -82,6 +96,24 @@ Personas are specialized configurations of Zo that activate different capabiliti
 
 ---
 
+### 5. Vibe Researcher → `file 'Documents/System/personas/vibe_researcher_persona.md'`
+
+**Purpose:** Research and synthesis across domains  
+**Use when:** Market research, competitive intelligence, learning new domains, trend analysis, fact-checking, customer research, product research
+
+**Key traits:**
+- Generalist researcher with adaptive methodology
+- Breadth-first baseline → selective exhaustive deep-dives
+- Rigorous citation discipline (every claim gets [^n])
+- Intellectual honesty: challenges assumptions, disagrees when evidence warrants
+- Structured synthesis (not data dumps)
+- Source quality assessment explicit
+- Anti-hallucination: states "I don't know" vs. inventing
+
+**Invocation:** "Load Vibe Researcher persona" or when starting research work
+
+---
+
 ## Persona Selection Guide
 
 | Context | Persona | Why |
@@ -100,6 +132,10 @@ Personas are specialized configurations of Zo that activate different capabiliti
 | "Stress-test this hypothesis" | **Vibe Strategist** | Red-teaming ideas |
 | "Plan content strategy for demo campaign" | **Vibe Writer** | Content strategy |
 | "Extract themes from meeting transcripts" | **Vibe Strategist** | Qualitative analysis |
+| "Research the career coaching market" | **Vibe Researcher** | Market research |
+| "Find competitive intel on [Company X]" | **Vibe Researcher** | Competitive intelligence |
+| "Deep-dive on AI agent architectures" | **Vibe Researcher** | Technical domain learning |
+| "Is my assumption about [X] correct?" | **Vibe Researcher** | Fact-checking & assumption challenging |
 
 ---
 
@@ -124,6 +160,13 @@ Or (content-focused):
 1. **Vibe Strategist** → Analyze reflection, identify 5 angles
 2. **Vibe Writer** → Create LinkedIn post using strongest angle
 3. **Vibe Writer** → Strategy doc for multi-angle campaign
+
+Or (research → strategy → build):
+
+1. **Vibe Researcher** → Gather market intel and synthesize findings
+2. **Vibe Strategist** → Analyze patterns and generate strategic options
+3. **Vibe Builder** → Implement chosen approach
+4. **Vibe Writer** → Create content about the solution
 
 ---
 
@@ -188,6 +231,22 @@ Template available: `file 'Documents/System/persona_creation_template.md'`
 ---
 
 ## Change Log
+
+### 2025-10-28 (v2.2)
+- Added **Vibe Builder Bootstrap Edition v2.0**
+- Purpose: Build N5 OS Core from scratch on fresh Zo environments
+- Key differences: Incremental construction, phase-based approach, build-like-a-sysadmin mindset
+- Optimized for character count (6,659 chars, under 10k limit)
+- Use case: Demonstrator accounts, new N5 installations, core infrastructure setup
+- Location: `file 'Documents/System/personas/vibe_builder_persona_bootstrap_v2.0.md'`
+
+### 2025-10-27 (v2.1)
+- Added **Vibe Researcher v1.0** as 5th persona
+- Purpose: Generalist research & synthesis with adaptive methodology
+- Key capabilities: Breadth-first with selective deep-dives, rigorous citation discipline, intellectual honesty, structured synthesis
+- Anti-patterns: Surface skimming, hallucination, confirmation bias, data dumps
+- Added research use cases to persona selection guide
+- Added research workflow example to persona interactions
 
 ### 2025-10-22 (v2.0)
 - **MAJOR:** Merged Vibe Thinker v1.0 and Vibe Analyst v1.0 into **Vibe Strategist v2.0**

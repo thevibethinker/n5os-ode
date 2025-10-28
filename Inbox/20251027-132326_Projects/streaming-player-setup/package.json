@@ -1,0 +1,12 @@
+{
+  "name": "zo-site",
+  "scripts": {
+    "dev": "bun run --hot index.tsx"
+  },
+  "dependencies": {
+    "hono": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.21"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "reflection_id": "2025-10-24_oct-24-afternoon.m4a.transcript",
+  "generated_at_iso": "2025-10-27T17:09:52.560758+00:00",
+  "source_file": "2025-10-24_oct-24-afternoon.m4a.transcript",
+  "classifications": [
+    {
+      "category": "product-thinking",
+      "confidence": 0.25,
+      "reason": "Default fallback - no high-confidence classifications"
+    }
+  ],
+  "blocks_generated": [],
+  "status": "awaiting_approval",
+  "approval_mode": "auto"
+}

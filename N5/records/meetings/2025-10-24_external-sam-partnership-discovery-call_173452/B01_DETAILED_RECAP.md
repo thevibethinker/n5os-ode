@@ -1,27 +1,30 @@
 # B01_DETAILED_RECAP
 
 ---
-**Feedback**: - [ ] Useful
----
+
+## **Feedback**: - \[ \] Useful
 
 ## Key Decisions and Agreements
 
 • **Partnership approved by Sam team** (democratic vote: 2 thumbs up = yes)
-  - Sam will integrate Careerspan as talent sourcing partner
-  - 5% kickback on placements to Careerspan (when Sam gets paid, up to 12 months)
-  - Careerspan focuses on sourcing/candidate side, Sam owns employer relationships
-  - **Rationale**: Symbiotic model addresses market inefficiency - best candidates are passive with outdated profiles; Careerspan's coaching tool induces organic re-engagement (2-3% monthly return rate even 10-12 months out)
+
+- Sam will integrate Careerspan as talent sourcing partner
+- 5% kickback on placements to Careerspan (when Sam gets paid, up to 12 months)
+- Careerspan focuses on sourcing/candidate side, Sam owns employer relationships
+- **Rationale**: Symbiotic model addresses market inefficiency - best candidates are passive with outdated profiles; Careerspan's coaching tool induces organic re-engagement (2-3% monthly return rate even 10-12 months out)
 
 • **Next call scheduled for following week** to define partnership integration mechanics
-  - Timeline: Week of Oct 28-Nov 1, 2025
-  - Agenda: Technical integration, data handoff processes, candidate flow logistics
-  - **Why it matters**: Moving from conceptual agreement to operational execution; both teams motivated to move quickly
+
+- Timeline: Week of Oct 28-Nov 1, 2025
+- Agenda: Technical integration, data handoff processes, candidate flow logistics
+- **Why it matters**: Moving from conceptual agreement to operational execution; both teams motivated to move quickly
 
 • **Acquisition track opened in parallel to partnership**
-  - Sam raising $2M+ (may close early if oversubscribed, like Edmund's raise)
-  - Careerspan interested in 3-6 month timeline (give partnership time to prove value)
-  - Structure likely merger/acquihire vs pure cash acquisition
-  - **Context**: Careerspan wants to avoid VC treadmill, Sam sees strategic value in owning the candidate tech/team (especially Ilsa)
+
+- Sam raising $2M+ (may close early if oversubscribed, like Edmund's raise)
+- Careerspan interested in 3-6 month timeline (give partnership time to prove value)
+- Structure likely merger/acquihire vs pure cash acquisition
+- **Context**: Careerspan wants to avoid VC treadmill, Sam sees strategic value in owning the candidate tech/team (especially Ilsa)
 
 ## Strategic Context
 
@@ -37,10 +40,11 @@
 
 ## Critical Next Action
 
-**Owner**: Vrijen + Logan (Careerspan)  
+**Owner**: Vrijen + Logan (Careerspan)\
 **Deliverable**: Prepare dual-track presentation for next week's call:
+
 1. Partnership integration proposal (technical requirements, candidate handoff process, SLA expectations)
 2. Acquisition framework (team structure preferences, valuation thinking, timeline flexibility)
 
-**Timeline**: By next call (week of Oct 28-Nov 1)  
+**Timeline**: By next call (week of Oct 28-Nov 1)\
 **Purpose**: Enable Sam team to evaluate both tracks simultaneously and make informed decisions on partnership mechanics + whether to pursue acquisition seriously during this raise

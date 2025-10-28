@@ -2,7 +2,7 @@
   "meta": {
     "version": "1.0.0",
     "description": "Unified links and snippets library for Vrijen & Careerspan",
-    "last_updated": "2025-10-22T23:00:17"
+    "last_updated": "2025-10-27T16:29:57"
   },
   "items": [
     {
@@ -1748,6 +1748,203 @@
         "version": 1,
         "last_used": null,
         "notes": "",
+        "source": "quick-add"
+      }
+    },
+    {
+      "id": "n5_waitlist_landing",
+      "type": "link",
+      "title": "N5 OS Waitlist Landing Page",
+      "content": "https://n5-waitlist-va.zocomputer.io/",
+      "url": "https://n5-waitlist-va.zocomputer.io/",
+      "tags": {
+        "audience": [
+          "builders",
+          "founders",
+          "general"
+        ],
+        "tone": [
+          "concise"
+        ],
+        "entity": [
+          "N5",
+          "n5"
+        ],
+        "context": [
+          "website",
+          "marketing",
+          "demo"
+        ],
+        "purpose": [
+          "signup",
+          "waitlist"
+        ]
+      },
+      "metadata": {
+        "created": "2025-10-27T13:53:10",
+        "updated": "2025-10-27T13:53:10",
+        "deprecated": false,
+        "expires_at": null,
+        "version": 1,
+        "last_used": null,
+        "notes": "Landing page for N5 OS waitlist signups",
+        "source": "quick-add"
+      }
+    },
+    {
+      "id": "careerspan_proof_points",
+      "type": "link",
+      "title": "Careerspan Proof Points Folder",
+      "content": "https://careerspan.short.gy/proofpoints",
+      "url": "https://careerspan.short.gy/proofpoints",
+      "tags": {
+        "purpose": [
+          "bio",
+          "social_proof",
+          "demo"
+        ],
+        "audience": [
+          "prospects",
+          "job_seekers",
+          "investors"
+        ],
+        "tone": [
+          "concise"
+        ],
+        "entity": [
+          "careerspan"
+        ],
+        "context": [
+          "demo",
+          "presentation",
+          "sales"
+        ]
+      },
+      "metadata": {
+        "created": "2025-10-27T13:53:10",
+        "updated": "2025-10-27T13:53:10",
+        "deprecated": false,
+        "expires_at": null,
+        "version": 1,
+        "last_used": null,
+        "notes": "Google Drive folder with screenshot proof points for sales and demos",
+        "source": "quick-add"
+      }
+    },
+    {
+      "id": "vrijen_bio_speaker",
+      "type": "snippet",
+      "title": "Vrijen Speaker Bio",
+      "content": "Vrijen is the founder of Careerspan (www.mycareerspan.com). He's passionate about helping people leverage AI for their careers in the most effective way, whether that's through building Careerspan, growing the Career Algorithms podcast with his cofounder, or building an open-source personal productivity suite on zo.computer as a solutions architect. Vrijen's great at delivering high-impact talks centered around professional advancement for communities and organizations like Enrich, Magic Edtech, and Marvin Ventures.",
+      "url": null,
+      "tags": {
+        "purpose": [
+          "bio",
+          "product",
+          "speaking"
+        ],
+        "audience": [
+          "job_seekers",
+          "conference",
+          "professional",
+          "founders"
+        ],
+        "entity": [
+          "careerspan",
+          "zo",
+          "vrijen"
+        ],
+        "tone": [
+          "confident"
+        ]
+      },
+      "metadata": {
+        "created": "2025-10-27T15:33:51",
+        "updated": "2025-10-27T15:33:51",
+        "deprecated": false,
+        "expires_at": null,
+        "version": 1,
+        "last_used": null,
+        "notes": "Speaker bio focused on talks and professional advancement",
+        "source": "quick-add"
+      }
+    },
+    {
+      "id": "case_notes_consulting_general",
+      "type": "link",
+      "title": "Consulting Case Interview Notes (General)",
+      "content": "https://www.notion.so/vattawar/Consulting-Case-Interview-Notes-01d0352ab5094db18f8a0734b06504f9",
+      "url": "https://www.notion.so/vattawar/Consulting-Case-Interview-Notes-01d0352ab5094db18f8a0734b06504f9",
+      "tags": {
+        "audience": [
+          "mba",
+          "job_seekers",
+          "consultants"
+        ],
+        "tone": [
+          "concise"
+        ],
+        "purpose": [
+          "resource",
+          "education",
+          "interview-prep"
+        ],
+        "entity": [
+          "vrijen"
+        ],
+        "topic": [
+          "consulting",
+          "case-interviews"
+        ]
+      },
+      "metadata": {
+        "created": "2025-10-27T16:29:57",
+        "updated": "2025-10-27T16:29:57",
+        "deprecated": false,
+        "expires_at": null,
+        "version": 1,
+        "last_used": null,
+        "notes": "Generalized version of case interview notes for all consulting firms. High quality, detailed prep resource.",
+        "source": "quick-add"
+      }
+    },
+    {
+      "id": "case_notes_mckinsey",
+      "type": "link",
+      "title": "Interviewing at McKinsey - Case Interview Notes",
+      "content": "https://www.notion.so/vattawar/Interviewing-At-McKinsey-3903b5f328e54d11bb2275f8b3eafdcf",
+      "url": "https://www.notion.so/vattawar/Interviewing-At-McKinsey-3903b5f328e54d11bb2275f8b3eafdcf",
+      "tags": {
+        "audience": [
+          "consultants",
+          "job_seekers",
+          "mba"
+        ],
+        "tone": [
+          "concise"
+        ],
+        "purpose": [
+          "resource",
+          "education",
+          "interview-prep"
+        ],
+        "entity": [
+          "vrijen"
+        ],
+        "topic": [
+          "consulting",
+          "case-interviews",
+          "mckinsey"
+        ]
+      },
+      "metadata": {
+        "created": "2025-10-27T16:29:57",
+        "updated": "2025-10-27T16:29:57",
+        "deprecated": false,
+        "expires_at": null,
+        "version": 1,
+        "last_used": null,
+        "notes": "Semi-viral MBA case interview notes - McKinsey-specific version. High quality, detailed prep resource.",
         "source": "quick-add"
       }
     }

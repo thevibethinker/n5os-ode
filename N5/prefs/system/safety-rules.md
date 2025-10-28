@@ -20,6 +20,15 @@ Updated: 2025-10-25
 - Anything in `Lists/` (action registry)
 - Files starting with `.` (hidden/system)
 
+### Directory Protection Markers (`.n5protected`)
+- Directories containing `.n5protected` marker files are protected from accidental moves/deletes
+- Used for:
+  - Registered user service working directories (auto-protected)
+  - Manually protected critical paths
+  - Any directory that should not be moved without explicit confirmation
+- AI must check for `.n5protected` markers before suggesting move/delete operations
+- Commands: `n5-protect`, `n5-unprotect`, `n5-list-protected`, `n5-check-protected`
+
 ### Size Limits
 - Files > 100MB → always review
 - Files < 1KB → suspicious, always review
