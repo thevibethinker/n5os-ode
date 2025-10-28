@@ -15,6 +15,12 @@
 └─────────────────────────────────────────────────┘
                     ↓
 ┌─────────────────────────────────────────────────┐
+│  PHASE 0.5: Initial Setup / Onboarding          │
+│  Intake Interview, Config Personalization       │
+│  📋 DESIGN (3-5h plan, ~2-3h likely)            │
+└─────────────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────────────┐
 │  PHASE 1: Core Infrastructure                   │
 │  Session State, Bulletins, Registry, Safety     │
 │  ✅ COMPLETE (5.5h, 105 tests)                  │
@@ -64,6 +70,7 @@
 | Phase | Status | Time (Plan) | Time (Actual) | Tests | Velocity |
 |-------|--------|-------------|---------------|-------|----------|
 | 0 | ✅ | 6-8h | 6.5h | 34+ | 95% |
+| 0.5 | 📋 | 3-5h | ~2-3h est | 10+ | 150% |
 | 1 | ✅ | 10-11h | 5.5h | 105 | 200% |
 | 2 | ✅ | 7-9h | ~5h | 175 | 160% |
 | 3 | ✅ | 9-12h | ~6-8h | 245 | 140% |
