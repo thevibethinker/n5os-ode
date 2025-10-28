@@ -1,7 +1,0 @@
-Timestamp (UTC): 20250918-012342Z
-Hostname: modal
-Kernel: 4.4.0
-Workspace size: 45M
-Disk usage:
-Filesystem      Size  Used Avail Use% Mounted on
-none            512G   59G  454G  12% /

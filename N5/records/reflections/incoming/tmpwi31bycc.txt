@@ -1,0 +1,382 @@
+You are an expert recruiter evaluating a candidate's resume against a job rubric.
+
+**JOB:** mckinsey-associate-15264
+**CANDIDATE:** sample1
+
+**CRITICAL CONTEXT:**
+- This is semantic evaluation, NOT keyword matching
+- Recognize DIRECT experience (e.g., former McKinsey employee applying to McKinsey = very strong)
+- Map TRANSFERABLE skills (e.g., "career coaching" → "client engagement", but note it)
+- Identify POTENTIAL (e.g., trajectory, learning velocity)
+- Flag when making inference vs. seeing direct evidence
+
+**RUBRIC CRITERIA:**
+[
+  {
+    "id": "analytical_horsepower",
+    "name": "Analytical & Problem-Solving Capability",
+    "description": "Ability to structure ambiguous problems, synthesize data, develop insights",
+    "weight": 20.0,
+    "tier": "must",
+    "evaluation_guidance": {
+      "9-10": "Top-tier analytical background (MBB, PE, quant finance, PhD STEM); demonstrated complex problem-solving",
+      "7-8": "Strong analytical role (consulting, corp strategy, investment banking); clear structured thinking",
+      "5-6": "Analytical exposure (data analysis, operations, finance); some problem-solving evidence",
+      "3-4": "Limited analytical work; primarily execution-focused",
+      "0-2": "No analytical background or weak evidence"
+    },
+    "keywords": [
+      "problem-solving",
+      "analytical",
+      "data-driven",
+      "strategic thinking",
+      "structured approach"
+    ],
+    "jd_evidence": "* Exceptional problem-solving skills with the ability to untangle complex issues"
+  },
+  {
+    "id": "client_impact",
+    "name": "Client Engagement & Impact",
+    "description": "Experience delivering value to clients/stakeholders, managing relationships",
+    "weight": 15.0,
+    "tier": "must",
+    "evaluation_guidance": {
+      "9-10": "Direct client-facing consulting or advisory; proven impact with measurable outcomes",
+      "7-8": "Internal consulting, stakeholder management, or customer success with clear results",
+      "5-6": "Cross-functional collaboration or indirect client work",
+      "3-4": "Limited stakeholder interaction",
+      "0-2": "No client or stakeholder-facing experience"
+    },
+    "keywords": [
+      "client",
+      "stakeholder",
+      "advisory",
+      "consulting",
+      "customer success"
+    ],
+    "jd_evidence": "Consulting | As a consultant, you will work closely with senior client executives and McKinsey colleagues in the most entrepreneurial environments and help to develop sector-shaping and nation-transforming programs."
+  },
+  {
+    "id": "business_acumen",
+    "name": "Business & Functional Knowledge",
+    "description": "Understanding of business operations, strategy, functional domains",
+    "weight": 15.0,
+    "tier": "must",
+    "evaluation_guidance": {
+      "9-10": "Deep functional expertise (strategy, ops, marketing, finance) + business leadership",
+      "7-8": "Solid functional experience in 2+ domains; business impact visible",
+      "5-6": "Functional depth in 1 domain; some cross-functional exposure",
+      "3-4": "Narrow functional focus; limited business context",
+      "0-2": "No business experience"
+    },
+    "keywords": [
+      "strategy",
+      "operations",
+      "business development",
+      "P&L",
+      "functional",
+      "commercial"
+    ],
+    "jd_evidence": "* Solid functional knowledge, including but not limited to strategy, business development, manufacturing, supply chain, product development, project management, marketing and sales, etc. | * Operations"
+  },
+  {
+    "id": "communication",
+    "name": "Communication & Synthesis",
+    "description": "Ability to distill complex ideas, present clearly, influence stakeholders",
+    "weight": 12.0,
+    "tier": "should",
+    "evaluation_guidance": {
+      "9-10": "Executive presentations, published thought leadership, teaching/coaching",
+      "7-8": "Regular stakeholder presentations, written communication (reports, memos)",
+      "5-6": "Team presentations or documentation",
+      "3-4": "Limited communication artifacts",
+      "0-2": "No evidence"
+    },
+    "keywords": [
+      "presentations",
+      "communication",
+      "writing",
+      "executive",
+      "synthesis"
+    ],
+    "jd_evidence": "Template criterion (adjust if not relevant)"
+  },
+  {
+    "id": "learning_velocity",
+    "name": "Learning Agility & Adaptability",
+    "description": "Speed of picking up new domains, industries, methodologies",
+    "weight": 10.0,
+    "tier": "should",
+    "evaluation_guidance": {
+      "9-10": "Pivoted successfully across industries/functions; rapid skill acquisition visible",
+      "7-8": "Clear learning curve in career (promotions, scope growth)",
+      "5-6": "Some evidence of skill expansion",
+      "3-4": "Mostly stayed in comfort zone",
+      "0-2": "Stagnant skillset"
+    },
+    "keywords": [
+      "learning",
+      "adaptability",
+      "pivot",
+      "new domain",
+      "skill acquisition"
+    ],
+    "jd_evidence": "* **Continuous learning:**\u00a0Our learning and apprenticeship culture, backed by structured programs, is all about helping you grow while creating an environment where feedback is clear, actionable, and focused on your development. The real magic happens when you take the input from others to heart and embrace the fast-paced learning experience, owning your journey."
+  },
+  {
+    "id": "leadership_potential",
+    "name": "Leadership & Initiative",
+    "description": "Leading teams, projects, initiatives; taking ownership",
+    "weight": 10.0,
+    "tier": "should",
+    "evaluation_guidance": {
+      "9-10": "Led teams of 10+, P&L ownership, launched new initiatives",
+      "7-8": "Led projects/teams of 5+, clear ownership moments",
+      "5-6": "Informal leadership or small team leadership",
+      "3-4": "Individual contributor, limited leadership",
+      "0-2": "No leadership evidence"
+    },
+    "keywords": [
+      "leadership",
+      "led team",
+      "managed",
+      "initiative",
+      "ownership"
+    ],
+    "jd_evidence": "* Ability to take initiative and eager to break new ground, create opportunities for others, and take personal risks | regarding our global EEO policy and diversity initiatives, please visit our"
+  },
+  {
+    "id": "quantitative_aptitude",
+    "name": "Quantitative & Technical Capability",
+    "description": "Comfort with numbers, data, modeling, technical tools",
+    "weight": 8.0,
+    "tier": "should",
+    "evaluation_guidance": {
+      "9-10": "Advanced quant work (modeling, ML, statistical analysis, econometrics)",
+      "7-8": "Regular data analysis, Excel modeling, SQL/Python",
+      "5-6": "Basic data work, financial analysis",
+      "3-4": "Minimal quantitative exposure",
+      "0-2": "No quantitative work"
+    },
+    "keywords": [
+      "quantitative",
+      "modeling",
+      "data analysis",
+      "SQL",
+      "Python",
+      "Excel",
+      "financial modeling"
+    ],
+    "jd_evidence": "* Quantitative aptitude"
+  },
+  {
+    "id": "academic_pedigree",
+    "name": "Educational Background",
+    "description": "Strength of academic credentials",
+    "weight": 5.0,
+    "tier": "nice",
+    "evaluation_guidance": {
+      "9-10": "Top-tier undergrad (Ivy+) + graduate degree (MBA, PhD) with honors",
+      "7-8": "Strong undergrad + graduate degree, or top undergrad alone",
+      "5-6": "Solid undergrad, competitive program",
+      "3-4": "Standard undergrad",
+      "0-2": "Weak academic background"
+    },
+    "keywords": [
+      "MBA",
+      "PhD",
+      "Masters",
+      "Ivy League",
+      "honors",
+      "academic"
+    ],
+    "jd_evidence": "* Undergraduate degree with outstanding academic record and/or Masters, MBA, PhD"
+  },
+  {
+    "id": "industry_depth",
+    "name": "Industry Expertise",
+    "description": "Deep knowledge in target industries",
+    "weight": 5.0,
+    "tier": "nice",
+    "evaluation_guidance": {
+      "9-10": "10+ years in target industry with recognized expertise",
+      "7-8": "5+ years with clear depth",
+      "5-6": "3+ years exposure",
+      "3-4": "Limited exposure",
+      "0-2": "No relevant industry experience"
+    },
+    "keywords": [
+      "industry",
+      "sector",
+      "domain expertise"
+    ],
+    "jd_evidence": "As a consultant, you will work closely with senior client executives and McKinsey colleagues in the most entrepreneurial environments and help to develop sector-shaping and nation-transforming programs. | You will work in our Sydney, Canberra, Melbourne, Brisbane, Perth, or Auckland office. With over 50-years experience in Australia and New Zealand, our work spans multiple sectors of the economy including the social sector. We are ambitious for our clients - we want to work with them as they strive for world-class performance. Our vision is based on seeing organizations in Australia and New Zealand achieve their potential, and to help realize the economic and social benefits for all citizens."
+  }
+]
+
+**RESUME:**
+ANTON BECKERMAN 
+111 S. Quarry St. Apartment A12, Ithaca, NY 14850 
+(607) 379-5230  ab2534@cornell.edu 
+
+Education 
+
+CORNELL SC JOHNSON COLLEGE OF BUSINESS 
+Master of Business Administration, May 2016 
+Strategic Marketing Immersion; Business Analytics concentration; GMAT 700 
+President of the Israeli Business Club, led 87 students on academic trek to Israel managing a budget of  $175K  
+VP of Marketing of the Johnson High-Tech Club 
+
+Ithaca, NY 
+
+TECHNION - ISRAEL INSTITUTE OF TECHNOLOGY 
+B.Sc. of Industrial Engineering and Management, Information Systems Engineering, January 2012 
+
+Israel 
+
+San-Francisco, USA 
+
+Experience  AUTODESK 
+2015 
+
+Marketing Operations Intern, Autodesk Consumer Group (ACG) 
+•  Designed data analysis software platform that enables a centralized analysis of user behavior using statistical 
+
+tools and reduces KPI creation time from 3-5 hours to under 10 minutes 
+
+•  Created marketing strategy for SketchBook app using clustering algorithms and statistical regression analysis 
+
+of user behavior to predict subscription for the app based on past user behavior and demographics 
+•  Extended the data science approach to support all tracked products in ACG. The method facilitates 
+
+identification and tracking of behavioral metrics and execution of data driven marketing campaigns  
+
+2011-2014 
+
+EBAY 
+Data Integration Software Engineer, Structured Data Organization 
+Knowledge, Maintenance & Support Lead 
+
+Israel 
+
+  Developed automated data migration platforms that support data analysis tools for eBay’s 152.3M 
+
+active users, enrich online product catalogs, and improve product search capabilities 
+
+  •  Led development of a software toolset for mass catalog items creation. Software enabled cross-organizational 
+
+creation of error-free catalog items, enabling daily creation of 5M new items 
+
+•  Launched an automated migration tool for transitioning Shopping.com listings to eBay’s catalog items, 
+
+creating 1000 new eBay catalogs that list 40M+ items, producing additional $90M in sales 
+
+•  Gathered requirements from external data vendors for Books (UK, AU) and Motors (US) catalogs. Analyzed 
+
+3rd party data to design tools that created and updated 1.3M catalog items 
+
+2007-2011 
+
+INTEL 
+Information Systems Developer, Business Intelligence Capabilities (BI) 
+Awarded 2010 IT Division Recognition - Highest award for exceptional team work and innovation 
+•  Developed data analysis and visualization software to optimize processors’ design and production; Software 
+deployed in 11 global Intel development centers and resulted in more than $15M savings in operational costs 
+•  Scaled storage mechanism of BI software to enable a 500% increase in data processing capability, reducing 
+
+Israel 
+
+hardware expenditures by $50K and eliminating the weekly manual maintenance 
+
+•  Wrote  monitoring  software  to  enable  99.99%  BI  software  availability,  enabling  prediction  and  immediate 
+
+notification of malfunction, saving $250K annual operating expenses 
+
+2003-2006 
+
+ISRAEL DEFENSE FORCES – Elite Technology Unit 
+Staff Sergeant (NATO OR-6), Information Security & Computer Networks Group 
+Classified unit with 4% acceptance rate, providing services for the IDF and the Israeli Intelligence Community 
+
+Israel 
+
+Skills 
+
+•  Software & database development - Java, .Net, Oracle, MS SQL 
+•  Data Analysis and Marketing Research using R, Python, SPSS 
+•  Languages: English – fluent; Hebrew, Russian – native 
+
+Personal 
+
+•  Volunteering: Consultant at Junior Achievement; Data Scientist at Israeli Department of Health; 
+
+Founder and leader of a joint military and high-school technology education program 
+
+•  Gamer, amateur dog trainer, and avid activist for shelter dogs welfare
+
+---
+
+**TASK:**
+Score each criterion 0-10 with this guidance:
+- **9-10**: Exceptional - exceeds requirements, clear mastery
+- **7-8**: Strong - solid experience, meets requirements fully
+- **5-6**: Moderate - some evidence, may need development
+- **3-4**: Limited - minimal evidence
+- **0-2**: No evidence or irrelevant
+
+For EACH criterion, provide:
+1. **score** (0-10)
+2. **evidence** (verbatim excerpt from resume, <100 chars)
+3. **reasoning** (1-2 sentences explaining score)
+4. **match_type**: "direct" | "transferable" | "potential" | "none"
+5. **transferable_note** (if match_type=transferable, explain the mapping)
+
+**SPECIAL ATTENTION:**
+- If candidate has DIRECT company experience (e.g., worked at this exact company before), flag this prominently
+- If candidate shows STRONG TRAJECTORY (rapid promotions, increasing scope), note this
+- If candidate has PROVEN OUTCOMES in similar contexts, weight this heavily
+
+**META-SIGNALS** (evaluate holistically):
+1. **trajectory**: "ascending" | "flat" | "declining" - career progression pattern
+2. **achievement_density**: "high" | "moderate" | "low" - quantified outcomes per role
+3. **narrative_coherence**: "strong" | "moderate" | "weak" - logical career story
+4. **learning_velocity**: "fast" | "moderate" | "slow" - speed of skill/domain acquisition
+
+**RED FLAGS** (identify if present):
+- Overselling (claims not backed by evidence)
+- Inconsistencies (timeline gaps, contradictions)
+- Job hopping (many short stints without clear reason)
+- Lack of measurable impact
+
+---
+
+Return ONLY valid JSON in this exact structure:
+{
+  "scores": [
+    {
+      "criterion_id": "<id from rubric>",
+      "criterion_name": "<name>",
+      "weight": <weight from rubric>,
+      "score": <0-10>,
+      "weighted_score": <score * weight / 10>,
+      "evidence": "<verbatim excerpt or 'No direct evidence'>",
+      "reasoning": "<1-2 sentence explanation>",
+      "match_type": "direct|transferable|potential|none",
+      "transferable_note": "<if applicable>"
+    }
+  ],
+  "meta_signals": {
+    "trajectory": "<ascending|flat|declining>",
+    "trajectory_note": "<brief explanation>",
+    "achievement_density": "<high|moderate|low>",
+    "achievement_note": "<brief explanation>",
+    "narrative_coherence": "<strong|moderate|weak>",
+    "narrative_note": "<brief explanation>",
+    "learning_velocity": "<fast|moderate|slow>",
+    "learning_note": "<brief explanation>"
+  },
+  "red_flags": [
+    {"flag": "<flag name>", "detail": "<explanation>"}
+  ],
+  "overall_impression": "<2-3 sentences summarizing candidate fit>"
+}

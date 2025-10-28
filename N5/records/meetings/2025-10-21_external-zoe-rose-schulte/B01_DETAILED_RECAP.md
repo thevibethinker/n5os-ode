@@ -1,8 +1,8 @@
 ## DETAILED_RECAP
 
 ---
-**Feedback**: - [ ] Useful
----
+
+## **Feedback**: - \[ \] Useful
 
 ### Key Decisions and Agreements
 
@@ -24,7 +24,7 @@ Partnership model with Emory Alumni Association (distribution to "tens of thousa
 
 ### Critical Next Action
 
-**Owner:** Vrijen  
-**Deliverable:** Send Zoe (1) Survey link for Johnson MBA students re: VMock/CMC experience, (2) Consulting case prep resources for redistribution  
-**Timeline:** This week (within 3-5 days)  
+**Owner:** Vrijen\
+**Deliverable:** Send Zoe (1) Survey link for Johnson MBA students re: VMock/CMC experience, (2) Consulting case prep resources for redistribution\
+**Timeline:** This week (within 3-5 days)\
 **Purpose:** Activate student distribution channel, gather evidence for CMC pitch, establish reciprocal value exchange with Johnson community

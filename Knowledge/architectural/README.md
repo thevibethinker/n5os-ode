@@ -16,6 +16,10 @@ Architectural knowledge defines the principles and standards governing the syste
 
 ## Files
 
+- `file 'planning_prompt.md'` — Design philosophy and thinking framework
+- `file 'research_frameworks.md'` — Research methodologies & quality standards (used by Vibe Researcher)
+- `file 'architectural_principles.md'` — Index of principles
+
 - **`architectural_principles.md`**: Core principles (HARD protection)
 
   - Single Source of Truth (SSOT)

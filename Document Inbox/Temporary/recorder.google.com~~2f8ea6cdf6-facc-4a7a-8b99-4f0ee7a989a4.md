@@ -1,1 +1,0 @@
-[Sign in](https://accounts.google.com/ServiceLogin?passive=1209600&continue=https://recorder.google.com/8ea6cdf6-facc-4a7a-8b99-4f0ee7a989a4&followup=https://recorder.google.com/8ea6cdf6-facc-4a7a-8b99-4f0ee7a989a4&ec=GAZAwQQ)

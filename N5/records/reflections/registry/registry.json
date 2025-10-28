@@ -88,5 +88,28 @@
         "proposal": "/home/workspace/Records/Reflections/Proposals/2025-10-23_gestalt-overperformers-tryhard_proposal.md"
       }
     }
-  ]
+  ],
+  "reflections": [
+    {
+      "id": "2025-10-24_oct-24-afternoon",
+      "source": "/home/workspace/N5/records/reflections/incoming/2025-10-24_oct-24-afternoon.m4a",
+      "ingested_at": "2025-10-27T17:09:58.741031",
+      "status": "processed",
+      "outputs": {
+        "transcript": "/home/workspace/N5/records/reflections/outputs/2025-10-24_oct-24-afternoon/transcript.jsonl",
+        "metadata": "/home/workspace/N5/records/reflections/outputs/2025-10-24_oct-24-afternoon/metadata.json"
+      }
+    }
+  ],
+  "last_processed": "2025-10-27T17:09:58.741053",
+  "total_reflections": 1,
+  "metadata": {
+    "last_processed": "2025-10-27T23:15:03.699579+00:00",
+    "processing_cycle": "reflection_queue_drive_integration",
+    "status": "complete",
+    "files_processed": 163,
+    "transcripts_generated": 157,
+    "classifications_generated": 12,
+    "blocks_generated": 12
+  }
 }

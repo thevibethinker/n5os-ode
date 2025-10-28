@@ -20,7 +20,7 @@
 
 Zoe,
 
-Great connecting yesterday - your energy around building the period product sampling business while juggling VC work and recruiting support is impressive. The "I put it into VMock... my resume sucks now" moment perfectly captured what I hear from so many students.
+Great connecting yesterday - your energy around building the period product sampling business while juggling VC work and recruiting support is impressive. The "I put it into VMock... my resume sucks now" moment perfectl1y captured what I hear from so many students.
 
 Thanks for offering to help distribute Careerspan at Johnson, especially with the international student cohort you mentioned. Given the 6% increase in international students facing visa uncertainty, your instinct about the timing feels spot-on.
 

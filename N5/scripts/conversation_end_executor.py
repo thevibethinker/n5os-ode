@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Conversation-End Execution Engine
-Executes approved actions with atomic operations and rollback capability
+Conversation-End Executor
 
-Part of conversation-end orchestrator system (Worker 3)
-Orchestrator: con_O4rpz6MPrQXLbOlX
+Executes approved actions from a proposal JSON file.
+Supports dry-run mode and rollback capability.
 """
 
+import os
 import json
 import logging
 import argparse

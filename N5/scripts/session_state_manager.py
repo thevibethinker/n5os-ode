@@ -27,7 +27,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 CONVO_WORKSPACES_ROOT = Path("/home/.z/workspaces")
-TEMPLATE_FILE = Path("/home/.z/workspaces/con_AFQURXo7KW89yWVw/SESSION_STATE_TEMPLATE.md")
 TEMPLATES_DIR = Path("/home/workspace/N5/templates/session_state")
 
 
@@ -108,58 +107,6 @@ class SessionStateManager:
             return "discussion", 0.0
         
         return max_type, round(confidence, 2)
-    
-    @staticmethod
-    def load_system_bulletins() -> str:
-        """Load last 10 days of system bulletins and format as markdown summary"""
-        bulletin_file = Path("/home/workspace/N5/data/system_bulletins.jsonl")
-        
-        if not bulletin_file.exists():
-            return "No system bulletins available."
-        
-        try:
-            bulletins = []
-            with open(bulletin_file) as f:
-                for line in f:
-                    if line.strip():
-                        bulletins.append(json.loads(line))
-            
-            if not bulletins:
-                return "No system bulletins available."
-            
-            # Sort by timestamp (newest first)
-            bulletins.sort(key=lambda b: b['timestamp'], reverse=True)
-            
-            # Group by significance
-            high = [b for b in bulletins if b['significance'] == 'high']
-            medium = [b for b in bulletins if b['significance'] == 'medium']
-            
-            output = ["# System Bulletins (Last 10 Days)", ""]
-            
-            if high:
-                output.append("## High Priority Changes")
-                for b in high[:10]:  # Limit to 10 most recent
-                    timestamp = b['timestamp'][:10]  # Just date
-                    output.append(f"- **[{timestamp}]** {b['change_type']}: {b['summary']}")
-                    if b.get('files_affected'):
-                        output.append(f"  - Files: {', '.join(b['files_affected'][:3])}")
-                output.append("")
-            
-            if medium:
-                output.append("## Medium Priority Changes")
-                for b in medium[:15]:  # More medium changes
-                    timestamp = b['timestamp'][:10]
-                    output.append(f"- **[{timestamp}]** {b['change_type']}: {b['summary']}")
-                output.append("")
-            
-            output.append(f"---")
-            output.append(f"Total bulletins: {len(bulletins)} | High: {len(high)} | Medium: {len(medium)}")
-            
-            return "\n".join(output)
-            
-        except Exception as e:
-            logger.warning(f"Failed to load bulletins: {e}")
-            return f"Error loading bulletins: {e}"
     
     def _sync_to_registry(self) -> bool:
         """Extract metadata from SESSION_STATE.md and sync to registry"""
@@ -393,13 +340,6 @@ class SessionStateManager:
                 logger.info("System files to load:")
                 logger.info("  - file 'Documents/N5.md'")
                 logger.info("  - file 'N5/prefs/prefs.md'")
-                
-                # Output bulletin summary
-                bulletin_summary = self.load_system_bulletins()
-                logger.info("\nSystem Bulletins Summary:")
-                for line in bulletin_summary.split('\n'):
-                    if line.strip():
-                        logger.info(f"  {line}")
             
             return True
         except Exception as e:

@@ -149,11 +149,56 @@ def check_backups():
     return issues
 
 
-def generate_report(file_issues, git_issues, backup_issues):
+def check_meeting_folder_names():
+    """Validate meeting folder naming conventions."""
+    logger.info("=== Meeting Folder Name Validation ===")
+    issues = []
+    
+    try:
+        result = subprocess.run(
+            ["python3", "/home/workspace/N5/scripts/validate_meeting_folder_names.py"],
+            capture_output=True,
+            text=True,
+            timeout=30,
+            cwd="/home/workspace"
+        )
+        
+        if result.returncode == 0:
+            # Parse output for validation results
+            output = result.stderr + result.stdout
+            if "Invalid folders: 0" in output:
+                logger.info("✓ All meeting folders follow correct naming convention")
+            else:
+                # Extract number of invalid folders
+                for line in output.split('\n'):
+                    if "Invalid folders:" in line and not "Invalid folders: 0" in line:
+                        issue = f"Meeting folder naming violations detected"
+                        logger.warning(issue)
+                        logger.warning(f"  Run: validate-meeting-folders --fix")
+                        issues.append(issue)
+                        break
+        else:
+            issue = f"Meeting folder validation failed: {result.stderr}"
+            logger.error(issue)
+            issues.append(issue)
+            
+    except subprocess.TimeoutExpired:
+        issue = "Meeting folder validation timed out"
+        logger.error(issue)
+        issues.append(issue)
+    except Exception as e:
+        issue = f"Meeting folder validation error: {str(e)}"
+        logger.error(issue)
+        issues.append(issue)
+    
+    return issues
+
+
+def generate_report(file_issues, git_issues, backup_issues, meeting_issues):
     """Generate summary report."""
     logger.info("=== Daily Guardian Report ===")
     
-    total_issues = len(file_issues) + len(git_issues) + len(backup_issues)
+    total_issues = len(file_issues) + len(git_issues) + len(backup_issues) + len(meeting_issues)
     
     if total_issues == 0:
         logger.info("✅ ALL CHECKS PASSED - System is healthy")
@@ -176,6 +221,11 @@ def generate_report(file_issues, git_issues, backup_issues):
             for issue in backup_issues:
                 logger.warning(f"  - {issue}")
         
+        if meeting_issues:
+            logger.warning(f"Meeting Folder Issues: {len(meeting_issues)}")
+            for issue in meeting_issues:
+                logger.warning(f"  - {issue}")
+        
         return False
 
 
@@ -188,8 +238,9 @@ def main():
     file_issues = check_file_integrity()
     git_issues = check_git_status()
     backup_issues = check_backups()
+    meeting_issues = check_meeting_folder_names()
     
-    success = generate_report(file_issues, git_issues, backup_issues)
+    success = generate_report(file_issues, git_issues, backup_issues, meeting_issues)
     
     logger.info(f"=== Daily File Guardian Completed ===")
     logger.info(f"Log saved to: {log_file}")

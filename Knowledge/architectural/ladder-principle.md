@@ -6,8 +6,9 @@ checksum: 0eaaf3c46d02224c94392ae81b3b4f59
 tags:
 category: unknown
 priority: medium
-related_files:
-anchors: [object Object]
+related_files: 
+anchors:
+  - object Object
 ---
 # LADDER Principle
 Light-weight · Atomic · Dry-run · Deduplicate · Easy-review · Reject-silently

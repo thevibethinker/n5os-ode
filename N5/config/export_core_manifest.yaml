@@ -1,0 +1,50 @@
+version: "1.0.0"
+last_export: "2025-10-27"
+destination: "/home/workspace/n5os-core"
+github_repo: "https://github.com/vrijenattawar/n5os-core.git"
+
+# What to export (core components only)
+components:
+  core_scripts:
+    - N5/scripts/session_state_manager.py
+    - N5/scripts/n5_index_rebuild.py
+    - N5/scripts/n5_safety.py
+    - N5/scripts/n5_git_check.py
+  
+  prefs_core:
+    - N5/prefs/prefs.md
+    - N5/prefs/system/*.md
+    - N5/prefs/operations/*.md
+  
+  schemas:
+    - N5/schemas/*.json
+  
+  knowledge:
+    - Knowledge/architectural/architectural_principles.md
+    - Knowledge/architectural/planning_prompt.md
+    - Knowledge/architectural/principles/*.md
+  
+  docs:
+    - Lists/POLICY.md
+
+# Generification replacements (apply in order)
+replacements:
+  paths:
+    "/home/workspace/Records/Personal": "{WORKSPACE}/Records/Personal"
+    "/home/workspace/Records/Company": "{WORKSPACE}/Records/Company"
+    "/home/workspace": "{WORKSPACE}"
+  
+  personal:
+    "vrijenattawar@gmail.com": "{USER_EMAIL}"
+    "Vrijen Attawar": "{USER_NAME}"
+    "va@zo.computer": "{USER_HANDLE}@zo.computer"
+    "https://va.zo.computer": "https://{USER_HANDLE}.zo.computer"
+    "va.zo.computer": "{USER_HANDLE}.zo.computer"
+
+# What to exclude
+exclude_patterns:
+  - "*/personal/*"
+  - "*/communication/*"
+  - "*_personal.md"
+  - "*.backup.*"
+  - "*/Temporary/*"
