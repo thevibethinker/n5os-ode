@@ -216,7 +216,6 @@ python3 N5/scripts/style_guide_manager.py show \
 
 ## Principles Applied
 
-- **P0 (Rule-of-Two):** Load only style guide + max 2 exemplars during generation
 - **P1 (Human-Readable):** Style guides are markdown, easily editable
 - **P2 (SSOT):** One style guide per output type
 - **P7 (Dry-Run):** All operations support --dry-run

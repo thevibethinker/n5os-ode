@@ -83,3 +83,4 @@ N5/config/credentials/
 N5/services/n8n_processor/.env
 N5/services/*/config files
 N5/data/secrets_audit.jsonl
+N5/config/slack_credentials.json

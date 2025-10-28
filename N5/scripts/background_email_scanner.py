@@ -65,6 +65,10 @@ except ImportError:
         name = domain.split('.')[0]
         return name.replace('-', ' ').replace('_', ' ').title()
 
+# Add N5 lib to path at the top of imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from lib.secrets import get_secret_json
+
 # Setup logging
 LOG_FILE = Path("/home/workspace/N5/logs/email_scanner.log")
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -84,7 +88,6 @@ CRM_PROFILES_DIR = Path("/home/workspace/Knowledge/crm/individuals")
 INDEX_FILE = CRM_PROFILES_DIR / "index.jsonl"
 PENDING_DIR = CRM_PROFILES_DIR / ".pending_updates"
 STATE_FILE = Path("/home/workspace/N5/.state/email_scanner_state.json")
-CREDENTIALS_PATH = Path("/home/workspace/N5/config/credentials/google_service_account.json")
 
 # Ensure directories exist
 STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -119,6 +122,12 @@ def get_gmail_service():
     except Exception as e:
         log.error(f"Failed to initialize Gmail API: {e}", exc_info=True)
         raise
+
+
+def get_credentials():
+    """Get Google credentials using Zo secrets."""
+    creds_dict = get_secret_json("GOOGLE_SERVICE_ACCOUNT_JSON")
+    # ... rest of authentication logic using creds_dict instead of file
 
 
 def load_state() -> Dict:

@@ -254,7 +254,7 @@ Before finalizing any persona (new or updated):
 - [ ] Self-check list present
 - [ ] Anti-patterns explicitly called out
 - [ ] Version and date updated
-- [ ] No references to deprecated principles (e.g., Rule-of-Two)
+- [ ] No references to deprecated principles
 - [ ] Tested in at least 2 real conversations
 - [ ] Committed to Git with proper message
 - [ ] Index/README updated if needed

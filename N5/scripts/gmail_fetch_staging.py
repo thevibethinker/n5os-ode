@@ -26,6 +26,10 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+# Add N5 lib to path at the top of imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from lib.secrets import get_secret_json
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)sZ %(levelname)s %(message)s",
@@ -35,7 +39,6 @@ log = logging.getLogger(__name__)
 
 # Configuration
 WORKSPACE_ROOT = Path("/home/workspace")
-CREDS_FILE = WORKSPACE_ROOT / "N5/config/credentials/google_service_account.json"
 STATE_FILE = WORKSPACE_ROOT / "N5/.state/email_scanner_state.json"
 STAGING_ROOT = WORKSPACE_ROOT / "Records/Temporary/email_staging"
 USER_EMAIL = "vrijen@mycareerspan.com"

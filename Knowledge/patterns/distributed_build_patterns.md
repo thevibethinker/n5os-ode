@@ -38,7 +38,7 @@ related_files: "['Documents/System/SESSION_STATE_SYSTEM.md', 'Knowledge/architec
 **How:**
 1. Identify natural boundaries (files, features, layers)
 2. Ensure each module is independently testable
-3. Limit to 2 files per worker (P0 Rule-of-Two)
+3. Limit to 2 files per worker (minimal context loading)
 4. Define clear interfaces between modules
 
 **Example:**
@@ -146,35 +146,10 @@ Batch 3: UI components (low risk) ← Quick wins
 
 ---
 
-## Pattern 5: Context Boundaries (P0 Rule-of-Two)
+## Pattern 5: Context Boundaries (Minimal Context)
 
-**When:** Always
-
-**Pattern:** Strict limits on worker scope
-
-**Limits:**
-- **Actively modified:** ≤2 files
-- **Read-only context:** ≤5 files
-- **Total LOC:** <500 lines
-
-**How:**
-1. If task exceeds limits → split into more workers
-2. Document context in ASSIGNMENT.md
-3. Worker stays within boundaries
-4. Orchestrator handles cross-module concerns
-
-**Example:**
-```
-Bad:  Worker modifies 8 files (auth.py, user.py, session.py, ...)
-Good: 
-  Worker 1: auth.py + auth_utils.py (2 files)
-  Worker 2: user.py + user_utils.py (2 files)
-  Worker 3: session.py (1 file)
-```
-
-**Benefit:** Lower cognitive load = fewer mistakes
-
-**Anti-pattern:** "Just add one more file" → context sprawl, quality degradation
+**Problem:** Workers get overloaded with too much context
+**Solution:** Load only essential files; prefer minimal, focused context
 
 ---
 
@@ -403,7 +378,7 @@ python3 N5/scripts/orchestrator.py approve --worker con_W1
 
 ### ❌ Under-decomposition
 **Problem:** 1 worker for 2000 LOC → context overload, bugs  
-**Fix:** Follow Rule-of-Two (P0)
+**Fix:** Follow minimal context principle (P8)
 
 ### ❌ Unclear interfaces
 **Problem:** Workers make incompatible assumptions  
