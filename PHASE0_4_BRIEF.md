@@ -1,8 +1,8 @@
 # N5 OS Core - Phase 0.4 Build Instructions
 
-**Project**: N5 OS (Cesc v0.1)  
-**GitHub**: https://github.com/vattawar/zo-n5os-core  
-**Phase**: 0.4 - GitHub Integration  
+**Project**: N5 OS (Cesc v0.1)\
+**GitHub**: https://github.com/vattawar/zo-n5os-core\
+**Phase**: 0.4 - GitHub Integration\
 **Prerequisites**: Phases 0.1, 0.2, 0.3 complete
 
 ---
@@ -11,7 +11,7 @@
 
 Configure Git, create comprehensive README, push all Phase 0 files to GitHub.
 
-**Time**: 1 hour  
+**Time**: 1 hour\
 **Environment**: vademonstrator.zo.computer
 
 ---
@@ -39,7 +39,7 @@ cat .gitignore
 
 ### 2. Create Comprehensive README.md
 
-**Location**: `/home/workspace/README.md`
+**Location**: `file README.md`
 
 **Content Structure**:
 
@@ -79,20 +79,23 @@ N5 OS (codename: Cesc) is a foundational operating system for your AI on [Zo Com
    cd /home/workspace
    git clone https://github.com/vattawar/zo-n5os-core.git
    cd zo-n5os-core
-   ```
+```
 
 2. **Run initialization**:
+
    ```bash
    python3 N5/scripts/n5_init.py
    ```
-   
+
    This will:
+
    - Generate your personal config files in `/N5/config/`
    - Set up directory structure
    - Verify all dependencies
 
 3. **Set up scheduled tasks** (in Zo chat):
-   ```
+
+   ```markdown
    Create two scheduled tasks:
    
    1. Daily cleanup at 3 AM:
@@ -103,6 +106,7 @@ N5 OS (codename: Cesc) is a foundational operating system for your AI on [Zo Com
    ```
 
 4. **Start using N5 OS**:
+
    - Your AI will now follow N5 behavioral rules
    - System maintains itself automatically
    - Check `/docs/` for detailed documentation
@@ -114,6 +118,7 @@ N5 OS (codename: Cesc) is a foundational operating system for your AI on [Zo Com
 ### Core Components
 
 **Behavioral Rules** (`/N5/templates/rules.template.md`):
+
 - Anti-hallucination protocols
 - Systematic clarification (min 3 questions when uncertain)
 - Non-interactive execution standards
@@ -121,11 +126,13 @@ N5 OS (codename: Cesc) is a foundational operating system for your AI on [Zo Com
 - Safety protocols (dry-run, approval, protection)
 
 **Self-Maintenance** (`/N5/scripts/`):
-- `workspace_cleanup.py` - Archives old temp files daily
-- `self_describe.py` - Generates system state every 6 hours
-- `n5_init.py` - Initializes or updates your N5 installation
+
+- `file workspace_cleanup.py` - Archives old temp files daily
+- `file self_describe.py` - Generates system state every 6 hours
+- `file n5_init.py` - Initializes or updates your N5 installation
 
 **Configuration System**:
+
 - Templates in `/N5/templates/` (from GitHub, read-only reference)
 - Your configs in `/N5/config/` (generated, not tracked in Git)
 - Safe updates: pull new templates without overwriting your customizations
@@ -151,7 +158,8 @@ N5 OS (codename: Cesc) is a foundational operating system for your AI on [Zo Com
 
 ### Adjust Cleanup Schedule
 
-Edit `workspace_cleanup.py` parameters:
+Edit `file workspace_cleanup.py` parameters:
+
 ```python
 ARCHIVE_AFTER_DAYS = 30  # Change retention period
 DIRECTORIES_TO_CLEAN = ['/tmp/', ...]  # Add/remove directories
@@ -162,28 +170,34 @@ DIRECTORIES_TO_CLEAN = ['/tmp/', ...]  # Add/remove directories
 ## Roadmap
 
 **Phase 0 (Current)**: Foundation ✅
+
 - Behavioral rules
 - Self-maintenance
 - Config system
 
 **Phase 1 (Next)**: Infrastructure
+
 - Schema validation
 - Safety systems
 - State management
 
 **Phase 2**: Commands
+
 - Natural language command registry
 - Command execution system
 
 **Phase 3**: Build System
+
 - Multi-agent orchestration
 - Planning workflows
 
 **Phase 4**: Knowledge
+
 - Preference modules
 - Architectural principles
 
 **Phase 5**: Workflows
+
 - Conversation end workflow
 - Knowledge management patterns
 
@@ -204,14 +218,16 @@ Full philosophy in `/docs/planning_prompt.md` (coming in Phase 3)
 
 ## Contributing
 
-This is V's personal productivity system, open-sourced for the Zo community. 
+This is V's personal productivity system, open-sourced for the Zo community.
 
-**Feedback welcome**: 
+**Feedback welcome**:
+
 - Open GitHub issues for bugs
 - Share your N5 customizations
 - Suggest universal improvements
 
-**Not accepting**: 
+**Not accepting**:
+
 - Features specific to narrow use cases
 - Complexity that breaks the "simple over easy" principle
 - Dependencies on external services (Zo-only by design)
@@ -226,8 +242,8 @@ MIT License - See LICENSE file
 
 ## Credits
 
-**Created by**: [Vrijen Attawar](https://github.com/vattawar)  
-**Built for**: [Zo Computer](https://zo.computer) users  
+**Created by**: [Vrijen Attawar](https://github.com/vattawar)\
+**Built for**: [Zo Computer](https://zo.computer) users\
 **Inspired by**: A decade of personal productivity experimentation
 
 ---
@@ -240,9 +256,10 @@ MIT License - See LICENSE file
 
 ---
 
-**Version**: Cesc v0.1 (Phase 0)  
+**Version**: Cesc v0.1 (Phase 0)\
 **Last Updated**: 2025-10-28
-```
+
+```markdown
 
 ### 3. Stage and Commit
 
@@ -273,6 +290,7 @@ git push -u origin main
 ### 4. Verify on GitHub
 
 Visit https://github.com/vattawar/zo-n5os-core and confirm:
+
 - README displays correctly
 - All files present
 - .gitignore working (no `/N5/config/` or `/N5/data/` files)
@@ -281,10 +299,12 @@ Visit https://github.com/vattawar/zo-n5os-core and confirm:
 ### 5. Create Release
 
 On GitHub:
+
 1. Go to Releases → "Create a new release"
 2. Tag: `v0.1-cesc`
 3. Title: "Cesc v0.1 - Foundation Release"
 4. Description:
+
 ```markdown
 ## N5 OS Core - Phase 0 Complete
 
@@ -327,7 +347,8 @@ See README.md for complete setup guide.
 ### Next Phase
 
 Phase 1: Infrastructure (schemas, safety, state management)
-```
+
+```markdown
 
 ---
 
@@ -358,11 +379,16 @@ git log --oneline -1
 ```
 
 **On GitHub**:
-- [ ] README renders correctly with formatting
-- [ ] File structure visible and organized
-- [ ] No sensitive/generated files in repo
-- [ ] LICENSE file displays correctly
-- [ ] Release v0.1-cesc exists with description
+
+- [ ]  README renders correctly with formatting
+
+- [ ]  File structure visible and organized
+
+- [ ]  No sensitive/generated files in repo
+
+- [ ]  LICENSE file displays correctly
+
+- [ ]  Release v0.1-cesc exists with description
 
 ---
 
@@ -379,8 +405,9 @@ git log --oneline -1
 ## What This Achieves
 
 **Phase 0 Complete**: N5 OS Core foundation is:
+
 - ✅ Publicly available on GitHub
-- ✅ Installable by any Zo user in < 10 minutes
+- ✅ Installable by any Zo user in &lt; 10 minutes
 - ✅ Self-documenting and self-maintaining
 - ✅ Production-tested and validated
 - ✅ Ready for Phase 1 expansion

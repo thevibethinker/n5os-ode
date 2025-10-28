@@ -154,7 +154,7 @@ class TaskDeconstructor:
         
         # Create module per group
         for idx, (group_name, group_files) in enumerate(groups.items(), 1):
-            # Limit to 2 files per module (P0 Rule-of-Two)
+            # Limit to 2 files per module for minimal context
             for batch_idx, i in enumerate(range(0, len(group_files), 2), 1):
                 batch = group_files[i:i+2]
                 module_name = f"{group_name}_module_{batch_idx}" if len(group_files) > 2 else f"{group_name}_module"
@@ -397,7 +397,7 @@ class TaskDeconstructor:
 
 ## Principles to Follow
 
-- **P0 (Rule-of-Two):** Max 2 files actively modified
+- **P8 (Minimal Context):** Keep context focused and essential
 - **P7 (Dry-Run):** Test approach before full implementation
 - **P19 (Error Handling):** Include try/except and logging
 - **P15 (Complete):** Verify all criteria met before marking complete

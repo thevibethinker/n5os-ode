@@ -1,5 +1,21 @@
 {
-  "last_run_iso": "2025-10-27T17:10:04.006961Z",
-  "processed_file_ids": [],
-  "last_sync_token": null
+  "last_run_iso": "2025-10-28T05:11:46.612262Z",
+  "processed_file_ids": [
+    "1S6FftZJDpPk9BTKV5JotPFDaP0PBlTo3",
+    "1xpU38stCtb1tnu8h52ya6kwggM8MZlTj",
+    "1lKRPtUp2_IHBYm9GVQSC3UGbtmgYdLLo",
+    "1wwjc6WV28ak-l6x-TybI6-G7zwD7ttc7",
+    "131TH8BJwwUTrk9V4ylEuoOX7n05Wnb8Q",
+    "1oZLi2DL12Zzm6MQd12H208XCSWZu-F16",
+    "13N3qQgQJgpXOkbMg7bJ9Y6ZqTtWam8E0",
+    "1dSHKj5vgQ0NdBkMi6fNaOQg5cQUVyHnQ",
+    "1W_CV9ZQTklugXNjS4HN8OKd6OrVGWee2"
+  ],
+  "last_sync_token": null,
+  "stats": {
+    "files_downloaded": 9,
+    "files_processed": 9,
+    "files_failed": 0,
+    "run_timestamp": "2025-10-28T05:11:46.612284Z"
+  }
 }

@@ -18,7 +18,6 @@ Review implementation for architecture compliance.
 **Review Checklist:**
 
 **Architecture (P0, P1, P2, P8, P20):**
-- [ ] Rule-of-Two: Max 2 config files loaded
 - [ ] Human-readable paths and names (P1)
 - [ ] Single Source of Truth (P2)
 - [ ] Minimal context principle (P8)

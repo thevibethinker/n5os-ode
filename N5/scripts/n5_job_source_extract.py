@@ -11,6 +11,10 @@ from datetime import datetime
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+# Add N5 lib to path  
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from lib.secrets import get_secret_json
+
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -20,18 +24,18 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 SHEET_ID = "17I5UgjvtEcACsskMt9_tFac5-l9acyh3Nryp1HOttAs"
-CREDENTIALS_PATH = "/home/workspace/N5/config/credentials/google_service_account.json"
 WORKSPACE = Path("/home/workspace")
 
 
 def get_sheets_client():
-    """Initialize and return Google Sheets client."""
+    """Initialize and return Google Sheets client using Zo secrets."""
     scope = [
         'https://spreadsheets.google.com/feeds',
         'https://www.googleapis.com/auth/drive'
     ]
-    creds = ServiceAccountCredentials.from_json_keyfile_name(
-        CREDENTIALS_PATH,
+    creds_dict = get_secret_json("GOOGLE_SERVICE_ACCOUNT_JSON")
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(
+        creds_dict,
         scope
     )
     return gspread.authorize(creds)
