@@ -498,7 +498,7 @@ This protocol is a living document. Update based on:
 - Lessons learned from task failures
 
 **Review Frequency:** Monthly (aligned with system audit)  
-**Owner:** System architecture (via Vibe Builder persona)  
+**Owner:** System architecture (via Operator activating Builder mode)  
 **Change Process:** Follow `file 'N5/commands/system-design-workflow.md'`
 
 ---

@@ -1,303 +1,308 @@
 # Persona Management Protocol
 
-**Purpose:** Standardized workflow for creating, updating, and maintaining Zo personas  
-**Version:** 1.1  
-**Updated:** 2025-10-22
+**Purpose:** Standardized workflow for managing Core + Specialist mode architecture  
+**Version:** 2.0  
+**Updated:** 2025-10-28
 
 ---
 
 ## Overview
 
-Personas are specialized Zo configurations that activate different operational modes. This protocol ensures consistency, version control, and quality across all personas.
+**Architecture:** Core + Specialist Modes (v2.0)
+
+- **Vibe Operator** (Core) = Always-active baseline that coordinates specialists
+- **Specialist Modes** = Domain experts activated by Operator on demand (Builder, Debugger, Researcher, Strategist, Writer, Teacher)
+- **Activation:** Automatic via signal detection or explicit "Operator: activate [Mode]"
+
+This protocol covers creating, updating, and maintaining specialist modes within this architecture.
 
 ---
 
-## Persona Structure
+## Specialist Mode Structure
 
-Every persona MUST include:
+Every specialist mode MUST include:
 
 ### Required Sections
 
 1. **Header Block**
-   - Purpose (one-line description)
+   - Type: Specialist Mode (Operator-activated)
    - Version number (semantic: major.minor)
-   - Last updated date
+   - Predecessor reference (if refactored from v1.x persona)
 
-2. **Core Identity**
-   - Role description
-   - Key capabilities
-   - Watch-fors/anti-patterns
+2. **Activation Interface** (MP2: Interface Contract)
+   - Signals (auto-detection keywords)
+   - Context required
+   - Success criteria
+   - Handoff template
 
-3. **Operational Guidelines**
-   - When to use this persona
-   - Key workflows or methods
-   - Decision criteria
+3. **Core Methodology**
+   - Phase-based workflow (numbered steps)
+   - Decision frameworks
+   - Output specifications
 
-4. **Quality Standards**
-   - Success metrics
-   - Validation requirements
-   - Self-check items
+4. **Return Payload**
+   - What Operator receives back
+   - Format/structure
+   - Exit conditions
 
-5. **Meta Section**
-   - Invocation pattern
-   - Version history (in footer)
+5. **Critical Principle Reinforcement** (MP6: max 3)
+   - Which principles reinforced and why
+   - Different angle than Operator core
+
+6. **Integration Points**
+   - How this mode chains with others
+   - Common workflows
 
 ### Optional Sections
-
-- Context files to reference
-- Examples or case studies
-- Integration with other personas
-- Technical calibration (for specialized personas)
+- Advanced techniques
+- Edge case handling
+- Historical context
 
 ---
 
-## File Conventions
+## Creating New Specialist Modes
 
-**Location:** `/home/workspace/Documents/System/`
+### Before You Start (MP1: Single Responsibility)
 
-**Naming:** `{persona_name}_persona.md` (lowercase, underscores)
-- Examples: `vibe_teacher_persona.md`, `vibe_builder_persona.md`
+**Answer these questions:**
 
-**Version Format:** `v{major}.{minor}` 
-- Increment minor for updates (content refinements, clarifications)
-- Increment major for structural changes or significant capability additions
+1. **What gap does this fill?** What can't current modes do well?
+2. **What's the  trigger?** What signals activate this mode?
+3. **What does it return?** Clear payload to Operator?
+4. **How does it integrate?** Chains with existing modes?
 
----
-
-## Creation Workflow
-
-### Phase 1: Discovery
-
-**Before creating a persona, answer:**
-
-1. **What gap does this fill?** What can't current personas do well?
-2. **What's the core identity?** Role in one sentence
-3. **When would V invoke it?** Specific trigger scenarios
-4. **What are the anti-patterns?** What should this persona NOT do?
-5. **How do we measure success?** Quality indicators
-
-**Template:** Use `file 'Documents/System/persona_creation_template.md'`
-
-### Phase 2: Drafting
-
-1. Start from template
-2. Fill required sections completely
-3. Add optional sections if needed
-4. Include 2-3 concrete examples
-5. Write self-check checklist
-
-**Quality bar:**
-- Clear invocation pattern
-- No jargon without definition
-- Specific, actionable guidance
-- Measurable quality standards
-
-### Phase 3: Testing
-
-**Test in 3-5 conversations:**
-- Does V need to clarify/correct often?
-- Does output match expectations?
-- Are anti-patterns avoided?
-- Is it distinct from other personas?
-
-**Document:**
-- Thread IDs where tested
-- What worked well
-- What needs refinement
-
-### Phase 4: Finalization
-
-1. Incorporate test feedback
-2. Set version to 1.0
-3. Add to persona index
-4. Commit to Git (see Git Protocol below)
-5. Announce in conversation or via email
+**Template:** Use `file 'Documents/System/personas/persona_creation_template.md'` (adapt for mode structure)
 
 ---
 
-## Update Workflow
+### Creation Process
 
-### Minor Updates (v1.0 → v1.1)
+**Phase 1: Define Activation Interface**
 
-**Triggers:**
-- Clarifying existing guidance
-- Adding examples
-- Fixing typos or formatting
-- Refining existing sections
+```markdown
+## Activation Interface
+
+### Signals (Auto-Detection)
+**Primary:** [main keywords that trigger this mode]
+**Secondary:** [context clues, phrases]
+**Disambiguation:** [how to distinguish from similar signals]
+
+### Context Required
+- File: [what files Operator should load before handoff]
+- State: [required system state]
+- Constraints: [known limitations]
+
+### Success Criteria
+- [Measurable outcome 1]
+- [Measurable outcome 2]
+
+### Handoff Template
+[Operator uses this to activate mode]
+```
+
+**Phase 2: Define Core Methodology**
+
+- Keep phase-based (Phase 1, Phase 2, etc.)
+- Make each phase actionable
+- Include decision points
+- Specify outputs
+
+**Phase 3: Define Return Payload**
+
+- What does Operator get back?
+- Structured data? Narrative? Both?
+- Exit conditions (when is mode "done")?
+
+**Phase 4: Identify Critical Principles** (MP6: max 3)
+
+- Which principles are most violated in this domain?
+- Reinforce from different angle than Operator
+
+**Phase 5: Test Mode Purity** (MP7)
+
+- Can specialist function with just Operator handoff?
+- No hidden dependencies?
+- Clear entry/exit?
+
+---
+
+### Naming Convention
+
+**File:** `vibe_[name]_mode.md` (lowercase, underscores)  
+**Examples:** `vibe_builder_mode.md`, `vibe_debugger_mode.md`
+
+**Location:** `/home/workspace/Documents/System/personas/`
+
+---
+
+## Updating Existing Modes
+
+### Minor Updates (bump minor version)
+
+**When:**
+- Clarify existing behavior
+- Fix typos/formatting
+- Add examples
+- Update references
 
 **Process:**
-1. Make changes
-2. Increment minor version
-3. Update "Last Updated" date
-4. Add changelog entry at bottom
-5. Commit to Git with descriptive message
+1. Edit mode file
+2. Update version (e.g., 2.0 → 2.1)
+3. Add note in version history
+4. Test activation still works
+5. Commit with message: `docs(personas): Update [Mode] v[X.Y]`
 
-### Major Updates (v1.0 → v2.0)
+### Major Updates (bump major version)
 
-**Triggers:**
-- Adding new capabilities or sections
-- Restructuring content
-- Changing core identity or purpose
-- Merging/splitting personas
+**When:**
+- Change activation signals
+- Modify core methodology
+- Add/remove phases
+- Change return payload format
 
 **Process:**
-1. Document rationale for major change
-2. Test changes in 2-3 threads
-3. Increment major version
-4. Update all references in other docs
-5. Commit to Git with detailed message
-6. Consider announcing to V
-
----
-
-## Git Protocol
-
-### Initial Commit (New Persona)
-
-```bash
-git add Documents/System/{persona_name}_persona.md
-git add Documents/System/PERSONAS_README.md  # if updated
-git commit -m "feat(personas): Add {Persona Name} v1.0
-
-Purpose: {one-line description}
-Fills gap: {what problem it solves}
-Tested in: {thread IDs or 'pending testing'}"
-```
-
-### Update Commits
-
-**Minor updates:**
-```bash
-git add Documents/System/{persona_name}_persona.md
-git commit -m "docs(personas): Update {Persona Name} v{X.Y}
-
-Changes:
-- {bullet list of changes}
-"
-```
-
-**Major updates:**
-```bash
-git add Documents/System/{persona_name}_persona.md
-git commit -m "feat(personas): Major update {Persona Name} v{X.0}
-
-Breaking changes:
-- {what changed significantly}
-
-Rationale:
-- {why this was needed}
-
-Tested in: {thread IDs}"
-```
-
-### Deprecation
-
-```bash
-git mv Documents/System/{old}_persona.md Documents/System/Archive/{old}_persona.md
-git commit -m "chore(personas): Deprecate {Old Persona}
-
-Reason: {why deprecated}
-Replacement: {new persona or 'none'}
-Last used: {date}"
-```
-
----
-
-## Maintenance Schedule
-
-### Quarterly Review (Every 3 months)
-
-**For each persona:**
-- [ ] Usage frequency - Is it being used?
-- [ ] Effectiveness - Is it working as intended?
-- [ ] Conflicts - Does it overlap with other personas?
-- [ ] Gaps - Are there unaddressed scenarios?
-
-**Actions:**
-- Update if needed (minor version bump)
-- Deprecate if unused
-- Split if doing too much
-- Merge if overlapping
-
-### Annual Review (Yearly)
-
-**System-level:**
-- [ ] Do personas cover V's needs?
-- [ ] Is the taxonomy clear?
-- [ ] Are invocation patterns intuitive?
-- [ ] Should any be retired or created?
-
-**Document findings in:** `Documents/System/persona_review_YYYY.md`
-
----
-
-## Current Active Personas
-
-| Persona | Version | Purpose | Primary Use Cases |
-|---------|---------|---------|-------------------|
-| **Vibe Teacher** | 1.0 | Technical learning | Explaining concepts, debugging mental models |
-| **Vibe Builder** | 1.1 | System building | Architecture, scripts, automation |
-| **Vibe Strategist** | 2.0 | Strategic intelligence | Pattern analysis, ideation, decision frameworks |
-| **Vibe Writer** | 1.0 | Content creation | LinkedIn, newsletters, email campaigns |
-
-**Index:** `file 'Documents/System/PERSONAS_README.md'`
+1. Document rationale in `/home/.z/workspaces/con_*/refactor_analysis.md`
+2. Create updated mode file
+3. Test extensively (activation, execution, return)
+4. Update Operator if signals changed
+5. Update INDEX.md
+6. Commit with message: `feat(personas): Major update [Mode] v[X.0]`
 
 ---
 
 ## Quality Checklist
 
-Before finalizing any persona (new or updated):
+### Before Finalizing Any Mode
 
-- [ ] All required sections present and complete
-- [ ] Clear invocation pattern stated
-- [ ] Specific examples or case studies included
-- [ ] Self-check list present
-- [ ] Anti-patterns explicitly called out
-- [ ] Version and date updated
-- [ ] No references to deprecated principles
-- [ ] Tested in at least 2 real conversations
-- [ ] Committed to Git with proper message
-- [ ] Index/README updated if needed
+**MP Compliance:**
+- [ ] MP1: Single clear responsibility?
+- [ ] MP2: Activation interface complete?
+- [ ] MP3: No hidden assumptions in handoff?
+- [ ] MP4: Stateless (no persistent state)?
+- [ ] MP5: Escalation path defined?
+- [ ] MP6: ≤3 principles reinforced, justified?
+- [ ] MP7: Mode purity test passes?
+
+**Functional:**
+- [ ] Signals are distinct from other modes?
+- [ ] Handoff template is complete?
+- [ ] Methodology is actionable?
+- [ ] Return payload is structured?
+- [ ] Integration points documented?
+
+**Quality:**
+- [ ] Follows N5 conventions?
+- [ ] No jargon without definition?
+- [ ] Examples where helpful?
+- [ ] Self-check at end?
 
 ---
 
-## Anti-Patterns
+## Integration with Operator
 
-**❌ Vague guidance:** "Be helpful" → ✅ "Start with analogy from V's domain"  
-**❌ No examples:** Abstract theory only → ✅ Include 2-3 concrete examples  
-**❌ Overlapping personas:** Unclear when to use which → ✅ Distinct invocation triggers  
-**❌ No version control:** Direct edits without tracking → ✅ Git commits with changelog  
-**❌ Untested:** Deploy without validation → ✅ Test in 3-5 threads first  
-**❌ Stale personas:** Never reviewed or updated → ✅ Quarterly maintenance  
+### Operator References Modes
+
+**Operator knows:**
+- All signal keywords
+- When to activate each mode
+- How to construct handoffs
+- What to expect back
+
+**When updating mode:**
+- If signals change → Update Operator
+- If handoff template changes → Update Operator
+- If return format changes → Update Operator
+
+### Modes Reference Operator
+
+**Modes can:**
+- Ask Operator to load files
+- Ask Operator to execute commands
+- Ask Operator to activate other modes
+- Ask Operator to escalate to V
+
+**Modes should NOT:**
+- Execute system operations directly
+- Make assumptions about Operator state
+- Skip handoff contract
 
 ---
 
-## References
+## Maintenance Workflow
 
-- **Template:** `file 'Documents/System/persona_creation_template.md'`
-- **Index:** `file 'Documents/System/PERSONAS_README.md'`
-- **Git Workflow:** `file 'Knowledge/architectural/operational_principles.md'` (P14: Change Tracking)
-- **Examples:** All active personas in `Documents/System/`
+### Weekly Review (Automated via Squawk Log)
+
+```bash
+# Check for activation issues
+grep 'specialist' N5/logs/squawk_log.jsonl | jq -r '.description'
+
+# Pattern detection
+python3 /home/workspace/N5/scripts/analyze_squawk_log.py --patterns --days 7
+```
+
+### Monthly Deep Review (Manual)
+
+**Questions:**
+1. Are all modes still necessary?
+2. Are signals distinct enough (no conflicts)?
+3. Are methodologies still optimal?
+4. Have any principles been consistently violated?
+5. Do modes integrate smoothly?
+
+**Action Items:**
+- Refine activation logic
+- Update methodologies
+- Add new modes for gaps
+- Deprecate redundant modes
+
+---
+
+## Common Anti-Patterns
+
+**❌ Overlapping signals:** Builder and Debugger both trigger on "test"  
+→ ✅ Disambiguation: "test X works" → Debugger; "test coverage" → Builder
+
+**❌ Hidden assumptions:** Mode expects file loaded without requesting  
+→ ✅ Explicit in handoff: "Context: file 'X' loaded"
+
+**❌ Over-reinforcement:** Repeating 10+ principles  
+→ ✅ Max 3, strategically chosen
+
+**❌ No escalation path:** Mode stuck, doesn't know when to give up  
+→ ✅ Clear escalation criteria
+
+**❌ Stateful modes:** Mode remembers across activations  
+→ ✅ Pure functions: input → output
+
+---
+
+## Reference
+
+- **INDEX:** `file 'Documents/System/personas/INDEX.md'`
+- **Template:** `file 'Documents/System/personas/persona_creation_template.md'`
+- **Quick Ref:** `file 'Documents/System/personas/quick_reference.md'`
+- **Framework:** `file '/.z/workspaces/con_Dkz6TpWmux31bBVV/persona_refactor_framework.md'`
 
 ---
 
 ## Version History
 
-### v1.1 (2025-10-22)
-- Updated Current Active Personas table to reflect Vibe Strategist v2.0 (merged from Vibe Thinker + Vibe Analyst)
+### v2.0 — 2025-10-28
+- **BREAKING:** Refactored to Core + Specialist architecture
+- All standalone personas → specialist modes
+- Added MP1-MP7 principles
+- Updated creation/maintenance workflows
+- Operator always active, specialists on-demand
+
+### v1.2 — 2025-10-22
 - Added Vibe Writer persona to active roster
 
-### v1.0 (2025-10-16)
+### v1.1 — 2025-10-16
+- Clarified persona vs. system spec distinction
+
+### v1.0 — 2025-10-12
 - Initial protocol
-- Defined creation, update, and maintenance workflows
-- Established Git conventions
-- Created quality checklist
-- Documented three active personas
 
 ---
 
-**Maintained by:** V + Zo (collaborative)  
-**Next review:** 2025-11-16  
-**Protocol status:** Active
-
-*v1.0 | 2025-10-16*
+*Protocol effective immediately for all persona/mode work.*
