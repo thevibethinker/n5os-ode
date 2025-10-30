@@ -132,7 +132,7 @@ def update_learned_patterns(analysis: Dict, dry_run: bool = False) -> bool:
     """Update learned patterns based on analysis."""
     patterns = load_json(PATTERNS)
     
-    # Update entity mappings (e.g., "ClientX" -> Careerspan/Meetings)
+    # Update entity mappings (e.g., "ClientX" -> Meetings)
     if 'clients_careerspan' not in patterns:
         patterns['clients_careerspan'] = {'entities': [], 'confidence_boost': 0.25}
     
@@ -141,9 +141,9 @@ def update_learned_patterns(analysis: Dict, dry_run: bool = False) -> bool:
         total = sum(dests.values())
         for dest, count in dests.items():
             if count / total > 0.7:
-                if 'Careerspan' in dest and entity not in patterns['clients_careerspan']['entities']:
+                if 'Meeting' in dest and entity not in patterns['clients_careerspan']['entities']:
                     patterns['clients_careerspan']['entities'].append(entity)
-                    logger.info(f"Learned: {entity} → Careerspan")
+                    logger.info(f"Learned: {entity} → Meetings")
     
     # Update accuracy metrics
     for file_type, stats in analysis['by_type'].items():

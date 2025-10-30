@@ -1,5 +1,5 @@
 ---
-description: Search the N5 command registry (`N5/config/commands.jsonl`) by keyword,
+description: Search the N5 command registry (`Recipes/recipes.jsonl (index only)`) by keyword,
   category, or description. Helps discover available commands without manually reading
   the registry.
 tags: []
@@ -14,7 +14,7 @@ tags: []
 
 ## Purpose
 
-Search the N5 command registry (`N5/config/commands.jsonl`) by keyword, category, or description. Helps discover available commands without manually reading the registry.
+Search the N5 command registry (`Recipes/recipes.jsonl (index only)`) by keyword, category, or description. Helps discover available commands without manually reading the registry.
 
 ---
 
@@ -82,7 +82,7 @@ Shows what would be searched without executing.
 
 ## Integration
 
-**Command Registry:** This command is registered in `N5/config/commands.jsonl`  
+**Command Registry:** This command is registered in `Recipes/recipes.jsonl (index only)`  
 **Workflow:** automation (helper tool)  
 **Dependencies:** Python 3.12+, commands.jsonl must exist
 
@@ -100,7 +100,7 @@ Current command categories in registry:
 
 ## Error Handling
 
-- **Registry not found**: Returns error if `N5/config/commands.jsonl` doesn't exist
+- **Registry not found**: Returns error if `Recipes/recipes.jsonl (index only)` doesn't exist
 - **Invalid JSON**: Logs warning and skips malformed lines
 - **No results**: Returns "No matching commands found" message
 - **Search failure**: Logs error with traceback, exits with code 1
@@ -110,7 +110,7 @@ Current command categories in registry:
 ## Related Commands
 
 - `file 'N5/commands.md'` - Full command catalog
-- `file 'N5/config/commands.jsonl'` - Command registry (source of truth)
+- `file 'Recipes/recipes.jsonl (index only)'` - Command registry (source of truth)
 - `incantum-quickref` - Quick reference for incantum triggers
 
 ---

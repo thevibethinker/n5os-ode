@@ -14,7 +14,7 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 
 def load_google_drive_tool():
     """Import and return use_app_google_drive function."""

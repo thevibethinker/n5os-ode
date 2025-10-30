@@ -2,7 +2,39 @@
 description: 'Command: index-rebuild'
 tags: []
 ---
-# `index-rebuild`\n\nVersion: 0.1.0\n\nSummary: Rebuild the N5 system index from source files\n\nWorkflow: ops\n\nTags: index, rebuild, system\n\n## Outputs\n- index_path : path — Path to the rebuilt index.jsonl\n\n## Side Effects\n- writes:file\n- modifies:file\n\n## Examples\n- N5: run index-rebuild\n\n## Failure Modes\n- Source file corruption\n- Permission errors\n\n## Related Components\n\n**Related Commands**: [`docgen`](../commands/docgen.md), [`index-update`](../commands/index-update.md), [`digest-runs`](../commands/digest-runs.md)\n\n**Knowledge Areas**: [System Architecture](../knowledge/system-architecture.md)\n\n**Examples**: See [Examples Library](../examples/) for usage patterns\n\n
+# `index-rebuild`
+
+Version: 0.1.0
+
+Summary: Rebuild the N5 system index from source files
+
+Workflow: ops
+
+Tags: index, rebuild, system
+
+## Outputs
+- index_path : path â Path to the rebuilt index.jsonl
+
+## Side Effects
+- writes:file
+- modifies:file
+
+## Examples
+- N5: run index-rebuild
+
+## Failure Modes
+- Source file corruption
+- Permission errors
+
+## Related Components
+
+**Related Commands**: [`docgen`](../commands/docgen.md), [`index-update`](../commands/index-update.md), [`digest-runs`](../commands/digest-runs.md)
+
+**Knowledge Areas**: [System Architecture](../knowledge/system-architecture.md)
+
+**Examples**: See [Examples Library](../examples/) for usage patterns
+
+
 
 ## Inputs
 (None)

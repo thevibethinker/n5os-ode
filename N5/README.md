@@ -20,7 +20,7 @@ N5/
 ├── commands/          Command workflows (meeting-process, etc.)
 ├── scripts/           Python automation scripts
 ├── prefs/             System preferences and protocols
-├── config/            Configuration files (commands.jsonl, etc.)
+├── config/            Configuration files
 ├── lists/             Action tracking (todos, lessons, etc.)
 ├── logs/              Thread exports and system logs
 ├── records/           Meeting records and processing outputs
@@ -34,7 +34,7 @@ N5/
 - **Meeting Intelligence:** `command 'meeting-process'`
 - **Thread Management:** `command 'thread-export'`
 - **Git Safety:** `python3 N5/scripts/n5_git_check.py`
-- **Commands Registry:** `file 'N5/config/commands.jsonl'`
+- **Recipes System:** See `file 'N5/prefs/operations/recipe-execution-guide.md'`
 
 ---
 

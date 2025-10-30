@@ -250,7 +250,7 @@ This directory represents a **knowledge asset** (catalog of social media work ou
 
 ### Command Registry
 
-Registered in: `N5/config/commands.jsonl`
+See recipe-execution-guide.md`Recipes/recipes.jsonl`
 
 ```json
 {

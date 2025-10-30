@@ -77,7 +77,7 @@
 - Creates culture of compliance
 
 **Layer 5: Command Registration** (optional)
-- Can add to `N5/config/commands.jsonl`
+- Can add to `Recipes/recipes.jsonl`
 - Automatic loading based on keywords
 
 **Includes:**
@@ -328,7 +328,7 @@ RULE: Load file 'Knowledge/architectural/architectural_principles.md' FIRST
 
 1. **Do you want to add the user rule?** (Option A, B, or C?)
 
-2. **Should we add command registration** to `N5/config/commands.jsonl` for keyword triggers?
+2. **Should we add command registration** to `Recipes/recipes.jsonl` for keyword triggers?
 
 3. **Are there other scenarios** where principles should be referenced?
 

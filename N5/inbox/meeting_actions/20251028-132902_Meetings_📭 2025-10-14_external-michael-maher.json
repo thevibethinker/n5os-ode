@@ -1,0 +1,550 @@
+{
+  "meeting_id": "\ud83d\udced 2025-10-14_external-michael-maher",
+  "meeting_title": "\ud83d\udced 2025-10-14 external-michael-maher",
+  "meeting_date": "20251028-132902_Meetings",
+  "meeting_path": "/home/workspace/Inbox/20251028-132902_Meetings/\ud83d\udced 2025-10-14_external-michael-maher",
+  "actions": [
+    {
+      "text": "## DETAILED_RECAP",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_001",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "meeting"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_002",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Feedback**: - [ ] Useful",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_003",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_004",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "### Key Decisions and Agreements",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_005",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Careerspan will be included in Cornell Johnson CMC tool evaluation** - Michael confirmed he wants Careerspan \"in the mix\" when CMC evaluates replacements for Vmock in the coming weeks. This matters because it creates formal evaluation pathway after months of informal advocacy. Michael explicitly stated \"I think yours is better, but I have to make sure they have to think that too.\"",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_006",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Evaluation timeline: 2-3 weeks out** - CMC won't start concentrated testing until \"when the crunch is over\" (likely after recruiting season peak). This matters because it sets realistic expectation that decision won't happen immediately, despite urgency around Vmock costs.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_007",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Strategy shift: Prove tool quality first, negotiate pricing later** - Michael advised \"I don't think the money is the issue at the moment. I think that we have to persuade that your tool is something that will work.\" This matters because Vrijen was leading with \"free\" messaging, but Michael is signaling that team credibility and tool effectiveness are the real barriers, not price.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_008",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**No direct outreach to David Capaldi yet** - Michael advised waiting on direct David outreach until after CMC team evaluation process begins. This matters because it provides clear sequencing: let Michael advocate internally first, then engage directly if needed.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_009",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "### Strategic Context",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_010",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Cornell's Positioning:** The school is under \"enormous budget pressure\" with ongoing cost-cutting initiatives across departments. CMC is specifically looking to replace Vmock ($20K/year, \"shitty\" product per Michael) but is distracted by broader organizational efficiency pressures. The challenge isn't financial - it's organizational inertia and the fact that \"schools use the ones they've always used or what the other schools use all the time.\"",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_011",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Careerspan's Positioning:** Vrijen revealed major strategic pivot underway - moving away from direct B2B sales (\"not having fun selling\") toward building personal brands and using that to fund free product distribution. This changes the value prop: instead of selling career tools, they're offering institutional support as alumni founders while monetizing through personal brand/expertise. Cornell represents both validation opportunity and personal mission (give back to alma mater).",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_012",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "The Advocacy Dynamic:** Michael is clearly supportive (\"I think yours is better than anything else I've seen so far\") but cautious about overpromising. He's positioning as internal champion but needs team buy-in. His credibility depends on tool quality, not just personal relationship. Key tension: Michael recognizes Cornell doesn't adequately support alumni founders, creating both guilt and opportunity.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_013",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Competitive Landscape:** Vmock is incumbent at $20K, Quincy mentioned as alternative at \"less than half\" cost, Big Resume and Exponent mentioned as other tools in ecosystem. Michael characterizes most tools as \"suck\" and \"shitty\" but schools default to familiar names. Careerspan needs to overcome \"not the current vendor\" disadvantage through product superiority demonstration.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_014",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "### Critical Next Action",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_015",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Owner:** Michael Maher",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_016",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Deliverable:** Test Careerspan tool himself, prepare to advocate for inclusion in CMC evaluation committee review",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_017",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Timeline:** Next 1-2 weeks (before evaluation committee convenes in \"a few weeks\")",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_018",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Purpose:** Build personal conviction and identify specific selling points to advocate to CMC team for Careerspan's inclusion in formal evaluation process",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_019",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "No deliverables promised by Michael - his commitments are actions (test tool, advocate internally), not content",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_020",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Demo materials should be prepared proactively but only sent when Michael requests (\"I might hit you up for that\")",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_021",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "You'll include Careerspan in the CMC tool evaluation over the next few weeks",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_022",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "You'll test the platform yourself in the coming days to build conviction before advocating to the team",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_023",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "I'll reach out to Kevin Kniffin to gather additional internal testimonials",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_024",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "I'll hold off on direct David outreach until the evaluation committee process unfolds",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_025",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Here's the updated [Careerspan demo link](https://app.mycareerspan.com) - I'd love any feedback as you test it",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_026",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Let me know if you'd like me to prepare any specific demo materials when the committee convenes (happy to package up use cases, student testimonials, or comparison docs)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_027",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Warmth score:** 7/10 (long-standing relationship, mutual respect, but professional context)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_028",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Familiarity score:** 8/10 (know each other well, comfortable with direct/candid conversation)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_029",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Formality level:** Medium-low (warm but professional, \"Michael\" not \"Mr. Maher\")",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_030",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**CTA rigor:** Low (2 soft CTAs - test platform, let me know if materials needed - no pressure)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_031",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Distinctive phrases:** \"how your customer buys\" (confidence 0.9), \"good guy and all that stuff\" (confidence 0.7)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_032",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Resonant details:** Acknowledgment of Michael's coaching/guidance, his professional integrity quote",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_033",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Delay sensitivity:** Soft (1 day delay, brief acknowledgment of timing in \"yesterday\")",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_034",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "15m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Readability:** Flesch-Kincaid \u2248 9, avg 18 words/sentence, clean structure",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_035",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Follow up: 4. **\"Is the team persuaded by the fact that they would effectively have all of that vmock budget back?\"**",
+      "context": "Question requiring follow-up from meeting",
+      "source_block": "B21",
+      "confidence": "low",
+      "id": "act_036",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "follow_up"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    }
+  ],
+  "extracted_at": "2025-10-28T19:20:18.518068",
+  "status": "pending_review"
+}

@@ -30,7 +30,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Paths
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 
 
 def find_meeting_by_stakeholder(stakeholder_name: str) -> Optional[Path]:

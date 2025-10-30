@@ -1,0 +1,90 @@
+{
+  "meeting_id": "2025-10-27_external-david",
+  "meeting_title": "2025-10-27 external-david",
+  "meeting_date": "20251028-132902_Meetings",
+  "meeting_path": "/home/workspace/Inbox/20251028-132902_Meetings/2025-10-27_external-david",
+  "actions": [
+    {
+      "text": "**Dual-track approach validated**: Continue strategic buyer conversations (we've mapped ~150 companies) while Ilya helps juice the B2B pipeline to create proof points",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_001",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Business broker marketplace angle**: Your James Camp / Nanoflips recommendation was a genuine blind spot for us\u2014expanding beyond strategic acquirers to career investors who buy/renovate Internet businesses at revenue multiples",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_002",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Floor price positioning**: Your insight that covering investor returns is a legitimate negotiating floor (not a weak opener) reframed how we think about that constraint",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_003",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "When you get a chance, the list of broker marketplaces you mentioned would be incredibly helpful\u2014no rush, but we'd love to explore that channel",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_004",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "If you're open to it, we'd love to share our \"war room\" acquisition target list with you\u2014in case any jump out as companies you know or can help us get warm intros to",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_005",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Networking",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    }
+  ],
+  "extracted_at": "2025-10-28T19:39:19.771487",
+  "status": "pending_review"
+}

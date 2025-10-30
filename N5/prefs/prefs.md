@@ -28,7 +28,22 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - Always support `--dry-run`; sticky safety may enforce it
 - Require explicit approval for side-effect actions (email, external API, creating services, deleting files)
 - Always search for existing protocols before creating new ones
-- **Whenever a new file is created, always ask where the file should be located**
+- **Sandbox-First Artifact Protocol:** ALL files default to conversation sandbox (`/home/.z/workspaces/{convo_id}/`). Permanent workspace files require explicit declaration + validation before creation. ERROR/WARN if non-declared workspace file creation attempted. Exception paths: N5/logs/, N5/data/, /tmp/. **AI workflow:** `file 'N5/prefs/operations/file-creation-protocol.md'` • **Protocol:** `file 'N5/prefs/operations/artifact-placement.md'`
+
+### Approach Articulation
+**CRITICAL:** Before executing any non-trivial task (system work, scripting, refactoring, content creation, or workflow execution), include an explicit **Approach** block stating:
+
+- **Task**: Classification (trivial/scripting/system-work/refactor/content/workflow)
+- **Persona**: Which persona (None/Builder/Writer) and why
+- **Method**: Tool choices, language selection (per P22), execution approach
+- **Principles**: Which architectural principles apply (and which don't)
+- **Risk**: Key failure modes or dependencies
+
+**Format**: Keep concise (3-5 bullets), front-loaded before tool calls, honest about uncertainty.
+
+**Rationale**: Makes reasoning transparent, enables course-correction, prevents silent assumptions, documents decision-making for future reference.
+
+**Exemptions**: Direct conversation responses with V that don't involve file creation, system changes, or external actions.
 
 ### System Bulletins for Troubleshooting
 **CRITICAL:** When encountering contradictions, irregularities, unexplained system behavior, missing files, or unexpected configurations:
@@ -50,12 +65,12 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - "Command not found" → Check bulletins for command registry changes
 
 ### Command-First Operations
-**CRITICAL:** Before ANY workflow-related operation, check for registered commands in `file 'Recipes/recipes.jsonl'` OR search `Recipes/**/*.md` for relevant protocols.
+**CRITICAL:** Before ANY workflow-related operation, check for registered recipes in `file 'Recipes/recipes.jsonl'` OR search `Recipes/**/*.md` for relevant protocols.
 
 **Scope:** System operations, content processing, knowledge management, reflections, automation, scheduled tasks, integrations, file operations, and any workflow with established procedures.
 
 **Priority order:**
-1. Registered command in commands.jsonl
+1. Recipe in Recipes/
 2. Protocol documentation in Recipes/
 3. Manual script execution
 4. Direct file operations
@@ -69,7 +84,7 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - **Thread export location:** ALL thread exports MUST go to `N5/logs/threads/` (enforced by thread-export command)
 - **Incantum Commands:** When user message starts with "N5" or "incantum", follow `file 'N5/prefs/operations/incantum-protocol.md'` to parse and execute commands using natural language understanding
 - **NEVER** create ad-hoc export directories in workspace root (`/home/workspace/ExportedThreads/`, `/home/workspace/Exports/`, etc.)
-- **System operations:** Check commands.jsonl before manual implementation (lists, timeline, git, thread operations)
+- **System operations:** Check `Recipes/` for established workflows before manual implementation
 - **Reflections:** Subject "reflection-ingest" or "[Reflect]" → See "Reflection Processing" section below
 - **Content workflows:** Always search Recipes/ before creating ad-hoc processes
 - **Preference order:** Registered command > Protocol documentation > Manual script execution > Direct file operations > Improvisation
@@ -152,7 +167,7 @@ Load modules selectively based on task context. **Do not load all modules by def
 **Command Triggering** → `file 'N5/prefs/system/command-triggering.md'`
 - Two-layer system (formal + natural language)
 - Incantum triggers workflow
-- When to use commands.jsonl vs incantum_triggers.json
+- Recipe system vs incantum triggers
 - Troubleshooting command recognition
 
 ---

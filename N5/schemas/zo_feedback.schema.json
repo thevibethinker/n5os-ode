@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Zo Feedback Schema",
+  "description": "Schema for Zo team feedback reporting system",
+  "type": "object",
+  "required": ["id", "timestamp", "type", "severity", "title", "description", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^zofb_[0-9]{14}_[a-f0-9]{6}$",
+      "description": "Unique feedback ID (zofb_YYYYMMDDHHMMSS_hash)"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp (UTC)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["bug", "improvement", "question", "glitch"],
+      "description": "Feedback category"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Priority level"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "Brief one-line summary"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Detailed feedback description"
+    },
+    "conversation_id": {
+      "type": ["string", "null"],
+      "pattern": "^con_[A-Za-z0-9]+$",
+      "description": "Conversation ID where feedback originated"
+    },
+    "session_tags": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags from session context"
+    },
+    "files_mentioned": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string"
+      },
+      "description": "Files referenced in conversation"
+    },
+    "tools_used": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string"
+      },
+      "description": "Zo tools used in conversation"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file_path", "file_size", "uploaded_at"],
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "Relative path in attachments directory"
+          },
+          "file_type": {
+            "type": "string",
+            "description": "File extension (e.g., .png, .jpg)"
+          },
+          "file_size": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "File size in bytes"
+          },
+          "uploaded_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Upload timestamp (UTC)"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "sent", "resolved"],
+      "description": "Feedback processing status"
+    },
+    "sent_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "When feedback was sent to Zo team"
+    }
+  }
+}

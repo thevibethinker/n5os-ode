@@ -1,0 +1,526 @@
+{
+  "meeting_id": "2025-10-27_external-gabi",
+  "meeting_title": "2025-10-27 external-gabi",
+  "meeting_date": "20251028-132902_Meetings",
+  "meeting_path": "/home/workspace/Inbox/20251028-132902_Meetings/2025-10-27_external-gabi",
+  "actions": [
+    {
+      "text": "# B01: DETAILED_RECAP",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_001",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "meeting"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "## Key Decisions and Agreements",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_002",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Dual Zo Setup Strategy**: Gabi will create two separate Zo instances - one for Blue Tulip (consulting business) and one personal. This allows clean separation of client work from personal projects, with potential for secure data bridge between instances later.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_003",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Account Creation Completed**: Gabi successfully created Zo account (handle: gabbyzset), connected Google Calendar, Drive, and Gmail, selected Basic plan with 50% discount code (VATT50), resulting in $9/month pricing.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_004",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Networking",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Pause on Full N5 Installation**: Installation attempt revealed system complexity issues when transferring Vrijen's N5 system. Agreed to pause, let Vrijen troubleshoot the bootstrap errors, and resume in 1-2 days once fixed.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_005",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**GitHub Account Creation**: Gabi will create GitHub account in preparation for future technical work, despite not having needed one previously. This represents a meaningful step toward technical literacy.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_006",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Claude Subscription Hold**: Gabi will maintain her existing $20/month Claude subscription temporarily until project file system is properly set up in Zo, then evaluate cancellation. Logan also has Claude workflows to show Gabi on Wednesday.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_007",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "## Strategic Context",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_008",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "This was Gabi's first exposure to Zo Computer, positioned as a more powerful alternative to her current Claude setup. The meeting revealed several strategic dynamics:",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_009",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "meeting"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "For Gabi**: She's an AI consultant (Blue Tulip) looking to level up her technical infrastructure to better serve clients. The dual-instance strategy suggests she's thinking about scalability and professional boundaries. Her willingness to learn GitHub signals genuine commitment to expanding technical capabilities despite being \"non-technical.\"",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_010",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "For Vrijen's N5 System**: This onboarding exposed a critical challenge - the system has evolved to such complexity that simply \"copying it over\" breaks. This is a key inflection point for productization. The attempted bootstrap revealed dependencies and configurations that aren't yet portable. This is valuable feedback for making the system transferable to others.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_011",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Positioning Insight**: Vrijen positioned himself to both Gabi and the Zo team (who were listening) as a \"maker and breaker of systems\" who builds custom quality-of-life features on top of Zo's base functionality. He's effectively becoming a solutions architect / professional services layer for Zo Computer.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_012",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Community Dynamics**: Vrijen mentioned Logan has \"her own crazy system in Claude\" and is \"super bullish on Claude.\" This suggests there's a micro-community of AI power users (Logan, Vrijen, Gabi) who are experimenting with different infrastructure approaches. The fact that Gabi is meeting with Logan separately indicates multiple paths to technical sophistication.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_013",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "meeting"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "## Critical Next Action",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_014",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Owner**: Vrijen",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_015",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Deliverable**: Debug and fix N5 bootstrap script to handle clean system transfers",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_016",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Timeline**: 1-2 days",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_017",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Purpose**: Enable Gabi (and future users) to successfully install the N5 system layer on their Zo instances without manual intervention. This is essential for scaling Vrijen's solutions architect role and potentially creating a productized version of the N5 workflow system.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_018",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "No documents or links to attach with follow-up email",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_019",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "follow_up",
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Primary deliverable is notification when technical issues resolved",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_020",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Follow-up should be brief check-in style, not document-heavy",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_021",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "15m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "follow_up",
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\u2705 Zo account created (gabbyzset), integrations connected, Basic plan with 50% discount",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_022",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Networking",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\u2705 Dual-instance strategy confirmed (Blue Tulip + personal)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_023",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\u26a0\ufe0f N5 installation paused due to system complexity issues",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_024",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**On my end**: I'm fixing the bootstrap script to handle clean transfers (1-2 days). I'll ping you when it's ready and we can resume.",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_025",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**On your end**: Feel free to experiment with base Zo in the meantime - test conversations, model selection (Sonnet vs Haiku), file management. Keep anything you want to save in case we need to wipe/reinstall.",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_026",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Warmth score: 6/10 (friendly professional tone, collaborative energy)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_027",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Familiarity score: 4/10 (first working session together)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_028",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Formality: Moderate-casual (professional but not stiff)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_029",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "CTA rigour: Low (exploratory phase, no hard deadlines)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_030",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Flesch-Kincaid: ~8 (target \u226410 \u2713)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_031",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Avg sentence length: ~18 words (target 16-22 \u2713)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_032",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Max sentence: 28 words (target \u226432 \u2713)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_033",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Paragraph density: 2-3 sentences each (target \u22644 \u2713)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_034",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    }
+  ],
+  "extracted_at": "2025-10-28T18:59:32.359256",
+  "status": "pending_review"
+}

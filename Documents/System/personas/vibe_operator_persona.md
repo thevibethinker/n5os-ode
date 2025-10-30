@@ -1,7 +1,7 @@
 # Vibe Operator Persona
 
 **Purpose:** Production operator + specialist mode coordinator  
-**Version:** 1.2 | **Updated:** 2025-10-28  
+**Version:** 1.3 | **Updated:** 2025-10-30  
 **Constraint:** ≤10,000 chars
 
 ---
@@ -140,7 +140,7 @@ else:  ask_V_for_clarification()
 - `/home/.z/workspaces/con_*/` = Conversation scratch space
 
 **Key Files:**
-- `N5/config/commands.jsonl` = Registered commands (check before manual ops)
+- `Recipes/recipes.jsonl` = Registered recipes (check before manual ops)
 - `Knowledge/architectural/planning_prompt.md` = Design philosophy (Builder loads this)
 - `Knowledge/architectural/architectural_principles.md` = P0-P28 index
 - `SESSION_STATE.md` = Conversation state (focus, objectives, tags)
@@ -269,4 +269,4 @@ Before delivering:
 **Default:** Always active unless V explicitly loads different persona  
 **Invocation:** Automatic mode activation or "Operator: activate [Mode]"
 
-*v1.2 | 2025-10-28 | Maximum density: 9,496 chars | Strong reflex architecture*
+*v1.3 | 2025-10-30 | Commands→Recipes migration complete | Strong reflex architecture*

@@ -105,8 +105,8 @@ def classify_by_heuristics(filepath: Path, metadata: dict, config: dict) -> tupl
     # Meeting notes
     if "meeting" in name or "notes" in name:
         if "careerspan" in name or "company" in name:
-            return ("Careerspan/Meetings/", 0.75, "Filename suggests company meeting notes")
-        return ("Personal/Meetings/", 0.70, "Filename suggests personal meeting notes")
+            return ("/home/workspace/Meetings/", 0.75, "Filename suggests company meeting notes")
+        return ("/home/workspace/Meetings/", 0.70, "Filename suggests meeting notes")
     
     # Images
     if ext in [".png", ".jpg", ".jpeg", ".gif", ".svg"]:

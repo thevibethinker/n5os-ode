@@ -165,6 +165,32 @@ class ThreadExporter:
         else:
             return "other"
     
+    def detect_conversation_type(self) -> str:
+        """Detect conversation type from artifacts and filenames"""
+        if not self.artifacts:
+            return "general"
+        
+        # Check for bugfix indicators
+        filenames_lower = ' '.join(a['filename'].lower() for a in self.artifacts)
+        if any(word in filenames_lower for word in ['bug', 'fix', 'error', 'issue']):
+            return "bugfix"
+        
+        # Check artifact types
+        script_count = len([a for a in self.artifacts if a['type'] == 'script'])
+        doc_count = len([a for a in self.artifacts if a['type'] == 'document'])
+        data_count = len([a for a in self.artifacts if a['type'] == 'data'])
+        
+        if script_count >= doc_count and script_count > 0:
+            return "implementation"
+        elif doc_count > script_count and doc_count > 2:
+            return "research"
+        elif data_count > 0 and 'analysis' in filenames_lower:
+            return "analysis"
+        elif any(word in filenames_lower for word in ['plan', 'strategy', 'decision']):
+            return "strategy"
+        else:
+            return "general"
+    
     # ===== HELPER METHODS FOR MODULAR EXPORTS =====
     
     def _get_purpose(self, aar_data: Dict) -> str:
@@ -489,79 +515,125 @@ class ThreadExporter:
                     continue
         return recent
 
-    def generate_smart_aar(self) -> Dict:
-        """Generate intelligent AAR using content extraction (Phase 3)"""
-        smart_responses = {
-            'objective': self.extract_objective_from_artifacts(),
-            'decisions': self.extract_key_decisions(),
-            'outcomes': self.generate_smart_summary(),
-            'next_objective': self.infer_next_steps(),
-            'challenges': ''  # No way to infer challenges programmatically yet
-        }
-        aar = self.generate_aar_data(smart_responses)
-        # Attach lessons (non-schema field under metadata)
+    def extract_from_session_state(self) -> Dict[str, str]:
+        """
+        Extract AAR fields from SESSION_STATE.md (PRIMARY source)
+        Returns: {objective, summary, decisions, next_steps}
+        """
+        session_file = self.conversation_ws / "SESSION_STATE.md"
+        
+        if not session_file.exists():
+            return {}
+        
         try:
-            lessons = self._load_thread_lessons()
-            if lessons:
-                aar.setdefault('metadata', {})['lessons'] = lessons
-        except Exception:
-            pass
-        return aar
-    
-    def generate_interactive_aar(self) -> Dict:
-        """Generate AAR through interactive questions"""
-        responses = self.ask_interactive_questions()
-        return self.generate_aar_data(responses)
-    
-    def generate_dummy_aar(self) -> Dict:
-        """Generate minimal AAR with dummy data for testing"""
-        dummy_responses = {
-            'objective': 'Thread objective (to be filled interactively)',
-            'decisions': ['Decision 1 (to be filled)', 'Decision 2 (to be filled)'],
-            'outcomes': 'Outcomes (to be filled interactively)',
-            'next_objective': 'Next objective (to be filled interactively)',
-            'challenges': ''
-        }
-        return self.generate_aar_data(dummy_responses)
-    
-    # ===== PHASE 3: SMART CONTENT EXTRACTION =====
-    
-    def detect_conversation_type(self) -> str:
-        """Detect conversation type from artifacts and title"""
-        if not self.artifacts:
-            return "general"
-        
-        title_lower = (self.title or "").lower()
-        
-        # Count artifact types
-        scripts = [a for a in self.artifacts if a['type'] == 'script']
-        docs = [a for a in self.artifacts if a['type'] == 'document']
-        data_files = [a for a in self.artifacts if a['type'] == 'data']
-        
-        # Bug fix indicators
-        if any(x in title_lower for x in ['bug', 'fix', 'debug', 'error']):
-            return "bugfix"
-        
-        # Implementation indicators
-        if len(scripts) >= 2 and any('test' in a['filename'].lower() for a in self.artifacts):
-            return "implementation"
-        
-        # Research indicators  
-        if len(docs) > len(scripts) and len(docs) >= 3:
-            return "research"
-        
-        # Data analysis indicators
-        if len(data_files) >= 2 and any(x in title_lower for x in ['analysis', 'report', 'data']):
-            return "analysis"
-        
-        # Strategy/planning indicators
-        if any(x in title_lower for x in ['strategy', 'plan', 'design', 'architecture']):
-            return "strategy"
-        
-        return "general"
+            content = session_file.read_text()
+            
+            def extract_field(text, markers):
+                """Extract field value using multiple marker patterns"""
+                for marker in markers:
+                    for line in text.split('\n'):
+                        if line.strip().startswith(marker):
+                            value = line.split(marker, 1)[1].strip()
+                            value = value.strip('*').strip()
+                            # Skip placeholders
+                            if value and "?" not in value and "What" not in value:
+                                return value
+                return None
+            
+            def extract_section_content(text, header):
+                """Extract content after a section header (handles multi-line content)"""
+                lines = text.split('\n')
+                in_section = False
+                content_lines = []
+                
+                for line in lines:
+                    if line.strip() == f"## {header}":
+                        in_section = True
+                        continue
+                    elif in_section:
+                        if line.startswith("##") or line.startswith("---"):
+                            break
+                        if line.strip() and not line.strip().startswith("*What"):
+                            content_lines.append(line.strip())
+                
+                return ' '.join(content_lines).strip() if content_lines else None
+            
+            # Extract key fields - try inline first, then section content
+            focus = extract_field(content, ["**Focus:**", "Focus:"]) or extract_section_content(content, "Focus")
+            goal = extract_field(content, ["**Goal:**", "**Objective:**", "Goal:", "Objective:"]) or extract_section_content(content, "Objective")
+            
+            # Extract Topics (list)
+            topics = []
+            in_topics = False
+            for line in content.split('\n'):
+                if "## Topics" in line:
+                    in_topics = True
+                    continue
+                elif in_topics:
+                    if line.startswith("##"):
+                        break
+                    if line.strip().startswith(('1.', '2.', '3.', '4.', '5.', '-', '•')):
+                        topic = line.strip().lstrip('12345.-•').strip()
+                        if topic and "?" not in topic:
+                            topics.append(topic)
+            
+            # Extract completed items from Progress
+            completed = []
+            in_covered = False
+            for line in content.split('\n'):
+                if "### Covered" in line or "### Completed" in line:
+                    in_covered = True
+                    continue
+                elif in_covered:
+                    if line.startswith(("###", "##")):
+                        break
+                    if line.strip().startswith(('-', '•', '✓', '✅')):
+                        item = line.strip().lstrip('-•✓✅').strip()
+                        if item:
+                            completed.append(item)
+            
+            # Build result
+            result = {}
+            
+            if focus:
+                result['objective'] = focus
+            elif goal:
+                result['objective'] = goal
+            
+            if topics:
+                result['decisions'] = topics[:3]  # Top 3 topics as key decisions
+            
+            if completed:
+                result['summary'] = f"Completed: {'; '.join(completed[:5])}"
+            elif focus:
+                result['summary'] = f"Work focused on: {focus}"
+            
+            # Infer next steps from open questions/next steps sections
+            in_next = False
+            next_items = []
+            for line in content.split('\n'):
+                if "### Next Steps" in line or "### Still to" in line:
+                    in_next = True
+                    continue
+                elif in_next:
+                    if line.startswith(("###", "##")):
+                        break
+                    if line.strip().startswith(('1.', '2.', '3.', '-', '•')):
+                        item = line.strip().lstrip('123.-•').strip()
+                        if item:
+                            next_items.append(item)
+            
+            if next_items:
+                result['next_steps'] = "; ".join(next_items[:3])
+            
+            return result
+            
+        except Exception as e:
+            print(f"⚠️  Error reading SESSION_STATE: {e}")
+            return {}
     
     def extract_objective_from_artifacts(self) -> str:
-        """Infer conversation objective from artifacts and patterns"""
+        """Infer conversation objective from artifacts and patterns (FALLBACK)"""
         if not self.artifacts:
             return "Work session with no artifacts created"
         
@@ -679,13 +751,19 @@ class ThreadExporter:
     
     def generate_smart_aar(self) -> Dict:
         """Generate intelligent AAR using content extraction (Phase 3)"""
+        
+        # PRIORITY 1: Extract from SESSION_STATE.md (if available)
+        session_data = self.extract_from_session_state()
+        
+        # PRIORITY 2: Fallback to artifact-based extraction
         smart_responses = {
-            'objective': self.extract_objective_from_artifacts(),
-            'decisions': self.extract_key_decisions(),
-            'outcomes': self.generate_smart_summary(),
-            'next_objective': self.infer_next_steps(),
+            'objective': session_data.get('objective') or self.extract_objective_from_artifacts(),
+            'decisions': session_data.get('decisions') or self.extract_key_decisions(),
+            'outcomes': session_data.get('summary') or self.generate_smart_summary(),
+            'next_objective': session_data.get('next_steps') or self.infer_next_steps(),
             'challenges': ''  # No way to infer challenges programmatically yet
         }
+        
         aar = self.generate_aar_data(smart_responses)
         # Attach lessons (non-schema field under metadata)
         try:

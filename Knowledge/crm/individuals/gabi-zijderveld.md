@@ -1,110 +1,90 @@
 # Gabi Zijderveld
 
-**Status**: Active  
-**Stakeholder Type**: #stakeholder:networking_contact  
-**Priority**: Non-critical  
-**Enrichment Priority**: MEDIUM
+## Basic Information
 
----
+**Full Name**: Gabi Zijderveld  
+**Public Handle**: gabbyzset (uses "Gabby Z" due to difficult last name)  
+**Email**: [Gmail-based, used for AI work and consulting]  
+**Phone**: [Needs enrichment]  
+**LinkedIn**: [Needs enrichment]  
+**Location**: Boston area (implied by Logan connection and Vrijen's mention of "coming to Boston")
 
-## Contact Information
+## Professional Context
 
-**Primary Email**: [Unknown - needs enrichment]  
-**LinkedIn**: [Unknown - needs enrichment]  
-**Phone**: [Unknown]
+**Company**: Blue Tulip  
+**Role**: Founder/Owner (AI consulting business)  
+**Industry**: AI Consulting, Business Consulting  
 
----
+**What They Do**: AI consulting services, helping businesses implement and optimize AI workflows and systems. Uses Gmail for "AI stuff and consulting projects."
 
-## Profile Summary
+**Key Background**: [Needs enrichment - LinkedIn research]
 
-**Company**: [Unknown - needs enrichment]  
-**Role**: Founder/Entrepreneur (inferred)  
-**Location**: [Unknown]
+## Relationship to Careerspan
 
-**First Contact**: 2025-10-24  
-**Last Contact**: 2025-10-24  
-**Meeting Count**: 1
+**Stakeholder Type**: NETWORKING  
+**First Contact**: 2025-10-27 (Zo Computer onboarding session)  
+**Relationship Strength**: Warm (early-stage but collaborative)  
+**Priority**: MEDIUM
 
----
+**Value Proposition**:
+- **Referral potential**: As AI consultant, likely works with founders/businesses who could benefit from Careerspan
+- **Community value**: Part of emerging AI power user network (connected to Logan and others)
+- **Beta testing potential**: Early adopter personality, comfortable with imperfection, good co-creation partner
 
-## Background
+## Mutual Connections
 
-- Operating founder managing complex workflows and admin responsibilities
-- Exploring AI productivity tools and automation
-- Interested in strategic approach to workflow optimization
-- Has awareness of tools like Zapier but hasn't implemented due to difficulty identifying optimal workflows to automate
+**Known**:
+- Logan (strong connection - meeting her Wednesday 10/29, Logan has "her own crazy system in Claude")
+- Zo team (indirect - they were listening to the onboarding call)
 
----
-
-## Key Insights
-
-### Interests & Priorities
-- AI productivity optimization
-- Workflow automation (strategic, not just tactical)
-- Tools that handle non-sequential, interconnected work patterns
-
-### Challenges Mentioned
-- Difficulty identifying which workflows to automate first
-- Non-sequential work patterns that don't fit linear automation tools
-- Time scarcity (admin responsibilities, vendor coordination)
-
-### What Resonates
-- System-based thinking over discrete workflows
-- Context and state management framing for founder productivity
-- Novel paradigms (demonstrated curiosity about Zo Computer's approach)
-
----
-
-## Relationship Context
-
-**Connection Source**: [Unknown - needs enrichment]  
-**Mutual Connections**: [None identified - needs enrichment]  
-**Introduction Path**: [Unknown]
-
-**Relationship Depth**: Warm networking contact  
-**Trust Level**: Building  
-**Engagement**: Responsive and intellectually curious
-
----
+**To Research**: [LinkedIn mutual connections scan needed]
 
 ## Meeting History
 
-### 2025-10-24: Zo Computer Demo
-- **Type**: Demo/Education session
-- **Blocks**: file 'N5/records/meetings/2025-10-24_external-gabi-zo-demo_153141/'
-- **Key Outcomes**: 
-  - Demonstrated Zo Computer capabilities
-  - Provided 50% discount signup code
-  - Identified strategic workflow prioritization as her key blocker
-- **Next Steps**: Monitor if she signs up for Zo; potential follow-up on system design
+| Date | Type | Key Topics | Next Actions |
+|------|------|------------|--------------|
+| 2025-10-27 | Technical Onboarding | Zo setup, N5 system intro, dual-instance strategy | Vrijen to fix bootstrap script; Gabi to create GitHub account |
 
----
+## Key Insights
 
-## Enrichment Tasks
+**Pain Points**:
+- Managing separation between client (Blue Tulip) and personal work
+- Underutilizing existing tools (paying $20/month for Claude but not using it)
+- Evaluating technical infrastructure to better serve consulting clients
 
-**Priority**: MEDIUM (warm networking contact with demonstrated interest in productivity/AI)
+**What Resonates**:
+- Systems thinking and architecture (dual-instance strategy landed immediately)
+- Technical growth without intimidation (willing to learn GitHub, Git, etc.)
+- Experimentation over perfection (unfazed by bootstrap failure)
+- Clear value articulation (instantly understood "implementation services" positioning)
 
-### Immediate Actions
-- [ ] LinkedIn research: Company, background, current stage/focus
-- [ ] Company research: What does her company do, funding status, team size
-- [ ] Identify mutual connections in founder/VC/startup ecosystem
-- [ ] Check if she's connected to Zo Computer team or other Zo users
+**Decision-Making Style**:
+- Triangulation approach (comparing Vrijen's Zo system vs Logan's Claude system before committing)
+- Values expert recommendations but does diligence
+- Comfortable with calculated risk on emerging tools
 
-### Secondary Research
-- [ ] Social media presence (Twitter/X, personal site)
-- [ ] Recent news/articles about her or her company
-- [ ] Portfolio/previous ventures if applicable
+**Communication Style**:
+- Active learner (restates concepts to confirm understanding)
+- Considerate of others' time
+- Asks for explicit direction when uncertain
+- Professional but not formal
 
----
+## Enrichment Priority: MEDIUM
+
+**Next Actions**:
+1. LinkedIn research: Confirm Blue Tulip positioning, client types, consultant background
+2. Company research: Understand Blue Tulip service model and ideal client profile  
+3. Mutual connection identification: Map overlap with Careerspan network (esp. Boston area)
+4. Monitor progress: Check in after N5 installation completes
 
 ## Tags
 
-`#stakeholder:networking_contact` `#job_seeking:inactive` `#ai_interested` `#founder_workflows` `#productivity_tools`
-
----
+#stakeholder:networking #location:boston #industry:ai-consulting #priority:medium #early-adopter #blue-tulip
 
 ## Notes
 
-**Created**: 2025-10-24  
-**Last Updated**: 2025-10-24  
-**Created By**: Meeting processing automation (Registry System v1.5)
+- Self-identifies as "non-technical" but demonstrates strong technical learning capacity
+- Paying for multiple AI tools ($20 Claude + $9 Zo) suggests willingness to invest in infrastructure
+- Connected to Logan who is "super bullish on Claude" - interesting comparative dynamic
+- Would be good candidate for: product feedback, beta testing, community building
+- Last name pronunciation challenge drives use of "Gabby Z" in professional contexts

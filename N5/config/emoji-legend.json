@@ -32,6 +32,34 @@
       }
     },
     {
+      "symbol": "🐙",
+      "name": "orchestrator",
+      "category": "thread_type",
+      "meaning": "Orchestrator thread - coordinates multiple worker threads",
+      "contexts": ["threads"],
+      "keywords": ["orchestrator", "coordinator", "parent", "orchestration", "multi-worker"],
+      "priority": 95,
+      "usage_notes": "Orchestrator threads that spawn and coordinate worker threads. Parent of workers.",
+      "detection_rules": {
+        "positive": ["orchestrator", "parent_thread", "spawns_workers", "coordinator"],
+        "negative": ["worker_thread"]
+      }
+    },
+    {
+      "symbol": "👷",
+      "name": "worker",
+      "category": "thread_type",
+      "meaning": "Worker thread - executes specific task for orchestrator",
+      "contexts": ["threads"],
+      "keywords": ["worker", "child", "spawned", "subtask", "worker_thread"],
+      "priority": 90,
+      "usage_notes": "Worker threads spawned by orchestrator to execute specific tasks. Child of orchestrator.",
+      "detection_rules": {
+        "positive": ["worker_thread", "spawned_by", "child_thread", "worker"],
+        "negative": ["orchestrator", "parent"]
+      }
+    },
+    {
       "symbol": "🚧",
       "name": "in_progress",
       "category": "status",
@@ -355,6 +383,10 @@
     }
   ],
   "categories": {
+    "thread_type": {
+      "description": "Indicates the type of thread (orchestrator, worker, etc.)",
+      "emojis": ["🐙", "👷"]
+    },
     "status": {
       "description": "Indicates the current state or status of an item",
       "emojis": ["✅", "❌", "🚧", "⏰"]
@@ -375,7 +407,7 @@
   "usage_contexts": {
     "threads": {
       "description": "Thread titles in conversation list",
-      "priority_order": ["status", "relationship", "content_type", "action"]
+      "priority_order": ["thread_type", "status", "relationship", "content_type", "action"]
     },
     "tasks": {
       "description": "Task items in lists and todos",

@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)sZ %(levelname)s %(mes
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-B08_PATTERN = WORKSPACE / "N5/records/meetings/*/B08_STAKEHOLDER_INTELLIGENCE.md"
+B08_PATTERN = WORKSPACE / "Personal/Meetings/*/B08_STAKEHOLDER_INTELLIGENCE.md"
 CRM_DIR = WORKSPACE / "Knowledge/crm/individuals"
 
 def extract_stakeholder_name(b08_path: Path) -> Optional[str]:

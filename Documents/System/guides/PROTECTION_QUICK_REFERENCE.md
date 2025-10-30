@@ -8,7 +8,7 @@
 
 - `Documents/N5.md` - System entry point
 - `N5/prefs/prefs.md` - System preferences
-- `N5/config/commands.jsonl` - Command registry
+- `Recipes/recipes.jsonl` - Command registry
 
 ---
 

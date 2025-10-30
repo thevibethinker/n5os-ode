@@ -51,7 +51,7 @@ Companion [NN] - Title v0.0.ext
    - Add usage examples, metadata
 
 3. **Register Command**
-   - Add entry to `N5/config/commands.jsonl`
+   - Add entry to `Recipes/recipes.jsonl (index only)`
    - Include version, summary, tags
 
 4. **Create Incantum Triggers**
@@ -186,7 +186,7 @@ After import, validate with:
 ls N5/commands/{command-name}.md
 
 # Check registry entry
-grep "{command-name}" N5/config/commands.jsonl
+grep "{command-name}" Recipes/recipes.jsonl (index only)
 
 # Check triggers
 cat N5/config/incantum_triggers.json | grep "{command-name}"

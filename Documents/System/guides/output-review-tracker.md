@@ -27,7 +27,7 @@ The Output Review Tracker is a quality management system for tracking, reviewing
    - `output_reviews.jsonl` - Main review entries
    - `output_reviews_comments.jsonl` - Threaded comments
 
-4. **Commands** (`N5/config/commands.jsonl`)
+4. **Commands** (`Recipes/recipes.jsonl`)
    - 6 registered commands: `review-add`, `review-list`, `review-show`, `review-status`, `review-comment`, `review-export`
 
 ---
@@ -397,7 +397,7 @@ All entries are validated against JSON schemas before write:
 - `file N5/schemas/output-review-comment.schema.json`
 - `file N5/scripts/review_manager.py`
 - `file N5/scripts/review_cli.py`
-- `file N5/config/commands.jsonl` (lines 98-103)
+- `file Recipes/recipes.jsonl` (lines 98-103)
 - `file Knowledge/architectural/architectural_principles.md` (P5, P7, P11, P19)
 
 ---

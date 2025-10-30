@@ -27,7 +27,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 
 # Expected pattern: YYYY-MM-DD-name-organization
 # Examples: 2025-10-28-jake-fohe, 2025-10-27_external-company

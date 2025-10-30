@@ -105,7 +105,7 @@ python3 /home/workspace/N5/scripts/incantum_parser.py log \
 
 ## Command Registry Structure
 
-Commands in `file 'N5/config/commands.jsonl'` have:
+Commands in `file 'Recipes/recipes.jsonl'` have:
 
 ```json
 {
@@ -245,7 +245,7 @@ When you see "N5" or "incantum" prefix:
 
 **Related Files:**
 - `file 'N5/scripts/incantum_parser.py'` - Helper utilities
-- `file 'N5/config/commands.jsonl'` - Command registry
+- `file 'Recipes/recipes.jsonl'` - Command registry
 - `file 'N5/config/incantum_shortcuts.json'` - User shortcuts
 - `file 'N5/logs/incantum_patterns.jsonl'` - Historical patterns
 

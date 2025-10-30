@@ -59,7 +59,7 @@ git commit --no-verify
 ## Protected Patterns (18 total)
 
 ### Core System Configs
-- `N5/config/commands.jsonl`
+- `Recipes/recipes.jsonl (index only)`
 - `N5/config/*.json`
 - `N5/schemas/*.json`
 - `N5/prefs/**/*.json`

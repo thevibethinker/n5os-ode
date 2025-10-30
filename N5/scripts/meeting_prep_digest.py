@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 # Constants
 INTERNAL_DOMAINS = ["mycareerspan.com", "theapply.ai"]
 DIGESTS_DIR = Path("/home/workspace/N5/digests")
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 
 # Timezone
 ET_TZ = pytz.timezone('America/New_York')

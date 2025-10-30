@@ -329,7 +329,7 @@ class EnhancedCommandAuthor:
                 
                 # Show what was created
                 self.messenger.info("Created the following artifacts:")
-                print("   📄 Command definition added to commands.jsonl")
+                print("   📄 Command definition added to recipes.jsonl")
                 print("   📖 Documentation updated in commands.md")
                 print("   🔧 Ready for use in N5 system")
                 

@@ -163,7 +163,7 @@ def generate_post(seed_content: str, dry_run: bool = False) -> tuple:
     cmd = [
         "python3", str(GENERATOR),
         "--seed", str(temp_seed),
-        "--mode", "authentic",
+        "--mode", "thought-leadership",
         "--output-format", "markdown"
     ]
     

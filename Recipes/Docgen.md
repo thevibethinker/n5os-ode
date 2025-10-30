@@ -69,7 +69,7 @@ Generates command catalog and documentation from `commands.jsonl`:
 - Validates against command schema
 
 **Inputs:**
-- `N5/config/commands.jsonl` (command registry)
+- `Recipes/recipes.jsonl (index only)` (command registry)
 - `N5/schemas/command.schema.json` (validation schema)
 
 **Outputs:**

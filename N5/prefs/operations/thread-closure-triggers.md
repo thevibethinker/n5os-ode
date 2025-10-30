@@ -125,7 +125,7 @@ User wants to close thread?
 
 ## Integration with Existing Commands
 
-Both commands are registered in `file N5/config/commands.jsonl` :
+Both commands are registered in `file 'Recipes/recipes.jsonl'` :
 
 ```json
 {"command": "conversation-end", "file": "N5/commands/conversation-end.md", ...}
@@ -151,7 +151,7 @@ Both have corresponding scripts:
 **If wrong command runs:**
 
 - Check this mapping file
-- Verify command registration in commands.jsonl
+- Verify recipe registration
 - Check for conflicting instructions in user rules
 
 ---

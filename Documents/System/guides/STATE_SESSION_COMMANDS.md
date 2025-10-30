@@ -99,7 +99,7 @@
 
 ## Integration
 
-**Commands registered in:** file 'N5/config/commands.jsonl'
+**Commands registered in:** file 'Recipes/recipes.jsonl'
 
 **Command files:**
 - file 'N5/commands/init-state-session.md'

@@ -1,3 +1,0 @@
-jobs/*/candidates/
-jobs/*/inbox_drop/*.pdf
-jobs/*/inbox_drop/*.docx

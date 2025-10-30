@@ -10,17 +10,6 @@ Quick-capture list for social media content ideas, observations, and themes.
 
 <!-- New ideas captured here; each gets an ID like I-2025-10-22-001 -->
 
-**ID:** I-2025-10-22-001  
-**Title:** Example: When "vulnerability" becomes strategic clarity  
-**Body:**
-
-I've noticed the difference between dumping emotion and showing the exact decision point. The through-line is what changed in my operating model, not just how I felt. 
-
-Contrasts: "feelings" posts vs "operating notes." Founders don't need more catharsis; they need decision frameworks wrapped in story.
-
-**Tags:** #founders #vulnerability #operating-model
-
----
 
 ## In Review
 
@@ -39,6 +28,22 @@ Contrasts: "feelings" posts vs "operating notes." Founders don't need more catha
 ## Processed
 
 <!-- Ideas that have been generated or archived -->
+
+
+**ID:** I-2025-10-22-001  
+**Title:** Example: When "vulnerability" becomes strategic clarity  
+**Body:**
+
+I've noticed the difference between dumping emotion and showing the exact decision point. The through-line is what changed in my operating model, not just how I felt. 
+
+Contrasts: "feelings" posts vs "operating notes." Founders don't need more catharsis; they need decision frameworks wrapped in story.
+
+**Tags:** #founders #vulnerability #operating-model
+
+---
+**Status:** Generated → [post_post_33d5261fa50e]
+
+---
 
 <!-- Format:
 **ID:** I-2025-10-22-XXX  

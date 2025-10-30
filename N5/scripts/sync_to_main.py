@@ -49,7 +49,7 @@ class N5SyncManager:
 
         # Config files that need syncing
         self.config_files = [
-            "commands.jsonl",
+            "recipes.jsonl",
             "prefs.md",
             "POLICY.md"
         ]

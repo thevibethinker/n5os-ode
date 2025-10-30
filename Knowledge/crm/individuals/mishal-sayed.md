@@ -1,104 +1,86 @@
-# Mishal Sayed (Mishu)
+# Mishal Sayed
 
-**Created:** 2025-10-24  
-**Last Updated:** 2025-10-24  
-**Status:** Active  
-**Stakeholder Type:** #stakeholder:founder #stakeholder:networking  
-**Enrichment Priority:** MEDIUM  
+**Status:** Active - FOUNDER stakeholder  
+**Last Updated:** 2025-10-28  
+**Enrichment Priority:** HIGH  
+**Source:** Meeting on 2025-10-24
 
----
+## Quick Context
 
-## Core Information
+Co-founder of FutureFit (logistics/supply chain tech startup) with Alexi. Currently works at Uber while building startup. Going through technical hiring and recently brought on contractor engineer from Malawi ($3k/month). Has strong Uber internal network.
 
-**Name:** Mishal Sayed (goes by "Mishu")  
-**Company:** [Startup name - needs enrichment]  
-**Role:** Co-founder  
-**Location:** [Unknown - needs enrichment]  
-**Primary Email:** [Unknown - needs enrichment]  
-**LinkedIn:** [Unknown - needs enrichment]  
-**Auxiliary Emails:** []  
+## Contact Information
 
----
+**Company:** FutureFit (startup) + Uber (current employer)  
+**Email:** [Needs enrichment]  
+**LinkedIn:** [Needs enrichment]  
+**Location:** [Needs enrichment - likely SF Bay Area given Uber employment]
+
+## Relationship History
+
+### 2025-10-24: Startup Progress Check-in
+- **Meeting type:** Founder update call
+- **Key topics:** Hiring challenges, AI coding experiment failure, contractor engineer hire, technical advisory setup
+- **Next action:** Follow-up call Oct 25 to discuss Careerspan value prop for Uber alumni network
+- **Relationship depth:** Medium-high trust (Mishal shared vulnerable details about mistakes, open to advice)
+
+## Network & Connections
+
+### Key Connections:
+- **Alexi:** Co-founder of FutureFit
+- **Zhangyang:** Uber friend providing weekly technical advisory (AWS → Uber Freight → Uber Ads background)
+- **Sam:** Friend from Goldman Sachs/Google/Netflix, data engineer, helped with hiring panel
+- **Multiple Uber internal contacts:** Mishal mentioned "a bunch of connects that still work at Uber"
+
+### Potential Network Value:
+- Access to Uber alumni network (large, high-performing talent pool)
+- Access to Uber internal employees (potential distribution channel for Careerspan)
 
 ## Professional Background
 
-**Current:**
-- Co-founder of technical startup (requires complex backend infrastructure, system design)
-- Building MVP with 6-month timeline
-- Managing remote engineering team (Malawi contractor, unpaid Uber advisor)
+**Current Role:** [Needs enrichment - title/team at Uber]  
+**Previous Experience:** [Needs enrichment]  
+**Education:** [Needs enrichment]  
+**Skills/Expertise:** Logistics/supply chain, startup operations, PM/product work
 
-**Previous:**
-- Worked at Uber (department/role unclear, but had access to engineering teams)
-- Deep connections to Uber engineering talent (AWS/Uber Freight infrastructure folks)
+**Notable:** Works on Uber operations side, has insight into backend infrastructure challenges. Friends with senior engineers who've built large-scale systems.
 
-**Education:** [Unknown - needs enrichment]
+## Enrichment Tasks
 
----
+### HIGH Priority:
+1. ✅ Create CRM profile (completed)
+2. ⏳ LinkedIn research - full profile, education, career history
+3. ⏳ Identify Zhangyang's full name and LinkedIn (Uber advisor)
+4. ⏳ Identify Sam's full name and LinkedIn (GS/Google/Netflix friend)
+5. ⏳ Research FutureFit in more detail - what exactly are they building?
 
-## Relationship Context
+### MEDIUM Priority:
+6. ⏳ Map Mishal's Uber network - who are the key contacts he can introduce to?
+7. ⏳ Understand Uber's alumni program structure (if it exists)
+8. ⏳ Research Uber's internal culture around entrepreneurship/side projects
 
-**How We Met:** [Unknown - need to research when/how Vrijen first connected with Alexis & Mishu]  
-**Relationship Depth:** Regular monthly check-ins, warm personal relationship ("love you" sign-offs)  
-**Last Interaction:** 2025-10-24 (monthly check-in call)  
-**Next Interaction:** 2025-10-25 (follow-up call scheduled)
+## Strategic Notes
 
-**Meeting History:**
-- 2025-10-24: Monthly check-in discussing their hiring journey, engineering pivot
+**Why HIGH priority:**
+- Active startup build with 6-month MVP timeline
+- Strong Uber network that could be distribution channel for Careerspan
+- Open to collaboration and advice
+- Coachable founder who learns from mistakes quickly
 
----
+**Engagement approach:**
+- Provide straight talk over cheerleading (he responded well to Vrijen's direct challenges)
+- Check in at 1-month mark on contractor hire progress (early signal detection)
+- Be proactive with offers of help (don't wait for him to ask)
+- Balance advisory support with exploring mutual value (Uber network access)
 
-## Key Insights
+**Potential partnerships:**
+- Uber alumni network access for Careerspan
+- Hiring process support for FutureFit's next hires
+- Strategic founder-to-founder knowledge exchange
 
-### Founder Journey
-- Spent 2 months trying to build with AI before realizing they were "coding in circles"
-- Self-aware about "inflated egos" phase—willing to admit mistakes and course-correct quickly
-- Bootstrapped, paying $3k/month for Malawi systems engineer
-- Building with unpaid Uber advisor (Zhangyang) - incentive alignment risk flagged by V
+## Meeting References
 
-### Strengths
-- Quick learner: Built structured 4-stage interview process (screen → live code → system design → panel)
-- Coachable: Receptive to hard feedback from V without getting defensive
-- Well-connected: Strong Uber network, can facilitate intros to current employees
-- Resilient: Caught themselves in failure mode after 2 months vs. burning 6-12 months
-
-### Watch Points
-- First-time founder—still learning hiring/team building patterns
-- May be underestimating incentive alignment issues with unpaid advisor
-- Coming from Uber (big tech) so may have some structure-seeking biases
-
----
-
-## Mutual Acquaintances
-
-[None identified - needs enrichment]
-
----
-
-## Opportunities & Next Actions
-
-### Opportunities
-- **Uber alumni community:** Mishu has deep Uber network; potential partnership channel for Careerspan (career transition support for ex-Uber folks)
-- **Peer learning:** Regular check-ins provide mutual value—V shares Careerspan lessons, they share first-time founder experiences
-- **Future collaboration:** TBD based on what their startup actually does
-
-### Next Actions
-- [ ] **LinkedIn research:** Get full background, company name, product details
-- [ ] **Follow-up call (Oct 25):** Share Careerspan updates, explore Uber alumni opportunity
-- [ ] **1-month check-in (~Nov 24):** Assess how their Malawi engineer and unpaid advisor are working out
-- [ ] **Identify company specifics:** What do they actually build? What's their market/domain?
-
----
-
-## Tags
-
-#stakeholder:founder #stakeholder:networking #relationship:warm #engagement:responsive #monthly-checkin #uber-network #first-time-founder #bootstrapped
-
----
-
-## Notes
-
-- Part of duo with co-founder Alexis (last name unknown)
-- Monthly check-in cadence established
-- Offered to connect V to Uber employees for community exploration
-- Receptive to direct mentorship-style feedback from V
-- "We realized that were very, very. We had very inflated egos" - memorable self-awareness moment
+- [2025-10-24 Meeting Blocks](file 'N5/records/meetings/2025-10-24_external-alexis-mishu/')
+  - See B08 for full stakeholder intelligence
+  - See B31 for insights from this conversation
+  - See B27 for strategic messaging tailored to Uber network opportunity

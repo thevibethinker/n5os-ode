@@ -3,7 +3,8 @@
 **Conversation ID**: {convo_id}  
 **Type**: Build  
 **Created**: {start_time}  
-**Timezone**: America/New_York
+**Timezone**: America/New_York  
+**Sandbox**: `/home/.z/workspaces/{convo_id}/` (default for all artifacts)
 
 ---
 
@@ -74,6 +75,22 @@
 - [ ] Integration tests
 - [ ] Manual testing
 - [ ] Production validation
+
+---
+
+## Artifacts
+
+### Temporary (Conversation Workspace)
+*Scratch files that stay in /home/.z/workspaces/{convo_id}/*
+
+- None yet
+
+### Permanent (User Workspace)
+*Files destined for /home/workspace/*
+
+- None yet
+
+**Protocol**: Declare artifacts BEFORE creation with classification (temp/permanent), target path, and rationale
 
 ---
 

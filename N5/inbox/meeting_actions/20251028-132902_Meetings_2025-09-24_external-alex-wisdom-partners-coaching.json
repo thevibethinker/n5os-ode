@@ -1,0 +1,530 @@
+{
+  "meeting_id": "2025-09-24_external-alex-wisdom-partners-coaching",
+  "meeting_title": "2025-09-24 external-alex-wisdom-partners-coaching",
+  "meeting_date": "20251028-132902_Meetings",
+  "meeting_path": "/home/workspace/Inbox/20251028-132902_Meetings/2025-09-24_external-alex-wisdom-partners-coaching",
+  "actions": [
+    {
+      "text": "# DETAILED_RECAP",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_001",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "meeting"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_002",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Feedback**: - [ ] Useful",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_003",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_004",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "## Key Decisions and Agreements",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_005",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Pivot employer outreach to \"candidate cards\" approach** \u2014 Alex recommended creating digestible \"playing card\" style candidate summaries (picture, 2-3 experience points, 2-3 story snippets) delivered via trackable URL bundles. This breaks the mold of resume-heavy recruiter outreach and provides instant value to hiring managers.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_006",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Target hiring managers directly, not HR/talent teams** \u2014 Rationale: HR likes traditional resume review processes (job security), but busy team leads/engineering managers will respond better to human-centric, pre-filtered candidate presentations. Hiring managers have authority to skip ATS anyway.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_007",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Implement \"goods up front\" sales approach** \u2014 Send candidate bundles immediately without building relationship first. Alex noted recruiters waste time trying to establish rapport before showing candidates, which is annoying. Lead with value: \"Here are candidates, do you want to pay for them?\"",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_008",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Use URL hosting for engagement metrics** \u2014 Track click-through rates, profiles browsed, time spent to optimize outreach strategy. Each URL is unique per employer to gather performance data.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_009",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Categorize candidates thematically, not percentage fit scores** \u2014 Sections like \"Clear Fits\" (on-paper matches) and \"Hidden Gems\" (career transitioners, atypical profiles) feel more curated and human than algorithmic percentage scores.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_010",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "## Strategic Context",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_011",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Product Positioning**: Careerspan has shifted from selling behavioral insights (too high burden of proof, buyers jaded) to a staffing play: \"If we get good candidates in and introduce them to employers, we make money.\" This is more objective and testable.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_012",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Current GTM**: Targeting product management roles in NYC/SF/Boston. Using \"magic link\" system (candidates apply through Careerspan), embedding in communities, reaching out to high-quality candidates directly. Employers agreed to $300-400 per warm intro, contingent on seeing quality.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_013",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Product Strength**: Alex praised the coaching interface simplicity and story accumulation mechanic (candidates tell stories to fill gaps, stories persist across applications). Noted this creates defensible candidate data that traditional recruiters can't replicate. The nuanced chatbot implementation (speeds up/slows down based on response quality) impressed technical users.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_014",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Hiring Manager Pain Point**: Resume review is \"mind-numbingly boring\" and time-consuming. Product managers especially have varied backgrounds (career transitioners, IC-to-PM pivots), making atypical profiles harder to evaluate. Careerspan's story-based insights surface \"what the resume misses.\"",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_015",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Pitch Event Context**: Vrijen preparing for Atlanta pitch event ($2k entry, founder referral). Alex advised pitch events are typically low-value for customers but excellent for founder practice (confidence projection, timing, conciseness). Vrijen acknowledged need to be \"front-footed\" after previous insecurity about product quality\u2014now has data showing strong engagement metrics.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_016",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "## Critical Next Action",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_017",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Owner**: Vrijen + Logan",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_018",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Deliverable**: Prototype \"candidate card\" URL system with employer-facing bundle",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_019",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Timeline**: ASAP (test before scaling outreach)",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_020",
+      "suggested_when": "Today 3:00pm",
+      "suggested_priority": "High",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Purpose**: Validate whether \"goods up front\" + playing card UX converts hiring managers better than traditional recruiter outreach. This unlocks all GTM channels (community partnerships, cold outreach, subscription model).",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_021",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Candidate card system**: Logan and I are prototyping the \"playing card\" style bundles (experience + stories, trackable URLs) as the core employer deliverable",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_022",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Hiring manager targeting**: Shifting outreach away from HR/talent teams toward team leads who prioritize efficiency over process",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_023",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Thematic categorization**: Testing \"Clear Fits\" and \"Hidden Gems\" groupings instead of percentage scores to feel more curated",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_024",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Job posting age segmentation**: Building pipeline to test fresh vs. stale posting timing for outreach",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_025",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "I'll update you once we have the candidate card prototype live\u2014would love your gut check on whether it hits the \"digestible and enticing\" bar you described",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_026",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Atlanta pitch is tomorrow; I'll report back in ~2 weeks on whether the $2k experiment panned out (fingers crossed for some practice reps either way)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_027",
+      "suggested_when": "Tomorrow 10:00am",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Warmth score:** 7/10 (established rapport, regular check-ins, genuine gratitude)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_028",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Familiarity score:** 6/10 (multiple sessions, shared startup context, but not deeply personal yet)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_029",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Formality level:** Low-medium (casual tone, first names, but professional boundaries)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_030",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**CTA rigour:** Soft (updates offered, not demanded; no hard deadlines)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_031",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\"goods up front\" (Alex's exact framing, 0.95 confidence)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_032",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\"insanely varied backgrounds\" (Alex's PM hiring description, 0.85 confidence)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_033",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Alex's recruiter spam frustration (\"17 more emails every single day\") \u2014 personal pain point that validates entire strategy pivot",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_034",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Personnel",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "The spontaneous playing card UX concept \u2014 shows Alex moved from feedback mode to co-design, signaling deep engagement",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_035",
+      "suggested_when": "Wednesday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    }
+  ],
+  "extracted_at": "2025-10-28T17:35:29.012888",
+  "status": "pending_review"
+}

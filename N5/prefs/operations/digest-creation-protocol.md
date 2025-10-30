@@ -531,7 +531,7 @@ create_scheduled_task(
 
 If creating a formal command (not just a script):
 
-1. Add entry to `file 'N5/config/commands.jsonl'`
+1. Add entry to `'Recipes/' (see recipe-execution-guide.md)`
 2. Run `docgen` to update catalog
 3. Test command invocation
 

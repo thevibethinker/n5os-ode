@@ -240,7 +240,7 @@ extract-careerspan-insights \
 - `file 'N5/scripts/careerspan_insights_extractor.py'`
 
 **Configuration:**
-- `file 'N5/config/commands.jsonl'` (registered)
+- `file 'Recipes/recipes.jsonl'` (registered)
 
 **Output:**
 - `N5/digests/` (meeting prep digests)

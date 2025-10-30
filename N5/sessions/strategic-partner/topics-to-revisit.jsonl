@@ -1,2 +1,0 @@
-{"_schema":"topic_entry","date":"YYYY-MM-DD","session_id":"session-id","topic":"description","reason":"why_revisit","priority":"low|medium|high","status":"open|resolved"}
-{"date": "2025-10-10", "session_id": "2025-10-10-session-1", "topic": "pricing - unresolved aspects", "reason": "Requires more validation", "priority": "high", "status": "open"}

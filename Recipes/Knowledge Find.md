@@ -2,7 +2,38 @@
 description: 'Command: knowledge-find'
 tags: []
 ---
-# `knowledge-find`\n\nVersion: 0.1.0\n\nSummary: Search and filter facts in the knowledge base.\n\nWorkflow: knowledge\n\nTags: knowledge, facts, search\n\n## Inputs\n- subject : text — Subject to match\n- predicate : text — Predicate to match\n- object : text — Object to match\n- tags : json — Tags to match\n- source : text — Source to match\n\n## Outputs\n- facts : json — Matching facts\n\n## Side Effects
+# `knowledge-find`
+
+Version: 0.1.0
+
+Summary: Search and filter facts in the knowledge base.
+
+Workflow: knowledge
+
+Tags: knowledge, facts, search
+
+## Inputs
+- subject : text â Subject to match
+- predicate : text â Predicate to match
+- object : text â Object to match
+- tags : json â Tags to match
+- source : text â Source to match
+
+## Outputs
+- facts : json â Matching facts
+
+## Side Effects
 (None)
 
-## Examples\n- N5: run knowledge-find subject=N5\n- N5: run knowledge-find tags=["list","promoted"]\n\n## Related Components\n\n**Related Commands**: [`knowledge-add`](../commands/knowledge-add.md)\n\n**Knowledge Areas**: [Knowledge Base](../knowledge/knowledge-base.md)\n\n**Examples**: See [Examples Library](../examples/) for usage patterns\n\n
+## Examples
+- N5: run knowledge-find subject=N5
+- N5: run knowledge-find tags=["list","promoted"]
+
+## Related Components
+
+**Related Commands**: [`knowledge-add`](../commands/knowledge-add.md)
+
+**Knowledge Areas**: [Knowledge Base](../knowledge/knowledge-base.md)
+
+**Examples**: See [Examples Library](../examples/) for usage patterns
+

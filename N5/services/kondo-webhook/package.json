@@ -1,0 +1,15 @@
+{
+  "name": "kondo-webhook",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run index.ts",
+    "start": "bun run index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

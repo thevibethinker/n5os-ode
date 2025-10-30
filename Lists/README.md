@@ -230,7 +230,7 @@ Another system can import and interpret without N5 OS.
 | `lists-health-check` | Validate lists | `n5_lists_health_check.py` |
 | `lists-similarity-scanner` | Find duplicates | `n5_lists_similarity_scanner.py` |
 
-See `N5/config/commands.jsonl` for full command registry.
+See `Recipes/recipes.jsonl (index only)` for full command registry.
 
 ---
 

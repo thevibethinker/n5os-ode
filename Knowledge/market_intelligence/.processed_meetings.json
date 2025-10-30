@@ -17,11 +17,11 @@
     }
   },
   "GTM": {
-    "last_run": "2025-10-27T13:11:17.845999+00:00",
+    "last_run": "2025-10-28T13:09:14.037573+00:00",
     "doc_path": "Knowledge/market_intelligence/aggregated_insights_GTM.md",
-    "doc_version": "2.5",
-    "total_meetings": 53,
-    "notes": "v1.7: Added 6 meetings (Fei/Nira, Michael Maher, Elaine P, Alex #2 & #3, Teresa Anoje) with 11 new insights. v1.6: Added 5 meetings (Ash Straughn x2, Jaya Pokuri, Lisa Noble x2) with 8 new GTM insights. v1.5: Added 4 meetings (Awais, Theresa, Allie #2, Vrijen+Logan) with 14 new insights. v1.4: Added Alex Caveny (2025-08-27) via append workflow test. v1.3: Structural reformat. v1.8: Added 3 meetings (Alex #4 & #5 - coaching, Mai Flynn - Lensa) with 11 new insights across 4 theme sections. v1.9: Added 1 meeting (Stephanie Szuch - Education at Work) with 3 new insights on early-career engagement, vetted pipeline vouching, and budget psychology. v2.0: Added 4 meetings (V/Zo team strategy, Tony Padilla x2, Steve Toutonghi) with 6 new insights across 5 theme sections. v2.1: Added 2 meetings (Laura Close x3 transcripts consolidated, Erika Underwood) with 5 new insights on job matching credibility, career coaching B2B opportunity, and market timing. v2.2: Added 2 meetings (Zoe Weber - MBA student, career/hiring product founder) with 7 new insights on campus tool displacement, international student positioning, and founder resourcing challenges. v2.3: Added 4 meetings (Hei-Yue Pang x2 - Year Up, Pamela Kavalam, Brinleigh Murphy-Reuter) with 10 new insights across 7 theme sections. v2.4: Added 4 meetings (McKinsey Orbit monthly, McKinsey consumer call, David Speigel x2) with 11 new insights across 6 theme sections including new Fundraising & Market Timing section. v2.5: Added 4 meetings (Eric Espinel x2, Ash/Saul x2) with 9 new insights across 4 theme sections.",
+    "doc_version": "2.6",
+    "total_meetings": 57,
+    "notes": "v1.7: Added 6 meetings (Fei/Nira, Michael Maher, Elaine P, Alex #2 & #3, Teresa Anoje) with 11 new insights. v1.6: Added 5 meetings (Ash Straughn x2, Jaya Pokuri, Lisa Noble x2) with 8 new GTM insights. v1.5: Added 4 meetings (Awais, Theresa, Allie #2, Vrijen+Logan) with 14 new insights. v1.4: Added Alex Caveny (2025-08-27) via append workflow test. v1.3: Structural reformat. v1.8: Added 3 meetings (Alex #4 & #5 - coaching, Mai Flynn - Lensa) with 11 new insights across 4 theme sections. v1.9: Added 1 meeting (Stephanie Szuch - Education at Work) with 3 new insights on early-career engagement, vetted pipeline vouching, and budget psychology. v2.0: Added 4 meetings (V/Zo team strategy, Tony Padilla x2, Steve Toutonghi) with 6 new insights across 5 theme sections. v2.1: Added 2 meetings (Laura Close x3 transcripts consolidated, Erika Underwood) with 5 new insights on job matching credibility, career coaching B2B opportunity, and market timing. v2.2: Added 2 meetings (Zoe Weber - MBA student, career/hiring product founder) with 7 new insights on campus tool displacement, international student positioning, and founder resourcing challenges. v2.3: Added 4 meetings (Hei-Yue Pang x2 - Year Up, Pamela Kavalam, Brinleigh Murphy-Reuter) with 10 new insights across 7 theme sections. v2.4: Added 4 meetings (McKinsey Orbit monthly, McKinsey consumer call, David Speigel x2) with 11 new insights across 6 theme sections including new Fundraising & Market Timing section. v2.5: Added 4 meetings (Eric Espinel x2, Ash/Saul x2) with 9 new insights across 4 theme sections. v2.6: Added 4 meetings (Lisa Noble x2, Nafisa Poonawala, Ilya Kucherenko, Gabi Zijderveld) with 13 new insights across 6 theme sections.",
     "meetings": [
       {
         "meeting_id": "2025-09-08_external-usha-srinivasan",
@@ -80,12 +80,6 @@
       {
         "meeting_id": "2025-10-12_external-allie-cialeo",
         "stakeholder_name": "Allie Cialeo & Paul Lee",
-        "date_processed": "2025-10-15T09:04:00-05:00",
-        "doc_version": "1.5"
-      },
-      {
-        "meeting_id": "2025-10-10_spv-hmya-oeh",
-        "stakeholder_name": "Vrijen & Logan (internal strategy)",
         "date_processed": "2025-10-15T09:04:00-05:00",
         "doc_version": "1.5"
       },
@@ -345,6 +339,30 @@
         "stakeholder_name": "Ash Straughn & Saul Garza (Sam partnership - acquisition structure)",
         "date_processed": "2025-10-27T13:11:17.845996+00:00",
         "doc_version": "2.5"
+      },
+      {
+        "meeting_id": "2025-10-27_external-lisa-noble",
+        "stakeholder_name": "Lisa Noble (Career Services Director, Colby College)",
+        "date_processed": "2025-10-28T13:09:14.037546+00:00",
+        "doc_version": "2.6"
+      },
+      {
+        "meeting_id": "2025-10-27_external-kob-icsy-peo",
+        "stakeholder_name": "Nafisa Poonawala (Product strategy consultant)",
+        "date_processed": "2025-10-28T13:09:14.037565+00:00",
+        "doc_version": "2.6"
+      },
+      {
+        "meeting_id": "2025-10-27_external-ilya",
+        "stakeholder_name": "Ilya Kucherenko (CRO, exit strategy consultant)",
+        "date_processed": "2025-10-28T13:09:14.037568+00:00",
+        "doc_version": "2.6"
+      },
+      {
+        "meeting_id": "2025-10-27_external-gabi",
+        "stakeholder_name": "Gabi Zijderveld (AI consultant, Blue Tulip)",
+        "date_processed": "2025-10-28T13:09:14.037570+00:00",
+        "doc_version": "2.6"
       }
     ],
     "last_updated": "2025-10-17"
@@ -363,5 +381,5 @@
     "total_meetings": 0,
     "meetings": []
   },
-  "last_updated": "2025-10-27"
+  "last_updated": "2025-10-28"
 }

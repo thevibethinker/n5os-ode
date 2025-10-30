@@ -10,7 +10,7 @@ GOOGLE_DRIVE_TRANSCRIPT_FOLDER_ID = "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV"
 INBOX_PATH = Path("/home/workspace/N5/inbox/meeting_requests")
 PROCESSED_PATH = Path("/home/workspace/N5/inbox/meeting_requests/processed")
 COMPLETED_PATH = Path("/home/workspace/N5/inbox/meeting_requests/completed")
-RECORDS_PATH = Path("/home/workspace/N5/records/meetings")
+RECORDS_PATH = Path("/home/workspace/Personal/Meetings")
 TRANSCRIPTS_INBOX = Path("/home/workspace/N5/inbox/transcripts")
 
 # Ensure directories exist

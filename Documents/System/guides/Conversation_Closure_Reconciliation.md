@@ -86,7 +86,7 @@ Led to confusion about:
 ## What Was Updated
 
 ### 1. Commands
-✅ Added `thread-checkpoint` as alias in `file 'N5/config/commands.jsonl'`  
+✅ Added `thread-checkpoint` as alias in `file 'Recipes/recipes.jsonl'`  
 ✅ Both `thread-checkpoint` and `thread-export` registered
 
 ### 2. Documentation
@@ -198,7 +198,7 @@ LLM parses natural language, understands intent, maps to correct command(s).
 
 This reconciliation touches:
 
-1. **N5 Command Registry** - `file 'N5/config/commands.jsonl'`
+1. **N5 Command Registry** - `file 'Recipes/recipes.jsonl'`
 2. **Incantum Triggers** - `file 'N5/config/incantum_triggers.json'`
 3. **Incantum Protocol** - `file 'N5/prefs/operations/incantum-protocol.md'`
 4. **Thread Export** - `file 'N5/commands/thread-export.md'`
