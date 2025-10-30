@@ -370,7 +370,7 @@ python3 n5_core_audit.py --report
 ## Related
 
 - **Function Files**: `/home/workspace/N5/commands/`
-- **Command Registry**: `/home/workspace/N5/config/commands.jsonl`
+- **Command Registry**: `/home/workspace/Recipes/recipes.jsonl (index only)`
 - **Schemas**: `/home/workspace/N5/schemas/`
 - **Tests**: `/home/workspace/N5/test/`
 

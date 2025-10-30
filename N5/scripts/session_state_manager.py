@@ -12,7 +12,7 @@ import re
 import sys
 from datetime import datetime, UTC, timezone
 from pathlib import Path
-from typing import Optional, Tuple, Dict
+from typing import Optional, Tuple, Dict, List
 import pytz
 
 # Add scripts directory to path for imports
@@ -318,6 +318,13 @@ class SessionStateManager:
             self.state_file.write_text(content)
             logger.info(f"✓ Initialized SESSION_STATE.md for {self.convo_id}")
             
+            # Initialize DEBUG_LOG.jsonl for build/debug conversations
+            if convo_type in ["build", "debug"]:
+                debug_log_path = self.workspace / "DEBUG_LOG.jsonl"
+                if not debug_log_path.exists():
+                    debug_log_path.touch()
+                    logger.info(f"✓ Initialized DEBUG_LOG.jsonl for {convo_type} conversation")
+            
             # Create in registry
             if self.sync_registry:
                 try:
@@ -557,23 +564,259 @@ class SessionStateManager:
             content = self.state_file.read_text()
             lines = content.split("\n")
             
+            # Find and update file line
             updated = False
             for i, line in enumerate(lines):
-                if f"`{filepath}`" in line and line.strip().startswith("-"):
+                if f"`{filepath}`" in line:
                     lines[i] = f"- {icon} `{filepath}` - {new_status}"
                     updated = True
                     break
             
             if updated:
                 self.state_file.write_text("\n".join(lines))
-                logger.info(f"✓ Updated file status: {filepath} → {new_status}")
+                logger.info(f"✓ Updated {filepath} status: {new_status}")
                 return True
             else:
-                logger.warning(f"File not found: {filepath}")
+                logger.warning(f"File not found in manifest: {filepath}")
                 return False
             
         except Exception as e:
             logger.error(f"Failed to update file status: {e}", exc_info=True)
+            return False
+    
+    def declare_artifact(
+        self, 
+        path: str, 
+        classification: str, 
+        rationale: str,
+        status: str = "declared"
+    ) -> bool:
+        """
+        Declare an artifact before creation.
+        
+        Args:
+            path: Absolute or relative path (relative paths assumed to be in user workspace)
+            classification: "temporary" (conversation workspace) or "permanent" (user workspace)
+            rationale: Why this file, why this location
+            status: One of: declared, created, moved, deleted
+        
+        Returns: True if successful
+        
+        Principles: P5 (Anti-Overwrite), P18 (Verify State), P21 (Document Assumptions)
+        """
+        valid_classifications = ["temporary", "permanent"]
+        valid_statuses = ["declared", "created", "moved", "deleted"]
+        
+        if classification not in valid_classifications:
+            logger.error(f"Invalid classification: {classification}. Must be temporary or permanent")
+            return False
+        
+        if status not in valid_statuses:
+            logger.error(f"Invalid status: {status}. Must be one of {valid_statuses}")
+            return False
+        
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist, run init first")
+                return False
+            
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            # Determine which section to add to
+            section_header = "### Temporary (Conversation Workspace)" if classification == "temporary" else "### Permanent (User Workspace)"
+            
+            # Format entry
+            status_icons = {
+                "declared": "📋",
+                "created": "✅",
+                "moved": "📦",
+                "deleted": "🗑️"
+            }
+            icon = status_icons.get(status, "📋")
+            entry = f"- {icon} `{path}` — {rationale} ({status})"
+            
+            # Find section and add entry
+            in_artifacts = False
+            in_correct_subsection = False
+            inserted = False
+            
+            for i, line in enumerate(lines):
+                if line.strip() == "## Artifacts":
+                    in_artifacts = True
+                elif in_artifacts and line.strip() == section_header:
+                    in_correct_subsection = True
+                elif in_correct_subsection:
+                    # Skip section description line
+                    if line.startswith("*") and "stay in" in line or "destined for" in line:
+                        continue
+                    # Remove "None yet" placeholder if present
+                    if "None yet" in line:
+                        lines[i] = entry
+                        inserted = True
+                        break
+                    # Insert before next ### or ## or **Protocol**
+                    if line.startswith("###") or line.startswith("##") or line.startswith("**Protocol**"):
+                        lines.insert(i, entry)
+                        inserted = True
+                        break
+            
+            if not inserted:
+                logger.error(f"Could not find {section_header} in SESSION_STATE.md")
+                return False
+            
+            self.state_file.write_text("\n".join(lines))
+            logger.info(f"✓ Declared artifact: {path} ({classification})")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Failed to declare artifact: {e}", exc_info=True)
+            return False
+    
+    def list_artifacts(self, classification: Optional[str] = None) -> list[dict]:
+        """
+        List artifacts from SESSION_STATE.md.
+        
+        Args:
+            classification: Filter by "temporary" or "permanent", or None for all
+        
+        Returns: List of dicts with keys: path, classification, rationale, status
+        """
+        try:
+            if not self.state_file.exists():
+                return []
+            
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            artifacts = []
+            current_classification = None
+            in_artifacts = False
+            
+            for line in lines:
+                if line.strip() == "## Artifacts":
+                    in_artifacts = True
+                    continue
+                
+                if not in_artifacts:
+                    continue
+                
+                # Track which subsection we're in
+                if "### Temporary" in line:
+                    current_classification = "temporary"
+                    continue
+                elif "### Permanent" in line:
+                    current_classification = "permanent"
+                    continue
+                
+                # Stop at next major section
+                if line.startswith("##") and "Artifacts" not in line:
+                    break
+                
+                # Parse artifact lines
+                if line.startswith("- ") and "`" in line and current_classification:
+                    # Skip "None yet" placeholder
+                    if "None yet" in line:
+                        continue
+                    
+                    # Extract path, rationale, status
+                    # Format: - ICON `path` — rationale (status)
+                    try:
+                        parts = line.split("`")
+                        if len(parts) >= 2:
+                            path = parts[1]
+                            rest = parts[2] if len(parts) > 2 else ""
+                            
+                            # Extract rationale and status
+                            if " — " in rest and "(" in rest:
+                                rationale_status = rest.split(" — ", 1)[1]
+                                if "(" in rationale_status and ")" in rationale_status:
+                                    rationale = rationale_status.split("(")[0].strip()
+                                    status = rationale_status.split("(")[1].split(")")[0]
+                                else:
+                                    rationale = rationale_status.strip()
+                                    status = "unknown"
+                            else:
+                                rationale = rest.strip()
+                                status = "unknown"
+                            
+                            artifact = {
+                                "path": path,
+                                "classification": current_classification,
+                                "rationale": rationale,
+                                "status": status
+                            }
+                            
+                            # Filter by classification if specified
+                            if classification is None or artifact["classification"] == classification:
+                                artifacts.append(artifact)
+                    except Exception as e:
+                        logger.warning(f"Failed to parse artifact line: {line} - {e}")
+                        continue
+            
+            return artifacts
+            
+        except Exception as e:
+            logger.error(f"Failed to list artifacts: {e}", exc_info=True)
+            return []
+    
+    def update_artifact_status(self, path: str, new_status: str) -> bool:
+        """
+        Update the status of an existing artifact.
+        
+        Args:
+            path: Path to the artifact
+            new_status: One of: declared, created, moved, deleted
+        
+        Returns: True if successful
+        """
+        valid_statuses = ["declared", "created", "moved", "deleted"]
+        
+        if new_status not in valid_statuses:
+            logger.error(f"Invalid status: {new_status}. Must be one of {valid_statuses}")
+            return False
+        
+        try:
+            if not self.state_file.exists():
+                logger.error("SESSION_STATE.md does not exist")
+                return False
+            
+            content = self.state_file.read_text()
+            lines = content.split("\n")
+            
+            status_icons = {
+                "declared": "📋",
+                "created": "✅",
+                "moved": "📦",
+                "deleted": "🗑️"
+            }
+            new_icon = status_icons.get(new_status, "📋")
+            
+            # Find and update artifact line
+            updated = False
+            for i, line in enumerate(lines):
+                if f"`{path}`" in line and line.startswith("- "):
+                    # Parse existing line to extract rationale
+                    parts = line.split("`")
+                    if len(parts) >= 3:
+                        rest = parts[2]
+                        if " — " in rest:
+                            rationale = rest.split(" — ", 1)[1].split("(")[0].strip()
+                            # Rebuild line with new status
+                            lines[i] = f"- {new_icon} `{path}` — {rationale} ({new_status})"
+                            updated = True
+                            break
+            
+            if updated:
+                self.state_file.write_text("\n".join(lines))
+                logger.info(f"✓ Updated artifact {path} status: {new_status}")
+                return True
+            else:
+                logger.warning(f"Artifact not found: {path}")
+                return False
+            
+        except Exception as e:
+            logger.error(f"Failed to update artifact status: {e}", exc_info=True)
             return False
     
     def add_test(self, test_name: str, status: str = "not written") -> bool:
@@ -684,14 +927,86 @@ class SessionStateManager:
             logger.error(f"Failed to link parent: {e}")
             return False
 
+    def get_sandbox_path(self) -> Path:
+        """Get sandbox path for this conversation."""
+        return self.workspace
+    
+    def get_declared_permanent_paths(self) -> List[str]:
+        """
+        Extract list of declared permanent artifact paths from SESSION_STATE.
+        
+        Returns: List of paths declared as permanent
+        """
+        try:
+            if not self.state_file.exists():
+                return []
+            
+            artifacts = self.list_artifacts(classification="permanent")
+            return [a["path"] for a in artifacts]
+            
+        except Exception as e:
+            logger.error(f"Failed to get declared permanent paths: {e}")
+            return []
+    
+    def list_sandbox_contents(self, exclude_state: bool = True) -> List[Path]:
+        """
+        List all files in sandbox (conversation workspace).
+        
+        Args:
+            exclude_state: If True, exclude SESSION_STATE.md
+        
+        Returns: List of Path objects
+        """
+        try:
+            sandbox = self.get_sandbox_path()
+            if not sandbox.exists():
+                return []
+            
+            files = []
+            for item in sandbox.rglob("*"):
+                if item.is_file():
+                    if exclude_state and item.name == "SESSION_STATE.md":
+                        continue
+                    files.append(item)
+            
+            return sorted(files)
+            
+        except Exception as e:
+            logger.error(f"Failed to list sandbox contents: {e}")
+            return []
+    
+    def validate_file_path(self, target_path: str) -> Tuple[bool, str]:
+        """
+        Validate file path against sandbox-first protocol.
+        
+        Delegates to sandbox_enforcer module for validation logic.
+        
+        Returns: (is_valid, message)
+        """
+        try:
+            from sandbox_enforcer import validate_file_path as enforce_validate
+            declared = self.get_declared_permanent_paths()
+            return enforce_validate(target_path, self.convo_id, declared)
+        except ImportError:
+            logger.warning("sandbox_enforcer not available, skipping validation")
+            return True, "Validation skipped (enforcer not available)"
+        except Exception as e:
+            logger.error(f"Validation error: {e}")
+            return True, f"Validation error (allowing): {e}"
+
 
 def main():
     parser = argparse.ArgumentParser(description="Session State Manager")
-    parser.add_argument("action", choices=["init", "update", "read", "link-parent"])
+    parser.add_argument("action", choices=["init", "update", "read", "link-parent", "declare-artifact", "list-artifacts", "update-artifact"])
     parser.add_argument("--convo-id", help="Conversation ID (required for init/update/read)")
     parser.add_argument("--type", default=None, choices=["build", "research", "discussion", "planning"])
     parser.add_argument("--mode", type=str, default="", help="Specific mode within type")
     parser.add_argument("--load-system", action="store_true", help="Output system files to load")
+    # Artifact management args
+    parser.add_argument("--path", type=str, help="Artifact path")
+    parser.add_argument("--classification", choices=["temporary", "permanent"], help="Artifact classification")
+    parser.add_argument("--rationale", type=str, help="Rationale for artifact placement")
+    parser.add_argument("--status", type=str, help="Artifact status")
     parser.add_argument("--message", type=str, default="", help="User message for auto-classification")
     parser.add_argument("--field", type=str, help="Field to update")
     parser.add_argument("--value", help="New value for field")
@@ -735,6 +1050,26 @@ def main():
             logger.error("--field and --value required for update action")
             return 1
         success = manager.update_field(args.field, args.value)
+        return 0 if success else 1
+    
+    elif args.action == "declare-artifact":
+        if not args.path or not args.classification or not args.rationale:
+            logger.error("--path, --classification, and --rationale required for declare-artifact")
+            return 1
+        success = manager.declare_artifact(args.path, args.classification, args.rationale, status=args.status or "declared")
+        return 0 if success else 1
+    
+    elif args.action == "list-artifacts":
+        artifacts = manager.list_artifacts(classification=args.classification)
+        for artifact in artifacts:
+            print(f"{artifact['classification'].upper()}: {artifact['path']} - {artifact['rationale']} ({artifact['status']})")
+        return 0
+    
+    elif args.action == "update-artifact":
+        if not args.path or not args.status:
+            logger.error("--path and --status required for update-artifact")
+            return 1
+        success = manager.update_artifact_status(args.path, args.status)
         return 0 if success else 1
     
     return 0

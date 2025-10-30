@@ -148,11 +148,11 @@ Recipes/
 
 **Recommendation:** Archive for now, delete after 30-day validation period.
 
-#### 7. **Update N5/config/commands.jsonl**
+#### 7. **Update Recipes/recipes.jsonl**
 The command registry still references old paths. Consider:
 - Update paths to point to `Recipes/`
-- OR deprecate commands.jsonl in favor of pure Recipes
-- OR keep commands.jsonl for internal-only N5 operations
+- OR deprecate recipes.jsonl in favor of pure Recipes
+- OR keep recipes.jsonl for internal-only N5 operations
 
 #### 8. **Recipe Discovery Enhancement**
 Create additional discovery recipes:
@@ -189,7 +189,7 @@ Create additional discovery recipes:
 ### Medium-term (Next 2 Weeks)
 1. Create additional discovery recipes
 2. Document recipe creation process for future recipes
-3. Consider deprecating commands.jsonl or updating paths
+3. Consider deprecating recipes.jsonl or updating paths
 4. Archive old Commands/ folder
 
 ### Long-term (Next Month)

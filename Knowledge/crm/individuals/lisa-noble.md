@@ -1,72 +1,101 @@
 # Lisa Noble
 
-**Organization**: Colby College  
-**Title**: Deputy Director, Halloran Lab for Entrepreneurship  
-**Location**: [Unknown - needs enrichment]  
-**Email**: [Provided in meeting, stored in N5 meeting records]
+**Organization:** Colby College - Davis Connects  
+**Title:** Director, Entrepreneurship Center (formerly Employer Engagement Director)  
+**Location:** Colby College, Waterville, Maine  
+**Email:** [Unknown - needs enrichment]  
+**LinkedIn:** [Unknown - needs enrichment]  
 
-## Profile Summary
+---
 
-Career services practitioner and entrepreneurship education leader at Colby College with extensive networks across higher education (NESCAC - 11 colleges, 88K students), national career advisor associations, entrepreneurship educators, and hiring managers from consulting background. Brings dual perspective as practitioner and strategic thinker about EdTech partnerships.
+## Quick Context
 
-## Background
+Career services leader with 15+ years experience at small liberal arts colleges (Colby, Bowdoin, Bennington). Passionate about creating equitable pathways for non-target school students. Frustrated with Handshake platform and actively seeking better solutions. Strong network in higher ed career services and advisor to career tech startups.
 
-- **Current Role**: Deputy Director, Halloran Lab for Entrepreneurship (Colby College)
-- **Previous Experience**: Career advising + consulting career (network includes hiring managers doing informal L&D/early talent onboarding)
-- **Expertise**: Career readiness, experiential learning, entrepreneurship education
-- **Networks**: 
-  - NESCAC (Northeast Small College Athletic Conference - 11 colleges, 88,000 students)
-  - National career advisor networks
-  - National entrepreneurship educator networks
-  - Hiring managers from consulting background
+---
 
-## Engagement History
+## Relationship History
 
-### 2025-10-15: Panel Planning Meeting (Magic EdTech Webinar)
-- **Context**: Coordination meeting for October 28, 2025 webinar - "Chasing Waterfalls: Navigating the Future of Career Readiness"
-- **Role**: Panelist bringing higher ed practitioner perspective
-- **Key Contributions**:
-  - Offered to promote via NESCAC network (88K students) + national networks
-  - Flagged language/positioning concerns ("career services → career readiness ecosystems" framing could alienate practitioners)
-  - Demonstrated strategic awareness of growth implications ("do you see higher ed as frenemy or enemy?")
-  - Clear anti-Handshake stance ("worst thing ever")
+**First Contact:** 2025-10-27 - Video call (partnership exploration + panel prep)
 
-### Key Insights from First Meeting
+**Stakeholder Type:** NETWORKING  
+**Status:** #job_seeking:inactive (employed at Colby)  
+**Engagement Level:** Active - concrete pilot discussion underway
 
-**Strategic Communication Instincts**:
-- Immediately identified language that could alienate potential partners
-- Asked directly about Careerspan's positioning vis-a-vis higher ed (friend/frenemy/enemy)
-- Balances authentic critique with partnership preservation ("hot take calibration")
+**Key Touchpoints:**
+- 2025-10-27: Initial partnership exploration call, pre-panel discussion prep
+- 2025-10-28: Panel appearance together (scheduled)
 
-**Domain Authority**:
-- Strong credibility on higher ed career services operations (practitioner)
-- Network access to career advisors, entrepreneurship educators, hiring managers
-- Secondary credibility on hiring manager onboarding practices (consulting network observation)
+---
 
-**Standout Quotes**:
-- "Can we get rid of handshake too? Also the worst thing ever." (Anti-incumbent platform stance)
-- "Do you see higher ed as potential target, frenemy, enemy?" (Direct strategic questioning)
+## Strategic Value
 
-## Relationship Status
+**Network Access:**
+- Career services director network across liberal arts colleges
+- Connection to Recruit You founders (career tech startup, Colby alums)
+- Michael (Johnson Cornell tech career specialist)
 
-**Stakeholder Type**: #stakeholder:networking_contact  
-**Relationship Stage**: Warm (first collaborative project)  
-**Enrichment Priority**: MEDIUM (valuable network access, not immediate partnership deal)
+**Partnership Potential:**
+- Colby pilot for student/alumni job matching via Careerspan
+- If successful, could unlock additional school partnerships through her network
+- Advisor relationships in career tech space valuable for strategic insights
+
+**Market Intelligence:**
+- Deep understanding of career office pain points and workflows
+- Visibility into non-target school placement challenges
+- Alumni career pivoting demand signals
+
+---
+
+## Key Insights & Preferences
+
+**Pain Points:**
+- Handshake platform ("hate it with a hot hate")
+- Manual employer qualification burden unsustainable
+- Alumni (class 2017-2022) pivoting but lack capacity to serve them
+- Non-target schools need creative solutions to compete
+
+**Values:**
+- Authenticity and directness ("filter-free Fridays")
+- Quality stewardship of employer relationships
+- Student development over transactional metrics
+- Creative problem-solving for systemic challenges
+
+**Communication Style:**
+- Warm and personable but professionally direct
+- Intellectually curious about market dynamics
+- Values being educated about structural shifts
+- Appreciates humor and personal connection
+
+---
 
 ## Next Actions
 
-- [ ] LinkedIn research on Lisa's background and Halloran Lab role
-- [ ] Research NESCAC partnership opportunities (institutional vs individual relationships)
-- [ ] Identify mutual connections in career tech/higher ed ecosystem
-- [ ] Post-webinar follow-up to assess potential for ongoing collaboration
+**Immediate (by 11/1):**
+- [ ] Send Colby signup code system details and pilot parameters
+- [ ] Share UMass pilot engagement metrics (70-80% completion, 3+ stories)
 
-## Notes
+**Enrichment Tasks (HIGH priority):**
+- [ ] LinkedIn research - extract background, identify mutual connections (READ-ONLY)
+- [ ] Research Recruit You company (where Lisa is advisor) - understand positioning
+- [ ] Identify other career services directors in Lisa's network
+- [ ] Research Colby entrepreneurship center initiatives for collaboration opportunities
 
-- Title "Deputy Director of Halloran Lab for Entrepreneurship" doesn't signal career expertise for promotional purposes - discussed alternative descriptors
-- Strong practitioner networks could be valuable for future higher ed/career services content or partnerships
-- Demonstrates both career services insider perspective AND strategic partnership awareness
-- See meeting record: `N5/records/meetings/2025-10-15_external-careerspan-magic-edtech-panel-planning-speaker-sync_175632/`
+**Long-term:**
+- [ ] Follow up post-panel (10/28) to deepen relationship
+- [ ] Move pilot discussion from exploratory to concrete parameters
+- [ ] If pilot succeeds, leverage Lisa's network for warm intros to other schools
 
-**Created**: 2025-10-15  
-**Last Updated**: 2025-10-15  
-**Source**: Meeting transcript processing (Registry System v1.5)
+---
+
+## Meeting References
+
+- file 'N5/records/meetings/2025-10-27_external-lisa-noble/B01_DETAILED_RECAP.md'
+- file 'N5/records/meetings/2025-10-27_external-lisa-noble/B08_STAKEHOLDER_INTELLIGENCE.md'
+- file 'N5/records/meetings/2025-10-27_external-lisa-noble/B31_STAKEHOLDER_RESEARCH.md'
+
+---
+
+**Created:** 2025-10-28  
+**Last Updated:** 2025-10-28  
+**Enrichment Status:** Needs LinkedIn/web research, email contact info

@@ -47,7 +47,7 @@ HIGH Priority:
 - Knowledge/architectural/principles/*.md (principle changes)
 - N5/prefs/*.md (preference updates)
 - N5/schemas/*.json (schema changes)
-- N5/config/commands.jsonl (command registry)
+- Recipes/recipes.jsonl (command registry)
 
 MEDIUM Priority:
 - N5/orchestration/*.md (workflow changes)

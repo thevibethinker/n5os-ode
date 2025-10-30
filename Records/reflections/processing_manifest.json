@@ -1,0 +1,37 @@
+{
+  "processed_at": "2025-10-28T17:13:15.062569Z",
+  "summary": {
+    "documents_ingested": 8,
+    "audio_files_ingested": 1,
+    "transcripts_created": 1,
+    "blocks_generated": 9,
+    "registry_entries": 9,
+    "total_words": 11035
+  },
+  "files": {
+    "documents": [
+      "Gestalt_hiring.txt",
+      "Overperformer_angle.txt",
+      "Planning_strategy_Zo.txt",
+      "Productivity_in_the_AI_age.txt",
+      "Reflections_N5_OS.txt",
+      "Reflections_Zo_workflow.txt",
+      "Reflections_Zo_workflow_dup.txt",
+      "Thoughts_Careers_app.txt"
+    ],
+    "audio": [
+      "Oct_24_reflection.m4a"
+    ],
+    "blocks": [
+      "Gestalt_hiring.block.json",
+      "Oct_24_reflection.block.json",
+      "Overperformer_angle.block.json",
+      "Planning_strategy_Zo.block.json",
+      "Productivity_in_the_AI_age.block.json",
+      "Reflections_N5_OS.block.json",
+      "Reflections_Zo_workflow.block.json",
+      "Reflections_Zo_workflow_dup.block.json",
+      "Thoughts_Careers_app.block.json"
+    ]
+  }
+}

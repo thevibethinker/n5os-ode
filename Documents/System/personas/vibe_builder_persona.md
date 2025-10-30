@@ -127,7 +127,7 @@ if __name__ == "__main__":
 **Patterns:**
 - Records: Raw → Process → Knowledge/Lists → Archive
 - Conv End: Review → Classify → Propose → Execute
-- Commands: .md → commands.jsonl → triggers
+- Commands: .md → recipes.jsonl → triggers
 
 *Full:* `file 'Documents/Archive/2025-10-08-Refactor/Final_Summary.md'` 
 

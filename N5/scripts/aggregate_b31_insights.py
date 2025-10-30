@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
 AGGREGATED_FILE = WORKSPACE / "Knowledge/market_intelligence/aggregated_insights.md"
-B31_PATTERN = "N5/records/meetings/*/B31_STAKEHOLDER_RESEARCH.md"
+B31_PATTERN = "Personal/Meetings/*/B31_STAKEHOLDER_RESEARCH.md"
 
 def load_existing_aggregated_insights() -> str:
     """Load existing aggregated insights file or create if doesn't exist."""
@@ -264,7 +264,7 @@ def process_new_meeting(meeting_id: str, dry_run: bool = False) -> Dict:
     """
     
     # Find B31 file
-    b31_path = WORKSPACE / f"N5/records/meetings/{meeting_id}/B31_STAKEHOLDER_RESEARCH.md"
+    b31_path = WORKSPACE / f"Personal/Meetings/{meeting_id}/B31_STAKEHOLDER_RESEARCH.md"
     
     if not b31_path.exists():
         logger.error(f"B31 file not found: {b31_path}")

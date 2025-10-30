@@ -21,7 +21,7 @@ Incremental indexer for N5 OS that updates the index with changed files.
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_FILE = ROOT / "index.jsonl"
 INDEX_MD = ROOT / "index.md"
-COMMANDS_FILE = ROOT / "commands.jsonl"
+RECIPES_INDEX = ROOT / "recipes.jsonl"
 SCHEMAS = ROOT / "schemas"
 
 EXCLUDE_PATTERNS = [
@@ -95,9 +95,9 @@ def load_existing_index() -> dict:
 def get_entrypoints():
     """Get entrypoints from commands.jsonl."""
     entrypoints = set()
-    if not COMMANDS_FILE.exists():
+    if not RECIPES_INDEX.exists():
         return entrypoints
-    with COMMANDS_FILE.open("r", encoding="utf-8") as f:
+    with RECIPES_INDEX.open("r", encoding="utf-8") as f:
         for line in f:
             ln = line.strip()
             if not ln:

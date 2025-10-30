@@ -44,6 +44,9 @@ STAGING_ROOT = WORKSPACE_ROOT / "Records/Temporary/email_staging"
 USER_EMAIL = "vrijen@mycareerspan.com"
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
+# Path to Google service account JSON (defaults to N5 config credentials)
+CREDS_FILE = WORKSPACE_ROOT / "N5/config/credentials/google_service_account.json"
+
 # Email domains to exclude (internal)
 INTERNAL_DOMAINS = ['mycareerspan.com', 'theapply.ai', 'zo.computer']
 

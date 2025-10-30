@@ -24,7 +24,7 @@ Rebuilds the N5 index from scratch, scanning all files and regenerating MD view.
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_FILE = ROOT / "index.jsonl"
 INDEX_MD = ROOT / "index.md"
-COMMANDS_FILE = ROOT / "commands.jsonl"
+RECIPES_INDEX = ROOT / "recipes.jsonl"
 SCHEMAS = ROOT / "schemas"
 
 EXCLUDE_PATTERNS = [
@@ -84,9 +84,9 @@ def get_file_hash(path: Path) -> str:
 def get_entrypoints():
     """Get entrypoints from commands.jsonl."""
     entrypoints = set()
-    if not COMMANDS_FILE.exists():
+    if not RECIPES_INDEX.exists():
         return entrypoints
-    with COMMANDS_FILE.open("r", encoding="utf-8") as f:
+    with RECIPES_INDEX.open("r", encoding="utf-8") as f:
         for line in f:
             ln = line.strip()
             if not ln:

@@ -32,7 +32,7 @@ Recipes/
 - Old `Commands/` folder archived to:
   `file 'Documents/Archive/2025-10-27-Commands-Migration/Commands/'`
 - Vestigial files removed from workspace
-- `N5/config/commands.jsonl` retained as internal registry
+- `Recipes/recipes.jsonl` retained as internal registry
 
 ### ✅ Phase 5: Documentation
 - Updated `file 'Documents/N5.md'`
@@ -78,7 +78,7 @@ Recipes/
 → User-facing, documented, discoverable
 
 **Layer 2: N5 Commands** (System Registry)  
-→ `/home/workspace/N5/config/commands.jsonl`  
+→ `/home/workspace/Recipes/recipes.jsonl`  
 → Internal automation hooks  
 → AI-invoked, not user-facing
 
@@ -218,7 +218,7 @@ cp -r /home/workspace/Documents/Archive/2025-10-27-Commands-Migration/Commands /
 
 ✅ Archive or delete Commands? → **Archived, then deleted**  
 ✅ Test subdirectories? → **Implemented, awaiting test**  
-✅ Keep commands.jsonl? → **Yes, retained as internal registry**  
+✅ Keep recipes.jsonl? → **Yes, retained as internal registry**  
 ⏳ Keep subdirectories? → **Pending test results**
 
 ---

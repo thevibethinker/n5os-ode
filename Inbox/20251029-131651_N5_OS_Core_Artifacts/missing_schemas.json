@@ -1,0 +1,369 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/missing_schemas.json",
+  "title": "N5 Missing Schemas Collection",
+  "description": "JSON schemas for bulletins, sessions, records, recipes, and path protection",
+  
+  "definitions": {
+    "bulletin": {
+      "$id": "#/definitions/bulletin",
+      "title": "Bulletin Entry",
+      "description": "Time-sensitive information requiring action or awareness",
+      "type": "object",
+      "required": ["id", "type", "created_at", "expires_at", "content"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^bul_[A-Za-z0-9]{16}$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["alert", "reminder", "fyi", "urgent"]
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"],
+          "default": "medium"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "acknowledged_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "action_required": {
+          "type": "boolean",
+          "default": false
+        },
+        "related_files": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    
+    "session": {
+      "$id": "#/definitions/session",
+      "title": "Session State",
+      "description": "Conversation context and progress tracking",
+      "type": "object",
+      "required": ["convo_id", "type", "created_at"],
+      "properties": {
+        "convo_id": {
+          "type": "string",
+          "pattern": "^con_[A-Za-z0-9]{16}$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["build", "research", "discussion", "planning", "review"]
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["interactive", "scheduled", "email"]
+        },
+        "focus": {
+          "type": "string",
+          "description": "Current primary objective",
+          "maxLength": 200
+        },
+        "objective": {
+          "type": "string",
+          "description": "What you're trying to accomplish",
+          "maxLength": 500
+        },
+        "context_files": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Relevant files for this session"
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "progress": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["not_started", "in_progress", "blocked", "completed"]
+            },
+            "completion_percent": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "next_steps": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    
+    "record": {
+      "$id": "#/definitions/record",
+      "title": "Processing Record",
+      "description": "Staged information flowing through processing pipeline",
+      "type": "object",
+      "required": ["record_id", "type", "stage", "created_at"],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^rec_[A-Za-z0-9]{16}$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["stakeholder", "meeting", "project", "learning", "health", "finance", "temporary"]
+        },
+        "stage": {
+          "type": "string",
+          "enum": ["triage", "processing", "waiting", "completed", "archived"]
+        },
+        "category": {
+          "type": "string",
+          "enum": ["company", "personal", "temporary"]
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "urgent"],
+          "default": "medium"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "sla_expires": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Service level agreement deadline"
+        },
+        "content_path": {
+          "type": "string",
+          "description": "Path to record content file"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "source": {"type": "string"},
+            "stakeholder": {"type": "string"},
+            "project": {"type": "string"},
+            "tags": {
+              "type": "array",
+              "items": {"type": "string"},
+              "uniqueItems": true
+            }
+          }
+        },
+        "next_action": {
+          "type": ["string", "null"],
+          "description": "What needs to happen next"
+        }
+      }
+    },
+    
+    "recipe": {
+      "$id": "#/definitions/recipe",
+      "title": "Recipe Definition",
+      "description": "Reusable procedure or workflow",
+      "type": "object",
+      "required": ["name", "description", "steps"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "category": {
+          "type": "string",
+          "enum": ["system", "workflow", "integration", "analysis", "content"]
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type"],
+            "properties": {
+              "name": {"type": "string"},
+              "type": {"type": "string", "enum": ["string", "number", "boolean", "path", "list"]},
+              "required": {"type": "boolean", "default": false},
+              "default": {},
+              "description": {"type": "string"}
+            }
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action"],
+            "properties": {
+              "action": {"type": "string"},
+              "description": {"type": "string"},
+              "inputs": {"type": "object"},
+              "outputs": {"type": "array", "items": {"type": "string"}},
+              "error_handling": {
+                "type": "string",
+                "enum": ["stop", "continue", "retry", "skip"],
+                "default": "stop"
+              }
+            }
+          }
+        },
+        "requirements": {
+          "type": "object",
+          "properties": {
+            "files": {"type": "array", "items": {"type": "string"}},
+            "tools": {"type": "array", "items": {"type": "string"}},
+            "permissions": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    
+    "path_protection": {
+      "$id": "#/definitions/path_protection",
+      "title": "Path Protection Rule",
+      "description": "Protection rules for critical directories and files",
+      "type": "object",
+      "required": ["path", "protected", "reason"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Absolute or relative path to protect"
+        },
+        "protected": {
+          "type": "boolean",
+          "description": "Whether path is currently protected"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Why this path is protected",
+          "minLength": 10,
+          "maxLength": 200
+        },
+        "protection_type": {
+          "type": "string",
+          "enum": ["read_only", "no_delete", "no_move", "full_protection"],
+          "default": "full_protection"
+        },
+        "marker_file": {
+          "type": "string",
+          "description": "Name of protection marker file",
+          "default": ".n5protected"
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Subpaths allowed despite protection"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "created_by": {
+          "type": "string",
+          "description": "Who created this protection rule"
+        }
+      }
+    }
+  },
+  
+  "examples": {
+    "bulletin_example": {
+      "id": "bul_Abc123Def456Ghi7",
+      "type": "reminder",
+      "priority": "high",
+      "created_at": "2025-10-28T10:00:00Z",
+      "expires_at": "2025-10-29T10:00:00Z",
+      "acknowledged_at": null,
+      "content": "Q4 board meeting prep due tomorrow - review slides and financials",
+      "action_required": true,
+      "related_files": ["Documents/Q4_Board_Deck.md"],
+      "tags": ["board", "deadline", "q4"]
+    },
+    
+    "session_example": {
+      "convo_id": "con_Abc123Def456Ghi7",
+      "type": "build",
+      "mode": "interactive",
+      "focus": "Implementing content library system",
+      "objective": "Create database schema and API for content management",
+      "context_files": ["Knowledge/content_library_design.md"],
+      "tags": ["system", "database", "architecture"],
+      "progress": {
+        "status": "in_progress",
+        "completion_percent": 65,
+        "next_steps": ["Test API endpoints", "Write documentation"]
+      },
+      "created_at": "2025-10-28T09:00:00Z",
+      "updated_at": "2025-10-28T11:30:00Z"
+    },
+    
+    "record_example": {
+      "record_id": "rec_Abc123Def456Ghi7",
+      "type": "stakeholder",
+      "stage": "processing",
+      "category": "company",
+      "priority": "high",
+      "created_at": "2025-10-27T14:00:00Z",
+      "updated_at": "2025-10-28T10:00:00Z",
+      "sla_expires": "2025-11-03T14:00:00Z",
+      "content_path": "Records/Company/stakeholders/john_doe_meeting_20251027.md",
+      "metadata": {
+        "source": "meeting",
+        "stakeholder": "John Doe",
+        "project": "Q4 Partnership",
+        "tags": ["partnership", "enterprise", "followup"]
+      },
+      "next_action": "Send follow-up email with pricing proposal"
+    }
+  }
+}

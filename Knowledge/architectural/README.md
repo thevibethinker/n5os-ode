@@ -84,3 +84,11 @@ Build complex operations from simple, reusable primitives.
 ---
 
 *Part of Knowledge Layer - Meta-knowledge about N5 OS*
+
+## Case Studies
+
+Real-world applications of architectural principles:
+
+- [N5 Realignment 2025-10-28](case-studies/n5-realignment-2025-10-28.md) - System restructuring using build orchestrator pattern (42→20 directories, parallel workers, zero breaking changes)
+
+See: file 'Knowledge/architectural/case-studies/README.md'

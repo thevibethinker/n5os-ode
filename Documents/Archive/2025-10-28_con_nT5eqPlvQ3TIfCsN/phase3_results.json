@@ -1,0 +1,39 @@
+{
+  "phase": "backup_consolidation",
+  "timestamp": "2025-10-28T16:19:26.225703",
+  "dry_run": false,
+  "consolidated": {
+    ".migration_backups": {
+      "status": "success",
+      "source": "/home/workspace/.migration_backups",
+      "archive": "/home/workspace/.archive_2025-10-28/.migration_backups_backups_20251028.tar.gz",
+      "original_size_mb": 0.3334054946899414,
+      "compressed_size_mb": 0.1322164535522461,
+      "compression_ratio": "39.7%"
+    },
+    ".n5-ats-backups": {
+      "status": "success",
+      "source": "/home/workspace/.n5-ats-backups",
+      "archive": "/home/workspace/.archive_2025-10-28/.n5-ats-backups_backups_20251028.tar.gz",
+      "original_size_mb": 0.5669584274291992,
+      "compressed_size_mb": 0.47364139556884766,
+      "compression_ratio": "83.5%"
+    },
+    ".n5_backups": {
+      "status": "success",
+      "source": "/home/workspace/.n5_backups",
+      "archive": "/home/workspace/.archive_2025-10-28/.n5_backups_backups_20251028.tar.gz",
+      "original_size_mb": 237.81278228759766,
+      "compressed_size_mb": 86.03303337097168,
+      "compression_ratio": "36.2%"
+    }
+  },
+  "n5_backups_cleanup": {
+    "status": "no_action_needed",
+    "recent_files": 62,
+    "old_files": 0
+  },
+  "errors": [],
+  "status": "complete",
+  "success": true
+}

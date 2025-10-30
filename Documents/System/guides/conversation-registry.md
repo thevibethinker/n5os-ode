@@ -299,7 +299,7 @@ stats = registry.get_stats()
 - **Database:** `/home/workspace/N5/data/conversations.db`
 - **Scripts:** `/home/workspace/N5/scripts/conversation_registry.py`
 - **CLI Tools:** `/home/workspace/N5/scripts/n5_convo_*.py`
-- **Commands:** Registered in `/home/workspace/N5/config/commands.jsonl`
+- **Commands:** Registered in `/home/workspace/Recipes/recipes.jsonl`
 
 ---
 

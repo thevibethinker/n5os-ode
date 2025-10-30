@@ -31,7 +31,7 @@ Completed comprehensive audit and verification of the follow-up email generation
 ### 2. Reference Files (SSOT)
 - **Voice Configuration:** `file 'N5/prefs/communication/voice.md'` ✅
 - **Essential Links:** `file 'N5/prefs/communication/essential-links.json'` ✅
-- **Command Registry:** `file 'N5/config/commands.jsonl'` ✅
+- **Command Registry:** `file 'Recipes/recipes.jsonl'` ✅
 
 ### 3. Live Testing
 - Generator dry-run with real meeting data

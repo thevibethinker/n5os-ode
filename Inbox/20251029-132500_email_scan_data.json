@@ -1,0 +1,172 @@
+[
+  {
+    "id": "19a2cacc73fb14eb",
+    "threadId": "19a275a8e8cc6b4e",
+    "snippet": "Hey Jordan, Of the three, Nov 19 would be ideal, but I could swing 11th in a pinch...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Tue, 28 Oct 2025 21:15:12 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Follow-up (dinner invite)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a2c70ee2cfab56",
+    "threadId": "19a2c6fcfa18c138",
+    "snippet": "Roger roger, I've sent it along. We'll get moving on it when Ilse's up in the morning...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Tue, 28 Oct 2025 20:09:50 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: CONFIDENTIAL: Finance Placement"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a2c707d0fd5534",
+    "threadId": "19a2c6fcfa18c138",
+    "snippet": "Best, Vrijen S Attawar CEO @ Careerspan...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Tue, 28 Oct 2025 20:09:22 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Fwd: CONFIDENTIAL: Finance Placement"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a26a5e2ea3218f",
+    "threadId": "19a26a308ebf1556",
+    "snippet": "Yeah yeah let me do that Best, Vrijen S Attawar...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 17:09:57 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Pricing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a26a308ebf1556",
+    "threadId": "19a26a308ebf1556",
+    "snippet": "Best, Vrijen S Attawar CEO @ Careerspan...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 17:06:50 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Pricing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a267fbcbcfb672",
+    "threadId": "19a267b865aa6661",
+    "snippet": "Oh, I almost forgot. I got in touch with a wonderful Johnson student named Zoe Weber...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 16:28:17 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Following up: Johnson x Careerspan"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a26113bcfd882e",
+    "threadId": "19a26113bcfd882e",
+    "snippet": "Hey Ash, Great connecting last week despite the collective sicknote situation...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 14:27:35 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Follow-Up: Sam x Careerspan"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a2604561507d90",
+    "threadId": "19a2604561507d90",
+    "snippet": "Hey Pamela, Really enjoyed chatting last week and excited to meet up...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 14:13:30 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Follow-Up: Pamela x Careerspan"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a25e71a07be7d7",
+    "threadId": "19a25e71a07be7d7",
+    "snippet": "Hi Michael, Meet Stephanie Szuch from Education @ Work...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 13:41:34 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "Introducing EAW and StarterYou"
+        }
+      ]
+    }
+  },
+  {
+    "id": "19a25aef662270d2",
+    "threadId": "19a25aef662270d2",
+    "snippet": "Hey Laura, We're going to go ahead and apply to the SHRM program...",
+    "payload": {
+      "headers": [
+        {
+          "name": "Date",
+          "value": "Mon, 27 Oct 2025 12:40:15 +0000"
+        },
+        {
+          "name": "Subject",
+          "value": "SHRM contacts"
+        }
+      ]
+    }
+  }
+]

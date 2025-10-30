@@ -29,7 +29,7 @@ def find_stakeholder_profile(email: str, meeting_folder: Optional[Path] = None) 
                 return profile_path
     
     # Search all meeting folders
-    records_dir = Path("/home/workspace/N5/records/meetings")
+    records_dir = Path("/home/workspace/Personal/Meetings")
     if not records_dir.exists():
         records_dir = Path("/home/workspace/N5_mirror/records/meetings")
     

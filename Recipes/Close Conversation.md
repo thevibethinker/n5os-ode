@@ -57,6 +57,67 @@ Runs the formal **conversation-end workflow** - like Magic: The Gathering's end 
 
 `file N5/prefs/operations/conversation-end.md`
 
+## Execution
+
+This recipe uses the **conversation-end orchestrator** - a 3-phase pipeline that analyzes, proposes, and executes cleanup operations.
+
+### Quick Run (Recommended)
+
+```bash
+# Auto-detect conversation ID and run full pipeline
+CONVO_ID=$(basename "$(pwd)")
+python3 /home/workspace/N5/scripts/conversation_end_analyzer.py --convo-id "$CONVO_ID" --output /tmp/analysis.json
+python3 /home/workspace/N5/scripts/conversation_end_proposal.py --analysis /tmp/analysis.json --format markdown
+```
+
+Review the proposal, then execute:
+
+```bash
+# Dry-run first (preview changes)
+python3 /home/workspace/N5/scripts/conversation_end_executor.py --proposal /tmp/analysis.json --dry-run
+
+# Execute for real
+python3 /home/workspace/N5/scripts/conversation_end_executor.py --proposal /tmp/analysis.json
+```
+
+### Manual Phase-by-Phase
+
+**Phase 1: Analyze**
+```bash
+python3 /home/workspace/N5/scripts/conversation_end_analyzer.py \
+  --workspace /home/.z/workspaces/con_XXXXX \
+  --convo-id con_XXXXX \
+  --output /tmp/conv_analysis.json
+```
+
+**Phase 2: Generate Proposal**
+```bash
+python3 /home/workspace/N5/scripts/conversation_end_proposal.py \
+  --analysis /tmp/conv_analysis.json \
+  --format markdown \
+  --output /tmp/conv_proposal.md
+```
+
+**Phase 3: Execute**
+```bash
+# Dry-run (preview)
+python3 /home/workspace/N5/scripts/conversation_end_executor.py \
+  --proposal /tmp/conv_analysis.json \
+  --dry-run
+
+# Real execution
+python3 /home/workspace/N5/scripts/conversation_end_executor.py \
+  --proposal /tmp/conv_analysis.json
+```
+
+### Rollback
+
+If something goes wrong:
+```bash
+python3 /home/workspace/N5/scripts/conversation_end_executor.py \
+  --rollback /tmp/transaction_TIMESTAMP.json
+```
+
 ---
 
 **Related:**

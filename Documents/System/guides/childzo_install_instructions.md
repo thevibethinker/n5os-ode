@@ -30,7 +30,7 @@ chmod +x N5/scripts/*.py
 ls -la N5/commands/*.md | wc -l  # Should show 99
 
 # Check registry
-wc -l N5/config/commands.jsonl    # Should show 104
+wc -l Recipes/recipes.jsonl    # Should show 104
 
 # Check docs
 ls -la Documents/N5.md N5/prefs/prefs.md Knowledge/architectural/architectural_principles.md
@@ -45,7 +45,7 @@ ls -la Documents/N5.md N5/prefs/prefs.md Knowledge/architectural/architectural_p
 - Includes: conversation-end, knowledge-ingest, lists-*, meeting-*, etc.
 
 ### Configuration
-- ✅ `N5/config/commands.jsonl` (104 command registry entries)
+- ✅ `Recipes/recipes.jsonl` (104 command registry entries)
 
 ### Core Documentation
 - ✅ `Documents/N5.md` (161 lines - system overview)
@@ -63,7 +63,7 @@ After extraction, ChildZo should run:
 
 ```bash
 # Verify commands are registered
-python3 -c "import json; print(len([l for l in open('N5/config/commands.jsonl')]))"
+python3 -c "import json; print(len([l for l in open('Recipes/recipes.jsonl')]))"
 
 # Test a simple command
 python3 N5/scripts/hello_n5.py --dry-run
@@ -76,7 +76,7 @@ python3 N5/scripts/hello_n5.py --dry-run
 ```
 N5/
 ├── commands/ (99 .md files)
-├── config/commands.jsonl
+├── config/recipes.jsonl
 └── prefs/prefs.md
 
 Documents/

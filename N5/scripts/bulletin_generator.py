@@ -34,7 +34,7 @@ SIGNIFICANT_PATTERNS = {
         'Knowledge/architectural/principles/*.md',
         'N5/prefs/*.md',
         'N5/schemas/*.json',
-        'N5/config/commands.jsonl',
+        'Recipes/recipes.jsonl',
     ],
     'medium': [
         'N5/orchestration/*.md',

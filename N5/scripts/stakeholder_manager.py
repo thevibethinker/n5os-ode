@@ -462,6 +462,6 @@ if __name__ == "__main__":
     #     transcript_summary="Discussed specific use cases for integration",
     #     key_points=["Agreed on embedded widget approach", "Reviewed technical requirements"],
     #     outcomes=["V to send technical spec", "Hamoon to review internally"],
-    #     linked_artifact="N5/records/meetings/2025-10-15_hamoon-ekhtiari/meeting_note.md",
+    #     linked_artifact="Personal/Meetings/2025-10-15_hamoon-ekhtiari/meeting_note.md",
     #     dry_run=True
     # )

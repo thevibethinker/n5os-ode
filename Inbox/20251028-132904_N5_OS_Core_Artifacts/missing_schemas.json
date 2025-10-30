@@ -1,0 +1,183 @@
+{
+  "bulletins.schema.json": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["id", "title", "message", "created", "active"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique bulletin identifier"
+      },
+      "title": {
+        "type": "string",
+        "description": "Bulletin title"
+      },
+      "message": {
+        "type": "string",
+        "description": "Bulletin content"
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["critical", "warning", "info"],
+        "default": "info",
+        "description": "Bulletin priority level"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Creation timestamp (ISO 8601)"
+      },
+      "expires": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Optional expiration timestamp"
+      },
+      "active": {
+        "type": "boolean",
+        "description": "Whether bulletin is currently active"
+      },
+      "tags": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Optional categorization tags"
+      }
+    }
+  },
+  
+  "session_state.schema.json": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["conversation_id", "type", "initialized_at"],
+    "properties": {
+      "conversation_id": {
+        "type": "string",
+        "description": "Zo conversation identifier"
+      },
+      "type": {
+        "type": "string",
+        "enum": ["build", "research", "discussion", "planning"],
+        "description": "Session type"
+      },
+      "initialized_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Session initialization timestamp"
+      },
+      "focus": {
+        "type": "string",
+        "description": "Current focus area"
+      },
+      "objective": {
+        "type": "string",
+        "description": "Session objective"
+      },
+      "tags": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Session categorization tags"
+      },
+      "notes": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Session notes and observations"
+      },
+      "state": {
+        "type": "object",
+        "description": "Arbitrary state data",
+        "additionalProperties": true
+      }
+    }
+  },
+  
+  "record_entry.schema.json": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["timestamp", "type"],
+    "properties": {
+      "timestamp": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Entry timestamp (ISO 8601)"
+      },
+      "type": {
+        "type": "string",
+        "enum": ["decision", "incident", "session", "event"],
+        "description": "Record entry type"
+      },
+      "description": {
+        "type": "string",
+        "description": "Entry description"
+      },
+      "metadata": {
+        "type": "object",
+        "description": "Type-specific metadata",
+        "additionalProperties": true
+      },
+      "tags": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Categorization tags"
+      },
+      "related_conversation": {
+        "type": "string",
+        "description": "Associated conversation ID"
+      }
+    }
+  },
+  
+  "recipe.schema.json": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["description", "tags", "content"],
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "Recipe description (from frontmatter)"
+      },
+      "tags": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Recipe categorization tags"
+      },
+      "content": {
+        "type": "string",
+        "description": "Recipe markdown content (after frontmatter)"
+      },
+      "parameters": {
+        "type": "object",
+        "description": "Optional parameters for recipe execution",
+        "additionalProperties": true
+      }
+    }
+  },
+  
+  "protection.schema.json": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["path", "reason", "created"],
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Absolute path to protected directory"
+      },
+      "reason": {
+        "type": "string",
+        "description": "Reason for protection"
+      },
+      "created": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Protection timestamp"
+      },
+      "created_by": {
+        "type": "string",
+        "description": "User or system that created protection"
+      },
+      "expires": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Optional expiration timestamp"
+      }
+    }
+  }
+}

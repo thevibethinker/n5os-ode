@@ -26,7 +26,7 @@ All AIs loading the preferences file will see a critical warning at the top requ
 **Protected Files:**
 - `Documents/N5.md` - System entry point
 - `N5/prefs/prefs.md` - System preferences  
-- `N5/config/commands.jsonl` - Command registry
+- `Recipes/recipes.jsonl` - Command registry
 
 ### Layer 2: Automatic Backup System ✅
 
@@ -72,7 +72,7 @@ python3 N5/scripts/file_backup.py restore /path/to/backup.file /path/to/target
 **Minimum Sizes:**
 - Documents/N5.md: 2000 bytes
 - N5/prefs/prefs.md: 5000 bytes
-- N5/config/commands.jsonl: 1000 bytes
+- Recipes/recipes.jsonl: 1000 bytes
 - N5/timeline/system-timeline.jsonl: 500 bytes
 
 **Bypass (if absolutely necessary):**

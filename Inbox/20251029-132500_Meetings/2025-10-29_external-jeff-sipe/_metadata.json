@@ -1,0 +1,33 @@
+{
+  "meeting_date": "2025-10-29",
+  "participants": [
+    {
+      "name": "Vrijen Attawar",
+      "role": "Careerspan Founder",
+      "type": "internal"
+    },
+    {
+      "name": "Jeff Sipe",
+      "role": "Recruiting Industry Veteran",
+      "type": "external"
+    }
+  ],
+  "meeting_type": "strategic_discussion",
+  "topics": [
+    "recruiting_industry_trends",
+    "careerspan_gtm_strategy",
+    "agency_partnerships",
+    "magic_linking",
+    "marketplace_dynamics",
+    "talent_agent_model"
+  ],
+  "intelligence_blocks": [
+    "action-items",
+    "decisions",
+    "detailed-notes"
+  ],
+  "processing_status": "complete",
+  "processed_date": "2025-10-29T02:50:00Z",
+  "ingestion_method": "manual",
+  "notes": "Manually ingested transcript without speaker tracking. Speakers identified through semantic analysis."
+}

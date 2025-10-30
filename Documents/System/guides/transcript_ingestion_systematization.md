@@ -26,7 +26,7 @@ The transcript ingestion functionality has been successfully systematized into t
 8. `generate-summary` - Create comprehensive workflow reports
 
 ### 2. Command Registration
-**File:** `N5/commands.jsonl` (appended)
+**File:** `N5/recipes.jsonl` (appended)
 
 **Command:** `transcript-ingest`
 - **Args:** `transcript_source` (file path or Google Drive folder ID)

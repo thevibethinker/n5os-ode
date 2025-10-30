@@ -1,0 +1,37 @@
+{
+  "meeting_id": "2025-10-17_external-tony-padilla",
+  "date": "2025-10-17",
+  "classification": "external",
+  "stakeholder_type": "INVESTOR",
+  "participants": "Tony Padilla x Vrijen Attawar",
+  "transcript_source": "gdrive_id:12Y7mZuAM9qvmcJnOGKZFOQth8KMCAmFt",
+  "transcript_quality": "Fair",
+  "transcript_notes": "Incomplete due to audio issues mid-call, conversation ended abruptly during audio troubleshooting",
+  "processing_date": "2025-10-17T22:05:43Z",
+  "processing_version": "Registry v1.5",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B13_PLAN_OF_ACTION",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B27_KEY_MESSAGING"
+  ],
+  "blocks_count": 11,
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/tony-padilla.md",
+  "howie_tags": "[LD-INV] [GPT-E] [A-2]",
+  "priority": "non-critical",
+  "enrichment_priority": "MEDIUM",
+  "notes": [
+    "Transcript incomplete - audio issues during call",
+    "Key business update captured: Careerspan pivoting to debt structure, team reduction, consulting revenue model",
+    "Relationship appears warm and casual",
+    "Tony's actual relationship to Careerspan needs clarification (existing investor vs network contact)"
+  ]
+}

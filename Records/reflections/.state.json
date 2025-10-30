@@ -1,0 +1,61 @@
+{
+  "processed_files": {
+    "1S6FftZJDpPk9BTKV5JotPFDaP0PBlTo3": {
+      "name": "Productivity in the AI age and other assorted reflections",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545875Z"
+    },
+    "1xpU38stCtb1tnu8h52ya6kwggM8MZlTj": {
+      "name": "Reflections on N5 OS",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545919Z"
+    },
+    "1lKRPtUp2_IHBYm9GVQSC3UGbtmgYdLLo": {
+      "name": "Gestalt hiring, tracking over performers on CS, and tryhard positioning",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545950Z"
+    },
+    "1wwjc6WV28ak-l6x-TybI6-G7zwD7ttc7": {
+      "name": "\"Overperformer\" angle, pricing, product offering positioning",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545977Z"
+    },
+    "131TH8BJwwUTrk9V4ylEuoOX7n05Wnb8Q": {
+      "name": "Reflections on Zo and why workflow builders do or don't work",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546003Z"
+    },
+    "1oZLi2DL12Zzm6MQd12H208XCSWZu-F16": {
+      "name": "Reflections on Zo and why workflow builders do or don't work",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546029Z"
+    },
+    "13N3qQgQJgpXOkbMg7bJ9Y6ZqTtWam8E0": {
+      "name": "Planning out My strategy for engaging with Zo",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546054Z"
+    },
+    "1dSHKj5vgQ0NdBkMi6fNaOQg5cQUVyHnQ": {
+      "name": "Thoughts on Careers consumer app, focus on distributing through communities",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546080Z"
+    },
+    "1W_CV9ZQTklugXNjS4HN8OKd6OrVGWee2": {
+      "name": "Oct 24 at 14-46.m4a",
+      "type": "audio",
+      "ingested_at": "2025-10-29T05:09:31.546105Z"
+    }
+  },
+  "last_run": "2025-10-29T05:09:31.661031Z",
+  "processed_file_ids": [
+    "1S6FftZJDpPk9BTKV5JotPFDaP0PBlTo3",
+    "1xpU38stCtb1tnu8h52ya6kwggM8MZlTj",
+    "1lKRPtUp2_IHBYm9GVQSC3UGbtmgYdLLo",
+    "1wwjc6WV28ak-l6x-TybI6-G7zwD7ttc7",
+    "131TH8BJwwUTrk9V4ylEuoOX7n05Wnb8Q",
+    "1oZLi2DL12Zzm6MQd12H208XCSWZu-F16",
+    "13N3qQgQJgpXOkbMg7bJ9Y6ZqTtWam8E0",
+    "1dSHKj5vgQ0NdBkMi6fNaOQg5cQUVyHnQ",
+    "1W_CV9ZQTklugXNjS4HN8OKd6OrVGWee2"
+  ]
+}

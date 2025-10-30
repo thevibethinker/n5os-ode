@@ -9,7 +9,7 @@
 
 N5 has **two command systems**:
 
-1. **Formal Commands** → `file 'N5/config/commands.jsonl'` (83 registered)
+1. **Formal Commands** → `file 'Recipes/recipes.jsonl' (index only)` (83 registered)
 2. **Natural Language (Incantum)** → `file 'N5/config/incantum_triggers.json'`
 
 **For detailed explanation, see:** `file 'N5/prefs/system/command-triggering.md'`
@@ -75,10 +75,10 @@ python3 /home/workspace/N5/scripts/n5_search_commands.py "export"
 ```
 
 ### Browse full catalog
-`file 'N5/commands.md'` (generated from commands.jsonl)
+`file 'N5/commands.md'` (DEPRECATED - see recipe-execution-guide.md)
 
 ### Check registry directly
-`file 'N5/config/commands.jsonl'` (83 commands)
+`file 'Recipes/recipes.jsonl' (index only)` (83 commands)
 
 ---
 
@@ -102,6 +102,6 @@ python3 /home/workspace/N5/scripts/n5_search_commands.py "export"
 
 - **Command Triggering Guide:** `file 'N5/prefs/system/command-triggering.md'`
 - **Incantum User Guide:** `file 'N5/commands/incantum-quickref.md'`
-- **Command Registry:** `file 'N5/config/commands.jsonl'`
+- **Command Registry:** `file 'Recipes/recipes.jsonl' (index only)`
 - **Command Catalog:** `file 'N5/commands.md'`
 - **Incantum Triggers:** `file 'N5/config/incantum_triggers.json'`

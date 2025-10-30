@@ -21,7 +21,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 
 
 def detect_followup_section(b25_path: Path) -> bool:
@@ -253,7 +253,7 @@ def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Dict[str, an
     metadata['generated_deliverables'] = [
         {
             'type': 'follow_up_email',
-            'path': f"N5/records/meetings/{meeting_folder.name}/B25_DELIVERABLE_CONTENT_MAP.md",
+            'path': f"Personal/Meetings/{meeting_folder.name}/B25_DELIVERABLE_CONTENT_MAP.md",
             'section': 'Section 2',
             'status': 'pending',
             'detected_at': datetime.now(timezone.utc).isoformat(),

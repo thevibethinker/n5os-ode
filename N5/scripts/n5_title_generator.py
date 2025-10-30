@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """
-N5 Thread Title Generator
+N5 Thread Title Generator - Hybrid Version
 
-Auto-generates thread titles based on centralized emoji legend and content analysis.
-Follows noun-first principle and UI constraints (18-30 chars target, 35 max).
+Uses local pattern matching by default, with optional LLM enhancement.
+Reliable and fast with no external dependencies.
 
 Usage:
     from n5_title_generator import TitleGenerator
     
     generator = TitleGenerator()
     title_options = generator.generate_titles(aar_data, artifacts)
-    selected = generator.interactive_select(title_options)
 """
 
 import json
 import re
 import logging
+import subprocess
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -25,20 +26,18 @@ logger = logging.getLogger(__name__)
 ROOT = Path(__file__).resolve().parents[1]
 EMOJI_LEGEND_PATH = ROOT / "config" / "emoji-legend.json"
 
+# Configuration: Set to True to enable LLM title generation (slower, requires API)
+USE_LLM = False
+
 
 def get_date_prefix(convo_workspace: Path = None, timestamp: str = None) -> str:
     """Extract date and format as 'MMM DD | ' prefix."""
-    from datetime import datetime
-    
     if timestamp:
         dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
     elif convo_workspace:
-        # Try to extract from SESSION_STATE or last message
         session_file = convo_workspace / "SESSION_STATE.md"
         if session_file.exists():
             content = session_file.read_text()
-            # Extract date from "Started: YYYY-MM-DD" line
-            import re
             match = re.search(r'Started:\*\* (\d{4}-\d{2}-\d{2})', content)
             if match:
                 dt = datetime.fromisoformat(match.group(1))
@@ -53,15 +52,19 @@ def get_date_prefix(convo_workspace: Path = None, timestamp: str = None) -> str:
 
 
 class TitleGenerator:
-    """Generates thread titles using emoji legend and content analysis"""
+    """Generates thread titles using local pattern matching (with optional LLM enhancement)"""
     
-    def __init__(self):
+    def __init__(self, use_llm: bool = USE_LLM):
         self.emoji_legend = self._load_emoji_legend()
-        self.emojis_by_priority = sorted(
-            self.emoji_legend["emojis"],
-            key=lambda e: e.get("priority", 0),
-            reverse=True
-        )
+        self.use_llm = use_llm
+        
+        # Import local generator
+        try:
+            from n5_title_generator_local import TitleGeneratorLocal
+            self.local_generator = TitleGeneratorLocal()
+        except ImportError:
+            logger.warning("Local title generator not found, LLM will be required")
+            self.local_generator = None
     
     def _load_emoji_legend(self) -> Dict:
         """Load centralized emoji legend"""
@@ -75,313 +78,218 @@ class TitleGenerator:
             logger.error(f"Invalid emoji legend JSON: {e}")
             return {"emojis": [], "usage_contexts": {}}
     
+    def _call_llm_for_title(
+        self, 
+        aar_data: Dict, 
+        artifacts: List[Dict],
+        emoji_options: str
+    ) -> Dict:
+        """
+        Call LLM to generate contextual title based on conversation content.
+        
+        Returns dict with:
+        - title: Generated title (without date/emoji)
+        - emoji_name: Selected emoji name from legend
+        - reasoning: Why this title was chosen
+        """
+        # Build context from AAR
+        objective = aar_data.get("objective", "") or aar_data.get("executive_summary", {}).get("purpose", "") or aar_data.get("primary_objective", "")
+        summary = aar_data.get("summary", "") or aar_data.get("final_state", {}).get("summary", "")
+        key_events = aar_data.get("key_events", [])
+        
+        # Build artifact summary
+        artifact_summary = []
+        for art in artifacts[:10]:  # Limit to first 10
+            fname = art.get('filename', art.get('relative_path', 'unknown'))
+            artifact_summary.append(fname)
+        
+        # Build prompt for LLM
+        prompt = f"""Generate a specific, contextual title for this conversation thread.
+
+CONVERSATION CONTEXT:
+Objective: {objective}
+
+Summary: {summary}
+
+Key Events: {', '.join([e.get('description', '') for e in key_events[:5]])}
+
+Artifacts Created: {', '.join(artifact_summary) if artifact_summary else 'None'}
+
+EMOJI OPTIONS:
+{emoji_options}
+
+REQUIREMENTS:
+1. Title should be 15-30 characters (STRICT - shorter is better)
+2. Be SPECIFIC - mention actual system/component names, not generic terms
+3. Use noun-first structure (e.g., "Gmail Monitor Fix" not "Fix Gmail Monitor")
+4. Select appropriate emoji from options above based on conversation type
+5. NO generic titles like "System Work Build" or "Discussion Thread"
+
+OUTPUT FORMAT:
+- title: Specific Component Name
+- emoji_name: selected_emoji_name
+- reasoning: Why this title captures the conversation
+
+Generate title now."""
+        
+        # Define JSON schema for structured output
+        output_schema = {
+            "type": "object",
+            "properties": {
+                "title": {"type": "string"},
+                "emoji_name": {"type": "string"},
+                "reasoning": {"type": "string"}
+            },
+            "required": ["title", "emoji_name", "reasoning"]
+        }
+        
+        try:
+            # Call zo CLI with correct interface
+            result = subprocess.run(
+                ['zo', prompt, '--output-format', json.dumps(output_schema)],
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            
+            if result.returncode == 0:
+                # Parse JSON response from LLM
+                response_text = result.stdout.strip()
+                return json.loads(response_text)
+            else:
+                logger.error(f"LLM call failed: {result.stderr}")
+                return None
+                
+        except subprocess.TimeoutExpired:
+            logger.error("LLM call timed out")
+            return None
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse LLM response: {e}")
+            logger.debug(f"Response was: {result.stdout}")
+            return None
+        except Exception as e:
+            logger.error(f"Unexpected error calling LLM: {e}")
+            return None
+    
     def generate_titles(
         self, 
         aar_data: Dict, 
         artifacts: List[Dict],
         max_options: int = 3,
         convo_workspace: Path = None,
-        timestamp: str = None
+        timestamp: str = None,
+        convo_id: str = None
     ) -> List[Dict]:
         """
-        Generate title options based on thread content with date prefix
+        Generate title options using local pattern matching (or optional LLM)
         
         Returns list of dicts with:
-        - title: Full formatted title with date prefix
-        - emoji: Selected emoji
+        - title: Full formatted title with date prefix and emoji
+        - emoji: Selected emoji symbol
         - base_title: Title without emoji or date
-        - reasoning: Why this title/emoji was selected
+        - reasoning: Why this title was selected
         - length: Character count
         """
-        # Get date prefix
+        # Try local generator first (fast, reliable)
+        if self.local_generator:
+            try:
+                result = self.local_generator.generate_title(
+                    aar_data,
+                    artifacts,
+                    convo_workspace=convo_workspace,
+                    timestamp=timestamp,
+                    convo_id=convo_id
+                )
+                return [result]
+            except Exception as e:
+                logger.error(f"Local title generation failed: {e}")
+        
+        # If USE_LLM is enabled, try LLM generation
+        if self.use_llm:
+            date_prefix = get_date_prefix(convo_workspace, timestamp)
+            
+            # Build emoji options string for LLM
+            emoji_options = []
+            for emoji in self.emoji_legend.get("emojis", []):
+                emoji_options.append(
+                    f"- {emoji['symbol']} ({emoji['name']}): {emoji.get('description', 'N/A')}"
+                )
+            emoji_options_str = "\n".join(emoji_options)
+            
+            # Call LLM for title generation
+            llm_result = self._call_llm_for_title(aar_data, artifacts, emoji_options_str)
+            
+            if llm_result and "title" in llm_result:
+                # Find selected emoji
+                selected_emoji = next(
+                    (e for e in self.emoji_legend["emojis"] if e["name"] == llm_result.get("emoji_name")),
+                    self.emoji_legend["emojis"][0] if self.emoji_legend["emojis"] else {"symbol": "✅", "name": "completed"}
+                )
+                
+                base_title = llm_result["title"]
+                full_title = f"{date_prefix}{selected_emoji['symbol']} {base_title}"
+                
+                return [{
+                    "title": full_title,
+                    "emoji": selected_emoji["symbol"],
+                    "emoji_name": selected_emoji["name"],
+                    "base_title": base_title,
+                    "date_prefix": date_prefix,
+                    "reasoning": {
+                        "method": "LLM-generated",
+                        "explanation": llm_result.get("reasoning", ""),
+                        "emoji": f"Selected {selected_emoji['name']}"
+                    },
+                    "length": len(full_title),
+                    "valid": len(full_title) <= 45
+                }]
+        
+        # Final fallback
+        logger.warning("All title generation methods failed, using basic fallback")
         date_prefix = get_date_prefix(convo_workspace, timestamp)
-        
-        options = []
-        
-        # Extract content for analysis
-        objective = aar_data.get("objective", "")
-        summary = aar_data.get("summary", "")
-        decisions = aar_data.get("key_events", [])
-        
-        # Combine all text for keyword analysis
-        all_text = f"{objective} {summary} " + " ".join([
-            d.get("description", "") for d in decisions
-        ])
-        all_text_lower = all_text.lower()
-        
-        # Phase 1: Extract entities and actions
-        entity = self._extract_primary_entity(all_text, aar_data)
-        action = self._extract_primary_action(all_text, aar_data)
-        sequence_num = self._detect_sequence_number(all_text, artifacts)
-        
-        # Phase 2: Select emoji based on priority
-        selected_emoji, emoji_reasoning = self._select_emoji(all_text_lower, aar_data)
-        
-        # Phase 3: Format title (noun-first)
-        base_titles = self._format_title_variations(
-            entity, action, sequence_num, max_variations=max_options
-        )
-        
-        # Phase 4: Build options with date prefix
-        for base_title in base_titles:
-            full_title = f"{date_prefix}{selected_emoji['symbol']} {base_title}"
-            
-            options.append({
-                "title": full_title,
-                "emoji": selected_emoji["symbol"],
-                "emoji_name": selected_emoji["name"],
-                "base_title": base_title,
-                "date_prefix": date_prefix,
-                "reasoning": {
-                    "emoji": emoji_reasoning,
-                    "entity": entity,
-                    "action": action,
-                    "sequence": sequence_num
-                },
-                "length": len(full_title),
-                "valid": len(full_title) <= 45  # Increased for date prefix
-            })
-        
-        # Sort by validity and length (prefer shorter)
-        options.sort(key=lambda o: (not o["valid"], o["length"]))
-        
-        return options[:max_options]
+        return self._generate_fallback_titles(aar_data, artifacts, date_prefix, convo_id)
     
-    def _extract_primary_entity(self, text: str, aar_data: Dict) -> str:
-        """Extract main subject/entity (noun) - BE SPECIFIC, avoid generic terms"""
-        text_lower = text.lower()
+    def _generate_fallback_titles(
+        self,
+        aar_data: Dict,
+        artifacts: List[Dict],
+        date_prefix: str,
+        convo_id: str = None
+    ) -> List[Dict]:
+        """Fallback title generation if LLM call fails"""
+        # Extract basic info
+        objective = aar_data.get("objective", "") or aar_data.get("executive_summary", {}).get("purpose", "")
         
-        # Phase 1: Scan artifacts for SPECIFIC system names
-        artifacts = aar_data.get('artifacts', [])
-        specific_systems = []
+        # Use first artifact name if available
+        entity = "Conversation"
+        if artifacts:
+            fname = artifacts[0].get('filename', artifacts[0].get('relative_path', ''))
+            if fname:
+                entity = Path(fname).stem.replace('_', ' ').replace('-', ' ').title()[:20]
         
-        # Low-signal filters
-        def is_low_signal(name: str) -> bool:
-            n = name.lower()
-            if n.endswith('.log') or n.endswith('.tmp') or n.endswith('.bak'):
-                return True
-            bad_terms = ['step', 'flow', 'generate', 'legacy', 'test', 'demo', 'sample']
-            return any(bt in n for bt in bad_terms)
-        
-        # Mapping from filename fragments to canonical system names
-        component_map = [
-            ('content_library', 'Content Library'),
-            ('content-library', 'Content Library'),
-            ('email_corrections', 'Email Validation'),
-            ('email-corrections', 'Email Validation'),
-            ('gmail_monitor', 'Gmail Monitor'),
-            ('gmail-monitor', 'Gmail Monitor'),
-            ('email_registry', 'Email Registry'),
-            ('email-registry', 'Email Registry'),
-            ('b_block_parser', 'B-Block Parser'),
-            ('b-block-parser', 'B-Block Parser'),
-            ('email_composer', 'Email Composer'),
-            ('email-composer', 'Email Composer'),
-            ('n5_follow_up_email_generator', 'Follow-Up Email Generator'),
-            ('follow_up_email_generator', 'Follow-Up Email Generator'),
-        ]
-        
-        # First pass: use component_map matches
-        for artifact in artifacts:
-            fname = str(artifact.get('filename', '') or artifact.get('relative_path', '')).lower()
-            if not fname or is_low_signal(fname):
-                continue
-            for frag, canon in component_map:
-                if frag in fname:
-                    if canon not in specific_systems:
-                        specific_systems.append(canon)
-        
-        # Second pass: derive names from filenames (capitalized words), still filtered
-        if not specific_systems:
-            for artifact in artifacts:
-                fname = str(artifact.get('filename', '') or artifact.get('relative_path', '')).lower()
-                if not fname or is_low_signal(fname):
-                    continue
-                base = fname.rsplit('.', 1)[0]
-                base = base.replace('_', ' ').replace('-', ' ')
-                words = [w.capitalize() for w in base.split() if len(w) > 2]
-                if words:
-                    candidate = ' '.join(words[:3])
-                    if candidate and candidate not in ['Script', 'Module', 'File'] and candidate not in specific_systems:
-                        specific_systems.append(candidate)
-        
-        # If we found multiple specific systems, combine them
-        if len(specific_systems) >= 2:
-            return f"{specific_systems[0]} + {specific_systems[1]}"
-        elif len(specific_systems) == 1:
-            return specific_systems[0]
-        
-        # Phase 2: Specific entity patterns (order matters - most specific first)
-        entity_patterns = [
-            # SPECIFIC system names (from common N5 components)
-            (r'\b(akiflow|aki)', "Akiflow Integration"),
-            (r'\b(content library|content-library)', "Content Library"),
-            (r'\b(email validation|email validator|email-validator)', "Email Validation"),
-            (r'\b(meeting parser|meeting-parser)', "Meeting Parser"),
-            (r'\b(b-block|bblock)', "B-Block Parser"),
-            (r'\b(email composer|email-composer)', "Email Composer"),
-            (r'\b(gmail monitor|gmail-monitor)', "Gmail Monitor"),
-            (r'\b(email registry|email-registry)', "Email Registry"),
-            (r'\b(follow[-_ ]up email generator)', 'Follow-Up Email Generator'),
-            (r'\b(crm consolidation|crm-consolidation)', "CRM Consolidation"),
-            (r'\b(meeting intelligence|meeting-intelligence)', "Meeting Intelligence"),
-            (r'\b(thread export|thread-export)', "Thread Export"),
-            (r'\b(timeline automation|timeline-automation)', "Timeline Automation"),
-            (r'\b(personal intelligence|personal-intelligence)', "Personal Intelligence"),
-            (r'\b(stakeholder enrichment|stakeholder-enrichment)', "Stakeholder Enrichment"),
-            
-            # Broader but still specific
-            (r'\b(crm system)', "CRM System"),
-            (r'\b(email system)', "Email System"),
-            (r'\b(meeting system)', "Meeting System"),
-            (r'\b(n5 os|n5 system)', "N5 OS"),
-            
-            # Content types (still specific)
-            (r'\b(linkedin post|linkedin content)', "LinkedIn Post"),
-            (r'\b(system docs?)', "System Docs"),
-            (r'\b(command workflow)', "Command Workflow"),
-            (r'\b(automation script)', "Automation Script"),
-        ]
-        
-        for pattern, entity in entity_patterns:
-            if re.search(pattern, text_lower):
-                return entity
-        
-        # Phase 3: Extract from objective (look for capitalized multi-word phrases)
-        objective = aar_data.get("objective", "")
-        capitalized_phrases = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)', objective)
-        if capitalized_phrases:
-            return capitalized_phrases[0]
-        
-        # Last resort fallback - but flag it as generic
-        return "System Work"  # This will trigger a warning that title needs improvement
-    
-    def _extract_primary_action(self, text: str, aar_data: Dict) -> str:
-        """Extract main action/descriptor"""
-        text_lower = text.lower()
-        
-        # Action patterns (prefer nouns over verbs for brevity)
-        action_patterns = [
-            # Status/type (noun form)
-            (r'\b(refactor|refactoring)', "Refactor"),
-            (r'\b(implement|implementation)', "Implementation"),
-            (r'\b(setup|set up|setting up)', "Setup"),
-            (r'\b(discussion|discussed|discussing)', "Discussion"),
-            (r'\b(fix|fixing|bugfix|bug fix)', "Fix"),
-            (r'\b(build|building)', "Build"),
-            (r'\b(design|designing)', "Design"),
-            (r'\b(integration|integrating)', "Integration"),
-            (r'\b(migration|migrating)', "Migration"),
-            (r'\b(upgrade|upgrading)', "Upgrade"),
-            (r'\b(cleanup|cleaning)', "Cleanup"),
-            (r'\b(review|reviewing)', "Review"),
-            (r'\b(analysis|analyzing)', "Analysis"),
-            (r'\b(testing|test)', "Testing"),
-            (r'\b(deployment|deploying)', "Deployment"),
-            (r'\b(documentation|documenting)', "Docs"),
-            (r'\b(planning|plan)', "Planning"),
-            (r'\b(research|researching)', "Research"),
-            (r'\b(consolidat|consolidation)', "Consolidation"),
-            (r'\b(enhancement|enhancing)', "Enhancement"),
-        ]
-        
-        for pattern, action in action_patterns:
-            if re.search(pattern, text_lower):
-                return action
-        
-        # Fallback based on artifacts
-        if any('script' in a.get('type', '') for a in aar_data.get('artifacts', [])):
-            return "Script"
-        if any('doc' in a.get('type', '') for a in aar_data.get('artifacts', [])):
-            return "Documentation"
-        
-        return "Work"
-    
-    def _detect_sequence_number(self, text: str, artifacts: List[Dict]) -> Optional[int]:
-        """Detect if this is part of a numbered sequence"""
-        text_lower = text.lower()
-        
-        # Look for explicit numbering
-        patterns = [
-            r'#(\d+)',
-            r'\bpart (\d+)',
-            r'\bphase (\d+)',
-            r'\bstep (\d+)',
-            r'\bv(\d+)',
-            r'\bversion (\d+)',
-        ]
-        
-        for pattern in patterns:
-            match = re.search(pattern, text_lower)
-            if match:
-                return int(match.group(1))
-        
-        return None
-    
-    def _select_emoji(self, text_lower: str, aar_data: Dict) -> Tuple[Dict, str]:
-        """Select emoji based on priority and detection rules"""
-        
-        # Check each emoji by priority
-        for emoji in self.emojis_by_priority:
-            detection_rules = emoji.get("detection_rules", {})
-            positive_keywords = detection_rules.get("positive", [])
-            negative_keywords = detection_rules.get("negative", [])
-            
-            # Check negative keywords first (exclusions)
-            if any(neg.lower() in text_lower for neg in negative_keywords):
-                continue
-            
-            # Check positive keywords
-            if any(pos.lower() in text_lower for pos in positive_keywords):
-                reasoning = f"Detected '{emoji['name']}' via keywords: {positive_keywords[:3]}"
-                return emoji, reasoning
-        
-        # Default to completed
+        # Default emoji
         default_emoji = next(
             (e for e in self.emoji_legend["emojis"] if e["name"] == "completed"),
-            self.emoji_legend["emojis"][0] if self.emoji_legend["emojis"] else {
-                "symbol": "✅", "name": "completed", "priority": 10
-            }
+            {"symbol": "✅", "name": "completed"}
         )
-        return default_emoji, "Default (no specific indicators detected)"
-    
-    def _format_title_variations(
-        self, 
-        entity: str, 
-        action: str, 
-        sequence_num: Optional[int],
-        max_variations: int = 3
-    ) -> List[str]:
-        """Generate title variations with different formats"""
-        variations = []
         
-        # Variation 1: Entity + Action + #N
-        if sequence_num:
-            title = f"{entity} {action} #{sequence_num}"
-        else:
-            title = f"{entity} {action}"
-        variations.append(title)
+        base_title = entity
+        full_title = f"{date_prefix}{default_emoji['symbol']} {base_title}"
         
-        # Variation 2: Just Entity + #N (if action is generic)
-        if action in ["Work", "Discussion", "Implementation"] and sequence_num:
-            variations.append(f"{entity} #{sequence_num}")
-        
-        # Variation 3: Action + Entity (reversed, less preferred)
-        if len(variations) < max_variations:
-            if sequence_num:
-                variations.append(f"{action} {entity} #{sequence_num}")
-            else:
-                variations.append(f"{action} {entity}")
-        
-        # Remove duplicates while preserving order
-        seen = set()
-        unique_variations = []
-        for v in variations:
-            if v not in seen:
-                seen.add(v)
-                unique_variations.append(v)
-        
-        return unique_variations[:max_variations]
+        return [{
+            "title": full_title,
+            "emoji": default_emoji["symbol"],
+            "emoji_name": default_emoji["name"],
+            "base_title": base_title,
+            "date_prefix": date_prefix,
+            "reasoning": {
+                "method": "Fallback",
+                "explanation": "LLM generation failed",
+                "emoji": "Default"
+            },
+            "length": len(full_title),
+            "valid": len(full_title) <= 45
+        }]
     
     def interactive_select(self, options: List[Dict]) -> Optional[str]:
         """Interactive title selection with preview"""
@@ -394,8 +302,9 @@ class TitleGenerator:
         
         for idx, option in enumerate(options, 1):
             print(f"\n{idx}. {option['title']} ({option['length']} chars)")
-            print(f"   {option['reasoning']['emoji']}")
-            print(f"   Entity: {option['reasoning']['entity']}, Action: {option['reasoning']['action']}")
+            reasoning = option['reasoning']
+            print(f"   Method: {reasoning.get('method', 'N/A')}")
+            print(f"   {reasoning.get('explanation', 'N/A')}")
         
         print(f"\n{len(options) + 1}. Enter custom title")
         print("="*70)
@@ -414,20 +323,7 @@ class TitleGenerator:
             print(f"❌ Invalid choice. Enter 1-{len(options) + 1}")
     
     def generate_next_thread_title(self, current_title: str) -> Optional[str]:
-        """Generate title for next thread based on current title
-        
-        Rules:
-        - No number → treat as #1, next is #2
-        - Has #N → increment to #(N+1)
-        - Keep same emoji if it's 🔗, otherwise use 🔗 for continuation
-        - Keep same entity + action
-        
-        Args:
-            current_title: Current thread title (with or without emoji)
-            
-        Returns:
-            Next thread title with proper sequencing
-        """
+        """Generate title for next thread based on current title"""
         if not current_title:
             return None
         
@@ -458,83 +354,54 @@ class TitleGenerator:
                 break
         
         # Determine next number
-        if current_num is None:
-            # No number = treat as #1, next is #2
-            next_num = 2
-        else:
-            next_num = current_num + 1
+        next_num = 2 if current_num is None else current_num + 1
         
-        # Determine emoji for next thread
-        # Keep 🔗 if current has it, otherwise use 🔗 for continuation
-        if current_emoji == '🔗':
-            next_emoji = '🔗'
+        # Use continuation emoji if not already using one
+        continuation_emoji = "🔗"
+        if current_emoji and current_emoji == continuation_emoji:
+            next_emoji = current_emoji
         else:
-            # Use chain emoji for linked threads
-            next_emoji = '🔗'
+            next_emoji = continuation_emoji
         
         # Build next title
         next_title = f"{next_emoji} {base_title} #{next_num}"
-        
         return next_title
-    
-    def generate_auto_title(
-        self, 
-        aar_data: Dict, 
-        artifacts: List[Dict]
-    ) -> str:
-        """
-        Generate title automatically (no user interaction)
-        
-        Returns best title option
-        """
-        options = self.generate_titles(aar_data, artifacts, max_options=1)
-        if options:
-            return options[0]['title']
-        
-        # Fallback
-        return f"✅ Conversation {aar_data.get('archived_date', 'Unknown')}"
-
-
-def main():
-    """Test title generation"""
-    import argparse
-    
-    parser = argparse.ArgumentParser(description="Test thread title generation")
-    parser.add_argument("--test", action="store_true", help="Run with test data")
-    args = parser.parse_args()
-    
-    generator = TitleGenerator()
-    
-    if args.test:
-        # Test data
-        test_aar = {
-            "thread_id": "con_test123",
-            "objective": "Refactor CRM system to improve data consistency",
-            "summary": "Successfully refactored CRM database schema and migrated data. Fixed several bugs in the profile matching logic.",
-            "key_events": [
-                {"description": "Decided to use SQLite instead of JSON files"},
-                {"description": "Implemented new schema with proper foreign keys"}
-            ],
-            "artifacts": [
-                {"type": "script", "filename": "migrate_crm.py"},
-                {"type": "document", "filename": "schema.md"}
-            ],
-            "archived_date": "2025-10-16"
-        }
-        
-        print("Generating titles for test AAR...")
-        options = generator.generate_titles(test_aar, test_aar["artifacts"])
-        
-        for idx, option in enumerate(options, 1):
-            print(f"\nOption {idx}:")
-            print(f"  Title: {option['title']}")
-            print(f"  Length: {option['length']} chars")
-            print(f"  Valid: {option['valid']}")
-            print(f"  Reasoning: {option['reasoning']}")
-    else:
-        print("Use --test to run with test data")
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    main()
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Generate N5 thread titles")
+    parser.add_argument("--aar", required=True, help="Path to AAR JSON file")
+    parser.add_argument("--artifacts", help="Path to artifacts JSON file")
+    parser.add_argument("--convo-id", help="Conversation ID")
+    parser.add_argument("--interactive", action="store_true", help="Interactive selection")
+    
+    args = parser.parse_args()
+    
+    # Load AAR data
+    with open(args.aar, 'r') as f:
+        aar_data = json.load(f)
+    
+    # Load artifacts if provided
+    artifacts = []
+    if args.artifacts:
+        with open(args.artifacts, 'r') as f:
+            artifacts = json.load(f)
+    
+    # Generate titles
+    generator = TitleGenerator()
+    options = generator.generate_titles(
+        aar_data, 
+        artifacts,
+        convo_id=args.convo_id
+    )
+    
+    # Select title
+    if args.interactive:
+        selected = generator.interactive_select(options)
+        if selected:
+            print(f"\n✅ Selected: {selected}")
+    else:
+        if options:
+            print(options[0]['title'])

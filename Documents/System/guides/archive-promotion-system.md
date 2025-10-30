@@ -282,7 +282,7 @@ Then run conversation-end.
 | Implementation | `N5/scripts/n5_conversation_end.py` | Phase 6 logic |
 | Tests | `N5/scripts/test_archive_promotion.py` | Validation |
 | Documentation | `N5/docs/archive-promotion-system.md` | This file |
-| Command Registry | `N5/config/commands.jsonl` | Test command trigger |
+| Command Registry | `Recipes/recipes.jsonl` | Test command trigger |
 
 ---
 

@@ -1,0 +1,28 @@
+{
+  "meeting_id": "2025-10-27_external-gabi",
+  "meeting_date": "2025-10-27",
+  "stakeholder_type": "NETWORKING",
+  "stakeholder_name": "Gabi Zijderveld",
+  "stakeholder_company": "Blue Tulip",
+  "transcript_source": "N5/inbox/transcripts/Gabi_x_Vrijen_Onboarding-transcript-2025-10-27T19-44-45.808Z.docx",
+  "processing_date": "2025-10-28T09:19:51Z",
+  "registry_version": "1.6",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B05_OUTSTANDING_QUESTIONS"
+  ],
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/gabi-zijderveld.md",
+  "enrichment_priority": "MEDIUM",
+  "meeting_duration_minutes": 31,
+  "transcript_quality": "Good",
+  "confidence_score": "High",
+  "notes": "Technical onboarding session for Zo Computer with N5 system. Bootstrap installation failed due to system complexity, requiring fixes before continuation. Gabi demonstrated strong early adopter characteristics and systems thinking. No immediate business opportunity but valuable networking contact with referral potential."
+}

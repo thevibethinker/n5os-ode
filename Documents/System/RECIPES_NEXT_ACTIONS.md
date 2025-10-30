@@ -158,7 +158,7 @@ tags:
 
 ## Long-term Actions (Next Month)
 
-### 9. Decision: commands.jsonl Future 🤔
+### 9. Decision: recipes.jsonl Future 🤔
 **Options:**
 1. **Keep as-is** - Internal registry separate from Recipes
 2. **Update paths** - Point to Recipes/ instead of Commands/
@@ -197,7 +197,7 @@ tags:
 
 1. **Commands/ folder:** Archive or delete entirely?
 2. **Subdirectories:** Want to test category-based organization?
-3. **commands.jsonl:** Keep, update, or deprecate?
+3. **recipes.jsonl:** Keep, update, or deprecate?
 4. **Recipe discovery:** Want more sophisticated search/analytics?
 5. **Documentation:** Need recipe development guide now or later?
 

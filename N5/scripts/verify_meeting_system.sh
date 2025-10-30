@@ -28,7 +28,7 @@ echo ""
 # Check directories
 echo "3. Directory Structure:"
 for dir in "/home/workspace/Documents/Meetings/_staging" \
-           "/home/workspace/Careerspan/Meetings" \
+           "/home/workspace/Meetings" \
            "/home/workspace/N5/logs/meeting-processing"; do
     if [ -d "$dir" ]; then
         echo "   ✅ $dir"
@@ -58,12 +58,12 @@ echo ""
 
 # Count processed meetings
 echo "6. Processed Meetings:"
-if [ -d "/home/workspace/Careerspan/Meetings" ]; then
-    MEETING_COUNT=$(ls -1 /home/workspace/Careerspan/Meetings | wc -l)
+if [ -d "/home/workspace/Meetings" ]; then
+    MEETING_COUNT=$(ls -1 /home/workspace/Meetings | wc -l)
     echo "   📊 $MEETING_COUNT meeting folders"
     if [ $MEETING_COUNT -gt 0 ]; then
         echo "   Recent:"
-        ls -1t /home/workspace/Careerspan/Meetings | head -3 | sed 's/^/      - /'
+        ls -1t /home/workspace/Meetings | head -3 | sed 's/^/      - /'
     fi
 else
     echo "   ❌ Meetings directory not found"

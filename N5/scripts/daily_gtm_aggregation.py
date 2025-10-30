@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(mes
 logger = logging.getLogger(__name__)
 
 # Paths
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 REGISTRY_PATH = Path("/home/workspace/Knowledge/market_intelligence/.processed_meetings.json")
 GTM_DOC_PATH = Path("/home/workspace/Knowledge/market_intelligence/aggregated_insights_GTM.md")
 TRANSCRIPTS_DIR = Path("/home/workspace/N5/inbox/transcripts")

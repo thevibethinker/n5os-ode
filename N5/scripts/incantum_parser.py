@@ -20,13 +20,13 @@ logger = logging.getLogger(__name__)
 
 # Paths
 N5_ROOT = Path("/home/workspace/N5")
-COMMANDS_REGISTRY = N5_ROOT / "config/commands.jsonl"
+COMMANDS_REGISTRY = N5_ROOT / "config/recipes.jsonl"
 SHORTCUTS_FILE = N5_ROOT / "config/incantum_shortcuts.json"
 PATTERNS_FILE = N5_ROOT / "logs/incantum_patterns.jsonl"
 
 
 def load_commands_registry() -> Dict[str, dict]:
-    """Load command registry from commands.jsonl."""
+    """Load command registry from recipes.jsonl."""
     commands = {}
     
     if not COMMANDS_REGISTRY.exists():

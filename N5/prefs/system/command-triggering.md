@@ -10,7 +10,7 @@
 
 N5 has a **two-layer command system** that handles both formal command invocation and natural language triggering:
 
-1. **Commands Registry** (`N5/config/commands.jsonl`) — Formal command definitions
+1. **Commands Registry** (`Recipes/recipes.jsonl`) — Formal command definitions
 2. **Incantum Triggers** (`N5/config/incantum_triggers.json`) — Natural language → command mappings
 
 ---
@@ -19,7 +19,7 @@ N5 has a **two-layer command system** that handles both formal command invocatio
 
 ### Layer 1: Formal Commands
 
-**Location:** `file 'N5/config/commands.jsonl'`
+**Location:** `file 'Recipes/recipes.jsonl'`
 
 ```json
 {
@@ -71,7 +71,7 @@ N5 has a **two-layer command system** that handles both formal command invocatio
 
 **Contains:**
 - Primary trigger phrase
-- Target command (maps to commands.jsonl)
+- Target command (defined in recipe)
 - Natural language aliases
 - Confidence level
 
@@ -79,7 +79,7 @@ N5 has a **two-layer command system** that handles both formal command invocatio
 
 ## Critical Distinction
 
-### ❌ DON'T: Add aliases to commands.jsonl for natural language
+### ❌ DON'T: Add aliases to recipes for natural language
 
 ```json
 // WRONG - Don't do this
@@ -135,15 +135,15 @@ If missing or incomplete, add the natural language mapping:
 python3 /home/workspace/N5/scripts/n5_incantum.py "what user said"
 ```
 
-**Step 4: DO NOT modify commands.jsonl**
+**Step 4: DO NOT modify recipes**
 
-Unless it's a formal script-level alias (rare), keep commands.jsonl clean.
+Unless it's a formal script-level alias (rare), keep recipes clean.
 
 ---
 
 ## When to Use Each System
 
-### Commands Registry (commands.jsonl)
+### Recipe System
 ✅ **Use for:**
 - Script paths and metadata
 - Formal command definitions
@@ -203,12 +203,12 @@ python3 /home/workspace/N5/scripts/n5_incantum.py "export thread"
 
 1. **Check Incantum triggers first** — Look for natural language mapping
 2. **Use fuzzy matching as fallback** — If no explicit trigger exists
-3. **Never add aliases to commands.jsonl** — Unless it's a formal script alias
+3. **Never add aliases to recipes** — Unless it's a formal script alias
 4. **Document common patterns** — Add frequently-used phrases to Incantum
 
 ### For Command Authors
 
-1. **Define formal command in commands.jsonl**
+1. **Define formal recipe**
 2. **Add natural language triggers to incantum_triggers.json**
 3. **Include common variations** — "export", "save", "archive", etc.
 4. **Test with n5_incantum.py** — Verify matching works
@@ -290,7 +290,7 @@ Returns best natural language match with confidence score.
 ## Files Reference
 
 **Command Definitions:**
-- `file 'N5/config/commands.jsonl'` — Formal registry (83 commands)
+- `file 'Recipes/recipes.jsonl'` — Formal registry (83 commands)
 - `file 'N5/commands.md'` — Generated catalog (from docgen)
 
 **Natural Language:**

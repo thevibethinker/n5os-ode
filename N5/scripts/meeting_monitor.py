@@ -175,7 +175,7 @@ class MeetingMonitor:
                 lines.append(f"**[URGENT] {meeting['start_time']} - {meeting['summary']}**")
                 lines.append(f"- Stakeholder: {meeting['attendee_email']}")
                 if meeting['profile_dir']:
-                    profile_path = f"N5/records/meetings/{meeting['profile_dir']}/profile.md"
+                    profile_path = f"Personal/Meetings/{meeting['profile_dir']}/profile.md"
                     lines.append(f"- Profile: `file '{profile_path}'`")
                 lines.append(f"- Tags: {', '.join([f'[{tag}]' for tag in meeting['tags'].get('stakeholder_tags', [])])}")
                 lines.append("")
@@ -194,7 +194,7 @@ class MeetingMonitor:
                     lines.append(f"**{detail['start_time']} - {detail['summary']}**")
                     lines.append(f"- Stakeholder: {detail['attendee_email']}")
                     if detail.get('profile_dir'):
-                        profile_path = f"N5/records/meetings/{detail['profile_dir']}/profile.md"
+                        profile_path = f"Personal/Meetings/{detail['profile_dir']}/profile.md"
                         lines.append(f"- Profile: `file '{profile_path}'`")
                     lines.append("")
         

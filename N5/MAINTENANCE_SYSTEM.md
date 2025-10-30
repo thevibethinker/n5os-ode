@@ -133,7 +133,6 @@ The n5OS Maintenance System provides automated health monitoring, cleanup, and i
 **Critical System Files:**
 - `Documents/N5.md`
 - `N5/prefs/prefs.md`
-- `N5/config/commands.jsonl`
 
 **Essential Knowledge Files:**
 - `Knowledge/architectural/ingestion_standards.md`

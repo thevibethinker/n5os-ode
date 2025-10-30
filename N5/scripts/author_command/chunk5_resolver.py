@@ -98,8 +98,8 @@ class ConflictResolver:
         
         existing_commands = []
         
-        # Try to load from commands.jsonl if it exists
-        commands_file = Path('/home/workspace/commands.jsonl')
+        # Try to load from recipes.jsonl if it exists
+        commands_file = Path('/home/workspace/recipes.jsonl')
         if commands_file.exists():
             try:
                 with open(commands_file, 'r') as f:
@@ -107,7 +107,7 @@ class ConflictResolver:
                         if line.strip():
                             existing_commands.append(json.loads(line))
             except Exception as e:
-                logger.warning(f"Error loading commands.jsonl: {e}")
+                logger.warning(f"Error loading recipes.jsonl: {e}")
         
         # Also scan for existing scripts
         scripts_dir = Path('/home/workspace/N5/scripts')

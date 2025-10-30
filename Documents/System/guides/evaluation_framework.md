@@ -44,7 +44,7 @@ This framework provides a consistent methodology for evaluating N5OS functionali
    
 2. Survey command inventory
    ```bash
-   cat /home/workspace/N5/config/commands.jsonl | jq -r '.command' | wc -l
+   cat /home/workspace/Recipes/recipes.jsonl | jq -r '.command' | wc -l
    ```
    
 3. Survey script inventory

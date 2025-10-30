@@ -1,272 +1,136 @@
 {"name": "Add Digest", "file": "Recipes/Add Digest.md", "description": "Command: add-digest", "tags": [], "category": "recipes"}
-{"name": "Add Digest", "file": "Recipes/Add Digest.md", "description": "Command: add-digest", "tags": [], "category": "recipes"}
-{"name": "Aggregate Insights", "file": "Recipes/Aggregate Insights.md", "description": "Incrementally aggregate B31 stakeholder research insights across meetings to detect patterns, validate signals, and identify opportunities.", "tags": [], "category": "recipes"}
 {"name": "Aggregate Insights", "file": "Recipes/Aggregate Insights.md", "description": "Incrementally aggregate B31 stakeholder research insights across meetings to detect patterns, validate signals, and identify opportunities.", "tags": [], "category": "recipes"}
 {"name": "Aki", "file": "Recipes/Aki.md", "description": "Explicitly route task requests to Akiflow via Aki email interface.", "tags": [], "category": "recipes"}
-{"name": "Aki", "file": "Recipes/Aki.md", "description": "Explicitly route task requests to Akiflow via Aki email interface.", "tags": [], "category": "recipes"}
-{"name": "Akiflow Push", "file": "Recipes/Akiflow Push.md", "description": "Push formatted tasks from N5 \u2192 Akiflow via Aki email interface.", "tags": [], "category": "recipes"}
 {"name": "Akiflow Push", "file": "Recipes/Akiflow Push.md", "description": "Push formatted tasks from N5 \u2192 Akiflow via Aki email interface.", "tags": [], "category": "recipes"}
 {"name": "Analyze Meeting", "file": "Recipes/Analyze Meeting.md", "description": "Process meeting notes with standard analysis blocks", "tags": ["meetings", "analysis", "processing"], "category": "recipes"}
-{"name": "Analyze Meeting", "file": "Recipes/Analyze Meeting.md", "description": "Process meeting notes with standard analysis blocks", "tags": ["meetings", "analysis", "processing"], "category": "recipes"}
-{"name": "Auto Process Meetings", "file": "Recipes/Auto Process Meetings.md", "description": "Command: auto-process-meetings", "tags": null, "category": "recipes"}
 {"name": "Auto Process Meetings", "file": "Recipes/Auto Process Meetings.md", "description": "Command: auto-process-meetings", "tags": null, "category": "recipes"}
 {"name": "Browse Recipes", "file": "Recipes/Browse Recipes.md", "description": "Browse, search, and discover available recipes.\nShows recipe descriptions, tags, and usage patterns.", "tags": ["recipes", "discovery", "system"], "category": "recipes"}
-{"name": "Browse Recipes", "file": "Recipes/Browse Recipes.md", "description": "Browse, search, and discover available recipes.\nShows recipe descriptions, tags, and usage patterns.", "tags": ["recipes", "discovery", "system"], "category": "recipes"}
-{"name": "Build Review", "file": "Recipes/Build Review.md", "description": "Architecture compliance and quality review", "tags": ["architecture", "quality", "review", "principles"], "category": "recipes"}
 {"name": "Build Review", "file": "Recipes/Build Review.md", "description": "Architecture compliance and quality review", "tags": ["architecture", "quality", "review", "principles"], "category": "recipes"}
 {"name": "Careerspan Timeline Add", "file": "Recipes/Careerspan Timeline Add.md", "description": "Command: careerspan-timeline-add", "tags": [], "category": "recipes"}
-{"name": "Careerspan Timeline Add", "file": "Recipes/Careerspan Timeline Add.md", "description": "Command: careerspan-timeline-add", "tags": [], "category": "recipes"}
-{"name": "Careerspan Timeline", "file": "Recipes/Careerspan Timeline.md", "description": "Command: careerspan-timeline", "tags": [], "category": "recipes"}
 {"name": "Careerspan Timeline", "file": "Recipes/Careerspan Timeline.md", "description": "Command: careerspan-timeline", "tags": [], "category": "recipes"}
 {"name": "Check State Session", "file": "Recipes/Check State Session.md", "description": "Command: check-state-session", "tags": ["state-session", "tracking", "status"], "category": "recipes"}
-{"name": "Check State Session", "file": "Recipes/Check State Session.md", "description": "Command: check-state-session", "tags": ["state-session", "tracking", "status"], "category": "recipes"}
-{"name": "Cleanup Root", "file": "Recipes/Cleanup Root.md", "description": "Scan workspace root and move unprotected items to Inbox/ for processing. Part of the root clearinghouse system.", "tags": [], "category": "recipes"}
 {"name": "Cleanup Root", "file": "Recipes/Cleanup Root.md", "description": "Scan workspace root and move unprotected items to Inbox/ for processing. Part of the root clearinghouse system.", "tags": [], "category": "recipes"}
 {"name": "Close Conversation", "file": "Recipes/Close Conversation.md", "description": "Formal conversation end-step - resolve all conversation effects.\nReviews files, proposes organization, executes cleanup, generates AAR, archives build tracker.", "tags": ["session", "cleanup", "organization", "aar", "conversation"], "category": "recipes"}
-{"name": "Close Conversation", "file": "Recipes/Close Conversation.md", "description": "Formal conversation end-step - resolve all conversation effects.\nReviews files, proposes organization, executes cleanup, generates AAR, archives build tracker.", "tags": ["session", "cleanup", "organization", "aar", "conversation"], "category": "recipes"}
-{"name": "Conversation Diagnostics", "file": "Recipes/Conversation Diagnostics.md", "description": "Diagnose conversation metadata quality and propose cleanup/improvements.\nUses conversations.db to analyze titles, types, relationships, and suggest batch operations.", "tags": ["system", "diagnostics", "maintenance", "conversations"], "category": "recipes"}
 {"name": "Conversation Diagnostics", "file": "Recipes/Conversation Diagnostics.md", "description": "Diagnose conversation metadata quality and propose cleanup/improvements.\nUses conversations.db to analyze titles, types, relationships, and suggest batch operations.", "tags": ["system", "diagnostics", "maintenance", "conversations"], "category": "recipes"}
 {"name": "Convert Prompt", "file": "Recipes/Convert Prompt.md", "description": "Command: convert-prompt", "tags": ["prompts", "conversion", "formatting", "ai"], "category": "recipes"}
-{"name": "Convert Prompt", "file": "Recipes/Convert Prompt.md", "description": "Command: convert-prompt", "tags": ["prompts", "conversion", "formatting", "ai"], "category": "recipes"}
-{"name": "Core Audit", "file": "Recipes/Core Audit.md", "description": "Command: core-audit", "tags": ["audit", "health-check", "manifest"], "category": "recipes"}
 {"name": "Core Audit", "file": "Recipes/Core Audit.md", "description": "Command: core-audit", "tags": ["audit", "health-check", "manifest"], "category": "recipes"}
 {"name": "Create Tally Survey", "file": "Recipes/Create Tally Survey.md", "description": "Create a Tally.so survey programmatically from natural language description.\nSupports all field types available on FREE plan (unlimited forms & submissions).", "tags": ["tally", "surveys", "forms", "automation"], "category": "recipes"}
-{"name": "Create Tally Survey", "file": "Recipes/Create Tally Survey.md", "description": "Create a Tally.so survey programmatically from natural language description.\nSupports all field types available on FREE plan (unlimited forms & submissions).", "tags": ["tally", "surveys", "forms", "automation"], "category": "recipes"}
-{"name": "Crm Find", "file": "Recipes/Crm Find.md", "description": "Fast CRM database queries to find people, connections, and relationships.", "tags": [], "category": "recipes"}
 {"name": "Crm Find", "file": "Recipes/Crm Find.md", "description": "Fast CRM database queries to find people, connections, and relationships.", "tags": [], "category": "recipes"}
 {"name": "Crm Query", "file": "Recipes/Crm Query.md", "description": "Command: crm-query", "tags": [], "category": "recipes"}
-{"name": "Crm Query", "file": "Recipes/Crm Query.md", "description": "Command: crm-query", "tags": [], "category": "recipes"}
-{"name": "Deep Research Due Diligence", "file": "Recipes/Deep Research Due Diligence.md", "description": "Command: deep-research-due-diligence", "tags": ["utility"], "category": "recipes"}
 {"name": "Deep Research Due Diligence", "file": "Recipes/Deep Research Due Diligence.md", "description": "Command: deep-research-due-diligence", "tags": ["utility"], "category": "recipes"}
 {"name": "Deliverable Generate", "file": "Recipes/Deliverable Generate.md", "description": "Command: deliverable-generate", "tags": [], "category": "recipes"}
-{"name": "Deliverable Generate", "file": "Recipes/Deliverable Generate.md", "description": "Command: deliverable-generate", "tags": [], "category": "recipes"}
-{"name": "Deliverable Review", "file": "Recipes/Deliverable Review.md", "description": "Command: deliverable-review", "tags": [], "category": "recipes"}
 {"name": "Deliverable Review", "file": "Recipes/Deliverable Review.md", "description": "Command: deliverable-review", "tags": [], "category": "recipes"}
 {"name": "Digest Runs", "file": "Recipes/Digest Runs.md", "description": "Command: digest-runs", "tags": [], "category": "recipes"}
-{"name": "Digest Runs", "file": "Recipes/Digest Runs.md", "description": "Command: digest-runs", "tags": [], "category": "recipes"}
-{"name": "Direct Knowledge Ingest", "file": "Recipes/Direct Knowledge Ingest.md", "description": "Processes large document content directly through LLM conversation to extract structured knowledge into reservoirs:", "tags": [], "category": "recipes"}
 {"name": "Direct Knowledge Ingest", "file": "Recipes/Direct Knowledge Ingest.md", "description": "Processes large document content directly through LLM conversation to extract structured knowledge into reservoirs:", "tags": [], "category": "recipes"}
 {"name": "Docgen", "file": "Recipes/Docgen.md", "description": "Command: docgen", "tags": ["docgen", "automation", "catalog", "lists"], "category": "recipes"}
-{"name": "Docgen", "file": "Recipes/Docgen.md", "description": "Command: docgen", "tags": ["docgen", "automation", "catalog", "lists"], "category": "recipes"}
-{"name": "Drop Followup", "file": "Recipes/Drop Followup.md", "description": "Mark a follow-up email as declined to stop receiving reminders in the unsent-followups-digest.", "tags": [], "category": "recipes"}
 {"name": "Drop Followup", "file": "Recipes/Drop Followup.md", "description": "Mark a follow-up email as declined to stop receiving reminders in the unsent-followups-digest.", "tags": [], "category": "recipes"}
 {"name": "Email Post Process", "file": "Recipes/Email Post Process.md", "description": "Command: email-post-process", "tags": ["email", "postprocess", "guardrails"], "category": "recipes"}
-{"name": "Email Post Process", "file": "Recipes/Email Post Process.md", "description": "Command: email-post-process", "tags": ["email", "postprocess", "guardrails"], "category": "recipes"}
-{"name": "Emoji Legend", "file": "Recipes/Emoji Legend.md", "description": "View and search the centralized N5 emoji legend.\nShows emoji meanings, usage contexts, and detection rules.", "tags": ["n5", "emojis", "reference", "system"], "category": "recipes"}
 {"name": "Emoji Legend", "file": "Recipes/Emoji Legend.md", "description": "View and search the centralized N5 emoji legend.\nShows emoji meanings, usage contexts, and detection rules.", "tags": ["n5", "emojis", "reference", "system"], "category": "recipes"}
 {"name": "Export Thread", "file": "Recipes/Export Thread.md", "description": "Export Thread", "tags": ["threads", "export", "aar"], "category": "recipes"}
-{"name": "Export Thread", "file": "Recipes/Export Thread.md", "description": "Export Thread", "tags": ["threads", "export", "aar"], "category": "recipes"}
-{"name": "Extract Careerspan Insights", "file": "Recipes/Extract Careerspan Insights.md", "description": "Command: extract-careerspan-insights", "tags": [], "category": "recipes"}
 {"name": "Extract Careerspan Insights", "file": "Recipes/Extract Careerspan Insights.md", "description": "Command: extract-careerspan-insights", "tags": [], "category": "recipes"}
 {"name": "File Protector", "file": "Recipes/File Protector.md", "description": "Command: file-protector", "tags": [], "category": "recipes"}
-{"name": "File Protector", "file": "Recipes/File Protector.md", "description": "Command: file-protector", "tags": [], "category": "recipes"}
-{"name": "Flow Run", "file": "Recipes/Flow Run.md", "description": "Command: flow-run", "tags": [], "category": "recipes"}
 {"name": "Flow Run", "file": "Recipes/Flow Run.md", "description": "Command: flow-run", "tags": [], "category": "recipes"}
 {"name": "Follow Up Email Generator", "file": "Recipes/Follow Up Email Generator.md", "description": "Command: follow-up-email-generator", "tags": ["extraction", "analysis", "ai", "voice-echoing", "language-matching", "confidence-based-links", "readability", "enhanced-dials"], "category": "recipes"}
-{"name": "Follow Up Email Generator", "file": "Recipes/Follow Up Email Generator.md", "description": "Command: follow-up-email-generator", "tags": ["extraction", "analysis", "ai", "voice-echoing", "language-matching", "confidence-based-links", "readability", "enhanced-dials"], "category": "recipes"}
-{"name": "Function Import System", "file": "Recipes/Function Import System.md", "description": "Command: function-import-system", "tags": ["framework", "import", "workflow", "enhancement", "system"], "category": "recipes"}
 {"name": "Function Import System", "file": "Recipes/Function Import System.md", "description": "Command: function-import-system", "tags": ["framework", "import", "workflow", "enhancement", "system"], "category": "recipes"}
 {"name": "Generate Deliverables", "file": "Recipes/Generate Deliverables.md", "description": "Command: generate-deliverables", "tags": [], "category": "recipes"}
-{"name": "Generate Deliverables", "file": "Recipes/Generate Deliverables.md", "description": "Command: generate-deliverables", "tags": [], "category": "recipes"}
-{"name": "Generate Thread Title", "file": "Recipes/Generate Thread Title.md", "description": "Generate a descriptive thread title using N5 title generator", "tags": ["thread", "title", "export", "system"], "category": "recipes"}
 {"name": "Generate Thread Title", "file": "Recipes/Generate Thread Title.md", "description": "Generate a descriptive thread title using N5 title generator", "tags": ["thread", "title", "export", "system"], "category": "recipes"}
 {"name": "Generate With Voice", "file": "Recipes/Generate With Voice.md", "description": "Generate text content using the voice transformation system with multi-angle evaluation and hybrid structure.", "tags": [], "category": "recipes"}
-{"name": "Generate With Voice", "file": "Recipes/Generate With Voice.md", "description": "Generate text content using the voice transformation system with multi-angle evaluation and hybrid structure.", "tags": [], "category": "recipes"}
-{"name": "Gfetch", "file": "Recipes/Gfetch.md", "description": "Command: gfetch", "tags": ["gdrive", "gmail", "fetch", "retrieval"], "category": "recipes"}
 {"name": "Gfetch", "file": "Recipes/Gfetch.md", "description": "Command: gfetch", "tags": ["gdrive", "gmail", "fetch", "retrieval"], "category": "recipes"}
 {"name": "Git Audit", "file": "Recipes/Git Audit.md", "description": "Command: git-audit", "tags": [], "category": "recipes"}
-{"name": "Git Audit", "file": "Recipes/Git Audit.md", "description": "Command: git-audit", "tags": [], "category": "recipes"}
-{"name": "Git Check", "file": "Recipes/Git Check.md", "description": "Blocks unsafe commits by detecting:", "tags": ["git", "audit", "safety", "pre-commit"], "category": "recipes"}
 {"name": "Git Check", "file": "Recipes/Git Check.md", "description": "Blocks unsafe commits by detecting:", "tags": ["git", "audit", "safety", "pre-commit"], "category": "recipes"}
 {"name": "Grep Search Command Creation", "file": "Recipes/Grep Search Command Creation.md", "description": "Command: grep-search-command-creation", "tags": [], "category": "recipes"}
-{"name": "Grep Search Command Creation", "file": "Recipes/Grep Search Command Creation.md", "description": "Command: grep-search-command-creation", "tags": [], "category": "recipes"}
-{"name": "Hygiene Preflight", "file": "Recipes/Hygiene Preflight.md", "description": "Command: hygiene-preflight", "tags": ["audit", "hygiene", "validation"], "category": "recipes"}
 {"name": "Hygiene Preflight", "file": "Recipes/Hygiene Preflight.md", "description": "Command: hygiene-preflight", "tags": ["audit", "hygiene", "validation"], "category": "recipes"}
 {"name": "Idea Compounder", "file": "Recipes/Idea Compounder.md", "description": "Extended iterative Socratic dialogue - prevents premature convergence", "tags": ["strategic", "ideation", "iteration", "careerspan"], "category": "recipes"}
-{"name": "Idea Compounder", "file": "Recipes/Idea Compounder.md", "description": "Extended iterative Socratic dialogue - prevents premature convergence", "tags": ["strategic", "ideation", "iteration", "careerspan"], "category": "recipes"}
-{"name": "Inbox Process", "file": "Recipes/Inbox Process.md", "description": "Orchestrates the full Inbox processing workflow: analyze files, route high-confidence items, generate review document for human oversight.", "tags": [], "category": "recipes"}
 {"name": "Inbox Process", "file": "Recipes/Inbox Process.md", "description": "Orchestrates the full Inbox processing workflow: analyze files, route high-confidence items, generate review document for human oversight.", "tags": [], "category": "recipes"}
 {"name": "Inbox Review", "file": "Recipes/Inbox Review.md", "description": "Generate human-readable review document for Inbox files. Shows what's pending, what needs attention, and provides routing suggestions.", "tags": [], "category": "recipes"}
-{"name": "Inbox Review", "file": "Recipes/Inbox Review.md", "description": "Generate human-readable review document for Inbox files. Shows what's pending, what needs attention, and provides routing suggestions.", "tags": [], "category": "recipes"}
-{"name": "Incantum Quickref", "file": "Recipes/Incantum Quickref.md", "description": "Command: incantum-quickref", "tags": [], "category": "recipes"}
 {"name": "Incantum Quickref", "file": "Recipes/Incantum Quickref.md", "description": "Command: incantum-quickref", "tags": [], "category": "recipes"}
 {"name": "Index Rebuild", "file": "Recipes/Index Rebuild.md", "description": "Command: index-rebuild", "tags": [], "category": "recipes"}
-{"name": "Index Rebuild", "file": "Recipes/Index Rebuild.md", "description": "Command: index-rebuild", "tags": [], "category": "recipes"}
-{"name": "Index Update", "file": "Recipes/Index Update.md", "description": "Command: index-update", "tags": [], "category": "recipes"}
 {"name": "Index Update", "file": "Recipes/Index Update.md", "description": "Command: index-update", "tags": [], "category": "recipes"}
 {"name": "Init State Session", "file": "Recipes/Init State Session.md", "description": "Command: init-state-session", "tags": ["state-session", "tracking", "initialization", "build"], "category": "recipes"}
-{"name": "Init State Session", "file": "Recipes/Init State Session.md", "description": "Command: init-state-session", "tags": ["state-session", "tracking", "initialization", "build"], "category": "recipes"}
-{"name": "Internal Meeting Process", "file": "Recipes/Internal Meeting Process.md", "description": "Process internal team meeting transcripts into strategically structured intelligence blocks (B40-B48) following MECEM principles (Mutually Exclusive, Collectively Exhaustive, Minimally Repeating).", "tags": [], "category": "recipes"}
 {"name": "Internal Meeting Process", "file": "Recipes/Internal Meeting Process.md", "description": "Process internal team meeting transcripts into strategically structured intelligence blocks (B40-B48) following MECEM principles (Mutually Exclusive, Collectively Exhaustive, Minimally Repeating).", "tags": [], "category": "recipes"}
 {"name": "Job Source Extract", "file": "Recipes/Job Source Extract.md", "description": "Command: job-source-extract", "tags": ["jobs", "sourcing", "google-drive", "extraction"], "category": "recipes"}
-{"name": "Job Source Extract", "file": "Recipes/Job Source Extract.md", "description": "Command: job-source-extract", "tags": ["jobs", "sourcing", "google-drive", "extraction"], "category": "recipes"}
-{"name": "Job Source", "file": "Recipes/Job Source.md", "description": "Command: job-source", "tags": [], "category": "recipes"}
 {"name": "Job Source", "file": "Recipes/Job Source.md", "description": "Command: job-source", "tags": [], "category": "recipes"}
 {"name": "Jobs Add", "file": "Recipes/Jobs Add.md", "description": "Command: jobs-add", "tags": ["jobs", "careers", "list-management"], "category": "recipes"}
-{"name": "Jobs Add", "file": "Recipes/Jobs Add.md", "description": "Command: jobs-add", "tags": ["jobs", "careers", "list-management"], "category": "recipes"}
-{"name": "Jobs Review", "file": "Recipes/Jobs Review.md", "description": "Command: jobs-review", "tags": ["jobs", "careers", "review", "tui"], "category": "recipes"}
 {"name": "Jobs Review", "file": "Recipes/Jobs Review.md", "description": "Command: jobs-review", "tags": ["jobs", "careers", "review", "tui"], "category": "recipes"}
 {"name": "Jobs Scrape", "file": "Recipes/Jobs Scrape.md", "description": "Command: jobs-scrape", "tags": ["jobs", "careers", "scraping", "automation"], "category": "recipes"}
-{"name": "Jobs Scrape", "file": "Recipes/Jobs Scrape.md", "description": "Command: jobs-scrape", "tags": ["jobs", "careers", "scraping", "automation"], "category": "recipes"}
-{"name": "Knowledge Add", "file": "Recipes/Knowledge Add.md", "description": "Command: knowledge-add", "tags": [], "category": "recipes"}
 {"name": "Knowledge Add", "file": "Recipes/Knowledge Add.md", "description": "Command: knowledge-add", "tags": [], "category": "recipes"}
 {"name": "Knowledge Find", "file": "Recipes/Knowledge Find.md", "description": "Command: knowledge-find", "tags": [], "category": "recipes"}
-{"name": "Knowledge Find", "file": "Recipes/Knowledge Find.md", "description": "Command: knowledge-find", "tags": [], "category": "recipes"}
-{"name": "Knowledge Ingest", "file": "Recipes/Knowledge Ingest.md", "description": "Command: knowledge-ingest", "tags": [], "category": "recipes"}
 {"name": "Knowledge Ingest", "file": "Recipes/Knowledge Ingest.md", "description": "Command: knowledge-ingest", "tags": [], "category": "recipes"}
 {"name": "Lessons Review", "file": "Recipes/Lessons Review.md", "description": "Command: lessons-review", "tags": ["lessons", "review", "principles", "learning"], "category": "recipes"}
-{"name": "Lessons Review", "file": "Recipes/Lessons Review.md", "description": "Command: lessons-review", "tags": ["lessons", "review", "principles", "learning"], "category": "recipes"}
-{"name": "Linkedin Post Generate", "file": "Recipes/Linkedin Post Generate.md", "description": "Generate professional, voice-authentic LinkedIn posts that sound unmistakably like Vrijen while delivering substantive insight and driving engagement.", "tags": [], "category": "recipes"}
 {"name": "Linkedin Post Generate", "file": "Recipes/Linkedin Post Generate.md", "description": "Generate professional, voice-authentic LinkedIn posts that sound unmistakably like Vrijen while delivering substantive insight and driving engagement.", "tags": [], "category": "recipes"}
 {"name": "List View", "file": "Recipes/List View.md", "description": "Enforces Single Source of Truth (SSOT) principle for lists by:", "tags": ["lists", "view", "docgen", "ssot"], "category": "recipes"}
-{"name": "List View", "file": "Recipes/List View.md", "description": "Enforces Single Source of Truth (SSOT) principle for lists by:", "tags": ["lists", "view", "docgen", "ssot"], "category": "recipes"}
-{"name": "Lists Add", "file": "Recipes/Lists Add.md", "description": "Command: lists-add", "tags": [], "category": "recipes"}
 {"name": "Lists Add", "file": "Recipes/Lists Add.md", "description": "Command: lists-add", "tags": [], "category": "recipes"}
 {"name": "Lists Create", "file": "Recipes/Lists Create.md", "description": "Command: lists-create", "tags": [], "category": "recipes"}
-{"name": "Lists Create", "file": "Recipes/Lists Create.md", "description": "Command: lists-create", "tags": [], "category": "recipes"}
-{"name": "Lists Export", "file": "Recipes/Lists Export.md", "description": "Command: lists-export", "tags": [], "category": "recipes"}
 {"name": "Lists Export", "file": "Recipes/Lists Export.md", "description": "Command: lists-export", "tags": [], "category": "recipes"}
 {"name": "Lists Find", "file": "Recipes/Lists Find.md", "description": "Command: lists-find", "tags": [], "category": "recipes"}
-{"name": "Lists Find", "file": "Recipes/Lists Find.md", "description": "Command: lists-find", "tags": [], "category": "recipes"}
-{"name": "Lists Health Check", "file": "Recipes/Lists Health Check.md", "description": "Command: lists-health-check", "tags": ["lists", "monitoring", "health", "phase3"], "category": "recipes"}
 {"name": "Lists Health Check", "file": "Recipes/Lists Health Check.md", "description": "Command: lists-health-check", "tags": ["lists", "monitoring", "health", "phase3"], "category": "recipes"}
 {"name": "Lists Move", "file": "Recipes/Lists Move.md", "description": "Command: lists-move", "tags": [], "category": "recipes"}
-{"name": "Lists Move", "file": "Recipes/Lists Move.md", "description": "Command: lists-move", "tags": [], "category": "recipes"}
-{"name": "Lists Pin", "file": "Recipes/Lists Pin.md", "description": "Command: lists-pin", "tags": [], "category": "recipes"}
 {"name": "Lists Pin", "file": "Recipes/Lists Pin.md", "description": "Command: lists-pin", "tags": [], "category": "recipes"}
 {"name": "Lists Promote", "file": "Recipes/Lists Promote.md", "description": "Command: lists-promote", "tags": [], "category": "recipes"}
-{"name": "Lists Promote", "file": "Recipes/Lists Promote.md", "description": "Command: lists-promote", "tags": [], "category": "recipes"}
-{"name": "Lists Set", "file": "Recipes/Lists Set.md", "description": "Command: lists-set", "tags": [], "category": "recipes"}
 {"name": "Lists Set", "file": "Recipes/Lists Set.md", "description": "Command: lists-set", "tags": [], "category": "recipes"}
 {"name": "Manage Drafts", "file": "Recipes/Manage Drafts.md", "description": "Command: manage-drafts", "tags": ["drafts", "review", "cleanup", "productivity"], "category": "recipes"}
-{"name": "Manage Drafts", "file": "Recipes/Manage Drafts.md", "description": "Command: manage-drafts", "tags": ["drafts", "review", "cleanup", "productivity"], "category": "recipes"}
-{"name": "Meeting Approve", "file": "Recipes/Meeting Approve.md", "description": "Command: meeting-approve", "tags": [], "category": "recipes"}
 {"name": "Meeting Approve", "file": "Recipes/Meeting Approve.md", "description": "Command: meeting-approve", "tags": [], "category": "recipes"}
 {"name": "Meeting Auto Process", "file": "Recipes/Meeting Auto Process.md", "description": "Command: meeting-auto-process", "tags": [], "category": "recipes"}
-{"name": "Meeting Auto Process", "file": "Recipes/Meeting Auto Process.md", "description": "Command: meeting-auto-process", "tags": [], "category": "recipes"}
-{"name": "Meeting Auto Processor", "file": "Recipes/Meeting Auto Processor.md", "description": "Process meeting transcripts automatically using Zo's LLM capabilities instead of external API calls.", "tags": null, "category": "recipes"}
 {"name": "Meeting Auto Processor", "file": "Recipes/Meeting Auto Processor.md", "description": "Process meeting transcripts automatically using Zo's LLM capabilities instead of external API calls.", "tags": null, "category": "recipes"}
 {"name": "Meeting Detect", "file": "Recipes/Meeting Detect.md", "description": "Command: meeting-detect", "tags": [], "category": "recipes"}
-{"name": "Meeting Detect", "file": "Recipes/Meeting Detect.md", "description": "Command: meeting-detect", "tags": [], "category": "recipes"}
-{"name": "Meeting Intelligence Orchestrator", "file": "Recipes/Meeting Intelligence Orchestrator.md", "description": "[DEPRECATED] Command: meeting-intelligence-orchestrator", "tags": ["deprecated", "archived"], "category": "recipes"}
 {"name": "Meeting Intelligence Orchestrator", "file": "Recipes/Meeting Intelligence Orchestrator.md", "description": "[DEPRECATED] Command: meeting-intelligence-orchestrator", "tags": ["deprecated", "archived"], "category": "recipes"}
 {"name": "Meeting Prep Digest", "file": "Recipes/Meeting Prep Digest.md", "description": "Command: meeting-prep-digest", "tags": [], "category": "recipes"}
-{"name": "Meeting Prep Digest", "file": "Recipes/Meeting Prep Digest.md", "description": "Command: meeting-prep-digest", "tags": [], "category": "recipes"}
-{"name": "Meeting Process", "file": "Recipes/Meeting Process.md", "description": "Command: meeting-process", "tags": [], "category": "recipes"}
 {"name": "Meeting Process", "file": "Recipes/Meeting Process.md", "description": "Command: meeting-process", "tags": [], "category": "recipes"}
 {"name": "Meeting Transcript Process", "file": "Recipes/Meeting Transcript Process.md", "description": "Process a meeting transcript using **semantic analysis by Zo** (not regex parsing).", "tags": [], "category": "recipes"}
-{"name": "Meeting Transcript Process", "file": "Recipes/Meeting Transcript Process.md", "description": "Process a meeting transcript using **semantic analysis by Zo** (not regex parsing).", "tags": [], "category": "recipes"}
-{"name": "Meeting Transcript Scan", "file": "Recipes/Meeting Transcript Scan.md", "description": "Scan Google Drive for NEW meeting transcripts, download them, classify stakeholders, and create processing requests with proper deduplication.", "tags": [], "category": "recipes"}
 {"name": "Meeting Transcript Scan", "file": "Recipes/Meeting Transcript Scan.md", "description": "Scan Google Drive for NEW meeting transcripts, download them, classify stakeholders, and create processing requests with proper deduplication.", "tags": [], "category": "recipes"}
 {"name": "Networking Event Process", "file": "Recipes/Networking Event Process.md", "description": "Command: networking-event-process", "tags": ["networking", "crm", "follow-up", "automation", "interactive"], "category": "recipes"}
-{"name": "Networking Event Process", "file": "Recipes/Networking Event Process.md", "description": "Command: networking-event-process", "tags": ["networking", "crm", "follow-up", "automation", "interactive"], "category": "recipes"}
-{"name": "Orchestrator Thread", "file": "Recipes/Orchestrator Thread.md", "description": "Create and maintain a dedicated orchestrator thread to coordinate multi-conversation upgrades\n(conversation-end consistency, title generation, session-state enrichment, supervisor workflows).", "tags": ["system", "orchestration", "planning"], "category": "recipes"}
 {"name": "Orchestrator Thread", "file": "Recipes/Orchestrator Thread.md", "description": "Create and maintain a dedicated orchestrator thread to coordinate multi-conversation upgrades\n(conversation-end consistency, title generation, session-state enrichment, supervisor workflows).", "tags": ["system", "orchestration", "planning"], "category": "recipes"}
 {"name": "Persona Create", "file": "Recipes/Persona Create.md", "description": "Create reusable persona instruction sets (like Vibe Builder) for specialized Zo behaviors.", "tags": ["persona", "template", "documentation"], "category": "recipes"}
-{"name": "Persona Create", "file": "Recipes/Persona Create.md", "description": "Create reusable persona instruction sets (like Vibe Builder) for specialized Zo behaviors.", "tags": ["persona", "template", "documentation"], "category": "recipes"}
-{"name": "Placeholder Scan", "file": "Recipes/Placeholder Scan.md", "description": "Command: placeholder-scan", "tags": ["quality", "principles", "P16", "P21", "conversation-end"], "category": "recipes"}
 {"name": "Placeholder Scan", "file": "Recipes/Placeholder Scan.md", "description": "Command: placeholder-scan", "tags": ["quality", "principles", "P16", "P21", "conversation-end"], "category": "recipes"}
 {"name": "Play Movie", "file": "Recipes/Play Movie.md", "description": "Generate a direct playback link for movies using The Movie Database (TMDB) ID and the Zo Stream service.", "tags": ["media", "streaming", "entertainment", "url-generation"], "category": "recipes"}
-{"name": "Play Movie", "file": "Recipes/Play Movie.md", "description": "Generate a direct playback link for movies using The Movie Database (TMDB) ID and the Zo Stream service.", "tags": ["media", "streaming", "entertainment", "url-generation"], "category": "recipes"}
-{"name": "Play Tv Show", "file": "Recipes/Play Tv Show.md", "description": "Generate a direct playback link for TV show episodes using The Movie Database (TMDB) ID and the Zo Stream service.", "tags": ["media", "streaming", "entertainment", "tv", "url-generation"], "category": "recipes"}
 {"name": "Play Tv Show", "file": "Recipes/Play Tv Show.md", "description": "Generate a direct playback link for TV show episodes using The Movie Database (TMDB) ID and the Zo Stream service.", "tags": ["media", "streaming", "entertainment", "tv", "url-generation"], "category": "recipes"}
 {"name": "Pr Intel Extractor", "file": "Recipes/Pr Intel Extractor.md", "description": "Command: pr-intel-extractor", "tags": ["extraction", "analysis", "ai"], "category": "recipes"}
-{"name": "Pr Intel Extractor", "file": "Recipes/Pr Intel Extractor.md", "description": "Command: pr-intel-extractor", "tags": ["extraction", "analysis", "ai"], "category": "recipes"}
-{"name": "Process to Knowledge", "file": "Recipes/Process to Knowledge.md", "description": "Convert Records \u2192 Knowledge with classification and tagging", "tags": ["knowledge", "classification", "processing"], "category": "recipes"}
 {"name": "Process to Knowledge", "file": "Recipes/Process to Knowledge.md", "description": "Convert Records \u2192 Knowledge with classification and tagging", "tags": ["knowledge", "classification", "processing"], "category": "recipes"}
 {"name": "Prompt Import", "file": "Recipes/Prompt Import.md", "description": "Import personal prompts into N5 OS with standardized conversion", "tags": ["prompts", "ai"], "category": "recipes"}
-{"name": "Prompt Import", "file": "Recipes/Prompt Import.md", "description": "Import personal prompts into N5 OS with standardized conversion", "tags": ["prompts", "ai"], "category": "recipes"}
-{"name": "Quick Add", "file": "Recipes/Quick Add.md", "description": "Command: quick-add", "tags": ["lists", "text-processing", "categorization"], "category": "recipes"}
 {"name": "Quick Add", "file": "Recipes/Quick Add.md", "description": "Command: quick-add", "tags": ["lists", "text-processing", "categorization"], "category": "recipes"}
 {"name": "Quick Classify", "file": "Recipes/Quick Classify.md", "description": "Tag and file documents quickly", "tags": ["organization", "classification", "filing"], "category": "recipes"}
-{"name": "Quick Classify", "file": "Recipes/Quick Classify.md", "description": "Tag and file documents quickly", "tags": ["organization", "classification", "filing"], "category": "recipes"}
-{"name": "Reflect Process", "file": "Recipes/Reflect Process.md", "description": "Process reflection queue end-to-end: ingest from Google Drive, classify, and generate block content.", "tags": [], "category": "recipes"}
 {"name": "Reflect Process", "file": "Recipes/Reflect Process.md", "description": "Process reflection queue end-to-end: ingest from Google Drive, classify, and generate block content.", "tags": [], "category": "recipes"}
 {"name": "Reflection Auto Ingest", "file": "Recipes/Reflection Auto Ingest.md", "description": "Command: reflection-auto-ingest", "tags": [], "category": "recipes"}
-{"name": "Reflection Auto Ingest", "file": "Recipes/Reflection Auto Ingest.md", "description": "Command: reflection-auto-ingest", "tags": [], "category": "recipes"}
-{"name": "Reflection Email Orchestrator", "file": "Recipes/Reflection Email Orchestrator.md", "description": "Command: reflection-email-orchestrator", "tags": [], "category": "recipes"}
 {"name": "Reflection Email Orchestrator", "file": "Recipes/Reflection Email Orchestrator.md", "description": "Command: reflection-email-orchestrator", "tags": [], "category": "recipes"}
 {"name": "Reflection Ingest", "file": "Recipes/Reflection Ingest.md", "description": "Manually triggered command that:", "tags": [], "category": "recipes"}
-{"name": "Reflection Ingest", "file": "Recipes/Reflection Ingest.md", "description": "Manually triggered command that:", "tags": [], "category": "recipes"}
-{"name": "Reflection Pipeline", "file": "Recipes/Reflection Pipeline.md", "description": "Command: reflection-pipeline", "tags": [], "category": "recipes"}
 {"name": "Reflection Pipeline", "file": "Recipes/Reflection Pipeline.md", "description": "Command: reflection-pipeline", "tags": [], "category": "recipes"}
 {"name": "Reflection Pull Gdrive", "file": "Recipes/Reflection Pull Gdrive.md", "description": "Command: reflection-pull-gdrive", "tags": [], "category": "recipes"}
-{"name": "Reflection Pull Gdrive", "file": "Recipes/Reflection Pull Gdrive.md", "description": "Command: reflection-pull-gdrive", "tags": [], "category": "recipes"}
-{"name": "Reflection Synthesizer", "file": "Recipes/Reflection Synthesizer.md", "description": "Transform strategic sessions and transcripts into structured outputs", "tags": ["strategic", "synthesis", "reflection", "careerspan"], "category": "recipes"}
 {"name": "Reflection Synthesizer", "file": "Recipes/Reflection Synthesizer.md", "description": "Transform strategic sessions and transcripts into structured outputs", "tags": ["strategic", "synthesis", "reflection", "careerspan"], "category": "recipes"}
 {"name": "Reflection Worker", "file": "Recipes/Reflection Worker.md", "description": "Command: reflection-worker", "tags": [], "category": "recipes"}
-{"name": "Reflection Worker", "file": "Recipes/Reflection Worker.md", "description": "Command: reflection-worker", "tags": [], "category": "recipes"}
-{"name": "Relationship Pipeline Add", "file": "Recipes/Relationship Pipeline Add.md", "description": "Command: relationship-pipeline-add", "tags": ["networking", "relationships", "introductions", "people"], "category": "recipes"}
 {"name": "Relationship Pipeline Add", "file": "Recipes/Relationship Pipeline Add.md", "description": "Command: relationship-pipeline-add", "tags": ["networking", "relationships", "introductions", "people"], "category": "recipes"}
 {"name": "Research Prompt Generator", "file": "Recipes/Research Prompt Generator.md", "description": "Command: research-prompt-generator", "tags": [], "category": "recipes"}
-{"name": "Research Prompt Generator", "file": "Recipes/Research Prompt Generator.md", "description": "Command: research-prompt-generator", "tags": [], "category": "recipes"}
-{"name": "Resume", "file": "Recipes/Resume.md", "description": "Resume operations after connection drops or errors. Provides context about previous state.", "tags": ["error-recovery", "system", "troubleshooting"], "category": "recipes"}
 {"name": "Resume", "file": "Recipes/Resume.md", "description": "Resume operations after connection drops or errors. Provides context about previous state.", "tags": ["error-recovery", "system", "troubleshooting"], "category": "recipes"}
 {"name": "Review Cli", "file": "Recipes/Review Cli.md", "description": "Command: review-cli", "tags": [], "category": "recipes"}
-{"name": "Review Cli", "file": "Recipes/Review Cli.md", "description": "Command: review-cli", "tags": [], "category": "recipes"}
-{"name": "Safety Check", "file": "Recipes/Safety Check.md", "description": "Run N5 safety audit and compliance check", "tags": ["safety", "quality", "audit", "principles"], "category": "recipes"}
 {"name": "Safety Check", "file": "Recipes/Safety Check.md", "description": "Run N5 safety audit and compliance check", "tags": ["safety", "quality", "audit", "principles"], "category": "recipes"}
 {"name": "Search Commands", "file": "Recipes/Search Commands.md", "description": "Search the N5 command registry (`N5/config/commands.jsonl`) by keyword, category, or description. Helps discover available commands without manually reading the registry.", "tags": [], "category": "recipes"}
-{"name": "Search Commands", "file": "Recipes/Search Commands.md", "description": "Search the N5 command registry (`N5/config/commands.jsonl`) by keyword, category, or description. Helps discover available commands without manually reading the registry.", "tags": [], "category": "recipes"}
-{"name": "Social Idea Add", "file": "Recipes/Social Idea Add.md", "description": "Command: social-idea-add", "tags": ["social-media", "content", "ideas", "capture"], "category": "recipes"}
 {"name": "Social Idea Add", "file": "Recipes/Social Idea Add.md", "description": "Command: social-idea-add", "tags": ["social-media", "content", "ideas", "capture"], "category": "recipes"}
 {"name": "Social Idea Generate", "file": "Recipes/Social Idea Generate.md", "description": "Command: social-idea-generate", "tags": ["social-media", "generation", "content", "automation"], "category": "recipes"}
-{"name": "Social Idea Generate", "file": "Recipes/Social Idea Generate.md", "description": "Command: social-idea-generate", "tags": ["social-media", "generation", "content", "automation"], "category": "recipes"}
-{"name": "Social Post Add", "file": "Recipes/Social Post Add.md", "description": "Command: social-post-add", "tags": ["social-media", "content", "linkedin"], "category": "recipes"}
 {"name": "Social Post Add", "file": "Recipes/Social Post Add.md", "description": "Command: social-post-add", "tags": ["social-media", "content", "linkedin"], "category": "recipes"}
 {"name": "Social Post Generate Multi Angle", "file": "Recipes/Social Post Generate Multi Angle.md", "description": "Command: social-post-generate-multi-angle", "tags": ["social", "content", "linkedin", "reflection", "knowledge-enrichment"], "category": "recipes"}
-{"name": "Social Post Generate Multi Angle", "file": "Recipes/Social Post Generate Multi Angle.md", "description": "Command: social-post-generate-multi-angle", "tags": ["social", "content", "linkedin", "reflection", "knowledge-enrichment"], "category": "recipes"}
-{"name": "Social Post Health", "file": "Recipes/Social Post Health.md", "description": "Command: social-post-health", "tags": ["social-media", "health", "diagnostic"], "category": "recipes"}
 {"name": "Social Post Health", "file": "Recipes/Social Post Health.md", "description": "Command: social-post-health", "tags": ["social-media", "health", "diagnostic"], "category": "recipes"}
 {"name": "Social Post List", "file": "Recipes/Social Post List.md", "description": "Command: social-post-list", "tags": ["social-media", "query", "list"], "category": "recipes"}
-{"name": "Social Post List", "file": "Recipes/Social Post List.md", "description": "Command: social-post-list", "tags": ["social-media", "query", "list"], "category": "recipes"}
-{"name": "Social Post Stats", "file": "Recipes/Social Post Stats.md", "description": "Command: social-post-stats", "tags": ["social-media", "analytics", "stats"], "category": "recipes"}
 {"name": "Social Post Stats", "file": "Recipes/Social Post Stats.md", "description": "Command: social-post-stats", "tags": ["social-media", "analytics", "stats"], "category": "recipes"}
 {"name": "Social Post Status", "file": "Recipes/Social Post Status.md", "description": "Command: social-post-status", "tags": ["social-media", "workflow", "status"], "category": "recipes"}
-{"name": "Social Post Status", "file": "Recipes/Social Post Status.md", "description": "Command: social-post-status", "tags": ["social-media", "workflow", "status"], "category": "recipes"}
-{"name": "Spawn Worker", "file": "Recipes/Spawn Worker.md", "description": "Spawn a parallel worker thread with context handoff.\n\nCreates a lightweight worker assignment file that you open in a new conversation.\nWorker runs independently with full parent context.\n\n**With instruction:**\npython3 N5/scripts/spawn_worker.py --parent <PARENT_ID> --instruction \"Your task\"\n\n**Agnostic (no instruction):**\npython3 N5/scripts/spawn_worker.py --parent <PARENT_ID>\n\n**Dry-run first:**\npython3 N5/scripts/spawn_worker.py --parent <PARENT_ID> --instruction \"...\" --dry-run\n\nThen open the generated WORKER_ASSIGNMENT_*.md file in Records/Temporary/ in a NEW conversation.", "tags": ["workers", "parallel", "distributed", "forking"], "category": "recipes"}
 {"name": "Spawn Worker", "file": "Recipes/Spawn Worker.md", "description": "Spawn a parallel worker thread with context handoff.\n\nCreates a lightweight worker assignment file that you open in a new conversation.\nWorker runs independently with full parent context.\n\n**With instruction:**\npython3 N5/scripts/spawn_worker.py --parent <PARENT_ID> --instruction \"Your task\"\n\n**Agnostic (no instruction):**\npython3 N5/scripts/spawn_worker.py --parent <PARENT_ID>\n\n**Dry-run first:**\npython3 N5/scripts/spawn_worker.py --parent <PARENT_ID> --instruction \"...\" --dry-run\n\nThen open the generated WORKER_ASSIGNMENT_*.md file in Records/Temporary/ in a NEW conversation.", "tags": ["workers", "parallel", "distributed", "forking"], "category": "recipes"}
 {"name": "Strategic Partner", "file": "Recipes/Strategic Partner.md", "description": "Core cognitive engine for strategic thinking - your externalized cognitive architecture", "tags": ["strategic", "cognitive", "reflection", "careerspan"], "category": "recipes"}
-{"name": "Strategic Partner", "file": "Recipes/Strategic Partner.md", "description": "Core cognitive engine for strategic thinking - your externalized cognitive architecture", "tags": ["strategic", "cognitive", "reflection", "careerspan"], "category": "recipes"}
-{"name": "Strategy Compounder", "file": "Recipes/Strategy Compounder.md", "description": "Track strategic evolution across sessions - quantitative scoring and diff analysis", "tags": ["strategic", "evolution", "tracking", "meta-analysis"], "category": "recipes"}
 {"name": "Strategy Compounder", "file": "Recipes/Strategy Compounder.md", "description": "Track strategic evolution across sessions - quantitative scoring and diff analysis", "tags": ["strategic", "evolution", "tracking", "meta-analysis"], "category": "recipes"}
 {"name": "Sync To Drive", "file": "Recipes/Sync To Drive.md", "description": "Command: sync-to-drive", "tags": ["sync", "drive", "knowledge", "external", "automation"], "category": "recipes"}
-{"name": "Sync To Drive", "file": "Recipes/Sync To Drive.md", "description": "Command: sync-to-drive", "tags": ["sync", "drive", "knowledge", "external", "automation"], "category": "recipes"}
-{"name": "System Design Workflow", "file": "Recipes/System Design Workflow.md", "description": "Command: system-design-workflow", "tags": ["architecture", "design", "principles", "system-change"], "category": "recipes"}
 {"name": "System Design Workflow", "file": "Recipes/System Design Workflow.md", "description": "Command: system-design-workflow", "tags": ["architecture", "design", "principles", "system-change"], "category": "recipes"}
 {"name": "System Timeline Add", "file": "Recipes/System Timeline Add.md", "description": "Command: system-timeline-add", "tags": [], "category": "recipes"}
-{"name": "System Timeline Add", "file": "Recipes/System Timeline Add.md", "description": "Command: system-timeline-add", "tags": [], "category": "recipes"}
-{"name": "System Timeline", "file": "Recipes/System Timeline.md", "description": "Command: system-timeline", "tags": [], "category": "recipes"}
 {"name": "System Timeline", "file": "Recipes/System Timeline.md", "description": "Command: system-timeline", "tags": [], "category": "recipes"}
 {"name": "System Upgrades Add", "file": "Recipes/System Upgrades Add.md", "description": "Command: system-upgrades-add", "tags": [], "category": "recipes"}
-{"name": "System Upgrades Add", "file": "Recipes/System Upgrades Add.md", "description": "Command: system-upgrades-add", "tags": [], "category": "recipes"}
-{"name": "Tally Create", "file": "Recipes/Tally Create.md", "description": "Command: tally-create", "tags": [], "category": "recipes"}
 {"name": "Tally Create", "file": "Recipes/Tally Create.md", "description": "Command: tally-create", "tags": [], "category": "recipes"}
 {"name": "Tally Get", "file": "Recipes/Tally Get.md", "description": "Command: tally-get", "tags": [], "category": "recipes"}
-{"name": "Tally Get", "file": "Recipes/Tally Get.md", "description": "Command: tally-get", "tags": [], "category": "recipes"}
-{"name": "Tally List", "file": "Recipes/Tally List.md", "description": "Command: tally-list", "tags": [], "category": "recipes"}
 {"name": "Tally List", "file": "Recipes/Tally List.md", "description": "Command: tally-list", "tags": [], "category": "recipes"}
 {"name": "Tally Submissions", "file": "Recipes/Tally Submissions.md", "description": "Command: tally-submissions", "tags": [], "category": "recipes"}
-{"name": "Tally Submissions", "file": "Recipes/Tally Submissions.md", "description": "Command: tally-submissions", "tags": [], "category": "recipes"}
-{"name": "Tally User", "file": "Recipes/Tally User.md", "description": "Command: tally-user", "tags": [], "category": "recipes"}
 {"name": "Tally User", "file": "Recipes/Tally User.md", "description": "Command: tally-user", "tags": [], "category": "recipes"}
 {"name": "Test Subdirectory Recipe", "file": "Recipes/Test Subdirectory Recipe.md", "description": "Test recipe to verify subdirectory organization works with Zo's slash invocation", "tags": ["test", "system"], "category": "recipes"}
-{"name": "Test Subdirectory Recipe", "file": "Recipes/Test Subdirectory Recipe.md", "description": "Test recipe to verify subdirectory organization works with Zo's slash invocation", "tags": ["test", "system"], "category": "recipes"}
-{"name": "Thread Export", "file": "Recipes/Thread Export.md", "description": "Command: thread-export", "tags": ["aar", "threads", "export", "documentation"], "category": "recipes"}
 {"name": "Thread Export", "file": "Recipes/Thread Export.md", "description": "Command: thread-export", "tags": ["aar", "threads", "export", "documentation"], "category": "recipes"}
 {"name": "Transcript Ingest", "file": "Recipes/Transcript Ingest.md", "description": "Command: transcript-ingest", "tags": ["data", "transcripts", "gdrive", "processing"], "category": "recipes"}
-{"name": "Transcript Ingest", "file": "Recipes/Transcript Ingest.md", "description": "Command: transcript-ingest", "tags": ["data", "transcripts", "gdrive", "processing"], "category": "recipes"}
-{"name": "Unsent Followups Digest", "file": "Recipes/Unsent Followups Digest.md", "description": "Daily digest tracking generated follow-up emails that haven't been sent yet. Scans meeting folders for follow-up emails and checks Gmail to identify which ones are still pending.", "tags": [], "category": "recipes"}
 {"name": "Unsent Followups Digest", "file": "Recipes/Unsent Followups Digest.md", "description": "Daily digest tracking generated follow-up emails that haven't been sent yet. Scans meeting folders for follow-up emails and checks Gmail to identify which ones are still pending.", "tags": [], "category": "recipes"}
 {"name": "Update State Session", "file": "Recipes/Update State Session.md", "description": "Command: update-state-session", "tags": ["state-session", "tracking", "update"], "category": "recipes"}
-{"name": "Update State Session", "file": "Recipes/Update State Session.md", "description": "Command: update-state-session", "tags": ["state-session", "tracking", "update"], "category": "recipes"}
-{"name": "Warm Intro Generate", "file": "Recipes/Warm Intro Generate.md", "description": "Command: warm-intro-generate", "tags": [], "category": "recipes"}
 {"name": "Warm Intro Generate", "file": "Recipes/Warm Intro Generate.md", "description": "Command: warm-intro-generate", "tags": [], "category": "recipes"}
 {"name": "Weekly Strategic Review", "file": "Recipes/Weekly Strategic Review.md", "description": "Weekend cognitive conciliatory - resurface and process week's strategic thinking", "tags": ["strategic", "review", "weekly", "reflection"], "category": "recipes"}
-{"name": "Weekly Strategic Review", "file": "Recipes/Weekly Strategic Review.md", "description": "Weekend cognitive conciliatory - resurface and process week's strategic thinking", "tags": ["strategic", "review", "weekly", "reflection"], "category": "recipes"}
-{"name": "Workspace Maintenance", "file": "Recipes/Workspace Maintenance.md", "description": "Automatically scans workspace root, identifies files that need organization, removes duplicates, and categorizes files into appropriate directories.", "tags": [], "category": "recipes"}
 {"name": "Workspace Maintenance", "file": "Recipes/Workspace Maintenance.md", "description": "Automatically scans workspace root, identifies files that need organization, removes duplicates, and categorizes files into appropriate directories.", "tags": [], "category": "recipes"}
 {"name": "Workspace Root Cleanup", "file": "Recipes/Workspace Root Cleanup.md", "description": "Command: workspace-root-cleanup", "tags": [], "category": "recipes"}
-{"name": "Workspace Root Cleanup", "file": "Recipes/Workspace Root Cleanup.md", "description": "Command: workspace-root-cleanup", "tags": [], "category": "recipes"}
-{"name": "Zo Troubleshoot Add", "file": "Recipes/Zo Troubleshoot Add.md", "description": "Command: zo-troubleshoot-add", "tags": ["zo", "troubleshooting", "errors", "debugging"], "category": "recipes"}
 {"name": "Zo Troubleshoot Add", "file": "Recipes/Zo Troubleshoot Add.md", "description": "Command: zo-troubleshoot-add", "tags": ["zo", "troubleshooting", "errors", "debugging"], "category": "recipes"}

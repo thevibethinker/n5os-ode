@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 # Constants
 WORKSPACE_ROOT = Path("/home/workspace")
-COMMANDS_REGISTRY = WORKSPACE_ROOT / "N5/config/commands.jsonl"
+COMMANDS_REGISTRY = WORKSPACE_ROOT / "Recipes/recipes.jsonl"
 
 
 def load_commands_registry() -> List[Dict]:

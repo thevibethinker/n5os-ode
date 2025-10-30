@@ -1,0 +1,11 @@
+{
+  "classifications": [
+    {
+      "block_id": "B73",
+      "category": "strategic",
+      "confidence": 0.5
+    }
+  ],
+  "recommended_blocks": [],
+  "rationale": "Default classification applied (low confidence threshold)"
+}

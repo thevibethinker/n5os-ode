@@ -291,7 +291,8 @@ def get_modular_approval(proposal_json: Path, auto_mode: bool = False) -> Path:
     Returns: Modified proposal JSON with approval flags, or None if cancelled
     """
     proposal_data = json.loads(proposal_json.read_text())
-    actions = proposal_data.get("proposed_actions", [])
+    # Fix: proposer uses "actions", not "proposed_actions"
+    actions = proposal_data.get("actions", [])
     
     if not actions:
         logger.info("No actions require approval")
@@ -360,7 +361,8 @@ def get_modular_approval(proposal_json: Path, auto_mode: bool = False) -> Path:
     
     # Write approved proposal
     approved_path = Path("/tmp/conversation-proposal-approved.json")
-    proposal_data["proposed_actions"] = actions
+    # Fix: Write back to "actions" key, not "proposed_actions"
+    proposal_data["actions"] = actions
     approved_path.write_text(json.dumps(proposal_data, indent=2))
     
     return approved_path
@@ -1053,7 +1055,7 @@ def save_proposed_title():
     Uses conversation-specific AAR, not "most recent"
     """
     try:
-        from n5_title_generator import TitleGenerator
+        from n5_title_generator_local import TitleGeneratorLocal
         
         # Extract conversation ID from workspace path
         if not CONVERSATION_WS:
@@ -1103,9 +1105,10 @@ def save_proposed_title():
                         "size_bytes": item.stat().st_size
                     })
         
-        # Generate title
-        generator = TitleGenerator()
-        titles = generator.generate_titles(aar_data, artifacts)
+        # Generate title using local generator
+        generator = TitleGeneratorLocal()
+        result = generator.generate_title(aar_data, artifacts, convo_id=convo_id)
+        titles = [result]  # Wrap in list for compatibility
         
         if not titles:
             logger.debug("No titles generated from AAR, using fallback")
@@ -1175,14 +1178,16 @@ def generate_title_from_session_state():
                 # Parse: - `path/to/file` - Description
                 artifacts.append({"filename": line.split('`')[1] if '`' in line else "file"})
         
-        titles = generator.generate_titles(aar_data, artifacts)
+        # Get conversation ID from workspace path
+        convo_id = CONVERSATION_WS.name
+        
+        titles = generator.generate_titles(aar_data, artifacts, convo_id=convo_id)
         
         if not titles:
             logger.debug("No titles generated from session state either")
-            return
+            return []
         
         # Write and display title
-        convo_id = CONVERSATION_WS.name
         write_and_display_title(titles, convo_id)
         
     except Exception as e:
@@ -1532,8 +1537,20 @@ def registry_closure():
             aar_path = str(aar_candidates[0].relative_to(Path("/home")))
             print(f"  Found AAR: {aar_path}")
         
-        # Close conversation
-        success = registry.close_conversation(convo_id, aar_path=aar_path)
+        # Extract title from PROPOSED_TITLE.md if it exists
+        title_file = CONVERSATION_WS / "PROPOSED_TITLE.md"
+        proposed_title = None
+        if title_file.exists():
+            content_text = title_file.read_text()
+            # Extract first title line (format: **Title**)
+            import re
+            match = re.search(r'\*\*([^*]+)\*\*', content_text)
+            if match:
+                proposed_title = match.group(1).strip()
+                print(f"  Found proposed title: {proposed_title}")
+        
+        # Close conversation with title
+        success = registry.close_conversation(convo_id, aar_path=aar_path, title=proposed_title)
         
         if success:
             print(f"✓ Conversation closed in registry")
@@ -1709,6 +1726,11 @@ def parse_args():
         args.auto = True
         logger.info("Auto mode enabled via environment")
     
+    # Auto-enable if no TTY (not interactive terminal)
+    if not args.auto and not sys.stdin.isatty():
+        args.auto = True
+        logger.info("Auto mode enabled - no interactive terminal detected")
+    
     return args
 
 
@@ -1853,7 +1875,7 @@ def main():
             tracked = manager.list_reviews(conversation_id=convo_id) if convo_id else []
             if tracked:
                 print(f"\n📋 {len(tracked)} output(s) flagged for review in this conversation:\n")
-                for r in tracked[:10]:
+                for r in tracked[-5:]:  # Show last 5
                     title = r.get('title') or r.get('reference')
                     status = r['review'].get('status')
                     sent = r['review'].get('sentiment') or '-'
@@ -1865,8 +1887,8 @@ def main():
                         print(f"   📝 Change: {change}")
                     if optimal:
                         print(f"   📝 Optimal: {optimal}")
-                if len(tracked) > 10:
-                    print(f"   … and {len(tracked)-10} more")
+                if len(tracked) > 5:
+                    print(f"   … and {len(tracked)-5} more")
             else:
                 # No tracked outputs; scan for likely deliverables
                 candidates = []

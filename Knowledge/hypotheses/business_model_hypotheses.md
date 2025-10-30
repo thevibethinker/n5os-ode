@@ -3,7 +3,6 @@ last_updated: 2025-10-09
 category: business_model
 status: initial_structure
 ---
-
 # Business Model Hypotheses
 
 **Category:** Pricing, packaging, revenue models, unit economics, monetization

@@ -102,12 +102,12 @@ def execute_with_safety(command_spec: Dict[str, Any], args: argparse.Namespace,
 
 def load_command_spec(command_name: str) -> Optional[Dict[str, Any]]:
     """Load command specification from commands.jsonl."""
-    commands_file = Path(__file__).parent.parent / "commands.jsonl"
+    recipes_index = Path(__file__).parent.parent / "recipes.jsonl"
 
-    if not commands_file.exists():
+    if not recipes_index.exists():
         return None
 
-    with commands_file.open('r') as f:
+    with recipes_index.open('r') as f:
         for line in f:
             line = line.strip()
             if not line:

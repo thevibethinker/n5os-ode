@@ -1,0 +1,112 @@
+{
+  "": "http://json-schema.org/draft-07/schema#",
+  "title": "Phase Handoff Telemetry",
+  "description": "Structured telemetry for orchestrator-worker phase handoffs. Enables validated handoffs with quality gates.",
+  "type": "object",
+  "required": ["phase_id", "worker_id", "timestamp", "status", "outputs", "quality"],
+  "properties": {
+    "phase_id": {
+      "type": "string",
+      "description": "Unique identifier for this phase"
+    },
+    "worker_id": {
+      "type": "string",
+      "pattern": "^con_[A-Za-z0-9]+$",
+      "description": "Zo conversation ID of worker"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of handoff"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["complete", "partial", "failed", "blocked"],
+      "description": "Phase completion status"
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["files"],
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "List of files created/modified"
+        },
+        "metrics": {
+          "type": "object",
+          "description": "Quantitative metrics (lines of code, test coverage, etc.)"
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "placeholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["file", "issue", "line", "severity"],
+            "properties": {
+              "file": {"type": "string"},
+              "issue": {"type": "string"},
+              "line": {"type": "integer"},
+              "severity": {"enum": ["critical", "major", "minor"]}
+            }
+          }
+        },
+        "stubs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["file", "function", "line", "severity"],
+            "properties": {
+              "file": {"type": "string"},
+              "function": {"type": "string"},
+              "line": {"type": "integer"},
+              "severity": {"enum": ["critical", "major", "minor"]}
+            }
+          }
+        },
+        "incomplete": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["file", "issue", "line", "severity"],
+            "properties": {
+              "file": {"type": "string"},
+              "issue": {"type": "string"},
+              "line": {"type": "integer"},
+              "severity": {"enum": ["critical", "major", "minor"]}
+            }
+          }
+        }
+      }
+    },
+    "tests": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": ["passed", "failed", "partial", "not_run"]
+        },
+        "passed": {"type": "integer"},
+        "failed": {"type": "integer"},
+        "skipped": {"type": "integer"}
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "List of blocking issues (if status=blocked)"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Recommendations for next phase"
+    },
+    "context": {
+      "type": "object",
+      "description": "Additional context for orchestrator"
+    }
+  }
+}

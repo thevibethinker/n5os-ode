@@ -1,0 +1,2 @@
+curl: option --oauth2-bearer: requires parameter
+curl: try 'curl --help' or 'curl --manual' for more information

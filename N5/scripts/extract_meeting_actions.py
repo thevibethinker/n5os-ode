@@ -45,24 +45,28 @@ def extract_actions_from_blocks(meeting_dir: Path) -> List[Dict[str, Any]]:
                         actions.append({
                             'text': parts[1],
                             'source_file': str(b01.name),
-                            'source_block': 'B01'
+                            'source_block': 'B01',
+                            'context': 'From Critical Next Actions'
                         })
                 elif line.strip():
                     actions.append({
                         'text': line.strip().lstrip('-•*').strip(),
                         'source_file': str(b01.name),
-                        'source_block': 'B01'
+                        'source_block': 'B01',
+                        'context': 'From meeting recap'
                     })
     
-    # Read B25 (Deliverable Content Map)
-    b25 = meeting_dir / "B25_Deliverable-Content-Map.md"
-    if b25.exists():
+    # Read B25 (Deliverable Content Map) - handle both naming conventions
+    b25_files = list(meeting_dir.glob("B25_*DELIVERABLE*.md")) + list(meeting_dir.glob("B25_*Deliverable*.md"))
+    if b25_files:
+        b25 = b25_files[0]
         logger.info(f"Reading {b25.name}")
         actions.extend(parse_deliverables(b25.read_text(), "B25"))
     
-    # Read B21 (Salient Questions)
-    b21 = meeting_dir / "B21_Salient-Questions.md"
-    if b21.exists():
+    # Read B21 (Salient Questions/Key Moments) - handle both naming conventions
+    b21_files = list(meeting_dir.glob("B21_*.md"))
+    if b21_files:
+        b21 = b21_files[0]
         logger.info(f"Reading {b21.name}")
         actions.extend(parse_questions(b21.read_text(), "B21"))
     

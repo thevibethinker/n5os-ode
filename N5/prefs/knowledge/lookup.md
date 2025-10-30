@@ -45,7 +45,7 @@ This guide directs where to search for canonical information before answering qu
 1. `file 'N5/prefs/prefs.md'` — Preference index
 2. `file 'Knowledge/architectural/operational_principles.md'` — Core operational rules
 3. `file 'Knowledge/architectural/ingestion_standards.md'` — What/how to ingest
-4. `file 'N5/config/commands.jsonl'` — Available commands (authoritative)
+4. `file 'Recipes/recipes.jsonl' (index only)` — Available commands (authoritative)
 
 ---
 

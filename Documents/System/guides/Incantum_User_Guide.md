@@ -256,7 +256,7 @@ Instead of memorizing exact command names and syntax, just describe what you wan
 - **Protocol:** `file 'N5/prefs/operations/incantum-protocol.md'`
 - **Script:** `file 'N5/scripts/incantum_parser.py'`
 - **Shortcuts:** `file 'N5/config/incantum_shortcuts.json'`
-- **Commands:** `file 'N5/config/commands.jsonl'`
+- **Commands:** `file 'Recipes/recipes.jsonl'`
 - **Patterns:** `file 'N5/logs/incantum_patterns.jsonl'`
 
 ---

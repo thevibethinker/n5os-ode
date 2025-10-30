@@ -1,0 +1,26 @@
+{
+  "meeting_id": "2025-10-17_external-laura-close_200216",
+  "processed_at": "2025-10-17T21:09:38-04:00",
+  "transcript_source": "google_drive",
+  "gdrive_id": "1YxqsCQZPrbfFhFXt3uPPY_Gc4O_IMwri",
+  "classification": "external",
+  "participants": "Laura Close x Vrijen",
+  "stakeholder_type": "NETWORKING/ADVISOR",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B05_OUTSTANDING_QUESTIONS"
+  ],
+  "block_count": 9,
+  "registry_version": "1.5",
+  "processing_notes": "Advisory/strategic pivot discussion. Laura provided tough-love redirect away from diversification toward partnership focus. High-quality transcript, comprehensive strategic insights captured. CRM profile created.",
+  "crm_status": "Profile created at Knowledge/crm/individuals/laura-close.md",
+  "enrichment_priority": "MEDIUM",
+  "n5os_tags": "[LD-NET] [GPT-E] [A-3]"
+}

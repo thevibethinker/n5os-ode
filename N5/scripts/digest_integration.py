@@ -56,7 +56,7 @@ class DigestFormatter:
                 lines.append(f"- Stakeholder: {meeting['attendee_email']}")
                 
                 if meeting.get('profile_dir'):
-                    profile_path = f"N5/records/meetings/{meeting['profile_dir']}/profile.md"
+                    profile_path = f"Personal/Meetings/{meeting['profile_dir']}/profile.md"
                     lines.append(f"- Profile: `file '{profile_path}'`")
                 
                 lines.append("")
@@ -77,7 +77,7 @@ class DigestFormatter:
                     lines.append(f"- Stakeholder: {detail['attendee_email']}")
                     
                     if detail.get('profile_dir'):
-                        profile_path = f"N5/records/meetings/{detail['profile_dir']}/profile.md"
+                        profile_path = f"Personal/Meetings/{detail['profile_dir']}/profile.md"
                         lines.append(f"- Profile: `file '{profile_path}'`")
                     
                     lines.append("")
@@ -152,7 +152,7 @@ class DigestFormatter:
                 lines.append(f"- Stakeholder: {m['attendee_email']}")
                 
                 if m.get('profile_dir'):
-                    profile_path = f"N5/records/meetings/{m['profile_dir']}/profile.md"
+                    profile_path = f"Personal/Meetings/{m['profile_dir']}/profile.md"
                     lines.append(f"- Profile: `file '{profile_path}'`")
                 
                 lines.append("")
@@ -170,7 +170,7 @@ class DigestFormatter:
                 lines.append(f"- Stakeholder: {m['attendee_email']}")
                 
                 if m.get('profile_dir'):
-                    profile_path = f"N5/records/meetings/{m['profile_dir']}/profile.md"
+                    profile_path = f"Personal/Meetings/{m['profile_dir']}/profile.md"
                     lines.append(f"- Profile: `file '{profile_path}'`")
                 
                 lines.append("")

@@ -1,0 +1,53 @@
+{
+  "phase": "survey_and_protect",
+  "timestamp": "2025-10-28T14:28:40.146743",
+  "checks": {
+    "user_services": {
+      "count": 3,
+      "services": [
+        {
+          "name": "n8n_processor",
+          "path": "/home/workspace/N5/services/n8n_processor",
+          "size_mb": 0.02541351318359375
+        },
+        {
+          "name": "task_intelligence",
+          "path": "/home/workspace/N5/services/task_intelligence",
+          "size_mb": 0.013947486877441406
+        },
+        {
+          "name": "zobridge",
+          "path": "/home/workspace/N5/services/zobridge",
+          "size_mb": 166.60187149047852
+        }
+      ],
+      "critical": true
+    },
+    "protected_paths": {
+      "count": 5,
+      "paths": [
+        "/home/workspace/Inbox/20251028-131716_n5-waitlist/.n5protected",
+        "/home/workspace/Documents/Archive/.n5protected",
+        "/home/workspace/N5/records/meetings/.n5protected",
+        "/home/workspace/N5/services/zobridge/.n5protected",
+        "/home/workspace/.n5_bootstrap_server/.n5protected"
+      ]
+    },
+    "scheduled_tasks": {
+      "count": 36,
+      "note": "From list_scheduled_tasks output"
+    },
+    "pre_migration_backup": {
+      "success": true,
+      "file": "/tmp/n5_premigration_20251028_142845.tar.gz",
+      "size_mb": 3.4338722229003906
+    },
+    "essential_directories": {
+      "missing": [],
+      "all_present": true
+    }
+  },
+  "status": "complete",
+  "critical_issues": [],
+  "safe_to_proceed": true
+}

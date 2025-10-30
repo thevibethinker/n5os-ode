@@ -1,0 +1,504 @@
+{
+  "meeting_id": "2025-10-20_external-dylan-johnson",
+  "meeting_title": "2025-10-20 external-dylan-johnson",
+  "meeting_date": "20251028-132902_Meetings",
+  "meeting_path": "/home/workspace/Inbox/20251028-132902_Meetings/2025-10-20_external-dylan-johnson",
+  "actions": [
+    {
+      "text": "## DETAILED_RECAP",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_001",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "meeting"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_002",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Feedback**: - [ ] Useful",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_003",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_004",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "### Key Decisions and Agreements",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_005",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Banking discussion postponed to early December** - Dylan pitched RO's fintech banking services (concierge service, live human support, cash back rates), Vrijen expressed interest but wants to revisit when Careerspan has clearer financial picture after shifting to revenue generation. *Why it matters*: Timing aligns with V's need to evaluate margins once new business model is operational; gives V time to assess whether switching from Brex is worth the lift.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_006",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Event sponsorship exploration opened** - Vrijen pivoted conversation to RO's event sponsorship program, proposing two event concepts: (1) \"blind date for hiring\" matching event in December, (2) AI productivity systems workshop showcasing founder operating system built on Zo. *Why it matters*: Creates potential value exchange beyond banking relationship; positions Careerspan's events as founder-focused and aligned with RO's community strategy.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_007",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "**Next steps defined** - Vrijen will send Dylan event details/proposals, Dylan will vet with RO events team and provide feedback on interest level, banking conversation to resume late November/early December. *Why it matters*: Clear path forward with mutual value exploration; event sponsorship could accelerate banking relationship if RO sees value.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_008",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "### Strategic Context",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_009",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Dylan represents RO, a fintech banking platform targeting startups with differentiation around: (1) Banking safety (Webster National partnership, larger institutional bank vs. smaller regionals), (2) Concierge service (dedicated relationship manager + account manager + 24/7 live human support), (3) Competitive rates (up to 2% cash back, strong treasury rates). Their go-to-market motion relies heavily on events (5-10/week in NY, SF, Boston) to access founders. They prioritize existing clients for event partnerships.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_010",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Vrijen is navigating Careerspan's business model shift from VC-backed career coaching product to bootstrapped decentralized talent network with freemium model for hiring managers. The company recently moved from Mercury to Brex (not V's decision), currently at tail end of runway, focusing on revenue generation starting now. Team of 5 (2 co-founders, 2 devs, 1 designer).",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_011",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Networking",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "V's strategic move: Rather than commit to banking switch immediately, he positioned Careerspan as event organizer with founder audience access - something RO values highly. This creates leverage: if RO sponsors events, that could incentivize V to prioritize banking migration. V also showcased his AI systems expertise (Zo-based founder OS) as additional value-add, signaling he's not just a banking prospect but a potential partner who can deliver valuable touchpoints with target founders.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_012",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Pain points surfaced: Banking switches are burdensome (paperwork, operational lift), which is why RO emphasizes their customer architects handling onboarding in 45-minute call. V is at inflection point where margins will matter more as they shift to revenue focus, making rate optimization more relevant than when they were pre-revenue.",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_013",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "### Critical Next Action",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_014",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Owner**: Vrijen",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_015",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Deliverable**: Send Dylan event proposals with details on (1) December blind-date hiring matching event and (2) AI productivity/founder OS workshop",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_016",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Timeline**: Within next few days (conversation on Oct 20, he said \"send me a little bit of information\")",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_017",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Purpose**: Enable Dylan to vet with RO events team and assess sponsorship interest, which could influence banking relationship timeline",
+      "source_file": "B01_DETAILED_RECAP.md",
+      "source_block": "B01",
+      "context": "From meeting recap",
+      "id": "act_018",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "I'll send you details on both event concepts we discussed (the blind-date hiring matching event and the AI productivity systems workshop)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_019",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Product",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "You'll vet with your events team and let me know if there's interest on RO's side",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_020",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "We'll reconnect late November/early December to revisit the banking conversation once we have better visibility into our finances",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_021",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Networking",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Dylan's sister at Peloton reference (not included - not strategic enough for business email)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_022",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\"Customer architects\" specific term Dylan used",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_023",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\"45 minute call\" specific detail",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_024",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Event value proposition Dylan articulated (\"meet your next investor... next business partner\")",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_025",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Warmth: 6/10 (professional but friendly, single sales call)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_026",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Familiarity: 4/10 (first substantial conversation, some personal rapport)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_027",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\u2192 Formality: Medium-professional (not overly formal, but business-focused)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_028",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "\u2192 CTA Rigor: Clear but not aggressive (numbered next steps, timeline references)",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_029",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Flesch-Kincaid: ~9 (target \u2264 10) \u2713",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_030",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Average sentence length: 18 words (target 16-22) \u2713",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_031",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Max sentence: 30 words (target \u2264 32) \u2713",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_032",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    },
+    {
+      "text": "Max paragraph: 3 sentences (target \u2264 4) \u2713",
+      "context": "Deliverable from meeting",
+      "source_block": "B25",
+      "confidence": "high",
+      "id": "act_033",
+      "suggested_when": "Thursday 2:00pm",
+      "suggested_priority": "Normal",
+      "suggested_duration": "30m",
+      "suggested_project": "Operations",
+      "suggested_tags": [
+        "deliverable"
+      ],
+      "when": "2025-10-29 01:00PM ET",
+      "scheduling_reasoning": "Normal priority tasks scheduled in 13-16:00 window"
+    }
+  ],
+  "extracted_at": "2025-10-29T01:54:02.873196",
+  "status": "pending_review"
+}

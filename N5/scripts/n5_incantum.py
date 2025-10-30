@@ -20,7 +20,7 @@ except ImportError:  # pragma: no cover
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
-COMMANDS_FILE = ROOT / "commands.jsonl"
+RECIPES_INDEX = ROOT / "recipes.jsonl"
 
 SIMILARITY_THRESHOLD = 55  # percent; below this we consider the match too weak
 MAX_CANDIDATES = 3
@@ -105,7 +105,7 @@ def main():
             query_words.append(tok)
     query = " ".join(query_words)
 
-    registry = load_registry(COMMANDS_FILE)
+    registry = load_registry(RECIPES_INDEX)
     candidates, confident = choose_best_match(query, registry)
     selection = prompt_user(candidates, confident)
     if selection is None:

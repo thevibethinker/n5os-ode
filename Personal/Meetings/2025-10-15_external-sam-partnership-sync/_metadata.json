@@ -1,0 +1,59 @@
+{
+  "meeting_id": "2025-10-15_external-sam-partnership-sync",
+  "processing_version": "registry_v1.5",
+  "processed_at": "2025-10-15T20:47:35-04:00",
+  "transcript_source": "gdrive:1YOR07pFG8rm2wCxsUnHQ4_0-dP_JdfDH",
+  "original_filename": "Careerspan<>Sam - Partnership Sync-transcript-2025-10-15T21-31-02.532Z.docx",
+  
+  "classification": {
+    "stakeholder_type": "FOUNDER",
+    "meeting_type": "external",
+    "participants": "Vrijen Attawar (Careerspan), Ash Straughn (recruiting platform founder)"
+  },
+  
+  "blocks_generated": {
+    "required": [
+      "B26_MEETING_METADATA_SUMMARY",
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS_CONTEXTUAL",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B21_KEY_MOMENTS",
+      "B31_STAKEHOLDER_RESEARCH",
+      "B25_DELIVERABLE_CONTENT_MAP"
+    ],
+    "stakeholder_high": [
+      "B05_OUTSTANDING_QUESTIONS",
+      "B24_PRODUCT_IDEA_EXTRACTION",
+      "B13_PLAN_OF_ACTION",
+      "B07_WARM_INTRO_BIDIRECTIONAL",
+      "B14_BLURBS_REQUESTED",
+      "B27_KEY_MESSAGING"
+    ],
+    "conditional": [],
+    "total_blocks": 13
+  },
+  
+  "crm_integration": {
+    "profile_created": true,
+    "profile_path": "Knowledge/crm/individuals/ash-straughn.md",
+    "enrichment_priority": "HIGH",
+    "rationale": "Active partnership exploration with strong product-market fit signals and immediate revenue opportunity"
+  },
+  
+  "key_insights": [
+    "Partnership structure divides labor: Careerspan (candidate cultivation) + Ash (employer sales/placement)",
+    "Both founders refuse to charge job seekers; strong values alignment",
+    "12-month retention revenue share model creates quality-first incentives",
+    "Ash's platform needs: candidate volume, LinkedIn data, startup company identification",
+    "Technical integration appears feasible; both platforms do similar vetting",
+    "Commercial terms (revenue share %) not yet defined; critical for next phase"
+  ],
+  
+  "next_actions": {
+    "immediate": "Schedule co-founder alignment call within 1 week",
+    "near_term": "Technical integration planning, NDA execution, Careerspan Select list generation",
+    "decision_point": "Week 6-8: Proceed to pilot or iterate based on technical feasibility and commercial terms"
+  },
+  
+  "processing_notes": "Clean transcript quality; comprehensive coverage of partnership structure, technical requirements, and philosophical alignment. No explicit blurb requests. Strong momentum with clear next steps but commercial terms undefined."
+}

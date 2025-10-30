@@ -1,0 +1,56 @@
+{
+  "meeting_id": "2025-10-16_internal-team_194101",
+  "processed_date": "2025-10-16T22:47:00Z",
+  "meeting_type": "INTERNAL_STANDUP_COFOUNDER",
+  "classification": "internal",
+  "participants": ["Vrijen", "Logan"],
+  "transcript_source": "N5/inbox/transcripts/2025-10-16_internal-team_194101.txt",
+  "gdrive_id": "1jxYOBIDEAB8EiJVjNwhz6RnivkEz03VhYuLJ7DnTkt0",
+  "original_filename": "Vrijen x Logan 2DPW-Oct16 #x",
+  
+  "blocks_generated": {
+    "required": ["B26", "B40", "B41", "B47"],
+    "conditional": ["B43", "B44", "B48"],
+    "total_count": 7
+  },
+  
+  "blocks_list": ["B26", "B40", "B41", "B43", "B44", "B47", "B48"],
+  
+  "strategic_themes": [
+    "Strategic pivot to skeleton crew model",
+    "VC path rejection and lifestyle business orientation",
+    "Product simplification and community distribution",
+    "Passive hiring model differentiation",
+    "Team downsizing with ethical treatment",
+    "Dual exit optionality (sell or lifestyle business)"
+  ],
+  
+  "key_decisions_count": {
+    "strategic": 5,
+    "tactical": 11
+  },
+  
+  "open_questions_count": {
+    "strategic": 6,
+    "tactical": 4
+  },
+  
+  "processing_notes": {
+    "registry_system_version": "1.5",
+    "internal_blocks_version": "1.0",
+    "workflow": "internal-meeting-process.md v1.0.0",
+    "transcript_quality": "Good",
+    "strategic_significance": "High - Major strategic pivot",
+    "conditional_blocks_rationale": {
+      "B43_generated": "Product strategy and roadmap extensively discussed (skeleton crew product, career agent pivot)",
+      "B44_generated": "GTM positioning shift (talent agency), revenue model (placement fees), distribution strategy (communities)",
+      "B48_generated": "23-minute strategic discussion with 5 major strategic decisions - warrants executive synthesis"
+    }
+  },
+  
+  "next_processing_steps": [
+    "Add [ZO-PROCESSED] prefix to Google Drive filename",
+    "Move request file to N5/inbox/meeting_requests/processed/",
+    "No CRM profile needed (internal meeting)"
+  ]
+}

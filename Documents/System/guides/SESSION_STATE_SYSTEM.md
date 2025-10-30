@@ -418,7 +418,7 @@ After initialization, read SESSION_STATE.md and update the Focus, Objective, and
 
 ### Orchestrator Commands
 
-Add to file 'N5/config/commands.jsonl':
+Add to file 'Recipes/recipes.jsonl':
 
 ```json
 {

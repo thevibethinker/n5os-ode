@@ -130,7 +130,7 @@ if __name__ == "__main__":
 /home/workspace/
 ├── N5/
 │   ├── scripts/        - Core utilities
-│   ├── config/         - commands.jsonl, etc
+│   ├── config/         - recipes.jsonl, etc
 │   ├── data/          - SQLite databases
 │   └── logs/          - Execution logs
 ├── Knowledge/         - SSOT documentation

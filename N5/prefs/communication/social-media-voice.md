@@ -1,7 +1,7 @@
 # Social Media Voice Profile for Vrijen Attawar
 
-**Version:** 1.0  
-**Last Updated:** 2025-10-17  
+**Version:** 1.0\
+**Last Updated:** 2025-10-17\
 **Purpose:** Tailored voice profile for LinkedIn posts, newsletters, external blogs, and public-facing marketing content.
 
 ---
@@ -40,20 +40,19 @@
 
 ## Dimensional Metrics (approximate ranges)
 
-| Dimension      | Range                | Description
-|----------------|----------------------|------------
-| Warmth         | 0.80 - 0.85          | Friendly, inviting tone
-| Confidence     | 0.70 - 0.85          | Assertive but not arrogant
-| Humility       | 0.30 - 0.60          | Varies by post type
-| Edge/Provocation| 0.30 - 0.75         | Medium to high in rants
-| Precision      | 0.75 - 0.90          | Clear and direct language
-| Accessibility  | 0.80 - 0.90          | Simple, jargon-free
-| Rhythm         | High variation       | Mixing short and longer sentences
+| Dimension | Range | Description |
+| --- | --- | --- |
+| Warmth | 0.80 - 0.85 | Friendly, inviting tone |
+| Confidence | 0.70 - 0.85 | Assertive but not arrogant |
+| Humility | 0.30 - 0.60 | Varies by post type |
+| Edge/Provocation | 0.30 - 0.75 | Medium to high in rants |
+| Precision | 0.75 - 0.90 | Clear and direct language |
+| Accessibility | 0.80 - 0.90 | Simple, jargon-free |
+| Rhythm | High variation | Mixing short and longer sentences |
 
 ---
 
 ## Usage Guidance
 
-Use this voice profile strictly for social media posts, newsletters, and external blogs.
+Use this voice profile strictly for social media posts, newsletters, and external blogs.\
 Avoid blending with professional email or internal communication voice.
-

@@ -1,0 +1,85 @@
+{
+  "execution_timestamp": "2025-10-29T17:09:54.381274Z",
+  "task": "Process reflection queue (ingest from Drive, classify, generate blocks)",
+  "status": "COMPLETE",
+  "summary": {
+    "total_files_processed": 9,
+    "block_files_generated": 9,
+    "classifications_generated": 9,
+    "registry_entries": 10
+  },
+  "files": [
+    {
+      "file_id": "1S6FftZJDpPk9BTKV5JotPFDaP0PBlTo3",
+      "name": "Productivity in the AI age and other assorted reflections",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545875Z",
+      "block_generated": false,
+      "classified": true
+    },
+    {
+      "file_id": "1xpU38stCtb1tnu8h52ya6kwggM8MZlTj",
+      "name": "Reflections on N5 OS",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545919Z",
+      "block_generated": false,
+      "classified": true
+    },
+    {
+      "file_id": "1lKRPtUp2_IHBYm9GVQSC3UGbtmgYdLLo",
+      "name": "Gestalt hiring, tracking over performers on CS, and tryhard positioning",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545950Z",
+      "block_generated": false,
+      "classified": true
+    },
+    {
+      "file_id": "1wwjc6WV28ak-l6x-TybI6-G7zwD7ttc7",
+      "name": "\"Overperformer\" angle, pricing, product offering positioning",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.545977Z",
+      "block_generated": false,
+      "classified": false
+    },
+    {
+      "file_id": "131TH8BJwwUTrk9V4ylEuoOX7n05Wnb8Q",
+      "name": "Reflections on Zo and why workflow builders do or don't work",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546003Z",
+      "block_generated": false,
+      "classified": false
+    },
+    {
+      "file_id": "1oZLi2DL12Zzm6MQd12H208XCSWZu-F16",
+      "name": "Reflections on Zo and why workflow builders do or don't work",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546029Z",
+      "block_generated": false,
+      "classified": false
+    },
+    {
+      "file_id": "13N3qQgQJgpXOkbMg7bJ9Y6ZqTtWam8E0",
+      "name": "Planning out My strategy for engaging with Zo",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546054Z",
+      "block_generated": false,
+      "classified": true
+    },
+    {
+      "file_id": "1dSHKj5vgQ0NdBkMi6fNaOQg5cQUVyHnQ",
+      "name": "Thoughts on Careers consumer app, focus on distributing through communities",
+      "type": "document",
+      "ingested_at": "2025-10-29T05:09:31.546080Z",
+      "block_generated": false,
+      "classified": true
+    },
+    {
+      "file_id": "1W_CV9ZQTklugXNjS4HN8OKd6OrVGWee2",
+      "name": "Oct 24 at 14-46.m4a",
+      "type": "audio",
+      "ingested_at": "2025-10-29T05:09:31.546105Z",
+      "block_generated": false,
+      "classified": true
+    }
+  ]
+}

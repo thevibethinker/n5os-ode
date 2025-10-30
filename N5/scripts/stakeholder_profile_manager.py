@@ -12,7 +12,7 @@ from typing import Optional
 
 import pytz
 
-MEETINGS_DIR = Path("/home/workspace/N5/records/meetings")
+MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 TIMEZONE = pytz.timezone('America/New_York')
 
 STAKEHOLDER_TYPE_MAP = {

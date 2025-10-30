@@ -436,13 +436,14 @@ class ConversationRegistry:
             logger.error(f"Failed to close conversation {convo_id}: {e}", exc_info=True)
             return False
     
-    def close_conversation(self, convo_id: str, aar_path: Optional[str] = None) -> bool:
+    def close_conversation(self, convo_id: str, aar_path: Optional[str] = None, title: Optional[str] = None) -> bool:
         """
         Close a conversation
         
         Args:
             convo_id: Conversation ID
             aar_path: Optional path to AAR file
+            title: Optional title to set
         
         Returns:
             True if successful
@@ -455,6 +456,9 @@ class ConversationRegistry:
             
             if aar_path:
                 fields["aar_path"] = aar_path
+            
+            if title:
+                fields["title"] = title
             
             return self.update(convo_id, **fields)
             
@@ -484,9 +488,9 @@ class ConversationRegistry:
                 
                 result = dict(row)
                 # Parse JSON fields
-                if result.get("tags"):
+                if result.get("tags") and result["tags"] is not None:
                     result["tags"] = json.loads(result["tags"])
-                if result.get("related_ids"):
+                if result.get("related_ids") and result["related_ids"] is not None:
                     result["related_ids"] = json.loads(result["related_ids"])
                 
                 return result

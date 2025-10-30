@@ -1,0 +1,41 @@
+{
+  "meeting_id": "2025-10-12_external-awais-catch-up-granola-version",
+  "processed_date": "2025-10-15T11:55:47Z",
+  "processor_version": "Registry_System_v1.5",
+  "meeting_date": "2025-10-12",
+  "stakeholder_type": "FOUNDER",
+  "stakeholder_name": "Awais [Last Name Unknown]",
+  "blocks_generated": [
+    "B26_MEETING_METADATA_SUMMARY",
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS_CONTEXTUAL",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B31_STAKEHOLDER_RESEARCH",
+    "B25_DELIVERABLE_CONTENT_MAP",
+    "B05_OUTSTANDING_QUESTIONS",
+    "B24_PRODUCT_IDEA_EXTRACTION",
+    "B13_PLAN_OF_ACTION",
+    "B07_WARM_INTRO_BIDIRECTIONAL",
+    "B14_BLURBS_REQUESTED",
+    "B27_KEY_MESSAGING"
+  ],
+  "blocks_count": 13,
+  "required_blocks": 7,
+  "high_priority_blocks": 6,
+  "conditional_blocks": 0,
+  "crm_profile_created": true,
+  "crm_profile_path": "Knowledge/crm/individuals/awais-immigration-tech.md",
+  "enrichment_priority": "MEDIUM",
+  "howie_tags_generated": true,
+  "v_os_tags": "[LD-NET] [GPT-E] [A-3]",
+  "transcript_source": "gdrive_id:1NR85eRnJFa312CN_aXxyD3Q0R4FAybl6NQbcbkTald4",
+  "transcript_quality": "Good",
+  "processing_notes": [
+    "Granola transcript with speaker attribution caveat (treats all external speakers as 'Them')",
+    "Context inference used to properly attribute speakers",
+    "Full name and company details need LinkedIn enrichment",
+    "Strong peer founder relationship with collaboration opportunities",
+    "4 essential landscape insights captured in B31 with credibility scoring"
+  ]
+}

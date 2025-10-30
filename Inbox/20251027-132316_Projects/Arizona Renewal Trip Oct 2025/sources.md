@@ -1,1 +1,0 @@
-- CIVANA Class Schedule: https://civanacarefree.com/class-schedule/
