@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ⚠️  DEPRECATED: This template-based script has been superseded by the Registry System.
-# ⚠️  See: N5/prefs/block_type_registry.json (v1.3+) and Recipes/Meetings/Meeting Process.md (v4.0.0+)
+# ⚠️  See: N5/prefs/block_type_registry.json (v1.3+) and Prompts/Meetings/Meeting Process.md (v4.0.0+)
 # ⚠️  Preserved for historical reference only.
 #
 #!/usr/bin/env python3

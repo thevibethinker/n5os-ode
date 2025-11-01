@@ -326,7 +326,7 @@ N5/System Documentation/
 **Archive:** `Documents/Archive/2025-XX-XX-CommandName/`
 **System Docs:** Update `N5/System Documentation/commands-catalog.md`
 **Timeline:** Add entry for new command
-**Components:** `N5/commands/command-name.md`, `Recipes/ (see recipe-execution-guide.md)`
+**Components:** `N5/commands/command-name.md`, `Prompts/ (see recipe-execution-guide.md)`
 
 ### Example 3: Bug Fix (No Archive Needed)
 

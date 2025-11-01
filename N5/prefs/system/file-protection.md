@@ -16,7 +16,7 @@ Files are protected differently based on their role:
 - All module files in `N5/prefs/**/*.md` (hand-authored)
 
 ### MEDIUM PROTECTION (Requires Pre-Check)
-- `Recipes/ (self-executing)` — Command registry (manually curated/validated)
+- `Prompts/ (self-executing)` — Command registry (manually curated/validated)
 - `N5/lists/*.jsonl` — User data lists (manually curated)
 - `Knowledge/**/*.md` — Knowledge content (manually authored)
 - `Lists/*.jsonl` — List data (manually curated)

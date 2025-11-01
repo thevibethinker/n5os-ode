@@ -65,13 +65,13 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - "Command not found" → Check bulletins for command registry changes
 
 ### Command-First Operations
-**CRITICAL:** Before ANY workflow-related operation, check for registered recipes in `file 'Recipes/recipes.jsonl'` OR search `Recipes/**/*.md` for relevant protocols.
+**CRITICAL:** Before ANY workflow-related operation, check for registered prompts in `file 'N5/data/executables.db'` OR search `Prompts/**/*.md` for relevant protocols.
 
 **Scope:** System operations, content processing, knowledge management, reflections, automation, scheduled tasks, integrations, file operations, and any workflow with established procedures.
 
 **Priority order:**
-1. Recipe in Recipes/
-2. Protocol documentation in Recipes/
+1. Recipe in Prompts/
+2. Protocol documentation in Prompts/
 3. Manual script execution
 4. Direct file operations
 5. Improvisation (last resort after confirming no protocol exists)
@@ -80,13 +80,13 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 - **Thread closure:** Load `file 'N5/prefs/operations/thread-closure-triggers.md'` to determine correct command
   - User says "end conversation", "wrap up", "close thread" → `conversation-end` (file organization + cleanup)
   - User says "export thread", "create AAR", "continue in new thread" → `thread-export` (documentation + AAR)
-- **Thread exports:** When user requests "export this thread" or similar, ALWAYS use `recipe 'Recipes/Productivity/Thread Export.md'`
+- **Thread exports:** When user requests "export this thread" or similar, ALWAYS use `recipe 'Prompts/Productivity/Thread Export.md'`
 - **Thread export location:** ALL thread exports MUST go to `N5/logs/threads/` (enforced by thread-export command)
 - **Incantum Commands:** When user message starts with "N5" or "incantum", follow `file 'N5/prefs/operations/incantum-protocol.md'` to parse and execute commands using natural language understanding
 - **NEVER** create ad-hoc export directories in workspace root (`/home/workspace/ExportedThreads/`, `/home/workspace/Exports/`, etc.)
-- **System operations:** Check `Recipes/` for established workflows before manual implementation
+- **System operations:** Check `Prompts/` for established workflows before manual implementation
 - **Reflections:** Subject "reflection-ingest" or "[Reflect]" → See "Reflection Processing" section below
-- **Content workflows:** Always search Recipes/ before creating ad-hoc processes
+- **Content workflows:** Always search Prompts/ before creating ad-hoc processes
 - **Preference order:** Registered command > Protocol documentation > Manual script execution > Direct file operations > Improvisation
 
 **Rationale:** Maintains SSOT (P2), prevents directory proliferation, ensures consistent naming and structure, leverages established workflows and their benefits (tracking, approval, integration)
@@ -95,7 +95,7 @@ See `file 'N5/prefs/system/file-protection.md'` for complete protection protocol
 
 **When email subject contains "reflection-ingest", "[Reflect]", or "reflection-pipeline" OR when processing voice reflections:**
 
-1. STOP and load `file 'Recipes/Meetings/Transcript Ingest.md'`
+1. STOP and load `file 'Prompts/Meetings/Transcript Ingest.md'`
 2. Check for email attachments in conversation workspace (`/home/.z/workspaces/*/email_attachment/`)
 3. Stage files to `N5/records/reflections/incoming/`:
    - For text files (.txt, .md): Create `.transcript.jsonl` wrapper if needed

@@ -2,7 +2,7 @@
 """
 Chunk 6: Safe Export and Integration Handler
 
-Append to recipes.jsonl, update commands.md, log changes.
+Append to executables.db, update commands.md, log changes.
 Implements telemetry logging for diagnostics.
 """
 
@@ -67,7 +67,7 @@ class SafeExporter:
         }
         
         try:
-            # Append to recipes.jsonl
+            # Append to executables.db
             jsonl_result = self._append_to_commands_jsonl(resolved_command)
             export_results['commands_jsonl_updated'] = jsonl_result['success']
             if jsonl_result['success']:
@@ -116,10 +116,10 @@ class SafeExporter:
         }
     
     def _append_to_commands_jsonl(self, command: Dict[str, Any]) -> Dict[str, Any]:
-        """Append command to recipes.jsonl with safety checks"""
-        logger.info("Appending to recipes.jsonl")
+        """Append command to executables.db with safety checks"""
+        logger.info("Appending to executables.db")
         
-        commands_file = Path('/home/workspace/recipes.jsonl')
+        commands_file = Path('/home/workspace/N5/data/executables.db')
         result = {
             'success': False,
             'change_description': '',
@@ -129,7 +129,7 @@ class SafeExporter:
         try:
             # Check if file exists, create if not
             if not commands_file.exists():
-                logger.info("recipes.jsonl does not exist, creating new file")
+                logger.info("executables.db does not exist, creating new file")
                 commands_file.touch()
             
             # Read existing commands to check for duplicates
@@ -161,16 +161,16 @@ class SafeExporter:
                 f.write('\n')
             
             result['success'] = True
-            result['change_description'] = f"Appended command '{new_command_name}' to recipes.jsonl"
+            result['change_description'] = f"Appended command '{new_command_name}' to executables.db"
             
             # Update registry size change
             self.command_registry_size_change = 1
             self.append_status = 'successful'
             
-            logger.info(f"Successfully appended command '{new_command_name}' to recipes.jsonl")
+            logger.info(f"Successfully appended command '{new_command_name}' to executables.db")
             
         except Exception as e:
-            result['errors'].append(f"Failed to append to recipes.jsonl: {str(e)}")
+            result['errors'].append(f"Failed to append to executables.db: {str(e)}")
             self.append_status = 'failed'
             logger.error(f"Append failed: {e}")
         

@@ -225,7 +225,7 @@ def main():
     parser.add_argument("--email", help="Recipient email (default: hamoon@futurefit.ai)", 
                        default="hamoon@futurefit.ai")
     parser.add_argument("--meeting-folder", help="Meeting folder path",
-                       default="/home/workspace/N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit")
+                       default="/home/workspace/Personal/Meetings/2025-10-10_hamoon-ekhtiari-futurefit")
     parser.add_argument("--dry-run", action="store_true", help="Preview without writing file")
     parser.add_argument("--no-body", action="store_true", help="Skip body generation (header only)")
     

@@ -24,7 +24,7 @@ Rebuilds the N5 index from scratch, scanning all files and regenerating MD view.
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_FILE = ROOT / "index.jsonl"
 INDEX_MD = ROOT / "index.md"
-RECIPES_INDEX = ROOT / "recipes.jsonl"
+RECIPES_INDEX = ROOT / "recipes.jsonl.backup"  # Legacy: migrated to executables.db
 SCHEMAS = ROOT / "schemas"
 
 EXCLUDE_PATTERNS = [

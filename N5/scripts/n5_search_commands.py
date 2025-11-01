@@ -2,24 +2,28 @@
 """
 N5 Command Search Tool
 
-Search the command registry (commands.jsonl) by keyword, category, or description.
+Search the command registry (executables.db) by keyword, category, or description.
 Returns matching commands with their details.
 
 Usage:
-    n5_search_commands.py <keyword> [--category CATEGORY] [--dry-run]
+    n5_search_commands.py <keyword> [--category CATEGORY] [--type TYPE] [--dry-run]
 
 Examples:
     n5_search_commands.py list
     n5_search_commands.py meeting --category careerspan
-    n5_search_commands.py export --dry-run
+    n5_search_commands.py export --type script
 """
 
 import argparse
-import json
 import logging
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import List
+
+# Add N5/scripts to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
+from executable_manager import search_executables, list_executables, Executable
 
 logging.basicConfig(
     level=logging.INFO,
@@ -27,102 +31,66 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Constants
-WORKSPACE_ROOT = Path("/home/workspace")
-COMMANDS_REGISTRY = WORKSPACE_ROOT / "Recipes/recipes.jsonl"
 
-
-def load_commands_registry() -> List[Dict]:
-    """Load commands from commands.jsonl."""
-    if not COMMANDS_REGISTRY.exists():
-        logger.error(f"Commands registry not found: {COMMANDS_REGISTRY}")
-        return []
-    
-    commands = []
-    with open(COMMANDS_REGISTRY, 'r') as f:
-        for line_num, line in enumerate(f, 1):
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                commands.append(json.loads(line))
-            except json.JSONDecodeError as e:
-                logger.warning(f"Invalid JSON on line {line_num}: {e}")
-    
-    logger.info(f"Loaded {len(commands)} commands from registry")
-    return commands
-
-
-def search_commands(
-    commands: List[Dict],
-    keyword: str,
-    category: str = None
-) -> List[Dict]:
+def filter_by_criteria(
+    executables: List[Executable],
+    category: str = None,
+    exec_type: str = None
+) -> List[Executable]:
     """
-    Search commands by keyword in command name, description, or file.
-    Optionally filter by category.
+    Filter executables by category and/or type.
     
     Args:
-        commands: List of command dictionaries
-        keyword: Search term (case-insensitive)
+        executables: List of Executable objects
         category: Optional category filter
+        exec_type: Optional type filter (prompt, script, tool)
     
     Returns:
-        List of matching command dictionaries
+        Filtered list of Executable objects
     """
-    keyword_lower = keyword.lower()
-    results = []
+    results = executables
     
-    for cmd in commands:
-        # Category filter
-        if category and cmd.get('category', '').lower() != category.lower():
-            continue
-        
-        # Keyword search in command name, description, file
-        matches = any([
-            keyword_lower in cmd.get('command', '').lower(),
-            keyword_lower in cmd.get('description', '').lower(),
-            keyword_lower in cmd.get('file', '').lower(),
-            keyword_lower in cmd.get('workflow', '').lower()
-        ])
-        
-        if matches:
-            results.append(cmd)
+    if category:
+        results = [e for e in results if e.category and category.lower() in e.category.lower()]
+    
+    if exec_type:
+        results = [e for e in results if e.type and exec_type.lower() == e.type.lower()]
     
     return results
 
 
-def format_results(results: List[Dict]) -> str:
+def format_results(results: List[Executable]) -> str:
     """Format search results for display."""
     if not results:
         return "No matching commands found."
     
-    output = [f"\n✅ Found {len(results)} matching command(s):\n"]
+    output = [f"\n✅ Found {len(results)} matching executable(s):\n"]
     
-    for i, cmd in enumerate(results, 1):
-        output.append(f"{i}. {cmd.get('command', 'UNKNOWN')}")
-        output.append(f"   Description: {cmd.get('description', 'N/A')}")
-        output.append(f"   Category: {cmd.get('category', 'N/A')}")
-        output.append(f"   File: {cmd.get('file', 'N/A')}")
+    for i, exe in enumerate(results, 1):
+        output.append(f"{i}. {exe.name}")
+        output.append(f"   ID: {exe.id}")
+        output.append(f"   Type: {exe.type}")
+        output.append(f"   Description: {exe.description or 'N/A'}")
+        output.append(f"   Category: {exe.category or 'N/A'}")
+        output.append(f"   File: {exe.file_path}")
+        output.append(f"   Version: {exe.version}")
         
-        if cmd.get('script'):
-            output.append(f"   Script: {cmd.get('script')}")
-        
-        if cmd.get('workflow'):
-            output.append(f"   Workflow: {cmd.get('workflow')}")
+        if exe.tags:
+            output.append(f"   Tags: {', '.join(exe.tags)}")
         
         output.append("")  # Blank line between results
     
     return "\n".join(output)
 
 
-def main(keyword: str, category: str = None, dry_run: bool = False) -> int:
+def main(keyword: str, category: str = None, exec_type: str = None, dry_run: bool = False) -> int:
     """
     Main execution function.
     
     Args:
         keyword: Search term
         category: Optional category filter
+        exec_type: Optional type filter (prompt, script, tool)
         dry_run: If True, show what would be searched without executing
     
     Returns:
@@ -130,22 +98,24 @@ def main(keyword: str, category: str = None, dry_run: bool = False) -> int:
     """
     try:
         if dry_run:
-            logger.info("[DRY RUN] Would search commands with:")
+            logger.info("[DRY RUN] Would search executables with:")
             logger.info(f"  Keyword: {keyword}")
             if category:
                 logger.info(f"  Category: {category}")
-            logger.info(f"  Registry: {COMMANDS_REGISTRY}")
+            if exec_type:
+                logger.info(f"  Type: {exec_type}")
             return 0
         
-        # Load commands
-        commands = load_commands_registry()
-        if not commands:
-            logger.error("No commands loaded from registry")
-            return 1
+        # Search using full-text search from executable_manager
+        logger.info(f"Searching for: '{keyword}'" + 
+                   (f" (category: {category})" if category else "") +
+                   (f" (type: {exec_type})" if exec_type else ""))
         
-        # Search
-        logger.info(f"Searching for: '{keyword}'" + (f" (category: {category})" if category else ""))
-        results = search_commands(commands, keyword, category)
+        results = search_executables(keyword)
+        
+        # Apply additional filters if specified
+        if category or exec_type:
+            results = filter_by_criteria(results, category, exec_type)
         
         # Format and print results
         output = format_results(results)
@@ -161,15 +131,20 @@ def main(keyword: str, category: str = None, dry_run: bool = False) -> int:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Search N5 command registry by keyword"
+        description="Search N5 executable registry by keyword"
     )
     parser.add_argument(
         "keyword",
-        help="Search term (searches command name, description, file)"
+        help="Search term (searches name, description, tags using FTS)"
     )
     parser.add_argument(
         "--category",
         help="Filter by category (system, careerspan, core, etc.)"
+    )
+    parser.add_argument(
+        "--type",
+        dest="exec_type",
+        help="Filter by type (prompt, script, tool)"
     )
     parser.add_argument(
         "--dry-run",
@@ -181,5 +156,6 @@ if __name__ == "__main__":
     sys.exit(main(
         keyword=args.keyword,
         category=args.category,
+        exec_type=args.exec_type,
         dry_run=args.dry_run
     ))

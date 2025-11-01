@@ -2,7 +2,7 @@
 """
 Validate Meeting Folder Names
 
-Ensures all folders in N5/records/meetings follow the correct naming convention:
+Ensures all folders in Personal/Meetings follow the correct naming convention:
   YYYY-MM-DD-name-organization/
 
 Detects and reports violations like:

@@ -1,5 +1,0 @@
-# This directory is a Syncthing folder marker.
-# Do not delete.
-
-folderID: careerspan-meetings
-created: 2025-10-30T05:10:12Z

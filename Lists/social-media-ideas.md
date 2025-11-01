@@ -10,6 +10,30 @@ Quick-capture list for social media content ideas, observations, and themes.
 
 <!-- New ideas captured here; each gets an ID like I-2025-10-22-001 -->
 
+**ID:** I-2025-11-01-002  
+**Title:** AI is making parents out of all of us: Choose your kid wisely  
+**Body:**
+
+The analogy holds deeper than you might think: it's nature versus nurture. Nature—what the model makers give us—sets the baseline. But nurture? That's where you can add significant capability on top. How you prompt, what standards you hold it to, what behaviors you reward or correct—that's the "IQ points" you're adding through cultivation. The model is the genetic potential; your interaction pattern is the environment that either unlocks or wastes it.
+
+Brady's right about AI being sycophantic—but that's not a bug in the technology, it's a mirror of what we're asking for. Here's the reframe: AI is making parents out of all of us. You're not just using a tool; you're raising a kind of intelligence that will shape who you become. Do you want a sycophant who tells you what you want to hear? Or do you want something that challenges you, pushes back, makes you think harder? The choice reveals something: the kind of AI you cultivate says everything about who you want to be in this next stage of life. If you train your AI to be a yes-man, you'll atrophy. If you train it to be a sparring partner, you'll grow. This isn't about the AI's limitations—it's about ours. The mental model: stop thinking like a user, start thinking like a parent. What values are you instilling? What behaviors are you rewarding? Because the AI you shape will, in turn, reshape you.
+
+**Tags:** ai,mental-models,agency,personal-development,sycophancy,intentionality
+
+---
+
+
+**ID:** I-2025-11-01-001  
+**Title:** Does the Sapir-Whorf hypothesis apply to AI? Implications for building with AI  
+**Body:**
+
+The Sapir-Whorf hypothesis suggests that language shapes thought—that the structure of your language influences how you perceive and conceptualize reality. If we apply this to AI systems: Does the "language" we use to interact with AI (prompts, system instructions, API structures) fundamentally shape what the AI can "think" or produce? More practically: Are we constraining AI capabilities by how we frame requests? When building AI products, are we inadvertently limiting what's possible by staying within familiar linguistic/conceptual frames? The implications ripple outward: prompt engineering as linguistic architecture, the importance of expanding how we communicate with AI systems, and whether true breakthroughs require us to develop entirely new "languages" for human-AI collaboration.
+
+**Tags:** ai,philosophy,product-development,sapir-whorf,language
+
+---
+
+
 
 ## In Review
 

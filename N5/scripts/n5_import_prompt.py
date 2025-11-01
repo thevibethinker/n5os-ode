@@ -18,7 +18,7 @@ from datetime import datetime
 # Paths
 WORKSPACE = Path("/home/workspace")
 COMMANDS_DIR = WORKSPACE / "N5/commands"
-COMMANDS_REGISTRY = WORKSPACE / "Recipes/recipes.jsonl"
+COMMANDS_REGISTRY = Path("/home/workspace/N5/data/executables.db")
 INCANTUM_TRIGGERS = WORKSPACE / "N5/config/incantum_triggers.json"
 KNOWLEDGE_DIR = WORKSPACE / "Knowledge"
 

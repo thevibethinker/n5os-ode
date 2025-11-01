@@ -257,7 +257,7 @@ def calculate_rpi_for_date(target_date: str, dry_run: bool = False) -> Dict:
         
         # 5. Aggregate XP for the day
         cursor.execute("""
-            SELECT SUM(xp_value) as total_xp
+            SELECT SUM(points) as total_xp
             FROM xp_ledger
             WHERE DATE(date) = ?
         """, (target_date,))
@@ -267,7 +267,7 @@ def calculate_rpi_for_date(target_date: str, dry_run: bool = False) -> Dict:
         
         # 6. Calculate cumulative XP and level
         cursor.execute("""
-            SELECT SUM(xp_value) as cumulative_xp
+            SELECT SUM(points) as cumulative_xp
             FROM xp_ledger
             WHERE DATE(date) <= ?
         """, (target_date,))

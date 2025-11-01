@@ -31,7 +31,7 @@ INTERNAL_KEYWORDS = [
 
 REQ_DIR = Path('/home/workspace/N5/inbox/meeting_requests')
 TRANSCRIPT_DIR = Path('/home/workspace/N5/inbox/transcripts')
-MEETINGS_DIR = Path('/home/workspace/N5/records/meetings')
+MEETINGS_DIR = Path('/home/workspace/Personal/Meetings')
 COMPLETED_DIR = REQ_DIR / 'completed'
 PROCESSED_DIR = REQ_DIR / 'processed'
 

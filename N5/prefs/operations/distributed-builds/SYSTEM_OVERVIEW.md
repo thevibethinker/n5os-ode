@@ -131,7 +131,7 @@ A multi-conversation orchestration system for implementing major changes to Zo. 
 - **Doesn't do:** Write implementation code
 
 ### Workers (Conversations 2-N)
-- **Persona:** Vibe Builder or specialist
+- **Persona:** Vibe Builder (or other as appropriate)
 - **Does:** Read assignment, implement code, test, summarize
 - **Doesn't do:** Coordinate with other workers
 

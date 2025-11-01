@@ -125,7 +125,7 @@ User wants to close thread?
 
 ## Integration with Existing Commands
 
-Both commands are registered in `file 'Recipes/recipes.jsonl'` :
+Both commands are registered in `file 'N5/data/executables.db'` :
 
 ```json
 {"command": "conversation-end", "file": "N5/commands/conversation-end.md", ...}

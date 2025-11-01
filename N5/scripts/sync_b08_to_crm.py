@@ -121,9 +121,9 @@ def sync_b08_to_crm(meeting_id: Optional[str] = None):
     
     # Find B08 files
     if meeting_id:
-        b08_files = list((WORKSPACE / "N5/records/meetings").glob(f"{meeting_id}/B08_STAKEHOLDER_INTELLIGENCE.md"))
+        b08_files = list((WORKSPACE / "Personal/Meetings").glob(f"{meeting_id}/B08_STAKEHOLDER_INTELLIGENCE.md"))
     else:
-        b08_files = list((WORKSPACE / "N5/records/meetings").glob("*/B08_STAKEHOLDER_INTELLIGENCE.md"))
+        b08_files = list((WORKSPACE / "Personal/Meetings").glob("*/B08_STAKEHOLDER_INTELLIGENCE.md"))
     
     logger.info(f"Found {len(b08_files)} B08 files to process")
     

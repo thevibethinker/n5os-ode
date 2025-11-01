@@ -19,7 +19,7 @@ def process_meeting_extractions(meeting_id: str):
     Args:
         meeting_id: The meeting identifier (e.g., 'sofia-2025-10-09')
     """
-    meeting_dir = Path(f"/home/workspace/N5/records/meetings/{meeting_id}")
+    meeting_dir = Path(f"/home/workspace/Personal/Meetings/{meeting_id}")
     request_dir = meeting_dir / "extraction_requests"
     
     if not request_dir.exists():
