@@ -18,7 +18,11 @@
   ],
   "meeting_type": "INTERNAL_STANDUP_COFOUNDER",
   "strategic_significance": "CRITICAL",
-  "v_os_tags": ["LD-INT", "GPT-C", "A-N/A"],
+  "v_os_tags": [
+    "LD-INT",
+    "GPT-C",
+    "A-N/A"
+  ],
   "key_decision_domains": [
     "Product Strategy",
     "Go-to-Market",
@@ -46,5 +50,19 @@
   ],
   "action_items_count": 15,
   "critical_decisions_count": 5,
-  "open_questions_count": 12
+  "open_questions_count": 12,
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

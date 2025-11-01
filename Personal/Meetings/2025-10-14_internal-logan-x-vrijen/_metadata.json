@@ -1,0 +1,14 @@
+{
+  "meeting_id": "2025-10-14_internal-logan-x-vrijen",
+  "date": "2025-10-14",
+  "participants": "Logan x Vrijen",
+  "classification": "internal",
+  "gdrive_id": "1T6kJS4jh0XdtgP5vsB7UkMP6PJNly3wUyxJMKKtkkxQ",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T19:20:54.819148+00:00",
+  "smart_blocks_generated": [
+    "B01_summary",
+    "B02_action_items",
+    "B13_plan_of_action"
+  ]
+}

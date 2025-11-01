@@ -30,5 +30,19 @@
   "gdrive_info": {
     "gdrive_id": "1Of6T8OW7sis_1AUxqxuFuoCDuUa_Ancj",
     "original_filename": "Daily team stand-up-transcript-2025-10-02T14-29-57.640Z.docx"
-  }
+  },
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

@@ -135,7 +135,7 @@ class MeetingMonitorDeployment:
             },
             'paths': {
                 'logs': 'N5/logs',
-                'meetings': 'N5/records/meetings',
+                'meetings': 'Personal/Meetings',
                 'digests': 'N5/records/digests',
                 'dashboards': 'N5/records/dashboards'
             }
@@ -287,7 +287,7 @@ Report any errors or urgent meetings detected.''',
             "",
             "## Data Directories",
             "",
-            "- `N5/records/meetings/` - Stakeholder profiles",
+            "- `Personal/Meetings/` - Stakeholder profiles",
             "- `N5/records/digests/` - Daily digests",
             "- `N5/records/dashboards/` - Performance metrics",
             "",

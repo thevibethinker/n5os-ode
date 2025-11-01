@@ -40,7 +40,7 @@ Comprehensive pre-commit audit for staged Git changes to prevent:
 Flags modifications to critical system files:
 
 **Core Configs:**
-- `Recipes/recipes.jsonl (index only)`
+- `Prompts/executables.db.backup (legacy)`
 - `N5/config/*.json`
 - `N5/schemas/*.json`
 
@@ -120,7 +120,7 @@ Flags files that may bloat repository:
 
 🚨 CRITICAL: Detects empty files (0 bytes) that may indicate overwrite bugs:
 ```
-🚨 CRITICAL: Recipes/recipes.jsonl (index only) is now empty (potential data loss)
+🚨 CRITICAL: Prompts/executables.db.backup (legacy) is now empty (potential data loss)
 ```
 
 ---
@@ -167,7 +167,7 @@ DELETION_THRESHOLD = {
 LARGE_FILE_THRESHOLD_MB = 1
 
 PROTECTED_PATTERNS = [
-    'Recipes/recipes.jsonl (index only)',
+    'Prompts/executables.db.backup (legacy)',
     # Add more patterns...
 ]
 
@@ -203,7 +203,7 @@ SENSITIVE_PATTERNS = [
 ============================================================
 GIT CHECK FAILED - Issues detected:
 ============================================================
-🚨 CRITICAL: Protected file staged: Recipes/recipes.jsonl (index only)
+🚨 CRITICAL: Protected file staged: Prompts/executables.db.backup (legacy)
 ⚠️  N5/scripts/large_file.zip: Large file (5.2MB)
 🚨 CRITICAL: config/.env contains potential API key
 ============================================================

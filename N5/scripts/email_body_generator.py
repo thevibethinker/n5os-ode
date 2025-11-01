@@ -491,7 +491,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, 
                        format="%(asctime)s %(levelname)s %(message)s")
     
-    meeting_folder = "/home/workspace/N5/records/meetings/2025-10-10_hamoon-ekhtiari-futurefit"
+    meeting_folder = "/home/workspace/Personal/Meetings/2025-10-10_hamoon-ekhtiari-futurefit"
     
     print("=== Testing Email Body Generator ===\n")
     

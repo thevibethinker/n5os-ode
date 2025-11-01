@@ -3,7 +3,7 @@
 N5 Follow-Up Email Generator — v11.0.1 Implementation + Content Library Integration
 Programmatic execution of 13-step email generation pipeline
 
-Implements: file 'Recipes/follow-up-email-generator.md' (v11.0.1)
+Implements: file 'Prompts/follow-up-email-generator.md' (v11.0.1)
 
 Author: Zo Computer  
 Version: 2.1.0 (Registry Integration)
@@ -57,7 +57,7 @@ class EmailGenerator:
         self.workspace_root = Path("/home/workspace")
         self.voice_config_path = self.workspace_root / "N5/prefs/communication/voice.md"
         self.content_library = ContentLibrary()  # Use ContentLibrary instead of direct JSON
-        self.command_spec_path = self.workspace_root / "Recipes/follow-up-email-generator.md"
+        self.command_spec_path = self.workspace_root / "Prompts/follow-up-email-generator.md"
         
         # State tracking
         self.pipeline_state = {}

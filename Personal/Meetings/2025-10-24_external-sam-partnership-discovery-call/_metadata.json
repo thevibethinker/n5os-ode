@@ -7,8 +7,14 @@
   "classification": "external",
   "stakeholder_type": "FOUNDER",
   "participants": {
-    "careerspan": ["Vrijen Attawar"],
-    "external": ["Ash Straughn", "Saul Garza", "Max Carmenar"]
+    "careerspan": [
+      "Vrijen Attawar"
+    ],
+    "external": [
+      "Ash Straughn",
+      "Saul Garza",
+      "Max Carmenar"
+    ]
   },
   "blocks_generated": [
     "B26_MEETING_METADATA_SUMMARY",
@@ -32,9 +38,27 @@
     "Knowledge/crm/individuals/max-carmenar.md"
   ],
   "enrichment_priority": "HIGH",
-  "v_os_tags": ["LD-FND", "GPT-M", "A-3"],
+  "v_os_tags": [
+    "LD-FND",
+    "GPT-M",
+    "A-3"
+  ],
   "processing_system": "Registry System v1.5",
   "confidence": "High",
   "transcript_quality": "Good",
-  "notes": "Partnership exploration + acquisition discussion with Sam recruiting platform. Strong alignment on sourcing partnership, serious acquisition interest contingent on Sam's fundraising progress."
+  "notes": "Partnership exploration + acquisition discussion with Sam recruiting platform. Strong alignment on sourcing partnership, serious acquisition interest contingent on Sam's fundraising progress.",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

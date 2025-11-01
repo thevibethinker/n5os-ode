@@ -3,7 +3,13 @@
   "classification": "internal",
   "meeting_type": "INTERNAL_STANDUP_TEAM",
   "date": "2025-10-23",
-  "participants": ["Vrijen Attawar", "Logan Currie", "Ilse Funkhouser", "Danny Williams", "Rochel Polter"],
+  "participants": [
+    "Vrijen Attawar",
+    "Logan Currie",
+    "Ilse Funkhouser",
+    "Danny Williams",
+    "Rochel Polter"
+  ],
   "blocks_generated": [
     "B26_MEETING_METADATA_SUMMARY",
     "B01_DETAILED_RECAP",
@@ -18,5 +24,10 @@
   "gdrive_id": "1gB-ANK147J2H4aQ2oHK9u_Ws9pVHE7sc",
   "processed_at": "2025-10-23T19:04:12Z",
   "registry_version": "1.5",
-  "workflow_version": "5.1.0"
+  "workflow_version": "5.1.0",
+  "smart_blocks_generated": [
+    "B02_commitments.md",
+    "B13_plan_of_action.md",
+    "B26_metadata.md"
+  ]
 }

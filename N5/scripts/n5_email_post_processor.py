@@ -25,7 +25,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-MEETINGS_DIR = WORKSPACE / "N5/records/meetings"
+MEETINGS_DIR = WORKSPACE / "Personal/Meetings"
 EMAIL_GENERATOR = WORKSPACE / "N5/scripts/n5_follow_up_email_generator.py"
 
 

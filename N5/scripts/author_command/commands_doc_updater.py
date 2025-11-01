@@ -2,7 +2,7 @@
 """
 Commands Documentation Auto-Updater
 
-Automatically updates commands.md from recipes.jsonl with authored command examples.
+Automatically updates commands.md from executables.db with authored command examples.
 Adds cross-references to knowledge reservoirs and maintains consistent documentation.
 """
 
@@ -17,9 +17,9 @@ logger = logging.getLogger('commands_doc_updater')
 
 
 class CommandsDocUpdater:
-    """Updates commands.md documentation from recipes.jsonl"""
+    """Updates commands.md documentation from executables.db"""
     
-    def __init__(self, commands_jsonl_path: str = "/home/workspace/N5/recipes.jsonl",
+    def __init__(self, commands_jsonl_path: str = "/home/workspace/N5/executables.db",
                  commands_md_path: str = "/home/workspace/N5/commands.md"):
         self.commands_jsonl_path = Path(commands_jsonl_path)
         self.commands_md_path = Path(commands_md_path)
@@ -27,7 +27,7 @@ class CommandsDocUpdater:
         self.commands_dir = Path("/home/workspace/N5/commands")
     
     def update_commands_documentation(self) -> Dict[str, Any]:
-        """Update commands.md from recipes.jsonl"""
+        """Update commands.md from executables.db"""
         try:
             logger.info("Starting commands documentation update")
             
@@ -95,7 +95,7 @@ class CommandsDocUpdater:
         content = [
             "# N5 Commands Reference",
             "",
-            f"*Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} from recipes.jsonl*",
+            f"*Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} from executables.db*",
             "",
             "This document provides a comprehensive reference for all available N5 commands, ",
             "including those created through the Command Authoring System.",

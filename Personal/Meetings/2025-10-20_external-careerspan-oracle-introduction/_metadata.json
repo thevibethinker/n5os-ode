@@ -41,5 +41,19 @@
   "crm_profile_path": "Knowledge/crm/individuals/chase-gagnon.md",
   "enrichment_priority": "LOW",
   "howie_tags": "[LD-NET] [GPT-E] [A-3]",
-  "notes": "NETWORKING stakeholder, early relationship building for 2-3 year horizon infrastructure needs. No immediate business opportunity. Logan planning November coffee meeting in Cambridge."
+  "notes": "NETWORKING stakeholder, early relationship building for 2-3 year horizon infrastructure needs. No immediate business opportunity. Logan planning November coffee meeting in Cambridge.",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

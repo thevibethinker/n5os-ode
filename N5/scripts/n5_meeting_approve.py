@@ -28,7 +28,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-MEETINGS_DIR = WORKSPACE / "N5/records/meetings"
+MEETINGS_DIR = WORKSPACE / "Personal/Meetings"
 EMAIL_GENERATOR_SCRIPT = WORKSPACE / "N5/scripts/n5_follow_up_email_generator.py"
 
 
@@ -267,7 +267,7 @@ def send_notification_sms(
                 filename = Path(email_files[0]).name
                 message += f"Location: DELIVERABLES/{filename}"
             else:
-                message += f"Location: N5/records/meetings/{meeting_name}/DELIVERABLES/"
+                message += f"Location: Personal/Meetings/{meeting_name}/DELIVERABLES/"
         else:
             message = f"⚠️ Email generation failed: {meeting_name}\n\nCheck N5/logs/ for details."
         
@@ -426,7 +426,7 @@ def main():
     )
     parser.add_argument(
         "meeting_folder",
-        help="Name of the meeting folder in N5/records/meetings/"
+        help="Name of the meeting folder in Personal/Meetings/"
     )
     parser.add_argument(
         "--actions",

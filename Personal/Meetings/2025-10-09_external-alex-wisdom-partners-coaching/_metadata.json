@@ -23,5 +23,19 @@
   "crm_profile_path": "Knowledge/crm/individuals/alex-caveny.md",
   "enrichment_priority": "HIGH",
   "howie_tags": "[LD-ADV] [GPT-E] [A-3]",
-  "notes": "Post-burnout recovery check-in, strategic GTM discussion, established advisor relationship through Wisdom Partners"
+  "notes": "Post-burnout recovery check-in, strategic GTM discussion, established advisor relationship through Wisdom Partners",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

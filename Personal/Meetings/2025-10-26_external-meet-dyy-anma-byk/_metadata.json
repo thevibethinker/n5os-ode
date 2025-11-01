@@ -24,5 +24,19 @@
   "enrichment_priority": "MEDIUM",
   "transcript_quality": "Good",
   "confidence_score": "High",
-  "notes": "Meeting was interrupted mid-demo during setup phase. Primary follow-up action is to reconnect and complete Zoom walkthrough. Eric represents target ADHD user persona with Zapier frustration."
+  "notes": "Meeting was interrupted mid-demo during setup phase. Primary follow-up action is to reconnect and complete Zoom walkthrough. Eric represents target ADHD user persona with Zapier frustration.",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

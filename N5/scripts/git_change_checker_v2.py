@@ -37,7 +37,7 @@ LARGE_FILE_THRESHOLD_MB = 1
 
 PROTECTED_PATTERNS = [
     # Core system configs
-    'Recipes/recipes.jsonl',
+    'N5/data/executables.db',
     'N5/config/*.json',
     'N5/schemas/*.json',
     'N5/prefs/**/*.json',

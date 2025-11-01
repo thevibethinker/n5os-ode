@@ -1,0 +1,408 @@
+
+02:19
+Vrijen Attawar
+Hi, can you hear me? 
+
+02:21
+Mujgan Ozceylan
+Hi. Yeah, I can hear you. 
+
+02:23
+Vrijen Attawar
+How are you? 
+
+02:24
+Mujgan Ozceylan
+How are you doing today? 
+
+02:26
+Vrijen Attawar
+I am doing well. I got caught in more than a little bit of rain, so if I'm off camera. No, it's all good. If I'm off camera for a little bit. That's just because I look like a wet dog right now. How are you doing? How's your day? 
+
+02:44
+Mujgan Ozceylan
+I'm good. 
+
+02:45
+Vrijen Attawar
+I'm good. 
+
+02:45
+Mujgan Ozceylan
+Yeah. Not. Not caught in the rain, which is great. 
+
+02:50
+Vrijen Attawar
+Always nice. Always nice. I now realize. Where in the world are you calling from? 
+
+02:55
+Mujgan Ozceylan
+I'm in San Francisco. What about you? 
+
+02:58
+Vrijen Attawar
+Nice. I'm in New York. 
+
+03:01
+Mujgan Ozceylan
+New York. Okay, that's cool. I lived in Toronto for eight years, so pretty familiar with the weather around that area. 
+
+03:13
+Vrijen Attawar
+Yeah, I bet San Francisco is more than a step above. 
+
+03:17
+Mujgan Ozceylan
+Yeah. Yeah, it's pretty good. I feel very lucky here. 
+
+03:22
+Vrijen Attawar
+What brought you to sf? 
+
+03:25
+Mujgan Ozceylan
+I came for work. So I'm working with AGI. How familiar are you with it? 
+
+03:33
+Vrijen Attawar
+Not super familiar with AGI. Ck. That's right. Company had reached out and asked if I would be willing to chat. And yeah, I really trust ck and I forget what it specifically was, but I remember what it was with something that super interested me. So I apologize for not being more prepared. Learn anything and everything. 
+
+03:58
+Mujgan Ozceylan
+Yeah. So we're basically exploring how people manage their digital life across both, like, work and personal contexts. And then our company, we are like an AI agent company. So we're trying to see, understand, like, different, like, pain points and also figure out a way where we could apply the technology to everyday life. So. 
+
+04:22
+Vrijen Attawar
+Nice. Okay. 
+
+04:23
+Mujgan Ozceylan
+Yeah, that's like the context of the conversation. If you could give me a quick, like, intro in terms of, like, what's your job? You live in New York, your age. What does like, day to day look like for you? For a typical day? 
+
+04:39
+Vrijen Attawar
+Yeah, absolutely. 33, New York, former international student, now naturalized. In case that context is helpful. I moved to New York about five years ago, started Careerspan about three years ago, and effectively have been building in the career tech, HR tech space with the intention of sort of helping folks get essentially just get better visibility to employers and figuring out ways in which we can use folks's data to help them better aligned with job openings. In a nutshell. 
+
+05:19
+Mujgan Ozceylan
+Cool. 
+
+05:21
+Vrijen Attawar
+I should also mention, are you familiar with a company called Zoe Zo? 
+
+05:27
+Mujgan Ozceylan
+No, what was that spelled? 
+
+05:29
+Vrijen Attawar
+Zo Dot Computer. Zoe is awesome. Yeah, Zoe is awesome. I'm a ambassador and a sort of informal solutions architect for Zoe on the side. So I guess compared to the Average person you're probably talking to someone's pretty qualified or at least opinionated. I don't know about qualified. Let me take that back. I don't know about qualified. 
+
+05:58
+Mujgan Ozceylan
+How are you using that for your work or your personal life? 
+
+06:06
+Vrijen Attawar
+Zoe has pretty much become the centerpiece of my life. It's like basically the productivity unlock I was always looking for. So you know, for context, like super into productivity was one of those folks that like made their own notion database was like, you know, like one of those kinds of like notion customers, right, that was like loved their stuff but also loved like bringing folks into the ecosystem. So you know, I generally have a pretty prosumer bent when I like a product. I'm generally one of the sort of most heavily involved users. I'm also non technical so it's a little bit of a weird combination where like I actually, yeah, I actually quite like and desire highly sophisticated workflows and capabilities, but I lack the technical skill to execute on them in a meaningful capacity. 
+
+06:59
+Vrijen Attawar
+So you know, you could probably name like an agent tool and I've tried it or heard of it. You know, I was on Sana for a bit. I've tried Littlebird, like even adjacent ones like Little Bird. I'm trying to think of Zapier and Nan obviously make iftt. The main thing that was sort of thesis that I've sort of been developing in my work with Zoe is that the issue is one of information overload. And most workflows in most workflow design paradigms are oriented around a store capture preserve model which is not only inappropriate, it's kind of use, it's kind of hurtful or harmful in an AI world where we're already overloaded with information. 
+
+07:47
+Vrijen Attawar
+And so for me, like in an example of a complex but pretty critical workflow is I no longer check meeting summaries or even check or to be accurate, I don't check the stuff out of the transcript. I no longer have to go to ChatGPT to do it. I'm very much the kind of person that wants my own analysis and I want that analysis run against the personal knowledge base it has on who I am and who my company, what my company is. And that's a pretty sophisticated operation if you want to go beyond just using like projects on ChatGPT, you know. But with Zoe I was able to because it's a prompt based way of using it as opposed to a builder flow. I've actually had a lot of success building out a flow where I'll have meetings will get automatically recorded. 
+
+08:36
+Vrijen Attawar
+They will get analyzed for stakeholder type, internal, external. Based on that calculation, it will identify specific sub analyses that I want it to run. You know, in some meetings it's more important for me to know who the warm intros are. In other meetings, it's more important for me to know, you know, just what I agreed to. And in other meetings, the only thing I care about is that one great quote that I had that I want to use with all of my other customers. So again, I have like, very particular, like, preferences and generally seek out very, like, specific bits of information. And so Zoe has been like, fantastic. Like, I was able to spin something up comparatively easy, and now I get much more sophisticated sort of like, insights for my meetings than I could with like, pretty much anyone else. 
+
+09:29
+Vrijen Attawar
+And again, it's sometimes hard to. I'll pause this ramble in a second, but it's a little hard to explain why I could seemingly do something that feels harder, like Zoho versus something that feels easier, like Zapier. And my belief is largely that, like, workflows don't exist in vacuums. Like, that involves developing 100 distinct workflows and 50 workflows to integrate those hundred workflows, you know. But yeah, I've been seeking a sort of interconnected system, and that's what it effectively achieves for me. 
+
+10:03
+Mujgan Ozceylan
+Okay, and what helps with the interconnectedness? Like, how is it achieving that for you? 
+
+10:09
+Vrijen Attawar
+So it doesn't have memory. I'm sure the are working on it, but essentially the way I emulate memory is by having very specific workflows that essentially by having very specific workflows that know exactly which reservoir of information to reference. And the flexibility comes from the LLM in the middle. Right? So. So, you know, if I'm looking for. So for example, normally what I would have done, or historically what I did, was obviously I would store tons of files in ChatGPT. But that's a pain because what I found very quickly was a month in, I'm not necessarily wanting to swap in, swap out project files, but, you know, suddenly my AI's understanding of my business and where we are and what we're doing, what the priorities are, gets out of slip, right? 
+
+11:05
+Vrijen Attawar
+And so I found it was a constant process of, like, maintaining these records, these like, sacred texts that the AI could refer to. So the way that it effectively achieves that is by, you know, having very specific instructions that say, hey, when bridging is talking about this, you got to look here, you got to look for this kind of information and to be able to just verbally describe that and have those sort of agentic capabilities pretty reliably handle that. I mean, I'm using Manus as a baseline, which is sort of my reference point. I think they've done a pretty fantastic job with like how diligently the AI listens and executes. 
+
+11:50
+Mujgan Ozceylan
+Cool. Yeah. What are some of the. I know the meeting summaries, automating. That is something you mentioned. What other kind of use cases do you currently have? Or like which areas of your workflow do you seek help? 
+
+12:05
+Vrijen Attawar
+Let me actually send you a link. So I have released. This is going to be funny. I find it. I have a. So part of this, like essentially consulting business that I want to spin up around productivity and around sort of folks with very, let's just charitably call it like high maintenance information needs. So I just sent you a link of this wait list that I've been pulling up. I plan on making my base repo available on GitHub totally for free. And that's part of why Zoe's been excited to work with me. By the way. This is not me pitching it. I just really love this fucking product. So I'm just trying to. But yeah, no, I. 
+
+13:03
+Vrijen Attawar
+But it's because I actually think the thing that they are lacking, and I've told them this explicitly, is that the upfront cost of investing in adapting your workflows and bringing them to this Zoho world, or any world, because it applies to any agentic sort of tool of that type of that upfront effort, almost no one I've spoken to is willing to make. Which is where my sort of side hustle with ZO comes in is essentially I set up these highly personalized custom implementations of that with my expertise. So to go to your original question, what kind of other stuff does it do? So those meetings I mentioned is able to identify which of those blocks relates to market intelligence or competitor intelligence. 
+
+13:55
+Vrijen Attawar
+And it will, as a separate workflow, periodically grab all of those and compound them into a database and then run reports for me. So it just takes that puts that in a SQL database and then runs a separate workflow that again I just get to describe, which is awesome. I get to just say, hey, do this, do this, do that. And it will, to a relatively reliable degree, just do that and then set all that stuff up for me, you know, and so for me, as someone that is technical enough to know what like state management is, but not technical enough to know the difference between fucking terminal and like Whatever the hell else goes on in cursor, like that is the. 
+
+14:41
+Vrijen Attawar
+It's a very weird ICP in some ways, but I do think there's a lot of folks like me out there that are just about technical enough to be dangerous. But like coding just doesn't really work for us. Right. Because it's not just about the AI being able to produce the code. It is the, it is the tools of the craft. And like it would take me a long time to get to figure out a cursor, but you know, a chatbot UI like ChatGPT that I'm already used to, with a file structure that I'm already used to, or like a file system, like that's easy. No, that's very like accessible to me. 
+
+15:17
+Mujgan Ozceylan
+Okay. Do you use it for like automating your communications and other things like that as well? 
+
+15:25
+Vrijen Attawar
+Yeah, so not actually, no. I guess by definition, because the same process that I described earlier has a branching process where it will identify which meetings require follow up emails or where I committed follow up emails and then generate a, I mean an extremely good custom email. I mean to the extent that like one of the ideas I've been tinkering around with is like having a vibrating organizing some sort of vibe. Right? Because I think that like folks that really know how to use AI to produce writing, you could get some like really impressive stuff out of there. I mean, not impressive in that like it's pros that you want to write home about. 
+
+16:07
+Vrijen Attawar
+But I think just as a technical challenge, like can you emulate natural writing or can you get folks to like create natural writing through just prompting LLMs, like that was another big use case of mine that I mostly developed when I was tinkering with ChatGPT was developing a custom voice, specifically my voice, and wanting that voice to be accurately captured in my follow up emails and in my LinkedIn content. So now for me it's as easy as I'll voice record a literal monologue. Obviously you can see how much I like doing that and I'll just upload it to the same folder and it will everything from like identifying what type of monologue it was, whether I'm reflecting on a product or I'm just like, you know, writing stuff for a LinkedIn idea. 
+
+16:58
+Vrijen Attawar
+It's able to scan that, run that through my writing, compare what I'm saying and connect that to other things I've said in the past, you know, and give me something that is like most people when they say it's 90% there they. It's actually like 60% there. My shit is like actually 90% there because of the level of. Yeah, just the amount I've been trying to hone this particular motion. 
+
+17:21
+Mujgan Ozceylan
+That's pretty impressive. What would you say? What area is it lacking for you? Like, if you had one thing that you could fix, what would you fix? 
+
+17:33
+Vrijen Attawar
+Memory would be awesome, you know, because that would be a huge burden. Off. That was actually the hardest part of leaving Chat DBT was. Thank you so much, sir. The hardest part of leaving ChatGPT was how much it knew me. And I mean, I eventually just spent like maybe an afternoon. Thank you. Asking it to do deep research, but turning web search off, which is a cool trick for having it look at its internal memory store. So I essentially just ran some like air gap deep research queries and got all that information out to the best of my ability and dumped it into something else. So yeah, memory is like, I guess, like I'm almost at a few sides of my mouth because one hand I'm saying it's important and on the other hand I'm saying it's easily Amen. 
+
+18:32
+Vrijen Attawar
+Saying it's sort of easily replicated. But I guess what I'm saying is that once something really knows you. I think that was the stickiness of notion for me, or the stickiness of any product is once it really knows, it just goes back to the same thing I said earlier. Suddenly the switching cost seems too high. And it's funny how that can shift psychologically because right before I met Zoe or met the Zoho folks and sort of used the product, I was like, I'm pretty happy with my productivity speed. I'd give it an 8 or 9 out of 10. And then I tried a couple of things with it and I was like, okay, actually this is so 6 out of 10. There's so much more I could do because I had literally never been able to properly run agents before. 
+
+19:22
+Vrijen Attawar
+You know, again, like zapier and stuff. Just. It's not that it's too complicated, it's just the amount of like troubleshooting and googling and like, you know, all that required was obnoxious. But yeah, I think as I'm talking to you, even I'm realizing the big unlock has just been being able to translate my skills as a prompter into my skill as a like builder or formerly absent, now somewhat present, still as a builder. 
+
+19:51
+Mujgan Ozceylan
+Cool. Yeah, you're definitely one of the power users. I don't think a lot of people have this many automations already happening for them in terms of increasing their productivity. 
+
+20:04
+Vrijen Attawar
+Yeah, yeah, I know, I. It's very nerdy and I enjoy it very much. 
+
+20:11
+Mujgan Ozceylan
+For you though, I'm curious if you were to think back to last week, can you describe one moment you felt overwhelmed even though you have all these things that are already ongoing for you, I'm curious to hear what's remaining. 
+
+20:28
+Vrijen Attawar
+One thing that has yet to be cracked is to do lists. And to do lists I think are uniquely challenging because they. The point of failure of a to do list is in my opinion, point of capture and you know, sort of like point of not point of management but the overall management process. Right. So it's like if I think of when I thought of a task, it's like I didn't note it down, some point of capture or I lost visibility into it because I just added so many tasks that it got overloaded or you know, we're not very good at protecting ourselves against being overworked or at least I'm not. 
+
+21:15
+Vrijen Attawar
+So like, even though I know it is better to pick three things in a day and do it and feel good about that, you know, my stupid ass will still like do 20 things right? And aspire to do 20 things. Like that's my nature. I can't. That part I can't change. And I think the hard thing with to do lists has been like the big. I became quite a big fan of Akiflow and what I really liked about them was that they integrated with Slack and Linear and a bunch of places. So if I bookmarked something it would get added as a task. So that hugely solved my point of capture problem. But then to my earlier point about information for living the AI era, that created a whole new problem of like, oh my God, my list is massive. 
+
+22:06
+Vrijen Attawar
+And even my current workflow can stole that because it has context for the things that I do, but it doesn't have discernment. Right. And it doesn't have a accurate gauge of my moment to moment priorities. And as such it's very hard for. It would be very hard for me totally trust an AI to even decide what ends up on my to do list. Like I just know and even knowing the founders that I know, I think they would be very like finicky about like an AI picking their tasks for them. And that's why I think that's like I said, sorry, I just had to let someone in the door. 
+
+23:01
+Mujgan Ozceylan
+Oh good. 
+
+23:02
+Vrijen Attawar
+Yeah, it was. It still hasn't Solved. Like, I still mostly just fly by the seat of my pants. I have followed my Jada font collected. I have all of my data sort of getting. By the way, I'm just gonna get in the elevator. So if you've missed it for a second, that's just fine. 
+
+23:20
+Mujgan Ozceylan
+Okay. 
+
+23:21
+Vrijen Attawar
+Standing a little drenched downstairs. 
+
+23:28
+Mujgan Ozceylan
+So for how. How are you currently managing your to do lists then? 
+
+23:34
+Vrijen Attawar
+Yeah, like I was saying, it's. It's very like by the seat of my. Unfortunately, you know, I just try to like. 
+
+23:55
+Mujgan Ozceylan
+Yeah, lost connection for a second. 
+
+24:00
+Vrijen Attawar
+Yeah, give me one second. Almost there. Look at these cats. All dry. Sleep okay? Yeah. No. So you asked the question around. How am I managing it? Like I said, very seated by pants. I'll have like, you know, a day sticky where I'll just on an ongoing basis write down this is why this is. That needs to get done today, you know, and then I will effectively just go at it. But yeah, that was a very good question about what remains. Because, yeah, the one thing that remains that I don't think Zoe is actually especially suited for is task management. Because I think task management involves both specialized UI elements that you could like theoretically engineer for yourself on Zoe. Right on like the website builder or whatnot. But that's probably a situation where I don't want that. 
+
+25:30
+Vrijen Attawar
+That's where I go from being a pixel user to an iPhone user in that context. Where I want the nice polished Todoist app that captures everything from every, you know, from every single data source that I don't necessarily want to set up. Like free. 
+
+25:49
+Mujgan Ozceylan
+What sources would that be? I guess like it depends on what tools you use on a day to day basis for your work. 
+
+25:56
+Vrijen Attawar
+Yeah, I mean if I could pick, it would be inline and messaging app, specifically work messaging app like Slack for sure. Being able to just like there's so many instances where it's like, oh, I got to remember to read this. I have to remember. Check that. But. But again, optimizing point of capture. Just being able to click bookmark and knowing that it'll end up in my to do list will. Will be fine. I think for to do lists, like folks that can balance the act of capturing aggressively with curating are the ones that do really well. If I actually sat down and followed the best practices of task management and did replace I had the inbox review segment, then I would do great. Right? It's. 
+
+26:43
+Vrijen Attawar
+It's the busyness of life that stops me from adding my own lack of discipline that stops me from like carving out an hour a day. 30 minutes, morning, evening to like review my inbox and get and like assign tasks and allocate them to my week. So yeah, I guess it's the specifically it's that review step which is friction and just like an onerous thing in the week and then it is the actual arrangement of what needs to be done when because that once again becomes a matter of discernment. Just like which task matters and which ones don't. 
+
+27:15
+Mujgan Ozceylan
+Okay, that's really cool. I'm gonna also definitely check Zoe. I'm curious how it works. I will, I will try to test it around myself, check it out. 
+
+27:24
+Vrijen Attawar
+It's a cool product. You know they have a discord. Like they're pretty open company and yeah, I feel like everyone should look, learn from each other. 
+
+27:31
+Mujgan Ozceylan
+So one last thing. I, I guess we talked a lot about productivity. One more area. Hi. 
+
+27:39
+Vrijen Attawar
+Yeah, sorry. 
+
+27:41
+Mujgan Ozceylan
+No, super cute. So if you like. How do you kind of manage your personal life? Are there anything like anything around your personal life? Running errands, events, relationships like you feel like you need help with at all? 
+
+28:03
+Vrijen Attawar
+I think I need to get a personal life first, which is the saddest response I've given to anything in a very long time. I think it's for me, honestly, like personal life stuff is really errand management but to the pain point that you reveal. Yeah. I really don't have a very good system for like even managing personal tasks. Right. So I would very much say like, you know, you can't workflow your way out of forgetting what to do or not knowing what to do when. So I don't know if that has salience for your PMF hypotheses but that's certainly something that I think there's yet to be a full on revolution and like to do. To do. 
+
+28:53
+Mujgan Ozceylan
+To do list. Yeah. Yeah. Because personal, a lot of personal life things also revolve around different things we need to do. Yeah. Like even if it's errands or like don't forget to respond to your mom or like book a restaurant for this friend. All these things. Yeah. 
+
+29:11
+Vrijen Attawar
+Yeah. Are you guys. Do you have a few more minutes for me to just ask one or two questions and I'm happy to send them my emails. Yeah, yeah, I have some time. Amazing. Yeah, I would love to. I mean to the extent that you can share. I recognize if you're like stealth and stuff and obviously I've revealed myself as working for a competitor so not going to take any level of resistance on your part personally. But. Yeah. Just curious how you would describe what you guys are trying to do and like what your philosophy is. 
+
+29:40
+Mujgan Ozceylan
+Yeah. So we have different streams of products right now that we are experimenting. So it would be hard to like nail down just saying, oh, we're doing this one thing. But I can talk a bit more about this line of experimentation. Like the reason I'm having these user interviews is just trying to understand like especially busy professionals, more so people who are on the go, not only like their commuting to places, to their meetings, have like engaging social life. So how does that look like for them to have a tool that helps almost everything? So we are coming from an ambitious place of like not only like productivity but like where in person, in life it could be also helpful. 
+
+30:32
+Vrijen Attawar
+Love it. That's the appropriate level of ambition. So I'm all for that. And is there anything, are there any sort of, like, I'm just curious, like, are there any like hypotheses that you're developing or like things that you realize or learned that were the opposite of what you thought? 
+
+30:55
+Mujgan Ozceylan
+I would say context fragmentation, like context switching is number one. Maybe communication overload is number two. It's like one of the most draining problems because especially for busy people, plus if they have like a busy social life, it's overflowing messages from like both work and personal setting and like keeping up, staying on touch of those on top of those sounds like a big pain point for a lot of people because you get these messages also from all these different tools, right? Like you get it from LinkedIn, your iMessage, your Slack email, WhatsApp, like all these different tools. So that's another one. 
+
+31:40
+Mujgan Ozceylan
+And then the hypothesis 3 is actually like more related to this is this has been interesting because some of the busy professionals we talk to, they're more like, well, I have a lot of systems and like things I do for my professional life, but then my personal life is suffering because I don't really do much there. Like I, I don't check with my friends, I'm losing contact with all these people or like I'm not being the best, I don't know, fiance to my, you know, person I'm in relationship at. So all these other things that kind of fall through the cracks. So that's been an area of interest as well. 
+
+32:27
+Vrijen Attawar
+I find that fascinating because I think that there is such a, I don't know if a like psychology based take is going to be helpful to you. I'm going to drop it anyway. I think there is a large Degree. I think it's impossible to separate the degree to which self sacrifice is, like, kind of celebrated. 
+
+32:58
+Mujgan Ozceylan
+Yes. Yes. 
+
+33:00
+Vrijen Attawar
+I think it's a little hard because it's hard to separate the elements of, like, that which are leading people to behave this way and the extent to which we are just bad at relationships. And I'm willing to believe both, because networking in many ways is. I mean, it's not in many ways. It is the relationships. Right. But we don't view it like personal relationships. And yet it is the same thing. Right. It is building alliances and building sort of like folks that are keen on what you've got to do and what you've got to offer. And from a career perspective, what we tell folks is like, you're working on your career at the wrong time. Right. 
+
+33:38
+Vrijen Attawar
+The reason people hate networking is because, yeah, if I had to go to you with, like, my bowl out and be like, please, sir Matt, I have some more, like, yeah, I'm gonna hate that. 
+
+33:48
+Mujgan Ozceylan
+Yeah. 
+
+33:49
+Vrijen Attawar
+Right. But if I'm going to you saying, hey, here, the cool things that I've been up to, because I don't need anything from you. I'm just trying to engage with you, that would be incredible. Right? And so I think it's. I think it's very easy as well for founders to forget that, like, at the end of the day, like, it's all just about cutting grass and, you know, maintaining relationships. Maintaining relationships. And they're not that different. And I almost wonder if the reason is also because we are like, I mean, again, just speaking from very personal place, like, you think that the. If you have no money in your bank account, which we frequently don't like, the bank account you can always pull from is like, yourself, right. And like, your experiences in yours. 
+
+34:36
+Vrijen Attawar
+So I would just throw out there that, like, basically I'm paying a horrible picture of founders, but, like, maybe we're just narcissists and we like feeling that way. Or maybe we just are so absorbed in our thing that we discount. Right. We, like, know this time lost with, like, our family members or whatever. But we're making a decision to not care. So, yeah, just some. Just some sort of scattered thoughts, but I do think they're related very much to why founders as a group. Because, for example, I, like, have a group of founders, maybe like 30 of them, just career tech, when we talk, like, professional stuff. I have maybe like a dozen or two dozen founder friends in, like, New York that I try to bring together every so often. And like, every single One of them is like so alone. 
+
+35:30
+Mujgan Ozceylan
+Oh, so there's. 
+
+35:32
+Vrijen Attawar
+I know, it's sad. It's sad. 
+
+35:34
+Mujgan Ozceylan
+It is sad. 
+
+35:35
+Vrijen Attawar
+Yeah, yeah. Like all of us need it because it's. Yeah. Like the only person that gets it is your co founder and they hear from you all the time. So like that's the last person that you could almost go to for support, you know? So it's a very lonely thing and maybe that could be some part of your solution is making that feel less lonely. Because. Yeah. For folks that I think are falling in that like high powered bracket. Yeah, I think it's. Yeah. I think there are many reasons why we let it slip and they're all bad reasons, but we do it anyway. 
+
+36:11
+Mujgan Ozceylan
+Yeah. I guess, like the question is, if there was something helping with that in some way, shape or form, would people be interested? Because this is also kind of celebrated in a way, right. Like that you all, you do not see your friends, you can't even talk to your family. You're so locked in and like focused on your business. So what do you think? Like, what's your take on that? Do you think people really don't care or do they like pretend to not care? 
+
+36:40
+Vrijen Attawar
+I think it's the. I think we pretend not to care because to carefully is really hard and that's what our family members deserve. Right. So it's better to give you nothing than to give you 10% knowing that I'm desperate to give you like 110. That would be one theory. I think the other would just be the kind of. With context switching, like context switching is already so hard. Like my friends had. It's gonna make me sound like a podcast horrible friend. I'm not horrible friend. I'm just a bad friend. I, you know, my friends had a baby. I love them very much. I like a day and a half late to sending them a message. Right. And it's one of those things where like in the moment I'm like, oh, I have this next meeting. Oh, I have this thing. 
+
+37:29
+Vrijen Attawar
+End of the day, I'm like, oh, I gotta get these me emails out. Then I'm so tired, I'm like, oh, I gotta rest for five minutes before I can think of anything. Right. So the cost of caring becomes so high because the moments at which the caring is needed, it is very inconvenient to just spin up the carrot. Right. But something where I'm almost like spitballing like again with this idea of like the right information at the right time. Right. So if it knew, like, hey, Dan, And Deb really matter of Bridget. Right. I can tell by I don't have a large data set because like it's going to be hard to get folks to give you historical data about relationship. Right. So I have a large data set but maybe I can infer through language, context, explicit instruction. 
+
+38:13
+Vrijen Attawar
+Maybe I can infer like how much someone matters and then I can be proactively surface like hey Bridget, it was actually, you know, Faith had a promotion stop promotion last week. Like, you know, here's everything ready. This is where she's working. This is like what she's doing. Like it on some level it can feel like shortcutting being a good friend. Which is why I don't think it should be totally easy. But I like and our product philosophy of mycareerspan reflects that. Where literally every other company in the country in the world is making a resume builder because that's what they think people need and they're wrong. What people need is someone to help them talk about themselves. Right. But that's hard. Self reflection is hard. But I'll tell you this. Our users that love careerspan zero advertising, zero marketing. 
+
+39:02
+Vrijen Attawar
+We're actually especially bad at posting around LinkedIn and we get tons of folks that are just like. I really believe challenging people just the right amount is part of the answer. So making me feel like a good friend while organizing, setting up the circumstances for me to be a good friend is really awesome for me. 
+
+39:24
+Mujgan Ozceylan
+I like that a lot. Yeah, that's great. 
+
+39:27
+Vrijen Attawar
+I'm glad. I'm glad this is such a fun conversation. I'm sorry but I'm having a blast. 
+
+39:34
+Mujgan Ozceylan
+Me too. Yeah. Thank you so much. And your. It looks like your chat enjoyed it for a while too. I think I was listening to you very attentively. 
+
+39:45
+Vrijen Attawar
+He he. Gary is. Is my biggest supporter. 
+
+39:51
+Mujgan Ozceylan
+That's nice. Okay, thank you so much. I'll connect with you on LinkedIn and like again, open to chatting if you want a bounce of ideas or yeah. Catch up. 
+
+40:04
+Vrijen Attawar
+Yeah, I would love that. I would love that. And right back at you. This is like super fun for me and you're very thoughtful about this stuff and I had no doubt that company would only put me on a call with someone. That was like a solid. Thank you for your time as well. 
+
+40:17
+Mujgan Ozceylan
+Awesome. All right, have a great rest of your day. Thank you so much. 
+
+40:21
+Vrijen Attawar
+Take care. Catch you soon. 
+
+40:23
+Mujgan Ozceylan
+Bye. 

@@ -122,7 +122,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py patterns \
 2. **Log significant attempts** (after fix attempts, not trivial reads)
 3. **Check patterns proactively** (after 2nd failure on same component)
 4. **Surface warnings to V** (when circular pattern detected)
-5. **Activate specialists** (Debugger mode if 3+ similar failures)
+5. **Consider Debugger persona** (if 3+ similar failures)
 
 ---
 

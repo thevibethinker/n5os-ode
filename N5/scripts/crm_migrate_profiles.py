@@ -29,7 +29,7 @@ WORKSPACE = Path("/home/workspace")
 CRM_DB = WORKSPACE / "Knowledge/crm/crm.db"
 PROFILES_DIR = WORKSPACE / "Knowledge/crm/profiles"
 SCHEMA_FILE = WORKSPACE / "N5/schemas/crm_schema.sql"
-MEETINGS_DIR = WORKSPACE / "N5/records/meetings"
+MEETINGS_DIR = WORKSPACE / "Personal/Meetings"
 
 
 class CRMProfileMigrator:

@@ -20,7 +20,7 @@ class FileBackupSystem:
     PROTECTED_FILES = [
         "/home/workspace/Documents/N5.md",
         "/home/workspace/N5/prefs/prefs.md",
-        "/home/workspace/Recipes/recipes.jsonl",
+        "/home/workspace/Prompts/recipes.jsonl",
         "/home/workspace/N5/timeline/system-timeline.jsonl",
         "/home/workspace/Knowledge/stable/careerspan-timeline.md",
     ]

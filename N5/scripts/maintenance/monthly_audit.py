@@ -33,7 +33,7 @@ BACKUP_RETENTION_MONTHS = 6
 CRITICAL_FILES = [
     "/home/workspace/Documents/N5.md",
     "/home/workspace/N5/prefs/prefs.md",
-    "/home/workspace/Recipes/recipes.jsonl",
+    "/home/workspace/Prompts/executables.db",
 ]
 
 

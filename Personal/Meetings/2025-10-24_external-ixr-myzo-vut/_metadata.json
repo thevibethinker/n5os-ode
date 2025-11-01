@@ -10,7 +10,7 @@
   "participant_note": "Identity unclear from transcript - appears to be Zo Computer GTM/partnerships team member. Need to confirm from email/LinkedIn.",
   "blocks_generated": [
     "B26_MEETING_METADATA_SUMMARY",
-    "B01_DETAILED_RECAP", 
+    "B01_DETAILED_RECAP",
     "B02_COMMITMENTS_CONTEXTUAL",
     "B08_STAKEHOLDER_INTELLIGENCE",
     "B21_KEY_MOMENTS",
@@ -29,7 +29,10 @@
   "enrichment_priority": "HIGH",
   "howie_tags": "[LD-NET] [GPT-E] [A-3]",
   "transcript_quality": "good",
-  "transcript_issues": ["Cut off mid-sentence at end", "Participant names not clearly identified"],
+  "transcript_issues": [
+    "Cut off mid-sentence at end",
+    "Participant names not clearly identified"
+  ],
   "confidence_score": "medium",
   "key_themes": [
     "November 5th founder event collaboration",
@@ -45,5 +48,19 @@
     "Roe Bank outreach (today/tomorrow)",
     "Logan intro email (this week)",
     "McKinsey follow-up after Oscar meeting"
+  ],
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
   ]
 }

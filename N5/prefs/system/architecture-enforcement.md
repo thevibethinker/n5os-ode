@@ -52,7 +52,7 @@ Key system documents now reference architectural principles:
 ### Layer 5: Command Registration
 
 ```bash
-# Add to Recipes/ (self-executing)
+# Add to Prompts/ (self-executing)
 {
   "name": "LOAD_ARCH_PRINCIPLES",
   "file": "Knowledge/architectural/architectural_principles.md",

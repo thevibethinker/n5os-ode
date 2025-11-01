@@ -1,0 +1,41 @@
+{
+  "types": [
+    "meeting",
+    "recipe",
+    "principle",
+    "system-doc",
+    "persona",
+    "reference",
+    "crm-record",
+    "script",
+    "config",
+    "list",
+    "temporary",
+    "business-doc",
+    "reflection",
+    "deliverable"
+  ],
+  "categories": [
+    "architectural",
+    "operational",
+    "intelligence",
+    "automation",
+    "meetings",
+    "reference",
+    "infrastructure",
+    "business",
+    "personal",
+    "temporary"
+  ],
+  "owners": [
+    "system",
+    "vrijen",
+    "zo"
+  ],
+  "statuses": [
+    "draft",
+    "active",
+    "archived",
+    "deprecated"
+  ]
+}

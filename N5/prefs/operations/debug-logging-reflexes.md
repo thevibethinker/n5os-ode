@@ -252,7 +252,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py patterns \
 
 **Status:** Active reflexes for Vibe Operator  
 **Load:** Automatically in build/debug conversations  
-**Recipe:** `file 'Recipes/Debug Log.md'` for usage guide  
+**Recipe:** `file 'Prompts/Debug Log.md'` for usage guide  
 **Documentation:** `file 'Knowledge/systems/debug-logging.md'` for system details
 
 *Created: 2025-10-29T04:03 ET*

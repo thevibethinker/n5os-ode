@@ -12,7 +12,7 @@ Explicitly track these paths in Git:
 
 ### Core System Files
 - `N5/prefs/**/*.md` — All preference modules
-- `Recipes/` — Command registry
+- `Prompts/` — Command registry
 - `N5/schemas/**/*.json` — All schemas
 - `N5/scripts/**/*.py` — Python scripts
 - `N5/examples/**/*.md` — Example files

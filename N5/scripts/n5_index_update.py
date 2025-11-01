@@ -21,7 +21,7 @@ Incremental indexer for N5 OS that updates the index with changed files.
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_FILE = ROOT / "index.jsonl"
 INDEX_MD = ROOT / "index.md"
-RECIPES_INDEX = ROOT / "recipes.jsonl"
+RECIPES_INDEX = ROOT / "data/executables.db"
 SCHEMAS = ROOT / "schemas"
 
 EXCLUDE_PATTERNS = [

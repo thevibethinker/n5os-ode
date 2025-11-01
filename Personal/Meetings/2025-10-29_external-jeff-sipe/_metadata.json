@@ -1,51 +1,25 @@
 {
-  "meeting_date": "2025-10-29",
-  "participants": [
-    {
-      "name": "Vrijen Attawar",
-      "role": "Careerspan Founder",
-      "type": "internal"
-    },
-    {
-      "name": "Jeff Sipe",
-      "role": "Recruiting Industry Veteran",
-      "type": "external"
-    }
+  "meeting_id": "2025-10-29_external-jeff-sipe",
+  "date": "2025-10-29",
+  "participants": "Vrijen x Jeff Sipe",
+  "classification": "external",
+  "gdrive_id": "130hkuNN2qKmIYKMWtBZRCrzA7OGxkt0djBraRFPJgUo",
+  "gdrive_link": "https://docs.google.com/document/d/130hkuNN2qKmIYKMWtBZRCrzA7OGxkt0djBraRFPJgUo/edit?usp=drivesdk",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30 14:20:35 EDT",
+  "smart_blocks_generated": [
+    "B01",
+    "B02",
+    "B05",
+    "B07",
+    "B08",
+    "B13",
+    "B21",
+    "B24",
+    "B25",
+    "B26",
+    "B27",
+    "B31"
   ],
-  "meeting_type": "strategic_partnership_discussion",
-  "topics": [
-    "recruiting_agency_gtm",
-    "partnership_structure",
-    "market_dynamics",
-    "agency_sourcing_pain",
-    "network_effects",
-    "talent_agent_model"
-  ],
-  "intelligence_blocks": [
-    "B01_DETAILED_RECAP",
-    "B02_COMMITMENTS_CONTEXTUAL",
-    "B05_OUTSTANDING_QUESTIONS",
-    "B07_WARM_INTRO_BIDIRECTIONAL",
-    "B08_STAKEHOLDER_INTELLIGENCE",
-    "B13_PLAN_OF_ACTION",
-    "B21_KEY_MOMENTS",
-    "B24_PRODUCT_IDEA_EXTRACTION",
-    "B25_DELIVERABLE_CONTENT_MAP",
-    "B26_MEETING_METADATA_SUMMARY",
-    "B27_KEY_MESSAGING",
-    "B31_STAKEHOLDER_RESEARCH"
-  ],
-  "processing_status": "complete",
-  "processed_date": "2025-10-29T16:44:00Z",
-  "processing_method": "manual_llm_extraction",
-  "gtm_relevance": "very_high",
-  "key_insights": [
-    "recruiting_agencies_desperate_for_sourcing",
-    "refined_gold_not_ore_positioning",
-    "jeff_network_as_channel_unlock",
-    "experience_profiles_as_moat",
-    "marketplace_evolution_pathway"
-  ],
-  "follow_up_urgency": "high",
-  "notes": "High-value strategic discussion. Jeff identified as recruiting agencies as Careerspan target market 2 years ago. Direct network access to Superposition, LaunchSam, Matchbox. Year-end timing creates urgency for partnership proposal."
+  "transcript_status": "failed"
 }

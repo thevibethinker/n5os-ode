@@ -1,0 +1,56 @@
+{
+  "total_companies": 12,
+  "total_jobs": 0,
+  "scraped_at": "2025-10-30T12:58:36.045836Z",
+  "companies_with_jobs": 11,
+  "jobs_by_company": [
+    {
+      "name": "Axion Ray",
+      "jobs": 26
+    },
+    {
+      "name": "Banyan Infrastructure",
+      "jobs": 0
+    },
+    {
+      "name": "Camber",
+      "jobs": 26
+    },
+    {
+      "name": "Delfino Ai",
+      "jobs": 2
+    },
+    {
+      "name": "EnZinc Inc",
+      "jobs": 2
+    },
+    {
+      "name": "Faire",
+      "jobs": 72
+    },
+    {
+      "name": "Hardfin",
+      "jobs": 1
+    },
+    {
+      "name": "Instalily Ai",
+      "jobs": 13
+    },
+    {
+      "name": "Komodo Health",
+      "jobs": 24
+    },
+    {
+      "name": "Krida",
+      "jobs": 2
+    },
+    {
+      "name": "Legion Health",
+      "jobs": 10
+    },
+    {
+      "name": "Lilo",
+      "jobs": 3
+    }
+  ]
+}

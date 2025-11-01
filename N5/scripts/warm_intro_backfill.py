@@ -6,7 +6,7 @@ from typing import List, Dict
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-MEETINGS_DIR = Path('/home/workspace/N5/records/meetings')
+MEETINGS_DIR = Path('/home/workspace/Personal/Meetings')
 
 # Simple heuristics to detect potential intros
 PATTERNS = {

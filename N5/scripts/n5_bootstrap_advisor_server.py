@@ -187,7 +187,7 @@ class BootstrapAdvisorHandler(BaseHTTPRequestHandler):
             {
                 "phase": 6,
                 "name": "Commands",
-                "verify": "ls /home/workspace/Recipes/*/*.md | wc -l",
+                "verify": "ls /home/workspace/Prompts/*/*.md | wc -l",
                 "next": "Copy command files"
             },
             {

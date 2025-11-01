@@ -1,0 +1,23 @@
+{
+  "meeting_id": "2025-10-09_external-alex-x-vrijen",
+  "date": "2025-10-09",
+  "participants": "Alex x Vrijen",
+  "classification": "external",
+  "gdrive_id": "1tpIPt-xvE6sLP7_aFLBHFXR2P_1-dDp5",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T19:20:54.797546+00:00",
+  "smart_blocks_generated": [
+    "B01_detailed_recap",
+    "B02_commitments",
+    "B05_questions",
+    "B07_warm_intros",
+    "B08_stakeholder_intel",
+    "B13_plan_of_action",
+    "B21_key_moments",
+    "B24_product_ideas",
+    "B25_deliverables",
+    "B26_metadata",
+    "B27_key_messaging",
+    "B31_stakeholder_research"
+  ]
+}

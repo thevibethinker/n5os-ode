@@ -1,0 +1,15 @@
+{
+  "meeting_id": "2025-08-27_internal-unknown",
+  "date": "2025-08-27",
+  "participants": "Unknown",
+  "classification": "internal",
+  "gdrive_id": "1Wz_CJmPsFnTz0N-NXNWWRGoI6wQAZy6o",
+  "gdrive_link": "https://drive.google.com/file/d/1Wz_CJmPsFnTz0N-NXNWWRGoI6wQAZy6o/view",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T19:20:24.627403+00:00",
+  "smart_blocks_generated": [
+    "B01_summary",
+    "B02_action_items",
+    "B13_plan_of_action"
+  ]
+}

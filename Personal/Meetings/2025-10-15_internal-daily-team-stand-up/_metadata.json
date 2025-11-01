@@ -1,0 +1,15 @@
+{
+  "meeting_id": "2025-10-15_internal-daily-team-stand-up",
+  "date": "2025-10-15",
+  "participants": "[ZO-EXCLUDED-INTERNAL] Daily team stand-up",
+  "classification": "internal",
+  "gdrive_id": "143nK5I0Y7T6AhhkeYcDLEf2oSa1aemsT",
+  "gdrive_link": "https://docs.google.com/document/d/143nK5I0Y7T6AhhkeYcDLEf2oSa1aemsT/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T13:20:39.482830-04:00",
+  "smart_blocks_generated": [
+    "B02_commitments.md",
+    "B13_plan_of_action.md",
+    "B26_metadata.md"
+  ]
+}

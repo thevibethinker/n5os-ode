@@ -76,7 +76,7 @@ Before creating new structures:
 
 1. **Check commands registry:**
    ```bash
-   grep -i "keyword" /home/workspace/Recipes/recipes.jsonl
+   grep -i "keyword" /home/workspace/N5/data/executables.db
    ```
 
 2. **Check existing folders:**

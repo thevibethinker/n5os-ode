@@ -8,5 +8,10 @@
   "skip_reason": "Test transcript with no substantive content - user testing Fireflies notetaker functionality",
   "blocks_generated": 0,
   "transcript_quality": "Poor - test/debugging content only",
-  "note": "This meeting request was created by the transcript detection system but contains only Fireflies notetaker testing. No intelligence blocks generated."
+  "note": "This meeting request was created by the transcript detection system but contains only Fireflies notetaker testing. No intelligence blocks generated.",
+  "smart_blocks_generated": [
+    "B02_commitments.md",
+    "B13_plan_of_action.md",
+    "B26_metadata.md"
+  ]
 }

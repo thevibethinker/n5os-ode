@@ -1,0 +1,11 @@
+# Rules to Remove from prefs.md
+
+These rules were part of the custom persona switching system and should be removed.
+
+Search for these patterns in prefs.md and remove them:
+
+1. "FIRST ACTION" rule about SESSION_STATE.md initialization
+2. "Maintain SESSION_STATE.md actively" rule
+3. "When detecting specialist work signals" rule about auto-activation
+
+The exact text will be found when we search prefs.md.

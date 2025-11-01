@@ -1,6 +1,6 @@
 {
   "reflection_id": "Gestalt hiring, tracking over performers on CS, and tryhard positioning.txt.transcript",
-  "generated_at_iso": "2025-10-29T11:10:05.461084+00:00",
+  "generated_at_iso": "2025-11-01T17:19:52.287703+00:00",
   "source_file": "Gestalt hiring, tracking over performers on CS, and tryhard positioning.txt.transcript",
   "classifications": [
     {
@@ -19,7 +19,7 @@
       "auto_approve_eligible": true,
       "auto_approve_threshold": 10,
       "prompt_length": 27468,
-      "generation_timestamp": "2025-10-29T11:10:05.449644+00:00"
+      "generation_timestamp": "2025-11-01T17:19:52.284314+00:00"
     }
   ],
   "status": "awaiting_approval",

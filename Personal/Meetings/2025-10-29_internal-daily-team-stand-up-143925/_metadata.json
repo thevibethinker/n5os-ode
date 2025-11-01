@@ -1,0 +1,14 @@
+{
+  "meeting_id": "2025-10-29_internal-daily-team-stand-up-143925",
+  "date": "2025-10-29",
+  "participants": "Daily team stand-up",
+  "classification": "internal",
+  "gdrive_id": "1EsraiV5Bko-crA8Yh0vU0uZAHW1QJ2wM",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T19:20:55.017286+00:00",
+  "smart_blocks_generated": [
+    "B01_summary",
+    "B02_action_items",
+    "B13_plan_of_action"
+  ]
+}

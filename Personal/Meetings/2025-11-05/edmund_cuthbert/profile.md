@@ -1,98 +1,87 @@
-# Stakeholder Profile: Edmund Cuthbert
+# Edmund Cuthbert - Stakeholder Profile
 
-**Meeting Date:** 2025-11-05  
-**Meeting Time:** 16:00-16:45 EST  
-**Location:** Devoción on Livingston  
-**Email:** edmund@superposition.ai  
-**Company:** Superposition (Superposition.ai)
+## Meeting Details
+- **Date:** November 5, 2025, 4:00 PM - 4:45 PM ET
+- **Location:** Devoción on Livingston
+- **Email:** edmund@superposition.ai
+- **Company:** Superposition.ai
 
-## N5-OS Tags
-- [!!] - Urgent/High Priority
-- [D5] - 5 days out (as of Oct 29)
-- [D5+] - 5+ days marker
-- [D10] - 10 days marker
-- [LD-INV] - Leadership: Investment discussions
-- [LD-HIR] - Leadership: Hiring/recruiting collaboration
-- [LD-COM] - Leadership: Communication/relationship building
-- [LD-NET] - Leadership: Network expansion
-- [LD-GEN] - Leadership: General strategic advice
+## N5-OS Classification
+, , , , , , , , , , , , , , , , , , , , , , 
 
-## Meeting Objectives
-1. Coffee and catch up
-2. Discuss company options and advice
-3. Explore potential collaboration opportunities
+### Leadership Development Tags
+, , , , 
 
-## Context from Recent Communications
+- **[LD-INV]**: Investment/Investor relations
+- **[LD-HIR]**: Hiring/Talent acquisition discussions
+- **[LD-COM]**: Strategic communication
+- **[LD-NET]**: Networking opportunity
+- **[LD-GEN]**: General leadership development
 
-### Key Relationship Points
-- **Company Focus:** Edmund is CEO/Co-founder of Superposition, a technical recruiting company
-- **Shared Interests:** Product management hiring, recruiting innovation, founder community
-- **Previous Interaction:** Had successful coffee meeting previously at same location
-- **Scheduling Constraints:** Edmund has west coast customers, evenings are overlap time; also has a child (Halloween trick-or-treating mentioned)
+## Meeting Agenda
+- Coffee and catch up
+- Discuss company options and advice
+- Explore potential collaboration opportunities
 
-### Business Collaboration Discussion
-**Partnership Opportunity (Technical Recruiting + Product Management)**:
-- Discussed creating LOI for product manager recruiting collaboration
-- Superposition uses voice agent for engineer onboarding  
-- Proposed workflow: Superposition creates "shape of hire" → Careerspan surfaces to PM candidates → Manual/Slack coordination initially → Revenue share model
-- Edmund is "very keen to work together" and appreciates Careerspan's "based takes about recruiting"
+## Priority Level
+**🚨 URGENT** -  marker indicates high priority
 
-### Current Careerspan Context (Discussed with Edmund)
-- Careerspan has stable, consistent, self-contained customer product
-- Company has runway to last the year but doesn't want to raise further VC funding
-- Seeking Edmund's advice on options ahead as company "at a bit of an impasse"
-- Don't like having to sell to employers or VC-backed compromises
+## Gmail Context
+*Email context search recommended for: edmund@superposition.ai*
 
-### Professional Network Connections
-- Edmund shares an investor with Careerspan (mentioned in thread)
-- Laura from Included.ai "raved about" Vrijen to Edmund
-- Logan (co-founder) was introduced to Edmund, described as having "great takes"
-- Edmund was invited to Vrijen's founder dinner parties (typeform signup)
-
-### Communication History Timeline
-1. **Sept 21-23, 2025:** Initial LOI discussions for PM recruiting partnership  
-2. **Oct 1, 2025:** Vrijen going on break, plan to reconvene mid-month
-3. **Oct 16-17, 2025:** Vrijen reaches out about company impasse, needs advice
-4. **Oct 18, 2025:** Vrijen plans Arizona trip (later canceled)
-5. **Oct 22, 2025:** Arizona trip canceled, immediate scheduling discussion
-6. **Oct 24, 2025:** Multiple scheduling iterations due to Halloween/travel constraints
-7. **Oct 27, 2025:** Final confirmation for Nov 5 at 4pm EST meeting
-
-### Personal Details
-- Has a child (referenced Halloween trick-or-treating)
-- Values end-of-week, post-work meetings for strategic discussions
-- Prefers 3-4pm slots when doing daytime meetings
-- West coast customer base requires evening availability
-
-## Meeting Preparation Notes
-
-### Topics to Discuss
-1. **Strategic Options Review:**
-   - Options for company with runway but no desire for additional VC funding
-   - Path forward given current product-market fit but employer sales challenges
-
-2. **Partnership Development:**
-   - Status of PM recruiting LOI
-   - Technical implementation details for collaboration
-   - Revenue share structure
-
-3. **Mutual Network Benefits:**
-   - Founder community engagement
-   - Future dinner event attendance
-   - Shared investor relationships
-
-### Key Questions for Edmund
-- What options does he see for bootstrapped path vs. VC path?
-- How is Superposition navigating similar scaling challenges?
-- Concrete next steps on PM recruiting partnership?
-
-### Action Items Post-Meeting
-- [ ] Follow up on LOI for PM recruiting partnership
-- [ ] Document strategic advice received
-- [ ] Schedule follow-up meeting if needed
-- [ ] Update partnership tracking in deals pipeline
+## Notes
+_Add meeting notes here after the meeting_
 
 ---
-*Profile created: 2025-10-29*  
-*Last updated: 2025-10-29*  
-*Gmail context: 10 recent messages*
+*Profile generated by Meeting Monitor on October 30, 2025 at 09:07 AM ET*
+
+
+## Email Thread Context
+
+Recent email exchange reveals:
+
+1. **Meeting Purpose**: V reached out to Edmund seeking advice on company options and strategic direction
+   - Careerspan has runway to last the year but doesn't want to raise further
+   - Company is at an "impasse" regarding future direction
+   - V values Edmund's opinion highly ("the quality of your opinion is worth the wait")
+
+2. **Potential Collaboration**: Discussion of partnership between Careerspan and Superposition
+   - Focus on product manager recruiting (expanding beyond Superposition's current engineering focus)
+   - Revenue share model proposed
+   - Semi-manual pilot approach discussed
+   - Edmund is "very keen to work together" and appreciates V's "based takes about recruiting"
+
+3. **Relationship Context**:
+   - Edmund is founder of Superposition (AI recruiting for engineers)
+   - Has a young child (family man - mentioned school nights are tough)
+   - Shared investor connection (Laura from Included.ai gave positive feedback about V to Edmund)
+   - Edmund interested in attending V's founder dinner parties
+
+4. **Scheduling History**:
+   - Multiple attempts to coordinate (Halloween conflict, travel constraints)
+   - Finally settled on Friday Nov 5 at 4pm at Devoción on Livingston
+   - 45-minute coffee meeting
+   - Edmund confirmed he prefers 4pm, finds after-work Fridays work best
+
+## Pre-Meeting Intelligence
+
+**Key Topics to Address:**
+- Company options for Careerspan (not raising further, runway considerations)
+- Strategic advice on next steps
+- Potential Careerspan x Superposition partnership on PM recruiting
+- Revenue share and collaboration mechanics
+
+**Edmund's Constraints:**
+- Family commitments (has young child)
+- West coast customer overlap in evenings
+- Prefers earlier meetings (3-4pm) or after-work Fridays
+
+**Partnership Opportunity:**
+- Superposition currently focused on engineering recruiting with voice agent
+- Careerspan has PM candidates
+- Potential to create shape of PM hire through Superposition's voice agent
+- Test manual workflow first (shared Slack channel, semi-manual candidate flagging)
+- Scale to more robust solution if first experiment works
+
+---
+*Gmail context added: {now.strftime('%B %d, %Y at %I:%M %p ET')}*

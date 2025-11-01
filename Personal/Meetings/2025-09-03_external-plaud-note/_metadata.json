@@ -1,0 +1,24 @@
+{
+  "meeting_id": "2025-09-03_external-plaud-note",
+  "date": "2025-09-03",
+  "participants": "Plaud Note",
+  "classification": "external",
+  "gdrive_id": "1cAUGGtKq2G5lTF2eG5qNmkZhU48Mz9ur",
+  "gdrive_link": "https://drive.google.com/file/d/1cAUGGtKq2G5lTF2eG5qNmkZhU48Mz9ur/view?usp=drivesdk",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T13:20:39.481779-04:00",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
+}

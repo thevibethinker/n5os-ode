@@ -1,177 +1,202 @@
 #!/usr/bin/env python3
 """
-N5 OS Safety Layer
-
-Handles permissions, approvals, and dry-run functionality.
+N5 Safety Checker
+Detects mock/placeholder/stub data in production code and artifacts.
+Prevents development artifacts from polluting production systems.
 """
-
+import re
 import sys
-import os
-import json
-import argparse
 from pathlib import Path
-from typing import Dict, List, Optional, Any
-import subprocess
+from typing import List, Dict, Tuple
+import json
 
-# Mock email sending - in real implementation, this would integrate with actual email service
-def send_email_approval_request(command: str, details: Dict[str, Any]) -> bool:
-    """Send email approval request (mock implementation)."""
-    print(f"🔒 EMAIL APPROVAL REQUIRED for command: {command}")
-    print(f"📧 Approval request sent to: admin@n5.os")
-    print(f"📝 Details: {json.dumps(details, indent=2)}")
+MOCK_PATTERNS = [
+    (r'\b(MOCK|DEMO|STUB|PLACEHOLDER|FAKE|DUMMY|EXAMPLE|TEST_DATA)\b', 'Mock identifier'),
+    (r'example\.com|test@example|fake_\w+', 'Placeholder data'),
+    (r'TODO:|FIXME:|XXX:|HACK:', 'Unfinished code marker'),
+    (r'lorem\s+ipsum', 'Lorem ipsum placeholder text'),
+    (r'foo|bar|baz|qux', 'Generic placeholder variable'),
+    (r'alice|bob|charlie(?!\w)', 'Generic test names'),
+]
 
-    # In real implementation, this would send actual email
-    # For now, simulate user approval
-    response = input("✅ Approve this action? (y/N): ").strip().lower()
-    return response == 'y'
+PRODUCTION_PATHS = [
+    'N5/scripts',
+    'N5/workflows',
+    'Personal',
+    'Knowledge',
+    'Lists',
+]
 
-def check_permissions(command_spec: Dict[str, Any], args: argparse.Namespace) -> bool:
-    """Check if command has required permissions and obtain approvals."""
-    if command_spec is None:
-        return True
+def check_file_for_mocks(filepath: Path) -> List[Dict]:
+    """Scan single file for mock/placeholder patterns."""
+    violations = []
     
-    permissions = command_spec.get("permissions_required", [])
-    if not permissions:
-        return True
+    # Check filename
+    fname_upper = filepath.name.upper()
+    if any(keyword in fname_upper for keyword in ['MOCK', 'DEMO', 'STUB', 'TEST_', 'EXAMPLE']):
+        violations.append({
+            'file': str(filepath),
+            'line': 0,
+            'type': 'filename',
+            'severity': 'high',
+            'pattern': 'Mock identifier in filename',
+            'match': filepath.name
+        })
+    
+    # Check content for text files
+    if filepath.suffix in ['.py', '.sh', '.md', '.txt', '.json', '.yaml', '.yml']:
+        try:
+            content = filepath.read_text(encoding='utf-8', errors='ignore')
+            lines = content.split('\n')
+            
+            for line_num, line in enumerate(lines, 1):
+                for pattern, desc in MOCK_PATTERNS:
+                    matches = re.finditer(pattern, line, re.IGNORECASE)
+                    for match in matches:
+                        # Skip comments in Python
+                        if filepath.suffix == '.py' and line.strip().startswith('#'):
+                            continue
+                        
+                        violations.append({
+                            'file': str(filepath),
+                            'line': line_num,
+                            'type': 'content',
+                            'severity': 'medium',
+                            'pattern': desc,
+                            'match': match.group(0),
+                            'context': line.strip()[:80]
+                        })
+        except Exception as e:
+            violations.append({
+                'file': str(filepath),
+                'line': 0,
+                'type': 'error',
+                'severity': 'low',
+                'pattern': 'Read error',
+                'match': str(e)
+            })
+    
+    return violations
 
-    print(f"🔐 Command '{command_spec['name']}' requires permissions: {permissions}")
-
-    details = {
-        "command": command_spec["name"],
-        "args": vars(args),
-        "dry_run": getattr(args, 'dry_run', False)
+def scan_directory(directory: Path, recursive: bool = True) -> Dict:
+    """Scan directory for mock data violations."""
+    results = {
+        'scanned': 0,
+        'violations': [],
+        'high_severity': 0,
+        'medium_severity': 0,
+        'low_severity': 0
     }
+    
+    pattern = '**/*' if recursive else '*'
+    for filepath in directory.glob(pattern):
+        if not filepath.is_file():
+            continue
+        if '.git' in filepath.parts:
+            continue
+        
+        results['scanned'] += 1
+        violations = check_file_for_mocks(filepath)
+        
+        for v in violations:
+            results['violations'].append(v)
+            if v['severity'] == 'high':
+                results['high_severity'] += 1
+            elif v['severity'] == 'medium':
+                results['medium_severity'] += 1
+            else:
+                results['low_severity'] += 1
+    
+    return results
 
-    for perm in permissions:
-        if perm == "email_approval":
-            if not send_email_approval_request(command_spec["name"], details):
-                print(f"❌ Approval denied for {perm}")
-                return False
-        else:
-            print(f"⚠️  Unknown permission type: {perm}")
-            return False
+def check_production_paths(workspace: Path = Path('/home/workspace')) -> Dict:
+    """Check all production paths for mock data."""
+    overall_results = {
+        'total_scanned': 0,
+        'total_violations': 0,
+        'by_path': {},
+        'high_priority': []
+    }
+    
+    for prod_path in PRODUCTION_PATHS:
+        full_path = workspace / prod_path
+        if not full_path.exists():
+            continue
+        
+        results = scan_directory(full_path, recursive=True)
+        overall_results['total_scanned'] += results['scanned']
+        overall_results['total_violations'] += len(results['violations'])
+        overall_results['by_path'][prod_path] = results
+        
+        # Collect high-severity violations
+        for v in results['violations']:
+            if v['severity'] == 'high':
+                overall_results['high_priority'].append(v)
+    
+    return overall_results
 
-    print("✅ All permissions approved")
-    return True
-
-def is_dry_run(args: argparse.Namespace, command_spec: Dict[str, Any]) -> bool:
-    """Determine if this should be a dry run."""
-    # Check explicit flag
-    if hasattr(args, 'dry_run') and args.dry_run:
-        return True
-
-    # Check sticky dry_run from layers (future implementation)
-    # For now, just check environment variable
-    if os.environ.get('N5_DRY_RUN') == 'true':
-        print("🌐 Sticky dry-run enabled via environment")
-        return True
-
-    return False
-
-def execute_with_safety(command_spec: Dict[str, Any], args: argparse.Namespace,
-                       execute_func) -> Any:
-    """Execute a command with safety checks."""
-
-    # Check permissions
-    if not check_permissions(command_spec, args):
-        print("🚫 Permission check failed")
-        return None
-
-    # Determine dry run status
-    dry_run = is_dry_run(args, command_spec)
-
-    if dry_run:
-        print("🏜️  DRY RUN MODE - No changes will be made")
-        # Set dry_run flag on args for the execute function
-        if not hasattr(args, 'dry_run'):
-            args.dry_run = True
-        else:
-            args.dry_run = True
-
-    # Execute the command
-    try:
-        result = execute_func(args)
-        if dry_run:
-            print("✅ Dry run completed successfully")
-        else:
-            print("✅ Command executed successfully")
-        return result
-    except Exception as e:
-        print(f"❌ Command failed: {e}")
-        raise
-
-def load_command_spec(command_name: str) -> Optional[Dict[str, Any]]:
-    """Load command specification from commands.jsonl."""
-    recipes_index = Path(__file__).parent.parent / "recipes.jsonl"
-
-    if not recipes_index.exists():
-        return None
-
-    with recipes_index.open('r') as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                cmd = json.loads(line)
-                if cmd.get("name") == command_name:
-                    return cmd
-            except json.JSONDecodeError:
-                continue
-
-    return None
+def format_report(results: Dict) -> str:
+    """Format scan results as readable report."""
+    lines = []
+    lines.append("=" * 70)
+    lines.append("N5 SAFETY CHECK: MOCK DATA DETECTION")
+    lines.append("=" * 70)
+    lines.append(f"Total files scanned: {results['total_scanned']}")
+    lines.append(f"Total violations found: {results['total_violations']}")
+    lines.append("")
+    
+    if results['high_priority']:
+        lines.append("🚨 HIGH PRIORITY VIOLATIONS (filename-level)")
+        lines.append("-" * 70)
+        for v in results['high_priority']:
+            lines.append(f"  {v['file']}")
+            lines.append(f"    Pattern: {v['pattern']}")
+            lines.append("")
+    
+    for path, path_results in results['by_path'].items():
+        if path_results['violations']:
+            lines.append(f"📁 {path}")
+            lines.append(f"   High: {path_results['high_severity']} | Medium: {path_results['medium_severity']} | Low: {path_results['low_severity']}")
+            
+            # Show first 5 violations for this path
+            for v in path_results['violations'][:5]:
+                if v['type'] != 'filename':
+                    lines.append(f"   Line {v['line']}: {v['pattern']} → {v['match']}")
+            
+            if len(path_results['violations']) > 5:
+                lines.append(f"   ... and {len(path_results['violations']) - 5} more")
+            lines.append("")
+    
+    lines.append("=" * 70)
+    return "\n".join(lines)
 
 def main():
-    """Main entry point for safety layer testing."""
-    parser = argparse.ArgumentParser(description="N5 Safety Layer")
-    parser.add_argument("command", help="Command name to check")
-    parser.add_argument("--dry-run", action="store_true", help="Enable dry run")
-    parser.add_argument("--test", action="store_true", help="Run safety tests")
-
+    import argparse
+    parser = argparse.ArgumentParser(description='N5 Safety: Mock Data Detection')
+    parser.add_argument('command', choices=['scan', 'check'], help='scan=full report, check=exit code only')
+    parser.add_argument('--path', help='Specific path to check (default: all production paths)')
+    parser.add_argument('--json', action='store_true', help='Output JSON format')
+    
     args = parser.parse_args()
-
-    if args.test:
-        # Run safety tests
-        print("🧪 Running N5 Safety Layer Tests...")
-
-        # Test 1: Load command spec
-        spec = load_command_spec("lists-promote")
-        if spec and "email_approval" in spec.get("permissions_required", []):
-            print("✅ Command spec loading works")
-        else:
-            print("❌ Command spec loading failed")
-            return 1
-
-        # Test 2: Dry run detection
-        test_args = argparse.Namespace()
-        test_args.dry_run = True
-        if is_dry_run(test_args, spec):
-            print("✅ Dry run detection works")
-        else:
-            print("❌ Dry run detection failed")
-            return 1
-
-        # Test 3: Permission check (mock)
-        # This would require mocking the email function
-        print("✅ Safety layer tests completed")
-        return 0
-
-    # Load command spec
-    spec = load_command_spec(args.command)
-    if not spec:
-        print(f"❌ Command '{args.command}' not found")
-        return 1
-
-    print(f"🔍 Loaded spec for '{args.command}': {spec.get('permissions_required', [])}")
-
-    # Check permissions
-    if check_permissions(spec, args):
-        print("✅ Permission check passed")
+    
+    if args.path:
+        path = Path(args.path)
+        if not path.exists():
+            print(f"Error: Path not found: {path}", file=sys.stderr)
+            sys.exit(1)
+        results = scan_directory(path)
+        results_dict = {'by_path': {str(path): results}, 'total_scanned': results['scanned'], 'total_violations': len(results['violations']), 'high_priority': [v for v in results['violations'] if v['severity'] == 'high']}
     else:
-        print("❌ Permission check failed")
-        return 1
+        results_dict = check_production_paths()
+    
+    if args.json:
+        print(json.dumps(results_dict, indent=2))
+    else:
+        report = format_report(results_dict)
+        print(report)
+    
+    # Exit code: 0 if no high-severity, 1 if high-severity found
+    sys.exit(1 if results_dict['high_priority'] else 0)
 
-    return 0
-
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__ == '__main__':
+    main()

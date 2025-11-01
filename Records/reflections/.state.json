@@ -44,9 +44,21 @@
       "name": "Oct 24 at 14-46.m4a",
       "type": "audio",
       "ingested_at": "2025-10-29T05:09:31.546105Z"
+    },
+    "1V7mKSVXVK1AOMnXEeWm5IRFkJzA3iXxu": {
+      "name": "2025-10-31_15_49_58.mp3",
+      "type": "audio",
+      "ingested_at": "2025-11-01T17:18:59Z",
+      "status": "awaiting_transcription"
+    },
+    "1m0p4SrfSnsUIaYziCwLy2ocre3gPcPvY": {
+      "name": "2025-10-31_14_38_04-transcript.txt",
+      "type": "document",
+      "ingested_at": "2025-11-01T17:18:59Z",
+      "status": "awaiting_classification"
     }
   },
-  "last_run": "2025-10-29T05:09:31.661031Z",
+  "last_run": "2025-10-31T23:09:47.875063+00:00",
   "processed_file_ids": [
     "1S6FftZJDpPk9BTKV5JotPFDaP0PBlTo3",
     "1xpU38stCtb1tnu8h52ya6kwggM8MZlTj",
@@ -56,6 +68,21 @@
     "1oZLi2DL12Zzm6MQd12H208XCSWZu-F16",
     "13N3qQgQJgpXOkbMg7bJ9Y6ZqTtWam8E0",
     "1dSHKj5vgQ0NdBkMi6fNaOQg5cQUVyHnQ",
-    "1W_CV9ZQTklugXNjS4HN8OKd6OrVGWee2"
-  ]
+    "1W_CV9ZQTklugXNjS4HN8OKd6OrVGWee2",
+    "1V7mKSVXVK1AOMnXEeWm5IRFkJzA3iXxu",
+    "1m0p4SrfSnsUIaYziCwLy2ocre3gPcPvY"
+  ],
+  "last_orchestration_run": "2025-11-01T17:20:03.308810",
+  "orchestration_status": "complete",
+  "blocks_generated": 9,
+  "last_cycle": {
+    "date": "2025-11-01T17:20:03.308795",
+    "new_files_ingested": 2,
+    "files_processed": 11,
+    "blocks_generated": 8,
+    "audio_transcription_failures": [
+      "2025-10-31_15_49_58.mp3"
+    ],
+    "notes": "Successfully processed 8 reflections. Audio file transcription failed, mark for manual review."
+  }
 }

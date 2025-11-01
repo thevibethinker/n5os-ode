@@ -1,0 +1,43 @@
+ZOBRIDGE DEBUGGER REPORT
+========================
+Status: DO NOT DEPLOY
+Date: 2025-10-29 00:49 ET
+
+CRITICAL ISSUES FOUND: 4
+
+#1: Database Schema Mismatch (BLOCKING)
+- Install script creates OLD schema
+- TypeScript expects NEW schema  
+- Fields don't match: direction vs from_system, mfrom vs from_system, etc.
+- Result: 100% database operation failure
+
+#2: Missing Tables
+- Install creates only 'messages' table
+- Code expects 3 tables: messages, threads, rate_limits
+- Missing indexes too
+- Result: Rate limiting and threads will crash
+
+#3: Two Database Files
+- /home/workspace/N5/data/zobridge.db (CORRECT, 3.7MB)
+- /home/workspace/N5/services/zobridge/zobridge.db (OLD, 20KB)
+- Action: Delete the services directory copy
+
+#4: Missing Local Config
+- ParentZo has zobridge.config.json with secret
+- Install doesn't create it for ChildZo
+- Will work (env var fallback) but inconsistent
+
+REQUIRED FIXES:
+1. Update install.sh SQL to match lib/db.ts exactly
+2. Add all 3 tables + indexes
+3. Create local config file
+4. Add pre-flight backup check
+5. Remove old ParentZo database copy
+
+RECOMMENDATION:
+- Fix all issues (30 minutes)
+- Rebuild package
+- Test extraction
+- THEN deploy to ChildZo
+
+Current package will fail 100% of the time.

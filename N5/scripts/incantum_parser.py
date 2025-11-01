@@ -7,9 +7,15 @@ Simple utilities for the incantum system - parsing is done by the LLM directly.
 import argparse
 import json
 import logging
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
+
+# Add N5/scripts to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+
+from executable_manager import list_executables, search_executables, Executable
 
 # Setup logging
 logging.basicConfig(
@@ -20,30 +26,16 @@ logger = logging.getLogger(__name__)
 
 # Paths
 N5_ROOT = Path("/home/workspace/N5")
-COMMANDS_REGISTRY = N5_ROOT / "config/recipes.jsonl"
 SHORTCUTS_FILE = N5_ROOT / "config/incantum_shortcuts.json"
 PATTERNS_FILE = N5_ROOT / "logs/incantum_patterns.jsonl"
 
 
-def load_commands_registry() -> Dict[str, dict]:
-    """Load command registry from recipes.jsonl."""
-    commands = {}
+def load_commands_registry() -> Dict[str, Executable]:
+    """Load command registry from executables.db using executable_manager."""
+    executables = list_executables()
     
-    if not COMMANDS_REGISTRY.exists():
-        logger.error(f"Commands registry not found: {COMMANDS_REGISTRY}")
-        return commands
-    
-    with open(COMMANDS_REGISTRY) as f:
-        for line_num, line in enumerate(f, 1):
-            if line.strip():
-                try:
-                    cmd = json.loads(line)
-                    if "command" in cmd:
-                        commands[cmd["command"]] = cmd
-                    else:
-                        logger.warning(f"Line {line_num}: Missing 'command' field, skipping")
-                except json.JSONDecodeError as e:
-                    logger.warning(f"Line {line_num}: Malformed JSON: {e}")
+    # Convert to dict keyed by name for backward compatibility
+    commands = {exe.name: exe for exe in executables}
     
     logger.info(f"Loaded {len(commands)} commands from registry")
     return commands
@@ -102,88 +94,83 @@ def search_patterns(query: str, limit: int = 10) -> List[Dict]:
         return []
     
     patterns = []
-    query_lower = query.lower()
-    
     with open(PATTERNS_FILE) as f:
         for line in f:
             if line.strip():
-                pattern = json.loads(line)
-                # Simple substring match - LLM can do better semantic matching
-                if query_lower in pattern["natural_language"].lower():
-                    patterns.append(pattern)
+                try:
+                    patterns.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+    
+    # Simple substring matching (could be improved with fuzzy matching)
+    query_lower = query.lower()
+    matching = [
+        p for p in patterns
+        if query_lower in p.get("natural_language", "").lower()
+    ]
     
     # Return most recent matches
-    patterns.sort(key=lambda p: p["timestamp"], reverse=True)
-    return patterns[:limit]
+    return sorted(matching, key=lambda p: p.get("timestamp", ""), reverse=True)[:limit]
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Incantum helper utilities"
-    )
-    
-    subparsers = parser.add_subparsers(dest='command', help='Command to run')
+def main():
+    """CLI for testing incantum helper functions."""
+    parser = argparse.ArgumentParser(description="Incantum Helper Utilities")
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
     
     # Load registry
-    load_parser = subparsers.add_parser('load-registry', help='Load commands registry')
-    load_parser.add_argument('--format', choices=['json', 'list'], default='json',
-                            help='Output format')
-    
-    # Load shortcuts
-    shortcuts_parser = subparsers.add_parser('load-shortcuts', help='Load user shortcuts')
-    
-    # Log pattern
-    log_parser = subparsers.add_parser('log', help='Log a successful pattern')
-    log_parser.add_argument('natural_language', help='Natural language instruction')
-    log_parser.add_argument('--commands', required=True, help='Commands as JSON array')
-    log_parser.add_argument('--context', type=json.loads, help='Context as JSON')
-    log_parser.add_argument('--feedback', help='User feedback')
-    log_parser.add_argument('--failed', action='store_true', help='Mark as failed attempt')
+    load_parser = subparsers.add_parser("load", help="Load and display commands registry")
     
     # Search patterns
-    search_parser = subparsers.add_parser('search', help='Search historical patterns')
-    search_parser.add_argument('query', help='Search query')
-    search_parser.add_argument('--limit', type=int, default=10, help='Max results')
+    search_parser = subparsers.add_parser("search", help="Search historical patterns")
+    search_parser.add_argument("query", help="Search query")
+    search_parser.add_argument("--limit", type=int, default=10, help="Max results")
+    
+    # Log pattern
+    log_parser = subparsers.add_parser("log", help="Log a new pattern")
+    log_parser.add_argument("natural_language", help="Natural language instruction")
+    log_parser.add_argument("--commands", required=True, help="JSON array of commands")
+    log_parser.add_argument("--success", action="store_true", default=True)
+    log_parser.add_argument("--feedback", help="User feedback")
     
     args = parser.parse_args()
     
-    if args.command == 'load-registry':
+    if args.command == "load":
         commands = load_commands_registry()
-        if args.format == 'json':
-            print(json.dumps(commands, indent=2))
-        else:
-            for cmd_name in sorted(commands.keys()):
-                cmd = commands[cmd_name]
-                desc = cmd.get('description', 'No description')
-                print(f"{cmd_name}: {desc}")
-        return 0
+        print(f"Loaded {len(commands)} commands:")
+        for name, exe in list(commands.items())[:10]:
+            print(f"  - {name}: {exe.description or 'No description'}")
+        if len(commands) > 10:
+            print(f"  ... and {len(commands) - 10} more")
     
-    elif args.command == 'load-shortcuts':
-        shortcuts = load_shortcuts()
-        print(json.dumps(shortcuts, indent=2))
-        return 0
+    elif args.command == "search":
+        results = search_patterns(args.query, args.limit)
+        print(f"Found {len(results)} matching patterns:")
+        for p in results:
+            print(f"\n  NL: {p['natural_language']}")
+            print(f"  Commands: {[c.get('name') for c in p.get('commands', [])]}")
+            print(f"  Timestamp: {p.get('timestamp')}")
+            print(f"  Success: {p.get('success')}")
     
-    elif args.command == 'log':
-        commands = json.loads(args.commands)
-        log_pattern(
-            args.natural_language,
-            commands,
-            args.context,
-            success=not args.failed,
-            user_feedback=args.feedback
-        )
-        print("✓ Pattern logged")
-        return 0
-    
-    elif args.command == 'search':
-        patterns = search_patterns(args.query, args.limit)
-        print(json.dumps(patterns, indent=2))
-        return 0
+    elif args.command == "log":
+        try:
+            commands = json.loads(args.commands)
+            log_pattern(
+                args.natural_language,
+                commands,
+                success=args.success,
+                user_feedback=args.feedback
+            )
+            print("✓ Pattern logged successfully")
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON for commands: {e}", file=sys.stderr)
+            return 1
     
     else:
         parser.print_help()
-        return 1
+    
+    return 0
 
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())

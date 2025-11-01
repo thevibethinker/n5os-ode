@@ -1,0 +1,3 @@
+# Product Ideas
+
+[Insights]

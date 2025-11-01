@@ -2,7 +2,10 @@
   "meeting_id": "2025-10-21_internal-team",
   "processed_at": "2025-10-22T12:21:00Z",
   "classification": "INTERNAL_STANDUP_COFOUNDER",
-  "participants": ["Vrijen Attawar", "Ilse (Technical Lead)"],
+  "participants": [
+    "Vrijen Attawar",
+    "Ilse (Technical Lead)"
+  ],
   "date": "2025-10-21",
   "registry_version": "1.5",
   "workflow_version": "5.1.0",
@@ -39,5 +42,10 @@
     "Tim engagement (yes/no)",
     "Employer portal (continue/pause)",
     "Team communication strategy"
+  ],
+  "smart_blocks_generated": [
+    "B02_commitments.md",
+    "B13_plan_of_action.md",
+    "B26_metadata.md"
   ]
 }

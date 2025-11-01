@@ -4,7 +4,7 @@
   "stakeholder_type": "COMMUNITY",
   "participants": [
     "Charlotte",
-    "Ulrich", 
+    "Ulrich",
     "Marvin"
   ],
   "date": "2025-10-23",
@@ -33,5 +33,19 @@
   "processed_at": "2025-10-23T21:22:40-04:00",
   "transcript_source": "gdrive_id: 1Aa5euzXG6rSRipcoRq6NYFlmC3sXuJJxANVJTetkAwo",
   "transcript_quality": "Good",
-  "confidence_score": "Medium"
+  "confidence_score": "Medium",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

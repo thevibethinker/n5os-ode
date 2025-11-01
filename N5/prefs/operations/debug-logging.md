@@ -198,9 +198,9 @@ if convo_type in ["build", "debug"]:
 
 ## Recipe Integration
 
-**file 'Recipes/Debug Log.md'** - Full usage guide for debug logging
+**file 'Prompts/Debug Log.md'** - Full usage guide for debug logging
 
-**file 'Recipes/Report Issue.md'** - Simple interface for V to report problems
+**file 'Prompts/Report Issue.md'** - Simple interface for V to report problems
 
 ---
 

@@ -15,6 +15,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, List, Optional
 from enum import Enum
+import re
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -555,6 +556,52 @@ def test_rollback() -> int:
     except Exception as e:
         logger.error(f"Test failed: {e}", exc_info=True)
         return 1
+
+
+# New function for normalization
+def normalize_transients(output_text: str) -> str:
+    output_text = re.sub(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}', '<TIMESTAMP>', output_text)
+    output_text = re.sub(r'con_[A-Za-z0-9]{16}', 'CONV_ID', output_text)
+    output_text = re.sub(r'\b\d+\b', '<COUNT>', output_text)  # Naive, consider context
+    return output_text
+
+
+# Validation function to check output conformity
+
+def validate_output(output_text: str, template_path: str) -> bool:
+    with open(template_path, 'r') as f:
+        template = f.read()
+
+    # Basic validation: all headings must appear
+    headings = ['✅ Conversation Closed Successfully', 'Summary', 'What Was Built / Accomplished', 'Debugger Verification Results', 'Known Limitations', 'Artifacts Archived', 'Key Files Created', 'System Status']
+    return all(h in output_text for h in headings)
+
+
+# Wrap existing presentation logic
+def present_final_output(output_text: str, args) -> None:
+    output_text = normalize_transients(output_text)
+
+    if not validate_output(output_text, '/home/workspace/N5/prefs/operations/conversation-end-output-template.md'):
+        raise ValueError('Final output does not conform to template - aborting presentation')
+
+    # Handle --require-confirm flag
+    if args.require_confirm:
+        confirmed = input('Confirm archival and closure? (yes/no): ')
+        if confirmed.lower() != 'yes':
+            print('User declined, aborting.')
+            return
+
+    print(output_text)
+
+
+def normalize_transient_data(output_str: str) -> str:
+    # Normalize timestamps
+    output_str = re.sub(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}([^ ]*)', '<TIMESTAMP>', output_str)
+    # Normalize session IDs
+    output_str = re.sub(r'con_[A-Za-z0-9]{16}', '<CONVO_ID>', output_str)
+    # Normalize counts (e.g., file counts)
+    output_str = re.sub(r'\b\d+ files\b', '<FILE_COUNT> files', output_str)
+    return output_str
 
 
 def main(dry_run: bool = False, proposal: Optional[str] = None, 

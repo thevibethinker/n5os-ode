@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-01T17:20:03.309110",
+  "status": "complete",
+  "ingestion": {
+    "files_downloaded": 2,
+    "new_files": [
+      "2025-10-31_15_49_58.mp3",
+      "2025-10-31_14_38_04-transcript.txt"
+    ]
+  },
+  "classification": {
+    "files_processed": 11,
+    "successes": 9,
+    "failures": 2
+  },
+  "block_generation": {
+    "blocks_generated": 8,
+    "successes": 8,
+    "failures": 3,
+    "failed_reflections": [
+      "Oct 24 at 14-46.m4a",
+      "Oct_24_reflection.m4a",
+      "2025-10-31_14_38_04-transcript.txt"
+    ]
+  },
+  "error_handling": {
+    "audio_transcription_failures": [
+      "2025-10-31_15_49_58.mp3"
+    ],
+    "notes": "Audio file downloaded but transcription service error. Mark for retry or manual handling."
+  }
+}

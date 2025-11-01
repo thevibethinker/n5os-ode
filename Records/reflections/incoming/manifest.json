@@ -1,4 +1,6 @@
 {
+  "timestamp": "2025-10-30T23:09:07.284325",
+  "drive_folder_id": "16RcIne-UqSteJdbNr0jKIPzsdhcV8_mV",
   "files": [
     {
       "id": "1S6FftZJDpPk9BTKV5JotPFDaP0PBlTo3",
@@ -17,7 +19,7 @@
     },
     {
       "id": "1wwjc6WV28ak-l6x-TybI6-G7zwD7ttc7",
-      "name": "\"Overperformer\" angle, pricing, product offering positioning ",
+      "name": "Overperformer angle, pricing, product offering positioning ",
       "mimeType": "text/plain"
     },
     {
@@ -46,5 +48,5 @@
       "mimeType": "audio/mpeg"
     }
   ],
-  "total": 9
+  "status": "ready_for_processing"
 }

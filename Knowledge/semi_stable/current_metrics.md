@@ -3,7 +3,6 @@ last_updated: 2025-10-09
 update_frequency: monthly
 confidence: draft_template
 ---
-
 # Current Metrics
 
 **Last Updated:** October 9, 2025  

@@ -4,7 +4,11 @@
   "registry_version": "1.5",
   "workflow_version": "5.1.0",
   "stakeholder_type": "FOUNDER",
-  "participants": ["Ben (Zo Computer)", "Ray (Zo Computer)", "Ian (Zo Computer)"],
+  "participants": [
+    "Ben (Zo Computer)",
+    "Ray (Zo Computer)",
+    "Ian (Zo Computer)"
+  ],
   "blocks_generated": [
     "B26_MEETING_METADATA_SUMMARY",
     "B01_DETAILED_RECAP",
@@ -28,5 +32,19 @@
   ],
   "transcript_source": "N5/inbox/transcripts/2025-10-17_external-unknown_123228.txt",
   "gdrive_id": "1AFBQrBBLQUf7nRXQN-YogKiQlqCU0VKq",
-  "processing_notes": "High-quality transcript. Strategic partnership discussion with Zo Computer team. Focus on solutions architect model, VC recipe pilot, and university distribution strategy."
+  "processing_notes": "High-quality transcript. Strategic partnership discussion with Zo Computer team. Focus on solutions architect model, VC recipe pilot, and university distribution strategy.",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

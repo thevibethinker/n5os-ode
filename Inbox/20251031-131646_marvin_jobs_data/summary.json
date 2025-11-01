@@ -1,0 +1,52 @@
+{
+  "scrape_date": "2025-10-30T14:55:30.386050",
+  "total_jobs": 20,
+  "total_companies": 12,
+  "top_companies_by_jobs": [
+    {
+      "name": "Faire",
+      "jobs": 72
+    },
+    {
+      "name": "Axion Ray",
+      "jobs": 26
+    },
+    {
+      "name": "Camber",
+      "jobs": 26
+    },
+    {
+      "name": "Komodo Health",
+      "jobs": 25
+    },
+    {
+      "name": "Instalily Ai",
+      "jobs": 13
+    },
+    {
+      "name": "Legion Health",
+      "jobs": 10
+    },
+    {
+      "name": "Lilo",
+      "jobs": 3
+    },
+    {
+      "name": "Delfino Ai",
+      "jobs": 2
+    },
+    {
+      "name": "EnZinc Inc",
+      "jobs": 2
+    },
+    {
+      "name": "Krida",
+      "jobs": 2
+    }
+  ],
+  "files": {
+    "complete": "/home/workspace/marvin_jobs_data/marvin_jobs_complete_20251030_145503.json",
+    "jobs": "/home/workspace/marvin_jobs_data/marvin_jobs_20251030_145503.jsonl",
+    "companies": "/home/workspace/marvin_jobs_data/marvin_companies_20251030_145503.jsonl"
+  }
+}

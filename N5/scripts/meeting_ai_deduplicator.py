@@ -28,7 +28,7 @@ class MeetingAIDeduplicator:
     """AI-powered semantic meeting deduplication."""
     
     def __init__(self):
-        self.meetings_dir = Path('/home/workspace/N5/records/meetings')
+        self.meetings_dir = Path('/home/workspace/Personal/Meetings')
         self.requests_dir = Path('/home/workspace/N5/inbox/meeting_requests')
         
     def get_recent_meetings(self, date_str: str, lookback_hours: int = 24) -> List[Dict]:

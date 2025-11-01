@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
 N5 Docgen - Unified documentation generator
-Version: 3.0.0 (migrated to recipes.jsonl)
+Version: 3.0.0 (migrated to executables.db)
 Modes: --recipes (catalog), --lists (MD views), --scheduled (wrapper), --all
 """
 import json, sys, re, argparse
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from executable_manager import list_executables, Executable
+
 from datetime import datetime, timezone
 import subprocess
 
@@ -16,11 +20,11 @@ except Exception as e:
     sys.exit(1)
 
 # Import safety layer
-from n5_safety import execute_with_safety, load_command_spec
+# from n5_safety import execute_with_safety, load_command_spec  # Legacy, not needed
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
-RECIPES_FILE = ROOT / "Recipes" / "recipes.jsonl"
+RECIPES_FILE = ROOT / "data" / "executables.db"
 COMMANDS_DIR = ROOT / "commands"
 COMMANDS_MD = ROOT / "commands.md"
 PREFS_MD = ROOT / "prefs.md"
@@ -50,6 +54,25 @@ def read_jsonl(p: Path):
                 items.append(json.loads(ln))
             except json.JSONDecodeError as e:
                 raise SystemExit(f"Invalid JSON on line {i} of {p}: {e}")
+    return items
+
+def read_executables_as_jsonl():
+    """Load executables from DB and convert to JSONL-compatible format"""
+    executables = list_executables()
+    items = []
+    for exe in executables:
+        item = {
+            "id": exe.id,
+            "command": exe.name,
+            "name": exe.name,
+            "description": exe.description or "",
+            "category": exe.category or "",
+            "type": exe.type,
+            "file": exe.file_path,
+            "version": exe.version,
+            "tags": exe.tags or []
+        }
+        items.append(item)
     return items
 
 def validate_commands(cmds, schema):
@@ -225,7 +248,7 @@ def generate_commands_catalog(dry_run=False):
     artifacts = []
     
     schema = load_schema(SCHEMAS / "commands.schema.json")
-    cmds = read_jsonl(RECIPES_FILE)
+    cmds = read_executables_as_jsonl()
     if not cmds:
         print("No commands in commands.jsonl; nothing to generate.")
         return artifacts
@@ -447,7 +470,7 @@ def main():
         return run_with_scheduling_wrapper(mode_args)
 
     # Load command spec for safety checks
-    command_spec = load_command_spec("docgen")
+    # command_spec = load_command_spec("docgen")  # Legacy
 
     def execute_docgen(args):
         inputs = {
@@ -492,7 +515,9 @@ def main():
                     print(f"Run recorded: {run_file}")
 
     # Execute with safety layer
-    result = execute_with_safety(command_spec, args, execute_docgen)
+    # result = execute_with_safety(command_spec, args, execute_docgen)  # Legacy
+    execute_docgen(args)
+    return 0
     return result
 
 if __name__ == "__main__":

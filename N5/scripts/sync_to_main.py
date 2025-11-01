@@ -49,7 +49,7 @@ class N5SyncManager:
 
         # Config files that need syncing
         self.config_files = [
-            "recipes.jsonl",
+            "recipes.jsonl.backup",  # Legacy: migrated to executables.db
             "prefs.md",
             "POLICY.md"
         ]

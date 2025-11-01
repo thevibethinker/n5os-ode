@@ -13,7 +13,7 @@ from typing import Optional
 
 import pytz
 
-STATE_FILE = Path("/home/workspace/N5/records/meetings/.processed.json")
+STATE_FILE = Path("/home/workspace/Personal/Meetings/.processed.json")
 TIMEZONE = pytz.timezone('America/New_York')
 
 

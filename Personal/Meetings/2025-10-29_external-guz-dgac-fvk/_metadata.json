@@ -1,0 +1,25 @@
+{
+  "meeting_id": "2025-10-29_external-guz-dgac-fvk",
+  "date": "2025-10-29",
+  "participants": "guz-dgac-fvk",
+  "classification": "external",
+  "gdrive_id": "1ujEy7ro74tHlgTeYk0D9NhspY4ofWtbT",
+  "gdrive_link": "https://docs.google.com/document/d/1ujEy7ro74tHlgTeYk0D9NhspY4ofWtbT/edit?usp=drivesdk&ouid=104788554086186837087&rtpof=true&sd=true",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30 14:20:35 EDT",
+  "smart_blocks_generated": [
+    "B01",
+    "B02",
+    "B05",
+    "B07",
+    "B08",
+    "B13",
+    "B21",
+    "B24",
+    "B25",
+    "B26",
+    "B27",
+    "B31"
+  ],
+  "transcript_status": "downloaded"
+}

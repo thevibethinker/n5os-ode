@@ -1,28 +1,23 @@
 {
   "meeting_id": "2025-10-23_external-david-x-careerspan",
   "date": "2025-10-23",
-  "participants": ["Vrijen Attawar", "David Speigel"],
-  "stakeholder_type": "NETWORKING",
+  "participants": "David x Careerspan",
   "classification": "external",
-  "processing_timestamp": "2025-10-23T20:53:00Z",
-  "registry_version": "1.5",
-  "workflow_version": "5.1.0",
-  "blocks_generated": [
-    "B26_MEETING_METADATA_SUMMARY",
-    "B01_DETAILED_RECAP",
-    "B02_COMMITMENTS_CONTEXTUAL",
-    "B08_STAKEHOLDER_INTELLIGENCE",
-    "B21_KEY_MOMENTS",
-    "B31_STAKEHOLDER_RESEARCH",
-    "B25_DELIVERABLE_CONTENT_MAP",
-    "B07_WARM_INTRO_BIDIRECTIONAL",
-    "B05_OUTSTANDING_QUESTIONS"
-  ],
-  "blocks_count": 9,
-  "crm_profile_created": true,
-  "crm_profile_path": "Knowledge/crm/individuals/david-speigel.md",
-  "enrichment_priority": "MEDIUM",
-  "transcript_source": "gdrive_id: 1yp6YeHK8iHn0PlJTntvF_8TrWhVqnQJH",
-  "transcript_quality": "Good",
-  "processing_notes": "NETWORKING stakeholder - strategic sounding board. Generated 7 REQUIRED blocks + 2 HIGH priority blocks. CRM profile created. No conditional blocks triggered (no pilot, <3 metrics, no complex stakeholder map needed)."
+  "gdrive_id": "1yp6YeHK8iHn0PlJTntvF_8TrWhVqnQJH",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T19:20:54.986511+00:00",
+  "smart_blocks_generated": [
+    "B01_detailed_recap",
+    "B02_commitments",
+    "B05_questions",
+    "B07_warm_intros",
+    "B08_stakeholder_intel",
+    "B13_plan_of_action",
+    "B21_key_moments",
+    "B24_product_ideas",
+    "B25_deliverables",
+    "B26_metadata",
+    "B27_key_messaging",
+    "B31_stakeholder_research"
+  ]
 }

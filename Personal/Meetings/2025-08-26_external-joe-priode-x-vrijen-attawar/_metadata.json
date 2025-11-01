@@ -1,0 +1,24 @@
+{
+  "meeting_id": "2025-08-26_external-joe-priode-x-vrijen-attawar",
+  "date": "2025-08-26",
+  "participants": "Joe Priode x Vrijen Attawar",
+  "classification": "external",
+  "gdrive_id": "1j5g1bNk6h8NDbhmD5B9Vm9CxQ4TWBLI6",
+  "gdrive_link": "https://drive.google.com/file/d/1j5g1bNk6h8NDbhmD5B9Vm9CxQ4TWBLI6/view",
+  "processing_status": "completed",
+  "processed_at": "2025-10-30T19:19:52.982238+00:00",
+  "smart_blocks_generated": [
+    "B01_detailed_recap",
+    "B02_commitments",
+    "B05_questions",
+    "B07_warm_intros",
+    "B08_stakeholder_intel",
+    "B13_plan_of_action",
+    "B21_key_moments",
+    "B24_product_ideas",
+    "B25_deliverables",
+    "B26_metadata",
+    "B27_key_messaging",
+    "B31_stakeholder_research"
+  ]
+}

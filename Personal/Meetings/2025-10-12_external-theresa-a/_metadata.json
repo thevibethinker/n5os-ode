@@ -39,5 +39,19 @@
     "Implementation call scheduled with Ilsa + Logan",
     "Added to Career Tech Founders Roundtable"
   ],
-  "processing_notes": "Strong mission alignment, immediate partnership fit, active fundraising creates urgency. Non-technical founder with impressive hustle (30-50 hackathons). 3,000 newsletter subscribers provides meaningful supply side. CRM profile created per v1.5 guidance (not JOB_SEEKER). Domain authority tracking initiated in B08 for future aggregation."
+  "processing_notes": "Strong mission alignment, immediate partnership fit, active fundraising creates urgency. Non-technical founder with impressive hustle (30-50 hackathons). 3,000 newsletter subscribers provides meaningful supply side. CRM profile created per v1.5 guidance (not JOB_SEEKER). Domain authority tracking initiated in B08 for future aggregation.",
+  "smart_blocks_generated": [
+    "B01_detailed_recap.md",
+    "B02_commitments.md",
+    "B05_questions.md",
+    "B07_warm_intros.md",
+    "B08_stakeholder_intel.md",
+    "B13_plan_of_action.md",
+    "B21_key_moments.md",
+    "B24_product_ideas.md",
+    "B25_deliverables.md",
+    "B26_metadata.md",
+    "B27_key_messaging.md",
+    "B31_stakeholder_research.md"
+  ]
 }

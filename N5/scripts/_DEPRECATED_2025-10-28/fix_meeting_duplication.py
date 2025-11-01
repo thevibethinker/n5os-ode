@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Fix Meeting Storage Duplication Issue
-Consolidates meetings from Careerspan/Meetings/ to N5/records/meetings/
+Consolidates meetings from Careerspan/Meetings/ to Personal/Meetings/
 Merges .processed.json registries and prevents future duplication.
 """
 import json
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 # Paths
 CAREERSPAN_MEETINGS = Path("/home/workspace/Careerspan/Meetings")
-N5_MEETINGS = Path("/home/workspace/N5/records/meetings")
+N5_MEETINGS = Path("/home/workspace/Personal/Meetings")
 CAREERSPAN_REGISTRY = CAREERSPAN_MEETINGS / ".processed.json"
 N5_REGISTRY = N5_MEETINGS / ".processed.json"
 BACKUP_DIR = Path("/home/workspace/N5/backups")
@@ -71,7 +71,7 @@ def analyze_duplication():
     n5_folders = get_meeting_folders(N5_MEETINGS)
     
     logger.info(f"Careerspan/Meetings: {len(careerspan_folders)} folders")
-    logger.info(f"N5/records/meetings: {len(n5_folders)} folders")
+    logger.info(f"Personal/Meetings: {len(n5_folders)} folders")
     
     # Find duplicates
     careerspan_names = {f.name for f in careerspan_folders}
@@ -222,7 +222,7 @@ def update_command_documentation():
     content = command_path.read_text()
     
     # Check if already has explicit output path
-    if "N5/records/meetings/" in content and "meeting_folder/" in content:
+    if "Personal/Meetings/" in content and "meeting_folder/" in content:
         logger.info("✓ Command already specifies output path")
         return True
     
@@ -231,13 +231,13 @@ def update_command_documentation():
     new_output_section = """## Output Format
 
 ### Output Location
-**All meetings MUST be stored in:** `N5/records/meetings/{meeting_id}/`
+**All meetings MUST be stored in:** `Personal/Meetings/{meeting_id}/`
 
-Example: `N5/records/meetings/2025-10-14_external-jane-smith/`
+Example: `Personal/Meetings/2025-10-14_external-jane-smith/`
 
 ### File Structure
 ```
-N5/records/meetings/{meeting_id}/"""
+Personal/Meetings/{meeting_id}/"""
     
     updated_content = content.replace(output_section, new_output_section)
     
