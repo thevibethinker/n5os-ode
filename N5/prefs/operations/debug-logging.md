@@ -115,7 +115,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 **When pattern detected:**
 - Prints warning: "⚠️ CIRCULAR DEBUGGING DETECTED"
 - Shows component + problem + attempt count
-- Suggests: Different approach, Debugger mode, ask V
+- Suggests: Different approach, Vibe Debugger persona, ask V
 
 **Pattern clusters:**
 ```json
@@ -237,14 +237,14 @@ rm /home/.z/workspaces/con_TEST/DEBUG_LOG.jsonl
 ## Future Enhancements
 
 **Potential additions:**
-- Auto-summarize failed attempts for Debugger mode handoff
+- Auto-summarize failed attempts for Vibe Debugger persona handoff
 - Export patterns to squawk_log.jsonl (system-wide issues)
 - Cross-conversation pattern detection (common failure modes)
-- Integration with Builder/Debugger mode activation logic
+- Integration with Builder/Vibe Debugger persona activation logic
 - ML-based similarity (beyond text + keyword matching)
 
 ---
 
 **Status:** ✅ Implemented, tested, integrated with session_state_manager
 
-*v1.0 | 2025-10-29 | Operator Mode Enhancement*
+*v1.0 | 2025-10-29 | Vibe Operator persona Enhancement*

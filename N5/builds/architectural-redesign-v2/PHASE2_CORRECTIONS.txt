@@ -1,0 +1,143 @@
+PHASE 2 WORKER - CORRECTIONS FROM COORDINATOR
+==============================================
+
+From: Coordinator (con_vd3Fs0mAAL7xhBAh)
+To: Phase 2 Worker
+Date: 2025-11-02 15:54 ET
+
+ALL YOUR ISSUES ARE REAL - HERE ARE FIXES
+==========================================
+
+ISSUE 1: SESSION_STATE Script Missing
+--------------------------------------
+Status: EXPECTED (not yet implemented)
+Solution: Skip SESSION_STATE initialization entirely
+Action: Proceed without it - not required
+
+ISSUE 2: File Read Errors (Modal filesystem)
+---------------------------------------------
+Status: CONFIRMED - read_file tool has internal server errors
+Solution: Use 'cat' commands instead of read_file tool
+Works: cat /home/workspace/Knowledge/architectural/operational_principles.md
+
+ISSUE 3: N5/lists/principles.md Doesn't Exist
+----------------------------------------------
+Status: COORDINATOR ERROR - I gave you wrong path
+Correct Location: Knowledge/architectural/operational_principles.md
+File Verified: EXISTS (14K, 14 principles)
+
+ISSUE 4: Command Timeouts
+--------------------------
+Solution: Use Python scripts for file operations
+Workaround: Keep commands simple, avoid complex heredocs
+
+CORRECTED MISSION
+=================
+
+SOURCE FILE (verified exists):
+/home/workspace/Knowledge/architectural/operational_principles.md
+
+PRINCIPLES TO CONVERT:
+- P0.1: LLM-First for Analysis and Synthesis
+- P1: Human-Readable First
+- P2: Single Source of Truth (SSOT)
+- P3: Voice Integration Policy
+- P4: Ontology-Weighted Analysis
+- P5: Safety, Determinism, and Anti-Overwrite
+- P6: Mirror Sync Hygiene
+- P7: Idempotence and Dry-Run by Default
+- P8: Minimal Context, Maximal Clarity
+- P9: Copyable Blocks Philosophy
+- P10: Calendar & Time Semantics
+- P11: Failure Modes and Recovery
+- P12: Testing in Fresh Threads
+- P13: Naming and Placement
+- P14: Change Tracking
+
+ALREADY DONE (from Phase 1B):
+- P36: Orchestration Pattern
+- P37: Refactor Pattern
+
+TOTAL OUTPUT: 16 YAML files
+
+TARGET DIRECTORY:
+/home/workspace/N5/prefs/principles/
+
+FILE NAMING:
+P00.1_llm_first.yaml
+P01_human_readable_first.yaml
+P02_single_source_truth.yaml
+... etc
+
+YAML SCHEMA TO USE:
+---
+id: P##
+name: Principle Name
+category: behavior | communication | code_patterns | quality
+priority: high | medium | low
+version: "1.0.0"
+created: "2025-11-02"
+
+purpose: |
+  What this principle achieves
+
+when_to_apply:
+  - Context 1
+  - Context 2
+
+pattern:
+  core_behavior: |
+    What to do
+
+examples:
+  - description: Scenario
+    good: Correct approach
+    bad: Wrong approach
+
+anti_patterns:
+  - symptom: How to recognize violation
+    fix: How to correct
+
+changelog:
+  - date: "2025-11-02"
+    version: "1.0.0"
+    changes: Initial YAML migration
+
+EXECUTION STEPS (CORRECTED)
+============================
+
+1. Load source with cat:
+   cat /home/workspace/Knowledge/architectural/operational_principles.md
+
+2. For each of 14 principles:
+   - Extract content
+   - Map to YAML schema
+   - Write to N5/prefs/principles/P##_slug.yaml
+
+3. Create principles_index.yaml listing all 16 files
+
+4. Update BUILD_TRACKER:
+   python3 -c "
+   import json
+   with open('BUILD_TRACKER.json', 'r') as f:
+       t = json.load(f)
+   t['phases']['phase2']['status'] = 'COMPLETE'
+   t['phases']['phase2']['completed_at'] = '2025-11-02T...'
+   t['phases']['phase3']['status'] = 'READY'
+   with open('BUILD_TRACKER.json', 'w') as f:
+       json.dump(t, f, indent=2)
+   "
+
+AUTHORIZATION
+=============
+
+✅ All information corrected
+✅ Source file verified exists
+✅ Workarounds provided for all issues
+✅ Proceed with confidence
+
+Execute Phase 2 with these corrections.
+
+---
+Coordinator: Vibe Operator
+Timestamp: 2025-11-02 15:54 ET

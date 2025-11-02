@@ -56,7 +56,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py patterns \
 2. Review recent attempts: `debug_logger.py recent --n 5`
 3. **Decision tree:**
    - Same approach 3 times? → Try fundamentally different angle
-   - Complex system? → Activate Debugger mode WITH planning prompt
+   - Complex system? → switch to Vibe Debugger persona WITH planning prompt
    - Out of ideas? → Escalate to V with 3+ attempts documented
 
 **Example internal monologue:**
@@ -85,7 +85,7 @@ New angle needed: Exponential backoff on retry, not just delay
    - What patterns do I see?
    - Am I varying the approach or just parameters?
    - Have I considered root cause vs symptoms?
-   - Should I activate Debugger mode?
+   - Should I switch to Vibe Debugger persona?
 4. **Decide:** Continue with fresh approach OR mode shift OR escalate
 
 **Anti-pattern:** Blindly trying 4th, 5th, 6th approaches without reflection
@@ -116,7 +116,7 @@ python3 debug_logger.py append --convo-id con_ABC \
 
 ## Integration with Mode System
 
-### When to Activate Debugger Mode
+### When to switch to Vibe Debugger persona
 
 **Criteria:**
 1. Circular pattern detected (3+ similar failures)
@@ -126,7 +126,7 @@ python3 debug_logger.py append --convo-id con_ABC \
 
 **Handoff:**
 ```markdown
-**Activating Debugger Mode**
+**switching to Vibe Debugger persona**
 
 **Objective:** Systematic root cause analysis for [component]
 **Scope:** [boundaries]
@@ -221,7 +221,7 @@ Before logging:
 After 3rd failure:
 - [ ] Did I check for patterns?
 - [ ] Am I varying approach or just parameters?
-- [ ] Should I activate Debugger mode?
+- [ ] Should I switch to Vibe Debugger persona?
 - [ ] Have I documented all 3 attempts for V if escalating?
 
 On success after failures:

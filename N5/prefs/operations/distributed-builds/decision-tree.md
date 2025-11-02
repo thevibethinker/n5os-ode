@@ -203,6 +203,6 @@ If 2+ answers are YES → Distributed
 - Follow `file 'Knowledge/architectural/architectural_principles.md'`
 
 **If Distributed:**
-1. Operator activates Builder mode
+1. Operator activates Vibe Builder persona
 2. Load `file 'protocol.md'`
 3. Begin framing stage
