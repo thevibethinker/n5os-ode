@@ -1,6 +1,10 @@
 ---
-description: Generate B02 Commitments block from meeting transcript  
-tags: [meeting-intelligence, block-generation, b02, commitments]
+description: Generate B02 Commitments block from meeting transcript
+tags:
+  - meeting-intelligence
+  - block-generation
+  - b02
+  - commitments
 tool: true
 ---
 # Generate Block B02: Commitments Contextual

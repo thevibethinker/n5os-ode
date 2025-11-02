@@ -1,0 +1,13 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/process_gtm.txt",
+  "labels": [
+    "product_strategy",
+    "announcement",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/process-gtm/process-gtm.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/process-gtm/process-gtm.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/process-gtm/process-gtm.md"
+  }
+}

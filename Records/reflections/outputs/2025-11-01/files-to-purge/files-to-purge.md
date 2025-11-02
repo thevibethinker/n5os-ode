@@ -1,0 +1,107 @@
+# Executive Memo — Reflection Synthesis
+**Date:** 2025-11-01
+
+## Context
+jobs/mckinsey-associate-15264/candidates/marla/outputs/candidate.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/candidate.md
+jobs/mckinsey-associate-15264/candidates/marla/outputs/dossier.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/dossier.md
+jobs/mckinsey-associate-15264/candidates/marla/outputs/gestalt_eval.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/gestalt_evaluation.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/quick_test.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/scores_v3_clean.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/scores_v3_semantic.json
+jobs/mckinsey-associate-15264/candidates/marla/outputs/signal_extraction_cache.json
+jobs/mckinsey-associate-15264/candidates/marla/parsed/fields.json
+jobs/mckinsey-associate-15264/candidates/marla/parsed/text.md
+jobs/mckinsey-associate-15264/candidates/marla/raw/resume.pdf
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/candidate.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/candidate.md
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/clarification_email_draft.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/clarification_response.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/dossier.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/dossier.md
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/gestalt_eval.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/gestalt_evaluation.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/quick_test.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/reevaluation_comparison.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/scores.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/scores_v3_clean.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/scores_v3_semantic.json
+jobs/mckinsey-associate-15264/candidates/sample1/outputs/signal_extraction_cache.json
+jobs/mckinsey-associate-15264/candidates/sample1/parsed/fields.json
+jobs/mckinsey-associate-15264/candidates/sample1/parsed/text.md
+jobs/mckinsey-associate-15264/candidates/sample1/raw/resume.pdf
+jobs/mckinsey-associate-15264/candidates/unqualified/outputs/gestalt_evaluation.json
+jobs/mckinsey-associate-15264/candidates/unqualified/parsed/fields.json
+jobs/mckinsey-associate-15264/candidates/unqualified/parsed/text.md
+jobs/mckinsey-associate-15264/candidates/unqualified/raw/resume.pdf.txt
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/candidate.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/candidate.md
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/dossier.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/dossier.md
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/gestalt_eval.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/gestalt_evaluation.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/quick_test.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/scores.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/scores_v2.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/scores_v3_clean.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/scores_v3_semantic.json
+jobs/mckinsey-associate-15264/candidates/vrijen/outputs/signal_extraction_cache.json
+jobs/mckinsey-associate-15264/candidates/vrijen/parsed/fields.json
+jobs/mckinsey-associate-15264/candidates/vrijen/parsed/text.md
+jobs/mckinsey-associate-15264/candidates/vrijen/raw/resume.pdf
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/candidate.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/candidate.md
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/dossier.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/dossier.md
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/gestalt_eval.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/gestalt_evaluation.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/quick_test.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/scores.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/scores_v3_clean.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/scores_v3_semantic.json
+jobs/mckinsey-associate-15264/candidates/whitney/outputs/signal_extraction_cache.json
+jobs/mckinsey-associate-15264/candidates/whitney/parsed/fields.json
+jobs/mckinsey-associate-15264/candidates/whitney/parsed/text.md
+jobs/mckinsey-associate-15264/candidates/whitney/raw/resume.pdf
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/interactions.md
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/outputs/candidate.json
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/outputs/candidate.md
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/outputs/quick_test.json
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/outputs/scores.json
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/parsed/fields.json
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/parsed/text.md
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/raw/alice-johnson-resume.md
+jobs/smoke-test/candidates/alice-johnson-st001-2025-10-22/raw/invalid-application.txt
+jobs/smoke-test/candidates/smoke-test-jane-smith-20251022-6v88a5/interactions.md
+jobs/smoke-test/candidates/smoke-test-jane-smith-20251022-6v88a5/raw/jane_smith_cv.pdf
+jobs/smoke-test/candidates/smoke-test-john-doe-20251022-nxbh27/interactions.md
+jobs/smoke-test/candidates/smoke-test-john-doe-20251022-nxbh27/raw/John_Doe_Resume.pdf
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/interactions.md
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/outputs/candidate.json
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/outputs/candidate.md
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/outputs/quick_test.json
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/outputs/scores.json
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/parsed/fields.json
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/parsed/text.md
+jobs/smoke-test/candidates/smoke-test-test-20251022-2cub2d/raw/test_candidate_resume.pdf
+jobs/test-job/candidates/jane-smith-tj001-2025-10-22/interactions.md
+jobs/test-job/candidates/jane-smith-tj001-2025-10-22/raw/jane-smith-cv.md
+jobs/test-job/candidates/john-doe-tj001-2025-10-22/interactions.md
+jobs/test-job/candidates/john-doe-tj001-2025-10-22/raw/john-doe-resume.md
+jobs/test-job/candidates/john-doe-tj001-2025-10-22/raw/metadata.json
+jobs/test-job/candidates/test-001/parsed/fields.json
+jobs/test-job/candidates/test-001/parsed/text.md
+jobs/test-job/candidates/test-001/raw/resume.md
+jobs/test-job/candidates/vrijen-001/parsed/fields.json
+jobs/test-job/candidates/vrijen-001/parsed/text.md
+jobs/test-job/candidates/vrijen-001/raw/v_mostrecentresume-FCH.pdf
+
+## Initial Classification
+- hiring
+
+## Next
+- Draft decisions/options
+- Risks + counterfactuals
+- Actions and owners

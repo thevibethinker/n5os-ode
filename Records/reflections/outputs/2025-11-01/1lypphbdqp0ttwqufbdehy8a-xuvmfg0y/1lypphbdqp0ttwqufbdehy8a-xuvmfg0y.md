@@ -1,0 +1,261 @@
+# Executive Memo — Reflection Synthesis
+**Date:** 2025-11-01
+
+## Context
+00:02
+Vrijen Attawar
+This is, this is pretty cool. Amanda, do you have time to check out the
+website real quick? Maybe the I'm hiring, I'm job seeking should be a
+little larger.
+
+00:15
+Logan Currie
+I already talked to Rahul about that. She's gonna, she's gonna try for
+the time being. If we're sending it to job seekers like for our LinkedIn
+and stuff, it'll link directly to the job seeker version of the site.
+But yeah, it needs to be larger. But yeah, I flagged that.
+
+00:35
+Vrijen Attawar
+For the meantime, we can just have two different links stored in our
+Mackies. Yeah, not a big deal. Amanda's first response is. I love this.
+
+00:46
+Logan Currie
+Sweet.
+
+00:51
+Vrijen Attawar
+This is good. This is going to be a good thing for us to have this like
+24 to 40 an hour thing because we will frankly fall flat a few times and
+then really motion.
+
+01:02
+Logan Currie
+Yeah.
+
+01:03
+Vrijen Attawar
+Not that we have to fall flat, but even if we do, it's a quick cadence.
+
+01:08
+Logan Currie
+Yep.
+
+01:09
+Vrijen Attawar
+This is looking slick. I'm sure like, it does. I'm sure like upon super
+scrutiny there'll be like things to question, but most folks are just
+going to pick up the gist of it. Right. So getting it out.
+
+01:25
+Logan Currie
+Exactly. Yeah. So I mean we need to like the pricing doesn't make sense
+right now. Like there's a few things like the FAQ needs work but like
+for the like time being, it's. It's better than nothing.
+
+01:42
+Vrijen Attawar
+Sweet.
+
+01:55
+Logan Currie
+How is your morning going thus far?
+
+02:01
+Vrijen Attawar
+Sort of like I messaged Camina, more so surviving than thriving. But
+we're getting there. I. I don't know how long this will last, but I had
+a. Had a good sort of like moment of feeling some pressure lifted off
+me.
+
+02:19
+Logan Currie
+Oh yeah?
+
+02:20
+Vrijen Attawar
+Yeah. I'm just damn good shower. I. I had either that or some brief
+amount of like personal growth.
+
+02:30
+Logan Currie
+Personal growth or a shower that seems like a. It's one or the other.
+Who knows?
+
+02:36
+Vrijen Attawar
+One or the other. I mean, never.
+
+02:38
+Logan Currie
+We'll never know. We'll never.
+
+02:40
+Vrijen Attawar
+You don't know if it's an especially good shower or. I mean, it's a good
+realization. It's a good realization. I don't need to. I think there's
+just a lot of like. Yeah, I think a big part of my like, stress was just
+me amping myself up and that's not helpful. So I'm trying to be more
+mindful of that instead of getting rattled up like a particularly unruly
+Chihuahua.
+
+03:09
+Logan Currie
+Why the fuck isn't this working?
+
+03:13
+Vrijen Attawar
+Okay. Massive pain in the butt. Okay. What is the planar rooney for this
+off site talking Pricing, talking product.
+
+03:30
+Logan Currie
+Talking pricing. Talking product. Pretty much. I mean I feel like we
+just have a lot to go through. Even like the fact that our pricing, like
+we don't have pricing on either the, like real pricing on either the B2C
+or the B2B side of things. So B2B is okay because I feel like we can
+kind of hand wave a little bit. But I do want to like dig into what it
+is that we're saying on like. Hold on. Sorry.
+
+04:07
+Vrijen Attawar
+No sweat. Take your time.
+
+04:08
+Logan Currie
+I'm trying to do this link thing.
+
+04:11
+Vrijen Attawar
+Take your time. Do you want me to. Do you want to do this in like 15
+minutes so I can let you wrap up, get your mind off this a little bit
+and then we can just like spend the last 30 minutes talking and prepping
+for the team?
+
+04:24
+Logan Currie
+Well, the meeting or call starts in 30 minutes, so I don't think that
+would.
+
+04:29
+Vrijen Attawar
+Oh, timing wise. But yeah.
+
+04:32
+Logan Currie
+Then I mean basically let me just switch gears real quick. I'm the.
+Since the. I feel like the website is a little bit of a priority since
+it's currently live and half the shit is incorrect. But if you want to,
+I can do that for the next 30 minutes. If you want to make just like a
+quick agenda for the two meetings. We've got two hours. I don't think it
+needs to be super structured. But essentially priorities would be
+figuring out like timing wise when and how much money we want to charge
+for individuals. We can always be giving codes to communities, etc. But
+I think having a baseline of how much we charge would be a good thing.
+I'm willing to have my mind changed about that.
+
+05:15
+Logan Currie
+And then for product, essentially figuring out what the team is going to
+be doing for the next few weeks while we get deals.
+
+05:24
+Vrijen Attawar
+Mm mm. Yeah, both of those are gonna require. Yeah, there are a couple
+of. Maybe try and knock this out, see if you can get on for the last
+five minutes or so. But yeah, let me get started on this. I think that's
+a fair enough of a mandate. My concern is that there are some open
+questions that might make it a little bit of a pitfall to like discuss
+it with the team and not go around in circles. But I'm try to.
+
+05:56
+Logan Currie
+What do you think the. The.
+
+06:00
+Vrijen Attawar
+I'm less of thinking, more so sensing. But it's around the idea of like
+okay, we are playing forward these. Yeah, I guess it's clear who we're
+charging to and as far as the product, I think that's where there's more
+sort of ambiguity around like are we serving communities. Are we
+building for companies or are we building for candidates? Like which of
+these three stakeholders are we taking next? And we, I, I would say what
+we know about the go to market is represented largely in the website.
+What we don't know are some specifics like VCs, channel, partners, yes
+or no or like you know what specific company versus like founder versus
+talent. Like there are a couple of little slots like love.
+
+06:50
+Logan Currie
+Oh for sure. We, we don't know a lot.
+
+06:53
+Vrijen Attawar
+Yeah.
+
+06:53
+Logan Currie
+So I don't, so I don't think that ultimately what we need is a stop gap
+product focus for the next three weeks, if not like month while we
+essentially manually get deals and figure a lot of this shit out. So in
+my mind it makes sense to prove out the candidate side experience
+because it, and again I'm happy to chat through this with the team but
+like even the Slack channel is like about like marketing emails to
+candidates. Like nothing is like cohesive because half of the jobs
+distribution has not been, has been like handled by you and Ilsa. Right.
+So it's like we need a cohesive user journey of this is what is being
+communicated to candidates. Like that you will get roles but like none
+of that is communicated now.
+
+08:03
+Logan Currie
+Now that we have the website up it's good timing because it's like okay,
+you're gonna by using career span you get considered for roles. Bingo.
+That's, that's big. But like none of that is baked within our user
+experience right now. So all of the community based and company based
+product development will have to wait until we have more concrete
+information about those ICPs and what deals we're getting, etc. Etc. But
+in the meantime if a candidate comes on we can't capture them. So maybe
+like maybe pricing shouldn't be part of the conversation but
+realistically we don't want to fucking bankrupt ourselves by like
+getting deals that cost us X, Y. I don't know. Like basically we're
+going to need a really tight user experience motion to get any of the
+talent that we can then deliver to companies and deliver to communities.
+
+09:08
+Logan Currie
+So, so I think the product is in a good state but it's not up to date
+with what it is that we are offering.
+
+09:16
+Vrijen Attawar
+Okay, yeah I think that's fair. I think that's where I'm thinking like
+pricing may be, it may be just a little too early to do full on pricing.
+But what that session might be good for is a little bit of a like status
+check around. Where is everyone at? What is the current. Like, I think a
+little bit of synchronization as a start might be a good. If this is a
+virtual off site, might be good.
+
+09:43
+Logan Currie
+Sure. Yeah, I'm thinking of it, I guess, like a working session. Like,
+it's not. It's nothing that we are presenting.
+
+09:48
+Vrijen Attawar
+Okay, cool. Perfect. So let me structure something out. I'll let you get
+back to this and then I'll share it with you with a few minutes to spare
+so you can look over it. Okay, cool. Ciao.
+
+09:59
+Logan Currie
+Bye.
+
+## Initial Classification
+- product_strategy, hiring
+
+## Next
+- Draft decisions/options
+- Risks + counterfactuals
+- Actions and owners

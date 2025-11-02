@@ -1,0 +1,14 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/processing_summary.txt",
+  "labels": [
+    "product_strategy",
+    "pitch_narrative",
+    "announcement",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/processing-summary/processing-summary.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/processing-summary/processing-summary.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/processing-summary/processing-summary.md"
+  }
+}

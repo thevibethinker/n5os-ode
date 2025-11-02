@@ -1,0 +1,12 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/migration_plan.txt",
+  "labels": [
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/migration-plan/migration-plan.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/migration-plan/migration-plan.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/migration-plan/migration-plan.md"
+  }
+}

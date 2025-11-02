@@ -1,0 +1,76 @@
+Here's a pattern I keep seeing:
+
+=== CLEANUP ANALYSIS ===
+
+DEFINITELY DELETE (Obsolete/Redundant):
+N5/:
+- command_authoring (obsolete, commands now in N5/commands/)
+- essential_links (deprecated per master plan)
+- flows (deprecated per master plan, 95% gap)
+- jobs (inactive system per master plan)
+- jobs_data (empty/inactive per master plan)
+- modules (deprecated per master plan, only 1 file)
+- workflows (deprecated per master plan, example-only)
+- Golden (unknown, likely obsolete)
+- public_docs (redundant with Documents/)
+- public_materials (redundant)
+- examples (redundant with N5/examples if any)
+- test + tests (duplicate test directories)
+- output (temporary, should be in Records/Temporary/)
+- tmp (temporary)
+- archives (redundant with Backups/)
+- docs (redundant with Documents/)
+- system_docs (moved to Documents/System/)
+
+Workspace Root:
+- Commands (duplicate of N5/commands?)
+- Scripts (duplicate of N5/scripts?)
+- Job_Extractions (obsolete jobs system)
+- outputs (temporary)
+- scripts (duplicate)
+- sandbox (temporary)
+- Logs (should be in N5/logs or N5/runtime/)
+- stable_knowledge (moved to Knowledge/)
+- content_maps (temporary/obsolete)
+- backups (we have Backups/ capitalized)
+- sourcestack (obsolete)
+- tmp (temporary, should be Records/Temporary/)
+- Trash (should be cleaned)
+- Telemetry (questionable)
+- Data (generic, should be organized)
+- Misc (generic, should be organized)
+- Temp (temporary, should be Records/Temporary/)
+- BackupArchive (huge, 299MB, should be external)
+- runtime (should be in N5/runtime/)
+- examples (duplicate)
+- system_prep (obsolete)
+- System (duplicate of Documents/System?)
+- Startup Intelligence (questionable location)
+- Archive (duplicate of Documents/Archive?)
+- TranscriptWorkflow (obsolete, functionality in N5)
+- ticketing_system (questionable, should be in Careerspan/ or projects/)
+- projects (keep, but review)
+
+KEEP:
+- N5/ (OS)
+- Knowledge/ (portable data)
+- Lists/ (portable data)
+- Records/ (staging)
+- Documents/ (user docs)
+- Backups/ (system backups)
+- Images/ (user images)
+- Articles/ (saved articles)
+- Meetings/ (meeting notes)
+- Careerspan/ (company work)
+- .git/ (version control)
+
+INVESTIGATE BEFORE DELETING:
+- projects/ (may have active work)
+- Startup Intelligence/ (may have valuable content)
+- ticketing_system/ (may be active)
+- Data/ (may have valuable data)
+- Misc/ (may have valuable misc files)
+- BackupArchive/ (299MB - what's in it?)
+
+—
+What stands out to you? What would you add?

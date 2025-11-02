@@ -1,6 +1,10 @@
 ---
 description: Generate B01 Detailed Recap block from meeting transcript
-tags: [meeting-intelligence, block-generation, b01, recap]
+tags:
+  - meeting-intelligence
+  - block-generation
+  - b01
+  - recap
 tool: true
 ---
 # Generate Block B01: Detailed Recap

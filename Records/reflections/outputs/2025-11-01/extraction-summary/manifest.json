@@ -1,0 +1,11 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/extraction_summary.txt",
+  "labels": [
+    "product_strategy",
+    "ops_process"
+  ],
+  "outputs": {
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/extraction-summary/extraction-summary.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/extraction-summary/extraction-summary.md"
+  }
+}

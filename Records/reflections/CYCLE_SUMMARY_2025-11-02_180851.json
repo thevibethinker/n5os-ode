@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-11-02T18:08:51.962481",
+  "status": "processing_complete",
+  "summary": {
+    "total_processed": 174,
+    "manifests": 9,
+    "transcripts": 11,
+    "classifications": 11,
+    "blocks": 10,
+    "registry_entries": 15
+  }
+}

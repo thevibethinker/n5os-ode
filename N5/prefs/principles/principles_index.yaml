@@ -1,0 +1,129 @@
+---
+# N5 Principles Index
+# Generated: 2025-11-02
+# Total Principles: 16
+
+version: "1.0.0"
+last_updated: "2025-11-02"
+
+principles:
+  - id: P0.1
+    name: LLM-First for Analysis and Synthesis
+    file: P00.1_llm_first.yaml
+    category: behavior
+    priority: high
+    
+  - id: P1
+    name: Human-Readable First
+    file: P01_human_readable_first.yaml
+    category: code_patterns
+    priority: high
+    
+  - id: P2
+    name: Single Source of Truth (SSOT)
+    file: P02_single_source_truth.yaml
+    category: quality
+    priority: high
+    
+  - id: P3
+    name: Voice Integration Policy
+    file: P03_voice_integration.yaml
+    category: communication
+    priority: medium
+    
+  - id: P4
+    name: Ontology-Weighted Analysis
+    file: P04_ontology_weighted.yaml
+    category: behavior
+    priority: medium
+    
+  - id: P5
+    name: Safety, Determinism, and Anti-Overwrite
+    file: P05_safety_determinism.yaml
+    category: quality
+    priority: high
+    
+  - id: P6
+    name: Mirror Sync Hygiene
+    file: P06_mirror_sync_hygiene.yaml
+    category: quality
+    priority: medium
+    
+  - id: P7
+    name: Idempotence and Dry-Run by Default
+    file: P07_idempotence_dryrun.yaml
+    category: code_patterns
+    priority: high
+    
+  - id: P8
+    name: Minimal Context, Maximal Clarity
+    file: P08_minimal_context.yaml
+    category: communication
+    priority: high
+    
+  - id: P9
+    name: Copyable Blocks Philosophy
+    file: P09_copyable_blocks.yaml
+    category: communication
+    priority: medium
+    
+  - id: P10
+    name: Calendar & Time Semantics
+    file: P10_calendar_time.yaml
+    category: behavior
+    priority: medium
+    
+  - id: P11
+    name: Failure Modes and Recovery
+    file: P11_failure_modes.yaml
+    category: quality
+    priority: high
+    
+  - id: P12
+    name: Testing in Fresh Threads
+    file: P12_testing_fresh_threads.yaml
+    category: quality
+    priority: medium
+    
+  - id: P13
+    name: Naming and Placement
+    file: P13_naming_placement.yaml
+    category: code_patterns
+    priority: medium
+    
+  - id: P14
+    name: Change Tracking
+    file: P14_change_tracking.yaml
+    category: quality
+    priority: medium
+    
+  - id: P36
+    name: Orchestration Pattern
+    file: P36_orchestration_pattern.yaml
+    category: code_patterns
+    priority: high
+    note: "Created in Phase 1B"
+    
+  - id: P37
+    name: Refactor Pattern
+    file: P37_refactor_pattern.yaml
+    category: code_patterns
+    priority: high
+    note: "Created in Phase 1B"
+
+categories:
+  behavior: [P0.1, P4, P10]
+  communication: [P3, P8, P9]
+  code_patterns: [P1, P7, P13, P36, P37]
+  quality: [P2, P5, P6, P11, P12, P14]
+
+priority_tiers:
+  high: [P0.1, P1, P2, P5, P7, P8, P11, P36, P37]
+  medium: [P3, P4, P6, P9, P10, P12, P13, P14]
+
+migration_notes: |
+  Phase 2 of architectural redesign completed 2025-11-02.
+  Source: Knowledge/architectural/operational_principles.md
+  14 principles (P0.1, P1-P14) converted from markdown to YAML.
+  P36 and P37 created previously in Phase 1B.
+  Total: 16 principles in YAML format.

@@ -1,0 +1,13 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/careers_consumer_app.txt",
+  "labels": [
+    "pitch_narrative",
+    "hiring",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/careers-consumer-app/careers-consumer-app.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/careers-consumer-app/careers-consumer-app.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/careers-consumer-app/careers-consumer-app.md"
+  }
+}

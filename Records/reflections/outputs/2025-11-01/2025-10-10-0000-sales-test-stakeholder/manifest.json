@@ -1,0 +1,15 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/2025-10-10_0000_sales_test-stakeholder.txt",
+  "labels": [
+    "product_strategy",
+    "pitch_narrative",
+    "hiring",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/2025-10-10-0000-sales-test-stakeholder/2025-10-10-0000-sales-test-stakeholder.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/2025-10-10-0000-sales-test-stakeholder/2025-10-10-0000-sales-test-stakeholder.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/2025-10-10-0000-sales-test-stakeholder/2025-10-10-0000-sales-test-stakeholder.md"
+  }
+}

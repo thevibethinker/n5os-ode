@@ -1,0 +1,12 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/new_decision_logic.txt",
+  "labels": [
+    "pitch_narrative",
+    "hiring"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/new-decision-logic/new-decision-logic.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/new-decision-logic/new-decision-logic.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/new-decision-logic/new-decision-logic.md"
+  }
+}

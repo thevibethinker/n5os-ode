@@ -1,0 +1,13 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/hamoon_email_body.txt",
+  "labels": [
+    "product_strategy",
+    "announcement",
+    "hiring"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/hamoon-email-body/hamoon-email-body.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/hamoon-email-body/hamoon-email-body.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/hamoon-email-body/hamoon-email-body.md"
+  }
+}

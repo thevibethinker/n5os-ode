@@ -1,0 +1,15 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/1Aa5euzXG6rSRipcoRq6NYFlmC3sXuJJxANVJTetkAwo.txt",
+  "labels": [
+    "product_strategy",
+    "pitch_narrative",
+    "hiring",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/1aa5euzxg6rsripcorq6nyflmc3sxujjxanvjtetkawo/1aa5euzxg6rsripcorq6nyflmc3sxujjxanvjtetkawo.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/1aa5euzxg6rsripcorq6nyflmc3sxujjxanvjtetkawo/1aa5euzxg6rsripcorq6nyflmc3sxujjxanvjtetkawo.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/1aa5euzxg6rsripcorq6nyflmc3sxujjxanvjtetkawo/1aa5euzxg6rsripcorq6nyflmc3sxujjxanvjtetkawo.md"
+  }
+}

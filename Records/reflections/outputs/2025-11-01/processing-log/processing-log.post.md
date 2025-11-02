@@ -1,0 +1,37 @@
+Here's a pattern I keep seeing:
+
+✅ MEETING PROCESSING COMPLETE
+
+Meeting ID: 2025-10-20_external-careerspan-oracle-introduction
+Stakeholder Type: NETWORKING
+Processed: 2025-10-20 19:17 ET
+
+BLOCKS GENERATED (9 total):
+✅ B26_MEETING_METADATA_SUMMARY (REQUIRED)
+✅ B01_DETAILED_RECAP (REQUIRED)
+✅ B02_COMMITMENTS_CONTEXTUAL (REQUIRED)
+✅ B08_STAKEHOLDER_INTELLIGENCE (REQUIRED)
+✅ B21_KEY_MOMENTS (REQUIRED)
+✅ B31_STAKEHOLDER_RESEARCH (REQUIRED)
+✅ B25_DELIVERABLE_CONTENT_MAP (REQUIRED)
+✅ B07_WARM_INTRO_BIDIRECTIONAL (HIGH - NETWORKING)
+✅ B05_OUTSTANDING_QUESTIONS (HIGH - NETWORKING)
+
+CRM INTEGRATION:
+✅ Profile created: Knowledge/crm/individuals/chase-gagnon.md
+✅ Enrichment priority: LOW
+✅ Howie tags generated: [LD-NET] [GPT-E] [A-3]
+
+GOOGLE DRIVE:
+✅ Filename updated: [ZO-PROCESSED] Careerspan - Oracle Introduction-transcript-2025-10-20T16-24-46.840Z
+
+REQUEST FILE:
+✅ Moved to: N5/inbox/meeting_requests/processed/
+
+SUMMARY:
+Chase Gagnon from Oracle's High Growth Pursuits team conducted exploratory sales intro for Oracle Cloud Infrastructure. No immediate business need—positioning for 2-3 year horizon when Careerspan scales 10x-100x. Invoice comparison to be conducted. Logan planning November coffee meeting in Cambridge.
+
+Next pending request: NONE (inbox cleared)
+
+—
+What stands out to you? What would you add?

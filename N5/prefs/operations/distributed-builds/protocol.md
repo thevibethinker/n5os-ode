@@ -344,7 +344,7 @@ See `file 'troubleshooting.md'` for detailed guidance. Quick reference:
 5. Refine templates based on experience
 
 **Ready to start?**
-1. Operator activates Builder mode
+1. Operator activates Vibe Builder persona
 2. Load `file 'Knowledge/architectural/architectural_principles.md'`
 3. Say: "I want to build [X]"
 4. Let orchestrator guide you through framing

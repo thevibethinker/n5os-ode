@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-11-02T12:10:08.520938+00:00",
+  "status": "success",
+  "files_processed": 11,
+  "blocks_generated": 11,
+  "registry_entries": 11,
+  "phases": {
+    "ingestion": 0,
+    "transcription": 2,
+    "classification": 11,
+    "block_generation": 11
+  }
+}

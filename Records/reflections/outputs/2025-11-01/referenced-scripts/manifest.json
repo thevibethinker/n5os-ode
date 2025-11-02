@@ -1,0 +1,10 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/referenced_scripts.txt",
+  "labels": [
+    "ops_process"
+  ],
+  "outputs": {
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/referenced-scripts/referenced-scripts.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/referenced-scripts/referenced-scripts.md"
+  }
+}

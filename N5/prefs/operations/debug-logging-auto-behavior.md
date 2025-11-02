@@ -48,7 +48,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 python3 /home/workspace/N5/scripts/debug_logger.py patterns \
   --convo-id <current> --window 10 --threshold 2
 ```
-3. If pattern detected → Stop and analyze OR activate Debugger mode
+3. If pattern detected → Stop and analyze OR switch to Vibe Debugger persona
 
 ### Trigger 3: When Stuck/Confused
 
@@ -65,7 +65,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py recent \
   --convo-id <current> --n 5 --format display
 ```
 3. Synthesize pattern from recent attempts
-4. Consider activating Debugger mode with planning
+4. Consider switching to Vibe Debugger persona with planning
 
 ---
 
@@ -116,7 +116,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py patterns \
 
 ## Integration with Vibe Operator
 
-**Operator Mode should:**
+**Vibe Operator persona should:**
 
 1. **Detect build/debug context** (conversation has DEBUG_LOG.jsonl)
 2. **Log significant attempts** (after fix attempts, not trivial reads)

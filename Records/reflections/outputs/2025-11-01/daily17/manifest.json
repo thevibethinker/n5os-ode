@@ -1,0 +1,14 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/daily17.txt",
+  "labels": [
+    "product_strategy",
+    "hiring",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/daily17/daily17.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/daily17/daily17.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/daily17/daily17.md"
+  }
+}

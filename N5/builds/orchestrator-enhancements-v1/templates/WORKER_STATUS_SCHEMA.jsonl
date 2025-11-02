@@ -1,0 +1,3 @@
+{"worker_id": "con_XXX", "status": "in_progress", "last_update": "2025-11-02T12:00:00Z", "progress_pct": 45, "current_task": "Implementing validation logic", "blockers": []}
+{"worker_id": "con_XXX", "status": "complete", "last_update": "2025-11-02T14:30:00Z", "progress_pct": 100, "current_task": "Final testing", "blockers": [], "artifacts": ["/path/to/file1.py", "/path/to/file2.md"]}
+{"worker_id": "con_XXX", "status": "blocked", "last_update": "2025-11-02T10:15:00Z", "progress_pct": 60, "current_task": "Integration", "blockers": ["Need orchestrator clarification on API schema"]}

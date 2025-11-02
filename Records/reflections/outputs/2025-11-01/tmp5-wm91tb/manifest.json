@@ -1,0 +1,15 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/tmp5_wm91tb.txt",
+  "labels": [
+    "product_strategy",
+    "pitch_narrative",
+    "hiring",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/tmp5-wm91tb/tmp5-wm91tb.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/tmp5-wm91tb/tmp5-wm91tb.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/tmp5-wm91tb/tmp5-wm91tb.md"
+  }
+}

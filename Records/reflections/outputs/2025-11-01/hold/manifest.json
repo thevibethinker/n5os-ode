@@ -1,0 +1,16 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/hold.txt",
+  "labels": [
+    "product_strategy",
+    "dilemma",
+    "pitch_narrative",
+    "hiring",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/hold/hold.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/hold/hold.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/hold/hold.md"
+  }
+}

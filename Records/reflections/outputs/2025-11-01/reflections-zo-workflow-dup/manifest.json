@@ -1,0 +1,11 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/Reflections_Zo_workflow_dup.txt",
+  "labels": [
+    "product_strategy",
+    "ops_process"
+  ],
+  "outputs": {
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/reflections-zo-workflow-dup/reflections-zo-workflow-dup.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/reflections-zo-workflow-dup/reflections-zo-workflow-dup.md"
+  }
+}

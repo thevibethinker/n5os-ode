@@ -1,0 +1,13 @@
+Here's a pattern I keep seeing:
+
+ERROR: Classification mismatch detected
+Meeting ID: 2025-10-16_internal-team
+Reason: File labeled as "internal-team" but content shows external meeting with Jaya Pokuri (Bonfire) and Dennis
+Participants detected: Vrijen Attawar, Jaya Pokuri, Dennis
+Correct classification: FOUNDER or NETWORKING (external consultation)
+Action: Moved to failed folder for manual review and reprocessing
+
+This indicates the upstream classification/ingestion system needs adjustment.
+
+—
+What stands out to you? What would you add?

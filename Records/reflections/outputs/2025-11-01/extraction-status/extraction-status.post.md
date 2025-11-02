@@ -1,0 +1,46 @@
+Here's a pattern I keep seeing:
+
+# Action Item Extraction Task Status Report
+Timestamp: 2025-10-27 19:14:58 ET
+
+## Execution Summary
+
+### STEP 1: Meeting Directory Scan
+✓ Scanned /home/workspace/Records/Company/Meetings
+- Found 2 date directories: 2025-10-15, 2025-10-23
+- Located Smart Block files in: 2025-10-23/Test_Leadership_Sync/
+
+### STEP 2: New Meeting Detection
+✓ Checked for unprocessed meetings with Smart Blocks
+
+Results:
+- 2025-10-23 / Test_Leadership_Sync: Already processed
+  - Action extraction: Complete (5 items extracted)
+  - Email request file exists: 2025-10-23_Test_Leadership_Sync_email_request.json
+  - Status: Awaiting user approval
+  - Email sent: 2025-10-25 11:48:41 ET
+
+- 2025-10-15 / Call with Erika Underwood: 
+  - No Smart Blocks detected (raw audio/transcript only)
+  - Status: Not yet processed
+
+### STEP 3: Action Extraction Processing
+✓ No new unprocessed meetings detected at this time
+
+Processed Extraction Count: 0 (limit: 2 per run)
+- All available meetings with Smart Blocks have already been extracted
+- Awaiting approval from V on the Test Leadership Sync action items
+
+## Current Status
+✓ Extraction pipeline idle (no new meetings to process)
+⏳ Awaiting approval response on 5 action items from Test Leadership Sync
+✓ monitor_action_approvals service active and monitoring for responses
+✓ All logs current and up-to-date
+
+## Next Steps
+The task will resume when:
+1. New meetings with Smart Blocks are added to /home/workspace/Records/Company/Meetings/, OR
+2. User approval response is received for existing action items
+
+—
+What stands out to you? What would you add?

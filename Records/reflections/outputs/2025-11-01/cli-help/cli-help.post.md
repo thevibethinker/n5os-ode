@@ -1,0 +1,22 @@
+Here's a pattern I keep seeing:
+
+usage: n5 review [-h] [--dry-run] {add,list,show,status,comment,export} ...
+
+Output Review Tracker CLI
+
+positional arguments:
+  {add,list,show,status,comment,export}
+                        Commands
+    add                 Add output for review
+    list                List reviews
+    show                Show review details
+    status              Update status
+    comment             Add comment
+    export              Export to JSON
+
+options:
+  -h, --help            show this help message and exit
+  --dry-run             Dry run mode
+
+—
+What stands out to you? What would you add?

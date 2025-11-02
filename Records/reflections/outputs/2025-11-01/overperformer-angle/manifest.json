@@ -1,0 +1,13 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/Overperformer_angle.txt",
+  "labels": [
+    "hiring",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/overperformer-angle/overperformer-angle.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/overperformer-angle/overperformer-angle.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/overperformer-angle/overperformer-angle.md"
+  }
+}

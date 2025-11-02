@@ -1,0 +1,11 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/cleanup_analysis.txt",
+  "labels": [
+    "hiring",
+    "ops_process"
+  ],
+  "outputs": {
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/cleanup-analysis/cleanup-analysis.post.md",
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/cleanup-analysis/cleanup-analysis.md"
+  }
+}

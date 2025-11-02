@@ -1,0 +1,15 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/transcript_converted.txt",
+  "labels": [
+    "product_strategy",
+    "pitch_narrative",
+    "announcement",
+    "hiring",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/transcript-converted/transcript-converted.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/transcript-converted/transcript-converted.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/transcript-converted/transcript-converted.md"
+  }
+}

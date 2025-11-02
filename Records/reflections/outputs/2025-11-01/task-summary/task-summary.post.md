@@ -1,0 +1,47 @@
+Here's a pattern I keep seeing:
+
+═══════════════════════════════════════════════════════════════════════════
+  SCHEDULED TASK EXECUTION: Extract Meeting Action Items
+═══════════════════════════════════════════════════════════════════════════
+
+Execution Time: 2025-10-28 09:43:50 ET
+
+STEP 1: Check for newly processed meetings
+─────────────────────────────────────────
+
+Expected locations scanned:
+  • /home/workspace/Records/Company/Meetings — NOT FOUND
+  • /home/workspace/Meetings — NOT FOUND
+  
+Current inbox status:
+  • /home/workspace/N5/inbox/meeting_actions/ contains 28 action extraction files
+  • All files represent meetings with actions already extracted or awaiting approval
+
+Newly processed meetings with pending action extraction:
+  ✓ 0 NEW MEETINGS FOUND — All currently processed meetings have action extractions
+
+STEP 2: Extract and email action items
+─────────────────────────────────────────
+
+Status: SKIPPED — No new meetings identified for processing
+Limit: Max 2 meetings per run (not needed this cycle)
+
+STEP 3: Monitor for reply approvals
+─────────────────────────────────────────
+
+Monitor Service Status: ✓ ACTIVE
+  • Service: monitor_action_approvals.py
+  • PID: 1215
+  • Running: Yes (monitoring interval: 120 seconds)
+  • Last check: Recent
+  • Action: Monitoring /home/workspace/N5/inbox/meeting_actions/ for user approvals
+
+Action Log Location: /home/workspace/N5/logs/action_extractions.log
+Email Request Staging: /home/workspace/N5/inbox/meeting_actions/*_email_request.json
+
+═══════════════════════════════════════════════════════════════════════════
+OUTCOME: All meetings processed | Monitor service active | Ready for next batch
+═══════════════════════════════════════════════════════════════════════════
+
+—
+What stands out to you? What would you add?

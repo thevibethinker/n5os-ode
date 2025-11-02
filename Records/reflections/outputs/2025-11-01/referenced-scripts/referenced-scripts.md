@@ -1,0 +1,42 @@
+# Executive Memo — Reflection Synthesis
+**Date:** 2025-11-01
+
+## Context
+_command_name.py
+_conversation_end.py
+_docgen.py
+_git_check.py
+_lessons_extract.py
+_list_view.py
+_lists_add.py
+_lists_export.py
+_lists_find.py
+_lists_health_check.py
+_lists_monitor.py
+_lists_promote.py
+_new_command.py
+_placeholder_scan.py
+_search_commands.py
+_thread_export.py
+_workspace_maintenance.py
+_workspace_root_cleanup.py
+build_tracker.py
+config.py
+core_audit.py
+data_processor.py
+direct_ingestion_mechanism.py
+gfetch.py
+hygiene_preflight.py
+run_direct_ingestion.py
+script.py
+sync_mechanism.py
+test_direct_ingestion.py
+update_personal_intelligence.py
+
+## Initial Classification
+- ops_process
+
+## Next
+- Draft decisions/options
+- Risks + counterfactuals
+- Actions and owners

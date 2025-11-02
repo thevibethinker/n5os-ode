@@ -1,0 +1,17 @@
+{
+  "source": "/home/workspace/N5/records/reflections/incoming/1HHqpPfbSl5y69JSjKTG22h8FzgU30K49.txt",
+  "labels": [
+    "product_strategy",
+    "pitch_narrative",
+    "announcement",
+    "hiring",
+    "founder_journal",
+    "marketing",
+    "ops_process"
+  ],
+  "outputs": {
+    "executive_memo": "/home/workspace/N5/records/reflections/outputs/2025-11-01/1hhqppfbsl5y69jsjktg22h8fzgu30k49/1hhqppfbsl5y69jsjktg22h8fzgu30k49.md",
+    "linkedin_post": "/home/workspace/N5/records/reflections/outputs/2025-11-01/1hhqppfbsl5y69jsjktg22h8fzgu30k49/1hhqppfbsl5y69jsjktg22h8fzgu30k49.post.md",
+    "blog_snippet": "/home/workspace/N5/records/reflections/outputs/2025-11-01/1hhqppfbsl5y69jsjktg22h8fzgu30k49/1hhqppfbsl5y69jsjktg22h8fzgu30k49.md"
+  }
+}
