@@ -7,8 +7,10 @@ Scans upcoming calendar, detects external stakeholders, creates profiles with em
 import json
 import os
 import sys
-from datetime import datetime, timedelta
 from pathlib import Path
+from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
+import sqlite3
 import logging
 
 logging.basicConfig(
@@ -30,37 +32,164 @@ from stakeholder_manager import (
 WORKSPACE = Path("/home/workspace")
 
 
-def scan_calendar_for_new_stakeholders(days_ahead: int = 7) -> list:
+def scan_calendar_for_new_stakeholders(
+    days_ahead: int = 7,
+    use_app_google_calendar=None
+) -> list:
     """
-    Scan calendar for upcoming meetings with external stakeholders.
-    Returns list of (email, name, calendar_event) tuples.
+    Args:
+        dry_run: If True, only report what would be created
+        use_app_google_calendar: Zo's Google Calendar tool (must be provided)
     
-    NOTE: This is a stub. The actual implementation should use
-    use_app_google_calendar to fetch events. Here we just document the logic.
+    Scan calendar for upcoming meetings with external stakeholders.
+    Returns list of dicts with stakeholder info for those not already in DB.
+    
+    Args:
+        days_ahead: Number of days ahead to scan (default: 7)
+        use_app_google_calendar: Zo's Google Calendar tool function (injected)
+    
+    Returns:
+        List of dicts with keys: email, name, calendar_event_id, meeting_date,
+        meeting_summary, description, attendees
     """
     
     logger.info(f"Scanning calendar for next {days_ahead} days...")
     
-    # Placeholder: In practice, this would call:
-    # - use_app_google_calendar('google_calendar-list-events', {...})
-    # - Parse attendees
-    # - Filter for external emails
-    # - Return list of new stakeholders
+    # Calculate time range in RFC3339 format with timezone
+    now = datetime.now(timezone.utc)
+    time_min = now.isoformat()
+    time_max = (now + timedelta(days=days_ahead)).isoformat()
+    
+    # If running standalone (not called by Zo), return instructions
+    if use_app_google_calendar is None:
+        logger.warning("use_app_google_calendar not provided - this must be called by Zo AI")
+        return [{
+            '_instruction': 'This function must be called by Zo AI with use_app_google_calendar tool',
+            '_steps': [
+                'Call use_app_google_calendar(tool_name="google_calendar-list-events", configured_props={...})',
+                f'timeMin: {time_min}',
+                f'timeMax: {time_max}',
+                'calendarId: "primary"',
+                'singleEvents: True',
+                'orderBy: "startTime"',
+                'maxResults: 250',
+                'Then pass results to process_calendar_events()'
+            ]
+        }]
+    
+    try:
+        logger.info(f"Fetching calendar events from {time_min[:19]} to {time_max[:19]}")
+        
+        # Fetch upcoming events using Zo's Google Calendar tool
+        events_response = use_app_google_calendar(
+            tool_name='google_calendar-list-events',
+            configured_props={
+                'calendarId': 'primary',
+                'timeMin': time_min,
+                'timeMax': time_max,
+                'singleEvents': True,
+                'orderBy': 'startTime',
+                'maxResults': 250
+            }
+        )
+        
+        events = events_response.get('items', [])
+        logger.info(f"Retrieved {len(events)} calendar events")
+        
+    except Exception as e:
+        logger.error(f"Failed to fetch calendar events: {e}")
+        return []
+    
+    # Process events to extract new stakeholders
+    return process_calendar_events(events)
+
+
+def process_calendar_events(events: list) -> list:
+    """
+    Process calendar events to extract new external stakeholders.
+    Checks database to avoid duplicates.
+    
+    Args:
+        events: List of calendar event dicts from Google Calendar API
+    
+    Returns:
+        List of new stakeholder dicts
+    """
+    # Connect to database for deduplication
+    db_path = Path("/home/workspace/N5/data/profiles.db")
+    
+    if not db_path.exists():
+        logger.error(f"Database not found: {db_path}")
+        return []
+    
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
     
     new_stakeholders = []
+    seen_emails = set()
     
-    # Example return format:
-    # new_stakeholders.append({
-    #     'email': 'person@domain.com',
-    #     'name': 'Person Name',
-    #     'calendar_event_id': 'abc123',
-    #     'meeting_date': '2025-10-14',
-    #     'meeting_summary': 'Meeting Title',
-    #     'description': 'Calendar description field',
-    #     'attendees': ['person@domain.com', 'vrijen@mycareerspan.com']
-    # })
+    for event in events:
+        attendees = event.get('attendees', [])
+        if not attendees:
+            continue
+        
+        # Extract meeting details
+        start_time = event.get('start', {})
+        meeting_date = start_time.get('dateTime') or start_time.get('date', '')
+        meeting_summary = event.get('summary', 'Untitled Meeting')
+        event_id = event.get('id', '')
+        description = event.get('description', '')
+        
+        # Process each attendee
+        for attendee in attendees:
+            email = attendee.get('email', '').lower().strip()
+            if not email:
+                continue
+            
+            display_name = attendee.get('displayName', '')
+            # Generate name from email if no display name
+            if not display_name:
+                name_part = email.split('@')[0]
+                display_name = name_part.replace('.', ' ').replace('_', ' ').title()
+            name = display_name
+            
+            # Skip if not external email
+            if not is_external_email(email):
+                logger.debug(f"Skipping internal email: {email}")
+                continue
+            
+            # Skip if already processed in this session
+            if email in seen_emails:
+                continue
+            
+            # Check database for existing profile
+            cursor.execute('SELECT id, profile_path FROM profiles WHERE email = ?', (email,))
+            existing = cursor.fetchone()
+            if existing:
+                logger.debug(f"Skipping {email} - already in database (profile: {existing[1]})")
+                continue
+            
+            # New stakeholder found!
+            seen_emails.add(email)
+            
+            stakeholder_data = {
+                'email': email,
+                'name': name,
+                'calendar_event_id': event_id,
+                'meeting_date': meeting_date,
+                'meeting_summary': meeting_summary,
+                'description': description,
+                'attendees': [a.get('email') for a in attendees if a.get('email')]
+            }
+            
+            new_stakeholders.append(stakeholder_data)
+            logger.info(f"✓ New stakeholder: {name} ({email}) in '{meeting_summary}' on {meeting_date[:10]}")
     
+    conn.close()
+    
+    logger.info(f"Found {len(new_stakeholders)} new external stakeholders (from {len(events)} events)")
     return new_stakeholders
+
 
 
 def fetch_email_history(email: str, max_results: int = 100) -> dict:
@@ -171,58 +300,112 @@ def create_stakeholder_profile_auto(
 ) -> Path:
     """
     Orchestrate full stakeholder profile creation:
-    1. Check if profile already exists
-    2. Fetch email history
+    1. Check if profile already exists (in profiles.db)
+    2. Fetch email history from Gmail
     3. Analyze with LLM
     4. Create profile file
-    5. Return questions for V if any
+    5. Track in profiles.db
+    6. Return profile path
     """
     
-    # Check if already exists
-    index = StakeholderIndex()
-    existing = index.find_by_email(email)
+    # Check if already exists in profiles.db
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
     
-    if existing:
-        logger.info(f"Profile already exists for {email}: {existing['file']}")
-        return WORKSPACE / existing['file']
-    
-    logger.info(f"Creating new profile for {name} ({email})...")
-    
-    # Fetch email history
-    email_history = fetch_email_history(email, max_results=100)
-    
-    # Analyze with LLM
-    analysis = analyze_stakeholder_with_llm(
-        name=name,
-        email=email,
-        calendar_event=calendar_event,
-        email_history=email_history
-    )
-    
-    # Create profile
-    profile_path = create_profile_file(
-        email=email,
-        name=name,
-        organization=analysis['organization'],
-        role=analysis['role'],
-        lead_type=analysis['lead_type'],
-        relationship_context=analysis['relationship_context'],
-        interaction_summary=analysis['interaction_summary'],
-        first_contact_date=analysis['first_contact_date'],
-        email_threads=[],  # Would populate from email_history
-        calendar_ids=[calendar_event.get('calendar_event_id')]
-    )
-    
-    # Log questions for V
-    if analysis['questions_for_v']:
-        logger.info(f"Questions for V about {name}:")
-        for q in analysis['questions_for_v']:
-            logger.info(f"  - {q}")
-    
-    return profile_path
+    try:
+        cursor.execute("SELECT profile_path FROM profiles WHERE email = ?", (email,))
+        existing = cursor.fetchone()
+        
+        if existing:
+            logger.info(f"Profile already exists for {email}: {existing[0]}")
+            return WORKSPACE / existing[0]
+        
+        logger.info(f"Creating new profile for {name} ({email})...")
+        
+        # Fetch email history from Gmail
+        try:
+            email_history = fetch_email_history(email, max_results=100)
+        except Exception as e:
+            logger.warning(f"Could not fetch email history: {e}")
+            email_history = {
+                'messages': [],
+                'first_email_date': None,
+                'last_email_date': None,
+                'thread_count': 0,
+                'summary': 'Email fetch failed'
+            }
+        
+        # Analyze with LLM
+        try:
+            analysis = analyze_stakeholder_with_llm(
+                name=name,
+                email=email,
+                calendar_event=calendar_event,
+                email_history=email_history
+            )
+        except Exception as e:
+            logger.error(f"LLM analysis failed: {e}", exc_info=True)
+            # Fallback to basic inference
+            analysis = {
+                'organization': infer_organization_from_email(email),
+                'role': '[To be determined]',
+                'lead_type': 'LD-GEN',
+                'lead_type_confidence': 'low',
+                'relationship_context': f"First contact via calendar invite: {calendar_event.get('meeting_summary', 'Meeting')}",
+                'interaction_summary': email_history.get('summary', 'No prior email history'),
+                'questions_for_v': [],
+                'linkedin_url': None,
+                'first_contact_date': email_history.get('first_email_date') or calendar_event.get('meeting_date')
+            }
+        
+        # Create profile file using stakeholder_manager
+        profile_path = create_profile_file(
+            email=email,
+            name=name,
+            organization=analysis['organization'],
+            role=analysis['role'],
+            lead_type=analysis['lead_type'],
+            relationship_context=analysis['relationship_context'],
+            interaction_summary=analysis['interaction_summary'],
+            first_contact_date=analysis['first_contact_date'],
+            email_threads=[],
+            calendar_ids=[calendar_event.get('calendar_event_id')]
+        )
+        
+        # Track in profiles.db
+        meeting_date = calendar_event.get('meeting_date', datetime.now().date().isoformat())
+        created_at = datetime.now().isoformat()
+        profile_rel_path = profile_path.relative_to(WORKSPACE)
+        
+        cursor.execute("""
+            INSERT INTO profiles (email, name, organization, profile_path, meeting_date, created_at, enrichment_count)
+            VALUES (?, ?, ?, ?, ?, ?, 0)
+        """, (email, name, analysis['organization'], str(profile_rel_path), meeting_date, created_at))
+        
+        profile_id = cursor.lastrowid
+        conn.commit()
+        
+        logger.info(f"✓ Profile created and tracked: {profile_path} (DB ID: {profile_id})")
+        
+        # Log questions for V if any
+        if analysis.get('questions_for_v'):
+            logger.info("")
+            logger.info(f"Questions for V about {name}:")
+            for q in analysis['questions_for_v']:
+                logger.info(f"  - {q}")
+        
+        return profile_path
+        
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Failed to create profile: {e}", exc_info=True)
+        raise
+    finally:
+        conn.close()
 
 
-def main(dry_run: bool = True):
+
+def main(dry_run: bool = True, use_app_google_calendar=None):
     """
     Main orchestration:
     1. Scan calendar for upcoming meetings
@@ -237,11 +420,22 @@ def main(dry_run: bool = True):
         logger.info("DRY RUN MODE - No files will be created")
     
     # Scan calendar
-    new_stakeholders = scan_calendar_for_new_stakeholders(days_ahead=7)
+    new_stakeholders = scan_calendar_for_new_stakeholders(
+        days_ahead=7,
+        use_app_google_calendar=use_app_google_calendar
+    )
+    
+    # Check if instructions were returned (no tool access)
+    if new_stakeholders and '_instruction' in new_stakeholders[0]:
+        logger.warning("Cannot execute: Requires Zo runtime with tool access")
+        logger.info("Instructions for manual execution:")
+        for step in new_stakeholders[0]['_steps']:
+            logger.info(f"  {step}")
+        return 1
     
     if not new_stakeholders:
-        logger.info("No new external stakeholders found in upcoming meetings")
-        return
+        logger.info("✓ No new external stakeholders found in upcoming meetings")
+        return 0
     
     logger.info(f"Found {len(new_stakeholders)} potential new stakeholders")
     
