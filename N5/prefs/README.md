@@ -1,7 +1,7 @@
-# N5 Preferences System v2.0
+# N5 Preferences System v3.0
 
-**Date:** 2025-10-09  
-**Status:** Complete
+**Date:** 2025-11-02  
+**Status:** Production
 
 ---
 
@@ -10,11 +10,9 @@
 ### For AI/LLM Loading
 
 **Primary entry point:**
-```
 Load: file 'N5/prefs/prefs.md'
-```
 
-This lightweight index (~1-2K tokens) contains:
+This lightweight index contains:
 - Critical always-load rules
 - Module directory
 - Context-aware loading guide
@@ -22,228 +20,183 @@ This lightweight index (~1-2K tokens) contains:
 ### For Humans
 
 **Navigate by topic:**
-- **System operations** → `system/` folder
-- **Communication style** → `communication/` folder
-- **Tool integrations** → `integration/` folder
-- **Knowledge management** → `knowledge/` folder
-- **Operational config** → `operations/` folder
+- **Principles** → principles/ folder (37 YAML files)
+- **Operations** → operations/ folder (27 protocols)
+- **System** → system/ folder (governance)
+- **Communication** → communication/ folder (voice, style)
+- **Strategic** → strategic/ folder (thinking frameworks)
 
 ---
 
 ## Structure Overview
 
-```
 N5/prefs/
 ├── prefs.md                      ← Start here
 ├── README.md                     ← This file
-├── naming-conventions.md         
-├── engagement_definitions.md     
+├── principles/                   ← 37 architectural principles (YAML)
+│   ├── P00.1_llm_first.yaml
+│   ├── P01_human_readable_first.yaml
+│   ├── ... (37 total)
+│   └── principles_index.yaml
+├── operations/                   ← 27 operational protocols
+│   ├── planning_prompt.md
+│   ├── conversation-end.md
+│   ├── scheduled-task-protocol.md
+│   └── ... (27 total)
+├── strategic/                    ← Strategic frameworks
+│   └── thinking_prompt.md
 ├── system/                       ← System governance
+│   ├── navigator_prompt.md
 │   ├── file-protection.md
-│   ├── git-governance.md
 │   ├── folder-policy.md
 │   └── safety.md
-├── operations/                   ← Operational config
-│   ├── scheduling.md
-│   └── resolution-order.md
-├── communication/                ← Communication & voice
+├── communication/                ← V-voice standards
 │   ├── voice.md
-│   ├── templates.md
-│   ├── meta-prompting.md
-│   └── email.md
-├── integration/                  ← Tool integrations
-│   ├── google-drive.md
-│   └── coding-agent.md
-├── knowledge/                    ← Knowledge management
-│   └── lookup.md
-└── Archive/                      ← Historical documentation
-    ├── README.md
-    ├── MIGRATION_GUIDE.md
-    └── OPTIMIZATION_SUMMARY.md
-```
+│   └── ... (V-voice examples)
+└── integration/                  ← Tool integrations
 
 ---
 
-## Key Features
+## New in v3.0 (Nov 2025)
 
-### 1. Modular Architecture
-Each module has single responsibility, making it easy to find and update specific preferences without affecting others.
+**Architectural Redesign Complete:**
+- 37 principles codified in YAML format
+- Schema validation (N5/schemas/principle.schema.json)
+- 8 personas integrated with v2.0+ standard
+- Pre-flight protocol standardized (5 steps)
+- 3 cognitive prompts active
 
-### 2. Selective Loading
-Load only what's needed for the current context:
-- Base: prefs.md (~1-2K tokens)
-- Add modules as needed (~1K each)
-- 60-70% reduction in token overhead vs. monolithic
+**Key Changes:**
+- Principles moved from markdown to YAML
+- All principles now schema-validated
+- Automatic trigger-based principle loading
+- Persona routing standardized
+- Risk assessment framework integrated
 
-### 3. Synchronized with Knowledge Base
-Preferences **reference** stable knowledge files instead of duplicating content:
-- `Knowledge/stable/` — Bio, company info, timeline, glossary
-- `Knowledge/architectural/` — Operational principles, ingestion standards
-- `Lists/` — List policies, detection rules
-
-### 4. Clear Precedence Hierarchy
-Conflicts resolved through explicit precedence order (see `operations/resolution-order.md`):
-1. User's direct instruction (highest)
-2. Folder POLICY.md
-3. Critical safety rules
-4. Specialized modules
-5. Global defaults (lowest)
+See: file 'N5/projects/architectural-redesign/MIGRATION_HISTORY.md'
 
 ---
 
-## Context-Aware Loading Guide
+## Principles Directory (NEW)
 
-| Context | Load These Modules |
-|---------|-------------------|
-| **System operations** | `system/file-protection`, `system/git-governance`, `system/safety` |
-| **Knowledge ingestion** | `Knowledge/architectural/operational_principles`, `Knowledge/architectural/ingestion_standards`, `knowledge/lookup` |
-| **Communication tasks** | `communication/voice`, `communication/templates` |
-| **Strategic work** | `Knowledge/stable/company/strategy`, `Knowledge/stable/glossary`, `Knowledge/stable/careerspan-timeline` |
-| **List operations** | `Lists/POLICY.md` |
+**Location:** N5/prefs/principles/
 
----
+37 YAML files, each defining a core principle:
+- Unique ID (P##)
+- Trigger conditions
+- Pattern specification
+- Examples (good/bad)
+- Anti-patterns
+- Related principles
 
-## Critical Always-Load Rules
+**Categories:**
+- Core (5): P0.1-P4
+- Safety (7): P5-P7, P11, P19, P21, P23
+- Quality (7): P15-P16, P18, P20, P28, P30, P33
+- Design (5): P8-P10, P13-P14
+- Execution (1): P29
+- Advanced (2): P36-P37
 
-These rules apply universally (from `prefs.md`):
+**Remaining (10):** P22, P24-P27, P31-P32, P34-P35
 
-### Safety
-- Never schedule without explicit consent
-- Always support `--dry-run`
-- Require explicit approval for side-effect actions
-- Always ask where to create new files
-
-### Folder Policy Principle
-Folder-specific POLICY.md files take precedence over global preferences. Always check for POLICY.md before folder operations.
-
----
-
-## Synchronized Knowledge Files
-
-Preferences reference (not duplicate) these stable knowledge files:
-
-### Personal & Company
-- `file 'Knowledge/stable/bio.md'` — V & Logan biographical info
-- `file 'Knowledge/stable/company/overview.md'` — Careerspan mission & product
-- `file 'Knowledge/stable/company/strategy.md'` — GTM strategy, positioning
-- `file 'Knowledge/stable/company/history.md'` — Company founding story
-- `file 'Knowledge/stable/company/principles.md'` — Core values & philosophy
-- `file 'Knowledge/stable/careerspan-timeline.md'` — Historical timeline
-- `file 'Knowledge/stable/glossary.md'` — Careerspan terminology
-
-### Architectural
-
-- `file 'Knowledge/architectural/ingestion_standards.md'` — What to ingest, MECE principles
-
-### Lists & Policies
-- `file 'Lists/POLICY.md'` — How to interact with lists
-- `file 'Lists/detection_rules.md'` — Email routing patterns
-
-### Context
-- `file 'Knowledge/context/howie_instructions/preferences.md'` — Howie scheduling (reference)
+**Usage:**
+- Principles auto-load via trigger conditions
+- Personas embed 8 relevant principles
+- Schema: N5/schemas/principle.schema.json
+- Guide: file 'Knowledge/architectural/PRINCIPLE_USAGE_GUIDE.md'
 
 ---
 
-## Benefits Over v1
+## Operations Directory
 
-### Token Efficiency
-- **Old:** ~5-6K tokens every conversation
-- **New:** ~1-2K base + selective modules
-- **Savings:** 60-70% reduction
+**Location:** N5/prefs/operations/
 
-### Maintainability
-- **Old:** Edit 650-line monolithic file carefully
-- **New:** Edit specific 100-200 line module
-- **Benefit:** Easier updates without side effects
+27 operational protocols:
+- Planning and execution frameworks
+- Conversation management
+- File operations
+- Scheduling and automation
+- Debugging and logging
+- Refactoring protocols
 
-### Discoverability
-- **Old:** Search through entire monolith
-- **New:** Navigate directly to relevant module
-- **Benefit:** Faster to find and update
-
-### Synchronization
-- **Old:** Duplicate info between prefs and knowledge
-- **New:** Reference stable knowledge, no duplication
-- **Benefit:** Single source of truth, no drift
+**Key Protocols:**
+- planning_prompt.md - Think-Plan-Execute framework
+- conversation-end.md - Thread closure workflow
+- scheduled-task-protocol.md - Agent safety requirements
+- debug-logging-auto-behavior.md - Active debugging discipline
 
 ---
 
-## Migration from v1
+## System Directory
 
-If you're coming from the old monolithic system:
+**Location:** N5/prefs/system/
 
-### What Changed
-- **Entry point:**
-  - Old: `Load file 'N5/prefs/prefs.md'` (650-line monolith)
-  - New: `Load file 'N5/prefs/prefs.md'` (284-line index)
-
-**Original file preserved in Git history**
-
-**Historical migration details:** See `file 'N5/prefs/Archive/MIGRATION_GUIDE.md'`
-
-**All content preserved:** Every rule from v1 is in v2, just reorganized
-
-**Rollback available:** Copy v1_backup to prefs.md if needed
-
-```bash
-# View the v3 entry point
-cat N5/prefs/prefs.md
-
-# If needed, restore historical versions from Git:
-git log --all --full-history -- N5/prefs/prefs.md
-```
+System governance and structure:
+- navigator_prompt.md - N5 organization guide
+- file-protection.md - Protection rules
+- folder-policy.md - Directory structure
+- nuance-manifest.md - Behavior patterns
+- safety.md - Safety enforcement
 
 ---
 
-## Next Steps for System Update
+## Communication Directory
 
-1. **Update system prompt reference:**
-   - Old: `Load file 'N5/prefs/prefs.md'`
-   - New: `Load file 'N5/prefs/prefs.md'`
+**Location:** N5/prefs/communication/
 
-2. **Add new modules to Git tracking:**
-   ```bash
-   git add N5/prefs/system/*.md
-   git add N5/prefs/operations/*.md
-   git add N5/prefs/communication/*.md
-   git add N5/prefs/integration/*.md
-   git add N5/prefs/knowledge/*.md
-   git add N5/prefs/prefs.md
-   git add N5/prefs/README.md
-   git add N5/prefs/MIGRATION_GUIDE.md
-   ```
-
-3. **Update N5.md** to reflect new prefs structure
-
-4. **Test loading behavior** in new conversations
+V-voice standards and examples:
+- voice.md - Voice policy
+- Examples of V-voice content
+- Communication guidelines
 
 ---
 
-## Support
+## Strategic Directory
 
-Questions or issues with the new structure?
-1. Check `file 'N5/prefs/Archive/MIGRATION_GUIDE.md'` for historical context
-2. Verify content mapping between versions
-3. Test specific module loading
-4. Raise issue with Zo team if needed
+**Location:** N5/prefs/strategic/
 
----
-
-## Version History
-
-### v2.0.0 — 2025-10-09
-- **Breaking change:** Refactored monolithic prefs into modular structure
-- Created 11 specialized preference modules
-- Synchronized with 15+ stable knowledge files
-- Added context-aware loading guide
-- Reduced token overhead by 60-70%
-- Preserved all v1 content across modules
-
-### v1.1 — 2025-09-20
-- Added military time override
-- Added safeguard note for file editing
-- Consolidated from previous versions
+Strategic thinking frameworks:
+- thinking_prompt.md - Analysis patterns
+- Strategic decision-making
+- Framework building
 
 ---
 
-**For the full structure visualization and token comparison, see the structure summary output above or contact for details.**
+## Integration
+
+Preferences integrate with:
+- **Personas** - All 8 personas reference prefs
+- **User Rules** - Conditional rules reference principles
+- **Scripts** - Validation against principles
+- **Schemas** - N5/schemas/ for validation
+- **Knowledge** - file 'Knowledge/architectural/' for docs
+
+---
+
+## Loading Strategy
+
+**Always Load:**
+- Critical safety principles (P5, P15, P19)
+- Context in system prompt
+
+**Load When Needed:**
+- Specific principles via trigger conditions
+- Cognitive prompts via pre-flight protocol
+- Operational protocols as work requires
+
+**Never Load:**
+- All principles at once (violates P8: Minimal Context)
+- Unused protocols
+
+---
+
+## Related Documentation
+
+- **Architecture Overview:** file 'Knowledge/architectural/ARCHITECTURAL_OVERVIEW.md'
+- **Principle Guide:** file 'Knowledge/architectural/PRINCIPLE_USAGE_GUIDE.md'
+- **Migration History:** file 'N5/projects/architectural-redesign/MIGRATION_HISTORY.md'
+- **Schemas:** file 'N5/schemas/README.md'
+
+---
+
+*Last updated: 2025-11-02 21:15 ET*

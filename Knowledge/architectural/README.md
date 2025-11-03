@@ -1,94 +1,58 @@
 # Knowledge: Architectural Layer
 
-This directory contains **meta-knowledge** about how N5 OS operates.
+**Version:** 3.0  
+**Updated:** 2025-11-02
+
+This directory contains meta-knowledge about how N5 OS operates.
 
 ---
 
 ## Purpose
 
-Architectural knowledge defines the principles and standards governing the system:
-- Core operating principles
-- Voice and communication policy
-- Information ingestion standards
-- System design patterns
+Architectural knowledge defines the principles, standards, and patterns governing the N5 system.
 
 ---
 
-## Files
+## Core Documentation
 
-- `file 'planning_prompt.md'` — Design philosophy and thinking framework
-- `file 'research_frameworks.md'` — Research methodologies & quality standards (used by Vibe Researcher)
-- `file 'architectural_principles.md'` — Index of principles
+### System Architecture
+- **ARCHITECTURAL_OVERVIEW.md** - Complete system architecture
+- **PRINCIPLE_USAGE_GUIDE.md** - How to use principles effectively
 
-- **`architectural_principles.md`**: Core principles (HARD protection)
-
-  - Single Source of Truth (SSOT)
-  - Composability principles
-  - Safety-first design
-
-- **`ingestion_standards.md`**: How to process information
-  - Direct processing (LLM-based)
-  - API-based processing
-  - Manual entry standards
-  - Validation requirements
-
-- **`voice_policy.md`**: Communication standards
-  - How Zo should communicate with V
-  - Tone, style, verbosity guidelines
-  - Persona consistency
+### Legacy Documentation
+- **architectural_principles.md** - Original principle index
+- **planning_prompt.md** - Think-Plan-Execute framework
+- **research_frameworks.md** - Research methodologies
 
 ---
 
-## Characteristics
+## Three-Layer Architecture
 
-- **HARD Protection**: Manual edit only (critical system definitions)
-- **Prescriptive**: Defines how system should behave
-- **Stable**: Changes via deliberate design decisions only
-- **Authoritative**: Source of truth for system behavior
+### Layer 1: Principles (37 YAML)
+Core rules governing system behavior. Location: N5/prefs/principles/
 
----
+Categories: Core, Safety, Quality, Design, Execution, Advanced
 
-## Usage
+### Layer 2: Cognitive Prompts (3 active)
+Mental models: Planning, Thinking, Navigator
 
-Referenced by:
-- AI system prompts and persona
-- Script validation logic
-- Command design patterns
-- Safety enforcement rules
-
-**Not Directly Modified By Scripts**: These files define how scripts should behave.
+### Layer 3: Personas (8 specialized)
+All v2.0+ with full integration. Operator, Strategist, Builder, Teacher, Writer, Architect, Debugger, Researcher.
 
 ---
 
-## Key Principles
+## How It Works
 
-Triangulate information from multiple sources before accepting as fact.
-
-### Single Source of Truth (SSOT)
-Each fact lives in one canonical location, referenced everywhere else.
-
-### Safety First
-Tiered protection prevents accidental modification of critical files.
-
-### Composability
-Build complex operations from simple, reusable primitives.
+Pre-Flight Protocol (5 steps), Principle Application (automatic triggers), Persona Routing (Operator as quarterback), Risk Assessment (before destructive ops).
 
 ---
 
-## Related
+## Quick Reference
 
-- **Safety Layer**: `/home/workspace/N5/scripts/n5_safety.py`
-- **Preferences**: `/home/workspace/N5/prefs/prefs.md`
-- **List Governance**: `/home/workspace/Lists/POLICY.md`
+Find principles: ls N5/prefs/principles/P*.yaml
+Validate: Check against N5/schemas/principle.schema.json
+Switch persona: set_active_persona with persona_id
 
 ---
 
-*Part of Knowledge Layer - Meta-knowledge about N5 OS*
-
-## Case Studies
-
-Real-world applications of architectural principles:
-
-- [N5 Realignment 2025-10-28](case-studies/n5-realignment-2025-10-28.md) - System restructuring using build orchestrator pattern (42→20 directories, parallel workers, zero breaking changes)
-
-See: file 'Knowledge/architectural/case-studies/README.md'
+Last updated: 2025-11-02 21:14 ET
