@@ -113,6 +113,88 @@ app.get('/api/week', (c) => {
   return c.json(weekData);
 });
 
+app.post('/api/refresh', async (c) => {
+  try {
+    // Accept email data from request body
+    const body = await c.req.json();
+    const emails = body.emails || [];
+    
+    if (emails.length === 0) {
+      return c.json({ success: false, error: 'No emails provided' }, 400);
+    }
+    
+    const today = new Date().toISOString().split('T')[0];
+    
+    // Count words excluding quoted replies and signatures
+    function countWords(text: string): number {
+      if (!text) return 0;
+      
+      const lines = text.split('\n');
+      const originalLines: string[] = [];
+      
+      for (const line of lines) {
+        // Skip quoted lines
+        if (line.trim().startsWith('>')) continue;
+        
+        // Stop at reply markers
+        if (line.includes('On ') || line.includes(' wrote:') ||
+            line.includes('From:') || line.includes('Sent:') ||
+            line.includes('To:') || line.includes('Subject:')) {
+          break;
+        }
+        
+        // Stop at signature
+        if (line.includes('V-OS Tags:') || line.includes('{TWIN}') ||
+            line.includes('{CATG}') || line.includes('Best,') ||
+            line.includes('Sent via Superhuman') || line.includes('---')) {
+          break;
+        }
+        
+        originalLines.push(line);
+      }
+      
+      return originalLines.join(' ').split(/\s+/).filter(w => w.length > 0).length;
+    }
+    
+    // Calculate metrics
+    let totalWords = 0;
+    const emailDetails: any[] = [];
+    
+    for (const email of emails) {
+      const words = countWords(email.payload || '');
+      totalWords += words;
+      emailDetails.push({
+        subject: email.subject || 'No subject',
+        words
+      });
+    }
+    
+    const rpi = emails.length + (totalWords / 100);
+    
+    // Update database
+    const insertQuery = db.prepare(`
+      INSERT OR REPLACE INTO daily_stats (date, email_count, total_words, rpi)
+      VALUES (?, ?, ?, ?)
+    `);
+    insertQuery.run(today, emails.length, totalWords, rpi);
+    
+    return c.json({
+      success: true,
+      message: 'Dashboard updated',
+      stats: {
+        date: today,
+        emails: emails.length,
+        words: totalWords,
+        rpi: rpi.toFixed(2)
+      },
+      details: emailDetails
+    });
+    
+  } catch (error: any) {
+    return c.json({ success: false, error: error.message }, 500);
+  }
+});
+
 const port = 3000;
 console.log(`🚀 Arsenal Productivity Dashboard running on http://localhost:${port}`);
 
