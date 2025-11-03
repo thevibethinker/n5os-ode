@@ -493,6 +493,127 @@ def aggregate_historical_rpi(start_date: str = None, end_date: str = None, dry_r
         raise
 
 
+# === TEAM STATUS INTEGRATION (W3) ===
+
+def calculate_and_update_team_status(date: str, dry_run: bool = False) -> Dict:
+    """
+    Calculate team status for given date and update database.
+    
+    Args:
+        date: Date string (YYYY-MM-DD)
+        dry_run: If True, calculate but don't write to DB
+    
+    Returns:
+        Dict with status calculation results
+    """
+    from team_status_calculator import TeamStatusCalculator
+    
+    calculator = TeamStatusCalculator(str(DB_PATH))
+    result = calculator.calculate_status(date)
+    
+    if dry_run:
+        logger.info(f"[DRY-RUN] Would update team status to: {result['status']}")
+        return result
+    
+    # Write to database
+    conn = get_db_connection()
+    try:
+        cursor = conn.cursor()
+        
+        # Insert/update team_status_history
+        cursor.execute("""
+            INSERT INTO team_status_history (
+                date, status, days_in_status, previous_status,
+                top5_avg, grace_days_used, probation_days_remaining
+            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(date) DO UPDATE SET
+                status = excluded.status,
+                days_in_status = excluded.days_in_status,
+                previous_status = excluded.previous_status,
+                top5_avg = excluded.top5_avg,
+                grace_days_used = excluded.grace_days_used,
+                probation_days_remaining = excluded.probation_days_remaining
+        """, (
+            result['date'],
+            result['status'],
+            result['days_in_status'],
+            result.get('previous_status'),
+            result['top5_avg'],
+            min(result['grace_days_used'], 2),  # Schema constraint: max 2
+            result['probation_days_remaining']
+        ))
+        
+        # If status changed, log transition
+        if result['changed'] and result['previous_status']:
+            # Map calculator reason to schema enum
+            reason_text = result['reason'].lower()
+            if 'elite' in reason_text or 'invincible' in reason_text or 'legend' in reason_text:
+                reason_enum = 'unlock_elite'
+            elif 'probation' in reason_text:
+                reason_enum = 'probation_end'
+            else:
+                reason_enum = 'performance'
+            
+            cursor.execute("""
+                INSERT INTO status_transitions (
+                    date, from_status, to_status, reason, top5_avg, notes
+                ) VALUES (?, ?, ?, ?, ?, ?)
+            """, (
+                result['date'],
+                result['previous_status'],
+                result['status'],
+                reason_enum,
+                result['top5_avg'],
+                result['reason']  # Store full explanation in notes
+            ))
+        
+        # Update career_stats (single-row table, id=1)
+        # First, ensure the row exists
+        cursor.execute("INSERT OR IGNORE INTO career_stats (id) VALUES (1)")
+        
+        # Update total game days
+        cursor.execute("""
+            UPDATE career_stats 
+            SET total_game_days = total_game_days + 1,
+                last_updated = ?
+            WHERE id = 1
+        """, (date,))
+        
+        # Update days at current status
+        status_col = f"days_{result['status']}"
+        cursor.execute(f"""
+            UPDATE career_stats 
+            SET {status_col} = {status_col} + 1
+            WHERE id = 1
+        """)
+        
+        # Track promotions/demotions if status changed
+        if result['changed'] and result['previous_status']:
+            from_idx = ['transfer_list', 'reserves', 'squad_member', 'first_team', 'invincible', 'legend'].index(result['previous_status'])
+            to_idx = ['transfer_list', 'reserves', 'squad_member', 'first_team', 'invincible', 'legend'].index(result['status'])
+            
+            if to_idx > from_idx:
+                cursor.execute("UPDATE career_stats SET total_promotions = total_promotions + 1 WHERE id = 1")
+                # Check for elite unlock
+                if result['status'] in ['invincible', 'legend'] and result['previous_status'] not in ['invincible', 'legend']:
+                    cursor.execute("UPDATE career_stats SET elite_unlocks = elite_unlocks + 1 WHERE id = 1")
+            elif to_idx < from_idx:
+                cursor.execute("UPDATE career_stats SET total_demotions = total_demotions + 1 WHERE id = 1")
+        
+        conn.commit()
+        
+    except Exception as e:
+        conn.rollback()
+        logger.error(f"Failed to update team status: {e}")
+        raise
+    finally:
+        conn.close()
+    
+    return result
+
+
+
+
 def main(recalculate: bool = False, date: str = None, backfill: bool = False, dry_run: bool = False) -> int:
     """
     Main execution:
@@ -527,6 +648,14 @@ def main(recalculate: bool = False, date: str = None, backfill: bool = False, dr
         logger.info(f"✓ XP: {result['xp_earned']} (Multiplier: {result['xp_multiplier']}×)")
         logger.info(f"✓ Level: {result['level']}")
         logger.info(f"✓ Streak: {result['streak_days']} days")
+
+        # Calculate team status (W3 Integration)
+        status_result = calculate_and_update_team_status(target_date, dry_run=dry_run)
+        logger.info(f"✓ Team Status: {status_result['status'].upper()}")
+        if status_result['changed']:
+            logger.info(f"  ⚡ Status Change: {status_result['previous_status']} → {status_result['status']}")
+            logger.info(f"  Reason: {status_result['reason']}")
+
         
         return 0
         
@@ -549,3 +678,5 @@ if __name__ == "__main__":
         backfill=args.backfill,
         dry_run=args.dry_run
     ))
+
+

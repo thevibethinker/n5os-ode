@@ -140,6 +140,39 @@ def scan_for_new_transcripts():
     logger.info(f"Found {len(new_transcripts)} new transcripts")
     return new_transcripts
 
+
+def create_ai_request(meeting_id, transcript_path):
+    """Create AI processing request"""
+    import json
+    from datetime import datetime, timezone
+    
+    request_id = f"meeting_{meeting_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    request = {
+        "request_id": request_id,
+        "type": "meeting_processing",
+        "prompt_name": "Meeting Process",
+        "inputs": {
+            "transcript_path": str(transcript_path),
+            "meeting_id": meeting_id
+        },
+        "status": "pending",
+        "created_at": datetime.now(timezone.utc).isoformat()
+    }
+    
+    request_file = WORKSPACE_ROOT / f"N5/inbox/ai_requests/{request_id}.json"
+    request_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(request_file, 'w') as f:
+        json.dump(request, f, indent=2)
+    
+    return request_id
+
+def execute_ai_request_processor():
+    """Run the AI request processor"""
+    import subprocess
+    processor = WORKSPACE_ROOT / "N5/scripts/ai_request_processor.py"
+    subprocess.run([sys.executable, str(processor)], check=False)
+
+
 def main(dry_run=False):
     logger.info("Meeting Pipeline - Transcript Processor v3")
     if dry_run:
@@ -185,18 +218,20 @@ def main(dry_run=False):
                 logger.warning(f"⚠️  This is FIRST, duplicate will come later: {first_id}")
         
         # PHASES 2-5: Block selection + generation
-        logger.info("PHASE 2: Zo analyzes transcript + selects blocks")
-        logger.info("  (Zo loads Meeting_Block_Selector prompt here)")
+        logger.info("PHASE 2-3: Create AI processing request")
+        request_id = create_ai_request(meeting_id, transcript_path)
+        logger.info(f"  ✓ Request created: {request_id}")
         
-        logger.info("PHASE 3: Python queues blocks to registry")
-        
-        logger.info("PHASE 4: Zo generates each block")
-        
-        logger.info("PHASE 5: Python saves + finalizes")
-        
+        logger.info("PHASE 4: Execute AI request processor")
         if not dry_run:
-            register_meeting(meeting_id, transcript_path, status="complete")
+            execute_ai_request_processor()
+        
+        logger.info("PHASE 5: Finalize (AI will complete async)")
+        if not dry_run:
+            register_meeting(meeting_id, transcript_path, status="processing")
             mark_processed(transcript_path)
+            logger.info(f"  ⚠️  Meeting queued for AI processing")
+            logger.info(f"     Status: processing (not complete yet)")
         
         logger.info(f"Complete: {meeting_id}")
     

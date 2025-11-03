@@ -1,0 +1,21 @@
+# Dashboard Code - Ready for Deployment
+# Target: /home/workspace/Sites/productivity-dashboard/index.tsx
+
+The updated dashboard includes:
+- Team status banner with Arsenal status display
+- Career stats integration (promotions, days at levels)
+- Status icons (Legend=crown, First Team=star, etc)
+- Top 5/7 average performance metric
+- Arsenal red/white gradient theme
+
+See the database schema and queries needed:
+- team_status_history: status, days_in_status, top5_avg
+- career_stats (id=1): days_legend, days_first_team, total_promotions, elite_unlocks
+- daily_stats: rpi, emails_sent, expected_emails, level, streak_days
+
+The file write is failing with Modal FS errors. Worker should:
+1. Diagnose why file writes fail
+2. Try alternative deployment methods
+3. Get the enhanced dashboard live
+
+Current dashboard at https://productivity-dashboard-va.zocomputer.io shows old version without team status.
