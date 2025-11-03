@@ -1,0 +1,58 @@
+---
+id: P33
+name: Old Tricks Still Work
+category: quality
+priority: medium
+version: "1.0.0"
+created: "2025-11-02"
+
+purpose: |
+  Time-tested software engineering practices remain essential with AI coding. Tests, types, linting, refactoring, simplicity—all still critical. AI changes speed, not fundamentals.
+
+when_to_apply:
+  - All AI-assisted development
+  - Code generation workflows
+  - System design
+  - Quality assurance
+  - Refactoring
+
+pattern:
+  core_behavior: |
+    Don't skip fundamentals just because AI can generate fast.
+    Tests validate behavior and catch regressions.
+    Types document interfaces and catch errors early.
+    Linting enforces consistency.
+    Refactoring simplifies and reduces complexity.
+    Quality practices are MORE important with AI, not less.
+
+examples:
+  - description: Tests with AI-generated code
+    good: "AI generates function → You write tests validating YOUR specifications, edge cases, behavior"
+    bad: "AI code works → Ship without tests because 'AI is smart'"
+  - description: Types for self-documentation
+    good: "def process_record(record: Dict[str, Any]) -> Dict[str, str]: ..."
+    bad: "def process_record(record): ... # What types? Who knows!"
+  - description: Refactoring generated code
+    good: "AI generates working but complex code → Refactor for simplicity, maintainability"
+    bad: "AI wrote it, must be optimal → Never refactor, accumulate complexity"
+
+anti_patterns:
+  - symptom: "'AI can generate fast, do I still need tests?' YES."
+    fix: "Test every significant piece of functionality—AI generates logic, you validate correctness"
+  - symptom: "Skip types because 'AI handles complexity'"
+    fix: "Add types—they document interfaces and enable tooling"
+  - symptom: "Never refactor AI code because 'it works'"
+    fix: "Refactor for simplicity—AI makes generation cheap, use that for improvement"
+  - symptom: "Skip linting because output seems clean"
+    fix: "Lint everything—consistency matters more with high-volume generation"
+
+related_principles:
+  - P19: Error Handling is Not Optional
+  - P18: State Verification is Mandatory
+  - P30: Maintain Feel For Code
+  - P26: Fast Feedback Loops
+
+changelog:
+  - date: "2025-11-02"
+    version: "1.0.0"
+    changes: "Initial YAML migration from P33-old-tricks-still-work.md"
