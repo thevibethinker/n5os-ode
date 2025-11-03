@@ -1,0 +1,14 @@
+{
+  "": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Response",
+  "type": "object",
+  "required": ["request_id", "status", "completed_at"],
+  "properties": {
+    "request_id": {"type": "string"},
+    "status": {"type": "string", "enum": ["success", "partial", "failed"]},
+    "outputs": {"type": "object"},
+    "metadata": {"type": "object"},
+    "completed_at": {"type": "string"},
+    "error": {"type": "string"}
+  }
+}

@@ -48,34 +48,44 @@ All dependencies, expected states, and edge cases must be explicitly documented.
 ### Title Format
 
 ```
-{emoji} {Action} {Subject}
+{emoji} {Frequency?} {Subject/Action}
 ```
 
-**Emoji Selection (from centralized legend):**
-- 📰 Digests and reports
-- 💾 Data collection/sync
-- 🔧 Maintenance operations
-- 📊 Analytics/metrics
-- 🚨 Alerts/monitoring
-- 📝 Documentation updates
-- 🎯 Strategic/planning tasks
-- ⚡ Urgent/time-sensitive tasks
+**Components:**
 
-**Action Verb:**
-- Clear, specific action (not generic "check" or "review")
-- Examples: Generate, Pull, Validate, Analyze, Alert
+1. **Emoji** (Required) - From centralized legend `file 'N5/config/emoji-legend.json'`
+   - 🔧 Maintenance/system operations  
+   - 🧠 Intelligence/strategic/analysis tasks
+   - 📰 Digests/information gathering/content
+   - 💾 Data collection/sync operations
+   - 📊 Analytics/metrics/reporting
+   - 📧 Email operations and monitoring
+   - 📅 Meeting/calendar operations
+   - 🎓 Learning/ML training tasks
+   - 📝 Documentation/content writing
+   - ⏰ Scheduled automation tasks
 
-**Subject:**
-- Noun-first principle (consistent with thread naming)
-- What is being acted upon
+2. **Frequency** (Conditional) - Include when helpful for clarity
+   - Daily, Weekly, Monthly for standard recurrence
+   - "Every 2 Hours", "Every 6 Hours" for interval-based tasks
+   - **Omit** for very frequent tasks (< 1 hour) - describe function instead
+   - **Omit** when obvious from context or when task name is self-explanatory
+
+3. **Subject/Action** - Clear, concise, noun-first description
+   - 3-5 words maximum
+   - Describe WHAT is being done, not HOW
+   - Avoid redundant qualifiers ("Auto", "Automated", "System Check")
+   - Use active, specific language
 
 **Examples:**
-- ✅ `📰 Daily Meeting Prep Digest` (report generation)
-- ✅ `💾 Gdrive Meeting Pull` (data collection)
-- ✅ `🔧 Weekly List Health Check` (maintenance)
-- ✅ `📊 Monthly System Audit` (analytics)
-- ❌ `meeting-monitor-cycle` (no emoji, unclear purpose)
-- ❌ `Scheduled Maintenance: Solution Proposal Generation` (verbose, inconsistent)
+- ✅ `🔧 Daily File Guardian` - Maintenance with clear frequency
+- ✅ `📰 Daily Meeting Preparation Digest` - Digest with frequency
+- ✅ `🧠 Monthly System Audit` - Intelligence task with clear cadence
+- ✅ `📅 Meeting Pipeline Processing` - Frequent task (30min), no frequency in name
+- ✅ `🎓 Weekly Lessons Review` - Learning task, concise
+- ❌ `Productivity Tracker Auto-Scan` - Missing emoji, redundant "Auto-Scan"
+- ❌ `Meeting Pipeline V2 Processing Completed` - Version number, awkward "Completed"
+- ❌ `Automatic Conversation Initialization Check` - Missing emoji, verbose
 
 **Guidelines:**
 - Follow centralized emoji selection from `file 'N5/config/emoji-legend.json'`

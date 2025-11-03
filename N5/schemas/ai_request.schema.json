@@ -1,0 +1,19 @@
+{
+  "": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Request",
+  "type": "object",
+  "required": ["request_id", "request_type", "prompt_name", "inputs", "status", "created_at"],
+  "properties": {
+    "request_id": {"type": "string"},
+    "request_type": {"type": "string"},
+    "prompt_name": {"type": "string"},
+    "inputs": {"type": "object"},
+    "output_requirements": {"type": "object"},
+    "status": {"type": "string", "enum": ["pending", "processing", "complete", "failed"]},
+    "priority": {"type": "integer", "default": 5},
+    "created_at": {"type": "string"},
+    "started_at": {"type": "string"},
+    "completed_at": {"type": "string"},
+    "error": {"type": "string"}
+  }
+}

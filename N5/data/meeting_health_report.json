@@ -1,0 +1,729 @@
+{
+  "generated_at": "2025-11-03T00:01:14.804192+00:00",
+  "summary": {
+    "total_scanned": 50,
+    "critical_issues": 8,
+    "high_issues": 33,
+    "medium_issues": 0,
+    "healthy": 9
+  },
+  "critical": [
+    {
+      "meeting_id": "2025-10-30_external-dbn-ctum-szz",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "FALSE_COMPLETION",
+          "severity": "CRITICAL",
+          "message": "Metadata claims completed but 0 blocks exist (expected 12)"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.021267+00:00"
+    },
+    {
+      "meeting_id": "2025-10-29_internal-daily-team-stand-up-143925",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "FALSE_COMPLETION",
+          "severity": "CRITICAL",
+          "message": "Metadata claims completed but 0 blocks exist (expected 3)"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 3,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.017286+00:00"
+    },
+    {
+      "meeting_id": "2025-10-29_external-jeff-sipe",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B08(3x), B02(3x), B01(3x), B13(3x), B26(3x), B21(3x), B07(3x), B31(3x), B05(3x), B24(3x), B27(3x), B25(3x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "13 blocks appear to be templates only"
+        },
+        {
+          "type": "EMPTY_BLOCKS",
+          "severity": "CRITICAL",
+          "message": "12 blocks are completely empty"
+        }
+      ],
+      "block_count": 36,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30 14:20:35 EDT"
+    },
+    {
+      "meeting_id": "2025-10-29_external-alex",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        },
+        {
+          "type": "EMPTY_BLOCKS",
+          "severity": "CRITICAL",
+          "message": "12 blocks are completely empty"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30 14:20:35 EDT"
+    },
+    {
+      "meeting_id": "2025-10-27_external-lisa-noble",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-27_external-david",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B31(2x), B08(2x), B21(2x), B07(2x), B13(2x), B26(2x), B01(2x), B25(2x), B02(2x), B05(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "2 blocks appear to be templates only"
+        },
+        {
+          "type": "EMPTY_BLOCKS",
+          "severity": "CRITICAL",
+          "message": "1 blocks are completely empty"
+        }
+      ],
+      "block_count": 22,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-28T09:02:45Z"
+    },
+    {
+      "meeting_id": "2025-10-23-deepakeigenstrategicsystemscom",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-22-hpangyearupunitedorg",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    }
+  ],
+  "high": [
+    {
+      "meeting_id": "2025-10-29_external-mihir-makwana-x-vrijen",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "PARTIAL_COMPLETION",
+          "severity": "HIGH",
+          "message": "Only 1/12 blocks exist (8% complete)"
+        }
+      ],
+      "block_count": 1,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30 14:20:35 EDT"
+    },
+    {
+      "meeting_id": "2025-10-29_external-guz-dgac-fvk-2",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B25(2x), B26(3x), B24(2x), B08(3x), B01(2x), B05(2x), B02(2x), B21(2x), B07(2x), B13(2x), B31(2x), B27(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 26,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30 14:20:35 EDT"
+    },
+    {
+      "meeting_id": "2025-10-29_external-guz-dgac-fvk",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "11 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30 14:20:35 EDT"
+    },
+    {
+      "meeting_id": "2025-10-29_external-alex-x-vrijen-wisdom-partners-coaching",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "unknown"
+    },
+    {
+      "meeting_id": "2025-10-28_external-rochel",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "unknown"
+    },
+    {
+      "meeting_id": "2025-10-28_external-fohe-x-careerspan",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "unknown"
+    },
+    {
+      "meeting_id": "2025-10-27_external-unknown",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.012405+00:00"
+    },
+    {
+      "meeting_id": "2025-10-27_external-meet-kob-icsy-peo",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "unknown"
+    },
+    {
+      "meeting_id": "2025-10-27_external-ilya",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B27(2x), B13(2x), B05(2x), B08(2x), B02(2x), B07(2x), B25(2x), B26(2x), B01(2x), B31(2x), B21(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 23,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-28T09:39:36Z"
+    },
+    {
+      "meeting_id": "2025-10-27_external-gabi",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B02(2x), B25(2x), B31(2x), B05(2x), B21(2x), B07(2x), B01(2x), B08(2x), B26(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T13:20:39.484954-04:00"
+    },
+    {
+      "meeting_id": "2025-10-27_external-david-x-careerspan",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.010511+00:00"
+    },
+    {
+      "meeting_id": "2025-10-26_external-unknown",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.008560+00:00"
+    },
+    {
+      "meeting_id": "2025-10-26_external-plaud-note-10-26-planning-meeting-open-bar-birthday-venue-booking-guest-list-and-travel-coordination",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T13:20:39.484320-04:00"
+    },
+    {
+      "meeting_id": "2025-10-26_external-meet-dyy-anma-byk",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B31(2x), B05(2x), B21(2x), B25(2x), B26(2x), B08(2x), B01(2x), B02(2x), B07(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-27T12:12:00Z"
+    },
+    {
+      "meeting_id": "2025-10-26_external-eric-n5-os-sync",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B26(2x), B25(2x), B08(2x), B21(2x), B07(2x), B05(2x), B02(2x), B01(2x), B31(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "unknown"
+    },
+    {
+      "meeting_id": "2025-10-24_external-unknown",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.003814+00:00"
+    },
+    {
+      "meeting_id": "2025-10-24_external-sam-partnership-discovery-call",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B31(2x), B08(2x), B05(2x), B24(2x), B02(2x), B07(2x), B27(2x), B13(2x), B01(2x), B26(2x), B25(2x), B21(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 25,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-24T22:43:02Z"
+    },
+    {
+      "meeting_id": "2025-10-24_external-ixr-myzo-vut",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B02(2x), B26(2x), B05(2x), B25(2x), B08(2x), B07(2x), B01(2x), B31(2x), B21(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-24T12:07:29-04:00"
+    },
+    {
+      "meeting_id": "2025-10-24_external-gabi-zo-demo",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B07(2x), B31(2x), B25(2x), B02(2x), B05(2x), B26(2x), B21(2x), B08(2x), B01(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-24T15:47:06-04:00"
+    },
+    {
+      "meeting_id": "2025-10-24_external-gabi-x-vrijen-zo-demo",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:55.002011+00:00"
+    },
+    {
+      "meeting_id": "2025-10-24_external-careerspan-x-sam",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:54.998276+00:00"
+    },
+    {
+      "meeting_id": "2025-10-24_external-alexis-mishu",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B26(2x), B21(2x), B08(2x), B01(2x), B07(2x), B31(2x), B02(2x), B05(2x), B25(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-24T21:20:01Z"
+    },
+    {
+      "meeting_id": "2025-10-23_internal-team_144806",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B02(2x), B13(2x), B26(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "2 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 9,
+      "expected_blocks": 3,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-23T19:04:12Z"
+    },
+    {
+      "meeting_id": "2025-10-23_external-unknown",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:54.991869+00:00"
+    },
+    {
+      "meeting_id": "2025-10-23_external-mckinsey-founders-orbit-monthly-meeting",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B31(2x), B01(2x), B08(2x), B21(2x), B07(2x), B26(2x), B05(2x), B02(2x), B25(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-23T20:48:38-04:00"
+    },
+    {
+      "meeting_id": "2025-10-23_external-mck-consumer-community-group-call",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B02(2x), B31(2x), B21(2x), B25(2x), B08(2x), B26(2x), B07(2x), B05(2x), B01(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-23T21:22:40-04:00"
+    },
+    {
+      "meeting_id": "2025-10-23_external-gja-nzqi-sxu",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B05(2x), B01(2x), B31(2x), B07(2x), B21(2x), B02(2x), B26(2x), B25(2x), B08(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-23T21:07:57-04:00"
+    },
+    {
+      "meeting_id": "2025-10-23_external-david-x-careerspan",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B05(2x), B24(2x), B02(2x), B07(2x), B08(2x), B25(2x), B26(2x), B21(2x), B31(2x), B13(2x), B27(2x), B01(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 25,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:54.986511+00:00"
+    },
+    {
+      "meeting_id": "2025-10-22_internal-vrijen-x-ilse-catch-up",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "3 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 3,
+      "expected_blocks": 3,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:54.984838+00:00"
+    },
+    {
+      "meeting_id": "2025-10-22_external-year-up-united_160549",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B21(2x), B05(2x), B26(2x), B02(2x), B25(2x), B08(2x), B31(2x), B07(2x), B01(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "2025-10-22T20:57:36Z"
+    },
+    {
+      "meeting_id": "2025-10-22_external-year-up-united-x-careerspan",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:54.983887+00:00"
+    },
+    {
+      "meeting_id": "2025-10-22_external-brin-x-v",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "12 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 12,
+      "expected_blocks": 12,
+      "processing_status": "completed",
+      "processed_at": "2025-10-30T19:20:54.978549+00:00"
+    },
+    {
+      "meeting_id": "2025-10-22_external-brin",
+      "status": "HIGH",
+      "issues": [
+        {
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B26(2x), B31(2x), B01(2x), B05(2x), B07(2x), B21(2x), B25(2x), B02(2x), B08(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        }
+      ],
+      "block_count": 21,
+      "expected_blocks": 12,
+      "processing_status": "unknown",
+      "processed_at": "unknown"
+    }
+  ],
+  "medium": []
+}
