@@ -1,5 +1,6 @@
 ---
 description: Push formatted tasks from N5 → Akiflow via Aki email interface.
+tool: true
 tags: []
 ---
 # Command: akiflow-push

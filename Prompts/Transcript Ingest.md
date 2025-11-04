@@ -1,5 +1,6 @@
 ---
 description: 'Command: transcript-ingest'
+tool: true
 tags:
 - data
 - transcripts

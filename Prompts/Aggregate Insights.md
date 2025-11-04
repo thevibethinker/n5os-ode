@@ -1,7 +1,7 @@
 ---
-description: Incrementally aggregate B31 stakeholder research insights across meetings
-  to detect patterns, validate signals, and identify opportunities.
-tags: []
+description: Incrementally aggregate B31 stakeholder research insights across meetings to detect patterns, validate signals, and identify opportunities.
+tags:
+tool: true
 ---
 # Aggregate B31 Insights Command
 

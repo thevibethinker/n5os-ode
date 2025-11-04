@@ -1,5 +1,6 @@
 ---
 description: 'Command: lessons-review'
+tool: true
 tags:
 - lessons
 - review

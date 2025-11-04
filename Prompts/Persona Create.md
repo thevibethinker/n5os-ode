@@ -1,5 +1,6 @@
 ---
 description: Create reusable persona instruction sets (like Vibe Builder) for specialized
+tool: true
   Zo behaviors.
 tags:
 - persona

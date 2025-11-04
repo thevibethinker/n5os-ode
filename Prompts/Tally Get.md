@@ -1,5 +1,6 @@
 ---
 description: 'Command: tally-get'
+tool: true
 tags: []
 ---
 # tally-get

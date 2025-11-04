@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-post-list'
+tool: true
 tags:
 - social-media
 - query

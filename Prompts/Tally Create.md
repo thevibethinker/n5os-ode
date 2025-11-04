@@ -1,5 +1,6 @@
 ---
 description: 'Command: tally-create'
+tool: true
 tags: []
 ---
 # tally-create

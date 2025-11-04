@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Report a problem you've encountered in Zo interface - logs to debug system for pattern tracking.
   Use when you see errors, unexpected behavior, or anything that isn't working right.
 tags:

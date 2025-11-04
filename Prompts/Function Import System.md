@@ -1,5 +1,6 @@
 ---
 description: 'Command: function-import-system'
+tool: true
 tags:
 - framework
 - import

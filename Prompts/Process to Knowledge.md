@@ -1,5 +1,6 @@
 ---
 description: Convert Records → Knowledge with classification and tagging
+tool: true
 tags:
   - knowledge
   - classification

@@ -1,5 +1,6 @@
 ---
 description: 'Command: placeholder-scan'
+tool: true
 tags:
 - quality
 - principles

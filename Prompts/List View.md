@@ -1,5 +1,6 @@
 ---
 description: 'Enforces Single Source of Truth (SSOT) principle for lists by:'
+tool: true
 tags:
 - lists
 - view

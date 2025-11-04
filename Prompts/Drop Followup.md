@@ -1,5 +1,6 @@
 ---
 description: Mark a follow-up email as declined to stop receiving reminders in the
+tool: true
   unsent-followups-digest.
 tags: []
 ---

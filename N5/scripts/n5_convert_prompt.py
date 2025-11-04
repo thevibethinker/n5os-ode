@@ -30,7 +30,7 @@ from datetime import datetime
 
 # Paths
 WORKSPACE = Path("/home/workspace")
-PROMPTS_DIR = WORKSPACE / "Personal/Prompts"
+PROMPTS_DIR = WORKSPACE / "Prompts"
 COMMANDS_DIR = WORKSPACE / "N5/commands"
 KNOWLEDGE_DIR = WORKSPACE / "Knowledge"
 COMMANDS_FILE = WORKSPACE / "N5/data/executables.db"
@@ -298,7 +298,7 @@ def main():
         print("    python3 n5_convert_prompt.py <directory>")
         print("\nExample:")
         print('    python3 n5_convert_prompt.py "Function [01] - My Prompt v1.0.txt"')
-        print('    python3 n5_convert_prompt.py Personal/Prompts/')
+        print('    python3 n5_convert_prompt.py Prompts/')
         sys.exit(1)
     
     target = Path(sys.argv[1])

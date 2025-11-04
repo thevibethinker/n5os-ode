@@ -1,5 +1,6 @@
 ---
 description: 'Command: follow-up-email-generator'
+tool: true
 tags:
 - extraction
 - analysis

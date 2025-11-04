@@ -1,5 +1,6 @@
 ---
 description: Explicitly route task requests to Akiflow via Aki email interface.
+tool: true
 tags: []
 ---
 ---

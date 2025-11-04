@@ -1,5 +1,6 @@
 ---
 description: 'Command: flow-run'
+tool: true
 tags: []
 ---
 # `flow-run`

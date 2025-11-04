@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-promote'
+tool: true
 tags: []
 ---
 # `lists-promote`

@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-post-generate-multi-angle'
+tool: true
 tags:
 - social
 - content

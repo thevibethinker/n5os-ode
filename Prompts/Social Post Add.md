@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-post-add'
+tool: true
 tags:
 - social-media
 - content

@@ -1,5 +1,6 @@
 ---
 description: Export Thread
+tool: true
 tags:
   - threads
   - export

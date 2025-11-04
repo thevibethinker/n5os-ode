@@ -1,5 +1,6 @@
 ---
 description: Process internal team meeting transcripts into strategically structured
+tool: true
   intelligence blocks (B40-B48) following MECEM principles (Mutually Exclusive, Collectively
   Exhaustive, Minimally Repeating).
 tags: []

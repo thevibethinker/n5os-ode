@@ -1,5 +1,6 @@
 ---
 description: Generate human-readable review document for Inbox files. Shows what's
+tool: true
   pending, what needs attention, and provides routing suggestions.
 tags: []
 ---

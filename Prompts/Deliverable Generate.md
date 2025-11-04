@@ -1,5 +1,6 @@
 ---
 description: 'Command: deliverable-generate'
+tool: true
 tags: []
 ---
 # `deliverable-generate`

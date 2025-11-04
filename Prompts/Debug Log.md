@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Log problem→hypothesis→outcome cycles during debugging to track attempts and detect circular patterns.
   Use when debugging complex issues to maintain situational awareness.
 tags:

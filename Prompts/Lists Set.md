@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-set'
+tool: true
 tags: []
 ---
 # `lists-set`

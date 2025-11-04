@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-post-status'
+tool: true
 tags:
 - social-media
 - workflow

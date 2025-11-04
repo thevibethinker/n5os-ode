@@ -1,5 +1,6 @@
 ---
 description: 'Command: file-protector'
+tool: true
 tags: []
 ---
 # file-protector command

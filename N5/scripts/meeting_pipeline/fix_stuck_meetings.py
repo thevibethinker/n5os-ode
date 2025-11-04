@@ -94,6 +94,32 @@ def main():
             logger.info(f"  ✓ Pending request exists: {pending_requests[0].name}")
             continue
         
+        # Check if completed request exists (including in processed subdirectory)
+        completed_requests = []
+        for existing_file in AI_REQUEST_QUEUE.glob(f"meeting_{meeting_id}_*.json"):
+            try:
+                with open(existing_file) as f:
+                    existing = json.load(f)
+                if existing.get("status") == "completed":
+                    completed_requests.append(existing_file)
+            except:
+                pass
+        
+        processed_dir = AI_REQUEST_QUEUE / "processed"
+        if processed_dir.exists():
+            for existing_file in processed_dir.glob(f"meeting_{meeting_id}_*.json"):
+                try:
+                    with open(existing_file) as f:
+                        existing = json.load(f)
+                    if existing.get("status") == "completed":
+                        completed_requests.append(existing_file)
+                except:
+                    pass
+        
+        if completed_requests:
+            logger.info(f"  ⏭  Already completed ({len(completed_requests)} request(s))")
+            continue
+        
         # Recreate the AI request
         request_id = recreate_ai_request(meeting_id, transcript_path)
         logger.info(f"  ✓ Created AI request: {request_id}")

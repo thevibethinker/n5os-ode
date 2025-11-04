@@ -1,5 +1,6 @@
 ---
 description: 'Command: incantum-quickref'
+tool: true
 tags: []
 ---
 # Incantum Quick Reference

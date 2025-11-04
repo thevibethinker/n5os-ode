@@ -1,5 +1,6 @@
 ---
 description: 'Command: jobs-scrape'
+tool: true
 tags:
 - jobs
 - careers

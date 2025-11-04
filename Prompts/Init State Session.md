@@ -1,5 +1,6 @@
 ---
 description: 'Command: init-state-session'
+tool: true
 tags:
 - state-session
 - tracking

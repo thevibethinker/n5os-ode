@@ -1,5 +1,6 @@
 ---
 description: Automatically scans workspace root, identifies files that need organization,
+tool: true
   removes duplicates, and categorizes files into appropriate directories.
 tags: []
 ---

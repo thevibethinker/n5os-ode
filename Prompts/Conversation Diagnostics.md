@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Diagnose conversation metadata quality and propose cleanup/improvements.
   Uses conversations.db to analyze titles, types, relationships, and suggest batch operations.
 tags:

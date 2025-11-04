@@ -1,5 +1,6 @@
 ---
 description: 'Command: networking-event-process'
+tool: true
 tags:
 - networking
 - crm

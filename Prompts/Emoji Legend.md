@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   View and search the centralized N5 emoji legend.
   Shows emoji meanings, usage contexts, and detection rules.
 tags:

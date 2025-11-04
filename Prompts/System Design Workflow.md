@@ -1,5 +1,6 @@
 ---
 description: 'Command: system-design-workflow'
+tool: true
 tags:
 - architecture
 - design

@@ -1,4 +1,5 @@
 ---
+tool: true
 type: "recipe"
 category: "automation"
 version: "1.0.0"

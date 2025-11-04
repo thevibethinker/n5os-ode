@@ -6,197 +6,263 @@ const db = new Database('/home/workspace/productivity_tracker.db');
 
 app.get('/', (c) => {
   const today = new Date().toISOString().split('T')[0];
-  const statsQuery = db.query('SELECT * FROM daily_stats WHERE date = ?');
-  const stats = statsQuery.get(today) as any;
   
-  const teamQuery = db.query('SELECT * FROM team_status_history WHERE date = ? ORDER BY date DESC LIMIT 1');
-  const teamStatus = teamQuery.get(today) as any;
-  
-  if (!stats) {
-    return c.html(`<html>
-    <head><title>Arsenal Productivity</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      body { background: linear-gradient(135deg, #EF0107 0%, #8B0000 100%); color: white; font-family: Arial, sans-serif; padding: 2rem; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-      .container { background: rgba(255,255,255,0.1); border-radius: 16px; padding: 3rem; }
-    </style>
-    </head>
-    <body><div class="container"><h1>⚽ Arsenal Productivity</h1><p>No data for today yet.</p></div></body>
-    </html>`);
+  // Get 7-day window
+  const days = [];
+  for (let i = -2; i <= 4; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() + i);
+    const dateStr = date.toISOString().split('T')[0];
+    days.push({
+      date: dateStr,
+      dayName: date.toLocaleDateString('en-US', { weekday: 'short' }),
+      shortDate: dateStr.substring(5),
+      isToday: dateStr === today
+    });
   }
   
-  const rpiLabel = stats.rpi >= 10 ? "On Target" : "Needs Work";
-  const rpiEmoji = stats.rpi >= 10 ? "✓" : "⚠️";
+  // Fetch data for this week
+  const query = db.query('SELECT date, emails_sent, rpi FROM daily_stats WHERE date >= ? AND date <= ?');
+  const rows = query.all(days[0].date, days[days.length - 1].date) as any[];
+  const dataMap = new Map();
+  rows.forEach(row => dataMap.set(row.date, row));
   
-  const teamStatusBanner = teamStatus ? `
-    <div class="team-banner">
-      <div class="team-label">CAREER STATUS</div>
-      <div class="team-value">${teamStatus.status.toUpperCase().replace('_', ' ')}</div>
-      <div class="team-details">
-        ${teamStatus.days_in_status} day${teamStatus.days_in_status !== 1 ? 's' : ''} at this level • 
-        RPI: ${teamStatus.top5_avg.toFixed(2)}
-      </div>
-    </div>
-  ` : '';
+  // Calculate 7-day average for status
+  const validRPIs = rows.map(r => r.rpi).filter(r => r > 0);
+  const avgRPI = validRPIs.length > 0 ? validRPIs.reduce((a, b) => a + b, 0) / validRPIs.length : 0;
   
-  return c.html(`<html>
-  <head><title>Arsenal Productivity</title>
+  let status = 'Youth Player';
+  let statusEmoji = '🎓';
+  if (avgRPI >= 150) { status = 'Club Legend'; statusEmoji = '👑'; }
+  else if (avgRPI >= 125) { status = 'Star Player'; statusEmoji = '⭐'; }
+  else if (avgRPI >= 100) { status = 'First Team'; statusEmoji = '🔥'; }
+  else if (avgRPI >= 80) { status = 'Squad Player'; statusEmoji = '⚽'; }
+  else if (avgRPI >= 60) { status = 'Reserve'; statusEmoji = '📋'; }
+  
+  let html = `<!DOCTYPE html>
+<html>
+<head>
+  <title>Arsenal Productivity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { background: linear-gradient(135deg, #EF0107 0%, #8B0000 100%); color: white; font-family: Arial, sans-serif; padding: 1rem; min-height: 100vh; }
-    .container { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; }
-    .team-banner { background: linear-gradient(90deg, rgba(255,215,0,0.2) 0%, rgba(255,215,0,0.1) 100%); border-left: 4px solid #FFD700; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; }
-    .team-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 0.25rem; }
-    .team-value { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
-    .team-details { font-size: 0.85rem; opacity: 0.9; }
-    .stat-card { background: rgba(255,255,255,0.15); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
-    .stat-value { font-size: 2rem; font-weight: bold; margin: 0.5rem 0; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-    .mini-stat { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; text-align: center; }
-    .mini-stat-value { font-size: 1.5rem; font-weight: bold; }
+    body {
+      background: linear-gradient(135deg, #EF0107 0%, #8B0000 100%);
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .subtitle {
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+    .status-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .status-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .status-label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .status-avg {
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .day-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-left: 3px solid transparent;
+      padding-left: 0.5rem;
+    }
+    .day-row.today {
+      border-left-color: #FFD700;
+    }
+    .day-info {
+      width: 60px;
+      text-align: left;
+    }
+    .day-name {
+      font-weight: bold;
+    }
+    .day-date {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    .bar-area {
+      flex: 1;
+      height: 32px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      position: relative;
+      overflow: visible;
+    }
+    .bar-area::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.3);
+      z-index: 1;
+    }
+    .bar-area::after {
+      content: '100%';
+      position: absolute;
+      left: 50%;
+      top: -18px;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      opacity: 0.5;
+    }
+    .rpi-bar {
+      height: 100%;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+    }
+    .stats {
+      width: 100px;
+      text-align: right;
+      font-size: 0.85rem;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
   </style>
-  </head>
-  <body>
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <div style="font-size: 3rem;">⚽</div>
-        <h1>Arsenal Productivity</h1>
-        <div>${stats.date}</div>
-      </div>
-      ${teamStatusBanner}
-      <div class="stat-card">
-        <div>Response Productivity Index</div>
-        <div class="stat-value">${rpiEmoji} ${stats.rpi.toFixed(2)}</div>
-        <div>${rpiLabel}</div>
-      </div>
-      <div class="grid">
-        <div class="mini-stat">
-          <div class="mini-stat-value">${stats.email_count}</div>
-          <div>📧 Emails</div>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">⚽</div>
+      <h1>Arsenal Productivity</h1>
+      <div class="subtitle">Performance Dashboard</div>
+    </div>
+    
+    <div class="status-card">
+      <div class="status-emoji">${statusEmoji}</div>
+      <div class="status-label">${status}</div>
+      <div class="status-avg">7-Day Average: ${avgRPI.toFixed(1)} RPI</div>
+    </div>
+    
+    <div class="section-title">📊 7-Day RPI Performance</div>
+  `;
+  
+  days.forEach(day => {
+    const data = dataMap.get(day.date);
+    const rpi = data?.rpi || 0;
+    const emails = data?.emails_sent || 0;
+    
+    let barColor = '#EF0107';
+    if (rpi >= 150) barColor = '#FFD700';
+    else if (rpi >= 125) barColor = '#4CAF50';
+    else if (rpi >= 100) barColor = '#2196F3';
+    else if (rpi >= 75) barColor = '#FF9800';
+    
+    const barWidth = Math.min((rpi / 200) * 100, 100);
+    
+    html += `
+      <div class="day-row ${day.isToday ? 'today' : ''}">
+        <div class="day-info">
+          <div class="day-name">${day.dayName}</div>
+          <div class="day-date">${day.shortDate}</div>
         </div>
-        <div class="mini-stat">
-          <div class="mini-stat-value">${stats.total_words}</div>
-          <div>📝 Words</div>
+        <div class="bar-area">
+          ${rpi > 0 ? `<div class="rpi-bar" style="width: ${barWidth}%; background: ${barColor};">${rpi}%</div>` : ''}
+        </div>
+        <div class="stats">
+          ${rpi > 0 ? `📧 ${emails} • 📝 0` : '—'}
+        </div>
+      </div>
+    `;
+  });
+  
+  html += `
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: #FFD700;"></div>
+          <span>Invincible (150+)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #4CAF50;"></div>
+          <span>Top (125+)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #2196F3;"></div>
+          <span>Meeting (100+)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #FF9800;"></div>
+          <span>Catch Up (75+)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #EF0107;"></div>
+          <span>Behind (&lt;75)</span>
         </div>
       </div>
     </div>
   </body>
-  </html>`);
-});
-
-app.get('/api/today', (c) => {
-  const today = new Date().toISOString().split('T')[0];
-  const query = db.query('SELECT * FROM daily_stats WHERE date = ?');
-  const stats = query.get(today);
-  return c.json(stats || {});
-});
-
-app.get('/api/status', (c) => {
-  const today = new Date().toISOString().split('T')[0];
-  const query = db.query('SELECT * FROM team_status_history WHERE date = ? ORDER BY date DESC LIMIT 1');
-  const status = query.get(today);
-  return c.json(status || {});
-});
-
-app.get('/api/career', (c) => {
-  const query = db.query('SELECT * FROM career_stats ORDER BY id DESC LIMIT 1');
-  const stats = query.get();
-  return c.json(stats || {});
-});
-
-app.get('/api/week', (c) => {
-  const sevenDaysAgo = new Date();
-  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-  const startDate = sevenDaysAgo.toISOString().split('T')[0];
-  const query = db.query('SELECT * FROM daily_stats WHERE date >= ? ORDER BY date ASC');
-  const weekData = query.all(startDate);
-  return c.json(weekData);
-});
-
-app.post('/api/refresh', async (c) => {
-  try {
-    // Accept email data from request body
-    const body = await c.req.json();
-    const emails = body.emails || [];
-    
-    if (emails.length === 0) {
-      return c.json({ success: false, error: 'No emails provided' }, 400);
-    }
-    
-    const today = new Date().toISOString().split('T')[0];
-    
-    // Count words excluding quoted replies and signatures
-    function countWords(text: string): number {
-      if (!text) return 0;
-      
-      const lines = text.split('\n');
-      const originalLines: string[] = [];
-      
-      for (const line of lines) {
-        // Skip quoted lines
-        if (line.trim().startsWith('>')) continue;
-        
-        // Stop at reply markers
-        if (line.includes('On ') || line.includes(' wrote:') ||
-            line.includes('From:') || line.includes('Sent:') ||
-            line.includes('To:') || line.includes('Subject:')) {
-          break;
-        }
-        
-        // Stop at signature
-        if (line.includes('V-OS Tags:') || line.includes('{TWIN}') ||
-            line.includes('{CATG}') || line.includes('Best,') ||
-            line.includes('Sent via Superhuman') || line.includes('---')) {
-          break;
-        }
-        
-        originalLines.push(line);
-      }
-      
-      return originalLines.join(' ').split(/\s+/).filter(w => w.length > 0).length;
-    }
-    
-    // Calculate metrics
-    let totalWords = 0;
-    const emailDetails: any[] = [];
-    
-    for (const email of emails) {
-      const words = countWords(email.payload || '');
-      totalWords += words;
-      emailDetails.push({
-        subject: email.subject || 'No subject',
-        words
-      });
-    }
-    
-    const rpi = emails.length + (totalWords / 100);
-    
-    // Update database
-    const insertQuery = db.prepare(`
-      INSERT OR REPLACE INTO daily_stats (date, email_count, total_words, rpi)
-      VALUES (?, ?, ?, ?)
-    `);
-    insertQuery.run(today, emails.length, totalWords, rpi);
-    
-    return c.json({
-      success: true,
-      message: 'Dashboard updated',
-      stats: {
-        date: today,
-        emails: emails.length,
-        words: totalWords,
-        rpi: rpi.toFixed(2)
-      },
-      details: emailDetails
-    });
-    
-  } catch (error: any) {
-    return c.json({ success: false, error: error.message }, 500);
-  }
+  </html>
+  `;
+  
+  return c.html(html);
 });
 
 const port = 3000;
-console.log(`🚀 Arsenal Productivity Dashboard running on http://localhost:${port}`);
+console.log(\`🚀 Arsenal Productivity Dashboard running on http://localhost:\${port}\`);
 
 export default {
   port,

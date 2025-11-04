@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-move'
+tool: true
 tags: []
 ---
 # `lists-move`

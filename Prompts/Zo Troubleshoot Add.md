@@ -1,5 +1,6 @@
 ---
 description: 'Command: zo-troubleshoot-add'
+tool: true
 tags:
 - zo
 - troubleshooting

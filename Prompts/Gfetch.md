@@ -1,5 +1,6 @@
 ---
 description: 'Command: gfetch'
+tool: true
 tags:
 - gdrive
 - gmail

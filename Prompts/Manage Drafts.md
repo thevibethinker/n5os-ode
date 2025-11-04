@@ -1,5 +1,6 @@
 ---
 description: 'Command: manage-drafts'
+tool: true
 tags:
 - drafts
 - review

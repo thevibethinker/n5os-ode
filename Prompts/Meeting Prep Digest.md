@@ -1,5 +1,6 @@
 ---
 description: 'Command: meeting-prep-digest'
+tool: true
 tags: []
 ---
 # `meeting-prep-digest`

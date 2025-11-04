@@ -1,5 +1,6 @@
 ---
 description: 'Command: tally-user'
+tool: true
 tags: []
 ---
 # tally-user

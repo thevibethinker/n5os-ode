@@ -1,5 +1,6 @@
 ---
 description: 'Command: meeting-process'
+tool: true
 tags: []
 ---
 # `meeting-process`

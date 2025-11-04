@@ -1,5 +1,6 @@
 ---
 description: 'Command: index-update'
+tool: true
 tags: []
 ---
 # `index-update`

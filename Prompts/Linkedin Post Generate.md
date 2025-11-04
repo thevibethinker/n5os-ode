@@ -1,5 +1,6 @@
 ---
 description: Generate professional, voice-authentic LinkedIn posts that sound unmistakably
+tool: true
   like Vrijen while delivering substantive insight and driving engagement.
 tags: []
 ---

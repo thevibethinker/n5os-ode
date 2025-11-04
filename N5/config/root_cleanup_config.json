@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Root cleanup configuration - defines protected directories and patterns",
   "protected_directories": [
     "Knowledge",
@@ -12,6 +12,8 @@
     "Articles",
     "Images",
     "projects",
+    "Projects",
+    "Sites",
     "Recipes",
     "Inbox",
     ".git"

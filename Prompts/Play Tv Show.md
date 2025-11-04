@@ -1,5 +1,6 @@
 ---
 description: Generate a direct playback link for TV show episodes using The Movie
+tool: true
   Database (TMDB) ID and the Zo Stream service.
 tags:
 - media

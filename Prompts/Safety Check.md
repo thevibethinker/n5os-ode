@@ -1,5 +1,6 @@
 ---
 description: Run N5 safety audit and compliance check
+tool: true
 tags:
   - safety
   - quality

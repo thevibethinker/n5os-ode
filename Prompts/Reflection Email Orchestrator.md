@@ -1,5 +1,6 @@
 ---
 description: 'Command: reflection-email-orchestrator'
+tool: true
 tags: []
 ---
 # Reflection Email Orchestrator (Subject Trigger)

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N5 OS Waitlist - AI-Powered Personal Operating System</title>
+  <meta name="description" content="Join the waitlist for N5 OS - a knowledge-first operating system built on Zo Computer. Transform how you work with AI-powered workflows, knowledge management, and automation.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="N5 OS Waitlist - AI-Powered Personal Operating System">
+  <meta property="og:description" content="Join the waitlist for N5 OS - a knowledge-first operating system built on Zo Computer. Transform how you work with AI-powered workflows, knowledge management, and automation.">
+  <meta property="og:image" content="https://n5-waitlist-va.zocomputer.io/og-image.jpg">
+  <meta property="og:url" content="https://n5-waitlist-va.zocomputer.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="N5 OS Waitlist - AI-Powered Personal Operating System">
+  <meta name="twitter:description" content="Join the waitlist for N5 OS - a knowledge-first operating system built on Zo Computer.">
+  <meta name="twitter:image" content="https://n5-waitlist-va.zocomputer.io/og-image.jpg">
+  
+  <!-- Performance optimizations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://getlaunchlist.com">
+  <link rel="preload" as="image" href="n5-badge.webp" type="image/webp">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://getlaunchlist.com/js/widget.js" defer></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --n5-rust: #8B3A1F;
+      --n5-rust-dark: #5a1f11;
+      --n5-gold: #D4A574;
+      --n5-gold-bright: #F5B941;
+      --n5-cream: #FFF8F0;
+      --n5-dark: #2C1810;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f5f5f5;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, var(--n5-rust) 0%, var(--n5-rust-dark) 100%);
+      color: white;
+      padding: 60px 24px 80px;
+      text-align: center;
+    }
+    .hero-image {
+      width: 280px;
+      height: 280px;
+      max-width: 90vw;
+      object-fit: contain;
+      margin: 0 auto 24px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      display: block;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--n5-gold);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+    }
+    .hero a {
+      color: var(--n5-gold-bright);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .hero a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Scrolling Pills Section */
+    .features-scroll {
+      background: var(--n5-cream);
+      padding: 60px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .features-scroll h2 {
+      text-align: center;
+      color: var(--n5-rust);
+      margin-bottom: 3rem;
+      font-size: 2rem;
+      padding: 0 24px;
+    }
+    .scroll-container {
+      display: flex;
+      animation: scroll 40s linear infinite;
+      gap: 16px;
+    }
+    .scroll-container:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-container {
+        animation: none;
+      }
+    }
+    .feature-pill {
+      flex: 0 0 auto;
+      background: white;
+      border: 2px solid var(--n5-gold);
+      border-radius: 50px;
+      padding: 16px 32px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .feature-pill:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      border-color: var(--n5-rust);
+    }
+    .feature-pill strong {
+      color: var(--n5-rust);
+      font-weight: 700;
+    }
+    .feature-pill span {
+      color: #555;
+      margin-left: 8px;
+    }
+    
+    .testimonial-section {
+      background: #f5f5f5;
+      padding: 45px 24px;
+    }
+    .testimonial-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .testimonial-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .waitlist-section {
+      background: #f5f5f5;
+      padding: 48px 24px;
+    }
+    .waitlist-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .waitlist-container h2 {
+      text-align: center;
+      color: var(--n5-rust);
+      margin-bottom: 1rem;
+    }
+    .waitlist-container p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    
+    .promo-section {
+      background: var(--n5-dark);
+      color: white;
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .promo-section p {
+      font-size: 1.125rem;
+      margin-bottom: 12px;
+    }
+    .promo-section a {
+      color: var(--n5-gold-bright);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .promo-section a:hover {
+      text-decoration: underline;
+    }
+    .promo-section .promo-code {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .promo-section strong {
+      color: var(--n5-gold-bright);
+    }
+    
+    footer {
+      background: var(--n5-dark);
+      color: white;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    footer p {
+      margin-top: 1rem;
+    }
+    footer a {
+      color: var(--n5-gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      color: var(--n5-gold-bright);
+    }
+    
+    /* LaunchList Widget Styling */
+    .launchlist-widget {
+      border-radius: 12px !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+      background: #FFF8F0 !important;
+      padding: 32px !important;
+      border: 2px solid #D4A574 !important;
+      min-height: 280px !important;
+    }
+    .launchlist-widget input[type="text"],
+    .launchlist-widget input[type="email"] {
+      background: white !important;
+      border: 2px solid #D4A574 !important;
+      border-radius: 8px !important;
+      padding: 14px 16px !important;
+      font-size: 16px !important;
+      color: #2C1810 !important;
+      font-family: 'Inter', sans-serif !important;
+      transition: all 0.3s ease !important;
+    }
+    .launchlist-widget input[type="text"]:focus,
+    .launchlist-widget input[type="email"]:focus {
+      outline: none !important;
+      border-color: #8B3A1F !important;
+      box-shadow: 0 0 0 3px rgba(139, 58, 31, 0.1) !important;
+    }
+    .launchlist-widget input::placeholder {
+      color: #999 !important;
+    }
+    .launchlist-widget button[type="submit"],
+    .launchlist-widget .launchlist-button {
+      background: linear-gradient(135deg, #D4A574 0%, #F5B941 100%) !important;
+      color: #2C1810 !important;
+      border: none !important;
+      border-radius: 8px !important;
+      padding: 14px 32px !important;
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      font-family: 'Inter', sans-serif !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+      text-transform: none !important;
+      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3) !important;
+    }
+    .launchlist-widget button[type="submit"]:hover,
+    .launchlist-widget .launchlist-button:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(212, 165, 116, 0.4) !important;
+      background: linear-gradient(135deg, #F5B941 0%, #D4A574 100%) !important;
+    }
+    .launchlist-widget .launchlist-success {
+      background: #8B3A1F !important;
+      color: white !important;
+      border-radius: 8px !important;
+      padding: 16px !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+    .launchlist-widget .launchlist-error {
+      background: #dc2626 !important;
+      color: white !important;
+      border-radius: 8px !important;
+      padding: 12px !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+    .launchlist-widget label {
+      color: #2C1810 !important;
+      font-weight: 600 !important;
+      font-family: 'Inter', sans-serif !important;
+      margin-bottom: 8px !important;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 16px 60px;
+      }
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .features-scroll h2 {
+        font-size: 1.5rem;
+      }
+      .feature-pill {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
+      .testimonial-container,
+      .waitlist-container {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section with Logo -->
+  <div class="hero">
+    <picture>
+      <source srcset="n5-badge.webp" type="image/webp">
+      <img src="n5-badge-optimized.png" alt="N5 OS Badge" class="hero-image" width="280" height="280">
+    </picture>
+    <p>N5 OS is built on <a href="https://zo.computer?promo=VATT50" target="_blank" rel="noopener">Zo Computer</a>—your personal AI workspace. Create and automate anything with AI, all hosted on your own server.</p>
+  </div>
+  
+  <!-- Scrolling Features Pills -->
+  <div class="features-scroll">
+    <h2>What is N5 OS?</h2>
+    <div class="scroll-container">
+      <!-- First set of pills -->
+      <div class="feature-pill"><strong>🧠 Knowledge as Infrastructure</strong><span>Structured, portable knowledge that outlives any project</span></div>
+      <div class="feature-pill"><strong>⚡ Workflow Engine</strong><span>Commands over clicks—codified, repeatable automation</span></div>
+      <div class="feature-pill"><strong>🎯 Strategic Partner</strong><span>AI that reflects with you on what matters</span></div>
+      <div class="feature-pill"><strong>📁 File-First Philosophy</strong><span>Your data in plain files, works anywhere</span></div>
+      <div class="feature-pill"><strong>🤖 AI Agents</strong><span>Automated workers handling routine tasks 24/7</span></div>
+      <div class="feature-pill"><strong>🔗 Single Source of Truth</strong><span>One canonical place for each piece of knowledge</span></div>
+      <div class="feature-pill"><strong>🚀 Self-Hosted</strong><span>Your personal server, your rules, complete control</span></div>
+      <div class="feature-pill"><strong>💎 Portable Forever</strong><span>Markdown-based, no vendor lock-in, export anytime</span></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="feature-pill"><strong>🧠 Knowledge as Infrastructure</strong><span>Structured, portable knowledge that outlives any project</span></div>
+      <div class="feature-pill"><strong>⚡ Workflow Engine</strong><span>Commands over clicks—codified, repeatable automation</span></div>
+      <div class="feature-pill"><strong>🎯 Strategic Partner</strong><span>AI that reflects with you on what matters</span></div>
+      <div class="feature-pill"><strong>📁 File-First Philosophy</strong><span>Your data in plain files, works anywhere</span></div>
+      <div class="feature-pill"><strong>🤖 AI Agents</strong><span>Automated workers handling routine tasks 24/7</span></div>
+      <div class="feature-pill"><strong>🔗 Single Source of Truth</strong><span>One canonical place for each piece of knowledge</span></div>
+      <div class="feature-pill"><strong>🚀 Self-Hosted</strong><span>Your personal server, your rules, complete control</span></div>
+      <div class="feature-pill"><strong>💎 Portable Forever</strong><span>Markdown-based, no vendor lock-in, export anytime</span></div>
+    </div>
+  </div>
+  
+  <!-- Testimonial Section -->
+  <div class="testimonial-section">
+    <div class="testimonial-container">
+      <picture>
+        <source srcset="zo-testimonial.webp" type="image/webp">
+        <img src="zo-testimonial-optimized.jpg" alt="Zo Computer Testimonial" class="testimonial-image" loading="lazy" width="2820" height="752">
+      </picture>
+    </div>
+  </div>
+  
+  <!-- Waitlist Section -->
+  <div class="waitlist-section">
+    <div class="waitlist-container">
+      <h2>Join the Waitlist</h2>
+      <p>Sign up to be notified when N5 OS launches.</p>
+      
+      <!-- LaunchList Widget -->
+      <div class="launchlist-widget" data-key-id="wB7wsV" data-height="280px"></div>
+    </div>
+  </div>
+  
+  <!-- Footer with Promo -->
+  <footer style="background: var(--n5-dark); color: white; padding: 48px 24px 32px; text-align: center;">
+    <!-- Promo (main focus) -->
+    <div style="margin-bottom: 32px;">
+      <p style="font-size: 1.25rem; margin-bottom: 12px;">
+        Can't wait? <a href="https://www.zo.computer/?promo=VATT50" target="_blank" rel="noopener" style="color: var(--n5-gold-bright); text-decoration: none; font-weight: 700;">Sign up for Zo Computer now</a>
+      </p>
+      <p style="font-size: 0.95rem; opacity: 0.9;">Use code <strong style="color: var(--n5-gold-bright);">VATT50</strong> for 50% off</p>
+    </div>
+    
+    <!-- Divider -->
+    <div style="width: 60px; height: 1px; background: rgba(212, 165, 116, 0.3); margin: 0 auto 24px;"></div>
+    
+    <!-- Footer info (subtle) -->
+    <p style="font-size: 0.875rem; opacity: 0.7; margin-bottom: 8px;">
+      Created by <a href="https://www.linkedin.com/in/vrijenattawar/" target="_blank" rel="noopener" style="color: var(--n5-gold-bright); text-decoration: none;">Vrijen Attawar</a>
+    </p>
+    <p style="font-size: 0.8rem; opacity: 0.5;">© 2025 N5 OS</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "description": "Canonical destination mapping for duplicate consolidation system",
+  "last_updated": "2025-11-03",
+  "mappings": {
+    "Prompts": "Prompts",
+    "Sites": "Sites",
+    "Deliverables": "Records/deliverables",
+    "Meetings": "Personal/Meetings",
+    "calcom": "projects/calcom",
+    "marvin_jobs_data": "projects/marvin/data",
+    "N5_OS_Core_Artifacts": "N5/artifacts",
+    "productivity_tracker.db": "Personal/productivity_tracker.db",
+    "n5-waitlist": "projects/n5-waitlist",
+    "meeting-health": "projects/meeting-health",
+    "productivity-dashboard": "projects/productivity-dashboard",
+    "data": "projects/data"
+  },
+  "special_handling": {
+    "Trash": "DELETE"
+  },
+  "default_action": "SKIP"
+}

@@ -1,5 +1,6 @@
 ---
 description: 'Command: job-source-extract'
+tool: true
 tags:
 - jobs
 - sourcing

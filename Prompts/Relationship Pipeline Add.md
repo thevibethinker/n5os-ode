@@ -1,5 +1,6 @@
 ---
 description: 'Command: relationship-pipeline-add'
+tool: true
 tags:
 - networking
 - relationships

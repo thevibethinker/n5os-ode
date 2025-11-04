@@ -1,5 +1,6 @@
 ---
 description: 'Generate a descriptive thread title using N5 title generator'
+tool: true
 tags:
 - thread
 - title

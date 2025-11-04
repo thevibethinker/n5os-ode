@@ -2,14 +2,17 @@
 date: "2025-09-30T00:00:00Z"
 last-updated: "2025-09-30T00:00:00Z"
 status: stable
-source: "Careerspan Company History and Current Strategy - Sep 2025.txt"
-tags: [timeline, careerspan, milestones, history]
+source: Careerspan Company History and Current Strategy - Sep 2025.txt
+tags:
+  - timeline
+  - careerspan
+  - milestones
+  - history
 category: company
 priority: high
-version: "2.0-sep2025"
-baseline: "2025-09-30"
+version: 2.0-sep2025
+baseline: 2025-09-30
 ---
-
 # Careerspan Timeline
 
 **Baseline Date:** September 2025  

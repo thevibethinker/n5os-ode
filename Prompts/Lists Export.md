@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-export'
+tool: true
 tags: []
 ---
 # `lists-export`

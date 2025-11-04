@@ -1,3 +1,8 @@
+---
+created: 2025-10-17
+last_edited: 2025-11-03
+version: 1.1
+---
 # 2026 Predictions - Vrijen Attawar, Founder and CEO of Careerspan
 
 ## Trend Predictions
@@ -28,7 +33,7 @@
 
 ### Higher & Continued Education
 
-**RESPONSE:** Universities will do what they've always done: try out different AI-powered career planning tools and inevitably fail to get good ones. This isn't because career services professionals don't care—they do. It's because the bar for innovation in this sector is on the floor. The fundamental problem? Every tool focuses on deliverables—resumes, cover letters—completely missing the forest for the trees. Great resumes are a byproduct of self-understanding, and self-advocacy emerges from building foundational subskills. The resume is a container of information, but it's a fundamentally shit container—a bad data structure from first principles. This flawed thinking leads universities to conclude "we need something that helps with the resume," creating a market for products like VMock. Whether these companies genuinely don't understand the real problem or exist in blissful ignorance with zero user research is unclear. What IS clear: students hate these products, yet universities are paying 0,000+ per year for tools, because admitting that there are no good solutions or easy answers is worse than burning money to pretend like you do. (Vrijen Attawar, Founder and CEO of Careerspan)
+**RESPONSE:** Universities will do what they've always done: try out different AI-powered career planning tools and inevitably fail to get good ones. This isn't because career services professionals don't care—they do. It's because the bar for innovation in this sector is on the floor. The fundamental problem? Every tool focuses on deliverables—resumes, cover letters—completely missing the forest for the trees. Great resumes are a byproduct of self-understanding, and self-advocacy emerges from building foundational subskills. The resume is a container of information, but it's a fundamentally shit container—a bad data structure from first principles. This flawed thinking leads universities to conclude "we need something that helps with the resume," creating a market for products like VMock. Whether these companies genuinely don't understand the real problem or exist in blissful ignorance with zero user research is unclear. What IS clear: students hate these products, yet universities are paying $20,000+ per year for tools, because admitting that there are no good solutions or easy answers is worse than burning money to pretend like you do. (Vrijen Attawar, Founder and CEO of Careerspan)
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 description: 'Command: jobs-add'
+tool: true
 tags:
 - jobs
 - careers

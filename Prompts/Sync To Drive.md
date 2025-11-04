@@ -1,5 +1,6 @@
 ---
 description: 'Command: sync-to-drive'
+tool: true
 tags:
 - sync
 - drive

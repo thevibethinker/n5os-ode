@@ -1,5 +1,6 @@
 ---
 description: Weekend cognitive conciliatory - resurface and process week's strategic
+tool: true
   thinking
 tags:
 - strategic

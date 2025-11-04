@@ -1,5 +1,6 @@
 ---
 description: 'Command: grep-search-command-creation'
+tool: true
 tags: []
 ---
 # `grep-search-command-creation`

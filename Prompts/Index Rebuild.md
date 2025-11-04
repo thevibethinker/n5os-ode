@@ -1,5 +1,6 @@
 ---
 description: 'Command: index-rebuild'
+tool: true
 tags: []
 ---
 # `index-rebuild`

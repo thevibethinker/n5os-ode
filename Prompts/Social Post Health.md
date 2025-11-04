@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-post-health'
+tool: true
 tags:
 - social-media
 - health

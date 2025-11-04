@@ -1,5 +1,6 @@
 ---
 description: 'Command: knowledge-add'
+tool: true
 tags: []
 ---
 # `knowledge-add`

@@ -1,5 +1,6 @@
 ---
 description: 'Command: core-audit'
+tool: true
 tags:
 - audit
 - health-check

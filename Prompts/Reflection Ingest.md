@@ -1,5 +1,6 @@
 ---
 description: 'Manually triggered command that:'
+tool: true
 tags: []
 ---
 # Reflection Ingest (Unified)

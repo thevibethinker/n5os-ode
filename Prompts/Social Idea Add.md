@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-idea-add'
+tool: true
 tags:
 - social-media
 - content

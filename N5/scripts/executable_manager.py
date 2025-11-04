@@ -354,13 +354,177 @@ def _row_to_executable(row: sqlite3.Row) -> Executable:
         updated_at=row['updated_at']
     )
 
-def main():
+def register_reference(
+    file_path: str,
+    name: str,
+    description: str,
+    category: str = "business",
+    tags: Optional[List[str]] = None,
+    context_tags: Optional[List[str]] = None,
+    mutability: str = "living",
+    audience: str = "both",
+    **metadata
+) -> str:
+    """
+    Convenience wrapper for registering reference documents.
+    
+    References are living documents that provide context to AI.
+    Examples: metrics.md, team_roster.md, product_roadmap.md
+    
+    Args:
+        file_path: Path to reference file (relative to workspace)
+        name: Human-readable name
+        description: What this reference contains
+        category: Classification (business, technical, product, etc.)
+        tags: List of searchable tags
+        context_tags: Semantic tags for AI context matching
+        mutability: 'immutable' | 'versioned' | 'living'
+        audience: 'human' | 'both' | 'machine'
+    
+    Returns:
+        ID of registered reference
+    """
+    ref_id = f"ref_{Path(file_path).stem.replace('-', '_').replace(' ', '_')}"
+    
+    # Merge tags
+    all_tags = tags or []
+    if 'reference' not in all_tags:
+        all_tags.append('reference')
+    
+    return register_executable(
+        file_path=file_path,
+        exec_type="reference",
+        exec_id=ref_id,
+        name=name,
+        description=description,
+        category=category,
+        tags=all_tags,
+        mutability=mutability,
+        audience=audience,
+        context_tags=','.join(context_tags) if context_tags else None,
+        **metadata
+    )
+
+def search_references(query: str, **filters) -> List[Dict]:
+    """
+    Search for reference documents specifically.
+    
+    Args:
+        query: Search term (can be empty string for metadata-only filtering)
+        **filters: Additional filters (category, tags, context_tags, mutability, audience)
+    
+    Returns:
+        List of matching references as dicts
+    """
+    conn = get_connection()
+    try:
+        cursor = conn.cursor()
+        
+        # Base query for references only
+        sql = """
+            SELECT * FROM executables 
+            WHERE type = 'reference' 
+            AND status = 'active'
+        """
+        params = []
+        
+        # Add text search if query provided
+        if query:
+            sql += " AND id IN (SELECT id FROM executables_fts WHERE executables_fts MATCH ?)"
+            params.append(query)
+        
+        # Add metadata filters
+        if 'category' in filters:
+            sql += " AND category = ?"
+            params.append(filters['category'])
+        
+        if 'mutability' in filters:
+            sql += " AND mutability = ?"
+            params.append(filters['mutability'])
+        
+        if 'audience' in filters:
+            sql += " AND audience = ?"
+            params.append(filters['audience'])
+        
+        if 'context_tags' in filters:
+            # Simple LIKE match for comma-separated context_tags
+            for tag in filters['context_tags']:
+                sql += " AND context_tags LIKE ?"
+                params.append(f'%{tag}%')
+        
+        cursor.execute(sql, params)
+        results = []
+        for row in cursor.fetchall():
+            results.append(dict(row))
+        return results
+    finally:
+        conn.close()
+
+def update_reference_validation(ref_id: str, validated_at: Optional[str] = None) -> bool:
+    """
+    Mark a reference as validated (checked for accuracy/currency).
+    
+    Args:
+        ref_id: Reference ID
+        validated_at: ISO timestamp (defaults to now)
+    
+    Returns:
+        True if updated successfully
+    """
+    if not validated_at:
+        validated_at = datetime.utcnow().isoformat() + 'Z'
+    
+    conn = get_connection()
+    try:
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE executables SET last_validated = ? WHERE id = ? AND type = 'reference'",
+            (validated_at, ref_id)
+        )
+        conn.commit()
+        return cursor.rowcount > 0
+    finally:
+        conn.close()
+
+def list_stale_references(days: int = 30) -> List[Dict]:
+    """
+    List references not validated recently.
+    
+    Args:
+        days: Consider stale if not validated in this many days (default 30)
+    
+    Returns:
+        List of stale references with metadata
+    """
+    cutoff = (datetime.utcnow() - timedelta(days=days)).isoformat() + 'Z'
+    
+    conn = get_connection()
+    try:
+        cursor = conn.cursor()
+        cursor.execute(
+            """
+            SELECT * FROM executables 
+            WHERE type = 'reference' 
+            AND status = 'active'
+            AND (last_validated IS NULL OR last_validated < ?)
+            ORDER BY last_validated ASC NULLS FIRST
+            """,
+            (cutoff,)
+        )
+        results = []
+        for row in cursor.fetchall():
+            results.append(dict(row))
+        return results
+    finally:
+        conn.close()
+
+def main() -> int:
     parser = argparse.ArgumentParser(description='N5 Executable Manager')
     subparsers = parser.add_subparsers(dest='command', required=True)
     
     # List command
     list_parser = subparsers.add_parser('list', help='List executables')
-    list_parser.add_argument('--type', choices=['prompt', 'script', 'tool'])
+    list_parser.add_argument('--type', choices=['prompt', 'script', 'tool', 'reference'])
     list_parser.add_argument('--category')
     list_parser.add_argument('--tags', nargs='+')
     
@@ -375,7 +539,7 @@ def main():
     # Register command
     register_parser = subparsers.add_parser('register', help='Register new executable')
     register_parser.add_argument('file_path', help='Path to file')
-    register_parser.add_argument('--type', required=True, choices=['prompt', 'script', 'tool'])
+    register_parser.add_argument('--type', required=True, choices=['prompt', 'script', 'tool', 'reference'])
     register_parser.add_argument('--id', help='Executable ID (auto-generated if not provided)')
     register_parser.add_argument('--name', help='Display name')
     register_parser.add_argument('--description', help='Description')

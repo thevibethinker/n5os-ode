@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-idea-generate'
+tool: true
 tags:
 - social-media
 - generation

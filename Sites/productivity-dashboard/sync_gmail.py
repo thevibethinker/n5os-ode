@@ -24,16 +24,15 @@ def count_words(text):
         if line.strip().startswith('>'):
             continue
         
-        # Stop at common reply markers
-        if any(marker in line for marker in [
-            'On ', ' wrote:',
-            'From:',
-            'Sent:',
-            'To:',
-            'Subject:',
-            '-----Original Message-----',
-            '________________________________',
-        ]):
+        # Stop at common reply markers - be more specific with patterns
+        import re
+        if (re.match(r'^On .*(wrote|sent):', line, re.IGNORECASE) or
+            '-----Original Message-----' in line or
+            '________________________________' in line or
+            re.match(r'^From:', line, re.IGNORECASE) or
+            re.match(r'^Sent:', line, re.IGNORECASE) or
+            re.match(r'^To:', line, re.IGNORECASE) or
+            re.match(r'^Subject:', line, re.IGNORECASE)):
             break
         
         # Skip signature blocks
@@ -43,8 +42,7 @@ def count_words(text):
             '{CATG}',
             'Best,',
             'Sent via Superhuman',
-            '---',
-        ]):
+        ]) or line.strip() == '---':
             break
         
         original_lines.append(line)
@@ -124,9 +122,9 @@ if __name__ == "__main__":
         cursor = conn.cursor()
         
         cursor.execute("""
-            INSERT OR REPLACE INTO daily_stats (date, email_count, total_words, rpi)
-            VALUES (?, ?, ?, ?)
-        """, (today, total_emails, total_words, rpi))
+            INSERT OR REPLACE INTO daily_stats (date, emails_sent, rpi)
+            VALUES (?, ?, ?)
+        """, (today, total_emails, rpi))
         
         conn.commit()
         conn.close()
