@@ -1,0 +1,14 @@
+{
+  "request_id": "meeting_2025-10-29_external-jeff-sipe_1762136905",
+  "status": "pending_execution",
+  "queued_at": "2025-11-03T09:02:22.210208+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/2025-10-29_external-jeff-sipe.transcript.md",
+    "meeting_id": "2025-10-29_external-jeff-sipe",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/2025-10-29_external-jeff-sipe",
+    "reason": "Critical issues: 3"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

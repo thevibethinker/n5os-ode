@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Meeting Pipeline - Transcript Processor (Approach B) v2
-WITH IDEMPOTENCY: Database check + [ZO-PROCESSED] file marking
+WITH IDEMPOTENCY: Database check + [IMPORTED-TO-ZO] file marking
 """
 import argparse, json, logging, sqlite3, sys
 from datetime import datetime, timezone
@@ -35,7 +35,7 @@ def scan_for_new_transcripts():
             continue
         for tf in watch_dir.glob("**/*.transcript.md"):
             # File naming check (idempotency layer 2)
-            if tf.name.startswith('[ZO-PROCESSED]'):
+            if tf.name.startswith('[IMPORTED-TO-ZO]'):
                 continue
             
             meeting_id = tf.stem.replace('.transcript', '')
@@ -49,11 +49,11 @@ def scan_for_new_transcripts():
     return new_transcripts
 
 def mark_processed(transcript_path):
-    """Rename transcript with [ZO-PROCESSED] prefix for visual confirmation"""
-    if transcript_path.name.startswith('[ZO-PROCESSED]'):
+    """Rename transcript with [IMPORTED-TO-ZO] prefix for visual confirmation"""
+    if transcript_path.name.startswith('[IMPORTED-TO-ZO]'):
         return
     
-    new_name = f"[ZO-PROCESSED] {transcript_path.name}"
+    new_name = f"[IMPORTED-TO-ZO] {transcript_path.name}"
     new_path = transcript_path.parent / new_name
     transcript_path.rename(new_path)
     logger.info(f"  ✓ Marked processed: {new_name}")
@@ -103,7 +103,7 @@ def main(dry_run=False):
         logger.info("PHASE 4: Zo generates each block")
         logger.info("PHASE 5: Python saves + finalizes")
         
-        # Mark as processed (file rename for visual confirmation)
+        # Mark as archived (file rename for visual confirmation)
         if not dry_run:
             mark_processed(transcript_path)
         

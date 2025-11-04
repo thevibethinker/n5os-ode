@@ -1,0 +1,16 @@
+{
+  "meeting_id": "SAMPLE_B31_STD_001",
+  "meeting_type": "research_prep",
+  "duration_minutes": 25,
+  "participants": [
+    {"name": "V", "role": "Founder", "company": "Careerspan"}
+  ],
+  "transcript": "Note to self: Preparing for call with Elena Martinez at DataStream next week. Need to do proper research.\n\nCompany: DataStream\nWebsite says they're a data analytics platform for healthcare. Series B, raised $30M last year from Accel and FirstMark.\n\nLinkedIn shows 180 employees, most in engineering and data science. Headquarters in Boston.\n\nElena Martinez - VP of People Operations. Been there 2 years. Before that, she was at Dropbox for 4 years in HR. Started her career at Google.\n\nLooking at her LinkedIn activity... she posted last month about challenges hiring senior data scientists. Quote: 'The talent war is real. We're competing with giants for DS talent.' Also shared an article about retention strategies.\n\nGlassdoor reviews are mostly positive (4.1 stars). Engineers mention fast growth but some say career paths aren't clear. One review: 'Great company but I'm not sure how to grow beyond senior engineer here.'\n\nLooks like they just posted 15 engineering roles. They're definitely scaling.\n\nTheir CEO, Jason Park, did a podcast interview last month. Mentioned they're planning to double headcount in next 18 months. Big focus on AI/ML capabilities.\n\nCompetitors: They compete with Tableau, Looker, and some healthcare-specific analytics companies.\n\nMy hypothesis: They're scaling fast, competing for top DS/ML talent, and probably have retention challenges with unclear career paths. Elena likely cares about both recruiting AND retention.\n\nElena's background at Google and Dropbox means she's seen good career development programs. She'll have high standards.\n\nQuestions for the call:\n- What's driving the hiring surge?\n- How are they handling career development now?\n- What's their retention like for senior IC talent?\n- Do data scientists have clear career paths?\n\nI should mention customers we work with in data/ML space. Also, our coaches who came from Google and tech giants - that'll resonate with her background.\n\nOkay, I'm ready for this call.",
+  "meeting_date": "2025-11-08",
+  "context": {
+    "meeting_purpose": "Pre-call research for upcoming discovery call",
+    "target_company": "DataStream",
+    "target_contact": "Elena Martinez, VP People Ops",
+    "research_sources": ["LinkedIn", "Glassdoor", "Company website", "Podcast interview"]
+  }
+}

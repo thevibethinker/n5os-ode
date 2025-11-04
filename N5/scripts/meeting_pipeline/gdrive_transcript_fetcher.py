@@ -29,7 +29,7 @@ def ensure_dirs():
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
 
 def list_unprocessed_transcripts():
-    """List transcripts without [ZO-PROCESSED] prefix from Google Drive"""
+    """List transcripts without [IMPORTED-TO-ZO] prefix from Google Drive"""
     try:
         result = subprocess.run([
             "python3", "-c",
@@ -55,7 +55,7 @@ print(json.dumps(result))
             name = f.get('name', '')
             mimetype = f.get('mimeType', '')
             
-            if name.startswith('[ZO-PROCESSED]'):
+            if name.startswith('[IMPORTED-TO-ZO]'):
                 continue
             if mimetype not in SUPPORTED_MIMETYPES:
                 continue
@@ -155,8 +155,8 @@ def move_to_inbox(md_path, original_name):
         return None
 
 def mark_processed_in_drive(file_id, filename):
-    """Rename file in Google Drive with [ZO-PROCESSED] prefix"""
-    new_name = f"[ZO-PROCESSED] {filename}"
+    """Rename file in Google Drive with [IMPORTED-TO-ZO] prefix"""
+    new_name = f"[IMPORTED-TO-ZO] {filename}"
     
     try:
         subprocess.run([

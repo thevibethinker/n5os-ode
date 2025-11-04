@@ -1,0 +1,14 @@
+{
+  "request_id": "meeting_2025-10-29_internal-team_1762196554",
+  "status": "pending_execution",
+  "queued_at": "2025-11-03T20:02:49.518100+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/2025-10-29_internal-team.transcript.md",
+    "meeting_id": "2025-10-29_internal-team",
+    "meeting_type": "internal",
+    "original_dir": "/home/workspace/Personal/Meetings/\ud83d\udc492025-10-29_internal-team",
+    "reason": "User marked with \ud83d\udc49"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

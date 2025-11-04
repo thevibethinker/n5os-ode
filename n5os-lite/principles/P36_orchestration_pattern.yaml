@@ -1,0 +1,65 @@
+---
+id: P36
+name: Orchestration Pattern
+category: workflow
+priority: high
+version: 1.0
+created: 2025-11-03
+
+purpose: |
+  Multi-persona workflow for complex projects spanning multiple domains.
+
+when_to_apply:
+  - Work spans multiple domains (research → design → build → document)
+  - Single thread hitting context limits
+  - Distinct cognitive modes needed
+  - Multiple artifacts with different skillsets
+
+structure:
+  coordinator:
+    role: Strategist or Operator
+    responsibilities:
+      - Define phase boundaries and success criteria
+      - Spawn specialized threads
+      - Integrate results
+      - Identify gaps and blockers
+  
+  specialists:
+    - Researcher: Information gathering
+    - Architect: System design
+    - Builder: Implementation
+    - Writer: Documentation
+
+execution_rules:
+  1: Coordinator spawns specialists with clear objectives
+  2: Specialists work independently
+  3: Coordinator integrates results
+  4: Each phase has explicit success criteria
+  5: No phase starts with blockers
+
+examples:
+  - description: Building new system component
+    good: "Strategist defines requirements → Architect designs structure → Builder implements → Writer documents. Each phase validates before next."
+    bad: "Single persona trying to do everything, context overload, switching between cognitive modes inefficiently"
+  
+  - description: Research to implementation
+    good: "Researcher gathers data → Strategist analyzes patterns → Architect designs system → Builder executes"
+    bad: "One thread doing research while coding while documenting, losing context at each switch"
+
+anti_patterns:
+  - symptom: Single thread doing everything
+    fix: Identify distinct cognitive modes needed, spawn appropriate specialists
+  - symptom: Unclear phase boundaries
+    fix: Define explicit success criteria for each phase
+  - symptom: Missing coordinator
+    fix: Designate Strategist or Operator to orchestrate workflow
+
+related_principles:
+  - P37: Refactor Pattern
+  - P15: Complete Before Claiming
+  - P23: Identify Trap Doors
+
+changelog:
+  - date: "2025-11-03"
+    version: "1.0"
+    changes: "Extracted for N5OS Lite"

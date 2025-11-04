@@ -91,8 +91,8 @@ def register_blocks(meeting_id, blocks_data):
 def mark_transcript_processed(meeting_id):
     """Mark transcript file as processed."""
     for transcript_path in MEETING_INBOX.glob(f"{meeting_id}.transcript.md"):
-        if not transcript_path.name.startswith("[ZO-PROCESSED]"):
-            new_name = f"[ZO-PROCESSED] {transcript_path.name}"
+        if not transcript_path.name.startswith("[IMPORTED-TO-ZO]"):
+            new_name = f"[IMPORTED-TO-ZO] {transcript_path.name}"
             new_path = transcript_path.parent / new_name
             transcript_path.rename(new_path)
             logger.info(f"  ✓ Marked transcript: {new_name}")

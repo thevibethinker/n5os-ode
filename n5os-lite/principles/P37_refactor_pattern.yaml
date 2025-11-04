@@ -1,0 +1,72 @@
+---
+id: P37
+name: Refactor Pattern
+category: workflow
+priority: high
+version: 1.0
+created: 2025-11-03
+
+purpose: |
+  When and how to refactor vs rewrite. Use when core logic is sound but implementation is messy.
+
+when_to_apply:
+  - Core logic is sound but messy
+  - 70%+ of code is preservable
+  - Structure needs reorganization
+  - Removing duplication
+  - Improving clarity without changing behavior
+
+trap_door: |
+  Refactor vs Rewrite is a trap door decision.
+  Refactoring assumes most code is good. Rewriting assumes most code is wrong.
+  Choose deliberately, not by default.
+
+pattern:
+  decision_criteria:
+    refactor_when:
+      - Core algorithm/logic works correctly
+      - >70% of code will be preserved
+      - Problem is organization, not correctness
+      - Tests exist and pass
+    
+    rewrite_when:
+      - Core approach is flawed
+      - <50% of code will be preserved
+      - Architecture is wrong
+      - No tests, hard to verify
+
+  refactor_process:
+    1: Read before writing - Understand what exists
+    2: Preserve working parts - Don't change what works
+    3: One concern at a time - Don't mix refactors
+    4: Test after each change - Verify behavior preserved
+    5: Commit frequently - Make changes reversible
+
+examples:
+  - description: Messy but working script
+    good: "Extract functions one at a time, test after each, preserve behavior"
+    bad: "Rewrite from scratch, introduce bugs, lose edge case handling"
+  
+  - description: Unclear variable names
+    good: "Rename variables one at a time, verify tests still pass"
+    bad: "Rename everything at once, break references, create bugs"
+
+anti_patterns:
+  - symptom: "Rewriting working code because it's ugly"
+    fix: "Refactor incrementally while preserving behavior"
+  
+  - symptom: "Mixing multiple refactoring concerns"
+    fix: "One type of change at a time (e.g., rename variables, THEN extract functions)"
+  
+  - symptom: "No verification between changes"
+    fix: "Test after each refactor step, commit when verified"
+
+related_principles:
+  - P36: Orchestration Pattern
+  - P5: Safety and Determinism
+  - P15: Complete Before Claiming
+
+changelog:
+  - date: "2025-11-03"
+    version: "1.0"
+    changes: "Extracted for N5OS Lite"

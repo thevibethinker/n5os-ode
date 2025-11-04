@@ -26,8 +26,8 @@ The Google Drive fetch component **cannot run as a standalone subprocess** becau
 Instead of running scripts that try to access Google Drive, the scheduled task
 should provide instructions for Zo to:
 1. List files from Google Drive folder
-2. Filter unprocessed (no [ZO-PROCESSED] prefix)
+2. Filter unprocessed (no [ARCHIVED-BY-ZO] prefix)
 3. Download each file
 4. Convert to markdown via pandoc
 5. Move to Inbox
-6. Mark processed in Drive
+6. Mark archived in Drive with [ARCHIVED-BY-ZO] prefix
