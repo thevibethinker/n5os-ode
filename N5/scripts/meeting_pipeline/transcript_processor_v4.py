@@ -45,8 +45,8 @@ def scan_for_new_transcripts():
     new_transcripts = []
     
     for transcript_path in MEETING_INBOX.glob("*.transcript.md"):
-        # Skip [ZO-PROCESSED] files
-        if transcript_path.name.startswith("[ZO-PROCESSED]"):
+        # Skip [IMPORTED-TO-ZO] files
+        if transcript_path.name.startswith("[IMPORTED-TO-ZO]"):
             continue
         
         # Extract meeting_id from filename
@@ -153,7 +153,7 @@ def create_ai_request(meeting_id, transcript_path):
 
 def mark_processed(transcript_path):
     """Rename transcript to mark as processed."""
-    new_name = f"[ZO-PROCESSED] {transcript_path.name}"
+    new_name = f"[IMPORTED-TO-ZO] {transcript_path.name}"
     new_path = transcript_path.parent / new_name
     transcript_path.rename(new_path)
     logger.info(f"  ✓ Marked: {new_name}")

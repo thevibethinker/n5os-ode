@@ -1,0 +1,11 @@
+
+Load file 'Meeting Process.md' and process the transcript at:
+/home/workspace/Personal/Meetings/Inbox/2025-10-29_internal-daily-team-stand-up-143925.transcript.md
+
+Meeting ID: 2025-10-29_internal-daily-team-stand-up-143925
+Meeting Type: internal
+
+Generate all required blocks according to the prompt specification.
+Output directory: /home/workspace/Personal/Meetings/2025-10-29_internal-daily-team-stand-up-143925
+
+This is an automated request from the meeting pipeline.

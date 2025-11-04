@@ -99,11 +99,11 @@ if __name__ == "__main__":
         sys.exit(1)
 
 def mark_processed(transcript_path):
-    """Rename transcript with [ZO-PROCESSED] prefix"""
-    if transcript_path.name.startswith('[ZO-PROCESSED]'):
+    """Rename transcript with [IMPORTED-TO-ZO] prefix"""
+    if transcript_path.name.startswith('[IMPORTED-TO-ZO]'):
         return  # Already marked
     
-    new_name = f"[ZO-PROCESSED] {transcript_path.name}"
+    new_name = f"[IMPORTED-TO-ZO] {transcript_path.name}"
     new_path = transcript_path.parent / new_name
     transcript_path.rename(new_path)
     logger.info(f"  Renamed: {new_name}")

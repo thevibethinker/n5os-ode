@@ -1,0 +1,43 @@
+---
+id: P12
+name: Testing in Fresh Threads
+category: quality
+priority: medium
+version: "1.0.0"
+created: "2025-11-03"
+
+purpose: |
+  Validate workflows in fresh conversation threads to ensure reproducibility and proper dependency declaration.
+
+when_to_apply:
+  - Testing new workflows or prompts
+  - Validating dependencies
+  - Ensuring reproducibility
+  - Before sharing workflows with others
+
+pattern:
+  core_behavior: |
+    Run workflows in new thread to guarantee only declared files are in context.
+    Tests whether workflow is self-contained and properly documented.
+    Surfaces missing dependencies or undeclared assumptions.
+
+examples:
+  - description: Testing a new prompt
+    good: "Start fresh thread, load only the prompt file, execute. If it works, dependencies are properly declared."
+    bad: "Test in current thread with dozens of loaded files. Success doesn't prove self-containment."
+
+anti_patterns:
+  - symptom: "Workflow works in dev thread but fails for others"
+    fix: "Test in fresh thread to surface undeclared dependencies"
+  
+  - symptom: "Workflow relies on implicit context from previous conversation"
+    fix: "Make all dependencies explicit in the workflow documentation"
+
+related_principles:
+  - P8: Minimal Context, Maximal Clarity
+  - P21: Document All Assumptions
+
+changelog:
+  - date: "2025-11-03"
+    version: "1.0.0"
+    changes: "Extracted for N5OS Lite"

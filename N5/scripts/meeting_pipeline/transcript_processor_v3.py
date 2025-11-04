@@ -84,11 +84,11 @@ def check_for_duplicate(meeting_id, transcript_text, detected_at):
 # ============ IDEMPOTENCY ============
 
 def mark_processed(transcript_path):
-    """Rename with [ZO-PROCESSED] prefix"""
-    if transcript_path.name.startswith('[ZO-PROCESSED]'):
+    """Rename with [IMPORTED-TO-ZO] prefix"""
+    if transcript_path.name.startswith('[IMPORTED-TO-ZO]'):
         return
     
-    new_name = f"[ZO-PROCESSED] {transcript_path.name}"
+    new_name = f"[IMPORTED-TO-ZO] {transcript_path.name}"
     new_path = transcript_path.parent / new_name
     transcript_path.rename(new_path)
     logger.info(f"  ✓ Marked: {new_name}")
@@ -124,8 +124,8 @@ def scan_for_new_transcripts():
             continue
         
         for tf in watch_dir.glob("*.transcript.md"):
-            # Skip [ZO-PROCESSED] files
-            if tf.name.startswith('[ZO-PROCESSED]'):
+            # Skip [IMPORTED-TO-ZO] files
+            if tf.name.startswith('[IMPORTED-TO-ZO]'):
                 continue
             
             meeting_id = tf.stem.replace('.transcript', '')

@@ -1,0 +1,50 @@
+---
+id: P21
+name: Document All Assumptions
+category: quality
+priority: high
+version: "1.0.0"
+created: "2025-11-03"
+
+purpose: |
+  Make implicit assumptions explicit. Track placeholders, stubs, and incomplete implementations to prevent silent failures.
+
+when_to_apply:
+  - System implementations with placeholder logic
+  - Scripts with stub functions
+  - Designs with assumptions about future work
+  - Any code with TODO or FIXME
+  - Handoff documentation
+
+pattern:
+  core_behavior: |
+    Track EVERY assumption made during implementation.
+    Document ALL placeholders (TODO, FIXME, "placeholder for...").
+    List ALL stubs, simulations, or mock implementations.
+    Create manifest of what is incomplete.
+
+examples:
+  - description: Placeholder documentation
+    good: "STUB: Returns empty list. Needs actual API integration. See line 45"
+    bad: "TODO: implement later (no tracking, no context)"
+  
+  - description: Assumptions manifest
+    good: "ASSUMPTIONS.md listing assumptions, placeholders, and priorities"
+    bad: "Scattered TODO comments with no central tracking"
+
+anti_patterns:
+  - symptom: "Placeholder code forgotten until production failure"
+    fix: "Maintain ASSUMPTIONS.md with status and priority for each placeholder"
+  
+  - symptom: "Treating placeholders as real implementations"
+    fix: "Add guards: assert not IS_PRODUCTION or if data_source == 'mock'"
+
+related_principles:
+  - P15: Complete Before Claiming
+  - P16: Accuracy Over Sophistication  
+  - P23: Identify Trap Doors
+
+changelog:
+  - date: "2025-11-03"
+    version: "1.0.0"
+    changes: "Extracted for N5OS Lite"

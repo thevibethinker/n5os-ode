@@ -1,0 +1,14 @@
+{
+  "request_id": "meeting_2025-10-27_external-lisa-noble_1762160548",
+  "status": "pending_execution",
+  "queued_at": "2025-11-03T18:02:58.290961+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/2025-10-27_external-lisa-noble/transcript.md",
+    "meeting_id": "2025-10-27_external-lisa-noble",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/2025-10-27_external-lisa-noble",
+    "reason": "Critical issues: 1"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

@@ -1,0 +1,89 @@
+---
+title: N5OS Lite Architectural Principles
+version: 1.0
+created: 2025-11-03
+updated: 2025-11-03
+
+description: |
+  Core architectural principles for AI-assisted system building.
+  These principles guide decision-making and ensure quality outcomes.
+
+categories:
+  code_patterns:
+    description: How to structure and generate code
+    principles: [P1, P8]
+  
+  quality:
+    description: Standards for production-grade work
+    principles: [P2, P5, P15, P21]
+  
+  workflow:
+    description: Process and execution patterns
+    principles: [P7, P36, P37]
+
+principles:
+  P1:
+    name: Human-Readable First
+    priority: high
+    summary: Generate human-readable content first, derive machine formats from it
+  
+  P2:
+    name: Single Source of Truth
+    priority: high
+    summary: Each fact lives in exactly one canonical location
+  
+  P5:
+    name: Safety, Determinism, and Anti-Overwrite
+    priority: high
+    summary: Never overwrite without confirmation, auto-version on conflict
+  
+  P7:
+    name: Idempotence and Dry-Run by Default
+    priority: high
+    summary: Support dry-run mode, re-running produces identical end-state
+  
+  P8:
+    name: Minimal Context, Maximal Clarity
+    priority: medium
+    summary: Keep prompts self-contained, load only what's needed
+  
+  P15:
+    name: Complete Before Claiming Complete
+    priority: critical
+    summary: Report accurate progress X/Y (Z%), never claim done prematurely
+  
+  P16:
+    name: Accuracy Over Sophistication
+    priority: high
+    summary: Trustworthy facts beat impressive speculation. Never invent limitations.
+  
+  P19:
+    name: Error Handling is Not Optional
+    priority: critical
+    summary: Every system must gracefully handle failures with explicit recovery paths
+  
+  P20:
+    name: Modular Design for Context Efficiency
+    priority: high
+    summary: Break large content into focused modules, enable selective loading
+  
+  P21:
+    name: Document Assumptions
+    priority: high
+    summary: Make assumptions, constraints, and confidence levels explicit
+  
+  P36:
+    name: Orchestration Pattern
+    priority: high
+    summary: Coordinator spawns specialists for complex multi-domain work
+  
+  P37:
+    name: Refactor Pattern
+    priority: high
+    summary: Read before writing, preserve working parts, test after each change
+
+usage:
+  - Load principles relevant to current work
+  - Reference by ID (P1, P2, etc.) in discussions
+  - Apply patterns consistently across projects
+  - Extend with project-specific principles as needed
