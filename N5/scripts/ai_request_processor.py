@@ -29,15 +29,31 @@ def invoke_zo_for_request(req):
     prompt_name = req['prompt_name']
     
     # Build the command for Zo to execute
+    # Step 1: Run metadata extractor to clean files
+    # Step 2: Run main prompt for intelligence generation
     command = f"""
-Load file '{prompt_name}.md' and process the transcript at:
+**STEP 1: Extract Metadata & Clean Files**
+
+Load file 'Meeting Metadata Extractor.md' and process the transcript at:
 {transcript_path}
 
 Meeting ID: {meeting_id}
+
+This will:
+- Extract semantic metadata (participants, orgs, date, type)
+- Generate clean, human-readable filename
+- Convert to markdown with frontmatter
+- Rename folder to match clean name
+- Delete original file
+
+**STEP 2: Generate Intelligence Blocks**
+
+After Step 1 completes, load file '{prompt_name}.md' and process the cleaned transcript.
+
 Meeting Type: {req['inputs'].get('meeting_type', 'external')}
+Output directory: {req['output_requirements'].get('output_dir')}
 
 Generate all required blocks according to the prompt specification.
-Output directory: {req['output_requirements'].get('output_dir')}
 
 This is an automated request from the meeting pipeline.
 """

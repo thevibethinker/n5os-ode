@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Alex_x_Vrijen_Wisdom_Partners_Coaching-transcript-2025-10-29T17-58-28.439Z_1762220727",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.079919+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Alex_x_Vrijen_Wisdom_Partners_Coaching-transcript-2025-10-29T17-58-28.439Z.transcript.md",
+    "meeting_id": "Alex_x_Vrijen_Wisdom_Partners_Coaching-transcript-2025-10-29T17-58-28.439Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

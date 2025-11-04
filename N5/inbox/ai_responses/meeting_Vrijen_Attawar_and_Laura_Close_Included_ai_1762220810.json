@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Vrijen_Attawar_and_Laura_Close_Included_ai_1762220810",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.105967+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Vrijen_Attawar_and_Laura_Close_Included_ai.transcript.md",
+    "meeting_id": "Vrijen_Attawar_and_Laura_Close_Included_ai",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

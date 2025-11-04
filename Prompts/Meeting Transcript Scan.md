@@ -19,8 +19,8 @@ Examples:
 - `2025-09-23_external-stephanie` (Stephanie x Vrijen)
 
 ## State Tracking Strategy
-Files WITH `[ZO-PROCESSED]` prefix = already processed (skip)
-Files WITHOUT `[ZO-PROCESSED]` prefix = new/unprocessed (download & queue)
+Files WITH `[OBSOLETE-PREFIX]` prefix = already processed (skip)
+Files WITHOUT `[OBSOLETE-PREFIX]` prefix = new/unprocessed (download & queue)
 
 ## Workflow
 
@@ -31,7 +31,7 @@ Files WITHOUT `[ZO-PROCESSED]` prefix = new/unprocessed (download & queue)
 - Filter: `trashed=false`
 
 ### 2. Filter for Unprocessed Transcripts
-- **Skip**: Any filename starting with `[ZO-PROCESSED]`
+- NOTE: No filename-based skipping - all files are processed`[OBSOLETE-PREFIX]`
 - **Process**: ALL other files (folder contains only transcripts)
 
 ### 3. Check for Duplicates (CRITICAL)

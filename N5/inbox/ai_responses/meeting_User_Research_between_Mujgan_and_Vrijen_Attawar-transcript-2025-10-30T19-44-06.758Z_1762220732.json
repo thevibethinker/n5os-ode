@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_User_Research_between_Mujgan_and_Vrijen_Attawar-transcript-2025-10-30T19-44-06.758Z_1762220732",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.104941+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/User_Research_between_Mujgan_and_Vrijen_Attawar-transcript-2025-10-30T19-44-06.758Z.transcript.md",
+    "meeting_id": "User_Research_between_Mujgan_and_Vrijen_Attawar-transcript-2025-10-30T19-44-06.758Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}
