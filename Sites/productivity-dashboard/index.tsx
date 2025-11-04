@@ -21,7 +21,7 @@ app.get('/', (c) => {
     });
   }
   
-  // Fetch data for this week
+  // Fetch data
   const query = db.query('SELECT date, emails_sent, rpi FROM daily_stats WHERE date >= ? AND date <= ?');
   const rows = query.all(days[0].date, days[days.length - 1].date) as any[];
   const dataMap = new Map();
@@ -45,143 +45,30 @@ app.get('/', (c) => {
   <title>Arsenal Productivity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      background: linear-gradient(135deg, #EF0107 0%, #8B0000 100%);
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 2rem;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .logo {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    .subtitle {
-      opacity: 0.9;
-      margin-top: 0.5rem;
-    }
-    .status-card {
-      background: rgba(255,255,255,0.15);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      text-align: center;
-    }
-    .status-emoji {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .status-label {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    .status-avg {
-      opacity: 0.9;
-      margin-top: 0.5rem;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 1.5rem 0;
-    }
-    .day-row {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      border-left: 3px solid transparent;
-      padding-left: 0.5rem;
-    }
-    .day-row.today {
-      border-left-color: #FFD700;
-    }
-    .day-info {
-      width: 60px;
-      text-align: left;
-    }
-    .day-name {
-      font-weight: bold;
-    }
-    .day-date {
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-    .bar-area {
-      flex: 1;
-      height: 32px;
-      background: rgba(0,0,0,0.2);
-      border-radius: 8px;
-      position: relative;
-      overflow: visible;
-    }
-    .bar-area::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(255,255,255,0.3);
-      z-index: 1;
-    }
-    .bar-area::after {
-      content: '100%';
-      position: absolute;
-      left: 50%;
-      top: -18px;
-      transform: translateX(-50%);
-      font-size: 0.7rem;
-      opacity: 0.5;
-    }
-    .rpi-bar {
-      height: 100%;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 0.9rem;
-      position: relative;
-      z-index: 2;
-    }
-    .stats {
-      width: 100px;
-      text-align: right;
-      font-size: 0.85rem;
-    }
-    .legend {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .legend-color {
-      width: 16px;
-      height: 16px;
-      border-radius: 4px;
-    }
+    body { background: linear-gradient(135deg, #EF0107 0%, #8B0000 100%); color: white; font-family: Arial, sans-serif; padding: 2rem; min-height: 100vh; }
+    .container { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; }
+    .header { text-align: center; margin-bottom: 2rem; }
+    .logo { font-size: 3rem; margin-bottom: 0.5rem; }
+    h1 { margin: 0; font-size: 2rem; }
+    .subtitle { opacity: 0.9; margin-top: 0.5rem; }
+    .status-card { background: rgba(255,255,255,0.15); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+    .status-emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .status-label { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+    .status-avg { opacity: 0.9; margin-top: 0.5rem; }
+    .section-title { text-align: center; font-size: 1.2rem; margin: 1.5rem 0; }
+    .day-row { display: flex; align-items: center; margin-bottom: 1rem; border-left: 3px solid transparent; padding-left: 0.5rem; }
+    .day-row.today { border-left-color: #FFD700; }
+    .day-info { width: 60px; text-align: left; }
+    .day-name { font-weight: bold; }
+    .day-date { font-size: 0.85rem; opacity: 0.7; }
+    .bar-area { flex: 1; height: 32px; background: rgba(0,0,0,0.2); border-radius: 8px; position: relative; overflow: visible; }
+    .bar-area::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.3); z-index: 1; }
+    .bar-area::after { content: '100%'; position: absolute; left: 50%; top: -18px; transform: translateX(-50%); font-size: 0.7rem; opacity: 0.5; }
+    .rpi-bar { height: 100%; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; position: relative; z-index: 2; }
+    .stats { width: 100px; text-align: right; font-size: 0.85rem; }
+    .legend { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; font-size: 0.85rem; }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+    .legend-color { width: 16px; height: 16px; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -191,80 +78,43 @@ app.get('/', (c) => {
       <h1>Arsenal Productivity</h1>
       <div class="subtitle">Performance Dashboard</div>
     </div>
-    
     <div class="status-card">
       <div class="status-emoji">${statusEmoji}</div>
       <div class="status-label">${status}</div>
       <div class="status-avg">7-Day Average: ${avgRPI.toFixed(1)} RPI</div>
     </div>
-    
-    <div class="section-title">📊 7-Day RPI Performance</div>
-  `;
+    <div class="section-title">📊 7-Day RPI Performance</div>`;
   
   days.forEach(day => {
     const data = dataMap.get(day.date);
     const rpi = data?.rpi || 0;
     const emails = data?.emails_sent || 0;
-    
     let barColor = '#EF0107';
     if (rpi >= 150) barColor = '#FFD700';
     else if (rpi >= 125) barColor = '#4CAF50';
     else if (rpi >= 100) barColor = '#2196F3';
     else if (rpi >= 75) barColor = '#FF9800';
-    
     const barWidth = Math.min((rpi / 200) * 100, 100);
     
-    html += `
-      <div class="day-row ${day.isToday ? 'today' : ''}">
-        <div class="day-info">
-          <div class="day-name">${day.dayName}</div>
-          <div class="day-date">${day.shortDate}</div>
-        </div>
-        <div class="bar-area">
-          ${rpi > 0 ? `<div class="rpi-bar" style="width: ${barWidth}%; background: ${barColor};">${rpi}%</div>` : ''}
-        </div>
-        <div class="stats">
-          ${rpi > 0 ? `📧 ${emails} • 📝 0` : '—'}
-        </div>
-      </div>
-    `;
+    html += `<div class="day-row ${day.isToday ? 'today' : ''}">
+      <div class="day-info"><div class="day-name">${day.dayName}</div><div class="day-date">${day.shortDate}</div></div>
+      <div class="bar-area">${rpi > 0 ? `<div class="rpi-bar" style="width: ${barWidth}%; background: ${barColor};">${rpi}%</div>` : ''}</div>
+      <div class="stats">${rpi > 0 ? `📧 ${emails} • 📝 0` : '—'}</div>
+    </div>`;
   });
   
-  html += `
-      <div class="legend">
-        <div class="legend-item">
-          <div class="legend-color" style="background: #FFD700;"></div>
-          <span>Invincible (150+)</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #4CAF50;"></div>
-          <span>Top (125+)</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #2196F3;"></div>
-          <span>Meeting (100+)</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #FF9800;"></div>
-          <span>Catch Up (75+)</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background: #EF0107;"></div>
-          <span>Behind (&lt;75)</span>
-        </div>
-      </div>
-    </div>
-  </body>
-  </html>
-  `;
+  html += `<div class="legend">
+    <div class="legend-item"><div class="legend-color" style="background: #FFD700;"></div><span>Invincible (150+)</span></div>
+    <div class="legend-item"><div class="legend-color" style="background: #4CAF50;"></div><span>Top (125+)</span></div>
+    <div class="legend-item"><div class="legend-color" style="background: #2196F3;"></div><span>Meeting (100+)</span></div>
+    <div class="legend-item"><div class="legend-color" style="background: #FF9800;"></div><span>Catch Up (75+)</span></div>
+    <div class="legend-item"><div class="legend-color" style="background: #EF0107;"></div><span>Behind (&lt;75)</span></div>
+  </div></div></body></html>`;
   
   return c.html(html);
 });
 
 const port = 3000;
-console.log(\`🚀 Arsenal Productivity Dashboard running on http://localhost:\${port}\`);
+console.log(`🚀 Arsenal Productivity Dashboard running on http://localhost:${port}`);
 
-export default {
-  port,
-  fetch: app.fetch,
-};
+export default { port, fetch: app.fetch };
