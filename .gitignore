@@ -84,3 +84,21 @@ N5/services/n8n_processor/.env
 N5/services/*/config files
 N5/data/secrets_audit.jsonl
 N5/config/slack_credentials.json
+
+# === DATABASES - NEVER IN GIT (Added 2025-11-03) ===
+# Operational databases are runtime data, not source code
+# Git cannot safely merge binary SQLite files
+# Use automated snapshots for backups instead
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# System config with runtime state
+.config/syncthing/
+
+# Exception: Allow schema and migration files
+!**/schema.sql
+!**/migrations/*.sql
+!**/seeds/*.sql
