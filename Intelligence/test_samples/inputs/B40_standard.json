@@ -1,0 +1,17 @@
+{
+  "meeting_id": "SAMPLE_B40_STD_001",
+  "meeting_type": "internal_leadership",
+  "duration_minutes": 35,
+  "participants": [
+    {"name": "V", "role": "Founder/CEO", "company": "Careerspan"},
+    {"name": "Alex", "role": "Head of Product", "company": "Careerspan"},
+    {"name": "Maya", "role": "VP Sales", "company": "Careerspan"}
+  ],
+  "transcript": "V: Thanks for making time. I want to discuss our pricing strategy. We're getting feedback that $295 per person per month is high for mid-market companies.\n\nMaya: I'm seeing that too. I've lost two deals in the past month where they loved the product but couldn't justify the price. One went with BetterUp at $200/month.\n\nAlex: What if we introduced tiered pricing? Keep the current offering at $295, but create a lighter version at $200 that's competitive?\n\nV: What would the $200 tier include?\n\nAlex: Quarterly coaching instead of monthly, plus platform access. The $295 tier keeps monthly coaching plus manager support and training.\n\nMaya: I like that. It gives me something to compete with on price while still upselling to the premium tier.\n\nV: My concern is margin. The coaches are our biggest cost. Quarterly coaching might not be enough to drive outcomes.\n\nAlex: What if the $200 tier is AI-assisted coaching? Coaches handle the quarterly sessions, but there's an AI assistant in the platform for ongoing guidance between sessions?\n\nV: Interesting. That could work if the AI is good enough. Maya, would that sell?\n\nMaya: If the AI can provide real value, yes. But we'd need to be careful about positioning. Can't feel like a downgrade.\n\nV: Let me think about this. Alex, can you spec out what the AI assistant would need to do? Maya, can you validate with a few prospects whether this model would work for them?\n\nAlex: I can have a spec by end of week.\n\nMaya: I'll test it with three companies I'm currently talking to and report back next week.\n\nV: Good. Let's plan to make a decision in two weeks. If we're doing this, I want to launch it before Q1 to capture budget season.\n\nMaya: Agreed. Q1 budget season is critical.\n\nV: Okay, let's reconvene on this in two weeks with data and a spec.",
+  "meeting_date": "2025-11-05",
+  "context": {
+    "meeting_purpose": "Strategic pricing discussion",
+    "department": "Leadership",
+    "decision_urgency": "High - Q1 budget season approaching"
+  }
+}

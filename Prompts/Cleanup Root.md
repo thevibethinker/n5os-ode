@@ -1,5 +1,6 @@
 ---
 description: Scan workspace root and move unprotected items to Inbox/ for processing.
+tool: true
   Part of the root clearinghouse system.
 tags: []
 ---

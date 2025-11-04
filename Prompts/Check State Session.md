@@ -1,5 +1,6 @@
 ---
 description: 'Command: check-state-session'
+tool: true
 tags:
 - state-session
 - tracking

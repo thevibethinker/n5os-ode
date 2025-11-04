@@ -1,0 +1,411 @@
+{
+  "total_analyzed": 50,
+  "persona_distribution": {
+    "operator": 19,
+    "researcher": 29,
+    "builder": 21,
+    "writer": 3,
+    "strategist": 2,
+    "teacher": 1,
+    "architect": 1
+  },
+  "samples_by_persona": {
+    "operator": [
+      {
+        "id": "con_VALIDATION_002",
+        "title": "Oct 29 | \u2705 Validation Test Complete",
+        "objective": "Validate end-to-end pipeline produces quality titles without duplicates or generic garbage",
+        "keywords": [
+          "validate",
+          "end-to-end",
+          "pipeline",
+          "produces",
+          "quality"
+        ]
+      },
+      {
+        "id": "con_SoAOStFovywQIMfV",
+        "title": null,
+        "objective": "Run Steps 1\u20134 of the scanner workflow and provide a concise summary of results",
+        "keywords": [
+          "steps",
+          "scanner",
+          "workflow",
+          "provide",
+          "concise"
+        ]
+      },
+      {
+        "id": "con_z4CLSClD8YFDzjZb",
+        "title": "Execute meeting-transcript-scan to detect new meeting transcripts on Drive, enforce dedup by gdrive_",
+        "objective": "Run meeting-transcript-scan per N5/commands/meeting-transcript-scan.md with CRITICAL DEDUPLICATION REQUIREMENTS; prepare requests for new transcripts ",
+        "keywords": [
+          "meeting-transcript-scan",
+          "n5/commands/meeting-transcript-scan.md",
+          "critical",
+          "deduplication",
+          "requirements"
+        ]
+      },
+      {
+        "id": "con_yteQITKnIn6YbOE3",
+        "title": "Execute meeting-transcript-scan per file 'N5/commands/meeting-transcript-scan.md' with strict gdrive",
+        "objective": "- List Drive folder Fireflies/Transcripts; exclude names starting with [ZO-PROCESSED]",
+        "keywords": [
+          "list",
+          "drive",
+          "folder",
+          "fireflies/transcripts",
+          "exclude"
+        ]
+      },
+      {
+        "id": "con_wve1B4hdBDo81gyT",
+        "title": "Execute meeting-transcript-scan per N5/commands/meeting-transcript-scan.md with strict gdrive_id ded",
+        "objective": "Run the registered command (command-first) to scan for meeting transcripts, skip any with existing gdrive_id, and enqueue properly named requests for ",
+        "keywords": [
+          "registered",
+          "command",
+          "command-first",
+          "scan",
+          "meeting"
+        ]
+      }
+    ],
+    "researcher": [
+      {
+        "id": "con_SoAOStFovywQIMfV",
+        "title": null,
+        "objective": "Run Steps 1\u20134 of the scanner workflow and provide a concise summary of results",
+        "keywords": [
+          "steps",
+          "scanner",
+          "workflow",
+          "provide",
+          "concise"
+        ]
+      },
+      {
+        "id": "con_zaUBGSqCbA3lsh7B",
+        "title": "Execute meeting-transcript-scan with strict dedup (by gdrive_id) and naming conventions; create requ",
+        "objective": "Scan sources for meeting transcripts, collect all existing gdrive_ids from inbox/processed/records, skip duplicates, and enqueue requests only for new",
+        "keywords": [
+          "scan",
+          "sources",
+          "meeting",
+          "transcripts",
+          "collect"
+        ]
+      },
+      {
+        "id": "con_zFycRZWlFCAZu9bo",
+        "title": "Set up a daily Gmail newsletter scan that summarizes links, writes a themed digest to N5/knowledge/d",
+        "objective": "Create a compliant scheduled task (daily) that finds newsletter/article emails, fetches linked content, summarizes, saves to digest, and delivers via ",
+        "keywords": [
+          "create",
+          "compliant",
+          "scheduled",
+          "task",
+          "daily"
+        ]
+      },
+      {
+        "id": "con_zELMVOfIlowvZoOX",
+        "title": "Execute command meeting-transcript-scan with strict deduplication: load all existing gdrive_ids from",
+        "objective": "Scan for new meeting transcripts and create request JSONs only for unseen gdrive_ids with correct naming conventions.",
+        "keywords": [
+          "scan",
+          "meeting",
+          "transcripts",
+          "create",
+          "request"
+        ]
+      },
+      {
+        "id": "con_z4CLSClD8YFDzjZb",
+        "title": "Execute meeting-transcript-scan to detect new meeting transcripts on Drive, enforce dedup by gdrive_",
+        "objective": "Run meeting-transcript-scan per N5/commands/meeting-transcript-scan.md with CRITICAL DEDUPLICATION REQUIREMENTS; prepare requests for new transcripts ",
+        "keywords": [
+          "meeting-transcript-scan",
+          "n5/commands/meeting-transcript-scan.md",
+          "critical",
+          "deduplication",
+          "requirements"
+        ]
+      }
+    ],
+    "builder": [
+      {
+        "id": "con_zFycRZWlFCAZu9bo",
+        "title": "Set up a daily Gmail newsletter scan that summarizes links, writes a themed digest to N5/knowledge/d",
+        "objective": "Create a compliant scheduled task (daily) that finds newsletter/article emails, fetches linked content, summarizes, saves to digest, and delivers via ",
+        "keywords": [
+          "create",
+          "compliant",
+          "scheduled",
+          "task",
+          "daily"
+        ]
+      },
+      {
+        "id": "con_zELMVOfIlowvZoOX",
+        "title": "Execute command meeting-transcript-scan with strict deduplication: load all existing gdrive_ids from",
+        "objective": "Scan for new meeting transcripts and create request JSONs only for unseen gdrive_ids with correct naming conventions.",
+        "keywords": [
+          "scan",
+          "meeting",
+          "transcripts",
+          "create",
+          "request"
+        ]
+      },
+      {
+        "id": "con_vqhA8EsRBcUzr5ih",
+        "title": "Execute meeting-transcript-scan with strict deduplication, queue only NEW transcripts, and create st",
+        "objective": "List unprocessed Fireflies transcripts from Google Drive, skip any with existing gdrive_id, download and convert to .txt, and create N5/inbox/meeting_",
+        "keywords": [
+          "list",
+          "unprocessed",
+          "fireflies",
+          "transcripts",
+          "google"
+        ]
+      },
+      {
+        "id": "con_v0g3yCB2eA9bioc1",
+        "title": "Execute meeting-transcript-scan per `file 'N5/commands/meeting-transcript-scan.md'` with strict dedu",
+        "objective": "Scan Google Drive Fireflies/Transcripts, skip already processed/queued by gdrive_id, download new transcripts, convert to .txt, and create pending req",
+        "keywords": [
+          "scan",
+          "google",
+          "drive",
+          "fireflies/transcripts",
+          "skip"
+        ]
+      },
+      {
+        "id": "con_u0p8VqtczmT9yDo3",
+        "title": "Execute meeting-transcript-scan command with strict deduplication (by gdrive_id) and naming conventi",
+        "objective": "Scan sources for meeting transcripts and create requests only for items not previously queued/processed; enforce naming: Internal \u2192 YYYY-MM-DD_interna",
+        "keywords": [
+          "scan",
+          "sources",
+          "meeting",
+          "transcripts",
+          "create"
+        ]
+      }
+    ],
+    "writer": [
+      {
+        "id": "con_zFycRZWlFCAZu9bo",
+        "title": "Set up a daily Gmail newsletter scan that summarizes links, writes a themed digest to N5/knowledge/d",
+        "objective": "Create a compliant scheduled task (daily) that finds newsletter/article emails, fetches linked content, summarizes, saves to digest, and delivers via ",
+        "keywords": [
+          "create",
+          "compliant",
+          "scheduled",
+          "task",
+          "daily"
+        ]
+      },
+      {
+        "id": "con_s7ZxRyzfhm2xyA7j",
+        "title": "Process email staging files for stakeholder discovery (Phase 2)",
+        "objective": "Run Phase 2: load staging files from Records/Temporary/email_staging, extract stakeholder records using LLM, write discovery records to Records/stakeh",
+        "keywords": [
+          "phase",
+          "load",
+          "staging",
+          "files",
+          "records/temporary/email_staging"
+        ]
+      },
+      {
+        "id": "con_qABMHGVdX7yrO2En",
+        "title": "Output Review Tracker - Commands Registration (Worker 5)",
+        "objective": "Register all 7 Output Review Tracker commands in N5/config/commands.jsonl and create user documentation",
+        "keywords": [
+          "register",
+          "output",
+          "review",
+          "tracker",
+          "commands"
+        ]
+      }
+    ],
+    "strategist": [
+      {
+        "id": "con_sdruNr1WFV043KFm",
+        "title": "Build an arbitrage detection bot using Kalshi and Polymarket APIs; assess feasibility and outline ex",
+        "objective": "Deliver a working proof-of-concept scanner that identifies cross-exchange arbitrage opportunities and a concrete plan to extend to execution.",
+        "keywords": [
+          "deliver",
+          "working",
+          "proof-of-concept",
+          "scanner",
+          "identifies"
+        ]
+      },
+      {
+        "id": "con_sJN79hhi1Gy4DjeL",
+        "title": "Execute command 'meeting-transcript-scan' with strict deduping (collect all existing gdrive_ids, ski",
+        "objective": "Run the registered command for meeting-transcript scanning via command-first approach, enforce deduplication across inbox/processed/records, and produ",
+        "keywords": [
+          "registered",
+          "command",
+          "meeting-transcript",
+          "scanning",
+          "command-first"
+        ]
+      }
+    ],
+    "teacher": [
+      {
+        "id": "con_rKEmTr0UDa4Qc2aa",
+        "title": "Develop a clear, general outline for a live demo showcasing Zo\u2019s core functionality and workflows.",
+        "objective": "Produce a concise demo outline (10\u201315 min) that highlights Zo\u2019s capabilities, flow, and value\u2014grounded in V\u2019s reflection and Zo\u2019s system understanding",
+        "keywords": [
+          "produce",
+          "concise",
+          "demo",
+          "outline",
+          "10\u201315"
+        ]
+      }
+    ],
+    "architect": [
+      {
+        "id": "con_oto2YRwQpBA9VQuY",
+        "title": "Execute meeting-transcript-scan via command registry; enforce dedup by gdrive_id; create requests on",
+        "objective": "Scan sources for meeting transcripts, load existing gdrive_ids from required paths, skip duplicates, and create structured request JSONs for only new ",
+        "keywords": [
+          "scan",
+          "sources",
+          "meeting",
+          "transcripts",
+          "load"
+        ]
+      }
+    ]
+  },
+  "top_keywords_by_persona": {
+    "operator": {
+      "transcripts": 11,
+      "meeting": 11,
+      "detect": 8,
+      "queue": 7,
+      "drive": 6,
+      "duplicates": 5,
+      "deduplication": 5,
+      "requests": 4,
+      "naming": 4,
+      "skip": 4,
+      "google": 4,
+      "summary": 3,
+      "command": 3,
+      "internal/external": 3,
+      "strict": 3
+    },
+    "researcher": {
+      "scan": 22,
+      "transcripts": 22,
+      "meeting": 18,
+      "items": 17,
+      "request": 15,
+      "naming": 13,
+      "create": 13,
+      "existing": 12,
+      "skip": 12,
+      "gdrive_ids": 10,
+      "jsons": 10,
+      "files": 9,
+      "fireflies/transcripts": 9,
+      "gdrive_id": 9,
+      "requests": 8
+    },
+    "builder": {
+      "create": 20,
+      "transcripts": 17,
+      "meeting": 15,
+      "items": 15,
+      "scan": 12,
+      "request": 11,
+      "naming": 10,
+      "jsons": 8,
+      "drive": 8,
+      "skip": 8,
+      "existing": 8,
+      "google": 7,
+      "gdrive_ids": 6,
+      "conventions": 6,
+      "unprocessed": 6
+    },
+    "writer": {
+      "create": 2,
+      "staging": 2,
+      "files": 2,
+      "records": 2,
+      "compliant": 1,
+      "scheduled": 1,
+      "task": 1,
+      "daily": 1,
+      "finds": 1,
+      "newsletter/article": 1,
+      "emails": 1,
+      "fetches": 1,
+      "linked": 1,
+      "content": 1,
+      "summarizes": 1
+    },
+    "strategist": {
+      "deliver": 1,
+      "working": 1,
+      "proof-of-concept": 1,
+      "scanner": 1,
+      "identifies": 1,
+      "cross-exchange": 1,
+      "arbitrage": 1,
+      "opportunities": 1,
+      "concrete": 1,
+      "plan": 1,
+      "extend": 1,
+      "execution": 1,
+      "registered": 1,
+      "command": 1,
+      "meeting-transcript": 1
+    },
+    "teacher": {
+      "zo\u2019s": 2,
+      "produce": 1,
+      "concise": 1,
+      "demo": 1,
+      "outline": 1,
+      "10\u201315": 1,
+      "highlights": 1,
+      "capabilities": 1,
+      "flow": 1,
+      "value\u2014grounded": 1,
+      "reflection": 1,
+      "system": 1,
+      "understanding": 1
+    },
+    "architect": {
+      "scan": 1,
+      "sources": 1,
+      "meeting": 1,
+      "transcripts": 1,
+      "load": 1,
+      "existing": 1,
+      "gdrive_ids": 1,
+      "required": 1,
+      "paths": 1,
+      "skip": 1,
+      "duplicates": 1,
+      "create": 1,
+      "structured": 1,
+      "request": 1,
+      "jsons": 1
+    }
+  }
+}

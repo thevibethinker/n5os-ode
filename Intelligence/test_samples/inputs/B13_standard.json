@@ -1,0 +1,17 @@
+{
+  "meeting_id": "SAMPLE_B13_STD_001",
+  "meeting_type": "external_client",
+  "duration_minutes": 35,
+  "participants": [
+    {"name": "Amanda Foster", "role": "Director of Sales", "company": "SalesForce Pro"},
+    {"name": "V", "role": "Founder", "company": "Careerspan"}
+  ],
+  "transcript": "Amanda: Okay V, we're ready to move forward. Let's talk about the plan of action to get this pilot launched.\n\nV: Great. When are you thinking of starting?\n\nAmanda: January 15th. That gives us the holiday break to finalize everything.\n\nV: Perfect. Here's what needs to happen. First, we need contracts signed by December 1st. That gives legal time to review and gives us runway to onboard.\n\nAmanda: I can get that done. I'll route it through our legal team this week.\n\nV: Good. Second, we need a list of the 15 pilot participants by December 10th. Names, emails, LinkedIn profiles if you have them.\n\nAmanda: I already know who the 15 are. I can get you that list next week actually.\n\nV: Even better. Third, we need to schedule a kickoff meeting with you and your sales leadership team - probably 1 hour. Can we do that in early December?\n\nAmanda: Let's do December 5th at 2pm. I'll get it on the calendar.\n\nV: Perfect. Then in that meeting, we'll walk through the pilot structure, timeline, what your team should expect. Fourth, we'll need calendar access for the 15 participants so we can schedule their first coaching sessions in early January.\n\nAmanda: How does that work?\n\nV: We'll send them a scheduling link. They can book their first session for January. We'll need them to book by January 5th so everyone's started by mid-month.\n\nAmanda: Got it. I'll communicate that deadline to the team.\n\nV: Last thing - we need a point person on your side. Someone we can work with for logistics, questions, any issues that come up. Is that you?\n\nAmanda: It should probably be my sales ops manager, Kristin. She handles all our vendor relationships and programs. I'll introduce you two.\n\nV: Perfect. So to recap: Contracts by December 1st, participant list by December 10th, kickoff meeting December 5th, you'll introduce us to Kristin, and participants book coaching by January 5th for a January 15th start. Did I miss anything?\n\nAmanda: No, that covers it. One question - what happens if someone on the pilot list leaves between now and January?\n\nV: Just replace them with someone else. The 15 doesn't need to be set in stone until January 5th when they book.\n\nAmanda: Makes sense. Okay, I'm clear on the plan. Let's do this.\n\nV: Excited to get started. I'll send a follow-up email with these dates and action items.\n\nAmanda: Perfect. Talk soon.",
+  "meeting_date": "2025-11-20",
+  "context": {
+    "company": "SalesForce Pro",
+    "deal_stage": "closing",
+    "pilot_size": 15,
+    "start_date": "2025-01-15"
+  }
+}

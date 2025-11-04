@@ -1,42 +1,64 @@
 {
-  "generated_at": "2025-11-03T00:01:14.804192+00:00",
+  "generated_at": "2025-11-03T19:01:13.796277+00:00",
   "summary": {
     "total_scanned": 50,
-    "critical_issues": 8,
-    "high_issues": 33,
+    "critical_issues": 9,
+    "high_issues": 30,
     "medium_issues": 0,
-    "healthy": 9
+    "healthy": 11
   },
   "critical": [
     {
-      "meeting_id": "2025-10-30_external-dbn-ctum-szz",
+      "meeting_id": "2025-10-30_external-jake-gates",
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "FALSE_COMPLETION",
+          "type": "MISSING_METADATA",
           "severity": "CRITICAL",
-          "message": "Metadata claims completed but 0 blocks exist (expected 12)"
+          "message": "Missing metadata file"
         }
       ],
       "block_count": 0,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.021267+00:00"
+      "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-29_internal-daily-team-stand-up-143925",
+      "meeting_id": "2025-10-30_external-ilya",
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "FALSE_COMPLETION",
+          "type": "MISSING_METADATA",
           "severity": "CRITICAL",
-          "message": "Metadata claims completed but 0 blocks exist (expected 3)"
+          "message": "Missing metadata file"
         }
       ],
       "block_count": 0,
-      "expected_blocks": 3,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.017286+00:00"
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-30_external-ikk-nkrd-kgn",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-29_internal-team",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
     },
     {
       "meeting_id": "2025-10-29_external-jeff-sipe",
@@ -45,7 +67,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B08(3x), B02(3x), B01(3x), B13(3x), B26(3x), B21(3x), B07(3x), B31(3x), B05(3x), B24(3x), B27(3x), B25(3x)"
+          "message": "Duplicate blocks: B08(4x), B25(3x), B05(3x), B13(3x), B21(3x), B07(4x), B27(3x), B31(4x), B01(3x), B26(3x), B24(3x), B02(3x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -58,7 +80,7 @@
           "message": "12 blocks are completely empty"
         }
       ],
-      "block_count": 36,
+      "block_count": 41,
       "expected_blocks": 12,
       "processing_status": "completed",
       "processed_at": "2025-10-30 14:20:35 EDT"
@@ -88,13 +110,25 @@
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "MISSING_METADATA",
+          "type": "DUPLICATE_BLOCKS",
+          "severity": "MEDIUM",
+          "message": "Duplicate blocks: B08(2x), B26(2x), B21(2x), B01(2x), B31(2x), B27(2x), B25(2x), B02(2x)"
+        },
+        {
+          "type": "TEMPLATE_ONLY",
+          "severity": "HIGH",
+          "message": "1 blocks appear to be templates only"
+        },
+        {
+          "type": "EMPTY_BLOCKS",
           "severity": "CRITICAL",
-          "message": "Missing metadata file"
+          "message": "1 blocks are completely empty"
         }
       ],
-      "block_count": 0,
-      "expected_blocks": 0
+      "block_count": 26,
+      "expected_blocks": 0,
+      "processing_status": "unknown",
+      "processed_at": "unknown"
     },
     {
       "meeting_id": "2025-10-27_external-david",
@@ -103,7 +137,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B31(2x), B08(2x), B21(2x), B07(2x), B13(2x), B26(2x), B01(2x), B25(2x), B02(2x), B05(2x)"
+          "message": "Duplicate blocks: B21(2x), B02(2x), B01(2x), B07(2x), B25(2x), B26(2x), B31(2x), B08(2x), B13(2x), B05(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -123,19 +157,6 @@
     },
     {
       "meeting_id": "2025-10-23-deepakeigenstrategicsystemscom",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-22-hpangyearupunitedorg",
       "status": "CRITICAL",
       "issues": [
         {
@@ -171,7 +192,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B25(2x), B26(3x), B24(2x), B08(3x), B01(2x), B05(2x), B02(2x), B21(2x), B07(2x), B13(2x), B31(2x), B27(2x)"
+          "message": "Duplicate blocks: B13(2x), B24(2x), B27(2x), B25(2x), B02(2x), B08(3x), B07(2x), B31(2x), B01(2x), B21(2x), B26(3x), B05(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -281,7 +302,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B27(2x), B13(2x), B05(2x), B08(2x), B02(2x), B07(2x), B25(2x), B26(2x), B01(2x), B31(2x), B21(2x)"
+          "message": "Duplicate blocks: B08(2x), B07(2x), B01(2x), B21(2x), B25(2x), B27(2x), B02(2x), B31(2x), B05(2x), B13(2x), B26(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -301,7 +322,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B02(2x), B25(2x), B31(2x), B05(2x), B21(2x), B07(2x), B01(2x), B08(2x), B26(2x)"
+          "message": "Duplicate blocks: B21(2x), B07(2x), B01(2x), B02(2x), B31(2x), B26(2x), B25(2x), B08(2x), B05(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -366,7 +387,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B31(2x), B05(2x), B21(2x), B25(2x), B26(2x), B08(2x), B01(2x), B02(2x), B07(2x)"
+          "message": "Duplicate blocks: B02(2x), B31(2x), B25(2x), B08(2x), B26(2x), B21(2x), B01(2x), B07(2x), B05(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -386,7 +407,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B26(2x), B25(2x), B08(2x), B21(2x), B07(2x), B05(2x), B02(2x), B01(2x), B31(2x)"
+          "message": "Duplicate blocks: B08(2x), B26(2x), B07(2x), B21(2x), B25(2x), B01(2x), B05(2x), B02(2x), B31(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -421,7 +442,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B31(2x), B08(2x), B05(2x), B24(2x), B02(2x), B07(2x), B27(2x), B13(2x), B01(2x), B26(2x), B25(2x), B21(2x)"
+          "message": "Duplicate blocks: B27(2x), B25(2x), B31(2x), B02(2x), B07(2x), B05(2x), B21(2x), B01(2x), B08(2x), B26(2x), B13(2x), B24(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -441,7 +462,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B02(2x), B26(2x), B05(2x), B25(2x), B08(2x), B07(2x), B01(2x), B31(2x), B21(2x)"
+          "message": "Duplicate blocks: B05(2x), B02(2x), B21(2x), B01(2x), B25(2x), B26(2x), B08(2x), B07(2x), B31(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -461,7 +482,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B07(2x), B31(2x), B25(2x), B02(2x), B05(2x), B26(2x), B21(2x), B08(2x), B01(2x)"
+          "message": "Duplicate blocks: B01(2x), B08(2x), B21(2x), B07(2x), B05(2x), B25(2x), B02(2x), B31(2x), B26(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -511,7 +532,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B26(2x), B21(2x), B08(2x), B01(2x), B07(2x), B31(2x), B02(2x), B05(2x), B25(2x)"
+          "message": "Duplicate blocks: B25(2x), B07(2x), B02(2x), B26(2x), B08(2x), B01(2x), B05(2x), B21(2x), B31(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -531,7 +552,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B02(2x), B13(2x), B26(2x)"
+          "message": "Duplicate blocks: B26(2x), B13(2x), B02(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -566,7 +587,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B31(2x), B01(2x), B08(2x), B21(2x), B07(2x), B26(2x), B05(2x), B02(2x), B25(2x)"
+          "message": "Duplicate blocks: B08(2x), B05(2x), B26(2x), B31(2x), B25(2x), B21(2x), B01(2x), B02(2x), B07(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -586,7 +607,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B02(2x), B31(2x), B21(2x), B25(2x), B08(2x), B26(2x), B07(2x), B05(2x), B01(2x)"
+          "message": "Duplicate blocks: B26(2x), B25(2x), B05(2x), B02(2x), B21(2x), B31(2x), B01(2x), B08(2x), B07(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -606,7 +627,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B05(2x), B01(2x), B31(2x), B07(2x), B21(2x), B02(2x), B26(2x), B25(2x), B08(2x)"
+          "message": "Duplicate blocks: B21(2x), B05(2x), B08(2x), B07(2x), B01(2x), B25(2x), B26(2x), B31(2x), B02(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -626,7 +647,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B05(2x), B24(2x), B02(2x), B07(2x), B08(2x), B25(2x), B26(2x), B21(2x), B31(2x), B13(2x), B27(2x), B01(2x)"
+          "message": "Duplicate blocks: B27(2x), B24(2x), B31(2x), B01(2x), B26(2x), B21(2x), B08(2x), B05(2x), B25(2x), B02(2x), B13(2x), B07(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -661,7 +682,7 @@
         {
           "type": "DUPLICATE_BLOCKS",
           "severity": "MEDIUM",
-          "message": "Duplicate blocks: B21(2x), B05(2x), B26(2x), B02(2x), B25(2x), B08(2x), B31(2x), B07(2x), B01(2x)"
+          "message": "Duplicate blocks: B25(2x), B21(2x), B31(2x), B01(2x), B08(2x), B07(2x), B26(2x), B02(2x), B05(2x)"
         },
         {
           "type": "TEMPLATE_ONLY",
@@ -673,56 +694,6 @@
       "expected_blocks": 12,
       "processing_status": "unknown",
       "processed_at": "2025-10-22T20:57:36Z"
-    },
-    {
-      "meeting_id": "2025-10-22_external-year-up-united-x-careerspan",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:54.983887+00:00"
-    },
-    {
-      "meeting_id": "2025-10-22_external-brin-x-v",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:54.978549+00:00"
-    },
-    {
-      "meeting_id": "2025-10-22_external-brin",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B26(2x), B31(2x), B01(2x), B05(2x), B07(2x), B21(2x), B25(2x), B02(2x), B08(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "unknown"
     }
   ],
   "medium": []

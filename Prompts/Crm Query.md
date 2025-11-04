@@ -1,5 +1,6 @@
 ---
 description: 'Command: crm-query'
+tool: true
 tags: []
 ---
 # CRM Query

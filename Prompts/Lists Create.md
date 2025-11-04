@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-create'
+tool: true
 tags: []
 ---
 # `lists-create`

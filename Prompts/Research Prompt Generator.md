@@ -1,5 +1,6 @@
 ---
 description: 'Command: research-prompt-generator'
+tool: true
 tags: []
 ---
 # `research-prompt-generator`

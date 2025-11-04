@@ -1,5 +1,6 @@
 ---
 description: 'Command: social-post-stats'
+tool: true
 tags:
 - social-media
 - analytics

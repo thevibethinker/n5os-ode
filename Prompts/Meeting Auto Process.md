@@ -1,5 +1,6 @@
 ---
 description: 'Command: meeting-auto-process'
+tool: true
 tags: []
 ---
 # `meeting-auto-process`

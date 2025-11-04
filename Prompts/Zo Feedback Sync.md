@@ -1,5 +1,6 @@
 ---
 description: Sync new Zo feedback reports to Google Drive ZoReports folder
+tool: true
 tags: [zo, feedback, sync, google-drive, automation]
 ---
 

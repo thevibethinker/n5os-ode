@@ -1,5 +1,6 @@
 ---
 description: 'Command: careerspan-timeline-add'
+tool: true
 tags: []
 ---
 # `careerspan-timeline-add`

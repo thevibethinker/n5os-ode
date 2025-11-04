@@ -1,5 +1,6 @@
 ---
 description: Extended iterative Socratic dialogue - prevents premature convergence
+tool: true
 tags:
 - strategic
 - ideation

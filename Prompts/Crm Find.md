@@ -1,5 +1,6 @@
 ---
 description: Fast CRM database queries to find people, connections, and relationships.
+tool: true
 tags: []
 ---
 # CRM Find Command

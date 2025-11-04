@@ -1,5 +1,6 @@
 ---
 description: 'Command: deliverable-review'
+tool: true
 tags: []
 ---
 # `deliverable-review`

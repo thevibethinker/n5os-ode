@@ -1,0 +1,93 @@
+N5 Architectural Redesign - Conversation 4 of 7
+PRINCIPLE MIGRATION TO YAML
+
+Duration: 3 hours
+Persona: Builder
+Status: AUTHORIZED
+
+COPY TO START NEW CONVERSATION:
+---
+N5 Conv 4: Migrate remaining principles to YAML format.
+
+Context: Conv 1-3 complete, bootstrap validated.
+Already done: P36, P37 (in Conv 1)
+To migrate: 27 principles (P1-P35, excluding P36/P37)
+
+SOURCE:
+- /home/workspace/Knowledge/architectural/principles/*.md (existing principles)
+- /home/workspace/N5/prefs/principles/P36_orchestration_pattern.yaml (template)
+- /home/workspace/N5/prefs/principles/P37_refactor_pattern.yaml (template)
+
+TARGET:
+Create YAML files in /home/workspace/N5/prefs/principles/
+
+YAML SCHEMA (follow P36/P37 format):
+
+
+PRINCIPLES TO MIGRATE (27 total):
+
+Priority Group 1 (Critical - do first):
+- P2: Single Source of Truth
+- P5: Anti-Overwrite Protection  
+- P6: Mirror Sync Hygiene
+- P11: Failure Modes & Recovery
+- P13: Naming & Placement
+- P14: Change Tracking
+- P15: Complete Before Claiming
+
+Priority Group 2 (High):
+- P0.1: LLM-First
+- P1: Human-Readable First
+- P7: Idempotence
+- P8: Minimal Context
+- P12: Testing Fresh Threads
+- P19: Error Handling
+- P21: Document Assumptions
+- P23: Identify Trap Doors
+- P28: Plan DNA
+- P29: Mock Data Discipline
+
+Priority Group 3 (Medium - remaining):
+- P24: Simulation Over Doing
+- P25: Code Is Free
+- P26: Fast Feedback Loops
+- P27: Nemawashi Mode
+- P30: Maintain Feel for Code
+- P31: Own Planning Process
+- P32: Simple Over Easy
+- P33: Old Tricks Still Work
+- P34: Secrets Management
+- P35: Data Format Selection
+
+EXECUTION STRATEGY:
+
+1. Start with Priority Group 1 (7 principles)
+2. Use P36/P37 YAML as templates
+3. Extract content from existing .md files
+4. Create clean, consistent YAML
+5. Checkpoint after Group 1
+6. Continue with Groups 2 & 3
+7. Final validation
+
+PROTOCOL:
+- Initialize SESSION_STATE.md
+- Declare all 27 artifacts upfront
+- Use edit_file_llm or create_or_rewrite_file
+- Track progress: X/27 complete
+- Report completion with manifest
+
+TIME BUDGET:
+- Group 1: 1 hour (7 critical)
+- Group 2: 1 hour (10 high)
+- Group 3: 1 hour (10 medium)
+- Total: 3 hours
+
+SUCCESS CRITERIA:
+✓ All 27 YAML files created
+✓ Consistent schema across all
+✓ No placeholder content
+✓ Related principles linked
+✓ Completion manifest with file list
+
+Load Builder and execute.
+---

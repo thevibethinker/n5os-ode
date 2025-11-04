@@ -1,5 +1,6 @@
 ---
 description: Generate text content using the voice transformation system with multi-angle
+tool: true
   evaluation and hybrid structure.
 tags: []
 ---

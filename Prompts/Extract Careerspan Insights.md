@@ -1,5 +1,6 @@
 ---
 description: 'Command: extract-careerspan-insights'
+tool: true
 tags: []
 ---
 # `extract-careerspan-insights`

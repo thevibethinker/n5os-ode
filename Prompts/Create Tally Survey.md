@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Create a Tally.so survey programmatically from natural language description.
   Supports all field types available on FREE plan (unlimited forms & submissions).
 tags:

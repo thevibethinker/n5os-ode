@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Browse, search, and discover available recipes.
   Shows recipe descriptions, tags, and usage patterns.
 tags:

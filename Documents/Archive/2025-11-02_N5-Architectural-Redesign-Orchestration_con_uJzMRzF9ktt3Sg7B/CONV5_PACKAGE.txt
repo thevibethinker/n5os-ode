@@ -1,0 +1,68 @@
+N5 Architectural Redesign - Conversation 5 of 7
+REMAINING PRINCIPLES MIGRATION
+
+Duration: 1.5 hours
+Persona: Builder
+Status: AUTHORIZED
+
+COPY TO START NEW CONVERSATION:
+---
+N5 Conv 5: Migrate remaining 11 principles to YAML.
+
+Context: Conv 1-4 complete. 28 principles already in YAML.
+Remaining: 11 principles (P17, P22, P24-P27, P29, P31-P32, P34-P35)
+
+SOURCE FILES:
+- /home/workspace/Knowledge/architectural/principles/*.md
+- Check for P17, P22 (may not exist - verify first)
+
+TARGET: /home/workspace/N5/prefs/principles/
+
+SCHEMA (use same as existing):
+
+
+PRINCIPLES TO MIGRATE:
+
+Batch 1 - Design/Velocity (5):
+- P24: Simulation Over Doing
+- P25: Code Is Free, Thinking Expensive
+- P26: Fast Feedback Loops
+- P27: Nemawashi Mode (Japanese consensus)
+- P31: Own The Planning Process
+
+Batch 2 - Implementation (4):
+- P29: Mock Data Discipline
+- P32: Simple Over Easy
+- P34: Secrets Management
+- P35: Data Format Selection
+
+Batch 3 - Verify Existence (2):
+- P17: (check if exists)
+- P22: (check if exists)
+
+PROTOCOL:
+1. Check if P17, P22 exist in source
+2. For each principle:
+   - Read source markdown
+   - Extract pattern/examples
+   - Create YAML with full schema
+   - Validate no placeholders
+3. Track progress: X/11 complete
+4. Create completion manifest
+
+TIME BUDGET:
+- Batch 1: 30 min (5 principles)
+- Batch 2: 30 min (4 principles)
+- Batch 3: 15 min (2 verify + any needed)
+- Report: 15 min
+- Total: 1.5 hours
+
+SUCCESS CRITERIA:
+✓ All existing principles migrated
+✓ P17/P22 verified (exist or confirmed absent)
+✓ Consistent YAML schema
+✓ Examples/anti-patterns present
+✓ Completion manifest with final count
+
+Load Builder and execute.
+---

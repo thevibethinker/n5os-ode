@@ -1,17 +1,16 @@
 ---
-name: "Pam Kavalam"
-email_primary: ""
-email_aliases: []
-organization: ""
-role: "Community builder / connector"
-first_contact: "2025-09-04"
-last_updated: "2025-10-14"
-lead_type: "LD-HIR"
-status: "active"
+name: Pam Kavalam
+email_primary: 
+email_aliases: 
+organization: 
+role: Community builder / connector
+first_contact: 2025-09-04
+last_updated: 2025-10-14
+lead_type: LD-HIR
+status: active
 interaction_count: 0
-last_interaction: "2025-09-04"
+last_interaction: 2025-09-04
 ---
-
 # Pam Kavalam
 
 - **Name:** Pam Kavalam

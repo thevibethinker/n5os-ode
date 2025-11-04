@@ -1,5 +1,6 @@
 ---
 description: 'Command: email-post-process'
+tool: true
 tags:
 - email
 - postprocess

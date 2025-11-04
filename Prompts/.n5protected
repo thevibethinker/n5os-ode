@@ -1,0 +1,6 @@
+{
+  "protected": true,
+  "reason": "User prompt library (markdown @-invocable workflows). DO NOT MOVE. This is the canonical location referenced by Zo system and list_prompts tool.",
+  "created": "2025-11-03T05:40:41.310902+00:00",
+  "created_by": "user"
+}

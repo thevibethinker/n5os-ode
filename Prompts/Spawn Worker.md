@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Spawn a parallel worker thread with context handoff.
   
   Creates a lightweight worker assignment file that you open in a new conversation.

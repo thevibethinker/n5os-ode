@@ -1,5 +1,6 @@
 ---
 description: Core cognitive engine for strategic thinking - your externalized cognitive
+tool: true
   architecture
 tags:
 - strategic

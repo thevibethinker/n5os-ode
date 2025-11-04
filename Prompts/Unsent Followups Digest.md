@@ -1,5 +1,6 @@
 ---
 description: Daily digest tracking generated follow-up emails that haven't been sent
+tool: true
   yet. Scans meeting folders for follow-up emails and checks Gmail to identify which
   ones are still pending.
 tags: []

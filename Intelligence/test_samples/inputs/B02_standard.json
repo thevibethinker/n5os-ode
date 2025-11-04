@@ -1,0 +1,17 @@
+{
+  "meeting_id": "SAMPLE_B02_STD_001",
+  "meeting_type": "external_client",
+  "duration_minutes": 30,
+  "participants": [
+    {"name": "Marcus Rodriguez", "role": "VP Sales", "company": "TechFlow Inc"},
+    {"name": "V", "role": "Founder", "company": "Careerspan"}
+  ],
+  "transcript": "Marcus: V, good to connect. I reviewed your proposal and want to move forward with a pilot.\n\nV: Excellent. Let's talk through next steps.\n\nMarcus: I'll need to get final sign-off from our CFO, but I can commit to starting the pilot in January. Can you work with that timeline?\n\nV: January works well. I'll need two things from your side to prepare: First, a list of the 25 sales reps who'll be in the pilot. Second, calendar access for your team so we can schedule kickoff meetings.\n\nMarcus: I can get you the participant list by December 10th. For calendar access, I'll have my ops manager, Lisa Chen, coordinate that. When would you need it by?\n\nV: If we're kicking off January 15th, I'd need calendar access by January 2nd so we can schedule everyone before kickoff.\n\nMarcus: That works. Lisa will handle it. What else do you need from us?\n\nV: We'll need to schedule a manager training session - probably 2 hours - for you and the other sales leaders before the pilot starts. Could we lock in January 8th for that?\n\nMarcus: Let me check... yes, January 8th afternoon works. Send me a calendar invite.\n\nV: Will do. On my side, I'll get contracts over to you by November 20th. Does that give you enough time for legal review before we start?\n\nMarcus: Yes, our legal team typically needs 2-3 weeks. November 20th should work.\n\nV: Perfect. One more thing - we should plan a mid-pilot check-in. How about February 15th to review how things are going?\n\nMarcus: Good idea. Put that on the calendar too.\n\nV: Great. I think we're aligned on everything. I'll summarize this and send it over today.",
+  "meeting_date": "2025-11-15",
+  "context": {
+    "company": "TechFlow Inc",
+    "deal_stage": "closing",
+    "pilot_size": 25,
+    "pilot_start": "2025-01-15"
+  }
+}

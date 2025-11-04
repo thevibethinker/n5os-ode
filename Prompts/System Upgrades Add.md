@@ -1,5 +1,6 @@
 ---
 description: 'Command: system-upgrades-add'
+tool: true
 tags: []
 ---
 # `system-upgrades-add`

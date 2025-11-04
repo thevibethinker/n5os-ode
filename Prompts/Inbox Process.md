@@ -1,5 +1,6 @@
 ---
 description: 'Orchestrates the full Inbox processing workflow: analyze files, route
+tool: true
   high-confidence items, generate review document for human oversight.'
 tags: []
 ---

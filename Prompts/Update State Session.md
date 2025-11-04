@@ -1,5 +1,6 @@
 ---
 description: 'Command: update-state-session'
+tool: true
 tags:
 - state-session
 - tracking

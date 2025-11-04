@@ -1,5 +1,6 @@
 ---
 description: 'Blocks unsafe commits by detecting:'
+tool: true
 tags:
 - git
 - audit

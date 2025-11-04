@@ -1,5 +1,6 @@
 ---
 description: Process a meeting transcript using **semantic analysis by Zo** (not regex
+tool: true
   parsing).
 tags: []
 ---

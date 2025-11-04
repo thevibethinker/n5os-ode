@@ -1,5 +1,6 @@
 ---
 description: 'Command: hygiene-preflight'
+tool: true
 tags:
 - audit
 - hygiene

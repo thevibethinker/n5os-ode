@@ -1,5 +1,6 @@
 ---
 description: 'Command: workspace-root-cleanup'
+tool: true
 tags: []
 ---
 # workspace-root-cleanup

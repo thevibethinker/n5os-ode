@@ -1,8 +1,0 @@
-{
-  "request_id": "meeting_2025-10-30_external-ilya_1762130351",
-  "status": "filesystem_error",
-  "completed_at": "2025-11-03T00:43:19.169388Z",
-  "meeting_id": "2025-10-30_external-ilya",
-  "message": "Encountered Modal filesystem errors during batch processing. Meeting blocks may already exist but could not be verified. Manual review recommended.",
-  "next_action": "Run email post-process for external meetings, verify block completeness"
-}

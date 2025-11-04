@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Create and maintain a dedicated orchestrator thread to coordinate multi-conversation upgrades
   (conversation-end consistency, title generation, session-state enrichment, supervisor workflows).
 tags:

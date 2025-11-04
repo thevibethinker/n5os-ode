@@ -1,5 +1,6 @@
 ---
 description: 'Process reflection queue end-to-end: ingest from Google Drive, classify,
+tool: true
   and generate block content.'
 tags: []
 ---

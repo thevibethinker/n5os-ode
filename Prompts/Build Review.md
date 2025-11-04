@@ -1,5 +1,6 @@
 ---
 description: Architecture compliance and quality review
+tool: true
 tags:
   - architecture
   - quality

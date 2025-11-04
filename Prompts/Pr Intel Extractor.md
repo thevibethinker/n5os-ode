@@ -1,5 +1,6 @@
 ---
 description: 'Command: pr-intel-extractor'
+tool: true
 tags:
 - extraction
 - analysis

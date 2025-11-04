@@ -1,5 +1,6 @@
 ---
 description: 'Command: tally-submissions'
+tool: true
 tags: []
 ---
 # tally-submissions

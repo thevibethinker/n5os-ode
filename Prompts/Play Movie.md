@@ -1,5 +1,6 @@
 ---
 description: Generate a direct playback link for movies using The Movie Database (TMDB)
+tool: true
   ID and the Zo Stream service.
 tags:
 - media

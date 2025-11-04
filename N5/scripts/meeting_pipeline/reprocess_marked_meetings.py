@@ -60,6 +60,32 @@ def convert_transcript_to_md(meeting_dir):
 def create_ai_request(meeting_id, transcript_path):
     """Create AI processing request."""
     AI_REQUESTS.mkdir(parents=True, exist_ok=True)
+    
+    # Check for existing requests (ANY status - deduplication)
+    existing_requests = []
+    for existing_file in AI_REQUESTS.glob(f"meeting_{meeting_id}_*.json"):
+        try:
+            with open(existing_file) as f:
+                existing = json.load(f)
+            existing_requests.append(existing_file)
+        except:
+            pass
+    
+    # Also check processed subdirectory
+    processed_dir = AI_REQUESTS / "processed"
+    if processed_dir.exists():
+        for existing_file in processed_dir.glob(f"meeting_{meeting_id}_*.json"):
+            try:
+                with open(existing_file) as f:
+                    existing = json.load(f)
+                existing_requests.append(existing_file)
+            except:
+                pass
+    
+    if existing_requests:
+        logger.info(f"  ⏭  Skipping - request already exists ({len(existing_requests)} found)")
+        return None
+    
     request_id = f"meeting_{meeting_id}_{int(datetime.now().timestamp())}"
     
     request = {

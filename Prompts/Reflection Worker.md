@@ -1,5 +1,6 @@
 ---
 description: 'Command: reflection-worker'
+tool: true
 tags: []
 ---
 # Reflection Worker (Manual)

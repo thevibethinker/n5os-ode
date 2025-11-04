@@ -1,5 +1,6 @@
 ---
 description: 'Command: reflection-auto-ingest'
+tool: true
 tags: []
 ---
 # Reflection Auto-Ingest

@@ -1,5 +1,6 @@
 ---
 description: |
+tool: true
   Formal conversation end-step - resolve all conversation effects.
   Reviews files, proposes organization, executes cleanup, generates AAR, archives build tracker.
 tags:

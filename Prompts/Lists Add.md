@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-add'
+tool: true
 tags: []
 ---
 # `lists-add`

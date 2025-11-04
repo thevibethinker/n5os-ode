@@ -1,5 +1,6 @@
 ---
 description: 'Command: docgen'
+tool: true
 tags:
 - docgen
 - automation

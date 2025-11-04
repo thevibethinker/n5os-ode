@@ -1,5 +1,6 @@
 ---
 description: Search the N5 command registry (`Recipes/recipes.jsonl (index only)`) by keyword,
+tool: true
   category, or description. Helps discover available commands without manually reading
   the registry.
 tags: []

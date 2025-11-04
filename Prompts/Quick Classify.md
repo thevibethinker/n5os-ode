@@ -1,5 +1,6 @@
 ---
 description: Tag and file documents quickly
+tool: true
 tags:
   - organization
   - classification

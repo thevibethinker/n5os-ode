@@ -1,5 +1,6 @@
 ---
 description: 'Command: knowledge-ingest'
+tool: true
 tags: []
 ---
 # `knowledge-ingest`

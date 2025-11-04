@@ -1,0 +1,130 @@
+---
+id: P36
+name: Separate Orchestration Over Code Editing
+category: safety
+priority: critical
+personas: [builder, operator]
+trigger: "before asking Zo to edit existing production code"
+created: 2025-11-02
+version: 1.0
+evidence_base: "Ben Guo Velocity Talk + V conversation (Oct 31, 2025) + CodeScene research + arXiv papers on LLM code editing"
+
+directive: |
+  When extending or modifying existing production code with LLM assistance:
+  DO create separate orchestration points (new scripts/watchers/consumers)
+  DON'T ask LLM to edit existing complex code inline
+  
+  Pattern: Producer → File Marker → Consumer
+  Example: meeting_processor_v3.py (producer) → .processing marker → profile_enricher_watcher.py (consumer)
+
+rationale: |
+  LLMs fundamentally cannot make line-based code edits effectively. Research shows:
+  - 63% failure rate for AI refactoring (CodeScene study)
+  - 37% success for code editing vs 63% for new generation (arXiv 2312.12450)
+  - Common failures: dropped branches, inverted logic, broken scope
+  - Bugs are subtle and hard to spot in review
+  
+  LLMs have two editing modes, both problematic:
+  1. Rewrite everything → high risk of breaking working code
+  2. Specify exact lines → defeats purpose of AI assistance
+
+why_separate_orchestration_works: |
+  - Independent failure modes (one breaks ≠ cascade)
+  - Clear state management via file markers
+  - Easier to test in isolation
+  - Matches LLM strength (new code) vs weakness (editing)
+  - Deterministic coordination (files don't hallucinate)
+
+implementation:
+  producer_consumer_pattern:
+    - Producer: Existing working code (don't touch)
+    - Marker: File-based state (.processing, .complete, .error)
+    - Consumer: New LLM-generated code that reads outputs
+    
+  when_separate_orchestration:
+    - Existing code is >50 lines and working
+    - Production-critical workflows
+    - Complex state management
+    - Multiple integration points
+    
+  when_inline_editing_acceptable:
+    - New feature (no existing code to break)
+    - Simple scripts (<20 lines)
+    - Non-critical utilities
+    - One-off data transformations
+
+examples:
+  good_separate:
+    scenario: "Adding profile enrichment to meeting processor"
+    wrong: "Edit meeting_processor_v3.py to add profile lookup"
+    right: "Create profile_enricher_watcher.py that watches for .processing markers"
+    
+  good_inline:
+    scenario: "New utility script for parsing names"
+    approach: "Ask Zo to generate new name_parser.py (nothing exists to break)"
+
+anti_patterns:
+  edit_working_code:
+    violation: "Asked Zo to refactor meeting_processor_v3.py to add feature X"
+    risk: "63% chance of breaking existing functionality"
+    instead: "Create meeting_postprocessor.py that consumes meeting outputs"
+    
+  rewrite_from_scratch:
+    violation: "Zo rewrote entire 300-line script to add one feature"
+    risk: "Lost tribal knowledge, introduced subtle bugs, broke edge cases"
+    instead: "Keep working code, add new orchestration layer"
+    
+  no_isolation:
+    violation: "New feature directly modifies shared state in existing code"
+    risk: "Tight coupling, cascade failures, hard to test"
+    instead: "File markers provide clear handoff boundaries"
+
+quality_check:
+  before_merge:
+    - Can new code fail without breaking existing code?
+    - Is state coordination explicit (files, not implicit)?
+    - Can I test new code in isolation?
+    - Did I preserve working code untouched?
+
+related_principles:
+  - P5 (Anti-Overwrite) - Don't modify working code
+  - P11 (Failure Modes) - Independent failure domains
+  - P15 (Complete Before Claiming) - Test thoroughly before merge
+  - P19 (Error Handling) - Handle both producer and consumer errors
+
+references:
+  - "Ben Guo Velocity Coding talk (Oct 2025)"
+  - "V × Ben conversation transcript (Oct 31, 2025)"
+  - "CodeScene: Refactoring vs Refuctoring whitepaper"
+  - "arXiv 2312.12450: Can It Edit? Evaluating LLMs for Code Editing"
+  - "File: Knowledge/architectural/principles/safety.md"
+
+teaching_notes: |
+  **Why this principle exists:**
+  
+  Imagine you have a perfectly working meeting processor. It's 200 lines, handles edge cases, 
+  has been battle-tested in production. Now you want to add profile enrichment.
+  
+  **Intuitive but WRONG approach:**
+  "Zo, add profile lookup to meeting_processor_v3.py"
+  
+  Result: Zo rewrites the file. Looks good in review. Deploys. Then:
+  - Edge case handling disappears
+  - Boolean logic gets inverted  
+  - Scope breaks (JavaScript  issues common)
+  - 63% chance something breaks
+  
+  **Correct approach:**
+  "Zo, create profile_enricher_watcher.py that:
+   1. Watches for .processing markers
+   2. Reads meeting output
+   3. Enriches with profile data
+   4. Writes .enriched marker"
+  
+  Result: meeting_processor_v3.py stays untouched (still works). New code is isolated.
+  If enrichment fails → meetings still process. Independent failure modes.
+  
+  **The deeper lesson:** This isn't about "AI is bad at editing." It's about designing 
+  systems where AI strengths (new code generation) meet our constraints (production reliability).
+  
+  Separate orchestration is how we get BOTH velocity (AI speed) AND stability (working code stays working).

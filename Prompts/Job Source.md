@@ -1,5 +1,6 @@
 ---
 description: 'Command: job-source'
+tool: true
 tags: []
 ---
 # Job Source Extraction Command

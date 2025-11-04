@@ -76,18 +76,18 @@ Companion [NN] - Title v0.0.ext
 
 ### Single File Import
 ```bash
-python N5/scripts/n5_import_prompt.py "Personal/Prompts/Function [01] - Title v1.0.txt"
+python N5/scripts/n5_import_prompt.py "Prompts/Function [01] - Title v1.0.txt"
 ```
 
 ### Batch Import (Directory)
 ```bash
-python N5/scripts/n5_import_prompt.py --batch "Personal/Prompts/"
+python N5/scripts/n5_import_prompt.py --batch "Prompts/"
 ```
 
 ### Via N5 Command
 ```
-N5: import-prompt Personal/Prompts/Function [01] - Title v1.0.txt
-N5: import-prompt --batch Personal/Prompts/
+N5: import-prompt Prompts/Function [01] - Title v1.0.txt
+N5: import-prompt --batch Prompts/
 ```
 
 ---
@@ -96,7 +96,7 @@ N5: import-prompt --batch Personal/Prompts/
 
 ### Input File
 ```
-Personal/Prompts/Function [01] - Deep Research Due Diligence v0.3.txt
+Prompts/Function [01] - Deep Research Due Diligence v0.3.txt
 ```
 
 ### Output
@@ -146,7 +146,7 @@ N5: deep-research-due-diligence
 ### Step 1: Collect Prompts
 Place all Function/Companion files in a single directory:
 ```
-Personal/Prompts/
+Prompts/
 ├── Function [01] - Prompt A v1.0.txt
 ├── Function [02] - Prompt B v1.2.pdf
 ├── Function [03] - Prompt C v0.5.txt
@@ -156,7 +156,7 @@ Personal/Prompts/
 
 ### Step 2: Run Batch Import
 ```bash
-python N5/scripts/n5_import_prompt.py --batch "Personal/Prompts/"
+python N5/scripts/n5_import_prompt.py --batch "Prompts/"
 ```
 
 ### Step 3: Review Output
@@ -261,7 +261,7 @@ Companion [01] - Master Voice v1.3.txt
 3. **Batch Import**: Import multiple prompts at once for efficiency
 4. **Test After Import**: Verify commands work via Incantum
 5. **Document**: Add usage notes to command files after import
-6. **Archive Originals**: Keep original files in Personal/Prompts/ as backup
+6. **Archive Originals**: Keep original files in Prompts/ as backup
 
 ---
 

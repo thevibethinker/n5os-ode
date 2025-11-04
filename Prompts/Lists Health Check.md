@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-health-check'
+tool: true
 tags:
 - lists
 - monitoring

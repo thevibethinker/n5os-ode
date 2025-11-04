@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-find'
+tool: true
 tags: []
 ---
 # `lists-find`

@@ -1,5 +1,6 @@
 ---
 description: Test recipe to verify subdirectory organization works with Zo's slash invocation
+tool: true
 tags:
   - test
   - system

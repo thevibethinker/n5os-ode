@@ -1,5 +1,6 @@
 ---
 description: 'Command: knowledge-find'
+tool: true
 tags: []
 ---
 # `knowledge-find`

@@ -1,5 +1,6 @@
 ---
 description: 'Command: deep-research-due-diligence'
+tool: true
 tags:
 - utility
 ---

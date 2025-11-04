@@ -1,5 +1,6 @@
 ---
 description: "Process meeting transcripts automatically using Zo's LLM capabilities instead of external API calls."
+tool: true
 tags:
 ---
 # Meeting Auto-Processor Command

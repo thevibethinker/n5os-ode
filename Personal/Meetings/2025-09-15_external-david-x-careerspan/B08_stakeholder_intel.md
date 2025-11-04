@@ -1,3 +1,0 @@
-# Stakeholder Intel
-
-[Intelligence]

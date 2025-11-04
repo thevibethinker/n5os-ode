@@ -1,3 +1,0 @@
-# Stakeholder Intelligence
-
-[Stakeholder info]

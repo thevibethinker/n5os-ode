@@ -1,5 +1,6 @@
 ---
 description: 'Command: lists-pin'
+tool: true
 tags: []
 ---
 # `lists-pin`

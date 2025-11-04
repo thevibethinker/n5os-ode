@@ -1,5 +1,6 @@
 ---
 description: 'Command: thread-export'
+tool: true
 tags:
 - aar
 - threads

@@ -1,5 +1,6 @@
 ---
 description: Transform strategic sessions and transcripts into structured outputs
+tool: true
 tags:
 - strategic
 - synthesis

@@ -1,5 +1,6 @@
 ---
 description: 'Command: digest-runs'
+tool: true
 tags: []
 ---
 # `digest-runs`

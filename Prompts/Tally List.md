@@ -1,5 +1,6 @@
 ---
 description: 'Command: tally-list'
+tool: true
 tags: []
 ---
 # tally-list

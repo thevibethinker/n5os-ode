@@ -1,5 +1,6 @@
 ---
 description: 'Command: meeting-detect'
+tool: true
 tags: []
 ---
 # Meeting Detection Command

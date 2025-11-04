@@ -1,5 +1,6 @@
 ---
 description: 'Command: review-cli'
+tool: true
 tags: []
 ---
 # Review CLI (n5 review)

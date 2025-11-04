@@ -1,3 +1,0 @@
-# Key Messaging
-
-[Talking points]

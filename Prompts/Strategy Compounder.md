@@ -1,5 +1,6 @@
 ---
 description: Track strategic evolution across sessions - quantitative scoring and
+tool: true
   diff analysis
 tags:
 - strategic

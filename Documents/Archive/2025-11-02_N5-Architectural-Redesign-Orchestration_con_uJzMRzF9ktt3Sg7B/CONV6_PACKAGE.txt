@@ -1,0 +1,64 @@
+N5 Architectural Redesign - Conversation 6 of 7
+DOCUMENTATION & KNOWLEDGE BASE INTEGRATION
+
+Duration: 2 hours
+Persona: Writer
+Status: AUTHORIZED
+
+COPY TO START NEW CONVERSATION:
+---
+N5 Conv 6: Document the new architectural system and integrate into Knowledge base.
+
+Context: Conv 1-5 complete. 37 principles in YAML. 3 cognitive prompts active. 8 personas integrated.
+
+DELIVERABLES:
+
+1. ARCHITECTURAL_OVERVIEW.md (Knowledge/architectural/)
+   - New system structure
+   - Cognitive bootstrap explanation
+   - Principle YAML format
+   - How runtime-active system works
+   - Usage guide for V
+
+2. PRINCIPLE_USAGE_GUIDE.md (Knowledge/architectural/)
+   - How to use principles in work
+   - When to load vs embed
+   - How personas reference principles
+   - P36 vs P37 decision guidance
+   - Examples of good usage
+
+3. MIGRATION_HISTORY.md (N5/projects/architectural-redesign/)
+   - What changed from old system
+   - Why changes were made
+   - Before/after comparison
+   - Ben Guo velocity principles integration
+   - Evidence base
+
+4. Update README files:
+   - N5/prefs/README.md
+   - N5/prefs/principles/README.md
+   - Knowledge/architectural/README.md
+
+PROTOCOL:
+1. Review existing structure
+2. Write documentation (clear, actionable)
+3. Add to Knowledge base
+4. Cross-link appropriately
+5. Track X/4 deliverables
+
+TIME BUDGET:
+- Architectural overview: 45 min
+- Usage guide: 45 min
+- Migration history: 20 min
+- README updates: 10 min
+- Total: 2 hours
+
+SUCCESS CRITERIA:
+✓ All 4 docs created
+✓ Clear, actionable guidance
+✓ Proper Knowledge base placement
+✓ Cross-references valid
+✓ V can understand system from docs alone
+
+Load Writer and execute.
+---

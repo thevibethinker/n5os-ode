@@ -1,5 +1,6 @@
 ---
 description: 'Command: meeting-approve'
+tool: true
 tags: []
 ---
 # `meeting-approve`

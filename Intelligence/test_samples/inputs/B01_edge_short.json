@@ -1,0 +1,17 @@
+{
+  "meeting_id": "SAMPLE_B01_EDGE_SHORT_001",
+  "meeting_type": "external_client",
+  "duration_minutes": 8,
+  "participants": [
+    {"name": "Mike Sullivan", "role": "CTO", "company": "StartupCo"},
+    {"name": "V", "role": "Founder", "company": "Careerspan"}
+  ],
+  "transcript": "Mike: Hey V, quick call. I reviewed your proposal and we want to move forward. Can you send over the contract?\n\nV: Absolutely. When are you thinking of starting?\n\nMike: January 1st ideally. We have 15 engineers.\n\nV: Perfect. I'll get the contract over today. You mentioned 15 engineers - are any of them contractors or all FTE?\n\nMike: All FTE. Some are remote but all full-time.\n\nV: Got it. I'll include everyone in the contract. Anything else you need from me right now?\n\nMike: No, just the contract. Thanks!\n\nV: On its way. Talk soon.",
+  "meeting_date": "2025-12-01",
+  "context": {
+    "meeting_type": "quick_closing_call",
+    "company": "StartupCo",
+    "team_size": 15,
+    "all_fte": true
+  }
+}

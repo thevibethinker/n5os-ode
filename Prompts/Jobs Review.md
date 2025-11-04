@@ -1,5 +1,6 @@
 ---
 description: 'Command: jobs-review'
+tool: true
 tags:
 - jobs
 - careers

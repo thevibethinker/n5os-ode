@@ -1,5 +1,6 @@
 ---
 description: 'Command: convert-prompt'
+tool: true
 tags:
 - prompts
 - conversion

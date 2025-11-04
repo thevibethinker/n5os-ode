@@ -1,0 +1,50 @@
+N5 Architectural Redesign - Conversation 2 of 7
+
+MISSION: Expand 3 cognitive prompt stubs into full frameworks
+
+FILES TO EXPAND:
+1. /home/workspace/N5/prefs/operations/planning_prompt.md (3.7k → 8-9k)
+2. /home/workspace/N5/prefs/strategic/thinking_prompt.md (7.1k → 8-9k)
+3. /home/workspace/N5/prefs/system/navigator_prompt.md (2.4k → <7k MAX)
+
+SOURCE MATERIALS:
+- file '/home/.z/workspaces/con_uJzMRzF9ktt3Sg7B/ben_velocity_principles.md'
+- file '/home/.z/workspaces/con_uJzMRzF9ktt3Sg7B/synthesis_ben_plus_research.md'
+
+SECTIONS NEEDED:
+
+planning_prompt.md:
+- Think→Plan→Execute (70/20/10)
+- Design Values
+- Squishy↔Deterministic
+- Trap Doors
+- P36/P37 Matrix
+- Ben's Velocity
+- Quality Bars
+
+thinking_prompt.md:
+- Mental Models
+- Strategic Decision
+- Analysis Patterns
+- Problem-Solving
+- Quality Checks
+- Cognitive Biases
+- When-to-use
+
+navigator_prompt.md (<7k HARD LIMIT):
+- N5 structure
+- Key locations
+- Persona switching
+- Workflows
+- Boundaries
+
+PROTOCOL:
+1. Initialize SESSION_STATE.md
+2. Declare artifacts
+3. Use edit_file_llm
+4. Test isolation
+5. Report completion
+
+TIME: 2.5 hours
+
+Load Builder and execute.

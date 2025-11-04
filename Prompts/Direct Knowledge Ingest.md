@@ -1,5 +1,6 @@
 ---
 description: 'Processes large document content directly through LLM conversation to
+tool: true
   extract structured knowledge into reservoirs:'
 tags: []
 ---

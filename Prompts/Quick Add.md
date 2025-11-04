@@ -1,5 +1,6 @@
 ---
 description: 'Command: quick-add'
+tool: true
 tags:
 - lists
 - text-processing

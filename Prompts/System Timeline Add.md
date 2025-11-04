@@ -1,5 +1,6 @@
 ---
 description: 'Command: system-timeline-add'
+tool: true
 tags: []
 ---
 # `system-timeline-add`

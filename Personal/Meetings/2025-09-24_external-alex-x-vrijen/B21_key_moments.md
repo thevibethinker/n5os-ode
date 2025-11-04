@@ -1,3 +1,0 @@
-# Key Moments
-
-[Notable points]

@@ -1,5 +1,6 @@
 ---
 description: Scan Google Drive for NEW meeting transcripts, download them, classify
+tool: true
   stakeholders, and create processing requests with proper deduplication.
 tags: []
 ---

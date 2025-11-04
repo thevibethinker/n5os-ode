@@ -1,5 +1,6 @@
 ---
 description: "Command: auto-process-meetings"
+tool: true
 tags:
 ---
 # Auto-Process Meetings Command

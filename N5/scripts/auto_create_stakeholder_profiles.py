@@ -30,6 +30,7 @@ from stakeholder_manager import (
 )
 
 WORKSPACE = Path("/home/workspace")
+DB_PATH = WORKSPACE / "N5/data/profiles.db"
 
 
 def scan_calendar_for_new_stakeholders(

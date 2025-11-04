@@ -1,5 +1,6 @@
 ---
 description: 'Command: reflection-pipeline'
+tool: true
 tags: []
 ---
 # Reflection Pipeline

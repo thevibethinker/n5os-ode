@@ -1,3 +1,0 @@
-# Metadata
-
-[Meeting context]
