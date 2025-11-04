@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Meet_dyy-anma-byk-transcript-2025-10-26T20-26-09.134Z_1762220714",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.098245+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Meet_dyy-anma-byk-transcript-2025-10-26T20-26-09.134Z.transcript.md",
+    "meeting_id": "Meet_dyy-anma-byk-transcript-2025-10-26T20-26-09.134Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

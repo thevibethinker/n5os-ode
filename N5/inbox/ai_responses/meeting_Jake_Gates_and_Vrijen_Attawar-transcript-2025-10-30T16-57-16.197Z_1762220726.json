@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Jake_Gates_and_Vrijen_Attawar-transcript-2025-10-30T16-57-16.197Z_1762220726",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.095409+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Jake_Gates_and_Vrijen_Attawar-transcript-2025-10-30T16-57-16.197Z.transcript.md",
+    "meeting_id": "Jake_Gates_and_Vrijen_Attawar-transcript-2025-10-30T16-57-16.197Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

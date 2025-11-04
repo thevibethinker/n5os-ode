@@ -1,0 +1,25 @@
+
+**STEP 1: Extract Metadata & Clean Files**
+
+Load file 'Meeting Metadata Extractor.md' and process the transcript at:
+/home/workspace/Personal/Meetings/Inbox/Plaud_Note_11-03_Casual_Conversation_AI_Workflow_Automation.transcript.md
+
+Meeting ID: Plaud_Note_11-03_Casual_Conversation_AI_Workflow_Automation
+
+This will:
+- Extract semantic metadata (participants, orgs, date, type)
+- Generate clean, human-readable filename
+- Convert to markdown with frontmatter
+- Rename folder to match clean name
+- Delete original file
+
+**STEP 2: Generate Intelligence Blocks**
+
+After Step 1 completes, load file 'Meeting Process.md' and process the cleaned transcript.
+
+Meeting Type: external
+Output directory: /home/workspace/Personal/Meetings/Plaud_Note_11-03_Casual_Conversation_AI_Workflow_Automation
+
+Generate all required blocks according to the prompt specification.
+
+This is an automated request from the meeting pipeline.

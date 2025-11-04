@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho_Usage_1762220780",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.102192+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho_Usage.transcript.md",
+    "meeting_id": "Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho_Usage",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

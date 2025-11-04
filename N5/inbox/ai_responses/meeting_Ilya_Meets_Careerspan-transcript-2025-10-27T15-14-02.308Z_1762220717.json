@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Ilya_Meets_Careerspan-transcript-2025-10-27T15-14-02.308Z_1762220717",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.094630+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Ilya_Meets_Careerspan-transcript-2025-10-27T15-14-02.308Z.transcript.md",
+    "meeting_id": "Ilya_Meets_Careerspan-transcript-2025-10-27T15-14-02.308Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

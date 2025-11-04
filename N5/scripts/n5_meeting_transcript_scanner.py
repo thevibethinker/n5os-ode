@@ -18,6 +18,9 @@ from datetime import datetime
 from pathlib import Path
 from collections import defaultdict
 
+# Marker prefix for processed transcripts in Google Drive
+PROCESSED_MARKER = '[ZO-V2]'
+
 # Configuration
 INTERNAL_DOMAINS = {'mycareerspan.com', 'theapply.ai'}
 INTERNAL_KEYWORDS = [
@@ -87,8 +90,8 @@ def generate_meeting_id(date_str, classification, external_name, timestamp=None)
 
 def parse_transcript_filename(filename: str) -> dict:
     """Extract meeting info from Fireflies transcript filename."""
-    # Remove [ZO-PROCESSED] prefix if present
-    clean_name = filename.replace('[ZO-PROCESSED] ', '')
+    # Remove processed marker prefix if present
+    clean_name = filename.replace(f'{PROCESSED_MARKER} ', '')
     
     # Pattern: "Name x Name-transcript-2025-09-23T21-04-28.138Z.docx"
     match = re.search(r'(.+?)-transcript-(\d{4}-\d{2}-\d{2})', clean_name)
@@ -108,7 +111,7 @@ def parse_transcript_filename(filename: str) -> dict:
             "participants": participants,
             "date": date_str,
             "original_filename": filename,
-            "is_processed": filename.startswith('[ZO-PROCESSED]')
+            "is_processed": filename.startswith(PROCESSED_MARKER)
         }
     
     # Fallback for non-standard names (e.g., GRANOLA VERSION files)
@@ -117,7 +120,7 @@ def parse_transcript_filename(filename: str) -> dict:
         "participants": "unknown",
         "date": datetime.now().strftime("%Y-%m-%d"),
         "original_filename": filename,
-        "is_processed": filename.startswith('[ZO-PROCESSED]')
+        "is_processed": filename.startswith(PROCESSED_MARKER)
     }
 
 
@@ -191,7 +194,7 @@ def filter_unprocessed(files_list: list) -> list:
         
         # Skip if already processed
         # ALL files in Fireflies/Transcripts folder are transcripts—no additional filtering needed
-        if filename.startswith('[ZO-PROCESSED]'):
+        if filename.startswith(PROCESSED_MARKER):
             continue
         
         # Parse and add metadata

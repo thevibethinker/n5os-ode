@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Year_Up_United_x_Careerspan-transcript-2025-10-22T16-05-49.087Z_1762220706",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Year_Up_United_x_Careerspan-transcript-2025-10-22T16-05-49.087Z.transcript.md",
+    "meeting_id": "Year_Up_United_x_Careerspan-transcript-2025-10-22T16-05-49.087Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Year_Up_United_x_Careerspan-transcript-2025-10-22T16-05-49.087Z"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T01:45:06.203613+00:00"
+}

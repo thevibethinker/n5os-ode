@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Daily_co-founder_standup_check_trello-transcript-2025-10-31T13-33-29.723Z_1762220755",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.084555+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Daily_co-founder_standup_check_trello-transcript-2025-10-31T13-33-29.723Z.transcript.md",
+    "meeting_id": "Daily_co-founder_standup_check_trello-transcript-2025-10-31T13-33-29.723Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

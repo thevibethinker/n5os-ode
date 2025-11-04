@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Meet_kob-icsy-peo-transcript-2025-10-27T05-39-02.185Z_1762220735",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.099126+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Meet_kob-icsy-peo-transcript-2025-10-27T05-39-02.185Z.transcript.md",
+    "meeting_id": "Meet_kob-icsy-peo-transcript-2025-10-27T05-39-02.185Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

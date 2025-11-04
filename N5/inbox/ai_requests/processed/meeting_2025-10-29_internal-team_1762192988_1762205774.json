@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_2025-10-29_internal-team_1762192988",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/2025-10-29_internal-team.transcript.md",
+    "meeting_id": "2025-10-29_internal-team",
+    "meeting_type": "internal",
+    "original_dir": "/home/workspace/Personal/Meetings/\ud83d\udc492025-10-29_internal-team",
+    "reason": "User marked with \ud83d\udc49"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/\ud83d\udc492025-10-29_internal-team"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-03T18:03:08.200851+00:00"
+}

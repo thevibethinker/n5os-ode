@@ -14,7 +14,7 @@ tags: []
 ## What This Command Does
 
 1. **Scans Google Drive** Fireflies/Transcripts folder (ID: `1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV`)
-2. **Filters unprocessed** - Skips files starting with `[ZO-PROCESSED]`
+2. **Filters unprocessed** - Skips files starting with `[OBSOLETE-PREFIX]`
 3. **Downloads new transcripts** to `N5/inbox/transcripts/`
 4. **Creates request files** in `N5/inbox/meeting_requests/`
 5. **Ready for processing** - Files queued for `command 'meeting-process'`
@@ -27,7 +27,7 @@ tags: []
 
 ```
 UNPROCESSED: "Daily team stand-up-transcript-2025-10-03.docx"
-PROCESSED:   "[ZO-PROCESSED] Daily team stand-up-transcript-2025-10-03.docx"
+PROCESSED:   "[OBSOLETE-PREFIX] Daily team stand-up-transcript-2025-10-03.docx"
 ```
 
 **Benefits:**
@@ -55,7 +55,7 @@ trashed: false
 ```python
 unprocessed = [
     f for f in files 
-    if not f['name'].startswith('[ZO-PROCESSED]')
+    if not f['name'].startswith('[OBSOLETE-PREFIX]')
 ]
 ```
 
@@ -111,7 +111,7 @@ d. **Create request file**
 
 **After `command 'meeting-process'` succeeds:**
 
-1. Rename file in Google Drive: add `[ZO-PROCESSED]` prefix
+1. Rename file in Google Drive: add `[OBSOLETE-PREFIX]` prefix
 2. Move request to `N5/inbox/meeting_requests/completed/`
 3. Meeting intelligence saved to `N5/records/meetings/{meeting_id}/`
 

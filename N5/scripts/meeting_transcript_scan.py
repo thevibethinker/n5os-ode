@@ -5,6 +5,9 @@ from datetime import datetime
 from pathlib import Path
 import asyncio
 
+# Marker prefix for processed transcripts in Google Drive
+PROCESSED_MARKER = '[ZO-V2]'
+
 # --- Configuration ---
 GOOGLE_DRIVE_TRANSCRIPT_FOLDER_ID = "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV"
 INBOX_PATH = Path("/home/workspace/N5/inbox/meeting_requests")
@@ -239,7 +242,7 @@ async def main():
             skipped_duplicates_count += 1
             continue
 
-        if filename.startswith("[ZO-PROCESSED]"):
+        if filename.startswith(PROCESSED_MARKER):
             print(f"Skipping {filename} as it's marked as processed in Google Drive.")
             skipped_duplicates_count += 1
             continue

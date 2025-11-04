@@ -1,0 +1,12 @@
+{
+  "request_id": "meeting_Monthly_Vrijen_Alexis_Mishu-transcript-2025-10-24T14-34-35.642Z_1762220718",
+  "status": "pending_execution",
+  "queued_at": "2025-11-04T01:48:11.099920+00:00",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Monthly_Vrijen_Alexis_Mishu-transcript-2025-10-24T14-34-35.642Z.transcript.md",
+    "meeting_id": "Monthly_Vrijen_Alexis_Mishu-transcript-2025-10-24T14-34-35.642Z",
+    "meeting_type": "external"
+  },
+  "message": "Request queued - awaiting AI execution"
+}

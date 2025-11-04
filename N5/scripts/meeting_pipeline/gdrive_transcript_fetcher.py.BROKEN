@@ -29,7 +29,7 @@ def ensure_dirs():
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
 
 def list_unprocessed_transcripts():
-    """List transcripts without [IMPORTED-TO-ZO] prefix from Google Drive"""
+    """List ALL transcripts from Google Drive (ignoring any processing prefixes)"""
     try:
         result = subprocess.run([
             "python3", "-c",
@@ -55,8 +55,7 @@ print(json.dumps(result))
             name = f.get('name', '')
             mimetype = f.get('mimeType', '')
             
-            if name.startswith('[IMPORTED-TO-ZO]'):
-                continue
+            # REMOVED: prefix filter - process all files regardless of prefix
             if mimetype not in SUPPORTED_MIMETYPES:
                 continue
             

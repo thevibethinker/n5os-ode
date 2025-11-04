@@ -9,6 +9,9 @@ which has access to use_app_google_drive tool.
 import json
 import logging
 from pathlib import Path
+
+# Marker prefix for processed transcripts in Google Drive
+PROCESSED_MARKER = '[ZO-V2]'
 from datetime import datetime
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
@@ -49,7 +52,7 @@ def get_processed_meetings_needing_marking():
                 continue
                 
             # Check if already marked
-            if original_filename.startswith("[ZO-PROCESSED]"):
+            if original_filename.startswith(PROCESSED_MARKER):
                 continue
                 
             # Check if processing is complete (has blocks_count > 0)
@@ -79,7 +82,7 @@ def main():
             logger.info("✓ No meetings need marking on Google Drive (based on local metadata)")
             return 0
         
-        logger.info(f"Found {len(meetings)} meetings that MAY need [ZO-PROCESSED] marking:")
+        logger.info(f"Found {len(meetings)} meetings that MAY need {PROCESSED_MARKER} marking:")
         logger.info("NOTE: Agent must verify actual Drive filename before renaming")
         for m in meetings:
             logger.info(f"  - {m['meeting_id']} (gdrive_id: {m['gdrive_id']})")
