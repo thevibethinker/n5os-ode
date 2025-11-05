@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z_1762261473",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z.transcript.md",
+    "meeting_id": "Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Carly x Careerspan-transcript-2025-09-23T21-04-28.138Z"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:04:33.148556+00:00"
+}

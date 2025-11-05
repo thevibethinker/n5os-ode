@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B41 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b41
+---
+
 # B41 - TEAM_COORDINATION Generation Prompt
 
 You are generating a TEAM_COORDINATION intelligence block (internal meetings).

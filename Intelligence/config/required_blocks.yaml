@@ -1,0 +1,98 @@
+---
+# Required Blocks Configuration
+# Defines which blocks must be generated for each meeting type
+# Updated: 2025-11-04
+---
+
+# REQUIRED BLOCKS (Always generate for ALL meetings)
+required_all:
+  - block_id: B26
+    name: System Metadata
+    filename: B26_metadata.md
+    description: Meeting classification, folder naming, CRM tags
+    
+  - block_id: B28
+    name: Strategic Intelligence
+    filename: B28_strategic_intelligence.md
+    description: Decision architecture, power dynamics, insights
+    
+  - block_id: B01
+    name: Detailed Recap
+    filename: B01_detailed_recap.md
+    description: Comprehensive meeting summary
+    
+  - block_id: B02
+    name: Commitments
+    filename: B02_commitments.md
+    description: Action items with context
+
+# CONDITIONAL BLOCKS (Generate based on meeting type/content)
+conditional_external:
+  - block_id: B08
+    name: Stakeholder Intelligence
+    filename: B08_stakeholder_intelligence.md
+    trigger: meeting_type == "external"
+    description: Deep stakeholder analysis
+    
+  - block_id: B21
+    name: Key Moments
+    filename: B21_key_moments.md
+    trigger: duration > 30min OR high_value_meeting
+    description: Critical conversation points
+    
+  - block_id: B25
+    name: Deliverables
+    filename: B25_deliverables.md
+    trigger: mentions("deliverable|document|deck") > 2
+    description: Content/documents to create
+    
+  - block_id: B07
+    name: Warm Intro
+    filename: B07_warm_intro.md
+    trigger: mentions("intro|connect|referral") > 2
+    description: Bi-directional introduction intelligence
+    
+  - block_id: B13
+    name: Plan of Action
+    filename: B13_plan_of_action.md
+    trigger: mentions("plan|roadmap|timeline|milestone") > 2
+    description: Multi-step plans with dependencies
+
+conditional_internal:
+  - block_id: B40
+    name: Internal Decisions
+    filename: B40_internal_decisions.md
+    trigger: meeting_type == "internal"
+    description: Strategic decisions made
+    
+  - block_id: B41
+    name: Team Updates
+    filename: B41_team_updates.md
+    trigger: meeting_type == "internal" AND mentions("update|progress|status")
+    description: Status updates from team
+    
+  - block_id: B42
+    name: Blockers
+    filename: B42_blockers.md
+    trigger: meeting_type == "internal" AND mentions("block|stuck|issue|problem")
+    description: Issues preventing progress
+
+# PROCESSING RULES
+processing:
+  generation_order:
+    - B26  # Generate first - provides metadata for other blocks
+    - B28  # Generate second - provides strategic context
+    - B01  # Core content
+    - B02  # Core content
+    - B08  # Conditional (external)
+    - B21  # Conditional (if criteria met)
+    - B25  # Conditional (if criteria met)
+  
+  skip_if_exists:
+    check_files: [B26_metadata.md, B28_strategic_intelligence.md, B01_detailed_recap.md, B02_commitments.md]
+    action: Skip processing if all 4 exist
+  
+  naming:
+    use_blocks: [B26, B28]
+    script: /home/workspace/N5/scripts/meeting_pipeline/name_normalizer.py
+    format: "YYYY-MM-DD_stakeholder_type"

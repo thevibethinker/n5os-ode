@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B07 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b07
+---
+
 # B07 - WARM_INTRO_BIDIRECTIONAL Generation Prompt
 
 You are generating a WARM_INTRO_BIDIRECTIONAL intelligence block from a meeting transcript.

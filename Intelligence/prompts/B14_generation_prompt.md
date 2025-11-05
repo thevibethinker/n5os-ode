@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B14 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b14
+---
+
 # B14 - BLURBS_REQUESTED Generation Prompt
 
 You are generating a BLURBS_REQUESTED intelligence block.

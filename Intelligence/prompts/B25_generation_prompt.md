@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B25 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b25
+---
+
 # B25 - DELIVERABLE_CONTENT_MAP Generation Prompt
 
 You are generating a DELIVERABLE_CONTENT_MAP intelligence block with a FOLLOW-UP EMAIL draft.

@@ -21,6 +21,6 @@
   "status": "error",
   "priority": 1,
   "created_at": "2025-11-03T22:03:02.611571+00:00",
-  "error": "Meeting directory not found: /home/workspace/Personal/Meetings/2025-10-27_external-lisa-noble/",
-  "completed_at": "2025-11-03T23:19:47.606889+00:00"
+  "error": "Transcript file not found (tried with/without [IMPORTED-TO-ZO] prefix)",
+  "error_timestamp": "2025-11-04T02:52:19.557575Z"
 }

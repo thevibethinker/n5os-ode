@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B44 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b44
+---
+
 # B44 - GTM_SALES_INTEL Generation Prompt
 
 You are generating a GTM_SALES_INTEL intelligence block (internal meetings).

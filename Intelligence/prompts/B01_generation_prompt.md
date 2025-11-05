@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B01 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b01
+---
+
 # B01 - DETAILED_RECAP Generation Prompt
 
 You are generating a DETAILED_RECAP intelligence block from a meeting transcript.

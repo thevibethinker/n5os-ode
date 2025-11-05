@@ -1,1 +1,2 @@
 {"date": "2025-11-03", "emails_sent": 6, "rpi_score": 1.25, "categories": {"prospect_outreach": 5, "client_communication": 0, "partner_communication": 0, "internal": 0, "other": 1}, "timestamp": "2025-11-03T14:02:39.765549"}
+{"date": "2025-11-04", "emails_sent": 1, "rpi_score": 47.5, "categories": {"prospect_outreach": 0, "client_communication": 0, "partner_communication": 1, "internal": 0, "other": 0}, "breakdown": {"outreach_score": 2.5, "response_score": 0, "relationship_score": 20.0, "consistency_score": 25}}

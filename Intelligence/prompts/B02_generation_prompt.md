@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B02 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b02
+---
+
 # B02 - COMMITMENTS_CONTEXTUAL Generation Prompt
 
 You are generating a COMMITMENTS_CONTEXTUAL intelligence block from a meeting transcript.

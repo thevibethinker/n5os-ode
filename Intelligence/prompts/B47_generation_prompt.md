@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B47 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b47
+---
+
 # B47 - OPEN_DEBATES Generation Prompt
 
 You are generating an OPEN_DEBATES intelligence block (internal meetings).

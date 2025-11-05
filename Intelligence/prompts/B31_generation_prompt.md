@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B31 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b31
+---
+
 # B31 - STAKEHOLDER_RESEARCH Generation Prompt
 
 You are generating a STAKEHOLDER_RESEARCH block from a meeting transcript.

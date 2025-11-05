@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Daily team stand-up-transcript-2025-09-08T14-38-23.044Z_1762262139",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Daily team stand-up-transcript-2025-09-08T14-38-23.044Z.transcript.md",
+    "meeting_id": "Daily team stand-up-transcript-2025-09-08T14-38-23.044Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Daily team stand-up-transcript-2025-09-08T14-38-23.044Z"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T13:15:39.642088+00:00"
+}

@@ -106,12 +106,13 @@ def main():
     RESPONSES.mkdir(parents=True, exist_ok=True)
     PROCESSED.mkdir(parents=True, exist_ok=True)
     
-    reqs = sorted(REQUESTS.glob("*.json"))
+    # LIFO: Process newest requests first (sorted by mtime descending)
+    reqs = sorted(REQUESTS.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
     if not reqs:
         logger.info("No pending requests")
         return 0
     
-    logger.info(f"Found {len(reqs)} request(s)")
+    logger.info(f"Found {len(reqs)} request(s) - processing newest first (LIFO)")
     
     processed_count = 0
     for r in reqs:

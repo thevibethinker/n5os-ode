@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_FOHE x Careerspan-transcript-2025-09-02T18-32-16.515Z_1762262186",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/FOHE x Careerspan-transcript-2025-09-02T18-32-16.515Z.transcript.md",
+    "meeting_id": "FOHE x Careerspan-transcript-2025-09-02T18-32-16.515Z",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/FOHE x Careerspan-transcript-2025-09-02T18-32-16.515Z",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/FOHE x Careerspan-transcript-2025-09-02T18-32-16.515Z"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:26.823165+00:00"
+}

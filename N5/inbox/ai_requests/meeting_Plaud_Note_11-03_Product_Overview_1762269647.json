@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Plaud_Note_11-03_Product_Overview_1762269647",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Plaud_Note_11-03_Product_Overview.transcript.md",
+    "meeting_id": "Plaud_Note_11-03_Product_Overview",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Plaud_Note_11-03_Product_Overview"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T15:20:47.993729+00:00"
+}

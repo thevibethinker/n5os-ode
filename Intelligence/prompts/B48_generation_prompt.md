@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B48 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b48
+---
+
 # B48 - STRATEGIC_MEMO Generation Prompt
 
 You are generating a STRATEGIC_MEMO intelligence block (internal meetings).

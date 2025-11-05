@@ -1,0 +1,57 @@
+taxonomy_version: 2.0
+created: 2025-11-04
+last_edited: 2025-11-04
+
+external:
+  coaching:
+    description: "1-1 coaching or advisory sessions (Wisdom Partners, etc.)"
+    keywords: [wisdom partners, coaching, advisor, advisory]
+    
+  partnership:
+    description: "Business partnerships, affiliate discussions, integrations"
+    keywords: [partnership, affiliate, integration, collaboration]
+    
+  sales:
+    description: "Sales calls, demos, customer meetings, discovery"
+    keywords: [sales, demo, prospect, customer, discovery, qualification]
+    
+  workshop:
+    description: "External group learning sessions, webinars, training"
+    keywords: [workshop, training, webinar, seminar, group session]
+    
+  discovery:
+    description: "Initial qualification calls, intro meetings"
+    keywords: [intro, discovery, qualification, initial, screening]
+    
+  ai-consulting:
+    description: "AI advising and consulting work for clients"
+    keywords: [ai consulting, ai advisory, ai strategy, llm consulting, automation consulting]
+    
+  career-advising:
+    description: "Career guidance for job seekers, friends, mentees"
+    keywords: [career advice, job search, career guidance, resume review, job seeker]
+    
+  general:
+    description: "Other external meetings not fitting above categories"
+    keywords: []
+
+internal:
+  standup:
+    description: "Team syncs, daily standups, check-ins"
+    keywords: [standup, daily, sync, check-in, team sync]
+    
+  technical:
+    description: "Internal debugging, implementation work, technical sessions"
+    keywords: [debugging, implementation, technical, build, coding, development]
+    
+  planning:
+    description: "Strategy sessions, war rooms, planning meetings"
+    keywords: [strategy, planning, war room, roadmap, strategic]
+    
+  cofounder:
+    description: "1-1s with cofounders, leadership sync"
+    keywords: [cofounder, co-founder, 1-1, one-on-one, leadership]
+    
+  general:
+    description: "Other internal meetings not fitting above categories"
+    keywords: []

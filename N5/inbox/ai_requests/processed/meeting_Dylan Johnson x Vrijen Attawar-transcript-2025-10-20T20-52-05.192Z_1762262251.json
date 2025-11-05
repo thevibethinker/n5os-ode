@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Dylan Johnson x Vrijen Attawar-transcript-2025-10-20T20-52-05.192Z_1762262251",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Dylan Johnson x Vrijen Attawar-transcript-2025-10-20T20-52-05.192Z.transcript.md",
+    "meeting_id": "Dylan Johnson x Vrijen Attawar-transcript-2025-10-20T20-52-05.192Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Dylan Johnson x Vrijen Attawar-transcript-2025-10-20T20-52-05.192Z"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T13:17:31.258534+00:00"
+}

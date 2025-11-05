@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Ilse Midday Chat[GRANOLA VERSION]-transcript_1762261240",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Ilse Midday Chat[GRANOLA VERSION]-transcript.transcript.md",
+    "meeting_id": "Ilse Midday Chat[GRANOLA VERSION]-transcript",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Ilse Midday Chat[GRANOLA VERSION]-transcript",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Ilse Midday Chat[GRANOLA VERSION]-transcript"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:00:40.135377+00:00"
+}

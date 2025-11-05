@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B60 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b60
+---
+
 # B60 - LEARNING_SYNTHESIS Generation Prompt
 
 You are generating a LEARNING_SYNTHESIS intelligence block.

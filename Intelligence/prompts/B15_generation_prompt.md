@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B15 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b15
+---
+
 # B15 - STAKEHOLDER_MAP Generation Prompt
 
 You are generating a STAKEHOLDER_MAP intelligence block.

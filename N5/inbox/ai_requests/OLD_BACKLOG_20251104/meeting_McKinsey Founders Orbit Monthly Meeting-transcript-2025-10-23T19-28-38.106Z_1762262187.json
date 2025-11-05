@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_McKinsey Founders Orbit Monthly Meeting-transcript-2025-10-23T19-28-38.106Z_1762262187",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/McKinsey Founders Orbit Monthly Meeting-transcript-2025-10-23T19-28-38.106Z.transcript.md",
+    "meeting_id": "McKinsey Founders Orbit Monthly Meeting-transcript-2025-10-23T19-28-38.106Z",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/McKinsey Founders Orbit Monthly Meeting-transcript-2025-10-23T19-28-38.106Z",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/McKinsey Founders Orbit Monthly Meeting-transcript-2025-10-23T19-28-38.106Z"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:27.032458+00:00"
+}

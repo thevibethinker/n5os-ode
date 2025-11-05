@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho_1762229428",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho.transcript.md",
+    "meeting_id": "Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Plaud_Note_10-31_Reasoning_Note_Analysis_of_Zoho"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T04:10:28.223194+00:00"
+}

@@ -10,6 +10,9 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
+# Import meeting standardization
+from standardize_meeting import standardize_meeting
+
 WORKSPACE_ROOT = Path("/home/workspace")
 RESPONSE_QUEUE = WORKSPACE_ROOT / "N5/inbox/ai_responses"
 REQUEST_QUEUE = WORKSPACE_ROOT / "N5/inbox/ai_requests"
@@ -101,7 +104,7 @@ def mark_transcript_processed(meeting_id):
 
 
 def finalize_meeting(meeting_id, response_data):
-    """Finalize meeting by updating status and renaming folder."""
+    """Finalize meeting by updating status and standardizing folder."""
     conn = sqlite3.connect(PIPELINE_DB)
     
     # Update database
@@ -112,8 +115,13 @@ def finalize_meeting(meeting_id, response_data):
     conn.commit()
     conn.close()
     
-    # Rename folder with 👍
-    rename_to_complete(meeting_id)
+    # Standardize folder (add frontmatter + rename)
+    try:
+        standardize_success = standardize_meeting(meeting_id)
+        if not standardize_success:
+            logger.warning(f"  ⚠ Could not standardize folder: {meeting_id}")
+    except Exception as e:
+        logger.warning(f"  ⚠ Standardization error for {meeting_id}: {e}")
     
     logger.info(f"  ✓ Meeting finalized: {meeting_id}")
     return True

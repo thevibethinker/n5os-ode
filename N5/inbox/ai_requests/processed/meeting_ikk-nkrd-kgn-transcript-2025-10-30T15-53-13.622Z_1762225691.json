@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_ikk-nkrd-kgn-transcript-2025-10-30T15-53-13.622Z_1762225691",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/ikk-nkrd-kgn-transcript-2025-10-30T15-53-13.622Z.transcript.md",
+    "meeting_id": "ikk-nkrd-kgn-transcript-2025-10-30T15-53-13.622Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/ikk-nkrd-kgn-transcript-2025-10-30T15-53-13.622Z"
+  },
+  "status": "error",
+  "priority": 5,
+  "created_at": "2025-11-04T03:08:11.478569+00:00",
+  "error": "Transcript file is corrupted (appears to be a damaged Word document instead of markdown). Original transcript path: /home/workspace/Personal/Meetings/Inbox/ikk-nkrd-kgn-transcript-2025-10-30T15-53-13.622Z.transcript.md",
+  "completed_at": "2025-11-04T12:13:48.417615+00:00"
+}

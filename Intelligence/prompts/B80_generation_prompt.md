@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B80 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b80
+---
+
 # B80 - LINKEDIN_POST Generation Prompt
 
 You are generating a LINKEDIN_POST intelligence block.

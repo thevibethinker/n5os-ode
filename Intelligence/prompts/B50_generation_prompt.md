@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B50 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b50
+---
+
 # B50 - PERSONAL_REFLECTION Generation Prompt
 
 You are generating a PERSONAL_REFLECTION intelligence block.
