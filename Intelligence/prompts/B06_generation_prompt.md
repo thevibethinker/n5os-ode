@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B06 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b06
+---
+
 # B06 - PILOT_INTELLIGENCE Generation Prompt
 
 You are generating a PILOT_INTELLIGENCE intelligence block for pilot/POC discussions.

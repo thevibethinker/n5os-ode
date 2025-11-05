@@ -91,6 +91,14 @@ class ConversationOrchestrator:
             match = re.search(r'WORKER_(\d+)', brief_file.name)
             worker_num = int(match.group(1)) if match else len(briefs) + 1
             
+            # Extract description from first line
+            description = "Worker Task"
+            lines = content.split('\n')
+            if lines and lines[0].startswith('#'):
+                title = lines[0].lstrip('#').strip()
+                if ':' in title:
+                    description = title.split(':', 1)[1].strip()
+            
             # Parse dependencies
             deps = []
             for line in content.split('\n'):
@@ -100,8 +108,10 @@ class ConversationOrchestrator:
                         deps = [d.strip() for d in dep_text.split(',')]
             
             briefs.append({
-                "worker_num": worker_num,
+                "number": worker_num,
+                "description": description,
                 "brief_file": str(brief_file),
+                "brief_content": content,
                 "dependencies": deps,
                 "status": "pending",
                 "worker_id": None,

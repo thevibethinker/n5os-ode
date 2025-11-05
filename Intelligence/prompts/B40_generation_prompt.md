@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B40 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b40
+---
+
 # B40 - INTERNAL_DECISIONS Generation Prompt
 
 You are generating an INTERNAL_DECISIONS block from an internal team meeting transcript.

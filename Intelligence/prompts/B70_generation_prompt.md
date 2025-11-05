@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B70 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b70
+---
+
 # B70 - THOUGHT_LEADERSHIP Generation Prompt
 
 You are generating a THOUGHT_LEADERSHIP intelligence block.

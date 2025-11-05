@@ -1,0 +1,1038 @@
+**\
+00:00**\
+Vrijen Attawar\
+Okay. They\'re cool with that, those suggestions. This meeting is being
+recorded. Sick. Okay, so do you want to share your screen and show me
+what you\'re seeing?
+
+**\
+00:12**\
+Eric Espinel\
+Yeah.
+
+**\
+00:15**\
+Vrijen Attawar\
+Okay.
+
+**\
+00:19**\
+Eric Espinel\
+I\'m going to move it over on this side.
+
+**\
+00:31**\
+Vrijen Attawar\
+Can you see it? Yeah. Nice. Okay, so don\'t sign in yet. Use the. Hold
+on. Click. Click my promo. Okay, so click that link that I\'d sent you
+previously. Or hold on, I\'ll send you the link directly. Here I have
+the trial code. What am I doing? One second, hold. I\'ll chat it to you.
+Chat. Boom. Okay, send it in chat. So if you click the link that I gave
+you in chat, it will. It will apply the. The promo code. This is in
+Zoom, by the way.
+
+**\
+01:20**\
+Eric Espinel\
+Oh, okay.
+
+**\
+01:31**\
+Vrijen Attawar\
+Nice. Okay, so you got 50% off. Try for free. Nice. So you can choose
+your handle. This is what your computer is going to be, by the way.
+
+**\
+01:55**\
+Eric Espinel\
+Nice.
+
+**\
+01:59**\
+Vrijen Attawar\
+Hell, yeah. Sharks freak me out. Dudzo computer. You surf a bunch too,
+right?
+
+**\
+02:07**\
+Eric Espinel\
+Yeah, that\'s why it\'s always my handle.
+
+**\
+02:13**\
+Vrijen Attawar\
+I love it. I love it. Nice. Okay, so you can, like, sort of fill this
+up. Take your time. I\'ll like, organize myself on my end. So don\'t
+feel any pressure to, like, have to run through that. But, boom, this is
+your Zo. So you can.
+
+**\
+02:36**\
+Eric Espinel\
+Can I come back to that screen? I think it just popped up before. Like,
+I\'m sure I can edit it.
+
+**\
+02:40**\
+Vrijen Attawar\
+Oh, yeah, you can come back to that. Yeah.
+
+**\
+02:42**\
+Eric Espinel\
+Cool.
+
+**\
+02:43**\
+Vrijen Attawar\
+Although that\'s a good note, too. I am actually going to. Are you
+comfortable with me sharing this with the Zoe team? I think they would
+love to sort of just watch this. Watch someone sort of like, try out
+their product.
+
+**\
+02:56**\
+Eric Espinel\
+Yeah.
+
+**\
+03:00**\
+Vrijen Attawar\
+And feel free to withdraw that, by the way, at any time as well.
+Depending on what we actually take a look at. I can just relay them,
+like, the thoughts. But that was an interesting thing. It like moved. It
+jumped you forward before. Before letting you finish. That\'s probably
+something they should address. So the working relationship I have with
+the Zo team is that I essentially am like. They\'re like, oh, shit. This
+guy\'s like, really building some cool stuff on our platform. So the
+promo code you get is like one of the best promo codes they give out.
+And they\'re like, basically support. They\'re like, giving me a bunch
+of free compute so that I can bring other people on board.
+
+**\
+03:36**\
+Eric Espinel\
+Cool, man.
+
+**\
+03:37**\
+Vrijen Attawar\
+Yeah. So it\'s a nice deal. Yeah. Feel free to pick one and then we can.
+Okay, then you. So this we can do in a second as well, because it\'ll
+Take a bit of setup. But these are all the baseline integrations. So you
+can text Zoe, you can email Zoe. You can connect to all of these
+different connectors. These are their established connectors. You can
+connect to more things than just this. I\'ll explain more of that about
+that down the road, but for now you can just stick with this. Okay.
+Maybe. Maybe start by like connecting your Gmail. Actually, let me get
+some water. Why don\'t you connect your like Gmail and the Google ones
+because that\'ll be helpful.
+
+**\
+04:20**\
+Eric Espinel\
+Okay.
+
+**\
+04:23**\
+Vrijen Attawar\
+There it is. Sweet. Stuff\'s being connected. So you\'ve tried like
+productivity stuff in the past, right?
+
+**\
+05:08**\
+Eric Espinel\
+I have, yeah. Yeah.
+
+**\
+05:10**\
+Vrijen Attawar\
+What have been some of the things that have and haven\'t worked.
+
+**\
+05:14**\
+Eric Espinel\
+I mean, everything, to be honest. Like nothing for me. I don\'t feel.
+Dude.
+
+**\
+05:24**\
+Vrijen Attawar\
+So you don\'t feel served by any of these products, right?
+
+**\
+05:28**\
+Eric Espinel\
+I don\'t know. I think I kind of want to. Maybe we should. I also want
+to like, I guess like I. I need to. I feel like I need to be like quite
+transparent as well. I\'m building something similar and so. But it more
+focused on NDs specifically. Like.
+
+**\
+05:49**\
+Vrijen Attawar\
+Nice. And so what are you building it on?
+
+**\
+05:53**\
+Eric Espinel\
+Dude, We. We. So with my co founder, she\'s. She\'s more on the
+technical side. So I just have drafted up what it looks like and what
+we\'re tackling is. The first thing that we\'re tackling is not. It\'s
+like the whole idea of it is very similar to what you\'re sharing with
+me.
+
+**\
+06:10**\
+Vrijen Attawar\
+The.
+
+**\
+06:10**\
+Eric Espinel\
+But the way that we\'re tackling it first is through context loss and
+context switching and how there\'s a cost with that associated with
+that. And so what we\'re looking to do is to build something. The first
+thing that we\'re building is something that is essentially very.
+
+**\
+06:29**\
+Vrijen Attawar\
+It\'s.
+
+**\
+06:29**\
+Eric Espinel\
+It\'s like what you\'re doing, but not at the same time. Essentially
+what it is like imagine kind of going through an onboarding process. You
+can you go through your connections. The AI would be able to keep
+context and like if you\'re on a team, you\'re getting pings and emails
+and meetings and the whole idea is to shorten that time from
+interruption, getting your ready and sitting at your computer and then
+you. The first action or the first clarity to action. We\'re trying to
+shorten those time gaps through something that would be able to keep
+context but then also use behavioral science to prompt you in a way that
+would get you back on track.
+
+**\
+07:08**\
+Vrijen Attawar\
+Nice. It\'s.
+
+**\
+07:09**\
+Eric Espinel\
+It\'s specifically for ADHD people.
+
+**\
+07:14**\
+Vrijen Attawar\
+Dude, I, I love that because that was essentially. So mine is not at all
+intended to be ND focused for the record and just to reassure you as
+well, it\'s really. This is more so me. The way I almost see it, like
+Zoe is not for the average person. It\'s not even for the average, like
+a tech enthusiast. It\'s a fairly sort of hardcore thing to set up. Once
+you have it, I\'m confident it\'ll get easier and I think once it\'s set
+up it\'ll be a lot more accessible. That\'s sort of their very
+democratized vision for the Internet and for products which I fucking
+support. So you know, it\'s also why I\'m so motivated by it. But all of
+which is to say that I, yeah, I totally support you building that and B,
+feel free to like leverage any design patterns and stuff.
+
+**\
+08:04**\
+Vrijen Attawar\
+I\'m happy to discuss stuff with you. I\'m happy to like that.
+
+**\
+08:07**\
+Eric Espinel\
+Yeah, I just.
+
+**\
+08:08**\
+Vrijen Attawar\
+Yeah, yeah, I\'m happy to like do that in a way that\'s respectful of
+your IP as well. But you know, I, yeah, you know you won\'t see me sort
+of chasing that direction, but I would so want to support someone that
+is chasing that direction because I think that is like very much the
+thing that I\'ve built out is meant to do. Like I can see the kind of
+overlap, it\'s like kind of in the same region. I\'m approaching it from
+the perspective of how do I handle large level memory. Essentially what
+I want to build out is like a self healing, self learning repo of who
+you are. Right. That ingests stuff in your meetings and then knows
+enough about you to break it down, know what to pull and build like a
+self building memory of like who you are. Right, yeah.
+
+**\
+08:57**\
+Vrijen Attawar\
+And you can do that, you can emulate that with Zo, which is cool. But in
+the meantime I\'m sort of partially to help career span and sort of
+build up relationships with VCs and stuff. What I\'m most likely going
+to be focusing on initially is just like a startup productivity. Sort of
+like this, does this to your meetings, does this to your notes, like
+stuff like that.
+
+**\
+09:20**\
+Eric Espinel\
+Oh cool man. Yeah, yeah, I wanted to make sure that you weren\'t feeling
+like you were going to like over share with me.
+
+**\
+09:26**\
+Vrijen Attawar\
+Oh no, I, I appreciate that man. I totally trust. I, I do appreciate the
+warning though and I likewise. Yeah, feel free to skip this for now. You
+shouldn\'t need it. I\'ll be giving you the tour. Okay, so this is O.
+Right, this is the main layout. So if you click to the left, I\'ll just
+show you the lay of the land. If you click that sidebar on the left, you
+can like basically if you click the folder button, that\'s going to be
+your folder bar will pop out. Right. So you can see right now that you
+have a completely empty workspace, which I know is a little
+intimidating. But like this is. So if you compare that to essentially
+this is. Whoops. Allow only one percenter can. Oh. Oh wow. They have
+some crazy ass share settings. Oh wow. Okay.
+
+**\
+10:26**\
+Vrijen Attawar\
+I\'ve never done this before. Can you see? Are you seeing me overlaid on
+top of the fucking thing?
+
+**\
+10:31**\
+Eric Espinel\
+I don\'t see it. Are you sharing your screen? You\'re saying?
+
+**\
+10:36**\
+Vrijen Attawar\
+Yeah, I was trying Share desktop 3. Yeah. Content that\'s over
+complicated. Okay. Sharing this. Are you seeing the screen that I\'m
+sharing?
+
+**\
+10:53**\
+Eric Espinel\
+Do I have to do something on mine?
+
+**\
+10:55**\
+Vrijen Attawar\
+Let\'s see. No.
+
+**\
+10:59**\
+Eric Espinel\
+Can you double screen share on Zoom? That\'s pretty cool.
+
+**\
+11:02**\
+Vrijen Attawar\
+I thought, I thought you could. You\'re still sharing too, right? Yeah,
+yeah. So multiple parts. So can you see my screen?
+
+**\
+11:12**\
+Eric Espinel\
+Where is it showing it? Oh no, it\'s.
+
+**\
+11:18**\
+Vrijen Attawar\
+It\'s weird.
+
+**\
+11:19**\
+Eric Espinel\
+I\'m looking at the. Okay, you\'re sharing yours right now. Yeah,
+interesting. No, I just see. So I just shared mine again.
+
+**\
+11:34**\
+Vrijen Attawar\
+Am I able to see yours? What if I do this? Yeah, I\'m able to see mine.
+
+**\
+11:42**\
+Eric Espinel\
+Where is it?
+
+**\
+11:42**\
+Vrijen Attawar\
+Interesting.
+
+**\
+11:43**\
+Eric Espinel\
+Oh, I see it. It was up top. There you go.
+
+**\
+11:45**\
+Vrijen Attawar\
+Oh yeah, here it is. Yeah. Eric Espinal Screen. My screen. Okay, so
+yeah, so if you look at my screen like this is all the crap that I\'ve
+built out, right? So you basically can like populate your own stuff. So
+you see here I have all of these like this is just like maybe one tenth
+of the commands that I have. But you essentially have like you can build
+out your own system. You know what I mean? It like works how you want it
+to work. Like when you tell it to, you know, like load up this meeting
+and summarize it. It\'ll do that in your way, you know, if you tell it.
+Hey, I want. So the build requirement is really high. Do you see what I
+mean?
+
+**\
+12:26**\
+Vrijen Attawar\
+So what I did is I essentially built a base layer that I can flash onto
+your thing, onto your version of Zo and essentially give you the
+commands and stuff that I have.
+
+**\
+12:43**\
+Eric Espinel\
+Interesting.
+
+**\
+12:45**\
+Vrijen Attawar\
+You see what I mean? Essentially I can bootstrap your System up to a
+certain level of sophistication because I\'ve already done it for
+myself.
+
+**\
+12:54**\
+Eric Espinel\
+That\'s cool. Okay.
+
+**\
+12:56**\
+Vrijen Attawar\
+Yeah. So that\'s essentially what I\'d be proposing to do. I have not
+really done it ever. So we\'re gonna have to. Might take a second to
+figure out. But I\'ve done it. I\'ve done it to myself. I haven\'t done
+it with someone else.
+
+**\
+13:10**\
+Eric Espinel\
+Let\'s do it. Let\'s figure it out.
+
+**\
+13:14**\
+Vrijen Attawar\
+All right. Let\'s fucking do this. Okay, so. And I\'ll sort of run.
+I\'ll show you how I use it. Like, you know me, I don\'t know any
+fucking code. Right. So you\'ll see.
+
+**\
+13:25**\
+Eric Espinel\
+You\'re not technical at all, huh?
+
+**\
+13:27**\
+Vrijen Attawar\
+Zero technical. I don\'t look at any code.
+
+**\
+13:30**\
+Eric Espinel\
+Okay, that\'s cool to see. Yeah, I\'m excited to see this. This is cool.
+
+**\
+13:34**\
+Vrijen Attawar\
+Yeah. So this is why I was so pumped. It\'s like it gives non technical
+people like us or actually I don\'t know if I should assume you\'re non
+technical. I just don\'t remember.
+
+**\
+13:42**\
+Eric Espinel\
+I\'m not technical.
+
+**\
+13:43**\
+Vrijen Attawar\
+Yeah. Like it gives blokes like us like a huge edge. Right. So for
+example, let\'s see. So. Hey, I want to boot up. Actually I\'m just
+gonna. Sorry, I\'m gonna be that douchebag and dictate. I want to boot
+up another instance of Zo on someone else\'s device. I\'m gonna do so
+virtually. I\'m on a video call with them so we can communicate and we
+can see each other\'s screens. I don\'t know if I can take over his
+screen, but we can explore that option if needed. I want you to help me
+figure out how to use GitHub and use the established bootstrap protocols
+that we have to get Zoho, the base layer of N5Os shipped to Eric. And I
+want to be able to select the modules that we ship over once we have
+that sort of modularized breakdown of the system.
+
+**\
+14:33**\
+Vrijen Attawar\
+So yeah, let\'s do it. Oh, so to an extent, like it\'s going to do some
+stuff that you should not necessarily expect to work just on your device
+like in its current state. Because like a lot of the stuff I\'ve sent
+right now, I\'ve. It has a lot of context for like when I say bootstrap,
+like mechanism, like what I mean, right? Like you see here, it\'s. It\'s
+hitting up these like preference files and making sure that it
+approaches things. So it\'s basically just your instruction kicks off a
+Series of agents that just do all of the things, whether they\'re on
+your local device still being the in the cloud device, the Zoe, or on
+the Internet. You see what I mean? Yeah, yeah. So. So I also have mine
+set up to always ask me questions. So you\'ll.
+
+**\
+15:28**\
+Vrijen Attawar\
+Your one will never just do things. It will always, like, ask for
+clarification. It\'ll always, like, make sure to have you do a little
+bit of thinking. So do you have any of the bootstraps? I should check
+out the stuff related to the ZO Demonstrator account. VA demonstrator.
+ZO computer. I need you to figure out the repo structure. I believe the
+Demonstrator product has the implementation guide base layer. Let\'s
+summarize. There should be an N5OS core that should have been defined
+earlier. So look that up and selective interface. I mean that the
+components are currently monolithic and we don\'t need to break them
+apart necessarily. There are workflows that comprise of scripts and
+command docs that reference or explain how those workflows work.
+
+**\
+16:41**\
+Vrijen Attawar\
+I want to essentially export the basic components of the system, like
+the prefs architecture list system meeting, ingestion system, et cetera,
+stuff like that. Eric\'s running another Zoho in a Unix environment like
+yourself. No constraints exist. We essentially want to build something
+that Eric can call from GitHub and download it onto his system. And
+yeah, I want you to build this in real time as Eric and I talk. So
+partially the problem with like Vibe coding is that, it is. What do you
+call it? Because you\'re not actually looking at the fucking code. Like,
+it takes a really long time to develop the intuition for what\'s
+actually going on. And I got kind of lucky because I not only was being
+like, kind of obviously having a tech company, you, like, pick up a lot
+about tech just ancillarily.
+
+**\
+17:45**\
+Vrijen Attawar\
+But then also, you know, I seemingly have like a good feel for code. And
+so that\'s how I sort of encourage folks to like, try to learn. This is
+to like, actually just feel it out or vibe it out or try different
+things, you know. But here, while this is like up and running, just to
+show you how it works, you essentially have these conversations with
+Zoe. It doesn\'t generate these titles, you have to generate them
+yourself. I just maintain a titling scheme for myself to make
+organization a little bit easier. You can have these agents, which are
+essentially these scheduled tasks that it like runs. It will like pull
+emails, it\'ll like aggregate go to market intelligence. It will like
+generate LinkedIn posts for me.
+
+**\
+18:31**\
+Vrijen Attawar\
+You know, it\'ll do all sorts of cool stuff and I\'ll just have that
+like stuff ready to go. So I\'m essentially collapsing like all of the
+things I do in a day to just like leaving Zoe recordings or like sending
+Zoe the information, asking it to work on it, and then taking it and
+dumping it back. You know.
+
+**\
+18:51**\
+Eric Espinel\
+How much of it, how much of it do you feel like you need to like, how
+much of it do you need to review yourself and be like, okay, did it do
+it accurately? And then do I have to adjust it from there? Or is it
+pretty, has it been pretty good?
+
+**\
+19:05**\
+Vrijen Attawar\
+Well, I\'ll show you and you can tell me. So you\'re probably roughly
+familiar with the quality of a follow up email through chat GPT, right?
+Would you say?
+
+**\
+19:15**\
+Eric Espinel\
+Yeah, yeah, for sure.
+
+**\
+19:17**\
+Vrijen Attawar\
+Yeah. Okay. Let\'s see how yours compares to this. After it was set up,
+this was a zero touch experience. One second and five records. One of
+the big problems with ZO is that it\'s like file. The way it stores
+files is like fucking schizophrenic. Like it will just like dump files
+or like create folders and it\'s like managing how to stay on top of
+like file bloat is like a little bit of a challenge, not so much that it
+necessarily affects functionality. And I have a bunch of custom
+solutions that I\'ve implemented into. Essentially, like if I do my job
+correctly, you won\'t see most of those problems. You\'ll only really
+see the upside is sort of the goal. But just to show you like, you know,
+for example, what it\'s capable of.
+
+**\
+20:08**\
+Vrijen Attawar\
+So I have a pipeline set up where every meeting of mine, it will take it
+will pull it from a specific folder in drive. So I can have multiple
+different recorders. Like I use a physical plod, I use this, I use that.
+As long as it ends up in one drive folder, PLOD will pull it, clean it,
+transcribe, will then generate custom analyses based on who that person
+is. So if I talk to a team member, that meeting will be analyzed
+differently than if I was talking to you because. Than if I was talking
+to a vc.
+
+**\
+20:41**\
+Eric Espinel\
+Oh yeah.
+
+**\
+20:43**\
+Vrijen Attawar\
+So it will like intelligently decide that. And then as an example, this
+was a meeting with like a, a partner. It will generate a. I haven\'t
+seen this startup email, but it will generate a pretty decent startup
+email. So how does this compare?
+
+**\
+21:02**\
+Eric Espinel\
+Nice. So you gave it like you fed like what type, like instructions for
+the tone and wording and all that?
+
+**\
+21:13**\
+Vrijen Attawar\
+Yep. Yep. I have it down to it. Knowing what my voice and style is and
+applying that and knowing what language I use and what kind of phrases I
+like and don\'t like, and it\'s able to apply that. Nice. Cool. Yeah.
+And it gives you the entire analysis of like, how I came up with it and
+like what parameters I used. And you can like tune the parameters and it
+will like adjust the email. So if you tell it like, no, I actually want
+the formality to be low on the warm score to be a 10. And I want there
+to be like, no call to action rigor because this is a friend and you
+don\'t call to action your friends. It will just adjust it.
+
+**\
+21:50**\
+Eric Espinel\
+Oh, cool, man.
+
+**\
+21:52**\
+Vrijen Attawar\
+That\'s. Yeah, yeah. So it\'s, it\'s a fucking. Once you set it up, it
+is wild. So like, another problem that I have is like, what warm
+introductions, right? Like, oh, Eric, I\'m going to introduce you to so
+and so forgets. Right? Or like, the email is hard to do. So this one I
+have almost set up, but this one is like essentially going to. Not only
+does it extract all the warm info information based on that part of the
+conversation, I\'m eventually going to get this to just generate that
+intro email itself. So I just copy paste done.
+
+**\
+22:27**\
+Eric Espinel\
+So you wouldn\'t. Because, like, the way that I\'m currently doing it in
+my GPT is just like, here\'s the detail. Like, I have to go and like,
+I\'ll send them. Like, I\'ll be like, here\'s a LinkedIn profile of the
+person I\'m connecting with. Here\'s like, what I know about them.
+Here\'s like the last thread that we talked about.
+
+**\
+22:45**\
+Vrijen Attawar\
+Like, yep, I don\'t need to do any of that. Yeah, I don\'t need to do
+any of that. I just need to copy paste.
+
+**\
+22:51**\
+Eric Espinel\
+That\'s cool.
+
+**\
+22:52**\
+Vrijen Attawar\
+It sounds like a lie. Like, it sounds like every other software product
+that\'s like, oh, it\'s just gonna work. And this has been working for
+like weeks for me and it just works fine, man, that must save. So it\'s
+a really cool product. It\'s a really cool product. It\'s really worth
+building on. Even you could frankly, I don\'t know how far into dev you
+are, but you could frankly even build your demonstrator product on Zoe
+that it seems like.
+
+**\
+23:19**\
+Eric Espinel\
+It could be an option. Wait, what are you going to do with yours? Is
+this plugging into Career Span or is this something new for you?
+
+**\
+23:26**\
+Vrijen Attawar\
+So with Zoe we have like, there are ways that Zoe can help us beyond.
+There are ways that Zoe can help us beyond like direct. So I\'m just
+sort of doing them a solid. But I am hoping like it will connect to
+career span one day. I mean, for frankly with Careerspan, I think we\'re
+trying to just like drive folks towards it and potentially navigate some
+form of a sell. It would be tough, but I think that is the initial
+thinking, but the. Yeah, yeah, it\'s a, it\'s a little bit of a tough
+thing. We decided we\'re not going to raise VC money. So we\'re like,
+okay, we need to like raise cash fast. And so we\'re like letting go of
+some more of the team and we\'re essentially going into like low power
+mode.
+
+**\
+24:21**\
+Vrijen Attawar\
+So that\'s also where like some of this consulting stuff, like setting
+these up for folks will actually make a big difference my cash flow
+situation, I\'ll tell you that.
+
+**\
+24:31**\
+Eric Espinel\
+Yeah. Okay, so what you\'re going to be doing, what you\'re wanting to
+do is like essentially you\'re testing out like a process with me about
+like getting this set up for other people and then you\'re going to
+start kind of doing consulting in that way of doing this for other
+people.
+
+**\
+24:49**\
+Vrijen Attawar\
+Yeah, except I\'m gonna do it for like VCS and stuff and charge like a
+grand and just do that to like get some dollars through the door and
+also just to like make some good connections, you know, like a setup
+process. You know, you just sit chat with people, chat about stuff. I
+think it\'s like a good, it could be a good sort of like supplement
+network building sort of thing. But yeah, it\'s a, it\'s a really cool
+setup and like once you\'re good to go, it\'s really fun to perfect.
+
+**\
+25:22**\
+Eric Espinel\
+Once you, once you deposit in your, all your materials into mine. Could
+I, could I then if I were to create my own custom kind of like workflows
+and things that I want it to do, could I prompt the system and be like,
+hey, I like one of the things that I, I\'m wondering if what you have
+does. This is like my, like I was telling you, like for me what I\'m
+focusing on, the product I want to build is like the ramp up, like
+shortening that ramp up down between like when you stop a project and
+start again. That\'s what something I struggle with so much, especially
+with adhd is like that\'s such a high cost because I\'ll be like fuck.
+Where am I at again now? And I just had a meeting and new ideas were
+generated from that meeting.
+
+**\
+26:09**\
+Eric Espinel\
+But then they\'re also like inspiration for what I\'m building right
+now. And, and so like, I feel like I just, I\'m the context switching
+that happens throughout the day because I don\'t.
+
+**\
+26:19**\
+Vrijen Attawar\
+Killer. It\'s killer.
+
+**\
+26:20**\
+Eric Espinel\
+Yeah. So I\'m like, how can I like keep that context going when I\'m
+ready to return to where I was at?
+
+**\
+26:30**\
+Vrijen Attawar\
+Yeah, and that is an interesting problem. I mean, I\'d be happy to help
+you like sketch out, like is your co founder the technical one?
+
+**\
+26:39**\
+Eric Espinel\
+Yeah, so, yeah, so yeah, I\'d love to share with you like what we\'re
+thinking and how we\'re like. Yeah, but essentially it\'s something that
+would help with that aspect of like, you know, and that\'s where I feel
+like for me, like I would love something like that could help me just
+get back on track and eliminate that cost of switching between tasks.
+
+**\
+27:03**\
+Vrijen Attawar\
+Gotcha. Yeah, I mean I, I cost of switching tasks. Oh, oh. I cost of
+switching tasks. Hold on, let me pull something up and show you. So I
+wrote down this and I\'m just fixing this up on the side. Okay. So I
+wrote the other day an article, zero doc flow system. Is this the one?
+Yeah, there it is. It, yeah, there it is. Okay. So essentially this is
+stuff I\'m going to start releasing in the next couple of days. But
+essentially my, my belief is that like knowledge work can be reduced in
+many ways to like context and state. Right. At least as far as
+information is concerned. Like the right info on your head and the right
+info in the background, the sort of like broader corpus of information,
+right? The immediately accessible and the broader.
+
+**\
+29:16**\
+Vrijen Attawar\
+And so like, you know, if you can\'t remember where you\'re trying to
+find that crucial insight, that\'s a context problem. If you\'re looking
+at 47 problem browser windows trying to find what the fuck is up state
+problem. So, you know, it\'s that, that\'s the distinction essentially.
+And most productivity systems optimize for one or the other, right? So
+it\'s either for like capturing everything and nothing is in your head
+or like everything is linked. Everything is like just serendipitous sort
+of discovery or it\'s like very onerous in terms of the organizing,
+right. You have to like constantly be moving shit from place to place.
+And so the idea is that in the age of AI, the capture part, the
+surfacing part, and the flowing of information should be automated,
+right? So it should be like a cloud and I should be able, like a tree.
+
+**\
+30:08**\
+Vrijen Attawar\
+I should be able to pluck whatever fruit I want from it. So that\'s what
+I\'m calling like zero touch productivity where you don\'t have to
+fucking touch it. Like the background processes run the information for
+you. Right. And so that\'s effectively like what I\'m trying to build
+this system around is. And then there are like design patterns and stuff
+that I\'m like trying to implement in it. But essentially this is.
+That\'s sort of my thinking, but I feel like that lines up with sort of
+what the kind of like, I don\'t want to call it research, but the kind
+of like thinking that y\' all are doing, right?
+
+**\
+30:46**\
+Eric Espinel\
+Yeah, no, it\'s very, very similar to it. I think. Like. Yeah, I think
+it\'s interesting how you broke it up into the. Those two different
+things like state and then I forgot what the other one was.
+
+**\
+31:00**\
+Vrijen Attawar\
+Context.
+
+**\
+31:01**\
+Eric Espinel\
+Context, yeah. And I think that\'s. Yeah, I think that is really
+interesting because it is the same problem that we\'re like, talking
+about like that and especially when it applies to knowledge, work. And,
+and so like, I feel like the challenge is I can.
+
+**\
+31:23**\
+Vrijen Attawar\
+Still hear you, by the way, just trying to get this correct.
+
+**\
+31:26**\
+Eric Espinel\
+I think, like, for us, the challenge that we\'re thinking about is like,
+how do you. How do you also. I guess, like, it\'s like, it\'s kind of
+keeping what you\'re saying. And then I think I saw you said something
+similar throughout that, which is the surfaces that you work in and how
+multiple of those surfaces require both the context and the state and to
+be merged into those surfaces. For example, if you\'re on a team and
+you\'re. You\'re working on like your product manager, you\'re working
+on a pricing spec doc and that pricing spec doc. Like once the changes
+are done there, you also need to update like a JIRA ticket and submit
+that through to your team and let them exactly. Updates and send an
+email out to your, you know, your director or like the sales team or
+whatever.
+
+**\
+32:18**\
+Eric Espinel\
+Like there\'s all these things where there\'s surfaces that then. Where
+your state and context needs to be applied to and any. Anything there
+is, it\'s kind of all cohesive. It\'s like you have to look.
+
+**\
+32:30**\
+Vrijen Attawar\
+Exactly. And that\'s why those products lose. Right? That\'s why those
+products lose because they don\'t actually know you. They don\'t
+actually know your stuff. But I could build an incredible outbound email
+service using Zoe. Yeah, it would like a truly phenomenal outbound email
+service using Zoe. And that\'s just like one of a million things you can
+do with this fucking thing.
+
+**\
+32:58**\
+Eric Espinel\
+Yeah, yeah, yeah.
+
+**\
+33:01**\
+Vrijen Attawar\
+It\'s a crazy powerful tool. Right. Because if you can imagine like just
+me spun that up, right? Like how many. And that email is so much better
+than what you get out of the vast majority of attempts of like paid
+software.
+
+**\
+33:21**\
+Eric Espinel\
+Yeah.
+
+**\
+33:22**\
+Vrijen Attawar\
+You know, dude.
+
+**\
+33:23**\
+Eric Espinel\
+So is this the evolution of that one? Do you remember how you were
+showing me stuff about like creating like a.
+
+**\
+33:29**\
+Vrijen Attawar\
+The chat GPT.
+
+**\
+33:30**\
+Eric Espinel\
+Yeah.
+
+**\
+33:30**\
+Vrijen Attawar\
+Through ChatGPT. Yeah. This is, this is that come to come to fruition.
+Exactly. Right. Is the cognitive operating system. Yeah. Which I think
+is the sort of like long term dream to work towards. Is how do we build
+that?
+
+**\
+33:47**\
+Eric Espinel\
+That\'s cool. Nice.
+
+**\
+33:50**\
+Vrijen Attawar\
+Yeah, man, I, I\'m pumped about it. Let me see where this setup daemon
+is. Okay, time deploy. Three minutes on GitHub, five minutes Eric\'s
+install. Okay. What modules are we trying to export? I want to
+streamline and circumscribe what we send out initially, primarily
+because we want to make sure that we don\'t just like dump everything
+and have it like not work properly. So I would say let\'s start with
+just deploying core functionality such as the architectural files, the
+pref files, the general sort of cleanup commands and like layouts and
+continuation commands and layouts, and then the list system, which I
+think is a great place to start to bootstrap a system up. So the list
+system is like a good easy thing to test first and then I can try to
+start exporting out some more interesting modules to you after.
+
+**\
+34:50**\
+Vrijen Attawar\
+But this is basically just going to be like the base layer. But the base
+layer will already be pretty damn power. Yeah, like if I Send like 105
+configuration files over to your thing, that will like completely
+overwhelm you. You know?
+
+**\
+35:20**\
+Eric Espinel\
+What\'s your favorite thing so far with what that it\'s helping you
+with.
+
+**\
+35:24**\
+Vrijen Attawar\
+The meeting stuff has been clutch, the strategizing thought partner has
+been clutching. You can do this thing where you can like set up these
+Personas. So I have vibe strategist, vibe teacher, vibe writer. So like
+for example, if I do this, write a LinkedIn post referencing a key
+component of the Zero Touch Manifesto, write it in my voice, adhere to
+the vibrator conventions, ask clarifying questions, and pick out
+something that could make for a great post on a Monday on LinkedIn
+without giving away too much of my secret sauce. Do that. Switch this to
+vibrator. Don\'t let me down. Let\'s see. Right. So I did give it this
+file directly. Although in theory it could like just search that file up
+based on just me saying zero Touch Manifesto. That\'s what it normally
+would do. This time I just gave it the file.
+
+**\
+36:38**\
+Vrijen Attawar\
+Right, so you\'ll see that. So it said, okay, if. Now if I were to like,
+type this exact thing into your. Just to like, show you as a point of
+comparison. Yeah, let me just type this exact same thing into yours.
+Type that exact thing into your Zoe and see what it see. See how it goes
+about it. Just to illustrate like a design principle. Right, nice. I
+picked that one in my Alt account too. So. Right, so this is good.
+Right? So it\'s asking you like, questions. It\'s not really, like,
+taking action right away. It doesn\'t know anything. Right. It\'s a
+completely empty system. Right. So now if you compare that to my screen,
+you\'ll see because it knew what to do, it initiated a series of
+discrete steps.
+
+**\
+37:29**\
+Vrijen Attawar\
+It said, okay, I need to write a LinkedIn post, so let me get the voice
+transformation system loaded. I need to get the social media voice
+that\'s going to plug into the voice transformation system. Oh, by the
+way, let me read the system preferences and like, where the, and the
+file directory structure. Let me write down like, create a session state
+for this in my workspace. And then so like, now look at the quality of
+questions I\'m getting. You know what I mean? Like, it knows who my
+audience is. It knows like, what I\'m trying to do. It gives me a couple
+of concepts and tells me like, hey, which one do you want to talk about?
+And it lets me like, adjust my tone. Right.
+
+**\
+38:13**\
+Eric Espinel\
+Does it also, is it possible at this point for the system to recognize,
+like, let\'s say you\'re building this Persona on for of yourself like
+this as a thought leader on LinkedIn as well as like Instagram, and you
+have these posts that you\'ve been making over time. Is there any way
+that it could like, get that context and keep that context growing of
+you?
+
+**\
+38:43**\
+Vrijen Attawar\
+Yeah, great thinking. Yeah, absolutely. So it\'s a little tricky to
+access LinkedIn right now because LinkedIn\'s API doesn\'t play nice. So
+you may have to, for something like LinkedIn, you may have to like, just
+copy it. But what I generally do is I will, like, post and the moment I
+post, I\'ll paste that back into the conversations. Usually I\'ll have
+crafted it on Zoe, and I\'ll say, this is the final version. Lock this
+in and, like, understand the stylistic transformations I made and then
+learn those lessons, you know, so it will, like, constantly update its
+understanding of my style as well.
+
+**\
+39:18**\
+Eric Espinel\
+That\'s cool.
+
+**\
+39:19**\
+Vrijen Attawar\
+Okay, so going back to this, how far along are we? Okay, let\'s go back
+to Five Builder. Okay. Building out the core package. Oh.
+
+**\
+40:09**\
+Eric Espinel\
+I\'ll be right back.
+
+**\
+40:10**\
+Vrijen Attawar\
+Yeah, yeah, no sweat. This will keep running. Hey, let me call you right
+back. Okay. Thanks. It.

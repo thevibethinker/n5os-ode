@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B27 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b27
+---
+
 # B27 - KEY_MESSAGING Generation Prompt
 
 You are generating a KEY_MESSAGING intelligence block.

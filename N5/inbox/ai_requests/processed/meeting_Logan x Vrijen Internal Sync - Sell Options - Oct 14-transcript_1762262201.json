@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Logan x Vrijen Internal Sync - Sell Options - Oct 14-transcript_1762262201",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Logan x Vrijen Internal Sync - Sell Options - Oct 14-transcript.transcript.md",
+    "meeting_id": "Logan x Vrijen Internal Sync - Sell Options - Oct 14-transcript",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Logan x Vrijen Internal Sync - Sell Options - Oct 14-transcript",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Logan x Vrijen Internal Sync - Sell Options - Oct 14-transcript"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:41.340125+00:00"
+}

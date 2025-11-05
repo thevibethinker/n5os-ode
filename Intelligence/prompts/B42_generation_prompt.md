@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B42 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b42
+---
+
 # B42 - MARKET_COMPETITIVE_INTEL Generation Prompt
 
 You are generating a MARKET_COMPETITIVE_INTEL intelligence block (internal meetings).

@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B08 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b08
+---
+
 # B08 - STAKEHOLDER_INTELLIGENCE Generation Prompt
 
 You are generating a STAKEHOLDER_INTELLIGENCE block from a meeting transcript.

@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B26 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b26
+---
+
 # B26 - MEETING_METADATA_SUMMARY Generation Prompt
 
 You are generating a MEETING_METADATA_SUMMARY intelligence block.

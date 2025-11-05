@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B13 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b13
+---
+
 # B13 - PLAN_OF_ACTION Generation Prompt
 
 You are generating a PLAN_OF_ACTION intelligence block from a meeting transcript.

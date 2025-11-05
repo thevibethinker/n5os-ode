@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B45 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b45
+---
+
 # B45 - OPERATIONS_PROCESS Generation Prompt
 
 You are generating an OPERATIONS_PROCESS intelligence block (internal meetings).

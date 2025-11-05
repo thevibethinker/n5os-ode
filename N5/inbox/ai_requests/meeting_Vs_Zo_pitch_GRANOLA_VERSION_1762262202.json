@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Vs_Zo_pitch_GRANOLA_VERSION_1762262202",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Vs_Zo_pitch_GRANOLA_VERSION.transcript.md",
+    "meeting_id": "Vs_Zo_pitch_GRANOLA_VERSION",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Vs_Zo_pitch_GRANOLA_VERSION",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Vs_Zo_pitch_GRANOLA_VERSION"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:42.093244+00:00"
+}

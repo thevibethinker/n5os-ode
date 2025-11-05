@@ -1,0 +1,20 @@
+{
+  "meeting_dir": "/home/workspace/Personal/Meetings/bdr-rjwf-ehc-transcript-2025-11-03T08-34-24.986Z",
+  "attempts": [
+    {
+      "attempt": 1,
+      "timestamp": "2025-11-04T13:32:44.682517Z",
+      "score": 0.9277777777777777,
+      "passed": false,
+      "issues_count": 3,
+      "issues": [
+        "Folder name issue: Contains forbidden pattern (Fireflies code)",
+        "B01_detailed_recap.md: Missing required section: Outcomes",
+        "B26_metadata.md: Missing required field: meeting_type"
+      ],
+      "regenerated": false
+    }
+  ],
+  "final_status": "failed",
+  "generated_at": "2025-11-04T13:32:44.682923Z"
+}

@@ -1,5 +1,14 @@
 {
-  "classifications": [],
-  "recommended_blocks": [],
-  "rationale": "No category confidence exceeded threshold (0.3)"
+  "classifications": [
+    {
+      "block_id": "B73",
+      "block_name": "Strategic Thinking",
+      "confidence": 0.5,
+      "rationale": "Default classification for strategic/planning reflections"
+    }
+  ],
+  "recommended_blocks": [
+    "B73"
+  ],
+  "rationale": "Default B73 assignment (Strategic Thinking) for processing"
 }

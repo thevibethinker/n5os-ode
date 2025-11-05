@@ -1,0 +1,562 @@
+**\
+00:03**\
+Vrijen Attawar\
+Okay. Boom. So it\'s. It\'s ideal to use it through. Interesting. If you
+use it through the Chrome extension on. On a browser, it runs, but the
+bot isn\'t in the meeting. Huh. So it\'s like granola esque. Almost.
+
+**\
+00:30**\
+Logan Currie\
+Weird.
+
+**\
+00:31**\
+Vrijen Attawar\
+Yeah, no, I mean, interesting. Worth noting that you can. You can do
+that with it.
+
+**\
+00:41**\
+Logan Currie\
+Okay, what else was on the agenda? Oh, I still haven\'t done anything,
+but. Because it hasn\'t really been a priority. But I think we need to
+do it anyway with career algorithm stuff because we have enough people
+to, like, release a season and then kind of see how it goes.
+Essentially. Like, we\'ve got one last recording next Friday with this
+woman who\'s quite well connected. Her name is Jennifer. The last person
+I thought who could be good though, to chase up would be that Max guy.
+If we recording with him. If you just mind. Don\'t mind sending him an
+email and just asking if we could get a recording on the calendar with
+him. And that can kind of like, I think that gives us seven episodes.
+And if I could get Kathy Fam, then that would be badass.
+
+**\
+01:36**\
+Vrijen Attawar\
+So basically, like, that would be awesome.
+
+**\
+01:39**\
+Logan Currie\
+And say, okay, that\'s eight people, and then we can see how it goes. I
+think it could be good. Tap a funnel, like. Like, we\'ll have kind of
+like a newsletter type of thing and we can just cap it at that.
+
+**\
+01:50**\
+Vrijen Attawar\
+Yeah, no, totally. Let\'s see. Max, I got a message in the Fohy group.
+Yeah, no, it wasn\'t from him. Did he check my emails? Max Haing. Nope,
+that didn\'t get checked. That didn\'t get checked. So be. You could
+even give Howie specific rules for, like, the parameters for the podcast
+booking and have it find slots accordingly.
+
+**\
+02:45**\
+Logan Currie\
+Yeah, that would work if were really serious about doing it, but I.
+
+**\
+02:53**\
+Vrijen Attawar\
+Guess it\'s only for two more folks.
+
+**\
+02:55**\
+Logan Currie\
+I don\'t think we need as much as I am confident in my ability to, like,
+become a content empire. I don\'t know.
+
+**\
+03:08**\
+Vrijen Attawar\
+Yeah. Yeah. Fair God.
+
+**\
+03:11**\
+Logan Currie\
+I mean, I was thinking about, like, every\'s model of, like, you know,
+like, they have such a good. Because, I mean, they do consulting too.
+Like, you know, there\'s a world they don\'t. I don\'t know. Like, it\'s
+not what we need to do, but.
+
+**\
+03:26**\
+Vrijen Attawar\
+Dog fooding.
+
+**\
+03:28**\
+Logan Currie\
+Exactly. Like, have you tried Monologue Dude?
+
+**\
+03:32**\
+Vrijen Attawar\
+No.
+
+**\
+03:32**\
+Logan Currie\
+It\'s so much better than Super Whisper.
+
+**\
+03:35**\
+Vrijen Attawar\
+Like, really?
+
+**\
+03:35**\
+Logan Currie\
+I think I told you about it the other day. Like, it\'s so good. Like,
+just try it.
+
+**\
+03:41**\
+Vrijen Attawar\
+Monologue. Monologue app by every Dude. Every\'s Design sense is so
+refined.
+
+**\
+03:48**\
+Logan Currie\
+I know, I know. I\'m like, I\'m very excited because I\'ve essentially
+just like yielded marketing visuals like for their website at least to
+Rahul, because I\'m just doing. Dude, I trust your aesthetics. Like,
+just make this look cool. Here\'s Jack and Jill\'s website. Make it this
+but like ours.
+
+**\
+04:06**\
+Vrijen Attawar\
+Wait, is this monologue app, like journal like you\'re texting?
+
+**\
+04:13**\
+Logan Currie\
+No, it\'s.
+
+**\
+04:14**\
+Vrijen Attawar\
+Because this is actually pretty interesting too.
+
+**\
+04:18**\
+Logan Currie\
+Wait, there\'s a different one.
+
+**\
+04:19**\
+Vrijen Attawar\
+Yeah, actually check this out. Because this could actually be an
+interesting sort of way of updating career span at some point is just
+like you just text. You\'re just constantly texting career span like
+your wins and you\'re like, oh, interesting.
+
+**\
+04:38**\
+Logan Currie\
+That would be good.
+
+**\
+04:39**\
+Vrijen Attawar\
+Yeah, yeah. The, the. The. Let me. Let me download monologue by every.
+But the other thing that I wanted to very quickly sort of to. To throw
+your way or sort of run by you is this idea of like cultivation. Like in
+some ways I don\'t think we should change the plan. I\'m just surfacing
+that like in some ways another totally viable subscription for
+cultivation could be a, like a subscription that companies pay to scan
+our community on an iterative basis. And so effectively, like it comes
+from what Hillary said around, like there\'s no. Like, what she would
+love to do as an HR person is cultivate, like have a set of folks that
+she can like keep tabs on and sort of like engage with periodically to
+sort of keep them warm.
+
+**\
+05:36**\
+Vrijen Attawar\
+So that apparently this, there exists this conflict between what HR
+wants and management wants where management will say we need an X
+arbitrarily without much notice to hr. And then it\'s a rat, like an
+absolute rat fuck situation of like people rushing. And which is why
+inbound is. Is still done because to an extent you need that flood of
+candidates to feel any level of like confidence that you have a talent
+pool. But what they would prefer to do is have advance notice. But this
+is actually decouples that by letting them curate. You know, if they
+know that there\'s a product roll down the pipeline, they can like
+cultivate for that. And it\'s a different. It\'s a new signal for
+hiring. It\'s not a job post. It\'s like a. And it can like potentially
+even address this idea of like ghost jobs.
+
+**\
+06:28**\
+Vrijen Attawar\
+Right, because that\'s the most legitimate use case for ghost jobs is we
+may hire for this, but we need to like build out our pool. Let\'s just
+be honest about it.
+
+**\
+06:41**\
+Logan Currie\
+Yeah, it\'s interesting I\'m wondering if it might be worth having a
+convo or just bringing Sarah Brown back on a call because she. I don\'t
+know if she got laid off.
+
+**\
+06:55**\
+Vrijen Attawar\
+Yeah.
+
+**\
+06:56**\
+Logan Currie\
+Maternity leave because Google. But she is now interviewing for like
+loads of like L and D, like people roles. And I mean, it would be still
+an apac, but she was saying that. She was like, I\'m just reflecting on
+this. She\'s talked to like two or three people high up at Lego and
+they\'re like, we have two or three roles that we know are going to be
+opening up in the next like six months, essentially. So it\'s like, you
+know, they, it\'s this thing where it\'s like they have an idea of
+what\'s going to be happening. And so then she is an example of that
+cultivation, right. Where it\'s like she\'s having these conversations
+and then when HR gets the go ahead, they\'re like, well, we have these
+people already. You know what I mean? So it\'s that kind of like, it\'s.
+
+**\
+07:43**\
+Vrijen Attawar\
+It\'S a blend of networking. It\'s like a blend of like facilitated
+networking meets like LinkedIn in a way because you\'re asynchronously
+updating on your wins. Like it creates a more natural incentive to
+record your wins than for the sake of it, because I\'ll need it one day.
+Which has always been sort of the gap. Right. And it unlocks passive
+candidates in a way that no other product really could.
+
+**\
+08:10**\
+Logan Currie\
+Right. Because it\'s a dual. Yeah. I\'m thinking about. I was on some
+networking call for the OGC thing and this woman was like, I\'ve gotten
+my last two roles by posting about what I\'m doing on LinkedIn. But
+she\'s like, I don\'t love doing that because it\'s LinkedIn. But she\'s
+like, I was just literally documenting what I was doing. I was building
+out this like, whatever for my company. And another company came and
+said, we want you to do that for us, like on a bigger scale with a
+bigger budget. So it\'s like, it\'s essentially the same. It\'s what
+every HR person wants to be able to do is say, like, let me scout out
+for people who are doing this thing that I know that we\'re going to
+need. Right. But it\'s not, it\'s not role based, it\'s action based.
+
+**\
+08:56**\
+Logan Currie\
+Because it\'s like, you know what I mean? It\'s not. And so it\'s. This
+person is accomplishing these things for their team, therefore I would
+like to be able to, for them to accomplish that for me once I have a
+role. You know what I mean? So it\'s, that\'s why, it\'s, that\'s why we
+are going to better at that. Because it\'s about the stories. It\'s not.
+Let me just update my title in on LinkedIn. It\'s much more granular and
+it\'s not attached to like some fucking arbitrary skill like taxonomy.
+
+**\
+09:30**\
+Vrijen Attawar\
+Right, right. Yeah. A lot of things become more flexible in that sort of
+situation. We could even add a. And like the ability for folks to like
+anonymize and anonymize in like every sense. Right. Like with LLMs, you
+could actually have it like even anonymize Amazon to like fang and like
+just sort of generalize you to the point where so it would have this
+sort of like potentially mysterious element. But I do think that is the,
+that could be an actual innovation on the approaches to hiring, which
+historically have been very much like you cold apply or you network into
+it. This is like a private LinkedIn with just you and like the employers
+that want you. Right. Where you can like selectively update them on
+wins. And they can.
+
+**\
+10:21**\
+Vrijen Attawar\
+And then that also gives companies the ability to like selectively push
+like pro hiring propaganda. Like, did you know that this month this
+company raised this series and wants you to know about it? Like, holy
+shit.
+
+**\
+10:35**\
+Logan Currie\
+Essentially, because what I think is going to be happening, and we\'ve
+talked about this before, but it\'s like it\'s going to be a war over
+top talent. It\'s what we\'re already seeing. So it\'s like, how does
+this, how do you have this like top performance? How do you know about
+the top performers outside of the top AI ML talent? Because that\'s such
+a small, well signaled. Yeah, it\'s well signaled. And it\'s like, okay,
+well, I got a PhD from CMU in whatever it is in machine learning. So
+it\'s like I\'m. People know that I\'m on the map, but like these other
+people, it\'s harder to find them and harder to.
+
+**\
+11:16**\
+Vrijen Attawar\
+So much harder.
+
+**\
+11:17**\
+Logan Currie\
+So it\'s essentially like, can I play it? Like fantasy football? Is that
+a thing?
+
+**\
+11:25**\
+Vrijen Attawar\
+Yeah, dude, that is so. That is a great. I mean, that\'s the thing,
+right? Like you have these prospects, you want to see how they sort of
+develop. You want to see, hey, maybe this person isn\'t right for me
+right now, but in six months maybe they\'re going to do something
+amazing like it\'s a, it\'s like Mike, it would almost be the equivalent
+of like micro blogging. Your success assesses so that the most high
+intent employers see it. Right. But in a way that\'s not so overtly
+cringe as LinkedIn.
+
+**\
+12:02**\
+Logan Currie\
+Right. I mean, I\'d pay for that.
+
+**\
+12:10**\
+Vrijen Attawar\
+I\'d pay for that as a user and I\'d pay for that as a company. And the
+thing with the company is we can actually go to places that aren\'t
+hiring and say, hey, you know, like we\'ll give you six months free of
+career span or like three months free of career span anytime in the next
+three months you want to like check up a candidate, just send us a JD
+and we\'ll get you a white glove list and we\'ll update you on what\'s
+changed with your old candidates. You know what I mean? And then we can
+actually let folks know, hey, you\'ve been like surfaced or. Right. And
+create an incentive of like, ooh, someone\'s watching. Like someone may
+be interested in me. I can click yes and they\'ll like sort of observe
+the things that I share on careerspan.
+
+**\
+12:52**\
+Vrijen Attawar\
+Like that I think could potentially be very interesting because then you
+could feed back to the candidate, this was the stuff that interested
+them, talk more about this is what they were missing, blah, blah.
+
+**\
+13:04**\
+Logan Currie\
+Right, right, right. Yeah.
+
+**\
+13:08**\
+Vrijen Attawar\
+I mean that is a dream solution for candidates and for employers.
+
+**\
+13:14**\
+Logan Currie\
+I mean not for people, not for the employers who don\'t want their
+talent poached. Is going to be the, the interesting piece of that. Like
+we\'re going to really need it to be anonymized. I mean, not that we
+haven\'t already talked about that, but like, it\'s like, yeah,
+interesting.
+
+**\
+13:37**\
+Vrijen Attawar\
+It\'s, it\'s, yeah, it\'s. I, I do think that there\'s an extent to
+which like that could be an entire like niche in itself. Right. Is like
+anonymized hiring. Right. Blind dating, like a blind relationship almost
+is effectively what we\'re proposing. But I\'m trying to think of how it
+fits into the current strategy. I mean, it lets us be distribution
+focused, which as we both agree is going to be the number one sort of
+like wedge. It lets us leverage the passive job seeker sort of like
+narrative. We can still try to bring in revenue by placing people. It
+just sort of expands the mission set. Right. We can still use like magic
+link to, I mean we could effectively repurpose magic link to like be a
+Like soft job posting. Right.
+
+**\
+14:40**\
+Vrijen Attawar\
+We like, kind of pioneer that concept of like, let\'s just be honest
+about ghost jobs. And like, if you\'re going to recruit in a few months,
+fine. Like, there\'s. The thing is there\'s people that are willing to
+work with that timeline, and it\'s just job seekers aren\'t them.
+
+**\
+14:57**\
+Logan Currie\
+That\'s why. Yeah, exactly. It\'s like, if I\'m a job seeker, I\'m like,
+no, I need, like, why would I want to wait that long, essentially?
+
+**\
+15:09**\
+Vrijen Attawar\
+But there are people that would be like, yeah, I could see something in
+five. Like, it\'s. Logically you just need a larger group of maybes in a
+few months.
+
+**\
+15:21**\
+Logan Currie\
+Yeah.
+
+**\
+15:23**\
+Vrijen Attawar\
+And that\'s a group you definitely want to like, keep tabs on. Because
+maybe someone does something that you\'re like, oh, shit, I want to pick
+up this person right now. Like, it\'s, it has a lot of like, really
+appealing elements to it.
+
+**\
+15:40**\
+Logan Currie\
+Yeah. How. I mean, from a functionality perspective, what would be our
+first step there?
+
+**\
+15:47**\
+Vrijen Attawar\
+I mean, from a functionality perspective, I think we could do a lot of
+like 80, 20 of it could be done with just messaging. But the thing that
+we would have to build out is most likely the employer interface. Right.
+But actually not even that, like at the very beginning, I suppose it\'s
+just messaging. Right. It\'s just sort of saying, hey, we surface you to
+the best sort of employers on a periodic basis. I\'m not exactly sure.
+But it would basically just be reframing the app. Right. I don\'t
+actually think we need much in the way of new functionality, probably
+new conversations so you can store more of who you are.
+
+**\
+16:43**\
+Logan Currie\
+Yeah, interesting. I mean. Yeah, go ahead.
+
+**\
+16:48**\
+Vrijen Attawar\
+And then that way the monetization for companies is, you know, is. Or
+sorry for community owners is. Is like pretty straightforward as well.
+Right. Because then you could actually sell them on the idea of like,
+recurring revenue based on how much like either people are picked from
+their communities or how much their communities get like scanned over.
+Right. It\'s not like a hypothetical, maybe if one of my folks will get
+hired, I\'ll get a cut one day. It\'s like a. Yeah, we\'re selling
+subscriptions.
+
+**\
+17:34**\
+Logan Currie\
+And we give you like 20% or something like that to the communities.
+Right?
+
+**\
+17:38**\
+Vrijen Attawar\
+Exactly. Yeah, yeah.
+
+**\
+17:40**\
+Logan Currie\
+It\'s more, it\'s more regular. I like that better, actually. I think
+there\'s definitely something to the like, passive job, passive lookers.
+Nobody else is doing that. I mean, I\'m sure there are people who are
+trying to do it, but like, I think we are uniquely positioned to be able
+to do that. It\'s a question of how do we get, if we look at it aside
+from employers. Because I feel like it is at its simplest form, if you
+build it, they will come, right? Like, if we have the talent, the
+employers will come. I know that\'s a big, you know, overgeneralization
+because obviously we want them to be paying, but like, from a. How do we
+get communities on board?
+
+**\
+18:28**\
+Vrijen Attawar\
+Because there\'s something to what you\'re saying. Because even that guy
+yesterday at the start of the discussion, he said the classic, like,
+demand side, like Gerald Shatavian, you need the employers. Like, yeah,
+sure you do. But like, right now you need, if you have talent, plus the
+ability to scan through them quickly, then employers will come. It\'s
+back to can you lock down privileged pools of talent that you have to
+your point, like, exclusive access to. I think we, I think we go to
+these communities and even the existing ones and say, hey, we\'ll give
+you all these perks. What we want is exclusivity. Like, that is the main
+thing that we want for a year. You\'re only going to use career span and
+you\'re going to commit to, like, using it in these ways. And this is
+what you\'ll get out of it.
+
+**\
+19:40**\
+Logan Currie\
+Yeah, I want to make sure that we\'re like, very clear on the, like,
+this is what you\'ll get out of it. But I completely agree. The foreign.
+I\'m trying to think of how else we can select for top talent pools, and
+I\'m thinking a combination of local alumni groups. Because it\'s like,
+where, like, if we even just locked down San Francisco Duke alumni,
+chances are from like 2000. Who. Who have graduated from 2008 to 2015,
+Duke alum San Francisco who graduated in that time period have a high
+likelihood.
+
+**\
+20:35**\
+Vrijen Attawar\
+Of being killer product.
+
+**\
+20:38**\
+Logan Currie\
+Right. Yeah, like. So I\'m thinking about, like being uber specific in.
+
+**\
+20:44**\
+Vrijen Attawar\
+You\'re thinking like micro communities specifically or.
+
+**\
+20:48**\
+Logan Currie\
+Yes, yes.
+
+**\
+20:51**\
+Vrijen Attawar\
+You know, I, I don\'t. I feel more positively about it by saying. Than
+by saying I don\'t hate it. But like, I mean that in a very good way.
+Like, I, I really. It\'s. It\'s. No one\'s looking there and
+negotiations would probably be faster.
+
+**\
+21:10**\
+Logan Currie\
+Yeah. Because right now it\'s just like a real thing. Right. And it\'s
+like, what. Like, there\'s probably some alum who\'s like, yeah, I\'ll
+organize like a monthly get together. Whereas if we basically. But I
+don\'t.
+
+**\
+21:28**\
+Vrijen Attawar\
+Yeah, the pro one of the problems I heard about that particular group is
+that they, the members are not super engaged because they\'ve, like,
+just joined it a while back. They\'re sort of used to like, tuning it
+out. Like, that is a little bit. There\'s this like. Like, people are in
+a lot of communities now, right? So, like, cutting through the. I think
+that will be like, how do we cut through the noise? Obviously.
+
+**\
+21:59**\
+Logan Currie\
+You\'Re breaking. You\'re breaking up. But also it\'s. What\'s it
+called? Stand up time, if we want to go see if anybody\'s online.
+
+**\
+22:09**\
+Vrijen Attawar\
+Yeah, let\'s do that.

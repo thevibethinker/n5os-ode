@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B91 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b91
+---
+
 # B91 - META_REFLECTION Generation Prompt
 
 You are generating a META_REFLECTION intelligence block.

@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Vrijen_Attawar_and_Laura_Close_Included_ai_GRANOLA_1762262202",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Vrijen_Attawar_and_Laura_Close_Included_ai_GRANOLA.transcript.md",
+    "meeting_id": "Vrijen_Attawar_and_Laura_Close_Included_ai_GRANOLA",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Vrijen_Attawar_and_Laura_Close_Included_ai_GRANOLA",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Vrijen_Attawar_and_Laura_Close_Included_ai_GRANOLA"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:42.052940+00:00"
+}

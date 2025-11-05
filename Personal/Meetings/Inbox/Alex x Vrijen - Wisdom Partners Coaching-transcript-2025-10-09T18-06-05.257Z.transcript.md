@@ -1,0 +1,1493 @@
+**\
+00:00**\
+Vrijen Attawar\
+Mendy is a creator. Yes. Sa. Hey, how\'s it going?
+
+**\
+01:23**\
+Alex Caveny\
+Pretty good of yourself? Good, good.
+
+**\
+01:26**\
+Vrijen Attawar\
+I just got back last night, earlier today, sort of early in the morning
+from Arizona.
+
+**\
+01:35**\
+Alex Caveny\
+Oh, nice. How are you doing there?
+
+**\
+01:37**\
+Vrijen Attawar\
+I. So I took your. Your advice and the advice I\'d been getting from
+sort of basically everyone, which is I\'m burning out and you know, just
+sort of at the edge and, you know, eventually just realize, like, hey,
+I\'m feeling worse than ever about my productivity. My productivity is
+worse than ever, despite being the most concerned about it that I\'ve
+ever been. Yeah, a little hyperbolic, but you know. You know what I
+mean? It\'s like in the dumps and, you know, nothing seems to be able
+to, like, keep me moving. And so I thought, okay, this has to be like,
+this must be burnout, right? Where like, you\'re just not able to get,
+you know, no matter how much gas you supposedly try to put in the tank,
+nothing\'s coming out.
+
+**\
+02:21**\
+Vrijen Attawar\
+So took a week, went to a wellness resort in Arizona, just filled with
+like, let\'s just say like a yoga pants crowd as far as, like, the vibe
+is concerned. But like, very nice people and obviously very chill, laid
+back sort of environment that really let me just not worry about work
+for a little bit, which was lovely. And I definitely feel like I\'ve
+come back a lot more recharged, a lot more eager to take things on. So
+really quite happy about that. Little stressed about how I\'m going to
+maintain some of the habits that I tried to pick up there. But I have a
+couple of ideas. Like, I think I might just shell out some cash and get
+like a meal prep service or something like that. You know, there\'s a
+couple of improvements I can make, but yeah, that\'s.
+
+**\
+03:19**\
+Vrijen Attawar\
+That\'s sort of what I\'ve been up to is just being away.
+
+**\
+03:23**\
+Alex Caveny\
+I mean, hey, that\'s good. I\'m glad you got a bit of a reset in. I know
+you\'ve been mentioning feeling pretty burned out, I hope. I\'m sure a
+week isn\'t enough to just like, oh, I\'m perfectly fine now, but it\'s
+at least like putting the. Putting a little. A little more gas in the
+tank or capacity for gas in the tank.
+
+**\
+03:42**\
+Vrijen Attawar\
+Exactly, exactly. And I. I\'m gonna take the rest of this week as well
+in the weekend to sort of like settle in. So it\'ll be closer to about
+two weeks, I think, at the end. And I have some, you know, it was good
+to take that time away, even just to like, not have the same thoughts
+and the same stuff sort of rattling in my head. You know, it was just
+nice to give it, give my brain so much like space for a week where I\'m
+not just like yammering on about or like delving into the same stuff
+again and again.
+
+**\
+04:18**\
+Alex Caveny\
+So what feels better like kind of specifically is it you\'re able to be
+more creative, you just have more energy.
+
+**\
+04:26**\
+Vrijen Attawar\
+I just feel like, I feel like if my brain was a room that there is like
+a lot more room in there, you know, like we just had like spring
+cleaning and a lot of detritus just got sort of dropped off. And I think
+it also meant that I sort of had to like emotionally deal with the fact
+that okay, there\'s some follow ups that are just not gonna happen.
+Right. Like it\'s too late. I\'ve like missed the deadline, I\'ve like
+lost that opportunity or like fuck that up. Like I have to, you know, no
+more, no further do I want to continue this trend. You know, I can like
+accept that. You know, I have to accept that what\'s happened in the
+past sort of happened in the past. But yeah, I feel good about that.
+I\'ve developed some really good new systems.
+
+**\
+05:12**\
+Vrijen Attawar\
+I use a AI tool called Zoe that I\'m convinced is going to be huge.
+It\'s going to be a big. Either them or someone like them. I should
+check them out. Zodoc Computer. If it seems interesting I, I know the
+founders quite well so I have a special promo code. Z O. Yeah. Z O dot
+computer. Yeah, it\'s by these two like Stanford dudes or two Harvard
+dudes. It\'s, it\'s like basically a computer that you prompt. It\'s,
+it\'s awesome for like a non technical person like myself but like
+technical enough that I have an understanding of. Here\'s my promo code.
+So you get 50 off, which is pretty sweet. Which also is literally just
+50 off of your API. Like because it\'s just the straight like ChatGPT or
+Claude API that they run through Zoho.
+
+**\
+06:19**\
+Vrijen Attawar\
+So you basically just, they\'re just kind of subsidizing your API
+clients, which is good for them to do for me because I actually am
+making like artifacts and apps for the community and like sharing little
+bits and bobs to try to like just as a hobby or like as part of my free
+time.
+
+**\
+06:37**\
+Alex Caveny\
+Nice. Yeah. I\'ll take a look at one of my like upcoming tasks for
+myself is to become absolutely cracked at any N8N like I want to
+automate Literally everything that I do that\'s even remotely repetitive
+just to get some time back. So this seems like it\'s kind of in the
+similar vein.
+
+**\
+06:53**\
+Vrijen Attawar\
+It\'s in a similar vein. And I\'ll tell you what, I have tried the
+Zapier. I mean, okay, maybe you\'re more technical than me and this is
+just going to be fine for you. I\'m not saying I\'m shabby technical
+wise. I\'m just saying that like with N8 and NA and Zapier, I, despite
+their popularity, I almost never hear of people pulling them off, myself
+included. It just feels like the back of my mind, like one of my
+conspiracy theories about tech is that no automations work, everyone is
+just pretending that they do. But what I like about ZO is that it\'s not
+like the diagrammatic workflow but you can basically set up a operating
+system within Zoho and then set up natural language and script based
+workflows. So as an example I have a pretty intricate workflow that will
+ingest a meeting.
+
+**\
+07:48**\
+Vrijen Attawar\
+Like I actually just did it for our meeting last week. I did it for our
+meeting last week and now it\'s crashing basically. Long story short, it
+decomposes it identifies the stakeholder because it knows you\'re an
+advisor. It will activate the advisory set of blocks and then it\'ll run
+that analysis on it. So it\'s like you can create some pretty
+complicated stuff but instead of diagramming it out like a workflow, you
+kind of just set up files to trigger other files. It\'s pretty fun.
+
+**\
+08:24**\
+Alex Caveny\
+Yeah, I\'ll have to check it out. The more options the merrier. So I\'ll
+give a look. One thing you mentioned I want to double click on you
+mentioned like having some stuff you\'re just acknowledging that you\'re
+just not going to get to. And I think that\'s important because the term
+I\'ve heard it called is task bankruptcy which is like when a business
+becomes financially strained and they\'re just and they can\'t operate
+anymore, they declare bankruptcy, kind of remove some of their past
+debts from that so they can move on in a healthy way. And that\'s why
+I\'ve heard it called task bankruptcy because it\'s the same thing.
+It\'s like you\'ve got all this stuff that you\'re just pushing forward
+a week and then you just have to be like I\'m taking the L and I just
+need this gone.
+
+**\
+09:06**\
+Alex Caveny\
+And it\'s not dealt with by now. Clearly it\'s not a life or death
+situation and like, going forward, I have a cleaner slate.
+
+**\
+09:14**\
+Vrijen Attawar\
+That\'s absolutely what I\'m aspiring for. So, you know, I let a couple
+folks know, and I mean, I think there\'s been some, like, unfortunately,
+some stuff on the. On the personal side as well, with, like, the wife
+and just the parents, that has been, like, a little bit difficult. So,
+you know, to an extent, I\'ve sort of. Yeah, I think I emotionally
+reached the. I\'ve never heard of that phrase, but I think I emotionally
+reached that place of, like, look, okay, there\'s a lot of fires right
+now. We gotta pick which ones we fight and which ones we let burn for a
+little bit. So, yeah, in that same vein. But it was. It was really a
+thing that was weighing me down, you know, like, the. As the tasks sort
+of build. I\'m sure you can relate to it, too.
+
+**\
+09:55**\
+Vrijen Attawar\
+As the tasks sort of build and the mountain gets higher and higher. And
+the annoying thing is you\'ll get, like, really close one day where
+you\'re like, I\'m so. I\'m just so fucking close to, like, finishing
+it. And then it\'s a day full of meetings, and then boom. All of a
+sudden, it\'s, like, back to full, and you\'re just. You just hate
+yourself.
+
+**\
+10:12**\
+Alex Caveny\
+Yeah. No. One of my biggest personal stressors is, like, my task list
+accumulating. Even if it\'s a bunch of small stuff, just, like, seeing
+15 items on there, I\'m like, oh, shit. Like, I\'ve got. I\'m. I
+shouldn\'t be relaxing. I\'ve got this stuff to do. But, like, I just
+did a task bankruptcy for exactly this reason, and there was something
+on there that was like, a guy I met legitimately two and a half months
+ago, and he was like, oh, check out my product. And I was like, that
+sounds kind of interesting, but it is a low priority, so I\'ll get to
+it. I, like, kept pushing it forward, and I was like, I do want to do
+this. Like, I do want to dive into this product and check it out.
+
+**\
+10:48**\
+Alex Caveny\
+And like, earlier this week, especially with tech week going on, I was
+just like, it. Like, it\'s just. It\'s just not happening. Like, this
+thing has just been festering on my to do list for two and a half
+months, and it just doesn\'t matter. Like, it\'s just.
+
+**\
+11:02**\
+Vrijen Attawar\
+Yeah, I need to. I need to seriously look at. And I think maybe that\'s
+something I\'ll do today is. Is I\'ll take another crack at the Aki
+Flow. The good thing with Aki Flow for tasks is that you can Actually
+have Zoe, the AI like turn meetings into action items and then mail it
+to my task manager. So that\'s the sort of like closed chain I\'m hoping
+for. Where. And then there\'s a human in the loop as well, where it will
+like, tell me, hey, these are the tasks I\'m adding. But I think that
+has. Historically the problem points for me have been capture, where I
+will like forget something. Now I\'m mostly better at capture, where
+I\'ll like note it down.
+
+**\
+11:41**\
+Vrijen Attawar\
+But the problem is once you get better at capture, the problem is that,
+oh, all of a sudden you realize you are accurately capturing all the
+work you have, which is actually an overwhelming amount. So just
+shifting the problem.
+
+**\
+11:56**\
+Alex Caveny\
+It\'S a different problem. The other thing I recommend is especially if
+you\'re kind of feeling a little more refreshed right now, I would like
+take a moment to reflect and just benchmark how you\'re feeling right
+now. Because oftentimes the descent into burnout is very slow. It\'s
+like the frog in a pot of boiling water thing. And like you don\'t
+notice how unproductive you\'re getting or how unhappy you\'re getting
+because it happens so slowly. So it can be good to have like a benchmark
+or I don\'t know, even like, you could literally write down a note to
+yourself about how you\'re feeling right now so that like a couple
+months from now it doesn\'t have to get as bad before you start to flag.
+Okay, wait a minute. I need, I need a reset. I need a breather.
+
+**\
+12:38**\
+Alex Caveny\
+I\'m starting down that path of feeling burnt out.
+
+**\
+12:41**\
+Vrijen Attawar\
+Do you, and I\'m just going to grab some coffee real quick. But are you,
+do you like journal? Do you maintain like even a simple mood journal or
+anything like that? Any advice on maintaining that or is that something
+you\'ve never been able to do?
+
+**\
+12:55**\
+Alex Caveny\
+I do mood journal. I like, I always have the intention to like more in
+depth journal about my day and week and stuff like that. But I do keep a
+mood journal.
+
+**\
+13:05**\
+Vrijen Attawar\
+Cool.
+
+**\
+13:06**\
+Alex Caveny\
+Which is definitely helped, like both associate. Okay. What things are
+causing like better and worse moods on a day to day basis and then just
+seeing a trend of like, oh, like I\'m really tired.
+
+**\
+13:20**\
+Vrijen Attawar\
+I\'m.
+
+**\
+13:21**\
+Alex Caveny\
+I\'m beat this week between like tech week and I had a lot of personal
+stuff last week and then my mom visiting this weekend. So like next week
+I\'m trying to keep it as clear as possible because I know I\'m like,
+I\'m going to need a reset next week.
+
+**\
+13:34**\
+Vrijen Attawar\
+100% yeah. And I actually, I, and I mean, hey, here\'s another. If, if
+like meeting sort of bloat is or sort of creep is a problem for you, I
+started using Howie and that has been quite good, actually, because
+I\'ve essentially given it instructions for what days to put what
+meetings. So, you know, an investor will be like, Tuesday, Thursday, or
+a customer will be like Monday, Wednesday, Friday, or whatever. And so
+I\'m trying to add, even through the mechanisms that I\'m using for
+getting folks on my calendar, I\'m trying to have it be a little bit
+more spaced out and sort of more streamlined days where I\'m doing more
+of the same thing and less of like eight different things in a day.
+
+**\
+14:27**\
+Alex Caveny\
+Yeah, yeah, I think that\'s smart. I generally try to keep my, like most
+meetings to Monday and Tuesday so I can kind of deep work the rest of
+the week. It doesn\'t always work that way, but that\'s kind of the
+vibe. So Monday and Tuesday are a little rough, but then it\'s pretty
+fine the rest of the week.
+
+**\
+14:43**\
+Vrijen Attawar\
+Yeah, yeah, I like that. I like that. I mean, it\'s just hard, right,
+because, like, especially if it\'s across multiple time zones or it\'s
+across different types of stakeholders. But yeah, I, I think for the
+most part the, you know, I was really close to like, being on top of
+things then I think my parents visiting just sort of drained me and that
+was just sort of a, a real knockout blow. Sorry, I\'m just waiting for
+the cup to fill. But yeah, I think that was a real knockout blow. That
+sort of, you know, essentially just, I was just dragging myself over the
+finish line for the week after that. So, yeah, no, I, I, I think this is
+good. I feel recharged.
+
+**\
+15:25**\
+Vrijen Attawar\
+I think that\'s really good advice to not only do a stock take of my
+emotional and mental and psychic state at this point, but also maybe
+develop some sort of system for tracking it on the reg. I actually have
+for a while wanted to develop the discipline to write in the morning or
+to do stuff in the morning. And that hasn\'t always been super
+successful, but I think that would sort of be my ideal is, you know,
+workout in the morning, quick sort of reflection. I have Zo generate a
+digest of like, hey, this is your day. These are the people you\'re
+going to meet. You know, these are the things that you should be
+prepared for. And then, you know, boom. Start my day with like, co
+founder. Co founder, Stand up.
+
+**\
+16:22**\
+Vrijen Attawar\
+You know, I think that would be Sort of the ideal morning for me.
+
+**\
+16:29**\
+Alex Caveny\
+Yeah. I mean, routine. Routine is always good. I mean, routine helps
+keep things on the rails. Also getting enough sleep, that\'s something
+I\'m bad about. But like, getting enough sleep is like hugely important.
+
+**\
+16:42**\
+Vrijen Attawar\
+Yeah. Yeah. I mean, I, I just felt so much more alive the last week when
+I was pretty well rested. Yeah, it\'s, it\'s night and day.
+
+**\
+16:55**\
+Alex Caveny\
+Like. I know, I know, like, the big wellness retreat can be nice, but
+sometimes it can. It\'s like a big commitment. And I know they\'re kind
+of expensive typically. Yeah, it\'s good to do that every once in a
+while. But also remember, you can do like a mini trip yourself. So maybe
+like an Airbnb up in Marin in the woods and like turn your phone off for
+two or three days or something. Like you can do kind of a mini yourself
+if you just need like a quick little pick me up. Don\'t, don\'t feel
+like it\'s this binary. Like I\'m either working or I do the big.
+There\'s like kind of a pressure relief valve option too.
+
+**\
+17:32**\
+Vrijen Attawar\
+Yeah. Really good instincts there because that\'s very much the
+mentality that I have and I guess a lot of founders must have. Right. Is
+like a little bit of a bias towards the go big or go home sort of
+attitude.
+
+**\
+17:44**\
+Alex Caveny\
+Yes. They need to relax in the biggest possible way.
+
+**\
+17:46**\
+Vrijen Attawar\
+Yeah, exactly. Oh, my God. It\'s so, it\'s so true. It\'s so true. We
+are cliches in the end. All of us. Yeah, no, I think that\'s a really
+fair call out because that is something my wife has told me a lot as
+well. It\'s like you have the tendency to like, make a big deal out of
+any deal of any size. I\'m like, okay, fair. That\'s completely fair.
+You know, I think work wise, we\'re in. In a pretty interesting sort of
+place. Future of Higher Education group is in with us. They want to do a
+pilot. Couple hundred folks get on the platform, start to see if we can
+route stuff through career span. The good thing there is they have a
+dedicated person that they hired to drive recruiting.
+
+**\
+18:36**\
+Vrijen Attawar\
+And so as far as a test environment, I think it\'s going to be ideal.
+Less optimal in terms of the actual talent pool itself. Unless we like,
+really double, triple down on selling to EdTech, which maybe, you know,
+we only need so many people placed to hit like a pre seed or a seed
+level of revenue. So, you know, I\'m not as.
+
+**\
+19:01**\
+Alex Caveny\
+I\'M.
+
+**\
+19:01**\
+Vrijen Attawar\
+Not as worried about that in the very earliest of days. But yeah, long
+story short, I think the goal is to keep getting those communities.
+We\'re talking to hbs, we had a good in over there. We\'re talking to
+some zooglers or the head of the zooglers. And so we\'ve got a couple of
+these big sort of communities that we\'re on the edge of and really
+where we are hoping to do better and get more backup, especially now
+that I\'m rejuvenated is the actual sales to companies and startups and
+stuff.
+
+**\
+19:33**\
+Vrijen Attawar\
+And per our discussion, I do think it makes a lot of sense to focus on
+the hiring manager through some sort of like guerrilla strategy even if
+necessary or at least being cognizant that founder versus you know,
+early talent versus hiring manager are going to be different sort of
+like sub stakeholders that need to be approached in different ways.
+
+**\
+19:58**\
+Alex Caveny\
+Yeah, I was at an event this week and it was via like a PM community.
+
+**\
+20:06**\
+Vrijen Attawar\
+Oh, interesting. What\'s it called?
+
+**\
+20:09**\
+Alex Caveny\
+I\'ll drop a link. I cannot speak to the actual quality of this, but
+sort of their focus is on like upskilling pm. So I think it\'s either
+people that are trying to get into project management or trying to get
+better. But there anyone, it sounds like anyone involved would be on
+like a very growth mindset and like trying to advance their career.
+Which seems relevant to what you\'re doing.
+
+**\
+20:36**\
+Vrijen Attawar\
+Yeah, yeah, it\'s super relevant. I\'m just looking up this founder, Ali
+Owens. Do you have anyone in common with this founder by any chance?
+
+**\
+20:49**\
+Alex Caveny\
+I think I know one person. I am, I\'ve gotten by completely by accident
+like heavily invested in the Ukrainian tech community.
+
+**\
+20:59**\
+Vrijen Attawar\
+Oh wow.
+
+**\
+21:01**\
+Alex Caveny\
+I think she\'s Ukrainian so I think I know quite a number of people she
+knows.
+
+**\
+21:05**\
+Vrijen Attawar\
+Yeah, I mean a connection or a warm intro would be great. I mean, hey,
+we, you know, sadly, unfortunately for burn purposes had to let our
+Ukrainian sort of employee go recently. But by and large we, you know,
+whether it\'s like federal workers that have been laid off or you know,
+any sort of group, we generally love going above and beyond and trying
+to be helpful and especially if it\'s a diaspora like that, happy to
+enable like free access to the tool for anyone that\'s like, you know,
+even just coming over and needs help getting a job. So I wanted to throw
+that out there. If you are embedded in that community and it helps you
+sort of, you know, help other folks in community, the community, we\'re
+happy to offer the Tool.
+
+**\
+21:48**\
+Vrijen Attawar\
+But yeah, I will also see if I can make some inroads with this person.
+This is a good link. Any. Anything else interesting you\'ve seen at Tech
+Week so far?
+
+**\
+22:02**\
+Alex Caveny\
+A bunch of stuff, yeah. And a bunch of not so interesting things too,
+but yeah, it\'s been kind of. I take it you have not been participating
+in Tech Week?
+
+**\
+22:11**\
+Vrijen Attawar\
+No, no, no. I got my fill in New York, so. So maybe I\'ll do DC later
+this month, but we\'ll see.
+
+**\
+22:18**\
+Alex Caveny\
+I did like Tuesday, Wednesday were kind of my hardcore Tech Week days
+and today less so. I\'m a little tired. But yeah, it\'s been a lot of
+stuff. It is cool to meet some people from out of town though. I mean,
+it\'s not that a normal week in San Francisco. It\'s just a bit busier.
+I think I went to this one event just cause it sounded like this looks
+like a palate cleanser. It was about like relationship tech. So it was
+about new data, but also like apps that help you keep your existing
+relationship fun and exciting and like marriage prep apps. It was
+basically the entire life cycle of relationships. Wow. And that was just
+fun, like, because it was just different than B2B SaaS. Enterprise
+software.
+
+**\
+23:02**\
+Vrijen Attawar\
+Super interesting.
+
+**\
+23:04**\
+Alex Caveny\
+That was cool. Although I met a girl there. I was like, what are you
+working on? And she\'s like, I\'m making designer vibrators. And I was
+like, what does that mean? And she\'s like, I\'m designing them. So
+you\'re not going to like shove them under your bed. You\'re going to
+like, they\'re like decor.
+
+**\
+23:18**\
+Vrijen Attawar\
+Oh, interesting.
+
+**\
+23:20**\
+Alex Caveny\
+I was like, okay. I don\'t know what the market size is for that, but
+neat, like, that\'s cool. Yeah, we\'ll see how she does.
+
+**\
+23:29**\
+Vrijen Attawar\
+We\'ll see how she does. I mean, that\'s like the classic. Like a VC
+would say, like, oh, lifestyle business. But I mean, potentially, like,
+I could see a fucking solid, like if she spends right and like builds
+right. And like builds that the brand. Well, like, I could see a stellar
+business coming out of that.
+
+**\
+23:47**\
+Alex Caveny\
+Yeah, definitely possible. But that was probably the most interesting
+business I\'ve heard of at Tech Week. It was very different.
+
+**\
+23:55**\
+Vrijen Attawar\
+Yeah, yeah, I, I, that\'s the kind. I mean, honestly, like, there\'s so
+much. I didn\'t realize how many. You always hear that there\'s a lot of
+cliche crap in tech and then you actually end up in tech. You\'re like,
+wow, it\'s even worse than I could have imagined. There\'s so many mid
+ideas out there.
+
+**\
+24:15**\
+Alex Caveny\
+Oh you should in my shoes I\'m on like selection committees. If I have
+to hear about another AI legal assistant, I am, I might jump off a
+building. It\'s possible I will jump off a building.
+
+**\
+24:26**\
+Vrijen Attawar\
+Oh my God. Oh my God. I mean I, yeah I have a lot of, honestly I have a
+lot of empathy now I realize for VCs that I didn\'t previously or just
+investors of any type because I, I actually can\'t imagine how jaded you
+must get.
+
+**\
+24:43**\
+Alex Caveny\
+Right.
+
+**\
+24:44**\
+Vrijen Attawar\
+Where like someone walks in with like hopes and dreams and like maybe
+they\'re all, all that maybe they\'re not. Right. So I can see how the
+like the pat. If you align with the VCs like prior preferences or sort
+of like biases it\'s just can be a massive advantage. But like through
+no fault of the vcs like you just need some sort of filtering system.
+Right?
+
+**\
+25:11**\
+Alex Caveny\
+Yeah. Yeah. And I like anything that\'s a little different. It sounds,
+it\'s just, it\'s fun to talk about and ideate about.
+
+**\
+25:19**\
+Vrijen Attawar\
+Yeah. Yeah. I mean I, I, one of the things that I did this weekend was I
+tried to like anytime I had some sort of more like deep or interesting
+thoughts about the hiring market, I tried to sort of note them down and
+at least have let me see where was my index. Yeah, like trying to at
+least note down a couple of like lines of thinking that I could like
+potentially do like a series on. I really feel like now is the time
+where people are murmuring about the amount of change that is going to
+happen in hiring and in hr. But people, no one\'s like beating their
+chest and screaming it from the top of the hills.
+
+**\
+26:04**\
+Vrijen Attawar\
+And while that is a very vulnerable position to put yourself in to like
+late stake out like hey, this is what I think the future is going to be
+like and this is why we\'re doing what we\'re doing and sort of try to
+beat that drum. I do think there is a lot of alpha if I\'m right because
+a big part of what I believe is that this is a unique moment in the
+history of HR and hiring. It\'s. It\'s not unlike, it\'s, it is unlike
+all the other times before where were told the resume was dying.
+
+**\
+26:42**\
+Alex Caveny\
+Right.
+
+**\
+26:42**\
+Vrijen Attawar\
+Or all of the other times before where we said were going to do skills
+based hiring or any other sort of like trend. But yeah, I think, I
+don\'t know if like you\'ve thought a lot about like that aspect of
+brand building or sort of, you know, just the, I mean so many founders
+nowadays are just leveraging social media and just like building hype.
+Right. And the getting real far building hype. And I\'m not saying that
+I would want to build a hype based company. I\'m saying we have plenty
+of substance. I think maybe what we need right now is a little more hype
+and a little less like to make the substance shine a little more.
+
+**\
+27:19**\
+Alex Caveny\
+Yeah, I think it\'s a little bit of a tough industry but in the sense
+that it\'s ripe for disruption because it\'s like it\'s kind of grim
+because right now hiring isn\'t great because of just the economy in
+general. So jobs are like this sucks. There\'s not a lot of jobs, it\'s
+really hard. And then on the HR side they haven\'t established tools
+like yours for example. So they\'re just bitching about like I\'m
+getting a billion gen AI jobs.
+
+**\
+27:45**\
+Vrijen Attawar\
+Yeah.
+
+**\
+27:46**\
+Alex Caveny\
+Resumes all the time and like everyone\'s just upset about the system.
+But that like that\'s definitely a good time to push forward with
+something different.
+
+**\
+27:54**\
+Vrijen Attawar\
+Right. And the sort of, even amongst other positions, more so original
+position that I\'m trying to take on is that like it is the adversarial
+way in which we are thinking about hiring and approaching the hiring
+dynamic that is at fault. And you know, to the extent that like a less
+adversarial system would enable both sides to more willingly and
+transparently put in the kind of information that leads to better
+matching, I think that is where the sort of like answer, the solution
+lies right Is in more information and the right information.
+
+**\
+28:33**\
+Alex Caveny\
+And I think it\'s like you have to look at what works and then how do
+you make a system that can at least get capture part of that human
+interaction. So like I remember when I was applying for jobs like back
+in the day when I was just actually cold applying for jobs without
+trying to get warm intros or anything. You just send out like hundreds
+of applications and it was the worst thing possible, right? And then you
+go through like multi round interview processes and then you still never
+hear back and it\'s just like, and then even just a couple years after I
+graduated I just started networking more and it was just so easy. It was
+just so to get jobs after that I would just be like, hey, I\'m Alex,
+what\'s up? What are you doing?
+
+**\
+29:16**\
+Alex Caveny\
+And then like I\'d get A job or even, like, I met Josh. I didn\'t. I
+didn\'t like, cold email Josh with my of like, hey, I\'m really good at
+coaching people. Let me work for you or work with you. I met him at,
+like, a demo day, and I\'m like, hey, what\'s up? And then we just got
+to chatting about and he was like, I kind of like your insights. You
+want to talk more? And I\'m like, sure. And that\'s just how that
+happened. But if I had applied to Josh and just given him my resume, I
+don\'t think I ever would have looked qualified for what he\'s looking
+for.
+
+**\
+29:46**\
+Vrijen Attawar\
+Right.
+
+**\
+29:46**\
+Alex Caveny\
+So it\'s like you capture that human interaction piece or like, what is
+it in those conversations? Is it literally the conversation? Is it
+subtle social cues? Is it the type of things you talk about versus
+what\'s on your resume? Like, what is it in those networking type
+discussions that make people be like, I\'ll hire this guy. Sure, why
+not?
+
+**\
+30:06**\
+Vrijen Attawar\
+You know? You know what it is, in my opinion, because I have, I guess,
+at this point, like, almost a decade and a half in narrative design. I
+think it is the moment where as you\'re engaging with someone or as
+you\'re reading about them in a college essay or a resume, whatever it
+is, there is a moment where you can, like, see them in the role. Like,
+it is about, like, being a. There\'s the moment where you\'re like, I
+can see it. Right? And then once you can see it\'s generally a question
+of, so how do I, like, justify it? Like, the justification follows the,
+like, intuitive I. This is, like, passing my smell test. So it\'s a
+little bit of a hard moment.
+
+**\
+30:49**\
+Vrijen Attawar\
+But I think to the extent that the information that we provide them can
+be oriented in a way to simulate that effect of, like, hey, here\'s why
+you want to talk to Alex. Right? Here are things that you may want to
+bring up in your conversation with Alex that are unknowns. You know,
+like, making them feel like, okay, I. I really have control of the
+situation. I know more about Alex than I would the average candidate. I
+know both why I should hire them, him, and why. You know, there are
+like. And gaps that I maybe want to, like, address or look at. Like,
+it\'s just. It\'s like, better. It\'s like better situational awareness
+when it comes to each candidate. And you\'re sort of hiring pipeline is,
+I guess, what we\'re trying to go. Go for.
+
+**\
+31:38**\
+Alex Caveny\
+Yeah, that\'s that seeing someone in a role is really interesting
+because I think it is kind of, that is like you meet them and you can
+visualize them like being in that chair over there, if they fit in or
+not, both socially and skills wise. And it kind of reminds me just
+another anecdote. When were making our startup, we prototyped a lot of
+different just like ideas around remote socializing and remote community
+building. And one idea were sticking around for a short period of time,
+which I still kind of buy and maybe I\'ll go back to one day. We were
+talking about making basically a dating app, but instead of having like
+static profiles that you\'d have your static profile but that everyone
+had to upload like a 30 second clip of them just like talking about
+themselves.
+
+**\
+32:27**\
+Alex Caveny\
+And thesis was that like you gather so much about a person and what
+they\'re going to be like to interact with from like the first 10 to 15
+seconds of a conversation. Like if I\'m at a networking event, which I
+go to a lot of networking events, and I start chatting with someone, I
+like almost instantly know if I kind of regretted that I came over here.
+
+**\
+32:48**\
+Vrijen Attawar\
+Yep.
+
+**\
+32:50**\
+Alex Caveny\
+And like occasionally, but very rarely does that change throughout the
+course of a conversation. So our whole thesis was like, could you get
+that first 15 seconds without having to go through the whole song and
+dance of like messaging each other and then going on a date and then
+you\'re committed to this date for like a fucking hour. It\'s like, what
+could you do the same thing with the hiring process? It\'s like, how
+could you get that type of information without having to go to the
+actual interview stage?
+
+**\
+33:15**\
+Vrijen Attawar\
+Potentially, I, I suspect that there exists qualitative attributes that
+people have in the context of relationship that are strongly correlated
+or like inversely correlated as far like you could basically, I guess
+what I\'m driving towards because we\'ve discussed this in the context
+of career span. I actually disagree with you that it\'s a 30 second
+video. I think it\'s the career span solution applied there where the
+analogy would be like a wingman or a wing woman that you are like
+talking to them. Like, all right, why do you think like X person is like
+cute, right? Like talk to me like helping facilitate that. So it\'s like
+more effort into each person via a like essentially tutor, almost like a
+dating tutor.
+
+**\
+34:10**\
+Vrijen Attawar\
+But I think the solution that will win in that space is going to be one
+that will explicitly like career span, disavow auto gen responses for
+you and disavow, like creating stuff for you. It will want you to like
+articulate first because I Think that is the. I think the same sort of
+dynamic exists where like, if you\'re trying to hire me, obviously you
+have explicit requirements and then you got your implicit stuff that you
+wouldn\'t actually say but you believe. Right. And then the same for me
+as far as the employer is concerned. And to the extent that I\'m like
+kind of a taker in the job market, I have a greater desire or
+disproportionate incentive to lie.
+
+**\
+34:55**\
+Vrijen Attawar\
+And to the extent that from what I gather, employers are being pretty
+fucking picky and just like holding out for the right person, that is
+the anxiety from the employer side. Right. All of that could be solved
+if the employer had greater confidence in the employee\'s intentions and
+background or greater insight and same for the employee. Right. If they
+saw the employer sort of like doing stuff like, you know, providing
+feedback, doing stuff like, you know, providing a salary, stuff like
+that. Or even just being able to know, hey, I\'m aligned with the work
+culture here because careers. There are five folks in this company that
+have career span and career spans. Read on. This company is that I\'ll
+fit. You know, like, there\'s just a lot of possibilities.
+
+**\
+35:40**\
+Vrijen Attawar\
+And so the point basically I was trying to make is that like, I think in
+your app, if you did that intake process, I have no doubt that you could
+figure out like some incredible insights into like, oh, it turns out
+people that, you know, eat insomnia cookies or like love like late night
+sweet tooth, and people that like go to the gym at 6, whatever, are
+like, you know, like, there have to be those like, patterns. And I think
+that\'s what we. That\'s going to be the next wave that LLMs will unlock
+is that analysis of like subjective or qualitative patterns.
+
+**\
+36:15**\
+Alex Caveny\
+Yeah, well, it\'s like, I think also what you\'re saying is it\'s about
+surfacing, being able to surface the right information, like relevant
+and then kind of not necessarily verifying it, but doing it in a way
+that\'s trustworthy. And I think that\'s where like the stories aspect
+of your platform is very interesting in putting that together because
+obviously they are fakeable. Like you can fake thing, but it\'s all
+about having the best trust possible. It\'s not about being perfect,
+it\'s about being better. So it\'s like, I feel like the stories are a
+little harder to gain than just stating you have credentials. For
+example, like if were chatting and you needed help on social media
+campaigns and I went, oh yeah, a genius coach at social media campaigns.
+We work on that you probably catch on pretty quick. That like, I\'m not
+good at that.
+
+**\
+37:02**\
+Vrijen Attawar\
+Like, that\'s not what I am.
+
+**\
+37:04**\
+Alex Caveny\
+But if I was just like, just trying to close a deal, like I might be
+able to convince you of it. And then we would try it for a couple months
+and you\'d pay me and then you\'d be like, this guy doesn\'t know what
+he\'s talking about. Right? That\'s like, what. How would you find out
+in talking to me for example, that\'s something I can do without doing
+something dumb, like a take home assignment, which everyone hates. And
+it\'s time consuming. Like, how could you search those types of
+experiences and data? Because the other part of your platform is like
+learning from what they like and don\'t like. So you can say like, oh,
+we don\'t, we didn\'t like this candidate because of X. And then that
+feeds into the intelligence model.
+
+**\
+37:41**\
+Alex Caveny\
+But you still need the information to be able to make choices based on
+that feedback.
+
+**\
+37:46**\
+Vrijen Attawar\
+Totally, totally. And that\'s precisely what we want to be able to do is
+eventually be able to say, hey, the top candidates for this type of
+position have these things that you\'re missing, right? Because it\'s
+almost like we got to take the feedback out of company\'s hands. And
+actually the person that gets the job is not the person you want to be
+comparing yourself against. You want to be comparing yourself against
+the shittiest person that caught an interview.
+
+**\
+38:12**\
+Alex Caveny\
+Right?
+
+**\
+38:12**\
+Vrijen Attawar\
+That\'s the real measure of like, okay, this is what I need to actually
+better than to like get a shot. Like, I almost view it as like there\'s
+getting into the room and then there\'s what you do in the room. And
+those are two almost completely like distinct challenges.
+
+**\
+38:26**\
+Alex Caveny\
+Right?
+
+**\
+38:29**\
+Vrijen Attawar\
+Yeah, so I think that is where like the, you know, we would be able to
+provide implicit guidance. The moment a company accepts a career span
+candidate, we would be able to say, hey, this is the kind of person that
+passed their screening based on this like skill graph. You have fewer
+hard skills. Like, you know, you have a less unique background or
+something like that. Like, I think I showed you that stuff last time.
+It\'s effectively. Yeah, I think it equips you with, more to my earlier
+point, it equips you with the kind of information that helps you
+envision someone more effectively, which is, I guess what the resume was
+always meant to do, right?
+
+**\
+39:10**\
+Vrijen Attawar\
+Was to help give you a quick check on whether someone\'s even worth
+paying attention to and help you like loosely visualize whether you can
+like see them in this role.
+
+**\
+39:22**\
+Alex Caveny\
+Yeah, yeah. You can\'t just like staple the piece of paper to a chair
+and be like that\'s them. That\'s my dream hire. So it\'s like how do
+you. Again the video example is just like mannerisms wise.
+
+**\
+39:32**\
+Vrijen Attawar\
+Right.
+
+**\
+39:33**\
+Alex Caveny\
+That\'s dating. But it\'s like what\'s that information you can surface
+to make them see them in that role.
+
+**\
+39:39**\
+Vrijen Attawar\
+Right.
+
+**\
+39:40**\
+Alex Caveny\
+Even just hearing their voice to a degree like how they speak and
+they\'re, and how they\'re prompting their responses can be interesting.
+It\'s like just how do you circle that stuff of. And there\'s, there\'s
+mixed objectives. Right. Part of is you do actually want them to have a
+good placement and part of it is you want them to think they\'re getting
+a good placement so they keep. Right. So like standard hiring is a bit
+of a crapshoot and everyone thinks they have a genius process and they
+don\'t and they\'re like 10. This is probably not that much better than
+a two step process. Right. Argue because they\'re scaring away talented
+people that.
+
+**\
+40:19**\
+Alex Caveny\
+So something I\'d be curious about thinking about is like how can you,
+how can you build that kind of trust with the hiring managers and
+surface that type of information they\'re looking for?
+
+**\
+40:33**\
+Vrijen Attawar\
+Yeah, yeah, that\'s exactly right. And the interesting part of this
+dynamic is that the, let\'s say in a regular sort of larger company the
+resume is first screened by the recruiter for somewhere between 6 to 20
+seconds. That scan is essentially just a non expert\'s interpretation of
+the requirements. So really that\'s not the hardest part. As long as you
+can have the aesthetics of a good resume, I suspect you\'ll probably
+pass that. Right? Right. Because like a recruiter doesn\'t know the
+nuances of like mobile web development. Right. They\'re going to scan
+that and go this seems roughly correct. They\'re probably more so paying
+attention to the hallmarks of quality like grammar and orientation stuff
+like the kind of stuff that exactly is getting like masked by AI now. So
+they\'re sending, probably sending more people to hiring managers than
+ever.
+
+**\
+41:36**\
+Vrijen Attawar\
+Hiring managers are better able to distinguish the underlying but are
+still seeing basically generic applicants because everyone\'s using AI.
+So I think within that context I see what you mean about okay, how do we
+go to these hiring managers and say okay, instead of this generic crap
+that you can\'t distinguish between anyone, what is the kind of insight
+that you would want either the same insight across Everyone. Or
+personalized insights of a certain type for. For everyone that would
+help you. Yes, screen them. No, don\'t screen them. Right. That\'s the.
+The. The. The dynamic is that roughly based on your understanding as
+well. Have I, like, thought that out correctly?
+
+**\
+42:19**\
+Alex Caveny\
+Yeah, and it\'s kind of like were talking last time about delivering
+them a package of baseball cards or whatever. It\'s like, what are you
+delivering that\'s digestible and gives them the actual information they
+want? Because resumes suck. Like, resumes are really bad. They\'re awful
+to try to understand if someone\'s actually a good fit for your company.
+So it\'s like, what. Deliver for them that they can peruse quickly, but
+it\'s an understanding that there\'s less and it\'s higher quality. So
+they\'re willing to spend a little more time than your average resume.
+Like, what\'s. What\'s that ideal middle ground? And what. What does
+that product look like?
+
+**\
+42:51**\
+Vrijen Attawar\
+You know, what would be fucking sick would be a stunt where we make,
+like, a. Our 52 best candidates on career span. We make, like a deck of
+cards, essentially. And we can, like, hand that out to companies or
+founders or sorcerers. And essentially it can be, like, a little
+gimmicky, but sort of a. Like, this is the caliber of folks that we
+have. This is the caliber of communities that we have. Almost something
+to, like, visually demonstrate the quality of our. Because I think that
+is. Is. Is maybe something that is lacking is like, the punch of, like,
+how do we get people to feel the punch of, like, oh, we have, like, X.
+We have the McKinsey Alumni Group. And, you know, how do we get folks
+to, like, really salivate at the prospect?
+
+**\
+43:48**\
+Vrijen Attawar\
+I think, to the point that came up earlier in this conversation. How do
+we help them visualize?
+
+**\
+43:54**\
+Alex Caveny\
+Right?
+
+**\
+43:54**\
+Vrijen Attawar\
+So maybe the first step is, as you said, deliver them something that is
+either of immediate value for the need that they have. That is, hey,
+these are just candidates that we have. Let me know if you want to talk
+to them. And just as you suggested, like, just offer an overabundance of
+value first or some sort of, like, gimmicky. Hey, this is the caliber of
+person that we place. And, like, that\'s why you want to talk to us and
+get them to, like, sign on faith.
+
+**\
+44:24**\
+Alex Caveny\
+Yeah. And also not to get too. Too gimmick. Gimmicky and gamified. But
+I\'m just. I\'m thinking of, like, use StubHub ever for concert tickets.
+
+**\
+44:33**\
+Vrijen Attawar\
+Yeah. Yeah.
+
+**\
+44:34**\
+Alex Caveny\
+So when you\'re on StubHub, everything about that platform is just
+trying to give you FOMO to buy some shit right now. And I like it when
+you\'re looking at the tickets and then it shows you tickets that just
+sold or like recently sold to be like, oh, I know you\'re waiting out
+for prices to go down, but look what, look at this great deal that just
+got sold. I wonder if, like, when you\'re delivering these candidate
+packages, if you could also be like, oh, here were. Here were good fits
+that were already hired. It\'s pretty gimmicky and gamey, but it would
+be interesting to be like, oh, hey, I know you just signed up yesterday,
+but this is what you missed out on. You should be using us all the time.
+
+**\
+45:12**\
+Vrijen Attawar\
+Right? Right. Right. Because that creates a logical reason for a
+subscription offering. Right? Is like, oh, I always want to be on top of
+great candidates.
+
+**\
+45:24**\
+Alex Caveny\
+Right.
+
+**\
+45:25**\
+Vrijen Attawar\
+Is the, is the effect that we want to create.
+
+**\
+45:29**\
+Alex Caveny\
+And if there\'s not any really good fits right now, especially since
+your talent pool is on the, like, it\'s early. That\'s. That\'s
+interesting to be like, no, like, I promise there are really good people
+here. They just already got sucked up. So be here earlier in the process
+because, like, think about the mentality of most of the people you\'re
+going to be recruiting right now. The, the ones that are going to be
+easiest to get on the hiring side are they probably had a job add up for
+a while, like a month they\'ve been trying to get people. So if you can
+like bring them in and be like, oh, look at this person that got hired
+three weeks ago. If you were here a month ago, you could have gotten.
+It\'s just like. And potentially an interesting fomo.
+
+**\
+46:09**\
+Alex Caveny\
+It might be too gamey for a platform like this, but it\'s interesting to
+surface like your potential candidate pool.
+
+**\
+46:16**\
+Vrijen Attawar\
+Yeah, yeah, no, it\'s. It\'s super interesting. I mean, that is. Is a
+very. Yeah, I think especially if we\'re going with subscription. The
+thing is, like, something. Subscription is way more likely to be pulled
+off at like a series B or higher company. Right. Like, I presume you\'d
+need a standing HR person and a standing HR budget to allocate a monthly
+spend on a pipeline tool. Right. And it\'s also further curtailed by the
+fact that it has to be the fastest growing ones who will also be the
+most heavily, like, approached by other people. The other thing that
+potentially occurred to me the other day, so that\'s what I think.
+
+**\
+46:59**\
+Vrijen Attawar\
+That\'s one decision to be made is like, all in on founders, all in on
+the fact that we can communicate to founders well and we can place these
+sort of individuals in this looser, more like information opaque
+environment of like series A and below founders or are we going to be
+most effective talking to hr, talking to bigger companies? Another angle
+was actually we\'ve had a lot of interest from non tech companies that
+want tech forward talent and that was another niche that were sort of
+thinking is like hey, like Coca Cola wants tech talent, AI talent too.
+But they\'re bottom of the pile as far as someone\'s concerned. So I
+presume that\'s a need right? Is, is like a talent for basically unsexy
+companies.
+
+**\
+47:49**\
+Alex Caveny\
+Yeah, I think unsexy companies is an interesting one. And I feel like
+the other one, like you said about less technical companies looking for
+technical talent is that those are also the ones that are probably going
+to like historically would rely on things like referrals and networking
+and those are the ones where the human element\'s even more important.
+So like a tech startup is mostly going to be looking at like your GitHub
+repo and credentials. So like those other companies would also lean into
+whatever you\'re doing to surface that. What do they look like in that
+chair element? Like how do they fit in this business? What\'s the human
+element? And I feel like a lot of especially really big companies talk
+to talk on culture fit. Like I remember I applied for a job at Ford
+right out of college.
+
+**\
+48:34**\
+Alex Caveny\
+Dumbest questionnaire of all time. They had a personality fit one and
+then like a tech, like just a logic and reasoning skills one. So it was
+like word problems and like what shape is next in the sequence and stuff
+like that. But the, which whatever, that was fine. But the personality
+one was the dumbest thing ever because right like you\'re on the
+manufacturing line and you see someone violating safety standards, what
+do you do? And they would like obviously the right answer would be like
+inform them of it and right text but they range anywhere from like
+hitting them to just like completely ignoring it and going on your day.
+And it\'s like obviously these are not the answers in this
+questionnaire. Yeah, not at all an actual personality fit questionnaire.
+
+**\
+49:28**\
+Alex Caveny\
+It was just like are you a psychopath or can you operate in a
+professional environment?
+
+**\
+49:33**\
+Vrijen Attawar\
+That\'s essentially all these tests eventually become useful for is most
+testing is not useful for discriminating between the top 1% effectively.
+Right. You need like specialized testing to assess at the very highest
+level of the scale. But yeah, that\'s sort of also the other thing with
+personality tests is you know, what kind. Like if you\'re just, if you
+have more than two brain cells to rub together, surely you can look at
+the job you\'re going for, you know, in your mind\'s eye imagine the
+ideal person and personality for that job and then just say that. Right.
+Like it\'s not, you know, you\'ve got more than like 110 IQ points.
+It\'s, it\'s a relatively doable thing. Right.
+
+**\
+50:17**\
+Alex Caveny\
+So Ford is obviously not looking for like rule breaking risk takers.
+
+**\
+50:22**\
+Vrijen Attawar\
+Yeah, yeah.
+
+**\
+50:24**\
+Alex Caveny\
+Questions?
+
+**\
+50:26**\
+Vrijen Attawar\
+Yeah, yeah. No, no. What? Ford Motor Company. What? No, that\'s
+hilarious. No, I, I totally feel you. Right. Like I, some of the worst
+interviews I had were actually with places like Comcast and these sort
+of like older companies that are, yeah. They\'re frankly struggling I
+think to attract like good talent. And maybe, you know, that\'s the
+other thing I\'ve been thinking a lot about is like, hey, maybe we\'re
+like barking up the wrong tree. Like we\'re trying to fight this
+incredibly comp, like crowded space in tech against people that arguably
+seem more tech than us, when we should go to people that are not tech
+and blow them away with our comparatively greater techiness and our
+comparatively superior, far superior understanding of AI.
+
+**\
+51:16**\
+Vrijen Attawar\
+And I think it would be easier to pull off a narrative there as well
+around like what it takes to be an AI qualified candidate. Right. Maybe
+we would have to like get a professor or something to get some like
+fucking know, proof of stamp of approval. But I think by and large, like
+there\'s some potential there. So maybe that\'s like the last thing that
+we\'re going to check out in the next few weeks is like, hey, which of
+these two directions do we get some fucking money in?
+
+**\
+51:42**\
+Alex Caveny\
+Yeah, I think there\'s some potential there. I think you\'d have to be
+very precise about the types of companies you\'re looking for because my
+experience working at big companies is that, wow, are they slow and are
+they avert trying new things? So being like, hey, you know, we\'re
+career span, we\'re new, check this out. Like new is dead to them. Like
+they want the most ancient service known to mankind. Like they like it.
+So I think there\'s probably some kind of less sexy companies that would
+be open to it. But yet to be pretty precise about it versus I think on
+the other side people being like inundated with shitty applications and
+wanting a way to surface the best ones. And I think it\'s not just
+service the best ones like we talked about before.
+
+**\
+52:28**\
+Alex Caveny\
+It\'s also finding the hidden gems because that\'s the big someone
+who\'s like a total all star is going to get a job really quickly and
+they\'re going to be in like process between three different offers and
+like no one wants to participate in that. That just sucks. Like a hidden
+gem who doesn\'t even know their own value and surfacing them to a
+company so they can hire them at a reasonable rate is probably one of
+the most attractive parts of it. Like if you were pitching it to me, I
+find that really attractive.
+
+**\
+52:55**\
+Vrijen Attawar\
+Yeah. Yeah. And I have often wondered that. Right. Because I, I
+genuinely think our tool can do that. Like I think our tool can help you
+find sleepers because it literally does assess the level of like
+implicit transferability of your, of what it like knows your
+capabilities are like it assesses the transfer abilities of what you\'ve
+done and says hey, you maybe have direct experience with 60% of this
+job, but 40% of this job you or you know, another 30% of the job you
+still have covered indirectly, you know, because you\'ve done things
+that require the same muscle or the same style of thinking or something
+along those lines. So yeah, I, and maybe it would be interesting to sort
+of find honestly maybe we even just like BS this initially. But like
+what is the savings of right.
+
+**\
+53:44**\
+Vrijen Attawar\
+Like of a career span candidate, like someone that performs equally well
+but saves you like X thousand dollars because you\'re not fighting for
+the like really obvious picks and you know, getting into a bidding war
+with them.
+
+**\
+53:59**\
+Alex Caveny\
+Yeah, I think that\'s an interesting way to surface like when you
+provide a list of candidates is you can have, yeah, here\'s some
+traditionally qualified people. And then sprinkled throughout is maybe
+that\'s like a little experimental too. It\'s like hey, here\'s what
+thinks is a sleeper candidate. And I feel like every manager is going to
+view sleeper candidates differently because you\'re kind of by
+definition going outside the box of your typical hire for this role. So
+it would be kind of interesting experiment on your side to see like
+okay, when aren\'t totally on paper qualified what are the things hiring
+managers like and don\'t like? Like you could right. All that way too.
+
+**\
+54:40**\
+Vrijen Attawar\
+Right, right. I like that. I dig that. I\'m going to talk to Logan today
+about this stunt idea. I actually think it could be very cool and I
+think it could be a cool sort of like awareness raising thing too. You
+know, where you have like, you know, effectively bunch of really great
+candidates that you can put forward to folks and say, hey, these are
+like, this is the quality of people that you\'ll see a careers. But I
+think. I think I still need to like, sort of work out how impactful that
+gimmick will be. I. I really liked your idea as well. Around, like, hey,
+can we give them nuts? What was it?
+
+**\
+55:28**\
+Alex Caveny\
+People that have been hired.
+
+**\
+55:29**\
+Vrijen Attawar\
+Yeah, yeah, exactly, right. Like, show them like, hey, you just missed
+out. Your cart was like, just full. Or we just placed this person with
+these capabilities. I wonder if we could do that, like, little thing in
+the corner of the. That little toast that shows up in the corner of a
+website saying like, X. Many people are looking at Y candidate. Yeah, I
+think this. I think this. This makes a lot of sense. Well, thank you
+again so much, man. It\'s always such a. Such a pleasure chatting. I
+always feel like I\'m able to. To talk things through, really. So I
+appreciate your time a lot.
+
+**\
+56:01**\
+Alex Caveny\
+I like ideating. Like I also said before, I only like working with
+people I like to work with, so I like. I like working with you on this.
+It\'s a fun project. Oh, one of them I meant to. I think I meant to make
+it last time is I. With Wisdom Partners. They do have. They have like a
+referral system. So you know anyone that\'s in like the pre Seed, even
+up to series a range that\'s looking coaching, whether it\'s my type or
+there\'s like eight other people at Wisdom Partners that do different
+things. Yeah, just forward them to me. And the referral bonuses, I think
+how Josh runs it is it\'s 50% of what they\'re paying for the first two
+months.
+
+**\
+56:41**\
+Vrijen Attawar\
+Oh, wow. That\'s very generous.
+
+**\
+56:43**\
+Alex Caveny\
+Pretty substantial. So if it\'s like our relationship would be like a
+thousand dollars if someone converts.
+
+**\
+56:49**\
+Vrijen Attawar\
+So, yeah, I actually know. I know a bunch.
+
+**\
+56:52**\
+Alex Caveny\
+And.
+
+**\
+56:52**\
+Vrijen Attawar\
+And we actually have been. Maybe there\'s something to pass on to Josh.
+If you think it\'s better coming from me, I\'m happy to do it as well.
+Just because you\'re in contact with them more. We\'ve actually been
+looking for folks to sponsor an event that we\'re doing. Me and another
+group called Career Span, another group called Corridor X. We\'re trying
+to do this reverse hiring event where you essentially users sign up on
+Careerspan, they use it for founders, give us their job spec, and then
+we create matches for them on the night of the event. So if everyone
+does their work in advance, we can essentially say, hey, we expect you
+will meet like these three engineers, look out for these folks and
+we\'ll think of how to make it a little bit more interesting or
+exciting.
+
+**\
+57:37**\
+Vrijen Attawar\
+Sort of like what Bordy has been doing. Which I am a little convinced
+that they got that idea from me talking to Bord about it. So that\'s my
+little conspiracy theory. But yeah, anyway that\'s one thing that we\'re
+doing so in case because that would be a very sort of a target rich
+environment as far as founders is concerned. We\'re hoping to bring
+about like 20, 25 of them over. But just regardless, if you\'re able to
+give me the list of the advisors or give me a few names, I would love to
+just distribute it to my network. And I have those like 30 founders that
+are all career tech that I already have in my group. So I can definitely
+get it spread and with a lot of folks.
+
+**\
+58:18**\
+Alex Caveny\
+Yeah, I\'ll just drop it in chat and make sure you copy chat persists.
+But yeah, with the partners. But yeah, if you want to refer someone,
+just make sure you make the email intro just so it doesn\'t get in the
+shuffle. But yeah, if they sign on, you get your referral bonus.
+
+**\
+58:38**\
+Vrijen Attawar\
+Yeah, this would be awesome. Yeah. And these folks look dope as well.
+Yeah. Let me get this over to the future of CareerTech Group and my New
+York founder homies and then I\'ll get back to you and see what the
+about the interest and yeah, I\'ll book another one for later in this
+month and if you for your part, if you wouldn\'t mind just checking
+about anyone that can get me in touch with Ali, that would be awesome.
+Okay, cool.
+
+**\
+59:05**\
+Alex Caveny\
+I think you already have your second one in October booked.
+
+**\
+59:08**\
+Vrijen Attawar\
+Oh, do I? Okay, perfect then yeah, then I\'ll just see you then. Cool.
+
+**\
+59:13**\
+Alex Caveny\
+Awesome man. Well, good catching up and good luck with everybody.
+
+**\
+59:15**\
+Vrijen Attawar\
+Thanks man. Catch you later.
+
+**\
+59:17**\
+Alex Caveny\
+Bye.
+
+**\
+59:18**\
+Vrijen Attawar\
+Bye. Oh, maybe make a note that I will send Alex a blurb to assist with
+the intro to the lady from that we mentioned earlier in this
+conversation. Ali Owens A L Y O W E ns from upskillpm.org so yeah,
+let\'s keep that in mind for when the post processing happens in Zoe.

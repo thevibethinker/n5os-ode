@@ -1,0 +1,15 @@
+# Syncthing Ignore Patterns for Personal/Meetings
+# Sync completed meeting folders, but NOT the raw ingestion Inbox
+
+# Ignore raw ingestion inbox (Zo-managed, not for sync)
+Inbox/
+
+# Ignore bulk import staging areas
+BULK_IMPORT_*/
+BACKUP_*/
+CURRENT_BACKUP_*/
+CORRUPTED_*/
+
+# Ignore system files
+.DS_Store
+.n5protected

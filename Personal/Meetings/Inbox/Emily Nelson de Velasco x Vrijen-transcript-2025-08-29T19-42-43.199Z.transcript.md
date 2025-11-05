@@ -1,0 +1,1178 @@
+**\
+00:00**\
+Emily Nelson de Velasco (she her)\
+Full disclosure, I\'m actually in Mexico. It says I live in San Diego.
+That\'s a lie.
+
+**\
+00:04**\
+Vrijen Attawar\
+That\'s okay. That\'s okay. If I was. Even if I was living in San Diego,
+I wouldn\'t mind some time in Mexico.
+
+**\
+00:10**\
+Emily Nelson de Velasco (she her)\
+Right? And it would be so easy too.
+
+**\
+00:13**\
+Vrijen Attawar\
+Yeah, yeah, that is, that\'s awesome. Are you having a good time?
+
+**\
+00:17**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+00:18**\
+Vrijen Attawar\
+Hell yeah. Okay. Yeah.
+
+**\
+00:20**\
+Emily Nelson de Velasco (she her)\
+You\'re in Brooklyn.
+
+**\
+00:22**\
+Vrijen Attawar\
+I\'m in Brooklyn. I don\'t think I make very good use of living in
+Brooklyn, founder, but I do love it. It\'s where all of my kind of close
+friends are. So, you know, I\'m still very happy being in sort of their
+proximity.
+
+**\
+00:38**\
+Emily Nelson de Velasco (she her)\
+All right, well, you have to pop down sometime.
+
+**\
+00:41**\
+Vrijen Attawar\
+Yeah, yeah, no, absolutely. I remember the first time I went was with
+was actually before I moved back to the US with some like high school
+friends. It was amazing. What food and just beautiful and yeah, it was a
+good time. How long have you been living there?
+
+**\
+00:59**\
+Emily Nelson de Velasco (she her)\
+Three years now.
+
+**\
+01:00**\
+Vrijen Attawar\
+Wow. Okay. Yeah. This isn\'t just like a pop down kind of thing.
+
+**\
+01:05**\
+Emily Nelson de Velasco (she her)\
+No, no, it\'s. It\'s like a pop. It was supposed to be more of a pop and
+now it\'s more like a pop.
+
+**\
+01:12**\
+Vrijen Attawar\
+Oh man.
+
+**\
+01:13**\
+Emily Nelson de Velasco (she her)\
+From here, so.
+
+**\
+01:14**\
+Vrijen Attawar\
+Hell yeah. I mean that\'s incredible. My, my head of AI is in Madeira,
+Portugal. Oh yeah. Very exotic. She does a bang up job. She\'s also
+lives in little island in the middle of the Atlantic.
+
+**\
+01:32**\
+Emily Nelson de Velasco (she her)\
+It\'s Madeira. Yeah. I\'ve never been there, but I would love to go
+there. It sounds amazing.
+
+**\
+01:39**\
+Vrijen Attawar\
+It\'s, it\'s so, it\'s, it looks so beautiful. Like every few mornings
+we\'ll do like morning stand up. She will just pick up the laptop and
+turn around and just like show us this amazing vista flexing on the rest
+of us concrete boxes, calling it a life.
+
+**\
+01:57**\
+Emily Nelson de Velasco (she her)\
+And you\'re like, where did I go wrong?
+
+**\
+01:59**\
+Vrijen Attawar\
+I know. Yeah. I was like, what mistakes did I make or what amazing
+decisions did Ilsa make? Maybe both. Faith. Yeah. Well, hey, it\'s such
+a pleasure to meet you. I, you know, obviously really appreciate your
+presence on LinkedIn and sort of just engaging with you but you know,
+appreciate your time to chat because right now we are really starving.
+Not starving, but like greedy for perspectives on hiring and sort of
+what\'s going on and specifically what someone from your perspective
+thinks the disconnect or the problem lies. Yeah.
+
+**\
+02:43**\
+Emily Nelson de Velasco (she her)\
+And I am dying to hear your perspective too because I think there are so
+many different perspectives out there right now. It\'s kind of like a
+Free for all.
+
+**\
+02:51**\
+Vrijen Attawar\
+It is. It is. Yeah. And by virtue of this was not planned. This was
+purely through like startup madness. We\'ve had to sort of at one point
+or the other, systematically talk to so many different perspectives on
+hiring from college admissions counselors to private career coaches to.
+To recruiters to employers now and sort of internal recruiters. And so
+it\'s just been sort of fascinating seeing everyone\'s. It\'s almost
+like everyone has a point, but the problem is we can\'t get along for
+long enough to coordinate action.
+
+**\
+03:29**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+03:29**\
+Vrijen Attawar\
+Just like a lot of misgivings in all corners and no one is willing to.
+In game theory terms, everyone is defecting. Right.
+
+**\
+03:37**\
+Emily Nelson de Velasco (she her)\
+Right.
+
+**\
+03:37**\
+Vrijen Attawar\
+No one is. Yeah. No one is. Is just like cooperating. And that sucks.
+
+**\
+03:42**\
+Emily Nelson de Velasco (she her)\
+Yeah. Yeah. Okay, so this is my take. Hot or not high level. Right now.
+It is an arms race.
+
+**\
+03:52**\
+Vrijen Attawar\
+Yeah.
+
+**\
+03:53**\
+Emily Nelson de Velasco (she her)\
+Like we are AI ing for the sake of AI. Everybody\'s gaining efficiency,
+but while the job seekers are gaining efficiency, the recruiters are
+losing efficiency. Everybody hates AI but we need to use it because if
+you don\'t use it, you\'re going to lose out.
+
+**\
+04:08**\
+Vrijen Attawar\
+Yeah.
+
+**\
+04:08**\
+Emily Nelson de Velasco (she her)\
+So it\'s like because of the massive gain of efficiency, it is totally a
+zero sum game. Like it\'s giving us nothing except this hyper
+competitive market.
+
+**\
+04:20**\
+Vrijen Attawar\
+Right. And it\'s competitive. It\'s like, it\'s cancerous almost. The,
+the. It\'s like the market is evolving in one direction and it\'s
+completely unproductive and it\'s doing. Doing so more efficiently than
+ever.
+
+**\
+04:33**\
+Emily Nelson de Velasco (she her)\
+Right.
+
+**\
+04:34**\
+Vrijen Attawar\
+It\'s. It\'s crazy.
+
+**\
+04:36**\
+Emily Nelson de Velasco (she her)\
+Yes.
+
+**\
+04:37**\
+Vrijen Attawar\
+I, I heard the, the chief people. Not the chief people officer. One of
+the leads over at Zapier on a seminar the other day. I think maybe
+that\'s where we sort.
+
+**\
+04:47**\
+Emily Nelson de Velasco (she her)\
+Of where we met. Yeah.
+
+**\
+04:48**\
+Vrijen Attawar\
+Yeah. And so I was blown away by the overt admission that ATS is dead.
+Right. And, and it almost like, it almost is interesting the extent to
+which it\'s a. Or my dad\'s in town. It\'s like good job business. So.
+Yeah. No, it was interesting to sort of see her admit that because.
+Yeah. It\'s like the emperor has no clothes. You know, I can give you
+people\'s willingness to completely fabricate everything about
+themselves is at an all time high.
+
+**\
+05:24**\
+Emily Nelson de Velasco (she her)\
+Yes.
+
+**\
+05:25**\
+Vrijen Attawar\
+Just to get into the interview and like, God knows what happens from
+there.
+
+**\
+05:29**\
+Emily Nelson de Velasco (she her)\
+And then the recruiting team is really frustrated because all the
+interviews suck. And I\'ve been there.
+
+**\
+05:35**\
+Vrijen Attawar\
+All of them suck. All of the resumes suck. Yes. It is filtering or like
+ranking people, but you still have to Read all of them or like, feel
+this guilt that you\'re like not giving people. It\'s, it\'s such a
+mess. It\'s such a mess. So, you know, our sort of view of it is can we
+get the incentives to align better? And thesis is to help the employer,
+you need to help the candidate. Like, we need to have a genuinely more
+pro candidate approach to things. To know candidates enough with their
+consent to inform the matching that employers actually want out of the
+system. Everyone wants the same thing. No one thinks that, like lazy
+people should get great jobs. You know, all of the, it\'s. Everyone
+wants the same general thing.
+
+**\
+06:28**\
+Vrijen Attawar\
+We just can\'t trust anyone else to cooperate, to like achieve that with
+us.
+
+**\
+06:33**\
+Emily Nelson de Velasco (she her)\
+Yeah, yeah. And I love how you say, you know, supporting the one is
+supporting the other, because right now, like, everybody is so siloed
+with their own bots that like, they\'re not taking into consideration
+the match.
+
+**\
+06:47**\
+Vrijen Attawar\
+Yeah, yeah.
+
+**\
+06:49**\
+Emily Nelson de Velasco (she her)\
+So it\'s like. And I\'m not servicing anyone by having like a
+completely. I don\'t know, like, I\'m sure you\'re in the space. Right.
+I\'m also developing my own solutions right now. But take like a teal.
+Yeah, a teal. It\'ll take a job description and be like, oh, your resume
+would look a lot better if it said you went to the moon. Yeah, like you
+can do that. And then I\'m like, I\'ve sat in that recruiter chair,
+right. And I\'ll be like, so how was it on the moon? And the camera\'s
+gonna be like, the what?
+
+**\
+07:19**\
+Vrijen Attawar\
+Yeah, it is. So it boggles the mind how short sighted. I mean, I\'m
+glad, I\'m honestly, I\'m glad you said it. And you\'re gonna, you\'re.
+I\'m getting awfully close to just cursing for the first time I met
+someone because these career tech companies have such horrible products.
+They go for the lowest hanging fruit. Like lowest hanging fruit, which
+is the output, which is the resume. And actually help someone build a
+career. Knows the starting point is you got to look inwards. You got to
+figure out your stuff, what\'s your messaging, what are you trying.
+It\'s all of this stuff that they would dismiss as like kind of faffy,
+but it is substantive if done systematically and with care. And I\'ve
+always felt that like, you know, who do you want as your recruiter? Your
+career coach. Right. Person that knows you so well.
+
+**\
+08:15**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+08:16**\
+Vrijen Attawar\
+Representing you. And that\'s basically, that\'s.
+
+**\
+08:21**\
+Emily Nelson de Velasco (she her)\
+Yes. And like, we need real talk. Like, we don\'t need to like, oh, this
+is how you look good. No, what we need is this is how you be good.
+
+**\
+08:30**\
+Vrijen Attawar\
+Yeah.
+
+**\
+08:30**\
+Emily Nelson de Velasco (she her)\
+Like, okay, here\'s a gap. Like, I\'m looking for somebody who\'s been
+to the moon. So I can either a write that you\'ve been to the moon, or I
+can say, hey, this is a gap. You haven\'t been to the moon. How can we
+get you to the moon so that you can achieve your goals?
+
+**\
+08:45**\
+Vrijen Attawar\
+Oh, man. I\'m going to show you something and I hope you\'re going to
+love it. I think you\'re going to love it.
+
+**\
+08:51**\
+Emily Nelson de Velasco (she her)\
+You want to swear, go for it. Because I am there with you.
+
+**\
+08:55**\
+Vrijen Attawar\
+I appreciate that. So this is literally what we have built and ready for
+applicants. So what we would like is for you to be able to either get
+recommended a job or, you know, either get recommended a job or drop in
+a job and say, hey, am I a fit? And it\'ll tell you the gaps that you
+have. And you can click into, this is a mock up. Everything else is
+built. This sort of functionality here is what we\'re adding next. You
+click on it tells you what your gaps are and it says, hey, is this a
+genuine gap? That\'s okay. We\'ll figure out a way to position you that
+accounts for that gap. And our general principle there is be upfront
+about it and talk about how you can mitigate it through hard work and
+effort.
+
+**\
+09:40**\
+Vrijen Attawar\
+But if it\'s something that is a gap because you just didn\'t think
+about it, that\'s fine too. Just share that answer with the AI. We will
+update the employer in X amount of time and let them know that your
+score has improved. You know, so it\'s. I think people need to be given
+time. Time and ways to show their best selves.
+
+**\
+10:04**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+10:04**\
+Vrijen Attawar\
+Coaching helps you achieve that. And let Careerspan handle the coaching.
+And you just tell us who you want. Right. And we\'ll tell you exactly
+who to go for.
+
+**\
+10:14**\
+Emily Nelson de Velasco (she her)\
+Yeah. And like the like. Okay, so this is what I\'ve identified working
+with job seekers. This is the problem. All right, let me see. Where am I
+going to start here? Because there are like so many places I could go
+with this mic drop.
+
+**\
+10:27**\
+Vrijen Attawar\
+Coming, so please, I\'m excited for this.
+
+**\
+10:31**\
+Emily Nelson de Velasco (she her)\
+Okay. All right, wait, hang on. Okay, so this is what people do.
+They\'re like, this is me. This is what I can do. I\'m gonna put that
+down on paper and I\'m gonna get a job.
+
+**\
+10:44**\
+Vrijen Attawar\
+Yep.
+
+**\
+10:45**\
+Emily Nelson de Velasco (she her)\
+And then they\'re like, okay, so for example, I work with a lot of data
+people. So like data analysts, data scientists, like, okay, I know
+Python. They\'re just gonna write Python and then they\'re like, okay,
+I\'ll apply for 100 jobs now. Hey, I didn\'t get an interview, but I
+know Python. Yeah, this is the wrong approach. You\'re starting with
+you. Honest to God, nobody cares about you, nobody cares what you have.
+What do people care what they want? So what are we doing? We\'re looking
+at the data. What is data? Shockingly, data science people do not see
+the ocean of data that they are swimming in when it comes to the job
+search because they\'re too busy working on, I don\'t know, two sided
+platforms. I don\'t know, they\'re like doing predictive models for
+finance and they\'re like, oh, the job description is data.
+
+**\
+11:34**\
+Vrijen Attawar\
+Yeah.
+
+**\
+11:34**\
+Emily Nelson de Velasco (she her)\
+Yes my friend, it is data. Can we talk about that for a minute?
+
+**\
+11:39**\
+Vrijen Attawar\
+I love that you\'ll actually, I\'m happy to introduce you to Holly. So I
+just met incredible founder from Australia. She is running the employer
+side counterparts a career span, same basic mode of operation, but it
+helps the employer craft a better JD and so we\'re talking about a
+product integration where her company captures intent and sort of the
+subtle work signals and work styles and stuff that you can only get by
+like interrogating. The hiring manager sends that over to us to produce
+even better matching. And we just want to incentivize folks to have
+conversations with our AI career coach. Right. So being able to say,
+hey, you have a higher chance of getting better jobs recommended to you.
+Use career span way more of a better sell than you need to do some self
+reflection to a standby.
+
+**\
+12:36**\
+Vrijen Attawar\
+And is the objective correct advice but is also like a really weenie hut
+junior in a way hide.
+
+**\
+12:43**\
+Emily Nelson de Velasco (she her)\
+It from people because they don\'t want to do that. They don\'t like,
+we\'re just going to ask you a few questions to figure out, you know,
+where we\'re going here. And then you\'re doing that and they\'re like,
+I\'m just answering questions.
+
+**\
+12:53**\
+Vrijen Attawar\
+Yeah, well you know what it is? And it\'s honestly a sad thing, it is
+that the vast majority of people are like the kid that was the tree in
+the background of the school play every year. Right. They don\'t often
+have the spotlight on them. And in like a sad way, no one\'s like
+interrogating their lived experience. They don\'t have the priming that
+I think a lot of like ostensibly type A people get around Being asked to
+talk about themselves, who they are, and I think over a lifetime that
+compounds. And, you know, folks, just, I think the most beautiful thing
+that I think our product does is it takes a genuine interest in things
+that people have done and tries to just get them excited about it.
+
+**\
+13:36**\
+Vrijen Attawar\
+And once they\'re excited about it and they\'re sort of sharing in a lot
+of detail, you not only make the person feel better, you actually make
+them sound better and come off better. Be more aware that actually, you
+know what, they\'re a great candidate. I don\'t know, maybe one day the
+system will be like, you have no redeeming qualities. Good day to you,
+sir. Like some sort of end of Billy Madison.
+
+**\
+13:57**\
+Emily Nelson de Velasco (she her)\
+I feel, I feel like you need to do some like, edge taste testing.
+
+**\
+14:03**\
+Vrijen Attawar\
+I\'m the most despicable job seeker I can think of. And stick them in
+the system. And if the AI gives up on itself, then I, then we will know
+we\'ve reached. We\'ve reached the horizon.
+
+**\
+14:16**\
+Emily Nelson de Velasco (she her)\
+This funniest conversation. Yeah.
+
+**\
+14:22**\
+Vrijen Attawar\
+Oh, man, I\'m glad. This is, this is great. Even by a normally high bar,
+this is a great conversation. It sucks. Pleasure to chat with you.
+
+**\
+14:33**\
+Emily Nelson de Velasco (she her)\
+Yeah, I feel the same way. And honestly, I feel like we\'re creating a
+very similar product right now.
+
+**\
+14:38**\
+Vrijen Attawar\
+Oh, yeah. I was, like, looking at yourself, I think that was the, that
+was the thing that sort of motivated it as well is, you know, and
+hopefully you can tell by my other anecdote, I think the future is in,
+like, working together. Like, there\'s, it\'s a 2 trillion F in dollar
+industry, like, space for all of us. Like, the only thing that we need
+to do is to get LinkedIn\'s collective boot off of our necks in one way
+or the other. So, like, I think collaboration helps with that. So I, I
+would love to hear it and you know, hopefully the sort of intent that
+I\'m coming into the conversation with as well.
+
+**\
+15:15**\
+Emily Nelson de Velasco (she her)\
+Yeah. So you mean you want to get people off of LinkedIn, you want to
+remove LinkedIn from the conversation?
+
+**\
+15:24**\
+Vrijen Attawar\
+I think LinkedIn is emblematic of like, the big boys of HR or of like,
+talent tech. And I think that it\'s so in their interest to keep
+everyone. There\'s this, like, structural problem where the mechanisms
+of evaluating people, like the ats, or the mechanisms of knowing each
+other, connecting with each other, like LinkedIn, have been locked down
+by one corporate entity that has no actual interest in making connecting
+with people better than it intrinsically is. They want us frozen in this
+moment in time. LinkedIn\'s original sin. I think with indeed, it\'s
+like something different with like, you know, handshake, it\'s something
+different, but they all want to keep the status quo. And I think that
+like, we need a more like in the age of AI, we need more, better
+mechanisms for matching people.
+
+**\
+16:21**\
+Vrijen Attawar\
+And we can\'t do that if we\'re just stuck in this like 90s ass moment
+in time. Technologically.
+
+**\
+16:28**\
+Emily Nelson de Velasco (she her)\
+Yeah, you know, I agree to a degree with that. And at the same time, you
+know, from this zapier call, you know, one thing they said is like, you
+know, the resume and this is like, this is really a topic that I, I
+cover in detail with my job seekers is like, you know, the resume is a
+curate if you\'re doing it right and you\'re honest about your skills
+and your interests. Like, it is a curated view of your best hits and the
+way that you align with the role. And there, you know, everyone\'s got
+like this whole refrigerator full of different drinks in the back. But
+you know, somebody, I always say that they\'re looking for the Coke.
+
+**\
+17:17**\
+Emily Nelson de Velasco (she her)\
+Like the, the company\'s looking for the Coke and you\'ve got a Coke,
+you\'ve got a Fanta, you\'ve got a Sprite, you\'ve got a Dr. Pepper, but
+you got to pull out your Coke out of the fridge and like hand it to
+them.
+
+**\
+17:27**\
+Vrijen Attawar\
+Right?
+
+**\
+17:28**\
+Emily Nelson de Velasco (she her)\
+So like, there are all like, all different types of resumes that can be
+very like, closely aligned with what you actually have to offer. So I
+think overall that is not the problem. We\'ve bastardized it to where
+we\'re just lying about shit. But the amazing thing about LinkedIn is
+that it is that one view, like, that\'s not something that you can
+consistently fake because that is your, you know, all eyes on me right
+now.
+
+**\
+17:59**\
+Vrijen Attawar\
+That\'s your. Yeah, that\'s your sort of like external. That\'s your ad,
+essentially. Yeah, the world. And I think that is a completely fair
+standard. I think where a lot of folks struggle in my experience is both
+morally, ethically, whatever it is, or like tactically. A lot of folks
+don\'t know what that means. Right?
+
+**\
+18:25**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+18:25**\
+Vrijen Attawar\
+And they don\'t know. They haven\'t. Most folks haven\'t seen 1,001
+LinkedIn profiles that want to make their eyes bleed until they realize
+like, oh, what is the commonality here? Right. Yeah, there\'s this sort
+of like sample size problem where in a weird sort of communist utopian
+society where everyone does, everyone\'s Resumes, right? Everyone is
+forced to do resume coaching for 10 other people in a year.
+
+**\
+18:51**\
+Emily Nelson de Velasco (she her)\
+Right.
+
+**\
+18:52**\
+Vrijen Attawar\
+Sort of understand the rules of the road. But the problem is that some
+folks just knowing the rules of the road is such a massive advantage and
+don\'t appreciate that. And so they just flail about like trying the
+same old fit. And you know, it\'s just, it\'s sad to see everyone sort
+of just constantly getting themselves. But I would love to learn more
+about your product. I mean it\'s even in this, even in this sort of
+environment, I think it\'s rare to meet someone that I agree with so
+much. I would, you know, really curious to hear what your sort of
+solution, your brand to market is or how.
+
+**\
+19:29**\
+Emily Nelson de Velasco (she her)\
+Yeah, I mean, I think we\'re on the same page. And correct me if I\'m
+wrong, where I think the future is going to be. You know, the humans
+getting their truth down on paper and then the bots working it out and
+basically saying, hey, I think you guys should have a conversation. I
+think that would be a big efficiency win. And that\'s where our sweet
+spot, maybe medium term is going to be. I would love to help people get
+there. So the solutions, you know, I\'ve been in the reverse recruiting
+space. It\'s where I actually started out after moving to Mexico. So I
+was like in people\'s art and still am in people\'s LinkedIn accounts. I
+am them on the Internet. I. Do you pronounce your name? Vrijan. Vredgen?
+
+**\
+20:14**\
+Vrijen Attawar\
+Yeah.
+
+**\
+20:14**\
+Emily Nelson de Velasco (she her)\
+Okay, so like if I am, like if you\'re my client and I\'m getting you a
+job, like I will create a new Gmail account for you. I have all of your
+information. We\'re both in the Google account at the same time. All of
+the custom resumes that I send out for you are in your drive. I have a
+sheet where I\'m recording everything. So basically I am you on the
+Internet. So I\'m using this expertise in order to be able to product.
+Like I\'m basically productizing my reverse recruiting. But the thing
+is, since I also worked as a, like, I\'m shocked at the number of like
+tech bros out there. And I mean no offense to tech bros because I love
+the tech pros.
+
+**\
+20:55**\
+Emily Nelson de Velasco (she her)\
+But like, you know these guys who did like all this great shit and
+they\'ve worked in product or whatever and they\'ve never been a
+recruiter and they\'re like, I know so much about hiring and they
+completely disregard the recruiter fuck you very much because the
+Recruiter is the first filter in this process. Asshole.
+
+**\
+21:15**\
+Vrijen Attawar\
+Yeah.
+
+**\
+21:15**\
+Emily Nelson de Velasco (she her)\
+And I sat in the recruiter chair, and I know what it\'s like to have
+those buttons in front of me and to push those buttons and, like, have a
+million candidates and then they\'re complaining, and you\'re in between
+the hiring manager and the humans, and you\'re just trying to, like,
+make the world a better place, and everyone is complaining to you, and
+you have pressure from all sides.
+
+**\
+21:32**\
+Vrijen Attawar\
+It\'s. It\'s such a unforgiving and thankless job. I totally get that.
+
+**\
+21:39**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+21:39**\
+Vrijen Attawar\
+I actually, I. The analogy for me is career counselors, like, university
+career counselors before we did that, go to market to sell to them. I
+also would have said, you know, I\'ve generally had positive
+experiences, but I\'ve never, ever heard anyone say a kind thing,
+really, about university career services. But as I actually sold to
+them, spoke to them, understood the constraints they were under, I was
+like, this is a thankless fucking job.
+
+**\
+22:09**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+22:10**\
+Vrijen Attawar\
+Absolutely no way of winning here. And so then to also have people bitch
+about them all the time must, like, suck ass. Like, that is so. That\'s
+so sad. And I think that with, you know, obviously good and bad people
+everywhere for everything. So, you know, maybe. Pointless caveat, but I
+certainly think in recruiting, you guys get a really bad rap and an
+unfair one because it\'s. It\'s a shit show.
+
+**\
+22:35**\
+Emily Nelson de Velasco (she her)\
+It is. But, like, I feel like I\'m leveraging that so much right now
+because, you know, there are all these people who are the career
+coaches, and they\'ve, you know, they\'ve had really great success.
+There aren\'t a ton of, like, former recruiters who are career coaches.
+Like, I, like, I don\'t know, like, within the recruit. Recruiter
+community, if there\'s just, like, kind of an avert. Aversion to, like,
+going out on your own because you\'re not like, you generally. You\'re
+not that person who did the mba. Like, you have some arts background
+and, like, you just. It\'s just not you. Like, as opposed to the tech
+bro who was like the product manager at Meta. Well, yeah, you\'re gonna
+go make your own shit because you want to. You can make a lot of money,
+but don\'t. Just the recruiter.
+
+**\
+23:17**\
+Emily Nelson de Velasco (she her)\
+So, like, I\'m kind of in the middle where I don\'t really give a fuck.
+Like, I, you know, I did my thing. I\'m living in Mexico now. Like, you
+want to talk? I was a recruiter. I\'ll tell you what it was like for me.
+You want a job? I\'ll get you a job. Okay. No, next. Okay. I\'ve had.
+Because I work in the tech space, I\'ve just had so many people be like,
+you should productize this. You should productize this. And I\'ve got my
+systems built up and like, I\'m so fucking structured that I like, I was
+actually trying to sell ML Engineer on my services and he was like,
+would you do that for free for me if I. I built something for you? And I
+was like, fuck, yes, I would. I\'m actually.
+
+**\
+23:56**\
+Emily Nelson de Velasco (she her)\
+I\'ve something in the pipeline you want to jump on. And he\'s like,
+yeah. So now he\'s building it out for me right now.
+
+**\
+24:01**\
+Vrijen Attawar\
+I love that. I fucking love that. I mean, I think that is a. That is,
+frankly, that is so much closer to what is needed rather than easy
+apply. We don\'t need easy apply. We need like apply correctly, dude.
+
+**\
+24:17**\
+Emily Nelson de Velasco (she her)\
+Like, yeah, like do it right.
+
+**\
+24:20**\
+Vrijen Attawar\
+Perfect person to. Given what I know about your background. Yeah, I can
+see why you\'re the perfect person to build this out. It is just a
+series of relatively structured motions that if you know them, you can
+optimize once you like also meet a technical person that can like map an
+agent onto each part of it. Oh, that\'s so. That\'s so good. That\'s.
+
+**\
+24:42**\
+Emily Nelson de Velasco (she her)\
+Yeah. So like, it\'s exciting right now. I love what you\'re doing. I
+think it is so high, like this is the most highly correlated product
+with what I\'m making right now. And actually I\'m. I\'m really
+surprised.
+
+**\
+24:55**\
+Vrijen Attawar\
+Yeah, it\'s. It\'s not, it\'s. I also, I\'m just going to come out and
+say it. I also judge a little bit folks in this space by their level of
+like ideological alignment with my product and only is it rare to meet
+someone this like lined up that I like so much.
+
+**\
+25:14**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+25:17**\
+Vrijen Attawar\
+I think it\'s meaningful. Right. I do think this is where the sort of
+answer lies is just let\'s stop trying to hack the process and let\'s
+just like do the damn process effectively. Because there\'s a lot of
+merit to be had in that couple of things. As I know we\'re. We\'re
+coming close to time. I do a career tech founder, sort of HR tech
+founder roundtable once a month. We had head of scale AI do a guest
+lecture last month. Still trying to find the guests for this month, but
+it\'ll be someone great. Love for you to join. It\'s. It\'s also like
+just really great founders folks. You can bounce ideas with everyone\'s
+Sort of pretty pro collaboration there. So that\'s one thing I wanted to
+sort of put forward.
+
+**\
+25:59**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+26:00**\
+Vrijen Attawar\
+And then also just like keeping a conversation open around, like around
+integration because I. One of the things that, on my list of like, damn,
+this would be sweet, but I don\'t want to build this out is the ability
+to take career span data and selectively use that to tailor things on
+the fly so that you always generate a tailored resume off of the corpus
+of information reflections that you\'ve shared so you can spit them out
+in a way more tailored way than if you\'re just turning a bullet into a
+different bullet. You know, there\'s freeze of freedom. If you have the
+whole story, you can pull different types of bullets out based on what
+is needed in the job description. So that\'s something that we\'ve sort
+of built out already.
+
+**\
+26:50**\
+Vrijen Attawar\
+And for a way to deploy that to like create a easy apply that is
+actually easy and actually tailored. Right. Unless that\'s something
+you\'re like already trying to figure out. We just know that having that
+larger information set is an advantage in that process.
+
+**\
+27:06**\
+Emily Nelson de Velasco (she her)\
+I\'m doing that right now. That is what my guy is building out for me.
+We\'re not there yet, but yeah, this is the whole thing.
+
+**\
+27:14**\
+Vrijen Attawar\
+Are you guys, you. What is your like data source? Is it the work that
+you do with an individual?
+
+**\
+27:20**\
+Emily Nelson de Velasco (she her)\
+Well, so initially, yes, it will be. So the initial product is going to
+be for me to use with my clients. And this is my testing. Right. Like, I
+need to fund this. I\'m bootstrapping 100. I\'m going zero funding
+whatsoever because everybody else.
+
+**\
+27:37**\
+Vrijen Attawar\
+Yeah, yeah.
+
+**\
+27:39**\
+Emily Nelson de Velasco (she her)\
+So, like, I, I\'m gonna be testing this with my clients and already
+like, I\'m pretty like tech and AI forward. So, you know, I\'ve been
+helping them make like custom GPTs for their job search, but this is
+going to be like next level. It\'s gonna be my own product.
+
+**\
+27:53**\
+Vrijen Attawar\
+I love that. Yeah. That dog fooding is so vital. I mean, we spent
+probably a year wandering in the desert because we didn\'t do that in a
+disciplined way, frankly. So, you know, I think. Okay, yeah, no, it\'s
+true. I mean, I try to be honest with our shortcomings. It\'s, it\'s,
+you know, it\'s the only way to actually learn from them.
+
+**\
+28:13**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+28:14**\
+Vrijen Attawar\
+But, yeah, no, I think now for us, the goal is how can we be the
+matching engine. I mean, in an ideal world, careerspan helps you short
+circuit the traditional application process by, you know, essentially
+surfacing you to employers first and foremost. So what we want for
+employers to do is just pay for a subscription to careerspan anytime
+they even vaguely want to cultivate candidates for a posting.
+
+**\
+28:48**\
+Emily Nelson de Velasco (she her)\
+Yeah sure.
+
+**\
+28:48**\
+Vrijen Attawar\
+Just drop in a JD to career Spanish. We\'ll keep running this for you
+iteratively as we cycle every like extra hundred users or thousand users
+we add, we\'ll run it again. And so you\'ll just get this like auto
+filling list that you can run for a few months before you actually post
+the job and you have your folks like teed up. Because I think to your
+point, outbound is never inbound is never going to go for if, for legal
+reasons, if nothing else. But we see enough founders now wanting to just
+have candidates instantly and quality of that.
+
+**\
+29:24**\
+Vrijen Attawar\
+So for my part like if you know any like great communities or community
+owners that would effectively we would split the revenue that we make
+from recruiters with the community owner community free access to a
+career coaching product and effectively would just embed and sort of,
+you know. Yeah, give them free access to the product and just start
+learning more about them over time. So that pay like a subscription and
+it gets checked against x many people. Yeah, it\'s, it\'s a way of
+getting to a short list. Right.
+
+**\
+30:03**\
+Emily Nelson de Velasco (she her)\
+It is the only kind of like question mark I have in my head and I know
+that we\'re over time right now.
+
+**\
+30:08**\
+Vrijen Attawar\
+Yeah.
+
+**\
+30:09**\
+Emily Nelson de Velasco (she her)\
+Is you know, you talked about that like ramp up time. I just wonder, you
+know, you\'ve probably got your job seekers as clients for like three,
+four months while they\'re doing their job search. Right. So I feel
+like, you know, if they\'re, if the companies are kind of, you know,
+ramping up by looking through that pool, good talent is going to be
+snatched out of it.
+
+**\
+30:31**\
+Vrijen Attawar\
+So that is true. The advantage that we have is that the candidate side
+positioning is very much and it\'s going to be more so a career
+companion. So we want to build in the motion of hey, always store your
+stuff on career span. Right. Every time you have a win, store it on
+career span. We want to lower the friction of like updating the resume
+so that there\'s a resume that\'s like ever ready. Right. It\'s hard to
+sell people on the vague notion of being like job hunt ready at all
+times unless you really into the negative messaging and the fear
+messaging. The way that we want to put it forward to folks is that with
+one click you can go from passive to active. Right.
+
+**\
+31:17**\
+Emily Nelson de Velasco (she her)\
+So you have like a free tier where people are just Inputting their data.
+
+**\
+31:21**\
+Vrijen Attawar\
+Yeah. So we want our coaching to always be free for candidates so that
+they can always take advantage of this. Like, oh, I\'m just going to
+store my experiences. I\'ll get some good resume bullets out of it.
+I\'ll get some good, you know, this and that out of it. And it\'s
+stored. Right. Like I said it and forget it. And we\'ve seen already
+about like 3 to 4%, which doesn\'t sound like a lot, but for a consumer
+product, a year later, a reactivation rate with no marketing, no
+messaging whatsoever. So we\'re seeing those folks that really get
+careers bound come back and start dumping in their stories.
+
+**\
+31:58**\
+Emily Nelson de Velasco (she her)\
+Wow.
+
+**\
+31:59**\
+Vrijen Attawar\
+Is they. It is. I mean, you should try it. It\'s just like a very easy
+way of storing those experiences. So, you know, open offer. We\'re
+already collecting that data. If you, like, build off of that data
+stream, that is like part of what we want to achieve with partners is,
+you know, leverage our data, leverage the stuff that we have, you know,
+use it whichever way. We just want to respect the end user\'s privacy.
+So they have to opt into your service.
+
+**\
+32:27**\
+Emily Nelson de Velasco (she her)\
+Okay. But yeah, awesome. That sounds really cool. I will definitely give
+that a think.
+
+**\
+32:33**\
+Vrijen Attawar\
+Yeah. It\'s such a pleasure to be able to speak to someone at this level
+because it\'s like, what we\'re discussing is I\'m pretty far out vision
+for hiring, but I think this is where the fun is.
+
+**\
+32:45**\
+Emily Nelson de Velasco (she her)\
+This is the future.
+
+**\
+32:47**\
+Vrijen Attawar\
+Yeah, this is the future. No, I agree. It\'s no poverty, but it is an
+issue. Right. It\'s a social issue. It\'s going to be more of an issue.
+I think that it is truly one of the great ills of our time in many ways
+that, like, careers and jobs and professional life sucks. And like, yes,
+there are bigger problems in the world that we should definitely
+address. But also, that doesn\'t mean a moderate problem should not also
+cause a lot of improvement if we, like, work on it.
+
+**\
+33:15**\
+Emily Nelson de Velasco (she her)\
+You know, I mean, as a coach and I know it\'s time to go. I know this.
+But as a coach, how many people are suffering from depression because
+they got axed?
+
+**\
+33:26**\
+Vrijen Attawar\
+Yeah.
+
+**\
+33:26**\
+Emily Nelson de Velasco (she her)\
+Huge problem. And then they can\'t pay their rent and like, where are we
+living because everything\'s too expensive? Like, it is a huge societal
+problem right now.
+
+**\
+33:35**\
+Vrijen Attawar\
+Yeah, no, it tears people up. And I mean, I\'m sure you\'ve seen it,
+right, folks? Six, eight months, met someone the other day. Thirteen
+months, been job searching. I mean, it\'s. It\'s rough because on some
+level you can\'t even like at that point, you know that feeling where
+you\'re like, oh, I met this person too late. Like I like could have
+helped them when they had like some vigor and some, you know, life in
+their eyes. But now they\'re searching for too long and they\'re shy.
+
+**\
+34:06**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+34:07**\
+Vrijen Attawar\
+And then far gone.
+
+**\
+34:08**\
+Emily Nelson de Velasco (she her)\
+That gap too, that just, it\'s like always getting harder.
+
+**\
+34:11**\
+Vrijen Attawar\
+Yeah. Getting harder. It\'s, it\'s a tough, I think it\'s a tough gig.
+And what I especially love about, and really frankly respect about the
+way that you\'re going about it is part of the reason why bullshit tools
+like Teal can exist is because the real people that have done career
+coaching or recruiting are not the normal pool for VC to pick from to
+like make companies. Right. And also by culture, we\'re not like tech
+company people as a baseline.
+
+**\
+34:40**\
+Emily Nelson de Velasco (she her)\
+Yeah.
+
+**\
+34:40**\
+Vrijen Attawar\
+Underrepresented in founders. And therefore the solutions don\'t
+represent us as people.
+
+**\
+34:47**\
+Emily Nelson de Velasco (she her)\
+Yes.
+
+**\
+34:48**\
+Vrijen Attawar\
+It\'s, it\'s, that\'s, it\'s people that have had great careers is how I
+put it. Not people that have helped other people have great careers. And
+that\'s the whole difference is right there.
+
+**\
+34:57**\
+Emily Nelson de Velasco (she her)\
+Yeah. Wow. From your mouth to God\'s ears.
+
+**\
+35:00**\
+Vrijen Attawar\
+Yeah. Well, we\'re gonna change it. We\'re gonna change it.
+
+**\
+35:03**\
+Emily Nelson de Velasco (she her)\
+Let\'s do it. Yes.
+
+**\
+35:05**\
+Vrijen Attawar\
+I\'ll send a follow up email with the survey. Let\'s keep talking. And
+then. Yeah, if there\'s any way I can help anyone in my network you\'d
+like to talk to, just shoot me a message, be happy to help.
+
+**\
+35:16**\
+Emily Nelson de Velasco (she her)\
+Yeah, I mean, I would love to participate in that call that you talked
+about. So.
+
+**\
+35:20**\
+Vrijen Attawar\
+Yeah. Hell yeah. Yeah, you know, love to have you. We\'ll bring you in
+on that. And then. Yeah, I think it should be, it should be a good one.
+If you think of any other founders that you really like that you think
+are like on our level. Yeah, happy to include them as well. We
+definitely want like people on that sort of like more rebellious
+wavelength.
+
+**\
+35:42**\
+Emily Nelson de Velasco (she her)\
+Awesome. Thank you so much. I really appreciate it. And yeah, feel free
+to reach out anytime.
+
+**\
+35:47**\
+Vrijen Attawar\
+Sounds good. Catch you soon.
+
+**\
+35:48**\
+Emily Nelson de Velasco (she her)\
+You have a great day. Bye.

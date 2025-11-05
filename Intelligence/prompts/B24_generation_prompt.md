@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B24 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b24
+---
+
 # B24 - PRODUCT_IDEA_EXTRACTION Generation Prompt
 
 You are generating a PRODUCT_IDEA_EXTRACTION intelligence block.

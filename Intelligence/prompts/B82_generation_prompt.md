@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B82 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b82
+---
+
 # B82 - EXECUTIVE_MEMO Generation Prompt
 
 You are generating an EXECUTIVE_MEMO intelligence block.

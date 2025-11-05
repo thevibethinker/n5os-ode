@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B46 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b46
+---
+
 # B46 - HIRING_TEAM Generation Prompt
 
 You are generating a HIRING_TEAM intelligence block (internal meetings).

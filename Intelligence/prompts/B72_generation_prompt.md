@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B72 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b72
+---
+
 # B72 - PRODUCT_ANALYSIS Generation Prompt
 
 You are generating a PRODUCT_ANALYSIS intelligence block.

@@ -1,0 +1,1245 @@
+**\
+00:00**\
+David Speigel\
+Together. So we alternate between, like, the east side of the country
+and the west side of the country. So.
+
+**\
+00:05**\
+Logan Currie\
+Incredible.
+
+**\
+00:06**\
+David Speigel\
+Done trips in Washington, Oregon, California, multiple times. Idaho,
+Lake Tahoe, Arizona. But we\'ve also done, like, New York, Montreal.
+What are some other places?
+
+**\
+00:17**\
+Logan Currie\
+Damn.
+
+**\
+00:18**\
+David Speigel\
+East side.
+
+**\
+00:19**\
+Vrijen Attawar\
+Yeah, that\'s quite the list.
+
+**\
+00:23**\
+David Speigel\
+It\'s really funny. Like, you know, I try to explain to people that
+project management is hard and planning things into the future is hard,
+and it\'s easier to look back. And so, like, I can list 20 trips that
+I\'ve been on, but that took 20 years.
+
+**\
+00:41**\
+Logan Currie\
+Yeah. Yeah.
+
+**\
+00:44**\
+David Speigel\
+I\'ll just quickly tell one story about that. And I posted about this,
+and I literally have the picture. Even before smartphones, I have the
+picture of the guys. So this group is a loose group of about 12, 15
+guys, most of whom met in Boy Scouts in a particular. And right after we
+got done with Boy Scouts in high school, we planned a rafting trip to
+the place that we had rafted with our troop just for four of us and
+held, like, 10 people. And so the four of us were on a boat with, like,
+five or six other adults, and we\'re, like, in our early 20s, and the
+other group were in their mid-40s, and we asked them, like, oh, where
+are you from? What are you doing? Whatever.
+
+**\
+01:27**\
+David Speigel\
+Long story short, they\'re like, hey, we\'ve been doing these trips
+every year since our 20s. You should do it too.
+
+**\
+01:34**\
+Logan Currie\
+Oh, I love that we\'re gonna do it.
+
+**\
+01:37**\
+David Speigel\
+And, like, I have the picture of the guys that, like, set it off.
+
+**\
+01:43**\
+Logan Currie\
+And that was the inspiration. Yeah, I feel like we made it. Yeah,
+that\'s such an inspiration. I also feel like there\'s so much talk
+around, like, I don\'t know, the male loneliness epidemic and stuff like
+that, and maybe you just need to have a forcing mechanism. Just, like,
+go on annual trip with your buddies and then see you later.
+
+**\
+02:02**\
+David Speigel\
+Well, I do, like, cheat code that not everybody has access to is that
+one of the guys in our group, like, literally does not need to sleep and
+is relatively wealthy and subsidizes people if they need help. So.
+
+**\
+02:15**\
+Logan Currie\
+Fair enough.
+
+**\
+02:16**\
+David Speigel\
+Plan a lot of the Trips. I planned one out of the 20, and there\'s a
+couple of other guys and I who plan, like, pieces of it, like, we\'ll
+rent the car or whatever. But, like, there\'s this one person who\'s,
+like, superhuman and, like, books, Airbnbs and, like, coordinates and
+whatever. So it does somebody like that or become somebody like that or,
+like. Yeah, but, like, if not for Lewis, temporarily stuck or.
+
+**\
+02:43**\
+Vrijen Attawar\
+Sorry, temporarily. Sort of channel someone like that.
+
+**\
+02:46**\
+David Speigel\
+Yeah. So like everybody find your Lewis I guess is the answer.
+
+**\
+02:50**\
+Logan Currie\
+Yeah.
+
+**\
+02:50**\
+Logan Currie\
+Or become the Lewis. Or become.
+
+**\
+02:52**\
+David Speigel\
+I\'m trying to become the Lewis in some other aspect so we\'ll see.
+Anyway, fun side thing but I do like your weighted vest and I\'m gonna
+ask you to text me what it is after the call.
+
+**\
+03:05**\
+Logan Currie\
+I will, I\'ll send you the link something. Something off of Amazon. But
+yeah, well I\'m excited for this call. I know you and V have had quite a
+few good discussions already. Bridgin, did you have a particular way you
+wanted to run this chat?
+
+**\
+03:22**\
+Vrijen Attawar\
+No, not in particular. I mean I think obviously intros from both of you
+guys would be good just to get a sense of each other but for the most
+part I think David sort of seen at least how we roll either through
+interacting with me or sort of the group and he\'s largely pretty caught
+up on. On at least the current thinking around go to market. So I\'m
+thinking you know, we can make it sort of a blend of a spitball sort of
+like get thoughts around general things idea and then maybe end with
+some more concrete ways in which we can work together. Especially as it
+seems increasingly likely David, that product is the niche we\'re going
+to go for. So yeah, that\'s sort of the context and I\'ll let you guys
+do intros.
+
+**\
+04:07**\
+Vrijen Attawar\
+I\'m just about to get home so I\'ll be back on camera in a few minutes.
+
+**\
+04:11**\
+Logan Currie\
+No stress. Yeah, sure. David, I don\'t know if you want to take it off.
+I\'m about to get to somewhere slightly quieter up ahead on the
+community path. So if you want to get us started.
+
+**\
+04:22**\
+David Speigel\
+I was going to let you go first because I had just talked but that\'s
+fine. All right, the tell me about yourself. Let\'s see I\'m. You
+mentioned your age so I\'m in my late 40s. I have four kids ages 19,
+freshmen at University of Illinois, down to almost four. And I\'ve
+worked in product management in tech nearly my whole career. 25 years
+I\'ve worked for, I\'ve founded three companies that like didn\'t take
+off but like also didn\'t lose money. Like they were very, I call them
+non money losing hobbies. But I know what it\'s like to be in the
+founder\'s shoes down to one person. I\'ve worked at five person
+startups like VC backed startups. I\'ve worked at premier VC backed
+startups and I\'ve worked at a number of public companies including
+what\'s relevant here is two public company innovation centers.
+
+**\
+05:17**\
+David Speigel\
+Most of my career in the early stage was in fintech. Then I moved over
+to ad tech. And then most recently the piece that I\'m really passionate
+about now is go to market specifically. So like I think Google and
+Facebook at the time now meta really like cemented go to market as a
+discipline. And so I\'ve been implementing that at the last place that I
+worked full time and studying it and networking with the people who are
+the solo practitioner experts of like software Go to market. And so now
+what I\'m doing, I\'m kind of split a little schizophrenic here. I\'ll
+be transparent. I\'m split between doing product advisory for Go to
+Market and helping top PM\'s network for their next roles in the elite
+companies. So I actually, I work for a person named Alex Reshewski. I
+kind of subcontract for him.
+
+**\
+06:24**\
+David Speigel\
+He runs a career service and that\'s how I got into this space with
+bridge space called the Product Career accelerator. And most of his
+clients are high level IC or like early manager, like L7 group PM, a
+little bit of director of PM like me and helps them land roles at top
+tech, top startups. He wasn\'t covering networking and I networked with
+him and I said I\'ll cover networking. And now I run a weekly networking
+session for his students and he pays me for that and one one sessions.
+Then I started posting about it. That\'s where I met V through Katie
+McIntyre\'s post that V commented on. That\'s the post. I was just
+showing it off to people yesterday. I was like, look at this guy, I\'m
+working with him now. That\'s the power comments. And they were like.
+
+**\
+07:18**\
+David Speigel\
+And so that\'s where I got into career tech. And I\'m trying to figure,
+I\'m still figuring my shit out. Like I\'m doing one one coaching for
+PMs and I\'m also, I have another client that I\'m doing product
+advisory for. Not quite a great fit. So I\'m trying to find better
+product advisory clients and the conversations that I have with V were
+like squarely what I would prefer to be working on.
+
+**\
+07:43**\
+Logan Currie\
+Amazing.
+
+**\
+07:44**\
+David Speigel\
+Okay.
+
+**\
+07:44**\
+Logan Currie\
+Yeah. I think there\'s like, I mean perfect the lineup I would say.
+
+**\
+07:50**\
+Logan Currie\
+I mean like everybody already talked to.
+
+**\
+07:52**\
+Logan Currie\
+Me about like what y\' all had chatted about but I feel like that\'s
+very much what like where we are right now is literally smack in the
+middle of GTM and trying to really nail that motion, experimentation,
+everything that goes along with it. The product angle has been kind of
+like rattling around in our conversations probably for the last like two
+weeks. I\'ve been kind of saying like, listen, if this is an ambitious
+thing that we are attempting right now to have three very different kind
+of parties line in terms of communities, employers and top talent. And
+if we\'re going to do this successfully, we really need to take a lane
+and stick to it and start. Start somewhere. I think PM still might be
+product, still might be too broad. It might need to be product.
+
+**\
+08:49**\
+Logan Currie\
+I suspect it needs to be product within a particular industry or at a
+particular level. I\'d be curious of your thoughts on that, but. And I
+jump straight into kind of like jam session mode. I\'ll kind of back up
+a little bit, but all of that sounds like really relevant I think where
+yeah, I\'ll back up a little bit and kind of give a bit of an intro. He
+and I met 10 years ago. It\'s almost our 10 year. I said we\'re almost
+actually our 10 year anniversary. We need to figure out. He looked at
+the date at some point. I don\'t know if it\'s there, but yeah.
+
+**\
+09:25**\
+Logan Currie\
+So I grew up in the States but went to, graduated into a shitty job
+market in 2009 and was like, I think I\'m not gonna bother with, with
+that side of things of moving to New York and doing the grind like all
+my friends were. And so I kind of did a accidental shortcut, moved to
+Asia, was teaching sat, doing like college admissions. I started early
+stage at a, like employee number two, no employment of three at a early
+stage ed tech company that was really ahead of its time in Shanghai
+doing like trying to put the SAT onto an app essentially. And then it
+scaled across China. Tuition is obviously really big there. So they
+ended up selling a few years later, got bought out, but saw it scale
+from like two people to 500 employees.
+
+**\
+10:16**\
+Logan Currie\
+So it was like bit of a fun roller coaster. Moved to Singapore in early
+2015 and was unemployed for six months looking for work. So again like
+in retrospect everything\'s always clear in hindsight, right? But like
+in retrospect I\'d had these kind of like very formative interactions
+with the job market. And I talk a lot about networking as well, but like
+in moving context, learning how to talk about yourself while building up
+a network from scratch in a new country, sometimes in a new language.
+Like very much like I think gave me the reps on a lot of what I Try to
+like share out now in terms of what really building a strong network
+looks like. Singapore was a fun adventure with me and V. We started at a
+PE backed startup, which is not a thing that should exist.
+
+**\
+11:16**\
+David Speigel\
+In vcpe. So like you can make jokes about that with me.
+
+**\
+11:20**\
+Logan Currie\
+Yeah, it\'s just so stupid. They were like, they were like, yeah, like,
+this is the, look at this ebitda. Like the projections of what we\'re
+gonna. And you\'re like, what?
+
+**\
+11:28**\
+David Speigel\
+Like they\'re all finance nerds and know nothing about product market.
+
+**\
+11:32**\
+Logan Currie\
+Exactly. About anything. They\'re just like, let\'s just throw some
+money at the situation. Like, if you build it, they will come.
+
+**\
+11:37**\
+David Speigel\
+And you\'re like, how can we leverage this?
+
+**\
+11:40**\
+Logan Currie\
+Yeah, exactly. Hilarious. Like a total lesson in what not to do. But
+when they. That was like a year and a half. But it was interesting
+because I was basically doing all the business development, managing
+like two different teams, doing a lot of marketing and so, and they had
+a big budget, so I was able to kind of really get my hands dirty I think
+on the marketing side of stuff. And then Ridge and I were running with a
+third co founder, our kind of like boutique consulting firm, which was
+in retrospect, like such a sweet gig at the time. We were like, this
+isn\'t fulfilling enough.
+
+**\
+12:15**\
+Vrijen Attawar\
+Because yeah, were fools.
+
+**\
+12:18**\
+Logan Currie\
+We were fools. Like were making really good money and like working like,
+I don\'t know, 10 hours a week. Like.
+
+**\
+12:25**\
+David Speigel\
+I\'ll take that with.
+
+**\
+12:26**\
+Logan Currie\
+Yeah, exactly. It was like such a sweet gig. But anyway, such as the
+power of, power of hindsight. But anyway, so we sold that, which was
+like a weird valuation process. So I don\'t refer to it as an exit, but
+we did make a little bit of money coming out of that one. And then,
+yeah, being I was back in China, had my two kids there who are now 4 and
+6, doing a kind of combination of like education.
+
+**\
+12:56**\
+Logan Currie\
+Entrepreneurship kind of stuff on my own.
+
+**\
+12:58**\
+Logan Currie\
+Started a company there that is kind of just in hibernation. And then,
+yeah, the very kind of infamously now messaged me a 17 page.
+
+**\
+13:11**\
+Logan Currie\
+Manifesto the day that ChatGPT got released.
+
+**\
+13:13**\
+Logan Currie\
+And it\'s like, was like, hey, I have this idea. And then it\'s been a,
+you know, we strike ourselves into that roller coaster two and a half
+years ago and here we are.
+
+**\
+13:28**\
+Logan Currie\
+So.
+
+**\
+13:28**\
+Logan Currie\
+So yeah, and I\'m sure he\'s kind of filled you in on where the
+company\'s been and where we are now, but it\'s been a fun ride. I\'ll
+say. I feel like I\'ve aged a thousand years, but I still enjoy. I still
+enjoy every single day that.
+
+**\
+13:43**\
+Logan Currie\
+We\'Re doing this when it feels impossible.
+
+**\
+13:45**\
+Logan Currie\
+So that\'s gotta say. That\'s gotta say something.
+
+**\
+13:49**\
+Vrijen Attawar\
+Yeah, it\'s gotta say something. We like that is kind of darkly joke
+that like, how close can two people be to success without actually being
+successful? And that feels like it encapsulates the startup journey of
+just inching forward and trying to stay. Stay alive, but also grounded,
+but also dreaming big. Like there\'s so many contrary signals that
+you\'re supposed. You\'re getting all the time.
+
+**\
+14:16**\
+David Speigel\
+My wife puts it this way, she\'s like, David, all those accomplishments
+you had today sound great, but like, how many checks are you getting?
+
+**\
+14:25**\
+Logan Currie\
+Every day I talk about my day and my husband is like, how many sales did
+you make today?
+
+**\
+14:30**\
+Vrijen Attawar\
+He\'s just keeping us grounded.
+
+**\
+14:34**\
+David Speigel\
+Yeah.
+
+**\
+14:35**\
+Logan Currie\
+Yep.
+
+**\
+14:36**\
+David Speigel\
+My wife\'s not even in finance, she\'s in law. But she does have an MBA
+degree as well. So she can put me in my.
+
+**\
+14:41**\
+Logan Currie\
+Place so she can.
+
+**\
+14:42**\
+Logan Currie\
+Yeah, yeah. Partners. Partners, yeah. I mean, I think to kind of maybe
+dig into where we are now. It\'s, you know, we\'re trying to be
+organized in terms of I\'m going to be taking communities like that type
+that.
+
+**\
+15:03**\
+Logan Currie\
+Piece of trying to build relationships and.
+
+**\
+15:06**\
+Logan Currie\
+More of a pipeline around where we can tap into. But I think in terms of
+just being really gritty and like doing a lot of shit manually if we
+need to. We\'re almost going to be. Be and I were talking about this
+last yesterday and today, but like essentially acting as recruiters
+ourselves until we get things up and running. So like just grabbing as
+many roles and opportunities, hopefully, you know, specific. As specific
+as we can and we can try to like zero in on that. But then I\'m just
+running, walking past the team construction but. And then going like
+grabbing roles, going to communities and into our own networks as well.
+
+**\
+15:47**\
+Logan Currie\
+We do have quite good networks and.
+
+**\
+15:49**\
+Logan Currie\
+Essentially by hook or by getting some good candidates, then proving out
+this path of okay, this candidate, here\'s the information that we have
+on them through career span and saying to the employer, like, what do
+you want to see the most? Because I think that\'s like, there\'s a few
+questions that are like, going around my head is from a product
+perspective, it\'s quite robust on the user side of things. I don\'t
+think we need to do a whole lot more. I\'m sure once we, as we get more
+users, there\'ll be some, maybe 30% of the dev\'s time should be spent
+on improvements and optimizations and stuff like that. But my open
+question is kind of like we can do as much as we need to manually and
+where is the like product direction that we are going to need to be
+building out?
+
+**\
+16:36**\
+Logan Currie\
+Like if it is more like white glove on the employer side and we can just
+be like, okay, like we can surface whatever information you want based
+on your needs and maybe the community is going to want more of a
+dashboard. Okay, this is how many members are onboarded. This is their
+average engagement rate. This is the metrics of. Yeah, go ahead.
+
+**\
+16:54**\
+David Speigel\
+Can I pause you for a second? Because before you\'re kind of moving
+around and all this stuff was interesting and I\'m putting it together,
+but now it seems like you\'re kind of getting into like building and
+that type of thing. So I want to back up before we dive in that deep.
+
+**\
+17:10**\
+Logan Currie\
+Yeah, fair.
+
+**\
+17:11**\
+David Speigel\
+And I want to just test the waters for some of the things that I look
+for in an earlier stage startup are product market fit and customer
+development. And they go hand in hand. And so I would seek to
+understand, given the product, like, are you clear on your main icps and
+then do you have a channel to them and do you have the feedback from
+them that they\'re pulling from you versus you selling and pushing to
+them? So that\'s a lot of. I just brought up a lot of stuff like product
+market fit and customer development.
+
+**\
+17:51**\
+Logan Currie\
+Yeah, massive things.
+
+**\
+17:54**\
+David Speigel\
+But like, those are the areas that I would seek to understand better
+before talking about the product details that sound like you were going
+to get into.
+
+**\
+18:03**\
+Logan Currie\
+I mean, Virgin. This is kind of your.
+
+**\
+18:06**\
+Vrijen Attawar\
+Yeah, no side of things in terms of.
+
+**\
+18:08**\
+Logan Currie\
+Yeah, in terms of. Because I think there\'s, again, this is the
+complexity of what we\'re dealing with is there\'s the ICP on the
+community side of the person who is essentially buying the product in
+terms of bringing it into their community. But then the employer is
+ultimately the purchaser. Right. And so that is the most important piece
+of this puzzle, I would say. So.
+
+**\
+18:29**\
+Logan Currie\
+V. What are you.
+
+**\
+18:30**\
+Logan Currie\
+How would you kind of phrase where we are on that side of things?
+
+**\
+18:34**\
+David Speigel\
+Which community? On the community side. Like what. What types of
+communities?
+
+**\
+18:40**\
+Vrijen Attawar\
+So right now we\'re thinking of focusing on product communities. The
+second most popular type of role that we see is sort of product manager
+or product designer, you know, sort of as the most frequent ones. And so
+we think those are both areas where we have access to certain
+communities that I think we can leverage by Providing something that has
+intrinsic value. And I think that\'s something we\'re really confident
+about because we\'ve seen a lot of user love and actually some very
+competitive consumer numbers on a product that we aren\'t even trying to
+make consumer. And I think rightly shouldn\'t be consumer because we
+want to incentivize folks to use career spend to, you know, sort of work
+on their careers. As far as the employers are concerned.
+
+**\
+19:33**\
+Vrijen Attawar\
+I mean it\'s every person I\'ve gone to with a, hey, I can give you a
+short list of candidates within, you know, 12 hours. Instead of you
+watching, you know, your blood rates, your blood pressure spike as you
+see the pile of the ATS buildup. Most of them have said yes. And I think
+even sort of intuitively that is where things are ending up. It\'s just
+those channels are just too clogged.
+
+**\
+20:02**\
+David Speigel\
+Yep. Okay, so the community side would be like product communities, like
+Product Tank or Never Search Alone or those types of communities. And
+then on the, that\'s right, on the employer side you\'re selling into
+like the HR department.
+
+**\
+20:19**\
+Vrijen Attawar\
+That\'s right. So that\'s where our ICP is still a little bit shaky in
+that we\'re talking to HR departments and we\'re also trying to engage
+directly with founders and essentially see there\'s a reasonable case to
+be made for either of them taking to it. And we\'ve seen positive signs
+from both groups. Groups. But that\'s the sort of remnant that I think,
+I presume it\'s better to go in one direction or the other. So we still
+have to sort out.
+
+**\
+20:48**\
+David Speigel\
+I mean there\'s a case to be made that it\'s a two sided market and you
+sell to both. Look at LinkedIn. Does I use LinkedIn all the time. An
+example, because they sell to job seekers and they sell to recruiters
+and they make money off both and they make money through ads for content
+providers like SoloPreneur. I mean it\'s just an expert play to copy.
+Not easily done because it\'s not. But just the concept is there.
+There\'s many other two sided markets as well that we could talk about,
+but I think that it\'s not impossible to take money from both sides if
+the critical mass is there.
+
+**\
+21:24**\
+Vrijen Attawar\
+Gotcha. Yeah, no, totally. I mean we have a feature that\'s already
+generated some pretty significant sort of returns. So as I was
+mentioning, I think to you know, our email, our jobs distribution is
+really landing with folks, has a high open rate, high click through
+rate, folks that Use it, use other functionality on the product via kind
+of considerable margin. So yeah, it\'s a, like we have all the building
+blocks in place. I think where Logan and I are trying to, both
+personally as founders, but also for the best of the company, just
+trying to be incredibly focused and actually saying no to opportunities
+as they come up if they aren\'t a fit and carrying out one sort of
+hypothesis to a strong conclusion. I think our strength is that we sort
+of are very fluid.
+
+**\
+22:21**\
+Vrijen Attawar\
+I think it\'s also a weakness in that we, you know, we probably want to
+let things bake for a little bit before hard course correcting.
+
+**\
+22:31**\
+David Speigel\
+Understood. Right. I mean you can\'t try to be doing everything a little
+bit. Like you gotta pick a few things and do them well, not just one
+until it clicks. And those few things that you do well, like have to
+have a strong thesis and strategy, focus on them, experiment with them
+and then see which one is gaining the most traction and then double down
+on that and still leave a little bit of room for alternatives. Squishy,
+high level advice. But like I hear what you\'re saying, it sounds like
+you have some good categories for that already, but the piece that
+you\'re looking for more results from is the actual traction. You have
+some, you have some proof points and traction but you want to scale that
+and confirm that it\'s to the degree that will build your business.
+
+**\
+23:31**\
+Logan Currie\
+Yeah, I mean, I think fundamentally it\'s an experiment in will
+employers pay us for shortlisted candidates number one or. And will they
+pay us for successful placement? Because it\'s not only an experiment in
+this motion, it\'s also an experiment in the business model as well in
+terms of like. Because the.
+
+**\
+23:58**\
+Logan Currie\
+Yeah.
+
+**\
+23:58**\
+Logan Currie\
+So that is also, I say, a part of this experiment.
+
+**\
+24:03**\
+Logan Currie\
+It\'s not new for recruiters to get a bounty. Right. So it\'s not like
+it\'s introducing something.
+
+**\
+24:11**\
+Logan Currie\
+New as of now into the system. But I think, you know, just thinking.
+
+**\
+24:15**\
+Logan Currie\
+Out loud, immediate next steps on anybody who\'s listed a product
+management role in the last three to five days, ideally even in the
+setting and saying like, hey, I can get you 10 candidates, will you take
+a look and then can we hop on a 20 minute call? Because I think that
+like the.
+
+**\
+24:43**\
+Logan Currie\
+Big questions, I think I said this are like, what is that person going
+to want to see from this very rich treasure trove of information we can.
+
+**\
+24:53**\
+Logan Currie\
+Surface from the candidate? We had a lot of conversations in.
+
+**\
+24:57**\
+Logan Currie\
+The last few weeks, David, with hiring.
+
+**\
+25:00**\
+Logan Currie\
+Managers, recruiters and they\'re Basically, like, the takeaway is I
+don\'t want better information.
+
+**\
+25:06**\
+Logan Currie\
+Like, that is not the most necessary.
+
+**\
+25:08**\
+Logan Currie\
+Thing for me right now.
+
+**\
+25:09**\
+Logan Currie\
+The most necessary thing is like better.
+
+**\
+25:13**\
+Logan Currie\
+Sources of candidates, essentially.
+
+**\
+25:15**\
+Logan Currie\
+So that\'s what we\'re trying to tackle.
+
+**\
+25:17**\
+Logan Currie\
+But we do, for what it\'s worth, have very good information.
+
+**\
+25:21**\
+Logan Currie\
+So I think it\'s about really zeroing.
+
+**\
+25:24**\
+Logan Currie\
+In on what that is because then we can show people not only the.
+
+**\
+25:30**\
+Logan Currie\
+Speed and the caliber of the candidates that we\'re delivering to them,
+but like then go and do more of that as well, essentially.
+
+**\
+25:39**\
+David Speigel\
+Yeah. Let me jump in for a second here because I have some tangential
+thoughts to what you were just saying. They\'re not like in the same.
+Some of them are in the same direction, but some of them are like, oh, I
+heard you say this. It also makes me think of this other thing to like
+keep on the radar.
+
+**\
+25:56**\
+Logan Currie\
+Yeah.
+
+**\
+25:56**\
+David Speigel\
+And then I wanted to maybe back out a little bit and talk about like the
+meta conversation of like, generally, how can we help each other? What
+would that look at? Like, so I heard you mentioned that the employers
+would pay and you\'re going to HR teams, so we can assume like who kind
+of the top ICP people are like the ones doing the work and the ones
+writing checks. But then within there you\'re also like, I use this
+example a lot, especially with startups is, you know, the founder of
+TurboTax, the person who invented TurboTax said, Other software is not
+my biggest competitor, the pencil is. And so like, are people doing
+certain things themselves or is there some other platform play, like the
+form itself like that can just overtake what you\'re doing?
+
+**\
+26:50**\
+David Speigel\
+Like are you a feature or are you a standalone bolted on piece of the
+process? Because you don\'t want like Greenhouse or those other
+companies like adding enough features of what you do and they\'ve
+already got the contracts. And then the companies are like, yeah, this
+is good enough. Like they kind of do what Careerspan does. We don\'t
+also need career span. So something to think about form play in that
+perspective, like who the competition is within the employer.
+
+**\
+27:19**\
+Vrijen Attawar\
+No, absolutely. I mean, I think there are a couple of. I guess what I
+would say are like strategic reasons. At least I feel like that would
+break in our favor. But I see your point completely. I actually have to
+jump. I have another call with someone, but if you guys wouldn\'t mind
+wrapping up over here and then hopefully one of my Jared\'s is in there
+to help me close the loop for my part. Later.
+
+**\
+27:47**\
+David Speigel\
+I see Fireflies.
+
+**\
+27:49**\
+Vrijen Attawar\
+Amazing. That\'s the one I want Fathoms on its way out.
+
+**\
+27:53**\
+David Speigel\
+Oh, really? Okay. I learned about that. Okay.
+
+**\
+27:56**\
+Vrijen Attawar\
+Yeah, yeah, I have. Logan has made a great recommendation. Anyway, I\'ll
+catch you all soon.
+
+**\
+28:04**\
+David Speigel\
+Take care. Bye.
+
+**\
+28:05**\
+Vrijen Attawar\
+Bye.
+
+**\
+28:07**\
+David Speigel\
+Do you have a few more minutes, Logan?
+
+**\
+28:09**\
+Logan Currie\
+Yeah, of course. Yeah, yeah.
+
+**\
+28:10**\
+David Speigel\
+Okay. All right, real quick then I want to hear why Fireflies is better
+than Fathom.
+
+**\
+28:18**\
+Logan Currie\
+It has to do with our tech stack at the moment. I mean, I was also
+getting frustrated because stopped joining my calls. But then Firefly
+has just released an integration with Claude so you can essentially get
+grab all of your transcripts like automatically. You just set up like a
+really easy automation. And so then we just started on.
+
+**\
+28:37**\
+Logan Currie\
+Cloud teams as well. So essentially every call that we have just get fed
+directly into projects. So as we\'re doing these customer discovery.
+
+**\
+28:46**\
+Logan Currie\
+Calls, et cetera, it\'s just.
+
+**\
+28:47**\
+Logan Currie\
+Like a really easy.
+
+**\
+28:51**\
+Logan Currie\
+Flow of capturing all that information.
+
+**\
+28:54**\
+David Speigel\
+I literally just spent two hours going back through two months worth of
+like three buckets types of calls and pasting them into Google Docs and
+then realizing a thousand pages is the Google Doc limit. So now I\'ve
+got like one, like personal coaching calls, one PCA coaching calls,
+group PCA calls and that one I do every week and they\'re really long.
+So that one ran out of room and I had a like PCA group calls number two.
+Like all those are loaded into my custom GPT. So I feel you because I
+was just copying and pasting transcripts and then like is there a make
+or an N8N automation I could do?
+
+**\
+29:32**\
+Logan Currie\
+Yep.
+
+**\
+29:33**\
+David Speigel\
+Anyway, good to know.
+
+**\
+29:34**\
+Logan Currie\
+Yep.
+
+**\
+29:36**\
+David Speigel\
+Let\'s talk about what are your thoughts on working together? I threw
+something out which I probably. I\'ve been advised not to like throw
+numbers first, but I did. So what are your thoughts on your needs and
+then yeah, we can address them and if so how we should arrange that.
+
+**\
+29:56**\
+Logan Currie\
+Yeah.
+
+**\
+29:57**\
+Logan Currie\
+Awesome. I haven\'t had a chance to chat with the about the number. So
+full transparency. I won\'t be able to confirm anything on that. But I
+feel like the biggest value add I already see a lot of value. I think
+the arrangement like the idea of I think it was two hours a week. Is
+that what you put in the. Yeah, to me that makes a ton of sense because
+I feel like we\'re moving quickly and we have an idea like not that you
+know, two years of. Two years is enough time to make.
+
+**\
+30:32**\
+Logan Currie\
+A lot of mistakes essentially in a good way.
+
+**\
+30:34**\
+Logan Currie\
+So like I think we have the right ideas about what to do. But I feel
+like essentially having a gut check of like this is the way in which we
+are approaching this. Like is there anything that we are missing? Is
+there something that we aren\'t like experiencing? And then for what
+it\'s worth as well, like my big blind spot is like essentially
+corporations and that\'s a big blind spot to be having in this scenario.
+Like I can do communities all day long. I am comfortable playing in the
+higher ed waters and startup waters, everything like that.
+
+**\
+31:03**\
+Logan Currie\
+But I\'ve never worked, I\'ve essentially never.
+
+**\
+31:06**\
+Logan Currie\
+Worked for a company in America because I was only overseas. I can have
+spend all day talking about China and Singapore, etc. But like, and V
+has worked at McKinsey obviously, but like for not that long. And so I
+think if this buyer is the ICP within hiring and we have another advisor
+who we\'re bringing on board who\'s in HR tech and has been in HR and
+like we can get additional expertise as needed. But I feel like your
+experience, I think in particular with product with go to market and
+then having been in bigger companies will also and being in both sides
+of that fence basically like startup and corporate, I think is going to
+be particularly valuable just because it\'s a little bit of a hand wave
+to be like, oh yeah. And then a hiring manager is going.
+
+**\
+31:56**\
+Logan Currie\
+To pay us money.
+
+**\
+31:58**\
+Logan Currie\
+Like what money? How are they going to pay that to us? Like you know,
+like in what budget cycle are, you know, like there\'s a lot. I think
+that as founders we like move fast, break things, whatever it is, it\'s
+like we can fucking figure it out. I know enough to know what I don\'t
+know about the internal processes of many of these classified systems
+and what it takes to go into those. Right. So I think really getting
+super clear.
+
+**\
+32:27**\
+Logan Currie\
+On like series A just raised series.
+
+**\
+32:31**\
+Logan Currie\
+A founders who are hiring their first two like PMs or whatever it is.
+Like I think we need to like play to our strengths and I anticipate
+that\'s not going to be Fortune 500, at least to start with. But like,
+anyway, so I\'m kind of.
+
+**\
+32:47**\
+Logan Currie\
+Going back into the strategy side of things. But I think that is an
+example of making sure that we are trying to think two steps ahead in
+terms of like, okay, if you go down this line, this is what\'s going to
+happen kind of so helping us be both like in the weeds, but like the 550
+as well.
+
+**\
+33:05**\
+David Speigel\
+Yeah. So I think it\'s the way I\'m thinking about that is like if
+you\'re working with well funded. If you\'re looking at PMs then you\'re
+talking about tech and if you\'re talking about tech and you want early
+stage, then you\'re looking at VC funded tech startups. Like that\'s
+what it is. And so if you\'re looking at VC funded tech startups, then
+what are they told to do? Like after they get a reasonable size funding
+in terms of building their team, what infrastructure do they need so
+they can source candidates and hire good people? So they\'re already
+going to be told like, oh, you need gusto for payments or you need
+whatever as you get started, it\'s this, whatever. The greenhouse for
+starters, whatever it may be. I\'m thinking of one, but I can\'t
+remember the exact name. But like that.
+
+**\
+33:50**\
+David Speigel\
+And so you need to be on that list that either the VCs or whoever they
+recommend to their port. Cos like you need to be either in the list or
+partnered with the one in your category so that you come in together
+when that time comes, you\'re on the short list or you\'re like combined
+with or whatever. Yeah, yeah, like groups. Because the vcs all talk to
+each other too. So like you get into one firm, then you\'re all their
+new port codes going forward and maybe not filling in their old port,
+their existing port codes. And then this VC talks to that VC and then
+like that\'s. I was talking to V about the bowling pin strategy.
+
+**\
+34:25**\
+David Speigel\
+Like Facebook is a perfect example of it because they started at one
+university, then universities, then families, then businesses, then
+everything just like one pin at a time. So that would be like series A
+founders or like maybe there\'s ways that you can get in with like the
+HR groups and become like a go to secret in the HR groups.
+
+**\
+34:50**\
+Logan Currie\
+Yeah, yeah.
+
+**\
+34:51**\
+David Speigel\
+In bigger companies. But then if you do that then you need to make sure
+you\'re on the preferred vendor list and all this other like corporate
+stuff that needs to happen. I\'m not the expert necessarily on that, but
+I do understand like differences in hiring between like right. Startup
+hiring and corporate hiring. And then the other thing mentioned about my
+background, you mentioned that you\'re out of work for six months. Like
+one of the reasons I\'m now at this point in my career like going solo
+is because I\'ve basically had a solo ish career given what has happened
+over my career. So I\'ve been on the job search many times because I\'m
+always working at like high risk companies and bad things happen. And so
+I get it.
+
+**\
+35:37**\
+David Speigel\
+Like I\'ve done the job search a ton of times and I\'ve had a ton of
+personal looks in that regard and I\'ve been a hiring manager at
+companies so I know what it\'s like to try to like get a job wreck
+opened. Right?
+
+**\
+35:52**\
+Logan Currie\
+Yeah, yeah.
+
+**\
+35:53**\
+David Speigel\
+Post on the job boards or posted on the careers page or all that kind of
+stuff. So I would definitely bring experience there. Just to be clear
+though, like when it comes to like getting on the preferred vendor list
+and that kind of stuff, that\'s kind of where I start trailing off.
+
+**\
+36:05**\
+Logan Currie\
+Yeah. No, no, no. Like that\'s where you know, again I think we can find
+the expertise when we need it essentially. I think it\'s. But like to
+make it maybe bring it back to where this started. Like right now our
+product is B2C. We can scotch tape some stuff to show, you know, make it
+white glove for employers to kind of give a community, you know, a guest
+access to our post talk dashboard. Right. Where it\'s like their
+community. Like we can make it work and we will need to start building
+in a direction at some point and I think that\'s also where your
+experience will come in as a, you know, from the PM perspective, it\'s
+just kind of like cool. These are all the things that we\'re learning
+about our icp.
+
+**\
+36:52**\
+Logan Currie\
+Like what is going to be first priorities very much once we start
+getting, you know, initial customers and it\'s like cool. What, what can
+we prove out? What\'s going to be like absolutely necessary.
+
+**\
+37:05**\
+Logan Currie\
+To then get to the next customers?
+
+**\
+37:08**\
+Logan Currie\
+Whatever it looks like. Because like right. A lot right now a lot of
+this is like been is going to be manual, which is fine, we can do that.
+But like it\'s going to be.
+
+**\
+37:16**\
+David Speigel\
+Yeah, better to do stuff manual and make money like consult to learn and
+then productize to earn.
+
+**\
+37:23**\
+Logan Currie\
+There you go. There you go. I like it. Yeah. So I\'ll basically just
+confirm with me on the amount. I don\'t think it was something that was
+like completely like undoable. So let me just confirm with him real
+quick on that side of things. But then essentially, yeah, I mean then
+you can just let us know if there\'s like a certain time each week that
+works for you to have the calls and then maybe we split them up like you
+know, longer session and then like a 90 minute and a 30 minute something
+like that where we can kind of have a quick check in, maybe start off
+the week in a longer, with a longer session, whatever that looks like. I
+don\'t really have too many opinions about that now, but.
+
+**\
+38:01**\
+Logan Currie\
+And yeah, if that sounds good to you, then I think we can do some eyes
+crossing keys and go ahead and move forward with it.
+
+**\
+38:11**\
+David Speigel\
+Yeah, I mean, let me know if you want me to put together a more formal
+proposal, like in a document, just so you have it on file, like is a
+separate standalone. I can do that, but first I just wanted to kind of
+like throw it out there, like at the highest level, like, hey, here\'s
+an idea and see if that resonates. So let me know if that\'s necessary.
+I\'m going to be out tomorrow through Monday. Long weekend.
+
+**\
+38:33**\
+Logan Currie\
+Yeah, of course. Yeah.
+
+**\
+38:34**\
+David Speigel\
+But happy to maybe be in touch over email to set up times for next week
+and to like, have the first one just be. To formalize that like in the
+first 15 minutes and then get moving from there.
+
+**\
+38:46**\
+Logan Currie\
+Yeah, that\'s perfect. All right, awesome. I\'ll get an email over to
+you a little bit later today and we can go from there.
+
+**\
+38:54**\
+David Speigel\
+Okay, sounds good.
+
+**\
+38:56**\
+Logan Currie\
+The weighted vest is off. I feel so light and airy and.
+
+**\
+39:01**\
+David Speigel\
+You\'Re like, from all the weight, so it\'s good.
+
+**\
+39:04**\
+Logan Currie\
+Yeah, exactly. Exactly. All right, awesome. Thanks, David. And talk to
+you soon.
+
+**\
+39:07**\
+David Speigel\
+Yep, bye.
+
+**\
+39:11**\
+Logan Currie\
+It.

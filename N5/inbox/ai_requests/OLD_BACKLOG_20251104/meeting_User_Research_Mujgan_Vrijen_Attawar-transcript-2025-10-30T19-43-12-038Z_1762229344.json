@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_User_Research_Mujgan_Vrijen_Attawar-transcript-2025-10-30T19-43-12-038Z_1762229344",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/User_Research_Mujgan_Vrijen_Attawar-transcript-2025-10-30T19-43-12-038Z.transcript.md",
+    "meeting_id": "User_Research_Mujgan_Vrijen_Attawar-transcript-2025-10-30T19-43-12-038Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/User_Research_Mujgan_Vrijen_Attawar-transcript-2025-10-30T19-43-12-038Z"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T04:09:04.623378+00:00"
+}

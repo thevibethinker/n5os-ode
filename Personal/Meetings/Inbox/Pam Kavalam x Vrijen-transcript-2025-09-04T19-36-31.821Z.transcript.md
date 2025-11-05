@@ -1,0 +1,1300 @@
+**\
+00:51**\
+Vrijen Attawar\
+Sam. Hey, how\'s it going?
+
+**\
+01:39**\
+Pam K\
+Hey, how\'s it going?
+
+**\
+01:41**\
+Vrijen Attawar\
+How are you? Where, where are you at?
+
+**\
+01:44**\
+Pam K\
+I\'m actually in Dumbo, so.
+
+**\
+01:47**\
+Vrijen Attawar\
+Nice. Okay. Yeah, I see the Dumbo.
+
+**\
+01:53**\
+Pam K\
+Yeah. Oh, wait, is that the carousel?
+
+**\
+01:56**\
+Vrijen Attawar\
+Oh, nice. Okay. Yeah.
+
+**\
+01:58**\
+Pam K\
+Or is it the other way? Oh, yeah. Even through the carousel. Yeah, yeah.
+Okay, cool. But wait, where are you guys again? I\'m trying to remember.
+
+**\
+02:06**\
+Vrijen Attawar\
+We\'re super close. Yeah, we\'re super close by. We\'re in right around
+J Street, Metro Tax. So, like a stop.
+
+**\
+02:12**\
+Pam K\
+Okay. Yeah, yeah. Oh, that\'s so funny. So today I\'m actually closer to
+you than normal. So.
+
+**\
+02:18**\
+Vrijen Attawar\
+Yeah. How\'s today been? Crazy.
+
+**\
+02:21**\
+Pam K\
+Yeah, no, it was really good. I, I, I guess I forgot that I had done a
+podcast like, a few years ago, but I was like, it was my first podcast,
+but I was like, oh, wait, no, it was actually my second ever. But, but
+yeah, it was fun. It was only 15 minutes. Like, literally he interviewed
+six of us and it was like, all in a row. But it was funny. He just
+basically asked us questions about being a super connector. And then his
+business is like, you introduce people, but you get paid if the referral
+is successful or something. So I\'ll be honest. I don\'t know. I never
+used the company, but I was like, whatever, he\'s inviting us. And the
+other people were really interesting. Like, they were really cool. So.
+
+**\
+03:02**\
+Pam K\
+And then afterwards, you know, we just kind of, like, socialized for a
+little bit, so I was just like, I feel like I\'m gonna be running around
+and it\'s. It was like, right in the middle of everything, so I was just
+like, I think I\'m just gonna do three o\', clock, so.
+
+**\
+03:13**\
+Vrijen Attawar\
+Oh, my God. Yeah, no, that makes total sense. I\'m always more than
+happy to move if my schedule allows it. I understand the need to be
+flexible living the lives that we do.
+
+**\
+03:25**\
+Pam K\
+I know. Yeah. He literally asked me like, two days ago to do it, and I
+was just like, you know what? Why not? Like, I, you know, I had a couple
+calls, but I just moved them around. So I was like.
+
+**\
+03:35**\
+Vrijen Attawar\
+Yeah, totally. You got to seize. I think that\'s the Very much the
+essence of opportunity, is you have to seize it. Right, right. So I,
+Yeah, big believer in that. Things have been, you know, things have been
+good from our end. We\'ve sort of crystallized around the community
+oriented go to market. So, yeah, a couple of things that are, that sort
+of might be relevant to you or folks in your community or network,
+certainly as far as the tool is concerned. We\'re going to communities,
+professional communities, essentially looking for intros to community
+owners. Where we come in, we give you. We give every community member
+free access to career span and in exchange we act as sort of the
+internal recruiter for that community. So we will, you know, they get a
+centralized place to drop in jobs. It will get distributed to folks.
+
+**\
+04:29**\
+Vrijen Attawar\
+You\'ll get a bunch of analysis around your suitability for that job. So
+it\'s everything from a matchmaking system. And we\'re also hoping to
+bring in companies and have them, if they hire from a certain community,
+we split a percentage of the take with the community. So best of all,
+it\'s a means to monetize the talent process because communities are
+doing this for free anyway.
+
+**\
+04:56**\
+Pam K\
+Right. Wait, which communities have you been looking at so far?
+
+**\
+04:59**\
+Vrijen Attawar\
+So we\'re in talks with fohi. We\'ve managed to lock down a couple of
+sort of. Sorry, Future of Higher Education. Interesting group.
+
+**\
+05:13**\
+Pam K\
+He actually told me about it a while ago, but you know, we got it on
+fire ed pretty soon after that, so.
+
+**\
+05:19**\
+Vrijen Attawar\
+Right. Yeah, no fohees. Grades about 5,000 folks. So we talks with them.
+The Peace Corps, the main sort of non Peace Corps. Yeah, that was pretty
+cool. My university\'s alumni association is going to be using us. So
+we\'ve picked up a few good names along the way and we\'re really
+kicking off that sort of community strategy essentially this week. So
+we\'re trying to have at least a couple of community conversations a
+week. We have tons to offer members, we have a lot of social proof
+points. And so it\'s sort of the last piece of the puzzle is just
+bringing employers onto careerspan, which is sort of my job. So that\'s
+the other half of the puzzle is if you know folks that are looking
+specifically for product hires, we\'re hoping to bring a lot of those
+folks on a careerspan soon.
+
+**\
+06:07**\
+Pam K\
+Got it. Yeah. Because I have a couple ideas for communities because like
+one, if you\'re doing alumni associations, like I was really involved
+with the JET Alumni Association. Like, do you know the JET program?
+Yeah. So I\'m sure I could find somebody for at least the New York
+chapter for you to work with because like that\'s, you know, that\'s
+definitely something I\'m sure they want to be part of.
+
+**\
+06:29**\
+Vrijen Attawar\
+Yeah, that would be like a lot.
+
+**\
+06:31**\
+Pam K\
+Of, like I found a couple jobs through jet, like when I first started
+out. So I\'m trying to think of them also. Have you heard of Next Play
+Next place? Yeah, it\'s Ben.
+
+**\
+06:41**\
+Vrijen Attawar\
+Yeah, Ben Langs.
+
+**\
+06:42**\
+Pam K\
+Yeah, he might already have a system.
+
+**\
+06:45**\
+Vrijen Attawar\
+But you know, right now Ben\'s system. Because I\'m in next play as
+well. Yeah, I would love to get in with next play. I\'m sort of waiting
+a little bit to get some more proof points before approaching Ben just
+because obviously he, you know, he\'s like a community. He\'s like a
+communities community kind of guy. Right. So I want to polish have us
+really polished before I sort of approach them. But in essence I think,
+yeah, that would be another good one down the road to be able to point
+to someone and say, hey, this is like someone that\'s used careerspan
+sort of knows us can vouch for. And so I\'ve been trying to be more
+active in that community as well.
+
+**\
+07:26**\
+Pam K\
+Yeah. And also Fabric too. I don\'t know if you\'ve heard of Fabric.
+
+**\
+07:30**\
+Vrijen Attawar\
+I\'ve heard of Fabric, yeah. And I\'ve heard good things. I, I would
+love to sort of speak to someone there as well because I know it\'s sort
+of eclectic and very event driven.
+
+**\
+07:40**\
+Pam K\
+Yeah. I mean, what I\'m a member, so I can give you a free week at
+Fabric if you just want to check it out.
+
+**\
+07:46**\
+Vrijen Attawar\
+Yeah.
+
+**\
+07:46**\
+Pam K\
+And then when you go there, you\'ll be talking to the head of both whose
+name is Anna. She was my co chief, so she can answer any questions that
+you had. But yeah, I mean they\'re a community builders. So I feel like
+that would be a good place for you to be.
+
+**\
+08:01**\
+Vrijen Attawar\
+Oh, awesome.
+
+**\
+08:02**\
+Pam K\
+And also if the demo location is that close to you, then that could be
+like a really good spot for you to be at too.
+
+**\
+08:08**\
+Vrijen Attawar\
+Yeah. Where communities thrive. Okay. I totally had a complete
+misconception about what Fabric was doing. I thought it was a, I thought
+it was just a co working space with a community sort of element to it,
+but I didn\'t realize this sort of meta nature of this company.
+
+**\
+08:28**\
+Pam K\
+Yeah. So basically most of the people that go to Fabric are either
+founders or they run their own communities. So a lot of people run like
+fun communities. So like one guy runs like a dumplings community and
+then you know, he also does like civic engagement stuff. And then you
+know, some people like community is their job. So like they are the kind
+of community at Slack or the kind of community of opening I or something
+like that. And then other people, they\'re like, yeah, like running a
+dating company or trying to think of who the other founders are. But
+they\'re all like community based type companies. Another one is a
+community for fractional workers. So Like.
+
+**\
+09:06**\
+Vrijen Attawar\
+Right.
+
+**\
+09:08**\
+Pam K\
+But. Yeah, but they all. It\'s also just a really cool space. Like, I
+think that you, in particular, would, like, really like being there,
+because it\'s like your kind of. People, like, super connector type.
+
+**\
+09:17**\
+Vrijen Attawar\
+People love that. And then.
+
+**\
+09:20**\
+Pam K\
+Yeah, and it\'s also so close by to you guys, so it\'s like, you could
+just pop over. It\'s, like, probably a tough.
+
+**\
+09:25**\
+Vrijen Attawar\
+Yeah, no, I would love to take you up on that. Would love to. To sort of
+do a little, like, work. Working sort of day out of fabric with you.
+
+**\
+09:34**\
+Pam K\
+Yeah, well, I\'m gonna be there Monday. I\'ll probably be there all day
+on Monday, so if you\'re around. I was gonna go to the Tribeca one, but
+maybe I\'ll go to the demo one if that\'s easier for you.
+
+**\
+09:45**\
+Vrijen Attawar\
+But that would be easier for me. I have a.
+
+**\
+09:52**\
+Pam K\
+I can\'t do Monday. Maybe.
+
+**\
+09:54**\
+Vrijen Attawar\
+Yeah, that\'s fine.
+
+**\
+09:55**\
+Pam K\
+In. In Dumbo, I\'ll do it in Tribeca. But if you want to do another day
+that week, just let me know.
+
+**\
+10:00**\
+Vrijen Attawar\
+Let me just see where the Tribeca fabric is. Not an issue. Tribeca is
+generally pretty close.
+
+**\
+10:09**\
+Pam K\
+Oh, yeah. It\'s actually not very far. It should be 20 minutes from
+Dumbo, so it\'s almost.
+
+**\
+10:13**\
+Vrijen Attawar\
+Yeah, especially if it\'s on the right line. It\'s easy for me.
+
+**\
+10:18**\
+Pam K\
+It\'s near that. Oh, yeah.
+
+**\
+10:19**\
+Vrijen Attawar\
+22 minutes. Yeah, I\'m. I\'m near any. Yeah.
+
+**\
+10:22**\
+Pam K\
+Oh, okay. Perfect.
+
+**\
+10:23**\
+Vrijen Attawar\
+Perfect. Yeah, no, let\'s do. Let\'s do Tribeca. I\'ve also got a big
+chunk from noon to noon through to the end of the day, actually, where I
+have, like, relatively limited calls, so I\'m happy to do that.
+
+**\
+10:39**\
+Pam K\
+Yeah, I have calls starting at 1:30, but I\'m also meeting with the guy
+at 11:30, but I feel like he might be someone you know or.
+
+**\
+10:49**\
+Vrijen Attawar\
+Oh, yeah.
+
+**\
+10:50**\
+Pam K\
+Because his brother\'s name is Umad, and his name, I think, is Mohammed,
+but I feel like when I added him, you were a common connection.
+
+**\
+10:59**\
+Vrijen Attawar\
+Is it.
+
+**\
+10:59**\
+Pam K\
+There\'s several founders, I think, so let me just double check. I mean,
+Umar\'s not a very common name. Yeah.
+
+**\
+11:08**\
+Vrijen Attawar\
+Umad\'s not a very common name because some. I just got a message, and
+this person is a mutual. I just got a message from.
+
+**\
+11:15**\
+Pam K\
+Oh, okay.
+
+**\
+11:17**\
+Vrijen Attawar\
+Yeah, I just got a message from him, so maybe it\'s the same one.
+
+**\
+11:21**\
+Pam K\
+So it\'s not him. It\'s his brother. Yeah, yeah. Khan. Yeah. Because his
+last name is Khan, so his brother is also Khan, so. Yeah, that\'s so
+funny, because I vaguely remember when I added him that were in. But you
+will have.
+
+**\
+11:36**\
+Vrijen Attawar\
+Sweet. Okay. Yeah, actually I\'m due to respond Omad as well.
+
+**\
+11:43**\
+Pam K\
+Oh, no way. I don\'t know if he\'s gonna be there, but his brother will
+definitely be there, so.
+
+**\
+11:47**\
+Vrijen Attawar\
+No, all good. You said, you said your meetings start at one.
+
+**\
+11:53**\
+Pam K\
+Oh, so my meetings will like. I mean they\'re kind of 30 minute meetings
+so like I\'ll just be in and out. But I basically have like five
+meetings between 1:30 and 5:30, so. Okay, so I\'ll just be in and out.
+Like I\'ll probably.
+
+**\
+12:06**\
+Vrijen Attawar\
+Yeah, yeah.
+
+**\
+12:07**\
+Pam K\
+Do a call or you know, usually people do calls in the main room
+actually, since we might even be there while I\'m doing the calls. But
+it depends on how busy it is because sometimes when it\'s really busy we
+just need to see the calls out in the open. But. Yeah, because they
+have.
+
+**\
+12:21**\
+Vrijen Attawar\
+Yeah, I have noise canceling headphones so that\'s not an issue.
+
+**\
+12:24**\
+Pam K\
+Exactly. Yeah, that\'s what I kind of do. Yeah. So. But it\'s a fun
+space. Like it\'s funny because the podcast was in the same building as
+Fabric. So I actually took like the group of eight people, like the two
+podcaster guys and then the five other people down to the fabric co
+working space and like to show them the office and they were all like
+really excited about it. So it was fun because it\'s like literally a
+community for community builders and like these are all community
+builders. So.
+
+**\
+12:50**\
+Vrijen Attawar\
+Yeah. This is so cool. My co founder is going to be super jealous.
+She\'s actually the one that leads community initiatives. But I\'ll
+gladly sort of tell her I can.
+
+**\
+13:01**\
+Pam K\
+She live in Boston.
+
+**\
+13:02**\
+Vrijen Attawar\
+She does.
+
+**\
+13:03**\
+Pam K\
+Yeah, that\'s right. Okay. I think you remember you telling me that.
+
+**\
+13:06**\
+Vrijen Attawar\
+Yeah, yeah, she\'s great. So she\'ll, I\'ll bring her into the fold
+thereafter. But yeah. Are you going to the summit sort of primary vc?
+
+**\
+13:19**\
+Pam K\
+I\'m not going to the primary senate. Yeah. Wait, that was like invite
+only, right? Or is it just like, yeah, we.
+
+**\
+13:25**\
+Vrijen Attawar\
+We, we do business with one of the companies there. So we managed to get
+it.
+
+**\
+13:29**\
+Pam K\
+Yeah. It\'s so funny. So I reached out about volunteering and they were
+like, we\'re good. So I met Jason Schumann yesterday and I was like,
+should I? And then I like did it.
+
+**\
+13:41**\
+Vrijen Attawar\
+Yeah, yeah.
+
+**\
+13:42**\
+Pam K\
+I was like, should I be like, hey, Jason, can I. Then I was like, he
+doesn\'t know me from anyone. Like I literally just said my name because
+it\'s one of those things where I was like, oh, hey, I\'m Pam. And then
+it\'s like. And the panel is starting now and I\'m like, okay, bye.
+
+**\
+13:55**\
+Vrijen Attawar\
+Yeah, I mean, it\'s hard, right? It\'s hard. It\'s so. Social capital is
+such a, like, delicate thing and like knowing when to spend it and like
+when to build it up, like, it\'s, it is like a fascinating sort of
+aspect of things. And I, I only regret that I started paying attention
+to this stuff much later in the game than I probably should have for the
+company\'s sake. But it\'s, it\'s, it\'s. It\'s such a fun world. Yeah,
+the whole Super Connector game is so awesome.
+
+**\
+14:28**\
+Pam K\
+I know. It\'s so weird because it\'s like I was. I had my interview you
+at Flybridge yesterday and like, he\'s just casually talking about like
+all these people that are like famous to me, you know, like, and these
+are just like his friends, you know, and it\'s just like. And it\'s like
+if I became this cheese of stuff, like, it would be like a whole
+different world. It would be like, I don\'t know, like, it\'d be so
+different, you know?
+
+**\
+14:53**\
+Vrijen Attawar\
+Yeah. I think especially someone like you would be able to leverage that
+really effectively. Because the problem is that most folks think a
+relationship is just the connection, the initial sort of like. But it\'s
+actually so much more behind the scenes stuff and so much more like
+staying on top of shit and like, fulfilling promises and doing like,
+mundane favors. Follow the endless amounts of following up. And so I
+think that is the, the sort of side of it that most folks don\'t
+realize. They think they want to be good at just the most sexy part,
+which is showing rocking up to someone and like impressing them and
+having them like, help them. Like, yeah, of course, everyone wants that.
+Like, that\'s the dream. But like, there\'s a lot of work that goes into
+those moments.
+
+**\
+15:45**\
+Pam K\
+Yeah, well, it was so funny because I remember like reading about
+something and I can\'t remember what it was, but it was like this woman
+went to like Madonna concert and she was like trying to convince them
+that she should open and. And then they were like, are you joking? And
+then she like snuck on stage and she like, did all stop. And then like,
+you know, she still didn\'t get like what she wanted. But that was Lady
+Gaga, so it\'s like. Yeah, showing that. You know, I think she was 16 at
+the time or something and it was like some concert in like near her
+hometown and she was like tried to, you know, like she, it\'s just like
+funny. It\'s like, yeah, your stuff like that. And you\'re like, okay.
+
+**\
+16:19**\
+Pam K\
+So like even like, you know, by the people that like could have had her
+perform for, I forget what she was going to do but like they\'re
+probably like, oh man, because of Lady Gaga. But like she wasn\'t Lady
+Gaga back then. You know, like 16 year old girl that probably was good
+at singing, but you know.
+
+**\
+16:32**\
+Vrijen Attawar\
+Yeah, it\'s wild.
+
+**\
+16:34**\
+Pam K\
+Interesting.
+
+**\
+16:35**\
+Vrijen Attawar\
+History is shaped by the try hards. For better or for worse.
+
+**\
+16:38**\
+Pam K\
+I know. Oh my God, that\'s so funny. I was literally talking to my
+friend the other day and like he\'s like a mentor to me. He\'s like a
+little older and like he was like, I, I said something and he was like,
+Pam, you need to calm down, like you\'re too excited. And I was like,
+actually this is my differentiator. Like my unbridled enthusiasm is what
+people like about me, you know, like, because, like, because I remember
+reading something and it was like, if you\'re a try hard, you will not
+succeed in, you know, because if you\'re a try hard founder, no one
+likes that you\'re a try hard vc. People think you\'re desperate. And
+then I was like, unless you own it. Unless you\'re like, I like learning
+about everyone.
+
+**\
+17:14**\
+Pam K\
+I mean like, I like in my interviews yesterday, I was like, I know
+everything about both of you guys. I listened to like five podcasts by
+each of you know, like I know so much, you know, and then they were
+like, that\'s cool, you know, like I wasn\'t like totally, you know, I
+care about what we\'re doing.
+
+**\
+17:30**\
+Vrijen Attawar\
+Here\'s, here\'s the thing with advice. And sometimes people that give
+advice professionally are the worst people to get advice from because
+all advice is contingent on a set of assumptions that are being made by
+like both parties, right? And like if someone was just dropped out of
+nowhere and they\'re like, give advice to Pam and you said nothing so
+far and they know nothing about you, the quality of the advice will
+always be like the average, right? And it\'s, and so that\'s. The
+inherent problem with advice is it\'s calibrated for the average or the
+average of whatever the person perceives their audience to be. But in
+reality, like it\'s absolutely, it\'s totally a viable strategy to be a
+try hard and pull it off.
+
+**\
+18:15**\
+Vrijen Attawar\
+You just, it takes a certain type of person and a certain type of
+approach and that Stuff and so much stuff that isn\'t coachable that
+it\'s much easier for these folks to just dismiss it as an unviable
+strategy. Because, like. Yeah, of course. Like a try hard. If we picture
+the worst try hard ever, we could all agree that person\'s.
+
+**\
+18:35**\
+Pam K\
+Not gonna be flick or something.
+
+**\
+18:37**\
+Vrijen Attawar\
+Yeah, exactly. Yeah. And if we picture like the optimal try hard where
+they\'re. As you\'re describing yourself, like, I think that is very
+much a kind of person everyone want, right? Like a Jared Dunn from
+Silicon Valley. Who.
+
+**\
+18:51**\
+Pam K\
+Oh, I love Jared. He was my favorite.
+
+**\
+18:54**\
+Vrijen Attawar\
+Jared\'s the best character.
+
+**\
+18:56**\
+Pam K\
+I loved when that. Remember when the Billy the billionaire guy or
+whatever the rich guy that was like that guy. Fs.
+
+**\
+19:03**\
+Vrijen Attawar\
+Yeah. Oh, absolutely. Jared is the best. The writers knew Jared was the
+best.
+
+**\
+19:11**\
+Pam K\
+Jared was my favorite. I love that actor, though. He\'s so good.
+
+**\
+19:14**\
+Vrijen Attawar\
+He\'s great.
+
+**\
+19:15**\
+Pam K\
+I forget his name, but. Oh, yeah, he\'s good. He\'s great interviews
+too. If you ever watch interviews of him. No, Hilarious. I remember his
+name. It\'s like Matt W. Or it\'s something like that.
+
+**\
+19:27**\
+Vrijen Attawar\
+Yeah, he\'s. He\'s dope. I named my previous AI note taker, when I could
+do that on Fathom was Jared Dunn. AI note.
+
+**\
+19:35**\
+Pam K\
+Hilarious.
+
+**\
+19:36**\
+Vrijen Attawar\
+Yeah.
+
+**\
+19:37**\
+Pam K\
+So funny.
+
+**\
+19:38**\
+Vrijen Attawar\
+Yeah, I. Unfortunately, Fireflies doesn\'t let you name your. Your one,
+but. No, it\'s. This is. This is. Honestly, there\'s some, like, such
+great leads in here. I mean, I think fabric would be a huge unlock just
+getting in there and even just speaking to a couple folks checking out
+the space. I\'m not opposed to being a member either, so I think it
+will, you know, can go into that call with like, good conscience and
+sort of just get to know them. That seems really fun. And then the.
+Yeah, I think more. More sort of broadly. Yeah. We\'re just looking for.
+Would love to have you involved in that event with Shivam as well, if
+that\'s something that you.
+
+**\
+20:18**\
+Pam K\
+When is that, by the way? I think I was talking to someone while I read
+your message. So let me. Let me.
+
+**\
+20:24**\
+Vrijen Attawar\
+Actually, we\'re now thinking first week of November.
+
+**\
+20:29**\
+Pam K\
+Oh, okay. Got it.
+
+**\
+20:30**\
+Vrijen Attawar\
+We\'re thinking of it as like a reverse. Reverse. What was the term
+used? Okay, so the term, the unofficial framing is like arranged
+marriage hiring, but arranged marriage style. Thinking of toying with
+that. But it\'s like Matchmake. It\'s sort of reverse hiring or whatever
+they\'re calling it, where we will have everyone on careerspan use
+career span and then match people according to what we learn about them.
+And we\'ll separately speak to founders and sort of get them to describe
+their ideal candidate and connect founders to. So it\'s sort of like,
+you know, kind of like blind dating, but you\'re going in knowing.
+
+**\
+21:14**\
+Pam K\
+I love that.
+
+**\
+21:16**\
+Vrijen Attawar\
+So I think, I think it has the potential to be like a great event.
+We\'re looking for a couple of like linchpin founders to really like
+sell the fact that people are interested in it. So, you know, if you
+know anyone that\'s. That would be interested in that kind of thing.
+Yeah. Is hiring and is willing to like try something a little different
+in pursuit of getting a candidate.
+
+**\
+21:41**\
+Pam K\
+And what kind of people do you think will be? Because I know pair of co
+founders, they\'re working at a fitness startup and they\'re looking for
+like a lot of people are looking for founding engineers. That is like my
+most common request. And it\'s like, I wish I knew how to find founding
+engineers because like people constantly ask me about that.
+
+**\
+22:00**\
+Vrijen Attawar\
+So yeah, founding engineer is. Is. We\'re like very torn. I would love
+your thoughts on this. We\'re very torn about founding engineers because
+one hand I do think we could help represent and match them better than
+anyone else because of our approach to things.
+
+**\
+22:16**\
+Pam K\
+I think do know a guy also that wants to be a founding engineer. I just
+met him last week. I completely forgot I was gonna follow up with him.
+So I\'ll try to remember his name.
+
+**\
+22:26**\
+Vrijen Attawar\
+But that would be great.
+
+**\
+22:27**\
+Pam K\
+Yeah. Actually, if you don\'t mind, maybe I will connect you with him
+because I feel like you probably know about a lot of.
+
+**\
+22:34**\
+Vrijen Attawar\
+Yeah, I actually do know. I actually have a couple of jobs that I have
+bounties for right now that are looking for founding engineers.
+
+**\
+22:42**\
+Pam K\
+So yeah, that\'d be great.
+
+**\
+22:44**\
+Vrijen Attawar\
+By all means you can send founding engineers my way. We\'re hoping to
+focus on product roles, but right now we\'re just looking to place
+people. So yeah, I have a couple of roles. Where is this person?
+
+**\
+22:56**\
+Pam K\
+He stays here in New York.
+
+**\
+22:58**\
+Vrijen Attawar\
+Oh, perfect. I have a role. I have a role for a founding engineer at a
+Williamsburg based startup.
+
+**\
+23:05**\
+Pam K\
+Oh, cool. Yeah, I think the only thing with him and the reason I didn\'t
+recommend him to the fitness tech startup is like he is coming from like
+pretty big companies, so he probably has like a minimum. Like he\'s
+probably expensive, if you know what I mean. So that\'s the only thing.
+So like, I feel like with the fitness startup, I don\'t think they were
+able to pay someone very much. But I mean, whatever. He, he seemed
+pretty open so, like, I don\'t know, but I\'m trying to remember where
+he used to work, but it was like Salesforce or. It was something like
+that.
+
+**\
+23:36**\
+Vrijen Attawar\
+Yeah, something. Right.
+
+**\
+23:37**\
+Pam K\
+Yeah.
+
+**\
+23:38**\
+Vrijen Attawar\
+Okay. Yeah, no, send them. Send him my way. I\'ll take care of him. I
+got a couple.
+
+**\
+23:41**\
+Pam K\
+That\'d be amazing.
+
+**\
+23:42**\
+Vrijen Attawar\
+Like. Yeah, to.
+
+**\
+23:44**\
+Pam K\
+He had a really good attitude. I met him at a networking event, so he
+just got laid off, like, two weeks ago. So. Yeah. And he\'s already
+interviewing, so, like, he was like, oh, yeah, I have an interview next
+week. And I was like, okay, wow, this guy\'s on it.
+
+**\
+23:56**\
+Vrijen Attawar\
+But yeah, being on it makes all the difference. No, that would be great.
+I\'ll try to get him placed.
+
+**\
+24:02**\
+Pam K\
+And.
+
+**\
+24:03**\
+Vrijen Attawar\
+Yeah, just more broadly, anyone looking to do product hiring, either
+through this event or in general, you know, send them. Send them our way
+if you. If you feel down for it.
+
+**\
+24:13**\
+Pam K\
+Yeah, okay.
+
+**\
+24:15**\
+Vrijen Attawar\
+With us, you only. Yeah, no sweat. I\'ll share you on the. The Firefly
+as well. But with us, the benefit is you only pay if you actually take
+the candidate into your hiring process. So checking against our database
+is always free.
+
+**\
+24:29**\
+Pam K\
+Oh, got it. Yeah. Because then maybe also. Is there like a. Like a blurb
+or something you have for people who are looking? Yeah, yeah, I can.
+
+**\
+24:39**\
+Vrijen Attawar\
+Something over. Yeah, I can send something over if you can. If you can
+get it in front of some founders, that\'d be awesome. It\'s. Yeah, it\'s
+essentially just a. Like, hey, it\'s always free to check against career
+span, so might as well, like, take. Take a. Take a. Take a check, kind
+of take a. Take a peek. Let me get that over to you.
+
+**\
+24:59**\
+Pam K\
+Yeah. And then also, when you have the info about the event too, like,
+maybe I could also send the same people that are asking me about that
+stuff. Yeah, that\'d be great. Because, like, I just feel like people
+constantly ask me to send them engineers and stuff, and I\'m like, I
+just. I was a product manager, but, like, it\'s hard to know engineers
+who are actively looking.
+
+**\
+25:18**\
+Vrijen Attawar\
+Yeah.
+
+**\
+25:18**\
+Pam K\
+Certain skill set, you know? Like, it\'s like, I know the eight that I
+work with, so.
+
+**\
+25:22**\
+Vrijen Attawar\
+Yeah. Do you know any product communities or any sort of, like.
+
+**\
+25:26**\
+Pam K\
+Oh, yes. Oh, sorry. Yeah, I meant to say. Yeah, Lenny\'s. Lenny\'s is
+like the best product community. Yeah.
+
+**\
+25:31**\
+Vrijen Attawar\
+Is there. Is there anyone at Lenny\'s that you reckon we could speak to
+or that we should try to direct ourselves to?
+
+**\
+25:40**\
+Pam K\
+Yeah.
+
+**\
+25:41**\
+Vrijen Attawar\
+Gonna join Lenny\'s at some point, but if you know someone, that would
+be awesome.
+
+**\
+25:51**\
+Pam K\
+Yeah. Because I\'m trying to Think, because I know Ria, I think she\'s
+like his virtual assistant. I think she lives in the poll, but she\'s
+very responsive. So if there\'s something like if you. Again, like if
+you have a blurb that.
+
+**\
+26:04**\
+Vrijen Attawar\
+Yep, like you got it, you would have.
+
+**\
+26:06**\
+Pam K\
+Then I would send that to her. I think she tell you the best bet because
+it\'s probably not her, but she might know. Yeah. Because I did talk to
+one guy who works on the mentorship program, but I think he\'s just a
+community member that like, that Ria actually works for him. Yeah.
+Because I imagine Lenny is kind of hard to get.
+
+**\
+26:26**\
+Vrijen Attawar\
+Lenny. Lenny would be hard to get. Yeah.
+
+**\
+26:28**\
+Pam K\
+Yeah.
+
+**\
+26:29**\
+Vrijen Attawar\
+Is what does the community seemingly like care about? Like, you know,
+like everyone\'s motivated by something. Is it like for them getting
+people jobs? Is it like spreading knowledge? Like, is it monetizing?
+Like, what do you reckon they are like trying to achieve?
+
+**\
+26:44**\
+Pam K\
+So I think the community itself, like Lenny, I think wants to be like
+the place where community, like where product managers share their
+thoughts and information and give each other advice. There are a lot of
+people looking for jobs in a tool. I mean, like, I posted a role for a
+friend like a gross piano and the amount of outreach I got was pretty
+overwhelming. I think I got like 20 resumes in two days. Yeah. So people
+are definitely looking for roles. So I don\'t know if the community
+itself is that like, I mean, they have a jobs area. Like, you know,
+there\'s definitely like elements to that, but I think there\'s
+something to hunger for within the community. And I don\'t think
+there\'s any other product manager community that\'s as solid as
+Lenny\'s.
+
+**\
+27:31**\
+Pam K\
+There\'s also product school too and like that could be just good for
+their alumni group. But I don\'t think the level of people will be as
+like Lennox is.
+
+**\
+27:39**\
+Vrijen Attawar\
+Like, that\'s what I think. Yeah.
+
+**\
+27:41**\
+Pam K\
+Yeah. Like, product school is probably people who like had non
+traditional backgrounds that are trying to get in the product. A lot of
+people are product managers now. But yeah, I remember it\'s a lot of
+international people. So product school is very international. It\'s
+like 80% non us. So yeah, Lenny\'s is probably 80% us. And then like 20
+or after.
+
+**\
+28:02**\
+Vrijen Attawar\
+Love it. Yeah, yeah, Lenny\'s would be. Lenny\'s would be awesome. I\'ll
+bring my co founder Logan into the loop and get her to. To get you
+something stat. I think those would be super helpful and then we\'ll
+sort of take it from there.
+
+**\
+28:16**\
+Pam K\
+Also to think about too, is every Month. Lenny\'s host a happy hour and
+they have a different sponsor. I sponsored one once and the bar tab was
+\$750. I don\'t know if that is what the sponsorship is. Like, I don\'t
+know if, like, I\'m assuming that the 750 came from like, Coda or Ramp
+or whoever was the, like, sponsor that month, but that could also be
+something that you guys look into the future.
+
+**\
+28:43**\
+Vrijen Attawar\
+Yeah, that\'s not a bad.
+
+**\
+28:44**\
+Pam K\
+Especially if you\'re focused in New York. And. Yeah, so it could be
+good.
+
+**\
+28:49**\
+Vrijen Attawar\
+Is Lenny\'s community very New York centric?
+
+**\
+28:53**\
+Pam K\
+I just know the New York.
+
+**\
+28:55**\
+Vrijen Attawar\
+You just know the new. Yeah, no, the. The. That was.
+
+**\
+28:57**\
+Pam K\
+It\'s actually not New York centric at all. Oh, you know what? They have
+a lot of people because they have happy hours all over. They have them
+in Bangalore, Singapore. So it\'s actually probably more international
+than I even know.
+
+**\
+29:07**\
+Vrijen Attawar\
+Right. And that\'s actually a great way to sort of get a foot in the
+door without actually, you know, sort of going straight to the top. So,
+yeah, let me act on a couple of these. These sort of points. I\'ll get
+you those blurbs asap, and then we will. We\'ll try to continue push
+forward and hey, you know, any which way I can be helpful, just let me
+know as well. But would love to bring you in on some of these more
+interesting things if your game.
+
+**\
+29:32**\
+Pam K\
+Yeah. Another thing also is I\'m in tech pickleball. I don\'t know.
+You\'ve heard of it. They meet.
+
+**\
+29:38**\
+Vrijen Attawar\
+No.
+
+**\
+29:39**\
+Pam K\
+Yeah. Oh, my gosh. It\'s so fun. So I\'ll. I think my notion page of all
+the different resources.
+
+**\
+29:45**\
+Vrijen Attawar\
+No, no, I meant to ask about that.
+
+**\
+29:47**\
+Pam K\
+Yeah, I forgot to send that to you. Okay. So. But, but yeah, so tech
+pickleball is on Friday morning. I\'m going tomorrow. I\'ll have to
+leave a little bit early. Oh, sorry. That actually makes me think of
+another community that I want to tell you about. But. But yeah, so
+basically there\'s a guy named Skyler and another guy named John, and
+they just get a bunch of people together. They bring nets, they bring
+paddles and balls. And it\'s usually like a lot of people. Like, it can
+be anywhere from like 40 people to like 100 people. And we\'re just
+playing in the park. And then they bring coffee, bagels. You know, like,
+they bring that. And so they get a sponsor every week.
+
+**\
+30:26**\
+Pam K\
+But, like, I can\'t imagine not being that much money because, like,
+yeah, coffee and bagels is probably like A hundred bucks. So. But
+they\'ve gotten really big sponsors. Like, they\'ve gotten Bramp and
+Paulo and.
+
+**\
+30:36**\
+Vrijen Attawar\
+Nice tip. Yeah.
+
+**\
+30:38**\
+Pam K\
+Yeah. So like. And honestly, like, I\'m sure I could. Like I\'m friends
+with Skyler, so I\'m sure if you wanted to sponsor one, like, they\'d be
+happy to do it.
+
+**\
+30:45**\
+Vrijen Attawar\
+Oh my God, that would be sick. Yeah, because I do believe that we need.
+You live in Brooklyn, Gorilla. Yeah, no, we need some more guerrilla
+sort of irl, like to really build up these candidates. We need to do
+some in person stuff because I also know that in person hiring is really
+struggling. So being able to say to folks, hey, you can, you know,
+we\'ll get you in person candidates would be huge distinguisher. Now.
+This is, this is so awesome. You\'re so the best, Pam. Thank you.
+
+**\
+31:15**\
+Pam K\
+No, no. And definitely another group especially for your co founder is
+the Old Girls Club. So it\'s my list of. Yeah, so it\'s. It\'s a really
+great group. It\'s like one of the best professional networking groups
+that I\'m in. I would say over Lenny\'s, it\'s like the best slack
+group. Like, slack. Like Lenny\'s is like a close second. But like OGC
+is the best slack community out there that I\'ve seen. Next Play is also
+quite good too. But. But OGC is just like so good. It\'s like people are
+just so open. It\'s. There\'s a lot of people who are in transition in
+the group. There\'s a lot of activity. Like it\'s. It\'s just again,
+like one of the reasons why it\'s so good is because people actually
+check it.
+
+**\
+31:55**\
+Pam K\
+Like I check it like three times a week, you know, like actually
+probably more than that. Like whenever I get a message, I check it, you
+know, so that\'s another big group. So it\'s the Old Girls Club.
+
+**\
+32:07**\
+Vrijen Attawar\
+Nice. Nice. Yeah, I just checked with Logan and I believe she is talking
+to the someone in the. Yeah, she\'s in ogc. Do you know the founder
+especially well?
+
+**\
+32:23**\
+Pam K\
+I don\'t know her well, but like I know who she is. Her name is Mallory.
+So.
+
+**\
+32:26**\
+Vrijen Attawar\
+Okay.
+
+**\
+32:27**\
+Pam K\
+Yeah.
+
+**\
+32:27**\
+Vrijen Attawar\
+Okay, cool. Yeah, let me ask Logan to connect with you at some point as
+well.
+
+**\
+32:32**\
+Pam K\
+Yeah, I\'d love to meet her.
+
+**\
+32:34**\
+Vrijen Attawar\
+Yeah, she\'s awesome. She is so the best. Yeah, she\'s gonna be in town
+for Primary as well, for Primary Ventures.
+
+**\
+32:43**\
+Pam K\
+What day is that? That\'s like next Wednesday.
+
+**\
+32:46**\
+Vrijen Attawar\
+That\'s next Wednesday. Yeah.
+
+**\
+32:49**\
+Pam K\
+Okay. Because I\'m actually gonna go to the Andrew Young mixer that
+night. Are you guys gonna go to that?
+
+**\
+32:56**\
+Vrijen Attawar\
+Yeah. Yeah, I\'m gonna go to that. Let me see if I can get Logan into
+that. Yeah, yeah. Let me see if I can get logs into that. I think that
+would be good for. For us to.
+
+**\
+33:06**\
+Pam K\
+Yeah, I\'ll definitely see you guys there.
+
+**\
+33:08**\
+Vrijen Attawar\
+Okay, cool. Let me. Let me try to. Let me try to swing with that. I
+gotta jump, unfortunately. But this is, as always, been such a pleasure.
+
+**\
+33:15**\
+Pam K\
+Yeah, I\'m so good to see you. Okay, I\'ll see you next week.
+
+**\
+33:18**\
+Vrijen Attawar\
+See you. Catch you soon. Bye.

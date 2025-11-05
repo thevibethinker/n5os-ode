@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B43 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b43
+---
+
 # B43 - PRODUCT_INTELLIGENCE Generation Prompt
 
 You are generating a PRODUCT_INTELLIGENCE intelligence block (internal meetings).

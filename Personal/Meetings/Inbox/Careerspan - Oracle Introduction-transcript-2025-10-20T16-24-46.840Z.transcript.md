@@ -1,0 +1,486 @@
+**\
+00:03**\
+v\
+This meeting is being recorded. Foreign.
+
+**\
+03:14**\
+Chase Gagnon\
+Hey, how\'s it going, man? How are you guys? Hey, we\'re doing well. How
+are you? I\'m doing pretty well myself. You guys are in New York right
+now, right?
+
+**\
+03:24**\
+v\
+Yeah, yeah, we\'re kind of at a friend\'s co. Working place and we just
+stepped out, so it\'s very like industrial chic.
+
+**\
+03:32**\
+Chase Gagnon\
+No, we love exposed brick. Looks cool. So I\'m actually in New York
+myself in Long island, but I\'ll be in the city tonight because I\'m
+taking the train home to Boston. I don\'t know if you\'re doing the same
+thing, Logan.
+
+**\
+03:46**\
+v\
+I\'m doing the very early morning on Wednesday, so I think I\'m like the
+5:30am Wednesday morning. Nice. Yeah. How you doing?
+
+**\
+03:58**\
+Chase Gagnon\
+I\'m doing great. It\'s. It feels like at long last, we\'re finally on.
+
+**\
+04:02**\
+v\
+I know. Yeah, we made it work.
+
+**\
+04:05**\
+Chase Gagnon\
+Yeah. Just to kick things off, like I\'m on the high growth pursuits
+team at Oracle. I, I reached out initially just because I admire what
+you guys have done in a short amount of time and I think eventually
+there might be room to work. Whether it\'s like soon or even years from
+now. I think I admire what you guys are doing and I was wondering if you
+could provide just a brief intro from your side into both of your roles.
+I understand what you do, but just coming from your own side would be
+really valuable for me to hear.
+
+**\
+04:39**\
+v\
+Sure. So we\'re in the middle, I\'d say, of switching our tactics from,
+how would I say this? Like previously were like, okay, we\'re definitely
+going to do like vc. We\'re going to go like high growth, maybe, you
+know, this kind of role. What we\'ve kind of realized in the last few
+weeks is that like trying to go for VC funding is not going to be in
+keeping with what we want for the company, essentially. So what we\'re
+doing right now is kind of going for more of like a sustainable and
+organic growth where we can keep the product for free. We\'ve got
+enough, we\'ve got enough money to kind of pay ourselves and try to just
+grow the community, keep the product accessible for more people and try
+to kind of like make that sustainable.
+
+**\
+05:26**\
+v\
+And then eventually I think somebody, you know, the goal will be to see
+who, if anybody, would want to like acquire us essentially. So that\'s
+kind of our. We\'ve, we\'ve recently come to this as a new, as a new
+Goal, I would say, which has been to me quite freeing because were
+trying to put ourselves into a box of okay, we\'re like B2B sales all
+the way. And then it\'s like, well, I don\'t think that\'s like
+necessarily going to be the way forward. So anyway, very transparently
+that\'s where we are right now in the sense that we\'re trying to like
+ramp up who has access to it and just making sure that more people know
+about career span as a, as kind of a resource and as a platform. So
+yeah, that\'s where we are.
+
+**\
+06:13**\
+Chase Gagnon\
+That\'s pretty much it. Yeah. Yeah, precisely. Yeah. That was, Excuse
+me. That was great to hear. So I graduated college in 2024, so May of
+2024. So I kind of wish that I\'d known about you guys back then. I mean
+your founding was in 2023. But just I like what you guys are doing in
+terms of like taking in this day this data and like actually mapping it
+out to people\'s skills. Just because I think back to when I was in
+college and I was just kind of like, oh, this looks like a cool job.
+I\'ll click like handshake or whatever platform it\'s. It\'s at. And
+like you don\'t actually know if it\'s going to map out to your skills
+until you\'re actually doing it.
+
+**\
+06:50**\
+Chase Gagnon\
+And then like at that point it\'s like too late to go back when you\'re
+a young person who\'s just entering the job market. So has there been
+any like company changes from when you guys were apply to career span?
+Like has any like product focus switched or anything in the rebranding?
+I mean we went from a purely consumer product to a product that engages
+both consumers and companies. So I think that was a pretty meaningful
+shift. I think we\'ve shifted a focus from selling to universities to
+selling to companies. But you know, in, in a lot of other ways it\'s
+been pretty stable of helping people better advocates for themselves.
+That\'s remained in North Star. I think in more sort of.
+
+**\
+07:37**\
+Chase Gagnon\
+I think we\'ve stuck to the aspirations of what we\'ve tried to do, but
+we\'ve definitely adapted the way we\'re trying to achieve that along
+the road.
+
+**\
+07:44**\
+v\
+Yeah, I think when, I mean when we first started, it feels like a
+thousand years ago, but like the apply AI, like when we first started
+the company almost three years ago, like the kind of like gen AI wave
+was just starting so AI was like a differentiator, but now it\'s
+obviously like the norm. So. And were more, I think focused on the
+actual application process more at the beginning. So that\'s why Apply
+AI made sense. But I think as time went on we realized like what it is
+that we would really like to kind of work towards. And that\'s why
+Career Span was both kind of a name change, but also a little bit more
+of like a product or mindset shift in some ways as well. But the product
+has largely remained the same. I mean we.
+
+**\
+08:31**\
+v\
+Yeah, and the idea is to get it to a good point but then have it in kind
+of like maintenance mode like January onwards is the idea nice?
+
+**\
+08:42**\
+Chase Gagnon\
+So what sparked that initial idea in using AI for storytelling and
+career development and like how if anything has this evolved like
+technically within your own like tech environment, within the company?
+
+**\
+08:55**\
+v\
+I don\'t, it\'s funny. I think we kind of nailed it from the beginning
+in the sense that like so because we\'re, I mean we\'re second time co
+founders, like were doing college and career readiness. So we would have
+been working with you know, people like you graduating College, you
+know, 10 years ago. We were based in Singapore at that time, but we kept
+seeing the same thing which is that like if you ask a lot of good
+questions and then kind of reflect back to people what you learned about
+them, it\'s a pretty empowering process to be like I hadn\'t thought
+about myself in that way, shape or form and then it kind of is a. Yeah,
+so that\'s essentially what were set out to build in the platform and I
+think that\'s largely remained the same.
+
+**\
+09:42**\
+v\
+Obviously the tech has come a long way, but were pretty early in terms
+of like having a multi agent like conversation flow and like certain
+things in the kind of tech build out that I think has been, has helped
+us kind of stay maybe like ahead of the curve a little bit. I think
+other companies have started doing like their own coaching, whatever.
+But I\'m still proud of ours in terms of the UI has. That has mattered
+so much. I think that\'s been our biggest learning is like the
+capabilities are there for anybody to do it but like how you\'re
+presenting and surfacing the information to users and at what time in
+the flow and how you\'re doing it has been a big learning curve I\'d say
+for sure.
+
+**\
+10:28**\
+Chase Gagnon\
+Yeah, I think definitely like ease of use is critical. Have you guys as
+you\'re taking in like more information from people about like their
+skill sets, what they want out of a job. Like have you run into any
+roadblocks in terms of like data volume or like kind of what to do with
+that data within your tech environment? Not at present. You know, we\'re
+just not at the scale where it\'s a, it\'s a problem for us. You know,
+we\'re still operating in the order of, you know, a few thousand users.
+I think once we 10x or 100x that certainly there\'ll be a, a pretty
+substantial need and I think you rightly sort of have identified us as a
+very data centric company. It\'s just I think for both the reasons
+mentioned earlier around like immediate priorities as well as scale.
+
+**\
+11:17**\
+Chase Gagnon\
+Not something that is top of mind at the moment. Yeah, I, I totally
+understand and like that\'s why I have these conversations early is just
+because we can kind of, what I say is like we can put it in glass. Like
+we\'re not. This isn\'t a situation where it\'s like let\'s spin up an
+Oracle environment for you and have you using it for absolutely no
+reason. It\'s more of like a, at least you have some knowledge around
+kind of what my team does and then if you ever have that need, then you
+can break that glass, so to speak, and use this down the line. And that
+kind of brings me to my next question. Like within your own tech
+environment, what does that look like? Do you guys have a cloud provider
+that you use?
+
+**\
+11:57**\
+Chase Gagnon\
+Are you under like an AWS universal credit model, like that sort of
+thing? No, no, I believe we have, I believe we use for, we use Firestore
+for the back end and were supposed to switch and we use Firebase. Yeah,
+we use Firebase for the cloud solution. Yeah, yeah, that must be it. But
+we were gonna move over to. We\'re gonna move the back end over to
+Postgres. Yeah, Postgres database. But I, I reckon the cloud compute I
+guess would have still come from Google Cloud. I\'m not entirely sure.
+We\'d have to check that with our head of, Head of AI. Yeah. Appreciate
+it.
+
+**\
+12:45**\
+Chase Gagnon\
+Our GPU something you guys would ever be looking to use within career
+span as you guys continue to like gather more data from people like I
+was talking about earlier probably again, once we hit that like order of
+magnitude jump, you know, because that would also necessitate an order
+of magnitude drop in costs.
+
+**\
+13:04**\
+v\
+Yeah.
+
+**\
+13:06**\
+Chase Gagnon\
+And so yeah, I think down the road, undoubtedly, I think it\'s just more
+so a question of whether it\'s on a two to three year time horizon or a
+sub one year time horizon. Yep. The, the reason I asked is because we
+have a partnership with Nvidia in which we have capacity of their GPUs
+of any size. So if you guys are in the market for GPUs, we\'re able to
+have immediate access and immediate capacity and we understand that
+they\'re expensive, so there\'s cost savings, benefits, but just
+they\'re tough to get your hands on. So just having the immediate
+process is something that we can do again once you guys are ready for it
+and. Right, right. Yeah. Right.
+
+**\
+13:50**\
+v\
+Yeah, yeah.
+
+**\
+13:51**\
+Chase Gagnon\
+And my, yeah, this is all really good to know. I mean I certainly hope
+we have the, you know, I would be super proud if we built a company that
+was using Oracle, you know, to even reach that scale. So it\'s all solid
+to know. Yeah. Again, I don\'t think at the moment, you know, scale is
+as much of a blocker, but I anticipate, at least in the next six months
+it\'s worth having this conversation because we do plan on dramatically
+increasing now that we\'re refocusing on distribution. I do think
+there\'s, it\'s actually good that we started this conversation because
+there\'s a chance we might need you sooner rather than later.
+
+**\
+14:28**\
+v\
+What is it? I guess from Europe. Like what are this. My impression of
+Oracle is mostly bigger companies. I mean, I assume that you guys have
+some startups as well, but like what does it look like from your end in
+terms of the size of companies that you\'re working with?
+
+**\
+14:45**\
+Chase Gagnon\
+So it\'s funny you say that just because I feel like a lot of people\'s
+vision of Oracle is like a database company that supports like you said
+large companies. Like Open AI is one of our biggest customers right now.
+But also my team specifically, like I said, I was on the high growth
+pursuits team. It\'s probably 90 to 95% startups out of the Brooklyn
+area. So how I go about like brokering these conversations is like I
+said, like the Put it in Glass scenario where like we kind of just
+generate awareness of what we\'re doing and then like once you guys have
+that need, at least we\'re here and you\'d be surprised. So do you guys
+know kind of the Oracle cloud like value statement, like anything about
+what we\'ve done in the cloud space?
+
+**\
+15:30**\
+Chase Gagnon\
+Because I\'m Happy to kind of dig into that as well.
+
+**\
+15:34**\
+v\
+Sure. Yeah. I don\'t know much about it, if you don\'t mind giving us
+the 62nd spiel.
+
+**\
+15:39**\
+Chase Gagnon\
+Yeah, I\'m happy to. So you were saying you might have a small footprint
+in GCP. So it was back in 2016 we tried to enter the cloud market with
+the moguls of aws, GCP and Microsoft Azure and that was a catastrophic
+failure. We really kind of were in way over our heads. But instead of
+just totally quitting and giving up, were kind of able to lick our
+wounds and rub the dirt off our knees and re enter in 2018 with our Gen
+2 Cloud. And how we did that was hired engineers from aws, Azure and
+gcp. Basically asking the question of if you could build a cloud from
+the ground up, knowing everything you know about everything else in the
+market, how would you do it and why?
+
+**\
+16:23**\
+Chase Gagnon\
+And the biggest benefit, I would say, or the one that\'s like the
+biggest value hook for the startups that we work with, is a cost savings
+benefit. Because a lot of the times in these other clouds, like aws, for
+example, I\'ll pick on them because they\'re the market leader at the
+moment, but they lock you into what we call T shirt sizes. So they offer
+certain amounts of the cloud that don\'t allow you to scale up and scale
+down to exactly what you need. So you end up paying for all this space
+in the cloud that you\'re not actually using. How I would, how I\'ve
+described this in the past is like, have you guys been to Dunkin Donuts
+before? I assume that, yeah, definitely. Yeah. So this wall makes sense
+in a second.
+
+**\
+17:03**\
+Chase Gagnon\
+It seems kind of far fetched, but imagine you\'re going through the
+drive thru at Dunkin Donuts with the intention of only wanting one
+donut, but imagine they only sell them by the dozen. That\'s kind of
+what AWS is doing. It\'s like yes, you get the one donut that you
+actually wanted, but then you have 11 that are just going to go to waste
+and that you\'re not actually paying, I mean, that you\'re paying for
+without actually using. So it\'s a little bit beneficial with us just
+because you\'re able to write down to the gigabyte scale to exactly what
+you need with an Oracle cloud, rather than having these giant areas of
+space in the cloud that you\'re not actually using. And with that,
+we\'ve consistently seen anywhere between 40 to like 67% cost savings on
+average when we do an invoice component Comparison.
+
+**\
+17:48**\
+Chase Gagnon\
+And if you guys like the one thing we do pretty routinely and what I\'ve
+done several times over the past couple weeks is like, if you were to
+give me like your one month invoice and whatever your cloud spend is, we
+could spin that up on what it would look like for like on oci, because
+it would do two things. One, it would show the comparable services that
+we have to your cloud environment and two, it would show exactly how
+much you\'d be saving with each service. And like I said, we\'ve
+consistently seen 40 to 67% cost savings. But that might be a
+conversation for later like we talked about. Right, right.
+
+**\
+18:22**\
+Chase Gagnon\
+Just, just to kind of give you the spiel of what we\'ve done differently
+and it, there\'s more benefits like, than what I just said, but I\'d say
+like the biggest hook is like to those young startups are the cost
+savings. Yeah, yeah, we\'ll take a look at those numbers. We can send
+you those invoices. I don\'t think it\'s an especially high number. So
+again, you know, sort of candidly speaking, I think unlikely that the
+Delta will be enough to persuade immediate action, but it would
+certainly be worth knowing, you know, getting a price comparison, sort
+of like engaging with you all, getting a sense of what that tech would
+look like. So, yeah, happy to send that over and sort of take it from
+there. Yeah, absolutely. I, I\'d love to just see it and then I could
+run it by.
+
+**\
+19:07**\
+Chase Gagnon\
+We have a team dedicated to conducting these invoice comparisons. So
+usually it\'ll take like a week and change for them to spin that up. We
+usually put it in Excel, make it a little more pleasing to the eye than
+just a plain Excel sheet and then we\'ll have like a presentation ready
+to go. But again, these are things that you can put in glass. It\'s not
+any immediate action on your part. I just wanted to broker an
+introductory conversation with what we\'ve been doing just because I,
+one, have enjoyed talking to both of you and two, just kind of admire
+the service that you provide. Just because I think it would be cool for
+young college students like I was a couple years back. So thank you.
+Yeah, of course. And Logan, I know that you\'re local in Cambridge. I\'m
+in New York.
+
+**\
+19:49**\
+Chase Gagnon\
+I\'ll be, I\'ll be back in Boston soon. So if you ever want to go to
+Revival for like a cup of coffee or something, I\'m happy to do that.
+
+**\
+19:55**\
+v\
+And bridging if you do. Yeah, yeah, no, that\'d be fun. I think I\'d be
+curious to hear your. Your pov. I\'m always interested to talk to, like,
+you know, early career folks who found themselves in kind of roles like
+yours and then see, like, what your. What your goals are and what
+you\'re seeing in your peers and that kind of thing. So, yeah, that\'d
+be. That\'d be fun. Let\'s maybe like, November onwards. I\'ve got a
+little bit more time, but I\'ll send you a few. A few date options.
+
+**\
+20:20**\
+Chase Gagnon\
+Yeah, absolutely. That\'d be great. And I\'m in New York a lot, too, so
+my management would probably want to meet you down the line. He\'s.
+Excuse me. Oftentimes here, and it\'d be fun to, like, get dinner or
+something. I mean, there\'s nothing quite like some free food to bring
+us all together, so we can. We can. There are worse things in the world.
+Yeah, we can figure that out. Exactly. Yeah. So what I\'ll do after
+this, I\'ll just send you over kind of a brief recap of what we talked
+about and then instructions on pulling those invoices. Just. It\'s GCP,
+right? You were saying? It\'s a pretty small footprint.
+
+**\
+20:55**\
+v\
+90% sure. We should probably know that.
+
+**\
+20:57**\
+Chase Gagnon\
+Yeah, that\'s. That\'s totally fine. I\'ll send you over instructions on
+what pulling that invoice would look like, just because there\'s a
+specific way to do it where you can pull an expanded version that\'ll
+show, like, okay, gotcha. Yeah, like the. The region that you\'re
+pulling it from. Another good thing about Oracle Cloud is it costs the
+exact same all around the world. We\'re the leader right now in data
+center regions. So whether, like, once you guys hit that. That, like,
+10x mark or 100x mark, and you want to expand more worldwide, we cost
+the same in the US as we do in, like, Tokyo, for example.
+
+**\
+21:34**\
+v\
+Cool.
+
+**\
+21:35**\
+Chase Gagnon\
+Amazing.
+
+**\
+21:35**\
+v\
+That\'s good to know. Yeah, that\'s good to know. All right. Yeah. Well,
+Chase, I\'m glad we finally got the chance to. To put a face to the. The
+name and. Yeah, thank you for. For reaching out. Impressed with your.
+Your overall sales persistence in general. That\'s what I said to be. I
+was like, I, you know, we\'re not in the position to. To need, like, a
+salesperson. I was like, chase seems like a good sales guy.
+
+**\
+21:57**\
+Chase Gagnon\
+Yeah. Yeah. I just hope I wasn\'t too persistent. I don\'t know.
+
+**\
+22:01**\
+v\
+No, no, no. I\'m good. You did it in a good.
+
+**\
+22:07**\
+Chase Gagnon\
+Yeah, I appreciate it, guys. It was just like I said, put it in glass.
+Doesn\'t need to be a conversation we, like, dig into super deep right
+now, but it was mostly just good to meet both of you, and I\'ll send
+over those instructions, a recap, and just kind of a brief agenda, and
+then we\'ll go from there.
+
+**\
+22:22**\
+v\
+Sounds great. All right, thanks.
+
+**\
+22:24**\
+Chase Gagnon\
+Thanks, guys. It\'s great to meet you both.

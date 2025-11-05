@@ -333,9 +333,28 @@ For each selected block:
 
 ### B26 - MEETING_METADATA_SUMMARY ✅ REQUIRED (enhanced in v1.5)
 
-- Generate: Title, Email subject, Delay sensitivity, Stakeholder type, **V-OS tags**, Confidence score, Transcript quality
+**Required Information:**
+- **Meeting ID**: Clear identifier (format: YYYY-MM-DD_Type_Participant)
+- **Date**: Full date (e.g., November 4, 2025)
+- **Meeting Type**: external | internal | customer | investor | networking
+- **Title**: Descriptive meeting title
+- **Participants**: List all attendees
+- **Stakeholders**: ⭐ **CRITICAL** - For each external stakeholder, provide:
+  - **Full Name** (First Last)
+  - **Organization** (Company/Org name)
+  - If organization unknown: Mark as "[Organization Unknown - needs research]"
+  - This enables accurate folder naming: `YYYY-MM-DD_FirstLast-OrgName_type`
+- **Email Subject Line**: Suggested subject for follow-up
+- **Delay Sensitivity**: How time-sensitive is follow-up?
 - **V-OS Tags**: Apply Howie's tag system `[LD-XXX] [GPT-X] [A-X]` for categorization
-- This enables harmonization with Howie's scheduling system
+- **Confidence Score**: AI confidence in analysis
+- **Transcript Quality**: Note any audio/transcription issues
+
+**Purpose**: This metadata enables:
+1. Intelligent folder naming (using stakeholder name + org)
+2. Cross-referencing with calendar/email data
+3. Harmonization with Howie's scheduling system
+4. Accurate CRM profile creation
 
 ---
 

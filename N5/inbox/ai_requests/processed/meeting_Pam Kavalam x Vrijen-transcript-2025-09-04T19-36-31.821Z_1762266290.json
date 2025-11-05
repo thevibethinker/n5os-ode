@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Pam Kavalam x Vrijen-transcript-2025-09-04T19-36-31.821Z_1762266290",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Pam Kavalam x Vrijen-transcript-2025-09-04T19-36-31.821Z.transcript.md",
+    "meeting_id": "Pam Kavalam x Vrijen-transcript-2025-09-04T19-36-31.821Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Pam Kavalam x Vrijen-transcript-2025-09-04T19-36-31.821Z"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T14:24:50.381143+00:00"
+}

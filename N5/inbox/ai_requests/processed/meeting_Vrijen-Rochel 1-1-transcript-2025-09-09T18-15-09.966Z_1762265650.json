@@ -1,0 +1,22 @@
+{
+  "request_id": "meeting_Vrijen-Rochel 1-1-transcript-2025-09-09T18-15-09.966Z_1762265650",
+  "request_type": "meeting_process",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Vrijen-Rochel 1-1-transcript-2025-09-09T18-15-09.966Z.transcript.md",
+    "meeting_id": "Vrijen-Rochel 1-1-transcript-2025-09-09T18-15-09.966Z",
+    "meeting_type": "external"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "follow_up",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Vrijen-Rochel 1-1-transcript-2025-09-09T18-15-09.966Z"
+  },
+  "status": "pending",
+  "priority": 5,
+  "created_at": "2025-11-04T14:14:10.735726+00:00"
+}

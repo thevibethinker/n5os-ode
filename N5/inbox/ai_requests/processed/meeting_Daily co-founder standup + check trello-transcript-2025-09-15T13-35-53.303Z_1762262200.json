@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Daily co-founder standup + check trello-transcript-2025-09-15T13-35-53.303Z_1762262200",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Daily co-founder standup + check trello-transcript-2025-09-15T13-35-53.303Z.transcript.md",
+    "meeting_id": "Daily co-founder standup + check trello-transcript-2025-09-15T13-35-53.303Z",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Daily co-founder standup + check trello-transcript-2025-09-15T13-35-53.303Z",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Daily co-founder standup + check trello-transcript-2025-09-15T13-35-53.303Z"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:40.903209+00:00"
+}

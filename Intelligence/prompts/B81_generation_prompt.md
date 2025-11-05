@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B81 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b81
+---
+
 # B81 - BLOG_POST Generation Prompt
 
 You are generating a BLOG_POST intelligence block.

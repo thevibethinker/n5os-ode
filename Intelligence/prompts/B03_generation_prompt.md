@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B03 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b03
+---
+
 # B03 - STAKEHOLDER_PROFILES Generation Prompt
 
 You are generating a STAKEHOLDER_PROFILES intelligence block from a meeting transcript.

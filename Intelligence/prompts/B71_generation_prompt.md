@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B71 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b71
+---
+
 # B71 - MARKET_ANALYSIS Generation Prompt
 
 You are generating a MARKET_ANALYSIS intelligence block.

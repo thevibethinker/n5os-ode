@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B11 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b11
+---
+
 # B11 - METRICS_SNAPSHOT Generation Prompt
 
 You are generating a METRICS_SNAPSHOT intelligence block.

@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B90 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b90
+---
+
 # B90 - INSIGHT_COMPOUNDING Generation Prompt
 
 You are generating an INSIGHT_COMPOUNDING intelligence block.

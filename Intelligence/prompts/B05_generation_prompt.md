@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B05 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b05
+---
+
 # B05 - OUTSTANDING_QUESTIONS Generation Prompt
 
 You are generating an OUTSTANDING_QUESTIONS intelligence block from a meeting transcript.

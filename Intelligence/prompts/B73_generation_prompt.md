@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B73 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b73
+---
+
 # B73 - STRATEGIC_THINKING Generation Prompt
 
 You are generating a STRATEGIC_THINKING intelligence block.

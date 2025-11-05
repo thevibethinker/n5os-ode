@@ -1,0 +1,856 @@
+**\
+00:49**\
+Vrijen Attawar\
+Hello. Hi, Whitney. How\'s it going?
+
+**\
+01:02**\
+Whitney Jones\
+Good, how are you?
+
+**\
+01:04**\
+Vrijen Attawar\
+I\'m doing well. It\'s really great to meet you. Thank you so much for
+your time.
+
+**\
+01:08**\
+Whitney Jones\
+Absolutely. Where are you based?
+
+**\
+01:12**\
+Vrijen Attawar\
+I am based in Brooklyn right now.
+
+**\
+01:15**\
+Whitney Jones\
+Okay.
+
+**\
+01:17**\
+Vrijen Attawar\
+Yeah, I was in San Francisco over the summer for a little bit, but
+mostly based in Brooklyn.
+
+**\
+01:22**\
+Vrijen Attawar\
+Yeah.
+
+**\
+01:23**\
+Whitney Jones\
+And where did you. Have you been living in Brooklyn mostly, or how did
+you end up in San Francisco and then back in Brooklyn?
+
+**\
+01:33**\
+Vrijen Attawar\
+So I was in San Francisco for a brief sort of accelerator sort of thing.
+The program itself turned out to be not so great, but it was a good
+chance to sort of get out west and build some relationships.
+
+**\
+01:45**\
+Whitney Jones\
+Yeah.
+
+**\
+01:46**\
+Vrijen Attawar\
+So I was very excited to sort of do that. But, yeah, mostly building out
+of. Out of New York and my co founders in Boston.
+
+**\
+01:54**\
+Vrijen Attawar\
+Yeah.
+
+**\
+01:54**\
+Whitney Jones\
+That\'s great. And how did you meet Astrid?
+
+**\
+01:58**\
+Vrijen Attawar\
+So it was the most fortuitous thing. We were both at a pitch
+competition, just sort of sat down next to each other waiting for our
+pitches to start. And we\'re chatting and she told me that she was
+interested or she was working on a cardiovascular solution.
+
+**\
+02:14**\
+Vrijen Attawar\
+Yeah.
+
+**\
+02:15**\
+Vrijen Attawar\
+I was like, great. Well, you know, I know the, you know, world\'s
+leading sort of heart and lung transplant surgeon. He\'s my dad, you
+know, Leith. India\'s. So got them in touch and they\'ve been sort of
+collaborating and figuring out ways to work together. And so Astrid was
+kind enough to be helpful to me as well, which I really appreciate.
+
+**\
+02:34**\
+Whitney Jones\
+Wow, that\'s incredible. And where does your dad work? In New York.
+
+**\
+02:40**\
+Vrijen Attawar\
+He is based out of India, so he\'s. He\'s essentially India\'s primary
+heart and lung transplant surgeon. Yeah, yeah, He\'s a badass. So he\'s
+currently visiting me in the city, having a little bit of a relaxed time
+away from work. He was actually with Astrid. Actually, all three of us
+were speaking just two days ago, so I just saw Astrid recently as well.
+You and her go way back?
+
+**\
+03:07**\
+Whitney Jones\
+We go way back, yeah. Like, way back. We worked together at COCA COLA
+Probably 25 years ago, maybe.
+
+**\
+03:16**\
+Vrijen Attawar\
+Wow.
+
+**\
+03:17**\
+Whitney Jones\
+20 years ago. And yeah, we work together really closely and have just
+stayed in touch as our paths have gone different ways. And yeah, she\'s
+a great friend and. But I have a lot of respect for her from a
+professional standpoint as well.
+
+**\
+03:36**\
+Vrijen Attawar\
+Right. Same, same. She\'s a. She\'s an absolute powerhouse.
+
+**\
+03:39**\
+Vrijen Attawar\
+Yeah.
+
+**\
+03:40**\
+Vrijen Attawar\
+And it\'s very inspiring to honestly see. You know, anytime I sort of
+see a founder that I think emulates or sort of captures qualities that I
+wish I had in myself. I try to take that seriously and sort of learn
+from them. So lots of good moments with Astrid.
+
+**\
+03:55**\
+Whitney Jones\
+Yeah, no, I agree. And it\'s amazing. Just her whole life flipping
+upside down and what she has made of it and the opportunities that
+she\'s created. I think it\'s super impressive.
+
+**\
+04:10**\
+Vrijen Attawar\
+Yeah, absolutely. And really appreciate your time as well. I know it\'s,
+you know, must be busy being at the executive level, at least at a
+company of your scale.
+
+**\
+04:20**\
+Vrijen Attawar\
+Yeah.
+
+**\
+04:21**\
+Vrijen Attawar\
+Or backside. So, you know, really appreciate the time and you just
+taking a little bit of time to sort of give your thoughts on what we\'re
+building.
+
+**\
+04:28**\
+Whitney Jones\
+Yeah, I\'d love to learn more.
+
+**\
+04:31**\
+Vrijen Attawar\
+Yeah, absolutely. So, you know, me and my co founder, our background is
+in career coaching and that\'s what we built initially. We built a
+fantastic tool for guided self reflection. Something that learns about
+you, helps you learn about yourself, and ultimately gives you career and
+job hunting guidance. What we realized was, you know, guidance is good.
+Giving people outputs like resumes and job descriptions is great. But
+what\'s best and what really motivates engagement is telling people,
+hey, I\'m going to connect you to this job or this opportunity or this
+sort of networking and to connect someone to the right opportunities to
+essentially know them and know the opportunity deeply. And we had built
+a great engine for getting to know candidates deeply. So where we\'ve
+taken that idea since is we now are in the talent sourcing business.
+
+**\
+05:25**\
+Vrijen Attawar\
+We go to communities of professionals currently focusing on product.
+Communities essentially enroll them, provide access to our product to
+their users, to their members, and we take that high signal talent and
+give you the ability to quickly check against that talent pool so that
+you can generate a short list of candidates within, you know, hours
+instead of days.
+
+**\
+05:52**\
+Whitney Jones\
+So wait, so let me make sure I understand. So like if I was a candidate,
+how would I connect with your platform?
+
+**\
+06:04**\
+Vrijen Attawar\
+If you\'re a candidate, you would most likely encounter it being
+recommended by one of the communities that you\'re in. Or you came
+across us sort of organically through one of our users posting about us.
+
+**\
+06:15**\
+Whitney Jones\
+Okay.
+
+**\
+06:15**\
+Vrijen Attawar\
+And you would effectively just upload your resume and participate in
+these guided coaching conversations with our AI as a way of sort of
+increasing its knowledge of who you are. Because the algorithm that we
+use to match people to each other into opportunities is predicated on
+how much we know about an individual. The more conversations you have
+with the AI, the naturally more sort of advantage you will be in our
+algorithm. So we create a natural incentive for folks to share and share
+deeply about themselves.
+
+**\
+06:49**\
+Whitney Jones\
+Yeah, and then do you look at the opportunities in the sort of open
+market and then match them or do you need to be connected to the
+opportunities?
+
+**\
+07:03**\
+Vrijen Attawar\
+So that\'s where we\'re trying a bunch of different things. So candidly,
+you know, we\'re early in this go to market. We\'ve really only been
+moving this direction for about two to three months. And so, you know,
+it\'s a mixture of cold outreach. You know, someone\'s posted a job that
+I think we have good candidates for, I will reach out to them with a
+short list personalized to that job and say, hey, this is an explanation
+for why the three candidates or the five candidates I\'m showing you are
+good for you and good for your company. And you know, pay us and we\'ll
+introduce you to these candidates. You only pay for the ones that accept
+the intro. And you know, that\'s how we sort of want to prove out the
+value of our matching system and the value of our talent base.
+
+**\
+07:47**\
+Vrijen Attawar\
+Yeah.
+
+**\
+07:49**\
+Whitney Jones\
+And so if you approach me, hey, I saw you have this job posted. You
+probably scan the job postings or something. Right. You approach me, we
+saw you have a financial analyst. We have five people who we think could
+be a good fit and then there\'s sort of an introduction to them and if
+they respond, then I pay you something.
+
+**\
+08:16**\
+Vrijen Attawar\
+That\'s right. That\'s right. So you pay us. Essentially three out of
+the five people are folks you want to talk to. You pay us that amount
+and we facilitate the intros and we\'ll refund you for anyone that
+doesn\'t go through. But you essentially sort of pick out the number of
+folks that you want and eventually we\'re hoping to escalate that to you
+pay for a scan once a week. You know, we\'ll be onboarding, we\'re
+onboarding generally somewhere between 200 to 500 professionals a week.
+
+**\
+08:46**\
+Vrijen Attawar\
+Yeah.
+
+**\
+08:46**\
+Vrijen Attawar\
+So every week will, you know, the. And this is something I wanted to
+validate. It\'s almost this idea of self hiring. Right. You know, you
+need to increase headcount, you know, where the role growth is most
+likely going to be. But for a variety of reasons, you can\'t put the JDX
+right. You, you don\'t want to deal with the flood of applicants that
+come in now you can pay career span to, you know, do a single scan for
+you do a series of scans over a period of time and let you essentially
+trawl a very high quality user base for top candidates.
+
+**\
+09:26**\
+Vrijen Attawar\
+Yeah.
+
+**\
+09:26**\
+Vrijen Attawar\
+And effectively only pay for the ones that you actually bring into your
+pipeline.
+
+**\
+09:30**\
+Vrijen Attawar\
+Yeah.
+
+**\
+09:32**\
+Whitney Jones\
+And like, what kind of fee do you think you would charge, like, for
+that? So basically.
+
+**\
+09:39**\
+Vrijen Attawar\
+Yeah.
+
+**\
+09:40**\
+Whitney Jones\
+How are you thinking about that?
+
+**\
+09:42**\
+Vrijen Attawar\
+Great question. So right now were thinking of something along the lines
+of, you know, 500 bucks a month for a role or 2,000 bucks a month for as
+many roles as you want, as many short lists as you want. Obviously, if
+we\'re charging something along subscription lines, the idea would be
+that, you know, we. We just assume that we\'ll be introducing you to
+that person. If you\'re more so opting for the pay per warm intro model,
+we would more so anonymize the reports first.
+
+**\
+10:14**\
+Vrijen Attawar\
+Yeah.
+
+**\
+10:14**\
+Vrijen Attawar\
+And deliver them to you and then sort of, you know, handle that
+intermediate process.
+
+**\
+10:19**\
+Vrijen Attawar\
+Yeah.
+
+**\
+10:21**\
+Vrijen Attawar\
+I mean, I wanted to get sort of your instant, your initial reaction,
+because this is very much architected around our read of where problems
+are in the modern HR space, which to our mind, it largely has to do with
+apss being broken, signal from resumes being worse than ever, and there
+being so many candidates willing to cheat now essentially that, you
+know, everything from who\'s a real candidate to am I really assessing
+them correctly is sort of up in the air.
+
+**\
+10:52**\
+Vrijen Attawar\
+Yeah. Yeah.
+
+**\
+10:53**\
+Vrijen Attawar\
+Is that roughly in line with your read of things as well?
+
+**\
+10:56**\
+Whitney Jones\
+Yeah, I mean, I. I think that, I mean, your ats. Right. Like, if I think
+about our ats, it\'s. It probably does have the technology to scan
+resumes and narrow the pool down, and then a recruiter can sort of weed
+through the rest. But to. To your point, yes, the volume is high, and so
+you have the right skill set and criteria to whittle down that volume to
+get to. Those are the ones that you think are going to be the most
+successful. I think that the finding candidates right now, I mean, it\'s
+interesting right now, in this market they find us, but in a different
+market.
+
+**\
+11:49**\
+Vrijen Attawar\
+You have to.
+
+**\
+11:50**\
+Whitney Jones\
+Work harder to find them and to be, you know, entice them to explore
+your opportunity.
+
+**\
+12:00**\
+Vrijen Attawar\
+A sort of broad question I have for you is, could you foresee a world
+where we moved away from what I see as essentially this bum rush, Right.
+Where you post a job and then it\'s like a clock starts and the pressure
+is on and you have to process these people and you have to coordinate
+with them. And it seems like a very hectic process. I\'ve heard from a
+couple of talent leads they would much rather cultivate. Right. They\'d
+rather be a stable company where they know what\'s coming down the
+pipeline, maybe be able to sort of stealthily post something up instead
+of having it be public knowledge and slowly aggregate candidates, if
+only as a way to, you know, start the process with a warmed up pipeline
+or have a baseline or a reference point.
+
+**\
+12:48**\
+Vrijen Attawar\
+Point.
+
+**\
+12:49**\
+Vrijen Attawar\
+And that\'s something that careerspan would be ideally suited to. In
+fact, we want to move the world more towards a sort of relationship
+cultivation approach where we are the career agent that sort of
+facilitates that now warming up on either side.
+
+**\
+13:04**\
+Vrijen Attawar\
+Yeah, yeah.
+
+**\
+13:05**\
+Whitney Jones\
+So yes, I think that\'s interesting. I think the whole stealth idea, you
+know, the only time we\'re stealth is with senior level positions. In
+most cases we have analysts positions or whatever. I think it\'s less
+likely that\'s going to be something that we would value. I do think a
+proactive pipeline is really valuable and I agree with you that having
+those relationships, getting to know people is, would be valuable. I
+guess my counter to that is I\'d love a business like I\'d love to find
+a business that\'s that planful. You know, I think we know the roles we
+need, we think we maybe the cadence that we need those roles but the
+minute we turn it on, we want it and, and then we\'re not.
+
+**\
+14:07**\
+Whitney Jones\
+If we\'re in high growth mode, it\'s hard to be relational like to get
+to know people were more about I have this job, I need it now, I have
+to. So I think that\'s the interesting balance of if you\'re in high
+growth, can you make the time to build those relationships in a
+proactive, planful way that may vary by industry where.
+
+**\
+14:41**\
+Vrijen Attawar\
+Totally. I think realistically you hit the nail on the head. It\'s
+different hiring modes for different times. Right. More time. Peace time
+almost. I completely see that. I think the great thing about careerspan
+is we\'re well positioned to work for Ivan. Right. We can act as a sort
+of recurring, you know, batch every week. We sort of run it against
+newly added folks and folks that have updated their profile in a
+meaningful way.
+
+**\
+15:10**\
+Whitney Jones\
+Yeah.
+
+**\
+15:10**\
+Vrijen Attawar\
+And so you essentially just pay for constantly touching those same
+candidates, maybe being able to track a candidate to say, hey, keep an
+eye on this person and you know, almost like a pre hiring sort of funnel
+that can be generated and you start the process with a bunch of
+candidates that you\'re somewhat happy with. Right. Because my
+understanding is the goal is to reduce the overall time that it takes to
+see that first viable candidate.
+
+**\
+15:39**\
+Whitney Jones\
+Yes.
+
+**\
+15:40**\
+Vrijen Attawar\
+Yep. Yeah.
+
+**\
+15:41**\
+Whitney Jones\
+And I think it\'s interesting I just reflecting on it a little bit, like
+I could see two way like you could have like so a recruiter on my team
+who works for a particular area and is sort of.
+
+**\
+15:57**\
+Vrijen Attawar\
+Yeah.
+
+**\
+15:57**\
+Whitney Jones\
+Looking at resumes, seeing them, watching people\'s movement, maybe
+having a couple conversations. So you can see where that would be a
+valuable resource for a recruiter on a team. The other thing is like, if
+you don\'t have a built out HR function, could this also be a way so
+that if you didn\'t have all the resources, some of that work being done
+for you and you could. And that would help you. Again, if you didn\'t
+have like a full HR team, it could be a compliment to.
+
+**\
+16:37**\
+Vrijen Attawar\
+Right. And I think that\'s a really astute sort of point because we are
+actually still in the process of trying to hone in on who is the precise
+customer itp. Is it, you know, first talent hire, first HR hire at like
+a series A through C? Is it, you know, the founders and the precede seed
+service that are mostly taking a lead on hiring themselves? Is it folks
+at huge companies where it\'s just a purely scale sort of issue?
+
+**\
+17:09**\
+Whitney Jones\
+Right, right.
+
+**\
+17:10**\
+Vrijen Attawar\
+Yeah.
+
+**\
+17:11**\
+Vrijen Attawar\
+And I think the truth is that we need to prepare for a world after the
+current ATS sort of tech and the keyword based tech, especially if with
+AI I can keyword optimize any resume as long as I\'m willing to live
+with it being fabricated. Right. Which increasingly a lot of folks are.
+So I think that is where we can really sort of shine in the long run as
+a tool that not only helps, it\'s very pro candidate because it helps
+people talk about themselves more effectively, but it is also doing so
+in a way that helps the company get to know them and filter them more
+effectively.
+
+**\
+17:52**\
+Whitney Jones\
+Yeah, yeah.
+
+**\
+17:54**\
+Vrijen Attawar\
+And because it is in the obvious benefit of the candidate, I think it
+gives you the PR win and gives candidates a sort of boost in a way that
+actually lets them bring their best selves to the interview, to the
+conversation.
+
+**\
+18:09**\
+Whitney Jones\
+Yeah, yeah, I think that\'s right. And I think that, I mean, I think
+that\'s the interesting thing. Right. Who are you marketing to? And then
+how do you bring people onto the platform so that they see value of
+coming onto the platform?
+
+**\
+18:26**\
+Vrijen Attawar\
+Right.
+
+**\
+18:26**\
+Whitney Jones\
+Providing their resume or doing the coaching that will help guide them
+to the different opportunities.
+
+**\
+18:33**\
+Vrijen Attawar\
+Right, Absolutely. I mean, I wanted to ask, are you all looking to hire
+and. Or specifically hire for. Hire for product roles? Because that\'s
+where we\'re hoping to sort of hone initially.
+
+**\
+18:47**\
+Vrijen Attawar\
+Yeah.
+
+**\
+18:48**\
+Vrijen Attawar\
+Or do you know of any sort of product leaders or HR leaders that might
+be open to sort of a tool like ours to fill out their ranks.
+
+**\
+18:59**\
+Whitney Jones\
+I don\'t, but I can give it a thought.
+
+**\
+19:01**\
+Vrijen Attawar\
+That would be great.
+
+**\
+19:03**\
+Whitney Jones\
+In the biotech space we don\'t have that, but. But certainly just from
+different relationships. Could see if there\'s anyone who comes to mind
+who could be a good partner for you in that. Because I think that is
+interesting to have like that profile and then you kind of build out
+from there.
+
+**\
+19:23**\
+Vrijen Attawar\
+Right, right. And the other benefit that I may not have emphasized is,
+you know, we can do a lot of this matching off the JD but ideally we
+would like for the. Either the company\'s founder to articulate the
+culture or for the hiring manager to articulate the team culture and
+work style and actually let you filter folks in those qualitative
+factors as well. So really sort of help you. You know, we handle the
+getting to know the candidate part so that you can filter in the most
+informed way possible is effectively what we\'re doing. So yeah, if any
+of that seems appealing or relevant or you know, sort of important for
+any of the folks that you talk to and at your sort of level, you know, a
+reference or warm intro would be greatly appreciated.
+
+**\
+20:11**\
+Whitney Jones\
+Yeah, I will actually totally give that a thought and think about that
+because it would be a good way to pilot it a little bit just to see.
+Well and if you test the candidates that you\'ve got in that pool, you
+know, what\'s the hit rate that, you know, the positive hit rate that
+works with those profiles?
+
+**\
+20:35**\
+Vrijen Attawar\
+How do people respond to it? Absolutely. And you know, we\'re just
+starting with product for now. The goal is to expand into every single
+type of product community we can.
+
+**\
+20:45**\
+Whitney Jones\
+Yeah.
+
+**\
+20:45**\
+Vrijen Attawar\
+So that\'s another sort of potential way to help is if you know of any
+communities of talent professionals, you know, either hiring circles or
+recruiting circles or sort of, you know, even just professional
+communities like engineers.
+
+**\
+21:01**\
+Vrijen Attawar\
+Yeah.
+
+**\
+21:01**\
+Vrijen Attawar\
+A connection to that would be. Or alumni associates, even a connection
+there would be greatly appreciated.
+
+**\
+21:08**\
+Whitney Jones\
+Have you, what are you, what levels are you seeing when you see people
+going through the coaching and sort of submitting their resume in the
+product area? What, what types of roles or levels or profiles are you
+tending to see? This is the most sort of interesting for.
+
+**\
+21:27**\
+Vrijen Attawar\
+We\'re seeing this as most interesting for mid career professionals. So
+anywhere between, you know, I would say three for a high achiever but
+more so like five to ten years worth of experience. Yeah, it\'s sort of
+our sweet spot that someone that\'s young enough to sort of engage with
+a tool like this but also has enough Experience built up that they can
+really shine under our evaluation schema. So I think those are the folks
+that really take the tool the best, in my opinion.
+
+**\
+21:56**\
+Vrijen Attawar\
+Yeah.
+
+**\
+21:58**\
+Whitney Jones\
+That\'S what, in my head, I was thinking, but. And what about
+geographically?
+
+**\
+22:04**\
+Vrijen Attawar\
+Mostly the U.S. we have a reasonable. Maybe 30% of our folks are
+internationals, and we just provide the tool and sort of give them
+access as best as we can. But the hiring pools that you would be looking
+at would mostly be U.S. candidates.
+
+**\
+22:19**\
+Whitney Jones\
+Yeah. And east coast or west coast or what\'s the breakdown?
+
+**\
+22:23**\
+Vrijen Attawar\
+Spread all over. Mostly concentrated east coast, more so than west
+Coast, I would say, because of the Logan, Boston, Brooklyn bias. But,
+yeah, that\'s.
+
+**\
+22:35**\
+Whitney Jones\
+Okay. What\'s the website called?
+
+**\
+22:39**\
+Vrijen Attawar\
+It\'s mycareerspan.com.
+
+**\
+22:41**\
+Whitney Jones\
+Okay.
+
+**\
+22:43**\
+Vrijen Attawar\
+Yeah, let me. Let me send that over.
+
+**\
+22:46**\
+Whitney Jones\
+I\'d love to go check it out.
+
+**\
+22:48**\
+Vrijen Attawar\
+Yeah, please. I mean, hey, it\'s. It\'s. It\'s a great way for anyone
+that I\'m sure you\'re the person in your. Your life that people go to
+for career advice or for job help or all of that. And so I would say,
+you know, the proof is in the pudding. If you\'ve got someone that
+you\'re currently helping or that, you know, that needs a little bit of
+help being a better advocate for themselves.
+
+**\
+23:11**\
+Vrijen Attawar\
+Yeah.
+
+**\
+23:12**\
+Vrijen Attawar\
+Giving them career span. In fact, I\'ll send over a. I do it.
+
+**\
+23:16**\
+Whitney Jones\
+My daughter\'s in college. I do it for. I do career counseling for all
+our friends.
+
+**\
+23:21**\
+Vrijen Attawar\
+Oh, my God. Okay. So, you know, you. You will. You will. Absolutely. You
+know, this can be. This can be the way to sort of prove ourselves, you
+know, pass that along. That\'s a trial code for career span. It should
+be free to sign up for now. Right now, anyway. But this will just sort
+of filter folks a little bit and just ask them to use it. And especially
+folks that are maybe lacking a little bit of confidence or that you
+think, you know, hey, this person\'s really talented. They just need
+someone to bring that out. You know, that\'s what careers and best for.
+So would love thoughts from you or any of your daughter\'s friends as
+well.
+
+**\
+23:55**\
+Whitney Jones\
+That\'s great. Oh, I\'ll send it to them. I. I just literally have had
+calls the past week with a couple of them, so.
+
+**\
+24:03**\
+Vrijen Attawar\
+Sounds about right. Well, hey, you know, it\'s. It\'s. It\'s. You\'re
+doing God\'s work. Because these folks, they need help, you know, and
+that\'s what we\'re trying to do.
+
+**\
+24:12**\
+Whitney Jones\
+They do. And I think it\'s. Yeah, it\'s intimidating. You know, your
+first round out there and figuring it all out. And so I. It\'s fun to
+help people think about what it. What it can be, and I think very much
+do some of the work to figure out where they can do work that plays to
+their strengths and, you know, and make an impact in a way that\'s sort
+of aligned to their skills, so.
+
+**\
+24:42**\
+Vrijen Attawar\
+Absolutely. I mean, I think that\'s also why we need to transcend the
+resume sooner rather than later. Right. Because what you\'re describing
+is a very dynamic way of viewing someone, and I do think career span can
+be that, and that\'s what we\'re endeavoring to do. But, you know. Yeah,
+I think as an absolute start, just getting folks to talk about that,
+articulate that, storing that in a sort of rapidly queryable or
+searchable form, that\'s sort of what we bring to the table. And so,
+yeah, you know, would love to help address either your or a friend\'s
+hiring need. And I would love to stay in touch in general.
+
+**\
+25:19**\
+Whitney Jones\
+I would love that. And I will go. I\'ll play on it. I will. I\'ll share
+it and see what I get, and then. But also give a thought to if just
+anyone out in my network could be helpful as you\'re kind of moving this
+forward.
+
+**\
+25:37**\
+Vrijen Attawar\
+You\'re the best. Thank you so much, Whitney. Really appreciate it.
+
+**\
+25:41**\
+Whitney Jones\
+All right, have a great evening.
+
+**\
+25:43**\
+Vrijen Attawar\
+Take care. Bye.
+
+**\
+25:44**\
+Whitney Jones\
+All right, bye.

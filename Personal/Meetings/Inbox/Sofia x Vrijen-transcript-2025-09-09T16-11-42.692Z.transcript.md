@@ -1,0 +1,991 @@
+**\
+00:01**\
+Vrijen Attawar\
+Hey there.
+
+**\
+00:06**\
+Sofia Wernick\
+Hey. Give me just one quick second. I was just moving locations.
+
+**\
+00:11**\
+Vrijen Attawar\
+No sweat. I am known for my timing.
+
+**\
+00:16**\
+Sofia Wernick\
+Okay, perfect. Hey. It\'s just such a beautiful day outside that I was
+like, oh, I need to get out here.
+
+**\
+00:21**\
+Vrijen Attawar\
+How are you doing? Awesome. I\'m good, I\'m good. How are you? How are
+things?
+
+**\
+00:25**\
+Sofia Wernick\
+It\'s been a long time, but I can\'t. I can\'t believe that I actually
+have, like, only met you once in person, because I feel like we\'ve met,
+like, a couple times.
+
+**\
+00:34**\
+Vrijen Attawar\
+It does feel that way. Yeah.
+
+**\
+00:36**\
+Sofia Wernick\
+But I\'m like, oh, my gosh. I\'ve actually only met you one time, so
+this is like our second, like, real conversation in the real world. So
+it\'s so good to, like, meet you again.
+
+**\
+00:44**\
+Vrijen Attawar\
+Yeah. Yeah. I mean, the first one set a high bar, but I think we can
+live up to it.
+
+**\
+00:48**\
+Sofia Wernick\
+I hope so. I hope so.
+
+**\
+00:50**\
+Vrijen Attawar\
+How have you been? How\'s DC for you?
+
+**\
+00:52**\
+Sofia Wernick\
+It\'s good, it\'s good. What\'s been going on over here? Yeah, so I was
+in New York when I\'m like, we met one another, and then I was kind of
+coming back and forth between D.C. and New York because I was doing,
+like, a policy fellowship over here in Mason. And then, yeah, I decided
+to part ways with the company that I was working with. I just didn\'t
+think it was going to be the right cultural fit. And since I have family
+down here, I\'m just was like, okay, I\'m gonna crash with them for a
+little bit and then, you know, we\'ll figure out what. What comes next.
+So I\'ve been in the middle of that process, and it\'s been good, you
+know, Like, I feel like I\'d wanted to have experience with a starter
+before. That\'s not something that I had done.
+
+**\
+01:36**\
+Sofia Wernick\
+And now I feel, like, way equipped or like, whatever the next step is
+to, like, actually know what I\'m getting myself involved with.
+
+**\
+01:43**\
+Vrijen Attawar\
+Amazing. Amazing. That is. Is so good. Yeah. I mean, the first taste,
+first bite of the apple, maybe not always the best, but I think the
+learnings are sort of what\'s important. Right. It\'s a big, wide world
+out there as far as, like, good companies are concerned. So, you know, I
+will also say with it\'s. It\'s very hard not toot my horn on this. You
+are talking to probably one of the most. The people that is probably one
+of the most well read on job searching at this point on the planet. I
+can confidently say, yeah, so job searching and. And certain parts of
+hr.
+
+**\
+02:27**\
+Vrijen Attawar\
+So, yeah, I, but that is not to say that I want to suffocate you with
+help more so to say that I, I am a resource and I know a bunch of folks
+that are hiring actually from sort of work that I\'m happy to put you in
+touch with.
+
+**\
+02:44**\
+Sofia Wernick\
+That\'s really kind of you. I really appreciate and I, I\'m really,
+yeah, I\'m impressed with. I went while reading about career span and
+the way in which you approach helping people with this. Like, I can tell
+that you\'re someone who like has done all that background stuff, but
+anyhow, yeah, tell me how have you been? What have you been up to? What
+have you been working on? I\'m so curious.
+
+**\
+03:11**\
+Vrijen Attawar\
+It\'s, you know, it\'s been good. I have been pretty heads down just
+trying to get, incidentally get go to market off the ground, you know.
+And so we, I think when we spoke were sort of at the cusp of a couple of
+things. We\'d sort of just honed in on the idea of selling to companies
+and to HR and just sort of started to ask ourselves like, okay, what are
+the real problems that folks in the space are feeling? And over the last
+few weeks we sort of realized that it is, it\'s like a very like, it\'s
+talent. It\'s, it\'s like talent sourcing stupid sort of moment where
+even though it feels like there\'s a lot of talent out in the market and
+there is in most senses of the phrase, finding good reliable talent is
+fucking hard as shit. Like it sucks.
+
+**\
+04:04**\
+Vrijen Attawar\
+It sucks for founders, it sucks for small talent teams. Inbound is
+completely unreliable. I\'ve heard multiple folks say that they don\'t
+even check their inbound, they just post it for legal reasons the job.
+They don\'t even check that pipeline. They basically only go through
+referrals, which is worth noting just in general for someone that\'s
+sort of optimizing their job strategies that referrals are the way to
+go. But yeah, effectively that learning sort of with like, okay, hey,
+these communities that recently Logan and I have been a part of are so
+powerful. Let\'s try to merge those two and sort of be the virtual in
+house recruiter or sort of like a virtual talent network that connects
+the best professional communities across the world.
+
+**\
+04:54**\
+Vrijen Attawar\
+That\'s sort of the new framing and I actually think this one\'s going
+to stick because we can go to communities and offer a very robust, very
+helpful career tool completely for free. No strings attached,
+essentially. Yeah, yeah, that\'s. That\'s sort of. It\'s. It\'s. Yeah,
+lots going on basically. So I\'ve been pretty. Pretty heads down myself.
+
+**\
+05:17**\
+Sofia Wernick\
+I was wondering about that because I noticed on the website that you
+currently don\'t like have a paid option. Like, so you are trying to
+like, move towards getting like these institutions and stuff like that
+or the companies that are. You\'re working with to pay as opposed to the
+individual users.
+
+**\
+05:33**\
+Vrijen Attawar\
+Yeah, and that was always a big part of the. Even the motivation was
+like, you know, this is. We know this tool is going to be awesome. We
+want folks to be able to use it and use it for free. So to the extent
+that we can have employers subsidize you use of the tool, in fact, not
+just subsidized, I think that\'s doing a disservice to the customer, to
+the candidate. I think they\'re literally fueling it with their data and
+their like, engagement. Right. So I think it\'s only fair that it should
+be free for them.
+
+**\
+06:00**\
+Vrijen Attawar\
+And I think that the cool thing that we\'d be able to do now is for any
+given role, we can sort of surface a candidate and effectively help them
+like get a first look in from an employer before they even, you know, go
+through their ats or sort of a privileged look. Which I think it\'s.
+There\'s. There\'s tons of conflict that even I feel around like, the
+ways in which that at first risks, like perpetuating existing, like, you
+know, kind of just privilege, for lack of a better word than like, you
+know, kind of remediating it. But I think in the long run, what we want
+to do is transition towards.
+
+**\
+06:40**\
+Vrijen Attawar\
+I think this is the way in which we get our matching technology out
+there, which is very holistic and which is very like pro candidate and
+actually tells you know, hey, this candidate may not look like they have
+all of the direct work experience, but like, they actually have all the
+transferable experience. Like maybe consider them and actually just try
+to like reverse the drill. But unfortunately, to like break into HR is
+to break into HR with something that is like trying to make a change,
+but is not an explicitly DEI angle is like really fucking hard.
+
+**\
+07:13**\
+Sofia Wernick\
+So.
+
+**\
+07:13**\
+Vrijen Attawar\
+So we have to solve the problem. We can solve for now.
+
+**\
+07:16**\
+Sofia Wernick\
+Yeah, that makes a lot of sense. Okay, quick question. Well, I have lots
+of different questions I would love to learn more about kind of the
+division of labor between like, you and Logan, what sides of the
+business you both are kind of working on and how that\'s evolved over
+time. And then also what has your go to market strategy look like thus
+far? What\'s been working, what hasn\'t been working? All those things.
+
+**\
+07:46**\
+Vrijen Attawar\
+Yeah. So you know, I think Logan and I have sort of, I mean, yeah, it\'s
+like a hundredfold sort of evolution of our relationships in starting
+the company, but we knew each other for almost like five, six years
+before that. She\'d hired me for my second job ever. Then were co
+founders in like a boutique sort of admissions consulting thing. It was
+like pretty small scale. And then we came back together for this. One of
+the many ways in which we have chosen to fly in the face of conventional
+wisdom and I would just say good goddamn advice is we\'re both non
+technical. There\'s a lot of duplication between our capabilities which
+is less than ideal and historically has been less than ideal for the
+startup. But we\'re finally getting to the point where the duplication
+is actually a strength.
+
+**\
+08:40**\
+Vrijen Attawar\
+We\'re both equally good networkers, equally good sellers, equally good
+sort of with investors. We can actually split basically the entire non
+business side of things between the two of us and do so at a pretty high
+level without much compromise. We just sort of have everyone for the
+design and product sort of components. So that\'s sort of the general
+division of labor. Logan, I would say more so handles marketing and ops.
+That\'s sort of her turf and she handles sort of community partnerships
+and then I handle product strategy, sales to HR and legal stuff
+specifically outside of ops. And then some of the more opsy side of like
+fundraising, like just sort of not the cleanest division, but it
+generally kind of splits up quite well.
+
+**\
+09:34**\
+Vrijen Attawar\
+And then in terms of what we\'ve tried, I mean we have I think 2020, I
+think 2023, 2022, which is when we started this. 2022 I think was the
+year of like learning to be a functional sort of founder. And then I
+think just functional, I think dysfunctional, I think 24 I guess or 23
+was that 24 was like the year of like learning how to be a half decent
+product leader. This was very much the year of go to market for both me
+and Logan. And so we, you know, originally the go to market was
+consumer, hence why building a consumer app sort of realized along the
+way, hey, we need like large volumes of revenue coming in and we need
+large distributions.
+
+**\
+10:23**\
+Vrijen Attawar\
+So it means it makes sense to go to orgs dithered around for what types
+of orgs to look at for a little bit. Eventually Settled on universities.
+And that was the second sort of big go to market phase. I think we did
+quite well, all things considered. We got kind of just fucked. By the
+macro of it. All universities are out of money. They. And Career
+Services is the bottom of like the. Is like. Yeah, it\'s like the belly
+of the fly on the heel of my foot. Like, you know, it\'s like absolute.
+They\'re. They\'re just the, the less polite. The even less polite
+version I have is like if admissions is the mouth. If admissions is
+mouth, Career Services is the other place. Right. Because nobody gives a
+shit. Like at Career Services or not, actually, they care a lot.
+
+**\
+11:12**\
+Vrijen Attawar\
+They have no power. They have a limited budget.
+
+**\
+11:15**\
+Sofia Wernick\
+Yeah.
+
+**\
+11:16**\
+Vrijen Attawar\
+There\'s a school at Harvard where the entire budget for all student
+tools and services at Harvard was \$20,000 for like literally
+everything. All the tech, all the events, all the programming,
+everything was 20 grand for career Services. The average ratio of
+counselors to students at the average American university. Take a guess.
+
+**\
+11:43**\
+Sofia Wernick\
+Counselors to students.
+
+**\
+11:44**\
+Vrijen Attawar\
+Oh, sorry. Students to counselors.
+
+**\
+11:46**\
+Sofia Wernick\
+Students to counselors. Sorry, I. No. No clue. But I\'m sure it\'s
+abysmal. What, what is it?
+
+**\
+11:55**\
+Vrijen Attawar\
+What? Right. It\'s always so much higher than anyone could ever suspect.
+
+**\
+12:00**\
+Sofia Wernick\
+That\'s insane. Yeah, I never. I wouldn\'t have guessed. I would have
+guessed like 500 or something.
+
+**\
+12:04**\
+Vrijen Attawar\
+Yeah, yeah. No, it\'s. It\'s bonkers. It\'s bonkers. So as you can tell
+by all of these stats that I have off, off the cuff, really dug into
+that go to market, but they just had no money. They\'re moving too
+slowly, both as a baseline and in this environment. So out the door.
+That brought us to a real sort of like crisis moment. I was one of many
+crisis moments. We\'re like, what the fuck sell and who do we sell it
+to?
+
+**\
+12:32**\
+Sofia Wernick\
+Right.
+
+**\
+12:32**\
+Vrijen Attawar\
+And that led us to sort of examine the. Okay, what do we have that no
+one else does? We have incredible use using Careerspan. They love
+storing their experiences in Careerspan. They engage with our founder
+story strongly. So we don\'t want to lose that. We also want to make
+money and like get the revenue engine going. And we need. We can\'t just
+rely on slow non. Fueled by marketing dollars, consumer growth. So
+that\'s when we said, okay, let\'s go to companies. And the mini ARC
+over there was starting from a place of saying let\'s sell behavioral
+insights because that\'s the thing. Thing we bring to the table that no
+one else does. And ending with it\'s sourcing Stupid. Just get them
+high.
+
+**\
+13:15**\
+Vrijen Attawar\
+If you can refine the quality of candidates by not only picking from
+higher quality sources, but also running them through the career span
+engine, which further sort of shortlists and picks the best, then that
+giving like a bushel of folks in one go and saying, hey, take this,
+that\'s enough. Right. That can circumvent the need for referrals. It
+can circumvent the. It\'s about having enough quality candidates that I
+don\'t have to worry about it anymore is the sort of psychological sort
+of pressure or need that we are addressing. So that\'s a lot of. That\'s
+a whole lot of talk. But you are in go to market. Does any of that sound
+like I\'m making sense or am I just like on some sort of schizo rant
+that doesn\'t seem to come together?
+
+**\
+14:02**\
+Vrijen Attawar\
+Because that is like genuinely my concern is we\'ve been like cooking
+this up for a while, but I\'m like, not sure at what point this is crazy
+or that makes sense.
+
+**\
+14:09**\
+Sofia Wernick\
+Yeah, I mean, I don\'t really know the like HR space very well, to be
+honest with you. It\'s not something that I\'ve worked in, but based on
+what I\'ve observed just from like the companies that I\'ve worked with.
+Yeah. They just need to be able to source better and you can\'t source
+everybody from referrals. Right. So I feel like kind of like coming up
+with like, what. Whatever the next thing is that\'s going to compete
+with referrals and. Yeah, that makes, I mean, that makes a ton of sense
+to me. And like, oftentimes like. Right. It\'s like about simplifying
+who your audience is. Right. And what you into them. Yeah. Do you. You
+know, I think it might be helpful for me to share a little bit more
+about like me, what I\'ve done, where I come from, all that stuff.
+
+**\
+14:59**\
+Vrijen Attawar\
+Yeah, I would love to know that. Yeah.
+
+**\
+15:02**\
+Sofia Wernick\
+And then we can proceed from there. I also want to be kind of honest
+with you. I\'m in the final stages with a couple of different companies
+right now, like, since we. Since we like touched base. So it seems
+likely that one of those is going to come through. But I just really
+valued my conversation with you and like, wanted to learn more about
+what you\'re doing and like, hopefully whether collaboration works out
+this time or in the future just kind of like be on each other\'s radar.
+So I hope that.
+
+**\
+15:29**\
+Vrijen Attawar\
+Yeah, totally. No, I totally get that. And honestly, hey,
+congratulations. A crush on the process. I think that\'s so awesome.
+
+**\
+15:36**\
+Sofia Wernick\
+Thank you so much. That\'s really sweet of you. Okay, so I\'m Sophia. I
+don\'t know what you do and don\'t remember, so I.
+
+**\
+15:45**\
+Vrijen Attawar\
+Give me the rundown. I\'m here for it. I\'m here for it.
+
+**\
+15:48**\
+Sofia Wernick\
+I. Let\'s. What was the last thing that. So there are many different,
+like, threads that I could start with. I\'m gonna do the wrong thing,
+which is, you know, people are saying don\'t be chronological, but I\'m
+gonna be chronological because.
+
+**\
+16:02**\
+Vrijen Attawar\
+Do it.
+
+**\
+16:02**\
+Sofia Wernick\
+I want to get to know you as, like, a friend and collaborator.
+
+**\
+16:06**\
+Vrijen Attawar\
+Yeah.
+
+**\
+16:07**\
+Sofia Wernick\
+So I\'m from Miami and have, like, lived in a lot of different places.
+Most recently, I was living in Europe for a few years. And the reason
+why I ended up going to, like, Europe after college was because when I
+was in high school, I had once again lived internationally, been in
+Nicaragua, and just grew really interested in understanding how, like,
+technology could be used to, like, catalyze economic growth and, like,
+prosperity for people there by really drawing out the best from people.
+
+**\
+16:39**\
+Sofia Wernick\
+The way in which I kind of experienced that myself was I\'ve been really
+involved with, like, film in high school and, like, film festivals and
+ended up directing a film with kids that were kind of, like, at risk of,
+like, going into the streets there and stuff like that and teaching them
+film into princess and then, like, submitting that to a festival in the
+US And I saw how, like, really, strategic applications of technology in
+people\'s lives could not only, like, teach them a new skill, but also
+transform the way in which they thought of themselves and, like, their
+ability to have, like, a vision for themselves in their lives and what
+they could do.
+
+**\
+17:13**\
+Sofia Wernick\
+And I was like, if we can do that at scale, then we can, like, really
+change entire communities, because, like, many of these girls end up,
+you know, going to college and stuff like that when they wouldn\'t
+necessarily have thought of doing that before. So, anyhow, that was
+something that really inspired me, and I was like, okay, I think I\'m
+going to do this, you know, through the typical means of, like,
+international economic development, some, like, organization, like, you
+know, the IMF or State Department or whatever. So I went to school in
+D.C. and kind of studied languages and got really involved in, like,
+geopolitics and, like, macroeconomics clubs and things like that. And
+then did a Fulbright afterwards in, like, the Canary island, which I
+mentioned to you.
+
+**\
+17:59**\
+Sofia Wernick\
+And while I was there, I ended up working on a music festival and
+teaching and, like, really loving what I was doing, but realizing that
+If I needed my ideas to become, like, operationally functional, that I
+was going to need some, like, more skills, so. And also just that, like,
+the whole kind of State Department, large international organization
+vibe is, like, not really effective.
+
+**\
+18:24**\
+Vrijen Attawar\
+Yeah. Yeah. I will. I will just ask very quickly, were you an MUN nerd
+in high school?
+
+**\
+18:33**\
+Sofia Wernick\
+Wait, MU n. I should know. This is. Is this, like, model un? Yeah, I
+didn\'t go to a traditional high school, so.
+
+**\
+18:40**\
+Vrijen Attawar\
+Oh, cool.
+
+**\
+18:41**\
+Sofia Wernick\
+I. I didn\'t get to participate, but I would have loved. I would have
+loved that. Did you do that?
+
+**\
+18:46**\
+Vrijen Attawar\
+I was the biggest MUN guy I did. I actually organized. I organized the
+first. So I went to international school in Bangladesh, which is the
+other reason I was so stoked to hear that. That. That you grew up in
+Nicaragua. So I went to high school in Bangladesh and did a bunch of
+mun. And honestly, like, the main point I wanted to get to was very
+similar sort of arc of having a lot of belief in global sort of powers
+and sort of like, sort of, you know, supernational organizations and
+sort of a lot of that coming down to earth during college and sort of
+being like, okay, I need to. Damn system. System too strong system got
+hands. And so what can I do to sort of slot into the system but in a way
+that maximizes my ability to.
+
+**\
+19:37**\
+Vrijen Attawar\
+To grow, influence, and sort of start to steer things in a. In a better
+direction? But, yeah, long story short, very relatable. Love the
+backstory so far. 10 out of 10. Keep going.
+
+**\
+19:48**\
+Sofia Wernick\
+That\'s awesome. It is such an arc. You find people who, like, gone
+through the exact same thing, and you\'re all like, it\'s so painful,
+but it\'s, like, good, you know? Like, you learn so much from it. I
+hope. I hope that it means that you have a good heart. Like, I feel
+like. I feel like you meet these people and you\'re like, these people
+are motivated in the right ways. It\'s just like finding the right
+place, you know? But, yeah, so it\'s like, okay, where. Where am I
+gonna, you know, slot in, as you said, and had, like, a couple
+different, like, directions I could have taken my life in, but
+ultimately decided to, like, go to business school. And I was.
+
+**\
+20:23**\
+Sofia Wernick\
+I decided to do that in Europe because it was like, I just want to spend
+more time here and practice, like, my languages more. And also because
+the school that I ended up going to needed someone to work on their
+Latin American business development. I just thought that sounded, like,
+really exciting to do at the same time. And finally, I was really
+intrigued by the country of Luxembourg itself, because it is such a.
+People don\'t think of it like this, but it\'s not a startup nation. The
+nation is a startup. Like, we\'ll kind of like.
+
+**\
+20:55**\
+Vrijen Attawar\
+Yeah, yeah, I\'ve heard the countries in that. That sort of area are
+doing some really cool shit with deck.
+
+**\
+21:01**\
+Sofia Wernick\
+They are, they are. And it\'s like, you know, first it was potatoes,
+then it was steel, then it was like, financial services, and now
+they\'re kind of like at the center of the.
+
+**\
+21:10**\
+Vrijen Attawar\
+Yeah.
+
+**\
+21:11**\
+Sofia Wernick\
+Industry. And like, they\'re really, like, being very strategic about
+how they regulate and like, bring in companies. And, you know, I, I just
+thought that was cool. And also just like when you start in a small
+pond, like, you can meet interesting people, you know. So, yeah, I ended
+up going there. I was there for a year and a half, like, studying and
+then helping them with their business development and traveling abroad
+with them, and then ended up capping all that off by working for BNP for
+six months and kind of like getting a flavor of like, what Luxembourg
+banking looks like, which was, like, very interesting. And it was like,
+kind of a cool time to be there too, because, you know, what was that,
+like 2024.
+
+**\
+21:54**\
+Sofia Wernick\
+So as a result, since I was on the private capital side, like, it was a
+crazy macro moment for all of those investors.
+
+**\
+22:03**\
+Vrijen Attawar\
+Yeah.
+
+**\
+22:04**\
+Sofia Wernick\
+Also really changing our strategy as a bank. And then AI was happening
+too. And so, like, were thinking a lot about, like, how can we integrate
+AI at scale really early on, you know, and so me being me, I was just
+like, wow, this is like such an interesting story. I need to follow this
+story and see what happens with it. And I ended up writing my master\'s
+thesis kind of about how data, information and knowledge are like
+distinct categories. They\'re not like the same thing. And that they
+move through the brain in different ways and they move through
+transformer LLMs in different ways. And we. And but what that ends up
+doing is actually building.
+
+**\
+22:48**\
+Sofia Wernick\
+We are building workflows based off of, like, data, information and
+knowledge is different categories and we need to understand how they
+flow through human brains and LLMs in order to, like, rebuild new ones
+that are kind of like, yes, efficient for the augmented economy, but
+also are de risked and also, most importantly, are preserving kind of
+like the integrity and like, the richness of the data that we\'re
+working with. Because in a lot of ways, the ways in which data is stored
+ends up leading to, like, losing a lot of what\'s important about it,
+what drives insights. And then GPS get Mad that like their back offices
+can\'t provide them with like date stores of data that are actually like
+useful to them making investment decisions. But a lot of it, the way
+that it\'s stored and processed along the way.
+
+**\
+23:31**\
+Sofia Wernick\
+So it\'s kind of like dealing with that problem of like back and forth
+pipelines.
+
+**\
+23:35**\
+Vrijen Attawar\
+Yeah.
+
+**\
+23:36**\
+Sofia Wernick\
+Through like the actual jobs that workers are doing and how they\'re
+interacting with AI there.
+
+**\
+23:43**\
+Vrijen Attawar\
+That is so fucking cool. I love that. That\'s, that\'s so cool. That\'s
+so interesting. Yeah.
+
+**\
+23:48**\
+Sofia Wernick\
+I learned a lot from it and I only go into all that depth because it\'s
+been driving a lot of what I\'ve been doing since then. Insofar as I
+moved back to the United States in fall of 2024, took a break honestly
+and then kind of started looking for jobs. Ended up working for the
+startup that I mentioned to you like briefly. But then aside from that
+have been like working on publishing my paper and I have it in a journal
+for the fall which I\'m really excited about and some funding to
+continue that research. Not as like a, a company or anything like that,
+but as a, but like as a research project like from an academic
+standpoint.
+
+**\
+24:31**\
+Vrijen Attawar\
+So I think that\'s awesome. Yeah, I, we need to have like a hang just
+dedicated to talking about that specifically because I, I want to really
+probe your insights a lot more deeply on all of that stuff. I think
+it\'s. Yeah. Obviously data is pretty central to what we do and even
+with regards to like workflows, I think about my personal ones pretty
+carefully.
+
+**\
+24:54**\
+Sofia Wernick\
+Sure, sure, sure, sure. Yeah, it does sound. I seen like, I feel like
+there\'s some overlap there. So. Yeah, would love to chat about that
+further. But. Yeah. And then I like went up to New York to like work for
+the streets a little bit just to see what it was like because I mean
+I\'ve always. New York is always at the back of your mind.
+
+**\
+25:12**\
+Vrijen Attawar\
+Yeah.
+
+**\
+25:13**\
+Sofia Wernick\
+Grew up in an urban place, you know, like you just always like is it a
+place for me or not? And like I\'m still discerning that now because one
+of the companies that I\'m moving forward with is in New York, one of
+them is in D.C. and so we\'re going to see like how this all panned out.
+
+**\
+25:32**\
+Vrijen Attawar\
+Well, very selfishly I\'ve got my fingers crossed for the New York
+company. But you know, I hope you pick the option that is sort of going
+to do right by you the most.
+
+**\
+25:42**\
+Sofia Wernick\
+Thank you. You know what I do feel like though, Is like moving up to New
+York, I was like, it\'s. I feel like I met so many great people and
+like, didn\'t make necessarily a community but like a group of people
+that I\'d like want to see and like stay in touch with really quickly.
+So I almost am like, you know, whether I stay in D.C. or New York, like
+I, I feel like I have friends there who I like, want to go seeing.
+Really exciting.
+
+**\
+26:05**\
+Vrijen Attawar\
+Yeah. Yeah, I\'m glad. I\'m glad. And it\'s, it\'s really not too, it\'s
+a hop skip and an Amtrak from, from New York. So not too far. I mean
+this is so cool. I think you\'re like very much probing really
+interesting, important questions. I mean that was that McKinsey or
+whoever study comes to mind recently of how 90 something percent of
+companies have failed to implement AI and any sort of like meaningful
+way at scale. Right. Which like totally tracks. I mean we have AI is
+less so a technology to implement and more so a like bull to wrangle
+into like compliance and have it like, you know, sort of behave.
+
+**\
+26:48**\
+Vrijen Attawar\
+So you know, it\'s just, I think it\'s going to be a, I think once the
+hype levels out and folks have a more sort of realistic understanding of
+the tech, there\'s going to be a ton of interest in precisely what
+you\'re doing or even more so because folks will be more thoughtful
+about how they sort of implement AI into their data pipelines and just
+their decision making.
+
+**\
+27:13**\
+Sofia Wernick\
+That\'s very, I, I think that\'s encouraging for both of us, you know.
+So. Yeah, yeah, I hope that we both succeed in many ways from that. I\'m
+wondering, okay, so like, what do you. This is like a very direct
+question, but kind of like what do you need right now? What are you
+looking for? Because I don\'t know if I will be available for it, but I
+have friends and I mean this happens through referrals, right?
+
+**\
+27:39**\
+Vrijen Attawar\
+Yeah.
+
+**\
+27:40**\
+Sofia Wernick\
+Be thinking about like, what do you need? And do I know anyone who\'s
+available for that? And then also like I\'d asked you questions before
+about like what you\'re looking for in terms of like partners. Because
+for example, my dad also. If you gotta go.
+
+**\
+27:55**\
+Vrijen Attawar\
+No, no, I got time.
+
+**\
+27:56**\
+Sofia Wernick\
+Yeah, but my dad, for example teaches at the business school at Florida
+International University and I feel like that kind of university
+probably would be very interested in what you guys have because it\'s
+like very like. Yeah.
+
+**\
+28:08**\
+Vrijen Attawar\
+Business program, right?
+
+**\
+28:10**\
+Sofia Wernick\
+Yeah. Yeah. I think that if I Could pitch it to him and some of his
+colleagues that they could probably get it to the career services people
+there. And I don\'t, you know, I don\'t know how successful that would
+be. I know like the schools are going through a rough time right now,
+but we can see, you know.
+
+**\
+28:25**\
+Vrijen Attawar\
+Yeah, I\'m happy to sort of share some more along that front. You can
+sort of forward it to him and see what his interest level is like. I
+think the big asks for the moment would be. So I think one would be
+communities or community oriented. If you\'re part of any sort of great
+talent communities, professional communities, folks where there\'s just
+a high concentration of talented people or talented professionals. You
+know, that would be one ask. Even just directing us to those communities
+and we can figure out an entry point ourselves would be good. But if
+you\'re obviously a member can like recommend us to a community owner.
+That would be great. No, no, real place is too small. I would say like
+maybe 100 or so. But we are totally open to both micro communities and
+sort of like larger ones.
+
+**\
+29:14**\
+Vrijen Attawar\
+And we are for your context, kind of consciously debating about whether
+what combination of engineering, product and growth roles like which of
+those three do we want to incorporate into our stream? And that relates
+to the second part of the ask is if you\'d have any folks in any of
+those three areas that are looking for a job and that you would say are
+sort of highly qualified, feel free to get them in touch with me. Not
+only will we set them up with a careerspan account which is sort of
+table stakes, we for really qualified candidates were essentially
+offering to white glove career agent sort of on their behalf. And so we
+based on the candidates that we have, go source companies and roles and
+we collect the bounty and we essentially act as like a, a like candidate
+side recruiter essentially.
+
+**\
+30:11**\
+Vrijen Attawar\
+And so yeah, communities that we can break into or sort of advertise our
+roles and bring in more members or just really talented people that you
+know, that we could sort of, you know, put forward to companies and sort
+of lock down bounties.
+
+**\
+30:25**\
+Sofia Wernick\
+Sure, yeah, that sounds great. If they, I\'m wondering if they are
+further along in their career, but they have like a really interesting
+resume and a lot of experience. You know, like there\'s that valley of
+death where like if you leave a company when you\'re in your 50s, it\'s
+hard to like totally afterwards even if you\'re like super qualified.
+I\'ve seen this with two close family friends where like I was like,
+they\'re never gonna have a problem getting a job. Like, they\'ve done
+amazing stuff. And yet just because that\'s a tough period.
+
+**\
+31:00**\
+Vrijen Attawar\
+Yeah.
+
+**\
+31:02**\
+Sofia Wernick\
+Spending some time. What do you think of that?
+
+**\
+31:03**\
+Vrijen Attawar\
+No, those. Those would be great. I mean, especially if they\'re in those
+three sort of verticals. That would be ideal. But just in general, I
+mean, we. We\'re expanding roles and we sort of. Any role that people
+want to place with us, we run through our system. So I think one, if
+it\'s someone talented that you recommend, just put them in touch with
+me and I\'ll make sure that we try to like, keep an eye out for some
+roles to like, send them and then obviously can. Can kind of give them
+the context for career span as well. But that\'s effectively the. It\'s
+much more powerful value add. Right. To go to people and say, hey, just
+set up your account and we\'ll like, find jobs for you.
+
+**\
+31:39**\
+Vrijen Attawar\
+But I think that\'s the other benefit of our approach is we don\'t just
+give people a resume. We actually. We actually sell the candidate or
+sell the employer on the candidate. So it\'s a much more sort of like
+there\'s more advocacy involved, which hopefully will be appealing to
+people.
+
+**\
+31:56**\
+Sofia Wernick\
+Yeah, for sure. For sure. That\'s interesting. So you\'re almost like
+kind of becoming the reform referrer in a way.
+
+**\
+32:03**\
+Vrijen Attawar\
+Exactly, exactly. That\'s the sort of. That\'s precisely the gap is
+like, how can we have as much or more signal as a good referral, but
+with way less effort and more optionality. So it\'s. It\'s sort of
+simultaneously recruiters and referrals that we are. That. I\'m going to
+say this disrupting. Oh, no, he said it. He said the thing. You said the
+thing. Can\'t have a. Can\'t have a conversation with a tech bro without
+disruption.
+
+**\
+32:32**\
+Sofia Wernick\
+There was Dakota you had to meet.
+
+**\
+32:35**\
+Vrijen Attawar\
+Yeah.
+
+**\
+32:36**\
+Sofia Wernick\
+Yeah. Okay, cool. So we\'re thinking about communities and we\'re
+thinking about individuals that are like, very talented that you could
+kind of market to these companies. Yeah, Okay. I will. I will go through
+my Rolodex and I will get back to you with what I find.
+
+**\
+32:55**\
+Vrijen Attawar\
+I super appreciate that. And then the last thing on your agenda is to
+let me know when you\'re in town and then we\'ll do.
+
+**\
+33:02**\
+Sofia Wernick\
+Yeah, I will. That would be awesome. Yeah, I should be probably up there
+in October sometime, so I\'ll definitely let you know when I am. But it
+would be so good.
+
+**\
+33:14**\
+Vrijen Attawar\
+Yeah, sounds good. I actually. I may actually have a decent sea thing on
+the books, so I\'ll keep you posted about that as well. But yeah. Yeah.
+
+**\
+33:25**\
+Sofia Wernick\
+Have you spent any time down here before?
+
+**\
+33:27**\
+Vrijen Attawar\
+I. I visited from time to time. I have a couple of friends there, so I
+will, like, pop by, but not. Not in a minute, not in a while.
+
+**\
+33:35**\
+Sofia Wernick\
+Yeah, I feel like D.C. is like, patently, like not an interesting city
+in the same way that New York is. But I do feel like we\'ve just been
+having this, like, beautiful summer and like beginning of fall over
+here. It\'s like very enjoyable, almost as like the countryside compared
+to New York. So if you need a taste of that and you want to visit your
+friends down here and you have this event, it seems like let me know
+because. Good time.
+
+**\
+34:00**\
+Vrijen Attawar\
+You\'ve sold it. You sold it. Well, I will let you know.
+
+**\
+34:03**\
+Sofia Wernick\
+Awesome. Okay. Have an incredible day. So glad touch base and talk soon.
+
+**\
+34:08**\
+Vrijen Attawar\
+Talk soon. Take care.
+
+**\
+34:09**\
+Sofia Wernick\
+Bye.
+
+**\
+34:10**\
+Vrijen Attawar\
+Bye.

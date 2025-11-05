@@ -1,3 +1,12 @@
+---
+tool: true
+description: Generate B21 intelligence block
+tags:
+  - meeting
+  - intelligence
+  - b21
+---
+
 # B21 - KEY_MOMENTS Generation Prompt
 
 You are generating a KEY_MOMENTS intelligence block from a meeting transcript.

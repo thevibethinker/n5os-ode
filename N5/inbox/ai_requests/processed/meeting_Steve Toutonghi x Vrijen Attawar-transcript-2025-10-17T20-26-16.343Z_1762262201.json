@@ -1,0 +1,24 @@
+{
+  "request_id": "meeting_Steve Toutonghi x Vrijen Attawar-transcript-2025-10-17T20-26-16.343Z_1762262201",
+  "request_type": "meeting_reprocess",
+  "prompt_name": "Meeting Process",
+  "inputs": {
+    "transcript_path": "/home/workspace/Personal/Meetings/Inbox/Steve Toutonghi x Vrijen Attawar-transcript-2025-10-17T20-26-16.343Z.transcript.md",
+    "meeting_id": "Steve Toutonghi x Vrijen Attawar-transcript-2025-10-17T20-26-16.343Z",
+    "meeting_type": "external",
+    "original_dir": "/home/workspace/Personal/Meetings/Steve Toutonghi x Vrijen Attawar-transcript-2025-10-17T20-26-16.343Z",
+    "reason": "Bulk 2025-11-04"
+  },
+  "output_requirements": {
+    "blocks": [
+      "notes",
+      "commitments",
+      "key_quotes",
+      "deliverables"
+    ],
+    "output_dir": "/home/workspace/Personal/Meetings/Steve Toutonghi x Vrijen Attawar-transcript-2025-10-17T20-26-16.343Z"
+  },
+  "status": "pending",
+  "priority": 1,
+  "created_at": "2025-11-04T13:16:41.678206+00:00"
+}
