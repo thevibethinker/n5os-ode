@@ -346,3 +346,147 @@ Even with current service-heavy "Career Agent" approach, the ultimate goal remai
 ---
 
 **Document Status:** This is the canonical company overview as of September 2025. Changes to strategy, product, or market positioning after this date should be tracked as updates relative to this baseline snapshot.
+
+---
+
+## Strategic Architecture: The Three-Layer Moat
+
+**Added:** November 2025  
+**Source:** Strategic Intelligence Report (con_kSq36OtO8rmECYtW)
+
+### Overview
+
+Careerspan's competitive advantage comes from **three compounding moats** that reinforce each other:
+
+1. **Product Moat** → High engagement drives repeat usage
+2. **Data Moat** → Repeat usage generates proprietary behavioral signals
+3. **Network Moat** → Better data improves employer ROI, attracting more employers
+
+### Layer 1: Product Moat (Engagement as Proxy for Quality)
+
+**Core Insight:** The act of engaging with Careerspan is itself a quality signal.
+
+**Metrics (as of Nov 2024):**
+- 50%+ of users return for multiple coaching sessions
+- 20% Day-30 retention (2x industry average for career tools)
+- High session depth (multi-turn conversations, not just one-off queries)
+
+**Why this matters:**
+- Candidates who engage deeply demonstrate seriousness, self-awareness, growth orientation
+- Engagement patterns predict job-search success better than résumé credentials
+- High engagement = sticky product = sustainable data collection
+
+**Competitive benchmark:**
+- Most job boards: <5% return rate after first visit
+- Career assessment tools: One-and-done usage (no repeat engagement)
+- Careerspan: 20% still active after 30 days
+
+**See:** Knowledge/semi_stable/current_metrics.md for latest engagement data
+
+### Layer 2: Data Moat (Longitudinal Behavioral Intelligence)
+
+**Core Insight:** Longitudinal behavioral data cannot be reverse-engineered or purchased.
+
+**What we capture that competitors can't:**
+
+| Signal Type | Example Data Points | Predictive Value |
+|------------|---------------------|------------------|
+| Communication patterns | Clarity, conciseness, adaptability in coaching dialogue | Collaboration fit, client-facing ability |
+| Self-awareness | Recognition of gaps, realistic self-assessment | Coachability, growth potential |
+| Learning agility | Response to feedback, iteration speed | Adaptability, problem-solving |
+| Persistence | Follow-up sessions, implementation of advice | Work ethic, resilience |
+| Goal clarity | Articulation of career objectives, trade-offs | Strategic thinking, self-direction |
+
+**Why competitors can't replicate:**
+
+**Job boards (LinkedIn, Indeed, ZipRecruiter):**
+- Have static profile data (résumés, job history)
+- No repeat engagement = no behavioral time-series
+- Optimize for application volume, not match quality
+
+**Assessment tools (HireVue, Pymetrics):**
+- One-time snapshots (no longitudinal view)
+- Explicit assessments (candidates game the system)
+- High friction (candidates avoid unless required)
+
+**Coaching platforms (BetterUp, CoachHub):**
+- Sell coaching as end product (not data capture)
+- Human coaches = doesn't scale, expensive
+- Privacy-first = don't use data for matching
+
+**Careerspan's advantage:**
+- Passive signal capture through natural coaching interactions
+- Low friction (candidates seek us out for value)
+- Longitudinal (behavioral fingerprint over time)
+- Proprietary (cannot be bought or scraped)
+
+**See:** Knowledge/patterns/two_sided_marketplace_patterns.md for detailed competitive analysis
+
+### Layer 3: Network Moat (Classical Marketplace Dynamics)
+
+**Core Insight:** More candidates → Better data → Better employer ROI → More employers → More opportunities → More candidates (flywheel)
+
+**Network effects:**
+
+**Supply side (candidates):**
+- More employers = More job opportunities = Higher placement rates
+- Higher placement rates = Stronger value proposition = More candidates
+
+**Demand side (employers):**
+- More candidates = Deeper talent pool = Better matches
+- Better data = Higher quality hires = Better ROI per hire
+- Proven ROI = Willingness to pay premium over job boards
+
+**Cross-side effects:**
+- Candidate engagement generates data that benefits all employers
+- Employer hiring outcomes validate candidate coaching quality
+- Ecosystem partners (communities, coaches) amplify both sides
+
+**Defensibility:**
+- New entrants start with empty network (cold start problem)
+- Our data moat makes candidate pool more valuable over time
+- Switching costs increase as longitudinal profiles deepen
+
+**See:** Knowledge/hypotheses/business_model_hypotheses.md for testable claims about network effects
+
+---
+
+## Why This Architecture Matters
+
+### Capital Efficiency
+- Don't need to pay for candidate acquisition (they come for coaching value)
+- Don't need to pay for data labeling (engagement is the label)
+- Employer ROI funds growth (placement fees cover operations)
+
+### Compounding Returns
+- Every coaching session strengthens the data moat
+- Every placement validates the prediction model
+- Every employer win case attracts more employers
+
+### Strategic Optionality
+- Can monetize multiple ways: candidate subscriptions, employer placements, community partnerships
+- Data moat enables adjacent businesses: career insights, talent analytics, workforce planning
+- Infrastructure play: Could become the talent data layer for other platforms
+
+### Risks to Monitor
+1. **Engagement decay:** If coaching quality drops, product moat erodes
+2. **Privacy backlash:** Candidates must understand and consent to data usage
+3. **Employer skepticism:** Must prove enriched profiles → measurable hiring outcomes
+4. **Competitive response:** Large players could build similar engagement mechanisms
+
+**See:** Knowledge/hypotheses/business_model_hypotheses.md for testable hypotheses about these risks
+
+---
+
+## Cross-References: Three-Layer Moat
+
+### Related Knowledge
+- Knowledge/stable/company/positioning.md — How moat architecture informs positioning
+- Knowledge/semi_stable/current_metrics.md — Latest engagement and retention data
+- Knowledge/patterns/two_sided_marketplace_patterns.md — Why this creates defensibility
+- Knowledge/market_intelligence/competitive_landscape_2024.md — Competitor inability to replicate
+- Knowledge/hypotheses/business_model_hypotheses.md — Testable claims about moat sustainability
+
+### Referenced By
+This section provides the strategic foundation for understanding Careerspan's competitive position.
+

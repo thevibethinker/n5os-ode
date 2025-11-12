@@ -1,0 +1,64 @@
+MEETING PIPELINE — DATA CORRUPTION ANALYSIS
+Generated: 2025-11-04 22:17:00 UTC
+
+STATISTICS
+==========
+Total transcripts in Inbox: 347
+Corrupted (ZIP archives): 219 (63%)
+Valid (readable text): 128 (37%)
+
+CORRUPTED FILES SAMPLE (first 10)
+=================================
+These should be investigated/re-downloaded:
+
+1. ixr-myzo-vut-transcript-2025-10-24T13-39-02.483Z.transcript.md
+2. guz-dgac-fvk-transcript-2025-10-29T19-44-23.040Z.transcript.md
+3. gja-nzqi-sxu-transcript-2025-10-23T21-07-15.978Z.transcript.md
+4. dbn-ctum-szz-transcript-2025-10-30T13-24-03.256Z.transcript.md
+5. User_Research_between_Mujgan_and_Vrijen_Attawar-transcript-2025-10-30T19-43-12_038Z.transcript.md
+6. Plaud_Note_11-03_Product_Overview_Zo_System_Architecture.transcript.md
+7. [Several more...]
+
+VALID FILES SAMPLE (ready to process)
+=====================================
+These are confirmed working:
+
+1. 1-1 with Sam (Vrijen Attawar)-transcript-2025-09-11T14-15-38.600Z.transcript.md
+2. 30 Min Meeting between Tim He and Vrijen Attawar-transcript-2025-08-29T19-06-12.442Z.transcript.md
+3. AI Agent MBA 101 (What businesses will look like with A-transcript-2025-09-04T17-25-02.164Z.transcript.md
+4. Acquisition War Room-transcript-2025-11-03T19-48-05.399Z.transcript.md
+5. Affiliates - Lender Partnerships with Vrijen Attawar-transcript-2025-09-08T15-39-32.796Z.transcript.md
+6. [128 total valid files]
+
+REQUESTS QUEUE STATUS
+====================
+Total pending requests: 66 command files
+Processing candidates (newest first):
+- meeting_ixr-myzo-vut-transcript-2025-10-24T13-39-02.483Z_1762220859 ✗ CORRUPTED
+- meeting_gja-nzqi-sxu-transcript-2025-10-23T21-07-15.978Z_1762220874 ✗ CORRUPTED
+
+RECOVERY PROCEDURE
+==================
+1. Identify all corrupted files in /home/workspace/Personal/Meetings/Inbox/
+2. Extract original meeting IDs or context from filenames
+3. Re-download from Google Drive source
+4. Validate file integrity (readable text, valid format)
+5. Replace corrupted files
+6. Resume processing
+
+COMMAND TO IDENTIFY CORRUPTED FILES
+===================================
+find /home/workspace/Personal/Meetings/Inbox -name "*.transcript.md" -exec   sh -c 'head -c 4 "" | od -An -tx1 | grep -q "504b0304" && echo ""' _ {} \;
+
+COMMAND TO VALIDATE TRANSCRIPTS
+===============================
+python3 << 'PYTHON'
+from pathlib import Path
+inbox = Path("/home/workspace/Personal/Meetings/Inbox")
+for f in inbox.glob("*.transcript.md"):
+    with open(f, 'rb') as fh:
+        header = fh.read(4)
+        status = "✗ CORRUPTED" if header == b'PK\x03\x04' else "✓ VALID"
+        print(f"{status}: {f.name}")
+PYTHON
+

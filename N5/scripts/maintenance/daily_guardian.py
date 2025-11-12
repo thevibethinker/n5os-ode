@@ -34,6 +34,7 @@ CRITICAL_FILES = [
     "/home/workspace/Documents/N5.md",
     "/home/workspace/N5/prefs/prefs.md",
     "/home/workspace/Prompts/executables.db",
+    "/home/workspace/productivity_tracker.db",
 ]
 
 # Essential knowledge files
@@ -48,8 +49,7 @@ ESSENTIAL_KNOWLEDGE_FILES = [
 ALL_PROTECTED_FILES = CRITICAL_FILES + ESSENTIAL_KNOWLEDGE_FILES
 
 
-def check_file_integrity()    backup_productivity_db()
-:
+def check_file_integrity():
     """Verify all protected files exist and are non-empty."""
     logger.info("=== File Integrity Check ===")
     issues = []

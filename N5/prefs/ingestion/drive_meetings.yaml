@@ -1,0 +1,20 @@
+ingestion:
+  pause_flags:
+    - /home/workspace/N5/data/flags/ingestion.meetings_drive.paused
+  drive_folder_path: ""  # e.g., "Careerspan/Meetings/Transcripts"; if empty, search entire My Drive
+  drive_folder_id: ""    # optional; if set, takes precedence over drive_folder_path
+  search_priority:
+    - application/vnd.google-apps.document
+    - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  export_map:
+    application/vnd.google-apps.document: text/plain
+    application/vnd.openxmlformats-officedocument.wordprocessingml.document: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  destination_dir: /home/workspace/Personal/Meetings/Inbox
+  min_size_bytes: 500
+  name_normalization:
+    spaces_to_underscores: false
+    preserve_original: true
+    ensure_suffix: ".transcript.md"
+  db_path: /home/workspace/N5/data/meeting_pipeline.db
+  redownload_queue_jsonl: /home/workspace/N5/data/meeting_redownload_queue.jsonl
+  log_path: /home/workspace/N5/logs/meeting_processor.log

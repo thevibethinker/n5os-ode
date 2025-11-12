@@ -1,0 +1,15 @@
+Inbox Cleanup Log
+Date: 2025-11-09 12:50:12.647705
+Items moved: 79
+Errors: 9
+
+Errors:
+  founder-h2h-2025-11-07-2206.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/founder-h2h-2025-11-07-2206.md'
+  sara-vrijen-logan-2025-11-07-2133.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/sara-vrijen-logan-2025-11-07-2133.md'
+  griffin-vrijen-2025-11-06-1840a.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/griffin-vrijen-2025-11-06-1840a.md'
+  griffin-vrijen-2025-11-06-1840b.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/griffin-vrijen-2025-11-06-1840b.md'
+  Anthony DeLuise and Vrijen Attawar.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/Anthony DeLuise and Vrijen Attawar.md'
+  Anthony_DeLuise_and_Vrijen_Attawar_2025-11-04.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/Anthony_DeLuise_and_Vrijen_Attawar_2025-11-04.md'
+  anthony_deluise_vrijen_2025-11-04.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/anthony_deluise_vrijen_2025-11-04.md'
+  Griffin_Schultz_x_Vrijen-2025-11-06-4.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/Griffin_Schultz_x_Vrijen-2025-11-06-4.md'
+  vrijen_zo_team_predemocatchup_2025-11-04.md: [Errno 2] No such file or directory: '/home/workspace/Personal/Meetings/Inbox/vrijen_zo_team_predemocatchup_2025-11-04.md'

@@ -1,0 +1,244 @@
+**\
+00:00**\
+Vrijen Attawar\
+It. What can you learn from this? Quick start documentation about how to
+work with the Fireflies API that we could use to more directly integrate
+with the meeting transcription stuff. Yo, how\'s it going, dude? How are
+you? Good.
+
+**\
+02:38**\
+Eric Espinel\
+How are you doing?
+
+**\
+02:39**\
+Vrijen Attawar\
+Good. Good. Day\'s going okay. Day\'s going okay. How about yourself?
+
+**\
+02:43**\
+Eric Espinel\
+It\'s, it\'s going well too. Yeah, not much. It\'s kind of just a chill
+Sunday, lazy Sunday kind of way.
+
+**\
+02:51**\
+Vrijen Attawar\
+Nice. Yeah, nice. I, I like lazy Sundays. Those are great. I, I, I think
+I was taking a little bit of time off to just like, scroll some, like,
+fun YouTube videos that I hadn\'t watched in a while. That was really
+nice. I, I appreciated getting some content in Nice, man. Yeah, that\'s
+my. Unfortunately that\'s like my easy goes. I did go to a party last
+night, so I was social, which I was pretty happy.
+
+**\
+03:22**\
+Eric Espinel\
+Oh, that\'s cool. Was it a Halloween one?
+
+**\
+03:25**\
+Vrijen Attawar\
+It was. Yeah. I have a really good friend in the building who throws
+these, like, killer parties. Dude themes and actors and like, it\'s so
+good. It\'s so his parties are like, legendary. I, yeah, so he threw. It
+was like 150 people double birthday bash. Oh, yeah, it was fun. Yeah, I
+met some cool folks.
+
+**\
+03:50**\
+Eric Espinel\
+That\'s cool.
+
+**\
+03:51**\
+Vrijen Attawar\
+Yeah, yeah, it was a nice time. And actually I was like, oh, man. Like,
+I, I really, I should like, just go out and like, go to parties more and
+stuff. This is, yeah, it\'s reminder to enjoy that stuff. Dude.
+
+**\
+04:04**\
+Eric Espinel\
+I\'m, I\'m, I\'ve been. Well, I, I finished the book, but, like, the
+last book that I was reading was 10x is easier than 2x. If you\'ve read
+it\'s, it\'s a really good book. Really, really impactful. It was
+talking about, like, the thing that I really liked about that book is
+just like that it\'s a systematic approach to becoming a 10x person and
+kind of recognizing all the things that we do that make us a 2x person.
+And the whole premise, so much of it is that, like, you would you do
+away with 80% of the stuff that you do that you\'re not good at, and you
+focus only on the 20% that you\'re good at and you constantly make those
+improvements. And I.
+
+**\
+04:51**\
+Eric Espinel\
+One of the chapters talked about how, like, recovery and whatever that
+looks like for you is like, such a huge part to becoming a 10x person.
+And it was like talking about LeBron James and how LeBron\'s trainer is
+like, LeBron needs to like, even if he\'s playing for five minutes or an
+hour, it doesn\'t matter. His recovery days are like set in stone, like
+they can\'t be moved. Those are the most important days. And I feel like
+that\'s kind of like, I don\'t know, in the grand scheme of life. Like,
+I feel like those days are like what is needed to like really become a
+10x person. Even if it\'s like party, you know?
+
+**\
+05:29**\
+Vrijen Attawar\
+Yeah, yeah, absolutely. And I\'m starting to see that increasingly. So
+it\'s just, I mean, yeah, such a journey to like try to self optimize
+and try to operate at a higher level. It\'s, it\'s ongoing journey,
+I\'ll tell you that. Yeah, man. But hey, I\'m glad you could jump on. I
+have something really fucking cool to show you. Cool extra good for
+someone with the ADHD like you and I have.
+
+**\
+05:59**\
+Eric Espinel\
+Yeah.
+
+**\
+06:00**\
+Vrijen Attawar\
+So this is the wait list site. Obviously we\'re doing it right now, but
+would appreciate you signing because more people on the list would be
+great. But it\'s also just to pull it up and sort of show you it is
+essentially the entire screen. So Zo is a AI computer in the cloud.
+Right. So it is essentially a server and a computer in the cloud. It is
+agent run. So instead of moving files around or typing, you essentially
+prompt it. You\'ll prompt it and say, hey, move this stuff from here to
+here. Or you\'ll prompt it and say, hey, run this script. In fact, you
+can even say, hey, this is the script I want. Make it and then run it.
+In fact, you can even go, hey, connect to this API.
+
+**\
+07:06**\
+Vrijen Attawar\
+So literally right before this call, I was just looking up how do I
+connect to the Fireflies Recorder API? And it\'s like, oh, I\'ll just do
+it and dump your meetings into Zoe. So it\'s going to take you a second.
+It\'s going to take a minute to really process what I\'m saying here.
+Because it\'s like a obnoxiously overpowered thing. But just to give you
+a couple of examples, like because it\'s a computer and you can just
+prompt it and you can make internal workflows. Have you tried like
+fucking around with Zapier?
+
+**\
+07:43**\
+Eric Espinel\
+I have, yeah.
+
+**\
+07:45**\
+Vrijen Attawar\
+How\'s your experience with that then?
+
+**\
+07:48**\
+Eric Espinel\
+It\'s not as much like I.
+
+**\
+07:52**\
+Vrijen Attawar\
+It\'s not. It\'s not been particularly positive, has it?
+
+**\
+07:55**\
+Eric Espinel\
+No, no. It\'s not as like intuitive and I don\'t know. Yeah.
+
+**\
+08:03**\
+Vrijen Attawar\
+Which sucks to say because they make it seem so simple that you feel
+like the idiot for not figuring it out, which is what I feel like for
+most of my life. Using Zapier is actually not that intuitive. It is.
+Just because it\'s like Lego block shit doesn\'t mean it\'s not.
+Doesn\'t mean it\'s intuitive. It just means that thing is intuitive.
+The other thing is part of a broader sort of philosophical thing that
+I\'m trying to build out around information in the modern age, which I
+think is highly relevant to and to adhd, is the idea of informational
+overload. Right. And like unregulated attention and ability to like. And
+so what I essentially aspiring to do with Zoe is to build a actual
+second brain. Not like second brain, like. Oh, they\'re talking about in
+the, you know, in like the organizational system.
+
+**\
+08:57**\
+Vrijen Attawar\
+I\'m talking like it is doing. Thinking that I want it to do when I\'m
+thinking of something else. It\'s remembering things that I\'m
+forgetting. It is like existing as an extension of me in the cloud.
+
+**\
+09:09**\
+Eric Espinel\
+Right? Yeah.
+
+**\
+09:10**\
+Vrijen Attawar\
+And so that is what you can do with Zoho. Is. Is.
+
+**\
+09:16**\
+Eric Espinel\
+So Zoe is. Is Zoe something that you built then?
+
+**\
+09:20**\
+Vrijen Attawar\
+No, Zoe is. Zo itself is a company. But then this is what. This is my
+Zoe. So this is like, once I\'ve like built out, I\'ve spent like almost
+a month building out like some pretty crazy into it. But this is, I
+guess just. Or actually let\'s do this. Like, do you want to load up?
+I\'ll put in my promo code for you. Do you want to just load it up and
+like we\'ll both share screen and we can. Yes, you can. You can sign up
+for Zoe using that wait list. There\'s a like join zo50 off button. So
+join that. It gives you 50% off of API rates, which is pretty dope.
+Basically giving you like a subsidy on like AI Compute. Nice.
+
+**\
+10:07**\
+Eric Espinel\
+Let\'s see.
+
+**\
+10:09**\
+Vrijen Attawar\
+So.
+
+**\
+10:12**\
+Eric Espinel\
+Okay, do you want to.
+
+**\
+10:15**\
+Vrijen Attawar\
+Or maybe we should do Zoom. Can you like double screen share and zoom?
+
+**\
+10:20**\
+Eric Espinel\
+Yeah, yeah.
+
+**\
+10:22**\
+Vrijen Attawar\
+Give me one second. Let me set up the zoom. I have Zoom. Okay, give me
+one sec.
+
+**\
+10:33**\
+Eric Espinel\
+Hold one second. Real quick too, while you do that.
+
+**\
+10:36**\
+Vrijen Attawar\
+No sweat. I\'m just going to jump off.

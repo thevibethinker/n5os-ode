@@ -404,7 +404,22 @@ Work in parallel with the parent thread on whatever makes sense given the contex
    - Format: Brief status, what you're working on, blockers if any
    - Frequency: At natural checkpoints (milestones, completions, errors)
 
-4. **Work independently:**
+4. **Report test results:**
+   - Create: `""" + str(self.parent_workspace / "worker_updates" / "WORKER_<YOUR_ID>_test_results.json") + """`
+   - Format: JSON with `{"tests_run": N, "passed": N, "failed": N, "details": [...]}`
+   - When: Immediately after running test suite
+
+5. **Dump completion report:**
+   - Create: `""" + str(self.parent_workspace / "worker_updates" / "WORKER_<YOUR_ID>_completion.md") + """`
+   - Format: Full summary, what was built, test results, lessons learned
+   - When: When work is 100% complete
+
+6. **Store generated artifacts:**
+   - Directory: `""" + str(self.parent_workspace / "worker_updates" / "WORKER_<YOUR_ID>_artifacts") + """`
+   - Structure: Organize by type (code, docs, data, etc.)
+   - Include: All files you generate (scripts, configs, documents, etc.)
+
+7. **Work independently:**
    - You're running in parallel, not sequentially
    - Parent may or may not be actively working
    - Coordinate through workspace writes, not direct communication
@@ -590,3 +605,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

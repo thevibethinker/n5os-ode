@@ -12,8 +12,10 @@ Responsibilities:
 import json
 import logging
 import subprocess
+import shutil
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
 MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 RENAME_LOG = MEETINGS_DIR / "rename_log.jsonl"
@@ -61,13 +63,13 @@ def standardize_meeting(meeting_id: str) -> bool:
             logger.info(f"Folder already has standard name: {meeting_id}")
             return True
         
-        # Step 3: Rename
+        # Step 3: Rename (use shutil.move for cross-filesystem support)
         new_folder = MEETINGS_DIR / new_name
         if new_folder.exists():
             logger.warning(f"Target folder already exists: {new_name}")
             return False
         
-        meeting_folder.rename(new_folder)
+        shutil.move(str(meeting_folder), str(new_folder))
         
         # Log the rename
         log_rename(meeting_id, new_name, "pipeline_integration")
@@ -118,65 +120,64 @@ block_id: {block_id}
     return True
 
 
-def generate_standard_name(meeting_folder: Path, b26_file: Path) -> str:
-    """
-    Use Zo (LLM) to generate standard meeting name.
+def generate_standard_name(meeting_folder: Path, b26_file: Path) -> Optional[str]:
+    """Generate standard folder name using Zo CLI."""
     
-    Format: YYYY-MM-DD_lead-participant_context_subtype
-    """
-    prompt = f"""You are standardizing a meeting folder name. Read the B26 metadata and generate a clean, greppable folder name.
+    b26_content = b26_file.read_text()
+    
+    # Build prompt
+    prompt = f"""Based on this B26 metadata, generate a standardized meeting folder name.
 
-TAXONOMY:
-- external subtypes: coaching, partnership, sales, workshop, discovery, ai-consulting, career-advising, general
-- internal subtypes: standup, technical, planning, cofounder, general
+Format: YYYY-MM-DD_lead-participant_context_subtype
 
-FORMAT: YYYY-MM-DD_lead-participant_context_subtype
-
-RULES:
-1. Date: Extract from B26 metadata
-2. Lead participant: ACTUAL PERSON OR COMPANY NAME (not CRM codes like "LD-NET")
-   - For external: use company name or person's name (e.g., "greenlight", "alex-caveny", "aniket")
-   - For internal: use descriptor (e.g., "team", "cofounder")
-3. Context: 2-4 words describing what meeting was about (lowercase, hyphenated)
-   - Be specific and semantic (not mechanical extraction)
-   - Examples: "recruiting-discovery", "founder-burnout", "referral-networks"
-4. Subtype: Pick from taxonomy above
+Rules:
+- Date: ISO format from B26
+- Lead participant: Actual company/person name (lowercase, hyphenated), NOT CRM codes
+- Context: 2-4 words describing what meeting was about
+- Subtype: One of: coaching, partnership, sales, workshop, discovery, ai-consulting, career-advising, standup, technical, planning, cofounder, general
 
 B26 METADATA:
-{b26_file.read_text()}
+{b26_content}
 
-OUTPUT: Just the folder name, nothing else."""
-
+Output ONLY the folder name, nothing else. No explanations, no markdown, no timestamps.
+"""
+    
     try:
+        # Call Zo CLI
         result = subprocess.run(
             ["zo", prompt],
             capture_output=True,
             text=True,
-            timeout=30
+            timeout=90,
+            cwd="/home/workspace"
         )
         
-        if result.returncode == 0:
-            # Extract just the folder name from output
-            output = result.stdout.strip()
-            # Take last line if multiple lines
-            folder_name = output.split("\n")[-1].strip()
-            
-            # Validate format
-            if validate_folder_name(folder_name):
+        if result.returncode != 0:
+            logger.warning(f"Zo CLI error: {result.stderr}")
+            return None
+        
+        # Parse output - Zo returns JSON with "output" field
+        try:
+            data = json.loads(result.stdout)
+            full_output = data.get("output", "")
+        except json.JSONDecodeError:
+            full_output = result.stdout
+        
+        # Extract folder name from output (look for pattern match
+        import re
+        for line in full_output.split("\n"):
+            match = re.match(r"^\d{4}-\d{2}-\d{2}_[a-z0-9-]+_[a-z0-9-]+_[a-z]+$", line.strip())
+            if match:
+                folder_name = line.strip()
+                logger.info(f"  Extracted folder name: {folder_name}")
                 return folder_name
-            else:
-                logger.warning(f"Generated name didn't match format: {folder_name}")
-                return ""
-        else:
-            logger.error(f"Zo CLI error: {result.stderr}")
-            return ""
-            
-    except subprocess.TimeoutExpired:
-        logger.error("Zo CLI timeout")
-        return ""
+        
+        logger.warning(f"Could not find valid folder name in Zo output: {full_output[:200]}")
+        return None
+        
     except Exception as e:
-        logger.error(f"Error calling Zo CLI: {e}")
-        return ""
+        logger.error(f"Error generating name: {e}")
+        return None
 
 
 def validate_folder_name(name: str) -> bool:

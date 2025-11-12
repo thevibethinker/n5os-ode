@@ -1,0 +1,28 @@
+WORKER 1: LLM Flight Interpreter
+=================================
+
+OPEN IN NEW ZO THREAD
+
+Mission: Parse "n5-wheresv my flight is JB 111 on Nov 15" into structured data
+
+Your Job:
+1. Receive natural language instruction
+2. Use YOUR LLM reasoning to extract: airline, flight number, date
+3. Call AviationStack API to fetch flight details
+4. Update /home/workspace/wheresv2-data/trips.jsonl
+
+Implementation:
+- Create: /home/workspace/wheresv2-data/scripts/llm_interpreter.py
+- Receives: sys.argv[1] = natural language string
+- YOU interpret it (don't write regex, use LLM intelligence)
+- Call AviationStack, update JSON file
+
+Test: n5-wheresv my flight is UA123 tomorrow
+
+Success Criteria:
+- Parses natural language correctly
+- Fetches from AviationStack
+- Updates trips.jsonl
+- Handles errors
+
+Start implementing now!

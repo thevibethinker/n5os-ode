@@ -1,0 +1,6 @@
+{
+  "protected": true,
+  "reason": "Critical production dashboard - do not move or delete",
+  "created": "2025-11-05T16:31:03.532352+00:00",
+  "created_by": "user"
+}

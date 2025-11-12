@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Content Library Entry",
+  "description": "Schema for personal content library - track meaningful content assets (both created and discovered)",
+  "type": "object",
+  "required": ["id", "title", "url", "content_type", "provenance", "date_added"],
+  "properties": {
+    "id": {
+      "description": "Unique identifier (slug format)",
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "title": {
+      "description": "Descriptive title of content",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "url": {
+      "description": "Canonical URL to content",
+      "type": "string",
+      "format": "uri"
+    },
+    "content_type": {
+      "description": "Type of content asset",
+      "enum": ["article", "podcast", "video", "social-post", "newsletter", "framework", "case-study", "quote", "resource", "paper", "book"]
+    },
+    "provenance": {
+      "description": "Where did this come from?",
+      "type": "object",
+      "required": ["source_type"],
+      "properties": {
+        "source_type": {
+          "enum": ["created", "discovered"]
+        },
+        "author": {
+          "description": "Original creator (for discovered content)",
+          "type": "string"
+        },
+        "platform": {
+          "description": "Where it was published/found",
+          "type": "string"
+        }
+      }
+    },
+    "topics": {
+      "description": "Multiple topics this relates to",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["career-transitions", "job-search", "networking", "personal-brand", "leadership", "entrepreneurship", "hiring", "talent-development", "coaching", "strategy", "productivity", "communication", "mindset", "industry-trends", "tools-resources"]
+      },
+      "minItems": 1
+    },
+    "key_findings": {
+      "description": "Core takeaways/key theses (3-5 bullet points)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 200
+      },
+      "maxItems": 10
+    },
+    "summary": {
+      "description": "Brief summary (AI-generated or manual)",
+      "type": "string",
+      "maxLength": 500
+    },
+    "date_created": {
+      "description": "When content was originally created (for your content)",
+      "type": "string",
+      "format": "date"
+    },
+    "date_discovered": {
+      "description": "When you discovered this content",
+      "type": "string",
+      "format": "date"
+    },
+    "date_added": {
+      "description": "When entry was added to library",
+      "type": "string",
+      "format": "date-time"
+    },
+    "relationships": {
+      "description": "Connections to other entries",
+      "type": "object",
+      "properties": {
+        "related_to": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "IDs of related content library entries"
+          }
+        },
+        "referenced_in": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Knowledge IDs where this is referenced"
+          }
+        }
+      }
+    },
+    "tags": {
+      "description": "Flexible tags for filtering",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "description": "How valuable is this? (1-5)",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    }
+  }
+}
+
+

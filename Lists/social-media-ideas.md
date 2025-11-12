@@ -23,17 +23,6 @@ Brady's right about AI being sycophantic—but that's not a bug in the technolog
 ---
 
 
-**ID:** I-2025-11-01-001  
-**Title:** Does the Sapir-Whorf hypothesis apply to AI? Implications for building with AI  
-**Body:**
-
-The Sapir-Whorf hypothesis suggests that language shapes thought—that the structure of your language influences how you perceive and conceptualize reality. If we apply this to AI systems: Does the "language" we use to interact with AI (prompts, system instructions, API structures) fundamentally shape what the AI can "think" or produce? More practically: Are we constraining AI capabilities by how we frame requests? When building AI products, are we inadvertently limiting what's possible by staying within familiar linguistic/conceptual frames? The implications ripple outward: prompt engineering as linguistic architecture, the importance of expanding how we communicate with AI systems, and whether true breakthroughs require us to develop entirely new "languages" for human-AI collaboration.
-
-**Tags:** ai,philosophy,product-development,sapir-whorf,language
-
----
-
-
 
 ## In Review
 
@@ -53,6 +42,20 @@ The Sapir-Whorf hypothesis suggests that language shapes thought—that the stru
 
 <!-- Ideas that have been generated or archived -->
 
+
+**ID:** I-2025-11-01-001  
+**Title:** Does the Sapir-Whorf hypothesis apply to AI? Implications for building with AI  
+**Body:**
+
+The Sapir-Whorf hypothesis suggests that language shapes thought—that the structure of your language influences how you perceive and conceptualize reality. If we apply this to AI systems: Does the "language" we use to interact with AI (prompts, system instructions, API structures) fundamentally shape what the AI can "think" or produce? More practically: Are we constraining AI capabilities by how we frame requests? When building AI products, are we inadvertently limiting what's possible by staying within familiar linguistic/conceptual frames? The implications ripple outward: prompt engineering as linguistic architecture, the importance of expanding how we communicate with AI systems, and whether true breakthroughs require us to develop entirely new "languages" for human-AI collaboration.
+
+**Tags:** ai,philosophy,product-development,sapir-whorf,language
+
+---
+**Status:** Drafted → [20251105_190404_I-2025-11-01-001_post-draft.md]
+**Date:** 2025-11-05
+
+---
 
 **ID:** I-2025-10-22-001  
 **Title:** Example: When "vulnerability" becomes strategic clarity  

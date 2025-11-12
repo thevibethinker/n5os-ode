@@ -13,10 +13,13 @@ import argparse
 import ast
 import logging
 import re
+import yaml
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Dict, Set, Optional
+from typing import List, Dict, Set, Optional, Any
+import frontmatter
 
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)sZ %(levelname)s %(message)s",
@@ -29,7 +32,7 @@ logger = logging.getLogger(__name__)
 class ValidationIssue:
     """Single validation issue found in code."""
     severity: str  # "error", "warning", "info"
-    category: str  # "stub", "placeholder", "broken_import", "contract"
+    category: str  # "stub", "placeholder", "broken_import", "contract", "session_state", "security"
     file_path: Path
     line_number: Optional[int] = None
     message: str = ""
@@ -100,10 +103,28 @@ class Validator:
         r'HACK(?:\s*:|\s+)',
     ]
     
+    # Enhanced credential patterns for security auditing
+    CREDENTIAL_PATTERNS = {
+        'api_key': r'(?:^|[^a-z_])(?:api[_-]?key|x_api_key)\s*=\s*["\']([a-zA-Z0-9_-]{15,})["\']',
+        'github_token': r'github[_-]?token\s*=\s*["\']?(ghp_[a-zA-Z0-9]{36,}|gho_[a-zA-Z0-9]{36,}|ghu_[a-zA-Z0-9]{36,}|ghs_[a-zA-Z0-9]{36,}|ghr_[a-zA-Z0-9]{36,})["\']?',
+        'password': r'password\s*=\s*["\'][^"\']{3,}["\']',
+        'secret': r'secret\s*=\s*["\'][^"\']{3,}["\']',
+        'token': r'(?<!github_)token\s*=\s*["\']([a-zA-Z0-9._-]{20,})["\']',
+        'private_key': r'-----BEGIN\s+(?:RSA\s+)?PRIVATE\s+KEY-----',
+        'aws_key': r'(?:^|[^a-z_])AKIA[0-9A-Z]{16}',
+        'aws_secret_key': r'aws[_-]?secret[_-]?(?:access[_-]?)?key\s*=\s*["\']([0-9a-zA-Z+/]{40})["\']',
+        'database_url': r'(?:postgres|mysql|mongodb)://[^\s]+:[^\s]+@[^\s]+',
+        'jwt_token': r'eyJ[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+',
+    }
+    
+    # Original unsafe patterns (kept for backward compatibility)
     UNSAFE_PATTERNS = [
         r'\.env\s*=.*["\'][^"\']*["\']',  # Hardcoded secrets
         r'password\s*=\s*["\'][^"\']+["\']',
     ]
+    
+    # SESSION_STATE.md required fields
+    SESSION_STATE_REQUIRED_FIELDS = ['conversation_id', 'type', 'focus', 'objective']
     
     def __init__(self, project_path: Path):
         self.project_path = project_path
@@ -117,29 +138,61 @@ class Validator:
         self.scan_placeholders()
         self.scan_broken_imports()
         self.scan_contracts()
+        self.scan_session_state_files()
+        self.scan_credentials()
         
         logger.info(f"✓ Scan complete: {self.report.files_scanned} files, {len(self.report.errors)} errors, {len(self.report.warnings)} warnings")
         return self.report
     
     def scan_stubs(self) -> None:
-        """Find stub implementations."""
+        """Find stub implementations using AST parsing for accuracy."""
         for py_file in self.project_path.rglob("*.py"):
             self.report.files_scanned += 1
             try:
                 content = py_file.read_text()
                 lines = content.split("\n")
                 
+                # Check for NotImplementedError using regex (simple and effective)
                 for i, line in enumerate(lines, start=1):
-                    for pattern in self.STUB_PATTERNS:
-                        if re.search(pattern, line):
-                            self.report.issues.append(ValidationIssue(
-                                severity="error",
-                                category="stub",
-                                file_path=py_file,
-                                line_number=i,
-                                message="Stub implementation detected",
-                                context=line.strip()
-                            ))
+                    if re.search(r'raise\s+NotImplementedError', line):
+                        self.report.issues.append(ValidationIssue(
+                            severity="error",
+                            category="stub",
+                            file_path=py_file,
+                            line_number=i,
+                            message="Stub implementation detected",
+                            context=line.strip()
+                        ))
+                
+                # Use AST to detect pass-only and ellipsis-only functions
+                try:
+                    tree = ast.parse(content, filename=str(py_file))
+                    for node in ast.walk(tree):
+                        if isinstance(node, ast.FunctionDef):
+                            # Check if function body is just pass or ...
+                            if len(node.body) == 1:
+                                stmt = node.body[0]
+                                if isinstance(stmt, ast.Pass):
+                                    self.report.issues.append(ValidationIssue(
+                                        severity="error",
+                                        category="stub",
+                                        file_path=py_file,
+                                        line_number=node.lineno,
+                                        message="Stub implementation detected",
+                                        context=f"def {node.name}(...): pass"
+                                    ))
+                                elif isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Constant) and stmt.value.value is ...:
+                                    self.report.issues.append(ValidationIssue(
+                                        severity="error",
+                                        category="stub",
+                                        file_path=py_file,
+                                        line_number=node.lineno,
+                                        message="Stub implementation detected",
+                                        context=f"def {node.name}(...): ..."
+                                    ))
+                except SyntaxError:
+                    pass  # Already handled in scan_broken_imports
+                
             except Exception as e:
                 logger.debug(f"Error scanning {py_file}: {e}")
     
@@ -242,6 +295,200 @@ class Validator:
             except Exception as e:
                 logger.debug(f"Error analyzing contracts in {py_file}: {e}")
     
+    def scan_session_state_files(self) -> None:
+        """
+        Parse and validate SESSION_STATE.md files using structured parsing (YAML)
+        instead of regex for proper validation.
+        """
+        VALID_CONVERSATION_TYPES = ['build', 'research', 'discussion', 'planning']
+        REQUIRED_SECTIONS = ['Metadata', 'Progress', 'Artifacts', 'Covered']
+        
+        for md_file in self.project_path.rglob("**/SESSION_STATE.md"):
+            self.report.files_scanned += 1
+            try:
+                content = md_file.read_text()
+                
+                # Use frontmatter.load to robustly parse YAML frontmatter and content
+                try:
+                    post = frontmatter.loads(content)
+                    parsed_yaml = post.metadata
+                    markdown_content = post.content
+                except Exception as e:
+                    self.report.issues.append(ValidationIssue(
+                        severity="error",
+                        category="session_state",
+                        file_path=md_file,
+                        line_number=1,
+                        message=f"YAML parsing error: {str(e)}",
+                        context="Ensure valid YAML frontmatter between '---' delimiters"
+                    ))
+                    continue
+
+                if not isinstance(parsed_yaml, dict):
+                    self.report.issues.append(ValidationIssue(
+                        severity="error",
+                        category="session_state",
+                        file_path=md_file,
+                        line_number=1,
+                        message="YAML frontmatter must be a dictionary/map",
+                        context=f"Got {type(parsed_yaml).__name__} instead"
+                    ))
+                    continue
+
+                # Validate required fields using structured access
+                missing_fields = [f for f in self.SESSION_STATE_REQUIRED_FIELDS if f not in parsed_yaml]
+                if missing_fields:
+                    self.report.issues.append(ValidationIssue(
+                        severity="error",
+                        category="session_state",
+                        file_path=md_file,
+                        line_number=1,
+                        message=f"Missing required fields: {', '.join(missing_fields)}",
+                        context=f"Required fields: {', '.join(self.SESSION_STATE_REQUIRED_FIELDS)}"
+                    ))
+                
+                # Validate conversation_id format (must be con_XXXX)
+                if 'conversation_id' in parsed_yaml:
+                    conv_id = parsed_yaml['conversation_id']
+                    if not isinstance(conv_id, str):
+                        self.report.issues.append(ValidationIssue(
+                            severity="error",
+                            category="session_state",
+                            file_path=md_file,
+                            line_number=1,
+                            message="conversation_id must be a string",
+                            context=f"Got {type(conv_id).__name__}"
+                        ))
+                    elif not re.match(r'^con_[a-zA-Z0-9]+$', conv_id):
+                        self.report.issues.append(ValidationIssue(
+                            severity="error",
+                            category="session_state",
+                            file_path=md_file,
+                            line_number=1,
+                            message=f"Invalid conversation_id format: {conv_id}",
+                            context="Expected format: con_XXXXXXXX"
+                        ))
+                
+                # Validate conversation type
+                if 'type' in parsed_yaml:
+                    conv_type = parsed_yaml['type']
+                    if conv_type not in VALID_CONVERSATION_TYPES:
+                        self.report.issues.append(ValidationIssue(
+                            severity="warning",
+                            category="session_state",
+                            file_path=md_file,
+                            line_number=1,
+                            message=f"Unknown conversation type: {conv_type}",
+                            context=f"Valid types: {', '.join(VALID_CONVERSATION_TYPES)}"
+                        ))
+                
+                # Check for empty or placeholder values using structured access
+                for field_name, value in parsed_yaml.items():
+                    if isinstance(value, str) and value.strip() in ['', 'TBD', 'TODO', 'FIXME', 'PLACEHOLDER']:
+                        self.report.issues.append(ValidationIssue(
+                            severity="warning",
+                            category="session_state",
+                            file_path=md_file,
+                            line_number=1,
+                            message=f"Placeholder value in {field_name}",
+                            context=f"{field_name}: {value}"
+                        ))
+                
+                # Check tags is a list if present
+                if 'tags' in parsed_yaml and not isinstance(parsed_yaml['tags'], list):
+                    self.report.issues.append(ValidationIssue(
+                        severity="warning",
+                        category="session_state",
+                        file_path=md_file,
+                        line_number=1,
+                        message="tags should be a list",
+                        context=f"Got {type(parsed_yaml['tags']).__name__}"
+                    ))
+                
+                # Validate markdown content structure - check for required sections
+                for section in REQUIRED_SECTIONS:
+                    section_pattern = rf'##\s+{section}'
+                    if not re.search(section_pattern, markdown_content):
+                        self.report.issues.append(ValidationIssue(
+                            severity="warning",
+                            category="session_state",
+                            file_path=md_file,
+                            line_number=1,
+                            message=f"Missing '{section}' section in markdown content",
+                            context=f"Expected sections: {', '.join(REQUIRED_SECTIONS)}"
+                        ))
+                
+            except Exception as e:
+                logger.debug(f"Error scanning {md_file}: {e}")
+                self.report.issues.append(ValidationIssue(
+                    severity="error",
+                    category="session_state",
+                    file_path=md_file,
+                    line_number=1,
+                    message=f"Failed to read SESSION_STATE.md: {str(e)}",
+                    context=""
+                ))
+    
+    def scan_credentials(self) -> None:
+        """
+        Enhanced credential scanning security audit for context bundles.
+        Detects hardcoded credentials, API keys, tokens, and other secrets.
+        Skips commented lines to reduce false positives.
+        """
+        # Scan all files, not just Python files
+        extensions_to_scan = ['.py', '.md', '.yaml', '.yml', '.json', '.txt', '.sh', '.env']
+        
+        def is_comment_line(line: str, file_ext: str) -> bool:
+            """Check if a line is a comment based on file extension."""
+            stripped = line.strip()
+            if file_ext == '.py':
+                return stripped.startswith('#') or stripped.startswith('"""') or stripped.startswith("'''")
+            elif file_ext in ['.sh', '.yml', '.yaml']:
+                return stripped.startswith('#')
+            return False
+        
+        for ext in extensions_to_scan:
+            for file_path in self.project_path.rglob(f"*{ext}"):
+                # Avoid scanning node_modules, __pycache__, .git, etc.
+                if any(skip in str(file_path) for skip in ['node_modules', '__pycache__', '.git', '.venv', 'venv']):
+                    continue
+                
+                self.report.files_scanned += 1
+                try:
+                    content = file_path.read_text()
+                    lines = content.split("\n")
+                    
+                    in_docstring = False
+                    for i, line in enumerate(lines, start=1):
+                        # Track docstring state for Python files
+                        if file_path.suffix == '.py':
+                            if '"""' in line or "'''" in line:
+                                in_docstring = not in_docstring
+                            if in_docstring or is_comment_line(line, file_path.suffix):
+                                continue
+                        elif is_comment_line(line, file_path.suffix):
+                            continue
+                        
+                        for cred_type, pattern in self.CREDENTIAL_PATTERNS.items():
+                            if re.search(pattern, line, re.IGNORECASE):
+                                context_preview = line.strip()
+                                if len(context_preview) > 100:
+                                    context_preview = context_preview[:100] + "..."
+                                
+                                # Format credential type for user-friendly message
+                                formatted_type = cred_type.replace('_', ' ').title()
+                                
+                                self.report.issues.append(ValidationIssue(
+                                    severity="error",
+                                    category="security",
+                                    file_path=file_path,
+                                    line_number=i,
+                                    message=f"Potential {formatted_type} found: hardcoded credential",
+                                    context=context_preview
+                                ))
+                except Exception as e:
+                    logger.debug(f"Error scanning for credentials in {file_path}: {e}")
+    
     def _can_resolve_import(self, module_name: str, from_file: Path) -> bool:
         """Check if an import can be resolved (basic heuristic)."""
         # Standard library (common ones)
@@ -249,7 +496,7 @@ class Validator:
             "os", "sys", "re", "json", "pathlib", "typing", "datetime", 
             "argparse", "logging", "subprocess", "collections", "itertools",
             "functools", "dataclasses", "asyncio", "concurrent", "threading",
-            "multiprocessing", "sqlite3", "csv", "unittest", "ast"
+            "multiprocessing", "sqlite3", "csv", "unittest", "ast", "yaml"
         }
         
         first_part = module_name.split(".")[0]
@@ -284,7 +531,7 @@ class Validator:
 
 def main():
     parser = argparse.ArgumentParser(description="Build Validation Tools")
-    parser.add_argument("action", choices=["scan", "check-contracts", "sweep"])
+    parser.add_argument("action", choices=["scan", "check-contracts", "sweep", "session-state", "security-audit"])
     parser.add_argument("project_path", type=Path, help="Path to project directory")
     parser.add_argument("--all", action="store_true", help="Run all checks (for sweep)")
     parser.add_argument("--json", action="store_true", help="Output JSON format")
@@ -302,6 +549,10 @@ def main():
         validator.scan_broken_imports()
     elif args.action == "check-contracts":
         validator.scan_contracts()
+    elif args.action == "session-state":
+        validator.scan_session_state_files()
+    elif args.action == "security-audit":
+        validator.scan_credentials()
     elif args.action == "sweep":
         validator.scan_all()
     
@@ -335,3 +586,13 @@ def main():
 
 if __name__ == "__main__":
     exit(main())
+
+
+
+
+
+
+
+
+
+

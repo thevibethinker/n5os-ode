@@ -1,0 +1,372 @@
+#!/usr/bin/env python3
+"""
+Drive Meeting Ingestion
+Version: 1.0
+Purpose: Download meeting transcripts from Google Drive with conversion and deduplication
+Architecture: Zone 3 (Deterministic Script + Structured Format)
+Config: N5/prefs/ingestion/drive_meetings_v2.yaml
+"""
+
+import argparse
+import hashlib
+import json
+import logging
+import sqlite3
+import subprocess
+import sys
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Optional
+
+import yaml
+
+# Import semantic filename normalization
+from semantic_filename import normalize_meeting_filename, get_meeting_id
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)sZ %(levelname)s %(message)s",
+    datefmt="%Y-%m-%dT%H:%M:%S"
+)
+logger = logging.getLogger(__name__)
+
+# Constants
+WORKSPACE_ROOT = Path("/home/workspace")
+DEFAULT_CONFIG = WORKSPACE_ROOT / "N5/prefs/ingestion/drive_meetings_v2.yaml"
+
+
+def check_pause_flags(flags: list[Path]) -> bool:
+    """
+    Check if any pause flag exists and contains paused=true.
+    
+    Returns:
+        True if paused (should exit), False if can proceed
+    """
+    for flag_path in flags:
+        if not flag_path.exists():
+            continue
+        try:
+            content = flag_path.read_text()
+            if "paused=true" in content.lower():
+                logger.warning(f"Pause flag active: {flag_path}")
+                return True
+        except Exception as e:
+            logger.error(f"Error reading pause flag {flag_path}: {e}")
+            return True  # Fail-safe: if can't read, assume paused
+    return False
+
+
+def load_config(path: Path) -> dict:
+    """
+    Load and validate YAML config.
+    
+    Raises:
+        ValueError: If config invalid or missing required keys
+    """
+    if not path.exists():
+        raise ValueError(f"Config not found: {path}")
+    
+    with open(path) as f:
+        config = yaml.safe_load(f)
+    
+    # Validate required sections
+    required = ["ingestion"]
+    for key in required:
+        if key not in config:
+            raise ValueError(f"Config missing required key: {key}")
+    
+    ing = config["ingestion"]
+    required_ing = ["pause_flags", "destination", "data", "runtime"]
+    for key in required_ing:
+        if key not in ing:
+            raise ValueError(f"Config missing ingestion.{key}")
+    
+    logger.info(f"Config loaded: {path}")
+    return config
+
+
+def load_registry(path: Path) -> dict:
+    """
+    Load JSONL registry into {meeting_id: {drive_file_id, last_modified, ...}}.
+    
+    Returns:
+        dict mapping meeting_id to registry entry
+    """
+    registry = {}
+    if not path.exists():
+        logger.info(f"Registry not found, creating new: {path}")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.touch()
+        return registry
+    
+    with open(path) as f:
+        for line_num, line in enumerate(f, 1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+                meeting_id = entry.get("meeting_id")
+                if meeting_id:
+                    registry[meeting_id] = entry
+            except json.JSONDecodeError as e:
+                logger.warning(f"Skipping invalid JSON at line {line_num}: {e}")
+    
+    logger.info(f"Registry loaded: {len(registry)} entries")
+    return registry
+
+
+def save_registry(path: Path, registry: dict):
+    """Write registry back to JSONL."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, 'w') as f:
+        for entry in registry.values():
+            f.write(json.dumps(entry) + "\n")
+    logger.info(f"Registry saved: {len(registry)} entries")
+
+
+def should_process(
+    meeting_id: str,
+    drive_file_id: str,
+    last_modified: str,
+    registry: dict,
+    on_conflict: str,
+    check_last_modified: bool
+) -> tuple[bool, str]:
+    """
+    Apply deduplication logic.
+    
+    Returns:
+        (should_process, reason)
+    """
+    if meeting_id not in registry:
+        return (True, "new")
+    
+    existing = registry[meeting_id]
+    
+    if on_conflict == "skip":
+        return (False, "skip_duplicate")
+    
+    if on_conflict == "force_overwrite":
+        return (True, "force_overwrite")
+    
+    if on_conflict == "update_if_modified":
+        if not check_last_modified:
+            return (True, "update_no_check")
+        
+        existing_modified = existing.get("last_modified", "")
+        if last_modified > existing_modified:
+            return (True, "update_modified")
+        else:
+            return (False, "skip_not_modified")
+    
+    # Unknown on_conflict mode
+    logger.warning(f"Unknown on_conflict mode: {on_conflict}, defaulting to skip")
+    return (False, "skip_unknown_mode")
+
+
+def normalize_filename(original: str, config: dict) -> str:
+    """
+    Apply filename normalization using semantic understanding.
+    
+    Returns:
+        Normalized filename
+    """
+    return normalize_meeting_filename(original)
+
+
+def validate_transcript(
+    path: Path,
+    min_size: int,
+    max_size: int,
+    check_text_signature: bool
+) -> tuple[bool, str]:
+    """
+    Validate transcript file.
+    
+    Returns:
+        (valid, reason)
+    """
+    if not path.exists():
+        return (False, "file_not_found")
+    
+    size = path.stat().st_size
+    
+    if size < min_size:
+        return (False, f"too_small_{size}_bytes")
+    
+    if size > max_size:
+        return (False, f"too_large_{size}_bytes")
+    
+    # Check text signature (reject ZIP/docx files)
+    if check_text_signature:
+        try:
+            with open(path, 'rb') as f:
+                sig = f.read(4)
+            if sig == b'PK\x03\x04':
+                return (False, "zip_signature_detected")
+        except Exception as e:
+            return (False, f"signature_check_error_{e}")
+    
+    return (True, "valid")
+
+
+def compute_checksum(path: Path) -> str:
+    """Compute SHA256 checksum of file."""
+    sha256 = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for chunk in iter(lambda: f.read(8192), b''):
+            sha256.update(chunk)
+    return sha256.hexdigest()
+
+
+def upsert_to_db(db_path: Path, meeting_id: str, transcript_path: str, meeting_type: str = "UNKNOWN"):
+    """Insert or update meetings table with status=queued_for_ai."""
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.cursor()
+    
+    now = datetime.now(timezone.utc).isoformat()
+    
+    # Check if exists
+    cur.execute("SELECT meeting_id FROM meetings WHERE meeting_id = ?", (meeting_id,))
+    exists = cur.fetchone()
+    
+    if exists:
+        cur.execute("""
+            UPDATE meetings 
+            SET transcript_path = ?, status = 'queued_for_ai', detected_at = ?
+            WHERE meeting_id = ?
+        """, (transcript_path, now, meeting_id))
+        logger.info(f"DB updated: {meeting_id}")
+    else:
+        cur.execute("""
+            INSERT INTO meetings (meeting_id, transcript_path, meeting_type, status, detected_at)
+            VALUES (?, ?, ?, 'queued_for_ai', ?)
+        """, (meeting_id, transcript_path, meeting_type, now))
+        logger.info(f"DB inserted: {meeting_id}")
+    
+    conn.commit()
+    conn.close()
+
+
+def write_audit_entry(audit_path: Path, entry: dict):
+    """Append JSONL audit entry."""
+    audit_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(audit_path, 'a') as f:
+        f.write(json.dumps(entry) + "\n")
+
+
+def main(dry_run: bool = False, batch_size: int = 10, config_path: Path = DEFAULT_CONFIG):
+    """
+    Main ingestion workflow.
+    
+    Returns:
+        0 on success, 1 on error
+    """
+    try:
+        # Load config
+        config = load_config(config_path)
+        ing = config["ingestion"]
+        
+        # Check pause flags
+        pause_flags = [Path(p) for p in ing["pause_flags"]]
+        if check_pause_flags(pause_flags):
+            logger.info("Ingestion paused by flag, exiting")
+            return 0
+        
+        # Load registry
+        registry_path = Path(ing["deduplication"]["registry_path"])
+        registry = load_registry(registry_path)
+        
+        # Load redownload queue
+        queue_path = Path(ing["data"]["redownload_queue_jsonl"])
+        if not queue_path.exists():
+            logger.warning(f"Redownload queue not found: {queue_path}")
+            return 0
+        
+        queue = []
+        with open(queue_path) as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    try:
+                        queue.append(json.loads(line))
+                    except json.JSONDecodeError:
+                        pass
+        
+        logger.info(f"Queue loaded: {len(queue)} items")
+        
+        if not queue:
+            logger.info("Queue empty, nothing to process")
+            return 0
+        
+        # Process batch
+        batch = queue[:batch_size]
+        logger.info(f"Processing batch: {len(batch)} items (dry_run={dry_run})")
+        
+        stats = {"processed": 0, "succeeded": 0, "failed": 0, "skipped": 0}
+        
+        for item in batch:
+            meeting_id = item.get("meeting_id", "")
+            drive_file_id = item.get("drive_file_id", "")
+            
+            if not meeting_id or not drive_file_id:
+                logger.warning(f"Skipping item with missing fields: {item}")
+                stats["skipped"] += 1
+                continue
+            
+            stats["processed"] += 1
+            
+            logger.info(f"Processing: {meeting_id}")
+            
+            # Check deduplication
+            should_proc, reason = should_process(
+                meeting_id,
+                drive_file_id,
+                item.get("last_modified", ""),
+                registry,
+                ing["deduplication"]["on_conflict"],
+                ing["deduplication"]["check_last_modified"]
+            )
+            
+            if not should_proc:
+                logger.info(f"Skipping {meeting_id}: {reason}")
+                stats["skipped"] += 1
+                continue
+            
+            if dry_run:
+                logger.info(f"[DRY RUN] Would process: {meeting_id} (reason: {reason})")
+                stats["succeeded"] += 1
+                continue
+            
+            # NOTE: Actual Drive download and conversion will be implemented in Phase 2
+            # For now, this is Phase 1 complete: skeleton and validation logic
+            
+            logger.warning(f"Phase 2 not yet implemented: skipping actual download for {meeting_id}")
+            stats["skipped"] += 1
+        
+        # Summary
+        log_path = Path(ing["data"]["log_path"])
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(log_path, 'a') as f:
+            summary = f"[{datetime.now(timezone.utc).isoformat()}] DRIVE_INGESTION: processed={stats['processed']} succeeded={stats['succeeded']} failed={stats['failed']} skipped={stats['skipped']} dry_run={dry_run}"
+            f.write(summary + "\n")
+        
+        logger.info(f"Complete: {stats}")
+        return 0
+        
+    except Exception as e:
+        logger.error(f"Fatal error: {e}", exc_info=True)
+        return 1
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Drive meeting ingestion with conversion")
+    parser.add_argument("--dry-run", action="store_true", help="Preview actions without writing")
+    parser.add_argument("--batch-size", type=int, default=10, help="Process N files per invocation")
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG, help="Config file path")
+    
+    args = parser.parse_args()
+    sys.exit(main(dry_run=args.dry_run, batch_size=args.batch_size, config_path=args.config))

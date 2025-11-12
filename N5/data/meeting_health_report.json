@@ -1,15 +1,15 @@
 {
-  "generated_at": "2025-11-03T19:01:13.796277+00:00",
+  "generated_at": "2025-11-11T19:02:10.078306+00:00",
   "summary": {
     "total_scanned": 50,
-    "critical_issues": 9,
-    "high_issues": 30,
+    "critical_issues": 48,
+    "high_issues": 0,
     "medium_issues": 0,
-    "healthy": 11
+    "healthy": 2
   },
   "critical": [
     {
-      "meeting_id": "2025-10-30_external-jake-gates",
+      "meeting_id": "2025-11-11_EdmundCuthbert-Superposition_founder",
       "status": "CRITICAL",
       "issues": [
         {
@@ -22,7 +22,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-30_external-ilya",
+      "meeting_id": "2025-11-09_Mihir-Makwana_zo-partnership",
       "status": "CRITICAL",
       "issues": [
         {
@@ -35,7 +35,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-30_external-ikk-nkrd-kgn",
+      "meeting_id": "2025-11-09_Ilya-Sales-Coaching_networking",
       "status": "CRITICAL",
       "issues": [
         {
@@ -48,7 +48,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-29_internal-team",
+      "meeting_id": "2025-11-09_Dylan-Lieberman_networking",
       "status": "CRITICAL",
       "issues": [
         {
@@ -61,102 +61,566 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-29_external-jeff-sipe",
+      "meeting_id": "2025-11-08_Vrijen-BenZo_internal",
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B08(4x), B25(3x), B05(3x), B13(3x), B21(3x), B07(4x), B27(3x), B31(4x), B01(3x), B26(3x), B24(3x), B02(3x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "13 blocks appear to be templates only"
-        },
-        {
-          "type": "EMPTY_BLOCKS",
+          "type": "MISSING_METADATA",
           "severity": "CRITICAL",
-          "message": "12 blocks are completely empty"
+          "message": "Missing metadata file"
         }
       ],
-      "block_count": 41,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30 14:20:35 EDT"
+      "block_count": 0,
+      "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-29_external-alex",
+      "meeting_id": "2025-11-07_ilse-midday-chat_internal",
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        },
-        {
-          "type": "EMPTY_BLOCKS",
+          "type": "MISSING_METADATA",
           "severity": "CRITICAL",
-          "message": "12 blocks are completely empty"
+          "message": "Missing metadata file"
         }
       ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30 14:20:35 EDT"
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-07_SaraSchmitt-Finfair_founder",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-06_Griffin-Schultz-Yale_founder",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-05_CK-Khot-AGIInc_networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_zo-team_demo-event-prep_internal",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_unknown-attendee_advisory",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_granola-team_zo-demo_workshop",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_granola-group_zo-product-demo_workshop",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_dbn-ctum_financial-review_partner",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Vrijen-SecondShift_Networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Vrijen-Rochel_1-1_Networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Tejas-Ravindran_personal-reset",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Ilya-Kucherenko_internal-onboarding",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Hamoon-Ekhtiari-FutureFit_founder",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_David-Speigel_internal",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Bram-Adams_advisory",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-04_Anthony-DeLuise_product-career",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-03_plaud-product-overview_internal",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-03_careerspan-team_ai-circle-presentation-prep_planning",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-03_Plaud-VrijenaAI-Workflow_technical",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-03_MariaSantos-Trigger_one-on-one",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-31_Danny-Williams_transition",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-30_Ilya-Sales-Coaching_networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-29_careerspan-team_daily-standup_standup",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-29_Mihir-Makwana_zo-partnership",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-28_Mihir-Makwana_networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
     },
     {
       "meeting_id": "2025-10-27_external-lisa-noble",
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B08(2x), B26(2x), B21(2x), B01(2x), B31(2x), B27(2x), B25(2x), B02(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        },
-        {
-          "type": "EMPTY_BLOCKS",
+          "type": "MISSING_METADATA",
           "severity": "CRITICAL",
-          "message": "1 blocks are completely empty"
+          "message": "Missing metadata file"
         }
       ],
-      "block_count": 26,
-      "expected_blocks": 0,
-      "processing_status": "unknown",
-      "processed_at": "unknown"
+      "block_count": 0,
+      "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-27_external-david",
+      "meeting_id": "2025-10-26_Plaud_networking",
       "status": "CRITICAL",
       "issues": [
         {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B21(2x), B02(2x), B01(2x), B07(2x), B25(2x), B26(2x), B31(2x), B08(2x), B13(2x), B05(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "2 blocks appear to be templates only"
-        },
-        {
-          "type": "EMPTY_BLOCKS",
+          "type": "MISSING_METADATA",
           "severity": "CRITICAL",
-          "message": "1 blocks are completely empty"
+          "message": "Missing metadata file"
         }
       ],
-      "block_count": 22,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-28T09:02:45Z"
+      "block_count": 0,
+      "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-10-23-deepakeigenstrategicsystemscom",
+      "meeting_id": "2025-10-24_Careerspan-Sam_partnership-discovery",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-22_Pamela Kavalam",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-22_Brinleigh-Murphy-Reuter_external",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-22_Brinleigh-Murphy-Reuter_coaching",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-21_Zoe-Weber_networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-21_Ilse_internal-standup",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-20_dylan-johnson-route_networking",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-20_Bennett-Lee_edtech",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-20_Bennett-Lee_advisory",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-15_Jaya-Pokuri_founder-conversation",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-15_Careerspan-MagicEdTech_panel-planning",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-15_AshStraughn-SIEM_founder-partnership",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-14_nira-team_strategy-exploration_founder",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-14_Logan-Vrijen_internal-strategy",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-10-10_Logan-Vrijen_internal-strategy",
       "status": "CRITICAL",
       "issues": [
         {
@@ -169,532 +633,6 @@
       "expected_blocks": 0
     }
   ],
-  "high": [
-    {
-      "meeting_id": "2025-10-29_external-mihir-makwana-x-vrijen",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "PARTIAL_COMPLETION",
-          "severity": "HIGH",
-          "message": "Only 1/12 blocks exist (8% complete)"
-        }
-      ],
-      "block_count": 1,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30 14:20:35 EDT"
-    },
-    {
-      "meeting_id": "2025-10-29_external-guz-dgac-fvk-2",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B13(2x), B24(2x), B27(2x), B25(2x), B02(2x), B08(3x), B07(2x), B31(2x), B01(2x), B21(2x), B26(3x), B05(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 26,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30 14:20:35 EDT"
-    },
-    {
-      "meeting_id": "2025-10-29_external-guz-dgac-fvk",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "11 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30 14:20:35 EDT"
-    },
-    {
-      "meeting_id": "2025-10-29_external-alex-x-vrijen-wisdom-partners-coaching",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "unknown"
-    },
-    {
-      "meeting_id": "2025-10-28_external-rochel",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "unknown"
-    },
-    {
-      "meeting_id": "2025-10-28_external-fohe-x-careerspan",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "unknown"
-    },
-    {
-      "meeting_id": "2025-10-27_external-unknown",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.012405+00:00"
-    },
-    {
-      "meeting_id": "2025-10-27_external-meet-kob-icsy-peo",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "unknown"
-    },
-    {
-      "meeting_id": "2025-10-27_external-ilya",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B08(2x), B07(2x), B01(2x), B21(2x), B25(2x), B27(2x), B02(2x), B31(2x), B05(2x), B13(2x), B26(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 23,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-28T09:39:36Z"
-    },
-    {
-      "meeting_id": "2025-10-27_external-gabi",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B21(2x), B07(2x), B01(2x), B02(2x), B31(2x), B26(2x), B25(2x), B08(2x), B05(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T13:20:39.484954-04:00"
-    },
-    {
-      "meeting_id": "2025-10-27_external-david-x-careerspan",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.010511+00:00"
-    },
-    {
-      "meeting_id": "2025-10-26_external-unknown",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.008560+00:00"
-    },
-    {
-      "meeting_id": "2025-10-26_external-plaud-note-10-26-planning-meeting-open-bar-birthday-venue-booking-guest-list-and-travel-coordination",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T13:20:39.484320-04:00"
-    },
-    {
-      "meeting_id": "2025-10-26_external-meet-dyy-anma-byk",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B02(2x), B31(2x), B25(2x), B08(2x), B26(2x), B21(2x), B01(2x), B07(2x), B05(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-27T12:12:00Z"
-    },
-    {
-      "meeting_id": "2025-10-26_external-eric-n5-os-sync",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B08(2x), B26(2x), B07(2x), B21(2x), B25(2x), B01(2x), B05(2x), B02(2x), B31(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "unknown"
-    },
-    {
-      "meeting_id": "2025-10-24_external-unknown",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.003814+00:00"
-    },
-    {
-      "meeting_id": "2025-10-24_external-sam-partnership-discovery-call",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B27(2x), B25(2x), B31(2x), B02(2x), B07(2x), B05(2x), B21(2x), B01(2x), B08(2x), B26(2x), B13(2x), B24(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 25,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-24T22:43:02Z"
-    },
-    {
-      "meeting_id": "2025-10-24_external-ixr-myzo-vut",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B05(2x), B02(2x), B21(2x), B01(2x), B25(2x), B26(2x), B08(2x), B07(2x), B31(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-24T12:07:29-04:00"
-    },
-    {
-      "meeting_id": "2025-10-24_external-gabi-zo-demo",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B01(2x), B08(2x), B21(2x), B07(2x), B05(2x), B25(2x), B02(2x), B31(2x), B26(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-24T15:47:06-04:00"
-    },
-    {
-      "meeting_id": "2025-10-24_external-gabi-x-vrijen-zo-demo",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:55.002011+00:00"
-    },
-    {
-      "meeting_id": "2025-10-24_external-careerspan-x-sam",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:54.998276+00:00"
-    },
-    {
-      "meeting_id": "2025-10-24_external-alexis-mishu",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B25(2x), B07(2x), B02(2x), B26(2x), B08(2x), B01(2x), B05(2x), B21(2x), B31(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-24T21:20:01Z"
-    },
-    {
-      "meeting_id": "2025-10-23_internal-team_144806",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B26(2x), B13(2x), B02(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "2 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 9,
-      "expected_blocks": 3,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-23T19:04:12Z"
-    },
-    {
-      "meeting_id": "2025-10-23_external-unknown",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 12,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:54.991869+00:00"
-    },
-    {
-      "meeting_id": "2025-10-23_external-mckinsey-founders-orbit-monthly-meeting",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B08(2x), B05(2x), B26(2x), B31(2x), B25(2x), B21(2x), B01(2x), B02(2x), B07(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-23T20:48:38-04:00"
-    },
-    {
-      "meeting_id": "2025-10-23_external-mck-consumer-community-group-call",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B26(2x), B25(2x), B05(2x), B02(2x), B21(2x), B31(2x), B01(2x), B08(2x), B07(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-23T21:22:40-04:00"
-    },
-    {
-      "meeting_id": "2025-10-23_external-gja-nzqi-sxu",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B21(2x), B05(2x), B08(2x), B07(2x), B01(2x), B25(2x), B26(2x), B31(2x), B02(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-23T21:07:57-04:00"
-    },
-    {
-      "meeting_id": "2025-10-23_external-david-x-careerspan",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B27(2x), B24(2x), B31(2x), B01(2x), B26(2x), B21(2x), B08(2x), B05(2x), B25(2x), B02(2x), B13(2x), B07(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "12 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 25,
-      "expected_blocks": 12,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:54.986511+00:00"
-    },
-    {
-      "meeting_id": "2025-10-22_internal-vrijen-x-ilse-catch-up",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "3 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 3,
-      "expected_blocks": 3,
-      "processing_status": "completed",
-      "processed_at": "2025-10-30T19:20:54.984838+00:00"
-    },
-    {
-      "meeting_id": "2025-10-22_external-year-up-united_160549",
-      "status": "HIGH",
-      "issues": [
-        {
-          "type": "DUPLICATE_BLOCKS",
-          "severity": "MEDIUM",
-          "message": "Duplicate blocks: B25(2x), B21(2x), B31(2x), B01(2x), B08(2x), B07(2x), B26(2x), B02(2x), B05(2x)"
-        },
-        {
-          "type": "TEMPLATE_ONLY",
-          "severity": "HIGH",
-          "message": "1 blocks appear to be templates only"
-        }
-      ],
-      "block_count": 21,
-      "expected_blocks": 12,
-      "processing_status": "unknown",
-      "processed_at": "2025-10-22T20:57:36Z"
-    }
-  ],
+  "high": [],
   "medium": []
 }

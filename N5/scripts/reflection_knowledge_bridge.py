@@ -62,8 +62,9 @@ If no knowledge-worthy insights found, return empty array: []
 
 
 def get_api_client() -> anthropic.Anthropic:
-    """Get Anthropic API client."""
-    return anthropic.Anthropic()
+    """Get Anthropic API client configured for Zo's internal proxy."""
+    # Zo routes through internal proxy, just needs a placeholder key
+    return anthropic.Anthropic(api_key="zo-internal")
 
 
 def scan_reflection_blocks(days: int = 7) -> List[Dict[str, Any]]:

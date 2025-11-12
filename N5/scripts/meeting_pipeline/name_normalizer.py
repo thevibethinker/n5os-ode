@@ -12,6 +12,83 @@ from typing import Optional, Dict, List
 import unicodedata
 import logging
 
+# Import LLM naming module (with fallback to pattern-based naming)
+try:
+    from llm_naming import generate_folder_name_llm
+    LLM_NAMING_AVAILABLE = True
+except ImportError:
+    LLM_NAMING_AVAILABLE = False
+    logging.warning("LLM naming module not available, using pattern-based naming only")
+
+# === NEW: Helpers for safer metadata extraction and naming ===
+NAME_TOKEN_RE = re.compile(r"^[A-Z][a-zA-Z\-']+$")
+PARENS_ORG_RE = re.compile(r"\(([^)]+)\)")
+ATTENDEES_LINE_RE = re.compile(r"^\*\*Attendees:\*\*\s*(.+)$|^Attendees:\s*(.+)$", re.IGNORECASE)
+
+def _normalize_person_name(raw: str) -> str:
+    """Return First-Last form with hyphen, stripping extra notes."""
+    # Remove extra commas/notes
+    raw = raw.strip().replace("  ", " ")
+    # Remove trailing roles in brackets e.g., "John Doe [Host]"
+    raw = re.sub(r"\s*\[[^\]]+\]$", "", raw)
+    # Remove email angle brackets
+    raw = re.sub(r"<[^>]+>", "", raw)
+    parts = [p for p in re.split(r"\s+", raw) if p]
+    if len(parts) >= 2 and all(NAME_TOKEN_RE.match(p.split('-')[0]) for p in parts[:2]):
+        first, last = parts[0], parts[1]
+        return f"{first}-{last}"
+    # Fallback: return tokenized single
+    return parts[0] if parts else "unknown"
+
+def _normalize_org(raw: str) -> str:
+    raw = raw.strip()
+    # Common suffix removal
+    raw = re.sub(r",?\s+(Inc\.|LLC|Ltd\.|Corp\.|Corporation)$", "", raw, flags=re.IGNORECASE)
+    # Lowercase hyphenated
+    return re.sub(r"[^a-z0-9]+", "-", raw.lower()).strip('-') or "unknown"
+
+def _extract_attendees_from_b26_text(text: str) -> list[dict]:
+    """Parse 'Attendees:' line from B26 freeform markdown and return [{'name':..., 'organization':..., 'is_internal': bool}]"""
+    attendees = []
+    # Find a line that starts with Attendees:
+    for line in text.splitlines():
+        m = ATTENDEES_LINE_RE.match(line.strip())
+        if not m:
+            continue
+        payload = m.group(1) or m.group(2) or ""
+        # Split on commas, then parse "Name (Org)"
+        for chunk in [c.strip() for c in payload.split(',') if c.strip()]:
+            # Extract org in parentheses if present
+            org_match = PARENS_ORG_RE.search(chunk)
+            org = org_match.group(1).strip() if org_match else None
+            name = PARENS_ORG_RE.sub("", chunk).strip()
+            if not name:
+                continue
+            norm_name = _normalize_person_name(name)
+            norm_org = _normalize_org(org) if org else None
+            is_internal = (norm_org == "careerspan") or ("vrijen" in name.lower())
+            attendees.append({
+                "name": norm_name,
+                "organization": norm_org,
+                "is_internal": is_internal,
+            })
+        break
+    return attendees
+
+def _pick_topic_from_b28_text(text: str) -> str:
+    """Very light topic extractor from B28 when multiple orgs."""
+    # Look for Meeting Type or Strategic Context lines
+    for key in ("Meeting Type", "Strategic Context", "Topic"):
+        m = re.search(rf"\*\*{key}\*\*:\s*(.+)$", text, flags=re.IGNORECASE | re.MULTILINE)
+        if m:
+            val = m.group(1).strip()
+            # pick last significant word
+            tokens = re.split(r"\W+", val.lower())
+            tokens = [t for t in tokens if t and t not in {"call","meeting","sync","discussion","chat","review","weekly"}]
+            if tokens:
+                return tokens[-1]
+    return "external"
+
 def slugify(text: str) -> str:
     """Convert text to URL-safe slug"""
     # Normalize unicode characters
@@ -181,49 +258,58 @@ def normalize_meeting_name(
     
     return normalized
 
-def rename_meeting_folder(old_path: Path, dry_run: bool = True) -> Optional[Path]:
-    """
-    Rename meeting folder to normalized format
-    
-    Returns:
-        New path if renamed, None if no change needed
-    """
-    # Try to extract metadata from B26 first
-    b26_metadata = extract_metadata_from_b26(old_path)
-    
-    if b26_metadata:
-        # Use new priority-based naming function
-        new_name = generate_folder_name_from_b26(old_path, b26_metadata)
-    else:
-        # Fall back to transcript-based naming
-        transcript_files = list(old_path.glob('*.transcript.md')) + list(old_path.glob('*.transcript.jsonl'))
-        
-        if not transcript_files:
-            print(f"⚠️  No B26 or transcript found in {old_path.name}")
-            return None
-        
-        transcript_path = transcript_files[0]
-        new_name = normalize_meeting_name(old_path, transcript_path)
-    
-    # Check if already normalized
-    if old_path.name == new_name:
-        print(f"✓ Already normalized: {old_path.name}")
+def rename_meeting_folder(old_path: Path, dry_run: bool = False) -> Optional[str]:
+    """Compute new name and perform guarded rename. Returns new path string or None if skipped."""
+    # Skip if idempotency marker present
+    if (old_path / ".standardized").exists():
+        logging.info("Skip: already standardized → %s", old_path.name)
         return None
-    
+
+    # Load B26/B28
+    b26_meta = extract_metadata_from_b26(old_path)
+    b28_path = old_path / "B28_strategic_intelligence.md"
+    b28_text = b28_path.read_text(errors="ignore") if b28_path.exists() else ""
+
+    # Try LLM naming first if available
+    new_name = None
+    try:
+        from llm_naming import call_b99_prompt  # optional
+        b26_text = (old_path / "B26_metadata.md").read_text(errors="ignore") if (old_path / "B26_metadata.md").exists() else ""
+        suggested = call_b99_prompt(b26_text, b28_text, current_name=old_path.name)
+        if suggested:
+            new_name = suggested
+    except Exception as e:
+        logging.debug("LLM naming not available or failed: %s", e)
+
+    # Fallback to safer B26-based naming
+    if not new_name:
+        new_name = generate_folder_name_from_b26(old_path, b26_meta, b28_text)
+
+    # Gating: do not downgrade to unknown_* if current looks specific
+    if "unknown_" in new_name and "unknown_" not in old_path.name:
+        logging.info("Skip downgrade to unknown: %s → %s", old_path.name, new_name)
+        return None
+
+    if new_name == old_path.name:
+        logging.info("Already normalized: %s", old_path.name)
+        return None
+
     new_path = old_path.parent / new_name
-    
-    # Check for conflicts
-    if new_path.exists():
-        print(f"⚠️  Conflict: {new_name} already exists")
-        return None
-    
+
+    action_msg = f"Would rename: {old_path.name} → {new_name}" if dry_run else f"Renaming: {old_path.name} → {new_name}"
+    print(action_msg)
+
     if dry_run:
-        print(f"Would rename: {old_path.name} → {new_name}")
-        return new_path
-    else:
-        old_path.rename(new_path)
-        print(f"✓ Renamed: {old_path.name} → {new_name}")
-        return new_path
+        return new_name
+
+    if new_path.exists():
+        logging.warning("Target exists, appending -2: %s", new_path)
+        new_path = old_path.parent / f"{new_name}-2"
+
+    old_path.rename(new_path)
+    # Write idempotency marker
+    (new_path / ".standardized").write_text("named-by:name_normalizer v1\n")
+    return str(new_path)
 
 def scan_and_normalize_meetings(
     meetings_dir: Path,
@@ -327,111 +413,114 @@ def main():
     
     return 0
 
-def extract_metadata_from_b26(meeting_dir: Path) -> Optional[Dict]:
-    """Extract structured metadata from B26_metadata.md file
-    
-    Returns metadata with stakeholders list containing:
-        - name: str
-        - organization: str | None
-        - is_internal: bool
-    """
-    b26_path = meeting_dir / "B26_metadata.md"
-    
-    if not b26_path.exists():
-        return None
-    
-    try:
-        content = b26_path.read_text()
-        metadata = {}
-        
-        # Extract Meeting ID
-        mid_match = re.search(r'\*\*Meeting ID:\*\*\s*(.+?)(?:\n|$)', content)
-        if mid_match:
-            metadata['meeting_id'] = mid_match.group(1).strip()
-        
-        # Extract Date
-        date_match = re.search(r'\*\*Date:?\*\*\s*(.+?)(?:\n|$)', content)
-        if date_match:
-            date_str = date_match.group(1).strip()
-            # Try to parse and normalize date format
-            try:
-                # Handle "November 3, 2025" format
-                from dateutil.parser import parse as parse_date
-                parsed_date = parse_date(date_str)
-                metadata['date'] = parsed_date.strftime('%Y-%m-%d')
-            except:
-                # Fallback: extract from meeting_id or folder name
-                if 'meeting_id' in metadata:
-                    folder_date = extract_date_from_folder_name(metadata['meeting_id'])
-                    if folder_date:
-                        metadata['date'] = folder_date
-                else:
-                    folder_date = extract_date_from_folder_name(meeting_dir.name)
-                    if folder_date:
-                        metadata['date'] = folder_date
-        
-        # Extract Meeting Type
-        type_match = re.search(r'\*\*Meeting Type\*\*:?\s*(.+?)(?:\n|$)', content, re.IGNORECASE)
-        if type_match:
-            meeting_type = type_match.group(1).strip()
-            # Remove leading colon if present
-            if meeting_type.startswith(':'):
-                meeting_type = meeting_type[1:].strip()
-            # Extract first word only (e.g., "Internal team coordination" → "internal")
-            if meeting_type:
-                metadata['meeting_type'] = meeting_type.split()[0].lower()
-        
-        # Extract Purpose for topic extraction
-        purpose_match = re.search(r'\*\*Purpose:?\*\*\s*(.+?)(?:\n|$)', content, re.IGNORECASE)
-        if purpose_match:
-            metadata['purpose'] = purpose_match.group(1).strip()
-        
-        # Extract structured stakeholder data
-        stakeholders = _extract_stakeholders(content)
-        metadata['stakeholders'] = stakeholders
-        
-        # Fallback: Extract from Participants section if no stakeholders found
-        if not stakeholders:
-            participants_section = re.search(r'^## Participants.*?(?=^## |\Z)', content, re.DOTALL | re.MULTILINE)
-            if participants_section:
-                participants_text = participants_section.group(0)
-                
-                # Try H3 headers first
-                h3_names = re.findall(r'###\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)', participants_text)
-                
-                # Also try bullet-point format: - **Name** - Role
-                bullet_names = re.findall(r'-\s+\*\*([A-Z][a-zA-Z\s]+?)\*\*\s*[-–]', participants_text)
-                
-                all_names = h3_names + bullet_names
-                
-                # Remove duplicates while preserving order
-                seen = set()
-                unique_names = []
-                for name in all_names:
-                    # Clean up name (remove trailing whitespace, parenthetical notes)
-                    clean_name = re.sub(r'\s*\([^)]+\).*$', '', name).strip()
-                    if clean_name not in seen:
-                        seen.add(clean_name)
-                        unique_names.append(clean_name)
-                
-                metadata['participants'] = unique_names
-                
-                # Convert to stakeholder format without org info
-                stakeholders = []
-                for name in unique_names:
-                    is_internal = _is_internal_name(name)
-                    stakeholders.append({
-                        'name': name,
-                        'organization': None,
-                        'is_internal': is_internal
-                    })
-                metadata['stakeholders'] = stakeholders
-        
-        return metadata if metadata else None
-        
-    except Exception as e:
-        logging.warning(f"Error parsing B26: {e}")
-        return None
+def extract_metadata_from_b26(meeting_dir: Path) -> dict:
+    """Augment existing extractor with Attendees fallback."""
+    b26 = meeting_dir / "B26_metadata.md"
+    meta = {"stakeholders": []}
+    if b26.exists():
+        text = b26.read_text(errors="ignore")
+        # Existing logic (kept)
+        try:
+            content = b26.read_text()
+            metadata = {}
+            
+            # Extract Meeting ID
+            mid_match = re.search(r'\*\*Meeting ID:\*\*\s*(.+?)(?:\n|$)', content)
+            if mid_match:
+                metadata['meeting_id'] = mid_match.group(1).strip()
+            
+            # Extract Date
+            date_match = re.search(r'\*\*Date:?\*\*\s*(.+?)(?:\n|$)', content)
+            if date_match:
+                date_str = date_match.group(1).strip()
+                # Try to parse and normalize date format
+                try:
+                    # Handle "November 3, 2025" format
+                    from dateutil.parser import parse as parse_date
+                    parsed_date = parse_date(date_str)
+                    metadata['date'] = parsed_date.strftime('%Y-%m-%d')
+                except:
+                    # Fallback: extract from meeting_id or folder name
+                    if 'meeting_id' in metadata:
+                        folder_date = extract_date_from_folder_name(metadata['meeting_id'])
+                        if folder_date:
+                            metadata['date'] = folder_date
+                    else:
+                        folder_date = extract_date_from_folder_name(meeting_dir.name)
+                        if folder_date:
+                            metadata['date'] = folder_date
+            
+            # Extract Meeting Type
+            type_match = re.search(r'\*\*Meeting Type\*\*:?\s*(.+?)(?:\n|$)', content, re.IGNORECASE)
+            if type_match:
+                meeting_type = type_match.group(1).strip()
+                # Remove leading colon if present
+                if meeting_type.startswith(':'):
+                    meeting_type = meeting_type[1:].strip()
+                # Extract first word only (e.g., "Internal team coordination" → "internal")
+                if meeting_type:
+                    metadata['meeting_type'] = meeting_type.split()[0].lower()
+            
+            # Extract Purpose for topic extraction
+            purpose_match = re.search(r'\*\*Purpose:?\*\*\s*(.+?)(?:\n|$)', content, re.IGNORECASE)
+            if purpose_match:
+                metadata['purpose'] = purpose_match.group(1).strip()
+            
+            # Extract structured stakeholder data
+            stakeholders = _extract_stakeholders(content)
+            metadata['stakeholders'] = stakeholders
+            
+            # Fallback: Extract from Participants section if no stakeholders found
+            if not stakeholders:
+                participants_section = re.search(r'^## Participants.*?(?=^## |\Z)', content, re.DOTALL | re.MULTILINE)
+                if participants_section:
+                    participants_text = participants_section.group(0)
+                    
+                    # Try H3 headers first
+                    h3_names = re.findall(r'###\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)', participants_text)
+                    
+                    # Also try bullet-point format: - **Name** - Role
+                    bullet_names = re.findall(r'-\s+\*\*([A-Z][a-zA-Z\s]+?)\*\*\s*[-–]', participants_text)
+                    
+                    all_names = h3_names + bullet_names
+                    
+                    # Remove duplicates while preserving order
+                    seen = set()
+                    unique_names = []
+                    for name in all_names:
+                        # Clean up name (remove trailing whitespace, parenthetical notes)
+                        clean_name = re.sub(r'\s*\([^)]+\).*$', '', name).strip()
+                        if clean_name not in seen:
+                            seen.add(clean_name)
+                            unique_names.append(clean_name)
+                    
+                    metadata['participants'] = unique_names
+                    
+                    # Convert to stakeholder format without org info
+                    stakeholders = []
+                    for name in unique_names:
+                        is_internal = _is_internal_name(name)
+                        stakeholders.append({
+                            'name': name,
+                            'organization': None,
+                            'is_internal': is_internal
+                        })
+                    metadata['stakeholders'] = stakeholders
+            
+            return metadata if metadata else None
+            
+        except Exception as e:
+            logging.debug("Existing B26 parse failed; will try attendees fallback")
+        # NEW: Attendees fallback if stakeholders empty
+        if not meta.get("stakeholders"):
+            attendees = _extract_attendees_from_b26_text(text)
+            if attendees:
+                meta["stakeholders"] = attendees
+        # Capture date if present
+        m = re.search(r"^\*\*Date:\*\*\s*(\d{4}-\d{2}-\d{2})", text, flags=re.MULTILINE)
+        if m:
+            meta["date"] = m.group(1)
+    return meta
 
 def _extract_stakeholders(content: str) -> List[Dict]:
     """Extract stakeholders with organizations from B26 content
@@ -502,68 +591,28 @@ def _is_unknown_org(org: str) -> bool:
     org_lower = org.lower()
     return any(marker in org_lower for marker in unknown_markers)
 
-def generate_folder_name_from_b26(meeting_dir: Path, metadata: Dict) -> str:
-    """Generate folder name using priority-based fallback logic
-    
-    Priority hierarchy:
-    1. Single external + org: {date}_FirstLast-OrgName_{type}
-    2. Single external no org: {date}_FirstLast_{type}
-    3. Multiple same org: {date}_OrgName-meeting_{type}
-    4. Multiple different orgs: {date}_multiple-stakeholders_{type}
-    5. Unknown: {date}_unknown_{type}
-    6. Internal: {date}_team-{topic}_{type}
-    """
-    date_str = metadata.get('date', datetime.now().strftime('%Y-%m-%d'))
-    meeting_type = metadata.get('meeting_type', 'external')
-    stakeholders = metadata.get('stakeholders', [])
-    
-    # Priority 5: Unknown (no stakeholders at all)
-    if len(stakeholders) == 0:
-        return f"{date_str}_unknown_{meeting_type}"
-    
-    # Filter to external stakeholders only
-    external = [s for s in stakeholders if not s['is_internal']]
-    
-    # Priority 6: Internal meeting (has stakeholders but all internal)
-    if len(external) == 0:
-        # Try to extract topic from purpose field first
-        if 'purpose' in metadata and metadata['purpose']:
-            topic = _extract_topic_from_purpose(metadata['purpose'])
-        else:
-            topic = _extract_topic_from_type(metadata.get('meeting_type', 'team-meeting'))
-        return f"{date_str}_team-{topic}_internal"
-    
-    # Priority 1 & 2: Single external stakeholder
-    if len(external) == 1:
-        stakeholder = external[0]
-        name_slug = _generate_name_slug(stakeholder['name'])
-        
-        # Priority 1: Has valid organization
-        if stakeholder['organization']:
-            org_slug = slugify(stakeholder['organization'])
-            return f"{date_str}_{name_slug}-{org_slug}_{meeting_type}"
-        
-        # Priority 2: No organization
-        return f"{date_str}_{name_slug}_{meeting_type}"
-    
-    # Multiple external stakeholders
-    if len(external) > 1:
-        # Group by organization
-        orgs = set()
-        for s in external:
-            if s['organization']:
-                orgs.add(s['organization'])
-        
-        # Priority 3: All from same organization
-        if len(orgs) == 1:
-            org_slug = slugify(list(orgs)[0])
-            return f"{date_str}_{org_slug}-meeting_{meeting_type}"
-        
-        # Priority 4: Multiple different organizations (or mixed known/unknown)
-        return f"{date_str}_multiple-stakeholders_{meeting_type}"
-    
-    # Should never reach here, but fallback to unknown
-    return f"{date_str}_unknown_{meeting_type}"
+def generate_folder_name_from_b26(meeting_dir: Path, metadata: dict, b28_text: str | None = None) -> str:
+    """Safer decision logic using stakeholders from B26 or attendees fallback."""
+    date_str = metadata.get("date") or datetime.now().strftime("%Y-%m-%d")
+    stakeholders = metadata.get("stakeholders") or []
+    externals = [s for s in stakeholders if not s.get("is_internal")]
+    meeting_type = metadata.get("meeting_type", "external")
+
+    # Priority 1: Single external stakeholder ⇒ First-Last
+    if len(externals) == 1:
+        ident = externals[0]["name"]  # already First-Last
+        return f"{date_str}_{ident}_{meeting_type}"
+
+    # Priority 2: Multiple externals, same org ⇒ org
+    if len(externals) >= 2:
+        orgs = {s.get("organization") for s in externals if s.get("organization")}
+        if len(orgs) == 1 and orgs:
+            org = list(orgs)[0]
+            return f"{date_str}_{org}_{meeting_type}"
+
+    # Priority 3: Different orgs ⇒ topic
+    topic = _pick_topic_from_b28_text(b28_text or "")
+    return f"{date_str}_{topic}_{meeting_type}"
 
 def _generate_name_slug(name: str) -> str:
     """Generate FirstLast slug from name
