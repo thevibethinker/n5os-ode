@@ -1,0 +1,15 @@
+{
+  "name": "wheresv2",
+  "local_port": 53214,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "wheresv2",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 55209,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}
