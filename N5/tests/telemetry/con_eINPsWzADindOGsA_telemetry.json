@@ -1,0 +1,65 @@
+{
+  "test_timestamp": "2025-11-11T11:55:16.918466+00:00",
+  "conversation_id": "con_eINPsWzADindOGsA",
+  "version": "1.0",
+  "checks": {
+    "workspace_exists": {
+      "pass": true,
+      "path": "/home/.z/workspaces/con_eINPsWzADindOGsA"
+    },
+    "state_file_exists": {
+      "pass": true,
+      "path": "/home/.z/workspaces/con_eINPsWzADindOGsA/SESSION_STATE.md"
+    },
+    "state_file_readable": {
+      "pass": true,
+      "size_bytes": 892
+    },
+    "has_frontmatter": {
+      "pass": true
+    },
+    "has_required_fields": {
+      "pass": true,
+      "missing": []
+    },
+    "valid_type": {
+      "pass": true,
+      "value": "research"
+    },
+    "has_metadata_section": {
+      "pass": true
+    },
+    "has_required_sections": {
+      "pass": true,
+      "missing": []
+    },
+    "db_record_exists": {
+      "pass": true
+    },
+    "db_sync_accurate": {
+      "pass": true,
+      "type_match": true,
+      "status_match": true
+    }
+  },
+  "frontmatter": {
+    "conversation_id": "con_eINPsWzADindOGsA",
+    "type": "research",
+    "mode": "general",
+    "status": "active",
+    "created": "2025-11-11T11:48:04.569209+00:00",
+    "last_updated": "2025-11-11T11:50:07.196223+00:00"
+  },
+  "db_record": {
+    "id": "con_eINPsWzADindOGsA",
+    "type": "research",
+    "status": "active",
+    "created_at": "2025-11-11T11:48:04.569209+00:00"
+  },
+  "summary": {
+    "total_checks": 10,
+    "passed_checks": 10,
+    "success_rate": 100.0,
+    "overall_pass": true
+  }
+}

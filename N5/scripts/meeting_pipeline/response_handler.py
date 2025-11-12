@@ -10,6 +10,11 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
+# Ensure local imports work regardless of CWD
+SYS_DIR = Path(__file__).parent
+if str(SYS_DIR) not in sys.path:
+    sys.path.append(str(SYS_DIR))
+
 # Import meeting standardization
 from standardize_meeting import standardize_meeting
 

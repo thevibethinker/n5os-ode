@@ -1,1 +1,6 @@
-operational_databases
+{
+  "protected": true,
+  "reason": "system_data_registries_logs_meeting_tracking",
+  "created": "2025-11-06T18:49:26+00:00",
+  "created_by": "system"
+}

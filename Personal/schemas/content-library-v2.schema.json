@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Content Library Entry v2",
+  "description": "Enhanced schema supporting full-text content storage",
+  "type": "object",
+  "required": ["id", "title", "content_type", "provenance", "date_added"],
+  "properties": {
+    "id": {
+      "description": "Unique identifier",
+      "type": "string",
+      "pattern": "^[a-z0-9-_]+$"
+    },
+    "title": {
+      "description": "Content title",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "url": {
+      "description": "Original source URL (optional for created content)",
+      "type": "string",
+      "format": "uri"
+    },
+    "content_type": {
+      "description": "Type of content",
+      "type": "string",
+      "enum": ["article", "podcast", "video", "social-post", "newsletter", "framework", "case-study", "quote", "resource", "paper", "book"]
+    },
+    "provenance": {
+      "description": "Where this content came from",
+      "type": "object",
+      "required": ["source_type"],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": ["created", "discovered"]
+        },
+        "author": {
+          "type": "string",
+          "description": "Original author (for discovered content)"
+        },
+        "platform": {
+          "type": "string",
+          "description": "Platform where content was found/published"
+        }
+      }
+    },
+    "topics": {
+      "description": "Primary topics (multi-select)",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["career-transitions", "job-search", "networking", "personal-brand", "leadership", "entrepreneurship", "hiring", "talent-development", "coaching", "strategy", "productivity", "communication", "mindset", "industry-trends", "tools-resources"]
+      }
+    },
+    "key_findings": {
+      "description": "Core takeaways/theses (1-5 concise statements)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 200
+      }
+    },
+    "summary": {
+      "description": "Brief summary (optional if summary_path exists)",
+      "type": "string",
+      "maxLength": 500
+    },
+    "has_content": {
+      "description": "Whether full text content is stored",
+      "type": "boolean"
+    },
+    "content_path": {
+      "description": "Path to full text content file (relative to Content-Library/)",
+      "type": "string",
+      "pattern": "^content/.+\\.(md|txt)$"
+    },
+    "content_word_count": {
+      "description": "Word count of stored content",
+      "type": "integer",
+      "minimum": 0
+    },
+    "has_summary": {
+      "description": "Whether separate summary is stored",
+      "type": "boolean"
+    },
+    "summary_path": {
+      "description": "Path to summary file (relative to Content-Library/)",
+      "type": "string",
+      "pattern": "^content/.+_summary\\.(md|txt)$"
+    },
+    "summary_word_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "date_discovered": {
+      "description": "When you encountered this content",
+      "type": "string",
+      "format": "date"
+    },
+    "date_created": {
+      "description": "When content was created (for your content)",
+      "type": "string",
+      "format": "date"
+    },
+    "date_added": {
+      "description": "When added to library",
+      "type": "string",
+      "format": "date-time"
+    },
+    "relationships": {
+      "description": "Links to other content/library entries",
+      "type": "object",
+      "properties": {
+        "related_to": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "IDs of related content entries"
+          }
+        },
+        "referenced_in": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Knowledge IDs where this is referenced"
+          }
+        }
+      }
+    },
+    "tags": {
+      "description": "Flexible tags for filtering (free-form)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "description": "How valuable is this? (1-5 scale)",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    }
+  }
+}
+

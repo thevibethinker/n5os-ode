@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Meeting Google Drive Registry Entry",
+  "description": "Tracks meetings ingested from Google Drive to prevent duplicate downloads",
+  "type": "object",
+  "required": ["gdrive_id", "meeting_id", "ts"],
+  "properties": {
+    "gdrive_id": {
+      "type": "string",
+      "description": "Google Drive file ID (unique identifier)",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "meeting_id": {
+      "type": "string",
+      "description": "Internal meeting identifier (date_participant format preferred)",
+      "minLength": 1
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when file was ingested (ISO 8601 format)"
+    },
+    "source": {
+      "type": "string",
+      "description": "Ingestion method or workflow used",
+      "examples": ["drive_ingestion_throttled", "manual", "scheduled_task"]
+    },
+    "converted": {
+      "type": "boolean",
+      "description": "Whether file required format conversion (.docx → .md)"
+    },
+    "conversion_method": {
+      "type": "string",
+      "enum": ["pandoc", "manual", "other"],
+      "description": "Tool used for conversion if applicable"
+    }
+  },
+  "additionalProperties": false
+}

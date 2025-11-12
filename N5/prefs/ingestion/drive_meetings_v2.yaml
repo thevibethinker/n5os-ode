@@ -1,0 +1,94 @@
+---
+# Drive Meeting Ingestion Configuration
+# Version: 2.0
+# Created: 2025-11-04
+# Purpose: Canonical config for Google Drive → Personal/Meetings/Inbox ingestion
+# Architecture validated by Vibe Architect per N5 Navigator structure
+
+ingestion:
+  # Pause flags (checked before any operation)
+  pause_flags:
+    - /home/workspace/N5/data/flags/ingestion.meetings_drive.paused
+    - /home/workspace/N5/data/flags/ingestion.meetings.paused
+  
+  # Drive folder configuration
+  drive:
+    folder_path: ""  # e.g., "Careerspan/Meetings/Transcripts"; empty = use redownload queue only
+    folder_id: ""    # optional; takes precedence over folder_path if set
+    search_mime_types:
+      - application/vnd.google-apps.document  # Google Docs
+      - application/vnd.openxmlformats-officedocument.wordprocessingml.document  # .docx
+  
+  # Deduplication strategy
+  deduplication:
+    registry_path: /home/workspace/N5/data/meeting_gdrive_registry.jsonl
+    strategy: meeting_id_based  # derive meeting_id from filename (before .transcript.md)
+    on_conflict: skip  # skip | update_if_modified | force_overwrite
+    check_last_modified: true  # compare Drive lastModifiedTime with registry
+  
+  # Export/conversion mapping
+  export:
+    # Google Docs: export as plain text at download time
+    application/vnd.google-apps.document:
+      export_mime: text/plain
+      requires_conversion: false
+    # .docx: download original, convert locally with pandoc
+    application/vnd.openxmlformats-officedocument.wordprocessingml.document:
+      export_mime: null  # download as-is
+      requires_conversion: true
+      converter: pandoc
+      converter_args: ["--from=docx", "--to=markdown", "--wrap=none"]
+  
+  # Validation
+  validation:
+    check_text_signature: true  # reject if file starts with PK\x03\x04 (ZIP/docx)
+    min_size_bytes: 500
+    max_size_bytes: 10485760  # 10MB; reject files larger than this
+  
+  # Destination and naming
+  destination:
+    dir: /home/workspace/Personal/Meetings/Inbox
+    filename:
+      preserve_spaces: true  # CRITICAL: avoid underscore/space path mismatches
+      normalize_unicode: true  # normalize to NFC
+      ensure_suffix: ".transcript.md"
+      remove_granola_suffixes: true  # strip "-transcript-2025-11-03T19-50-56.686Z" patterns
+  
+  # Database and queues
+  data:
+    db_path: /home/workspace/N5/data/meeting_pipeline.db
+    redownload_queue_jsonl: /home/workspace/N5/data/meeting_redownload_queue.jsonl
+    log_path: /home/workspace/N5/logs/meeting_processor.log
+  
+  # Audit trail
+  audit:
+    enabled: true
+    format: jsonl
+    path: /home/workspace/N5/logs/drive_ingestion_audit.jsonl
+    fields:
+      - meeting_id
+      - drive_file_id
+      - drive_name
+      - source_mime
+      - dest_path
+      - size_bytes
+      - converted
+      - checksum_sha256
+      - timestamp
+  
+  # Operational controls
+  runtime:
+    dry_run: false  # if true, preview actions without writing files or updating DB
+    batch_size: 10  # process N files per invocation
+    rate_limit_seconds: 1  # wait N seconds between Drive API calls
+
+# Documented assumptions and behaviors
+assumptions:
+  - Drive files are named with meeting identifiers (used as meeting_id)
+  - Redownload queue takes precedence over Drive folder scan
+  - Files already in DB with status=complete are skipped unless on_conflict=force_overwrite
+  - If Drive file is updated (lastModifiedTime changed), behavior depends on on_conflict setting
+  - Folder structure in Drive is flat (no recursive scanning)
+  - Google Docs are exported as UTF-8 plain text
+  - .docx files are converted locally (requires pandoc installed)
+  - All timestamps are UTC ISO 8601 format

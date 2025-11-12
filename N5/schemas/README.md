@@ -35,6 +35,7 @@ Schemas define canonical formats for N5 artifacts and enable validation.
 - inbox_analysis.schema.json
 - ingest.plan.schema.json
 - meeting-metadata.schema.json
+- meeting_gdrive_registry.schema.json
 
 **Integrations:**
 - incantum_registry.schema.json
@@ -67,4 +68,4 @@ Schemas integrate with:
 
 ---
 
-Last updated: 2025-11-02 21:19 ET
+Last updated: 2025-11-05 11:40 ET

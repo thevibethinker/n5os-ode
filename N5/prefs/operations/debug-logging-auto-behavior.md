@@ -67,6 +67,38 @@ python3 /home/workspace/N5/scripts/debug_logger.py recent \
 3. Synthesize pattern from recent attempts
 4. Consider switching to Vibe Debugger persona with planning
 
+### Trigger 4: Prompt Execution Attempts
+
+**When:**
+- Executing a workflow prompt from Prompts/
+- Prompt encounters errors or missing dependencies
+- Prompt workflow doesn't complete as expected
+
+**Action:**
+```bash
+python3 /home/workspace/N5/scripts/debug_logger.py append \
+  --convo-id <current> \
+  --component "prompt:<prompt_name>" \
+  --problem "<what failed in prompt execution>" \
+  --hypothesis "<expected vs actual behavior>" \
+  --actions "<what steps completed before failure>" \
+  --outcome <failure|partial> \
+  --notes "<missing deps, config issues, etc>"
+```
+
+**Example:**
+```bash
+# Failed prompt execution
+python3 /home/workspace/N5/scripts/debug_logger.py append \
+  --convo-id con_xyz123 \
+  --component "prompt:drive_meeting_ingestion" \
+  --problem "Tool call did not complete when reading prompt file" \
+  --hypothesis "Prompt file should be readable but tool errored" \
+  --actions "Called read_file on Prompts/drive_meeting_ingestion.md" \
+  --outcome failure \
+  --notes "Switched to manual tool calls instead of prompt orchestration"
+```
+
 ---
 
 ## Behavioral Pattern

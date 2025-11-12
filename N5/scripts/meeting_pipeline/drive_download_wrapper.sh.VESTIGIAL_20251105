@@ -1,0 +1,25 @@
+#!/bin/bash
+# Drive Download Wrapper
+# Bridges drive_ingestion.py (Python) with use_app_google_drive (Zo AI tool)
+# Usage: drive_download_wrapper.sh <file_id> <output_path> <mime_type>
+
+FILE_ID=""
+OUTPUT_PATH=""
+MIME_TYPE="text/plain"
+
+if [ -z "" ] || [ -z "" ]; then
+    echo "Error: Missing arguments"
+    echo "Usage: sh <file_id> <output_path> <mime_type>"
+    exit 1
+fi
+
+# This would need to be called by Zo AI orchestration
+# For now, document the architectural requirement
+echo "ERROR: drive_download_wrapper requires Zo AI orchestration"
+echo "This script cannot directly call use_app_google_drive"
+echo "Phase 2 implementation requires hybrid architecture:"
+echo "  1. drive_ingestion.py calls this wrapper"
+echo "  2. Wrapper signals Zo AI to download"
+echo "  3. Zo AI uses use_app_google_drive"
+echo "  4. Returns status to wrapper"
+exit 1

@@ -1,0 +1,62 @@
+Meeting Scripts Expunge Operation
+Date: 2025-11-05 11:42 ET
+Reason: Deprecated/conflicting scripts cleanup post-duplication-fix
+Operator: Builder (Vibe Builder v2.0)
+Reversible: Yes (30-day retention)
+-rw-r--r-- 1 root root 3.9K Nov  4 16:46 add_frontmatter_to_meeting.py
+-rw-r--r-- 1 root root 1.6K Nov  4 13:00 batch_queue_meetings.py
+-rwxr-xr-x 1 root root 5.2K Oct 31 23:23 demo_meeting_flow.py
+-rwxr-xr-x 1 root root  12K Nov  1 23:03 deploy_meeting_monitor.py
+-rwxr-xr-x 1 root root 5.9K Oct 31 23:23 detect_placeholder_meetings.py
+-rwxr-xr-x 1 root root 3.7K Nov  4 01:15 gdrive_meeting_detector.py
+-rwxr-xr-x 1 root root 3.2K Nov  4 12:56 gdrive_meeting_orchestrator.py
+-rw-r--r-- 1 root root 6.5K Nov  4 16:46 infer_meeting_taxonomy.py
+-rw-r--r-- 1 root root 5.3K Nov  4 16:47 infer_meeting_taxonomy_llm.py
+-rwxr-xr-x 1 root root 6.3K Oct 31 23:23 meeting_auto_processor.py
+-rwxr-xr-x 1 root root  15K Oct 31 23:23 meeting_core_generator.py
+-rwxr-xr-x 1 root root 4.6K Oct 31 23:23 meeting_duplicate_detector.py
+-rwxr-xr-x 1 root root  17K Nov  5 07:01 meeting_intelligence_scanner.py
+-rw-r--r-- 1 root root 1.3K Nov  4 13:00 meeting_pipeline_status.py
+-rwxr-xr-x 1 root root  26K Oct 31 23:23 meeting_prep_digest.py
+-rwxr-xr-x 1 root root  19K Oct 31 23:23 meeting_prep_digest_v2.py
+-rwxr-xr-x 1 root root 9.8K Oct 31 23:23 meeting_processor.py
+-rwxr-xr-x 1 root root  15K Nov  4 01:15 meeting_transcript_scan.py
+-rwxr-xr-x 1 root root  17K Nov  1 23:03 n5_meeting_approve.py
+-rwxr-xr-x 1 root root 7.7K Nov  4 01:16 n5_meeting_transcript_scanner.py
+-rwxr-xr-x 1 root root 7.3K Oct 31 23:23 plaud_meeting_processor.py
+-rw-r--r-- 1 root root 7.3K Nov  4 16:47 rename_meeting_folder.py
+-rwxr-xr-x 1 root root  17K Oct 31 23:23 scan_meeting_emails.py
+-rwxr-xr-x 1 root root 2.3K Oct 31 23:23 send_meeting_notification.py
+-rw-r--r-- 1 root root 3.9K Nov  4 16:48 standardize_all_meetings.py
+-rw-r--r-- 1 root root 8.9K Nov  4 16:46 standardize_meeting_folder.py
+-rwxr-xr-x 1 root root 8.1K Nov  1 23:03 validate_meeting_folder_names.py
+
+
+SHA256 Checksums:
+0ed9b02572eb6f31b0b2f14b8e621095555d80c5223fcfc3f677034ddcd619e2  add_frontmatter_to_meeting.py
+132812aa7a39b73593e1aad5a2abeae8746efe3d83b13f2c575e9e9063e3473f  batch_queue_meetings.py
+326679d87c8a90c0020d59c1c38e16355120d12c3a48f17fb07d0cc29ca19ca0  demo_meeting_flow.py
+a7f6ec29bd4f95f3518dea95b4cdfb5b1267ccebe793e5436f583335ece35714  deploy_meeting_monitor.py
+04981a6b50e47f69d74d8e64ea59d229a657a02bf304d92b9d8e1a086eb7d62d  detect_placeholder_meetings.py
+07265ed613256a92c8ed41ae4760bdb6269686880d010aad394e0cefbbf045b0  gdrive_meeting_detector.py
+5a12c585e3ddc865978e66be7f7ebd5cc2ded4b3cea0257d7b86afdf15559264  gdrive_meeting_orchestrator.py
+ab3f3f5536d7ecb9b20a89e311c06b88d7e684c67ead9f34eb5d56887328b1a4  infer_meeting_taxonomy.py
+0aad8f950b40c8a173810ee742b54512e04c863ead0d243d0fb63be988014399  infer_meeting_taxonomy_llm.py
+72dca3b157be94afa7ce8613adcbbc775804d18eb8e76cd4408ca16fd829f42b  meeting_auto_processor.py
+0fb84b5573740ff0b26fa5aa7b28f5cc8d2a4e01b8ab411ed3ce83e4cb613c40  meeting_core_generator.py
+b9e3636964ccdacbce415b7b6b8240fadfb494c171cdb7325a79f0585894b2ce  meeting_duplicate_detector.py
+6df7aa9aa1f286d58b28e9b3b7e93c445f2349233800eeab20aacb0ec19f671f  meeting_intelligence_scanner.py
+fa6439095bfc153d1014fae826da68911b9d84cee0b3d61ab734b1287efaa926  meeting_pipeline_status.py
+54826ae1659d6afa2e188fee0264c8fc02d133d03a7088d115668c5d57002d22  meeting_prep_digest.py
+156f5c58737ad58d50963b178455f0bca8fc89c7b4e8cfdd3dffbb68659aafab  meeting_prep_digest_v2.py
+c20edb327f14ca644ff4e962ad5526220a3f5b132c236b71b66b92858c715108  meeting_processor.py
+d177297427f70ff80488918b88616fa9c745043273c99245f0c2c74a9feecb08  meeting_transcript_scan.py
+5b74d0f6c23f345e97d6b5827b921afed47b2a7c45aa59d850e640b215832eee  n5_meeting_approve.py
+0b7c9f751cf1a1e81fe95c0b9e650f38cbbec8c7571339693a0621c784066505  n5_meeting_transcript_scanner.py
+8f72c968c6c036f199ffbbf0b6bd63c88f3814dce55b04919820f78560f9f3cc  plaud_meeting_processor.py
+b45842bbcf04a8cc7af7becd8c8433dd565c6115904b704ba9f5d0d586e96508  rename_meeting_folder.py
+7608263f765ca50c441268d2957ae470b8df62822350f6a2835d7ba4ffdf8189  scan_meeting_emails.py
+4369e97c4e850acc8a124b5a41298507e8cdcaed1699e62564fb3f84cb26741a  send_meeting_notification.py
+12035ac5f02d16d3a3bced2447eb297c14ead25a6a2c7df456868a3caee7fe9f  standardize_all_meetings.py
+cf2d67d9f4f69928aa676d2e9f1dc945ee2e5dc13f5ff4fce3e153ea7cfe9d7f  standardize_meeting_folder.py
+6efd084ab20567d36bdb2e507e02545d0093e280b9d341ef3595706b33729312  validate_meeting_folder_names.py

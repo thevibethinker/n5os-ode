@@ -1,0 +1,15 @@
+# Canonical Google Drive Folder IDs
+# Single source of truth for Drive locations
+# Created: 2025-11-05
+# Last updated: 2025-11-05
+
+meetings:
+  transcripts_inbox: "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV"
+  # Canonical location for meeting transcript .docx files from Fireflies
+  # Used by drive_meeting_ingestion workflow
+
+# Future: Add other Drive locations as needed
+# documents:
+#   careerspan_materials: "..."
+# shared:
+#   team_resources: "..."

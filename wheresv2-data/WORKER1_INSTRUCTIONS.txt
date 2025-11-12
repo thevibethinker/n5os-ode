@@ -1,0 +1,20 @@
+# Worker 1: LLM Flight Interpreter
+
+**OPEN IN NEW THREAD**
+
+Mission: Interpret V's natural language flight instructions
+
+Examples:
+- 'my flight is JB 111 on Nov 15'
+- 'UA123 tomorrow at 2pm'
+- 'just landed in SF'
+
+Build: /home/workspace/wheresv2-data/scripts/llm_interpreter.py
+
+Use LLM to:
+1. Parse instruction
+2. Call AviationStack if needed
+3. Update trips.jsonl
+
+Test: n5-wheresv my flight is UA123 tomorrow
+
