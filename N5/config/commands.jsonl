@@ -1,5 +1,0 @@
-{"command":"linkedin-pending","description":"Show LinkedIn conversations awaiting response","script":"/home/workspace/N5/scripts/linkedin_query.py","args":["pending"],"category":"linkedin","tags":["linkedin","communication","pending"]}
-{"command":"linkedin-commitments","description":"Show LinkedIn commitments (what you owe / what they owe)","script":"/home/workspace/N5/scripts/linkedin_query.py","args":["commitments"],"category":"linkedin","tags":["linkedin","commitments","tasks"]}
-{"command":"linkedin-stats","description":"Show LinkedIn intelligence system statistics","script":"/home/workspace/N5/scripts/linkedin_query.py","args":["stats"],"category":"linkedin","tags":["linkedin","stats"]}
-{"command":"linkedin-search","description":"Search LinkedIn conversations by name","script":"/home/workspace/N5/scripts/linkedin_query.py","category":"linkedin","tags":["linkedin","search"]}
-{"command":"linkedin-sync-crm","description":"Sync LinkedIn conversations to CRM profiles","script":"/home/workspace/N5/scripts/linkedin_crm_sync.py","args":["--auto"],"category":"linkedin","tags":["linkedin","crm","sync"]}
