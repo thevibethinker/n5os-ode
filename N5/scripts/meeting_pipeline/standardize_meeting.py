@@ -14,13 +14,74 @@ import logging
 import subprocess
 import shutil
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
 RENAME_LOG = MEETINGS_DIR / "rename_log.jsonl"
 
 logger = logging.getLogger(__name__)
+
+
+def generate_metadata_json(meeting_folder: Path, meeting_id: str) -> bool:
+    """
+    Generate _metadata.json from meeting folder contents.
+    
+    Args:
+        meeting_folder: Path to meeting folder
+        meeting_id: Meeting ID (folder name)
+    
+    Returns:
+        True if metadata generated successfully
+    """
+    try:
+        # Extract date from meeting_id (format: YYYY-MM-DD_...)
+        date_match = meeting_id.split("_")[0] if "_" in meeting_id else ""
+        
+        # Find all generated blocks
+        blocks = sorted([b.stem.split("_")[0] for b in meeting_folder.glob("B*.md")])
+        
+        # Build basic metadata structure
+        metadata = {
+            "meeting_id": meeting_id,
+            "date": date_match,
+            "registry_version": "1.6",
+            "blocks_generated": blocks,
+            "processing_timestamp": datetime.now(timezone.utc).isoformat(),
+            "processor": "pipeline"
+        }
+        
+        # Try to extract additional metadata from B26 if it exists
+        b26_file = meeting_folder / "B26_metadata.md"
+        if b26_file.exists():
+            b26_content = b26_file.read_text()
+            
+            # Simple extraction - look for key patterns
+            for line in b26_content.split("\n"):
+                line_lower = line.lower()
+                if "participants:" in line_lower or "attendees:" in line_lower:
+                    # Extract participants list (basic parsing)
+                    if ":" in line:
+                        parts = line.split(":", 1)[1].strip()
+                        if parts:
+                            metadata["participants_raw"] = parts
+                
+                elif "meeting type:" in line_lower or "subtype:" in line_lower:
+                    if ":" in line:
+                        meeting_type = line.split(":", 1)[1].strip().lower()
+                        if meeting_type:
+                            metadata["meeting_type"] = meeting_type
+        
+        # Write metadata file
+        metadata_path = meeting_folder / "_metadata.json"
+        metadata_path.write_text(json.dumps(metadata, indent=2))
+        logger.info(f"  ✓ Generated _metadata.json with {len(blocks)} blocks")
+        
+        return True
+        
+    except Exception as e:
+        logger.error(f"  ✗ Error generating metadata: {e}")
+        return False
 
 
 def standardize_meeting(meeting_id: str) -> bool:
@@ -50,6 +111,10 @@ def standardize_meeting(meeting_id: str) -> bool:
         add_frontmatter_result = add_frontmatter(meeting_folder)
         if not add_frontmatter_result:
             logger.warning(f"Frontmatter addition failed/skipped for {meeting_id}")
+        
+        # Step 1.5: Generate _metadata.json
+        logger.info(f"Generating metadata for {meeting_id}")
+        generate_metadata_json(meeting_folder, meeting_id)
         
         # Step 2: Infer taxonomy and rename folder
         logger.info(f"Standardizing folder name for {meeting_id}")
@@ -228,3 +293,5 @@ if __name__ == "__main__":
     meeting_id = sys.argv[1]
     success = standardize_meeting(meeting_id)
     sys.exit(0 if success else 1)
+
+
