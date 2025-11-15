@@ -1,0 +1,44 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-01T01:20:00Z",
+  "meeting_folder": "2025-11-17_Vrijen_Attawar_and_Paula_McMahon",
+  "meeting_date": "2025-11-17",
+  "meeting_type": "external_networking_partnership",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "actions": true,
+    "tone_context": true,
+    "business_context": true,
+    "key_moments": true,
+    "deliverables": true,
+    "metadata": true,
+    "follow_up_email": true,
+    "blurbs": true,
+    "meeting_intelligence": true,
+    "B02_commitments_contextual": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "warm_intros_scanned": {
+    "last_scan": "2025-12-01T01:20:00Z",
+    "status": "scanned_no_new_intros",
+    "workflow_run": "manual_paula_meeting_import",
+    "intro_signals": 0,
+    "intro_files_count": 0,
+    "targets": [],
+    "note": "Manual import: scanned transcript, found no explicit warm-intro promises."
+  },
+  "warm_intros_generated": {
+    "timestamp": "2025-12-01T01:20:00Z",
+    "status": "no_new_intros",
+    "workflow_run": "manual_paula_meeting_import",
+    "count": 0,
+    "files": [],
+    "targets": [],
+    "note": "Manual import: no warm-intro drafts generated."
+  },
+  "transition_timestamp": "2025-12-01T01:20:00Z",
+  "last_updated_at": "2025-12-26T01:26:51.374887"
+}

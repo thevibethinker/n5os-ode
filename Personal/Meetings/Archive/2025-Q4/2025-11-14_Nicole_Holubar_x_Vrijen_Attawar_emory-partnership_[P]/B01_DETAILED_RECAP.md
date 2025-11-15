@@ -1,10 +1,9 @@
 ---
 created: 2025-11-15
 last_edited: 2025-11-15
-version: 1.0
+version: 1
 block_id: B01
 ---
-
 # B01: Detailed Recap - Vrijen Attawar & Nicole Holubar / Emory Alumni Partnership
 
 ## Executive Summary
