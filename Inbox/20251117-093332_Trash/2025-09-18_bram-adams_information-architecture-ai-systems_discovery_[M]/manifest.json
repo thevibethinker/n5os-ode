@@ -1,0 +1,95 @@
+{
+  "meeting_id": "2025-09-18_bram-adams_information-architecture-ai-systems_discovery",
+  "generated_at": "2025-11-16T22:01:38Z",
+  "transcript_word_count": 14847,
+  "meeting_type": "discovery",
+  "classification": "external",
+  "duration_minutes": 50,
+  "participants": [
+    {
+      "name": "Vrijen Attawar",
+      "role": "Founder/CEO",
+      "org": "Careerspan"
+    },
+    {
+      "name": "Bram Adams",
+      "role": "Founder",
+      "org": "YCB"
+    }
+  ],
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "All meetings require comprehensive recap of discussion, context, and technical exploration"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core: Multiple commitments made regarding follow-ups with Ilsa, future collaboration, and implementation of recommendations"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Standard metadata and classification tracking"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "STAKEHOLDER_INTEL",
+      "priority": 2,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "External meeting: Bram Adams is founder of YCB (open-source personal library science tool), strategic thought partner on information architecture"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "STRATEGIC_IMPLICATIONS",
+      "priority": 2,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "High strategic density: Discussion of master ledgers, data governance, cognitive operating systems, information flow management across organizations"
+    },
+    {
+      "block_id": "B04",
+      "block_name": "OPEN_QUESTIONS",
+      "priority": 3,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "Multiple open questions emerged: When to involve AI in filtering? How to establish team vocabulary around information management? How to structure master ledger?"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "Rich in strategic quotes and insights: 'Communication can often be cheaper than adding another knowledge base', 'deprecated knowledge base becomes a cost center', emphasis on human decision sovereignty"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "Multiple follow-ups planned: Sync with Ilsa, Bram to explore YCB GitHub repo, potential collaboration on information architecture for Careerspan"
+    },
+    {
+      "block_id": "B25",
+      "block_name": "DELIVERABLES",
+      "priority": 3,
+      "status": "pending",
+      "category": "wildcard",
+      "reason": "Bram shared open-source GitHub repo (YCB boilerplate) and specific design patterns (feed view, graph view) applicable to Vrijen's Zo/Careerspan systems"
+    }
+  ]
+}

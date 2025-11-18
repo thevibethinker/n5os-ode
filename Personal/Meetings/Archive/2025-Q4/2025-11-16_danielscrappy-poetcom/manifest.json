@@ -1,0 +1,74 @@
+{
+  "meeting_id": "2025-11-16_danielscrappy-poetcom",
+  "generated_at": "2025-11-16T22:31:34.172364+00:00",
+  "transcript_word_count": 10874,
+  "meeting_type": "external_mentoring",
+  "classification": "external",
+  "blocks_selected": 8,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Standard core block - comprehensive overview of 69-minute mentoring conversation about Daniel's career transition from Careerspan to freelance/gig work"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - Vrijen explicitly commits to making warm intro with Jeff (practice interviews founder), checking his availability, and connecting Daniel with referral community"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "STAKEHOLDER_INTEL",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "External meeting with key stakeholder reference (Jeff at practice-interviews.com, Ben Lang at Cursor, recruitment connections). Strategic positioning context needed"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple clear action items emerged: join NextPlay community, check WarmupJobs, create contractor blurb for referral distribution, develop terms/contract templates"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Explicit follow-up scheduled: Vrijen to make intro with Jeff, Daniel to prepare blurb and send to Vrijen for community distribution"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "completed",
+      "category": "optional",
+      "reason": "Multiple strategic insights: AI as exoskeleton vs robot, importance of visibility in networking, learning in public paradigm, Zo's cognitive OS concept"
+    },
+    {
+      "block_id": "B25",
+      "block_name": "DELIVERABLES",
+      "priority": 3,
+      "status": "completed",
+      "category": "optional",
+      "reason": "Clear deliverable identified: Daniel's contractor service blurb needed for Vrijen to distribute to founder communities + reference/recommendation strategy"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core metadata block - classification, attendees, context tags for system tracking"
+    }
+  ]
+}

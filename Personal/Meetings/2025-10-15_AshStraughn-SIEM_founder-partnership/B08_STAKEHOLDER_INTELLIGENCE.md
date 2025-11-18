@@ -1,7 +1,7 @@
 ---
 created: 2025-11-06
-last_edited: 2025-11-06
-version: 1.0
+last_edited: 2025-11-17
+version: 1.1
 ---
 
 # STAKEHOLDER_INTELLIGENCE
@@ -57,6 +57,31 @@ version: 1.0
 
 ---
 
+## Related Stakeholder: Nira
+
+**Company:** Nira (community platform software - early-stage)
+
+**Product/Service:** Community-oriented product/platform software that communities can use for engagement and operations. They sell software TO communities (universities, alumni groups, etc.), not a candidate sourcing service.
+
+**Stage:** Early-stage, recently accepted into South Park Commons
+
+**Relationship Context:** 
+- Vrijen mentioned Nira during Ash meeting as potential partner Careerspan is exploring
+- Partnership model: "community collaborators where they sell a community oriented product. So we're going to collab with them to get into like universities and essentially just co sell."
+- Vrijen positioning: Nira handles community platform/software → Careerspan/SIEM can access those communities for talent
+
+**Why Relevant to Ash/SIEM:**
+- SIEM needs consistent, high-quality candidate pipeline
+- Nira's customers (alumni communities, universities) = high-signal talent pools
+- Potential partnership: Nira's platform customers → SIEM's candidate access
+- Co-selling opportunity: Nira provides community tools, SIEM provides talent placement as value-add
+
+**Key Distinction:** Nira is NOT doing candidate sourcing themselves—they're building the infrastructure (platform/software) that communities use. The partnership value is accessing Nira's CUSTOMERS (the communities) for talent pipeline, not Nira sourcing candidates directly.
+
+**Action Item:** Vrijen committed to introducing Ash to Nira team (timing: before or during co-founder call)
+
+---
+
 ## CRM Integration
 
 **Status:** ✅ Profile created at `Knowledge/crm/individuals/ash-straughn.md`
@@ -86,4 +111,5 @@ version: 1.0
 ---
 
 **Feedback**: - [ ] Useful
+
 

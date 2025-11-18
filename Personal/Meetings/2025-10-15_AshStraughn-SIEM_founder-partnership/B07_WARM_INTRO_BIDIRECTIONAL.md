@@ -1,7 +1,7 @@
 ---
 created: 2025-11-06
-last_edited: 2025-11-06
-version: 1.0
+last_edited: 2025-11-17
+version: 1.1
 ---
 
 # WARM_INTRO_BIDIRECTIONAL
@@ -12,9 +12,9 @@ version: 1.0
 
 **1. Nira Intro**
 - **To Whom:** Ash Straughn (SIEM)
-- **Who You're Introducing:** Nira (company building community-layer for alumni/university candidate sourcing)
-- **Why Relevant:** Nira focuses on getting into universities and alumni communities (McKinsey, etc.). SIEM needs quality startup candidate volume. Potential partnership synergy.
-- **Context to Include:** "Nira is building what we discussed—formal partnerships with alumni communities. They're early-stage, in South Park Commons. Could be valuable for candidate sourcing or co-selling."
+- **Who You're Introducing:** Nira (company building community platform software for alumni/university communities)
+- **Why Relevant:** Nira builds platform software that communities (McKinsey alumni, universities, etc.) use. SIEM needs quality startup candidate volume. Potential partnership: Nira's customers (the communities using their platform) could provide SIEM candidate pipeline access; or co-selling where Nira provides community platform and SIEM/Careerspan provide talent services as value-add to those communities.
+- **Context to Include:** "Nira is building community platform software—they're early-stage, in South Park Commons. They sell to alumni/university communities, which are exactly the high-signal groups you need for candidate pipeline. Could be valuable for accessing their customer communities or co-selling."
 - **Action Required:** Direct intro email from Vrijen to Ash + Nira team; explain partnership thesis on both sides
 
 **2. Angel Investor List**
@@ -52,3 +52,4 @@ version: 1.0
 ---
 
 **Feedback**: - [ ] Useful
+

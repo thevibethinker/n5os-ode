@@ -1,0 +1,103 @@
+{
+  "meeting_id": "2025-10-23_coral_x_vrijen_chat",
+  "generated_at": "2025-11-17T07:08:34.076564Z",
+  "transcript_path": "transcript.md",
+  "analysis": {
+    "meeting_type": "networking",
+    "participant_count": 2,
+    "key_themes": [
+      "career_coaching",
+      "content_creation",
+      "product_development",
+      "diversity_inclusion",
+      "education",
+      "recruiting"
+    ],
+    "triggers_detected": {
+      "partnership_mentions": true,
+      "decisions_made": true,
+      "action_items": true,
+      "follow_ups": true,
+      "risks_concerns": true,
+      "key_quotes": true,
+      "deliverables": true,
+      "strategic_content": true
+    }
+  },
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "canonical_name": "Detailed Recap",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T07:15:07.146826Z"
+    },
+    {
+      "block_id": "B02_COMMITMENTS",
+      "canonical_name": "Commitments & Action Items",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T07:15:07.146826Z"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "canonical_name": "Meeting Metadata Summary",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T07:15:07.146826Z"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "canonical_name": "Stakeholder Intelligence & CRM Integration",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T07:26:11.797289+00:00"
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "canonical_name": "Decisions Made",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T07:26:11.797289+00:00"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "canonical_name": "Action Items & Next Steps",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T07:26:11.797289+00:00"
+    },
+    {
+      "block_id": "B25_DELIVERABLES",
+      "canonical_name": "Deliverable Content Map",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B08_FOLLOW_UP_CONVERSATIONS",
+      "canonical_name": "Follow-up Conversations to Schedule",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B21_KEY_MOMENTS",
+      "canonical_name": "Key Quotes & Strategic Questions",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B10_RISK_REGISTER",
+      "canonical_name": "Risk Register",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B05_STRATEGIC_IMPLICATIONS",
+      "canonical_name": "Strategic Implications",
+      "status": "pending",
+      "priority": 3
+    }
+  ],
+  "selection_rationale": "Detected networking meeting with 2 participants. Key themes: career_coaching, content_creation, product_development, diversity_inclusion, education, recruiting. Selected 11 blocks based on content richness.",
+  "total_blocks": 11
+}

@@ -1,0 +1,12 @@
+{
+  "meeting_id": "2025-11-11_Darwinbox-x-Careerspan",
+  "date": "2025-11-11",
+  "participants": ["Vrijen Attawar", "Logan Currie", "Chaitanya P"],
+  "stakeholder": "Chaitanya P",
+  "organization": "Darwinbox",
+  "meeting_type": "networking",
+  "registry_version": "1.6",
+  "blocks_generated": ["B01", "B02", "B08"],
+  "processing_timestamp": "2025-11-14T02:02:32Z",
+  "processor": "scheduled_task"
+}

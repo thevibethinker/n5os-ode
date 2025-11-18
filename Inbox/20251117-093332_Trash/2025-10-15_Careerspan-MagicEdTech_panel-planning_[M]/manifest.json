@@ -1,0 +1,109 @@
+{
+  "meeting_id": "2025-10-15_Careerspan-MagicEdTech_panel-planning",
+  "generated_at": "2025-11-16T22:17:40.688006Z",
+  "transcript_word_count": 4425,
+  "meeting_type": "product_demo",
+  "classification": "external",
+  "blocks_selected": 11,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Always required: comprehensive meeting overview covering Vrijen's pitch of Careerspan talent sourcing platform to Whitney Jones at MagicEdTech",
+      "generated_at": "2025-11-17T08:51:13.417661Z"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS_CONTEXTUAL",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Always required: captures implicit commitments regarding follow-up, potential partnership exploration, and relationship continuity",
+      "generated_at": "2025-11-17T08:51:13.417661Z"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA_SUMMARY",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Always required: classification, attendee metadata, tags for system tracking",
+      "generated_at": "2025-11-17T08:51:13.417661Z"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "STAKEHOLDER_INTELLIGENCE",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Required for external meetings: deep stakeholder profile for Whitney Jones (MagicEdTech executive, long-term Astrid connection, 25yr+ track record)",
+      "generated_at": "2025-11-17T08:51:13.417661Z"
+    },
+    {
+      "block_id": "B03_D",
+      "block_name": "DECISIONS",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Triggered by content: Whitney discussed decision points around stealth hiring, proactive pipeline cultivation vs. urgent hiring needs",
+      "generated_at": "2025-11-17T09:02:06.083188+00:00"
+    },
+    {
+      "block_id": "B04",
+      "block_name": "OPEN_QUESTIONS",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Multiple unresolved questions about implementation details, timeline, and whether MagicEdTech will engage with Careerspan",
+      "generated_at": "2025-11-17T09:02:06.083188+00:00"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Clear follow-up needed: pitch partnership, explore potential integration, schedule next conversation",
+      "generated_at": "2025-11-17T09:02:06.083188+00:00"
+    },
+    {
+      "block_id": "B06",
+      "block_name": "BUSINESS_CONTEXT",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Business model discussion: $500/month per role or $2k/month unlimited, product-market fit validation with enterprise buyer",
+      "generated_at": "2025-11-17T09:12:53.000000Z"
+    },
+    {
+      "block_id": "B07",
+      "block_name": "TONE_AND_CONTEXT",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Positive exploratory tone, built on trusted intermediary (Astrid), Whitney engaged and asking substantive questions",
+      "generated_at": "2025-11-17T09:12:53.000000Z"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Follow-up required: determine MagicEdTech interest in pilot, discuss implementation timeline, address hiring mode flexibility",
+      "generated_at": "2025-11-17T09:02:06.083188+00:00"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Strategic quotes present: discussion of 'peace time vs. wartime' hiring, 'relationship cultivation approach', tension between planful hiring and high-growth urgency",
+      "generated_at": "2025-11-17T09:12:53.000000Z"
+    }
+  ]
+}

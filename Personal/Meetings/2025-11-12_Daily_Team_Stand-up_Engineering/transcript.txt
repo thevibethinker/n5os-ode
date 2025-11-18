@@ -1,0 +1,388 @@
+00:01
+Danny Williams
+I posted. Well, actually I've done since I posted a video in Stand up
+channel, but I've done more since then. So there's only like. The only
+thing that's missing is on the, like, different roles, there's these
+like, responsibilities and skills. They're supposed to have like a
+detail page where you can like dig into the information. But I haven't
+done that just because it seems a little bit extra.
+
+00:33
+Vrijen Attawar
+Like.
+
+00:35
+Danny Williams
+You know, in a sense as an employer, do you need to dig into that
+information when it's the system really that needs to care about it? I
+guess so, like, maybe we don't even.
+
+00:47
+Vrijen Attawar
+It's gonna be. It's kind of going to be part of the demo and it's
+something that. Well, we'll see. But I was talking about this with Ilya
+yesterday that, like, being able to edit that eventually, but being able
+to talk about that before you start picking an applicant is potentially
+really useful. I, I said something yesterday. I forget already what it
+was, but immediately I happy it was like, yeah, there we go. We're
+enabling the power of being. Oh, God.
+
+01:19
+Danny Williams
+I was gonna say, like, the only thing is like, I mean, just with the
+number of skills and responsibilities that you get, like, I don't know
+how useful it's gonna be to go through like 20 different pages of like
+analysis on each thing. Right. Like, you would almost want something a
+bit more like an overview or like, yeah, you know, because it's going to
+be a lot to pass. Like, I don't know.
+
+01:51
+Vrijen Attawar
+Yeah, like, they still have the main overview page of here's the
+responsibilities and here's the soft and hard skills. The only, the only
+real purpose at that point is for someone who doesn't have that domain
+experience, someone who doesn't know what it means to hire a Swift
+engineer to be able to see those things and either quickly ask, you
+know, it's the person interviewing or reviewing being like, cool, well,
+these are important and I can rely on this. Or hey, actual Swift
+engineer who doesn't have time to babysit hr. Like, does this look
+correct? And then they'll look at it and then be like, cool, yeah,
+you're good.
+
+02:33
+Danny Williams
+Like, I get the idea. But like, is that what, like, we need to be
+providing? I guess is my question. Because like, if, if, you know, that
+sounds something like, maybe you'd want that in an app for like
+interviewing people or like, you know, like, that's the kind of thing
+that we do for the clients, right? Like for the end. For like the job
+seekers, because they're gonna go and like go into interviews and need
+to like, prep. Right. But interviewers, they will do that. But probably
+they already have a process, right? Like, they already have like people
+that are experienced or, you know, like, it could be useful. I just, I
+don't know, it feels like a bit unproven to me.
+
+03:26
+Vrijen Attawar
+Let's toss it in. Unless, like, you know, I totally get it. I would
+appreciate tossing it in because it's sexy. But if you want to
+prioritize, getting the deal breaker reviewing and like, honestly
+getting the deal breaker stuff visible on the employer portal is more
+important than that anyway.
+
+03:50
+Danny Williams
+It's already there. I just, like, I was just saying, I just. I don't
+have any user that has deal breakers. So I don't know, like. Well, I've
+tested it with some fake data, but like, you know, like, I don't know
+what the real data is going to come in, like, and if that's going to be
+like a really long string or something.
+
+04:11
+Vrijen Attawar
+It might be. So what you can do is you could shift back to the
+application page and implement brocl's designs for that deal breaker
+review. That gives each applicant the ability to finalize those deal
+breaker questions and that'll allow you to budge that data anyway so
+that you'll just have data in whatever shape you want.
+
+04:38
+Danny Williams
+Yeah, I mean, technically I could just fake it myself, but like, I, I
+don't know, I just don't want to spend time on that right now. So, like,
+yeah, we could totally figure something out if we need to. But it
+doesn't seem like the most pressing thing, I guess.
+
+05:00
+Vrijen Attawar
+I mean, the deal breaker stuff, I would like to get it out if, you know,
+if there's still time.
+
+05:08
+Danny Williams
+But what I'm saying is it would better for me if you just create your
+user that has deal breakers and then tell me if it looks good because
+then I can just move.
+
+05:19
+Vrijen Attawar
+On to the next thing. Give me a job link, give me a direct apply link
+and I'll just. My user, which I guarantee will have deal breakers.
+
+05:28
+Danny Williams
+Right. Okay, perfect. I'll just send you one.
+
+05:32
+Ilse Funkhouser
+Cool.
+
+05:33
+Danny Williams
+That's pretty much what I. Yeah. So anyway, other than that, like, yeah,
+basically. Oh, I just sent you a local host link. Let me send you. I'll
+send you a staging link, I guess. Well, actually, I guess that link will
+work.
+
+05:49
+Vrijen Attawar
+Yeah, I'll just use it. Don't worry.
+
+05:52
+Danny Williams
+I'll tell you what, I'll just do the end bit. Yeah. Whatever, just put
+staging in front of that. So, yeah, we've got most of everything. I even
+added in that little radar graph. Although, yeah, it's not like exactly
+the same as the design because of just like graphing libraries are
+finicky, but it's more or less the same. I took the same one that we
+have in the. In the client app. But yeah, everything else is basically
+in there. I've added in those skills and things that you handed to me.
+Yeah. So then I basically just need people to try it and tell me if I
+missed something or whatever. And I'll in the meantime look at whatever
+that thing is, the role breakdown, like details for skills and
+responsibilities and stuff.
+
+06:53
+Vrijen Attawar
+Amazing. Again, if you want a break, implement the user side of the deal
+breaker review.
+
+07:00
+Danny Williams
+Oh, really?
+
+07:02
+Vrijen Attawar
+Cool. All right, cool.
+
+07:02
+Danny Williams
+Not right now. I'd rather like stay focused on this. Yeah.
+
+07:09
+Ilse Funkhouser
+Amazing work. I'm excited. I've not yet checked it out. I will go do.
+
+07:14
+Danny Williams
+So there's a little bit of a process to understand, I guess on just
+like, okay, you want to create a user. Right now the process is somewhat
+manual. You go to the admin app and then you create an employer and. And
+then you can send a password reset email through the Firebase. But we
+can do all that stuff for you, me and Ilsa. So if you want to test it
+out, then let's. I mean, for now let's test on staging, say something in
+Slack somewhere and then we'll go back and forth on it and get a user
+set up. And yeah, we'll. I think it shouldn't be too complex. It's just
+like we want to make sure you don't reuse a user that's also a client on
+the client app. We want to have a separate user for employers.
+
+08:14
+Danny Williams
+What I've been doing is I've just been doing that trick with the plus
+thing. I'll write what I use my one in the meet chat. That's what I've
+been using. And then. Yeah, that's kind of it. And you just have a user
+and password. I didn't implement any Google login or anything. Just like
+the bare minimum. And then you'll see like one page of the employer app,
+which is where you have your roles and you can add roles and. And then
+in. Then you have like the other details pages once you have a role. And
+then if you have your own client customer account, you can take the
+share link from one of those pages and then apply to your own job. And
+then you'll be able to see what it looks like anyway.
+
+09:11
+Ilse Funkhouser
+Awesome. I'll create a dummy account and get in and explore a bit.
+
+09:19
+Danny Williams
+Cool. Yep. Let me know what you find. I mean, just message me on Slack
+and then we'll. We'll sort it out.
+
+09:29
+Ilse Funkhouser
+Perfect. Sounds good. Sounds good. Was Rockle to the cafe? Did I see or.
+
+09:38
+Vrijen Attawar
+No, she's not going to be here. She's moving somewhere fancy.
+
+09:41
+Ilse Funkhouser
+Okay, Nice. Cool.
+
+09:44
+Vrijen Attawar
+Cool.
+
+09:47
+Ilse Funkhouser
+The. Did you want to brief everybody on Darwin Box or is that worth a
+combo now or you want to.
+
+09:54
+Vrijen Attawar
+Yeah, yeah. Very good conversation with Darwin Box. So we are going full
+speed ahead on the acquisition channel. We've spoken to a couple of
+founders that have sold companies and have essentially been checking
+out, you know, what is it that we need to do to present ourselves and
+how do we gather up these folks that'll be interested in us. One of
+these leads, and probably one of our most promising leads is with an org
+called Darwin Box. They're a billion dollar company out of Asia based,
+headquartered in Singapore, but their primary markets are India and the
+Philippines. I managed to pull some strings and get a call with the
+founder. Very interesting guy, asked a lot of questions about us, gave
+us.
+
+10:40
+Vrijen Attawar
+We are like ostensibly very out of their wheelhouse but that is a good
+thing because their wheelhouse is very boring and traditional and stuff
+that they've already mastered. Largely the framing, it seems like that
+would be interesting to them is almost as career span as a moonshot if
+you want to think of it in that framing. Amongst other things, I think
+Logan actually upon being asked, pointed out some really concrete ways
+in which our tech could slot in. But frankly considering the relative
+scale difference between us and them, it would be more of a, you know,
+in the eye of the beholder. Whatever they want to sort of see in making
+career span could. Could potentially work. So we're gonna have those
+conversations with them.
+
+11:21
+Vrijen Attawar
+Ilsa very rightly pointed out that giving everyone a little bit of time
+and space before we do that to like iron out some more stuff in the go
+to market side. It's not to say that is the exact framing that they will
+want to purchase even, but just from a narrative standpoint from a like
+helping the team think through things that have language refine, I think
+it makes a degree of sense to at least have a few days. Also not to seem
+desperate. So I'm thinking like early next week we'll throw on a call
+with essentially Logan, me, Ilsa, depending on how many folks they bring
+along. Ilya, we'll try to include you as well. If it doesn't throw the
+ratio off, but effectively I think it'll be a good way to demonstrate
+the very cool shit that we've built.
+
+12:05
+Vrijen Attawar
+There's some other conversations with folks like at DAO and stuff that
+are still maturing, but those I will let them cook a little bit more
+before sharing. Anything I missed from the morning call logs?
+
+12:19
+Ilse Funkhouser
+No, I think that's it. And just to zoom out a little bit. I mean, I
+think when we talked as a team, what like two and a half weeks ago, we
+said we'd keep everybody apprised of how these conversations are going.
+I'll share. I've shared this with V, but I'll share again the bigger
+notion database of kind of targets that we're looking at. Our plan is
+essentially just continuing to look at between five to 10 potential
+acquirers per week and cross reference who we know in the most senior
+decision making roles or how we can get to those people in the most
+decision making roles at each company. So this is one lead that I'm
+happy went really well.
+
+13:04
+Ilse Funkhouser
+But our goal is to get 15 to 20 such conversations kind of in the
+pipeline so that we can start to see the lay of the land a little bit
+more essentially. But I'm happy we got. Got one more in the bag. So.
+Yeah, that's kind of the update there.
+
+13:26
+Vrijen Attawar
+Yep, yep, yep. All, all good stuff. We, we also should be rolling out to
+Emory soon. Ilsa, at the moment you can give me some sort of an update
+on which is unrelated because we're still meeting with Emory tomorrow
+and we're going to figure out how to roll this out to like their alums,
+but in parallel. One of the things they requested was a special code for
+their federal worker alums.
+
+13:50
+Vrijen Attawar
+That's.
+
+13:51
+Vrijen Attawar
+So if we can just get that.
+
+13:54
+Vrijen Attawar
+Functional, that'd be great. Yeah, an update on that. I gave Danny a
+pull request that according to ChatGPT, will fix the issue totally and
+completely. I have not tested it because I've never actually deployed
+the backend once in my life. So great time to learn. I haven't wanted to
+distract Danny too much, but Danny, if we could with deploying that, the
+staging work, like what's the best way to test out if that actually
+fixes things?
+
+14:22
+Danny Williams
+Yeah, we can deploy the stadium. Do you want to do it and I teach you
+how to do it or do you want me to just do it?
+
+14:32
+Vrijen Attawar
+Given. Given that you're going to be gone this time next month, that's
+probably a good idea. So after this call, I'll pick you up.
+
+14:40
+Vrijen Attawar
+Yeah, you know what they say, you teach a. You teach a woman to deploy,
+she can deploy her whole life.
+
+14:50
+Ilse Funkhouser
+You almost. You almost had it.
+
+14:52
+Vrijen Attawar
+Almost had it. It's a little. Oh, I'm. I'm gonna blame it. Close, but no
+cigar. It's okay. I'm gonna go flagellate myself for failing the last.
+Privately. Privately. I gotta jump with Rocklin a little bit. Ilya, do
+you mind if we break off and just get a quick update in Lokes? Feel free
+to join as well, unless you have something to do it. But I have a one
+one with Rockle soon that I don't want to miss, so I want to pass along
+some info.
+
+15:21
+Ilya Kucherenko
+So are you. Are you looking for an update from me right now or did you
+say, hey, let's do an update after your other calls?
+
+15:29
+Vrijen Attawar
+I was thinking of sync, but actually, yeah, now that you mentioned that,
+maybe it's better to carve out more than nine minutes for it. Are you
+free later in the day? You're western? Yeah, okay, perfect. Sweet.
+
+15:41
+Vrijen Attawar
+I'll.
+
+15:41
+Vrijen Attawar
+I'll ping you closer or like get something closer to midday.
+
+15:45
+Ilya Kucherenko
+Yeah, My day has just begun.
+
+15:47
+Vrijen Attawar
+Amazing, Ilya, amazing. It's good to hear.
+
+15:52
+Danny Williams
+That.
+
+15:52
+Vrijen Attawar
+I'll get that sorted. I'll actually jump so that I can prep for that
+next meeting, but I will catch you all in a little bit.
+
+15:57
+Vrijen Attawar
+Cool.
+
+15:58
+Vrijen Attawar
+All right, Adios.

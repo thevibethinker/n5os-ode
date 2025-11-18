@@ -1,0 +1,108 @@
+{
+  "meeting_id": "2025-10-23_coral_x_vrijen_chat",
+  "generated_at": "2025-11-17T08:18:51.634198Z",
+  "transcript_path": "Personal/Meetings/Inbox/2025-10-23_coral_x_vrijen_chat/transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "canonical_name": "Detailed Recap",
+      "status": "applicable",
+      "priority": "p0",
+      "mandatory": true,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "canonical_name": "Decisions Made",
+      "status": "applicable",
+      "priority": "p0",
+      "mandatory": true,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "canonical_name": "Action Items",
+      "status": "applicable",
+      "priority": "p0",
+      "mandatory": true,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B14_BLURBS_REQUESTED",
+      "canonical_name": "Blurbs/Messaging",
+      "status": "applicable",
+      "priority": "p0",
+      "mandatory": true,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B25_DELIVERABLES",
+      "canonical_name": "Deliverables Map",
+      "status": "applicable",
+      "priority": "p0",
+      "mandatory": true,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "canonical_name": "Meeting Metadata",
+      "status": "applicable",
+      "priority": "p0",
+      "mandatory": true,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "canonical_name": "Stakeholder Intel / Partnership Dynamics",
+      "status": "applicable",
+      "priority": "p1",
+      "mandatory": false
+    },
+    {
+      "block_id": "B06_BUSINESS_CONTEXT",
+      "canonical_name": "Business Context & Opportunity",
+      "status": "applicable",
+      "priority": "p1",
+      "mandatory": false
+    },
+    {
+      "block_id": "B13_RISKS_OPPORTUNITIES",
+      "canonical_name": "Risks & Strategic Opportunities",
+      "status": "applicable",
+      "priority": "p2",
+      "mandatory": false
+    },
+    {
+      "block_id": "B21_KEY_MOMENTS",
+      "canonical_name": "Key Moments & Pivots",
+      "status": "applicable",
+      "priority": "p2",
+      "mandatory": false
+    }
+  ],
+  "selection_rationale": "Partnership exploration call: semantic analysis identified strategic content (Careerspan product positioning, co-founder collaboration opportunity), partnership dynamics with creator/influencer, content creator onboarding, and strategic risks around monetization ethics. Mandatory core blocks selected. Conditional blocks added for stakeholder intel, business context, risks/opportunities, and key pivots.",
+  "total_blocks": 10,
+  "metadata": {
+    "meeting_type": "partnership_exploration",
+    "participants": [
+      "Vrijen Attawar (Careerspan)",
+      "Coral"
+    ],
+    "external_parties": [
+      "Coral"
+    ],
+    "careerspan_attendees": [
+      "Vrijen Attawar"
+    ],
+    "has_decisions": true,
+    "has_strategic_content": true,
+    "estimated_impact": "high",
+    "key_themes": [
+      "Product positioning for creator community",
+      "Co-founder collaboration potential (Logan Curry)",
+      "University/institutional partnerships (FIU)",
+      "Influencer monetization strategy",
+      "Brand ethics and trust"
+    ]
+  }
+}

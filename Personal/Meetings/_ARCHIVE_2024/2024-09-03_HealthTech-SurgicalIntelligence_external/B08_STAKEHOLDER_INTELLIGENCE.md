@@ -1,9 +1,8 @@
 ---
 created: 2025-11-09
 last_edited: 2025-11-09
-version: 1.0
+version: 1
 ---
-
 # B08 - STAKEHOLDER INTELLIGENCE
 
 ## Foundational Profile

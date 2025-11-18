@@ -1,15 +1,15 @@
 ---
-description: 'Command: follow-up-email-generator'
+description: "Command: follow-up-email-generator"
 tool: true
 tags:
-- extraction
-- analysis
-- ai
-- voice-echoing
-- language-matching
-- confidence-based-links
-- readability
-- enhanced-dials
+  - extraction
+  - analysis
+  - ai
+  - voice-echoing
+  - language-matching
+  - confidence-based-links
+  - readability
+  - enhanced-dials
 ---
 Function – Follow-Up Email Generator — Careerspan v11.0
 (Audit-Complete × Socratic Expansion × Speaker-Aware × Map-Archive Ready × Metaprompter-Compliant × Language-Echoing × Confidence-Based Links × Readability-Optimized × Enhanced-Dial-Mapping)

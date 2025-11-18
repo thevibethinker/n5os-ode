@@ -1,0 +1,97 @@
+{
+  "meeting_id": "2025-08-29_tim-he_careerspan-twill-partnership-exploration_partnership",
+  "generated_at": "2025-11-17T07:43:03.669473Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "pending",
+      "priority": 1,
+      "trigger": "always_generate"
+    },
+    {
+      "block_id": "B02",
+      "canonical_name": "COMMITMENTS",
+      "status": "pending",
+      "priority": 1,
+      "trigger": "always_generate"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "decision_made"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER",
+      "canonical_name": "STAKEHOLDER_INTELLIGENCE",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "external_partnership_meeting"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "action_items_identified"
+    },
+    {
+      "block_id": "B06",
+      "canonical_name": "BUSINESS_CONTEXT",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "business_partnership_meeting"
+    },
+    {
+      "block_id": "B08",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "status": "pending",
+      "priority": 3,
+      "trigger": "followup_scheduled"
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "pending",
+      "priority": 1,
+      "trigger": "always_generate"
+    }
+  ],
+  "selection_rationale": "This is a partnership exploration meeting between Careerspan and Twill leadership. Selected CORE BLOCKS (B01, B02, B26) required for all meetings. Added B03_DECISIONS for explicit pricing decision ($2k/month). Added B03_STAKEHOLDER_INTELLIGENCE (B03_STAKEHOLDER) for external partnership dynamics and stakeholder context. Added B05_ACTION_ITEMS for clear next steps (sample JDs, internal evaluation, pilot planning). Added B06_BUSINESS_CONTEXT for revenue model, unit economics, and commercial implications. Added B08_FOLLOW_UP_CONVERSATIONS for scheduled contract negotiation and pilot timeline. Total: 8 blocks in optimal range.",
+  "total_blocks": 8,
+  "meeting_metadata": {
+    "type": "partnership_exploration",
+    "participants": 2,
+    "external_parties": [
+      "Tim He - Twill"
+    ],
+    "careerspan_attendees": [
+      "Vrijen Attawar"
+    ],
+    "strategic_content": true,
+    "business_content": true,
+    "key_decisions": [
+      "$2k/month subscription pricing",
+      "3-month trial period"
+    ],
+    "estimated_impact": "high"
+  },
+  "system_states": {
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-11-18T03:13:21.621966+00:00",
+      "last_updated_by": "MG-5_v2"
+    }
+  },
+  "ready_for_state_transition": {
+    "status": false,
+    "blocking_systems": [
+      "intelligence_blocks",
+      "warm_intro"
+    ],
+    "last_evaluated": "2025-11-18T03:14:32.587762+00:00"
+  }
+}

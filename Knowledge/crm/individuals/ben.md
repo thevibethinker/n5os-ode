@@ -1,17 +1,17 @@
 ---
-name: "Ben"
-email_primary: "ben@substrate.run"
-email_aliases: []
-organization: "Substrate.Run"
-role: "[To be determined]"
+name: Ben
+email_primary: ben@substrate.run
+email_aliases: 
+organization: Substrate.Run
+role:
+  - To be determined
 first_contact: "2025-11-13T10:30:00-05:00"
-last_updated: "2025-11-11"
-lead_type: "LD-GEN"
-status: "active"
+last_updated: 2025-11-11
+lead_type: LD-GEN
+status: active
 interaction_count: 1
-last_interaction: "2025-11-11"
+last_interaction: 2025-11-11
 ---
-
 # Ben
 
 **Organization:** Substrate.Run  

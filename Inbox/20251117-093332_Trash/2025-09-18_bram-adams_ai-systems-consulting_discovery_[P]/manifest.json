@@ -1,0 +1,82 @@
+{
+  "meeting_id": "2025-09-18_bram-adams_ai-systems-consulting_discovery",
+  "generated_at": "2025-11-16T21:18:03Z",
+  "transcript_word_count": 9827,
+  "meeting_type": "discovery_consulting",
+  "classification": "external",
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - comprehensive overview of consultation on AI systems for information management"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - multiple explicit commitments made by both parties regarding future work and collaboration"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - classification, participant metadata, and tracking"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "DECISIONS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Decision to hire Bram Adams as consultant for Zo system architecture and information management restructuring"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "block_name": "STAKEHOLDER_INTELLIGENCE",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "External meeting with key strategic advisor; Bram Adams (founder YCB, personal library science expert) and his product positioning"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple concrete action items: test Bram's YCB boilerplate, sync with Ilsa about discussion, share call recording, send promo materials"
+    },
+    {
+      "block_id": "B08_FOLLOW_UP",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple follow-up conversations needed: sync with Ilsa (Careerspan tech team), potential social with Bram, visit Zo coworking space"
+    },
+    {
+      "block_id": "B05_STRATEGIC",
+      "block_name": "STRATEGIC_IMPLICATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Deep strategic insights about information governance at Careerspan: master ledger concept, data quality vs quantity, team vocabulary, decentralized vs centralized knowledge"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "completed",
+      "category": "optional",
+      "reason": "Multiple key quotes and insights: 'Communication can often be cheaper than adding another knowledge base', 'You are the first and last arbiter of value', master ledger concept, human dignity over data"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "meeting_id": "2025-10-21_Ilse_internal-standup",
+  "generated_at": "2025-11-17T02:43:16.616272+00:00",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T05:37:10Z"
+    },
+    {
+      "block_id": "B02",
+      "canonical_name": "COMMITMENTS",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T05:37:10Z"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T05:48:28Z"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T05:48:28Z"
+    },
+    {
+      "block_id": "B05_STRATEGIC_IMPLICATIONS",
+      "canonical_name": "STRATEGIC_IMPLICATIONS",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T05:48:28Z"
+    },
+    {
+      "block_id": "B06",
+      "canonical_name": "BUSINESS_CONTEXT",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T05:59:40.390383Z"
+    },
+    {
+      "block_id": "B07_RISKS_OPPORTUNITIES",
+      "canonical_name": "RISKS_OPPORTUNITIES",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T05:59:40.390383Z"
+    },
+    {
+      "block_id": "B08",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T05:59:40.390383Z"
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T05:37:10Z"
+    }
+  ],
+  "selection_rationale": "Internal strategy meeting between co-founder (Vrijen) and tech lead (Ilse). Meeting focused on major strategic pivots including: (1) shift to acquisition-focused mode with reduced burn rate, (2) financial planning and runway decisions, (3) product direction discussion with technical constraints. Selected blocks reflect this complexity: Core blocks (B01, B02, B26) provide foundational documentation. B03 captures major strategic decisions about company direction. B05 + B08 track multiple follow-up actions and committed discussions. B05_STRATEGIC_IMPLICATIONS and B07_RISKS_OPPORTUNITIES address the strategic nature and identified risks (scaling costs, API constraints). B06_BUSINESS_CONTEXT documents the financial and business model implications of the new strategy.",
+  "total_blocks": 9,
+  "meeting_metadata": {
+    "meeting_type": "internal_strategy",
+    "participant_count": 2,
+    "duration_estimate_minutes": 30,
+    "strategic_content": true,
+    "technical_content": true,
+    "business_content": true,
+    "decision_made": true,
+    "follow_up_required": true
+  },
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.700784+00:00",
+      "last_updated_by": "migration_script",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:47:20.873332+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "n/a",
+      "reason": "internal_only",
+      "completed_at": "2025-11-18T03:09:32.898721+00:00",
+      "last_updated_by": "follow_up_email_generator"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.700784+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.700784+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-18T02:43:18.176373Z",
+    "status": "scanned_no_valid_intros",
+    "note": "Semantic analysis completed; no connector-facilitated intros requiring drafts"
+  },
+  "ready_for_state_transition": {
+    "status": true,
+    "blocking_systems": [],
+    "last_evaluated": "2025-11-18T03:14:32.583961+00:00"
+  }
+}

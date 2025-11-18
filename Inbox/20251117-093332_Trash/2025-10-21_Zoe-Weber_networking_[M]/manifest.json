@@ -1,0 +1,97 @@
+{
+  "meeting_id": "2025-10-21_Zoe-Weber_networking",
+  "generated_at": "2025-11-17T02:27:44.109153Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "block_id": "B02",
+      "canonical_name": "COMMITMENTS",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "STAKEHOLDER_INTEL",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "STRATEGIC_IMPLICATIONS",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B08",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B07",
+      "canonical_name": "TONE_AND_CONTEXT",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B06",
+      "canonical_name": "BUSINESS_CONTEXT",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B21",
+      "canonical_name": "KEY_MOMENTS",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "pending",
+      "priority": 1
+    }
+  ],
+  "selection_rationale": "External networking meeting with partnership potential. Core blocks included. Conditional blocks selected based on: (1) partnership/collaboration detected (Gorgeous Ventures, alumni networks, CMC), (2) strategic decisions made (shift from fundraising to acquisition focus), (3) action items identified (survey sharing, resource distribution), (4) follow-ups planned (CMC engagement), (5) key strategic moments captured. Wildcard slots used for tone analysis (strong relationship building) and business context (monetization model discussion). Total: 11 blocks targeting optimal content coverage.",
+  "total_blocks": 11,
+  "analysis": {
+    "meeting_type": "External Networking / Partnership Discovery",
+    "participants": 2,
+    "key_themes": [
+      "MBA alumni connection",
+      "Careerspan product demo and strategy",
+      "Gorgeous Ventures partnership potential",
+      "Alumni network distribution channels",
+      "CMC integration opportunity",
+      "International student segment focus",
+      "Monetization strategy shift"
+    ],
+    "strategic_level": "Medium-High",
+    "trigger_patterns": {
+      "partnership_mentions": true,
+      "decisions_made": true,
+      "action_items": true,
+      "risks_identified": true,
+      "follow_ups_planned": true,
+      "key_quotes": true
+    }
+  }
+}

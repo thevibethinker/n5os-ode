@@ -1,0 +1,116 @@
+{
+  "meeting_id": "2025-10-23_coral_x_vrijen_chat",
+  "generated_at": "2025-11-17T08:04:43.049571Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "pending",
+      "priority": 1,
+      "trigger": "always_required",
+      "rationale": "Comprehensive overview of strategic partnership discovery call with content creator Coral"
+    },
+    {
+      "block_id": "B02",
+      "canonical_name": "COMMITMENTS",
+      "status": "pending",
+      "priority": 1,
+      "trigger": "always_required",
+      "rationale": "Explicit commitments made by both parties regarding product trial, feedback, and university introductions"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "detected_decisions",
+      "rationale": "Decision to pilot Careerspan with Coral's community, decision to proceed with university partnership exploration"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "canonical_name": "STAKEHOLDER_INTELLIGENCE",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "external_partnership_meeting",
+      "rationale": "Critical stakeholder profiling: Coral (creator with 500 TikTok followers, FIU career advisor background), Ruth (university career director), Logan (co-founder)"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "action_items_present",
+      "rationale": "Product trial, feedback collection, university introduction follow-up, promo code setup, community outreach planning"
+    },
+    {
+      "block_id": "B08",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "follow_ups_discussed",
+      "rationale": "Follow-up conversations to schedule: Ruth at FIU, group chat with Logan, product feedback session"
+    },
+    {
+      "block_id": "B06",
+      "canonical_name": "BUSINESS_CONTEXT",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "business_implications_present",
+      "rationale": "University market opportunity (FIU 50k students), creator distribution channel, Vmock replacement at scale, recruiting revenue model"
+    },
+    {
+      "block_id": "B25",
+      "canonical_name": "DELIVERABLES",
+      "status": "pending",
+      "priority": 2,
+      "trigger": "deliverables_discussed",
+      "rationale": "Critical for follow-up workflow: premium trial code, promo codes for community, Zo platform introduction, university proposal materials"
+    },
+    {
+      "block_id": "B21",
+      "canonical_name": "KEY_MOMENTS",
+      "status": "pending",
+      "priority": 3,
+      "trigger": "strategic_quotes_present",
+      "rationale": "Multiple strategic insights: authenticity as moat, 30% white boy audacity required, women's under-advocacy problem, storytelling as core value"
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "pending",
+      "priority": 1,
+      "trigger": "always_required",
+      "rationale": "Classification, attendee metadata, system tracking, tags, categorization"
+    }
+  ],
+  "selection_rationale": "Strategic partnership discovery meeting with high business impact. Core blocks always generated (B01, B02, B26). Partnership_discovery meeting type triggers: B03_STAKEHOLDER_INTEL (external party), B03_DECISIONS (decisions made), B05_ACTION_ITEMS (multiple action items). Business context triggers B06 (university market) and B25 (deliverables critical for follow-up workflow). High-value conditionals: B08 (follow-ups), B21 (strategic quotes on authenticity/storytelling). Total 10 blocks provides comprehensive coverage for activation workflow.",
+  "total_blocks": 10,
+  "metadata": {
+    "meeting_type": "strategic_partnership_discovery",
+    "meeting_subtypes": [
+      "networking",
+      "product_demo",
+      "influencer_collaboration"
+    ],
+    "participants": 2,
+    "external_parties": [
+      "Coral (Content creator/Fix Your Feed founder, FIU student, career advisor background)",
+      "Ruth (FIU Career Director - warm intro pending)"
+    ],
+    "strategic_content": true,
+    "business_content": true,
+    "partnership_potential": true,
+    "key_themes": [
+      "Creator partnership and distribution",
+      "University market expansion",
+      "Product market fit validation",
+      "Authenticity as competitive moat",
+      "Monetization models (creator kickbacks, university contracts)",
+      "Latina women career advocacy",
+      "Scaling career guidance solutions"
+    ],
+    "business_impact": "HIGH - Large-scale university opportunity (50k students), creator distribution channel, Vmock replacement market",
+    "follow_up_priority": "HIGH - University partnership requires immediate action with Ruth, product trial feedback from credible creator advisor"
+  }
+}

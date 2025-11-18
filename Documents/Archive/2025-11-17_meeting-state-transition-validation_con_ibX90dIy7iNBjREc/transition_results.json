@@ -1,0 +1,117 @@
+{
+  "total_scanned": 17,
+  "ready_to_transition": [
+    "2025-10-28_oracle____zo_event_sponsorship_sync_[M]"
+  ],
+  "still_blocked": [
+    {
+      "name": "2025-08-29_tim-he_careerspan-twill-partnership-exploration_partnership_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "communications/communications/blurb_BLB-001.md",
+        "communications/communications/blurb_BLB-002.md"
+      ]
+    },
+    {
+      "name": "2025-09-09_Krista-Tan_talent-collective_partnership-discovery_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "communications/communications/blurb_BLB-003.md",
+        "communications/communications/blurb_BLB-004.md"
+      ]
+    },
+    {
+      "name": "2025-09-22_Giovanna-Ventola-Rise-Community_networking_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "communications/communications/blurb_BLB-005.md"
+      ]
+    },
+    {
+      "name": "2025-10-21_Ilse_internal-standup_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md"
+      ]
+    },
+    {
+      "name": "2025-10-21_Zoe-Weber_networking_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "communications/communications/blurb_BLB-006.md"
+      ]
+    },
+    {
+      "name": "2025-10-23_coral_x_vrijen_chat_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md"
+      ]
+    },
+    {
+      "name": "2025-10-24_careerspan____sam___partnership_discovery_call_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "communications/communications/blurb_BLB-007.md"
+      ]
+    },
+    {
+      "name": "2025-10-29_Alex_x_Vrijen___Wisdom_Partners_Coaching_[M]",
+      "reason": [
+        "B07_WARM_INTRO_BIDIRECTIONAL.md",
+        "communications/communications/blurb_BLB-008.md"
+      ]
+    },
+    {
+      "name": "2025-10-30_Vrijen_Vineet_Bains_Casual_Discussion_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md"
+      ]
+    },
+    {
+      "name": "2025-10-30_Zo_Conversation_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md"
+      ]
+    },
+    {
+      "name": "2025-10-31_Daily_co-founder_standup_check_trello_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "B07_WARM_INTRO_BIDIRECTIONAL.md"
+      ]
+    },
+    {
+      "name": "2025-11-03_Zo_Event_Planning_Session_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "B07_WARM_INTRO_BIDIRECTIONAL.md"
+      ]
+    },
+    {
+      "name": "2025-11-04_Daily_cofounder_standup_check_trello_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md"
+      ]
+    },
+    {
+      "name": "2025-11-09_Eric_x_Vrijen_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md"
+      ]
+    },
+    {
+      "name": "2025-11-10_Daily_co-founder_standup_+_check_trello_[M]",
+      "reason": [
+        "FOLLOW_UP_EMAIL.md",
+        "communications/communications/blurb_BLB-001.md",
+        "communications/communications/blurb_BLB-002.md"
+      ]
+    },
+    {
+      "name": "2025-11-14_vrijen_attawar_and_kai_song_[M]",
+      "reason": [
+        "communications/communications/blurb_BLB-001.md"
+      ]
+    }
+  ],
+  "manifest_file_mismatches": []
+}

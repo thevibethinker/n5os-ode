@@ -23,3 +23,26 @@
 {"timestamp":"2025-11-04T19:12:26+00:00Z","action":"deleted_empty_artifacts","count":8,"folders":["1-1-sam","30min-tim","ai-agent-mba","acquisition-war-room","affiliates-lender","alex-wisdom-1","alex-wisdom-2","asher-transcript"]}
 {"timestamp":"2025-11-04T19:48:36+00:00","old":"2025-11-04_Alex Caveny_external","new":"2025-11-04_alex-caveny_external","method":"manual_fix_spaces"}
 {"timestamp":"2025-11-04T19:48:36+00:00","old":"2025-11-03_Nafisa Poonawala_technical","new":"2025-11-03_nafisa-poonawala_technical","method":"manual_fix_spaces"}
+{"timestamp": "2025-11-12T12:36:09.386377", "old": "2025-10-20_Bennett-Lee_advisory", "new": "2025-10-20_bennett-lee_ai-grading-gtm-feedback_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:36:59.345470", "old": "2025-08-26_Asher-King-Abramson_partnership", "new": "2025-08-26_asher-king-abramson_product-integration-gtm_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:37:36.399801", "old": "2025-09-24_Lensa-Careerspan_partnership-pilot", "new": "2025-09-24_lensa_partnership-exploration-pilot_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:38:57.197474", "old": "2025-08-26_Equals-Careerspan_partnership", "new": "2025-08-26_equals_product-demo-partnership-exploration_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:39:50.259840", "old": "2025-08-29_tim-he_careerspan-discussion_networking", "new": "2025-08-29_tim-he_talent-sourcing-integration_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:40:32.889183", "old": "2025-08-27_Ashraf-Heleka_product-community", "new": "2025-08-27_ashraf-heleka_product-community-access_discovery", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:41:53.010882", "old": "2025-09-02_Aniket_partnership", "new": "2025-09-02_aniket_recruiting-solutions-exploration_discovery", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:46:29.493089", "old": "2025-09-11_Caleb-Thornton_networking", "new": "2025-09-11_caleb-thornton_atlanta-pitch-participation_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:48:57.212507", "old": "2025-09-24_alex-caveny_advisor-coaching", "new": "2025-09-24_alex-caveny_product-demo-gtm-strategy_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:52:14.539328", "old": "2025-11-04_dbn-ctum_financial-review_partner", "new": "2025-10-30_ctum_financial-review-admin_planning", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:52:42.418393", "old": "2025-08-27_Amy-Quan_referral-networks", "new": "2025-08-27_amy-quan_event-planning-negotiation_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:53:05.958017", "old": "2025-10-31_Danny-Williams_transition", "new": "2025-10-31_danny-williams_employment-transition-discussion_standup", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:54:25.234407", "old": "2025-10-22_Brinleigh-Murphy-Reuter_external", "new": "2025-10-22_brinleigh-murphy-reuter_early-product-demo_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:55:09.351176", "old": "2025-11-04_Tejas-Ravindran_personal-reset", "new": "2025-11-04_workpaths_burnout-recovery-meditation_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:55:41.519534", "old": "2025-09-18_Bram-Adams_advisory", "new": "2025-09-18_bram-adams_ai-systems-consulting_discovery", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:56:07.711486", "old": "2025-10-22_Brinleigh-Murphy-Reuter_coaching", "new": "2025-10-22_brinleigh-murphy-reuter_n5-product-demo_sales", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T12:56:39.053445", "old": "2025-09-11_Caleb-Thornton_pitch-event", "new": "2025-09-11_caleb-thornton_atlanta-pitch-event_partnership", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T13:04:12.518902", "old": "2025-10-20_Bennett-Lee_edtech", "new": "2025-10-20_bennett-lee_edtech-gtm-advice_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T13:04:45.826913", "old": "2025-10-09_Alex-Caveny_coaching", "new": "2025-10-09_wisdom-partners_founder-burnout-productivity_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T13:08:42.457866", "old": "2025-11-04_Vrijen-Rochel_1-1_Networking", "new": "2025-11-04_rochel_peer-networking-discussion_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T13:11:18.388825", "old": "2025-11-04_Bram-Adams_advisory", "new": "2025-09-18_bram-adams_ai-systems-architecture_discovery", "method": "pipeline_integration"}
+{"timestamp": "2025-11-12T13:16:58.354877", "old": "2025-11-04_unknown-attendee_advisory", "new": "2025-09-24_alex-caveny_product-demo-gtm_coaching", "method": "pipeline_integration"}
+{"timestamp": "2025-11-15T10:26:26.331328", "old": "2025-08-29_tim-he_talent-sourcing-integration_partnership", "new": "2025-08-29_tim-he_careerspan-twill-partnership-exploration_partnership", "method": "pipeline_integration"}

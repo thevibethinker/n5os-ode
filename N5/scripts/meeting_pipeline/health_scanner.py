@@ -126,6 +126,28 @@ def scan_all_meetings(limit: int = 50):
     
     return results
 
+def check_empty_folders(meetings_dir: Path) -> List[str]:
+    """
+    Scan for empty meeting folders (potential ingestion failures).
+    Returns list of empty folder names.
+    """
+    empty = []
+    
+    if not meetings_dir.exists():
+        return empty
+    
+    for folder in meetings_dir.iterdir():
+        # Skip special directories
+        if not folder.is_dir() or folder.name.startswith('.') or folder.name in ['Inbox', '_ARCHIVE_2024']:
+            continue
+        
+        # Check if folder is empty
+        contents = list(folder.iterdir())
+        if len(contents) == 0:
+            empty.append(folder.name)
+    
+    return empty
+
 def generate_health_report():
     """Generate health report."""
     issues = scan_all_meetings(limit=50)
@@ -152,7 +174,23 @@ def main():
     print("Meeting System Health Scanner")
     print("=" * 50)
     
+    # Check for empty folders
+    print("\n🗂️  Checking for empty folders...")
+    empty_folders = check_empty_folders(MEETINGS_DIR)
+    if empty_folders:
+        print(f"   ⚠️  Found {len(empty_folders)} empty folders:")
+        for folder in empty_folders:
+            print(f"      - {folder}")
+    else:
+        print("   ✓ No empty folders found")
+    
+    print("\n📊 Scanning meeting health...")
     report = generate_health_report()
+    
+    # Add empty folders to report
+    if empty_folders:
+        report['empty_folders'] = empty_folders
+        report['summary']['empty_folders'] = len(empty_folders)
     
     HEALTH_REPORT.parent.mkdir(parents=True, exist_ok=True)
     HEALTH_REPORT.write_text(json.dumps(report, indent=2))
@@ -162,6 +200,9 @@ def main():
     print(f"HIGH:     {report['summary']['high_issues']}")
     print(f"MEDIUM:   {report['summary']['medium_issues']}")
     print(f"HEALTHY:  {report['summary']['healthy']}")
+    
+    if empty_folders:
+        print(f"⚠️  EMPTY FOLDERS: {len(empty_folders)}")
     
     if report['summary']['critical_issues'] > 0:
         print("\n🚨 CRITICAL ISSUES:")
@@ -177,3 +218,5 @@ def main():
 if __name__ == "__main__":
     import sys
     sys.exit(main())
+
+

@@ -1,0 +1,74 @@
+{
+  "meeting_id": "2025-10-30_dbn-ctum-szz",
+  "generated_at": "2025-11-16T16:02:09.690989Z",
+  "transcript_word_count": 3133,
+  "meeting_type": "financial_planning",
+  "classification": "internal",
+  "blocks_selected": 8,
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "block_name": "Detailed Recap",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block: comprehensive meeting overview required"
+    },
+    {
+      "block_id": "B02_COMMITMENTS",
+      "block_name": "Commitments & Action Items",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block: multiple commitments for follow-up identified (tax docs, cap table, email reminders)"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "block_name": "Meeting Metadata Summary",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block: system metadata required"
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "block_name": "Decisions Made",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Financial planning meeting: key decisions made (equity buyback, salary recording, contractor closure)"
+    },
+    {
+      "block_id": "B04_OPEN_QUESTIONS",
+      "block_name": "Open Questions & Clarifications Needed",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Financial planning meeting: clarification needed on investment terms, cap table updates, ILS amounts"
+    },
+    {
+      "block_id": "B09_REFERENCE_DATA",
+      "block_name": "Reference Data",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Financial planning meeting: specific amounts, dates, and account details discussed"
+    },
+    {
+      "block_id": "B10_RISK_REGISTER",
+      "block_name": "Risk Register",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Financial planning meeting: risks around payroll accuracy, contractor classification, cap table reconciliation"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "block_name": "Action Items & Next Steps",
+      "priority": 2,
+      "status": "completed",
+      "category": "wildcard",
+      "reason": "High value: clear action items with owners (investment docs, cap table, payroll refund clarification, email reminders)"
+    }
+  ]
+}

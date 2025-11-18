@@ -10,19 +10,7 @@ Quick-capture list for social media content ideas, observations, and themes.
 
 <!-- New ideas captured here; each gets an ID like I-2025-10-22-001 -->
 
-**ID:** I-2025-11-01-002  
-**Title:** AI is making parents out of all of us: Choose your kid wisely  
-**Body:**
-
-The analogy holds deeper than you might think: it's nature versus nurture. Nature—what the model makers give us—sets the baseline. But nurture? That's where you can add significant capability on top. How you prompt, what standards you hold it to, what behaviors you reward or correct—that's the "IQ points" you're adding through cultivation. The model is the genetic potential; your interaction pattern is the environment that either unlocks or wastes it.
-
-Brady's right about AI being sycophantic—but that's not a bug in the technology, it's a mirror of what we're asking for. Here's the reframe: AI is making parents out of all of us. You're not just using a tool; you're raising a kind of intelligence that will shape who you become. Do you want a sycophant who tells you what you want to hear? Or do you want something that challenges you, pushes back, makes you think harder? The choice reveals something: the kind of AI you cultivate says everything about who you want to be in this next stage of life. If you train your AI to be a yes-man, you'll atrophy. If you train it to be a sparring partner, you'll grow. This isn't about the AI's limitations—it's about ours. The mental model: stop thinking like a user, start thinking like a parent. What values are you instilling? What behaviors are you rewarding? Because the AI you shape will, in turn, reshape you.
-
-**Tags:** ai,mental-models,agency,personal-development,sycophancy,intentionality
-
 ---
-
-
 
 ## In Review
 
@@ -42,6 +30,21 @@ Brady's right about AI being sycophantic—but that's not a bug in the technolog
 
 <!-- Ideas that have been generated or archived -->
 
+**ID:** I-2025-11-01-002  
+**Title:** AI is making parents out of all of us: Choose your kid wisely  
+**Body:**
+
+The analogy holds deeper than you might think: it's nature versus nurture. Nature—what the model makers give us—sets the baseline. But nurture? That's where you can add significant capability on top. How you prompt, what standards you hold it to, what behaviors you reward or correct—that's the "IQ points" you're adding through cultivation. The model is the genetic potential; your interaction pattern is the environment that either unlocks or wastes it.
+
+Brady's right about AI being sycophantic—but that's not a bug in the technology, it's a mirror of what we're asking for. Here's the reframe: AI is making parents out of all of us. You're not just using a tool; you're raising a kind of intelligence that will shape who you become. Do you want a sycophant who tells you what you want to hear? Or do you want something that challenges you, pushes back, makes you think harder? The choice reveals something: the kind of AI you cultivate says everything about who you want to be in this next stage of life. If you train your AI to be a yes-man, you'll atrophy. If you train it to be a sparring partner, you'll grow. This isn't about the AI's limitations—it's about ours. The mental model: stop thinking like a user, start thinking like a parent. What values are you instilling? What behaviors are you rewarding? Because the AI you shape will, in turn, reshape you.
+
+**Tags:** ai,mental-models,agency,personal-development,sycophancy,intentionality
+
+---
+**Status:** Drafted → [20251112_190300_I-2025-11-01-002_post-draft.md]
+**Date:** 2025-11-12
+
+---
 
 **ID:** I-2025-11-01-001  
 **Title:** Does the Sapir-Whorf hypothesis apply to AI? Implications for building with AI  
@@ -115,3 +118,4 @@ python3 N5/scripts/n5_social_post.py list --status draft --platform linkedin
 
 **Last Updated:** 2025-10-22  
 **Version:** 1.0.0
+

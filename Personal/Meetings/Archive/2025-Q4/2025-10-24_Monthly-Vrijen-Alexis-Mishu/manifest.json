@@ -1,0 +1,111 @@
+{
+  "meeting_id": "2025-10-24_Monthly-Vrijen-Alexis-Mishu",
+  "generated_at": "2025-11-16T09:12:05-05:00",
+  "transcript_word_count": 4732,
+  "meeting_type": "internal_coaching",
+  "classification": "internal",
+  "duration_minutes": 20,
+  "participants": [
+    {
+      "name": "Vrijen Attawar",
+      "role": "Career coach & advisor"
+    },
+    {
+      "name": "Mishal Sayed",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Alexis",
+      "role": "Co-founder (mentioned)"
+    }
+  ],
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core requirement - comprehensive meeting overview"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core requirement - explicit commitments tracking"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "DECISIONS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Critical hiring decision made with explicit evaluation framework"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "STRATEGIC_IMPLICATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Vrijen provides extensive strategic coaching on hiring patterns and founder bias"
+    },
+    {
+      "block_id": "B07",
+      "block_name": "RISKS_OPPORTUNITIES",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple risks flagged: equity misalignment, incentive concerns, big-tech bias"
+    },
+    {
+      "block_id": "B07_TONE",
+      "block_name": "TONE_AND_CONTEXT",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Coaching dynamic with Vrijen providing direct feedback on founder patterns"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple follow-ups scheduled: same time tomorrow, Uber alumni group exploration"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "completed",
+      "category": "optional",
+      "reason": "Strong strategic quotes on recruiter hiring patterns and big-tech transitions"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core requirement - system metadata and classification"
+    }
+  ],
+  "selection_notes": {
+    "meeting_type_analysis": "Internal coaching call with strategic hiring focus",
+    "trigger_conditions": [
+      "Hiring decisions made (B03)",
+      "Strategic frameworks discussed (B05)",
+      "Risk concerns raised (B07_RISKS)",
+      "Tone: direct coaching feedback (B07_TONE)",
+      "Follow-ups scheduled (B08)",
+      "Notable quotes and frameworks (B21)"
+    ],
+    "wildcard_selections": 1,
+    "rationale": "Vrijen provides experienced founder perspective on hiring challenges, making this high-value for strategic learning"
+  }
+}
+

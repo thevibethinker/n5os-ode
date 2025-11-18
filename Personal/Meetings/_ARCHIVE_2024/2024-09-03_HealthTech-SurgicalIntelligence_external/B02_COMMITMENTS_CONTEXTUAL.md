@@ -1,9 +1,8 @@
 ---
 created: 2025-11-09
 last_edited: 2025-11-09
-version: 1.0
+version: 1
 ---
-
 # B02 - COMMITMENTS CONTEXTUAL
 
 | Owner | Deliverable | Context/Why | Due Date | Dependencies |

@@ -1,0 +1,511 @@
+You are a meeting intelligence analyst. Your task is to generate a meeting intelligence block.
+
+MEETING CONTEXT:
+- Meeting ID: 2025-10-30_Vrijen_Vineet_Bains_Casual_Discussion
+- Meeting Type: financial_planning
+- Participants: Vrijen Attawar, Vineet Bains, Logan Currie, Alphonse George
+- Classification: internal
+
+BLOCK TO GENERATE:
+- Block ID: B02
+- Block Name: COMMITMENTS
+- Priority: 1
+- Reason for this block: Multiple explicit commitments: investment docs, cap table, email reminders, payroll sorting
+
+FULL MEETING TRANSCRIPT:
+```
+**\
+00:00**\
+Vrijen Attawar\
+Hey, can y\' all hear me now?
+
+**\
+00:02**\
+Vineet Bains\
+I can hear you, Regen. How are you today?
+
+**\
+00:05**\
+Vrijen Attawar\
+I\'m doing well. How are you guys?
+
+**\
+00:07**\
+Vineet Bains\
+All good. So far so good. How\'s the Halloween going?
+
+**\
+00:11**\
+Vrijen Attawar\
+You know, I\'m not one to celebrate Halloween much. I think I grew up a
+little too much outside of the US to necessarily bother with costumes,
+but it\'s fun for everyone around me, it seems.
+
+**\
+00:25**\
+Vineet Bains\
+Yeah. Within. Your camera is off. Like, is it intentional or that?
+
+**\
+00:30**\
+Vrijen Attawar\
+Yeah, yeah. Give me just one second. I\'m just getting situated for the
+morning, so. Yeah, I wanted to jump in and. And at least be on the call
+headphones a second, but yeah, Logan should be joining. Give me one
+second to see where she is.
+
+**\
+00:44**\
+Vineet Bains\
+Okay. So can I tell you one tweet I just recently read a couple of hours
+back today?
+
+**\
+00:52**\
+Vrijen Attawar\
+Please. Yeah.
+
+**\
+00:53**\
+Vineet Bains\
+So basically I just read one of the guys saying that I have killed four
+spiders, five ghost, and three zombies. But I don\'t know why they are
+holding that candy bags with them.
+
+**\
+01:07**\
+Vrijen Attawar\
+Yeah, I mean, it\'s. It\'s a strange experience. It\'s a very strange
+experience to come here and just sort of see it happening. But I guess
+it\'s, you know, every. Every culture has its own thing. It\'s just
+silly to see in costumes as opposed to, you know, traditional clothing.
+
+**\
+01:23**\
+Vineet Bains\
+Hello. You\'re on mute.
+
+**\
+01:29**\
+Vrijen Attawar\
+I did the same thing. Coming in logs. How are you?
+
+**\
+01:34**\
+Vineet Bains\
+So now we have two persons from apply. One\'s mic not working. Another
+one\'s camera is not working.
+
+**\
+01:43**\
+Vrijen Attawar\
+One remote founder.
+
+**\
+01:45**\
+Vineet Bains\
+Yeah, Logan, you are still on mute.
+
+**\
+01:48**\
+Vrijen Attawar\
+Yeah, I think she\'s.
+
+**\
+01:56**\
+Vineet Bains\
+So region weekend is almost there now. Any plans for this coming
+weekend?
+
+**\
+02:02**\
+Vrijen Attawar\
+Not for. What am I doing this weekend. Thought I had something
+interesting. I have a. I have a friend\'s birthday, if I\'m not
+mistaken, so that\'ll be nice. It\'s Oasis birthday, Logan.
+
+**\
+02:17**\
+Alphonse George\
+Nice.
+
+**\
+02:18**\
+Vrijen Attawar\
+Yeah. Which I\'m doing logs while. While just said the word birthday.
+I\'m doing mine on the 15th. If you want to come down for it. There\'ll
+be some fun people.
+
+**\
+02:28**\
+Logan Currie\
+Interesting. Okay, that could be fun. Andrew might go to India in
+Taiwan, so I need to see if he\'s gonna have it. No, but if he doesn\'t,
+then I will come.
+
+**\
+02:40**\
+Vrijen Attawar\
+Yeah, please be cool to have you.
+
+**\
+02:44**\
+Vineet Bains\
+All right, so thank you. Sorry.
+
+**\
+02:48**\
+Vrijen Attawar\
+Yeah, no, let\'s. Let\'s kick this off. I may have to dip a little
+early. I\'m just getting pinged for. Pinged by. By some folks to jump
+on. But yeah, happy to dig into this. And these never take too long, so
+hopefully we\'ll Power through.
+
+**\
+03:02**\
+Vineet Bains\
+Sure. So thank you Virgin and Logan for rescheduling this call. I really
+appreciate. So before jumping on the open list, is there any business
+updates, is there anything good news that you wanted to share with us?
+As we are also in the last quarter of 2025 and in case if you want to
+make any changes you can just drop us the email or we are all just a one
+call away. So I\'ll start sharing my screen with the open points and
+give you a quickly walk through all the financials on the dashboard. So
+let me know if my screen is visible to you and it is also readable.
+Yeah, perfect. So the first point is about the invoices required. You
+can simply see the list over here.
+
+**\
+03:46**\
+Vineet Bains\
+And I think in the last call you have mentioned that you are also
+crossing some of the expenses. So whenever you have the invoices, just
+forward it to us and we can take it from there only.
+
+**\
+03:56**\
+Vrijen Attawar\
+Sounds good.
+
+**\
+03:58**\
+Logan Currie\
+Cool.
+
+**\
+03:58**\
+Vineet Bains\
+Yep. And next is about the payroll details. This is the same case of the
+ilts that the payment has been directly paid and were expecting some
+amount to be refunded by her.
+
+**\
+04:11**\
+Alphonse George\
+Can you.
+
+**\
+04:12**\
+Logan Currie\
+Would you mind sending me. I think I was a little bit confused about the
+amount that she needs to refund us. If you don\'t mind sending me an
+email and then that just so that it\'s clear and then I can forward that
+on to her and we can get that sorted. Thank you for up on that. But I
+think I, I talked to her about it. She was like I\'m fine. And then I
+didn\'t know the amount that I should. That should specify there
+perfectly.
+
+**\
+04:35**\
+Vineet Bains\
+After this call we definitely send you a formal email discussing about
+this issue and I think so that will also like work as a supporting
+document for us. The next question is about the investment details. So
+we have received 190k that made by Virgin on 8th of 25th. August of
+25th. So you have. Logan, you have already mentioned that it should be
+recorded as an investment and you will be sharing the documents on the
+terms.
+
+**\
+04:59**\
+Vrijen Attawar\
+Yeah, I meant to do that and I will get on that.
+
+**\
+05:04**\
+Vineet Bains\
+Okay, so you want us to drop that in the separate email reminder or is
+it fine that we can keep it?
+
+**\
+05:10**\
+Vrijen Attawar\
+If you could drop a separate email reminder, that would be class
+perfect.
+
+**\
+05:14**\
+Vineet Bains\
+Okay, we\'ll take that. Next we have an equity payout but before that I
+would like to cover about the contractor payments because this involves
+some of the accruals and the payments. So we have noted some irregular
+and inconsistent payment among the contactors which is making Actually
+difficult to keep a track on the payments for which is currently there
+for which period. Actually it is. Could you please help us on
+understanding the things that. How the things are actually moving with
+the protector payments. We have this specific document. Even the team
+has also attached it over here.
+
+**\
+05:49**\
+Vrijen Attawar\
+Let me see.
+
+**\
+05:52**\
+Vineet Bains\
+In the last month, we have taken an accrual of \$6,000 for you. So we
+just wanted to understand that are we expecting any payments or how\'s
+it going to be?
+
+**\
+06:02**\
+Vrijen Attawar\
+Pardon me? When you say expecting any payments, do you mean revenue or
+do you mean more payouts to these contracts?
+
+**\
+06:07**\
+Vineet Bains\
+The expenses payment? Yeah.
+
+**\
+06:10**\
+Vrijen Attawar\
+No more payments to Brady, no more payments to Serhi.
+
+**\
+06:14**\
+Vineet Bains\
+Okay.
+
+**\
+06:14**\
+Vrijen Attawar\
+Those folks have been completely closed up and. Yeah, they were wrapped
+up in August, I believe.
+
+**\
+06:22**\
+Logan Currie\
+Yeah. So they had their final payouts in September. Everyone else is
+moving forward, like, because there\'s not. There\'s another contractor
+who\'s not on here, which is Danny, not Daniel Brady, but there is
+another contractor that we\'ve. Yeah, I\'ll find something.
+
+**\
+06:48**\
+Alphonse George\
+Yeah, I mean, so we just wanted to get some confirmation for Daniel
+Williams. We could see that the payments are regular, like were able to.
+
+**\
+06:57**\
+Logan Currie\
+Yeah, okay. Yeah, yeah, go ahead.
+
+**\
+07:04**\
+Alphonse George\
+Sorry. We just wanted to take the monthly expense we need to consider
+towards you login because earlier it was like 8,000 per month. You guys
+were right. But recently we have seen some irregular payments. If you
+see for the July month, 4,000 has been paid to region. Then in the month
+of August, 10,000 has paid. In September, 3,000 basically.
+
+**\
+07:27**\
+Logan Currie\
+Sorry, one second. There\'s somebody ringing at the doorbell. But V, can
+you explain about the. Like why were not taking.
+
+**\
+07:32**\
+Vrijen Attawar\
+Yeah, effectively were just managing cash flow. Right. So were trying to
+keep track of. Okay, how much first people to stop being paid is us. So
+let\'s like cut our salaries back. And then so it\'s just been
+essentially us trying to just do that. That amount. Yeah, yeah. But I
+would say, yeah, long story short, that\'s. That\'s precisely why. So
+it\'s just sort offsets and trying to get us back to what we in theory
+should have been paid. So you can. We can expect that 8,000 is the
+official salary. We\'re just sort of taking less right now.
+
+**\
+08:11**\
+Vineet Bains\
+All right, so if we can like say the cuts, short story, like long story
+into short. So do you want to fix any amounts or we can continue keeping
+taking the close of \$8,000 every month.
+
+**\
+08:22**\
+Vrijen Attawar\
+I think we can continue. I think we can continue recording the salary is
+8. But noting shortfall is just money\'s owed.
+
+**\
+08:30**\
+Logan Currie\
+Yeah, yeah.
+
+**\
+08:31**\
+Vineet Bains\
+So we can continue doing that. So whenever like you make the payments,
+we\'ll adjust that. But I think in that case we need the details of
+which period you have actually reached the payments. So yeah, I think
+the 8k should be fine. Alphonse, you have any inputs on this or. I think
+we are good on this point.
+
+**\
+08:45**\
+Alphonse George\
+No, in that case we will keep continue posting the approvals. 8,000
+every month and like whenever were making, I mean regional. Logan make
+the payments, we can clear the all the approval.
+
+**\
+08:55**\
+Logan Currie\
+Okay, perfect.
+
+**\
+08:56**\
+Vineet Bains\
+Sounds good, Sounds good. Now moving down to the equity payout. So in
+the September 3rd we have two payouts made from the Brexit account worth
+of 25,000 to Daniel Brady and 10, 625 to Savvy. Yeah. So they share the
+nature of these payment. Is it related to some like equity redemptions?
+
+**\
+09:16**\
+Alphonse George\
+We\'ve.
+
+**\
+09:17**\
+Vrijen Attawar\
+We\'ve purchased all of their equity back is what we\'ve done.
+
+**\
+09:20**\
+Vineet Bains\
+So have you also like a Britain accountable for this or is it yet to be?
+
+**\
+09:26**\
+Vrijen Attawar\
+Pardon me? No, the change hasn\'t been made to the cap table. I\'m going
+to email the bully folks shortly.
+
+**\
+09:33**\
+Vineet Bains\
+Got it, got it. Okay, so we\'ll keep a note on that. We\'ll definitely
+make the adjustments accordingly.
+
+**\
+09:38**\
+Vrijen Attawar\
+But we would request include that reminder in the thing as well. That
+would be awesome.
+
+**\
+09:43**\
+Vineet Bains\
+Sure, sure. Definitely. We\'ll update that in our Zenith comments over
+here and then once it\'s done, share the equity cap table with us so
+that we can also reconcile the numbers with our books.
+
+**\
+09:54**\
+Vrijen Attawar\
+Sounds good. Sounds good.
+
+**\
+09:56**\
+Vineet Bains\
+Okay. All right. I think we are good over here. Alphonse, you have any
+concerns or questions.
+
+**\
+10:03**\
+Alphonse George\
+Take a confirmation whether the whole 25,002 dial Brady and the 1066252
+series is the full amount we have paid for the purchase of shares. The
+buyback of shares or is it involves any part of their contractor
+payments? Yeah.
+
+**\
+10:19**\
+Vrijen Attawar\
+So it should have been the final payout that they were owed plus the
+equity payment in one go.
+
+**\
+10:27**\
+Vineet Bains\
+Okay. Okay. So goodie payment plus anything that has been owed in the
+form of contractors is exactly.
+
+**\
+10:32**\
+Vrijen Attawar\
+Anything residual. That\'s right.
+
+**\
+10:36**\
+Vineet Bains\
+Alphonse, you want to ask anything else?
+
+**\
+10:38**\
+Alphonse George\
+No. Like I mean clearly saying we can consider the whole amount as for
+the buyback of shares. Right.
+
+**\
+10:47**\
+Vineet Bains\
+Okay. Yeah. If we case in there is any liability to these two people,
+then I think we can set it off first and then we can like consider the
+rest of the mount as a complete buyback.
+
+**\
+10:57**\
+Alphonse George\
+Okay.
+
+**\
+10:58**\
+Vineet Bains\
+Okay. Virgin Logan, you have any questions about this opening items you
+want to talk about. Or we can review the dashboard.
+
+**\
+11:08*
+```
+
+
+
+YOUR TASK:
+1. Generate a comprehensive COMMITMENTS block based on the meeting transcript
+2. Include YAML frontmatter with: created (YYYY-MM-DD), last_edited (YYYY-MM-DD), version (X.Y format)
+3. Start content with: # COMMITMENTS
+4. Extract only REAL information from the transcript - no placeholders or stubs
+5. Provide semantic depth appropriate to this meeting's context
+6. Use specific quotes and examples from the transcript
+7. Format for clarity and professional use
+
+Generate the complete block now, starting with the frontmatter and including all relevant content:

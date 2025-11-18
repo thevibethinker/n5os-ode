@@ -1,0 +1,26 @@
+{
+  "meeting_id": "2025-11-12_daily_standup_engineering",
+  "date": "2025-11-12",
+  "type": "daily_standup",
+  "title": "Daily Team Stand-up - Engineering & BD Updates",
+  "attendees": ["Vrijen Attawar", "Danny Williams", "Ilse Funkhouser", "Ilya Kucherenko"],
+  "recording_timestamp": "2025-11-11T15:25:47.064Z",
+  "duration_minutes": 16,
+  "processed": true,
+  "processing_date": "2025-11-14T13:34:00Z",
+  "b_blocks_generated": ["B01_DETAILED_RECAP", "B02_COMMITMENTS", "B03_DECISIONS", "B04_RISKS_DEPENDENCIES", "B05_STRATEGIC_CONTEXT"],
+  "key_topics": ["employer_portal_development", "darwin_box_acquisition", "emory_partnership", "backend_deployment_knowledge_transfer"],
+  "critical_items": [
+    "Emory meeting tomorrow - federal worker code deployment critical",
+    "Darwin Box billion-dollar acquisition target - call early next week",
+    "Danny leaving in 1 month - knowledge transfer urgent",
+    "Deal breaker feature needs real data validation"
+  ],
+  "action_items_count": 12,
+  "dependencies": {
+    "emory_meeting": "tomorrow",
+    "darwin_box_call": "early next week",
+    "knowledge_transfer": "immediate"
+  }
+}
+

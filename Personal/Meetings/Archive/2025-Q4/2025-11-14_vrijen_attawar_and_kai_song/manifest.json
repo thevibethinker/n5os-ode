@@ -1,0 +1,148 @@
+{
+  "meeting_id": "2025-11-14_vrijen_attawar_and_kai_song",
+  "generated_at": "2025-11-16T17:16:34.860629Z",
+  "transcript_word_count": 3553,
+  "meeting_type": "informational",
+  "classification": "internal",
+  "participants": [
+    "Kai Song (Seavoice/Asendia AI)",
+    "Vrijen Attawar (Careerspan)"
+  ],
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "block_name": "Detailed Recap",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Standard core block - comprehensive meeting overview",
+      "generated_at": "2025-11-17T03:38:04.419015+00:00"
+    },
+    {
+      "block_id": "B02_COMMITMENTS",
+      "block_name": "Commitments & Action Items",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Clear commitments to share contact info and forward introduction",
+      "generated_at": "2025-11-17T03:38:04.419015+00:00"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "block_name": "Meeting Metadata Summary",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Standard core block - meeting classification and metadata",
+      "generated_at": "2025-11-17T03:38:04.419015+00:00"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "block_name": "Stakeholder Intelligence & CRM Integration",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "External stakeholder (Kai Song) - founder profile, company intel, relationships",
+      "generated_at": "2025-11-17T03:47:08.927956Z"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "block_name": "Action Items & Next Steps",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Clear action items: share blurb for Asendia AI intro, follow up with Kai on hiring",
+      "generated_at": "2025-11-17T03:47:08.927956Z"
+    },
+    {
+      "block_id": "B06_BUSINESS_CONTEXT",
+      "block_name": "Business Context & Implications",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Partnership opportunities with Asendia AI and Coffee Space for data/integration",
+      "generated_at": "2025-11-17T03:47:08.927956Z"
+    },
+    {
+      "block_id": "B05_STRATEGIC_IMPLICATIONS",
+      "block_name": "Strategic Implications",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Discussion of Careerspan strategy: shift from coaching to hiring, monetization path via VCs",
+      "generated_at": "2025-11-17T03:58:10.156366+00:00"
+    },
+    {
+      "block_id": "B08_FOLLOW_UP_CONVERSATIONS",
+      "block_name": "Follow-up Conversations to Schedule",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Follow-ups needed: Asendia AI (Rehab/Baddie), Coffee Space (Razeem), residency exploration",
+      "generated_at": "2025-11-17T03:58:10.156366+00:00"
+    },
+    {
+      "block_id": "B21_KEY_MOMENTS",
+      "block_name": "Key Quotes & Strategic Questions",
+      "priority": 3,
+      "status": "generated",
+      "category": "optional",
+      "reason": "Notable insights on AI interviews, generational preferences, hiring innovation",
+      "generated_at": "2025-11-17T03:58:10.156366+00:00"
+    }
+  ],
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:06:56.532899+00:00",
+      "last_updated_by": "migration_script",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:48:12.511617+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "not_started"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:06:56.532899+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "complete",
+      "b14_exists": true,
+      "completed_at": "2025-11-17T11:06:56.532899+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:06:56.532899+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 2,
+    "timestamp": "2025-11-17T18:19:54.023364",
+    "status": "drafts_ready",
+    "intros": [
+      {
+        "target": "Asendia AI (Rehab & Baddie)",
+        "priority": "HIGH",
+        "status": "previously_generated"
+      },
+      {
+        "target": "Coffee Space (Razeem)",
+        "priority": "OPTIONAL",
+        "status": "newly_generated"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "authorized_users": [
+    "U057L5V3SUA"
+  ],
+  "signing_secret": "c2eb92311239656f8f1fbb7962eeb13a",
+  "bot_token": "xoxb-5255246858917-9782841117974-mZew0VoLxmVwheIMZK4cbZAd",
+  "rate_limit_messages": 10,
+  "rate_limit_window_seconds": 60,
+  "audit_log": true
+}

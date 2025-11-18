@@ -1,0 +1,242 @@
+---
+created: 2025-11-15
+last_edited: 2025-11-15
+version: 1.0
+---
+
+# Fireflies Webhook Receiver Service
+
+Production-ready FastAPI service for receiving real-time webhook notifications from Fireflies.ai when meeting transcripts are completed.
+
+## Features
+
+- ✅ **HMAC Signature Verification**: Secure webhook authentication
+- ✅ **SQLite Logging**: Persistent webhook event storage
+- ✅ **Production-Ready**: Request size limits, timeouts, error handling
+- ✅ **Health Monitoring**: `/health` endpoint for service status
+- ✅ **Comprehensive Tests**: Unit tests with pytest
+- ✅ **Async Architecture**: FastAPI + uvicorn for high performance
+
+## Architecture
+
+```
+Fireflies.ai → Webhook POST → FastAPI Receiver → SQLite Logger
+                                    ↓
+                              Response (200ms)
+```
+
+**Design Principle**: Fast acknowledgment (< 500ms), deferred processing.
+
+## Installation
+
+```bash
+cd /home/workspace/N5/services/fireflies_webhook
+pip install fastapi uvicorn[standard] python-dotenv pydantic aiofiles
+```
+
+## Configuration
+
+1. Copy `.env.example` to `.env`:
+```bash
+cp .env.example .env
+```
+
+2. Set your Fireflies API key:
+```bash
+FIREFLIES_API_KEY=your-api-key-here
+```
+
+3. (Optional) Configure webhook secret for HMAC verification:
+```bash
+FIREFLIES_WEBHOOK_SECRET=your-secret-here
+```
+
+## Running the Service
+
+### Development Mode
+
+```bash
+cd /home/workspace/N5/services/fireflies_webhook
+python -m webhook_receiver
+```
+
+### Production Mode (User Service)
+
+Register as a persistent service:
+
+```bash
+# Via Zo tools
+register_user_service(
+    label="fireflies-webhook",
+    protocol="http",
+    local_port=8765,
+    entrypoint="python3 -m uvicorn webhook_receiver:app --host 0.0.0.0 --port 8765",
+    workdir="/home/workspace/N5/services/fireflies_webhook"
+)
+```
+
+Or manually:
+```bash
+cd /home/workspace/N5/services/fireflies_webhook
+nohup uvicorn webhook_receiver:app --host 0.0.0.0 --port 8765 > /dev/shm/fireflies_webhook.log 2>&1 &
+```
+
+## Endpoints
+
+### `GET /health`
+Health check endpoint.
+
+**Response:**
+```json
+{
+  "status": "healthy",
+  "service": "fireflies_webhook",
+  "timestamp": "2025-11-15T12:00:00",
+  "database_connected": true,
+  "api_key_configured": true
+}
+```
+
+### `POST /webhook/fireflies`
+Main webhook receiver endpoint.
+
+**Headers:**
+- `Content-Type: application/json`
+- `X-Fireflies-Signature: sha256=<hmac>` (optional, if secret configured)
+
+**Request Body:**
+```json
+{
+  "meetingId": "transcript-uuid",
+  "eventType": "Transcription completed",
+  "clientReferenceId": "optional-reference"
+}
+```
+
+**Response:**
+```json
+{
+  "status": "received",
+  "webhook_id": "unique-webhook-id",
+  "message": "Webhook queued for processing"
+}
+```
+
+## Testing
+
+Run unit tests:
+```bash
+cd /home/workspace/N5/services/fireflies_webhook
+pytest tests/ -v --cov=. --cov-report=term-missing
+```
+
+Test individual components:
+```bash
+# Test receiver endpoints
+pytest tests/test_receiver.py -v
+
+# Test processor logic
+pytest tests/test_processor.py -v
+```
+
+## Database Schema
+
+Location: `/home/workspace/N5/data/fireflies_webhooks.db`
+
+**Table: `fireflies_webhooks`**
+```sql
+CREATE TABLE fireflies_webhooks (
+    webhook_id TEXT PRIMARY KEY,
+    event_type TEXT NOT NULL,
+    transcript_id TEXT NOT NULL,
+    received_at TEXT NOT NULL,
+    processed_at TEXT,
+    status TEXT DEFAULT 'pending',
+    payload TEXT,
+    error_message TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+)
+```
+
+## Querying Webhooks
+
+```python
+import sqlite3
+
+conn = sqlite3.connect("/home/workspace/N5/data/fireflies_webhooks.db")
+cursor = conn.cursor()
+
+# Get pending webhooks
+cursor.execute("SELECT * FROM fireflies_webhooks WHERE status = 'pending'")
+pending = cursor.fetchall()
+
+# Get recent webhooks
+cursor.execute("""
+    SELECT webhook_id, transcript_id, received_at, status 
+    FROM fireflies_webhooks 
+    ORDER BY received_at DESC 
+    LIMIT 10
+""")
+recent = cursor.fetchall()
+```
+
+## Monitoring
+
+### Logs
+- **File**: `/home/workspace/N5/logs/fireflies_webhook.log`
+- **Format**: `2025-11-15T12:00:00Z INFO Message`
+
+### Service Status
+```bash
+# Check if service is running
+curl http://localhost:8765/health
+
+# View recent logs
+tail -f /home/workspace/N5/logs/fireflies_webhook.log
+```
+
+## Security
+
+1. **HMAC Verification**: Configure `FIREFLIES_WEBHOOK_SECRET` for signature validation
+2. **Request Size Limits**: 5MB max payload size (configurable)
+3. **Response Timeouts**: 500ms response target
+4. **Input Validation**: Pydantic models enforce schema
+
+## Integration with Fireflies
+
+1. Log into Fireflies.ai dashboard
+2. Navigate to **Settings → Integrations → Webhooks**
+3. Add webhook URL: `https://your-domain.zo.computer/webhook/fireflies`
+4. (Optional) Configure webhook secret
+5. Test the webhook from Fireflies dashboard
+
+## Troubleshooting
+
+### Service won't start
+- Check API key is configured: `echo $FIREFLIES_API_KEY`
+- Verify port 8765 is available: `netstat -tuln | grep 8765`
+- Check logs: `tail -50 /home/workspace/N5/logs/fireflies_webhook.log`
+
+### Webhooks returning 401
+- Verify HMAC secret matches Fireflies configuration
+- Check signature header: `X-Fireflies-Signature` or `x-hub-signature`
+
+### Database issues
+- Ensure directory exists: `mkdir -p /home/workspace/N5/data`
+- Check permissions: `ls -la /home/workspace/N5/data/fireflies_webhooks.db`
+- Recreate schema: Delete DB file and restart service
+
+## Next Steps (Phase 2)
+
+After webhook receiver is operational:
+1. Build transcript fetcher service
+2. Create ingestion pipeline to meeting system
+3. Implement webhook → transcript → meeting flow
+4. Add scheduled reconciliation for missed webhooks
+
+## References
+
+- [Fireflies API Documentation](https://docs.fireflies.ai/)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/)
+- [Webhook Security Best Practices](https://docs.github.com/webhooks/securing)
+

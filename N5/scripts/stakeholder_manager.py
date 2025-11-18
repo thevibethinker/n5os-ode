@@ -227,7 +227,7 @@ last_interaction: "{today}"
 ## Auto-Generated Metadata
 
 **Email thread IDs:** {', '.join(email_threads) if email_threads else '[None yet]'}  
-**Meeting IDs:** {', '.join(calendar_ids) if calendar_ids else '[None yet]'}  
+**Meeting IDs:** {', '.join(str(cid) for cid in calendar_ids if cid) if calendar_ids else '[None yet]'}  
 **Last email:** {today}  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
@@ -465,3 +465,4 @@ if __name__ == "__main__":
     #     linked_artifact="Personal/Meetings/2025-10-15_hamoon-ekhtiari/meeting_note.md",
     #     dry_run=True
     # )
+

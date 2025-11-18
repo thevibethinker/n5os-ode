@@ -1,0 +1,698 @@
+**\
+00:00**\
+Vrijen Attawar\
+Dude. So sorry, I got distracted. Hello.
+
+**\
+00:11**\
+Mishal Sayed\
+Hello. Hey.
+
+**\
+00:13**\
+Vrijen Attawar\
+How you doing, dude?
+
+**\
+00:15**\
+Mishal Sayed\
+Good. I. Can you see me? Oh, no, you can.
+
+**\
+00:19**\
+Vrijen Attawar\
+Hey, I can see you. I can see you. How are you?
+
+**\
+00:23**\
+Mishal Sayed\
+We\'re good. We\'ve had a roller coaster of few months.
+
+**\
+00:30**\
+Vrijen Attawar\
+Yeah, tell me about it.
+
+**\
+00:32**\
+Mishal Sayed\
+We realized that were very, very. We had very inflated egos and thought
+we could do this ourselves using AI and realized that were sort of
+coding in circles.
+
+**\
+00:48**\
+Vrijen Attawar\
+Yeah, yeah, that\'ll happen.
+
+**\
+00:50**\
+Mishal Sayed\
+Yeah. Because, like, there were a lot of things were working in silos. I
+was working on things that touched upon the things that Alexi was
+working on. So he was doing like the foundation of like the cement mixes
+and everything, and I was like laying down the ground and so I needed to
+know what formulas he used in the cement mix to be able to like. Yeah,
+yeah, the foundation properly. So there was like a huge disconnect
+there. And I kept asking Alexi questions on like, how is this done? Why
+did you make this change? Why did you do this? Or do like, I\'m not
+understanding your decision making. And then he\'s like, honestly, I
+don\'t know. I was just trying to cross off a thing off of a list. And I
+was like, whoa, we need to like, put the brakes on that.
+
+**\
+01:38**\
+Mishal Sayed\
+Like, take a step back and not even work on anything. Let\'s just figure
+out what the going on between what we\'re working on.
+
+**\
+01:45**\
+Vrijen Attawar\
+Yeah.
+
+**\
+01:46**\
+Mishal Sayed\
+So we realized that with AI the thing that gave me the suspicion that AI
+is just not the way to move forward is because every time I asked it for
+like a plan for execution, it kept giving me, like, very different
+answers. And as soon as I disagreed with it would change the whole thing
+entirely.
+
+**\
+02:09**\
+Vrijen Attawar\
+Right? Yeah. No. AI is a notorious suck up. And yeah, I mean, I. I think
+it is undoubtedly the right call because of the complexity of what
+you\'re doing. I suspect that, like. Yeah, I mean, look, it\'s. There\'s
+absolutely nothing unique about the move you guys made because it is
+something that like every founder that\'s kicking off and frankly is
+like, do. Trying to do things the right way in Bootstrap is considering
+and is right to consider seriously. Right. So I think it\'s important
+that you guys don\'t hold a judgment call against yourself. I think
+ultimately the important thing is.
+
+**\
+02:56**\
+Mishal Sayed\
+Yes.
+
+**\
+02:57**\
+Vrijen Attawar\
+That you realize you\'re coding in circles. Right. Because that\'s the.
+The part that could have potentially taken much longer.
+
+**\
+03:05**\
+Mishal Sayed\
+So luckily we caught it in two weeks and not two weeks, two months,
+unfortunately. But it could have like damage could have been far worse.
+We could have spent like a whole year.
+
+**\
+03:14**\
+Vrijen Attawar\
+Your first, your first year is always a wash. It\'s always a wash. Like
+some folks get fucking lucky, but it is, it\'s rare, right? The first
+year for us was basically mistake after mistake.
+
+**\
+03:28**\
+Mishal Sayed\
+So which we learned and we\'re like, you know what, like let\'s not beat
+ourselves up for this. Let us figure out like, what is it that we need.
+And I was like, I told Alexi, I was like, look, right now we\'re like
+bickering at each other and we\'re kind of like both very angry and
+dissatisfied with like the work that we\'re doing at the end of the day
+because we\'re both trying to do things that we\'re not good at, that we
+don\'t have expertise in and that we\'re just being forced to do.
+
+**\
+03:52**\
+Vrijen Attawar\
+Right?
+
+**\
+03:52**\
+Mishal Sayed\
+So bring on the right person to be able to help us execute. And I told
+him like where my skills are and how far I can go and where I need that
+limitation. So basically boiled it down to, look, I need someone who
+comes in with a lot of engineering and back end software engineering
+skills that can say, look, these are all our options and these are the
+pros and cons. And then I can come in being like, this is what we need
+right now. This is what we need to be in five years. Build optimally
+between the two of that, two of those. And like I can help them make the
+decisions. I just need someone to be able to execute and come to me with
+like the options. So based off of that, we then decided, okay, it we\'ll
+hire.
+
+**\
+04:37**\
+Mishal Sayed\
+And we ended up putting out a job posting on Wealth Found. This happened
+in August and went through three, four rounds of interviews. So first
+round was just half an hour call. Like, can they like, can they string
+together sentences? Are they who they say they are? Do they have like
+the relevant skills? And oh my God. Well found is still better upwork.
+We ended up like interviewing like three North Korean spies.
+
+**\
+05:09**\
+Vrijen Attawar\
+Why didn\'t you guys just message me?
+
+**\
+05:12**\
+Mishal Sayed\
+I don\'t know. But we figured it out. We found someone really good, by
+the way.
+
+**\
+05:16**\
+Vrijen Attawar\
+Nice. Okay.
+
+**\
+05:17**\
+Mishal Sayed\
+Pretty excited. But we started with upwork. Upwork was, yeah, it was
+like we realized the level of candidates that were applying to upwork
+always saw it as sort of like a side project and would try and hustle
+and do like five at once so would never really dedicate their time. So I
+was like, it, I think we need to own someone\'s time. Like we have them
+on salary and we can set you know, targets and that they need to meet
+and like I can manage a team. So we decided we\'ll put together a job
+posting on well found, super detailed of like this is our tech stack.
+This is the exact skills we need you to have to be able to build out
+what we\'re looking for.
+
+**\
+05:58**\
+Mishal Sayed\
+And the entire time Alexi and I were coding in circles we realized
+wasn\'t a waste of time because we could very clearly articulate what we
+needed.
+
+**\
+06:06**\
+Vrijen Attawar\
+Oh no, for sure not. Yeah, I mean you like did a lot of the discovery
+yourself so it\'s certainly not wasted time. I think the. What kind of
+deal have you got this person on?
+
+**\
+06:17**\
+Mishal Sayed\
+Contractor for a year. We\'re paying him about 3,000amonth. This is the
+senior role of like a systems design engineer. They\'re basically going
+to build out the full back end. We have like a six month comp review and
+he\'s based out of Malawi.
+
+**\
+06:37**\
+Vrijen Attawar\
+Nice.
+
+**\
+06:37**\
+Mishal Sayed\
+He\'s accepted the deal. It is a pay cut for him. But he hasn\'t been
+earning this level of salary in like the last year so it\'s still a paid
+bump from where he is currently.
+
+**\
+06:47**\
+Vrijen Attawar\
+But like yeah, drop overalls, US Companies and stuff.
+
+**\
+06:54**\
+Mishal Sayed\
+So this kid had. He\'s actually quite brilliant. So he was part of a
+university. His like educational background\'s a little bit iffy but he
+ended up working at an AI company that ended up winning an award that
+was a part of his university and he got recognized within Malawi and
+that got him the recognition of a Malawian engineer at Salesforce who
+then got in touch with him, recruited him and then like helped put him
+in touch with like a bunch of startups in the US So he\'s been earning
+like kind of San Fran U. S startup type of salaries for a little bit in
+between. But they\'re like very limited contract based.
+
+**\
+07:35**\
+Vrijen Attawar\
+Right.
+
+**\
+07:35**\
+Mishal Sayed\
+Like part of our company. And you\'re here for the long term vision type
+of thing.
+
+**\
+07:39**\
+Vrijen Attawar\
+Yeah, I mean six months is solid. You\'re gonna, you\'re gonna. I would
+say candidly you can tell him six months. I think psychologically you
+should tell yourself one month to really figure out whether this person
+is like working for you or not. I will say that like the.
+
+**\
+08:04**\
+Mishal Sayed\
+Like.
+
+**\
+08:04**\
+Vrijen Attawar\
+I mentioned you guys a year ago that like the founding engineer was
+probably the move largely because the one because of the incentives
+which we have to work around that.
+
+**\
+08:19**\
+Mishal Sayed\
+So yeah, tapped into two connections. One of my really good friends at
+Uber who Used to work at aws. You know the time estimate of when your
+delivery will be sent to you. He built that at Amazon and then moved to
+Uber and has basically built out a lot of their like logistical back end
+infrastructure for Uber Freight.
+
+**\
+08:45**\
+Vrijen Attawar\
+Right.
+
+**\
+08:46**\
+Mishal Sayed\
+And so he had to connect with like random APIs of like different tech
+from different companies and all so that he could fully integrate with
+each business\'s own version so that they can track their Uber freight
+delivery parcels and shipments and all of that. So he\'s done like crazy
+work there. He\'s also moved to the ADS team and then did a whole bunch
+of data engineering and forecasting there. So really well rounded person
+and he is joining us on a weekly basis just giving us his time and
+advice and like going into the depths of like how we\'re going about
+this. So like right now he\'s filling in the know how and knowledge of
+like the technical.
+
+**\
+09:27**\
+Vrijen Attawar\
+Are you giving him points?
+
+**\
+09:29**\
+Mishal Sayed\
+Nothing. This is just like out of. He\'s like I want to help you guys
+out and we\'re like, you know, if we get to a point where we can afford
+you and like have you on the team, we would love to do that. He\'s like,
+right now I\'m comfortable with my job. I\'m also really bored at my
+job. So this is like a nice cool side project.
+
+**\
+09:44**\
+Vrijen Attawar\
+Try it. My. Has he worked in startups before?
+
+**\
+09:49**\
+Mishal Sayed\
+It\'s his first time for a startup. So this is how he\'s like dabbling
+in it without fully like submerging himself into it.
+
+**\
+09:57**\
+Vrijen Attawar\
+I can see how that is mutually beneficial. And I also will be honest, I
+have a lot of concerns with that model. You\'re. You\'re doing the same
+thing again. You\'re doing the same thing again in that like because
+you\'ve done this with other guy in Canada that you were paying and
+you\'ve done these like partial.
+
+**\
+10:15**\
+Mishal Sayed\
+No, we never paid the guy in Canada.
+
+**\
+10:17**\
+Vrijen Attawar\
+Right. But you\'ve done these like partial observership things. So I
+would just be wary of like a hundred percent of nothing is nothing. So I
+would just bear in mind that like for the. Yeah, because I\'ve over the
+last year especially the focus for me entirely has been talking to
+startup founders about startup hiring and not only is am I able to
+personally say this is something we considered as well because we also
+have like oh, insert person is like waiting to put in time. The, the
+incentives just often aren\'t aligned. So I\'m not discouraging you from
+trying it because obviously like there are people in the world who like
+can pull that stuff off and like can balance those incentives correctly.
+
+**\
+11:11**\
+Vrijen Attawar\
+But again I would just set a mental thing in your headspace of like, is
+this person like delivering value at the pace that we want? Right.
+Because the, yeah, like it\'s the reason so much blood is like ink is
+spilled over startup equity and just like discussions around it is
+because the generally the folks that know their worth are only
+committing what they are worth. You know what I mean? And it\'s one of
+those things where like I have realized like I\'ll give you an example,
+right? Every single first time founder I speak to does not use a
+recruiter, says that a recruiter. Why would I pay 20 grand? That\'s
+dumb. Every single second time founder I\'ve spoken to says I use a
+recruiter. I have a trusted recruiter. I don\'t go to anyone else.
+
+**\
+12:09**\
+Vrijen Attawar\
+Like I would consider you to reflect on why that is or even like ask
+other folks in that network. Because the thing is like now that you\'re
+stepping into hiring, understanding the modalities of like hiring is
+going to be important. And what I consistently hear from founders that
+have worked at bigger companies, which is why I asked if he\'s worked at
+startups, is that when you come from a bigger company you are used to a
+level of structure. Structure and stuff. Yeah, that like what? So I\'ll
+give you another example, right? When we, when we started Careerspad,
+were between two candidates and this one guy had exited a B2B SaaS
+company for millions. He didn\'t want to be paid. He was like, I\'ll
+just come in and work with you guys.
+
+**\
+12:53**\
+Vrijen Attawar\
+And then the first working session we did with him, this was in 2020,
+late 23. So like less than nothing had been achieved at career span
+compared to where we are right now. And the first conversation we had
+with this guy for an hour was about customer support and how much
+customer support mattered. Now I can tell you this. The guy is more
+successful than the founder of me, but he\'s fucking wrong. Like that\'s
+a bad wrong thing to focus on. That is from someone that did the like
+small startup to big company grinding, right? So just know that like
+just keep an open mind because like frankly even you\'re not in a
+position to evaluate that. You haven\'t worked at a startup either,
+right?
+
+**\
+13:39**\
+Vrijen Attawar\
+So be aware of that like bias because the it is like it\'s really
+something I\'ve seen a lot and is why startup founders, when I speak to
+them, a lot of them refuse to Hire people from big tech. If they don\'t
+have at least some startup experience, they\'re fine. If you have
+startup experience, you go to big tech or the other way around. But if
+someone\'s only worked at, like, an environment where they\'re like a
+goose that lays a golden egg, or not even. It\'s the opposite. They
+don\'t lay a golden egg. They lay, like one very reliable bronze egg.
+And there\'s a million of them. Right. And they\'re like, standard is
+not I need to like, achieve product market fit. Their standard is I need
+to fit within the schema. So anyway, just.
+
+**\
+14:23**\
+Vrijen Attawar\
+I\'m more forward than I\'m normally used to being, but given that,
+given the context of you guys trying to get a reset, I thought I\'d be a
+little bit more upfront with the learnings.
+
+**\
+14:32**\
+Mishal Sayed\
+No, it\'s good. We were very aware of that. Also, Uber generally leans
+more on the startup side than it does with bigger companies. So I like,
+yes, we have some structure already, but a lot of it, you\'d be shocked.
+Is held together with duct tape and glue.
+
+**\
+14:50**\
+Vrijen Attawar\
+That part is hilarious to hear.
+
+**\
+14:53**\
+Mishal Sayed\
+Yeah.
+
+**\
+14:53**\
+Vrijen Attawar\
+Unsurprising. Entirely. I mean, hey, most. Most of tech is held together
+by duct tape. And blue is. Is. I was watching someone the other day who
+was like a very established streamer and tech developer, and he\'s like,
+I will never let a robot into my house. He\'s like, I know the devs.
+He\'s like, I know the kind of devs that work at these places. Like,
+you\'re never gonna fucking have me have a. Have a killing machine in my
+house. But yeah, I mean, I. I think, like, regardless, you guys are
+like, what? I don\'t know.
+
+**\
+15:25**\
+Mishal Sayed\
+I\'ll tell you. I\'ll tell you how we hired and maybe this will get.
+
+**\
+15:28**\
+Vrijen Attawar\
+Yeah.
+
+**\
+15:29**\
+Mishal Sayed\
+Ease some of your concerns a bit. So we had both Zangyang, who. I know
+you were weary. We were also wary of the initial guy in Canada. We never
+paid him. And he also told us up front that, like, he\'s not tweeting
+too interested.
+
+**\
+15:45**\
+Vrijen Attawar\
+Right. There were two guys.
+
+**\
+15:47**\
+Mishal Sayed\
+Yeah. So it, like, we had quite high suspicions that it wouldn\'t really
+work out and weren\'t leaning on him too much. Of course, if hit the
+fan, we could reach out to him and it would have been great had he
+joined earlier. But he showed a lot of disinterest early on and were
+very hesitant.
+
+**\
+16:04**\
+Vrijen Attawar\
+Good.
+
+**\
+16:06**\
+Mishal Sayed\
+The second guy is a friend of mine from Uber. I have worked on. Worked
+with him on like a couple projects, but never, like, side by side. It
+was one of those things where like, hey, could you send someone on your
+team, I need help with this or this or like I\'m offloading this to your
+team. But we knew of each other, were within the same department. And
+he\'s just incredibly smart. Only thing is he has a very thick accent
+and is often overlooked but otherwise incredibly smart guy.
+
+**\
+16:34**\
+Vrijen Attawar\
+Yeah. And happens to folks with those accents.
+
+**\
+16:39**\
+Mishal Sayed\
+So when I left I happened to reach out to him. He\'s just hard to get a
+hold of. But once you have a hold of him and have like weekly meetings
+and the cadence set in, he\'s honestly like, he dedicates more like
+three hours on a weekly basis just to catch up with us, put us on track,
+go through our prototype, go through the code. Like I can actually send
+him our infra backend infrastructure. And he\'s reviewing things. He\'s
+also going to go into like Sprint, like the Sprint planning that we\'re
+ending up doing as well. So he wants to be involved like on a weekly
+basis as well.
+
+**\
+17:12**\
+Mishal Sayed\
+And he\'s in, he\'s said this openly enough and I told him that like,
+look, just give me a heads up of like when things are difficult with
+you, work wise, that\'s fine, we can work around it. And this is like
+you\'re, this is just, we\'ll go according to you, but we want you
+involved in part of the team.
+
+**\
+17:27**\
+Vrijen Attawar\
+Right.
+
+**\
+17:28**\
+Mishal Sayed\
+So he\'s on our discord, trying to.
+
+**\
+17:30**\
+Vrijen Attawar\
+Get MVP out by. By when?
+
+**\
+17:32**\
+Mishal Sayed\
+Six months.
+
+**\
+17:34**\
+Vrijen Attawar\
+Nice. Okay, that makes sense. Yeah. I mean you guys just get moving at
+this point, right?
+
+**\
+17:39**\
+Mishal Sayed\
+Yeah. So he was there interviewing with us. We had the interview
+process. Was the first interview which is 30 minutes, Alex taking the
+call, talking to those people. The second interview is an hour long and
+I\'m watching these people code live, right. To just see like can they
+actually execute on code or have they been bullshitting this whole time?
+
+**\
+17:59**\
+Vrijen Attawar\
+Right.
+
+**\
+18:00**\
+Mishal Sayed\
+And then after that we give them a take home project of like design a
+system. We basically in a nutshell, explain what we\'re trying to build
+for our startup and we\'re like, here\'s a blank slate, come up with the
+design and tell us about it. And then the last interview is a panel
+interview where they\'re presenting what they\'ve put together. To me,
+Alexi Zhangyang who\'s like been helping us all throughout. And then we
+have another friend of ours, Sam, who used to work at Goldman Sachs,
+Google and Netflix as like a data engineer, so very much on like the
+forecasting, machine learning on all of that capabilities and then
+between all of us, like, Alexi and I were doing more of like, the soft
+skills assessment, and those two were doing more of like, do you.
+
+**\
+18:48**\
+Mishal Sayed\
+Can you design systems and can you actually solve the problem that these
+guys need? And the four of us then seems.
+
+**\
+18:55**\
+Vrijen Attawar\
+Seems pretty legit. Genuinely. I think that\'s a. That\'s a strong sort
+of pickup. And like, for three grand a month, it\'s not going to blow a
+hole in your bank account, right? Yeah, I think. Yeah. I. So it seems
+like your pm, this guy\'s nominal Canada guy\'s nominal backend advisor,
+and then this dude is building interface and connections and all that
+stuff. Is that right?
+
+**\
+19:23**\
+Mishal Sayed\
+Yeah. And then we\'re trying to see if we can get another junior dev to
+join on for a cheaper rate just so that we can pump out more work. And
+that would be the team with the front end. Dude, I have to jump onto a
+different call.
+
+**\
+19:37**\
+Vrijen Attawar\
+No sweat, no sweat.
+
+**\
+19:39**\
+Mishal Sayed\
+But I want to hear. Do you have time like tomorrow or something? I want
+to hear Saturday.
+
+**\
+19:44**\
+Vrijen Attawar\
+Yeah, of course. Yeah. I got tons of stuff to tell you guys. And
+actually, is there. Is there an Uber alumni group? Because we actually
+might have something to offer of value to them as well. So just to get
+you thinking around.
+
+**\
+19:56**\
+Mishal Sayed\
+That, what do you mean, Uber alumni group?
+
+**\
+19:59**\
+Vrijen Attawar\
+Like, do you guys have any formal or informal communities of ex Uber
+employees? Like slack groups, discords like that? Does Uber maintain an
+alumni program?
+
+**\
+20:09**\
+Mishal Sayed\
+I don\'t think so about the alumni program, but I know internally they
+have a bunch. So since I have a bunch of connects that still work at
+Uber, if you need anything, I can connect you to people.
+
+**\
+20:19**\
+Vrijen Attawar\
+Sweet. That would be awesome because. Yeah, let me.
+
+**\
+20:21**\
+Mishal Sayed\
+Let me.
+
+**\
+20:21**\
+Vrijen Attawar\
+Let\'s talk tomorrow then. You want to do same time?
+
+**\
+20:24**\
+Mishal Sayed\
+Yep, same time tomorrow.
+
+**\
+20:25**\
+Vrijen Attawar\
+Sweet. I\'ll just move the meeting. Catch you then.
+
+**\
+20:27**\
+Mishal Sayed\
+Perfect.
+
+**\
+20:28**\
+Vrijen Attawar\
+See you.
+
+**\
+20:28**\
+Mishal Sayed\
+Me see you then.
+
+**\
+20:29**\
+Vrijen Attawar\
+I tell Alexi I love them.
+
+**\
+20:31**\
+Mishal Sayed\
+We\'ll do. Love you too, man. Bye.
+
+**\
+20:32**\
+Vrijen Attawar\
+Love you.

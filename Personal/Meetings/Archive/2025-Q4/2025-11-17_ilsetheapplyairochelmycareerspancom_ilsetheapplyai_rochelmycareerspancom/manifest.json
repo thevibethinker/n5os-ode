@@ -1,0 +1,79 @@
+{
+  "meeting_id": "2025-11-17_ilsetheapplyairochelmycareerspancom_ilsetheapplyai_rochelmycareerspancom",
+  "generated_at": "2025-11-17T20:03:53.199581Z",
+  "transcript_path": "transcript.jsonl",
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "canonical_name": "Detailed Recap",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T20:57:08.833170+00:00"
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "canonical_name": "Decisions Made",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T20:57:08.833170+00:00"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "canonical_name": "Action Items & Next Steps",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T20:57:08.833170+00:00"
+    },
+    {
+      "block_id": "B14_BLURBS_REQUESTED",
+      "canonical_name": "Blurbs & Copy Requested",
+      "status": "not_applicable",
+      "priority": 4,
+      "deletion_reason": "No blurb or copy requests identified"
+    },
+    {
+      "block_id": "B25_DELIVERABLES",
+      "canonical_name": "Deliverable Content Map",
+      "status": "generated",
+      "priority": 5,
+      "generated_at": "2025-11-17T20:57:08.833170+00:00"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "canonical_name": "Meeting Metadata Summary",
+      "status": "generated",
+      "priority": 6,
+      "generated_at": "2025-11-17T21:27:08.526446+00:00"
+    },
+    {
+      "block_id": "B05_STRATEGIC_IMPLICATIONS",
+      "canonical_name": "Strategic Implications",
+      "status": "generated",
+      "priority": 7,
+      "generated_at": "2025-11-17T21:27:08.526446+00:00"
+    }
+  ],
+  "selection_rationale": "Analyzed 50324 char transcript. Detected: strategic=True, decisions=True, actions=True",
+  "total_blocks": 7,
+  "metadata": {
+    "meeting_type": "general",
+    "participants": 118,
+    "strategic_content": true
+  },
+  "system_states": {
+    "follow_up_email": {
+      "status": "n/a",
+      "reason": "internal_only",
+      "completed_at": "2025-11-18T03:09:32.902025+00:00",
+      "last_updated_by": "follow_up_email_generator"
+    }
+  },
+  "ready_for_state_transition": {
+    "status": false,
+    "blocking_systems": [
+      "intelligence_blocks",
+      "warm_intro"
+    ],
+    "last_evaluated": "2025-11-18T03:14:32.586544+00:00"
+  }
+}

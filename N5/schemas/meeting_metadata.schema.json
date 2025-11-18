@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Meeting Metadata",
+  "description": "Comprehensive meeting tracking with Google IDs for triangulation",
+  "type": "object",
+  "required": ["folder_name", "created_at", "google_identifiers"],
+  "properties": {
+    "folder_name": {
+      "type": "string",
+      "description": "Meeting folder name (YYYY-MM-DD_Participant_topic)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this meeting folder was created"
+    },
+    "google_identifiers": {
+      "type": "object",
+      "description": "Immutable Google IDs for triangulation",
+      "properties": {
+        "drive_file_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "description": "Google Drive transcript file ID (source of truth)"
+        },
+        "calendar_event_id": {
+          "type": ["string", "null"],
+          "description": "Google Calendar event ID if available"
+        },
+        "drive_file_name": {
+          "type": "string",
+          "description": "Original Drive filename for reference"
+        }
+      },
+      "required": ["drive_file_id"]
+    },
+    "processing_status": {
+      "type": "string",
+      "enum": ["ingested", "processing", "completed", "failed"],
+      "description": "Current processing state"
+    },
+    "transcript": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["fireflies", "otter", "granola", "manual", "other"]
+        },
+        "file_size_bytes": {
+          "type": "integer"
+        },
+        "converted_from": {
+          "type": "string",
+          "description": "Original format (.docx, .txt, etc)"
+        }
+      }
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "smart_blocks_generated": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of B## blocks created"
+    },
+    "verification": {
+      "type": "object",
+      "description": "Cross-reference checksums",
+      "properties": {
+        "registry_entry_exists": {
+          "type": "boolean"
+        },
+        "transcript_md5": {
+          "type": "string",
+          "description": "MD5 hash of transcript for integrity"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
+

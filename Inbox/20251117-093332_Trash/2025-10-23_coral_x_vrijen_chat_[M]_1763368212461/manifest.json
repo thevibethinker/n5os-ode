@@ -1,0 +1,57 @@
+{
+  "meeting_id": "2025-10-23_coral_x_vrijen_chat",
+  "generated_at": "2025-11-17T08:23:49.847550Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "canonical_name": "Detailed Recap",
+      "status": "pending",
+      "priority": 1,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "canonical_name": "Decisions Made",
+      "status": "pending",
+      "priority": 1,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "canonical_name": "Action Items & Next Steps",
+      "status": "pending",
+      "priority": 1,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B14_BLURBS_REQUESTED",
+      "canonical_name": "Blurbs & Copy Requested",
+      "status": "pending",
+      "priority": 1,
+      "deletion_reason": null
+    },
+    {
+      "block_id": "B25_DELIVERABLES",
+      "canonical_name": "Deliverable Content Map",
+      "status": "not_applicable",
+      "priority": 1,
+      "deletion_reason": "No deliverables or content promises made"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "canonical_name": "Meeting Metadata Summary",
+      "status": "pending",
+      "priority": 1,
+      "deletion_reason": null
+    }
+  ],
+  "selection_rationale": "Generated for product_demo, interview meeting with 3 participants",
+  "total_blocks": 6,
+  "metadata": {
+    "meeting_type": "product_demo",
+    "participants": 3,
+    "strategic_content": true,
+    "technical_content": true
+  }
+}

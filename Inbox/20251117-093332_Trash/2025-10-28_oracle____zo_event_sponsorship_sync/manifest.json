@@ -1,0 +1,90 @@
+{
+  "meeting_id": "2025-10-28_oracle____zo_event_sponsorship_sync",
+  "generated_at": "2025-11-17T07:15:07.411469Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "canonical_name": "DETAILED_RECAP",
+      "category": "core",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "block_id": "B02_COMMITMENTS",
+      "canonical_name": "COMMITMENTS",
+      "category": "core",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "canonical_name": "MEETING_METADATA",
+      "category": "core",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "canonical_name": "DECISIONS",
+      "category": "contextual",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "canonical_name": "ACTION_ITEMS",
+      "category": "contextual",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "canonical_name": "STAKEHOLDER_INTEL",
+      "category": "contextual",
+      "status": "pending",
+      "priority": 2
+    },
+    {
+      "block_id": "B08_FOLLOW_UP_CONVERSATIONS",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "category": "contextual",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B07_TONE_AND_CONTEXT",
+      "canonical_name": "TONE_AND_CONTEXT",
+      "category": "optional",
+      "status": "pending",
+      "priority": 3
+    },
+    {
+      "block_id": "B09_REFERENCE_DATA",
+      "canonical_name": "REFERENCE_DATA",
+      "category": "optional",
+      "status": "pending",
+      "priority": 3
+    }
+  ],
+  "selection_rationale": "External partnership/sponsorship meeting. Oracle exploring sponsorship of Zo founder event (Nov 5). Core blocks generated for all meetings. Stakeholder intel for external parties. Action items tracking sponsorship logistics (venue, catering). Follow-up conversation tracking for 'tomorrow' decision. Tone/context for relationship tracking. Reference data for event details.",
+  "analysis_summary": {
+    "meeting_type": "External Partnership / Event Sponsorship",
+    "participant_count": 4,
+    "key_decisions": [
+      "Oracle will explore sponsoring Zo event on Nov 5",
+      "Location and catering to be sourced by Oracle",
+      "Follow-up decision timeline: 'by tomorrow'"
+    ],
+    "open_items": [
+      "Confirm event date (Nov 5) is solid",
+      "Verify if event is exclusive invitation only",
+      "Check compliance concerns re: government employees",
+      "Scout Manhattan venue options (capacity: 50-100)",
+      "Budget catering and logistics",
+      "Report decision by tomorrow"
+    ],
+    "strategic_value": "Oracle startup engagement program exploring sponsorship of early-stage founder event"
+  },
+  "total_blocks": 9
+}

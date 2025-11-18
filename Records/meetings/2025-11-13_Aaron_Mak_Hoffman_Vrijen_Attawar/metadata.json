@@ -1,0 +1,10 @@
+{
+  "meeting_id": "2025-11-13_Aaron_Mak_Hoffman_Vrijen_Attawar",
+  "source": "local_inbox",
+  "date": "2025-11-13",
+  "participants": ["Vrijen Attawar", "Aaron Mak Hoffman"],
+  "status": "processed",
+  "blocks_generated": ["B01_DETAILED_RECAP", "B02_COMMITMENTS", "B05_OUTSTANDING_QUESTIONS"],
+  "folder_location": "/home/workspace/Personal/Meetings/2025-11-13_Aaron_Mak_Hoffman_Vrijen_Attawar",
+  "processed_date": "2025-11-14T07:09:05Z"
+}

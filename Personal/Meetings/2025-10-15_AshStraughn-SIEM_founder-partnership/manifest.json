@@ -1,0 +1,16 @@
+{
+  "warm_intros_generated": {
+    "count": 1,
+    "timestamp": "2025-11-17T09:54:01.555006",
+    "status": "drafts_ready",
+    "intros": [
+      {
+        "type": "connector",
+        "person_a": "Ash Straughn (SIEM)",
+        "person_b": "Nira Team",
+        "file": "INTRO_Ash_Nira_connector.md",
+        "email_type": "CONNECTOR (both CC'd)"
+      }
+    ]
+  }
+}

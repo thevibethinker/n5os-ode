@@ -1,0 +1,8 @@
+{
+  "conversation_id": "slack_test_user_1763325528",
+  "user_id": "test_user",
+  "timestamp": 1763325528.1269748,
+  "message": "test message",
+  "context": {},
+  "status": "pending"
+}

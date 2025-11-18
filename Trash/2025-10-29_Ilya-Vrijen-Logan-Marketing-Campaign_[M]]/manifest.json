@@ -1,0 +1,125 @@
+{
+  "meeting_id": "2025-10-29_Ilya-Vrijen-Logan-Marketing-Campaign",
+  "generated_at": "2025-11-16T15:46:41.278684Z",
+  "transcript_word_count": 17331,
+  "meeting_type": "internal_strategy",
+  "classification": "internal",
+  "duration_minutes": 93,
+  "blocks_selected": 11,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "B01_DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block: comprehensive meeting overview"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "B02_COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block: explicit commitments and action items documented throughout"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "B26_MEETING_METADATA",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block: classification and metadata summary"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "B03_DECISIONS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple strategic decisions: trial paths, story requirement policy, marketing channels, ICP prioritization"
+    },
+    {
+      "block_id": "B03S",
+      "block_name": "B03_STAKEHOLDER_INTEL",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "External stakeholders discussed: Insta Lily, McKinsey portfolio companies, potential customers"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "B05_ACTION_ITEMS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple specific next steps with owners and timelines"
+    },
+    {
+      "block_id": "B05S",
+      "block_name": "B05_STRATEGIC_IMPLICATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Strategic insights on go-to-market, scaling, marketplace balance, first customer strategy"
+    },
+    {
+      "block_id": "B07",
+      "block_name": "B07_RISKS_OPPORTUNITIES",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "System capacity risks, ethical concerns addressed, opportunities with brand-name customers"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "B08_FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple follow-up calls and meetings scheduled, Ilya needs documentation review"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "B21_KEY_MOMENTS",
+      "priority": 3,
+      "status": "completed",
+      "category": "wildcard",
+      "reason": "Rich strategic quotes and framework discussions (ICP matrix story, friend-of-family model, 'turn on the faucet' concept)"
+    },
+    {
+      "block_id": "B04",
+      "block_name": "B04_OPEN_QUESTIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "wildcard",
+      "reason": "Multiple unresolved questions: specific trial metrics, pricing strategy, product capability timeline"
+    }
+  ],
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "in_progress"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.705587+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.705587+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  }
+}

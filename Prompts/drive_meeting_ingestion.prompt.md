@@ -19,6 +19,10 @@ Process meeting transcripts from Google Drive queue download convert normalize a
 1. Load config: Read Drive folder ID from file 'N5/config/drive_locations.yaml' (meetings.transcripts_inbox)
 2. Check registry: Use file 'N5/scripts/meeting_registry_manager.py' to check processed files
 3. For each item up to batch_size:
+   - **DUPLICATE DETECTION**: Check if already processed
+     * Run: python3 N5/scripts/meeting_registry_manager.py check --gdrive-id <file_id>
+     * If exit code 0 (found): Skip with log message "Already processed: <filename>"
+     * If exit code 1 (not found): Continue with download
    - Download from Drive using use_app_google_drive
    - Target folder ID from config file (canonical: 1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV)
    - Ignore any prefixes in the file name that indicate it has been processed
@@ -31,7 +35,7 @@ Process meeting transcripts from Google Drive queue download convert normalize a
      * Continue to next file
    - Apply semantic normalization: python3 N5/scripts/normalize_transcript.py
    - Write to Personal/Meetings/Inbox/
-   - Update registry: python3 N5/scripts/meeting_registry_manager.py add --gdrive-id --meeting-id --converted --conversion-method pandoc
+   - Update registry: python3 N5/scripts/meeting_registry_manager.py add --gdrive-id --meeting-id --folder-name <folder> --converted --conversion-method pandoc
    - Remove from queue (if queued)
 4. Report results
 
@@ -45,3 +49,4 @@ Process meeting transcripts from Google Drive queue download convert normalize a
 ## Email
 
 vrijen@mycareerspan.com
+

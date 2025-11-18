@@ -1,0 +1,94 @@
+{
+  "meeting_id": "2025-08-26_equals_product-demo-partnership-exploration_partnership",
+  "generated_at": "2025-11-16T19:31:47Z",
+  "transcript_word_count": 1610,
+  "meeting_type": "product_demo_partnership",
+  "classification": "external",
+  "blocks_selected": 8,
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "block_name": "Detailed Recap",
+      "priority": 1,
+      "status": "pending",
+      "category": "core",
+      "reason": "Always generated; comprehensive overview of demo, use cases, and trial discussion"
+    },
+    {
+      "block_id": "B02_COMMITMENTS",
+      "block_name": "Commitments & Action Items",
+      "priority": 1,
+      "status": "pending",
+      "category": "core",
+      "reason": "Always generated; captures Graham's commitment to trial setup and Vrijen's evaluation commitment"
+    },
+    {
+      "block_id": "B03_DECISIONS",
+      "block_name": "Decisions Made",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Key decision: Friends & family trial exemption with $199/month 1-year contract option"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "block_name": "Stakeholder Intelligence & CRM Integration",
+      "priority": 2,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "External partnership meeting; Graham Smith and Equals team context for relationship tracking"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "block_name": "Action Items & Next Steps",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple action items: trial workspace setup, Slack channel creation, follow-up meeting next week"
+    },
+    {
+      "block_id": "B06_BUSINESS_CONTEXT",
+      "block_name": "Business Context & Implications",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Business partnership opportunity; pricing model discussion, use case validation for Careerspan"
+    },
+    {
+      "block_id": "B08_FOLLOW_UP_CONVERSATIONS",
+      "block_name": "Follow-up Conversations to Schedule",
+      "priority": 3,
+      "status": "pending",
+      "category": "contextual",
+      "reason": "Follow-up call scheduled same time next week (3:30pm) for trial check-in"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "block_name": "Meeting Metadata Summary",
+      "priority": 1,
+      "status": "pending",
+      "category": "core",
+      "reason": "Always generated; classification and system metadata"
+    },
+    {
+      "block_id": "B14",
+      "canonical_name": "BLURBS_REQUESTED",
+      "status": "pending",
+      "priority": 1
+    },
+    {
+      "block_id": "B25",
+      "canonical_name": "DELIVERABLE_CONTENT_MAP",
+      "status": "pending",
+      "priority": 1
+    }
+  ],
+  "system_states": {
+    "follow_up_email": {
+      "status": "n/a",
+      "completed_at": "2025-11-18T03:13:21.622554+00:00",
+      "last_updated_by": "MG-5_v2",
+      "reason": "archived_outdated"
+    }
+  }
+}

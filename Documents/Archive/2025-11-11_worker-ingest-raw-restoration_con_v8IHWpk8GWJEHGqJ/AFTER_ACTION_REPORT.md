@@ -1,12 +1,11 @@
 ---
 created: 2025-11-11
 last_edited: 2025-11-11
-version: 1.0
+version: 1
 conversation_id: con_v8IHWpk8GWJEHGqJ
 type: build
 status: complete
 ---
-
 # After Action Report: Worker Ingest Raw - Restoration
 
 **Conversation ID:** con_v8IHWpk8GWJEHGqJ  
