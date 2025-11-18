@@ -3,8 +3,8 @@
   "type": "Companion",
   "code": "05",
   "short_name": "Block_Registry",
-  "version": "1.6",
-  "purpose": "Define all block types with guidance principles (not rigid formats) for Meeting Intelligence Orchestrator and Reflection Processing. v1.6 adds reflection blocks (B50-B99) registry reference.",
+  "version": "2.0",
+  "purpose": "Define all block types with guidance principles. v2.0 updates B14 and B25 to intelligence-only (communications moved to Pipeline 2).",
   "reflection_blocks_registry": "N5/prefs/reflection_block_registry.json",
   "blocks": {
     "B01": {
@@ -110,14 +110,14 @@
         "",
         "PRIMARY SOURCE DOMAINS (Firsthand Operational Experience):",
         "- Format per domain: ### [Topic Name]",
-        "  - Authority level: ● ● ● ● ● (5 dots = very high authority)",
+        "  - Authority level: \u25cf \u25cf \u25cf \u25cf \u25cf (5 dots = very high authority)",
         "  - Based on: [Specific experience that makes them credible]",
         "  - Specific experience: [Bullet points of relevant background]",
         "  - Insights provided: [Count] insights (B31 refs: [links])",
         "  - Validation: [X]/[Y] insights confirmed by other sources",
         "",
         "SECONDARY SOURCE DOMAINS (Informed Perspective, Not Direct Experience):",
-        "- Same format but lower dot ratings (● ● ● ○ ○ or ● ● ○ ○ ○)",
+        "- Same format but lower dot ratings (\u25cf \u25cf \u25cf \u25cb \u25cb or \u25cf \u25cf \u25cb \u25cb \u25cb)",
         "- Note limitations: why this is secondary not primary",
         "",
         "INSIGHT TRACK RECORD:",
@@ -156,8 +156,8 @@
         "- Mark enrichment priority based on: active deals = HIGH, warm contacts = MEDIUM, networking = LOW",
         "",
         "LINKEDIN ENRICHMENT - READ-ONLY RESTRICTIONS:",
-        "⛔ NEVER: Post, send messages, make profile changes, open notifications, endorse skills, react to posts, join groups, accept connections",
-        "✅ ALLOWED: View public profiles, view company pages, read posts (don't interact), scan connections (mutual acquaintances), extract background/experience",
+        "\u26d4 NEVER: Post, send messages, make profile changes, open notifications, endorse skills, react to posts, join groups, accept connections",
+        "\u2705 ALLOWED: View public profiles, view company pages, read posts (don't interact), scan connections (mutual acquaintances), extract background/experience",
         "",
         "HOWIE TAG RECOMMENDATIONS - INCLUDE FOR ALL STAKEHOLDERS:",
         "- Always generate recommended N5OS tags even if no future meeting is scheduled yet",
@@ -172,7 +172,7 @@
       "priority": "CONDITIONAL",
       "guidance": [
         "Extract ALL numbers mentioned: user counts, revenue, timelines, percentages, budgets, growth rates, team sizes",
-        "Format: • **[Metric]**: [Value] (with context if needed)",
+        "Format: \u2022 **[Metric]**: [Value] (with context if needed)",
         "Include comparisons or benchmarks if discussed",
         "This is a reference block - comprehensive is better than selective",
         "Trigger condition: Generate ONLY if 3 or more substantive metrics were discussed (not trivial numbers like 'met 2 weeks ago')"
@@ -203,25 +203,37 @@
     },
     "B14": {
       "name": "BLURBS_REQUESTED",
-      "purpose": "ONLY actual blurbs explicitly requested during meeting (SPLIT from old B14)",
-      "when": "Intro promised by other party OR explicit blurb request detected",
-      "priority": "HIGH",
+      "purpose": "Intelligence extraction ONLY: Track what blurbs/descriptions were requested (generation moved to Pipeline 2)",
+      "when": "Every meeting (required for communications pipeline)",
+      "priority": "REQUIRED",
       "guidance": [
-        "This block now handles ONLY actual blurbs that were explicitly requested - strategic messaging has been moved to B27",
+        "PURPOSE: Track what blurbs, descriptions, one-pagers, or materials were requested. REQUIRED for every meeting to enable communications pipeline. If nothing requested, state 'None requested.'",
+        "",
+        "NOTE: This block does NOT generate the actual blurbs. Blurb generation happens in Pipeline 2 (Communications Generator) with full Careerspan context from Knowledge/current/.",
+        "",
+        "STRUCTURE: Simple list format",
+        "1. [Type of Material]",
+        "   - Requested by: [Name/Role]",
+        "   - Purpose: [What they want to do with it]",
+        "   - Target audience: [Who will read it]",
+        "   - Deadline: [If specified]",
+        "   - Key focus: [What to emphasize]",
         "",
         "DETECTION PHRASES:",
         "- Listen for: 'send me a blurb', 'I'll introduce you', 'I'll put you in touch', 'forward me something about what you do', 'I'll share your info with X'",
         "",
-        "WHEN DETECTED:",
-        "- Extract: (a) Who Vrijen/Careerspan promised to send blurb to, (b) Context: who will they forward it to, (c) Goal: what's the introduction trying to achieve",
-        "- Generate a forwarding-ready blurb (1-2 paragraphs) tailored to: the recipient, the goal, and what resonated in THIS meeting",
-        "- Make it copy-pasteable - Vrijen should be able to send it as-is",
+        "VALIDATION:",
+        "- Each request has all 5 fields filled (or marked [Not specified])",
+        "- Type of material is specific and actionable",
+        "- No actual blurb content included (intelligence only)",
+        "- Length is 100-200 words",
         "",
-        "IF NO BLURB REQUESTED:",
-        "- Create file but note: 'No blurbs explicitly requested in this meeting'",
-        "- Do NOT generate proactive messaging here - that's now in B27"
+        "IF NO BLURBS REQUESTED:",
+        "- Do NOT create this block (selector should not include B14 in manifest)"
       ],
-      "feedback_enabled": true
+      "feedback_enabled": true,
+      "version": "2.0",
+      "updated": "2025-11-16"
     },
     "B15": {
       "name": "STAKEHOLDER_MAP",
@@ -278,37 +290,39 @@
     },
     "B25": {
       "name": "DELIVERABLE_CONTENT_MAP",
-      "purpose": "Deliverables table + send-ready follow-up email draft (DUAL PURPOSE BLOCK)",
+      "purpose": "Intelligence extraction ONLY: Map promised deliverables/resources (email generation moved to Pipeline 2)",
       "when": "Every meeting (required)",
       "priority": "REQUIRED",
       "guidance": [
-        "This block has TWO sections that work together:",
+        "PURPOSE: Intelligence extraction ONLY. Map what deliverables, resources, or materials were promised, by whom, and when.",
         "",
-        "SECTION 1: DELIVERABLE CONTENT MAP (TABLE)",
-        "- Table format: Item | Promised By | Promised When | Status | Link/File | Send with Email",
-        "- Status: HAVE (ready to send) or NEED (must create/find)",
-        "- Send with Email: True if attach to follow-up email, False if separate/later delivery",
-        "- Include items promised by BOTH parties (what we owe them, what they owe us)",
-        "- This serves as the checklist for follow-up execution",
+        "NOTE: This block does NOT generate the follow-up email. Email generation happens in Pipeline 2 (Communications Generator) with full Careerspan context from Knowledge/current/.",
         "",
-        "SECTION 2: FOLLOW-UP EMAIL DRAFT",
-        "- Generate using the follow-up-email-generator.md command (v11.0.0) system",
-        "- Email structure: Greeting → Resonant Detail (1-2 sentences referencing personal moment) → Gratitude/Transition → Recap (bullets) → Next Steps/CTAs (max 2) → Sign-Off",
-        "- Use Markdown format with inline links: [text](URL) not raw URLs",
-        "- Incorporate distinctive phrases from transcript (max 2, confidence ≥ 0.75)",
-        "- Apply relationship depth dials: calculate warmth score + familiarity score → map to formality/CTA rigour",
-        "- Include 1-2 resonant details from conversation (personal anecdotes, shared values, humor, insights)",
-        "- Reference deliverables from Section 1 table - attach/mention as appropriate",
-        "- Readability constraints: Flesch-Kincaid ≤ 10, avg sentence 16-22 words, max 32 words per sentence, max 4 sentences per paragraph",
-        "- Delay sensitivity: If >2 days since meeting, include brief apology for delay",
-        "- Subject line pattern: 'Follow-Up: [RecipientName] x Careerspan [keyword1 • keyword2]'",
+        "STRUCTURE: Simple table format",
+        "| Item | Promised By | To Whom | Due Date | Status | Notes |",
+        "|------|-------------|---------|----------|--------|-------|",
+        "| [Deliverable] | [V/Their name] | [Recipient] | [Date/TBD] | [HAVE/NEED] | [Context] |",
         "",
-        "INTEGRATION:",
-        "- The email should reference deliverables from the table",
-        "- The table tells you what to attach to the email",
-        "- Together they create a complete follow-up package"
+        "FOLLOW-UP EMAIL FLAG:",
+        "Follow-Up Email Needed? [YES/NO]",
+        "- YES if: Deliverables to send, next steps to confirm, or relationship warrants follow-up",
+        "- NO if: Internal meeting, no external follow-up needed, or already handled",
+        "",
+        "VALIDATION:",
+        "- Table has all promised deliverables (or explicitly notes 'None')",
+        "- Each row has all 6 fields filled",
+        "- Follow-up email flag is clearly YES or NO",
+        "- No email content included (intelligence only)",
+        "- Length is 100-200 words",
+        "",
+        "BOTH PARTIES:",
+        "- Include deliverables promised by V/Careerspan (what we owe them)",
+        "- Include deliverables promised by them (what they owe us)",
+        "- This creates complete accountability map"
       ],
-      "feedback_enabled": true
+      "feedback_enabled": true,
+      "version": "2.0",
+      "updated": "2025-11-16"
     },
     "B26": {
       "name": "MEETING_METADATA_SUMMARY",
@@ -379,12 +393,12 @@
         "  - Title: As many lines as needed to clearly convey the insight (not artificially terse)",
         "  - Evidence: Direct quote from transcript",
         "  - Why it matters: ONE SENTENCE combining implication + strategic value",
-        "  - Signal strength: ● ● ● ○ ○ (1-5 dots)",
+        "  - Signal strength: \u25cf \u25cf \u25cf \u25cb \u25cb (1-5 dots)",
         "  - Category: [Hiring Manager Pain Points / Community Owner Pain Points / Product Strategy / GTM Strategy / Market Dynamics / etc]",
-        "  - Domain credibility: ● ● ● ● ○ (stakeholder's authority on this topic)",
+        "  - Domain credibility: \u25cf \u25cf \u25cf \u25cf \u25cb (stakeholder's authority on this topic)",
         "",
         "SOURCE CREDIBILITY (per insight):",
-        "- Stakeholder: [Name] → Link to B08",
+        "- Stakeholder: [Name] \u2192 Link to B08",
         "- Relevant experience: [Specific background that makes them knowledgeable on THIS topic]",
         "- Source type: PRIMARY / SECONDARY / SPECULATIVE",
         "  - PRIMARY = Firsthand operational experience on this exact topic",
@@ -394,11 +408,11 @@
         "- Weight justification: [Why we should/shouldn't weight this heavily]",
         "",
         "SIGNAL STRENGTH RATING (1-5 dots):",
-        "● ○ ○ ○ ○ = Generic/obvious, heard before, not actionable",
-        "● ● ○ ○ ○ = Somewhat specific, might be actionable",
-        "● ● ● ○ ○ = Specific, actionable, not obvious",
-        "● ● ● ● ○ = Highly specific, actionable, surprising, verified by 1-2 others",
-        "● ● ● ● ● = Game-changing, highly actionable, surprising, verified by 3+ stakeholders",
+        "\u25cf \u25cb \u25cb \u25cb \u25cb = Generic/obvious, heard before, not actionable",
+        "\u25cf \u25cf \u25cb \u25cb \u25cb = Somewhat specific, might be actionable",
+        "\u25cf \u25cf \u25cf \u25cb \u25cb = Specific, actionable, not obvious",
+        "\u25cf \u25cf \u25cf \u25cf \u25cb = Highly specific, actionable, surprising, verified by 1-2 others",
+        "\u25cf \u25cf \u25cf \u25cf \u25cf = Game-changing, highly actionable, surprising, verified by 3+ stakeholders",
         "",
         "CATEGORY TAGS (Stakeholder-Specific):",
         "- Hiring Manager Pain Points",
@@ -495,147 +509,13 @@
       ]
     },
     "INTERNAL_STANDUP_COFOUNDER": {
-    "description": "Internal co-founder standup or sync meeting",
-    "block_ids": [
-      "B26",
-      "B40",
-      "B41",
-      "B47",
-      "B42",
-      "B43",
-      "B44",
-      "B45",
-      "B46",
-      "B48"
-    ]
-  },
-  "INTERNAL_STANDUP_TEAM": {
-    "description": "Internal team standup or all-hands meeting",
-    "block_ids": [
-      "B26",
-      "B40",
-      "B41",
-      "B47",
-      "B42",
-      "B43",
-      "B44",
-      "B45",
-      "B46",
-      "B48"
-    ]
-  },
-  "INTERNAL_STRATEGIC": {
-    "description": "Internal strategic planning, retrospective, or deep dive session",
-    "block_ids": [
-      "B26",
-      "B40",
-      "B41",
-      "B47",
-      "B42",
-      "B43",
-      "B44",
-      "B45",
-      "B46",
-      "B48"
-    ]
-  },
-  "COMMUNITY": {
-      "description": "Community partner meetings for network building, member engagement",
+      "description": "Internal co-founder standup or sync meeting",
       "block_ids": [
         "B26",
         "B01",
         "B02",
-        "B08",
-        "B21",
-        "B31",
-        "B25",
-        "B05",
-        "B07"
+        "B05"
       ]
-    }
-  },
-  "output_order": [
-    "B26",
-    "B01",
-    "B02",
-    "B08",
-    "B21",
-    "B31",
-    "B25",
-    "B05",
-    "B13",
-    "B06",
-    "B07",
-    "B14",
-    "B27",
-    "B11",
-    "B15",
-    "B24"
-  ],
-  "deleted_blocks": {
-    "B04": {
-      "name": "LINKS_WITH_CONTEXT",
-      "reason": "Deleted - links now included directly in B25 follow-up email",
-      "deleted_in_version": "1.5"
-    },
-    "B16": {
-      "name": "MOMENTUM_MARKERS",
-      "reason": "Deleted - content absorbed into B13 (Plan of Action) as 'Momentum' section",
-      "deleted_in_version": "1.5"
-    },
-    "B28": {
-      "name": "FOUNDER_PROFILE_SUMMARY",
-      "reason": "Merged into B08 (Stakeholder Intelligence) - foundational profile section",
-      "deleted_in_version": "1.5"
-    },
-    "B29": {
-      "name": "KEY_QUOTES_HIGHLIGHTS",
-      "reason": "Merged into B21 (Key Moments) along with Salient Questions",
-      "deleted_in_version": "1.5"
-    },
-    "B30": {
-      "name": "INTRO_EMAIL_TEMPLATE",
-      "reason": "Deleted - intro emails generated ad-hoc when needed, not as standard block",
-      "deleted_in_version": "1.5"
-    }
-  },
-  "metadata": {
-    "compatible_with": [
-      "Meeting Intelligence Orchestrator v2.0+"
-    ],
-    "philosophy": "Guidance-based, not template-based. Let AI use contextual intelligence with detailed principles.",
-    "version_notes": "v1.5 major consolidation: reduced from 19 to 15 blocks. Added CRM integration (B08), Howie N5OS tag harmonization (B08, B26), stakeholder research (B31). Merged B28+B08, B29+B21. Split B14 into B14+B27. Deleted B04, B16, B30. Elevated B02 and B21 to REQUIRED. Enhanced B25 with follow-up email generation.",
-    "created": "2025-01-21",
-    "updated": "2025-10-12",
-    "owner": "Vrijen Attawar",
-    "changelog": {
-      "1.5": {
-        "date": "2025-10-12",
-        "changes": [
-          "Reduced total blocks from 19 to 15",
-          "Added B31: STAKEHOLDER_RESEARCH (landscape insights)",
-          "Enhanced B08: STAKEHOLDER_INTELLIGENCE (merged B28, added CRM + Howie)",
-          "Merged B29 + B21 into B21: KEY_MOMENTS",
-          "Split B14 into B14 (blurbs only) + B27 (key messaging)",
-          "Enhanced B25: Added follow-up email generation (dual-purpose block)",
-          "Enhanced B13: Added momentum analysis section (absorbed B16)",
-          "Elevated B02 to REQUIRED (action items always critical)",
-          "Elevated B21 to REQUIRED (key moments always valuable)",
-          "Made B11 conditional-only (3+ metrics trigger)",
-          "Deleted B04, B16, B28, B29, B30",
-          "Added stakeholder_combinations for CUSTOMER and COMMUNITY",
-          "Added CRM auto-create rules and LinkedIn restrictions",
-          "Added Howie N5OS tag recommendation system"
-        ]
-      },
-      "1.4": {
-        "date": "2025-10-12",
-        "changes": [
-          "Removed rigid format strings",
-          "Replaced with natural language guidance principles",
-          "Philosophy shift: determinism through intelligent prompting"
-        ]
-      }
     }
   }
 }

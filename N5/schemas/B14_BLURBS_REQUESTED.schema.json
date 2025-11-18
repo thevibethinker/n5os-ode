@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "B14_BLURBS_REQUESTED",
+  "description": "Intelligence block for requested blurbs (short or email format)",
+  "type": "object",
+  "required": ["id", "subject", "type", "recipient", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this blurb (e.g., BLB-001)",
+      "pattern": "^BLB-[0-9]{3}$"
+    },
+    "subject": {
+      "type": "string",
+      "description": "What/who the blurb is about (V, Careerspan, other topic)",
+      "enum": ["V", "Careerspan", "Other"]
+    },
+    "subject_detail": {
+      "type": "string",
+      "description": "If subject=Other, specify what (e.g., 'Career Framework Workshop')"
+    },
+    "type": {
+      "type": "string",
+      "description": "Blurb format type",
+      "enum": ["short", "email"]
+    },
+    "recipient": {
+      "type": "string",
+      "description": "Who will receive/use this blurb (name or role)"
+    },
+    "audience_context": {
+      "type": "string",
+      "description": "Who the recipient will share this with (e.g., 'Enterprise HR team')"
+    },
+    "purpose": {
+      "type": "string",
+      "description": "Why this blurb is needed (e.g., 'Product overview for leadership')"
+    },
+    "key_points": {
+      "type": "array",
+      "description": "Important details to include",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "description": "Generation status",
+      "enum": ["pending", "in_progress", "complete", "failed", "not_applicable"]
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "ISO timestamp when blurb was generated",
+      "format": "date-time"
+    },
+    "output_file": {
+      "type": "string",
+      "description": "Relative path to generated blurb file"
+    }
+  }
+}
+

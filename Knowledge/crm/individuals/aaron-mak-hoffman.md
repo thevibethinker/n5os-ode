@@ -1,17 +1,17 @@
 ---
-name: "Aaron Mak Hoffman"
-email_primary: "aamak44@gmail.com"
-email_aliases: []
-organization: "Personal (gmail.com)"
-role: "[To be determined]"
-first_contact: "2025-11-13"
-last_updated: "2025-11-10"
-lead_type: "LD-GEN"
-status: "active"
+name: Aaron Mak Hoffman
+email_primary: aamak44@gmail.com
+email_aliases: 
+organization: Personal (gmail.com)
+role:
+  - To be determined
+first_contact: 2025-11-13
+last_updated: 2025-11-10
+lead_type: LD-GEN
+status: active
 interaction_count: 1
-last_interaction: "2025-11-10"
+last_interaction: 2025-11-10
 ---
-
 # Aaron Mak Hoffman
 
 **Organization:** Personal (gmail.com)  

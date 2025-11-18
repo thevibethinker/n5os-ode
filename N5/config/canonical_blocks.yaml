@@ -1,0 +1,631 @@
+---
+created: 2025-11-15
+last_edited: 2025-11-17
+version: 2.0
+schema_version: "1.0"
+---
+# Canonical Meeting Intelligence Blocks
+# Standardized B## registry based on actual production usage
+
+metadata:
+  purpose: "Canonical registry of all meeting intelligence blocks"
+  schema_version: "1.0"
+  source: "Extracted from production meetings Nov 2025"
+  maintained_by: "N5 System"
+
+# ==================================================================================
+# CORE BLOCKS - Always Generated (Mandatory)
+# ==================================================================================
+
+blocks:
+  B01_DETAILED_RECAP:
+    category: core
+    name: "Detailed Recap"
+    description: "Comprehensive meeting overview covering context, participants, key discussion threads, technical details, and decisions"
+    output_format: "markdown with sections"
+    typical_length: "800-2000 words"
+    priority: 1
+    always_generate: true
+    requires:
+      - transcript
+    sections:
+      - "Context & Participants"
+      - "Key Discussion Points"
+      - "Technical Details (if applicable)"
+      - "Personal Context (if relevant)"
+    
+  B03_DECISIONS:
+    category: core
+    name: "Decisions Made"
+    description: "Key decisions reached during meeting with rationale and implications"
+    output_format: "markdown table"
+    typical_length: "200-600 words"
+    priority: 1
+    always_generate: true
+    conditional: "if no decisions made, mark as not_applicable with deletion_reason"
+    requires:
+      - transcript
+    structure:
+      format: "table"
+      columns: ["Decision", "Rationale", "Implications"]
+
+  B05_ACTION_ITEMS:
+    category: core
+    name: "Action Items & Next Steps"
+    description: "Actionable next steps organized by timeline"
+    output_format: "markdown with checkboxes"
+    typical_length: "300-700 words"
+    priority: 1
+    always_generate: true
+    conditional: "if no action items, mark as not_applicable with deletion_reason"
+    requires:
+      - transcript
+    structure:
+      timeline_categories:
+        - "Immediate (This Week)"
+        - "Short-term (Next 2 weeks)"
+        - "Medium-term (Next month)"
+      format: "checklist"
+
+  B14_BLURBS_REQUESTED:
+    category: core
+    name: "Blurbs & Copy Requested"
+    description: "Content blurbs, messaging, and copy discussed or requested during meeting"
+    output_format: "markdown with structured sections"
+    typical_length: "300-800 words"
+    priority: 1
+    always_generate: true
+    conditional: "if no blurbs discussed, mark as not_applicable with deletion_reason"
+    requires:
+      - transcript
+    sections:
+      - "Blurb requests with context"
+      - "Messaging frameworks"
+      - "Copy variations"
+      - "Target audiences"
+    note: "Critical for content deliverables workflow"
+    detection_guidance:
+      semantic_triggers:
+        outbound_commitments:
+          - "Vrijen offers: 'I'll send you', 'Let me send', 'I'll draft', 'I'll provide', 'I'll write up'"
+          - "Followed by: description/blurb/copy/content/language/messaging/pitch/intro"
+          - "For use in: emails, presentations, intros, pitches, stakeholder communication"
+        inbound_requests:
+          - "Counterparty asks: 'Can you send', 'Could you provide', 'Would you draft', 'Do you have'"
+          - "Followed by: copy/content/description/messaging/language about Careerspan"
+        contextual_scenarios:
+          - "Introduction scenarios: 'I need to introduce you to', 'Let me connect you with', 'I'll tell [person] about'"
+          - "Stakeholder communication: 'for my boss', 'for our board', 'for the president', 'to share with leadership'"
+          - "Partnership facilitation: 'something I can send', 'materials for', 'information to share'"
+          - "Pitch/demo contexts: 'description of what you do', 'how to explain Careerspan', 'value proposition'"
+      examples:
+        - "Scenario: Coral says 'I'll introduce you to Ruth (school president)' → Vrijen offers 'I'll send you something you can share with her'"
+        - "Scenario: 'Can you send me a description of Careerspan for our investors?'"
+        - "Scenario: 'I need to pitch this internally - do you have a one-pager?'"
+        - "Scenario: 'Let me know what you want me to tell the board about this'"
+      critical_insight: "Blurbs can be OFFERED (outbound) or REQUESTED (inbound). Both trigger B14 generation."
+
+  B25_DELIVERABLES:
+    category: core
+    name: "Deliverable Content Map"
+    description: "Comprehensive map of content deliverables promised during meeting"
+    output_format: "markdown with structured deliverables list"
+    typical_length: "300-700 words"
+    priority: 1
+    always_generate: true
+    conditional: "if no deliverables discussed, mark as not_applicable with deletion_reason"
+    requires:
+      - transcript
+    note: "Critical input for follow-up email generation workflow"
+    used_by:
+      - "Follow-Up Email Generator prompt"
+
+  B26_MEETING_METADATA:
+    category: core
+    name: "Meeting Metadata Summary"
+    description: "Classification, tags, and system metadata"
+    output_format: "YAML frontmatter + markdown summary"
+    typical_length: "100-200 words"
+    priority: 1
+    always_generate: true
+    requires:
+      - transcript
+      - meeting_metadata
+    sections:
+      - "Meeting classification"
+      - "Attendee metadata"
+      - "Tags and categories"
+      - "System tracking data"
+
+# ==================================================================================
+# CONTEXTUAL BLOCKS - Meeting Type Dependent
+# ==================================================================================
+
+  B02_COMMITMENTS:
+    category: contextual
+    name: "Commitments & Action Items"
+    description: "Explicit commitments made by all parties with timeline and status tracking"
+    output_format: "markdown tables by party"
+    typical_length: "200-500 words"
+    priority: 2
+    always_generate: false
+    conditional: "overlaps with B05_ACTION_ITEMS, use selectively"
+    requires:
+      - transcript
+    structure:
+      format: "table"
+      columns: ["Item", "Status", "Timeline", "Owner"]
+      separate_by: "party"
+    note: "Deprecated in favor of B05_ACTION_ITEMS for most cases"
+
+  B03_STAKEHOLDER_INTEL:
+    category: contextual
+    name: "Stakeholder Intelligence & CRM Integration"
+    description: "People and organization intelligence for external stakeholders"
+    output_format: "markdown with structured contact info"
+    typical_length: "300-800 words"
+    priority: 2
+    always_generate: false
+    conditional: "generate for external meetings"
+    requires:
+      - transcript
+      - meeting_metadata
+    integrations:
+      - crm_database
+      - linkedin_data
+    sections:
+      - "Individual profiles"
+      - "Company intelligence"
+      - "Communication style notes"
+      - "Relationship context"
+    
+  B04_OPEN_QUESTIONS:
+    category: contextual
+    name: "Open Questions & Clarifications Needed"
+    description: "Questions raised during meeting requiring follow-up"
+    output_format: "markdown table"
+    typical_length: "200-400 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if questions were raised"
+    requires:
+      - transcript
+    structure:
+      format: "table"
+      columns: ["Question", "Context", "Priority", "Owner"]
+    
+  B05_STRATEGIC_IMPLICATIONS:
+    category: contextual
+    name: "Strategic Implications"
+    description: "Broader strategic insights and positioning analysis"
+    output_format: "markdown analysis"
+    typical_length: "400-900 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate for strategic meetings"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+      - knowledge_base
+
+  B06_BUSINESS_CONTEXT:
+    category: contextual
+    name: "Business Context & Implications"
+    description: "Business model, financial context, and commercial implications"
+    output_format: "markdown with sections"
+    typical_length: "300-700 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate for business/partnership meetings"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+    
+  B07_TONE_AND_CONTEXT:
+    category: contextual
+    name: "Tone & Relationship Notes"
+    description: "Communication dynamics, relationship quality, and conversational tone"
+    output_format: "markdown narrative"
+    typical_length: "200-400 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate for external relationships"
+    requires:
+      - transcript
+    
+  B08_STAKEHOLDER_INTELLIGENCE:
+    category: contextual
+    name: "Stakeholder Intelligence"
+    description: "Comprehensive stakeholder profiling and relationship tracking"
+    output_format: "markdown with structured data"
+    typical_length: "400-1000 words"
+    priority: 1
+    always_generate: true
+    conditional: "mandatory for external meetings, skip for internal meetings"
+    requires:
+      - transcript
+      - meeting_metadata
+    duplicate_of: "B03_STAKEHOLDER_INTEL"
+    note: "MANDATORY for external stakeholders - critical for CRM and relationship tracking. Skip for internal team meetings."
+    
+  B08_ACTION_ITEMS:
+    category: contextual
+    name: "Action Items"
+    description: "Action items and next steps"
+    output_format: "markdown checklist"
+    typical_length: "200-500 words"
+    priority: 2
+    always_generate: false
+    conditional: "generate if action items exist"
+    duplicate_of: "B05_ACTION_ITEMS"
+    note: "Use B05 instead; B08 is legacy naming"
+
+  B08_FOLLOW_UP_CONVERSATIONS:
+    category: contextual
+    name: "Follow-up Conversations to Schedule"
+    description: "Future meetings and touchpoints to schedule"
+    output_format: "markdown list"
+    typical_length: "150-300 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if follow-ups discussed"
+    requires:
+      - transcript
+      - B02_COMMITMENTS
+
+  B09_REFERENCE_DATA:
+    category: contextual
+    name: "Reference Data"
+    description: "Key dates, metrics, contacts, and reference information"
+    output_format: "markdown with structured sections"
+    typical_length: "200-500 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if reference data present"
+    requires:
+      - transcript
+    sections:
+      - "Key Dates"
+      - "Metrics & Numbers"
+      - "Contacts"
+      - "URLs & Resources"
+
+  B09_FOLLOW_UP_REQUIRED:
+    category: contextual
+    name: "Follow-up Required"
+    description: "Outstanding items requiring follow-up"
+    output_format: "markdown list"
+    typical_length: "150-400 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if follow-ups needed"
+    duplicate_of: "B08_FOLLOW_UP_CONVERSATIONS"
+    note: "Consolidate with B08 or B02"
+
+  B10_CONTEXT_CONNECTIONS:
+    category: contextual
+    name: "Context Connections"
+    description: "Cross-references to existing knowledge base and related context"
+    output_format: "markdown with internal links"
+    typical_length: "200-400 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if strong knowledge connections exist"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+      - knowledge_base
+      - content_library
+
+  B10_RISK_REGISTER:
+    category: contextual
+    name: "Risk Register"
+    description: "Formal risk assessment with probability and mitigation"
+    output_format: "markdown table"
+    typical_length: "300-600 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate for high-stakes meetings"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+    structure:
+      format: "table"
+      columns: ["Risk", "Probability", "Impact", "Mitigation"]
+
+  B11_RISKS_AND_FLAGS:
+    category: contextual
+    name: "Risks & Flags"
+    description: "Risk assessment and warning flags identified"
+    output_format: "markdown with categorization"
+    typical_length: "300-600 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if risks discussed"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+
+  B12_QUESTIONS_RAISED:
+    category: contextual
+    name: "Questions Raised"
+    description: "Questions and discussion points raised during meeting"
+    output_format: "markdown list"
+    typical_length: "200-500 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if substantive questions asked"
+    requires:
+      - transcript
+
+  B13_RISKS_OPPORTUNITIES:
+    category: contextual
+    name: "Risks & Opportunities"
+    description: "Strategic risks and opportunities identified"
+    output_format: "markdown with dual sections"
+    typical_length: "300-600 words"
+    priority: 3
+    always_generate: false
+    conditional: "generate if risks or opportunities surfaced"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+
+# ==================================================================================
+# OPTIONAL/SPECIAL BLOCKS - AI-Recommended or Special Cases
+# ==================================================================================
+
+  B21_KEY_MOMENTS:
+    category: optional
+    name: "Key Quotes & Strategic Questions"
+    description: "Memorable quotes and strategic questions that emerged"
+    output_format: "markdown with quoted text"
+    typical_length: "200-500 words"
+    priority: 3
+    always_generate: false
+    conditional: "AI recommendation OR meeting has notable quotes"
+    requires:
+      - transcript
+    sections:
+      - "Key Quotes"
+      - "Strategic Questions"
+    
+  B26_MEETING_METADATA:
+    category: core
+    name: "Meeting Metadata Summary"
+    description: "Classification, tags, and system metadata"
+    output_format: "YAML frontmatter + markdown summary"
+    typical_length: "100-200 words"
+    priority: 1
+    always_generate: true
+    requires:
+      - transcript
+      - meeting_metadata
+    sections:
+      - "Meeting classification"
+      - "Attendee metadata"
+      - "Tags and categories"
+      - "System tracking data"
+
+  B27_PRIVATE_NOTES:
+    category: optional
+    name: "Private Notes for Vrijen"
+    description: "Personal notes and private reflections not for sharing"
+    output_format: "markdown narrative"
+    typical_length: "200-500 words"
+    priority: 4
+    always_generate: false
+    conditional: "manual generation only OR AI recommends sensitive notes"
+    requires:
+      - transcript
+      - B01_DETAILED_RECAP
+    security:
+      private: true
+      exclude_from_sharing: true
+
+# ==================================================================================
+# SELECTION RULES
+# ==================================================================================
+
+selection_rules:
+  always_generate:
+    - B01_DETAILED_RECAP
+    - B03_DECISIONS
+    - B05_ACTION_ITEMS
+    - B08_STAKEHOLDER_INTELLIGENCE  # External meetings only
+    - B14_BLURBS_REQUESTED
+    - B25_DELIVERABLES
+    - B26_MEETING_METADATA
+  
+  not_applicable_handling:
+    description: "For mandatory blocks with no applicable content, include in manifest with status='not_applicable'"
+    fields_required:
+      - "status: not_applicable"
+      - "deletion_reason: explanation of why block doesn't apply"
+  
+  meeting_type_rules:
+    product_demo:
+      required:
+        - B03_STAKEHOLDER_INTEL
+        - B06_BUSINESS_CONTEXT
+      recommended:
+        - B05_ACTION_ITEMS
+        - B08_FOLLOW_UP_CONVERSATIONS
+        - B21_KEY_MOMENTS
+    
+    partnership:
+      required:
+        - B03_STAKEHOLDER_INTEL
+        - B03_DECISIONS
+        - B07_TONE_AND_CONTEXT
+      recommended:
+        - B05_STRATEGIC_IMPLICATIONS
+        - B07_RISKS_OPPORTUNITIES
+        - B08_FOLLOW_UP_CONVERSATIONS
+    
+    financial_planning:
+      required:
+        - B03_DECISIONS
+        - B04_OPEN_QUESTIONS
+        - B09_REFERENCE_DATA
+        - B10_RISK_REGISTER
+      recommended:
+        - B05_ACTION_ITEMS
+        - B06_BUSINESS_CONTEXT
+    
+    internal_strategy:
+      required:
+        - B03_DECISIONS
+        - B05_ACTION_ITEMS
+      recommended:
+        - B05_STRATEGIC_IMPLICATIONS
+        - B07_RISKS_OPPORTUNITIES
+        - B10_CONTEXT_CONNECTIONS
+    
+    customer_meeting:
+      required:
+        - B03_STAKEHOLDER_INTEL
+        - B02_COMMITMENTS
+      recommended:
+        - B07_TONE_AND_CONTEXT
+        - B08_FOLLOW_UP_CONVERSATIONS
+        - B25_DELIVERABLES
+
+  wildcard_slots: 2
+  max_blocks_per_meeting: 12
+
+# ==================================================================================
+# BLOCK CONSOLIDATION MAP
+# ==================================================================================
+# Maps legacy/duplicate block names to canonical versions
+
+consolidation_map:
+  # ACTION ITEMS
+  B05_ACTION_ITEMS: "canonical"
+  B08_ACTION_ITEMS: "use B05_ACTION_ITEMS"
+  
+  # STAKEHOLDER INTEL
+  B03_STAKEHOLDER_INTEL: "canonical"
+  B08_STAKEHOLDER_INTELLIGENCE: "use B03_STAKEHOLDER_INTEL"
+  
+  # FOLLOW UP
+  B08_FOLLOW_UP_CONVERSATIONS: "canonical"
+  B09_FOLLOW_UP_REQUIRED: "use B08_FOLLOW_UP_CONVERSATIONS"
+  B06_FOLLOW_UP_ITEMS: "use B08_FOLLOW_UP_CONVERSATIONS"
+  
+  # DECISIONS
+  B03_DECISIONS: "canonical"
+  B04_DECISIONS_MADE: "use B03_DECISIONS"
+  B06_DECISIONS_MADE: "use B03_DECISIONS"
+  
+  # RISKS
+  B10_RISK_REGISTER: "canonical (formal table)"
+  B11_RISKS_AND_FLAGS: "canonical (flags/warnings)"
+  B13_RISKS_OPPORTUNITIES: "canonical (strategic narrative)"
+  B04_RISKS_AND_FLAGS: "use B11_RISKS_AND_FLAGS"
+  B07_RISKS_OPPORTUNITIES: "use B13_RISKS_OPPORTUNITIES"
+  
+  # QUESTIONS
+  B04_OPEN_QUESTIONS: "canonical"
+  B12_QUESTIONS_RAISED: "canonical (alternate form)"
+  B06_QUESTIONS_RAISED: "use B12_QUESTIONS_RAISED"
+  
+  # CONTEXT/TONE
+  B07_TONE_AND_CONTEXT: "canonical"
+  B07_TONE_AND_RELATIONSHIP_NOTES: "use B07_TONE_AND_CONTEXT"
+  
+  # BUSINESS IMPLICATIONS
+  B06_BUSINESS_CONTEXT: "canonical"
+  B08_BUSINESS_IMPLICATIONS: "use B06_BUSINESS_CONTEXT"
+  
+  # STRATEGIC
+  B05_STRATEGIC_IMPLICATIONS: "canonical"
+  B03_STRATEGIC_INSIGHTS: "use B05_STRATEGIC_IMPLICATIONS"
+
+# ==================================================================================
+# NAMING STANDARDS
+# ==================================================================================
+
+naming_standards:
+  format: "B##_BLOCK_NAME_ALL_CAPS"
+  separator: "_"
+  case: "SCREAMING_SNAKE_CASE"
+  examples:
+    - "B01_DETAILED_RECAP"
+    - "B03_STAKEHOLDER_INTEL"
+    - "B10_RISK_REGISTER"
+  
+  markdown_headers:
+    format: "## B##_BLOCK_NAME"
+    always_include_code: true
+    examples:
+      - "## B01_DETAILED_RECAP"
+      - "## B08_FOLLOW_UP_CONVERSATIONS"
+
+# ==================================================================================
+# QUALITY STANDARDS
+# ==================================================================================
+
+quality_standards:
+  min_word_count: 100
+  max_word_count: 2000
+  required_elements:
+    - "Markdown formatting"
+    - "Clear section headers (where applicable)"
+    - "Factual accuracy (no hallucinations)"
+    - "Specific examples from transcript"
+    - "Actionable information"
+  
+  avoid:
+    - "Generic filler content"
+    - "Speculation beyond transcript"
+    - "Redundancy across blocks"
+    - "Vague summaries"
+  
+  validation_checks:
+    - "Word count within range"
+    - "Required sections present"
+    - "No placeholder text"
+    - "Cross-references resolve"
+    - "Markdown valid"
+
+# ==================================================================================
+# MIGRATION NOTES
+# ==================================================================================
+
+migration_notes:
+  created: "2025-11-15"
+  source_meetings:
+    - "2025-11-15_Vrijen_Attawar_Rory_Brown"
+    - "2025-11-XX_Aviato_Demo"
+  
+  naming_chaos_fixed:
+    - "B03: 4 different meanings → standardized to DECISIONS + STAKEHOLDER_INTEL"
+    - "B04: 4 different meanings → standardized to OPEN_QUESTIONS + RISKS_AND_FLAGS"
+    - "B05: 2 different meanings → standardized to ACTION_ITEMS + STRATEGIC_IMPLICATIONS"
+    - "B06: 4 different meanings → standardized to BUSINESS_CONTEXT + QUESTIONS_RAISED"
+    - "B07: 3 different meanings → standardized to TONE_AND_CONTEXT + RISKS_OPPORTUNITIES"
+    - "B08: 4 different meanings → standardized to FOLLOW_UP_CONVERSATIONS"
+    - "B09: 2 different meanings → standardized to REFERENCE_DATA"
+    - "B10: 2 different meanings → standardized to CONTEXT_CONNECTIONS + RISK_REGISTER"
+  
+  blocks_preserved:
+    count: 20
+    core: 3
+    contextual: 13
+    optional: 4
+  
+  blocks_consolidated:
+    from: 38
+    to: 20
+    duplicates_removed: 18
+
+
+
+
+
+
+
+
+
+

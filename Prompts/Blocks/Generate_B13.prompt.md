@@ -1,26 +1,47 @@
 ---
-description: Generate B13 Insights block - strategic takeaways
-tags: [meeting-intelligence, block-generation, b13, insights]
+description: Generate B13 Risks & Opportunities block from meeting transcript
+tags:
+  - meeting-intelligence
+  - block-generation
+  - b13
+  - risks
+  - opportunities
+  - strategic
 tool: true
 ---
-# Generate Block B13: Insights and Strategic Takeaways
+# Generate Block B13: Risks & Opportunities
 
-Extract non-obvious insights and strategic patterns.
+**Input:** Meeting transcript provided in conversation context
+
+**Your task:** Generate a B13 Risks & Opportunities block analyzing strategic risks and opportunities identified in the meeting.
 
 ## Output Format
 
-### Core Insights
+```markdown
+---
+created: YYYY-MM-DD
+last_edited: YYYY-MM-DD
+version: 1.0
+---
 
-**1. [Insight Title]**  
-Observation: [What you noticed]  
-Implication: [Why it matters]  
-Strategy: [How to leverage]
+# B13: Risks & Opportunities
 
-## Requirements
-- Focus on non-obvious patterns
-- Strategic depth beyond surface observations
-- Actionable implications
-- Connect insights to broader strategy
-- Min 1000 bytes
+## Strategic Opportunities
+[Specific opportunities identified with potential impact]
 
-Generate B13 now.
+## Strategic Risks
+[Long-term risks with business/relationship implications]
+
+## Risk-Opportunity Trade-offs
+[Where risks and opportunities intersect]
+```
+
+## Quality Standards
+- Real strategic insights from transcript (no generic opportunities per P29)
+- Include specific context for each risk/opportunity
+- Connect to business/relationship implications
+- Narrative format (not just bullet lists)
+- Min 300 words
+
+**Generate the B13 block now using the transcript provided in this conversation.**
+

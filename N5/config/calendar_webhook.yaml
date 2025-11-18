@@ -1,0 +1,41 @@
+---
+# Calendar Webhook Configuration
+# This file stores Google Calendar webhook settings and enrichment scheduling
+# Automatically updated by setup and renewal scripts
+#
+# Created: 2025-11-18
+# Version: 1.0
+
+webhook:
+  endpoint: "https://va.zo.computer/webhooks/calendar"
+  channel_id: null  # Set by crm_calendar_webhook_setup.py
+  expiration_ms: null  # Unix timestamp in milliseconds
+  resource_id: null  # Google Calendar resource ID
+
+enrichment:
+  checkpoint_1_days_before: 3  # 3 days before meeting
+  checkpoint_1_priority: 75    # Medium-high priority
+  checkpoint_2_hour: 7         # 7 AM morning of meeting
+  checkpoint_2_priority: 100   # Highest priority
+
+renewal:
+  check_interval_hours: 24     # Check daily
+  renew_threshold_days: 2      # Renew when < 2 days remaining
+  max_retry_interval: 3600     # Retry failed renewals after 1 hour
+
+health:
+  check_interval_hours: 1      # Health check every hour
+  alert_on_errors_count: 5     # Alert if > 5 errors in 24 hours
+  alert_on_no_notifications_hours: 24  # Alert if no notifications for 24h
+
+google_api:
+  calendar_version: 'v3'
+  scopes:
+    - 'https://www.googleapis.com/auth/calendar.readonly'
+    - 'https://www.googleapis.com/auth/calendar.events.readonly'
+
+logging:
+  webhook_handler: '/dev/shm/crm-calendar-webhook.log'
+  renewal_worker: '/dev/shm/crm-webhook-renewal.log'
+  health_monitor: '/dev/shm/crm-webhook-health.log'
+

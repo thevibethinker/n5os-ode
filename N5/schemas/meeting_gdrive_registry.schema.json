@@ -20,6 +20,10 @@
       "format": "date-time",
       "description": "Timestamp when file was ingested (ISO 8601 format)"
     },
+    "folder_name": {
+      "type": "string",
+      "description": "Actual folder name in Personal/Meetings/ where this meeting is stored"
+    },
     "source": {
       "type": "string",
       "description": "Ingestion method or workflow used",
@@ -37,3 +41,4 @@
   },
   "additionalProperties": false
 }
+

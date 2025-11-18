@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-11T19:02:10.078306+00:00",
+  "generated_at": "2025-11-17T19:01:06.261828+00:00",
   "summary": {
     "total_scanned": 50,
     "critical_issues": 48,
@@ -9,7 +9,514 @@
   },
   "critical": [
     {
+      "meeting_id": "2025-11-XX_Aviato_Demo",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-15_gfq-ywpy-pgs",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-15_Vrijen_Attawar_Rory_Brown",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_zo-computer_pitch-demo_workshop",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Vrijen_Husain_Careerspan_Pivot",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Vrijen_Attawar_and_Emily_Velasco",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Vrijen_Attawar_Kai_Song",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Nicole_Holubar_x_Vrijen_Attawar_emory-partnership",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Nicole_Holubar_Vrijen_Attawar",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Michael_Grady",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Husain_x_V",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Husain_Vrijen",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Daily_team_stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Daily-team-stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Daily team stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-14_Ayush-Jain_internal",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_quantum-labs_sales-discovery_sales",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_external-aaron-mak-hoffman",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_careerspan-strategy-hiring-discussion",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_Vrijen_Product_Daily",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_Vrijen_Logan_Alex_BusinessUpdate",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_Vrijen-Tiffany-Ben-Vrijen-Attawar-and-Tiffany-Huang-plus-Ben-Guo",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_Tami-Forman_Vrijen-Attawar_meeting_processed",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_Daily-team-stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-13_Aaron-Mak-Hoffman_Vrijen-Attawar",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-12_Vrijen_Logan_daily_standup_trello",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-12_Ilya_Ilse_Logan_Rochel_Vrijen_stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-12_Daily_Team_Stand-up_Engineering",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-12_Daily-team-stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-12_ColinNavon_VrijenAttawar",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-11_vrijen-logan-catch-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-11_Rochel_1-1",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-11_Molly_Kress_career_development",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-11_McKinsey-Alumni-Founders_monthly",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-11_Edmund_Cuthbert_30_Min_Call",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
       "meeting_id": "2025-11-11_EdmundCuthbert-Superposition_founder",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-11_Daily_team_stand-up",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-10_Tiffany",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-10_Ryan_Vanderbilt",
+      "status": "CRITICAL",
+      "issues": [
+        {
+          "type": "MISSING_METADATA",
+          "severity": "CRITICAL",
+          "message": "Missing metadata file"
+        }
+      ],
+      "block_count": 0,
+      "expected_blocks": 0
+    },
+    {
+      "meeting_id": "2025-11-10_Daily-Standup",
       "status": "CRITICAL",
       "issues": [
         {
@@ -113,514 +620,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-05_CK-Khot-AGIInc_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
       "meeting_id": "2025-11-04_zo-team_demo-event-prep_internal",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_unknown-attendee_advisory",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_granola-team_zo-demo_workshop",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_granola-group_zo-product-demo_workshop",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_dbn-ctum_financial-review_partner",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Vrijen-SecondShift_Networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Vrijen-Rochel_1-1_Networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Tejas-Ravindran_personal-reset",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Ilya-Kucherenko_internal-onboarding",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Hamoon-Ekhtiari-FutureFit_founder",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_David-Speigel_internal",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Bram-Adams_advisory",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_Anthony-DeLuise_product-career",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-03_plaud-product-overview_internal",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-03_careerspan-team_ai-circle-presentation-prep_planning",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-03_Plaud-VrijenaAI-Workflow_technical",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-03_MariaSantos-Trigger_one-on-one",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-31_Danny-Williams_transition",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-30_Ilya-Sales-Coaching_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-29_careerspan-team_daily-standup_standup",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-29_Mihir-Makwana_zo-partnership",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-28_Mihir-Makwana_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-27_external-lisa-noble",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-26_Plaud_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-24_Careerspan-Sam_partnership-discovery",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-22_Pamela Kavalam",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-22_Brinleigh-Murphy-Reuter_external",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-22_Brinleigh-Murphy-Reuter_coaching",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-21_Zoe-Weber_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-21_Ilse_internal-standup",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-20_dylan-johnson-route_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-20_Bennett-Lee_edtech",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-20_Bennett-Lee_advisory",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-15_Jaya-Pokuri_founder-conversation",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-15_Careerspan-MagicEdTech_panel-planning",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-15_AshStraughn-SIEM_founder-partnership",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-14_nira-team_strategy-exploration_founder",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-14_Logan-Vrijen_internal-strategy",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-10-10_Logan-Vrijen_internal-strategy",
       "status": "CRITICAL",
       "issues": [
         {

@@ -1,0 +1,331 @@
+# Meeting Intelligence Block Catalog
+# Defines available block types, their structure, and generation guidelines
+
+blocks:
+  B01_DETAILED_RECAP:
+    name: "Detailed Meeting Recap"
+    category: "core"
+    purpose: "Comprehensive overview capturing all major discussion points, decisions, and context"
+    typical_length: "1200-1800 words"
+    required_sections:
+      - "Executive Summary"
+      - "Key Discussion Points"
+      - "Decisions Made"
+      - "Context and Background"
+      - "Open Questions"
+    guidelines: "Extract all substantive content. Prioritize completeness over brevity. Include speaker attribution for key points."
+
+  B02_COMMITMENTS:
+    name: "Commitments and Agreements"
+    category: "core"
+    purpose: "Explicit promises, commitments, and agreements made by participants"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Explicit Commitments"
+      - "Who Committed"
+      - "What Was Promised"
+      - "Implied Timelines"
+    guidelines: "Be precise about who said what. Capture exact language when possible. Include implied commitments based on discussion context."
+
+  B03_NEXT_STEPS:
+    name: "Next Steps and Action Items"
+    category: "core"
+    purpose: "Specific, actionable next steps with clear ownership"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Action Items"
+      - "Owner"
+      - "Specific Task"
+      - "Priority/Deadline"
+      - "Dependencies"
+    guidelines: "Convert vague statements into concrete actions. Clarify ownership. Identify blocking dependencies."
+
+  B04_DECISIONS:
+    name: "Key Decisions"
+    category: "core"
+    purpose: "Formal decisions made during the meeting"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Decision Statement"
+      - "Rationale"
+      - "Alternatives Considered"
+      - "Impact"
+    guidelines: "Distinguish between decisions made and decisions pending. Capture the reasoning process."
+
+  B05_ACTION_ITEMS:
+    name: "Action Items Log"
+    category: "contextual"
+    purpose: "Log of all action items in checklist format"
+    typical_length: "200-500 words"
+    required_sections:
+      - "Action Item List"
+      - "Owner"
+      - "Due Date"
+      - "Status"
+    guidelines: "Format as actionable checklist. Keep entries concise. Use consistent formatting."
+
+  B06_FOLLOW_UPS:
+    name: "Follow-up Requirements"
+    category: "contextual"
+    purpose: "Items that require follow-up outside the meeting"
+    typical_length: "250-500 words"
+    required_sections:
+      - "Follow-up Items"
+      - "Who Needs to Follow Up"
+      - "What Information is Needed"
+      - "Context"
+    guidelines: "Separate from action items - these are research/data-gathering needs."
+
+  B07_TONE_AND_CONTEXT:
+    name: "Tone and Context Analysis"
+    category: "contextual"
+    purpose: "Capture emotional tone, interpersonal dynamics, and meeting atmosphere"
+    typical_length: "300-700 words"
+    required_sections:
+      - "Overall Tone"
+      - "Key Interactions"
+      - "Interpersonal Dynamics"
+      - "Energy Level"
+    guidelines: "Describe atmosphere and relationship dynamics. Note enthusiasm, concerns, tensions. Capture informal moments that reveal team culture."
+
+  B08_RISKS_AND_CONCERNS:
+    name: "Risks and Concerns"
+    category: "contextual"
+    purpose: "Identify risks, concerns, and challenges discussed"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Risks Identified"
+      - "Severity/Impact"
+      - "Mitigation Discussed"
+      - "Owner"
+    guidelines: "Flag explicit and implicit risks. Capture both strategic and operational concerns."
+
+  B09_INSIGHTS_AND_LEARNINGS:
+    name: "Key Insights and Learnings"
+    category: "contextual"
+    purpose: "Document insights, realizations, and learnings from the discussion"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Key Insights"
+      - "Source/Aha Moment"
+      - "Implications"
+      - "Applications"
+    guidelines: "Capture 'aha moments' and breakthroughs. Document how thinking evolved during the meeting."
+
+  B10_RESOURCE_NEEDS:
+    name: "Resource Requirements"
+    category: "contextual"
+    purpose: "Identify resource needs mentioned (budget, personnel, tools)"
+    typical_length: "250-500 words"
+    required_sections:
+      - "Resource Type"
+      - "Quantity/Amount"
+      - "Purpose"
+      - "Urgency"
+    guidelines: "Track budget, headcount, tools, or other resource needs. Note timing and priority."
+
+  B11_BLOCKERS:
+    name: "Blockers and Dependencies"
+    category: "contextual"
+    purpose: "Identify what's blocking progress and dependencies between workstreams"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Blocker Description"
+      - "Impacted Work"
+      - "Severity"
+      - "Proposed Resolution"
+    guidelines: "Separate true blockers from challenges. Identify dependencies between teams or workstreams."
+
+  B12_SUCCESS_METRICS:
+    name: "Success Metrics and KPIs"
+    category: "contextual"
+    purpose: "Document success metrics, KPIs, and measurement approaches discussed"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Metric/KPI"
+      - "Target/Goal"
+      - "Measurement Method"
+      - "Reporting Frequency"
+    guidelines: "Capture both quantitative and qualitative success indicators. Note baseline and target values."
+
+  B13_STAKEHOLDER_UPDATES:
+    name: "Stakeholder Updates"
+    category: "contextual"
+    purpose: "Summarize updates shared for stakeholders who weren't present"
+    typical_length: "400-800 words"
+    required_sections:
+      - "For Stakeholder"
+      - "Update Summary"
+      - "Key Points"
+      - "Their Action Items"
+    guidelines: "Write in a format ready to share with stakeholders. Focus on what they need to know."
+
+  B14_PROJECT_STATUS:
+    name: "Project Status Updates"
+    category: "contextual"
+    purpose: "Track project status updates and milestones"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Project Name"
+      - "Status Summary"
+      - "Milestones"
+      - "Next Milestone"
+      - "Risks"
+    guidelines: "Capture project status changes and progress toward milestones. Note timeline shifts."
+
+  B15_STRATEGIC_ALIGNMENT:
+    name: "Strategic Alignment Check"
+    category: "contextual"
+    purpose: "Connect meeting discussion to broader strategic objectives"
+    typical_length: "500-900 words"
+    required_sections:
+      - "Strategic Objective"
+      - "Meeting Connection"
+      - "Alignment Level"
+      - "Impact"
+    guidelines: "Link tactical discussions to strategic goals. Assess alignment and identify strategic implications."
+
+  B16_ARCHITECTURE_DECISIONS:
+    name: "Architecture and Technical Decisions"
+    category: "contextual"
+    purpose: "Document technical and architecture decisions"
+    typical_length: "500-1000 words"
+    required_sections:
+      - "Decision Area"
+      - "Options Considered"
+      - "Decision Made"
+      - "Rationale"
+      - "Trade-offs"
+    guidelines: "For technical meetings - capture architecture decisions, tech stack choices, and technical trade-offs."
+
+  B17_TIMELINE_ADJUSTMENTS:
+    name: "Timeline and Roadmap Changes"
+    category: "contextual"
+    purpose: "Track changes to timelines, roadmaps, and schedules"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Change Description"
+      - "Previous Timeline"
+      - "New Timeline"
+      - "Reason for Change"
+    guidelines: "Document timeline shifts and their rationale. Capture implications for dependent work."
+
+  B18_CUSTOMER_INSIGHTS:
+    name: "Customer and Market Insights"
+    category: "contextual"
+    purpose: "Capture customer feedback, market insights, and user research findings"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Insight Source"
+      - "Customer/Market Signal"
+      - "Implication"
+      - "Recommended Action"
+    guidelines: "Document direct customer feedback, market observations, and user insights. Link to product/service implications."
+
+  B19_PROCESS_IMPROVEMENTS:
+    name: "Process and Workflow Improvements"
+    category: "contextual"
+    purpose: "Identify process improvements and workflow optimizations"
+    typical_length: "400-700 words"
+    required_sections:
+      - "Current Process"
+      - "Pain Points"
+      - "Proposed Improvement"
+      - "Expected Benefit"
+    guidelines: "Capture opportunities to improve workflows, processes, and ways of working. Quantify benefits when possible."
+
+  B20_COMPETITIVE_INTEL:
+    name: "Competitive Intelligence"
+    category: "contextual"
+    purpose: "Document competitive observations and market intelligence"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Competitor"
+      - "Observation"
+      - "Source"
+      - "Strategic Implication"
+    guidelines: "Capture competitive moves, market observations, and strategic intelligence about competitors."
+
+  B21_KEY_MOMENTS:
+    name: "Key Moments and Culture"
+    category: "wildcard"
+    purpose: "Capture significant moments, cultural insights, and team dynamics"
+    typical_length: "300-700 words"
+    required_sections:
+      - "Moment Description"
+      - "Significance"
+      - "Cultural Insight"
+      - "Impact on Team"
+    guidelines: "Capture meaningful interactions, celebrations, concerns, and moments that reveal culture and values."
+
+  B22_QUESTIONS_OPEN:
+    name: "Open Questions and Unknowns"
+    category: "wildcard"
+    purpose: "Document questions raised that don't have answers yet"
+    typical_length: "200-500 words"
+    required_sections:
+      - "Question"
+      - "Context"
+      - "Why It Matters"
+      - "Who Should Answer"
+    guidelines: "Capture open questions and unknowns. Distinguish between tactical questions and strategic unknowns."
+
+  B23_LEARNING_OPPORTUNITIES:
+    name: "Learning and Development Opportunities"
+    category: "wildcard"
+    purpose: "Identify skill gaps and learning opportunities"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Skill/Competency"
+      - "Gap Description"
+      - "Learning Opportunity"
+      - "Priority"
+    guidelines: "Identify skill areas where team members need development. Suggest learning opportunities."
+
+  B24_PARTNERSHIP_OPPORTUNITIES:
+    name: "Partnership and Collaboration Opportunities"
+    category: "wildcard"
+    purpose: "Identify partnership, collaboration, or integration opportunities"
+    typical_length: "300-600 words"
+    required_sections:
+      - "Opportunity Description"
+      - "Potential Partner"
+      - "Value Proposition"
+      - "Next Steps"
+    guidelines: "Capture partnership ideas, collaboration opportunities, and ecosystem opportunities."
+
+  B25_INNOVATION_IDEAS:
+    name: "Innovation Ideas and Opportunities"
+    category: "wildcard"
+    purpose: "Document innovative ideas and creative opportunities"
+    typical_length: "400-800 words"
+    required_sections:
+      - "Idea Description"
+      - "Innovation Type"
+      - "Potential Impact"
+      - "Feasibility"
+    guidelines: "Capture creative ideas, innovative approaches, and out-of-the-box thinking. Don't filter - capture all ideas."
+
+  B26_MEETING_METADATA:
+    name: "Meeting Metadata and Classification"
+    category: "core"
+    purpose: "Core metadata about the meeting itself"
+    typical_length: "150-300 words"
+    required_sections:
+      - "Meeting Classification"
+      - "Primary Topics"
+      - "Key Participants"
+      - "Meeting Effectiveness"
+    guidelines: "Classify meeting type, identify key participants and their roles, assess meeting effectiveness."
+
+block_generation_defaults:
+  yaml_frontmatter_required: true
+  version_start: "1.0"
+  file_naming: "[block_id]_[BLOCK_NAME].md"
+  validation_rules:
+    - "YAML frontmatter must exist and be valid"
+    - "Content length within typical_range (+/- 30%)"
+    - "All required sections present"
+    - "No placeholder or stub content"
+    - "Semantic depth appropriate to block type"
+

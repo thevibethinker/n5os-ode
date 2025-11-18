@@ -1,6 +1,10 @@
 ---
 description: Generate B08 Stakeholder Intelligence block
-tags: [meeting-intelligence, block-generation, b08, stakeholder]
+tags:
+  - meeting-intelligence
+  - block-generation
+  - b08
+  - stakeholder
 tool: true
 ---
 # Generate Block B08: Stakeholder Intelligence

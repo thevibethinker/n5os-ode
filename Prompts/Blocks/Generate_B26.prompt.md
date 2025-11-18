@@ -1,6 +1,10 @@
 ---
 description: Generate B26 Meeting Metadata Summary block
-tags: [meeting-intelligence, block-generation, b26, metadata]
+tags:
+  - meeting-intelligence
+  - block-generation
+  - b26
+  - metadata
 tool: true
 ---
 # Generate Block B26: Meeting Metadata Summary

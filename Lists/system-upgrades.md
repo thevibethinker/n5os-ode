@@ -1,5 +1,6 @@
 ---
-created: 2025-09-19
+project: Content Library System (SQLite + Block-Based)
+created: 2025-11-12
 last_edited: 2025-11-04
 version: 2.1
 ---
@@ -243,6 +244,33 @@ version: 2.1
 
 ---
 
+### 🟡 Knowledge Bridge (Content Library → Knowledge Base Integration)
+
+**ID:**   
+**Priority:** M  
+**Summary:** Build append-only bridge system to promote content from Content Library to Knowledge Base with full traceability. System was designed and partially implemented (worker_knowledge_bridge.py created) but **abandoned for now** due to schema mismatch between Content Library's expected promotion structure and Knowledge Base's existing generation_history table structure. Documented for future consideration when Knowledge Base schema evolves or requirements change.
+
+**Status:** Designed, worker created, **abandoned**  
+**Rationale:** Standard knowledge ingestion process remains functional without this bridge. Content Library operates standalone successfully.
+
+**Components:**
+- Bridge table schema (content_library_bridge)
+- Promotion logic (worker_knowledge_bridge.py)
+- Traceability tracking
+- Append-only constraints
+
+**Future Considerations:**
+- Revisit if Knowledge Base schema adds dedicated promotion tracking
+- Revisit if need for automated Content → Knowledge pipeline emerges
+- Current manual knowledge ingestion process remains functional
+
+**Files:**
+- `/home/workspace/N5/workers/worker_knowledge_bridge.py` (created, not in active use)
+
+**Tags:** knowledge-bridge, content-library, integration, abandoned, future
+
+---
+
 ## 🔄 In Progress
 
 ### Workflow for Ingesting Content + Insights from External Sources
@@ -287,3 +315,4 @@ version: 2.1
 - **Long-standing Issue: Dependency Conflicts** ()
 
 _... and 12 more completed items_
+

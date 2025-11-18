@@ -1,4 +1,7 @@
 ---
+created: 2025-11-16
+last_edited: 2025-11-17
+version: 1.1
 description: Intelligently select blocks and name meeting based on transcript analysis
 tags: [meeting-intelligence, block-selection, intelligent, meeting-naming]
 tool: true
@@ -22,7 +25,7 @@ Analyze a meeting transcript to intelligently determine which intelligence block
    - **Meeting title**: Determine a descriptive, human-readable meeting name based on participants and topic
 
 2. **Select blocks intelligently** based on what's actually in the meeting:
-   - Always include: B01 (Recap), B02 (Commitments), B26 (Metadata)
+   - **Always include (REQUIRED)**: B01 (Recap), B02 (Commitments), B25 (Deliverables), B26 (Metadata)
    - Include B05 (Questions) if questions were raised
    - Include B07 (Warm Intros) if introductions were promised
    - Include B08 (Stakeholder Intel) for external relationships
@@ -35,10 +38,9 @@ Analyze a meeting transcript to intelligently determine which intelligence block
    - Include B22 (Risks) if risks or concerns surfaced
    - Include B23 (Context) for ongoing relationships
    - Include B24 (Product Ideas) if features/improvements discussed
-   - Include B25 (Collaboration) if partnerships explored
 
 3. **Prioritize blocks** (1-3, where 1 = highest):
-   - Priority 1: B01, B02, B26 (always needed immediately)
+   - Priority 1: B01, B02, B25, B26 (always needed immediately - REQUIRED blocks)
    - Priority 2: Stakeholder/relationship blocks (B08, B15, B20, B23)
    - Priority 3: Optional/nice-to-have blocks
 
@@ -71,7 +73,10 @@ Return a JSON object with:
 - Use lowercase, hyphens for spaces, actual names from conversation
 
 ## Requirements
-- Always include B01, B02, B26 (non-negotiable)
+- **Always include B01, B02, B25, B26 (non-negotiable)** - these are REQUIRED for every meeting
 - Only include blocks where there's actual content to generate
 - Extract real participant names from conversation, not generic placeholders
 - Meeting name should be descriptive and match actual participants
+
+
+

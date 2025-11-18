@@ -7,8 +7,18 @@ Calls B99 prompt as tool to leverage semantic understanding
 import sys
 import json
 import subprocess
+import re
 from pathlib import Path
 from typing import Optional
+from datetime import datetime
+
+def extract_date_from_filename(filename: str) -> str:
+    """Extract date from Drive filename pattern like: name-transcript-2025-11-11T16-28-16.678Z.docx"""
+    match = re.search(r'-transcript-(\d{4}-\d{2}-\d{2})T', filename)
+    if match:
+        return match.group(1)
+    # Fallback to current date
+    return datetime.now().strftime("%Y-%m-%d")
 
 def generate_folder_name_llm(b26_path: Path, b28_path: Path, current_name: Optional[str] = None) -> str:
     """
@@ -113,3 +123,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
+
