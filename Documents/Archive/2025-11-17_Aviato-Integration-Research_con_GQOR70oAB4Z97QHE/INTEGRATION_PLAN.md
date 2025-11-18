@@ -1,0 +1,1 @@
+/home/workspace/Integrations/Aviato/INTEGRATION_PLAN.md

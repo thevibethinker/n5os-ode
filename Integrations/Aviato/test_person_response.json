@@ -1,0 +1,238 @@
+{
+  "id": "6sfrxaRykbBO",
+  "fullName": "Bill Gates",
+  "entityType": "person",
+  "location": "Seattle, Washington, United States",
+  "URLs": {
+    "linkedin": "linkedin.com/in/williamhgates",
+    "crunchbase": "crunchbase.com/person/bill-gates-02f7"
+  },
+  "headline": "Chair, Gates Foundation and Founder, Breakthrough Energy",
+  "skills": [],
+  "gender": "male",
+  "linkedinID": "williamhgates",
+  "linkedinNumID": 251749025,
+  "linkedinEntityID": "ACoAAA8BYqEBCGLg_vT_ca6mMEqkpp9nVffJ3hc",
+  "investedRoundList": [],
+  "investedIndustries": [],
+  "investorCategoryList": [],
+  "investorTitle": "Bill Gates",
+  "computed_highlightList": [
+    "bigTechAlumPublic",
+    "employeeDuringBigMA",
+    "employeeDuringIPO",
+    "employeeDuringMA",
+    "founderDuringMA",
+    "oneYearAtCurrentCompany",
+    "priorBackedFounder"
+  ],
+  "lastUpdated": "2025-10-03T12:11:15.948Z",
+  "locationIDList": [
+    102191575,
+    85633793,
+    102086191,
+    101730401,
+    85688623
+  ],
+  "linkedinConnections": 8,
+  "linkedinFollowers": 38883447,
+  "linkedinJoinDate": "2013-05-02T19:09:40.840Z",
+  "experienceList": [
+    {
+      "startDate": "1975-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1975-01-01T00:00:00.000Z",
+          "title": "Co-founder",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "6sfrxaRykbBO",
+      "companyID": "nvx6k7fes9tW7AtX392icggPlWgriqG",
+      "companyName": "Microsoft",
+      "company": {
+        "id": "nvx6k7fes9tW7AtX392icggPlWgriqG",
+        "name": "Microsoft",
+        "country": "United States",
+        "region": "Washington",
+        "locality": "Redmond",
+        "URLs": {
+          "golden": "golden.com/wiki/microsoft-6gkp",
+          "contact": "news.microsoft.com/microsoft-public-relations-contacts/",
+          "twitter": "twitter.com/microsoft",
+          "website": "microsoft.com/en-us",
+          "facebook": "www.facebook.com/microsoft",
+          "linkedin": "linkedin.com/company/microsoft",
+          "pitchbook": "pitchbook.com/profiles/company/11026-45",
+          "angelList": "angel.co/company/microsoft",
+          "crunchbase": "www.crunchbase.com/organization/microsoft"
+        },
+        "industryList": [
+          "Artificial Intelligence (AI)",
+          "Data Management",
+          "Developer Tools",
+          "DevOps",
+          "Operating Systems"
+        ]
+      }
+    },
+    {
+      "startDate": "2000-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2000-01-01T00:00:00.000Z",
+          "title": "Co-chair",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "6sfrxaRykbBO",
+      "companyID": "h8h2UdnBpwvb-SN8jxTxqMjH4BpoW49",
+      "companyName": "Gates Foundation",
+      "company": {
+        "id": "h8h2UdnBpwvb-SN8jxTxqMjH4BpoW49",
+        "name": "Bill & Melinda Gates Foundation",
+        "country": "United States",
+        "region": "Washington",
+        "locality": "Seattle",
+        "URLs": {
+          "contact": "www.gatesfoundation.org/about/contact",
+          "twitter": "twitter.com/gatesfoundation",
+          "website": "gatesfoundation.org",
+          "facebook": "www.facebook.com/billmelindagatesfoundation",
+          "linkedin": "linkedin.com/company/bill-&-melinda-gates-foundation",
+          "crunchbase": "www.crunchbase.com/organization/bill-melinda-gates-foundation"
+        },
+        "industryList": [
+          "Charity",
+          "Education",
+          "Impact Investing",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "startDate": "2015-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "title": "Founder",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "6sfrxaRykbBO",
+      "companyID": "dzhbSTYf6ReWNlUPc8_midRVx61QNg1",
+      "companyName": "Breakthrough Energy",
+      "company": {
+        "id": "dzhbSTYf6ReWNlUPc8_midRVx61QNg1",
+        "name": "Breakthrough Energy",
+        "country": "France",
+        "region": "Paris",
+        "URLs": {
+          "twitter": "www.twitter.com/breakthrough",
+          "website": "breakthroughenergy.org",
+          "facebook": "www.facebook.com/breakthroughenergycoalition",
+          "linkedin": "linkedin.com/company/breakthrough-energy",
+          "signalNFX": "signal.nfx.com/firms/breakthrough-energy-ventures",
+          "crunchbase": "www.crunchbase.com/organization/breakthrough-energy-ventures"
+        },
+        "industryList": [
+          "Finance",
+          "Impact Investing",
+          "Venture Capital"
+        ]
+      }
+    }
+  ],
+  "educationList": [
+    {
+      "id": "2453306773",
+      "name": "Lakeside School",
+      "school": {
+        "id": "0I8EPXRPLnOR",
+        "linkedinID": "lakeside-school",
+        "fullName": "Lakeside School",
+        "location": "Seattle, Washington, United States",
+        "entityType": "school"
+      },
+      "personID": "6sfrxaRykbBO"
+    },
+    {
+      "id": "2453306774",
+      "endDate": "1975-01-01T00:00:00.000Z",
+      "startDate": "1973-01-01T00:00:00.000Z",
+      "name": "Harvard University",
+      "school": {
+        "id": "LcjkQ7nQJnej",
+        "linkedinID": "harvard-university",
+        "fullName": "Harvard University",
+        "location": "Cambridge, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "6sfrxaRykbBO"
+    }
+  ],
+  "degreeList": [],
+  "locationDetails": {
+    "continent": {
+      "id": 102191575,
+      "name": "North America",
+      "placeType": "continent",
+      "geometry": {
+        "area_square_degrees": 3704.177719,
+        "bbox": "-179.143503,5.515082,179.780935,83.634101",
+        "lat": 38.309137,
+        "lon": -101.328273
+      }
+    },
+    "country": {
+      "id": 85633793,
+      "name": "United States",
+      "placeType": "country",
+      "geometry": {
+        "area_square_degrees": 1166.190125,
+        "bbox": "-124.848973,24.396308,-66.885444,49.384358",
+        "lat": 39.71614,
+        "lon": -96.999246
+      }
+    },
+    "county": {
+      "id": 102086191,
+      "name": "King County",
+      "placeType": "county",
+      "geometry": {
+        "area_square_degrees": 0.713135,
+        "bbox": "-122.541068,47.084457,-121.065709,47.780328",
+        "lat": 47.465753,
+        "lon": -121.895697
+      }
+    },
+    "locality": {
+      "id": 101730401,
+      "name": "Seattle",
+      "placeType": "locality",
+      "geometry": {
+        "area_square_degrees": 0.026905,
+        "bbox": "-122.435956,47.495514,-122.236044,47.734165",
+        "lat": 47.673455,
+        "lon": -122.331537
+      }
+    },
+    "region": {
+      "id": 85688623,
+      "name": "Washington",
+      "placeType": "region",
+      "geometry": {
+        "area_square_degrees": 22.010713,
+        "bbox": "-124.848974,45.543541,-116.91558,49.002494",
+        "lat": 47.372269,
+        "lon": -120.59234
+      }
+    }
+  },
+  "languageList": []
+}
