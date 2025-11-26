@@ -60,6 +60,11 @@
     "is_private": false
   },
   {
+    "id": "C09NDHKEXEJ",
+    "name": "ext-zo-vrijen",
+    "is_private": true
+  },
+  {
     "id": "C057YQB01G9",
     "name": "general",
     "is_member": false,
