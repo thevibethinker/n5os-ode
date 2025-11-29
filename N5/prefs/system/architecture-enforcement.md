@@ -37,6 +37,12 @@ Created standardized workflow:
 
 ### Layer 3: Architectural Principles Self-Reference
 
+Architectural principles now live canonically under:
+- `file 'Personal/Knowledge/Architecture/principles/architectural_principles.md'` (SSOT)
+
+A thin compatibility shell exists at:
+- `file 'Knowledge/architectural/architectural_principles.md'`
+
 Updated architectural principles document (v2.0):
 - Added "For Major System Changes" checklist
 - First item: "ALWAYS load this file first"
@@ -215,7 +221,10 @@ Zo reloads principles and validates design.
 ## Architectural Principles
 
 N5 system design follows architectural principles documented in 
-'Knowledge/architectural/architectural_principles.md'.
+'Personal/Knowledge/Architecture/principles/architectural_principles.md'.
+
+For backward compatibility, a shell also exists at
+'Knowledge/architectural/architectural_principles.md', but **this is not SSOT**.
 
 Before any major system work (scripts, workflows, infrastructure), 
 ALWAYS load the architectural principles first.
@@ -245,3 +254,4 @@ See: file 'N5/prefs/system/architecture-enforcement.md'
 **File:** `N5/prefs/system/architecture-enforcement.md`  
 **Version:** 1.0  
 **Maintenance:** Quarterly review + incident-driven updates
+

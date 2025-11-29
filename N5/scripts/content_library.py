@@ -23,6 +23,63 @@ def get_connection():
     return sqlite3.connect(DB_PATH)
 
 
+def _load_notes(raw: Optional[str]) -> Dict:
+    """Safely load notes JSON from the items.notes column.
+
+    If notes is empty or not valid JSON, return a basic dict preserving the raw value.
+    """
+    if not raw:
+        return {}
+    try:
+        return json.loads(raw)
+    except Exception:
+        return {"_raw": raw}
+
+
+def _dump_notes(notes: Dict) -> str:
+    """Serialize notes dict back to JSON for storage."""
+    return json.dumps(notes, ensure_ascii=False)
+
+
+def touch_item(item_id: str):
+    """Increment touch counters and timestamps for an item.
+
+    - Updates notes.touch_count (int)
+    - Updates notes.last_touched (ISO date)
+    - Updates items.last_used_at (ISO datetime)
+    """
+    conn = get_connection()
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT notes FROM items WHERE id = ?", (item_id,))
+    row = cursor.fetchone()
+    if not row:
+        conn.close()
+        raise ValueError(f"Item not found: {item_id}")
+
+    raw_notes = row["notes"]
+    notes = _load_notes(raw_notes)
+
+    # Increment touch_count
+    try:
+        current = int(notes.get("touch_count", 0) or 0)
+    except (TypeError, ValueError):
+        current = 0
+    notes["touch_count"] = current + 1
+
+    # Update last_touched as date string
+    notes["last_touched"] = datetime.now().date().isoformat()
+
+    # Update both notes and last_used_at
+    cursor.execute(
+        "UPDATE items SET notes = ?, last_used_at = ? WHERE id = ?",
+        (_dump_notes(notes), datetime.now().isoformat(), item_id),
+    )
+    conn.commit()
+    conn.close()
+
+
 def search(query: str, item_type: Optional[str] = None, tags: Optional[List[str]] = None) -> List[Dict]:
     """
     Search content library by keyword, type, or tags
@@ -237,6 +294,10 @@ def main():
     # Mark used
     used_parser = subparsers.add_parser("mark-used", help="Mark item as used")
     used_parser.add_argument("id", help="Item ID")
+
+    # Touch (increment usage counters)
+    touch_parser = subparsers.add_parser("touch", help="Touch item: increment usage counters and timestamps")
+    touch_parser.add_argument("id", help="Item ID")
     
     args = parser.parse_args()
     
@@ -268,6 +329,10 @@ def main():
         elif args.command == "mark-used":
             mark_used(args.id)
             print(f"✓ Marked {args.id} as used")
+
+        elif args.command == "touch":
+            touch_item(args.id)
+            print(f"✓ Touched {args.id}")
     
     except Exception as e:
         print(f"ERROR: {e}", file=sys.stderr)
@@ -276,4 +341,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

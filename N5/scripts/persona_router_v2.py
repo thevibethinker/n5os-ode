@@ -95,7 +95,7 @@ PERSONAS = {
         "default": False
     },
     "teacher": {
-        "id": "ec6ea742-dd28-4a73-b50b-fd2b9fb35e1d",
+        "id": "88d70597-80f3-4b3e-90c1-da2c99da7f1f",
         "name": "Vibe Teacher",
         "domains": ["teaching", "explaining", "learning", "understanding", "concepts", "demonstrations"],
         "triggers": [
@@ -121,7 +121,7 @@ PERSONAS = {
         "default": False
     },
     "builder": {
-        "id": "1426816f-b0d5-4f6c-ae26-71ae6f7fe4d4",
+        "id": "567cc602-060b-4251-91e7-40be591b9bc3",
         "name": "Vibe Builder",
         "domains": ["development", "building", "coding", "implementation", "construction", "creation"],
         "triggers": [
@@ -493,3 +493,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

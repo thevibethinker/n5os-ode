@@ -9,14 +9,67 @@ import sqlite3
 import sys
 from pathlib import Path
 from datetime import datetime
+import yaml
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(message)s")
+
+WORKSPACE = Path("/home/workspace")
+PATHS_YAML = WORKSPACE / "N5/prefs/paths/knowledge_paths.yaml"
+
+
+def _load_pk_roots() -> dict:
+    data = yaml.safe_load(PATHS_YAML.read_text()) or {}
+    pk = data.get("personal_knowledge", {})
+
+    pk_root = WORKSPACE / pk.get("root", "Personal/Knowledge")
+    intelligence_root = WORKSPACE / pk.get("intelligence", str(pk_root / "Intelligence"))
+    content_root = WORKSPACE / pk.get("content_library", str(pk_root / "ContentLibrary")) / "content"
+
+    mi_cfg = pk.get("market_intelligence", {})
+    market_root = WORKSPACE / mi_cfg.get(
+        "root",
+        str(intelligence_root / "World" / "Market"),
+    )
+
+    return {
+        "pk_root": pk_root,
+        "intelligence_root": intelligence_root,
+        "content_root": content_root,
+        "market_root": market_root,
+    }
+
+
+def resolve_destination_dir(destination: str) -> Path:
+    """Route legacy Knowledge/* destinations into Personal/Knowledge buckets.
+
+    Heuristics:
+    - Choices containing "market_intelligence" → market intelligence root.
+    - external_research/hypotheses/semi_stable/evolving → ContentLibrary/content under that path.
+    - Custom/other choices → Intelligence root under the provided relative path.
+    """
+    roots = _load_pk_roots()
+    norm = (destination or "").lstrip("/")
+
+    if "market_intelligence" in norm:
+        suffix = norm.split("market_intelligence/", 1)[1] if "market_intelligence/" in norm else ""
+        return roots["market_root"] / suffix if suffix else roots["market_root"]
+
+    top = norm.split("/", 1)[0]
+    content_buckets = {"external_research", "hypotheses", "semi_stable", "evolving"}
+    if top in content_buckets:
+        return roots["content_root"] / norm
+
+    # Default to Intelligence bucket
+    return roots["intelligence_root"] / norm
+
 
 class DocumentMediaCurator:
     def __init__(self, db_path: Path):
         self.db_path = db_path
         self.conn = None
-        self.intelligence_dir = Path("/home/workspace/Knowledge/intelligence")
+        # Legacy extracts live under Knowledge/intelligence; approved items
+        # will be routed into Personal/Knowledge via resolve_destination_dir.
+        self.intelligence_dir = WORKSPACE / "Knowledge/intelligence"
         
     def __enter__(self):
         self.conn = sqlite3.connect(self.db_path)
@@ -148,8 +201,8 @@ class DocumentMediaCurator:
             logging.error(f"Intelligence file not found: {intel_path}")
             return False
             
-        # Create destination directory
-        dest_dir = Path("/home/workspace/Knowledge") / destination
+        # Route legacy Knowledge/* destination into Personal/Knowledge buckets
+        dest_dir = resolve_destination_dir(destination)
         dest_dir.mkdir(parents=True, exist_ok=True)
         
         # Move intelligence file to destination
@@ -306,3 +359,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

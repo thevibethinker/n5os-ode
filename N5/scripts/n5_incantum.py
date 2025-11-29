@@ -12,6 +12,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
+import re
 
 # Add N5/scripts to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -121,6 +122,24 @@ def main() -> int:
     args, extra_args = parser.parse_known_args()
     
     query_text = " ".join(args.query)
+
+    # Special-case: "send zo feedback" incantum → zo-feedback script
+    # Everything after the trigger phrase becomes the feedback BLUF message.
+    m = re.match(r"(?i)(?:incantum\s+)?send zo feedback[:\- ]+(?P<msg>.+)", query_text.strip())
+    if m:
+        msg = m.group("msg").strip()
+        if not msg:
+            print("❌ Feedback text missing after 'send zo feedback'.")
+            return 1
+        registry = load_registry()
+        target = next((e for e in registry if e.id == "zo-feedback"), None)
+        if not target:
+            print("❌ 'zo-feedback' command not registered in executable registry.")
+            return 1
+        print("✓ Routing to zo-feedback (simple feedback incantum).")
+        # Defaults: category=bug, priority=low, no --test, no --now; business-hours logic lives in zo_feedback.py
+        return execute_command(target, ["-m", msg, "-c", "bug", "-p", "low"])
+
     print(f"🔍 Searching for command matching: '{query_text}'")
     
     registry = load_registry()
@@ -167,3 +186,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

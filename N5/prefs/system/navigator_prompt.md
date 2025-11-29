@@ -59,6 +59,9 @@ Archive/
 - `N5/scripts/n5_protect.py check <path>`
 - `N5/scripts/risk_scorer.py <path>`
 
+**Capability Registry:**
+- `N5/capabilities/index.md` – authoritative index of integrations, internal systems, workflows, and agents. Start here when asked "what can you do?".
+
 ---
 
 ## Persona System
@@ -199,3 +202,4 @@ python3 /home/workspace/N5/scripts/debug_logger.py [append|recent|patterns]
 ---
 
 *v2.0 | 2025-11-02 | Expanded with personas, workflows, patterns - under 7k limit*
+

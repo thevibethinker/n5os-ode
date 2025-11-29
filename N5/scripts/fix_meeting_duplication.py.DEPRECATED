@@ -1,7 +1,0 @@
-# DEPRECATED 2025-10-28
-# This script was used to migrate meetings from Careerspan/Meetings to N5/records/meetings
-# Migration has been completed and meetings are now at /home/workspace/Meetings
-# This script is preserved for historical reference only
-#
-# See: System bulletin bul_20251028_084645 for migration details
-# New canonical location: /home/workspace/Meetings/

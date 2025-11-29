@@ -36,3 +36,9 @@ The old monolithic script has been **completely removed**.
 ## Usage
 
 See: Prompts/Close Conversation.md
+
+## Related Docs
+
+- Schema: `file 'N5/prefs/operations/conversation_end_schema.md'`  
+- Pipeline operations: `file 'N5/prefs/operations/conversation_end_pipeline.md'`
+

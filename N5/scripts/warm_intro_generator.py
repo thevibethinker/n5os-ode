@@ -28,6 +28,7 @@ import json
 import logging
 import re
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
@@ -36,6 +37,49 @@ logging.basicConfig(
     format="%(asctime)sZ %(levelname)s %(message)s"
 )
 logger = logging.getLogger(__name__)
+
+
+def get_meeting_type(meeting_folder: Path) -> str:
+    """
+    Load meeting type from manifest.json.
+    
+    Args:
+        meeting_folder: Path to meeting folder
+        
+    Returns:
+        "internal" or "external" (defaults to "external" for safety)
+    """
+    manifest_path = meeting_folder / "manifest.json"
+    if manifest_path.exists():
+        try:
+            with open(manifest_path) as f:
+                data = json.load(f)
+                return data.get("meeting_type", "external").lower()
+        except Exception as e:
+            logger.warning(f"Error reading meeting_type from manifest: {e}")
+            return "external"  # Safe default - better to generate than miss
+    return "external"
+
+
+def should_generate_warm_intros(meeting_folder: Path) -> Tuple[bool, str]:
+    """
+    Check if warm intros should be generated for this meeting.
+    
+    Internal meetings (team standups, co-founder syncs) should NOT generate
+    warm intros because team members don't need to be introduced to each other.
+    
+    Args:
+        meeting_folder: Path to meeting folder
+        
+    Returns:
+        (should_generate, reason) tuple
+    """
+    meeting_type = get_meeting_type(meeting_folder)
+    
+    if meeting_type == "internal":
+        return False, "Internal meeting - warm intros not applicable (team members don't need intros to each other)"
+    
+    return True, "External meeting - warm intros applicable"
 
 
 class IntroData:
@@ -761,6 +805,36 @@ def main(meeting_folder: str, output_format: str = "blurb", intro_number: Option
             logger.error(f"Meeting folder not found: {meeting_path}")
             return 1
         
+        # Check if this is an internal meeting - skip warm intro generation if so
+        should_generate, reason = should_generate_warm_intros(meeting_path)
+        if not should_generate:
+            logger.info(f"✓ Skipping warm intro generation: {reason}")
+            
+            # Update manifest to record why we skipped
+            manifest_path = meeting_path / "manifest.json"
+            if manifest_path.exists():
+                try:
+                    with open(manifest_path, 'r') as f:
+                        manifest = json.load(f)
+                    
+                    manifest["warm_intros_generated"] = {
+                        "count": 0,
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "status": "skipped_internal_meeting",
+                        "reason": reason
+                    }
+                    
+                    if dry_run:
+                        logger.info(f"[DRY RUN] Would update manifest with skip status")
+                    else:
+                        with open(manifest_path, 'w') as f:
+                            json.dump(manifest, f, indent=2)
+                        logger.info(f"✓ Updated manifest with skip status")
+                except Exception as e:
+                    logger.warning(f"Could not update manifest: {e}")
+            
+            return 0  # Exit successfully without generating
+        
         # Validate conflicting flags
         if only_opt_in and only_connecting:
             logger.error("Cannot specify both --only-opt-in and --only-connecting")
@@ -941,3 +1015,4 @@ if __name__ == "__main__":
     )
     
     sys.exit(exit_code)
+

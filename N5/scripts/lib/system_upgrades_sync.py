@@ -98,22 +98,45 @@ def edit_upgrade(jsonl_path: Path, item_id: str, patch: dict):
 from lib.system_upgrades_validator import SystemUpgradesValidator
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "schemas" / "system-upgrades.schema.json"
 
-original_list_upgrades = list_upgrades
 
 def list_upgrades(jsonl_path: Path, filters: dict = None) -> List[dict]:
-    items = original_list_upgrades(jsonl_path, filters)
+    """Load upgrade items from JSONL, optionally applying simple filters, and validate them.
 
+    Filters are a shallow dict match, e.g. {"category": "Planned"}.
+    """
+    items: List[dict] = []
+
+    if jsonl_path.exists():
+        with open(jsonl_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        items.append(json.loads(line))
+                    except json.JSONDecodeError:
+                        # Surface a clear error and stop; this file is small and critical
+                        print(f"Invalid JSON line in {jsonl_path}: {line[:120]}", file=sys.stderr)
+                        sys.exit(1)
+
+    # Apply simple equality-based filters (if any)
+    if filters:
+        def _match(item: dict) -> bool:
+            for key, value in filters.items():
+                if item.get(key) != value:
+                    return False
+            return True
+        items = [it for it in items if _match(it)]
+
+    # Validate against schema
     validator = SystemUpgradesValidator(SCHEMA_PATH)
-
     all_valid = True
-    for i, item in enumerate(items):
+    for item in items:
         result = validator.validate_item(item)
         if not result.is_valid:
             all_valid = False
             print(f"Validation errors for item {item.get('id', 'unknown')}:")
             for e in result.errors:
                 print(f"  - {e}")
-    
+
     if not all_valid:
         print("Some items failed validation. Please fix or remove invalid entries.")
         sys.exit(1)
@@ -130,3 +153,4 @@ def render_markdown(items: list) -> str:
             if it.get('category', 'Planned') == cat:
                 md_content += f"### {it['title']}\n\n{it.get('body', '')}\n\n"
     return md_content
+

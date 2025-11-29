@@ -12,30 +12,35 @@ This guide directs where to search for canonical information before answering qu
 
 **Principle:** Always check knowledge base first; prefer facts from there and update if gaps are found.
 
+### SSOT vs Compatibility
+
+- **SSOT (Single Source of Truth):** `Personal/Knowledge/**` is the canonical home for elevated knowledge (Wisdom, Intelligence, ContentLibrary, Canon, CRM).
+- **Compatibility shell:** `Knowledge/**` now exists primarily as a thin compatibility layer for older scripts and documents.
+  - Reads from `Knowledge/**` are allowed, but **writes for new knowledge should target `Personal/Knowledge/**`**.
+  - Architectural and ingestion standards live under `Personal/Knowledge/Architecture/**` and may be mirrored under `Knowledge/architectural/**` only as stubs.
+
 ---
 
 ## Topic-Specific Knowledge
 
 ### Career Spans / Careerspan (Company)
 
-**Always check first:**
-1. `file 'Knowledge/stable/company/overview.md'` — Mission, product, philosophy
-2. `file 'Knowledge/stable/company/strategy.md'` — GTM, positioning, wedge strategy
-3. `file 'Knowledge/stable/company/history.md'` — Founding story, key events
-4. `file 'Knowledge/stable/company/principles.md'` — Core principles and values
+**Always check first (canonical layer):**
+1. `file 'Personal/Knowledge/Canon/Company/overview.md'` — Mission, product, philosophy (if present)
+2. `file 'Personal/Knowledge/Canon/Company/strategy.md'` — GTM, positioning, wedge strategy (if present)
+3. `file 'Personal/Knowledge/Canon/Company/history.md'` — Founding story, key events (if present)
+4. `file 'Personal/Knowledge/Canon/Company/principles.md'` — Core principles and values (if present)
+
+**Compatibility references (legacy paths that may still exist):**
+1. `file 'Knowledge/stable/company/overview.md'`
+2. `file 'Knowledge/stable/company/strategy.md'`
+3. `file 'Knowledge/stable/company/history.md'`
+4. `file 'Knowledge/stable/company/principles.md'`
 5. `file 'Knowledge/stable/careerspan-timeline.md'` — Historical timeline
 
 **For terminology:**
-- `file 'Knowledge/stable/glossary.md'` — Canonical definitions
-
----
-
-### Personal (V / Vrijen Attawar)
-
-**Always check first:**
-1. `file 'Knowledge/stable/bio.md'` — Biographical info, background
-2. `file 'Knowledge/stable/careerspan-timeline.md'` — Career milestones
-3. `file 'Knowledge/context/howie_instructions/preferences.md'` — Scheduling, availability (reference only)
+- Prefer `file 'Personal/Knowledge/Canon/Company/glossary.md'` if present.
+- Fallback: `file 'Knowledge/stable/glossary.md'` — Canonical definitions (legacy).
 
 ---
 
@@ -43,9 +48,15 @@ This guide directs where to search for canonical information before answering qu
 
 **Always check first:**
 1. `file 'N5/prefs/prefs.md'` — Preference index
-2. `file 'Knowledge/architectural/operational_principles.md'` — Core operational rules
-3. `file 'Knowledge/architectural/ingestion_standards.md'` — What/how to ingest
+2. `file 'Personal/Knowledge/Architecture/principles/architectural_principles.md'` — Core architectural and operational rules (canonical)
+3. `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'` — What/how to ingest (canonical; filename may vary)
 4. `file 'N5/data/executables.db' (index only)` — Available commands (authoritative)
+
+**Compatibility shells (do not treat as SSOT):**
+- `file 'Knowledge/architectural/operational_principles.md'`
+- `file 'Knowledge/architectural/ingestion_standards.md'`
+
+These exist only to keep older references working; the real content lives under `Personal/Knowledge/Architecture/**`.
 
 ---
 
@@ -121,12 +132,12 @@ When answering, include references:
 
 When updating knowledge base:
 
-### For Stable Knowledge
+### For Stable / Canonical Knowledge
 **Before editing:**
-1. Check `file 'Knowledge/architectural/ingestion_standards.md'`
-2. Verify information fits inclusion criteria
-3. Confirm SSOT (Single Source of Truth) location
-4. Check for duplicates across knowledge base
+1. Check `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'` (or equivalent ingestion standards file under `Personal/Knowledge/Architecture/ingestion_standards/`).
+2. Verify information fits inclusion criteria.
+3. Confirm SSOT (Single Source of Truth) location is under `Personal/Knowledge/**`.
+4. Check for duplicates across knowledge base.
 
 **When editing:**
 1. Follow MECE principles (Mutually Exclusive, Collectively Exhaustive)
@@ -166,10 +177,13 @@ When updating structured knowledge, validate against:
 
 ## Related Files
 
-- **Ingestion Standards:** `file 'Knowledge/architectural/ingestion_standards.md'`
-- **Operational Principles:** `file 'Knowledge/architectural/operational_principles.md'`
-- **Glossary:** `file 'Knowledge/stable/glossary.md'`
-- **Company Strategy:** `file 'Knowledge/stable/company/strategy.md'`
+- **Ingestion Standards (canonical):** `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'`
+- **Operational Principles (canonical):** `file 'Personal/Knowledge/Architecture/principles/architectural_principles.md'`
+- **Compatibility shells:**
+  - `file 'Knowledge/architectural/ingestion_standards.md'`
+  - `file 'Knowledge/architectural/operational_principles.md'`
+- **Glossary:** `file 'Knowledge/stable/glossary.md'` (legacy; may be mirrored under Personal/Knowledge/Canon)
+- **Company Strategy:** `file 'Knowledge/stable/company/strategy.md'` (legacy)
 - **Lists Policy:** `file 'Lists/POLICY.md'`
 
 ---
@@ -183,3 +197,4 @@ When updating structured knowledge, validate against:
 - Added knowledge hierarchy for conflicts
 - Added update protocol aligned with ingestion standards
 - Cross-referenced all stable knowledge files
+
