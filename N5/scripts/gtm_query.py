@@ -5,8 +5,34 @@ Query GTM Intelligence Database
 import sqlite3
 import argparse
 from pathlib import Path
+import sys
+import yaml
 
-DB_PATH = Path("/home/workspace/Knowledge/market_intelligence/gtm_intelligence.db")
+WORKSPACE = Path("/home/workspace")
+PATHS_YAML = WORKSPACE / "N5/prefs/paths/knowledge_paths.yaml"
+
+
+def load_db_path() -> Path:
+    try:
+        with PATHS_YAML.open() as f:
+            cfg = yaml.safe_load(f) or {}
+        db_rel = (
+            cfg.get("personal_knowledge", {})
+            .get("market_intelligence", {})
+            .get("db")
+        )
+        if not db_rel:
+            raise KeyError("personal_knowledge.market_intelligence.db missing")
+        return WORKSPACE / db_rel
+    except Exception as exc:
+        print(
+            f"Error: Unable to resolve GTM DB path from {PATHS_YAML}: {exc}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+
+DB_PATH = load_db_path()
 
 def query(args):
     conn = sqlite3.connect(DB_PATH)
@@ -110,3 +136,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

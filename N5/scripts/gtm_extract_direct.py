@@ -8,12 +8,34 @@ import argparse
 import logging
 from pathlib import Path
 from datetime import datetime
+import yaml
+import sys
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(message)s")
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-DB_PATH = WORKSPACE / "Knowledge/market_intelligence/gtm_intelligence.db"
+PATHS_YAML = WORKSPACE / "N5/prefs/paths/knowledge_paths.yaml"
+
+
+def load_db_path() -> Path:
+    try:
+        with PATHS_YAML.open() as f:
+            cfg = yaml.safe_load(f) or {}
+        db_rel = (
+            cfg.get("personal_knowledge", {})
+            .get("market_intelligence", {})
+            .get("db")
+        )
+        if not db_rel:
+            raise KeyError("personal_knowledge.market_intelligence.db missing")
+        return WORKSPACE / db_rel
+    except Exception as exc:
+        logger.error("Failed to resolve GTM DB from %s: %s", PATHS_YAML, exc)
+        sys.exit(1)
+
+
+DB_PATH = load_db_path()
 MEETINGS_DIR = WORKSPACE / "Personal/Meetings"
 
 
@@ -157,3 +179,4 @@ def main():
 
 if __name__ == "__main__":
     exit(main())
+
