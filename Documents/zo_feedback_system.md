@@ -6,6 +6,64 @@
 
 ---
 
+## Realtime Zo-Channel Feedback (Desktop)
+
+In addition to the ZoReports pipeline below, there is a **direct Zo-channel feedback path** designed for fast reporting from Zo Desktop, especially during or right after agent runs.
+
+**Components:**
+- `file 'N5/scripts/zo_feedback.py'` – CLI for sending feedback directly to the Zo team
+- `file 'Prompts/zo-feedback.prompt.md'` – N5 prompt wrapper (usable via `n5 zo-feedback`)
+- **Slack (production)**: `#ext-zo-vrijen` (ID: `C09NDHKEXEJ`)
+- **Slack (test)**: `#vrijen-slack-backend` (ID: `C085K7QE17C`) when `--test` is used
+- **Drive folder**: `Zo Feedback` (ID: `1nNDtW4oXFablYY5hY9iTxEuK60cVwpLl`)
+
+**Behavior:**
+- BLUF (one-sentence summary) is posted to Slack
+- Full context + attachments are written to `feedback.md` and media files inside a timestamped subfolder under **Zo Feedback** in Drive
+- Messages **respect business hours** (9 AM – 6 PM ET, Mon–Fri): 
+  - Outside that window, messages are scheduled for the next 9 AM
+  - `--now` flag forces immediate send when truly urgent
+
+**CLI Usage:**
+```bash
+# Simple praise (text-only, goes to #ext-zo-vrijen, scheduled if outside hours)
+python3 N5/scripts/zo_feedback.py \
+  -m "Image generation latency is fantastic" \
+  -c praise
+
+# Bug with context + screenshot
+python3 N5/scripts/zo_feedback.py \
+  -m "Zo Desktop error overlay masks screen" \
+  -x "Error dialog flashes during long agent runs even when browser is closed." \
+  -a /absolute/path/Xnip2025-11-26_02-25-04.jpg \
+  -c bug \
+  -p medium
+
+# Test mode (non-Zo channel)
+python3 N5/scripts/zo_feedback.py \
+  -m "Testing feedback pipeline" \
+  --test
+
+# Urgent bug (send immediately, ignore scheduling)
+python3 N5/scripts/zo_feedback.py \
+  -m "Critical data-loss bug" \
+  -c bug \
+  -p high \
+  --now
+```
+
+**N5 Command:**
+```bash
+n5 zo-feedback -m "BLUF summary" -x "Full context" -a /path/to/file.png -c bug -p high
+```
+
+The **ZoReports pipeline** below remains the structured, database-backed path for aggregated reporting and analytics. The **zo_feedback.py path** is optimized for:
+- Fast, respectful notifications to the Zo team
+- High-fidelity context capture during live usage
+- Clean separation between test traffic (`#vrijen-slack-backend`) and production Zo channel (`#ext-zo-vrijen`).
+
+---
+
 ## Overview
 
 Lightweight feedback collection system for reporting issues, bugs, improvements, and questions to the Zo team. Captures context mid-conversation with optional attachments and automatically syncs to Google Drive.
@@ -319,3 +377,4 @@ HAVING attachment_count > 0;
 ---
 
 *Last updated: 2025-10-30 03:00 ET*
+
