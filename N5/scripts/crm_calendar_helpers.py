@@ -358,9 +358,12 @@ def get_or_create_profile(email: str, name: str, source: str = 'calendar') -> in
         prefix_clean = "".join(c for c in email_prefix if c.isalnum() or c in "-_")
         
         if last_clean:
+            # Full name: FirstName_LastName_emailprefix.yaml
             yaml_filename = f"{first_clean}_{last_clean}_{prefix_clean}.yaml"
         else:
-            yaml_filename = f"{first_clean}_{prefix_clean}.yaml"
+            # No last name: use only email prefix to avoid duplication
+            # (e.g., "Bogomil" + "bogomil@..." would create "Bogomil_bogomil.yaml")
+            yaml_filename = f"{prefix_clean}.yaml"
         
         yaml_path = f"N5/crm_v3/profiles/{yaml_filename}"
         full_yaml_path = f"/home/workspace/{yaml_path}"
@@ -513,5 +516,6 @@ def extract_event_id_from_uri(resource_uri: str) -> str:
     
     # Fallback: return last segment
     return parts[-1] if parts else resource_uri
+
 
 

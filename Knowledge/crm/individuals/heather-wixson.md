@@ -1,16 +1,10 @@
 ---
-name: Heather Wixson
-organization: Landedly
-role: Career coach / Implementation specialist
-email: [Unknown]
-linked_in: [Unknown - enrichment required]
-notes:
-  - Source: Meeting transcript 2025-09-22 with Vrijen Attawar
-  - Summary: Discussed cohort management needs, retention post-onboarding, and potential partnership/placement pathways with Careerspan.
-enrichment_priority: HIGH
-mutual_acquaintances: [None identified - needs enrichment]
-next_actions:
-  - LinkedIn enrichment (read-only): find Heather's profile and Weston
-  - Company research: funding status and traction for Landedly
-  - Request exact active user counts and retention KPIs from Heather
+person_id: heather-wixson
+canonical_path: Personal/Knowledge/CRM/individuals/heather-wixson.md
+role: compatibility_stub
+created: '2025-11-29'
+last_edited: '2025-11-29'
+version: '1.0'
 ---
+
+This CRM profile now lives at `Personal/Knowledge/CRM/individuals/heather-wixson.md`.

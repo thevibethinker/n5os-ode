@@ -1,0 +1,9 @@
+{
+  "profile_id": 47,
+  "email": "daveyunghans@gmail.com",
+  "name": "David Yunghans",
+  "yaml_path": "N5/crm_v3/profiles/David_Yunghans_daveyunghans.yaml",
+  "created_at": "2025-11-18T05:13:30.525288",
+  "status": "pending",
+  "enrichment_type": "gmail_threads"
+}

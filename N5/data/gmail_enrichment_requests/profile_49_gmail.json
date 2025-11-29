@@ -1,0 +1,9 @@
+{
+  "profile_id": 49,
+  "email": "daniel@scrappy-poet.com",
+  "name": "Daniel",
+  "yaml_path": "N5/crm_v3/profiles/Daniel_daniel.yaml",
+  "created_at": "2025-11-18T05:13:30.526851",
+  "status": "pending",
+  "enrichment_type": "gmail_threads"
+}

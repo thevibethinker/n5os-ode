@@ -60,13 +60,16 @@ def create_profile(email: str, name: str, category: str = 'NETWORKING', notes: s
             conn.close()
             return
         
-        # Create profile using helper
+        # Create profile using helper (doesn't accept category)
         profile_id = get_or_create_profile(
             email=email,
             name=name,
-            source='manual_cli',
-            category=category
+            source='manual_cli'
         )
+        
+        # Update category in database
+        cursor.execute("UPDATE profiles SET category = ? WHERE id = ?", (category, profile_id))
+        conn.commit()
         
         # Get yaml_path from database
         cursor.execute("SELECT yaml_path FROM profiles WHERE id = ?", (profile_id,))
@@ -571,6 +574,7 @@ Examples:
 
 if __name__ == '__main__':
     main()
+
 
 
 

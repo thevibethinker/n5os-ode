@@ -24,6 +24,10 @@ import json
 from datetime import datetime, timedelta
 from pathlib import Path
 
+# Add Aviato import
+sys.path.insert(0, '/home/workspace')
+from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
+
 DB_PATH = '/home/workspace/N5/data/crm_v3.db'
 PROFILES_DIR = '/home/workspace/N5/crm_v3/profiles'
 
@@ -96,7 +100,7 @@ async def enrich_profile_via_tools(profile_id: int, email: str, checkpoint: str,
     This is where we delegate to:
     - edit_file_llm for YAML appending
     - use_app_gmail for email threads
-    - Aviato/LinkedIn stubs (for now)
+    - Aviato for person enrichment
     
     For now, this is a stub showing the architecture.
     TODO: Replace with actual tool calls via Zo API
@@ -106,39 +110,65 @@ async def enrich_profile_via_tools(profile_id: int, email: str, checkpoint: str,
     # Gather intelligence from sources
     intelligence_parts = []
     
-    # 1. Aviato (stub)
-    aviato_data = {
-        "name": email.split('@')[0].replace('.', ' ').title(),
-        "title": "Senior Product Manager",
-        "company": "Tech Corp",
-        "location": "San Francisco, CA",
-        "note": "⚠️ STUB DATA - Aviato API not yet integrated"
-    }
-    intelligence_parts.append(f"""**Aviato Enrichment:**
-- Name: {aviato_data['name']}
-- Title: {aviato_data['title']}
-- Company: {aviato_data['company']}
-- Location: {aviato_data['location']}
-
-{aviato_data['note']}
-""")
+    # 1. Aviato enrichment (REAL - no stub)
+    profile_name = Path(yaml_path).stem  # Extract name from filename
+    aviato_result = await enrich_via_aviato(email, profile_name)
     
-    # 2. Gmail (stub - would use use_app_gmail tool)
-    gmail_note = f"""**Gmail Thread Analysis:**
+    if aviato_result['success']:
+        intelligence_parts.append(aviato_result['markdown'])
+    else:
+        # Graceful fallback on error
+        intelligence_parts.append(aviato_result['markdown'])
 
-Recent threads with {email}:
-- Thread 1: "Project Discussion" (2025-11-15)
-- Thread 2: "Introduction Request" (2025-11-10)
-
-⚠️ STUB DATA - use_app_gmail tool not yet integrated
-"""
-    intelligence_parts.append(gmail_note)
     
-    # 3. LinkedIn (stub)
+    # 2. Gmail thread analysis (REAL - via Zo CLI)
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['zo', f'@crm-gmail-enrichment {email}'],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode == 0 and result.stdout.strip():
+            gmail_intelligence = result.stdout.strip()
+            intelligence_parts.append(gmail_intelligence)
+        else:
+            # Fallback if CLI fails
+            intelligence_parts.append(f"""**Gmail Thread Analysis:**
+
+⚠️ Gmail enrichment unavailable (CLI error)
+Contact: {email}""")
+    except subprocess.TimeoutExpired:
+        intelligence_parts.append(f"""**Gmail Thread Analysis:**
+
+⚠️ Gmail search timed out
+Contact: {email}""")
+    except Exception as e:
+        intelligence_parts.append(f"""**Gmail Thread Analysis:**
+
+⚠️ Error: {str(e)}
+Contact: {email}""")
+    
+    # 3. LinkedIn intelligence (NOT YET IMPLEMENTED)
+    # Reason: Requires LinkedIn API partnership or compliant data provider
+    # Implementation path documented in: file 'N5/docs/LINKEDIN_INTEGRATION.md'
+    # 
+    # To enable LinkedIn enrichment:
+    #   1. Choose integration option (API partnership or third-party provider)
+    #   2. Implement client module (see LINKEDIN_INTEGRATION.md)
+    #   3. Replace this stub with real API call
+    #   4. Follow pattern from Aviato integration above
+    #
+    # Current: System works without LinkedIn using Aviato + Gmail as sources
     linkedin_note = """**LinkedIn Intelligence:**
 
-⚠️ STUB DATA - LinkedIn API not yet integrated
-"""
+⚠️ NOT YET IMPLEMENTED - See file 'N5/docs/LINKEDIN_INTEGRATION.md' for integration plan
+
+Status: Phase 2 priority
+Data Sources Active: Aviato (✓) + Gmail (✓)"""
+    
     intelligence_parts.append(linkedin_note)
     
     # Combine intelligence
@@ -158,17 +188,21 @@ Recent threads with {email}:
 """
     
     # Append to YAML (simple version for now)
-    with open(yaml_path, 'r') as f:
+    full_yaml_path = Path(yaml_path)
+    if not full_yaml_path.is_absolute():
+        full_yaml_path = Path('/home/workspace') / yaml_path
+    
+    with open(full_yaml_path, 'r') as f:
         content = f.read()
     
     if "## Intelligence Log" not in content:
-        with open(yaml_path, 'a') as f:
+        with open(full_yaml_path, 'a') as f:
             f.write("\n\n## Intelligence Log\n")
     
-    with open(yaml_path, 'a') as f:
+    with open(full_yaml_path, 'a') as f:
         f.write(entry)
     
-    print(f"  ✓ Appended intelligence to {yaml_path}")
+    print(f"  ✓ Appended intelligence to {full_yaml_path}")
     
     return {
         "success": True,
@@ -332,6 +366,18 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
