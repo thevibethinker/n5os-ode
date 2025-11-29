@@ -1,0 +1,77 @@
+---
+created: 2025-11-18
+last_edited: 2025-11-18
+version: 1.0
+source: migration_v3
+email: konrad@aviato.co
+category: NETWORKING
+relationship_strength: weak
+---
+
+# Konrad
+
+## Contact Information
+- **Email:** konrad@aviato.co
+- **Organization:** Aviato.Co
+
+## Metadata
+- **Sources:** profiles.db
+- **Source Count:** 1
+- **Total Meetings:** 1
+- **Last Contact:** 2025-11-06T12:00:00-05:00
+
+## Notes
+
+*No notes available from source systems.*
+
+
+## Intelligence Log
+
+### 2025-11-18 05:26 | multi_source_enrichment
+**Checkpoint:** worker_1_validation
+**Sources:** aviato, gmail, linkedin (all stubbed)
+
+**Aviato Professional Intelligence:**
+
+**Career Highlights:**
+- 🆕 Recent Role Change (2014-01-01T00:00:00.000Z)
+- 🌐 Well Connected (4255+ connections)
+- 📣 Influencer (4,209 followers)
+
+**Current Role:**
+- Title: Co-Founder & Head of Growth
+- Company: bhounce
+- Started: 2014-01-01
+- Location: Miami Beach, Florida, United States
+
+**Professional Profile:**
+- LinkedIn: [linkedin.com/in/konrad-kucharski-18140065](https://linkedin.com/in/konrad-kucharski-18140065)
+- Headline: Co-Founder & CRO @ Aviato | The Data Guy | 1 Exit | Startup Advisor | Ex-Uber | Ex-Wix
+- Connections: 4,255
+- Followers: 4,209
+
+**Background:**
+- 7 previous role(s)
+  1. Co-Founder & Head of Growth @ bhounce (2014)
+  2. Enterprise Account Management @ RocketReach.co (2022)
+  3. GTM @ Wix (2020)
+- 2 education entries
+  1. The Ohio State University - The Ohio State University
+  2. Harvard Business School - Harvard Business School
+- Skills: Management, Leadership, Microsoft Word, Microsoft Excel, PowerPoint
+
+**Metadata:**
+- Last Updated: 2025-10-07
+- Aviato ID: `KlggjWPtEacZ`
+
+**Gmail Thread Analysis:**
+
+⚠️ Requires Zo integration - Worker manages queue, Zo performs search
+To integrate: Call Zo API with use_app_gmail("gmail-find-email", {"q": "from:konrad@aviato.co OR to:konrad@aviato.co"})
+
+**LinkedIn Intelligence:**
+
+⚠️ NOT YET IMPLEMENTED - See file 'N5/docs/LINKEDIN_INTEGRATION.md' for integration plan
+
+Status: Phase 2 priority
+Data Sources Active: Aviato (✓) + Gmail (✓)

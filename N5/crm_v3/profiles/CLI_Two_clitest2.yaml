@@ -1,0 +1,53 @@
+---
+created: 2025-11-18
+last_edited: 2025-11-18
+version: 1.0
+source: manual_cli
+email: clitest2@example.com
+category: NETWORKING
+relationship_strength: weak
+---
+
+# CLI Test Two
+
+## Contact Information
+- **Email:** clitest2@example.com
+- **Organization:** To be determined
+
+## Metadata
+- **Sources:** manual_cli
+- **Source Count:** 1
+- **Total Meetings:** 0
+
+## Notes
+
+*Awaiting enrichment.*
+
+
+## Intelligence Log
+
+### 2025-11-18 05:32 | multi_source_enrichment
+**Checkpoint:** checkpoint_2
+**Sources:** aviato, gmail, linkedin (all stubbed)
+
+**Aviato Professional Intelligence:**
+
+Profile not found in Aviato database for `clitest2@example.com`.
+
+This contact may:
+- Not have a public LinkedIn profile
+- Use a different email on LinkedIn
+- Have privacy settings restricting data access
+
+
+**Gmail Thread Analysis:**
+
+⚠️ Requires Zo integration - Worker manages queue, Zo performs search
+To integrate: Call Zo API with use_app_gmail("gmail-find-email", {"q": "from:clitest2@example.com OR to:clitest2@example.com"})
+
+**LinkedIn Intelligence:**
+
+⚠️ NOT YET IMPLEMENTED - See file 'N5/docs/LINKEDIN_INTEGRATION.md' for integration plan
+
+Status: Phase 2 priority
+Data Sources Active: Aviato (✓) + Gmail (✓)

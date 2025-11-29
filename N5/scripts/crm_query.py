@@ -15,8 +15,39 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 import sys
+import yaml
 
-DB_PATH = Path('/home/workspace/Knowledge/crm/crm.db')
+WORKSPACE = Path("/home/workspace")
+PATHS_YAML = WORKSPACE / "N5/prefs/paths/knowledge_paths.yaml"
+
+
+def load_crm_paths() -> dict:
+    try:
+        with PATHS_YAML.open() as f:
+            cfg = yaml.safe_load(f) or {}
+        crm_cfg = (
+            cfg.get("personal_knowledge", {})
+            .get("crm", {})
+        )
+        db_rel = crm_cfg.get("db")
+        individuals_rel = crm_cfg.get("individuals")
+        if not db_rel or not individuals_rel:
+            raise KeyError("personal_knowledge.crm.db or individuals missing")
+        return {
+            "db_path": WORKSPACE / db_rel,
+            "individuals_dir": WORKSPACE / individuals_rel,
+        }
+    except Exception as exc:
+        print(
+            f"Error: Unable to resolve CRM paths from {PATHS_YAML}: {exc}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+
+_CRM_PATHS = load_crm_paths()
+DB_PATH = _CRM_PATHS["db_path"]
+INDIVIDUALS_DIR = _CRM_PATHS["individuals_dir"]
 
 
 def get_connection():
@@ -127,7 +158,8 @@ def add_individual(args):
     
     # Generate markdown file path from name
     md_filename = args.name.lower().replace(' ', '-') + '.md'
-    md_path = f'Knowledge/crm/individuals/{md_filename}'
+    md_rel = INDIVIDUALS_DIR.relative_to(WORKSPACE) / md_filename
+    md_path = str(md_rel)
     
     cursor.execute("""
         INSERT INTO individuals (
@@ -162,7 +194,7 @@ def add_individual(args):
 
 def create_markdown_file(individual_id, args):
     """Create markdown file for individual"""
-    md_path = Path('/home/workspace') / f'Knowledge/crm/individuals/{args.name.lower().replace(" ", "-")}.md'
+    md_path = INDIVIDUALS_DIR / f"{args.name.lower().replace(' ', '-')}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
     
     content = f"""---
@@ -246,3 +278,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+

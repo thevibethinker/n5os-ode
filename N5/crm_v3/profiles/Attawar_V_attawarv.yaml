@@ -1,0 +1,76 @@
+---
+created: 2025-11-18
+last_edited: 2025-11-18
+version: 1.0
+source: migration_v3
+email: attawar.v@gmail.com
+category: NETWORKING
+relationship_strength: weak
+---
+
+# Attawar V
+
+## Contact Information
+- **Email:** attawar.v@gmail.com
+- **Organization:** Personal (gmail.com)
+
+## Metadata
+- **Sources:** profiles.db
+- **Source Count:** 1
+- **Total Meetings:** 1
+- **Last Contact:** 2025-11-06
+
+## Notes
+
+*No notes available from source systems.*
+
+
+## Intelligence Log
+
+### 2025-11-18 05:25 | multi_source_enrichment
+**Checkpoint:** worker_1_test
+**Sources:** aviato, gmail, linkedin (all stubbed)
+
+**Aviato Professional Intelligence:**
+
+**Career Highlights:**
+- 🆕 Recent Role Change (2019-05-01T00:00:00.000Z)
+- 🌐 Well Connected (3161+ connections)
+- 📣 Influencer (3,417 followers)
+
+**Current Role:**
+- Title: Freelance Career Coach
+- Started: 2019-05-01
+- Location: Brooklyn, New York, United States
+
+**Professional Profile:**
+- LinkedIn: [linkedin.com/in/vrijenattawar](https://linkedin.com/in/vrijenattawar)
+- Headline: Helping 🌖🚀 Companies Hire 🦄 Talent | Founder & CEO, Careerspan
+- Connections: 3,161
+- Followers: 3,417
+
+**Background:**
+- 11 previous role(s)
+  1. Freelance Career Coach @ Unknown Company (2019)
+  2. Head of University Admissions and Career Advising Division @ The Academy (2015)
+  3. Product Marketing Manager @ A.MAZE - A Cornell University Internal App (2021)
+- 3 education entries
+  1. Emory University - Emory University
+  2. New York University - New York University
+- Skills: Leadership, Business Development, Written Communication, Strategy, Sales
+
+**Metadata:**
+- Last Updated: 2025-11-06
+- Aviato ID: `-Ako633aHTa3jQtbbrWchquiETghnz9`
+
+**Gmail Thread Analysis:**
+
+⚠️ Requires Zo integration - Worker manages queue, Zo performs search
+To integrate: Call Zo API with use_app_gmail("gmail-find-email", {"q": "from:attawar.v@gmail.com OR to:attawar.v@gmail.com"})
+
+**LinkedIn Intelligence:**
+
+⚠️ NOT YET IMPLEMENTED - See file 'N5/docs/LINKEDIN_INTEGRATION.md' for integration plan
+
+Status: Phase 2 priority
+Data Sources Active: Aviato (✓) + Gmail (✓)

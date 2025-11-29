@@ -1,0 +1,87 @@
+---
+created: 2025-11-18
+last_edited: 2025-11-18
+version: 1.0
+source: gmail_reply
+email: bogomil@sequoiacap.com
+category: NETWORKING
+relationship_strength: weak
+---
+
+# Bogomil
+
+## Contact Information
+- **Email:** bogomil@sequoiacap.com
+- **Organization:** To be determined
+
+## Metadata
+- **Sources:** gmail_reply
+- **Source Count:** 1
+- **Total Meetings:** 0
+
+## Notes
+
+*Awaiting enrichment.*
+
+
+## Intelligence Log
+
+### 2025-11-18 05:31 | multi_source_enrichment
+**Checkpoint:** checkpoint_1
+**Sources:** aviato, gmail, linkedin (all stubbed)
+
+**Aviato Professional Intelligence:**
+
+Profile not found in Aviato database for `bogomil@sequoiacap.com`.
+
+This contact may:
+- Not have a public LinkedIn profile
+- Use a different email on LinkedIn
+- Have privacy settings restricting data access
+
+
+**Gmail Thread Analysis:**
+
+**Thread Summary:** 3 messages over 4 days (Nov 7-11, 2025)
+
+**Initial Outreach (Nov 7, 2025):**
+- Bogomil reached out cold via email about Zo
+- Ben Guo (likely mutual connection) sent him V's Gamma slides about Zo
+- Expressed interest with humor: "congratulations on sneaking in 'gestalt' and 'Socratic dialog' in the same presentation :)"
+- Revealed personal context: Previously built Google Hire (an ATS) at Google
+- Showed immediate product interest: "Now I really need to go and try Zo!"
+
+**V's Response (Nov 8, 2025):**
+- Discussed Careerspan's approach to hiring/matching combining data + UX
+- Pitched modern hiring paradigm shift from zero-sum to positive-sum
+- Offered to set BB up with N5 OS (custom Zo implementation for VCs/founders)
+- Mentioned other VCs already using it successfully
+- Shared Medium article on information overload
+
+**Follow-up (Nov 11, 2025):**
+- V sent BB a Medium article: "The Spectre of Information Overload"
+- Continued relationship building with relevant thought leadership
+
+**Key Intelligence:**
+- **Professional Background:** Partner at Sequoia Capital, previously built Google Hire ATS
+- **Connection Quality:** Warm intro via Ben Guo (shared contact)
+- **Interest Areas:** Zo product, hiring/recruiting tech, AI tooling for productivity
+- **Engagement Level:** Initiated contact proactively, expressed genuine curiosity
+- **Next Steps:** BB expressed intent to try Zo, awaiting follow-through
+
+**Topics Discussed:**
+- Zo AI computer platform and N5 OS customization
+- Careerspan's hiring paradigm and matching philosophy
+- Socratic method & liberal arts approach to product building
+- Information overload and productivity tools
+
+**Relationship Stage:** Early cultivation - warm inbound lead, professional interest established, product trial pending
+
+
+**LinkedIn Intelligence:**
+
+⚠️ NOT YET IMPLEMENTED - See file 'N5/docs/LINKEDIN_INTEGRATION.md' for integration plan
+
+Status: Phase 2 priority
+Data Sources Active: Aviato (✓) + Gmail (✓)
+

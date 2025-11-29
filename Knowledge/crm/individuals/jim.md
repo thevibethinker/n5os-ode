@@ -1,68 +1,10 @@
 ---
-name: "Jim"
-email_primary: "jim@hydeparkvp.com"
-email_aliases: []
-organization: "Hydeparkvp"
-role: "[To be determined]"
-first_contact: "2025-11-10T13:00:00-05:00"
-last_updated: "2025-11-08"
-lead_type: "LD-GEN"
-status: "active"
-interaction_count: 1
-last_interaction: "2025-11-08"
+person_id: jim
+canonical_path: Personal/Knowledge/CRM/individuals/jim.md
+role: compatibility_stub
+created: '2025-11-29'
+last_edited: '2025-11-29'
+version: '1.0'
 ---
 
-# Jim
-
-**Organization:** Hydeparkvp  
-**Role:** [To be determined]  
-**Email:** jim@hydeparkvp.com  
-**Lead Type:** LD-GEN  
-**Status:** Active  
-**First Contact:** 2025-11-10T13:00:00-05:00  
-**Last Updated:** 2025-11-08
-
----
-
-## Relationship Context
-
-### How We Met
-First contact via calendar invite: 30 min Intro Call with Jim Conti/HPVP (Vrijen Attawar)
-
-### Key Objectives
-**Their asks:**
-- [To be determined from interactions]
-
-**V's asks:**
-- [To be determined from interactions]
-
-**Open loops:**
-- [To be tracked over time]
-
----
-
-## Interaction History
-
-No emails found
-
----
-
-## Quick Reference
-
-**Contact Preferences:** [To be determined]  
-**Timezone:** [To be determined]  
-**LinkedIn:** [To be added]  
-**Company Website:** [To be added]  
-
-**Notable Context:**
-- [To be added as learned]
-
----
-
-## Auto-Generated Metadata
-
-**Email thread IDs:** [None yet]  
-**Meeting IDs:** 8htsoj4o3g9e2p48e6ur8jle20  
-**Last email:** 2025-11-08  
-**Last meeting:** [Pending]  
-**Response rate:** [To be tracked]
+This CRM profile now lives at `Personal/Knowledge/CRM/individuals/jim.md`.
