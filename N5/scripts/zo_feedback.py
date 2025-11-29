@@ -36,7 +36,7 @@ CHANNELS = {
 }
 
 # Default to test channel for safety - change to "production" when ready
-DEFAULT_CHANNEL = "test"
+DEFAULT_CHANNEL = "production"
 
 # =============================================================================
 # BUSINESS HOURS CONFIGURATION
@@ -447,5 +447,6 @@ Output structure:
 
 if __name__ == "__main__":
     main()
+
 
 

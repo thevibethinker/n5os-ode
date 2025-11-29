@@ -154,11 +154,14 @@ See `file 'Lists/POLICY.md'` for example:
 - Links to schemas and knowledge base
 
 ### Knowledge Folder
-Should have `file 'Knowledge/POLICY.md'` (if not exists, create):
-- Treats as canonical knowledge repository
-- SSOT (Single Source of Truth) requirements
+- **Canonical knowledge root (SSOT):** `file 'Personal/Knowledge/'`
+- **Compatibility shell:** `file 'Knowledge/'` (kept only for legacy paths; do not treat as primary)
+
+The Knowledge compatibility shell SHOULD have `file 'Knowledge/POLICY.md'` (if not exists, create):
+- Treats as a thin routing/compatibility layer, not the main repository
+- SSOT requirements LIVE UNDER `Personal/Knowledge/**`
 - Cross-reference standards
-- MECE principles (from `file 'Knowledge/architectural/ingestion_standards.md'`)
+- MECE principles (from `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'`)
 
 ---
 
@@ -184,8 +187,11 @@ Two top-level Tier roots are recognized and governed by this policy:
 ## Related Files
 
 - **Lists Policy Example:** `file 'Lists/POLICY.md'`
-- **Ingestion Standards:** `file 'Knowledge/architectural/ingestion_standards.md'`
-- **Operational Principles:** `file 'Knowledge/architectural/operational_principles.md'`
+- **Ingestion Standards (canonical):** `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'`
+- **Operational Principles (canonical):** `file 'Personal/Knowledge/Architecture/principles/architectural_principles.md'`
+- **Compatibility shells:**
+  - `file 'Knowledge/architectural/ingestion_standards.md'`
+  - `file 'Knowledge/architectural/operational_principles.md'`
 - **File Protection:** `file 'N5/prefs/system/file-protection.md'`
 
 ---
@@ -199,3 +205,4 @@ Two top-level Tier roots are recognized and governed by this policy:
 - Clarified precedence hierarchy
 - Added enforcement mechanisms
 - Linked to example policies
+

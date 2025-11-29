@@ -1,0 +1,56 @@
+version: 1
+
+# Canonical roots (relative to /home/workspace)
+personal_knowledge:
+  root: "Personal/Knowledge"
+  architecture: "Personal/Knowledge/Architecture"
+  frameworks: "Personal/Knowledge/Frameworks"
+
+  # Elevated library (Knowledge + Wisdom layer)
+  wisdom: "Personal/Knowledge/Wisdom"
+  intelligence: "Personal/Knowledge/Intelligence"
+  content_library: "Personal/Knowledge/ContentLibrary"
+  canon: "Personal/Knowledge/Canon"
+  crm_root: "Personal/Knowledge/CRM"
+  archive: "Personal/Knowledge/Archive"
+
+  # Subtrees within Intelligence (for convenience)
+  intelligence_self: "Personal/Knowledge/Intelligence/Self"
+  intelligence_world: "Personal/Knowledge/Intelligence/World"
+  intelligence_systems: "Personal/Knowledge/Intelligence/Systems"
+  intelligence_relationships: "Personal/Knowledge/Intelligence/Relationships"
+
+  # CRM details
+  crm:
+    root: "Personal/Knowledge/CRM"
+    db: "Personal/Knowledge/CRM/db/crm.db"
+    individuals: "Personal/Knowledge/CRM/individuals"
+    organizations: "Personal/Knowledge/CRM/organizations"
+    views: "Personal/Knowledge/CRM/views"
+
+  # World / Market intelligence lives under Intelligence/World
+  market_intelligence:
+    root: "Personal/Knowledge/Intelligence/World/Market"
+    db: "Personal/Knowledge/Intelligence/World/Market/db/gtm_intelligence.db"
+    narratives: "Personal/Knowledge/Intelligence/World/Market/narratives"
+
+  # Personal brand canon (output layer)
+  personal_brand:
+    root: "Personal/Knowledge/Canon/V/SocialContent"
+
+meetings:
+  root: "Personal/Meetings"
+
+records:
+  root: "Records"
+  knowledge_system: "Records/Personal/knowledge-system"
+
+system:
+  n5_root: "N5"
+
+compatibility_shell:
+  legacy_knowledge_root: "Knowledge"
+  legacy_knowledge_archive: "Personal/Knowledge/Archive/Legacy_Knowledge_Tree/Knowledge"
+
+
+

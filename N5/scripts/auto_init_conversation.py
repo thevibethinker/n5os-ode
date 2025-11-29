@@ -37,8 +37,7 @@ def check_and_init_conversation(workspace_path: Path) -> bool:
             sys.executable,
             "/home/workspace/N5/scripts/session_state_manager.py",
             "init",
-            "--convo-id", convo_id,
-            "--load-system"
+            "--convo-id", convo_id
         ]
         
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
@@ -101,3 +100,4 @@ if __name__ == "__main__":
     else:
         # Scan all
         scan_and_init_all_conversations()
+
