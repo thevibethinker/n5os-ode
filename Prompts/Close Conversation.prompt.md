@@ -1,8 +1,6 @@
 ---
-description: |
-tool: true
-  Formal conversation end-step - resolve all conversation effects.
-  Reviews files, proposes organization, executes cleanup, generates AAR, archives build tracker.
+description: 
+tool: true Formal conversation end-step - resolve all conversation effects. Reviews files, proposes organization, executes cleanup, generates AAR, archives build tracker.
 tags:
   - session
   - cleanup
@@ -82,18 +80,19 @@ This recipe uses the **conversation-end orchestrator** - a 3-phase pipeline that
 ```bash
 # Auto-detect conversation ID and run full pipeline
 CONVO_ID=$(basename "$(pwd)")
-python3 /home/workspace/N5/scripts/conversation_end_analyzer.py --convo-id "$CONVO_ID" --output /tmp/analysis.json
-python3 /home/workspace/N5/scripts/conversation_end_proposal.py --analysis /tmp/analysis.json --format markdown
+WORKSPACE_DIR=$(pwd)
+python3 /home/workspace/N5/scripts/conversation_end_analyzer.py --workspace "$WORKSPACE_DIR" --convo-id "$CONVO_ID" --output /tmp/analysis.json
+python3 /home/workspace/N5/scripts/conversation_end_proposal.py --analysis /tmp/analysis.json --output /tmp/proposal.json
 ```
 
 Review the proposal, then execute:
 
 ```bash
 # Dry-run first (preview changes)
-python3 /home/workspace/N5/scripts/conversation_end_executor.py --proposal /tmp/analysis.json --dry-run
+python3 /home/workspace/N5/scripts/conversation_end_executor.py --proposal /tmp/proposal.json --dry-run
 
 # Execute for real
-python3 /home/workspace/N5/scripts/conversation_end_executor.py --proposal /tmp/analysis.json
+python3 /home/workspace/N5/scripts/conversation_end_executor.py --proposal /tmp/proposal.json
 ```
 
 ### Manual Phase-by-Phase

@@ -9,6 +9,9 @@ tags:
   - manifest
   - block-selection
   - automation
+mg_stage: MG-1
+status: deprecated
+superseded_by: Prompts/Meeting Manifest Generation.prompt.md
 ---
 
 # Meeting Block Selector
@@ -241,5 +244,6 @@ mv "$folder" "${folder}_[M]"
 ---
 
 **Execution:** This prompt is invoked by scheduled task every 15 minutes.
+
 
 

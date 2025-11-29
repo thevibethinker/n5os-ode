@@ -1,7 +1,7 @@
 ---
 created: 2025-11-17
-last_edited: 2025-11-17
-version: 3.0
+last_edited: 2025-11-25
+version: 3.1
 title: Follow-Up Email Generator v3.0
 description: Generate follow-up emails for meetings in [P] state using semantic classification
 tags: [workflow, email, meetings, automation, semantic-analysis]
@@ -17,19 +17,30 @@ tool: true
 
 ## Execution Protocol
 
-### STEP 1: Find [P] Meetings (Mechanical)
+### STEP 1: Find [P] Meetings (Mechanical, then select ONE)
 
 ```bash
 find /home/workspace/Personal/Meetings/Inbox -type d -name "*[P]"
 ```
 
-### STEP 2: Classify Each Meeting (Semantic - LLM Does This)
+From this list, **select exactly one meeting per MG-5 run**:
 
-For each [P] meeting:
+- Candidate set: folders in `Personal/Meetings/Inbox` with suffix `_[P]` where:
+  - `FOLLOW_UP_EMAIL.md` does **not** exist in the meeting folder **OR**
+  - `manifest.json.system_states.follow_up_email.status` != `complete`.
+- **Selection rule:** choose the **oldest** such meeting (by meeting date in folder name or filesystem mtime).
+
+> MG-5 is *single-email-per-run*. Do **not** batch across multiple meetings in one invocation.
+
+Let `TARGET_MEETING` be the single folder you selected.
+
+### STEP 2: Classify Selected Meeting (Semantic - LLM Does This)
+
+For **TARGET_MEETING** only:
 
 1. **Load raw data using script:**
    ```bash
-   python3 /home/workspace/N5/scripts/follow_up_email_classifier.py "<meeting_folder>"
+   python3 /home/workspace/N5/scripts/follow_up_email_classifier.py "<TARGET_MEETING>"
    ```
 
 2. **LLM reads and understands:**
@@ -64,14 +75,14 @@ PROBABLY_NO:
 DEFINITELY_NO:
   - Daily standup or quick sync
   - Internal-only meeting with no deliverables
-  - FOLLOW_UP_EMAIL.md already exists
+  - FOLLOW_UP_EMAIL.md already exists **and** manifest follow_up_email.status = complete
   
 SKIP:
   - Missing critical intelligence blocks (B26, B02)
   - Incomplete meeting processing
 ```
 
-5. **Document reasoning:**
+5. **Document reasoning for TARGET_MEETING only:**
 ```json
 {
   "meeting": "folder_name",
@@ -85,37 +96,51 @@ SKIP:
 }
 ```
 
-### STEP 3: Generate Emails (Semantic - Vibe Writer)
+### STEP 3: Generate Email for TARGET_MEETING (Semantic - Vibe Writer)
 
-For each meeting where `needs_follow_up_email: true`:
+If `needs_follow_up_email: true` for **TARGET_MEETING**:
 
-1. **Switch to Vibe Writer persona**
-2. **Execute Follow-Up Email Generator v2.0:**
+1. **Set manifest state to in_progress (Mechanical):**
+   ```bash
+   # If an older FOLLOW_UP_EMAIL.md exists, rename to FOLLOW_UP_EMAIL_v0.md first
+   python3 /home/workspace/N5/scripts/manifest_state_updater.py "<TARGET_MEETING>" follow_up_email in_progress \
+     --output-file FOLLOW_UP_EMAIL_v0.md --task-name MG-5
+   ```
+   - If no prior file exists, you may omit `--output-file` or use `FOLLOW_UP_EMAIL.md`.
+
+2. **Switch to Vibe Writer persona**
+
+3. **Execute Follow-Up Email Generator v2.0 for TARGET_MEETING only:**
    - PHASE 1: Harvest (extract from B25, B02, B26, B01)
    - PHASE 2: Voice transformation (V's authentic style)
    - PHASE 3: Structure (greeting, context, deliverables, next steps)
    - PHASE 4: Quality validation (≥90/100 score)
-3. **Save as FOLLOW_UP_EMAIL.md in meeting folder**
 
-### STEP 4: Report Completion
+4. **Save as FOLLOW_UP_EMAIL.md in TARGET_MEETING folder**
+
+5. **Set manifest state to complete (Mechanical):**
+   ```bash
+   python3 /home/workspace/N5/scripts/manifest_state_updater.py "<TARGET_MEETING>" follow_up_email complete \
+     --output-file FOLLOW_UP_EMAIL.md --task-name MG-5
+   ```
+
+### STEP 4: Report Completion (Single-Meeting Scope)
 
 ```markdown
 ## Follow-Up Email Generation Report
 
-**Meetings Scanned:** X
-**Classified as needing emails:** Y
-**Emails generated:** Z
-**Skipped (already exist):** W
+**Meetings Considered This Run:** 1  
+**Classified as needing email:** 1/0  
+**Emails generated this run:** 1/0
 
-### Classification Decisions:
-1. [Meeting Name]
-   - Decision: YES/NO
-   - Reason: [explanation]
-   - Confidence: high/medium/low
+### Classification Decision (This Run):
+- [Meeting Name]
+  - Decision: YES/NO
+  - Reason: [explanation]
+  - Confidence: high/medium/low
 
-### Emails Generated:
-1. [Meeting Name] - Score: X/100
-2. [Meeting Name] - Score: Y/100
+### Email Generated (if any):
+- [Meeting Name] - Score: X/100
 ```
 
 ---
@@ -123,13 +148,15 @@ For each meeting where `needs_follow_up_email: true`:
 ## Critical Rules
 
 **✓ DO:**
-- Read actual meeting content (B26, B02, B08, B01)
+- Read actual meeting content (B26, B02, B08, B01) for **one** TARGET_MEETING per run
 - Make semantic judgment based on understanding
-- Document reasoning for each classification
+- Document reasoning for the single selected meeting
 - Use Vibe Writer for actual email generation
 - Track all deliverables (internal + external), note type
+- Use `manifest_state_updater.py` to mark `follow_up_email` as `in_progress` → `complete`
 
 **✗ DON'T:**
+- Batch multiple meetings in a single MG-5 run
 - Trust mechanical pattern matching (grep "Follow-Up Email Needed")
 - Use stub/backfilled B25 files for classification
 - Skip reading meeting context
@@ -141,7 +168,7 @@ For each meeting where `needs_follow_up_email: true`:
 ## Anti-Patterns to Avoid
 
 **P0.1 Violation:** Using scripts for semantic analysis  
-**P15 Violation:** Claiming "done" without processing all meetings  
+**P15 Violation:** Claiming "done" without processing the **single selected** meeting  
 **P19 Violation:** Silently failing when intelligence blocks missing
 
 ---
@@ -153,19 +180,23 @@ For each meeting where `needs_follow_up_email: true`:
 - [ ] Understood who attended
 - [ ] Understood meeting type
 - [ ] Judging semantically, not pattern-matching
+- [ ] Exactly one TARGET_MEETING chosen using oldest-[P]-without-followup rule
 
 **Before generation:**
 - [ ] Switched to Vibe Writer
 - [ ] Following v2.0 email generation protocol
 - [ ] Loading real intelligence blocks
 - [ ] Applying voice transformation
+- [ ] Manifest follow_up_email set to `in_progress`
 
 **Before reporting:**
-- [ ] All meetings classified with reasoning
-- [ ] All emails scored
-- [ ] Honest progress reported (X/Y done)
+- [ ] TARGET_MEETING classified with reasoning
+- [ ] Email (if any) scored
+- [ ] Honest progress reported for this one meeting
 
 ---
 
-*v3.0 | 2025-11-17 | Semantic-First Architecture*
+*v3.1 | 2025-11-25 | Switched MG-5 to single-email-per-run with explicit selection + manifest bookkeeping*
+
+
 

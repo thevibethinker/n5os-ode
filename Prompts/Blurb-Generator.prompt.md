@@ -9,6 +9,8 @@ tool: true
 version: 1.0
 created: 2025-11-17
 last_edited: 2025-11-17
+mg_stage: MG-3
+status: canonical
 ---
 
 # Blurb Generator
@@ -538,5 +540,6 @@ key_focus: Project approach, technical innovation, impact
 ---
 
 **Ready to generate. Invoke with meeting intelligence or provide B14 block directly.**
+
 
 
