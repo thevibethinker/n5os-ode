@@ -1,0 +1,8 @@
+{
+  "protected": true,
+  "reason": "Knowledge-system design and migration records root",
+  "scope": "subtree",
+  "created": "2025-11-29T18:19:06.954390+00:00",
+  "created_by": "knowledge_preflight",
+  "script": "knowledge_preflight.py"
+}

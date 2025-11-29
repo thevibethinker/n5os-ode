@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-11-19T01:01:30Z",
+  "operation": "productivity_dashboard_update",
+  "status": "success",
+  "data": {
+    "date": "2025-11-19",
+    "emails_sent": {
+      "attawar.v@gmail.com": 2,
+      "vrijen@mycareerspan.com": 8,
+      "total": 10
+    },
+    "meeting_hours": 0.25,
+    "calendar_events": {
+      "total": 1,
+      "all_day": 0,
+      "timed": 1,
+      "events": [
+        {
+          "summary": "Daily Centering Task",
+          "start": "2025-11-19T08:15:00-05:00",
+          "end": "2025-11-19T08:30:00-05:00",
+          "duration_minutes": 15
+        }
+      ]
+    },
+    "dashboard_metrics": {
+      "expected_emails": 24.4,
+      "rpi": 41.0,
+      "tier": "Behind Schedule 🔻",
+      "is_weekend": false
+    }
+  },
+  "api_responses": {
+    "gmail_attawar": {
+      "account": "attawar.v@gmail.com",
+      "messages_found": 2,
+      "status": "success"
+    },
+    "gmail_careerspan": {
+      "account": "vrijen@mycareerspan.com",
+      "messages_found": 8,
+      "status": "success"
+    },
+    "google_calendar": {
+      "account": "attawar.v@gmail.com",
+      "events_found": 1,
+      "status": "success"
+    }
+  },
+  "database": {
+    "path": "/home/workspace/productivity_tracker.db",
+    "table": "daily_stats",
+    "row_inserted": {
+      "date": "2025-11-19",
+      "emails_sent": 10,
+      "meeting_hours": 0.25,
+      "expected_emails": 24.4,
+      "rpi": 41.0
+    },
+    "verification": "confirmed"
+  }
+}

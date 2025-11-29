@@ -1,0 +1,60 @@
+═══════════════════════════════════════════════════════════════════════
+  HOLDEN HALL - ROCK STAR PM PERSONA (UPDATED)
+═══════════════════════════════════════════════════════════════════════
+
+CHARACTER: Holden Hall
+AGE: 27
+LOCATION: San Francisco, CA
+ARCHETYPE: Design-Fluent Technical PM
+
+CAREER PATH:
+  Stanford CS (2015-2019)
+  → Canva Customer Success Manager (2019-2021) [DESIGN EXPOSURE]
+  → Stripe Solutions Engineer (2021-2023) [TECHNICAL DEPTH]
+  → Zo Product Manager (2023-Present) [PRODUCT OWNERSHIP]
+
+KEY ACHIEVEMENTS:
+  ✓ Launched AI agents platform (0→1, 12K users)
+  ✓ Grew Zo MAU 500% in 6 months (2K → 12K)
+  ✓ Conducted 40+ user interviews, 200+ participants
+  ✓ Established OKR framework adopted across product org
+  ✓ Shipped 8 major features at Zo (4.5/5 satisfaction)
+
+STRENGTHS:
+  • Design + Technical fluency (rare combo for CS backgrounds)
+  • User research driven (always starts with customer insights)
+  • Cross-functional collaboration (comfortable with designers + engineers)
+  • 0→1 builder mentality
+  • Quantitative mindset
+
+REALISTIC WEAKNESSES:
+  • Not a native designer (can prototype, defers to experts for polish)
+  • Still building enterprise PM muscle (mostly SMB/prosumer experience)
+  • Impatient with slow execution
+
+STORY COUNT: 1
+  "Launching AI Agents at Zo"
+  - User research → rapid prototyping → iterative launch
+  - Demonstrates systematic product craft
+  - Adds depth without overselling
+
+CHAIR AI ALIGNMENT: 9.0/10
+  ✓ Design collaboration (9/10) - Canva background, Figma fluency
+  ✓ User research (10/10) - 40+ interviews, research-driven roadmap
+  ✓ Cross-functional (9/10) - Coordinated eng + design teams
+  ✓ 0→1 launches (10/10) - AI agents platform from scratch
+  ✓ Ambiguity comfort (8/10) - Startup PM, early-stage work
+  ✓ Technical fluency (8/10) - Python, SQL, APIs, Stripe SE
+
+SILICON VALLEY REFERENCE:
+  Monica Hall's overachieving younger brother
+  (The one who stresses Monica out at Thanksgiving)
+
+WHY THIS CAREER PATH WORKS:
+  • Canva = learned design thinking, user research
+  • Stripe = technical depth, developer experience
+  • Zo = product ownership, 0→1 launches
+  • Shows intentional skill-building, not just prestige
+  • Directly aligns with Chair AI needs
+
+═══════════════════════════════════════════════════════════════════════

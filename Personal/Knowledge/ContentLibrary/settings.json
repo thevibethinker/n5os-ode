@@ -1,0 +1,49 @@
+{
+  "project": "Content Library v1.0",
+  "created_at": "2025-11-11T19:20:00Z",
+  "id_format": "{type}_{YYYYMMDD}_{random_4}",
+  "file_paths": {
+    "meetings": "~/Personal/Meetings/",
+    "articles": "~/Articles/",
+    "articles_web": "~/Articles/web/",
+    "notes": "~/Personal/Notes/",
+    "media": "~/media/",
+    "downloads_content": "~/downloads/Content/"
+  },
+  "entry_types": [
+    "raw_material",
+    "block",
+    "article",
+    "article_web",
+    "email",
+    "note",
+    "media"
+  ],
+  "block_codes": [
+    "B01",
+    "B02",
+    "B08",
+    "B21",
+    "B25",
+    "B26",
+    "B31"
+  ],
+  "ingestion_rules": {
+    "local_files": "store_pointer_only",
+    "remote_content": "download_then_pointer",
+    "default_confidence": 3,
+    "require_topics": false,
+    "require_tags": false
+  },
+  "promotion_rules": {
+    "minimum_confidence": 3,
+    "confirmation_required": true,
+    "append_only": true
+  },
+  "download_mapping": {
+    "article": "~/Articles/web/",
+    "article_web": "~/Articles/web/",
+    "media": "~/media/",
+    "default": "~/downloads/Content/"
+  }
+}

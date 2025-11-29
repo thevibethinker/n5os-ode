@@ -1,0 +1,25 @@
+📰 NEWSLETTER DIGEST - November 20, 2025
+
+🔝 TOP STORIES:
+
+• Gemini 3 Pro Launch (Ben's Bites) - Google released Gemini 3 Pro, beating GPT-5.1 and Sonnet 4.5 on most benchmarks. Notable: 72.7% score on screenshot understanding (next best is 36.2%). Faster and slightly more expensive than GPT-2.5 Pro.
+
+• AI IDE Releases - Google launched Antigravity IDE with Agent Manager and browser integration. Also released: Gemini Agent (ultra subscribers), Dynamic UI in chat, and Gemini 3 Deep Think rolled out in Search AI mode.
+
+• Competing Model Releases - OpenAI released GPT-5.1 Pro and GPT-5.1-Codex-Max. xAI released Grok 4.1 Fast. Meta released SAM 3 (Segment Anything Model) for video/image object detection.
+
+• Funding News - xAI raising $15B at $230B valuation. Openhands: $18.8M Series A. Luma Labs: $900M Series C. AlphaXiv: $7M seed. Suno: $250M Series C. Microsoft & Nvidia investing $10B & $5B in Anthropic.
+
+• Departures - Meta confirms Yann LeCun leaving to form new AI startup end of year. ChatGPT free access extended to teachers through June 2027.
+
+📊 TOOLS MENTIONED:
+- Smithery Chat, Warp Agents 3.0, emdash (parallel coding agents), Zo, Replit Design mode, NLX, AssemblyAI APIs
+
+⚙️ KEY INSIGHTS:
+- Vision capabilities are becoming a major differentiator
+- Competition intensifying between Google, OpenAI, and xAI
+- IDE/agent tools becoming more powerful and practical
+- Major talent movement in AI leadership
+
+Generated: Nov 20, 2025
+Source: Ben's Bites Newsletter
