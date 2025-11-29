@@ -187,3 +187,23 @@ For a specific conversation ID `<CID>` (without `con_` prefix):
 
 This keeps the contract between analyzer → proposal → executor explicit, testable, and safe to extend.
 
+## 5. Capability Registry Hook (Worker 5)
+
+The capability registry integration runs **after** the core analyzer → proposal → executor pipeline, and only for **build / orchestrator threads**.
+
+- The filesystem pipeline (Phases 1–3 above) remains unchanged and continues to be the single source of truth for moving, archiving, and deleting files.
+- Once artifacts have a stable archive location, the **Close Conversation** recipe:
+  - Loads `conversation-end-output-template.md` and constructs the human summary.
+  - Runs a **Capability Registry Check** (see `file 'Prompts/Close Conversation.prompt.md'`) to decide whether this conversation created or significantly changed a major capability.
+  - Populates the **"Capability Registry Updates"** section of the final summary with either:
+    - A concrete list of capability changes (new/updated capabilities with `capability_id` and file paths), or
+    - An explicit statement that no capability changes were logged.
+
+Mechanically, capability updates are applied on the **LLM side** using normal Zo tools:
+
+- For new or updated capabilities, the AI either:
+  - Edits/creates capability files under `N5/capabilities/**` following `CAPABILITY_TEMPLATE.md` and keeps `index.md` in sync, or
+  - (Optionally) writes a YAML spec and calls a helper script such as `N5/scripts/capability_registry_update.py` to perform deterministic file/index updates.
+- This hook does **not** alter analyzer/proposal/executor safety guarantees, and it does **not** run silently: every build/orchestrator closure must explicitly report whether capability changes were logged.
+
+
