@@ -1,15 +1,15 @@
 {
-  "generated_at": "2025-11-17T19:01:06.261828+00:00",
+  "generated_at": "2025-11-29T19:01:26.220319+00:00",
   "summary": {
     "total_scanned": 50,
-    "critical_issues": 48,
+    "critical_issues": 40,
     "high_issues": 0,
     "medium_issues": 0,
-    "healthy": 2
+    "healthy": 10
   },
   "critical": [
     {
-      "meeting_id": "2025-11-XX_Aviato_Demo",
+      "meeting_id": "2025-11-XX_Aviato_Demo_[P]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -22,7 +22,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-15_gfq-ywpy-pgs",
+      "meeting_id": "2025-11-15_Vrijen_Attawar_Rory_Brown_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -35,7 +35,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-15_Vrijen_Attawar_Rory_Brown",
+      "meeting_id": "2025-11-14_Vrijen_Attawar_and_Emily_Velasco_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -48,7 +48,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_zo-computer_pitch-demo_workshop",
+      "meeting_id": "2025-11-14_Husain_x_V_[P]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -61,7 +61,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Vrijen_Husain_Careerspan_Pivot",
+      "meeting_id": "2025-11-14_Daily-team-stand-up_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -74,7 +74,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Vrijen_Attawar_and_Emily_Velasco",
+      "meeting_id": "2025-11-12_Vrijen_Logan_daily_standup_trello_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -87,7 +87,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Vrijen_Attawar_Kai_Song",
+      "meeting_id": "2025-11-12_Ilya_Ilse_Logan_Rochel_Vrijen_stand-up_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -100,7 +100,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Nicole_Holubar_x_Vrijen_Attawar_emory-partnership",
+      "meeting_id": "2025-11-12_Daily-team-stand-up_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -113,7 +113,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Nicole_Holubar_Vrijen_Attawar",
+      "meeting_id": "2025-11-12_ColinNavon_VrijenAttawar_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -126,7 +126,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Michael_Grady",
+      "meeting_id": "2025-11-11_vrijen-logan-catch-up_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -139,7 +139,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Husain_x_V",
+      "meeting_id": "2025-11-11_McKinsey-Alumni-Founders_monthly_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -152,7 +152,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Husain_Vrijen",
+      "meeting_id": "2025-11-11_Edmund_Cuthbert_30_Min_Call_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -165,7 +165,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Daily_team_stand-up",
+      "meeting_id": "2025-11-07_ilse-midday-chat_internal_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -178,7 +178,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Daily-team-stand-up",
+      "meeting_id": "2025-11-04_zo-team_demo-event-prep_internal_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -191,7 +191,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Daily team stand-up",
+      "meeting_id": "2025-11-04_Ilya-Kucherenko_internal-onboarding_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -204,7 +204,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-14_Ayush-Jain_internal",
+      "meeting_id": "2025-11-04_David-Speigel_internal_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -217,7 +217,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_quantum-labs_sales-discovery_sales",
+      "meeting_id": "2025-11-04_Anthony-DeLuise_product-career_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -230,7 +230,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_external-aaron-mak-hoffman",
+      "meeting_id": "2025-11-03_plaud-product-overview_internal_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -243,7 +243,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_careerspan-strategy-hiring-discussion",
+      "meeting_id": "2025-11-03_Nafisa Poonawala and Vrijen Attawar_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -256,7 +256,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_Vrijen_Product_Daily",
+      "meeting_id": "2025-10-30_Jake_Gates_and_Vrijen_Attawar_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -269,7 +269,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_Vrijen_Logan_Alex_BusinessUpdate",
+      "meeting_id": "2025-10-24_Careerspan-Sam_partnership-discovery_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -282,7 +282,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_Vrijen-Tiffany-Ben-Vrijen-Attawar-and-Tiffany-Huang-plus-Ben-Guo",
+      "meeting_id": "2025-10-22_Pamela Kavalam_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -295,7 +295,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_Tami-Forman_Vrijen-Attawar_meeting_processed",
+      "meeting_id": "2025-10-15_Jaya-Pokuri_founder-conversation_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -308,7 +308,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_Daily-team-stand-up",
+      "meeting_id": "2025-10-14_nira-team_strategy-exploration_founder_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -321,7 +321,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-13_Aaron-Mak-Hoffman_Vrijen-Attawar",
+      "meeting_id": "2025-10-14_Logan-Vrijen_internal-strategy_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -334,7 +334,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-12_Vrijen_Logan_daily_standup_trello",
+      "meeting_id": "2025-10-10_Logan-Vrijen_internal-strategy_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -347,7 +347,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-12_Ilya_Ilse_Logan_Rochel_Vrijen_stand-up",
+      "meeting_id": "2025-09-29_Theresa-Anoje_community_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -360,7 +360,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-12_Daily_Team_Stand-up_Engineering",
+      "meeting_id": "2025-09-24_lensa_partnership-exploration-pilot_partnership_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -373,7 +373,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-12_Daily-team-stand-up",
+      "meeting_id": "2025-09-22_internal-biweekly-cofounder-standup_[P]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -386,7 +386,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-12_ColinNavon_VrijenAttawar",
+      "meeting_id": "2025-09-22_Ayush-Jain_internal_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -399,7 +399,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_vrijen-logan-catch-up",
+      "meeting_id": "2025-09-17_careerspan-team_daily-standup_internal_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -412,7 +412,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_Rochel_1-1",
+      "meeting_id": "2025-09-16_fohe-partnership-pilot_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -425,7 +425,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_Molly_Kress_career_development",
+      "meeting_id": "2025-09-16_Careerspan-Internal_offsite-planning_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -438,7 +438,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_McKinsey-Alumni-Founders_monthly",
+      "meeting_id": "2025-09-15_internal_project_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -451,7 +451,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_Edmund_Cuthbert_30_Min_Call",
+      "meeting_id": "2025-09-11_Sam-Bourton_networking_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -464,7 +464,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_EdmundCuthbert-Superposition_founder",
+      "meeting_id": "2025-09-05_malvika-jethmalani-careerspan_external_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -477,7 +477,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-11_Daily_team_stand-up",
+      "meeting_id": "2025-09-04_jacob-bank-relay_educational_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -490,7 +490,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-10_Tiffany",
+      "meeting_id": "2025-09-02_David-Speigel_advisory_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -503,7 +503,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-10_Ryan_Vanderbilt",
+      "meeting_id": "2025-08-28_David-Speigel_advisory_[M]",
       "status": "CRITICAL",
       "issues": [
         {
@@ -516,111 +516,7 @@
       "expected_blocks": 0
     },
     {
-      "meeting_id": "2025-11-10_Daily-Standup",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-09_Mihir-Makwana_zo-partnership",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-09_Ilya-Sales-Coaching_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-09_Dylan-Lieberman_networking",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-08_Vrijen-BenZo_internal",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-07_ilse-midday-chat_internal",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-07_SaraSchmitt-Finfair_founder",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-06_Griffin-Schultz-Yale_founder",
-      "status": "CRITICAL",
-      "issues": [
-        {
-          "type": "MISSING_METADATA",
-          "severity": "CRITICAL",
-          "message": "Missing metadata file"
-        }
-      ],
-      "block_count": 0,
-      "expected_blocks": 0
-    },
-    {
-      "meeting_id": "2025-11-04_zo-team_demo-event-prep_internal",
+      "meeting_id": "2025-08-27_Amy-Quan-Vrijen_event-planning_[M]",
       "status": "CRITICAL",
       "issues": [
         {

@@ -25,8 +25,63 @@ logging.basicConfig(
 )
 
 WORKSPACE = Path("/home/workspace")
-KNOWLEDGE_DIR = WORKSPACE / "Knowledge"
-N5_PROTECT_SCRIPT = WORKSPACE / "N5" / "scripts" / "n5_protect.py"
+PATHS_YAML = WORKSPACE / "N5/prefs/paths/knowledge_paths.yaml"
+
+
+def _load_pk_roots() -> dict:
+    """Load Personal/Knowledge roots from knowledge_paths.yaml."""
+    data = yaml.safe_load(PATHS_YAML.read_text()) or {}
+    pk = data.get("personal_knowledge", {})
+
+    pk_root = WORKSPACE / pk.get("root", "Personal/Knowledge")
+    intelligence_root = WORKSPACE / pk.get("intelligence", str(pk_root / "Intelligence"))
+    content_root = WORKSPACE / pk.get("content_library", str(pk_root / "ContentLibrary")) / "content"
+
+    mi_cfg = pk.get("market_intelligence", {})
+    market_root = WORKSPACE / mi_cfg.get(
+        "root",
+        str(intelligence_root / "World" / "Market"),
+    )
+
+    return {
+        "pk_root": pk_root,
+        "intelligence_root": intelligence_root,
+        "content_root": content_root,
+        "market_root": market_root,
+    }
+
+
+def resolve_target_path_from_legacy(target: str) -> Path:
+    """Map legacy Knowledge/* targets into Personal/Knowledge buckets.
+
+    Heuristics (minimal but directionally correct):
+    - Targets mentioning "market_intelligence" or under intelligence/World/Market → market intelligence root.
+    - Everything else defaults to Intelligence root, unless clearly a content bucket
+      (external_research/hypotheses/semi_stable/evolving) in which case it goes to ContentLibrary/content.
+    """
+    if not target:
+        raise ValueError("Empty knowledge_routing.target")
+
+    roots = _load_pk_roots()
+    norm = target.lstrip("/")
+
+    # Explicit market intelligence cases
+    if norm.startswith("market_intelligence/"):
+        suffix = norm.split("market_intelligence/", 1)[1]
+        return roots["market_root"] / suffix
+
+    if norm.startswith("intelligence/World/Market/"):
+        suffix = norm.split("intelligence/World/Market/", 1)[1]
+        return roots["market_root"] / suffix
+
+    # Simple content buckets based on legacy folder names
+    top = norm.split("/", 1)[0]
+    content_buckets = {"external_research", "hypotheses", "semi_stable", "evolving"}
+    if top in content_buckets:
+        return roots["content_root"] / norm
+
+    # Default: treat as intelligence
+    return roots["intelligence_root"] / norm
 
 
 def load_extraction(yaml_file: Path) -> dict:
@@ -186,8 +241,8 @@ def write_to_knowledge(extraction: dict, target_override: str = "") -> bool:
             logging.error("No target specified in knowledge_routing")
             return False
         
-        # Resolve target path
-        target_path = KNOWLEDGE_DIR / target
+        # Resolve target path into Personal/Knowledge buckets via routing helper
+        target_path = resolve_target_path_from_legacy(target)
         
         # Check protection
         if not check_protection(target_path):
@@ -330,3 +385,4 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     sys.exit(main(yaml_file=args.yaml_file, target_override=args.target, dry_run=args.dry_run))
+

@@ -1,1 +1,5 @@
 {"timestamp":"2025-10-24T23:15:00Z","event":"initial_seed","predicted_type":"resume","predicted_destination":"Documents/Resumes","actual_destination":"Documents/Resumes","filename":"example_seed.pdf","entities":[],"keywords":[],"note":"Seeded from Phase 1 manual cleanup - 11 resumes correctly routed"}
+Traceback (most recent call last):
+  File "/home/workspace/N5/scripts/email_corrections.py", line 19, in <module>
+    from content_library import ContentLibrary
+ImportError: cannot import name 'ContentLibrary' from 'content_library' (/home/workspace/N5/scripts/content_library.py)
