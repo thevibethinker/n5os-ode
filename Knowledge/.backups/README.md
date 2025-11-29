@@ -1,1 +1,0 @@
-# Backup Directory\n\n**Purpose:** 30-day retention of knowledge file backups before updates\n\n**Retention:** Automatically delete backups older than 30 days\n\n**Structure:**\n- Backups organized by date: YYYY-MM-DD_HHMM/\n- Each backup folder contains pre-update state of modified files\n- Change log tracks all modifications
