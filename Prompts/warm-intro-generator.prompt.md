@@ -1,19 +1,45 @@
 ---
 title: Warm Intro Email Generator
-description: |\n  Generates connector-addressed warm introduction emails in V's voice based on meeting context.
+description: |
+  Generates connector-addressed warm introduction emails in V's voice based on meeting context.
   Uses crisp articulation framework with context-dependent thrust (sales/partnership, info-seeking, network access).
-  Produces wrapper email to connector + two forwardable blurb versions (ultra-short + slightly longer).
+  Produces context for connector + ultra-short forwardable blurb (2 components total).
 tags: [email, networking, intros, warmth, relationships, communication]
-version: 2.0
+version: 2.1
 created: 2025-11-17
 last_edited: 2025-11-17
 tool: true
 voice_model: V's warm intro style
+mg_stage: MG-4
+status: canonical
+role: writer
 ---
 
-# Warm Intro Email Generator v2.0
+# Warm Intro Email Generator v2.1
 
 **Core Change:** All warm intros are now **addressed TO THE CONNECTOR**, not the target person.
+
+---
+
+## ELIGIBILITY CHECK (RUN FIRST)
+
+**Before generating any intros, check meeting type:**
+
+```bash
+# Check if meeting is internal
+meeting_type=$(python3 -c "import json; print(json.load(open('manifest.json')).get('meeting_type', 'external'))" 2>/dev/null || echo "external")
+
+if [ "$meeting_type" = "internal" ]; then
+  echo "⊘ Internal meeting detected - warm intros not applicable"
+  echo "Rationale: Team members don't need intros to each other"
+  exit 0
+fi
+```
+
+**Decision logic:**
+- **Internal meetings** → No warm intros generated (skip this prompt)
+- **External meetings** → Proceed with generation
+- **Missing meeting_type** → Default to "external" (generate intros)
 
 ---
 
@@ -21,16 +47,18 @@ voice_model: V's warm intro style
 
 Every warm intro has **two components:**
 
-### 1. Wrapper Email to Connector
+### 1. Context for Connector (Wrapper Email)
 - Brief thanks for offering intro
 - **Crisp articulation** of what V wants/needs from this connection
 - Context-specific value proposition (see Thrust Framework below)
+- Why this connection makes sense (2-4 sentences)
 - Request: "Can you pass this along to them?"
+- This is V's explanation TO the connector
 
-### 2. Forwardable Blurbs (2 versions)
-- **Ultra-Short:** 3-4 lines, absolute essentials
-- **Slightly Longer:** 6-8 lines, adds context and specifics
-- Connector chooses which to forward (or just forwards wrapper email)
+### 2. Ultra-Short Forwardable Blurb
+- 3-4 lines, absolute essentials
+- Connector forwards this to target person
+- Simple, direct, to-the-point
 
 ---
 
@@ -85,7 +113,7 @@ Every intro has a primary intent. Identify and optimize for it:
 
 ## GENERATION TEMPLATE
 
-### Wrapper Email to Connector
+### 1. Context for Connector (Wrapper Email)
 
 ```
 Subject: [Target Company/Person] intro — [brief context]
@@ -102,13 +130,13 @@ Thanks for offering to connect me with [Target Person] at [Company] — I'd real
 - Specific value proposition based on thrust type
 - Reference details from connector's knowledge]
 
-Can you pass this along to them? I've drafted two versions below — feel free to use whichever feels right, or just forward this email if that's easier.
+Can you pass this along to them? I've drafted a short blurb below you can forward.
 
 Thanks again,  
 Vrijen
 ```
 
-### Forwardable Blurb — Ultra-Short
+### 2. Ultra-Short Forwardable Blurb
 
 ```
 Hey [Target Name],
@@ -121,33 +149,6 @@ I'm Vrijen, founder of Careerspan. [One sentence: what Careerspan does in V's vo
 
 Best,  
 Vrijen  
-vrijen@careerspan.com
-```
-
-### Forwardable Blurb — Slightly Longer
-
-```
-Hey [Target Name],
-
-[Connector] mentioned [specific context] — [why this prompted intro / why alignment exists].
-
-I'm Vrijen, founder of Careerspan. [2-3 sentences about Careerspan using V's voice:
-- What we do (crisp, specific)
-- What makes it different (concrete details, numbers if relevant)
-- Who we work with]
-
-[2-3 sentences on why this connection makes sense:
-- Specific alignment points
-- Value proposition tailored to thrust type
-- Context from connector's knowledge that strengthens relevance]
-
-[CTA based on thrust — partnership exploration, conversation request, specific ask].
-
-Happy to [jump on a call / share more details / explore how we could collaborate].
-
-Best,  
-Vrijen Attawar  
-Founder & CEO, Careerspan  
 vrijen@careerspan.com
 ```
 
@@ -181,9 +182,10 @@ Before generating, answer these:
 ## GENERATION RULES
 
 ### Rule 1: Always Address Connector
-- Wrapper email TO connector (not target)
-- Blurbs are third-person forwarding content
-- Connector has agency to choose how to use it
+- Context email TO connector (not target)
+- Blurb is third-person forwarding content
+- Connector forwards blurb to target
+- Keep it simple: 2 components only
 
 ### Rule 2: Crisp Articulation Required
 - One clear "What I'm looking for" statement
@@ -206,11 +208,11 @@ Before generating, answer these:
 - "from what you mentioned about [X]"
 - Shows this isn't templated
 
-### Rule 6: Two Blurb Versions Only
-- Ultra-short (3-4 lines)
-- Slightly longer (6-8 lines)
-- NO short/medium/long versions
-- Connector chooses or just forwards wrapper
+### Rule 6: Two Components Only
+- Context for connector (wrapper email)
+- Ultra-short forwardable blurb (3-4 lines)
+- NO "slightly longer" version
+- Simple: just these 2 pieces
 
 ---
 
@@ -244,12 +246,6 @@ Before generating, answer these:
 
 ---
 
-## Forwardable Blurb — Slightly Longer
-
-[6-8 line blurb with more context]
-
----
-
 ## Generation Notes
 
 **Thrust:** [Sales/Partnership | Info-Seeking | Network Access]  
@@ -275,7 +271,6 @@ When invoked:
 5. **Generate:**
    - Wrapper email to connector
    - Ultra-short blurb (3-4 lines)
-   - Slightly longer blurb (6-8 lines)
 6. **Voice check:** Does this sound like V? (em-dashes, clarity, no AI-speak)
 
 ---
@@ -294,4 +289,8 @@ If any answer is "no," revise.
 ---
 
 *This prompt generates connector-addressed warm intros using V's crisp articulation framework.*
+
+
+
+
 

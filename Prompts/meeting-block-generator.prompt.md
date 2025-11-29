@@ -9,6 +9,12 @@ tags:
   - blocks
   - generation
   - automation
+mg_stage: [MG-2, MG-6, MG-7]
+status: deprecated
+superseded_by:
+  - Prompts/Meeting Intelligence Generator.prompt.md
+  - Prompts/Meeting State Transition.prompt.md
+  - Prompts/Meeting Archive.prompt.md
 ---
 
 # Meeting Block Generator
@@ -333,6 +339,7 @@ echo "  Remaining: $pending_count blocks"
 ---
 
 **Execution:** This prompt is invoked by scheduled task every 30 minutes.
+
 
 
 

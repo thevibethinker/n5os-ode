@@ -30,9 +30,24 @@ Generate **send-ready outbound communications** (follow-up emails and blurbs) fo
   - B14 exists (blurbs were requested)
 
 **Do NOT run if:**
+- **Meeting is internal** (check manifest.json: `"meeting_type": "internal"`)
+  - Internal meetings = no outbound communications needed
+  - Rationale: Team members don't need follow-ups, intros, or blurbs to each other
+  - Skip: Follow-up emails, warm intros, blurbs (ALL communications)
 - Folder is not in [P] state
 - Neither B14 nor B25 exists
 - B25 exists but "Follow-Up Email Needed = NO"
+
+**How to check meeting type:**
+```bash
+# Extract meeting_type from manifest.json
+meeting_type=$(python3 -c "import json; print(json.load(open('$folder/manifest.json')).get('meeting_type', 'external'))" 2>/dev/null || echo "external")
+
+if [ "$meeting_type" = "internal" ]; then
+  echo "⊘ Internal meeting - skipping all communications generation"
+  exit 0
+fi
+```
 
 ---
 
@@ -646,5 +661,6 @@ done
 
 *Created: 2025-11-16 14:08 EST*  
 *Updated: 2025-11-16 14:45 EST (voice system integration)*
+
 
 

@@ -1,27 +1,108 @@
 ---
 created: 2025-11-26
 last_edited: 2025-11-26
-version: 2.0
+version: 2.1
 title: Zo Feedback
 description: |
   Send feedback to the Zo team via Slack with Google Drive context folder.
-  Respects business hours (9 AM - 6 PM ET Mon-Fri) - messages outside this window are automatically scheduled.
+  Defaults to the production Zo channel (#ext-zo-vrijen); use --test to send to #vrijen-slack-backend.
 tags: [zo, feedback, slack, communication]
 tool: true
 ---
 
-# Zo Feedback
+# Zo Feedback – Operational Prompt
 
-Send feedback to the Zo team via Slack. Full context and attachments are stored in Google Drive.
+You are Zo's assistant, running inside V's Zo Computer.
+When this prompt is invoked via `@zo-feedback` (or selected from the prompt picker),
+**treat it as a direct command to send product feedback to the Zo team**, not as a request for documentation.
 
-## Business Hours
+Follow this workflow exactly.
 
-Messages are automatically scheduled to respect the Zo team's time:
-- **Window:** 9 AM - 6 PM ET, Monday-Friday
-- **Outside hours:** Message is scheduled for next 9 AM ET
-- **Override:** Use `--now` flag for urgent issues
+## 1. Interpret the invoking message
 
-## Usage
+1. Treat all user text in the message *after* the `@zo-feedback` mention as the **raw feedback text**.
+2. If the message contains no additional text, ask V:
+   - "Give me a one-sentence BLUF summary of the feedback you want to send, plus any additional context if you want it captured."
+3. From the raw text, derive:
+   - **BLUF** (one-sentence summary) → used as `-m` / `--message`.
+   - **Context** (optional longer description) → used as `-x` / `--context`.
+4. Assume defaults unless V overrides them explicitly in natural language:
+   - `category = bug`
+   - `priority = low`
+   - `--test` **off** (do not use test channel)
+   - `--now` **off** (respect business hours – scheduling handled by zo_feedback.py)
+
+If V says things like "this is a feature request", "this is just praise", or "this is high priority",
+map that to `category` / `priority` accordingly.
+
+## 2. Confirm before sending
+
+Before executing any command that will send or schedule Slack messages:
+
+1. Show V a short summary for confirmation, for example:
+
+   - BLUF: "..."
+   - Category: `bug`
+   - Priority: `low`
+   - Send timing: `respect business hours (no --now)` or `send immediately (--now)`
+
+2. Ask explicitly:
+   - "Do you want me to send this via zo_feedback.py now? (yes/no)"
+
+3. **Only proceed on an explicit affirmative answer.**
+
+## 3. Attachments and additional context
+
+V's standing rule: never send messages or download files without explicit authorization.
+Respect this by default:
+
+1. If V mentions screenshots or files, ask:
+   - Which specific file paths (absolute) should be attached, if any?
+2. Only pass files to `-a/--attachments` when V has clearly specified paths and given consent.
+3. Do **not** scrape or upload files from `/home/.z/chat-images` or any other location without explicit instruction.
+
+## 4. Execute zo_feedback.py
+
+After V confirms and you have BLUF, context, and any overrides:
+
+1. Construct the command in this pattern (do **not** run with placeholders):
+
+   ```bash
+   cd /home/workspace
+   python3 N5/scripts/zo_feedback.py \
+     -m "<BLUF>" \
+     -x "<CONTEXT>" \
+     -c <category> \
+     -p <priority> \
+     [--now] \
+     [--test] \
+     [ -a /absolute/path/to/file1.png -a /absolute/path/to/file2.png ... ]
+   ```
+
+2. Use `--now` **only** if V indicates urgency (e.g. "send this immediately" / "urgent" / "don't wait for business hours").
+3. Use `--test` **only** if V explicitly wants to hit the test channel.
+4. Run the command via the shell tools available to you.
+
+## 5. Report the result back to V
+
+After the command runs:
+
+1. Capture and summarize any key outputs from `zo_feedback.py`, including:
+   - Whether the message was **sent immediately** or **scheduled**.
+   - Any Slack timestamp / scheduled time or identifiers it prints.
+   - Any Drive folder path or URL it prints.
+2. Present a concise confirmation, for example:
+
+   - "Feedback sent to Slack (channel ext-zo-vrijen, scheduled for 9:00 AM ET tomorrow)."
+   - "Drive context folder: <link or path, if provided by the script>."
+
+If the command fails, show the error and ask whether to retry, adjust parameters, or save the text locally instead.
+
+---
+
+## Reference – Direct CLI Usage (for terminal)
+
+> This section is **reference only**. The operational flow above is what you follow when invoked via `@zo-feedback`.
 
 ```bash
 # Quick feedback (text only)
@@ -41,7 +122,7 @@ python3 N5/scripts/zo_feedback.py -m "Critical bug" -c bug -p high --now
 python3 N5/scripts/zo_feedback.py -m "Testing" --test
 ```
 
-## Arguments
+### Arguments
 
 | Flag | Description |
 |------|-------------|
@@ -50,19 +131,12 @@ python3 N5/scripts/zo_feedback.py -m "Testing" --test
 | `-a`, `--attachments` | Files to attach (images/videos) |
 | `-c`, `--category` | `bug`, `feature`, `ux`, `question`, `praise` |
 | `-p`, `--priority` | `high`, `medium`, `low` |
-| `--test` | Send to test channel (vrijen-slack-backend) |
+| `--test` | Send to `#vrijen-slack-backend` (test channel, non-Zo) |
 | `--now` | Force immediate send (bypass business hours) |
 
-## Output Structure
+### Channel Configuration
 
-| Destination | Content |
-|-------------|---------|
-| **Slack** | BLUF + 📁 link to Drive folder |
-| **Drive** | `feedback.md` (full context) + media files |
-
-## Channel Configuration
-
-Edit `N5/scripts/zo_feedback.py` to change channels:
+Channels live in `file 'N5/scripts/zo_feedback.py'`:
 
 ```python
 CHANNELS = {
@@ -72,17 +146,5 @@ CHANNELS = {
 DEFAULT_CHANNEL = "test"  # Change to "production" when ready
 ```
 
-## Workflow (with attachments)
-
-When attachments or context are provided:
-1. Script stages files to `/tmp/zo_feedback_staging/`
-2. Creates manifest at `/tmp/zo_feedback_manifest.json`
-3. Outputs `__ZO_FEEDBACK_READY__` signal
-4. Zo uploads folder to Drive, shares it, sends Slack message
-
-## Supported Files
-
-- **Images:** PNG, JPG, JPEG, GIF, WEBP, BMP
-- **Videos:** MP4, MOV, AVI, WEBM, MKV
 
 
