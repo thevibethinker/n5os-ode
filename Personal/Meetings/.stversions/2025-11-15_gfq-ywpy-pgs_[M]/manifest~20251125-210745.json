@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-24T14:43:34.786897+00:00",
+  "meeting_folder": "2025-11-15_gfq-ywpy-pgs",
+  "meeting_date": "2025-11-15",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-1_Prompt"
+}

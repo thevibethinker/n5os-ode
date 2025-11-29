@@ -1,0 +1,40 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-25T17:40:00Z",
+  "meeting_folder": "2025-11-25_alexisstitchsenseaimishalstitchsenseai_alexisstitchsenseai_mishalstitchsenseai",
+  "meeting_date": "2025-11-25",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "meeting_type": "external",
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-25T18:50:00Z",
+    "status": "promised_intros_detected",
+    "workflow_run": "2025-11-25_MG-4_warm-intro-scan_v2",
+    "intro_files_count": 2,
+    "note": "MG-4 rerun at 2025-11-25T18:50:00Z confirmed the Darshan and RVC drafts remain current."
+  },
+  "warm_intros_generated": {
+    "count": 2,
+    "timestamp": "2025-11-25T17:45:00Z",
+    "status": "drafts_created",
+    "scan_run": "2025-11-25",
+    "intros": [
+      {
+        "file": "INTRO_Darshan_XRC.md",
+        "reason": "Darshan at XRC Ventures is a partner Vrijen offered to connect once Alexis & Misha were ready to share their factory optimization story.",
+        "type": "direct_intro"
+      },
+      {
+        "file": "INTRO_RVCCapital_CPG.md",
+        "reason": "RVC Capital is the CPG/production specialist VC Vrijen referenced and offered to loop in for their next phase of growth.",
+        "type": "direct_intro"
+      }
+    ]
+  },
+  "transition_timestamp": "2025-11-25T19:01:51.797133Z"
+}

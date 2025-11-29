@@ -1,0 +1,41 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-26T17:42:21.414361Z",
+  "meeting_folder": "2025-11-26_ekeshishyanpaypalcomelizabethkeshishyanekgmailcom_ekeshishyanpaypalcom_elizabethkeshishyanekgmailcom",
+  "meeting_date": "2025-11-26",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-26T18:45:00.000000+00:00",
+    "status": "scanned_no_new_intros",
+    "workflow_run": "2025-11-26_184500_warm_intro_mg4",
+    "intro_signals": 0,
+    "intro_files_count": 0,
+    "targets": [],
+    "note": "MG-4 run 2025-11-26_184500_warm_intro_mg4: saw 0 signal(s), 0 new draft(s)."
+  },
+  "warm_intros_generated": {
+    "timestamp": "2025-11-26T18:45:00.000000+00:00",
+    "status": "scanned_no_new_intros",
+    "workflow_run": "2025-11-26_184500_warm_intro_mg4",
+    "count": 0,
+    "files": [],
+    "targets": [],
+    "note": "MG-4 run 2025-11-26_184500_warm_intro_mg4: created 0 draft(s).",
+    "last_verified": "2025-11-27T01:30:00Z"
+  },
+  "warm_intros_workflow_runs": [
+    {
+      "timestamp": "2025-11-27T01:30:00Z",
+      "workflow_id": "2025-11-27_013000_warm_intro_scheduled",
+      "action": "scheduled_scan",
+      "result": "no_new_intros",
+      "note": "Scheduled workflow run at 2025-11-27T01:30:00Z: verified existing intros, no new generation required"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-25T15:42:27.221231Z",
+  "meeting_folder": "2025-11-25_Daily_co-founder_standup__check_trello",
+  "meeting_date": "2025-11-25",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-25T16:51:23Z",
+    "status": "no_promised_intros_detected",
+    "workflow_run": "2025-11-25_MG-4_warm-intro-scan",
+    "intro_files_count": 0,
+    "note": "No introduction promises detected during MG-4 scan."
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-25T16:50:25Z",
+    "status": "no_new_intros",
+    "scan_run": "2025-11-25",
+    "intros": []
+  },
+  "transitioned_at": "2025-11-25T17:03:29.966003Z"
+}

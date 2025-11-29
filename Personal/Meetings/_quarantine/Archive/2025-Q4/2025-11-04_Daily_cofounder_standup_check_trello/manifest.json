@@ -1,0 +1,219 @@
+{
+  "meeting_id": "2025-11-04_Daily_cofounder_standup_check_trello",
+  "generated_at": "2025-11-16T17:01:39Z",
+  "transcript_word_count": 4184,
+  "meeting_type": "internal_standup",
+  "classification": "internal",
+  "duration_estimate_minutes": 20,
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Standard core block; captures full meeting context, participants (Vrijen & Logan), discussion threads around funding, strategy, network outreach, and technical issues"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Standard core block; multiple explicit commitments identified: Vrijen to organize financial runway, press for answer on funding daily, Logan to consider payment options"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "DECISIONS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Key strategic decisions made: (1) exit strategy targeting Q2 2026, (2) 2-month announcement period + 1-month execution, (3) approach SHRM partnership, (4) activate network for SHRM Labs connection through Laura/Chris Russell"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Multiple time-bound action items: contact Luis before Albert meeting, prepare SHRM application materials, reach out to Chris Russell + Laura for SHRM Labs intro, connect with Mike Swift (Major League Hacking), manage Danny's departure transition",
+      "updated_at": "2025-11-17T02:57:23.848106",
+      "generated_at": "2025-11-17T02:57:23.848120",
+      "file_path": "B05_ACTION_ITEMS.md",
+      "word_count": 2847
+    },
+    {
+      "block_id": "B05_STRAT",
+      "block_name": "STRATEGIC_IMPLICATIONS",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Significant strategic content: SHRM Labs positioning, Magic Link feature for job board alignment, potential Rockle acquisition, exit/acquisition timeline window Q1-Q2 2026, momentum narrative for 3-month push",
+      "updated_at": "2025-11-17T02:57:28.566150",
+      "generated_at": "2025-11-17T02:57:28.566163",
+      "file_path": "B05_STRAT_STRATEGIC_IMPLICATIONS.md",
+      "word_count": 5289
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Follow-ups required: Danny's departure timing (2-3 weeks window Nov), funding answer needed today/tomorrow, SHRM Labs conversation with any/Ilia, potential Mike Swift conversation through Adam, Chris Russell product feedback conversation",
+      "updated_at": "2025-11-17T02:57:33.115769",
+      "generated_at": "2025-11-17T02:57:33.115787",
+      "file_path": "B08_FOLLOW_UP_CONVERSATIONS.md",
+      "word_count": 4156
+    },
+    {
+      "block_id": "B10",
+      "block_name": "RISK_REGISTER",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Risk factors identified: (1) 100k funding constraint, (2) Danny departure creates gap, (3) Overseas investment restrictions (father's account), (4) Q2 2026 exit dependency on next 3-4 months execution, (5) Doldrums period momentum risk",
+      "generated_at": "2025-11-17T04:08:15Z",
+      "file_path": "B10_RISK_REGISTER.md",
+      "word_count": 5847
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "generated",
+      "category": "optional",
+      "reason": "Strategic moments captured: Vrijen's insight about isolation/productivity trade-off (8am-11pm grind), Logan's momentum psychology ('dopamine of momentum'), network obsession as double-edged sword, 'Magic Link' product positioning",
+      "generated_at": "2025-11-17T04:08:16Z",
+      "file_path": "B21_KEY_MOMENTS.md",
+      "word_count": 6342
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "generated",
+      "category": "core",
+      "reason": "Standard core block; captures meeting classification (internal standup), participant metadata (CEO + co-founder), tags (finance, strategy, network, product), tracking for Careerspan internal rhythm",
+      "generated_at": "2025-11-17T04:08:14Z",
+      "file_path": "B26_MEETING_METADATA.md",
+      "word_count": 1156
+    },
+    {
+      "block_id": "B14",
+      "block_name": "BLURBS_REQUESTED",
+      "priority": 1,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Content drafts and messaging: SHRM application copy, Chris Russell outreach template with Magic Link product pitch, financial runway narrative for 100k funding request",
+      "generated_at": "2025-11-17T04:19:49Z",
+      "file_path": "B14_BLURBS_REQUESTED.md",
+      "word_count": 1847
+    },
+    {
+      "block_id": "B25",
+      "block_name": "DELIVERABLE_CONTENT_MAP",
+      "priority": 1,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Complete mapping of all deliverables in flight: SHRM application, Magic Link product brief, financial documentation, exit strategy, network activation, outreach templates, timeline milestones, and success criteria through Q2 2026",
+      "generated_at": "2025-11-17T04:19:49Z",
+      "file_path": "B25_DELIVERABLE_CONTENT_MAP.md",
+      "word_count": 3156
+    }
+  ],
+  "metadata": {
+    "participants": {
+      "vrijen_attawar": {
+        "role": "CEO/Founder",
+        "primary_owner": true
+      },
+      "logan_currie": {
+        "role": "Co-founder",
+        "primary_owner": false
+      }
+    },
+    "topics": [
+      "financial_runway",
+      "funding_strategy",
+      "exit_acquisition_timeline",
+      "network_development",
+      "partnership_strategy",
+      "employee_transition",
+      "product_positioning",
+      "technical_system_issues"
+    ],
+    "external_contacts_mentioned": [
+      "Luis",
+      "Albert",
+      "Chris Russell",
+      "Laura",
+      "Gemma",
+      "Hadeel",
+      "Mike Swift",
+      "Adam"
+    ],
+    "context_flags": {
+      "financial_pressure": true,
+      "exit_imminent": true,
+      "team_transition": true,
+      "strategic_window_closing": true
+    }
+  },
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "in_progress",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:48:12.510909+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "n/a",
+      "reason": "internal_only",
+      "completed_at": "2025-11-18T03:09:32.900293+00:00",
+      "last_updated_by": "follow_up_email_generator"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.710055+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.710055+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-25T08:16:03.562112",
+    "status": "scanned_no_new_intros",
+    "scan_run": "2025-11-25"
+  },
+  "ready_for_state_transition": {
+    "status": false,
+    "blocking_systems": [
+      "intelligence_blocks"
+    ],
+    "last_evaluated": "2025-11-18T03:14:32.585234+00:00"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T13:13:03.833046",
+    "status": "intros_current",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking_v2",
+    "note": "All intro files verified current, no new signals detected"
+  }
+}

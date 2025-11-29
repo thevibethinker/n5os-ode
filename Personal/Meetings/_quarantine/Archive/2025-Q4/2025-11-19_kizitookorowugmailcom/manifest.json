@@ -1,0 +1,128 @@
+{
+  "meeting_id": "2025-11-19_kizitookorowugmailcom",
+  "generated_at": "2025-11-19T16:03:11Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "generated",
+      "generated_at": "2025-11-19T16:18:44Z",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS",
+      "status": "generated",
+      "generated_at": "2025-11-19T16:18:44Z",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "generated",
+      "generated_at": "2025-11-19T16:18:44Z",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B14",
+      "canonical_name": "BLURBS_REQUESTED",
+      "status": "generated",
+      "generated_at": "2025-11-19T16:18:44Z",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B25",
+      "canonical_name": "DELIVERABLES",
+      "status": "generated",
+      "priority": 1,
+      "mandatory": true,
+      "generated_at": "2025-11-19T16:49:38.785767Z"
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "generated",
+      "priority": 1,
+      "mandatory": true,
+      "generated_at": "2025-11-19T16:49:38.785767Z"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "STAKEHOLDER_INTEL",
+      "status": "generated",
+      "priority": 2,
+      "mandatory": false,
+      "trigger": "External party profiling - Kizito is enthusiastic user and potential advisor",
+      "generated_at": "2025-11-19T16:49:38.785767Z"
+    },
+    {
+      "block_id": "B06",
+      "canonical_name": "BUSINESS_CONTEXT",
+      "status": "generated",
+      "priority": 2,
+      "mandatory": false,
+      "trigger": "Monetization strategy, team structure, scaling, competitive positioning discussed",
+      "generated_at": "2025-11-19T16:49:38.785767Z"
+    },
+    {
+      "block_id": "B07",
+      "canonical_name": "TONE_AND_CONTEXT",
+      "status": "generated",
+      "priority": 3,
+      "mandatory": false,
+      "trigger": "Warm collegial relationship, trust-building, rapport established",
+      "generated_at": "2025-11-19T18:22:11.481737Z"
+    },
+    {
+      "block_id": "B13",
+      "canonical_name": "RISKS_OPPORTUNITIES",
+      "status": "generated",
+      "priority": 3,
+      "mandatory": false,
+      "trigger": "Community cultivation challenges, lean team constraints, scaling opportunities",
+      "generated_at": "2025-11-19T18:22:11.481737Z"
+    }
+  ],
+  "selection_rationale": "Mandatory blocks included per protocol. Conditional blocks selected based on semantic analysis: B03_STAKEHOLDER_INTEL added for external party profiling (Kizito as enthusiastic user and potential advisor). B06_BUSINESS_CONTEXT added for monetization strategy, team structure (4-person lean team), and scaling discussions. B07_TONE_AND_CONTEXT added for relationship quality and communication dynamics. B13_RISKS_OPPORTUNITIES added for strategic challenges (community cultivation, scaling) and growth opportunities. Total: 10 blocks (6 mandatory + 4 conditional).",
+  "total_blocks": 10,
+  "metadata": {
+    "meeting_type": "networking_advisory",
+    "participants": 2,
+    "external_parties": [
+      "Kizito Okorowu (Ontario, Canada) - NextPlay community member, Careerspan user"
+    ],
+    "careerspan_attendees": [
+      "Vrijen"
+    ],
+    "has_decisions": true,
+    "has_strategic_content": true,
+    "has_action_items": true,
+    "estimated_impact": "medium",
+    "key_topics": [
+      "community_building",
+      "monetization_strategy",
+      "user_advocacy",
+      "partnership_exploration",
+      "zo_ambassador",
+      "ats_integration"
+    ],
+    "business_implications": "User validation for Careerspan, insights on community sustainability, exploration of partnership with Zo platform"
+  },
+  "warm_intros_generated": {
+    "count": 1,
+    "timestamp": "2025-11-21T07:12:46.264119",
+    "status": "drafts_ready",
+    "scan_run_id": "2025-11-21_scheduled_workflow"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T11:07:00.107674",
+    "status": "intros_current",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking",
+    "note": "All intro files verified current, no new signals detected"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-24T19:42:36.551660Z",
+  "meeting_folder": "2025-11-24_logantheapplyaidspeigelgmailcomloganhcgmailcom_logantheapplyai_dspeigelgmailcom_loganhcgmailcom",
+  "meeting_date": "2025-11-24",
+  "status": "processed",
+  "mg_stage": "MG-2",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-11-25T14:02:57.619077+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-25T14:02:57.619089+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  }
+}

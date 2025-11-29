@@ -1,0 +1,50 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-24T18:42:21.224573Z",
+  "meeting_folder": "2025-11-24_fbw-tsfw-ima",
+  "meeting_date": "2025-11-24",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "warm_intros_generated": {
+    "count": 2,
+    "timestamp": "2025-11-24T23:56:23Z",
+    "status": "drafts_ready",
+    "last_scanned": "2025-11-24T23:56:23Z",
+    "last_workflow_run": "2025-11-24_MG-4_warm_intro_generation_v6",
+    "note": "MG-4 warm intro scan at 2025-11-24T23:56:23Z; 2 intro(s) remain current.",
+    "intros": [
+      {
+        "connector": "Vrijen Attawar",
+        "person_a": "Marianne Ray",
+        "person_b": "Zo Computer team",
+        "type": "job_candidate",
+        "files": [
+          "INTRO_MarianneRay_ZoComputer_connector.md"
+        ]
+      },
+      {
+        "connector": "Vrijen Attawar",
+        "person_a": "Marianne Ray",
+        "person_b": "Elise AI talent team",
+        "type": "job_candidate",
+        "files": [
+          "INTRO_MarianneRay_EliseAI_connector.md"
+        ]
+      }
+    ]
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T23:56:23Z",
+    "status": "verified_current",
+    "workflow_run": "2025-11-24_scheduled_warm_intro_drafts",
+    "note": "Verified by scheduled warm intro draft workflow at 2025-11-24T23:56:23Z; 2 intros confirmed current."
+  },
+  "last_updated_at": "2025-11-24T19:20:03.698342+00:00",
+  "rework_manifests_merged": "2025-11-24T21:42:28.379925Z",
+  "transition_timestamp": "2025-11-25T13:05:45.708596Z"
+}

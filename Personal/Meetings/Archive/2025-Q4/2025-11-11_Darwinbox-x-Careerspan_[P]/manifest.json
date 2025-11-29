@@ -1,0 +1,31 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-24T14:43:34.772169+00:00",
+  "meeting_folder": "2025-11-11_Darwinbox-x-Careerspan",
+  "meeting_date": "2025-11-11",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-26T17:53:36.585877+00:00",
+    "status": "scanned_no_new_intros",
+    "workflow_run": "2025-11-26_175336_warm_intro_mg4",
+    "intro_signals": 0,
+    "intro_files_count": 0,
+    "targets": [],
+    "note": "MG-4 run 2025-11-26_175336_warm_intro_mg4: saw 0 signal(s), 0 new draft(s)."
+  },
+  "warm_intros_generated": {
+    "timestamp": "2025-11-26T17:53:36.585877+00:00",
+    "status": "scanned_no_new_intros",
+    "workflow_run": "2025-11-26_175336_warm_intro_mg4",
+    "count": 0,
+    "files": [],
+    "targets": [],
+    "note": "MG-4 run 2025-11-26_175336_warm_intro_mg4: created 0 draft(s)."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "meeting_id": "2025-09-09_Krista-Tan_talent-collective_partnership-discovery",
+  "generated_at": "2025-11-17T02:58:29Z",
+  "transcript_path": "transcript.md",
+  "meeting_metadata": {
+    "date": "2025-09-09",
+    "participants": 3,
+    "primary_contact": "Krista Tan",
+    "organization": "Talent Collective",
+    "meeting_type": "partnership_discovery",
+    "relationship_type": "external"
+  },
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "generated",
+      "priority": 1,
+      "rationale": "Core block - comprehensive overview of partnership exploration between Careerspan and Talent Collective",
+      "generated_at": "2025-11-17T04:53:38Z"
+    },
+    {
+      "block_id": "B02",
+      "canonical_name": "COMMITMENTS",
+      "status": "generated",
+      "priority": 1,
+      "rationale": "Core block - explicit commitments: Krista to test product, share with community, Careerspan to provide content/code",
+      "generated_at": "2025-11-17T04:53:38Z"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "STAKEHOLDER_INTEL",
+      "status": "generated",
+      "priority": 2,
+      "rationale": "Contextual - Krista Tan profiling, Talent Collective structure (10 chapters), community dynamics, decision-making criteria",
+      "generated_at": "2025-11-17T05:04:30Z"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS_MADE",
+      "status": "generated",
+      "priority": 2,
+      "rationale": "Contextual - Key decisions: focus on Product/Engineering roles, freemium model, free platform forever, community-first approach",
+      "generated_at": "2025-11-17T05:04:30Z"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "generated",
+      "priority": 2,
+      "rationale": "Contextual - Immediate action items with owners and timeline (product testing, community posting, content sharing)",
+      "generated_at": "2025-11-17T05:04:30Z"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "STRATEGIC_IMPLICATIONS",
+      "status": "generated",
+      "priority": 3,
+      "rationale": "Contextual - Partnership positioning, market differentiation (warm intros vs. high/low signal channels), GTM strategy",
+      "generated_at": "2025-11-17T05:15:47.457918Z"
+    },
+    {
+      "block_id": "B08",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "status": "generated",
+      "priority": 3,
+      "rationale": "Contextual - Explicit follow-ups: second call, community platform integration, product feedback loop",
+      "generated_at": "2025-11-17T05:15:47.457918Z"
+    },
+    {
+      "block_id": "B10",
+      "canonical_name": "RISK_REGISTER",
+      "status": "generated",
+      "priority": 3,
+      "rationale": "Contextual - Identified risks: market saturation, integration demands from hiring companies, community skepticism",
+      "generated_at": "2025-11-17T05:15:47.457918Z"
+    },
+    {
+      "block_id": "B21",
+      "canonical_name": "KEY_MOMENTS",
+      "status": "generated",
+      "priority": 3,
+      "rationale": "Optional wildcard - Strategic quotes on warm intros, values alignment, community trust dynamics",
+      "generated_at": "2025-11-17T05:26:11.369955+00:00"
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "generated",
+      "priority": 1,
+      "rationale": "Core block - Classification, tags, meeting system metadata",
+      "generated_at": "2025-11-17T04:53:38Z"
+    }
+  ],
+  "selection_rationale": "Partnership discovery meeting with clear B2B/community integration opportunity. Core blocks (B01, B02, B26) always generated. Added B03_STAKEHOLDER_INTEL for external stakeholder profiling, B03_DECISIONS_MADE for strategic pivots (freemium, niche strategy), B05_ACTION_ITEMS for immediate commitments, B05_STRATEGIC_IMPLICATIONS for GTM positioning, B08_FOLLOW_UP_CONVERSATIONS for explicit next steps, B10_RISK_REGISTER for market and integration risks. Selected B21_KEY_MOMENTS as first wildcard for strategic quotes on warm introduction value proposition.",
+  "total_blocks": 10,
+  "selection_method": "semantic_analysis",
+  "content_richness": "high",
+  "notes": "Strong partnership exploration with concrete commitments. Community-first positioning aligns with Careerspan values. Key risks around market noise and hiring company gatekeeping identified and should be monitored.",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.698804+00:00",
+      "last_updated_by": "migration_script",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:47:20.872669+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "not_started"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.698804+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.698804+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-25T08:16:03.557957",
+    "status": "scanned_no_new_intros",
+    "scan_run": "2025-11-25"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T13:13:03.833046",
+    "status": "no_signals_detected",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking_v2",
+    "note": "B07 reviewed - no actionable warm intro opportunities"
+  }
+}

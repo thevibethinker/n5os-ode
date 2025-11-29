@@ -1,0 +1,20 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-23T14:42:21.684963Z",
+  "meeting_folder": "2025-11-19_rochelmycareerspancom_[P]",
+  "meeting_date": "2025-11-19",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "intros_generated": [
+    "INTRO_Rochel_Braze_connector.md",
+    "INTRO_Rochel_Forerunner_MeganMetzger_connector.md",
+    "INTRO_Rochel_McKinsey_connector.md",
+    "INTRO_Rochel_Sapphire_connector.md"
+  ],
+  "last_updated_by": "MG-6_Prompt",
+  "transition_timestamp": "2025-11-23T23:01:28.357367Z"
+}

@@ -1,0 +1,121 @@
+{
+  "meeting_id": "2025-09-22_Giovanna-Ventola-Rise-Community_networking",
+  "generated_at": "2025-11-16T22:47:16.140693Z",
+  "transcript_word_count": 7786,
+  "meeting_type": "networking",
+  "classification": "external",
+  "participants": [],
+  "blocks_selected": 7,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "generated",
+      "generated_at": "2025-11-17T06:53:25Z",
+      "category": "core",
+      "reason": "Always generated for all meetings"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "generated",
+      "generated_at": "2025-11-17T06:53:25Z",
+      "category": "core",
+      "reason": "Always generated for all meetings; multiple action items identified"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "generated",
+      "generated_at": "2025-11-17T06:53:25Z",
+      "category": "core",
+      "reason": "Always generated for all meetings"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "STAKEHOLDER_INTELLIGENCE",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "External meeting - Giovanna Ventola with Rise community is key stakeholder",
+      "generated_at": "2025-11-17T07:04:01Z"
+    },
+    {
+      "block_id": "B05_ALT",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Multiple next steps: trial code, follow-up email, community integration",
+      "generated_at": "2025-11-17T07:04:01Z"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "generated",
+      "category": "optional",
+      "reason": "Rich discussion with valuable quotes about job market crisis and career advice philosophy",
+      "generated_at": "2025-11-17T07:04:01Z"
+    },
+    {
+      "block_id": "B07",
+      "block_name": "RISKS_OPPORTUNITIES",
+      "priority": 3,
+      "status": "generated",
+      "category": "contextual",
+      "reason": "Discussion of ATS problems, recruiting challenges, market opportunity",
+      "generated_at": "2025-11-17T09:23:26Z"
+    }
+  ],
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.699836+00:00",
+      "last_updated_by": "migration_script",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:47:20.873035+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "not_started"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.699836+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.699836+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-25T18:35:52.868204",
+    "status": "scanned_no_signals",
+    "note": "Semantic analysis detected no actionable intro requests"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-27T13:27:59.626338Z",
+    "status": "no_new_intros",
+    "workflow_run": "2025-11-27_08:25_scheduled_backwards_looking",
+    "intro_files_count": 0,
+    "note": "No actionable intro signals detected in B07 analysis"
+  }
+}

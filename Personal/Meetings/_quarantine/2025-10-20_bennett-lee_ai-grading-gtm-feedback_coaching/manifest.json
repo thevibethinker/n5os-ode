@@ -1,0 +1,28 @@
+{
+  "warm_intros_generated": {
+    "count": 2,
+    "timestamp": "2025-11-23T12:56:14.724117",
+    "status": "drafts_ready",
+    "intros": [
+      {
+        "connector": "Logan Curry",
+        "target": "Bennett Lee",
+        "type": "network_access",
+        "file": "INTRO_Logan_Curry_Bennett_Lee_opt_in.md"
+      },
+      {
+        "connector": "Erica Underwood",
+        "target": "Bennett Lee",
+        "type": "advisory",
+        "conditional": true,
+        "file": "INTRO_Erica_Underwood_Bennett_Lee_opt_in.md"
+      }
+    ]
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T11:07:00.107674",
+    "status": "intros_current",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking",
+    "note": "All intro files verified current, no new signals detected"
+  }
+}

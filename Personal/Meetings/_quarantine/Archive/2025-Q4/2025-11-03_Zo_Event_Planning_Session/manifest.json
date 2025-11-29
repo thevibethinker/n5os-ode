@@ -1,0 +1,84 @@
+{
+  "meeting_id": "2025-11-03_Zo_Event_Planning_Session",
+  "generated_at": "2025-11-16T14:31:36.852110Z",
+  "transcript_word_count": 4789,
+  "meeting_type": "internal_strategy",
+  "classification": "internal",
+  "participants": [
+    "Vrijen Attawar",
+    "Tiffany Huang"
+  ],
+  "blocks_selected": 8,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Always generated - comprehensive meeting overview"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Always generated - multiple commitments on demo/slides"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "DECISIONS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple decisions: talk structure (2 talks + networking), demo approach (personal site + workflows), messaging strategy"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Action items identified: create consumer AI comparison slide, refine demo examples, enhance website interactivity, prepare market analysis narrative"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "STRATEGIC_IMPLICATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Strategic positioning discussion: Zo vs Lovable differentiation, market saturation response, product value proposition"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Event on Wednesday requires follow-up: demo testing, slide completion, Ben Lang outreach coordination"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "completed",
+      "category": "optional",
+      "reason": "Strong strategic quotes and positioning discussion about product differentiation and market critique"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Always generated - classification and tracking"
+    }
+  ],
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T11:07:00.107674",
+    "status": "intros_current",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking",
+    "note": "All intro files verified current, no new signals detected"
+  }
+}

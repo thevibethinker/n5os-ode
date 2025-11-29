@@ -1,0 +1,88 @@
+{
+  "meeting_id": "2025-10-27_Gabi_Vrijen_Onboarding",
+  "generated_at": "2025-11-16T15:01:51.715294Z",
+  "transcript_word_count": 3500,
+  "meeting_type": "product_demo",
+  "classification": "internal",
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01_DETAILED_RECAP",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - always generated"
+    },
+    {
+      "block_id": "B02_COMMITMENTS",
+      "block_name": "COMMITMENTS",
+      "priority": 2,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - always generated"
+    },
+    {
+      "block_id": "B26_MEETING_METADATA",
+      "block_name": "MEETING_METADATA",
+      "priority": 3,
+      "status": "completed",
+      "category": "core",
+      "reason": "Core block - always generated"
+    },
+    {
+      "block_id": "B03_STAKEHOLDER_INTEL",
+      "block_name": "STAKEHOLDER_INTEL",
+      "priority": 4,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "External user onboarding - need stakeholder profile"
+    },
+    {
+      "block_id": "B06_BUSINESS_CONTEXT",
+      "block_name": "BUSINESS_CONTEXT",
+      "priority": 5,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Product demo with plan selection and pricing discussion"
+    },
+    {
+      "block_id": "B05_ACTION_ITEMS",
+      "block_name": "ACTION_ITEMS",
+      "priority": 6,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Multiple setup tasks and follow-ups identified"
+    },
+    {
+      "block_id": "B08_FOLLOW_UP_CONVERSATIONS",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 7,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "GitHub account creation and secure bridge implementation needed"
+    },
+    {
+      "block_id": "B21_KEY_MOMENTS",
+      "block_name": "KEY_MOMENTS",
+      "priority": 8,
+      "status": "completed",
+      "category": "contextual",
+      "reason": "Notable user experience observations during setup flow"
+    },
+    {
+      "block_id": "B07_TONE_AND_CONTEXT",
+      "block_name": "TONE_AND_CONTEXT",
+      "priority": 9,
+      "status": "completed",
+      "category": "wildcard",
+      "reason": "Mentoring relationship with personal anecdotes (credit card discussion)"
+    }
+  ],
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T11:07:00.107674",
+    "status": "intros_current",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking",
+    "note": "All intro files verified current, no new signals detected"
+  }
+}

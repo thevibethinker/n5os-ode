@@ -1,0 +1,74 @@
+{
+  "meeting_id": "2025-11-17_TEST_Meeting_Fix_Verification",
+  "generated_at": "2025-11-18T15:01:32Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "not_applicable",
+      "deletion_reason": "Test meeting with minimal content. Transcript contains only placeholder text with no substantive discussion threads, context, or details.",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "DECISIONS",
+      "status": "not_applicable",
+      "deletion_reason": "No decisions were made or discussed in this test verification meeting.",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "not_applicable",
+      "deletion_reason": "No action items or next steps identified in this test meeting.",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B14",
+      "canonical_name": "BLURBS_REQUESTED",
+      "status": "not_applicable",
+      "deletion_reason": "No content blurbs, messaging, or copy discussed or requested in this test verification meeting.",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B25",
+      "canonical_name": "DELIVERABLES",
+      "status": "not_applicable",
+      "deletion_reason": "No content deliverables were promised or discussed in this test meeting.",
+      "priority": 1,
+      "mandatory": true
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "generated",
+      "generated_at": "2025-11-18T15:31:37Z",
+      "priority": 1,
+      "mandatory": true
+    }
+  ],
+  "selection_rationale": "This is a test verification meeting with minimal content. All mandatory core blocks have been included in the manifest. Blocks B01-B05 and B14, B25 are marked as 'not_applicable' because this test meeting contains no substantive content triggering their generation. B26_MEETING_METADATA is the only actionable block due to available meeting metadata. No conditional blocks apply due to absence of strategic content, partnerships, risks, or other triggering patterns.",
+  "total_blocks": 6,
+  "metadata": {
+    "meeting_type": "test_verification",
+    "participants": 1,
+    "external_parties": [],
+    "careerspan_attendees": [],
+    "has_decisions": false,
+    "has_strategic_content": false,
+    "has_deliverables": false,
+    "has_action_items": false,
+    "estimated_impact": "low"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T11:07:00.107674",
+    "status": "intros_current",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking",
+    "note": "All intro files verified current, no new signals detected"
+  }
+}

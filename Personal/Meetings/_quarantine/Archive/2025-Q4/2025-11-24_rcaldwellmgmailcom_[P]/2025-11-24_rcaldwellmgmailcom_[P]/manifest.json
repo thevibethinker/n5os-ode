@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-24T20:42:21.392643Z",
+  "meeting_folder": "2025-11-24_rcaldwellmgmailcom",
+  "meeting_date": "2025-11-24",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "rework_manifests_merged": "2025-11-24T21:42:28.380954Z",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-24T22:00:24Z",
+    "status": "no_actionable_intros",
+    "last_scanned": "2025-11-24T22:00:24Z",
+    "last_workflow_run": "2025-11-24_MG-4_warm_intro_generation_v5",
+    "note": "MG-4 warm intro scan at 2025-11-24T22:00:24Z; no third-party introductions were detected."
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T22:28:48.646665",
+    "status": "verified_current",
+    "workflow_run": "2025-11-24_scheduled_warm_intro_drafts",
+    "note": "Verified by scheduled warm intro draft workflow; 0 intros confirmed current"
+  }
+}

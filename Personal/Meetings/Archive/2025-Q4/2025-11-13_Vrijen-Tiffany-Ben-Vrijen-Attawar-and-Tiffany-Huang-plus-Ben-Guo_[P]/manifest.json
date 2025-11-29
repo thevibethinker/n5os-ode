@@ -1,0 +1,30 @@
+{
+  "meeting_date": "2025-11-13",
+  "meeting_type": "external",
+  "participants": [
+    "Vrijen Attawar",
+    "Tiffany Huang",
+    "Ben Guo"
+  ],
+  "meeting_context": "zo_launch_support",
+  "warm_intros_generated": {
+    "count": 4,
+    "timestamp": "2025-11-27T22:48:24.721113",
+    "status": "drafts_ready"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-28T16:21:41.695815+00:00",
+    "status": "scanned_no_new_intros",
+    "workflow_run": "2025-11-28_11:20_scheduled_task",
+    "note": "Backward-looking scan found no new intro signals (all previously processed)"
+  },
+  "follow_up_email_generated": {
+    "timestamp": "2025-11-23T15:03:35Z",
+    "status": "draft_ready",
+    "quality_score": "88/100",
+    "file": "FOLLOW_UP_EMAIL.md",
+    "timing_note": "Generated 10 days post-meeting (retrospective)"
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "status": "processed"
+}

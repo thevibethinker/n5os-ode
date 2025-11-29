@@ -1,0 +1,14 @@
+{
+  "warm_intros_generated": {
+    "count": 2,
+    "timestamp": "2025-11-28T20:59:50.810925",
+    "status": "drafts_ready"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-29T20:15:35.073806Z",
+    "status": "all_intros_previously_generated",
+    "workflow_run": "2025-11-29_15:10_scheduled_task",
+    "intro_files_count": 3,
+    "note": "Deduplication successful - all existing intro files confirmed (no new generation needed)"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "meeting_id": "2025-10-21_Zoe-Weber_networking",
+  "generated_at": "2025-11-17T02:27:44.109153Z",
+  "transcript_path": "transcript.md",
+  "blocks": [
+    {
+      "block_id": "B01",
+      "canonical_name": "DETAILED_RECAP",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T06:10:14.472367+00:00"
+    },
+    {
+      "block_id": "B02",
+      "canonical_name": "COMMITMENTS",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T06:10:14.472367+00:00"
+    },
+    {
+      "block_id": "B03",
+      "canonical_name": "STAKEHOLDER_INTEL",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T06:21:07.576384+00:00"
+    },
+    {
+      "block_id": "B04",
+      "canonical_name": "DECISIONS",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T06:21:07.576384+00:00"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "STRATEGIC_IMPLICATIONS",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T06:21:07.576384+00:00"
+    },
+    {
+      "block_id": "B05",
+      "canonical_name": "ACTION_ITEMS",
+      "status": "generated",
+      "priority": 2,
+      "generated_at": "2025-11-17T06:32:24.934320+00:00"
+    },
+    {
+      "block_id": "B08",
+      "canonical_name": "FOLLOW_UP_CONVERSATIONS",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T06:32:24.934320+00:00"
+    },
+    {
+      "block_id": "B07",
+      "canonical_name": "TONE_AND_CONTEXT",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T06:42:57.012929+00:00"
+    },
+    {
+      "block_id": "B06",
+      "canonical_name": "BUSINESS_CONTEXT",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T06:32:24.934320+00:00"
+    },
+    {
+      "block_id": "B21",
+      "canonical_name": "KEY_MOMENTS",
+      "status": "generated",
+      "priority": 3,
+      "generated_at": "2025-11-17T06:42:57.012929+00:00"
+    },
+    {
+      "block_id": "B26",
+      "canonical_name": "MEETING_METADATA",
+      "status": "generated",
+      "priority": 1,
+      "generated_at": "2025-11-17T06:10:14.472367+00:00"
+    }
+  ],
+  "selection_rationale": "External networking meeting with partnership potential. Core blocks included. Conditional blocks selected based on: (1) partnership/collaboration detected (Gorgeous Ventures, alumni networks, CMC), (2) strategic decisions made (shift from fundraising to acquisition focus), (3) action items identified (survey sharing, resource distribution), (4) follow-ups planned (CMC engagement), (5) key strategic moments captured. Wildcard slots used for tone analysis (strong relationship building) and business context (monetization model discussion). Total: 11 blocks targeting optimal content coverage.",
+  "total_blocks": 11,
+  "analysis": {
+    "meeting_type": "External Networking / Partnership Discovery",
+    "participants": 2,
+    "key_themes": [
+      "MBA alumni connection",
+      "Careerspan product demo and strategy",
+      "Gorgeous Ventures partnership potential",
+      "Alumni network distribution channels",
+      "CMC integration opportunity",
+      "International student segment focus",
+      "Monetization strategy shift"
+    ],
+    "strategic_level": "Medium-High",
+    "trigger_patterns": {
+      "partnership_mentions": true,
+      "decisions_made": true,
+      "action_items": true,
+      "risks_identified": true,
+      "follow_ups_planned": true,
+      "key_quotes": true
+    }
+  },
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.701639+00:00",
+      "last_updated_by": "migration_script",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:47:20.873673+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "not_started"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.701639+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.701639+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-25T08:16:03.564833",
+    "status": "scanned_no_new_intros",
+    "scan_run": "2025-11-25"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-24T13:13:03.833046",
+    "status": "no_signals_detected",
+    "workflow_run": "2025-11-24_scheduled_backwards_looking_v2",
+    "note": "B07 reviewed - no actionable warm intro opportunities"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "meeting_id": "2025-10-30_Zo_Conversation",
+  "generated_at": "2025-11-16T16:31:34Z",
+  "transcript_word_count": 5363,
+  "meeting_type": "internal_strategy",
+  "classification": "internal",
+  "blocks_selected": 9,
+  "blocks": [
+    {
+      "block_id": "B01",
+      "block_name": "DETAILED_RECAP",
+      "priority": 1,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:21:42Z",
+      "category": "core",
+      "reason": "Core block: comprehensive meeting overview required"
+    },
+    {
+      "block_id": "B02",
+      "block_name": "COMMITMENTS",
+      "priority": 1,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:21:42Z",
+      "category": "core",
+      "reason": "Core block: multiple explicit commitments made (event planning, outbound work, community engagement)"
+    },
+    {
+      "block_id": "B03",
+      "block_name": "DECISIONS",
+      "priority": 2,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:31:11Z",
+      "category": "contextual",
+      "reason": "Strategic decisions: launch video format approach, recipe economy focus, event vs. hackathon priority, founder outreach strategy"
+    },
+    {
+      "block_id": "B05",
+      "block_name": "ACTION_ITEMS",
+      "priority": 2,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:31:11Z",
+      "category": "contextual",
+      "reason": "Clear action items: event on Nov 5 distribution planning, outbound founder engagement, potential hackathon, Discord session with n8n community"
+    },
+    {
+      "block_id": "B05_STRATEGIC",
+      "block_name": "STRATEGIC_IMPLICATIONS",
+      "priority": 3,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:42:27Z",
+      "category": "contextual",
+      "reason": "Strategic topics: competitive positioning analysis (Zapier/N8N), recipe economy model, user acquisition strategy, platform differentiation"
+    },
+    {
+      "block_id": "B08",
+      "block_name": "FOLLOW_UP_CONVERSATIONS",
+      "priority": 3,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:42:27Z",
+      "category": "contextual",
+      "reason": "Follow-ups needed: Discord community session with n8n, cultivation of founder relationships (Bailey, Cal.com founder), event promotion coordination"
+    },
+    {
+      "block_id": "B03_STAKE",
+      "block_name": "STAKEHOLDER_INTEL",
+      "priority": 2,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:31:11Z",
+      "category": "wildcard",
+      "reason": "Specific stakeholders identified: Bailey (social influencer), Cal.com founder, Tim (Cherry Tree community), potential N8N community engagement"
+    },
+    {
+      "block_id": "B21",
+      "block_name": "KEY_MOMENTS",
+      "priority": 3,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:42:27Z",
+      "category": "wildcard",
+      "reason": "Strategic quotes: product differentiation philosophy (principles vs workflows), competitive analysis (Zapier limitations), community strategy insights"
+    },
+    {
+      "block_id": "B26",
+      "block_name": "MEETING_METADATA",
+      "priority": 1,
+      "status": "generated",
+      "generated_at": "2025-11-17T04:21:42Z",
+      "category": "core",
+      "reason": "Core block: system metadata required"
+    }
+  ],
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.707377+00:00",
+      "last_updated_by": "migration_script",
+      "blocks": {
+        "B14_BLURBS_REQUESTED": {
+          "status": "complete",
+          "completed_at": "2025-11-17T11:47:20.875287+00:00",
+          "output_file": "B14_BLURBS_REQUESTED.jsonl"
+        }
+      }
+    },
+    "follow_up_email": {
+      "status": "n/a",
+      "reason": "internal_only",
+      "completed_at": "2025-11-18T03:09:32.899253+00:00",
+      "last_updated_by": "follow_up_email_generator"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-11-17T11:07:28.707377+00:00",
+      "last_updated_by": "migration_script"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-11-17T11:07:28.707377+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "follow_up_email"
+      ]
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-11-25T18:35:52.868204",
+    "status": "scanned_no_signals",
+    "note": "Semantic analysis detected no actionable intro requests"
+  },
+  "ready_for_state_transition": {
+    "status": true,
+    "blocking_systems": [],
+    "last_evaluated": "2025-11-18T03:14:32.584449+00:00"
+  },
+  "warm_intros_scanned": {
+    "last_scan": "2025-11-27T13:27:59.623478Z",
+    "status": "no_new_intros",
+    "workflow_run": "2025-11-27_08:25_scheduled_backwards_looking",
+    "intro_files_count": 0,
+    "note": "No actionable intro signals detected in B07 analysis"
+  }
+}
