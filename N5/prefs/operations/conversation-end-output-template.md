@@ -87,6 +87,10 @@ Key Files Created
 - 📊 [actual_database.db] - [Actual description]
 - 📄 [actual_config.yaml] - [Actual description]
 
+Capability Registry Updates
+
+- [Either a concrete list of capability changes, or an explicit statement that no capability changes were logged]
+
 System Status
 
 ⚡ [Production Ready | Ready for Testing | Work in Progress]
@@ -108,6 +112,7 @@ Conversation record updated and closed.
 3. **What Was Built** - Primary deliverables with checkmarks
 4. **Artifacts Archived** - Full path with folder icon
 5. **Key Files Created** - Bullet list with file icons and descriptions
+6. **Capability Registry Updates** - Explicit section reporting capability changes or explicitly stating that none were logged
 
 ### Optional Elements (include if relevant)
 - **Known Limitations** - Only if there are actual limitations
@@ -123,6 +128,16 @@ Conversation record updated and closed.
 - 📊 Data files (.db, .json, .csv, spreadsheets)
 - 🍳 Recipe files (.md in Prompts/)
 - ⚡ Status indicators (ready, in-progress)
+
+### Capability Registry Updates Section
+
+- Always include the **"Capability Registry Updates"** header in the final output.
+- For **non-build / non-orchestrator threads** (no persistent system behavior created or modified), use a single bullet like:
+  - `- None – No capability changes logged for this conversation (non-build or ephemeral thread).`
+- For **build/orchestrator threads with registry changes**, enumerate each concrete change, e.g.:
+  - `- New capability: meeting-pipeline-v3 – Meeting pipeline refactor with MG-2 integration (file 'N5/capabilities/internal/meeting-pipeline-v3.md').`
+  - `- Updated capability: crm-v3 – Expanded entry points for Akiflow actions bridge (file 'N5/capabilities/internal/crm-v3.md').`
+- Do **not** use placeholders like `capability-foo` or generic descriptions; reference real `capability_id` values and real capability file paths when changes are made.
 
 ### Path Formatting
 - Archive paths: `📁 Documents/Archive/YYYY-MM-DD_con_XXXXX/`
@@ -194,6 +209,10 @@ Key Files Created
 - 📄 zo_feedback_quickref.md - Quick reference
 - 🍳 Zo Feedback Sync.md - Sync recipe
 
+Capability Registry Updates
+
+- New capability: zo-feedback-system – End-to-end Zo Feedback submission + processing workflow (file 'N5/capabilities/workflows/zo-feedback-system.md').
+
 System Status
 
 ⚡ Production Ready
@@ -234,6 +253,10 @@ Key Deliverables
 - 📄 Recipe validator (recipe_validator.py) - Ongoing maintenance tool
 - 📄 Enhanced conversation-end protocol with safety checks
 - 📄 Complete restoration documentation
+
+Capability Registry Updates
+
+- None – No capability changes logged for this conversation (system restoration and tooling hardening only).
 
 System Status
 
@@ -286,6 +309,10 @@ Key Files Modified
 
 - 📄 N5/scripts/email_connector.py - Updated timeout and retry logic
 - 📄 N5/logs/email_connector.log - Enhanced logging format
+
+Capability Registry Updates
+
+- None – No capability changes logged for this conversation (targeted bug fix only).
 
 System Status
 
@@ -355,3 +382,5 @@ Update this template when:
 **Version history:**
 - 1.1.0 (2025-10-30): Added CRITICAL INSTRUCTIONS section clarifying AI analysis role
 - 1.0.0 (2025-10-30): Initial template based on successful closure format
+
+
