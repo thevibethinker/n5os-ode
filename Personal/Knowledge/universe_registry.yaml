@@ -1,0 +1,42 @@
+created: 2025-11-24
+last_edited: 2025-11-24
+version: 1.0
+description: Registry of Knowledge Universe roots for the Wisdom Exoskeleton.
+
+roots:
+  - id: canon_vibethinker
+    path: Personal/Knowledge/Canon/VibeThinker
+    label: "Canon: VibeThinker"
+    type: output
+    description: "Published articles and posts under the VibeThinker brand."
+
+  - id: canon_vrijen
+    path: Personal/Knowledge/Canon/Vrijen
+    label: "Canon: Vrijen Attawar"
+    type: output
+    description: "Personal essays, drafts, and experiments."
+
+  - id: content_library
+    path: Personal/Knowledge/ContentLibrary
+    label: "Content Library"
+    type: input
+    description: "The Soil: Consumed books, articles, and external resources."
+
+  - id: wisdom_core
+    path: Personal/Knowledge/Wisdom
+    label: "Wisdom Roots"
+    type: core
+    description: "Core beliefs, truths, and foundational constraints."
+
+  - id: frameworks
+    path: Personal/Knowledge/Frameworks
+    label: "Frameworks"
+    type: tools
+    description: "Operational mental models and coaching frameworks (e.g. CareerSpan)."
+
+  - id: specs
+    path: Personal/Knowledge/Specs
+    label: "System Specs"
+    type: meta
+    description: "Architectural blueprints and designs."
+

@@ -1,0 +1,21 @@
+{"timestamp": "2025-11-18T05:23:34.025008Z", "email": "konrad@aviato.co", "success": true, "person_found": true}
+{"timestamp": "2025-11-18T05:23:36.535345Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:23:37.391487Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true}
+{"timestamp": "2025-11-18T05:23:54.441023Z", "email": "doesnotexist@fakedomain.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:24:26.933764Z", "email": "aamak44@gmail.com", "success": true, "person_found": true}
+{"timestamp": "2025-11-18T05:25:11.334981Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true}
+{"timestamp": "2025-11-18T05:25:42.408255Z", "email": "aamak44@gmail.com", "success": true, "person_found": true}
+{"timestamp": "2025-11-18T05:25:46.060466Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:26:35.997640Z", "email": "konrad@aviato.co", "success": true, "person_found": true}
+{"timestamp": "2025-11-18T05:31:18.785347Z", "email": "shirinali@shirinalimd.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:31:37.191566Z", "email": "bogomil@sequoiacap.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:31:40.956039Z", "email": "preasia@shirinalimd.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:31:44.157889Z", "email": "amandarosesachs@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:32:10.635806Z", "email": "clitest2@example.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:32:22.931420Z", "email": "finaltest@example.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:32:26.796772Z", "email": "debugger_test@example.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-18T05:32:31.698724Z", "email": "builder_fixed_test@example.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-19T13:59:38.626417Z", "email": "pooja.varshneya@gmail.com", "success": true, "person_found": true}
+{"timestamp": "2025-11-19T17:01:56.640687Z", "email": "konrad@aviato.co", "success": true, "person_found": true}
+{"timestamp": "2025-11-25T22:20:00.590180Z", "email": "jim.pyke@tcb-advisors.com", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-11-25T22:20:02.119354Z", "email": "felix.campos@alumni.rice.edu", "success": true, "person_found": false}

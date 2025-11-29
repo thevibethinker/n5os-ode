@@ -1,0 +1,10 @@
+{
+  "email": "lauren@daringventures.vc",
+  "name": "Daring Ventures Events",
+  "organization": "Daringventures.Vc",
+  "context": "Registration not accepted for Dine n' Daring x Rho",
+  "extraction_method": "mechanical+replyto",
+  "source_email_id": "199e0ace7b5e9d37",
+  "discovered_at": "2025-10-14T03:54:08.211479",
+  "priority_score": 90
+}
