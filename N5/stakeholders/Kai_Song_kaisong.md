@@ -1,11 +1,10 @@
 ---
 created: 2025-11-14
 last_edited: 2025-11-17
-version: 2.0
+version: 2
 source: Elevated from meeting intelligence (B08 analysis)
 meetings_analyzed: 3
 ---
-
 # Kai Song
 
 ## Quick Reference
