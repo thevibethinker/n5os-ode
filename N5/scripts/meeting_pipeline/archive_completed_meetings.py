@@ -6,20 +6,24 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
+READY_SUFFIX = "_[C]"
+
+
 def log(msg, level="✓"):
     ts = datetime.now().strftime("%H:%M:%S")
     print(f"[{ts}] {level} {msg}")
 
+
 def find_next_ready_meeting():
-    """Find next [P] meeting ready for archival."""
+    """Find next [C] meeting ready for archival."""
     inbox_path = Path("/home/workspace/Personal/Meetings/Inbox")
     # Use os.listdir and filter since glob has issues with brackets
     all_items = sorted(inbox_path.iterdir())
-    ready_meetings = [p for p in all_items if p.is_dir() and p.name.endswith("_[P]")]
+    ready_meetings = [p for p in all_items if p.is_dir() and p.name.endswith(READY_SUFFIX)]
     if not ready_meetings:
-        log("No [P] meetings ready for archival", "✓")
         return None
     return ready_meetings[0]
+
 
 def validate_manifest(meeting_path):
     """Check manifest.json exists and all blocks are in acceptable completion states."""
@@ -54,6 +58,7 @@ def validate_manifest(meeting_path):
     
     return True
 
+
 def clean_nested_duplicates(meeting_path):
     """Remove nested duplicate folders matching 2025-* pattern."""
     nested = list(meeting_path.glob("2025-*"))
@@ -62,10 +67,10 @@ def clean_nested_duplicates(meeting_path):
             subprocess.run(["rm", "-rf", str(nested_path)], check=True)
             log(f"Cleaned nested duplicate: {nested_path.name}", "✓")
 
+
 def register_in_database(meeting_path):
     """Register meeting in database using add_to_database.py script."""
     script_path = Path("/home/workspace/N5/scripts/meeting_pipeline/add_to_database.py")
-    
     # Look for transcript in priority order
     transcript_path = None
     candidates = [
@@ -76,8 +81,6 @@ def register_in_database(meeting_path):
         if candidate.exists():
             transcript_path = candidate
             break
-    
-    # Fall back to first block file if no transcript found
     if transcript_path is None:
         blocks = sorted([f for f in meeting_path.glob("B*.md") if f.is_file()])
         if blocks:
@@ -85,10 +88,9 @@ def register_in_database(meeting_path):
         else:
             log(f"ERROR: No transcript or block files found in {meeting_path.name}", "✗")
             return False
-    
-    # Extract meeting_id from folder name (remove _[P] suffix)
-    meeting_id = meeting_path.name[:-4] if meeting_path.name.endswith("_[P]") else meeting_path.name
-    
+    # Extract meeting_id from folder name (remove READY_SUFFIX)
+    name = meeting_path.name
+    meeting_id = name[: -len(READY_SUFFIX)] if name.endswith(READY_SUFFIX) else name
     # Try to detect meeting type from manifest
     manifest_path = meeting_path / "manifest.json"
     meeting_type = "EXTERNAL"
@@ -98,26 +100,34 @@ def register_in_database(meeting_path):
                 manifest = json.load(f)
                 classification = manifest.get("classification", "external").upper()
                 meeting_type = "INTERNAL" if classification == "INTERNAL" else "EXTERNAL"
-        except:
+        except Exception:
             pass
-    
     result = subprocess.run(
-        ["python3", str(script_path), meeting_id, 
-         "--transcript", str(transcript_path),
-         "--type", meeting_type,
-         "--status", "complete"],
+        [
+            "python3",
+            str(script_path),
+            meeting_id,
+            "--transcript",
+            str(transcript_path),
+            "--type",
+            meeting_type,
+            "--status",
+            "complete",
+        ],
         capture_output=True,
-        text=True
+        text=True,
     )
-    
     if result.returncode != 0:
-        log(f"ERROR: Database registration failed for {meeting_path.name} (exit code: {result.returncode})", "✗")
+        log(
+            f"ERROR: Database registration failed for {meeting_path.name} (exit code: {result.returncode})",
+            "✗",
+        )
         if result.stderr:
             print(f"  stderr: {result.stderr}")
         return False
-    
     log(f"Registered in database: {meeting_path.name}", "✓")
     return True
+
 
 def calculate_archive_path(meeting_folder_name):
     """Extract date from folder name and calculate archive quarter."""
@@ -141,11 +151,13 @@ def calculate_archive_path(meeting_folder_name):
         log(f"ERROR: Could not parse date from folder name: {meeting_folder_name}", "✗")
         return None
 
+
 def clean_folder_name(folder_name):
-    """Remove _[P] suffix from folder name."""
-    if folder_name.endswith("_[P]"):
-        return folder_name[:-4]
+    """Remove READY_SUFFIX from folder name for archive storage."""
+    if folder_name.endswith(READY_SUFFIX):
+        return folder_name[: -len(READY_SUFFIX)]
     return folder_name
+
 
 def archive_meeting(meeting_path):
     """Move meeting to archive with cleaned name, handling collisions."""
@@ -187,32 +199,42 @@ def archive_meeting(meeting_path):
             log(f"ERROR: Move operation failed for {meeting_name}: {e}", "✗")
             return False
 
+
 def main():
-    meeting_path = find_next_ready_meeting()
-    if meeting_path is None:
-        return 0
-    
-    log(f"Processing: {meeting_path.name}", "→")
-    
-    if not validate_manifest(meeting_path):
-        return 0
-    
-    try:
-        clean_nested_duplicates(meeting_path)
-    except Exception as e:
-        log(f"ERROR: Failed to clean nested duplicates: {e}", "✗")
-        return 1
-    
-    if not register_in_database(meeting_path):
-        return 0
-    
-    if not archive_meeting(meeting_path):
-        return 1
-    
-    return 0
+    any_processed = False
+    while True:
+        meeting_path = find_next_ready_meeting()
+        if meeting_path is None:
+            if not any_processed:
+                log("No [C] meetings ready for archival", "✓")
+            else:
+                log("No more [C] meetings to archive in this run", "✓")
+            return 0
+
+        log(f"Processing: {meeting_path.name}", "→")
+
+        if not validate_manifest(meeting_path):
+            # Skip this meeting but continue with others
+            continue
+
+        try:
+            clean_nested_duplicates(meeting_path)
+        except Exception as e:
+            log(f"ERROR: Failed to clean nested duplicates: {e}", "✗")
+            continue
+
+        if not register_in_database(meeting_path):
+            continue
+
+        if not archive_meeting(meeting_path):
+            continue
+
+        any_processed = True
+
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
 
