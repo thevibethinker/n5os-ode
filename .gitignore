@@ -103,3 +103,4 @@ N5/config/slack_credentials.json
 !**/migrations/*.sql
 !**/seeds/*.sql
 projects/calcom/
+_local_archives/
