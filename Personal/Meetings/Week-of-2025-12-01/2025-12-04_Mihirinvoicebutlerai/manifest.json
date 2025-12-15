@@ -1,0 +1,35 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-07T01:42:46.033077Z",
+  "meeting_folder": "2025-12-04_mihirinvoicebutlerai",
+  "meeting_date": "2025-12-04",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-15T03:22:19.884808-05:00",
+    "status": "no_intros"
+  },
+  "system_states": {
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-12-13T11:22:54.502403+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5_v3"
+    },
+    "intelligence_blocks": {
+      "status": "complete"
+    },
+    "blurbs": {
+      "b14_exists": true,
+      "status": "complete"
+    }
+  },
+  "last_transitioned_at": "2025-12-15T13:20:04.876659",
+  "last_updated_at": "2025-12-26T01:41:25.382571"
+}

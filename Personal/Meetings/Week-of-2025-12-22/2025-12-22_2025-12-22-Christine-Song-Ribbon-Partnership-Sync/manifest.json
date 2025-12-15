@@ -1,0 +1,14 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-24T14:17:21.499579",
+  "meeting_folder": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync",
+  "meeting_date": "2025-12-22",
+  "status": "intelligence_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "meeting_title": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync"
+}

@@ -1,0 +1,47 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-05T16:42:31.619418Z",
+  "meeting_folder": "2025-12-05_ericconsonantvc",
+  "meeting_date": "2025-12-05",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-05T15:10:00-05:00",
+    "status": "none_detected",
+    "note": "No B07_WARM_INTRO_BIDIRECTIONAL.md block present; no warm intro opportunities detected in this run."
+  },
+  "last_updated_at": "2025-12-26T01:39:28.811635",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "not_applicable",
+      "completed_at": "2025-12-14T15:12:42.627936+00:00",
+      "last_updated_by": "MG-5_v3"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-12-14T15:12:42.627963+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "follow_up_email",
+        "warm_intro"
+      ]
+    }
+  }
+}

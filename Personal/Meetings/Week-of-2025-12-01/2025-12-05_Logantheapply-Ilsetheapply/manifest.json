@@ -1,0 +1,20 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-07T01:42:46.152789Z",
+  "meeting_folder": "2025-12-05_logantheapplyaiilsetheapplyaidannytheapplyairochelmycareerspancomilyamycareerspancom_logantheapplyai_ilsetheapplyai_dannytheapplyai",
+  "meeting_date": "2025-12-05",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-12T20:51:27.313307+00:00",
+    "status": "drafts_ready"
+  },
+  "last_updated_at": "2025-12-26T01:41:25.284696",
+  "transitioned_at": "2025-12-11T21:03:15.243966+00:00"
+}

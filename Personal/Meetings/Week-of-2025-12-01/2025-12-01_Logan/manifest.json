@@ -1,0 +1,47 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-07T01:42:45.773301Z",
+  "meeting_folder": "2025-12-01_logantheapplyai",
+  "meeting_date": "2025-12-01",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-12T20:51:27.313307+00:00",
+    "status": "drafts_ready"
+  },
+  "last_updated_at": "2025-12-26T01:36:05.258774",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "not_applicable",
+      "completed_at": "2025-12-10T23:09:08.089585+00:00",
+      "last_updated_by": "MG-5_v3"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-12-10T23:09:08.089607+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "follow_up_email",
+        "warm_intro"
+      ]
+    }
+  },
+  "transitioned_at": "2025-12-11T21:03:15.080704+00:00"
+}

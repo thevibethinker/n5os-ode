@@ -1,0 +1,48 @@
+{
+  "blocks_generated": {
+    "brief": true,
+    "stakeholder_intelligence": true,
+    "transcript_processed": true
+  },
+  "generated_at": "2025-12-04T22:42:57.445267Z",
+  "last_updated_by": "MG-2_Worker",
+  "manifest_version": "1.0",
+  "meeting_date": "2025-12-04",
+  "meeting_folder": "2025-12-04_alanmymelico",
+  "meeting_type": "external",
+  "status": "processed",
+  "warm_intros_generated": {
+    "count": 1,
+    "note": "1 warm intro draft pair (Alan Hin \u2194 Shivam / Corridor X) generated in scheduled warm-intro run on 2025-12-09.",
+    "status": "drafts_ready",
+    "timestamp": "2025-12-10T06:26:03-05:00"
+  },
+  "last_updated_at": "2025-12-26T01:38:54.733154",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-12-14T11:20:30.738047+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-12-14T11:20:30.738069+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  }
+}

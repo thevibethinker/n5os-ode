@@ -1,0 +1,26 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-12T22:42:44.975429Z",
+  "meeting_folder": "2025-12-12_ericakhgmailcom",
+  "meeting_date": "2025-12-12",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "system_states": {
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-12-13T11:22:54.502403+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5_v3"
+    }
+  },
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-14T21:35:00-05:00",
+    "status": "drafts_ready"
+  }
+}

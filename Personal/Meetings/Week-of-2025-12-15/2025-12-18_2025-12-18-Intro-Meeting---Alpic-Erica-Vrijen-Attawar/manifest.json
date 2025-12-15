@@ -1,0 +1,61 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-18T15:21:35.791980+00:00",
+  "meeting_folder": "2025-12-18_Intro_meeting_-_Alpic_Erica_Vrijen_Attawar",
+  "meeting_date": "2025-12-18",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "decisions": true,
+    "business_context": true,
+    "tone_and_context": true,
+    "blurbs_requested": true,
+    "key_moments": true,
+    "deliverables": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "warm_intros": {
+    "signals_detected": 1,
+    "drafts_generated": 3,
+    "last_draft_generation": "2025-12-21T19:40:00Z",
+    "draft_files": [
+      "INTRO_Erica_Alpic_to_Zo_Computer.md",
+      "INTRO_Erica_Alpic_to_Zo_Computer_v2.md",
+      "INTRO_draft_placeholder.md"
+    ],
+    "manifest_updated": "2025-12-22T18:15:00Z"
+  },
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete",
+      "completed_at": "2025-12-19T23:19:49.083096+00:00",
+      "required_blocks_generated": true,
+      "total_blocks": 0
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-12-19T23:20:18.655521+00:00"
+    },
+    "warm_intro": {
+      "status": "complete",
+      "completed_at": "2025-12-21T19:40:00.000000"
+    },
+    "blurbs": {
+      "status": "not_applicable",
+      "b14_exists": false,
+      "completed_at": "2025-12-19T23:20:06.912689+00:00"
+    },
+    "ready_for_state_transition": {
+      "status": true,
+      "evaluated_at": "2025-12-19T23:20:18.655533+00:00",
+      "can_transition_to": "P",
+      "blocking_systems": []
+    }
+  },
+  "generated_files": [
+    "INTRO_draft_placeholder.md"
+  ],
+  "meeting_title": "2025-12-18 Intro Meeting - Alpic Erica Vrijen Attawar"
+}

@@ -1,0 +1,14 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-23T18:16:00Z",
+  "meeting_folder": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync",
+  "meeting_date": "2025-12-22",
+  "meeting_title": "Christine Song Ribbon Partnership Sync",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt"
+}

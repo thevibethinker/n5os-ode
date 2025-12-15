@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-18T19:16:44.991472",
+  "meeting_folder": "2025-12-17_eric____vrijen__zo_demo_",
+  "meeting_date": "2025-12-17",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "decisions": true,
+    "business_context": true,
+    "tone_and_context": true,
+    "blurbs_requested": true,
+    "key_moments": true,
+    "deliverables": true,
+    "metadata": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "meeting_title": "Eric Rubin (Consonant VC) Zo Demo"
+}

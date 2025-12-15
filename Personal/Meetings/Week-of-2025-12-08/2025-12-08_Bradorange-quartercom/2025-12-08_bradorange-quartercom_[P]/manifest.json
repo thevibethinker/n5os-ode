@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-08T16:42:30.178078Z",
+  "meeting_folder": "2025-12-08_bradorange-quartercom",
+  "meeting_date": "2025-12-08",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "meeting_type": "external",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-10T06:20:00Z",
+    "status": "none_detected",
+    "note": "No B07_WARM_INTRO_BIDIRECTIONAL.md block present; warm intro drafts not generated in this run."
+  },
+  "last_updated_at": "2025-12-26T01:50:40.725374"
+}

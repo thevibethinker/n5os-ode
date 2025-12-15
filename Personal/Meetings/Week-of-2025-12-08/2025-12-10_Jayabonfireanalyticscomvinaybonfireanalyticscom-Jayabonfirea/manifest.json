@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-10T23:40:00Z",
+  "meeting_folder": "2025-12-10_jayabonfireanalyticscomvinaybonfireanalyticscom_jayabonfireanalyticscom_vinaybonfireanalyticscom",
+  "meeting_date": "2025-12-10",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "last_updated_timestamp": "2025-12-11T13:11:42.962534",
+  "transition_timestamp": "2025-12-11T15:05:07.392494",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-12T20:51:27.313307+00:00",
+    "status": "drafts_ready"
+  },
+  "last_updated_at": "2025-12-26T01:45:20.731325"
+}

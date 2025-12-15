@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-10T19:42:30.899149Z",
+  "meeting_folder": "2025-12-10_hyy-paak-gdv",
+  "meeting_date": "2025-12-10",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "last_updated_at": "2025-12-26T01:44:48.724110",
+  "last_updated_timestamp": "2025-12-11T13:11:42.961633",
+  "transition_timestamp": "2025-12-11T15:05:07.361656",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-12T20:51:27.313307+00:00",
+    "status": "drafts_ready"
+  }
+}

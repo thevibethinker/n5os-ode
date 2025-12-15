@@ -1,0 +1,47 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-07T01:42:45.716307Z",
+  "meeting_folder": "2025-12-01_Vrijen__Tiffany",
+  "meeting_date": "2025-12-01",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-15T03:22:19.884808-05:00",
+    "status": "no_intros"
+  },
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "complete"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2025-12-09T03:07:36.958967+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "complete",
+      "b14_exists": true
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2025-12-09T03:07:36.958998+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  },
+  "last_transitioned_at": "2025-12-15T13:20:04.728549",
+  "last_updated_at": "2025-12-26T01:40:12.982822"
+}

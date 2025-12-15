@@ -1,0 +1,14 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-01T21:42:21.087218Z",
+  "meeting_folder": "2025-12-01_Vrijen__Tiffany",
+  "meeting_date": "2025-12-01",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt"
+}
+

@@ -1,0 +1,18 @@
+{
+  "blocks_generated": {
+    "brief": true,
+    "stakeholder_intelligence": true,
+    "transcript_processed": true
+  },
+  "generated_at": "2025-12-12T20:42:39.719586+00:00",
+  "last_updated_by": "MG-2_Prompt",
+  "manifest_version": "1.0",
+  "meeting_date": "2025-12-12",
+  "meeting_folder": "2025-12-12_Jonathan_Beda_x_Vrijen",
+  "status": "manifest_generated",
+  "warm_intros_generated": {
+    "count": 1,
+    "status": "drafts_ready",
+    "timestamp": "2025-12-14T08:30:00-05:00"
+  }
+}

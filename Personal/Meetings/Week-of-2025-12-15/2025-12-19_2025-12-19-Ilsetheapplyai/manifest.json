@@ -1,0 +1,15 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-19T13:17:04.931932Z",
+  "meeting_folder": "2025-12-19_ilsetheapplyai",
+  "meeting_date": "2025-12-19",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Worker",
+  "meeting_title": "2025-12-19 Ilsetheapplyai",
+  "last_updated_at": "2025-12-26T01:43:42.839574"
+}

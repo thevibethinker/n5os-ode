@@ -1,0 +1,19 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-09T11:42:54Z",
+  "meeting_folder": "2025-12-08_logantheapplyaihellomegangaspercom_logantheapplyai_hellomegangaspercom",
+  "meeting_date": "2025-12-08",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Prompt",
+  "warm_intros_generated": {
+    "count": 0,
+    "timestamp": "2025-12-12T20:51:27.313307+00:00",
+    "status": "drafts_ready"
+  },
+  "last_updated_at": "2025-12-10T21:02:22.481738"
+}

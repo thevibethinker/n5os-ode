@@ -1,0 +1,47 @@
+{
+  "blocks_generated": {
+    "brief": true,
+    "stakeholder_intelligence": true,
+    "transcript_processed": true
+  },
+  "generated_at": "2025-12-07T01:42:45.930205Z",
+  "last_updated_by": "MG-2_Worker",
+  "manifest_version": "1.0",
+  "meeting_date": "2025-12-04",
+  "meeting_folder": "2025-12-04_alanmymelico",
+  "status": "processed",
+  "system_states": {
+    "blurbs": {
+      "b14_exists": true,
+      "status": "complete"
+    },
+    "follow_up_email": {
+      "completed_at": "2025-12-10T19:09:32.982811+00:00",
+      "last_updated_by": "MG-5",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "status": "complete"
+    },
+    "intelligence_blocks": {
+      "status": "complete"
+    },
+    "ready_for_state_transition": {
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ],
+      "can_transition_to": "M",
+      "evaluated_at": "2025-12-10T19:09:32.982835+00:00",
+      "status": false
+    },
+    "warm_intro": {
+      "status": "not_started"
+    }
+  },
+  "warm_intros_generated": {
+    "count": 1,
+    "status": "drafts_ready",
+    "timestamp": "2025-12-15T03:22:19.884808-05:00"
+  },
+  "last_transitioned_at": "2025-12-15T13:20:04.852561",
+  "last_updated_at": "2025-12-26T01:38:53.963424"
+}

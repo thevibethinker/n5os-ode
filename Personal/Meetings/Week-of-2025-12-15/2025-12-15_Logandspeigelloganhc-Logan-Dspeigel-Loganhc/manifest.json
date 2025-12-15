@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-12-15T18:42:30.904256Z",
+  "meeting_folder": "2025-12-15_logantheapplyaidspeigelgmailcomloganhcgmailcom_logantheapplyai_dspeigelgmailcom_loganhcgmailcom",
+  "meeting_date": "2025-12-15",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt"
+}
