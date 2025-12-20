@@ -11,7 +11,7 @@ role: scanner
 
 # Warm Intro Generator [MG-4]
 
-Scan `Personal/Meetings/Inbox` for folders ending in `_[M]`.
+Scan `Personal/Meetings/` recursively (checking `Inbox` and `Week-of-*` folders) for folders ending in `_[M]`.
 
 For each meeting:
 1.  **Analyze for Intros:**
@@ -30,5 +30,6 @@ For each meeting:
 ## Execution
 
 Run this prompt to generate pending intro drafts.
+
 
 

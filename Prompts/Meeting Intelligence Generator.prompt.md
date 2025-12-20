@@ -10,7 +10,7 @@ status: canonical
 
 # Meeting Intelligence Generator [MG-2]
 
-Scan `Personal/Meetings/Inbox` for folders ending in `_[M]` that have a `transcript.jsonl` but are missing core intelligence blocks (specifically `B01_DETAILED_RECAP.md`).
+Scan `Personal/Meetings/` recursively (checking `Inbox` and `Week-of-*` folders) for folders ending in `_[M]` that have a `transcript.jsonl` but are missing core intelligence blocks (specifically `B01_DETAILED_RECAP.md`).
 
 For each such meeting:
 
@@ -28,6 +28,7 @@ For each such meeting:
     *   **B21_KEY_MOMENTS.md**: High-leverage quotes or turning points.
     *   **B25_DELIVERABLES.md**: Specific files or data promised.
     *   **B26_MEETING_METADATA.md**: Tags, categorization, topics.
+    *   **B32_THOUGHT_PROVOKING_IDEAS.md**: Identify 1-3 highly provocative themes, strategic "weirdness," or original mental models. **(CRITICAL: Strictly non-actionable, use high-threshold filter)**
 
 3.  **Update Manifest:**
     Update `manifest.json` in the same folder so that it accurately reflects the new intelligence state. At minimum:
@@ -60,7 +61,8 @@ For each such meeting:
         "B14_BLURBS_REQUESTED",
         "B21_KEY_MOMENTS",
         "B25_DELIVERABLES",
-        "B26_MEETING_METADATA"
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS"
       ],
       "source": "Meeting Intelligence Generator [MG-2]"
     }
@@ -75,6 +77,8 @@ For each such meeting:
 ## Execution
 
 Run this prompt to populate missing intelligence and to ensure every processed [M] meeting is recorded in `Personal/Meetings/PROCESSING_LOG.jsonl`.
+
+
 
 
 

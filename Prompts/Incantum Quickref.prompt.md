@@ -32,13 +32,6 @@ Natural language triggers that invoke N5 commands.
 - "find [person/company]" → crm-find
 - "search crm for [query]" → crm-find
 
-## Tally Surveys
-
-- "create survey" / "make a form" → tally-create
-- "list surveys" / "show my forms" → tally-list
-- "get survey [id]" → tally-get
-- "survey responses" → tally-submissions
-
 ## Git
 
 - "check git" → git-check
@@ -58,3 +51,4 @@ Natural language triggers that invoke N5 commands.
 
 **See:** `file 'N5/config/incantum_triggers.json'` for complete mappings  
 **See:** `file 'N5/prefs/system/command-triggering.md'` for details
+
