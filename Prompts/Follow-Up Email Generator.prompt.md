@@ -1,7 +1,7 @@
 ---
 created: 2025-11-16
-last_edited: 2025-11-17
-version: 2.1
+last_edited: 2025-12-02
+version: 2.3
 tool: true
 description: Generate high-quality follow-up emails from meeting intelligence using voice transformation system
 tags:
@@ -34,22 +34,28 @@ status: canonical
 
 **Load Essential Links from Content Library Database:**
 
-**Database:** `file 'N5/data/content_library.db'`  
-**Script:** `python3 /home/workspace/N5/scripts/content_library_db.py`
+**Database:** `file 'Personal/Knowledge/ContentLibrary/content-library-v3.db'`  
+**Script:** `python3 /home/workspace/Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py`
 
 **CRITICAL:** Whenever deliverables/commitments mention links or resources, query the content library to auto-populate the correct URLs.
 
 **Usage patterns:**
 ```bash
 # Search for trial links
-python3 /home/workspace/N5/scripts/content_library_db.py search --query "trial" --type link
+python3 /home/workspace/Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py search --query "trial" --type link
 
-# Search by tags
-python3 /home/workspace/N5/scripts/content_library_db.py search --tag purpose=scheduling
+# List by type
+python3 /home/workspace/Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py list --type link --limit 20
 
 # Get specific item by ID
-python3 /home/workspace/N5/scripts/content_library_db.py get --id trial_code_general
+python3 /home/workspace/Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py get trial_code_general
 ```
+**Short.io Integration (Traceability):**
+If a deliverable requires a traceable link (e.g., Google Drive folder, deck, proposal) and isn't already in the Content Library:
+1. Use `python3 N5/scripts/shortio_link_service.py create --url <long_url> --title <title>` to generate a short link.
+2. This automatically registers the link in `shortio_links.jsonl` AND the Content Library database.
+3. Use the generated `shortURL` in the email body.
+
 
 **Common promise → query mapping:**
 - "I'll send you a trial link" → `search --query "trial"`
@@ -184,6 +190,8 @@ python3 /home/workspace/N5/scripts/content_library_db.py get --id trial_code_gen
 
 **Use deliverables from B02 + B25**
 
+Assume that anything you talk about in the email body as a deliverable (slides, articles, 1-pagers, etc.) is something that will be **attached or linked in this email** by the time V sends it, even if it is not yet present in the content library. V will do the custom work to acquire/create it before sending.
+
 **Structure:**
 ```
 *Here's what I promised:*
@@ -198,7 +206,9 @@ python3 /home/workspace/N5/scripts/content_library_db.py get --id trial_code_gen
 - **Em dash (–)** after header
 - **Context/value prop** explaining why it matters to them
 - **Specific details:** numbers, names, URLs
-- **Timeline** if not immediate
+- **Timeline** if the core action truly happens **after** this email (e.g., future intro, project milestone). For assets that are included in this email (slides, articles, 1-pagers), no timeline is needed beyond the fact that they are included now.
+- **Tense & framing:** Write as if the deliverable is included in this email, not something you will send later. Prefer patterns like "I've included…", "Here's…", "You'll find a link below…". Avoid defaulting to "I'll send over…" / "I'll send this separately…" unless the plan genuinely requires delivery after this email (rare case).
+- **Checklist mapping:** For every deliverable you mention in the body, create a corresponding item in the **Promised Deliverables Checklist (for V before sending)** section at the end of the file.
 
 **Example from Mark email:**
 ```
@@ -218,7 +228,7 @@ python3 /home/workspace/N5/scripts/content_library_db.py get --id trial_code_gen
 - Make their life easy (provide blurbs if needed for intros)
 - **Query database for promised links:** Use `content_library_db.py search` to find exact URLs
 - **Never hardcode links:** Always pull from database (single source of truth)
-- **If link mentioned but not in database:** Flag for V to add it
+- **If link mentioned but not in database:** Still write as if it is included in this email, and mark it in the Promised Deliverables Checklist as `content library: candidate to add`.
 
 ---
 
@@ -320,6 +330,18 @@ quality_score: XX/100
 - Intelligence sources: B02, B25, B21, B26
 - Voice dials: Formality 4/10, Energy 7/10, Specificity 9/10
 - Quality score: XX/100
+
+---
+
+**Promised Deliverables Checklist (for V before sending)**
+
+List **every deliverable or asset you referenced in the email body**, regardless of whether it came from the content library or is a custom/one-off item V will create. For each item, include a short reminder of what needs to be attached or linked, plus whether it is already in the content library.
+
+- [ ] [Deliverable 1] – [short reminder of what to attach/link; e.g., "SPC info overload slide(s)"; content library: id=`...` or `candidate to add`]
+- [ ] [Deliverable 2] – [...]
+- [ ] [Deliverable 3] – [...]
+
+This checklist is **for V only** and is meant to be satisfied before the email is sent. It should be complete and concrete enough that V can quickly verify each promised item is actually included (as attachment or link) and optionally promote missing assets into the content library.
 ```
 
 ---
@@ -345,6 +367,13 @@ quality_score: XX/100
 - Apply dials as specified
 - Use signature phrases from guide
 - Follow structure patterns exactly
+
+### Promised Deliverables Checklist behavior:
+- Always include a **Promised Deliverables Checklist (for V before sending)** section at the end of `FOLLOW_UP_EMAIL.md`.
+- For every deliverable or asset mentioned in the body (Step 4), create a corresponding checklist item.
+- If the deliverable came from the content library, note the content library id or a clear reference (e.g., `content library: id=trial_code_general`).
+- If the deliverable is not yet in the content library, mark it as `content library: candidate to add` in the checklist.
+- Treat the checklist as an internal TODO list for V: the outward-facing copy should assume the items are included in this email; the checklist ensures that happens before sending.
 
 ### Quality bar is HIGH:
 - Target ≥90/100 on rubric
@@ -389,16 +418,21 @@ Best,
 
 ---
 
-**Version:** 2.1  
-**Date:** 2025-11-17  
+**Version:** 2.3  
+**Date:** 2025-12-02  
 **Updates:** 
-- Integrated Essential Link System (Content Library Database)
-- Links now pulled from `/home/workspace/N5/data/content_library.db`
-- Deprecated JSON-based link storage
-- Added database query instructions to Phase 1
+- Migrated to Content Library v3 (unified database at Personal/Knowledge/ContentLibrary/)
+- Updated all database paths and CLI commands to v3
+- Previous: Integrated Essential Link System (Content Library Database)
+- Previous: Links now pulled from unified v3 database
+- Previous: Updated deliverables behavior to assume assets are included in the current email
+- Previous: Added Promised Deliverables Checklist section
 
 **Architect:** Vibe Architect + Vibe Operator  
-**Migration Status:** Complete - Database initialized with 66 items (59 links, 7 snippets)
+**Migration Status:** Complete - Content Library v3 unification (Dec 2025)
+
+
+
 
 
 

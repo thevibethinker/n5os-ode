@@ -24,6 +24,13 @@ status: canonical
         *   If `transcript.jsonl` exists: Proceed.
         *   If `transcript.md` or `transcript.txt` exists but no jsonl: Convert to `transcript.jsonl` (content: `{"text": "..."}`).
         *   If no transcript found: Log warning and skip (or move to `_quarantine`).
+    *   **Global Duplicate Check:**
+        *   Before processing, check if this meeting already exists in any `Week-of-YYYY-MM-DD` folder under `/home/workspace/Personal/Meetings/`.
+        *   Compare base folder names (ignoring case and common suffixes like `gmailcom`).
+        *   If a duplicate is found in a Week-of folder:
+            *   Log: "Meeting already exists in {Week-of-folder}. Moving to quarantine."
+            *   Move the folder to `/home/workspace/Personal/Meetings/Inbox/_quarantine/{folder_name}_duplicate_already_archived`.
+            *   Skip to next folder.
     *   **Generate Manifest:**
         *   Create `manifest.json` in the folder.
         *   Content:
@@ -53,8 +60,15 @@ Run this prompt to process all pending raw meetings.
 
 **Example Command:**
 ```bash
-# Find raw folders (exclude [M], [P], quarantine)
-find /home/workspace/Personal/Meetings/Inbox -maxdepth 1 -type d -not -name "*_[M]" -not -name "*_[P]" -not -name "_quarantine" -not -name "Inbox"
+# Find raw folders in Inbox only (exclude [M], [P], quarantine)
+find /home/workspace/Personal/Meetings/Inbox -maxdepth 1 -type d \
+  -not -name "*_[M]" \
+  -not -name "*_[P]" \
+  -not -name "_quarantine" \
+  -not -name "Inbox"
 ```
+
+
+
 
 
