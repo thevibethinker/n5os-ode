@@ -1,0 +1,35 @@
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_vdHwsjchTxUzTOrS
+---
+name: Ari Matusiak
+email: ari@rewiringamerica.org
+linkedin_url: https://www.linkedin.com/in/arimatusiak
+title: Founder, President and CEO
+company: Rewiring America
+category: Climate Tech
+status: Contacted
+tags: [CEO, Rewiring America, Founder]
+source: Aviato/Gmail
+headline: "Founder, President and CEO, Rewiring America. Building the lower cost, bountiful future for everyone."
+location: United States
+latest_education:
+  school: Georgetown Law
+  degree: Juris Doctor (J.D.)
+  field: Law
+summary: Ari Matusiak is the CEO of Rewiring America. He has a background in public policy and entrepreneurship, having co-founded Young Invincibles and worked in the White House.
+aviato_enrichment:
+  person_id: 87YPVa8WJ-3zjYc6xE-0rANr8N86IKZ
+  last_updated: 2025-10-29T14:10:44.383Z
+  top_skills: [Public Speaking, Leadership, Community Outreach, Government, Strategy, Strategic Communications, Management, Public Policy]
+  experience_summary: "Founder, President and CEO at Rewiring America (2020-present); Founding Partner at PVG (2019-2024); Special Assistant to the President at White House (2011-2014); Founder at Young Invincibles."
+intelligence_log:
+  - date: 2025-12-26
+    type: aviato_enrichment
+    summary: Enriched profile via Aviato API. Confirmed current role as CEO of Rewiring America.
+  - date: 2023-03-27
+    type: gmail_thread
+    summary: Found "Weekly Note" email sent to staff, forwarded to V. Confirms direct contact and high-level strategy communication.
+

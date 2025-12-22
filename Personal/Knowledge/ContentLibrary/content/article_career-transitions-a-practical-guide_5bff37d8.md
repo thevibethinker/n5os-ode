@@ -1,1 +1,0 @@
-This is the full text of my article about career transitions. It contains detailed insights about the psychological barriers people face when changing careers, and practical strategies for navigating these transitions successfully.

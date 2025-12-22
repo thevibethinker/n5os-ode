@@ -1,9 +1,8 @@
 ---
 person_id: elaine-pak
-created: '2025-11-29'
-last_edited: '2025-11-29'
+created: 2025-11-29
+last_edited: 2025-11-29
 ---
-
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/elaine-pak.md) -->
 # Elaine Pak
 

@@ -1,0 +1,31 @@
+{
+  "data": {
+    "contact_first_name": "Christine",
+    "contact_last_name": "Song",
+    "contact_connected_at": "2025-12-19T15:46:34.000Z",
+    "contact_connected_by": "vrijenattawar",
+    "contact_linkedin_handle": "songchristine1",
+    "contact_linkedin_uid": "6582028",
+    "contact_linkedin_url": "https://www.linkedin.com/in/songchristine1",
+    "contact_headline": "Founder of 5 to 9 Society | Building an invite-only network for elite operators, founders & investors | Recovering ex-Chief People Officer | Your network truly is your net worth",
+    "contact_location": "Greater Toronto Area, Canada",
+    "contact_picture": "https://media.licdn.com/dms/image/v2/D5603AQFGxUC_TF3D8w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1699037082214?e=1768435200&v=beta&t=4g6V9uS-A4EW8p4DfJ7UvQQhEkw_JNK-hbddfCcT5iY",
+    "conversation_latest_content": "I realize today's the 24th so please feel free to send it at your convenience!",
+    "conversation_latest_timestamp": "2025-12-24T17:10:32.847Z",
+    "conversation_starred": false,
+    "conversation_status": "waiting_for_their_reply",
+    "conversation_state": "in_inbox",
+    "kondo_url": "https://app.trykondo.com/inboxes/all/315826042%2B2-ZTFjOGIzNDktMjgyYi00ZmI2LWE2ZDUtYWE0Y2I4OTE0NDY2XzEwMA%3D%3D",
+    "kondo_note": null,
+    "kondo_labels": []
+  },
+  "event": {
+    "_id": "uVCyq0XRpPDRlZMF7pAFh0E1eCZiFLh-Ds114bIezaM",
+    "email": "attawar.v@gmail.com",
+    "teamspace": "3de4a246-2706-4091-8197-02af81cc5411",
+    "timestamp": 1766596238831,
+    "type": "general-update",
+    "webhook": "550acaf9-638d-4c62-8758-7a750dc89313",
+    "workspace": "6055c6e5-55d3-4bc6-b8a4-2f796a504c5a"
+  }
+}

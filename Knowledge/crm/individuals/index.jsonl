@@ -1,184 +1,65 @@
-{"person_id": "aaron-mak-hoffman", "path": "Personal/Knowledge/CRM/individuals/aaron-mak-hoffman.md", "name": "aaron-mak-hoffman"}
-{"person_id": "adam", "path": "Personal/Knowledge/CRM/individuals/adam.md", "name": "adam"}
-{"person_id": "aditya", "path": "Personal/Knowledge/CRM/individuals/aditya.md", "name": "aditya"}
-{"person_id": "ajdeluise", "path": "Personal/Knowledge/CRM/individuals/ajdeluise.md", "name": "ajdeluise"}
-{"person_id": "alex-caveny", "path": "Personal/Knowledge/CRM/individuals/alex-caveny.md", "name": "alex-caveny"}
-{"person_id": "alex", "path": "Personal/Knowledge/CRM/individuals/alex.md", "name": "alex"}
-{"person_id": "alexis-[lastname-unknown]", "path": "Personal/Knowledge/CRM/individuals/alexis-[lastname-unknown].md", "name": "alexis-[lastname-unknown]"}
-{"person_id": "alexis", "path": "Personal/Knowledge/CRM/individuals/alexis.md", "name": "alexis"}
-{"person_id": "alfred-sogja", "path": "Personal/Knowledge/CRM/individuals/alfred-sogja.md", "name": "alfred-sogja"}
-{"person_id": "allie-cialeo", "path": "Personal/Knowledge/CRM/individuals/allie-cialeo.md", "name": "allie-cialeo"}
-{"person_id": "amrita-gill", "path": "Personal/Knowledge/CRM/individuals/amrita-gill.md", "name": "amrita-gill"}
-{"person_id": "amy-kim-waschke", "path": "Personal/Knowledge/CRM/individuals/amy-kim-waschke.md", "name": "amy-kim-waschke"}
-{"person_id": "amy-quan", "path": "Personal/Knowledge/CRM/individuals/amy-quan.md", "name": "amy-quan"}
-{"person_id": "andrew-yeung", "path": "Personal/Knowledge/CRM/individuals/andrew-yeung.md", "name": "andrew-yeung"}
-{"person_id": "andy-feng", "path": "Personal/Knowledge/CRM/individuals/andy-feng.md", "name": "andy-feng"}
-{"person_id": "andy", "path": "Personal/Knowledge/CRM/individuals/andy.md", "name": "andy"}
-{"person_id": "anisha-raju", "path": "Personal/Knowledge/CRM/individuals/anisha-raju.md", "name": "anisha-raju"}
-{"person_id": "anshula-johri", "path": "Personal/Knowledge/CRM/individuals/anshula-johri.md", "name": "anshula-johri"}
-{"person_id": "ash-straughn", "path": "Personal/Knowledge/CRM/individuals/ash-straughn.md", "name": "ash-straughn"}
-{"person_id": "asher-king-abramson", "path": "Personal/Knowledge/CRM/individuals/asher-king-abramson.md", "name": "asher-king-abramson"}
-{"person_id": "ashraf-heleka", "path": "Personal/Knowledge/CRM/individuals/ashraf-heleka.md", "name": "ashraf-heleka"}
-{"person_id": "asogja", "path": "Personal/Knowledge/CRM/individuals/asogja.md", "name": "asogja"}
-{"person_id": "attawar-v", "path": "Personal/Knowledge/CRM/individuals/attawar-v.md", "name": "attawar-v"}
-{"person_id": "austin", "path": "Personal/Knowledge/CRM/individuals/austin.md", "name": "austin"}
-{"person_id": "awais-immigration-tech", "path": "Personal/Knowledge/CRM/individuals/awais-immigration-tech.md", "name": "awais-immigration-tech"}
-{"person_id": "ayush-jain", "path": "Personal/Knowledge/CRM/individuals/ayush-jain.md", "name": "ayush-jain"}
-{"person_id": "ben-guo", "path": "Personal/Knowledge/CRM/individuals/ben-guo.md", "name": "ben-guo"}
-{"person_id": "ben-zo", "path": "Personal/Knowledge/CRM/individuals/ben-zo.md", "name": "ben-zo"}
-{"person_id": "ben", "path": "Personal/Knowledge/CRM/individuals/ben.md", "name": "ben"}
-{"person_id": "bennett-lee", "path": "Personal/Knowledge/CRM/individuals/bennett-lee.md", "name": "bennett-lee"}
-{"person_id": "bram-adams", "path": "Personal/Knowledge/CRM/individuals/bram-adams.md", "name": "bram-adams"}
-{"person_id": "brian-aquart", "path": "Personal/Knowledge/CRM/individuals/brian-aquart.md", "name": "brian-aquart"}
-{"person_id": "brinleigh-murphy-reuter", "path": "Personal/Knowledge/CRM/individuals/brinleigh-murphy-reuter.md", "name": "brinleigh-murphy-reuter"}
-{"person_id": "caleb-thornton", "path": "Personal/Knowledge/CRM/individuals/caleb-thornton.md", "name": "caleb-thornton"}
-{"person_id": "cameron-galbraith", "path": "Personal/Knowledge/CRM/individuals/cameron-galbraith.md", "name": "cameron-galbraith"}
-{"person_id": "carly-ackerman", "path": "Personal/Knowledge/CRM/individuals/carly-ackerman.md", "name": "carly-ackerman"}
-{"person_id": "ceren", "path": "Personal/Knowledge/CRM/individuals/ceren.md", "name": "ceren"}
-{"person_id": "chaitanya-p", "path": "Personal/Knowledge/CRM/individuals/chaitanya-p.md", "name": "chaitanya-p"}
-{"person_id": "chaitanya", "path": "Personal/Knowledge/CRM/individuals/chaitanya.md", "name": "chaitanya"}
-{"person_id": "charles-jolley", "path": "Personal/Knowledge/CRM/individuals/charles-jolley.md", "name": "charles-jolley"}
-{"person_id": "charlotte", "path": "Personal/Knowledge/CRM/individuals/charlotte.md", "name": "charlotte"}
-{"person_id": "chase-gagnon", "path": "Personal/Knowledge/CRM/individuals/chase-gagnon.md", "name": "chase-gagnon"}
-{"person_id": "chrisrussell674", "path": "Personal/Knowledge/CRM/individuals/chrisrussell674.md", "name": "chrisrussell674"}
-{"person_id": "colinnavon", "path": "Personal/Knowledge/CRM/individuals/colinnavon.md", "name": "colinnavon"}
-{"person_id": "conor-brady", "path": "Personal/Knowledge/CRM/individuals/conor-brady.md", "name": "conor-brady"}
-{"person_id": "daniel-williams", "path": "Personal/Knowledge/CRM/individuals/daniel-williams.md", "name": "daniel-williams"}
-{"person_id": "daniel", "path": "Personal/Knowledge/CRM/individuals/daniel.md", "name": "daniel"}
-{"person_id": "danielle-raskin", "path": "Personal/Knowledge/CRM/individuals/danielle-raskin.md", "name": "danielle-raskin"}
-{"person_id": "darius-goldman", "path": "Personal/Knowledge/CRM/individuals/darius-goldman.md", "name": "darius-goldman"}
-{"person_id": "david-speigel", "path": "Personal/Knowledge/CRM/individuals/david-speigel.md", "name": "david-speigel"}
-{"person_id": "david-yunghans", "path": "Personal/Knowledge/CRM/individuals/david-yunghans.md", "name": "david-yunghans"}
-{"person_id": "davitshadunts", "path": "Personal/Knowledge/CRM/individuals/davitshadunts.md", "name": "davitshadunts"}
-{"person_id": "deepak", "path": "Personal/Knowledge/CRM/individuals/deepak.md", "name": "deepak"}
-{"person_id": "dspeigel", "path": "Personal/Knowledge/CRM/individuals/dspeigel.md", "name": "dspeigel"}
-{"person_id": "dylan-johnson", "path": "Personal/Knowledge/CRM/individuals/dylan-johnson.md", "name": "dylan-johnson"}
-{"person_id": "dylan-lieberman", "path": "Personal/Knowledge/CRM/individuals/dylan-lieberman.md", "name": "dylan-lieberman"}
-{"person_id": "edmund", "path": "Personal/Knowledge/CRM/individuals/edmund.md", "name": "edmund"}
-{"person_id": "elaine-p", "path": "Personal/Knowledge/CRM/individuals/elaine-p.md", "name": "elaine-p"}
-{"person_id": "elaine-pak", "path": "Personal/Knowledge/CRM/individuals/elaine-pak.md", "name": "elaine-pak"}
-{"person_id": "elizabeth-keshishyan-ek", "path": "Personal/Knowledge/CRM/individuals/elizabeth-keshishyan-ek.md", "name": "elizabeth-keshishyan-ek"}
-{"person_id": "emily-nelson-de-velasco", "path": "Personal/Knowledge/CRM/individuals/emily-nelson-de-velasco.md", "name": "emily-nelson-de-velasco"}
-{"person_id": "emily", "path": "Personal/Knowledge/CRM/individuals/emily.md", "name": "emily"}
-{"person_id": "eric-espinel", "path": "Personal/Knowledge/CRM/individuals/eric-espinel.md", "name": "eric-espinel"}
-{"person_id": "eric-stano", "path": "Personal/Knowledge/CRM/individuals/eric-stano.md", "name": "eric-stano"}
-{"person_id": "erika-underwood", "path": "Personal/Knowledge/CRM/individuals/erika-underwood.md", "name": "erika-underwood"}
-{"person_id": "external-unknown", "path": "Personal/Knowledge/CRM/individuals/external-unknown.md", "name": "external-unknown"}
-{"person_id": "fei-ma-nira", "path": "Personal/Knowledge/CRM/individuals/fei-ma-nira.md", "name": "fei-ma-nira"}
-{"person_id": "fei-nira", "path": "Personal/Knowledge/CRM/individuals/fei-nira.md", "name": "fei-nira"}
-{"person_id": "felix-campos", "path": "Personal/Knowledge/CRM/individuals/felix-campos.md", "name": "felix-campos"}
-{"person_id": "gabi-zijderveld", "path": "Personal/Knowledge/CRM/individuals/gabi-zijderveld.md", "name": "gabi-zijderveld"}
-{"person_id": "giovanna-ventola", "path": "Personal/Knowledge/CRM/individuals/giovanna-ventola.md", "name": "giovanna-ventola"}
-{"person_id": "graham-smith", "path": "Personal/Knowledge/CRM/individuals/graham-smith.md", "name": "graham-smith"}
-{"person_id": "griffin-schultz", "path": "Personal/Knowledge/CRM/individuals/griffin-schultz.md", "name": "griffin-schultz"}
-{"person_id": "hamoon-ekhtiari", "path": "Personal/Knowledge/CRM/individuals/hamoon-ekhtiari.md", "name": "hamoon-ekhtiari"}
-{"person_id": "hannah", "path": "Personal/Knowledge/CRM/individuals/hannah.md", "name": "hannah"}
-{"person_id": "heather-wixson", "path": "Personal/Knowledge/CRM/individuals/heather-wixson.md", "name": "heather-wixson"}
-{"person_id": "hei-yue-pang-yuu", "path": "Personal/Knowledge/CRM/individuals/hei-yue-pang-yuu.md", "name": "hei-yue-pang-yuu"}
-{"person_id": "hei-yue-pang", "path": "Personal/Knowledge/CRM/individuals/hei-yue-pang.md", "name": "hei-yue-pang"}
-{"person_id": "hello", "path": "Personal/Knowledge/CRM/individuals/hello.md", "name": "hello"}
-{"person_id": "hmya", "path": "Personal/Knowledge/CRM/individuals/hmya.md", "name": "hmya"}
-{"person_id": "holly", "path": "Personal/Knowledge/CRM/individuals/holly.md", "name": "holly"}
-{"person_id": "husain", "path": "Personal/Knowledge/CRM/individuals/husain.md", "name": "husain"}
-{"person_id": "ian-zo", "path": "Personal/Knowledge/CRM/individuals/ian-zo.md", "name": "ian-zo"}
-{"person_id": "ilse-funkhouser", "path": "Personal/Knowledge/CRM/individuals/ilse-funkhouser.md", "name": "ilse-funkhouser"}
-{"person_id": "ilya-kucherenko", "path": "Personal/Knowledge/CRM/individuals/ilya-kucherenko.md", "name": "ilya-kucherenko"}
-{"person_id": "jacob-bank", "path": "Personal/Knowledge/CRM/individuals/jacob-bank.md", "name": "jacob-bank"}
-{"person_id": "jacob-solano", "path": "Personal/Knowledge/CRM/individuals/jacob-solano.md", "name": "jacob-solano"}
-{"person_id": "jake-fohe", "path": "Personal/Knowledge/CRM/individuals/jake-fohe.md", "name": "jake-fohe"}
-{"person_id": "jake-weissbourd", "path": "Personal/Knowledge/CRM/individuals/jake-weissbourd.md", "name": "jake-weissbourd"}
-{"person_id": "jason-cheung", "path": "Personal/Knowledge/CRM/individuals/jason-cheung.md", "name": "jason-cheung"}
-{"person_id": "jaya-pokuri", "path": "Personal/Knowledge/CRM/individuals/jaya-pokuri.md", "name": "jaya-pokuri"}
-{"person_id": "jeff-h-sipe", "path": "Personal/Knowledge/CRM/individuals/jeff-h-sipe.md", "name": "jeff-h-sipe"}
-{"person_id": "jeff", "path": "Personal/Knowledge/CRM/individuals/jeff.md", "name": "jeff"}
-{"person_id": "jihoon-suh", "path": "Personal/Knowledge/CRM/individuals/jihoon-suh.md", "name": "jihoon-suh"}
-{"person_id": "jim-pyke", "path": "Personal/Knowledge/CRM/individuals/jim-pyke.md", "name": "jim-pyke"}
-{"person_id": "jim", "path": "Personal/Knowledge/CRM/individuals/jim.md", "name": "jim"}
-{"person_id": "jonathan-beda", "path": "Personal/Knowledge/CRM/individuals/jonathan-beda.md", "name": "jonathan-beda"}
-{"person_id": "kai-song", "path": "Personal/Knowledge/CRM/individuals/kai-song.md", "name": "kai-song"}
-{"person_id": "kamina-singh", "path": "Personal/Knowledge/CRM/individuals/kamina-singh.md", "name": "kamina-singh"}
-{"person_id": "kat-de-haen-fourth-effect", "path": "Personal/Knowledge/CRM/individuals/kat-de-haen-fourth-effect.md", "name": "kat-de-haen-fourth-effect"}
-{"person_id": "kiara-kolaczyk", "path": "Personal/Knowledge/CRM/individuals/kiara-kolaczyk.md", "name": "kiara-kolaczyk"}
-{"person_id": "kizito-okorowu", "path": "Personal/Knowledge/CRM/individuals/kizito-okorowu.md", "name": "kizito-okorowu"}
-{"person_id": "konrad-kucharski", "path": "Personal/Knowledge/CRM/individuals/konrad-kucharski.md", "name": "konrad-kucharski"}
-{"person_id": "konrad", "path": "Personal/Knowledge/CRM/individuals/konrad.md", "name": "konrad"}
-{"person_id": "kressma", "path": "Personal/Knowledge/CRM/individuals/kressma.md", "name": "kressma"}
-{"person_id": "krista-tan", "path": "Personal/Knowledge/CRM/individuals/krista-tan.md", "name": "krista-tan"}
-{"person_id": "laura-close", "path": "Personal/Knowledge/CRM/individuals/laura-close.md", "name": "laura-close"}
-{"person_id": "laura", "path": "Personal/Knowledge/CRM/individuals/laura.md", "name": "laura"}
-{"person_id": "lauren-salitan", "path": "Personal/Knowledge/CRM/individuals/lauren-salitan.md", "name": "lauren-salitan"}
-{"person_id": "lisa-noble", "path": "Personal/Knowledge/CRM/individuals/lisa-noble.md", "name": "lisa-noble"}
-{"person_id": "logan-currie", "path": "Personal/Knowledge/CRM/individuals/logan-currie.md", "name": "logan-currie"}
-{"person_id": "loganhc", "path": "Personal/Knowledge/CRM/individuals/loganhc.md", "name": "loganhc"}
-{"person_id": "mai-flynn", "path": "Personal/Knowledge/CRM/individuals/mai-flynn.md", "name": "mai-flynn"}
-{"person_id": "mail-mgrady", "path": "Personal/Knowledge/CRM/individuals/mail-mgrady.md", "name": "mail-mgrady"}
-{"person_id": "maira-iqbal", "path": "Personal/Knowledge/CRM/individuals/maira-iqbal.md", "name": "maira-iqbal"}
-{"person_id": "malvika-jethmalani", "path": "Personal/Knowledge/CRM/individuals/malvika-jethmalani.md", "name": "malvika-jethmalani"}
-{"person_id": "marcus-williams", "path": "Personal/Knowledge/CRM/individuals/marcus-williams.md", "name": "marcus-williams"}
-{"person_id": "marlee-whetten", "path": "Personal/Knowledge/CRM/individuals/marlee-whetten.md", "name": "marlee-whetten"}
-{"person_id": "marvin", "path": "Personal/Knowledge/CRM/individuals/marvin.md", "name": "marvin"}
-{"person_id": "max-carmenar", "path": "Personal/Knowledge/CRM/individuals/max-carmenar.md", "name": "max-carmenar"}
-{"person_id": "meera-krishnan", "path": "Personal/Knowledge/CRM/individuals/meera-krishnan.md", "name": "meera-krishnan"}
-{"person_id": "mguerrero", "path": "Personal/Knowledge/CRM/individuals/mguerrero.md", "name": "mguerrero"}
-{"person_id": "michael-berlingo", "path": "Personal/Knowledge/CRM/individuals/michael-berlingo.md", "name": "michael-berlingo"}
-{"person_id": "michael-maher-cornell", "path": "Personal/Knowledge/CRM/individuals/michael-maher-cornell.md", "name": "michael-maher-cornell"}
-{"person_id": "michael-maher", "path": "Personal/Knowledge/CRM/individuals/michael-maher.md", "name": "michael-maher"}
-{"person_id": "mihir-makwana", "path": "Personal/Knowledge/CRM/individuals/mihir-makwana.md", "name": "mihir-makwana"}
-{"person_id": "mishal-sayed", "path": "Personal/Knowledge/CRM/individuals/mishal-sayed.md", "name": "mishal-sayed"}
-{"person_id": "mishal", "path": "Personal/Knowledge/CRM/individuals/mishal.md", "name": "mishal"}
-{"person_id": "nafisa-poonawala", "path": "Personal/Knowledge/CRM/individuals/nafisa-poonawala.md", "name": "nafisa-poonawala"}
-{"person_id": "nholuba", "path": "Personal/Knowledge/CRM/individuals/nholuba.md", "name": "nholuba"}
-{"person_id": "nick-gu", "path": "Personal/Knowledge/CRM/individuals/nick-gu.md", "name": "nick-gu"}
-{"person_id": "nick", "path": "Personal/Knowledge/CRM/individuals/nick.md", "name": "nick"}
-{"person_id": "nicole-holubar-walker", "path": "Personal/Knowledge/CRM/individuals/nicole-holubar-walker.md", "name": "nicole-holubar-walker"}
-{"person_id": "nicole-holubar", "path": "Personal/Knowledge/CRM/individuals/nicole-holubar.md", "name": "nicole-holubar"}
-{"person_id": "nile-ravenell", "path": "Personal/Knowledge/CRM/individuals/nile-ravenell.md", "name": "nile-ravenell"}
-{"person_id": "oeh", "path": "Personal/Knowledge/CRM/individuals/oeh.md", "name": "oeh"}
-{"person_id": "olivia-lara-gresty", "path": "Personal/Knowledge/CRM/individuals/olivia-lara-gresty.md", "name": "olivia-lara-gresty"}
-{"person_id": "olugbengaesan-esan", "path": "Personal/Knowledge/CRM/individuals/olugbengaesan-esan.md", "name": "olugbengaesan-esan"}
-{"person_id": "oscar-marquina", "path": "Personal/Knowledge/CRM/individuals/oscar-marquina.md", "name": "oscar-marquina"}
-{"person_id": "pam-kavalam", "path": "Personal/Knowledge/CRM/individuals/pam-kavalam.md", "name": "pam-kavalam"}
-{"person_id": "pamela-kavalam", "path": "Personal/Knowledge/CRM/individuals/pamela-kavalam.md", "name": "pamela-kavalam"}
-{"person_id": "paul-lee", "path": "Personal/Knowledge/CRM/individuals/paul-lee.md", "name": "paul-lee"}
-{"person_id": "paula-mcmahon", "path": "Personal/Knowledge/CRM/individuals/paula-mcmahon.md", "name": "paula-mcmahon"}
-{"person_id": "pkavalam", "path": "Personal/Knowledge/CRM/individuals/pkavalam.md", "name": "pkavalam"}
-{"person_id": "pooja-varshneya", "path": "Personal/Knowledge/CRM/individuals/pooja-varshneya.md", "name": "pooja-varshneya"}
-{"person_id": "rajesh-nerlikar", "path": "Personal/Knowledge/CRM/individuals/rajesh-nerlikar.md", "name": "rajesh-nerlikar"}
-{"person_id": "ray-batra", "path": "Personal/Knowledge/CRM/individuals/ray-batra.md", "name": "ray-batra"}
-{"person_id": "ray-zo", "path": "Personal/Knowledge/CRM/individuals/ray-zo.md", "name": "ray-zo"}
-{"person_id": "rcaldwellm", "path": "Personal/Knowledge/CRM/individuals/rcaldwellm.md", "name": "rcaldwellm"}
-{"person_id": "rochel-polter", "path": "Personal/Knowledge/CRM/individuals/rochel-polter.md", "name": "rochel-polter"}
-{"person_id": "rory-brown", "path": "Personal/Knowledge/CRM/individuals/rory-brown.md", "name": "rory-brown"}
-{"person_id": "ryan-vanderbilt", "path": "Personal/Knowledge/CRM/individuals/ryan-vanderbilt.md", "name": "ryan-vanderbilt"}
-{"person_id": "saad-bin-shafiq", "path": "Personal/Knowledge/CRM/individuals/saad-bin-shafiq.md", "name": "saad-bin-shafiq"}
-{"person_id": "sam-bourton", "path": "Personal/Knowledge/CRM/individuals/sam-bourton.md", "name": "sam-bourton"}
-{"person_id": "sara", "path": "Personal/Knowledge/CRM/individuals/sara.md", "name": "sara"}
-{"person_id": "sarah-chen", "path": "Personal/Knowledge/CRM/individuals/sarah-chen.md", "name": "sarah-chen"}
-{"person_id": "saul-garza", "path": "Personal/Knowledge/CRM/individuals/saul-garza.md", "name": "saul-garza"}
-{"person_id": "sharon-laker-kimberly", "path": "Personal/Knowledge/CRM/individuals/sharon-laker-kimberly.md", "name": "sharon-laker-kimberly"}
-{"person_id": "shawn-yang", "path": "Personal/Knowledge/CRM/individuals/shawn-yang.md", "name": "shawn-yang"}
-{"person_id": "shivam-desai", "path": "Personal/Knowledge/CRM/individuals/shivam-desai.md", "name": "shivam-desai"}
-{"person_id": "shivani-mathur", "path": "Personal/Knowledge/CRM/individuals/shivani-mathur.md", "name": "shivani-mathur"}
-{"person_id": "shujaat-ahmad", "path": "Personal/Knowledge/CRM/individuals/shujaat-ahmad.md", "name": "shujaat-ahmad"}
-{"person_id": "shyam-chidamber", "path": "Personal/Knowledge/CRM/individuals/shyam-chidamber.md", "name": "shyam-chidamber"}
-{"person_id": "sl2766", "path": "Personal/Knowledge/CRM/individuals/sl2766.md", "name": "sl2766"}
-{"person_id": "sofia-wernick", "path": "Personal/Knowledge/CRM/individuals/sofia-wernick.md", "name": "sofia-wernick"}
-{"person_id": "spv", "path": "Personal/Knowledge/CRM/individuals/spv.md", "name": "spv"}
-{"person_id": "srinidhi", "path": "Personal/Knowledge/CRM/individuals/srinidhi.md", "name": "srinidhi"}
-{"person_id": "stephanie-szuch", "path": "Personal/Knowledge/CRM/individuals/stephanie-szuch.md", "name": "stephanie-szuch"}
-{"person_id": "tami-forman", "path": "Personal/Knowledge/CRM/individuals/tami-forman.md", "name": "tami-forman"}
-{"person_id": "teresa-anoje", "path": "Personal/Knowledge/CRM/individuals/teresa-anoje.md", "name": "teresa-anoje"}
-{"person_id": "theresa-anoje", "path": "Personal/Knowledge/CRM/individuals/theresa-anoje.md", "name": "theresa-anoje"}
-{"person_id": "tiff", "path": "Personal/Knowledge/CRM/individuals/tiff.md", "name": "tiff"}
-{"person_id": "tiffany-huang", "path": "Personal/Knowledge/CRM/individuals/tiffany-huang.md", "name": "tiffany-huang"}
-{"person_id": "tim-he", "path": "Personal/Knowledge/CRM/individuals/tim-he.md", "name": "tim-he"}
-{"person_id": "tony-kim", "path": "Personal/Knowledge/CRM/individuals/tony-kim.md", "name": "tony-kim"}
-{"person_id": "tony-padilla", "path": "Personal/Knowledge/CRM/individuals/tony-padilla.md", "name": "tony-padilla"}
-{"person_id": "ulrich", "path": "Personal/Knowledge/CRM/individuals/ulrich.md", "name": "ulrich"}
-{"person_id": "ulrik-soderstrom", "path": "Personal/Knowledge/CRM/individuals/ulrik-soderstrom.md", "name": "ulrik-soderstrom"}
-{"person_id": "usha-srinivasan", "path": "Personal/Knowledge/CRM/individuals/usha-srinivasan.md", "name": "usha-srinivasan"}
-{"person_id": "whitney-jones", "path": "Personal/Knowledge/CRM/individuals/whitney-jones.md", "name": "whitney-jones"}
-{"person_id": "yena-kim", "path": "Personal/Knowledge/CRM/individuals/yena-kim.md", "name": "yena-kim"}
-{"person_id": "yousef-abdel", "path": "Personal/Knowledge/CRM/individuals/yousef-abdel.md", "name": "yousef-abdel"}
-{"person_id": "zo-team-member-unknown", "path": "Personal/Knowledge/CRM/individuals/zo-team-member-unknown.md", "name": "zo-team-member-unknown"}
-{"person_id": "zoe-weber", "path": "Personal/Knowledge/CRM/individuals/zoe-weber.md", "name": "zoe-weber"}
+{"email": "shivam@corridorx.io", "slug": "shivam", "name": "Shivam", "organization": "Corridorx.Io", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/shivam.md"}
+{"email": "tejas@startery.io", "slug": "tejas", "name": "Tejas", "organization": "Startery.Io", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/tejas.md"}
+{"email": "ulrik@marvinventures.com", "slug": "ulrik", "name": "Ulrik", "organization": "Marvinventures", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/ulrik.md"}
+{"email": "shanna.x.liu@gmail.com", "slug": "shanna-x-liu", "name": "Shanna X Liu", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/shanna-x-liu.md"}
+{"email": "hubbard.pj@gmail.com", "slug": "hubbard-pj", "name": "Hubbard Pj", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/hubbard-pj.md"}
+{"email": "devd@varia-ai.com", "slug": "devd", "name": "Devd", "organization": "Varia-Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/devd.md"}
+{"email": "krishna@nyktravel.com", "slug": "krishna", "name": "Krishna", "organization": "Nyktravel", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/krishna.md"}
+{"email": "hinaualan@gmail.com", "slug": "hinaualan", "name": "Hinaualan", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/hinaualan.md"}
+{"email": "trose311@gmail.com", "slug": "trose311", "name": "Trose311", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/trose311.md"}
+{"email": "c.swead@gmail.com", "slug": "c-swead", "name": "C Swead", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/c-swead.md"}
+{"email": "junaid@defent.com", "slug": "junaid", "name": "Junaid", "organization": "Defent", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/junaid.md"}
+{"email": "ulrik@benchmarklabs.com", "slug": "ulrik-benchmarklabs", "name": "Ulrik Benchmarklabs", "organization": "Benchmarklabs", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/ulrik-benchmarklabs.md"}
+{"email": "amele@misajskin.com", "slug": "amele", "name": "Amele", "organization": "Misajskin", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/amele.md"}
+{"email": "alan@mymeli.co", "slug": "alan", "name": "Alan", "organization": "Mymeli.Co", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/alan.md"}
+{"email": "garrettlang@gmail.com", "slug": "garrettlang", "name": "Garrettlang", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/garrettlang.md"}
+{"email": "fti-nyc@googlegroups.com", "slug": "fti-nyc", "name": "Fti Nyc", "organization": "Googlegroups", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/fti-nyc.md"}
+{"email": "sgotlieb@gmail.com", "slug": "sgotlieb", "name": "Sgotlieb", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/sgotlieb.md"}
+{"email": "msergentps@gmail.com", "slug": "msergentps", "name": "Msergentps", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-02", "file": "Knowledge/crm/individuals/msergentps.md"}
+{"email": "brad@orange-quarter.com", "slug": "brad-thomas", "name": "Brad Thomas", "organization": "Orange-Quarter", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-07", "file": "Knowledge/crm/individuals/brad-thomas.md"}
+{"email": "davis@teamworkonline.com", "slug": "davis-filippell", "name": "Davis Filippell", "organization": "Teamworkonline", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-07", "file": "Knowledge/crm/individuals/davis-filippell.md"}
+{"email": "michael@anyreach.ai", "slug": "michael", "name": "Michael", "organization": "Anyreach.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-07", "file": "Knowledge/crm/individuals/michael.md"}
+{"email": "fti-ivy-plus-events@googlegroups.com", "slug": "fti-ivy-plus-events", "name": "Fti Ivy Plus Events", "organization": "Googlegroups", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-07", "file": "Knowledge/crm/individuals/fti-ivy-plus-events.md"}
+{"email": "ocumancer@gmail.com", "slug": "ocumancer", "name": "Ocumancer", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-07", "file": "Knowledge/crm/individuals/ocumancer.md"}
+{"email": "leem2486@gmail.com", "slug": "leem2486", "name": "Leem2486", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-07", "file": "Knowledge/crm/individuals/leem2486.md"}
+{"email": "mmm429@cornell.edu", "slug": "mmm429", "name": "Mmm429", "organization": "Cornell", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-09", "file": "Knowledge/crm/individuals/mmm429.md"}
+{"email": "aks277@cornell.edu", "slug": "aks277", "name": "Aks277", "organization": "Cornell", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-09", "file": "Knowledge/crm/individuals/aks277.md"}
+{"email": "cf579@cornell.edu", "slug": "cf579", "name": "Cf579", "organization": "Cornell", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-09", "file": "Knowledge/crm/individuals/cf579.md"}
+{"email": "ch994@cornell.edu", "slug": "ch994", "name": "Ch994", "organization": "Cornell", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-09", "file": "Knowledge/crm/individuals/ch994.md"}
+{"email": "vvp9@cornell.edu", "slug": "vvp9", "name": "Vvp9", "organization": "Cornell", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-09", "file": "Knowledge/crm/individuals/vvp9.md"}
+{"email": "cdavis@make-connexions.com", "slug": "cdavis", "name": "Cdavis", "organization": "Make-Connexions", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/cdavis.md"}
+{"email": "afraaz.irani@gmail.com", "slug": "afraaz-irani", "name": "Afraaz Irani", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/afraaz-irani.md"}
+{"email": "oscar@marvinvc.com", "slug": "oscar", "name": "Oscar", "organization": "Marvinvc", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/oscar.md"}
+{"email": "kristen@elly.ai", "slug": "kristen", "name": "Kristen", "organization": "Elly.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/kristen.md"}
+{"email": "faith@42geeks.com", "slug": "faith", "name": "Faith", "organization": "42Geeks", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/faith.md"}
+{"email": "victor@lumoscapitalgroup.com", "slug": "victor", "name": "Victor", "organization": "Lumoscapitalgroup", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/victor.md"}
+{"email": "shujaat@belongandlead.com", "slug": "shujaat", "name": "Shujaat", "organization": "Belongandlead", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-10", "file": "Knowledge/crm/individuals/shujaat.md"}
+{"email": "ethan@marvinvc.com", "slug": "ethan", "name": "Ethan", "organization": "Marvinvc", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-11", "file": "Knowledge/crm/individuals/ethan.md"}
+{"email": "ericakh@gmail.com", "slug": "ericakh", "name": "Ericakh", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-11", "file": "Knowledge/crm/individuals/ericakh.md"}
+{"email": "shaunak@docsum.ai", "slug": "shaunak", "name": "Shaunak", "organization": "Docsum.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-11", "file": "Knowledge/crm/individuals/shaunak.md"}
+{"email": "erica@alpic.ai", "slug": "erica", "name": "Erica", "organization": "Alpic.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-11", "file": "Knowledge/crm/individuals/erica.md"}
+{"email": "ivor.stratford@morpheus-group.com", "slug": "ivor-stratford", "name": "Ivor Stratford", "organization": "Morpheus-Group", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-11", "file": "Knowledge/crm/individuals/ivor-stratford.md"}
+{"email": "emilymleahy@gmail.com", "slug": "emilymleahy", "name": "Emilymleahy", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-11", "file": "Knowledge/crm/individuals/emilymleahy.md"}
+{"email": "annabao9595@gmail.com", "slug": "annabao9595", "name": "Annabao9595", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-12", "file": "Knowledge/crm/individuals/annabao9595.md"}
+{"email": "max@dayoneme.com", "slug": "max", "name": "Max", "organization": "Dayoneme", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-12", "file": "Knowledge/crm/individuals/max.md"}
+{"email": "howie@howie.ai", "slug": "howie", "name": "Howie", "organization": "Howie.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-12", "file": "Knowledge/crm/individuals/howie.md"}
+{"email": "lalitha.a@darwinbox.in", "slug": "lalitha-a", "name": "Lalitha A", "organization": "Darwinbox.In", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-12", "file": "Knowledge/crm/individuals/lalitha-a.md"}
+{"email": "griffin.seifman@rho.co", "slug": "griffin-seifman", "name": "Griffin Seifman", "organization": "Rho.Co", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-14", "file": "Knowledge/crm/individuals/griffin-seifman.md"}
+{"email": "rachel.kayun.wong@gmail.com", "slug": "rachel-kayun-wong", "name": "Rachel Kayun Wong", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-14", "file": "Knowledge/crm/individuals/rachel-kayun-wong.md"}
+{"email": "contact@humanuptions.com", "slug": "contact", "name": "Contact", "organization": "Humanuptions", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-14", "file": "Knowledge/crm/individuals/contact.md"}
+{"email": "eric@consonant.vc", "slug": "eric", "name": "Eric", "organization": "Consonant.Vc", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-14", "file": "Knowledge/crm/individuals/eric.md"}
+{"email": "alexander@getclera.com", "slug": "alexander-farr", "name": "Alexander Farr", "organization": "Getclera", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-15", "file": "Knowledge/crm/individuals/alexander-farr.md"}
+{"email": "david@skillcraft.co", "slug": "david", "name": "David", "organization": "Skillcraft.Co", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-16", "file": "Knowledge/crm/individuals/david.md"}
+{"email": "alec@sourcestack.co", "slug": "alec-barrett-wilsdon", "name": "Alec Barrett-Wilsdon", "organization": "Sourcestack.Co", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-16", "file": "Knowledge/crm/individuals/alec-barrett-wilsdon.md"}
+{"email": "brock@forecastr.co", "slug": "brock", "name": "Brock", "organization": "Forecastr.Co", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-16", "file": "Knowledge/crm/individuals/brock.md"}
+{"email": "jatin@hypermodel.ai", "slug": "jatin-sandilya", "name": "Jatin Sandilya", "organization": "Hypermodel.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-16", "file": "Knowledge/crm/individuals/jatin-sandilya.md"}
+{"email": "amandarosesachs@gmail.com", "slug": "amandarosesachs", "name": "Amandarosesachs", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-17", "file": "Knowledge/crm/individuals/amandarosesachs.md"}
+{"email": "david@misplaced.us", "slug": "david-a", "name": "David A", "organization": "Misplaced.Us", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-17", "file": "Knowledge/crm/individuals/david-a.md"}
+{"email": "jonathan@rpcvnexus.org", "slug": "jonathan", "name": "Jonathan", "organization": "Rpcvnexus", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/jonathan.md"}
+{"email": "jiger@rpcvnexus.org", "slug": "jiger", "name": "Jiger", "organization": "Rpcvnexus", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/jiger.md"}
+{"email": "ankit.mittal@zeni.ai", "slug": "ankit-mittal", "name": "Ankit Mittal", "organization": "Zeni.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/ankit-mittal.md"}
+{"email": "alphonse@zeni.ai", "slug": "alphonse", "name": "Alphonse", "organization": "Zeni.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/alphonse.md"}
+{"email": "vineet@zeni.ai", "slug": "vineet", "name": "Vineet", "organization": "Zeni.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/vineet.md"}
+{"email": "shruti.singh@zeni.ai", "slug": "shruti-singh", "name": "Shruti Singh", "organization": "Zeni.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/shruti-singh.md"}
+{"email": "michelleluanss@gmail.com", "slug": "michelleluanss", "name": "Michelleluanss", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-23", "file": "Knowledge/crm/individuals/michelleluanss.md"}
+{"email": "abigaylerose03@gmail.com", "slug": "abigaylerose03", "name": "Abigaylerose03", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2025-12-25", "file": "Knowledge/crm/individuals/abigaylerose03.md"}

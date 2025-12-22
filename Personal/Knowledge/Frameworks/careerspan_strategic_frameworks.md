@@ -1,14 +1,17 @@
 ---
 created: 2025-11-05
 last_edited: 2025-11-05
-version: 1.0
+version: 1
 status: stable
 category: architectural
 source: Strategic Intelligence Report (Nov 2024)
 source_conversation: con_kSq36OtO8rmECYtW
-tags: [frameworks, strategy, messaging, positioning]
+tags:
+  - frameworks
+  - strategy
+  - messaging
+  - positioning
 ---
-
 # Careerspan Strategic Frameworks
 
 **What This Document Is:** Reusable strategic frameworks for positioning, messaging, and decision-making. These frameworks encode patterns that can be applied across contexts (fundraising, partnerships, sales, product).
