@@ -59,3 +59,12 @@ No prior email history found. Calendar meeting scheduled.
 **Last email:** 2025-11-10  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+## Intelligence Log
+
+### 2025-11-30 18:33 UTC | aviato_enrichment_error
+
+**Source:** aviato_api
+
+- Status: failed
+- Error: too many values to unpack (expected 2)

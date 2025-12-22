@@ -1,0 +1,72 @@
+# V's Travel Baseline Configuration
+# SSOT for flight search preferences
+# Version: 1.0 | Created: 2025-12-21
+# Provenance: con_q7r0aONFiaolYKUe
+
+profile:
+  name: "V Default"
+  home_region: "NYC Metro"
+
+airports:
+  # Priority order for departure (1 = highest)
+  departure_priority:
+    - code: "LGA"
+      name: "LaGuardia"
+      priority: 1
+      notes: "Primary - closest to home"
+    - code: "JFK"
+      name: "John F. Kennedy"
+      priority: 2
+      notes: "Preferred when JetBlue available (overrides LGA)"
+    - code: "EWR"
+      name: "Newark Liberty"
+      priority: 3
+      notes: "Backup option"
+
+airlines:
+  preferred:
+    - code: "B6"
+      name: "JetBlue"
+      tier: "primary"
+      notes: "Strong preference - triggers JFK override"
+    - code: "DL"
+      name: "Delta"
+      tier: "secondary"
+  
+  excluded:
+    - code: "F9"
+      name: "Frontier"
+      reason: "Never fly"
+      hard_exclude: true
+    - code: "NK"
+      name: "Spirit"
+      reason: "Avoid strongly"
+      hard_exclude: true
+
+cabin:
+  class: "economy"
+  tier: "main"  # Not basic economy
+  preferences:
+    - "refundable"
+    - "seat_selection_included"
+  exclude_fare_types:
+    - "basic_economy"
+    - "light"
+    - "saver"
+
+routing:
+  max_stops: 0  # Nonstop only whenever possible
+  fallback_max_stops: 1  # If no nonstops available
+  max_layover_minutes: 120  # 2 hours max if stops required
+
+# Dynamic preferences learned from searches
+# Format: preference_key: {value, learned_from, date_added}
+learned_preferences: {}
+
+# Future: Price thresholds per route
+# route_thresholds:
+#   JFK-LAX:
+#     low: 250
+#     typical: 350
+#     high: 500
+

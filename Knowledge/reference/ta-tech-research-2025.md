@@ -1,0 +1,75 @@
+---
+created: 2025-12-17
+last_edited: 2025-12-17
+version: 1.0
+provenance: con_9dPA5Z6pH6Vb717j
+source: "Aspect43 · Insights@Work 2025 – TAtech | Aug 2025"
+tags: [careerspan, gtm, talent-acquisition, market-research, hr-tech]
+---
+
+# TA Talent Acquisition Trade Association Research
+
+**Source:** Aspect43 · Insights@Work 2025 – TAtech | Aug 2025
+
+---
+
+## 1. Talent (Job Seekers)
+
+- **39%** of employers say they can't find candidates with the right skills, while only **17%** report a lack of applicants
+- **45%** of employers say salary expectations exceed what they can pay
+- The problem isn't volume of candidates but **value** — alignment between skills, pay expectations, and adaptability
+
+**Implication:** Careerspan can position itself as the tool that helps candidates signal value and alignment, not just presence.
+
+---
+
+## 2. Professional Communities
+
+- Most TA tech is "surviving, not standing out" — users are neutral, not loyal, and are waiting for something better
+- **45%** of buyers report they use a tool but could explore more of it
+- Engagement often stalls because customers lack "scaffolding" to grow into full usage
+
+**Implication:** Communities (universities, alumni groups, talent networks) need tools that don't just onboard users but guide them deeper — something Careerspan's conversational approach naturally does.
+
+---
+
+## 3. Career Growth-Oriented Communities
+
+- Buyers' top goals for TA tech: streamline processes (**77%**) and improve employee/candidate experience (**74%**)
+- ROI is measured in time saved, better decision-making, smoother collaboration — not just cost-cutting
+
+**Implication:** Careerspan can frame itself as a growth enabler that saves members time while improving reflection and matching outcomes.
+
+---
+
+## 4. HR Leaders
+
+- **56%** of TA tech purchases require CEO/COO approval
+- The #1 roadblock isn't lack of budget but justifying it with clear business outcomes
+- Nearly half (**48%**) of companies use all-in-one HR suites for TA, while only **14%** use specialized solutions across the stack
+- All-in-one tools "win by default" because they're easier to justify; point solutions must show unique, obvious value and seamless integration
+
+**Implication:** Careerspan must arm HR with a crisp business case — reduce turnover, better matches — and emphasize API-integration to fit into existing workflows.
+
+---
+
+## 5. Recruiters
+
+- Recruiters often don't know what they need or where to start; buying decisions stall at the start
+- Vendors that help recruiters build the case internally (e.g., one-pagers or email templates for execs) gain an edge
+- Buyers hesitate with complex/new tools unless vendors provide a clear story of how it solves a day-to-day problem
+
+**Implication:** Careerspan's recruiter-facing GTM should emphasize simplicity ("clear story," "alignment reports") and provide pre-packaged justification materials.
+
+---
+
+## Synthesis for Careerspan's GTM
+
+| Segment | Key Message |
+|---------|-------------|
+| **Talent** | Emphasize alignment (skills, pay, adaptability) |
+| **Professional Communities** | Emphasize ongoing scaffolding and engagement, not one-off tools |
+| **Career Growth Communities** | Lead with candidate experience and decision-making quality |
+| **HR** | Frame as an integration-ready layer that justifies itself via reduced attrition and better hires |
+| **Recruiters** | Package Careerspan in easy-to-share, story-driven assets that make internal selling simple |
+
