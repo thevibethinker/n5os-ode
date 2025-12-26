@@ -15,8 +15,12 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, asdict
 from difflib import SequenceMatcher
 
+# Ensure sibling scripts import when running as a standalone script
 sys.path.insert(0, str(Path(__file__).parent))
-from content_library import ContentLibrary
+
+# === V3 CONTENT LIBRARY IMPORT ===
+from content_library_v3 import ContentLibraryV3
+# === END V3 IMPORT ===
 
 logging.basicConfig(
     level=logging.INFO,
@@ -45,9 +49,11 @@ class EmailDiffEngine:
     """Extract semantic differences between draft and sent emails"""
     
     def __init__(self, content_library_path: Optional[Path] = None):
-        if content_library_path is None:
-            content_library_path = Path("/home/workspace/N5/prefs/communication/content-library.json")
-        self.content_library = ContentLibrary(content_library_path)
+        """Initialize with ContentLibraryV3.
+        
+        content_library_path is kept for backward compatibility but ignored.
+        """
+        self.content_library = ContentLibraryV3()
     
     def extract_corrections(
         self,
@@ -236,29 +242,35 @@ class EmailDiffEngine:
     
     def _detect_content_corrections(self, draft: str, sent: str) -> List[Correction]:
         """Detect snippets that were removed/changed"""
-        corrections = []
+        corrections: List[Correction] = []
         
-        # Get all snippets from content library
-        all_snippets = self.content_library.search(query="", tags={})
-        snippets = [s for s in all_snippets if s.type == "snippet"]
+        # Get all snippets from content library v3
+        all_snippets = self.content_library.search(
+            query=None,
+            item_type="snippet",
+            limit=1000,
+        )
         
-        for snippet in snippets:
-            in_draft = snippet.content in draft
-            in_sent = snippet.content in sent
+        for snippet in all_snippets:
+            content = snippet.get("content") or ""
+            if not content:
+                continue
+            in_draft = content in draft
+            in_sent = content in sent
             
             # Snippet was in draft but removed from sent = deprecate
             if in_draft and not in_sent:
                 corrections.append(Correction(
                     category="content_library",
                     field="snippet",
-                    draft_value=snippet.id,
+                    draft_value=snippet["id"],
                     sent_value="[removed]",
                     action="deprecate",
-                    target=f"N5/prefs/communication/content-library.json#{snippet.id}",
+                    target=f"N5/prefs/communication/content-library.json#{snippet['id']}",
                     auto_apply=False,
                     confidence=0.7,
-                    rationale=f"Snippet '{snippet.title}' removed in sent email",
-                    context=f"Content: {snippet.content[:50]}..."
+                    rationale=f"Snippet '{snippet.get('title', snippet['id'])}' removed in sent email",
+                    context=f"Content: {content[:50]}..."
                 ))
         
         return corrections
@@ -457,3 +469,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

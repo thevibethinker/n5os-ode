@@ -1,0 +1,11 @@
+#!/bin/bash
+# Wrapper to send a Bio Log entry
+# Usage: bio "I am feeling great 🍎"
+
+if [ -z "$1" ]; then
+    echo "Usage: bio 'Message content'"
+    exit 1
+fi
+
+python3 /home/workspace/N5/scripts/log_bio_reply.py "$1"
+

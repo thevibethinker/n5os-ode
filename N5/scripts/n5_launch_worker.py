@@ -19,7 +19,7 @@ Worker Types:
     writer: Optimized for content creation, writing, documentation
 
 Author: Vibe Builder
-Version: 1.1.0
+Version: 2.0.0  # Updated to use spawn_worker v2 --context pattern
 """
 
 import argparse
@@ -219,32 +219,59 @@ class LaunchWorker:
         return f"{prefix}{COLORS[color]}{text}{COLORS['reset']}"
     
     def enhance_instruction(self, instruction: str, worker_type: str) -> str:
-        """Enhance instruction based on worker type."""
-        if not instruction:
-            return None
-        
-        type_config = WORKER_TYPES[worker_type]
-        
-        # Add type-specific context
-        enhancements = {
-            'build': f"{instruction}\n\nFocus on implementation with proper testing, error handling, and documentation.",
-            'research': f"{instruction}\n\nConduct thorough research with citations, consider multiple sources, and synthesize findings.",
-            'analysis': f"{instruction}\n\nProvide comparative analysis, consider alternatives, and include recommendations.",
-            'general': instruction
+        """Enhance instruction by reading from standard prompts."""
+        prompt_map = {
+            'build': 'Prompts/Workers/build_worker.prompt.md',
+            'research': 'Prompts/Workers/research_worker.prompt.md',
+            'writer': 'Prompts/Workers/writer_worker.prompt.md',
+            'analysis': 'Prompts/Workers/analysis_worker.prompt.md',
+            'general': 'Prompts/Workers/general_worker.prompt.md'
         }
         
-        return enhancements.get(worker_type, instruction)
+        prompt_file = Path("/home/workspace") / prompt_map.get(worker_type, prompt_map['general'])
+        
+        base_prompt = ""
+        if prompt_file.exists():
+            base_prompt = prompt_file.read_text()
+        else:
+            # Fallback if prompt file missing
+            base_prompt = f"You are a {worker_type} worker. Execute the task."
+
+        if not instruction:
+            return base_prompt
+            
+        return f"{base_prompt}\n\n## Specific Task Instruction\n{instruction}"
     
     def spawn_worker(self, parent: str, instruction: Optional[str], 
+                     worker_type: str = 'general',
+                     parent_focus: str = None,
                      dry_run: bool = False) -> tuple[int, str]:
-        """Call spawn_worker.py with proper arguments."""
+        """Call spawn_worker.py with v2 --context JSON pattern."""
+        
+        type_config = WORKER_TYPES.get(worker_type, WORKER_TYPES['general'])
+        
+        # Build context for spawn_worker v2
+        context = {
+            "instruction": instruction or f"General {worker_type} worker - task to be defined",
+            "parent_type": worker_type,
+            "worker_type_hint": type_config['description'],
+            "persona_hint": type_config['persona_hint'],
+            "focus_prompt": type_config['focus_prompt'],
+        }
+        
+        # Add tags if present
+        if type_config.get('tags'):
+            context["tags"] = type_config['tags']
+        
+        # Add parent focus if provided
+        if parent_focus:
+            context["parent_focus"] = parent_focus
+        
         cmd = [
             sys.executable, str(self.script_path),
-            '--parent', parent
+            '--parent', parent,
+            '--context', json.dumps(context)
         ]
-        
-        if instruction:
-            cmd.extend(['--instruction', instruction])
         
         if dry_run:
             cmd.append('--dry-run')
@@ -252,13 +279,6 @@ class LaunchWorker:
         try:
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
             output = result.stdout + result.stderr
-            
-            # Extract assignment file path
-            assignment_path = None
-            for line in output.split('\n'):
-                if '.md' in line and ('assignment' in line.lower() or 'open this file' in line.lower()):
-                    assignment_path = line
-                    break
             
             return result.returncode, output
         except subprocess.TimeoutExpired:
@@ -322,8 +342,13 @@ class LaunchWorker:
             print("Instruction:   (agnostic - general purpose)")
         print()
         
-        # Spawn worker
-        returncode, output = self.spawn_worker(args.parent, instruction, args.dry_run)
+        # Spawn worker using v2 context pattern
+        returncode, output = self.spawn_worker(
+            args.parent, 
+            instruction, 
+            worker_type=args.type,
+            dry_run=args.dry_run
+        )
         
         # Display results
         config = {
@@ -344,12 +369,13 @@ class LaunchWorker:
             if not config:
                 return 1
             
-            # Spawn worker with wizard config
+            # Spawn worker with wizard config using v2 pattern
             instruction = self.enhance_instruction(config['instruction'], config['worker_type'])
             returncode, output = self.spawn_worker(
                 config['parent'], 
-                instruction, 
-                args.dry_run
+                instruction,
+                worker_type=config['worker_type'],
+                dry_run=args.dry_run
             )
             
             self.display_success(returncode, output, config)
@@ -411,6 +437,8 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
+
+
 
 
 

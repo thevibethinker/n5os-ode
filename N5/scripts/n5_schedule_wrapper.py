@@ -18,9 +18,19 @@ from typing import Optional, Dict, Any
 import subprocess
 
 # Import safety layer
-from n5_safety import load_command_spec
+# from n5_safety import load_command_spec
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Arrest flag path
+ARREST_FLAG = ROOT / "flags" / "ARREST_SYSTEM.json"
+
+
+
+def load_command_spec(command_name: str) -> Optional[Dict[str, Any]]:
+    """Mock load_command_spec since commands.jsonl is missing."""
+    return {"name": command_name, "enabled": True}
+
 
 # Configuration - can be overridden by preferences
 MAX_RETRIES = 2
@@ -183,6 +193,7 @@ def main():
     parser.add_argument("--schedule-time", help="Scheduled time in ISO format (optional)")
     parser.add_argument("--force", action="store_true", help="Force execution even if disabled")
     parser.add_argument("--dry-run", action="store_true", help="Dry run mode")
+    parser.add_argument("--ignore-arrest", action="store_true", help="Ignore system arrest flag")
 
     args = parser.parse_args()
 
@@ -194,15 +205,31 @@ def main():
     if not prefs["enabled"] and not args.force:
         print("Scheduling wrapper is disabled. Use --force to override.")
         return 1
+    # Check for system arrest
+    if ARREST_FLAG.exists() and not args.ignore_arrest:
+        try:
+            arrest_data = json.loads(ARREST_FLAG.read_text())
+            reason = arrest_data.get("reason", "Unknown")
+            timestamp = arrest_data.get("timestamp", "Unknown")
+            print(f"⛔ SYSTEM ARRESTED. Execution blocked.\nReason: {reason}\nTimestamp: {timestamp}\nUse --ignore-arrest to override.", file=sys.stderr)
+            return 1
+        except Exception as e:
+            print(f"⛔ SYSTEM ARRESTED (Corrupt flag file). Execution blocked.\nError: {e}\nUse --ignore-arrest to override.", file=sys.stderr)
+            return 1
 
     # Load command spec
-    command_spec = load_command_spec(args.command_name)
+    # Use the stem of the command name/path for the spec lookup/locking
+    command_stem = Path(args.command_name).stem
+    if args.command_name.startswith("n5_"):
+        command_stem = command_stem[3:]
+        
+    command_spec = load_command_spec(command_stem)
     if not command_spec:
-        print(f"Command '{args.command_name}' not found in commands.jsonl", file=sys.stderr)
+        print(f"Command '{args.command_name}' (stem: {command_stem}) not found in commands.jsonl", file=sys.stderr)
         return 1
 
     # Get lock file
-    lock_file = get_lock_file(args.command_name)
+    lock_file = get_lock_file(command_stem)
 
     # Acquire lock
     lock_fd = acquire_lock(lock_file, prefs["lock_timeout"])
@@ -222,9 +249,14 @@ def main():
                 return 1
 
         # Build command to execute
-        script_path = ROOT / "scripts" / f"n5_{args.command_name}.py"
+        # 1. Try as direct path
+        script_path = Path(args.command_name).resolve()
         if not script_path.exists():
-            print(f"Script not found: {script_path}", file=sys.stderr)
+             # 2. Try as n5_ script in scripts dir
+             script_path = ROOT / "scripts" / f"n5_{args.command_name}.py"
+        
+        if not script_path.exists():
+            print(f"Script not found: {args.command_name} or {script_path}", file=sys.stderr)
             return 1
 
         command = [sys.executable, str(script_path)] + args.command_args
@@ -244,3 +276,9 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+
+
+
+

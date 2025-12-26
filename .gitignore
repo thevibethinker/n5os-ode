@@ -102,5 +102,9 @@ N5/config/slack_credentials.json
 !**/schema.sql
 !**/migrations/*.sql
 !**/seeds/*.sql
-projects/calcom/
 _local_archives/
+
+# Secrets
+.env
+.env.*
+

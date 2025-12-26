@@ -1,176 +1,208 @@
 #!/usr/bin/env python3
 """
-[M] → [P] State Transition Script
+MG-6: Meeting State Transition (manifest_generated → processed)
 
-Safely transitions meeting folders from [M] (manifest generated) state to [P] (processed) state.
-Uses Python-based rename to avoid shell escaping issues.
+Purpose: Transition meetings from early processing states to 'processed' status
+after block generation is complete. This makes them ready for the Weekly Organizer.
+
+v2.0 (2025-12-26): Now uses manifest.json status field instead of folder suffixes.
+- Looks for: status = 'manifest_generated' or 'mg2_completed' or 'intelligence_generated'
+- Validates: blocks_generated flags show completion
+- Transitions to: status = 'processed'
 """
 
-import sys
+import os
 import json
-import shutil
+import logging
+import sys
 from pathlib import Path
-from datetime import datetime
-from typing import List, Dict, Tuple
+from datetime import datetime, timezone
 
-# Constants
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)sZ %(levelname)s %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 INBOX = Path("/home/workspace/Personal/Meetings/Inbox")
-LOG_DIR = Path("/home/workspace/N5/runtime/meeting_pipeline")
-LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+# Statuses that indicate meeting is ready for transition to 'processed'
+TRANSITION_READY_STATUSES = {'intelligence_generated', 'mg2_completed'}
+
+# Statuses that are too early (still being processed)
+EARLY_STATUSES = {'manifest_generated'}
 
 
-def find_meetings_in_m_state() -> List[Path]:
-    """Find all meetings in [M] state."""
-    if not INBOX.exists():
-        print(f"❌ Error: Inbox not found at {INBOX}")
-        return []
-    
-    m_meetings = []
-    for folder in INBOX.iterdir():
-        if folder.is_dir() and folder.name.endswith("_[M]"):
-            m_meetings.append(folder)
-    
-    return sorted(m_meetings)
-
-
-def validate_readiness(folder: Path) -> Tuple[bool, str]:
-    """
-    Validate that a meeting is ready for [M] → [P] transition.
+def get_manifest(folder_path: Path) -> tuple[bool, dict | str]:
+    """Read manifest.json from a meeting folder.
     
     Returns:
-        (is_ready, reason)
+        Tuple of (success: bool, manifest_dict or error_string)
     """
-    # Check manifest exists
-    manifest = folder / "manifest.json"
-    if not manifest.exists():
-        return False, "manifest.json not found"
-    
-    # Check manifest is valid JSON
-    try:
-        with open(manifest) as f:
-            data = json.load(f)
-    except json.JSONDecodeError:
-        return False, "manifest.json is invalid JSON"
-    
-    # Basic validation: meeting_date and meeting_title should exist
-    if not data.get("meeting_date"):
-        return False, "manifest missing meeting_date"
-    
-    if not data.get("meeting_title"):
-        return False, "manifest missing meeting_title"
-    
-    return True, "ready"
-
-
-def transition_to_p_state(folder: Path) -> Tuple[bool, str]:
-    """
-    Transition a meeting folder from [M] to [P] state.
-    
-    Returns:
-        (success, message)
-    """
-    # Generate new name
-    old_name = folder.name
-    new_name = old_name.replace("_[M]", "_[P]")
-    new_path = folder.parent / new_name
-    
-    # Check if destination already exists
-    if new_path.exists():
-        return False, f"Destination already exists: {new_name}"
+    manifest_path = folder_path / "manifest.json"
+    if not manifest_path.exists():
+        return False, "manifest.json missing"
     
     try:
-        # Use shutil.move to handle cross-device links
-        shutil.move(str(folder), str(new_path))
-        return True, f"Renamed: {old_name} → {new_name}"
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        return True, manifest
     except Exception as e:
-        return False, f"Error renaming: {e}"
+        return False, f"error reading manifest: {e}"
 
 
-def main():
-    """Main execution."""
+def check_blocks_complete(manifest: dict) -> tuple[bool, str]:
+    """Check if required blocks have been generated.
+    
+    Returns:
+        Tuple of (is_complete: bool, reason: str)
+    """
+    blocks = manifest.get("blocks_generated", {})
+    
+    # Minimum required blocks for a meeting to be considered processed
+    # At minimum, we need the transcript to be processed
+    if blocks.get("transcript_processed"):
+        return True, "transcript processed"
+    
+    # Check for any block generation
+    if blocks.get("all_blocks") or blocks.get("brief") or blocks.get("stakeholder_intelligence"):
+        return True, "blocks generated"
+    
+    return False, "no blocks generated yet"
+
+
+def update_manifest_status(folder_path: Path, new_status: str) -> bool:
+    """Update the status field in manifest.json.
+    
+    Returns:
+        True if successful, False otherwise
+    """
+    manifest_path = folder_path / "manifest.json"
+    
+    try:
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        
+        old_status = manifest.get('status', 'unknown')
+        manifest['status'] = new_status
+        manifest['last_updated_by'] = 'MG-6_Transition'
+        manifest['last_updated_at'] = datetime.now(timezone.utc).isoformat()
+        manifest['transition_history'] = manifest.get('transition_history', [])
+        manifest['transition_history'].append({
+            'from': old_status,
+            'to': new_status,
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'agent': 'MG-6'
+        })
+        
+        with open(manifest_path, 'w') as f:
+            json.dump(manifest, f, indent=2)
+        
+        return True
+    except Exception as e:
+        logger.error(f"Failed to update manifest for {folder_path.name}: {e}")
+        return False
+
+
+def run_transition():
+    """Main transition logic."""
     print(f"\n{'='*60}")
     print(f"[M] → [P] State Transition")
-    print(f"Timestamp: {datetime.now().isoformat()}")
+    print(f"Timestamp: {datetime.now(timezone.utc).isoformat()}")
     print(f"{'='*60}\n")
     
-    # Find meetings in [M] state
-    print("Scanning for meetings in [M] state...")
-    m_meetings = find_meetings_in_m_state()
+    if not INBOX.exists():
+        logger.error(f"Inbox path {INBOX} does not exist.")
+        return 1
     
-    if not m_meetings:
-        print("✓ No meetings in [M] state")
-        return 0
+    # Find all meeting folders (exclude quarantine and hidden)
+    meeting_folders = sorted([
+        d for d in INBOX.iterdir() 
+        if d.is_dir() and not d.name.startswith((".", "_"))
+    ])
     
-    print(f"Found {len(m_meetings)} meeting(s) in [M] state\n")
+    print(f"Scanning for meetings in [M] state...")
     
-    # Process each meeting
-    results = {
-        "transitioned": [],
-        "skipped": [],
-        "errors": []
+    stats = {
+        "transitioned": 0,
+        "already_processed": 0,
+        "not_ready": 0,
+        "errors": 0,
+        "details": []
     }
     
-    for folder in m_meetings:
-        print(f"Processing: {folder.name}")
+    candidates = []
+    
+    for folder in meeting_folders:
+        success, manifest_or_error = get_manifest(folder)
         
-        # Validate readiness
-        is_ready, reason = validate_readiness(folder)
-        
-        if not is_ready:
-            print(f"  ⚠️  Skipped: {reason}")
-            results["skipped"].append({
-                "folder": folder.name,
-                "reason": reason
-            })
+        if not success:
+            logger.debug(f"Skipping {folder.name}: {manifest_or_error}")
             continue
         
-        # Transition to [P]
-        success, message = transition_to_p_state(folder)
+        manifest = manifest_or_error
+        status = manifest.get('status', 'unknown')
         
-        if success:
-            print(f"  ✓ {message}")
-            results["transitioned"].append({
-                "old_name": folder.name,
-                "new_name": folder.name.replace("_[M]", "_[P]")
-            })
+        # Already processed - skip
+        if status == 'processed':
+            stats["already_processed"] += 1
+            continue
+        
+        # Check if ready for transition
+        if status in TRANSITION_READY_STATUSES:
+            blocks_ok, blocks_reason = check_blocks_complete(manifest)
+            if blocks_ok:
+                candidates.append((folder, manifest, status, blocks_reason))
+            else:
+                stats["not_ready"] += 1
+                stats["details"].append(f"⏳ {folder.name}: {status} but {blocks_reason}")
+        
+        elif status in EARLY_STATUSES:
+            stats["not_ready"] += 1
+            stats["details"].append(f"⏳ {folder.name}: {status} (awaiting block generation)")
+    
+    if not candidates:
+        print("✓ No meetings in [M] state")
+        if stats["already_processed"] > 0:
+            print(f"  ({stats['already_processed']} already processed)")
+        if stats["not_ready"] > 0:
+            print(f"  ({stats['not_ready']} not ready yet)")
+        return 0
+    
+    print(f"\nFound {len(candidates)} meetings ready for transition:\n")
+    
+    for folder, manifest, old_status, reason in candidates:
+        print(f"  📁 {folder.name}")
+        print(f"     Status: {old_status} → processed")
+        print(f"     Reason: {reason}")
+        
+        if update_manifest_status(folder, 'processed'):
+            stats["transitioned"] += 1
+            print(f"     ✓ Transitioned successfully")
         else:
-            print(f"  ❌ {message}")
-            results["errors"].append({
-                "folder": folder.name,
-                "error": message
-            })
+            stats["errors"] += 1
+            print(f"     ✗ Failed to update manifest")
+        print()
     
     # Summary
     print(f"\n{'='*60}")
-    print(f"Summary")
+    print(f"SUMMARY")
     print(f"{'='*60}")
-    print(f"Total meetings found: {len(m_meetings)}")
-    print(f"Successfully transitioned: {len(results['transitioned'])}")
-    print(f"Skipped (not ready): {len(results['skipped'])}")
-    print(f"Errors: {len(results['errors'])}")
+    print(f"  Transitioned: {stats['transitioned']}")
+    print(f"  Already processed: {stats['already_processed']}")
+    print(f"  Not ready: {stats['not_ready']}")
+    if stats['errors'] > 0:
+        print(f"  Errors: {stats['errors']}")
     
-    # Write log
-    log_file = LOG_DIR / f"m_to_p_transition_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(log_file, 'w') as f:
-        json.dump({
-            "timestamp": datetime.now().isoformat(),
-            "summary": {
-                "total": len(m_meetings),
-                "transitioned": len(results["transitioned"]),
-                "skipped": len(results["skipped"]),
-                "errors": len(results["errors"])
-            },
-            "results": results
-        }, f, indent=2)
+    if stats["details"]:
+        print(f"\nDetails:")
+        for detail in stats["details"]:
+            print(f"  {detail}")
     
-    print(f"\nLog saved: {log_file}")
-    
-    # Exit code
-    if results["errors"]:
-        return 1
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(run_transition())
 

@@ -329,6 +329,99 @@ def write_bulletins(bulletins: List[Dict], dry_run: bool = False) -> int:
     return len(bulletins)
 
 
+def load_recent_bulletins(days: int = 1) -> List[Dict]:
+    """Load recent bulletins from JSONL for summary rendering."""
+    if not BULLETIN_FILE.exists():
+        return []
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    recent: List[Dict] = []
+
+    with BULLETIN_FILE.open() as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+                ts = datetime.fromisoformat(entry["timestamp"].replace("Z", "+00:00"))
+                if ts >= cutoff:
+                    recent.append(entry)
+            except Exception:
+                continue
+
+    # Newest first
+    recent.sort(key=lambda e: e.get("timestamp", ""), reverse=True)
+    return recent
+
+
+def render_markdown_summary(bulletins: List[Dict]) -> str:
+    """Render a human-friendly Markdown bulletin grouped by significance and type."""
+    today = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d")
+
+    if not bulletins:
+        return f"# 📰 System Bulletin – {today}\n\n_No significant changes in the last 24 hours._\n"
+
+    # Buckets
+    needs_attention: List[Dict] = []
+    system_changes: List[Dict] = []
+    learnings: List[Dict] = []
+
+    for b in bulletins:
+        sig = b.get("significance", "medium")
+        ctype = b.get("change_type", "")
+
+        if sig == "high" and ctype in {"architecture", "breaking_change"}:
+            needs_attention.append(b)
+        elif ctype in {"learning_captured", "artifact_created"}:
+            learnings.append(b)
+        else:
+            system_changes.append(b)
+
+    def _fmt_item(entry: Dict) -> str:
+        scope = entry.get("scope") or ", ".join(entry.get("files_affected", [])[:2])
+        scope_part = f" ({scope})" if scope else ""
+        summary = entry.get("summary", "").strip() or "(no summary)"
+        git = entry.get("git_commit")
+        git_part = f" · `{git}`" if git else ""
+        return f"- {summary}{scope_part}{git_part}"
+
+    lines: List[str] = []
+    lines.append(f"# 📰 System Bulletin – {today}")
+    lines.append("")
+    lines.append(f"Total entries (last 24h): {len(bulletins)}")
+    lines.append("")
+    
+    # 1) Needs attention
+    lines.append("## 🚨 Needs Attention")
+    if needs_attention:
+        for e in needs_attention[:10]:
+            lines.append(_fmt_item(e))
+    else:
+        lines.append("- No critical architectural or breaking changes detected.")
+    lines.append("")
+    
+    # 2) System changes
+    lines.append("## 🔧 System Changes")
+    if system_changes:
+        for e in system_changes[:15]:
+            lines.append(_fmt_item(e))
+    else:
+        lines.append("- No notable workflow or documentation changes.")
+    lines.append("")
+    
+    # 3) Learnings & artifacts
+    lines.append("## 📚 Learnings & Artifacts")
+    if learnings:
+        for e in learnings[:15]:
+            lines.append(_fmt_item(e))
+    else:
+        lines.append("- No new learnings or artifacts captured.")
+    lines.append("")
+    
+    return "\n".join(lines)
+
+
 def main(dry_run: bool = False) -> int:
     """Main bulletin generation logic"""
     try:
@@ -370,6 +463,11 @@ def main(dry_run: bool = False) -> int:
             state['last_bulletin_count'] = written
             save_state(state)
             logger.info(f"✓ State updated: {written} bulletins, {pruned} pruned")
+
+            # Also emit a concise Markdown bulletin for the last 24h to stdout
+            recent = load_recent_bulletins(days=1)
+            print()  # visual separation from logs
+            print(render_markdown_summary(recent))
         
         return 0
         
@@ -384,3 +482,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     exit(main(dry_run=args.dry_run))
+

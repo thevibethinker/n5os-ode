@@ -12,6 +12,7 @@ import logging
 from typing import Dict, Optional
 from datetime import datetime
 from pathlib import Path
+import os
 
 # Add workspace to path for imports
 sys.path.insert(0, '/home/workspace')
@@ -29,115 +30,117 @@ logger = logging.getLogger(__name__)
 USAGE_LOG = Path('/home/workspace/N5/logs/aviato_usage.jsonl')
 
 
-def log_usage(email: str, success: bool, person_found: bool, error: str = None):
-    """Log Aviato API usage for cost tracking"""
+def log_usage(email: str, success: bool, person_found: bool, error: str = None, linkedin_url: str | None = None):
+    """Log Aviato API usage for cost and behavior tracking.
+
+    This function is intentionally tolerant: email may be empty, and linkedin_url
+    is optional. All fields are written to aviato_usage.jsonl for later analysis.
+    """
     USAGE_LOG.parent.mkdir(parents=True, exist_ok=True)
-    
+
     log_entry = {
         'timestamp': datetime.utcnow().isoformat() + 'Z',
         'email': email,
         'success': success,
-        'person_found': person_found
+        'person_found': person_found,
     }
-    
+
+    if linkedin_url:
+        log_entry['linkedin_url'] = linkedin_url
     if error:
         log_entry['error'] = error
-    
+
     with open(USAGE_LOG, 'a') as f:
         f.write(json.dumps(log_entry) + '\n')
 
 
-async def enrich_via_aviato(email: str, name: Optional[str] = None) -> dict:
+async def enrich_via_aviato(email: Optional[str] = None,
+                            name: Optional[str] = None,
+                            linkedin_url: Optional[str] = None) -> dict:
+    """Enrich profile using Aviato API.
+
+    At least one of `email` or `linkedin_url` must be provided.
+    Existing call sites that only pass `email` continue to work.
     """
-    Enrich profile using Aviato API.
-    
-    Args:
-        email: Email address to enrich
-        name: Optional person name for better matching
-    
-    Returns:
-        {
-            "success": bool,
-            "data": dict or None,
-            "error": str or None,
-            "markdown": str  # Formatted intelligence block
-        }
-    """
+    if not email and not linkedin_url:
+        raise ValueError("enrich_via_aviato requires at least an email or a linkedin_url")
+
+    lookup_key = email or linkedin_url or "<unknown>"
+
     try:
+        # Prefer Zo/ N5OS-specific secret, then legacy name for compatibility
+        api_key = os.environ.get("AVIATO_N5OS_V2_KEY") or os.environ.get("AVIATO_API_KEY")
+        if not api_key:
+            msg = "Aviato API key not found in environment (expected AVIATO_N5OS_V2_KEY or AVIATO_API_KEY)"
+            logger.error("Error enriching key=%s: %s", lookup_key, msg)
+            return {
+                'success': False,
+                'data': None,
+                'error': msg,
+                'markdown': f"""**Aviato Professional Intelligence:**\n\n⚠️ **Enrichment Error**\nFailed to fetch data from Aviato: {msg}\n"""
+            }
+
         client = AviatoClient()
         mapper = AviatoCRMMapper()
-        
-        logger.info(f"Enriching {email}")
-        
-        # Call Aviato API
-        aviato_data = client.enrich_person(email=email)
-        
+
+        logger.info(f"Enriching via Aviato for key={lookup_key}")
+
+        # Call Aviato API using both identifiers when available
+        aviato_data = client.enrich_person(email=email, linkedin_url=linkedin_url)
+
         if not aviato_data:
             # 404 - person not found
-            log_usage(email, success=True, person_found=False)
-            logger.info(f"Profile not found for {email}")
-            
+            log_usage(email=email or "", success=True, person_found=False, linkedin_url=linkedin_url)
+            logger.info(f"Profile not found for key={lookup_key}")
+
             return {
                 'success': True,
                 'data': None,
                 'error': None,
-                'markdown': f"""**Aviato Professional Intelligence:**
-
-Profile not found in Aviato database for `{email}`.
-
-This contact may:
-- Not have a public LinkedIn profile
-- Use a different email on LinkedIn
-- Have privacy settings restricting data access
-"""
+                'markdown': f"""**Aviato Professional Intelligence:**\n\nProfile not found in Aviato database for `{lookup_key}`.\n\nThis contact may:\n- Not have a public LinkedIn profile\n- Use a different email on LinkedIn\n- Have privacy settings restricting data access\n"""
             }
-        
+
         # Map to CRM format
         crm_data = mapper.map_person_to_crm(aviato_data)
         highlights = mapper.extract_career_highlights(crm_data)
-        
+
         # Log successful enrichment
-        log_usage(email, success=True, person_found=True)
-        logger.info(f"Successfully enriched {email} - {crm_data.get('full_name')}")
-        
+        log_usage(email=email or crm_data.get('email', ''),
+                  success=True,
+                  person_found=True,
+                  linkedin_url=linkedin_url or crm_data.get('linkedin_url'))
+        logger.info(f"Successfully enriched key={lookup_key} - {crm_data.get('full_name')}")
+
         # Build markdown intelligence block
         markdown = format_intelligence_block(crm_data, highlights)
-        
+
         return {
             'success': True,
             'data': crm_data,
             'error': None,
             'markdown': markdown
         }
-    
+
     except Exception as e:
         error_msg = str(e)
-        logger.error(f"Error enriching {email}: {error_msg}")
-        log_usage(email, success=False, person_found=False, error=error_msg)
-        
+        logger.error(f"Error enriching key={lookup_key}: {error_msg}")
+        log_usage(email=email or "", success=False, person_found=False, error=error_msg, linkedin_url=linkedin_url)
+
         # Handle rate limiting
         if '429' in error_msg:
             return {
                 'success': False,
                 'data': None,
                 'error': 'Rate limit exceeded',
-                'markdown': """**Aviato Professional Intelligence:**
-
-⚠️ **Rate Limit Exceeded**
-The Aviato API has rate-limited this request. This job will be automatically retried with exponential backoff.
-"""
+                'markdown': """**Aviato Professional Intelligence:**\n\n⚠️ **Rate Limit Exceeded**\nThe Aviato API has rate-limited this request. This job will be automatically retried with exponential backoff.\n"""
             }
-        
+
         # Generic error
         return {
             'success': False,
             'data': None,
             'error': error_msg,
-            'markdown': f"""**Aviato Professional Intelligence:**
-
-⚠️ **Enrichment Error**
-Failed to fetch data from Aviato: {error_msg}
-"""
+            'markdown': f"""**Aviato Professional Intelligence:**\n\n⚠️ **Enrichment Error**\nFailed to fetch data from Aviato: {error_msg}\n"""
         }
 
 
@@ -294,4 +297,7 @@ if __name__ == '__main__':
                     print(f"{status} {entry['email']} - {entry['timestamp']}")
     
     asyncio.run(test())
+
+
+
 

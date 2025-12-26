@@ -16,8 +16,16 @@ from dataclasses import dataclass
 import logging
 from datetime import datetime, UTC
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
+logger = logging.getLogger(__name__)
+
+# Ensure sibling scripts are importable when running as a standalone script
 sys.path.insert(0, str(Path(__file__).parent))
-from content_library import ContentLibrary
+
+# === V3 CONTENT LIBRARY IMPORT ===
+from content_library_v3 import ContentLibraryV3
+# === END V3 IMPORT ===
+
 from b_block_parser import ResourceReference, EloquentLine
 
 # Import Howie signature generator
@@ -27,8 +35,6 @@ try:
 except ImportError:
     HOWIE_AVAILABLE = False
     logger.warning("Howie signature generator not available")
-
-logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -43,7 +49,7 @@ class EmailComposer:
     """Compose follow-up emails with smart content injection"""
     
     def __init__(self, voice_config: Optional[Dict] = None):
-        self.content_library = ContentLibrary()
+        self.content_library = ContentLibraryV3()
         self.voice_config = voice_config or {}
         
     def compose_email(
@@ -214,21 +220,24 @@ class EmailComposer:
     
     def _compose_signature(self, howie_tags: Optional['HowieTagSet'] = None) -> str:
         """Compose email signature from Content Library with optional Howie tags"""
-        # Search for signature snippet
+        # Search for signature snippet via v3 API
         signatures = self.content_library.search(
             query=None,
-            tags={"purpose": ["signature"], "channel": ["email"]}
+            tags={"purpose": "signature", "channel": "email"},
         )
         
         sig_parts = []
         
         if signatures:
             sig = signatures[0]
-            # Update last_used
-            sig.metadata["last_used"] = self._now_iso()
-            self.content_library.upsert(sig)
-            # Fix newline escaping
-            content = sig.content.replace("\\n", "\n")
+            # Mark as used in v3 library
+            try:
+                self.content_library.mark_used(sig["id"])
+            except Exception:
+                logger.warning("Failed to mark signature %s as used", sig.get("id"))
+            # Fix newline escaping from stored content/notes
+            raw_content = sig.get("content") or sig.get("notes") or ""
+            content = raw_content.replace("\\n", "\n")
             sig_parts.append(f"\n{content}")
         else:
             # Fallback
@@ -347,3 +356,4 @@ if __name__ == "__main__":
             f.write(email)
     else:
         print(email)
+

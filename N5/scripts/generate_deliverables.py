@@ -90,40 +90,13 @@ async def generate_deliverables(
                 logger.info(f"✓ Blurb generated: {path}")
                 
             elif deliverable_type == "follow_up_email":
-                # Use new CLI script for email generation
-                logger.info("Generating follow-up email via n5_follow_up_email_generator.py...")
-                
-                import subprocess
-                
-                script_path = WORKSPACE / "N5/scripts/n5_follow_up_email_generator.py"
-                output_dir = deliverables_dir
-                
-                try:
-                    result = subprocess.run(
-                        [
-                            "python3",
-                            str(script_path),
-                            "--meeting-folder", str(meeting_dir),
-                            "--output-dir", str(output_dir)
-                        ],
-                        capture_output=True,
-                        text=True,
-                        check=True
-                    )
-                    
-                    logger.info("✓ Email generator completed successfully")
-                    
-                    # Check for generated files
-                    draft_path = output_dir / "follow_up_email_draft.md"
-                    if draft_path.exists():
-                        generated.append({"type": "follow_up_email", "path": str(draft_path)})
-                        logger.info(f"✓ Follow-up email generated: {draft_path}")
-                    else:
-                        logger.warning("Email generator ran but draft not found")
-                        
-                except subprocess.CalledProcessError as e:
-                    logger.error(f"Email generator failed: {e.stderr}")
-                    raise
+                # Legacy email generation (n5_follow_up_email_generator.py) has been retired.
+                # Follow-up emails are now handled exclusively by the MG-5 Follow-Up Email Generator v2.
+                logger.warning(
+                    "follow_up_email generation via generate_deliverables is deprecated. "
+                    "Use the MG-5 Follow-Up Email Generator (Prompts/Follow-Up Email Generator.prompt.md) instead."
+                )
+                continue
                 
             elif deliverable_type == "one_pager_memo":
                 from blocks.deliverables import one_pager_memo_generator
@@ -182,7 +155,8 @@ async def main():
     deliverable_types = []
     
     if args.all:
-        deliverable_types = ["blurb", "follow_up_email", "one_pager_memo", "proposal_pricing"]
+        # Email is now handled via MG-5 Follow-Up Email Generator; do not include follow_up_email here.
+        deliverable_types = ["blurb", "one_pager_memo", "proposal_pricing"]
     elif args.recommended:
         # Load recommendations from metadata
         meeting_dir = MEETINGS_DIR / args.meeting_folder
@@ -222,3 +196,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+

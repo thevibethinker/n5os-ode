@@ -9,11 +9,16 @@ import json
 import logging
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, List, Optional
 from datetime import datetime
 
+# Local imports for sibling modules
 sys.path.insert(0, str(Path(__file__).parent))
-from content_library import ContentLibrary, Item
+
+# === V3 CONTENT LIBRARY IMPORT ===
+from content_library_v3 import ContentLibraryV3
+# === END V3 IMPORT ===
+
 from b_block_parser import ResourceReference, EloquentLine
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
@@ -24,21 +29,21 @@ class AutoPopulator:
     """Auto-populate Content Library from discovered content"""
     
     def __init__(self, dry_run: bool = False):
-        self.content_library = ContentLibrary()
+        self.content_library = ContentLibraryV3()
         self.dry_run = dry_run
         
-    def process_blocks(self, blocks: Dict) -> Dict[str, List[Item]]:
+    def process_blocks(self, blocks: Dict) -> Dict[str, List[Dict[str, Any]]]:
         """
         Process B-blocks and add new items to library
         
         Returns:
             {
-                "resources_added": [Item],
-                "snippets_added": [Item],
-                "skipped": [Item]
+                "resources_added": [item_dict],
+                "snippets_added": [item_dict],
+                "skipped": [item_dict_or_reason]
             }
         """
-        results = {
+        results: Dict[str, List[Any]] = {
             "resources_added": [],
             "snippets_added": [],
             "skipped": []
@@ -62,95 +67,125 @@ class AutoPopulator:
             else:
                 results["skipped"].append({"type": "snippet", "content": line.cleaned_text[:50]})
         
-        return results
+        return results  # type: ignore[return-value]
     
-    def _add_resource(self, res: ResourceReference) -> Item:
-        """Add resource to library if not duplicate"""
-        # Check if already exists
-        existing = self.content_library.search(query=res.content, tags={})
-        if existing:
-            logger.info(f"Resource already exists: {res.content[:50]}")
-            return None
+    def _flatten_tags(self, tags: Dict[str, List[Any]]) -> Dict[str, str]:
+        """Flatten legacy Dict[str, List[Any]] tags to Dict[str, str] for v3.
         
+        Multiple values are joined with commas.
+        """
+        flat: Dict[str, str] = {}
+        for key, values in tags.items():
+            if not values:
+                continue
+            if isinstance(values, list):
+                flat[key] = ",".join(str(v) for v in values)
+            else:
+                flat[key] = str(values)
+        return flat
+    
+    def _add_resource(self, res: ResourceReference) -> Optional[Dict[str, Any]]:
+        """Add resource to library via ContentLibraryV3 if not duplicate"""
         # Determine type: link or snippet
         is_link = res.content.startswith("http") or "." in res.content.split()[0]
+        item_type = "link" if is_link else "snippet"
         
-        item = Item(
-            id=self._generate_id(res.title or res.content),
-            type="link" if is_link else "snippet",
-            title=res.title or res.content[:50],
-            content=res.content,
-            url=res.content if is_link else None,
-            tags={
-                "_source": ["meeting"],
-                "confidence": [res.confidence]
-            },
-            metadata={
-                "created": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-                "updated": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-                "deprecated": False,
-                "version": 1,
-                "notes": f"Auto-discovered from meeting. Context: {res.context[:100] if res.context else 'N/A'}",
-                "source": "auto-populated"
-            }
+        # Check if already exists (simple text search by content and type)
+        existing = self.content_library.search(
+            query=res.content,
+            item_type=item_type,
+            limit=1,
         )
+        if existing:
+            logger.info("Resource already exists: %s", res.content[:50])
+            return None
         
-        if not self.dry_run:
-            self.content_library.upsert(item)
-            logger.info(f"✓ Added {item.type}: {item.title}")
-        else:
-            logger.info(f"[DRY RUN] Would add {item.type}: {item.title}")
+        tags_v1 = {
+            "_source": ["meeting"],
+            "confidence": [res.confidence],
+        }
+        notes = f"Auto-discovered from meeting. Context: {res.context[:100] if res.context else 'N/A'}"
+        new_id = self._generate_id(res.title or res.content)
+        title = res.title or res.content[:50]
         
+        if self.dry_run:
+            logger.info("[DRY RUN] Would add %s: %s", item_type, title)
+            return {
+                "id": new_id,
+                "item_type": item_type,
+                "title": title,
+                "url": res.content if is_link else None,
+                "content": None if is_link else res.content,
+                "tags": self._flatten_tags(tags_v1),
+                "notes": notes,
+            }
+        
+        item = self.content_library.add(
+            id=new_id,
+            item_type=item_type,
+            title=title,
+            url=res.content if is_link else None,
+            content=None if is_link else res.content,
+            tags=self._flatten_tags(tags_v1),
+            notes=notes,
+        )
+        logger.info("✓ Added %s: %s", item.get("item_type"), item.get("title"))
         return item
     
-    def _add_eloquent_line(self, line: EloquentLine) -> Item:
-        """Add eloquent line to library as snippet"""
+    def _add_eloquent_line(self, line: EloquentLine) -> Optional[Dict[str, Any]]:
+        """Add eloquent line to library as snippet via ContentLibraryV3"""
         # Check if already exists
-        existing = self.content_library.search(query=line.cleaned_text, tags={})
+        existing = self.content_library.search(
+            query=line.cleaned_text,
+            item_type="snippet",
+            limit=1,
+        )
         if existing:
-            logger.info(f"Snippet already exists: {line.cleaned_text[:50]}")
+            logger.info("Snippet already exists: %s", line.cleaned_text[:50])
             return None
         
         # Auto-detect purpose/audience from content
-        tags = {
+        tags_v1: Dict[str, List[Any]] = {
             "_source": ["meeting"],
             "speaker": [line.speaker],
-            "tone": ["eloquent"]
+            "tone": ["eloquent"],
         }
         
         if line.audience_reaction:
-            tags["reaction"] = [line.audience_reaction]
+            tags_v1.setdefault("reaction", []).append(line.audience_reaction)
         
-        # Detect purpose from content
         content_lower = line.cleaned_text.lower()
         if any(word in content_lower for word in ["divorce", "metaphor", "like"]):
-            tags["purpose"] = ["hook", "analogy"]
+            tags_v1.setdefault("purpose", []).extend(["hook", "analogy"])
         elif any(word in content_lower for word in ["helpless", "stuck", "frustrat"]):
-            tags["purpose"] = ["empathy", "validation"]
+            tags_v1.setdefault("purpose", []).extend(["empathy", "validation"])
         
-        item = Item(
-            id=self._generate_id(line.cleaned_text),
-            type="snippet",
-            title=f"Eloquent line: {line.cleaned_text[:50]}...",
-            content=line.cleaned_text,
-            url=None,
-            tags=tags,
-            metadata={
-                "created": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-                "updated": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-                "deprecated": False,
-                "version": 1,
-                "notes": f"Speaker: {line.speaker}. Original: {line.text[:100]}",
-                "source": "auto-populated"
+        notes = f"Speaker: {line.speaker}. Original: {line.text[:100]}"
+        new_id = self._generate_id(line.cleaned_text)
+        title = f"Eloquent line: {line.cleaned_text[:50]}..."
+        
+        if self.dry_run:
+            logger.info("[DRY RUN] Would add snippet: %s", title)
+            return {
+                "id": new_id,
+                "item_type": "snippet",
+                "title": title,
+                "url": None,
+                "content": line.cleaned_text,
+                "tags": self._flatten_tags(tags_v1),
+                "notes": notes,
             }
+        
+        item = self.content_library.add(
+            id=new_id,
+            item_type="snippet",
+            title=title,
+            url=None,
+            content=line.cleaned_text,
+            tags=self._flatten_tags(tags_v1),
+            notes=notes,
         )
-        
-        if not self.dry_run:
-            self.content_library.upsert(item)
-            logger.info(f"✓ Added snippet: {item.title}")
-        else:
-            logger.info(f"[DRY RUN] Would add snippet: {item.title}")
-        
+        logger.info("✓ Added snippet: %s", item.get("title"))
         return item
     
     def _generate_id(self, text: str) -> str:
@@ -192,8 +227,14 @@ def main():
             json.dump({
                 "summary": summary,
                 "results": {
-                    "resources_added": [{"id": i.id, "title": i.title, "type": i.type} for i in results["resources_added"]],
-                    "snippets_added": [{"id": i.id, "title": i.title, "type": i.type} for i in results["snippets_added"]],
+                    "resources_added": [
+                        {"id": i.get("id"), "title": i.get("title"), "type": i.get("item_type")} 
+                        for i in results["resources_added"]
+                    ],
+                    "snippets_added": [
+                        {"id": i.get("id"), "title": i.get("title"), "type": i.get("item_type")} 
+                        for i in results["snippets_added"]
+                    ],
                     "skipped": results["skipped"]
                 }
             }, f, indent=2)
@@ -212,3 +253,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

@@ -10,6 +10,17 @@ import sys
 import yaml
 from pathlib import Path
 from typing import List, Dict, Optional
+# Import N5 Memory Client (Hybrid Integration)
+# We assume N5 is in the path or relative.
+try:
+    ROOT = Path(__file__).resolve().parents[2]
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from N5.cognition.n5_memory_client import N5MemoryClient
+    MEMORY_AVAILABLE = True
+except ImportError:
+    MEMORY_AVAILABLE = False
+
 
 # Base paths
 WORKSPACE = Path("/home/workspace")
@@ -35,6 +46,47 @@ def read_file(path_str: str) -> str:
             return f"\n\n<!-- FILE: {path_str} -->\n{content}\n<!-- END FILE -->\n"
     except Exception as e:
         return f"<!-- ERROR READING {path}: {e} -->"
+def search_memory(query: str, limit: int = 3) -> str:
+    """Query the N5 Brain for semantic context."""
+    if not MEMORY_AVAILABLE:
+        return "<!-- Memory Client Not Available -->"
+    
+    try:
+        client = N5MemoryClient()
+        # Only search if we have a real query, not just a mode keyword
+        if len(query.split()) < 2:
+            return "" 
+            
+        results = client.search(query, limit=limit)
+        if not results:
+            return ""
+            
+        output = ["\n<memory_context>"]
+        output.append(f"  <!-- Retrieved {len(results)} relevant blocks for '{query}' -->")
+        for res in results:
+            path = res.get('path', 'unknown')
+            lines = res.get('lines')
+            if isinstance(lines, (list, tuple)) and len(lines) == 2:
+                start, end = lines
+            else:
+                start = res.get('start_line', 0)
+                end = res.get('end_line', 0)
+
+            if start and end:
+                source = f"{path}:{start}-{end}"
+            else:
+                source = path
+
+            score = res.get('score', res.get('similarity', 0.0))
+            output.append(f"  <block source='{source}' score='{score:.2f}'>")
+            output.append(res.get('content', ''))
+            output.append("  </block>")
+        output.append("</memory_context>\n")
+        return "\n".join(output)
+        
+    except Exception as e:
+        return f"<!-- Memory Search Error: {e} -->"
+
 
 def determine_group_from_intent(intent: str, groups: Dict) -> str:
     """
@@ -105,11 +157,20 @@ def main():
     
     for file_path in files_to_load:
         print(read_file(file_path))
+    
+    # 4. Inject Memory (Hybrid Layer)
+    # We query the brain using the original input intent
+    memory_block = search_memory(args.input)
+    if memory_block:
+        print(memory_block)
+        print(f"> **Context Loader:** Injected semantic memory.")
         
     print(f"\n> **Context Loaded.** System ready for `{target_group}` operations.")
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
