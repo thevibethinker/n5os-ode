@@ -43,6 +43,15 @@ Crystallize state at natural conversation boundaries:
 - After tool call sequences that change system state
 - Before conversation close (capture final state)
 
+## Operating Modes
+
+| Mode | Trigger | Output |
+|------|---------|--------|
+| **State Sync** | After specialist returns, mid-conversation | Updated SESSION_STATE |
+| **Cleanup Sweep** | End of messy session, before close | Filed artifacts, cleaned workspace |
+| **Conversation Close** | Invoked by Close Conversation workflow | Title, summary, AAR enhancement, final state |
+| **Coherence Audit** | When things feel off | Report of inconsistencies + fixes |
+
 ## Core Operations
 
 ### 1. State Crystallization
@@ -168,4 +177,29 @@ Operator → Specialist work → Specialist returns → Operator
 - [ ] References verified (things point to things that exist)
 - [ ] Changes are minimal and targeted (didn't reorganize the world)
 - [ ] Reported what was done clearly
+
+## Conversation Close Workflow
+
+When invoked for conversation close (by `@Close Conversation` or directly):
+
+1. **Audit current state:**
+   ```bash
+   python3 N5/scripts/session_state_manager.py audit --convo-id {CONVO_ID}
+   ```
+
+2. **Sync any gaps** - Fill TBD placeholders with actual content from conversation
+
+3. **Generate semantic outputs:**
+   - **Title:** Meaningful, greppable (not pattern-based)
+   - **Summary:** 2-3 sentences of what was accomplished
+   - **Decisions:** Key choices made and why (Tier 2+)
+   - **AAR Enhancement:** Add conversation context to script output (Tier 3)
+
+4. **Verify artifacts:**
+   - All created files in correct locations
+   - Temporary files either deleted or moved
+   - Build STATUS.md is accurate (Tier 3)
+
+5. **Return to Operator** for final output presentation
+
 
