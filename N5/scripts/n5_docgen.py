@@ -12,6 +12,7 @@ from executable_manager import list_executables, Executable
 
 from datetime import datetime, timezone
 import subprocess
+from n5_lists_content_extractor import extract_content_for_item
 
 try:
     from jsonschema import Draft202012Validator
@@ -319,6 +320,14 @@ def render_list_md(title, items):
                 lines.append(f"**Due:** {item['due']}\n\n")
             if item.get("body"):
                 lines.append(f"**Body:**\n\n{item['body']}\n\n")
+            if extract_content_for_item is not None and item.get("links"):
+                lines.append("### 📄 Linked Content\n\n")
+                content = extract_content_for_item(item, ROOT.parent)
+                if content:
+                    lines.append(content)
+                else:
+                    lines.append("No content available for this item.\n\n")
+
             if item.get("notes"):
                 lines.append(f"**Notes:** {item['notes']}\n\n")
             lines.append("---\n\n")

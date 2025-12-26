@@ -8,14 +8,7 @@ Provides direct control over CRM data with simple, powerful commands:
 - AI-powered intelligence synthesis
 - Enrichment queue management
 - Statistics and listing
-
-Usage:
-    crm create --email john@example.com --name "John Doe" [options]
-    crm search --email john@example.com
-    crm intel --email john@example.com
-    crm enrich --email john@example.com
-    crm list [--category INVESTOR] [--limit 20]
-    crm stats
+- Ad hoc stakeholder enrichment from LinkedIn URLs
 """
 
 import argparse
@@ -24,6 +17,7 @@ import sys
 import json
 from pathlib import Path
 from datetime import datetime, timedelta
+import asyncio
 
 # Import helper functions
 sys.path.insert(0, '/home/workspace/N5/scripts')
@@ -32,6 +26,9 @@ from crm_calendar_helpers import (
     schedule_enrichment_job,
     get_db_connection
 )
+
+sys.path.insert(0, '/home/workspace')
+from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
 
 DB_PATH = '/home/workspace/N5/data/crm_v3.db'
 PROFILES_DIR = Path('/home/workspace/N5/crm_v3/profiles')
@@ -499,6 +496,36 @@ def show_stats():
         sys.exit(1)
 
 
+async def linkedin_brief(linkedin_url: str, email: str | None = None, name: str | None = None):
+    """Generate an ad hoc Stakeholder Brief from a LinkedIn URL via Aviato.
+
+    This does NOT yet create or modify CRM profiles; it is purely for
+    on-demand due diligence. Future versions can optionally persist to CRM.
+    """
+    print("\n" + "=" * 70)
+    print("Stakeholder Brief (Aviato via LinkedIn)")
+    print("=" * 70 + "\n")
+    print(f"LinkedIn URL: {linkedin_url}")
+    if email:
+        print(f"Email (hint): {email}")
+    if name:
+        print(f"Name (hint): {name}")
+    print("\nFetching from Aviato...\n")
+
+    result = await enrich_via_aviato(email=email, name=name, linkedin_url=linkedin_url)
+
+    if result["success"] and result["data"] is not None:
+        print(result["markdown"])
+    elif result["success"] and result["data"] is None:
+        # Not found case already described in markdown
+        print(result["markdown"])
+    else:
+        # Error case
+        print(result["markdown"])
+
+    print("\n" + "=" * 70 + "\n")
+
+
 def main():
     """Main CLI entry point"""
     parser = argparse.ArgumentParser(
@@ -509,8 +536,10 @@ Examples:
   crm create --email john@example.com --name "John Doe"
   crm search --name "John"
   crm intel --email john@example.com
+  crm enrich --email john@example.com
   crm list --category INVESTOR --limit 10
   crm stats
+  crm linkedin-brief --url https://www.linkedin.com/in/example
         """
     )
     
@@ -552,6 +581,12 @@ Examples:
     # crm stats
     stats_parser = subparsers.add_parser('stats', help='Show CRM statistics')
     
+    # crm linkedin-brief
+    linkedin_parser = subparsers.add_parser('linkedin-brief', help='Ad hoc enrichment from a LinkedIn URL')
+    linkedin_parser.add_argument('--url', required=True, help='LinkedIn profile URL')
+    linkedin_parser.add_argument('--email', help='Optional email hint')
+    linkedin_parser.add_argument('--name', help='Optional name hint')
+
     args = parser.parse_args()
     
     # Route to appropriate function
@@ -567,6 +602,8 @@ Examples:
         list_profiles(args.category, args.limit)
     elif args.command == 'stats':
         show_stats()
+    elif args.command == 'linkedin-brief':
+        asyncio.run(linkedin_brief(args.url, args.email, args.name))
     else:
         parser.print_help()
         sys.exit(1)
@@ -574,6 +611,7 @@ Examples:
 
 if __name__ == '__main__':
     main()
+
 
 
 

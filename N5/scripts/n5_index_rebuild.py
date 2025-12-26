@@ -14,7 +14,15 @@ except Exception as e:
     sys.exit(1)
 
 # Import safety layer
-from n5_safety import execute_with_safety, load_command_spec
+from n5_safety_lib import execute_with_safety, load_command_spec
+
+# Import ignore system
+try:
+    from n5_ignore import is_ignored
+except ImportError:
+    def is_ignored(path):
+        """Fallback if n5_ignore not available."""
+        return False
 
 """N5 Index Rebuild Script
 
@@ -41,6 +49,10 @@ EXCLUDE_PATTERNS = [
 
 def should_exclude(path: Path, relative: str) -> bool:
     """Check if path should be excluded."""
+    # Check .n5ignored marker
+    if is_ignored(path):
+        return True
+    
     for pattern in EXCLUDE_PATTERNS:
         if pattern in relative:
             return True
@@ -349,3 +361,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

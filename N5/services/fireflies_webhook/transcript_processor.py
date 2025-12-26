@@ -5,14 +5,82 @@ Transcript Processor: Fetches from Fireflies and saves to Personal/Meetings/Inbo
 import json
 import logging
 from pathlib import Path
-from typing import Dict, Any, Optional
-from datetime import datetime
+from typing import Dict, Any, Optional, List
+from datetime import datetime, timedelta
 import re
+import shutil
+import os
 
 from .fireflies_client import FirefliesClient
 from .webhook_processor import WebhookProcessor
+from ..intake.intake_engine import IntakeEngine
+from ..intake.models import IntakeSource
 
 logger = logging.getLogger(__name__)
+
+class DuplicateManager:
+    """Handles temporal and participant deduplication for meeting transcripts."""
+    
+    INBOX = Path("/home/workspace/Personal/Meetings/Inbox")
+    QUARANTINE = INBOX / "_quarantine"
+
+    @classmethod
+    def find_potential_duplicate(cls, start_time: datetime, participants: List[str]) -> Optional[Path]:
+        """Finds an existing folder with overlapping time and participants."""
+        cls.QUARANTINE.mkdir(exist_ok=True)
+        
+        # Scan ±45 minutes (generous window for delays)
+        window_start = start_time - timedelta(minutes=45)
+        window_end = start_time + timedelta(minutes=45)
+        
+        for folder in cls.INBOX.iterdir():
+            if not folder.is_dir() or folder.name.startswith("_"):
+                continue
+            
+            # Extract date from folder name (YYYY-MM-DD)
+            try:
+                folder_date_str = folder.name[:10]
+                if folder_date_str != start_time.strftime("%Y-%m-%d"):
+                    continue
+            except:
+                continue
+
+            metadata_path = folder / "metadata.json"
+            if not metadata_path.exists():
+                continue
+                
+            try:
+                with open(metadata_path, 'r') as f:
+                    meta = json.load(f)
+                
+                # Check Time Overlap
+                # Many sources use epoch or ISO, we assume ISO from metadata_manager
+                meta_time_str = meta.get("date") # Assuming standard metadata format
+                if isinstance(meta_time_str, (int, float)):
+                    meta_time = datetime.fromtimestamp(meta_time_str)
+                else:
+                    meta_time = datetime.fromisoformat(meta_time_str.replace("Z", "+00:00"))
+
+                if window_start <= meta_time <= window_end:
+                    # Check Participant Overlap (at least one matching email)
+                    meta_participants = meta.get("participants", [])
+                    if any(p in meta_participants for p in participants):
+                        return folder
+            except Exception as e:
+                logger.warning(f"Error checking duplicate in {folder}: {e}")
+                continue
+                
+        return None
+
+    @classmethod
+    def quarantine(cls, folder: Path, reason: str):
+        """Moves a redundant folder to quarantine."""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        target = cls.QUARANTINE / f"{folder.name}_quarantined_{timestamp}"
+        shutil.move(str(folder), str(target))
+        with open(target / "quarantine_reason.txt", "w") as f:
+            f.write(reason)
+        logger.info(f"Quarantined {folder.name}: {reason}")
 
 class TranscriptProcessor:
     """Processes pending webhooks and saves transcripts to Inbox"""
@@ -21,14 +89,57 @@ class TranscriptProcessor:
         self,
         fireflies_client: Optional[FirefliesClient] = None,
         webhook_processor: Optional[WebhookProcessor] = None,
-        inbox_path: Path = Path("/home/workspace/Personal/Meetings/Inbox")
+        inbox_path: Path = Path("/home/workspace/Personal/Meetings/Inbox"),
+        meetings_root: Path = Path("/home/workspace/Personal/Meetings")
     ):
         self.fireflies_client = fireflies_client or FirefliesClient()
         self.webhook_processor = webhook_processor or WebhookProcessor()
+        self.intake_engine = IntakeEngine()
         self.inbox_path = inbox_path
+        self.meetings_root = meetings_root
         
         if not self.inbox_path.exists():
             logger.warning(f"Inbox path does not exist: {self.inbox_path}")
+    
+    def _transcript_already_exists(self, transcript_id: str) -> Optional[Path]:
+        """
+        Check if a transcript_id already exists anywhere in the Meetings hierarchy.
+        Scans metadata.json files in Inbox, Week-of-* folders, and Archive.
+        
+        Returns:
+            Path to existing folder if found, None otherwise
+        """
+        if not transcript_id:
+            return None
+        
+        # Directories to search
+        search_dirs = [self.inbox_path]
+        
+        # Add week folders
+        for item in self.meetings_root.iterdir():
+            if item.is_dir() and (item.name.startswith("Week-of-") or item.name == "Archive"):
+                search_dirs.append(item)
+        
+        # Search each directory
+        for search_dir in search_dirs:
+            if not search_dir.exists():
+                continue
+            
+            for meeting_folder in search_dir.iterdir():
+                if not meeting_folder.is_dir():
+                    continue
+                
+                metadata_file = meeting_folder / "metadata.json"
+                if metadata_file.exists():
+                    try:
+                        with open(metadata_file, 'r') as f:
+                            metadata = json.load(f)
+                        if metadata.get("transcript_id") == transcript_id:
+                            return meeting_folder
+                    except (json.JSONDecodeError, IOError):
+                        continue
+        
+        return None
     
     def process_pending_webhooks(self, limit: int = 10) -> Dict[str, Any]:
         """
@@ -98,77 +209,36 @@ class TranscriptProcessor:
     
     def save_transcript_to_inbox(self, transcript_data: Dict[str, Any]) -> Optional[str]:
         """
-        Convert Fireflies transcript to Zo format and save to Inbox
+        Convert Fireflies transcript to Zo format and save to Inbox using Unified Intake Engine
         
         Returns:
             Folder name if successful, None if failed
         """
         try:
-            # Extract metadata
-            transcript_id = transcript_data.get("id")
-            title = transcript_data.get("title", "Untitled Meeting")
-            date_str = transcript_data.get("date")  # ISO format
-            participants = transcript_data.get("participants", [])
-            duration = transcript_data.get("duration", 0)  # seconds
+            # Step 1: Ingest using the Unified Intake Engine
+            # This handles dedup, folder naming, metadata creation, and file writing
+            result = self.intake_engine.ingest_from_source(
+                source=IntakeSource.FIREFLIES,
+                payload=transcript_data
+            )
             
-            # Parse date - Fireflies returns Unix timestamp in milliseconds
-            if date_str:
-                if isinstance(date_str, int):
-                    # Unix timestamp in milliseconds
-                    meeting_date = datetime.fromtimestamp(date_str / 1000)
-                elif isinstance(date_str, str):
-                    # ISO format string
-                    meeting_date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-                else:
-                    meeting_date = datetime.now()
+            if result.success:
+                logger.info(f"Unified Ingest Successful: {result.folder_path}")
+                return result.folder_name
             else:
-                meeting_date = datetime.now()
-            
-            # Create folder name: YYYY-MM-DD_participant-names
-            date_prefix = meeting_date.strftime("%Y-%m-%d")
-            participant_names = self._format_participant_names(participants, title)
-            folder_name = f"{date_prefix}_{participant_names}"
-            
-            # Sanitize folder name
-            folder_name = re.sub(r'[<>:"/\\|?*]', '_', folder_name)
-            folder_name = folder_name[:200]  # Limit length
-            
-            meeting_folder = self.inbox_path / folder_name
-            meeting_folder.mkdir(parents=True, exist_ok=True)
-            
-            # Convert transcript to Zo format
-            zo_transcript = self._convert_to_zo_format(transcript_data)
-            
-            # Save transcript.jsonl
-            transcript_file = meeting_folder / "transcript.jsonl"
-            with open(transcript_file, 'w', encoding='utf-8') as f:
-                json.dump(zo_transcript, f, ensure_ascii=False)
-            
-            # Save metadata
-            metadata_file = meeting_folder / "metadata.json"
-            metadata = {
-                "source": "fireflies",
-                "transcript_id": transcript_id,
-                "title": title,
-                "date": date_str,
-                "duration_seconds": duration,
-                "participants": participants,
-                "processed_at": datetime.now().isoformat(),
-                "transcript_url": transcript_data.get("transcript_url"),
-                "audio_url": transcript_data.get("audio_url"),
-                "video_url": transcript_data.get("video_url"),
-            }
-            
-            with open(metadata_file, 'w', encoding='utf-8') as f:
-                json.dump(metadata, f, indent=2, ensure_ascii=False)
-            
-            logger.info(f"Saved transcript to {meeting_folder}")
-            return folder_name
-            
+                if result.duplicate_of:
+                    logger.info(f"Transcript is a duplicate of {result.duplicate_of}. Skipping.")
+                    return Path(result.duplicate_of).name
+                
+                logger.error(f"Unified Ingest Failed: {result.error_message}")
+                return None
+                
         except Exception as e:
-            logger.error(f"Failed to save transcript: {e}")
+            logger.exception(f"Exception during Unified Ingest for Fireflies: {e}")
             return None
     
+    # Keeping helper methods for backwards compatibility if needed, 
+    # but they are largely shadowed by the IntakeEngine now
     def _format_participant_names(self, participants: list, title: str) -> str:
         """Extract participant names for folder naming"""
         if not participants:
@@ -275,6 +345,11 @@ class TranscriptProcessor:
         # Fireflies may not provide word-level timing
         # Return empty list for now
         return []
+
+
+
+
+
 
 
 

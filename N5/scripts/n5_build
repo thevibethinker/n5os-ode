@@ -1,0 +1,15 @@
+#!/bin/bash
+# N5 Build - Quick build workspace initializer
+# Usage: n5_build <slug> [title]
+# Example: n5_build calendar-sync "Calendar Sync Feature"
+
+if [ -z "$1" ]; then
+    echo "Usage: n5_build <slug> [title]"
+    echo "Example: n5_build calendar-sync \"Calendar Sync Feature\""
+    exit 1
+fi
+
+SLUG="$1"
+TITLE="${2:-$1}"
+
+python3 /home/workspace/N5/scripts/init_build.py "$SLUG" --title "$TITLE"

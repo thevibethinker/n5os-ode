@@ -2,17 +2,14 @@
 """
 CRM V3 Enrichment Worker - Tool-First Architecture
 
-Thin orchestration layer that:
-1. Manages queue (fetch, update status)
-2. Delegates enrichment to LLM via prompts/tools
-3. Handles retry logic
+Under Stakeholder Intelligence Interface Contract (V1).
 
-NO regex, NO manual YAML parsing - uses tools instead!
+- Manages enrichment_queue in N5/data/crm_v3.db.
+- Delegates Aviato enrichment to enrichment.aviato_enricher.
+- Writes back enrichment status to crm_v3.db.
+- Appends Intelligence Log entries into Personal/Knowledge/CRM/individuals/<slug>.md.
 
-Usage:
-    python3 crm_enrichment_worker.py              # Production mode (continuous)
-    python3 crm_enrichment_worker.py --test       # Test mode (one job then exit)
-    python3 crm_enrichment_worker.py --dry-run    # Dry-run (fetch but don't process)
+Viewer/join responsibilities remain in stakeholder_intel.py.
 """
 
 import sys
@@ -21,15 +18,19 @@ import sqlite3
 import asyncio
 import argparse
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # Add Aviato import
 sys.path.insert(0, '/home/workspace')
 from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
+from N5.scripts.stakeholder_intel import extract_linkedin_metadata, query_linkedin_conversation
 
 DB_PATH = '/home/workspace/N5/data/crm_v3.db'
 PROFILES_DIR = '/home/workspace/N5/crm_v3/profiles'
+WORKSPACE = Path("/home/workspace")
+CRM_MARKDOWN_DIR = WORKSPACE / "Personal" / "Knowledge" / "CRM" / "individuals"
+STAGING_DIR = WORKSPACE / "N5" / "data" / "staging" / "aviato"
 
 
 def fetch_next_enrichment_job():
@@ -41,15 +42,18 @@ def fetch_next_enrichment_job():
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
     
-    c.execute("""
-        SELECT eq.*, p.email, p.yaml_path
+    c.execute(
+        """
+        SELECT eq.*, p.email, p.primary_email, p.yaml_path,
+               p.person_type, p.enrichment_policy, p.enrichment_status
         FROM enrichment_queue eq
         JOIN profiles p ON eq.profile_id = p.id
         WHERE eq.status = 'queued'
           AND eq.scheduled_for <= datetime('now')
         ORDER BY eq.priority DESC, eq.scheduled_for ASC
         LIMIT 1
-    """)
+        """
+    )
     
     job = c.fetchone()
     conn.close()
@@ -65,205 +69,301 @@ def update_job_status(job_id: int, status: str, error_message: str = None):
     c = conn.cursor()
     
     if status == 'processing':
-        c.execute("""
+        c.execute(
+            """
             UPDATE enrichment_queue
             SET status = ?,
                 last_attempt_at = datetime('now'),
                 attempt_count = attempt_count + 1
             WHERE id = ?
-        """, (status, job_id))
-    
+            """,
+            (status, job_id),
+        )
     elif status == 'completed':
-        c.execute("""
+        c.execute(
+            """
             UPDATE enrichment_queue
             SET status = ?,
                 completed_at = datetime('now')
             WHERE id = ?
-        """, (status, job_id))
-    
+            """,
+            (status, job_id),
+        )
     elif status == 'failed':
-        c.execute("""
+        c.execute(
+            """
             UPDATE enrichment_queue
             SET status = ?,
                 error_message = ?
             WHERE id = ?
-        """, (status, error_message, job_id))
+            """,
+            (status, error_message, job_id),
+        )
     
     conn.commit()
     conn.close()
 
 
-async def enrich_profile_via_tools(profile_id: int, email: str, checkpoint: str, yaml_path: str):
-    """
-    Enrich profile using tools instead of scripts.
-    
-    This is where we delegate to:
-    - edit_file_llm for YAML appending
-    - use_app_gmail for email threads
-    - Aviato for person enrichment
-    
-    For now, this is a stub showing the architecture.
-    TODO: Replace with actual tool calls via Zo API
-    """
-    print(f"  → Enriching profile {profile_id} ({email}) - {checkpoint}")
-    
-    # Gather intelligence from sources
-    intelligence_parts = []
-    
-    # 1. Aviato enrichment (REAL - no stub)
-    profile_name = Path(yaml_path).stem  # Extract name from filename
-    aviato_result = await enrich_via_aviato(email, profile_name)
-    
-    if aviato_result['success']:
-        intelligence_parts.append(aviato_result['markdown'])
-    else:
-        # Graceful fallback on error
-        intelligence_parts.append(aviato_result['markdown'])
+def update_profile_enrichment_status(
+    profile_id: int,
+    status: str,
+    source: str | None = None,
+    error: str | None = None,
+):
+    """Write enrichment status fields back to profiles table."""
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    fields = ["enrichment_status = ?", "last_enriched_at = datetime('now')"]
+    params: list[object] = [status]
+    if source is not None:
+        fields.append("last_enrichment_source = ?")
+        params.append(source)
+    if error is not None:
+        fields.append("last_enrichment_error = ?")
+        params.append(error)
+    c.execute(
+        f"UPDATE profiles SET {', '.join(fields)} WHERE id = ?",
+        (*params, profile_id),
+    )
+    conn.commit()
+    conn.close()
 
+
+def _load_profile_slug(cursor, profile_id: int) -> str | None:
+    """Look up YAML profile row and return the slug portion if resolvable.
+
+    Assumes yaml_path in crm_v3 profiles table points to N5/crm_v3/profiles/<slug>.yaml.
+    We map that <slug> to canonical CRM markdown path Personal/Knowledge/CRM/individuals/<slug>.md.
+    """
+    cursor.execute("SELECT yaml_path FROM profiles WHERE id = ?", (profile_id,))
+    row = cursor.fetchone()
+    if not row:
+        return None
+    yaml_path = row[0] or ""
+    name = Path(yaml_path).stem
+    return name or None
+
+
+def _append_intel_log(slug: str, heading: str, body: str) -> None:
+    """Append a timestamped Intelligence Log entry into the CRM markdown file for slug.
+
+    Format:
+    ### YYYY-MM-DD HH:MM | <heading>
+
+    <body>
+
+    If the file or Intelligence Log section is missing, create them.
+    """
+    path = CRM_MARKDOWN_DIR / f"{slug}.md"
+    if not path.exists():
+        # Do not create new identities here; that should be done by dedicated CRM tools.
+        return
+
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    lines = text.splitlines()
+
+    # Ensure Intelligence Log section exists
+    if "## Intelligence Log" not in text:
+        lines.append("")
+        lines.append("## Intelligence Log")
+        lines.append("")
+
+    ts = datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M %Z")
+    lines.append(f"### {ts} | {heading}")
+    lines.append("")
+    for line in body.rstrip().splitlines():
+        lines.append(line)
+    lines.append("")
+
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def save_aviato_raw_json(slug: str, data: dict) -> Path | None:
+    """Save raw Aviato response JSON to staging directory.
     
-    # 2. Gmail thread analysis (REAL - via Zo CLI)
+    Returns path to saved file, or None if save failed.
+    """
+    STAGING_DIR.mkdir(parents=True, exist_ok=True)
+    filename = f"{slug}.json"
+    path = STAGING_DIR / filename
     try:
-        import subprocess
-        result = subprocess.run(
-            ['zo', f'@crm-gmail-enrichment {email}'],
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
-        
-        if result.returncode == 0 and result.stdout.strip():
-            gmail_intelligence = result.stdout.strip()
-            intelligence_parts.append(gmail_intelligence)
-        else:
-            # Fallback if CLI fails
-            intelligence_parts.append(f"""**Gmail Thread Analysis:**
-
-⚠️ Gmail enrichment unavailable (CLI error)
-Contact: {email}""")
-    except subprocess.TimeoutExpired:
-        intelligence_parts.append(f"""**Gmail Thread Analysis:**
-
-⚠️ Gmail search timed out
-Contact: {email}""")
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, default=str)
+        return path
     except Exception as e:
-        intelligence_parts.append(f"""**Gmail Thread Analysis:**
-
-⚠️ Error: {str(e)}
-Contact: {email}""")
-    
-    # 3. LinkedIn intelligence (NOT YET IMPLEMENTED)
-    # Reason: Requires LinkedIn API partnership or compliant data provider
-    # Implementation path documented in: file 'N5/docs/LINKEDIN_INTEGRATION.md'
-    # 
-    # To enable LinkedIn enrichment:
-    #   1. Choose integration option (API partnership or third-party provider)
-    #   2. Implement client module (see LINKEDIN_INTEGRATION.md)
-    #   3. Replace this stub with real API call
-    #   4. Follow pattern from Aviato integration above
-    #
-    # Current: System works without LinkedIn using Aviato + Gmail as sources
-    linkedin_note = """**LinkedIn Intelligence:**
-
-⚠️ NOT YET IMPLEMENTED - See file 'N5/docs/LINKEDIN_INTEGRATION.md' for integration plan
-
-Status: Phase 2 priority
-Data Sources Active: Aviato (✓) + Gmail (✓)"""
-    
-    intelligence_parts.append(linkedin_note)
-    
-    # Combine intelligence
-    intelligence_content = "\n\n".join(intelligence_parts)
-    
-    # Append to YAML using tool-based approach
-    # TODO: Use actual edit_file_llm tool via Zo API
-    # For now, use simple append but mark as tool-based architecture
-    
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-    entry = f"""
-### {timestamp} | multi_source_enrichment
-**Checkpoint:** {checkpoint}
-**Sources:** aviato, gmail, linkedin (all stubbed)
-
-{intelligence_content}
-"""
-    
-    # Append to YAML (simple version for now)
-    full_yaml_path = Path(yaml_path)
-    if not full_yaml_path.is_absolute():
-        full_yaml_path = Path('/home/workspace') / yaml_path
-    
-    with open(full_yaml_path, 'r') as f:
-        content = f.read()
-    
-    if "## Intelligence Log" not in content:
-        with open(full_yaml_path, 'a') as f:
-            f.write("\n\n## Intelligence Log\n")
-    
-    with open(full_yaml_path, 'a') as f:
-        f.write(entry)
-    
-    print(f"  ✓ Appended intelligence to {full_yaml_path}")
-    
-    return {
-        "success": True,
-        "sources_checked": ["aviato", "gmail", "linkedin"],
-        "intelligence_added": True
-    }
+        print(f"  ⚠ Failed to save raw JSON: {e}")
+        return None
 
 
-async def process_enrichment_job(job: dict):
+def _append_linkedin_intel(slug: str) -> None:
+    """Append a LinkedIn Intelligence snapshot for this slug, if metadata & data exist.
+
+    Uses existing helpers from stakeholder_intel.py to read CRM markdown and query
+    Knowledge/linkedin/linkedin.db. Does nothing if there is no LinkedIn metadata
+    or no matching conversation.
     """
-    Process a single enrichment job.
-    Delegates actual enrichment to tools/prompts.
+    md_path = CRM_MARKDOWN_DIR / f"{slug}.md"
+    if not md_path.exists():
+        return
+
+    md = md_path.read_text(encoding="utf-8", errors="ignore")
+    meta = extract_linkedin_metadata(md)
+    convo_id = meta.get("linkedin_conversation_id")
+    if not convo_id:
+        return
+
+    li_conv = query_linkedin_conversation(convo_id)
+    if not li_conv:
+        return
+
+    conv = li_conv["conversation"]
+    messages = li_conv["messages"][:5]
+
+    lines: list[str] = []
+    lines.append("**Source:** linkedin_kondo")
+    lines.append("")
+    lines.append("**LinkedIn Intelligence:**")
+    lines.append(f"- Name: {conv['participant_name']}")
+    if conv.get("participant_email"):
+        lines.append(f"- Email: {conv['participant_email']}")
+    if conv.get("linkedin_profile_url"):
+        lines.append(f"- Profile URL: {conv['linkedin_profile_url']}")
+    lines.append(f"- Status: {conv['status']}")
+    lines.append(f"- Messages: {conv['message_count']}")
+    lines.append("")
+    if messages:
+        lines.append("Recent messages:")
+        for msg in messages:
+            sent_at = msg.get("sent_at")
+            try:
+                ts = datetime.fromtimestamp(sent_at / 1000.0, tz=timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M %Z") if isinstance(sent_at, int) else str(sent_at)
+            except Exception:
+                ts = str(sent_at)
+            sender = msg.get("sender", "?")
+            content = msg.get("content", "").replace("\n", " ")
+            if len(content) > 160:
+                content = content[:157] + "..."
+            lines.append(f"- [{ts}] {sender}: {content}")
+
+    body = "\n".join(lines)
+    _append_intel_log(slug, "linkedin_intelligence", body)
+
+
+async def enrich_profile_via_tools(profile_row: dict, cursor) -> dict:
+    """Enrich a single CRM profile using Aviato and return structured result.
+
+    profile_row is a row from the profiles table (NOT the queue join row).
+
+    Returns dict with keys:
+    - status: 'succeeded' | 'not_found' | 'failed'
+    - aviato_data: mapped CRM-style dict or None
+    - error: short error string if failed/not_found
+    - slug: CRM slug if resolvable
     """
-    job_id = job['id']
-    profile_id = job['profile_id']
-    email = job['email']
-    checkpoint = job['checkpoint']
-    yaml_path = job['yaml_path']
-    
-    print(f"\n📋 Processing job {job_id}: profile {profile_id} ({email})")
-    print(f"   Checkpoint: {checkpoint}")
-    
-    # Mark as processing
-    update_job_status(job_id, 'processing')
-    
+    profile_id = profile_row["id"]
+    raw_email = profile_row["email"]
+    primary_email = profile_row.get("primary_email")
+    email = primary_email or raw_email
+
+    # Resolve CRM markdown slug for this profile id
+    slug = _load_profile_slug(cursor, profile_id)
+
+    # Call Aviato - returns dict with keys: success, data, error, markdown
     try:
-        # Enrich using tools (not scripts!)
-        result = await enrich_profile_via_tools(profile_id, email, checkpoint, yaml_path)
-        
-        if result['success']:
-            update_job_status(job_id, 'completed')
-            print(f"  ✓ Job {job_id} completed")
-        else:
-            update_job_status(job_id, 'failed', "Enrichment returned success=False")
-            print(f"  ✗ Job {job_id} failed")
-        
+        result = await enrich_via_aviato(email)
     except Exception as e:
-        error_msg = str(e)
-        print(f"  ✗ Job {job_id} error: {error_msg}")
-        
-        # Check if we should retry
-        attempt_count = job['attempt_count'] + 1
-        if attempt_count < 3:
-            # Requeue with exponential backoff
-            backoff_minutes = [1, 5, 15][attempt_count - 1]
-            conn = sqlite3.connect(DB_PATH)
-            c = conn.cursor()
-            c.execute("""
-                UPDATE enrichment_queue
-                SET status = 'queued',
-                    scheduled_for = datetime('now', '+{} minutes'),
-                    error_message = ?
-                WHERE id = ?
-            """.format(backoff_minutes), (error_msg, job_id))
-            conn.commit()
-            conn.close()
-            print(f"  ↻ Requeued job {job_id} (attempt {attempt_count}/3, retry in {backoff_minutes}min)")
-        else:
-            # Max retries exceeded
-            update_job_status(job_id, 'failed', f"Max retries exceeded: {error_msg}")
-            print(f"  ✗ Job {job_id} failed permanently after 3 attempts")
+        return {"status": "failed", "aviato_data": None, "error": str(e), "slug": slug, "markdown": None}
+
+    if not result.get('success') or result.get('error'):
+        error_msg = result.get('error', 'Unknown error')
+        status = "not_found" if result.get('data') is None and result.get('success') else "failed"
+        return {"status": status, "aviato_data": None, "error": error_msg, "slug": slug, "markdown": result.get('markdown')}
+
+    # Success - data may be None if person not found (success=True but data=None)
+    if result.get('data') is None:
+        return {"status": "not_found", "aviato_data": None, "error": None, "slug": slug, "markdown": result.get('markdown')}
+    
+    return {"status": "succeeded", "aviato_data": result.get('data'), "error": None, "slug": slug, "markdown": result.get('markdown')}
+
+
+async def process_enrichment_job(job: dict, dry_run: bool = False) -> None:
+    """Process a single enrichment_queue job and update DB + CRM markdown.
+
+    Opens its own DB connection, loads the profile row, calls Aviato enrichment,
+    writes back statuses, and appends Aviato + LinkedIn intel to CRM markdown.
+    """
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    job_id = job["id"]
+    profile_id = job["profile_id"]
+
+    # Load full profile row from profiles
+    cursor.execute("SELECT * FROM profiles WHERE id = ?", (profile_id,))
+    row = cursor.fetchone()
+    if not row:
+        conn.close()
+        return
+    profile_row = {desc[0]: value for desc, value in zip(cursor.description, row)}
+
+    person_type = (profile_row.get("person_type") or "").lower()
+    policy = (profile_row.get("enrichment_policy") or "").lower()
+
+    print(f"\n📋 Processing job {job_id}: profile {profile_id} ({profile_row.get('email')})")
+    print(f"   Checkpoint: {job['checkpoint']}")
+
+    # Policy gate: skip internal and never-policy profiles
+    if person_type == "internal":
+        print("  ↷ Skipping internal profile (policy: never)")
+        update_profile_enrichment_status(profile_id, "skipped_internal", source=None, error=None)
+        update_job_status(job_id, "completed")
+        conn.close()
+        return
+
+    if policy == "never":
+        print("  ↷ Skipping profile due to enrichment_policy=never")
+        update_profile_enrichment_status(profile_id, "skipped_policy", source=None, error=None)
+        update_job_status(job_id, "completed")
+        conn.close()
+        return
+
+    # Mark as processing in the queue
+    update_job_status(job_id, "processing")
+
+    # Run Aviato enrichment
+    result = await enrich_profile_via_tools(profile_row, cursor)
+
+    slug = result.get("slug")
+    if slug:
+        if result["status"] == "succeeded" and result["aviato_data"]:
+            # Save raw JSON to staging
+            json_path = save_aviato_raw_json(slug, result["aviato_data"])
+            if json_path:
+                print(f"  💾 Raw JSON saved to {json_path}")
+            
+            body_lines = ["**Source:** aviato_api", "", "**Aviato Professional Intelligence:**"]
+            for k, v in result["aviato_data"].items():
+                if isinstance(v, (str, int)) and v:
+                    body_lines.append(f"- {k}: {v}")
+            body = "\n".join(body_lines)
+            _append_intel_log(slug, "aviato_enrichment", body)
+        elif result["status"] in {"failed", "not_found"} and result["error"]:
+            body = f"**Source:** aviato_api\n\n- Status: {result['status']}\n- Error: {result['error']}"
+            _append_intel_log(slug, "aviato_enrichment_error", body)
+
+        # Always try to append LinkedIn intelligence if metadata exists
+        _append_linkedin_intel(slug)
+
+    # Update DB status for job/profile
+    if result["status"] == "succeeded":
+        update_profile_enrichment_status(profile_id, "succeeded", source="aviato_api", error=None)
+        update_job_status(job_id, "completed")
+    elif result["status"] in {"failed", "not_found"}:
+        update_profile_enrichment_status(profile_id, result["status"], source="aviato_api", error=result.get("error"))
+        update_job_status(job_id, "failed", error_message=result.get("error") or "unknown error")
+
+    conn.close()
 
 
 async def enrichment_worker_loop(test_mode: bool = False, dry_run: bool = False):
@@ -304,7 +404,7 @@ async def enrichment_worker_loop(test_mode: bool = False, dry_run: bool = False)
             continue
         
         # Process the job
-        await process_enrichment_job(job)
+        await process_enrichment_job(job, dry_run=dry_run)
         
         if test_mode:
             print("\n✓ Test mode: Processed one job, exiting")
@@ -366,6 +466,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
 
 
 

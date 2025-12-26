@@ -16,7 +16,7 @@ except Exception as e:
     sys.exit(1)
 
 # Import safety layer
-from n5_safety import execute_with_safety, load_command_spec
+from n5_safety_lib import execute_with_safety, load_command_spec
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"

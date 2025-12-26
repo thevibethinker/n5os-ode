@@ -7,19 +7,29 @@ Extracts:
 1. Resources explicitly/implicitly referenced in conversation
 2. Eloquent lines/monologues with audience reaction signals
 3. Key decisions, action items, questions
+
+v2.0: Now uses LLM extraction for flexible reasoning instead of hardcoded regex patterns.
 """
 
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass, asdict
 import logging
 
-sys.path.insert(0, str(Path(__file__).parent))
-from content_library import ContentLibrary
-
 logger = logging.getLogger(__name__)
+
+# Ensure sibling scripts are importable when running as a standalone script
+sys.path.insert(0, str(Path(__file__).parent))
+
+# === LLM EXTRACTOR IMPORT ===
+from llm_extractor import LLMExtractor
+# === END LLM EXTRACTOR IMPORT ===
+
+# === V3 CONTENT LIBRARY IMPORT ===
+from content_library_v3 import ContentLibraryV3
+# === END V3 IMPORT ===
 
 
 @dataclass
@@ -56,9 +66,11 @@ class BBlockParser:
     
     def __init__(self, meeting_folder: Path):
         self.meeting_folder = Path(meeting_folder)
-        self.content_library = ContentLibrary()
+        self.content_library = ContentLibraryV3()
+        self.llm_extractor = LLMExtractor()  # LLM extraction service
         self.blocks = {}  # Store loaded B-blocks
         self.confidence_order = {"explicit": 2, "implicit": 1, "suggested": 0}
+        self.unmatched_commitments = []  # Commitments without Content Library match
         
     def _add_unique_resource(self, resources: List[ResourceReference], res: ResourceReference):
         """Add resource only if not duplicate (shared across all extraction methods)"""
@@ -72,28 +84,60 @@ class BBlockParser:
                     return
         resources.append(res)
     
-    def parse_transcript(self, transcript_path: Path) -> Dict:
+    def parse_transcript(self, transcript_path: Path = None) -> Dict:
         """
         Parse transcript and extract all blocks
+        
+        Args:
+            transcript_path: Path to transcript file. If None, searches meeting folder.
+            
         Returns: {
             "resources_explicit": [ResourceReference],
             "resources_suggested": [ResourceReference],
             "eloquent_lines": [EloquentLine],
             "key_decisions": [str],
-            "action_items": [str],
-            "questions": [str]
+            "action_items": {"v_actions": [], "other_actions": [], "all_actions": []},
+            "questions": [str],
+            "topics": {...},
+            "quotes": [...]
         }
         """
-        with open(transcript_path, 'r', encoding='utf-8') as f:
-            transcript_text = f.read()
+        # Find transcript if not provided
+        if transcript_path is None:
+            # Try multiple transcript file patterns
+            transcript_files = list(self.meeting_folder.glob("*.transcript.jsonl"))
+            if not transcript_files:
+                transcript_files = list(self.meeting_folder.glob("transcript.jsonl"))
+            if transcript_files:
+                # Read JSONL transcript
+                import json
+                with open(transcript_files[0], 'r', encoding='utf-8') as f:
+                    data = json.loads(f.readline())
+                    transcript_text = data.get("text", "")
+            else:
+                # Try plain text
+                txt_files = list(self.meeting_folder.glob("*.txt"))
+                if txt_files:
+                    with open(txt_files[0], 'r', encoding='utf-8') as f:
+                        transcript_text = f.read()
+                else:
+                    logger.warning("No transcript found in meeting folder")
+                    transcript_text = ""
+        else:
+            with open(transcript_path, 'r', encoding='utf-8') as f:
+                transcript_text = f.read()
         
+        # Use LLM-based extraction
         return {
             "resources_explicit": self.extract_explicit_resources(transcript_text),
             "resources_suggested": self.suggest_relevant_resources(transcript_text),
             "eloquent_lines": self.extract_eloquent_lines(transcript_text),
             "key_decisions": self.extract_key_decisions(transcript_text),
             "action_items": self.extract_action_items(transcript_text),
-            "questions": self.extract_questions(transcript_text)
+            "questions": self.extract_questions(transcript_text),
+            "topics": self.detect_topics(transcript_text),
+            "quotes": self.extract_quotes(transcript_text),
+            "unmatched_commitments": self.unmatched_commitments,
         }
     
     def extract_explicit_resources(self, text: str) -> List[ResourceReference]:
@@ -103,7 +147,7 @@ class BBlockParser:
         Explicit: URLs, specific tool names, documents mentioned
         Implicit: References like "that article I sent", "the guide", "our demo"
         """
-        resources = []
+        resources: List[ResourceReference] = []
         
         # 1. Extract URLs
         url_pattern = r'https?://[^\s<>"\'\\)]+|www\.[^\s<>"\'\\)]+'
@@ -134,16 +178,25 @@ class BBlockParser:
                 end = min(len(text), match.end() + 50)
                 context = text[start:end].strip()
                 
-                # Try to find matching resource in Content Library
-                lib_items = self.content_library.search(query=title, tags={})
+                # Try to find matching resource in Content Library v3
+                lib_items = self.content_library.search(
+                    query=title,
+                    item_type="link",
+                )
                 if lib_items:
                     item = lib_items[0]
-                    self._add_unique_resource(resources, ResourceReference(
-                        content=item.content or item.url or title,
-                        title=item.title,
-                        context=context,
-                        confidence="explicit"
-                    ))
+                    item_url = item.get("url") or ""
+                    item_content = item.get("content") or ""
+                    self._add_unique_resource(
+                        resources,
+                        ResourceReference(
+                            content=item_url or item_content or title,
+                            title=item.get("title") or title,
+                            url=item_url or None,
+                            context=context,
+                            confidence="explicit",
+                        ),
+                    )
                 else:
                     self._add_unique_resource(resources, ResourceReference(
                         content=title,
@@ -175,33 +228,99 @@ class BBlockParser:
     
     def suggest_relevant_resources(self, text: str) -> List[ResourceReference]:
         """
-        Suggest resources that would be helpful based on conversation topics
-        These are NOT mentioned in conversation, but would add value
+        Extract resources V committed to sending using LLM reasoning.
+        
+        Uses LLMExtractor to understand context and match against Content Library.
+        Falls back to regex-based detection on API errors.
         """
-        suggestions = []
+        suggestions: List[ResourceReference] = []
         
-        # Detect conversation topics
-        topics = self._detect_topics(text)
+        # Get library items for LLM context
+        library_items = self.content_library.search(query=None, limit=200)
+        simplified_items = [
+            {
+                "id": item.get("id"),
+                "title": item.get("title"),
+                "url": item.get("url"),
+                "type": item.get("item_type"),
+            }
+            for item in library_items
+            if item.get("id")
+        ]
         
-        # Search Content Library for relevant items by topic
+        # Use LLM extraction
+        result = self.llm_extractor.extract_resources(text, simplified_items)
+        
+        # Convert LLM output to ResourceReference objects
+        for r in result.get("resources", []):
+            suggestions.append(ResourceReference(
+                content=r.get("matched_item_url") or r.get("intent", ""),
+                title=r.get("matched_item_title") or r.get("intent"),
+                url=r.get("matched_item_url"),
+                context=r.get("commitment_text"),
+                confidence=self._map_confidence(r.get("confidence", "medium")),
+            ))
+        
+        # Capture unmatched commitments for V to review
+        self.unmatched_commitments = result.get("unmatched_commitments", [])
+        
+        # Fallback: if LLM returned nothing, use topic-based suggestions
+        if not suggestions:
+            suggestions = self._suggest_by_topics_fallback(text)
+        
+        return suggestions
+    
+    def _suggest_by_topics_fallback(self, text: str) -> List[ResourceReference]:
+        """Fallback: suggest resources based on detected topics (old regex method)"""
+        suggestions: List[ResourceReference] = []
+        topics = self._detect_topics_regex(text)
+        
         for topic in topics:
-            items = self.content_library.search(
-                query=topic,
-                tags={"purpose": ["education", "resource", "guide"]}
-            )
-            
-            for item in items[:2]:  # Max 2 suggestions per topic
+            items = self.content_library.search(query=topic)
+            for item in items[:2]:
+                content = item.get("url") or item.get("content") or ""
+                title = item.get("title") or content or topic
                 suggestions.append(ResourceReference(
-                    content=item.content or item.url or "",
-                    title=item.title,
+                    content=content,
+                    title=title,
                     confidence="suggested",
                     context=f"Relevant to: {topic}"
                 ))
         
         return suggestions
     
-    def _detect_topics(self, text: str) -> List[str]:
-        """Detect key topics in conversation for suggesting resources"""
+    def _map_confidence(self, llm_confidence: str) -> str:
+        """Map LLM confidence levels to our internal levels"""
+        mapping = {
+            "high": "explicit",
+            "medium": "implicit",
+            "low": "suggested",
+        }
+        return mapping.get(llm_confidence.lower(), "implicit")
+    
+    def detect_topics(self, text: str) -> Dict[str, Any]:
+        """
+        Detect conversation topics using LLM reasoning.
+        
+        Returns rich topic data including primary topic, breakdown, and meeting type.
+        """
+        result = self.llm_extractor.extract_topics(text)
+        
+        # If LLM failed, use fallback
+        if not result.get("topics"):
+            topics = self._detect_topics_regex(text)
+            return {
+                "topics": topics,
+                "primary_topic": topics[0] if topics else None,
+                "secondary_topics": topics[1:] if len(topics) > 1 else [],
+                "topic_breakdown": [],
+                "meeting_type_inference": "unknown",
+            }
+        
+        return result
+    
+    def _detect_topics_regex(self, text: str) -> List[str]:
+        """Fallback: Detect topics using regex patterns"""
         topics = []
         
         topic_keywords = {
@@ -219,6 +338,12 @@ class BBlockParser:
                 topics.append(topic)
         
         return topics
+    
+    # Keep _detect_topics as alias for backward compatibility
+    def _detect_topics(self, text: str) -> List[str]:
+        """Backward compatibility: returns just topic list"""
+        result = self.detect_topics(text)
+        return result.get("topics", [])
     
     def extract_eloquent_lines(self, text: str) -> List[EloquentLine]:
         """
@@ -332,9 +457,25 @@ class BBlockParser:
         return cleaned
     
     def extract_key_decisions(self, text: str) -> List[str]:
-        """Extract key decisions made in the conversation"""
-        decisions = []
+        """Extract key decisions using LLM extraction"""
+        result = self.llm_extractor.extract_decisions(text)
         
+        decisions = []
+        for d in result.get("decisions", []):
+            if isinstance(d, dict):
+                decisions.append(d.get("decision", str(d)))
+            else:
+                decisions.append(str(d))
+        
+        # Fallback to regex if LLM returned nothing
+        if not decisions:
+            decisions = self._extract_decisions_regex(text)
+        
+        return decisions[:5]
+    
+    def _extract_decisions_regex(self, text: str) -> List[str]:
+        """Fallback: regex-based decision extraction"""
+        decisions = []
         decision_signals = [
             r'\b(let\'s|we\'ll|we should|I\'ll|I think we should)\b.{0,200}',
             r'\b(decided to|going to|plan to)\b.{0,200}',
@@ -344,12 +485,45 @@ class BBlockParser:
             for match in re.finditer(pattern, text, re.IGNORECASE):
                 decisions.append(match.group(0).strip())
         
-        return decisions[:5]  # Top 5
+        return decisions
     
-    def extract_action_items(self, text: str) -> List[str]:
-        """Extract action items from conversation"""
-        actions = []
+    def extract_action_items(self, text: str) -> Dict[str, List]:
+        """
+        Extract action items using LLM reasoning.
         
+        Returns structured dict with v_actions, other_actions, and all actions.
+        """
+        result = self.llm_extractor.extract_action_items(text)
+        
+        # Handle both dict and list returns from LLM
+        v_actions = result.get("v_actions", [])
+        other_actions = result.get("other_actions", [])
+        all_actions = result.get("action_items", [])
+        
+        # Convert action dicts to strings if needed
+        def normalize_action(a):
+            if isinstance(a, dict):
+                return a.get("action", str(a))
+            return str(a)
+        
+        v_actions = [normalize_action(a) for a in v_actions]
+        other_actions = [normalize_action(a) for a in other_actions]
+        all_actions = [normalize_action(a) for a in all_actions]
+        
+        # Fallback if LLM returned nothing
+        if not all_actions and not v_actions:
+            all_actions = self._extract_actions_regex(text)
+        
+        return {
+            "v_actions": v_actions,
+            "other_actions": other_actions,
+            "all_actions": all_actions,
+            "follow_up_needed": result.get("follow_up_needed", []),
+        }
+    
+    def _extract_actions_regex(self, text: str) -> List[str]:
+        """Fallback: regex-based action extraction"""
+        actions = []
         action_signals = [
             r'\b(I\'ll|I will|will)\s+(send|share|follow up|reach out|intro|connect)\b.{0,200}',
             r'\b(next step|action item|to-do|todo)\b.{0,200}',
@@ -359,7 +533,16 @@ class BBlockParser:
             for match in re.finditer(pattern, text, re.IGNORECASE):
                 actions.append(match.group(0).strip())
         
-        return actions[:5]  # Top 5
+        return actions[:5]
+    
+    def extract_quotes(self, text: str) -> List[Dict]:
+        """
+        Extract quotable moments using LLM reasoning.
+        
+        Returns list of quote dicts with speaker, text, category, and quotability score.
+        """
+        result = self.llm_extractor.extract_quotable_moments(text)
+        return result.get("quotes", [])
     
     def extract_questions(self, text: str) -> List[str]:
         """Extract key questions asked in conversation"""
@@ -468,7 +651,7 @@ class BBlockParser:
     
     def _extract_resources_from_text(self, text: str, confidence: str = "explicit") -> List[ResourceReference]:
         """Extract resource references from arbitrary text"""
-        resources = []
+        resources: List[ResourceReference] = []
         
         # URLs
         url_pattern = r'https?://[^\s<>\[\]]+[^\s<>\[\].,;:!?"\']'
@@ -494,14 +677,19 @@ class BBlockParser:
             for match in re.finditer(pattern, text, re.IGNORECASE):
                 context = self._get_context(text, match.start(), match.end())
                 
-                # Try to find link from content library
-                lib_items = self.content_library.search(query=name, tags={})
-                lib_items = [item for item in lib_items if item.type == "link"]
+                # Try to find link from content library v3
+                lib_items = self.content_library.search(
+                    query=name,
+                    item_type="link",
+                )
                 
                 if lib_items:
+                    item = lib_items[0]
+                    url = item.get("url") or ""
+                    content_val = item.get("content") or url
                     self._add_unique_resource(resources, ResourceReference(
-                        content=lib_items[0].content or lib_items[0].url or "",
-                        url=lib_items[0].url,
+                        content=content_val,
+                        url=url or None,
                         context=context,
                         confidence="implicit"
                     ))
@@ -591,23 +779,25 @@ class BBlockParser:
     
     def _suggest_resources(self, topics: List[str]) -> List[ResourceReference]:
         """Suggest resources from content library based on topics"""
-        suggestions = []
+        suggestions: List[ResourceReference] = []
         seen_urls = set()
         
         for topic in topics:
-            items = self.content_library.search(query=topic, tags={})
-            items = [item for item in items if item.type == "link"]
+            items = self.content_library.search(
+                query=topic,
+                item_type="link",
+            )
             
             for item in items[:2]:  # Max 2 per topic
-                url = item.url or item.content or ""
+                url = item.get("url") or item.get("content") or ""
                 if url and url not in seen_urls:
                     seen_urls.add(url)
                     suggestions.append(ResourceReference(
                         content=url,
                         url=url,
-                        title=item.title,
+                        title=item.get("title"),
                         context=f"Relevant to: {topic}",
-                        confidence="suggested"
+                        confidence="suggested",
                     ))
         
         return suggestions
@@ -643,13 +833,27 @@ if __name__ == "__main__":
     blocks = parser.parse_transcript(Path(args.transcript))
     
     # Convert to JSON-serializable
+    # action_items is now a dict with v_actions, other_actions, all_actions
+    action_items = blocks["action_items"]
+    if isinstance(action_items, dict):
+        # Flatten for backward compatibility with email_composer
+        action_items_list = action_items.get("v_actions", []) + action_items.get("other_actions", [])
+        if not action_items_list:
+            action_items_list = action_items.get("all_actions", [])
+    else:
+        action_items_list = action_items
+    
     output = {
         "resources_explicit": [r.to_dict() for r in blocks["resources_explicit"]],
         "resources_suggested": [r.to_dict() for r in blocks["resources_suggested"]],
         "eloquent_lines": [e.to_dict() for e in blocks["eloquent_lines"]],
         "key_decisions": blocks["key_decisions"],
-        "action_items": blocks["action_items"],
-        "questions": blocks["questions"]
+        "action_items": action_items_list,  # List for backward compat
+        "action_items_structured": blocks["action_items"],  # Full dict for new consumers
+        "questions": blocks["questions"],
+        "topics": blocks.get("topics", {}),
+        "quotes": blocks.get("quotes", []),
+        "unmatched_commitments": blocks.get("unmatched_commitments", []),
     }
     
     if args.output:
@@ -657,3 +861,7 @@ if __name__ == "__main__":
             json.dump(output, f, indent=2)
     else:
         print(json.dumps(output, indent=2))
+
+
+
+
