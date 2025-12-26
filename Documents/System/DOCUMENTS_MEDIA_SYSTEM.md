@@ -1,10 +1,9 @@
 ---
 created: 2025-11-04
-last_edited: 2025-11-04
-version: 1.1
+last_edited: 2025-12-02
+version: 1.2
 status: Phase 1 Complete (7/8 components)
 ---
-
 # Documents & Media Intelligence System
 
 **Purpose:** Comprehensive system for tracking, processing, and extracting intelligence from documents and media across the workspace.
@@ -74,6 +73,8 @@ python3 /home/workspace/N5/scripts/document_processor.py --scan --dry-run
 - `/home/workspace/Personal/Meetings`
 - `/home/workspace/Records`
 - `/home/workspace/Reports`
+
+> **Note (JS-heavy social sites):** Pages from x.com (X/Twitter) and similar JS-only frontends often save as a generic "JavaScript is not available" shell when fetched headlessly. These raw captures are useful for provenance and basic linking, but **must not** be treated as the canonical text of the tweet/post. For actual tweet/post content, use API-aware tools (e.g., `tool x_search`) or manual copy from a real browser, and store the canonical text in a curated location (e.g., `Personal/Knowledge/ContentLibrary/content/*.md`).
 
 **Features:**
 - SHA256 checksum-based deduplication
@@ -326,3 +327,5 @@ ls -la /home/workspace/Knowledge/intelligence/media/
 **Debugger Verified:** 2025-11-04 (80% grade - B-)  
 **Last Updated:** 2025-11-04  
 **Builder:** Vibe Builder v2.0
+
+

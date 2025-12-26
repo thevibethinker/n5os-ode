@@ -1,0 +1,243 @@
+---
+# N5 Principles Index
+# Auto-generated: 2025-11-02 21:28 ET
+# Total Principles: 37
+
+version: "2.0.0"
+last_updated: "2025-11-02"
+build: "N5 Architectural Redesign v2.0"
+
+summary:
+  total_principles: 37
+  categories:
+    safety: 6
+    quality: 7
+    design: 6
+    execution: 4
+    behavior: 4
+    workflow: 2
+    communication: 2
+    advanced: 6
+
+principles:
+  - id: P00.1
+    name: LLM-First for Analysis and Synthesis
+    file: P00.1_llm_first.yaml
+    category: behavior
+    priority: high
+    
+  - id: P01
+    name: Human-Readable First
+    file: P01_human_readable_first.yaml
+    category: design
+    priority: high
+    
+  - id: P02
+    name: Single Source of Truth
+    file: P02_single_source_truth.yaml
+    category: quality
+    priority: high
+    
+  - id: P03
+    name: Voice Integration Policy
+    file: P03_voice_integration.yaml
+    category: communication
+    priority: medium
+    
+  - id: P04
+    name: Ontology-Weighted Analysis
+    file: P04_ontology_weighted.yaml
+    category: behavior
+    priority: medium
+    
+  - id: P05
+    name: Safety, Determinism, Anti-Overwrite
+    file: P05_safety_determinism.yaml
+    category: safety
+    priority: high
+    
+  - id: P06
+    name: Mirror Sync Hygiene
+    file: P06_mirror_sync_hygiene.yaml
+    category: safety
+    priority: medium
+    
+  - id: P07
+    name: Idempotence and Dry-Run
+    file: P07_idempotence_dryrun.yaml
+    category: safety
+    priority: high
+    
+  - id: P08
+    name: Minimal Context
+    file: P08_minimal_context.yaml
+    category: design
+    priority: medium
+    
+  - id: P09
+    name: Copyable Blocks
+    file: P09_copyable_blocks.yaml
+    category: communication
+    priority: low
+    
+  - id: P10
+    name: Calendar Time
+    file: P10_calendar_time.yaml
+    category: behavior
+    priority: low
+    
+  - id: P11
+    name: Failure Modes and Recovery
+    file: P11_failure_modes.yaml
+    category: safety
+    priority: high
+    
+  - id: P12
+    name: Testing in Fresh Threads
+    file: P12_testing_fresh_threads.yaml
+    category: quality
+    priority: high
+    
+  - id: P13
+    name: Naming and Placement
+    file: P13_naming_placement.yaml
+    category: design
+    priority: medium
+    
+  - id: P14
+    name: Change Tracking
+    file: P14_change_tracking.yaml
+    category: quality
+    priority: medium
+    
+  - id: P15
+    name: Complete Before Claiming
+    file: P15_complete_before_claiming.yaml
+    category: quality
+    priority: high
+    
+  - id: P16
+    name: Accuracy Over Sophistication
+    file: P16_accuracy_over_sophistication.yaml
+    category: quality
+    priority: high
+    
+  - id: P18
+    name: State Verification
+    file: P18_state_verification.yaml
+    category: quality
+    priority: high
+    
+  - id: P19
+    name: Error Handling
+    file: P19_error_handling.yaml
+    category: safety
+    priority: high
+    
+  - id: P20
+    name: Modular Design
+    file: P20_modular_design.yaml
+    category: design
+    priority: high
+    
+  - id: P21
+    name: Document Assumptions
+    file: P21_document_assumptions.yaml
+    category: quality
+    priority: medium
+    
+  - id: P22
+    name: Language Selection
+    file: P22_language_selection.yaml
+    category: design
+    priority: medium
+    
+  - id: P23
+    name: Identify Trap Doors
+    file: P23_identify_trap_doors.yaml
+    category: safety
+    priority: high
+    
+  - id: P24
+    name: Simulation Over Doing
+    file: P24_simulation_over_doing.yaml
+    category: execution
+    priority: high
+    
+  - id: P25
+    name: Code Is Free
+    file: P25_code_is_free.yaml
+    category: execution
+    priority: medium
+    
+  - id: P26
+    name: Fast Feedback Loops
+    file: P26_fast_feedback_loops.yaml
+    category: execution
+    priority: high
+    
+  - id: P27
+    name: Nemawashi Mode
+    file: P27_nemawashi_mode.yaml
+    category: execution
+    priority: medium
+    
+  - id: P28
+    name: Plans as Code DNA
+    file: P28_plans_as_code_dna.yaml
+    category: design
+    priority: high
+    
+  - id: P29
+    name: Focus Plus Parallel
+    file: P29_focus_plus_parallel.yaml
+    category: advanced
+    priority: medium
+    
+  - id: P30
+    name: Maintain Feel for Code
+    file: P30_maintain_feel_for_code.yaml
+    category: advanced
+    priority: high
+    
+  - id: P31
+    name: Own the Planning Process
+    file: P31_own_the_planning_process.yaml
+    category: advanced
+    priority: medium
+    
+  - id: P32
+    name: Simple Over Easy
+    file: P32_simple_over_easy.yaml
+    category: advanced
+    priority: high
+    
+  - id: P33
+    name: Old Tricks Still Work
+    file: P33_old_tricks_still_work.yaml
+    category: advanced
+    priority: medium
+    
+  - id: P34
+    name: Secrets Management
+    file: P34_secrets_management.yaml
+    category: advanced
+    priority: high
+    
+  - id: P35
+    name: Data Format Selection
+    file: P35_data_format_selection.yaml
+    category: behavior
+    priority: medium
+    
+  - id: P36
+    name: Orchestration Pattern
+    file: P36_orchestration_pattern.yaml
+    category: workflow
+    priority: high
+    
+  - id: P37
+    name: Refactor Pattern
+    file: P37_refactor_pattern.yaml
+    category: workflow
+    priority: high

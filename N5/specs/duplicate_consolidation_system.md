@@ -7,7 +7,7 @@ Status: Ready for Builder
 11+ duplicate folder sets in Inbox (timestamped copies from Root Clearinghouse)
 
 ## Solution
-Weekly sweep: Detect → Keep Latest → Move Canonical → Archive Old
+Weekly sweep: Detect 																																																																																	
 
 ## Implementation
 
@@ -24,13 +24,12 @@ Schedule: Weekly (Monday 7AM ET)
 
 ## Canonical Mappings
 
-Prompts → Prompts/
-Sites → Sites/
-Deliverables → Records/deliverables/
-Meetings → Personal/Meetings/
-calcom → projects/calcom/
-marvin_jobs_data → projects/marvin/data/
-Unknown → SKIP
+Prompts  Prompts/
+Sites  Sites/
+Deliverables  Records/deliverables/
+Meetings  Personal/Meetings/
+marvin_jobs_data  projects/marvin/data/
+Unknown  SKIP
 
 ## Safety
 
@@ -51,3 +50,4 @@ Unknown → SKIP
 See file '/home/.z/workspaces/con_vZXuYopL1ViXiSRW/duplicate_consolidation_spec.md' for detailed spec.
 
 Ready for Builder implementation.
+

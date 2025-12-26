@@ -1,0 +1,15 @@
+{
+  "name": "workout-legal",
+  "local_port": 58630,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "workout-legal",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 57155,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}

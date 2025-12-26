@@ -1,0 +1,6 @@
+{
+  "type": "sms",
+  "message": "Morning check-in \u2600\ufe0f 1) Mood emoji for how you woke up? 2) Did you eat anything late last night? 3) What are you going to eat today (plan/commitment)? 4) Morning pages: did you do them? (Y/N) 5) Reflection: What would make today a win? 6) Reflection: What\u2019s the most likely derailment, and what\u2019s your counter-move?",
+  "timestamp": "now",
+  "priority": "normal"
+}

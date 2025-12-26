@@ -1,0 +1,97 @@
+{
+  "build_id": "unified-meeting-intake",
+  "created": "2025-12-23",
+  "status": "in_progress",
+  "provenance": "con_eCLbOiRyc7HgzEQp",
+  "legacy_artifacts": [
+    {
+      "path": "N5/services/fireflies_webhook/transcript_processor.py",
+      "type": "service",
+      "status": "legacy_active",
+      "replacement": "N5/services/intake/intake_engine.py",
+      "notes": "TranscriptProcessor class - save_transcript_to_inbox method"
+    },
+    {
+      "path": "N5/services/fathom_webhook/transcript_processor.py",
+      "type": "service",
+      "status": "legacy_active",
+      "replacement": "N5/services/intake/intake_engine.py",
+      "notes": "TranscriptProcessor class - save_transcript_to_inbox method"
+    },
+    {
+      "path": "N5/services/fireflies_webhook/models.py",
+      "type": "model",
+      "status": "legacy_active",
+      "replacement": "N5/services/intake/models.py",
+      "notes": "DuplicateManager class"
+    },
+    {
+      "path": "N5/scripts/meeting_pipeline/generate_manifest.py",
+      "type": "script",
+      "status": "keep",
+      "replacement": null,
+      "notes": "Will be reused by intake engine - no replacement needed"
+    }
+  ],
+  "new_artifacts": [
+    {
+      "path": "N5/services/intake/__init__.py",
+      "type": "module",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/models.py",
+      "type": "models",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/intake_engine.py",
+      "type": "engine",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/adapters/__init__.py",
+      "type": "module",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/adapters/base.py",
+      "type": "adapter",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/adapters/fireflies_adapter.py",
+      "type": "adapter",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/adapters/fathom_adapter.py",
+      "type": "adapter",
+      "status": "created"
+    },
+    {
+      "path": "N5/services/intake/adapters/manual_adapter.py",
+      "type": "adapter",
+      "status": "created"
+    },
+    {
+      "path": "N5/scripts/manual_ingest.py",
+      "type": "cli",
+      "status": "created"
+    },
+    {
+      "path": "Prompts/Manual Transcript Ingest.prompt.md",
+      "type": "prompt",
+      "status": "created"
+    },
+    {
+      "path": "N5/data/intake_dedup.db",
+      "type": "database",
+      "status": "created"
+    }
+  ],
+  "phases_completed": [
+    "Phase 0: Safe Harbor",
+    "Phase 1: Kernel (partial)"
+  ]
+}

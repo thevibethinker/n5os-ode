@@ -1,0 +1,68 @@
+{
+  "name": "Zorg Due Diligence",
+  "description": "Research best practices for crafting puzzle-based adventures, CTFs, and ARGs.",
+  "objective": "Produce a detailed reference guide for Zorg's puzzle design, ensuring a high-quality, immersive experience inspired by DEF CON and best-in-class puzzle games.",
+  "key_decisions": [
+    "Use Exa-powered research for deep dives",
+    "Categorize by: Riddle Mechanics, Narrative Integration, Technical Puzzles, and Player Psychology",
+    "Final synthesis must include a 'What's Missing?' self-critique"
+  ],
+  "relevant_files": [
+    "N5/builds/vibe-arg/CORE_ELEMENTS_LOCKDOWN.md",
+    "N5/builds/vibe-arg/PLAN.md"
+  ],
+  "workers": [
+    {
+      "id": "worker_research_best_practices",
+      "component": "best_practices_research",
+      "description": "Research puzzle-based adventures (DEF CON, CTFs, ARGs, escape rooms). Focus on: riddle crafting, fair vs unfair puzzles, narrative gating, and immersion techniques.",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_puzzle_taxonomies",
+      "component": "puzzle_mechanics",
+      "description": "Create a detailed taxonomy of puzzle types: codes/ciphers, file-system hunts, CLI challenges, and web-based puzzles. Map these to Zo capabilities.",
+      "dependencies": [
+        "worker_research_best_practices"
+      ],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_player_psychology",
+      "component": "ux_immersion",
+      "description": "Research player motivation and the 'Flow State' in puzzles. How to handle frustration, when to provide hints, and the role of 'Selection' in mystery narratives.",
+      "dependencies": [
+        "worker_research_best_practices"
+      ],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_synthesis_critique",
+      "component": "final_synthesis",
+      "description": "Synthesize all research into a Master Reference Guide. Perform a 'What's Missing?' self-critique. Ask: Is there anything I would add to Zorg after learning all this?",
+      "dependencies": [
+        "worker_puzzle_taxonomies",
+        "worker_player_psychology"
+      ],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "zorg-due-diligence",
+    "created_at": "2025-12-26T20:22:43.959203+00:00",
+    "status": "active"
+  }
+}

@@ -19,3 +19,56 @@
 {"timestamp": "2025-11-19T17:01:56.640687Z", "email": "konrad@aviato.co", "success": true, "person_found": true}
 {"timestamp": "2025-11-25T22:20:00.590180Z", "email": "jim.pyke@tcb-advisors.com", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
 {"timestamp": "2025-11-25T22:20:02.119354Z", "email": "felix.campos@alumni.rice.edu", "success": true, "person_found": false}
+{"timestamp": "2025-11-30T16:55:14.857502Z", "email": "zsuzsa@brook-clean.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-30T17:31:55.254281Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-11-30T18:33:14.172177Z", "email": "alex@hello.cv", "success": true, "person_found": false}
+{"timestamp": "2025-12-01T17:26:56.945066Z", "email": "nick@43north.org", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-11T04:43:46.663162Z", "email": "", "success": true, "person_found": true, "linkedin_url": "https://www.linkedin.com/in/ACoAAABhuewBTdl9Me1u-_sZLbjFXBIIprz-MvQ"}
+{"timestamp": "2025-12-17T07:38:01.857752Z", "email": "jim.pyke@tcb-advisors.com", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-17T07:38:11.665779Z", "email": "felix.campos@alumni.rice.edu", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:38:17.109179Z", "email": "ceren@humantruths.ai", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-17T07:38:24.159200Z", "email": "aamak44@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/aaronmakhoffman"}
+{"timestamp": "2025-12-17T07:38:29.376482Z", "email": "aamak44@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/aaronmakhoffman"}
+{"timestamp": "2025-12-17T07:38:34.772912Z", "email": "nick@43north.org", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-17T07:38:41.522148Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:38:48.619939Z", "email": "alex@hello.cv", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:38:53.843632Z", "email": "zsuzsa@brook-clean.com", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-17T07:38:59.425780Z", "email": "vig@gradient.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/vigsachidananda"}
+{"timestamp": "2025-12-17T07:39:04.859984Z", "email": "veronica@theculinistas.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/veronica-csak-86834b165"}
+{"timestamp": "2025-12-17T07:39:15.141686Z", "email": "bogomil@sequoiacap.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:39:20.316819Z", "email": "shirinali@shirinalimd.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:39:27.017516Z", "email": "amandarosesachs@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:39:32.177128Z", "email": "preasia@shirinalimd.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:39:37.484390Z", "email": "ken@leimmigration.com", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-17T07:39:42.851109Z", "email": "eric@consonant.vc", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/eric-rubin-57859154"}
+{"timestamp": "2025-12-17T07:39:48.225839Z", "email": "kaitlin@easterncounseling.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/kaitlin-nunamann-licsw-ryt-37207ab0"}
+{"timestamp": "2025-12-17T07:39:53.724192Z", "email": "q@theculinistas.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:39:58.886897Z", "email": "zsuzsa@brook-clean.com", "success": false, "person_found": false, "error": "argument of type 'NoneType' is not iterable"}
+{"timestamp": "2025-12-17T07:40:32.893597Z", "email": "jim.pyke@tcb-advisors.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/jtcbp"}
+{"timestamp": "2025-12-17T07:40:46.487462Z", "email": "felix.campos@alumni.rice.edu", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:40:51.802240Z", "email": "ceren@humantruths.ai", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/cerenkoca-humantruths"}
+{"timestamp": "2025-12-17T07:40:57.091055Z", "email": "nick@43north.org", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/nick-branholm-b778609b"}
+{"timestamp": "2025-12-17T07:41:03.699348Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:10.777614Z", "email": "alex@hello.cv", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:15.963492Z", "email": "zsuzsa@brook-clean.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/zsuzsa-kovacs-in"}
+{"timestamp": "2025-12-17T07:41:26.131318Z", "email": "bogomil@sequoiacap.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:31.297021Z", "email": "shirinali@shirinalimd.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:38.342656Z", "email": "amandarosesachs@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:43.517593Z", "email": "preasia@shirinalimd.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:48.733563Z", "email": "ken@leimmigration.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/kenneth-levine-97b0ab23"}
+{"timestamp": "2025-12-17T07:41:53.910507Z", "email": "q@theculinistas.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T07:41:59.093922Z", "email": "zsuzsa@brook-clean.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/zsuzsa-kovacs-in"}
+{"timestamp": "2025-12-17T10:01:30.015975Z", "email": "davis@teamworkonline.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-17T18:16:52.156041Z", "email": "", "success": true, "person_found": true, "linkedin_url": "https://www.linkedin.com/in/eric-rubin-57859154"}
+{"timestamp": "2025-12-23T11:33:30.920979Z", "email": "konrad@aviato.co", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/konrad-kucharski-18140065"}
+{"timestamp": "2025-12-23T11:33:32.670818Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-23T11:33:33.054459Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/vrijenattawar"}
+{"timestamp": "2025-12-23T11:33:35.690056Z", "email": "konrad@aviato.co", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/konrad-kucharski-18140065"}
+{"timestamp": "2025-12-23T11:33:37.358631Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-23T11:33:37.602030Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/vrijenattawar"}
+{"timestamp": "2025-12-23T11:34:09.551409Z", "email": "konrad@aviato.co", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/konrad-kucharski-18140065"}
+{"timestamp": "2025-12-23T11:34:11.881648Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-23T11:34:12.139517Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/vrijenattawar"}
+{"timestamp": "2025-12-23T11:40:47.937991Z", "email": "konrad@aviato.co", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/konrad-kucharski-18140065"}
+{"timestamp": "2025-12-23T11:40:50.971898Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2025-12-23T11:40:51.208142Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/vrijenattawar"}

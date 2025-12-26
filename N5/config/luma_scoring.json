@@ -1,0 +1,106 @@
+{
+  "version": "2.0",
+  "updated": "2025-12-11",
+  "description": "Scoring configuration tuned from V's actual event preferences",
+  
+  "category_keywords": {
+    "high_priority": {
+      "keywords": ["founder", "startup", "AI", "pre-seed", "seed", "series A", 
+                   "breakfast", "dinner", "fireside", "curated", "intimate",
+                   "roundtable", "VC", "investor", "entrepreneur"],
+      "weight": 3.0
+    },
+    "medium_priority": {
+      "keywords": ["tech", "networking", "meetup", "community", "hike", 
+                   "outdoor", "pickleball", "reading", "professional",
+                   "design", "product", "engineering", "hackathon", "workshop"],
+      "weight": 2.0
+    },
+    "low_priority": {
+      "keywords": ["social", "happy hour", "drinks", "mixer", "party"],
+      "weight": 0.5
+    },
+    "exclude": {
+      "keywords": ["concert", "yoga", "meditation", "art show", "gallery",
+                   "music festival", "fitness", "comedy show"],
+      "weight": -5.0
+    }
+  },
+  
+  "format_preferences": {
+    "breakfast_bonus": 2.0,
+    "dinner_bonus": 2.0,
+    "fireside_bonus": 1.5,
+    "roundtable_bonus": 1.0,
+    "keywords": {
+      "breakfast": 2.0,
+      "dinner": 2.0,
+      "fireside": 1.5,
+      "roundtable": 1.0,
+      "chat": 1.0
+    }
+  },
+  
+  "size_preferences": {
+    "intimate_threshold": 50,
+    "intimate_bonus": 1.5,
+    "large_threshold": 100,
+    "large_penalty": -1.0
+  },
+  
+  "time_preferences": {
+    "preferred_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "preferred_hours": {"start": 8, "end": 21},
+    "weekday_bonus": 1.0,
+    "weekend_penalty": 0,
+    "late_night_penalty": -0.5,
+    "breakfast_hours": {"start": 8, "end": 11},
+    "dinner_hours": {"start": 18, "end": 21}
+  },
+  
+  "booking_rules": {
+    "primary_window_days": {"min": 7, "max": 21},
+    "opportunistic_window_days": {"min": 1, "max": 7},
+    "max_events_per_week": 3,
+    "target_events_per_week": 2
+  },
+  
+  "social_proof": {
+    "high_attendance_threshold": 30,
+    "high_attendance_bonus": 1.0,
+    "low_attendance_threshold": 5,
+    "low_attendance_penalty": -0.5
+  },
+  
+  "organizer_reputation": {
+    "priority_organizers": [
+      "andrew yeung", "drew parten", "tushar agarwal",
+      "ulrik soderstrom", "denis belyavsky", "gladys",
+      "bryan liu", "maggie lloydhauser"
+    ],
+    "priority_calendars": [
+      "Andrew's Yeung's Tech Events",
+      "NYC Founders Club", 
+      "Marvin VC Events",
+      "12 (scrappy) founders",
+      "Beta University Events",
+      "Bond AI"
+    ],
+    "priority_organizer_bonus": 5.0,
+    "priority_calendar_bonus": 3.0,
+    "attended_organizer_multiplier": 0.5,
+    "known_bad_organizers": []
+  },
+  
+  "price_preferences": {
+    "free_bonus": 0.5,
+    "paid_max": 75,
+    "expensive_penalty": -1.0
+  },
+  
+  "discovery_source": {
+    "email_scan_bonus": 2.0,
+    "subscribed_calendar_bonus": 2.5
+  }
+}
+

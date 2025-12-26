@@ -1,0 +1,47 @@
+{
+  "submission": {
+    "name": "Vrijen Attawar",
+    "email": "vrijen@mycareerspan.com",
+    "company": "Careerspan",
+    "received_at": "2025-12-12T21:08:16.790240+00:00"
+  },
+  "draft": {
+    "to": "vrijen@mycareerspan.com",
+    "subject": "Vrijen, re: Careerspan perk from Marvin Ventures",
+    "body": "Hi Vrijen,\n\nThanks for reaching out through Marvin Ventures. I hear you on the resume overload\u2014it's one of the most draining parts of founder hiring.\n\nAt Careerspan, we help founders like you cut through the noise in hiring\u2014especially for that critical first wave of roles where every hire matters.\n\nGiven you mentioned 1-2, I'd love to learn more about what you're looking for and see if we can help.\n\nWorth a quick chat?\n\nBest,\nVrijen\n\nP.S. As a Marvin Ventures member, you have a complimentary consultation credit. Happy to put it to good use.",
+    "body_type": "plaintext",
+    "context": {
+      "recipient": {
+        "name": "Vrijen Attawar",
+        "first_name": "Vrijen",
+        "email": "vrijen@mycareerspan.com",
+        "company": "Careerspan",
+        "linkedin": null,
+        "is_marvin_member": true,
+        "roles_to_hire": "1-2",
+        "hiring_pain_points": [
+          "I'm spending too much time reading resumes (especially bad ones)",
+          "My ATS isn't helping me narrow down candidates meaningfully"
+        ],
+        "jd_shared": null
+      },
+      "enrichment": {
+        "person": {
+          "title": null,
+          "headline": "Helping \ud83c\udf16\ud83d\ude80 Companies Hire \ud83e\udd84 Talent | Founder & CEO, Careerspan",
+          "summary": null,
+          "location": "Brooklyn, New York, United States",
+          "experience": [],
+          "education": []
+        },
+        "company": {}
+      },
+      "personalization_hooks": [
+        "Drowning in resume review",
+        "ATS frustration"
+      ],
+      "mckinsey_angle": true
+    },
+    "generated_at": "2025-12-13T01:59:04.741489"
+  }
+}

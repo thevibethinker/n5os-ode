@@ -1,0 +1,17 @@
+# Story Concepts
+
+<!-- Generated MD view of JSONL -->
+
+## Open
+
+### Adjacent Realities Multiverse Constraint: You can travel to other universes, but only 'adjacent' ones similar to your own. There is a physical limit/distance you can travel, preventing access to radically different realities (e.g. rock star president). Enforces a local-only multiverse focused on near-misses and trade-offs.
+
+**ID:** bd28237d-76f3-4261-a0ba-094bee0cdf87
+
+**Created:** 2025-12-11T08:02:47.036425Z
+
+**Tags:** sci-fi, premise, multiverse, constraint
+
+---
+
+

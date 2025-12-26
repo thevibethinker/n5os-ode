@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dd_individual.schema.json",
+  "title": "Due Diligence - Individual",
+  "description": "Purpose-driven deep research on an individual before high-stakes interaction",
+  "type": "object",
+  "required": ["meta", "thesis", "summary", "evidence", "wiifm", "network_intel", "raw_sources"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["subject_name", "crm_profile_id", "interaction_type", "trigger_date", "analyst"],
+      "properties": {
+        "subject_name": { "type": "string", "description": "Full name of the individual" },
+        "crm_profile_id": { "type": "string", "description": "Slug/ID linking to CRM profile YAML" },
+        "organization": { "type": "string", "description": "Primary organization affiliation" },
+        "interaction_type": {
+          "type": "string",
+          "enum": ["acquisition", "investment", "partnership", "employment", "advisory", "vendor", "customer", "networking"],
+          "description": "Type of high-stakes interaction triggering DD"
+        },
+        "trigger_date": { "type": "string", "format": "date" },
+        "analyst": { "type": "string", "default": "zo" },
+        "version": { "type": "string", "default": "1.0" }
+      }
+    },
+    "thesis": {
+      "type": "object",
+      "required": ["question", "context"],
+      "properties": {
+        "question": { "type": "string", "description": "The specific question DD is answering, e.g., 'Should we accept this advisor offer?'" },
+        "context": { "type": "string", "description": "Background on why this DD was triggered" },
+        "stakes": { "type": "string", "description": "What's at risk if we get this wrong" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["recommendation", "confidence", "one_liner"],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": ["proceed", "proceed_with_caution", "caution", "decline", "insufficient_data"],
+          "description": "Overall recommendation"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Confidence in recommendation based on evidence quality"
+        },
+        "one_liner": { "type": "string", "description": "Single sentence synthesis, e.g., 'Credible operator with aligned incentives but history of slow follow-through'" },
+        "key_findings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "maxItems": 5,
+          "description": "Top 3-5 findings that drove the recommendation"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "for": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim", "source", "strength"],
+            "properties": {
+              "claim": { "type": "string" },
+              "source": { "type": "string", "description": "Where this evidence came from" },
+              "strength": { "type": "string", "enum": ["high", "medium", "low"] },
+              "citation": { "type": "string", "description": "URL or reference" }
+            }
+          }
+        },
+        "against": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim", "source", "strength"],
+            "properties": {
+              "claim": { "type": "string" },
+              "source": { "type": "string" },
+              "strength": { "type": "string", "enum": ["high", "medium", "low"] },
+              "citation": { "type": "string" }
+            }
+          }
+        },
+        "unknown": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Important questions we couldn't answer"
+        }
+      }
+    },
+    "wiifm": {
+      "type": "object",
+      "description": "What's In It For Me/Us - explicit value analysis",
+      "properties": {
+        "for_v": {
+          "type": "object",
+          "properties": {
+            "opportunities": { "type": "array", "items": { "type": "string" } },
+            "risks": { "type": "array", "items": { "type": "string" } },
+            "leverage_points": { "type": "array", "items": { "type": "string" }, "description": "What V brings that they need" }
+          }
+        },
+        "for_careerspan": {
+          "type": "object",
+          "properties": {
+            "opportunities": { "type": "array", "items": { "type": "string" } },
+            "risks": { "type": "array", "items": { "type": "string" } },
+            "strategic_fit": { "type": "string", "description": "How this aligns with Careerspan's trajectory" }
+          }
+        }
+      }
+    },
+    "network_intel": {
+      "type": "object",
+      "properties": {
+        "shared_connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "relationship_to_subject": { "type": "string" },
+              "relationship_to_v": { "type": "string" },
+              "usable_for_reference": { "type": "boolean" }
+            }
+          }
+        },
+        "reputation_signals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "signal": { "type": "string" },
+              "source": { "type": "string" },
+              "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative", "mixed"] }
+            }
+          }
+        },
+        "reference_check_recommended": { "type": "boolean" },
+        "suggested_references": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "profile_snapshot": {
+      "type": "object",
+      "description": "Key facts pulled from enrichment sources",
+      "properties": {
+        "current_role": { "type": "string" },
+        "career_trajectory": { "type": "string" },
+        "notable_achievements": { "type": "array", "items": { "type": "string" } },
+        "red_flags": { "type": "array", "items": { "type": "string" } },
+        "linkedin_url": { "type": "string" },
+        "other_profiles": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "raw_sources": {
+      "type": "object",
+      "description": "Audit trail of sources consulted",
+      "properties": {
+        "aviato": { "type": "boolean" },
+        "gmail": { "type": "boolean" },
+        "linkedin": { "type": "boolean" },
+        "web_search": { "type": "array", "items": { "type": "string" }, "description": "Search queries used" },
+        "crunchbase": { "type": "boolean" },
+        "news": { "type": "array", "items": { "type": "string" }, "description": "News articles consulted" },
+        "other": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": { "type": "string" },
+          "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+          "owner": { "type": "string", "default": "V" }
+        }
+      },
+      "description": "Recommended follow-up actions based on DD"
+    }
+  }
+}
+

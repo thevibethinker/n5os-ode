@@ -1,38 +1,44 @@
 ---
 created: 2025-11-17
-last_edited: 2025-11-25
-version: 3.1
-title: Follow-Up Email Generator v3.0
-description: Generate follow-up emails for meetings in [P] state using semantic classification
+last_edited: 2025-12-26
+version: 3.2
+title: Follow-Up Email Generator v3.2
+description: Generate follow-up emails for meetings using manifest status and semantic classification
 tags: [workflow, email, meetings, automation, semantic-analysis]
 tool: true
 ---
 
-# Follow-Up Email Generator v3.0
+# Follow-Up Email Generator v3.2
 
 **Purpose:** Generate follow-up emails for meetings using semantic classification  
 **Key Principle:** Scripts = Mechanics | LLM = Semantics | Never confuse the two
+
+**v3.2 Change:** Now uses manifest.json status instead of `_[P]` folder suffix.
+The pipeline is: `intelligence_generated` → MG-5 → `processed` (ready for archival)
 
 ---
 
 ## Execution Protocol
 
-### STEP 1: Find [P] Meetings (Mechanical, then select ONE)
+### STEP 1: Find Meetings Ready for Follow-Up (Mechanical, then select ONE)
 
 ```bash
-find /home/workspace/Personal/Meetings/Inbox -type d -name "*[P]"
+# Find meetings with intelligence_generated/mg2_completed status that lack FOLLOW_UP_EMAIL.md
+python3 /home/workspace/N5/scripts/find_meetings_for_follow_up.py --oldest --json
 ```
 
-From this list, **select exactly one meeting per MG-5 run**:
+**Selection Rule:** The script returns the oldest meeting in Inbox with:
+- Status = `intelligence_generated` or `mg2_completed`
+- No existing `FOLLOW_UP_EMAIL.md`
 
-- Candidate set: folders in `Personal/Meetings/Inbox` with suffix `_[P]` where:
-  - `FOLLOW_UP_EMAIL.md` does **not** exist in the meeting folder **OR**
-  - `manifest.json.system_states.follow_up_email.status` != `complete`.
-- **Selection rule:** choose the **oldest** such meeting (by meeting date in folder name or filesystem mtime).
+To include Week-of folders (for backfill):
+```bash
+python3 /home/workspace/N5/scripts/find_meetings_for_follow_up.py --oldest --include-week-of --json
+```
 
 > MG-5 is *single-email-per-run*. Do **not** batch across multiple meetings in one invocation.
 
-Let `TARGET_MEETING` be the single folder you selected.
+Let `TARGET_MEETING` be the folder path returned by the script.
 
 ### STEP 2: Classify Selected Meeting (Semantic - LLM Does This)
 
@@ -176,11 +182,12 @@ If `needs_follow_up_email: true` for **TARGET_MEETING**:
 ## Quality Gates
 
 **Before classification:**
+- [ ] Used find_meetings_for_follow_up.py to select TARGET_MEETING
 - [ ] Loaded actual meeting content (not just B25)
 - [ ] Understood who attended
 - [ ] Understood meeting type
 - [ ] Judging semantically, not pattern-matching
-- [ ] Exactly one TARGET_MEETING chosen using oldest-[P]-without-followup rule
+- [ ] Exactly one TARGET_MEETING chosen using oldest-ready rule
 
 **Before generation:**
 - [ ] Switched to Vibe Writer
@@ -196,7 +203,8 @@ If `needs_follow_up_email: true` for **TARGET_MEETING**:
 
 ---
 
-*v3.1 | 2025-11-25 | Switched MG-5 to single-email-per-run with explicit selection + manifest bookkeeping*
+*v3.2 | 2025-12-26 | Changed to manifest-based status detection (no more [P] suffix requirement)*
+
 
 
 

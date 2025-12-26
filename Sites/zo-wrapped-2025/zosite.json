@@ -1,0 +1,22 @@
+{
+  "name": "zo-wrapped-2025",
+  "local_port": 57121,
+  "entrypoint": "bun run dev",
+  "env": {
+    "VITE_ZO_SITE_DEMO_VARIANT": "marketing"
+  },
+  "publish": {
+    "label": "zo-wrapped-2025",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 50582,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none",
+      "VITE_ZO_SITE_DEMO_VARIANT": "marketing"
+    }
+  }
+}
+
+
+

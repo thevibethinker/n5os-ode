@@ -1,0 +1,16 @@
+{
+  "name": "fabregas-cannon",
+  "local_port": 50171,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "fabregas-cannon",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 50171,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}
+

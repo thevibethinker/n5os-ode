@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dd_organization.schema.json",
+  "title": "Due Diligence - Organization",
+  "description": "Purpose-driven deep research on an organization before high-stakes interaction",
+  "type": "object",
+  "required": ["meta", "thesis", "summary", "evidence", "wiifm", "company_intel", "raw_sources"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["organization_name", "interaction_type", "trigger_date", "analyst"],
+      "properties": {
+        "organization_name": { "type": "string" },
+        "crm_org_id": { "type": "string", "description": "ID linking to CRM organization record if exists" },
+        "domain": { "type": "string", "description": "Primary web domain" },
+        "interaction_type": {
+          "type": "string",
+          "enum": ["acquisition_inbound", "acquisition_outbound", "investment_from", "investment_into", "partnership", "vendor", "customer", "competitor_analysis"],
+          "description": "Type of high-stakes interaction triggering DD"
+        },
+        "key_contact": { "type": "string", "description": "Primary individual contact (links to individual DD if exists)" },
+        "key_contact_crm_id": { "type": "string" },
+        "trigger_date": { "type": "string", "format": "date" },
+        "analyst": { "type": "string", "default": "zo" },
+        "version": { "type": "string", "default": "1.0" }
+      }
+    },
+    "thesis": {
+      "type": "object",
+      "required": ["question", "context"],
+      "properties": {
+        "question": { "type": "string", "description": "The specific question DD is answering, e.g., 'Is Pangea a credible acquirer for Careerspan?'" },
+        "context": { "type": "string", "description": "Background on why this DD was triggered" },
+        "stakes": { "type": "string", "description": "What's at risk if we get this wrong" },
+        "decision_timeline": { "type": "string", "description": "When does V need to decide?" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["recommendation", "confidence", "one_liner"],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": ["proceed", "proceed_with_caution", "caution", "decline", "insufficient_data"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "one_liner": { "type": "string" },
+        "key_findings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "maxItems": 5
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "for": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim", "source", "strength"],
+            "properties": {
+              "claim": { "type": "string" },
+              "source": { "type": "string" },
+              "strength": { "type": "string", "enum": ["high", "medium", "low"] },
+              "citation": { "type": "string" }
+            }
+          }
+        },
+        "against": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["claim", "source", "strength"],
+            "properties": {
+              "claim": { "type": "string" },
+              "source": { "type": "string" },
+              "strength": { "type": "string", "enum": ["high", "medium", "low"] },
+              "citation": { "type": "string" }
+            }
+          }
+        },
+        "unknown": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "wiifm": {
+      "type": "object",
+      "description": "What's In It For Me/Us - explicit value analysis",
+      "properties": {
+        "for_v": {
+          "type": "object",
+          "properties": {
+            "opportunities": { "type": "array", "items": { "type": "string" } },
+            "risks": { "type": "array", "items": { "type": "string" } },
+            "leverage_points": { "type": "array", "items": { "type": "string" } },
+            "exit_scenarios": { "type": "array", "items": { "type": "string" }, "description": "For acquisition/investment: what happens to V?" }
+          }
+        },
+        "for_careerspan": {
+          "type": "object",
+          "properties": {
+            "opportunities": { "type": "array", "items": { "type": "string" } },
+            "risks": { "type": "array", "items": { "type": "string" } },
+            "strategic_fit": { "type": "string" },
+            "product_synergies": { "type": "array", "items": { "type": "string" } },
+            "customer_overlap": { "type": "string" }
+          }
+        }
+      }
+    },
+    "company_intel": {
+      "type": "object",
+      "properties": {
+        "overview": {
+          "type": "object",
+          "properties": {
+            "founded": { "type": "string" },
+            "headquarters": { "type": "string" },
+            "employee_count": { "type": "string" },
+            "industry": { "type": "string" },
+            "business_model": { "type": "string" },
+            "target_market": { "type": "string" }
+          }
+        },
+        "financials": {
+          "type": "object",
+          "properties": {
+            "funding_total": { "type": "string" },
+            "last_round": { "type": "string" },
+            "last_round_date": { "type": "string" },
+            "investors": { "type": "array", "items": { "type": "string" } },
+            "revenue_estimate": { "type": "string" },
+            "burn_rate_signals": { "type": "string" },
+            "financial_health": { "type": "string", "enum": ["strong", "stable", "concerning", "unknown"] }
+          }
+        },
+        "leadership": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string" },
+              "background": { "type": "string" },
+              "red_flags": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "product": {
+          "type": "object",
+          "properties": {
+            "core_offering": { "type": "string" },
+            "differentiation": { "type": "string" },
+            "tech_stack_signals": { "type": "string" },
+            "customer_reviews": { "type": "string" }
+          }
+        },
+        "market_position": {
+          "type": "object",
+          "properties": {
+            "competitors": { "type": "array", "items": { "type": "string" } },
+            "competitive_advantage": { "type": "string" },
+            "market_share_signals": { "type": "string" },
+            "recent_wins_losses": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "reputation": {
+          "type": "object",
+          "properties": {
+            "glassdoor_signals": { "type": "string" },
+            "customer_sentiment": { "type": "string" },
+            "press_coverage": { "type": "array", "items": { "type": "string" } },
+            "controversies": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "network_intel": {
+      "type": "object",
+      "properties": {
+        "shared_connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "role_at_org": { "type": "string" },
+              "relationship_to_v": { "type": "string" },
+              "usable_for_reference": { "type": "boolean" }
+            }
+          }
+        },
+        "v_network_at_org": { "type": "array", "items": { "type": "string" }, "description": "People V knows who work there" },
+        "backdoor_references": { "type": "array", "items": { "type": "string" }, "description": "People who could give candid intel" }
+      }
+    },
+    "raw_sources": {
+      "type": "object",
+      "properties": {
+        "aviato": { "type": "boolean" },
+        "crunchbase": { "type": "boolean" },
+        "linkedin_company": { "type": "boolean" },
+        "pitchbook": { "type": "boolean" },
+        "web_search": { "type": "array", "items": { "type": "string" } },
+        "news": { "type": "array", "items": { "type": "string" } },
+        "sec_filings": { "type": "boolean" },
+        "glassdoor": { "type": "boolean" },
+        "g2_capterra": { "type": "boolean" },
+        "other": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": { "type": "string" },
+          "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+          "owner": { "type": "string", "default": "V" }
+        }
+      }
+    }
+  }
+}
+

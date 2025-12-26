@@ -20,6 +20,28 @@ Lists serve as managed databases for tasks, ideas, and data collections within N
 - **Promotions/Exports**: Require docgen for documentation; cross-link to knowledge base.
 - **Interactions**: Override global prefs for list operations—prioritize atomic changes with rollbacks.
 
+## Hybrid Storage Standards
+
+Lists support **hybrid storage** for complex content requiring rich formatting, structured layout, or extended length.
+
+**Key Principles:**
+- JSONL remains the Single Source of Truth (SSOT)
+- Markdown files are optional extensions for Reference-type entries
+- Use the `links` field to reference external markdown files
+
+**Content Classification:**
+1. **Atomic**: Self-contained data in JSONL fields only (~800 chars max)
+2. **Reference (Internal)**: Complex content → JSONL + linked markdown file
+3. **External**: Third-party content → JSONL + URL link
+
+**For detailed guidance on:**
+- When to use hybrid vs. atomic storage
+- File location conventions
+- YAML frontmatter standards
+- Validation and orphan detection
+
+→ See: [Lists Storage Standards](../Documents/System/Lists-Storage-Standards.md)
+
 ## Safety Flags
 - **Data Integrity**: JSONL is medium-protection; validate schema before commits.
 - **Automation Risks**: Lists-set may trigger external actions; gate with dry-runs.
@@ -37,6 +59,4 @@ Lists serve as managed databases for tasks, ideas, and data collections within N
 - [Root Policy](../POLICY.md) — Hierarchical overrides.
 - [List Schemas](../../schemas/lists.schema.json) — Data structure rules.
 - [Knowledge Ingestion](../../knowledge/) — Cross-linking standards.
-- Related Problems: Data bloat (prefer existing lists), validation failures (auto-revert).</content>
-</xai:function_call name="create_or_rewrite_file">
-<parameter name="target_file">/home/workspace/N5/knowledge/POLICY.md
+- Related Problems: Data bloat (prefer existing lists), validation failures (auto-revert).

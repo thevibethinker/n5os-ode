@@ -1,0 +1,126 @@
+# N5OS Health Sentinel Configuration
+# Version: 1.0.0
+# Created: 2025-12-16
+# 
+# This config defines thresholds for emergency detection and drift warnings.
+# The sentinel runs every 30 minutes and outputs:
+# - Emergency alerts (SMS-ready, gated for dev)
+# - Degradation warnings (for daily digest inclusion)
+
+# ============================================================================
+# EMERGENCY THRESHOLDS (triggers immediate alert consideration)
+# ============================================================================
+emergency:
+  # CPU usage percentage (sustained)
+  cpu_percent_threshold: 90
+  cpu_sustained_minutes: 5
+  
+  # Memory usage percentage
+  memory_percent_threshold: 95
+  
+  # Disk usage percentage on root filesystem
+  disk_percent_threshold: 95
+  
+  # Service crash loop detection
+  crash_loop:
+    # Number of restarts within window to be considered a crash loop
+    restart_count_threshold: 3
+    window_minutes: 10
+  
+  # Runaway log detection (MB/hour)
+  log_growth_rate_mb_per_hour: 100
+  
+  # Process count threshold (zombie/runaway processes)
+  max_process_count: 500
+
+# ============================================================================
+# DEGRADATION THRESHOLDS (warnings for daily digest)
+# ============================================================================
+degradation:
+  # CPU warning threshold
+  cpu_percent_warning: 70
+  
+  # Memory warning threshold
+  memory_percent_warning: 80
+  
+  # Disk warning threshold
+  disk_percent_warning: 80
+  
+  # Log file size warnings (MB per service)
+  log_file_size_warning_mb: 50
+  
+  # Stale service detection (no log writes in N minutes)
+  stale_service_minutes: 60
+  
+  # Database file size warnings (MB)
+  db_size_warning_mb: 500
+
+# ============================================================================
+# ALERTING CONFIGURATION
+# ============================================================================
+alerting:
+  # SMS gating - set to false in production to enable actual SMS
+  sms_disabled: true
+  
+  # Rate limiting (minimum minutes between same-type alerts)
+  rate_limit_minutes: 30
+  
+  # Deduplication window (ignore repeat alerts within N minutes)
+  dedup_window_minutes: 15
+  
+  # Maximum alerts per hour (circuit breaker)
+  max_alerts_per_hour: 10
+
+# ============================================================================
+# SERVICES TO MONITOR
+# ============================================================================
+monitored_services:
+  # Service logs are expected at /dev/shm/<service_name>.log
+  - name: fabregas-cannon
+    critical: false
+  - name: productivity-dashboard
+    critical: true
+  - name: crm-calendar-webhook
+    critical: true
+  - name: fireflies-webhook
+    critical: false
+  - name: fillout-webhook
+    critical: false
+  - name: conversation-installer
+    critical: false
+  - name: action-approvals-monitor
+    critical: false
+
+# ============================================================================
+# DATABASES TO MONITOR
+# ============================================================================
+monitored_databases:
+  - path: /home/workspace/N5/data/conversations.db
+    name: conversations
+    critical: true
+  - path: /home/workspace/N5/data/meeting_pipeline.db
+    name: meeting_pipeline
+    critical: true
+  - path: /home/workspace/N5/data/crm_v3.db
+    name: crm_v3
+    critical: true
+  - path: /home/workspace/productivity_tracker.db
+    name: productivity_tracker
+    critical: false
+  - path: /home/workspace/N5/data/luma_events.db
+    name: luma_events
+    critical: false
+
+# ============================================================================
+# OUTPUT CONFIGURATION
+# ============================================================================
+output:
+  # State file for tracking alert history and dedup
+  state_file: /home/workspace/N5/data/health_sentinel_state.json
+  
+  # Log file for sentinel runs
+  log_dir: /home/workspace/N5/logs/maintenance/health
+  
+  # Daily digest integration file (gets cleared after digest reads it)
+  digest_file: /home/workspace/N5/data/health_sentinel_digest.json
+

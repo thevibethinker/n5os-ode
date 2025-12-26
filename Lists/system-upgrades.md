@@ -1,318 +1,466 @@
----
-project: Content Library System (SQLite + Block-Based)
-created: 2025-11-12
-last_edited: 2025-11-04
-version: 2.1
----
+# System Upgrades List
 
-# N5 System Upgrades Backlog
+<!-- Generated MD view of JSONL -->
 
-## 🎯 Open/Planned
+## Open
 
-### 🔴 Create Vibe Persona
+### Enhanced Command Authoring User Experience
 
-**ID:**   
-**Priority:** H  
-**Summary:** Design and implement a Vibe persona for the persona ecosystem. Define role, capabilities, personality, and interaction patterns. Create persona YAML specification and register in system.
+**ID:** cmd-auth-ux-disc-1758364385
 
-**Tags:** persona, vibe, design, high-priority
+**Created:** 2025-09-20T10:33:05Z
 
----
+**Updated:** 2025-10-14T11:20:45.238422+00:00
 
-### 🔴 Create Documenter Persona
-
-**ID:**   
-**Priority:** H  
-**Summary:** Design and implement a Documenter persona for the persona ecosystem. Specialized in technical documentation, knowledge base management, and maintaining system documentation. Create persona YAML specification and register in system.
-
-**Tags:** persona, documenter, documentation, high-priority
-
----
-
-### 🔴 Create Systems Maintainer Persona
-
-**ID:**   
-**Priority:** H  
-**Summary:** Design and implement a Systems Maintainer persona for the persona ecosystem. Specialized in system health, monitoring, cleanup, and ongoing maintenance tasks. Create persona YAML specification and register in system.
-
-**Tags:** persona, systems-maintainer, maintenance, high-priority
-
----
-
-### 🔴 Organizations System for CRM
-
-**ID:**   
-**Priority:** H  
-**Summary:** Design and implement the organizations/ directory structure in Knowledge/crm/. Populate with company profiles extracted from existing individual profiles. Establish schema, templates, and relationships between organizations and individuals.
-
-**Tasks:**
-- [ ] Design organization profile schema (company info, contacts, interactions)
-- [ ] Create organization template
-- [ ] Extract organization data from existing profiles
-- [ ] Establish individual↔organization relationships
-- [ ] Update documentation
-
-**Tags:** crm, organizations, high-priority, phase-9
-
----
-
-### 🟡 Custom System Settings Configuration Area on Zo
-
-**ID:**   
-**Priority:** M  
-**Summary:** Create a dedicated 'settings' area on Zo where custom system settings can be defined as individual files that are edited on an ongoing basis. This state area would extend beyond standard Zo settings to include user-specific system configurations and preferences.
-
-**Tags:** system, settings, configuration, ux
-
----
-
-### ⚪ Workflow for Processing and Tracking Persons of Note (CRM)
-
-**ID:**   
-**Priority:** MEDIUM  
-**Summary:** Implement a CRM-like system for tracking and processing information about key persons, including contact details, interactions, insights, and relationship management.
-
----
-
-### ⚪ AI Model Critique and Telemetry System
-
-**ID:**   
-**Priority:** HIGH  
-**Summary:** Create a command that has subsequent AI instances critique and analyze the work of previous AI instances, collecting structured observations and building a central rubric to understand the characteristics, strengths, and patterns of different models. Include telemetry tracking to build insights over time.
-
----
-
-### ⚪ Temporary File Management
-
-**ID:**   
-**Priority:** MEDIUM  
-**Summary:** Implement a robust system for managing temporary files, including automatic cleanup, versioning, conflict resolution, and integration with the main file management workflow to prevent data loss and maintain system cleanliness.
-
----
-
-### ⚪ General File Management
-
-**ID:**   
-**Priority:** MEDIUM  
-**Summary:** Develop comprehensive file management capabilities including advanced search, bulk operations, metadata tracking, version control integration, and user-friendly interfaces for organizing and maintaining the workspace files.
-
----
-
-### 🟡 Enhanced Command Authoring User Experience
-
-**ID:**   
-**Priority:** M  
-**Summary:** Add interactive wizard, searchable command marketplace, and auto-suggestions to reduce duplication and improve discoverability. Make the CLI more intuitive for non-technical users.
+**Priority:** M
 
 **Tags:** ux, discoverability, interface
 
 ---
 
-### 🟡 Howie ↔ Zo Post-Meeting Automation Pipeline
+### Organizations System for CRM
 
-**ID:**   
-**Priority:** M  
-**Summary:** Zo processes meeting transcripts/blocks, extracts action items, notifies Howie of completion. Howie checks for ongoing email thread and sends brief recap with action items to meeting participants. Enables full meeting lifecycle automation.
+**ID:** 2025-10-14-organizations-system
 
-**Tags:** howie-integration, automation, meeting-processing
+**Created:** 2025-10-14T04:41:00Z
 
----
+**Priority:** H
 
-### 🟡 Cross-Meeting Pattern Recognition & Optimization
-
-**ID:**   
-**Priority:** M  
-**Summary:** Zo tracks meeting outcomes by stakeholder type, day-of-week, time, and other factors. Learns optimal patterns (e.g., investor meetings on Tue/Thu convert better). Automatically updates Howie scheduling preferences based on learned patterns. Self-optimizing scheduling system.
-
-**Tags:** howie-integration, ml, optimization
+**Tags:** crm, organizations, high-priority, phase-9
 
 ---
 
-### 🟡 Meeting Intelligence Feedback Loop
+### File Cleanup System for Root and N5 Directories
 
-**ID:**   
-**Priority:** M  
-**Summary:** After meetings, Zo generates insights (key topics, follow-up needs, relationship strength). Emails Howie with context: "Meeting went well, priority relationship, prefer Tue/Thu for future." Howie stores as preference override for that contact. System learns from outcomes.
+**ID:** 2025-10-14-file-cleanup-system
 
-**Tags:** howie-integration, intelligence, learning
+**Created:** 2025-10-14T06:47:00Z
 
----
-
-### 🟢 Howie Personalized Scheduling Responses
-
-**ID:**   
-**Priority:** L  
-**Summary:** Give Howie access to stakeholder profiles maintained by Zo. Enables personalized scheduling emails: "Good to hear from you again! I see you and Vrijen last connected 3 months ago about hiring. Looking forward to your follow-up discussion." Warmer, more human interactions.
-
-**Tags:** howie-integration, personalization, ux
-
----
-
-### 🟡 Progressive Meeting Brief Enhancement
-
-**ID:**   
-**Priority:** M  
-**Summary:** Brief evolves from basic (when scheduled) → enhanced (5 days before) → specific (2 days) → final (morning-of). Early awareness + just-in-time detail. Basic: bio/company/past. Enhanced: recent news. Specific: talking points aligned to current priorities. Final: overnight updates.
-
-**Tags:** meeting-prep, automation, intelligence
-
----
-
-### 🟢 Dynamic Meeting Duration Adjustment
-
-**ID:**   
-**Priority:** L  
-**Summary:** First meeting with investor → 45 min. Zo research reveals early-stage VC, exploratory → suggests 30 min instead. After meeting, V notes "serious, follow-up needed" → next meeting auto-scheduled 60 min. Duration adapts to relationship stage and context.
-
-**Tags:** howie-integration, optimization, scheduling
-
----
-
-### 🟢 Travel Intelligence & Coordination
-
-**ID:**   
-**Priority:** L  
-**Summary:** Flight/train scheduled → Zo detects, generates travel checklist (meetings before/after, docs needed, contacts in destination). Howie offers to schedule meetings in destination city. Zo tracks patterns, suggests recurring trips. Travel becomes strategic opportunity, not just logistics.
-
-**Tags:** travel, coordination, intelligence
-
----
-
-### 🔴 File Cleanup System for Root and N5 Directories
-
-**ID:**   
-**Priority:** H  
-**Summary:** Create an automated file cleanup system to maintain workspace hygiene. Implement as script/scheduled task for regular cleanup of temporary files, misplaced artifacts, and orphaned resources in both root workspace and N5 system directories.
-
-**Tasks:**
-- [ ] Design pattern-based detection for cleanup candidates
-- [ ] Implement safe deletion with comprehensive logging
-- [ ] Create configurable retention policies
-- [ ] Add dry-run mode for preview
-- [ ] Integrate with end-of-conversation orchestrator
-- [ ] Handle both root workspace and N5 system directories
+**Priority:** H
 
 **Tags:** automation, cleanup, maintenance, system
 
 ---
 
-### 🟡 Build a Meeting Block Builder
+### Build a Meeting Block Builder
 
-**ID:**   
-**Priority:** M  
-**Summary:** Create a meeting block builder tool that enables quick construction and configuration of meeting blocks/sessions
+**ID:** 20251015-meeting-block-builder
+
+**Created:** 2025-10-15T17:11:51.678573+00:00
+
+**Priority:** M
 
 **Tags:** automation, meetings, tools
 
 ---
 
-### 🟡 Littlebird Call Link & File Tracking
+### Custom System Settings Configuration Area on Zo
 
-**ID:**   
-**Priority:** M  
-**Summary:** When on audio or video calls (Zoom, Google Meet, WhatsApp Desktop, etc.), have littlebird pay attention to links (surveys, websites, Google Drive links, etc.) or files shared by V or shared with V, as well as any promises made regarding sharing links/files. Track these as action items for follow-up.
+**ID:** 20251015-custom-settings-area
 
-**Tags:** littlebird, meetings, automation, tracking
+**Created:** 2025-10-15T22:53:50Z
+
+**Priority:** M
+
+**Tags:** system, settings, configuration, ux
 
 ---
 
-### 🟡 create a meeting to talking point to knowledge base to content pipeline
+### create a meeting to talking point to knowledge base to content pipeline
 
-**ID:**   
-**Priority:** M  
+**ID:** 4e78cf37-0c3b-4ac3-a18d-d08114f542a4
+
+**Created:** 2025-10-16T04:17:17.240539+00:00
+
+**Updated:** 2025-10-16T04:17:17.240571+00:00
+
 **Tags:** workflow, pipeline, knowledge-base
 
 ---
 
-### 🟡 Create Sandbox for Files Mode
+### Create Sandbox for Files Mode
 
-**ID:**   
-**Priority:** M  
-**Summary:** Create a standard protocol and mode where files (especially temporary files) are stored in a sandbox with a particular, consistent structure. This would establish clear patterns for temporary file management and staging.
+**ID:** 50a70792-6c16-46f3-87d4-41cb3d6505a4
+
+**Created:** 2025-10-28T14:09:06.179986+00:00
+
+**Priority:** M
 
 **Tags:** sandbox, file-management, protocol, temporary-files
 
 ---
 
-### 🟢 Reference Files Coherence Check Script
+### Reference Files Coherence Check Script
 
-**ID:**   
-**Priority:** L  
-**Summary:** Create coherence_check.py to validate that registered reference files still exist, frontmatter matches registry, no orphaned entries, and no unregistered reference-like files in workspace.
+**ID:** e658222c-afaa-4140-be6f-88038713299d
+
+**Created:** 2025-11-03T06:58:20.787261+00:00
+
+**Priority:** L
 
 **Tags:** reference-files, validation, maintenance, coherence
 
 ---
 
-### 🟡 Knowledge Bridge (Content Library → Knowledge Base Integration)
+### Create Vibe Persona
 
-**ID:**   
-**Priority:** M  
-**Summary:** Build append-only bridge system to promote content from Content Library to Knowledge Base with full traceability. System was designed and partially implemented (worker_knowledge_bridge.py created) but **abandoned for now** due to schema mismatch between Content Library's expected promotion structure and Knowledge Base's existing generation_history table structure. Documented for future consideration when Knowledge Base schema evolves or requirements change.
+**ID:** 20251104-vibe-persona-02ed5f31
 
-**Status:** Designed, worker created, **abandoned**  
-**Rationale:** Standard knowledge ingestion process remains functional without this bridge. Content Library operates standalone successfully.
+**Created:** 2025-11-04T19:58:53.065554+00:00
 
-**Components:**
-- Bridge table schema (content_library_bridge)
-- Promotion logic (worker_knowledge_bridge.py)
-- Traceability tracking
-- Append-only constraints
+**Priority:** H
 
-**Future Considerations:**
-- Revisit if Knowledge Base schema adds dedicated promotion tracking
-- Revisit if need for automated Content → Knowledge pipeline emerges
-- Current manual knowledge ingestion process remains functional
-
-**Files:**
-- `/home/workspace/N5/workers/worker_knowledge_bridge.py` (created, not in active use)
-
-**Tags:** knowledge-bridge, content-library, integration, abandoned, future
+**Tags:** persona, vibe, design, high-priority
 
 ---
 
-## 🔄 In Progress
+### Create Documenter Persona
 
-### Workflow for Ingesting Content + Insights from External Sources
+**ID:** 20251104-documenter-persona-c51f61c2
 
-**ID:**   
-**Summary:** Develop a structured workflow to import, process, and integrate content and insights from external sources, including validation, tagging, and knowledge base updates.
+**Created:** 2025-11-04T19:58:53.065583+00:00
 
----
+**Priority:** H
 
-### Telemetry roll-ups
-
-**ID:**   
-**Summary:** Implement daily summary emitter script for metrics on adds/edits, dupes prevented, backups created, failures.
+**Tags:** persona, documenter, documentation, high-priority
 
 ---
 
-### Workspace Cleanup and File Organization Command
+### Create Systems Maintainer Persona
 
-**ID:**   
-**Summary:** Create a command or script that automatically identifies and cleans up files created in wrong locations during development workflows. Should include pattern matching for common misplaced files (conver...
+**ID:** 20251104-systems-maintainer-cfa085de
 
----
+**Created:** 2025-11-04T19:58:53.065596+00:00
 
-### Advanced Command Conflict Resolution and Versioning
+**Priority:** H
 
-**ID:**   
-**Summary:** Add semantic versioning, dependency tracking, and automated merging for command conflicts. Prevent breaking changes and enable backward compatibility checks for evolved commands.
+**Tags:** persona, systems-maintainer, maintenance, high-priority
 
 ---
 
-## ✅ Done/Completed
+### Integrate RescueTime for Android Screen Time tracking in Wellness Monitor
 
-- **Command to Export a Particular Thread and Package Everything Needed to Restart Exercise in Another Thread** ()
-- **Workflow for Processing and Tracking Persons of Note (CRM)** ()
-- **Upgrade system configuration** ()
-- **Upgrade system config** ()
-- **Implement workflow enhancement for better productivity** ()
-- **Long-standing Issue: Overriding Phenomenon** ()
-- **Long-standing Issue: Git Merge Conflicts** ()
-- **Long-standing Issue: Uncommitted Changes Lost** ()
-- **Long-standing Issue: Schema Validation Failures** ()
-- **Long-standing Issue: Dependency Conflicts** ()
+**ID:** 2025-12-11-screen-time-integration
 
-_... and 12 more completed items_
+**Created:** 2025-12-11T14:00:00Z
+
+**Priority:** M
+
+**Tags:** integration, wellness, screen-time, android
+
+---
+
+### Screen Time Integration (Android)
+
+**ID:** 20251211-screen-time-integration
+
+**Created:** 2025-12-11T14:00:00Z
+
+**Priority:** M
+
+**Tags:** health, integration, screen-time, rescuetime
+
+---
+
+### Wellness Dashboard 2.0 (Visuals)
+
+**ID:** 20251211-wellness-dashboard-v2
+
+**Created:** 2025-12-11T14:30:00Z
+
+**Priority:** M
+
+**Tags:** health, dashboard, visualization, wellness
+
+---
+
+### Integrate Cobalt for Media Capture
+
+**ID:** 20251211-cobalt-06042d7a
+
+**Created:** 2025-12-11T16:05:30.594256+00:00
+
+**Priority:** M
+
+**Tags:** media, tool-integration, cobalt, capture
+
+---
+
+### Daily Thought Provoker Session
+
+**ID:** 20251218-thought-provoker-session
+
+**Created:** 2025-12-18T12:15:00.000000+00:00
+
+**Priority:** M
+
+**Tags:** feature, thinking, content-generation, inbox-intelligence
+
+---
+
+
+## Done
+
+### Command to Export a Particular Thread and Package Everything Needed to Restart Exercise in Another Thread
+
+**ID:** 2025-09-19-export-thread-command
+
+**Created:** 2025-09-19T17:16:00Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** M
+
+**Notes:** MVP completed: Interactive AAR generation with dual-write (JSON+MD), schema validation, artifact archiving. Located in N5/logs/threads/[thread-id]-[descriptive-title]/
+
+---
+
+### Upgrade system configuration
+
+**ID:** 97f5627f-f5b2-4455-87b7-7381c3f654ae
+
+**Created:** 2025-09-19T17:17:51.641889+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** upgrade, system, configuration
+
+---
+
+### Workflow for Processing and Tracking Persons of Note (CRM)
+
+**ID:** 2025-09-19-persons-crm-workflow
+
+**Created:** 2025-09-19T17:21:00Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** M
+
+---
+
+### Upgrade system config
+
+**ID:** e92257eb-5fa1-4d2b-82cc-0d64e95fb9fe
+
+**Created:** 2025-09-19T22:48:02.095297+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+---
+
+### Implement workflow enhancement for better productivity
+
+**ID:** 4983d033-9367-4925-8519-bee89824e3b8
+
+**Created:** 2025-09-19T22:49:07.267319+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** implement, workflow, enhancement
+
+---
+
+### Long-standing Issue: Overriding Phenomenon
+
+**ID:** 105c25cc-645c-4abc-b73d-6a8d9b463742
+
+**Created:** 2025-09-19T23:19:56.554945+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** issue,workflow
+
+**Body:**
+
+Files being accidentally overwritten or emptied during merges, commits, or syncs (e.g., knowledge/bio.md emptied recently). Pattern: Often from docgen or auto-updates. Impact: Data loss. Mitigation: Review diffs; check for empties.
+
+---
+
+### Long-standing Issue: Git Merge Conflicts
+
+**ID:** 25145434-a989-4f6f-9afd-2d303ffde735
+
+**Created:** 2025-09-19T23:20:02.660447+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** issue,git
+
+**Body:**
+
+Unresolved conflicts during merges can overwrite sections or entire files. Pattern: Seen in multi-file updates. Impact: Inconsistent state. Mitigation: Resolve conflicts carefully; test after merge.
+
+---
+
+### Long-standing Issue: Uncommitted Changes Lost
+
+**ID:** 2dd7244d-df6e-41c8-b622-0138fcd2c1d9
+
+**Created:** 2025-09-19T23:20:08.707790+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** issue,git,workflow
+
+**Body:**
+
+Local changes overwritten by pulls or resets without stashing. Pattern: During rapid iterations. Impact: Loss of work. Mitigation: Commit frequently; use branches.
+
+---
+
+### Long-standing Issue: Schema Validation Failures
+
+**ID:** 1676a7fb-4fc2-4937-8102-7af5919332ef
+
+**Created:** 2025-09-19T23:20:15.938200+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** issue,validation
+
+**Body:**
+
+Invalid JSON/JSONL leading to corrupt lists or commands. Pattern: During additions/updates. Impact: Breaks functionality. Mitigation: Run validation before staging.
+
+---
+
+### Long-standing Issue: Dependency Conflicts
+
+**ID:** a50875a7-24a9-46e4-ad96-38f16b404f9a
+
+**Created:** 2025-09-19T23:20:22.153830+00:00
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Tags:** issue,dependencies
+
+**Body:**
+
+Python modules or tools conflicting (e.g., jsonschema). Pattern: Import errors. Impact: Script failures. Mitigation: Pin versions; test in isolation.
+
+---
+
+### Implement dual-store synchronization module
+
+**ID:** fff5f29c-4ca1-4304-b391-1dc47619c345
+
+**Created:** 2025-09-20T06:06:45Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** H
+
+**Body:**
+
+Create a module for atomic write and sync between Markdown and JSONL stores with locking.
+
+---
+
+### Add CLI enhancements (--dry-run, --verify, --rollback)
+
+**ID:** 3ca94d01-a76a-457d-8f61-1ed9d6bcc0e3
+
+**Created:** 2025-09-20T06:07:43Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** H
+
+**Body:**
+
+Implement --dry-run to show changes without applying, --verify to validate post-write, --rollback to restore from backup.
+
+---
+
+### Implement backup retention and recovery
+
+**ID:** 764a505c-c737-4a61-93a2-10d7f4052baa
+
+**Created:** 2025-09-20T06:07:49Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** H
+
+**Body:**
+
+Create backup pruner script to enforce policy of last 30 backups + 14 days TTL, provide recovery runbook.
+
+---
+
+### Schema validation and CI guardrails
+
+**ID:** debccffe-1e4e-4832-be24-de97f9c2549f
+
+**Created:** 2025-09-20T06:07:56Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** M
+
+**Body:**
+
+Implement JSON Schema validator script, local validator for JSONL, CI hook for automated validation.
+
+---
+
+### Record dispatcher integration
+
+**ID:** c0825e08-442f-42e1-9f64-5e533f1a04ec
+
+**Created:** 2025-09-20T06:08:08Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** M
+
+**Body:**
+
+Update record mappings JSON to route 'record upgrade' commands to system_upgrades_add.py with appropriate args pattern.
+
+---
+
+### Update documentation and command spec
+
+**ID:** 4fd28ff9-1228-4e73-b9fd-2bab2323ea2b
+
+**Created:** 2025-09-20T06:08:15Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** L
+
+**Body:**
+
+Update N5/commands/system-upgrades-add.md with new CLI options, usage examples, troubleshooting, and operational runbook.
+
+---
+
+### Concrete End Step for Conversations with Action Implementation and System Synchronization
+
+**ID:** 2025-09-20-conversation-end-step
+
+**Created:** 2025-09-20T07:50:00Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** MEDIUM
+
+---
+
+### Command Authoring Performance Optimization
+
+**ID:** cmd-auth-perf-opt-1758364366
+
+**Created:** 2025-09-20T10:32:46Z
+
+**Updated:** 2025-10-14T11:20:45.238422+00:00
+
+**Priority:** H
+
+**Tags:** performance, llm, optimization
+
+---
+
 

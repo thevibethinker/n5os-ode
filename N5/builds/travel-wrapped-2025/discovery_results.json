@@ -1,0 +1,18 @@
+{
+  "top_senders": [
+    "United Airlines <Receipts@united.com>",
+    "United Airlines <notifications@united.com>",
+    "Skyscanner <no-reply@sender.skyscanner.com>",
+    "Vrbo <mail@eg.vrbo.com>",
+    "Agoda <no-reply@agoda.com>",
+    "Expedia <travel@expedia.com>",
+    "JetBlue <jetblue@jetblue.com>",
+    "Airbnb <no-reply@airbnb.com>",
+    "Hotels.com <confirmations@hotels.com>"
+  ],
+  "brand_discovery": {
+    "airlines": ["United Airlines", "JetBlue", "Delta", "American Airlines"],
+    "lodging": ["Vrbo", "Airbnb", "Hotels.com", "Agoda"],
+    "booking_platforms": ["Skyscanner", "Expedia"]
+  }
+}

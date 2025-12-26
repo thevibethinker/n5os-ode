@@ -1,0 +1,51 @@
+[
+  {
+    "id": "3sa5olv0j81423qnt17v4t4irp_20251225T133000Z",
+    "summary": "Morning Rituals [DWP]",
+    "start": {"dateTime": "2025-12-25T08:30:00-05:00", "timeZone": "America/New_York"},
+    "end": {"dateTime": "2025-12-25T09:00:00-05:00", "timeZone": "America/New_York"},
+    "description": "- Mark events and show littlebird my day",
+    "creator": {"email": "vrijen@mycareerspan.com"}
+  },
+  {
+    "id": "3539vnkhrvv2rh4lk5g00bvejg_20251225T210000Z",
+    "summary": "Weekly Exec Func Coaching",
+    "start": {"dateTime": "2025-12-25T16:00:00-05:00", "timeZone": "America/New_York"},
+    "end": {"dateTime": "2025-12-25T17:00:00-05:00", "timeZone": "America/New_York"}
+  },
+  {
+    "id": "lp479vnqnsuopoc7dlmfv2orus_20251225T141500Z",
+    "summary": "Daily co-founder standup + check trello",
+    "start": {"dateTime": "2025-12-25T09:15:00-05:00", "timeZone": "America/New_York"},
+    "end": {"dateTime": "2025-12-25T09:30:00-05:00", "timeZone": "America/New_York"},
+    "attendees": [
+      {"email": "logan@theapply.ai", "responseStatus": "needsAction"},
+      {"email": "vrijen@mycareerspan.com", "organizer": true, "responseStatus": "accepted"}
+    ]
+  },
+  {
+    "id": "sp21is2bpvbea7s3o3uqsquefc_20251225T173000Z",
+    "summary": "David x Careerspan",
+    "start": {"dateTime": "2025-12-25T12:30:00-05:00", "timeZone": "America/Chicago"},
+    "end": {"dateTime": "2025-12-25T13:00:00-05:00", "timeZone": "America/Chicago"},
+    "attendees": [
+      {"email": "logan@theapply.ai", "responseStatus": "needsAction"},
+      {"email": "dspeigel@gmail.com", "responseStatus": "accepted"},
+      {"email": "loganhc@gmail.com", "organizer": true, "responseStatus": "accepted"},
+      {"email": "vrijen@mycareerspan.com", "self": true, "responseStatus": "declined"}
+    ]
+  },
+  {
+    "id": "3ajl74pf64rsak1drb4rd3112b_20251225T150000Z",
+    "summary": "Daily team stand-up",
+    "start": {"dateTime": "2025-12-25T10:00:00-05:00", "timeZone": "America/New_York"},
+    "end": {"dateTime": "2025-12-25T10:15:00-05:00", "timeZone": "America/New_York"},
+    "description": "Comet Tag: [FUE] [SH-I]",
+    "conference": "Gather",
+    "attendees": [
+      {"email": "vrijen@mycareerspan.com", "organizer": true, "responseStatus": "accepted"},
+      {"email": "logan@theapply.ai", "responseStatus": "needsAction"},
+      {"email": "ilse@theapply.ai", "responseStatus": "accepted"}
+    ]
+  }
+]

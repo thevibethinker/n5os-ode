@@ -1,0 +1,21 @@
+{
+  "senders": [
+    "jetblue.com",
+    "hotels.com",
+    "airbnb.com"
+  ],
+  "findings": [
+    {
+      "date": "2025-03-15",
+      "type": "flight",
+      "provider": "JetBlue",
+      "destination": "JFK -> LAX"
+    },
+    {
+      "date": "2025-06-20",
+      "type": "hotel",
+      "provider": "Hotels.com",
+      "destination": "London"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://n5os-lite.local/schemas/prompt.schema.yaml
+title: N5OS Lite Prompt Definition
+description: Schema for reusable workflow prompts
+
+type: object
+required: [frontmatter, content]
+
+properties:
+  frontmatter:
+    type: object
+    description: YAML frontmatter at top of prompt file
+    required: [tool, description, tags, version, created]
+    properties:
+      tool:
+        type: boolean
+        const: true
+        description: Marks prompt as invokable tool
+      
+      description:
+        type: string
+        description: Brief description of what prompt does
+        maxLength: 200
+      
+      tags:
+        type: array
+        items:
+          type: string
+        description: Categorization tags
+        examples: [["workflow", "lists"], ["analysis", "research"]]
+      
+      version:
+        type: string
+        pattern: '^\d+\.\d+$'
+        description: Version number
+      
+      created:
+        type: string
+        format: date
+        description: Creation date
+  
+  content:
+    type: string
+    description: Markdown content with instructions
+    minLength: 100
+
+structure:
+  sections:
+    - title: Purpose/Overview
+      required: true
+      description: What this prompt does
+    
+    - title: Instructions
+      required: true
+      description: Step-by-step execution
+    
+    - title: Quality Checks
+      required: false
+      description: Validation criteria
+    
+    - title: Examples
+      required: false
+      description: Usage examples
+    
+    - title: Related
+      required: false
+      description: Links to principles, other prompts
+
+examples:
+  - |
+    ---
+    tool: true
+    description: Add entries to JSONL lists with validation
+    tags: [lists, workflow, data-management]
+    version: 1.0
+    created: 2025-11-03
+    ---
+    
+    # Add to List
+    
+    Add structured entries to JSONL lists...
