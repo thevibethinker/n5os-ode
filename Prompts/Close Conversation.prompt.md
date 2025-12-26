@@ -6,11 +6,16 @@ tags:
   - session
   - cleanup
   - conversation
+created: 2025-10-15
+last_edited: 2025-12-26
+version: 2.0
 ---
 
 # Close Conversation
 
 Runs the formal **conversation-end workflow** with automatic tier detection.
+
+**Semantic work is owned by Librarian.** Scripts handle mechanics, Librarian handles crystallization.
 
 ## Quick Reference
 
@@ -37,9 +42,9 @@ python3 N5/scripts/conversation_end_router.py --convo-id {CONVO_ID}
 
 Review the recommendation and signals. Override with `--tier=N` if needed.
 
-### Step 2: Execute Tier
+### Step 2: Execute Mechanical Close
 
-Based on the tier:
+Based on the tier, run the appropriate script:
 
 **Tier 1 (Quick):**
 ```bash
@@ -56,31 +61,42 @@ python3 N5/scripts/conversation_end_standard.py --convo-id {CONVO_ID}
 python3 N5/scripts/conversation_end_full.py --convo-id {CONVO_ID}
 ```
 
-### Step 3: LLM Enhancement
+### Step 3: Invoke Librarian for Semantic Close
 
-After running the script, enhance the output:
+**Switch to Librarian:**
+```
+set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")
+```
+
+**Librarian responsibilities by tier:**
 
 **All Tiers:**
-- Generate a proper LLM title if the pattern-based one is insufficient
-- Write a 2-3 sentence summary of what was discussed/accomplished
-- Review file list and confirm organization
+- Audit SESSION_STATE: `python3 N5/scripts/session_state_manager.py audit --convo-id {CONVO_ID}`
+- Sync any missing state
+- Generate proper title (not pattern-based)
+- Write 2-3 sentence summary of what was discussed/accomplished
+- Verify artifacts are in correct locations
 
 **Tier 2+ Only:**
 - Extract key decisions with rationale
-- Identify any open items
+- Identify open items
+- Recommend file moves if needed
 
 **Tier 3 Only:**
-- Review AAR and enhance with conversation context
+- Enhance AAR with conversation context
 - Check: Did this create/modify N5 capabilities?
-  - If yes: Note what capability was added/changed
-  - If no: Note "No capability changes"
-- Check for lessons worth logging
+- Extract lessons worth logging
+- Verify build workspace is complete
 
-### Step 4: Git Check
+### Step 4: Final Checks
 
-If git changes detected:
-- Note the changes
-- Ask: "Would you like to commit these changes?"
+**Git Check:**
+If git changes detected, note them and ask about committing.
+
+**Return to Operator:**
+```
+set_active_persona("90a7486f-46f9-41c9-a98c-21931fa5c5f6")
+```
 
 ## Output
 
@@ -94,4 +110,9 @@ End with:
 ## Full Documentation
 
 `file 'N5/prefs/operations/conversation-end-v3.md'`
+
+## Version History
+
+- **v2.0** (2025-12-26): Librarian now owns semantic close work
+- **v1.0** (2025-10-15): Initial tiered system
 

@@ -1,11 +1,11 @@
 ---
 created: 2025-12-18
-last_edited: 2025-12-18
-version: 3.0
-provenance: con_nXKLrpy6lsnJm0dz
+last_edited: 2025-12-26
+version: 3.1
+provenance: con_thiVbfdLjmmBE7ol
 ---
 
-# Conversation-End System v3.0
+# Conversation-End System v3.1
 
 > **Single Source of Truth** for conversation closure workflow.
 
@@ -13,11 +13,26 @@ provenance: con_nXKLrpy6lsnJm0dz
 
 Tiered system that defaults to quick closure and escalates based on conversation markers.
 
+**Division of Labor:**
+- **Scripts** = Mechanics (file scanning, git status, pattern detection)
+- **Librarian** = Semantics (summaries, state crystallization, filing decisions)
+
 | Tier | Name | Use Case | Cost Target | Time Target |
 |------|------|----------|-------------|-------------|
 | 1 | Quick | Simple discussions, Q&A | <$0.05 | <30s |
 | 2 | Standard | Research, substantial discussions | <$0.08 | <90s |
 | 3 | Full Build | Build/orchestrator sessions | <$0.20 | <180s |
+
+## Persona Ownership
+
+| Phase | Owner | Responsibility |
+|-------|-------|----------------|
+| Tier Detection | Script | `conversation_end_router.py` |
+| Mechanical Close | Script | File lists, git status, basic structure |
+| Semantic Close | **Librarian** | Summaries, state sync, filing, AAR enhancement |
+| Final Output | Operator | Present results, handle git commit prompt |
+
+**Librarian invocation:** `set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")`
 
 ## Tier Detection
 
@@ -49,26 +64,44 @@ Tiered system that defaults to quick closure and escalates based on conversation
 ## What Each Tier Does
 
 ### Tier 1: Quick Close
-1. Generate LLM thread title
-2. Generate 2-3 sentence summary
+
+**Script (mechanics):**
+1. Scan workspace files
+2. Check git status
 3. Update SESSION_STATE status=closed
-4. List files in workspace
-5. Git status check
+
+**Librarian (semantics):**
+4. Generate meaningful title
+5. Write 2-3 sentence summary
+6. Audit SESSION_STATE for completeness
 
 ### Tier 2: Standard Close
-- All Tier 1 steps, plus:
-6. Categorized file organization
-7. Decision/outcome extraction
-8. Open items detection
-9. Move recommendations
+
+**Script (mechanics):**
+- All Tier 1 script steps, plus:
+- Categorized file organization
+- Open items detection
+
+**Librarian (semantics):**
+- All Tier 1 Librarian steps, plus:
+7. Extract key decisions with rationale
+8. Identify open questions
+9. Recommend file moves
 
 ### Tier 3: Full Build Close
-- All Tier 2 steps, plus:
-10. Full AAR generation
+
+**Script (mechanics):**
+- All Tier 2 script steps, plus:
+- Build workspace detection
+- Placeholder scan
+- DEBUG_LOG check
+
+**Librarian (semantics):**
+- All Tier 2 Librarian steps, plus:
+10. Full AAR enhancement with conversation context
 11. Lesson extraction (if debug session)
 12. Capability registry check
-13. Build workspace archival
-14. Placeholder scan
+13. Build STATUS.md verification
 
 ## Output Formats
 
@@ -105,4 +138,5 @@ python3 N5/scripts/conversation_end_full.py --convo-id <id>
 - `conversation_end_schema.md` (deleted)
 
 The old `conversation-end.md` will be archived after validation period.
+
 
