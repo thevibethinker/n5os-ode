@@ -1,0 +1,44 @@
+{
+  "context": "N5OS Lite v3 Genesis Protocol Implementation (Enhanced Scope)",
+  "objective": "Implement the 'Genesis Protocol' - a persona-led, self-assembling onboarding experience for N5OS Lite v3 that establishes the system's brain (Knowledge), soul (Wisdom/Preferences), and structure (Records/Architecture).",
+  "key_components": [
+    {
+      "artifact": "personas/vibe_onboarder.md",
+      "description": "A specialized 'Installer' persona. It must be educational ('Knowledge Nuggets'), interactive, and guide the user through the setup. It acts as the interface for the bootstrap script.",
+      "requirements": [
+        "Ask for user preferences (Bio, Name, Company) and update settings.",
+        "Explain the 'Why' behind architectural choices (e.g., 'Why do we have a Records folder?').",
+        "Guide the Memory Transplant process."
+      ]
+    },
+    {
+      "artifact": "prompts/external_memory_export.md",
+      "description": "A prompt for the user to run in ChatGPT/Claude to export their digital brain.",
+      "requirements": [
+        "Must explicitly target: 'Beliefs', 'Values', 'Mental Frameworks', 'Wisdom', and 'Strategic Context'.",
+        "Must target standard data: Contacts (CRM), Project History, Important Documents.",
+        "Format the output so N5OS can ingest it automatically."
+      ]
+    },
+    {
+      "artifact": "scripts/n5_bootstrap_wizard.py",
+      "description": "The backend script executed by the Onboarder to build the system state.",
+      "requirements": [
+        "Create full directory structure including the new 'Records' system (AARs, Personal, Company, Reflections).",
+        "Initialize all Databases (Journal, CRM, Content Library, Documents).",
+        "Ingest the 'Memory Export' payload and route data to correct locations (Wisdom -> Knowledge/Wisdom, People -> CRM).",
+        "Install the Core Rules (stripped of PII)."
+      ]
+    },
+    {
+      "artifact": "config/core_rules.json",
+      "description": "The immutable architectural rules of N5 (Session State, Safety, protection) stripped of V's personal PII."
+    }
+  ],
+  "critical_additions": [
+    "**Records System:** Ensure `Records/` hierarchy is fully established (AARs, Archive, Personal/Drafts).",
+    "**Wisdom System:** The Memory Transplant must populate `Knowledge/Wisdom` with the user's beliefs and frameworks, not just facts.",
+    "**Preferences:** The boot sequence must explicitly interview the user to capture their style/preferences.",
+    "**Education:** The process must serve as a tutorial for N5OS best practices."
+  ]
+}

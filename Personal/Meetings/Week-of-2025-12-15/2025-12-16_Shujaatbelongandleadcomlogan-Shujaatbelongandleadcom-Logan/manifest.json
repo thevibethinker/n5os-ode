@@ -1,0 +1,24 @@
+{
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "detailed_recap": true,
+    "decisions": true,
+    "action_items": true,
+    "business_context": true,
+    "tone_and_context": true,
+    "blurbs_requested": true,
+    "key_moments": true,
+    "deliverables": true,
+    "meeting_metadata": true,
+    "intro_drafts_generated": true
+  },
+  "intro_drafts": [
+    "INTRO_Shujaat_to_Logan.md",
+    "INTRO_Logan_to_Shujaat.md"
+  ],
+  "last_updated_by": "MG-2_Worker",
+  "last_updated_at": "2025-12-26T01:44:24.720289",
+  "intelligence_complete": true
+}

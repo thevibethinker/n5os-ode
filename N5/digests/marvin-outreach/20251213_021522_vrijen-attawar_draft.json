@@ -1,0 +1,82 @@
+{
+  "generated_at": "2025-12-13T02:15:22.298814",
+  "form_id": "8JxXF1AVZeus",
+  "draft": {
+    "to": "vrijen@mycareerspan.com",
+    "subject": "Saw you're scaling — quick offer",
+    "body": "Hey Vrijen,\n\nThanks for reaching out through Marvin Ventures.\n\nYou flagged the resume firehose — 200 applications, maybe 3 worth reading. That's not a process problem, it's a signal collapse. AI made mass-applying free, so the effort signal that used to filter for quality is gone.\n\nWe've been building around a different model: adding smart friction to the funnel. The noise self-selects out before it hits you.\n\nWorth a quick chat?\n\nhttps://calendly.com/v-at-careerspan/30min\n\n— Vrijen\n\nP.S. Your Marvin perk covers a pilot. Let's put it to use.",
+    "context": {
+      "submission": {
+        "name": "Vrijen Attawar",
+        "company": "Careerspan",
+        "email": "vrijen@mycareerspan.com",
+        "linkedin_url": null,
+        "roles_hiring": "",
+        "pain_points": [
+          "I'm spending too much time reading resumes (especially bad ones)",
+          "My ATS isn't helping me narrow down candidates meaningfully"
+        ]
+      },
+      "enrichment": {
+        "person": null,
+        "company": {
+          "name": "Careerspan",
+          "description": "Careerspan offers personalized AI coaching to fill the career guidance void: helping users identify strengths, translate their skills into a compelling story on their applications, and navigate the job search process. Its goal is to enhance confidence, secure better jobs, and ensure equal opportunities for everyone.",
+          "industry": null,
+          "headcount": 14,
+          "founded_year": null,
+          "funding_stage": null,
+          "total_raised": null
+        }
+      },
+      "linkedin_analysis": {
+        "current_role": null,
+        "previous_roles": [],
+        "has_hiring_manager_experience": false,
+        "has_hypergrowth_experience": false,
+        "has_consulting_background": false,
+        "years_experience": null
+      },
+      "signals": {
+        "recent_funding": null,
+        "recent_news": [],
+        "is_currently_hiring": true
+      },
+      "credibility_hooks": [],
+      "relevant_content": [
+        {
+          "id": "snippet-smart-friction-hiring-funnel-20251212204936",
+          "title": "Smart Friction Hiring Funnel Blurb",
+          "content": "Turn inbound from a firehose into a filter. Careerspan adds smart friction to your hiring funnel that deters mass-appliers and reveals genuine fit—giving you higher-quality screens and more confident hiring decisions without adding recruiter headcount."
+        },
+        {
+          "id": "hiring-signal-collapse-worldview.md",
+          "title": "Hiring Signal Collapse Worldview",
+          "content": "---\ncreated: 2025-12-05\nlast_edited: 2025-12-05\nversion: 2.0\n---\n\n# The Hiring Signal Collapse: A Worldview Synthesis\n\n## The Core Thesis\n\n**Inbound hiring is broken at a fundamental level.** Not broken in the sense of \"needs optimization\" but broken in the sense of \"the underlying mechanism no longer produces valid signal.\" This is a structural failure, not a process inefficiency.\n\nThe apology I owe job seekers: 18 months ago, I encouraged people to tailor their applications. The advice was correct *in the world that existed then*. The world has changed. The advice no longer works—not because it was wrong in principle, but because the environment that made it work has collapsed.\n\n---\n\n## The Original Belief\n\n**What I told people ~1.5 years ago:**\n\nTailored job applications work because of *pattern disruption*:\n- In an environment where most applicants submit generic applications, personalization stands out\n- Personalization carries two signals:\n  1. **Implicit signal:** \"I cared enough to invest time in this specific opportunity\"\n  2. **Explicit signal:** More relevant, focused information about fit\n- The combination of attention + relevance = higher success rate\n\nThis was true. It worked. The advice helped people.\n\n---\n\n## What Changed: The Two-Sided Collapse\n\nThe system broke on both sides simultaneously.\n\n### The Supply-Side Collapse\n\n**AI made bad personalization free.**\n\nBefore generative AI, the cost structure was:\n- Generic application: 5 minutes\n- Tailored application: 30-60 minutes\n\nThat cost differential meant tailoring was a *reliable signal* of motivation and conscientiousness. Someone willing to invest an hour in your company probably cares.\n\nAfter generative AI:\n- Generic application: 30 seconds\n- AI-generated \"personalization\": 30 seconds\n- Genuine personalization: still 30-60 minutes\n\n**The signal collapsed.** AI can generate infinite plausible-sounding tailored content with zero marginal cost. The output looks identical. The input is radically diff"
+        },
+        {
+          "id": "smart-friction-hiring-funnel-blurb.md",
+          "title": "Smart Friction Hiring Funnel Blurb",
+          "content": "---\ncreated: 2025-12-12\nlast_edited: 2025-12-12\nversion: 1\ntype: snippet\ntags:\n  - positioning\n  - inbound\n  - value-prop\n  - hiring-friction\n---\n# Smart Friction Hiring Funnel Blurb\n\nTurn inbound from a firehose into a filter. Careerspan adds smart friction to your hiring funnel that deters mass-appliers and reveals genuine fit—giving you higher-quality screens and more confident hiring decisions without adding recruiter headcount.\n\n"
+        }
+      ]
+    }
+  },
+  "actions_for_zo": [
+    {
+      "action": "create_gmail_draft",
+      "params": {
+        "to": "vrijen@mycareerspan.com",
+        "subject": "Saw you're scaling — quick offer",
+        "body": "Hey Vrijen,\n\nThanks for reaching out through Marvin Ventures.\n\nYou flagged the resume firehose — 200 applications, maybe 3 worth reading. That's not a process problem, it's a signal collapse. AI made mass-applying free, so the effort signal that used to filter for quality is gone.\n\nWe've been building around a different model: adding smart friction to the funnel. The noise self-selects out before it hits you.\n\nWorth a quick chat?\n\nhttps://calendly.com/v-at-careerspan/30min\n\n— Vrijen\n\nP.S. Your Marvin perk covers a pilot. Let's put it to use.",
+        "from_email": "vrijen@mycareerspan.com"
+      }
+    },
+    {
+      "action": "send_sms",
+      "params": {
+        "message": "🚀 New Marvin lead: Vrijen Attawar at Careerspan. Subject: \"Saw you're scaling — quick offer\". Draft ready."
+      }
+    }
+  ]
+}

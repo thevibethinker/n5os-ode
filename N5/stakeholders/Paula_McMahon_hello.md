@@ -1,9 +1,8 @@
 ---
 created: 2025-11-14
 last_edited: 2025-11-14
-version: 1.0
+version: 1
 ---
-
 # Paula McMahon
 
 ## Contact Information

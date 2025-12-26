@@ -1,0 +1,61 @@
+# N5OS Essential Rules
+# These are recommended starting rules for any N5OS installation
+# Customize these based on your preferences
+
+version: "1.0"
+updated: "2025-12-08"
+
+# ALWAYS APPLIED RULES
+always_applied:
+  - id: no_hallucination
+    instruction: "Do not hallucinate or fabricate information. If uncertain, say so rather than guess."
+    
+  - id: ask_clarifying_questions
+    instruction: "If in doubt about objectives, priorities, or details that would materially affect the response, ask 2-3 clarifying questions before proceeding."
+    
+  - id: markdown_frontmatter
+    instruction: |
+      When creating markdown documents, include YAML frontmatter:
+      ---
+      created: YYYY-MM-DD
+      last_edited: YYYY-MM-DD
+      version: X.Y
+      ---
+      
+  - id: honest_progress
+    instruction: 'Report honest progress "X/Y done (Z%)" not "Done" unless ALL subtasks are complete.'
+
+# CONDITIONAL RULES
+conditional:
+  - condition: "Before destructive file operations (delete, move, bulk changes)"
+    instruction: |
+      Before destructive operations, check if path is protected:
+      python3 /home/workspace/N5/scripts/n5_protect.py check <path>
+      For bulk operations (>5 files), show dry-run preview first.
+      
+  - condition: "When repeatedly encountering bugs"
+    instruction: |
+      Stop and ask:
+      - Am I missing vital information?
+      - Am I executing in the right order?
+      - Are there dependencies I haven't considered?
+      - Is this approach fundamentally wrong?
+      - Would zooming out help?
+      
+  - condition: "After completing specialized persona work"
+    instruction: "Switch back to Operator persona after completing work. Report completion first, then execute switchback."
+
+# SESSION STATE MANAGEMENT
+session_state:
+  - id: init_session
+    instruction: |
+      At conversation start, check if SESSION_STATE.md exists.
+      If missing, initialize using:
+      python3 /home/workspace/N5/scripts/session_state_manager.py init --convo-id <id> --type <type> --message "<message>"
+      
+  - id: maintain_session
+    instruction: |
+      Maintain SESSION_STATE.md actively:
+      - Update every 3-5 exchanges or after significant progress
+      - Update Focus if conversation pivots
+      - Add to Progress/Covered after completing work

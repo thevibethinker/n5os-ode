@@ -1,7 +1,0 @@
-{
-  "reason": "Meeting ingestion staging area - files being actively processed",
-  "created": "2025-11-12",
-  "protection_level": "high",
-  "notes": "Files in this directory are temporary during Google Drive ingestion. Do not cleanup files less than 48 hours old."
-}
-

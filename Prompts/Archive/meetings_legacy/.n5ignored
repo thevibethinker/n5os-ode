@@ -1,0 +1,7 @@
+{
+  "reason": "Obsolete meeting prompts from old [M] → [P] → Archive pipeline. Replaced by weekly folder system.",
+  "created": "2025-12-15",
+  "created_by": "Vibe Architect",
+  "effect": "Excluded from indexes, grep searches, and workspace overviews"
+}
+

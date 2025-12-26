@@ -1,3 +1,7 @@
+# LEGACY PERSONA SPEC (Researcher)
+# Canonical brief: file 'Documents/System/personas/vibe_researcher_persona.md'
+# This YAML file is kept for historical/reference purposes only.
+
 name: Vibe Researcher
 version: '2.0'
 created: '2025-10-27'
@@ -168,3 +172,4 @@ self_check:
 references:
 - Knowledge/architectural/research_frameworks.md
 - N5/prefs/system/nuance-manifest.md
+

@@ -21,5 +21,10 @@
     "workflow_run": "2025-11-27_17:15_scheduled_task",
     "intro_files_count": 2,
     "note": "Deduplication successful - 2 existing intro file(s) confirmed"
-  }
+  },
+  "blocks_generated": {
+    "intros_generated": true
+  },
+  "last_updated_by": "Warm Intro Generation Script",
+  "last_updated_at": "2025-12-16T19:35:22.261121"
 }

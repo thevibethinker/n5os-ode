@@ -1,0 +1,139 @@
+{
+  "extracted_at": "2025-12-23T11:13:09.527868Z",
+  "conversations": {
+    "total": 6306,
+    "types": {
+      "automation": 1,
+      "build": 3437,
+      "discussion": 2084,
+      "operations": 1,
+      "planning": 468,
+      "research": 315
+    },
+    "agent_count": 710,
+    "user_count": 5596,
+    "hour_distribution": {
+      "00": 209,
+      "01": 205,
+      "02": 220,
+      "03": 1249,
+      "04": 241,
+      "05": 196,
+      "06": 143,
+      "07": 150,
+      "08": 149,
+      "09": 197,
+      "10": 144,
+      "11": 639,
+      "12": 160,
+      "13": 268,
+      "14": 228,
+      "15": 215,
+      "16": 210,
+      "17": 220,
+      "18": 198,
+      "19": 234,
+      "20": 182,
+      "21": 210,
+      "22": 206,
+      "23": 233
+    },
+    "day_distribution": {
+      "0": 856,
+      "1": 2282,
+      "2": 784,
+      "3": 628,
+      "4": 575,
+      "5": 510,
+      "6": 671
+    }
+  },
+  "code": {
+    "breakdown": {
+      "py": {
+        "files": 836,
+        "lines": 205518
+      },
+      "tsx": {
+        "files": 8,
+        "lines": 102
+      },
+      "ts": {
+        "files": 872,
+        "lines": 364617
+      },
+      "md": {
+        "files": 3942,
+        "lines": 547911
+      },
+      "json": {
+        "files": 2655,
+        "lines": 158337
+      }
+    },
+    "total_lines": 1276485
+  },
+  "meetings": {
+    "total_manifest": 135,
+    "total_processed": 0,
+    "total_blocks": 3198,
+    "b_blocks": {
+      "B00": 3,
+      "B01": 342,
+      "B02": 157,
+      "B03": 442,
+      "B03D": 1,
+      "B03S": 1,
+      "B03a": 4,
+      "B04": 17,
+      "B05": 284,
+      "B05S": 1,
+      "B06": 202,
+      "B06BC": 1,
+      "B07": 248,
+      "B08": 134,
+      "B09": 4,
+      "B10": 7,
+      "B11": 2,
+      "B13": 20,
+      "B14": 236,
+      "B15": 4,
+      "B16": 3,
+      "B21": 286,
+      "B24": 9,
+      "B25": 278,
+      "B26": 340,
+      "B27": 12,
+      "B28": 24,
+      "B30": 1,
+      "B31": 63,
+      "B32": 46,
+      "B40": 5,
+      "B41": 5,
+      "B42": 3,
+      "B43": 4,
+      "B44": 2,
+      "B45": 2,
+      "B46": 1,
+      "B47": 2,
+      "B48": 2
+    }
+  },
+  "knowledge": {
+    "total_files": 305,
+    "structure": {
+      "reference": 6,
+      "market and competitor intel": 2,
+      "architectural": 3,
+      "crm": 267,
+      "reasoning-patterns": 25,
+      "reflections": 1,
+      "linkedin": 0
+    }
+  },
+  "shortio": {
+    "total_links": 51,
+    "total_clicks": 304
+  },
+  "user": "thevibethinker"
+}

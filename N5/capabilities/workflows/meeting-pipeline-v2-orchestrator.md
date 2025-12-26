@@ -1,54 +1,45 @@
 ---
 created: 2025-11-29
-last_edited: 2025-11-29
+last_edited: 2025-12-16
 version: 1.0
 ---
 
 # Meeting Pipeline v2 Orchestrator
 
 ```yaml
+# Zone 2: Capability metadata (machine-readable)
 capability_id: meeting-pipeline-v2-orchestrator
-name: "Meeting Pipeline v2 Orchestrator"
-category: orchestrator
+name: Meeting Pipeline v2 Orchestrator
+category: workflow
 status: active
-confidence: medium
-last_verified: 2025-11-29
+confidence: high
+last_verified: 2025-12-16
 tags:
-  - meetings
-  - pipeline
-  - automation
-  - mg-series
+- meeting-system
+- orchestration
+- scheduled-agents
 entry_points:
-  - type: script
-    id: "N5/orchestration/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md"
-  - type: prompt
-    id: "Prompts/Meeting Manifest Generation.prompt.md"
-  - type: prompt
-    id: "Prompts/Meeting Intelligence Generator.prompt.md"
-  - type: prompt
-    id: "Prompts/Meeting State Transition.prompt.md"
-  - type: prompt
-    id: "Prompts/Meeting Archive.prompt.md"
-  - type: prompt
-    id: "Prompts/Warm Intro Generator.prompt.md"
-  - type: prompt
-    id: "Prompts/Follow-Up Email Generator.prompt.md"
-  - type: agent
-    id: "⇱ 🧠 Meeting Manifest Generation Process [MG-1️⃣]"
-  - type: agent
-    id: "⇱ 🧠 Meeting Block Generation Process [MG-2️⃣]"
-  - type: agent
-    id: "⇱ 🧠 Meeting Blurbs Generation Process [MG-3️⃣]"
-  - type: agent
-    id: "⇱ 🧠 Warm Intro Setup [MG-4️⃣]"
-  - type: agent
-    id: "⇱ 🧠 Follow-Up Email Generation v2 [MG-5️⃣]"
-  - type: agent
-    id: "🧠 [M] -> [P] Transition [MG-6️⃣]"
-  - type: agent
-    id: "⇱ 🧠 Meeting Archive Automation [MG-7️⃣]"
-owner: "V"
+- type: agent
+  id: MG-1 (Manifests)
+- type: agent
+  id: MG-2 (Blocks)
+- type: agent
+  id: MG-3 (Blurbs)
+- type: agent
+  id: MG-4 (Warm Intros)
+- type: agent
+  id: MG-5 (Follow-Ups)
+owner: V
+change_type: update
+capability_file: N5/capabilities/workflows/meeting-pipeline-v2-orchestrator.md
+description: "Refactored MG-1 through MG-5 scheduled agents to run on a \"Business\
+  \ Hours Only\" schedule (08:00\u201320:00 ET). Updated MG-5 to be strictly draft-only\
+  \ and external-only.\n"
+associated_files:
+- N5/capabilities/workflows/meeting-pipeline-v2-orchestrator.md
+- N5/capabilities/workflows/follow-up-email-generator-v2-agent.md
 ```
+
 
 ## What This Does
 

@@ -207,7 +207,7 @@ Load modules selectively based on task context. **Do not load all modules by def
 - "Load up" / "prime" protocols
 - Engagement patterns
 
-**Conversation End** → `file 'N5/prefs/operations/conversation-end.md'`
+**Conversation End** → `file 'N5/prefs/operations/conversation-end-v3.md'`
 - End-of-conversation protocols
 - Cleanup procedures
 
@@ -404,3 +404,4 @@ When referring to lists, always check `/home/workspace/N5/lists/` and `/home/wor
 **For full details on each module, see the module files directly or consult `file 'N5/prefs/README.md'`.**
 
 **For historical context on preference system evolution, see `file 'N5/prefs/Archive/README.md'`.**
+

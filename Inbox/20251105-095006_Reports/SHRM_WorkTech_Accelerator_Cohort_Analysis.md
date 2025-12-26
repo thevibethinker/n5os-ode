@@ -1,9 +1,8 @@
 ---
 created: 2025-11-03
 last_edited: 2025-11-03
-version: 1.0
+version: 1
 ---
-
 # SHRM WorkTech Accelerator — Past Cohorts & Trend Analysis
 
 ## Executive Summary

@@ -1,0 +1,53 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Logs
+*.log
+logs/
+
+# State & Runtime
+.state/
+runtime/
+*.lock
+
+# USER CONFIGS (NEVER COMMIT) - Privacy Protection
+user_config/
+.n5_install_metadata.json
+.n5_snapshots/
+
+# Telemetry (Local Only)
+telemetry.jsonl
+
+# Sensitive Data
+credentials/
+*.key
+*.pem
+*.env
+.env
+
+# Records & Personal Data (don't export user's data)
+Records/
+exports/
+inbox/
+Lists/*.jsonl
+!Lists/*.jsonl.template
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Git
+*.orig

@@ -1,0 +1,53 @@
+{
+  "title": "ZoWrapped 2025",
+  "user": "V",
+  "milestones": {
+    "total_conversations": 6251,
+    "token_estimate": 20270804,
+    "sites_created": 7,
+    "prompts_created": 171
+  },
+  "top_commands": [
+    {
+      "name": "Meeting Intelligence Generator",
+      "count": 158
+    },
+    {
+      "name": "Meeting Manifest Generation",
+      "count": 94
+    },
+    {
+      "name": "Warm Intro Generator",
+      "count": 55
+    },
+    {
+      "name": "Follow-Up Email Generator",
+      "count": 16
+    },
+    {
+      "name": "Meeting Transcript Scan",
+      "count": 15
+    }
+  ],
+  "peak": {
+    "month": "December",
+    "hour": "03:00",
+    "persona": "Late Night Architect"
+  },
+  "sites": [
+    "productivity-dashboard",
+    "fabregas-cannon-staging",
+    "fabregas-cannon",
+    "workout-legal",
+    "productivity-dashboard-staging",
+    "n5-waitlist",
+    "fitbit-legal"
+  ],
+  "file_growth": {
+    "*.py": 1375,
+    "*.tsx": 544,
+    "*.ts": 26875,
+    "*.md": 22023,
+    "*.json": 9402
+  }
+}

@@ -1,3 +1,7 @@
+# LEGACY PERSONA SPEC (Builder)
+# Canonical brief: file 'Documents/System/personas/vibe_builder_persona.md'
+# This YAML file is kept for historical/reference purposes only.
+
 name: Vibe Builder
 version: '2.0'
 created: '2025-10-13'
@@ -92,3 +96,4 @@ references:
 - Knowledge/architectural/planning_prompt.md
 - Knowledge/architectural/architectural_principles.md
 - N5/prefs/system/nuance-manifest.md
+

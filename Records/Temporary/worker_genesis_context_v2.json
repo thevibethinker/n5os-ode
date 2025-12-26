@@ -1,0 +1,14 @@
+{
+  "instruction": "Implement the N5OS Lite v3 Genesis Protocol (Onboarder, Wisdom-Focused Memory Export, Records System, Wizard)",
+  "parent_focus": "N5OS Lite v3 Packaging & Genesis Protocol Implementation",
+  "parent_objective": "Create a self-assembling, educational onboarding experience for N5OS Lite v3 that transplants the user's digital soul (Wisdom/Beliefs).",
+  "parent_status": "Planning complete, ready for implementation",
+  "parent_type": "build",
+  "key_decisions": [
+    "Use a 'Vibe Onboarder' persona to interview the user instead of a silent script.",
+    "Prioritize 'Memory Transplant' of Wisdom/Beliefs/Frameworks over simple file copy.",
+    "Include the full 'Records' system structure (AARs, Personal, Company) in the bootstrap.",
+    "Do not require manual copy-pasting of rules; the Onboarder will install them programmatically."
+  ],
+  "additional_context": "## Detailed Requirements\n\n**1. Memory Transplant 2.0**\nThe export prompt must be designed to extract high-value cognitive artifacts from other AIs:\n- Core Beliefs & Values\n- Decision-Making Frameworks\n- Strategic Ideas\n- Key Relationships (Context, not just names)\n\n**2. Records System Structure**\nThe bootstrap wizard must initialize the canonical Records hierarchy:\n- `Records/AARs/` (After Action Reports)\n- `Records/Personal/` (Drafts, Inbox, Knowledge)\n- `Records/Company/` (Proposals, Tech, Metrics)\n- `Records/Reflections/`\n\n**3. Educational Onboarding**\nThe Onboarder persona must be pedagogical. As it installs components, it should explain *why*:\n- 'I am creating `Records/AARs` now. Use this folder to analyze failures so you don't repeat them.'\n- 'I am installing the Session State rule. This is your system's short-term memory.'\n\n**4. Deliverables**\n- `personas/vibe_onboarder.md`\n- `prompts/external_memory_export.md`\n- `scripts/n5_bootstrap_wizard.py`\n- `config/core_rules.json`"
+}

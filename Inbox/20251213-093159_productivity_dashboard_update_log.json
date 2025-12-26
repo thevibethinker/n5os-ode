@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-12-12T01:01:47Z",
+  "timezone": "America/New_York",
+  "workflow": "Update Productivity Dashboard",
+  "status": "success",
+  "data_collection": {
+    "gmail_data": {
+      "attawar_v_gmail_com": {
+        "emails_sent_today": 0,
+        "emails_found": 1,
+        "date_range": "2025-12-10 to 2025-12-11",
+        "note": "Email dated 2025-12-10, before today (2025-12-11)"
+      },
+      "vrijen_mycareerspan_com": {
+        "emails_sent_today": 1,
+        "emails_found": 8,
+        "date_range": "2025-12-10 to 2025-12-11",
+        "emails_today": ["Talent call with Careerspan (2025-12-11T13:28:39Z)"],
+        "other_recent": 7
+      },
+      "total_emails_sent_today": 1
+    },
+    "calendar_data": {
+      "account": "attawar.v@gmail.com",
+      "events_today": 1,
+      "events": [
+        {
+          "summary": "Daily Centering Task",
+          "start": "2025-12-11T08:15:00-05:00",
+          "end": "2025-12-11T08:30:00-05:00",
+          "duration_minutes": 15,
+          "all_day": false
+        }
+      ],
+      "meeting_hours_calculated": 0.25
+    }
+  },
+  "database_update": {
+    "script_call": "python3 /home/workspace/Sites/productivity-dashboard/sync_gmail_v2.py --emails 1 --meetings 0.25",
+    "script_output": {
+      "date": "2025-12-12",
+      "emails_sent": 1,
+      "meeting_hours": 0.25,
+      "expected_emails": 24.4,
+      "rpi": 4.1,
+      "tier": "Behind Schedule 🔻",
+      "is_weekend": false
+    },
+    "database_location": "/home/workspace/productivity_tracker.db",
+    "verification_query": "SELECT date, emails_sent, expected_emails, rpi FROM daily_stats WHERE date='2025-12-12'",
+    "database_record": {
+      "date": "2025-12-12",
+      "emails_sent": 1,
+      "expected_emails": 24.4,
+      "rpi": 4.1
+    }
+  },
+  "rpi_calculation": {
+    "formula": "RPI = (emails_sent / expected_emails) * 100",
+    "inputs": {
+      "emails_sent": 1,
+      "meeting_hours": 0.25,
+      "free_hours": 7.75,
+      "is_weekend": false
+    },
+    "expected_emails_breakdown": "(7.75 * 2.5) + 5.0 = 24.375 ≈ 24.4",
+    "rpi_result": "4.1%",
+    "tier": "Behind Schedule 🔻"
+  },
+  "completion_status": "VERIFIED ✓"
+}

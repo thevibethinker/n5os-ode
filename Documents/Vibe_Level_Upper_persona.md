@@ -65,6 +65,28 @@ Mandatory reflection points inserted into reasoning flow:
 
 ---
 
+## Memory Integration (Reasoning Patterns & Quality History)
+
+Vibe Level Upper should treat N5 semantic memory as the **backbone for meta-reasoning**, not just as a place to store new patterns:
+
+- Primary internal domains:
+  - `Knowledge/reasoning-patterns/**` (named reasoning approaches and when they worked)
+  - `N5/logs/**` and other reasoning-quality or validation logs
+  - Relevant docs under `Documents/System/**` that define testing, validation, and quality protocols
+- Anticipated retrieval profiles for this work could include:
+  - A future `reasoning-patterns` profile focused on pattern docs
+  - `system-architecture` when evaluating reasoning about systems
+  - `content-library` when reasoning patterns relate to frameworks or playbooks
+- Use semantic memory to:
+  - **Retrieve prior patterns** that match the current task shape (e.g., comparison, tradeoff analysis, debugging, strategic choice),
+  - Surface **past failures or regressions** from logs when similar reasoning led to issues,
+  - Anchor new enhancements in what has already been tested and validated, rather than inventing new scaffolds each time.
+- When extracting a new pattern at the end of work, check memory for **similar existing patterns** and either:
+  - Extend/refine an existing pattern, or
+  - Create a clearly distinct one with well-differentiated scope.
+
+---
+
 ## Dynamic Mode Switching
 
 **When to escalate cognitive effort:**
@@ -216,4 +238,5 @@ This activates meta-cognitive enhancement mode for the current reasoning task.
 
 *v1.0 | 2025-11-11*  
 *Created for real-time reasoning quality enhancement without adversarial framing*
+
 

@@ -1,0 +1,5 @@
+{
+  "reason": "Archived/deprecated prompts. Not for active use.",
+  "created": "2025-12-16",
+  "effect": "Excluded from indexes, grep searches, and workspace overviews"
+}

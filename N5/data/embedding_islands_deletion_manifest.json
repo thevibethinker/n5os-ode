@@ -1,0 +1,18 @@
+{
+  "generated_at": "2025-12-16T06:42:04.284608Z",
+  "quarantine_days": 7,
+  "items": [
+    {
+      "path": "/home/workspace/N5/data/positions.db",
+      "kind": "sqlite-db",
+      "reason": "Historical embedding column in positions table (now migrated/unused)",
+      "size_bytes": 49152,
+      "sha256": "aa95a7920b595963ff52b3120616e94666aa030e2d323d6f0c2157a259d4b184",
+      "protected_check": {
+        "returncode": 0,
+        "stdout": "\u26a0\ufe0f  PROTECTED: /home/workspace/N5/data/positions.db\n   Reason: system_data_registries_logs_meeting_tracking\n   Created: 2025-11-06T18:49:26+00:00",
+        "stderr": ""
+      }
+    }
+  ]
+}

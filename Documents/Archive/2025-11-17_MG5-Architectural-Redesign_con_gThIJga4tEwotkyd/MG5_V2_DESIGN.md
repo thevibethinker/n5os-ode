@@ -1,9 +1,8 @@
 ---
 created: 2025-11-17
 last_edited: 2025-11-17
-version: 1.0
+version: 1
 ---
-
 # MG-5 v2.0: Follow-Up Email Generation (LLM-First Architecture)
 
 **This is conversation con_gThIJga4tEwotkyd**

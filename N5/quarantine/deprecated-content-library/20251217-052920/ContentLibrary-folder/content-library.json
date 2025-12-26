@@ -1,0 +1,255 @@
+{
+  "entries": {
+    "article_career-transitions-a-practical-guide_5bff37d8": {
+      "confidence": 3,
+      "content_path": "content/article_career-transitions-a-practical-guide_5bff37d8.md",
+      "content_type": "article",
+      "content_word_count": 32,
+      "date_added": "2025-11-11T18:16:26",
+      "date_created": "2025-11-11",
+      "date_discovered": "2025-11-11",
+      "has_content": true,
+      "has_summary": false,
+      "id": "article_career-transitions-a-practical-guide_5bff37d8",
+      "key_findings": [
+        "Career transitions are identity transitions requiring psychological adaptation",
+        "Practical strategies matter more than pure skills in successful transitions",
+        "The average professional makes 3-5 major career shifts in their lifetime"
+      ],
+      "provenance": {
+        "platform": "medium.com",
+        "source_type": "created"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary_path": null,
+      "tags": [],
+      "title": "Career Transitions: A Practical Guide",
+      "topics": [
+        "career-transitions",
+        "job-search",
+        "mindset"
+      ],
+      "url": "https://medium.com/@vrijen/career-transitions-guide"
+    },
+    "article_how-to-navigate-career-transitions_7289ae": {
+      "confidence": 3,
+      "content_type": "article",
+      "date_added": "2025-11-11T18:09:21.700204",
+      "date_created": "2025-11-11",
+      "id": "article_how-to-navigate-career-transitions_7289ae",
+      "key_findings": [],
+      "provenance": {
+        "platform": "medium.com",
+        "source_type": "created"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary": "",
+      "tags": [],
+      "title": "How to Navigate Career Transitions",
+      "topics": [
+        "career-transitions",
+        "job-search",
+        "mindset"
+      ],
+      "url": "https://medium.com/@vrijen/my-article-title"
+    },
+    "article_in-the-zo-one_ac86e4bb": {
+      "confidence": 3,
+      "content_path": "content/article_in-the-zo-one_ac86e4bb.md",
+      "content_type": "article",
+      "content_word_count": 266,
+      "date_added": "2025-12-01T20:31:59",
+      "date_created": "2025-12-01",
+      "date_discovered": "2025-12-01",
+      "has_content": true,
+      "has_summary": false,
+      "id": "article_in-the-zo-one_ac86e4bb",
+      "key_findings": [],
+      "provenance": {
+        "platform": "gamma.app",
+        "source_type": "created"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary_path": null,
+      "tags": [
+        "deck",
+        "presentation",
+        "gamma",
+        "zo"
+      ],
+      "title": "In the Zo-one",
+      "topics": [
+        "productivity",
+        "AI",
+        "Zo",
+        "South Park Commons"
+      ],
+      "url": "https://gamma.app/docs/In-The-Zo-ne-98uqcks656yqn50?mode=doc"
+    },
+    "article_test-article-title_29b6d6aa": {
+      "confidence": 3,
+      "content_path": null,
+      "content_type": "article",
+      "date_added": "2025-11-11T18:26:48",
+      "date_created": "2025-11-11",
+      "date_discovered": "2025-11-11",
+      "has_content": false,
+      "has_summary": false,
+      "id": "article_test-article-title_29b6d6aa",
+      "key_findings": [
+        "Test finding one",
+        "Test finding two"
+      ],
+      "provenance": {
+        "platform": "test.example.com",
+        "source_type": "created"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary_path": null,
+      "tags": [],
+      "title": "Test Article Title",
+      "topics": [
+        "test"
+      ],
+      "url": "https://test.example.com/article"
+    },
+    "case-study_aspire-x-careerspan-proposal_5dd789b1": {
+      "confidence": 3,
+      "content_path": null,
+      "content_type": "case-study",
+      "date_added": "2025-12-01T16:52:30",
+      "date_created": "2025-12-01",
+      "date_discovered": "2025-12-01",
+      "has_content": false,
+      "has_summary": true,
+      "id": "case-study_aspire-x-careerspan-proposal_5dd789b1",
+      "key_findings": [
+        "Historical Aspire cohort of 627 invited alumni produced 87 stories, 103 resumes and 84 job fit checks with 155 fully activated users (about 24% activation).",
+        "AI content costs were roughly 453 dollars versus about 12,300 dollars of equivalent human coaching value, yielding roughly 27x ROI.",
+        "The proposal scales to a 1,000-learner, 6-month program assuming around 16% activation and roughly double the usage depth per active alumnus versus the prior Aspire cohort.",
+        "Projected AI content cost for the scaled program is about 950 dollars, delivering an estimated 246 hours (around 24.6k dollars) of coaching-equivalent support."
+      ],
+      "provenance": {
+        "platform": "docs.google.com",
+        "source_type": "created"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary": "Proposal-level case study for Aspire Institute alumni: documents prior cohort results (627 invited, 155 activated, 87 stories, 103 resumes, 84 job-fit checks) showing about 27x ROI on AI content costs, then projects a 1,000-learner, 6-month program with usage-linked pricing around 950 dollars and roughly 246 hours of coaching-equivalent value.",
+      "summary_path": null,
+      "summary_word_count": 49,
+      "tags": [
+        "entity=careerspan",
+        "entity=aspire",
+        "cohort=alumni",
+        "medium=google-docs"
+      ],
+      "title": "Aspire x Careerspan Proposal",
+      "topics": [
+        "coaching",
+        "job-search",
+        "strategy"
+      ],
+      "url": "https://docs.google.com/document/d/1PrzlL1VxOV8ae2TtqZNh83mjCWMLO8NzLrTumAJVZTo/edit"
+    },
+    "case-study_umass-isenberg-x-careerspan-pilot-report_7c95499c": {
+      "confidence": 3,
+      "content_path": null,
+      "content_type": "case-study",
+      "date_added": "2025-12-01T16:52:30",
+      "date_created": "2025-12-01",
+      "date_discovered": "2025-12-01",
+      "has_content": false,
+      "has_summary": true,
+      "id": "case-study_umass-isenberg-x-careerspan-pilot-report_7c95499c",
+      "key_findings": [
+        "92% of students said Careerspan strengthened the standout experiences they wanted to highlight.",
+        "80% reported discovering additional experiences or stories they would not have emphasized before.",
+        "Confidence in talking about experiences in interviews/networking increased by 12.3% on a 1\u20135 scale.",
+        "Engagement was strong: 247 story starts with 218 completions, low abandonment and multiple peaks beyond deadline-driven usage.",
+        "Qualitative themes included specificity, recognition of transferable skills, better professional communication and improved tailoring to target roles."
+      ],
+      "provenance": {
+        "platform": "docs.google.com",
+        "source_type": "created"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary": "Pilot report for Fall 2025 UMass Isenberg transfer-student cohort (110 students using Careerspan in ISEN 291T). Three brief AI-guided conversations materially improved students\u2019 confidence and storytelling, validated through pre/post surveys, platform analytics and qualitative reflections.",
+      "summary_path": null,
+      "summary_word_count": 35,
+      "tags": [
+        "entity=careerspan",
+        "entity=umass-isenberg",
+        "cohort=students",
+        "medium=google-docs"
+      ],
+      "title": "UMass Isenberg x Careerspan Pilot Report",
+      "topics": [
+        "coaching",
+        "job-search",
+        "communication",
+        "mindset"
+      ],
+      "url": "https://docs.google.com/document/d/1Bpztz8gQcco24Xz3dboVGboxhacuQFMau99b9Vd7zyU/edit"
+    },
+    "social-post_ben-lang-accelerators-shortlist-for-early-founders_fd280c59": {
+      "confidence": 3,
+      "content_path": "content/social-post_ben-lang-accelerators-shortlist-for-early-founders_fd280c59.md",
+      "content_type": "social-post",
+      "content_word_count": 90,
+      "date_added": "2025-12-02T01:32:19",
+      "date_discovered": "2025-12-02",
+      "has_content": true,
+      "has_summary": false,
+      "id": "social-post_ben-lang-accelerators-shortlist-for-early-founders_fd280c59",
+      "key_findings": [],
+      "provenance": {
+        "platform": "x.com",
+        "source_type": "discovered"
+      },
+      "relationships": {
+        "referenced_in": [],
+        "related_to": []
+      },
+      "summary_path": null,
+      "tags": [
+        "twitter",
+        "x",
+        "accelerators",
+        "shortlist"
+      ],
+      "title": "Ben Lang \u2013 accelerators shortlist for early founders",
+      "topics": [
+        "accelerators",
+        "early-stage founders",
+        "fundraising",
+        "SPC"
+      ],
+      "url": "https://x.com/benln/status/1995557150203281730"
+    }
+  },
+  "metadata": {
+    "created": "2025-11-11",
+    "last_updated": "2025-12-02T01:32:19",
+    "schema_version": "1.0",
+    "total_entries": 7,
+    "version": "1.0"
+  }
+}

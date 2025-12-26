@@ -1,0 +1,11 @@
+I am starting the **Phase 4 Cognition Build** to implement local semantic memory.
+
+I have already analyzed the architecture and prepared a launch manifest.
+Please read `file 'N5/builds/cognition-layer-v1/WORKER_LAUNCH_MANIFEST.md'` and then:
+
+1.  **Initialize the Build Environment** (verify snapshot exists).
+2.  **Execute Worker 1 (Infrastructure)** immediately.
+3.  Report status and prepare to execute Worker 2.
+
+My goal is to have the "Brain" active and indexing my files by the end of this session.
+

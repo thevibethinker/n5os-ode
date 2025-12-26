@@ -1,0 +1,65 @@
+{
+  "library_path": "./data/content-library.json",
+  "auto_classify": true,
+  "classification_rules": {
+    "purpose_signals": {
+      "bio": ["founder", "ceo", "background", "experience", "career", "about me"],
+      "education": ["guide", "how to", "learn", "tutorial", "course", "training"],
+      "scheduling": ["calendly", "meeting", "book", "schedule", "calendar"],
+      "referral": ["promo", "referral", "discount", "code", "affiliate"],
+      "product": ["feature", "product", "demo", "walkthrough", "launch"],
+      "hook": ["pitch", "hook", "opening", "intro", "value prop"],
+      "signature": ["signature", "footer", "contact", "reach me"],
+      "resource": ["article", "resource", "link", "reference", "documentation"],
+      "pitch": ["pitch deck", "investor", "fundraising", "series"],
+      "onboarding": ["onboarding", "welcome", "getting started", "new hire"],
+      "support": ["support", "help", "faq", "troubleshooting"],
+      "marketing": ["marketing", "campaign", "announcement", "press"],
+      "sales": ["sales", "proposal", "quote", "pricing"],
+      "hiring": ["job", "hiring", "position", "candidate", "interview"],
+      "fundraising": ["raise", "round", "investment", "funding"]
+    },
+    "audience_signals": {
+      "founders": ["founder", "startup", "entrepreneur", "building"],
+      "investors": ["investor", "fundraising", "pitch", "cap table"],
+      "customers": ["customer", "user", "client", "buyer"],
+      "candidates": ["candidate", "applicant", "hire", "job seeker"],
+      "team": ["team", "employee", "staff", "internal"],
+      "partners": ["partner", "partnership", "collaboration", "integration"],
+      "media": ["media", "press", "journalist", "reporter"],
+      "advisors": ["advisor", "mentor", "board", "consultant"]
+    },
+    "tone_signals": {
+      "concise": {
+        "max_words": 50
+      },
+      "detailed": {
+        "min_words": 200
+      },
+      "formal": {
+        "keywords": ["hereby", "pursuant", "accordance", "respectfully"]
+      },
+      "casual": {
+        "keywords": ["hey", "cool", "awesome", "yeah", "folks"]
+      },
+      "technical": {
+        "keywords": ["api", "database", "architecture", "algorithm", "deployment"]
+      },
+      "storytelling": {
+        "keywords": ["imagine", "story", "journey", "before", "after"]
+      },
+      "data-driven": {
+        "keywords": ["metric", "data", "growth", "conversion", "roi"]
+      }
+    }
+  },
+  "entity_extraction": {
+    "enabled": true,
+    "custom_entities": []
+  },
+  "search_defaults": {
+    "include_deprecated": false,
+    "include_expired": false,
+    "max_results": 50
+  }
+}

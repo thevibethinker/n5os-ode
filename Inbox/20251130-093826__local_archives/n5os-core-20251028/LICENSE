@@ -1,0 +1,51 @@
+MIT License
+
+Copyright (c) 2025 Vrijen Attawar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+ADDITIONAL TERMS FOR N5 OS ECOSYSTEM:
+
+1. CORE vs. MODULES:
+   - This license applies to "N5 OS Core" (this repository)
+   - Expansion packs and modules may have separate commercial licenses
+   - Check each expansion pack's LICENSE file for terms
+
+2. ATTRIBUTION:
+   - If you build upon N5 OS Core, please credit:
+     "Built on N5 OS Core by Vrijen Attawar (github.com/vrijenattawar/n5os-core)"
+
+3. CONTRIBUTIONS:
+   - Contributions to N5 OS Core remain MIT licensed
+   - Expansion pack contributions follow their respective licenses
+
+4. NO WARRANTY:
+   - This is cognitive infrastructure. Use at your own risk.
+   - Always backup your data before using N5 OS scripts.
+   - Test in dry-run mode before production use.
+
+---
+
+For questions about licensing, expansion packs, or commercial use:
+Contact: [your contact information]
+
+Version: 1.0-core
+Date: October 26, 2025

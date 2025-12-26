@@ -1,0 +1,587 @@
+{
+  "generated_at": "2025-12-13T14:57:46.244738",
+  "form_id": "8JxXF1AVZeus",
+  "draft": {
+    "to": "logan@mycareerspan.com",
+    "subject": "Re: Careerspan perk for Marvin — ready to help with hiring",
+    "body": "Hey Logan,\n\nThanks for signing up for the Careerspan demo through Marvin Ventures.\n\nSaw you're actively hiring — that's exactly where we can help cut through the noise. You flagged screening as a pain point — we hear that a lot from founders.\n\nAs a Marvin member, you've got 3 months of role support covered — let's put it to work.\n\nReady to get started?\nhttps://calendly.com/v-at-careerspan/30min\n\nBest,\nVrijen S Attawar\nCEO @ Careerspan\n---\n👉 Try Careerspan! (http://www.mycareerspan.com) and Follow us on LinkedIn! (https://www.linkedin.com/company/careerspan/)\n✋ Let's connect on Twitter (https://mobile.twitter.com/VAttawar) or LinkedIn (http://www.linkedin.com/in/vrijenattawar)\n",
+    "html_body": "Hey Logan,<br/><br/>\nThanks for signing up for the Careerspan demo through Marvin Ventures.<br/><br/>\nSaw you're actively hiring — that's exactly where we can help cut through the noise. You flagged screening as a pain point — we hear that a lot from founders.<br/><br/>\nAs a Marvin member, you've got 3 months of role support covered — let's put it to work.<br/><br/>\nReady to get started?<br/>\nhttps://calendly.com/v-at-careerspan/30min<br/><br/>\nBest,<br/>\nVrijen S Attawar<br/>\nCEO @ Careerspan<br/>\n---<br/>\n👉 <a href=\"http://www.mycareerspan.com\">Try Careerspan!</a> and <a href=\"https://www.linkedin.com/company/careerspan/\">Follow us on LinkedIn!</a><br/>\n✋ Let's connect on <a href=\"https://mobile.twitter.com/VAttawar\">Twitter</a> or <a href=\"http://www.linkedin.com/in/vrijenattawar\">LinkedIn</a><br/>\n<br/>",
+    "context": {
+      "submission": {
+        "name": "Logan Currie",
+        "company": "Careerspan",
+        "email": "logan@mycareerspan.com",
+        "linkedin_url": "https://www.linkedin.com/in/logan-currie/",
+        "roles_hiring": "",
+        "pain_points": [
+          "I'm spending too much time screening candidates (especially bad ones)",
+          "My best candidates seem to drop out of the process",
+          "My ATS isn't helping me narrow down candidates meaningfully"
+        ]
+      },
+      "enrichment": {
+        "person": {
+          "id": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+          "fullName": "Logan Currie",
+          "firstName": "Logan",
+          "lastName": "Currie",
+          "entityType": "person",
+          "location": "Cambridge, Massachusetts, United States",
+          "URLs": {
+            "twitter": "x.com/loganhcurrie",
+            "linkedin": "linkedin.com/in/logan-currie",
+            "crunchbase": "crunchbase.com/person/logan-currie"
+          },
+          "about": "Helping people build career IP in an AI-shaped world. \n15 years across 5 countries → startups, education, and the future of work.\n\n🚀 Co-founder of Careerspan, where we’re reimagining career growth for the age of automation: dynamic skill mapping, narrative intelligence, and tools that help you outpace change.\n \n🎓 Just finished up a masters at Harvard digging into how AI is reshaping work, learning, and self-advocacy.\n\n🙌  Founding Member of Women Applying AI, volunteering in programming + community onboarding. \n\n🎯 Mission: Equip people to navigate work with confidence, clarity, and power.\n\nWhen not geeking out about skills and the future of work, you'll find me:\n- hunting for the best 面条 in Boston (suggestions welcome!)\n- exploring the playgrounds of Cambridge with my kids\n- reading many books ... both highbrow and lowbrow. \n\n💬 Always up for a good jam session on:\n- AI in work + life \n- Zig-zag careers \n- All things skills and learning\n- Travel (always)",
+          "headline": "Founder @Careerspan | Mom @home |\nReimagining the post-resume future of work",
+          "skills": [
+            "Interviewing",
+            "Content Development",
+            "Program Facilitation",
+            "Future of Work",
+            "Workforce Development",
+            "Artificial Intelligence (AI)",
+            "Strategic Partnerships",
+            "Business Development",
+            "Professional Development Programs",
+            "STEM",
+            "Technology Education",
+            "Educational Technology",
+            "Curriculum Development",
+            "Show Hosting",
+            "Strategic Consulting",
+            "Consulting",
+            "Operations Management",
+            "Start-up Leadership",
+            "Sales Operations",
+            "L&D Strategy"
+          ],
+          "certifications": [
+            {
+              "name": "Growth Marketing Programme",
+              "issued": "2024-08-01T00:00:00.000Z",
+              "companyID": "L1YxIliDSoWC8mppajHOdVz3e6Cq65W",
+              "companyName": "SYSTM"
+            }
+          ],
+          "gender": "female",
+          "linkedinID": "logan-currie",
+          "linkedinNumID": 22013800,
+          "linkedinEntityID": "ACoAAAFP52gB0CJ7gsY1rdSUjWMlbnxv6rcelx4",
+          "investedRoundList": [],
+          "investedIndustries": [],
+          "investorCategoryList": [],
+          "investorTitle": "Logan Currie",
+          "computed_highlightList": [
+            "employeeDuringMA",
+            "oneYearAtCurrentCompany",
+            "priorBackedFounder",
+            "topUniversity",
+            "USImmigrant"
+          ],
+          "lastUpdated": "2025-11-06T23:33:57.853Z",
+          "locationIDList": [
+            102191575,
+            85633793,
+            102084643,
+            404476475,
+            85950329,
+            85688645
+          ],
+          "linkedinConnections": 3202,
+          "linkedinFollowers": 3930,
+          "linkedinJoinDate": "2008-03-02T03:16:57.000Z",
+          "experienceList": [
+            {
+              "endDate": "2021-12-01T00:00:00.000Z",
+              "startDate": "2020-06-01T00:00:00.000Z",
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2020-06-01T00:00:00.000Z",
+                  "endDate": "2021-12-01T00:00:00.000Z",
+                  "title": "Director",
+                  "location": "Shanghai, China",
+                  "seniorityScore": 4,
+                  "description": "Brought in to lead an international school after the founder repatriated. Designed and implemented a 21st-century learning curriculum along with extracurricular technology-focused programs. Led professional development for a staff from 5+ countries. Oversaw admissions, marketing, and operations."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyName": "Rainbow Tree Academy",
+              "company": {
+                "name": "Rainbow Tree Academy",
+                "industryList": []
+              }
+            },
+            {
+              "endDate": "2024-05-01T00:00:00.000Z",
+              "startDate": "2023-10-01T00:00:00.000Z",
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2023-10-01T00:00:00.000Z",
+                  "endDate": "2024-05-01T00:00:00.000Z",
+                  "title": "Co Host",
+                  "seniorityScore": 2,
+                  "description": "Co-hosted a podcast exploring the future of work, skills development, and career growth. Interviewed industry experts and education leaders to share insights with early-career professionals and educators."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyName": "Your Next Move podcast",
+              "company": {
+                "name": "Your Next Move podcast",
+                "industryList": []
+              }
+            },
+            {
+              "endDate": "2022-12-01T00:00:00.000Z",
+              "startDate": "2021-12-01T00:00:00.000Z",
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2021-12-01T00:00:00.000Z",
+                  "endDate": "2022-12-01T00:00:00.000Z",
+                  "title": "Co-Founder",
+                  "department": "EXECUTIVE",
+                  "seniorityScore": 5,
+                  "description": "Built screen-free STEM toys to help kids learn through hands-on play. Ideated, designed, and tested prototypes for sustainable wooden toys to teach circuits, mechanics, and problem-solving (without screens, manuals, or a hundred pieces). Paused when COVID-19 lockdowns in China made shipping + manufacturing impossible. Anyone working in hardware/education? Reach out - would love to revive this but don’t have the bandwidth!"
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyName": "Techies Learning",
+              "company": {
+                "name": "Techies Learning",
+                "industryList": []
+              }
+            },
+            {
+              "endDate": "2017-05-01T00:00:00.000Z",
+              "startDate": "2015-06-01T00:00:00.000Z",
+              "linkedinNumID": 6430030,
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2015-06-01T00:00:00.000Z",
+                  "endDate": "2017-05-01T00:00:00.000Z",
+                  "title": "Business Development Manager & Head of Consulting",
+                  "department": "BUSINESS_DEVELOPMENT",
+                  "description": "Worked closely with the CEO of a PE-backed education startup to design 'externships' connecting high school students with real-world work opportunities. Managed a team of 5, oversaw a large marketing budget and developed new programs for Singapore’s international schools. Despite early momentum, the company ultimately folded. I learned a lot about growth, product-market fit, and resilience."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyID": "BxEJEnqY7JfmHGW4Yvh7lNd2oapmaWy",
+              "companyName": "The Keys Academy",
+              "company": {
+                "id": "BxEJEnqY7JfmHGW4Yvh7lNd2oapmaWy",
+                "name": "The Keys Academy",
+                "country": "Singapore",
+                "region": "Singapore",
+                "locality": "Singapore",
+                "URLs": {
+                  "website": "thekeys.global",
+                  "linkedin": "linkedin.com/company/thekeysacademy"
+                },
+                "industryList": [
+                  "Education Administration Programs"
+                ]
+              }
+            },
+            {
+              "endDate": "2019-12-01T00:00:00.000Z",
+              "startDate": "2017-05-01T00:00:00.000Z",
+              "linkedinNumID": 14692380,
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2017-05-01T00:00:00.000Z",
+                  "endDate": "2019-12-01T00:00:00.000Z",
+                  "title": "Co-Founder & CEO, Head Coach",
+                  "location": "Singapore",
+                  "department": "EXECUTIVE",
+                  "description": "Co-founded a college and career consulting company helping students navigate applications, internships, and early career decisions through storytelling. Along with two cofounders, grew the business to serve clients across Asia, Europe, and the US. Experimented with scaling beyond 1:1 coaching, including launching a MOOC, but found personalization was key to success. Successfully exited the business."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyID": "fv9WOkPP8HbOB-PA-U7XvSXYVhCCEjF",
+              "companyName": "The Keys Admissions",
+              "company": {
+                "id": "fv9WOkPP8HbOB-PA-U7XvSXYVhCCEjF",
+                "name": "The Keys Admissions",
+                "country": "Singapore",
+                "region": "Singapore",
+                "locality": "Singapore",
+                "URLs": {
+                  "website": "thekeysadmissions.org",
+                  "linkedin": "linkedin.com/company/the-keys-admissions"
+                },
+                "industryList": [
+                  "Higher Education"
+                ]
+              }
+            },
+            {
+              "endDate": "2025-04-01T00:00:00.000Z",
+              "startDate": "2024-01-01T00:00:00.000Z",
+              "linkedinNumID": 76100720,
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2024-01-01T00:00:00.000Z",
+                  "endDate": "2025-04-01T00:00:00.000Z",
+                  "title": "Study Group Leader",
+                  "location": "Cambridge, Massachusetts, United States",
+                  "description": "Bringing together a select group of 50 graduate students from across Harvard to participate in speaker sessions, discussions + \"share-outs\" around topics at the intersection of the future of work and education."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyID": "ATLLAO9OouG7Mhoq1JwPZY8ENfZTMoE",
+              "companyName": "The Project on Workforce at Harvard",
+              "company": {
+                "id": "ATLLAO9OouG7Mhoq1JwPZY8ENfZTMoE",
+                "name": "The Project on Workforce at Harvard",
+                "country": "United States",
+                "region": "Massachusetts",
+                "locality": "Cambridge",
+                "URLs": {
+                  "website": "pw.hks.harvard.edu",
+                  "linkedin": "linkedin.com/company/project-on-workforce"
+                },
+                "industryList": [
+                  "Education"
+                ]
+              }
+            },
+            {
+              "endDate": "2014-12-01T00:00:00.000Z",
+              "startDate": "2010-09-01T00:00:00.000Z",
+              "linkedinNumID": 2952256,
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2010-09-01T00:00:00.000Z",
+                  "endDate": "2014-12-01T00:00:00.000Z",
+                  "title": "Mentor, Curriculum Developer, Test Prep Trainer",
+                  "location": "Shanghai City, China",
+                  "description": "Joined as one of the first employees and witnessed the startup grow from a small team to hundreds of employees. Taught test prep, designed curriculum, and coached students while collaborating with the tech team to build an SAT learning app. Learned the fundamentals of personalized learning and the power of storytelling in education."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyID": "GbeP1uni9xZODLeDbKfSF0AB0IA9bgj",
+              "companyName": "New Pathway Education & Technology Group",
+              "company": {
+                "id": "GbeP1uni9xZODLeDbKfSF0AB0IA9bgj",
+                "name": "New Pathway Education & Technology Group",
+                "country": "China",
+                "region": "Shanghai",
+                "locality": "Shanghai",
+                "URLs": {
+                  "contact": "www.eiceducation.com.cn/contact.html",
+                  "website": "npathway.com",
+                  "linkedin": "linkedin.com/company/new-pathway-education-&-technology-group",
+                  "pitchbook": "pitchbook.com/profiles/company/94181-86",
+                  "crunchbase": "www.crunchbase.com/organization/new-pathway-education"
+                },
+                "industryList": [
+                  "E-Learning",
+                  "Education",
+                  "Knowledge Management"
+                ]
+              }
+            },
+            {
+              "startDate": "2023-06-01T00:00:00.000Z",
+              "linkedinNumID": 91147143,
+              "entityType": "company",
+              "positionList": [
+                {
+                  "startDate": "2023-06-01T00:00:00.000Z",
+                  "title": "Co-Founder and COO",
+                  "department": "EXECUTIVE",
+                  "seniorityScore": 5,
+                  "description": "Building a career companion that helps people tell their career stories, stand out in the job market, and grow professionally. Leading operations, product strategy, and marketing while scaling partnerships with universities and bootcamps."
+                }
+              ],
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg",
+              "companyID": "JPA8FRXMs3rYyn42pc0Qp-J9UhKIK4O",
+              "companyName": "Careerspan",
+              "company": {
+                "id": "JPA8FRXMs3rYyn42pc0Qp-J9UhKIK4O",
+                "name": "Careerspan",
+                "country": "United States",
+                "region": "New York",
+                "locality": "New York",
+                "URLs": {
+                  "website": "mycareerspan.com",
+                  "linkedin": "linkedin.com/company/careerspan",
+                  "crunchbase": "www.crunchbase.com/organization/the-applyai"
+                },
+                "industryList": [
+                  "Artificial Intelligence (AI)",
+                  "Career Planning",
+                  "Employment",
+                  "Recruiting",
+                  "Software",
+                  "Virtual Workforce"
+                ]
+              }
+            }
+          ],
+          "educationList": [
+            {
+              "id": "3037032151",
+              "name": "Sciences Po",
+              "subject": "Political Science and Government",
+              "school": {
+                "id": "V6aqJpNeBbjq",
+                "linkedinID": "sciences-po",
+                "fullName": "Sciences Po",
+                "location": "Paris, France",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            },
+            {
+              "id": "3037032152",
+              "name": "University of Pennsylvania",
+              "subject": "International Relations and Affairs",
+              "school": {
+                "id": "Y9r3eJmL7pxh",
+                "linkedinID": "university-of-pennsylvania",
+                "fullName": "University of Pennsylvania",
+                "location": "Philadelphia, Pennsylvania, United States",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            },
+            {
+              "id": "2769120242",
+              "startDate": "2014-01-01T00:00:00.000Z",
+              "name": "Shanghai Jiao Tong University",
+              "subject": "Chinese Studies",
+              "school": {
+                "id": "szbDzpsG1SWA",
+                "linkedinID": "sjtu1896",
+                "fullName": "Shanghai Jiao Tong University",
+                "location": "Shanghai, Shanghai, China",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            },
+            {
+              "id": "2769120243",
+              "endDate": "2021-06-01T00:00:00.000Z",
+              "startDate": "2020-09-01T00:00:00.000Z",
+              "name": "University of Nottingham",
+              "subject": "Post Graduate Certificate in Education",
+              "school": {
+                "id": "gxNg8dC7kk0G",
+                "linkedinID": "university-of-nottingham",
+                "fullName": "University of Nottingham",
+                "location": "Nottingham, Nottinghamshire, United Kingdom",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            },
+            {
+              "id": "2769120245",
+              "endDate": "2025-05-01T00:00:00.000Z",
+              "name": "Harvard University",
+              "subject": "Learning Design, Innovation and Technology",
+              "school": {
+                "id": "LcjkQ7nQJnej",
+                "linkedinID": "harvard-university",
+                "fullName": "Harvard University",
+                "location": "Cambridge, Massachusetts, United States",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            }
+          ],
+          "degreeList": [
+            {
+              "personEducationID": "2769120243",
+              "fieldOfStudy": "Post Graduate Certificate in Education",
+              "name": "Certificate",
+              "school": {
+                "id": "gxNg8dC7kk0G",
+                "linkedinID": "university-of-nottingham",
+                "fullName": "University of Nottingham",
+                "location": "Nottingham, Nottinghamshire, United Kingdom",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            },
+            {
+              "personEducationID": "2769120245",
+              "fieldOfStudy": "Learning Design, Innovation and Technology",
+              "name": "Master of Education - MEd",
+              "school": {
+                "id": "LcjkQ7nQJnej",
+                "linkedinID": "harvard-university",
+                "fullName": "Harvard University",
+                "location": "Cambridge, Massachusetts, United States",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            },
+            {
+              "personEducationID": "3037032152",
+              "fieldOfStudy": "International Relations and Affairs",
+              "name": "Bachelors",
+              "school": {
+                "id": "Y9r3eJmL7pxh",
+                "linkedinID": "university-of-pennsylvania",
+                "fullName": "University of Pennsylvania",
+                "location": "Philadelphia, Pennsylvania, United States",
+                "entityType": "school"
+              },
+              "personID": "BTbeGxuX8qDgLiM9nh2z8j009-MaQyg"
+            }
+          ],
+          "locationDetails": {
+            "continent": {
+              "id": 102191575,
+              "name": "North America",
+              "placeType": "continent",
+              "geometry": {
+                "area_square_degrees": 3704.177719,
+                "bbox": "-179.143503,5.515082,179.780935,83.634101",
+                "lat": 38.309137,
+                "lon": -101.328273
+              }
+            },
+            "country": {
+              "id": 85633793,
+              "name": "United States",
+              "placeType": "country",
+              "geometry": {
+                "area_square_degrees": 1166.190125,
+                "bbox": "-124.848973,24.396308,-66.885444,49.384358",
+                "lat": 39.71614,
+                "lon": -96.999246
+              }
+            },
+            "county": {
+              "id": 102084643,
+              "name": "Middlesex County",
+              "placeType": "county",
+              "geometry": {
+                "area_square_degrees": 0.240215,
+                "bbox": "-71.898716,42.156782,-71.020377,42.73667",
+                "lat": 42.495566,
+                "lon": -71.34876
+              }
+            },
+            "localadmin": {
+              "id": 404476475,
+              "name": "Cambridge",
+              "placeType": "localadmin",
+              "geometry": {
+                "area_square_degrees": 0.00201,
+                "bbox": "-71.160332,42.352403,-71.063984,42.404259",
+                "lat": 42.385761,
+                "lon": -71.134489
+              }
+            },
+            "locality": {
+              "id": 85950329,
+              "name": "Cambridge",
+              "placeType": "locality",
+              "geometry": {
+                "area_square_degrees": 0.001886,
+                "bbox": "-71.1604,42.352986,-71.064307,42.40376",
+                "lat": 42.38036,
+                "lon": -71.115987
+              }
+            },
+            "region": {
+              "id": 85688645,
+              "name": "Massachusetts",
+              "placeType": "region",
+              "geometry": {
+                "area_square_degrees": 2.977929,
+                "bbox": "-73.508142,41.187053,-69.858861,42.88679",
+                "lat": 42.358752,
+                "lon": -71.531484
+              }
+            }
+          },
+          "languageList": [
+            {
+              "languageName": "English",
+              "proficiency": "NATIVE_OR_BILINGUAL"
+            },
+            {
+              "languageName": "Chinese",
+              "proficiency": "LIMITED_WORKING"
+            },
+            {
+              "languageName": "French",
+              "proficiency": "PROFESSIONAL_WORKING"
+            }
+          ]
+        },
+        "company": {
+          "name": "Careerspan",
+          "description": "Careerspan offers personalized AI coaching to fill the career guidance void: helping users identify strengths, translate their skills into a compelling story on their applications, and navigate the job search process. Its goal is to enhance confidence, secure better jobs, and ensure equal opportunities for everyone.",
+          "industry": null,
+          "headcount": 14,
+          "founded_year": null,
+          "funding_stage": null,
+          "total_raised": null
+        }
+      },
+      "linkedin_analysis": {
+        "current_role": null,
+        "previous_roles": [],
+        "has_hiring_manager_experience": false,
+        "has_hypergrowth_experience": false,
+        "has_consulting_background": false,
+        "years_experience": null
+      },
+      "signals": {
+        "recent_funding": null,
+        "recent_news": [],
+        "is_currently_hiring": true,
+        "jd_title": null,
+        "open_roles": []
+      },
+      "credibility_hooks": [],
+      "relevant_content": [
+        {
+          "id": "snippet-smart-friction-hiring-funnel-20251212204936",
+          "title": "Smart Friction Hiring Funnel Blurb",
+          "content": "Turn inbound from a firehose into a filter. Careerspan adds smart friction to your hiring funnel that deters mass-appliers and reveals genuine fit—giving you higher-quality screens and more confident hiring decisions without adding recruiter headcount."
+        },
+        {
+          "id": "hiring-signal-collapse-worldview.md",
+          "title": "Hiring Signal Collapse Worldview",
+          "content": "---\ncreated: 2025-12-05\nlast_edited: 2025-12-05\nversion: 2.0\n---\n\n# The Hiring Signal Collapse: A Worldview Synthesis\n\n## The Core Thesis\n\n**Inbound hiring is broken at a fundamental level.** Not broken in the sense of \"needs optimization\" but broken in the sense of \"the underlying mechanism no longer produces valid signal.\" This is a structural failure, not a process inefficiency.\n\nThe apology I owe job seekers: 18 months ago, I encouraged people to tailor their applications. The advice was correct *in the world that existed then*. The world has changed. The advice no longer works—not because it was wrong in principle, but because the environment that made it work has collapsed.\n\n---\n\n## The Original Belief\n\n**What I told people ~1.5 years ago:**\n\nTailored job applications work because of *pattern disruption*:\n- In an environment where most applicants submit generic applications, personalization stands out\n- Personalization carries two signals:\n  1. **Implicit signal:** \"I cared enough to invest time in this specific opportunity\"\n  2. **Explicit signal:** More relevant, focused information about fit\n- The combination of attention + relevance = higher success rate\n\nThis was true. It worked. The advice helped people.\n\n---\n\n## What Changed: The Two-Sided Collapse\n\nThe system broke on both sides simultaneously.\n\n### The Supply-Side Collapse\n\n**AI made bad personalization free.**\n\nBefore generative AI, the cost structure was:\n- Generic application: 5 minutes\n- Tailored application: 30-60 minutes\n\nThat cost differential meant tailoring was a *reliable signal* of motivation and conscientiousness. Someone willing to invest an hour in your company probably cares.\n\nAfter generative AI:\n- Generic application: 30 seconds\n- AI-generated \"personalization\": 30 seconds\n- Genuine personalization: still 30-60 minutes\n\n**The signal collapsed.** AI can generate infinite plausible-sounding tailored content with zero marginal cost. The output looks identical. The input is radically diff"
+        },
+        {
+          "id": "smart-friction-hiring-funnel-blurb.md",
+          "title": "Smart Friction Hiring Funnel Blurb",
+          "content": "---\ncreated: 2025-12-12\nlast_edited: 2025-12-12\nversion: 1\ntype: snippet\ntags:\n  - positioning\n  - inbound\n  - value-prop\n  - hiring-friction\n---\n# Smart Friction Hiring Funnel Blurb\n\nTurn inbound from a firehose into a filter. Careerspan adds smart friction to your hiring funnel that deters mass-appliers and reveals genuine fit—giving you higher-quality screens and more confident hiring decisions without adding recruiter headcount.\n\n"
+        }
+      ]
+    }
+  },
+  "actions_for_zo": [
+    {
+      "action": "create_gmail_draft",
+      "params": {
+        "to": "logan@mycareerspan.com",
+        "subject": "Re: Careerspan perk for Marvin — ready to help with hiring",
+        "body": "Hey Logan,<br/><br/>\nThanks for signing up for the Careerspan demo through Marvin Ventures.<br/><br/>\nSaw you're actively hiring — that's exactly where we can help cut through the noise. You flagged screening as a pain point — we hear that a lot from founders.<br/><br/>\nAs a Marvin member, you've got 3 months of role support covered — let's put it to work.<br/><br/>\nReady to get started?<br/>\nhttps://calendly.com/v-at-careerspan/30min<br/><br/>\nBest,<br/>\nVrijen S Attawar<br/>\nCEO @ Careerspan<br/>\n---<br/>\n👉 <a href=\"http://www.mycareerspan.com\">Try Careerspan!</a> and <a href=\"https://www.linkedin.com/company/careerspan/\">Follow us on LinkedIn!</a><br/>\n✋ Let's connect on <a href=\"https://mobile.twitter.com/VAttawar\">Twitter</a> or <a href=\"http://www.linkedin.com/in/vrijenattawar\">LinkedIn</a><br/>\n<br/>",
+        "bodyType": "html",
+        "from_email": "vrijen@mycareerspan.com"
+      }
+    },
+    {
+      "action": "send_sms",
+      "params": {
+        "message": "🚀 New Marvin lead: Logan Currie at Careerspan. Subject: \"Re: Careerspan perk for Marvin — ready to help with hiring\". Draft ready."
+      }
+    }
+  ]
+}

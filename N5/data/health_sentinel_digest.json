@@ -1,0 +1,70 @@
+{
+  "generated": "2025-12-17T08:02:36.180839",
+  "status": "degraded",
+  "metrics": {
+    "cpu_percent": 0.0,
+    "memory_percent": 1.8,
+    "memory_details": {
+      "total_gb": 448.2,
+      "used_gb": 8.3,
+      "available_gb": 439.9
+    },
+    "disk_percent": 0.2,
+    "disk_details": {
+      "total_gb": 512.0,
+      "used_gb": 0.8,
+      "available_gb": 511.2
+    },
+    "process_count": 58,
+    "load_average": {
+      "1min": 0.0,
+      "5min": 0.0,
+      "15min": 0.0
+    }
+  },
+  "warnings": [
+    {
+      "category": "service",
+      "message": "Service fabregas-cannon appears stale (no log writes for 1136min)",
+      "value": 1136,
+      "threshold": 60
+    },
+    {
+      "category": "service",
+      "message": "Service productivity-dashboard appears stale (no log writes for 1136min)",
+      "value": 1136,
+      "threshold": 60
+    },
+    {
+      "category": "service",
+      "message": "Service crm-calendar-webhook appears stale (no log writes for 1136min)",
+      "value": 1136,
+      "threshold": 60
+    },
+    {
+      "category": "service",
+      "message": "Service fireflies-webhook appears stale (no log writes for 582min)",
+      "value": 582,
+      "threshold": 60
+    },
+    {
+      "category": "service",
+      "message": "Service fillout-webhook appears stale (no log writes for 1136min)",
+      "value": 1136,
+      "threshold": 60
+    },
+    {
+      "category": "service",
+      "message": "Service conversation-installer appears stale (no log writes for 1136min)",
+      "value": 1136,
+      "threshold": 60
+    },
+    {
+      "category": "service",
+      "message": "Service action-approvals-monitor appears stale (no log writes for 1136min)",
+      "value": 1136,
+      "threshold": 60
+    }
+  ],
+  "emergencies": []
+}

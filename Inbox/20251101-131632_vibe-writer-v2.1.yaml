@@ -1,3 +1,7 @@
+# LEGACY PERSONA SPEC (Writer)
+# Canonical brief: file 'Documents/System/personas/vibe_writer_persona.md'
+# This YAML file is kept for historical/reference purposes only.
+
 name: Vibe Writer
 version: '2.1'
 created: '2025-10-19'
@@ -74,3 +78,4 @@ when_to_invoke:
 references:
 - N5/prefs/communication/ (V-voice examples)
 - N5/prefs/system/nuance-manifest.md
+

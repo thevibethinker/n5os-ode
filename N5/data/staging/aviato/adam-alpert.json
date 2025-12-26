@@ -1,0 +1,1418 @@
+{
+  "person": {
+    "id": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+    "fullName": "Adam Alpert",
+    "firstName": "Adam",
+    "lastName": "Alpert",
+    "entityType": "person",
+    "location": "New York, New York, United States",
+    "URLs": {
+      "twitter": "x.com/adamalpert95",
+      "website": "mantisvc.com",
+      "facebook": "www.facebook.com/adamalp",
+      "linkedin": "linkedin.com/in/adamalp",
+      "signalNFX": "signal.nfx.com/investors/adam-alpert_1",
+      "crunchbase": "crunchbase.com/person/adam-alpert"
+    },
+    "about": "In college, I was always working on film projects on and off campus with friends. It was a passion that I had had since I got a video camera for my birthday in 6th grade.\n\nI didn't feel like the \"normal\" path was for me - I wanted to make things.\n\nToday, I'm the co-founder of Pangea: a platform to help companies connect with find fractional talent\n\nWe're seeing a paradigm shift in how companies grow (acceptance of remote work + the rise of AI + fractionalization) and the modes of work are changing with that future",
+    "headline": "Co-founder @ Pangea.app & NYC Founders Club | YC | MIT & Brown",
+    "skills": [
+      "Startups",
+      "Growth Marketing",
+      "Product",
+      "Data Science",
+      "Stoicism",
+      "Stoic",
+      "Motivational Speaking",
+      "SQL",
+      "DBT",
+      "MetaBase",
+      "Fundraising",
+      "Hiring",
+      "Project Management",
+      "Team Leadership",
+      "Public Speaking",
+      "Film",
+      "Team Motivation",
+      "Budget Management",
+      "Product Management",
+      "Social Media"
+    ],
+    "certifications": [
+      {
+        "name": "Marketplace Growth",
+        "issued": "2023-10-01T00:00:00.000Z",
+        "companyID": "oDDvKeBeRF1CNmNKFBJKaTtquaDwG1G",
+        "companyName": "Reforge"
+      }
+    ],
+    "gender": "male",
+    "linkedinID": "adamalp",
+    "linkedinNumID": 297169308,
+    "linkedinEntityID": "ACoAABG2cZwB1bMtZdVZIFaZh6c8uOOf9Bgc9eM",
+    "investedRoundList": [
+      "Seed",
+      "Series A"
+    ],
+    "investedIndustries": [],
+    "investorCategoryList": [
+      "Consumer Internet",
+      "Entertainment & Sports",
+      "FinTech",
+      "Media/Content",
+      "New York City"
+    ],
+    "investorCurrentFirmID": "Hvq4Lv5rlUDLkZXuas51bQ04X4SUsXx",
+    "investorFirmPosition": "Partner",
+    "investorMaxInvestment": 1000000,
+    "investorMinInvestment": 100000,
+    "investorTargetInvestment": 250000,
+    "investorTitle": "Partner at Mantis Ventures",
+    "computed_highlightList": [
+      "oneYearAtCurrentCompany",
+      "priorBackedFounder",
+      "USImmigrant"
+    ],
+    "lastUpdated": "2025-09-19T23:33:25.236Z",
+    "locationIDList": [
+      102191575,
+      85633793,
+      102082361,
+      85977539,
+      85688543,
+      102082377,
+      102081863,
+      102083063,
+      102081779
+    ],
+    "linkedinConnections": 11964,
+    "linkedinFollowers": 15488,
+    "linkedinJoinDate": "2013-11-19T23:53:35.000Z",
+    "experienceList": [
+      {
+        "endDate": "2017-05-01T00:00:00.000Z",
+        "startDate": "2015-05-01T00:00:00.000Z",
+        "linkedinNumID": 157343,
+        "entityType": "school",
+        "positionList": [
+          {
+            "startDate": "2015-11-01T00:00:00.000Z",
+            "endDate": "2017-05-01T00:00:00.000Z",
+            "title": "Media Production Supervisor",
+            "description": "Took on additional responsibilities and expectations to better utilize my skill-set as a filmmaker in order to capture complex events and assist my peers."
+          },
+          {
+            "startDate": "2015-05-01T00:00:00.000Z",
+            "endDate": "2015-11-01T00:00:00.000Z",
+            "title": "Media Production Assistant",
+            "department": "OTHER",
+            "description": "I manage and generate Brown's internal and public video content.  I film various events, concerts, lectures, and conferences, and edit the content to Brown's brand standards before uploading the content to various online internal and public channels.  Additionally, I assist in the digitization of various forms of media to be archived and made available to various members of the Brown community"
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyName": "Brown University",
+        "company": {
+          "name": "Brown University",
+          "industryList": []
+        }
+      },
+      {
+        "endDate": "2013-06-01T00:00:00.000Z",
+        "startDate": "2011-09-01T00:00:00.000Z",
+        "linkedinNumID": 801496,
+        "entityType": "school",
+        "positionList": [
+          {
+            "startDate": "2011-09-01T00:00:00.000Z",
+            "endDate": "2013-06-01T00:00:00.000Z",
+            "title": "Chief Video Editor for School News Paper, CROP",
+            "department": "EXECUTIVE",
+            "description": "I worked with the School Newspaper, which ran an online website, to produce public service announcements and comedic shorts, leading and motivating a small team to shoot and edit them. In addition to the plethora of shorts and PSA's I produced, I planned, shot, and edited a video to be shown as the Introduction to the School's annual Spring fundraiser to much acclaim. I also created the video montage that was shown at Prom my senior year."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyName": "Rye Country Day School",
+        "company": {
+          "name": "Rye Country Day School",
+          "industryList": []
+        }
+      },
+      {
+        "endDate": "2019-03-01T00:00:00.000Z",
+        "startDate": "2016-01-01T00:00:00.000Z",
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2016-01-01T00:00:00.000Z",
+            "endDate": "2019-03-01T00:00:00.000Z",
+            "title": "Co-Founder",
+            "department": "EXECUTIVE",
+            "seniorityScore": 5,
+            "description": "Worked on creating a craigslist for college students.  \n\nLearned how to iterate, talk with users, and listen to when the market tells you it doesn't need something."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyName": "Pangeamart",
+        "company": {
+          "name": "Pangeamart",
+          "industryList": []
+        }
+      },
+      {
+        "endDate": "2020-05-01T00:00:00.000Z",
+        "startDate": "2017-11-01T00:00:00.000Z",
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2017-11-01T00:00:00.000Z",
+            "endDate": "2020-05-01T00:00:00.000Z",
+            "title": "Associate Director",
+            "seniorityScore": 4,
+            "description": "The mission of the Rhode Island Coalition of Entrepreneurs, a coalition of Founders and CEOs of start-ups, is to facilitate collaboration and unification among the entrepreneurial community of Rhode Island while representing a united voice in the spirit of expanding economic opportunity and innovation across the state."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyName": "Rhode Island Coalition of Entrepreneurs",
+        "company": {
+          "name": "Rhode Island Coalition of Entrepreneurs",
+          "industryList": []
+        }
+      },
+      {
+        "endDate": "2019-10-01T00:00:00.000Z",
+        "startDate": "2019-06-01T00:00:00.000Z",
+        "linkedinNumID": 291490,
+        "entityType": "school",
+        "positionList": [
+          {
+            "startDate": "2019-06-01T00:00:00.000Z",
+            "endDate": "2019-10-01T00:00:00.000Z",
+            "title": "Top Startup",
+            "location": "Providence, Rhode Island Area",
+            "description": "Participated in a 3 month MassChallenge RI accelerator program alongside the other 24 finalists; ultimately selected as one of 6 top teams. \n\nThis honor places us the top 2% of initial applicants."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyName": "MassChallenge",
+        "company": {
+          "name": "MassChallenge",
+          "industryList": []
+        }
+      },
+      {
+        "endDate": "2021-03-01T00:00:00.000Z",
+        "startDate": "2021-01-01T00:00:00.000Z",
+        "linkedinNumID": 167872,
+        "entityType": "school",
+        "positionList": [
+          {
+            "startDate": "2021-01-01T00:00:00.000Z",
+            "endDate": "2021-03-01T00:00:00.000Z",
+            "title": "W21 Batch",
+            "description": "Top 2% of applications to Y Combinator, accepted to the Winter '21 Batch.\n\nYC has backed Airbnb, Doordash, Reddit, and some amazing companies you haven't heard about yet :)"
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyName": "Y Combinator",
+        "company": {
+          "name": "Y Combinator",
+          "industryList": []
+        }
+      },
+      {
+        "endDate": "2025-08-01T00:00:00.000Z",
+        "startDate": "2025-01-01T00:00:00.000Z",
+        "linkedinNumID": 87812812,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2025-01-01T00:00:00.000Z",
+            "endDate": "2025-08-01T00:00:00.000Z",
+            "title": "Head of Product (Fractional)",
+            "location": "New York, New York, United States",
+            "department": "PRODUCT_MANAGEMENT",
+            "description": "Lead product strategy and development for RepRally, a Series A venture-backed three-sided marketplace connecting consumer brands, independent sales reps, and retailers. Driving initiatives that improve product velocity and scalability, with a focus on automation, AI workflows, and cross-functional collaboration."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "z_VAmpS1CP1mHs-mpG_-yevSUniE26z",
+        "companyName": "RepRally",
+        "company": {
+          "id": "z_VAmpS1CP1mHs-mpG_-yevSUniE26z",
+          "name": "RepRally",
+          "country": "United States",
+          "region": "New York",
+          "locality": "New York",
+          "URLs": {
+            "website": "reprally.com",
+            "facebook": "www.facebook.com/61560561185888",
+            "linkedin": "linkedin.com/company/reprally",
+            "pitchbook": "pitchbook.com/profiles/company/522566-83",
+            "crunchbase": "www.crunchbase.com/organization/reprally"
+          },
+          "industryList": [
+            "Marketplace",
+            "Software"
+          ]
+        }
+      },
+      {
+        "startDate": "2019-01-01T00:00:00.000Z",
+        "linkedinNumID": 10423146,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2019-01-01T00:00:00.000Z",
+            "title": "Co-Founder & CEO",
+            "department": "EXECUTIVE",
+            "seniorityScore": 5,
+            "description": "Hire Fractional Creative Talent.\n\nBuilt community of 70k creatives\n\nBacked by Y Combinator, Idea Fund, PJC, Underdog Labs, Brown Angel Group, Unpopular Ventures, 572 Ventures (and many awesome other investors)"
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "iihE1D1FAXtQ8_kkBw6_xznuHY6qvPa",
+        "companyName": "Pangea.app",
+        "company": {
+          "id": "iihE1D1FAXtQ8_kkBw6_xznuHY6qvPa",
+          "name": "Pangea",
+          "country": "United States",
+          "region": "Rhode Island",
+          "locality": "Providence",
+          "URLs": {
+            "golden": "golden.com/wiki/Pangea.app-XKK6J5A",
+            "twitter": "twitter.com/pangea_app",
+            "website": "pangea.app",
+            "facebook": "www.facebook.com/app.Pangea",
+            "linkedin": "linkedin.com/company/app-pangea",
+            "pitchbook": "pitchbook.com/profiles/company/234723-61",
+            "angelList": "angel.co/pangea-4",
+            "crunchbase": "www.crunchbase.com/organization/pangea-app"
+          },
+          "industryList": [
+            "Education",
+            "Human Resources",
+            "Virtual Workforce"
+          ]
+        }
+      },
+      {
+        "startDate": "2025-08-01T00:00:00.000Z",
+        "linkedinNumID": 76504,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2025-08-01T00:00:00.000Z",
+            "title": "Investment Scout - Pre-Seed AI",
+            "description": "Supporting PJC\u2019s investment team by sourcing and evaluating early-stage AI startups, with a focus on application-layer opportunities. Responsible for identifying promising founders, conducting initial diligence, and helping expand the firm\u2019s presence within the pre-seed ecosystem."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "8AmGGuffnPeFUbbUEQ0UEh1nHqUplv7",
+        "companyName": "PJC",
+        "company": {
+          "id": "8AmGGuffnPeFUbbUEQ0UEh1nHqUplv7",
+          "name": "PJC",
+          "country": "United States",
+          "region": "New York",
+          "locality": "New York",
+          "URLs": {
+            "golden": "golden.com/wiki/point_judith_capital-k446yav",
+            "twitter": "twitter.com/pjcventure",
+            "website": "pjc.vc",
+            "facebook": "www.facebook.com/pjcvc",
+            "linkedin": "linkedin.com/company/pjcvc",
+            "angelList": "angel.co/company/point-judith-capital",
+            "signalNFX": "signal.nfx.com/firms/pjc",
+            "crunchbase": "www.crunchbase.com/organization/pjc"
+          },
+          "industryList": [
+            "Artificial Intelligence (AI)",
+            "Consumer",
+            "Enterprise",
+            "FinTech",
+            "InsurTech",
+            "Venture Capital"
+          ]
+        }
+      },
+      {
+        "endDate": "2021-01-01T00:00:00.000Z",
+        "startDate": "2017-11-01T00:00:00.000Z",
+        "linkedinNumID": 1005068,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2017-11-01T00:00:00.000Z",
+            "endDate": "2021-01-01T00:00:00.000Z",
+            "title": "Kairos Fellow",
+            "description": "Focusing the next generation on problems worth solving."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "2T1OpbYWI-i6VxUdM7QYTFsPlAqq4tq",
+        "companyName": "Kairos Society",
+        "company": {
+          "id": "2T1OpbYWI-i6VxUdM7QYTFsPlAqq4tq",
+          "name": "Kairos HQ",
+          "country": "United States",
+          "region": "New York",
+          "locality": "New York",
+          "URLs": {
+            "golden": "golden.com/wiki/kairos_(venture_capital)-yx9waby",
+            "contact": "kairoshq.com/mailto:team@kairoshq.com?subject=inquiry%20about%20(***your%20inquiry%20here***)",
+            "twitter": "twitter.com/kairoshq",
+            "website": "kairoshq.com",
+            "facebook": "www.facebook.com/thekairossociety/",
+            "linkedin": "linkedin.com/company/kairoshq",
+            "angelList": "angel.co/company/kairoshq",
+            "signalNFX": "signal.nfx.com/firms/kairos-hq",
+            "crunchbase": "www.crunchbase.com/organization/kairoshq"
+          },
+          "industryList": [
+            "Financial Services",
+            "FinTech",
+            "Health Care",
+            "Real Estate",
+            "Venture Capital"
+          ]
+        }
+      },
+      {
+        "endDate": "2016-08-01T00:00:00.000Z",
+        "startDate": "2016-06-01T00:00:00.000Z",
+        "linkedinNumID": 10080684,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2016-06-01T00:00:00.000Z",
+            "endDate": "2016-08-01T00:00:00.000Z",
+            "title": "Account Coordinator",
+            "seniorityScore": 1,
+            "description": "Spent summer preparing for Xiidra product launch upon FDA approval.  Coordinated Advisor boards and conference events for several hundred optometrists and ophthalmologists"
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "Lg7M9oKFk4QA7453m2YRjlXLD77Dx5S",
+        "companyName": "Medical Exchange International (MEI)",
+        "company": {
+          "id": "Lg7M9oKFk4QA7453m2YRjlXLD77Dx5S",
+          "name": "MEI",
+          "country": "United States",
+          "region": "New Jersey",
+          "locality": "Hoboken",
+          "URLs": {
+            "twitter": "twitter.com/MEI_NYC",
+            "website": "meisolutions.com",
+            "linkedin": "linkedin.com/company/meinyc",
+            "pitchbook": "pitchbook.com/profiles/company/364017-88",
+            "crunchbase": "www.crunchbase.com/organization/mei-c2e4"
+          },
+          "industryList": [
+            "Advice",
+            "Analytics",
+            "Market Research",
+            "Marketing"
+          ]
+        }
+      },
+      {
+        "endDate": "2022-03-01T00:00:00.000Z",
+        "startDate": "2022-01-01T00:00:00.000Z",
+        "linkedinNumID": 610087,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2022-01-01T00:00:00.000Z",
+            "endDate": "2022-03-01T00:00:00.000Z",
+            "title": "Public Speaker",
+            "seniorityScore": 3,
+            "description": "Gave a Tedx talk on applying Stoic virtues to Entrepreneurship"
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "nuaDmqWFo45zCuDoCg9UrTSRZSnyyek",
+        "companyName": "TED Conferences",
+        "company": {
+          "id": "nuaDmqWFo45zCuDoCg9UrTSRZSnyyek",
+          "name": "TED Conferences",
+          "country": "United States",
+          "region": "New York",
+          "locality": "New York",
+          "URLs": {
+            "golden": "golden.com/wiki/ted_conferences-dbx6g3b",
+            "twitter": "twitter.com/tednews",
+            "website": "ted.com",
+            "facebook": "www.facebook.com/ted",
+            "linkedin": "linkedin.com/company/ted-conferences",
+            "crunchbase": "www.crunchbase.com/organization/ted"
+          },
+          "industryList": [
+            "Events",
+            "Non Profit",
+            "Presentations",
+            "Video"
+          ]
+        }
+      },
+      {
+        "endDate": "2023-05-01T00:00:00.000Z",
+        "startDate": "2021-03-01T00:00:00.000Z",
+        "linkedinNumID": 51706839,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2021-03-01T00:00:00.000Z",
+            "endDate": "2023-05-01T00:00:00.000Z",
+            "title": "Advisory Board Member",
+            "department": "ADVISOR",
+            "seniorityScore": 5,
+            "description": "On the advisory board for a state-backed non-profit organization focused on supporting the RI startup ecosystem where I represent entrepreneurs."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "TwXiwEF_F64LqvNCzh1mopzU3zLKnQM",
+        "companyName": "RIHub",
+        "company": {
+          "id": "TwXiwEF_F64LqvNCzh1mopzU3zLKnQM",
+          "name": "RIHub",
+          "country": "United States",
+          "region": "Rhode Island",
+          "locality": "Providence",
+          "URLs": {
+            "contact": "rihub.org/forms/contact-us/",
+            "twitter": "twitter.com/ri_hub",
+            "website": "rihub.org",
+            "facebook": "www.facebook.com/therihub/",
+            "linkedin": "linkedin.com/company/rihub",
+            "crunchbase": "www.crunchbase.com/organization/rihub"
+          },
+          "industryList": [
+            "Incubators",
+            "Non Profit"
+          ]
+        }
+      },
+      {
+        "endDate": "2014-06-01T00:00:00.000Z",
+        "startDate": "2014-05-01T00:00:00.000Z",
+        "linkedinNumID": 897269,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2014-05-01T00:00:00.000Z",
+            "endDate": "2014-06-01T00:00:00.000Z",
+            "title": "Content Intern",
+            "department": "OTHER",
+            "seniorityScore": 1,
+            "description": "I interned for the content division of FilmBuff, which is responsible for the cultivation of independent films for digital distribution. As part of my internship, I was responsible for the intake of new submissions, writing coverage, and making recommendations for the distribution of submissions based on their perceived market."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "MyTCzitCEnsiBXeNVMgrLTXToSLrD3X",
+        "companyName": "FilmBuff",
+        "company": {
+          "id": "MyTCzitCEnsiBXeNVMgrLTXToSLrD3X",
+          "name": "FilmBuff ",
+          "country": "United States",
+          "region": "New York",
+          "locality": "New York",
+          "URLs": {
+            "golden": "golden.com/wiki/Filmbuff-K4JYEXK",
+            "twitter": "twitter.com/filmbuff",
+            "website": "gunpowdersky.com",
+            "facebook": "www.facebook.com/filmbuff",
+            "linkedin": "linkedin.com/company/filmbuff",
+            "pitchbook": "pitchbook.com/profiles/company/166516-21",
+            "crunchbase": "www.crunchbase.com/organization/filmbuff"
+          },
+          "industryList": [
+            "Film Distribution",
+            "Publishing"
+          ]
+        }
+      },
+      {
+        "endDate": "2013-08-01T00:00:00.000Z",
+        "startDate": "2013-07-01T00:00:00.000Z",
+        "linkedinNumID": 291802,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2013-07-01T00:00:00.000Z",
+            "endDate": "2013-08-01T00:00:00.000Z",
+            "title": "Summer Financial Analyst",
+            "department": "FINANCE",
+            "seniorityScore": 2,
+            "description": "As part of my internship with Titan, I gained an introduction into the world of fund-of-fund's and the investment strategies of many long-short equity hedge fund managers.I attended several meetings with potential fund managers and sat in on numerous phone calls with investors and managers. In addition, I worked on a research project related to the Affordable Healthcare Act and medicare taxation."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "0nmjkCs5iqfypVa3wxYjcHfM5aYbBMf",
+        "companyName": "Titan Advisors",
+        "company": {
+          "id": "0nmjkCs5iqfypVa3wxYjcHfM5aYbBMf",
+          "name": "Titan Advisors, LLC",
+          "country": "United States",
+          "region": "Connecticut",
+          "locality": "Stamford",
+          "URLs": {
+            "golden": "golden.com/wiki/titan_advisors-4em4ne",
+            "contact": "titanadvisors.com/contact/",
+            "website": "titanadvisors.com",
+            "linkedin": "linkedin.com/company/titan-advisors",
+            "crunchbase": "www.crunchbase.com/organization/titan-advisors"
+          },
+          "industryList": [
+            "Consulting",
+            "Financial Services"
+          ]
+        }
+      },
+      {
+        "endDate": "2012-08-01T00:00:00.000Z",
+        "startDate": "2012-07-01T00:00:00.000Z",
+        "linkedinNumID": 1564949,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2012-07-01T00:00:00.000Z",
+            "endDate": "2012-08-01T00:00:00.000Z",
+            "title": "Summer Financial Intern",
+            "department": "FINANCE",
+            "description": "I researched and analyzed numerous E&P companies and gained insight into an industry I had never been exposed to. I worked on a presentation regarding the process of Hydraulic Fracturing and attended several conferences regarding the controversial subject."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "rkJ9LRQYEH-XQIH1qDUVEqGgH4uGHCr",
+        "companyName": "ELCO management",
+        "company": {
+          "id": "rkJ9LRQYEH-XQIH1qDUVEqGgH4uGHCr",
+          "name": "ELCO management",
+          "URLs": {
+            "website": "elcomanagement.nl",
+            "linkedin": "linkedin.com/company/elco-management"
+          },
+          "industryList": [
+            "Business Consulting and Services"
+          ]
+        }
+      },
+      {
+        "endDate": "2016-01-01T00:00:00.000Z",
+        "startDate": "2009-01-01T00:00:00.000Z",
+        "linkedinNumID": 70909323,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2009-01-01T00:00:00.000Z",
+            "endDate": "2016-01-01T00:00:00.000Z",
+            "title": "Freelance Videographer",
+            "department": "OTHER",
+            "seniorityScore": 1,
+            "description": "Worked as a Directory of Photography, Assistant Director, Gaffer, Videographer, and editor for a variety of film productions."
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "Ee5clck56pGvfbZ8fhyESM-jGyvLZbt",
+        "companyName": "Various organizations (NGOs, institutes, businesses)",
+        "company": {
+          "id": "Ee5clck56pGvfbZ8fhyESM-jGyvLZbt",
+          "name": "Various organizations ",
+          "URLs": {
+            "linkedin": "linkedin.com/company/various-organizations-ngos-institutes-businesses"
+          },
+          "industryList": [
+            "Non-profit Organizations"
+          ]
+        }
+      },
+      {
+        "startDate": "2024-10-01T00:00:00.000Z",
+        "linkedinNumID": 103814858,
+        "entityType": "company",
+        "positionList": [
+          {
+            "startDate": "2024-10-01T00:00:00.000Z",
+            "title": "Managing Partner",
+            "location": "New York, New York, United States",
+            "seniorityScore": 5,
+            "description": "Hosting curated happy hours and meetups for NYCs top founders"
+          }
+        ],
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+        "companyID": "4VwOWos8VHQjF4FICLymdRyvmTsldWl",
+        "companyName": "NYC Founders Club",
+        "company": {
+          "id": "4VwOWos8VHQjF4FICLymdRyvmTsldWl",
+          "name": "NYC Founders Club",
+          "country": "United States",
+          "region": "New York",
+          "locality": "New York",
+          "URLs": {
+            "website": "nycfounders.club",
+            "linkedin": "linkedin.com/company/nyc-founders-club"
+          },
+          "industryList": [
+            "Professional Organizations"
+          ]
+        }
+      }
+    ],
+    "educationList": [
+      {
+        "id": "2662472174",
+        "name": "National Outdoor Leadership School",
+        "school": {
+          "id": "Xr3hEILnMM7U",
+          "linkedinID": "nols",
+          "fullName": "NOLS",
+          "location": "Lander, Wyoming, United States",
+          "entityType": "school"
+        },
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      },
+      {
+        "id": "2973743737",
+        "endDate": "2017-01-01T00:00:00.000Z",
+        "startDate": "2013-01-01T00:00:00.000Z",
+        "name": "Brown University",
+        "subject": "History",
+        "school": {
+          "id": "nUW1XiWrjo4c",
+          "linkedinID": "brown-college",
+          "fullName": "Brown College",
+          "location": "Minnesota, United States",
+          "entityType": "school"
+        },
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      },
+      {
+        "id": "2973743738",
+        "name": "Brown University",
+        "subject": "History",
+        "school": {
+          "id": "NDwo8Sb8hs2F",
+          "linkedinID": "charlton-brown",
+          "fullName": "Charlton Brown",
+          "location": "Brisbane City, Queensland, Australia",
+          "entityType": "school"
+        },
+        "activities": "Brown Investment Group, Brown Motion Pictures",
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      },
+      {
+        "id": "2693084610",
+        "name": "Rye Country Day School",
+        "school": {
+          "id": "MKEOhwhYqXHs",
+          "linkedinID": "rye-country-day-school",
+          "fullName": "Rye Country Day School",
+          "location": "Rye, New York, United States",
+          "entityType": "school"
+        },
+        "activities": "Film Making Club, President and Founder\nSki and Snowboard Club, Co-president and Founder\nCROP Video, Chief video editor and coordinator\nVarsity Golf\nJV Lacrosse\nJV Soccer",
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      },
+      {
+        "id": "2693084611",
+        "name": "Massachusetts Institute of Technology",
+        "school": {
+          "id": "Koe79gLdSYVy",
+          "linkedinID": "mit",
+          "fullName": "Massachusetts Institute of Technology",
+          "location": "Cambridge, Massachusetts, United States",
+          "entityType": "school"
+        },
+        "activities": "Awarded the Dean\u2019s Fellowship",
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      }
+    ],
+    "degreeList": [
+      {
+        "personEducationID": "2693084610",
+        "name": "High School",
+        "school": {
+          "id": "MKEOhwhYqXHs",
+          "linkedinID": "rye-country-day-school",
+          "fullName": "Rye Country Day School",
+          "location": "Rye, New York, United States",
+          "entityType": "school"
+        },
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      },
+      {
+        "personEducationID": "2693084611",
+        "name": "MBA",
+        "school": {
+          "id": "Koe79gLdSYVy",
+          "linkedinID": "mit",
+          "fullName": "Massachusetts Institute of Technology",
+          "location": "Cambridge, Massachusetts, United States",
+          "entityType": "school"
+        },
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      },
+      {
+        "personEducationID": "2973743737",
+        "fieldOfStudy": "History",
+        "name": "Bachelor\u2019s Degree",
+        "school": {
+          "id": "NDwo8Sb8hs2F",
+          "linkedinID": "charlton-brown",
+          "fullName": "Charlton Brown",
+          "location": "Brisbane City, Queensland, Australia",
+          "entityType": "school"
+        },
+        "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+      }
+    ],
+    "locationDetails": {
+      "continent": {
+        "id": 102191575,
+        "name": "North America",
+        "placeType": "continent",
+        "geometry": {
+          "area_square_degrees": 3704.177719,
+          "bbox": "-179.143503,5.515082,179.780935,83.634101",
+          "lat": 38.309137,
+          "lon": -101.328273
+        }
+      },
+      "country": {
+        "id": 85633793,
+        "name": "United States",
+        "placeType": "country",
+        "geometry": {
+          "area_square_degrees": 1166.190125,
+          "bbox": "-124.848973,24.396308,-66.885444,49.384358",
+          "lat": 39.71614,
+          "lon": -96.999246
+        }
+      },
+      "county": {
+        "id": 102083063,
+        "name": "Bronx County",
+        "placeType": "county",
+        "geometry": {
+          "area_square_degrees": 0.015897,
+          "bbox": "-73.933808,40.785743,-73.74806,40.917577",
+          "lat": 40.849285,
+          "lon": -73.860478
+        }
+      },
+      "locality": {
+        "id": 85977539,
+        "name": "New York",
+        "placeType": "locality",
+        "geometry": {
+          "area_square_degrees": 0.083553,
+          "bbox": "-74.255591,40.496134,-73.700009,40.915533",
+          "lat": 40.68295,
+          "lon": -73.9708
+        }
+      },
+      "region": {
+        "id": 85688543,
+        "name": "New York",
+        "placeType": "region",
+        "geometry": {
+          "area_square_degrees": 15.580769,
+          "bbox": "-79.76259,40.477399,-71.777491,45.015865",
+          "lat": 43.408777,
+          "lon": -74.871618
+        }
+      }
+    },
+    "languageList": [
+      {
+        "languageName": "English"
+      }
+    ]
+  },
+  "company": {
+    "wellfoundID": "pangea-4",
+    "legalName": "Pangea.app, Inc.",
+    "monthlyWebTrafficChange": 32858,
+    "monthlyWebTrafficPercent": 0.5478342058754877,
+    "triMonthlyWebTrafficChange": 29694,
+    "triMonthlyWebTrafficPercent": 0.4702733521269519,
+    "yearlyWebTrafficChange": 84436,
+    "yearlyWebTrafficPercent": 10.05190476190476,
+    "currentWebTraffic": 92836,
+    "webTrafficSources": {
+      "mail": 0.0016930810274909068,
+      "direct": 0.48393025318672134,
+      "search": 0.3760242401038164,
+      "social": 0.024182630462524682,
+      "referrals": 0.10573430096483401,
+      "paidReferrals": 0.007107955387111203
+    },
+    "webTrafficHistorical": {
+      "1606780800000": 2700,
+      "1609459200000": 11000,
+      "1612137600000": 8100,
+      "1614556800000": 10000,
+      "1617235200000": 18000,
+      "1619827200000": 37000,
+      "1622505600000": 44000,
+      "1625097600000": 50000,
+      "1627776000000": 83000,
+      "1630454400000": 6900,
+      "1633046400000": 6800,
+      "1635724800000": 15000,
+      "1638316800000": 7900,
+      "1640995200000": 8800,
+      "1643673600000": 11000,
+      "1646092800000": 10000,
+      "1648771200000": 7400,
+      "1651363200000": 10000,
+      "1669852800000": 15000,
+      "1672531200000": 13000,
+      "1675209600000": 7800,
+      "1677628800000": 6700,
+      "1680307200000": 31000,
+      "1682899200000": 69000,
+      "1685577600000": 23000,
+      "1688169600000": 14000,
+      "1690848000000": 10000,
+      "1693526400000": 7300,
+      "1696118400000": 8700,
+      "1698796800000": 4300,
+      "1701388800000": 13000,
+      "1704067200000": 12000,
+      "1706745600000": 6800,
+      "1709251200000": 10000,
+      "1711929600000": 9900,
+      "1714521600000": 8400,
+      "1738281600000": 73391,
+      "1740960000000": 67060,
+      "1743379200000": 63142,
+      "1746057600000": 68247,
+      "1748649600000": 59978,
+      "1751328000000": 92836
+    },
+    "webViewerCountries": [
+      {
+        "country": "united states",
+        "percentage": 0.31428652328570666
+      },
+      {
+        "country": "nigeria",
+        "percentage": 0.09321971146833277
+      },
+      {
+        "country": "india",
+        "percentage": 0.049797185703390985
+      },
+      {
+        "country": "netherlands",
+        "percentage": 0.02936754612113535
+      },
+      {
+        "country": "canada",
+        "percentage": 0.028628963100367923
+      }
+    ],
+    "weeklyFacebookChange": 5,
+    "weeklyFacebookPercent": 0.0002253064167267484,
+    "monthlyFacebookChange": 16,
+    "monthlyFacebookPercent": 0.0007213380821423741,
+    "triMonthlyFacebookChange": 143,
+    "triMonthlyFacebookPercent": 0.006484084519814999,
+    "yearlyFacebookChange": 315,
+    "yearlyFacebookPercent": 0.01439539347408829,
+    "weeklyTwitterChange": -1,
+    "weeklyTwitterPercent": -9.731413001167769e-05,
+    "monthlyTwitterChange": -8,
+    "monthlyTwitterPercent": -0.0007779830788680346,
+    "triMonthlyTwitterChange": -8,
+    "triMonthlyTwitterPercent": -0.0007779830788680346,
+    "yearlyTwitterChange": 57,
+    "yearlyTwitterPercent": 0.005578391074574281,
+    "facebookHistorical": {
+      "1674536400000": 21882,
+      "1675227600000": 21924,
+      "1675918800000": 21936,
+      "1676610000000": 21945,
+      "1677301200000": 21957,
+      "1677646800000": 21971,
+      "1677992400000": 21977,
+      "1678680000000": 21978,
+      "1679371200000": 21988,
+      "1680062400000": 22006,
+      "1680321600000": 22010,
+      "1680753600000": 22026,
+      "1681444800000": 22045,
+      "1682136000000": 22054,
+      "1682827200000": 22060,
+      "1682913600000": 22061,
+      "1683518400000": 22067,
+      "1684209600000": 22099,
+      "1684900800000": 22124,
+      "1685592000000": 22149,
+      "1686283200000": 22173,
+      "1686974400000": 22181,
+      "1687665600000": 22192,
+      "1688356800000": 22193,
+      "1689048000000": 22192,
+      "1689652800000": 22197
+    },
+    "twitterHistorical": {
+      "1533096000000": 6846,
+      "1535774400000": 6881,
+      "1538366400000": 6922,
+      "1541044800000": 6975,
+      "1543640400000": 7017,
+      "1546318800000": 7053,
+      "1548997200000": 7135,
+      "1551416400000": 7182,
+      "1554091200000": 7239,
+      "1556683200000": 7277,
+      "1559361600000": 7675,
+      "1561953600000": 7808,
+      "1564632000000": 7875,
+      "1567310400000": 8013,
+      "1569902400000": 8055,
+      "1572580800000": 8152,
+      "1575176400000": 8208,
+      "1577854800000": 8265,
+      "1580533200000": 8302,
+      "1583038800000": 8408,
+      "1585713600000": 8442,
+      "1588305600000": 8484,
+      "1590984000000": 8505,
+      "1593576000000": 8505,
+      "1596254400000": 8509,
+      "1598932800000": 8509,
+      "1601524800000": 8500,
+      "1604203200000": 8623,
+      "1606798800000": 8816,
+      "1609477200000": 8807,
+      "1612155600000": 8836,
+      "1654574400000": 10217,
+      "1655265600000": 10216,
+      "1655956800000": 10220,
+      "1657339200000": 10218,
+      "1658203200000": 10214,
+      "1658894400000": 10212,
+      "1659585600000": 10215,
+      "1660276800000": 10212,
+      "1660968000000": 10213,
+      "1661659200000": 10213,
+      "1662350400000": 10212,
+      "1663041600000": 10212,
+      "1663732800000": 10232,
+      "1664424000000": 10241,
+      "1665115200000": 10245,
+      "1665806400000": 10262,
+      "1666497600000": 10330,
+      "1667188800000": 10332,
+      "1667883600000": 10338,
+      "1668574800000": 10327,
+      "1669266000000": 10300,
+      "1669957200000": 10306,
+      "1670648400000": 10303,
+      "1671339600000": 10303,
+      "1672030800000": 10307,
+      "1672722000000": 10300,
+      "1673413200000": 10302,
+      "1674104400000": 10305,
+      "1674795600000": 10304,
+      "1675486800000": 10304,
+      "1676178000000": 10301,
+      "1676869200000": 10298,
+      "1677560400000": 10297,
+      "1678251600000": 10301,
+      "1678939200000": 10298,
+      "1679630400000": 10301,
+      "1681012800000": 10283,
+      "1681704000000": 10277,
+      "1682395200000": 10276,
+      "1683172800000": 10276,
+      "1683864000000": 10277,
+      "1684641600000": 10287,
+      "1685419200000": 10281,
+      "1686283200000": 10283,
+      "1686974400000": 10280,
+      "1687665600000": 10280,
+      "1688356800000": 10276,
+      "1689048000000": 10275
+    },
+    "facebookLikes": 22197,
+    "twitterFollowers": 10275,
+    "linkedinFollowers": 4821,
+    "id": "iihE1D1FAXtQ8_kkBw6_xznuHY6qvPa",
+    "name": "Pangea",
+    "country": "United States",
+    "region": "Rhode Island",
+    "locality": "Providence",
+    "URLs": {
+      "golden": "golden.com/wiki/Pangea.app-XKK6J5A",
+      "twitter": "twitter.com/pangea_app",
+      "website": "pangea.app",
+      "facebook": "www.facebook.com/app.Pangea",
+      "linkedin": "linkedin.com/company/app-pangea",
+      "pitchbook": "pitchbook.com/profiles/company/234723-61",
+      "angelList": "angel.co/pangea-4",
+      "crunchbase": "www.crunchbase.com/organization/pangea-app"
+    },
+    "industryList": [
+      "Education",
+      "Human Resources",
+      "Virtual Workforce"
+    ],
+    "alternateNames": [
+      "Pangea",
+      "Pangea.app, Inc.",
+      "Pangea.app"
+    ],
+    "description": "Hire the best marketing and design professionals for your business. Pangea's AI-powered platform ensures faster hiring, perfect alignment, and world-class results.",
+    "tagline": "Hire top fractional marketers and designers.",
+    "founded": "2016-01-01T00:00:00.000Z",
+    "computed_tags": [
+      "Recruiting and Talent",
+      "B2B",
+      "Legal"
+    ],
+    "headcount": 6,
+    "computed_headcount": 41,
+    "financingStatus": "Venture Capital-Backed",
+    "ownershipStatus": "Privately Held (backing)",
+    "status": "active",
+    "latestDealType": "Seed",
+    "latestDealDate": "2021-07-29T00:00:00.000Z",
+    "latestDealAmount": 2000000,
+    "investorCount": 17,
+    "leadInvestorCount": 2,
+    "totalFunding": 3095000,
+    "fundingRoundCount": 5,
+    "targetMarketList": [],
+    "monthlyHeadcountChange": 0,
+    "monthlyHeadcountPercent": 0,
+    "triMonthlyHeadcountChange": 0,
+    "triMonthlyHeadcountPercent": 0,
+    "yearlyHeadcountChange": -5,
+    "yearlyHeadcountPercent": -0.131578947368421,
+    "headcountHistorical": {
+      "1454284800000": 4,
+      "1456790400000": 4,
+      "1459468800000": 5,
+      "1462060800000": 5,
+      "1464739200000": 5,
+      "1467331200000": 5,
+      "1470009600000": 5,
+      "1472688000000": 5,
+      "1475280000000": 5,
+      "1477958400000": 5,
+      "1480550400000": 5,
+      "1483228800000": 5,
+      "1485907200000": 3,
+      "1488326400000": 3,
+      "1491004800000": 3,
+      "1493596800000": 4,
+      "1496275200000": 4,
+      "1498867200000": 4,
+      "1501545600000": 4,
+      "1504224000000": 4,
+      "1506816000000": 4,
+      "1509494400000": 5,
+      "1512086400000": 5,
+      "1514764800000": 8,
+      "1517443200000": 7,
+      "1519862400000": 7,
+      "1522540800000": 7,
+      "1525132800000": 9,
+      "1527811200000": 11,
+      "1530403200000": 12,
+      "1533081600000": 12,
+      "1535760000000": 12,
+      "1538352000000": 11,
+      "1541030400000": 9,
+      "1543622400000": 9,
+      "1546300800000": 12,
+      "1548979200000": 11,
+      "1551398400000": 11,
+      "1554076800000": 11,
+      "1556668800000": 11,
+      "1559347200000": 11,
+      "1561939200000": 11,
+      "1564617600000": 11,
+      "1567296000000": 11,
+      "1569888000000": 13,
+      "1572566400000": 14,
+      "1575158400000": 15,
+      "1577836800000": 17,
+      "1580515200000": 23,
+      "1583020800000": 28,
+      "1585699200000": 36,
+      "1588291200000": 40,
+      "1590969600000": 48,
+      "1593561600000": 45,
+      "1596240000000": 47,
+      "1598918400000": 44,
+      "1601510400000": 45,
+      "1604188800000": 47,
+      "1606780800000": 52,
+      "1609459200000": 65,
+      "1612137600000": 70,
+      "1614556800000": 79,
+      "1617235200000": 99,
+      "1619827200000": 108,
+      "1622505600000": 157,
+      "1625097600000": 150,
+      "1627776000000": 147,
+      "1630454400000": 129,
+      "1633046400000": 118,
+      "1635724800000": 119,
+      "1638316800000": 115,
+      "1640995200000": 126,
+      "1643673600000": 116,
+      "1646092800000": 114,
+      "1648771200000": 109,
+      "1651363200000": 101,
+      "1654041600000": 91,
+      "1656633600000": 84,
+      "1659312000000": 77,
+      "1661990400000": 74,
+      "1664582400000": 69,
+      "1667260800000": 65,
+      "1669852800000": 62,
+      "1672531200000": 60,
+      "1675209600000": 56,
+      "1677628800000": 55,
+      "1680307200000": 54,
+      "1682899200000": 53,
+      "1685577600000": 49,
+      "1688169600000": 49,
+      "1690848000000": 47,
+      "1693526400000": 45,
+      "1696118400000": 43,
+      "1698796800000": 43,
+      "1701388800000": 41,
+      "1704067200000": 42,
+      "1706745600000": 40,
+      "1709251200000": 39,
+      "1711929600000": 39,
+      "1714521600000": 39,
+      "1717200000000": 39,
+      "1719792000000": 38,
+      "1722470400000": 37,
+      "1725148800000": 36,
+      "1727740800000": 37,
+      "1730419200000": 38,
+      "1733011200000": 38,
+      "1735689600000": 38,
+      "1738368000000": 37,
+      "1740787200000": 36,
+      "1743465600000": 36,
+      "1746057600000": 37,
+      "1748736000000": 37,
+      "1751328000000": 35,
+      "1754006400000": 34,
+      "1756684800000": 33,
+      "1759276800000": 33,
+      "1761955200000": 33,
+      "1764547200000": 33
+    },
+    "producthuntFollowerCount": 1547,
+    "producthuntAvgRating": 4,
+    "producthuntTotalVotes": 1704,
+    "productList": [
+      {
+        "createdAt": 1681801260000,
+        "imageID": "ae0705fc3400f02bc30ecfa05a17bffb",
+        "producthuntURL": "https://producthunt.com/products/pangea-app#pangea-5",
+        "productName": "Pangea",
+        "productURL": "https://producthunt.com//r/p/389239",
+        "tagline": "Work with startups on your own terms",
+        "votes": 1362
+      },
+      {
+        "createdAt": 1677139424000,
+        "imageID": "eb3c3d94bed0373bbed24fac4d64facb",
+        "producthuntURL": "https://producthunt.com/products/pangea-app#ai-jd-by-pangea-app",
+        "productName": "AI:JD by Pangea.app",
+        "productURL": "https://producthunt.com//r/p/380925",
+        "tagline": "AI generated job descriptions in 90 seconds",
+        "votes": 34
+      },
+      {
+        "createdAt": 1627563600000,
+        "imageID": "fde429936e5a02a0b139e45c5edbbb27",
+        "producthuntURL": "https://producthunt.com/products/pangea-app#pangea-app",
+        "productName": "Pangea.app",
+        "productURL": "https://producthunt.com//r/p/306070",
+        "tagline": "We turn college students into freelancers",
+        "votes": 308
+      }
+    ],
+    "screenshotList": [
+      "6a2997a75a14ec3542a5cad9dbd6cbae",
+      "459e6cb0903f8595cbda488ecd844b72",
+      "40612499ea53b62bdc8992a3c9a07b16"
+    ],
+    "linkedinID": "app-pangea",
+    "linkedinNumID": 10423146,
+    "businessModelList": [],
+    "jobListingList": [],
+    "embeddedNews": [
+      {
+        "date": 1714089600000,
+        "title": "Adam Alpert on LinkedIn: MarketerGrad by Pangea - Use AI to instantly match with top fractional\u2026 | 36 comments",
+        "source": "LinkedIn",
+        "linkUrl": "https://www.linkedin.com/posts/adamalp_marketergrad-by-pangea-use-ai-to-instantly-activity-7188911155254370304-stGY"
+      },
+      {
+        "date": 1627516800000
+      },
+      {
+        "date": 1614902400000,
+        "title": "YC-backed Pangea discusses growth, fundraising ahead of demo day",
+        "author": "Alex Wilhelm",
+        "source": "TechCrunch",
+        "linkUrl": "http://dlvr.it/Rv2hj9",
+        "imageUrl": "https://techcrunch.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-05-at-10.37.00-AM.png?w=1390&crop=1"
+      },
+      {
+        "date": 1614902400000
+      },
+      {
+        "date": 1611532800000,
+        "title": "R.I. startup connects college students with freelance work",
+        "author": "Globe Staff",
+        "source": "Boston Globe",
+        "linkUrl": "https://www.bostonglobe.com/2021/01/25/metro/ri-startup-connects-college-students-with-freelance-work/",
+        "imageUrl": "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/pJWzVfweElREw2bVBCVSCbAYHTg=/300x168/filters:focal(4339x10:4349x0)/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/QSHK32U3QJBAJEVRQB3ZETBGXE.jpeg"
+      },
+      {
+        "date": 1586476800000,
+        "title": "Pangea.app raises $400K pre-seed round to help connect student workers with businesses",
+        "author": "Alex Wilhelm",
+        "source": "TechCrunch",
+        "linkUrl": "https://techcrunch.com/2020/04/10/pangea-app-raises-400k-seed-round-to-help-connect-student-workers-with-businesses/",
+        "imageUrl": "https://techcrunch.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-10-at-2.34.42-PM.png?w=667"
+      },
+      {
+        "date": 1586476800000
+      },
+      {
+        "date": 1575158400000
+      },
+      {
+        "date": 1558396800000
+      }
+    ],
+    "isAcquired": false,
+    "isGovernment": false,
+    "isNonProfit": false,
+    "techStackList": [],
+    "isExited": false,
+    "isShutDown": false,
+    "jobFamilyList": [],
+    "customerTypes": [
+      "B2B"
+    ],
+    "g2AverageStars": 4,
+    "g2ReviewCount": 23,
+    "weeklyG2StarsChange": 0,
+    "weeklyG2StarsPercent": 0,
+    "monthlyG2StarsChange": 0,
+    "monthlyG2StarsPercent": 0,
+    "triMonthlyG2StarsChange": 0,
+    "triMonthlyG2StarsPercent": 0,
+    "yearlyG2StarsChange": 0,
+    "yearlyG2StarsPercent": 0,
+    "weeklyG2ReviewCountChange": 0,
+    "weeklyG2ReviewCountPercent": 0,
+    "monthlyG2ReviewCountChange": 0,
+    "monthlyG2ReviewCountPercent": 0,
+    "triMonthlyG2ReviewCountChange": 0,
+    "triMonthlyG2ReviewCountPercent": 0,
+    "yearlyG2ReviewCountChange": 0,
+    "yearlyG2ReviewCountPercent": 0,
+    "g2StarsHistorical": {
+      "1717618708904": 4.6
+    },
+    "g2ReviewCountHistorical": {
+      "1717618708904": 23
+    },
+    "ownedPatents": [],
+    "governmentAwards": [],
+    "locationIDList": [
+      102191575,
+      85633793,
+      102081597,
+      404488375,
+      101720567,
+      85688509
+    ],
+    "locationDetails": {
+      "continent": {
+        "id": 102191575,
+        "name": "North America",
+        "placeType": "continent",
+        "geometry": {
+          "area_square_degrees": 3704.177719,
+          "bbox": "-179.143503,5.515082,179.780935,83.634101",
+          "lat": 38.309137,
+          "lon": -101.328273
+        }
+      },
+      "country": {
+        "id": 85633793,
+        "name": "United States",
+        "placeType": "country",
+        "geometry": {
+          "area_square_degrees": 1166.190125,
+          "bbox": "-124.848973,24.396308,-66.885444,49.384358",
+          "lat": 39.71614,
+          "lon": -96.999246
+        }
+      },
+      "county": {
+        "id": 102081597,
+        "name": "Providence County",
+        "placeType": "county",
+        "geometry": {
+          "area_square_degrees": 0.122369,
+          "bbox": "-71.799242,41.724563,-71.31777,42.0188",
+          "lat": 41.871643,
+          "lon": -71.578606
+        }
+      },
+      "localadmin": {
+        "id": 404488375,
+        "name": "Providence",
+        "placeType": "localadmin",
+        "geometry": {
+          "area_square_degrees": 0.005779,
+          "bbox": "-71.472667,41.772381,-71.369694,41.861831",
+          "lat": 41.826974,
+          "lon": -71.419702
+        }
+      },
+      "locality": {
+        "id": 101720567,
+        "name": "Providence",
+        "placeType": "locality",
+        "geometry": {
+          "area_square_degrees": 0.005779,
+          "bbox": "-71.472667,41.772381,-71.369694,41.861831",
+          "lat": 41.826948,
+          "lon": -71.419697
+        }
+      },
+      "region": {
+        "id": 85688509,
+        "name": "Rhode Island",
+        "placeType": "region",
+        "geometry": {
+          "area_square_degrees": 0.432105,
+          "bbox": "-71.907258,41.095834,-71.088571,42.0188",
+          "lat": 41.587536,
+          "lon": -71.514739
+        }
+      }
+    }
+  }
+}

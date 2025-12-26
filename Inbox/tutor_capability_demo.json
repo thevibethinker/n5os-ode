@@ -1,0 +1,14 @@
+{
+  "mode": "capability",
+  "package": {
+    "description": "Demo capability package for local testing.",
+    "manifest": {
+      "entrypoint": "demo.meeting_scheduler",
+      "notes": "local-demo"
+    },
+    "name": "demo_meeting_scheduler",
+    "type": "capability",
+    "version": "0.1"
+  },
+  "protocol_version": "0.1"
+}

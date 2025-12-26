@@ -12,6 +12,20 @@ Personas are specialized configurations of Zo that activate different capabiliti
 
 ---
 
+## Legacy YAML Persona Specs
+
+The following older persona specifications are preserved as **design-era references only**. The canonical, up-to-date briefs for each persona live under `Documents/System/personas/*.md`.
+
+- `file 'Inbox/20251101-131632_vibe-architect-v1.1.yaml'` → canonical: `file 'Documents/System/personas/vibe_architect_persona.md'`
+- `file 'Inbox/20251101-131632_vibe-builder-v2.0.yaml'` → canonical: `file 'Documents/System/personas/vibe_builder_persona.md'`
+- `file 'Inbox/20251101-131632_vibe-teacher-v1.1.yaml'` → canonical: `file 'Documents/System/personas/vibe_teacher_persona.md'`
+- `file 'Inbox/20251101-131632_vibe-writer-v2.1.yaml'` → canonical: `file 'Documents/System/personas/vibe_writer_persona.md'`
+- `file 'Inbox/20251101-131632_vibe-researcher-v2.0.yaml'` → canonical: `file 'Documents/System/personas/vibe_researcher_persona.md'`
+
+Do not update the YAML files for day-to-day changes; update the markdown briefs in `Documents/System/personas/` instead.
+
+---
+
 ## Active Personas
 
 ### 1. Vibe Teacher → `file 'Documents/System/vibe_teacher_persona.md'`
@@ -272,3 +286,4 @@ Template available: `file 'Documents/System/persona_creation_template.md'`
 
 **Maintained by:** V + Zo (collaborative)  
 **Next review:** 2026-01-22
+

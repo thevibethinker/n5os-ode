@@ -1,1 +1,0 @@
-/home/workspace/N5/scripts/tally_manager.py

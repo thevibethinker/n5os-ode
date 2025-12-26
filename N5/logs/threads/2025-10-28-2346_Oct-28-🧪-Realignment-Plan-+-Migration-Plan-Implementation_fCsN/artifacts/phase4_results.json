@@ -33,7 +33,6 @@
     "20251028-131721_phase4_transfer",
     "20251028-131721_phase3_transfer",
     "20251028-131721_logs",
-    "20251028-131721_calcom-app",
     "20251028-132859_phase5_transfer",
     "20251028-132859_Sites",
     "20251028-132902_Meetings",
@@ -41,8 +40,7 @@
     "20251028-132904_phase2_transfer",
     "20251028-132904_phase0.5_transfer",
     "20251028-132904_phase1_transfer",
-    "20251028-132904_n5os-core",
-    "20251028-132904_calcom"
+    "20251028-132904_n5os-core"
   ],
   "kept_folders": [
     "REVIEW.md",
@@ -90,3 +88,4 @@
   "success": true,
   "notes": "Phase executed successfully. Archive created at 16:28, cleanup completed at 16:31. Inbox now contains 36 items (files and symlinks only, no export directories)."
 }
+

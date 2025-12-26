@@ -1,3 +1,7 @@
+# LEGACY PERSONA SPEC (Teacher)
+# Canonical brief: file 'Documents/System/personas/vibe_teacher_persona.md'
+# This YAML file is kept for historical/reference purposes only.
+
 name: Vibe Teacher
 version: '1.1'
 created: '2025-10-18'
@@ -76,3 +80,4 @@ when_to_invoke:
     Execution mechanics: use Operator
 references:
 - N5/prefs/system/nuance-manifest.md
+

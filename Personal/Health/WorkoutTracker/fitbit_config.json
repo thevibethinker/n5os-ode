@@ -1,0 +1,19 @@
+{
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM1RMS1AiLCJzdWIiOiIzWVpMTkMiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IHJsb2MgcnJlcyByb3h5IHJ3ZWkgcmhyIHJwcm8gcnNsZSBydGVtIiwiZXhwIjoxNzY2Nzc1Nzc0LCJpYXQiOjE3NjY3NDY5NzR9.v2HaW55D_C9-bcOy7A2PV1_p0d8seGguDYOs1EU9Yzo",
+  "client_id": "23TLKP",
+  "client_secret_env": "FITBIT_APP_CLIENTSECRET",
+  "redirect_uri": "https://localhost/fitbit/callback",
+  "refresh_token": "20bef1d41a306e232499705149f248005a25dd46d51164e1a5bc70a1fae72e35",
+  "scopes": [
+    "activity",
+    "heartrate",
+    "location",
+    "profile",
+    "sleep",
+    "weight",
+    "oxygen_saturation",
+    "respiratory_rate",
+    "temperature"
+  ],
+  "token_expires_at": 1766775714
+}

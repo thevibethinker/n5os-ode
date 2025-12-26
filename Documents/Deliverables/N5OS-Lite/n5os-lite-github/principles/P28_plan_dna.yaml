@@ -1,0 +1,53 @@
+---
+id: P28
+name: Plan DNA (Quality Upstream)
+category: strategy
+priority: critical
+version: "1.0.0"
+created: "2025-11-03"
+
+purpose: |
+  Code quality is determined upstream in plans, not downstream in implementation. Plans are the DNA—code is the expression. With AI generation, plan quality directly determines code quality.
+
+when_to_apply:
+  - All AI-assisted code generation
+  - System specifications
+  - Feature design
+  - Architecture documentation
+  - Implementation planning
+
+pattern:
+  core_behavior: |
+    Quality happens during planning, not coding.
+    Write clear specifications with explicit trade-offs, documented assumptions, defined success criteria.
+    Code generation is mechanical—planning is strategic.
+    Care deeply about plan quality because it directly generates code quality.
+
+examples:
+  - description: High-quality plan generates clean code
+    good: "Spec includes: Purpose, I/O types, behavior steps, edge cases, error handling, success criteria. AI generates clean matching code."
+    bad: "'Build a login system' → vague spec generates messy code requiring heavy refactoring"
+  
+  - description: Edge cases planned upfront
+    good: "Plan lists: empty input, malformed data, timeout scenarios, permission errors. Generated code handles all cases."
+    bad: "Discover edge cases during coding, patch them in, accumulate technical debt"
+
+anti_patterns:
+  - symptom: "'Fix it up during implementation' mindset"
+    fix: "Invest 70% time in planning, 20% review, 10% execution"
+  
+  - symptom: "Code is messy because plan was vague"
+    fix: "Write detailed, explicit plans—code quality follows plan quality"
+  
+  - symptom: "Refactoring to clean up generated code"
+    fix: "Improve the plan and regenerate—don't patch poor plans with clever code"
+
+related_principles:
+  - P31: Own The Planning Process
+  - P21: Document All Assumptions
+  - P23: Identify Trap Doors
+
+changelog:
+  - date: "2025-11-03"
+    version: "1.0.0"
+    changes: "Extracted for N5OS Lite"

@@ -1,0 +1,19 @@
+export_id: 20251130_182020_shrm-worktech-accelerator
+created_at: 2025-11-30T18:20:20.823556
+conversation_id: con_AClnOfb2kaqVGevB
+requested_by: V
+recipient: Logan
+purpose: SHRM WorkTech Accelerator 2026 application package
+items:
+  - label: Application Draft
+    source_path: /home/workspace/Inbox/20251105-095006_SHRM_Application_Draft.md
+    exported_name: SHRM_Application_Draft.md
+  - label: Strategic Positioning (Report)
+    source_path: /home/workspace/Inbox/20251105-095006_Reports/Careerspan_SHRM_Strategic_Positioning.md
+    exported_name: Careerspan_SHRM_Strategic_Positioning.md
+  - label: Strategic Positioning (Canonical)
+    source_path: /home/workspace/Documents/Careerspan/SHRM_WTA_Strategic_Positioning.md
+    exported_name: SHRM_WTA_Strategic_Positioning.md
+  - label: Company History + Strategy
+    source_path: /home/workspace/Personal/Knowledge/Legacy_Inbox/context/Careerspan Company History and Current Strategy - Sep 2025.txt
+    exported_name: Careerspan Company History and Current Strategy - Sep 2025.txt

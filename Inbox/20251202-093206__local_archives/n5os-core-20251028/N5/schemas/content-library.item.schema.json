@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://n5os.com/schemas/content-library.item.schema.json",
+  "title": "Content Library Item",
+  "description": "Schema for content library items (links and text snippets)",
+  "type": "object",
+  "required": ["id", "type", "title"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the item",
+      "pattern": "^[a-z0-9_-]+$",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "type": {
+      "type": "string",
+      "enum": ["link", "snippet"],
+      "description": "Type of content: 'link' for URLs, 'snippet' for text blocks"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title for the item",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "content": {
+      "type": ["string", "null"],
+      "description": "Text content for snippets, or URL for links"
+    },
+    "url": {
+      "type": ["string", "null"],
+      "description": "URL for link items",
+      "format": "uri"
+    },
+    "tags": {
+      "type": "object",
+      "description": "Multi-dimensional tags for categorization and retrieval",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "properties": {
+        "purpose": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "bio",
+              "education",
+              "scheduling",
+              "referral",
+              "product",
+              "hook",
+              "signature",
+              "resource",
+              "pitch",
+              "onboarding",
+              "support",
+              "marketing",
+              "sales",
+              "hiring",
+              "fundraising",
+              "other"
+            ]
+          },
+          "description": "Primary use case for the content"
+        },
+        "audience": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "founders",
+              "investors",
+              "customers",
+              "candidates",
+              "team",
+              "partners",
+              "media",
+              "advisors",
+              "general",
+              "other"
+            ]
+          },
+          "description": "Intended audience for the content"
+        },
+        "tone": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "concise",
+              "detailed",
+              "formal",
+              "casual",
+              "provocative",
+              "technical",
+              "storytelling",
+              "data-driven",
+              "other"
+            ]
+          },
+          "description": "Communication style and tone"
+        },
+        "entity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Related entities (company name, product, person, etc.)"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom categories for organization"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "System metadata for tracking and lifecycle",
+      "required": ["created", "updated", "deprecated", "version"],
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of creation"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of last update"
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "Whether this item is deprecated"
+        },
+        "expires_at": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Optional expiration timestamp (ISO 8601)"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Version number (incremented on updates)"
+        },
+        "last_used": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Last time this item was accessed"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes about this item"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of this item (e.g., 'manual', 'quick-add', 'migration')"
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "type": { "const": "link" },
+        "url": { "type": "string", "format": "uri", "minLength": 1 }
+      },
+      "required": ["url"]
+    },
+    {
+      "properties": {
+        "type": { "const": "snippet" },
+        "content": { "type": "string", "minLength": 1 }
+      },
+      "required": ["content"]
+    }
+  ]
+}

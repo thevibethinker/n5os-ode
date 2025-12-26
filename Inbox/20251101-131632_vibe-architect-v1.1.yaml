@@ -1,3 +1,7 @@
+# LEGACY PERSONA SPEC (Architect)
+# Canonical brief: file 'Documents/System/personas/vibe_architect_persona.md'
+# This YAML file is kept for historical/reference purposes only.
+
 name: Vibe Architect
 version: '1.1'
 created: '2025-10-31'
@@ -180,3 +184,4 @@ symbiosis: Can request Builder enhancements; Builder can flag design issues
 references:
 - N5/prefs/system/nuance-manifest.md
 - list_personas
+

@@ -1,0 +1,116 @@
+{
+  "triggers": [
+    {
+      "command": "lists-health-check",
+      "primary_trigger": "check list system health",
+      "aliases": [
+        "assess list maintenance",
+        "list health status",
+        "check lists for phase 3",
+        "reveal the health of my list realm",
+        "conjure list system diagnostics"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.8,
+      "category": "lists",
+      "description": "Monitor list count, detect similar lists, and recommend Phase 3 implementation"
+    },
+    {
+      "command": "lists-add",
+      "primary_trigger": "add item to list",
+      "aliases": [
+        "add to list",
+        "create list item",
+        "remember this",
+        "save to list"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.7,
+      "category": "lists",
+      "description": "Add an item to a list with intelligent auto-categorization"
+    },
+    {
+      "command": "lists-move",
+      "primary_trigger": "move list item",
+      "aliases": [
+        "relocate item",
+        "transfer list item",
+        "move item between lists"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.8,
+      "category": "lists",
+      "description": "Move an item from one list to another atomically"
+    },
+    {
+      "command": "docgen",
+      "primary_trigger": "generate command catalog",
+      "aliases": [
+        "update command docs",
+        "rebuild command catalog",
+        "regenerate docs"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.8,
+      "category": "ops",
+      "description": "Generate command catalog and update prefs from commands.jsonl"
+    },
+    {
+      "command": "index-rebuild",
+      "primary_trigger": "rebuild system index",
+      "aliases": [
+        "regenerate index",
+        "refresh system index",
+        "reindex system"
+      ],
+      "destructive": true,
+      "confidence_threshold": 0.8,
+      "category": "ops",
+      "description": "Rebuild the N5 system index from source files (modifies critical files)"
+    },
+    {
+      "command": "git-check",
+      "primary_trigger": "audit git changes",
+      "aliases": [
+        "check git safety",
+        "review git status",
+        "git safety audit"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.8,
+      "category": "ops",
+      "description": "Quick audit for overwrites or data loss in staged Git changes"
+    },
+    {
+      "command": "timeline",
+      "primary_trigger": "show development timeline",
+      "aliases": [
+        "view timeline",
+        "display system history",
+        "show n5 timeline"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.8,
+      "category": "ops",
+      "description": "View n5.os development timeline and system history"
+    },
+    {
+      "command": "timeline-add",
+      "primary_trigger": "add timeline entry",
+      "aliases": [
+        "create timeline event",
+        "log timeline item",
+        "record timeline"
+      ],
+      "destructive": false,
+      "confidence_threshold": 0.8,
+      "category": "ops",
+      "description": "Add new entry to n5.os development timeline"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-09-30T13:30:00Z",
+    "total_triggers": 8
+  }
+}

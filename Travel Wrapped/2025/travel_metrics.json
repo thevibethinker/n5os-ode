@@ -1,0 +1,142 @@
+{
+  "summary": {
+    "total_flights": 7,
+    "total_trains": 3,
+    "total_destination_cities": 9,
+    "total_nights": 26,
+    "top_airline": "Delta",
+    "busiest_month": "September",
+    "incidents": {
+      "cancellations": 2,
+      "changes": 5
+    },
+    "insights": {
+      "depart_time_bucket": "Morning",
+      "return_time_bucket": "Evening",
+      "top_airport": "JFK",
+      "primary_mode": "Air"
+    },
+    "airline_distribution": {
+      "Delta": 5
+    },
+    "mode_distribution": {
+      "train": 3,
+      "flight": 5,
+      "lodging": 1
+    },
+    "city_distribution": {
+      "Boston": 2,
+      "Raleigh": 1,
+      "Atlanta": 1,
+      "Philadelphia": 1,
+      "Los Angeles": 1,
+      "Newark/SF": 1,
+      "Phoenix": 1
+    },
+    "airline_count": 1,
+    "nights_percent_of_year": 9.6,
+    "user_name": "Vrijen Attawar",
+    "nights_away": 35,
+    "total_cities": 7
+  },
+  "trips": [
+    {
+      "date": "2025-03-03",
+      "type": "train",
+      "provider": "Amtrak",
+      "dest": "Boston",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-03-14",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "Raleigh",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-05-01",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "Atlanta",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-06-09",
+      "type": "train",
+      "provider": "Amtrak",
+      "dest": "Philadelphia",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-06-15",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "Los Angeles",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-06-24",
+      "type": "flight",
+      "provider": "Alaska Airlines",
+      "dest": "San Francisco",
+      "origin": "Newark (EWR)",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-06-25",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "Los Angeles",
+      "origin": "San Francisco",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-06-26",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "San Francisco",
+      "origin": "Los Angeles",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-10-08",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "Phoenix",
+      "status": "Confirmed"
+    },
+    {
+      "date": "2025-10-14",
+      "type": "train",
+      "provider": "Amtrak",
+      "dest": "Boston",
+      "status": "Confirmed"
+    }
+  ],
+  "cancelled_trips": [
+    {
+      "date": "2025-05-05",
+      "type": "flight",
+      "provider": "Delta",
+      "dest": "New York",
+      "status": "Cancelled"
+    },
+    {
+      "date": "2025-09-18",
+      "type": "flight",
+      "provider": "Norwegian",
+      "dest": "Porto",
+      "status": "Cancelled"
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "2025-12-21T05:01:50.505042",
+    " NYC_Airports": [
+      "EWR",
+      "JFK",
+      "LGA"
+    ]
+  }
+}

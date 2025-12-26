@@ -1,1 +1,0 @@
-/home/workspace/Documents/tally-integration-checklist.md

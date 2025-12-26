@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://n5os.com/schemas/content-library.registry.schema.json",
+  "title": "Content Library Registry",
+  "description": "Schema for the content library registry file",
+  "type": "object",
+  "required": ["meta", "items"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "Registry metadata",
+      "required": ["version", "last_updated", "format"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+          "description": "Semantic version of the registry format"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of last registry update"
+        },
+        "format": {
+          "type": "string",
+          "const": "N5-content-library",
+          "description": "Format identifier for compatibility checking"
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional description of this content library"
+        },
+        "owner": {
+          "type": "string",
+          "description": "Optional owner/organization name"
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "description": "Array of content library items",
+      "items": {
+        "$ref": "content-library.item.schema.json"
+      }
+    }
+  }
+}

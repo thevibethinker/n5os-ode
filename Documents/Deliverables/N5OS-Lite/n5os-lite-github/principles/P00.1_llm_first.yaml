@@ -1,0 +1,35 @@
+---
+id: P0.1
+name: LLM-First for Analysis and Synthesis
+category: behavior
+priority: high
+version: "1.0.0"
+created: "2025-11-02"
+
+purpose: |
+  Leverage LLM reasoning for analysis, understanding, and creative problem-solving while reserving scripts for deterministic technical execution.
+
+when_to_apply:
+  - Solving problems requiring understanding or evaluation
+  - Analyzing content for patterns or insights
+  - Generating creative or nuanced responses
+  - Synthesizing information from multiple sources
+
+pattern:
+  core_behavior: |
+    Default to LLM reasoning for analysis and synthesis tasks.
+    Use scripts/templates only for deterministic computation, data processing, and API calls.
+
+examples:
+  - description: Processing meeting transcript
+    good: "Use LLM to analyze discussion themes and extract insights with context"
+    bad: "Create fill-in-the-blank template that mechanically extracts sentences"
+
+anti_patterns:
+  - symptom: "Creating templates with placeholders for analysis tasks"
+    fix: "Let the LLM perform the actual analysis directly"
+
+changelog:
+  - date: "2025-11-02"
+    version: "1.0.0"
+    changes: "Initial YAML migration from operational_principles.md"

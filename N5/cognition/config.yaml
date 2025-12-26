@@ -1,0 +1,5 @@
+# N5 Cognition Layer Configuration
+embedding_provider: openai  # Changed from 'local' to 'openai'
+openai_model: text-embedding-3-large
+recency_weight_default: 0.2
+

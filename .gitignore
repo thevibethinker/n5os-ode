@@ -108,3 +108,9 @@ _local_archives/
 .env
 .env.*
 
+
+# Large Cognition Artifacts
+N5/cognition/brain.hnsw
+N5/cognition/brain.hnsw.ids
+N5/cognition/models/
+.cache/
