@@ -32,6 +32,10 @@ provenance: con_q7r0aONFiaolYKUe
 | 2025-12-21 02:26 | Test search successful: JFK→LAX returned 61 options |
 | 2025-12-21 02:27 | Created prompt interface for natural language searches |
 | 2025-12-21 02:27 | Created route report template |
+| 2025-12-27 02:46 | Debugger audit: identified past-date silent failure |
+| 2025-12-27 02:48 | Fixed: Date validation to prevent past-date searches |
+| 2025-12-27 02:48 | Fixed: IATA code normalization for city names (London → LHR) |
+| 2025-12-27 02:48 | Verified: City name search working (London test passed) |
 
 ## Test Results
 
@@ -85,4 +89,5 @@ These items should be added to the system upgrades queue:
 - Scoring algorithm prioritizes: JetBlue > Delta, JFK (if JetBlue) > LGA > EWR
 - Hard exclusions: Spirit (NK), Frontier (F9) get score -1000
 - Basic economy automatically excluded via `exclude_basic=true`
+
 
