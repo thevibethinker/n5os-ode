@@ -1,1 +1,0 @@
-See @README.md for context about the project. Any notes or memories about the project should be added to the Project Notes section at the top of @README.md – NOT this CLAUDE.md file, which is simply a proxy to the README.

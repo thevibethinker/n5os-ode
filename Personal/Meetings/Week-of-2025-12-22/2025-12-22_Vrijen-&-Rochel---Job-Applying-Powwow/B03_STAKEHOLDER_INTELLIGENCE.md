@@ -1,42 +1,34 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CUnjzDvSR73FILMU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 Stakeholder Intelligence: Vrijen & Rochel - Job Applying Powwow
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fFkuZgfSd31qk5Ow
+---
 
-## Participants
+# B03: Stakeholder Intelligence
 
-### Vrijen Attawar (V)
-- **Role:** Founder of Careerspan; Coach/Mentor to Rochel.
-- **Key Interests:** Scaling Careerspan, supporting Rochel's career transition, leveraging VC networks (Marvin Ventures, A16Z), competitive intelligence (Boardy).
-- **Sentiment:** Encouraging, strategic, protective of "the story."
-- **Leverage Points:** Deep network in the McKinsey/VC ecosystem; ability to frame Rochel's experience as a "founding designer" success story.
+## Vrijen (V)
+- **Role:** Founder of Careerspan / Strategic Advisor.
+- **Interests:** Market signaling, systemic behavior in job seeking, scaling Careerspan through VC talent partnerships.
+- **Leverage Points:** Uses "Marvin Ventures" partnership as a high-signal door opener; deep understanding of the "Founding Engineer" value proposition.
 
-### Rochel Polter (Rochel / "Rocko")
-- **Role:** Designer/Engineer (Founding team member at Careerspan); Job Seeker.
-- **Key Interests:** Finding a high-quality next role (Founding or established startup), networking with peers (e.g., Ryan), maintaining momentum without "cold-applying burnout."
-- **Sentiment:** Resilient but tired of the job search "roller coaster"; searching for the right balance of challenge and stability.
-- **Skepticism:** Slightly hesitant to dive into the heavy "story lifting" of Careerspan without a specific role as a trigger.
-- **Leverage Points:** Proven track record as a founding employee; strong peer recognition (Ryan); existing relationship with A16Z recruiting.
+## Rocko
+- **Role:** Founding Engineer / Job Seeker.
+- **Interests:** Finding a high-quality next role (Founding or Series A), maintaining peer-level relationships with industry leaders.
+- **Skepticism/Barriers:** Energy drain from cold applications; inertia in using Careerspan for "story extraction" without an active interview.
+- **Leverage Points:** Existing relationship with Jordan Mazer (A16Z); experience getting a company to PMF; connection to UX leaders at Insight Global.
 
-## External Stakeholders Mentioned
+## Ryan (Mentioned)
+- **Context:** High-level peer Rocko met recently.
+- **Intelligence:** Humble, non-pompous despite cool roles. Interested in staying in touch every few weeks as an "accountability buddy."
 
-### Amanda
-- **Context:** Vrijen's partner.
-- **Intel:** Her organization missed grant funding; facing potential layoffs. Talented and expected to recover quickly.
-
-### Ryan
-- **Context:** High-profile networking contact for Rochel.
-- **Intel:** Humble, "normal," second-time seeker. Suggested an accountability partnership with Rochel.
-
-### Jordan Mazer (A16Z)
-- **Context:** Recruiter at Andreessen Horowitz.
-- **Intel:** Previously reached out to Rochel. Vrijen sees him as a key target for both Rochel's search and Careerspan's GTM.
-
-### Mario Schlosser (Oscar Health)
-- **Context:** Founder of Oscar Health.
-- **Intel:** McKinsey alumnus. Vrijen intends to leverage the Marvin Ventures connection to reach him.
-
+## Jordan Mazer (Mentioned)
+- **Context:** Recruiter at A16Z.
+- **Intelligence:** Target for Careerspan's "Talent VC" sales motion. Rocko has a warm connection here.

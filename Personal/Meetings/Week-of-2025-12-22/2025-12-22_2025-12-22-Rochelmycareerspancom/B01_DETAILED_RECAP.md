@@ -1,39 +1,33 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_EyOCQ8BRmv2Hcx91
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B01 DETAILED RECAP
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_QHH72nAkeVXI8BDA
+---
 
-## Meeting Overview
-Vrijen Attawar and Rochel Polter met to discuss job hunting strategies, specific role evaluations (Skillcraft, Interrupt, Oscar Health), and product management career levels. The conversation also touched on a "rant" regarding data scraping in the industry and potential social media content.
+# B01 Detailed Recap
 
-## Discussion Highlights
+### 1. Happenstance Demo & Data Rant
+The meeting opened with Vrijen (V) sharing his screen to demo **Happenstance**. They observed how the tool aggregates data on individuals (like Adam Harder and Elsa) even if they aren't active users, primarily by scraping LinkedIn. This triggered a rant from V about the lack of differentiation among data companies "scraping the same crap." V added an item to his social media content list regarding "Data Supremacy."
 
-### 1. Data Scraping & "Happenstance"
-- Vrijen and Rochel discussed a tool called "Happenstance" that aggregates information on people by scraping LinkedIn and other sources.
-- Vrijen expressed frustration with companies that all scrape the same data, questioning their unique value proposition.
-- **Content Idea:** Vrijen decided to add a "rant about how everyone is using the same data / importance of data supremacy" to his social media content list.
+### 2. Job Strategy: Skillcraft & Founding Roles
+Rochel asked V about a job at **Skillcraft**. V provided a strategic breakdown of why it might be a "good digging exercise" but noted that the founder, David, is currently building the product to catch up to the manual methodology he already sold. Rochel expressed hesitation about founding roles, preferring something with a "foundation already visually" (Series A or higher).
 
-### 2. Skillcraft Role Evaluation
-- They discussed a company called Skillcraft (founder: David).
-- Vrijen's assessment: David has sold software he can do manually but needs to build the actual product to scale. The methodology is sound and not overly reliant on "squishy" AI engineering.
-- Rochel's perspective: She is hesitant to join a company at the "from scratch" phase where there is no existing product form or foundation. She prefers something with a visual/product foundation already in place.
-- **Outcome:** Vrijen updated his advice for Rochel to target Series A or B companies rather than Seed stage, as founding roles might be too early for her current needs.
-
-### 3. Interrupt Role Evaluation
-- Vrijen pointed out a "Product Lead" role at Interrupt on their job board.
-- The role involves a heavy design component and is located in Boston (hybrid/office preferred, though remote is mentioned).
-- Rochel expressed interest in the role and plans to use Careerspan to map her experience and tell stories for the application.
-- Vrijen offered to get Rochel's profile in front of Edmund (from Interrupt) if she can prepare her stories soon.
+### 3. Target Roles: Oscar Health & Interrupt
+The discussion shifted to specific opportunities:
+- **Oscar Health**: V promised to prime this intro for Rochel.
+- **Interrupt**: A "Product Lead" role on the Careerspan job board. V noted it's a good level for Rochel and that he knows the recruiter. 
+- **Next Play**: Rochel mentioned talking to Ryan and planning to make an account.
 
 ### 4. Careerspan Use Case: Transferable Skills
-- Rochel noted that applying for the Interrupt role would be a good use of Careerspan's AI coach to help her represent herself in a "Product Lead" context, which is slightly different from her primary product design focus.
-- Vrijen confirmed that Careerspan is particularly strong for "transferable applicant use cases."
+Rochel intends to use Careerspan to help map her product design experience to the Product Lead role at Interrupt. They discussed the value of the Careerspan AI coach for "transferable applicant use cases" where the applicant is less familiar with the specific formalities of a new role type.
 
-### 5. Future Planning
-- **Oscar Health:** Vrijen will bundle Rochel with another candidate ("Chris guy") once he hears back from him to send to the Oscar Health contact.
-- **Follow-up:** They scheduled a 10:30 AM 1-on-1 meeting for tomorrow to continue the discussion and potentially job hunt. Vrijen will check with Amanda about a joint job hunting session on the 24th.
-
+### 5. Scheduling & Next Steps
+The meeting concluded with scheduling follow-ups. V confirmed a 1:1 already exists for tomorrow at 10:30 AM. They also discussed a potential joint job-hunting session with Amanda on December 24th.

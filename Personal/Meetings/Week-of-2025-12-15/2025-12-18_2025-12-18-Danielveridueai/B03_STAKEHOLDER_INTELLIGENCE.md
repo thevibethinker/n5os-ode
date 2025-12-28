@@ -1,21 +1,40 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 Stakeholder Intelligence
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
+
+# B03: Stakeholder Intelligence
 
 ## Daniel Csonth
-- **Role:** Founder, Veridue AI.
-- **Background:** Second-time founder; McKinsey alum.
-- **Current State:** In high-intensity term sheet negotiations (lead investor secured). Based in London (part-time/nomad).
-- **Key Interests:** High-signal technical hiring (AI, FE, Full-stack), maintaining stealth while building pipeline, "moneyball" hiring (underpriced high-performers).
-- **Skepticism/Pain Points:** Competitive market for top talent; "messy" inbound due to AI-generated resumes/auto-apply.
-- **Leverage Points:** V's shared McKinsey background; Careerspan's partnership with Marvin; Dan's need for a low-effort, high-grade analysis tool to avoid resume review fatigue.
+- **Role:** Founder (Early-stage startup)
+- **Current Context:** In term sheet negotiations; securing lead investor support.
+- **Key Interests:** 
+  - Building a high-quality initial engineering team (AI, FE, Full-stack).
+  - Minimizing the time/energy drain of "mental" hiring cycles.
+  - Finding candidates with the right "fit" (values/mindset).
+- **Skepticism/Barriers:** 
+  - Currently overwhelmed with fundraising (low bandwidth for new tools).
+  - Initially hesitant about "Inbound" due to low signal-to-noise ratio in the market.
+- **Leverage Points:** 
+  - The "Stealth Job" feature—allows him to build a pipeline without alerting competitors.
+  - The "Why Yes/No" actionable summaries—directly addresses his need for efficiency.
+  - The Marvin partnership (free first 100 applicants) removes financial friction.
 
-## Vrijen Attawar
-- **Role:** Founder, Careerspan.
-- **Objective:** Onboard Dan/Veridue AI to the Careerspan platform as a high-value stealth user; position Careerspan as the solution to the "inbound mess."
-
+## Vrijen Attawar (V)
+- **Role:** Founder of Careerspan / Career Coach.
+- **Key Interests:** 
+  - Positioning Careerspan as the "Moneyball" solution for early-stage hiring.
+  - Solving the "Inbound is a mess" problem for founders.
+  - Providing deep semantic signals (vibes/fit) that traditional interviews miss.
+- **Leverage Points:** 
+  - Direct relationship via McKinsey founder program.
+  - Deep domain expertise in career coaching used as a "Trojan Horse" for better candidate data.

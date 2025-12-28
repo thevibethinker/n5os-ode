@@ -1,13 +1,17 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Blurbs Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_f7AwUFZUlbjsHjlO
+---
 
-## Pending Blurbs
+# B14 Blurbs Requested
 
-- [Blurb/Intro]: [Status - pending Vrijen composition]
-
+*No explicit outbound blurbs were requested by Vrijen in this meeting.*

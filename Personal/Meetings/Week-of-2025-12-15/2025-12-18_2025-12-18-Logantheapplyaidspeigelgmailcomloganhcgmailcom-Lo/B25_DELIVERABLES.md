@@ -1,11 +1,19 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_QkNXUitVDnlrYZ4Q
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25: Deliverables
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_wmTTLgn0WG4i79O4
+---
 
-- **Networking Playbook**: David to provide his documented processes (currently not "tightly" documented) for translation into Zo logic.
-- **MCP Prototype**: V to explore a technical POC for the MCP server to ChatGPT app bridge.
+# B25 Deliverables
+
+- **Networking Workflow "Playlist":** David to provide a documented breakdown of his networking playbooks.
+- **MCP Server Distribution Guide:** V to provide technical context on the Zo -> MCP -> ChatGPT pipeline.
+- **Venture Collective Group Chat:** Already delivered via LinkedIn (Madison, Anna, V, David).

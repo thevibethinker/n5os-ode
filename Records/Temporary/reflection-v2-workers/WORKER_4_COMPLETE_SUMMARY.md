@@ -216,7 +216,7 @@ python3 N5/scripts/reflection_synthesizer.py --block-type B90 \
 - file 'Records/Temporary/reflection-v2-workers/VALIDATION_REPORT.md'
 
 ### Master Plan
-- file 'N5/orchestration/reflection-system-v2/REFLECTION_SYSTEM_V2_PLAN.md'
+- file 'N5/builds/reflection-system-v2/REFLECTION_SYSTEM_V2_PLAN.md'
 - file 'Records/Temporary/reflection-v2-workers/SUMMARY.md'
 
 ---

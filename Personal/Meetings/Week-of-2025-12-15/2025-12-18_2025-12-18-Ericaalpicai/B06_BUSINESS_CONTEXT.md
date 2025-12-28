@@ -1,24 +1,19 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B06: Business Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_twzmrcRlYbwPjLN7
+---
 
-## Alpic
-- **Product**: Cloud platform for MCP (Model Context Protocol) servers and ChatGPT apps.
-- **Value Prop**: "Vercel-like" experience for MCP; abstracts complexity of the protocol (proxying, analytics, monitoring).
-- **Stage**: 5-person founding team; raised seed funding; clients include Kiwi.com.
-- **Geography**: France-based but moving/operating in the US (SF/NY).
+# B06 Business Context
 
-## Careerspan
-- **Challenge**: User distribution and driving traffic to proprietary UI.
-- **Opportunity**: Leveraging the ChatGPT App Store for distribution while maintaining "look and feel" via React components in MCP apps.
-- **Assets**: ~100,000 words of proprietary career coaching content.
-
-## Zo Computer
-- **Product**: Agentic cloud server with full filesystem and always-on agents.
-- **Stage**: M seed from Lightspeed; ~2 years in.
-- **Context**: Vrijen is a power user and advocate, seeing Alpic as a potential "middle layer" for Zo instances to reach the OpenAI App Store.
+- **Alpic/Outpik**: A cloud platform providing a "Vercel-like" experience for MCP servers and ChatGPT apps. Focused on abstracting the complexity of the MCP protocol and providing analytics/logs.
+- **Zo**: Described as a "fucking cool product" with $8M seed funding from Lightspeed. Community of ~130-140 members. Serves as a private compute environment.
+- **Market Shift**: Move from LLM wrappers/APIs to interactive "Apps" within ChatGPT and Claude (using MCP + React components).

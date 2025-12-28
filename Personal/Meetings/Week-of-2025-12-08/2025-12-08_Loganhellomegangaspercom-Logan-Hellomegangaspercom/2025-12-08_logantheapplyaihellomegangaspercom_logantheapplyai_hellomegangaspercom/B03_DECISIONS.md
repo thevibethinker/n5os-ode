@@ -1,25 +1,20 @@
 ---
-created: 2025-12-09
-last_edited: 2025-12-09
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 – Decisions
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_pPtVukpdt9eEOyKH
+---
 
-## Strategic decisions
+# B03 Decisions
 
-- Pursue an exit for Careerspan (acqui-hire, asset sale, or similar) rather than continue traditional fundraising.
-- Shift into a lean "hibernation" operating mode with a very small core team (V, Ilsa, Logan) to extend runway and maintain stability.
-
-## Operational decisions
-
-- Reduce scope of external commitments, including pausing or ending the engagement with Megan around the end of the current contract.
-- Continue selling and supporting the product during the exit process to demonstrate value to potential buyers.
-- Prioritize taking care of departing teammates (e.g., actively supporting Brady and Rochelle in their job searches).
-
-## Relationship decisions
-
-- Maintain a positive, open-ended relationship with Megan, with explicit intent to work together again on future projects.
-- Have Ilsa schedule her own closing conversation with Megan to properly acknowledge and close that relationship.
-- Megan will send a wrap-up report as part of closing out the engagement and will stay loosely in touch as exit conversations progress.
-
+- **Decision 1:** Careerspan will transition into "hibernation mode" starting January 1st, 2025.
+- **Decision 2:** The partnership/contract with Megan Gasper will pause or end at the conclusion of the current term (end of year).
+- **Decision 3:** The core team for 2025 will be reduced to V, Ilsa, and Logan only.
+- **Decision 4:** The company will focus exclusively on securing an exit/sale by March 2025 rather than further fundraising.

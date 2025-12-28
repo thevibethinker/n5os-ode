@@ -20,7 +20,7 @@ tags:
   - tracking
 entry_points:
   - type: script
-    id: "N5/orchestration/media-documents-system/BUILD_MANIFEST.md"
+    id: "N5/builds/media-documents-system/BUILD_MANIFEST.md"
   - type: script
     id: "N5/scripts/conversation_orchestrator.py"
 owner: "V"
@@ -33,18 +33,18 @@ Orchestrates the build of a **unified media & documents system** that tracks and
 ## How to Use It
 
 - Use this when planning or resuming work on the media/documents architecture.
-- Start with `file 'N5/orchestration/media-documents-system/BUILD_MANIFEST.md'` to understand workers, timing, and the controlling orchestrator conversation.
+- Start with `file 'N5/builds/media-documents-system/BUILD_MANIFEST.md'` to understand workers, timing, and the controlling orchestrator conversation.
 - To run the orchestrator from a build thread, follow the command in the manifest:
   - `python3 /home/workspace/N5/scripts/conversation_orchestrator.py media-documents-system --orchestrator-id con_L3ITnGAwWvfxEKz3`
 - Worker briefs in the same folder (`WORKER_1_FOUNDATION.md`, `WORKER_2_WORKFLOWS.md`, etc.) define concrete deliverables for each phase.
 
 ## Associated Files & Assets
 
-- `file 'N5/orchestration/media-documents-system/BUILD_MANIFEST.md'` – project overview + orchestrator command
-- `file 'N5/orchestration/media-documents-system/WORKER_1_FOUNDATION.md'` – DB + taxonomy
-- `file 'N5/orchestration/media-documents-system/WORKER_2_WORKFLOWS.md'` – workflow scripts
-- `file 'N5/orchestration/media-documents-system/WORKER_3_INTEGRATIONS.md'` – integrations with other systems
-- `file 'N5/orchestration/media-documents-system/WORKER_4_REVIEW_SYSTEM.md'` – review & automation
+- `file 'N5/builds/media-documents-system/BUILD_MANIFEST.md'` – project overview + orchestrator command
+- `file 'N5/builds/media-documents-system/WORKER_1_FOUNDATION.md'` – DB + taxonomy
+- `file 'N5/builds/media-documents-system/WORKER_2_WORKFLOWS.md'` – workflow scripts
+- `file 'N5/builds/media-documents-system/WORKER_3_INTEGRATIONS.md'` – integrations with other systems
+- `file 'N5/builds/media-documents-system/WORKER_4_REVIEW_SYSTEM.md'` – review & automation
 - `file 'N5/scripts/conversation_orchestrator.py'` – generic orchestrator runner
 
 ## Workflow

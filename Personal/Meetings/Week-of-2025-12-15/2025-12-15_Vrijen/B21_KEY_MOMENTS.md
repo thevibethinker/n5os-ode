@@ -1,11 +1,10 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Key Moments (B21)
+# B21: Key Moments
 
-There are no meaningful key moments to surface from this recording. The only notable fact is that the meeting pipeline successfully captured audio but did not correspond to a real conversation.
-
-Treat this as a **data-quality edge case**, not as a meeting with extractable insights.
+No key moments found.

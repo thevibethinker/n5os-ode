@@ -1,16 +1,23 @@
 ---
-created: 2025-12-09
-last_edited: 2025-12-09
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B05 – Action Items
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_pPtVukpdt9eEOyKH
+---
 
-| Owner | Action | When / Notes | Status |
-| --- | --- | --- | --- |
-| Megan | Prepare and send a wrap-up report covering the engagement and results. | By the end of the current contract term (end of year). | Not started (at time of call). |
-| V | Keep Megan updated on progress of exit / acqui-hire conversations once there is concrete news. | As exit conversations progress. | Not started. |
-| V | Continue support for Brady's job search and Rochelle's interviews/transition. | Near term, during wind-down period. | In progress. |
-| V & Ilsa | Ensure Ilsa schedules a separate closing conversation with Megan. | Shortly after this call, before contract end. | Not started. |
-| Core team (V, Ilsa, Logan) | Operate in lean "hibernation mode" while running a structured sale process targeting around March. | Next 3–4 months. | In progress. |
+# B05 Action Items
 
+| Owner | Task | Priority |
+| :--- | :--- | :--- |
+| Megan | Complete work through the end of the year per existing contract. | High |
+| Megan | Generate and send a final "wrap-up report" for Careerspan. | High |
+| V | Continue assisting Brady and Rockhole with their job searches. | Medium |
+| Ilsa | Schedule a separate time to say goodbye/wrap up with Megan. | Medium |
+| V | Keep Megan updated on the terms/progress of the potential acquisition. | Low |

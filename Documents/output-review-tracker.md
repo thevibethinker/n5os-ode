@@ -286,7 +286,7 @@ The Output Review Tracker follows N5 architectural principles:
 
 **See also:**
 - `file 'N5/scripts/review_cli.py'` - Implementation
-- `file 'N5/orchestration/output-review-tracker/MASTER_PLAN.md'` - System design
+- `file 'N5/builds/output-review-tracker/MASTER_PLAN.md'` - System design
 - `file 'Knowledge/architectural/architectural_principles.md'` - Design principles
 
 ---

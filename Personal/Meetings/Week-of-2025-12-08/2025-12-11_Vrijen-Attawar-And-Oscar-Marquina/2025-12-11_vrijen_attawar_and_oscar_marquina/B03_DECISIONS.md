@@ -1,18 +1,20 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Decisions Made
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-1. Me: Yeah, absolutely. I already have made some great. I mean, Alan from Melly is using Careerspan already and I just spoke to a Frazephron who has a stealth startup. He was on the monthly call earlier this week and so, yeah, helping all three of them already with getting their job postings out there. So there's tons of appetite. I think is just going to be easier for us now to tell people, hey, this is something we legitimately. This is something that is sanctioned by Marvin, and so you can trust us.
-2. Me: Of course. Yeah, no, absolutely. And, I mean, that's on us as well, right? To be able to stand on our own two feet. So I'm really excited that we're able to do this. I think this is just going to take us forward by another few steps, which is awesome.
-3. Me: So no. So from my perspective, it's relatively simple and straightforward. Just wanted to confirm I can get an LOI over that will include the three to four month sort of period trial. I think you've sort of defined it as you guys will have us on the perks page, have us in the newsletter, open to us at least approaching founders and putting our services forward. There's no way to really guarantee this bike on Scouts honor promise that I won't be annoying. I'm very sensitive to that myself and so I am in it for the long haul and want to keep these people happy for all of my startups so yeah, you can certainly count on me being very diplomatic and savvy there. But that was the only really other thing. The last element would be if you have the permission to port jobs to Getro. I was wondering if we could also get that permission to host those jobs on Careerspan. We would be happy to do at least a good number of them for free. It would just add to our sort of market volume.
-4. Me: Yeah, we will. We'll do so in a way that does right by the founders. And I think, at least initially, I'm going to first let the founder know this is something we can do for them. And only then, you know, sort of, like, bring stuff in again. I want to be super above board and keep all of our McKinsey folks happy. So I'll do that and then take it from there.
-5. Me: Yeah, we will. We'll do so in a way that does right by the founders. And I think, at least initially, I'm going to first let the founder know this is something we can do for them. And only then, you know, sort of, like, bring stuff in again. I want to be super above board and keep all of our McKinsey folks happy. So I'll do that and then take it from there.
-6. Me: Of course, of course. Yeah. No, this is good. I think this is going to be helpful to all Marvin founders, because ultimately, the good thing about Careerspan is we have actual one click apply. Anyone that's used our tool enough can be a top candidate for roll. So that's where the network effects really lie for us. This is awesome, Oscar. I don't really need to take up more of your time. I will just formalize this and get it over to you so that you have in writing what our commitments and obligations are, and then, yeah, happy to just kick off from there.
-7. Me: Of course, of course. Yeah. No, this is good. I think this is going to be helpful to all Marvin founders, because ultimately, the good thing about Careerspan is we have actual one click apply. Anyone that's used our tool enough can be a top candidate for roll. So that's where the network effects really lie for us. This is awesome, Oscar. I don't really need to take up more of your time. I will just formalize this and get it over to you so that you have in writing what our commitments and obligations are, and then, yeah, happy to just kick off from there.
-8. Them: Right. A couple things. Yeah. J can. It will help you set up. Will help you set up. On LinkedIn. Ping. Ulrich, whenever you're ready to launch that channel. And WhatsApp.
-9. Them: If you could replicate gather. I will love that.
+# B03 Decisions
+
+- **Getro Access:** Oscar decided to add Vrijen as a Network Admin on Getro immediately to allow for job data exports.
+- **Marketing Channels:** Approved inclusion on the perks page, newsletter rotation, and WhatsApp community announcement.
+- **Trial Duration:** Agreed on a 3-4 month trial period for Careerspan within the Marvin community.
+- **Scraping Replacement:** If Careerspan successfully replicates/exceeds Getro's scraping capabilities by Q3 2026, Marvin will consider a more formal transition from Getro to Careerspan.

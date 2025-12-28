@@ -17,10 +17,10 @@ For complex system builds, use the orchestrator-worker model where one conversat
 ### 1. Create Project Directory
 
 ```bash
-mkdir -p /home/workspace/N5/orchestration/<project-name>
+mkdir -p /home/workspace/N5/builds/<project-name>
 ```
 
-**Location:** Always under `N5/orchestration/` for permanent storage
+**Location:** Always under `N5/builds/` for permanent storage
 
 ### 2. Create Worker Briefs
 
@@ -38,7 +38,7 @@ Each worker brief must be a **self-contained markdown file** with:
 
 **Naming Convention:** `WORKER_N_DESCRIPTION.md`
 
-**Location:** `/home/workspace/N5/orchestration/<project-name>/WORKER_N_*.md`
+**Location:** `/home/workspace/N5/builds/<project-name>/WORKER_N_*.md`
 
 ### 3. Create Orchestrator Monitor
 
@@ -66,13 +66,13 @@ Each worker brief must be a **self-contained markdown file** with:
 
 ```bash
 # Worker briefs
-/home/workspace/N5/orchestration/<project>/WORKER_*.md
+/home/workspace/N5/builds/<project>/WORKER_*.md
 
 # Orchestrator docs
-/home/workspace/N5/orchestration/<project>/ORCHESTRATOR_*.md
+/home/workspace/N5/builds/<project>/ORCHESTRATOR_*.md
 
 # Design docs
-/home/workspace/N5/orchestration/<project>/<project>-design.md
+/home/workspace/N5/builds/<project>/<project>-design.md
 
 # Schemas (if creating)
 /home/workspace/N5/schemas/<schema-name>.json
@@ -96,7 +96,7 @@ Each worker brief must be a **self-contained markdown file** with:
 1. **Open new conversation** for each worker
 2. **Reference the permanent brief:**
    ```
-   Load file 'N5/orchestration/<project>/WORKER_N_*.md' and execute this task.
+   Load file 'N5/builds/<project>/WORKER_N_*.md' and execute this task.
    Report back when complete.
    ```
 3. **Track conversation ID** in orchestrator monitor
@@ -260,7 +260,7 @@ Track carefully in monitoring file.
 ### File Organization
 
 ```
-N5/orchestration/<project>/
+N5/builds/<project>/
 ├── WORKER_1_<task>.md
 ├── WORKER_2_<task>.md
 ├── WORKER_N_<task>.md
@@ -380,7 +380,7 @@ See `ORCHESTRATOR_MONITOR.md` in this project as reference.
 ## Example: Output Review Tracker
 
 **Reference implementation:**
-`/home/workspace/N5/orchestration/output-review-tracker/`
+`/home/workspace/N5/builds/output-review-tracker/`
 
 5 workers, ~3 hours total, sequential and parallel execution.
 

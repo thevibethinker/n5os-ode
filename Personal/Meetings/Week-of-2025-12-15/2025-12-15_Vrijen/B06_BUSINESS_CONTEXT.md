@@ -1,11 +1,10 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Business Context (B06)
+# B06: Business Context
 
-The recording does not contain any business-relevant content (no mention of product, customers, partners, strategy, or operations).
-
-This should be treated as a spurious capture rather than a real business interaction. If "Sa / Sam" refers to a person or internal code word, that context must be documented elsewhere; it does not appear in this transcript.
+No business context mentioned.

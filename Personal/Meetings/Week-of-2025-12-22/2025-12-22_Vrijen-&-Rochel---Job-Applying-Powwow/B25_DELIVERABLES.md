@@ -1,15 +1,18 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CUnjzDvSR73FILMU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25 Deliverables: Vrijen & Rochel - Job Applying Powwow
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fFkuZgfSd31qk5Ow
+---
 
-## Specific Files/Data Promised
-- **Rochel's Resume:** Rochel shared her latest resume (one-page version) with Vrijen via Slack.
-- **Oscar Health Role Link:** Rochel shared/referenced the Oscar Health Product Design job description.
-- **Boardy Metrics Recap:** Vrijen shared/referenced his Boardy "Wrapped" metrics to compare with Careerspan.
-- **LinkedIn Wrapped Mock-up:** Rochel shared a mock-up/post poking fun at LinkedIn wrapped.
+# B25: Deliverables
 
+- **Intelligence Blocks:** This set of markdown files (B01-B32) generated from the transcript.
+- **A16Z Outreach Blurb:** Drafted text for Rocko to use for Jordan Mazer (see B14).

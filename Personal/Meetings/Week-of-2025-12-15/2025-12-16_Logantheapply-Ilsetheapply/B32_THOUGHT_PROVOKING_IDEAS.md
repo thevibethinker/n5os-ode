@@ -1,17 +1,19 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CGxSyR4HY2ZwRzmf
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B32: Thought-Provoking Ideas
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_iFJnTh2aaqquS06D
+---
 
-## 1. The "Friction-as-Selection" Paradox
-The team discussed the counterintuitive value of friction in the application process. While standard UX wisdom dictates streamlining and removing barriers, the Careerspan philosophy suggests that **meaningful friction acts as a high-signal filter**. The provocative idea here is that "too much ease" actually degrades the value of the platform for employers by flooding them with low-intent candidates. The strategic "weirdness" lies in intentionally designing for discomfort (storytelling vs. resume uploading) to secure higher commitment and better data.
+# B32: Thought Provoking Ideas
 
-## 2. Methodology as "Performance Review Pre-Processor"
-Ilse proposed that the core technology (capturing weekly "what did you do" stories) is actually an **asynchronous performance review system** masquerading as a job application tool. This shifts the mental model of the product from a "hiring tool" to a "career-long signal aggregator." If applied internally, it determines not just if someone should be hired, but if they are ready for promotion or likely to leave, fundamentally changing the relationship between an employee and their own professional narrative.
-
-## 3. LinkedIn Cadence as a Proxy for Intent
-The mention of Aviato’s research into "signals beyond the open-to-work banner" (e.g., scraping LinkedIn cadence, profile-viewing frequency, and posting shifts) introduces a mental model of **Digital Body Language as Predictive Intent**. The idea is that an individual's subconscious platform behavior is a more accurate predictor of career transition than their explicit "Open to Work" status, turning metadata into a strategic weapon for talent acquisition.
+- **The "One-Time Story" Arbitrage:** The strategic bet that candidates will trade the friction of a deep, one-time storytelling process for the ability to never have to "tailor a resume" again. This shifts Careerspan from a tool to a data-asset repository.
+- **Signal vs. Intent:** The exploration of hire signals *beyond* the standard "Open to Work" banner (e.g., posting cadence, LinkedIn checking frequency). This moves hiring from reactive (responding to a status) to predictive (analyzing behavior changes).
+- **User Ego Alignment:** The realization that users don't care about "Career span," they care about "Skillcapped" (the employer). The product succeeds only when it becomes an invisible conduit that proves the user's worth to the specific target they desire.

@@ -140,7 +140,7 @@
 - Documents/N5.md
 - N5/prefs/prefs.md
 - Knowledge/architectural/architectural_principles.md
-- N5/orchestration/productivity-tracker/WORKER_5_RPI_CALCULATOR.md
+- N5/builds/productivity-tracker/WORKER_5_RPI_CALCULATOR.md
 
 ### Principles Active
 - P2 (SSOT): daily_stats as single aggregated view

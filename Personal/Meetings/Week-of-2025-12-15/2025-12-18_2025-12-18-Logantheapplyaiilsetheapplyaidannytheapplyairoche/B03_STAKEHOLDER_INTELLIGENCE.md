@@ -1,19 +1,15 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 Stakeholder Intelligence
+# B03: Stakeholder Intelligence
 
-## Internal Team
-- **Vrijen Attawar (V):** Focused on high-level strategy and VC/partnership outreach. Prepping for a 5:50 AM flight.
-- **Logan Currie:** Managing operations and family logistics. Acts as the "favorite contact" for V's wake-up calls.
-- **Ilya Kucherenko:** Providing strategic framing for enterprise sales (Darwin Box); emphasizes the "nimble R&D" angle based on past experience with big tech.
-- **Ilse Funkhouser:** Deep in the technical weeds; taking over Brady's code and working with Rockle on product/marketing refinement before the new year.
-
-## External (Darwin Box - Context)
-- **The COO:** Likely a McKinsey alum. Interested in tech, market, and US expansion.
-- **Organization:** Enterprise-centric, high valuation, competing with giants (Workday, SAP).
-
+| Participant | Role/Context | Key Interests | Skepticism/Leverage Points |
+| :--- | :--- | :--- | :--- |
+| **Vrijen (V)** | Founder | Brand positioning; "Bespoke at scale" narrative; high-level strategy. | Leverage: Deep understanding of career coaching and "vibe factor" in leadership. |
+| **Logan** | Team Lead/Ops | Logistics; Internal mobility use cases; Practical framing for enterprise. | Interest: Matching CareerSpan tech to Darwin Box's MNC client base. |
+| **Ilya** | Business/Product | Market positioning; Competitive landscape (Workday/SAP); Pilot project dynamics. | Point: Highlighting Darwin Box's inability to do internal R&D as an entry point. |
+| **Ilsa** | Engineering/Content | Chat system refactor; Marketing copy; Technical debt management. | Interest: Understanding legacy data structures to improve the applicant experience. |

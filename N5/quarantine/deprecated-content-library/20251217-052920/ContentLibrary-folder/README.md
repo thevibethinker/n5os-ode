@@ -63,7 +63,7 @@ Both are stored in the same `items` table.
 
 ## 2. Schema Overview
 
-High-level shape of the unified schema (see `file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'` for the full SQL):
+High-level shape of the unified schema (see `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'` for the full SQL):
 
 ### 2.1 Core Tables
 
@@ -466,7 +466,7 @@ lib.add(
   - N5 scripts that previously queried `N5/data/content_library.db` now use v3 via updated helpers and/or wrappers.
 
 For the full architecture and migration plan, see:  
-`file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`.
+`file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`.
 
 ---
 
@@ -502,7 +502,7 @@ Topics are higher-level themes (e.g. `AI`, `career`, `performance_reviews`) and 
 ### 8.3 Related Files and Scripts
 
 - Content Library v3 CLI: `file 'Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py'`
-- V3 architecture spec: `file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
+- V3 architecture spec: `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
 - N5 wrappers & integrations: `file 'N5/scripts/content_library.py'`, `file 'N5/scripts/content_library_db.py'` (v3-aware after cutover)
 - Legacy ingest helpers (pre‑v3): `file 'Personal/Knowledge/ContentLibrary/scripts/ingest.py'` and friends
 - V3 cutover helper: `file 'N5/scripts/content_library_v3_cutover.py'`

@@ -1,10 +1,24 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Action Items
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-- [ ] Them: Get row network. Member. Can share contact wish I'm gonna add you as a Net1 admin. So don't do anything I wouldn't do.
+# B05 Action Items
+
+| Task | Owner | Priority |
+| :--- | :--- | :--- |
+| Draft and send LOI including 3-4 month trial terms | Vrijen | High |
+| Export job data from Getro for Careerspan hosting | Vrijen | Medium |
+| Coordinate with Ulrich for LinkedIn channel launch | Vrijen | Medium |
+| Reach out to J. for setup assistance | Vrijen | Low |
+| Ping Oscar for the WhatsApp community announcement | Vrijen | Medium |
+| Submit Careerspan info for newsletter/perks page rotation | Vrijen | Medium |

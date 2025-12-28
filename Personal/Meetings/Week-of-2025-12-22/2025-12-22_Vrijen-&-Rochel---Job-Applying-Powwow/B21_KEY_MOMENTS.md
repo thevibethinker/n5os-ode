@@ -1,19 +1,20 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CUnjzDvSR73FILMU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21 Key Moments: Vrijen & Rochel - Job Applying Powwow
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fFkuZgfSd31qk5Ow
+---
 
-## High-Leverage Quotes
-- **Vrijen on signaling:** "People, they don't have that much time to measure things out. So they'll take these like, quick things and be quickly impressed by them and they'll be uncritical about it... that’s how signaling works." (18:30)
-- **Vrijen on imposter syndrome:** "These are the moments where like, your ability to trust yourself is like, built... acting otherwise would be detrimental to me." (15:00)
-- **Rochel on networking:** "I met with Ryan last week... he’s so great, so normal... he’s like, I wish I took a boot camp, I don't even feel like I know what I'm doing." (13:00)
-- **Vrijen on the startup story:** "Comparatively few people will have joined like at an early stage startup as a founding engineer with both as much and as little PMF as us. Take advantage of that." (26:00)
+# B21: Key Moments
 
-## Turning Points
-- **The Ryan Peer-Validation:** Rochel realizing that high-profile founders also feel like imposters and want her as an "accountability buddy" was a significant confidence-building moment.
-- **The Oscar Health Pivot:** Moving from a general catch-up to a specific, high-stakes outreach strategy for Oscar Health via the Marvin Ventures network.
-
+- **The Interview Ratio:** "You could reduce the whole process down to: do you get interviews and are you good at representing yourself. That’s the whole thing." — V
+- **The Peer Threshold:** "Being treated like a peer is... you have to internalize that. Don't float over it. These are the moments where your ability to trust yourself is built." — V
+- **The McKinsey Effect:** V's anecdote about how people treat you "night and day" based on the McKinsey signal, despite no change in personal quality, highlighting the power of **signaling**.
+- **The Flow State:** Rocko's realization that the level of challenge needs to be balanced (difficult but not too difficult) to maintain momentum in the job search.

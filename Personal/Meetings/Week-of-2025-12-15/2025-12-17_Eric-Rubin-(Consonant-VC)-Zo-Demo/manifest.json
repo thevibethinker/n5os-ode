@@ -3,7 +3,7 @@
   "generated_at": "2025-12-18T19:16:44.991472",
   "meeting_folder": "2025-12-17_eric____vrijen__zo_demo_",
   "meeting_date": "2025-12-17",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
@@ -17,5 +17,6 @@
     "metadata": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "Eric Rubin (Consonant VC) Zo Demo"
+  "meeting_title": "Eric Rubin (Consonant VC) Zo Demo",
+  "last_updated_at": "2025-12-26T23:30:48.962572Z"
 }

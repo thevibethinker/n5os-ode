@@ -73,7 +73,7 @@ N5/prefs/
 - Persona routing standardized
 - Risk assessment framework integrated
 
-See: file 'N5/projects/architectural-redesign/MIGRATION_HISTORY.md'
+See: file 'N5/builds/architectural-redesign-v1/MIGRATION_HISTORY.md'
 
 ---
 
@@ -194,7 +194,7 @@ Preferences integrate with:
 
 - **Architecture Overview:** file 'Knowledge/architectural/ARCHITECTURAL_OVERVIEW.md'
 - **Principle Guide:** file 'Knowledge/architectural/PRINCIPLE_USAGE_GUIDE.md'
-- **Migration History:** file 'N5/projects/architectural-redesign/MIGRATION_HISTORY.md'
+- **Migration History:** file 'N5/builds/architectural-redesign-v1/MIGRATION_HISTORY.md'
 - **Schemas:** file 'N5/schemas/README.md'
 
 ---

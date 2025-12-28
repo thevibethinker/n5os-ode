@@ -1,25 +1,20 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Key Moments & Quotes
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-1. "Meeting Title: Vrijen Attawar and Oscar Marquina
+# B21 Key Moments
 
-Calendar Event ID: 5ff0dddb-98c3-468e-9577-67bdea71f7a0
-
-Attendee Emails: email: oscar@marvinvc."
-2. "com
-
-Transcript:
-
- 
-Them: Hey, what's up?  
-Me: Hey, oscar."
-3. "How have the last few weeks been?  
-Them: Been uploarable."
-4. "So I'm sure all the other stuff you guys have put together was equally successful."
-5. "Hopefully you get some good connections out of that one."
+- **The Trust Threshold:** Vrijen: "This is something that is sanctioned by Marvin, and so you can trust us." Oscar: "Good, good. Excellent... hopefully we can get you a few more."
+- **The Getro Pivot:** Oscar: "I'm on contract with Getro till the end of this year... but if by then you can replicate the scraping... we can talk about doing something more formal."
+- **Community Vision:** Oscar: "Honestly, would love to see Marvin Founders buying from other Marvin Founders."
+- **The Instant Admin:** The moment Oscar adds Vrijen as a Network Admin on Getro during the call, signaling a transition from discussion to operational partnership.

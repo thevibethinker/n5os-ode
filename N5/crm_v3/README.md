@@ -493,7 +493,7 @@ This system was built using 7-worker orchestration:
 7. **Worker 7:** Integration testing & documentation (this file)
 
 ### Orchestration Files
-See: file 'N5/orchestration/crm-v3-unified/' for full build context
+See: file 'N5/builds/crm-v3-unified/' for full build context
 
 ### Contact
 - **System Owner:** V (va@zo.computer)

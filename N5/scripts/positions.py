@@ -90,7 +90,12 @@ def init_db():
             supersedes TEXT,
             embedding BLOB,
             created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-            updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+            updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            reasoning TEXT,
+            stakes TEXT,
+            conditions TEXT,
+            original_excerpt TEXT,
+            extraction_method TEXT
         );
         
         CREATE INDEX IF NOT EXISTS idx_domain ON positions(domain);
@@ -148,7 +153,13 @@ def add_position(
     formed_date: str | None = None,
     source_conversations: list[str] | None = None,
     supersedes: list[str] | None = None,
-    position_id: str | None = None
+    position_id: str | None = None,
+    # New wisdom fields
+    reasoning: str | None = None,
+    stakes: str | None = None,
+    conditions: str | None = None,
+    original_excerpt: str | None = None,
+    extraction_method: str | None = None,
 ) -> str:
     init_db()
     
@@ -160,8 +171,9 @@ def add_position(
         INSERT INTO positions (
             id, domain, title, insight, components, evidence, connections,
             stability, confidence, formed_date, last_refined, source_conversations,
-            supersedes, embedding, created_at, updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            supersedes, embedding, created_at, updated_at,
+            reasoning, stakes, conditions, original_excerpt, extraction_method
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         pos_id,
         domain,
@@ -178,15 +190,50 @@ def add_position(
         json.dumps(supersedes) if supersedes else None,
         None,
         now,
-        now
+        now,
+        reasoning,
+        stakes,
+        conditions,
+        original_excerpt,
+        extraction_method,
     ))
     conn.commit()
     conn.close()
 
-    # Canonical embedding write
-    _index_position_in_brain(pos_id, domain=domain, title=title, insight=insight, content_date=formed_date)
+    # Canonical embedding write - include reasoning in the indexed text
+    indexed_text = insight
+    if reasoning:
+        indexed_text += f"\n\nReasoning: {reasoning}"
+    if stakes:
+        indexed_text += f"\n\nStakes: {stakes}"
+    _index_position_in_brain(pos_id, domain=domain, title=title, insight=indexed_text, content_date=formed_date)
 
     return pos_id
+
+
+def promote_from_candidate(candidate: dict) -> str:
+    """Promote an approved candidate to a full position."""
+    # Generate title from first ~8 words of insight
+    insight = candidate.get("insight", "")
+    title_words = insight.split()[:8]
+    title = " ".join(title_words)
+    if len(title_words) < len(insight.split()):
+        title += "..."
+    
+    return add_position(
+        domain=candidate.get("domain", "unknown"),
+        title=title,
+        insight=insight,
+        reasoning=candidate.get("reasoning"),
+        stakes=candidate.get("stakes"),
+        conditions=candidate.get("conditions"),
+        original_excerpt=candidate.get("source_excerpt"),
+        extraction_method="b32_v2",
+        stability="emerging",
+        confidence=3,
+        formed_date=candidate.get("extracted_at", "")[:10] if candidate.get("extracted_at") else None,
+        source_conversations=[candidate.get("source_meeting")] if candidate.get("source_meeting") else None,
+    )
 
 
 def extend_position(
@@ -862,6 +909,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

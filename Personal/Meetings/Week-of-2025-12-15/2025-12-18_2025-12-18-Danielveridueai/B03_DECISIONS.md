@@ -1,13 +1,20 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 Decisions
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
 
-- **Stealth Pipeline:** Agreed to explore putting roles up as "stealth jobs" on the Careerspan board to aggregate candidates ahead of the Feb hiring cycle.
-- **Timing:** Official engagement/review of materials deferred until after Dan's term sheet is signed (mental capacity currently focused on legal/funding).
-- **Hiring Focus:** Initial team will prioritize AI Engineer, Front-end Engineer, and Full-stack Engineer.
+# B03: Decisions
 
+## Explicit Decisions
+- **Hiring Timeline:** Hiring cycle will officially begin at the start of next year (early 2025).
+- **Stealth Pipeline:** Daniel agreed to try putting the job on the Careerspan job board in stealth mode to begin aggregating candidates.
+- **Trial:** Daniel committed to looking at Careerspan materials and potentially starting the search after his term sheet is officially signed.

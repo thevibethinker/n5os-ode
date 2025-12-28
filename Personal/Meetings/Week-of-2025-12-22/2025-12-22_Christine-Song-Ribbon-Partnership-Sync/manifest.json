@@ -4,11 +4,12 @@
   "meeting_folder": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync",
   "meeting_date": "2025-12-22",
   "meeting_title": "Christine Song Ribbon Partnership Sync",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
-  "last_updated_by": "MG-2_Prompt"
+  "last_updated_by": "MG-2_Prompt",
+  "last_updated_at": "2025-12-26T23:38:09.561249Z"
 }

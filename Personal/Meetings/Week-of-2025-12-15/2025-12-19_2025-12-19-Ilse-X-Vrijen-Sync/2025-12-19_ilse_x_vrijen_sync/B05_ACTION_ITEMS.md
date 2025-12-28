@@ -1,27 +1,32 @@
 ---
-created: 2025-12-21
-last_edited: 2025-12-21
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_lJVusFAwwqy9BBio
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B05 Action Items: Ilse x Vrijen Sync
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_hyhAHxi4K69uIVZl
+---
 
-## 🛠 Engineering (Ilse)
-* [ ] Build endpoint for generating story suggestions.
-* [ ] Implement automated email notification system for direct apply completion.
-* [ ] Configure auto-trigger for full analysis based on vibe check score (threshold 75+).
-* [ ] Migrate safety check and chat systems to higher-tier models.
+# B05 Action Items
 
-## 💻 Development (Nick)
-* [ ] Implement redirect from onboarding to application page for direct apply users.
-* [ ] Build dynamic welcome page centered on most recent direct apply link.
+### Ilse
+- [ ] Create endpoint for generating story suggestions.
+- [ ] Build the new email notification system (handling different logic for direct apply vs. manual).
+- [ ] Configure automatic full analysis trigger for high-scoring vibe checks.
+- [ ] Deploy "bandage" chat fixes using more expensive models for safety checks.
 
-## ✍️ Product/UX (Rochel)
-* [ ] Update application page copy with step duration estimates.
-* [ ] Clarify manual vs. automated application flow on the "Start Application" page.
+### Vrijen (V)
+- [ ] Monitor OpenAI billing and API limits closely.
+- [ ] Resolve 2FA access issues or provide billing visibility to Ilse.
+- [ ] Update "Padre" on the product roadmap and recent sync.
+- [ ] Search for missing green card on Saturday.
 
-## 💰 Operational (Vrijen)
-* [ ] Take active ownership of OpenAI billing monitoring and purse-string management.
-* [ ] Resolve 2FA access issues for Ilse (or handle logins as needed).
-
+### Rochel & Nick
+- [ ] Implement direct apply redirect to vibe check page.
+- [ ] Update application page copy with estimated timeframes.
+- [ ] Integrate story suggestions into the application loading states.

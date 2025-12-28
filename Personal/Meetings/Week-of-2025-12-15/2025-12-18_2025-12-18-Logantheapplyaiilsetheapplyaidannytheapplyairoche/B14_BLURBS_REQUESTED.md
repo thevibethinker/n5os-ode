@@ -1,12 +1,10 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
 # B14: Blurbs Requested
 
-```json
-{"id": "blurb-001", "type": "email", "subject": "Careerspan", "subject_detail": "AI advisor platform capabilities review", "recipient": "Internal stakeholders", "audience_context": "Internal team review", "purpose": "Summarize platform capabilities and integration points for internal review", "key_points": ["Platform architecture", "Integration capabilities", "AI components", "System design"], "status": "pending"}
-```
+*No explicit external intros or warm-intro blurbs were promised to be sent by V in this transcript.*

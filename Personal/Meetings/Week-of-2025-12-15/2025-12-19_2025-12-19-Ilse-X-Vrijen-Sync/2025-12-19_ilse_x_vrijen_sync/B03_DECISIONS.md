@@ -1,20 +1,21 @@
 ---
-created: 2025-12-21
-last_edited: 2025-12-21
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_lJVusFAwwqy9BBio
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 Decisions: Ilse x Vrijen Sync
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_hyhAHxi4K69uIVZl
+---
 
-## Product & Roadmap
-* **Direct Apply Redirection:** Users from direct apply links will bypass the welcome page and go straight to the vibe check.
-* **Auto-Analysis Trigger:** Vibe checks scoring 75+ for direct apply users will automatically trigger full analysis.
-* **Email Backstop Implementation:** A notification system for vibe check/analysis completion will be built to mitigate wait-time friction.
-* **Welcome Page Pivot:** The welcome page will dynamically center on the most recent direct apply context.
+# B03 Decisions
 
-## Technical & Fiscal
-* **Budget Authorization:** Monthly OpenAI spend limit raised to $5,000 to support higher-tier model usage for chat/safety checks.
-* **Model Upgrade:** The safety check and chat systems will be migrated to more capable (and more expensive) models to reduce user frustration.
-* **Priority Shift:** Email and suggestion systems are prioritized over chat system refactoring for the next few days.
-
+- **DECISION**: Implement immediate redirect to application page for direct apply users post-onboarding.
+- **DECISION**: Proactively trigger full analysis for vibe check scores $\ge$ 75 on direct apply links to reduce user wait time.
+- **DECISION**: Prioritize the development of an email notification system and story suggestion endpoint over chat system refactoring for the next few days.
+- **DECISION**: Increase OpenAI spending limit to $3,500 - $5,000/month to accommodate more expensive, faster models and automated full analyses.
+- **DECISION**: Shift welcome page logic to focus on the user's most recent direct apply link.

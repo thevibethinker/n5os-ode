@@ -1,27 +1,22 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14 – Blurbs Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_UGbzWcyZH5KErDYC
+---
 
-## Summary
-- In this conversation, **no explicit request** is made for Vrijen to send a discrete “blurb” or written intro text for someone else to forward.
-- The group does discuss **promoting Ben’s velocity‑coding talk** via:
-  - Posts in **Friends of Next Play**.
-  - Shares into **AI Collective** forums.
-  - References in **Ben’s newsletter**.
-- However, all of these are framed in terms of **links and event promotion**, not as a request for a reusable, connector‑style email blurb.
+# Blurbs Requested (B14)
 
-## Current State
-- **Status:** No blurbs drafted or promised in this meeting.
-- **Implication for pipeline:**
-  - Downstream systems that look for B14 as a signal of pending communications work should treat this meeting as **having no outstanding blurb obligations** based on the transcript alone.
+### Warm Intro: Ben (Zo) <-> Tejas (AI Collective)
+**Requested by:** V
+**Context:** Tejas is the Jersey head of AI Collective. He was at the South Park Commons event and is already a fan of Zo.
 
-## Notes for Future Updates
-- If, in a later thread or follow‑up meeting, Vrijen **explicitly commits** to drafting:
-  - An email blurb for Ben to send to Next Play members,
-  - A short description for AI Collective organizers to paste into their channels, or
-  - A connector‑style warm‑intro blurb,
-  then those text artifacts should be **authored and stored here** and this block updated to reflect that commitment.
+**Draft Blurb:**
+> "Hey Tejas, great seeing you at the SPC event! As discussed, I wanted to connect you with Ben from the Zo team. He's been running a 'Velocity Coding' talk that's been crushing it, and given your new role leading the Jersey AI Collective, I think there's a huge opportunity to bring this value to your 80k+ members in the New Year. Ben, Tejas is the homie—let's find 20 mins to chat strategy."

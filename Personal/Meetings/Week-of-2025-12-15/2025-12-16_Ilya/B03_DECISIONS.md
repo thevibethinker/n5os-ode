@@ -1,13 +1,19 @@
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_avBi9noam4W5h6qF
+---
+
 # B03 Decisions
 
-## Explicit Decisions Made
-
-### Decision 1
-- **What:** [Decision description]
-- **Owner:** [Who will execute]
-- **Timeline:** [When]
-- **Rationale:** [Why this decision was made]
-
-## Implicit/Pending Decisions
-- Areas where alignment was achieved but not formally documented
-- Topics deferred to future meetings
+- **Primary Pitch Angle**: Position Careerspan as the engine that transforms Teamwork Online from a "shallow data" ATS into a "deep data" dual-sided marketplace.
+- **Sales Approach**: Focus on "selling the conversation" first—building rapport and trust with Davis Philippel—rather than pushing for an immediate close.
+- **Messaging Priority**: Anchor the value proposition in the "Sourcing Hypothesis" (exclusive access to high-quality talent) as it is a more universally accepted truth than the broader AI/data hypothesis.

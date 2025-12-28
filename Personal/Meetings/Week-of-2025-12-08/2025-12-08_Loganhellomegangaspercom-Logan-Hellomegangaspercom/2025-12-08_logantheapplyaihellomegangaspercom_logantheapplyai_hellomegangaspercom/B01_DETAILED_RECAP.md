@@ -1,53 +1,39 @@
 ---
-created: 2025-12-09
-last_edited: 2025-12-09
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B01 – Detailed Recap
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_pPtVukpdt9eEOyKH
+---
 
-## Opening context
+# B01 Detailed Recap: Careerspan Strategy & Transition Call
 
-- V and Megan reconnect for a check-in call. They start with light small talk about being cold, space constraints in New York apartments, and small quality-of-life upgrades (heating pads, towel warmers) before shifting into business.
+### 1. Opening & Personal Check-in
+- V and Megan open the call with light personal banter about office setups, heating pads, and towel warmers.
+- Megan expresses appreciation for her new heating pad, while V laments the lack of space in New York bathrooms for luxury appliances like towel warmers.
 
-## Careerspan's current state
+### 2. Current State of Careerspan
+- V reveals that the team is extremely drained after three years of fundraising and effort.
+- The company is actively looking for an exit (Acquahire, spin-off, or tech absorption) and has received a good amount of interest.
+- Operationally, the team has been "shaved off." Starting in the new year, only V, Ilsa, and Logan will remain.
 
-- V shares that after roughly three years of building Careerspan, the core team is exhausted from continuous fundraising and operations.
-- They are actively exploring exit options: potential acqui-hire, selling the product/technology, or spinning the team into something adjacent.
-- Several parties have expressed interest, and conversations are ongoing.
+### 3. Operational Shift: Hibernation Mode
+- V explains the strategy to "shrink operations" to maintain basic salaries while moving into an "absolute hibernation mode."
+- The goal is to sell the company by March 2025.
+- Consequently, work with Megan will need to pause or end at the start of the year.
 
-## Strategic shift and team structure
+### 4. V's Personal Outlook & Future Plans
+- V mentions the need for a "reset" to clear the figurative and emotional baggage/debt of the last three years.
+- He expressed a desire to do another startup within the next year but requires time to recuperate first.
+- He is currently focused on helping former teammates (Brady and Rockhole) find new roles.
 
-- To make an exit feasible and preserve stability, the company has significantly reduced headcount; going forward the effective core will be V, Ilsa, and Logan.
-- The plan is to shrink operations to a lean "hibernation mode" focused on:
-  - Keeping salaries roughly intact for the remaining founders.
-  - Continuing to sell and support the product enough to demonstrate real value to potential buyers.
-  - Running a process to sell the company by roughly March.
-
-## Personal context and motivation
-
-- V reflects on the personal toll of the last three years: emotional and interpersonal "baggage" and accumulated technical/organizational debt.
-- Stability for the founding trio and space to reset are major motivators.
-- V still loves the product, the users, and the traction they're seeing (especially around companies using Careerspan's tech to put jobs out), but acknowledges burnout.
-- Looking ahead, V expects to do another startup within about a year, but only after taking time to rest and reset.
-
-## Impact on the relationship with Megan
-
-- Because of the downsizing and focus on an exit, V explains that they will likely need to pause or end work with Megan at minimum, despite having really valued the partnership.
-- Megan responds with understanding and support, emphasizing that her priority is the team's long-term happiness and success.
-- She notes how quickly things change in startup life and frames this shift as part of the normal arc rather than a failure.
-
-## Care for the broader team
-
-- V describes efforts to take care of departing teammates:
-  - Helping Brady get a job.
-  - Supporting Rochelle's interviews and transition.
-- Ensuring teammates land well is an explicit priority alongside the exit process.
-
-## Forward-looking plans and commitments
-
-- Megan plans to continue supporting Careerspan through the end of the current contract (end of the year), including sending a wrap-up report and remaining available.
-- V and Megan agree to stay in touch and explore future collaborations once V spins up a new venture.
-- V anticipates that Ilsa will also want dedicated time with Megan to say a proper goodbye and close the relationship well.
-- The call ends on a very appreciative, warm note: V repeatedly thanks Megan for being a pro and expresses a clear desire to work together again in the future.
-
+### 5. Transition & Wrap-up
+- Megan acknowledges the situation with grace, noting that startup life changes fast.
+- They agree to push through the end of the year (as the contract runs through then).
+- Megan will provide a final wrap-up report and stay in touch regarding the potential sale terms.

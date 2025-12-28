@@ -1,35 +1,21 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_TZ85BbZtDCdUuJUH
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B26 MEETING METADATA
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_QHH72nAkeVXI8BDA
+---
 
-## Categorization & Tags
+# B26 Meeting Metadata
 
-### Topics
-- Job Hunting Strategy
-- Product Management Career Levels
-- Data Scraping / Data Supremacy
-- Careerspan Use Cases
-- Specific Companies: Skillcraft, Interrupt, Oscar Health, Happenstance
-
-### Tags
-- #job-search
-- #careerspan-coaching
-- #product-management
-- #data-strategy
-- #intro-promised
-- #referral-management
-
-### Participants
-- Vrijen Attawar (Founder, Careerspan)
-- Rochel Polter (Product Designer / Candidate)
-
-### Categorization
-- **Type:** Coaching / Networking
-- **Status:** [M] (Transitioning to [P])
-- **Priority:** High (Active Introductions)
-
+- **Participants**: Vrijen Attawar, Rochel Polter
+- **Date**: 2025-12-26
+- **Type**: Career Coaching / Product Strategy
+- **Tags**: #careerspan #jobhunt #productlead #datasupremacy #seriesA #interrupt
+- **Topics**: Happenstance Demo, Data Scraping, Skillcraft Analysis, Series A vs Seed, Interrupt Product Lead role, Careerspan story mapping.

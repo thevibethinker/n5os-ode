@@ -1,13 +1,21 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_WdRtvHrP9Zp5lMDU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
-# B26 Meeting Metadata
 
-- **Date**: 2025-12-18
-- **Participants**: Vrijen Attawar, Maximilian Kwok
-- **Type**: External / Partnership / Founder Heart-to-Heart
-- **Topics**: Hiring, AI, Careerspan, Startup Journey, Data Structure, Asia vs US Market
-- **Tags**: #founder-chat #hiring-tech #careerspan #ai-impact
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_wr5Y6HEB2EmQ5P2k
+---
+
+# B26: Meeting Metadata
+
+- **Date:** 2025-12-26 (Processing Date) / Transcript context suggests holiday season.
+- **Participants:** Vrijen Attawar (Careerspan), Max (Day One).
+- **Meeting Type:** Strategic Partnership Discovery / Founder Alignment.
+- **Tags:** `careerspan`, `day-one`, `hiring-market-failure`, `data-structure-problem`, `talent-fluidity`, `pivot-strategy`, `founder-heart-to-heart`.
+- **Categorization:** External / Partnership.

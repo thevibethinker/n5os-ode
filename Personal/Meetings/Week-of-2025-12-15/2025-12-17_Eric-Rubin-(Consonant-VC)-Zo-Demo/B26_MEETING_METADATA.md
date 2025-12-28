@@ -1,20 +1,20 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_m50gJBwnYh1LyaQX
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_kGw7UVncaoiCFwxn
 ---
 # B26: Meeting Metadata
 
-- **Meeting Title:** Eric Rubin (Consonant VC) Zo Demo
-- **Date:** 2025-12-17
-- **Participants:** Vrijen Attawar, Eric Rubin
-- **Category:** External / Demo / Partnership
-- **Tags:** #zo-demo #consonant-vc #hiring #careerspan #networking #food-tech #brooklyn
-- **Topics:**
-  - Zo Computer configuration & workflows
-  - Venture capital portco support
-  - Careerspan value proposition
-  - Recruitment "vibes" vs keywords
-  - Personal networking (Melissa's pivot)
-- **Meeting Type:** external
+- **Meeting ID**: 21669e24-a10f-490f-af29-4d648bd08033
+- **Tags**: #zo-demo #sales #networking #recruiting #vc
+- **Primary Topic**: Zo capabilities for non-technical founders/VCs.
+- **Secondary Topic**: Careerspan value prop for portfolio sourcing.
+- **Participants**: Eric Rubin, Vrijen Attawar.

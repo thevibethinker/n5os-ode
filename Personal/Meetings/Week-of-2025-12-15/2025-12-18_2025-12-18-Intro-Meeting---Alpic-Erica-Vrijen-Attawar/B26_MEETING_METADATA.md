@@ -1,25 +1,20 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B26: Meeting Metadata
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_ehsLGDk6xgv5TpRN
+---
 
-## Classification
-- **Type**: External - Product/Partnership Discussion
-- **Category**: Strategic Partnership Exploration
-- **Primary Stakeholder**: Alpic (MCP platform)
-- **Secondary Stakeholders**: Zo Computer, Careerspan
+# B26 Meeting Metadata
 
-## Topics
-- MCP Protocol & ChatGPT Apps
-- Platform Deployment & Operations  
-- Partnership Opportunities
-- Strategic Distribution Channels
-- Product Integration
-
-## Outcomes
-- Strong mutual interest in partnership
-- Clear next steps on both sides
-- Commitment to facilitate Zo introduction
+- **Topics**: MCP, ChatGPT App Store, Zo Computer, Skybridge, Careerspan Strategy.
+- **Tags**: #product-launch #mcp #distribution #zo-community #partnerships
+- **Meeting Type**: External Strategic Partnership Exploration.
+- **Participants**: Vrijen Attawar (V), Skybridge Representative.

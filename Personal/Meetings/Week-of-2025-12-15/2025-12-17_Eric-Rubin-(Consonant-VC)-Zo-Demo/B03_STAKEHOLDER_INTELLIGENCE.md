@@ -1,27 +1,21 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_m50gJBwnYh1LyaQX
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_kGw7UVncaoiCFwxn
 ---
 # B03: Stakeholder Intelligence
 
-## Eric Rubin
-- **Role:** Founder, Consonant VC.
-- **Context:** Non-technical but highly strategic investor. Early believer in Zo/Substrate.
-- **Motivations:** Efficiency, high-responsiveness, supporting portcos with high-signal talent, LP fundraising.
-- **Sentiment:** Enthusiastic. Impressed by Vrijen's Zo setup and the "vibe" detection of Careerspan.
-- **Key Interests:** Automated research, CRM enrichment, high-leverage networking tools.
-
-## Melissa (Vrijen's Sister)
-- **Role:** Pivot candidate (Hospitality -> Food Tech).
-- **Background:** Food distribution, catering (Resident).
-- **Goal:** Tech-enabled roles in food services/distribution.
-
-## Katie Zion
-- **Role:** Head of Customer Experience @ Culanistas.
-- **Relation:** Vrijen's connection for Melissa.
-
-## Joseph
-- **Role:** Co-founder @ Freshline.
-- **Relation:** Vrijen's connection for Melissa.
+## Eric Rubin (eric@consonant.vc)
+- **Role**: VC Founder (Consonant VC), 2-person shop.
+- **Key Interests**: Responsiveness, portfolio support, automating "stupid" manual tasks (meeting recaps, inbox management), high-signal talent sourcing.
+- **Skepticism**: Doubts AI's ability to pick up on "nuanced red flags" or "BS" in candidate profiles that he catches manually.
+- **Leverage Points**: Relationship with Ben/Rob (Zo founders). He is already using Zo but hasn't "dug deep." He values tools that save money (avoiding expensive LinkedIn scrapers).
+- **Notes**: Non-technical but entrepreneurial; fiancé is a medical resident; interest in knitting (detected by V's enrichment).

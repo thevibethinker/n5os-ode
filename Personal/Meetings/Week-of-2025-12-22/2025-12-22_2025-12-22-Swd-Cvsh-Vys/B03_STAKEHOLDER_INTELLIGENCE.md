@@ -1,18 +1,27 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_ODoRhKt2V9wAWZRS
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+--- 
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_m7hS6bqkHF0wR2gV
 ---
 
 # B03: Stakeholder Intelligence
 
-## Vrijen Attawar (Founder, Careerspan)
-- **Role**: Presenter/Founder.
-- **Key Interests**: Replacing the ATS, validating candidate integrity through storytelling, establishing strategic partnerships with VCs and other HR tech (Ribbon).
-- **Vibe**: Visionary, confident, articulate.
+### Vrijen (V) - Founder, Careerspan
+- **Role:** Founder / Visionary.
+- **Key Interests:** Replacing the resume as the standard for hiring; semantic data over keyword matching; high-integrity hiring ecosystems.
+- **Leverage Points:** Deep conviction in the "listening" model; has existing partnerships (Superposition AI, Marvin Ventures); seeks acquisition or deep partnership to build a "data stream" moat.
+- **Subtext:** Slightly self-deprecating but highly confident in the product's technical superiority ("absolute arrogance").
 
-## Christine (Founder, 529 Society / Ribbon)
-- **Role**: Peer/Potential Partner.
-- **Key Interests**: Sourcing high-quality talent, expanding her confidential peer network (529 Society) to New York, exploring technical integrations between Ribbon and Careerspan.
-- **Vibe**: Experienced recruiter, open to collaboration, focus on high-fidelity human connection.
+### Christine - Ribbon / Recruiting Specialist
+- **Role:** Potential Partner / Connector.
+- **Key Interests:** Sourcing "best of the best" talent; reducing manual effort in screening; finding value in inbound VC eyeballs.
+- **Skepticism:** Minimal; highly receptive. She needed a moment to "noodle" on specific use cases because she saw too many (100+).
+- **Leverage Points:** Connections to Ribbon and NYC-based VC investors; recruiter-first perspective (recognizes sourcing as the biggest pain point).

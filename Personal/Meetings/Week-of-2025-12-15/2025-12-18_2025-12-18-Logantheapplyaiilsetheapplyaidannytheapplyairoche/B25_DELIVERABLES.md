@@ -1,13 +1,12 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25 Deliverables
+# B25: Deliverables
 
-- **Darwin Box Pitch Deck/Demo Script:** Draft focusing on internal mobility and bespoke leadership tracking.
-- **Candidate Transparency Product Roadmap:** (Future) Draft for how judgment data is displayed to applicants.
-- **Nick's Onboarding Pack:** Slack access and introductory context.
-
+- **Meeting Notes**: Ilya to provide the team with notes from his previous call/this meeting. [Status: Pending]
+- **Nick's Agreement**: Countersigned (Completed).
+- **Slack Access**: Account for Nick (Pending).

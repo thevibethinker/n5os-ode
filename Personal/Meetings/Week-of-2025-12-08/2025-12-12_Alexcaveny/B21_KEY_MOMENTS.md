@@ -1,43 +1,20 @@
 ---
-created: 2025-12-12
-last_edited: 2025-12-12
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21 – Key Moments
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_4bCmrQsySGzDYwci
+---
 
-1. **Behavioral proof that candidates will tell stories**
-   - V sees PostHog data showing candidates like “Kevin” arriving via a job ad and immediately completing multiple stories.
-   - This directly addresses his fear that “maybe no one will ever record stories to apply,” and reframes 15–20% story completion as a strong signal.
+# B21 Key Moments
 
-2. **Agency as a lens on job search**
-   - V articulates that job-seeking behavior reflects **intrinsic agency**: when the situation is hopeless, some people blindly apply harder; others change the game.
-   - Careerspan is positioned as a tool for the latter group—those willing to go beyond default behavior.
-
-3. **Naming V’s “secret sauce”**
-   - In response to Alex’s question, V identifies his core advantages:
-     - Genuine curiosity about almost any problem.
-     - Comfort talking to people across social strata.
-   - This becomes the seed for a more intentional personal brand in sales and networking.
-
-4. **Two-sided value proposition crystallizes**
-   - They coin parallel messages:
-     - **Candidates:** “Show what you’ve really got / show your whole self.”
-     - **Employers:** “Ask for what you really want; ask for qualities, not keywords.”
-   - This pairing cleanly expresses Careerspan’s differentiation on both sides of the marketplace.
-
-5. **“Sell the hole, not the shovel”**
-   - Alex brings in a sales workshop maxim: focus on the **problem** (hiring is broken, screening is wasteful) rather than the product mechanics.
-   - Concretely, he suggests leading with questions like “How’s your hiring going?” before pitching Careerspan.
-
-6. **Locking next steps live**
-   - Alex stresses that founders should secure follow-up calls or pilots while they have live attention, rather than relying on later LinkedIn or email outreach.
-   - V recognizes this as a simple but powerful “alpha” move he has underused due to courtesy.
-
-7. **Visualization and one-pager ideas**
-   - V proposes a **Sankey diagram** to visualize wasted screening time in traditional hiring vs. Careerspan.
-   - They agree that a concise one-pager comparing workflows could become a key sales artifact.
-
-8. **Reframing executive coaching**
-   - V explicitly credits Alex with changing his view of coaching—from something he felt obligated to try for political reasons to a clearly valuable, perspective-shifting partnership.
-
+- **The Relief**: V: "The last thing that remains to be proven out is that people will tell stories to apply to jobs... what if no one does it? ... People are doing it. That's good."
+- **The Agency Theory**: V: "The way you job seek is a reflection of, to a limited extent, the level of intrinsic agency you have as a human being."
+- **The Anti-Brand**: Alex: "If I am a busy person and I hear about you, I'm like, oh great, another AI recruiter... a way to cut through the noise is your own personal brand identity."
+- **The Palantir Hellscape**: Alex: "You don't want the employer side to be like, 'use our Palantir-style data hellscape'... because then candidates... are like, well, I don't want to sign up for this."

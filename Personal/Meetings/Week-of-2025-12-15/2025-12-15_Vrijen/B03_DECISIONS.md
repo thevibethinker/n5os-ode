@@ -1,9 +1,10 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Decisions (B03)
+# B03: Decisions
 
-No decisions were made. The audio capture does not contain a real conversation and should be treated as a null meeting for decision-tracking purposes.
+No decisions were made.

@@ -1,18 +1,21 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Business Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_f7AwUFZUlbjsHjlO
+---
 
-## Company & Business Model
+# B06 Business Context
 
-*Business context analysis pending from transcript review.*
-
-## Key Metrics & Status
-
-- Funding Status: [To be determined]
-- Business Model: [To be analyzed]
-
+- **Company**: Careerspan.
+- **Stage**: Bootstrapping, but receiving investment.
+- **Current Stack**: Brex (Banking/Corporate Cards).
+- **Funding Status**: Expecting $50,000 from investors this week; current cash on hand ~$10k-$20k.
+- **Structure**: Vrijen + co-founder (Logan mentioned for tax/legal info).

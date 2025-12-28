@@ -30,6 +30,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Constants
+N5_ROOT = Path("/home/workspace/N5")
+N5_ROOT = Path("/home/workspace/N5")
 OUTPUT_DIR = Path("/home/workspace/N5/digests")
 PROD_DB_PATH = Path("/home/workspace/productivity_tracker.db")
 
@@ -146,8 +148,73 @@ class MorningDigest:
             logger.error(f"DB Error: {e}")
             return "Stats unavailable."
 
-    def generate_markdown(self, wedge, landscape, loop, pulse):
+    async def get_events(self):
+        """Get must-go events from the recommender."""
+        try:
+            result = subprocess.run(
+                ["python3", str(Path(__file__).parent / "event_recommender.py"), 
+                 "--format", "digest", "--days", "30", "--top", "5"],
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            if result.returncode == 0 and result.stdout.strip():
+                return result.stdout.strip()
+            return "No must-go events this week. Check the [Events Calendar](https://events-calendar-va.zocomputer.io) for all options."
+        except Exception as e:
+            logger.error(f"Events fetch failed: {e}")
+            return "Events unavailable."
+
+    async def get_life_counter(self):
+        """Module 5: The Habit Tracker (Life Counter summary)"""
+        try:
+            # Get yesterday's summary
+            yesterday = (self.today - datetime.timedelta(days=1)).isoformat()
+            
+            result = subprocess.run(
+                ["python3", str(N5_ROOT / "scripts" / "life_counter.py"), "stats", "--days", "1"],
+                capture_output=True,
+                text=True,
+                timeout=10
+            )
+            
+            if result.returncode == 0 and result.stdout.strip():
+                # Parse the stats output
+                lines = result.stdout.strip().split('\n')
+                habits = []
+                for line in lines:
+                    if '│' in line and ('✅' in line or '⚠️' in line):
+                        habits.append(line.strip())
+                
+                if habits:
+                    return "**Yesterday's Habits:**\n" + "\n".join(habits)
+                else:
+                    return "No habits logged yesterday."
+            return "No habit data available."
+        except Exception as e:
+            logger.error(f"Life Counter fetch failed: {e}")
+            return "Habit tracker unavailable."
+
+    def generate_markdown(self, wedge, landscape, loop, pulse, events=None, life_counter=None):
         date_str = self.today.strftime("%A, %B %d")
+        
+        events_section = ""
+        if events:
+            events_section = f"""
+---
+
+### 🎟️ Must-Go Events
+{events}
+"""
+        
+        life_counter_section = ""
+        if life_counter:
+            life_counter_section = f"""
+---
+
+### 📊 The Habit Tracker
+{life_counter}
+"""
         
         md = f"""
 # 🌅 Good Morning, V.
@@ -172,7 +239,7 @@ class MorningDigest:
 
 ### 💓 The Pulse
 {pulse}
-
+{life_counter_section}{events_section}
 ---
 
 ### 🚀 The Nudge
@@ -185,14 +252,16 @@ class MorningDigest:
         logger.info("Generating Morning Digest...")
         
         # Run parallel data fetching
-        wedge, landscape, loop, pulse = await asyncio.gather(
+        wedge, landscape, loop, pulse, events, life_counter = await asyncio.gather(
             self.get_wedge(),
             self.get_landscape(),
             self.get_loop(),
-            self.get_pulse()
+            self.get_pulse(),
+            self.get_events(),
+            self.get_life_counter()
         )
         
-        content = self.generate_markdown(wedge, landscape, loop, pulse)
+        content = self.generate_markdown(wedge, landscape, loop, pulse, events, life_counter)
         
         # Save to file
         filename = f"morning-digest-{self.today.strftime('%Y-%m-%d')}.md"
@@ -223,6 +292,11 @@ if __name__ == "__main__":
         }))
     else:
         asyncio.run(digest.run(send="--email" in sys.argv))
+
+
+
+
+
 
 
 

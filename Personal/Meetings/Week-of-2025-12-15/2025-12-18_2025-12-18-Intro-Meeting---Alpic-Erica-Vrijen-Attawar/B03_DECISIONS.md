@@ -1,13 +1,19 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03: Decisions
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_ehsLGDk6xgv5TpRN
+---
 
-- **Careerspan Head of AI Review**: Vrijen will share Alpic documentation and framework details with Careerspan's head of AI for potential platform integration.
-- **MVP Development**: Vrijen will build a career coaching ChatGPT app as an MVP to test the Alpic platform and early App Store distribution.
-- **Strategic Introduction**: Vrijen will facilitate an introduction between Alpic (Erica) and the founders of Zo Computer to explore partnership opportunities.
-- **Execution Timeline**: Aiming for early deployment (tonight or tomorrow) to capitalize on the newly opened ChatGPT App Store.
+# B03 Decisions
+
+- **Architecture Path**: V will attempt to host an MCP server on Zo (Option A) rather than hosting it directly on Alpic initially, to maintain the agentic file system benefits.
+- **Prototype Choice**: V will build a "career coaching app" as the first field test of the Skybridge/ChatGPT App architecture.
+- **Communication Path**: V will introduce the Skybridge/Alpic founders to the Zo community and founders if the technical integration proof-of-concept holds.

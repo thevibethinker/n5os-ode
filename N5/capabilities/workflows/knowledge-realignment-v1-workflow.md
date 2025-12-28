@@ -20,7 +20,7 @@ tags:
   - ssot
 entry_points:
   - type: script
-    id: "N5/orchestration/knowledge-realignment-v1/ORCHESTRATOR_MONITOR.md"
+    id: "N5/builds/knowledge-realignment-v1/ORCHESTRATOR_MONITOR.md"
 owner: "V"
 ```
 
@@ -31,20 +31,20 @@ Multi-phase workflow to **realign the entire knowledge system** onto a single so
 ## How to Use It
 
 - Use this capability when reasoning about **knowledge architecture changes**, migrations, or cleanup.
-- Start from `file 'N5/orchestration/knowledge-realignment-v1/ORCHESTRATOR_MONITOR.md'` to see worker status and pending tasks.
+- Start from `file 'N5/builds/knowledge-realignment-v1/ORCHESTRATOR_MONITOR.md'` to see worker status and pending tasks.
 - Review design and plans in:
-  - `file 'N5/orchestration/knowledge-realignment-v1/knowledge-realignment-v1-design.md'`
-  - Worker briefs under `N5/orchestration/knowledge-realignment-v1/WORKER_*_*.md`.
+  - `file 'N5/builds/knowledge-realignment-v1/knowledge-realignment-v1-design.md'`
+  - Worker briefs under `N5/builds/knowledge-realignment-v1/WORKER_*_*.md`.
 - For operational checks, use monitoring commands in the monitor file (e.g., `ls -R Personal/Knowledge` and legacy inbox scans).
 
 ## Associated Files & Assets
 
-- `file 'N5/orchestration/knowledge-realignment-v1/ORCHESTRATOR_MONITOR.md'` – worker list and integration checklist
-- `file 'N5/orchestration/knowledge-realignment-v1/knowledge-realignment-v1-design.md'` – architecture + phases
-- `file 'N5/orchestration/knowledge-realignment-v1/WORKER_1_current_state_map.md'` – pre-migration map
-- `file 'N5/orchestration/knowledge-realignment-v1/WORKER_2_target_architecture.md'` – target layout
-- `file 'N5/orchestration/knowledge-realignment-v1/WORKER_3_migration_plan.md'` – concrete plan
-- `file 'N5/orchestration/knowledge-realignment-v1/WORKER_9_alignment_audit.md'` – final audit brief
+- `file 'N5/builds/knowledge-realignment-v1/ORCHESTRATOR_MONITOR.md'` – worker list and integration checklist
+- `file 'N5/builds/knowledge-realignment-v1/knowledge-realignment-v1-design.md'` – architecture + phases
+- `file 'N5/builds/knowledge-realignment-v1/WORKER_1_current_state_map.md'` – pre-migration map
+- `file 'N5/builds/knowledge-realignment-v1/WORKER_2_target_architecture.md'` – target layout
+- `file 'N5/builds/knowledge-realignment-v1/WORKER_3_migration_plan.md'` – concrete plan
+- `file 'N5/builds/knowledge-realignment-v1/WORKER_9_alignment_audit.md'` – final audit brief
 - `file 'Personal/Knowledge/Architecture/principles/architectural_principles.md'` – canonical principles referenced in this project
 
 ## Workflow

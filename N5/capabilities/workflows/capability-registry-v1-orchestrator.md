@@ -20,7 +20,7 @@ tags:
   - orchestration
 entry_points:
   - type: script
-    id: "N5/orchestration/capability-registry-v1/ORCHESTRATOR_MONITOR.md"
+    id: "N5/builds/capability-registry-v1/ORCHESTRATOR_MONITOR.md"
 owner: "V"
 ```
 
@@ -30,19 +30,19 @@ Coordinates the creation and maintenance of the **N5 Capability Registry** under
 
 ## How to Use It
 
-- Open `file 'N5/orchestration/capability-registry-v1/ORCHESTRATOR_MONITOR.md'` in a dedicated build conversation.
+- Open `file 'N5/builds/capability-registry-v1/ORCHESTRATOR_MONITOR.md'` in a dedicated build conversation.
 - For each worker (1–5), spin up a new build thread using the corresponding worker brief:
-  - `file 'N5/orchestration/capability-registry-v1/WORKER_1_schema_and_scaffolding.md'`
-  - `file 'N5/orchestration/capability-registry-v1/WORKER_2_integrations_inventory.md'`
-  - `file 'N5/orchestration/capability-registry-v1/WORKER_3_internal_systems.md'`
-  - `file 'N5/orchestration/capability-registry-v1/WORKER_4_workflows_and_agents.md'`
-  - `file 'N5/orchestration/capability-registry-v1/WORKER_5_conversation_end_integration.md'`
+  - `file 'N5/builds/capability-registry-v1/WORKER_1_schema_and_scaffolding.md'`
+  - `file 'N5/builds/capability-registry-v1/WORKER_2_integrations_inventory.md'`
+  - `file 'N5/builds/capability-registry-v1/WORKER_3_internal_systems.md'`
+  - `file 'N5/builds/capability-registry-v1/WORKER_4_workflows_and_agents.md'`
+  - `file 'N5/builds/capability-registry-v1/WORKER_5_conversation_end_integration.md'`
 - Use this orchestrator as the **home thread** for capability-registry work; all worker conversations should link back here.
 - Once workers land their deliverables, ensure `file 'N5/capabilities/index.md'` is updated and cross-linked.
 
 ## Associated Files & Assets
 
-- `file 'N5/orchestration/capability-registry-v1/ORCHESTRATOR_MONITOR.md'` – primary monitor and checklist
+- `file 'N5/builds/capability-registry-v1/ORCHESTRATOR_MONITOR.md'` – primary monitor and checklist
 - `file 'N5/capabilities/CAPABILITY_TEMPLATE.md'` – schema and metadata template
 - `file 'N5/capabilities/index.md'` – top-level registry index
 - `file 'Prompts/Close Conversation.prompt.md'` – eventual integration point for auto-capturing capabilities from build threads

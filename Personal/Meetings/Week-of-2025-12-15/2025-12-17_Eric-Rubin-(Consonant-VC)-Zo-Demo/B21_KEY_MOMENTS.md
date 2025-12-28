@@ -1,17 +1,18 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_m50gJBwnYh1LyaQX
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_kGw7UVncaoiCFwxn
 ---
 # B21: Key Moments
 
-## Quotes
-- **Vrijen:** "The best folks aren't updating their LinkedIn, they're just kicking ass at work."
-- **Eric:** "I care a lot... I care a lot. Not in annoying way. It's just like, hey, I want to find new customers." (on portco support)
-- **Vrijen:** "90% of the reason they fail is a values mindset, soft skills mismatch."
-- **Vrijen:** "I'm going to start bothering you about your product now." (Recalling his first meeting with Ben)
-
-## Turning Points
-- **The Pivot:** When Eric describes his manual hiring pain, Vrijen successfully bridges the Zo demo into a Careerspan value proposition, shifting the conversation from tool-demo to strategic-solution.
-- **The Personal Connection:** Eric's offer to help with Melissa's search solidified the relationship as more than just a professional/investment demo.
+- **The "Aha" Moment**: Vrijen explaining that he is non-technical and has achieved everything in Zo without looking at a single line of code.
+- **The Red Flag Insight**: Eric stating that he doesn't automate sourcing because "there's just so many of these obvious little red flags that I don't think an AI picks up on."
+- **The Enrichment Reveal**: V showing Eric the CRM profile Zo built on him, including the detail about him being a knitter.

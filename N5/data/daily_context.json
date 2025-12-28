@@ -1,51 +1,213 @@
 [
   {
-    "id": "3sa5olv0j81423qnt17v4t4irp_20251225T133000Z",
+    "kind": "calendar#event",
+    "etag": "\"3509773720393406\"",
+    "id": "ftrg1jnntj1q8vtu2ucb1m5jk4_20251226T213000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=ZnRyZzFqbm50ajFxOHZ0dTJ1Y2IxbTVqazRfMjAyNTEyMjZUMjEzMDAwWiB2cmlqZW5AbXljYXJlZXJzcGFuLmNvbQ",
+    "created": "2024-10-21T12:40:57.000Z",
+    "updated": "2025-08-11T04:34:20.196Z",
+    "summary": "Deal Review",
+    "colorId": "2",
+    "creator": { "email": "vrijen@mycareerspan.com", "self": true },
+    "organizer": { "email": "vrijen@mycareerspan.com", "self": true },
+    "start": { "dateTime": "2025-12-26T16:30:00-05:00", "timeZone": "America/New_York" },
+    "end": { "dateTime": "2025-12-26T17:30:00-05:00", "timeZone": "America/New_York" },
+    "recurringEventId": "ftrg1jnntj1q8vtu2ucb1m5jk4",
+    "originalStartTime": { "dateTime": "2025-12-26T16:30:00-05:00", "timeZone": "America/New_York" },
+    "iCalUID": "ftrg1jnntj1q8vtu2ucb1m5jk4@google.com",
+    "sequence": 1,
+    "reminders": { "useDefault": true },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3526076737211358\"",
+    "id": "3sa5olv0j81423qnt17v4t4irp_20251226T133000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M3NhNW9sdjBqODE0MjNxbnQxN3Y0dDRpcnBfMjAyNTEyMjZUMTMzMDAwWiB2cmlqZW5AbXljYXJlZXJzcGFuLmNvbQ",
+    "created": "2025-09-13T02:49:47.000Z",
+    "updated": "2025-11-13T12:52:48.605Z",
     "summary": "Morning Rituals [DWP]",
-    "start": {"dateTime": "2025-12-25T08:30:00-05:00", "timeZone": "America/New_York"},
-    "end": {"dateTime": "2025-12-25T09:00:00-05:00", "timeZone": "America/New_York"},
     "description": "- Mark events and show littlebird my day",
-    "creator": {"email": "vrijen@mycareerspan.com"}
+    "creator": { "email": "vrijen@mycareerspan.com", "self": true },
+    "organizer": { "email": "vrijen@mycareerspan.com", "self": true },
+    "start": { "dateTime": "2025-12-26T08:30:00-05:00", "timeZone": "America/New_York" },
+    "end": { "dateTime": "2025-12-26T09:00:00-05:00", "timeZone": "America/New_York" },
+    "recurringEventId": "3sa5olv0j81423qnt17v4t4irp",
+    "originalStartTime": { "dateTime": "2025-12-26T08:30:00-05:00", "timeZone": "America/New_York" },
+    "iCalUID": "3sa5olv0j81423qnt17v4t4irp@google.com",
+    "sequence": 0,
+    "reminders": { "useDefault": true },
+    "eventType": "default"
   },
   {
-    "id": "3539vnkhrvv2rh4lk5g00bvejg_20251225T210000Z",
-    "summary": "Weekly Exec Func Coaching",
-    "start": {"dateTime": "2025-12-25T16:00:00-05:00", "timeZone": "America/New_York"},
-    "end": {"dateTime": "2025-12-25T17:00:00-05:00", "timeZone": "America/New_York"}
-  },
-  {
-    "id": "lp479vnqnsuopoc7dlmfv2orus_20251225T141500Z",
+    "kind": "calendar#event",
+    "etag": "\"3532865143868254\"",
+    "id": "lp479vnqnsuopoc7dlmfv2orus_20251226T141500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bHA0Nzl2bnFuc3VvcG9jN2RsbWZ2Mm9ydXNfMjAyNTEyMjZUMTQxNTAwWiB2cmlqZW5AbXljYXJlZXJzcGFuLmNvbQ",
+    "created": "2023-10-24T17:52:47.000Z",
+    "updated": "2025-12-22T19:42:51.934Z",
     "summary": "Daily co-founder standup + check trello",
-    "start": {"dateTime": "2025-12-25T09:15:00-05:00", "timeZone": "America/New_York"},
-    "end": {"dateTime": "2025-12-25T09:30:00-05:00", "timeZone": "America/New_York"},
-    "attendees": [
-      {"email": "logan@theapply.ai", "responseStatus": "needsAction"},
-      {"email": "vrijen@mycareerspan.com", "organizer": true, "responseStatus": "accepted"}
-    ]
-  },
-  {
-    "id": "sp21is2bpvbea7s3o3uqsquefc_20251225T173000Z",
-    "summary": "David x Careerspan",
-    "start": {"dateTime": "2025-12-25T12:30:00-05:00", "timeZone": "America/Chicago"},
-    "end": {"dateTime": "2025-12-25T13:00:00-05:00", "timeZone": "America/Chicago"},
-    "attendees": [
-      {"email": "logan@theapply.ai", "responseStatus": "needsAction"},
-      {"email": "dspeigel@gmail.com", "responseStatus": "accepted"},
-      {"email": "loganhc@gmail.com", "organizer": true, "responseStatus": "accepted"},
-      {"email": "vrijen@mycareerspan.com", "self": true, "responseStatus": "declined"}
-    ]
-  },
-  {
-    "id": "3ajl74pf64rsak1drb4rd3112b_20251225T150000Z",
-    "summary": "Daily team stand-up",
-    "start": {"dateTime": "2025-12-25T10:00:00-05:00", "timeZone": "America/New_York"},
-    "end": {"dateTime": "2025-12-25T10:15:00-05:00", "timeZone": "America/New_York"},
     "description": "Comet Tag: [FUE] [SH-I]",
-    "conference": "Gather",
+    "creator": { "email": "vrijen@mycareerspan.com", "self": true },
+    "organizer": { "email": "vrijen@mycareerspan.com", "self": true },
+    "start": { "dateTime": "2025-12-26T09:15:00-05:00", "timeZone": "America/New_York" },
+    "end": { "dateTime": "2025-12-26T09:30:00-05:00", "timeZone": "America/New_York" },
+    "recurringEventId": "lp479vnqnsuopoc7dlmfv2orus_R20250917T131500",
+    "originalStartTime": { "dateTime": "2025-12-26T09:15:00-05:00", "timeZone": "America/New_York" },
+    "iCalUID": "lp479vnqnsuopoc7dlmfv2orus_R20250917T131500@google.com",
+    "sequence": 6,
     "attendees": [
-      {"email": "vrijen@mycareerspan.com", "organizer": true, "responseStatus": "accepted"},
-      {"email": "logan@theapply.ai", "responseStatus": "needsAction"},
-      {"email": "ilse@theapply.ai", "responseStatus": "accepted"}
-    ]
+      { "email": "logan@theapply.ai", "responseStatus": "needsAction" },
+      { "email": "vrijen@mycareerspan.com", "organizer": true, "self": true, "responseStatus": "accepted" }
+    ],
+    "hangoutLink": "https://meet.google.com/mhy-aryd-awt",
+    "conferenceData": {
+      "entryPoints": [
+        { "entryPointType": "video", "uri": "https://meet.google.com/mhy-aryd-awt", "label": "meet.google.com/mhy-aryd-awt" },
+        { "entryPointType": "more", "uri": "https://tel.meet/mhy-aryd-awt?pin=3346402483961", "pin": "3346402483961" },
+        { "regionCode": "US", "entryPointType": "phone", "uri": "tel:+1-786-671-5212", "label": "+1 786-671-5212", "pin": "998737958" }
+      ],
+      "conferenceSolution": {
+        "key": { "type": "hangoutsMeet" },
+        "name": "Google Meet",
+        "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+      },
+      "conferenceId": "mhy-aryd-awt"
+    },
+    "reminders": { "useDefault": true },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3533461436736734\"",
+    "id": "7squm0tkp1njmnr37qore3ql0k",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=N3NxdW0wdGtwMW5qbW5yMzdxb3JlM3FsMGsgdnJpamVuQG15Y2FyZWVyc3Bhbi5jb20",
+    "created": "2025-12-22T21:15:20.000Z",
+    "updated": "2025-12-26T06:31:58.368Z",
+    "summary": "Michelle Luan x Vrijen Attawar",
+    "description": "Event Name\nCheck In with Vrij (Careerspan)\n\nPlease send anything you would like me to review in advance to vrijen@mycareerspan.com.\n\nLocation: This is a Google Meet web conference.\nYou can join this meeting from your computer, tablet, or smartphone.\nhttps://calendly.com/events/83e35cd7-ca6a-4ddc-a3fe-de4dbee9af6f/google_meet\n\nPlease share anything that will help prepare for our meeting.: Catch up and discussion on the recommendation letter\n\nNeed to make changes to this event?\nCancel: https://calendly.com/cancellations/2d066daa-07b5-4908-a4cb-52c930c86068\nReschedule: https://calendly.com/reschedulings/2d066daa-07b5-4908-a4cb-52c930c86068\n",
+    "location": "Google Meet (instructions in description)",
+    "creator": { "email": "vrijen@mycareerspan.com", "self": true },
+    "organizer": { "email": "vrijen@mycareerspan.com", "self": true },
+    "start": { "dateTime": "2025-12-26T10:30:00-05:00", "timeZone": "America/New_York" },
+    "end": { "dateTime": "2025-12-26T11:00:00-05:00", "timeZone": "America/New_York" },
+    "iCalUID": "7squm0tkp1njmnr37qore3ql0k@google.com",
+    "sequence": 1,
+    "attendees": [
+      { "email": "michelleluanss@gmail.com", "responseStatus": "needsAction" },
+      { "email": "vrijen@mycareerspan.com", "organizer": true, "self": true, "responseStatus": "accepted" }
+    ],
+    "hangoutLink": "https://meet.google.com/tkk-bodd-vav",
+    "conferenceData": {
+      "createRequest": {
+        "requestId": "2e4994fa-cc99-4320-a40d-48e20cec770c",
+        "conferenceSolutionKey": { "type": "hangoutsMeet" },
+        "status": { "statusCode": "success" }
+      },
+      "entryPoints": [
+        { "entryPointType": "video", "uri": "https://meet.google.com/tkk-bodd-vav", "label": "meet.google.com/tkk-bodd-vav" },
+        { "entryPointType": "more", "uri": "https://tel.meet/tkk-bodd-vav?pin=4045724349696", "pin": "4045724349696" },
+        { "regionCode": "US", "entryPointType": "phone", "uri": "tel:+1-605-743-0843", "label": "+1 605-743-0843", "pin": "183479489" }
+      ],
+      "conferenceSolution": {
+        "key": { "type": "hangoutsMeet" },
+        "name": "Google Meet",
+        "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+      },
+      "conferenceId": "tkk-bodd-vav"
+    },
+    "reminders": { "useDefault": true },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3533545018144318\"",
+    "id": "71vcb3mgk1185mifopv6qckdk1_20251226T213000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NzF2Y2IzbWdrMTE4NW1pZm9wdjZxY2tkazFfMjAyNTEyMjZUMjEzMDAwWiB2cmlqZW5AbXljYXJlZXJzcGFuLmNvbQ",
+    "created": "2024-11-20T14:54:35.000Z",
+    "updated": "2025-12-26T18:08:29.072Z",
+    "summary": "Founder H2H",
+    "creator": { "email": "vrijen@mycareerspan.com", "self": true },
+    "organizer": { "email": "vrijen@mycareerspan.com", "self": true },
+    "start": { "dateTime": "2025-12-26T16:30:00-05:00", "timeZone": "America/New_York" },
+    "end": { "dateTime": "2025-12-26T17:00:00-05:00", "timeZone": "America/New_York" },
+    "recurringEventId": "71vcb3mgk1185mifopv6qckdk1",
+    "originalStartTime": { "dateTime": "2025-12-26T16:30:00-05:00", "timeZone": "America/New_York" },
+    "iCalUID": "71vcb3mgk1185mifopv6qckdk1@google.com",
+    "sequence": 1,
+    "attendees": [
+      { "email": "logan@theapply.ai", "responseStatus": "accepted" },
+      { "email": "vrijen@mycareerspan.com", "organizer": true, "self": true, "responseStatus": "accepted" }
+    ],
+    "hangoutLink": "https://meet.google.com/mwf-fgzg-meu",
+    "conferenceData": {
+      "entryPoints": [
+        { "entryPointType": "video", "uri": "https://meet.google.com/mwf-fgzg-meu", "label": "meet.google.com/mwf-fgzg-meu" },
+        { "entryPointType": "more", "uri": "https://tel.meet/mwf-fgzg-meu?pin=5127803366160", "pin": "5127803366160" },
+        { "regionCode": "US", "entryPointType": "phone", "uri": "tel:+1-513-480-5248", "label": "+1 513-480-5248", "pin": "581019210" }
+      ],
+      "conferenceSolution": {
+        "key": { "type": "hangoutsMeet" },
+        "name": "Google Meet",
+        "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+      },
+      "conferenceId": "mwf-fgzg-meu"
+    },
+    "reminders": { "useDefault": true },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3533600180314782\"",
+    "id": "3ajl74pf64rsak1drb4rd3112b_20251226T150000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M2FqbDc0cGY2NHJzYWsxZHJiNHJkMzExMmJfMjAyNTEyMjZUMTUwMDAwWiB2cmlqZW5AbXljYXJlZXJzcGFuLmNvbQ",
+    "created": "2023-08-14T17:21:20.000Z",
+    "updated": "2025-12-27T01:48:10.157Z",
+    "summary": "Daily team stand-up",
+    "description": "Comet Tag: [FUE] [SH-I]\n\n  ─────────  \n\n  You are invited to a scheduled Gather meeting.  \n\n  Join the virtual office by clicking here: https://app.gather.town/app/8f5sgNMUiLN2FU79/Careerspan?meeting=c291cmNlPTAmc3Bhd25Ub2tlbj1HT3RWZ3VyLVFFVzlGc2VPcmpMNyZldmVudElkPWI2NjgzNGE0LTZjYzQtNGIwYS1hZjIyLTE4NjdjZWIwODM0OA  \n\n  After clicking the Gather meeting link, you'll be taken to a welcome screen where you'll be able to review your computer's audio and video settings along with options to customize how you will appear in the meeting.  \n\n  Learn more about Gather at https://gather.town  \n\n  ─────────",
+    "colorId": "4",
+    "creator": { "email": "vrijen@mycareerspan.com", "self": true },
+    "organizer": { "email": "vrijen@mycareerspan.com", "self": true },
+    "start": { "dateTime": "2025-12-26T10:00:00-05:00", "timeZone": "America/New_York" },
+    "end": { "dateTime": "2025-12-26T10:15:00-05:00", "timeZone": "America/New_York" },
+    "recurringEventId": "3ajl74pf64rsak1drb4rd3112b_R20250917T140000",
+    "originalStartTime": { "dateTime": "2025-12-26T10:00:00-05:00", "timeZone": "America/New_York" },
+    "iCalUID": "3ajl74pf64rsak1drb4rd3112b_R20250917T140000@google.com",
+    "sequence": 5,
+    "attendees": [
+      { "email": "vrijen@mycareerspan.com", "organizer": true, "self": true, "responseStatus": "accepted" },
+      { "email": "logan@theapply.ai", "responseStatus": "needsAction" },
+      { "email": "ilse@theapply.ai", "responseStatus": "accepted" },
+      { "email": "danny@theapply.ai", "responseStatus": "accepted" },
+      { "email": "rochel@mycareerspan.com", "responseStatus": "accepted" },
+      { "email": "ilya@mycareerspan.com", "responseStatus": "accepted" }
+    ],
+    "hangoutLink": "https://meet.google.com/txv-mfxx-dfr",
+    "conferenceData": {
+      "createRequest": {
+        "requestId": "6hij0dhncos66bb3c8sjgb9k71h36b9p70sj2b9h64omcc1o64p30opmcc",
+        "conferenceSolutionKey": { "type": "hangoutsMeet" },
+        "status": { "statusCode": "pending" }
+      },
+      "entryPoints": [
+        { "entryPointType": "video", "uri": "https://meet.google.com/txv-mfxx-dfr", "label": "meet.google.com/txv-mfxx-dfr" },
+        { "entryPointType": "more", "uri": "https://tel.meet/txv-mfxx-dfr?pin=6326152770792", "pin": "6326152770792" },
+        { "regionCode": "US", "entryPointType": "phone", "uri": "tel:+1-845-377-5643", "label": "+1 845-377-5643", "pin": "537998423" }
+      ],
+      "conferenceSolution": {
+        "key": { "type": "hangoutsMeet" },
+        "name": "Google Meet",
+        "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+      },
+      "conferenceId": "txv-mfxx-dfr"
+    },
+    "reminders": { "useDefault": true },
+    "eventType": "default"
   }
 ]

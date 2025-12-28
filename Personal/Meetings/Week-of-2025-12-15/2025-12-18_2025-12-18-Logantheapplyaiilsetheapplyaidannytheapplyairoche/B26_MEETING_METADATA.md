@@ -1,17 +1,12 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B26 Meeting Metadata
+# B26: Meeting Metadata
 
-- **Meeting ID:** 2025-12-18_Careerspan_Internal_Sync
-- **Participants:** Vrijen Attawar, Ilya Kucherenko, Logan Currie, Ilse Funkhouser
-- **Organization:** Careerspan
-- **Meeting Type:** Internal / Strategic Sync
-- **Tags:** #internal-sync #darwin-box #strategy #product-roadmap #holiday-planning #hiring
-- **Topics:** Darwin Box framing, candidate transparency, code spelunking, Nick onboarding, Christmas plans.
-- **Sentiment:** Warm, collaborative, high strategic alignment.
-
+- **Tags**: #DarwinBox #Strategy #InternalMobility #Refactor #HolidayPlanning
+- **Categorization**: Internal Strategic Sync
+- **Topics**: Enterprise Partnerships, Technical Debt, Recruitment Ethics (Transparency), Team Onboarding.

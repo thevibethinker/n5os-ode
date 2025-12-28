@@ -1,40 +1,26 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Stakeholder Intelligence: David Spiegel (Follow-on)
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fW1IczFLfM9qTO3V
+---
 
-> **Note:** See also B03_STAKEHOLDER_INTELLIGENCE in `2025-12-15_David_x_Careerspan_[M]` for primary profile. This block focuses on additional insight surfaced in the follow-on systems conversation.
+# B03 Stakeholder Intelligence
 
-## Additional characteristics surfaced in this meeting
+### Vrijen (V)
+- **Role**: Strategic Lead / Founder.
+- **Key Interests**: High-fidelity tone replication, automated networking 'magic', and creating 'guaranteed' file structures that users can't easily break (N5 protections).
+- **Perspective**: Believes that disciplined file structure equals memory. Focused on the 'painkiller' aspect of networking for professional advancement.
+- **Leverage Points**: Holds the core 'rules' and 'playbooks' for effective networking that the system needs to codify.
 
-### Systems-thinking orientation
-- Comfortable reasoning about how multiple tools (Dex/join decks, Condo, Zo, email) might interoperate.
-- Naturally articulates examples that map directly to system behaviors ("I see a post → think of a person → forward with context").
-- Values *transparent* systems he can inspect and reason about, not opaque black-box automations.
-
-### Attitude toward data and privacy
-- Open to the idea of using email and past outreach as training data, provided he retains veto power over what is used.
-- Sensitive to the difference between "reading my email to help me" and "scraping everything indiscriminately"—trust hinges on respectful boundaries.
-
-### Coaching and pedagogy instincts
-- Thinks in terms of cohorts, steps, and rules that people can follow.
-- Quickly imagines how a Zo-based system could underpin teaching (e.g., "here are the groups, here are the cadences, here’s how to tag and follow up").
-- Sees value in letting participants iteratively layer on complexity (starter kit first, then advanced "DLC" sessions).
-
-### Risk profile
-- Willing to engage with scrapers and advanced integrations conceptually, but prefers they be optional and clearly labeled as such.
-- Concerned that too much complexity will alienate the very people he wants to help (busy professionals who are already overwhelmed).
-
-## Implications for product and partnership
-
-- David is not just a content expert; he is a **design partner** capable of co‑specifying workflows and edge cases.
-- He can help pressure-test whether the system truly supports real-world behavior (vs. a theoretical view of networking).
-- Maintaining his trust will require:
-  - Clear on/off switches for data use.
-  - Honest communication about what is automated vs. manual.
-  - A user experience that feels like an assistive ally, not an intrusive surveillance layer.
-
-
+### Unidentified Collaborator (likely Technical/Product)
+- **Role**: Interlocutor / Implementation sounding board.
+- **Key Interests**: Understanding the 'how' behind V's tone training and the feasibility of using LinkedIn scrapers (e.g., Bright Data) vs. APIs.
+- **Skepticism**: Asked clarifying questions about how tone was trained and how 'magic' the memory needs to be for the average user.

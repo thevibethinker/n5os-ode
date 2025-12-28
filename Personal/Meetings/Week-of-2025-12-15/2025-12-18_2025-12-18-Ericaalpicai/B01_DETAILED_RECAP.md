@@ -1,53 +1,26 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B01: Detailed Recap
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_twzmrcRlYbwPjLN7
+---
+
+# B01 Detailed Recap
 
 ## Overview
-This meeting between Vrijen Attawar and Erica Beavers (from Alpic, an MCP app deployment platform) focused on ChatGPT apps, MCP protocol, and potential integration opportunities with Zo Computer.
+Vrijen (V) met with the founder of Alpic (referred to as Outpik/Alpic) to discuss the recent release of ChatGPT Apps and the Model Context Protocol (MCP). The meeting focused on how Alpic's platform simplifies the deployment and management of MCP servers and ChatGPT apps.
 
-## Key Topics Discussed
-
-### MCP Protocol & ChatGPT Apps
-- **ChatGPT App Store**: OpenAI just released their official ChatGPT App Store, opening submissions to third-party developers (as of today)
-- **MCP Protocol Evolution**: MCP (Model Context Protocol) has evolved from text-only to include UI components via MCP Apps
-- **Market Opportunity**: ChatGPT App Store currently features ~20 apps including TurboTax, Credit Karma, and various B2B SaaS tools
-- **Competitive Advantage**: Early entry and quality execution could differentiate Alpic's solutions in a soon-to-be-flooded market
-
-### Alpic Platform Overview
-- **Skybridge Framework**: Simplifies ChatGPT app development with MCP
-- **Deployment**: One-click deploy via GitHub integration (Vercel-like experience for MCP servers)
-- **Monitoring**: Usage analytics, tool invocation tracking, error information, and token metrics
-- **Customers**: Kiwi.com is an early customer with significant usage from Anthropic team
-
-### Zo Computer Integration
-- **Zo's Capabilities**: Cloud-based server with full file structure, always-on agent mode, scheduled agents, and custom app instances
-- **Meeting Processing**: Vrijen showcased Zo's meeting inbox system with automatic processing, dynamic block application, and sentiment analysis
-- **Potential**: Alpic could integrate with Zo to enable users to easily deploy MCP servers and ChatGPT apps
-
-### Careerspan Strategic Discussion
-- **Challenge**: Difficulty driving users to Careerspan UI
-- **Solution**: ChatGPT app could provide distribution through OpenAI's ecosystem while maintaining Careerspan's look and feel
-- **Content Advantage**: ~100,000 words of proprietary career coaching content ready to deploy
-- **Plan**: Build career coaching app as MVP to test early and field-test before involving head of AI
-
-### Strategic Handoff & Partnerships
-- **Vrijen's Role**: Plans to loop in Careerspan head of AI for company-level discussions
-- **Personal Projects**: Interested in building personal apps on Alpic/Zo
-- **Zo Introduction**: Committed to connecting Alpic with Zo founders for potential partnership
-- **Timeline**: Possible deployment tonight/tomorrow for early app store entry
-
-## Decisions Made
-- Vrijen will share Alpic documentation with Careerspan's head of AI
-- Vrijen will build a career coaching ChatGPT app as an MVP
-- Vrijen will facilitate introduction between Alpic and Zo Computer founders
-- Both parties committed to continued dialogue about collaboration
-
-## Next Steps
-- Alpic to provide Skybridge framework and SDK template documentation
-- Vrijen to explore Alpic platform with free tier
-- Vrijen to consider hosting options (Alpic vs. personal infrastructure)
-- Vrijen to build and submit career coaching app to OpenAI App Store
+## Chronological Discussion
+- **Intro & Logistics**: Casual check-in regarding the founder's move to the US (San Francisco vs. New York) and their 5-person founding team model.
+- **MCP Context**: The founder provided a grounding on MCP as an open-source protocol for AI to take action. He highlighted the major shift from text-only results to interactive UI components (MCP Apps) recently announced by OpenAI and Anthropic.
+- **The ChatGPT App Store News**: The founder revealed that ChatGPT just opened its App Store to third-party submissions that morning, featuring about 20 initial apps (lifestyle, B2B, B2C like TurboTax/Credit Karma).
+- **Zo Integration Concept**: V proposed the idea of using Zo as a backend for a ChatGPT app, utilizing Alpic as the middle layer. V offered to introduce the Alpic founders to the Zo community, noting the 130+ active members and potential for "one plus one equals two" synergy.
+- **Alpic Platform Demo**: The founder demonstrated the Alpic platform, showcasing a Vercel-like deployment experience for MCP servers. He showed one-click deployment from GitHub, live link testing, logs, and analytics (showing usage by Anthropic employees for kiwi.com).
+- **CareerSpan Strategy**: V discussed the possibility of building a career coaching app on Alpic as a "plan Z" or as a way to field test the tech before bringing it to the CareerSpan Head of AI. V also mentioned the potential for open-sourcing CareerSpan as a backend that people interface with via ChatGPT.

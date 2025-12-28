@@ -1,14 +1,24 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B07 Tone and Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
 
-- **Vibe:** High energy and collegial. There is a strong baseline of mutual respect (shared McKinsey/Founder context).
-- **Dan's State:** Highly distracted but excited. He is multitasking with lawyers during the call, which underscores the high-stakes nature of his current week. He is "in denial" about living in London (retains nomad identity).
-- **V's Approach:** Empathetic and consultative. V intentionally lowers the "obligation" bar by advising Dan *not* to look at things until the term sheet is signed, building trust.
-- **Subtext:** Dan acknowledges that inbound hiring is a "mess" and is visibly impressed by the delta in data quality (62% vs 90%) that V demonstrates.
+# B07: Tone and Context
 
+## Emotional Vibe
+- **Daniel:** Stressed but excited. He is clearly in the "trench" of fundraising ("absolutely mental"), which explains his initial low bandwidth. He is receptive to V's expertise and appreciates the "low effort" framing of the proposal.
+- **Vrijen:** Confident, proactive, and empathetic. V balances "being helpful" with assertive positioning of his company. He uses "founder-to-founder" empathy regarding the pain of hiring.
+
+## Subtext and Dynamics
+- **High-Trust Interaction:** There is an existing rapport from the McKinsey founder program. Daniel is comfortable admitting he hasn't looked at the company yet, and V is comfortable "prodding" him later.
+- **Value Realignment:** Daniel initially groups "Inbound" as a mess. V successfully re-brackets Careerspan as "not Inbound" but rather a "diet" that makes Inbound meaningful.
+- **Tactical Patience:** V wisely steps back on immediate action, knowing the term sheet is Daniel's priority, which builds further trust.

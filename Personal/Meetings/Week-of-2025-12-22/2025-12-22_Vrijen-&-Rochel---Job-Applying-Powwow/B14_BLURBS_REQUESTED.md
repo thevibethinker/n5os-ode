@@ -1,20 +1,19 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CUnjzDvSR73FILMU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14 Blurbs Requested: Vrijen & Rochel - Job Applying Powwow
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fFkuZgfSd31qk5Ow
+---
 
-## Explicit Requests
-- **Oscar Health Intro:** Vrijen promised to reach out to his McKinsey/Marvin contacts at Oscar Health to pitch Rochel for the Product Design role.
+# B14: Blurbs Requested
 
-## Draft Blurbs
-
-### 1. Vrijen to Oscar Health (Mario Schlosser / Alumni)
-> "Hey [Name], hope the holiday season is treating you well. I’m reaching out through the Marvin Ventures network. I wanted to put a phenomenal Product Designer on your radar for the open role at Oscar. Rochel was one of our founding designers at Careerspan—she’s a rare talent who can actually take a product from 0 to PMF-adjacent stripes while managing both the design and engineering hurdles. She's looking for her next high-stakes challenge, and Oscar came to mind as a perfect fit for her caliber. Would love to put you two in touch if there's an opening for a conversation."
-
-### 2. Rochel to Jordan Mazer (A16Z)
-> "Hi Jordan, hope you're having a great December! We spoke a few months back when I wasn't looking, but I wanted to reach out and let you know I'm officially back on the market. I've spent the last year as a founding designer/engineer at Careerspan (we’re actually now officially partnering with Marvin Ventures). I’m looking for a founding-stage or Series A role where I can apply those '0-to-1' stripes again. Would love to catch up if you have anything interesting on the A16Z portfolio radar."
-
+## Follow-up for Jordan Mazer (A16Z)
+**Drafted for Rocko:**
+"Hey Jordan, great catching up a few months back. I'm officially back in the market and looking for the next founding-scale challenge. Also, I'm working closely with Vrijen at Careerspan—we just kicked off a partnership with Marvin Ventures (the McKinsey alumni fund) to scale our talent intelligence platform. Would love to circle back on how we might support the A16Z portfolio, and obviously, see what's on your radar for founding roles."

@@ -1,16 +1,19 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B26 – Meeting Metadata
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fW1IczFLfM9qTO3V
+---
 
-- **Meeting ID / folder**: `2025-12-15_logantheapplyaidspeigelgmailcomloganhcgmailcom_logantheapplyai_dspeigelgmailcom_loganhcgmailcom_[M]`
-- **Date**: 2025-12-15
-- **Duration**: unknown (duration not reliably encoded in transcript metadata)
-- **Participants**: Vrijen Attawar, David Spiegel
-- **Type**: External systems-design session (networking OS on Zo)
-- **Tags**: `external`, `networking`, `zo_platform`, `join_decks`, `condo`, `scheduled_agents`, `option_maximizers`, `gtm`
+# B26 Meeting Metadata
 
-
+- **Tags**: #product-strategy #networking #zo-ecosystem #option-maximizers #tone-training
+- **Topics**: Join Decks, CRM structure, LinkedIn scraping, Webinar planning, Meal-prep business model analogy.
+- **Categorization**: Strategic Planning / Product Design.

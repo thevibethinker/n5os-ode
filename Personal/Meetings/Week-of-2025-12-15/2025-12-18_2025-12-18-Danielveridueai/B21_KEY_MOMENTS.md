@@ -1,15 +1,26 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21 Key Moments
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
 
-- **The Term Sheet Mental Load:** Dan mentioning he's texting lawyers in parallel and hasn't had time to look at Careerspan because the week has been "absolutely mental."
-- **The Inbound "Fucking Mess":** V's strong articulation of why modern hiring is broken: "When the marginal cost of bullshit is 0 and an AI can perfectly fabricate a resume, it means resumes are completely pointless."
-- **The Data Delta:** V showing the difference between a 62% match (resume) and a 90% match (resume + stories), which visually lands the value of Careerspan's depth.
-- **Underpriced Assets:** The story of the Bozeman, Montana engineer who wouldn't have been found on other platforms but became a key asset for a Lightspeed startup.
-- **The Failure Stat:** V's mention of 46% of hires failing by 18 months, with 89% failing due to soft skills/values, grounding the semantic evaluation pitch in data.
+# B21: Key Moments
 
+## Turning Points
+- **The Paradox Acknowledgment:** When V explains why the market feels paradoxical (less performant folks being let go + passive talent being hard to reach), Daniel shifts from fundraising stress to active listening.
+- **"Zero Marginal Cost of Bullshit":** V's phrasing regarding AI-fabricated resumes clearly resonates with Daniel's skepticism of traditional hiring methods.
+- **The 89% Failure Statistic:** When V cites the 89% failure rate for values/mindset, Daniel asks for clarification on the number ("What percent of people fail?"), marking a moment of deep engagement with the problem Careerspan solves.
+
+## High-Leverage Quotes
+- *"Inbound is a fucking mess... because the marginal cost of bullshit is 0."* — V
+- *"Good hiring is like a diet. And you want to make Inbound a meaningful part of the diet."* — V
+- *"Who doesn't want Messi on a budget?"* — V (referring to finding "underpriced assets" in hidden markets like Bozeman, Montana).
+- *"We're very good at assessing skills... We're very bad at assessing vibes and fit and relatability."* — V

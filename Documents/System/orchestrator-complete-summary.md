@@ -25,7 +25,7 @@ Orchestrator monitors its own workspace.
 - N5/scripts/conversation_orchestrator.py (25KB)
 - N5/scripts/phase_telemetry_validator.py (12KB)
 - N5/schemas/phase_handoff.schema.json (3.3KB)
-- N5/orchestration/example-build/WORKER_1_EXAMPLE.md
+- N5/builds/example-build/WORKER_1_EXAMPLE.md
 - Multiple documentation files
 
 ## Usage

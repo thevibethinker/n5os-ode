@@ -1,35 +1,20 @@
 ---
-created: 2025-12-12
-last_edited: 2025-12-12
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Business Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fWF2Gf1PrZ27iyVs
+---
 
-## Marvin Ventures
+# B06 Business Context
 
-- **Type:** Venture fund associated with the McKinsey alumni network (from broader context), backing early‑stage founders.  
-- **Resources:** Operates a **Startup Stack** of tools, services, and perks that founders can use to save time and money.  
-- **Goal of the stack:**
-  - Provide high‑quality, vetted tools that solve common founder pain points (e.g., HR, finance, sales, infra).  
-  - Strengthen Marvin’s value‑add beyond capital by making it easier for founders to discover and activate useful services.
-
-## Careerspan
-
-- **Product:** Story‑driven screening and matching engine that captures rich candidate data in a guided session and uses it to decide who should move forward in a hiring process.  
-- **Primary Value Prop for Marvin founders:**
-  - Turn noisy inbound channels (job boards, LinkedIn, referrals) into a **small set of high‑signal candidates**.  
-  - Reduce founder time spent skimming résumés while increasing confidence in who gets interviews.
-
-## Why This Partnership Matters
-
-- Marvin’s founders are typically:
-  - Resource‑constrained on hiring (no full‑time talent team).  
-  - Overwhelmed by applicants when they post publicly.  
-  - Sensitive to both cash burn and opportunity cost of their time.
-- Careerspan offers a **bounded, low‑risk trial** (one role, three months) that can:
-  - Demonstrate value quickly.  
-  - Generate concrete case studies and testimonials for both you and Marvin.  
-  - Potentially become a standard part of Marvin’s toolkit for portfolio hiring.
-
-
+- **Company:** Careerspan (approx. 2.5 years old).
+- **Business Model:** B2B SaaS charging employers for hiring tools/ATS; previously experimented with B2C coaching but shifted away from charging job seekers.
+- **Pricing Mentioned:** $300/month per role.
+- **Partner Entity:** Marvin (VC firm). Their platform "Startup Stack" has decent traction with about 10 offer redemptions per month, described as "low volume, high quality."

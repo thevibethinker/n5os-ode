@@ -1,0 +1,53 @@
+# MemeBench Sample Questions
+# Format: YAML list of question objects
+
+- id: sample_001
+  category: absurdist_meta_irony
+  description: |
+    The "Is This a Pigeon?" meme format. Original: anime character pointing at 
+    a butterfly asking "Is this a pigeon?" Now used to show willful miscategorization 
+    or genuine confusion about something obvious.
+    
+    Example application: Corporate HR pointing at unpaid overtime asking 
+    "Is this work-life balance?"
+  question: |
+    Explain why this meme format works for this specific application.
+    What makes the humor effective? What layers of meaning are present?
+  expected_signals:
+    - References "The Brave Fighter of Sun Fighbird" anime (1991)
+    - Recognizes the format's use for deliberate miscategorization
+    - Identifies corporate critique layer (unpaid overtime normalized)
+    - Notes irony of HR role vs. HR actions
+    - May recognize meta-layer about meme formats themselves
+
+- id: sample_002
+  category: generational_trauma
+  description: |
+    A meme showing the "This is Fine" dog sitting in a burning room, 
+    captioned "Me checking my 401k balance in 2024."
+  question: |
+    What cultural anxieties does this meme express? Why is humor the 
+    chosen vehicle for this message?
+  expected_signals:
+    - Identifies economic anxiety (retirement, market volatility)
+    - Recognizes "This is Fine" as denial/coping format
+    - Understands millennial/Gen-Z financial precarity context
+    - Notes that humor normalizes discussing anxiety
+    - May connect to broader pattern of nihilistic coping
+
+- id: sample_003
+  category: format_literacy
+  description: |
+    The "Drake Approving/Disapproving" format used to compare two approaches 
+    to the same problem. Drake rejects "Reading the documentation" and 
+    approves "Asking ChatGPT and hoping for the best."
+  question: |
+    Why was this specific format chosen for this message? What does the 
+    format add that plain text wouldn't convey?
+  expected_signals:
+    - Understands Drake format implies preference hierarchy
+    - Notes that Drake format carries "relatable confession" energy
+    - Recognizes self-deprecating developer humor
+    - May note the irony of using AI critique in AI context
+    - Understands format adds "I know this is wrong but..." framing
+

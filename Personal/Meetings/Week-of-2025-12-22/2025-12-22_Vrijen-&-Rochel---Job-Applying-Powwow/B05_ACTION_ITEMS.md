@@ -1,21 +1,21 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CUnjzDvSR73FILMU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B05 Action Items: Vrijen & Rochel - Job Applying Powwow
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fFkuZgfSd31qk5Ow
+---
 
-## Vrijen Attawar (V)
-- [ ] **Oscar Health Outreach:** Reach out to Mario Schlosser or relevant McKinsey alumni at Oscar Health on behalf of Rochel (Design) and [Name] (Chief of Staff).
-- [ ] **Christmas Eve Logistics:** Finalize headcount and details for the "Transplants Only" Christmas Eve gathering.
-- [ ] **Careerspan GTM:** Leverage Rochel's interaction with Jordan Mazer (A16Z) to push Careerspan partnership discussions.
+# B05: Action Items
 
-## Rochel Polter (Rochel)
-- [ ] **A16Z Follow-up:** Message Jordan Mazer (Andreessen Horowitz) to signal availability and mention Careerspan's Marvin Ventures partnership.
-- [ ] **Resume Update:** Finalize the "one-page" version, ensuring the "5-30% retention increase" metric is prominent.
-- [ ] **Ryan Catch-up:** Respond to Ryan's Instagram reel and lock in the first "accountability buddy" meeting for January.
-- [ ] **Insight Global:** Set a reminder to follow up with the Insight Global contact in early January.
-- [ ] **Careerspan Usage:** Spend 1 hour in the Careerspan tool "extracting stories" to prepare for upcoming interviews.
-
+- [ ] **Rocko:** Message Jordan Mazer (A16Z) to follow up, mentioning he is looking now and referencing the Careerspan/Marvin Ventures partnership.
+- [ ] **Rocko:** Follow up with Logan (Insight Global) and the UX/AI leader mentioned.
+- [ ] **Rocko:** Check the Instagram reel sent by Ryan.
+- [ ] **Rocko:** Catalog "missed answer" moments from previous interviews to motivate Careerspan story prep.
+- [ ] **V:** Coordinate the "Transplants Only" Christmas Eve head count.

@@ -1,13 +1,19 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21: Key Moments
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_ehsLGDk6xgv5TpRN
+---
 
-- **OpenAI App Store Launch**: Erica reveals that OpenAI opened the App Store to third-party submissions literally "yesterday/this morning," changing the urgency of the conversation.
-- **The "Eight-Figure" Vision**: Vrijen discusses the shift to "co-op" models where a small team (6 people) can run an eight-figure company using advanced agentic tools.
-- **Zo Computer Demo**: Vrijen shares his screen to show the "magic" of his Zo setup (meeting inbox, Fireflies integration, automated processing).
-- **Open Source "Plan Z"**: Vrijen mentions a backup strategy for Careerspan to open-source the backend and use ChatGPT as the interface via Alpic.
+# B21 Key Moments
+
+- **The "Aha" Moment**: V realizing that MCP + UI components allows Careerspan to exist inside ChatGPT: "If we don't have to bring them into the UI as much and they get to do stuff in environments they're already in, that's a win."
+- **The Technical Validation**: The representative confirming that MCP servers can be reused across Claude, VS Code, and ChatGPT: "You can reuse the MCP server portion for Claude for VS code... pretty much all of them now."
+- **The "Magic" Realization**: V's comment on agentic systems: "It genuinely feels like such magic to use some of these agentic systems. I love it so much."

@@ -1,16 +1,19 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25: Deliverables
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_twzmrcRlYbwPjLN7
+---
 
-- **From Alpic**:
-    - [ ] Skybridge framework documentation
-    - [ ] Starter Kit link
-    - [ ] Apps SDK template
-- **From Vrijen**:
-    - [ ] Introduction to Zo Computer founders
-    - [ ] Internal briefing for Careerspan head of AI
+# B25 Deliverables
+
+- **Skybridge Framework Documentation**: Link shared during meeting.
+- **Apps SDK Template/Starter Kit**: Link shared during meeting.
+- **Career Coaching App MVP**: Promised by V for testing within 24-48 hours.

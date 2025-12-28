@@ -1,33 +1,23 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_vyQkE9rrI9A68RRh
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B26 Meeting Metadata: Ilse x Vrijen Sync
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_hyhAHxi4K69uIVZl
+---
 
-## Categorization
-* **Meeting Type:** Internal Sync / Technical Roadmap
-* **Strategic Pillar:** Product Velocity / UX Optimization
-* **State:** Processed [P]
+# B26 Meeting Metadata
 
-## Tags
-* #product-roadmap
-* #direct-apply
-* #vibe-check
-* #api-budget
-* #user-onboarding
-* #careerspan-core
-
-## Topics
-* **User Flow:** Redirection of direct apply users, UI/UX copy updates.
-* **Retention:** Story suggestions, engagement hooks, email notifications.
-* **Infrastructure:** OpenAI budget increase ($5k), model upgrades for safety/chat.
-* **Operations:** 2FA friction, billing management, personal logistics (green card).
-
-## Stakeholders Linked
-* **Vrijen Attawar** (CEO/Founder)
-* **Ilse** (Technical Lead/Founder)
-* **Nick** (Developer - referenced)
-* **Rochel** (Product/Developer - referenced)
+- **Title**: Ilse x Vrijen Sync
+- **Project**: Careerspan Product Development
+- **Date**: 2025-12-26
+- **Participants**: Vrijen Attawar, Ilse
+- **Topics**: Direct Apply, User Experience, Email Automation, API Billing, Chat System Trade-offs, Story Suggestions
+- **Type**: Internal Strategy/Product Sync
+- **Calendar ID**: 9f07fada-3ca9-4369-bc67-fe6a1b09b233

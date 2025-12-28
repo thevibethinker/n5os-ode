@@ -3,7 +3,7 @@
   "generated_at": "2025-12-18T15:21:35.791980+00:00",
   "meeting_folder": "2025-12-18_ericaalpicai",
   "meeting_date": "2025-12-18",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
@@ -16,5 +16,6 @@
     "deliverables": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "2025-12-18 Ericaalpicai"
+  "meeting_title": "2025-12-18 Ericaalpicai",
+  "last_updated_at": "2025-12-26T23:34:51.377808Z"
 }

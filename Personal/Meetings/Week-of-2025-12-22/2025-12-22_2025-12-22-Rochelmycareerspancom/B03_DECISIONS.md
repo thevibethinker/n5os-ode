@@ -1,15 +1,19 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_oCauHsREfoRT1s2J
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_QHH72nAkeVXI8BDA
 ---
 
 # B03 Decisions
 
-1.  **Job Search Focus:** Rochel will focus on Series A or Series B companies (not seed-stage) to ensure a foundation already exists.
-2.  **Oscar Health Referral:** V will "prime things up" for the Oscar Health role and bundle Rochel with another candidate (Chris) once a response is received.
-3.  **Interrupt Role:** Rochel will investigate the Interrupt role on the Careerspan job board (Product Lead position).
-4.  **Next Play Account:** Rochel will create an account on Next Play today.
-5.  **Follow-up Meeting:** Confirmed a 1-on-1 for tomorrow morning at 10:30 AM ET.
-
+- **Strategic Pivot**: Rochel will focus on **Series A/B** companies rather than Seed-stage or "Founding Designer" roles to ensure an existing product foundation.
+- **Tool Usage**: Rochel will use Careerspan specifically for the **Interrupt** application to facilitate a "transferable skills" mapping from design to product leadership.
+- **Next Play**: Rochel decided to create an account on Next Play today.

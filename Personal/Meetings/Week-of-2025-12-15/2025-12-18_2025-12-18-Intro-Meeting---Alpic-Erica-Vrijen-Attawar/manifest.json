@@ -3,7 +3,7 @@
   "generated_at": "2025-12-18T15:21:35.791980+00:00",
   "meeting_folder": "2025-12-18_Intro_meeting_-_Alpic_Erica_Vrijen_Attawar",
   "meeting_date": "2025-12-18",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
@@ -57,5 +57,6 @@
   "generated_files": [
     "INTRO_draft_placeholder.md"
   ],
-  "meeting_title": "2025-12-18 Intro Meeting - Alpic Erica Vrijen Attawar"
+  "meeting_title": "2025-12-18 Intro Meeting - Alpic Erica Vrijen Attawar",
+  "last_updated_at": "2025-12-26T23:37:11.595912Z"
 }

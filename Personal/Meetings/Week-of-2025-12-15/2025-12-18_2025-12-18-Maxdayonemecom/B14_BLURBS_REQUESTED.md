@@ -1,9 +1,17 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_WdRtvHrP9Zp5lMDU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
-# B14 Blurbs Requested
 
-- **Max Intro**: V mentioned potentially introducing Max to the career tech founder community.
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_wr5Y6HEB2EmQ5P2k
+---
+
+# B14: Blurbs Requested
+
+*No specific blurb requests or promises to send intro text were explicitly made during this transcript.*

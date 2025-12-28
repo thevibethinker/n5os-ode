@@ -1,29 +1,23 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B05: Action Items
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_twzmrcRlYbwPjLN7
+---
 
-## Vrijen's Commitments
-- [ ] Share Alpic documentation (Skybridge + SDK template) with Careerspan head of AI
-- [ ] Explore Alpic platform and free tier
-- [ ] Evaluate hosting options (Alpic vs. personal infrastructure)
-- [ ] Build career coaching ChatGPT app MVP (possibly tonight/tomorrow)
-- [ ] Submit career coaching app to OpenAI App Store (targeting early entry)
-- [ ] Facilitate introduction between Alpic and Zo Computer founders
-- [ ] Evaluate Alpic partnership potential for Careerspan
+# B05 Action Items
 
-## Erica/Alpic Commitments
-- [ ] Provide Skybridge framework documentation
-- [ ] Provide apps SDK template
-- [ ] Support Vrijen with ad hoc advice during app development
-- [ ] Offer MCP server development support if needed
-- [ ] Keep in touch regarding app deployment and progress
-
-## Follow-up Discussion Topics
-- App development progress and any technical blockers
-- ChatGPT App Store submission status
-- Zo Computer partnership potential
-- Careerspan head of AI involvement and next steps
+| Owner | Action Item | Priority |
+| :--- | :--- | :--- |
+| V | Introduce Alpic founders to Zo founders/community | High |
+| V | Share Skybridge & SDK docs with CareerSpan Head of AI | High |
+| V | Build/Deploy a career coaching app MVP on Alpic tonight/tomorrow | Medium |
+| Alpic Founder | Review Zo.computer website and community to understand integration potential | Medium |
+| Alpic Founder | Send over documentation links (Skybridge, Starter Kit, Apps SDK) | Complete |

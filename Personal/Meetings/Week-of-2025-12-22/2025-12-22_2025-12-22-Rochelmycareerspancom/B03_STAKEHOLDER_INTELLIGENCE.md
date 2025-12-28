@@ -1,21 +1,26 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_oCauHsREfoRT1s2J
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_QHH72nAkeVXI8BDA
 ---
 
 # B03 Stakeholder Intelligence
 
-## Vrijen Attawar (V)
-*   **Role:** Founder of Careerspan.
-*   **Key Interests:** Optimizing the Careerspan product, maintaining high data quality, and helping team members/associates with career progression.
-*   **Leverage Points:** Deep understanding of the product methodology and a broad network for referrals.
-*   **Vibe/Tone:** Energetic, coaching-oriented, and focused on practical outcomes.
+### Vrijen Attawar (V)
+- **Role**: Founder / Coach
+- **Key Interests**: Data supremacy, Careerspan system efficacy, connecting Rochel to high-quality opportunities.
+- **Leverage Points**: Strong network (Interrupt recruiter, Oscar Health), deep understanding of early-stage company mechanics (Skillcraft read).
 
-## Rochel Polter
-*   **Role:** Product/Design specialist (Careerspan associate/partner).
-*   **Key Interests:** Finding a new role at a Series A/B company with a solid product foundation; leveraging Careerspan's ecosystem for her own job search.
-*   **Skepticism/Constraints:** Hesitant to join seed-stage companies or "founding engineer" roles where foundations are missing; wary of repetitive data scraping by AI companies.
-*   **Leverage Points:** Previous experience in PM/Design roles; active use of Careerspan's story-mapping process.
-
+### Rochel Polter
+- **Role**: Candidate / Product Designer
+- **Key Interests**: Finding a Series A+ product role with an existing visual foundation; moving into "Product Lead" territory.
+- **Skepticism**: Wary of "Founding" roles where the product foundation is non-existent or disposible; skeptical of the "alpha" at seed stage vs. the mental toll.
+- **Leverage Points**: 1.5 years of PM-adjacent experience ("Self-PM'd"); clear understanding of her own needs/constraints.

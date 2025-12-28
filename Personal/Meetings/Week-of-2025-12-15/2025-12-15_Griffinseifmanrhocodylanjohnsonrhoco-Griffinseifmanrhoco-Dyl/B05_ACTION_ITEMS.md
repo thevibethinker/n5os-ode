@@ -1,14 +1,20 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Action Items
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_f7AwUFZUlbjsHjlO
+---
 
-- [ ] Stuff look like between checking Treasury?
-- [ ] Sorry, in checking we were, you know, sort of relatively light on cash at the moment.
-- [ ] What do you have in checking right now?
-- [ ] You can link your Brax account via plaid, and then if you can initiate a wire, a schedule, a wire, basically, or a deposit.
-- [ ] I'll just send a couple books over.
+# B05 Action Items
+
+- [ ] **Vrijen**: Obtain Tax ID/legal info from Logan and complete the application. (High Priority)
+- [ ] **Vrijen**: Initiate test deposit/wire once account is confirmed open.
+- [ ] **Dylan**: Open account ASAP once application is submitted (Target: < 24 hours).
+- [ ] **Dylan/Griffin**: Schedule onboarding call with Implementation Manager later this week.

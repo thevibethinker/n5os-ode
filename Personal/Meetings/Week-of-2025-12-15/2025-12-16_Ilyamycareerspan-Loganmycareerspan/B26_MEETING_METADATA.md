@@ -1,16 +1,19 @@
-# B26 Meeting Metadata
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
+---
 
-## Categorization
-- **Meeting Type:** [Strategic/Operational/Review/etc.]
-- **Primary Topic:** [Main focus area]
-- **Secondary Topics:** [Other areas covered]
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_HzlJDeSqLO5ASk7s
+---
 
-## Tags
-- governance
-- strategy
-- [Domain-specific]
+# B26: Meeting Metadata
 
-## Related Meetings
-- Previous meetings on this topic
-- Follow-up meetings planned
-- Cross-functional involvement
+- **Participants:** V, Ilsa, Bridge, Logan, Ilya.
+- **Tags:** #AcquisitionStrategy #Partnerships #DarwinBox #TeamworkOnline #TechStack
+- **Topic:** Reviewing the M&A suitor hit list and scheduling tactical prep calls.

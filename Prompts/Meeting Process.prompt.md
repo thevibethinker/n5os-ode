@@ -123,13 +123,14 @@ Use this 3-tier logic:
 
 - **B26** - Meeting Metadata Summary (includes V-OS tags)
 - **B01** - Detailed Recap
-- **B02** - Commitments Contextual (action items - elevated to REQUIRED in v1.5)
+- **B02** - Commitments Contextual (action items)
 - **B08** - Stakeholder Intelligence (profile + resonance + CRM + Howie)
-- **B21** - Key Moments (quotes + questions merged in v1.5)
-- **B31** - Stakeholder Research (landscape insights - NEW in v1.5)
+- **B21** - Key Moments (quotes + questions)
+- **B31** - Stakeholder Research (landscape insights)
 - **B25** - Deliverable Content Map + Follow-Up Email
+- **B27** - Wellness Indicators (biometric & cognitive performance)
 
-**Total: 7 REQUIRED blocks** (always generate these)
+**Total: 8 REQUIRED blocks** (always generate these)
 
 #### Tier 2: Stakeholder-Specific HIGH Priority
 

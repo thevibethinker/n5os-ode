@@ -1,0 +1,6 @@
+{
+  "name": "wheres-v",
+  "local_port": 54179,
+  "entrypoint": "bun run server.ts"
+}
+

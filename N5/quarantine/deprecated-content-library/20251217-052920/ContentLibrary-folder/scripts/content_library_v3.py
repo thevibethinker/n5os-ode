@@ -40,7 +40,7 @@ class ContentLibraryV3:
     """Unified Content Library v3 API.
 
     This class provides a Python interface over the v3 unified schema defined in
-    file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'.
+    file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'.
     """
 
     def __init__(self, db_path: Path = DB_PATH):

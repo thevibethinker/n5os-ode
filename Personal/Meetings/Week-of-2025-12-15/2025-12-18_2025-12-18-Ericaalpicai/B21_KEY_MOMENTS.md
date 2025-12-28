@@ -1,13 +1,19 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21: Key Moments
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_twzmrcRlYbwPjLN7
+---
 
-- **OpenAI App Store Launch**: Erica reveals that OpenAI opened the App Store to third-party submissions literally "yesterday/this morning," changing the urgency of the conversation.
-- **The "Eight-Figure" Vision**: Vrijen discusses the shift to "co-op" models where a small team (6 people) can run an eight-figure company using advanced agentic tools.
-- **Zo Computer Demo**: Vrijen shares his screen to show the "magic" of his Zo setup (meeting inbox, Fireflies integration, automated processing).
-- **Open Source "Plan Z"**: Vrijen mentions a backup strategy for Careerspan to open-source the backend and use ChatGPT as the interface via Alpic.
+# B21 Key Moments
+
+- **The "Aha" Moment**: "I'm actually wondering if I could build an app that is sort of the front end is ChatGPT essentially and the back end is my instance of Zo. And the middle layer is, I presume, your software..."
+- **The Market Signal**: "ChatGPT literally just released yesterday their app store... if you would like to get featured in this app store, that is technically possible as of today."
+- **The Community Pitch**: "I've been pushing folks in the community to build products on [Zo]... this seems like a very like one plus one equals two sort of way to get stuff onto the App Store."

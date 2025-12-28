@@ -1,18 +1,20 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_vyQkE9rrI9A68RRh
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21 Key Moments: Ilse x Vrijen Sync
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_hyhAHxi4K69uIVZl
+---
 
-## High-Leverage Quotes
-* **Vrijen (on Budget):** "Till we break, like three and a half... thousand dollars in monthly... OpenAI bills. Let's not even fucking think about it. I would even go so far as to say five grand." (A critical moment of removing technical handcuffs).
-* **Ilse (on Strategy):** "I know it adds a lot of cost to us, but we're going for sexy, not cheap, right now." (The defining mantra of the current sprint).
-* **Vrijen (on Product ROI):** "The average Workday application takes, what, 25 minutes? So if you do two career things on Careerspan... you're already ahead." (The core value proposition pitch).
-* **Ilse (on Technical Debt):** "The load bearing parts of the app will always be the good enough parts, right?" (A moment of shared realization about the nature of their current technical architecture).
+# B21 Key Moments
 
-## Turning Points
-* **The "Budget Release":** The conversation shifted from technical trade-offs (chat vs. email) to full-speed execution once Vrijen explicitly authorized the $5k API spend. This cleared the path for Ilse to "bandage" the chat system with higher-tier models.
-* **The "Direct Apply" Pivot:** The decision to send direct-apply users straight to the vibe check rather than a welcome page marks a shift toward a more aggressive, high-intent user flow.
+- **The "Sexy over Cheap" Mandate**: Ilse: "I know it adds a lot of cost to us, but we're going for sexy, not cheap, right now, so they won't need to click."
+- **The Spending Greenlight**: Vrijen: "Till we break, like three and a half... five grand... let's not even fucking think about it."
+- **The Chat Dilemma**: Ilse noting that they are on "nine months" of trying to improve chat, only for more important load-bearing priorities to always take precedence.
+- **The "Genius" Moment**: Ilse: "I'm smart. I'm a genius." Vrijen: "You are. We have that ace in the hole."

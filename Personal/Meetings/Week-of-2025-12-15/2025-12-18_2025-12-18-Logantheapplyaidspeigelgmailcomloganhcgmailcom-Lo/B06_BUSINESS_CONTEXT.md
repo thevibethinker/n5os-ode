@@ -1,13 +1,23 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_QkNXUitVDnlrYZ4Q
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B06: Business Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_wmTTLgn0WG4i79O4
+---
 
-- **Zo Ecosystem**: The platform is currently in a high-growth/opportunity phase with low friction for new tool integration.
-- **Market Opportunity**: High demand for networking automation among job-seekers (PMs specifically).
-- **Competitor Landscape**: Tools like ContactOut and RocketReach are the current standard; Aviato is seen as a high-potential replacement via API.
-- **Monetization Thesis**: Moving toward B2B SaaS or affiliate-style payouts from API providers rather than relying solely on Zo's internal margins.
+# B06 Business Context
+
+- **Company Mention:** Careerspan (V's company).
+- **Ecosystem:** Zo Computer (backend), OpenAI/ChatGPT (distribution).
+- **Potential Partners:** 
+    - **Aviato:** Enrichment API (People/Contact data). Compared to Apollo.
+    - **Plaid:** Madison's current employer (Context: Credit Unions).
+    - **Contact Out / Rocket Reach:** Existing tools being used by David's students that could be disrupted.
+- **Market Opportunity:** High-intent job seekers (specifically PMs) willing to pay for "Networking in a Box" to save time.

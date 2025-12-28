@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 WORKSPACE_ROOT = Path("/home/workspace")
 CONVO_WORKSPACES_ROOT = Path("/home/.z/workspaces")
 STATE_DIR = Path("/home/workspace/N5/.state")
-ORCHESTRATION_DIR = Path("/home/workspace/N5/orchestration")
+ORCHESTRATION_DIR = Path("/home/workspace/N5/builds")
 
 
 class ConversationOrchestrator:
@@ -698,7 +698,7 @@ def main():
     )
     parser.add_argument(
         "project_name", nargs="?", default=None,
-        help="Project name (must have worker briefs in N5/orchestration/<project>/)"
+        help="Project name (must have worker briefs in N5/builds/<project>/)"
     )
     parser.add_argument(
         "--orchestrator-id",

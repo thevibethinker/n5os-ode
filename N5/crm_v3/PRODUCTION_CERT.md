@@ -240,7 +240,7 @@ The system is stable, well-architected, and ready to serve as V's unified relati
 
 - **Integration Test Results:** file '/home/.z/workspaces/con_rMaSw6rzVNkWvsQ4/INTEGRATION_TEST_RESULTS.md'
 - **System Documentation:** file 'N5/crm_v3/README.md'
-- **Build Orchestration:** file 'N5/orchestration/crm-v3-unified/' (if exists)
+- **Build Orchestration:** file 'N5/builds/crm-v3-unified/' (if exists)
 - **Database:** file 'N5/data/crm_v3.db'
 - **Profiles:** file 'N5/crm_v3/profiles/'
 

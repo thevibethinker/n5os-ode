@@ -32,7 +32,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ORCHESTRATION_DIR = Path("/home/workspace/N5/orchestration")
+ORCHESTRATION_DIR = Path("/home/workspace/N5/builds")
 
 
 def get_project_dir(project: str) -> Path:

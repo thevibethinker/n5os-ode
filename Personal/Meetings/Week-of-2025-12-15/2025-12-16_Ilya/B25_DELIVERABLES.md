@@ -1,14 +1,17 @@
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_avBi9noam4W5h6qF
+---
+
 # B25 Deliverables
 
-## Promised Files & Data
-
-### Deliverable 1
-- **What:** [File/Data/Analysis type]
-- **Owner:** [Who will provide]
-- **Format:** [CSV/PDF/Spreadsheet/etc.]
-- **Due:** [Timeline]
-- **Status:** Pending
-
-## Dependencies
-- Other deliverables this depends on
-- Information needed from other parties
+*No specific files or data assets were promised to be sent between Ilya and V during this call.*

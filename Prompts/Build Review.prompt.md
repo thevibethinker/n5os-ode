@@ -133,7 +133,7 @@ python3 N5/scripts/build_orchestrator_v2.py status --project auth-system
 
 ## Project Data
 
-Projects are stored in `N5/orchestration/{project}/`:
+Projects are stored in `N5/builds/{project}/`:
 - `plan.json` - Full plan with worker status
 - `README.md` - Auto-generated overview
 

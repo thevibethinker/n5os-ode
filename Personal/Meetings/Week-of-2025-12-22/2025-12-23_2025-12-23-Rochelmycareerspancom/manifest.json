@@ -3,7 +3,7 @@
   "generated_at": "2025-12-23T17:15:00Z",
   "meeting_folder": "2025-12-23_rochelmycareerspancom",
   "meeting_date": "2025-12-23",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
@@ -11,5 +11,6 @@
   },
   "last_updated_by": "MG-2_Prompt",
   "provenance": "agent_acfa50e2",
-  "meeting_title": "2025-12-23 Rochelmycareerspancom"
+  "meeting_title": "2025-12-23 Rochelmycareerspancom",
+  "last_updated_at": "2025-12-26T23:38:45.029848Z"
 }

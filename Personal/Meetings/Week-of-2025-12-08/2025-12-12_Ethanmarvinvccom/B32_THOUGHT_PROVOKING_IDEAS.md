@@ -1,19 +1,18 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_gHVWyRfZm7mrZH1u
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B32: Thought-Provoking Ideas
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fWF2Gf1PrZ27iyVs
+---
 
-### 1. The "Resume-Self" Gap
-The conversation touched on a fundamental mental model: the thing holding most people back isn't the technical ability to write a resume, but the psychological hurdle of "knowing themselves enough" to advocate for themselves. This suggests a strategic pivot from "career services" to "identity engineering"—treating the resume not as a document of record, but as the final output of a successful self-reflection process.
+# B32 Thought-Provoking Ideas
 
-### 2. Narrative as a Non-Linear Filter
-Vrijen’s comparison of identical resumes—one with stories and one without—posits that narrative data acts as a "high-resolution filter" that pieces of paper cannot replicate. It suggests that in a high-volume market, the signal isn't in the *what* (experience) but in the *how* (storytelling), effectively moving recruitment from "candidate matching" to "narrative validation."
-
-### 3. The "2-5% Threshold" Philosophy
-The explicit aim to build a system that *only* shows the 2-5% of candidates "you should be bothered with" represents a radical stance on the firehose of inbound interest. It moves beyond efficiency into a philosophy of "intentional exclusion," where the value of the platform is defined more by who it hides than who it reveals. [^1]
-
-[^1]: 2025-12-12_Ethanmarvinvccom Meeting Transcript.
+- **The Resume as a Self-Knowledge Problem:** Careerspan's thesis that the resume is an *output* of self-reflection rather than a formatting exercise. This suggests that the bottleneck in the labor market isn't documentation, but the lack of internal clarity in job seekers.
+- **The "Screening Agent" vs. The ATS:** Moving from a passive repository of candidates (ATS) to an active "agent" that filters. The shift from *managing* a fire hose of inbound applications to *refusing* to show any but the top 5% represents a fundamental shift in the power dynamic of hiring software.

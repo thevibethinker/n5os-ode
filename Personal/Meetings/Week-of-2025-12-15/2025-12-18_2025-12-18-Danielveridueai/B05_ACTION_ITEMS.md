@@ -1,15 +1,24 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B05 Action Items
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
 
-| Owner | Task | Priority | Due Date | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **V** | Send follow-up material for Dan to review after term sheet signing | High | 2023-12-22 | Pending |
-| **V** | Follow up with Dan at the start of next year (Jan 2024) to begin hiring setup | High | 2024-01-05 | Pending |
-| **Dan** | Review Careerspan materials once funding is closed | Medium | Post-Signing | Pending |
+# B05: Action Items
 
+## Vrijen Attawar (V)
+- [ ] **Send Information:** Send Careerspan overview/materials to Daniel to review after his term sheet is signed.
+- [ ] **Follow-up:** Reach out to Daniel in late 2024 or early 2025 to kick off the "stealth" job posting and hiring process.
+- [ ] **Spin up Account:** Create a dummy/preview account for Daniel to see the visual high-grade analysis (as offered in the call).
+
+## Daniel Csonth
+- [ ] **Review Materials:** Read through the information V sends once fundraising is closed.
+- [ ] **Finalize Profiles:** Clarify specific requirements for the AI, FE, and Full-stack engineering roles for the stealth posting.

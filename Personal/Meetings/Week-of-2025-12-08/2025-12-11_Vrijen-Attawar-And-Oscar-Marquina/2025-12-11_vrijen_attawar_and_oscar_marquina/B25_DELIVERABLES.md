@@ -1,14 +1,19 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Deliverables Promised
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-## Files & Data Promised
+# B25 Deliverables
 
-1. Them: Get row network. Member. Can share contact wish I'm gonna add you as a Net1 admin. So don't do anything I wouldn't do.
-2. Me: Oh, the scraping. We can absolutely do the scraping is no problem at all because we have a provider that we could just give them the companies and they'll transmit the updated data to us every day. So Getro's advantage with the scraping. So in other words, if we would want those on a job board that is not get row. We could do that for you within two or three weeks, because we're already set up to do that.
-3. Me: Oh, the scraping. We can absolutely do the scraping is no problem at all because we have a provider that we could just give them the companies and they'll transmit the updated data to us every day. So Getro's advantage with the scraping. So in other words, if we would want those on a job board that is not get row. We could do that for you within two or three weeks, because we're already set up to do that.
+- **LOI Document:** Formalizing the 3-4 month trial, obligations, and perks (Vrijen to Oscar).
+- **Scraping Prototype:** Proof of Careerspan’s ability to scrape portfolio sites as a Getro replacement (Vrijen internal, 2-3 week timeline).
+- **Job Data Export:** The actual job data ported from Getro to Careerspan (Vrijen via Admin access).

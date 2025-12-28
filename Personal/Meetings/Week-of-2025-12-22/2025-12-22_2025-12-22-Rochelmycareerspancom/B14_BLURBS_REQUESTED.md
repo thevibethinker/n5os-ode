@@ -1,28 +1,20 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_TZ85BbZtDCdUuJUH
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14 BLURBS REQUESTED
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_QHH72nAkeVXI8BDA
+---
 
-## Summary
-Vrijen (V) promised to introduce Rochel Polter to specific contacts and suggested drafting blurbs for these introductions.
+# B14 Blurbs Requested
 
-## Blurbs to Draft
+**Note**: Vrijen did not explicitly promise to *write* a blurb *in the meeting*, but promised to bundle and send an intro. Below is a draft blurb for the Interrupt intro based on the conversation context.
 
-### 1. Introduction to Edmund (Interrupt)
-**Context:** Vrijen offered to get Rochel's profile in front of Edmund immediately if she provides her Careerspan stories.
-**Draft:**
-> Hi Edmund, I wanted to introduce you to Rochel Polter, an exceptional product designer with significant experience who is currently looking for her next role. She’s particularly interested in the Product Lead position at Interrupt. We’ve been working together through Careerspan, and I’ve seen firsthand her ability to map her deep design expertise into high-level product leadership. I’ve attached her Careerspan profile/stories which give a great sense of her impact.
-
-### 2. Introduction to Oscar Health Contact
-**Context:** Vrijen plans to bundle Rochel with another candidate ("Chris") once he hears back from him.
-**Draft:**
-> Hi [Contact Name], I'm reaching out to introduce two strong candidates for your team at Oscar Health. One is Rochel Polter, whom I've been coaching; she's a highly capable product professional with a strong design foundation and a track record of self-managed PMing. The other is [Chris], who brings [Chris's relevant experience]. Both are sharp, adaptable, and could be great fits for Oscar's current trajectory.
-
-## Status
-- [ ] V to send Interrupt intro once Rochel provides stories.
-- [ ] V to send Oscar Health intro once Chris responds.
-
+### Intro to Edmund (Interrupt) regarding Rochel Polter
+"Edmund, I have a fantastic candidate for the Product Lead role. Rochel has been operating as a 'self-PM'ed' designer for the last year and a half, bringing a rare blend of visual foundation and product discipline. We've vetted her via Careerspan, and I'm confident she's the right level of 'steady' for this role. I'll have her full profile and stories over to you shortly."

@@ -1,25 +1,18 @@
 ---
-created: 2025-12-12
-last_edited: 2025-12-12
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Blurbs / Intros Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fWF2Gf1PrZ27iyVs
+---
 
-## 1. Explicit Blurb Obligations
+# B14 Blurbs Requested
 
-- During this call, you **do not explicitly promise** to send any written blurbs or intro text.  
-- The work is focused on configuring copy directly in Marvin’s Startup Stack UI.
-
-## 2. Suggested Blurb for Marvin Internal Use (Optional)
-
-If Oscar or Ethan ever want a short blurb to describe Careerspan in newsletters or founder updates, a tight option would be:
-
-> "Careerspan is a story‑driven screening engine that turns candidate conversations into rich data, then shows founders only the 2–5% of applicants they should actually interview. Marvin founders can redeem a perk for unlimited screening on one role for three months via our Startup Stack."
-
-## 3. Status
-
-- There are **no open blurb promises** from this meeting.  
-- All necessary copy for the Startup Stack entry was created live with Ethan.
-
-
+### Blurb for Marvin Startup Stack (Long Description)
+"Process an unlimited number of candidates through Careerspan's screening agent. Our platform ensures that candidates are coached to provide high-signal stories that a traditional resume misses. Don't waste your time on candidates that don't pass your threshold—Careerspan ensures you only see the top 2-5% of talent who truly fit your role."

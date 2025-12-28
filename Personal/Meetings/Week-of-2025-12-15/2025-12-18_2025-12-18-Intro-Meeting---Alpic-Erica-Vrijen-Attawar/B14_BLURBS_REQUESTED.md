@@ -1,13 +1,18 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
-version: 1.0  
-provenance: con_qepeEBZlu6tnbHz9
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14: Blurbs Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_ehsLGDk6xgv5TpRN
+---
 
-{"id": "blurb-001", "type": "email", "subject": "Zo Computer", "subject_detail": "Introduction to Zo Computer founders for Erica/Alpic", "recipient": "Zo Computer founders", "audience_context": "Potential strategic partners/investors", "purpose": "Introduce Erica and Alpic to Zo Computer team for potential collaboration", "key_points": ["Erica is founder/CEO of Alpic", "Building AI career advisor platform", "Has taken money and built successfully before", "Looking for high conviction capital for growth"], "status": "pending"}
+# B14 Blurbs Requested
 
-{"id": "blurb-002", "type": "email", "subject": "Careerspan", "subject_detail": "Internal brief on Alpic framework for head of AI", "recipient": "Careerspan Head of AI", "audience_context": "Internal stakeholder/internal brief", "purpose": "Share Alpic framework intelligence with internal AI team member", "key_points": ["Alpic framework for AI advisor", "Framework-based AI approach", "Content hierarchy applies to messaging", "Framework applies to performance management"], "status": "pending"}
-
+## Blurb 1: Intro to Zo Founders
+"Hey [Zo Founder Name], I met the team behind Alpic/Skybridge today. They've built a 'Vercel for MCP' that just went live alongside the ChatGPT App Store. I’m currently testing a POC to see if we can use a Zo instance as the backend for a ChatGPT app using their framework. If it works, it’s a massive unlock for the non-technical builders in our community to get their MVPs into the App Store. Would love to connect you guys."

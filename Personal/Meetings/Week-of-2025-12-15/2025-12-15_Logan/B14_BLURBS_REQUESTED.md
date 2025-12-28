@@ -1,23 +1,26 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_sisowoVJqKbCkQQT
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14 – Blurbs Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_O6Yh7sdM0GUavX0N
+---
+# B14 BLURBS REQUESTED
 
-## 1. Blurb for Erica (Google/DevRel)
-**Context:** V promised to send Erica a fully provisioned Careerspan account with pre-loaded content to help her navigate her transition and community work.
+## Introduction Blurb: Erica to Careerspan Community
+**Context:** V promised to send Erica an account and include Careerspan's tools (Crystal Ball, Detector) in the follow-up.
 
-> "Erica, great catching up. I’ve gone ahead and set up a full Careerspan account for you. I’ve pre-loaded a few examples that specifically lean into the 'candidate beyond bullets' framework we discussed—helping you bridge that gap between the 'marketing' label companies keep giving you and the technical/leadership reality of your DevRel track record. Have a play with the crystal ball and detector artifacts in there; I think they'll be high-signal for your community as well. Let’s make sure we move on this before February!"
+**Draft:**
+"Erica, great chatting on Friday. Your experience in DevRel at Google is incredible, and I'd love to help you navigate the 'Marketing vs. Engineering' positioning challenge you're seeing. I've set you up with a Careerspan account with everything loaded—including the Crystal Ball and Detector tools we discussed. Since you're heading into maternity leave in February, let's see what we can lock down for you before then. You've got a massive developer following that would benefit from this."
 
-## 2. Intro/Follow-up for EdTech Founder (from Matthew's Dinner)
-**Context:** V met a promising edtech founder at Matthew's Christmas dinner and intended to look him up and chat again.
+## Community Plug: Careerspan for Transcend Network
+**Context:** V planned to send a message to the Transcend Slack.
 
-> "It was great meeting you at Matthew's Christmas dinner. I was really interested in what you mentioned about [Specific EdTech Problem]—given what we're building at Careerspan around narrative-driven hiring, I think there’s a lot of overlap in how we view the talent landscape right now. Would love to grab 20 minutes to chat more formally once the holiday dust settles."
-
-## 3. Communication to Davide (Superposition) regarding A/B Testing
-**Context:** V and Logan aligned on simplifying the JD A/B testing setup by using dedicated magic links and Notion pages.
-
-> "Davide, we’ve clarified the path forward on the JD A/B tests. To keep the data clean and the candidate experience sharp, we’re setting up dedicated Magic Link + Notion page pairings for each variant (e.g., Design Engineer vs. Product Engineer). This way, you can see exactly which framing is pulling the higher signal candidates. Logan is handling the Notion clones and I’ll have the new links over to you shortly."
+**Draft:**
+"Hey Transcend folks, I know the EdTech hiring market is brutal right now, but Careerspan is seeing some great traction with high-signal job boards. We've just launched a new board with 80% user retention. If you're hiring or looking to surface your alumni for specific roles, let me know—happy to help plug our services where it makes sense."

@@ -1,27 +1,23 @@
 ---
-created: 2025-12-12
-last_edited: 2025-12-12
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Tone & Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_VX0ZKQZnaWJVMt3z
+---
 
-- **Overall Tone:** Warm, candid, and peer‑level.  
-  - This feels like two friends and peers catching up, not a formal pitch meeting.  
-  - There is mutual respect and ease in discussing both personal trajectories and market realities.
+# B07: Tone & Context
 
-- **Emotional Texture:**  
-  - Jonathan is reflective and grounded: he speaks openly about the grind of being an emerging manager, the uncertainty in fund outcomes, and the challenges his companies face.  
-  - You are energized but realistic about Careerspan’s path, openly acknowledging both the strength of the tech and the difficulty of the market.
+## Emotional Vibe
+The meeting has a warm, "long time no see" energy. It is a peer-to-peer exchange between two professionals who have been in the tech/founder industry for "a minute." There is a shared sense of cynicism regarding the 2021 market bubble and a mutual respect for "scrappiness."
 
-- **Power Dynamics:**  
-  - Relatively balanced. Jonathan has leverage as a fund manager and connector, but he is not posturing; he treats you as a thought partner.  
-  - You are not asking for an immediate check; the conversation is about alignment, future possibilities, and honest assessment of risk.
-
-- **Contextual Notes:**  
-  - This is an **early, relationship‑building conversation** that combines two threads:  
-    - A macro discussion about the state of venture and founder incentives.  
-    - A deep dive into what Careerspan is really doing and where it might fit.  
-  - There is no formal pitch deck or structured ask in this call; the key outcome is **mutual understanding and future‑facing optionality**.
-
-
+## Subtext
+- **The "Grind"**: Both parties acknowledge that raising a $20M fund and building an AI startup are high-pressure endeavors.
+- **Market Darwinism**: The mention of the "good Lord giving us recessions" to "clear the deck" suggests a shared worldview that current market pain is a necessary correction for "crappy players."
+- **VC Legitimacy**: The Investor's mention of Getro as a "badge of legitimacy" reveals the importance of signaling in the VC world, even when the underlying tool's utility is questioned.

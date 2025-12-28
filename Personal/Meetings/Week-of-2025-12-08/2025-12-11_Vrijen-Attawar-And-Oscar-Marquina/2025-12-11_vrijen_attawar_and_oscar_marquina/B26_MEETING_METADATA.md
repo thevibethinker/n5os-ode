@@ -1,17 +1,22 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Meeting Metadata
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-**Meeting Folder:** 2025-12-11_vrijen_attawar_and_oscar_marquina
+# B26 Meeting Metadata
 
-**Categories:** General
-
-## Topics Covered
-
-- [Topics to be extracted from full transcript review]
-
+- **Title:** Vrijen Attawar and Oscar Marquina
+- **Date:** 2025-12-26
+- **Participants:** Vrijen Attawar, Oscar Marquina
+- **Meeting State:** [P] Processed
+- **Tags:** #partnership #marvin-vc #hiring #job-board #product-strategy
+- **Topics:** Marvin perks integration, Getro contract replacement, job scraping automation, founder-to-founder commerce.

@@ -1,48 +1,42 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_CUnjzDvSR73FILMU
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B01 Detailed Recap: Vrijen & Rochel - Job Applying Powwow
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fFkuZgfSd31qk5Ow
+---
 
-## Overview
-Vrijen Attawar (V) and Rochel Polter (Rochel) catch up on their respective professional transitions, recent networking successes, and the current state of the job market. Rochel is navigating a new job search after a recent disappointment, while Vrijen provides strategic advice on positioning, signaling, and leveraging the Careerspan product.
+# B01: Detailed Recap
 
-## Chronological Summary
+## Summary
+Vrijen (V) and Rocko discuss personal updates, job search strategies, and Careerspan's market positioning. The conversation transitions from holiday plans and family updates to a deep dive into the psychology of job seeking and tactical networking with VCs.
 
-### 1. Opening & Personal Check-in (00:00 - 08:30)
-- **Rochel's Schedule:** Rochel is adjusting to her new schedule, trying to balance "participating" (likely in the Careerspan/N5 environment) with focused time.
-- **Amanda's Situation:** Vrijen shares that Amanda's organization missed out on grant funding, leading to likely layoffs, though she is talented and expected to land on her feet.
-- **Holiday Plans:** They discuss plans for Christmas and Thanksgiving. Vrijen is staying local and mentions hosting a "transplants only" Christmas Eve gathering for friends without local family.
+## Chronology
 
-### 2. Job Search & Emotional Resilience (08:30 - 12:40)
-- **The Roller Coaster:** Rochel expresses frustration with the "dramatic" nature of the job search process and a recent rejection where she was in a good pipeline.
-- **Benchmarking:** Vrijen encourages Rochel to view interviews as a market benchmark. If she's getting interviews, it means she's qualified and just needs to refine her self-advocacy.
-- **Networking vs. Cold Applying:** Rochel notes she lacks the energy for "frantic" cold applications and is focusing more on "smart" networking this time around.
+### 1. Personal & Holiday Updates
+- **Schedule Adjustment:** Rocko is adjusting to a new schedule, balancing participation with focus time.
+- **Family Updates:** Discussion regarding Amanda's organization missing grant money, potentially leading to job losses.
+- **Holiday Plans:** V and Rocko discuss staying local for Christmas. V proposes a "transplants only" Christmas Eve gathering for friends without local family.
 
-### 3. Networking Success: Ryan & Peer Recognition (12:40 - 18:30)
-- **Meeting Ryan:** Rochel met with Ryan (likely a high-profile contact). She was impressed by his humility despite his "coolest roles."
-- **Accountability Partnership:** Ryan suggested meeting every couple of weeks to stay in touch and act as "accountability buddies" since he is also looking for his next move.
-- **Internalizing Success:** Vrijen urges Rochel to internalize being treated as a "peer" by someone like Ryan. He discusses the importance of giving oneself credit to avoid moving the goalposts and combat imposter syndrome.
+### 2. Job Search Psychology & Networking
+- **The Emotional Rollercoaster:** Discussion on the drama of the job search pipeline. V encourages Rocko to see interviews as a benchmark against the market.
+- **Internalizing Success:** V emphasizes the importance of Rocko being treated as a peer by high-level contacts like Ryan. They discuss the "flow state" model (challenge vs. skill).
+- **The Signaling Effect:** V explains how institutional signals (like McKinsey) change how people perceive you, even if your skills haven't changed week-on-week.
 
-### 4. Signaling & The "Flow State" of Career (18:30 - 24:00)
-- **The McKinsey Effect:** Vrijen shares an analogy from his time at McKinsey about how people treat you differently based on signals (like the firm name), even if you haven't changed personally week-over-week.
-- **Flow State Model:** They discuss the flow state model—balancing challenge and skill. Rochel visualizes the "goalposts" moving as she steps up to new levels.
-- **Careerspan Engagement:** Vrijen asks Rochel about using Careerspan as a job seeker. Rochel admits she needs a specific "job to push her" to go deep into the story-extraction phase, though she knows its value.
+### 3. Careerspan Usage & Design
+- **The Job Seeker Dilemma:** Discussion on why job seekers (including Rocko) feel less motivated to use Careerspan until an interview is imminent.
+- **Design Problem:** V treats this as a design challenge: how to motivate the extraction of "first stories" before the pressure of an interview.
 
-### 5. Strategy for Founding Roles & Startups (24:00 - 30:00)
-- **Evaluating Startups:** Vrijen provides a rubric for betting on founders: look for second-time founders backed by name-brand VCs (e.g., Sequoia, A16Z).
-- **Rochel's Unique Value:** Vrijen highlights Rochel's "founding engineer/designer" stripes. She successfully took Careerspan to a specific level (PMF-adjacent), which is a powerful narrative for other early-stage companies.
-- **Series A Sweet Spot:** They discuss a friend of Rochel's who joined a Series A startup with 5 employees—a "further along" stage that might be more stable.
+### 4. Founding Roles & Market Signals
+- **Founding Roles:** V notes that companies paying recruiters are usually farther along. He suggests looking for second-time founders backed by name-brand VCs.
+- **The Series A Advantage:** Rocko mentions a friend in a founding role at a Series A company with 5 engineers, confirming V's observation that these roles are often more established now.
 
-### 6. Specific Opportunities: A16Z & Oscar Health (30:00 - 43:30)
-- **A16Z (Jordan Mazer):** Rochel previously spoke with Jordan Mazer (A16Z recruiter). Vrijen encourages her to re-engage, leveraging Careerspan's partnership with Marvin Ventures (McKinsey alumni fund) as a pretext.
-- **Insight Global:** Rochel reached out to a UX/AI leader at Insight Global and has a conversation lined up for January.
-- **Oscar Health:** They identify a Product Design role at Oscar Health. Vrijen plans to reach out to Mario Schlosser (Founder) or other McKinsey alumni at Oscar to put Rochel forward alongside another candidate.
-
-### 7. Competitive Intel: Boardy vs. Careerspan (43:30 - End)
-- **Boardy Critique:** Vrijen shares his "trolling" experience with Boardy. He notes a low "hit rate" (14%) despite high effort and critiques the "AI slop" feel of the product.
-- **Market Comparison:** Vrijen contrasts Boardy's engagement metrics with Careerspan's, noting that Careerspan users have a much higher median engagement time, suggesting a more "real" product-market fit.
-
+### 5. Tactical Networking: A16Z & Insight Global
+- **A16Z (Jordan Mazer):** Rocko has an existing connection with Jordan Mazer at A16Z. V suggests leveraging Careerspan's partnership with Marvin Ventures (McKinsey alumni) as a pretext to follow up.
+- **Insight Global (Logan):** Rocko has been in touch with Logan regarding Insight Global and a UX/AI leader who previously worked at IBM/Weather Channel. V encourages following up to position Careerspan's AI-native product.

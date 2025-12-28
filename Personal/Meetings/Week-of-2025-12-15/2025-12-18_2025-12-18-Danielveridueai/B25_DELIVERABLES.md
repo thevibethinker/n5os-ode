@@ -1,12 +1,20 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25 Deliverables
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
 
-- **Careerspan Overview/Visuals:** Follow-up email/deck showing the "stories" modality and the stealth hiring option.
-- **Stealth Job Posting:** (Future) Draft job description for Veridue AI's initial engineering roles.
+# B25: Deliverables
 
+## Promised Items
+- **Careerspan Sales Deck/Overview:** V to send a link or PDF for Daniel to review post-term-sheet.
+- **Dummy/Preview Account:** V offered to spin up an account showing the "Donna" candidate comparison (Resume vs. Stories) for Daniel to see the delta in nuance.
+- **Stealth Job Posting Interface:** Guidance or access for Daniel to set up his stealth hiring board in early 2025.

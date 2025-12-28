@@ -1,10 +1,9 @@
 ---
 created: 2025-12-26
 last_edited: 2025-12-26
-version: 1.0
+version: 1
 provenance: con_EiwUANQjvv2xm9Yv
 ---
-
 # WORKER ASSIGNMENT: Zorg Research Phase
 
 **Assigned to:** Zo (Researcher Mode)

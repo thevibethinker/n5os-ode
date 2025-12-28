@@ -1,35 +1,39 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Detailed Recap
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-**Meeting Duration & Structure:**
-- Participants identified: Attendee Emails, Calendar Event ID, Creator Email, Me, Meeting Title, Them, Transcript, name
-- Total discussion lines: 92
+# B01 Detailed Recap: Vrijen Attawar and Oscar Marquina
 
-**Discussion Summary:**
+### Opening & Momentum
+- Vrijen and Oscar connect after a busy few weeks. Oscar reports the period as "uproarable" but successful, particularly regarding the Marvin founder demonstration event.
+- Vrijen shares immediate traction from the event: Alan from Melly is already using Careerspan, and Vrijen is assisting a stealth startup founder (Frazephron) with job postings.
 
-Meeting Title: Vrijen Attawar and Oscar Marquina
+### The Partnership & Marvin Buy-in
+- Vrijen emphasizes that being "sanctioned by Marvin" provides a critical layer of trust for other founders.
+- Oscar expresses a strong desire to see Marvin founders buying from other Marvin founders. He admits initial hesitation was based on wanting to ensure Careerspan's success without over-relying on Marvin's internal promotion capabilities.
 
-Calendar Event ID: 5ff0dddb-98c3-468e-9577-67bdea71f7a0
+### LOI & Trial Terms
+- Vrijen confirms he will send an LOI covering a 3-4 month trial period.
+- The agreement includes Careerspan being featured on the Marvin perks page, in the newsletter, and having permission to approach founders directly.
+- Vrijen promises a "diplomatic and savvy" approach to outreach to avoid being perceived as annoying to the community.
 
-Attendee Emails: email: oscar@marvinvc.com
-name: Oscar
+### Getro Integration & Scraping Strategy
+- Vrijen requests permission to host jobs found on Marvin's Getro board on Careerspan, offering to host a significant number for free to build market volume.
+- Oscar adds Vrijen as a "Network Admin" on Getro to facilitate data exports.
+- They discuss Getro's limitations: Oscar uses it primarily for ease of scraping website jobs, but notes it lacks the ability to vet candidates effectively.
+- Vrijen reveals that Careerspan can replicate Getro's scraping functionality within 2-3 weeks using their existing data providers.
+- Oscar notes he is under contract with Getro until Q3 2026; if Careerspan proves its scraping capabilities by then, they will discuss a more formal, permanent replacement.
 
-Creator Email: vrijen@mycareerspan.com
-
-Transcript:
-
- 
-Them: Hey, what's up?  
-Me: Hey, oscar. How's it going?  
-Them: Very good. Took a while, but we finally connected.  
-Me: Yes, it's all good. How have the last few weeks been?  
-Them: Been uploarable.  
-Me: I bet.  
-Them: Just a big yes.  
-Me: Yeah, the event was so good. The founde...
+### Launch & Support Plan
+- Oscar offers marketing support: LinkedIn tags, WhatsApp community announcements, and newsletter rotations.
+- Vrijen will coordinate with J. and Ulrich (LinkedIn) for the channel launch.

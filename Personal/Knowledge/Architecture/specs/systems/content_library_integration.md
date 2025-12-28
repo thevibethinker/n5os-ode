@@ -21,7 +21,7 @@ This spec describes how other systems integrate with v3.
 
 - **Canonical DB:** `file 'Personal/Knowledge/ContentLibrary/content-library-v3.db'`  
 - **Primary CLI/API:** `file 'Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py'`  
-- **Architecture:** `file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
+- **Architecture:** `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
 
 Old systems (JSON files and split SQLite DBs) are considered migration artifacts only.
 

@@ -1,27 +1,20 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B21 – Key Moments
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fW1IczFLfM9qTO3V
+---
 
-1. **Join decks as a Zo access surface**
-   - V reframes join decks not as a competing product but as a way to bring Zo’s intelligence into any browser context.
+# B21 Key Moments
 
-2. **Concrete "post → person" routing example**
-   - David’s story of forwarding a founder’s post on sales/marketing to Christian crystallizes the desired behavior: Zo should help users identify *who* to send content to and *why*.
-
-3. **Idea of mining past networking emails for tone**
-   - David proposes that Zo explicitly ask, "Are these networking emails?" and use confirmed ones as training data—turning lived behavior into configuration.
-
-4. **Starter kit + DLC framing**
-   - V introduces the notion of a minimal starter kit plus optional advanced modules, which both simplifies onboarding and supports power users.
-
-5. **New Year, fresh start narrative**
-   - They articulate a concrete story: start now with a small, weekly networking habit so that by next holiday season, your network is meaningfully warmer.
-
-6. **David’s explicit desire to co-build**
-   - David reiterates that he wants to build this inside Zo and asks V to define what pieces he should provide next (frameworks, examples, etc.).
-
-
+- **The Analogy**: "It's the difference... what are those meal prep places... you could buy a cookbook and the recipes... or you could just buy the box."
+- **The Realization**: "I need to remind myself that, like, not everyone needs what I would consider magic for it to be functional."
+- **The Philosophy**: "A disciplined file structure does lend itself to, like, basically as good as, like, memory outcomes... a machine does have the patience to go through it."
+- **The Strategy**: "Option maximizing... a hidden, almost a silent group... they don't get served as much."

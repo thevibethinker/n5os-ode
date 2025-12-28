@@ -1,12 +1,17 @@
 ---
-created: 2025-12-09
-last_edited: 2025-12-09
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14 – Blurbs Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_pPtVukpdt9eEOyKH
+---
 
-No explicit warm-intro blurbs or written intros were requested or promised during this meeting.
+# B14 Blurbs Requested
 
-If a future blurb is needed (for example, to introduce Megan to another founder or to explain Careerspan's work with her), it can be composed quickly from B01 (Detailed Recap), B03 (Stakeholder Intelligence), and B06 (Business Context).
-
+*No explicit blurbs or introduction texts were promised during this call. V mentioned helping Brady and Rockhole, but did not request specific text from Megan during this session.*

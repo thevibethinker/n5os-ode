@@ -1,42 +1,18 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B01 Detailed Recap: Careerspan Internal Team Meeting
+# B01: Detailed Recap
 
-## Overview
-The Careerspan internal team (Vrijen, Ilya, Logan, and Ilse) met to catch up on personal holiday plans, operational updates, and strategic prep for an upcoming high-stakes meeting with Darwin Box.
-
-## Chronological Summary
-
-### 1. Personal Catch-up and Holiday Plans (0:00 - 8:00)
-- **Health and Aging:** Ilya and V discuss the sobering reality of aging and health.
-- **Logan's Morning:** Logan shares a story about his daughter forgetting a Christmas gift bag for her teachers and his last-minute dash to the school.
-- **Christmas Plans:**
-    - Ilya is in Idaho waiting for snow; he uses Christmas to disconnect and unwind from being the "central problem solver" for his family.
-    - V is planning a Lord of the Rings marathon with Amanda and a "cheffed out" meal.
-    - Logan is flying at 5:50 AM tomorrow with his two children (using points).
-- **Wake-up Call:** V gives Logan permission to "abuse" his DND settings to wake him up for his flight if needed. V mentions his "bed vibrator" alarm.
-
-### 2. Strategic Prep: Darwin Box (8:00 - 16:00)
-- **Context:** Darwin Box is a major enterprise player (valuation ~$1B) competing with Workday/SAP. They are looking at US expansion.
-- **The Meeting:** Prep for a demo with Darwin Box leadership (COO).
-- **Framing Strategy:**
-    - **Internal Mobility:** Position the tool as a way for large enterprises to identify "hidden gems" and leadership potential within their existing workforce.
-    - **Bespoke at Scale:** Emphasize that Careerspan provides high-fidelity, semantic analysis that large, rote systems cannot match.
-    - **Nimbleness:** Ilya highlights that big companies often struggle with internal R&D; Careerspan can act as a nimble R&D partner/pilot that bypasses corporate gridlock.
-- **Tactical Advice:** Start by gauging their expectations to see how they've prepped their team. Focus on the conversational tech and the "talent intelligence" angle.
-
-### 3. Transparency and Candidate Value (16:00 - 20:00)
-- **Feature Discussion:** The team discusses the "transparency" angle—telling candidates how they are being judged.
-- **Objective:** This builds trust and keeps candidates coming back, potentially tapping into the passive job seeker market.
-- **Implementation:** Ilse is working with Rockle to improve the app and marketing content around this before Rockle's departure in the new year.
-
-### 4. Operational Updates (20:00 - 26:00)
-- **Hiring:** Nick has countersigned his agreement; he needs to be added to Slack.
-- **Development:** Ilse is "spelunking" through Brady's old backend/frontend code to understand data structures before the new year.
-- **Miscellaneous:** Logan recounts getting two parking tickets in Cambridge due to street cleaning schedules.
-
+- **Casual Check-in & Personal Updates**: The meeting began with casual conversation about personal health (Elsa), holiday preparations, and family dynamics. Logan shared a story about his daughter making Christmas gifts for her teachers and the ensuing logistics. V discussed his preference for a quiet Idaho Christmas as a way to disconnect from the year's demands.
+- **Holiday Plans**: Participants shared their holiday plans, including V's Lord of the Rings marathon and Ilya's travel logistics with children, involving early flights and "bed vibrator" alarm clocks.
+- **Darwin Box Strategy (Core Business)**: The group discussed the upcoming meeting with Darwin Box leadership (likely the COO/Product team). 
+    - **Framing**: Logan suggested framing CareerSpan as a tool for "internal mobility" and "leadership identification" within large enterprises (MNCs).
+    - **Bespoke at Scale**: V emphasized positioning the tech as "bespoke at scale"—providing high-touch semantic analysis of candidates that normally gets lost in large-company rote hiring processes.
+    - **Nimbleness**: Ilya noted that large companies often struggle with internal R&D, making CareerSpan's agility a strategic advantage for pilot projects.
+- **Transparency Angle**: The team debated whether to highlight their "transparency" feature (telling applicants how they are being judged) to Darwin Box. V and Logan agreed it's a valuable differentiator for candidates but might be too much detail for the initial Darwin Box meeting.
+- **Operations & Technical Debt**: Ilsa provided an update on her work, focusing on improving the app and marketing content with Rockle. She noted the "slow going" process of refactoring the chat system's backend and frontend code that she didn't originally write.
+- **Administrative Updates**: Ilya confirmed that Nick has countersigned his agreement and will be added to Slack.

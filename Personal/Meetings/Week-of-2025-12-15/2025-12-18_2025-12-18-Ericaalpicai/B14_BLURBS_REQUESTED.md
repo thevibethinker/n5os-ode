@@ -1,17 +1,18 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_qepeEBZlu6tnbHz9
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B14: Blurbs Requested
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_twzmrcRlYbwPjLN7
+---
 
-```json
-{"id": "blurb-001", "type": "email", "subject": "Zo Computer", "subject_detail": "Introduction to Zo Computer founders for Erica/Alpic", "recipient": "Zo Computer founders", "audience_context": "Potential strategic partners/investors", "purpose": "Introduce Erica and Alpic to Zo Computer team for potential collaboration", "key_points": ["Erica is founder/CEO of Alpic", "Building AI career advisor platform", "Has taken money and built successfully before", "Looking for high conviction capital for growth"], "status": "pending"}
-```
+# B14 Blurbs Requested
 
-
-```json
-{"id": "blurb-002", "type": "email", "subject": "Careerspan", "subject_detail": "Internal brief on Alpic framework for head of AI", "recipient": "Careerspan Head of AI", "audience_context": "Internal stakeholder/internal brief", "purpose": "Share Alpic framework intelligence with internal AI team member", "key_points": ["Alpic framework for AI advisor", "Framework-based AI approach", "Content hierarchy applies to messaging", "Framework applies to performance management"], "status": "pending"}
-
+## Intro: Alpic Founders → Zo Founders
+"Hey guys, I just chatted with the founders of Alpic. They've built a Vercel-like deployment platform for MCP servers and ChatGPT apps. Given the news about the ChatGPT App Store opening today, I think there's a huge opportunity for a Zo + Alpic partnership. It effectively allows anyone in our community to put their Zo-backed MVPs onto the App Store with one click. Would love to connect you."

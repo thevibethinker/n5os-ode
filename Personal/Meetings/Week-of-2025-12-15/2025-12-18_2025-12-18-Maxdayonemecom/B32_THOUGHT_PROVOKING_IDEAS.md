@@ -1,17 +1,19 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_Kta9mnUhI5i7rbdb
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_wr5Y6HEB2EmQ5P2k
 ---
 
 # B32: Thought-Provoking Ideas
 
-### 1. The "Sensory-Reality" Constraint of Hiring Systems
-The conversation posits that a hiring manager’s reality is fundamentally constrained by the "senses" of their software (the ATS). If the data structure of an ATS is shallow—relying only on past organizational names and stale resumes—it creates a "perceptual vacuum" where qualitative talent is literally invisible. This suggests that the failure of the labor market is not a lack of talent or effort, but a failure of high-fidelity "perception tools" that can see beyond historical labels.
-
-### 2. High-Frequency "Code-Switching" and Market Fluidity
-Maximilian highlights a cultural delta between the high-velocity fluidity of Asian markets (Singapore/Hong Kong) and the "artificial pinch" of the US market. In high-fluidity environments, the "code-switch" from zero to one hundred (problem-solving) happens instantly. In contrast, the US system enforces a "resume-first" ritual that serves as a "cover-your-ass" institutional delay, prioritizing procedural safety over immediate problem-solving capability.
-
-### 3. The Inverse Relationship of Scale and Individual Attention
-The industry-standard intuition is that as candidate volume increases, the time spent per candidate must decrease. Vrijen argues this is fundamentally incorrect. The strategic "weirdness" here is that the answer to scale is to ask for *more* data and spend *more* time on the candidates, but to do so through systems that facilitate "self-articulation." By forcing a higher resolution of candidate data up-front, the system filters for alignment rather than just advocacy, reversing the race-to-the-bottom in candidate evaluation quality.
+1. **The "Senses vs. Reality" Analogy:** Vrijen suggests that hiring reality is determined entirely by the tools (senses) we use to perceive it. If the ATS is the primary sense organ, and it is low-resolution, the perceived reality of talent is fundamentally distorted.
+2. **Counter-Intuitive Scarcity Strategy:** The industry's current intuition is to spend *less* time per candidate as volume increases. Vrijen’s provocative thesis is that the solution is to spend *more* time on the right candidates by forcing a higher friction, high-articulation evaluation process at the start.
+3. **Resumes as Stale Organizational Anchors:** Max’s observation that a resume is a data set anchored only in *organizational names* (past data) rather than *problem-solving capacity* (future data), making it structurally incapable of answering the only question that matters: "Can you solve this problem for me?"

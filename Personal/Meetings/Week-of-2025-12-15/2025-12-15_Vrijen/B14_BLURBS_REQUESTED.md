@@ -1,9 +1,10 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Blurbs Requested (B14)
+# B14: Blurbs Requested
 
-No blurbs, warm intros, or external-facing copy were requested or discussed. This appears to be an empty / test capture, so there are **no communications to draft** for this meeting.
+No blurbs were requested.

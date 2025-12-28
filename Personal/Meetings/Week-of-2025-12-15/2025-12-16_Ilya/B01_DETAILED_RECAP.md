@@ -1,8 +1,35 @@
-# B01 Detailed Recap
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
+---
 
-## Overview
-This meeting covered the following key topics and discussion points:
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_avBi9noam4W5h6qF
+---
 
-## Discussion Flow
+# B01 Detailed Recap: Careerspan x Teamwork Online Strategy Session
 
-Hey, Elliot. How are you? Hey. I'm good, I'm good. How are you? I'm good, I'm good. I snuck in a warm shower. It's. We, you know, it's weird. It's like the. Okay, so I'm in Idaho and it is cold because I enjoy. I think Christmas and the New Year's Eve should be cold. Like, you need a scarf, you know, and whatever. Totally. And it's, it's bizarre. I do. I end up doing this almost every winter, which is that, like, the house is like, heated to like, 69, 70 degrees. You know, the heater's on, but for whatever reason, I get chills. And I didn't realize it until I take this shower, you know, that I've been like, chill for. Yeah. I don't know. It's hard to explain. It's like, I don't know. I sure hope. I know that for older people, it's harder fo...
+### 1. Opening & Personal Context
+- **Ilya Kucherenko** and **Vrijen Attawar (V)** opened with a casual check-in. Ilya mentioned he is currently in Idaho for the holidays and shared a personal anecdote about struggling with the cold and temperature regulation.
+
+### 2. Teamwork Online Context
+- V briefed Ilya on an upcoming meeting with **Davis Philippel**, President of **Teamwork Online**.
+- Teamwork Online is described as the dominant ATS for American sports teams, handling back-office and front-office hiring for mid-to-large cap sports organizations.
+- V noted that while they have 8 million candidates, the data on them is "shallow."
+
+### 3. Strategic Positioning & Hypothesis
+- **The Sourcing Hypothesis**: V believes the market is shifting toward sourcing. Even if partners don't buy the full Careerspan data hypothesis yet, the value of "primo access" to talent is undeniable.
+- **Marketplace Transformation**: V intends to pitch Teamwork Online on becoming a true dual-sided marketplace rather than just an ATS. Careerspan would provide the "deep data" and relationship-cultivation tools to make this possible.
+- **Defensive Strategy**: They discussed how Teamwork Online is vulnerable to disruption from job boards that capture candidate attention earlier in the funnel. Careerspan is positioned as the technology to cultivate exclusive, long-term relationships with that talent.
+
+### 4. Sales Philosophy & Mentorship
+- Ilya shared his sales philosophy: "The first thing I'm selling is the conversation." He emphasized building trust, being sincere, and avoiding the "sleazy salesperson" trope.
+- Ilya advised V to lean into his "Founder and CEO" title as a high-leverage card to command attention and signal seriousness when necessary.
+
+### 5. Closing
+- V expressed feeling prepared for the meeting and promised to update Ilya on the outcome before the end of the day.

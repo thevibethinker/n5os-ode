@@ -1,12 +1,19 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Decisions Made
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_f7AwUFZUlbjsHjlO
+---
 
-1. We will get you 2% cash back.
-2. It's an ach pull that will basically as soon as the account gets open, we pull.
-3. Those funds will land in the account.
+# B03 Decisions
+
+- **D01**: Move Careerspan's primary banking from Brex to Mercury.
+- **D02**: Start with a small "test" transfer (a few hundred dollars) rather than a full balance transfer immediately upon account opening.
+- **D03**: Accept the 2% cashback tier offered by Dylan.

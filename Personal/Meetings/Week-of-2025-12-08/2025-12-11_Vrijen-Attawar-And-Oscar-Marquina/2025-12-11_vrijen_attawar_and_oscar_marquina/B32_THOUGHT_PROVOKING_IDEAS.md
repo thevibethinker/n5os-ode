@@ -1,19 +1,19 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_r6hopbqE4ntuCs8R
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B32: Thought-Provoking Ideas
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_EwjwkYTnMpLW4Qfg
+---
 
-This block identifies non-actionable, high-threshold strategic themes and original mental models emerged during the conversation between Vrijen Attawar and Oscar Marquina.
+# B32 Thought Provoking Ideas
 
-### 1. The "Post-ATS" Credibility Gap
-The realization that the modern Applicant Tracking System (ATS) has been fundamentally compromised by AI-generated resumes. In this "Post-ATS" reality, the technical capacity to scrape or host jobs (the Getro model) is no longer the primary value driver. Instead, the bottleneck has shifted from *access* to *discernment*. This suggests a strategic pivot where the "sanctioning" of a platform (e.g., Marvin's implicit endorsement of Careerspan) acts as a high-signal filter that replaces the broken mechanical filters of traditional recruitment software.
-
-### 2. The "Community as a Sanctioning Body"
-There is a subtle but profound shift in the role of the VC platform from "perk provider" to "validation layer." Oscar’s hesitation to promote Careerspan until he was sure of its success, followed by the explicit "Marvin sanctioned" status, creates a new mental model for B2B trust: **Community-Led Validation (CLV)**. In this model, the vendor (Careerspan) doesn't just sell to a network; they become a functional extension of the community's internal trust protocol.
-
-### 3. Scraping vs. Curation: The Commodity Flip
-Oscar’s admission that Marvin uses Getro primarily for its "ease of scraping" reveals that data acquisition in recruitment has become a low-margin commodity. The provocative theme here is the **Curation Paradox**: as the volume of scraped data increases, the utility of the job board decreases unless it is paired with a proprietary vetting mechanism (like Careerspan's "one-click top candidate" claim). The long-term "weirdness" is the idea that the job board of the future might be more valuable for what it *excludes* rather than what it *includes*.
+- **The Vetting Paradox:** As AI makes resume fabrication effortless, the value of a job board shifts entirely from "aggregation" (Getro's model) to "signal authentication." The board of the future isn't a list of jobs, but a list of verified humans who have already passed a threshold of trust.
+- **The "Sanctioned" Multiplier:** In closed venture ecosystems, "sanctioned" status acts as a social API. It bypasses the standard B2B trust-building cycle, turning a cold lead into a warm implementation. The true product being traded isn't the software, but the endorsement of the GP.
+- **Scraping as a Commodity vs. Moat:** Oscar views scraping as a utility (why he uses Getro), but Vrijen views the network effect of the candidates *on top* of the scraped data as the moat. The provocation: A service that only scrapes is a temporary bridge; a service that scrapes to feed a vetting engine is a permanent infrastructure.

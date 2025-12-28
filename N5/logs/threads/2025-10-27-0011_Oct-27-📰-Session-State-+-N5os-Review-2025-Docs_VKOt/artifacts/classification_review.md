@@ -86,9 +86,9 @@ These are files where auto-classification wasn't confident. **Please review and 
 | `email-validation-feedback-loop.md` | 6 KB | Guides or Architecture? |
 | `meeting-queue-protocol.md` | 8 KB | Guides? |
 | `review_manager_api.md` | 8 KB | Architecture or Guides? |
-| `scheduled-task-social-idea-generator.md` | 2 KB | DELETE or move to N5/orchestration/? |
-| `scheduled-task-social-weekly-review.md` | 1 KB | DELETE or move to N5/orchestration/? |
-| `scheduled-task-title-updates.md` | 3 KB | DELETE or move to N5/orchestration/? |
+| `scheduled-task-social-idea-generator.md` | 2 KB | DELETE or move to N5/builds/? |
+| `scheduled-task-social-weekly-review.md` | 1 KB | DELETE or move to N5/builds/? |
+| `scheduled-task-title-updates.md` | 3 KB | DELETE or move to N5/builds/? |
 | `stakeholder-profile-update-safeguards.md` | 14 KB | Guides or Architecture? |
 
 ---

@@ -1,17 +1,14 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B05 Action Items
+# B05: Action Items
 
-| Owner | Task | Priority | Due Date | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Logan** | Wake V up for 5:50 AM flight (vibrate/break through DND) | High | 2025-12-19 | Pending |
-| **Logan/V** | Add Nick to Slack once email is provided | Medium | 2025-12-19 | Pending |
-| **Ilse** | Continue "spelunking" through Brady's backend/frontend code | Medium | 2024-01-01 | Ongoing |
-| **Ilse/Rockle** | Finalize app/marketing content updates for candidates | Medium | 2024-01-01 | Ongoing |
-| **V/Logan/Ilya** | Execute Darwin Box meeting with "internal mobility" framing | High | TBD | Pending |
-
+- [ ] **Ilya**: Email a bunch of users (Context: User engagement/notes). [Owner: Ilya]
+- [ ] **Ilya**: Send meeting notes to the team. [Owner: Ilya]
+- [ ] **Ilya**: Add Nick to Slack once email is provided. [Owner: Ilya]
+- [ ] **Ilsa**: Continue refactoring the chat system and transitioning work with Rockle before the new year. [Owner: Ilsa]
+- [ ] **V/Logan**: Prep for the Darwin Box meeting using the "Internal Mobility" angle. [Owner: V/Logan]

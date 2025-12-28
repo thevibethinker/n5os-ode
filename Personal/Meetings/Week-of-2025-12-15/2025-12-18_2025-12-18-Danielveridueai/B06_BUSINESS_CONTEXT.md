@@ -1,20 +1,27 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B06 Business Context
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
 
-## Veridue AI
-- **Status:** Seed-stage (currently in term sheet negotiations with a lead).
-- **Team:** Daniel Csonth (Founder) and co-founder Ryan.
-- **Location:** London/Nomad.
-- **Industry:** AI (specifics of the product not detailed, but hiring AI/FE/FS engineers).
-- **Hiring Roadmap:** Significant expansion planned for Q1 2024.
+# B06: Business Context
 
-## Careerspan
-- **Market Positioning:** Talent partner for Marvin; focuses on "moneyball" hiring through semantic evaluation and story-based candidate profiling.
-- **Business Model Mentioned:** First 100 applicants free for Marvin community members; specialized in high-grade analysis of soft skills and values fit.
+## Daniel's Startup
+- **Stage:** Seed/Pre-seed (Post-McKinsey founder program).
+- **Funding:** Currently in "mental" term sheet negotiations; lead investor identified.
+- **Hiring Needs:** First engineering team (AI Engineer, FE Engineer, Full-stack Engineer) + support roles (UX, Founder's Associate).
+- **Strategy:** Moving from co-founder only (with co-founder Ryan) to initial hire phase. Prefer referral-based but open to high-signal inbound via Careerspan.
 
+## Careerspan Context
+- **Product Evolution:** 2 years old; transitioned from purely career coaching to a hiring platform leveraging coaching data.
+- **Partnerships:** Official talent partner for Marvin (community benefits).
+- **Job Board:** Launched ~2-3 weeks ago (seeing ~100 hits/day).
+- **User Base:** Concentrated in NY, Boston, SF.

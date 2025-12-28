@@ -1,16 +1,20 @@
 ---
-created: 2025-12-22
-last_edited: 2025-12-22
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_oCauHsREfoRT1s2J
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_QHH72nAkeVXI8BDA
 ---
 
 # B06 Business Context
 
-*   **Careerspan:** The core system discussed, involving a job board, story-mapping for candidates, and a CRM/Deal Flow tracking system.
-*   **Skillcraft:** A company led by David, currently manual at scale and needing to build a product foundation.
-*   **Interrupt:** A company with a Product Lead role (design-heavy) currently on the Careerspan job board.
-*   **Oscar Health:** A target company for Rochel's job search.
-*   **Happenstance:** A tool mentioned early in the call that aggregates/scrapes LinkedIn data.
-*   **Data Supremacy:** A strategic theme discussed regarding the redundancy of AI companies scraping the same datasets.
-
+- **Happenstance**: An aggregation/search tool that scrapes LinkedIn and other sources to build profiles; currently perceived by V as lacking data differentiation.
+- **Skillcraft**: Described as having locked-in sales contracts with major multinationals (PMF signal), but currently "manual at scale" and needing to build the actual product foundation.
+- **Interrupt**: A company hiring for a Product Lead role (Boston-based/Hybrid preferred, but remote possible) that uses the Careerspan ecosystem.
+- **Oscar Health**: A target company for a bundle-intro (Rochel + Chris).

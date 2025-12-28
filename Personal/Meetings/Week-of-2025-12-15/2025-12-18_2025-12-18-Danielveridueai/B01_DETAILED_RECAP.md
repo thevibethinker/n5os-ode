@@ -1,50 +1,53 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B01 Detailed Recap: Vrijen Attawar & Daniel Csonth (Veridue AI)
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_xdR60OnqrjmaAjGe
+---
+
+# B01: Detailed Recap - Careerspan x Daniel Csonth
 
 ## Overview
-Vrijen Attawar (V) met with Daniel Csonth (Dan), founder of Veridue AI, to discuss Dan's upcoming hiring needs and how Careerspan can assist. The meeting covered Dan's current fundraising status, his preliminary hiring plans for early 2024, and a deep dive into Careerspan's unique value proposition for high-signal hiring.
+Vrijen Attawar (V) met with Daniel Csonth to discuss Daniel's upcoming hiring needs for his early-stage startup and explore how Careerspan's unique conversational coaching/hiring platform can streamline his recruitment process.
 
 ## Chronological Summary
 
-### 1. Introduction and Context (0:00 - 2:00)
-- V and Dan reconnect; Dan is currently in London.
-- V mentions hearing about Dan's company during their time at McKinsey.
-- Dan admits he is in the middle of "mental" term sheet negotiations and is texting lawyers in parallel.
+### 1. Introduction and Rapport Building
+- **Opening:** V and Daniel exchange greetings. Daniel is currently in London, while V mentions his own "nomad" lifestyle and flexible concept of home.
+- **Context:** V references their previous interaction during the McKinsey founder program. Daniel mentions he is currently in the middle of intense term sheet negotiations, which has been "mental."
 
-### 2. Fundraising and Hiring Plans (2:00 - 4:00)
-- Dan confirms they have a lead investor they are excited about and expects to be hiring at the start of next year.
-- **Hiring Profiles:** AI Engineer, Front-end Engineer, Full-stack Engineer.
-- **Potential additions:** Part-time UX designer and a Founder's Associate.
-- Dan notes that as a second-time founder, he is relatively calm but recognizes the competitive nature of the market.
+### 2. Hiring Plans and Profiles
+- **Timeline:** Daniel plans to begin hiring at the start of next year (early 2025).
+- **Required Profiles:** 
+  - AI Engineer
+  - Front-end Engineer
+  - Full-stack Engineer
+  - Part-time UX Designer (potential)
+  - Founder's Associate (potential)
+- **Daniel's Role:** He intends to handle most of the commercial aspects himself initially.
 
-### 3. Market Dynamics and Inbound Challenges (4:00 - 6:30)
-- Dan observes the paradox of a competitive market despite widespread layoffs, noting that AI is making engineers more productive but also potentially flooding the market with lower-quality applicants.
-- V agrees and identifies three dimensions of the problem:
-    1. Less performant folks are let go first.
-    2. The best "passive" talent is hard to reach.
-    3. **Inbound is a "fucking mess":** AI-generated resumes and auto-apply tools have destroyed the signal-to-noise ratio in ATS systems.
+### 3. Market Challenges and Inbound Pain Points
+- **The Paradox:** Daniel observes a paradoxical market—high competition for talent despite numerous layoffs.
+- **Signal vs. Noise:** V explains that AI productivity gains and the "zero marginal cost of bullshit" (AI-fabricated resumes) have rendered traditional resumes and ATS systems ineffective.
+- **Passive Talent:** V highlights that the best people aren't looking (passive) and referral networks tap out early.
 
-### 4. Careerspan Value Proposition (6:30 - 11:00)
-- V shares that Careerspan is an official talent partner for Marvin (all community members get the first 100 applicants processed for free).
-- V explains the Careerspan "diet": Inbound should be a part of it, but filtered through Careerspan's conversational coaching modality.
-- **Core Concept:** Career coaching (stories/self-reflection) generates deep data on candidates. Hirers see "Why should I say yes/no" insights with reasoning traces, not just resumes.
-- V demonstrates the difference between a resume-only profile and a "resume + stories" profile (Delta in nuance: 62% vs 90% score).
+### 4. The Careerspan Value Proposition
+- **Mechanism:** Careerspan uses conversational coaching to help candidates develop their value proposition. This cognitively intense interaction generates deep signal (7-10 detailed stories) that an AI analyzes.
+- **Actionability:** Instead of a resume, hirers see "Why say yes" and "Why say no" blocks with reasoning traces.
+- **Stealth Pipeline:** V proposes putting the job on Careerspan's job board in "stealth mode" to aggregate a pipeline before the official hiring start, avoiding revealing plans to competitors prematurely.
+- **Cost:** Careerspan recently partnered with Marvin; community members get the first 100 applicants processed for free.
 
-### 5. Stealth Hiring and Sourcing Strategy (11:00 - 14:00)
-- V suggests putting Dan's roles up as "stealth jobs" on the Careerspan board now to start "trawling" for candidates before hiring officially begins in February.
-- This allows Dan to build a pipeline without alerting competitors or being overwhelmed by resumes.
-- V notes candidates are concentrated in NY, Boston, and SF, with high demand for remote roles.
-- V shares a success story of an infrastructure engineer from Bozeman, Montana, who was an "underpriced asset" found via Careerspan for Zoe (Lightspeed-backed).
+### 5. Success Factors in Hiring
+- **Failure Rates:** V cites that 46% of hires fail by 18 months, with 89% of those failures due to values, mindset, or soft skill mismatches rather than hard skills.
+- **Semantic Evaluation:** V emphasizes Careerspan's ability to assess "vibes" and "fit" through semantic evaluation of candidate stories (e.g., finding "empathetic" candidates).
 
-### 6. Closing and Next Steps (14:00 - 18:00)
-- V emphasizes that 46% of hires fail within 18 months, mostly due to soft skills/values mismatch (89% according to Leadership IQ).
-- V's system allows for semantic evaluation (e.g., finding someone "empathetic" based on their stories).
-- **Agreement:** Dan is interested in trying the platform early next year once the term sheet is finalized.
-- **Follow-up:** V will send material for Dan to review post-signing and will prod him at the start of next year.
-
+### 6. Closing and Next Steps
+- **Agreement:** Daniel is interested in trying the platform once his term sheet is signed.
+- **Follow-up:** V will follow up toward the end of the year or start of next year.

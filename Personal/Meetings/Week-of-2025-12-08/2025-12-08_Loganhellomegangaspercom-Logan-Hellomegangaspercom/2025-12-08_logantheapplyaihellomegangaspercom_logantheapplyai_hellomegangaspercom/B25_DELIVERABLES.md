@@ -1,21 +1,17 @@
 ---
-created: 2025-12-09
-last_edited: 2025-12-09
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25 – Deliverables
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_pPtVukpdt9eEOyKH
+---
 
-- **Wrap-up report from Megan**
-  - **Scope:** Summary of work to date, outcomes, and any remaining recommendations.
-  - **Recipient(s):** V (and likely Ilsa/Logan).
-  - **Timing:** Before the current contract ends (end of year).
+# B25 Deliverables
 
-- **Team transition support**
-  - Helping Brady secure a new role.
-  - Supporting Rochelle through interviews and into her next position.
-  - These are ongoing efforts rather than a single artifact, but they were framed as concrete responsibilities V is carrying.
-
-- **Exit-process communication**
-  - V will keep Megan updated on major developments in the exit/acqui-hire process, though no specific written artifact was promised.
-
+- **Wrap-up Report:** Megan promised to send a comprehensive wrap-up report summarizing her work and the current state of projects before the end of the year.

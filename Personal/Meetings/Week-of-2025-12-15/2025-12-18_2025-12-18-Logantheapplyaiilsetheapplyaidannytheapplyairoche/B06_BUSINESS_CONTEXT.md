@@ -1,14 +1,13 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_5CTN9FtbScgSrmD1
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B06 Business Context
+# B06: Business Context
 
-- **Darwin Box:** Valued at ~$1B; 1,500+ employees. Enterprise client focus. Competing with Workday/SAP. Expanding into the US market.
-- **Marvin Partnership:** Careerspan is an official talent partner; provides high-volume, low-cost processing for community members.
-- **Product Strategy:** Shift towards "Talent Intelligence" for internal mobility in large organizations, and "bespoke at scale" for hiring.
-- **Tech Debt:** Ilse is currently resolving technical debt and knowledge gaps following Brady's departure.
-
+- **Target Partner**: Darwin Box (Large HR Tech player, ~$1B valuation, 1500+ employees, expanding into the US market).
+- **Competitors Mentioned**: Workday, SAP (The "Big Four" of enterprise HR systems).
+- **Market Position**: CareerSpan is positioning as a "nimble" R&D/pilot partner that can solve the "rote hiring" problem in enterprises through semantic talent intelligence.
+- **Funding/Status**: Mention of Darwin Box's recent unicorn status; CareerSpan targeting high-growth startups to Series B as a current foothold.

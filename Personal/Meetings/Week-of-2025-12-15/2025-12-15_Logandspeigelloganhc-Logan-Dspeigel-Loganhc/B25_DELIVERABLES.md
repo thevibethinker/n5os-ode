@@ -1,27 +1,19 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B25 – Deliverables
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_fW1IczFLfM9qTO3V
+---
 
-> **Scope:** Concrete artifacts and components discussed as necessary for the networking system.
+# B25 Deliverables
 
-## 1. Candidate training email set
-- **Owner:** David
-- **Description:** A curated set of real networking emails (job-search, internal, keep‑in‑touch) labeled as "good examples" for tone and structure.
-
-## 2. Tagging and signature spec
-- **Owner:** V
-- **Description:** A clear proposal for how users should tag networking emails (e.g., signature markers, subject conventions) so Zo can classify them automatically.
-
-## 3. Starter kit specification document
-- **Owner:** V (with David’s input)
-- **Description:** Written spec for what the v1 Zo networking kit includes (files, fields, agents, dependencies) and what it explicitly does *not* include.
-
-## 4. Pilot cohort outcome definition
-- **Owner:** V & David (shared)
-- **Description:** One-page description of what a successful participant’s life looks like after using the system for a few months (behavioral and emotional outcomes).
-
-
+- **Webinar 'Building Block' Package**: A set of files/instructions to be distributed to users (CRM schema, Persona templates, File protection scripts).
+- **Tone Transformation Prompt**: The specific 'neutral base + stylistic shift' logic V uses to replicate his tone.
+- **Networking Ruleset**: The documented 'rules of engagement' for follow-ups and outreach.

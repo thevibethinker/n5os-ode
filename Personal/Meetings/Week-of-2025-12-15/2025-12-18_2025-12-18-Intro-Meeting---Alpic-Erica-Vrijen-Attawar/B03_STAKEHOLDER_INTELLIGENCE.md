@@ -1,33 +1,29 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03: Stakeholder Intelligence
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_ehsLGDk6xgv5TpRN
+---
 
-## Erica Beavers (Alpic)
-- **Role**: Representative/Team member at Alpic (MCP app deployment platform)
-- **Style**: Enthusiastic, technical, product-focused
-- **Key Interests**: 
-  - Growing Alpic's customer base and partnerships
-  - Demonstrating Skybridge framework and deployment platform
-  - Understanding market positioning through partnerships like Zo
-- **Leverage Points**: 
-  - Genuine enthusiasm for Zo ecosystem
-  - Openness to ad hoc support and advice
-  - Interest in connecting with Zo founders
-- **Tone**: Collaborative, interested in long-term relationships
+# B03 Stakeholder Intelligence
 
-## Vrijen Attawar (Careerspan)
-- **Role**: Founder of Careerspan; non-technical but pushing learning boundaries
-- **Style**: Strategic, relationship-focused, visionary
-- **Key Interests**:
-  - ChatGPT App Store as distribution channel
-  - Integrating with Zo Computer
-  - Early market entry for competitive advantage
-- **Leverage Points**:
-  - Strong network (brings companies like Aviato to Zo)
-  - High-quality proprietary content (100k words)
-  - Ability to facilitate introductions and partnerships
-- **Tone**: Collaborative, enthusiastic about new opportunities
+## Participants
+
+### Skybridge/Alpic Representative
+- **Role**: Platform Provider / Technical Lead.
+- **Interests**: Platform adoption, developer success, establishing Skybridge as the canonical MCP deployment layer.
+- **Key Value**: Providing the "plumbing" OpenAI missed in their SDK (analytics, logging, one-click deploy).
+- **Skepticism**: Initially unsure how Zo fits the architecture, but quickly pivoted to a partnership mindset.
+
+### Vrijen Attawar (V)
+- **Role**: Founder, Careerspan.
+- **Interests**: Distribution, reducing UI friction for Careerspan users, empowering the Zo community.
+- **Leverage Points**: Access to the Zo community and founder-level relationships; unique use-case (agentic file systems).
+- **Knowledge Gap**: Conceptual awareness of MCP but no prior hands-on "tinkering."

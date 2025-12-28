@@ -1,21 +1,19 @@
 ---
-created: 2025-12-15
-last_edited: 2025-12-15
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Tone and Context (B07)
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_rkLSDjNJX6NBJ5aK
+---
 
-- **Overall tone:** Warm, supportive, and pragmatic. The call feels more like a mentoring / coaching session than a hard sell, with V repeatedly positioning himself as an advocate determined to "get Davit hired."
-- **Emotional undercurrent:**
-  - Davit is polite and grateful but clearly under pressure: graduating, juggling exams, visa uncertainty, and a rough job market.
-  - V acknowledges these pressures, normalizes Davit's frustrations (250+ applications, lack of interviews), and offers concrete ways to regain a sense of agency.
-- **Power dynamics:**
-  - V holds more structural power (control of the Careerspan job board, relationships with recruiters/founders), but he uses it in a collaborative, non‑patronizing way.
-  - Davit is open and forthcoming about his constraints and ready to do the work (stories, tools, outreach) if he sees a credible path.
-- **Subtext:**
-  - Careerspan is being stress‑tested as a vehicle for real outcomes, not just theory: if the combination of stories + advocacy + network cannot help someone like Davit, that is a strong signal about product‑market fit.
-  - There is also a subtle product‑evangelism layer: V is candid about features he believes are particularly strong (e.g., explainable resume generation) and invites Davit to spread the word if it genuinely helps.
-- **Future relationship:**
-  - The conversation ends with mutual goodwill and a clear intention to stay in touch; follow‑through on both sides will determine whether this becomes a success story or a stalled thread.
+# B07: Tone and Context
 
+- **Vibe:** Highly collaborative, supportive, and warm. V acts as a mentor/advocate rather than just a platform owner.
+- **Subtext:** Davit is clearly talented but stuck in the "Visa/New-Tech Gap." V is using his personal social capital (founders at Zo, Marvin) to bridge this gap.
+- **Dynamics:** The relationship is transactional but grounded in mutual benefit—Davit gets a job, Careerspan gets a high-signal placement. There is a strong sense of community reciprocity (Columbia, Armenian network).

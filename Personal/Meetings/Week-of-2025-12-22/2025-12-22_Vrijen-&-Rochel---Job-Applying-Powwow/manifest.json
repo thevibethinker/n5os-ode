@@ -3,12 +3,13 @@
   "generated_at": "2025-12-22T14:18:00Z",
   "meeting_folder": "2025-12-22_Vrijen__Rochel_-_job_applying_powwow",
   "meeting_date": "2025-12-22",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "Vrijen & Rochel - Job Applying Powwow"
+  "meeting_title": "Vrijen & Rochel - Job Applying Powwow",
+  "last_updated_at": "2025-12-26T23:39:53.183921Z"
 }

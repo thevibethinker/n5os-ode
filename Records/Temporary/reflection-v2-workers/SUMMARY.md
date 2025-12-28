@@ -120,8 +120,8 @@ Outputs: N5/records/reflections/outputs/{date}/{slug}/blocks/
 - `Records/Temporary/reflection-v2-workers/WORKER_*.md` (6 files)
 
 **Planning:**
-- `N5/orchestration/reflection-system-v2/REFLECTION_SYSTEM_V2_PLAN.md`
-- `N5/orchestration/reflection-system-v2/ORCHESTRATOR_BRIEF.md`
+- `N5/builds/reflection-system-v2/REFLECTION_SYSTEM_V2_PLAN.md`
+- `N5/builds/reflection-system-v2/ORCHESTRATOR_BRIEF.md`
 
 **Validation:**
 - `Records/Temporary/reflection-v2-workers/VALIDATION_REPORT.md`

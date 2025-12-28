@@ -1,12 +1,18 @@
 ---
-created: 2025-12-16
-last_edited: 2025-12-16
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: scheduled
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# Deliverables Promised
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_f7AwUFZUlbjsHjlO
+---
 
-## Files & Data Promised
+# B25 Deliverables
 
-1. I'll just send a couple books over.
+- **To Mercury**: Completed KYB/KYC application (Vrijen).
+- **To Vrijen**: Mercury account login and introduction to the account manager/onboarding team (Dylan).

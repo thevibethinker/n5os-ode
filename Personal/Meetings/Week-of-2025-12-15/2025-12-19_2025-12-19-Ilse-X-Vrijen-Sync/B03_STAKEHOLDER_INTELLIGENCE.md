@@ -1,31 +1,35 @@
 ---
-created: 2025-12-19
-last_edited: 2025-12-19
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_Dtgd0rltqEPDNjNP
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_n1ZJO1ZasEyaDqm3
 ---
 
 # B03: Stakeholder Intelligence
 
-## Participants
+### Ilse
+- **Role:** Technical Lead / Lead Engineer.
+- **Interests:** System efficiency, user experience (UX) as a "backstop" for technical lag, product-market fit signal.
+- **Leverage Points:** Deep ownership of the codebase; "genius" level understanding of the original product architecture.
+- **Skepticism:** Historically hesitant to prioritize chat improvements over structural user flow; cautious about billing access and administrative friction.
 
-### Vrijen Attawar (Founder, Careerspan)
-- **Role**: Strategic lead and product visionary.
-- **Key Interests**: User conversion, product "sexiness," speed of delivery, competitive advantages.
-- **Leverage Points**: Holds the "purse strings"; willing to trade cost for performance (authorized $5k/mo spend).
-- **Current State**: Highly supportive of the proposed UX changes; currently dealing with administrative overhead (billing/2FA) and personal lost documents.
+### Vrijen (V)
+- **Role:** Founder / CEO.
+- **Interests:** Speed to market, "sexy" user experience, high-level strategic alignment, fundraising/exit potential ("corporate benefactors").
+- **Leverage Points:** Controls the "purse strings"; defines the psychological and financial risk tolerance (the $5k billing cap).
+- **Skepticism:** Concerned about the time it takes for analyses to run and the impact on user retention.
 
-### Ilse (Technical Lead/Genius)
-- **Role**: Primary builder and technical architect.
-- **Key Interests**: Product stability, UX clarity, avoiding "broken" perceptions, strategic feature prioritization.
-- **Leverage Points**: Deep understanding of the product architecture; realistic about technical debt vs. new features.
-- **Sentiment**: "Pumped" about current product traction; protective of the "genius" status but pragmatic about trade-offs.
+### Rochel (referenced)
+- **Role:** Product/Design Ops.
+- **Key Interests:** Copy clarity, user flow, differentiating between "prep" and "actual applying."
 
-### Rochel (Collaborator - Referenced)
-- **Role**: UX/Copy and User Interaction.
-- **Tasked**: Updating application page copy and start-page clarity.
-
-### Nick (Developer - Referenced)
-- **Role**: Front-end/Implementation support.
-- **Tasked**: Implementing redirects and showing suggestions on the UI.
-
+### Nick (referenced)
+- **Role:** Frontend/Full-stack Developer.
+- **Key Interests:** Executing UI changes for direct apply and suggestion visibility.

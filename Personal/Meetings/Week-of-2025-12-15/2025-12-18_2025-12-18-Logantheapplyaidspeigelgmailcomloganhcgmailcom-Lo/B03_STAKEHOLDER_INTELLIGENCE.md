@@ -1,27 +1,31 @@
 ---
-created: 2025-12-18
-last_edited: 2025-12-18
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_QkNXUitVDnlrYZ4Q
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03: Stakeholder Intelligence
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_wmTTLgn0WG4i79O4
+---
 
-## Vrijen Attawar (V)
-- **Role**: Founder of Careerspan / Zo Orchestrator.
-- **Key Interests**: Expanding the Zo ecosystem, establishing venture collectives, and identifying high-margin integration opportunities (e.g., Aviato).
-- **Leverage Points**: Network within the Zo community and ability to architect multi-tool workflows.
+# B03 Stakeholder Intelligence
 
-## David Speigel
-- **Role**: Instructor at Product Career Accelerator, collaborator.
-- **Key Interests**: Automating job-seeker networking, B2B SaaS models, and efficient outreach processes.
-- **Skepticism**: Notes that networking cannot be fully automated due to the relationship component; prefers SaaS over one-off payouts.
-- **Leverage Points**: Direct access to user feedback (30+ PMs/month) and deep knowledge of job-seeking workflows.
+### Vrijen Attawar (V)
+- **Role:** Founder, Careerspan.
+- **Interests:** System implementation, Zo ecosystem expansion, venture collectives, high-margin affiliate plays.
+- **Leverage Points:** Deep understanding of Zo/MCP infrastructure; strategic vision for "Careerspan" branding.
 
-## Madison (Plaid)
-- **Status**: Mentioned as a potential collective member.
-- **Interests**: Interested in building an MVP on Zo.
+### David Speigel
+- **Role:** Instructor at Product Career Accelerator; Product Leader.
+- **Interests:** Automating networking workflows, high-signal JD/outreach processes, B2B SaaS models.
+- **Skepticism:** Expressed concern about "pure" automation of networking (prefers efficiency over total automation).
+- **Leverage Points:** Direct access to 30+ job-seeking PMs per month; proven, manual networking playbooks that can be codified.
 
-## Anna (Operator Builder)
-- **Status**: Mentioned as a potential collective member.
-- **Interests**: Interested in networking productivity tools.
+### Madison (Plaid) & Anna (Operator Builder)
+- **Role:** Prospective Venture Collective members.
+- **Interests:** Madison (MVPs), Anna (Networking productivity).
+- **Key Note:** V describes them as "conscientious" and "good work partners."

@@ -1,19 +1,20 @@
 ---
-created: 2025-12-23
-last_edited: 2025-12-23
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
-provenance: con_EnG1UHQo2ibWUwwn
+provenance: con_lqVHJ9COyZA1Si4O
+---
+
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_kQVE27hX8OE7mWcq
 ---
 
 # B05: Action Items
 
-| Status | Action Item | Owner |
-| :--- | :--- | :--- |
-| 🔲 | Mail the Pixel 3 watch to Rochel once she provides an address | V |
-| 🔲 | Coordinate a group dinner in NYC for mid-January (including Logan) | V |
-| 🔲 | Look into "Zanderia" YouTube channel/Pink & Brown noise for sleep | Rochel |
-| 🔲 | Consider scheduling an at-home sleep study or sleep lab | Rochel |
-| 🔲 | Explore shifting blog/newsletter from Medium to Substack or Beehiiv | V |
-| 🔲 | Research "Habit Kit" app for habit tracking | Rochel |
-
-12:20 PM ET
+- [ ] **V**: Package and mail the Pixel 3 watch to the other participant. (Owner: V)
+- [ ] **Unnamed Participant**: Look up watch straps for the Pixel watch. (Owner: Participant)
+- [ ] **V**: Research/verify if 'Macro Factor' has an accessible API for Zo integration. (Owner: V)
+- [ ] **Unnamed Participant**: Consider an at-home sleep study for potential apnea. (Owner: Participant)

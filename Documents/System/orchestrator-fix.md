@@ -11,7 +11,7 @@ Build orchestration not coordinating worker conversations properly.
 **File:** N5/scripts/conversation_orchestrator.py (562 lines)
 
 Coordinates multiple Zo worker conversations:
-- Creates worker briefs in N5/orchestration/<project>/
+- Creates worker briefs in N5/builds/<project>/
 - Monitors via SESSION_STATE.md
 - Tracks dependencies
 - Provides spawn instructions

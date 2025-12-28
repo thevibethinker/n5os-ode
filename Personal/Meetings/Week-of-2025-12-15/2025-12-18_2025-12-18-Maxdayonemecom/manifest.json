@@ -3,12 +3,13 @@
   "generated_at": "2025-12-18T18:15:00Z",
   "meeting_folder": "2025-12-18_maxdayonemecom",
   "meeting_date": "2025-12-18",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "2025-12-18 Maxdayonemecom"
+  "meeting_title": "2025-12-18 Maxdayonemecom",
+  "last_updated_at": "2025-12-26T23:28:55.762446Z"
 }

@@ -280,7 +280,7 @@ python3 N5/scripts/productivity/rpi_calculator.py --recalculate
 
 ## Support
 
-**Documentation:** See worker specs in `N5/orchestration/productivity-tracker/`  
+**Documentation:** See worker specs in `N5/builds/productivity-tracker/`  
 **Issues:** Report to orchestrator conversation (con_6NobvGrBPaGJQwZA)  
 **Database:** `/home/workspace/productivity_tracker.db`
 

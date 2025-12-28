@@ -1,63 +1,32 @@
 ---
-created: 2025-12-09
-last_edited: 2025-12-09
+created: 2025-12-26
+last_edited: 2025-12-26
 version: 1.0
+provenance: con_lqVHJ9COyZA1Si4O
 ---
 
-# B03 – Stakeholder Intelligence
+---
+created: 2025-12-26
+last_edited: 2025-12-26
+version: 1.0
+provenance: con_pPtVukpdt9eEOyKH
+---
 
-## Primary participants
+# B03 Stakeholder Intelligence
 
-### Vrijen Attawar ("V")
-- **Role:** Co-founder/CEO of Careerspan; primary decision-maker for product, fundraising, and strategic direction.
-- **Current position:** Tired and emotionally drained from three years of building and fundraising, but still deeply proud of the product and its impact.
-- **Interests:**
-  - Achieving a respectable "PR exit" and ideally breaking even financially.
-  - Securing stability (financial and emotional) for himself, Ilsa, and Logan.
-  - Protecting teammates by helping them land well in new roles.
-  - Preserving the relationship with Megan for future collaborations.
-- **Leverage points:**
-  - Values long-term relationships over short-term optimization.
-  - Motivated by care for his team and integrity around commitments.
-  - Responds well to empathetic partners who understand founder burnout.
-- **Skepticisms / concerns:**
-  - Wary of continuing the fundraising treadmill.
-  - Sensitive to additional obligations that would overstretch the lean core team.
+### Vrijen Attawar (V)
+- **Role:** Founder, Careerspan.
+- **Key Interests:** Securing a clean exit (PR exit or monetary break-even); ensuring the remaining team (Ilsa, Logan) is stable; helping departing team members find jobs.
+- **Sentiment:** Drained/Exhausted. He explicitly mentions being "too tired to do any more fundraising."
+- **Leverage Points:** Deep product knowledge and creative vision. He is already thinking about the "reset" for his next venture.
 
 ### Megan Gasper
-- **Role:** External marketing/strategy partner/consultant working with Careerspan.
-- **Current position:** Supportive advisor who has invested time and care into the company; pragmatic about startup volatility.
-- **Interests:**
-  - Seeing the Careerspan team be "happy and successful" regardless of specific outcome.
-  - Closing out the current engagement professionally (wrap-up report, clean handoff).
-  - Staying in relationship so she can collaborate with the team again on future ventures.
-- **Leverage points:**
-  - Trusted sounding board for messaging, positioning, and go-to-market.
-  - Brings calm, structured thinking during emotionally heavy transitions.
-- **Skepticisms / concerns:**
-  - Wants clarity on where things stand and how responsive the team can be given the transition.
+- **Role:** Consultant/External Partner.
+- **Key Interests:** Maintaining the relationship for future work; ensuring a professional handoff for the end of the year.
+- **Skepticism:** None apparent; she is highly supportive and professional ("total pro" per V).
+- **Leverage Points:** Historical context of the project (1.5 years of involvement); ability to produce a high-quality wrap-up report to assist in the sale process.
 
-## Referenced stakeholders
-
-### Ilsa
-- **Role:** Co-founder; closely involved in operations and external relationships.
-- **Context:**
-  - Also feeling stretched and slower to respond, reflecting the overall team bandwidth constraints.
-  - Likely to want her own closure conversation with Megan.
-
-### Logan
-- **Role:** Co-founder; product and creative lead.
-- **Context:**
-  - Part of the lean core team post-downsizing.
-  - Will continue with V and Ilsa during the exit/"hibernation" phase.
-
-### Brady
-- **Role:** Team member being helped into a new role.
-- **Context:**
-  - V is actively supporting Brady's job search as part of orderly wind-down.
-
-### Rochelle
-- **Role:** Team member interviewing at new companies.
-- **Context:**
-  - Being supported through interviews and transition, reflecting Careerspan's desire to treat people well during the exit process.
-
+### Ilsa & Logan (Internal Stakeholders)
+- **Role:** Core Team (Remaining).
+- **Status:** Drained but staying through the hibernation phase to see the exit through.
+- **Note:** Megan noticed Ilsa has been slower to respond recently, confirming the team's high stress levels.
