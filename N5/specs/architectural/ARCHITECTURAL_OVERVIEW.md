@@ -101,7 +101,7 @@ Phase 6 (Conv 7): Documentation + integration
 
 **Result:** 37 principles codified, 8 personas integrated, 3 cognitive prompts active
 
-See N5/projects/architectural-redesign/MIGRATION_HISTORY.md for detailed timeline
+See N5/builds/architectural-redesign-v1/MIGRATION_HISTORY.md for detailed timeline
 
 ---
 
@@ -171,7 +171,7 @@ Related Documentation:
 - Knowledge/architectural/PRINCIPLE_USAGE_GUIDE.md
 - Knowledge/architectural/README.md
 - N5/prefs/system/nuance-manifest.md
-- N5/projects/architectural-redesign/BUILD_STATUS.md
+- N5/builds/architectural-redesign-v1/BUILD_STATUS.md
 
 ---
 

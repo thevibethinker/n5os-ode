@@ -2,8 +2,53 @@
   "senders": [
     "hi@theagentic.ai",
     "newsletter@marvin.vc",
-    "events@nextplay.so"
+    "events@nextplay.so",
+    "supermomos@mail.beehiiv.com",
+    "info@email.meetup.com",
+    "calendar-invite@lu.ma",
+    "hello@partiful.com",
+    "noreply@eventbrite.com",
+    
+    "victoria@thestartupstation.com",
+    "vyampol@gmail.com",
+    
+    "andrewsmixers@calendar.luma-mail.com",
+    "andrew@meetfibe.com",
+    "andrewmp@substack.com",
+    
+    "dylan-oriundo@mail.beehiiv.com",
+    "dylanoriundo@gmail.com",
+    "dylanoriundo@calendar.luma-mail.com",
+    
+    "ericakh@gmail.com",
+    "usr-ZCRrWtLWlrNrIfd@user.luma-mail.com",
+    
+    "anna@kleido.co",
+    "annabao9595@gmail.com",
+    "jake@fohe.org",
+    "ray@fohe.org",
+    
+    "boundlesscreative@calendar.luma-mail.com",
+    "eitan@boundlessnyc.com",
+    "lizzy@boundlessnyc.com",
+    
+    "events@usv.com",
+    
+    "founders-circle-nyc@calendar.luma-mail.com",
+    
+    "lafamilia@mail.beehiiv.com",
+    
+    "0thernet@user.luma-mail.com",
+    "0thernet@substack.com"
   ],
-  "domains": [],
-  "last_updated": "2025-12-16"
+  "domains": [
+    "beehiiv.com",
+    "substack.com",
+    "luma-mail.com",
+    "fohe.org",
+    "boundlessnyc.com"
+  ],
+  "last_updated": "2025-12-27",
+  "trigger_code": "n5:allowlist"
 }
+

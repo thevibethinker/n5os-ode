@@ -11,7 +11,6 @@ import json
 import logging
 import subprocess
 import sys
-import subprocess
 from pathlib import Path
 
 # Add N5/scripts to path to allow imports
@@ -114,6 +113,24 @@ def main():
         logger.info(f"Saved {city}: {stats}")
         total_new += stats["inserted"]
 
+    # 2.5 Smart Detector (Tier 2) - Catch events from non-allowlisted sources
+    DETECTED_FILE = N5_ROOT / "data" / "tier2_emails.json"
+    DETECTOR_SCRIPT = N5_ROOT / "scripts" / "smart_event_detector.py"
+    
+    if DETECTED_FILE.exists():
+        logger.info("Found Tier 2 detected emails, processing...")
+        try:
+            subprocess.run(
+                [sys.executable, str(DETECTOR_SCRIPT), "--email-file", str(DETECTED_FILE)],
+                check=True
+            )
+            DETECTED_FILE.unlink()
+            logger.info("Tier 2 detection complete.")
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Smart detector failed: {e}")
+        except Exception as e:
+            logger.error(f"Error during Tier 2 processing: {e}")
+
     # 3. Mechanical Scoring
     scored = luma_scorer.score_all_pending()
     logger.info(f"Scored {len(scored)} pending events")
@@ -130,5 +147,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 

@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-12-27",
+  "trigger_code": "n5:mustgo",
+  "must_go_rules": {
+    "organizers": [
+      {
+        "name": "Andrew Yeung",
+        "reason": "Always recommend",
+        "patterns": ["andrew yeung", "andrewyeung", "fibe"]
+      },
+      {
+        "name": "FOHE / Future of Higher Education",
+        "reason": "Always recommend",
+        "patterns": ["fohe", "future of higher education", "anna bao"]
+      },
+      {
+        "name": "Ben Guo",
+        "reason": "Velocity Coding founder",
+        "patterns": ["ben guo", "velocity coding", "0thernet"]
+      },
+      {
+        "name": "Victoria Yampelsky",
+        "reason": "Always recommend",
+        "patterns": ["victoria yampelsky", "yampelsky", "startup station"]
+      },
+      {
+        "name": "Marvin Ventures",
+        "reason": "Always recommend",
+        "patterns": ["marvin ventures", "marvin vc", "marvin.vc"]
+      }
+    ],
+    "keywords_boost": [
+      {"keyword": "founder", "weight": 1.5},
+      {"keyword": "AI", "weight": 1.3},
+      {"keyword": "startup", "weight": 1.2},
+      {"keyword": "networking", "weight": 1.2},
+      {"keyword": "demo day", "weight": 1.5},
+      {"keyword": "pitch", "weight": 1.3}
+    ],
+    "keywords_avoid": [
+      {"keyword": "beginner workshop", "weight": -1.0},
+      {"keyword": "intro to", "weight": -0.5}
+    ]
+  },
+  "time_preferences": {
+    "preferred_days": ["thursday", "friday", "saturday"],
+    "preferred_times": {"start": "17:00", "end": "22:00"},
+    "max_events_per_week": 3,
+    "buffer_days_between_events": 1
+  },
+  "location_preferences": {
+    "preferred_areas": ["manhattan", "brooklyn", "soho", "flatiron", "midtown"],
+    "max_commute_minutes": 45
+  },
+  "learned_preferences": {
+    "note": "This section will be updated as V provides feedback",
+    "positive_signals": [],
+    "negative_signals": []
+  }
+}
+

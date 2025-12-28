@@ -21,9 +21,9 @@ tags:
   - gmail
 entry_points:
   - type: script
-    id: "N5/orchestration/crm-v3-unified/ORCHESTRATOR_PLAN.md"
+    id: "N5/builds/crm-v3-unified/ORCHESTRATOR_PLAN.md"
   - type: script
-    id: "N5/orchestration/crm-v3-unified/ORCHESTRATOR_MONITOR.md"
+    id: "N5/builds/crm-v3-unified/ORCHESTRATOR_MONITOR.md"
   - type: prompt
     id: "Prompts/crm-enrich-profile.prompt.md"
   - type: prompt
@@ -42,8 +42,8 @@ Coordinates the migration and unification of three legacy CRM surfaces into **CR
 - Use `file 'N5/capabilities/internal/crm-v3.md'` to understand the underlying data model and capabilities.
 - Use this orchestrator when planning or modifying **how CRM V3 is built, migrated, or fed by external signals**.
 - For architecture and worker sequencing:
-  - Open `file 'N5/orchestration/crm-v3-unified/ORCHESTRATOR_PLAN.md'` for dependency graph and worker breakdown.
-  - Open `file 'N5/orchestration/crm-v3-unified/ORCHESTRATOR_MONITOR.md'` for live worker status and validation commands.
+  - Open `file 'N5/builds/crm-v3-unified/ORCHESTRATOR_PLAN.md'` for dependency graph and worker breakdown.
+  - Open `file 'N5/builds/crm-v3-unified/ORCHESTRATOR_MONITOR.md'` for live worker status and validation commands.
 - Launch or debug enrichment-related workflows via:
   - `file 'Prompts/crm-enrich-profile.prompt.md'` – enrichment workflow for individual profiles.
   - `file 'Prompts/crm-gmail-enrichment.prompt.md'` – Gmail-thread-driven enrichment.
@@ -51,14 +51,14 @@ Coordinates the migration and unification of three legacy CRM surfaces into **CR
 
 ## Associated Files & Assets
 
-- `file 'N5/orchestration/crm-v3-unified/ORCHESTRATOR_PLAN.md'` – high-level orchestration design
-- `file 'N5/orchestration/crm-v3-unified/ORCHESTRATOR_MONITOR.md'` – status tracker and validation commands
-- `file 'N5/orchestration/crm-v3-unified/crm-v3-design.md'` – architecture reference
-- `file 'N5/orchestration/crm-v3-unified/WORKER_1_DATABASE_SCHEMA.md'` – DB schema plan
-- `file 'N5/orchestration/crm-v3-unified/WORKER_2_MIGRATION_SCRIPTS.md'` – migration scripts brief
-- `file 'N5/orchestration/crm-v3-unified/WORKER_3_ENRICHMENT_WORKER.md'` – enrichment worker spec
-- `file 'N5/orchestration/crm-v3-unified/gmail_enrichment_module.py'` – Gmail enrichment implementation
-- `file 'N5/orchestration/crm-v3-unified/gmail_integration.py'` and `file 'N5/orchestration/crm-v3-unified/gmail_search_cli.py'` – Gmail integrations and CLI
+- `file 'N5/builds/crm-v3-unified/ORCHESTRATOR_PLAN.md'` – high-level orchestration design
+- `file 'N5/builds/crm-v3-unified/ORCHESTRATOR_MONITOR.md'` – status tracker and validation commands
+- `file 'N5/builds/crm-v3-unified/crm-v3-design.md'` – architecture reference
+- `file 'N5/builds/crm-v3-unified/WORKER_1_DATABASE_SCHEMA.md'` – DB schema plan
+- `file 'N5/builds/crm-v3-unified/WORKER_2_MIGRATION_SCRIPTS.md'` – migration scripts brief
+- `file 'N5/builds/crm-v3-unified/WORKER_3_ENRICHMENT_WORKER.md'` – enrichment worker spec
+- `file 'N5/builds/crm-v3-unified/gmail_enrichment_module.py'` – Gmail enrichment implementation
+- `file 'N5/builds/crm-v3-unified/gmail_integration.py'` and `file 'N5/builds/crm-v3-unified/gmail_search_cli.py'` – Gmail integrations and CLI
 
 ## Workflow
 

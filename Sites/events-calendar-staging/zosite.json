@@ -1,0 +1,6 @@
+{
+  "name": "events-calendar",
+  "entry": "server.ts",
+  "port": 3047
+}
+

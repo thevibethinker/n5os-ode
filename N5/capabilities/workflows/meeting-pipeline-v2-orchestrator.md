@@ -48,7 +48,7 @@ End-to-end orchestrator for the **Meeting Pipeline v2** system. Coordinates a fa
 ## How to Use It
 
 - Use `file 'N5/capabilities/internal/meeting-pipeline-v2.md'` for the underlying data model and lifecycle; use **this** capability when reasoning about **automation and orchestration**.
-- To review architecture and build plan, open `file 'N5/orchestration/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md'`.
+- To review architecture and build plan, open `file 'N5/builds/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md'`.
 - Control MG-series agents via the **Agents UI** or `list_scheduled_tasks`:
   - MG-1 – Manifest generation for raw `[Inbox]` meetings.
   - MG-2 – Intelligence block generation (`B01`+ core blocks).
@@ -62,7 +62,7 @@ End-to-end orchestrator for the **Meeting Pipeline v2** system. Coordinates a fa
 ## Associated Files & Assets
 
 - `file 'N5/capabilities/internal/meeting-pipeline-v2.md'` – internal system definition
-- `file 'N5/orchestration/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md'` – final architecture + worker plan
+- `file 'N5/builds/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md'` – final architecture + worker plan
 - `file 'Prompts/Meeting Manifest Generation.prompt.md'` – MG-1 manifest generator
 - `file 'Prompts/Meeting Intelligence Generator.prompt.md'` – MG-2 intelligence blocks
 - `file 'Prompts/Meeting State Transition.prompt.md'` – MG-6 `[M] → [P]` transition

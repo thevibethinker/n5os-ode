@@ -342,33 +342,16 @@
       "feedback_enabled": true
     },
     "B27": {
-      "name": "KEY_MESSAGING",
-      "purpose": "Strategic messaging & talking points (SPLIT from old B14)",
-      "when": "Strategic meetings (founder/investor/partnership) - generate proactively",
-      "priority": "HIGH",
+      "name": "WELLNESS_INDICATORS",
+      "purpose": "Biometric and cognitive wellness metrics extracted from transcript analysis",
+      "when": "Every meeting (required)",
+      "priority": "REQUIRED",
       "guidance": [
-        "This block contains PROACTIVE strategic messaging generation - split from old B14 which had two purposes",
-        "",
-        "ALWAYS generate 5-10 strategic messaging blurbs after founder/investor/partnership meetings",
-        "These are reusable narratives that Vrijen can deploy in various contexts",
-        "",
-        "TYPES TO GENERATE:",
-        "- Value prop (30-sec elevator pitch)",
-        "- Technical credibility blurb",
-        "- Mission alignment narrative",
-        "- Specific fit for their situation",
-        "- Differentiation points (vs competitors or status quo)",
-        "- Stats/traction snapshot",
-        "",
-        "TAILOR EACH TO WHAT RESONATED:",
-        "- Reference specific discussion points from THIS meeting to make it contextual",
-        "- Label each with usage context: 'For follow-up emails', 'When asked about our approach', 'For objection handling'",
-        "",
-        "INCLUDE 'WHAT RESONATED' ANALYSIS:",
-        "- Brief section interpreting what the messaging tells us about Careerspan's positioning",
-        "- What this stakeholder's priorities reveal about the market/opportunity",
-        "",
-        "This is ALWAYS generated for strategic meetings, even if no explicit blurb was requested"
+        "Extract biometric and cognitive performance indicators for Vrijen.",
+        "Include: Speech Density (WPM), Talk Ratio (%), and Energy Rating (1-10).",
+        "Note stress language or explicit mentions of physical state.",
+        "Provide a 'Wellness Score' (1-10) and classification (e.g. HIGH FLOW).",
+        "Add a 'Correlation Insight' linking verbal energy to likely biometric arousal."
       ],
       "feedback_enabled": true
     },
@@ -512,7 +495,8 @@
         "B25",
         "B07",
         "B05",
-        "B32"
+        "B32",
+        "B27"
       ]
     },
     "CUSTOMER": {
@@ -537,9 +521,9 @@
         "B26",
         "B01",
         "B02",
-        "B05"
+        "B05",
+        "B27"
       ]
     }
   }
 }
-

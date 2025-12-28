@@ -209,7 +209,7 @@ Into single unified database with:
 - `file 'Personal/Knowledge/ContentLibrary/README.md'` — Primary documentation
 - `file 'Documents/System/guides/content-library-system.md'` — System guide
 - `file 'Documents/System/guides/content-library-quickstart.md'` — Quickstart
-- `file 'N5/orchestration/content-library-v3/'` — Build orchestration docs
+- `file 'N5/builds/content-library-v3/'` — Build orchestration docs
 - `file 'Personal/schemas/content-library-v3.schema.json'` — JSON schema
 
 ---

@@ -50,7 +50,7 @@ HIGH Priority:
 - Recipes/recipes.jsonl (command registry)
 
 MEDIUM Priority:
-- N5/orchestration/*.md (workflow changes)
+- N5/builds/*.md (workflow changes)
 - Documents/System/**/*.md (system docs)
 - Recipes/*.md (recipe changes)
 - Knowledge/**/*.md (knowledge updates)

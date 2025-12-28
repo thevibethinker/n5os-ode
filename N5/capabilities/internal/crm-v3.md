@@ -87,7 +87,7 @@ In production, this worker is intended to run on a **6‑hour cadence** via a Zo
 ### Implementation & orchestration
 
 - `file 'N5/crm_v3/README.md'` – Primary system guide and operational documentation.
-- `file 'N5/orchestration/crm-v3-unified/ORCHESTRATOR_MONITOR.md'` – Multi-worker build and validation log.
+- `file 'N5/builds/crm-v3-unified/ORCHESTRATOR_MONITOR.md'` – Multi-worker build and validation log.
 - `file 'N5/scripts/crm_cli.py'` – CLI entry point for all core operations.
 - `file 'N5/crm_v3/enrichment/enrichment_worker.py'` – Tool-first enrichment worker.
 - `file 'N5/crm_v3/enrichment/gmail_analyzer.py'` – Gmail thread analysis (stubbed for Zo tools).

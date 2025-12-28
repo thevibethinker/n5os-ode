@@ -12,10 +12,10 @@ export default function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/hello-zo-example" element={<Dash />} />
+          <Route path="/" element={<Dash />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
   );
 }
+

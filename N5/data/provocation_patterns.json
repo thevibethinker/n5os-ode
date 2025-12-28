@@ -1,0 +1,999 @@
+{
+  "analysis_date": "2025-12-26T23:12:32.555820+00:00",
+  "source_file": "/home/workspace/N5/data/provocation_candidates_all.json",
+  "meetings_analyzed": 41,
+  "total_ideas": 161,
+  "patterns": {
+    "recurring_themes": [
+      {
+        "theme": "AI/Automation",
+        "idea_count": 66,
+        "meeting_count": 29,
+        "meetings": [
+          "2025-09-04_Jason-cheung-Vibe-coding-networking",
+          "2025-09-11_Sam-bourton-Networking",
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-10-14_Logan-vrijen-Internal-strategy",
+          "2025-11-03_Nafisa-Poonawala-And-Vrijen-Attawar",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-04_Zo-team-Demo-event-prep-Internal",
+          "2025-11-11_Edmund-Cuthbert-30-Min-Call",
+          "2025-11-11_Mckinsey-alumni-founders-Monthly",
+          "2025-11-12_Daily-team-stand-up",
+          "2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+          "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+          "2025-12-02_Logantheapply-Ilsetheapply",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Alanmymelico",
+          "2025-12-04_Logantheapply-Ilsetheapply",
+          "2025-12-08_Ilyamycareerspan-Loganmycareerspan",
+          "2025-12-09_Davisteamworkonlinecom",
+          "2025-12-09_Logan",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-09_ilyamycareerspancom_[P]",
+          "2025-12-10_coffeespace",
+          "2025-12-11_Cdavismake-connexionscom",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-19_2025-12-19-Ilsetheapplyai",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync",
+          "2025-12-23_2025-12-23-Melhrubingmailcom"
+        ],
+        "earliest": "2025-09-04",
+        "latest": "2025-12-23",
+        "sample_ideas": [
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Bridging the Technical/Non-Technical Gap",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Reverse Hiring as the New Standard",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Enterprise-Level Vibe Coding",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "The Gen Z Agent Affinity",
+            "meeting": "2025-09-11_Sam-bourton-Networking",
+            "date": "2025-09-11"
+          }
+        ]
+      },
+      {
+        "theme": "Hiring/Recruiting",
+        "idea_count": 65,
+        "meeting_count": 29,
+        "meetings": [
+          "2025-08-28_David-speigel-Advisory",
+          "2025-09-04_Jason-cheung-Vibe-coding-networking",
+          "2025-09-11_Sam-bourton-Networking",
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-10-14_Logan-vrijen-Internal-strategy",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-07_Ilse-midday-chat-Internal",
+          "2025-11-11_Edmund-Cuthbert-30-Min-Call",
+          "2025-11-12_Daily-team-stand-up",
+          "2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+          "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+          "2025-12-02_Logantheapply-Ilsetheapply",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Alanmymelico",
+          "2025-12-04_Logantheapply-Ilsetheapply",
+          "2025-12-08_Bradorange-quartercom",
+          "2025-12-08_Ilyamycareerspan-Loganmycareerspan",
+          "2025-12-08_Linkedin-Powwow",
+          "2025-12-09_Davisteamworkonlinecom",
+          "2025-12-09_Logan",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-10_coffeespace",
+          "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync",
+          "2025-12-23_2025-12-23-Melhrubingmailcom",
+          "2025-12-23_melhrubingmailcom"
+        ],
+        "earliest": "2025-08-28",
+        "latest": "2025-12-23",
+        "sample_ideas": [
+          {
+            "title": "The \"Lewis\" Pattern",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Power of Comments",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Reverse Hiring as the New Standard",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "The Gen Z Agent Affinity",
+            "meeting": "2025-09-11_Sam-bourton-Networking",
+            "date": "2025-09-11"
+          }
+        ]
+      },
+      {
+        "theme": "Career/Work",
+        "idea_count": 54,
+        "meeting_count": 27,
+        "meetings": [
+          "2025-08-28_David-speigel-Advisory",
+          "2025-09-04_Jason-cheung-Vibe-coding-networking",
+          "2025-09-11_Sam-bourton-Networking",
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-10-14_Logan-vrijen-Internal-strategy",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-04_Zo-team-Demo-event-prep-Internal",
+          "2025-11-07_Ilse-midday-chat-Internal",
+          "2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+          "2025-11-15_Vrijen-Attawar-Rory-Brown",
+          "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+          "2025-12-02_Logantheapply-Ilsetheapply",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Alanmymelico",
+          "2025-12-04_Logantheapply-Ilsetheapply",
+          "2025-12-08_Bradorange-quartercom",
+          "2025-12-08_Linkedin-Powwow",
+          "2025-12-09_Davisteamworkonlinecom",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-10_coffeespace",
+          "2025-12-11_Cdavismake-connexionscom",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync",
+          "2025-12-23_2025-12-23-Melhrubingmailcom",
+          "2025-12-23_melhrubingmailcom"
+        ],
+        "earliest": "2025-08-28",
+        "latest": "2025-12-23",
+        "sample_ideas": [
+          {
+            "title": "The \"Lewis\" Pattern",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Power of Comments",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "\"Non-Money Losing Hobbies\"",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "The Translation Problem",
+            "meeting": "2025-09-11_Sam-bourton-Networking",
+            "date": "2025-09-11"
+          }
+        ]
+      },
+      {
+        "theme": "Product/Market",
+        "idea_count": 38,
+        "meeting_count": 26,
+        "meetings": [
+          "2025-08-28_David-speigel-Advisory",
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-04_Zo-team-Demo-event-prep-Internal",
+          "2025-11-07_Ilse-midday-chat-Internal",
+          "2025-11-11_Edmund-Cuthbert-30-Min-Call",
+          "2025-11-11_Mckinsey-alumni-founders-Monthly",
+          "2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+          "2025-11-15_Vrijen-Attawar-Rory-Brown",
+          "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+          "2025-12-02_Logantheapply-Ilsetheapply",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Alanmymelico",
+          "2025-12-04_Logantheapply-Ilsetheapply",
+          "2025-12-08_Ilyamycareerspan-Loganmycareerspan",
+          "2025-12-08_Linkedin-Powwow",
+          "2025-12-09_Logan",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-09_ilyamycareerspancom_[P]",
+          "2025-12-10_coffeespace",
+          "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+          "2025-12-11_Cdavismake-connexionscom",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-19_2025-12-19-Ilsetheapplyai",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+        ],
+        "earliest": "2025-08-28",
+        "latest": "2025-12-22",
+        "sample_ideas": [
+          {
+            "title": "PE vs. Product-Market Fit",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Product vs. Hardware Friction",
+            "meeting": "2025-09-17_Careerspan-team-Daily-standup-Internal",
+            "date": "2025-09-17"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "meeting": "2025-09-22_Ayush-jain-Internal",
+            "date": "2025-09-22"
+          },
+          {
+            "title": "Gamified Motivation",
+            "meeting": "2025-11-04_Zo-team-Demo-event-prep-Internal",
+            "date": "2025-11-04"
+          },
+          {
+            "title": "UX Gap in Institutional Sales",
+            "meeting": "2025-11-04_Anthony-deluise-Product-career",
+            "date": "2025-11-04"
+          }
+        ]
+      },
+      {
+        "theme": "Founder Journey",
+        "idea_count": 32,
+        "meeting_count": 24,
+        "meetings": [
+          "2025-08-28_David-speigel-Advisory",
+          "2025-09-04_Jason-cheung-Vibe-coding-networking",
+          "2025-09-11_Sam-bourton-Networking",
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-11-12_Daily-team-stand-up",
+          "2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+          "2025-12-01_Ankitmittalzen-Shrutisinghzen",
+          "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+          "2025-12-02_Logantheapply-Ilsetheapply",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Alanmymelico",
+          "2025-12-08_Ilyamycareerspan-Loganmycareerspan",
+          "2025-12-08_Linkedin-Powwow",
+          "2025-12-09_Logan",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-09_ilyamycareerspancom_[P]",
+          "2025-12-10_coffeespace",
+          "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+          "2025-12-11_Cdavismake-connexionscom",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-19_2025-12-19-Ilsetheapplyai",
+          "2025-12-23_2025-12-23-Melhrubingmailcom"
+        ],
+        "earliest": "2025-08-28",
+        "latest": "2025-12-23",
+        "sample_ideas": [
+          {
+            "title": "\"Non-Money Losing Hobbies\"",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Bridging the Technical/Non-Technical Gap",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Flow in Firms",
+            "meeting": "2025-09-11_Sam-bourton-Networking",
+            "date": "2025-09-11"
+          },
+          {
+            "title": "The \"Silent Scan\" Framing",
+            "meeting": "2025-09-17_Careerspan-team-Daily-standup-Internal",
+            "date": "2025-09-17"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "meeting": "2025-09-22_Ayush-jain-Internal",
+            "date": "2025-09-22"
+          }
+        ]
+      },
+      {
+        "theme": "Human Element",
+        "idea_count": 29,
+        "meeting_count": 22,
+        "meetings": [
+          "2025-08-28_David-speigel-Advisory",
+          "2025-09-04_Jason-cheung-Vibe-coding-networking",
+          "2025-09-11_Sam-bourton-Networking",
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-11-03_Nafisa-Poonawala-And-Vrijen-Attawar",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-11_Mckinsey-alumni-founders-Monthly",
+          "2025-11-12_Daily-team-stand-up",
+          "2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+          "2025-12-02_Logantheapply-Ilsetheapply",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Logantheapply-Ilsetheapply",
+          "2025-12-05_Logan",
+          "2025-12-08_Bradorange-quartercom",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-09_ilyamycareerspancom_[P]",
+          "2025-12-10_coffeespace",
+          "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+          "2025-12-11_Cdavismake-connexionscom",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+        ],
+        "earliest": "2025-08-28",
+        "latest": "2025-12-22",
+        "sample_ideas": [
+          {
+            "title": "The \"Lewis\" Pattern",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Power of Comments",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Hiring Amateurs for the Olympics",
+            "meeting": "2025-09-11_Sam-bourton-Networking",
+            "date": "2025-09-11"
+          },
+          {
+            "title": "\"Genuine Play\" Networking",
+            "meeting": "2025-09-17_Careerspan-team-Daily-standup-Internal",
+            "date": "2025-09-17"
+          }
+        ]
+      },
+      {
+        "theme": "Systems/Process",
+        "idea_count": 27,
+        "meeting_count": 18,
+        "meetings": [
+          "2025-09-04_Jason-cheung-Vibe-coding-networking",
+          "2025-09-11_Sam-bourton-Networking",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-11-03_Nafisa-Poonawala-And-Vrijen-Attawar",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-04_Zo-team-Demo-event-prep-Internal",
+          "2025-11-07_Ilse-midday-chat-Internal",
+          "2025-11-11_Mckinsey-alumni-founders-Monthly",
+          "2025-11-12_Daily-team-stand-up",
+          "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+          "2025-12-03_alexcavenygmailcomloganmycareerspancom_alexcavenygmailcom_loganmycareerspancom_[P]",
+          "2025-12-04_Logantheapply-Ilsetheapply",
+          "2025-12-08_Linkedin-Powwow",
+          "2025-12-09_Davisteamworkonlinecom",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-19_2025-12-19-Ilsetheapplyai",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+        ],
+        "earliest": "2025-09-04",
+        "latest": "2025-12-22",
+        "sample_ideas": [
+          {
+            "title": "Bridging the Technical/Non-Technical Gap",
+            "meeting": "2025-09-04_Jason-cheung-Vibe-coding-networking",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Hiring Amateurs for the Olympics",
+            "meeting": "2025-09-11_Sam-bourton-Networking",
+            "date": "2025-09-11"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "meeting": "2025-09-22_Ayush-jain-Internal",
+            "date": "2025-09-22"
+          },
+          {
+            "title": "Provocation",
+            "meeting": "2025-11-03_Nafisa-Poonawala-And-Vrijen-Attawar",
+            "date": "2025-11-03"
+          },
+          {
+            "title": "Provocation",
+            "meeting": "2025-11-03_Nafisa-Poonawala-And-Vrijen-Attawar",
+            "date": "2025-11-03"
+          }
+        ]
+      },
+      {
+        "theme": "Time/Priorities",
+        "idea_count": 16,
+        "meeting_count": 12,
+        "meetings": [
+          "2025-09-17_Careerspan-team-Daily-standup-Internal",
+          "2025-09-22_Ayush-jain-Internal",
+          "2025-11-04_Anthony-deluise-Product-career",
+          "2025-11-04_Zo-team-Demo-event-prep-Internal",
+          "2025-11-07_Ilse-midday-chat-Internal",
+          "2025-11-15_Vrijen-Attawar-Rory-Brown",
+          "2025-12-08_Ilyamycareerspan-Loganmycareerspan",
+          "2025-12-08_Linkedin-Powwow",
+          "2025-12-09_Logan",
+          "2025-12-09_ilyamycareerspancom_[P]",
+          "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+          "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+        ],
+        "earliest": "2025-09-17",
+        "latest": "2025-12-22",
+        "sample_ideas": [
+          {
+            "title": "Product vs. Hardware Friction",
+            "meeting": "2025-09-17_Careerspan-team-Daily-standup-Internal",
+            "date": "2025-09-17"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "meeting": "2025-09-22_Ayush-jain-Internal",
+            "date": "2025-09-22"
+          },
+          {
+            "title": "The \"Magic Moment\" for Non-Techies",
+            "meeting": "2025-11-04_Zo-team-Demo-event-prep-Internal",
+            "date": "2025-11-04"
+          },
+          {
+            "title": "Gamified Motivation",
+            "meeting": "2025-11-04_Zo-team-Demo-event-prep-Internal",
+            "date": "2025-11-04"
+          },
+          {
+            "title": "Inventory vs. Resume",
+            "meeting": "2025-11-04_Anthony-deluise-Product-career",
+            "date": "2025-11-04"
+          }
+        ]
+      },
+      {
+        "theme": "Strategy",
+        "idea_count": 8,
+        "meeting_count": 6,
+        "meetings": [
+          "2025-10-14_Logan-vrijen-Internal-strategy",
+          "2025-11-11_Mckinsey-alumni-founders-Monthly",
+          "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+          "2025-12-11_Cdavismake-connexionscom",
+          "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+          "2025-12-23_2025-12-23-Melhrubingmailcom"
+        ],
+        "earliest": "2025-10-14",
+        "latest": "2025-12-23",
+        "sample_ideas": [
+          {
+            "title": "\"Elitism as a Brand Strategy\"",
+            "meeting": "2025-10-14_Logan-vrijen-Internal-strategy",
+            "date": "2025-10-14"
+          },
+          {
+            "title": "\"Manual to Magic\"",
+            "meeting": "2025-10-14_Logan-vrijen-Internal-strategy",
+            "date": "2025-10-14"
+          },
+          {
+            "title": "Acquire to Automate",
+            "meeting": "2025-11-11_Mckinsey-alumni-founders-Monthly",
+            "date": "2025-11-11"
+          },
+          {
+            "title": "AI Expert Partner vs. Vendor",
+            "meeting": "2025-11-11_Mckinsey-alumni-founders-Monthly",
+            "date": "2025-11-11"
+          },
+          {
+            "title": "Philanthropy as a Reputation Multiplier",
+            "meeting": "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+            "date": "2025-12-09"
+          }
+        ]
+      },
+      {
+        "theme": "Content/Thought Leadership",
+        "idea_count": 6,
+        "meeting_count": 5,
+        "meetings": [
+          "2025-08-28_David-speigel-Advisory",
+          "2025-10-14_Logan-vrijen-Internal-strategy",
+          "2025-11-04_Zo-team-Demo-event-prep-Internal",
+          "2025-11-12_Daily-team-stand-up",
+          "2025-11-15_Vrijen-Attawar-Rory-Brown"
+        ],
+        "earliest": "2025-08-28",
+        "latest": "2025-11-15",
+        "sample_ideas": [
+          {
+            "title": "Power of Comments",
+            "meeting": "2025-08-28_David-speigel-Advisory",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "\"Elitism as a Brand Strategy\"",
+            "meeting": "2025-10-14_Logan-vrijen-Internal-strategy",
+            "date": "2025-10-14"
+          },
+          {
+            "title": "Information Overload vs. Personalization",
+            "meeting": "2025-11-04_Zo-team-Demo-event-prep-Internal",
+            "date": "2025-11-04"
+          },
+          {
+            "title": "Quantifying the \"Black Art\"",
+            "meeting": "2025-11-12_Daily-team-stand-up",
+            "date": "2025-11-12"
+          },
+          {
+            "title": "Transparency in the Loop",
+            "meeting": "2025-11-12_Daily-team-stand-up",
+            "date": "2025-11-12"
+          }
+        ]
+      }
+    ],
+    "potential_contradictions": [
+      {
+        "title": "Career as a \"Diet\"",
+        "idea": "V's analogy of hiring/job seeking as a diet consisting of a mix of standard opportunities and \"outsized bets\" (the 40-yard screamer).",
+        "provocation": "",
+        "meeting_name": "2025-12-23_melhrubingmailcom",
+        "meeting_date": "2025-12-23",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "Artificial Gap Closing",
+        "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative engineering.",
+        "provocation": "",
+        "meeting_name": "2025-12-23_2025-12-23-Melhrubingmailcom",
+        "meeting_date": "2025-12-23",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "Vibe Coding as a Career Lever",
+        "idea": "Positioning vibe coding not as a technical skill, but as a \"badass\" industry identity bridge for talented generalists.",
+        "provocation": "",
+        "meeting_name": "2025-12-23_2025-12-23-Melhrubingmailcom",
+        "meeting_date": "2025-12-23",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "The Spark",
+        "idea": "Vrijen argues that the \"big idea\" isn't using AI, but simply the act of listening and asking the questions that humans \"don't have the time to ask each other.\"",
+        "provocation": "",
+        "meeting_name": "2025-12-22_Christine-Song-Ribbon-Partnership-Sync",
+        "meeting_date": "2025-12-22",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "\"Agentic Order vs. Agentic Capability\"",
+        "idea": "Vrijen's observation that Zo's true advantage is the \"degree of order\" it creates for non-technical users, rather than just raw agentic capability.",
+        "provocation": "",
+        "meeting_name": "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+        "meeting_date": "2025-12-17",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "Meritocracy vs. Pedigree",
+        "idea": "The Montana engineer story suggests that \"stories\" bypass traditional filter biases. Can Careerspan quantify \"Story ROI\" for employers?",
+        "provocation": "",
+        "meeting_name": "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+        "meeting_date": "2025-12-16",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "AI as a Distribution Channel",
+        "idea": "V is demonstrating products on behalf of others (Zo). Is there a \"V-as-a-Channel\" strategy for Careerspan's ecosystem?",
+        "provocation": "",
+        "meeting_name": "2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+        "meeting_date": "2025-12-16",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "The Data Moat",
+        "idea": "V’s assertion that the only \"resilient advantage\" in a crowded market is proprietary data access through \"painful\" user motions like self-reflection.",
+        "provocation": "",
+        "meeting_name": "2025-12-11_Cdavismake-connexionscom",
+        "meeting_date": "2025-12-11",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "\"Unsexy\" Scaling",
+        "idea": "The idea that a $1M revenue stream in a tech startup is currently bottlenecked by a human making phone calls—and that the solution isn't \"better code\" but \"better low-cost humans\"—is a grounded reminder of early-stage operational reality.",
+        "provocation": "",
+        "meeting_name": "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+        "meeting_date": "2025-12-11",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "The \"Director Bias\" in Hiring",
+        "idea": "Startups often hire for the stage they *want* to be at (VP of Sales) rather than the stage they *are* at (Scrappy Salesperson). How can founders identify when a recommendation (like Ilsa's) is based on a \"prestige\" model vs. an \"utility\" model?",
+        "provocation": "",
+        "meeting_name": "2025-12-09_Logan",
+        "meeting_date": "2025-12-09",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "Pricing vs. Acquisition",
+        "idea": "At what point does detailed marginal cost analysis become a distraction from the core problem of user activation? Ilya's \"overkill\" pricing model suggests a mismatch between administrative rigor and market product-market fit.",
+        "provocation": "",
+        "meeting_name": "2025-12-09_Logan",
+        "meeting_date": "2025-12-09",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "Selling \"The Look\" vs. \"The Business\"",
+        "idea": "V's assertion that \"we're not trying to make this a viable business, we're trying to get it sold\" shifts the entire rubric of value. If the product isn't the value, but the *potential* or *image* is, how does that change daily task prioritization?",
+        "provocation": "",
+        "meeting_name": "2025-12-09_Logan",
+        "meeting_date": "2025-12-09",
+        "tension_markers": [
+          "vs",
+          "but"
+        ]
+      },
+      {
+        "title": "The \"Man Cave\" Logic in Engineering",
+        "idea": "Logan's observation about engineers hoarding \"wires and components\" across countries as a parallel to \"squirreling\" into deep projects. Is there a fundamental conflict between the \"builder\" mindset (hoarding/depth) and the \"operator\" mindset (lean/sales)?",
+        "provocation": "",
+        "meeting_name": "2025-12-09_Logan",
+        "meeting_date": "2025-12-09",
+        "tension_markers": [
+          "conflict"
+        ]
+      },
+      {
+        "title": "Dual-Use Tech: Revenue vs. Acquisition",
+        "idea": "The US Army \"Fuse\" program uses the word \"acquisition\" to mean \"hiring/procurement.\"",
+        "provocation": "Founders often ignore government contracts because they fear the bureaucracy or the \"military-industrial\" stigma. But if the US government is \"hiring\" your technology like a customer, is it the most stable, recession-proof ARR in the market today?",
+        "meeting_name": "2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+        "meeting_date": "2025-12-09",
+        "tension_markers": [
+          "vs",
+          "but"
+        ]
+      },
+      {
+        "title": "AI as a \"First Draft\" Skill",
+        "idea": "V's advice to use AI not as a crutch, but as a \"speed-to-draft\" tool to liberate human energy for high-impact synthesis, is a useful mental model for non-technical entrepreneurs.",
+        "provocation": "",
+        "meeting_name": "2025-12-09_ilyamycareerspancom_[P]",
+        "meeting_date": "2025-12-09",
+        "tension_markers": [
+          "vs",
+          "but"
+        ]
+      },
+      {
+        "title": "Semantic Screening vs. Arbitrary Ranking",
+        "idea": "The move away from \"Harvard = Yes\" toward \"Actionable semantic evidence\" as a hiring philosophy.",
+        "provocation": "",
+        "meeting_name": "2025-12-08_Bradorange-quartercom",
+        "meeting_date": "2025-12-08",
+        "tension_markers": [
+          "vs"
+        ]
+      },
+      {
+        "title": "The \"Proof of Humanity\" Hurdle",
+        "idea": "Using a tool like Careerspan not just for data, but as a barrier to filter out bots and low-intent applicants who won't spend 15 minutes talking.",
+        "provocation": "",
+        "meeting_name": "2025-12-08_Bradorange-quartercom",
+        "meeting_date": "2025-12-08",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "Internal vs. External Recruitment Needs",
+        "idea": "The tension between high-volume efficiency (Careerspan's current strength) and low-volume, high-touch headhunting (the recruiter's current mode). How does the \"laddering up\" feature eventually serve the latter?",
+        "provocation": "",
+        "meeting_name": "2025-12-08_Bradorange-quartercom",
+        "meeting_date": "2025-12-08",
+        "tension_markers": [
+          "vs",
+          "tension"
+        ]
+      },
+      {
+        "title": "Recruitment Anonymity as a Feature",
+        "idea": "Founders often get stuck in bad exclusive contracts. Careerspan's ability to post \"anonymously\" but with high signal could be a killer feature for founders trying to bypass legacy recruiters.",
+        "provocation": "",
+        "meeting_name": "2025-12-04_Alanmymelico",
+        "meeting_date": "2025-12-04",
+        "tension_markers": [
+          "but"
+        ]
+      },
+      {
+        "title": "Catnip Pricing",
+        "idea": "Framing pricing not as a cost, but as a trade-off where the customer gets the specific metric they value most (the \"catnip\") while the system protects its margins on other variables.",
+        "provocation": "",
+        "meeting_name": "2025-12-04_Logantheapply-Ilsetheapply",
+        "meeting_date": "2025-12-04",
+        "tension_markers": [
+          "but",
+          "tradeoff"
+        ]
+      }
+    ],
+    "theme_evolutions": [
+      {
+        "theme": "Hiring/Recruiting",
+        "span_days": 117,
+        "earliest_date": "2025-08-28",
+        "latest_date": "2025-12-23",
+        "idea_count": 65,
+        "sample_evolution": [
+          {
+            "title": "The \"Lewis\" Pattern",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Power of Comments",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "date": "2025-09-04"
+          }
+        ]
+      },
+      {
+        "theme": "Career/Work",
+        "span_days": 117,
+        "earliest_date": "2025-08-28",
+        "latest_date": "2025-12-23",
+        "idea_count": 54,
+        "sample_evolution": [
+          {
+            "title": "The \"Lewis\" Pattern",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Power of Comments",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "\"Non-Money Losing Hobbies\"",
+            "date": "2025-08-28"
+          }
+        ]
+      },
+      {
+        "theme": "Founder Journey",
+        "span_days": 117,
+        "earliest_date": "2025-08-28",
+        "latest_date": "2025-12-23",
+        "idea_count": 32,
+        "sample_evolution": [
+          {
+            "title": "\"Non-Money Losing Hobbies\"",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Bridging the Technical/Non-Technical Gap",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Flow in Firms",
+            "date": "2025-09-11"
+          }
+        ]
+      },
+      {
+        "theme": "Product/Market",
+        "span_days": 116,
+        "earliest_date": "2025-08-28",
+        "latest_date": "2025-12-22",
+        "idea_count": 38,
+        "sample_evolution": [
+          {
+            "title": "PE vs. Product-Market Fit",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Product vs. Hardware Friction",
+            "date": "2025-09-17"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "date": "2025-09-22"
+          }
+        ]
+      },
+      {
+        "theme": "Human Element",
+        "span_days": 116,
+        "earliest_date": "2025-08-28",
+        "latest_date": "2025-12-22",
+        "idea_count": 29,
+        "sample_evolution": [
+          {
+            "title": "The \"Lewis\" Pattern",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "Power of Comments",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "date": "2025-09-04"
+          }
+        ]
+      },
+      {
+        "theme": "AI/Automation",
+        "span_days": 110,
+        "earliest_date": "2025-09-04",
+        "latest_date": "2025-12-23",
+        "idea_count": 66,
+        "sample_evolution": [
+          {
+            "title": "The \"Superhuman\" Vibe Coder",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Bridging the Technical/Non-Technical Gap",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Reverse Hiring as the New Standard",
+            "date": "2025-09-04"
+          }
+        ]
+      },
+      {
+        "theme": "Systems/Process",
+        "span_days": 109,
+        "earliest_date": "2025-09-04",
+        "latest_date": "2025-12-22",
+        "idea_count": 27,
+        "sample_evolution": [
+          {
+            "title": "Bridging the Technical/Non-Technical Gap",
+            "date": "2025-09-04"
+          },
+          {
+            "title": "Hiring Amateurs for the Olympics",
+            "date": "2025-09-11"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "date": "2025-09-22"
+          }
+        ]
+      },
+      {
+        "theme": "Time/Priorities",
+        "span_days": 96,
+        "earliest_date": "2025-09-17",
+        "latest_date": "2025-12-22",
+        "idea_count": 16,
+        "sample_evolution": [
+          {
+            "title": "Product vs. Hardware Friction",
+            "date": "2025-09-17"
+          },
+          {
+            "title": "Founder Fatigue vs. Automation",
+            "date": "2025-09-22"
+          },
+          {
+            "title": "The \"Magic Moment\" for Non-Techies",
+            "date": "2025-11-04"
+          }
+        ]
+      },
+      {
+        "theme": "Content/Thought Leadership",
+        "span_days": 79,
+        "earliest_date": "2025-08-28",
+        "latest_date": "2025-11-15",
+        "idea_count": 6,
+        "sample_evolution": [
+          {
+            "title": "Power of Comments",
+            "date": "2025-08-28"
+          },
+          {
+            "title": "\"Elitism as a Brand Strategy\"",
+            "date": "2025-10-14"
+          },
+          {
+            "title": "Information Overload vs. Personalization",
+            "date": "2025-11-04"
+          }
+        ]
+      },
+      {
+        "theme": "Strategy",
+        "span_days": 70,
+        "earliest_date": "2025-10-14",
+        "latest_date": "2025-12-23",
+        "idea_count": 8,
+        "sample_evolution": [
+          {
+            "title": "\"Elitism as a Brand Strategy\"",
+            "date": "2025-10-14"
+          },
+          {
+            "title": "\"Manual to Magic\"",
+            "date": "2025-10-14"
+          },
+          {
+            "title": "Acquire to Automate",
+            "date": "2025-11-11"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "recurring_theme_count": 10,
+    "contradiction_count": 46,
+    "evolution_count": 10,
+    "top_themes": [
+      "AI/Automation",
+      "Hiring/Recruiting",
+      "Career/Work",
+      "Product/Market",
+      "Founder Journey"
+    ]
+  }
+}

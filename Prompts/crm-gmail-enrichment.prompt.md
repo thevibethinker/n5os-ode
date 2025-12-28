@@ -29,7 +29,7 @@ Call `use_app_gmail` with tool `gmail-find-email`:
 - **IMPORTANT**: Include `email: attawar.v@gmail.com` parameter to specify which Gmail account (V's primary)
 
 ### Step 3: Format Results
-Load and use `file 'N5/orchestration/crm-v3-unified/gmail_enrichment_module.py'` to format results:
+Load and use `file 'N5/builds/crm-v3-unified/gmail_enrichment_module.py'` to format results:
 ```python
 from gmail_enrichment_module import format_gmail_intelligence
 intelligence_block = format_gmail_intelligence(gmail_results, target_email)

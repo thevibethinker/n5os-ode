@@ -101,8 +101,8 @@ python3 N5/scripts/meeting_pipeline/mark_meeting_c_state.py 2025-11-20_laurensal
 
 - `file 'N5/scripts/meeting_pipeline/README.md'` – Canonical architecture description and operational notes.
 - `file 'N5/scripts/meeting_pipeline/ARCHIVE_AUTOMATION.md'` – Details for MG-7C archive behavior.
-- `file 'N5/orchestration/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md'` – Original build plan.
-- `file 'N5/orchestration/meeting-pipeline-v2-BUILD/FINAL_STATUS.md'` – Final architecture & edge cases.
+- `file 'N5/builds/meeting-pipeline-v2-BUILD/BUILD_PLAN_FINAL.md'` – Original build plan.
+- `file 'N5/builds/meeting-pipeline-v2-BUILD/FINAL_STATUS.md'` – Final architecture & edge cases.
 - `file 'N5/prompts/blocks'` – B-block prompt library referenced by block selector and generators.
 
 ### Entry/exit folders

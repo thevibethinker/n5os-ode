@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-12-27",
+  
+  "allowlists": {
+    "events": {
+      "trigger": "n5:events",
+      "description": "NYC event sources - Luma, Partiful, Supermomos, Eventbrite, Meetup",
+      "senders": [
+        "hi@theagentic.ai",
+        "newsletter@marvin.vc",
+        "events@nextplay.so",
+        "supermomos@mail.beehiiv.com",
+        "info@email.meetup.com",
+        "calendar-invite@lu.ma",
+        "hello@partiful.com",
+        "noreply@eventbrite.com",
+        
+        "victoria@thestartupstation.com",
+        "vyampol@gmail.com",
+        
+        "andrewyeung@beehiiv.com",
+        "andrewyeung@substack.com",
+        "usr-AndrewYeung@user.luma-mail.com",
+        
+        "dylanoriundo@mail.beehiiv.com",
+        "usr-DylanOriundo@user.luma-mail.com",
+        
+        "ericakh@gmail.com",
+        "usr-EricaHanson@user.luma-mail.com",
+        
+        "anna@kleido.com",
+        "team@fohe.org",
+        
+        "boundlesscreative@calendar.luma-mail.com",
+        "eitan@boundlessnyc.com",
+        "amanda@boundlessnyc.com",
+        
+        "events@usv.com",
+        
+        "founderscirclenyc@calendar.luma-mail.com",
+        
+        "lafamilia@beehiiv.com",
+        
+        "ben@0thernet.com",
+        "benguo@substack.com"
+      ],
+      "domains": [
+        "beehiiv.com",
+        "substack.com",
+        "luma-mail.com",
+        "fohe.org",
+        "boundlessnyc.com"
+      ]
+    },
+    
+    "newsletters": {
+      "trigger": "n5:newsletter",
+      "description": "Industry newsletters worth reading",
+      "senders": [],
+      "domains": []
+    },
+    
+    "jobs": {
+      "trigger": "n5:jobs",
+      "description": "Job board and recruiting sources",
+      "senders": [],
+      "domains": []
+    }
+  }
+}
+

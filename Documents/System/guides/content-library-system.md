@@ -10,7 +10,7 @@ System-level documentation for the **unified Content Library v3** used across N5
 
 - **Canonical DB:** `file 'Personal/Knowledge/ContentLibrary/content-library-v3.db'`  
 - **CLI:** `file 'Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py'`  
-- **Architecture Spec:** `file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
+- **Architecture Spec:** `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
 
 This guide replaces the older split between:
 
@@ -77,7 +77,7 @@ Old DBs and JSON files remain present until final archive, but **all new work sh
 
 ### 2.2 Logical Schema
 
-See `file 'N5/orchestration/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'` for the authoritative SQL. Key concepts:
+See `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'` for the authoritative SQL. Key concepts:
 
 - **`items`** – primary table; each row is a content item.
   - Identity: `id`, `item_type`, `title`

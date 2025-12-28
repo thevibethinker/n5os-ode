@@ -37,7 +37,7 @@ SIGNIFICANT_PATTERNS = {
         'N5/data/executables.db',
     ],
     'medium': [
-        'N5/orchestration/*.md',
+        'N5/builds/*.md',
         'Documents/System/**/*.md',
         'Prompts/*.md',
         'Knowledge/**/*.md',

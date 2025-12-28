@@ -42,7 +42,7 @@ use_app_gmail(
 )
 ```
 
-Format results using file 'N5/orchestration/crm-v3-unified/gmail_enrichment_module.py':
+Format results using file 'N5/builds/crm-v3-unified/gmail_enrichment_module.py':
 ```python
 from gmail_enrichment_module import format_gmail_intelligence
 gmail_block = format_gmail_intelligence(results, email)

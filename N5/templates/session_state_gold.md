@@ -1,11 +1,10 @@
 ---
 created: 2025-12-26
 last_edited: 2025-12-26
-version: 1.0
+version: 1
 provenance: con_thiVbfdLjmmBE7ol
 type: template
 ---
-
 # Gold Standard SESSION_STATE Example
 
 This is an example of a **properly maintained** SESSION_STATE.md file.
