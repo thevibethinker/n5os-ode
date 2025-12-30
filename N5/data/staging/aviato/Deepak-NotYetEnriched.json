@@ -1,0 +1,523 @@
+{
+  "full_name": "Deepak Sathyanarayan",
+  "first_name": "Deepak",
+  "last_name": "Sathyanarayan",
+  "gender": null,
+  "headline": "Founder, Orbital Helix (Space Biomanufacturing) | CEO, Eigen Strategic Systems | Microgravity Research & Extreme Environment Systems | NASA & DoW",
+  "linkedin_url": "linkedin.com/in/deepaksathyanarayan",
+  "linkedin_id": "deepaksathyanarayan",
+  "linkedin_entity_id": "ACoAAAiZZA4B82e6xlKGeaxg7z-5OYrBCnzKo6A",
+  "linkedin_num_id": 144270350,
+  "twitter_url": "x.com/Deepak1993",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Boston, Massachusetts, United States",
+  "city": "Boston",
+  "region": "Massachusetts",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102084423,
+    404476573,
+    85950361,
+    85688645
+  ],
+  "current_title": "Founder & CEO",
+  "current_department": "EXECUTIVE",
+  "current_seniority_score": 5,
+  "current_position_start": "2025-10-01T00:00:00.000Z",
+  "current_position_end": null,
+  "current_position_location": "Boston, MA",
+  "current_position_description": "Developing production-scale biomanufacturing infrastructure for low Earth orbit to manufacture next-generation therapeutics for Earth and beyond.\n\nLeading development of proprietary centrifugal fluid management systems that enable liter-scale pharmaceutical manufacturing in microgravity\u2014solving the production volume gap that separates ISS research experiments from commercial operations.\n\nOur technology enables continuous bioprocessing, controlled clarification, and pharmaceutical-grade quality in orbital environments. Building modular platforms designed for integration with commercial space stations (late 2020s) to serve the $653B global biologics market.\n\nKey Focus Areas:\n- Centrifugal bioprocessing systems for orbital continuous manufacturing\n- Pharmaceutical-grade quality systems and regulatory compliance frameworks\n- Microgravity fluid dynamics and biofluid management\n- Strategic partnerships with pharmaceutical companies and space infrastructure providers\n- Modular platform architecture for commercial orbital deployment\n\nLeveraging NASA microgravity research background and federal contracting experience to advance space biomanufacturing from research-scale to production-scale capabilities.",
+  "current_company_name": "Orbital Helix",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Orbital Helix",
+  "current_employment_start": "2025-10-01T00:00:00.000Z",
+  "current_employment_end": null,
+  "latest_degree": "Duke University",
+  "latest_school": "Duke University",
+  "latest_school_location": "Durham, North Carolina, United States",
+  "latest_school_linkedin": "duke-university",
+  "latest_field_of_study": "Biomedical Engineering",
+  "latest_education_start": null,
+  "latest_education_end": null,
+  "latest_grade": null,
+  "skills": [
+    "Protein Crystallization",
+    "AI Systems",
+    "Government Consulting",
+    "Deep Tech Engineering",
+    "Microgravity Systems",
+    "Bioprocessing",
+    "Space Systems Engineering",
+    "Pharmaceutical Manufacturing",
+    "Orbital Operations",
+    "Strategic Partnerships",
+    "Biomanufacturing",
+    "Hardware",
+    "Robotics and AI",
+    "Robotics",
+    "Research Leadership",
+    "Computational Modeling",
+    "Academic Publishing",
+    "Conference Presentations",
+    "SBIR Administration",
+    "Biomedical Systems"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "PROFESSIONAL_WORKING"
+    },
+    {
+      "language": "Telugu",
+      "proficiency": "LIMITED_WORKING"
+    }
+  ],
+  "linkedin_connections": 1866,
+  "linkedin_followers": 2240,
+  "linkedin_join_date": "2011-09-30T16:26:56.945Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "startDate": "2025-10-01T00:00:00.000Z",
+      "linkedinNumID": 109519996,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-10-01T00:00:00.000Z",
+          "title": "Founder & CEO",
+          "location": "Boston, MA",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Developing production-scale biomanufacturing infrastructure for low Earth orbit to manufacture next-generation therapeutics for Earth and beyond.\n\nLeading development of proprietary centrifugal fluid management systems that enable liter-scale pharmaceutical manufacturing in microgravity\u2014solving the production volume gap that separates ISS research experiments from commercial operations.\n\nOur technology enables continuous bioprocessing, controlled clarification, and pharmaceutical-grade quality in orbital environments. Building modular platforms designed for integration with commercial space stations (late 2020s) to serve the $653B global biologics market.\n\nKey Focus Areas:\n- Centrifugal bioprocessing systems for orbital continuous manufacturing\n- Pharmaceutical-grade quality systems and regulatory compliance frameworks\n- Microgravity fluid dynamics and biofluid management\n- Strategic partnerships with pharmaceutical companies and space infrastructure providers\n- Modular platform architecture for commercial orbital deployment\n\nLeveraging NASA microgravity research background and federal contracting experience to advance space biomanufacturing from research-scale to production-scale capabilities."
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyName": "Orbital Helix",
+      "company": {
+        "name": "Orbital Helix",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2017-12-01T00:00:00.000Z",
+      "startDate": "2015-08-01T00:00:00.000Z",
+      "linkedinNumID": 4298,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2015-08-01T00:00:00.000Z",
+          "endDate": "2017-12-01T00:00:00.000Z",
+          "title": "PhD Graduate Researcher, Mastered to Industry",
+          "location": "Charlottesville, Virginia",
+          "description": "Analysis of sports performance and fatigue biomechanics. Developed experimental and computational methods to research human physiological failure for next-generation safety devices and protocols. \n\nMentor: Dr. Matthew Panzer"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyName": "University of Virginia",
+      "company": {
+        "name": "University of Virginia",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2011-05-01T00:00:00.000Z",
+      "startDate": "2007-08-01T00:00:00.000Z",
+      "linkedinNumID": 9405,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2007-08-01T00:00:00.000Z",
+          "endDate": "2011-05-01T00:00:00.000Z",
+          "title": "Research Intern",
+          "location": "Aerospace Engineering Labs",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "Project 1 (08/09 - 05/10):\nCFD-Analysis of Spacecraft Propellant Dynamics. Development of Novel Active-Damping Mechanisms for Minimization of Satellite Nutation. \n\nProject 2 (08/10 - 05/11):\nCollaborator: MIT-SPHERES Laboratory\nDevelopment of On-Orbit Propellant Storage and Transfer Systems."
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyName": "Embry-Riddle Aeronautical University",
+      "company": {
+        "name": "Embry-Riddle Aeronautical University",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2015-05-01T00:00:00.000Z",
+      "startDate": "2011-08-01T00:00:00.000Z",
+      "linkedinNumID": 3356,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2011-08-01T00:00:00.000Z",
+          "endDate": "2015-05-01T00:00:00.000Z",
+          "title": "Research Intern",
+          "location": "Multiple Biomedical Labs",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "Animal Locomotion Lab (09/14 - 05/15): \nApplication of micro-CT and FEA methods to investigate the evolutionary and developmental bases for gait loading patterns in children. \n\nInjury Biomechanics Lab (11/14 - 01/15):\nAnalysis of Plantar Surface Biomechanics via Quasi-Linear Viscoelastic Models and Indentation Testing.\n\nCenter for Biologically Inspired Materials and Material Systems (04/12 - 12/12):\nDevelopment of elastin-like polypeptide (ELP) protein delivery systems using ELP-sortase plasmids to engineer desired ELP-target protein production. \n\nOrthopedic Research Laboratories (05/13 - 02/14):\nDevelopment of a novel alignment pattern in electrospun tendon patches to potentially increase suture retention of these tendon scaffolds.\n\nDeveloping World Healthcare Technologies Lab (05/13 - 08/13):\nAnalysis of 5-Year Medical Equipment Donation Trends from 3 Developing Nations"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyName": "Duke University",
+      "company": {
+        "name": "Duke University",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2023-04-01T00:00:00.000Z",
+      "startDate": "2018-08-01T00:00:00.000Z",
+      "linkedinNumID": 33196062,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-08-01T00:00:00.000Z",
+          "endDate": "2023-04-01T00:00:00.000Z",
+          "title": "Founding Chair, Engineering and Innovation Working Group",
+          "location": "Daytona Beach, Florida, United States",
+          "department": "ENGINEERING",
+          "description": "Launched and directed global technology initiative for NOAA-backed coral restoration efforts. Built international consortium working group of 50+ organizations. Developed CoralTech platform cataloging the maturation of nascent coral restoration technologies to in-field users and restoration practitioners."
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "fNw19HtWVcb2e2ayWmDGld0sM-511bE",
+      "companyName": "Coral Restoration Consortium",
+      "company": {
+        "id": "fNw19HtWVcb2e2ayWmDGld0sM-511bE",
+        "name": "Coral Restoration Consortium",
+        "country": "United States",
+        "region": "Washington",
+        "locality": "Seattle",
+        "URLs": {
+          "contact": "reefresilience.org/our-program/contact-us/",
+          "twitter": "twitter.com/reefresilience",
+          "website": "reefresilience.org",
+          "facebook": "www.facebook.com/reefresilience",
+          "linkedin": "linkedin.com/company/coral-restoration-consortium",
+          "crunchbase": "www.crunchbase.com/organization/reef-resilience-network"
+        },
+        "industryList": [
+          "Communities",
+          "Non Profit",
+          "Training"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-09-01T00:00:00.000Z",
+      "startDate": "2018-03-01T00:00:00.000Z",
+      "linkedinNumID": 26736,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-03-01T00:00:00.000Z",
+          "endDate": "2019-09-01T00:00:00.000Z",
+          "title": "Biomedical Research Engineer | Data Scientist",
+          "location": "Woburn, MA",
+          "department": "ENGINEERING",
+          "description": "Led SBIR and RIF contracts for DoD biomedical sensing and surveillance systems. Managed interdisciplinary teams developing next-generation health monitoring for military aviation. Delivered spine health sensors for naval aviators, special operations exoskeleton systems, and voice analytics for passive health assessment and surveillance.\n\nPortfolio: 3 SBIRs, 1 BAA, 1 RIF \u2022 NAVAIR \u2022 DARPA \u2022 DHA \u2022 USSOCOM"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "tN0niro2cOrxq4eepv2E9uu8qVaphTe",
+      "companyName": "Aptima, Inc.",
+      "company": {
+        "id": "tN0niro2cOrxq4eepv2E9uu8qVaphTe",
+        "name": "Aptima",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Woburn",
+        "URLs": {
+          "golden": "golden.com/wiki/Aptima%2C_Inc.-W48ZZ8V",
+          "twitter": "www.twitter.com/aptima",
+          "website": "aptima.com",
+          "facebook": "www.facebook.com/aptima-inc-163096280374758",
+          "linkedin": "linkedin.com/company/aptima-inc.",
+          "crunchbase": "www.crunchbase.com/organization/aptima-inc"
+        },
+        "industryList": [
+          "Information Technology"
+        ]
+      }
+    },
+    {
+      "endDate": "2024-05-01T00:00:00.000Z",
+      "startDate": "2019-09-01T00:00:00.000Z",
+      "linkedinNumID": 86950539,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-09-01T00:00:00.000Z",
+          "endDate": "2024-05-01T00:00:00.000Z",
+          "title": "Co-Founder, CEO & CTO",
+          "location": "Daytona Beach, Florida, United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Built and scaled autonomous systems company from concept to multi-million dollar government contracts. Served as Principal Investigator on $2M+ in federal R&D programs. Led cross-functional teams of 15+ engineers delivering mission-critical robotics for extreme environments. Established scalable operations infrastructure, DCAA-compliant financial systems, and talent management programs. Directed R&D portfolio generating patents and technology standards while orchestrating successful pivot and rebrand from Zero-G Horizons Technologies.\n\nKey Achievements: $2M+ in federal contracts \u2022 2 patents filed \u2022 300% revenue growth \u2022 15+ team members \u2022 DCAA compliance \u2022 Xometry Premium Vendor"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "Yk7oXMRoCQO2u3MorNM1PYRRs_Qkzvl",
+      "companyName": "Valor Robotics",
+      "company": {
+        "id": "Yk7oXMRoCQO2u3MorNM1PYRRs_Qkzvl",
+        "name": "Valor Robotics",
+        "country": "United States",
+        "region": "Florida",
+        "locality": "Daytona Beach",
+        "URLs": {
+          "website": "valorrobotics.com",
+          "linkedin": "linkedin.com/company/valor-robotics"
+        },
+        "industryList": [
+          "Defense and Space Manufacturing"
+        ]
+      }
+    },
+    {
+      "endDate": "2014-08-01T00:00:00.000Z",
+      "startDate": "2014-05-01T00:00:00.000Z",
+      "linkedinNumID": 163208,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2014-05-01T00:00:00.000Z",
+          "endDate": "2014-08-01T00:00:00.000Z",
+          "title": "Product Development Intern",
+          "location": "Winston Salem, North Carolina",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 1,
+          "description": "Product development and Testing of the Cook Medical line of endoscopic devices. Designing, prototyping, and testing the function of fiducial deployment tools and pancreatic cyst aspiration/ablation devices. Supervisor: Mr. Vihar Surti"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "lijuC5s3kYYfSji68FJPTwxPd9fs9T0",
+      "companyName": "Cook Medical",
+      "company": {
+        "id": "lijuC5s3kYYfSji68FJPTwxPd9fs9T0",
+        "name": "Cook Medical",
+        "country": "United States",
+        "region": "Indiana",
+        "locality": "Bloomington",
+        "URLs": {
+          "golden": "golden.com/wiki/Cook_Medical-W4BMG8D",
+          "contact": "www.cookmedical.com/contact/",
+          "twitter": "twitter.com/cookmedical",
+          "website": "cookmedical.com",
+          "facebook": "www.facebook.com/cookmedical",
+          "linkedin": "linkedin.com/company/cookmedical",
+          "pitchbook": "pitchbook.com/profiles/company/63140-05",
+          "crunchbase": "www.crunchbase.com/organization/cook-medical"
+        },
+        "industryList": [
+          "Hardware",
+          "Manufacturing",
+          "Medical Device"
+        ]
+      }
+    },
+    {
+      "endDate": "2015-05-01T00:00:00.000Z",
+      "startDate": "2013-08-01T00:00:00.000Z",
+      "linkedinNumID": 4201695,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-08-01T00:00:00.000Z",
+          "endDate": "2015-05-01T00:00:00.000Z",
+          "title": "Principal Investigator - Independent Project",
+          "location": "NASA-JSC RGEFP",
+          "description": "CFD-Guided Investigation of Corneal Biomechanics in Microgravity. Computational modeling of aqueous humor dynamics in 1G and 0G conditions. Applanation techniques used to induce corneal deformations to determine corneal biomechanical properties in microgravity. \n\nTechniques: CAD, CFD (ANSYS Fluent), Fluid-Structure Interaction (FSI), International Collaboration (Oculus, Germany), Microgravity Testing, Biomechanical Analysis, Multi-Disciplinary Group Leadership"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "VUoWzyn0EOOfH1dAd7JHxaXnlUk6OKM",
+      "companyName": "Johnson Space Center",
+      "company": {
+        "id": "VUoWzyn0EOOfH1dAd7JHxaXnlUk6OKM",
+        "name": "Johnson Space Center",
+        "country": "United States",
+        "region": "District of Columbia",
+        "locality": "Washington",
+        "URLs": {
+          "contact": "www.nasa.gov/contact/",
+          "twitter": "x.com/nasa_johnson?lang=en",
+          "website": "nasa.gov/johnson",
+          "facebook": "www.facebook.com/nasajsc/",
+          "linkedin": "linkedin.com/company/johnson-space-center",
+          "crunchbase": "www.crunchbase.com/organization/johnson-space-center-nasa"
+        },
+        "industryList": [
+          "Government",
+          "Space Travel",
+          "Training"
+        ]
+      }
+    },
+    {
+      "startDate": "2024-05-01T00:00:00.000Z",
+      "linkedinNumID": 105259707,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2024-05-01T00:00:00.000Z",
+          "title": "Founder & CEO",
+          "location": "Boston, MA",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Boutique deep tech engineering firm accelerating responsible AI-robotics deployment for international corporate and government clients. Design and build of specialized robotics and AI platforms for frontier applications.\n\nLed technology roadmapping initiatives resulting in accelerated time-to-market for autonomous systems. Delivered executive advisory services on AI governance, regulatory compliance, and technology integration for defense and aerospace clients.\n\nActive portfolio of contracts supporting mission-critical programs, while primary focus has shifted to advancing orbital biomanufacturing infrastructure at Orbital Helix."
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "1yzJ5kwq-ZMBVNu2QqrL0oS0DuqIXC5",
+      "companyName": "Eigen Strategic Systems",
+      "company": {
+        "id": "1yzJ5kwq-ZMBVNu2QqrL0oS0DuqIXC5",
+        "name": "Eigen Strategic Systems",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "website": "eigenstrategicsystems.com",
+          "linkedin": "linkedin.com/company/eigenstrategicsystems"
+        },
+        "industryList": [
+          "Defense and Space Manufacturing"
+        ]
+      }
+    },
+    {
+      "endDate": "2015-08-01T00:00:00.000Z",
+      "startDate": "2015-05-01T00:00:00.000Z",
+      "linkedinNumID": 1999,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-05-01T00:00:00.000Z",
+          "endDate": "2015-08-01T00:00:00.000Z",
+          "title": "Research Apprentice",
+          "location": "Cleveland, Ohio",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "Development of computational models of kidney stone transport phenomenon in space. Opportunity granted through the NSBRI Summer Apprenticeship Program.\nMentor: Dr. Mohammad Kassemi"
+        }
+      ],
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+      "companyID": "ekKV0CGpaZ1z6FSXe4Oh3VKPGsUiul5",
+      "companyName": "NASA Glenn Research Center",
+      "company": {
+        "id": "ekKV0CGpaZ1z6FSXe4Oh3VKPGsUiul5",
+        "name": "NASA Glenn Research Center",
+        "country": "United States",
+        "region": "Missouri",
+        "URLs": {
+          "golden": "golden.com/wiki/NASA_Glenn_Research_Center-39W66KM",
+          "contact": "www.nasa.gov/contact/",
+          "twitter": "x.com/nasastennis",
+          "website": "nasa.gov/stennis",
+          "facebook": "www.facebook.com/NASAStennis",
+          "linkedin": "linkedin.com/company/nasaglenn",
+          "crunchbase": "www.crunchbase.com/organization/nasa-s-stennis-space-center"
+        },
+        "industryList": [
+          "Government",
+          "Space Travel",
+          "Training"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2662865061",
+      "name": "Duke University",
+      "subject": "Biomedical Engineering",
+      "school": {
+        "id": "0HzofFA1jOKu",
+        "linkedinID": "duke-university",
+        "fullName": "Duke University",
+        "location": "Durham, North Carolina, United States",
+        "entityType": "school"
+      },
+      "activities": "Biomedical Engineering Society (President) | Duke AERO - AIAA (President) | Hindu Students Association",
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE"
+    },
+    {
+      "id": "2662865062",
+      "name": "University of Virginia",
+      "subject": "Mechanical and Aerospace Engineering, Biomechanics",
+      "school": {
+        "id": "ze0zgQYE5eKB",
+        "linkedinID": "university-of-virginia",
+        "fullName": "University of Virginia",
+        "location": "Charlottesville, Virginia, United States",
+        "entityType": "school"
+      },
+      "activities": "Hyperloop Pod Competition (Team Lead) | Double Hoo Research Grant | Entrepreneurship Center",
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2662865061",
+      "fieldOfStudy": "Biomedical Engineering",
+      "name": "Bachelor of Science (BS)",
+      "school": {
+        "id": "0HzofFA1jOKu",
+        "linkedinID": "duke-university",
+        "fullName": "Duke University",
+        "location": "Durham, North Carolina, United States",
+        "entityType": "school"
+      },
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE"
+    },
+    {
+      "personEducationID": "2662865062",
+      "fieldOfStudy": "Mechanical and Aerospace Engineering, Biomechanics",
+      "name": "PhD Program, Mastered to Industry",
+      "school": {
+        "id": "ze0zgQYE5eKB",
+        "linkedinID": "university-of-virginia",
+        "fullName": "University of Virginia",
+        "location": "Charlottesville, Virginia, United States",
+        "entityType": "school"
+      },
+      "personID": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE"
+    }
+  ],
+  "aviato_person_id": "9i811AqXaulz2dGFY5EZRnGwGv8LRtE",
+  "aviato_last_updated": "2025-10-27T09:16:01.579Z",
+  "enrichment_timestamp": "2025-12-28T23:18:36.251430",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "oneYearAtCurrentCompany",
+    "topUniversity"
+  ]
+}

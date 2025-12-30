@@ -1,0 +1,852 @@
+{
+  "full_name": "Adam Alpert",
+  "first_name": "Adam",
+  "last_name": "Alpert",
+  "gender": "male",
+  "headline": "Co-founder @ Pangea.app | YC | MIT & Brown",
+  "linkedin_url": "linkedin.com/in/adamalp",
+  "linkedin_id": "adamalp",
+  "linkedin_entity_id": "ACoAABG2cZwB1bMtZdVZIFaZh6c8uOOf9Bgc9eM",
+  "linkedin_num_id": 297169308,
+  "twitter_url": "x.com/Adamalpert95",
+  "facebook_url": "www.facebook.com/adamalp",
+  "website_url": "mantisvc.com",
+  "crunchbase_url": "crunchbase.com/person/adam-alpert",
+  "angellist_url": null,
+  "location": "Cambridge, Massachusetts, United States",
+  "city": "Cambridge",
+  "region": "Massachusetts",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102084643,
+    404476475,
+    85950329,
+    85688645
+  ],
+  "current_title": "Media Production Supervisor",
+  "current_department": null,
+  "current_seniority_score": null,
+  "current_position_start": "2015-11-01T00:00:00.000Z",
+  "current_position_end": "2017-05-01T00:00:00.000Z",
+  "current_position_location": null,
+  "current_position_description": "Took on additional responsibilities and expectations to better utilize my skill-set as a filmmaker in order to capture complex events and assist my peers.",
+  "current_company_name": "Brown University",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Brown University",
+  "current_employment_start": "2015-05-01T00:00:00.000Z",
+  "current_employment_end": "2017-05-01T00:00:00.000Z",
+  "latest_degree": "National Outdoor Leadership School",
+  "latest_school": "NOLS",
+  "latest_school_location": "Lander, Wyoming, United States",
+  "latest_school_linkedin": "nols",
+  "latest_field_of_study": null,
+  "latest_education_start": null,
+  "latest_education_end": null,
+  "latest_grade": null,
+  "skills": [
+    "Startups",
+    "Growth Marketing",
+    "Product",
+    "Data Science",
+    "Stoicism",
+    "Stoic",
+    "Motivational Speaking",
+    "SQL",
+    "DBT",
+    "MetaBase",
+    "Fundraising",
+    "Hiring",
+    "Project Management",
+    "Team Leadership",
+    "Public Speaking",
+    "Film",
+    "Team Motivation",
+    "Budget Management",
+    "Product Management",
+    "Social Media"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": null
+    }
+  ],
+  "linkedin_connections": 12299,
+  "linkedin_followers": 16096,
+  "linkedin_join_date": "2013-11-19T23:53:35.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": "Partner at Mantis Ventures",
+  "investor_current_firm_id": "Hvq4Lv5rlUDLkZXuas51bQ04X4SUsXx",
+  "investor_firm_position": "Partner",
+  "investor_min_check": 100000,
+  "investor_max_check": 1000000,
+  "investor_target_check": 250000,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [
+    "Seed",
+    "Series A"
+  ],
+  "investor_categories": [
+    "Consumer Internet",
+    "Entertainment & Sports",
+    "FinTech",
+    "Media/Content",
+    "New York City"
+  ],
+  "all_experiences": [
+    {
+      "endDate": "2017-05-01T00:00:00.000Z",
+      "startDate": "2015-05-01T00:00:00.000Z",
+      "linkedinNumID": 157343,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2015-11-01T00:00:00.000Z",
+          "endDate": "2017-05-01T00:00:00.000Z",
+          "title": "Media Production Supervisor",
+          "description": "Took on additional responsibilities and expectations to better utilize my skill-set as a filmmaker in order to capture complex events and assist my peers."
+        },
+        {
+          "startDate": "2015-05-01T00:00:00.000Z",
+          "endDate": "2015-11-01T00:00:00.000Z",
+          "title": "Media Production Assistant",
+          "department": "OTHER",
+          "description": "I manage and generate Brown's internal and public video content.  I film various events, concerts, lectures, and conferences, and edit the content to Brown's brand standards before uploading the content to various online internal and public channels.  Additionally, I assist in the digitization of various forms of media to be archived and made available to various members of the Brown community"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "Brown University",
+      "company": {
+        "name": "Brown University",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2013-06-01T00:00:00.000Z",
+      "startDate": "2011-09-01T00:00:00.000Z",
+      "linkedinNumID": 801496,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2011-09-01T00:00:00.000Z",
+          "endDate": "2013-06-01T00:00:00.000Z",
+          "title": "Chief Video Editor for School News Paper, CROP",
+          "department": "EXECUTIVE",
+          "description": "I worked with the School Newspaper, which ran an online website, to produce public service announcements and comedic shorts, leading and motivating a small team to shoot and edit them. In addition to the plethora of shorts and PSA's I produced, I planned, shot, and edited a video to be shown as the Introduction to the School's annual Spring fundraiser to much acclaim. I also created the video montage that was shown at Prom my senior year."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "Rye Country Day School",
+      "company": {
+        "name": "Rye Country Day School",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2019-03-01T00:00:00.000Z",
+      "startDate": "2016-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2016-01-01T00:00:00.000Z",
+          "endDate": "2019-03-01T00:00:00.000Z",
+          "title": "Co-Founder",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Worked on creating a craigslist for college students.  \n\nLearned how to iterate, talk with users, and listen to when the market tells you it doesn't need something."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "Pangeamart",
+      "company": {
+        "name": "Pangeamart",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2025-11-01T00:00:00.000Z",
+      "linkedinNumID": 109809899,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-11-01T00:00:00.000Z",
+          "title": "Project Lead"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "Cambridge Founders Club",
+      "company": {
+        "name": "Cambridge Founders Club",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2020-05-01T00:00:00.000Z",
+      "startDate": "2017-11-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2017-11-01T00:00:00.000Z",
+          "endDate": "2020-05-01T00:00:00.000Z",
+          "title": "Associate Director",
+          "department": "EXECUTIVE",
+          "seniorityScore": 4,
+          "description": "The mission of the Rhode Island Coalition of Entrepreneurs, a coalition of Founders and CEOs of start-ups, is to facilitate collaboration and unification among the entrepreneurial community of Rhode Island while representing a united voice in the spirit of expanding economic opportunity and innovation across the state."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "Rhode Island Coalition of Entrepreneurs",
+      "company": {
+        "name": "Rhode Island Coalition of Entrepreneurs",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2019-10-01T00:00:00.000Z",
+      "startDate": "2019-06-01T00:00:00.000Z",
+      "linkedinNumID": 291490,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2019-06-01T00:00:00.000Z",
+          "endDate": "2019-10-01T00:00:00.000Z",
+          "title": "Top Startup",
+          "location": "Providence, Rhode Island Area",
+          "description": "Participated in a 3 month MassChallenge RI accelerator program alongside the other 24 finalists; ultimately selected as one of 6 top teams. \n\nThis honor places us the top 2% of initial applicants."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "MassChallenge",
+      "company": {
+        "name": "MassChallenge",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2021-03-01T00:00:00.000Z",
+      "startDate": "2021-01-01T00:00:00.000Z",
+      "linkedinNumID": 167872,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2021-01-01T00:00:00.000Z",
+          "endDate": "2021-03-01T00:00:00.000Z",
+          "title": "W21 Batch",
+          "description": "Top 2% of applications to Y Combinator, accepted to the Winter '21 Batch.\n\nYC has backed Airbnb, Doordash, Reddit, and some amazing companies you haven't heard about yet :)"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyName": "Y Combinator",
+      "company": {
+        "name": "Y Combinator",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2025-08-01T00:00:00.000Z",
+      "startDate": "2025-01-01T00:00:00.000Z",
+      "linkedinNumID": 87812812,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "endDate": "2025-08-01T00:00:00.000Z",
+          "title": "Head of Product (Fractional)",
+          "location": "New York, New York, United States",
+          "department": "PRODUCT_MANAGEMENT",
+          "description": "Lead product strategy and development for RepRally, a Series A venture-backed three-sided marketplace connecting consumer brands, independent sales reps, and retailers. Driving initiatives that improve product velocity and scalability, with a focus on automation, AI workflows, and cross-functional collaboration."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "z_VAmpS1CP1mHs-mpG_-yevSUniE26z",
+      "companyName": "RepRally",
+      "company": {
+        "id": "z_VAmpS1CP1mHs-mpG_-yevSUniE26z",
+        "name": "RepRally",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "website": "reprally.com",
+          "facebook": "www.facebook.com/61560561185888",
+          "linkedin": "linkedin.com/company/reprally",
+          "pitchbook": "pitchbook.com/profiles/company/522566-83",
+          "crunchbase": "www.crunchbase.com/organization/reprally"
+        },
+        "industryList": [
+          "Marketplace",
+          "Software"
+        ]
+      }
+    },
+    {
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "linkedinNumID": 10423146,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-01-01T00:00:00.000Z",
+          "title": "Co-Founder & CEO",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Hire Fractional Creative Talent.\n\nBuilt community of 70k creatives\n\nBacked by Y Combinator, Idea Fund, PJC, Underdog Labs, Brown Angel Group, Unpopular Ventures, 572 Ventures (and many awesome other investors)"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "iihE1D1FAXtQ8_kkBw6_xznuHY6qvPa",
+      "companyName": "Pangea.app",
+      "company": {
+        "id": "iihE1D1FAXtQ8_kkBw6_xznuHY6qvPa",
+        "name": "Pangea",
+        "country": "United States",
+        "region": "Rhode Island",
+        "locality": "Providence",
+        "URLs": {
+          "golden": "golden.com/wiki/Pangea.app-XKK6J5A",
+          "twitter": "twitter.com/pangea_app",
+          "website": "pangea.app",
+          "facebook": "www.facebook.com/app.Pangea",
+          "linkedin": "linkedin.com/company/app-pangea",
+          "pitchbook": "pitchbook.com/profiles/company/234723-61",
+          "angelList": "angel.co/pangea-4",
+          "crunchbase": "www.crunchbase.com/organization/pangea-app"
+        },
+        "industryList": [
+          "Education",
+          "Human Resources",
+          "Virtual Workforce"
+        ]
+      }
+    },
+    {
+      "startDate": "2025-08-01T00:00:00.000Z",
+      "linkedinNumID": 76504,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-08-01T00:00:00.000Z",
+          "title": "Investment Scout - Pre-Seed AI",
+          "description": "Supporting PJC\u2019s investment team by sourcing and evaluating early-stage AI startups, with a focus on application-layer opportunities. Responsible for identifying promising founders, conducting initial diligence, and helping expand the firm\u2019s presence within the pre-seed ecosystem."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "8AmGGuffnPeFUbbUEQ0UEh1nHqUplv7",
+      "companyName": "PJC",
+      "company": {
+        "id": "8AmGGuffnPeFUbbUEQ0UEh1nHqUplv7",
+        "name": "PJC",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Point_Judith_Capital-K446YAV",
+          "twitter": "twitter.com/pjcventure",
+          "website": "pjc.vc",
+          "facebook": "www.facebook.com/pjcvc",
+          "linkedin": "linkedin.com/company/pjcvc",
+          "angelList": "angel.co/company/point-judith-capital",
+          "signalNFX": "signal.nfx.com/firms/pjc",
+          "crunchbase": "www.crunchbase.com/organization/pjc"
+        },
+        "industryList": [
+          "Artificial Intelligence (AI)",
+          "Consumer",
+          "Enterprise",
+          "FinTech",
+          "InsurTech",
+          "Venture Capital"
+        ]
+      }
+    },
+    {
+      "endDate": "2016-08-01T00:00:00.000Z",
+      "startDate": "2016-06-01T00:00:00.000Z",
+      "linkedinNumID": 10080684,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2016-06-01T00:00:00.000Z",
+          "endDate": "2016-08-01T00:00:00.000Z",
+          "title": "Account Coordinator",
+          "department": "SALES",
+          "seniorityScore": 1,
+          "description": "Spent summer preparing for Xiidra product launch upon FDA approval.  Coordinated Advisor boards and conference events for several hundred optometrists and ophthalmologists"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "Lg7M9oKFk4QA7453m2YRjlXLD77Dx5S",
+      "companyName": "Medical Exchange International (MEI)",
+      "company": {
+        "id": "Lg7M9oKFk4QA7453m2YRjlXLD77Dx5S",
+        "name": "MEI",
+        "country": "United States",
+        "region": "New Jersey",
+        "locality": "Hoboken",
+        "URLs": {
+          "twitter": "twitter.com/MEI_NYC",
+          "website": "meisolutions.com",
+          "linkedin": "linkedin.com/company/meinyc",
+          "pitchbook": "pitchbook.com/profiles/company/364017-88",
+          "crunchbase": "www.crunchbase.com/organization/mei-c2e4"
+        },
+        "industryList": [
+          "Advice",
+          "Analytics",
+          "Market Research",
+          "Marketing"
+        ]
+      }
+    },
+    {
+      "endDate": "2022-03-01T00:00:00.000Z",
+      "startDate": "2022-01-01T00:00:00.000Z",
+      "linkedinNumID": 610087,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-01-01T00:00:00.000Z",
+          "endDate": "2022-03-01T00:00:00.000Z",
+          "title": "Public Speaker",
+          "department": "OTHER",
+          "seniorityScore": 3,
+          "description": "Gave a Tedx talk on applying Stoic virtues to Entrepreneurship"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "nuaDmqWFo45zCuDoCg9UrTSRZSnyyek",
+      "companyName": "TED Conferences",
+      "company": {
+        "id": "nuaDmqWFo45zCuDoCg9UrTSRZSnyyek",
+        "name": "TED Conferences",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Ted_Conferences-DBX6G3B",
+          "twitter": "twitter.com/TEDNews",
+          "website": "ted.com",
+          "facebook": "www.facebook.com/TED",
+          "linkedin": "linkedin.com/company/ted-conferences",
+          "crunchbase": "www.crunchbase.com/organization/ted"
+        },
+        "industryList": [
+          "Events",
+          "Non Profit",
+          "Presentations",
+          "Video"
+        ]
+      }
+    },
+    {
+      "startDate": "2025-11-01T00:00:00.000Z",
+      "linkedinNumID": 1499,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-11-01T00:00:00.000Z",
+          "title": "Working Group",
+          "location": "Cambridge, MA"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "TpAb0GGyZgywpKMWhZK0--m9__jUe_Y",
+      "companyName": "MIT Media Lab",
+      "company": {
+        "id": "TpAb0GGyZgywpKMWhZK0--m9__jUe_Y",
+        "name": "MIT Media Lab",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Cambridge",
+        "URLs": {
+          "golden": "golden.com/wiki/MIT_Media_Lab-WKPX6",
+          "contact": "media.mit.edu/about/contact/",
+          "twitter": "twitter.com/medialab",
+          "website": "media.mit.edu",
+          "facebook": "www.facebook.com/mitmedialab",
+          "linkedin": "linkedin.com/company/mit-media-lab",
+          "angelList": "angel.co/mit-media-lab",
+          "crunchbase": "www.crunchbase.com/organization/mit-media-lab"
+        },
+        "industryList": [
+          "Travel",
+          "EdTech",
+          "Education",
+          "Product Research"
+        ]
+      }
+    },
+    {
+      "startDate": "2024-10-01T00:00:00.000Z",
+      "linkedinNumID": 103814858,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2024-10-01T00:00:00.000Z",
+          "title": "Managing Partner",
+          "location": "New York, New York, United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Hosting curated happy hours and meetups for NYCs top founders"
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "4VwOWos8VHQjF4FICLymdRyvmTsldWl",
+      "companyName": "NYC Founders Club",
+      "company": {
+        "id": "4VwOWos8VHQjF4FICLymdRyvmTsldWl",
+        "name": "NYC Founders Club",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "website": "nycfounders.club",
+          "linkedin": "linkedin.com/company/nyc-founders-club"
+        },
+        "industryList": [
+          "Professional Organizations"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-01-01T00:00:00.000Z",
+      "startDate": "2017-11-01T00:00:00.000Z",
+      "linkedinNumID": 1005068,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2017-11-01T00:00:00.000Z",
+          "endDate": "2021-01-01T00:00:00.000Z",
+          "title": "Kairos Fellow",
+          "description": "Focusing the next generation on problems worth solving."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "2T1OpbYWI-i6VxUdM7QYTFsPlAqq4tq",
+      "companyName": "Kairos Society",
+      "company": {
+        "id": "2T1OpbYWI-i6VxUdM7QYTFsPlAqq4tq",
+        "name": "Kairos HQ",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Kairos_(venture_capital)-YX9WABY",
+          "contact": "kairoshq.com/mailto:team@kairoshq.com?subject=Inquiry%20About%20(***Your%20Inquiry%20Here***)",
+          "twitter": "twitter.com/kairoshq",
+          "website": "kairoshq.com",
+          "facebook": "www.facebook.com/thekairossociety/",
+          "linkedin": "linkedin.com/company/kairoshq",
+          "angelList": "angel.co/company/kairoshq",
+          "signalNFX": "signal.nfx.com/firms/kairos-hq",
+          "crunchbase": "www.crunchbase.com/organization/kairoshq"
+        },
+        "industryList": [
+          "Financial Services",
+          "FinTech",
+          "Health Care",
+          "Real Estate",
+          "Venture Capital"
+        ]
+      }
+    },
+    {
+      "endDate": "2023-05-01T00:00:00.000Z",
+      "startDate": "2021-03-01T00:00:00.000Z",
+      "linkedinNumID": 51706839,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2021-03-01T00:00:00.000Z",
+          "endDate": "2023-05-01T00:00:00.000Z",
+          "title": "Advisory Board Member",
+          "department": "ADVISOR",
+          "seniorityScore": 5,
+          "description": "On the advisory board for a state-backed non-profit organization focused on supporting the RI startup ecosystem where I represent entrepreneurs."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "TwXiwEF_F64LqvNCzh1mopzU3zLKnQM",
+      "companyName": "RIHub",
+      "company": {
+        "id": "TwXiwEF_F64LqvNCzh1mopzU3zLKnQM",
+        "name": "RIHub",
+        "country": "United States",
+        "region": "Rhode Island",
+        "locality": "Providence",
+        "URLs": {
+          "contact": "rihub.org/forms/contact-us/",
+          "twitter": "twitter.com/ri_hub",
+          "website": "rihub.org",
+          "facebook": "www.facebook.com/therihub/",
+          "linkedin": "linkedin.com/company/rihub",
+          "crunchbase": "www.crunchbase.com/organization/rihub"
+        },
+        "industryList": [
+          "Incubators",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "endDate": "2014-06-01T00:00:00.000Z",
+      "startDate": "2014-05-01T00:00:00.000Z",
+      "linkedinNumID": 897269,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2014-05-01T00:00:00.000Z",
+          "endDate": "2014-06-01T00:00:00.000Z",
+          "title": "Content Intern",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "I interned for the content division of FilmBuff, which is responsible for the cultivation of independent films for digital distribution. As part of my internship, I was responsible for the intake of new submissions, writing coverage, and making recommendations for the distribution of submissions based on their perceived market."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "MyTCzitCEnsiBXeNVMgrLTXToSLrD3X",
+      "companyName": "FilmBuff",
+      "company": {
+        "id": "MyTCzitCEnsiBXeNVMgrLTXToSLrD3X",
+        "name": "FilmBuff ",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Filmbuff-K4JYEXK",
+          "twitter": "twitter.com/filmbuff",
+          "website": "gunpowdersky.com",
+          "facebook": "www.facebook.com/filmbuff",
+          "linkedin": "linkedin.com/company/filmbuff",
+          "pitchbook": "pitchbook.com/profiles/company/166516-21",
+          "crunchbase": "www.crunchbase.com/organization/filmbuff"
+        },
+        "industryList": [
+          "Film Distribution",
+          "Publishing"
+        ]
+      }
+    },
+    {
+      "endDate": "2013-08-01T00:00:00.000Z",
+      "startDate": "2013-07-01T00:00:00.000Z",
+      "linkedinNumID": 291802,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-07-01T00:00:00.000Z",
+          "endDate": "2013-08-01T00:00:00.000Z",
+          "title": "Summer Financial Analyst",
+          "department": "FINANCE",
+          "seniorityScore": 2,
+          "description": "As part of my internship with Titan, I gained an introduction into the world of fund-of-fund's and the investment strategies of many long-short equity hedge fund managers.I attended several meetings with potential fund managers and sat in on numerous phone calls with investors and managers. In addition, I worked on a research project related to the Affordable Healthcare Act and medicare taxation."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "0nmjkCs5iqfypVa3wxYjcHfM5aYbBMf",
+      "companyName": "Titan Advisors",
+      "company": {
+        "id": "0nmjkCs5iqfypVa3wxYjcHfM5aYbBMf",
+        "name": "Titan Advisors, LLC",
+        "country": "United States",
+        "region": "Connecticut",
+        "locality": "Stamford",
+        "URLs": {
+          "golden": "golden.com/wiki/Titan_Advisors-4EM4NE",
+          "contact": "titanadvisors.com/contact/",
+          "website": "titanadvisors.com",
+          "linkedin": "linkedin.com/company/titan-advisors",
+          "crunchbase": "www.crunchbase.com/organization/titan-advisors"
+        },
+        "industryList": [
+          "Consulting",
+          "Financial Services"
+        ]
+      }
+    },
+    {
+      "endDate": "2012-08-01T00:00:00.000Z",
+      "startDate": "2012-07-01T00:00:00.000Z",
+      "linkedinNumID": 1564949,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-07-01T00:00:00.000Z",
+          "endDate": "2012-08-01T00:00:00.000Z",
+          "title": "Summer Financial Intern",
+          "department": "FINANCE",
+          "description": "I researched and analyzed numerous E&P companies and gained insight into an industry I had never been exposed to. I worked on a presentation regarding the process of Hydraulic Fracturing and attended several conferences regarding the controversial subject."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "rkJ9LRQYEH-XQIH1qDUVEqGgH4uGHCr",
+      "companyName": "ELCO management",
+      "company": {
+        "id": "rkJ9LRQYEH-XQIH1qDUVEqGgH4uGHCr",
+        "name": "ELCO management",
+        "URLs": {
+          "website": "elcomanagement.nl",
+          "linkedin": "linkedin.com/company/elco-management"
+        },
+        "industryList": [
+          "Business Consulting and Services"
+        ]
+      }
+    },
+    {
+      "endDate": "2016-01-01T00:00:00.000Z",
+      "startDate": "2009-01-01T00:00:00.000Z",
+      "linkedinNumID": 70909323,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-01-01T00:00:00.000Z",
+          "endDate": "2016-01-01T00:00:00.000Z",
+          "title": "Freelance Videographer",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "Worked as a Directory of Photography, Assistant Director, Gaffer, Videographer, and editor for a variety of film productions."
+        }
+      ],
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+      "companyID": "Ee5clck56pGvfbZ8fhyESM-jGyvLZbt",
+      "companyName": "Various organizations (NGOs, institutes, businesses)",
+      "company": {
+        "id": "Ee5clck56pGvfbZ8fhyESM-jGyvLZbt",
+        "name": "Various organizations ",
+        "URLs": {
+          "linkedin": "linkedin.com/company/various-organizations-ngos-institutes-businesses"
+        },
+        "industryList": [
+          "Non-profit Organizations"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2662472174",
+      "name": "National Outdoor Leadership School",
+      "school": {
+        "id": "Xr3hEILnMM7U",
+        "linkedinID": "nols",
+        "fullName": "NOLS",
+        "location": "Lander, Wyoming, United States",
+        "entityType": "school"
+      },
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    },
+    {
+      "id": "2973743737",
+      "endDate": "2017-01-01T00:00:00.000Z",
+      "startDate": "2013-01-01T00:00:00.000Z",
+      "name": "Brown University",
+      "subject": "History",
+      "school": {
+        "id": "nUW1XiWrjo4c",
+        "linkedinID": "brown-college",
+        "fullName": "Brown College",
+        "location": "Minnesota, United States",
+        "entityType": "school"
+      },
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    },
+    {
+      "id": "2973743738",
+      "name": "Brown University",
+      "subject": "History",
+      "school": {
+        "id": "NDwo8Sb8hs2F",
+        "linkedinID": "charlton-brown",
+        "fullName": "Charlton Brown",
+        "location": "Brisbane City, Queensland, Australia",
+        "entityType": "school"
+      },
+      "activities": "Brown Investment Group, Brown Motion Pictures",
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    },
+    {
+      "id": "2693084610",
+      "name": "Rye Country Day School",
+      "school": {
+        "id": "MKEOhwhYqXHs",
+        "linkedinID": "rye-country-day-school",
+        "fullName": "Rye Country Day School",
+        "location": "Rye, New York, United States",
+        "entityType": "school"
+      },
+      "activities": "Film Making Club, President and Founder\nSki and Snowboard Club, Co-president and Founder\nCROP Video, Chief video editor and coordinator\nVarsity Golf\nJV Lacrosse\nJV Soccer",
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    },
+    {
+      "id": "3417731768",
+      "name": "Massachusetts Institute of Technology",
+      "school": {
+        "id": "Koe79gLdSYVy",
+        "linkedinID": "mit",
+        "fullName": "Massachusetts Institute of Technology",
+        "location": "Cambridge, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "activities": "- Leadership team of the MIT $100k Startup Competition\n- Working group within the MIT Media Lab\n- Sandbox Innovation Fund Fall 2025 Participant\n- Awarded the Dean\u2019s Fellowship",
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2693084610",
+      "name": "High School",
+      "school": {
+        "id": "MKEOhwhYqXHs",
+        "linkedinID": "rye-country-day-school",
+        "fullName": "Rye Country Day School",
+        "location": "Rye, New York, United States",
+        "entityType": "school"
+      },
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    },
+    {
+      "personEducationID": "2973743737",
+      "fieldOfStudy": "History",
+      "name": "Bachelor\u2019s Degree",
+      "school": {
+        "id": "NDwo8Sb8hs2F",
+        "linkedinID": "charlton-brown",
+        "fullName": "Charlton Brown",
+        "location": "Brisbane City, Queensland, Australia",
+        "entityType": "school"
+      },
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    },
+    {
+      "personEducationID": "3417731768",
+      "name": "Master of Business Administration - MBA",
+      "school": {
+        "id": "Koe79gLdSYVy",
+        "linkedinID": "mit",
+        "fullName": "Massachusetts Institute of Technology",
+        "location": "Cambridge, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6"
+    }
+  ],
+  "aviato_person_id": "VHIIHTc9RsJINZZmjmqFqZ1z-u8KOW6",
+  "aviato_last_updated": "2025-12-27T21:54:30.829Z",
+  "enrichment_timestamp": "2025-12-28T23:17:14.417661",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "oneYearAtCurrentCompany",
+    "priorBackedFounder",
+    "USImmigrant"
+  ]
+}

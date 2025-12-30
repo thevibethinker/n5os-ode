@@ -442,6 +442,7 @@ def upsert_daily_resting_hr(
     hrv: Optional[float] = None,
     spo2: Optional[float] = None,
     skin_temp_delta: Optional[float] = None,
+    stress_score: Optional[float] = None,
     source: str = "fitbit",
 ) -> None:
     """Upsert a single day's resting heart rate and HRV value."""
@@ -450,16 +451,17 @@ def upsert_daily_resting_hr(
     cur = conn.cursor()
     cur.execute(
         """
-        INSERT INTO daily_resting_hr (date, resting_hr, hrv, spo2, skin_temp_delta, source)
-        VALUES (?, ?, ?, ?, ?, ?)
+        INSERT INTO daily_resting_hr (date, resting_hr, hrv, spo2, skin_temp_delta, stress_score, source)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(date) DO UPDATE SET
             resting_hr = excluded.resting_hr,
             hrv = excluded.hrv,
             spo2 = excluded.spo2,
             skin_temp_delta = excluded.skin_temp_delta,
+            stress_score = excluded.stress_score,
             source = excluded.source
         """,
-        (date, resting_hr, hrv, spo2, skin_temp_delta, source),
+        (date, resting_hr, hrv, spo2, skin_temp_delta, stress_score, source),
     )
     conn.commit()
 
@@ -848,6 +850,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 

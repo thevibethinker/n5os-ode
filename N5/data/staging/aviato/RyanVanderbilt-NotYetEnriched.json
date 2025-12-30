@@ -1,0 +1,445 @@
+{
+  "full_name": "Ryan Vanderbilt",
+  "first_name": "Ryan",
+  "last_name": "Vanderbilt",
+  "gender": null,
+  "headline": "Principal Designer at Teamshares | Prior: Walmart, Store No. 8, Google Creative Lab, Anomaly, Landor",
+  "linkedin_url": "linkedin.com/in/ryanvanderbilt",
+  "linkedin_id": "ryanvanderbilt",
+  "linkedin_entity_id": "ACoAAAItMmcBxTZWkO5oy8KdfqvhJ1WOTSfCKdQ",
+  "linkedin_num_id": 36516455,
+  "twitter_url": "x.com/ryan_vanderbilt",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Carlsbad, California, United States",
+  "city": "Carlsbad",
+  "region": "California",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102083569,
+    85922291,
+    85688637
+  ],
+  "current_title": "Creative Lead",
+  "current_department": "DESIGN",
+  "current_seniority_score": 3,
+  "current_position_start": "2008-09-01T00:00:00.000Z",
+  "current_position_end": "2011-10-01T00:00:00.000Z",
+  "current_position_location": null,
+  "current_position_description": null,
+  "current_company_name": "Google Creative Lab",
+  "current_company_id": "H3TGFhoSrYx454dgVH6xL5EqXuW9dkb",
+  "current_company_linkedin": "linkedin.com/company/google",
+  "current_company_website": "about.google",
+  "current_company_location": "Google",
+  "current_employment_start": "2008-09-01T00:00:00.000Z",
+  "current_employment_end": "2011-10-01T00:00:00.000Z",
+  "latest_degree": null,
+  "latest_school": "Syracuse University",
+  "latest_school_location": "Syracuse, New York, United States",
+  "latest_school_linkedin": "syracuse-university",
+  "latest_field_of_study": "Communication Design",
+  "latest_education_start": null,
+  "latest_education_end": null,
+  "latest_grade": null,
+  "skills": [
+    "Creative Strategy",
+    "Entrepreneurship",
+    "Graphic Design",
+    "User Experience",
+    "Fashion",
+    "Creative Direction",
+    "Typography",
+    "Social Media",
+    "Advertising",
+    "Integrated Marketing",
+    "Corporate Branding",
+    "Digital Marketing",
+    "Web Design",
+    "Art Direction",
+    "Interaction Design",
+    "Concept Development",
+    "Brand Development",
+    "User Interface Design",
+    "Logo Design",
+    "Branding & Identity"
+  ],
+  "languages": [],
+  "linkedin_connections": 983,
+  "linkedin_followers": 980,
+  "linkedin_join_date": "2008-12-07T10:18:45.837Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2011-10-01T00:00:00.000Z",
+      "startDate": "2008-09-01T00:00:00.000Z",
+      "linkedinNumID": 1441,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2008-09-01T00:00:00.000Z",
+          "endDate": "2011-10-01T00:00:00.000Z",
+          "title": "Creative Lead",
+          "department": "DESIGN",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "H3TGFhoSrYx454dgVH6xL5EqXuW9dkb",
+      "companyName": "Google Creative Lab",
+      "company": {
+        "id": "H3TGFhoSrYx454dgVH6xL5EqXuW9dkb",
+        "name": "Google",
+        "country": "United States",
+        "region": "California",
+        "locality": "Mountain View",
+        "URLs": {
+          "golden": "golden.com/wiki/Google-MYW",
+          "contact": "about.google/contact-google/",
+          "twitter": "x.com/google",
+          "website": "about.google",
+          "facebook": "www.facebook.com/Google",
+          "linkedin": "linkedin.com/company/google",
+          "angelList": "angel.co/google",
+          "crunchbase": "www.crunchbase.com/organization/google"
+        },
+        "industryList": [
+          "Apps",
+          "Artificial Intelligence (AI)",
+          "Cloud Storage",
+          "Search Engine",
+          "SEO"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-07-01T00:00:00.000Z",
+      "startDate": "2021-01-01T00:00:00.000Z",
+      "linkedinNumID": 2646,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2021-01-01T00:00:00.000Z",
+          "endDate": "2021-07-01T00:00:00.000Z",
+          "title": "Director, User Experience",
+          "department": "DESIGN",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "yCuCZNDE0qIrpYVhapwb7gzbN3bTz2m",
+      "companyName": "Walmart",
+      "company": {
+        "id": "yCuCZNDE0qIrpYVhapwb7gzbN3bTz2m",
+        "name": "Walmart",
+        "country": "United States",
+        "region": "Arkansas",
+        "locality": "Bentonville",
+        "URLs": {
+          "golden": "golden.com/wiki/Walmart-MN3BX",
+          "twitter": "twitter.com/Walmart",
+          "website": "walmart.com",
+          "facebook": "www.facebook.com/walmart",
+          "linkedin": "linkedin.com/company/walmart",
+          "pitchbook": "pitchbook.com/profiles/company/11653-30",
+          "angelList": "angel.co/walmart",
+          "crunchbase": "www.crunchbase.com/organization/walmart"
+        },
+        "industryList": [
+          "E-Commerce",
+          "Grocery",
+          "Retail",
+          "Retail Technology",
+          "Shopping"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-01-01T00:00:00.000Z",
+      "startDate": "2012-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-01-01T00:00:00.000Z",
+          "endDate": "2019-01-01T00:00:00.000Z",
+          "title": "Freelance Designer",
+          "department": "DESIGN",
+          "seniorityScore": 2
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "company": {
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2021-07-01T00:00:00.000Z",
+      "linkedinNumID": 15155392,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-02-01T00:00:00.000Z",
+          "title": "Principal Designer",
+          "location": "Carlsbad, California, United States",
+          "department": "DESIGN",
+          "seniorityScore": 4
+        },
+        {
+          "startDate": "2021-07-01T00:00:00.000Z",
+          "endDate": "2022-02-01T00:00:00.000Z",
+          "title": "Senior Designer",
+          "location": "Carlsbad, California, United States",
+          "department": "DESIGN",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "R4PKKTnZYBMX1xJNWWJXHc_JszCTsB4",
+      "companyName": "Teamshares",
+      "company": {
+        "id": "R4PKKTnZYBMX1xJNWWJXHc_JszCTsB4",
+        "name": "Teamshares",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "twitter": "twitter.com/Teamshares",
+          "website": "teamshares.com",
+          "linkedin": "linkedin.com/company/teamshares",
+          "pitchbook": "pitchbook.com/profiles/company/327111-04",
+          "crunchbase": "www.crunchbase.com/organization/teamshares"
+        },
+        "industryList": [
+          "Commercial",
+          "Financial Services",
+          "FinTech",
+          "Manufacturing",
+          "Retail"
+        ]
+      }
+    },
+    {
+      "endDate": "2003-01-01T00:00:00.000Z",
+      "startDate": "2000-01-01T00:00:00.000Z",
+      "linkedinNumID": 100354626,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2000-01-01T00:00:00.000Z",
+          "endDate": "2003-01-01T00:00:00.000Z",
+          "title": "Brand Designer",
+          "department": "MARKETING",
+          "seniorityScore": 1
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "WWYXyRIyAbiuEXZuOmCh8lISqouvqsI",
+      "companyName": "Landor",
+      "company": {
+        "id": "WWYXyRIyAbiuEXZuOmCh8lISqouvqsI",
+        "name": "Landor",
+        "country": "United Kingdom",
+        "region": "Greater London",
+        "locality": "London",
+        "URLs": {
+          "contact": "landor.com/en/contact-us/",
+          "twitter": "twitter.com/LandorGlobal",
+          "website": "landor.com",
+          "facebook": "www.facebook.com/LandorGlobal",
+          "linkedin": "linkedin.com/company/landorglobal",
+          "pitchbook": "pitchbook.com/profiles/company/223335-46",
+          "crunchbase": "www.crunchbase.com/organization/landor"
+        },
+        "industryList": [
+          "Brand Marketing",
+          "Consulting",
+          "Marketing"
+        ]
+      }
+    },
+    {
+      "endDate": "2004-01-01T00:00:00.000Z",
+      "startDate": "2003-01-01T00:00:00.000Z",
+      "linkedinNumID": 163929,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2003-01-01T00:00:00.000Z",
+          "endDate": "2004-01-01T00:00:00.000Z",
+          "title": "Principle Designer",
+          "department": "DESIGN",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "hNfakyteIMIXD5FNxdW73cDVeib3Wsv",
+      "companyName": "Grey",
+      "company": {
+        "id": "hNfakyteIMIXD5FNxdW73cDVeib3Wsv",
+        "name": "Grey",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "twitter": "twitter.com/greynewyork",
+          "website": "grey.com",
+          "facebook": "www.facebook.com/GreyNewYork",
+          "linkedin": "linkedin.com/company/grey-group",
+          "crunchbase": "www.crunchbase.com/organization/grey"
+        },
+        "industryList": [
+          "Advertising",
+          "Marketing",
+          "Social Media Advertising"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-07-01T00:00:00.000Z",
+      "startDate": "2019-02-01T00:00:00.000Z",
+      "linkedinNumID": 16178271,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2020-02-01T00:00:00.000Z",
+          "endDate": "2021-07-01T00:00:00.000Z",
+          "title": "Senior Interaction Designer, New Product Innovation",
+          "department": "DESIGN"
+        },
+        {
+          "startDate": "2019-06-01T00:00:00.000Z",
+          "endDate": "2021-07-01T00:00:00.000Z",
+          "title": "Senior Interaction Designer (R&D), Walmart InHome Delivery",
+          "location": "Greater San Diego Area",
+          "department": "DESIGN",
+          "description": "Walmart InHome delivers fresh groceries from your local store directly to your kitchen or garage fridge. Rolling out to over 1m customers in Kansas City, Pittsburgh and Vero Beach this Fall."
+        },
+        {
+          "startDate": "2019-02-01T00:00:00.000Z",
+          "endDate": "2019-06-01T00:00:00.000Z",
+          "title": "Senior Interaction Designer (Project Franklin, Store No. 8)",
+          "location": "Greater San Diego Area",
+          "department": "DESIGN",
+          "description": "Project Franklin is a stealth-mode startup for Store No.8, Walmart's new incubator."
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "WiaOHkb26BaTvBwmghY_NDWh8SsP1Wd",
+      "companyName": "Store No. 8",
+      "company": {
+        "id": "WiaOHkb26BaTvBwmghY_NDWh8SsP1Wd",
+        "name": "Store No. 8",
+        "country": "United States",
+        "region": "New Jersey",
+        "locality": "Hoboken",
+        "URLs": {
+          "golden": "golden.com/wiki/Store_No_8-BWAAX9K",
+          "website": "storeno8.com",
+          "linkedin": "linkedin.com/company/store-no-8",
+          "crunchbase": "www.crunchbase.com/organization/store-no-8"
+        },
+        "industryList": [
+          "Incubators"
+        ]
+      }
+    },
+    {
+      "endDate": "2008-05-01T00:00:00.000Z",
+      "startDate": "2004-09-01T00:00:00.000Z",
+      "linkedinNumID": 23822,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2004-09-01T00:00:00.000Z",
+          "endDate": "2008-05-01T00:00:00.000Z",
+          "title": "Design Director",
+          "department": "DESIGN",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+      "companyID": "hRQ9soR1bvP-qmyTAXVaq3G8h8EPY5k",
+      "companyName": "Anomaly",
+      "company": {
+        "id": "hRQ9soR1bvP-qmyTAXVaq3G8h8EPY5k",
+        "name": "Anomaly",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Anomaly_(company)-K43ZDPN",
+          "contact": "www.anomaly.com/contact",
+          "twitter": "twitter.com/Anomaly",
+          "website": "anomaly.com",
+          "facebook": "www.facebook.com/anomalyny/",
+          "linkedin": "linkedin.com/company/anomaly",
+          "pitchbook": "pitchbook.com/profiles/company/109471-15",
+          "crunchbase": "www.crunchbase.com/organization/anomaly-2"
+        },
+        "industryList": [
+          "Advertising",
+          "Creative Agency",
+          "Marketing"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "3040016010",
+      "subject": "Communication Design",
+      "school": {
+        "id": "4LQ79Jwhbbl0",
+        "linkedinID": "syracuse-university",
+        "fullName": "Syracuse University",
+        "location": "Syracuse, New York, United States",
+        "entityType": "school"
+      },
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "3040016010",
+      "fieldOfStudy": "Communication Design",
+      "name": "BFA",
+      "school": {
+        "id": "4LQ79Jwhbbl0",
+        "linkedinID": "syracuse-university",
+        "fullName": "Syracuse University",
+        "location": "Syracuse, New York, United States",
+        "entityType": "school"
+      },
+      "personID": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51"
+    }
+  ],
+  "aviato_person_id": "ItT2hHVdV7l2sfXLUb7fKmEzzDAQP51",
+  "aviato_last_updated": "2025-12-02T00:47:21.132Z",
+  "enrichment_timestamp": "2025-12-28T23:16:38.762663",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "bigTechAlumPublic",
+    "employeeDuringIPO",
+    "employeeDuringMA",
+    "oneYearAtCurrentCompany"
+  ]
+}

@@ -1,9 +1,38 @@
 ---
 created: 2025-12-15
-last_edited: 2025-12-15
-version: 1
+last_edited: 2025-12-28
+version: 1.1
 ---
 # Training Program - Phase 1
+
+---
+
+## 🧬 V's Genetic Context for This Program
+
+> *Reference: `file 'Personal/Health/V_GENETIC_PROFILE.md'`*
+
+Your genome has specific implications for how you should approach this training:
+
+### Endurance-Oriented Muscle Fiber Type (ACTN3 TT)
+- You lack functional alpha-actinin-3 → genetically suited for **sustained effort over explosive power**
+- **Implication:** The Zone 2 cardio days (Day 3, Day 6, Day 7) are where your body naturally excels. Don't skimp on these.
+- **Implication:** Power movements (box jumps, medicine ball slams) may require more deliberate practice — they won't come as naturally.
+
+### Warrior COMT (GG) — Recovery Needs
+- You perform well under acute training stress but need **more deliberate recovery** between intense sessions
+- **Implication:** Day 6 (Restorative/Active Recovery) is not optional. Your dopamine system clears fast, which is great for performance but means you deplete faster during prolonged high-intensity blocks.
+- **Implication:** If you're stacking multiple hard training days, watch for elevated resting HR on Fitbit — that's your signal to back off.
+
+### Caffeine Timing (CYP1A2 AC)
+- Intermediate caffeine metabolism means afternoon caffeine may disrupt sleep
+- **Implication:** Pre-workout caffeine is fine for morning sessions. For afternoon/evening workouts, skip the stimulant — your recovery sleep matters more than the performance boost.
+
+### Lactose Intolerance (MCM6 GG)
+- You carry the intolerance genotype
+- **Implication:** If you're using whey protein or dairy-based recovery shakes, monitor for GI issues. Consider plant-based alternatives (pea, rice, hemp) if you notice discomfort.
+
+---
+
 **From: Coach Jair Lee**  
 **Email:** jair.lee@civanacarefree.com  
 **Phone:** 626.329.34.60  
@@ -242,4 +271,5 @@ Or:
 Combine elements from weekly outlines into your preferred routine. Adjust according to your training phase and individual progress. Priority: Movement quality above all, then volume and intensity. Document as much detail as possible. Continue Phase 2 onward as we progress loading and sport specificity. Nothing crazy, just fun and gradual challenging fitness.
 
 **Remember:** Track all quantitative measurements - reps, sets, tempo, rest periods, weights used, percentage of max weight, comments on how exercises feel before/during/after, and note any pain or discomfort.
+
 

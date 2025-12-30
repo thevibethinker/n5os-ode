@@ -1,0 +1,308 @@
+{
+  "full_name": "Olugbenga Esan",
+  "first_name": "Olugbenga",
+  "last_name": "Esan",
+  "gender": null,
+  "headline": "FINANCE OPERATIONS CONTROLLER. (Skilled at Financial Planning and Analysis, Financial Reporting, Management Accounting, Operations Control, Audit & Assurance, Manufacturing Operations, & Financial Consulting)",
+  "linkedin_url": "linkedin.com/in/olugbenga-esan-a2010322a",
+  "linkedin_id": "olugbenga-esan-a2010322a",
+  "linkedin_entity_id": "ACoAADlTBfgBfzu6-YCDcaZ051Nh3ql5mx18B5A",
+  "linkedin_num_id": 961742328,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Lagos, Lagos, Nigeria",
+  "city": "Lagos",
+  "region": "Lagos",
+  "country": "Nigeria",
+  "location_ids": [
+    102191573,
+    85632735,
+    1108563883,
+    890437281,
+    85675343
+  ],
+  "current_title": "Management Accountant and Head, IT",
+  "current_department": "FINANCE",
+  "current_seniority_score": null,
+  "current_position_start": "2013-08-01T00:00:00.000Z",
+  "current_position_end": "2014-06-01T00:00:00.000Z",
+  "current_position_location": "Nigeria",
+  "current_position_description": null,
+  "current_company_name": "NIGERIA ALUMINIUM EXTRUSION COMPANY LIMITED",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "NIGERIA ALUMINIUM EXTRUSION COMPANY LIMITED",
+  "current_employment_start": "2010-12-01T00:00:00.000Z",
+  "current_employment_end": "2014-06-01T00:00:00.000Z",
+  "latest_degree": "University of Benin",
+  "latest_school": null,
+  "latest_school_location": null,
+  "latest_school_linkedin": null,
+  "latest_field_of_study": "Economics and Statistics",
+  "latest_education_start": "1992-01-01T00:00:00.000Z",
+  "latest_education_end": "1997-01-01T00:00:00.000Z",
+  "latest_grade": "2nd class upper",
+  "skills": [
+    "Operational controller",
+    "Financial Accounting",
+    "Controller",
+    "Operations Management",
+    "Accounting",
+    "Financial Reporting",
+    "Financial Analysis",
+    "International Financial Reporting Standards (IFRS)",
+    "Financial Audits",
+    "Budgeting",
+    "Financial Advisory",
+    "Financial Statements",
+    "Financial Planning",
+    "Finance",
+    "Managerial Finance"
+  ],
+  "languages": [],
+  "linkedin_connections": 27,
+  "linkedin_followers": 56,
+  "linkedin_join_date": "2021-12-30T15:54:12.982Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2014-06-01T00:00:00.000Z",
+      "startDate": "2010-12-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-08-01T00:00:00.000Z",
+          "endDate": "2014-06-01T00:00:00.000Z",
+          "title": "Management Accountant and Head, IT",
+          "location": "Nigeria",
+          "department": "FINANCE"
+        },
+        {
+          "startDate": "2011-09-01T00:00:00.000Z",
+          "endDate": "2013-07-01T00:00:00.000Z",
+          "title": "Management Accountant",
+          "location": "Nigeria",
+          "department": "FINANCE",
+          "seniorityScore": 3
+        },
+        {
+          "startDate": "2010-12-01T00:00:00.000Z",
+          "endDate": "2011-08-01T00:00:00.000Z",
+          "title": "Financial Accountant",
+          "location": "Nigeria",
+          "department": "FINANCE",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK",
+      "companyName": "NIGERIA ALUMINIUM EXTRUSION COMPANY LIMITED",
+      "company": {
+        "name": "NIGERIA ALUMINIUM EXTRUSION COMPANY LIMITED",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2016-12-01T00:00:00.000Z",
+      "startDate": "2014-06-01T00:00:00.000Z",
+      "linkedinNumID": 11502,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2014-06-01T00:00:00.000Z",
+          "endDate": "2016-12-01T00:00:00.000Z",
+          "title": "Financial Analyst",
+          "location": "Nigeria",
+          "department": "FINANCE",
+          "seniorityScore": 2
+        }
+      ],
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK",
+      "companyID": "BREZ85Tmpw0eXieoUI9cEdCXuGdIAOk",
+      "companyName": "PZ Cussons",
+      "company": {
+        "id": "BREZ85Tmpw0eXieoUI9cEdCXuGdIAOk",
+        "name": "PZ Cussons",
+        "country": "United Kingdom",
+        "region": "Greater London",
+        "locality": "London",
+        "URLs": {
+          "golden": "golden.com/wiki/PZ_Cussons-WG9WKK",
+          "contact": "www.pzcussons.com/contact-us/",
+          "website": "pzcussons.com",
+          "linkedin": "linkedin.com/company/pz-cussons",
+          "pitchbook": "pitchbook.com/profiles/company/25289-29",
+          "crunchbase": "www.crunchbase.com/organization/pz-cussons"
+        },
+        "industryList": [
+          "Logistics",
+          "Manufacturing"
+        ]
+      }
+    },
+    {
+      "startDate": "2021-02-01T00:00:00.000Z",
+      "linkedinNumID": 69088863,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2023-01-01T00:00:00.000Z",
+          "title": "Controller",
+          "location": "South Africa",
+          "department": "FINANCE",
+          "seniorityScore": 3
+        },
+        {
+          "startDate": "2021-02-01T00:00:00.000Z",
+          "endDate": "2022-12-01T00:00:00.000Z",
+          "title": "Associate Operations Controller",
+          "location": "South Africa",
+          "department": "OPERATIONS"
+        }
+      ],
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK",
+      "companyID": "Oim4Gdn2_3QSiNereL-7tYw2wUHiUpV",
+      "companyName": "NielsenIQ",
+      "company": {
+        "id": "Oim4Gdn2_3QSiNereL-7tYw2wUHiUpV",
+        "name": "NielsenIQ",
+        "country": "United States",
+        "region": "Illinois",
+        "locality": "Chicago",
+        "URLs": {
+          "golden": "golden.com/wiki/NielsenIQ-NMVW9ZG",
+          "contact": "nielseniq.com/global/en/about-us/contact-us/",
+          "twitter": "twitter.com/nielseniq",
+          "website": "nielseniq.com/global/en",
+          "facebook": "www.facebook.com/NielsenIQ.global",
+          "linkedin": "linkedin.com/company/nielseniq",
+          "pitchbook": "pitchbook.com/profiles/company/340893-01",
+          "crunchbase": "www.crunchbase.com/organization/nielseniq"
+        },
+        "industryList": [
+          "Analytics",
+          "Business Intelligence",
+          "Information Technology"
+        ]
+      }
+    },
+    {
+      "endDate": "2010-12-01T00:00:00.000Z",
+      "startDate": "2004-06-01T00:00:00.000Z",
+      "linkedinNumID": 5602827,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2004-06-01T00:00:00.000Z",
+          "endDate": "2010-12-01T00:00:00.000Z",
+          "title": "Accountant",
+          "location": "United Kingdom",
+          "department": "FINANCE",
+          "seniorityScore": 2
+        }
+      ],
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK",
+      "companyID": "yecl1MDpFVKg4_XCAe8Otuz6iMuqdTv",
+      "companyName": "EURO FINANCIAL CORPORATION LIMITED",
+      "company": {
+        "id": "yecl1MDpFVKg4_XCAe8Otuz6iMuqdTv",
+        "name": "EURO FINANCIAL CORPORATION LIMITED",
+        "country": "United Kingdom",
+        "region": "Cambridgeshire",
+        "locality": "Croydon",
+        "URLs": {
+          "website": "eurofinance.com",
+          "linkedin": "linkedin.com/company/euro-financial-corporation-limited"
+        },
+        "industryList": [
+          "Financial Services"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-01-01T00:00:00.000Z",
+      "startDate": "2017-01-01T00:00:00.000Z",
+      "linkedinNumID": 9676029,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2017-07-01T00:00:00.000Z",
+          "endDate": "2021-01-01T00:00:00.000Z",
+          "title": "Associate Operations Controller",
+          "location": "Nigeria",
+          "department": "OPERATIONS"
+        },
+        {
+          "startDate": "2017-01-01T00:00:00.000Z",
+          "endDate": "2017-06-01T00:00:00.000Z",
+          "title": "Financial Planning and Analysis Manager",
+          "location": "Nigeria",
+          "department": "FINANCE",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK",
+      "companyID": "ZsbAD7C_XvwFz_bef6beZqSyzaMDUOA",
+      "companyName": "AC Nielsen",
+      "company": {
+        "id": "ZsbAD7C_XvwFz_bef6beZqSyzaMDUOA",
+        "name": "AC Nielsen",
+        "country": "Australia",
+        "region": "Queensland",
+        "locality": "Brisbane City",
+        "URLs": {
+          "website": "au.acnielsen.com",
+          "linkedin": "linkedin.com/company/ac-nielsen"
+        },
+        "industryList": [
+          "Market Research"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "3009955248",
+      "endDate": "1997-01-01T00:00:00.000Z",
+      "startDate": "1992-01-01T00:00:00.000Z",
+      "name": "University of Benin",
+      "subject": "Economics and Statistics",
+      "grade": "2nd class upper",
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "3009955248",
+      "fieldOfStudy": "Economics and Statistics",
+      "name": "Bachelor of Science - BS",
+      "personID": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK"
+    }
+  ],
+  "aviato_person_id": "E7D_GPhZF8Pf2c1uf0Jv34ygionuJyK",
+  "aviato_last_updated": "2025-11-13T05:21:40.292Z",
+  "enrichment_timestamp": "2025-12-28T19:48:37.203072",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringIPO",
+    "oneYearAtCurrentCompany"
+  ]
+}

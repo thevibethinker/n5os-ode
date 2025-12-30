@@ -1,0 +1,392 @@
+{
+  "full_name": "Michael Grady",
+  "first_name": "Michael",
+  "last_name": "Grady",
+  "gender": null,
+  "headline": "Go-to-Market & Business Development for Multimodal AI Solutions",
+  "linkedin_url": "linkedin.com/in/michaeljosephgrady",
+  "linkedin_id": "michaeljosephgrady",
+  "linkedin_entity_id": "ACoAAA4vb8gBpczmALBzBpLqrvfeYRjyF55pi6Y",
+  "linkedin_num_id": 237989832,
+  "twitter_url": "x.com/howdoifps",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Boston, Massachusetts, United States",
+  "city": "Boston",
+  "region": "Massachusetts",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102084423,
+    404476573,
+    85950361,
+    85688645
+  ],
+  "current_title": "Oracle Cloud Applications Account Manager",
+  "current_department": "SALES",
+  "current_seniority_score": null,
+  "current_position_start": "2019-03-01T00:00:00.000Z",
+  "current_position_end": "2020-11-01T00:00:00.000Z",
+  "current_position_location": "Burlington, Massachusetts",
+  "current_position_description": "\u2022Secured $875K in new business within the first year, outperforming incumbent vendors and earning Top Revenue Contributor recognition on the CX team.\n\u2022Influenced C-Suite decision-making by crafting Total Cost of Ownership proposals that led to account conversions.\n\u2022Managed end-to-end sales cycles\u2014from prospecting and discovery to proposal delivery and contract close\u2014across competitively entrenched Salesforce and Workday client bases.",
+  "current_company_name": "Oracle",
+  "current_company_id": "levrxpWTBvOYvLcd3g2hHDxDucUUXXt",
+  "current_company_linkedin": "linkedin.com/company/oracle",
+  "current_company_website": "oracle.com",
+  "current_company_location": "Oracle",
+  "current_employment_start": "2019-03-01T00:00:00.000Z",
+  "current_employment_end": "2020-11-01T00:00:00.000Z",
+  "latest_degree": "Curry College",
+  "latest_school": "Curry College",
+  "latest_school_location": "Milton, Massachusetts, United States",
+  "latest_school_linkedin": "curry-college",
+  "latest_field_of_study": "English Language and Literature, General",
+  "latest_education_start": "2009-01-01T00:00:00.000Z",
+  "latest_education_end": "2013-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Startup Environments",
+    "Customer Segmentation Strategy",
+    "Multimodal Prompting",
+    "Prompt Engineering",
+    "Transformer Models",
+    "Machine Learning",
+    "Generative AI",
+    "Military Medicine",
+    "Health Service Management",
+    "Cold Calling",
+    "Client Coverage",
+    "Asset Management",
+    "Customer Insight",
+    "talent acquisition",
+    "Cross-functional Team Leadership",
+    "Defense Sector",
+    "Natural Language Processing (NLP)",
+    "Artificial Intelligence (AI)",
+    "Organizational Leadership",
+    "Strategic Business Development"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": null
+    }
+  ],
+  "linkedin_connections": 2187,
+  "linkedin_followers": 2282,
+  "linkedin_join_date": "2013-03-12T02:42:26.000Z",
+  "linkedin_labor_status": "OPEN_TO_WORK",
+  "open_to_work": true,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2020-11-01T00:00:00.000Z",
+      "startDate": "2019-03-01T00:00:00.000Z",
+      "linkedinNumID": 1028,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-03-01T00:00:00.000Z",
+          "endDate": "2020-11-01T00:00:00.000Z",
+          "title": "Oracle Cloud Applications Account Manager",
+          "location": "Burlington, Massachusetts",
+          "department": "SALES",
+          "description": "\u2022Secured $875K in new business within the first year, outperforming incumbent vendors and earning Top Revenue Contributor recognition on the CX team.\n\u2022Influenced C-Suite decision-making by crafting Total Cost of Ownership proposals that led to account conversions.\n\u2022Managed end-to-end sales cycles\u2014from prospecting and discovery to proposal delivery and contract close\u2014across competitively entrenched Salesforce and Workday client bases."
+        }
+      ],
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9",
+      "companyID": "levrxpWTBvOYvLcd3g2hHDxDucUUXXt",
+      "companyName": "Oracle",
+      "company": {
+        "id": "levrxpWTBvOYvLcd3g2hHDxDucUUXXt",
+        "name": "Oracle",
+        "country": "United States",
+        "region": "Texas",
+        "locality": "Austin",
+        "URLs": {
+          "golden": "golden.com/wiki/Oracle-AYP",
+          "contact": "www.oracle.com/corporate/contact/",
+          "twitter": "twitter.com/oracle",
+          "website": "oracle.com",
+          "facebook": "www.facebook.com/Oracle",
+          "linkedin": "linkedin.com/company/oracle",
+          "pitchbook": "pitchbook.com/profiles/company/11734-93",
+          "angelList": "angel.co/company/oracle-1",
+          "crunchbase": "www.crunchbase.com/organization/oracle"
+        },
+        "industryList": [
+          "Data Governance",
+          "Data Management",
+          "Enterprise Software",
+          "Information Technology",
+          "SaaS",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2015-08-01T00:00:00.000Z",
+      "startDate": "2013-08-01T00:00:00.000Z",
+      "linkedinNumID": 157236,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-08-01T00:00:00.000Z",
+          "endDate": "2015-08-01T00:00:00.000Z",
+          "title": "Management Assistant",
+          "location": "Boston, Massachusetts, United States",
+          "department": "OTHER",
+          "seniorityScore": 1
+        }
+      ],
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9",
+      "companyID": "DD6vpHO3ZGrfnmD1peo7vJf78odY001",
+      "companyName": "Enterprise",
+      "company": {
+        "id": "DD6vpHO3ZGrfnmD1peo7vJf78odY001",
+        "name": "Enterprise",
+        "country": "United States",
+        "region": "Maryland",
+        "URLs": {
+          "twitter": "twitter.com/enterprise",
+          "website": "scotent.co.uk",
+          "facebook": "www.facebook.com/enterpriserentacar",
+          "linkedin": "linkedin.com/company/enterprise-rent-a-car",
+          "pitchbook": "pitchbook.com/profiles/company/115533-82",
+          "crunchbase": "www.crunchbase.com/organization/enterprise-rent-a-car"
+        },
+        "industryList": [
+          "Automotive",
+          "Enterprise Software",
+          "Internet"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-04-01T00:00:00.000Z",
+      "startDate": "2017-01-01T00:00:00.000Z",
+      "linkedinNumID": 30335,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2017-01-01T00:00:00.000Z",
+          "endDate": "2019-04-01T00:00:00.000Z",
+          "title": "Client Relationship Manager",
+          "location": "Walpole, Massachusetts",
+          "seniorityScore": 3,
+          "description": "\u2022Owned relationships with 200+ clients, driving B2B revenue and service excellence.\n\u2022Streamlined supply-chain and consignment processes, reducing customer escalations by ~50%.\n\u2022Performed contract due diligence and account audits, recovering revenue through accurate credit tracking."
+        }
+      ],
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9",
+      "companyID": "9Q_Y7R9bPiiJrd4s59CCXKuC8ahAHPn",
+      "companyName": "Hollingsworth & Vose",
+      "company": {
+        "id": "9Q_Y7R9bPiiJrd4s59CCXKuC8ahAHPn",
+        "name": "Hollingsworth & Vose",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "East Walpole",
+        "URLs": {
+          "golden": "golden.com/wiki/Hollingsworth_%26_Vose-EYDKB4",
+          "contact": "cta-redirect.hubspot.com/cta/redirect/8396974/b9e9da17-9610-4083-aecc-75982f498f54",
+          "twitter": "twitter.com/hollingswthvose?lang=en",
+          "website": "hollingsworth-vose.com",
+          "facebook": "www.facebook.com/people/Hollingsworth-Vose/100064139770609/",
+          "linkedin": "linkedin.com/company/hollingsworth-&-vose",
+          "crunchbase": "www.crunchbase.com/organization/hollingsworth-vose"
+        },
+        "industryList": [
+          "Battery",
+          "Manufacturing",
+          "Product Design"
+        ]
+      }
+    },
+    {
+      "endDate": "2025-07-01T00:00:00.000Z",
+      "startDate": "2020-12-01T00:00:00.000Z",
+      "linkedinNumID": 18324866,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2024-12-01T00:00:00.000Z",
+          "endDate": "2025-07-01T00:00:00.000Z",
+          "title": "Business Operations",
+          "location": "Boston, Massachusetts, United States",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        },
+        {
+          "startDate": "2023-02-01T00:00:00.000Z",
+          "endDate": "2024-12-01T00:00:00.000Z",
+          "title": "VP of Defense and Public Sector",
+          "location": "Boston, Massachusetts, United States",
+          "description": "\u2022 Initiated federal and defense sector expansion, securing multimillion-dollar engagements through strategic product alignment and impactful demonstrations.\n\u2022 Directed product strategy and development of NLP / Multimodal AI products to meet unique customer segment needs.\n\u2022 Built and managed interdisciplinary teams as a second-line leader, achieving operational excellence and establishing Lazarus AI as a trusted partner."
+        },
+        {
+          "startDate": "2022-08-01T00:00:00.000Z",
+          "endDate": "2023-02-01T00:00:00.000Z",
+          "title": "Sales Director",
+          "location": "Boston, Massachusetts, United States",
+          "department": "SALES",
+          "seniorityScore": 4,
+          "description": "\u2022Executed sales initiatives in alignment with the transitioning company focus to enterprise OCR/NLP solutions.\n\u2022 Secured relationships with key customers and built relationships which lead to addition of key executive talent to the team, influencing company trajectory positively."
+        },
+        {
+          "startDate": "2020-12-01T00:00:00.000Z",
+          "endDate": "2022-07-01T00:00:00.000Z",
+          "title": "Medical Sales Representative",
+          "location": "Boston, Massachusetts, United States",
+          "department": "SALES",
+          "seniorityScore": 2,
+          "description": "\u2022 Initiated healthcare market entry, adapting sales strategies towards institutional stakeholders to align product-market fit.\n\u2022 Informed AI/ML product strategy as healthcare IT market landscape rapidly evolved.\n\u2022 Identified pivotal market opportunities resulting in strategic business pivots.\n\u2022 Developed strong communication and negotiation skills in engaging with key decision-makers."
+        }
+      ],
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9",
+      "companyID": "63NF93n-eRAnt2vX_xI9po2DNGHCrEs",
+      "companyName": "Lazarus AI",
+      "company": {
+        "id": "63NF93n-eRAnt2vX_xI9po2DNGHCrEs",
+        "name": "Lazarus AI",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Cambridge",
+        "URLs": {
+          "golden": "golden.com/wiki/Lazarus-EKBBXM",
+          "contact": "emvnha23ura.typeform.com/lazarus-rikai",
+          "twitter": "twitter.com/LazarusEnter",
+          "website": "lazarusai.com",
+          "facebook": "www.facebook.com/lazarusenter",
+          "linkedin": "linkedin.com/company/lazarus-enterprisesinc",
+          "pitchbook": "pitchbook.com/profiles/company/233914-06",
+          "angelList": "angel.co/lazarus-4",
+          "crunchbase": "www.crunchbase.com/organization/lazarus-enterprises-2"
+        },
+        "industryList": [
+          "Artificial Intelligence (AI)",
+          "Developer APIs",
+          "Document Management",
+          "Information Technology",
+          "Natural Language Processing",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2020-02-01T00:00:00.000Z",
+      "startDate": "2009-07-01T00:00:00.000Z",
+      "linkedinNumID": 1230,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-07-01T00:00:00.000Z",
+          "endDate": "2020-02-01T00:00:00.000Z",
+          "title": "Medical Service Corps Officer",
+          "department": "SUPPORT",
+          "description": "\u2022Led a 12-person patient-administration team supporting US Army and Air Force aeromedical evacuations.\n\u2022Managed medical assets, ensured HIPAA compliance.\n\u2022As Platoon Leader, improved unit readiness from 60% to 98% within two months and mentored eight NCO promotions."
+        }
+      ],
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9",
+      "companyID": "VZOxY921pKFJMAdrckOoq1BW2x2dlAP",
+      "companyName": "United States Army Reserve",
+      "company": {
+        "id": "VZOxY921pKFJMAdrckOoq1BW2x2dlAP",
+        "name": "United States Army Reserve",
+        "country": "United States",
+        "region": "California",
+        "locality": "Fort Bragg",
+        "URLs": {
+          "contact": "www.usar.army.mil/commands/functional/108th-training-command-usar-drill-sergeant-home/108th-training-command-about-us/108th-training-command-contact-us/",
+          "website": "usar.army.mil",
+          "linkedin": "linkedin.com/company/united-states-army-reserve",
+          "crunchbase": "www.crunchbase.com/organization/united-states-army-reserve"
+        },
+        "industryList": [
+          "Military"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2908131350",
+      "endDate": "2013-01-01T00:00:00.000Z",
+      "startDate": "2009-01-01T00:00:00.000Z",
+      "name": "Curry College",
+      "subject": "English Language and Literature, General",
+      "school": {
+        "id": "gV2Hn6hvIAwD",
+        "linkedinID": "curry-college",
+        "fullName": "Curry College",
+        "location": "Milton, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9"
+    },
+    {
+      "id": "2541678918",
+      "endDate": "2008-01-01T00:00:00.000Z",
+      "startDate": "2004-01-01T00:00:00.000Z",
+      "name": "Xaverian Brothers High School",
+      "school": {
+        "id": "uyDMf9fEqDQf",
+        "linkedinID": "xaverian-brothers-high-school",
+        "fullName": "Xaverian Brothers High School",
+        "location": "Westwood, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2541678918",
+      "name": "HS Diploma",
+      "school": {
+        "id": "uyDMf9fEqDQf",
+        "linkedinID": "xaverian-brothers-high-school",
+        "fullName": "Xaverian Brothers High School",
+        "location": "Westwood, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9"
+    },
+    {
+      "personEducationID": "2908131350",
+      "fieldOfStudy": "English Language and Literature, General",
+      "name": "Bachelor of Arts (B.A.)",
+      "school": {
+        "id": "gV2Hn6hvIAwD",
+        "linkedinID": "curry-college",
+        "fullName": "Curry College",
+        "location": "Milton, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9"
+    }
+  ],
+  "aviato_person_id": "S_rPGO5ETtxRpWudGmYVt-HpcQ05zq9",
+  "aviato_last_updated": "2025-11-05T18:21:31.597Z",
+  "enrichment_timestamp": "2025-12-28T23:20:07.067316",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringMA",
+    "oneYearAtCurrentCompany"
+  ]
+}

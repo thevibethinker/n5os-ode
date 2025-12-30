@@ -1,0 +1,163 @@
+---
+created: 2025-12-28
+last_edited: 2025-12-28
+version: 1.0
+provenance: con_ENFJHuuEiOjhTAjD
+---
+
+# Current Medications
+# Vrijen Attawar - Active Prescriptions
+# Source: GeneSight Report 2022-02-23 + Current Regimen
+
+medications:
+  # ===================
+  # STIMULANTS (Alternating)
+  # ===================
+  adderall:
+    generic_name: Mixed Amphetamine Salts (Amphetamine/Dextroamphetamine)
+    brand: Adderall IR
+    dose: 30mg
+    frequency: As needed (alternates with Vyvanse)
+    timing: Morning
+    prescriber: TBD
+    indication: ADHD / Executive Function
+    genesight_status: Use As Directed
+    pharmacogenomics:
+      metabolized_by: CYP2D6
+      cyp2d6_status: normal
+      notes: |
+        No gene-drug interactions detected.
+        Normal metabolizer status = standard dosing appropriate.
+    notes: |
+      Used on days requiring immediate-release profile.
+      Shorter duration, more flexible timing.
+
+  vyvanse:
+    generic_name: Lisdexamfetamine
+    brand: Vyvanse
+    dose: 60mg
+    frequency: As needed (alternates with Adderall)
+    timing: Morning
+    prescriber: TBD
+    indication: ADHD / Executive Function
+    genesight_status: Use As Directed
+    pharmacogenomics:
+      metabolized_by: CYP2D6 (after conversion)
+      cyp2d6_status: normal
+      notes: |
+        Prodrug - converted to dextroamphetamine in blood.
+        No gene-drug interactions detected.
+        Smoother onset/offset than Adderall IR.
+    notes: |
+      Used on days requiring sustained focus (long meetings, deep work).
+      12-14 hour duration. Take early to avoid sleep disruption.
+
+  # ===================
+  # ANTIDEPRESSANT
+  # ===================
+  bupropion:
+    name: Bupropion XL
+    generic: bupropion
+    brand: Wellbutrin XL
+    dose: 300mg
+    frequency: once daily
+    timing: morning
+    class: NDRI (Norepinephrine-Dopamine Reuptake Inhibitor)
+    indication: depression, focus support
+    
+    pharmacogenomics:
+      genesight_category: "Use As Directed"
+      cyp2b6_status: normal_metabolizer
+      notes: |
+        No gene-drug interactions detected.
+        Standard metabolism expected.
+        
+    mechanism: |
+      Inhibits reuptake of norepinephrine and dopamine.
+      Does NOT affect serotonin (unlike SSRIs).
+      Compensates for COMT VAL/VAL fast dopamine clearance.
+      
+    interactions:
+      - "Avoid alcohol (lowers seizure threshold)"
+      - "Space 24h from stimulants if applicable"
+      
+    started: ~2022
+
+  - name: Aripiprazole
+    generic: aripiprazole
+    brand: Abilify
+    dose: 5mg
+    frequency: once daily
+    timing: evening  # typical; confirm with V
+    class: Atypical Antipsychotic (Dopamine Partial Agonist)
+    indication: mood stabilization, adjunct to antidepressant
+    
+    pharmacogenomics:
+      genesight_category: "Use As Directed"
+      cyp2d6_status: normal_metabolizer
+      cyp3a4_status: normal
+      notes: |
+        No gene-drug interactions detected.
+        Standard metabolism expected.
+        Low dose (5mg) is typical adjunctive use.
+        
+    mechanism: |
+      Partial agonist at D2 dopamine receptors.
+      Stabilizes dopamine signaling without full blockade.
+      Works synergistically with bupropion for mood regulation.
+      
+    interactions:
+      - "Grapefruit juice may increase levels (CYP3A4)"
+      - "Strong CYP2D6 inhibitors may require dose adjustment"
+      
+    started: ~2022
+
+# Genomic Context for Medication Selection
+genomic_rationale:
+  comt_status: VAL/VAL
+  comt_implication: |
+    Fast dopamine clearance means V may be more sensitive to 
+    dopamine-depleting conditions (stress, poor sleep).
+    Bupropion helps maintain dopamine availability.
+    Aripiprazole stabilizes dopamine signaling.
+    
+  cyp2d6_status: Normal Metabolizer
+  cyp2c19_status: Normal Metabolizer
+  
+  avoided_per_genesight:
+    - paroxetine (Paxil) - "Use With Caution"
+    - fluoxetine (Prozac) - "Use With Caution" 
+    - duloxetine (Cymbalta) - "Use With Caution"
+    - venlafaxine (Effexor) - "Use With Increased Caution"
+    - clomipramine - "Use With Increased Caution"
+    
+  reason_for_current_stack: |
+    Bupropion + Aripiprazole combination selected because:
+    1. Both in "Use As Directed" category (no gene-drug conflicts)
+    2. Dopamine-focused mechanism aligns with COMT VAL/VAL profile
+    3. Avoids serotonergic medications that showed caution flags
+
+strategic_notes: |
+  Current regimen reflects a comprehensive dopaminergic optimization strategy:
+  
+  1. STIMULANTS (Adderall/Vyvanse): Primary executive function support
+     - Alternating based on day's demands
+     - Both in "Use As Directed" category (no gene-drug conflicts)
+  
+  2. BUPROPION (Wellbutrin): NDRI baseline support
+     - Compensates for COMT VAL/VAL fast dopamine clearance
+     - Synergistic with stimulants (different mechanism)
+  
+  3. ARIPIPRAZOLE (Abilify): Dopamine stabilization
+     - Partial agonist prevents overstimulation
+     - Balances the stimulant + bupropion stack
+  
+  This is a sophisticated, well-tuned stack that accounts for:
+  - Fast dopamine clearance (COMT VAL/VAL)
+  - Need for flexible stimulant options
+  - Mood stability alongside cognitive enhancement
+  
+  IMPORTANT: Caffeine cutoff (2pm) is critical with this stack.
+  CYP1A2 slow metabolizer + stimulants = compounded sleep risk.
+
+

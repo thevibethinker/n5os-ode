@@ -1,0 +1,10 @@
+{
+  "name": "v-s-23andme-genome",
+  "title": "V's 23andMe Genome",
+  "resources": [
+    {
+      "path": "data.duckdb"
+    }
+  ],
+  "sourceTemplate": "23_and_me"
+}

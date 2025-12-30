@@ -1,0 +1,353 @@
+---
+created: 2025-09-06
+last_edited: 2025-12-29
+version: 1
+provenance: con_mkCkBPFin1psEptZ
+source_pdf: Personal/Health/labs/2025-09-06_LabCorp_Comprehensive.pdf
+---
+
+# Lab Results - September 2025
+# LabCorp Comprehensive Panel
+# Ordered by: Dr. A Banton (One Medical)
+# Collection Date: 2025-09-05
+# Report Date: 2025-09-06
+
+metadata:
+  patient: Vrijen Attawar
+  dob: 1992-11-12
+  fasting: true
+  specimen_number: "24848015300"
+  provider: One Medical Group
+  lab: LabCorp Raritan
+
+# ============================================
+# COMPREHENSIVE METABOLIC PANEL (14)
+# ============================================
+
+metabolic_panel:
+  
+  # Glucose & Diabetes Markers
+  glucose:
+    value: 83
+    unit: mg/dL
+    reference: "70-99"
+    status: NORMAL
+    
+  # Kidney Function
+  bun:
+    value: 15
+    unit: mg/dL
+    reference: "6-20"
+    status: NORMAL
+    
+  creatinine:
+    value: 0.77
+    unit: mg/dL
+    reference: "0.76-1.27"
+    status: NORMAL
+    
+  egfr:
+    value: 122
+    unit: mL/min/1.73
+    reference: ">59"
+    status: NORMAL
+    interpretation: "Excellent kidney function"
+    
+  bun_creatinine_ratio:
+    value: 19
+    reference: "9-20"
+    status: NORMAL
+    
+  # Electrolytes
+  sodium:
+    value: 137
+    unit: mmol/L
+    reference: "134-144"
+    status: NORMAL
+    
+  potassium:
+    value: 4.3
+    unit: mmol/L
+    reference: "3.5-5.2"
+    status: NORMAL
+    
+  chloride:
+    value: 103
+    unit: mmol/L
+    reference: "96-106"
+    status: NORMAL
+    
+  co2_total:
+    value: 22
+    unit: mmol/L
+    reference: "20-29"
+    status: NORMAL
+    
+  # Bone & Calcium
+  calcium:
+    value: 9.4
+    unit: mg/dL
+    reference: "8.7-10.2"
+    status: NORMAL
+    
+  # Protein
+  protein_total:
+    value: 6.6
+    unit: g/dL
+    reference: "6.0-8.5"
+    status: NORMAL
+    
+  albumin:
+    value: 4.2
+    unit: g/dL
+    reference: "4.1-5.1"
+    status: NORMAL
+    
+  globulin_total:
+    value: 2.4
+    unit: g/dL
+    reference: "1.5-4.5"
+    status: NORMAL
+    
+  # Liver Function
+  bilirubin_total:
+    value: 0.4
+    unit: mg/dL
+    reference: "0.0-1.2"
+    status: NORMAL
+    
+  alkaline_phosphatase:
+    value: 78
+    unit: IU/L
+    reference: "44-121"
+    status: NORMAL
+    
+  ast_sgot:
+    value: 19
+    unit: IU/L
+    reference: "0-40"
+    status: NORMAL
+    
+  alt_sgpt:
+    value: 23
+    unit: IU/L
+    reference: "0-44"
+    status: NORMAL
+
+# ============================================
+# COMPLETE BLOOD COUNT (CBC)
+# ============================================
+
+cbc:
+  wbc:
+    value: 7.5
+    unit: x10E3/uL
+    reference: "3.4-10.8"
+    status: NORMAL
+    
+  rbc:
+    value: 4.38
+    unit: x10E6/uL
+    reference: "4.14-5.80"
+    status: NORMAL
+    
+  hemoglobin:
+    value: 12.7
+    unit: g/dL
+    reference: "13.0-17.7"
+    status: LOW
+    flag: true
+    interpretation: |
+      Slightly below reference range for males.
+      Possible causes: iron deficiency, B12/folate insufficiency,
+      or normal variance. Monitor on next panel.
+      
+  hematocrit:
+    value: 38.2
+    unit: "%"
+    reference: "37.5-51.0"
+    status: NORMAL
+    note: "Low-normal, consistent with hemoglobin"
+    
+  mcv:
+    value: 87
+    unit: fL
+    reference: "79-97"
+    status: NORMAL
+    interpretation: "Normal cell size (normocytic)"
+    
+  mch:
+    value: 29.0
+    unit: pg
+    reference: "26.6-33.0"
+    status: NORMAL
+    
+  mchc:
+    value: 33.2
+    unit: g/dL
+    reference: "31.5-35.7"
+    status: NORMAL
+    
+  rdw:
+    value: 12.6
+    unit: "%"
+    reference: "11.6-15.4"
+    status: NORMAL
+    
+  platelets:
+    value: 310
+    unit: x10E3/uL
+    reference: "150-450"
+    status: NORMAL
+
+# ============================================
+# LIPID PANEL
+# ============================================
+
+lipid_panel:
+  cholesterol_total:
+    value: 198
+    unit: mg/dL
+    reference: "100-199"
+    status: BORDERLINE
+    note: "At upper limit of desirable range"
+    
+  triglycerides:
+    value: 95
+    unit: mg/dL
+    reference: "0-149"
+    status: NORMAL
+    interpretation: "Excellent - indicates good metabolic health"
+    
+  hdl_cholesterol:
+    value: 51
+    unit: mg/dL
+    reference: ">39"
+    status: NORMAL
+    note: "Acceptable, but higher (>60) is optimal"
+    
+  vldl_cholesterol:
+    value: 17
+    unit: mg/dL
+    reference: "5-40"
+    status: NORMAL
+    
+  ldl_cholesterol:
+    value: 130
+    unit: mg/dL
+    reference: "0-99"
+    status: HIGH
+    flag: true
+    interpretation: |
+      Above optimal range. Primary driver of atherosclerosis risk.
+      Target for someone without CVD history: <100 mg/dL
+      
+      Optimization levers:
+      - Dietary: Reduce saturated fat, increase fiber
+      - Exercise: Regular cardio (you're doing this)
+      - Consider: Plant sterols, omega-3 supplementation
+      
+  # Calculated Ratios (derived)
+  total_to_hdl_ratio:
+    value: 3.88
+    interpretation: "Acceptable (<5 is good, <3.5 is optimal)"
+    
+  ldl_to_hdl_ratio:
+    value: 2.55
+    interpretation: "Borderline (target <2.5)"
+
+# ============================================
+# DIABETES SCREENING
+# ============================================
+
+diabetes_markers:
+  hemoglobin_a1c:
+    value: 5.1
+    unit: "%"
+    reference: "4.8-5.6"
+    status: NORMAL
+    interpretation: |
+      Excellent glycemic control.
+      - Normal: <5.7%
+      - Prediabetes: 5.7-6.4%
+      - Diabetes: >6.4%
+      
+      Your 5.1% indicates healthy blood sugar regulation.
+      TCF7L2 CC genotype (robust insulin sensitivity) aligns with this.
+
+# ============================================
+# THYROID FUNCTION
+# ============================================
+
+thyroid:
+  tsh:
+    value: 1.430
+    unit: uIU/mL
+    reference: "0.450-4.500"
+    status: NORMAL
+    interpretation: |
+      Mid-range TSH indicates healthy thyroid function.
+      No additional thyroid tests indicated.
+
+# ============================================
+# CLINICAL SUMMARY
+# ============================================
+
+summary:
+  overall_status: "GOOD_WITH_ACTIONABLES"
+  
+  flags:
+    - marker: Hemoglobin
+      value: "12.7 g/dL (LOW)"
+      action: "Monitor; consider iron/B12 testing if persists"
+      
+    - marker: LDL Cholesterol
+      value: "130 mg/dL (HIGH)"
+      action: "Lifestyle optimization; retest in 6 months"
+      
+  strengths:
+    - "Excellent kidney function (eGFR 122)"
+    - "Normal blood sugar (HbA1c 5.1%)"
+    - "Healthy triglycerides (95)"
+    - "Normal liver enzymes"
+    - "Thyroid functioning well"
+    
+  next_tests_recommended:
+    - test: "Iron panel + Ferritin"
+      reason: "Investigate low hemoglobin"
+      priority: medium
+      
+    - test: "Vitamin D (25-OH)"
+      reason: "Baseline for supplementation optimization"
+      priority: medium
+      
+    - test: "Repeat lipid panel"
+      reason: "Track LDL response to lifestyle changes"
+      priority: low
+      timeline: "6 months"
+
+# ============================================
+# GENOMIC CORRELATION
+# ============================================
+
+genomic_correlation:
+  
+  fto_aa_impact:
+    note: |
+      FTO AA genotype (elevated appetite) may require extra attention
+      to dietary quality to optimize lipid profile. Current triglycerides
+      are excellent (95), suggesting good metabolic control despite
+      genetic headwind.
+      
+  mthfr_ag_impact:
+    note: |
+      Low-normal hemoglobin could relate to MTHFR AG (reduced folate
+      processing). Ensure methylated B12/folate supplementation is
+      consistent. Current stack includes this.
+      
+  comt_gg_impact:
+    note: |
+      Stimulant medications (Adderall/Vyvanse) can affect appetite
+      and potentially contribute to nutritional gaps. Front-loading
+      protein-rich breakfast remains important.
+

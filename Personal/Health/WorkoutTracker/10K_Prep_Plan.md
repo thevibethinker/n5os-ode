@@ -1,11 +1,35 @@
 ---
 created: 2025-12-24
-last_edited: 2025-12-24
-version: 1.0
+last_edited: 2025-12-28
+version: 1.1
 provenance: con_ZugYfM8FZhTgvhD3
 ---
 
 # 10K Training Plan: V's 80/20 Engine (Race Day: Feb 28)
+
+---
+
+## 🧬 Why This Plan Fits Your Genetics
+
+> *Reference: `file 'Personal/Health/V_GENETIC_PROFILE.md'`*
+
+**Good news:** The 80/20 approach is genetically optimized for you.
+
+### ACTN3 TT (Endurance-Built)
+- You lack alpha-actinin-3 → your muscle fibers are naturally suited for **sustained aerobic effort**
+- The **80% Zone 2 work** is where your body naturally excels — this isn't just training methodology, it's leveraging your genetic strengths
+- Your Feb 28 race should target consistent pacing over aggressive starts
+
+### COMT GG (Warrior — Recovery Conscious)
+- Fast dopamine clearance means you perform well under race-day pressure (good for the actual 10K)
+- **Trade-off:** The 20% interval days hit your system harder than most people — respect the recovery days
+- If resting HR elevates 5+ BPM above baseline on Fitbit, consider extending recovery before the next interval session
+
+### Caffeine Timing
+- Pre-race caffeine (60-90 min before) will work well for you
+- During training: avoid caffeine after 3pm to protect sleep quality, which is critical for adaptation
+
+---
 
 ## Archetype Definitions
 
@@ -48,3 +72,4 @@ provenance: con_ZugYfM8FZhTgvhD3
 ## Automation Instructions
 To validate your last run, run:
 `python3 Personal/Health/WorkoutTracker/archetype_validator.py [YYYY-MM-DD]`
+

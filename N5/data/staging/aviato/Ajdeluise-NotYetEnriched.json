@@ -1,0 +1,224 @@
+{
+  "full_name": "Anthony DeLuise",
+  "first_name": "Anthony",
+  "last_name": "DeLuise",
+  "gender": null,
+  "headline": "B2B Product Manager | Designer, Operator, 0\u21921 Builder",
+  "linkedin_url": "linkedin.com/in/anthonydeluise",
+  "linkedin_id": "anthonydeluise",
+  "linkedin_entity_id": "ACoAAAdux3MBkQbW4gXIL34n9TvcRPIdRT1bTcM",
+  "linkedin_num_id": 124700531,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "New York, New York, United States",
+  "city": "New York",
+  "region": "New York",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102082361,
+    85977539,
+    85688543,
+    102082377,
+    102081863,
+    102083063,
+    102081779
+  ],
+  "current_title": "Intern",
+  "current_department": "OTHER",
+  "current_seniority_score": 1,
+  "current_position_start": "2012-01-01T00:00:00.000Z",
+  "current_position_end": "2012-04-01T00:00:00.000Z",
+  "current_position_location": "Washington, District of Columbia, United States",
+  "current_position_description": "Intern in the office of Representative David Cicilline (D-RI) \n\n- Gave tours of the U.S. Capitol Building to guests of Rep. Cicilline \n- Answered constituent letters, emails and phone calls\n- Learned how a congressional office operates and that I'd rather learn to design and ship software instead",
+  "current_company_name": "U.S. House of Representatives",
+  "current_company_id": "lyGa_ZKB8OGHuCTMa8qY6LkKfDiDVtE",
+  "current_company_linkedin": "linkedin.com/company/u.s.-house-of-representatives",
+  "current_company_website": "energycommerce.house.gov",
+  "current_company_location": "Committee on Energy and Commerce",
+  "current_employment_start": "2012-01-01T00:00:00.000Z",
+  "current_employment_end": "2012-04-01T00:00:00.000Z",
+  "latest_degree": "American University",
+  "latest_school": "American University",
+  "latest_school_location": "Washington, District of Columbia, United States",
+  "latest_school_linkedin": "american-university",
+  "latest_field_of_study": "Political Science",
+  "latest_education_start": null,
+  "latest_education_end": "2012-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Prototyping",
+    "User Experience (UX)",
+    "Product Development",
+    "Product Discovery",
+    "Product Management",
+    "Software as a Service (SaaS)",
+    "Product Design",
+    "Prompt Engineering",
+    "User Interface Design",
+    "Positioning (Marketing)",
+    "Figma",
+    "Pricing",
+    "Customer Discovery",
+    "Customer Development",
+    "User Research",
+    "Product Strategy",
+    "Go-to-Market Strategy",
+    "Startups",
+    "Entrepreneurship",
+    "Business Development"
+  ],
+  "languages": [],
+  "linkedin_connections": 936,
+  "linkedin_followers": 995,
+  "linkedin_join_date": "2011-06-16T14:00:30.803Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2012-04-01T00:00:00.000Z",
+      "startDate": "2012-01-01T00:00:00.000Z",
+      "linkedinNumID": 3921,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-01-01T00:00:00.000Z",
+          "endDate": "2012-04-01T00:00:00.000Z",
+          "title": "Intern",
+          "location": "Washington, District of Columbia, United States",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "Intern in the office of Representative David Cicilline (D-RI) \n\n- Gave tours of the U.S. Capitol Building to guests of Rep. Cicilline \n- Answered constituent letters, emails and phone calls\n- Learned how a congressional office operates and that I'd rather learn to design and ship software instead"
+        }
+      ],
+      "personID": "jUkRIj9rGsqQIRHq6olI-JCPBc2LV88",
+      "companyID": "lyGa_ZKB8OGHuCTMa8qY6LkKfDiDVtE",
+      "companyName": "U.S. House of Representatives",
+      "company": {
+        "id": "lyGa_ZKB8OGHuCTMa8qY6LkKfDiDVtE",
+        "name": "Committee on Energy and Commerce",
+        "country": "United States",
+        "region": "District of Columbia",
+        "locality": "Washington",
+        "URLs": {
+          "twitter": "twitter.com/housecommerce",
+          "website": "energycommerce.house.gov",
+          "facebook": "www.facebook.com/energyandcommerce",
+          "linkedin": "linkedin.com/company/u.s.-house-of-representatives",
+          "crunchbase": "www.crunchbase.com/organization/committee-on-energy-and-commerce"
+        },
+        "industryList": [
+          "Government",
+          "Health Care"
+        ]
+      }
+    },
+    {
+      "endDate": "2024-10-01T00:00:00.000Z",
+      "startDate": "2013-10-01T00:00:00.000Z",
+      "linkedinNumID": 2854437,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-09-01T00:00:00.000Z",
+          "endDate": "2024-10-01T00:00:00.000Z",
+          "title": "Head of Product | Founding Team",
+          "location": "New York, United States",
+          "department": "PRODUCT_MANAGEMENT",
+          "description": "Scaled VisitDays from campus visit product to enrollment platform serving 100+ universities. Built 0-1 virtual college fair marketplace that reached 1M+ students and 25% of US-based universities. Grew ACV 5x through enterprise positioning and strategic pricing.\n\nOwned product strategy, roadmap and customer discovery while managing sprints for a team of engineers (5 at peak), 1 product designer, and QA contractors. Shipped enterprise-ready updates like SSO, Salesforce/CRM integrations, two-way texting, customizable surveys. Delivered real business outcomes for university administrators like higher recruiting event attendance, more qualified prospects, and increased new student deposits."
+        },
+        {
+          "startDate": "2013-10-01T00:00:00.000Z",
+          "endDate": "2015-09-01T00:00:00.000Z",
+          "title": "Product Designer | Founding Team",
+          "location": "Washington, District of Columbia, United States",
+          "department": "DESIGN",
+          "description": "Founding team and first employee. Designed a product to help university admissions teams manage recruiting events and automate workflows.\n\nDesigned product MVP that secured our first customers and seed funding. Conducted 100+ customer interviews, built design system, created visual designs for everything from landing pages to conference booths. \n\n0-1 hustle, wearing many hats, finding PMF. Lots of fun."
+        }
+      ],
+      "personID": "jUkRIj9rGsqQIRHq6olI-JCPBc2LV88",
+      "companyID": "N4Ihq0r5th2nEwezQQwI1XkZSXgxpm5",
+      "companyName": "VisitDays",
+      "company": {
+        "id": "N4Ihq0r5th2nEwezQQwI1XkZSXgxpm5",
+        "name": "VisitDays",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Cambridge",
+        "URLs": {
+          "golden": "golden.com/wiki/VisitDays-8AARMX8",
+          "contact": "visitdays.com/#",
+          "twitter": "twitter.com/VisitDays",
+          "website": "visitdays.com",
+          "facebook": "www.facebook.com/visitdays",
+          "linkedin": "linkedin.com/company/visitdays",
+          "pitchbook": "pitchbook.com/profiles/company/120862-45",
+          "angelList": "angel.co/visitdays",
+          "crunchbase": "www.crunchbase.com/organization/visitdays"
+        },
+        "industryList": [
+          "Education",
+          "Higher Education",
+          "Recruiting"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2837840029",
+      "endDate": "2012-01-01T00:00:00.000Z",
+      "name": "American University",
+      "subject": "Political Science",
+      "school": {
+        "id": "kUTBLYS8Xevr",
+        "linkedinID": "american-university",
+        "fullName": "American University",
+        "location": "Washington, District of Columbia, United States",
+        "entityType": "school"
+      },
+      "activities": "University Honors Program, WVAU DJ",
+      "personID": "jUkRIj9rGsqQIRHq6olI-JCPBc2LV88"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2837840029",
+      "fieldOfStudy": "Political Science",
+      "name": "Bachelor of Arts",
+      "school": {
+        "id": "kUTBLYS8Xevr",
+        "linkedinID": "american-university",
+        "fullName": "American University",
+        "location": "Washington, District of Columbia, United States",
+        "entityType": "school"
+      },
+      "personID": "jUkRIj9rGsqQIRHq6olI-JCPBc2LV88"
+    }
+  ],
+  "aviato_person_id": "jUkRIj9rGsqQIRHq6olI-JCPBc2LV88",
+  "aviato_last_updated": "2025-10-26T17:42:22.083Z",
+  "enrichment_timestamp": "2025-12-28T23:22:25.846774",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "oneYearAtCurrentCompany"
+  ]
+}

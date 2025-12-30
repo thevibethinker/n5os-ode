@@ -74,9 +74,17 @@
   
   "organizer_reputation": {
     "priority_organizers": [
-      "andrew yeung", "drew parten", "tushar agarwal",
+      "edwina yeo", "supermomos",
+      "ben guo", "fibe", "0thernet",
+      "andrew yeung", "velocity",
+      "anna bao", "fohe",
+      "victoria yampelsky", "startup station",
+      "marvin ventures", "marvin vc",
+      "drew parten", "tushar agarwal",
       "ulrik soderstrom", "denis belyavsky", "gladys",
-      "bryan liu", "maggie lloydhauser"
+      "bryan liu", "maggie lloydhauser",
+      "ray batra", "hearth",
+      "khosla ventures", "645 ventures"
     ],
     "priority_calendars": [
       "Andrew's Yeung's Tech Events",
@@ -103,4 +111,5 @@
     "subscribed_calendar_bonus": 2.5
   }
 }
+
 

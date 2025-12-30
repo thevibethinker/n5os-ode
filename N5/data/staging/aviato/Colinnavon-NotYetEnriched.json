@@ -1,0 +1,552 @@
+{
+  "full_name": "Colin Navon",
+  "first_name": "Colin",
+  "last_name": "Navon",
+  "gender": null,
+  "headline": "Dad | Talent Acquisition Leader | Career Coach | Eagle Scout | Ninja Warrior",
+  "linkedin_url": "linkedin.com/in/colin-navon",
+  "linkedin_id": "colin-navon",
+  "linkedin_entity_id": "ACoAAAn8VLABAO_DH0QLEHMroc9v_mCwY_UxWyg",
+  "linkedin_num_id": 167531696,
+  "twitter_url": "x.com/Colin46184084",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Boston, Massachusetts, United States",
+  "city": "Boston",
+  "region": "Massachusetts",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102084423,
+    404476573,
+    85950361,
+    85688645
+  ],
+  "current_title": "Course Tester",
+  "current_department": null,
+  "current_seniority_score": null,
+  "current_position_start": "2016-01-01T00:00:00.000Z",
+  "current_position_end": "2016-01-01T00:00:00.000Z",
+  "current_position_location": "Greater Philadelphia Area",
+  "current_position_description": null,
+  "current_company_name": "American Ninja Warrior",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "American Ninja Warrior",
+  "current_employment_start": "2016-01-01T00:00:00.000Z",
+  "current_employment_end": "2016-01-01T00:00:00.000Z",
+  "latest_degree": "University of Massachusetts, Amherst",
+  "latest_school": "University of Massachusetts Amherst",
+  "latest_school_location": "Amherst Center, Massachusetts, United States",
+  "latest_school_linkedin": "umassamherst",
+  "latest_field_of_study": "Legal Studies",
+  "latest_education_start": "2009-01-01T00:00:00.000Z",
+  "latest_education_end": "2013-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Technical Recruiting",
+    "Leadership",
+    "Social Media",
+    "Recruiting",
+    "Public Speaking",
+    "Employer Branding",
+    "Staff Retention",
+    "Executive Search",
+    "Management",
+    "Talent Acquisition",
+    "Strategic Sourcing",
+    "Stakeholder Management",
+    "Team Management",
+    "Community Outreach",
+    "Hiring Practices",
+    "Hiring Trends",
+    "Immigration",
+    "Emotional Intelligence",
+    "Human Resources (HR)",
+    "Sourcing"
+  ],
+  "languages": [],
+  "linkedin_connections": 10891,
+  "linkedin_followers": 10909,
+  "linkedin_join_date": "2012-02-10T20:53:34.000Z",
+  "linkedin_labor_status": "OPEN_TO_WORK",
+  "open_to_work": true,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2016-01-01T00:00:00.000Z",
+      "startDate": "2016-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2016-01-01T00:00:00.000Z",
+          "endDate": "2016-01-01T00:00:00.000Z",
+          "title": "Course Tester",
+          "location": "Greater Philadelphia Area"
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyName": "American Ninja Warrior",
+      "company": {
+        "name": "American Ninja Warrior",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2015-01-01T00:00:00.000Z",
+      "startDate": "2015-01-01T00:00:00.000Z",
+      "linkedinNumID": 128628,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "endDate": "2015-01-01T00:00:00.000Z",
+          "title": "Relationship Manager",
+          "location": "Greater Boston Area",
+          "department": "SALES",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "eVIvwoYrFAk62jZNb9o8n0AfRbbXrHa",
+      "companyName": "Talener",
+      "company": {
+        "id": "eVIvwoYrFAk62jZNb9o8n0AfRbbXrHa",
+        "name": "Talener",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Talener-5K9RDNR",
+          "twitter": "twitter.com/TalenerHQ",
+          "website": "talener.com",
+          "facebook": "www.facebook.com/talener",
+          "linkedin": "linkedin.com/company/talener",
+          "angelList": "angel.co/talener-2",
+          "crunchbase": "www.crunchbase.com/organization/talener-group"
+        },
+        "industryList": [
+          "Consulting",
+          "DevOps",
+          "Recruiting"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-01-01T00:00:00.000Z",
+      "startDate": "2015-01-01T00:00:00.000Z",
+      "linkedinNumID": 402603,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "endDate": "2019-01-01T00:00:00.000Z",
+          "title": "Manager of Global Recruiting",
+          "location": "Greater Boston Area"
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "RU34w1SVolLiXSnspfq4alCX6Hau-5S",
+      "companyName": "Tapjoy",
+      "company": {
+        "id": "RU34w1SVolLiXSnspfq4alCX6Hau-5S",
+        "name": "Tapjoy ",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Francisco",
+        "URLs": {
+          "golden": "golden.com/wiki/Tapjoy-AMB65Y3",
+          "contact": "www.tapjoy.com/contact-us",
+          "twitter": "x.com/tapjoy",
+          "website": "tapjoy.com",
+          "linkedin": "linkedin.com/company/tapjoy",
+          "pitchbook": "pitchbook.com/profiles/company/50944-24",
+          "angelList": "angel.co/tapjoy",
+          "crunchbase": "www.crunchbase.com/organization/tapjoy"
+        },
+        "industryList": [
+          "Advertising",
+          "Android",
+          "Apps",
+          "Brand Marketing",
+          "iOS",
+          "Marketing Automation",
+          "Mobile",
+          "Mobile Apps"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-01-01T00:00:00.000Z",
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "linkedinNumID": 141203,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-01-01T00:00:00.000Z",
+          "endDate": "2019-01-01T00:00:00.000Z",
+          "title": "Senior Technical Recruiter",
+          "location": "Cambridge, Massachusetts",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "nTopFd0thbJrE7X7UVXtyKxxjgqp6_d",
+      "companyName": "CarGurus",
+      "company": {
+        "id": "nTopFd0thbJrE7X7UVXtyKxxjgqp6_d",
+        "name": "CarGurus",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Cambridge",
+        "URLs": {
+          "golden": "golden.com/wiki/CarGurus-MZKRE3",
+          "contact": "dealers.cargurus.com/drc/cargurus-advantage?pid=contactUs#formSection",
+          "twitter": "twitter.com/CarGurus",
+          "website": "cargurus.com",
+          "facebook": "www.facebook.com/cargurus",
+          "linkedin": "linkedin.com/company/cargurus",
+          "angelList": "angel.co/cargurus",
+          "crunchbase": "www.crunchbase.com/organization/cargurus"
+        },
+        "industryList": [
+          "Automotive",
+          "Classifieds",
+          "Price Comparison",
+          "Shopping"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-01-01T00:00:00.000Z",
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "linkedinNumID": 10466509,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-01-01T00:00:00.000Z",
+          "endDate": "2021-01-01T00:00:00.000Z",
+          "title": "Associate Manager, Tech Recruiting (IT & Software Engineering)",
+          "location": "Charlestown, Massachusetts",
+          "department": "ENGINEERING"
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "5K5PxULtsfPSdI2V7cvruTUAY9fRfoU",
+      "companyName": "Indigo",
+      "company": {
+        "id": "5K5PxULtsfPSdI2V7cvruTUAY9fRfoU",
+        "name": "Indigo",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "golden": "golden.com/wiki/Indigo-JNZPB3V",
+          "contact": "www.indigoag.com/contact",
+          "twitter": "twitter.com/Indigoag",
+          "website": "indigoag.com",
+          "facebook": "www.facebook.com/IndigoAgriculture",
+          "linkedin": "linkedin.com/company/indigoag",
+          "pitchbook": "pitchbook.com/profiles/company/99446-23",
+          "angelList": "angel.co/indigo-agriculture",
+          "crunchbase": "www.crunchbase.com/organization/indigoag"
+        },
+        "industryList": [
+          "Agriculture",
+          "AgTech",
+          "Farming",
+          "GreenTech"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-01-01T00:00:00.000Z",
+      "startDate": "2021-01-01T00:00:00.000Z",
+      "linkedinNumID": 18488141,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2021-01-01T00:00:00.000Z",
+          "endDate": "2021-01-01T00:00:00.000Z",
+          "title": "Senior Technical Recruiter",
+          "location": "Greater Boston",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "FR07ZRIM9f283pYjDYbXUJICfr1Vx-Y",
+      "companyName": "dutchie",
+      "company": {
+        "id": "FR07ZRIM9f283pYjDYbXUJICfr1Vx-Y",
+        "name": "Dutchie",
+        "country": "United States",
+        "region": "Oregon",
+        "locality": "Bend",
+        "URLs": {
+          "golden": "golden.com/wiki/Dutchie-3999KM5",
+          "twitter": "twitter.com/getdutchie",
+          "website": "dutchie.com",
+          "facebook": "www.facebook.com/getdutchie",
+          "linkedin": "linkedin.com/company/getdutchie",
+          "pitchbook": "pitchbook.com/profiles/company/233221-15",
+          "angelList": "angel.co/dutchie",
+          "crunchbase": "www.crunchbase.com/organization/dutchie"
+        },
+        "industryList": [
+          "Cannabis",
+          "Consumer",
+          "Point of Sale",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2022-08-01T00:00:00.000Z",
+      "startDate": "2022-01-01T00:00:00.000Z",
+      "linkedinNumID": 10417918,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-01-01T00:00:00.000Z",
+          "endDate": "2022-08-01T00:00:00.000Z",
+          "title": "Manager, Technical Talent Acquisition",
+          "location": "Greater Boston",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "nWcyanNk0wLzSkcpY7JqHJEdfYnqLkz",
+      "companyName": "connectRN",
+      "company": {
+        "id": "nWcyanNk0wLzSkcpY7JqHJEdfYnqLkz",
+        "name": "connectRN",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Waltham",
+        "URLs": {
+          "golden": "golden.com/wiki/connectRN-XKKZ8ND",
+          "twitter": "twitter.com/connectrnapp",
+          "website": "connectrn.com",
+          "facebook": "www.facebook.com/connectrnapp",
+          "linkedin": "linkedin.com/company/connectrn",
+          "pitchbook": "pitchbook.com/profiles/company/142876-90",
+          "angelList": "angel.co/connectrn",
+          "crunchbase": "www.crunchbase.com/organization/connectrn"
+        },
+        "industryList": [
+          "Health Care",
+          "Medical",
+          "Mobile Apps",
+          "Nursing and Residential Care"
+        ]
+      }
+    },
+    {
+      "endDate": "2023-03-01T00:00:00.000Z",
+      "startDate": "2022-09-01T00:00:00.000Z",
+      "linkedinNumID": 2908815,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-09-01T00:00:00.000Z",
+          "endDate": "2023-03-01T00:00:00.000Z",
+          "title": "Senior Technical Recruiter {Mat-Leave Coverage}",
+          "location": "Remote",
+          "department": "OPERATIONS"
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "cb5iqSkdfkXpHLa1NnWmhgxXDAZ60RB",
+      "companyName": "Klaviyo",
+      "company": {
+        "id": "cb5iqSkdfkXpHLa1NnWmhgxXDAZ60RB",
+        "name": "Klaviyo",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "golden": "golden.com/wiki/Klaviyo-W44YANR",
+          "contact": "www.klaviyo.com/contact-us",
+          "twitter": "twitter.com/klaviyo",
+          "website": "klaviyo.com",
+          "facebook": "www.facebook.com/Klaviyo",
+          "linkedin": "linkedin.com/company/klaviyo",
+          "pitchbook": "pitchbook.com/profiles/company/85669-30",
+          "angelList": "angel.co/klaviyo",
+          "crunchbase": "www.crunchbase.com/organization/klaviyo"
+        },
+        "industryList": [
+          "Advertising",
+          "Analytics",
+          "E-Commerce",
+          "Marketing Automation",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2025-05-01T00:00:00.000Z",
+      "startDate": "2022-09-01T00:00:00.000Z",
+      "linkedinNumID": 151939,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-09-01T00:00:00.000Z",
+          "endDate": "2025-05-01T00:00:00.000Z",
+          "title": "Principal Talent Partner",
+          "location": "Remote"
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "F_zWY0sur1evf5lVp98sz81351ndkKX",
+      "companyName": "Clover Sonoma",
+      "company": {
+        "id": "F_zWY0sur1evf5lVp98sz81351ndkKX",
+        "name": "Clover Sonoma",
+        "country": "United States",
+        "region": "California",
+        "locality": "Petaluma",
+        "URLs": {
+          "contact": "cloversonoma.com/connect/",
+          "twitter": "twitter.com/cloversonoma",
+          "website": "cloversonoma.com",
+          "facebook": "www.facebook.com/CloverSonoma",
+          "linkedin": "linkedin.com/company/clover-stornetta-farms-inc.",
+          "pitchbook": "pitchbook.com/profiles/company/279424-27",
+          "crunchbase": "www.crunchbase.com/organization/clover-stornetta-farms"
+        },
+        "industryList": [
+          "Food and Beverage",
+          "Food Processing",
+          "Service Industry"
+        ]
+      }
+    },
+    {
+      "endDate": "2025-11-01T00:00:00.000Z",
+      "startDate": "2025-06-01T00:00:00.000Z",
+      "linkedinNumID": 64919393,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-06-01T00:00:00.000Z",
+          "endDate": "2025-11-01T00:00:00.000Z",
+          "title": "Senior Recruiter",
+          "location": "Greater Boston",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "AooTMzwezzvZ",
+      "companyID": "cyf_7GadoXcWoyMcqxxLBi839wrgtUQ",
+      "companyName": "Amwell",
+      "company": {
+        "id": "cyf_7GadoXcWoyMcqxxLBi839wrgtUQ",
+        "name": "Amwell",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "golden": "golden.com/wiki/Amwell-V48NJ9",
+          "twitter": "twitter.com/amwell",
+          "website": "business.amwell.com",
+          "facebook": "www.facebook.com/AmwellPatient",
+          "linkedin": "linkedin.com/company/amwellcorp",
+          "pitchbook": "pitchbook.com/profiles/company/57380-68",
+          "angelList": "angel.co/american-well",
+          "crunchbase": "www.crunchbase.com/organization/american-well"
+        },
+        "industryList": [
+          "Health Care",
+          "Information Technology",
+          "mHealth",
+          "Telehealth"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2740847918",
+      "endDate": "2013-01-01T00:00:00.000Z",
+      "startDate": "2009-01-01T00:00:00.000Z",
+      "name": "University of Massachusetts, Amherst",
+      "subject": "Legal Studies",
+      "school": {
+        "id": "56FHO2nUMESm",
+        "linkedinID": "umassamherst",
+        "fullName": "University of Massachusetts Amherst",
+        "location": "Amherst Center, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "AooTMzwezzvZ"
+    },
+    {
+      "id": "3073458848",
+      "endDate": "2009-01-01T00:00:00.000Z",
+      "startDate": "2005-01-01T00:00:00.000Z",
+      "name": "Doherty Memorial High School",
+      "school": {
+        "id": "gFZ3yuJ4LuvnJ31IC_ZeFwzxL4Ote-c",
+        "linkedinID": "doherty-memorial-high-school",
+        "fullName": "Doherty Memorial High School",
+        "entityType": "school"
+      },
+      "personID": "AooTMzwezzvZ"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2740847918",
+      "fieldOfStudy": "Legal Studies",
+      "name": "Bachelor of Arts (B.A.)",
+      "school": {
+        "id": "56FHO2nUMESm",
+        "linkedinID": "umassamherst",
+        "fullName": "University of Massachusetts Amherst",
+        "location": "Amherst Center, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "AooTMzwezzvZ"
+    },
+    {
+      "personEducationID": "3073458848",
+      "name": "Diploma",
+      "school": {
+        "id": "gFZ3yuJ4LuvnJ31IC_ZeFwzxL4Ote-c",
+        "linkedinID": "doherty-memorial-high-school",
+        "fullName": "Doherty Memorial High School",
+        "entityType": "school"
+      },
+      "personID": "AooTMzwezzvZ"
+    }
+  ],
+  "aviato_person_id": "AooTMzwezzvZ",
+  "aviato_last_updated": "2025-11-12T23:47:30.061Z",
+  "enrichment_timestamp": "2025-12-28T23:21:46.565718",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringIPO",
+    "oneYearAtCurrentCompany"
+  ]
+}

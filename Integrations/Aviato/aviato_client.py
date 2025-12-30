@@ -21,14 +21,14 @@ class AviatoClient:
     def __init__(self, api_key: Optional[str] = None):
         """
         Initialize the Aviato client.
-        If api_key is not provided, it will look for AVIATO_API_KEY environment variable.
+        If api_key is not provided, it will look for AVIATO_N5OS_V2_KEY environment variable.
         """
-        self.api_key = api_key or os.getenv('AVIATO_API_KEY')
+        self.api_key = api_key or os.getenv('AVIATO_N5OS_V2_KEY')
         self.base_url = os.getenv('AVIATO_API_BASE_URL', 'https://data.api.aviato.co')
         
         if not self.api_key:
-            logging.error("No Aviato API Key found. Set AVIATO_API_KEY environment variable.")
-            raise ValueError("AVIATO_API_KEY is required")
+            logging.error("No Aviato API Key found. Set AVIATO_N5OS_V2_KEY environment variable.")
+            raise ValueError("AVIATO_N5OS_V2_KEY is required")
         
         self.headers = {
             'Authorization': f'Bearer {self.api_key}',

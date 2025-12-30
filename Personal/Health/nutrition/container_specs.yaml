@@ -1,0 +1,92 @@
+---
+created: 2025-12-28
+last_edited: 2025-12-28
+version: 1.0
+provenance: con_ENFJHuuEiOjhTAjD
+---
+
+# Container Specifications
+# Standard containers used by home chef for meal prep
+# Used for calorie/portion estimation from photos
+
+# ============================================
+# CONTAINER INVENTORY
+# ============================================
+
+containers:
+
+  # Update these with actual container measurements
+  - id: large_rectangle
+    description: "Large rectangular meal prep container"
+    volume_oz: TBD  # Measure in fluid oz or cups
+    volume_cups: TBD
+    typical_use: "Main entrees, grain bowls"
+    
+  - id: medium_rectangle
+    description: "Medium rectangular container"
+    volume_oz: TBD
+    volume_cups: TBD
+    typical_use: "Side dishes, salads"
+    
+  - id: small_square
+    description: "Small square container"
+    volume_oz: TBD
+    volume_cups: TBD
+    typical_use: "Snacks, sauces, small sides"
+    
+  - id: round_bowl
+    description: "Round bowl container"
+    volume_oz: TBD
+    volume_cups: TBD
+    typical_use: "Soups, stews, curries"
+
+# ============================================
+# ESTIMATION GUIDELINES
+# ============================================
+
+estimation_notes: |
+  For calorie estimation from photos:
+  
+  1. Identify container size from inventory above
+  2. Estimate fill level (25%, 50%, 75%, 100%)
+  3. Identify food type and density:
+     - Dense (rice, pasta, meat): higher cal/volume
+     - Light (salad, vegetables): lower cal/volume
+     - Mixed (stir-fry, curry): moderate
+  
+  4. Apply standard multipliers:
+     - Cooked grains: ~200 cal/cup
+     - Cooked protein: ~200-250 cal/cup (varies by type)
+     - Raw vegetables: ~25-50 cal/cup
+     - Cooked vegetables with oil: ~75-100 cal/cup
+     - Sauces/dressings: ~100-150 cal/quarter cup
+
+# ============================================
+# WEEKLY PREP WORKFLOW
+# ============================================
+
+weekly_prep_workflow:
+  trigger: "Photo of weekly prep containers"
+  steps:
+    1. "V sends photo(s) of all containers from chef"
+    2. "AI identifies containers, estimates contents"
+    3. "AI creates manifest with estimated calories/macros per container"
+    4. "V confirms with chef if any estimates seem off"
+    5. "Manifest saved to nutrition/weekly_prep/YYYY-WXX/"
+  
+  daily_tracking:
+    1. "V snaps photo of meal"
+    2. "AI matches to known container or estimates"
+    3. "AI logs to meal_log.db with timestamp"
+    4. "Running daily total available on request"
+
+# ============================================
+# TODO: CALIBRATION
+# ============================================
+
+todo:
+  - "[ ] V to provide photo of standard containers with measurements"
+  - "[ ] Confirm container volumes with chef"
+  - "[ ] First weekly prep photo to calibrate system"
+  - "[ ] Create meal_log.db schema"
+
