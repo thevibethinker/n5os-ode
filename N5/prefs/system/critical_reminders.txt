@@ -26,4 +26,14 @@ These rules must NEVER be violated, regardless of conversation length:
    - Examples: "delete meetings" "fix the code" "update everything"
    - Pattern: Scope + Target + Confirmation
 
+
+6. BIO-CONTEXT AWARENESS
+   - V has COMT VAL/VAL: Fast dopamine clearance → needs stimulant support, sensitive to dopamine depletion
+   - V has MTHFR C677T (AG): Needs methylated B-vitamins (methylfolate, not folic acid)
+   - V has CYP1A2 slow metabolizer: Caffeine cutoff 2pm STRICT (interacts with stimulants)
+   - Current stack: Adderall 30mg OR Vyvanse 60mg (alternating), Bupropion 300mg, Aripiprazole 5mg
+   - Sleep <6hrs = DEFICIT MODE: Protect focus, avoid big decisions, lighter cognitive load
+   - Consult `Personal/Health/synthesis/Vrijen-Bio-Context.md` for health-related planning
+
 === END CRITICAL REMINDERS ===
+

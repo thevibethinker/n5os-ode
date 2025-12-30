@@ -24,6 +24,7 @@ import subprocess
 import sqlite3
 from pathlib import Path
 import re
+import duckdb
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -34,6 +35,7 @@ N5_ROOT = Path("/home/workspace/N5")
 N5_ROOT = Path("/home/workspace/N5")
 OUTPUT_DIR = Path("/home/workspace/N5/digests")
 PROD_DB_PATH = Path("/home/workspace/productivity_tracker.db")
+HEALTH_DB_PATH = Path("/home/workspace/Personal/Health/workouts.db")
 
 class MorningDigest:
     def __init__(self):
@@ -195,8 +197,112 @@ class MorningDigest:
             logger.error(f"Life Counter fetch failed: {e}")
             return "Habit tracker unavailable."
 
-    def generate_markdown(self, wedge, landscape, loop, pulse, events=None, life_counter=None):
+    async def get_crm_review(self):
+        """Module 6: CRM Review (Profiles needing attention)"""
+        try:
+            result = subprocess.run(
+                ['python3', '/home/workspace/N5/scripts/crm_review_flagging.py', '--digest'],
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            if result.returncode == 0 and result.stdout.strip():
+                return result.stdout.strip()
+            return ""
+        except Exception as e:
+            logger.warning(f"CRM review failed: {e}")
+            return ""
+
+    async def get_bio_context(self):
+        """Module 0: Bio-Context (Sleep + Vitals)"""
+        try:
+            con = duckdb.connect(str(HEALTH_DB_PATH), read_only=True)
+            
+            # Get last night's sleep (most recent)
+            sleep_data = con.execute("""
+                SELECT date, sleep_score, minutes_asleep, minutes_in_bed, raw_payload_json
+                FROM daily_sleep
+                WHERE date = (SELECT MAX(date) FROM daily_sleep)
+            """).fetchone()
+            
+            # Get most recent resting HR
+            hr_data = con.execute("""
+                SELECT date, resting_hr
+                FROM daily_resting_hr
+                WHERE date = (SELECT MAX(date) FROM daily_resting_hr)
+            """).fetchone()
+            
+            con.close()
+            
+            if not sleep_data:
+                return "**Sleep data not synced yet.** Check Fitbit sync."
+            
+            date, sleep_score, minutes_asleep, minutes_in_bed, raw_json = sleep_data
+            resting_hr = hr_data[1] if hr_data else "--"
+            
+            # Calculate hours from minutes
+            hours_asleep = minutes_asleep / 60 if minutes_asleep else None
+            
+            # Try to parse efficiency from raw JSON
+            efficiency = None
+            deep_minutes = None
+            rem_minutes = None
+            try:
+                if raw_json:
+                    payload = json.loads(raw_json)
+                    efficiency = payload.get('efficiency')
+                    levels = payload.get('levels', {})
+                    summary = levels.get('summary', {})
+                    deep_minutes = summary.get('deep', {}).get('minutes')
+                    rem_minutes = summary.get('rem', {}).get('minutes')
+            except:
+                pass
+            
+            # Calculate advisory based on sleep quality
+            advisory = ""
+            if hours_asleep and hours_asleep < 6:
+                advisory = "⚠️ **DEFICIT MODE:** <6hrs sleep. Protect focus, avoid big decisions, front-load caffeine before 2pm."
+            elif sleep_score and sleep_score < 70:
+                advisory = "⚠️ **LOW SCORE:** Poor sleep quality. Consider lighter cognitive load today."
+            elif efficiency and efficiency < 70:
+                advisory = "⚠️ **LOW EFFICIENCY:** Poor sleep quality. Consider lighter cognitive load today."
+            elif hours_asleep:
+                advisory = "✅ **NOMINAL:** Sleep within healthy range. Full cognitive capacity available."
+            else:
+                advisory = "⚠️ **DATA INCOMPLETE:** Sleep data may be partial."
+            
+            # Format output
+            duration_str = f"{hours_asleep:.1f}hrs" if hours_asleep else "--"
+            score_str = f"{sleep_score:.0f}" if sleep_score else "--"
+            efficiency_str = f"{efficiency}%" if efficiency else "--"
+            deep_str = f"{deep_minutes}min" if deep_minutes else "--"
+            rem_str = f"{rem_minutes}min" if rem_minutes else "--"
+            
+            return f"""**Last Night ({date}):**
+| Sleep | {duration_str} | Score {score_str} | Efficiency {efficiency_str} |
+|-------|---------|------|-------------|
+| Deep | {deep_str} | REM | {rem_str} |
+| Resting HR | {resting_hr} bpm | | |
+
+{advisory}"""
+            
+        except Exception as e:
+            logger.error(f"Bio-context fetch failed: {e}")
+            return "Bio-context unavailable. Check Fitbit sync."
+
+    def generate_markdown(self, wedge, landscape, loop, pulse, events=None, life_counter=None, crm_review=None, bio_context=None):
         date_str = self.today.strftime("%A, %B %d")
+        
+        # Bio-context section
+        bio_context_section = ""
+        if bio_context:
+            bio_context_section = f"""
+### 🧬 Bio-Context
+{bio_context}
+
+---
+
+"""
         
         events_section = ""
         if events:
@@ -216,13 +322,16 @@ class MorningDigest:
 {life_counter}
 """
         
+        # Add CRM review section handling
+        crm_review_section = f"\n{crm_review}\n" if crm_review else ""
+        
         md = f"""
 # 🌅 Good Morning, V.
 *{date_str}*
 
 ---
 
-### 🧠 The Wedge
+{bio_context_section}### 🧠 The Wedge
 > {wedge}
 
 ---
@@ -239,7 +348,7 @@ class MorningDigest:
 
 ### 💓 The Pulse
 {pulse}
-{life_counter_section}{events_section}
+{life_counter_section}{events_section}{crm_review_section}
 ---
 
 ### 🚀 The Nudge
@@ -251,17 +360,19 @@ class MorningDigest:
     async def run(self, send=False):
         logger.info("Generating Morning Digest...")
         
-        # Run parallel data fetching
-        wedge, landscape, loop, pulse, events, life_counter = await asyncio.gather(
+        # Run parallel data fetching - add bio_context
+        bio_context, wedge, landscape, loop, pulse, events, life_counter, crm_review = await asyncio.gather(
+            self.get_bio_context(),
             self.get_wedge(),
             self.get_landscape(),
             self.get_loop(),
             self.get_pulse(),
             self.get_events(),
-            self.get_life_counter()
+            self.get_life_counter(),
+            self.get_crm_review()
         )
         
-        content = self.generate_markdown(wedge, landscape, loop, pulse, events, life_counter)
+        content = self.generate_markdown(wedge, landscape, loop, pulse, events, life_counter, crm_review, bio_context)
         
         # Save to file
         filename = f"morning-digest-{self.today.strftime('%Y-%m-%d')}.md"
@@ -292,6 +403,9 @@ if __name__ == "__main__":
         }))
     else:
         asyncio.run(digest.run(send="--email" in sys.argv))
+
+
+
 
 
 

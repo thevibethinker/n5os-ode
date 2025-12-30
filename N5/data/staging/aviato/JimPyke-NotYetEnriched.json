@@ -1,0 +1,486 @@
+{
+  "full_name": "Jim Pyke",
+  "first_name": "Jim",
+  "last_name": "Pyke",
+  "gender": null,
+  "headline": "Helping companies navigate the Energy Transition",
+  "linkedin_url": "linkedin.com/in/jtcbp",
+  "linkedin_id": "jtcbp",
+  "linkedin_entity_id": "ACoAAAFdRb0BkRnGHG8Vqk-SWGdUA27SKeaMmA0",
+  "linkedin_num_id": 22889917,
+  "twitter_url": "x.com/jtcbp",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Vail, Colorado, United States",
+  "city": "Vail",
+  "region": "Colorado",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102083397,
+    85929223,
+    85688603
+  ],
+  "current_title": "Advisor",
+  "current_department": "ADVISOR",
+  "current_seniority_score": 3,
+  "current_position_start": "2008-01-01T00:00:00.000Z",
+  "current_position_end": "2008-01-01T00:00:00.000Z",
+  "current_position_location": null,
+  "current_position_description": null,
+  "current_company_name": "Park Circle Global Investments LLC",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Park Circle Global Investments LLC",
+  "current_employment_start": "2008-01-01T00:00:00.000Z",
+  "current_employment_end": "2008-01-01T00:00:00.000Z",
+  "latest_degree": "Akron Firestone High School",
+  "latest_school": null,
+  "latest_school_location": null,
+  "latest_school_linkedin": null,
+  "latest_field_of_study": null,
+  "latest_education_start": "1989-01-01T00:00:00.000Z",
+  "latest_education_end": "1993-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Prompt Engineering",
+    "Renewable Energy",
+    "Valuation",
+    "Risk Management",
+    "EPC",
+    "Energy",
+    "Business Strategy",
+    "Financial Analysis",
+    "Management Consulting",
+    "Solar PV",
+    "Venture Capital",
+    "Entrepreneurship",
+    "Start-ups",
+    "Private Equity",
+    "Business Development",
+    "Strategy",
+    "Strategic Planning",
+    "Project Finance",
+    "Solar Energy",
+    "New Business Development"
+  ],
+  "languages": [],
+  "linkedin_connections": 3579,
+  "linkedin_followers": 3703,
+  "linkedin_join_date": "2008-03-23T19:46:43.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2008-01-01T00:00:00.000Z",
+      "startDate": "2008-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2008-01-01T00:00:00.000Z",
+          "endDate": "2008-01-01T00:00:00.000Z",
+          "title": "Advisor",
+          "department": "ADVISOR",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyName": "Park Circle Global Investments LLC",
+      "company": {
+        "name": "Park Circle Global Investments LLC",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2015-01-01T00:00:00.000Z",
+      "startDate": "2011-07-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2011-07-01T00:00:00.000Z",
+          "endDate": "2015-01-01T00:00:00.000Z",
+          "title": "Senior Principal",
+          "location": "Greater Denver Area",
+          "department": "OTHER",
+          "seniorityScore": 5,
+          "description": "Principal responsible for developing new clients, leading client engagements, and providing strategic direction around renewable energy.  Bridge Strategy Group was acquired by Houlihan Lokey in January 2015.\n\nDeveloped and led over 25 projects with a focus on transforming utility strategies and organizations to prepare for a future characterized by widespread Distributed Energy Resources.\n\nRecognized industry thought leader having written multiple whitepapers on solar PV and having developed a widely read newsletter \u2013 Solar Insight \u2013 that recaps the key headlines and developments from that month.  \n\nDeveloped action plans and strategies for utilities in a wide range of jurisdictions including California, Michigan, Ohio, New York, Texas, Virginia, North Carolina, Indiana, Florida, and South Carolina."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyName": "Bridge Strategy Group",
+      "company": {
+        "name": "Bridge Strategy Group",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2008-01-01T00:00:00.000Z",
+      "startDate": "2003-01-01T00:00:00.000Z",
+      "linkedinNumID": 1371,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2003-01-01T00:00:00.000Z",
+          "endDate": "2008-01-01T00:00:00.000Z",
+          "title": "Consultant",
+          "department": "ADVISOR",
+          "seniorityScore": 2,
+          "description": "Responsible for advising senior management on key strategic initiatives.  Managed teams of consultants to complete short and long term strategic projects for clients in the energy, logistics, and financial services industry.  Built and maintained senior client relationships, developed project direction, managed project process, and mentored junior colleagues."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "nAcefOXGjzldXaYW-FIzZT__cIvy7Ak",
+      "companyName": "McKinsey & Company",
+      "company": {
+        "id": "nAcefOXGjzldXaYW-FIzZT__cIvy7Ak",
+        "name": "McKinsey & Company",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/McKinsey_%26_Company-R9DVYV",
+          "twitter": "twitter.com/McKinsey",
+          "website": "mckinsey.com",
+          "facebook": "www.facebook.com/mckinsey",
+          "linkedin": "linkedin.com/company/mckinsey",
+          "angelList": "angel.co/mckinsey-company-new-ventures",
+          "crunchbase": "www.crunchbase.com/organization/mckinsey-company"
+        },
+        "industryList": [
+          "Consulting",
+          "Management Consulting",
+          "Professional Services"
+        ]
+      }
+    },
+    {
+      "endDate": "2001-01-01T00:00:00.000Z",
+      "startDate": "1997-01-01T00:00:00.000Z",
+      "linkedinNumID": 3974,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1997-01-01T00:00:00.000Z",
+          "endDate": "2001-01-01T00:00:00.000Z",
+          "title": "Associate",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "Analyzed, structured, and negotiated mid-stage venture capital investments totaling $34 million in eight network hardware companies.  \n\nCompleted several private equity investments, including equity, convertible preferred equity, senior debt and subordinated debt investments primarily in the basic materials and energy sectors.\n\nMember of start up team for Enron Japan.  Responsible for modeling Japanese power markets."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "71mQ6q4llL_9BwaRfJLyo4vscAbhoBa",
+      "companyName": "Enron",
+      "company": {
+        "id": "71mQ6q4llL_9BwaRfJLyo4vscAbhoBa",
+        "name": "Enron",
+        "country": "United States",
+        "URLs": {
+          "website": "enron.com",
+          "linkedin": "linkedin.com/company/enron"
+        },
+        "industryList": [
+          "Oil and Gas"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-03-01T00:00:00.000Z",
+      "startDate": "2015-01-01T00:00:00.000Z",
+      "linkedinNumID": 164223,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "endDate": "2019-03-01T00:00:00.000Z",
+          "title": "Managing Director",
+          "location": "Greater Denver Area",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Houlihan Lokey acquired Bridge Strategy Group in January of 2015.   Served on corporate talent assessment team.  Complete strategy consulting and commercial due diligence projects. Served as a leader in the Strategic Consulting division."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "uH5vY_tIcA4uq-EAjs0X6AnDSIVIaxz",
+      "companyName": "Houlihan Lokey",
+      "company": {
+        "id": "uH5vY_tIcA4uq-EAjs0X6AnDSIVIaxz",
+        "name": "Houlihan Lokey",
+        "country": "United States",
+        "region": "California",
+        "locality": "Los Angeles",
+        "URLs": {
+          "golden": "golden.com/wiki/Houlihan_Lokey-MGGRG5",
+          "twitter": "twitter.com/houlihanlokey",
+          "website": "hl.com",
+          "facebook": "www.facebook.com/Houlihan-Lokey-149397808435086",
+          "linkedin": "linkedin.com/company/houlihan-lokey",
+          "crunchbase": "www.crunchbase.com/organization/houlihan-lokey"
+        },
+        "industryList": [
+          "Banking",
+          "Finance",
+          "Financial Services"
+        ]
+      }
+    },
+    {
+      "startDate": "2025-06-01T00:00:00.000Z",
+      "linkedinNumID": 35435512,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-06-01T00:00:00.000Z",
+          "title": "Fractional CXO",
+          "department": "EXECUTIVE",
+          "seniorityScore": 4,
+          "description": "As a fractional CXO and strategic advisor within a climatetech and energy incubator, I work closely with early-stage founders to help translate technical innovations into viable, scalable businesses. My role spans capital strategy and fundraising\u2014guiding companies through investor engagement, financial modeling, and pitch development\u2014while also supporting the refinement of business models and customer value propositions. I help teams validate their go-to-market approach, align unit economics with long-term growth, and quantify the overall market opportunity in a way that resonates with both strategic and financial stakeholders."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "mt8f28p17xKkno_RG869tKhd82b5Geg",
+      "companyName": "BRITE Energy Innovators",
+      "company": {
+        "id": "mt8f28p17xKkno_RG869tKhd82b5Geg",
+        "name": "BRITE Energy Innovators",
+        "country": "United States",
+        "region": "Ohio",
+        "URLs": {
+          "contact": "brite.org/contact/",
+          "twitter": "twitter.com/britepeople",
+          "website": "brite.org",
+          "facebook": "www.facebook.com/britepeople",
+          "linkedin": "linkedin.com/company/britepeople",
+          "crunchbase": "www.crunchbase.com/organization/tech-belt-energy-innovation-center"
+        },
+        "industryList": [
+          "Business Development",
+          "Energy",
+          "Energy Storage",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "startDate": "2019-05-01T00:00:00.000Z",
+      "linkedinNumID": 104099105,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-05-01T00:00:00.000Z",
+          "title": "Managing Director",
+          "location": "Vail, Colorado",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Consulting firm focused on helping companies successfully navigate the energy transition.  We work with utility, industrial, and financial sponsors on growth strategy and corporate development topics.   Completed commercial due diligence projects across the energy, chemicals, industrials, and construction industries."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "BOgjHBOuqUcwpwIatbqATMEuCFpkSRi",
+      "companyName": "TCB Advisors LLC",
+      "company": {
+        "id": "BOgjHBOuqUcwpwIatbqATMEuCFpkSRi",
+        "name": "TCB Advisors",
+        "country": "United States",
+        "region": "Colorado",
+        "locality": "Vail",
+        "URLs": {
+          "linkedin": "linkedin.com/company/tcb-advisors"
+        },
+        "industryList": [
+          "Business Consulting and Services"
+        ]
+      }
+    },
+    {
+      "endDate": "2023-05-01T00:00:00.000Z",
+      "startDate": "2021-05-01T00:00:00.000Z",
+      "linkedinNumID": 2286301,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2021-05-01T00:00:00.000Z",
+          "endDate": "2023-05-01T00:00:00.000Z",
+          "title": "Advisor",
+          "department": "ADVISOR",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "9dWAbcPbRzAyTD5jQi2aSKG0zH_-RNF",
+      "companyName": "Center for Houston's Future",
+      "company": {
+        "id": "9dWAbcPbRzAyTD5jQi2aSKG0zH_-RNF",
+        "name": "Center for Houston's Future",
+        "country": "United States",
+        "region": "Texas",
+        "locality": "Houston",
+        "URLs": {
+          "contact": "www.futurehouston.org/contact/",
+          "twitter": "twitter.com/futurehouston",
+          "website": "centerforhoustonsfuture.org",
+          "facebook": "www.facebook.com/centerforhoustonsfuture",
+          "linkedin": "linkedin.com/company/center-for-houston's-future-inc-",
+          "crunchbase": "www.crunchbase.com/organization/center-for-houston-s-future"
+        },
+        "industryList": [
+          "Communities"
+        ]
+      }
+    },
+    {
+      "endDate": "2011-07-01T00:00:00.000Z",
+      "startDate": "2009-12-01T00:00:00.000Z",
+      "linkedinNumID": 28044,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-12-01T00:00:00.000Z",
+          "endDate": "2011-07-01T00:00:00.000Z",
+          "title": "Senior Director, Quanta Renewable Energy Services",
+          "location": "Denver, CO",
+          "description": "Member of five person Executive Management team leading Quanta Renewable Energy Services, a fast growing $100+ million EPC division of Quanta Services.  \n\nImplemented commercial development system to drive growth through market prioritization, business development, and partnership formation.\n\nLed operations to drive continuous improvement in operations and purchasing, set direction for cost (soft and hard costs) roadmap that enabled QRES to become the leading EPC provider for utility and commercial scale solar within two years. \n\nTook lead role in managing organizational performance at QRES."
+        }
+      ],
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+      "companyID": "ctMD_GUIuvnODWl3evR8rM7cAxiLVqR",
+      "companyName": "Quanta Services, Inc.",
+      "company": {
+        "id": "ctMD_GUIuvnODWl3evR8rM7cAxiLVqR",
+        "name": "Quanta Services, Inc.",
+        "country": "United States",
+        "region": "Texas",
+        "locality": "Houston",
+        "URLs": {
+          "golden": "golden.com/wiki/Quanta_Services-RR3689",
+          "contact": "www.quantaservices.com/contact/",
+          "twitter": "twitter.com/quanta_services",
+          "website": "quantaservices.com",
+          "facebook": "www.facebook.com/quantaservicesinc",
+          "linkedin": "linkedin.com/company/quanta-services",
+          "pitchbook": "pitchbook.com/profiles/company/12055-51",
+          "crunchbase": "www.crunchbase.com/organization/quanta-services-inc"
+        },
+        "industryList": [
+          "Construction",
+          "CRM",
+          "Energy",
+          "Information Technology",
+          "Oil and Gas"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2312754516",
+      "endDate": "1993-01-01T00:00:00.000Z",
+      "startDate": "1989-01-01T00:00:00.000Z",
+      "name": "Akron Firestone High School",
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT"
+    },
+    {
+      "id": "2760641065",
+      "endDate": "1994-01-01T00:00:00.000Z",
+      "startDate": "1991-01-01T00:00:00.000Z",
+      "subject": "Mathematics",
+      "school": {
+        "id": "OwfWzJKb7iKZ",
+        "linkedinID": "the-ohio-state-university",
+        "fullName": "The Ohio State University",
+        "location": "Columbus, Ohio, United States",
+        "entityType": "school"
+      },
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT"
+    },
+    {
+      "id": "2760641066",
+      "endDate": "1997-01-01T00:00:00.000Z",
+      "startDate": "1993-01-01T00:00:00.000Z",
+      "name": "Rice University",
+      "subject": "Mechanical Engineering/Mathematics",
+      "school": {
+        "id": "B0SrutBP32dq",
+        "linkedinID": "riceuniversity",
+        "fullName": "Rice University",
+        "location": "Houston, Texas, United States",
+        "entityType": "school"
+      },
+      "grade": "Summa cum laude",
+      "activities": "Phi Beta Kappa, Tau Beta Pi",
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT"
+    },
+    {
+      "id": "2760641067",
+      "endDate": "2003-01-01T00:00:00.000Z",
+      "startDate": "2001-01-01T00:00:00.000Z",
+      "name": "Harvard Business School",
+      "subject": "Finance",
+      "school": {
+        "id": "7hCBuT9rhDiI",
+        "linkedinID": "harvard-business-school",
+        "fullName": "Harvard Business School",
+        "location": "Boston, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "activities": "Graduated with Distinction, Co-President of the Outdoors Club, Recipient of John L. Loeb Fellowship for Finance.",
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2760641066",
+      "fieldOfStudy": "Mechanical Engineering/Mathematics",
+      "name": "B.S./B.A.",
+      "school": {
+        "id": "B0SrutBP32dq",
+        "linkedinID": "riceuniversity",
+        "fullName": "Rice University",
+        "location": "Houston, Texas, United States",
+        "entityType": "school"
+      },
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT"
+    },
+    {
+      "personEducationID": "2760641067",
+      "fieldOfStudy": "Finance",
+      "name": "MBA",
+      "school": {
+        "id": "7hCBuT9rhDiI",
+        "linkedinID": "harvard-business-school",
+        "fullName": "Harvard Business School",
+        "location": "Boston, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT"
+    }
+  ],
+  "aviato_person_id": "d4IMeGmAcpyzpeMvwuGblRJXidynCKT",
+  "aviato_last_updated": "2025-10-24T06:04:51.242Z",
+  "enrichment_timestamp": "2025-12-28T23:15:23.104889",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringBigMA",
+    "employeeDuringIPO",
+    "employeeDuringMA",
+    "oneYearAtCurrentCompany"
+  ]
+}

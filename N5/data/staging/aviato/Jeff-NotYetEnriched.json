@@ -1,0 +1,446 @@
+{
+  "full_name": "JEFF H SIPE",
+  "first_name": "JEFF",
+  "last_name": "H SIPE",
+  "gender": null,
+  "headline": "Do interviews make you stressed out/anxious? Do you need help with your interview answers? Do you keep coming in second place? Using simple systems with bite-sized feedback helps! APP.PRACTICEINTERVIEWS.COM",
+  "linkedin_url": "linkedin.com/in/jeffhsipe",
+  "linkedin_id": "jeffhsipe",
+  "linkedin_entity_id": "ACoAAADrZ8sBB-Rm7avXWhlNDcbAAP6Cfa1dWDM",
+  "linkedin_num_id": 15427531,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "San Diego, California, United States",
+  "city": "San Diego",
+  "region": "California",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102083569,
+    85922227,
+    85688637
+  ],
+  "current_title": "Technical Recruiter",
+  "current_department": "OPERATIONS",
+  "current_seniority_score": 2,
+  "current_position_start": "2013-04-01T00:00:00.000Z",
+  "current_position_end": "2018-02-01T00:00:00.000Z",
+  "current_position_location": "San Francisco Bay Area",
+  "current_position_description": "\u2022 Recruited Program Managers focused on Data Centers/Platforms/Networking - 2013-2016\n\u2022 Recruited Software Engineers/Technical Leads focused on Cloud - 2016-2017\n\u2022 Recruited Customer Engineers focused on Cloud/Product Areas - 2017-2018\n\u2022 Created and helped build out a global training program for Recruiters/Sourcers focused on how to deliver an exceptional candidate experience.  Trained over 500 people.\n\u2022 Hired 15 Program Managers in one quarter.\n\u2022 Promoted at the end of 2015.",
+  "current_company_name": "Google",
+  "current_company_id": "H3TGFhoSrYx454dgVH6xL5EqXuW9dkb",
+  "current_company_linkedin": "linkedin.com/company/google",
+  "current_company_website": "about.google",
+  "current_company_location": "Google",
+  "current_employment_start": "2013-04-01T00:00:00.000Z",
+  "current_employment_end": "2018-02-01T00:00:00.000Z",
+  "latest_degree": "Gettysburg College",
+  "latest_school": "Gettysburg College",
+  "latest_school_location": "Gettysburg, Pennsylvania, United States",
+  "latest_school_linkedin": "gettysburg-college",
+  "latest_field_of_study": "English Literature",
+  "latest_education_start": null,
+  "latest_education_end": null,
+  "latest_grade": null,
+  "skills": [
+    "Business-to-Business (B2B)",
+    "B2C",
+    "Creative Content Creation",
+    "Online Content Creation",
+    "Blogging",
+    "Executive Coaching",
+    "Job Search",
+    "Career Development",
+    "Resumes",
+    "Business Process Improvement",
+    "Business Planning",
+    "Business Analysis",
+    "Strategic Planning",
+    "New Business Development",
+    "Business Development",
+    "Business Strategy",
+    "Software as a Service (SaaS)",
+    "Technical Communication",
+    "Strategic Communications",
+    "Communication Training"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "FULL_PROFESSIONAL"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "ELEMENTARY"
+    }
+  ],
+  "linkedin_connections": 27173,
+  "linkedin_followers": 47041,
+  "linkedin_join_date": "2007-08-31T11:31:06.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2018-02-01T00:00:00.000Z",
+      "startDate": "2013-04-01T00:00:00.000Z",
+      "linkedinNumID": 1441,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-04-01T00:00:00.000Z",
+          "endDate": "2018-02-01T00:00:00.000Z",
+          "title": "Technical Recruiter",
+          "location": "San Francisco Bay Area",
+          "department": "OPERATIONS",
+          "seniorityScore": 2,
+          "description": "\u2022 Recruited Program Managers focused on Data Centers/Platforms/Networking - 2013-2016\n\u2022 Recruited Software Engineers/Technical Leads focused on Cloud - 2016-2017\n\u2022 Recruited Customer Engineers focused on Cloud/Product Areas - 2017-2018\n\u2022 Created and helped build out a global training program for Recruiters/Sourcers focused on how to deliver an exceptional candidate experience.  Trained over 500 people.\n\u2022 Hired 15 Program Managers in one quarter.\n\u2022 Promoted at the end of 2015."
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "H3TGFhoSrYx454dgVH6xL5EqXuW9dkb",
+      "companyName": "Google",
+      "company": {
+        "id": "H3TGFhoSrYx454dgVH6xL5EqXuW9dkb",
+        "name": "Google",
+        "country": "United States",
+        "region": "California",
+        "locality": "Mountain View",
+        "URLs": {
+          "golden": "golden.com/wiki/Google-MYW",
+          "contact": "about.google/contact-google/",
+          "twitter": "x.com/google",
+          "website": "about.google",
+          "facebook": "www.facebook.com/Google",
+          "linkedin": "linkedin.com/company/google",
+          "angelList": "angel.co/google",
+          "crunchbase": "www.crunchbase.com/organization/google"
+        },
+        "industryList": [
+          "Apps",
+          "Artificial Intelligence (AI)",
+          "Cloud Storage",
+          "Search Engine",
+          "SEO"
+        ]
+      }
+    },
+    {
+      "endDate": "2025-10-01T00:00:00.000Z",
+      "startDate": "2018-10-01T00:00:00.000Z",
+      "linkedinNumID": 16140,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-10-01T00:00:00.000Z",
+          "endDate": "2025-10-01T00:00:00.000Z",
+          "title": "Content Creator",
+          "location": "San Diego, California, United States",
+          "seniorityScore": 1,
+          "description": "\u2022 Created 633 Videos\n\u2022 67,000 Subscribers / 6,100,000 Views - youtube.com/@jeffhsipepi"
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "aR5cYPBjQ1AwM2Muhd6wuk16_UZJq6V",
+      "companyName": "YouTube",
+      "company": {
+        "id": "aR5cYPBjQ1AwM2Muhd6wuk16_UZJq6V",
+        "name": "YouTube",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Bruno",
+        "URLs": {
+          "golden": "golden.com/wiki/YouTube-AZENJ4",
+          "contact": "www.youtube.com/t/contact_us",
+          "twitter": "twitter.com/youtube",
+          "website": "youtube.com",
+          "facebook": "www.facebook.com/youtube",
+          "linkedin": "linkedin.com/company/youtube",
+          "pitchbook": "pitchbook.com/profiles/company/51147-55",
+          "angelList": "angel.co/youtube",
+          "crunchbase": "www.crunchbase.com/organization/youtube"
+        },
+        "industryList": [
+          "Internet",
+          "Music",
+          "Video"
+        ]
+      }
+    },
+    {
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "linkedinNumID": 18850953,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-01-01T00:00:00.000Z",
+          "title": "Founder",
+          "location": "San Diego, California, United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "\u2022  AI Practice Interview Tool - Try for Free - app.practiceinterviews.com\n\u2022  Conducted over 3000 1:1 coaching sessions.\n\u2022  Created an Interview Mastery Course."
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "Ej_EWTnuNvDiNeBxY0yv5_YrifpUyRG",
+      "companyName": "Practice Interviews",
+      "company": {
+        "id": "Ej_EWTnuNvDiNeBxY0yv5_YrifpUyRG",
+        "name": "Practice Interviews",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Diego",
+        "URLs": {
+          "website": "app.practiceinterviews.com",
+          "linkedin": "linkedin.com/company/practiceinterviews"
+        },
+        "industryList": [
+          "Professional Training and Coaching"
+        ]
+      }
+    },
+    {
+      "endDate": "2009-12-01T00:00:00.000Z",
+      "startDate": "2006-01-01T00:00:00.000Z",
+      "linkedinNumID": 7658,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-01-01T00:00:00.000Z",
+          "endDate": "2009-12-01T00:00:00.000Z",
+          "title": "Executive Recruiter",
+          "location": "San Diego, California, United States",
+          "department": "OPERATIONS",
+          "seniorityScore": 4,
+          "description": "\u2022 Recruited Executive Leadership Coaches, the profiles consisted of former CEO\u2019s, Presidents, and Business Owners of multi-million dollar companies.\n\u2022 Built and developed relationships with top level executives nationwide by conducting a minimum of three strategic interviews. Asked behavioral and hypothetical questions.\n\u2022 Created reports in salesforce.com to determine the success rates of strategic marketing campaigns, success rates of the Executive Leadership Coaches by stage and region and any additional requested analytics."
+        },
+        {
+          "startDate": "2008-04-01T00:00:00.000Z",
+          "endDate": "2008-12-01T00:00:00.000Z",
+          "title": "Analyst Team Lead",
+          "location": "San Diego, California, United States",
+          "description": "\u2022 Led a team of six that supported our Executive Leadership Coaches, managed three Concierge Support Specialists (Customer Service Representatives with strong technical knowledge) and three Data Analysts (Sales Lead List creators) with weekly one to one's, SMART goals, and progress tracking through salesforce.com reports.\n\u2022 Created and developed the team's processes through strong collaboration with team members, and by working with our internal and external staff.\n\u2022 Co-trained groups in Seattle, Boston, and Charlotte on how to utilize salesforce.com.\nConducted working relationships with list providers such as Dun & Bradstreet, InfoUSA, Jigsaw, and BusinessWise."
+        },
+        {
+          "startDate": "2007-01-01T00:00:00.000Z",
+          "endDate": "2008-03-01T00:00:00.000Z",
+          "title": "Data Analyst",
+          "location": "San Diego, California, United States",
+          "seniorityScore": 1,
+          "description": "\u2022 Led a data integrity team located overseas.\n\u2022 Worked with the IT department to improve internal processes to help assist our Executive Leadership Coaches.\n\u2022 Received the 2007 \u201cRookie of the Year\u201d Award for making a quick and meaningful impact that helped drive revenue and delivered improved service in my first eighteen months of employment."
+        },
+        {
+          "startDate": "2006-01-01T00:00:00.000Z",
+          "endDate": "2006-12-01T00:00:00.000Z",
+          "title": "Territory Analyst",
+          "location": "San Diego, California, United States",
+          "seniorityScore": 2,
+          "description": "\u2022 Led and tracked the progress of four Data Integrity Specialists responsible for cleansing internal data (lead lists).\n\u2022Analyzed cities and counties nationwide to assist our Executive Leadership Coaches in creating networking groups. Utilized Microsoft MapPoint to get a very strong understanding of these markets.\n\u2022 Developed and created lead lists of prospective members to help pending group leaders reach potential new members in their targeted market.\n\u2022 Acted as a liaison to Programmers and our events, sales and the marketing departments."
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "EklSyuMoaokRY18iPnVpu-_g2cHoFrB",
+      "companyName": "Vistage Worldwide, Inc.",
+      "company": {
+        "id": "EklSyuMoaokRY18iPnVpu-_g2cHoFrB",
+        "name": "Vistage Worldwide, Inc.",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Diego",
+        "URLs": {
+          "golden": "golden.com/wiki/Vistage_Worldwide%2C_Inc.-K4WJVXJ",
+          "contact": "www.vistage.com/about-vistage/contact-us/",
+          "twitter": "twitter.com/vistage",
+          "website": "vistage.com",
+          "facebook": "www.facebook.com/vistage",
+          "linkedin": "linkedin.com/company/vistage",
+          "pitchbook": "pitchbook.com/profiles/company/55508-95",
+          "crunchbase": "www.crunchbase.com/organization/vistage-worldwide"
+        },
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2005-01-01T00:00:00.000Z",
+      "startDate": "2005-01-01T00:00:00.000Z",
+      "linkedinNumID": 2889,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2005-01-01T00:00:00.000Z",
+          "endDate": "2005-01-01T00:00:00.000Z",
+          "title": "Recruiter",
+          "location": "San Diego, California, United States",
+          "department": "OPERATIONS",
+          "seniorityScore": 2,
+          "description": "\u2022 Recruited skilled laborers for companies throughout San Diego."
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "IIC-E4G5UB95GSdK8ER30JQr1jo4nY_",
+      "companyName": "Aerotek",
+      "company": {
+        "id": "IIC-E4G5UB95GSdK8ER30JQr1jo4nY_",
+        "name": "Aerotek",
+        "country": "United States",
+        "region": "Maryland",
+        "locality": "Hanover",
+        "URLs": {
+          "golden": "golden.com/wiki/Aerotek-MNNV938",
+          "contact": "www.aerotek.com/en/contact-us",
+          "twitter": "twitter.com/aerotek",
+          "website": "aerotek.com",
+          "facebook": "www.facebook.com/aerotek",
+          "linkedin": "linkedin.com/company/aerotek",
+          "pitchbook": "pitchbook.com/profiles/company/83591-29",
+          "angelList": "angel.co/aerotek-2",
+          "crunchbase": "www.crunchbase.com/organization/aerotek"
+        },
+        "industryList": [
+          "Recruiting"
+        ]
+      }
+    },
+    {
+      "endDate": "2013-04-01T00:00:00.000Z",
+      "startDate": "2012-04-01T00:00:00.000Z",
+      "linkedinNumID": 15502,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-04-01T00:00:00.000Z",
+          "endDate": "2013-04-01T00:00:00.000Z",
+          "title": "Corporate Recruiter",
+          "location": "San Diego, California, United States",
+          "department": "OPERATIONS",
+          "seniorityScore": 2,
+          "description": "\u2022 Recruited for Volcano's software engineering, quality engineering, information technology, nationwide sales, and finance & accounting divisions.\n\u2022 Handled up to thirty requisitions at one time.\n\u2022 Negotiated contracts and renegotiated existing contracts with external recruiting agencies and firms to get the best terms."
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "tC9zjSjqg0XptqpIiHaiCt5Hf9UZ8Cm",
+      "companyName": "Volcano Corporation",
+      "company": {
+        "id": "tC9zjSjqg0XptqpIiHaiCt5Hf9UZ8Cm",
+        "name": "Volcano Corporation",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Diego",
+        "URLs": {
+          "golden": "golden.com/wiki/Volcano_Corporation-BWG56D9",
+          "twitter": "twitter.com/Volcano_Corp",
+          "website": "volcanocorp.com",
+          "facebook": "www.facebook.com/VolcanoCorporation",
+          "linkedin": "linkedin.com/company/volcano-corporation",
+          "crunchbase": "www.crunchbase.com/organization/volcano-corporation"
+        },
+        "industryList": [
+          "Biotechnology",
+          "Information Technology",
+          "Manufacturing",
+          "Medical",
+          "Medical Device"
+        ]
+      }
+    },
+    {
+      "endDate": "2012-04-01T00:00:00.000Z",
+      "startDate": "2010-07-01T00:00:00.000Z",
+      "linkedinNumID": 249657,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2010-07-01T00:00:00.000Z",
+          "endDate": "2012-04-01T00:00:00.000Z",
+          "title": "Recruiter",
+          "location": "San Diego, California, United States",
+          "department": "OPERATIONS",
+          "seniorityScore": 2,
+          "description": "\u2022 Recruited Finance and Accounting Professionals. \n\u2022 Built strong relationships with local Big4 and Big National CPA's.  Created a strong referral network that consistently grew during my tenure.\n\u2022 Provided information on current economic trends and the local job market.  In addition, assisted in interview preparation that led to success in any interview.\n\u2022 Trained leadership and co-workers on how to utilize and leverage LinkedIn and social media platforms to improve their recruiting efforts."
+        }
+      ],
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+      "companyID": "x7oD9EexeXKxCk-W51iF56wycKkjGRb",
+      "companyName": "Proven Recruiting",
+      "company": {
+        "id": "x7oD9EexeXKxCk-W51iF56wycKkjGRb",
+        "name": "Proven Recruiting",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Diego",
+        "URLs": {
+          "contact": "provenrecruiting.com/contact-us/",
+          "twitter": "twitter.com/ProvenRecruit",
+          "website": "provenrecruiting.com",
+          "facebook": "www.facebook.com/provenrecruiting",
+          "linkedin": "linkedin.com/company/proven-recruiting",
+          "crunchbase": "www.crunchbase.com/organization/proven"
+        },
+        "industryList": [
+          "Human Resources",
+          "Information Technology",
+          "Recruiting",
+          "Staffing Agency"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2826050221",
+      "name": "Gettysburg College",
+      "subject": "English Literature",
+      "school": {
+        "id": "yfj6PS1O4vxT",
+        "linkedinID": "gettysburg-college",
+        "fullName": "Gettysburg College",
+        "location": "Gettysburg, Pennsylvania, United States",
+        "entityType": "school"
+      },
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2826050221",
+      "fieldOfStudy": "English Literature",
+      "name": "Bachelor of Arts - BA",
+      "school": {
+        "id": "yfj6PS1O4vxT",
+        "linkedinID": "gettysburg-college",
+        "fullName": "Gettysburg College",
+        "location": "Gettysburg, Pennsylvania, United States",
+        "entityType": "school"
+      },
+      "personID": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7"
+    }
+  ],
+  "aviato_person_id": "ILeHjp1muh_qUR2ykKlhwd3gPE4-fr7",
+  "aviato_last_updated": "2025-10-24T04:30:04.231Z",
+  "enrichment_timestamp": "2025-12-28T23:20:17.829153",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "bigTechAlumPublic",
+    "employeeDuringBigMA",
+    "employeeDuringIPO",
+    "employeeDuringMA",
+    "oneYearAtCurrentCompany"
+  ]
+}

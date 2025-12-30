@@ -444,14 +444,131 @@ def create_test_enrichment_job():
     print(f"✓ Created test job {job_id} for profile {profile_id} ({email})")
 
 
+def queue_profiles_from_meeting(meeting_folder: str) -> dict:
+    """
+    Queue CRM profiles for enrichment based on meeting stakeholders.
+    
+    Reads B03 from the meeting folder, extracts stakeholder names,
+    finds matching CRM profiles, and queues them for enrichment.
+    
+    Returns summary dict with queued, skipped, not_found counts.
+    """
+    import re
+    from pathlib import Path
+    
+    meeting_path = Path(meeting_folder)
+    b03_path = meeting_path / "B03_STAKEHOLDER_INTELLIGENCE.md"
+    
+    result = {
+        "meeting": meeting_path.name,
+        "queued": [],
+        "skipped": [],
+        "not_found": [],
+        "errors": []
+    }
+    
+    if not b03_path.exists():
+        result["errors"].append(f"B03 not found: {b03_path}")
+        return result
+    
+    # Extract stakeholder names from B03
+    b03_content = b03_path.read_text()
+    
+    # Match ### Name or ## Name patterns (excluding common headers)
+    skip_headers = {'participants', 'group dynamics', 'stakeholder intelligence', 'meeting context'}
+    stakeholder_pattern = re.compile(r'^#{2,3}\s+(.+?)(?:\s*\(|$)', re.MULTILINE)
+    
+    names = []
+    for match in stakeholder_pattern.finditer(b03_content):
+        name = match.group(1).strip()
+        if name.lower() not in skip_headers and not name.startswith('B0'):
+            names.append(name)
+    
+    if not names:
+        result["errors"].append("No stakeholders found in B03")
+        return result
+    
+    # Connect to DB
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    c = conn.cursor()
+    
+    for name in names:
+        # Skip V
+        if name.lower() in ['vrijen', 'vrijen attawar', 'v']:
+            continue
+        
+        # Normalize name to slug pattern
+        name_slug = name.lower().replace(' ', '_').replace('-', '_')
+        name_parts = name.lower().split()
+        
+        # Search for matching profile by name
+        c.execute("""
+            SELECT id, email, enrichment_status, yaml_path 
+            FROM profiles 
+            WHERE LOWER(yaml_path) LIKE ? 
+               OR LOWER(yaml_path) LIKE ?
+            LIMIT 1
+        """, (f"%{name_slug}%", f"%{'_'.join(name_parts)}%"))
+        
+        row = c.fetchone()
+        
+        if not row:
+            result["not_found"].append(name)
+            continue
+        
+        profile_id = row['id']
+        enrichment_status = row['enrichment_status'] or ''
+        
+        # Skip if already enriched successfully
+        if enrichment_status in ('succeeded', 'completed'):
+            result["skipped"].append(f"{name} (already enriched)")
+            continue
+        
+        # Check if already queued
+        c.execute("""
+            SELECT id FROM enrichment_queue 
+            WHERE profile_id = ? AND status IN ('queued', 'processing')
+        """, (profile_id,))
+        
+        if c.fetchone():
+            result["skipped"].append(f"{name} (already in queue)")
+            continue
+        
+        # Queue for enrichment
+        c.execute("""
+            INSERT INTO enrichment_queue 
+            (profile_id, priority, scheduled_for, checkpoint, trigger_source, trigger_metadata)
+            VALUES (?, 50, datetime('now'), 'checkpoint_1', 'meeting_sync', ?)
+        """, (profile_id, json.dumps({
+            "meeting": meeting_path.name,
+            "stakeholder_name": name
+        })))
+        
+        result["queued"].append(name)
+    
+    conn.commit()
+    conn.close()
+    
+    return result
+
+
 def main():
     """CLI entry point"""
     parser = argparse.ArgumentParser(description='CRM V3 Enrichment Worker')
     parser.add_argument('--test', action='store_true', help='Test mode: Process one job and exit')
-    parser.add_argument('--dry-run', action='store_true', help='Dry-run mode: Fetch jobs but don\'t process')
+    parser.add_argument('--dry-run', action='store_true', help='Dry run: Show what would be processed')
     parser.add_argument('--create-test-job', action='store_true', help='Create a test enrichment job')
+    parser.add_argument('--queue-from-meeting', type=str, metavar='FOLDER',
+                        help='Queue profiles from meeting stakeholders for enrichment')
+    parser.add_argument('--process-next', action='store_true', help='Process next queued job and exit')
     
     args = parser.parse_args()
+    
+    if args.queue_from_meeting:
+        result = queue_profiles_from_meeting(args.queue_from_meeting)
+        print(json.dumps(result, indent=2))
+        return
     
     if args.create_test_job:
         create_test_enrichment_job()
@@ -466,6 +583,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

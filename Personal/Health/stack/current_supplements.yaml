@@ -1,0 +1,181 @@
+---
+created: 2025-12-28
+last_edited: 2025-12-28
+version: 1.0
+provenance: con_ENFJHuuEiOjhTAjD
+---
+
+# Current Supplement Stack
+# Vrijen Attawar - Active Supplements
+# Aligned with genomic profile from 23andMe + GeneSight
+
+supplements:
+
+  # ============================================
+  # CORE DAILY STACK
+  # ============================================
+
+  - name: Methyl Multi One
+    brand: Naturelo  # Confirm exact brand with V
+    category: multivitamin
+    dose: 1 capsule
+    frequency: once daily
+    timing: with breakfast
+    priority: CORE
+    
+    genomic_rationale: |
+      MTHFR C/T (Intermediate Metabolizer) means reduced ability to 
+      convert folic acid to active methylfolate. Methylated multi 
+      provides pre-activated forms:
+      - Methylfolate (not folic acid)
+      - Methylcobalamin (not cyanocobalamin)
+      - P-5-P (active B6)
+      
+    key_ingredients_to_verify:
+      - folate_form: "L-5-MTHF or Methylfolate (NOT folic acid)"
+      - b12_form: "Methylcobalamin (NOT cyanocobalamin)"
+      - b6_form: "P-5-P preferred"
+      
+    replaces: "Pure Encapsulations O.N.E. (non-methylated)"
+    
+    notes: |
+      V transitioning from Pure Encapsulations O.N.E. to methylated formula.
+      Do NOT take both simultaneously - choose one multivitamin.
+
+  - name: Omega-3 Fish Oil (EPA/DHA)
+    brand: TBD  # Confirm brand with V
+    category: essential fatty acid
+    dose: TBD  # Typical: 1000-2000mg combined EPA/DHA
+    frequency: once daily
+    timing: with food (improves absorption)
+    priority: CORE
+    
+    genomic_rationale: |
+      APOE protective genotype (TT/TT → likely ε2 carrier) suggests 
+      good lipid metabolism. EPA/DHA supports:
+      - Neuroinflammation reduction (BDNF support)
+      - Cardiovascular protection
+      - Mood stabilization (synergistic with Bupropion)
+      
+    target_ratio: "Higher EPA for mood; higher DHA for cognition"
+    
+    quality_markers:
+      - "IFOS certified (purity)"
+      - "Triglyceride form (better absorption than ethyl ester)"
+      
+  - name: Probiotic 10
+    brand: Nature's Bounty
+    category: gut health
+    dose: 1 capsule
+    frequency: once daily
+    timing: morning, empty stomach preferred
+    priority: CORE
+    
+    genomic_rationale: |
+      Gut-brain axis support. No direct genomic marker, but:
+      - Supports serotonin production (95% made in gut)
+      - May improve nutrient absorption (supports MTHFR function)
+      - Reduces systemic inflammation
+      
+    notes: |
+      Consider upgrading to refrigerated, higher-CFU formula 
+      (e.g., Seed, Visbiome) if budget allows.
+
+  # ============================================
+  # SITUATIONAL / AS-NEEDED
+  # ============================================
+
+  - name: Magnesium
+    brand: TBD
+    category: mineral
+    dose: TBD  # Typical: 200-400mg elemental
+    frequency: as needed / evening
+    timing: evening (promotes sleep)
+    priority: SITUATIONAL
+    
+    genomic_rationale: |
+      COMT VAL/VAL (fast dopamine clearance) benefits from magnesium:
+      - Calms nervous system
+      - Supports GABA activity
+      - Counteracts stress-induced depletion
+      
+    form_recommendation: |
+      - Glycinate: Best for sleep/anxiety (crosses BBB)
+      - Threonate: Best for cognition (Magtein)
+      - Citrate: Good general; may cause loose stool
+      - AVOID oxide (poor absorption)
+      
+  - name: L-Theanine
+    brand: TBD
+    category: amino acid
+    dose: 100-200mg
+    frequency: as needed
+    timing: with caffeine or during stress
+    priority: SITUATIONAL
+    
+    genomic_rationale: |
+      COMT VAL/VAL profile means faster stress response depletion.
+      L-Theanine:
+      - Promotes alpha brain waves (calm focus)
+      - Synergizes with caffeine (smooths out jitters)
+      - Supports GABA without sedation
+      
+    notes: |
+      Particularly useful for high-stakes meetings or focus blocks.
+      Can stack with coffee (2:1 ratio L-Theanine:Caffeine).
+
+  # ============================================
+  # RETIRED / NOT TAKING
+  # ============================================
+
+  - name: Pure Encapsulations O.N.E. Multivitamin
+    brand: Pure Encapsulations
+    category: multivitamin
+    status: RETIRED
+    reason: |
+      Replaced by methylated multivitamin due to MTHFR C/T status.
+      O.N.E. contains folic acid, not methylfolate.
+
+# ============================================
+# STACK OPTIMIZATION NOTES
+# ============================================
+
+optimization_opportunities:
+
+  consider_adding:
+    - name: Vitamin D3+K2
+      rationale: |
+        Most people are deficient. D3 supports immune function, 
+        mood, and bone health. K2 ensures calcium goes to bones 
+        not arteries. Get blood levels tested first (target: 50-70 ng/mL).
+        
+    - name: Creatine Monohydrate
+      rationale: |
+        Emerging evidence for cognitive benefits, especially under 
+        stress or sleep deprivation. 3-5g daily. Supports ATP production 
+        in brain. Safe, well-studied.
+
+  timing_optimization:
+    morning:
+      - Methylated Multi (with food)
+      - Fish Oil (with food)
+      - Probiotic (can be empty stomach)
+    evening:
+      - Magnesium Glycinate (promotes sleep)
+      
+  interactions_to_monitor:
+    - "Fish oil may thin blood slightly - note before any procedures"
+    - "Magnesium can affect absorption of some medications - space 2h"
+    - "High-dose B vitamins may cause vivid dreams initially"
+
+# ============================================
+# VERIFICATION CHECKLIST
+# ============================================
+
+todo:
+  - "[ ] Confirm exact brand of Methylated Multi"
+  - "[ ] Confirm Fish Oil brand and EPA/DHA dose"
+  - "[ ] Confirm Magnesium form (glycinate vs citrate vs other)"
+  - "[ ] Get Vitamin D blood test to establish baseline"
+  - "[ ] Review L-Theanine usage pattern (daily vs as-needed)"
+

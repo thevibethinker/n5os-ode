@@ -1,0 +1,295 @@
+{
+  "full_name": "Marlee Whetten",
+  "first_name": "Marlee",
+  "last_name": "Whetten",
+  "gender": null,
+  "headline": "Culture Coach & Compatibility Hacker",
+  "linkedin_url": "linkedin.com/in/marlee-whetten-03377359",
+  "linkedin_id": "marlee-whetten-03377359",
+  "linkedin_entity_id": "ACoAAAxkr2cBsDeRbV8sJMFh85womnu2QXX865Y",
+  "linkedin_num_id": 207925095,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "New York, New York, United States",
+  "city": "New York",
+  "region": "New York",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102082361,
+    85977539,
+    85688543,
+    102082377,
+    102081863,
+    102083063,
+    102081779
+  ],
+  "current_title": "Entrepreneur",
+  "current_department": "EXECUTIVE",
+  "current_seniority_score": 5,
+  "current_position_start": "2002-01-01T00:00:00.000Z",
+  "current_position_end": "2005-01-01T00:00:00.000Z",
+  "current_position_location": "Provo, Utah, United States",
+  "current_position_description": "I started my first business when I was 10 years old. Every week my younger sister and I baked 10 loaves of homemade honey whole wheat bread. We ground the flour, mixed the dough, let it rise, kneaded the dough into loaves, baked and packaged it, then sold it door-to-door to our neighbors for $5 a loaf.",
+  "current_company_name": "2 Sisters Honey Whole Wheat Bread",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "2 Sisters Honey Whole Wheat Bread",
+  "current_employment_start": "2002-01-01T00:00:00.000Z",
+  "current_employment_end": "2005-01-01T00:00:00.000Z",
+  "latest_degree": "Brigham Young University",
+  "latest_school": "Brigham Young University",
+  "latest_school_location": "Provo, Utah, United States",
+  "latest_school_linkedin": "brigham-young-university",
+  "latest_field_of_study": "Evolutionary Biology",
+  "latest_education_start": "2011-01-01T00:00:00.000Z",
+  "latest_education_end": "2016-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Information Management",
+    "Consulting",
+    "Teamwork",
+    "Negotiation",
+    "Advertising",
+    "Sales",
+    "Matchmaking",
+    "Organizational Culture",
+    "Hiring",
+    "People Management",
+    "Scientific Research",
+    "Leadership Consulting",
+    "Leadership Development",
+    "Coaching",
+    "Instructional Design",
+    "Diversity, Equality, and Inclusion (DEI)",
+    "Facilitation",
+    "Communication",
+    "Educational Consulting",
+    "Government Advocacy"
+  ],
+  "languages": [],
+  "linkedin_connections": 2217,
+  "linkedin_followers": 2222,
+  "linkedin_join_date": null,
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2005-01-01T00:00:00.000Z",
+      "startDate": "2002-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2002-01-01T00:00:00.000Z",
+          "endDate": "2005-01-01T00:00:00.000Z",
+          "title": "Entrepreneur",
+          "location": "Provo, Utah, United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "I started my first business when I was 10 years old. Every week my younger sister and I baked 10 loaves of homemade honey whole wheat bread. We ground the flour, mixed the dough, let it rise, kneaded the dough into loaves, baked and packaged it, then sold it door-to-door to our neighbors for $5 a loaf."
+        }
+      ],
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At",
+      "companyName": "2 Sisters Honey Whole Wheat Bread",
+      "company": {
+        "name": "2 Sisters Honey Whole Wheat Bread",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2016-01-01T00:00:00.000Z",
+      "startDate": "2004-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2004-01-01T00:00:00.000Z",
+          "endDate": "2016-01-01T00:00:00.000Z",
+          "title": "Private Piano and Violin Instructor & Coach",
+          "location": "Provo, Utah, United States",
+          "description": "My mastery of coaching methodology was forged through 12 years of private music instruction in piano and violin, where I discovered the profound connection between personalized learning strategies and human achievement. Each student became a masterclass in understanding motivation, tailoring feedback, and orchestrating development \u2013 skills that now elevate my work with business leaders. By balancing technical instruction with confidence-building through performances while also  engaging parents as development partners, I refined the art of nurturing both skill and self-belief. This rich experience in cultivating musical excellence now powers my approach to developing organizational talent."
+        }
+      ],
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At",
+      "companyName": "Marlee's Music Studio",
+      "company": {
+        "name": "Marlee's Music Studio",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2022-08-01T00:00:00.000Z",
+      "linkedinNumID": 105195578,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-08-01T00:00:00.000Z",
+          "title": "Founder & CEO",
+          "location": "NYC, NY",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Head Scientist, Coach, and Founder of The Hack \u2013 making emotional intelligence (EQ) simple and actionable with practical, science-based strategies designed to revolutionize your hiring approach to cultural compatibility and collaboration. The Hack features the Culture Compatibility Test created using our proprietary compatibility algorithm. Unlike traditional personality tests offering only short-term insights, the Culture Compatibility Test identifies a candidates\u2019 knowledge filter\u2014informing lifelong decision making patterns while differentiating high- and low-functioning tendencies. Whether you're building your dream team or forging million-dollar business relationships The Hack ensures you're making choices based on long-term compatibility, not just short-term impressions.\n\nFor pre-existing teams The Hack\u2019s services transform business leaders into cultural architects. At the core of our leadership development program is the revolutionary Culture Compatibility Test, which clearly defines your culture and its ripple effects throughout your organization or team. Our master coaches guide you through interpreting these insights, helping you leverage your strengths and address blind spots. Working with individual executives or entire leadership teams, we provide precise, actionable strategies to elevate organizational performance, resolve complex team dynamics, and identify tomorrow's leaders within your ranks.\n\nOur offerings are the result of many years of intensive, cross-disciplinary research, spanning anthropology, epistemology, economics, evolutionary psychology, knowledge management, organizational dynamics, philosophy, and attachment science. A unique combination of scientific rigor and practical application positions The Hack as THE standard for organizations serious about optimizing team dynamics and addressing complex people challenges. With The Hack, you're not just getting a product \u2013 you're gaining access to the forefront of human behavior science."
+        }
+      ],
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At",
+      "companyID": "2JsffzmGsT9kXruW_apnybAj45zZ86E",
+      "companyName": "The Hack, Inc",
+      "company": {
+        "id": "2JsffzmGsT9kXruW_apnybAj45zZ86E",
+        "name": "The Hack, Inc",
+        "URLs": {
+          "website": "thehack.pro",
+          "linkedin": "linkedin.com/company/the-hack-pro"
+        },
+        "industryList": [
+          "Business Consulting and Services"
+        ]
+      }
+    },
+    {
+      "endDate": "2022-08-01T00:00:00.000Z",
+      "startDate": "2013-05-01T00:00:00.000Z",
+      "linkedinNumID": 42721,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2016-08-01T00:00:00.000Z",
+          "endDate": "2022-08-01T00:00:00.000Z",
+          "title": "Director of Leadership Development",
+          "location": "New York, New York",
+          "department": "EXECUTIVE",
+          "seniorityScore": 4,
+          "description": "I hired and coached over 50 leaders within the National Youth Leadership Institute (NYLI), designed to create the future leaders of public health within the United States with partnerships throughout Asia, and collaborations worldwide.\n\nDuring this time, I discovered the strong link between Emotional Intelligence (EQ) and effective leadership. While EQ can be measured, I was struck by the lack of tools available to help individuals actively improve this top predictor of success, leading me to begin conducting research and experimentation in the field.\n\nIn addition to training of all NYLI leaders in emotional intelligence, public speaking, group facilitation, instructional design, advocacy, networking, mental health, and DEI, I also maintained key international relationships, ensuring that this training extended to 2nd-line leaders globally."
+        },
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "endDate": "2017-01-01T00:00:00.000Z",
+          "title": "Center for Disease Control (CDC) Content Advisory Board",
+          "department": "ADVISOR",
+          "description": "Spearheaded groundbreaking research addressing healthcare disparities among underserved women, leading to the development of innovative access solutions. This pivotal investigation revealed how strategic research insights cascade through organizations, transforming abstract findings into tangible improvements in healthcare delivery. My work illuminated the critical pathways between research, organizational strategy, and real-world impact, ultimately enhancing healthcare accessibility for vulnerable populations."
+        },
+        {
+          "startDate": "2013-05-01T00:00:00.000Z",
+          "endDate": "2016-08-01T00:00:00.000Z",
+          "title": "National Youth Leadership Institute (NYLI)",
+          "description": "Distinguished among top young professionals nationwide to join NYLI's prestigious leadership program, where I focused on revolutionizing healthcare access through legislative reform. My multi-faceted approach combined persuasive public speaking, strategic lobbying campaigns, and educational advocacy to influence key policy decisions at state and federal levels. This work culminated in successful legislative initiatives that broke down barriers to healthcare access across the United States, creating lasting impact through policy change."
+        }
+      ],
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At",
+      "companyID": "41unJWGZzZE09u-KKteZtpl-KfMBZx7",
+      "companyName": "National Hemophilia Foundation",
+      "company": {
+        "id": "41unJWGZzZE09u-KKteZtpl-KfMBZx7",
+        "name": "National Bleeding Disorders Foundation",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/National_Hemophilia_Foundation-5K8YEJY",
+          "contact": "www.hemophilia.org/community-resources/request-information/contact-us",
+          "twitter": "twitter.com/NHF_Hemophilia",
+          "website": "bleeding.org",
+          "facebook": "www.facebook.com/NationalHemophiliaFoundation",
+          "linkedin": "linkedin.com/company/national-hemophilia-foundation",
+          "crunchbase": "www.crunchbase.com/organization/national-hemophilia-foundation"
+        },
+        "industryList": [
+          "Charity",
+          "Health Care",
+          "Health Diagnostics",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "endDate": "2016-08-01T00:00:00.000Z",
+      "startDate": "2015-01-01T00:00:00.000Z",
+      "linkedinNumID": 9560309,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "endDate": "2016-08-01T00:00:00.000Z",
+          "title": "Member of the Board",
+          "location": "Salt Lake City, Utah",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "As Young Adult Chair on the Board of Directors, I leveraged strategic influence to secure crucial funding for women's initiatives, an achievement that unveiled fascinating patterns in high-stakes decision-making. Observing how board members formed and defended their positions sparked a profound investigation into the predictability of cognitive compatibility. This experience became the catalyst for my groundbreaking research into epistemic filters and their role in forecasting long-term decision-making behavior."
+        }
+      ],
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At",
+      "companyID": "Cd3aeyZNktEwhyqawdPrd-geW2fOFQt",
+      "companyName": "Utah Hemophilia Foundation",
+      "company": {
+        "id": "Cd3aeyZNktEwhyqawdPrd-geW2fOFQt",
+        "name": "Utah Hemophilia Foundation",
+        "country": "United States",
+        "URLs": {
+          "website": "hemophiliautah.org",
+          "linkedin": "linkedin.com/company/utah-hemophilia-foundation"
+        },
+        "industryList": [
+          "Non-profit Organizations"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2878767776",
+      "endDate": "2016-01-01T00:00:00.000Z",
+      "startDate": "2011-01-01T00:00:00.000Z",
+      "name": "Brigham Young University",
+      "subject": "Evolutionary Biology",
+      "school": {
+        "id": "hyQ8ssD4S1zF",
+        "linkedinID": "brigham-young-university",
+        "fullName": "Brigham Young University",
+        "location": "Provo, Utah, United States",
+        "entityType": "school"
+      },
+      "activities": "Symphony Orchestra\nCancer Research Lab\nPreMed Club\nFolk Dance Team",
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2878767776",
+      "fieldOfStudy": "Evolutionary Biology",
+      "name": "Physiology and Developmental Biology",
+      "school": {
+        "id": "hyQ8ssD4S1zF",
+        "linkedinID": "brigham-young-university",
+        "fullName": "Brigham Young University",
+        "location": "Provo, Utah, United States",
+        "entityType": "school"
+      },
+      "personID": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At"
+    }
+  ],
+  "aviato_person_id": "NRQOA_7DjlNSPYqATGsjXQ1UFOsd_At",
+  "aviato_last_updated": "2025-11-05T03:08:02.292Z",
+  "enrichment_timestamp": "2025-12-28T23:19:55.321780",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "oneYearAtCurrentCompany"
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "full_name": "Sara Schmitt",
+  "first_name": "Sara",
+  "last_name": "Schmitt",
+  "gender": null,
+  "headline": "Founder and COO @ Adro",
+  "linkedin_url": "linkedin.com/in/saraschmitt",
+  "linkedin_id": "saraschmitt",
+  "linkedin_entity_id": "ACoAAACwoOoB2RKpf1Lc2ht296STQLOOazikk8g",
+  "linkedin_num_id": 11575530,
+  "twitter_url": "x.com/kiwanomelon",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "New York, New York, United States",
+  "city": "New York",
+  "region": "New York",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102082361,
+    85977539,
+    85688543,
+    102082377,
+    102081863,
+    102083063,
+    102081779
+  ],
+  "current_title": "Senior Product Manager",
+  "current_department": "PRODUCT_MANAGEMENT",
+  "current_seniority_score": 3,
+  "current_position_start": "2022-07-01T00:00:00.000Z",
+  "current_position_end": "2023-09-01T00:00:00.000Z",
+  "current_position_location": "Seattle, Washington, United States",
+  "current_position_description": "Owned customer support tooling and workflows for Alexa's enterprise services, supported customers in planning large-scale deployments and piloted a service to speed device implementations",
+  "current_company_name": "Amazon",
+  "current_company_id": "YUoTk8RTS_Mm2qt2I-FjzdKyu5PgRFw",
+  "current_company_linkedin": "linkedin.com/company/amazon",
+  "current_company_website": "aboutamazon.com",
+  "current_company_location": "Amazon",
+  "current_employment_start": "2019-11-01T00:00:00.000Z",
+  "current_employment_end": "2023-09-01T00:00:00.000Z",
+  "latest_degree": "Allegheny College",
+  "latest_school": "Allegheny College",
+  "latest_school_location": "Meadville, Pennsylvania, United States",
+  "latest_school_linkedin": "allegheny-college",
+  "latest_field_of_study": "Poetry",
+  "latest_education_start": null,
+  "latest_education_end": null,
+  "latest_grade": null,
+  "skills": [
+    "Business Operations",
+    "Human Resources (HR)",
+    "Financial Services",
+    "Incorporation Services",
+    "University Lecturing",
+    "Higher Education Teaching",
+    "Project Management Body of Knowledge (PMBOK)",
+    "Program Management",
+    "Layout Design",
+    "Research Skills",
+    "Leadership Development",
+    "Community Engagement",
+    "Publishing",
+    "Team Leadership",
+    "Financial Analysis",
+    "University Teaching",
+    "Curriculum Development",
+    "Team Management",
+    "Workflow Design",
+    "System Configuration"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    },
+    {
+      "language": "French",
+      "proficiency": "PROFESSIONAL_WORKING"
+    }
+  ],
+  "linkedin_connections": 4846,
+  "linkedin_followers": 5125,
+  "linkedin_join_date": "2007-04-20T14:36:16.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2023-09-01T00:00:00.000Z",
+      "startDate": "2019-11-01T00:00:00.000Z",
+      "linkedinNumID": 1586,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-07-01T00:00:00.000Z",
+          "endDate": "2023-09-01T00:00:00.000Z",
+          "title": "Senior Product Manager",
+          "location": "Seattle, Washington, United States",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 3,
+          "description": "Owned customer support tooling and workflows for Alexa's enterprise services, supported customers in planning large-scale deployments and piloted a service to speed device implementations"
+        },
+        {
+          "startDate": "2021-01-01T00:00:00.000Z",
+          "endDate": "2022-07-01T00:00:00.000Z",
+          "title": "Senior Program Manager, Amazon Fresh Launch Operations",
+          "location": "Seattle, Washington, United States",
+          "department": "OPERATIONS",
+          "description": "- Led scaling and innovation initiatives for the end to end store bringup process, with focus on online and operations, technical and transactional testing, training, and labor utilization. Reduced outbound training/testing timelines by 50% and costs by 80% in 2021\n- Developed, tested, and gained alignment on an online services rollout strategy that balanced customer demand and experience with over 15 internal KPIs and teams; developed tracking, communication, and Andon mechanisms for program changes in response to weekly site performance"
+        },
+        {
+          "startDate": "2019-11-01T00:00:00.000Z",
+          "endDate": "2020-12-01T00:00:00.000Z",
+          "title": "Senior Program Manager, Global Specialty Fulfillment - Delivery",
+          "location": "Seattle, Washington",
+          "description": "- Developed the strategy, standard operating procedures, and training program for outbound sortation, dispatch, and delivery workflows for a new hybrid grocery business\n- Scaled grocery delivery operations by 4x initially planned volumes within 2 weeks as COVID-19 pandemic was emerging, and developed equipment and workflow model to support social distancing during operations\n- Defined and validated metrics and year 1 and 2 operating goals for AFS outbound operations. Exceeded all quality and rate of work goals by 30%+ in year 1, setting a new bar across Amazon\u2019s grocery businesses"
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyID": "YUoTk8RTS_Mm2qt2I-FjzdKyu5PgRFw",
+      "companyName": "Amazon",
+      "company": {
+        "id": "YUoTk8RTS_Mm2qt2I-FjzdKyu5PgRFw",
+        "name": "Amazon",
+        "country": "United States",
+        "region": "Washington",
+        "locality": "Seattle",
+        "URLs": {
+          "golden": "golden.com/wiki/Amazon-B6VEMY",
+          "twitter": "twitter.com/amazon",
+          "website": "aboutamazon.com",
+          "facebook": "www.facebook.com/Amazon",
+          "linkedin": "linkedin.com/company/amazon",
+          "pitchbook": "pitchbook.com/profiles/company/11919-79",
+          "angelList": "angel.co/amazon",
+          "crunchbase": "www.crunchbase.com/organization/amazon"
+        },
+        "industryList": [
+          "Delivery",
+          "E-Commerce",
+          "Retail"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-12-01T00:00:00.000Z",
+      "startDate": "2019-06-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-06-01T00:00:00.000Z",
+          "endDate": "2019-12-01T00:00:00.000Z",
+          "title": "Curriculum Consultant, Instuctor",
+          "location": "Ithaca, New York Area",
+          "department": "ADVISOR",
+          "description": "In partnership with CNY's Center for Regional Economic Development and Cornell's e-learning division, created and launched a new online certificate program for investors and entrepreneurs called Getting to Investment."
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyName": "eCornell",
+      "company": {
+        "name": "eCornell",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2019-05-01T00:00:00.000Z",
+      "startDate": "2018-05-01T00:00:00.000Z",
+      "linkedinNumID": 3323650,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2018-05-01T00:00:00.000Z",
+          "endDate": "2019-05-01T00:00:00.000Z",
+          "title": "MBA Graduate",
+          "location": "Ithaca, New York Area",
+          "department": "EXECUTIVE",
+          "seniorityScore": 2,
+          "description": "Academic Honors\n- Fort\u00e9 Fellow \n- Dean\u2019s List \u2013 Fall 2018, Spring 2019\n- TA: Entrepreneurship & Business Ownership, Ethical Decision-Making\n- Degree Marshal for SC Johnson Graduate School of Management\n\nProjects and Activities\n- Co-founder of Ethichain, a startup focused on improving the transparency of global apparel supply chains through RFID and Blockchain. \n- Won Best Data Product in Designing Data Products class for a model that predicted the likelihood of cannabis legalization by state and assessed the economic impact of recreational and medical marijuana.\n\nSelected Leadership Roles\n- Class Agent and Alumni Council Representative: selected for a 5-year team, responsible for Annual Fund solicitation and leading philanthropic efforts and events for the one-year class of 2019.\n- Chair, Johnson Women in Business (JWiB) Symposium: student leader for Johnson\u2019s premier, 2-day fall women\u2019s recruiting event and speaker series. Responsibilities included visioning, planning, day-of execution, and speeches.\n- Operations and Logistics Chair, Johnson Women in Technology (JWiT) Conference: handled all logistics, budget negotiations, and day-of coordination for multi-disciplinary NYC-based event.\n- Communications Ambassador, Johnson Admissions Group: One of less than 10 accelerated MBA students selected to interface with prospective candidates and maintain a curated social media presence to support the program\u2019s online outreach.\n- Make It Count Committee: One of 5 students selected annually to plan and execute 20+ events for over 270 classmates in the final 100 days leading up to Commencement.\n\nSelected Coursework: \nStrategic Management of Technology & Innovation; The Business Idea Factory; Venture Capital Industry & Private Equity Markets; Design Thinking; Retail Operations"
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyName": "Cornell Johnson Graduate School of Management",
+      "company": {
+        "name": "Cornell Johnson Graduate School of Management",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2023-07-01T00:00:00.000Z",
+      "linkedinNumID": 167007,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2023-07-01T00:00:00.000Z",
+          "title": "Adjunct Professor",
+          "location": "New York, New York, United States",
+          "department": "OTHER",
+          "seniorityScore": 3,
+          "description": "Instructor for graduate-level course MAN 5580 - Project Management. Overhauled materials to convert the class to a rigorous, 15-week project cycle that serves as a qualifying class for CAPM or PMP certification."
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyName": "Yeshiva University",
+      "company": {
+        "name": "Yeshiva University",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2024-01-01T00:00:00.000Z",
+      "linkedinNumID": 4365,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2024-01-01T00:00:00.000Z",
+          "title": "Adjunct Professor",
+          "location": "New York, New York, United States",
+          "department": "OTHER",
+          "seniorityScore": 3,
+          "description": "Instructor for CIS 9490 and CIS 4800 - the graduate and undergraduate sections of Systems Analysis and Design. Overhauled class materials to incorporate up-to-the-minute content around AI and cloud-based systems development processes and tools, and analysis frameworks used at top global tech companies. Adapted custom course materials for in-person, online, hybrid, and asynchronous learning environments."
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyName": "Baruch College",
+      "company": {
+        "name": "Baruch College",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2005-08-01T00:00:00.000Z",
+      "startDate": "2005-06-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2005-06-01T00:00:00.000Z",
+          "endDate": "2005-08-01T00:00:00.000Z",
+          "title": "Creative Intern",
+          "department": "DESIGN",
+          "seniorityScore": 1
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyName": "Grey Worldwide",
+      "company": {
+        "name": "Grey Worldwide",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2019-12-01T00:00:00.000Z",
+      "startDate": "2019-08-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-08-01T00:00:00.000Z",
+          "endDate": "2019-12-01T00:00:00.000Z",
+          "title": "Independent Consultant",
+          "location": "Ithaca, New York Area",
+          "department": "ADVISOR",
+          "seniorityScore": 2,
+          "description": "SimpliFed is an innovative infant nutrition solution grounded in a first-of-its-kind longitudinal study on newborn microbiomes.  My work was focused on sourcing and conducting customer interviews to guide product/market fit, researching market and consumer trends to support FDA and NIH SBIR grants, and procuring and testing cold chain containers and workflows for shipping fecal samples cross-country."
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyName": "SimpliFed",
+      "company": {
+        "name": "SimpliFed",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2008-11-01T00:00:00.000Z",
+      "startDate": "2006-02-01T00:00:00.000Z",
+      "linkedinNumID": 4703,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2008-01-01T00:00:00.000Z",
+          "endDate": "2008-11-01T00:00:00.000Z",
+          "title": "Communications Manager",
+          "department": "MARKETING",
+          "seniorityScore": 3,
+          "description": "- Managed internal team and coordinated with external agency and client partners to develop and implement integrated marketing plans for five confectionary brands: Halls, Sour Patch Kids, Bubblicious, Green & Black\u2019s Organic Chocolate, Swedish Fish\n- Supervised tactical analysis and designed media mix/profit optimization scenarios for new business opportunities across categories"
+        },
+        {
+          "startDate": "2007-02-01T00:00:00.000Z",
+          "endDate": "2007-12-01T00:00:00.000Z",
+          "title": "Communications Analyst",
+          "department": "MARKETING",
+          "seniorityScore": 2,
+          "description": "- Worked with internal team and coordinated with external agency and client partners to develop and implement integrated marketing plans for five confectionary brands: Halls, Sour Patch Kids, Bubblicious, Green & Black\u2019s Organic Chocolate, Swedish Fish\n- Ran tactical analysis and designed media mix/profit optimization scenarios for new business opportunities across categories"
+        },
+        {
+          "startDate": "2006-02-01T00:00:00.000Z",
+          "endDate": "2007-02-01T00:00:00.000Z",
+          "title": "Assistant Communications Analyst",
+          "department": "MARKETING",
+          "description": "- Developed new tool to streamline inter-agency creative wearout calculation process;\n- Maintained and actualized total media budget; prepared, issued, and recorded all buy authorizations and schedules;\n- Responsible for research, analysis, and presentation of national sports & sponsorship opportunities."
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyID": "JjyYKmSG4dXO9VEnOKRekJkgr6M4b21",
+      "companyName": "Mediaedge:cia",
+      "company": {
+        "id": "JjyYKmSG4dXO9VEnOKRekJkgr6M4b21",
+        "name": "MEC",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "twitter": "www.twitter.com/mecideas",
+          "website": "mecglobal.com",
+          "facebook": "www.facebook.com/mecglobal",
+          "linkedin": "linkedin.com/company/mec",
+          "crunchbase": "www.crunchbase.com/organization/mec-global"
+        },
+        "industryList": [
+          "Advertising",
+          "Digital Media",
+          "Marketing",
+          "Search Engine",
+          "Social",
+          "Social Media"
+        ]
+      }
+    },
+    {
+      "endDate": "2018-04-01T00:00:00.000Z",
+      "startDate": "2008-12-01T00:00:00.000Z",
+      "linkedinNumID": 163658,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2014-01-01T00:00:00.000Z",
+          "endDate": "2018-04-01T00:00:00.000Z",
+          "title": "Implementation Executive, Team Lead Manager, People Manager, Boost Practice Lead",
+          "location": "Verona, WI",
+          "department": "EXECUTIVE",
+          "description": "As Implementation Executive:\n- Responsible for overall install success, customer satisfaction, and internal team performance on three concurrent electronic medical record (EHR) implementation projects on the East Coast;\n- Experience with large, integrated delivery networks and academic medical centers, budgets up to $150 milion USD\n\nAs Team Lead Manager:\n- Directly supervise ~15 team members, including other team leads (managers);\n- Head manager of core leadership group for a team of approximately 200;\n- Staffing and personnel manager: responsible for customer placements, career path planning, and performance for 200 implementation staff;\n- Other internal responsibilities: recruiting and interviewing; training orientation and role-specific classes.\n\nAs People Manager:\n- Directly responsible for staff happiness, growth, performance, and retention for a team of 200+;\n- Member of leadership group responsible for overall culture and happiness for a division of 2,000+;\n- Improved retention of top performers by 43% from 2013 to 2014, and by 15% between 2014 and 2015.\n\nAs Boost Practice Lead:\n- Part of senior management team responsible for capacity planning, new business development, process improvement of Epic\u2019s newest, largest division (300+ remote consultants, 50 managers, $80 million+ annual revenue)\n- Created new processes for expediting contracting, and defined and developed documentation on role expectations, benefits, and performance"
+        },
+        {
+          "startDate": "2010-08-01T00:00:00.000Z",
+          "endDate": "2013-12-01T00:00:00.000Z",
+          "title": "Implementation Director, Team Lead",
+          "description": "As Implementation Director: \n- Led on time, on-budget implementation of outpatient and inpatient clinical and revenue cycle applications for two NYS healthcare networks, managing install teams ranging in size from 2-25.\n\nAs Team Lead:\n- Directly supervised 15+ team members (non-managers); \n- Member of core leadership group for a team that grew from 80 to 200+ members within 2 years;\n- Staffing manager, responsible for customer placements for all implementation staff."
+        },
+        {
+          "startDate": "2008-12-01T00:00:00.000Z",
+          "endDate": "2010-08-01T00:00:00.000Z",
+          "title": "Project Manager",
+          "location": "Verona, WI",
+          "description": "- Led successful ADT install for large Midwestern community hospital system;\n- In addition to technically-focused work, volunteered for process improvement and personnel coordination tasks: managed integrated dress rehearsals and designed and implemented go-live cutover plan;\n- Won award for most outstanding performance during the second phase of the install (design/validation).\n\nInternal specialist in ROI, healthcare cashflow pathways, data management, and developing implementation methodologies, tools, and dashboards."
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyID": "4gQLKy6MD_d5Nho4YFAmNbqUG0ZMiza",
+      "companyName": "Epic",
+      "company": {
+        "id": "4gQLKy6MD_d5Nho4YFAmNbqUG0ZMiza",
+        "name": "Epic Systems Corporation",
+        "country": "United States",
+        "region": "Wisconsin",
+        "locality": "Verona",
+        "URLs": {
+          "golden": "golden.com/wiki/Epic_Systems-3R6DNA",
+          "website": "epic.com",
+          "facebook": "www.facebook.com/lifeatepic",
+          "linkedin": "linkedin.com/company/epic_163658",
+          "pitchbook": "pitchbook.com/profiles/company/153423-01",
+          "crunchbase": "www.crunchbase.com/organization/epic-systems-corporation"
+        },
+        "industryList": [
+          "Business Development",
+          "Enterprise Software",
+          "Health Care",
+          "Information Technology",
+          "Software",
+          "Web Development"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-12-01T00:00:00.000Z",
+      "startDate": "2018-05-01T00:00:00.000Z",
+      "linkedinNumID": 22244,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-05-01T00:00:00.000Z",
+          "endDate": "2019-12-01T00:00:00.000Z",
+          "title": "Independent Consultant",
+          "department": "ADVISOR",
+          "seniorityScore": 2,
+          "description": "Subject matter expert on healthcare software industry"
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyID": "dO0RD0qchHWRNW6TXM0smCLDNog0wFk",
+      "companyName": "Guidepoint",
+      "company": {
+        "id": "dO0RD0qchHWRNW6TXM0smCLDNog0wFk",
+        "name": "Guidepoint",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "twitter": "twitter.com/guidepoint",
+          "website": "guidepoint.com",
+          "facebook": "www.facebook.com/guidepointexperts",
+          "linkedin": "linkedin.com/company/guidepoint",
+          "pitchbook": "pitchbook.com/profiles/company/93191-95",
+          "crunchbase": "www.crunchbase.com/organization/guidepoint-global"
+        },
+        "industryList": [
+          "Consulting",
+          "Financial Services",
+          "Industrial",
+          "Information Services",
+          "Market Research",
+          "Technical Support",
+          "Telecommunications"
+        ]
+      }
+    },
+    {
+      "startDate": "2023-07-01T00:00:00.000Z",
+      "linkedinNumID": 23869127,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2023-07-01T00:00:00.000Z",
+          "title": "Chief Operating Officer and Cofounder",
+          "location": "New York, New York, United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Earn, save and spend US dollars with a deposit-insured US account.\n\nAdro offers checking accounts, savings accounts and credit cards for international students and workers on an approved US visa, and for businesses based outside the US.\n\njoinadro.com"
+        }
+      ],
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+      "companyID": "lYHjOmnb3vKyLABfi9_eaQ4n7CfEWA8",
+      "companyName": "Adro",
+      "company": {
+        "id": "lYHjOmnb3vKyLABfi9_eaQ4n7CfEWA8",
+        "name": "Adro",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "website": "joinadro.com",
+          "facebook": "www.facebook.com/profile.php?id=100095500995483",
+          "linkedin": "linkedin.com/company/adro",
+          "pitchbook": "pitchbook.com/profiles/company/539214-13",
+          "crunchbase": "www.crunchbase.com/organization/adro-87ec"
+        },
+        "industryList": [
+          "Financial Services",
+          "FinTech"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2864847001",
+      "name": "Allegheny College",
+      "subject": "Poetry",
+      "school": {
+        "id": "QQ38ihT7j8Od",
+        "linkedinID": "allegheny-college",
+        "fullName": "Allegheny College",
+        "location": "Meadville, Pennsylvania, United States",
+        "entityType": "school"
+      },
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH"
+    },
+    {
+      "id": "2864847002",
+      "endDate": "2019-01-01T00:00:00.000Z",
+      "startDate": "2018-01-01T00:00:00.000Z",
+      "name": "Cornell Johnson Graduate School of Management",
+      "subject": "Business Administration and Management, General",
+      "school": {
+        "id": "IP1Gg7sJNPh1",
+        "linkedinID": "cornelljohnsonmba",
+        "fullName": "Cornell Johnson Graduate School of Management",
+        "location": "Ithaca, New York, United States",
+        "entityType": "school"
+      },
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH"
+    },
+    {
+      "id": "2711123575",
+      "name": "Park School of Buffalo",
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2711123575",
+      "name": "High School Diploma",
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH"
+    },
+    {
+      "personEducationID": "2864847001",
+      "fieldOfStudy": "Poetry",
+      "name": "BA",
+      "school": {
+        "id": "QQ38ihT7j8Od",
+        "linkedinID": "allegheny-college",
+        "fullName": "Allegheny College",
+        "location": "Meadville, Pennsylvania, United States",
+        "entityType": "school"
+      },
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH"
+    },
+    {
+      "personEducationID": "2864847002",
+      "fieldOfStudy": "Business Administration and Management, General",
+      "name": "Master of Business Administration - MBA",
+      "school": {
+        "id": "IP1Gg7sJNPh1",
+        "linkedinID": "cornelljohnsonmba",
+        "fullName": "Cornell Johnson Graduate School of Management",
+        "location": "Ithaca, New York, United States",
+        "entityType": "school"
+      },
+      "personID": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH"
+    }
+  ],
+  "aviato_person_id": "LnuUiAzyhcM324hzyZLA4x8wIKBsBsH",
+  "aviato_last_updated": "2025-12-27T02:48:32.131Z",
+  "enrichment_timestamp": "2025-12-28T23:19:40.911444",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "bigTechAlumPublic",
+    "employeeDuringIPO",
+    "employeeDuringMA",
+    "oneYearAtCurrentCompany",
+    "priorBackedFounder"
+  ]
+}

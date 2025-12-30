@@ -1,6 +1,7 @@
 {
   "version": "1.0",
-  "last_updated": "2025-12-27",
+  "last_updated": "2025-12-28",
+  "priority_note": "MUST-GO organizers: Supermomos/Edwina, Fibe/Ben Guo/0thernet, Velocity/Andrew Yeung, FOHE/Anna Bao, Victoria Yampelsky/Startup Station, Marvin Ventures",
   
   "allowlists": {
     "events": {
@@ -43,7 +44,27 @@
         "lafamilia@beehiiv.com",
         
         "ben@0thernet.com",
-        "benguo@substack.com"
+        "ben@fibe.ai",
+        "benguo@substack.com",
+        "hello@fibe.ai",
+        
+        "edwina@supermomos.com",
+        "ray@discoverhearth.com",
+        "hello@hearth.community",
+        
+        "no-reply@lu.ma",
+        "notifications@lu.ma",
+        
+        "lastweekinai@substack.com",
+        "vcunfiltered@substack.com",
+        
+        "mike.collins@av.vc",
+        "events@svb.com",
+        "info@645ventures.com",
+        "events@marvin.vc",
+        "hello@velocity.ventures",
+        "andrew@velocity.ventures",
+        "hello@khoslaventures.com"
       ],
       "domains": [
         "beehiiv.com",
@@ -69,4 +90,6 @@
     }
   }
 }
+
+
 

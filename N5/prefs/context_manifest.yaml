@@ -43,6 +43,13 @@ groups:
       - "N5/prefs/principles/P04_ontology_weighted.yaml"
       - "N5/prefs/operations/planning_prompt.md"
 
+  health:
+    description: "Health planning, bio-context, energy management, supplement decisions"
+    files:
+      - "Personal/Health/synthesis/Vrijen-Bio-Context.md"
+      - "Personal/Health/stack/current_medications.yaml"
+      - "Personal/Health/stack/current_supplements.yaml"
+
   general:
     description: "Fallback for novel or undefined tasks"
     files:
@@ -51,6 +58,7 @@ groups:
       
 # PRINCIPLES CONFIG
 principles_dir: "N5/prefs/principles"
+
 
 
 

@@ -9,5 +9,7 @@
     "brief": false,
     "transcript_processed": false
   },
-  "last_updated_by": "MG-1_Operator"
+  "last_updated_by": "MG-1_Operator",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2025-12-28T17:39:32.539378"
 }

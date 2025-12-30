@@ -1,0 +1,777 @@
+{
+  "full_name": "Rajesh Nerlikar",
+  "first_name": "Rajesh",
+  "last_name": "Nerlikar",
+  "gender": "male",
+  "headline": "VP of Product at Optiwatt | Co-Founder at Prodify",
+  "linkedin_url": "linkedin.com/in/rajeshnerlikar",
+  "linkedin_id": "rajeshnerlikar",
+  "linkedin_entity_id": "ACoAAACm6d0BzAwTp-UIV7BRRXxWPfeHtPdqzZw",
+  "linkedin_num_id": 10938845,
+  "twitter_url": "twitter.com/txmaharaj",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": "crunchbase.com/person/rajesh-nerlikar",
+  "angellist_url": null,
+  "location": "Austin, Texas, United States",
+  "city": "Austin",
+  "region": "Texas",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102081935,
+    101724577,
+    85688753
+  ],
+  "current_title": "Manager, Public Service Operation Group",
+  "current_department": "SUPPORT",
+  "current_seniority_score": null,
+  "current_position_start": "2003-08-01T00:00:00.000Z",
+  "current_position_end": "2008-09-01T00:00:00.000Z",
+  "current_position_location": null,
+  "current_position_description": "* Led 30\u2011person, cross-functional task force to design new web-based system to allow nine New York City agencies to better serve their citizens by sharing data about common clients\n* Analyzed the public service market and identified 13 prospective buyers of a software product developed specifically for government clients\n* Helped 14 colleagues find new jobs when a $900M project ended sooner than expected \n* Spearheaded 15\u2011person effort to design and implement web page used by call center agents to decrease duration of calls to 211 in Texas by 900 hours every month\n* Planned phased rollout of IT systems to improve US Postal Service operational efficiency\n* Coordinated system-wide Java upgrade that gave 5,000 new users access to web-based case management system used to deliver welfare benefits to millions of California citizens\n* Tested web site and interactive phone system used by Texas Medicaid providers to ensure successful completion of client\u02b9s operational readiness milestone",
+  "current_company_name": "Accenture",
+  "current_company_id": "Inm0E61OyL-Rad9UTXfT5yxga_SLseg",
+  "current_company_linkedin": "linkedin.com/company/accenture",
+  "current_company_website": "accenture.com/us-en",
+  "current_company_location": "Accenture",
+  "current_employment_start": "2003-08-01T00:00:00.000Z",
+  "current_employment_end": "2008-09-01T00:00:00.000Z",
+  "latest_degree": "University of Michigan",
+  "latest_school": "Michigan State University",
+  "latest_school_location": "East Lansing, Michigan, United States",
+  "latest_school_linkedin": "michigan-state-university",
+  "latest_field_of_study": "Entrepreneurship",
+  "latest_education_start": "2008-09-06T00:00:00.000Z",
+  "latest_education_end": "2010-05-15T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Focus Groups",
+    "New Market Expansion",
+    "Entrepreneurship",
+    "Direct Sales",
+    "Utilities",
+    "Technical Project Management",
+    "Machine Learning",
+    "Internal Products",
+    "Consumer Behavior",
+    "Demand Response",
+    "Stored Procedures",
+    "B2B2C",
+    "Automated Software Testing",
+    "A/B Testing",
+    "Financial Goal Planning",
+    "Consumer Products",
+    "Retirement Planning",
+    "Portfolio Management",
+    "Robo-Advisors",
+    "Financial Wellness"
+  ],
+  "languages": [
+    {
+      "language": "Marathi",
+      "proficiency": null
+    }
+  ],
+  "linkedin_connections": 6545,
+  "linkedin_followers": 8517,
+  "linkedin_join_date": "2007-03-19T08:24:54.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": "Rajesh Nerlikar is the CEO & Co-Founder at Prodify.",
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2008-09-01T00:00:00.000Z",
+      "startDate": "2003-08-01T00:00:00.000Z",
+      "linkedinNumID": 1033,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2003-08-01T00:00:00.000Z",
+          "endDate": "2008-09-01T00:00:00.000Z",
+          "title": "Manager, Public Service Operation Group",
+          "department": "SUPPORT",
+          "description": "* Led 30\u2011person, cross-functional task force to design new web-based system to allow nine New York City agencies to better serve their citizens by sharing data about common clients\n* Analyzed the public service market and identified 13 prospective buyers of a software product developed specifically for government clients\n* Helped 14 colleagues find new jobs when a $900M project ended sooner than expected \n* Spearheaded 15\u2011person effort to design and implement web page used by call center agents to decrease duration of calls to 211 in Texas by 900 hours every month\n* Planned phased rollout of IT systems to improve US Postal Service operational efficiency\n* Coordinated system-wide Java upgrade that gave 5,000 new users access to web-based case management system used to deliver welfare benefits to millions of California citizens\n* Tested web site and interactive phone system used by Texas Medicaid providers to ensure successful completion of client\u02b9s operational readiness milestone"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "Inm0E61OyL-Rad9UTXfT5yxga_SLseg",
+      "companyName": "Accenture",
+      "company": {
+        "id": "Inm0E61OyL-Rad9UTXfT5yxga_SLseg",
+        "name": "Accenture",
+        "country": "United States",
+        "region": "Illinois",
+        "locality": "Chicago",
+        "URLs": {
+          "golden": "golden.com/wiki/Accenture-A6RKG",
+          "contact": "www.accenture.com/us-en/about/contact-us",
+          "twitter": "twitter.com/Accenture",
+          "website": "accenture.com/us-en",
+          "facebook": "www.facebook.com/accenture",
+          "linkedin": "linkedin.com/company/accenture",
+          "pitchbook": "pitchbook.com/profiles/company/10568-26",
+          "angelList": "angel.co/accenture",
+          "signalNFX": "signal.nfx.com/firms/accenture",
+          "crunchbase": "www.crunchbase.com/organization/accenture"
+        },
+        "industryList": [
+          "Business Information Systems",
+          "Construction",
+          "Consulting",
+          "Information Services",
+          "Information Technology",
+          "Infrastructure",
+          "Management Consulting",
+          "Outsourcing"
+        ]
+      }
+    },
+    {
+      "endDate": "2002-08-01T00:00:00.000Z",
+      "startDate": "2002-05-01T00:00:00.000Z",
+      "linkedinNumID": 1116,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2002-05-01T00:00:00.000Z",
+          "endDate": "2002-08-01T00:00:00.000Z",
+          "title": "UNIX Infrastructure Team Intern",
+          "department": "OTHER",
+          "description": "* Generated plan to consolidate servers based on utilization patterns, saving $1.8MM annually"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "ESmPM0qy6uwv6D45lsBqPrq-0ELaRBZ",
+      "companyName": "Procter & Gamble",
+      "company": {
+        "id": "ESmPM0qy6uwv6D45lsBqPrq-0ELaRBZ",
+        "name": "Procter & Gamble",
+        "country": "United States",
+        "region": "Ohio",
+        "locality": "Cincinnati",
+        "URLs": {
+          "golden": "golden.com/wiki/Procter_%26_Gamble-3WV5BK",
+          "contact": "www.pg.com/contact-us/",
+          "twitter": "twitter.com/proctergamble",
+          "website": "us.pg.com",
+          "facebook": "www.facebook.com/proctergamble",
+          "linkedin": "linkedin.com/company/procter-and-gamble",
+          "pitchbook": "pitchbook.com/profiles/company/10215-01",
+          "angelList": "angel.co/procter-gamble-2",
+          "crunchbase": "www.crunchbase.com/organization/procter-and-gamble"
+        },
+        "industryList": [
+          "Beauty",
+          "Brand Marketing",
+          "Cleaning Products",
+          "Consumer Goods",
+          "Cosmetics",
+          "Nutrition",
+          "Personal Health"
+        ]
+      }
+    },
+    {
+      "endDate": "2020-11-01T00:00:00.000Z",
+      "startDate": "2019-04-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-04-01T00:00:00.000Z",
+          "endDate": "2020-11-01T00:00:00.000Z",
+          "title": "Fractional VP of Product",
+          "department": "PRODUCT_MANAGEMENT",
+          "description": "Led a team of 5 (PM and design) for a Series A startup whose product was a cognitive test designed to detect early signs of dementia and reverse its progress\n\n* Product Strategy: Collaborated with the executive team to craft an ecosystem product strategy that connected patients, providers, and drug manufacturers \n* Innovation: Partnered with CTO to identify a web-based cognitive screener to address the low adoption rate elderly users had with our mobile app\n* New Product Launch: Worked with Fujitsu to give millions of new phone buyers a free cognitive health report via our pre-installed mobile app"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyName": "Savonix, Inc.",
+      "company": {
+        "name": "Savonix, Inc.",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2009-10-01T00:00:00.000Z",
+      "startDate": "2008-09-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2008-09-01T00:00:00.000Z",
+          "endDate": "2009-10-01T00:00:00.000Z",
+          "title": "Vice President of Product",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 5,
+          "description": "Crafted and implemented a strategy to add new site features intended to increase trial and grow user base of online ride\u2011sharing service \n\n**Acquired by CabCorner.com in August 2010**"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyName": "Hitchsters.com",
+      "company": {
+        "name": "Hitchsters.com",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2001-08-01T00:00:00.000Z",
+      "startDate": "2001-05-01T00:00:00.000Z",
+      "linkedinNumID": 1689,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2001-05-01T00:00:00.000Z",
+          "endDate": "2001-08-01T00:00:00.000Z",
+          "title": "Data Network Engineering Intern",
+          "department": "ENGINEERING",
+          "description": "* Minimized data center risk by deploying online tracking of changes to networking equipment"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "GUaZBl6DOqEFEY_P2WQITiaDSedGPAV",
+      "companyName": "ExxonMobil",
+      "company": {
+        "id": "GUaZBl6DOqEFEY_P2WQITiaDSedGPAV",
+        "name": "ExxonMobil",
+        "country": "United States",
+        "region": "Texas",
+        "locality": "Irving",
+        "URLs": {
+          "golden": "golden.com/wiki/ExxonMobil_Exploration_and_Production_Norway_as-8JKJZZ6",
+          "contact": "corporate.exxonmobil.com/About-us/Contact-us/Directory",
+          "twitter": "twitter.com/exxonmobil",
+          "website": "corporate.exxonmobil.com",
+          "facebook": "www.facebook.com/exxonmobil",
+          "linkedin": "linkedin.com/company/exxonmobil",
+          "angelList": "angel.co/exxonmobil",
+          "crunchbase": "www.crunchbase.com/organization/exxonmobil"
+        },
+        "industryList": [
+          "Chemical",
+          "Energy",
+          "Fossil Fuels",
+          "Oil and Gas"
+        ]
+      }
+    },
+    {
+      "endDate": "2000-08-01T00:00:00.000Z",
+      "startDate": "2000-05-01T00:00:00.000Z",
+      "linkedinNumID": 1063,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2000-05-01T00:00:00.000Z",
+          "endDate": "2000-08-01T00:00:00.000Z",
+          "title": "Optical Networking Group Intern",
+          "department": "OTHER",
+          "description": "* Simplified status reporting by developing online system to track progress of circuit boards"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "kE6MhwL9ob5IoYN5asisbvPuPe3HBt7",
+      "companyName": "Cisco Systems",
+      "company": {
+        "id": "kE6MhwL9ob5IoYN5asisbvPuPe3HBt7",
+        "name": "Cisco",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Jose",
+        "URLs": {
+          "golden": "golden.com/wiki/Cisco_Systems-GZRD8",
+          "contact": "www.cisco.com/site/us/en/about/contact-cisco/index.html?linkclickid=ftr-contactus",
+          "twitter": "twitter.com/Cisco",
+          "website": "cisco.com",
+          "facebook": "www.facebook.com/cisco",
+          "linkedin": "linkedin.com/company/cisco",
+          "pitchbook": "pitchbook.com/profiles/company/11151-37",
+          "angelList": "angel.co/cisco",
+          "signalNFX": "signal.nfx.com/firms/cisco-investments",
+          "crunchbase": "www.crunchbase.com/organization/cisco"
+        },
+        "industryList": [
+          "Communications Infrastructure",
+          "Enterprise Software",
+          "Hardware",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2009-04-01T00:00:00.000Z",
+      "startDate": "2009-03-01T00:00:00.000Z",
+      "linkedinNumID": 213937,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-03-01T00:00:00.000Z",
+          "endDate": "2009-04-01T00:00:00.000Z",
+          "title": "Market Entry Consultant",
+          "department": "ADVISOR",
+          "seniorityScore": 2,
+          "description": "* Recommended strategy to target nearly 4,000 potential enterprise customers for Peek\u2019s handheld email device after interviewing over 60 Indian executives in multiple industries"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "jdRdmt3TjYu56Xavipxx_VYvX7Y8cqp",
+      "companyName": "Peek India",
+      "company": {
+        "id": "jdRdmt3TjYu56Xavipxx_VYvX7Y8cqp",
+        "name": "Peek",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "website": "peekand.co",
+          "linkedin": "linkedin.com/company/peek"
+        },
+        "industryList": [
+          "Technology, Information and Internet"
+        ]
+      }
+    },
+    {
+      "endDate": "2011-11-01T00:00:00.000Z",
+      "startDate": "2009-10-01T00:00:00.000Z",
+      "linkedinNumID": 1051410,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-10-01T00:00:00.000Z",
+          "endDate": "2011-11-01T00:00:00.000Z",
+          "title": "CEO",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "* Co-founded Energy Flair, an online game to encourage residential energy efficiency using social media\n* Selected from pool of 45 ideas for venture capital funding from Momentum business incubator\n* Directed developer and designer to launch Energy Flair\u2019s beta web site in two months\n* Incorporated end user and utility customer feedback to produce product roadmap\n* Informed thousands how to save energy at home using Facebook, Twitter, and a blog"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "iguzWtJO19QZknJIo2TyBjlXDr5kdfs",
+      "companyName": "TerraPerks",
+      "company": {
+        "id": "iguzWtJO19QZknJIo2TyBjlXDr5kdfs",
+        "name": "TerraPerks",
+        "country": "United States",
+        "URLs": {
+          "website": "energyflair.com",
+          "linkedin": "linkedin.com/company/terraperks"
+        },
+        "industryList": [
+          "Consumer Services"
+        ]
+      }
+    },
+    {
+      "startDate": "2025-02-01T00:00:00.000Z",
+      "linkedinNumID": 53228942,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-10-01T00:00:00.000Z",
+          "title": "VP of Product",
+          "location": "Austin, Texas Metropolitan Area",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 5,
+          "description": "Lead a team that includes PM, design and user success for our Virtual Power Plant business, which helps shift EV charging and HVAC load to low cost hours to reduce grid stress and carbon emissions"
+        },
+        {
+          "startDate": "2025-02-01T00:00:00.000Z",
+          "endDate": "2025-09-01T00:00:00.000Z",
+          "title": "VP of Consumer Product",
+          "location": "Austin, Texas, United States",
+          "department": "PRODUCT_MANAGEMENT",
+          "description": "Helping consumers save money by optimizing their big household energy loads, starting with EVs and thermostats.  Responsible for increasing conversion and retention of devices in virtual power plant programs"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "oVHVmnWyLqN9C_H9kEYwFZ3duH_Bt63",
+      "companyName": "Optiwatt",
+      "company": {
+        "id": "oVHVmnWyLqN9C_H9kEYwFZ3duH_Bt63",
+        "name": "Optiwatt",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Francisco",
+        "URLs": {
+          "twitter": "twitter.com/optiwatt",
+          "website": "optiwatt.com",
+          "facebook": "www.facebook.com/optiwatt",
+          "linkedin": "linkedin.com/company/getoptiwatt",
+          "pitchbook": "pitchbook.com/profiles/company/484608-34",
+          "crunchbase": "www.crunchbase.com/organization/optiwatt"
+        },
+        "industryList": [
+          "Electric Vehicle",
+          "Mobile Apps",
+          "Real Time",
+          "SaaS"
+        ]
+      }
+    },
+    {
+      "endDate": "2015-05-01T00:00:00.000Z",
+      "startDate": "2013-04-01T00:00:00.000Z",
+      "linkedinNumID": 482130,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-04-01T00:00:00.000Z",
+          "endDate": "2015-05-01T00:00:00.000Z",
+          "title": "Senior Product Manager",
+          "location": "Washington D.C. Metro Area",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 3,
+          "description": "Led 3 PMs at a Series B startup using behavioral science to drive financial wellness\n\n* Growth: Grew core ARR by 3x to $XM with accounts like Google and Walmart\n* A/B Testing Increased retention by 40% by testing a new onboarding flow \n* New Product Development Incubated an innovative new product, Retirement Explorer, resulting in a $XM expansion into the 401(k) recordkeeper market\n* ML Addressed critical customer feedback about uncategorized transactions by working with data science to improve categorization by 400%\n\n**Acquired by Morningstar in May 2014**"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "nEp3b_DRkQhZTKwZ9flRRHSjf3Yfsy3",
+      "companyName": "HelloWallet",
+      "company": {
+        "id": "nEp3b_DRkQhZTKwZ9flRRHSjf3Yfsy3",
+        "name": "HelloWallet",
+        "country": "United States",
+        "region": "District of Columbia",
+        "locality": "Washington",
+        "URLs": {
+          "twitter": "twitter.com/hellowallet",
+          "website": "hellowallet.com",
+          "facebook": "www.facebook.com/hellowallet",
+          "linkedin": "linkedin.com/company/hellowallet",
+          "pitchbook": "pitchbook.com/profiles/company/53600-14",
+          "angelList": "angel.co/hellowallet",
+          "crunchbase": "www.crunchbase.com/organization/hellowallet"
+        },
+        "industryList": [
+          "Finance",
+          "Financial Services",
+          "FinTech",
+          "Software"
+        ]
+      }
+    },
+    {
+      "startDate": "2018-01-01T00:00:00.000Z",
+      "linkedinNumID": 35645189,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-01-01T00:00:00.000Z",
+          "title": "Co-Founder and Board Member",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Co-founded and led a product consulting firm to help companies of all sizes with product vision / strategy, team development and product operations. Currently serving as a Board Member.\n\nHighlights:\n\n\u25b9 Co-wrote a best-selling book, Build What Matters, explaining our Vision-Led PM framework\n\u25b9 Spent 3,300 hours across 35 companies coaching and advising product managers, team leads and executives on being more product-driven (NPS of 88). Key clients included:\n\u30fb Climate Tech: ENGIE Impact and Euclid Power\n\u30fb Digital Health: Savonix, DrFirst, Cureatr, Advantia Health\n\u30fb Financial Wellness: Capital One, Candidly, Juntos, Pinkaloo and Blueprint Income\n\u25b9 Placed 7 product hires with clients after understanding the company\u2019s needs and screening candidates to ensure a strong skill and cultural fit"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "uYXNhsqiApkqVnJmhoSGxO7hlZJemy7",
+      "companyName": "Prodify",
+      "company": {
+        "id": "uYXNhsqiApkqVnJmhoSGxO7hlZJemy7",
+        "name": "Prodify",
+        "country": "United States",
+        "region": "Virginia",
+        "locality": "Arlington",
+        "URLs": {
+          "website": "prodify.group",
+          "linkedin": "linkedin.com/company/prodifygroup",
+          "crunchbase": "www.crunchbase.com/organization/prodify"
+        },
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2009-08-01T00:00:00.000Z",
+      "startDate": "2009-06-01T00:00:00.000Z",
+      "linkedinNumID": 2822,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2009-06-01T00:00:00.000Z",
+          "endDate": "2009-08-01T00:00:00.000Z",
+          "title": "Consumer Insights Intern",
+          "department": "OTHER",
+          "seniorityScore": 1,
+          "description": "* Ran focus groups which uncovered insights that led to new Old El Paso beans commercial\n* Managed in-store study that led to new packaging to highlight Betty Crocker potato varieties"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "CIF9AOVQuS7gUfdqgKXIEoipUJpGt_J",
+      "companyName": "General Mills",
+      "company": {
+        "id": "CIF9AOVQuS7gUfdqgKXIEoipUJpGt_J",
+        "name": "General Mills",
+        "country": "United States",
+        "region": "Minnesota",
+        "locality": "Minneapolis",
+        "URLs": {
+          "contact": "www.generalmills.com/about-us/contact-us",
+          "twitter": "twitter.com/generalmills",
+          "website": "generalmills.com",
+          "facebook": "www.facebook.com/generalmills",
+          "linkedin": "linkedin.com/company/general-mills",
+          "pitchbook": "pitchbook.com/profiles/company/11198-08",
+          "crunchbase": "www.crunchbase.com/organization/generalmills"
+        },
+        "industryList": [
+          "Food and Beverage",
+          "Food Processing",
+          "Manufacturing",
+          "Snack Food",
+          "Wholesale"
+        ]
+      }
+    },
+    {
+      "endDate": "2017-09-01T00:00:00.000Z",
+      "startDate": "2015-06-01T00:00:00.000Z",
+      "linkedinNumID": 5161,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-06-01T00:00:00.000Z",
+          "endDate": "2017-09-01T00:00:00.000Z",
+          "title": "Director of Workplace Products",
+          "location": "Greater Chicago Area",
+          "description": "Led a team of 17 working on a $40M financial wellness product portfolio that was formed after Morningstar acquired HelloWallet\n\n* Growth: Grew revenue 20% YoY for 3 retirement robo-advisor platforms with a product strategy focused on our top 5 clients, such as Schwab and Empower\n* Product Operations: Improved client and team satisfaction by leading 7 squads through an agile transition to improve product delivery"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "maZrVvrmXh6MwQW-HaUC6MSFRjI0maI",
+      "companyName": "Morningstar",
+      "company": {
+        "id": "maZrVvrmXh6MwQW-HaUC6MSFRjI0maI",
+        "name": "Morningstar",
+        "country": "United States",
+        "region": "Illinois",
+        "locality": "Chicago",
+        "URLs": {
+          "golden": "golden.com/wiki/Morningstar_(company)-K4XBYV",
+          "contact": "www.morningstar.com/company/global-contacts",
+          "twitter": "twitter.com/MorningstarInc",
+          "website": "morningstar.com",
+          "facebook": "www.facebook.com/MorningstarInc",
+          "linkedin": "linkedin.com/company/morningstar",
+          "pitchbook": "pitchbook.com/profiles/company/12362-68",
+          "angelList": "angel.co/morningstar",
+          "crunchbase": "www.crunchbase.com/organization/morningstar"
+        },
+        "industryList": [
+          "Asset Management",
+          "Enterprise Software",
+          "Finance",
+          "Financial Services",
+          "Impact Investing",
+          "Market Research",
+          "News",
+          "Software",
+          "Telecommunications"
+        ]
+      }
+    },
+    {
+      "endDate": "2024-06-01T00:00:00.000Z",
+      "startDate": "2023-09-01T00:00:00.000Z",
+      "linkedinNumID": 71505804,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2023-09-01T00:00:00.000Z",
+          "endDate": "2024-06-01T00:00:00.000Z",
+          "title": "VP of Product",
+          "location": "Austin, Texas Metropolitan Area",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 5,
+          "description": "Led a team of 11 (PM and design) for a Series B climate tech B Corp that helps food companies reduce their on-farm emissions using regenerative agriculture and ML\n\n* Growth: Increased ARR by XX%to by expanding geographic coverage to increase our TAM and our carbon reduction impact\n* Customer Understanding: Engaged buyers in onsite strategy sessions to develop a product strategy that led to $XM in renewals with F500 clients\n* Product Strategy and Vision: Partnered with the founders to shape our platform vision and strategy to work our way up to C-Suite buyers\n* New Markets: Capitalized on a trend in the US biofuels market and launched a product in 2 months, landing 2 early adopters\n* Product Operations: Partnered with the CTO to improve internal and external roadmapping, along with the velocity and predictability of product delivery"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "eEhugC9UpVfDuyHP_ZSXArX7vWyBwMR",
+      "companyName": "Regrow Ag",
+      "company": {
+        "id": "eEhugC9UpVfDuyHP_ZSXArX7vWyBwMR",
+        "name": "Regrow Ag",
+        "country": "United States",
+        "region": "New Hampshire",
+        "locality": "Durham",
+        "URLs": {
+          "golden": "golden.com/wiki/Regrow-VKMKDKP",
+          "twitter": "twitter.com/RegrowAg",
+          "website": "regrow.ag",
+          "facebook": "www.facebook.com/regrowag",
+          "linkedin": "linkedin.com/company/regrowag",
+          "pitchbook": "pitchbook.com/profiles/company/180357-58",
+          "crunchbase": "www.crunchbase.com/organization/flurosat"
+        },
+        "industryList": [
+          "Agriculture",
+          "AgTech",
+          "Farming",
+          "Sustainability"
+        ]
+      }
+    },
+    {
+      "endDate": "2013-04-01T00:00:00.000Z",
+      "startDate": "2011-11-01T00:00:00.000Z",
+      "linkedinNumID": 551073,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2011-11-01T00:00:00.000Z",
+          "endDate": "2013-04-01T00:00:00.000Z",
+          "title": "Product Manager",
+          "location": "Washington D.C. Metro Area",
+          "department": "PRODUCT_MANAGEMENT",
+          "seniorityScore": 2,
+          "description": "Helped a Series C energy efficiency startup scale their internal operations by automating manual workflows to improve margins on our way to a $1B IPO \n\n* Operational Efficiency: Reduced costs by 30% by automating content planning and creation for millions of residential Home Energy Reports, our core product\n* Innovation: Updated the core platform to launch a first-of-its-kind, behavioral peak time rebate program designed to reduce summertime energy usage"
+        }
+      ],
+      "personID": "FpFOPErWMpmS",
+      "companyID": "UuNTxmtyj53mz7SuyD0Qr8zksqkjBO3",
+      "companyName": "Opower",
+      "company": {
+        "id": "UuNTxmtyj53mz7SuyD0Qr8zksqkjBO3",
+        "name": "Opower",
+        "country": "United States",
+        "region": "Virginia",
+        "locality": "Arlington",
+        "URLs": {
+          "golden": "golden.com/wiki/Opower-8GXPW6",
+          "contact": "www.opower.com/corporate/contact/",
+          "twitter": "twitter.com/opower",
+          "website": "opower.com",
+          "facebook": "www.facebook.com/opower",
+          "linkedin": "linkedin.com/company/opower",
+          "pitchbook": "pitchbook.com/profiles/company/51326-20",
+          "angelList": "angel.co/opower-2",
+          "crunchbase": "www.crunchbase.com/organization/opower"
+        },
+        "industryList": [
+          "CRM",
+          "Energy",
+          "Energy Efficiency",
+          "GovTech",
+          "Information Technology",
+          "Power Grid",
+          "Renewable Energy",
+          "SaaS",
+          "Software"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2664522460",
+      "endDate": "2010-05-15T00:00:00.000Z",
+      "startDate": "2008-09-06T00:00:00.000Z",
+      "name": "University of Michigan",
+      "subject": "Entrepreneurship",
+      "school": {
+        "id": "rRz3cBAKD6j8",
+        "linkedinID": "michigan-state-university",
+        "fullName": "Michigan State University",
+        "location": "East Lansing, Michigan, United States",
+        "entityType": "school"
+      },
+      "personID": "FpFOPErWMpmS"
+    },
+    {
+      "id": "2665068864",
+      "endDate": "2010-01-01T00:00:00.000Z",
+      "startDate": "2008-01-01T00:00:00.000Z",
+      "name": "University of Michigan - Stephen M. Ross School of Business",
+      "subject": "Entrepreneurship / Marketing",
+      "school": {
+        "id": "lw03tq2kp2FH",
+        "linkedinID": "michiganross",
+        "fullName": "University of Michigan - Stephen M. Ross School of Business",
+        "location": "Ann Arbor, Michigan, United States",
+        "entityType": "school"
+      },
+      "activities": "Member: Entrepreneur and Venture, Marketing, Net Impact, and Energy Clubs",
+      "personID": "FpFOPErWMpmS"
+    },
+    {
+      "id": "2973920731",
+      "endDate": "2003-05-15T00:00:00.000Z",
+      "startDate": "1999-08-28T00:00:00.000Z",
+      "name": "The University of Texas at Austin",
+      "subject": "Electrical Engineering",
+      "school": {
+        "id": "mggdnD5qrGRh",
+        "linkedinID": "theuniversityoftexasataustin-",
+        "fullName": "The University of Texas at Austin",
+        "location": "Austin, Texas, United States",
+        "entityType": "school"
+      },
+      "personID": "FpFOPErWMpmS"
+    },
+    {
+      "id": "2973920732",
+      "endDate": "2003-01-01T00:00:00.000Z",
+      "startDate": "1999-01-01T00:00:00.000Z",
+      "subject": "Electrical Engineering",
+      "school": {
+        "id": "mggdnD5qrGRh",
+        "linkedinID": "theuniversityoftexasataustin-",
+        "fullName": "The University of Texas at Austin",
+        "location": "Austin, Texas, United States",
+        "entityType": "school"
+      },
+      "activities": "Texas Blazers, Roden Leadership Program",
+      "personID": "FpFOPErWMpmS"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2665068864",
+      "fieldOfStudy": "Entrepreneurship / Marketing",
+      "name": "MBA",
+      "school": {
+        "id": "lw03tq2kp2FH",
+        "linkedinID": "michiganross",
+        "fullName": "University of Michigan - Stephen M. Ross School of Business",
+        "location": "Ann Arbor, Michigan, United States",
+        "entityType": "school"
+      },
+      "personID": "FpFOPErWMpmS"
+    },
+    {
+      "personEducationID": "2973920731",
+      "fieldOfStudy": "Electrical Engineering",
+      "name": "Bachelor of Science",
+      "school": {
+        "id": "mggdnD5qrGRh",
+        "linkedinID": "theuniversityoftexasataustin-",
+        "fullName": "The University of Texas at Austin",
+        "location": "Austin, Texas, United States",
+        "entityType": "school"
+      },
+      "personID": "FpFOPErWMpmS"
+    }
+  ],
+  "aviato_person_id": "FpFOPErWMpmS",
+  "aviato_last_updated": "2025-12-15T14:52:34.269Z",
+  "enrichment_timestamp": "2025-12-28T23:13:50.269020",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringIPO",
+    "oneYearAtCurrentCompany"
+  ]
+}

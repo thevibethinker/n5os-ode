@@ -1,0 +1,614 @@
+{
+  "full_name": "Jim Gagnard",
+  "first_name": "Jim",
+  "last_name": "Gagnard",
+  "gender": "male",
+  "headline": "Early-Stage Technology Advisor",
+  "linkedin_url": "linkedin.com/in/jimgagnard",
+  "linkedin_id": "jimgagnard",
+  "linkedin_entity_id": "ACoAAAHBfkkBXlOCb9bKlzdtdWthxFtJk--aRqw",
+  "linkedin_num_id": 29457993,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": "crunchbase.com/person/jim-gagnard",
+  "angellist_url": null,
+  "location": "Chicago, Illinois, United States",
+  "city": "Chicago",
+  "region": "Illinois",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102084317,
+    404496273,
+    85940195,
+    85688697
+  ],
+  "current_title": "Life Trustee",
+  "current_department": null,
+  "current_seniority_score": null,
+  "current_position_start": "2007-09-01T00:00:00.000Z",
+  "current_position_end": null,
+  "current_position_location": "Greater Chicago Area",
+  "current_position_description": null,
+  "current_company_name": "Illinois Institute of Technology",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Illinois Institute of Technology",
+  "current_employment_start": "2007-09-01T00:00:00.000Z",
+  "current_employment_end": null,
+  "latest_degree": "San Francisco State University",
+  "latest_school": "San Francisco State University",
+  "latest_school_location": "San Francisco, California, United States",
+  "latest_school_linkedin": "san-francisco-state-university",
+  "latest_field_of_study": "Finance",
+  "latest_education_start": "1978-01-01T00:00:00.000Z",
+  "latest_education_end": "1980-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Start-ups",
+    "Enterprise Software",
+    "SaaS",
+    "Strategic Partnerships",
+    "Cloud Computing"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": null
+    },
+    {
+      "language": "French",
+      "proficiency": null
+    }
+  ],
+  "linkedin_connections": 1698,
+  "linkedin_followers": 1707,
+  "linkedin_join_date": "2008-08-18T09:43:47.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": "Jim Gagnard has over 25 years of executive management experience leading enterprise software companies. Until March, 2011, Jim was Chairman and CEO of SmartSignal Corporation, acquired by GE. \r\n\r\nPrior to SmartSignal, Jim led several private software companies including Questra, Launchpoint, and Diffusion. In addition, he successfully led publicly-traded Trinzic Corporation. Jim has created over $480 million of enterprise value for venture capitalists and strategic investors through successful exit transactions. Jim serves on the Board of Directors of Upwind Solutions, Agentis Energy, and A3 Solutions. \r\n\r\nHe is a member of the Board of Trustees of Illinois Institute of Technology, the Board of Overseers of the Stuart School of Business and is the Chairman of the Illinois Technology Association.",
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "startDate": "2007-09-01T00:00:00.000Z",
+      "linkedinNumID": 6328,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2007-09-01T00:00:00.000Z",
+          "title": "Life Trustee",
+          "location": "Greater Chicago Area"
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "Illinois Institute of Technology",
+      "company": {
+        "name": "Illinois Institute of Technology",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "1994-01-01T00:00:00.000Z",
+      "startDate": "1990-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1990-01-01T00:00:00.000Z",
+          "endDate": "1994-01-01T00:00:00.000Z",
+          "title": "President and CEO",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "Trinzic Corporation",
+      "company": {
+        "name": "Trinzic Corporation",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2004-03-01T00:00:00.000Z",
+      "startDate": "2001-09-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2001-09-01T00:00:00.000Z",
+          "endDate": "2004-03-01T00:00:00.000Z",
+          "title": "President and CEO",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "Questra Corporation",
+      "company": {
+        "name": "Questra Corporation",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "1979-01-01T00:00:00.000Z",
+      "startDate": "1976-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1976-01-01T00:00:00.000Z",
+          "endDate": "1979-01-01T00:00:00.000Z",
+          "title": "Branch Manager"
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "IBM Service Bureau Company",
+      "company": {
+        "name": "IBM Service Bureau Company",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2020-02-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2020-02-01T00:00:00.000Z",
+          "title": "Board Member",
+          "location": "Chicago",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "Mies van der Rohe Society",
+      "company": {
+        "name": "Mies van der Rohe Society",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "1996-01-01T00:00:00.000Z",
+      "startDate": "1994-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1994-01-01T00:00:00.000Z",
+          "endDate": "1996-01-01T00:00:00.000Z",
+          "title": "President and CEO",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "Diffusion",
+      "company": {
+        "name": "Diffusion",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "1989-01-01T00:00:00.000Z",
+      "startDate": "1983-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1983-01-01T00:00:00.000Z",
+          "endDate": "1989-01-01T00:00:00.000Z",
+          "title": "Senior Vice President",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyName": "Pansophic Systems",
+      "company": {
+        "name": "Pansophic Systems",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2017-03-01T00:00:00.000Z",
+      "startDate": "2012-01-01T00:00:00.000Z",
+      "linkedinNumID": 1518078,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-01-01T00:00:00.000Z",
+          "endDate": "2017-03-01T00:00:00.000Z",
+          "title": "Former Chairman"
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "vnLNQ7axqMxYxj_FHqEH7CtgGB9rKLG",
+      "companyName": "Illinois Technology Association (ITA)",
+      "company": {
+        "id": "vnLNQ7axqMxYxj_FHqEH7CtgGB9rKLG",
+        "name": "Illinois Technology Association ",
+        "country": "United States",
+        "region": "Illinois",
+        "locality": "Chicago",
+        "URLs": {
+          "golden": "golden.com/wiki/Illinois_Technology_Association_(Ita)-PBKEAAW",
+          "contact": "share.hsforms.com/1lmu1VQNBRMK8yUJGJZ6dxQ20ww1",
+          "twitter": "twitter.com/ITAbuzz",
+          "website": "1871.com/membership/growth-stage",
+          "facebook": "www.facebook.com/illinoistechnology",
+          "linkedin": "linkedin.com/company/illinois-technology-association",
+          "pitchbook": "pitchbook.com/profiles/company/101456-65",
+          "crunchbase": "www.crunchbase.com/organization/illinois-technology-association"
+        },
+        "industryList": [
+          "Enterprise Software",
+          "Information Technology",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "startDate": "1998-01-01T00:00:00.000Z",
+      "linkedinNumID": 72300,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1998-01-01T00:00:00.000Z",
+          "title": "Independent Board Member",
+          "location": "San Francisco Bay Area",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "lz0II0EZ2LPDxzv1gx7tn7FSfM0hPpb",
+      "companyName": "A3 Solutions",
+      "company": {
+        "id": "lz0II0EZ2LPDxzv1gx7tn7FSfM0hPpb",
+        "name": "A3 Solutions",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Francisco",
+        "URLs": {
+          "contact": "a3solutions.com/contact/",
+          "twitter": "twitter.com/a3_solutions",
+          "website": "a3solutions.com",
+          "facebook": "www.facebook.com/a3solutionsinc/",
+          "linkedin": "linkedin.com/company/a3-solutions",
+          "crunchbase": "www.crunchbase.com/organization/a3-solutions"
+        },
+        "industryList": [
+          "Finance",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "1980-01-01T00:00:00.000Z",
+      "startDate": "1977-01-01T00:00:00.000Z",
+      "linkedinNumID": 1009,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1977-01-01T00:00:00.000Z",
+          "endDate": "1980-01-01T00:00:00.000Z",
+          "title": "Branch Manager"
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "YBDXXjoCgZPqEAokf92HE4ebBv9BLPw",
+      "companyName": "IBM",
+      "company": {
+        "id": "YBDXXjoCgZPqEAokf92HE4ebBv9BLPw",
+        "name": "IBM",
+        "country": "United States",
+        "region": "North Carolina",
+        "locality": "Chapel Hill",
+        "URLs": {
+          "golden": "golden.com/wiki/trigo_technologies_(ibm)-yxxb433",
+          "twitter": "twitter.com/ibm",
+          "website": "ibm.com/us-en",
+          "facebook": "www.facebook.com/ibm",
+          "linkedin": "linkedin.com/company/ibm",
+          "pitchbook": "pitchbook.com/profiles/company/52362-64",
+          "angelList": "angel.co/ibm-ventures",
+          "signalNFX": "signal.nfx.com/firms/ibm",
+          "crunchbase": "www.crunchbase.com/organization/trigo-technologies"
+        },
+        "industryList": [
+          "Information Technology",
+          "Logistics",
+          "Retail Technology",
+          "Software"
+        ]
+      }
+    },
+    {
+      "startDate": "2022-08-01T00:00:00.000Z",
+      "linkedinNumID": 562381,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-08-01T00:00:00.000Z",
+          "title": "Independent Board Member",
+          "location": "United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "21PstwgBdPPE0C63tyefViJS4ziSaCl",
+      "companyName": "infiniRel Corporation",
+      "company": {
+        "id": "21PstwgBdPPE0C63tyefViJS4ziSaCl",
+        "name": "infiniRel Corporation",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Jose",
+        "URLs": {
+          "golden": "golden.com/wiki/infiniRel-YX9A6K9",
+          "twitter": "twitter.com/infinirel",
+          "website": "infinirel.com",
+          "linkedin": "linkedin.com/company/infinirel-corporation",
+          "pitchbook": "pitchbook.com/profiles/company/239775-76",
+          "angelList": "angel.co/infinirel-1",
+          "crunchbase": "www.crunchbase.com/organization/infinirel"
+        },
+        "industryList": [
+          "Renewable Energy"
+        ]
+      }
+    },
+    {
+      "startDate": "2012-01-01T00:00:00.000Z",
+      "linkedinNumID": 3354666,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-01-01T00:00:00.000Z",
+          "title": "Venture Advisor",
+          "department": "ADVISOR",
+          "seniorityScore": 4,
+          "description": "Provide advice and counsel regarding all portfolio investments."
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "7r88kLf3EUwRSFavsZWcZ6kx_AzjOvz",
+      "companyName": "Hyde Park Venture Partners",
+      "company": {
+        "id": "7r88kLf3EUwRSFavsZWcZ6kx_AzjOvz",
+        "name": "Hyde Park Venture Partners",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Hyde_Park_Venture_Partners-EAVERW8",
+          "twitter": "twitter.com/hydeparkvp",
+          "website": "hydeparkvp.com",
+          "facebook": "www.facebook.com/hydeparkvp",
+          "linkedin": "linkedin.com/company/hyde-park-venture-partners",
+          "angelList": "angel.co/hyde-park-venture-partners",
+          "signalNFX": "signal.nfx.com/firms/hyde-park-venture-partners",
+          "crunchbase": "www.crunchbase.com/organization/hyde-park-venture-partners"
+        },
+        "industryList": [
+          "Enterprise Software",
+          "Financial Services",
+          "FinTech",
+          "Venture Capital"
+        ]
+      }
+    },
+    {
+      "startDate": "2025-01-01T00:00:00.000Z",
+      "linkedinNumID": 91323245,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "title": "Strategic Advisor",
+          "location": "United States",
+          "department": "ADVISOR",
+          "seniorityScore": 4,
+          "description": "Provide strategic guidance regarding product positioning, sales strategy, and fund raising"
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "kQk7XbtuQpmiCE4PODJx3aSP5pA2bD_",
+      "companyName": "Spector.AI",
+      "company": {
+        "id": "kQk7XbtuQpmiCE4PODJx3aSP5pA2bD_",
+        "name": "Spector.AI",
+        "URLs": {
+          "website": "spector.ai",
+          "linkedin": "linkedin.com/company/spector-aii",
+          "pitchbook": "pitchbook.com/profiles/company/594255-70"
+        },
+        "industryList": [
+          "Other Software",
+          "Other Information Technology"
+        ]
+      }
+    },
+    {
+      "startDate": "2024-01-01T00:00:00.000Z",
+      "linkedinNumID": 101024937,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2024-01-01T00:00:00.000Z",
+          "title": "Strategic Advisor",
+          "location": "United States",
+          "department": "ADVISOR",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "jy50CDDlXNaar-BgIvIbgatbuWd4yws",
+      "companyName": "Gopher Security",
+      "company": {
+        "id": "jy50CDDlXNaar-BgIvIbgatbuWd4yws",
+        "name": "Gopher Security",
+        "country": "United States",
+        "region": "California",
+        "locality": "Fremont",
+        "URLs": {
+          "contact": "gopher.security/contact-us",
+          "website": "gopher.security",
+          "linkedin": "linkedin.com/company/gophersecurity",
+          "crunchbase": "www.crunchbase.com/organization/gopher-security"
+        },
+        "industryList": [
+          "Software",
+          "Cyber Security"
+        ]
+      }
+    },
+    {
+      "endDate": "2011-03-01T00:00:00.000Z",
+      "startDate": "2004-09-01T00:00:00.000Z",
+      "linkedinNumID": 35443,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2004-09-01T00:00:00.000Z",
+          "endDate": "2011-03-01T00:00:00.000Z",
+          "title": "Chairman+CEO",
+          "department": "OTHER",
+          "seniorityScore": 5,
+          "description": "SmartSignal was sold to GE in January, 2011"
+        }
+      ],
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+      "companyID": "jRkfKZ5gYMhaGIVNiCuYzzLIro_nQO7",
+      "companyName": "SmartSignal Corporation",
+      "company": {
+        "id": "jRkfKZ5gYMhaGIVNiCuYzzLIro_nQO7",
+        "name": "SmartSignal",
+        "country": "United States",
+        "region": "Illinois",
+        "locality": "Lisle",
+        "URLs": {
+          "contact": "www.gevernova.com/software/contact-ge-vernova",
+          "twitter": "www.twitter.com/smartsignal",
+          "website": "smartsignal.com",
+          "facebook": "www.facebook.com/ge",
+          "linkedin": "linkedin.com/company/smartsignal",
+          "pitchbook": "pitchbook.com/profiles/company/53679-97",
+          "angelList": "angel.co/smartsignal",
+          "crunchbase": "www.crunchbase.com/organization/smartsignal"
+        },
+        "industryList": [
+          "Enterprise Software",
+          "Oil and Gas",
+          "Predictive Analytics",
+          "Software"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2962463084",
+      "endDate": "1980-01-01T00:00:00.000Z",
+      "startDate": "1978-01-01T00:00:00.000Z",
+      "name": "San Francisco State University",
+      "subject": "Finance",
+      "school": {
+        "id": "agGLtp3Eduzp",
+        "linkedinID": "san-francisco-state-university",
+        "fullName": "San Francisco State University",
+        "location": "San Francisco, California, United States",
+        "entityType": "school"
+      },
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3"
+    },
+    {
+      "id": "3038922642",
+      "name": "San Francisco State University",
+      "subject": "Finance",
+      "school": {
+        "id": "agGLtp3Eduzp",
+        "linkedinID": "san-francisco-state-university",
+        "fullName": "San Francisco State University",
+        "location": "San Francisco, California, United States",
+        "entityType": "school"
+      },
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3"
+    },
+    {
+      "id": "3038922643",
+      "name": "Illinois Institute of Technology",
+      "subject": "Electrical Engineering",
+      "school": {
+        "id": "sCe0lWPAXPhk",
+        "linkedinID": "illinois-tech",
+        "fullName": "Illinois Institute of Technology",
+        "location": "Chicago, Illinois, United States",
+        "entityType": "school"
+      },
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3"
+    },
+    {
+      "id": "3038922644",
+      "endDate": "1969-01-01T00:00:00.000Z",
+      "startDate": "1965-01-01T00:00:00.000Z",
+      "subject": "Electrical Engineering",
+      "school": {
+        "id": "sCe0lWPAXPhk",
+        "linkedinID": "illinois-tech",
+        "fullName": "Illinois Institute of Technology",
+        "location": "Chicago, Illinois, United States",
+        "entityType": "school"
+      },
+      "activities": "Sigma Phi Epsilon fraternity",
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "3038922643",
+      "fieldOfStudy": "Electrical Engineering",
+      "name": "BS",
+      "school": {
+        "id": "sCe0lWPAXPhk",
+        "linkedinID": "illinois-tech",
+        "fullName": "Illinois Institute of Technology",
+        "location": "Chicago, Illinois, United States",
+        "entityType": "school"
+      },
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3"
+    },
+    {
+      "personEducationID": "2962463084",
+      "fieldOfStudy": "Finance",
+      "name": "MBA Studies",
+      "school": {
+        "id": "agGLtp3Eduzp",
+        "linkedinID": "san-francisco-state-university",
+        "fullName": "San Francisco State University",
+        "location": "San Francisco, California, United States",
+        "entityType": "school"
+      },
+      "personID": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3"
+    }
+  ],
+  "aviato_person_id": "yzlb2uKTR-GiV52vLVUEK8GOhJuGxz3",
+  "aviato_last_updated": "2025-10-24T07:35:52.469Z",
+  "enrichment_timestamp": "2025-12-28T23:17:19.898391",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringMA",
+    "oneYearAtCurrentCompany"
+  ]
+}

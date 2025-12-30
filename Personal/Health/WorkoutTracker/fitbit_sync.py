@@ -184,98 +184,193 @@ def parse_auth_code_from_redirect(url: str) -> str:
     return codes[0]
 
 
-def api_get_json(url: str, access_token: str) -> Dict[str, Any]:
+def api_get_json(url: str, access_token: str, max_retries: int = 3) -> Dict[str, Any]:
+    """Fetch JSON from Fitbit API with retry logic for rate limits."""
     headers = {"Authorization": f"Bearer {access_token}"}
-    req = Request(url, headers=headers, method="GET")
-    try:
-        with urlopen(req, timeout=20) as resp:
-            raw = resp.read()
-    except HTTPError as e:
-        err_body = e.read().decode("utf-8", errors="replace")
-        raise SystemExit(f"HTTP {e.code} error from {url}: {err_body}") from e
-
-    try:
-        return json.loads(raw.decode("utf-8"))
-    except json.JSONDecodeError as e:
-        raise SystemExit(f"Failed to parse JSON from {url}: {e}\nRaw: {raw!r}") from e
+    
+    for attempt in range(max_retries):
+        req = Request(url, headers=headers, method="GET")
+        try:
+            with urlopen(req, timeout=20) as resp:
+                raw = resp.read()
+            return json.loads(raw.decode("utf-8"))
+        except HTTPError as e:
+            err_body = e.read().decode("utf-8", errors="replace")
+            if e.code == 429:  # Rate limited
+                wait_time = 60 * (attempt + 1)  # 60s, 120s, 180s
+                print(f"Rate limited (429). Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...", file=sys.stderr)
+                time.sleep(wait_time)
+                continue
+            elif e.code == 404:  # Not found - data doesn't exist, not an error
+                return {}  # Return empty dict for missing data
+            else:
+                raise SystemExit(f"HTTP {e.code} error from {url}: {err_body}") from e
+        except json.JSONDecodeError as e:
+            raise SystemExit(f"Failed to parse JSON from {url}: {e}\nRaw: {raw!r}") from e
+    
+    # All retries exhausted
+    print(f"Warning: Rate limit persists after {max_retries} retries for {url}", file=sys.stderr)
+    return {}  # Return empty dict to allow sync to continue
 
 
 def sync_daily_metrics(conn, token: str, start_date, end_date, workout_tracker) -> None:
-    """Sync daily resting HR, HRV, weight, and sleep summary for the given date range.
+    """Sync daily sleep, resting HR, and weight for the given date range.
 
-    This is best-effort: errors should not prevent activity sync from running.
+    Prioritizes sleep (most important) and uses only batch endpoints to minimize API calls.
+    Removed per-day HRV/SpO2/Skin Temp/Stress Score calls to stay within rate limits.
     """
 
     start_str = start_date.strftime("%Y-%m-%d")
     end_str = end_date.strftime("%Y-%m-%d")
 
-    # 1. Resting heart rate via activities-heart time series
-    hr_url = HEART_TIME_SERIES_URL.format(start=start_str, end=end_str)
-    hr_data = api_get_json(hr_url, token)
-    series = hr_data.get("activities-heart", [])
-    for item in series:
-        day = item.get("dateTime")
-        if not day:
-            continue
-        
-        # Fetch HRV for this specific day
-        hrv_value = None
-        try:
-            hrv_data = api_get_json(HRV_DATE_URL.format(date=day), token)
-            hrv_entries = hrv_data.get("hrv", [])
-            if hrv_entries:
-                # Fitbit usually provides one deep-sleep HRV value per day
-                hrv_value = hrv_entries[0].get("value", {}).get("dailyRmssd")
-        except Exception as e:
-            print(f"Warning: failed to fetch HRV for {day}: {e}", file=sys.stderr)
+    # 1. Sleep summary FIRST (most important, 1 API call)
+    try:
+        sleep_url = SLEEP_DATE_RANGE_URL.format(start=start_str, end=end_str)
+        sleep_data = api_get_json(sleep_url, token)
+        logs = sleep_data.get("sleep", [])
 
-        value = item.get("value")
-        resting_hr = None
-        if isinstance(value, dict):
-            resting_hr = value.get("restingHeartRate") or value.get("resting_heart_rate")
-        elif isinstance(value, (int, float)):
-            resting_hr = float(value)
-            
-        if resting_hr is not None or hrv_value is not None:
-            # Fetch SpO2 and Skin Temp (best-effort)
-            spo2 = None
-            try:
-                spo2_data = api_get_json(SPO2_DATE_URL.format(date=day), token)
-                # SpO2 summary returns an object with 'value' which is avg
-                spo2 = spo2_data.get("value")
-            except Exception: pass
+        # Aggregate to one record per date (prefer main sleep, otherwise longest minutesAsleep)
+        by_date: Dict[str, Dict[str, Any]] = {}
+        for log in logs:
+            date_of_sleep = log.get("dateOfSleep")
+            if not date_of_sleep:
+                continue
 
-            skin_temp = None
-            try:
-                st_data = api_get_json(SKIN_TEMP_DATE_URL.format(date=day), token)
-                # Skin temp returns a list of logs, we want the first entry's relative value
-                st_logs = st_data.get("tempSkin", [])
-                if st_logs:
-                    skin_temp = st_logs[0].get("value")
-            except Exception: pass
+            minutes_asleep = log.get("minutesAsleep")
+            minutes_in_bed = log.get("timeInBed") or log.get("minutesInBed")
 
-            # Fetch Stress Score (best-effort)
-            stress_score = None
-            try:
-                stress_data = api_get_json(STRESS_SCORE_DATE_URL.format(date=day), token)
-                # Returns a list of daily stress scores
-                stress_logs = stress_data.get("stressScore", [])
-                if stress_logs:
-                    stress_score = stress_logs[0].get("value")
-            except Exception: pass
+            score = log.get("score")
+            if score is None:
+                levels = log.get("levels") or {}
+                summary = levels.get("summary") or {}
+                if isinstance(summary, dict):
+                    score = summary.get("score")
 
-            workout_tracker.upsert_daily_resting_hr(
+            is_main = bool(log.get("isMainSleep"))
+
+            # Normalize each sleep log into sessions + stages
+            log_id = log.get("logId")
+            if log_id is not None:
+                start_time_local = log.get("startTime")
+                end_time_local = log.get("endTime")
+                duration_min_log = None
+                duration_ms = log.get("duration")
+                if isinstance(duration_ms, (int, float)):
+                    duration_min_log = float(duration_ms) / 60000.0
+
+                efficiency = log.get("efficiency")
+
+                levels = log.get("levels") or {}
+                stages: List[Dict[str, Any]] = []
+                for key in ("data", "shortData"):
+                    for seg in levels.get(key, []) or []:
+                        stage_label = seg.get("level")
+                        start_ts = seg.get("dateTime")
+                        if not stage_label or not start_ts:
+                            continue
+                        duration_sec = seg.get("seconds")
+                        stages.append(
+                            {
+                                "stage": stage_label,
+                                "start_time_local": start_ts,
+                                "duration_sec": duration_sec,
+                            }
+                        )
+
+                try:
+                    workout_tracker.upsert_sleep_session_with_stages(
+                        conn,
+                        log_id=int(log_id),
+                        date=date_of_sleep,
+                        start_time_local=start_time_local,
+                        end_time_local=end_time_local,
+                        is_main_sleep=is_main,
+                        duration_min=duration_min_log,
+                        efficiency=efficiency,
+                        stages=stages,
+                        source="fitbit",
+                        raw_payload=log,
+                    )
+                except Exception as e:
+                    print(
+                        f"Warning: failed to upsert sleep session/stages for log_id={log_id} on {date_of_sleep}: {e}",
+                        file=sys.stderr,
+                    )
+
+            existing = by_date.get(date_of_sleep)
+            if existing is None:
+                by_date[date_of_sleep] = {
+                    "score": score,
+                    "minutes_asleep": minutes_asleep,
+                    "minutes_in_bed": minutes_in_bed,
+                    "is_main": is_main,
+                    "raw": log,
+                }
+            else:
+                existing_main = existing.get("is_main", False)
+                existing_minutes = existing.get("minutes_asleep") or 0
+                candidate_minutes = minutes_asleep or 0
+
+                if (not existing_main and is_main) or (
+                    existing_main == is_main and candidate_minutes > existing_minutes
+                ):
+                    by_date[date_of_sleep] = {
+                        "score": score,
+                        "minutes_asleep": minutes_asleep,
+                        "minutes_in_bed": minutes_in_bed,
+                        "is_main": is_main,
+                        "raw": log,
+                    }
+
+        for day, info in by_date.items():
+            workout_tracker.upsert_daily_sleep(
                 conn,
                 date=day,
-                resting_hr=float(resting_hr) if resting_hr else None,
-                hrv=float(hrv_value) if hrv_value else None,
-                spo2=float(spo2) if spo2 else None,
-                skin_temp_delta=float(skin_temp) if skin_temp else None,
-                stress_score=float(stress_score) if stress_score else None,
+                sleep_score=info.get("score"),
+                minutes_asleep=info.get("minutes_asleep"),
+                minutes_in_bed=info.get("minutes_in_bed"),
                 source="fitbit",
+                raw_payload=info.get("raw"),
             )
+        print(f"Synced sleep data for {len(by_date)} days")
+    except (Exception, SystemExit) as e:
+        print(f"Warning: failed to sync sleep data: {e}", file=sys.stderr)
 
-    # 2. Weight logs via body/log/weight endpoint
+    # 2. Resting heart rate via batch endpoint (1 API call)
+    try:
+        hr_url = HEART_TIME_SERIES_URL.format(start=start_str, end=end_str)
+        hr_data = api_get_json(hr_url, token)
+        series = hr_data.get("activities-heart", [])
+        hr_count = 0
+        for item in series:
+            day = item.get("dateTime")
+            if not day:
+                continue
+
+            value = item.get("value")
+            resting_hr = None
+            if isinstance(value, dict):
+                resting_hr = value.get("restingHeartRate") or value.get("resting_heart_rate")
+            elif isinstance(value, (int, float)):
+                resting_hr = float(value)
+
+            if resting_hr is not None:
+                workout_tracker.upsert_daily_resting_hr(
+                    conn,
+                    date=day,
+                    resting_hr=float(resting_hr),
+                    hrv=None,
+                    spo2=None,
+                    skin_temp_delta=None,
+                    stress_score=None,
+                    source="fitbit",
+                )
+                hr_count += 1
+        print(f"Synced resting HR for {hr_count} days")
+    except (Exception, SystemExit) as e:
+        print(f"Warning: failed to sync resting HR: {e}", file=sys.stderr)
+
+    # 3. Weight logs (1 API call)
     try:
         weight_url = WEIGHT_DATE_RANGE_URL.format(start=start_str, end=end_str)
         weight_data = api_get_json(weight_url, token)
@@ -289,119 +384,9 @@ def sync_daily_metrics(conn, token: str, start_date, end_date, workout_tracker) 
                 fat_pct=w.get("fat"),
                 source="fitbit"
             )
-    except Exception as e:
-        print(f"Warning: failed to fetch weight data: {e}", file=sys.stderr)
-
-    # 3. Sleep summary (score + minutes asleep/in bed) via sleep date range endpoint
-    sleep_url = SLEEP_DATE_RANGE_URL.format(start=start_str, end=end_str)
-    sleep_data = api_get_json(sleep_url, token)
-    logs = sleep_data.get("sleep", [])
-
-    # Aggregate to one record per date (prefer main sleep, otherwise longest minutesAsleep)
-    by_date: Dict[str, Dict[str, Any]] = {}
-    for log in logs:
-        date_of_sleep = log.get("dateOfSleep")
-        if not date_of_sleep:
-            continue
-
-        minutes_asleep = log.get("minutesAsleep")
-        minutes_in_bed = log.get("timeInBed") or log.get("minutesInBed")
-
-        score = log.get("score")
-        if score is None:
-            levels = log.get("levels") or {}
-            summary = levels.get("summary") or {}
-            if isinstance(summary, dict):
-                score = summary.get("score")
-
-        is_main = bool(log.get("isMainSleep"))
-
-        # --- New: normalize each sleep log into sessions + stages ---
-        log_id = log.get("logId")
-        if log_id is not None:
-            start_time_local = log.get("startTime")
-            end_time_local = log.get("endTime")
-            duration_min_log = None
-            duration_ms = log.get("duration")
-            if isinstance(duration_ms, (int, float)):
-                # Fitbit duration is usually ms
-                duration_min_log = float(duration_ms) / 60000.0
-
-            efficiency = log.get("efficiency")
-
-            levels = log.get("levels") or {}
-            stages: List[Dict[str, Any]] = []
-            for key in ("data", "shortData"):
-                for seg in levels.get(key, []) or []:
-                    stage_label = seg.get("level")
-                    start_ts = seg.get("dateTime")
-                    if not stage_label or not start_ts:
-                        continue
-                    duration_sec = seg.get("seconds")
-                    stages.append(
-                        {
-                            "stage": stage_label,
-                            "start_time_local": start_ts,
-                            "duration_sec": duration_sec,
-                        }
-                    )
-
-            try:
-                workout_tracker.upsert_sleep_session_with_stages(
-                    conn,
-                    log_id=int(log_id),
-                    date=date_of_sleep,
-                    start_time_local=start_time_local,
-                    end_time_local=end_time_local,
-                    is_main_sleep=is_main,
-                    duration_min=duration_min_log,
-                    efficiency=efficiency,
-                    stages=stages,
-                    source="fitbit",
-                    raw_payload=log,
-                )
-            except Exception as e:  # noqa: BLE001
-                print(
-                    f"Warning: failed to upsert sleep session/stages for log_id={log_id} on {date_of_sleep}: {e}",
-                    file=sys.stderr,
-                )
-
-        existing = by_date.get(date_of_sleep)
-        if existing is None:
-            by_date[date_of_sleep] = {
-                "score": score,
-                "minutes_asleep": minutes_asleep,
-                "minutes_in_bed": minutes_in_bed,
-                "is_main": is_main,
-                "raw": log,
-            }
-        else:
-            # Prefer main sleep; otherwise, keep the entry with greater minutesAsleep.
-            existing_main = existing.get("is_main", False)
-            existing_minutes = existing.get("minutes_asleep") or 0
-            candidate_minutes = minutes_asleep or 0
-
-            if (not existing_main and is_main) or (
-                existing_main == is_main and candidate_minutes > existing_minutes
-            ):
-                by_date[date_of_sleep] = {
-                    "score": score,
-                    "minutes_asleep": minutes_asleep,
-                    "minutes_in_bed": minutes_in_bed,
-                    "is_main": is_main,
-                    "raw": log,
-                }
-
-    for day, info in by_date.items():
-        workout_tracker.upsert_daily_sleep(
-            conn,
-            date=day,
-            sleep_score=info.get("score"),
-            minutes_asleep=info.get("minutes_asleep"),
-            minutes_in_bed=info.get("minutes_in_bed"),
-            source="fitbit",
-            raw_payload=info.get("raw"),
-        )
+        print(f"Synced weight for {len(weights)} entries")
+    except (Exception, SystemExit) as e:
+        print(f"Warning: failed to sync weight data: {e}", file=sys.stderr)
 
 
 def _fetch_intraday_activity_for_date(resource: str, date_str: str, token: str) -> List[Dict[str, Any]]:
@@ -740,6 +725,15 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
 
 
 

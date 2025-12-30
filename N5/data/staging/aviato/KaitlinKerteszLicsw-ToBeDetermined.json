@@ -1,0 +1,341 @@
+{
+  "full_name": "Kaitlin Nunamann",
+  "first_name": "Kaitlin",
+  "last_name": "Nunamann",
+  "gender": null,
+  "headline": "Clinical Social Worker, Owner",
+  "linkedin_url": "linkedin.com/in/kaitlin-nunamann-licsw-ryt-37207ab0",
+  "linkedin_id": "kaitlin-nunamann-licsw-ryt-37207ab0",
+  "linkedin_entity_id": "ACoAABeAvIYBQDhlbR9apTvhbzoAEqihRtXs_6Y",
+  "linkedin_num_id": 394312838,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Boston, Massachusetts, United States",
+  "city": "Boston",
+  "region": "Massachusetts",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102084423,
+    404476573,
+    85950361,
+    85688645
+  ],
+  "current_title": "Navigation Specialist",
+  "current_department": null,
+  "current_seniority_score": null,
+  "current_position_start": "2013-09-01T00:00:00.000Z",
+  "current_position_end": "2015-04-01T00:00:00.000Z",
+  "current_position_location": null,
+  "current_position_description": null,
+  "current_company_name": "Substance Use Navigation Project",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Substance Use Navigation Project",
+  "current_employment_start": "2013-09-01T00:00:00.000Z",
+  "current_employment_end": "2015-04-01T00:00:00.000Z",
+  "latest_degree": "Suffolk University",
+  "latest_school": "Suffolk University",
+  "latest_school_location": "Boston, Massachusetts, United States",
+  "latest_school_linkedin": "suffolk-university",
+  "latest_field_of_study": "Psychology",
+  "latest_education_start": "2007-01-01T00:00:00.000Z",
+  "latest_education_end": "2011-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Mindfulness Based Stress Reduction",
+    "Yoga Therapy",
+    "Trauma Therapy",
+    "Mindfulness-based Psychotherapy",
+    "Substance Use Disorders",
+    "Family Therapy",
+    "Group Therapy",
+    "Psychology",
+    "Adolescents",
+    "Behavioral Health",
+    "Case Management",
+    "Community Outreach",
+    "Crisis Intervention",
+    "Mental Health",
+    "Mental Health Counseling",
+    "Psychotherapy",
+    "Social Services",
+    "Therapists",
+    "Working with Adolescents",
+    "Yoga Instruction"
+  ],
+  "languages": [],
+  "linkedin_connections": 584,
+  "linkedin_followers": 588,
+  "linkedin_join_date": "2015-01-05T19:49:27.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2015-04-01T00:00:00.000Z",
+      "startDate": "2013-09-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-09-01T00:00:00.000Z",
+          "endDate": "2015-04-01T00:00:00.000Z",
+          "title": "Navigation Specialist"
+        }
+      ],
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+      "companyName": "Substance Use Navigation Project",
+      "company": {
+        "name": "Substance Use Navigation Project",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2015-05-01T00:00:00.000Z",
+      "startDate": "2014-09-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2014-09-01T00:00:00.000Z",
+          "endDate": "2015-05-01T00:00:00.000Z",
+          "title": "Clincal Intern",
+          "department": "OTHER"
+        }
+      ],
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+      "companyName": "Maria Droste Counseling Services",
+      "company": {
+        "name": "Maria Droste Counseling Services",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2013-07-01T00:00:00.000Z",
+      "startDate": "2010-02-01T00:00:00.000Z",
+      "linkedinNumID": 2530664,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2011-05-01T00:00:00.000Z",
+          "endDate": "2013-07-01T00:00:00.000Z",
+          "title": "In-Home Therapy: Therapeutic Training and Support Staff",
+          "department": "SUPPORT"
+        },
+        {
+          "startDate": "2010-02-01T00:00:00.000Z",
+          "endDate": "2013-07-01T00:00:00.000Z",
+          "title": "Therapeutic Mentor",
+          "seniorityScore": 3
+        }
+      ],
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+      "companyID": "MXhnd02JHFls96s3NeMKvsSl192PEth",
+      "companyName": "Lahey Health Behavioral Services",
+      "company": {
+        "id": "MXhnd02JHFls96s3NeMKvsSl192PEth",
+        "name": "Beth Israel Lahey Health Behavioral Services",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Danvers",
+        "URLs": {
+          "website": "bilhbehavioral.org",
+          "linkedin": "linkedin.com/company/bilhbehavioralservices"
+        },
+        "industryList": [
+          "Hospitals and Health Care"
+        ]
+      }
+    },
+    {
+      "endDate": "2014-06-01T00:00:00.000Z",
+      "startDate": "2013-09-01T00:00:00.000Z",
+      "linkedinNumID": 2692905,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-09-01T00:00:00.000Z",
+          "endDate": "2014-06-01T00:00:00.000Z",
+          "title": "Clinical Intern",
+          "department": "OTHER",
+          "seniorityScore": 1
+        }
+      ],
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+      "companyID": "FDNi_LwX8_5aZHQUaf9TQCKVjUJGMJ3",
+      "companyName": "Boston Youth Sanctuary",
+      "company": {
+        "id": "FDNi_LwX8_5aZHQUaf9TQCKVjUJGMJ3",
+        "name": "Boston Youth Sanctuary",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "contact": "www.bostonyouthsanctuary.org/contact/",
+          "twitter": "twitter.com/bostonyouthsanc",
+          "website": "bostonyouthsanctuary.org",
+          "facebook": "www.facebook.com/boston-youth-sanctuary-inc-313178998732462/",
+          "linkedin": "linkedin.com/company/boston-youth-sanctuary",
+          "crunchbase": "www.crunchbase.com/organization/boston-youth-sanctuary"
+        },
+        "industryList": [
+          "Child Care",
+          "Children",
+          "Health Care",
+          "Non Profit",
+          "Therapeutics"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-08-01T00:00:00.000Z",
+      "startDate": "2018-08-01T00:00:00.000Z",
+      "linkedinNumID": 10939673,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-08-01T00:00:00.000Z",
+          "endDate": "2019-08-01T00:00:00.000Z",
+          "title": "Clinical Social Worker",
+          "location": "Boston, Massachusetts",
+          "seniorityScore": 2
+        }
+      ],
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+      "companyID": "03kAehGN259liPPf3i0cdq26Di7de8a",
+      "companyName": "OptiMindHealth",
+      "company": {
+        "id": "03kAehGN259liPPf3i0cdq26Di7de8a",
+        "name": "OptiMindHealth",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "contact": "www.optimindhealth.com/contact/",
+          "twitter": "twitter.com/OptiMindHealth",
+          "website": "optimindhealth.com",
+          "linkedin": "linkedin.com/company/optimindhealth",
+          "crunchbase": "www.crunchbase.com/organization/optimindhealth"
+        },
+        "industryList": [
+          "Health Care",
+          "Hospital",
+          "Mental Health",
+          "Wellness"
+        ]
+      }
+    },
+    {
+      "startDate": "2019-09-01T00:00:00.000Z",
+      "linkedinNumID": 75052789,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-09-01T00:00:00.000Z",
+          "title": "Clinical Social Worker, Owner"
+        }
+      ],
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+      "companyID": "r72X8Htxd9gRgOUQetUpZuhLho2wG7s",
+      "companyName": "Eastern Counseling & Wellness",
+      "company": {
+        "id": "r72X8Htxd9gRgOUQetUpZuhLho2wG7s",
+        "name": "Eastern Counseling & Wellness",
+        "country": "United States",
+        "region": "Massachusetts",
+        "locality": "Boston",
+        "URLs": {
+          "website": "easterncounseling.com",
+          "linkedin": "linkedin.com/company/eastern-counseling-wellness"
+        },
+        "industryList": [
+          "Mental Health Care"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2920382221",
+      "endDate": "2011-01-01T00:00:00.000Z",
+      "startDate": "2007-01-01T00:00:00.000Z",
+      "name": "Suffolk University",
+      "subject": "Psychology",
+      "school": {
+        "id": "sInd2ih2tTmx",
+        "linkedinID": "suffolk-university",
+        "fullName": "Suffolk University",
+        "location": "Boston, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx"
+    },
+    {
+      "id": "2920382222",
+      "endDate": "2015-01-01T00:00:00.000Z",
+      "startDate": "2013-01-01T00:00:00.000Z",
+      "name": "Boston College",
+      "subject": "Clinical Social Work",
+      "school": {
+        "id": "cyMvcAMr4NKF",
+        "linkedinID": "boston-college",
+        "fullName": "Boston College",
+        "location": "Brookline, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2920382221",
+      "fieldOfStudy": "Psychology",
+      "name": "Bachelor's Degree",
+      "school": {
+        "id": "sInd2ih2tTmx",
+        "linkedinID": "suffolk-university",
+        "fullName": "Suffolk University",
+        "location": "Boston, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx"
+    },
+    {
+      "personEducationID": "2920382222",
+      "fieldOfStudy": "Clinical Social Work",
+      "name": "Master's Degree",
+      "school": {
+        "id": "cyMvcAMr4NKF",
+        "linkedinID": "boston-college",
+        "fullName": "Boston College",
+        "location": "Brookline, Massachusetts, United States",
+        "entityType": "school"
+      },
+      "personID": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx"
+    }
+  ],
+  "aviato_person_id": "tUl1c26j_pfgsVG-hNJoHkNGBL2p9vx",
+  "aviato_last_updated": "2025-08-23T06:53:38.125Z",
+  "enrichment_timestamp": "2025-12-28T23:21:22.687109",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "oneYearAtCurrentCompany"
+  ]
+}

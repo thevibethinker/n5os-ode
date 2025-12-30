@@ -3,12 +3,14 @@
   "generated_at": "2025-12-24T14:17:21.485388",
   "meeting_folder": "2025-12-23_melhrubingmailcom",
   "meeting_date": "2025-12-23",
-  "status": "mg2_completed",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "melhrubingmailcom"
+  "meeting_title": "melhrubingmailcom",
+  "processed_at": "2025-12-28T18:46:44.010714Z",
+  "crm_synced": true
 }

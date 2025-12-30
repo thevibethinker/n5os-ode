@@ -1,0 +1,364 @@
+{
+  "full_name": "Nick Branholm",
+  "first_name": "Nick",
+  "last_name": "Branholm",
+  "gender": null,
+  "headline": "Portfolio Talent Lead @ 43North",
+  "linkedin_url": "linkedin.com/in/nick-branholm-b778609b",
+  "linkedin_id": "nick-branholm-b778609b",
+  "linkedin_entity_id": "ACoAABVOPIsBpU4Fwh-dRmXtF4GRLjDfjAWZBS4",
+  "linkedin_num_id": 357448843,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": "Buffalo, New York, United States",
+  "city": "Buffalo",
+  "region": "New York",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102082387,
+    404522329,
+    85978023,
+    85688543
+  ],
+  "current_title": "Portfolio Talent Lead",
+  "current_department": null,
+  "current_seniority_score": null,
+  "current_position_start": "2025-03-01T00:00:00.000Z",
+  "current_position_end": null,
+  "current_position_location": "Buffalo, New York, United States",
+  "current_position_description": null,
+  "current_company_name": "43North",
+  "current_company_id": "v007qJNYVCjEbmJeye7KzYO3wqWuS_a",
+  "current_company_linkedin": "linkedin.com/company/43north",
+  "current_company_website": "43north.org",
+  "current_company_location": "43North",
+  "current_employment_start": "2025-03-01T00:00:00.000Z",
+  "current_employment_end": null,
+  "latest_degree": "Episcopal School of Jacksonville",
+  "latest_school": null,
+  "latest_school_location": null,
+  "latest_school_linkedin": null,
+  "latest_field_of_study": null,
+  "latest_education_start": "2003-01-01T00:00:00.000Z",
+  "latest_education_end": "2010-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [],
+  "languages": [],
+  "linkedin_connections": 5225,
+  "linkedin_followers": 5133,
+  "linkedin_join_date": "2014-07-18T15:38:22.359Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "startDate": "2025-03-01T00:00:00.000Z",
+      "linkedinNumID": 5062432,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-03-01T00:00:00.000Z",
+          "title": "Portfolio Talent Lead",
+          "location": "Buffalo, New York, United States"
+        }
+      ],
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS",
+      "companyID": "v007qJNYVCjEbmJeye7KzYO3wqWuS_a",
+      "companyName": "43North",
+      "company": {
+        "id": "v007qJNYVCjEbmJeye7KzYO3wqWuS_a",
+        "name": "43North",
+        "country": "United States",
+        "region": "New York",
+        "locality": "Buffalo",
+        "URLs": {
+          "golden": "golden.com/wiki/43North-R9D8R4X",
+          "twitter": "twitter.com/forty3north",
+          "website": "43north.org",
+          "facebook": "www.facebook.com/forty3north/",
+          "linkedin": "linkedin.com/company/43north",
+          "angelList": "angel.co/43north-1",
+          "crunchbase": "www.crunchbase.com/organization/43-north"
+        },
+        "industryList": [
+          "Financial Services",
+          "Incubators",
+          "Venture Capital"
+        ]
+      }
+    },
+    {
+      "endDate": "2024-11-01T00:00:00.000Z",
+      "startDate": "2022-01-01T00:00:00.000Z",
+      "linkedinNumID": 25070,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-01-01T00:00:00.000Z",
+          "endDate": "2024-11-01T00:00:00.000Z",
+          "title": "Principal, Executive Search (Product & Engineering)",
+          "location": "Denver, CO",
+          "department": "EXECUTIVE",
+          "description": "Ventures Practice - focused on leadership hiring for early & growth stage VC backed startups"
+        }
+      ],
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS",
+      "companyID": "89AfBmCJCA7l75P1Q4OXbZ_twpOqxmO",
+      "companyName": "Riviera Partners",
+      "company": {
+        "id": "89AfBmCJCA7l75P1Q4OXbZ_twpOqxmO",
+        "name": "Riviera Partners",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Francisco",
+        "URLs": {
+          "golden": "golden.com/wiki/Riviera_Partners-XBPJYZ",
+          "contact": "www.rivierapartners.com/contact-us/",
+          "twitter": "twitter.com/RiviTeam",
+          "website": "rivierapartners.com",
+          "facebook": "www.facebook.com/pages/Riviera-Partners/124332540954564",
+          "linkedin": "linkedin.com/company/riviera-partners",
+          "angelList": "angel.co/riviera-partners-1",
+          "crunchbase": "www.crunchbase.com/organization/riviera-partners"
+        },
+        "industryList": [
+          "Enterprise Software",
+          "Recruiting",
+          "Search Engine",
+          "Software",
+          "Venture Capital"
+        ]
+      }
+    },
+    {
+      "endDate": "2022-01-01T00:00:00.000Z",
+      "startDate": "2019-03-01T00:00:00.000Z",
+      "linkedinNumID": 827183,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2021-05-01T00:00:00.000Z",
+          "endDate": "2022-01-01T00:00:00.000Z",
+          "title": "Associate Director - Tech Recruiting",
+          "location": "Denver, CO",
+          "description": "Moved from NYC to launch our startup office in Denver. \n\nOur Focus: We connect software engineering talent with growth stage VC backed startups"
+        },
+        {
+          "startDate": "2019-03-01T00:00:00.000Z",
+          "endDate": "2021-05-01T00:00:00.000Z",
+          "title": "Manager - Tech Recruiting",
+          "location": "Denver, CO"
+        }
+      ],
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS",
+      "companyID": "Of48NMwfgJooTpyYHQp6htakHBe28My",
+      "companyName": "Russell Tobin",
+      "company": {
+        "id": "Of48NMwfgJooTpyYHQp6htakHBe28My",
+        "name": "Russell Tobin",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Russell_Tobin-GEJJDA8",
+          "contact": "russelltobin.com/contact-us",
+          "twitter": "www.twitter.com/russell_tobin",
+          "website": "russelltobin.com",
+          "facebook": "www.facebook.com/russelltobin",
+          "linkedin": "linkedin.com/company/russell-tobin-&",
+          "crunchbase": "www.crunchbase.com/organization/russell-tobin"
+        },
+        "industryList": [
+          "Consulting",
+          "Human Resources",
+          "Legal",
+          "Staffing Agency"
+        ]
+      }
+    },
+    {
+      "endDate": "2021-11-01T00:00:00.000Z",
+      "startDate": "2021-08-01T00:00:00.000Z",
+      "linkedinNumID": 3163250,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2021-08-01T00:00:00.000Z",
+          "endDate": "2021-11-01T00:00:00.000Z",
+          "title": "Tech Recruiting @ Carta (via Russell Tobin)",
+          "description": "Embedded Tech Recruiting Lead helping Carta scale their Data / ML teams"
+        }
+      ],
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS",
+      "companyID": "oXjMh3JWfxLXEdRo4IbfuPKKWVOBi_y",
+      "companyName": "Carta",
+      "company": {
+        "id": "oXjMh3JWfxLXEdRo4IbfuPKKWVOBi_y",
+        "name": "Carta",
+        "country": "United States",
+        "region": "California",
+        "locality": "San Francisco",
+        "URLs": {
+          "golden": "golden.com/wiki/Carta_(company)-AN9",
+          "contact": "support.carta.com/s/article/carta-help-center?_gl=1*1lus6q4*_gcl_au*OTI3NjE0NTA3LjE2ODYwMDgyMzU.",
+          "twitter": "twitter.com/cartainc",
+          "website": "carta.com",
+          "facebook": "www.facebook.com/cartahq",
+          "linkedin": "linkedin.com/company/carta--",
+          "pitchbook": "pitchbook.com/profiles/company/56265-94",
+          "angelList": "angel.co/eshares",
+          "signalNFX": "signal.nfx.com/firms/carta",
+          "crunchbase": "www.crunchbase.com/organization/eshares"
+        },
+        "industryList": [
+          "Asset Management",
+          "Finance",
+          "Financial Services",
+          "FinTech",
+          "Impact Investing",
+          "SaaS",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2019-03-01T00:00:00.000Z",
+      "startDate": "2014-09-01T00:00:00.000Z",
+      "linkedinNumID": 128628,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2018-12-01T00:00:00.000Z",
+          "endDate": "2019-03-01T00:00:00.000Z",
+          "title": "Director - Tech Recruiting",
+          "location": "New York, NY",
+          "description": "Talener is a boutique technology recruiting company that focuses on placing software engineering talent with companies in the NYC market. \n\nI led our Backend, Full Stack, and Data tech recruiting teams focused on Senior IC through Director level talent pipelines. \n\n- Backend / Distributed Systems Engineers \n- Full Stack SWE \n- Data Engineers\n- Machine Learning Engineers \n- Data Scientists"
+        },
+        {
+          "startDate": "2017-12-01T00:00:00.000Z",
+          "endDate": "2018-12-01T00:00:00.000Z",
+          "title": "Senior Manager - Tech Recruiting",
+          "location": "New York, NY"
+        },
+        {
+          "startDate": "2016-04-01T00:00:00.000Z",
+          "endDate": "2017-12-01T00:00:00.000Z",
+          "title": "Manager - Tech Recruiting",
+          "location": "New York, NY"
+        },
+        {
+          "startDate": "2015-12-01T00:00:00.000Z",
+          "endDate": "2016-03-01T00:00:00.000Z",
+          "title": "Lead Tech Recruiter",
+          "location": "New York, NY",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        },
+        {
+          "startDate": "2015-07-01T00:00:00.000Z",
+          "endDate": "2015-12-01T00:00:00.000Z",
+          "title": "Senior Tech Recruiter",
+          "location": "New York, NY",
+          "department": "OPERATIONS",
+          "seniorityScore": 3
+        },
+        {
+          "startDate": "2014-09-01T00:00:00.000Z",
+          "endDate": "2015-07-01T00:00:00.000Z",
+          "title": "Tech Recruiter",
+          "location": "New York, NY",
+          "department": "OPERATIONS",
+          "seniorityScore": 2
+        }
+      ],
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS",
+      "companyID": "eVIvwoYrFAk62jZNb9o8n0AfRbbXrHa",
+      "companyName": "Talener",
+      "company": {
+        "id": "eVIvwoYrFAk62jZNb9o8n0AfRbbXrHa",
+        "name": "Talener",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Talener-5K9RDNR",
+          "twitter": "twitter.com/TalenerHQ",
+          "website": "talener.com",
+          "facebook": "www.facebook.com/talener",
+          "linkedin": "linkedin.com/company/talener",
+          "angelList": "angel.co/talener-2",
+          "crunchbase": "www.crunchbase.com/organization/talener-group"
+        },
+        "industryList": [
+          "Consulting",
+          "DevOps",
+          "Recruiting"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2783864249",
+      "endDate": "2010-01-01T00:00:00.000Z",
+      "startDate": "2003-01-01T00:00:00.000Z",
+      "name": "Episcopal School of Jacksonville",
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS"
+    },
+    {
+      "id": "2783864250",
+      "endDate": "2014-01-01T00:00:00.000Z",
+      "startDate": "2010-01-01T00:00:00.000Z",
+      "name": "Trinity College-Hartford",
+      "subject": "Political Science (International Relations)",
+      "school": {
+        "id": "KWvtEV3ICIfN",
+        "linkedinID": "trinity-college-hartford",
+        "fullName": "Trinity College-Hartford",
+        "location": "Hartford, Connecticut, United States",
+        "entityType": "school"
+      },
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2783864250",
+      "fieldOfStudy": "Political Science (International Relations)",
+      "name": "Bachelor's degree",
+      "school": {
+        "id": "KWvtEV3ICIfN",
+        "linkedinID": "trinity-college-hartford",
+        "fullName": "Trinity College-Hartford",
+        "location": "Hartford, Connecticut, United States",
+        "entityType": "school"
+      },
+      "personID": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS"
+    }
+  ],
+  "aviato_person_id": "FcFKRjS4gAeOKuJTP3rNOrEGhuRO3QS",
+  "aviato_last_updated": "2025-10-07T03:28:54.734Z",
+  "enrichment_timestamp": "2025-12-28T23:19:03.303277",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "oneYearAtCurrentCompany"
+  ]
+}

@@ -1,0 +1,528 @@
+{
+  "full_name": "Hamoon Ekhtiari",
+  "first_name": "Hamoon",
+  "last_name": "Ekhtiari",
+  "gender": "male",
+  "headline": "CEO @ FutureFit AI (backed by JPMorgan, Techstars, Acumen, Emerge, Sorensen) | AI for economic opportunity, development, and security.",
+  "linkedin_url": "linkedin.com/in/hamoon",
+  "linkedin_id": "hamoon",
+  "linkedin_entity_id": "ACoAAABz8doBy6x-iBeNGzmJZeCPMbkqiRYCAyU",
+  "linkedin_num_id": 7598554,
+  "twitter_url": "x.com/hamoonpraxis",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": "crunchbase.com/person/hamoon-ekhtiari",
+  "angellist_url": null,
+  "location": "United States",
+  "city": null,
+  "region": null,
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    136253057
+  ],
+  "current_title": "Chief of Staff / Growth Strategy Lead",
+  "current_department": "BUSINESS_DEVELOPMENT",
+  "current_seniority_score": null,
+  "current_position_start": "2011-08-01T00:00:00.000Z",
+  "current_position_end": "2013-06-01T00:00:00.000Z",
+  "current_position_location": null,
+  "current_position_description": null,
+  "current_company_name": "Deloitte Consulting & Advisory",
+  "current_company_id": "QKhR6hdFN76fUkehBoAX6K3FwNS2piX",
+  "current_company_linkedin": "linkedin.com/company/deloitte",
+  "current_company_website": "deloitte.com/us/en.html",
+  "current_company_location": "Deloitte",
+  "current_employment_start": "2006-01-01T00:00:00.000Z",
+  "current_employment_end": "2013-06-01T00:00:00.000Z",
+  "latest_degree": "University of Waterloo",
+  "latest_school": "University of Waterloo",
+  "latest_school_location": "Waterloo, Ontario, Canada",
+  "latest_school_linkedin": "uwaterloo",
+  "latest_field_of_study": null,
+  "latest_education_start": "2009-01-01T00:00:00.000Z",
+  "latest_education_end": "2009-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Innovation",
+    "Leadership",
+    "Strategy",
+    "Public Speaking",
+    "Strategic Planning",
+    "Consulting",
+    "Project Management",
+    "Entrepreneurship",
+    "Program Management",
+    "Social Entrepreneurship",
+    "Research",
+    "Mergers & Acquisitions",
+    "Policy",
+    "Nonprofits",
+    "Management",
+    "Organizational Design",
+    "Youth Entrepreneurship",
+    "Management Consulting",
+    "Project Planning",
+    "Analytics"
+  ],
+  "languages": [],
+  "linkedin_connections": 26658,
+  "linkedin_followers": 27014,
+  "linkedin_join_date": "2006-10-07T14:32:39.000Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": "Hamoon Ekhtiari is the Founder and Chief Executive Officer at FutureFit AI. He attended the University of Waterloo.",
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2013-06-01T00:00:00.000Z",
+      "startDate": "2006-01-01T00:00:00.000Z",
+      "linkedinNumID": 1038,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2011-08-01T00:00:00.000Z",
+          "endDate": "2013-06-01T00:00:00.000Z",
+          "title": "Chief of Staff / Growth Strategy Lead",
+          "department": "BUSINESS_DEVELOPMENT"
+        },
+        {
+          "startDate": "2006-01-01T00:00:00.000Z",
+          "endDate": "2011-08-01T00:00:00.000Z",
+          "title": "Associate / Senior Consultant",
+          "department": "ADVISOR"
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "QKhR6hdFN76fUkehBoAX6K3FwNS2piX",
+      "companyName": "Deloitte Consulting & Advisory",
+      "company": {
+        "id": "QKhR6hdFN76fUkehBoAX6K3FwNS2piX",
+        "name": "Deloitte",
+        "country": "United Kingdom",
+        "region": "Greater London",
+        "locality": "London",
+        "URLs": {
+          "golden": "golden.com/wiki/Deloitte-P5YZA",
+          "contact": "Deloitte.com/us/en/contact/contact-us.html?icid=top_contact-us",
+          "twitter": "twitter.com/deloitteus",
+          "website": "deloitte.com/us/en.html",
+          "facebook": "www.facebook.com/deloitte",
+          "linkedin": "linkedin.com/company/deloitte",
+          "crunchbase": "www.crunchbase.com/organization/azuronaut"
+        },
+        "industryList": [
+          "Cloud Computing",
+          "Information Technology",
+          "Software"
+        ]
+      }
+    },
+    {
+      "endDate": "2020-01-01T00:00:00.000Z",
+      "startDate": "2017-01-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2017-01-01T00:00:00.000Z",
+          "endDate": "2020-01-01T00:00:00.000Z",
+          "title": "Founder",
+          "location": "Global",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyName": "Audacious Futures",
+      "company": {
+        "name": "Audacious Futures",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2011-04-01T00:00:00.000Z",
+      "startDate": "2010-08-01T00:00:00.000Z",
+      "linkedinNumID": 166688,
+      "entityType": "school",
+      "positionList": [
+        {
+          "startDate": "2010-08-01T00:00:00.000Z",
+          "endDate": "2011-04-01T00:00:00.000Z",
+          "title": "Adjunct Faculty",
+          "department": "OTHER",
+          "seniorityScore": 2
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyName": "University of Waterloo",
+      "company": {
+        "name": "University of Waterloo",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2015-05-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-05-01T00:00:00.000Z",
+          "title": "Member",
+          "department": "OTHER",
+          "seniorityScore": 0,
+          "description": "http://ggclc.ca/"
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyName": "Governor General's Canadian Leadership Conference",
+      "company": {
+        "name": "Governor General's Canadian Leadership Conference",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2015-06-01T00:00:00.000Z",
+      "startDate": "2013-06-01T00:00:00.000Z",
+      "linkedinNumID": 59931,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2013-06-01T00:00:00.000Z",
+          "endDate": "2015-06-01T00:00:00.000Z",
+          "title": "Founding Director, Studio [Y]"
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "ucFpZEz_uuQDFPvfJBS8B_9t6vC_Z_7",
+      "companyName": "MaRS Discovery District",
+      "company": {
+        "id": "ucFpZEz_uuQDFPvfJBS8B_9t6vC_Z_7",
+        "name": "MaRS Discovery District",
+        "country": "Canada",
+        "region": "Ontario",
+        "locality": "Toronto",
+        "URLs": {
+          "golden": "golden.com/wiki/MaRS_Discovery_District-34MWYW",
+          "contact": "www.marsdd.com/contact/",
+          "twitter": "twitter.com/MaRSDD",
+          "website": "marsdd.com",
+          "facebook": "www.facebook.com/MaRSDiscoveryDistrict/",
+          "linkedin": "linkedin.com/company/mars-discovery-district",
+          "angelList": "angel.co/mars-discovery-district",
+          "crunchbase": "www.crunchbase.com/organization/mars-discovery-district"
+        },
+        "industryList": [
+          "Health Care",
+          "Information Technology",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "startDate": "2020-01-01T00:00:00.000Z",
+      "linkedinNumID": 28849520,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2020-01-01T00:00:00.000Z",
+          "title": "Chief Executive Officer",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "qTgZOG3z9cSnQ4PYbZBv2ytP8ZxrcwO",
+      "companyName": "FutureFit AI",
+      "company": {
+        "id": "qTgZOG3z9cSnQ4PYbZBv2ytP8ZxrcwO",
+        "name": "FutureFit AI",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/FutureFit_AI-ZXBZNMG",
+          "twitter": "twitter.com/FutureFitAI",
+          "website": "futurefit.ai",
+          "facebook": "www.facebook.com/FutureFitAI/",
+          "linkedin": "linkedin.com/company/futurefit-ai",
+          "pitchbook": "pitchbook.com/profiles/company/458307-64",
+          "crunchbase": "www.crunchbase.com/organization/futurefit-ai"
+        },
+        "industryList": [
+          "Artificial Intelligence (AI)",
+          "Big Data",
+          "Human Resources",
+          "Internet",
+          "Machine Learning"
+        ]
+      }
+    },
+    {
+      "startDate": "2017-08-01T00:00:00.000Z",
+      "linkedinNumID": 495148,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2017-08-01T00:00:00.000Z",
+          "title": "Global Summit",
+          "location": "San Francisco, California"
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "bWwy_hGfI59uixq5W4IWSbZ3qErq6s2",
+      "companyName": "Singularity University",
+      "company": {
+        "id": "bWwy_hGfI59uixq5W4IWSbZ3qErq6s2",
+        "name": "Singularity University",
+        "country": "United States",
+        "region": "California",
+        "locality": "Mountain View",
+        "URLs": {
+          "golden": "golden.com/wiki/Singularity_University-E9E4YM",
+          "contact": "www.su.org/contact-us",
+          "twitter": "twitter.com/singularityu",
+          "website": "su.org",
+          "facebook": "www.facebook.com/singularityu",
+          "linkedin": "linkedin.com/company/singularity-university",
+          "pitchbook": "pitchbook.com/profiles/company/56319-13",
+          "angelList": "angel.co/singularity-university-startup-accelerator",
+          "crunchbase": "www.crunchbase.com/organization/singularity-group"
+        },
+        "industryList": [
+          "Education",
+          "Incubators",
+          "Non Profit"
+        ]
+      }
+    },
+    {
+      "endDate": "2017-01-01T00:00:00.000Z",
+      "startDate": "2015-01-01T00:00:00.000Z",
+      "linkedinNumID": 1974,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-01-01T00:00:00.000Z",
+          "endDate": "2017-01-01T00:00:00.000Z",
+          "title": "Director - Strategy, Innovation & PMO - Office of the Executive Vice President",
+          "department": "BUSINESS_DEVELOPMENT",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "0b3dQjXDs7I0ZIXESaTsD8ZHe6ELWch",
+      "companyName": "TELUS",
+      "company": {
+        "id": "0b3dQjXDs7I0ZIXESaTsD8ZHe6ELWch",
+        "name": "TELUS",
+        "country": "Canada",
+        "region": "British Columbia",
+        "locality": "Vancouver",
+        "URLs": {
+          "golden": "golden.com/wiki/Telus-KG5DX",
+          "twitter": "twitter.com/telus",
+          "website": "telus.com",
+          "facebook": "www.facebook.com/telus",
+          "linkedin": "linkedin.com/company/telus",
+          "pitchbook": "pitchbook.com/profiles/company/40774-06",
+          "angelList": "angel.co/telus",
+          "crunchbase": "www.crunchbase.com/organization/telus"
+        },
+        "industryList": [
+          "Internet",
+          "Mobile",
+          "Wireless"
+        ]
+      }
+    },
+    {
+      "endDate": "2013-06-01T00:00:00.000Z",
+      "startDate": "2012-07-01T00:00:00.000Z",
+      "linkedinNumID": 3278344,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-07-01T00:00:00.000Z",
+          "endDate": "2013-06-01T00:00:00.000Z",
+          "title": "Co-Founder",
+          "location": "Canada",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "TZRoXV8k5edl5Dm30PYhbzKGjdzChlA",
+      "companyName": "CatalystsX",
+      "company": {
+        "id": "TZRoXV8k5edl5Dm30PYhbzKGjdzChlA",
+        "name": "CatalystsX",
+        "URLs": {
+          "website": "catalystsx.ca",
+          "linkedin": "linkedin.com/company/catalystsx"
+        },
+        "industryList": [
+          "Civic and Social Organizations"
+        ]
+      }
+    },
+    {
+      "endDate": "2013-05-01T00:00:00.000Z",
+      "startDate": "2012-09-01T00:00:00.000Z",
+      "linkedinNumID": 1122023,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2012-09-01T00:00:00.000Z",
+          "endDate": "2013-05-01T00:00:00.000Z",
+          "title": "Fellow",
+          "department": "OTHER",
+          "seniorityScore": 5
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "sw5iUfzKIQlu8-rcomEaBefACFwj5k1",
+      "companyName": "The School for Social Entrepreneurs",
+      "company": {
+        "id": "sw5iUfzKIQlu8-rcomEaBefACFwj5k1",
+        "name": "School for Social Entrepreneurs",
+        "country": "United Kingdom",
+        "region": "Greater London",
+        "locality": "London",
+        "URLs": {
+          "twitter": "twitter.com/sseaustralia",
+          "website": "the-sse.org",
+          "facebook": "www.facebook.com/sseaustralia",
+          "linkedin": "linkedin.com/company/school-for-social-entrepreneurs",
+          "crunchbase": "www.crunchbase.com/organization/school-for-social-entrepreneurs-sse"
+        },
+        "industryList": [
+          "Non Profit",
+          "Social Entrepreneurship",
+          "Training"
+        ]
+      }
+    },
+    {
+      "startDate": "2016-04-01T00:00:00.000Z",
+      "linkedinNumID": 10807728,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2016-04-01T00:00:00.000Z",
+          "title": "Speaker",
+          "location": "Ottawa",
+          "department": "OTHER",
+          "seniorityScore": 1
+        }
+      ],
+      "personID": "DwLmaHRI88mk",
+      "companyID": "V9G8XmKAQ8S9_VJTxTwTP0IDYwOD87y",
+      "companyName": "Peace Talks Community",
+      "company": {
+        "id": "V9G8XmKAQ8S9_VJTxTwTP0IDYwOD87y",
+        "name": "PeaceTalks",
+        "country": "Switzerland",
+        "region": "Geneva",
+        "URLs": {
+          "website": "peacetalks.net",
+          "linkedin": "linkedin.com/company/peace-talks-community"
+        },
+        "industryList": [
+          "International Affairs"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2563140780",
+      "endDate": "2009-01-01T00:00:00.000Z",
+      "startDate": "2009-01-01T00:00:00.000Z",
+      "name": "University of Waterloo",
+      "school": {
+        "id": "BR3nuteorlU4",
+        "linkedinID": "uwaterloo",
+        "fullName": "University of Waterloo",
+        "location": "Waterloo, Ontario, Canada",
+        "entityType": "school"
+      },
+      "personID": "DwLmaHRI88mk"
+    },
+    {
+      "id": "3009148077",
+      "endDate": "2009-01-01T00:00:00.000Z",
+      "startDate": "2009-01-01T00:00:00.000Z",
+      "name": "University of Waterloo",
+      "school": {
+        "id": "BR3nuteorlU4",
+        "linkedinID": "uwaterloo",
+        "fullName": "University of Waterloo",
+        "location": "Waterloo, Ontario, Canada",
+        "entityType": "school"
+      },
+      "personID": "DwLmaHRI88mk"
+    },
+    {
+      "id": "2763966790",
+      "startDate": "2016-01-01T00:00:00.000Z",
+      "name": "University of Cambridge",
+      "subject": "AdR",
+      "school": {
+        "id": "9e5Qr5HckQnr",
+        "linkedinID": "university-of-cambridge",
+        "fullName": "University of Cambridge",
+        "location": "Cambridge, Cambridgeshire, United Kingdom",
+        "entityType": "school"
+      },
+      "personID": "DwLmaHRI88mk"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2563140780",
+      "name": "Master's",
+      "school": {
+        "id": "BR3nuteorlU4",
+        "linkedinID": "uwaterloo",
+        "fullName": "University of Waterloo",
+        "location": "Waterloo, Ontario, Canada",
+        "entityType": "school"
+      },
+      "personID": "DwLmaHRI88mk"
+    },
+    {
+      "personEducationID": "2763966790",
+      "fieldOfStudy": "AdR",
+      "name": "Fellow",
+      "school": {
+        "id": "9e5Qr5HckQnr",
+        "linkedinID": "university-of-cambridge",
+        "fullName": "University of Cambridge",
+        "location": "Cambridge, Cambridgeshire, United Kingdom",
+        "entityType": "school"
+      },
+      "personID": "DwLmaHRI88mk"
+    }
+  ],
+  "aviato_person_id": "DwLmaHRI88mk",
+  "aviato_last_updated": "2025-11-16T18:54:20.913Z",
+  "enrichment_timestamp": "2025-12-28T23:14:27.993431",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringIPO",
+    "oneYearAtCurrentCompany",
+    "priorBackedFounder"
+  ]
+}

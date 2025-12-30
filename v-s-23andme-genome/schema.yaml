@@ -1,0 +1,65 @@
+tables:
+- name: chromosome_stats
+  row_count: 25
+  columns:
+  - name: chromosome
+    type: VARCHAR
+    description: 'Chromosome: 1-22, X, Y, or MT'
+  - name: snp_count
+    type: BIGINT
+    description: Total SNPs on this chromosome
+  - name: heterozygous_count
+    type: HUGEINT
+    description: Number of heterozygous calls
+  - name: homozygous_count
+    type: HUGEINT
+    description: Number of homozygous calls
+  - name: no_call_count
+    type: HUGEINT
+    description: Number of no-call positions
+  - name: min_position
+    type: INTEGER
+    description: Smallest base pair position
+  - name: max_position
+    type: INTEGER
+    description: Largest base pair position
+  description: Pre-computed summary statistics per chromosome
+- name: genotype_distribution
+  row_count: 20
+  columns:
+  - name: genotype
+    type: VARCHAR
+    description: The genotype pattern (AA, AG, CC, --, etc.)
+  - name: zygosity
+    type: VARCHAR
+    description: Classification of this genotype
+  - name: count
+    type: BIGINT
+    description: Number of occurrences
+  - name: percentage
+    type: DOUBLE
+    description: Percentage of total SNPs
+  description: Frequency distribution of genotype patterns
+- name: snps
+  row_count: 631455
+  columns:
+  - name: rsid
+    type: VARCHAR
+    description: Variant identifier (rs# for dbSNP, i# for 23andMe internal)
+  - name: chromosome
+    type: VARCHAR
+    description: 'Chromosome: 1-22, X, Y, or MT'
+  - name: position
+    type: INTEGER
+    description: Base pair position on GRCh37 reference genome
+  - name: genotype
+    type: VARCHAR
+    description: Two-letter genotype call (e.g., AA, AG, TT) or -- for no-call
+  - name: zygosity
+    type: VARCHAR
+    description: 'Classification: homozygous, heterozygous, no_call, haploid, indel_homozygous,
+      indel_heterozygous'
+  - name: is_dbsnp
+    type: BOOLEAN
+    description: TRUE if rsid starts with rs (standard dbSNP ID)
+  description: Raw genotype data — one row per SNP tested

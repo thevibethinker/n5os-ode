@@ -1,0 +1,124 @@
+{
+  "full_name": "Zsuzsa Kovacs",
+  "first_name": "Zsuzsa",
+  "last_name": "Kovacs",
+  "gender": null,
+  "headline": "Small Business Owner at Brook-Clean",
+  "linkedin_url": "linkedin.com/in/zsuzsa-kovacs-in",
+  "linkedin_id": "zsuzsa-kovacs-in",
+  "linkedin_entity_id": "ACoAAD3WjegBamIltG_nN5ACLTNrXDegsp-EPa8",
+  "linkedin_num_id": 1037471208,
+  "twitter_url": null,
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": null,
+  "angellist_url": null,
+  "location": null,
+  "city": null,
+  "region": null,
+  "country": null,
+  "location_ids": [],
+  "current_title": "Small Business Owner",
+  "current_department": "EXECUTIVE",
+  "current_seniority_score": 4,
+  "current_position_start": null,
+  "current_position_end": null,
+  "current_position_location": null,
+  "current_position_description": null,
+  "current_company_name": "Brook-Clean",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Brook-Clean",
+  "current_employment_start": null,
+  "current_employment_end": null,
+  "latest_degree": "Raoul Wallenberg HUSZIG High School",
+  "latest_school": null,
+  "latest_school_location": null,
+  "latest_school_linkedin": null,
+  "latest_field_of_study": "Dental Hygiene/Hygienist",
+  "latest_education_start": null,
+  "latest_education_end": null,
+  "latest_grade": null,
+  "skills": [
+    "Deep Cleaning",
+    "Hungarian",
+    "Online Marketing",
+    "Dental Care",
+    "Home Cleaning",
+    "Professional Cleaning"
+  ],
+  "languages": [],
+  "linkedin_connections": 1,
+  "linkedin_followers": 1,
+  "linkedin_join_date": null,
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": null,
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "entityType": "company",
+      "positionList": [
+        {
+          "title": "Small Business Owner",
+          "department": "EXECUTIVE",
+          "seniorityScore": 4
+        }
+      ],
+      "personID": "4_DXelaQ4nXdxI5JWckVRoKskHU4VmG",
+      "companyName": "Brook-Clean",
+      "company": {
+        "name": "Brook-Clean",
+        "industryList": []
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "3404459006",
+      "name": "Raoul Wallenberg HUSZIG High School",
+      "subject": "Dental Hygiene/Hygienist",
+      "personID": "4_DXelaQ4nXdxI5JWckVRoKskHU4VmG"
+    },
+    {
+      "id": "3404459008",
+      "endDate": "2022-09-01T00:00:00.000Z",
+      "startDate": "2022-01-01T00:00:00.000Z",
+      "name": "RUANDER Oktat\u00e1si Kft",
+      "subject": "Online Marketing",
+      "school": {
+        "id": "xgZd8MX4952v",
+        "linkedinID": "ruander-suli",
+        "fullName": "RUANDER Oktat\u00e1si Kft",
+        "entityType": "school"
+      },
+      "personID": "4_DXelaQ4nXdxI5JWckVRoKskHU4VmG"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "3404459006",
+      "fieldOfStudy": "Dental Hygiene/Hygienist",
+      "name": "Bachelor's degree",
+      "personID": "4_DXelaQ4nXdxI5JWckVRoKskHU4VmG"
+    }
+  ],
+  "aviato_person_id": "4_DXelaQ4nXdxI5JWckVRoKskHU4VmG",
+  "aviato_last_updated": "2025-11-20T07:02:51.884Z",
+  "enrichment_timestamp": "2025-12-28T23:18:23.175365",
+  "enrichment_source": "aviato",
+  "highlights": []
+}

@@ -3,12 +3,14 @@
   "generated_at": "2025-12-22T22:16:38.777320Z",
   "meeting_folder": "2025-12-22_Jatin_Sandilya_x_Vrijen_Attawar",
   "meeting_date": "2025-12-22",
-  "status": "intelligence_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "Jatin Sandilya x Vrijen Attawar"
+  "meeting_title": "Jatin Sandilya x Vrijen Attawar",
+  "processed_at": "2025-12-28T18:46:43.271155Z",
+  "crm_synced": true
 }

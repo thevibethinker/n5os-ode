@@ -1,10 +1,9 @@
 ---
 created: 2025-12-23
 last_edited: 2025-12-23
-version: 1.0
+version: 1
 provenance: agent_230246f0-1881-4d63-9e3b-a017b87eb77e
 ---
-
 # B14 – Blurbs
 
 ## Generated Blurbs

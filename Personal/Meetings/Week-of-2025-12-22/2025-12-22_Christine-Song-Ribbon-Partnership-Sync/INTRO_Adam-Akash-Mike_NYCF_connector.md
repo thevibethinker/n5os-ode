@@ -1,10 +1,9 @@
 ---
 created: 2025-12-23
 last_edited: 2025-12-23
-version: 1.0
+version: 1
 provenance: con_tK24rAA0Rb6KHVc6
 ---
-
 # Follow-up: Intro to NYC Founders Club (Adam, Akash, Mike)
 
 Hi Adam, Akash, and Mike,

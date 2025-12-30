@@ -7,12 +7,11 @@
 ### 🧠 The Wedge
 > "The only way to do great work is to love what you do." — Steve Jobs
 
-2025-12-27 21:45:04 EST
+2025-12-28 08:00:03 ET
 
 ---
 
 ### 🗺️ The Landscape
-- **08:15**: Daily Centering Task
 - **08:30**: [Monthly] Vrijen / Alexis / Mishu
 
 ---
@@ -29,7 +28,6 @@ No data for yesterday.
 
 ### 📊 The Habit Tracker
 **Yesterday's Habits:**
-⚠️ Cannabis Use         │ Total:     1 │ Days:   1
 ✅ Medication           │ Total:     2 │ Days:   1
 ✅ Workout              │ Total:     1 │ Days:   1
 

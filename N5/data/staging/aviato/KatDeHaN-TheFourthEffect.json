@@ -1,0 +1,430 @@
+{
+  "full_name": "Katrin de Ha\u00ebn",
+  "first_name": "Katrin",
+  "last_name": "de Ha\u00ebn",
+  "gender": "female",
+  "headline": "Co-Founder at The Fourth Effect",
+  "linkedin_url": "linkedin.com/in/katrindehaen",
+  "linkedin_id": "katrindehaen",
+  "linkedin_entity_id": "ACoAAAS5TzUBiuS8cAgbzDxh0Bv_xb-K90kss5Q",
+  "linkedin_num_id": 79253301,
+  "twitter_url": "x.com/katdehaen",
+  "facebook_url": null,
+  "website_url": null,
+  "crunchbase_url": "crunchbase.com/person/katrin-de-ha\u00ebn",
+  "angellist_url": null,
+  "location": "New York, New York, United States",
+  "city": "New York",
+  "region": "New York",
+  "country": "United States",
+  "location_ids": [
+    102191575,
+    85633793,
+    102082361,
+    85977539,
+    85688543,
+    102082377,
+    102081863,
+    102083063,
+    102081779
+  ],
+  "current_title": "Founder",
+  "current_department": "EXECUTIVE",
+  "current_seniority_score": 5,
+  "current_position_start": "2019-01-01T00:00:00.000Z",
+  "current_position_end": "2020-03-01T00:00:00.000Z",
+  "current_position_location": "Greater New York City Area",
+  "current_position_description": "A contemporary fashion brand specializing in silk kimonos and using it's voice to make a difference.",
+  "current_company_name": "Kat de Ha\u00ebn Designs",
+  "current_company_id": null,
+  "current_company_linkedin": null,
+  "current_company_website": null,
+  "current_company_location": "Kat de Ha\u00ebn Designs",
+  "current_employment_start": "2019-01-01T00:00:00.000Z",
+  "current_employment_end": "2020-03-01T00:00:00.000Z",
+  "latest_degree": null,
+  "latest_school": "The Evergreen State College",
+  "latest_school_location": "Olympia, Washington, United States",
+  "latest_school_linkedin": "theevergreenstatecollege",
+  "latest_field_of_study": "Business, Management, Marketing, and Related Support Services",
+  "latest_education_start": "1986-01-01T00:00:00.000Z",
+  "latest_education_end": "1990-01-01T00:00:00.000Z",
+  "latest_grade": null,
+  "skills": [
+    "Start-up Leadership",
+    "Start-up Ventures",
+    "German- Fluent",
+    "Italian- Conversational",
+    "Marketing Strategy",
+    "Sales",
+    "Social Media Marketing",
+    "Sales Management",
+    "Leadership Development",
+    "Public Relations",
+    "Management",
+    "Product Development",
+    "Retail",
+    "Fundraising",
+    "Training",
+    "Business Strategy",
+    "New Business Development",
+    "Strategy",
+    "Start-ups",
+    "Contract Negotiation"
+  ],
+  "languages": [
+    {
+      "language": "German",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    },
+    {
+      "language": "Italian",
+      "proficiency": "ELEMENTARY"
+    }
+  ],
+  "linkedin_connections": 6212,
+  "linkedin_followers": 6620,
+  "linkedin_join_date": "2010-06-25T08:57:01.703Z",
+  "linkedin_labor_status": null,
+  "open_to_work": false,
+  "is_hiring": false,
+  "investor_type": null,
+  "investor_title": "Kat de Haen is a co-founder of The Fourth Floor, a curated community and tech-driven entrepreneurial ecosystem that seeks to get more women on the boards of women founded start-ups and established companies, so they can be more successful in raising capital, building wealth, and having a say in the future of industry. She is passionate about women\u2019s initiatives and evolving new opportunities to support other change-makers, leaders, and founders. She delights in bringing together people who can help each other in business, career, and life. \n\nKat is also an inventor and successful businessperson. She invented and brought to market a popular consumer beauty product and launched an upscale silk fashion line. She started her career in sales and product development in the fashion industry working with major retailers.\n\nBorn in Zurich, Switzerland and raised in Seattle. She currently lives in New York City with her husband, Jon Colman and their daughter Sophie.",
+  "investor_current_firm_id": null,
+  "investor_firm_position": null,
+  "investor_min_check": null,
+  "investor_max_check": null,
+  "investor_target_check": null,
+  "investor_portfolio_count": null,
+  "investor_interests": null,
+  "investor_disinterests": null,
+  "investor_industries": [],
+  "investor_round_stages": [],
+  "investor_categories": [],
+  "all_experiences": [
+    {
+      "endDate": "2020-03-01T00:00:00.000Z",
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "linkedinNumID": 40669762,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-01-01T00:00:00.000Z",
+          "endDate": "2020-03-01T00:00:00.000Z",
+          "title": "Founder",
+          "location": "Greater New York City Area",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "A contemporary fashion brand specializing in silk kimonos and using it's voice to make a difference."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyName": "Kat de Ha\u00ebn Designs",
+      "company": {
+        "name": "Kat de Ha\u00ebn Designs",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2020-11-01T00:00:00.000Z",
+      "linkedinNumID": 5282035,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2020-11-01T00:00:00.000Z",
+          "title": "Executive Member",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Dreamers & Doers is a private collective that amplifies the entrepreneurial pursuits of extraordinary women through visibility opportunities, resource exchange, and collective support."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyName": "Dreamers & Doers",
+      "company": {
+        "name": "Dreamers & Doers",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2005-06-01T00:00:00.000Z",
+      "startDate": "1995-10-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1995-10-01T00:00:00.000Z",
+          "endDate": "2005-06-01T00:00:00.000Z",
+          "title": "Senior Account Executive and License Liaison",
+          "location": "New York, NY",
+          "department": "SALES",
+          "description": "Senior Account Executive and License Liaison\n\nBlitzz International was a licensed apparel manufacturer.\nOpened and grew accounts including JC Penney, Walmart, Kmart, and May Co. Nurtured licensor relationships including Disney, Coca-Cola, Sesame Street, and Warner Brothers."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyName": "Blitzz International, Inc",
+      "company": {
+        "name": "Blitzz International, Inc",
+        "industryList": []
+      }
+    },
+    {
+      "endDate": "2018-12-01T00:00:00.000Z",
+      "startDate": "2015-11-01T00:00:00.000Z",
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2015-11-01T00:00:00.000Z",
+          "endDate": "2018-12-01T00:00:00.000Z",
+          "title": "Co-Founder & President",
+          "location": "New York, NY",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Co-Founder & Partner\n\nInvented, patented, and launched Pedi Spacers, a beauty accessory for pedicures, to the online and retail market. Company grossed over six figures annually by selling into major retailers, online sales, and beauty salons in the US as well as solidifying distribution to the UK, Japan, and South Korea."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyName": "Dip Into Pretty, LLC",
+      "company": {
+        "name": "Dip Into Pretty, LLC",
+        "industryList": []
+      }
+    },
+    {
+      "startDate": "2019-01-01T00:00:00.000Z",
+      "linkedinNumID": 12659899,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2019-01-01T00:00:00.000Z",
+          "title": "Co-Founder",
+          "location": "New York, New York, United States",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "Smart matchmaking for startup boards: an AI-powered platform transforming how founders access the leadership, capital, and expertise."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyID": "SFqsZdxLtk3yMh_kqLLQ29SVa6P1x84",
+      "companyName": "The Fourth Effect",
+      "company": {
+        "id": "SFqsZdxLtk3yMh_kqLLQ29SVa6P1x84",
+        "name": "The Fourth Effect",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "twitter": "twitter.com/TheFourthEffect",
+          "website": "thefourtheffect.com",
+          "facebook": "www.facebook.com/TheFourthEffect",
+          "linkedin": "linkedin.com/company/welcome-to-the-fourth-floor",
+          "pitchbook": "pitchbook.com/profiles/company/472343-59",
+          "crunchbase": "www.crunchbase.com/organization/the-fourth-floor"
+        },
+        "industryList": [
+          "Communities",
+          "Consulting",
+          "Information Services",
+          "Marketplace"
+        ]
+      }
+    },
+    {
+      "endDate": "1995-06-01T00:00:00.000Z",
+      "startDate": "1990-09-01T00:00:00.000Z",
+      "linkedinNumID": 3379,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "1990-09-01T00:00:00.000Z",
+          "endDate": "1995-06-01T00:00:00.000Z",
+          "title": "Sales Associate",
+          "department": "SALES",
+          "seniorityScore": 1,
+          "description": "Exceeded annual sales goals and was recognized with the Pacesetter Award."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyID": "HnaceSwUVD9414jVcdnXUqjFNK9a_m2",
+      "companyName": "Nordstrom",
+      "company": {
+        "id": "HnaceSwUVD9414jVcdnXUqjFNK9a_m2",
+        "name": "Nordstrom",
+        "country": "United States",
+        "region": "Washington",
+        "locality": "Seattle",
+        "URLs": {
+          "golden": "golden.com/wiki/Nordstrom-9X35G",
+          "contact": "www.nordstrom.com/browse/customer-service?origin=footer&cm_sp=corp-_-corp_CustomerService-_-globalfooternav_contactus",
+          "twitter": "twitter.com/nordstrom",
+          "website": "nordstrom.com",
+          "facebook": "www.facebook.com/Nordstrom",
+          "linkedin": "linkedin.com/company/nordstrom",
+          "pitchbook": "pitchbook.com/profiles/company/41113-90",
+          "angelList": "angel.co/nordstrom",
+          "crunchbase": "www.crunchbase.com/organization/nordstrom"
+        },
+        "industryList": [
+          "E-Commerce",
+          "Fashion",
+          "Retail"
+        ]
+      }
+    },
+    {
+      "startDate": "2022-11-01T00:00:00.000Z",
+      "linkedinNumID": 79484021,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2022-11-01T00:00:00.000Z",
+          "title": "Deal Partner",
+          "description": "Ganas Ventures invests in pre-seed and seed Web 2 and Web 3 community-driven startups in the US and Latin America. For more info, visit:\u00a0ganas.vc."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyID": "uT3j7trRhFN5B9qX6Z1EF6pVJTne5Mo",
+      "companyName": "Ganas Ventures",
+      "company": {
+        "id": "uT3j7trRhFN5B9qX6Z1EF6pVJTne5Mo",
+        "name": "Ganas Ventures",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "golden": "golden.com/wiki/Ganas_Ventures-R3YE4PX",
+          "twitter": "x.com/ganasvc",
+          "website": "ganas.vc",
+          "linkedin": "linkedin.com/company/ganasvc",
+          "signalNFX": "signal.nfx.com/firms/ganas-ventures",
+          "crunchbase": "www.crunchbase.com/organization/ganas-ventures"
+        },
+        "industryList": [
+          "Finance",
+          "Financial Services",
+          "Venture Capital"
+        ]
+      }
+    },
+    {
+      "endDate": "2018-07-01T00:00:00.000Z",
+      "startDate": "2005-09-01T00:00:00.000Z",
+      "linkedinNumID": 5898944,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2005-09-01T00:00:00.000Z",
+          "endDate": "2011-06-01T00:00:00.000Z",
+          "title": "VP of Product Development and Sales",
+          "location": "New York, NY",
+          "department": "SALES",
+          "description": "Vice President of Product Development and Sales\n\nSourced and expanded product assortment from 3 to 25 skus.  Oversaw sales reps, distributors and developed programs with retailers including Ratner Co. and Sally Beauty."
+        },
+        {
+          "startDate": "2015-06-01T00:00:00.000Z",
+          "endDate": "2018-07-01T00:00:00.000Z",
+          "title": "President",
+          "location": "New York City",
+          "department": "EXECUTIVE",
+          "seniorityScore": 5,
+          "description": "President\t\t\t\t\t\t\t\t\t\t  2015-2018\n\nBluSand Beauty is a manufacturer and wholesaler of sundries for the beauty salon industry. Oversaw operations and grew sales and product assortment."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyID": "HlpmPzxUyF6jMIQ8OUguEI4SXsds3rK",
+      "companyName": "BluSand Beauty",
+      "company": {
+        "id": "HlpmPzxUyF6jMIQ8OUguEI4SXsds3rK",
+        "name": "BluSand Beauty",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "twitter": "twitter.com/BleachsafeTowel",
+          "website": "blusand.com",
+          "facebook": "www.facebook.com/BluSand-Beauty/681617478559268",
+          "linkedin": "linkedin.com/company/blusand-beauty",
+          "crunchbase": "www.crunchbase.com/organization/blu-sand-llc-bleachsafe-towels"
+        },
+        "industryList": [
+          "Fashion"
+        ]
+      }
+    },
+    {
+      "startDate": "2023-07-01T00:00:00.000Z",
+      "linkedinNumID": 54120197,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2023-07-01T00:00:00.000Z",
+          "title": "Founding Member",
+          "department": "EXECUTIVE",
+          "seniorityScore": 4,
+          "description": "A women-forward super community that reimagines professional storytelling and connectivity. Discover and follow trailblazers, visionaries, and remarkable leaders for inspiration & insight. Come curious. Leave inspired."
+        }
+      ],
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+      "companyID": "jjFR-VoTADCjZFNJ_UmqSB8bqLcGs13",
+      "companyName": "Marble Collective",
+      "company": {
+        "id": "jjFR-VoTADCjZFNJ_UmqSB8bqLcGs13",
+        "name": "Marble Collective",
+        "country": "United States",
+        "region": "New York",
+        "locality": "New York",
+        "URLs": {
+          "contact": "marblecollective.com/mailto:contact@marblecollective.com",
+          "website": "marblecollective.com/about",
+          "linkedin": "linkedin.com/company/marble-collective",
+          "crunchbase": "www.crunchbase.com/organization/marble-collective"
+        },
+        "industryList": [
+          "Artificial Intelligence (AI)",
+          "Digital Media",
+          "Information Technology",
+          "Media and Entertainment",
+          "Public Relations",
+          "Social Media"
+        ]
+      }
+    }
+  ],
+  "all_education": [
+    {
+      "id": "2755901965",
+      "endDate": "1990-01-01T00:00:00.000Z",
+      "startDate": "1986-01-01T00:00:00.000Z",
+      "subject": "Business, Management, Marketing, and Related Support Services",
+      "school": {
+        "id": "WvHE4h6EtCst",
+        "linkedinID": "theevergreenstatecollege",
+        "fullName": "The Evergreen State College",
+        "location": "Olympia, Washington, United States",
+        "entityType": "school"
+      },
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk"
+    }
+  ],
+  "all_degrees": [
+    {
+      "personEducationID": "2755901965",
+      "fieldOfStudy": "Business, Management, Marketing, and Related Support Services",
+      "name": "Bachelor's degree",
+      "school": {
+        "id": "WvHE4h6EtCst",
+        "linkedinID": "theevergreenstatecollege",
+        "fullName": "The Evergreen State College",
+        "location": "Olympia, Washington, United States",
+        "entityType": "school"
+      },
+      "personID": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk"
+    }
+  ],
+  "aviato_person_id": "BQ0Ep8dTNHl4HJpJwZsBKNeTytT9hjk",
+  "aviato_last_updated": "2025-10-24T18:54:49.975Z",
+  "enrichment_timestamp": "2025-12-28T23:19:35.331326",
+  "enrichment_source": "aviato",
+  "highlights": [
+    "employeeDuringIPO",
+    "oneYearAtCurrentCompany"
+  ]
+}

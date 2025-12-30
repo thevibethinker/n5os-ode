@@ -3,12 +3,14 @@
   "generated_at": "2025-12-24T14:17:21.499579",
   "meeting_folder": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync",
   "meeting_date": "2025-12-22",
-  "status": "intelligence_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync"
+  "meeting_title": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync",
+  "processed_at": "2025-12-28T18:46:43.015711Z",
+  "crm_synced": true
 }

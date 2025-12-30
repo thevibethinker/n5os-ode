@@ -3,12 +3,14 @@
   "generated_at": "2025-12-24T14:17:21.473696",
   "meeting_folder": "2025-12-23_davisteamworkonlinecom",
   "meeting_date": "2025-12-23",
-  "status": "intelligence_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
   "last_updated_by": "MG-2_Prompt",
-  "meeting_title": "davisteamworkonlinecom"
+  "meeting_title": "davisteamworkonlinecom",
+  "processed_at": "2025-12-28T18:46:43.758624Z",
+  "crm_synced": true
 }

@@ -3,7 +3,7 @@
   "generated_at": "2025-12-24T14:17:21.519706",
   "meeting_folder": "2025-12-23_rochelmycareerspancom",
   "meeting_date": "2025-12-23",
-  "status": "intelligence_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
@@ -11,5 +11,7 @@
   },
   "last_updated_by": "MG-2_Prompt",
   "updated_at": "2025-12-24T14:19:16.306575",
-  "meeting_title": "rochelmycareerspancom"
+  "meeting_title": "rochelmycareerspancom",
+  "processed_at": "2025-12-28T18:46:44.259274Z",
+  "crm_synced": true
 }

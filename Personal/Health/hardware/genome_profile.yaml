@@ -1,0 +1,264 @@
+---
+created: 2025-12-28
+last_edited: 2025-12-28
+version: 1.0
+provenance: con_ENFJHuuEiOjhTAjD
+source_file: v-s-23andme-genome/data.duckdb
+---
+
+# Genomic Hardware Profile
+# Vrijen Attawar - Key SNP Summary
+# Derived from 23andMe raw data (631,455 SNPs analyzed)
+
+profile_summary:
+  total_snps: 631455
+  heterozygosity_rate: 16.81%
+  data_date: 2025-12-28
+
+# ============================================
+# TIER 1: LONGEVITY MASTER SWITCHES
+# ============================================
+
+longevity:
+  
+  apoe_status:
+    haplotype: "Likely ε2/ε3 or ε3/ε3 (Protective)"
+    rs429358:
+      genotype: TT
+      status: PROTECTIVE
+    rs7412:
+      genotype: "--"  # No call
+      status: UNKNOWN
+      interpretation: |
+        No call at rs7412. This SNP determines ε2 vs ε3.
+        TT at rs429358 rules out ε4 (which requires C).
+        Combined with TT at rs429358, you are NOT an ε4 carrier.
+        Most likely ε2/ε3 or ε3/ε3 (both protective).
+        
+  foxo3:
+    rs2802292:
+      genotype: GG
+      status: PROTECTIVE
+      interpretation: |
+        Homozygous for longevity-associated G allele.
+        FOXO3 regulates stress resistance, DNA repair, 
+        and cellular maintenance. GG genotype associated 
+        with 2.7x increased odds of reaching 100+ in 
+        Okinawan and European studies.
+
+# ============================================
+# TIER 2: COGNITIVE & NEUROTRANSMITTER
+# ============================================
+
+cognitive:
+
+  comt:
+    rs4680:
+      genotype: GG  # VAL/VAL
+      status: WARRIOR
+      interpretation: |
+        Fast dopamine clearance (3-4x faster than MET/MET).
+        
+        Strengths:
+        - Better stress performance under pressure
+        - More resilient to pain
+        - Less prone to rumination
+        
+        Vulnerabilities:
+        - Baseline dopamine levels may be lower
+        - More sensitive to dopamine depletion (poor sleep, stress)
+        - May need environmental optimization for sustained focus
+        
+        Optimization:
+        - Regular sleep is non-negotiable
+        - Orderly, aesthetic workspace supports focus
+        - Bupropion compensates for fast clearance
+        
+  bdnf:
+    rs6265:
+      genotype: TT  # VAL/VAL (T=Val, C=Met in this orientation)
+      status: STANDARD
+      interpretation: |
+        Normal BDNF secretion and neuroplasticity.
+        No enhanced anxiety sensitivity (unlike MET carriers).
+        Standard response to exercise-induced BDNF boost.
+        
+        Note: TT at rs6265 = VAL/VAL phenotype (protective).
+
+# ============================================
+# TIER 3: METABOLISM & NUTRITION
+# ============================================
+
+metabolism:
+
+  mthfr:
+    rs1801133:
+      genotype: AG  # Heterozygous C677T
+      status: INTERMEDIATE_METABOLIZER
+      interpretation: |
+        ~65% enzyme activity (vs 100% for AA/CC wild-type).
+        Reduced ability to convert folic acid → methylfolate.
+        
+        Implications:
+        - Prefer methylated B vitamins (methylfolate, methylcobalamin)
+        - Avoid synthetic folic acid in fortified foods when possible
+        - May benefit from additional folate-rich whole foods
+        
+        Action: Use methylated multivitamin (confirmed in stack)
+
+  fto:
+    rs9939609:
+      genotype: AA
+      status: ELEVATED_RISK
+      interpretation: |
+        Homozygous for risk allele.
+        Associated with:
+        - Higher hunger/appetite signaling
+        - Increased BMI tendency (+3kg average)
+        - Reduced satiety response
+        
+        Mitigation:
+        - Protein-forward meals improve satiety
+        - Meal timing consistency helps regulate hunger
+        - Tracking portions is more important for you than average
+        
+        Note: This is NOT destiny - it's a headwind to be aware of.
+
+  caffeine_metabolism:
+    rs762551:
+      genotype: AC
+      gene: CYP1A2
+      status: SLOW_METABOLIZER
+      interpretation: |
+        Heterozygous AC = Slow/Intermediate caffeine metabolism.
+        Caffeine half-life extended (6-8 hours vs 3-4 for fast).
+        
+        Implications:
+        - Cut off caffeine by 2pm for optimal sleep
+        - Even afternoon tea may disrupt sleep quality
+        - Morning coffee is fine, but limit to 1-2 cups
+        
+  vitamin_d_binding:
+    rs2282679:
+      genotype: GT
+      status: INTERMEDIATE
+      interpretation: |
+        Heterozygous = Intermediate vitamin D bioavailability.
+        May need slightly higher supplementation than GG genotype.
+        Recommend blood test to establish personal baseline.
+        Target: 50-70 ng/mL
+
+# ============================================
+# TIER 4: PHARMACOGENOMICS (from GeneSight)
+# ============================================
+
+pharmacogenomics:
+  source: GeneSight Report 2022-02-23
+  
+  cyp2d6:
+    status: Normal Metabolizer
+    implications: |
+      Standard metabolism of many psychiatric medications.
+      No dose adjustments needed for CYP2D6 substrates.
+      
+  cyp2c19:
+    status: Normal Metabolizer
+    implications: |
+      Standard metabolism of clopidogrel, some PPIs, some SSRIs.
+      
+  cyp2b6:
+    status: Normal Metabolizer
+    implications: |
+      Standard bupropion metabolism.
+      
+  slc6a4:
+    status: L/L
+    interpretation: |
+      Short/Short serotonin transporter.
+      Associated with increased stress sensitivity.
+      Supports avoiding SSRIs per GeneSight guidance.
+
+# ============================================
+# TIER 5: SOCIAL & PAIN SENSITIVITY
+# ============================================
+
+social_bonding:
+  oxtr:
+    rs53576:
+      genotype: GG
+      status: ENHANCED
+      interpretation: |
+        Homozygous for "social" allele.
+        Associated with:
+        - Higher empathy and social sensitivity
+        - Greater benefit from social support
+        - May be more affected by social rejection
+        
+        Implication: Connection is not just nice-to-have, 
+        it's biologically reinforcing for this genotype.
+
+  drd2:
+    rs1800497:
+      genotype: GG
+      status: STANDARD
+      interpretation: |
+        Normal dopamine D2 receptor density.
+        Standard reward sensitivity.
+        No enhanced addiction risk from this variant.
+
+pain_sensitivity:
+  oprm1:
+    rs1799971:
+      genotype: AA
+      status: STANDARD
+      interpretation: |
+        Normal opioid receptor function.
+        Standard pain sensitivity and response to opioid medications.
+        No special considerations for pain management.
+
+lactose_tolerance:
+  lct:
+    rs4988235:
+      genotype: GG
+      status: LACTOSE_TOLERANT
+      interpretation: |
+        Lactase persistence genotype.
+        Can digest dairy products normally.
+        No need to avoid lactose.
+
+# ============================================
+# COMPOSITE PHENOTYPE SUMMARY
+# ============================================
+
+composite_phenotype:
+  
+  cognitive_style: |
+    "Stress-Resilient Performer" (COMT VAL/VAL + BDNF VAL/VAL)
+    - Performs well under acute pressure
+    - Needs environmental optimization for sustained focus
+    - Vulnerable to chronic stress/sleep debt
+    
+  metabolic_style: |
+    "Hungry Hardware" (FTO AA + MTHFR CT)
+    - Higher baseline appetite signaling
+    - Needs methylated nutrients
+    - Portion awareness is a lever, not a limitation
+    
+  longevity_outlook: |
+    "Genetic Tailwinds" (APOE TT/TT + FOXO3 GG)
+    - Protective variants across major longevity genes
+    - Lower baseline risk for Alzheimer's, cardiovascular
+    - Optimize environment to compound genetic advantage
+
+# ============================================
+# SNPS TO QUERY NEXT
+# ============================================
+
+todo_snps:
+  # All major SNPs now queried - consider these for future deep dives:
+  - rs1805007  # MC1R red hair/pain sensitivity
+  - rs4680     # Already have (COMT)
+  - rs1042713  # ADRB2 exercise response
+  - rs17822931 # ABCC11 earwax type (dry vs wet)
+
+
