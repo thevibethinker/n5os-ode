@@ -1,0 +1,73 @@
+# N5 User Overrides
+# Personal customizations that override module defaults
+# Edit this file to customize behavior without touching the hub or modules
+#
+# Precedence: These overrides take priority over module defaults,
+# but safety rules and folder POLICY.md still take highest precedence.
+#
+# Version: 1.0.0
+# Last Modified: 2026-01-02
+
+# =============================================================================
+# VOICE CUSTOMIZATIONS
+# Override voice profile attributes
+# =============================================================================
+voice:
+  email:
+    # warmth: 0.8  # Override default 0.75
+    # directness: 0.85
+    # formality: 0.60
+  social:
+    # energetic: true
+  note:
+    # speed_prioritized: true
+
+# =============================================================================
+# SCHEDULING OVERRIDES
+# =============================================================================
+scheduling:
+  enabled: false  # Keep scheduling disabled until explicitly enabled
+
+# =============================================================================
+# QUALITY THRESHOLDS
+# Override accuracy requirements
+# =============================================================================
+quality:
+  # doc: 0.95  # Increase from 0.90
+  # email: 0.85  # Increase from 0.80
+
+# =============================================================================
+# CRM / RELATIONSHIP OVERRIDES
+# =============================================================================
+relationships:
+  # Customize contact frequency thresholds
+  # investor:
+  #   at_risk_days: 5  # More aggressive than default 7
+  # response_time:
+  #   critical_hours: 12  # Faster than default 24
+
+# =============================================================================
+# WORKFLOW PREFERENCES
+# =============================================================================
+workflow:
+  # dry_run_always: true  # Force dry-run for all operations
+  # coding_agent_threshold_loc: 100  # Use agent for changes >100 LOC
+
+# =============================================================================
+# CONTEXT OVERRIDES
+# Add/remove modules from context presets
+# =============================================================================
+context_overrides:
+  # content_generation:
+  #   add: [careerspan]  # Include company context in content generation
+  #   remove: []
+
+# =============================================================================
+# CUSTOM RULES
+# User-defined rules (loaded after modules, before safety)
+# =============================================================================
+custom_rules: []
+  # - id: my-custom-rule
+  #   trigger: "when doing X"
+  #   action: "always do Y first"
+  #   priority: medium

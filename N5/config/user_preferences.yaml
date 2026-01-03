@@ -1,0 +1,449 @@
+# N5 User Preferences Hub
+# Central registry for all preference modules with context-aware loading
+# Version: 1.0.0
+# Last Modified: 2026-01-02
+
+version: "1.0.0"
+last_modified: "2026-01-02"
+
+# =============================================================================
+# GOVERNANCE HIERARCHY
+# Precedence from highest to lowest (first match wins for conflicts)
+# =============================================================================
+precedence:
+  - folder_policy      # POLICY.md in target folder takes highest precedence
+  - safety_rules       # Non-overrideable safety rules
+  - user_overrides     # Explicit user preferences (from overrides file)
+  - module_defaults    # Domain-specific defaults from modules
+  - global_defaults    # System-wide defaults
+
+# =============================================================================
+# CORE PREFERENCES
+# Always loaded regardless of context
+# =============================================================================
+core:
+  timezone:
+    storage: UTC
+    display: America/New_York
+  military_time: true
+  sandbox_first: true
+  dry_run_default: true
+
+  # Default approval requirements
+  requires_explicit_consent:
+    - scheduling
+    - external_communications
+    - service_management
+    - destructive_operations
+
+# =============================================================================
+# MODULE REGISTRY
+# All preference modules with load conditions and priorities
+# =============================================================================
+modules:
+  # ---------------------------------------------------------------------------
+  # CRITICAL - Always Loaded
+  # ---------------------------------------------------------------------------
+  safety:
+    path: N5/prefs/system/safety-rules.md
+    load: always
+    priority: critical
+    description: Core safety rules - explicit consent, dry-run, validation
+
+  file_protection:
+    path: N5/prefs/system/file-protection.md
+    load: always
+    priority: critical
+    description: File classification and protection workflows
+
+  safety_core:
+    path: N5/prefs/system/safety.md
+    load: always
+    priority: critical
+    description: Sandbox-first, system bulletins, command-first operations
+
+  # ---------------------------------------------------------------------------
+  # HIGH PRIORITY - System Operations
+  # ---------------------------------------------------------------------------
+  git_governance:
+    path: N5/prefs/system/git-governance.md
+    load: [system_ops, code_work]
+    priority: high
+    description: Git tracking, commit format, ignore patterns
+
+  risk_scoring:
+    path: N5/prefs/system/risk-scoring-framework.yaml
+    load: [system_ops, destructive_ops]
+    priority: high
+    description: Risk dimension weights and thresholds
+
+  systemic_risk:
+    path: N5/prefs/system/systemic-risk-framework.md
+    load: [system_ops, destructive_ops]
+    priority: high
+    description: Blast radius assessment framework
+
+  commands:
+    path: N5/prefs/system/commands.md
+    load: [system_ops]
+    priority: high
+    description: Command registry quick reference
+
+  nuance_manifest:
+    path: N5/prefs/system/nuance-manifest.md
+    load: [system_ops, content_generation]
+    priority: high
+    description: Design patterns for safety and quality
+
+  # ---------------------------------------------------------------------------
+  # MEDIUM PRIORITY - Communication & Voice
+  # ---------------------------------------------------------------------------
+  voice_profiles:
+    path: N5/prefs/communication/voice-profiles.json
+    load: [content_generation, communication]
+    priority: medium
+    description: Email/social/note voice profiles with attributes
+
+  quality_validation:
+    path: N5/prefs/communication/quality-validation.json
+    load: [content_generation, communication]
+    priority: medium
+    description: Accuracy requirements, voice consistency, thresholds
+
+  engagement_definitions:
+    path: N5/prefs/engagement_definitions.md
+    load: [communication]
+    priority: medium
+    description: Load/prime protocol definitions
+
+  # ---------------------------------------------------------------------------
+  # MEDIUM PRIORITY - Operations
+  # ---------------------------------------------------------------------------
+  scheduling:
+    path: N5/prefs/operations/scheduling.md
+    load: [scheduling, task_creation]
+    priority: medium
+    description: Scheduling settings (disabled by default), retry policy
+
+  scheduled_tasks:
+    path: N5/prefs/operations/scheduled-task-protocol.md
+    load: [scheduling, task_creation]
+    priority: medium
+    description: Task creation standards and naming conventions
+
+  distributed_builds:
+    path: N5/prefs/operations/distributed-builds/SYSTEM_OVERVIEW.md
+    load: [code_work, large_builds]
+    priority: medium
+    description: Multi-conversation orchestration for >500 LOC changes
+
+  recipe_execution:
+    path: N5/prefs/operations/recipe-execution-guide.md
+    load: [automation]
+    priority: medium
+    description: Recipe structure and execution patterns
+
+  style_guide_protocol:
+    path: N5/prefs/operations/style-guide-protocol.md
+    load: [content_generation]
+    priority: medium
+    description: Output consistency and style guide creation
+
+  resolution_order:
+    path: N5/prefs/operations/resolution-order.md
+    load: always
+    priority: medium
+    description: Folder POLICY.md precedence rules
+
+  thread_closure:
+    path: N5/prefs/operations/thread-closure-triggers.md
+    load: [conversation_end]
+    priority: medium
+    description: When to use conversation-end vs thread-export
+
+  incantum_protocol:
+    path: N5/prefs/operations/incantum-protocol.md
+    load: [system_ops]
+    priority: medium
+    description: Natural language command matching
+
+  crm_usage:
+    path: N5/prefs/operations/crm-usage.md
+    load: [crm_operations]
+    priority: medium
+    description: CRM database query patterns
+
+  careerspan:
+    path: N5/prefs/operations/careerspan.md
+    load: [crm_operations, company_context]
+    priority: medium
+    description: Company identity and domains
+
+  # ---------------------------------------------------------------------------
+  # MEDIUM PRIORITY - Integrations
+  # ---------------------------------------------------------------------------
+  google_drive:
+    path: N5/prefs/integration/google-drive.md
+    load: [integrations, file_access]
+    priority: medium
+    description: Google Drive access workflow and MIME types
+
+  coding_agent:
+    path: N5/prefs/integration/coding-agent.md
+    load: [code_work]
+    priority: medium
+    description: When to use coding agent vs direct edits
+
+  # ---------------------------------------------------------------------------
+  # MEDIUM PRIORITY - Config Files (JSON)
+  # ---------------------------------------------------------------------------
+  relationship_thresholds:
+    path: N5/config/relationship_thresholds.json
+    load: [crm_operations]
+    priority: medium
+    description: Contact frequency thresholds, response times
+
+  enrichment_settings:
+    path: N5/config/enrichment_settings.json
+    load: [crm_operations, research]
+    priority: medium
+    description: Stakeholder research depth, LinkedIn protocol
+
+  stakeholder_rules:
+    path: N5/config/stakeholder_rules.json
+    load: [crm_operations]
+    priority: medium
+    description: Stakeholder type taxonomy, priority rules
+
+  howie_presets:
+    path: N5/config/howie_presets.json
+    load: [scheduling, meetings]
+    priority: medium
+    description: Calendar/meeting accommodation presets
+
+  confidence_thresholds:
+    path: N5/config/confidence_thresholds.json
+    load: [automation, file_routing]
+    priority: medium
+    description: File type routing confidence thresholds
+
+  job_sourcing:
+    path: N5/config/job_sourcing.json
+    load: [jobs]
+    priority: low
+    description: Job tracking Google Drive integration
+
+  drive_sync:
+    path: N5/config/drive_sync.json
+    load: [knowledge_sync]
+    priority: low
+    description: Google Drive knowledge export settings
+
+  incantum_triggers:
+    path: N5/config/incantum_triggers.json
+    load: [system_ops]
+    priority: low
+    description: Natural language trigger mappings (legacy - use commands.jsonl)
+    deprecated: true
+    replacement: N5/config/commands.jsonl
+
+# =============================================================================
+# CONTEXT PRESETS
+# Pre-defined module bundles for common operation types
+# =============================================================================
+contexts:
+  # System administration and ops
+  system_ops:
+    description: System administration, file operations, git work
+    load:
+      - safety
+      - file_protection
+      - safety_core
+      - git_governance
+      - risk_scoring
+      - commands
+      - nuance_manifest
+
+  # Content creation (emails, documents, social)
+  content_generation:
+    description: Writing emails, documents, social posts
+    load:
+      - safety
+      - voice_profiles
+      - quality_validation
+      - style_guide_protocol
+      - nuance_manifest
+
+  # CRM and relationship management
+  crm_operations:
+    description: Contact management, stakeholder ops, relationships
+    load:
+      - safety
+      - crm_usage
+      - relationship_thresholds
+      - enrichment_settings
+      - stakeholder_rules
+      - careerspan
+
+  # Code changes and development
+  code_work:
+    description: Code modifications, multi-file changes
+    load:
+      - safety
+      - file_protection
+      - git_governance
+      - coding_agent
+      - distributed_builds
+
+  # Task and schedule management
+  scheduling:
+    description: Creating scheduled tasks, calendar operations
+    load:
+      - safety
+      - scheduling
+      - scheduled_tasks
+      - howie_presets
+
+  # Research and due diligence
+  research:
+    description: Deep research, stakeholder analysis
+    load:
+      - safety
+      - enrichment_settings
+      - quality_validation
+
+  # Conversation lifecycle
+  conversation_end:
+    description: Ending conversations, thread export
+    load:
+      - safety
+      - thread_closure
+
+  # Full context (everything)
+  full:
+    description: Load all active modules (use sparingly)
+    load: all
+
+# =============================================================================
+# CAPABILITY ROUTING
+# Maps domain keywords to capabilities, entry points, and data locations
+# Used for semantic discovery when user mentions a domain
+# =============================================================================
+capability_routing:
+  wellness:
+    keywords:
+      - fitbit
+      - workout
+      - health
+      - fitness
+      - exercise
+      - sleep
+      - heart rate
+      - training
+      - gym
+      - strength
+      - cardio
+      - resting hr
+      - steps
+    capability: Personal Health Tracker
+    description: Fitbit integration, workout logging, health metrics
+    entry_points:
+      scripts:
+        - Personal/Health/WorkoutTracker/fitbit_sync.py
+        - Personal/Health/WorkoutTracker/log_strength.py
+        - Personal/Health/WorkoutTracker/workout_tracker.py
+        - Personal/Health/WorkoutTracker/fitness_intelligence.py
+      data:
+        - Personal/Health/WorkoutTracker/workouts.db
+        - Personal/Health/WorkoutTracker/fitbit_config.json
+      reference:
+        - Personal/Health/COACHING_NOTES.md
+        - Personal/Health/protocols/
+        - Personal/Health/stack/
+    semantic_profile: wellness
+    actions:
+      sync_fitbit: "python3 Personal/Health/WorkoutTracker/fitbit_sync.py"
+      log_workout: "python3 Personal/Health/WorkoutTracker/log_strength.py"
+      view_trends: "python3 Personal/Health/WorkoutTracker/workout_tracker.py --trends"
+
+  crm:
+    keywords:
+      - contact
+      - stakeholder
+      - investor
+      - advisor
+      - relationship
+      - crm
+      - profile
+      - network
+    capability: CRM V3
+    description: Contact management, stakeholder tracking, relationship intelligence
+    entry_points:
+      scripts:
+        - N5/scripts/crm_query_helper.py
+      data:
+        - N5/crm_v3/profiles/
+        - N5/data/crm_v3.db
+      reference:
+        - N5/prefs/operations/crm-usage.md
+    semantic_profile: crm
+
+  meetings:
+    keywords:
+      - meeting
+      - transcript
+      - call
+      - discussion
+      - agenda
+      - recap
+    capability: Meeting Pipeline V2
+    description: Meeting ingestion, transcript processing, intelligence extraction
+    entry_points:
+      scripts:
+        - N5/scripts/meeting_pipeline.py
+      data:
+        - Personal/Meetings/
+      reference:
+        - N5/prefs/operations/meetings-folder-structure.md
+    semantic_profile: meetings
+
+  knowledge:
+    keywords:
+      - knowledge
+      - fact
+      - information
+      - learn
+      - research
+    capability: Knowledge Management
+    description: Knowledge base, facts, research ingestion
+    entry_points:
+      scripts:
+        - N5/scripts/knowledge_ingest.py
+      data:
+        - Knowledge/
+      reference:
+        - Knowledge/architectural/ingestion_standards.md
+    semantic_profile: content-library
+
+  lists:
+    keywords:
+      - list
+      - task
+      - todo
+      - item
+      - track
+    capability: Lists System
+    description: JSONL-based list management
+    entry_points:
+      scripts:
+        - N5/scripts/lists_health_check.py
+      data:
+        - Lists/
+      reference:
+        - Lists/POLICY.md
+
+# =============================================================================
+# USER OVERRIDES
+# Loaded from separate file for clean separation
+# =============================================================================
+overrides_file: N5/config/user_overrides.yaml

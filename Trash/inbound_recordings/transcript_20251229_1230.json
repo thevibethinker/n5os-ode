@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-12-29T12:30:00-05:00",
-  "source": "SMS",
-  "content": "I want you to take this transcript and I want you to create a folder in root called inbound recordings and store the entirety of this transcript in there as a toon blob. If you cannot do toon standard, do .json. text me when you are done with a link to the file in local that I can click on my phone",
-  "metadata": {
-    "sender": "+18578693264",
-    "type": "transcript_request"
-  }
-}

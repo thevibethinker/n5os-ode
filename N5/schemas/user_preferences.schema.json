@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/user_preferences.schema.json",
+  "title": "N5 User Preferences Hub Schema",
+  "description": "Schema for validating the user_preferences.yaml hub file",
+  "type": "object",
+  "required": ["version", "precedence", "core", "modules", "contexts"],
+  "additionalProperties": true,
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the preferences schema"
+    },
+    "last_modified": {
+      "type": "string",
+      "format": "date",
+      "description": "Last modification date (YYYY-MM-DD)"
+    },
+    "precedence": {
+      "type": "array",
+      "description": "Governance hierarchy from highest to lowest precedence",
+      "items": {
+        "type": "string",
+        "enum": ["folder_policy", "safety_rules", "user_overrides", "module_defaults", "global_defaults"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "core": {
+      "type": "object",
+      "description": "Core preferences always loaded",
+      "properties": {
+        "timezone": {
+          "type": "object",
+          "properties": {
+            "storage": {"type": "string"},
+            "display": {"type": "string"}
+          }
+        },
+        "military_time": {"type": "boolean"},
+        "sandbox_first": {"type": "boolean"},
+        "dry_run_default": {"type": "boolean"},
+        "requires_explicit_consent": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "modules": {
+      "type": "object",
+      "description": "Registry of all preference modules",
+      "additionalProperties": {
+        "$ref": "#/$defs/module"
+      }
+    },
+    "contexts": {
+      "type": "object",
+      "description": "Pre-defined module bundles for common operations",
+      "additionalProperties": {
+        "$ref": "#/$defs/context"
+      }
+    },
+    "overrides_file": {
+      "type": "string",
+      "description": "Path to user overrides file"
+    }
+  },
+  "$defs": {
+    "module": {
+      "type": "object",
+      "required": ["path", "load", "priority"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Relative path to module file from workspace root"
+        },
+        "load": {
+          "oneOf": [
+            {"type": "string", "const": "always"},
+            {"type": "array", "items": {"type": "string"}}
+          ],
+          "description": "When to load: 'always' or array of context names"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"],
+          "description": "Module priority level"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of what this module contains"
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "Whether this module is deprecated"
+        },
+        "replacement": {
+          "type": "string",
+          "description": "Path to replacement module if deprecated"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": ["load"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of when to use this context"
+        },
+        "load": {
+          "oneOf": [
+            {"type": "string", "const": "all"},
+            {"type": "array", "items": {"type": "string"}}
+          ],
+          "description": "Module names to load for this context"
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
-  "analysis_date": "2025-12-30T13:07:06.975566+00:00",
-  "total_ideas_analyzed": 261,
-  "total_meetings": 78,
+  "analysis_date": "2026-01-02T13:08:33.240415+00:00",
+  "total_ideas_analyzed": 233,
+  "total_meetings": 71,
   "recurring_themes": [
     {
       "theme": "recruiting_future",
-      "meeting_count": 55,
-      "idea_count": 116,
+      "meeting_count": 51,
+      "idea_count": 99,
       "recent_examples": [
         {
           "title": "The \"Problem Stack\" Abstraction",
@@ -33,21 +33,21 @@
           "date": "2025-12-26"
         },
         {
-          "title": "Artificial Gap Closing",
-          "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative en...",
-          "meeting": "2025-12-23_2025-12-23-Melhrubingmailcom",
+          "title": "Signal as Data:",
+          "idea": "The idea that the *act* of a candidate being willing to complete a Careerspan story is itself a higher-fidelity signal than any text they actually produce.",
+          "meeting": "2025-12-23_2025-12-23-Davisteamworkonlinecom",
           "date": "2025-12-23"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-02",
+        "earliest": "2025-12-04",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "uncategorized",
-      "meeting_count": 39,
-      "idea_count": 49,
+      "meeting_count": 35,
+      "idea_count": 43,
       "recent_examples": [
         {
           "title": "Semantic vs. Syntactic Identity",
@@ -68,27 +68,27 @@
           "date": "2025-12-26"
         },
         {
-          "title": "Model Asymmetry:",
-          "idea": "The idea that using \"the absolute dumbest models\" (4o-mini) in multiple small steps can produce a more \"intelligent\" and certainly more resilient output than single-shot high-end models.",
-          "meeting": "2025-12-23_davisteamworkonlinecom",
-          "date": "2025-12-23"
-        },
-        {
           "title": "Low-Fidelity Architecture Strength:",
           "idea": "Building sophisticated outputs from \"dumb\" mini-models to ensure architecture resilience—counter-intuitive in an era where everyone is rushing toward the most expensive, frontier models.",
           "meeting": "2025-12-23_2025-12-23-Davisteamworkonlinecom",
           "date": "2025-12-23"
+        },
+        {
+          "title": "Model Asymmetry:",
+          "idea": "The idea that using \"the absolute dumbest models\" (4o-mini) in multiple small steps can produce a more \"intelligent\" and certainly more resilient output than single-shot high-end models.",
+          "meeting": "2025-12-23_davisteamworkonlinecom",
+          "date": "2025-12-23"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-01",
+        "earliest": "2025-12-04",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "founder_life",
-      "meeting_count": 38,
-      "idea_count": 47,
+      "meeting_count": 33,
+      "idea_count": 41,
       "recent_examples": [
         {
           "title": "Artificial Gap Closing",
@@ -97,15 +97,15 @@
           "date": "2025-12-23"
         },
         {
-          "title": "The \"Manual-to-Product\" Debt",
-          "idea": "The strategic risk/opportunity of founders who sell a manual methodology as software (selling the \"fucking product\" before it exists). It creates immediate PMF but massive engineering debt and a high-...",
-          "meeting": "2025-12-22_2025-12-22-Rochelmycareerspancom",
-          "date": "2025-12-22"
-        },
-        {
           "title": "The \"Recruiter Commission\" Democratization",
           "idea": "Instead of building tools *for* recruiters, Careerspan's pivot suggests that the real opportunity is *making everyone else a recruiter* by providing them with the data superiority required to claim a ...",
           "meeting": "2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
+          "date": "2025-12-22"
+        },
+        {
+          "title": "The \"Manual-to-Product\" Debt",
+          "idea": "The strategic risk/opportunity of founders who sell a manual methodology as software (selling the \"fucking product\" before it exists). It creates immediate PMF but massive engineering debt and a high-...",
+          "meeting": "2025-12-22_2025-12-22-Rochelmycareerspancom",
           "date": "2025-12-22"
         },
         {
@@ -115,21 +115,21 @@
           "date": "2025-12-19"
         },
         {
-          "title": "The \"Business Journaling\" Pivot: Interstitial Data Harvesting",
-          "idea": "The transcript explores the fundamental tension between high-fidelity data collection and user friction. A provocative alternative emerged: **\"Business Journaling.\"** Instead of a high-stakes, one-tim...",
-          "meeting": "2025-12-19_ilsetheapplyai",
+          "title": "\"Sexy vs. Cheap\" as a Strategic Pivot",
+          "idea": "The conscious decision to ignore unit economics (OpenAI costs) in favor of high-friction removal. It suggests a thesis that in the current AI market, user delight and perceived \"magic\" (sexiness) are ...",
+          "meeting": "2025-12-19_ilse_x_vrijen_sync",
           "date": "2025-12-19"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-01",
+        "earliest": "2025-12-04",
         "latest": "2025-12-23"
       }
     },
     {
       "theme": "product_strategy",
-      "meeting_count": 36,
-      "idea_count": 52,
+      "meeting_count": 32,
+      "idea_count": 46,
       "recent_examples": [
         {
           "title": "Productivity as \"Home\":",
@@ -150,27 +150,27 @@
           "date": "2025-12-19"
         },
         {
-          "title": "The \"Business Journaling\" Pivot: Interstitial Data Harvesting",
-          "idea": "The transcript explores the fundamental tension between high-fidelity data collection and user friction. A provocative alternative emerged: **\"Business Journaling.\"** Instead of a high-stakes, one-tim...",
-          "meeting": "2025-12-19_ilsetheapplyai",
+          "title": "\"Sexy vs. Cheap\" as a Strategic Pivot",
+          "idea": "The conscious decision to ignore unit economics (OpenAI costs) in favor of high-friction removal. It suggests a thesis that in the current AI market, user delight and perceived \"magic\" (sexiness) are ...",
+          "meeting": "2025-12-19_ilse_x_vrijen_sync",
           "date": "2025-12-19"
         },
         {
-          "title": "High-Fidelity/High-Standard Paradox",
-          "idea": "There is an identified \"intrinsic tension\" between collecting high-fidelity information and maintaining a viable user experience. The strategic \"weirdness\" here is the realization that to solve for sp...",
+          "title": "The \"Business Journaling\" Pivot: Interstitial Data Harvesting",
+          "idea": "The transcript explores the fundamental tension between high-fidelity data collection and user friction. A provocative alternative emerged: **\"Business Journaling.\"** Instead of a high-stakes, one-tim...",
           "meeting": "2025-12-19_ilsetheapplyai",
           "date": "2025-12-19"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-01",
+        "earliest": "2025-12-04",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "personal_growth",
-      "meeting_count": 34,
-      "idea_count": 47,
+      "meeting_count": 32,
+      "idea_count": 45,
       "recent_examples": [
         {
           "title": "Productivity as \"Home\":",
@@ -204,14 +204,14 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-02",
+        "earliest": "2025-12-04",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "community_network",
-      "meeting_count": 26,
-      "idea_count": 29,
+      "meeting_count": 23,
+      "idea_count": 26,
       "recent_examples": [
         {
           "title": "Latency in Trust Networks",
@@ -232,27 +232,27 @@
           "date": "2025-12-23"
         },
         {
-          "title": "Data Supremacy vs. Commodity Scraping",
-          "idea": "The idea that most data companies are structurally destined for failure because they lack a proprietary source or unique \"supremacy,\" essentially just repackaging the same public LinkedIn graph until ...",
-          "meeting": "2025-12-22_2025-12-22-Rochelmycareerspancom",
-          "date": "2025-12-22"
-        },
-        {
           "title": "Non-Adversarial Hiring as a Solution to Bias",
           "idea": "V implies that the \"bias talk\" in HR tech has been eclipsed by a more fundamental problem: the adversarial nature of the application process. By making the interface a career coaching tool first, the ...",
           "meeting": "2025-12-22_Christine-Song-Ribbon-Partnership-Sync",
           "date": "2025-12-22"
+        },
+        {
+          "title": "Data Supremacy vs. Commodity Scraping",
+          "idea": "The idea that most data companies are structurally destined for failure because they lack a proprietary source or unique \"supremacy,\" essentially just repackaging the same public LinkedIn graph until ...",
+          "meeting": "2025-12-22_2025-12-22-Rochelmycareerspancom",
+          "date": "2025-12-22"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-01",
+        "earliest": "2025-12-04",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "ai_replacement",
-      "meeting_count": 22,
-      "idea_count": 28,
+      "meeting_count": 20,
+      "idea_count": 25,
       "recent_examples": [
         {
           "title": "The \"Problem Stack\" Abstraction",
@@ -279,21 +279,21 @@
           "date": "2025-12-22"
         },
         {
-          "title": "Conversational Scoping:",
-          "idea": "Tejas’s idea of an AI that listens to a \"lobby\" of voices and automatically spins up a \"Strategy Room\" or \"Scope of Work\" removes the friction of documentation. How does this change the speed of movin...",
-          "meeting": "2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
+          "title": "The \"Backend-as-a-Service\" Pivot",
+          "idea": "If distribution shifts entirely to Chat interfaces (ChatGPT/Claude Apps), the value of B2B SaaS shifts from the UI to the \"Agentic File System\" and proprietary business logic. Careerspan becomes a \"Pu...",
+          "meeting": "2025-12-18_2025-12-18-Intro-Meeting---Alpic-Erica-Vrijen-Attawar",
           "date": "2025-12-18"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-02",
+        "earliest": "2025-12-04",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "ai_philosophy",
-      "meeting_count": 17,
-      "idea_count": 19,
+      "meeting_count": 14,
+      "idea_count": 16,
       "recent_examples": [
         {
           "title": "Hiring as a Diet",
@@ -314,27 +314,27 @@
           "date": "2025-12-19"
         },
         {
-          "title": "The \"Rote\" Inversion",
-          "idea": "The idea that the larger a company becomes, the more its hiring becomes \"rote,\" creating a massive value-gap for \"semantic intelligence\" that big players like Workday cannot easily fill due to archite...",
-          "meeting": "2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
-          "date": "2025-12-18"
-        },
-        {
           "title": "The Career Coach as the \"Trojan Horse\" for Truth",
           "idea": "Traditional interviews are a \"bad compromise between getting to know someone and evaluating them\"—candidates are guarded and performative. By contrast, a *coaching* interaction encourages vulnerabilit...",
           "meeting": "2025-12-18_2025-12-18-Danielveridueai",
           "date": "2025-12-18"
+        },
+        {
+          "title": "The \"Rote\" Inversion",
+          "idea": "The idea that the larger a company becomes, the more its hiring becomes \"rote,\" creating a massive value-gap for \"semantic intelligence\" that big players like Workday cannot easily fill due to archite...",
+          "meeting": "2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
+          "date": "2025-12-18"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-02",
+        "earliest": "2025-12-04",
         "latest": "2025-12-23"
       }
     },
     {
       "theme": "pricing_business",
-      "meeting_count": 14,
-      "idea_count": 14,
+      "meeting_count": 13,
+      "idea_count": 13,
       "recent_examples": [
         {
           "title": "Provocation",
@@ -368,7 +368,7 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-02",
+        "earliest": "2025-12-04",
         "latest": "2025-12-19"
       }
     }
@@ -402,13 +402,13 @@
           "date": "2025-12-26"
         },
         {
-          "title": "Artificial Gap Closing",
-          "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative en...",
-          "meeting": "2025-12-23_2025-12-23-Melhrubingmailcom",
+          "title": "Signal as Data:",
+          "idea": "The idea that the *act* of a candidate being willing to complete a Careerspan story is itself a higher-fidelity signal than any text they actually produce.",
+          "meeting": "2025-12-23_2025-12-23-Davisteamworkonlinecom",
           "date": "2025-12-23"
         }
       ],
-      "span_days": 24
+      "span_days": 22
     },
     {
       "theme": "uncategorized",
@@ -432,19 +432,19 @@
           "date": "2025-12-26"
         },
         {
-          "title": "Model Asymmetry:",
-          "idea": "The idea that using \"the absolute dumbest models\" (4o-mini) in multiple small steps can produce a more \"intelligent\" and certainly more resilient output than single-shot high-end models.",
-          "meeting": "2025-12-23_davisteamworkonlinecom",
-          "date": "2025-12-23"
-        },
-        {
           "title": "Low-Fidelity Architecture Strength:",
           "idea": "Building sophisticated outputs from \"dumb\" mini-models to ensure architecture resilience—counter-intuitive in an era where everyone is rushing toward the most expensive, frontier models.",
           "meeting": "2025-12-23_2025-12-23-Davisteamworkonlinecom",
           "date": "2025-12-23"
+        },
+        {
+          "title": "Model Asymmetry:",
+          "idea": "The idea that using \"the absolute dumbest models\" (4o-mini) in multiple small steps can produce a more \"intelligent\" and certainly more resilient output than single-shot high-end models.",
+          "meeting": "2025-12-23_davisteamworkonlinecom",
+          "date": "2025-12-23"
         }
       ],
-      "span_days": 25
+      "span_days": 22
     },
     {
       "theme": "founder_life",
@@ -456,15 +456,15 @@
           "date": "2025-12-23"
         },
         {
-          "title": "The \"Manual-to-Product\" Debt",
-          "idea": "The strategic risk/opportunity of founders who sell a manual methodology as software (selling the \"fucking product\" before it exists). It creates immediate PMF but massive engineering debt and a high-...",
-          "meeting": "2025-12-22_2025-12-22-Rochelmycareerspancom",
-          "date": "2025-12-22"
-        },
-        {
           "title": "The \"Recruiter Commission\" Democratization",
           "idea": "Instead of building tools *for* recruiters, Careerspan's pivot suggests that the real opportunity is *making everyone else a recruiter* by providing them with the data superiority required to claim a ...",
           "meeting": "2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
+          "date": "2025-12-22"
+        },
+        {
+          "title": "The \"Manual-to-Product\" Debt",
+          "idea": "The strategic risk/opportunity of founders who sell a manual methodology as software (selling the \"fucking product\" before it exists). It creates immediate PMF but massive engineering debt and a high-...",
+          "meeting": "2025-12-22_2025-12-22-Rochelmycareerspancom",
           "date": "2025-12-22"
         },
         {
@@ -474,13 +474,13 @@
           "date": "2025-12-19"
         },
         {
-          "title": "The \"Business Journaling\" Pivot: Interstitial Data Harvesting",
-          "idea": "The transcript explores the fundamental tension between high-fidelity data collection and user friction. A provocative alternative emerged: **\"Business Journaling.\"** Instead of a high-stakes, one-tim...",
-          "meeting": "2025-12-19_ilsetheapplyai",
+          "title": "\"Sexy vs. Cheap\" as a Strategic Pivot",
+          "idea": "The conscious decision to ignore unit economics (OpenAI costs) in favor of high-friction removal. It suggests a thesis that in the current AI market, user delight and perceived \"magic\" (sexiness) are ...",
+          "meeting": "2025-12-19_ilse_x_vrijen_sync",
           "date": "2025-12-19"
         }
       ],
-      "span_days": 22
+      "span_days": 19
     },
     {
       "theme": "product_strategy",
@@ -504,19 +504,19 @@
           "date": "2025-12-19"
         },
         {
+          "title": "\"Sexy vs. Cheap\" as a Strategic Pivot",
+          "idea": "The conscious decision to ignore unit economics (OpenAI costs) in favor of high-friction removal. It suggests a thesis that in the current AI market, user delight and perceived \"magic\" (sexiness) are ...",
+          "meeting": "2025-12-19_ilse_x_vrijen_sync",
+          "date": "2025-12-19"
+        },
+        {
           "title": "The \"Business Journaling\" Pivot: Interstitial Data Harvesting",
           "idea": "The transcript explores the fundamental tension between high-fidelity data collection and user friction. A provocative alternative emerged: **\"Business Journaling.\"** Instead of a high-stakes, one-tim...",
           "meeting": "2025-12-19_ilsetheapplyai",
           "date": "2025-12-19"
-        },
-        {
-          "title": "High-Fidelity/High-Standard Paradox",
-          "idea": "There is an identified \"intrinsic tension\" between collecting high-fidelity information and maintaining a viable user experience. The strategic \"weirdness\" here is the realization that to solve for sp...",
-          "meeting": "2025-12-19_ilsetheapplyai",
-          "date": "2025-12-19"
         }
       ],
-      "span_days": 25
+      "span_days": 22
     },
     {
       "theme": "personal_growth",
@@ -552,18 +552,18 @@
           "date": "2025-12-23"
         }
       ],
-      "span_days": 24
+      "span_days": 22
     }
   ],
   "theme_distribution": {
-    "ai_replacement": 28,
-    "recruiting_future": 116,
-    "uncategorized": 49,
-    "community_network": 29,
-    "product_strategy": 52,
-    "personal_growth": 47,
-    "founder_life": 47,
-    "ai_philosophy": 19,
-    "pricing_business": 14
+    "ai_replacement": 25,
+    "recruiting_future": 99,
+    "uncategorized": 43,
+    "community_network": 26,
+    "product_strategy": 46,
+    "personal_growth": 45,
+    "founder_life": 41,
+    "ai_philosophy": 16,
+    "pricing_business": 13
   }
 }
