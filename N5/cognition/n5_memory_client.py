@@ -8,6 +8,11 @@ import re
 import time
 from typing import List, Dict, Optional, Tuple, Any
 import numpy as np
+import sys
+
+# Add N5 lib to path for imports
+sys.path.insert(0, '/home/workspace')
+from N5.lib.paths import BRAIN_DB, BRAIN_HNSW_INDEX
 
 # Try importing OpenAI, handle failure gracefully
 try:
@@ -44,14 +49,14 @@ try:
 except ImportError:
     HAS_HNSWLIB = False
 
-ANN_INDEX_PATH = "/home/workspace/N5/cognition/brain.hnsw"
+ANN_INDEX_PATH = str(BRAIN_HNSW_INDEX)
 
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger("n5_memory_client")
 
 
 class N5MemoryClient:
-    def __init__(self, db_path: str = "/home/workspace/N5/cognition/brain.db"):
+    def __init__(self, db_path: str = str(BRAIN_DB)):
         self.db_path = db_path
         self._conn = None
         self.provider = os.getenv("N5_EMBEDDING_PROVIDER", "local") # 'local' or 'openai'
@@ -90,6 +95,20 @@ class N5MemoryClient:
             "voice-guides": {
                 "path_prefixes": [
                     "/home/workspace/N5/prefs/communication/",
+                ]
+            },
+            "wellness": {
+                "path_prefixes": [
+                    "/home/workspace/Personal/Health/",
+                    "/home/workspace/Personal/Health/WorkoutTracker/",
+                    "/home/workspace/Personal/Health/protocols/",
+                    "/home/workspace/Personal/Health/stack/",
+                ]
+            },
+            "capabilities": {
+                "path_prefixes": [
+                    "/home/workspace/N5/capabilities/",
+                    "/home/workspace/Prompts/",
                 ]
             },
         }
@@ -586,11 +605,16 @@ class N5MemoryClient:
                     'similarity': float(similarity)
                 })
         
-        # Compute BM25 scores for hybrid search
+        # Compute BM25 scores for hybrid search - OPTIMIZED: only for top-K candidates
+        # Computing BM25 for all results is O(n) tokenization; limit to top semantic matches
         bm25_scores = {}
         if use_hybrid and HAS_BM25 and raw_results:
-            bm25_scores = self._compute_bm25_scores(query, raw_results)
-        
+            # Sort by semantic similarity first, take top candidates for BM25
+            bm25_candidate_count = max(limit * 3, rerank_top_k) if use_reranker else limit * 3
+            sorted_by_similarity = sorted(raw_results, key=lambda x: x['similarity'], reverse=True)
+            bm25_candidates = sorted_by_similarity[:bm25_candidate_count]
+            bm25_scores = self._compute_bm25_scores(query, bm25_candidates)
+
         # Combine scores
         results = []
         for r in raw_results:

@@ -21,6 +21,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 
+# Add workspace to path for N5 lib imports
+sys.path.insert(0, '/home/workspace')
+from N5.lib.db import get_crm_db, crm_transaction
+from N5.lib.paths import CRM_DB
+
 # Google imports
 try:
     from google.oauth2 import service_account
@@ -34,7 +39,7 @@ except ImportError:
 # Configuration
 CONFIG_PATH = '/home/workspace/N5/config/calendar_webhook.yaml'
 CREDENTIALS_PATH = '/home/workspace/N5/config/credentials/google_service_account.json'
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
+DB_PATH = str(CRM_DB)  # Use centralized path
 SCOPES = ['https://www.googleapis.com/auth/calendar.events.readonly']
 WEBHOOK_METADATA_PATH = '/home/workspace/N5/data/webhook_metadata.json'
 
@@ -166,33 +171,32 @@ def load_webhook_metadata():
         return json.load(f)
 
 
-def update_webhook_health(channel_id=None, resource_id=None, 
+def update_webhook_health(channel_id=None, resource_id=None,
                          expiration_ms=None, last_received_at=None):
     """
     Update or create webhook health record in database.
-    
+
     Args:
         channel_id (str): Channel ID from Google
         resource_id (str): Resource ID from Google
         expiration_ms (int): Expiration timestamp in milliseconds
         last_received_at (datetime): Last notification received time
     """
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    
-    try:
+    with crm_transaction() as conn:
+        c = conn.cursor()
+
         # Check if record exists
         c.execute("""
             SELECT id FROM webhook_health
             WHERE service = 'google_calendar'
         """)
         result = c.fetchone()
-        
+
         if result:
             # Update existing
             c.execute("""
                 UPDATE webhook_health
-                SET 
+                SET
                     channel_id = COALESCE(?, channel_id),
                     resource_id = COALESCE(?, resource_id),
                     expiration_time = COALESCE(?, expiration_time),
@@ -205,19 +209,12 @@ def update_webhook_health(channel_id=None, resource_id=None,
             # Insert new
             c.execute("""
                 INSERT INTO webhook_health
-                (service, channel_id, resource_id, expiration_time, 
+                (service, channel_id, resource_id, expiration_time,
                  last_received_at, last_renewal_at, status)
                 VALUES ('google_calendar', ?, ?, ?, ?, datetime('now'), 'ACTIVE')
             """, (channel_id, resource_id, expiration_ms, last_received_at))
-        
-        conn.commit()
+
         logger.debug("Updated webhook health record")
-        
-    except Exception as e:
-        logger.error(f"Failed to update webhook health: {e}")
-        raise
-    finally:
-        conn.close()
 
 
 def validate_webhook_endpoint(url):
@@ -255,8 +252,8 @@ def validate_webhook_endpoint(url):
 
 
 def get_db_connection():
-    """Get database connection"""
-    return sqlite3.connect(DB_PATH)
+    """Get database connection (pooled - connection is reused)"""
+    return get_crm_db()
 
 
 def send_sms_alert(message):
@@ -314,15 +311,15 @@ def display_instructions():
 def get_or_create_profile(email: str, name: str, source: str = 'calendar') -> int:
     """
     Get existing profile or create new one.
-    
+
     Args:
         email: Contact email address
         name: Contact name
         source: Source system (default: 'calendar')
-        
+
     Returns:
         int: profile_id
-        
+
     Behavior:
         1. Query profiles table for existing email
         2. If found, return existing profile_id
@@ -332,45 +329,49 @@ def get_or_create_profile(email: str, name: str, source: str = 'calendar') -> in
            c. INSERT INTO profiles
            d. Return new profile_id
     """
-    conn = sqlite3.connect(DB_PATH)
+    # First check if profile exists (read-only, no transaction needed)
+    conn = get_crm_db()
     c = conn.cursor()
-    
-    try:
-        # Check for existing profile
+    c.execute("SELECT id FROM profiles WHERE email = ?", (email,))
+    result = c.fetchone()
+
+    if result:
+        profile_id = result[0]
+        logger.debug(f"Found existing profile {profile_id} for {email}")
+        return profile_id
+
+    # Create new profile - use transaction for write operations
+    with crm_transaction() as conn:
+        c = conn.cursor()
+
+        # Double-check in case of race condition
         c.execute("SELECT id FROM profiles WHERE email = ?", (email,))
         result = c.fetchone()
-        
         if result:
-            profile_id = result[0]
-            logger.debug(f"Found existing profile {profile_id} for {email}")
-            return profile_id
-        
-        # Create new profile
+            return result[0]
+
         # Generate YAML path: FirstName_LastName_emailprefix.yaml
         name_parts = name.strip().split()
         first_name = name_parts[0] if name_parts else "Unknown"
         last_name = name_parts[-1] if len(name_parts) > 1 else ""
         email_prefix = email.split('@')[0] if '@' in email else email[:20]
-        
+
         # Sanitize filename parts
-        first_clean = "".join(c for c in first_name if c.isalnum() or c in " -_")
-        last_clean = "".join(c for c in last_name if c.isalnum() or c in " -_")
-        prefix_clean = "".join(c for c in email_prefix if c.isalnum() or c in "-_")
-        
+        first_clean = "".join(ch for ch in first_name if ch.isalnum() or ch in " -_")
+        last_clean = "".join(ch for ch in last_name if ch.isalnum() or ch in " -_")
+        prefix_clean = "".join(ch for ch in email_prefix if ch.isalnum() or ch in "-_")
+
         if last_clean:
-            # Full name: FirstName_LastName_emailprefix.yaml
             yaml_filename = f"{first_clean}_{last_clean}_{prefix_clean}.yaml"
         else:
-            # No last name: use only email prefix to avoid duplication
-            # (e.g., "Bogomil" + "bogomil@..." would create "Bogomil_bogomil.yaml")
             yaml_filename = f"{prefix_clean}.yaml"
-        
+
         yaml_path = f"N5/crm_v3/profiles/{yaml_filename}"
         full_yaml_path = f"/home/workspace/{yaml_path}"
-        
+
         # Create stub YAML file
         os.makedirs(os.path.dirname(full_yaml_path), exist_ok=True)
-        
+
         today = datetime.now().strftime("%Y-%m-%d")
         stub_content = f"""---
 created: {today}
@@ -397,31 +398,22 @@ relationship_strength: weak
 
 *Awaiting enrichment.*
 """
-        
+
         with open(full_yaml_path, 'w') as f:
             f.write(stub_content)
-        
+
         logger.debug(f"Created stub profile YAML at {yaml_path}")
-        
+
         # Insert into database
         c.execute("""
-            INSERT INTO profiles 
+            INSERT INTO profiles
             (email, name, yaml_path, source, enrichment_status, profile_quality)
             VALUES (?, ?, ?, ?, 'pending', 'stub')
         """, (email, name, yaml_path, source))
-        
+
         profile_id = c.lastrowid
-        conn.commit()
-        
         logger.info(f"Created new profile {profile_id} for {email}")
         return profile_id
-        
-    except Exception as e:
-        logger.error(f"Failed to get/create profile for {email}: {e}")
-        conn.rollback()
-        raise
-    finally:
-        conn.close()
 
 
 def schedule_enrichment_job(
@@ -434,7 +426,7 @@ def schedule_enrichment_job(
 ) -> int:
     """
     Queue enrichment job for profile.
-    
+
     Args:
         profile_id: Profile database ID
         scheduled_for: ISO datetime string (when to process)
@@ -442,53 +434,56 @@ def schedule_enrichment_job(
         priority: 1-100 (higher = sooner, 75 for checkpoint_1, 100 for checkpoint_2)
         trigger_source: 'calendar' | 'gmail' | 'manual'
         trigger_metadata: JSON string with additional context (optional)
-        
+
     Returns:
         int: job_id (enrichment_queue.id)
-        
+
     Behavior:
         1. Check if duplicate job exists (same profile_id, checkpoint, status='queued')
         2. If duplicate exists, return existing job_id (don't create duplicate)
         3. If no duplicate, INSERT new job and return job_id
     """
-    conn = sqlite3.connect(DB_PATH)
+    # Check for duplicate first (read-only)
+    conn = get_crm_db()
     c = conn.cursor()
-    
-    try:
-        # Check for duplicate job
+    c.execute("""
+        SELECT id FROM enrichment_queue
+        WHERE profile_id = ?
+          AND checkpoint = ?
+          AND status = 'queued'
+    """, (profile_id, checkpoint))
+
+    result = c.fetchone()
+    if result:
+        job_id = result[0]
+        logger.debug(f"Duplicate job found: {job_id} for profile {profile_id}, checkpoint {checkpoint}")
+        return job_id
+
+    # Create new job with transaction
+    with crm_transaction() as conn:
+        c = conn.cursor()
+
+        # Double-check for race condition
         c.execute("""
             SELECT id FROM enrichment_queue
             WHERE profile_id = ?
               AND checkpoint = ?
               AND status = 'queued'
         """, (profile_id, checkpoint))
-        
+
         result = c.fetchone()
-        
         if result:
-            job_id = result[0]
-            logger.debug(f"Duplicate job found: {job_id} for profile {profile_id}, checkpoint {checkpoint}")
-            return job_id
-        
-        # Create new job
+            return result[0]
+
         c.execute("""
             INSERT INTO enrichment_queue
             (profile_id, scheduled_for, checkpoint, priority, trigger_source, trigger_metadata, status)
             VALUES (?, ?, ?, ?, ?, ?, 'queued')
         """, (profile_id, scheduled_for, checkpoint, priority, trigger_source, trigger_metadata))
-        
+
         job_id = c.lastrowid
-        conn.commit()
-        
         logger.info(f"Scheduled enrichment job {job_id} for profile {profile_id}, checkpoint {checkpoint}")
         return job_id
-        
-    except Exception as e:
-        logger.error(f"Failed to schedule enrichment job for profile {profile_id}: {e}")
-        conn.rollback()
-        raise
-    finally:
-        conn.close()
 
 
 def extract_event_id_from_uri(resource_uri: str) -> str:
