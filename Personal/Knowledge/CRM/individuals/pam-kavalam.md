@@ -1,7 +1,9 @@
 ---
-person_id: pam-kavalam
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_connected_at: '2025-06-19'
+linkedin_url: https://www.linkedin.com/in/pam-kavalam
+person_id: pam-kavalam
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/pam-kavalam.md) -->
@@ -33,3 +35,17 @@ last_edited: '2025-11-29'
 - [ ] Capture mutual acquaintances and map to internal contacts
 
 **Created:** 2025-10-13T05:29:02-04:00
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Pam Kavalam](https://www.linkedin.com/in/pam-kavalam)
+- **Headline:** Super Connector | Startup Advisor | Angel Squad NYC Chapter Co-Lead | Ex-Chief, ClassPass
+- **Location:** New York, New York, United States
+- **Connected:** 2025-06-19 (6 months)
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-12-16
+- **Last Message:** 2025-12-16
+- **Status:** ACTIVE

@@ -1,7 +1,8 @@
 ---
-person_id: ryan-vanderbilt
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_url: https://www.linkedin.com/in/ACoAAAItMmcBxTZWkO5oy8KdfqvhJ1WOTSfCKdQ
+person_id: ryan-vanderbilt
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/ryan-vanderbilt.md) -->
@@ -85,3 +86,15 @@ last_edited: '2025-11-29'
 - Best engaged through intellectual curiosity and shared learning
 - Don't ask for intros until relationship deepens significantly (6+ months)
 - Values depth over frequency in communication
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Ryan Vanderbilt](https://www.linkedin.com/in/ACoAAAItMmcBxTZWkO5oy8KdfqvhJ1WOTSfCKdQ)
+- **Headline:** Principal Designer at Teamshares | Prior: Walmart, Store No. 8, Google Creative Lab, Anomaly, Landor
+
+### Conversation Stats
+- **Total Messages:** 2
+- **First Message:** 2025-11-26
+- **Last Message:** 2025-11-26
+- **Status:** PENDING_RESPONSE

@@ -1,7 +1,8 @@
 ---
-person_id: ben-guo
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_url: https://www.linkedin.com/in/ACoAAAR6oE8B1GpmiVTWEdBctbRrJZwWa0MspYs
+person_id: ben-guo
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/ben-guo.md) -->
@@ -77,3 +78,15 @@ Ben Guo is a core engineer at Zo Computer, an AI-native workspace platform. He w
 ## Last Updated
 
 2025-11-02
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Ben Guo](https://www.linkedin.com/in/ACoAAAR6oE8B1GpmiVTWEdBctbRrJZwWa0MspYs)
+- **Headline:** Cofounder @ Zo | Future of software & personal computing
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-11-06
+- **Last Message:** 2025-11-06
+- **Status:** PENDING_RESPONSE

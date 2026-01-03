@@ -1,15 +1,17 @@
 ---
-name: "Ivor Stratford"
-email_primary: "ivor.stratford@morpheus-group.com"
 email_aliases: []
-organization: "Morpheus-Group"
-role: "[To be determined]"
-first_contact: "2025-12-17"
-last_updated: "2025-12-11"
-lead_type: "LD-GEN"
-status: "active"
+email_primary: ivor.stratford@morpheus-group.com
+first_contact: '2025-12-17'
 interaction_count: 1
-last_interaction: "2025-12-11"
+last_edited: '2026-01-03'
+last_interaction: '2025-12-11'
+last_updated: '2025-12-11'
+lead_type: LD-GEN
+linkedin_url: https://www.linkedin.com/in/ACoAAAO2ufEBZWQbfeyxjj9hVaYiEChtrxA33ns
+name: Ivor Stratford
+organization: Morpheus-Group
+role: '[To be determined]'
+status: active
 ---
 
 # Ivor Stratford
@@ -66,3 +68,15 @@ No emails found
 **Last email:** 2025-12-11  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Ivor Stratford](https://www.linkedin.com/in/ACoAAAO2ufEBZWQbfeyxjj9hVaYiEChtrxA33ns)
+- **Headline:** Co-Founder
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-12-11
+- **Last Message:** 2025-12-11
+- **Status:** ACTIVE

@@ -1,7 +1,9 @@
 ---
-person_id: david-speigel
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_connected_at: '2025-08-07'
+linkedin_url: https://www.linkedin.com/in/ACoAAABhuewBTdl9Me1u-_sZLbjFXBIIprz-MvQ
+person_id: david-speigel
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/david-speigel.md) -->
@@ -129,3 +131,16 @@ David is highly credible on acquisition strategy (4/5 authority level based on f
 
 **Last Updated:** 2025-10-28T09:02:35Z  
 **Created:** 2025-10-28T09:02:35Z
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [David Speigel 🔮](https://www.linkedin.com/in/ACoAAABhuewBTdl9Me1u-_sZLbjFXBIIprz-MvQ)
+- **Headline:** Product & GTM Advisor🪄Networking Coach✨
+- **Connected:** 2025-08-07 (4 months)
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-12-22
+- **Last Message:** 2025-12-22
+- **Status:** PENDING_RESPONSE

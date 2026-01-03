@@ -1,15 +1,17 @@
 ---
-name: "Griffin Seifman"
-email_primary: "griffin.seifman@rho.co"
 email_aliases: []
-organization: "Rho.Co"
-role: "[To be determined]"
-first_contact: "2025-12-15T12:00:00-05:00"
-last_updated: "2025-12-14"
-lead_type: "LD-GEN"
-status: "active"
+email_primary: griffin.seifman@rho.co
+first_contact: '2025-12-15T12:00:00-05:00'
 interaction_count: 1
-last_interaction: "2025-12-14"
+last_edited: '2026-01-03'
+last_interaction: '2025-12-14'
+last_updated: '2025-12-14'
+lead_type: LD-GEN
+linkedin_url: https://www.linkedin.com/in/griffin-seifman
+name: Griffin Seifman
+organization: Rho.Co
+role: '[To be determined]'
+status: active
 ---
 
 # Griffin Seifman
@@ -66,3 +68,15 @@ No emails found
 **Last email:** 2025-12-14  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Griffin Seifman](https://www.linkedin.com/in/griffin-seifman)
+- **Headline:** Startup Banking @ Rho
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-12-12
+- **Last Message:** 2025-12-12
+- **Status:** ACTIVE
