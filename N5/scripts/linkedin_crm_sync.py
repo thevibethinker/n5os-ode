@@ -23,8 +23,13 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
+# Import canonical paths
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from crm_paths import CRM_INDIVIDUALS
+
 LINKEDIN_DB = Path("/home/workspace/Knowledge/linkedin/linkedin.db")
-CRM_PROFILES_DIR = Path("/home/workspace/N5/crm_v3/profiles")
+CRM_PROFILES_DIR = CRM_INDIVIDUALS  # Canonical markdown profiles
 
 def slugify(name: str) -> str:
     """Convert name to slug format."""
@@ -68,30 +73,34 @@ def find_matching_profile(name: str) -> Optional[Path]:
     """Find CRM profile matching the name. Requires first AND last name match."""
     if not name or name == 'Unknown':
         return None
-    
+
     # Clean up name (remove emojis, special chars)
     clean_name = re.sub(r'[^\w\s]', '', name).strip()
     name_parts = clean_name.lower().split()
-    
+
     if len(name_parts) < 2:
         return None  # Need at least first and last name
-    
+
     first_name = name_parts[0]
     last_name = name_parts[-1]  # Use last part as last name
-    
+
     # Try to find profile with both first AND last name in filename
-    for profile in CRM_PROFILES_DIR.glob("*.yaml"):
-        stem_lower = profile.stem.lower()
+    for profile in CRM_PROFILES_DIR.glob("*.md"):
+        if profile.name.startswith('_'):
+            continue
+        stem_lower = profile.stem.lower().replace('-', ' ').replace('_', ' ')
         # Both first and last name must be present
         if first_name in stem_lower and last_name in stem_lower:
             return profile
-    
+
     # Try exact full name slug match
     full_slug = slugify(clean_name)
-    for profile in CRM_PROFILES_DIR.glob("*.yaml"):
-        if full_slug == profile.stem.lower().replace('_', ''):
+    for profile in CRM_PROFILES_DIR.glob("*.md"):
+        if profile.name.startswith('_'):
+            continue
+        if full_slug == profile.stem.lower().replace('_', '').replace('-', ''):
             return profile
-    
+
     return None
 
 def calculate_relationship_age(connected_at: Optional[int]) -> Optional[str]:
@@ -230,6 +239,7 @@ def main():
     
     if not CRM_PROFILES_DIR.exists():
         print(f"❌ CRM profiles directory not found: {CRM_PROFILES_DIR}")
+        print("   Run: python3 N5/scripts/crm_consolidation.py to create canonical profiles")
         return 1
     
     conn = sqlite3.connect(LINKEDIN_DB)

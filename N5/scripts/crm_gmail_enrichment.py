@@ -17,8 +17,13 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
-PROFILES_DIR = Path('/home/workspace/N5/crm_v3/profiles')
+# Import canonical paths
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from crm_paths import CRM_DB, CRM_INDIVIDUALS
+
+DB_PATH = str(CRM_DB)
+PROFILES_DIR = CRM_INDIVIDUALS  # Now uses canonical markdown profiles
 
 
 def find_profile_by_identifier(identifier: str) -> dict | None:
@@ -55,19 +60,19 @@ def get_email_from_profile(profile: dict) -> str | None:
 
 def update_profile_gmail_intel(profile_slug: str, gmail_intel: str) -> bool:
     """Update CRM profile with Gmail intelligence markdown block."""
-    
-    # Find the YAML profile
-    yaml_files = list(PROFILES_DIR.glob(f"*{profile_slug}*.yaml"))
-    if not yaml_files:
+
+    # Find the markdown profile (canonical location)
+    md_files = list(PROFILES_DIR.glob(f"*{profile_slug}*.md"))
+    if not md_files:
         # Try more aggressive matching
-        yaml_files = list(PROFILES_DIR.glob("*.yaml"))
-        yaml_files = [f for f in yaml_files if profile_slug.lower() in f.name.lower()]
-    
-    if not yaml_files:
-        print(f"  ⚠ No YAML profile found for {profile_slug}")
+        md_files = list(PROFILES_DIR.glob("*.md"))
+        md_files = [f for f in md_files if profile_slug.lower() in f.name.lower()]
+
+    if not md_files:
+        print(f"  ⚠ No profile found for {profile_slug}")
         return False
-    
-    profile_path = yaml_files[0]
+
+    profile_path = md_files[0]
     content = profile_path.read_text()
     
     # Find the Gmail Intelligence section and update it
@@ -150,47 +155,59 @@ Return ONLY the markdown block, nothing else."""
 def get_pending_gmail_enrichment(limit=20):
     """Find profiles with email but no Gmail intelligence."""
     pending = []
-    
-    for yaml_file in PROFILES_DIR.glob("*.yaml"):
+
+    for md_file in PROFILES_DIR.glob("*.md"):
         if len(pending) >= limit:
             break
-            
-        content = yaml_file.read_text()
-        
-        # Check if has valid email
+
+        if md_file.name.startswith('_'):
+            continue
+
+        content = md_file.read_text()
+
+        # Check if has valid email - look in frontmatter or body
         has_email = False
         email = None
-        for line in content.split('\n'):
-            if line.startswith('email:'):
-                email_value = line.replace('email:', '').strip().strip("'\"")
-                if email_value and '@' in email_value and 'placeholder' not in email_value.lower() and 'not yet' not in email_value.lower():
+
+        # Check frontmatter (YAML between ---)
+        if content.startswith('---'):
+            end_idx = content.find('---', 3)
+            if end_idx > 0:
+                frontmatter = content[3:end_idx]
+                for line in frontmatter.split('\n'):
+                    if 'email' in line.lower() and ':' in line:
+                        email_value = line.split(':', 1)[1].strip().strip("'\"")
+                        if email_value and '@' in email_value and 'placeholder' not in email_value.lower() and 'not yet' not in email_value.lower():
+                            has_email = True
+                            email = email_value
+                            break
+
+        # Also check body for **Email:** pattern
+        if not has_email:
+            import re
+            email_match = re.search(r'\*\*Email:\*\*\s*(\S+@\S+)', content)
+            if email_match:
+                email_value = email_match.group(1).strip()
+                if 'placeholder' not in email_value.lower():
                     has_email = True
                     email = email_value
-                    break
-        
+
         if not has_email:
             continue
-            
+
         # Check if already has Gmail intelligence
         if '### Gmail Intelligence' in content or '## Gmail Intelligence' in content:
             continue
-            
-        # Extract person_id
-        person_id = None
-        for line in content.split('\n'):
-            if line.startswith('person_id:'):
-                person_id = line.replace('person_id:', '').strip().strip("'\"")
-                break
-        
-        if not person_id:
-            person_id = yaml_file.stem
-            
+
+        # Extract person_id from frontmatter or use filename
+        person_id = md_file.stem
+
         pending.append({
             'person_id': person_id,
             'email': email,
-            'file': yaml_file.name
+            'file': md_file.name
         })
-    
+
     return pending
 
 def update_gmail_intelligence(profile_path, summary):
@@ -234,15 +251,18 @@ def main():
         pending = get_pending_gmail_enrichment(args.limit)
         print(json.dumps(pending, indent=2))
     elif args.profile and args.summary:
-        # Find the profile
-        profile_path = None
-        for yaml_file in PROFILES_DIR.glob("*.yaml"):
-            content = yaml_file.read_text()
-            if f"person_id: {args.profile}" in content or f"person_id: '{args.profile}'" in content:
-                profile_path = yaml_file
-                break
-        
-        if not profile_path:
+        # Find the profile (try exact match first, then search)
+        profile_path = PROFILES_DIR / f"{args.profile}.md"
+        if not profile_path.exists():
+            # Search for matching profile
+            for md_file in PROFILES_DIR.glob("*.md"):
+                if args.profile.lower() in md_file.stem.lower():
+                    profile_path = md_file
+                    break
+            else:
+                profile_path = None
+
+        if not profile_path or not profile_path.exists():
             print(f"✗ Profile not found: {args.profile}")
             return
             

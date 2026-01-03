@@ -26,10 +26,17 @@ sys.path.insert(0, '/home/workspace')
 from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
 from N5.scripts.stakeholder_intel import extract_linkedin_metadata, query_linkedin_conversation
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
-PROFILES_DIR = '/home/workspace/N5/crm_v3/profiles'
+# Import canonical paths
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).parent))
+from crm_paths import CRM_INDIVIDUALS, CRM_DB
+
+# Note: enrichment_queue lives in crm_v3.db (has queue-specific tables)
+# Output goes to canonical CRM_MARKDOWN_DIR
+DB_PATH = '/home/workspace/N5/data/crm_v3.db'  # Enrichment queue DB
+PROFILES_DIR = '/home/workspace/N5/crm_v3/profiles'  # Legacy YAML (for queue lookups)
 WORKSPACE = Path("/home/workspace")
-CRM_MARKDOWN_DIR = WORKSPACE / "Personal" / "Knowledge" / "CRM" / "individuals"
+CRM_MARKDOWN_DIR = CRM_INDIVIDUALS  # Canonical output location
 STAGING_DIR = WORKSPACE / "N5" / "data" / "staging" / "aviato"
 
 
