@@ -212,24 +212,28 @@ class N5MemoryClient:
                 LOG.warning(f"Could not load cross-encoder: {e}")
                 self.cross_encoder = None
 
-    def _load_ann_index(self) -> bool:
-        """Load the pre-built HNSW index if available."""
+    def _load_ann_index(self, check_freshness: bool = True) -> bool:
+        """Load the pre-built HNSW index if available.
+
+        Args:
+            check_freshness: If True, check index freshness and log warnings
+        """
         if not HAS_HNSWLIB:
             LOG.warning("hnswlib not installed, falling back to brute-force")
             return False
-        
+
         index_path = ANN_INDEX_PATH
         mapping_path = ANN_INDEX_PATH + ".ids"
-        
+
         if not os.path.exists(index_path) or not os.path.exists(mapping_path):
             LOG.info("ANN index not found, will use brute-force search")
             return False
-        
+
         try:
             # Load block_id mapping
             with open(mapping_path, 'r') as f:
                 self.ann_block_ids = json.load(f)
-            
+
             # Detect dimension from first vector in DB
             cursor = self._get_db().cursor()
             cursor.execute("SELECT embedding FROM vectors LIMIT 1")
@@ -237,18 +241,150 @@ class N5MemoryClient:
             if not row:
                 return False
             dim = len(np.frombuffer(row[0], dtype=np.float32))
-            
+
             # Load index
             self.ann_index = hnswlib.Index(space='cosine', dim=dim)
             self.ann_index.load_index(index_path)
             self.ann_index.set_ef(100)  # Search accuracy parameter
             LOG.info(f"ANN index loaded: {len(self.ann_block_ids)} vectors, dim={dim}")
+
+            # Check freshness if requested
+            if check_freshness:
+                freshness = self.check_index_freshness()
+                if freshness and freshness.get('needs_rebuild'):
+                    LOG.warning(f"ANN index is stale: {freshness.get('drift_pct', 0):.1f}% drift "
+                               f"({freshness.get('missing_count', 0)} missing, "
+                               f"{freshness.get('orphan_count', 0)} orphan)")
+
             return True
         except Exception as e:
             LOG.warning(f"Failed to load ANN index: {e}")
             self.ann_index = None
             self.ann_block_ids = []
             return False
+
+    def check_index_freshness(self) -> Optional[Dict[str, Any]]:
+        """Check if ANN index is fresh compared to database.
+
+        Returns:
+            Dict with freshness metrics:
+            - index_count: Number of vectors in index
+            - db_count: Number of vectors in database
+            - missing_count: Vectors in DB but not in index
+            - orphan_count: Vectors in index but not in DB
+            - drift_pct: Percentage of vectors that are mismatched
+            - index_mtime: When index file was last modified
+            - latest_indexed: Latest last_indexed_at from resources
+            - needs_rebuild: True if drift exceeds threshold (5%)
+            - stale_reason: Human-readable reason if stale
+        """
+        if not self.ann_block_ids:
+            return None
+
+        index_path = ANN_INDEX_PATH
+        if not os.path.exists(index_path):
+            return None
+
+        try:
+            cursor = self._get_db().cursor()
+
+            # Get DB vector count and block_ids
+            cursor.execute("SELECT block_id FROM vectors")
+            db_block_ids = set(row[0] for row in cursor.fetchall())
+
+            # Get latest indexed timestamp
+            cursor.execute("SELECT MAX(last_indexed_at) FROM resources")
+            row = cursor.fetchone()
+            latest_indexed = row[0] if row else None
+
+            # Compare with index
+            index_block_ids = set(self.ann_block_ids)
+            missing = db_block_ids - index_block_ids  # In DB but not in index
+            orphans = index_block_ids - db_block_ids  # In index but not in DB
+
+            index_count = len(index_block_ids)
+            db_count = len(db_block_ids)
+            total = max(index_count, db_count, 1)
+            drift_pct = (len(missing) + len(orphans)) / total * 100
+
+            # Get index file mtime
+            index_mtime = os.path.getmtime(index_path)
+            from datetime import datetime
+            index_mtime_str = datetime.fromtimestamp(index_mtime).isoformat()
+
+            # Determine if rebuild is needed (>5% drift threshold)
+            needs_rebuild = drift_pct > 5.0
+            stale_reason = None
+            if needs_rebuild:
+                reasons = []
+                if missing:
+                    reasons.append(f"{len(missing)} new vectors not in index")
+                if orphans:
+                    reasons.append(f"{len(orphans)} deleted vectors still in index")
+                stale_reason = "; ".join(reasons)
+
+            return {
+                'index_count': index_count,
+                'db_count': db_count,
+                'missing_count': len(missing),
+                'orphan_count': len(orphans),
+                'drift_pct': drift_pct,
+                'index_mtime': index_mtime_str,
+                'latest_indexed': latest_indexed,
+                'needs_rebuild': needs_rebuild,
+                'stale_reason': stale_reason
+            }
+        except Exception as e:
+            LOG.warning(f"Failed to check index freshness: {e}")
+            return None
+
+    def ensure_index_fresh(self, drift_threshold: float = 5.0, auto_rebuild: bool = True) -> Dict[str, Any]:
+        """Ensure ANN index is fresh, optionally rebuilding if stale.
+
+        Args:
+            drift_threshold: Percentage drift that triggers rebuild (default: 5%)
+            auto_rebuild: If True, automatically rebuild when stale
+
+        Returns:
+            Dict with:
+            - fresh: True if index is fresh (or was rebuilt)
+            - rebuilt: True if index was rebuilt
+            - freshness: Freshness check results
+        """
+        result = {
+            'fresh': True,
+            'rebuilt': False,
+            'freshness': None
+        }
+
+        # Check freshness
+        freshness = self.check_index_freshness()
+        result['freshness'] = freshness
+
+        if freshness is None:
+            # No index exists
+            if auto_rebuild:
+                LOG.info("No ANN index found, building...")
+                if self.rebuild_ann_index():
+                    result['rebuilt'] = True
+                    result['freshness'] = self.check_index_freshness()
+                else:
+                    result['fresh'] = False
+            else:
+                result['fresh'] = False
+            return result
+
+        # Check if stale
+        if freshness.get('drift_pct', 0) > drift_threshold:
+            result['fresh'] = False
+            if auto_rebuild:
+                LOG.info(f"ANN index stale ({freshness['drift_pct']:.1f}% drift), rebuilding...")
+                if self.rebuild_ann_index():
+                    result['rebuilt'] = True
+                    result['fresh'] = True
+                    result['freshness'] = self.check_index_freshness()
+
+        return result
 
     def _search_ann(self, query_vec: np.ndarray, k: int = 100) -> List[Tuple[str, float]]:
         """Search ANN index, return list of (block_id, similarity)."""
