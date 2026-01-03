@@ -1,23 +1,29 @@
 ---
 created: 2025-11-16
-last_edited: 2025-12-02
-version: 2.3
+last_edited: 2026-01-03
+version: 3.1
 tool: true
-description: Generate high-quality follow-up emails from meeting intelligence using voice transformation system
+description: Generate high-quality follow-up emails from meeting intelligence using voice transformation and semantic memory (with anti-hallucination)
 tags:
   - email
   - communications
   - meetings
   - voice-transformation
   - essential-links
+  - semantic-memory
 mg_stage: MG-5
 status: canonical
 ---
-# Follow-Up Email Generator v2.0
+# Follow-Up Email Generator v3.1
 
-**Purpose:** Generate authentic, high-quality follow-up emails from meeting intelligence  
-**Quality Bar:** Must score ≥90/100 on rubric (voice fidelity, organization, deliverables)  
+**Purpose:** Generate authentic, high-quality follow-up emails from meeting intelligence
+**Quality Bar:** Must score ≥90/100 on rubric (voice fidelity, semantic enrichment, organization, deliverables)
 **Voice System:** Uses V's voice transformation with style constraints
+**Semantic Memory:** Pulls context from CRM, meeting history, and V's positions
+**Anti-Hallucination:** All URLs, metrics, and company claims must be sourced from positioning file or content library
+
+**v3.1 Key Change:**
+- ⭐ PHASE 1.1: Anti-hallucination gate (prevents fabricated URLs, metrics, company claims)
 
 ---
 
@@ -111,19 +117,204 @@ If a deliverable requires a traceable link (e.g., Google Drive folder, deck, pro
 
 ---
 
-### PHASE 2: VOICE TRANSFORMATION (Load + Apply)
+### PHASE 1.1: ANTI-HALLUCINATION GATE ⭐ NEW in v3.1
+
+**Purpose:** Prevent fabrication of URLs, metrics, or company claims. All factual content must be sourced.
+
+**⚠️ FUNDAMENTAL RULE: NEVER INVENT FACTS**
+
+```
+ALLOWED sources for claims:
+├── Knowledge/current/careerspan-positioning.md (REQUIRED for any Careerspan claims)
+├── Content Library database (for URLs, links, assets)
+├── Meeting transcript / intelligence blocks (for conversation-specific facts)
+├── CRM profile (for relationship context)
+└── N5/prefs/communication/deprecated/essential-links.json (fallback for URLs)
+
+FORBIDDEN:
+├── Inventing URLs (trial links, calendar links, demo links)
+├── Fabricating metrics (user counts, engagement rates, revenue)
+├── Making up company descriptions not in positioning file
+├── Creating proof points without source
+└── Guessing email addresses or contact info
+```
+
+**Pre-Generation Checklist:**
+
+| Content Type | Source Required | If Missing |
+|--------------|-----------------|------------|
+| Trial/signup URLs | Content Library OR Positioning file | Use `[VERIFY: URL]` placeholder |
+| Calendar links | Content Library OR Positioning file | Use `[VERIFY: calendar URL]` |
+| Company metrics | Positioning file only | Omit or use qualitative language |
+| Careerspan description | Positioning file | Use generic "AI career coaching" |
+| Contact email | Positioning file | Use `[VERIFY: email]` |
+| Demo/deck links | Content Library | Use `[VERIFY: link]` |
+
+**Positioning File Check:**
+
+```
+IF email mentions Careerspan product/metrics:
+  ↓
+  Load file 'Knowledge/current/careerspan-positioning.md'
+  ↓
+  Is file present AND populated?
+    ├─ YES → Extract verified claims only
+    └─ NO → Use ONLY generic descriptions, mark specifics as [VERIFY]
+```
+
+**URL Verification Flow:**
+
+```
+For each URL/link in email:
+  ↓
+  1. Check Content Library: python3 .../content_library_v3.py search --query "[topic]"
+  2. If not found → Check Positioning file Contact & Links section
+  3. If not found → Check essential-links.json (deprecated but valid)
+  4. If still not found → Use [VERIFY: description of needed link]
+```
+
+**Output Requirement:**
+Include a **Fact Verification Status** section in the email metadata showing source for each claim/URL.
+
+---
+
+### PHASE 1.5: SEMANTIC MEMORY ENRICHMENT ⭐ NEW in v3.0
+
+**Purpose:** Pull relevant context from past meetings, CRM profiles, and V's positions before generating.
+
+**Memory Client:**
+```python
+from N5.cognition.n5_memory_client import N5MemoryClient
+client = N5MemoryClient()
+```
+
+**Query Patterns:**
+
+**1. CRM Profile (Relationship History):**
+```python
+crm_context = client.search_profile(
+    profile="crm",
+    query=f"{recipient_name} {recipient_company}",
+    limit=5
+)
+```
+- Prior interactions, relationship depth, communication history
+- Use to calibrate formality dial
+
+**2. Meeting History (Prior Conversations):**
+```python
+meeting_history = client.search_profile(
+    profile="meetings",
+    query=f"{recipient_name} {key_topics}",
+    limit=5,
+    recency_weight=0.3
+)
+```
+- Past meetings with this person
+- Enables callbacks: "Building on our October conversation about..."
+
+**3. V's Positions (Strategic Context):**
+```python
+positions = client.search_profile(
+    profile="positions",
+    query=f"{key_partnership_topics}",
+    limit=3
+)
+```
+- V's strategic positions on relevant topics
+- Use for complex partnerships where positioning matters
+
+**4. Similar Emails (Style Reference):**
+```python
+similar_emails = client.search(
+    query=f"follow-up email {meeting_type} high engagement",
+    metadata_filters={"path": ("contains", "FOLLOW_UP_EMAIL")},
+    limit=3
+)
+```
+- Past high-quality emails as style exemplars
+- Match meeting type (investor, founder, customer, etc.)
+
+**Build Semantic Context Map:**
+```json
+{
+  "prior_relationship": {
+    "meetings_count": 3,
+    "last_meeting": "2025-10-14",
+    "topics_discussed": ["humble bundle", "FOHE pilot"],
+    "relationship_depth": "warm"
+  },
+  "v_positions_relevant": [
+    {"topic": "B2U go-to-market", "key_point": "community-first distribution"},
+    {"topic": "career coaching scale", "key_point": "AI + human hybrid"}
+  ],
+  "shared_history": "3 previous meetings, collaboration on FOHE pilot, discussed humble bundle concept"
+}
+```
+
+**Usage in Generation:**
+- Reference prior context in opener: "Building on our October conversation about [X]..."
+- Use relationship depth to calibrate dials (warm → lower formality)
+- Incorporate V's positions when relevant to deliverables
+- Reference shared history naturally: "As we discussed when you first introduced..."
+
+---
+
+### PHASE 2: VOICE TRANSFORMATION (Enhanced in v3.0)
 
 **Load voice system files:**
 1. file 'N5/prefs/communication/voice-system-prompt.md'
 2. file 'N5/prefs/communication/style-guides/follow-up-email-style-guide.md'
 3. file 'N5/prefs/communication/email.md'
 
-**Infer transformation dials:**
-- **Formality:** 4/10 (warm professional, not corporate)
-- **Energy:** 7/10 (energized, forward momentum)
-- **Specificity:** 9/10 (precise details, numbers, quotes)
-- **Structure:** 8/10 (heavy use of bullets, headers, organization)
-- **Pressure:** 2/10 (low-pressure, collaborative, "when convenient")
+**Load style exemplars from semantic memory:**
+Use the `similar_emails` results from PHASE 1.5 as few-shot examples for voice matching.
+
+**Context-Aware Dial Calibration (Updated for Directness + Pressure):**
+
+| Relationship Type | Formality | Energy | Specificity | Directness | Pressure |
+|-------------------|-----------|--------|-------------|------------|----------|
+| New external      | 5/10      | 6/10   | 8/10        | 7/10       | 5/10     |
+| Established partner| 3/10     | 8/10   | 9/10        | 8/10       | 6/10     |
+| VC/Investor       | 5/10      | 7/10   | 9/10        | 8/10       | 7/10     |
+| Coaching client   | 4/10      | 7/10   | 8/10        | 7/10       | 4/10     |
+| First meeting     | 5/10      | 6/10   | 8/10        | 7/10       | 5/10     |
+| Warm repeat       | 3/10      | 8/10   | 9/10        | 8/10       | 6/10     |
+| Partnership/Deal  | 4/10      | 8/10   | 9/10        | 9/10       | 7/10     |
+
+**Directness:** Get to the point, no hedging, clear value statement upfront
+**Pressure:** Clear CTAs, gentle urgency, make asks explicit (socially acceptable push)
+
+**Use `prior_relationship.relationship_depth` from PHASE 1.5 to select row.**
+
+**Signature Phrases Bank (MUST use naturally, not forced):**
+- **Opener energy:** "energized by", "excited about", "appreciated", "grateful for"
+- **Collaboration:** "let's [X] together", "would love to", "looking forward to"
+- **Specificity markers:** "specifically", "the [exact concept] you mentioned", "your point about"
+- **Progress indicators:** "I've already reached out to", "speaking with X tomorrow about", "working on"
+- **Connectives:** em-dashes (–), "which means", "that's why", "because"
+- **Direct CTAs (NEW):** "Can we do [day]?", "Let's find 20 minutes", "What's your calendar like?", "I'd suggest we..."
+- **Pressure (socially acceptable):** "Given our conversation", "timing works well because", "I think there's real synergy here"
+
+**Avoid hedging phrases:**
+- ❌ "If you're interested" → ✓ "I'd love to show you"
+- ❌ "Let me know if that works" → ✓ "Can we do Thursday?"
+- ❌ "No rush" → ✓ "When works this week?"
+- ❌ "Whenever you have time" → ✓ "Can we find 15 minutes?"
+
+**Resonant Opener Templates (with semantic memory):**
+
+*Pattern 1 - Prior Context Callback (if meeting_history exists):*
+> "Building on our [date] conversation about [specific topic from memory], I wanted to follow up on [today's discussion]..."
+
+*Pattern 2 - Specific Detail Reference (from B21):*
+> "Your insight about [verbatim or near-verbatim from B21] really resonated..."
+
+*Pattern 3 - Progress Since Last Meeting:*
+> "Since we last spoke about [topic from prior meeting], I've [concrete progress]..."
+
+*Pattern 4 - Standard Resonant (no prior history):*
+> "Great chatting [timeframe]. I'm excited about [specific concept from this meeting]..."
 
 **Apply voice constraints from style guide:**
 - Default greeting: "Hi [Name]" (use "Hey" only if warm/established)
@@ -268,36 +459,60 @@ Assume that anything you talk about in the email body as a deliverable (slides, 
 
 ---
 
-### PHASE 4: FINALIZATION (Quality Check + Save)
+### PHASE 4: FINALIZATION (Enhanced in v3.0)
 
 #### Quality Scoring Rubric (Target: ≥90/100)
 
-**Voice Fidelity (40 points):**
+**Voice Fidelity (35 points):**
 - [ ] 10pts: Resonant opener references specific conversation moment
-- [ ] 10pts: Uses V's signature phrases ("energized by", "would love to", "let's X together")
+- [ ] 10pts: Uses V's signature phrases naturally (not forced)
 - [ ] 10pts: Low-pressure collaborative tone (not transactional)
-- [ ] 10pts: Specific details (quotes, numbers, named concepts)
+- [ ] 5pts: Greeting/closing match relationship depth
+
+**Semantic Enrichment (15 points):** ⭐ NEW
+- [ ] 5pts: References prior relationship context appropriately (if exists)
+- [ ] 5pts: Incorporates relevant meeting history when available
+- [ ] 5pts: Uses V's positions/strategies when applicable to deliverables
 
 **Organization (20 points):**
 - [ ] 10pts: Deliverables organized with bold headers + bullets
 - [ ] 5pts: Clear sections (opener, deliverables, next steps, close)
 - [ ] 5pts: Easy to scan (structure makes reading effortless)
 
-**Completeness (20 points):**
-- [ ] 10pts: Every promised deliverable included
-- [ ] 5pts: Links/access provided (not "coming soon")
-- [ ] 5pts: Timeline specifics given where applicable
+**Completeness (15 points):**
+- [ ] 8pts: Every promised deliverable included
+- [ ] 4pts: Links/access provided (not "coming soon")
+- [ ] 3pts: Timeline specifics given where applicable
 
-**Technical Excellence (20 points):**
+**Technical Excellence (15 points):**
 - [ ] 5pts: Subject line follows format exactly
-- [ ] 5pts: Greeting appropriate (Hi default)
-- [ ] 5pts: "Best," closing
-- [ ] 5pts: No typos, correct em dashes (–), proper formatting
+- [ ] 3pts: Clean markdown (pasteable to email client)
+- [ ] 3pts: No typos, correct em dashes (–)
+- [ ] 2pts: Greeting appropriate
+- [ ] 2pts: "Best," closing
 
 **Score interpretation:**
 - 90-100: Send-ready, authentic V voice
 - 80-89: Good but needs polish (revise)
 - <80: Regenerate with more context
+
+---
+
+#### Clean Markdown Output (Pasteable to Email Client)
+
+**CRITICAL:** Output must be pasteable into Gmail/Outlook without formatting issues.
+
+**Allowed Markdown in Email Body:**
+- ✅ Bold: `**text**` or `*text*` (italics)
+- ✅ Bullets: `* item` or `- item`
+- ✅ Em-dash: `–` (actual character)
+- ✅ Line breaks
+
+**Avoid in Email Body:**
+- ❌ Headers (`#`, `##`) - use bold instead
+- ❌ Code blocks (` ``` `)
+- ❌ Tables
+- ❌ Markdown links `[text](url)` - use plain text or hyperlink manually
 
 ---
 
@@ -312,6 +527,7 @@ created: YYYY-MM-DD
 last_edited: YYYY-MM-DD
 version: 1.0
 quality_score: XX/100
+semantic_enrichment: true
 ---
 
 # Follow-Up Email
@@ -321,14 +537,21 @@ quality_score: XX/100
 **Subject:** [Full subject line]
 
 ---
+<!-- BEGIN EMAIL BODY - Copy from here -->
 
-[Email body]
+Hi [Name],
 
+[Email body with clean markdown only - bold, bullets, em-dashes allowed]
+
+Best,
+
+<!-- END EMAIL BODY -->
 ---
 
 **Generation metadata:**
 - Intelligence sources: B02, B25, B21, B26
-- Voice dials: Formality 4/10, Energy 7/10, Specificity 9/10
+- Semantic memory sources: [crm, meetings, positions - list which were used]
+- Voice dials: Formality X/10, Energy X/10, Specificity X/10
 - Quality score: XX/100
 
 ---
@@ -361,6 +584,8 @@ This checklist is **for V only** and is meant to be satisfied before the email i
 3. **B21** = Source for resonant moments (CRITICAL for opener)
 4. **B26** = Meeting metadata (participants, context)
 5. **transcript.md** = Fallback if blocks insufficient
+6. **Knowledge/current/careerspan-positioning.md** = REQUIRED for any Careerspan claims/metrics
+7. **Content Library** = REQUIRED for all URLs/links
 
 ### Voice transformation is NON-NEGOTIABLE:
 - Load style guide BEFORE generating
@@ -418,18 +643,23 @@ Best,
 
 ---
 
-**Version:** 2.3  
-**Date:** 2025-12-02  
-**Updates:** 
-- Migrated to Content Library v3 (unified database at Personal/Knowledge/ContentLibrary/)
-- Updated all database paths and CLI commands to v3
-- Previous: Integrated Essential Link System (Content Library Database)
-- Previous: Links now pulled from unified v3 database
-- Previous: Updated deliverables behavior to assume assets are included in the current email
-- Previous: Added Promised Deliverables Checklist section
+**Version:** 3.1
+**Date:** 2026-01-03
+**Updates:**
+- ⭐ **v3.1: Added PHASE 1.1: Anti-Hallucination Gate**
+  - All URLs must come from Content Library or Positioning file
+  - All metrics/claims must be sourced from Positioning file
+  - Includes Fact Verification Status table in output
+  - Uses `[VERIFY: ...]` placeholders when source unavailable
+- ⭐ v3.0: Added PHASE 1.5: Semantic Memory Enrichment (CRM, meetings, positions, similar emails)
+- ⭐ v3.0: Enhanced PHASE 2: Context-aware dial calibration table, signature phrases bank, semantic opener templates
+- ⭐ v3.0: Enhanced PHASE 4: Clean markdown output with BEGIN/END markers for email client compatibility
+- ⭐ v3.0: Updated quality rubric: Added 15pt Semantic Enrichment category, rebalanced other categories
+- Previous (v2.3): Migrated to Content Library v3
+- Previous (v2.3): Added Promised Deliverables Checklist section
 
-**Architect:** Vibe Architect + Vibe Operator  
-**Migration Status:** Complete - Content Library v3 unification (Dec 2025)
+**Architect:** Vibe Architect + Vibe Operator
+**Migration Status:** Complete - Anti-Hallucination + Semantic Memory Integration (Jan 2026)
 
 
 
