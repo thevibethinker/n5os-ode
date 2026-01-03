@@ -3,8 +3,9 @@ import json
 import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from N5.lib.paths import WORKOUTS_DB
 
-DB_PATH = Path("/home/workspace/Personal/Health/workouts.db")
+DB_PATH = WORKOUTS_DB
 
 
 def get_connection() -> sqlite3.Connection:
@@ -30,10 +31,17 @@ def init_db(conn: sqlite3.Connection) -> None:
             distance_km REAL,
             calories REAL,
             avg_hr REAL,
+            peak_hr REAL,
             notes TEXT
         )
         """
     )
+
+    # Migration: add peak_hr if missing
+    cur.execute("PRAGMA table_info(workouts)")
+    existing_cols = {r[1] for r in cur.fetchall()}
+    if "peak_hr" not in existing_cols:
+        cur.execute("ALTER TABLE workouts ADD COLUMN peak_hr REAL")
 
     # Source observations (Fitbit, manual text, photo, etc.)
     cur.execute(
@@ -804,6 +812,137 @@ def upsert_sleep_session_with_stages(
     conn.commit()
 
 
+def compute_workout_hr_from_intraday(
+    conn: sqlite3.Connection,
+    start_time: str,
+    duration_min: float,
+) -> Dict[str, Any]:
+    """Compute avg_hr and peak_hr from intraday_heart_rate for a workout window.
+    
+    Args:
+        conn: Database connection
+        start_time: ISO-like start time (e.g., "2025-12-31T08:29")
+        duration_min: Workout duration in minutes
+        
+    Returns:
+        Dict with keys: avg_hr, peak_hr, sample_count (all may be None if no data)
+    """
+    from datetime import datetime, timedelta
+    
+    result = {"avg_hr": None, "peak_hr": None, "sample_count": 0}
+    
+    if not start_time or not duration_min:
+        return result
+    
+    # Parse start time and compute end time
+    try:
+        # Handle various formats
+        if "T" in start_time:
+            dt_start = datetime.fromisoformat(start_time.replace("Z", ""))
+        else:
+            return result  # Can't compute without time component
+        
+        dt_end = dt_start + timedelta(minutes=float(duration_min))
+        
+        start_str = dt_start.strftime("%Y-%m-%dT%H:%M")
+        end_str = dt_end.strftime("%Y-%m-%dT%H:%M")
+    except (ValueError, TypeError):
+        return result
+    
+    cur = conn.cursor()
+    cur.execute(
+        """
+        SELECT AVG(bpm) as avg_bpm, MAX(bpm) as max_bpm, COUNT(*) as n
+        FROM intraday_heart_rate
+        WHERE datetime_local >= ? AND datetime_local <= ?
+          AND bpm IS NOT NULL
+        """,
+        (start_str, end_str),
+    )
+    row = cur.fetchone()
+    
+    if row and row["n"] and row["n"] > 0:
+        result["avg_hr"] = round(row["avg_bpm"], 1) if row["avg_bpm"] else None
+        result["peak_hr"] = int(row["max_bpm"]) if row["max_bpm"] else None
+        result["sample_count"] = row["n"]
+    
+    return result
+
+
+def update_workout_hr_stats(
+    conn: sqlite3.Connection,
+    workout_id: int,
+    avg_hr: Optional[float] = None,
+    peak_hr: Optional[int] = None,
+) -> bool:
+    """Update a workout's HR stats.
+    
+    Returns True if update was made, False otherwise.
+    """
+    if avg_hr is None and peak_hr is None:
+        return False
+    
+    updates = []
+    params = []
+    
+    if avg_hr is not None:
+        updates.append("avg_hr = ?")
+        params.append(avg_hr)
+    if peak_hr is not None:
+        updates.append("peak_hr = ?")
+        params.append(peak_hr)
+    
+    params.append(workout_id)
+    
+    cur = conn.cursor()
+    cur.execute(
+        f"UPDATE workouts SET {', '.join(updates)} WHERE id = ?",
+        params,
+    )
+    conn.commit()
+    return cur.rowcount > 0
+
+
+def backfill_workout_hr_stats(conn: sqlite3.Connection, force: bool = False) -> Dict[str, int]:
+    """Backfill avg_hr and peak_hr for all workouts missing them.
+    
+    Args:
+        conn: Database connection
+        force: If True, recalculate even for workouts that already have HR data
+        
+    Returns:
+        Dict with counts: checked, updated, skipped, no_data
+    """
+    cur = conn.cursor()
+    
+    if force:
+        cur.execute("SELECT id, start_time, duration_min FROM workouts WHERE start_time IS NOT NULL AND duration_min IS NOT NULL")
+    else:
+        cur.execute("SELECT id, start_time, duration_min FROM workouts WHERE (avg_hr IS NULL OR peak_hr IS NULL) AND start_time IS NOT NULL AND duration_min IS NOT NULL")
+    
+    rows = cur.fetchall()
+    
+    stats = {"checked": len(rows), "updated": 0, "skipped": 0, "no_data": 0}
+    
+    for row in rows:
+        workout_id = row["id"]
+        start_time = row["start_time"]
+        duration_min = row["duration_min"]
+        
+        hr_stats = compute_workout_hr_from_intraday(conn, start_time, duration_min)
+        
+        if hr_stats["sample_count"] == 0:
+            stats["no_data"] += 1
+            continue
+        
+        if update_workout_hr_stats(conn, workout_id, hr_stats["avg_hr"], hr_stats["peak_hr"]):
+            stats["updated"] += 1
+        else:
+            stats["skipped"] += 1
+    
+    return stats
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Workout tracker helper")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -850,6 +989,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

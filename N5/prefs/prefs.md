@@ -1,8 +1,42 @@
 # N5 Preferences Index
 
-**Version:** 3.2.0  
-**Last Updated:** 2025-10-27  
+**Version:** 4.0.0
+**Last Updated:** 2026-01-02
 **Purpose:** Lightweight index to modular preferences, loaded selectively by context
+
+---
+
+## Unified Preferences Hub (NEW)
+
+**Authoritative Source:** `file 'N5/config/user_preferences.yaml'`
+
+As of v4.0.0, all preferences are managed through a centralized hub system:
+
+### Key Files
+- **Hub:** `N5/config/user_preferences.yaml` — Central registry of all preference modules
+- **Overrides:** `N5/config/user_overrides.yaml` — Personal customizations (edit this for overrides)
+- **Commands:** `N5/config/commands.jsonl` — Unified command registry (replaces executables.db)
+
+### Context-Aware Loading
+Use the preference loader to get modules for specific contexts:
+```bash
+python3 N5/scripts/load_preferences.py load <context>
+```
+
+**Available contexts:** `system_ops`, `content_generation`, `crm_operations`, `code_work`, `scheduling`, `research`, `conversation_end`, `full`
+
+### Precedence Hierarchy
+1. **folder_policy** — POLICY.md in target folder (highest)
+2. **safety_rules** — Non-overrideable safety rules
+3. **user_overrides** — Explicit user preferences from user_overrides.yaml
+4. **module_defaults** — Domain-specific defaults from modules
+5. **global_defaults** — System defaults (lowest)
+
+### Related Tools
+- `python3 N5/scripts/load_preferences.py validate` — Validate hub structure
+- `python3 N5/scripts/load_preferences.py contexts` — List available contexts
+- `python3 N5/scripts/load_preferences.py modules` — List all registered modules
+- `python3 N5/scripts/validate_commands.py` — Validate command registry
 
 ---
 
@@ -368,6 +402,16 @@ When referring to lists, always check `/home/workspace/N5/lists/` and `/home/wor
 ---
 
 ## Change Log
+
+### v4.0.0 — 2026-01-02
+- **Unified Preferences Hub:** Created centralized `user_preferences.yaml` as authoritative source for all preferences
+- **User Overrides:** Separate `user_overrides.yaml` for personal customizations
+- **Command Registry Consolidation:** Created curated `commands.jsonl` (42 actively-used commands) replacing scattered executables.db + incantum_triggers.json
+- **Context-Aware Loading:** New `load_preferences.py` utility with 8 context presets (system_ops, content_generation, crm_operations, code_work, scheduling, research, conversation_end, full)
+- **Precedence Hierarchy:** Explicit governance: folder_policy > safety_rules > user_overrides > module_defaults > global_defaults
+- **Schema Validation:** Added `user_preferences.schema.json` for hub validation
+- **Command Validation:** Added `validate_commands.py` for command registry validation
+- **Rationale:** Consolidate scattered preferences into coordinated system with clear governance hierarchy
 
 ### v3.2.0 — 2025-10-27
 - **System Bulletins Integration:** Added "System Bulletins for Troubleshooting" critical rule

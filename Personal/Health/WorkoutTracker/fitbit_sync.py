@@ -4,7 +4,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.error import HTTPError
@@ -12,9 +12,10 @@ from urllib.parse import urlencode, urlparse, parse_qs
 from urllib.request import Request, urlopen
 import sqlite3
 import fitbit
+from N5.lib.paths import WORKOUT_TRACKER_DIR, N5_SCRIPTS_DIR
 
 # Paths
-BASE_DIR = Path("/home/workspace/Personal/Health/WorkoutTracker")
+BASE_DIR = WORKOUT_TRACKER_DIR
 CONFIG_PATH = BASE_DIR / "fitbit_config.json"
 
 AUTH_URL = "https://www.fitbit.com/oauth2/authorize"
@@ -529,7 +530,7 @@ def sync_recent_activities(days: int) -> None:
     cfg = load_config()
     token = ensure_access_token(cfg)
 
-    today = datetime.utcnow().date()
+    today = datetime.now(timezone.utc).date()
     if days < 1:
         days = 1
     start_date = today - timedelta(days=days - 1)
@@ -685,6 +686,20 @@ def sync_recent_activities(days: int) -> None:
 
             workout_id = workout_tracker.log_manual_workout(conn, payload)
             print(f"Imported Fitbit activity logId={log_id} as workout_id={workout_id} on {date_str}")
+            
+            # Compute and update HR stats from intraday data
+            if start_ts and duration_min:
+                hr_stats = workout_tracker.compute_workout_hr_from_intraday(conn, start_ts, duration_min)
+                if hr_stats["sample_count"] > 0:
+                    workout_tracker.update_workout_hr_stats(
+                        conn, workout_id, hr_stats["avg_hr"], hr_stats["peak_hr"]
+                    )
+                    print(f"  → Updated HR stats: avg={hr_stats['avg_hr']} bpm, peak={hr_stats['peak_hr']} bpm ({hr_stats['sample_count']} samples)")
+
+    # Final pass: backfill any workouts that may have been imported before intraday data was synced
+    print("Running HR stats backfill for any workouts missing HR data...")
+    backfill_stats = workout_tracker.backfill_workout_hr_stats(conn, force=False)
+    print(f"Backfill complete: checked={backfill_stats['checked']}, updated={backfill_stats['updated']}, no_data={backfill_stats['no_data']}")
 
 
 def parse_args() -> argparse.Namespace:
@@ -698,6 +713,7 @@ def parse_args() -> argparse.Namespace:
 
     p_sync = subparsers.add_parser("sync-recent", help="Sync recent Fitbit activities into workouts.db")
     p_sync.add_argument("--days", type=int, default=7, help="Number of days back from today (UTC) to sync")
+    p_sync.add_argument("--chain", action="store_true", help="Also run Life Counter bridge after sync")
 
     return parser.parse_args()
 
@@ -721,10 +737,23 @@ def main() -> None:
 
     elif args.command == "sync-recent":
         sync_recent_activities(args.days)
+        
+        if args.chain:
+            print("\n--- Chaining: Running Life Counter bridge ---")
+            import subprocess
+            result = subprocess.run(
+                ["python3", str(N5_SCRIPTS_DIR / "fitbit_life_bridge.py"), "sync", "--days", str(args.days)],
+            )
+            if result.returncode != 0:
+                print(f"Warning: Life Counter bridge returned exit code {result.returncode}", file=sys.stderr)
 
 
 if __name__ == "__main__":
     main()
+
+
+
+
 
 
 

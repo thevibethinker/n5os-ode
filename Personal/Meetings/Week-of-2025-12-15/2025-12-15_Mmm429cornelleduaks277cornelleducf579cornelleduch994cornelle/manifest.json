@@ -3,11 +3,13 @@
   "generated_at": "2025-12-15T20:42:20.431505+00:00",
   "meeting_folder": "2025-12-15_mmm429cornelleduaks277cornelleducf579cornelleduch994cornelleduvvp9cornelledu_mmm429cornelledu_aks277cornelledu_cf579cornelledu",
   "meeting_date": "2025-12-15",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
-  "last_updated_by": "MG-2_Prompt"
+  "last_updated_by": "MG-2_Prompt",
+  "processed_at": "2025-12-31T14:48:49Z",
+  "crm_synced": true
 }

@@ -3,7 +3,7 @@
   "generated_at": "2025-12-09T11:42:40Z",
   "meeting_folder": "2025-12-08_logantheapplyaihellomegangaspercom_logantheapplyai_hellomegangaspercom",
   "meeting_date": "2025-12-08",
-  "status": "manifest_generated",
+  "status": "processed",
   "meeting_type": "external",
   "blocks_generated": {
     "stakeholder_intelligence": true,
@@ -12,5 +12,6 @@
   },
   "last_updated_by": "MG-2_Prompt",
   "crm_synced": true,
-  "crm_sync_timestamp": "2025-12-30T16:52:33.722254"
+  "crm_sync_timestamp": "2025-12-31T14:48:31.911532",
+  "processed_at": "2025-12-31T14:48:49Z"
 }
