@@ -19,6 +19,10 @@ from pathlib import Path
 from datetime import datetime, timedelta
 import asyncio
 
+# Add workspace to path for N5 lib imports
+sys.path.insert(0, '/home/workspace')
+from N5.lib.paths import CRM_DB, CRM_PROFILES_DIR
+
 # Import helper functions
 sys.path.insert(0, '/home/workspace/N5/scripts')
 from crm_calendar_helpers import (
@@ -30,8 +34,9 @@ from crm_calendar_helpers import (
 sys.path.insert(0, '/home/workspace')
 from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
-PROFILES_DIR = Path('/home/workspace/N5/crm_v3/profiles')
+# Use centralized paths from N5.lib.paths
+DB_PATH = str(CRM_DB)
+PROFILES_DIR = CRM_PROFILES_DIR
 
 
 def create_profile(email: str, name: str, category: str = 'NETWORKING', notes: str = None):

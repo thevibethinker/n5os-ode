@@ -26,16 +26,20 @@ from pathlib import Path
 import re
 import duckdb
 
+# Add workspace to path for N5 lib imports
+sys.path.insert(0, '/home/workspace')
+from N5.lib.paths import (
+    N5_ROOT, N5_DIGESTS_DIR, PRODUCTIVITY_DB, WORKOUTS_DB, WELLNESS_DB
+)
+
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Constants
-N5_ROOT = Path("/home/workspace/N5")
-N5_ROOT = Path("/home/workspace/N5")
-OUTPUT_DIR = Path("/home/workspace/N5/digests")
-PROD_DB_PATH = Path("/home/workspace/productivity_tracker.db")
-HEALTH_DB_PATH = Path("/home/workspace/Personal/Health/workouts.db")
+# Constants - use centralized paths
+OUTPUT_DIR = N5_DIGESTS_DIR
+PROD_DB_PATH = PRODUCTIVITY_DB
+HEALTH_DB_PATH = WORKOUTS_DB
 
 class MorningDigest:
     def __init__(self):
@@ -290,7 +294,103 @@ class MorningDigest:
             logger.error(f"Bio-context fetch failed: {e}")
             return "Bio-context unavailable. Check Fitbit sync."
 
-    def generate_markdown(self, wedge, landscape, loop, pulse, events=None, life_counter=None, crm_review=None, bio_context=None):
+    async def get_todays_workout(self):
+        """Module 7: Today's Workout (from 10K Prep Plan with Vibe Trainer coaching)"""
+        try:
+            # Get day of week
+            day_name = self.today.strftime("%A")
+            
+            # 10K Prep Plan schedule (from Personal/Health/WorkoutTracker/10K_Prep_Plan.md)
+            schedule = {
+                "Monday": {
+                    "type": "Strength (Phase 2 Ramp-Up)",
+                    "duration": "45m",
+                    "focus": "strength",
+                    "coaching": "Focus on compound movements. Your ACTN3 TT profile means you recover slower from strength work—prioritize form over volume. Keep rest periods 90-120 seconds."
+                },
+                "Tuesday": {
+                    "type": "Engine Building",
+                    "duration": "30-40m",
+                    "focus": "aerobic",
+                    "coaching": "Target HR: 113-131 BPM. This should feel conversational—if you can't talk, slow down. Your genetics excel here; trust the easy pace."
+                },
+                "Wednesday": {
+                    "type": "Recovery Walk / Mobility",
+                    "duration": "20m",
+                    "focus": "recovery",
+                    "coaching": "Active recovery day. Light movement only—walk, stretch, foam roll. Your COMT GG profile needs deliberate recovery between hard sessions."
+                },
+                "Thursday": {
+                    "type": "The 20% Interval",
+                    "duration": "35m",
+                    "focus": "intervals",
+                    "coaching": "4x4 protocol: 4 mins HARD (151+ BPM), 3 mins EASY. This is your 20% high-intensity work. Push hard during work sets, recover fully between."
+                },
+                "Friday": {
+                    "type": "Strength (Phase 2 Ramp-Up)",
+                    "duration": "45m",
+                    "focus": "strength",
+                    "coaching": "Second strength session of the week. If resting HR is 5+ BPM above baseline, consider lighter weights. Protect tomorrow's long run."
+                },
+                "Saturday": {
+                    "type": "Engine Building (Long)",
+                    "duration": "50-60m",
+                    "focus": "aerobic_long",
+                    "coaching": "Your longest aerobic session of the week. Stay in Zone 2 (113-131 BPM). Build that aerobic base—this is where your ACTN3 TT genetics shine."
+                },
+                "Sunday": {
+                    "type": "Rest / Light Walk",
+                    "duration": "Optional",
+                    "focus": "rest",
+                    "coaching": "Full rest or very light walking only. Your body adapts during rest, not during training. Honor the recovery."
+                }
+            }
+            
+            workout = schedule.get(day_name, {
+                "type": "Check Plan",
+                "duration": "--",
+                "focus": "unknown",
+                "coaching": "Consult your 10K prep plan."
+            })
+            
+            # Calculate days until race (Feb 28, 2026)
+            race_date = datetime.date(2026, 2, 28)
+            days_until_race = (race_date - self.today).days
+            
+            # Get recent workout from wellness.db for context
+            recent_context = ""
+            try:
+                wellness_db = WELLNESS_DB
+                if wellness_db.exists():
+                    conn = sqlite3.connect(wellness_db)
+                    cursor = conn.cursor()
+                    cursor.execute("""
+                        SELECT ll.timestamp, ll.duration_min, ll.avg_hr, ll.vest_weight_lb
+                        FROM life_logs ll
+                        JOIN life_categories lc ON ll.category_id = lc.id
+                        WHERE lc.slug = 'workout' AND ll.timestamp >= date('now', '-2 days')
+                        ORDER BY ll.timestamp DESC LIMIT 1
+                    """)
+                    row = cursor.fetchone()
+                    conn.close()
+                    if row:
+                        last_time, last_dur, last_hr, vest = row
+                        vest_note = f" (with {int(vest)}lb vest)" if vest else ""
+                        recent_context = f"\n*Last workout: {last_dur:.0f}min, avg HR {last_hr:.0f} BPM{vest_note}*"
+            except Exception as e:
+                logger.warning(f"Could not fetch recent workout: {e}")
+            
+            return f"""**{workout['type']}** ({workout['duration']})
+
+> 🏃 *Vibe Trainer:* {workout['coaching']}
+
+📅 **{days_until_race} days until race day (Feb 28)**{recent_context}"""
+            
+        except Exception as e:
+            logger.error(f"Workout fetch failed: {e}")
+            return "Workout plan unavailable. Check `file 'Personal/Health/WorkoutTracker/10K_Prep_Plan.md'`"
+
+    def generate_markdown(self, wedge, landscape, loop, pulse, events=None, life_counter=None, crm_review=None, bio_context=None, workout=None):
         date_str = self.today.strftime("%A, %B %d")
         
         # Bio-context section
@@ -299,6 +399,17 @@ class MorningDigest:
             bio_context_section = f"""
 ### 🧬 Bio-Context
 {bio_context}
+
+---
+
+"""
+        
+        # Workout section (NEW)
+        workout_section = ""
+        if workout:
+            workout_section = f"""
+### 🏋️ Today's Workout
+{workout}
 
 ---
 
@@ -331,7 +442,7 @@ class MorningDigest:
 
 ---
 
-{bio_context_section}### 🧠 The Wedge
+{bio_context_section}{workout_section}### 🧠 The Wedge
 > {wedge}
 
 ---
@@ -360,9 +471,10 @@ class MorningDigest:
     async def run(self, send=False):
         logger.info("Generating Morning Digest...")
         
-        # Run parallel data fetching - add bio_context
-        bio_context, wedge, landscape, loop, pulse, events, life_counter, crm_review = await asyncio.gather(
+        # Run parallel data fetching - add workout
+        bio_context, workout, wedge, landscape, loop, pulse, events, life_counter, crm_review = await asyncio.gather(
             self.get_bio_context(),
+            self.get_todays_workout(),
             self.get_wedge(),
             self.get_landscape(),
             self.get_loop(),
@@ -372,7 +484,7 @@ class MorningDigest:
             self.get_crm_review()
         )
         
-        content = self.generate_markdown(wedge, landscape, loop, pulse, events, life_counter, crm_review, bio_context)
+        content = self.generate_markdown(wedge, landscape, loop, pulse, events, life_counter, crm_review, bio_context, workout)
         
         # Save to file
         filename = f"morning-digest-{self.today.strftime('%Y-%m-%d')}.md"
@@ -403,6 +515,7 @@ if __name__ == "__main__":
         }))
     else:
         asyncio.run(digest.run(send="--email" in sys.argv))
+
 
 
 
