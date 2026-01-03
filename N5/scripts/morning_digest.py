@@ -1,17 +1,20 @@
 """
-Morning Digest Aggregator (MorningOS)
--------------------------------------
-Aggregates data from multiple N5 systems into a single 8:00 AM briefing.
+Morning Digest (MorningOS v2)
+-----------------------------
+The ONE daily digest that moves the needle.
 
-Modules:
-1. The Wedge: Hook/Insight (from Morning Pages history or Quotes)
-2. The Landscape: Calendar + Weather + Tide
-3. The Loop: Open Threads (Email Follow-up Registry)
-4. The Pulse: Productivity Stats (RPI, Emails Sent)
-5. The Nudge: CTA to Morning Flow
+Sections:
+1. Bio-Context: Sleep quality, resting HR, health advisory
+2. Today's Workout: Training plan with coaching
+3. The Landscape: Today's calendar events
+4. Top 3 Today: Highest-priority action items
+5. Reconnects: 2-3 people to reach out to
+6. The Nudge: CTA to start morning flow
+
+Rules: See N5/prefs/operations/digest-rules.md
 
 Usage:
-    python3 morning_digest.py [--dry-run] [--email]
+    python3 morning_digest.py [--dry-run] [--email] [--date YYYY-MM-DD]
 """
 
 import sys
@@ -24,13 +27,16 @@ import subprocess
 import sqlite3
 from pathlib import Path
 import re
-import duckdb
 
 # Add workspace to path for N5 lib imports
 sys.path.insert(0, '/home/workspace')
 from N5.lib.paths import (
     N5_ROOT, N5_DIGESTS_DIR, PRODUCTIVITY_DB, WORKOUTS_DB, WELLNESS_DB
 )
+
+# CRM database path
+CRM_DB_PATH = N5_ROOT / "data" / "crm_v3.db"
+LISTS_DIR = Path("/home/workspace/Lists")
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -88,13 +94,6 @@ class MorningDigest:
             logger.error(f"Zo CLI execution failed: {e}")
             return None
 
-    async def get_wedge(self):
-        """Module 1: The Wedge (Hook/Insight)"""
-        # Ask Zo for a quote or insight
-        prompt = "Give me a short, inspiring quote for the morning. Just the quote and author."
-        quote = self._run_zo(prompt)
-        return quote or "Focus on the signal, ignore the noise."
-
     async def get_landscape(self):
         """Module 2: The Landscape (Calendar)"""
         # Schema for calendar events
@@ -127,169 +126,171 @@ class MorningDigest:
             formatted.append(f"- **{e['time']}**: {e['summary']}")
         return "\n".join(formatted)
 
-    async def get_loop(self):
-        """Module 3: The Loop (Open Threads)"""
-        # Placeholder for EmailFollowupRegistry integration
-        # In the future, this will query N5/data/email_followup.db
-        return "*(Open Thread Tracking System initializing...)*"
+    async def get_top_3_today(self):
+        """Module 4: Top 3 Today (highest-priority action items)"""
+        items = []
 
-    async def get_pulse(self):
-        """Module 4: The Pulse (Stats)"""
         try:
-            conn = sqlite3.connect(PROD_DB_PATH)
+            # Source 1: must-contact.jsonl (high priority)
+            must_contact_path = LISTS_DIR / "must-contact.jsonl"
+            if must_contact_path.exists():
+                with open(must_contact_path, 'r') as f:
+                    for line in f:
+                        try:
+                            item = json.loads(line.strip())
+                            if item.get('status') == 'open' and item.get('priority') == 'H':
+                                items.append({
+                                    'title': item.get('title', 'Untitled'),
+                                    'context': item.get('body', '')[:100] + '...' if len(item.get('body', '')) > 100 else item.get('body', ''),
+                                    'source': 'must-contact',
+                                    'created': item.get('created_at', '')
+                                })
+                        except json.JSONDecodeError:
+                            continue
+
+            # Source 2: ideas.jsonl (high priority with urgent tags)
+            ideas_path = LISTS_DIR / "ideas.jsonl"
+            if ideas_path.exists():
+                with open(ideas_path, 'r') as f:
+                    for line in f:
+                        try:
+                            item = json.loads(line.strip())
+                            tags = item.get('tags', [])
+                            if item.get('priority') == 'H' and any(t in tags for t in ['today', 'urgent', 'now']):
+                                items.append({
+                                    'title': item.get('title', 'Untitled'),
+                                    'context': item.get('body', '')[:100] + '...' if len(item.get('body', '')) > 100 else item.get('body', ''),
+                                    'source': 'ideas',
+                                    'created': item.get('created_at', '')
+                                })
+                        except json.JSONDecodeError:
+                            continue
+
+            # Sort by created date (FIFO) and take top 3
+            items.sort(key=lambda x: x.get('created', ''))
+            top_items = items[:3]
+
+            if not top_items:
+                return "No priority items today. Review your lists or enjoy the clarity."
+
+            formatted = []
+            for item in top_items:
+                formatted.append(f"- **{item['title']}**\n  {item['context']}\n  *(from {item['source']})*")
+
+            return "\n\n".join(formatted)
+
+        except Exception as e:
+            logger.error(f"Top 3 Today fetch failed: {e}")
+            return "Action items unavailable."
+
+    async def get_reconnects(self):
+        """Module 5: Reconnects (2-3 people to reach out to)"""
+        try:
+            if not CRM_DB_PATH.exists():
+                return "CRM database not found. Run CRM setup."
+
+            conn = sqlite3.connect(CRM_DB_PATH)
             cursor = conn.cursor()
-            # Try to get yesterday's stats
-            yesterday = self.today - datetime.timedelta(days=1)
-            cursor.execute("SELECT rpi, emails_sent FROM daily_stats WHERE date = ?", (yesterday.isoformat(),))
-            row = cursor.fetchone()
+
+            # Get profiles where last contact was >30 days ago
+            cursor.execute("""
+                SELECT name, category, last_contact_at, yaml_path
+                FROM profiles
+                WHERE last_contact_at IS NOT NULL
+                  AND date(last_contact_at) < date('now', '-30 days')
+                  AND category IN ('INVESTOR', 'NETWORKING', 'COMMUNITY', 'FOUNDER')
+                ORDER BY last_contact_at ASC
+                LIMIT 3
+            """)
+
+            rows = cursor.fetchall()
             conn.close()
-            
-            if row:
-                rpi = row[0] if row[0] is not None else "--"
-                emails = row[1] if row[1] is not None else "--"
-                return f"**Yesterday:** RPI {rpi} | Emails Sent {emails}"
-            else:
-                return "No data for yesterday."
-        except Exception as e:
-            logger.error(f"DB Error: {e}")
-            return "Stats unavailable."
 
-    async def get_events(self):
-        """Get must-go events from the recommender."""
-        try:
-            result = subprocess.run(
-                ["python3", str(Path(__file__).parent / "event_recommender.py"), 
-                 "--format", "digest", "--days", "30", "--top", "5"],
-                capture_output=True,
-                text=True,
-                timeout=30
-            )
-            if result.returncode == 0 and result.stdout.strip():
-                return result.stdout.strip()
-            return "No must-go events this week. Check the [Events Calendar](https://events-calendar-va.zocomputer.io) for all options."
-        except Exception as e:
-            logger.error(f"Events fetch failed: {e}")
-            return "Events unavailable."
+            if not rows:
+                return "Network is healthy. No reconnects needed this week."
 
-    async def get_life_counter(self):
-        """Module 5: The Habit Tracker (Life Counter summary)"""
-        try:
-            # Get yesterday's summary
-            yesterday = (self.today - datetime.timedelta(days=1)).isoformat()
-            
-            result = subprocess.run(
-                ["python3", str(N5_ROOT / "scripts" / "life_counter.py"), "stats", "--days", "1"],
-                capture_output=True,
-                text=True,
-                timeout=10
-            )
-            
-            if result.returncode == 0 and result.stdout.strip():
-                # Parse the stats output
-                lines = result.stdout.strip().split('\n')
-                habits = []
-                for line in lines:
-                    if '│' in line and ('✅' in line or '⚠️' in line):
-                        habits.append(line.strip())
-                
-                if habits:
-                    return "**Yesterday's Habits:**\n" + "\n".join(habits)
-                else:
-                    return "No habits logged yesterday."
-            return "No habit data available."
-        except Exception as e:
-            logger.error(f"Life Counter fetch failed: {e}")
-            return "Habit tracker unavailable."
+            formatted = []
+            for name, category, last_contact, yaml_path in rows:
+                # Calculate days since contact
+                try:
+                    last_date = datetime.datetime.strptime(last_contact, "%Y-%m-%d").date()
+                    days_ago = (self.today - last_date).days
+                    time_str = f"{days_ago} days ago"
+                except:
+                    time_str = "unknown"
 
-    async def get_crm_review(self):
-        """Module 6: CRM Review (Profiles needing attention)"""
-        try:
-            result = subprocess.run(
-                ['python3', '/home/workspace/N5/scripts/crm_review_flagging.py', '--digest'],
-                capture_output=True,
-                text=True,
-                timeout=30
-            )
-            if result.returncode == 0 and result.stdout.strip():
-                return result.stdout.strip()
-            return ""
+                # Try to get context from yaml file
+                context = ""
+                if yaml_path:
+                    yaml_full_path = Path("/home/workspace") / yaml_path
+                    if yaml_full_path.exists():
+                        try:
+                            content = yaml_full_path.read_text()[:500]
+                            # Extract title or first line as context
+                            for line in content.split('\n'):
+                                if line.startswith('title:') or line.startswith('# '):
+                                    context = line.replace('title:', '').replace('#', '').strip()[:60]
+                                    break
+                        except:
+                            pass
+
+                cat_display = category.title() if category else "Contact"
+                line = f"- **{name}** ({cat_display})\n  Last contact: {time_str}"
+                if context:
+                    line += f"\n  _{context}_"
+                formatted.append(line)
+
+            return "\n\n".join(formatted)
+
         except Exception as e:
-            logger.warning(f"CRM review failed: {e}")
-            return ""
+            logger.error(f"Reconnects fetch failed: {e}")
+            return "Reconnects unavailable. Check CRM data."
 
     async def get_bio_context(self):
-        """Module 0: Bio-Context (Sleep + Vitals)"""
+        """Module 0: Bio-Context (Sleep + Vitals) from daily_wellness table"""
         try:
-            con = duckdb.connect(str(HEALTH_DB_PATH), read_only=True)
-            
-            # Get last night's sleep (most recent)
-            sleep_data = con.execute("""
-                SELECT date, sleep_score, minutes_asleep, minutes_in_bed, raw_payload_json
-                FROM daily_sleep
-                WHERE date = (SELECT MAX(date) FROM daily_sleep)
-            """).fetchone()
-            
-            # Get most recent resting HR
-            hr_data = con.execute("""
-                SELECT date, resting_hr
-                FROM daily_resting_hr
-                WHERE date = (SELECT MAX(date) FROM daily_resting_hr)
-            """).fetchone()
-            
-            con.close()
-            
-            if not sleep_data:
+            conn = sqlite3.connect(WELLNESS_DB)
+            cursor = conn.cursor()
+
+            # Get most recent wellness data that has sleep data
+            cursor.execute("""
+                SELECT date, sleep_duration_hours, sleep_efficiency, resting_hr
+                FROM daily_wellness
+                WHERE sleep_duration_hours IS NOT NULL
+                ORDER BY date DESC
+                LIMIT 1
+            """)
+            row = cursor.fetchone()
+            conn.close()
+
+            if not row:
                 return "**Sleep data not synced yet.** Check Fitbit sync."
-            
-            date, sleep_score, minutes_asleep, minutes_in_bed, raw_json = sleep_data
-            resting_hr = hr_data[1] if hr_data else "--"
-            
-            # Calculate hours from minutes
-            hours_asleep = minutes_asleep / 60 if minutes_asleep else None
-            
-            # Try to parse efficiency from raw JSON
-            efficiency = None
-            deep_minutes = None
-            rem_minutes = None
-            try:
-                if raw_json:
-                    payload = json.loads(raw_json)
-                    efficiency = payload.get('efficiency')
-                    levels = payload.get('levels', {})
-                    summary = levels.get('summary', {})
-                    deep_minutes = summary.get('deep', {}).get('minutes')
-                    rem_minutes = summary.get('rem', {}).get('minutes')
-            except:
-                pass
-            
+
+            date, sleep_hours, sleep_efficiency, resting_hr = row
+
             # Calculate advisory based on sleep quality
             advisory = ""
-            if hours_asleep and hours_asleep < 6:
+            if sleep_hours and sleep_hours < 6:
                 advisory = "⚠️ **DEFICIT MODE:** <6hrs sleep. Protect focus, avoid big decisions, front-load caffeine before 2pm."
-            elif sleep_score and sleep_score < 70:
-                advisory = "⚠️ **LOW SCORE:** Poor sleep quality. Consider lighter cognitive load today."
-            elif efficiency and efficiency < 70:
+            elif sleep_efficiency and sleep_efficiency < 70:
                 advisory = "⚠️ **LOW EFFICIENCY:** Poor sleep quality. Consider lighter cognitive load today."
-            elif hours_asleep:
+            elif sleep_hours:
                 advisory = "✅ **NOMINAL:** Sleep within healthy range. Full cognitive capacity available."
             else:
                 advisory = "⚠️ **DATA INCOMPLETE:** Sleep data may be partial."
-            
+
             # Format output
-            duration_str = f"{hours_asleep:.1f}hrs" if hours_asleep else "--"
-            score_str = f"{sleep_score:.0f}" if sleep_score else "--"
-            efficiency_str = f"{efficiency}%" if efficiency else "--"
-            deep_str = f"{deep_minutes}min" if deep_minutes else "--"
-            rem_str = f"{rem_minutes}min" if rem_minutes else "--"
-            
+            duration_str = f"{sleep_hours:.1f}hrs" if sleep_hours else "--"
+            efficiency_str = f"{sleep_efficiency}%" if sleep_efficiency else "--"
+            hr_str = f"{resting_hr:.0f}" if resting_hr else "--"
+
             return f"""**Last Night ({date}):**
-| Sleep | {duration_str} | Score {score_str} | Efficiency {efficiency_str} |
-|-------|---------|------|-------------|
-| Deep | {deep_str} | REM | {rem_str} |
-| Resting HR | {resting_hr} bpm | | |
+| Sleep | {duration_str} | Efficiency | {efficiency_str} |
+|-------|---------|------------|------------------|
+| Resting HR | {hr_str} bpm | | |
 
 {advisory}"""
-            
+
         except Exception as e:
             logger.error(f"Bio-context fetch failed: {e}")
             return "Bio-context unavailable. Check Fitbit sync."
@@ -390,60 +391,22 @@ class MorningDigest:
             logger.error(f"Workout fetch failed: {e}")
             return "Workout plan unavailable. Check `file 'Personal/Health/WorkoutTracker/10K_Prep_Plan.md'`"
 
-    def generate_markdown(self, wedge, landscape, loop, pulse, events=None, life_counter=None, crm_review=None, bio_context=None, workout=None):
+    def generate_markdown(self, bio_context, workout, landscape, top_3_today, reconnects):
+        """Generate the ONE daily digest markdown."""
         date_str = self.today.strftime("%A, %B %d")
-        
-        # Bio-context section
-        bio_context_section = ""
-        if bio_context:
-            bio_context_section = f"""
+
+        md = f"""# 🌅 Good Morning, V.
+*{date_str}*
+
+---
+
 ### 🧬 Bio-Context
 {bio_context}
 
 ---
 
-"""
-        
-        # Workout section (NEW)
-        workout_section = ""
-        if workout:
-            workout_section = f"""
 ### 🏋️ Today's Workout
 {workout}
-
----
-
-"""
-        
-        events_section = ""
-        if events:
-            events_section = f"""
----
-
-### 🎟️ Must-Go Events
-{events}
-"""
-        
-        life_counter_section = ""
-        if life_counter:
-            life_counter_section = f"""
----
-
-### 📊 The Habit Tracker
-{life_counter}
-"""
-        
-        # Add CRM review section handling
-        crm_review_section = f"\n{crm_review}\n" if crm_review else ""
-        
-        md = f"""
-# 🌅 Good Morning, V.
-*{date_str}*
-
----
-
-{bio_context_section}{workout_section}### 🧠 The Wedge
-> {wedge}
 
 ---
 
@@ -452,69 +415,97 @@ class MorningDigest:
 
 ---
 
-### 🔄 The Loop
-{loop}
+### 🎯 Top 3 Today
+{top_3_today}
 
 ---
 
-### 💓 The Pulse
-{pulse}
-{life_counter_section}{events_section}{crm_review_section}
+### 🤝 Reconnects
+{reconnects}
+
 ---
 
 ### 🚀 The Nudge
 **[▶️ START MORNING FLOW](https://va.zo.computer/chat?prompt=morning_flow)**
 *(Clear Mind → Defend Time → Sync System)*
+
+---
+*Generated: {datetime.datetime.now().strftime("%Y-%m-%d %H:%M ET")}*
 """
         return md
 
-    async def run(self, send=False):
-        logger.info("Generating Morning Digest...")
-        
-        # Run parallel data fetching - add workout
-        bio_context, workout, wedge, landscape, loop, pulse, events, life_counter, crm_review = await asyncio.gather(
+    async def run(self, send=False, dry_run=False):
+        logger.info("Generating Morning Digest (v2)...")
+
+        # Run parallel data fetching - only the sections we need
+        bio_context, workout, landscape, top_3_today, reconnects = await asyncio.gather(
             self.get_bio_context(),
             self.get_todays_workout(),
-            self.get_wedge(),
             self.get_landscape(),
-            self.get_loop(),
-            self.get_pulse(),
-            self.get_events(),
-            self.get_life_counter(),
-            self.get_crm_review()
+            self.get_top_3_today(),
+            self.get_reconnects()
         )
-        
-        content = self.generate_markdown(wedge, landscape, loop, pulse, events, life_counter, crm_review, bio_context, workout)
-        
+
+        content = self.generate_markdown(bio_context, workout, landscape, top_3_today, reconnects)
+
         # Save to file
         filename = f"morning-digest-{self.today.strftime('%Y-%m-%d')}.md"
         filepath = OUTPUT_DIR / filename
+
+        if dry_run:
+            logger.info(f"[DRY RUN] Would save to: {filepath}")
+            print(content)
+            return content
+
         filepath.write_text(content)
         logger.info(f"Digest saved to {filepath}")
-        
+
+        # Verify file was written
+        if not filepath.exists() or filepath.stat().st_size == 0:
+            logger.error(f"Failed to write digest to {filepath}")
+            return None
+
+        logger.info(f"Verified: {filepath} ({filepath.stat().st_size} bytes)")
+
         if send:
             logger.info("Sending email via Zo...")
-            # Use Zo CLI to send the email
             email_prompt = f"Send this markdown content as an email to me with subject '🌅 MorningOS: {self.today.strftime('%b %d')}'. Content:\n\n{content}"
             self._run_zo(email_prompt)
-            
+
         return content
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate the ONE daily digest (MorningOS v2)")
+    parser.add_argument("--dry-run", action="store_true", help="Preview without saving")
+    parser.add_argument("--email", action="store_true", help="Send digest via email")
+    parser.add_argument("--date", type=str, help="Target date (YYYY-MM-DD), defaults to today")
+    parser.add_argument("--json", action="store_true", help="Output JSON for automation")
+    args = parser.parse_args()
+
     digest = MorningDigest()
-    
-    if "--json" in sys.argv:
-        # JSON output mode for agent consumption
-        import json as json_mod
-        content = asyncio.run(digest.run(send=False))
+
+    # Override date if specified
+    if args.date:
+        try:
+            digest.today = datetime.date.fromisoformat(args.date)
+            logger.info(f"Using date: {digest.today}")
+        except ValueError:
+            logger.error(f"Invalid date format: {args.date}. Use YYYY-MM-DD.")
+            sys.exit(1)
+
+    if args.json:
+        content = asyncio.run(digest.run(send=False, dry_run=args.dry_run))
         output_path = OUTPUT_DIR / f"morning-digest-{digest.today.strftime('%Y-%m-%d')}.md"
-        print(json_mod.dumps({
-            "status": "success",
+        print(json.dumps({
+            "status": "success" if content else "error",
             "filepath": str(output_path),
-            "date": digest.today.isoformat()
+            "date": digest.today.isoformat(),
+            "dry_run": args.dry_run
         }))
     else:
-        asyncio.run(digest.run(send="--email" in sys.argv))
+        asyncio.run(digest.run(send=args.email, dry_run=args.dry_run))
 
 
 
