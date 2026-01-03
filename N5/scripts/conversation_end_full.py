@@ -324,7 +324,27 @@ def run_full_close(convo_id: str, dry_run: bool = False) -> Dict:
     logger.info("Extracting lessons...")
     lessons = extract_lessons_from_session(session_state, convo_path)
     result["lessons"] = lessons
-    
+
+    # Record lessons to registry
+    if lessons and not dry_run:
+        try:
+            from conversation_registry import ConversationRegistry
+            registry = ConversationRegistry()
+            for idx, lesson in enumerate(lessons):
+                lesson_data = {
+                    "lesson_id": f"L_{convo_id}_{lesson.get('type', 'general')}_{idx}_{int(start_time.timestamp())}",
+                    "timestamp": start_time.isoformat(),
+                    "type": lesson.get("type", "process"),
+                    "title": lesson.get("lesson", "Untitled lesson")[:100],
+                    "description": lesson.get("lesson", ""),
+                    "principle_refs": [],
+                    "status": "pending"
+                }
+                registry.import_learning(convo_id, lesson_data)
+            logger.info(f"Recorded {len(lessons)} lessons to registry")
+        except Exception as e:
+            logger.warning(f"Registry learning recording skipped: {e}")
+
     # Generate AAR
     logger.info("Generating AAR structure...")
     aar = generate_aar_structure(

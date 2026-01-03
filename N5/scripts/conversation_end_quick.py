@@ -341,7 +341,33 @@ def run_quick_close(convo_id: str, dry_run: bool = False) -> Dict[str, Any]:
     # Step 5: Update SESSION_STATE.md
     logger.info("Updating session state")
     update_session_state(convo_path, title, summary, dry_run)
-    
+
+    # Step 5.5: Record artifacts to registry
+    if files and not dry_run:
+        try:
+            from conversation_registry import ConversationRegistry
+            registry = ConversationRegistry()
+            # Noise files to exclude
+            noise_patterns = {'.pyc', '__pycache__', '.DS_Store', 'node_modules', '.git'}
+            recorded = 0
+            for f in files:
+                # Skip session files, debug files, and noise
+                if f["category"] in ["session", "debug"]:
+                    continue
+                if any(noise in f["path"] for noise in noise_patterns):
+                    continue
+                registry.add_artifact(
+                    convo_id=convo_id,
+                    filepath=f["path"],
+                    artifact_type=f["category"],
+                    description=f"Created during conversation"
+                )
+                recorded += 1
+            if recorded > 0:
+                logger.info(f"Recorded {recorded} artifacts to registry")
+        except Exception as e:
+            logger.warning(f"Registry artifact recording skipped: {e}")
+
     # Step 6: Format output
     logger.info("Formatting output")
     output = format_output(

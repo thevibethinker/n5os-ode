@@ -475,15 +475,62 @@ class SessionStateManager:
             return "discussion"
         
         return max(scores, key=scores.get)
-    
+
+    def _infer_mode(self) -> str:
+        """
+        Infer conversation mode from environmental signals.
+
+        Priority (first match wins):
+        1. PARENT_ID or N5_PARENT_ID env var → "worker"
+        2. SESSION_STATE contains "Parent Conversation:" → "worker"
+        3. worker_updates/ directory exists with files → "orchestrator"
+        4. N5_SCHEDULED=true env var → "scheduled"
+        5. Default → "standalone"
+
+        Returns: One of: standalone, worker, orchestrator, scheduled
+        """
+        import os
+
+        # Signal 1: Worker detection via environment
+        parent_id = os.environ.get("PARENT_ID") or os.environ.get("N5_PARENT_ID")
+        if parent_id:
+            return "worker"
+
+        # Signal 2: Worker detection via SESSION_STATE content
+        if self.session_state_path.exists():
+            try:
+                content = self.session_state_path.read_text()
+                if "Parent Conversation:" in content or "parent_id:" in content:
+                    return "worker"
+            except Exception:
+                pass  # If we can't read, continue to other signals
+
+        # Signal 3: Orchestrator detection via worker_updates directory
+        worker_updates = self.workspace_path / "worker_updates"
+        if worker_updates.exists():
+            try:
+                if any(worker_updates.iterdir()):
+                    return "orchestrator"
+            except Exception:
+                pass
+
+        # Signal 4: Scheduled task detection
+        if os.environ.get("N5_SCHEDULED") == "true":
+            return "scheduled"
+
+        # Default: standalone interactive session
+        return "standalone"
+
     def _get_template(self, conv_type: str, mode: str = None) -> str:
         """Get SESSION_STATE template for conversation type."""
         now = datetime.now(timezone.utc).isoformat()
-        
+        # Infer mode if not explicitly provided
+        effective_mode = mode or self._infer_mode()
+
         base_template = f"""---
 conversation_id: {self.convo_id}
 type: {conv_type}
-mode: {mode or 'general'}
+mode: {effective_mode}
 status: active
 created: {now}
 last_updated: {now}
@@ -493,7 +540,7 @@ last_updated: {now}
 
 ## Metadata
 - **Type:** {conv_type.capitalize()}
-- **Mode:** {mode or 'general'}
+- **Mode:** {effective_mode}
 - **Focus:** TBD
 - **Objective:** TBD
 - **Status:** active

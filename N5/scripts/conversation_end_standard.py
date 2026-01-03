@@ -396,7 +396,22 @@ def run_standard_close(convo_id: str, dry_run: bool = False) -> Dict[str, Any]:
     # Step 8: Update SESSION_STATE.md
     logger.info("Updating session state")
     update_session_state(convo_path, title, summary, dry_run)
-    
+
+    # Step 8.5: Record decisions to registry
+    if content_analysis.get("decisions") and not dry_run:
+        try:
+            from conversation_registry import ConversationRegistry
+            registry = ConversationRegistry()
+            for decision in content_analysis["decisions"]:
+                registry.log_decision(
+                    convo_id=convo_id,
+                    decision=decision,
+                    rationale="Extracted from conversation content"
+                )
+            logger.info(f"Recorded {len(content_analysis['decisions'])} decisions to registry")
+        except Exception as e:
+            logger.warning(f"Registry decision recording skipped: {e}")
+
     # Step 9: Format output
     logger.info("Formatting output")
     output = format_tier2_output(
