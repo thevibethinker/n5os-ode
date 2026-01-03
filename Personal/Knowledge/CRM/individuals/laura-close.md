@@ -1,7 +1,8 @@
 ---
-person_id: laura-close
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_url: https://www.linkedin.com/in/ACoAAARs02kBnR8ljDrEdrTkZYKYvKAgHeUix4A
+person_id: laura-close
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/laura-close.md) -->
@@ -129,3 +130,15 @@ Laura Close operates Close Cohen, a career coaching and placement firm based in 
 **Created:** 2025-10-17  
 **Last Updated:** 2025-10-17  
 **Meeting Records:** `N5/records/meetings/2025-10-17_external-laura-close_200216/`
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Laura Close](https://www.linkedin.com/in/ACoAAARs02kBnR8ljDrEdrTkZYKYvKAgHeUix4A)
+- **Headline:** Founder, Included. AI for HR Strategist. #SXSW innovation award winner. #startupoftheyear winner, Established. Included’s AI automates people analytics insights and data stories. Delight your internal customers ✨
+
+### Conversation Stats
+- **Total Messages:** 2
+- **First Message:** 2025-11-29
+- **Last Message:** 2025-11-29
+- **Status:** ACTIVE

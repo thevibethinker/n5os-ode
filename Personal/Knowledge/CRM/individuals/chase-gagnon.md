@@ -1,7 +1,9 @@
 ---
-person_id: chase-gagnon
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_connected_at: '2025-08-05'
+linkedin_url: https://www.linkedin.com/in/ACoAADMCzpcBmFqIH0r_TaIx1UsTpwmq7UONq4w
+person_id: chase-gagnon
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/chase-gagnon.md) -->
@@ -113,3 +115,16 @@ last_edited: '2025-11-29'
 - [2025-10-20_external-careerspan-oracle-introduction](file:///home/workspace/N5/records/meetings/2025-10-20_external-careerspan-oracle-introduction)
 
 **Tags:** #stakeholder:networking #company:oracle #role:sales #location:brooklyn #location:boston
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Chase Gagnon](https://www.linkedin.com/in/ACoAADMCzpcBmFqIH0r_TaIx1UsTpwmq7UONq4w)
+- **Headline:** Account Executive at Oracle
+- **Connected:** 2025-08-05 (5 months)
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-12-17
+- **Last Message:** 2025-12-17
+- **Status:** ACTIVE

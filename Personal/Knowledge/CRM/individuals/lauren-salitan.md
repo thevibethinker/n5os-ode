@@ -1,7 +1,9 @@
 ---
-person_id: lauren-salitan
 created: 2025-11-29
-last_edited: 2025-11-29
+last_edited: '2026-01-03'
+linkedin_connected_at: '2025-05-21'
+linkedin_url: https://www.linkedin.com/in/ACoAACVL05QBr3eUOfVF518w21nyaQX7dhrMf8c
+person_id: lauren-salitan
 ---
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/lauren-salitan.md) -->
 # Lauren Salitan
@@ -95,3 +97,34 @@ No emails found
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
 
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Lauren Salitan](https://www.linkedin.com/in/ACoAACVL05QBr3eUOfVF518w21nyaQX7dhrMf8c)
+- **Headline:** Product-Minded Builder | Internal Tools, Automation, & Ops Systems | Founder @ GreenerFlows
+- **Connected:** 2025-05-21 (7 months)
+
+### Conversation Stats
+- **Total Messages:** 2
+- **First Message:** 2025-11-19
+- **Last Message:** 2025-11-19
+- **Status:** PENDING_RESPONSE
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-03 02:22
+
+**Communication Pattern:**
+- Total threads: 3
+- Date range: 2025-11-15 to 2025-12-20
+- Last exchange: 2025-12-20
+- Frequency: monthly
+
+**Relationship Context:**
+Met through startup networking. Lauren is building GreenerFlows and has expressed interest in Careerspan's approach to career intelligence.
+
+**Recent Topics:**
+- Product collaboration ideas
+- Intro requests for HR tech founders
+
+**Follow-up Items:**
+- Schedule follow-up call in January

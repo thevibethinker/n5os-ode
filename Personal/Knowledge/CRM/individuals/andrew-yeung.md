@@ -1,7 +1,9 @@
 ---
-person_id: andrew-yeung
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_connected_at: '2025-08-11'
+linkedin_url: https://www.linkedin.com/in/ACoAABDfn_gBEKaul7X6PmRctLLi80uJPcF9StE
+person_id: andrew-yeung
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/andrew-yeung.md) -->
@@ -240,3 +242,16 @@ He screens for:
 **Last Updated**: 2025-11-20 10:00 PM ET  
 **Source**: Junto Club GROUP MIDNIGHT email thread + extensive web research  
 **Enrichment Status**: Complete - comprehensive profile with strategic context
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Andrew Yeung](https://www.linkedin.com/in/ACoAABDfn_gBEKaul7X6PmRctLLi80uJPcF9StE)
+- **Headline:** building a portfolio of irl communities + investing at pre-seed/seed
+- **Connected:** 2025-08-11 (4 months)
+
+### Conversation Stats
+- **Total Messages:** 2
+- **First Message:** 2025-12-03
+- **Last Message:** 2025-12-03
+- **Status:** ACTIVE

@@ -1,7 +1,9 @@
 ---
-person_id: davitshadunts
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_connected_at: '2025-11-29'
+linkedin_url: https://www.linkedin.com/in/ACoAADGSUusB2gZ2AkTCJaWhB0A6SAqhZ4O1UCw
+person_id: davitshadunts
 ---
 
 <!-- source: legacy_view (/home/workspace/Knowledge/crm/individuals/davitshadunts.md) -->
@@ -59,3 +61,16 @@ Upcoming meeting on 2025-11-29
 **Last email:** 2025-11-27  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Davit Shadunts](https://www.linkedin.com/in/ACoAADGSUusB2gZ2AkTCJaWhB0A6SAqhZ4O1UCw)
+- **Headline:** Columbia Engineering
+- **Connected:** 2025-11-29 (1 month)
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-12-21
+- **Last Message:** 2025-12-21
+- **Status:** PENDING_RESPONSE

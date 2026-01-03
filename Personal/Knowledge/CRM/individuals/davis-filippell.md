@@ -1,16 +1,18 @@
 ---
-name: Davis Filippell
+email_aliases: null
 email_primary: davis@teamworkonline.com
-email_aliases: 
-organization: Teamworkonline
-role:
-  - To be determined
-first_contact: "2025-12-09T11:30:00-05:00"
+first_contact: '2025-12-09T11:30:00-05:00'
+interaction_count: 1
+last_edited: '2026-01-03'
+last_interaction: 2025-12-07
 last_updated: 2025-12-07
 lead_type: LD-GEN
+linkedin_url: https://www.linkedin.com/in/ACoAAAPdJCIBX6cckzcg-5gcgBU52AiykUr1qe4
+name: Davis Filippell
+organization: Teamworkonline
+role:
+- To be determined
 status: active
-interaction_count: 1
-last_interaction: 2025-12-07
 ---
 # Davis Filippell
 
@@ -67,3 +69,14 @@ No emails found
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
 
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Davis Filippell](https://www.linkedin.com/in/ACoAAAPdJCIBX6cckzcg-5gcgBU52AiykUr1qe4)
+- **Headline:** President @ TeamWork Online | Building Careers in Sports Business
+
+### Conversation Stats
+- **Total Messages:** 2
+- **First Message:** 2025-12-01
+- **Last Message:** 2025-12-01
+- **Status:** ACTIVE

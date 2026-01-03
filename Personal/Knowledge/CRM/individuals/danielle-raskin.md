@@ -1,7 +1,8 @@
 ---
-person_id: danielle-raskin
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_url: https://www.linkedin.com/in/ACoAAC3XlGIBQ_oeKl971e9EjyvMmCPsrzibKJk
+person_id: danielle-raskin
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/danielle-raskin.md) -->
@@ -120,3 +121,15 @@ While Andrew is the visionary and Jacob is the Chief of Staff, team members like
 **Last Updated**: 2025-11-20 10:30 PM ET  
 **Source**: Junto Club GROUP MIDNIGHT coordination (CC list)  
 **Enrichment Status**: Basic profile created - requires LinkedIn research for title/background
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Danielle Raskin](https://www.linkedin.com/in/ACoAAC3XlGIBQ_oeKl971e9EjyvMmCPsrzibKJk)
+- **Headline:** Marketing & Events Manager @ Fibe
+
+### Conversation Stats
+- **Total Messages:** 2
+- **First Message:** 2025-12-03
+- **Last Message:** 2025-12-03
+- **Status:** PENDING_RESPONSE

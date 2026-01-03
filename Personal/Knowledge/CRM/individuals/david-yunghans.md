@@ -1,7 +1,8 @@
 ---
-person_id: david-yunghans
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_url: https://www.linkedin.com/in/david-a-yunghans
+person_id: david-yunghans
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/david-yunghans.md) -->
@@ -59,3 +60,15 @@ No emails found
 **Last email:** 2025-11-15  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [David Yunghans](https://www.linkedin.com/in/david-a-yunghans)
+- **Headline:** Founder of CacheAi - the new Handshake | UIUC 2025’ - Behavioral Neuroscience
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-11-17
+- **Last Message:** 2025-11-17
+- **Status:** PENDING_RESPONSE

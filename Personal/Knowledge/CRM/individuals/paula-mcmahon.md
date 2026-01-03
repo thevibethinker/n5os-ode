@@ -1,7 +1,8 @@
 ---
-person_id: paula-mcmahon
 created: '2025-11-29'
-last_edited: '2025-11-29'
+last_edited: '2026-01-03'
+linkedin_url: https://www.linkedin.com/in/ACoAAAByXzYBZssPzPFK5gbrxwyw9sTFR8xmDbA
+person_id: paula-mcmahon
 ---
 
 <!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/paula-mcmahon.md) -->
@@ -59,3 +60,15 @@ No prior email history available
 **Last email:** 2025-11-12  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+## LinkedIn Intelligence (via Kondo)
+*Last synced: 2026-01-03 02:18*
+
+- **LinkedIn:** [Paula McMahon](https://www.linkedin.com/in/ACoAAAByXzYBZssPzPFK5gbrxwyw9sTFR8xmDbA)
+- **Headline:** Head of Operations | Leading at the intersection of business, product, and technology to propel innovation | ex-Disney
+
+### Conversation Stats
+- **Total Messages:** 1
+- **First Message:** 2025-11-14
+- **Last Message:** 2025-11-14
+- **Status:** ACTIVE
