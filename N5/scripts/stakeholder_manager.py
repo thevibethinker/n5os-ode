@@ -25,11 +25,17 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Paths
+# Paths - using canonical locations
 WORKSPACE = Path("/home/workspace")
-CRM_PROFILES_DIR = WORKSPACE / "Knowledge/crm/individuals"
-INDEX_FILE = CRM_PROFILES_DIR / "index.jsonl"
-TEMPLATE_FILE = CRM_PROFILES_DIR / "_template.md"
+
+# Import canonical paths
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from crm_paths import CRM_INDIVIDUALS, CRM_INDEX
+
+CRM_PROFILES_DIR = CRM_INDIVIDUALS  # Canonical location
+INDEX_FILE = CRM_INDEX
+TEMPLATE_FILE = CRM_INDIVIDUALS / "_template.md"
 
 # Domain patterns for external detection
 CAREERSPAN_DOMAINS = ["mycareerspan.com", "theapply.ai"]

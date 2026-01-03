@@ -9,7 +9,6 @@ import os
 import sys
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
-from datetime import datetime, timedelta, timezone
 import sqlite3
 import logging
 
@@ -30,7 +29,11 @@ from stakeholder_manager import (
 )
 
 WORKSPACE = Path("/home/workspace")
-DB_PATH = WORKSPACE / "N5/data/profiles.db"
+
+# Import canonical paths
+from crm_paths import CRM_DB, CRM_INDIVIDUALS
+
+DB_PATH = CRM_DB  # Use canonical CRM database
 
 
 def scan_calendar_for_new_stakeholders(
@@ -117,7 +120,7 @@ def process_calendar_events(events: list) -> list:
         List of new stakeholder dicts
     """
     # Connect to database for deduplication
-    db_path = Path("/home/workspace/N5/data/profiles.db")
+    db_path = CRM_DB
     
     if not db_path.exists():
         logger.error(f"Database not found: {db_path}")

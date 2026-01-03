@@ -87,9 +87,8 @@ class N5MemoryClient:
             },
             "crm": {
                 "path_prefixes": [
-                    "/home/workspace/N5/crm_v3/profiles/",
-                    "/home/workspace/N5/stakeholders/",
-                    "/home/workspace/Knowledge/crm/",
+                    "/home/workspace/Personal/Knowledge/CRM/individuals/",  # Canonical profiles
+                    "/home/workspace/Personal/Knowledge/CRM/",              # CRM root (orgs, views)
                 ]
             },
             "voice-guides": {

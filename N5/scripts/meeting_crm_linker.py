@@ -19,9 +19,15 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 WORKSPACE = Path("/home/workspace")
-MEETINGS_ROOT = WORKSPACE / "Personal" / "Meetings"
-CRM_ROOT = WORKSPACE / "Personal" / "Knowledge" / "CRM" / "individuals"
-CRM_INDEX = WORKSPACE / "Knowledge" / "crm" / "individuals" / "index.jsonl"
+
+# Import canonical paths
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from crm_paths import CRM_INDIVIDUALS, CRM_INDEX as CANONICAL_INDEX, MEETINGS_ROOT as CANONICAL_MEETINGS
+
+MEETINGS_ROOT = CANONICAL_MEETINGS
+CRM_ROOT = CRM_INDIVIDUALS
+CRM_INDEX = CANONICAL_INDEX
 
 
 @dataclass
@@ -208,10 +214,16 @@ def scan_meetings(root: Path, limit: Optional[int] = None, dry_run: bool = False
     count = 0
     for path in sorted(root.rglob("manifest.json")):
         meeting_folder = path.parent
-        # Only process [M] or [P] suffixed meeting folders under Personal/Meetings
+        # Skip quarantine folders
         if "_quarantine" in str(meeting_folder):
             continue
-        if not (meeting_folder.name.endswith("_[M]") or meeting_folder.name.endswith("_[P]")):
+        # Process folders with manifest.json - check status instead of folder suffix
+        manifest = load_manifest(meeting_folder / "manifest.json")
+        if not manifest:
+            continue
+        status = manifest.get("status", "")
+        # Process meetings that have been through initial processing
+        if status not in ("processed", "manifest_generated", "mg2_completed", "intelligence_generated"):
             continue
         res = process_meeting(meeting_folder, dry_run=dry_run)
         results.append((meeting_folder, res))
