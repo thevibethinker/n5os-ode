@@ -51,10 +51,10 @@ examples:
     - Complex language for one-off task (unnecessary complexity)
 
 anti_patterns:
-  - "Resume-driven development" (choosing trendy language)
-  - Language zealotry (one size fits all)
-  - Premature optimization (complex language for simple task)
-  - Ignoring maintenance burden on non-technical stakeholder
+  - "Resume-driven development (choosing trendy language)"
+  - "Language zealotry (one size fits all)"
+  - "Premature optimization (complex language for simple task)"
+  - "Ignoring maintenance burden on non-technical stakeholder"
 
 related_principles:
   - P25
