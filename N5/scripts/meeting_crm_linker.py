@@ -47,6 +47,173 @@ def load_manifest(path: Path) -> Optional[Dict]:
         return None
 
 
+def extract_participants_from_b03(meeting_folder: Path) -> List[str]:
+    """Extract participant names from B03/B08 STAKEHOLDER_INTELLIGENCE.md.
+
+    Handles two formats:
+    1. Person names as headers: ## Gabi Zijderveld
+    2. Name field in content: **Name:** Sara Schmitt
+    """
+    b03_paths = [
+        meeting_folder / "B03_STAKEHOLDER_INTELLIGENCE.md",
+        meeting_folder / "B03_STAKE_HOLDER_INTELLIGENCE.md",
+        meeting_folder / "B08_STAKEHOLDER_INTELLIGENCE.md",
+    ]
+
+    for b03_path in b03_paths:
+        if not b03_path.exists():
+            continue
+        content = b03_path.read_text(encoding="utf-8")
+        participants = []
+
+        # Method 1: Extract from **Name:** field (B08 format)
+        for match in re.finditer(r'\*\*Name:\*\*\s*([^\n]+)', content):
+            name = match.group(1).strip()
+            if name and len(name.split()) >= 2:
+                participants.append(name)
+
+        # Method 2: Extract person names from ## or ### headers (B03 format)
+        if not participants:
+            # Try ### headers first (nested under ## Participants)
+            for match in re.finditer(r'^###\s+\*{0,2}([^#\n*]+)', content, re.MULTILINE):
+                name = match.group(1).strip()
+                name_lower = name.lower()
+
+                # Skip common section headers that aren't people
+                skip_keywords = {
+                    'participants', 'group dynamics', 'stakeholder intelligence', 'stakeholder_intelligence',
+                    'meeting context', 'relationship with v', 'relationship dynamics', 'identity',
+                    'professional intelligence', 'interaction history', 'quick reference',
+                    'auto-generated metadata', 'intelligence log', 'enrichment data',
+                    'gmail intelligence', 'linkedin intelligence', 'founder profiles',
+                    'dynamic between', 'threat assessment', 'information asymmetries',
+                    'knowledge gaps', 'market influencer', 'potential acquirer', 'foundational profile',
+                    'what resonated', 'crm integration', 'howie integration', 'domain authority',
+                    'source credibility', 'internal stakeholders', 'external stakeholders',
+                    'communication patterns', 'relationship notes', 'integration points',
+                    'team dynamics', 'interpersonal patterns', 'cultural observations',
+                    'conflict zones', 'intelligence gaps', 'follow-up trigger', 'relationship intelligence',
+                }
+
+                # Skip if matches any skip keyword
+                if any(kw in name_lower for kw in skip_keywords):
+                    continue
+
+                # Skip numbered lists like "1. Name"
+                if re.match(r'^\d+\.\s', name):
+                    name = re.sub(r'^\d+\.\s*', '', name)
+
+                # Skip if starts with B0 (block names)
+                if name.upper().startswith('B0'):
+                    continue
+
+                # Skip if contains parenthetical role descriptions (except names like "John (Company)")
+                bad_parens = ['role', 'inferred', 'unclear', 'referenced', 'investors', 'advisors', 'team']
+                if any(bp in name_lower for bp in bad_parens if '(' in name):
+                    continue
+
+                # Skip if it looks like a section title (has colon)
+                if ':' in name:
+                    continue
+
+                # Basic name validation: should have 2-5 words, start with capital
+                # Remove parenthetical suffix for counting
+                name_for_count = re.sub(r'\s*\([^)]+\)\s*$', '', name)
+                words = name_for_count.split()
+                if len(words) >= 2 and len(words) <= 5 and name[0].isupper():
+                    participants.append(name)
+
+        # If no ### headers found, try ## headers (alternate B03 format)
+        if not participants:
+            for match in re.finditer(r'^##\s+([^#\n]+)', content, re.MULTILINE):
+                name = match.group(1).strip()
+                name_lower = name.lower()
+
+                # Skip common section headers
+                skip_keywords = {
+                    'participants', 'group dynamics', 'stakeholder intelligence', 'stakeholder_intelligence',
+                    'meeting context', 'relationship with v', 'relationship dynamics', 'identity',
+                    'professional intelligence', 'interaction history', 'quick reference',
+                    'auto-generated metadata', 'intelligence log', 'enrichment data',
+                    'gmail intelligence', 'linkedin intelligence', 'founder profiles',
+                    'dynamic between', 'threat assessment', 'information asymmetries',
+                    'knowledge gaps', 'market influencer', 'potential acquirer', 'foundational profile',
+                    'what resonated', 'crm integration', 'howie integration', 'domain authority',
+                    'source credibility', 'internal stakeholders', 'external stakeholders',
+                    'communication patterns', 'relationship notes', 'integration points',
+                    'team dynamics', 'interpersonal patterns', 'cultural observations',
+                    'conflict zones', 'intelligence gaps', 'follow-up trigger', 'relationship intelligence',
+                }
+
+                if any(kw in name_lower for kw in skip_keywords):
+                    continue
+                if ':' in name or name.upper().startswith('B0'):
+                    continue
+
+                name_for_count = re.sub(r'\s*\([^)]+\)\s*$', '', name)
+                words = name_for_count.split()
+                if len(words) >= 2 and len(words) <= 5 and name[0].isupper():
+                    participants.append(name)
+
+        if participants:
+            return participants
+
+    return []
+
+
+def extract_participants_from_folder_name(folder_name: str) -> List[str]:
+    """Extract participant names from meeting folder name.
+
+    Only extracts names that look like person names (First Last pattern).
+    Skips folder names that are clearly meeting topics or descriptions.
+
+    Examples:
+        "2025-11-17_Vrijen-Attawar-And-Paula-Mcmahon" → ["Vrijen Attawar", "Paula Mcmahon"]
+        "2025-12-16_Victor-hu-Lumos-capital" → ["Victor Hu"]
+        "2025-11-10_Daily-Standup" → []  # Not a person name
+    """
+    # Remove date prefix
+    name_part = re.sub(r'^\d{4}-\d{2}-\d{2}_', '', folder_name)
+    # Remove common suffixes
+    name_part = re.sub(r'_\[M\]$|_\[P\]$|_Internal$|_external.*$', '', name_part, flags=re.IGNORECASE)
+
+    # Skip clearly non-person folder names
+    skip_patterns = [
+        r'^daily[-_]', r'[-_]standup', r'[-_]meeting', r'[-_]sync',
+        r'^internal[-_]', r'[-_]internal$', r'^team[-_]', r'[-_]team$',
+        r'[-_]review', r'[-_]planning', r'[-_]strategy', r'[-_]admin',
+        r'[-_]war[-_]room', r'^acquisition', r'[-_]coaching',
+        r'[-_]financial', r'[-_]discovery', r'[-_]intelligence',
+    ]
+    name_lower = name_part.lower()
+    if any(re.search(pat, name_lower) for pat in skip_patterns):
+        return []
+
+    # Split on common separators for multiple participants
+    # Handle "And", "_And_", "-And-" between names
+    parts = re.split(r'[-_]And[-_]|[-_]and[-_]|-x-|_x_', name_part, flags=re.IGNORECASE)
+
+    participants = []
+    for part in parts:
+        # Convert dashes/underscores to spaces
+        name = re.sub(r'[-_]', ' ', part).strip()
+        words = name.split()
+
+        # Skip if doesn't look like a name (needs 2+ words, no numbers, etc.)
+        if len(words) < 2:
+            continue
+
+        # Take first 2-3 words as name
+        candidate = ' '.join(words[:3]).title()
+
+        # Basic validation: both parts should be capitalized words
+        name_words = candidate.split()
+        if all(w[0].isupper() and w.isalpha() for w in name_words[:2] if len(w) > 0):
+            participants.append(candidate)
+
+    return participants
+
+
 def parse_participant(raw: str) -> Participant:
     # Examples: "Jake Gates (Marvin)", "Vrijen Attawar (Careerspan)"
     m = re.match(r"^(.*?)\s*\((.*?)\)\s*$", raw)
@@ -163,8 +330,27 @@ def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Optional[Dic
     if meeting_type == "internal":
         return None
 
+    # Additional heuristics to detect internal meetings from folder name
+    folder_lower = meeting_folder.name.lower()
+    internal_indicators = [
+        'internal', 'standup', 'stand-up', 'stand_up', 'team_standup',
+        'cofounder', 'co-founder', 'war_room', 'war-room', 'daily_team',
+    ]
+    if any(ind in folder_lower for ind in internal_indicators):
+        return None
+
+    # Try multiple sources for participant names
     selection = manifest.get("selection_notes", {})
     raw_participants = selection.get("key_stakeholders", [])
+
+    # Fallback 1: Extract from B03/B08 stakeholder intelligence file
+    if not raw_participants:
+        raw_participants = extract_participants_from_b03(meeting_folder)
+
+    # Fallback 2: Extract from folder name
+    if not raw_participants:
+        raw_participants = extract_participants_from_folder_name(meeting_folder.name)
+
     if not raw_participants:
         return None
 
