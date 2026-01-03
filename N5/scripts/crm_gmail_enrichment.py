@@ -31,25 +31,40 @@ def find_profile_by_identifier(identifier: str) -> dict | None:
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
-    
-    # Try exact email match first
-    c.execute("SELECT * FROM profiles WHERE email = ? OR primary_email = ?", 
-              (identifier, identifier))
+
+    # Try exact email match first (canonical schema uses 'individuals' table)
+    c.execute("SELECT * FROM individuals WHERE email = ?", (identifier,))
     row = c.fetchone()
-    
+
     if not row:
-        # Try slug/name match
+        # Try slug/name match via markdown_path
         c.execute("""
-            SELECT * FROM profiles 
-            WHERE LOWER(yaml_path) LIKE ? 
+            SELECT * FROM individuals
+            WHERE LOWER(markdown_path) LIKE ?
             LIMIT 1
         """, (f"%{identifier.lower()}%",))
         row = c.fetchone()
-    
+
     conn.close()
-    
+
     if row:
         return dict(row)
+
+    # Fallback: search markdown files directly
+    for md_file in PROFILES_DIR.glob("*.md"):
+        if identifier.lower() in md_file.stem.lower():
+            # Read email from file
+            content = md_file.read_text()
+            email = None
+            email_match = re.search(r'\*\*Email:\*\*\s*(\S+@\S+)', content)
+            if email_match:
+                email = email_match.group(1)
+            return {
+                'person_id': md_file.stem,
+                'email': email,
+                'markdown_path': str(md_file)
+            }
+
     return None
 
 
