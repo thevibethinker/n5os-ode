@@ -17,8 +17,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)sZ %(levelname)s %(mes
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-B08_PATTERN = WORKSPACE / "Personal/Meetings/*/B08_STAKEHOLDER_INTELLIGENCE.md"
-CRM_DIR = WORKSPACE / "Knowledge/crm/individuals"
+
+# Import canonical paths
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from crm_paths import CRM_INDIVIDUALS, MEETINGS_ROOT
+
+# Note: B08 files are nested in Week-of-*/meeting_folder/ - use recursive glob
+CRM_DIR = CRM_INDIVIDUALS
 
 def extract_stakeholder_name(b08_path: Path) -> Optional[str]:
     """Extract stakeholder name from B08 content."""
@@ -119,11 +125,14 @@ def sync_b08_to_crm(meeting_id: Optional[str] = None):
         CRM_DIR.mkdir(parents=True, exist_ok=True)
         logger.info(f"Created CRM directory: {CRM_DIR}")
     
-    # Find B08 files
+    # Find B08 files - use recursive glob to handle Week-of-*/meeting/ structure
     if meeting_id:
-        b08_files = list((WORKSPACE / "Personal/Meetings").glob(f"{meeting_id}/B08_STAKEHOLDER_INTELLIGENCE.md"))
+        b08_files = list(MEETINGS_ROOT.glob(f"**/{meeting_id}/B08_STAKEHOLDER_INTELLIGENCE.md"))
     else:
-        b08_files = list((WORKSPACE / "Personal/Meetings").glob("*/B08_STAKEHOLDER_INTELLIGENCE.md"))
+        b08_files = list(MEETINGS_ROOT.glob("**/B08_STAKEHOLDER_INTELLIGENCE.md"))
+
+    # Filter out quarantine
+    b08_files = [f for f in b08_files if "_quarantine" not in str(f)]
     
     logger.info(f"Found {len(b08_files)} B08 files to process")
     

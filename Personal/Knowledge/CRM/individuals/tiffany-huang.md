@@ -67,6 +67,15 @@ Based on 2025-11-13 meeting:
 
 [None identified yet - needs enrichment]
 
+---
+
+## Domain Authority & Source Credibility
+
+**Last Updated**: 2025-11-13 12:04 ET\
+**Based on**: 1 insight analyzed across 1 meeting
+
+##
+
 ## Notes
 
 **Personality/Working Style**:
