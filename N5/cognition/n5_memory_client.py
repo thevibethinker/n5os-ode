@@ -447,10 +447,11 @@ class N5MemoryClient:
                recency_weight: float = 0.2, use_hybrid: bool = True,
                semantic_weight: float = 0.7, bm25_weight: float = 0.3,
                use_reranker: bool = False, rerank_top_k: int = 50,
-               metadata_filters: Optional[Dict[str, Any]] = None) -> List[Dict]:
+               metadata_filters: Optional[Dict[str, Any]] = None,
+               _query_embedding: Optional[bytes] = None) -> List[Dict]:
         """
         Semantic search with optional hybrid BM25 and reranking.
-        
+
         Args:
             query: Search query string
             limit: Number of results to return
@@ -458,14 +459,16 @@ class N5MemoryClient:
             recency_weight: Weight for recency boosting (0-1)
             use_hybrid: Enable BM25 + semantic hybrid search
             semantic_weight: Weight for semantic similarity in hybrid mode
-            bm25_weight: Weight for BM25 scores in hybrid mode  
+            bm25_weight: Weight for BM25 scores in hybrid mode
             use_reranker: Enable cross-encoder reranking
             rerank_top_k: Number of candidates to rerank
             metadata_filters: Dict of metadata filters {field: value or (op, value)}
                 Supported fields: path, block_type, content_date
                 Operators: eq, ne, gt, lt, gte, lte, contains, startswith
+            _query_embedding: Pre-computed query embedding (internal use for batching)
         """
-        query_embedding = self.get_embedding(query)
+        # Use pre-computed embedding if provided, otherwise compute
+        query_embedding = _query_embedding if _query_embedding is not None else self.get_embedding(query)
         query_vec = np.frombuffer(query_embedding, dtype=np.float32)
         
         cursor = self._get_db().cursor()
@@ -672,19 +675,25 @@ class N5MemoryClient:
 
         This is a convenience wrapper over `search` that applies path-prefix
         filters and merges results across prefixes, preserving scoring.
+
+        OPTIMIZATION: Computes query embedding once and reuses across all
+        path prefix searches, avoiding redundant embedding API calls.
         """
         profile_def = self.profiles.get(profile)
         if not profile_def:
             raise ValueError(f"Unknown profile: {profile}")
-        
+
         path_prefixes: List[str] = profile_def.get("path_prefixes", [])
         if not path_prefixes:
             # Fall back to generic search if misconfigured
             return self.search(query, limit=limit, **kwargs)
-        
+
+        # OPTIMIZATION: Compute embedding once for all prefix searches
+        query_embedding = self.get_embedding(query)
+
         all_results: List[Dict[str, Any]] = []
         seen: set[str] = set()
-        
+
         for prefix in path_prefixes:
             mf = dict(kwargs.get("metadata_filters") or {})
             # Path filter uses startswith operator to scope results
@@ -693,6 +702,7 @@ class N5MemoryClient:
                 query=query,
                 limit=limit,
                 metadata_filters=mf,
+                _query_embedding=query_embedding,  # Reuse pre-computed embedding
                 **{k: v for k, v in kwargs.items() if k != "metadata_filters"}
             )
             for r in prefix_results:
@@ -700,7 +710,7 @@ class N5MemoryClient:
                 if bid and bid not in seen:
                     seen.add(bid)
                     all_results.append(r)
-        
+
         # Global sort by score and trim
         all_results.sort(key=lambda x: x.get("score", 0.0), reverse=True)
         return all_results[:limit]
