@@ -13,12 +13,16 @@ import time
 import logging
 import requests
 from typing import Optional, Dict, Any, List
+from pathlib import Path
+from N5.lib.paths import STAGING_DIR
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)sZ %(levelname)s %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+NYNE_STAGING_DIR = STAGING_DIR / "nyne"
 
 
 class NyneClient:
@@ -60,7 +64,7 @@ class NyneClient:
             try:
                 import json
                 from pathlib import Path
-                staging_dir = Path('/home/workspace/N5/data/staging/nyne')
+                staging_dir = NYNE_STAGING_DIR
                 staging_dir.mkdir(parents=True, exist_ok=True)
                 
                 # Create a safe filename slug
@@ -530,6 +534,7 @@ if __name__ == "__main__":
         
     except Exception as e:
         print(f"❌ Error: {e}")
+
 
 
 

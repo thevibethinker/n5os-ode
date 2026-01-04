@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import WELLNESS_DB, N5_ROOT
 """
 Health Log - Log checkpoint completions to Life Counter
 
@@ -22,8 +23,8 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-WELLNESS_DB = Path("/home/workspace/N5/data/wellness.db")
-REGIMEN_PATH = Path("/home/workspace/N5/systems/health/regimen.json")
+WELLNESS_DB = WELLNESS_DB
+REGIMEN_PATH = N5_ROOT / "systems" / "health" / "regimen.json"
 
 
 def load_regimen() -> dict:

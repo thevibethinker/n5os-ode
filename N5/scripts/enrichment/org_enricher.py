@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import CRM_DB
 """
 Organization Enricher
 Unified org enrichment pipeline: Nyne (primary) + DB + Markdown sync.
@@ -53,7 +54,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Paths
-CRM_DB = Path('/home/workspace/N5/data/crm_v3.db')
+CRM_DB = CRM_DB
 ORG_PROFILES_DIR = Path('/home/workspace/Personal/Knowledge/CRM/organizations')
 ORG_TEMPLATE = ORG_PROFILES_DIR / '_TEMPLATE.md'
 

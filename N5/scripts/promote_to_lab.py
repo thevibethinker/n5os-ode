@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import LISTS_DIR
 """
 promote_to_lab.py - Adds an idea to the triage list for later exploration.
 
@@ -15,8 +16,8 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
-IDEAS_LIST = Path("/home/workspace/Lists/ideas.jsonl")
-TRIAGE_LIST = Path("/home/workspace/Lists/idea-triage.jsonl")
+IDEAS_LIST = LISTS_DIR / "ideas.jsonl"
+TRIAGE_LIST = LISTS_DIR / "idea-triage.jsonl"
 
 def find_idea(idea_id: str) -> dict | None:
     """Find idea by ID in ideas.jsonl."""
