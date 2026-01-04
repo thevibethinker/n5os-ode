@@ -35,8 +35,9 @@ from crm_paths import CRM_INDIVIDUALS, CRM_DB
 
 # Note: enrichment_queue lives in crm_v3.db (has queue-specific tables)
 # Output goes to canonical CRM_MARKDOWN_DIR
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'  # Enrichment queue DB
-PROFILES_DIR = '/home/workspace/N5/crm_v3/profiles'  # Legacy YAML (for queue lookups)
+from N5.lib.paths import CRM_DB, CRM_PROFILES_DIR
+DB_PATH = CRM_DB  # Enrichment queue DB
+PROFILES_DIR = CRM_PROFILES_DIR  # Legacy YAML (for queue lookups)
 WORKSPACE = Path("/home/workspace")
 CRM_MARKDOWN_DIR = CRM_INDIVIDUALS  # Canonical output location
 STAGING_DIR = WORKSPACE / "N5" / "data" / "staging" / "aviato"

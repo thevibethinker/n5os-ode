@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from N5.lib.paths import SECRETS_DIR, N5_DATA_DIR
+POSITIONS_DB = N5_DATA_DIR / "positions.db"
 """
 Vector Space Analysis of V's Worldview
 
@@ -14,7 +16,7 @@ from typing import List, Dict, Tuple
 import os
 
 # Load API key
-key_path = Path("/home/workspace/N5/config/secrets/openai.key")
+key_path = SECRETS_DIR / "openai.key"
 if not os.getenv("OPENAI_API_KEY") and key_path.exists():
     with open(key_path) as f:
         os.environ["OPENAI_API_KEY"] = f.read().strip()
@@ -25,7 +27,7 @@ from openai import OpenAI
 
 def get_positions() -> List[Dict]:
     """Load all positions from the database."""
-    db_path = Path("/home/workspace/N5/data/positions.db")
+    db_path = POSITIONS_DB
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()

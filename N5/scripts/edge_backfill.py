@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import N5_ROOT, N5_DATA_DIR
 """
 Edge Backfill: Batch process historical meetings for edge extraction.
 
@@ -36,9 +37,9 @@ import sqlite3
 
 # Paths
 MEETINGS_ROOT = Path("/home/workspace/Personal/Meetings")
-REVIEW_DIR = Path("/home/workspace/N5/review/edges")
+REVIEW_DIR = N5_ROOT / "review" / "edges"
 BACKFILL_DIR = REVIEW_DIR / "backfill"
-EDGES_DB = Path("/home/workspace/N5/data/edges.db")
+EDGES_DB = N5_DATA_DIR / "edges.db"
 
 
 def get_processed_meetings() -> set:

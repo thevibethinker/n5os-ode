@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import WORKOUTS_DB, WORKOUT_TRACKER_DIR
 """
 Workout Prescription Engine v2.0
 
@@ -27,12 +28,12 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 
-DB_PATH = Path("/home/workspace/Personal/Health/workouts.db")
+DB_PATH = WORKOUTS_DB
 CYCLE_START = datetime(2026, 1, 4)  # Cycle restart: Sunday Jan 4, 2026 (Day 1 = active day per user preference)
 
 # Plan file locations
-TENK_PLAN_PATH = Path("/home/workspace/Personal/Health/WorkoutTracker/10K_Prep_Plan.md")
-JAIR_PLAN_PATH = Path("/home/workspace/Personal/Health/WorkoutTracker/Jair-Lee-Training-Program-Phase1.md")
+TENK_PLAN_PATH = WORKOUT_TRACKER_DIR / "10K_Prep_Plan.md")
+JAIR_PLAN_PATH = WORKOUT_TRACKER_DIR / "Jair-Lee-Training-Program-Phase1.md")
 
 
 def get_db_connection():

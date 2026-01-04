@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from N5.lib.paths import N5_DATA_DIR
+POSITIONS_DB = N5_DATA_DIR / "positions.db"
 """
 Worldview Edge Finder v2 - Semantic Matching
 
@@ -20,7 +22,7 @@ from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 
 # Paths
-POSITIONS_DB = Path("/home/workspace/N5/data/positions.db")
+POSITIONS_DB = POSITIONS_DB
 OUTPUT_DIR = Path("/home/workspace/Projects/prediction-markets/analysis")
 
 # Kalshi API

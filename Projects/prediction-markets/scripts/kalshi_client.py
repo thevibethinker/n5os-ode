@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from N5.lib.paths import N5_DATA_DIR
+POSITIONS_DB = N5_DATA_DIR / "positions.db"
 """
 Kalshi API Client for market analysis.
 Fetches markets, prices, and orderbooks for prediction market analysis.
@@ -91,7 +93,7 @@ def search_markets(query: str, status="open"):
 
 def load_positions():
     """Load V's positions from the positions database."""
-    db_path = Path("/home/workspace/N5/data/positions.db")
+    db_path = POSITIONS_DB
     if not db_path.exists():
         return []
     

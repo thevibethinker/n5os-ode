@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import LUMA_EVENTS_DB, N5_DATA_DIR
 """
 Sync Event Decisions to DB - Bidirectional sync between site decisions and DB.
 
@@ -33,8 +34,8 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # Paths
-DB_PATH = Path("/home/workspace/N5/data/luma_events.db")
-DECISIONS_FILE = Path("/home/workspace/N5/data/event_decisions.json")
+DB_PATH = LUMA_EVENTS_DB
+DECISIONS_FILE = N5_DATA_DIR / "event_decisions.json"
 
 # Decision → DB status mapping
 DECISION_MAP = {

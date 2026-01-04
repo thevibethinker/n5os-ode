@@ -29,8 +29,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import subprocess
-
-REVIEW_DIR = Path("/home/workspace/N5/review/positions")
+from N5.lib.paths import N5_DATA_DIR, N5_ROOT, MEETINGS_DIR
 
 
 def _utc_now_iso() -> str:
@@ -332,10 +331,10 @@ def _apply_review_decisions(
     return candidates, stats
 
 # Paths
-MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
-CANDIDATES_FILE = Path("/home/workspace/N5/data/position_candidates.jsonl")
-EXTRACTION_PROMPT = Path("/home/workspace/N5/prompts/extract_positions_from_b32.md")
-PROCESSED_LOG = Path("/home/workspace/N5/data/b32_processed.jsonl")
+REVIEW_DIR = N5_ROOT / "review" / "positions"
+CANDIDATES_FILE = N5_DATA_DIR / "position_candidates.jsonl"
+EXTRACTION_PROMPT = N5_ROOT / "prompts" / "extract_positions.md"
+PROCESSED_LOG = N5_DATA_DIR / "b32_processed.jsonl"
 
 def find_b32_files(since: str | None = None, limit: int | None = None) -> list[Path]:
     """Find all B32 files in the meetings directory."""
@@ -469,7 +468,7 @@ Return ONLY the JSON array, no markdown fences, no explanation.
             print(f"Failed to parse JSON: {e}", file=sys.stderr)
             print(f"First 200 chars: {output[:200]}...", file=sys.stderr)
             # Log full output to debug file
-            debug_file = Path("/home/workspace/N5/data/extraction_failures.jsonl")
+            debug_file = N5_DATA_DIR / "extraction_failures.jsonl"
             debug_file.parent.mkdir(parents=True, exist_ok=True)
             with open(debug_file, "a") as f:
                 f.write(json.dumps({
@@ -1139,6 +1138,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

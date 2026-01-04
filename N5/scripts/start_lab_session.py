@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import LISTS_DIR
 """
 start_lab_session.py - Creates exploration folder ON DEMAND when entering Lab.
 
@@ -20,8 +21,8 @@ from pathlib import Path
 
 LAB_ROOT = Path("/home/workspace/Personal/Knowledge/Lab")
 EXPLORATIONS_DIR = LAB_ROOT / "Explorations"
-IDEAS_LIST = Path("/home/workspace/Lists/ideas.jsonl")
-TRIAGE_LIST = Path("/home/workspace/Lists/idea-triage.jsonl")
+IDEAS_LIST = LISTS_DIR / "ideas.jsonl"
+TRIAGE_LIST = LISTS_DIR / "idea-triage.jsonl"
 
 def slugify(text: str, max_len: int = 50) -> str:
     """Create URL-safe slug from text."""

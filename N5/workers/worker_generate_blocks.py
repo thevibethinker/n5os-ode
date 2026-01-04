@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import MEETING_PIPELINE_DB
 """
 Block Generation Worker
 
@@ -379,7 +380,7 @@ Do not include any explanations or meta-commentary before or after the block con
 
 # Constants - PHASE 1: Consolidated to single source of truth
 BLOCKS_DIR = Path("/home/workspace/Prompts/Blocks")  # User-invokable prompts with latest features
-DB_PATH = Path("/home/workspace/N5/data/meeting_pipeline.db")
+DB_PATH = MEETING_PIPELINE_DB
 WORKSPACE_ROOT = Path("/home/workspace")
 
 # Block prompt filename mapping (maps block_code to prompt filename)

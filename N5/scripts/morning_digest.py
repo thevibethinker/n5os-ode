@@ -349,7 +349,7 @@ class MorningDigest:
                 stack_count = content.count("- name:")
             
             # Get recent BioLog mood patterns (last 7 days)
-            journal_db = Path("/home/workspace/N5/data/journal.db")
+            journal_db = N5_DATA_DIR / "journal.db"
             mood_summary = ""
             if journal_db.exists():
                 conn = sqlite3.connect(journal_db)

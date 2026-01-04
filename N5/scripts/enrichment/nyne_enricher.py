@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from N5.lib.paths import N5_LOGS_DIR, N5_DATA_DIR
 """
 Nyne Enrichment Module
 Provides async enrichment using Nyne.ai API for CRM V3 system.
@@ -30,7 +31,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Usage log (mirrors Aviato pattern)
-USAGE_LOG = Path('/home/workspace/N5/logs/nyne_usage.jsonl')
+USAGE_LOG = N5_LOGS_DIR / 'nyne_usage.jsonl'
 
 
 def log_usage(
@@ -343,7 +344,7 @@ Company not found for `{lookup_key}`.
 # ==================== MEETING PREP HELPERS ====================
 
 # Cache for newsfeed data (keyed by LinkedIn URL)
-NYNE_CACHE_DIR = Path('/home/workspace/N5/data/cache/nyne')
+NYNE_CACHE_DIR = N5_DATA_DIR / 'cache' / 'nyne'
 NYNE_CACHE_MAX_AGE_DAYS = 7
 
 
