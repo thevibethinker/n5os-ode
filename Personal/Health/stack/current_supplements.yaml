@@ -1,110 +1,219 @@
 ---
 created: 2025-12-28
-last_edited: 2025-12-28
-version: 1.0
-provenance: con_ENFJHuuEiOjhTAjD
+last_edited: 2026-01-04
+version: 2.0
+provenance: con_fu1GgsowkllHgO3i
 ---
 
 # Current Supplement Stack
 # Vrijen Attawar - Active Supplements
 # Aligned with genomic profile from 23andMe + GeneSight
+# SSOT: N5/systems/health/regimen.json
+# Protocol: Personal/Health/protocols/Daily_Protocol.md
 
 supplements:
 
   # ============================================
-  # CORE DAILY STACK
+  # PHASE 1: FASTED INITIALIZATION (7:00 AM)
   # ============================================
 
-  - name: Methyl Multi One
-    brand: Naturelo  # Confirm exact brand with V
+  - name: Tirzepatide ODT
+    brand: Compounded
+    category: rx
+    dose: 2mg (w/ Carnitine/B12)
+    frequency: once daily
+    timing: wake, empty stomach, sublingual
+    priority: CORE
+    notes: ODT format requires empty stomach for sublingual absorption
+
+  - name: NAC
+    brand: TBD
+    category: antioxidant
+    dose: 600mg
+    frequency: once daily
+    timing: wake, empty stomach
+    priority: CORE
+    genomic_rationale: |
+      Antioxidant/glutathione support. Best fasted.
+      Pairs with COMT load management.
+
+  - name: Iron Bisglycinate
+    brand: Thorne
+    category: mineral
+    dose: 25mg
+    frequency: once daily
+    timing: wake, empty stomach
+    priority: CORE
+    take_with:
+      - Vitamin C (ENDUR-C 500mg) - enhances absorption 2-3x
+    avoid_with:
+      - Coffee, tea, dairy (wait 2 hours)
+      - Calcium, magnesium, zinc supplements (wait 2 hours)
+      - Multivitamin (wait 2 hours)
+      - Antacids
+
+  - name: Vitamin C
+    brand: ENDUR-C
+    category: vitamin
+    dose: 500mg
+    frequency: once daily
+    timing: wake, with iron
+    priority: CORE
+    take_with:
+      - Iron Bisglycinate (synergistic absorption)
+
+  - name: Alpha GPC
+    brand: TBD
+    category: nootropic
+    dose: 300-600mg
+    frequency: once daily
+    timing: wake, pre-workout
+    priority: CORE
+    cutoff: "2:00 PM"
+    genomic_rationale: |
+      Acetylcholine precursor. Pre-workout cognitive boost.
+      Do NOT take after 2pm - interferes with sleep architecture.
+
+  # ============================================
+  # PHASE 3: POST-WORKOUT SHAKE (8:30 AM)
+  # ============================================
+
+  - name: Protein Powder
+    brand: TBD
+    category: nutrition
+    dose: 30-40g
+    frequency: once daily
+    timing: post-workout, within 30min
+    priority: CORE
+    notes: Critical during GLP-1 use to prevent sarcopenia
+
+  - name: Creatine Monohydrate
+    brand: TBD
+    category: performance
+    dose: 5g
+    frequency: once daily
+    timing: post-workout, with protein
+    priority: CORE
+    genomic_rationale: |
+      Spares methyl groups (MTHFR support).
+      Cognitive benefits under stress/sleep deprivation.
+
+  # ============================================
+  # PHASE 4: THE ONE MEAL (9:00 AM)
+  # ============================================
+
+  - name: O.N.E. Multivitamin
+    brand: Pure Encapsulations
     category: multivitamin
     dose: 1 capsule
     frequency: once daily
-    timing: with breakfast
+    timing: with food
     priority: CORE
-    
+    key_ingredients:
+      - folate_form: "Metafolin L-5-MTHF"
+      - b12_form: "Methylcobalamin"
+      - b6_form: "P-5-P"
     genomic_rationale: |
-      MTHFR C/T (Intermediate Metabolizer) means reduced ability to 
-      convert folic acid to active methylfolate. Methylated multi 
-      provides pre-activated forms:
-      - Methylfolate (not folic acid)
-      - Methylcobalamin (not cyanocobalamin)
-      - P-5-P (active B6)
-      
-    key_ingredients_to_verify:
-      - folate_form: "L-5-MTHF or Methylfolate (NOT folic acid)"
-      - b12_form: "Methylcobalamin (NOT cyanocobalamin)"
-      - b6_form: "P-5-P preferred"
-      
-    replaces: "Pure Encapsulations O.N.E. (non-methylated)"
-    
-    notes: |
-      V transitioning from Pure Encapsulations O.N.E. to methylated formula.
-      Do NOT take both simultaneously - choose one multivitamin.
+      MTHFR C/T (Intermediate Metabolizer) requires methylated B vitamins.
+
+  - name: B12 Folate
+    brand: Pure Encapsulations
+    category: vitamin
+    dose: 1 capsule
+    frequency: once daily
+    timing: with food
+    priority: CORE
+    genomic_rationale: |
+      Methylcobalamin + Metafolin® — bypasses MTHFR/MTRR bottlenecks.
+      Stacks with Multi for enhanced methylation support.
 
   - name: Omega-3 Fish Oil (EPA/DHA)
-    brand: TBD  # Confirm brand with V
+    brand: TBD
     category: essential fatty acid
-    dose: TBD  # Typical: 1000-2000mg combined EPA/DHA
+    dose: 1-2g combined
     frequency: once daily
-    timing: with food (improves absorption)
+    timing: with food (REQUIRED)
     priority: CORE
-    
-    genomic_rationale: |
-      APOE protective genotype (TT/TT → likely ε2 carrier) suggests 
-      good lipid metabolism. EPA/DHA supports:
-      - Neuroinflammation reduction (BDNF support)
-      - Cardiovascular protection
-      - Mood stabilization (synergistic with Bupropion)
-      
-    target_ratio: "Higher EPA for mood; higher DHA for cognition"
-    
+    notes: |
+      ⚠️ MUST take with food to avoid reflux.
+      Brain structure, inflammation, mood stabilization.
     quality_markers:
       - "IFOS certified (purity)"
-      - "Triglyceride form (better absorption than ethyl ester)"
-      
+      - "Triglyceride form (better absorption)"
+
+  - name: Bacopa Monnieri
+    brand: TBD
+    category: nootropic
+    dose: 300mg
+    frequency: once daily
+    timing: with food (fat required)
+    priority: CORE
+    genomic_rationale: |
+      BDNF support. Fat-soluble — near-zero absorption without dietary fat.
+
+  - name: Curcuma Pura (Curcumin)
+    brand: TBD
+    category: anti_inflammatory
+    dose: Per label
+    frequency: once daily
+    timing: with food (fat required)
+    priority: CORE
+    notes: Fat-soluble — MUST take with fat-containing meal
+
   - name: Probiotic 10
     brand: Nature's Bounty
     category: gut health
     dose: 1 capsule
     frequency: once daily
-    timing: morning, empty stomach preferred
+    timing: with food
     priority: CORE
-    
-    genomic_rationale: |
-      Gut-brain axis support. No direct genomic marker, but:
-      - Supports serotonin production (95% made in gut)
-      - May improve nutrient absorption (supports MTHFR function)
-      - Reduces systemic inflammation
-      
+    notes: Supports gut health and Tirzepatide GI tolerance
+
+  - name: Psyllium Husk
+    brand: TBD
+    category: fiber
+    dose: 5-10g
+    frequency: once daily (optional 2nd dose at night)
+    timing: with food, with 12oz+ water
+    priority: CORE
     notes: |
-      Consider upgrading to refrigerated, higher-CFU formula 
-      (e.g., Seed, Visbiome) if budget allows.
+      Essential for GI motility on Tirzepatide.
+      ⚠️ MUST take with 12oz+ water to prevent blockage.
+
+  # ============================================
+  # PHASE 5: EVENING WIND-DOWN (6:00 PM)
+  # ============================================
+
+  - name: Ashwagandha
+    brand: TBD
+    category: adaptogen
+    dose: 300-600mg
+    frequency: once daily
+    timing: evening
+    priority: CORE
+    genomic_rationale: |
+      Cortisol management for Warrior genotype (COMT GG).
+      Evening optimal for cortisol rhythm support.
+
+  # ============================================
+  # PHASE 6: PRE-SLEEP (10:00 PM)
+  # ============================================
+
+  - name: Magnesium Glycinate
+    brand: TBD
+    category: mineral
+    dose: 200-400mg
+    frequency: once daily
+    timing: evening, before bed
+    priority: CORE
+    genomic_rationale: |
+      COMT cofactor. Critical for clearing dopamine and enabling sleep.
+      Glycinate form crosses blood-brain barrier.
 
   # ============================================
   # SITUATIONAL / AS-NEEDED
   # ============================================
 
-  - name: Magnesium
-    brand: TBD
-    category: mineral
-    dose: TBD  # Typical: 200-400mg elemental
-    frequency: as needed / evening
-    timing: evening (promotes sleep)
-    priority: SITUATIONAL
-    
-    genomic_rationale: |
-      COMT VAL/VAL (fast dopamine clearance) benefits from magnesium:
-      - Calms nervous system
-      - Supports GABA activity
-      - Counteracts stress-induced depletion
-      
-    form_recommendation: |
-      - Glycinate: Best for sleep/anxiety (crosses BBB)
-      - Threonate: Best for cognition (Magtein)
-      - Citrate: Good general; may cause loose stool
-      - AVOID oxide (poor absorption)
-      
   - name: L-Theanine
     brand: TBD
     category: amino acid
@@ -112,70 +221,88 @@ supplements:
     frequency: as needed
     timing: with caffeine or during stress
     priority: SITUATIONAL
-    
-    genomic_rationale: |
-      COMT VAL/VAL profile means faster stress response depletion.
-      L-Theanine:
-      - Promotes alpha brain waves (calm focus)
-      - Synergizes with caffeine (smooths out jitters)
-      - Supports GABA without sedation
-      
     notes: |
-      Particularly useful for high-stakes meetings or focus blocks.
-      Can stack with coffee (2:1 ratio L-Theanine:Caffeine).
-
-  # ============================================
-  # RETIRED / NOT TAKING
-  # ============================================
-
-  - name: Pure Encapsulations O.N.E. Multivitamin
-    brand: Pure Encapsulations
-    category: multivitamin
-    status: RETIRED
-    reason: |
-      Replaced by methylated multivitamin due to MTHFR C/T status.
-      O.N.E. contains folic acid, not methylfolate.
+      2:1 ratio L-Theanine:Caffeine for smooth focus.
+      Useful for high-stakes meetings.
 
 # ============================================
-# STACK OPTIMIZATION NOTES
+# TIMING SUMMARY (6 PHASES)
 # ============================================
 
-optimization_opportunities:
+timing_protocol:
+  phase_1_fasted_0700:
+    label: "Fasted Initialization"
+    items:
+      - Tirzepatide ODT
+      - Vyvanse (Rx)
+      - Bupropion (Rx)
+      - NAC
+      - Iron Bisglycinate
+      - Vitamin C
+      - Alpha GPC
+      - Water + Electrolytes
 
-  consider_adding:
-    - name: Vitamin D3+K2
-      rationale: |
-        Most people are deficient. D3 supports immune function, 
-        mood, and bone health. K2 ensures calcium goes to bones 
-        not arteries. Get blood levels tested first (target: 50-70 ng/mL).
-        
-    - name: Creatine Monohydrate
-      rationale: |
-        Emerging evidence for cognitive benefits, especially under 
-        stress or sleep deprivation. 3-5g daily. Supports ATP production 
-        in brain. Safe, well-studied.
+  phase_2_workout:
+    label: "The Physical Build"
+    items:
+      - "45-60 min Zone 2 or high-rep resistance"
 
-  timing_optimization:
-    morning:
-      - Methylated Multi (with food)
-      - Fish Oil (with food)
-      - Probiotic (can be empty stomach)
-    evening:
-      - Magnesium Glycinate (promotes sleep)
-      
-  interactions_to_monitor:
-    - "Fish oil may thin blood slightly - note before any procedures"
-    - "Magnesium can affect absorption of some medications - space 2h"
-    - "High-dose B vitamins may cause vivid dreams initially"
+  phase_3_post_shake_0830:
+    label: "Post-Workout Shake"
+    items:
+      - Protein Powder (30-40g)
+      - Creatine (5g)
+
+  phase_4_one_meal_0900:
+    label: "The One Meal"
+    items:
+      - O.N.E. Multivitamin
+      - B12 Folate
+      - Fish Oil (WITH FOOD!)
+      - Bacopa
+      - Curcumin
+      - Probiotic
+      - Psyllium Husk + Water
+
+  phase_5_evening_1800:
+    label: "Evening Wind-Down"
+    items:
+      - Ashwagandha
+
+  phase_6_presleep_2200:
+    label: "Pre-Sleep"
+    items:
+      - Aripiprazole (Rx)
+      - Magnesium Glycinate
+      - Psyllium Husk (optional)
+
+# ============================================
+# STACK BUDGET
+# ============================================
+
+stack_budget:
+  current_active: 17
+  max_recommended: 20
+  status: "🟢 Under budget"
 
 # ============================================
 # VERIFICATION CHECKLIST
 # ============================================
 
 todo:
-  - "[ ] Confirm exact brand of Methylated Multi"
+  - "[x] Confirm Iron brand → Thorne"
+  - "[x] Confirm Vitamin C brand → ENDUR-C"
+  - "[x] Confirm Multivitamin brand → Pure Encapsulations O.N.E."
+  - "[x] Confirm B12 Folate brand → Pure Encapsulations"
   - "[ ] Confirm Fish Oil brand and EPA/DHA dose"
-  - "[ ] Confirm Magnesium form (glycinate vs citrate vs other)"
+  - "[ ] Confirm Magnesium brand"
+  - "[ ] Confirm Creatine brand"
+  - "[ ] Confirm Bacopa brand"
+  - "[ ] Confirm Curcumin brand"
+  - "[ ] Confirm Ashwagandha brand"
+  - "[ ] Confirm NAC brand"
+  - "[ ] Confirm Alpha GPC brand"
   - "[ ] Get Vitamin D blood test to establish baseline"
-  - "[ ] Review L-Theanine usage pattern (daily vs as-needed)"
+
+
 

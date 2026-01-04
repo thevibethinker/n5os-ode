@@ -1,14 +1,17 @@
 ---
 description: 'Command: meeting-prep-digest'
 tool: true
-tags: []
+tags:
+  - meeting-prep
+  - digest
+  - nyne
 ---
 # `meeting-prep-digest`
 
 Generate daily meeting intelligence digest with attendee research and email context.
 
-**Version:** 3.0.0 (N5OS Tag Support)  
-**Updated:** 2025-10-11
+**Version:** 3.2.0 (Nyne Social + Funding Intelligence)  
+**Updated:** 2026-01-03
 
 ---
 
@@ -41,6 +44,66 @@ Automated daily meeting prep that scans your calendar, filters for **external st
 6. **Calendar Context** — Extracts meeting purpose and context from description
 7. **BLUF Format** — Bottom Line Up Front summaries for quick action
 8. **Smart Prep Actions** — Context-aware suggestions based on N5OS tags
+9. **Nyne Social Activity** — Surfaces recent social posts for conversation starters (when LinkedIn URL available)
+10. **Funding & Investment Context** — Auto-surfaces funding data for investor meetings (NEW v3.2)
+
+**Nyne Social Intelligence (NEW):**
+
+For stakeholders with a LinkedIn URL in their CRM profile or enrichment data, the digest now includes:
+- Recent social posts (Twitter, LinkedIn) from the last 7 days
+- Suggested conversation starters based on their recent activity
+- Topics they're publicly discussing
+
+**Funding & Investment Context (NEW v3.2):**
+
+For investor/fundraising meetings or meetings with VC/investment firms, the digest automatically surfaces:
+- Last funding round details (amount, date, lead investor)
+- Total raised to date
+- Key investors
+- Portfolio companies of interest (for VC attendees)
+
+**Trigger conditions:**
+1. Meeting has `[LD-INV]` tag in description, OR
+2. Meeting type classified as "investor" or "fundraising", OR
+3. Attendee company domain matches known VC domains (see list below)
+
+**Known VC/Investment Firm Domains:**
+```
+a16z.com, sequoia.com, benchmark.com, greylock.com, 
+accel.com, indexventures.com, lightspeed.vc, 
+generalcatalyst.com, nea.com, battery.com,
+firstround.com, usv.com, lsvp.com, 500.co,
+ycombinator.com, svangel.com, techstars.com
+```
+
+**How it works:**
+```python
+from N5.scripts.enrichment.nyne_enricher import get_recent_social_activity
+from N5.scripts.enrichment.org_enricher import get_funding_intel
+
+# For each external stakeholder:
+if stakeholder.linkedin_url:
+    nyne_result = await get_recent_social_activity(
+        linkedin_url=stakeholder.linkedin_url,
+        max_age_days=7
+    )
+    if nyne_result['success'] and nyne_result['data']:
+        # Add "Recent Social Activity" section to meeting entry
+
+# For investor meetings:
+if meeting_is_investor_type(meeting):
+    for org_domain in relevant_org_domains:
+        funding_data = get_funding_intel(org_domain)
+        if funding_data:
+            # Add "Funding & Investment Context" section
+```
+
+**Credit cost:** 6 credits per newsfeed fetch. Results cached for 7 days.
+
+**Skip Nyne fetch when:**
+- No LinkedIn URL available
+- Already fetched within last 7 days (uses cache)
+- Internal stakeholder
 
 **Exclusions:**
 - All-internal meetings (only @mycareerspan.com or @theapply.ai)
@@ -251,6 +314,20 @@ Violations must trigger validation failure and blocking of digest write.
 
 **Past notes:** `file 'path/to/stakeholder-profile.md'`
 
+**Recent Social Activity (Nyne):** *(if LinkedIn URL available)*
+- [Platform] ([Date]): "[Post excerpt...]"
+- [Platform] ([Date]): "[Post excerpt...]"
+**Conversation starters:**
+1. Their recent post about "[topic]..."
+2. Their recent post about "[topic]..."
+
+**Funding & Investment Context:** *(if investor/fundraising meeting)*
+| Company | Stage | Last Round | Total Raised | Key Investors |
+|---------|-------|------------|--------------|---------------|
+| [Company] | [Series X] | $[Amount] ([Date]) led by [Lead] | $[Total] | [Investor 1], [Investor 2] |
+
+*For VC attendees:* Portfolio companies of interest: [Company A], [Company B]
+
 **Prep actions:**
 1. [Context-aware action based on N5OS tags]
 2. [Context-aware action based on N5OS tags]
@@ -294,6 +371,13 @@ Please send pitch deck in advance to vrijen@mycareerspan.com.
 **Calendar context:** Discuss funding timeline and terms
 
 **Past notes:** `file 'N5/records/meetings/2025-09-20-acme-ventures/stakeholder-profile.md'`
+
+**Funding & Investment Context:**
+| Company | Stage | Last Round | Total Raised | Key Investors |
+|---------|-------|------------|--------------|---------------|
+| Acme Ventures | Fund III | $200M (2024-06) | $850M AUM | Institutional LPs |
+
+**Portfolio companies of interest:** EdTechCo (competitor), LearningPlatform (adjacent)
 
 **Prep actions:**
 1. ⚠️ CRITICAL: Protect this time block — do not reschedule
@@ -448,6 +532,10 @@ meeting-prep-digest --dry-run
 
 ---
 
-**Version:** 3.0.0 (N5OS Tag Support)  
-**Last Updated:** 2025-10-11  
+**Version:** 3.2.0 (Nyne Social + Funding Intelligence)  
+**Last Updated:** 2026-01-03  
 **Status:** Active — Phase 1 Complete
+
+
+
+

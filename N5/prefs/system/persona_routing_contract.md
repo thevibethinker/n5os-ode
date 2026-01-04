@@ -268,7 +268,12 @@ This contract must operate in a **memory-first** way:
      - or any other global constraints.
    - If there is tension between convenience and safety, **safety wins**.
 
+### Nutrition & Bio-Optimization
+- **Nutrition/Supplementation/Labs/Diet** → **Vibe Nutritionist**: `set_active_persona("f25038f1-114c-4f77-8bd2-40f1ed07182d")`
+- **Fitness/Workout/Recovery/Training** → **Vibe Trainer**: `set_active_persona("c545cc7a-ccbf-47ff-8c50-cb61b3c2eae3")`
 
-
+**Bidirectional Handoffs:**
+- Trainer → Nutritionist: When diet, supplementation, or metabolic recovery is the bottleneck
+- Nutritionist → Trainer: When workout programming or physical recovery is the bottleneck
 
 

@@ -1,100 +1,5 @@
 [
   {
-    "id": "evt-KLg18BcqLq6MPDg",
-    "url": "https://lu.ma/ho16rulb",
-    "title": "Mosaic Pottery Workshop",
-    "description": "",
-    "event_date": "2026-01-01",
-    "event_time": "23:30",
-    "venue_name": "New York, New York",
-    "venue_address": "265 W 37th St 20th floor, New York, NY 10018, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Maayan Adin\", \"url\": \"maayanadin\", \"avatar\": \"https://images.lumacdn.com/avatars/hw/6117c7e8-1b64-4812-b7fb-1969aae460df.jpg\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 0,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/hm/fffb32a7-2ea9-440b-99f9-a142524c98d5.jpg",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-SdGGglDDFvturcU",
-    "url": "https://lu.ma/bt6z9j08",
-    "title": "Lady Luck: A Casino Cabaret NYE Party",
-    "description": "",
-    "event_date": "2026-01-01",
-    "event_time": "01:00",
-    "venue_name": "Brooklyn, Kings County, New York",
-    "venue_address": "Gladys Books & Wine, 306 Malcolm X Blvd, Brooklyn, NY 11233, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Gladys Books and Wine\", \"url\": \"gladysbooksbk\", \"avatar\": \"https://cdn.lu.ma/avatars-default/avatar_13.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 35,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/te/095911de-451c-4825-afa0-7f5f16645a95.jpg",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-Y08z3jSdgGlSWD2",
-    "url": "https://lu.ma/zuhhtokk",
-    "title": "FVDGE NASTE \u201897\u2019s NYE R&B SOUND BATH",
-    "description": "",
-    "event_date": "2026-01-01",
-    "event_time": "02:00",
-    "venue_name": "Williamsburg, Kings County, New York",
-    "venue_address": "Reforesters Laboratory, 147 Metropolitan Ave, Brooklyn, NY 11249, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Reforesters Laboratory\", \"url\": \"reforesters\", \"avatar\": \"https://images.lumacdn.com/avatars/qz/39d4cf39-ed3c-4cf0-9120-9ee2e37fd79b\"}, {\"name\": \"FVDGE\", \"url\": \"Fvdgenaste97\", \"avatar\": \"https://images.lumacdn.com/avatars/kv/7b68f9f7-09f2-46a6-aa37-1ec5b6c6c35a.jpg\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 0,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/rj/1f4bf815-4730-49d5-b228-9fdc99f2821e.jpg",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-aa3QwAAdBIa82K6",
-    "url": "https://lu.ma/zv98yct2",
-    "title": "Philosophy at the Museum: Man Ray",
-    "description": "",
-    "event_date": "2026-01-04",
-    "event_time": "00:00",
-    "venue_name": "Manhattan, New York, New York",
-    "venue_address": "The Metropolitan Museum of Art, 1000 5th Ave, New York, NY 10028, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Weiyang Gao\", \"url\": \"usr-HICqnG9wWnktyXG\", \"avatar\": \"https://images.lumacdn.com/avatars/rt/03de06c7-6cc3-49fd-8421-486e6b0ca461.jpg\"}, {\"name\": \"Cole Whetstone\", \"url\": \"usr-vG7T5oVp6xyKbw6\", \"avatar\": \"https://cdn.lu.ma/avatars-default/avatar_45.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 86,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/p4/7dc79cbf-04be-4789-9abb-a4853068d889.png",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-7fA1eVAzRpXWKoY",
-    "url": "https://lu.ma/7fkeqhkl",
-    "title": "Dry January Kickoff Party @ Hekate",
-    "description": "",
-    "event_date": "2026-01-04",
-    "event_time": "00:00",
-    "venue_name": "Alphabet City, New York, New York",
-    "venue_address": "Hekate Caf\u00e9 & Elixir Lounge, 167 Avenue B, New York, NY 10009, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Bright Nights Social\", \"url\": \"brightnights\", \"avatar\": \"https://images.lumacdn.com/avatars/jg/3c70be19-6ab5-4f67-8d8a-238725804010.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 0,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/kn/282bd0fc-9df8-4bee-b2a6-588543db959f.png",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
     "id": "evt-W9Rh5KDugxNImkU",
     "url": "https://lu.ma/rk6d7mze",
     "title": "QPOP Party - Masked Revelry",
@@ -111,7 +16,9 @@
     "attendee_count": 47,
     "cover_image_url": "https://images.lumacdn.com/event-covers/vy/da151211-3b23-40a8-b477-67e7d9625e8d.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 7.0,
+    "status": "available"
   },
   {
     "id": "evt-jUOqNGVWYEVl9Dl",
@@ -130,102 +37,30 @@
     "attendee_count": 30,
     "cover_image_url": "https://images.lumacdn.com/event-covers/mg/7c1addbb-8a7d-48e0-adee-d4020ab85f24.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 6.0,
+    "status": "available"
   },
   {
-    "id": "evt-I5AnCMBH06ODe3K",
-    "url": "https://lu.ma/5sy3fg2c",
-    "title": "Women with Saas: Female Founder Coworking Day",
+    "id": "evt-7fA1eVAzRpXWKoY",
+    "url": "https://lu.ma/7fkeqhkl",
+    "title": "Dry January Kickoff Party @ Hekate",
     "description": "",
-    "event_date": "2026-01-07",
-    "event_time": "14:30",
-    "venue_name": "Flatiron District, New York, New York",
-    "venue_address": "",
+    "event_date": "2026-01-04",
+    "event_time": "00:00",
+    "venue_name": "Alphabet City, New York, New York",
+    "venue_address": "Hekate Caf\u00e9 & Elixir Lounge, 167 Avenue B, New York, NY 10009, USA",
     "location": "",
     "organizer_name": "",
-    "organizers": "[{\"name\": \"Tori Hanson\", \"url\": \"Torihanson\", \"avatar\": \"https://cdn.lu.ma/avatars/xx/aaf51869-c0d5-4093-bbd3-b10b2609a69b\"}, {\"name\": \"Jessica Casale\", \"url\": \"usr-FkqgA94y4nht8AX\", \"avatar\": \"https://images.lumacdn.com/avatars/uy/4d8f221f-cd4d-4802-ae23-f69e59f3eb25.jpg\"}]",
+    "organizers": "[{\"name\": \"Bright Nights Social\", \"url\": \"brightnights\", \"avatar\": \"https://images.lumacdn.com/avatars/jg/3c70be19-6ab5-4f67-8d8a-238725804010.png\"}]",
     "city": "nyc",
     "price": "Free",
     "attendee_count": 0,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/0v/8eae399c-9c9c-4014-a873-fef56edf028d.jpg",
+    "cover_image_url": "https://images.lumacdn.com/event-covers/kn/282bd0fc-9df8-4bee-b2a6-588543db959f.png",
     "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-xllW4OLiVedQKXm",
-    "url": "https://lu.ma/znwml111",
-    "title": "Inside the Story: Ten Years of Immersive Documentary",
-    "description": "",
-    "event_date": "2026-01-08",
-    "event_time": "23:00",
-    "venue_name": "Astoria, Queens County, New York",
-    "venue_address": "Museum of the Moving Image, 36-01 35th Ave, Queens, NY 11106, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Museum of the Moving Image\", \"url\": \"usr-AN1zxOmCIzB7UBF\", \"avatar\": \"https://images.lumacdn.com/avatars/ym/96c8a415-62bb-42c0-8b00-0e110560d94b\"}, {\"name\": \"Gabo Arora\", \"url\": \"gaboarora\", \"avatar\": \"https://images.lumacdn.com/avatars/xq/37189c66-e0df-4e39-951a-9192b8a80d78.jpg\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 265,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/50/1d40d640-7fc1-4e94-898d-0ce89b66535d.png",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-oZwP6Qhawu7rGRH",
-    "url": "https://lu.ma/91ev5pi8",
-    "title": "vision boarding workshop with Shop Rongrong!",
-    "description": "",
-    "event_date": "2026-01-08",
-    "event_time": "23:00",
-    "venue_name": "Lower Manhattan, New York, New York",
-    "venue_address": "Fabrik NYC, 12-16 Vestry St 4th Floor, New York, NY 10013, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"art gurl\", \"url\": \"usr-D4vbfOJraNuGBWl\", \"avatar\": \"https://images.lumacdn.com/avatars/a6/f8f98962-5b24-4a6f-8eb1-729c748a5051\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 34,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/9s/a212dbbe-7aa5-4e8f-81a1-438e69b2a49e.png",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-75d2xeQPFyRL2vg",
-    "url": "https://lu.ma/ghy2pq56",
-    "title": "Founders Basketball New York City (January 2026)",
-    "description": "",
-    "event_date": "2026-01-08",
-    "event_time": "00:00",
-    "venue_name": "Crown Heights, Kings County, New York",
-    "venue_address": "",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Brandon Blum\", \"url\": \"brandonariblum\", \"avatar\": \"https://images.lumacdn.com/avatars/m5/5cd55a3a-8f6d-4dcb-a603-a1c106d8bf9c.jpg\"}, {\"name\": \"Aaron Silverberg\", \"url\": \"usr-9E25xs7NJqgDCLY\", \"avatar\": \"https://cdn.lu.ma/avatars-default/avatar_6.png\"}, {\"name\": \"Connor Kernochan\", \"url\": \"usr-oWsUDelyK95IFbI\", \"avatar\": \"https://images.lumacdn.com/avatars/89/520e94ca-17e8-435e-9888-9d2891a70404\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 32,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/hr/5b0c035d-672d-4af7-8679-dbd85be9744c.png",
-    "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-huj8QBsAvbO88Fz",
-    "url": "https://lu.ma/nali55d9",
-    "title": "The New York Philosophy Club: LES",
-    "description": "",
-    "event_date": "2026-01-08",
-    "event_time": "00:00",
-    "venue_name": "New York, New York",
-    "venue_address": "167 E Broadway, New York, NY 10002, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Ren Yu\", \"url\": \"renyu\", \"avatar\": \"https://images.lumacdn.com/avatars/zx/53134586-6aba-47bd-bd4d-d59f505c8e79.jpg\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 95,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/zd/70b212e6-271c-4650-9296-80da2c3536a9.jpg",
-    "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 5.0,
+    "status": "waitlist"
   },
   {
     "id": "evt-5TFxNC0MK3RhnzA",
@@ -244,26 +79,9 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/ou/f790e81f-525a-47fa-8f4a-0d2fd546d798.png",
     "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "62fd3af1",
-    "url": "https://www.supermomos.com/events/founders-basketball-nyc-january",
-    "title": "Founders Basketball NYC (January 2026)",
-    "description": "Source: Supermomos newsletter",
-    "event_date": "2026-01-08",
-    "event_time": null,
-    "venue_name": null,
-    "venue_address": null,
-    "location": "",
-    "organizer_name": "",
-    "organizers": null,
-    "city": "nyc",
-    "price": null,
-    "attendee_count": null,
-    "cover_image_url": null,
-    "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 10.5,
+    "status": "available"
   },
   {
     "id": "evt-Bj4hIAH2ODUhTlZ",
@@ -282,7 +100,51 @@
     "attendee_count": 69,
     "cover_image_url": "https://images.lumacdn.com/event-covers/ef/3467ced7-5182-436c-8bdf-44c685f1fdc8.jpg",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 10.0,
+    "status": "available"
+  },
+  {
+    "id": "evt-xllW4OLiVedQKXm",
+    "url": "https://lu.ma/znwml111",
+    "title": "Inside the Story: Ten Years of Immersive Documentary",
+    "description": "",
+    "event_date": "2026-01-08",
+    "event_time": "23:00",
+    "venue_name": "Astoria, Queens County, New York",
+    "venue_address": "Museum of the Moving Image, 36-01 35th Ave, Queens, NY 11106, USA",
+    "location": "",
+    "organizer_name": "",
+    "organizers": "[{\"name\": \"Museum of the Moving Image\", \"url\": \"usr-AN1zxOmCIzB7UBF\", \"avatar\": \"https://images.lumacdn.com/avatars/ym/96c8a415-62bb-42c0-8b00-0e110560d94b\"}, {\"name\": \"Gabo Arora\", \"url\": \"gaboarora\", \"avatar\": \"https://images.lumacdn.com/avatars/xq/37189c66-e0df-4e39-951a-9192b8a80d78.jpg\"}]",
+    "city": "nyc",
+    "price": "Free",
+    "attendee_count": 265,
+    "cover_image_url": "https://images.lumacdn.com/event-covers/50/1d40d640-7fc1-4e94-898d-0ce89b66535d.png",
+    "source": "luma",
+    "invitation_status": "public",
+    "score": 9.5,
+    "status": "maybe"
+  },
+  {
+    "id": "evt-huj8QBsAvbO88Fz",
+    "url": "https://lu.ma/nali55d9",
+    "title": "The New York Philosophy Club: LES",
+    "description": "",
+    "event_date": "2026-01-08",
+    "event_time": "00:00",
+    "venue_name": "New York, New York",
+    "venue_address": "167 E Broadway, New York, NY 10002, USA",
+    "location": "",
+    "organizer_name": "",
+    "organizers": "[{\"name\": \"Ren Yu\", \"url\": \"renyu\", \"avatar\": \"https://images.lumacdn.com/avatars/zx/53134586-6aba-47bd-bd4d-d59f505c8e79.jpg\"}]",
+    "city": "nyc",
+    "price": "Free",
+    "attendee_count": 95,
+    "cover_image_url": "https://images.lumacdn.com/event-covers/zd/70b212e6-271c-4650-9296-80da2c3536a9.jpg",
+    "source": "luma",
+    "invitation_status": "public",
+    "score": 9.0,
+    "status": "waitlist"
   },
   {
     "id": "evt-skVIZWrE8WTmMuA",
@@ -301,26 +163,30 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/1u/13029fef-7344-42b4-bacf-060a761859a5",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 9.0,
+    "status": "available"
   },
   {
-    "id": "evt-YBnxhIrO5DXy2FG",
-    "url": "https://lu.ma/9jahhbj0",
-    "title": "Code as Witness: Marina Zurkow on Software, Ecology, and the Future of Art",
-    "description": "",
-    "event_date": "2026-01-09",
-    "event_time": "00:00",
-    "venue_name": "New York, New York",
-    "venue_address": "The National Arts Club, 15 Gramercy Pk S, New York, NY 10003, USA",
+    "id": "62fd3af1",
+    "url": "https://www.supermomos.com/events/founders-basketball-nyc-january",
+    "title": "Founders Basketball NYC (January 2026)",
+    "description": "Source: Supermomos newsletter",
+    "event_date": "2026-01-08",
+    "event_time": null,
+    "venue_name": null,
+    "venue_address": null,
     "location": "",
     "organizer_name": "",
-    "organizers": "[{\"name\": \"Joshua Ness\", \"url\": \"jcness\", \"avatar\": \"https://images.lumacdn.com/avatars/ou/c9d3a389-df73-421d-bdc8-891be3fd6ac7\"}]",
+    "organizers": null,
     "city": "nyc",
-    "price": "Free",
-    "attendee_count": 200,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/lm/d5ab353c-6933-49b2-997c-092670ce9be9.png",
+    "price": null,
+    "attendee_count": null,
+    "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "evt-E84go7xQIApQAm2",
@@ -339,7 +205,9 @@
     "attendee_count": 68,
     "cover_image_url": "https://images.lumacdn.com/event-covers/io/bd5618b7-46b7-4c69-b980-327d0ae0932c.gif",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 7.5,
+    "status": "available"
   },
   {
     "id": "evt-aA70ANKGoGlgBAE",
@@ -358,7 +226,9 @@
     "attendee_count": 29,
     "cover_image_url": "https://images.lumacdn.com/event-covers/eh/b703d0c5-7121-4397-ad87-661ef2eaac8d.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 5.5,
+    "status": "available"
   },
   {
     "id": "evt-UfeH7ZDg9xE0zWO",
@@ -377,7 +247,9 @@
     "attendee_count": 30,
     "cover_image_url": "https://images.lumacdn.com/event-covers/74/b63a2ce0-cba6-4544-afe2-facd7c5911f1.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 8.0,
+    "status": "maybe"
   },
   {
     "id": "evt-ODdm09E5ULCySK0",
@@ -396,26 +268,9 @@
     "attendee_count": 51,
     "cover_image_url": "https://images.lumacdn.com/event-covers/fv/fdf2bcbd-6fb2-4112-a040-33ccdabcce0c.png",
     "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-g0y6WydqnEA9EWg",
-    "url": "https://lu.ma/zh88wqn8",
-    "title": "The January Reset",
-    "description": "",
-    "event_date": "2026-01-11",
-    "event_time": "16:00",
-    "venue_name": "South Williamsburg, Kings County, New York",
-    "venue_address": "Moxy Brooklyn Williamsburg, 353 Bedford Ave, Brooklyn, NY 11211, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Girls Who Meet\", \"url\": \"girlswhomeet\", \"avatar\": \"https://images.lumacdn.com/avatars/de/2800de1c-ab91-4406-a635-d3e847152ebb.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 0,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/zg/562a137e-db91-4d27-95d8-97555e0e3eed.png",
-    "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 8.0,
+    "status": "available"
   },
   {
     "id": "evt-mV31HZ6GXwhml5J",
@@ -434,7 +289,30 @@
     "attendee_count": 170,
     "cover_image_url": "https://images.lumacdn.com/event-covers/uu/df00de3f-bde7-4465-8b75-c2bd5cdbbe22.jpg",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 8.0,
+    "status": "available"
+  },
+  {
+    "id": "evt-g0y6WydqnEA9EWg",
+    "url": "https://lu.ma/zh88wqn8",
+    "title": "The January Reset",
+    "description": "",
+    "event_date": "2026-01-11",
+    "event_time": "16:00",
+    "venue_name": "South Williamsburg, Kings County, New York",
+    "venue_address": "Moxy Brooklyn Williamsburg, 353 Bedford Ave, Brooklyn, NY 11211, USA",
+    "location": "",
+    "organizer_name": "",
+    "organizers": "[{\"name\": \"Girls Who Meet\", \"url\": \"girlswhomeet\", \"avatar\": \"https://images.lumacdn.com/avatars/de/2800de1c-ab91-4406-a635-d3e847152ebb.png\"}]",
+    "city": "nyc",
+    "price": "Free",
+    "attendee_count": 0,
+    "cover_image_url": "https://images.lumacdn.com/event-covers/zg/562a137e-db91-4d27-95d8-97555e0e3eed.png",
+    "source": "luma",
+    "invitation_status": "public",
+    "score": 7.0,
+    "status": "available"
   },
   {
     "id": "evt-4T9XgYh5ufxP9nB",
@@ -453,7 +331,9 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/0t/1895dd16-4c06-4e1d-850c-1d7dd2e84b7e.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 15.0,
+    "status": "available"
   },
   {
     "id": "evt-oqiPsMJxl5JKSxt",
@@ -472,7 +352,9 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/qk/8f9feb19-40ee-47f6-a1b9-71ca7c2d6b68.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 10.0,
+    "status": "available"
   },
   {
     "id": "evt-lBM6V27j8I6feDL",
@@ -491,7 +373,9 @@
     "attendee_count": 49,
     "cover_image_url": "https://images.lumacdn.com/event-covers/ir/2fd8daee-8910-41ee-88e5-a6975c9974b3.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 10.0,
+    "status": "available"
   },
   {
     "id": "evt-ELYZrjEWTEApmdH",
@@ -510,7 +394,9 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/45/de80fa5b-3de0-4129-a6c9-6ac8a845318b.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 9.0,
+    "status": "available"
   },
   {
     "id": "7f6c03c1",
@@ -529,7 +415,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "d7bc31b8",
@@ -548,7 +436,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "evt-nFCd4y0LJCoK7yn",
@@ -567,26 +457,9 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/p8/064b530e-6fbb-45db-bf76-f4bb63d2b344.png",
     "source": "luma",
-    "invitation_status": "public"
-  },
-  {
-    "id": "evt-nxkQ5Pmzy0AOFtl",
-    "url": "https://lu.ma/nb3xbvst",
-    "title": "Longevity Salon",
-    "description": "",
-    "event_date": "2026-01-22",
-    "event_time": "23:30",
-    "venue_name": "West Village, New York, New York",
-    "venue_address": "Extension Health, 160 7th Ave S, New York, NY 10014, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Mansi Hukmani\", \"url\": \"chieflongevity\", \"avatar\": \"https://images.lumacdn.com/avatars/ob/269ceabe-1b0d-4ead-8cb6-776e2c433507.jpg\"}, {\"name\": \"Dr. Mishal Reja\", \"url\": \"usr-z3iAWKifmtyjPK4\", \"avatar\": \"https://cdn.lu.ma/avatars-default/avatar_16.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 59,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/me/6860cda4-a3b1-4de9-b57d-fe1cd0c6d8e9.png",
-    "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 10.0,
+    "status": "waitlist"
   },
   {
     "id": "evt-DaNEFlVx5VPAu1i",
@@ -605,7 +478,30 @@
     "attendee_count": 0,
     "cover_image_url": "https://images.lumacdn.com/event-covers/7k/b3d512af-8aca-4309-9385-2231c8b18fbe.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 10.0,
+    "status": "waitlist"
+  },
+  {
+    "id": "evt-nxkQ5Pmzy0AOFtl",
+    "url": "https://lu.ma/nb3xbvst",
+    "title": "Longevity Salon",
+    "description": "",
+    "event_date": "2026-01-22",
+    "event_time": "23:30",
+    "venue_name": "West Village, New York, New York",
+    "venue_address": "Extension Health, 160 7th Ave S, New York, NY 10014, USA",
+    "location": "",
+    "organizer_name": "",
+    "organizers": "[{\"name\": \"Mansi Hukmani\", \"url\": \"chieflongevity\", \"avatar\": \"https://images.lumacdn.com/avatars/ob/269ceabe-1b0d-4ead-8cb6-776e2c433507.jpg\"}, {\"name\": \"Dr. Mishal Reja\", \"url\": \"usr-z3iAWKifmtyjPK4\", \"avatar\": \"https://cdn.lu.ma/avatars-default/avatar_16.png\"}]",
+    "city": "nyc",
+    "price": "Free",
+    "attendee_count": 59,
+    "cover_image_url": "https://images.lumacdn.com/event-covers/me/6860cda4-a3b1-4de9-b57d-fe1cd0c6d8e9.png",
+    "source": "luma",
+    "invitation_status": "public",
+    "score": 9.0,
+    "status": "waitlist"
   },
   {
     "id": "evt-oIYRAhfGUvjEEFN",
@@ -624,7 +520,9 @@
     "attendee_count": 30,
     "cover_image_url": "https://images.lumacdn.com/gallery-images/4f/b0af1f45-496b-429a-bb01-ee7765a98fba.png",
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": 14.0,
+    "status": "available"
   },
   {
     "id": "2da4cb5f",
@@ -643,7 +541,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "c6b7a372",
@@ -662,7 +562,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "c569b7c6",
@@ -681,7 +583,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "171f95f4",
@@ -700,7 +604,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "f6957ed1",
@@ -719,7 +625,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "personal-beee84bd5809",
@@ -738,7 +646,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "going"
+    "invitation_status": "going",
+    "score": null,
+    "status": "active"
   },
   {
     "id": "9f9c728b",
@@ -757,7 +667,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "87361641",
@@ -776,7 +688,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "personal-d3c722c7388f",
@@ -795,7 +709,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "invited"
+    "invitation_status": "invited",
+    "score": null,
+    "status": "active"
   },
   {
     "id": "60c91b1b",
@@ -814,7 +730,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "eaac324f",
@@ -833,7 +751,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "f469b50a",
@@ -852,7 +772,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "3a900c32",
@@ -871,7 +793,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "fc527c6b",
@@ -890,7 +814,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "a02d09db",
@@ -909,7 +835,9 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "public"
+    "invitation_status": "public",
+    "score": null,
+    "status": null
   },
   {
     "id": "personal-c061b96f431f",
@@ -928,6 +856,8 @@
     "attendee_count": null,
     "cover_image_url": null,
     "source": "luma",
-    "invitation_status": "pending"
+    "invitation_status": "pending",
+    "score": null,
+    "status": "active"
   }
 ]

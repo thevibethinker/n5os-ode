@@ -7,11 +7,27 @@ provenance: con_vU0lAa14Y6aRjVTI
 
 # PLAN: Position Extraction v2 — Capturing Wisdom, Not Just Claims
 
+## 2026-01-03 Update: HITL Review Sheets + Amend (Overwrite) + Recompute
+
+V decision:
+- Review happens via **desktop-editable review sheets** under `N5/review/positions/`.
+- Action set per candidate: **accept / amend / reject / hold**.
+- **Amend = overwrite** of the insight, but must remain traceable by retaining the original extracted insight + original context fields.
+- After an amend, the system must **recompute**: `reasoning`, `stakes`, `conditions` from:
+  - the original source context (B32 / source excerpt / any stored extra context)
+  - the newly amended insight
+- The following fields remain **read-only** (not recomputed): `domain`, `classification`, `speaker`, `source_excerpt`.
+- Near-dupes are acceptable for now; treat them as a later-quality problem unless they become noisy.
+
+This adds a new Phase 4 below.
+
 ## Decisions Made
 
 1. **Re-extraction:** Reject all 15 pending candidates. Re-run their source B32s with new LLM-based extractor.
 2. **Position schema:** Expand positions.db to store structured wisdom (reasoning, stakes, conditions).
 3. **Extraction approach:** Pure LLM—no Python/regex pattern matching.
+
+4. **HITL integration point:** Introduce review-sheet-based HITL as the canonical gate before promotion.
 
 ---
 
@@ -162,6 +178,15 @@ compelled to respond when the bot texts her."
 - [ ] Update Position Triage prompt to show full wisdom
 - [ ] Add "thin candidate" rejection reason for old-format reprocessing
 
+### Phase 4: HITL Review Sheets + Amend + Recompute (New)
+- [ ] Create review sheet generator (batch from candidates)
+- [ ] Define deterministic review-sheet grammar (accept/amend/reject/hold)
+- [ ] Implement ingest of review sheets → update `position_candidates.jsonl`
+- [ ] Implement amend overwrite semantics with traceability fields
+- [ ] Implement recompute of reasoning/stakes/conditions after amend
+- [ ] Implement promote-from-reviewed flow (only promote accepted/amended)
+- [ ] Add unit tests for parsing, overwrite traceability, and recompute behavior
+
 ---
 
 ## Phase 1: Schema & Prompt Redesign
@@ -235,6 +260,81 @@ compelled to respond when the bot texts her."
 
 ---
 
+## Phase 4: HITL Review Sheets + Amend + Recompute (New)
+
+### Affected Files
+- `file 'N5/scripts/b32_position_extractor.py'` (review sheet: generate + ingest)
+- `file 'N5/data/position_candidates.jsonl'` (store amended insight + recomputed fields)
+- `file 'N5/prompts/extract_positions_from_b32.md'` (ensure prompt supports recompute call)
+
+### New/Updated Candidate Fields (Additive)
+Add fields so amend can be an overwrite while remaining traceable:
+
+```json
+{
+  "insight": "original extracted insight (never modified)",
+  "insight_amended": "optional amended insight (overwrite surface text)",
+  "insight_final": "computed at runtime: insight_amended || insight",
+  "reasoning": "computed from insight_final + original context",
+  "stakes": "computed from insight_final + original context",
+  "conditions": "computed from insight_final + original context",
+
+  "review": {
+    "decision": "accept|amend|reject|hold",
+    "reviewed_at": "ISO timestamp",
+    "review_batch": "path or batch id",
+    "notes": "optional"
+  },
+
+  "source_excerpt": "read-only",
+  "speaker": "read-only",
+  "domain": "read-only",
+  "classification": "read-only"
+}
+```
+
+### Review Sheet Location (Canonical)
+- `file 'N5/review/positions/'`
+- Batch naming convention:
+  - `YYYY-MM-DD_positions-review_batch-001.md`
+
+### Review Sheet Grammar (Deterministic)
+Each candidate is a block with a fixed header and fields.
+
+Required fields:
+- `Candidate ID:`
+- `Decision:` one of `accept | amend | reject | hold`
+
+If `Decision: amend`, require:
+- `Amended insight:` (multiline allowed)
+
+Optional fields:
+- `Attribution:` (`mine | inspired | other`)
+- `Credit:` free text
+- `Notes:`
+
+### Recompute Behavior
+If decision is `amend`:
+- Set `insight_amended` and recompute `reasoning/stakes/conditions` by re-invoking the LLM extractor in a “recompute mode” using:
+  - original `source_excerpt` (+ any stored original B32 context)
+  - `insight_final`
+The system MUST NOT change: domain/classification/speaker/source_excerpt.
+
+### Unit Tests
+- Review sheet parser:
+  - Accept block parses correctly
+  - Amend block requires amended insight
+  - Reject/hold parse correctly
+- Overwrite traceability:
+  - Original `insight` remains unchanged after amend
+  - `insight_amended` stored
+  - `insight_final` resolves correctly
+- Recompute behavior:
+  - After amend, `reasoning/stakes/conditions` are regenerated
+  - Read-only fields remain unchanged
+
+---
+
 ## Success Criteria
 
 1. **Richer extractions:** New candidates have insight (2-3 sentences), reasoning, stakes, conditions
@@ -268,6 +368,7 @@ When V approves this plan:
 2. Builder rewrites extraction prompt
 3. Builder updates extractor script
 4. Test on known B32s before bulk re-extraction
+
 
 
 

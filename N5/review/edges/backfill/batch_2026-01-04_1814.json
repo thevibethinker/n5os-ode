@@ -1,0 +1,133 @@
+{
+  "created": "2026-01-04T18:14:17.980228",
+  "period": "Q4-2025",
+  "batch_size": 5,
+  "status": "pending",
+  "meetings": [
+    {
+      "meeting_id": "mtg_2025-10-10-logan-vrijen-internal-strategy",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-06/2025-10-10_Logan-vrijen-Internal-strategy",
+      "blocks": [
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B07_TONE_AND_CONTEXT",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED"
+      ],
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\n## Overview\nVrijen and Logan held an impromptu internal strategy session to discuss Vrijen's latest advancements with \"Zoe\" (his AI automation protocol), reflections on AI's impact on the labor market (inspired by a Harvard lecture Logan attended), and fundraising/revenue strategy for Careerspan.\n\n## Key Discussion Points\n\n### 1. Zoe AI Protocol Demonstration\n- **Automation Progress:** Vrijen showcased his latest workflow where a single command processes meeting transcripts to generate action items, deliverables, and summaries using GPT-5 Mini.\n- **Fail-safe Mechanisms:** He implemented a \"resume\" rule to handle AI timeouts, ensuring the agent picks up where it left off.\n- **Inter-Agent Coordination:** Vrijen noted a fascinating interaction between \"Howie\" and \"Zoe\" where the two AI agents negotiated rules for coordinating his schedule.\n\n### 2. Market Macro-Trends: \"Automatable Payroll\"\n- **Jeff Busking Lecture:** Logan shared insights from a lecture at Harvard about the 10X founder and \"automatable payroll.\"\n- **Labor vs. Software:** Logan highlighted a trend where enterprises are targeting labor budgets (payroll) rather than just software budgets, aiming to replace human roles with agents.\n- **Social Impact:** Vrijen characterized the current AI wave as a new \"Industrial Revolution\" and argued that LLMs currently favor those who can \"reason linguistically\" and wield the tools effectively, rather than being truly democratizing.\n\n### 3. Fundraising and Revenue Strategy\n- **Go Ahead Ventures:** Vrijen proposed applying to Go Ahead Ventures, noting their good deck, powerful consumer numbers, and prominent advisors.\n- **Fundraising Sources:** Discussion included reaching out to Rob (investor), New York State Ventures, and original investors to cobble together a bridge round.\n- **The \"Leaky Bucket\" Concern:** Logan raised a strategic concern about the responsibility of taking more capital without a clear, proven revenue stream, referencing the \"money into a leaky bucket\" analogy.\n\n### 4. Operations & Applications\n- **WorkTech SHRM:** Logan shared feedback on a call with a WorkTech SHRM representative; they decided to apply for the program despite previous lack of responsiveness from the organization.\n- **Advisor Rollout:** Plans to roll out advisors like Shajat and Rajesh soon to gain more visibility.\n",
+      "b03_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B03: Decisions\n\n| Decision | Context | Rationale |\n| :--- | :--- | :--- |\n| **Apply to WorkTech SHRM** | Logan had a positive \"vibe\" check with the rep. | Despite past friction, it offers good visibility. |\n| **Apply to Go Ahead Ventures** | Bridge funding needed. | They have strong consumer metrics and a solid deck ready. |\n| **Roll out Shajat and Rajesh** | Visibility strategy. | Leveraging big-name advisors to build momentum for the bridge round. |\n| **Pursue Bridge Funding** | Runway extension. | Cobbling together original investors, Rob, and NY State Ventures. |\n| **AI Protocol Adoption** | Vrijen's \"Zoe\" workflow. | Successful demonstration of automated meeting processing and deliverable drafting. |\n",
+      "attendees": [],
+      "meeting_type": "external"
+    },
+    {
+      "meeting_id": "mtg_2025-10-14-elaine-p-vrijen",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-14_Elaine-P-vrijen",
+      "blocks": [
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B26_MEETING_METADATA",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B01_DETAILED_RECAP",
+        "B07_TONE_AND_CONTEXT"
+      ],
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01 Detailed Recap\n\n## Overview\nVrijen Attawar (Founder of Careerspan) and Elaine P (Technical Program/Project Manager) met to discuss AI development philosophy, Careerspan's product evolution, and Elaine's career background and interest in LLMs. The conversation bridged technical AI architecture with career coaching expertise.\n\n## Key Discussion Points\n\n### 1. Careerspan Strategy & Evolution\n- Vrijen shared that Careerspan is moving toward building individual brands and bootstrap funding instead of the VC route.\n- The product is an AI career coach that uses conversational coaching to build a \"centralized understanding\" of a professional's story for matching with jobs and networking.\n- They have decided to focus on candidate-side value, avoiding charging candidates or being beholden to employer desires.\n\n### 2. AI Engineering Philosophy (The \"Careerspan Way\")\n- **Simplicity over Sophistication:** Vrijen advocated for using the \"dumbest possible AI\" (cheaper models like GPT-4o-mini equivalent) and clever scripting/design patterns to simulate complex reasoning.\n- **RAG vs. Scripting:** Careerspan avoids finicky RAG (Retrieval-Augmented Generation) in favor of lightweight, constrained deployment to maintain consistency and lower COGS.\n- **Data Depth:** Generic AI fails because it relies on shallow resume data. Careerspan's approach is to extract deep context through conversational deep-dives into experiences.\n\n### 3. Technical Exchange on LLMs\n- Elaine discussed her experience using RAG (uploading resumes to ChatGPT/Claude) and her frustration with generic outputs.\n- Vrijen explained that LLMs are \"deceptively bad\" at many tasks without deep context and specialized instruction to prevent generic word substitution.\n- Discussion on context windows, probabilistic nature of models, and the \"multi-point matching problem.\"\n\n### 4. Shared Backgrounds\n- Both have international school backgrounds (IB system). Elaine worked at schools in Saudi Arabia and South Korea; Vrijen attended an IB school in Bangladesh.\n- Vrijen met his co-founder Logan in Singapore a decade ago.\n- Elaine's career pivots: Semiconductor industry -> International schools -> Software Program/Project Management.\n\n## Conclusion\nThe meeting concluded with Vrijen promising to share advanced resources on LLMs with Elaine, reinforcing Careerspan's transition into an expertise-led brand.\n",
+      "b03_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B03 Decisions\n\n| ID | Decision | Rationale |\n|---|---|---|\n| D01 | **Bootstrap Strategy** | Careerspan will focus on building founder brands/expertise to fund product development rather than pursuing VC investment. |\n| D02 | **Engineering Path** | Continued avoidance of heavy RAG in favor of clever scripting and \"dumbest possible\" models to maintain cost-efficiency and resilience. |\n| D03 | **Monetization Pivot** | Decision to move away from direct sales to employers as a primary driver, focusing instead on the \"powerful sell\" of expertise and incomparable data granularity. |\n",
+      "attendees": [],
+      "meeting_type": "external"
+    },
+    {
+      "meeting_id": "mtg_2025-10-14-logan-vrijen-internal-strategy",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-14_Logan-vrijen-Internal-strategy",
+      "blocks": [
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B14_BLURBS_REQUESTED",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B01_DETAILED_RECAP",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS"
+      ],
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\n## Overview\nVrijen and Logan met to discuss the internal strategy for Careerspan, focusing on potential market positioning, product pivots (specifically into verification), and fundraising strategies. The conversation moved from a tactical \"profit moment\" brainstorming session to a strategic evaluation of verification as a unique edge for Careerspan.\n\n## Key Discussion Points\n\n### 1. Market Categorization and Strategic Pivot\nVrijen identified three primary categories for potential strategic focus:\n- **Category A: Verification:** Validating candidate authenticity and skill.\n- **Category B: Applicant Tracking Systems (ATS):** Strategic distribution and workflow integration.\n- **Category C: Workforce Adjacent:** General HR tech and workforce solutions.\n\nLogan pushed for a focus on \"the thing we are selling\" rather than just the company type, to allow for more creative thinking.\n\n### 2. The Verification Thesis\nVrijen proposed verification as the strongest lead, framing it as a solution to the \"clear and present danger\" of fake candidates and AI-cheating in interviews. \n- **The Product Hook:** Using Careerspan to cross-reference resumes against conversational stories to validate a candidate's grasp of their stated experiences.\n- **Workflow:** Candidates do \"two stories\" via a Careerspan magic link before the recruiter/hiring manager interview. Careerspan provides a \"confidence score\" and flags inconsistencies.\n- **Manual to Automated:** Ilse is currently experimenting with manual gut-checks (pre-filter) which can eventually be automated.\n\n### 3. Competitor and Market Sentiment\nVrijen noted significant funding in the background verification space (Checker, Tofu, First Advantage). They discussed the \"Bright\" (likely referencing a specific competitor or market leader) as a benchmark.\n\n### 4. Fundraising Strategy (\"Balls to the Wall\")\nThe discussion shifted to a \"one-week blitz\" strategy for fundraising. Vrijen proposed going to \"quick response VCs\" with a narrative that Careerspan has superior consumer knowledge and a unique elitist angle compared to competitors who recently received A16Z funding. They considered raising a pre-seed extension or a full seed round immediately.\n\n### 5. Team and Operational Maneuvers\nVrijen touched on internal team management, specifically regarding Rockle and Danny, suggesting a three-month notice period with accelerated vesting to maintain maneuverability and keep the company alive while they test the market.\n\n",
+      "b03_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B03: Decisions\n\n| Decision | Context | Status |\n| :--- | :--- | :--- |\n| **Prioritize Verification** | Selected as the \"steal man\" pro-angle for the next phase of the product. | **Confirmed** |\n| **Series A Target Segment** | Moved away from early-stage founders (who trust their gut) toward Series A companies with HR functions. | **Agreed** |\n| **The \"One-Week Blitz\"** | Spend a week reaching out to lead/follow-on VCs to secure pre-seed/seed funding. | **Planned** |\n| **Manual Verification Test** | Use Ilse's manual \"gut check\" process to fulfill immediate demand (e.g., Meg's company) before building a full API/ATS integration. | **Approved** |\n| **Team Notification Strategy** | Provide a 3-month notice to specific team members with vesting incentives to manage runway. | **Proposed** |\n\n",
+      "attendees": [],
+      "meeting_type": "external"
+    },
+    {
+      "meeting_id": "mtg_2025-10-14-nira-team-strategy-exploration-founder",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-14_Nira-team-Strategy-exploration-Founder",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT"
+      ],
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\n## Overview\nThis meeting served as a strategic alignment session between Vrijen (V), Logan, and Fei, the founder of Nira. The conversation marked a significant pivot for Careerspan, moving away from a traditional VC-backed scaling model toward a community-driven, influencer-led approach. Simultaneously, Fei provided an update on Nira's progress, its upcoming seed round, and its vision as an \"AI operating system for professional networks.\"\n\n## Key Discussion Points\n\n### 1. Careerspan's Strategic Pivot\n- **Shift in Business Model**: V and Logan explained that they are moving Careerspan away from a traditional company structure. They have decided not to charge job seekers and lack interest in selling to employers.\n- **Community Focus**: The new strategy focuses on collaborating with communities (e.g., alumni associations like Cornell and Emory) where incentives align for high-touch, low-spam engagement.\n- **Brand Building**: V and Logan intend to develop their personal brands and influence around AI and careers to fund the product, keeping it free for job seekers.\n- **Synergy with Communities**: V noted that communities want expertise and engagement (workshops/stimulated activity) without having to manage it themselves, which fits Careerspan's new direction.\n\n### 2. Nira's Progress and Vision\n- **Current State**: Nira is currently a team of six (mostly engineers) based in San Francisco. They have ~1500 users, primarily through word-of-mouth.\n- **Fundraising**: They closed a pre-seed round with South Park Commons, First Round Capital, and Andreessen Horowitz (a16z). They are preparing for a seed raise in January.\n- **Product Vision (The \"AI Rolodex\")**: Fei described Nira as an AI-powered version of a Rolodex. It allows users to query their network (and extended networks) naturally (e.g., \"Find me a PM in NY interested in ad tech\").\n- **Phase 2 (Operating System)**: Post-seed, Nira aims to become a \"Narrow Network\" operating system where \"cards\" (profiles) customize themselves based on who is viewing them, providing contextually relevant information.\n\n### 3. Collaboration Framework\n- **Mutual Support**: V proposed a \"pay it forward\" model where Careerspan helps boost Nira's visibility in communities and rooms they access, while Nira provides a platform for high-quality talent discovery.\n- **Anti-LinkedIn Positioning**: Both parties expressed a shared critique of LinkedIn as a bloated, 2D behemoth that fails both job seekers and employers. Nira is positioned as the \"Narrow Network\" alternative.\n- **Tastemaker Strategy**: V and Logan want to leverage their \"tastemaker\" status to selectively recommend tools like Nira that are synergistic with their brand.\n",
+      "b03_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B03: Decisions\n\n| Decision | Context | Rationale |\n| :--- | :--- | :--- |\n| **Pivot Careerspan away from VC scaling** | Careerspan will not seek VC money or follow a traditional employer-sales model. | Founders want to keep the tool free for job seekers and avoid the \"grind\" of selling to employers. |\n| **Adopt Influencer/Brand Funding Model** | V and Logan will fund the product via their personal brands and expertise-led services. | Leverages their existing influence and allows for more disruptive, independent product growth. |\n| **Focus on \"Narrow Networks\" (Nira)** | Nira will remain focused on small, high-trust group networks rather than broad internet scale. | Anti-LinkedIn positioning; focuses on trust and contextual relevance. |\n| **\"Pay It Forward\" Collaboration** | Careerspan and Nira will collaborate via mutual shout-outs and community introductions. | Synergistic alignment between community-led growth (Careerspan) and network operating systems (Nira). |\n| **Nira Team Size Constraint** | Target ARR of $20M with fewer than 15 people. | Commitment to a high-efficiency, engineering-heavy culture. |\n",
+      "attendees": [],
+      "meeting_type": "unknown"
+    },
+    {
+      "meeting_id": "mtg_2025-10-15-jaya-pokuri-founder-conversation",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-15_Jaya-pokuri-Founder-conversation",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B01_DETAILED_RECAP",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B03_DECISIONS"
+      ],
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\n## Overview\nVrijen Attawar (V) met with Jaya Pokuri and Dennis (Founding Engineer at Bonfire) to discuss V's transition into AI consulting and explore Bonfire's current challenges in building AI-driven sales intelligence for health tech.\n\n## Key Discussion Points\n\n### V's Transition & AI Tooling\n- V shared that he is moving towards making his AI work a formal consulting business.\n- V promoted a specific AI tool (referred to as a \"computer in the cloud\") that he advocates for, highlighting its power for prompting and automation, which he finds more intuitive than Zapier.\n- He mentioned using this tool for sales and marketing functionality, emphasizing \"vibe coding\" and prompting.\n\n### Bonfire's Business Model (Analytics-Driven Sales Intelligence)\n- Bonfire builds sales intelligence for health tech companies (e.g., medical devices, digital health).\n- Current customers include Growth Therapy, Headway, and Nourish.\n- They leverage deep healthcare data (patient panels, procedure volumes, surgical data) to help companies identify and prioritize targets (doctors, hospitals, health systems).\n\n### The New \"Downstream\" Product Initiative\n- Jaya described a new focus: helping reps *during* the sales cycle (prep and collateral generation).\n- **Goal:** Arm sales reps with prep materials and AI-generated collateral before/during calls with stakeholders like Chief Medical Officers (CMO) or CFOs.\n- **Mechanism:** The system takes user context (goal of the call, stakeholder role) and combines it with:\n    1. Proprietary healthcare data (patient/procedure info).\n    2. Web-scraped data (PubMed articles, publications).\n- **Output:** A compelling narrative outline or sales prep document.\n\n### Technical Approach & Challenges\n- Bonfire is exploring a multi-agent architecture:\n    - Web search agent (PubMed/web scraping).\n    - Data analyst agent (internal proprietary data).\n    - Narrative/Structuring agent (consolidating insights into a compelling story).\n- Jaya is seeking V's expertise on prompting strategies and agent orchestration to consolidate these disparate data sources effectively.\n",
+      "b03_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B03: Decisions\n\n## Strategic Decisions\n- **AI Consulting Alignment:** V explicitly stated his intent to use his contributions to Bonfire as a case study/referral for his new consulting business.\n- **Product Direction:** Bonfire is officially moving \"downstream\" into sales prep and collateral generation, moving beyond just GTM strategy and targeting.\n- **Technical Architecture:** The team is leaning towards a multi-agent approach (Scraper, Analyst, Narrative) to solve the sales prep problem.\n\n## Operational Decisions\n- **Platform Trial:** Jaya agreed to check out the AI platform V recommended after the call.\n",
+      "attendees": [],
+      "meeting_type": "external"
+    }
+  ]
+}

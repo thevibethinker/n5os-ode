@@ -66,3 +66,8 @@ No emails found
 **Last email:** 2025-12-14  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-04 11:03
+
+Gmail history: 1 thread (4 messages) on 2025-12-02. Introduced by Ben Guo (Zo investor). Discussion on scheduling Zo onboarding call and identifying workflows for automation on Zo Computer. Relationship trajectory: new contact.

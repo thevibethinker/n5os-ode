@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /home/workspace/Integrations/claude-code/.claude/hooks/session-start.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /home/workspace/Integrations/claude-code/.claude/hooks/pre-stop.py"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /home/workspace/Integrations/claude-code/.claude/hooks/pre-tool-use.py"
+          }
+        ]
+      }
+    ]
+  }
+}
+

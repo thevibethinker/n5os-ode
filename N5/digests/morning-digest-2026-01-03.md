@@ -4,10 +4,10 @@
 ---
 
 ### 🧬 Bio-Context
-**Last Night (2025-12-31):**
-| Sleep | 5.2hrs | Efficiency | -- |
+**Last Night (2026-01-03):**
+| Sleep | 2.5hrs | Efficiency | -- |
 |-------|---------|------------|------------------|
-| Resting HR | 75 bpm | | |
+| Resting HR | 78 bpm | | |
 
 ⚠️ **DEFICIT MODE:** <6hrs sleep. Protect focus, avoid big decisions, front-load caffeine before 2pm.
 
@@ -25,7 +25,10 @@
 
 ### 🗺️ The Landscape
 - **08:15**: Daily Centering Task
+- **09:30**: Emory Alumni rollout: newsletter inclusion (1/7)
 - **10:00**: Every week will be better if I make this weekend better
+- **11:00**: Touch base: Emory Alumni rollout
+- **17:00**: FTI Event: Discuss some meaningful topic with smart people (Ubani Midtown)
 
 ---
 
@@ -56,4 +59,4 @@
 *(Clear Mind → Defend Time → Sync System)*
 
 ---
-*Generated: 2026-01-03 00:56 ET*
+*Generated: 2026-01-03 13:05 ET*

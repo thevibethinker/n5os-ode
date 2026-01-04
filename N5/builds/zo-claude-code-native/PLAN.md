@@ -46,7 +46,13 @@ Claude Code's planning is excellent. We enhance it with:
 - [x] Confirm N5OS logging works end-to-end (MCP → SQLite → Zo API async)
 - [x] Tune hook behavior based on usage (async mode enabled)
 
-### Phase 3: Future Enhancements (Optional)
+### Phase 3: Principle Management & Refinement (IN PROGRESS)
+- [ ] Bi-directional context: Sync Zo's session state into .claude/session-context.md
+- [ ] Plan sync: Automate copying Claude Code plans to N5/builds/
+- [ ] Memory persistence: Implement memory.jsonl pattern
+- [ ] Final QA & Documentation: End-to-end validation of new build flow
+
+### Phase 4: Future Enhancements (Optional)
 - [ ] Memory persistence (memory.jsonl pattern from Meridian)
 - [ ] Plan sync (Claude Code plans → N5/builds/)
 - [ ] Bi-directional context (Zo knowledge in Claude Code)
@@ -95,5 +101,6 @@ claude mcp list
 ---
 
 *Plan v3.0 | Phase 1 Complete | 2026-01-03*
+
 
 

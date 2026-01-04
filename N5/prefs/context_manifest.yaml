@@ -49,6 +49,7 @@ groups:
       - "Personal/Health/synthesis/Vrijen-Bio-Context.md"
       - "Personal/Health/stack/current_medications.yaml"
       - "Personal/Health/stack/current_supplements.yaml"
+      - "N5/systems/health/regimen.json"
 
   general:
     description: "Fallback for novel or undefined tasks"
@@ -58,6 +59,7 @@ groups:
       
 # PRINCIPLES CONFIG
 principles_dir: "N5/prefs/principles"
+
 
 
 
