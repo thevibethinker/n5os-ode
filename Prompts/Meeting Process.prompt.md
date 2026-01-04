@@ -5,11 +5,11 @@ tags: []
 ---
 # `meeting-process`
 
-**Version**: 5.1.0\
+**Version**: 5.3.0\
 **Category**: Meeting Intelligence\
 **Workflow**: AI-Driven Processing (Guidance-Based)\
-**Registry Version**: 1.5+\
-**Philosophy**: Natural language guidance, contextual intelligence, strategic depth, CRM integration, Howie harmonization
+**Registry Version**: 2.2+\
+**Philosophy**: Natural language guidance, contextual intelligence, strategic depth, CRM integration, Howie harmonization, semantic memory enrichment
 
 ---
 
@@ -115,56 +115,150 @@ Read the full transcript and determine:
 
 ---
 
+### Step 2a: Classify Meeting Complexity ⭐ NEW in v5.2
+
+**CRITICAL: Determine complexity BEFORE block selection. This drives how many blocks to generate.**
+
+| Tier | Primary Signals | Characteristics |
+|------|-----------------|-----------------|
+| **BRIEF** | <20 min OR <1,500 words | Quick check-ins, status updates, simple networking, no major decisions |
+| **STANDARD** | 20-45 min OR 1,500-5,000 words | Typical meetings, discovery calls, planning sessions, decisions made |
+| **DEEP** | >45 min OR >5,000 words | Strategic sessions, complex negotiations, workshops, high signal density |
+
+**Override Rules (use judgment):**
+- Short but high-signal meeting (e.g., rapid-fire strategic decisions) → upgrade to STANDARD
+- Long but low-signal meeting (e.g., rambling social chat) → downgrade to STANDARD
+- When in doubt, use STANDARD
+
+**Output (include in B26 metadata):**
+```
+Complexity Tier: [BRIEF | STANDARD | DEEP]
+Classification Rationale: [1-2 sentences explaining choice]
+```
+
+---
+
+### Step 2b: Semantic Memory Enrichment ⭐ NEW in v5.3
+
+**CRITICAL: Load historical context BEFORE generating blocks.** This enables relationship-aware intelligence extraction.
+
+**Memory Client:**
+```python
+from N5.cognition.n5_memory_client import N5MemoryClient
+client = N5MemoryClient()
+```
+
+**Query Sequence (execute for external meetings):**
+
+**1. CRM Profile (Prior Relationship):**
+```python
+crm_context = client.search_profile(
+    profile="crm",
+    query=f"{stakeholder_name} {organization}",
+    limit=5
+)
+```
+- Loads existing CRM profile, prior interaction history
+- Use to inform B08 relationship trajectory, B10 progression
+
+**2. Meeting History (Prior Conversations):**
+```python
+meeting_history = client.search_profile(
+    profile="meetings",
+    query=f"{stakeholder_name} {key_topics}",
+    limit=5,
+    recency_weight=0.3
+)
+```
+- Finds previous meetings with this stakeholder
+- Enables callbacks: "Following up from our October discussion about..."
+- Use to populate B10 relationship trajectory
+
+**3. Prior B08/B31 Blocks (Stakeholder Intelligence History):**
+- If prior meetings exist, load their B08 and B31 blocks
+- Compare current signals against historical baseline
+- Detect relationship evolution (warming/cooling)
+
+**Build Enrichment Context (pass to block generators):**
+```json
+{
+  "prior_relationship": {
+    "exists": true,
+    "meetings_count": 3,
+    "last_meeting": "2025-10-14",
+    "relationship_depth": "warm",
+    "crm_profile_path": "Knowledge/crm/individuals/jane-smith.md"
+  },
+  "historical_signals": {
+    "prior_resonance_topics": ["AI-first coaching", "enterprise distribution"],
+    "prior_concerns": ["integration complexity"],
+    "relationship_trajectory": "warming"
+  },
+  "context_for_blocks": {
+    "B08": "Load prior B08 to compare stakeholder evolution",
+    "B10": "Use meeting_history for trajectory assessment",
+    "B07": "Check CRM for intro target existence",
+    "B27": "Compare wellness metrics to baseline"
+  }
+}
+```
+
+**Skip Memory Enrichment If:**
+- Internal meeting (no external stakeholder)
+- First-ever contact (no prior history - note in B10)
+- Memory client unavailable (fallback to transcript-only)
+
+---
+
 ### Step 3: Select Blocks to Generate
 
-Use this 3-tier logic:
+Use **complexity-aware** 3-tier logic based on the complexity tier determined in Step 2a.
 
-#### Tier 1: REQUIRED Blocks (Always Generate)
+#### Tier 1: REQUIRED Blocks (Complexity-Modulated)
 
-- **B26** - Meeting Metadata Summary (includes V-OS tags)
-- **B01** - Detailed Recap
+**BRIEF meetings (4 blocks):**
+- **B26** - Meeting Metadata Summary (includes complexity classification)
+- **B01** - Detailed Recap (FULL - never shortened regardless of complexity)
 - **B02** - Commitments Contextual (action items)
-- **B08** - Stakeholder Intelligence (profile + resonance + CRM + Howie)
+- **B25** - Deliverable Content Map
+
+**STANDARD meetings (6+ blocks):**
+- **B26** - Meeting Metadata Summary
+- **B01** - Detailed Recap (FULL)
+- **B02** - Commitments Contextual
+- **B25** - Deliverable Content Map
+- **B08** - Stakeholder Intelligence (for external meetings)
 - **B21** - Key Moments (quotes + questions)
-- **B31** - Stakeholder Research (landscape insights)
-- **B25** - Deliverable Content Map + Follow-Up Email
-- **B27** - Wellness Indicators (biometric & cognitive performance)
+- **B27** - Wellness Indicators (IF valuable signal detected - not required)
+- **B31** - Stakeholder Research (IF non-obvious insights present - not required)
 
-**Total: 8 REQUIRED blocks** (always generate these)
+**DEEP meetings (8+ blocks):**
+- All STANDARD blocks, plus:
+- **B27** - Wellness Indicators (always)
+- **B31** - Stakeholder Research (always)
 
-#### Tier 2: Stakeholder-Specific HIGH Priority
+#### Tier 2: Stakeholder-Specific HIGH Priority (Complexity-Modulated)
 
-Consult `stakeholder_combinations` in registry for the detected stakeholder type.
+**BRIEF meetings:** Minimal additions
+- Only **B07** (Warm Intro) if intro explicitly discussed
+- Skip B05, B13, B14, B24, B32
 
-**FOUNDER** meetings (13 blocks total):
+**STANDARD meetings:** Full stakeholder selection
+- **FOUNDER**: +B05, B24, B13, B07, B14
+- **INVESTOR**: +B05, B13, B07
+- **NETWORKING**: +B07, B05
+- **CUSTOMER**: +B24, B05, B13
+- **COMMUNITY**: +B05, B07
 
-- B26, B01, B02, B08, B21, B31, B25 (required)
-- B05, B24, B13, B07, B14, B27 (high priority)
+**DEEP meetings:** Full selection + strategic extras
+- Full stakeholder combination from registry
+- Always include **B32** (Thought-Provoking Ideas) for strategic depth
 
-**INVESTOR** meetings (11 blocks total):
+#### Tier 3: CONDITIONAL Blocks (STANDARD/DEEP only)
 
-- B26, B01, B02, B08, B21, B31, B25 (required)
-- B05, B13, B07, B27 (high priority)
+**BRIEF meetings:** Skip all conditional blocks entirely.
 
-**NETWORKING** meetings (9 blocks total):
-
-- B26, B01, B02, B08, B21, B31, B25 (required)
-- B07, B05 (high priority)
-
-**CUSTOMER** meetings (11 blocks total):
-
-- B26, B01, B02, B08, B21, B31, B25 (required)
-- B24, B05, B13, B27 (high priority)
-
-**COMMUNITY** meetings (9 blocks total):
-
-- B26, B01, B02, B08, B21, B31, B25 (required)
-- B05, B07 (high priority)
-
-#### Tier 3: CONDITIONAL Blocks
-
-Generate these ONLY when explicitly triggered:
-
+**STANDARD/DEEP meetings:** Generate when explicitly triggered:
 - **B06** (Pilot Intelligence): Only if pilot was explicitly discussed with specifics
 - **B11** (Metrics Snapshot): Only if 3+ substantive metrics were discussed
 - **B15** (Stakeholder Map): Only if multiple stakeholders with complex dynamics
@@ -332,7 +426,7 @@ For each selected block:
   - Watch Points: blockers, hesitations, non-commitments, concerns
   - Focus on SIGNALS not just content
 
-### B26 - MEETING_METADATA_SUMMARY ✅ REQUIRED (enhanced in v1.5)
+### B26 - MEETING_METADATA_SUMMARY ✅ REQUIRED (enhanced in v5.2)
 
 **Required Information:**
 - **Meeting ID**: Clear identifier (format: YYYY-MM-DD_Type_Participant)
@@ -345,6 +439,14 @@ For each selected block:
   - **Organization** (Company/Org name)
   - If organization unknown: Mark as "[Organization Unknown - needs research]"
   - This enables accurate folder naming: `YYYY-MM-DD_FirstLast-OrgName_type`
+
+**Complexity Classification** ⭐ NEW in v5.2
+- **Complexity Tier**: BRIEF | STANDARD | DEEP
+- **Classification Rationale**: 1-2 sentences explaining the tier choice
+- **Duration/Length**: Meeting duration or transcript word count used for classification
+- **Blocks Generated**: Count and list of blocks generated for this meeting
+
+**Additional Metadata:**
 - **Email Subject Line**: Suggested subject for follow-up
 - **Delay Sensitivity**: How time-sensitive is follow-up?
 - **V-OS Tags**: Apply Howie's tag system `[LD-XXX] [GPT-X] [A-X]` for categorization
@@ -418,16 +520,21 @@ For blocks with `feedback_enabled: true`:
 
 Before finalizing, verify:
 
- 1. ✅ All REQUIRED blocks generated (7 total)
- 2. ✅ Stakeholder-appropriate HIGH priority blocks included
- 3. ✅ CONDITIONAL blocks only when triggered
- 4. ✅ No placeholder text or invented content
- 5. ✅ Strategic depth present (not just extraction)
- 6. ✅ CRM profile created for eligible stakeholders (not JOB_SEEKER)
- 7. ✅ Howie V-OS tags generated in B08 and B26
- 8. ✅ Follow-up email included in B25
- 9. ✅ Stakeholder research insights captured in B31
-10. ✅ Feedback checkboxes on enabled blocks
+ 1. ✅ Meeting complexity correctly classified (BRIEF/STANDARD/DEEP)
+ 2. ✅ Block count matches complexity tier:
+    - BRIEF: 4 blocks (B01, B02, B25, B26)
+    - STANDARD: 6-8 blocks
+    - DEEP: 8+ blocks
+ 3. ✅ B01 (Detailed Recap) is FULL regardless of complexity
+ 4. ✅ B27 and B31 only for STANDARD (if valuable) and DEEP (always)
+ 5. ✅ CONDITIONAL blocks (B06, B11, B15) skipped for BRIEF
+ 6. ✅ Classification rationale documented in B26
+ 7. ✅ No placeholder text or invented content
+ 8. ✅ Strategic depth present (not just extraction)
+ 9. ✅ CRM profile created for eligible stakeholders (not JOB_SEEKER)
+10. ✅ Howie V-OS tags generated in B08 and B26
+11. ✅ Follow-up email included in B25
+12. ✅ Feedback checkboxes on enabled blocks
 
 ---
 
@@ -521,6 +628,30 @@ Before finalizing, verify:
    - Implication: Aggregators like FutureFit hold power in partnership negotiations; need to offer clear value beyond just another integration
    - Strategic Value: We need to emphasize unique value prop (AI coaching, better matching) not just "another tool to integrate"
 ```
+
+---
+
+## v5.2.0 Changelog
+
+**Release Date:** 2026-01-03
+
+**Major Changes:**
+
+- Added **complexity-aware block selection** (BRIEF/STANDARD/DEEP tiers)
+- B27 (Wellness Indicators) and B31 (Stakeholder Research) now **conditional** based on complexity
+- BRIEF meetings generate only 4 blocks (B01, B02, B25, B26) - ~50% token savings
+- STANDARD meetings generate 6-8 blocks with stakeholder-specific additions
+- DEEP meetings generate full 8+ block set with B32 always included
+- Added Step 2a: Classify Meeting Complexity (before block selection)
+- B26 now includes complexity classification metadata
+- Updated quality checks for complexity validation
+- **Estimated 25-30% overall token savings** on meeting processing
+
+**Minor Changes:**
+
+- B01 (Detailed Recap) explicitly marked as FULL regardless of complexity
+- Conditional blocks (B06, B11, B15) now skipped entirely for BRIEF meetings
+- Stakeholder-specific blocks modulated by complexity tier
 
 ---
 

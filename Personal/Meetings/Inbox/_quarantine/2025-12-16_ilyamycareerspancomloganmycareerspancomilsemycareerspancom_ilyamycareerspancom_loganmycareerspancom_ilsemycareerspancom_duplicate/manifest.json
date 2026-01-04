@@ -3,11 +3,24 @@
   "generated_at": "2025-12-17T20:20:30.335082+00:00",
   "meeting_folder": "2025-12-16_ilyamycareerspancomloganmycareerspancomilsemycareerspancom_ilyamycareerspancom_loganmycareerspancom_ilsemycareerspancom",
   "meeting_date": "2025-12-16",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
-    "stakeholder_intelligence": false,
-    "brief": false,
-    "transcript_processed": true
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "b01_detailed_recap": true,
+    "b03_stakeholder_intelligence": true,
+    "b03_decisions": true,
+    "b05_action_items": true,
+    "b06_business_context": true,
+    "b07_tone_and_context": true,
+    "b14_blurbs_requested": true,
+    "b21_key_moments": true,
+    "b25_deliverables": true,
+    "b26_meeting_metadata": true,
+    "b32_thought_provoking_ideas": true
   },
-  "last_updated_by": "MG-1_Prompt"
+  "last_updated_by": "MG-2_Agent",
+  "processed_at": "2026-01-04T18:47:38.031570",
+  "crm_synced": true
 }

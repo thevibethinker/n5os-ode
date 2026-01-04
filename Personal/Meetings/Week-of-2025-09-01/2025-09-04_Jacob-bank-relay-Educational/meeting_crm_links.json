@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Strategic Alignment Assessment",
+      "name": "Strategic Alignment Assessment",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "strategic-alignment-assessment"
+    }
+  ]
+}

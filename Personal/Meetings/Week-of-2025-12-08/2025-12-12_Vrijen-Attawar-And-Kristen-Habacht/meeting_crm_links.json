@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Kristen Habacht (Elly.ai)",
+      "name": "Kristen Habacht",
+      "organization": "Elly.ai",
+      "is_internal": false,
+      "crm_person_id": "kristen-habacht"
+    },
+    {
+      "raw": "Vrijen Attawar (Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

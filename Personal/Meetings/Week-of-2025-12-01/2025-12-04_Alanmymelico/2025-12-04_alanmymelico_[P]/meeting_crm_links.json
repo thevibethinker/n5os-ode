@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Head of AI (Careerspan)",
+      "name": "Head of AI",
+      "organization": "Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

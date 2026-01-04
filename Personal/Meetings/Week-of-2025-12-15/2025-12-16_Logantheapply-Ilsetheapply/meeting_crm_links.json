@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Logantheapply Ilsetheapply",
+      "name": "Logantheapply Ilsetheapply",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "logantheapply-ilsetheapply-5"
+    }
+  ]
+}

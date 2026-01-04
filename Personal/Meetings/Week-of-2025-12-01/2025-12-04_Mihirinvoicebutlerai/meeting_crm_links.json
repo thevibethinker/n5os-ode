@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Mihir's Co-Founder",
+      "name": "Mihir's Co-Founder",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "mihir's-co-founder"
+    }
+  ]
+}

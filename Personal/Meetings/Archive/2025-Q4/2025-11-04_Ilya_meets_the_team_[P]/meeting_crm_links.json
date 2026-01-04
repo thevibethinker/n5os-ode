@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Ilya Kucherenko (New Careerspan Marketing/Sales Leader)",
+      "name": "Ilya Kucherenko",
+      "organization": "New Careerspan Marketing/Sales Leader",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Cultural Intelligence",
+      "name": "Cultural Intelligence",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "cultural-intelligence"
+    }
+  ]
+}

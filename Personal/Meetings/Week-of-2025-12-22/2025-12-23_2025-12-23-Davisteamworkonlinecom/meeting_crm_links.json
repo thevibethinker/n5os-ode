@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Davis Filippell",
+      "name": "Davis Filippell",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "davis-filippell"
+    },
+    {
+      "raw": "Michelle Price",
+      "name": "Michelle Price",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "michelle-price"
+    }
+  ]
+}

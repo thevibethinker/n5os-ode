@@ -1,11 +1,13 @@
 import { Hono } from 'hono'
 import { serveStatic } from 'hono/bun'
 import { readFileSync, existsSync, writeFileSync } from 'fs'
+import { spawn } from 'child_process'
 
 const app = new Hono()
 
 const LUMA_CANDIDATES = '/home/workspace/N5/data/luma_candidates.json'
 const DECISIONS_FILE = '/home/workspace/N5/data/event_decisions.json'
+const SYNC_SCRIPT = '/home/workspace/N5/scripts/sync_decisions_to_db.py'
 
 interface LumaEvent {
   id: string
@@ -27,6 +29,31 @@ interface Decision {
   decision: 'yes' | 'no' | 'maybe'
   decidedAt: string
   notes?: string
+}
+
+// Helper to run sync script
+async function runSync(): Promise<{ success: boolean; output: string }> {
+  return new Promise((resolve) => {
+    const proc = spawn('python3', [SYNC_SCRIPT, '--json'])
+    let output = ''
+    let error = ''
+    
+    proc.stdout.on('data', (data) => { output += data.toString() })
+    proc.stderr.on('data', (data) => { error += data.toString() })
+    
+    proc.on('close', (code) => {
+      resolve({
+        success: code === 0,
+        output: output || error
+      })
+    })
+    
+    // Timeout after 10 seconds
+    setTimeout(() => {
+      proc.kill()
+      resolve({ success: false, output: 'Sync timed out' })
+    }, 10000)
+  })
 }
 
 function loadEvents(): any[] {
@@ -122,7 +149,30 @@ app.post('/api/events/:id/decide', async (c) => {
   }
   saveDecisions(decisions)
   
+  // Trigger async sync to DB (fire and forget)
+  runSync().then((result) => {
+    if (!result.success) {
+      console.error('Sync failed:', result.output)
+    }
+  })
+  
   return c.json({ success: true, decision: decisions[id] })
+})
+
+// New sync endpoint for manual triggering
+app.post('/api/sync', async (c) => {
+  const result = await runSync()
+  
+  if (result.success) {
+    try {
+      const syncResult = JSON.parse(result.output.split('\n').filter(l => l.startsWith('{')).join(''))
+      return c.json(syncResult)
+    } catch {
+      return c.json({ success: true, message: 'Sync completed', raw: result.output })
+    }
+  }
+  
+  return c.json({ success: false, error: result.output }, 500)
 })
 
 app.get('/api/stats', (c) => {
@@ -162,6 +212,7 @@ export default {
   port: 3047,
   fetch: app.fetch,
 }
+
 
 
 

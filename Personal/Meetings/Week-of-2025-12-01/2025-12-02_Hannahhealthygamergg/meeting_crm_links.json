@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Dr. K (Alok Kanojia)",
+      "name": "Dr. K",
+      "organization": "Alok Kanojia",
+      "is_internal": false,
+      "crm_person_id": "dr.-k"
+    },
+    {
+      "raw": "Organizations Mentioned",
+      "name": "Organizations Mentioned",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "organizations-mentioned"
+    }
+  ]
+}

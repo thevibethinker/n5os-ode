@@ -270,8 +270,8 @@ def extend_position(
                 target_id = add_connection.get("target_id")
                 try:
                     _add_reverse_connection(conn, target_id, position_id, reverse_relationship)
-                except Exception:
-                    pass  # Don't fail if reverse connection fails
+                except Exception as e:
+                    print(f"Warning: Failed to add reverse connection to {target_id}: {e}", file=sys.stderr)
                     
     if source_conversation and source_conversation not in sources:
         sources.append(source_conversation)
@@ -403,7 +403,7 @@ def delete_position(position_id: str, remove_connections: bool = True) -> None:
     if not row:
         conn.close()
         raise ValueError(f"Position not found: {position_id}")
-    
+
     if remove_connections:
         # Remove this position from other positions' connections
         all_positions = conn.execute("SELECT id, connections FROM positions WHERE id != ?", (position_id,)).fetchall()
@@ -411,12 +411,94 @@ def delete_position(position_id: str, remove_connections: bool = True) -> None:
             connections = json.loads(pos["connections"]) if pos["connections"] else []
             new_connections = [c for c in connections if c.get("target_id") != position_id]
             if len(new_connections) != len(connections):
-                conn.execute("UPDATE positions SET connections = ? WHERE id = ?", 
+                conn.execute("UPDATE positions SET connections = ? WHERE id = ?",
                            (json.dumps(new_connections), pos["id"]))
-    
+
     conn.execute("DELETE FROM positions WHERE id = ?", (position_id,))
     conn.commit()
     conn.close()
+
+    # Cascade delete from brain.db
+    try:
+        brain_db_path = Path(__file__).parent.parent / "cognition" / "brain.db"
+        brain_conn = sqlite3.connect(brain_db_path)
+        path = _position_resource_path(position_id)
+
+        # Find resource ID by path
+        row = brain_conn.execute("SELECT id FROM resources WHERE path = ?", (path,)).fetchone()
+        if row:
+            resource_id = row[0]
+            # Delete vectors, blocks, tags, then resource
+            brain_conn.execute("""
+                DELETE FROM vectors WHERE block_id IN (
+                    SELECT id FROM blocks WHERE resource_id = ?
+                )
+            """, (resource_id,))
+            brain_conn.execute("DELETE FROM blocks WHERE resource_id = ?", (resource_id,))
+            brain_conn.execute("DELETE FROM tags WHERE resource_id = ?", (resource_id,))
+            brain_conn.execute("DELETE FROM resources WHERE id = ?", (resource_id,))
+            brain_conn.commit()
+        brain_conn.close()
+    except Exception as e:
+        print(f"Warning: Failed to delete from brain.db: {e}", file=sys.stderr)
+
+
+def cleanup_orphans(dry_run: bool = True) -> list[str]:
+    """Find and remove brain.db entries with no matching positions.db record.
+
+    Returns list of orphaned position IDs.
+    """
+    # Get all position IDs from positions.db
+    conn = get_db()
+    rows = conn.execute("SELECT id FROM positions").fetchall()
+    conn.close()
+    positions_db_ids = {row["id"] for row in rows}
+
+    # Query brain.db directly to get all position-tagged resources
+    brain_db_path = Path(__file__).parent.parent / "cognition" / "brain.db"
+    brain_conn = sqlite3.connect(brain_db_path)
+    brain_conn.row_factory = sqlite3.Row
+
+    # Find all resources tagged with "positions"
+    brain_resources = brain_conn.execute("""
+        SELECT r.id, r.path FROM resources r
+        JOIN tags t ON r.id = t.resource_id
+        WHERE t.tag = ?
+    """, (BRAIN_TAG,)).fetchall()
+
+    # Extract position IDs from paths and find orphans
+    orphans = []
+    orphan_resource_ids = []
+    for row in brain_resources:
+        path = row["path"]
+        resource_id = row["id"]
+        pos_id = _extract_position_id_from_path(path)
+        if pos_id and pos_id not in positions_db_ids:
+            orphans.append(pos_id)
+            orphan_resource_ids.append(resource_id)
+
+    if not dry_run and orphan_resource_ids:
+        # Delete orphans directly from brain.db
+        for resource_id in orphan_resource_ids:
+            try:
+                # Delete vectors first
+                brain_conn.execute("""
+                    DELETE FROM vectors WHERE block_id IN (
+                        SELECT id FROM blocks WHERE resource_id = ?
+                    )
+                """, (resource_id,))
+                # Delete blocks
+                brain_conn.execute("DELETE FROM blocks WHERE resource_id = ?", (resource_id,))
+                # Delete tags
+                brain_conn.execute("DELETE FROM tags WHERE resource_id = ?", (resource_id,))
+                # Delete resource
+                brain_conn.execute("DELETE FROM resources WHERE id = ?", (resource_id,))
+            except Exception as e:
+                print(f"Warning: Failed to delete orphan resource {resource_id}: {e}", file=sys.stderr)
+        brain_conn.commit()
+
+    brain_conn.close()
+    return orphans
 
 
 def export_position(position_id: str) -> str:
@@ -573,6 +655,25 @@ def format_evidence_for_display(evidence: list[dict]) -> list[str]:
     return lines
 
 
+def sync_position_to_entities(position_id: str, delete: bool = False):
+    """Sync a single position to edges.db entities table.
+    
+    Called automatically after add/update/delete operations.
+    """
+    try:
+        from N5.scripts.sync_positions_to_entities import sync_single_position, delete_position_entity
+        if delete:
+            delete_position_entity(position_id)
+            print(f"  ↳ Removed from entities table")
+        else:
+            sync_single_position(position_id)
+            print(f"  ↳ Synced to entities table")
+    except ImportError:
+        pass  # sync script not available, skip silently
+    except Exception as e:
+        print(f"  ⚠ Entity sync failed: {e}")
+
+
 def cmd_add(args):
     sources = [args.source_conversation] if args.source_conversation else None
     
@@ -607,6 +708,7 @@ def cmd_add(args):
         source_conversations=sources
     )
     print(f"Added position: {position_id}")
+    sync_position_to_entities(position_id)
     
     # Suggest connections if not provided
     if not connections:
@@ -777,6 +879,7 @@ def cmd_update(args):
             confidence=args.confidence
         )
         print(f"Updated position: {args.id}")
+        sync_position_to_entities(args.id)
     except ValueError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -800,6 +903,7 @@ def cmd_delete(args):
     try:
         delete_position(args.id, remove_connections=not args.keep_connections)
         print(f"Deleted position: {args.id}")
+        sync_position_to_entities(args.id, delete=True)
     except ValueError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -817,6 +921,27 @@ def cmd_export(args):
     except ValueError as e:
         print(f"Error: {e}")
         sys.exit(1)
+
+
+def cmd_cleanup_orphans(args):
+    """Find and optionally remove orphaned brain.db entries."""
+    dry_run = not args.execute
+
+    orphans = cleanup_orphans(dry_run=dry_run)
+
+    if not orphans:
+        print("✅ No orphaned position resources found in brain.db")
+        return
+
+    if dry_run:
+        print(f"🔍 Found {len(orphans)} orphaned position resource(s) in brain.db:\n")
+        for pos_id in orphans:
+            print(f"  - {pos_id}")
+        print(f"\nRun with --execute to remove these orphans.")
+    else:
+        print(f"✅ Removed {len(orphans)} orphaned position resource(s) from brain.db:\n")
+        for pos_id in orphans:
+            print(f"  - {pos_id}")
 
 
 def main():
@@ -902,13 +1027,19 @@ def main():
     export_parser.add_argument("id", help="Position ID")
     export_parser.add_argument("--output", "-o", help="Output file path (prints to stdout if not specified)")
     export_parser.set_defaults(func=cmd_export)
-    
+
+    # cleanup-orphans
+    cleanup_parser = subparsers.add_parser("cleanup-orphans", help="Find and remove orphaned brain.db entries")
+    cleanup_parser.add_argument("--execute", action="store_true", help="Actually remove orphans (default is dry-run)")
+    cleanup_parser.set_defaults(func=cmd_cleanup_orphans)
+
     args = parser.parse_args()
     args.func(args)
 
 
 if __name__ == "__main__":
     main()
+
 
 
 

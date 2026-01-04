@@ -1,0 +1,34 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen (V) - Careerspan",
+      "name": "Vrijen (V) - Careerspan",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Logan - Careerspan",
+      "name": "Logan - Careerspan",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Jaya - Bonfire Analytics",
+      "name": "Jaya - Bonfire Analytics",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "jaya---bonfire-analytics"
+    },
+    {
+      "raw": "Vinay - Bonfire Analytics",
+      "name": "Vinay - Bonfire Analytics",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "vinay---bonfire-analytics"
+    }
+  ]
+}

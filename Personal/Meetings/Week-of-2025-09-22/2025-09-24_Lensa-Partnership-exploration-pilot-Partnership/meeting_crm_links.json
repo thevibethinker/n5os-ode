@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Mai Flynn",
+      "name": "Mai Flynn",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "mai-flynn"
+    },
+    {
+      "raw": "Vrijen Attawar (Internal)",
+      "name": "Vrijen Attawar",
+      "organization": "Internal",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

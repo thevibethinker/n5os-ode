@@ -7,10 +7,13 @@
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": false,
-    "transcript_processed": false
+    "transcript_processed": false,
+    "b33_decision_edges": true
   },
-  "last_updated_by": "MG-1_Operator",
+  "last_updated_by": "generate_b33_edges.py",
   "crm_synced": true,
   "crm_sync_timestamp": "2025-12-31T14:48:31.622806",
-  "processed_at": "2025-12-31T14:48:49Z"
+  "processed_at": "2025-12-31T14:48:49Z",
+  "b33_edge_count": 8,
+  "b33_generated_at": "2026-01-04T18:50:02.838343"
 }

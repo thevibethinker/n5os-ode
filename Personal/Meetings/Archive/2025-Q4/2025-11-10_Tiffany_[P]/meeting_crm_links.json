@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Tiffany Huang (Zo)",
+      "name": "Tiffany Huang",
+      "organization": "Zo",
+      "is_internal": false,
+      "crm_person_id": "tiffany-huang"
+    },
+    {
+      "raw": "Vrijen Attawar (Careerspan / Zo power user)",
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan / Zo power user",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

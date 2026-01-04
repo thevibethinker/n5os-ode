@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Farza (Build Space) -",
+      "name": "Farza (Build Space) -",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "farza-(build-space)--"
+    }
+  ]
+}

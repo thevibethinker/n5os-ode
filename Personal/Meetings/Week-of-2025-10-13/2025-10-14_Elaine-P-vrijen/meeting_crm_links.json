@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Elaine P",
+      "name": "Elaine P",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "elaine-p"
+    },
+    {
+      "raw": "Vrijen Attawar",
+      "name": "Vrijen Attawar",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

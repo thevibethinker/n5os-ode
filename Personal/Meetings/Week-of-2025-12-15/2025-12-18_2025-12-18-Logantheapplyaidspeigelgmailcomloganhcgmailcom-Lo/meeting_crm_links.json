@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "David Speigel",
+      "name": "David Speigel",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "david-speigel"
+    },
+    {
+      "raw": "Madison (Plaid) & Anna (Operator Builder)",
+      "name": "Madison",
+      "organization": "Plaid) & Anna (Operator Builder",
+      "is_internal": false,
+      "crm_person_id": "madison"
+    }
+  ]
+}

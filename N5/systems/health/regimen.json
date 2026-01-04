@@ -1,0 +1,298 @@
+{
+  "version": "2.0",
+  "updated": "2026-01-04",
+  "owner": "vrijen",
+  "source_protocol": "Personal/Health/protocols/Daily_Protocol.md",
+  "checkpoints": [
+    {
+      "id": "wake",
+      "time": "07:00",
+      "label": "Fasted Initialization",
+      "emoji": "🌅",
+      "phase": 1,
+      "items": ["tirzepatide", "vyvanse", "bupropion", "nac", "iron-bisglycinate", "vitamin-c", "alpha-gpc"],
+      "conditions": {
+        "empty_stomach": true,
+        "with_water": true,
+        "hydration_note": "16oz water + electrolytes"
+      },
+      "life_counter_slug": "supplement_wake",
+      "sms_suffix": "Empty stomach. Hydrate first. Reply 'done' when taken."
+    },
+    {
+      "id": "post_shake",
+      "time": "08:30",
+      "label": "Post-Workout Shake",
+      "emoji": "🥤",
+      "phase": 3,
+      "items": ["protein-powder", "creatine"],
+      "conditions": {
+        "after_workout": true,
+        "within_minutes": 30
+      },
+      "life_counter_slug": "supplement_shake",
+      "sms_suffix": "Within 30min of workout. Reply 'done' when taken."
+    },
+    {
+      "id": "one_meal",
+      "time": "09:00",
+      "label": "The One Meal",
+      "emoji": "🍽️",
+      "phase": 4,
+      "items": ["methylated-multi", "b12-folate", "omega-3", "bacopa", "curcumin", "probiotic", "psyllium"],
+      "conditions": {
+        "with_food": true,
+        "fat_required": true,
+        "note": "All fat-soluble compounds need dietary fat for absorption"
+      },
+      "life_counter_slug": "supplement_main",
+      "sms_suffix": "WITH FOOD (need fat for absorption). Reply 'done' when taken."
+    },
+    {
+      "id": "evening",
+      "time": "18:00",
+      "label": "Evening Wind-Down",
+      "emoji": "🌙",
+      "phase": 5,
+      "items": ["ashwagandha"],
+      "conditions": {
+        "with_food_optional": true,
+        "note": "Cortisol management - evening optimal"
+      },
+      "life_counter_slug": "supplement_evening",
+      "sms_suffix": "With light snack or on its own. Reply 'done' when taken."
+    },
+    {
+      "id": "presleep",
+      "time": "22:00",
+      "label": "Pre-Sleep",
+      "emoji": "😴",
+      "phase": 6,
+      "items": ["aripiprazole", "magnesium", "psyllium-optional"],
+      "conditions": {
+        "before_bed_minutes": 30,
+        "note": "Dopamine clearance and sleep architecture"
+      },
+      "life_counter_slug": "supplement_presleep",
+      "sms_suffix": "30-60min before bed. Reply 'done' when taken."
+    }
+  ],
+  "items": {
+    "tirzepatide": {
+      "name": "Tirzepatide ODT",
+      "brand": "Compounded",
+      "dose": "2mg (w/ Carnitine/B12)",
+      "category": "rx",
+      "active": true,
+      "notes": "ODT format requires empty stomach for sublingual absorption"
+    },
+    "vyvanse": {
+      "name": "Vyvanse",
+      "generic": "Lisdexamfetamine",
+      "dose": "60mg",
+      "category": "rx",
+      "active": true,
+      "notes": "Primary stimulant. Take early AM; do NOT redose after 10am"
+    },
+    "bupropion": {
+      "name": "Bupropion XL",
+      "generic": "Bupropion",
+      "dose": "300mg",
+      "category": "rx",
+      "active": true,
+      "notes": "Dopaminergic baseline. Works synergistically with Vyvanse"
+    },
+    "nac": {
+      "name": "NAC",
+      "brand": "TBD",
+      "dose": "600mg",
+      "category": "antioxidant",
+      "active": true,
+      "notes": "Antioxidant/glutathione support. Best fasted"
+    },
+    "iron-bisglycinate": {
+      "name": "Iron Bisglycinate",
+      "brand": "Thorne",
+      "dose": "25mg",
+      "category": "mineral",
+      "active": true,
+      "take_with": ["vitamin-c"],
+      "avoid_with": ["calcium", "coffee", "tea", "dairy", "magnesium", "zinc", "antacids", "methylated-multi"],
+      "wait_before_other": 120,
+      "notes": "Take fasted, AWAY from coffee/Multi. Pair with Vitamin C"
+    },
+    "vitamin-c": {
+      "name": "Vitamin C",
+      "brand": "ENDUR-C",
+      "dose": "500mg",
+      "category": "vitamin",
+      "active": true,
+      "take_with": ["iron-bisglycinate"],
+      "notes": "Enhances iron absorption 2-3x. Also supports NAC/glutathione"
+    },
+    "alpha-gpc": {
+      "name": "Alpha GPC",
+      "brand": "TBD",
+      "dose": "300-600mg",
+      "category": "nootropic",
+      "active": true,
+      "cutoff_time": "14:00",
+      "notes": "Acetylcholine precursor. Pre-workout cognitive boost. Do NOT take after 2pm"
+    },
+    "protein-powder": {
+      "name": "Protein Powder",
+      "brand": "TBD",
+      "dose": "30-40g",
+      "category": "nutrition",
+      "active": true,
+      "notes": "Critical during GLP-1 use to prevent sarcopenia"
+    },
+    "creatine": {
+      "name": "Creatine Monohydrate",
+      "brand": "TBD",
+      "dose": "5g",
+      "category": "performance",
+      "active": true,
+      "notes": "Mix into shake. Spares methyl groups (MTHFR support)"
+    },
+    "methylated-multi": {
+      "name": "O.N.E. Multivitamin",
+      "brand": "Pure Encapsulations",
+      "dose": "1 capsule",
+      "category": "multivitamin",
+      "active": true,
+      "requires_food": true,
+      "notes": "Contains methylated B12/Folate, CoQ10, ALA. Take with food"
+    },
+    "b12-folate": {
+      "name": "B12 Folate",
+      "brand": "Pure Encapsulations",
+      "dose": "1 capsule",
+      "category": "vitamin",
+      "active": true,
+      "requires_food": true,
+      "notes": "Methylcobalamin + Metafolin®. Stacks with Multi for methylation support"
+    },
+    "omega-3": {
+      "name": "Fish Oil (EPA/DHA)",
+      "brand": "TBD",
+      "dose": "1-2g combined",
+      "category": "essential_fatty_acid",
+      "active": true,
+      "requires_food": true,
+      "requires_fat": true,
+      "notes": "⚠️ MUST take with food to avoid reflux. Brain structure, inflammation"
+    },
+    "bacopa": {
+      "name": "Bacopa Monnieri",
+      "brand": "TBD",
+      "dose": "300mg",
+      "category": "nootropic",
+      "active": true,
+      "requires_food": true,
+      "requires_fat": true,
+      "notes": "Fat-soluble. Take with meal. BDNF support"
+    },
+    "curcumin": {
+      "name": "Curcuma Pura (Curcumin)",
+      "brand": "TBD",
+      "dose": "Per label",
+      "category": "anti_inflammatory",
+      "active": true,
+      "requires_food": true,
+      "requires_fat": true,
+      "notes": "Fat-soluble — MUST take with fat-containing meal. Anti-inflammatory"
+    },
+    "probiotic": {
+      "name": "Probiotic 10",
+      "brand": "Nature's Bounty",
+      "dose": "1 capsule",
+      "category": "gut_health",
+      "active": true,
+      "notes": "Supports gut health and Tirzepatide GI tolerance"
+    },
+    "psyllium": {
+      "name": "Psyllium Husk",
+      "brand": "TBD",
+      "dose": "5-10g",
+      "category": "fiber",
+      "active": true,
+      "requires_water": "12oz+",
+      "notes": "Essential for GI motility on Tirzepatide. MUST take with 12oz+ water"
+    },
+    "ashwagandha": {
+      "name": "Ashwagandha",
+      "brand": "TBD",
+      "dose": "300-600mg",
+      "category": "adaptogen",
+      "active": true,
+      "notes": "Adaptogen. Evening optimal for cortisol management. Warrior genotype support"
+    },
+    "aripiprazole": {
+      "name": "Aripiprazole",
+      "generic": "Aripiprazole",
+      "dose": "2mg",
+      "category": "rx",
+      "active": true,
+      "notes": "Emotional and dopaminergic stabilizer"
+    },
+    "magnesium": {
+      "name": "Magnesium Glycinate",
+      "brand": "TBD",
+      "dose": "200-400mg",
+      "category": "mineral",
+      "active": true,
+      "notes": "COMT cofactor. Critical for clearing dopamine and enabling sleep"
+    },
+    "psyllium-optional": {
+      "name": "Psyllium Husk (optional 2nd dose)",
+      "brand": "TBD",
+      "dose": "5-10g",
+      "category": "fiber",
+      "active": true,
+      "optional": true,
+      "requires_water": "12oz+",
+      "notes": "Overnight satiety and morning regularity. Take with 12oz+ water"
+    }
+  },
+  "interactions": {
+    "iron-bisglycinate": {
+      "synergy": ["vitamin-c"],
+      "blockers": ["calcium", "magnesium", "zinc", "coffee", "tea", "dairy", "antacids", "methylated-multi"],
+      "wait_minutes": 120,
+      "notes": "Iron absorption reduced 40-70% by blockers; VitC enhances 2-3x. Take 2hr before multi"
+    },
+    "alpha-gpc": {
+      "cutoff": "14:00",
+      "notes": "Acetylcholine boost can interfere with sleep architecture"
+    },
+    "vyvanse": {
+      "cutoff_redose": "10:00",
+      "notes": "Extended-release stimulant needs full runway to clear before sleep"
+    },
+    "caffeine": {
+      "cutoff": "14:00",
+      "notes": "CLOCK + CYP1A2 genetics mean late caffeine degrades deep sleep"
+    },
+    "fat_soluble": {
+      "items": ["bacopa", "curcumin", "omega-3"],
+      "notes": "Near-zero absorption without dietary fat"
+    },
+    "magnesium": {
+      "synergy": [],
+      "blockers": ["iron-bisglycinate"],
+      "wait_minutes": 120,
+      "notes": "Competes with iron for absorption"
+    }
+  },
+  "hard_rules": [
+    "Caffeine cutoff: 2:00 PM STRICT",
+    "Alpha GPC cutoff: 2:00 PM",
+    "Vyvanse: No redose after 10:00 AM",
+    "Fat-soluble compounds (Curcumin, Bacopa, Fish Oil): MUST take with The One Meal",
+    "Fish Oil: ALWAYS with food (empty stomach = reflux)",
+    "Psyllium Husk: MUST take with 12oz+ water"
+  ],
+  "done_aliases": ["done", "took it", "taken", "✓", "✅", "d", "yep", "yes", "y"]
+}
+

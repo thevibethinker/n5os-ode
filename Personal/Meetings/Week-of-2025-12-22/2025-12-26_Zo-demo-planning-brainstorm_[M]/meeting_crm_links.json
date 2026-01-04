@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Audience Persona",
+      "name": "Audience Persona",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "audience-persona"
+    }
+  ]
+}

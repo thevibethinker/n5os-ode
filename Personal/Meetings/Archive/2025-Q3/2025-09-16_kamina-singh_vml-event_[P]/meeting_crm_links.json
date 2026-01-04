@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Kamina Singh",
+      "name": "Kamina Singh",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "kamina-singh"
+    },
+    {
+      "raw": "Logan Currie",
+      "name": "Logan Currie",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "logan-currie"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

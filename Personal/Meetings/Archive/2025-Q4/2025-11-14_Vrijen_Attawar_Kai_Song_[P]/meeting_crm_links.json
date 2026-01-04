@@ -1,0 +1,62 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Background & Current State",
+      "name": "Background & Current State",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "background-&-current-state"
+    },
+    {
+      "raw": "Goals & Needs",
+      "name": "Goals & Needs",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "goals-&-needs"
+    },
+    {
+      "raw": "Leverage & Social Capital",
+      "name": "Leverage & Social Capital",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "leverage-&-social-capital"
+    },
+    {
+      "raw": "Blind Spots / Unstated Needs",
+      "name": "Blind Spots / Unstated Needs",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "blind-spots-/-unstated-needs"
+    },
+    {
+      "raw": "Future of Higher Education (FOHE)",
+      "name": "Future of Higher Education",
+      "organization": "FOHE",
+      "is_internal": false,
+      "crm_person_id": "future-of-higher-education"
+    },
+    {
+      "raw": "Kai-Specific Risks",
+      "name": "Kai-Specific Risks",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "kai-specific-risks"
+    },
+    {
+      "raw": "Partnership-Specific Risks",
+      "name": "Partnership-Specific Risks",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "partnership-specific-risks"
+    },
+    {
+      "raw": "For Vrijen",
+      "name": "For Vrijen",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

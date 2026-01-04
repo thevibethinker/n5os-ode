@@ -1,20 +1,45 @@
 ---
-created: 2025-12-26
-last_edited: 2025-12-26
+created: 2026-01-03
+last_edited: 2026-01-03
 version: 1.0
-provenance: con_kv75YEcSNVK4DSd3
+provenance: con_lY5hFpbbJFb6TASI
+block_type: B21
 ---
 
-# B21: Key Moments
+# B21: Key Quotes & Strategic Questions
 
-## 1. The Shared Workspace Shuffle (02:11)
-Vrijen had to interrupt the flow to relocate within his shared workspace. This brief moment of logistical friction was handled gracefully and led to a "neighborly" exchange about Philadelphia and Brooklyn.
+## Key Quotes
 
-## 2. Defining the "Signal" (01:06)
-Vrijen's explanation of going to McKinsey/Zoogler communities to build a "talent network" rather than just a job board. This distinguished Careerspan from Lensa's aggregator model.
+**"Since we're in the job board industry, most of the partners already work with each other. It's a little incestuous."**  
+— Mai Flynn  
+*Context:* Describing the high degree of interconnection and overlap between major job board aggregators. Highlights that Careerspan is entering a mature, highly networked ecosystem where distribution channels are often shared.
 
-## 3. The "Incestuous" Industry Reality (06:23)
-Mai's candid description of the job board industry being "a little incestuous" with partners constantly swapping traffic, providing a baseline for why Careerspan's "fresh" seekers are valuable.
+**"We are different. That's... I'll give us that. We are different."**  
+— Vrijen Attawar  
+*Context:* Reacting to Mai's first look at the Careerspan website. Reflects the strategic positioning of Careerspan as a high-engagement, story-based platform compared to the high-volume, transactional nature of standard job boards.
 
-## 4. The Budget Lock-in (16:02)
-The pivot from high-level discussion to concrete numbers: 15c CPC and a $2,500 starting budget. This moved the conversation from "exploration" to a "committed pilot."
+**"The question isn't whether we can build this ourselves — it's whether we should, given opportunity cost."**  
+— Vrijen Attawar  
+*Context:* Explaining why Careerspan prefers to integrate Lensa’s job feed rather than continuing to scrape jobs manually. It signals a shift from technical bootstrapping to operational efficiency.
+
+**"It's the industry that a lot of the users just bounce from one platform to the next one. So it's nice to tap into just fresh job seekers."**  
+— Mai Flynn  
+*Context:* Explaining the value Lensa sees in a partnership with Careerspan. Professional job seekers in the broader market are often "exhausted" leads; Careerspan’s high-signal, community-based acquisition offers "fresh" traffic.
+
+**"Quality of engagement that you'll get through Careerspan I can guarantee is going to be much better than anywhere else because of the nature of the product."**  
+— Vrijen Attawar  
+*Context:* Making the case for Careerspan's value despite lower volume. Positions the matching system and the "always job ready" philosophy as a way to deliver higher ROI candidates than typical CPC traffic.
+
+## Strategic Questions Raised
+
+**"If that doesn't align with your incentives, we can obviously adjust the thresholds... But by and large, the matching system and the fact that we have such really great data on people makes us a lot more equipped to match them than just off a resume."**  
+— Vrijen Attawar  
+*Significance:* Surfaced the potential conflict between Lensa's volume-based monetization (CPC) and Careerspan's precision-based matching. It led to the agreement to test thresholds and ROI.
+
+**"Is it common practice for you to like forward jobs along to spread your reach? Like working with someone like us to say, 'hey, Careerspan, maybe you can get this in front of eyeballs that we can't'?"**  
+— Vrijen Attawar  
+*Significance:* Challenged the assumption of how a "job board" interacts with "talent networks." It reframed Careerspan as an extension of Lensa’s reach into elite/niche communities.
+
+**"What is the preferred way... is the business model around distributing on behalf of companies to talent?"**  
+— Vrijen Attawar  
+*Significance:* Probed Lensa's core business model to ensure Careerspan’s value proposition (high-quality matching) actually aligned with how Lensa makes money. Confirmed the focus on registration and ROI.

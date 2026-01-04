@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar",
+      "name": "Vrijen Attawar",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Logan Currie",
+      "name": "Logan Currie",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "logan-currie"
+    },
+    {
+      "raw": "David Speigel",
+      "name": "David Speigel",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "david-speigel"
+    }
+  ]
+}

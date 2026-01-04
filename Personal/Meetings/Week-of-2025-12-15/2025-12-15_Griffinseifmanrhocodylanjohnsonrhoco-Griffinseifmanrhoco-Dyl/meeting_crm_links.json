@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Dylan Johnson (Mercury)",
+      "name": "Dylan Johnson",
+      "organization": "Mercury",
+      "is_internal": false,
+      "crm_person_id": "dylan-johnson"
+    },
+    {
+      "raw": "Vrijen Attawar (Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

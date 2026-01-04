@@ -60,11 +60,14 @@ class StakeholderIndex:
         with open(self.index_path, 'r') as f:
             for line in f:
                 if line.strip():
-                    entry = json.loads(line)
-                    # Index by email (lowercase)
-                    email = entry.get('email', '').lower()
-                    if email:
-                        self.entries[email] = entry
+                    try:
+                        entry = json.loads(line)
+                        # Index by email (lowercase)
+                        email = entry.get('email')
+                        if email and isinstance(email, str):
+                            self.entries[email.lower()] = entry
+                    except Exception as e:
+                        logger.warning(f"Error parsing index line: {e}")
         
         logger.info(f"Loaded {len(self.entries)} stakeholder profiles")
     
@@ -471,4 +474,5 @@ if __name__ == "__main__":
     #     linked_artifact="Personal/Meetings/2025-10-15_hamoon-ekhtiari/meeting_note.md",
     #     dry_run=True
     # )
+
 

@@ -1,0 +1,48 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Key Interests",
+      "name": "Key Interests",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "key-interests"
+    },
+    {
+      "raw": "Communication Style",
+      "name": "Communication Style",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "communication-style"
+    },
+    {
+      "raw": "Leverage Points",
+      "name": "Leverage Points",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "leverage-points"
+    },
+    {
+      "raw": "Skepticism / Caution Indicators",
+      "name": "Skepticism / Caution Indicators",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "skepticism-/-caution-indicators"
+    },
+    {
+      "raw": "Relationship Potential",
+      "name": "Relationship Potential",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "relationship-potential"
+    },
+    {
+      "raw": "Meeting Objectives (Achieved)",
+      "name": "Meeting Objectives",
+      "organization": "Achieved",
+      "is_internal": false,
+      "crm_person_id": "meeting-objectives"
+    }
+  ]
+}

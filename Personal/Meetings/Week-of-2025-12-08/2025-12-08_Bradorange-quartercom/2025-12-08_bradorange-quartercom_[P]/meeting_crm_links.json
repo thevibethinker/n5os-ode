@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Relationship Context",
+      "name": "Relationship Context",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "relationship-context-3"
+    }
+  ]
+}

@@ -10,7 +10,9 @@
     "brief": true,
     "transcript_processed": true,
     "tone_and_context": true,
-    "warm_intro_draft": true
+    "warm_intro_draft": true,
+    "B09_collaboration_terms": true,
+    "B10_relationship_trajectory": true
   },
   "files": [
     "transcript.json",

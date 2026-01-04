@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (Founder, Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Founder, Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Alex Caveny",
+      "name": "Alex Caveny",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "alex-caveny"
+    },
+    {
+      "raw": "External Entities Mentioned",
+      "name": "External Entities Mentioned",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "external-entities-mentioned"
+    }
+  ]
+}

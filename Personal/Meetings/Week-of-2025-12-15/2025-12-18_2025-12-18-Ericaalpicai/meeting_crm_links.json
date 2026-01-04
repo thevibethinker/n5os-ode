@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Alpic Founder (Unnamed in Transcript)",
+      "name": "Alpic Founder",
+      "organization": "Unnamed in Transcript",
+      "is_internal": false,
+      "crm_person_id": "alpic-founder"
+    }
+  ]
+}

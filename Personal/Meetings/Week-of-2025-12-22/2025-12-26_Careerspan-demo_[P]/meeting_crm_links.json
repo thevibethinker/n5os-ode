@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Michael Maher",
+      "name": "Michael Maher",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "michael-maher"
+    },
+    {
+      "raw": "Victoria & Chase",
+      "name": "Victoria & Chase",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "victoria-&-chase"
+    }
+  ]
+}

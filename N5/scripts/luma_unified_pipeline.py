@@ -27,12 +27,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-# Use centralized paths
-from N5.lib.paths import N5_SCRIPTS_DIR, N5_DATA_DIR, N5_DIGESTS_DIR
-
-SCRIPTS_DIR = N5_SCRIPTS_DIR
-DATA_DIR = N5_DATA_DIR
-DIGESTS_DIR = N5_DIGESTS_DIR
+# Calculate paths relative to this script
+SCRIPTS_DIR = Path(__file__).parent
+N5_DIR = SCRIPTS_DIR.parent
+DATA_DIR = N5_DIR / "data"
+DIGESTS_DIR = N5_DIR / "digests"
 DB_PATH = DATA_DIR / "luma_events.db"
 CANDIDATES_FILE = DATA_DIR / "luma_candidates.json"
 
@@ -527,5 +526,6 @@ Examples:
 
 if __name__ == "__main__":
     main()
+
 
 

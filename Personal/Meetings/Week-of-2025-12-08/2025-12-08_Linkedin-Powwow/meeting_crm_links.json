@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Stakeholder Objectives",
+      "name": "Stakeholder Objectives",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "stakeholder-objectives"
+    },
+    {
+      "raw": "Signal Extraction",
+      "name": "Signal Extraction",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "signal-extraction"
+    }
+  ]
+}

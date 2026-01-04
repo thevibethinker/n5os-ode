@@ -1,24 +1,30 @@
 #!/usr/bin/env python3
 """
 Find all meetings in [M] state for MG-5 v2 Follow-Up Email Generation workflow
+
+v2.0 (2026-01-03): Fixed field name bug - uses 'status' instead of 'meeting_state'
 """
 
 import json
 import os
 from pathlib import Path
 
+# Valid statuses that indicate meeting is in [M] state (not yet processed)
+M_STATE_STATUSES = {'manifest_generated', 'intelligence_generated', 'mg2_completed'}
+
 def scan_meetings():
     meetings_dir = Path('/home/workspace/Personal/Meetings')
     m_meetings = []
-    
+
     # Walk through all subdirectories looking for manifest.json
     for manifest_path in meetings_dir.rglob('manifest.json'):
         try:
             with open(manifest_path, 'r') as f:
                 manifest = json.load(f)
-            
-            # Check if in [M] state
-            if manifest.get('meeting_state') == 'M':
+
+            # Check if in [M] state - use 'status' field (not 'meeting_state')
+            status = manifest.get('status', '')
+            if status in M_STATE_STATUSES:
                 # Get parent folder to check for other files
                 meeting_folder = manifest_path.parent
                 

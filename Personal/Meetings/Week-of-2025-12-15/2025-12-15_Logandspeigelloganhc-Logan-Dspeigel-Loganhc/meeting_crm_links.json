@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Unidentified Collaborator (likely Technical/Product)",
+      "name": "Unidentified Collaborator",
+      "organization": "likely Technical/Product",
+      "is_internal": false,
+      "crm_person_id": "unidentified-collaborator"
+    }
+  ]
+}

@@ -18,14 +18,16 @@
   "last_updated_by": "MG-2_Prompt",
   "warm_intros": {
     "signals_detected": 1,
-    "drafts_generated": 3,
-    "last_draft_generation": "2025-12-21T19:40:00Z",
+    "drafts_generated": 5,
+    "last_draft_generation": "2026-01-04T13:35:00Z",
     "draft_files": [
       "INTRO_Erica_Alpic_to_Zo_Computer.md",
       "INTRO_Erica_Alpic_to_Zo_Computer_v2.md",
+      "INTRO_Erica_Alpic_to_Zo_Founders.md",
+      "INTRO_Erica_Alpic_forwardable.md",
       "INTRO_draft_placeholder.md"
     ],
-    "manifest_updated": "2025-12-22T18:15:00Z"
+    "manifest_updated": "2026-01-04T13:35:00Z"
   },
   "system_states": {
     "intelligence_blocks": {

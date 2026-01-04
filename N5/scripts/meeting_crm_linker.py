@@ -25,9 +25,27 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from crm_paths import CRM_INDIVIDUALS, CRM_INDEX as CANONICAL_INDEX, MEETINGS_ROOT as CANONICAL_MEETINGS
 
+# Import optimized lookup service (WS1 optimization)
+try:
+    from crm_lookup import CRMLookupService
+    _CRM_LOOKUP_AVAILABLE = True
+except ImportError:
+    _CRM_LOOKUP_AVAILABLE = False
+
 MEETINGS_ROOT = CANONICAL_MEETINGS
 CRM_ROOT = CRM_INDIVIDUALS
 CRM_INDEX = CANONICAL_INDEX
+
+# Global lookup service instance (lazy initialized)
+_crm_lookup_service = None
+
+
+def get_crm_lookup_service():
+    """Get or create the CRM lookup service singleton."""
+    global _crm_lookup_service
+    if _CRM_LOOKUP_AVAILABLE and _crm_lookup_service is None:
+        _crm_lookup_service = CRMLookupService()
+    return _crm_lookup_service
 
 
 @dataclass
@@ -256,10 +274,36 @@ def load_crm_index() -> Dict[str, Dict[str, str]]:
     return index
 
 
-def find_crm_slug_by_name(name: str, crm_index: Dict[str, Dict[str, str]]) -> Optional[str]:
-    """Very simple name→slug resolution: exact match or lowercase match.
+def find_crm_slug_by_name(name: str, crm_index: Dict[str, Dict[str, str]], email: Optional[str] = None) -> Optional[str]:
+    """Name→slug resolution using optimized lookup service with legacy fallback.
 
-    This is intentionally conservative; future versions can use richer heuristics.
+    Uses the SQLite-indexed CRMLookupService for O(1) lookups when available,
+    falling back to the legacy O(n) scan for backwards compatibility.
+
+    Args:
+        name: Person name to look up.
+        crm_index: Legacy in-memory index dict (used as fallback).
+        email: Optional email for higher-confidence matching.
+
+    Returns:
+        CRM slug if found, None otherwise.
+    """
+    # Try optimized O(1) lookup first (WS1 optimization)
+    lookup_service = get_crm_lookup_service()
+    if lookup_service:
+        result = lookup_service.lookup_participant(name, email)
+        if result:
+            return result.slug
+
+    # Legacy O(n) fallback
+    return _find_crm_slug_by_name_legacy(name, crm_index)
+
+
+def _find_crm_slug_by_name_legacy(name: str, crm_index: Dict[str, Dict[str, str]]) -> Optional[str]:
+    """Legacy O(n) name→slug resolution. Kept for backwards compatibility.
+
+    This is the original implementation that does a linear scan through
+    all index entries. Deprecated in favor of CRMLookupService.
     """
     target = name.strip().lower()
     # Exact match on name field

@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Husain Careerspan",
+      "name": "Vrijen Husain Careerspan",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Mckinsey Alumni Founders",
+      "name": "Mckinsey Alumni Founders",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "mckinsey-alumni-founders"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar",
+      "name": "Vrijen Attawar",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Megan Gasper",
+      "name": "Megan Gasper",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "megan-gasper-4"
+    },
+    {
+      "raw": "Logan Currie (contextual)",
+      "name": "Logan Currie",
+      "organization": "contextual",
+      "is_internal": false,
+      "crm_person_id": "logan-currie"
+    }
+  ]
+}

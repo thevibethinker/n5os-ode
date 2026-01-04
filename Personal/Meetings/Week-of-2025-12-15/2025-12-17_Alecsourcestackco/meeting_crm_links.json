@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Alec Barrett-Wilsdon",
+      "name": "Alec Barrett-Wilsdon",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "alec-barrett-wilsdon"
+    }
+  ]
+}

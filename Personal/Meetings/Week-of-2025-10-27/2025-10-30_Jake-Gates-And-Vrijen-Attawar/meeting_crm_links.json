@@ -1,0 +1,20 @@
+{
+  "meeting_id": "2025-10-30_Jake_Gates_and_Vrijen_Attawar",
+  "meeting_type": "partnership_demo",
+  "participants": [
+    {
+      "raw": "Jake Gates (Marvin)",
+      "name": "Jake Gates",
+      "organization": "Marvin",
+      "is_internal": false,
+      "crm_person_id": "jake-gates"
+    },
+    {
+      "raw": "Vrijen Attawar (Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Megan Gasper",
+      "name": "Megan Gasper",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "megan-gasper-3"
+    },
+    {
+      "raw": "Ilsa & Logan",
+      "name": "Ilsa & Logan",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "ilsa-&-logan"
+    }
+  ]
+}

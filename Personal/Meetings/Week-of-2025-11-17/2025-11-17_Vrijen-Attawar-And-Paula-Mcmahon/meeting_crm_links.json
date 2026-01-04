@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external_networking_partnership",
+  "participants": [
+    {
+      "raw": "Paula McMahon",
+      "name": "Paula McMahon",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "paula-mcmahon"
+    }
+  ]
+}

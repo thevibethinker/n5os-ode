@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Emily Nelson de Velasco",
+      "name": "Emily Nelson de Velasco",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "emily-nelson-de-velasco"
+    },
+    {
+      "raw": "Unnamed Potential Stakeholder (Emily's Connection)",
+      "name": "Unnamed Potential Stakeholder",
+      "organization": "Emily's Connection",
+      "is_internal": false,
+      "crm_person_id": "unnamed-potential-stakeholder"
+    }
+  ]
+}

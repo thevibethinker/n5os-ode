@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (Speaker 1)",
+      "name": "Vrijen Attawar",
+      "organization": "Speaker 1",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Amanda Sachs (Speaker 2)",
+      "name": "Amanda Sachs",
+      "organization": "Speaker 2",
+      "is_internal": false,
+      "crm_person_id": "amanda-sachs"
+    },
+    {
+      "raw": "Relationship Context",
+      "name": "Relationship Context",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "relationship-context-5"
+    }
+  ]
+}

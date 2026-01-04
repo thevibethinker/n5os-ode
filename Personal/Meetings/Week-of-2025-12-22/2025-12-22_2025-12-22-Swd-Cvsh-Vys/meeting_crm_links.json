@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen (V) - Founder, Careerspan",
+      "name": "Vrijen (V) - Founder, Careerspan",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

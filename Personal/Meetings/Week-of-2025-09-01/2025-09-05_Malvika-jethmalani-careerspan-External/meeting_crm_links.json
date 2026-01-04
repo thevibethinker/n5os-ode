@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Malvika Jethmalani (Founder, Careerspan)",
+      "name": "Malvika Jethmalani",
+      "organization": "Founder, Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "External Consultant (The \"You\" in transcript)",
+      "name": "External Consultant",
+      "organization": "The \"You\" in transcript",
+      "is_internal": false,
+      "crm_person_id": "external-consultant"
+    }
+  ]
+}

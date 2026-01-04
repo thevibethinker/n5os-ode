@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Davis Filippell",
+      "name": "Davis Filippell",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "davis-filippell"
+    },
+    {
+      "raw": "Michelle Price",
+      "name": "Michelle Price",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "michelle-price-2"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

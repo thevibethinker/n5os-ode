@@ -198,6 +198,34 @@
 
 ---
 
+### Genomics Deep-Dive Query Workflow
+
+**ID:** 20251229-genomics-deep-dive-workflow
+
+**Created:** 2025-12-29T17:50:00Z
+
+**Priority:** H
+
+**Tags:** health, genomics, 23andme, duckdb, vibe-trainer
+
+---
+
+### Standardize review artifact location under N5/review/
+
+**ID:** 20260103-review-artifacts-folder
+
+**Created:** 2026-01-03T18:32:14Z
+
+**Priority:** M
+
+**Tags:** review, hitl, convention, positions, traceability
+
+**Body:**
+
+Establish N5/review/<domain>/ as the canonical staging area for all human-in-the-loop review artifacts. For positions: write batch review sheets to N5/review/positions/YYYY-MM-DD_positions-review_batch-###.md. All workflows that generate review queues should default to this path.
+
+---
+
 
 ## Done
 

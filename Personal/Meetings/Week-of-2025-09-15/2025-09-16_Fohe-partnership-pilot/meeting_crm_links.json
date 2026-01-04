@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Careerspan Team",
+      "name": "Careerspan Team",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Fohe Team",
+      "name": "Fohe Team",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "fohe-team"
+    }
+  ]
+}

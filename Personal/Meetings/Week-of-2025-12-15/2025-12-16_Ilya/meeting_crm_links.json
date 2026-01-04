@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Ilya Kucherenko",
+      "name": "Ilya Kucherenko",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "ilya-kucherenko"
+    },
+    {
+      "raw": "Davis Philippel (External Target)",
+      "name": "Davis Philippel",
+      "organization": "External Target",
+      "is_internal": false,
+      "crm_person_id": "davis-philippel"
+    }
+  ]
+}

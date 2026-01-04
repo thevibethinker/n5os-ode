@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Daniel Csonth",
+      "name": "Daniel Csonth",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "daniel-csonth"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

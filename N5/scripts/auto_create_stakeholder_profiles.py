@@ -167,7 +167,7 @@ def process_calendar_events(events: list) -> list:
                 continue
             
             # Check database for existing profile
-            cursor.execute('SELECT id, profile_path FROM profiles WHERE email = ?', (email,))
+            cursor.execute('SELECT id, markdown_path FROM individuals WHERE email = ?', (email,))
             existing = cursor.fetchone()
             if existing:
                 logger.debug(f"Skipping {email} - already in database (profile: {existing[1]})")
@@ -381,10 +381,12 @@ def create_stakeholder_profile_auto(
         created_at = datetime.now().isoformat()
         profile_rel_path = profile_path.relative_to(WORKSPACE)
         
+
         cursor.execute("""
-            INSERT INTO profiles (email, name, organization, profile_path, meeting_date, created_at, enrichment_count)
-            VALUES (?, ?, ?, ?, ?, ?, 0)
+            INSERT INTO individuals (email, full_name, company, markdown_path, first_contact_date, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
         """, (email, name, analysis['organization'], str(profile_rel_path), meeting_date, created_at))
+
         
         profile_id = cursor.lastrowid
         conn.commit()

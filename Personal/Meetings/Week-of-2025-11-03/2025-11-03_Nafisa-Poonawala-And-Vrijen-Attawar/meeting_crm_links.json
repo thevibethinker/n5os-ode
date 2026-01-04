@@ -1,0 +1,41 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Nafisa Poonawala",
+      "name": "Nafisa Poonawala",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "nafisa-poonawala"
+    },
+    {
+      "raw": "Zoho Team / Founder",
+      "name": "Zoho Team / Founder",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "zoho-team-/-founder"
+    },
+    {
+      "raw": "Head of AI Circle",
+      "name": "Head of AI Circle",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "head-of-ai-circle"
+    },
+    {
+      "raw": "Jared Dunn (Chief of Staff)",
+      "name": "Jared Dunn",
+      "organization": "Chief of Staff",
+      "is_internal": false,
+      "crm_person_id": "jared-dunn"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "V Dylan Mercury",
+      "name": "V Dylan Mercury",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "v-dylan-mercury"
+    }
+  ]
+}

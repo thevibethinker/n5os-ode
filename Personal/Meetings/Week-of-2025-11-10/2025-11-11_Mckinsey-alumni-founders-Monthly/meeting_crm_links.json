@@ -1,0 +1,55 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Ahmed Rashad",
+      "name": "Ahmed Rashad",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "ahmed-rashad"
+    },
+    {
+      "raw": "Vrijen Attawar",
+      "name": "Vrijen Attawar",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Alex Chumbley",
+      "name": "Alex Chumbley",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "alex-chumbley"
+    },
+    {
+      "raw": "Deeya Dsouza",
+      "name": "Deeya Dsouza",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "deeya-dsouza"
+    },
+    {
+      "raw": "Nikita Komarov",
+      "name": "Nikita Komarov",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "nikita-komarov"
+    },
+    {
+      "raw": "Olivier Ceberio",
+      "name": "Olivier Ceberio",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "olivier-ceberio"
+    },
+    {
+      "raw": "Ulrik Soderstrom",
+      "name": "Ulrik Soderstrom",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "ulrik-soderstrom"
+    }
+  ]
+}

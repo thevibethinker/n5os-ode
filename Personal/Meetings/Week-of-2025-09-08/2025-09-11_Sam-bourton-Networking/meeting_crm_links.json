@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Sam Bourton",
+      "name": "Sam Bourton",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "sam-bourton"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Mentioned Parties",
+      "name": "Mentioned Parties",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "mentioned-parties"
+    }
+  ]
+}

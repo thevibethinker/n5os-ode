@@ -1,0 +1,13 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Jordan Mazer (Mentioned)",
+      "name": "Jordan Mazer",
+      "organization": "Mentioned",
+      "is_internal": false,
+      "crm_person_id": "jordan-mazer"
+    }
+  ]
+}

@@ -1,21 +1,51 @@
 ---
-created: 2025-12-26
-last_edited: 2025-12-26
+created: 2026-01-03
+last_edited: 2026-01-03
 version: 1.0
-provenance: con_kv75YEcSNVK4DSd3
+provenance: 2025-09-24_Lensa-Partnership-exploration-pilot-Partnership
+block_type: B01
 ---
 
 # B01: Detailed Recap
 
-## Overview
-Vrijen Attawar (Careerspan) met with Mai Flynn (Lensa) to explore a partnership focused on job distribution and user acquisition. The discussion centered on Careerspan leveraging Lensa's massive job database to provide high-quality recommendations to its talent network, while Lensa seeks to acquire high-signal users through Careerspan's unique engagement model.
+---
+**MEETING ID:** 2025-09-24_Lensa-Partnership-exploration-pilot-Partnership
+**DATE:** 2025-09-24
+**PARTICIPANTS:** Vrijen Attawar (Careerspan), Mai Flynn (Lensa)
+**BLOCK VERSION:** 1.0 (2026-01-03)
+---
 
-## Key Narrative
-- **Careerspan's Model:** Vrijen explained Careerspan's approach of embedding within high-signal communities (e.g., McKinsey alumni, Zooglers) by offering free consumer products to build rich data sets on professionals. This data allows for superior matching compared to standard resumes.
-- **Lensa's Scale:** Mai detailed Lensa's operation as a job board aggregator with ~25 million jobs sourced from Fortune 1000 companies, agencies, and ATS platforms. They operate primarily in the US with a tech hub in Budapest, Hungary.
-- **Partnership Synergy:** Mai expressed interest in user acquisition via Careerspan's network. Vrijen preferred sourcing jobs from Lensa's API/XML feeds over manual scraping to improve efficiency and JD quality.
-- **Engagement Metrics:** Vrijen shared Careerspan's high engagement rates (75-80% open rate, 15-16% CTR), emphasizing quality over volume, which Mai found appealing for tapping into "fresh" job seekers.
-- **Trial Terms:** The parties agreed to a pilot test starting with product roles in Boston, SF, and NY. Lensa will set up Careerspan as a publisher on Appcast with an initial budget and a 15c CPC threshold to evaluate ROI.
+## Executive Summary
+Vrijen Attawar (Careerspan) and Mai Flynn (Lensa) met to discuss a strategic partnership centered on job distribution and user acquisition. Lensa, a major job board aggregator with 25 million active listings, seeks to acquire high-quality, "fresh" job seekers for their platform. Careerspan, currently building a talent network from high-signal communities (e.g., McKinsey alumni, Ivy League associations), seeks to leverage Lensa’s massive job pipeline to replace manual scraping and monetize its highly engaged user base via CPC/CPA models. The meeting concluded with a commitment to launch a pilot test in October 2025 using the Appcast platform.
 
-## Conclusion
-The meeting concluded with a clear path forward for a technical pilot, moving Careerspan from manual job sourcing to an automated pipeline via Lensa's infrastructure.
+## Strategic Context & Business Models
+*   **Careerspan's Value Proposition:** Vrijen described Careerspan’s model as embedding within high-signal communities by offering a "career coaching" consumer product for free. This allows Careerspan to build a rich dataset—deeper than a standard resume—which powers a highly accurate matching engine. Current engagement metrics show an 75-80% open rate and 15-16% click-through rate (CTR).
+*   **Lensa’s Infrastructure:** Mai clarified that Lensa is an American company with a tech subsidiary in Hungary (Budapest). They aggregate 24-25 million jobs from Fortune 1000 scrapes, direct agencies, and ATS integrations. Their primary goal is driving users to register for job alerts and notifications.
+
+## Technical Implementation & Pilot Parameters
+The parties agreed to a structured pilot to test the conversion quality of Careerspan’s traffic:
+
+1.  **Platform Integration:** Careerspan will be set up as a "Master Publisher" on **Appcast**.
+2.  **Financial Terms:**
+    *   **Starting CPC:** $0.15 (fixed test rate).
+    *   **Initial Budget:** $2,500 per feed.
+    *   **Success Metric:** ROI based on user interaction with Lensa job alerts and registration flow.
+3.  **Data Exchange:**
+    *   Lensa will provide access to their jobs via **XML feeds** or **Jobs API**.
+    *   To prevent system overload for Careerspan (V1 of matching system is currently cost-inefficient), Lensa will provide filtered subsets.
+    *   **Initial Scope:** Product Management roles in **New York (NY)**, **San Francisco (SF)**, and **Boston**.
+    *   **Distribution Volume:** ~70-80 jobs per week distributed to ~700-1000 "activated" users.
+4.  **Operational Support:** Lensa will assign two dedicated analysts to Careerspan—one for direct content and one for lead-gen content—to monitor performance and scale budgets.
+
+## Growth & Scaling Roadmap
+*   **User Base Expansion:** Careerspan plans to onboard 200-400 new users per week starting in October 2025 by targeting one high-signal community per week.
+*   **Category Expansion:** While starting exclusively with Product roles, Careerspan intends to expand into Engineering and Growth roles within the next three months.
+*   **User Flow:** The application path will route users from Careerspan emails directly to Lensa to ensure a "friction-free" signup for Lensa's free alerts.
+
+## Key Outcomes & Next Steps
+*   **IO Issuance:** Mai will send the Insertion Order (IO) and information required to set up the Appcast account.
+*   **Introduction:** Mai will introduce Vrijen to the assigned analysts once the IO is finalized.
+*   **Pilot Launch:** Targeted for October 2025.
+
+---
+*Generated by Zo on 2026-01-03 17:25:00 ET*

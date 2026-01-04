@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Oscar Marquina (Marvin)",
+      "name": "Oscar Marquina",
+      "organization": "Marvin",
+      "is_internal": false,
+      "crm_person_id": "oscar-marquina"
+    }
+  ]
+}

@@ -66,3 +66,8 @@ No emails found
 **Last email:** 2025-12-12  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-04 11:03
+
+Gmail history: Multiple active threads Sep-Oct 2025 (10 recent messages shown). Howie serves as AI personal assistant handling meeting scheduling (e.g., Steven chat via Calendly), medication refill reminders (Adderall to CVS Myrtle, Wellbutrin/Aripiprazole via CostPlus), family appointments, and integration with Zo (introduction email Sep 14). Key topics: operations support, health management, AI coordination. Relationship trajectory: active assistant (ongoing collaboration). First contact ~Sep 2025, last Oct 15 2025. Total recent threads: 3+.

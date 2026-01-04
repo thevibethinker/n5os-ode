@@ -1,0 +1,41 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar",
+      "name": "Vrijen Attawar",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Alex Caveny",
+      "name": "Alex Caveny",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "alex-caveny"
+    },
+    {
+      "raw": "Logan [Last Name Unknown]",
+      "name": "Logan [Last Name Unknown]",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "logan-[last-name-unknown]"
+    },
+    {
+      "raw": "Alumni Ventures (Platform Contact)",
+      "name": "Alumni Ventures",
+      "organization": "Platform Contact",
+      "is_internal": false,
+      "crm_person_id": "alumni-ventures-2"
+    },
+    {
+      "raw": "Superposition AI",
+      "name": "Superposition AI",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "superposition-ai-2"
+    }
+  ]
+}

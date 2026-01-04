@@ -301,6 +301,7 @@
       overflow: hidden;
       transition: all 0.2s;
       border: 1px solid var(--border-color);
+      position: relative;
     }
     
     .event-card:hover {
@@ -386,6 +387,37 @@
     
     .event-tag.free { background: rgba(34, 197, 94, 0.15); color: var(--accent-green); }
     .event-tag.score-high { background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); }
+    
+    /* Score badge */
+    .event-score {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+    .event-score.high { background: rgba(34, 197, 94, 0.9); color: white; }
+    .event-score.medium { background: rgba(59, 130, 246, 0.9); color: white; }
+    .event-score.low { background: rgba(100, 100, 100, 0.9); color: white; }
+    
+    /* VIP badge */
+    .event-vip {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: rgba(234, 179, 8, 0.9);
+      color: black;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
     
     .event-footer {
       display: flex;
@@ -600,6 +632,10 @@
         <span class="stat maybe"><span class="stat-dot"></span><span id="stat-maybe">0</span> Maybe</span>
         <span class="stat undecided"><span class="stat-dot"></span><span id="stat-undecided">0</span> Undecided</span>
       </div>
+      <div class="sync-status" id="syncStatus">
+        <span class="sync-dot"></span>
+        <span id="syncTime">Synced just now</span>
+      </div>
     </header>
     
     <div class="controls">
@@ -609,6 +645,8 @@
         <button class="filter-btn" data-filter="yes">Going</button>
         <button class="filter-btn" data-filter="maybe">Maybe</button>
         <button class="filter-btn" data-filter="no">Not Going</button>
+        <button class="filter-btn" data-filter="highscore">🔥 High Score</button>
+        <button class="filter-btn" data-filter="vip">⭐ VIP Organizers</button>
       </div>
     </div>
     
@@ -648,6 +686,14 @@
     let currentView = 'list';
     let currentMonth = new Date();
     
+    const VIP_ORGANIZERS = ['supermomos', 'fibe', 'edwina', 'lenny', 'new york tech week'];
+    
+    function isVipOrganizer(organizer) {
+      if (!organizer) return false;
+      const lower = organizer.toLowerCase();
+      return VIP_ORGANIZERS.some(vip => lower.includes(vip));
+    }
+    
     // Load events from API
     async function loadEvents() {
       try {
@@ -669,7 +715,16 @@
         document.getElementById('stat-yes').textContent = stats.decided.yes;
         document.getElementById('stat-maybe').textContent = stats.decided.maybe;
         document.getElementById('stat-undecided').textContent = stats.undecided;
+        updateSyncStatus();
       } catch (err) {}
+    }
+    
+    function updateSyncStatus() {
+      const syncEl = document.getElementById('syncStatus');
+      const timeEl = document.getElementById('syncTime');
+      const now = new Date();
+      timeEl.textContent = `Synced ${now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`;
+      syncEl.classList.remove('stale');
     }
     
     function render() {
@@ -683,6 +738,8 @@
     function getFilteredEvents() {
       if (currentFilter === 'all') return allEvents;
       if (currentFilter === 'undecided') return allEvents.filter(e => !e.decision);
+      if (currentFilter === 'highscore') return allEvents.filter(e => e.score >= 12);
+      if (currentFilter === 'vip') return allEvents.filter(e => isVipOrganizer(e.organizer));
       return allEvents.filter(e => e.decision === currentFilter);
     }
     
@@ -752,12 +809,19 @@
         ? `<img class="event-cover" src="${event.coverImage}" alt="" loading="lazy">`
         : `<div class="event-cover-placeholder">📅</div>`;
       
+      // Score badge
+      let scoreBadge = '';
+      if (event.score !== null && event.score !== undefined) {
+        const scoreClass = event.score >= 12 ? 'high' : event.score >= 9 ? 'medium' : 'low';
+        scoreBadge = `<span class="event-score ${scoreClass}">${event.score.toFixed(1)}</span>`;
+      }
+      
+      // VIP badge
+      const vipBadge = isVipOrganizer(event.organizer) ? '<span class="event-vip">⭐ VIP</span>' : '';
+      
       const tags = [];
       if (event.price === 'Free' || event.price === 'free') {
         tags.push('<span class="event-tag free">Free</span>');
-      }
-      if (event.score >= 10) {
-        tags.push('<span class="event-tag score-high">★ High Match</span>');
       }
       if (event.attendees > 100) {
         tags.push(`<span class="event-tag">${event.attendees}+ attending</span>`);
@@ -765,6 +829,8 @@
       
       return `
         <div class="event-card ${decisionClass}" data-id="${event.id}" onclick="showEventDetail('${event.id}')">
+          ${scoreBadge}
+          ${vipBadge}
           ${coverImg}
           <div class="event-content">
             <h3 class="event-title"><a href="${event.url}" target="_blank" onclick="event.stopPropagation()">${event.title}</a></h3>
@@ -965,4 +1031,5 @@
   </script>
 </body>
 </html>
+
 

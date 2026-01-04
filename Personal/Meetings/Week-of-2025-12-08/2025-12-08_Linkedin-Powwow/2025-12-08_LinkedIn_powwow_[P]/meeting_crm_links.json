@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Unnamed Participant (Advisor/Colleague)",
+      "name": "Unnamed Participant",
+      "organization": "Advisor/Colleague",
+      "is_internal": false,
+      "crm_person_id": "unnamed-participant"
+    }
+  ]
+}

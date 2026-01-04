@@ -1,0 +1,27 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Colin Navon",
+      "name": "Colin Navon",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "colin-navon"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Logan Currie",
+      "name": "Logan Currie",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "logan-currie"
+    }
+  ]
+}

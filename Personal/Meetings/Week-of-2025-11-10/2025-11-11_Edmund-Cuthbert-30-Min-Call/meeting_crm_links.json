@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Edmund Cuthbert",
+      "name": "Edmund Cuthbert",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "edmund-cuthbert"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

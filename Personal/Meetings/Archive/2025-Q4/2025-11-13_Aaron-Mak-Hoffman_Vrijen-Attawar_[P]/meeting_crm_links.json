@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Aaron Mak Hoffman",
+      "name": "Aaron Mak Hoffman",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "aaron-mak-hoffman"
+    },
+    {
+      "raw": "Vrijen Attawar (Host)",
+      "name": "Vrijen Attawar",
+      "organization": "Host",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

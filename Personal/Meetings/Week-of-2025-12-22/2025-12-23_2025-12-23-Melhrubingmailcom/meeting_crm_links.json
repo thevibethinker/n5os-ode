@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Melissa (Mel) Rubin",
+      "name": "Melissa (Mel) Rubin",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "melissa-(mel)-rubin"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

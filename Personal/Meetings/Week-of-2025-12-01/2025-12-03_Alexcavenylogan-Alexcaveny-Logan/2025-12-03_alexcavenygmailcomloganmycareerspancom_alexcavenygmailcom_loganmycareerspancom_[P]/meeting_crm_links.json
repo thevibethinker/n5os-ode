@@ -1,0 +1,34 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar (Founder, Careerspan)",
+      "name": "Vrijen Attawar",
+      "organization": "Founder, Careerspan",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Alex Caveng",
+      "name": "Alex Caveng",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "alex-caveng"
+    },
+    {
+      "raw": "Alumni Ventures (External Entity)",
+      "name": "Alumni Ventures",
+      "organization": "External Entity",
+      "is_internal": false,
+      "crm_person_id": "alumni-ventures"
+    },
+    {
+      "raw": "Superposition AI (Partner)",
+      "name": "Superposition AI",
+      "organization": "Partner",
+      "is_internal": false,
+      "crm_person_id": "superposition-ai"
+    }
+  ]
+}

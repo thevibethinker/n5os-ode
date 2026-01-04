@@ -1,9 +1,8 @@
 ---
 created: 2025-11-07
 last_edited: 2025-11-07
-version: 1.0
+version: 1
 ---
-
 # B26: Meeting Metadata Summary
 
 ## Core Information

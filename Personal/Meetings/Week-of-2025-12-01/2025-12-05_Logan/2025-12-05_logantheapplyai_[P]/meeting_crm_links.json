@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Behavioral & Relationship Signals",
+      "name": "Behavioral & Relationship Signals",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "behavioral-&-relationship-signals"
+    },
+    {
+      "raw": "Intelligence Summary",
+      "name": "Intelligence Summary",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "intelligence-summary"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Holly Sanders",
+      "name": "Holly Sanders",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "holly-sanders"
+    },
+    {
+      "raw": "Vrijen Attawar (V)",
+      "name": "Vrijen Attawar",
+      "organization": "V",
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Matchbox Startup Clients",
+      "name": "Matchbox Startup Clients",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "matchbox-startup-clients"
+    },
+    {
+      "raw": "Careerspan Candidate & Founder Communities",
+      "name": "Careerspan Candidate & Founder Communities",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    }
+  ]
+}

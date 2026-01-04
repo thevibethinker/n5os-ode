@@ -1,0 +1,34 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Vrijen Attawar",
+      "name": "Vrijen Attawar",
+      "organization": null,
+      "is_internal": true,
+      "crm_person_id": null
+    },
+    {
+      "raw": "Ash Straughn",
+      "name": "Ash Straughn",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "ash-straughn"
+    },
+    {
+      "raw": "Saul Garza",
+      "name": "Saul Garza",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "saul-garza"
+    },
+    {
+      "raw": "Max Carmenar",
+      "name": "Max Carmenar",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "max-carmenar"
+    }
+  ]
+}

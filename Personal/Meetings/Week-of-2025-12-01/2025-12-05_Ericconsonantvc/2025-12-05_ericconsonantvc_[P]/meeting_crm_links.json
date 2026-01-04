@@ -1,0 +1,20 @@
+{
+  "meeting_id": null,
+  "meeting_type": "external",
+  "participants": [
+    {
+      "raw": "Eric Rubin \u2013 Consonant.vc (inferred)",
+      "name": "Eric Rubin \u2013 Consonant.vc",
+      "organization": "inferred",
+      "is_internal": false,
+      "crm_person_id": "eric-rubin-\u2013-consonant.vc"
+    },
+    {
+      "raw": "Actions for better intelligence",
+      "name": "Actions for better intelligence",
+      "organization": null,
+      "is_internal": false,
+      "crm_person_id": "actions-for-better-intelligence"
+    }
+  ]
+}

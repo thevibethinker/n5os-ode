@@ -131,19 +131,22 @@ class MorningDigest:
         items = []
 
         try:
-            # Source 1: must-contact.jsonl (high priority)
+            # Source 1: must-contact.jsonl
             must_contact_path = LISTS_DIR / "must-contact.jsonl"
             if must_contact_path.exists():
                 with open(must_contact_path, 'r') as f:
                     for line in f:
                         try:
                             item = json.loads(line.strip())
-                            if item.get('status') == 'open' and item.get('priority') == 'H':
+                            priority = item.get('priority', 'L')
+                            # Fix 1: Accept H or M priority (was H-only)
+                            if item.get('status') == 'open' and priority in ('H', 'M'):
                                 items.append({
                                     'title': item.get('title', 'Untitled'),
                                     'context': item.get('body', '')[:100] + '...' if len(item.get('body', '')) > 100 else item.get('body', ''),
                                     'source': 'must-contact',
-                                    'created': item.get('created_at', '')
+                                    'created': item.get('created_at', ''),
+                                    'priority': priority
                                 })
                         except json.JSONDecodeError:
                             continue
@@ -156,22 +159,38 @@ class MorningDigest:
                         try:
                             item = json.loads(line.strip())
                             tags = item.get('tags', [])
-                            if item.get('priority') == 'H' and any(t in tags for t in ['today', 'urgent', 'now']):
+                            priority = item.get('priority', 'L')
+                            # Fix 1: Accept H or M priority with urgent tags
+                            if priority in ('H', 'M') and any(t in tags for t in ['today', 'urgent', 'now']):
                                 items.append({
                                     'title': item.get('title', 'Untitled'),
                                     'context': item.get('body', '')[:100] + '...' if len(item.get('body', '')) > 100 else item.get('body', ''),
                                     'source': 'ideas',
-                                    'created': item.get('created_at', '')
+                                    'created': item.get('created_at', ''),
+                                    'priority': priority
                                 })
                         except json.JSONDecodeError:
                             continue
 
-            # Sort by created date (FIFO) and take top 3
-            items.sort(key=lambda x: x.get('created', ''))
+            # Sort by priority (H first) then created date (FIFO)
+            items.sort(key=lambda x: (0 if x.get('priority') == 'H' else 1, x.get('created', '')))
             top_items = items[:3]
 
+            # Fix 2: Data freshness warning
+            if top_items:
+                oldest_created = min((x.get('created', '')[:10] for x in top_items if x.get('created')), default='')
+                if oldest_created:
+                    try:
+                        oldest_date = datetime.datetime.strptime(oldest_created, "%Y-%m-%d").date()
+                        days_old = (self.today - oldest_date).days
+                        if days_old > 7:
+                            logger.warning(f"Top 3 Today items are {days_old} days old - consider refreshing lists")
+                    except ValueError:
+                        pass
+
+            # Fix 3: Graceful degradation
             if not top_items:
-                return "No priority items today. Review your lists or enjoy the clarity."
+                return "✨ No urgent items today. Protect this clarity or review your lists."
 
             formatted = []
             for item in top_items:
@@ -192,25 +211,43 @@ class MorningDigest:
             conn = sqlite3.connect(CRM_DB_PATH)
             cursor = conn.cursor()
 
-            # Get profiles where last contact was >30 days ago
+            # Fix 4: Add last_suggested_at column if missing
+            cursor.execute("PRAGMA table_info(profiles)")
+            columns = [col[1] for col in cursor.fetchall()]
+            if 'last_suggested_at' not in columns:
+                cursor.execute("ALTER TABLE profiles ADD COLUMN last_suggested_at DATE")
+                conn.commit()
+
+            # Fix 4: Exclude recently suggested contacts (within 7 days)
             cursor.execute("""
-                SELECT name, category, last_contact_at, yaml_path
+                SELECT name, category, last_contact_at, yaml_path, id
                 FROM profiles
                 WHERE last_contact_at IS NOT NULL
                   AND date(last_contact_at) < date('now', '-30 days')
                   AND category IN ('INVESTOR', 'NETWORKING', 'COMMUNITY', 'FOUNDER')
+                  AND (last_suggested_at IS NULL OR date(last_suggested_at) < date('now', '-7 days'))
                 ORDER BY last_contact_at ASC
                 LIMIT 3
             """)
 
             rows = cursor.fetchall()
+            
+            # Fix 4: Update last_suggested_at for returned contacts
+            if rows:
+                profile_ids = [row[4] for row in rows]
+                cursor.executemany(
+                    "UPDATE profiles SET last_suggested_at = date('now') WHERE id = ?",
+                    [(pid,) for pid in profile_ids]
+                )
+                conn.commit()
+            
             conn.close()
 
             if not rows:
                 return "Network is healthy. No reconnects needed this week."
 
             formatted = []
-            for name, category, last_contact, yaml_path in rows:
+            for name, category, last_contact, yaml_path, profile_id in rows:
                 # Calculate days since contact
                 try:
                     last_date = datetime.datetime.strptime(last_contact, "%Y-%m-%d").date()
@@ -283,17 +320,66 @@ class MorningDigest:
             duration_str = f"{sleep_hours:.1f}hrs" if sleep_hours else "--"
             efficiency_str = f"{sleep_efficiency}%" if sleep_efficiency else "--"
             hr_str = f"{resting_hr:.0f}" if resting_hr else "--"
+            
+            # Get nutrition status
+            nutrition_status = await self.get_nutrition_status()
 
             return f"""**Last Night ({date}):**
 | Sleep | {duration_str} | Efficiency | {efficiency_str} |
 |-------|---------|------------|------------------|
 | Resting HR | {hr_str} bpm | | |
 
-{advisory}"""
+{advisory}
+
+{nutrition_status}"""
 
         except Exception as e:
             logger.error(f"Bio-context fetch failed: {e}")
             return "Bio-context unavailable. Check Fitbit sync."
+
+    async def get_nutrition_status(self):
+        """Get current stack count and recent BioLog mood pattern for nutrition summary."""
+        try:
+            # Count current supplements
+            stack_path = Path("/home/workspace/Personal/Health/stack/current_supplements.yaml")
+            stack_count = 0
+            if stack_path.exists():
+                content = stack_path.read_text()
+                # Count YAML list items (lines starting with '  - name:')
+                stack_count = content.count("- name:")
+            
+            # Get recent BioLog mood patterns (last 7 days)
+            journal_db = Path("/home/workspace/N5/data/journal.db")
+            mood_summary = ""
+            if journal_db.exists():
+                conn = sqlite3.connect(journal_db)
+                cursor = conn.cursor()
+                cursor.execute("""
+                    SELECT mood, COUNT(*) as cnt
+                    FROM bio_snapshots
+                    WHERE created_at >= datetime('now', '-7 days')
+                    AND mood IS NOT NULL AND mood != ''
+                    GROUP BY mood
+                    ORDER BY cnt DESC
+                    LIMIT 3
+                """)
+                moods = cursor.fetchall()
+                conn.close()
+                
+                if moods:
+                    mood_summary = f"7-day mood: {', '.join([m[0] for m in moods])}"
+            
+            # Build nutrition line
+            budget_emoji = "🟢" if stack_count <= 8 else "🟡" if stack_count <= 10 else "🔴"
+            nutrition_line = f"**💊 Stack:** {stack_count}/10 {budget_emoji}"
+            if mood_summary:
+                nutrition_line += f" | {mood_summary}"
+            
+            return nutrition_line
+            
+        except Exception as e:
+            logger.warning(f"Nutrition status fetch failed: {e}")
+            return "**💊 Stack:** Unable to fetch"
 
     async def get_todays_workout(self):
         """Module 7: Today's Workout (from 10K Prep Plan with Vibe Trainer coaching)"""
@@ -506,6 +592,9 @@ if __name__ == "__main__":
         }))
     else:
         asyncio.run(digest.run(send=args.email, dry_run=args.dry_run))
+
+
+
 
 
 

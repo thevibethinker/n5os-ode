@@ -19,8 +19,11 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Literal
 
-# Use centralized paths
-from N5.lib.paths import N5_ROOT, N5_DATA_DIR, N5_CONFIG_DIR
+# Calculate paths relative to this script
+SCRIPTS_DIR = Path(__file__).parent
+N5_ROOT = SCRIPTS_DIR.parent
+N5_DATA_DIR = N5_ROOT / "data"
+N5_CONFIG_DIR = N5_ROOT / "config"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -569,5 +572,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
