@@ -1,10 +1,12 @@
 ---
-title: "Idea Lab Capture"
-description: "Captures a spark and (only if explicitly approved) promotes it to a structured exploration in the Lab."
-tags: ["ideation", "lab", "strategy"]
+title: Idea Lab Capture
+description: Captures a spark and (only if explicitly approved) promotes it to a structured exploration in the Lab.
+tags:
+  - ideation
+  - lab
+  - strategy
 tool: true
 ---
-
 # Idea Lab: Capture (Low Friction) + Optional Promotion (Manual)
 
 You are acting as the **Lab Orchestrator**.
@@ -68,15 +70,16 @@ C) Enter the Lab now (Start 15-minute exploration)
 - Done.
 
 **If Triage (B):**
-- Add to `file 'Lists/ideas.jsonl'` first
-- Run `python3 N5/scripts/promote_to_lab.py <id>` (adds to triage list, NO folder created)
-- Done. Idea waits for scheduled review.
+- Add to `file 'Lists/ideas.jsonl'` first (via `lists-add`)
+- Add to `file 'Lists/idea-triage.jsonl'` (via `lists-add` with triage schema)
+- Done. Idea waits for scheduled review via `python3 N5/scripts/review_triage.py list`
 
 **If Lab Now (C):**
 - Add to `file 'Lists/ideas.jsonl'` first
-- Run `python3 N5/scripts/start_lab_session.py <id>` (creates folder ON DEMAND)
+- Run `python3 N5/scripts/promote_to_lab.py <id>` (creates folder, copies templates, updates status)
 - Ask: "Which modality? Socratic | Adversarial | First Principles | Raw Dump"
 - Start the 15-minute session.
+
 
 
 
