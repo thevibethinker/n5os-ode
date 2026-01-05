@@ -95,6 +95,35 @@
 
 **BUILD COMPLETE: 7/7 phases (100%)**
 
+---
+
+## Phase 8: Triage Review Process
+- **Affected Files:** `file 'Prompts/Idea Lab.prompt.md'`, `file 'N5/scripts/review_triage.py'`
+- **Changes:**
+  - Create script to display triage list with interactive options
+  - Add "Review Triage" mode to Idea Lab prompt
+  - Actions: Keep (no change), Delete (remove from triage), Promote (start lab session)
+- **Unit Tests:**
+  - [ ] Script displays triage items with index
+  - [ ] Delete removes item from idea-triage.jsonl
+  - [ ] Promote calls start_lab_session.py
+  - [ ] Prompt contains "review triage" instructions
+
+## Phase 9: Standardized Session Output Schema
+- **Affected Files:** `file 'N5/scripts/start_lab_session.py'`, `file 'Personal/Knowledge/Lab/schema.md'`
+- **Changes:**
+  - Define canonical output structure for explorations
+  - Add YAML frontmatter with searchable fields (tags, status, modalities_used, key_insights)
+  - Create index file at Lab root for grep/search discovery
+  - Ensure session logs follow consistent format
+- **Unit Tests:**
+  - [ ] Schema document exists
+  - [ ] Exploration README contains required frontmatter fields
+  - [ ] Lab index file updated on session close/archive
+
+**BUILD COMPLETE: 7/7 phases (100%)**
+
+
 
 
 

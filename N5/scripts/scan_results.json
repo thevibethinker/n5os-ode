@@ -1,0 +1,2009 @@
+{
+  "period": "Q4-2025",
+  "total_meetings": 110,
+  "needs_extraction": 110,
+  "already_processed": 0,
+  "meetings": [
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-26_Zo-demo-planning-brainstorm_[M]",
+      "meeting_id": "mtg_2025-12-26-zo-demo-planning-brainstorm-[m]",
+      "blocks": [
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-26_Careerspan-demo_[P]",
+      "meeting_id": "mtg_2025-12-26-careerspan-demo-[p]",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_rochelmycareerspancom",
+      "meeting_id": "mtg_2025-12-23-rochelmycareerspancom",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_melhrubingmailcom",
+      "meeting_id": "mtg_2025-12-23-melhrubingmailcom",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_davisteamworkonlinecom",
+      "meeting_id": "mtg_2025-12-23-davisteamworkonlinecom",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B07_TONE_AND_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_ankitmittalzeniaialphonsezeniaivineetzeniaishrutisinghzeniai",
+      "meeting_id": "mtg_2025-12-23-ankitmittalzeniaialphonsezeniaivineetzeniaishruti",
+      "blocks": [
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_Kristen-Habacht-Elly-AI-x-Vrijen-Attawar_[M]",
+      "meeting_id": "mtg_2025-12-23-kristen-habacht-elly-ai-x-vrijen-attawar-[m]",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS_v2",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_2025-12-23-Rochelmycareerspancom",
+      "meeting_id": "mtg_2025-12-23-2025-12-23-rochelmycareerspancom",
+      "blocks": [
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_2025-12-23-Melhrubingmailcom",
+      "meeting_id": "mtg_2025-12-23-2025-12-23-melhrubingmailcom",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-23_2025-12-23-Davisteamworkonlinecom",
+      "meeting_id": "mtg_2025-12-23-2025-12-23-davisteamworkonlinecom",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-22_Vrijen-&-Rochel---Job-Applying-Powwow",
+      "meeting_id": "mtg_2025-12-22-vrijen-&-rochel---job-applying-powwow",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B27_WELLNESS_INDICATORS",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
+      "meeting_id": "mtg_2025-12-22-jatin-sandilya-x-vrijen-attawar",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B27_WELLNESS_INDICATORS",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B15_ENERGY_SENTIMENT",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-22_Christine-Song-Ribbon-Partnership-Sync",
+      "meeting_id": "mtg_2025-12-22-christine-song-ribbon-partnership-sync",
+      "blocks": [
+        "B15_ENERGY_SENTIMENT",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B07_TONE_AND_CONTEXT",
+        "B07_WARM_INTRODUCTIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B20_BRAND_VOICE",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B02_DECISIONS",
+        "B13_RISKS_AND_OPPORTUNITIES",
+        "B25_DELIVERABLES",
+        "B24_PRODUCT_IDEAS",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B27_WELLNESS_INDICATORS",
+        "B21_KEY_MOMENTS",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-22_2025-12-22-Swd-Cvsh-Vys",
+      "meeting_id": "mtg_2025-12-22-2025-12-22-swd-cvsh-vys",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-22_2025-12-22-Rochelmycareerspancom",
+      "meeting_id": "mtg_2025-12-22-2025-12-22-rochelmycareerspancom",
+      "blocks": [
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-22/2025-12-22_2025-12-22-Christine-Song-Ribbon-Partnership-Sync",
+      "meeting_id": "mtg_2025-12-22-2025-12-22-christine-song-ribbon-partnership-sync",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-19_2025-12-19-Ilsetheapplyai",
+      "meeting_id": "mtg_2025-12-19-2025-12-19-ilsetheapplyai",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-19_2025-12-19-Ilse-X-Vrijen-Sync",
+      "meeting_id": "mtg_2025-12-19-2025-12-19-ilse-x-vrijen-sync",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-tejasgoflowstatecomshivamcorridorxio-t",
+      "blocks": [
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B14_BLURBS",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Maxdayonemecom",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-maxdayonemecom",
+      "blocks": [
+        "B03_DECISIONS",
+        "B14_BLURBS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-logantheapplyaiilsetheapplyaidannythea",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Logantheapplyaidspeigelgmailcomloganhcgmailcom-Lo",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-logantheapplyaidspeigelgmailcomloganhc",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Intro-Meeting---Alpic-Erica-Vrijen-Attawar",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-intro-meeting---alpic-erica-vrijen-att",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B07_WARM_INTRO_BIDIRECTIONAL",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Ericaalpicai",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-ericaalpicai",
+      "blocks": [
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-18_2025-12-18-Danielveridueai",
+      "meeting_id": "mtg_2025-12-18-2025-12-18-danielveridueai",
+      "blocks": [
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B25_DELIVERABLES",
+        "B14_BLURBS",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-17_Eric-Rubin-(Consonant-VC)-Zo-Demo",
+      "meeting_id": "mtg_2025-12-17-eric-rubin-(consonant-vc)-zo-demo",
+      "blocks": [
+        "B14_BLURBS_REQUESTED",
+        "B14_BLURBS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-17_Davidmisplacedus",
+      "meeting_id": "mtg_2025-12-17-davidmisplacedus",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-17_Annabao9595",
+      "meeting_id": "mtg_2025-12-17-annabao9595",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-17_Amandarosesachs",
+      "meeting_id": "mtg_2025-12-17-amandarosesachs",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-17_Alecsourcestackco",
+      "meeting_id": "mtg_2025-12-17-alecsourcestackco",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo",
+      "meeting_id": "mtg_2025-12-17-2025-12-17-eric----vrijen--zo-demo",
+      "blocks": [
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "BLURB_v2.1"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-16_Victorlumoscapitalgroupcom",
+      "meeting_id": "mtg_2025-12-16-victorlumoscapitalgroupcom",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-16_Victor-hu-Lumos-capital",
+      "meeting_id": "mtg_2025-12-16-victor-hu-lumos-capital",
+      "blocks": [
+        "B14_BLURBS",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B09_COLLABORATION_TERMS",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B10_RELATIONSHIP_TRAJECTORY",
+        "BLURB_v2.1",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "BLURB_v2",
+        "BLURB_v2.1_FINAL"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-16_Shujaatbelongandleadcomlogan-Shujaatbelongandleadcom-Logan",
+      "meeting_id": "mtg_2025-12-16-shujaatbelongandleadcomlogan-shujaatbelongandlead",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-16_Logantheapply-Ilsetheapply",
+      "meeting_id": "mtg_2025-12-16-logantheapply-ilsetheapply",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-16_Ilyamycareerspan-Loganmycareerspan",
+      "meeting_id": "mtg_2025-12-16-ilyamycareerspan-loganmycareerspan",
+      "blocks": [
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-16_Ilya",
+      "meeting_id": "mtg_2025-12-16-ilya",
+      "blocks": [
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS",
+        "B05_ACTION_ITEMS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Vrijen",
+      "meeting_id": "mtg_2025-12-15-vrijen",
+      "blocks": [
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Tiffsubstraterunattawarv-Tiffsubstraterun-Attawarv",
+      "meeting_id": "mtg_2025-12-15-tiffsubstraterunattawarv-tiffsubstraterun-attawar",
+      "blocks": [
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Mmm429cornelleduaks277cornelleducf579cornelleduch994cornelle",
+      "meeting_id": "mtg_2025-12-15-mmm429cornelleduaks277cornelleducf579cornelleduch",
+      "blocks": [
+        "B14_BLURBS",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Logantheapply-Ilsetheapply",
+      "meeting_id": "mtg_2025-12-15-logantheapply-ilsetheapply",
+      "blocks": [
+        "B25_DELIVERABLES",
+        "B14_BLURBS",
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKE_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Logandspeigelloganhc-Logan-Dspeigel-Loganhc",
+      "meeting_id": "mtg_2025-12-15-logandspeigelloganhc-logan-dspeigel-loganhc",
+      "blocks": [
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B14_BLURBS",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Logan",
+      "meeting_id": "mtg_2025-12-15-logan",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Griffinseifmanrhocodylanjohnsonrhoco-Griffinseifmanrhoco-Dyl",
+      "meeting_id": "mtg_2025-12-15-griffinseifmanrhocodylanjohnsonrhoco-griffinseifm",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Davitshadunts",
+      "meeting_id": "mtg_2025-12-15-davitshadunts",
+      "blocks": [
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_David-X-Careerspan",
+      "meeting_id": "mtg_2025-12-15-david-x-careerspan",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-15/2025-12-15_Contacthumanuptionscom",
+      "meeting_id": "mtg_2025-12-15-contacthumanuptionscom",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-12_Vrijen-Attawar-And-Kristen-Habacht",
+      "meeting_id": "mtg_2025-12-12-vrijen-attawar-and-kristen-habacht",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-12_Jonathan-Beda-X-Vrijen",
+      "meeting_id": "mtg_2025-12-12-jonathan-beda-x-vrijen",
+      "blocks": [
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-12_Ethanmarvinvccom",
+      "meeting_id": "mtg_2025-12-12-ethanmarvinvccom",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-12_Ericakh",
+      "meeting_id": "mtg_2025-12-12-ericakh",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-12_Alexcaveny",
+      "meeting_id": "mtg_2025-12-12-alexcaveny",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-11_Vrijen-Attawar-And-Oscar-Marquina",
+      "meeting_id": "mtg_2025-12-11-vrijen-attawar-and-oscar-marquina",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B01_DETAILED_RECAP",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-11_Logan",
+      "meeting_id": "mtg_2025-12-11-logan",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-11_Cdavismake-connexionscom",
+      "meeting_id": "mtg_2025-12-11-cdavismake-connexionscom",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+      "meeting_id": "mtg_2025-12-11-afraaz-irani-x-vrijen-attawar",
+      "blocks": [
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-10_coffeespace",
+      "meeting_id": "mtg_2025-12-10-coffeespace",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-10_Jayabonfireanalyticscomvinaybonfireanalyticscom-Jayabonfirea",
+      "meeting_id": "mtg_2025-12-10-jayabonfireanalyticscomvinaybonfireanalyticscom-j",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-09_Mckinsey-Alumni-Founders-Monthly",
+      "meeting_id": "mtg_2025-12-09-mckinsey-alumni-founders-monthly",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B03_DECISIONS",
+        "B14_BLURBS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-09_Logantheapply-Ilsetheapply",
+      "meeting_id": "mtg_2025-12-09-logantheapply-ilsetheapply",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-09_Logan",
+      "meeting_id": "mtg_2025-12-09-logan",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-09_Ilya",
+      "meeting_id": "mtg_2025-12-09-ilya",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-09_Davisteamworkonlinecom",
+      "meeting_id": "mtg_2025-12-09-davisteamworkonlinecom",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-08_Loganhellomegangaspercom-Logan-Hellomegangaspercom",
+      "meeting_id": "mtg_2025-12-08-loganhellomegangaspercom-logan-hellomegangasperco",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-08_Linkedin-Powwow",
+      "meeting_id": "mtg_2025-12-08-linkedin-powwow",
+      "blocks": [
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-08_Ilyamycareerspan-Loganmycareerspan",
+      "meeting_id": "mtg_2025-12-08-ilyamycareerspan-loganmycareerspan",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-08_Bradorange-quartercom",
+      "meeting_id": "mtg_2025-12-08-bradorange-quartercom",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-05_Rgj-bduo-zer",
+      "meeting_id": "mtg_2025-12-05-rgj-bduo-zer",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-05_Logantheapply-Ilsetheapply",
+      "meeting_id": "mtg_2025-12-05-logantheapply-ilsetheapply",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-05_Logan",
+      "meeting_id": "mtg_2025-12-05-logan",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-05_Ericconsonantvc",
+      "meeting_id": "mtg_2025-12-05-ericconsonantvc",
+      "blocks": [
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-04_Mihirinvoicebutlerai",
+      "meeting_id": "mtg_2025-12-04-mihirinvoicebutlerai",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B14_BLURBS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-04_Logantheapply-Ilsetheapply",
+      "meeting_id": "mtg_2025-12-04-logantheapply-ilsetheapply",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-04_Alanmymelico",
+      "meeting_id": "mtg_2025-12-04-alanmymelico",
+      "blocks": [
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-03_Alexcavenylogan-Alexcaveny-Logan",
+      "meeting_id": "mtg_2025-12-03-alexcavenylogan-alexcaveny-logan",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B16_FOLLOW_UP_SCHEDULE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-02_Logantheapply-Ilsetheapply",
+      "meeting_id": "mtg_2025-12-02-logantheapply-ilsetheapply",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-02_Logan",
+      "meeting_id": "mtg_2025-12-02-logan",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-02_Hannahhealthygamergg",
+      "meeting_id": "mtg_2025-12-02-hannahhealthygamergg",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B05_ACTION_ITEMS",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+      "meeting_id": "mtg_2025-12-02-30-min-call-with-edmund-between-edmund-cuthbert-a",
+      "blocks": [
+        "B14_BLURBS",
+        "B03_DECISIONS",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-01_Vrijen-Tiffany",
+      "meeting_id": "mtg_2025-12-01-vrijen-tiffany",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-01_Vrijen-Attawar-And-Nick-Branholm",
+      "meeting_id": "mtg_2025-12-01-vrijen-attawar-and-nick-branholm",
+      "blocks": [
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-01_Logan",
+      "meeting_id": "mtg_2025-12-01-logan",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-01_Ankitmittalzen-Shrutisinghzen",
+      "meeting_id": "mtg_2025-12-01-ankitmittalzen-shrutisinghzen",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-24/2025-11-26_Holly-Sanders-And-Vrijen-Attawar",
+      "meeting_id": "mtg_2025-11-26-holly-sanders-and-vrijen-attawar",
+      "blocks": [
+        "B14_BLURBS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-17/2025-11-17_Vrijen-Attawar-And-Paula-Mcmahon",
+      "meeting_id": "mtg_2025-11-17-vrijen-attawar-and-paula-mcmahon",
+      "blocks": [
+        "B14_BLURBS",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B26_MEETING_METADATA",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B05_OUTSTANDING_QUESTIONS",
+        "B05_ACTION_ITEMS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B03_STAKE_HOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B06_BUSINESS_CONTEXT"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-15_Vrijen-Attawar-Rory-Brown",
+      "meeting_id": "mtg_2025-11-15-vrijen-attawar-rory-brown",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-14_Vrijen-Attawar-And-Emily-Velasco",
+      "meeting_id": "mtg_2025-11-14-vrijen-attawar-and-emily-velasco",
+      "blocks": [
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-14_Daily-team-stand-up",
+      "meeting_id": "mtg_2025-11-14-daily-team-stand-up",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-12_Vrijen-Logan-Daily-Standup-Trello",
+      "meeting_id": "mtg_2025-11-12-vrijen-logan-daily-standup-trello",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-12_Ilya-Ilse-Logan-Rochel-Vrijen-Stand-up",
+      "meeting_id": "mtg_2025-11-12-ilya-ilse-logan-rochel-vrijen-stand-up",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B44_GTM_Sales_Intel",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B47_Open_Debates",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B40_Internal_Decisions",
+        "B41_Team_Coordination",
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B43_Product_Intelligence",
+        "B21_KEY_MOMENTS",
+        "B26_Meeting_Metadata"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-12_Daily-team-stand-up",
+      "meeting_id": "mtg_2025-11-12-daily-team-stand-up",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-12_Colinnavon-Vrijenattawar",
+      "meeting_id": "mtg_2025-11-12-colinnavon-vrijenattawar",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-11_Vrijen-logan-catch-up",
+      "meeting_id": "mtg_2025-11-11-vrijen-logan-catch-up",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B01_DETAILED_RECAP",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B26_MEETING_METADATA",
+        "B05_ACTION_ITEMS",
+        "B00_INTELLIGENCE_BLOCKS",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-11_Mckinsey-alumni-founders-Monthly",
+      "meeting_id": "mtg_2025-11-11-mckinsey-alumni-founders-monthly",
+      "blocks": [
+        "B06_BUSINESS_CONTEXT",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B14_BLURBS",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-10/2025-11-11_Edmund-Cuthbert-30-Min-Call",
+      "meeting_id": "mtg_2025-11-11-edmund-cuthbert-30-min-call",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS",
+        "B07_TONE_AND_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-07_Ilse-midday-chat-Internal",
+      "meeting_id": "mtg_2025-11-07-ilse-midday-chat-internal",
+      "blocks": [
+        "B31_STAKEHOLDER_RESEARCH",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES_FOLLOWUP",
+        "B05_ACTION_ITEMS",
+        "B02_COMMITMENTS",
+        "B03_DECISIONS",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B26_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-04_Zo-team-Demo-event-prep-Internal",
+      "meeting_id": "mtg_2025-11-04-zo-team-demo-event-prep-internal",
+      "blocks": [
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLES",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-04_Ilya-kucherenko-Internal-onboarding",
+      "meeting_id": "mtg_2025-11-04-ilya-kucherenko-internal-onboarding",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B26_MEETING_METADATA",
+        "B07_TONE_AND_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B03_DECISIONS",
+        "B21_KEY_MOMENTS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-04_David-speigel-Internal",
+      "meeting_id": "mtg_2025-11-04-david-speigel-internal",
+      "blocks": [
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B03_STAKE_HOLDER_INTELLIGENCE",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B05_OUTSTANDING_QUESTIONS",
+        "B07_WARM_INTROS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-04_Anthony-deluise-Product-career",
+      "meeting_id": "mtg_2025-11-04-anthony-deluise-product-career",
+      "blocks": [
+        "B26_MEETING_METADATA_SUMMARY",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B13_PLAN_OF_ACTION",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA",
+        "B03_DECISIONS",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B05_ACTION_ITEMS",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-03_Plaud-product-overview-Internal",
+      "meeting_id": "mtg_2025-11-03-plaud-product-overview-internal",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B03_STAKEHOLDER_INTELLIGENCE"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-11-03/2025-11-03_Nafisa-Poonawala-And-Vrijen-Attawar",
+      "meeting_id": "mtg_2025-11-03-nafisa-poonawala-and-vrijen-attawar",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B26_MEETING_METADATA",
+        "B25_DELIVERABLES",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B05_ACTION_ITEMS"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-27/2025-10-30_Jake-Gates-And-Vrijen-Attawar",
+      "meeting_id": "mtg_2025-10-30-jake-gates-and-vrijen-attawar",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B00_INDEX",
+        "B07_TONE_AND_CONTEXT",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-20/2025-10-24_Careerspan-sam-Partnership-discovery",
+      "meeting_id": "mtg_2025-10-24-careerspan-sam-partnership-discovery",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B05_OUTSTANDING_QUESTIONS",
+        "B13_PLAN_OF_ACTION",
+        "B07_TONE_AND_CONTEXT",
+        "B27_KEY_MESSAGING",
+        "B21_KEY_MOMENTS",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B26_MEETING_METADATA",
+        "B07_WARM_INTRO_BIDIRECTIONAL",
+        "B01_DETAILED_RECAP",
+        "B06_BUSINESS_CONTEXT",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B05_ACTION_ITEMS",
+        "B14_BLURBS_REQUESTED",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B24_PRODUCT_IDEA_EXTRACTION"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-20/2025-10-22_Pamela-Kavalam",
+      "meeting_id": "mtg_2025-10-22-pamela-kavalam",
+      "blocks": [
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B07_TONE_AND_CONTEXT",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B26_MEETING_METADATA",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B03_DECISIONS",
+        "B14_BLURBS_REQUESTED",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B21_KEY_MOMENTS",
+        "B06_BUSINESS_CONTEXT",
+        "B25_DELIVERABLE_CONTENT_MAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-15_Jaya-pokuri-Founder-conversation",
+      "meeting_id": "mtg_2025-10-15-jaya-pokuri-founder-conversation",
+      "blocks": [
+        "B07_TONE_AND_CONTEXT",
+        "B26_MEETING_METADATA",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B14_BLURBS_REQUESTED",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B05_ACTION_ITEMS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B21_KEY_MOMENTS",
+        "B03_DECISIONS",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-14_Nira-team-Strategy-exploration-Founder",
+      "meeting_id": "mtg_2025-10-14-nira-team-strategy-exploration-founder",
+      "blocks": [
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-14_Logan-vrijen-Internal-strategy",
+      "meeting_id": "mtg_2025-10-14-logan-vrijen-internal-strategy",
+      "blocks": [
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS_REQUESTED",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B05_ACTION_ITEMS",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B26_MEETING_METADATA"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-13/2025-10-14_Elaine-P-vrijen",
+      "meeting_id": "mtg_2025-10-14-elaine-p-vrijen",
+      "blocks": [
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B25_DELIVERABLES",
+        "B05_ACTION_ITEMS",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B21_KEY_MOMENTS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B31_STAKEHOLDER_RESEARCH",
+        "B01_DETAILED_RECAP"
+      ]
+    },
+    {
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-10-06/2025-10-10_Logan-vrijen-Internal-strategy",
+      "meeting_id": "mtg_2025-10-10-logan-vrijen-internal-strategy",
+      "blocks": [
+        "B02_COMMITMENTS_CONTEXTUAL",
+        "B26_MEETING_METADATA",
+        "B08_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B25_DELIVERABLE_CONTENT_MAP",
+        "B26_MEETING_METADATA_SUMMARY",
+        "B03_DECISIONS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B05_ACTION_ITEMS",
+        "B01_DETAILED_RECAP",
+        "B31_STAKEHOLDER_RESEARCH"
+      ]
+    }
+  ]
+}
