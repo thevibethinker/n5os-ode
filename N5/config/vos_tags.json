@@ -1,0 +1,553 @@
+{
+  "version": "2.1.0",
+  "description": "V-OS Tag System - Canonical source for AI routing, scheduling coordination, and workflow triggers",
+  "last_updated": "2026-01-05",
+  "provenance": "con_7hwyEyk15FreQtJA",
+  "changelog": [
+    "v2.1.0: Expanded Zo extensions for all email-processing systems (reflection, org tracking, warm intros, etc.)",
+    "v2.0.0: Centralized from scattered configs. Added AI routing layer ({Zo}, {Howie}). Added Zo-specific extensions.",
+    "v1.0.0: Initial hashtag to V-OS bracket mapping"
+  ],
+
+  "ai_routing": {
+    "description": "Curly braces route instructions to specific AI systems",
+    "systems": {
+      "{Zo}": {
+        "target": "Zo Computer (va.zo.computer)",
+        "capabilities": ["CRM updates", "meeting intelligence", "research", "list management", "follow-up tracking"],
+        "trigger_mechanism": "Tags following {Zo} are executed when asterisk (*) is present"
+      },
+      "{Howie}": {
+        "target": "Howie.ai scheduling assistant",
+        "capabilities": ["calendar coordination", "meeting scheduling", "follow-up reminders", "availability management"],
+        "trigger_mechanism": "Tags following {Howie} are executed when asterisk (*) is present"
+      }
+    },
+    "trigger_rules": {
+      "asterisk": {
+        "symbol": "*",
+        "position": "End of tag block",
+        "meaning": "Execute - AI should act on these tags"
+      },
+      "no_asterisk": {
+        "meaning": "Template mode - signature is in raw/template state, do not execute"
+      },
+      "full_template": {
+        "pattern": "{Zo} [template tags] * {Howie} [template tags] *",
+        "meaning": "If all tags appear as template, this is the raw signature - ignore"
+      }
+    }
+  },
+
+  "tag_groups": {
+    "TWIN": {
+      "name": "Timing/Priority",
+      "description": "Urgency and scheduling window constraints",
+      "tags": {
+        "[!!]": {
+          "meaning": "URGENT - Override constraints, schedule within 2 business days",
+          "n5_equivalent": "#priority:critical",
+          "behavior": "Protect time block, do not reschedule",
+          "routes_to": ["Howie", "Zo"]
+        },
+        "[D5]": {
+          "meaning": "Schedule within 5 business days",
+          "n5_equivalent": "#schedule:within_5d",
+          "routes_to": ["Howie"]
+        },
+        "[D5+]": {
+          "meaning": "Schedule 5+ business days out",
+          "n5_equivalent": "#schedule:5d_plus",
+          "routes_to": ["Howie"]
+        },
+        "[D10]": {
+          "meaning": "Schedule 10+ business days out",
+          "n5_equivalent": "#schedule:10d_plus",
+          "routes_to": ["Howie"]
+        }
+      }
+    },
+
+    "CATG": {
+      "name": "Category (Lead Type)",
+      "description": "Stakeholder classification for scheduling and prep",
+      "tags": {
+        "[LD-INV]": {
+          "meaning": "Lead: Investor",
+          "n5_equivalent": "#stakeholder:investor",
+          "day_preferences": ["Tuesday", "Thursday"],
+          "default_followup": "10min next day",
+          "auto_priority": "critical",
+          "routes_to": ["Howie", "Zo"]
+        },
+        "[LD-HIR]": {
+          "meaning": "Lead: Hiring candidate",
+          "n5_equivalent": "#stakeholder:job_seeker",
+          "day_preferences": ["Monday", "Wednesday", "Friday"],
+          "default_followup": "15min same day",
+          "routes_to": ["Howie", "Zo"]
+        },
+        "[LD-COM]": {
+          "meaning": "Lead: Community/Commercial partner",
+          "n5_equivalent": "#stakeholder:community",
+          "day_preferences": ["Tuesday", "Thursday"],
+          "default_followup": "15min same day",
+          "coordination_default": "[LOG]",
+          "routes_to": ["Howie", "Zo"]
+        },
+        "[LD-NET]": {
+          "meaning": "Lead: Networking/Business partner",
+          "n5_equivalent": "#stakeholder:partner:collaboration",
+          "day_preferences": ["Tuesday", "Friday"],
+          "default_followup": "10min next day",
+          "routes_to": ["Howie", "Zo"]
+        },
+        "[LD-GEN]": {
+          "meaning": "Lead: General/Prospect",
+          "n5_equivalent": "#stakeholder:prospect",
+          "day_preferences": ["Wednesday"],
+          "default_followup": "10min next day",
+          "routes_to": ["Howie", "Zo"]
+        }
+      }
+    },
+
+    "POST": {
+      "name": "Post-Meeting State",
+      "description": "Current scheduling status",
+      "tags": {
+        "[OFF]": {
+          "meaning": "Offered timings - ball in their court",
+          "n5_equivalent": "#status:postponed",
+          "skip_in_digest": true,
+          "routes_to": ["Howie"]
+        },
+        "[AWA]": {
+          "meaning": "Awaiting their timing/response",
+          "n5_equivalent": "#status:awaiting",
+          "routes_to": ["Howie"]
+        }
+      }
+    },
+
+    "FLUP": {
+      "name": "Follow-up",
+      "description": "Automated reminder scheduling (X = number of days)",
+      "pattern": "[F-X], [FL-X], [FM-X] where X is integer",
+      "tags": {
+        "[F-X]": {
+          "meaning": "Howie sends follow-up after X days (as 'Vrijen's assistant')",
+          "n5_pattern": "#followup:external_X",
+          "example": "[F-7] = follow up in 7 days",
+          "routes_to": ["Howie"]
+        },
+        "[FL-X]": {
+          "meaning": "Logan receives private follow-up after X days",
+          "n5_pattern": "#followup:logan_X",
+          "example": "[FL-5] = remind Logan in 5 days",
+          "routes_to": ["Howie"]
+        },
+        "[FM-X]": {
+          "meaning": "V receives personal reminder after X days",
+          "n5_pattern": "#followup:vrijen_X",
+          "example": "[FM-3] = remind V in 3 days",
+          "routes_to": ["Howie", "Zo"]
+        }
+      }
+    },
+
+    "CORD": {
+      "name": "Coordination",
+      "description": "Internal team alignment requirements",
+      "tags": {
+        "[LOG]": {
+          "meaning": "Coordinate with Logan's availability",
+          "n5_equivalent": "#align:logan",
+          "routes_to": ["Howie"]
+        },
+        "[ILS]": {
+          "meaning": "Coordinate with Ilsa's availability",
+          "n5_equivalent": "#align:ilse",
+          "routes_to": ["Howie"]
+        }
+      }
+    },
+
+    "WKND": {
+      "name": "Weekend Flags",
+      "description": "Weekend scheduling preferences",
+      "tags": {
+        "[WEX]": {
+          "meaning": "Weekend exception - allow weekend slots before 5pm",
+          "n5_equivalent": "#availability:weekend_ok",
+          "routes_to": ["Howie"]
+        },
+        "[WEP]": {
+          "meaning": "Weekend preferred - prefer weekend scheduling",
+          "n5_equivalent": "#availability:weekend_preferred",
+          "routes_to": ["Howie"]
+        }
+      }
+    },
+
+    "MISC": {
+      "name": "Miscellaneous",
+      "description": "Accommodation levels and termination",
+      "tags": {
+        "[A-0]": {
+          "meaning": "On our terms only - minimal flexibility",
+          "n5_equivalent": "#accommodation:minimal",
+          "routes_to": ["Howie"]
+        },
+        "[A-1]": {
+          "meaning": "Baseline accommodation - standard flexibility",
+          "n5_equivalent": "#accommodation:baseline",
+          "routes_to": ["Howie"]
+        },
+        "[A-2]": {
+          "meaning": "Fully accommodating - maximum flexibility",
+          "n5_equivalent": "#accommodation:full",
+          "routes_to": ["Howie"]
+        },
+        "[TERM]": {
+          "meaning": "Terminate/close - end Howie involvement (reactivate with *)",
+          "n5_equivalent": "#status:inactive",
+          "skip_in_digest": true,
+          "routes_to": ["Howie"]
+        },
+        "[INC]": {
+          "meaning": "Ignore email entirely",
+          "routes_to": ["Howie"]
+        },
+        "[FLX]": {
+          "meaning": "Flexible - can shift within work hours same day",
+          "routes_to": ["Howie"]
+        }
+      }
+    },
+
+    "GPT": {
+      "name": "Give Priority To",
+      "description": "Whose preferences to prioritize in scheduling",
+      "tags": {
+        "[GPT-I]": {
+          "meaning": "Prioritize internal/our preferences",
+          "n5_equivalent": "#align:internal",
+          "routes_to": ["Howie"]
+        },
+        "[GPT-E]": {
+          "meaning": "Prioritize external stakeholder preferences",
+          "n5_equivalent": "#align:external",
+          "routes_to": ["Howie"]
+        },
+        "[GPT-F]": {
+          "meaning": "Prioritize founders' (V + Logan) preferences",
+          "n5_equivalent": "#align:founders",
+          "routes_to": ["Howie"]
+        }
+      }
+    }
+  },
+
+  "zo_extensions": {
+    "description": "Zo-specific tags that extend the V-OS system for email-processing workflows",
+    "categories": {
+      "core_processing": {
+        "description": "Fundamental email processing actions",
+        "tags": {
+          "[CRM]": {
+            "meaning": "Update CRM with contact/meeting information",
+            "action": "Create or update CRM record from email context",
+            "related_workflows": ["crm_add_contact", "crm_enrich_profile"],
+            "routes_to": ["Zo"]
+          },
+          "[SKIP]": {
+            "meaning": "Don't process this email for intelligence",
+            "action": "Skip all automated processing (CRM, meeting prep, follow-ups)",
+            "routes_to": ["Zo"]
+          },
+          "[INC]": {
+            "meaning": "Ignore completely - no processing whatsoever",
+            "action": "Full bypass of all Zo email intelligence",
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "meeting_intelligence": {
+        "description": "Meeting system integration",
+        "tags": {
+          "[MEET]": {
+            "meaning": "Link email thread to meeting record",
+            "action": "Associate email with meeting folder in Personal/Meetings/",
+            "related_workflows": ["meeting_manifest_generation", "meeting_intelligence_generator"],
+            "routes_to": ["Zo"]
+          },
+          "[PREP]": {
+            "meaning": "Generate meeting prep digest for referenced meeting",
+            "action": "Run meeting_prep_digest workflow for stakeholders in thread",
+            "related_workflows": ["meeting_prep_digest"],
+            "routes_to": ["Zo"]
+          },
+          "[B-ALL]": {
+            "meaning": "Generate all intelligence blocks for meeting",
+            "action": "Run full B01-B31 block generation pipeline",
+            "related_workflows": ["meeting_intelligence_generator"],
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "research_enrichment": {
+        "description": "Deep research and enrichment triggers",
+        "tags": {
+          "[RESEARCH]": {
+            "meaning": "Trigger deep research on mentioned people/companies",
+            "action": "Run DD Individual/Organization workflow, store in Knowledge/",
+            "related_workflows": ["DD Individual", "DD Organization"],
+            "routes_to": ["Zo"]
+          },
+          "[ENRICH]": {
+            "meaning": "Enrich contact profiles with external data",
+            "action": "Run CRM enrichment via Aviato, Nyne, Gmail analysis",
+            "related_workflows": ["crm_enrich_profile", "org_enrich_profile"],
+            "routes_to": ["Zo"]
+          },
+          "[GMAIL-SCAN]": {
+            "meaning": "Scan Gmail history for this contact",
+            "action": "Run gmail_thread_analyzer to extract relationship intelligence",
+            "related_workflows": ["gmail_thread_analyzer", "crm-gmail-enrichment"],
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "content_generation": {
+        "description": "Email and content drafting",
+        "tags": {
+          "[DRAFT]": {
+            "meaning": "Generate email draft based on context",
+            "action": "Create reply draft in V's voice, save for review",
+            "related_workflows": ["communications_generator"],
+            "routes_to": ["Zo"]
+          },
+          "[BLURB]": {
+            "meaning": "Generate forwardable blurb about V/Careerspan",
+            "action": "Create contextual blurb for this stakeholder type",
+            "related_workflows": ["Blurb-Generator"],
+            "routes_to": ["Zo"]
+          },
+          "[INTRO]": {
+            "meaning": "Generate warm intro email",
+            "action": "Create warm introduction for connector + forwardable blurb",
+            "related_workflows": ["warm-intro-generator"],
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "list_task_management": {
+        "description": "List and task operations",
+        "tags": {
+          "[DONE]": {
+            "meaning": "Mark referenced list items as complete",
+            "action": "Parse email for task references, mark done in Lists/",
+            "related_workflows": ["lists_move"],
+            "routes_to": ["Zo"]
+          },
+          "[AKI]": {
+            "meaning": "Push to Akiflow task queue",
+            "action": "Create task in Akiflow via Aki email interface",
+            "related_workflows": ["akiflow_push"],
+            "routes_to": ["Zo"]
+          },
+          "[LIST-ADD]": {
+            "meaning": "Add item to specified list",
+            "action": "Parse email content, add to appropriate list",
+            "related_workflows": ["lists_add"],
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "reflection_system": {
+        "description": "Reflection and insight capture",
+        "tags": {
+          "[REFLECT]": {
+            "meaning": "Process email content as reflection input",
+            "action": "Run reflection pipeline, generate R-blocks",
+            "related_workflows": ["Process Reflection", "reflection_ingest"],
+            "routes_to": ["Zo"]
+          },
+          "[INSIGHT]": {
+            "meaning": "Extract and store strategic insight",
+            "action": "Parse for insights, add to Knowledge/",
+            "related_workflows": ["knowledge_add"],
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "organization_tracking": {
+        "description": "Company and organization intelligence",
+        "tags": {
+          "[ORG]": {
+            "meaning": "Create/update organization profile",
+            "action": "Build org profile from email context, enrich via Nyne",
+            "related_workflows": ["org_enrich_profile"],
+            "routes_to": ["Zo"]
+          },
+          "[TRACK-CC]": {
+            "meaning": "Add to CC/Outreach tracking system",
+            "action": "Register contact in outreach tracker for follow-up sequences",
+            "related_workflows": ["cc-outreach-tracker"],
+            "routes_to": ["Zo"]
+          }
+        }
+      },
+      "scheduling_coordination": {
+        "description": "Calendar and scheduling operations (Zo-side)",
+        "tags": {
+          "[CAL]": {
+            "meaning": "Create/update calendar event",
+            "action": "Parse email for meeting details, create calendar entry",
+            "routes_to": ["Zo"]
+          },
+          "[RESCHEDULE]": {
+            "meaning": "Flag for rescheduling attention",
+            "action": "Add to rescheduling queue for V review",
+            "routes_to": ["Zo"]
+          }
+        }
+      }
+    }
+  },
+
+  "signature_template": {
+    "description": "Standard V-OS signature block for emails",
+    "format": "V-OS Tags: {Zo} [tags] * {Howie} [tags] *",
+    "example_activated": "V-OS Tags: {Zo} [CRM] [F-7] * {Howie} [LD-INV] [GPT-E] [A-2] [D5] *",
+    "example_template": "V-OS Tags: {Zo} [CRM] [DONE] [SKIP] [MEET] * {Howie} [LD-INV] [LD-HIR] [LD-COM] [LD-NET] [LD-GEN] [GPT-I] [GPT-E] [GPT-F] [A-0] [A-1] [A-2] [D5] [D5+] [D10] [F-X] [LOG] [ILS] [WEX] [WEP] *",
+    "detection_logic": {
+      "template_indicators": [
+        "Contains all LD-* tags",
+        "Contains all A-* tags",
+        "Contains placeholder [F-X]"
+      ],
+      "activated_indicators": [
+        "Limited, specific tags selected",
+        "Numeric follow-up values [F-7]",
+        "Collapsed from template"
+      ]
+    }
+  },
+
+  "bidirectional_mapping": {
+    "description": "Mapping between V-OS brackets and N5 hashtags for system interoperability",
+    "bracket_to_hashtag": {
+      "[LD-INV]": "#stakeholder:investor",
+      "[LD-HIR]": "#stakeholder:job_seeker",
+      "[LD-COM]": "#stakeholder:community",
+      "[LD-NET]": "#stakeholder:partner:collaboration",
+      "[LD-GEN]": "#stakeholder:prospect",
+      "[!!]": "#priority:critical",
+      "[A-0]": "#accommodation:minimal",
+      "[A-1]": "#accommodation:baseline",
+      "[A-2]": "#accommodation:full",
+      "[D5]": "#schedule:within_5d",
+      "[D5+]": "#schedule:5d_plus",
+      "[D10]": "#schedule:10d_plus",
+      "[OFF]": "#status:postponed",
+      "[AWA]": "#status:awaiting",
+      "[TERM]": "#status:inactive",
+      "[LOG]": "#align:logan",
+      "[ILS]": "#align:ilse",
+      "[GPT-F]": "#align:founders",
+      "[WEX]": "#availability:weekend_ok",
+      "[WEP]": "#availability:weekend_preferred"
+    },
+    "hashtag_to_bracket": {
+      "#stakeholder:investor": "[LD-INV]",
+      "#stakeholder:job_seeker": "[LD-HIR]",
+      "#stakeholder:community": "[LD-COM]",
+      "#stakeholder:partner:collaboration": "[LD-NET]",
+      "#stakeholder:partner:channel": "[LD-NET]",
+      "#stakeholder:prospect": "[LD-GEN]",
+      "#priority:critical": "[!!]",
+      "#accommodation:minimal": "[A-0]",
+      "#accommodation:baseline": "[A-1]",
+      "#accommodation:full": "[A-2]",
+      "#schedule:within_5d": "[D5]",
+      "#schedule:5d_plus": "[D5+]",
+      "#schedule:10d_plus": "[D10]",
+      "#status:postponed": "[OFF]",
+      "#status:awaiting": "[AWA]",
+      "#status:inactive": "[TERM]",
+      "#align:logan": "[LOG]",
+      "#align:ilse": "[ILS]",
+      "#align:founders": "[GPT-F]",
+      "#availability:weekend_ok": "[WEX]",
+      "#availability:weekend_preferred": "[WEP]"
+    }
+  },
+
+  "n5_only_tags": {
+    "description": "N5 hashtags that have no V-OS equivalent (internal system use only)",
+    "tags": [
+      "#relationship:new",
+      "#relationship:warm",
+      "#relationship:active",
+      "#relationship:cold",
+      "#relationship:dormant",
+      "#engagement:responsive",
+      "#engagement:slow",
+      "#engagement:needs_followup",
+      "#engagement:waiting_on_us",
+      "#context:hr_tech",
+      "#context:venture_capital",
+      "#context:enterprise",
+      "#context:education",
+      "#context:startup",
+      "#context:nonprofit",
+      "#context:coaching",
+      "#context:saas",
+      "#stakeholder:customer",
+      "#stakeholder:vendor",
+      "#stakeholder:advisor",
+      "#stakeholder:networking_contact",
+      "#priority:non-critical",
+      "#type:discovery",
+      "#type:partnership",
+      "#type:followup",
+      "#type:recurring",
+      "#job_seeking_status:active",
+      "#job_seeking_status:inactive",
+      "#job_seeking_status:placed"
+    ]
+  },
+
+  "auto_inheritance": {
+    "description": "Automatic tag inheritance rules when primary tags are applied",
+    "rules": {
+      "[LD-INV]": {
+        "inherits": ["[!!]"],
+        "n5_inherits": ["#priority:critical"],
+        "reason": "All investors are business-critical"
+      },
+      "#stakeholder:customer": {
+        "inherits_n5": ["#priority:critical"],
+        "reason": "Paying customers are critical to business"
+      },
+      "#stakeholder:advisor": {
+        "inherits_n5": ["#priority:critical"],
+        "reason": "Strategic advisors provide high-value guidance"
+      }
+    }
+  },
+
+  "disambiguation": {
+    "description": "Rules for resolving ambiguous tag contexts",
+    "[LD-NET]": {
+      "default": "#stakeholder:partner:collaboration",
+      "channel_keywords": ["distribution", "resale", "reseller", "referral partner", "affiliate", "channel partner", "distributor"],
+      "collaboration_keywords": ["integration", "API", "co-marketing", "joint", "embedded", "partnership", "co-develop"],
+      "fallback": "Default to collaboration, flag for manual review if ambiguous"
+    }
+  }
+}
+
+

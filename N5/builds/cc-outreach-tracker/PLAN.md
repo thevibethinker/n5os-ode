@@ -1,121 +1,182 @@
 ---
 created: 2026-01-04
-last_edited: 2026-01-04
-version: 1.0
+last_edited: 2026-01-05
+version: 2.0
 provenance: con_Elf8BKYxCI9VX8OY
 ---
 
-# Build Plan: CC Outreach Tracker
+# Build Plan: CC Outreach Tracker + Inbound Email Protocol
 
-**Objective:** Auto-close contacts when V CCs va@zo.computer on outreach emails
+**Objective:** Auto-process emails where V CCs va@zo.computer, parsing V-OS tags to update CRM, create follow-ups, and mark list items complete.
 
-**Pattern:** V sends email to contact, CCs va@zo.computer → Zo detects → updates CRM `last_contact_at` + marks list items done
+## Updated Understanding (v2)
 
----
+### V-OS Tag System
 
-## Open Questions
+V embeds **white text tags** after email signatures. The system now supports **AI routing**:
 
-- [x] Trigger mechanism? → **Gmail polling agent** (simplest, uses existing tools)
-- [x] How to avoid reprocessing? → Track `last_processed_at` in state file
-- [ ] How often to run? → **3x daily** (9am, 1pm, 6pm) — catches morning/afternoon/evening outreach
-
----
-
-## Checklist
-
-### Phase 1: Core Script
-- [ ] Create `N5/scripts/cc_outreach_processor.py`
-- [ ] Gmail search: `from:attawar.v@gmail.com cc:va@zo.computer after:YYYY/MM/DD`
-- [ ] Extract TO recipients (email addresses)
-- [ ] Match against CRM profiles (by email field)
-- [ ] Update `last_contact_at` for matched profiles
-- [ ] Mark matching must-contact items as done
-- [ ] Track state in `N5/data/cc_outreach_state.json`
-- [ ] Test with --dry-run flag
-
-### Phase 2: Scheduled Agent
-- [ ] Create agent running 3x daily
-- [ ] Instruction: Run cc_outreach_processor.py, report updates
-- [ ] Verify with one manual test email
-
----
-
-## Phase 1: Core Script
-
-**Affected Files:**
-- `N5/scripts/cc_outreach_processor.py` (NEW)
-- `N5/data/cc_outreach_state.json` (NEW)
-- `N5/data/crm_v3.db` (UPDATE last_contact_at)
-- `Lists/must-contact.jsonl` (UPDATE status)
-
-**Changes:**
-
-```python
-# cc_outreach_processor.py
-# 1. Load last_processed_at from state file (default: 7 days ago)
-# 2. Search Gmail: from:V cc:va@zo.computer after:last_processed_at
-# 3. For each email:
-#    a. Extract TO addresses
-#    b. For each TO address:
-#       - Search CRM for profile with matching email
-#       - If found: UPDATE last_contact_at = email_date
-#       - Search must-contact for matching name/context
-#       - If found: mark status = done
-# 4. Update last_processed_at to now
-# 5. Log summary: "Updated X CRM profiles, closed Y list items"
+```
+V-OS Tags: {Zo} [CRM] [F-7] [DONE] * {Howie} [GPT-I] *
+           ↑ AI target   ↑ tags      ↑ trigger
 ```
 
-**Unit Tests:**
-- [ ] Dry run with real Gmail search returns expected structure
-- [ ] CRM update works for known profile
-- [ ] must-contact item marked done correctly
-- [ ] State file persists between runs
+**Rules:**
+1. `{Zo}` or `{Howie}` in curly braces = AI routing
+2. Tags in brackets = instructions
+3. Asterisk `*` = trigger (execute these tags)
+4. No asterisk = template signature (ignore)
+5. Raw expanded form = ignore entirely
+
+### Zo-Relevant Tags
+
+| Tag | Action |
+|-----|--------|
+| `[CRM]` | Update `last_contact_at` for recipient |
+| `[DONE]` | Mark related must-contact items complete |
+| `[F-X]` | Create follow-up reminder for X days |
+| `[LD-*]` | Set/update CRM category |
+| `[TERM]` | Mark relationship inactive |
 
 ---
 
-## Phase 2: Scheduled Agent
+## Architecture
 
-**Affected Files:**
-- Zo agent registry (via create_agent)
-
-**Changes:**
-- Create agent with rrule: `FREQ=DAILY;BYHOUR=9,13,18;BYMINUTE=0`
-- Instruction: Execute cc_outreach_processor.py and report
-
-**Unit Tests:**
-- [ ] Agent created successfully
-- [ ] Manual trigger works
-
----
-
-## Success Criteria
-
-1. V CCs va@zo.computer on outreach email
-2. Within 4 hours, CRM `last_contact_at` updated
-3. If contact was in must-contact, item marked done
-4. Morning digest no longer shows that contact in Reconnects
+```
+┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│  Gmail (Sent)   │────▶│  Polling Agent   │────▶│  Tag Parser     │
+│  CC: va@zo      │     │  (3x daily)      │     │                 │
+└─────────────────┘     └──────────────────┘     └────────┬────────┘
+                                                          │
+                    ┌─────────────────────────────────────┼─────────────────┐
+                    ▼                                     ▼                 ▼
+           ┌────────────────┐                 ┌────────────────┐  ┌────────────────┐
+           │  CRM Updater   │                 │  List Closer   │  │  Follow-up     │
+           │  last_contact  │                 │  must-contact  │  │  Creator       │
+           └────────────────┘                 └────────────────┘  └────────────────┘
+```
 
 ---
 
-## Risks & Mitigations
+## Phases
 
-| Risk | Mitigation |
-|------|------------|
-| Gmail rate limits | Batch processing, reasonable frequency (3x/day) |
-| Email matching failures | Log unmatched for manual review |
-| False positives (CC'd but not outreach) | Only process emails TO external addresses |
+### Phase 1: Core Infrastructure ✅ → IN PROGRESS
+
+**Files:**
+- `N5/scripts/vos_tag_parser.py` — Parse V-OS tags from email body
+- `N5/scripts/cc_outreach_processor.py` — Main processing script
+
+**Parser Logic:**
+```python
+def parse_vos_tags(email_body: str) -> dict:
+    """
+    Returns:
+    {
+        "zo": {"tags": ["CRM", "F-7", "DONE"], "triggered": True},
+        "howie": {"tags": ["GPT-I"], "triggered": True},
+        "raw": False  # True if template signature detected
+    }
+    """
+    # 1. Find V-OS Tags block (after signature, white text)
+    # 2. Check for curly brace AI routing: {Zo}, {Howie}
+    # 3. Check for asterisk trigger
+    # 4. Extract bracket tags
+```
+
+### Phase 2: CRM Integration
+
+- Match email recipients to CRM profiles (by email)
+- Update `last_contact_at`
+- Update category if `[LD-*]` tag present
+
+### Phase 3: List Closure
+
+- Search `must-contact.jsonl` for recipient name/email
+- Mark matching items as `status: done`
+- Update `last_suggested_at` in CRM
+
+### Phase 4: Follow-up Creation
+
+- Parse `[F-X]` tags (e.g., `[F-7]` = 7 days)
+- Create entry in `Lists/followups.jsonl` or scheduled agent
+- Include context from email subject
+
+### Phase 5: Agent Setup
+
+- Create scheduled agent: `CC Outreach Processor`
+- Schedule: 9am, 1pm, 6pm ET
+- Polls Gmail, processes new CC'd emails
 
 ---
 
-## Alternatives Considered
+## Email Sources
 
-| Approach | Verdict |
-|----------|---------|
-| Real-time inbound handler | Rejected: Platform feature may not exist |
-| Manual prompt trigger | Rejected: Defeats purpose (adds friction) |
-| **Gmail polling agent** | **Selected**: Simple, reliable, uses existing tools |
+| Account | Purpose |
+|---------|---------|
+| `attawar.v@gmail.com` | Personal outreach |
+| `vrijen@mycareerspan.com` | Business outreach |
+
+Both accounts should be polled.
 
 ---
 
-**Ready for Builder.** Start at Phase 1.
+## State Tracking
+
+To avoid reprocessing emails:
+
+```json
+// N5/data/cc_outreach_state.json
+{
+  "last_processed": {
+    "attawar.v@gmail.com": "2026-01-05T14:00:00Z",
+    "vrijen@mycareerspan.com": "2026-01-05T14:00:00Z"
+  },
+  "processed_message_ids": ["abc123", "def456"]
+}
+```
+
+---
+
+## Test Cases
+
+1. **Basic CRM update:**
+   - Email CC'd to va@zo, tags: `{Zo} [CRM] *`
+   - Expected: recipient's `last_contact_at` updated
+
+2. **Follow-up creation:**
+   - Tags: `{Zo} [CRM] [F-7] *`
+   - Expected: CRM updated + 7-day follow-up created
+
+3. **List closure:**
+   - Recipient in must-contact.jsonl
+   - Tags: `{Zo} [CRM] [DONE] *`
+   - Expected: CRM updated + must-contact item marked done
+
+4. **Howie-only (Zo ignores):**
+   - Tags: `{Howie} [GPT-F] *`
+   - Expected: Zo takes no action
+
+5. **No trigger (template):**
+   - Raw V-OS Tags block, no asterisk
+   - Expected: Zo takes no action
+
+---
+
+## Dependencies
+
+- `use_app_gmail` for email search
+- `N5/data/crm_v3.db` for CRM updates
+- `Lists/must-contact.jsonl` for list closure
+
+---
+
+## Parallel Work Stream
+
+**Worker spawned:** `WORKER_ASSIGNMENT_20260105_024500_TAG_CENTRALIZATION.md`
+- Centralizes V-OS tag definitions
+- Creates canonical `N5/config/vos_tags.json`
+- Documents at `N5/docs/vos-tag-system.md`
+
+---
+
+**Ready for Builder.** Start at Phase 1: vos_tag_parser.py
 
