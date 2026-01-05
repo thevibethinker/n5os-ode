@@ -7,7 +7,7 @@ To peel back the layers of an idea through recursive inquiry. Not to "solve" it,
 1. **The Starting Statement:** State the idea clearly.
 2. **The "What is?" Phase:** Define the core terms.
 3. **The "Why?" Phase:** Explore the motivations and causality.
-4. **The "Counter-Example" Phase:** Identify where the idea breaks.
+4. **The "Counter-Case" Phase:** Identify where the idea breaks.
 5. **The Refined Statement:** Restate the idea with the new nuance.
 
 ---
