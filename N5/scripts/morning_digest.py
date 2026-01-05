@@ -31,11 +31,12 @@ import re
 # Add workspace to path for N5 lib imports
 sys.path.insert(0, '/home/workspace')
 from N5.lib.paths import (
-    N5_ROOT, N5_DIGESTS_DIR, PRODUCTIVITY_DB, WORKOUTS_DB, WELLNESS_DB
+    N5_ROOT, N5_DIGESTS_DIR, PRODUCTIVITY_DB, WORKOUTS_DB, WELLNESS_DB, WORKSPACE_ROOT
 )
 
 # CRM database path
 CRM_DB_PATH = N5_ROOT / "data" / "crm_v3.db"
+JOURNAL_DB_PATH = N5_ROOT / "data" / "journal.db"
 LISTS_DIR = Path("/home/workspace/Lists")
 
 # Configure Logging
@@ -249,12 +250,15 @@ class MorningDigest:
             formatted = []
             for name, category, last_contact, yaml_path, profile_id in rows:
                 # Calculate days since contact
-                try:
-                    last_date = datetime.datetime.strptime(last_contact, "%Y-%m-%d").date()
-                    days_ago = (self.today - last_date).days
-                    time_str = f"{days_ago} days ago"
-                except:
-                    time_str = "unknown"
+                if last_contact:
+                    try:
+                        last_date = datetime.datetime.strptime(last_contact, "%Y-%m-%d").date()
+                        days_ago = (self.today - last_date).days
+                        time_str = f"{days_ago} days ago"
+                    except:
+                        time_str = "a while ago"
+                else:
+                    time_str = "a while ago"
 
                 # Try to get context from yaml file
                 context = ""
@@ -340,8 +344,8 @@ class MorningDigest:
     async def get_nutrition_status(self):
         """Get current stack count and recent BioLog mood pattern for nutrition summary."""
         try:
-            # Count current supplements
-            stack_path = Path("/home/workspace/Personal/Health/stack/current_supplements.yaml")
+            # Try to get stack data from health directory
+            stack_path = WORKSPACE_ROOT / "Personal" / "Health" / "stack" / "current_stack.jsonl"
             stack_count = 0
             if stack_path.exists():
                 content = stack_path.read_text()
@@ -349,10 +353,9 @@ class MorningDigest:
                 stack_count = content.count("- name:")
             
             # Get recent BioLog mood patterns (last 7 days)
-            journal_db = N5_DATA_DIR / "journal.db"
             mood_summary = ""
-            if journal_db.exists():
-                conn = sqlite3.connect(journal_db)
+            if JOURNAL_DB_PATH.exists():
+                conn = sqlite3.connect(JOURNAL_DB_PATH)
                 cursor = conn.cursor()
                 cursor.execute("""
                     SELECT mood, COUNT(*) as cnt
@@ -592,6 +595,9 @@ if __name__ == "__main__":
         }))
     else:
         asyncio.run(digest.run(send=args.email, dry_run=args.dry_run))
+
+
+
 
 
 
