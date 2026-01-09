@@ -130,6 +130,7 @@ def enrich_learning_note(transcript_key_concepts: list[str]) -> dict:
 ## R02: Learning Note
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Learning Summary
@@ -141,6 +142,12 @@ def enrich_learning_note(transcript_key_concepts: list[str]) -> dict:
 [2-3 paragraphs on the substance of the learning]
 
 **Source:** [Experience | Conversation | Reading | Failure]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote showing learning moment]

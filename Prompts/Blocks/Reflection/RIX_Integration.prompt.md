@@ -200,6 +200,7 @@ python3 N5/scripts/reflection_edges.py add \
 ## RIX: Integration Analysis
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Integration Summary

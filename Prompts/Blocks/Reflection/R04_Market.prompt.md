@@ -177,6 +177,7 @@ Flag connections when:
 ## R04: Market Signal
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Signal Summary
@@ -195,6 +196,12 @@ Flag connections when:
 
 #### Careerspan Relevance
 [Direct | Adjacent | Context] — [How this connects to the business]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote from transcript establishing the signal]

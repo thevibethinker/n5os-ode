@@ -135,6 +135,7 @@ def enrich_content_idea(transcript_key_concepts: list[str]) -> dict:
 ## R09: Content Idea
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Content Summary
@@ -150,6 +151,12 @@ def enrich_content_idea(transcript_key_concepts: list[str]) -> dict:
 
 #### Why This Matters to the Audience
 [Why they should care]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote showing content spark]
