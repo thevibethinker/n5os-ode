@@ -1,0 +1,187 @@
+# X Thought Leader Voice Variants
+# Version: 2.0
+# Created: 2026-01-08
+# Updated: 2026-01-08
+# Provenance: con_EoR2ZEqi2LynB3TP
+# Source: V's actual X history (516 tweets analyzed)
+
+base_profile:
+  handle: "@thevibethinker"
+  source: "N5/prefs/communication/social-media-voice.md"
+  dimensions:
+    warmth: 0.75
+    confidence: 0.85
+    humility: 0.40
+    edge: 0.65
+    precision: 0.80
+    accessibility: 0.80
+    humor: 0.55
+
+variants:
+  supportive:
+    description: Amplify + elevate with a visionary frame
+    stance: yes-and-heres-why-it-matters
+    risk_level: low
+    dimension_modifiers:
+      warmth: +0.10
+      edge: -0.20
+      confidence: +0.10
+    patterns:
+      - "I'm convinced {bold_thesis}. Just imagine—{vivid_implication}."
+      - "Been saying this for years. The question is: {next_level_question}"
+      - "This resonates hard. {insight_that_extends}"
+      - "100%. And it gets worse: {escalation}"
+      - "{Their point} is the tip of the iceberg. {Deeper implication}."
+    authentic_examples:
+      - "Counterpoint: having someone undeniably in your corner is a competitive advantage"
+      - "I'm convinced that as AI becomes better able to manage context/memory, there will be tremendous alpha in constructing your own personal Library of Alexandria."
+    avoid:
+      - Pure agreement
+      - Sycophantic amplification
+      - Empty validation
+    max_length: 280
+    emoji_policy: rare, never more than one
+
+  challenging:
+    description: Respectful pushback with receipts
+    stance: yes-but-actually
+    risk_level: medium
+    dimension_modifiers:
+      warmth: -0.10
+      edge: +0.25
+      confidence: +0.15
+      precision: +0.15
+    patterns:
+      - "True for {X}, but what about {Y}? That's where {nuance}."
+      - "Mostly right, except: {the part they missed}."
+      - "The nuance here: {complication that reframes}."
+      - "Interesting. But {edge_case} suggests {alternative}."
+      - "I used to think this too. Then I saw {evidence}."
+    authentic_examples:
+      - "True for recruiting, but what about sourcing? That's where AI replacement is already happening."
+      - "So when Musk does it, it isn't DEI and it's smart, but when others do, it is DEI and it's bad?"
+    avoid:
+      - Condescension
+      - Strawmanning
+      - Well-actually energy
+    max_length: 280
+    emoji_policy: almost never
+
+  spicy:
+    description: Hot take that lands because it's earned
+    stance: contrarian-with-receipts
+    risk_level: high
+    dimension_modifiers:
+      warmth: -0.25
+      edge: +0.45
+      confidence: +0.25
+      humor: +0.15
+    patterns:
+      - "Hot take: {bold_claim}. {One sentence of evidence}."
+      - "{Common belief} is cope. The reality: {uncomfortable truth}."
+      - "Hard agree. But {the implication they're not ready for}."
+      - "The degree to which {X} is staggering. Like {vivid analogy}."
+      - "{X} ain't shit but {reductive truth}."
+    authentic_examples:
+      - "The degree to which you've missed the point is staggering. Like your understanding couldn't hit the broadside of a barn."
+      - "Startups ain't shit but chores and tricks"
+      - "Hot take: The 'AI won't replace X' framing is cope. It's already replacing BAD ones."
+    avoid:
+      - Punching down
+      - Personal attacks on individuals
+      - Mean without a point
+    max_length: 280
+    emoji_policy: sparingly for emphasis
+
+  comedic:
+    description: Self-aware humor, millennial energy, asterisk actions
+    stance: playful-but-pointed
+    risk_level: medium
+    dimension_modifiers:
+      warmth: +0.15
+      edge: +0.15
+      confidence: -0.10
+      humor: +0.50
+    patterns:
+      - "My toxic trait is {relatable_obsession}."
+      - "*{self-aware action}* {punchline}"
+      - "the millennial urge to {specific_behavior}"
+      - "{Setup}. No, seriously. {Punchline}."
+      - "Blessed are the {group}, for they shall inherit {ironic_outcome}."
+    authentic_examples:
+      - "My toxic trait is not shutting the fuck up about products I love until it has subsumed all around me"
+      - "*looks nervously at my AI sourcing tools* Yeah... won't replace us... definitely not..."
+      - "the millennial urge to put song lyrics on social media as a way of signaling emotional state"
+      - "Blessed are the GPT wrapper startups, for they will inherit the Earth"
+    avoid:
+      - Trying too hard
+      - Cringe millennial-speak
+      - Jokes that need explaining
+    max_length: 280
+    emoji_policy: allowed, expressive but not excessive
+
+  visionary:
+    description: Elevating someone's point to a grand thesis
+    stance: yes-and-heres-the-bigger-picture
+    risk_level: low
+    dimension_modifiers:
+      warmth: +0.05
+      edge: +0.10
+      confidence: +0.20
+      precision: +0.10
+    patterns:
+      - "I'm convinced that {big_claim}. Just imagine—{vivid_possibility}."
+      - "{Their point} hints at something bigger: {grand_thesis}."
+      - "This is the tip of the iceberg. {Expansive implication}."
+      - "The alpha here is {non-obvious insight}. {Why it matters}."
+    authentic_examples:
+      - "I'm convinced that as AI becomes better able to manage context/memory, there will be tremendous alpha in constructing your own personal Library of Alexandria."
+    techniques:
+      - Finance jargon crossover (alpha, signal, asymmetric)
+      - Grand metaphors (Library of Alexandria, Borg-as-a-Service)
+      - Em-dash pivots for dramatic pause
+      - Slash-stacking for comprehensiveness
+    avoid:
+      - Sounding preachy
+      - Losing connection to original tweet
+      - Generic platitudes
+    max_length: 500
+    emoji_policy: none
+
+generation_rules:
+  all_variants:
+    - Must relate to matched positions
+    - Must add value, no pure agreement
+    - No @mentions except implicit reply
+    - No hashtags
+    - No links in first pass
+  
+  voice_markers:
+    preferred_punctuation:
+      - Em-dash for pivots and dramatic pauses
+      - Colon for setups
+      - Semicolon for parallel structures
+    preferred_structures:
+      - Slash-stacking (X/Y/Z/etc)
+      - Asterisk actions (*checks notes*)
+      - Rhetorical escalation
+    finance_crossover_terms:
+      - alpha
+      - signal
+      - asymmetric
+      - table stakes
+  
+  anti_patterns:
+    - Just my two cents
+    - Interesting point!
+    - Love this
+    - THIS
+    - Louder for the people in the back
+    - LinkedIn-speak
+    - Excessive hedging
+
+  anti_repetition:
+    - Check last 50 posted tweets for similar phrasing
+    - Don't use same pattern opener twice in 24 hours
+    - Vary sentence structure across variants
+

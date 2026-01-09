@@ -1,0 +1,219 @@
+{
+  "name": "X Thought Leadership Engine",
+  "description": "Reactive X/Twitter thought leadership engine - monitors target accounts, correlates with positions.db, generates 4-variant drafts, HITL approval via SMS, posts and learns voice over time.",
+  "objective": "Build a system where V monitors tweets from industry thought leaders, gets AI-generated reply drafts correlated with his positions database, approves via SMS, and the system learns his voice preferences over time.",
+  "created": "2026-01-08",
+  "owner": "con_S4D4PEMvW09h9VCl",
+  "workers": [
+    {
+      "id": "W1",
+      "component": "Database Schema",
+      "description": "Create tweets.db with tables: monitored_accounts, tweets, position_correlations, drafts, posted_tweets, voice_samples. Include indexes for efficient querying.",
+      "dependencies": [],
+      "hours": 0.5,
+      "outputs": [
+        "Projects/x-thought-leader/db/tweets.db",
+        "Projects/x-thought-leader/db/schema.sql"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W2",
+      "component": "X API Wrapper",
+      "description": "Python module wrapping X API v2 - auth, rate limiting, get_user_tweets(), post_reply(), get_user_id(). Uses X_API_KEY, X_API_SECRET, X_BEARER_KEY env vars. Include retry logic and error handling.",
+      "dependencies": [],
+      "hours": 1,
+      "outputs": [
+        "Projects/x-thought-leader/src/x_api.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W3",
+      "component": "Position Correlation Engine",
+      "description": "Module that takes tweet text, queries positions.db embeddings, returns top-N matching positions with similarity scores. Uses semantic similarity. Returns position ID, title, insight, and score.",
+      "dependencies": [],
+      "hours": 1,
+      "outputs": [
+        "Projects/x-thought-leader/src/position_matcher.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W4",
+      "component": "Voice Configuration",
+      "description": "Create 4 voice variant configs (supportive, challenging, spicy, comedic) with few-shot examples, tone markers, and transformation rules. Build on existing N5/scripts/voice_transformer.py patterns.",
+      "dependencies": [],
+      "hours": 0.75,
+      "outputs": [
+        "Projects/x-thought-leader/config/voice_variants.yaml",
+        "Projects/x-thought-leader/config/voice_examples.md"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W5",
+      "component": "Draft Generator",
+      "description": "Takes tweet + matched positions + voice configs, generates 4 variant drafts (supportive, challenging, spicy, comedic). Includes anti-boring/anti-repetition checks against posted_tweets history. Max 280 chars per draft. Uses Zo Ask API for generation.",
+      "dependencies": [
+        "W3",
+        "W4"
+      ],
+      "hours": 1.5,
+      "outputs": [
+        "Projects/x-thought-leader/src/draft_generator.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W6",
+      "component": "Tweet Polling Agent",
+      "description": "Scheduled agent that polls monitored accounts every 15min, stores new tweets in tweets.db, triggers correlation scoring. Runs 8am-10pm ET only. Tracks last_seen_id per account to avoid duplicates.",
+      "dependencies": [
+        "W1",
+        "W2"
+      ],
+      "hours": 1,
+      "outputs": [
+        "Projects/x-thought-leader/src/polling_agent.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W7",
+      "component": "SMS Approval Interface",
+      "description": "Formats drafts for SMS delivery (all 4 variants with labels). Parses responses: 1-4 to select variant, 'skip' or 0 to skip, keyword + suggestion for refinement request. Handles expiry (EOD). Maintains pending queue in drafts table.",
+      "dependencies": [
+        "W5"
+      ],
+      "hours": 1.5,
+      "outputs": [
+        "Projects/x-thought-leader/src/sms_interface.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W8",
+      "component": "Tweet Poster",
+      "description": "Posts approved tweets as replies to original tweet (appears in target's mentions). Records to posted_tweets with full metadata: variant chosen, position matched, original tweet, timestamp. Handles API errors gracefully with retry.",
+      "dependencies": [
+        "W2",
+        "W7"
+      ],
+      "hours": 0.75,
+      "outputs": [
+        "Projects/x-thought-leader/src/poster.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W9",
+      "component": "Orchestrator Agent",
+      "description": "Main scheduled agent tying the flow together: poll \u2192 correlate \u2192 generate drafts \u2192 SMS notify. Creates Zo scheduled agent running every 15min during 8am-10pm ET. Handles the full pipeline coordination.",
+      "dependencies": [
+        "W6",
+        "W5",
+        "W7"
+      ],
+      "hours": 1,
+      "outputs": [
+        "Projects/x-thought-leader/src/orchestrator.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W10",
+      "component": "Archive Ingester",
+      "description": "Parses X data archive (tweet.js JSON or DuckDB dataset format), extracts V's historical tweets, stores in voice_samples table for voice learning. Handles both formats V mentioned.",
+      "dependencies": [
+        "W1"
+      ],
+      "hours": 1,
+      "outputs": [
+        "Projects/x-thought-leader/src/archive_ingester.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W11",
+      "component": "Voice Learner",
+      "description": "Analyzes posted tweets + variant selections over time. Tracks which variants V prefers by topic/context. Generates style insights report. Can suggest voice_variants.yaml refinements based on patterns.",
+      "dependencies": [
+        "W8",
+        "W4"
+      ],
+      "hours": 1.5,
+      "outputs": [
+        "Projects/x-thought-leader/src/voice_learner.py"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W12",
+      "component": "Prompt Interface",
+      "description": "Create 'X Thought Leader.prompt.md' for manual operations: add/remove monitored accounts, check status, force poll, view pending queue, see voice learning stats. Standard N5 prompt format.",
+      "dependencies": [
+        "W9"
+      ],
+      "hours": 0.5,
+      "outputs": [
+        "Prompts/X Thought Leader.prompt.md"
+      ],
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "context": {
+    "seed_account": "@asanwal (Anand Sanwal, CB Insights founder)",
+    "posting_account": "@thevibethinker",
+    "positions_db": "N5/data/positions.db (105 positions with embeddings)",
+    "voice_system": "N5/prefs/communication/voice-system-prompt.md",
+    "voice_transformer": "N5/scripts/voice_transformer.py",
+    "env_vars": [
+      "X_API_KEY",
+      "X_API_SECRET",
+      "X_BEARER_KEY"
+    ],
+    "approval_hours": "8am-10pm ET",
+    "polling_interval": "15min",
+    "variants": [
+      "supportive",
+      "challenging",
+      "spicy",
+      "comedic"
+    ],
+    "engagement_type": "reply (appear in mentions)",
+    "sms_response_format": "1-4 to select, 0 or 'skip' to skip, keyword+suggestion for refinement",
+    "expiry": "EOD (end of day)",
+    "position_filters": "none - all 105 positions eligible, HITL is the filter",
+    "anti_patterns": "track posted tweets and originals to avoid repetition/predictability"
+  },
+  "_meta": {
+    "project": "x-thought-leader",
+    "created_at": "2026-01-09T02:42:07.498616+00:00",
+    "status": "active"
+  }
+}

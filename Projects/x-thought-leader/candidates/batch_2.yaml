@@ -1,0 +1,53 @@
+# Batch 2: Human Data & Talent Intelligence "Architects"
+# Date: 2026-01-08
+# Strategy: Intersecting "Human Data" with "Talent" for unique Careerspan angle
+
+candidates:
+  - handle: "@BJZweig"
+    name: "Ben Zweig"
+    role: "CEO @ Revelio Labs"
+    category: "Workforce Data"
+    why_monitor: "Labor Economist. Tweets deep data on workforce trends (the K-shaped recovery). A 'data-first' voice in a 'vibes-based' HR world."
+    estimated_followers: "270"
+    traction_level: "Ghost Town (Gold Mine)"
+
+  - handle: "@GilFeig"
+    name: "Gil Feig"
+    role: "Co-founder @ Merge"
+    category: "HR API Infrastructure"
+    why_monitor: "Building the 'plumbing' of HR tech. Merge is the standard for integrations. High signal on the *technical* side of talent data."
+    estimated_followers: "~1.1k"
+    traction_level: "Low"
+
+  - handle: "@JosephQuan"
+    name: "Joseph Quan"
+    role: "Founder @ Knoetic"
+    category: "People Analytics"
+    why_monitor: "Building 'Chief People Officer' superpowers. Deeply connected to the CPO persona you want to reach. (Note: Account is @OfficialJoeQuan - confirm if active)."
+    estimated_followers: "Low"
+    traction_level: "Low"
+
+  - handle: "@CKuch"
+    name: "Conrad Kucharski"
+    role: "CEO @ Aviato"
+    category: "Private Market Data"
+    why_monitor: "Known friend/ally. Building the 'Bloomberg for Private Markets'. High relevance for 'Company Intelligence' vectors in Careerspan."
+    estimated_followers: "TBD"
+    traction_level: "Medium"
+
+  - handle: "@andreasdeneve"
+    name: "Andreas De Neve"
+    role: "CEO @ TechWolf"
+    category: "Skill Intelligence"
+    why_monitor: "Leading 'Skill Intelligence'. The future of hiring is skills-based, not role-based. He is the architect of that shift."
+    estimated_followers: "44"
+    traction_level: "Ghost Town (Gold Mine)"
+
+  - handle: "@SeanThorne"
+    name: "Sean Thorne"
+    role: "Founder @ People Data Labs"
+    category: "People Data"
+    why_monitor: "Founder of the foundational 'people data' API. The raw material for all AI hiring tools."
+    estimated_followers: "~3k"
+    traction_level: "Low"
+
