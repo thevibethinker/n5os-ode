@@ -1,0 +1,21 @@
+{
+  "slug": "recruiter-game-plan-queries",
+  "title": "Recruiter Game Plan Queries",
+  "processed_at": "2026-01-09T12:45:00Z",
+  "word_count": 850,
+  "source": "google_drive",
+  "source_filename": "reflections in response to ilse's queries about game plan around recruiters",
+  "blocks_generated": ["R03", "R04", "R05", "RIX"],
+  "edges_created": 4,
+  "classification": {
+    "relevant_blocks": ["R03", "R04", "R05"],
+    "confidence": {"R03": 0.9, "R04": 0.85, "R05": 0.8},
+    "primary_theme": "recruiter go-to-market strategy with product feature discussion"
+  },
+  "flags": {
+    "r00_generated": false,
+    "super_connectors": ["candidate-ownership-thesis"],
+    "promotion_candidates": ["recruiter-as-channel"]
+  },
+  "provenance": "process-reflection-framework-v3"
+}
