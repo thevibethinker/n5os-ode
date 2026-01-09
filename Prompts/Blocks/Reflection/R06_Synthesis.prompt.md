@@ -1,43 +1,261 @@
 ---
 description: Generate R06 Synthesis block from reflection input
-tags: [reflection, block, r06, synthesis, meta]
+tags: [reflection, block, r06, synthesis, patterns]
 tool: true
+version: 2.0
 ---
 
-# Generate Block R06: Synthesis
+# R06: Synthesis — Deep Analytical Framework
 
-**Purpose:** Capture cross-cutting patterns, meta-observations, and connections across domains.
+**Block ID:** R06
+**Block Name:** Synthesis
+**Purpose:** Extract cross-domain connections, pattern recognition, framework building, and theory development.
 
-## Input
+---
 
-The reflection text is provided in the conversation context.
+## 1. Domain Definition
 
-## Your Task
+### What This Lens Sees
+R06 captures **integrative thinking**:
 
-Generate an **R06: Synthesis** block that captures:
+- **Cross-domain connections:** "X is like Y" insights spanning different areas
+- **Pattern recognition:** Recurring structures across experiences
+- **Framework building:** Creating organizing structures
+- **Mental model integration:** Combining multiple models
+- **Theory development:** Articulating underlying principles
+- **Principle extraction:** Drawing generalizable lessons
 
-1. **Pattern:** The cross-cutting observation or connection
-2. **Domains Connected:** Which areas this bridges (personal + strategic, market + product, etc.)
-3. **Emergent Insight:** What becomes visible only when these domains are combined
-4. **Action Potential:** Does this synthesis suggest any concrete next step?
+### What This Lens Ignores
+- **Single-domain learning** → R02 (Learning Note)
+- **Predictions based on synthesis** → R07 (Prediction)
+- **Content ideas about synthesis** → R09 (Content Idea)
 
-## Output Format
+### Boundary Cases
+- If synthesis creates a prediction: The connection here; prediction in R07
+- If synthesis is primarily about one domain: Likely R02 unless genuinely cross-domain
+
+---
+
+## 2. Extraction Framework
+
+### Trigger Patterns
+```
+Connection words: connects to, reminds me of, same pattern, just like,
+                  analogous, similar to, parallel
+
+Pattern words: pattern, always, never, tends to, every time, structure,
+               recurring, common thread
+
+Framework words: framework, model, theory, principle, way of thinking,
+                 mental model, lens
+
+Synthesis words: synthesis, integrate, combine, unify, brings together
+```
+
+### Counter-Indicators
+- Connection is within a single domain
+- Pattern is observed but not articulated
+- Framework is being applied (not created)
+
+---
+
+## 3. Analysis Dimensions
+
+### Dimension 1: Synthesis Type
+| Type | Definition |
+|------|------------|
+| **Cross-domain connection** | Linking different fields |
+| **Pattern recognition** | Seeing recurring structure |
+| **Framework building** | Creating organizing structure |
+| **Theory development** | Articulating underlying principle |
+
+### Dimension 2: Domains Connected
+Document the specific domains bridged (e.g., Business + Psychology)
+
+### Dimension 3: Abstraction Level
+| Level | Definition |
+|-------|------------|
+| **Concrete analogy** | Specific comparison |
+| **Working principle** | Actionable guideline |
+| **Abstract theory** | General truth |
+
+### Dimension 4: Novelty
+| Level | Value |
+|-------|-------|
+| **New synthesis** | High — document carefully |
+| **Refinement** | Medium — note evolution |
+| **Rediscovery** | Lower — note application |
+
+### Dimension 5: Applicability
+| Scope | Use |
+|-------|-----|
+| **Narrow** | Context-specific insight |
+| **Moderate** | Useful heuristic |
+| **Broad** | Foundational thinking |
+
+---
+
+## 4. Memory Integration
+
+```python
+from N5.cognition.n5_memory_client import N5MemoryClient
+
+profiles_to_query = ["knowledge", "positions"]
+
+def enrich_synthesis(transcript_key_concepts: list[str]) -> dict:
+    client = N5MemoryClient()
+
+    related_frameworks = client.search_profile(
+        profile="knowledge",
+        query=f"framework model principle theory {' '.join(transcript_key_concepts)}",
+        limit=5
+    )
+
+    related_positions = client.search_profile(
+        profile="positions",
+        query=f"principle belief framework {' '.join(transcript_key_concepts)}",
+        limit=5
+    )
+
+    return {"related_frameworks": related_frameworks, "related_positions": related_positions}
+```
+
+---
+
+## 5. Output Schema
 
 ```markdown
 ## R06: Synthesis
 
-**Pattern:** [The cross-cutting observation]
+**Generated:** {timestamp}
+**Source:** {reflection_file}
 
-**Domains Connected:** [Which areas this bridges]
+### Synthesis Summary
+**Synthesis:** [One-line description]
+**Type:** [Connection | Pattern | Framework | Theory]
+**Domains Connected:** [List the domains]
 
-**Emergent Insight:** [What becomes visible through combination]
+### The Synthesis
 
-**Action Potential:** [Concrete next step, if any]
+#### The Insight
+[2-3 paragraphs developing the connection]
+
+#### Why This Matters
+[What this synthesis enables or explains]
+
+### Evidence
+> [Direct quote showing synthesis moment]
+
+### Domains Bridged
+**Domain 1:** [First area]
+**Domain 2:** [Second area]
+**Connection:** [What's being linked]
+
+### Abstraction Assessment
+**Level:** [Concrete | Working Principle | Abstract]
+**Applicability:** [Narrow | Moderate | Broad]
+
+### Novelty Check
+**Status:** [New | Refinement | Rediscovery]
+
+### Applications
+[Where this synthesis could be applied]
+
+### Memory Connections
+- **Related frameworks:** [Existing frameworks]
+- **Connected positions:** [Positions this supports/challenges]
 ```
 
-## Quality Standards
+---
 
-- Synthesis should reveal something not obvious from individual parts
-- This block is optional — only generate if genuine cross-domain insight exists
-- If no synthesis emerges, output: `R06: Not applicable — no cross-domain patterns detected`
+## 6. Connection Hooks
 
+### Upstream
+- "Building on that idea that..."
+- References to books, models, or prior insights
+
+### Downstream
+- Tag domains bridged
+- Flag if this should become a documented framework
+
+---
+
+## 7. Worked Example
+
+### Sample Input
+```
+Interesting pattern: both in coaching and in recruiting, the best outcomes
+happen when you stop trying to convince and start trying to understand.
+In coaching, we call it "holding space." In recruiting, the best placements
+happen when you deeply understand what the candidate actually wants.
+It's the same principle: genuine curiosity beats persuasion.
+```
+
+### Final Output
+```markdown
+## R06: Synthesis
+
+**Generated:** 2026-01-09T12:00:00Z
+**Source:** 2026-01-09_coaching-recruiting-pattern/transcript.md
+
+### Synthesis Summary
+**Synthesis:** Genuine curiosity beats persuasion — same principle in coaching and recruiting
+**Type:** Pattern Recognition → Theory Development
+**Domains Connected:** Coaching, Recruiting
+
+### The Synthesis
+
+#### The Insight
+Across multiple influence contexts, the most effective approach is not persuasion but understanding. In coaching, this is "holding space." In recruiting, the best outcomes emerge from understanding candidate motivations.
+
+The underlying principle: genuine curiosity creates better outcomes than persuasive skill.
+
+#### Why This Matters
+If true broadly, this inverts common assumptions about influence.
+
+### Evidence
+> "genuine curiosity beats persuasion"
+
+### Domains Bridged
+**Domain 1:** Coaching — "holding space," non-agenda presence
+**Domain 2:** Recruiting — understanding candidate wants
+**Connection:** Both involve influence; both work better through understanding
+
+### Abstraction Assessment
+**Level:** Working Principle
+**Applicability:** Broad — applies to any influence context
+
+### Novelty Check
+**Status:** New synthesis
+
+### Applications
+- Recruiting philosophy
+- Sales team hiring criteria
+- Content idea: "Why the best recruiters are the best listeners"
+```
+
+---
+
+## Quality Checklist
+
+- [ ] Synthesis is genuinely cross-domain
+- [ ] Connection is explained, not just asserted
+- [ ] Abstraction level is accurately assessed
+- [ ] Pattern/framework is actionable or predictive
+
+## Not Applicable Criteria
+
+```markdown
+## R06: Synthesis
+
+**Status:** Not applicable
+
+**Reason:** Reflection does not contain cross-domain connections, pattern
+recognition, or framework building.
+
+**Alternative blocks that may apply:** [R02, R03, R04, etc.]
+```
+
+---
+
+*Template Version: 2.0 | R-Block Framework | 2026-01-09*

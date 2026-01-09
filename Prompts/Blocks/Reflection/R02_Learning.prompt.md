@@ -1,43 +1,242 @@
 ---
 description: Generate R02 Learning Note block from reflection input
-tags: [reflection, block, r02, learning]
+tags: [reflection, block, r02, learning, knowledge]
 tool: true
+version: 2.0
 ---
 
-# Generate Block R02: Learning Note
+# R02: Learning Note — Deep Analytical Framework
 
-**Purpose:** Capture insights gained from reading, conversations, research, or experience.
+**Block ID:** R02
+**Block Name:** Learning Note
+**Purpose:** Extract skill acquisition, knowledge gaps, mental model updates, and learning transfer opportunities from reflection content.
 
-## Input
+---
 
-The reflection text is provided in the conversation context.
+## 1. Domain Definition
 
-## Your Task
+### What This Lens Sees
+R02 captures **learning and knowledge development**:
 
-Generate an **R02: Learning Note** block that captures:
+- **Skill acquisition:** New capabilities being developed or needed
+- **Knowledge gaps:** Areas where understanding is insufficient
+- **Mental model updates:** "I used to think X, now I think Y"
+- **Expertise development:** Trajectory toward mastery
+- **Learning transfer:** Applying insights from one domain to another
+- **Technical breakthroughs:** "Aha" moments in understanding
 
-1. **Key Learning:** The core insight or knowledge gained (1-2 sentences)
-2. **Source:** Where this learning came from (book, conversation, observation, etc.)
-3. **Application:** How this connects to V's work or life
-4. **Durability:** Is this a permanent truth or context-dependent insight?
+### What This Lens Ignores
+- **Strategic implications of learning** → R03
+- **Market context that prompted learning** → R04
+- **Emotional reactions to learning** → R01
+- **Content to teach others** → R09
 
-## Output Format
+### Boundary Cases
+- If learning has strategic implications: The learning here; strategic decision in R03
+- If failure taught a lesson: The lesson here; emotional processing in R01
+
+---
+
+## 2. Extraction Framework
+
+### Trigger Patterns
+```
+Learning words: learned, realized, discovered, understood, figured out,
+                finally get, clicked, made sense, breakthrough
+
+Gap words: don't know, need to learn, gap in, confused about, unclear,
+           struggling with, knowledge gap
+
+Model words: used to think, now I think, changed my mind, updated,
+             realized that, turns out, actually
+```
+
+### Counter-Indicators
+- Knowledge is assumed rather than newly acquired
+- Content is teaching rather than learning
+- Learning is mentioned only as context for another insight
+
+---
+
+## 3. Analysis Dimensions
+
+### Dimension 1: Learning Type
+| Type | Definition |
+|------|------------|
+| **Skill acquisition** | Learning to DO something |
+| **Knowledge acquisition** | Learning FACTS or information |
+| **Mental model update** | Changing HOW you think |
+| **Framework development** | Building an organizing structure |
+
+### Dimension 2: Source
+| Source | Retention Likelihood |
+|--------|---------------------|
+| **Direct experience** | High |
+| **Conversation/teaching** | Medium-high |
+| **Reading/research** | Medium |
+| **Failure/mistake** | Very high |
+
+### Dimension 3: Depth
+| Depth | Can... |
+|-------|--------|
+| **Surface** | Recognize |
+| **Working** | Do |
+| **Deep** | Teach |
+
+### Dimension 4: Transfer Potential
+- **Domain-specific:** Only applies in original context
+- **Adjacent transfer:** Applies to related domains
+- **General principle:** Applies broadly
+
+### Dimension 5: Gap vs Gain
+| Direction | Follow-up |
+|-----------|-----------|
+| **Gained** | Consolidate, apply |
+| **Gap identified** | Plan learning |
+| **Both** | Prioritize |
+
+---
+
+## 4. Memory Integration
+
+```python
+from N5.cognition.n5_memory_client import N5MemoryClient
+
+profiles_to_query = ["knowledge", "positions"]
+
+def enrich_learning_note(transcript_key_concepts: list[str]) -> dict:
+    client = N5MemoryClient()
+
+    related_knowledge = client.search_profile(
+        profile="knowledge",
+        query=f"{' '.join(transcript_key_concepts)}",
+        limit=5
+    )
+
+    affected_positions = client.search_profile(
+        profile="positions",
+        query=f"{' '.join(transcript_key_concepts)}",
+        limit=3
+    )
+
+    return {"related_knowledge": related_knowledge, "affected_positions": affected_positions}
+```
+
+---
+
+## 5. Output Schema
 
 ```markdown
 ## R02: Learning Note
 
-**Key Learning:** [The insight]
+**Generated:** {timestamp}
+**Source:** {reflection_file}
 
-**Source:** [Origin of this learning]
+### Learning Summary
+**Topic:** [What was learned or identified as gap]
+**Type:** [Skill | Knowledge | Mental Model | Framework]
+**Direction:** [Gained | Gap Identified | Both]
 
-**Application:** [How it connects to V's context]
+### The Learning
+[2-3 paragraphs on the substance of the learning]
 
-**Durability:** [Permanent principle / Context-dependent / Needs validation]
+**Source:** [Experience | Conversation | Reading | Failure]
+
+### Evidence
+> [Direct quote showing learning moment]
+
+### Depth Assessment
+**Current level:** [Surface | Working | Deep]
+
+### Transfer Potential
+**Scope:** [Domain-specific | Adjacent | General principle]
+[Where else this learning might apply]
+
+### Consolidation Actions
+- [Specific actions to solidify this learning]
+
+### Memory Connections
+- **Related knowledge:** [Links to knowledge articles]
+- **Affected positions:** [Positions that might need updating]
 ```
 
-## Quality Standards
+---
 
-- Distinguish between facts learned and interpretations made
-- Connect to existing mental models when possible
-- If the reflection doesn't contain learnings, output: `R02: Not applicable — reflection lacks learning content`
+## 6. Connection Hooks
 
+### Upstream
+- "Building on what I learned about..."
+- References to books, courses, or prior conversations
+
+### Downstream
+- Tag the knowledge domain
+- Flag if this fills a previously identified gap
+
+---
+
+## 7. Worked Example
+
+### Sample Input
+```
+Had a really clarifying conversation with Marcus about pricing. I always
+thought pricing was about cost-plus — figure out your costs, add margin,
+done. But he explained value-based pricing and it clicked: the price
+should reflect the value to the customer, not your cost to deliver.
+```
+
+### Final Output
+```markdown
+## R02: Learning Note
+
+**Generated:** 2026-01-09T12:00:00Z
+**Source:** 2026-01-09_pricing-conversation/transcript.md
+
+### Learning Summary
+**Topic:** Value-based pricing vs cost-plus pricing
+**Type:** Mental Model
+**Direction:** Both (Gained insight + identified pricing gap)
+
+### The Learning
+The fundamental frame for pricing should be customer value, not delivery cost. Cost-plus pricing leaves value on the table when delivery cost is low but customer value is high.
+
+**Source:** Conversation
+
+### Evidence
+> "the price should reflect the value to the customer, not your cost to deliver"
+
+### Depth Assessment
+**Current level:** Working
+
+### Transfer Potential
+**Scope:** General principle — value-based pricing applies broadly
+
+### Consolidation Actions
+- [ ] Review Careerspan pricing with value-based lens
+- [ ] Read up on value-based pricing
+```
+
+---
+
+## Quality Checklist
+
+- [ ] Learning substance is actually explained (not just named)
+- [ ] Before/after state is clear for mental model updates
+- [ ] Depth assessment is honest (not inflated)
+- [ ] Transfer potential includes concrete examples
+
+## Not Applicable Criteria
+
+```markdown
+## R02: Learning Note
+
+**Status:** Not applicable
+
+**Reason:** Reflection does not contain learning moments, knowledge gaps,
+or mental model updates.
+
+**Alternative blocks that may apply:** [R01, R03, R04, etc.]
+```
+
+---
+
+*Template Version: 2.0 | R-Block Framework | 2026-01-09*

@@ -1,46 +1,258 @@
 ---
 description: Generate R01 Personal Insight block from reflection input
-tags: [reflection, block, r01, personal]
+tags: [reflection, block, r01, personal, emotional]
 tool: true
+version: 2.0
 ---
 
-# Generate Block R01: Personal Insight
+# R01: Personal Insight — Deep Analytical Framework
 
-**Purpose:** Extract personal growth, emotional awareness, and self-discovery insights from reflection input.
+**Block ID:** R01
+**Block Name:** Personal Insight
+**Purpose:** Extract emotional states, identity tensions, values, energy patterns, and self-awareness moments from reflection content.
 
-## Input
+---
 
-The reflection text is provided in the conversation context. This may be:
-- Raw text from a voice memo transcript
-- Written journal entry
-- Stream-of-consciousness notes
+## 1. Domain Definition
 
-## Your Task
+### What This Lens Sees
+R01 captures **personal/emotional intelligence** — the inner landscape that shapes decision-making and well-being:
 
-Generate an **R01: Personal Insight** block that captures:
+- **Emotional states:** Joy, frustration, anxiety, excitement, disappointment, satisfaction
+- **Energy patterns:** What energizes vs. depletes, sustainable vs. unsustainable rhythms
+- **Identity tensions:** "Am I a founder or a coach?", role conflicts, self-concept struggles
+- **Values clarifications:** What matters becoming clearer, values in conflict
+- **Growth edges:** Comfort zone boundaries, skill gaps felt emotionally, stretch experiences
+- **Self-awareness moments:** Realizations about patterns, blind spots acknowledged
+- **Relationship dynamics:** How V relates to others, interpersonal patterns
 
-1. **Core Insight:** The central personal realization or emotional truth (1-2 sentences)
-2. **Context:** What prompted this reflection (brief)
-3. **Growth Edge:** What this reveals about areas for development
-4. **Emotional Signature:** The dominant feeling tone (e.g., "hopeful uncertainty", "frustrated determination")
+### What This Lens Ignores
+These belong to other blocks:
 
-## Output Format
+- **Market observations** → R04 (Market Signal)
+- **Product feature thinking** → R05 (Product Idea)
+- **Strategic direction choices** → R03 (Strategic Thought)
+- **Skill/knowledge acquisition** → R02 (Learning Note)
+
+### Boundary Cases
+- If emotional reaction accompanies market insight: Emotional content here; market signal goes to R04
+- If frustration reveals a learning gap: Emotional experience here; the gap itself goes to R02
+- If identity tension drives strategic choice: Internal experience here; the decision goes to R03
+
+---
+
+## 2. Extraction Framework
+
+### Trigger Patterns
+```
+Emotional words: feel, felt, feeling, frustrated, excited, worried, anxious,
+                 happy, sad, angry, disappointed, satisfied, energized, drained
+
+Energy words: exhausted, tired, motivated, pumped, depleted, recharged,
+              sustainable, burning out, flow state
+
+Identity words: am I, who I am, my role, as a founder, as a person,
+                identity, self, becoming, growing
+```
+
+### Semantic Indicators
+- First-person emotional processing ("I noticed I was...")
+- Reflection on internal states rather than external events
+- Discussion of what feels right/wrong beyond logic
+- Pattern recognition about self ("I always...", "I tend to...")
+
+### Counter-Indicators
+This block is NOT appropriate when:
+- Content is purely analytical without emotional dimension
+- Discussion is about others' emotions without self-reflection
+- The focus is on external facts rather than internal experience
+
+---
+
+## 3. Analysis Dimensions
+
+### Dimension 1: Emotional Valence
+| Valence | Indicators |
+|---------|------------|
+| **Positive/Expansive** | Joy, excitement, gratitude, hope, confidence |
+| **Negative/Contractive** | Fear, frustration, anxiety, disappointment |
+| **Mixed/Ambivalent** | Competing feelings, bittersweet, conflicted |
+| **Neutral/Observational** | Noticing without strong charge |
+
+### Dimension 2: Energy State
+| State | Meaning |
+|-------|---------|
+| **Source** | This gives energy, sustainable |
+| **Drain** | This depletes, unsustainable |
+| **Neutral** | Neither energizing nor depleting |
+
+### Dimension 3: Identity Layer
+- **Founder identity:** Careerspan, startup life, entrepreneurship
+- **Coach/advisor identity:** Helping others, teaching, mentoring
+- **Technical learner:** Building, coding, systems thinking
+- **Personal/family:** Relationships, health, life outside work
+
+### Dimension 4: Growth Signal
+| Signal | Meaning |
+|--------|---------|
+| **Comfort zone expansion** | Doing something uncomfortable |
+| **Skill/capacity building** | Developing new capability |
+| **Worldview shift** | Beliefs changing |
+| **No growth signal** | Stable territory |
+
+### Dimension 5: Actionability
+- **Immediate self-care:** Rest, exercise, boundaries
+- **Conversation needed:** Talk to someone
+- **Journaling/processing:** Write more, sit with it
+- **Awareness only:** Just notice, no action needed
+
+---
+
+## 4. Memory Integration
+
+```python
+from N5.cognition.n5_memory_client import N5MemoryClient
+
+profiles_to_query = ["positions", "knowledge"]
+
+def enrich_personal_insight(transcript_key_concepts: list[str]) -> dict:
+    client = N5MemoryClient()
+
+    identity_positions = client.search_profile(
+        profile="positions",
+        query=f"identity values personal growth {' '.join(transcript_key_concepts)}",
+        limit=3
+    )
+
+    emotional_patterns = client.search_profile(
+        profile="knowledge",
+        query=f"emotional pattern energy {' '.join(transcript_key_concepts)}",
+        limit=3
+    )
+
+    return {"identity_positions": identity_positions, "emotional_patterns": emotional_patterns}
+```
+
+---
+
+## 5. Output Schema
 
 ```markdown
 ## R01: Personal Insight
 
-**Core Insight:** [The central realization]
+**Generated:** {timestamp}
+**Source:** {reflection_file}
 
-**Context:** [What prompted this]
+### Insight Summary
+**Core Insight:** [One sentence capturing the personal revelation]
+**Emotional Tone:** [Positive | Negative | Mixed | Neutral]
+**Energy Impact:** [Source | Drain | Neutral]
 
-**Growth Edge:** [Area for development this reveals]
+### Reflection
+[2-3 paragraphs exploring what V was feeling/experiencing and what it reveals]
 
-**Emotional Signature:** [Feeling tone]
+### Evidence
+> [Direct quote showing emotional/personal content]
+
+### Identity Layer
+**Aspect engaged:** [Founder | Coach | Technical | Personal]
+
+### Growth Edge
+**Signal:** [Comfort expansion | Capacity building | Worldview shift | None]
+[If present, what growth opportunity exists]
+
+### Suggested Response
+- **Type:** [Self-care | Conversation | Processing | Awareness]
+- **Specific action:** [Concrete suggestion if actionable]
+
+### Memory Connections
+- **Related patterns:** [Prior emotional patterns]
+- **Connected positions:** [Identity/values positions]
 ```
 
-## Quality Standards
+---
 
-- Preserve V's voice—don't sanitize raw emotion
-- Be specific, not generic ("I feel challenged" → "The gap between my vision and execution capacity feels paralyzing")
-- If the reflection doesn't contain personal/emotional content, output: `R01: Not applicable — reflection lacks personal/emotional content`
+## 6. Connection Hooks
 
+### Upstream Connections
+- "I've noticed this before..."
+- "This is that pattern again..."
+- References to therapy, coaching, or prior journaling
+
+### Downstream Connections
+- Tag the emotional state category
+- Flag if this is a recurring pattern
+- Note if this might indicate burnout risk or thriving signal
+
+### Cross-Block Connections
+- **R02 (Learning):** If emotional experience accompanies learning
+- **R03 (Strategic):** If feelings inform a strategic insight
+
+---
+
+## 7. Worked Example
+
+### Sample Input
+```
+I noticed I've been avoiding the investor outreach. Not because I don't
+think we need funding, but there's something about pitching that feels
+performative, like I'm not being authentic. Maybe it's my coach identity
+conflicting with the founder identity.
+```
+
+### Final Output
+```markdown
+## R01: Personal Insight
+
+**Generated:** 2026-01-09T12:00:00Z
+**Source:** 2026-01-09_funding-reflections/transcript.md
+
+### Insight Summary
+**Core Insight:** Investor pitch avoidance stems from identity conflict between authentic coach-self and performative founder-role
+**Emotional Tone:** Mixed
+**Energy Impact:** Drain
+
+### Reflection
+V is experiencing avoidance around investor outreach and has traced it to an identity tension rather than practical concerns. The feeling is one of inauthenticity — pitching requires a "performance" that conflicts with deeply held coach values around authenticity.
+
+### Evidence
+> "there's something about pitching that feels performative, like I'm not being authentic"
+
+### Identity Layer
+**Aspect engaged:** Founder + Coach (in tension)
+
+### Growth Edge
+**Signal:** Comfort zone expansion
+The growth opportunity is developing an authentic pitch style that integrates both identities.
+
+### Suggested Response
+- **Type:** Processing + Conversation
+- **Specific action:** Journal on "what would an authentic pitch look like?"
+```
+
+---
+
+## Quality Checklist
+
+- [ ] Core insight is one clear sentence
+- [ ] Emotional tone is one of: Positive, Negative, Mixed, Neutral
+- [ ] Evidence includes at least one direct quote
+- [ ] Preserves V's voice — doesn't over-therapize or pathologize
+- [ ] Maintains dignity and agency
+
+## Not Applicable Criteria
+
+```markdown
+## R01: Personal Insight
+
+**Status:** Not applicable
+
+**Reason:** Reflection does not contain emotional content, identity exploration,
+or personal self-awareness moments.
+
+**Alternative blocks that may apply:** [R02, R03, R04, etc.]
+```
+
+---
+
+*Template Version: 2.0 | R-Block Framework | 2026-01-09*
