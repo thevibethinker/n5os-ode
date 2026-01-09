@@ -104,3 +104,5 @@ Each capability is documented in its own markdown file with:
 - Meeting Weekly Organization System – file 'N5/capabilities/workflows/meeting-weekly-organization.md' – Automatically organizes meetings from Inbox into weekly folders (Week-of-YYYY-MM-DD)
 
 
+
+- `internal/capability-graduation-system` - [See doc](internal/capability-graduation-system.md)
