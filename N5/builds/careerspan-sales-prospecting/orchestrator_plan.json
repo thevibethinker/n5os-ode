@@ -1,0 +1,158 @@
+{
+  "name": "Careerspan Sales Prospecting Engine",
+  "description": "System that surfaces recruiters discussing problems Careerspan solves, enabling V to engage constructively and warm them into sales conversations.",
+  "objective": "5 qualified NYC/SF recruiter prospects per day, surfaced with context and suggested engagement angles",
+  "key_decisions": [
+    "Separate project from TLE, shares x_api.py via symlink",
+    "SQLite database for prospects and tweets",
+    "Topic-based discovery (pain points) over bio-based search",
+    "NYC/SF geo focus via bio keywords and location signals",
+    "Basic tier X API: 10K tweets/mo budget → ~300/day → be selective with queries",
+    "Qualification scoring: recruiter signals + pain alignment + engagement potential",
+    "Human-in-the-loop: V reviews and sends all engagements manually"
+  ],
+  "relevant_files": [
+    "Projects/x-thought-leader/src/x_api.py",
+    "Projects/x-thought-leader/db/tweets.db",
+    "N5/builds/careerspan-sales-prospecting/PLAN.md"
+  ],
+  "icp_definition": {
+    "who": "Small to medium recruiters (agency or in-house)",
+    "where": "NYC or SF based/focused",
+    "signals": ["recruiter", "recruiting", "talent acquisition", "TA", "sourcer", "headhunter"],
+    "geo_signals": ["NYC", "New York", "SF", "San Francisco", "Bay Area", "Manhattan", "Brooklyn"]
+  },
+  "pain_points_to_monitor": [
+    "candidate quality complaints",
+    "sourcing struggles / pipeline problems",
+    "ghosting / no-shows",
+    "job board frustrations",
+    "LinkedIn limitations",
+    "candidate visibility issues",
+    "talent shortage complaints",
+    "hiring manager alignment issues"
+  ],
+  "careerspan_value_props": {
+    "talent_network": "Curated network of high-agency candidates",
+    "visibility": "More visibility into candidate quality than job boards",
+    "quality_over_quantity": "Pre-vetted candidates, not resume spam",
+    "efficiency": "Stop wasting time on unqualified applicants"
+  },
+  "workers": [
+    {
+      "id": "w1_project_scaffold",
+      "component": "project_structure",
+      "description": "Create Projects/careerspan-prospector/ directory structure, symlink x_api.py, create config files",
+      "dependencies": [],
+      "estimated_minutes": 15,
+      "outputs": [
+        "Projects/careerspan-prospector/",
+        "Projects/careerspan-prospector/src/",
+        "Projects/careerspan-prospector/db/",
+        "Projects/careerspan-prospector/config/",
+        "Projects/careerspan-prospector/src/x_api.py (symlink)"
+      ]
+    },
+    {
+      "id": "w2_database_schema",
+      "component": "database",
+      "description": "Create SQLite schema: prospects table, tweets table, engagements table, qualification_scores table",
+      "dependencies": ["w1_project_scaffold"],
+      "estimated_minutes": 20,
+      "outputs": [
+        "Projects/careerspan-prospector/db/prospector.db",
+        "Projects/careerspan-prospector/db/schema.sql"
+      ],
+      "schema_notes": "prospects: id, username, bio, location, follower_count, recruiter_score, geo_match, discovered_at, status. tweets: id, prospect_id, text, pain_alignment_score, created_at. engagements: id, tweet_id, type, content, status, sent_at"
+    },
+    {
+      "id": "w3_search_queries",
+      "component": "configuration",
+      "description": "Create search_queries.yaml with pain-point searches and recruiter qualifiers, optimized for Basic tier budget",
+      "dependencies": ["w1_project_scaffold"],
+      "estimated_minutes": 20,
+      "outputs": [
+        "Projects/careerspan-prospector/config/search_queries.yaml"
+      ],
+      "query_strategy": "Combine pain keywords with recruiter signals. Example: '(sourcing OR pipeline) (recruiter OR TA OR hiring) -filter:retweets'. Rotate queries to maximize coverage within 300/day budget."
+    },
+    {
+      "id": "w4_topic_monitor",
+      "component": "core_engine",
+      "description": "Create topic_monitor.py: loads queries, calls X API, dedupes, stores tweets and extracts prospect profiles",
+      "dependencies": ["w2_database_schema", "w3_search_queries"],
+      "estimated_minutes": 45,
+      "outputs": [
+        "Projects/careerspan-prospector/src/topic_monitor.py"
+      ],
+      "implementation_notes": "Use x_api.py search_recent_tweets(). Parse user objects from tweet responses. Check for existing prospects before inserting. Log API usage to stay within budget."
+    },
+    {
+      "id": "w5_icp_scorer",
+      "component": "qualification",
+      "description": "Create icp_scorer.py: scores prospects on recruiter signals (bio keywords, job title patterns) and geo match (NYC/SF signals)",
+      "dependencies": ["w2_database_schema"],
+      "estimated_minutes": 30,
+      "outputs": [
+        "Projects/careerspan-prospector/src/icp_scorer.py"
+      ],
+      "scoring_logic": "recruiter_score (0-100): keyword matches in bio, follower count normalization, account age. geo_score (0-100): location field + bio city mentions. Combined ICP score = weighted average."
+    },
+    {
+      "id": "w6_pain_classifier",
+      "component": "qualification",
+      "description": "Create pain_classifier.py: classifies tweets by which Careerspan pain point they align with, scores alignment strength",
+      "dependencies": ["w2_database_schema"],
+      "estimated_minutes": 30,
+      "outputs": [
+        "Projects/careerspan-prospector/src/pain_classifier.py"
+      ],
+      "classification_notes": "Map tweets to pain categories: quality, sourcing, visibility, efficiency. Use keyword matching + simple heuristics. Score 0-100 based on explicitness of pain expression."
+    },
+    {
+      "id": "w7_qualification_pipeline",
+      "component": "orchestration",
+      "description": "Create qualify_prospects.py: orchestrates ICP scoring + pain classification, ranks prospects, selects top 5 for daily review",
+      "dependencies": ["w5_icp_scorer", "w6_pain_classifier"],
+      "estimated_minutes": 30,
+      "outputs": [
+        "Projects/careerspan-prospector/src/qualify_prospects.py"
+      ],
+      "pipeline_logic": "1. Score all new prospects via ICP scorer. 2. Classify their tweets via pain classifier. 3. Compute composite score. 4. Filter to ICP threshold. 5. Rank and select top 5. 6. Update prospect status."
+    },
+    {
+      "id": "w8_engagement_generator",
+      "component": "engagement",
+      "description": "Create engagement_generator.py: given a qualified prospect + tweet, generates constructive reply suggestions using Careerspan value props",
+      "dependencies": ["w7_qualification_pipeline"],
+      "estimated_minutes": 45,
+      "outputs": [
+        "Projects/careerspan-prospector/src/engagement_generator.py"
+      ],
+      "generation_notes": "Use LLM (zo/ask API or local prompt) to generate 2-3 reply options. Tone: constructive, helpful, not salesy. Reference the specific pain point. Soft CTA if appropriate. V reviews and edits before sending."
+    },
+    {
+      "id": "w9_cli",
+      "component": "interface",
+      "description": "Create prospector_cli.py: CLI for V to run monitoring, view prospects, review engagements, mark sent/skipped",
+      "dependencies": ["w4_topic_monitor", "w7_qualification_pipeline", "w8_engagement_generator"],
+      "estimated_minutes": 45,
+      "outputs": [
+        "Projects/careerspan-prospector/src/prospector_cli.py"
+      ],
+      "cli_commands": "scan (run topic monitor), qualify (run qualification), prospects (list qualified), review <id> (show prospect + suggestions), engage <id> (mark engagement sent), skip <id> (mark skipped), stats (usage/conversion)"
+    },
+    {
+      "id": "w10_daily_digest",
+      "component": "delivery",
+      "description": "Create daily_digest.py: generates daily prospect digest (top 5) with context and suggested angles, can be scheduled as agent",
+      "dependencies": ["w9_cli"],
+      "estimated_minutes": 30,
+      "outputs": [
+        "Projects/careerspan-prospector/src/daily_digest.py"
+      ],
+      "digest_format": "Markdown report: 5 prospects, each with: profile summary, qualifying tweet, pain category, suggested engagement, link to tweet"
+    }
+  ]
+}
+
