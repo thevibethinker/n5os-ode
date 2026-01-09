@@ -1,0 +1,16 @@
+{
+  "source": "fireflies",
+  "source_id": "01KE7WZ4W23H8NTBTPVZFWKX6V",
+  "title": "Ilya sync",
+  "date": "2026-01-05",
+  "participants": [
+    "ilya@mycareerspan.com,logan@mycareerspan.com",
+    "ilya@mycareerspan.com",
+    "logan@mycareerspan.com"
+  ],
+  "host": "vrijen@mycareerspan.com",
+  "duration_seconds": 35,
+  "recording_url": "https://cdn.fireflies.ai/01KE7WZ4W23H8NTBTPVZFWKX6V/audio.mp3?Expires=1767867214&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZmlyZWZsaWVzLmFpLzAxS0U3V1o0VzIzSDhOVEJUUFZaRldLWDZWL2F1ZGlvLm1wMyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2Nzg2NzIxNH19fV19&Signature=YrwGKLRiZsHyblqqGdAtujo0OFXuRreen2B~95fU37-UgJNEqs4L-rEjbuQGpGBCACSrIgOP6NysVtMdaM~W4bA0xx30UYmDL8n9-1-YbQ~yTe3kAHZpkf72QjwpjPfAR6bsgbVfX4-TjjJa2o0lfLK65VusxXstQsvMe3SgFeCubLu4Z2MEefNQVPa~1MiIztxTXh-Ia38-siQQupyyvRM4YJakMsNrg-qNZ~xwBGf3EMnqbvdgk9KksCR0QcpKXrlywmEvCPjrGBKdcjqkX1K~Jll38a9iQsCeubvWW6oMZEIMRNzd3yo-tLlvzB~c-HK8wwU4G5IBFkHkyy91Jg__&Key-Pair-Id=K25ZJR0UZVF4CM",
+  "ingested_at": "2026-01-05T22:14:34.860846",
+  "state": "raw"
+}

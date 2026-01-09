@@ -1,0 +1,23 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-08T19:16:47Z",
+  "meeting_folder": "2026-01-08_logan_and_vrijen_finish_their_podcast",
+  "meeting_date": "2026-01-08",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "b01": true,
+    "b03": true,
+    "b05": true,
+    "b06": true,
+    "b07": true,
+    "b14": true,
+    "b21": true,
+    "b25": true,
+    "b26": true,
+    "b32": true
+  },
+  "last_updated_by": "MG-2_Prompt"
+}

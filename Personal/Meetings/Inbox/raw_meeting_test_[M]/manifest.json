@@ -1,0 +1,15 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-07T23:16:34.626326",
+  "meeting_folder": "raw_meeting_test",
+  "meeting_date": "2026-01-07",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "processed_at": "2026-01-08T22:48:51Z",
+  "crm_synced": true
+}

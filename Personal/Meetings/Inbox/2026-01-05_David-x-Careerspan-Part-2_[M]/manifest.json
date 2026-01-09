@@ -1,0 +1,16 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-05T22:16:33.664532Z",
+  "meeting_folder": "2026-01-05_David-x-Careerspan",
+  "meeting_date": "2026-01-05",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-08T22:48:43.612862",
+  "processed_at": "2026-01-08T22:48:43Z"
+}

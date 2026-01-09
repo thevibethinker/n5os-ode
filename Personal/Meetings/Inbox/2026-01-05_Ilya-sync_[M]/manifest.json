@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-05T22:16:33.655562Z",
+  "meeting_folder": "2026-01-05_Ilya-sync",
+  "meeting_date": "2026-01-05",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "business_context": true,
+    "key_moments": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "processed_at": "2026-01-08T22:48:44Z",
+  "crm_synced": true
+}

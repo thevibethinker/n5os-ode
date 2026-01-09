@@ -1,0 +1,15 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-07T15:16:35.960145",
+  "meeting_folder": "2026-01-06_vrijen_attawar_and_jeffrey_botteron",
+  "meeting_date": "2026-01-06",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "processed_at": "2026-01-08T22:48:46Z",
+  "crm_synced": true
+}
