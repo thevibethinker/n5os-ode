@@ -333,7 +333,7 @@ def _apply_review_decisions(
 # Paths
 REVIEW_DIR = N5_ROOT / "review" / "positions"
 CANDIDATES_FILE = N5_DATA_DIR / "position_candidates.jsonl"
-EXTRACTION_PROMPT = N5_ROOT / "prompts" / "extract_positions.md"
+EXTRACTION_PROMPT = N5_ROOT / "prompts" / "extract_positions_from_b32.md"
 PROCESSED_LOG = N5_DATA_DIR / "b32_processed.jsonl"
 
 def find_b32_files(since: str | None = None, limit: int | None = None) -> list[Path]:
@@ -1138,6 +1138,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

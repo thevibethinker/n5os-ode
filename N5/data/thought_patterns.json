@@ -1,14 +1,20 @@
 {
-  "analysis_date": "2026-01-04T13:07:06.250466+00:00",
-  "total_ideas_analyzed": 202,
-  "total_meetings": 63,
+  "analysis_date": "2026-01-08T13:06:28.077013+00:00",
+  "total_ideas_analyzed": 182,
+  "total_meetings": 58,
   "recurring_themes": [
     {
       "theme": "recruiting_future",
-      "meeting_count": 44,
-      "idea_count": 82,
+      "meeting_count": 39,
+      "idea_count": 71,
       "recent_examples": [
         {
+          "title": "Friction as Signal",
+          "idea": "The idea that reducing friction (as seen in the 20% completion rate increase) actually *improves* signal by allowing the right candidates to finish the process.",
+          "meeting": "raw_meeting_test_[M]",
+          "date": "2026-01-08"
+        },
+        {
           "title": "The \"Problem Stack\" Abstraction",
           "idea": "V's thesis is that AI should not just automate existing tasks (like resume checking), but should move human experts \"higher in the problem stack.\" This suggests a mental model where the value of a car...",
           "meeting": "20251226_Careerspan_Demo_no_transcript",
@@ -31,28 +37,34 @@
           "idea": "V noted the \"fall in latency\" when an alum reaches out to a school and has to wait days or weeks for candidate names. By using AI to maintain a constant \"readiness state\" for every student (via the 2-...",
           "meeting": "2025-12-26_Careerspan-demo_[P]",
           "date": "2025-12-26"
-        },
-        {
-          "title": "Artificial Gap Closing",
-          "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative en...",
-          "meeting": "2025-12-23_2025-12-23-Melhrubingmailcom",
-          "date": "2025-12-23"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
-        "latest": "2025-12-26"
+        "earliest": "2025-12-10",
+        "latest": "2026-01-08"
       }
     },
     {
       "theme": "uncategorized",
-      "meeting_count": 32,
-      "idea_count": 38,
+      "meeting_count": 29,
+      "idea_count": 34,
       "recent_examples": [
+        {
+          "title": "Outcome vs. Output",
+          "idea": "Shifting from measuring \"how much we build\" to \"what we changed\" requires a fundamental change in the definition of a \"Senior\" role.",
+          "meeting": "raw_meeting_test_[M]",
+          "date": "2026-01-08"
+        },
         {
           "title": "Semantic vs. Syntactic Identity",
           "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V'...",
           "meeting": "20251226_Careerspan_Demo_no_transcript",
+          "date": "2025-12-26"
+        },
+        {
+          "title": "Semantic vs. Syntactic Identity",
+          "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V'...",
+          "meeting": "2025-12-26_Careerspan-demo_[P]",
           "date": "2025-12-26"
         },
         {
@@ -62,34 +74,34 @@
           "date": "2025-12-26"
         },
         {
-          "title": "Semantic vs. Syntactic Identity",
-          "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V'...",
-          "meeting": "2025-12-26_Careerspan-demo_[P]",
-          "date": "2025-12-26"
-        },
-        {
           "title": "Model Asymmetry:",
           "idea": "The idea that using \"the absolute dumbest models\" (4o-mini) in multiple small steps can produce a more \"intelligent\" and certainly more resilient output than single-shot high-end models.",
           "meeting": "2025-12-23_davisteamworkonlinecom",
           "date": "2025-12-23"
-        },
-        {
-          "title": "Low-Fidelity Architecture Strength:",
-          "idea": "Building sophisticated outputs from \"dumb\" mini-models to ensure architecture resilience—counter-intuitive in an era where everyone is rushing toward the most expensive, frontier models.",
-          "meeting": "2025-12-23_2025-12-23-Davisteamworkonlinecom",
-          "date": "2025-12-23"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
-        "latest": "2025-12-26"
+        "earliest": "2025-12-10",
+        "latest": "2026-01-08"
       }
     },
     {
       "theme": "personal_growth",
-      "meeting_count": 29,
-      "idea_count": 42,
+      "meeting_count": 28,
+      "idea_count": 37,
       "recent_examples": [
+        {
+          "title": "Culture as the Operating System",
+          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
+          "meeting": "raw_meeting_test_[M]",
+          "date": "2026-01-08"
+        },
+        {
+          "title": "State Escalation",
+          "idea": "Could the manifest system be used to trigger automatic \"emergency\" alerts if certain keywords (e.g., \"urgent,\" \"crisis\") are detected in B11 (Risks & Flags)?",
+          "meeting": "2026-01-07_Unprocessed-Meeting-Test_[M]",
+          "date": "2026-01-07"
+        },
         {
           "title": "Productivity as \"Home\":",
           "idea": "The idea that a productivity tool isn't just a utility, but a \"home\" that reflects one's vulnerability and life history. Building a \"room\" in software as an act of self-actualization.",
@@ -107,29 +119,17 @@
           "idea": "V suggests that the success of his habit tracking isn't due to the *ease* of the UI, but the *guilt/compulsion* of responding to an anthropomorphized text message. The 'human-ness' of the AI acts as a...",
           "meeting": "2025-12-23_2025-12-23-Rochelmycareerspancom",
           "date": "2025-12-23"
-        },
-        {
-          "title": "Plateau via Over-Exertion",
-          "idea": "The counter-intuitive mental model that pushing yourself to your limit early in fitness prevents the physiological conditioning required for long-term growth. Discipline in *restraint* is more valuabl...",
-          "meeting": "2025-12-23_2025-12-23-Rochelmycareerspancom",
-          "date": "2025-12-23"
-        },
-        {
-          "title": "Institution-Building as a Response to Exclusion",
-          "idea": "The idea that 'dominance' in certain fields (like Jewish hospitals or Hollywood) is actually a fossilized record of historical exclusion—a 'scar tissue' of sorts where communities were forced to build...",
-          "meeting": "2025-12-23_2025-12-23-Rochelmycareerspancom",
-          "date": "2025-12-23"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
-        "latest": "2025-12-26"
+        "earliest": "2025-12-11",
+        "latest": "2026-01-08"
       }
     },
     {
       "theme": "founder_life",
-      "meeting_count": 29,
-      "idea_count": 35,
+      "meeting_count": 27,
+      "idea_count": 30,
       "recent_examples": [
         {
           "title": "Artificial Gap Closing",
@@ -163,14 +163,14 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
+        "earliest": "2025-12-10",
         "latest": "2025-12-23"
       }
     },
     {
       "theme": "product_strategy",
-      "meeting_count": 27,
-      "idea_count": 36,
+      "meeting_count": 23,
+      "idea_count": 29,
       "recent_examples": [
         {
           "title": "Productivity as \"Home\":",
@@ -204,14 +204,14 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
+        "earliest": "2025-12-10",
         "latest": "2025-12-26"
       }
     },
     {
       "theme": "community_network",
-      "meeting_count": 20,
-      "idea_count": 23,
+      "meeting_count": 22,
+      "idea_count": 25,
       "recent_examples": [
         {
           "title": "Latency in Trust Networks",
@@ -245,7 +245,7 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-09",
+        "earliest": "2025-12-10",
         "latest": "2025-12-26"
       }
     },
@@ -254,6 +254,12 @@
       "meeting_count": 18,
       "idea_count": 23,
       "recent_examples": [
+        {
+          "title": "State Escalation",
+          "idea": "Could the manifest system be used to trigger automatic \"emergency\" alerts if certain keywords (e.g., \"urgent,\" \"crisis\") are detected in B11 (Risks & Flags)?",
+          "meeting": "2026-01-07_Unprocessed-Meeting-Test_[M]",
+          "date": "2026-01-07"
+        },
         {
           "title": "The \"Problem Stack\" Abstraction",
           "idea": "V's thesis is that AI should not just automate existing tasks (like resume checking), but should move human experts \"higher in the problem stack.\" This suggests a mental model where the value of a car...",
@@ -277,17 +283,11 @@
           "idea": "In an era of generative AI where everyone focuses on 'output' (writing JDs, generating emails), the real competitive advantage lies in 'input' (systematic listening and understanding). The LLM is less...",
           "meeting": "2025-12-22_2025-12-22-Swd-Cvsh-Vys",
           "date": "2025-12-22"
-        },
-        {
-          "title": "Conversational Scoping:",
-          "idea": "Tejas’s idea of an AI that listens to a \"lobby\" of voices and automatically spins up a \"Strategy Room\" or \"Scope of Work\" removes the friction of documentation. How does this change the speed of movin...",
-          "meeting": "2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
-          "date": "2025-12-18"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-09",
-        "latest": "2025-12-26"
+        "earliest": "2025-12-11",
+        "latest": "2026-01-07"
       }
     },
     {
@@ -295,6 +295,12 @@
       "meeting_count": 12,
       "idea_count": 13,
       "recent_examples": [
+        {
+          "title": "Synthetic vs. Real Data",
+          "idea": "How does the intelligence generation performance differ when handling highly nuanced human conversation versus structured test transcripts?",
+          "meeting": "2026-01-07_Unprocessed-Meeting-Test_[M]",
+          "date": "2026-01-07"
+        },
         {
           "title": "Hiring as a Diet",
           "idea": "The concept of managing a job search like a diet, balancing stable \"normal\" opportunities with high-leverage \"outsized bets\" (screamer shots) to maintain momentum without burning out.",
@@ -318,23 +324,17 @@
           "idea": "Traditional interviews are a \"bad compromise between getting to know someone and evaluating them\"—candidates are guarded and performative. By contrast, a *coaching* interaction encourages vulnerabilit...",
           "meeting": "2025-12-18_2025-12-18-Danielveridueai",
           "date": "2025-12-18"
-        },
-        {
-          "title": "The \"Rote\" Inversion",
-          "idea": "The idea that the larger a company becomes, the more its hiring becomes \"rote,\" creating a massive value-gap for \"semantic intelligence\" that big players like Workday cannot easily fill due to archite...",
-          "meeting": "2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
-          "date": "2025-12-18"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
-        "latest": "2025-12-23"
+        "earliest": "2025-12-12",
+        "latest": "2026-01-07"
       }
     },
     {
       "theme": "pricing_business",
-      "meeting_count": 10,
-      "idea_count": 10,
+      "meeting_count": 5,
+      "idea_count": 5,
       "recent_examples": [
         {
           "title": "Provocation",
@@ -368,7 +368,7 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-08",
+        "earliest": "2025-12-10",
         "latest": "2025-12-19"
       }
     }
@@ -378,6 +378,12 @@
       "theme": "recruiting_future",
       "trajectory": [
         {
+          "title": "Friction as Signal",
+          "idea": "The idea that reducing friction (as seen in the 20% completion rate increase) actually *improves* signal by allowing the right candidates to finish the process.",
+          "meeting": "raw_meeting_test_[M]",
+          "date": "2026-01-08"
+        },
+        {
           "title": "The \"Problem Stack\" Abstraction",
           "idea": "V's thesis is that AI should not just automate existing tasks (like resume checking), but should move human experts \"higher in the problem stack.\" This suggests a mental model where the value of a car...",
           "meeting": "20251226_Careerspan_Demo_no_transcript",
@@ -400,23 +406,29 @@
           "idea": "V noted the \"fall in latency\" when an alum reaches out to a school and has to wait days or weeks for candidate names. By using AI to maintain a constant \"readiness state\" for every student (via the 2-...",
           "meeting": "2025-12-26_Careerspan-demo_[P]",
           "date": "2025-12-26"
-        },
-        {
-          "title": "Artificial Gap Closing",
-          "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative en...",
-          "meeting": "2025-12-23_2025-12-23-Melhrubingmailcom",
-          "date": "2025-12-23"
         }
       ],
-      "span_days": 18
+      "span_days": 29
     },
     {
       "theme": "uncategorized",
       "trajectory": [
         {
+          "title": "Outcome vs. Output",
+          "idea": "Shifting from measuring \"how much we build\" to \"what we changed\" requires a fundamental change in the definition of a \"Senior\" role.",
+          "meeting": "raw_meeting_test_[M]",
+          "date": "2026-01-08"
+        },
+        {
           "title": "Semantic vs. Syntactic Identity",
           "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V'...",
           "meeting": "20251226_Careerspan_Demo_no_transcript",
+          "date": "2025-12-26"
+        },
+        {
+          "title": "Semantic vs. Syntactic Identity",
+          "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V'...",
+          "meeting": "2025-12-26_Careerspan-demo_[P]",
           "date": "2025-12-26"
         },
         {
@@ -426,29 +438,29 @@
           "date": "2025-12-26"
         },
         {
-          "title": "Semantic vs. Syntactic Identity",
-          "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V'...",
-          "meeting": "2025-12-26_Careerspan-demo_[P]",
-          "date": "2025-12-26"
-        },
-        {
           "title": "Model Asymmetry:",
           "idea": "The idea that using \"the absolute dumbest models\" (4o-mini) in multiple small steps can produce a more \"intelligent\" and certainly more resilient output than single-shot high-end models.",
           "meeting": "2025-12-23_davisteamworkonlinecom",
           "date": "2025-12-23"
-        },
-        {
-          "title": "Low-Fidelity Architecture Strength:",
-          "idea": "Building sophisticated outputs from \"dumb\" mini-models to ensure architecture resilience—counter-intuitive in an era where everyone is rushing toward the most expensive, frontier models.",
-          "meeting": "2025-12-23_2025-12-23-Davisteamworkonlinecom",
-          "date": "2025-12-23"
         }
       ],
-      "span_days": 18
+      "span_days": 29
     },
     {
       "theme": "personal_growth",
       "trajectory": [
+        {
+          "title": "Culture as the Operating System",
+          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
+          "meeting": "raw_meeting_test_[M]",
+          "date": "2026-01-08"
+        },
+        {
+          "title": "State Escalation",
+          "idea": "Could the manifest system be used to trigger automatic \"emergency\" alerts if certain keywords (e.g., \"urgent,\" \"crisis\") are detected in B11 (Risks & Flags)?",
+          "meeting": "2026-01-07_Unprocessed-Meeting-Test_[M]",
+          "date": "2026-01-07"
+        },
         {
           "title": "Productivity as \"Home\":",
           "idea": "The idea that a productivity tool isn't just a utility, but a \"home\" that reflects one's vulnerability and life history. Building a \"room\" in software as an act of self-actualization.",
@@ -466,21 +478,9 @@
           "idea": "V suggests that the success of his habit tracking isn't due to the *ease* of the UI, but the *guilt/compulsion* of responding to an anthropomorphized text message. The 'human-ness' of the AI acts as a...",
           "meeting": "2025-12-23_2025-12-23-Rochelmycareerspancom",
           "date": "2025-12-23"
-        },
-        {
-          "title": "Plateau via Over-Exertion",
-          "idea": "The counter-intuitive mental model that pushing yourself to your limit early in fitness prevents the physiological conditioning required for long-term growth. Discipline in *restraint* is more valuabl...",
-          "meeting": "2025-12-23_2025-12-23-Rochelmycareerspancom",
-          "date": "2025-12-23"
-        },
-        {
-          "title": "Institution-Building as a Response to Exclusion",
-          "idea": "The idea that 'dominance' in certain fields (like Jewish hospitals or Hollywood) is actually a fossilized record of historical exclusion—a 'scar tissue' of sorts where communities were forced to build...",
-          "meeting": "2025-12-23_2025-12-23-Rochelmycareerspancom",
-          "date": "2025-12-23"
         }
       ],
-      "span_days": 18
+      "span_days": 28
     },
     {
       "theme": "founder_life",
@@ -516,7 +516,7 @@
           "date": "2025-12-19"
         }
       ],
-      "span_days": 15
+      "span_days": 13
     },
     {
       "theme": "product_strategy",
@@ -552,18 +552,18 @@
           "date": "2025-12-19"
         }
       ],
-      "span_days": 18
+      "span_days": 16
     }
   ],
   "theme_distribution": {
-    "ai_replacement": 23,
-    "recruiting_future": 82,
-    "uncategorized": 38,
-    "community_network": 23,
-    "product_strategy": 36,
-    "personal_growth": 42,
-    "founder_life": 35,
+    "personal_growth": 37,
+    "uncategorized": 34,
+    "recruiting_future": 71,
     "ai_philosophy": 13,
-    "pricing_business": 10
+    "ai_replacement": 23,
+    "community_network": 25,
+    "product_strategy": 29,
+    "founder_life": 30,
+    "pricing_business": 5
   }
 }

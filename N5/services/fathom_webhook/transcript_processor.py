@@ -11,10 +11,13 @@ import re
 import shutil
 import os
 
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from .fathom_client import FathomClient
 from .webhook_processor import WebhookProcessor
-from ..intake.intake_engine import IntakeEngine
-from ..intake.models import IntakeSource
+from intake.intake_engine import IntakeEngine
+from intake.models import IntakeSource
 
 logger = logging.getLogger(__name__)
 
@@ -184,6 +187,7 @@ class TranscriptProcessor:
             "source_file": payload.get("url"),
             "recording_id": payload.get("recording_id")
         }
+
 
 
 
