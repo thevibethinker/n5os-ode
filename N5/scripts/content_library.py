@@ -20,17 +20,15 @@ Usage:
     from content_library import ContentLibrary
     lib = ContentLibrary()
     
+    # CLI commands:
+    # python3 N5/scripts/content_library.py list-types
+    # python3 N5/scripts/content_library.py search --query "X" --type article
+    # python3 N5/scripts/content_library.py ingest /path/to/file.md --type article
+    # python3 N5/scripts/content_library.py sync
+    # python3 N5/scripts/content_library.py stats
+    
     # Search with dict tags (key-value matching)
     sigs = lib.search(tags={"purpose": "signature", "channel": "email"})
-    
-    # Search with list tags (key:value format)
-    items = lib.search(tags=["category:marketing"])
-    
-    # Add item
-    lib.add("my-item", "snippet", "Title", content="...", tags=["purpose:demo"])
-    
-    # Mark as used (updates last_used_at)
-    lib.mark_used("my-item")
 """
 
 import argparse
@@ -132,9 +130,11 @@ class ContentLibrary:
         return conn
     
     def _row_to_item(self, row: sqlite3.Row, tags: Dict[str, str] = None) -> ContentItem:
+        # Handle both old 'type' and new 'content_type' column names
+        item_type = row["content_type"] if "content_type" in row.keys() else row.get("type", "unknown")
         return ContentItem(
             id=row["id"],
-            type=row["type"],
+            type=item_type,
             title=row["title"],
             content=row["content"],
             url=row["url"],
@@ -173,6 +173,7 @@ class ContentLibrary:
         self,
         query: Optional[str] = None,
         item_type: Optional[str] = None,
+        content_type: Optional[str] = None,
         tags: Union[List[str], Dict[str, str], None] = None,
         include_deprecated: bool = False,
         limit: int = 50,
@@ -181,7 +182,8 @@ class ContentLibrary:
         
         Args:
             query: Text search in title, content, notes
-            item_type: 'link' or 'snippet'
+            item_type: 'link' or 'snippet' (legacy type field)
+            content_type: Filter by content_type (article, deck, paper, etc.)
             tags: Filter by tags. Can be:
                 - Dict: {"purpose": "signature", "channel": "email"} - all must match
                 - List: ["purpose:signature", "channel:email"] - same as dict
@@ -200,8 +202,12 @@ class ContentLibrary:
             conditions.append("i.deprecated = 0")
         
         if item_type:
-            conditions.append("i.type = ?")
+            conditions.append("i.content_type = ?")
             params.append(item_type)
+        
+        if content_type:
+            conditions.append("i.content_type = ?")
+            params.append(content_type)
         
         if query:
             conditions.append("(i.title LIKE ? OR i.content LIKE ? OR i.notes LIKE ?)")
@@ -330,16 +336,25 @@ class ContentLibrary:
         conn.close()
         return [r["tag"] for r in rows]
     
+    def list_content_types(self) -> Dict[str, int]:
+        """List all content types with counts."""
+        conn = self._get_conn()
+        rows = conn.execute(
+            "SELECT content_type, COUNT(*) as count FROM items WHERE deprecated = 0 AND content_type IS NOT NULL GROUP BY content_type ORDER BY count DESC"
+        ).fetchall()
+        conn.close()
+        return {r["content_type"]: r["count"] for r in rows}
+    
     def stats(self) -> Dict[str, Any]:
         """Get library statistics."""
         conn = self._get_conn()
         total = conn.execute("SELECT COUNT(*) FROM items").fetchone()[0]
         active = conn.execute("SELECT COUNT(*) FROM items WHERE deprecated = 0").fetchone()[0]
-        by_type = dict(conn.execute(
-            "SELECT type, COUNT(*) FROM items WHERE deprecated = 0 GROUP BY type"
+        by_content_type = dict(conn.execute(
+            "SELECT content_type, COUNT(*) FROM items WHERE deprecated = 0 AND content_type IS NOT NULL GROUP BY content_type"
         ).fetchall())
         conn.close()
-        return {"total": total, "active": active, "by_type": by_type}
+        return {"total": total, "active": active, "by_content_type": by_content_type}
 
 
 # Backward compatibility alias
@@ -354,7 +369,8 @@ def main():
     # Search
     search_p = subparsers.add_parser("search", help="Search items")
     search_p.add_argument("--query", "-q", help="Search query")
-    search_p.add_argument("--type", "-t", choices=["link", "snippet"], help="Item type")
+    search_p.add_argument("--type", "-t", dest="item_type", choices=["link", "snippet", "article", "deck", "paper", "book", "framework", "social-post", "podcast", "video", "quote"], help="Filter by content type (legacy alias for --content-type)")
+    search_p.add_argument("--content-type", "-c", help="Content type filter (article, deck, paper, etc.)")
     search_p.add_argument("--tags", nargs="+", help="Filter by tags (key:value format)")
     search_p.add_argument("--limit", "-n", type=int, default=20, help="Max results")
     search_p.add_argument("--json", action="store_true", help="JSON output")
@@ -370,13 +386,28 @@ def main():
     # Tags
     subparsers.add_parser("tags", help="List all tags")
     
+    # List content types (NEW)
+    subparsers.add_parser("list-types", help="List content types with counts")
+    
+    # Ingest (NEW)
+    ingest_p = subparsers.add_parser("ingest", help="Ingest a content file")
+    ingest_p.add_argument("file", help="Path to file to ingest")
+    ingest_p.add_argument("--type", dest="content_type", help="Content type (article, deck, paper, etc.)")
+    ingest_p.add_argument("--dry-run", action="store_true", help="Preview without writing")
+    ingest_p.add_argument("--move", action="store_true", help="Move file to canonical location")
+    
+    # Sync (NEW)
+    sync_p = subparsers.add_parser("sync", help="Run backfill to sync all content files")
+    sync_p.add_argument("--dry-run", action="store_true", help="Preview without writing")
+    
     args = parser.parse_args()
     lib = ContentLibrary()
     
     if args.command == "search":
         items = lib.search(
             query=args.query,
-            item_type=args.type,
+            item_type=args.item_type,
+            content_type=getattr(args, 'content_type', None),
             tags=args.tags,
             limit=args.limit,
         )
@@ -384,7 +415,8 @@ def main():
             print(json.dumps([i.to_dict() for i in items], indent=2))
         else:
             for item in items:
-                print(f"{item.id}: {item.title} ({item.type})")
+                ct = getattr(item, 'content_type', None) or item.type
+                print(f"{item.id}: {item.title} ({ct})")
                 if item.url:
                     print(f"  URL: {item.url}")
                 if item.tags:
@@ -415,13 +447,47 @@ def main():
         stats = lib.stats()
         print(f"Total items: {stats['total']}")
         print(f"Active items: {stats['active']}")
-        print("By type:")
-        for t, c in stats["by_type"].items():
-            print(f"  {t}: {c}")
+        if stats.get("by_type"):
+            print("By legacy type:")
+            for t, c in stats["by_type"].items():
+                print(f"  {t}: {c}")
+        if stats.get("by_content_type"):
+            print("By content type:")
+            for t, c in stats["by_content_type"].items():
+                print(f"  {t}: {c}")
     
     elif args.command == "tags":
         for tag in lib.list_tags():
             print(tag)
+    
+    elif args.command == "list-types":
+        types = lib.list_content_types()
+        if not types:
+            print("No content types found.")
+        else:
+            print("Content types:")
+            for ct, count in types.items():
+                print(f"  {ct}: {count}")
+    
+    elif args.command == "ingest":
+        import subprocess
+        cmd = ["python3", "N5/scripts/content_ingest.py", args.file]
+        if args.content_type:
+            cmd.extend(["--type", args.content_type])
+        if args.dry_run:
+            cmd.append("--dry-run")
+        if args.move:
+            cmd.append("--move")
+        result = subprocess.run(cmd, cwd="/home/workspace")
+        sys.exit(result.returncode)
+    
+    elif args.command == "sync":
+        import subprocess
+        cmd = ["python3", "N5/scripts/content_backfill.py"]
+        if args.dry_run:
+            cmd.append("--dry-run")
+        result = subprocess.run(cmd, cwd="/home/workspace")
+        sys.exit(result.returncode)
     
     else:
         parser.print_help()
@@ -429,5 +495,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
 
 

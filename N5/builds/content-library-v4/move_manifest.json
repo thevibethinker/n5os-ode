@@ -1,0 +1,68 @@
+{
+  "build": "content-library-v4",
+  "wave": 1,
+  "worker": "worker_canonical_paths",
+  "executed_at": "2026-01-09T07:18:44Z",
+  "provenance": "con_8cI2A33NiwEndujy",
+  "summary": {
+    "articles_moved": 5,
+    "directories_created": 5,
+    "directories_removed": 1,
+    "vrijen_renamed": true,
+    "protection_added": true
+  },
+  "moves": [
+    {
+      "from": "Articles/Capital in the 22nd Century :: philiptrammell.substack.com.md",
+      "to": "Knowledge/content-library/articles/Capital in the 22nd Century :: philiptrammell.substack.com.md"
+    },
+    {
+      "from": "Articles/Recursive Language Models :: www.k-a.in.md",
+      "to": "Knowledge/content-library/articles/Recursive Language Models :: www.k-a.in.md"
+    },
+    {
+      "from": "Articles/Secret History #1- How Power Works -4K Re-Upload with Audio Fixed- :: www.youtube.com.md",
+      "to": "Knowledge/content-library/articles/Secret History #1- How Power Works -4K Re-Upload with Audio Fixed- :: www.youtube.com.md"
+    },
+    {
+      "from": "Articles/gamma.app :: gamma.app.md",
+      "to": "Knowledge/content-library/articles/gamma.app :: gamma.app.md"
+    },
+    {
+      "from": "Articles/x.com :: x.com.md",
+      "to": "Knowledge/content-library/articles/x.com :: x.com.md"
+    }
+  ],
+  "renames": [
+    {
+      "from": "Knowledge/content-library/articles/vrijen-medium",
+      "to": "Knowledge/content-library/articles/vrijen"
+    }
+  ],
+  "directories_created": [
+    "Knowledge/content-library/decks",
+    "Knowledge/content-library/social-posts",
+    "Knowledge/content-library/papers",
+    "Knowledge/content-library/books",
+    "Knowledge/content-library/frameworks"
+  ],
+  "directories_removed": [
+    "Articles/"
+  ],
+  "protection": {
+    "path": "Knowledge/content-library/",
+    "reason": "Canonical content storage - do not move or delete"
+  },
+  "final_structure": {
+    "Knowledge/content-library/": {
+      "articles/": "5 saved articles + vrijen/ (3 Medium articles)",
+      "decks/": "empty - ready for slide decks",
+      "social-posts/": "empty - ready for social content",
+      "papers/": "empty - ready for research papers",
+      "books/": "empty - ready for book notes",
+      "frameworks/": "empty - ready for frameworks",
+      "personal/": "1 symlink (V_GENETIC_PROFILE.md)"
+    }
+  }
+}
+

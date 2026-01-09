@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-01-09T07:45:52.914001",
+  "dry_run": true,
+  "scanned": 9,
+  "created": 9,
+  "skipped": 0,
+  "errors": 0,
+  "by_type": {
+    "article": 9
+  },
+  "files": [
+    {
+      "file": "Knowledge/content-library/articles/Capital in the 22nd Century :: philiptrammell.substack.com.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/Recursive Language Models :: www.k-a.in.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/Secret History #1- How Power Works -4K Re-Upload with Audio Fixed- :: www.youtube.com.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/gamma.app :: gamma.app.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/vrijen/corporate-resume-windmills.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/vrijen/moneyball-for-hiring.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/vrijen/talent-agent-economy.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/x.com :: x.com.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/personal/V_GENETIC_PROFILE.md",
+      "status": "dry_run",
+      "content_type": "article"
+    }
+  ]
+}
