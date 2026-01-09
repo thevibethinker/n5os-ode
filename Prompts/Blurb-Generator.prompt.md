@@ -1037,6 +1037,25 @@ key_focus: Project approach, technical innovation, impact
 
 ---
 
+## Directness Validation (2026-01)
+
+**After generating blurb, scan for hedging anti-patterns:**
+
+| Kill | Example | Fix |
+|------|---------|-----|
+| `just` | "We just help recruiters..." | "We help recruiters..." |
+| `kind of` / `sort of` | "It's kind of like..." | "It's like..." / be specific |
+| `I think` | "I think Careerspan could..." | "Careerspan can..." |
+| `maybe` / `perhaps` | "Perhaps we could explore..." | "Let's explore..." |
+
+**Directness target:** 0.8 for short blurbs, 0.75 for email blurbs.
+
+**Reference:** `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
+
+---
+
+## Output Format
+
 **Ready to generate. Invoke with meeting intelligence or provide B14 block directly.**
 
 **v2.0 Output Format:**
@@ -1062,6 +1081,7 @@ key_focus: Project approach, technical innovation, impact
 - Specificity: X/15
 - Wrapper: X/15
 ```
+
 
 
 

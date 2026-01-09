@@ -179,6 +179,25 @@ If `needs_follow_up_email: true` for **TARGET_MEETING**:
 
 ---
 
+## Directness Validation (2026-01)
+
+**After generating email, scan for hedging anti-patterns:**
+
+| Kill | Example | Fix |
+|------|---------|-----|
+| `just wanted to` | "Just wanted to follow up..." | "Following up on..." |
+| `I think maybe` | "I think maybe we could..." | "We should..." |
+| `if you have time` | "If you have time to review..." | "Please review by [date]" |
+| `no rush` | "No rush on this..." | Name actual timeline or omit |
+| `feel free to` | "Feel free to reach out..." | "Let me know..." |
+| `does that make sense?` | "Does that make sense?" | Assume it does |
+
+**Directness target:** 0.7-0.8 for follow-up emails.
+
+**Reference:** `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
+
+---
+
 ## Quality Gates
 
 **Before classification:**
@@ -196,14 +215,23 @@ If `needs_follow_up_email: true` for **TARGET_MEETING**:
 - [ ] Applying voice transformation
 - [ ] Manifest follow_up_email set to `in_progress`
 
+**After generation (DIRECTNESS CHECK):**
+- [ ] No hedging qualifiers (just, maybe, kind of)
+- [ ] Asks are explicit, not buried
+- [ ] Timelines named when relevant
+- [ ] No permission-seeking phrases
+- [ ] Scanned against hedging-antipatterns.md
+
 **Before reporting:**
 - [ ] TARGET_MEETING classified with reasoning
 - [ ] Email (if any) scored
+- [ ] Directness validation passed
 - [ ] Honest progress reported for this one meeting
 
 ---
 
 *v3.2 | 2025-12-26 | Changed to manifest-based status detection (no more [P] suffix requirement)*
+
 
 
 
