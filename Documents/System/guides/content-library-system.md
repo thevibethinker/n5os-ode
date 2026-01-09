@@ -1,21 +1,18 @@
 ---
 created: 2025-12-02
-last_edited: 2025-12-02
-version: 3.0
+last_edited: 2026-01-09
+version: 4.0
+provenance: content-library-v4-build
 ---
 
-# Content Library v3 — System Guide
+# Content Library v4 — System Guide
 
-System-level documentation for the **unified Content Library v3** used across N5 workflows and the personal knowledge layer.
+System-level documentation for the **Content Library v4** used across N5 workflows.
 
-- **Canonical DB:** `file 'Personal/Knowledge/ContentLibrary/content-library-v3.db'`  
-- **CLI:** `file 'Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py'`  
-- **Architecture Spec:** `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'`
-
-This guide replaces the older split between:
-
-- `file 'Documents/System/guides/content-library-system.md'` (N5 links/snippets only)
-- `file 'Documents/System/guides/content-library-quickstart.md'` (old JSON-based system)
+- **Canonical DB:** `file 'N5/data/content_library.db'`  
+- **Content Storage:** `file 'Knowledge/content-library/'`  
+- **CLI:** `file 'N5/scripts/content_library.py'`  
+- **Capability Doc:** `file 'N5/capabilities/internal/content-library-v4.md'`
 
 ---
 
@@ -23,27 +20,17 @@ This guide replaces the older split between:
 
 ### 1.1 Purpose
 
-Content Library v3 provides a **single source of truth** for:
+Content Library v4 provides a **single source of truth** for:
 
-- Operational handles: links and snippets used in email, follow‑ups, and automations.
-- Knowledge assets: long-form articles, decks, social posts, podcasts, videos, books, papers, frameworks, and quotes.
+- **Operational handles:** Links and snippets used in email, follow-ups, and automations
+- **Knowledge assets:** Articles, decks, social posts, podcasts, videos, books, papers, frameworks, and quotes
 
-The same database powers both:
+### 1.2 Key Features
 
-- **N5 workflows** (email composer, follow‑up generator, meeting intelligence, knowledge workflows).
-- **Personal knowledge workflows** (`Personal/Knowledge/ContentLibrary` ingestion and curation).
-
-### 1.2 Origin
-
-v3 merges two historical systems:
-
-1. **N5 Links & Snippets Library** – `file 'N5/data/content_library.db'`  
-   67 items: calendly links, trial codes, bios, product URLs.
-
-2. **Personal Content Library** – `file 'Personal/Knowledge/ContentLibrary/content-library.db'`  
-   16 items: curated reference articles, decks, social posts, podcasts, etc.
-
-Migration scripts copy both into the new schema and tag each row with `source = 'n5_links' | 'personal_cl' | 'new'`.
+- **Unified storage:** All content in `Knowledge/content-library/`
+- **Auto-ingest:** `save_webpage` automatically triggers ingestion
+- **Semantic search:** Integrated with N5 Memory Client
+- **Streamlined CLI:** Simple commands for search, ingest, sync
 
 ---
 
@@ -51,359 +38,319 @@ Migration scripts copy both into the new schema and tag each row with `source = 
 
 ### 2.1 File Layout
 
-```text
-Personal/Knowledge/ContentLibrary/
-├── content-library-v3.db           # Unified SQLite database (canonical)
-├── content/                        # Stored full-text assets
-│   └── *.md
-└── scripts/
-    ├── content_library_v3.py       # Unified CLI + Python API
-    ├── ingest.py.new               # v3-aware ingest (cutover via helper)
-    ├── enhance.py.new              # v3-aware enhance (cutover via helper)
-    ├── summarize.py.new            # v3-aware summarize (cutover via helper)
-    └── ...
+```
+Knowledge/content-library/
+├── .n5protected           # Protection marker (do not delete)
+├── articles/              # Saved articles from web
+│   └── vrijen/            # V's authored articles
+├── books/                 # Book references
+├── decks/                 # Presentations
+├── frameworks/            # Conceptual frameworks
+├── papers/                # Research papers
+├── personal/              # Personal content
+└── social-posts/          # X/Twitter, LinkedIn posts
+
+N5/data/
+└── content_library.db     # SQLite database (single canonical source)
 
 N5/scripts/
-├── content_library.py.new          # v3-aware N5 wrapper
-├── content_library_db.py.new       # v3-aware N5 DB helper
-├── email_composer.py.new           # updated to use v3
-├── auto_populate_content.py.new    # updated to use v3
-├── email_corrections.py.new        # updated to use v3
-├── b_block_parser.py.new           # updated to use v3 (where applicable)
-└── content_library_v3_cutover.py   # cutover helper (see §7)
+├── content_library.py     # Main CLI
+├── content_ingest.py      # File ingestion script
+└── content_backfill.py    # Bulk sync script
 ```
 
-Old DBs and JSON files remain present until final archive, but **all new work should treat `content-library-v3.db` as canonical.**
+### 2.2 Database Schema
 
-### 2.2 Logical Schema
+```sql
+CREATE TABLE items (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    content_type TEXT NOT NULL,
+    content TEXT,
+    url TEXT,
+    source TEXT,
+    source_url TEXT,
+    source_file_path TEXT,
+    tags TEXT,
+    notes TEXT,
+    created_at TEXT,
+    updated_at TEXT,
+    ingested_at TEXT,
+    deprecated INTEGER DEFAULT 0,
+    expires_at TEXT,
+    version INTEGER DEFAULT 1,
+    last_used_at TEXT,
+    confidence INTEGER DEFAULT 3,
+    has_content INTEGER DEFAULT 0,
+    has_summary INTEGER DEFAULT 0,
+    word_count INTEGER,
+    has_embedding INTEGER DEFAULT 0
+);
+```
 
-See `file 'N5/builds/content-library-v3/CONTENT_LIBRARY_V3_ARCHITECTURE.md'` for the authoritative SQL. Key concepts:
+### 2.3 Content Types
 
-- **`items`** – primary table; each row is a content item.
-  - Identity: `id`, `item_type`, `title`
-  - Content: `url`, `content`, `content_path`, `summary`, `summary_path`, `word_count`
-  - Provenance: `source_type`, `platform`, `author`
-  - Lifecycle: `created_at`, `updated_at`, `deprecated`, `expires_at`, `last_used_at`, `version`
-  - Quality: `confidence`, `has_content`, `has_summary`
-  - Metadata: `notes`, `source`
-
-- **`tags`** – key/value attributes for operational filtering.
-  - Encodes things like `category=trial`, `audience=founders`, `channel=email`, `entity=careerspan`.
-
-- **`topics` / `item_topics`** – controlled vocabulary and junction table.
-  - Used for semantic or thematic grouping (e.g. `AI`, `career`, `onboarding`).
-
-- **`blocks`` / `block_topics` / `knowledge_refs` / `relationships`** – optional tables for rich assets and cross‑system links.
-  - Used primarily by knowledge, documents & media, and meeting workflows.
-
-### 2.3 Handle vs Asset
-
-- **Handles** (links and snippets) focus on fast lookup and lifecycle (`deprecated`, `last_used_at`).
-- **Assets** (articles, decks, etc.) focus on `content_path`, `word_count`, topics, and downstream processing.
-
-Both use the same code paths (`search`, `get`, `add`, `ingest`, `update`, etc.).
+| Type | Count | Description |
+|------|-------|-------------|
+| `link` | 114 | URLs (calendly, demos, resources) |
+| `snippet` | 13 | Reusable text (bios, signatures) |
+| `article` | 10 | Reference articles, blog posts |
+| `social-post` | 1 | X/Twitter posts |
+| `deck` | - | Presentations |
+| `podcast` | - | Podcast episodes |
+| `video` | - | Video content |
+| `book` | - | Book references |
+| `paper` | - | Research papers |
+| `framework` | - | Conceptual frameworks |
+| `quote` | - | Notable quotes |
 
 ---
 
-## 3. CLI Reference (System View)
+## 3. CLI Reference
 
-Entry point (from anywhere):
-
-```bash
-python3 /home/workspace/Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py <command> [options]
-```
-
-### 3.1 Commands
-
-| Command    | Purpose                                  |
-|-----------|-------------------------------------------|
-| `search`  | Find items by text, type, tags, topics    |
-| `get`     | Fetch a single item by ID                 |
-| `add`     | Create a new handle or simple item        |
-| `ingest`  | Download & store full-text assets         |
-| `update`  | Update selected fields on an item         |
-| `deprecate` | Mark an item as deprecated              |
-| `list`    | Lightweight listing for operator use      |
-| `export`  | Export items as JSON or Markdown          |
-| `stats`   | Show counts and distribution              |
-| `lint`    | Run quality checks on items               |
-
-#### 3.1.1 `search`
+### 3.1 Main CLI (`content_library.py`)
 
 ```bash
-python3 .../content_library_v3.py search \
-  --query "trial" \
-  --type link \
-  --tag "category=trial" \
-  --tag "audience=founders" \
-  --limit 20
+python3 N5/scripts/content_library.py <command> [options]
 ```
 
-- Uses SQL joins over `tags` and `topics` as needed.
-- Returns JSON; intended for both human inspection and scripting.
+| Command | Description |
+|---------|-------------|
+| `search` | Search items by type and/or query |
+| `get` | Get item by ID |
+| `stats` | Show statistics |
+| `tags` | List all tags |
+| `list-types` | List content types with counts |
+| `ingest` | Ingest a content file |
+| `sync` | Run backfill to sync all content files |
 
-#### 3.1.2 `get`
+#### Examples
 
 ```bash
-python3 .../content_library_v3.py get trial_code_general
+# List content types with counts
+python3 N5/scripts/content_library.py list-types
+
+# Search for articles
+python3 N5/scripts/content_library.py search --type article
+
+# Search with query
+python3 N5/scripts/content_library.py search --query "recursive language"
+
+# Combined search
+python3 N5/scripts/content_library.py search --type article --query "RLM"
+
+# View statistics
+python3 N5/scripts/content_library.py stats
+
+# Sync files to DB (backfill)
+python3 N5/scripts/content_library.py sync
 ```
 
-- Returns full JSON for the item, including `tags` and `topics` arrays.
-
-#### 3.1.3 `add`
+### 3.2 Ingest CLI (`content_ingest.py`)
 
 ```bash
-python3 .../content_library_v3.py add \
-  --id vrijen_bio_short \
-  --type snippet \
-  --title "Vrijen Bio (short)" \
-  --content "Founder of Careerspan. Builder of N5 OS." \
-  --tag "purpose=bio" \
-  --tag "audience=general" \
-  --tag "entity=vrijen"
+python3 N5/scripts/content_ingest.py <file> [options]
 ```
 
-- Wraps `ContentLibraryV3.add(...)` and writes one row into `items` plus into `tags`/`topics`.
+| Option | Description |
+|--------|-------------|
+| `--type, -t` | Content type (auto-detected if not specified) |
+| `--dry-run, -n` | Show what would happen without making changes |
+| `--move, -m` | Move file to canonical location |
+| `--tags` | Comma-separated tags to add |
+| `--quiet, -q` | Suppress output except errors |
 
-#### 3.1.4 `ingest`
+#### Examples
 
 ```bash
-python3 .../content_library_v3.py ingest \
-  --url "https://example.com/article" \
-  --type article \
-  --title "Example Article" \
-  --source-type discovered \
-  --tag "category=reference" \
-  --topic "career"
+# Ingest an article
+python3 N5/scripts/content_ingest.py /path/to/article.md --type article
+
+# Ingest and move to canonical location
+python3 N5/scripts/content_ingest.py /path/to/article.md --type article --move
+
+# Dry run
+python3 N5/scripts/content_ingest.py /path/to/file.md --dry-run
+
+# Add tags
+python3 N5/scripts/content_ingest.py /path/to/file.md --tags "vrijen-authored,medium"
 ```
-
-- Downloads the URL and stores body text to `content/<id>.md`.
-- Creates an `items` row with `content_path` set and `has_content=1`.
-
-#### 3.1.5 `update` / `deprecate`
-
-```bash
-python3 .../content_library_v3.py update trial_code_general \
-  --url "https://new-url" \
-  --notes "Updated 2025-12-02"
-
-python3 .../content_library_v3.py deprecate old_trial_code
-```
-
-- `update` only allows a safe subset of fields (title/url/content/notes via CLI).
-- `deprecate` flips `deprecated=1` and updates `updated_at`.
-
-#### 3.1.6 `list` / `export` / `stats` / `lint`
-
-```bash
-# List first 50 links
-python3 .../content_library_v3.py list --type link --limit 50
-
-# Export articles as Markdown
-python3 .../content_library_v3.py export --type article --format markdown > /tmp/articles.md
-
-# Stats for dashboards / health checks
-python3 .../content_library_v3.py stats
-
-# Lint for JS shells & missing content files
-python3 .../content_library_v3.py lint
-```
-
-`lint` exits non‑zero if issues exist, making it suitable for CI/maintenance checks.
 
 ---
 
-## 4. Integration Patterns
+## 4. Workflows
 
-### 4.1 N5 Communication Workflows
+### 4.1 Save Article from Web (Automatic)
 
-Typical usage pattern (pseudo‑code):
+The recommended workflow uses the auto-ingest rule:
+
+1. In conversation: `save_webpage https://example.com/article`
+2. File initially saves to `Articles/`
+3. **Auto-ingest rule triggers automatically:**
+   - Runs `python3 N5/scripts/content_ingest.py "<file>" --type article --move`
+   - File moves to `Knowledge/content-library/articles/`
+   - DB record created
+4. Confirmation: "Article ingested to Content Library"
+
+### 4.2 Manual Ingest
+
+For files not captured by auto-ingest:
+
+```bash
+python3 N5/scripts/content_ingest.py /path/to/file.md --type article --move
+```
+
+### 4.3 Bulk Sync
+
+Ensure all files in `Knowledge/content-library/` have DB records:
+
+```bash
+python3 N5/scripts/content_library.py sync
+```
+
+This is idempotent — running multiple times creates no duplicates.
+
+### 4.4 Search and Retrieve
+
+```bash
+# Find all articles about a topic
+python3 N5/scripts/content_library.py search --type article --query "career"
+
+# Get specific item by ID
+python3 N5/scripts/content_library.py get vrijen_bio_medium
+```
+
+---
+
+## 5. Integration Points
+
+### 5.1 Semantic Memory
+
+The `content-library` profile enables semantic search:
 
 ```python
-from N5.scripts.content_library_db import SomeHelper  # v3-aware helper
+from N5.cognition.n5_memory_client import N5MemoryClient
 
-lib = SomeHelper()  # wraps ContentLibraryV3
-
-promised_links = lib.search(tags={"category": "trial", "audience": "founders"})
-trial_link = choose_best(promised_links)  # selection logic lives in caller
+client = N5MemoryClient()
+results = client.search_profile('content-library', 'recursive language', limit=3)
+for r in results:
+    print(r['path'], r['score'])
 ```
 
-Workflows that integrate with the library after v3 migration include:
+### 5.2 Auto-Ingest Rule
 
-- Follow‑up email generation
-- Email composer / corrections pipelines
-- Meeting intelligence / commitments pipelines
-- Voice / transcript enrichment where links are injected into output
+A Zo rule (user rule) triggers after `save_webpage`:
 
-Key patterns:
+> After using save_webpage to save an article to Articles/ or any local path, automatically ingest the saved article into the Content Library by running `python3 N5/scripts/content_ingest.py "<saved_file_path>" --type article --move`
 
-- Use **tags** for operational selectors (`category`, `audience`, `channel`, `entity`).
-- Use **topics** to group assets for knowledge surfacing (e.g. "all articles on career pivots").
+### 5.3 N5 Communication Workflows
 
-### 4.2 Personal Knowledge Workflows
-
-`Personal/Knowledge/ContentLibrary` scripts (after cutover) will:
-
-- Use `content_library_v3.py` as the underlying API.
-- Treat `content-library-v3.db` as canonical.
-- Maintain curated `content/*.md` files as SSOT for rich references.
-
-Patterns include:
-
-- Ingesting reference material via CLI `ingest` or via v3-aware `ingest.py.new`.
-- Enhancing and summarizing via `enhance.py.new` and `summarize.py.new` that operate on blocks and topics.
-
-### 4.3 Topics & Tags in Automations
-
-Recommended conventions (system level):
-
-- **Tags:**
-  - `category`: `trial`, `scheduling`, `website`, `resource`, `framework`, `deck`
-  - `audience`: `founders`, `investors`, `job_seekers`, `managers`, `general`
-  - `entity`: `vrijen`, `careerspan`, `n5`, `zo_computer`
-  - `channel`: `email`, `linkedin`, `docs`, `social`
-  - `status`: `active`, `deprecated`, `experimental`
-- **Topics:**
-  - Reusable themes like `AI`, `career`, `sales`, `onboarding`, `performance_reviews`.
-
-Automations should prefer **tag filters** for precise operational matching and **topics** for broader grouping.
+Content library integrates with:
+- Follow-up email generation (calendly links, trial codes)
+- Email composer (signatures, bios)
+- Meeting intelligence (reference links)
 
 ---
 
-## 5. Best Practices
+## 6. Maintenance
 
-1. **Stable IDs:**
-   - Use descriptive slugs (`trial_code_general`, `vrijen_calendly_general`).
-   - Avoid including dates or channels in IDs unless truly necessary.
+### 6.1 Health Checks
 
-2. **Minimal but Sufficient Tags:**
-   - At minimum: `category`, `audience`, `entity`.
-   - Add `channel` for channel‑specific variants.
+```bash
+# Database integrity
+sqlite3 N5/data/content_library.db "PRAGMA integrity_check;"
 
-3. **Deprecation Instead of Deletion:**
-   - Prefer `deprecate` over deleting rows.
-   - Consumers can decide whether to filter deprecated items.
+# Content type counts
+python3 N5/scripts/content_library.py list-types
 
-4. **Content Storage:**
-   - For heavy assets, always use `ingest` or a v3‑aware helper to ensure `content_path` is valid.
-   - Keep `content/*.md` human‑readable and git‑tracked.
+# Statistics
+python3 N5/scripts/content_library.py stats
+```
 
-5. **X/Twitter & JS-Heavy Sites:**
-   - Never ingest JS fallback templates ("JavaScript is not available" pages).
-   - Store the **real** post text in `content` or inline in `items.content`.
-   - Use `lint` and `file 'N5/scripts/lint_js_shell_tweets.py'` as guardrails.
+### 6.2 Verify File-DB Consistency
 
----
+```bash
+# Count files in storage
+find Knowledge/content-library -name "*.md" | wc -l
 
-## 6. Cutover & Rollback (`content_library_v3_cutover.py`)
+# Count DB records with file paths
+sqlite3 N5/data/content_library.db "SELECT COUNT(*) FROM items WHERE source_file_path IS NOT NULL;"
 
-`file 'N5/scripts/content_library_v3_cutover.py'` is the **only supported way** to promote `.py.new` v3‑aware scripts into place.
+# Run sync to detect/fix orphans
+python3 N5/scripts/content_library.py sync
+```
 
-### 6.1 What It Does
+### 6.3 Backup
 
-- Scans for a fixed set of `.py.new` files in:
-  - `N5/scripts/` (email, content library, auto‑populate, parsers, etc.)
-  - `Personal/Knowledge/ContentLibrary/scripts/` (ingest/enhance/summarize/content_to_knowledge)
-- For each `.py.new` file it finds, constructs:
-  - `new_file` – the `.py.new` file
-  - `target_file` – same path without `.new`
-  - `backup_file` – `target_file` with `.bak` appended
-- Runs `python3 N5/scripts/n5_protect.py check <directory>` to ensure the target directories are not protected.
-- In **dry‑run mode** (default): logs the planned moves and exits.
-- In **execute mode**:
-  - Backs up existing `target_file` to `backup_file` (overwriting any existing `.bak`).
-  - Renames `new_file` → `target_file`.
-
-### 6.2 How to Run (Cutover)
-
-1. **Pre‑checks:**
-   - Ensure git is clean or changes are committed.
-   - Ensure `.py.new` files are present and tested.
-
-2. **Dry‑run:**
-
-   ```bash
-   cd /home/workspace
-   python3 N5/scripts/content_library_v3_cutover.py
-   ```
-
-   - Confirms which files will be affected.
-   - Confirms `n5_protect` allows operations in each directory.
-
-3. **Execute:**
-
-   ```bash
-   python3 N5/scripts/content_library_v3_cutover.py --execute
-   ```
-
-   - Creates `.bak` backups and promotes `.py.new` files.
-
-4. **Post‑cutover validation:**
-
-   At minimum:
-
-   ```bash
-   # Sanity checks on v3 itself
-   python3 Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py stats
-   python3 Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py lint || true
-   python3 Personal/Knowledge/ContentLibrary/scripts/content_library_v3.py search --query test || true
-   ```
-
-   And re‑run a small set of N5 workflows that depend on content library (e.g., a test follow‑up email run) to confirm behavior.
-
-### 6.3 Rollback Plan
-
-`content_library_v3_cutover.py` does **not** have a `--rollback` flag; rollback is manual and straightforward:
-
-1. For each affected script, restore from `.bak`:
-
-   ```bash
-   # Example
-   mv /home/workspace/N5/scripts/content_library.py.bak \
-      /home/workspace/N5/scripts/content_library.py
-
-   mv /home/workspace/Personal/Knowledge/ContentLibrary/scripts/ingest.py.bak \
-      /home/workspace/Personal/Knowledge/ContentLibrary/scripts/ingest.py
-   ```
-
-2. Remove any promoted v3 versions if needed (or simply rely on git to reset to a known commit).
-3. The database migration is **copy‑based**, so old DBs remain intact; switching scripts back to old code reverts behavior.
-
-`n5_protect` ensures that protected directories cannot be modified without an explicit override, providing an additional layer of safety.
+```bash
+cp N5/data/content_library.db N5/data/backups/content_library_$(date +%Y%m%d).db
+```
 
 ---
 
-## 7. Tag & Topic Conventions (System-Level)
+## 7. Best Practices
 
-For consistency across workflows, adhere to the following conventions when adding or inferring tags:
+### 7.1 Content Organization
 
-- **category:** `trial`, `scheduling`, `website`, `resource`, `framework`, `deck`, `reference`
-- **audience:** `founders`, `investors`, `job_seekers`, `managers`, `general`
-- **entity:** `vrijen`, `careerspan`, `n5`, `zo_computer`
-- **channel:** `email`, `linkedin`, `docs`, `social`
-- **status:** `active`, `deprecated`, `experimental`
+- Articles go in `Knowledge/content-library/articles/`
+- V's authored content goes in `Knowledge/content-library/articles/vrijen/` with `vrijen-authored` tag
+- Use descriptive filenames (auto-generated from URL is fine)
 
-Topics should be curated over time (e.g. `AI`, `career`, `sales`, `onboarding`, `performance_reviews`, `burnout`, etc.) and reused rather than duplicated with near‑synonyms.
+### 7.2 Tags Convention
 
----
+| Tag | Use Case |
+|-----|----------|
+| `vrijen-authored` | Content written by V |
+| `careerspan` | Careerspan-related content |
+| `reference` | Reference material |
+| `archived` | Older content kept for reference |
 
-## 8. Migration & History
+### 7.3 ID Conventions
 
-- **Pre‑v3 (JSON):**
-  - `N5/prefs/communication/content-library.json` (links/snippets)
-  - `Personal/Knowledge/ContentLibrary/content-library.json` (personal references)
-
-- **v2 (SQLite split):**
-  - `N5/data/content_library.db` – N5 links & snippets only.
-  - `Personal/Knowledge/ContentLibrary/content-library.db` – personal reference DB.
-
-- **v3 (this system):**
-  - `Personal/Knowledge/ContentLibrary/content-library-v3.db` – unified superset schema.
-  - Migration scripts copy from both v2 DBs into v3 and mark `source` fields accordingly.
-
-Old DBs and JSON files are kept as migration artifacts and can be archived once v3 is fully validated and all consumers point exclusively at the new DB.
+- Use descriptive slugs: `trial_code_general`, `vrijen_calendly_founders`
+- Include entity prefix when relevant: `careerspan_deck_v2`
+- Avoid dates in IDs unless truly necessary
 
 ---
 
-*Content Library v3 System Guide · 2025-12-02*
+## 8. Troubleshooting
+
+### File Not Found After Ingest
+
+```bash
+# Check if file was moved
+sqlite3 N5/data/content_library.db "SELECT source_file_path FROM items WHERE title LIKE '%keyword%';"
+```
+
+### Duplicate Detection
+
+```bash
+# Check for potential duplicates by title
+sqlite3 N5/data/content_library.db "SELECT title, COUNT(*) as cnt FROM items GROUP BY title HAVING cnt > 1;"
+```
+
+### Reset Database (⚠️ Destructive)
+
+```bash
+# Only if truly needed - backs up first
+cp N5/data/content_library.db N5/data/content_library.db.backup
+rm N5/data/content_library.db
+python3 N5/scripts/migrations/content_library_v4_schema.py  # Recreate schema
+python3 N5/scripts/content_library.py sync  # Re-import all files
+```
+
+---
+
+## 9. Migration History
+
+| Version | Date | Key Changes |
+|---------|------|-------------|
+| v1 | Pre-2025 | JSON-based system |
+| v2 | 2025-11 | Split SQLite DBs |
+| v3 | 2025-12-02 | Unified DB, complex cutover |
+| **v4** | **2026-01-09** | Simplified: single DB, single storage location, auto-ingest |
+
+---
+
+*Content Library v4 System Guide · 2026-01-09*
 

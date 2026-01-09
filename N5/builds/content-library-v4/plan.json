@@ -1,0 +1,223 @@
+{
+  "name": "Content Library v4 Redesign",
+  "description": "Complete redesign of the Content Library system. Consolidates fragmented storage, fixes broken pipelines, unifies the schema, and connects Zo's save_webpage to N5's knowledge layer.",
+  "objective": "A single, coherent system where: (1) All content lives in one canonical location, (2) All content is tracked in one database, (3) Semantic memory can retrieve content, (4) save_webpage automatically ingests, (5) Documentation matches reality.",
+  "context": {
+    "audit_file": "/home/.z/workspaces/con_5tYCDyhaRiYR0EGI/content-library-system-audit.md",
+    "current_db": "N5/data/content_library.db",
+    "current_script": "N5/scripts/content_library.py",
+    "orphaned_articles": "Articles/",
+    "orphaned_knowledge": "Knowledge/content-library/articles/",
+    "capability_doc": "N5/capabilities/internal/content-library-v3.md",
+    "system_guide": "Documents/System/guides/content-library-system.md",
+    "semantic_memory": "N5/cognition/n5_memory_client.py"
+  },
+  "key_decisions": [
+    "Canonical storage location: Knowledge/content-library/ (not Personal/Knowledge/ContentLibrary/ or Articles/)",
+    "Single database: N5/data/content_library.db (upgrade in place, don't create v3.db)",
+    "Content types: link, snippet, article, deck, social-post, podcast, video, book, paper, framework, quote",
+    "Auto-ingest: New articles from save_webpage should automatically enter the system",
+    "Semantic profiles: Update n5_memory_client.py to include correct paths",
+    "Archive failed v3: Move N5/builds/content-library-v3/ to quarantine"
+  ],
+  "relevant_files": [
+    "N5/data/content_library.db",
+    "N5/scripts/content_library.py",
+    "N5/cognition/n5_memory_client.py",
+    "N5/capabilities/internal/content-library-v3.md",
+    "Documents/System/guides/content-library-system.md",
+    "Articles/",
+    "Knowledge/content-library/"
+  ],
+  "workers": [
+    {
+      "id": "worker_schema",
+      "component": "database_schema",
+      "wave": 1,
+      "description": "Migrate N5/data/content_library.db schema: (1) Rename 'type' column to 'content_type' (better semantics), (2) Remove CHECK constraint to allow new types, (3) Add new columns: source_url, source_file_path, ingested_at, word_count, has_embedding. Preserve all existing data.",
+      "dependencies": [],
+      "estimated_hours": 1,
+      "acceptance_criteria": [
+        "Existing 127 items preserved with data intact",
+        "New content_type column allows: link, snippet, article, deck, social-post, podcast, video, book, paper, framework, quote",
+        "Schema documented in migration script header"
+      ],
+      "output_path": "N5/scripts/migrations/content_library_v4_schema.py",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:18:19.421737+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_canonical_paths",
+      "component": "filesystem_consolidation",
+      "wave": 1,
+      "description": "Consolidate content storage: (1) Move Articles/* to Knowledge/content-library/articles/, (2) Ensure Knowledge/content-library/ has correct subdirectories (articles/, articles/vrijen/, decks/, social-posts/, etc.), (3) Create .n5protected in Knowledge/content-library/. Document the moves in a manifest.",
+      "dependencies": [],
+      "estimated_hours": 1,
+      "acceptance_criteria": [
+        "Articles/ directory empty or removed",
+        "All articles now in Knowledge/content-library/articles/",
+        "V's Medium articles in Knowledge/content-library/articles/vrijen/",
+        ".n5protected exists at Knowledge/content-library/",
+        "Move manifest created at N5/builds/content-library-v4/move_manifest.json"
+      ],
+      "output_path": "N5/builds/content-library-v4/move_manifest.json",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:19:01.828991+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_ingest_script",
+      "component": "ingest_pipeline",
+      "wave": 2,
+      "description": "Create N5/scripts/content_ingest.py that: (1) Takes a file path (e.g., new article markdown), (2) Extracts metadata from frontmatter if present, (3) Auto-generates title from filename if needed, (4) Creates DB record with correct content_type, (5) Optionally moves file to canonical location if not already there. Support --dry-run flag.",
+      "dependencies": [
+        "worker_schema",
+        "worker_canonical_paths"
+      ],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "Script can ingest an article: python3 N5/scripts/content_ingest.py /path/to/article.md --type article",
+        "Script auto-detects type from file location if not specified",
+        "Script has --dry-run that shows what would happen",
+        "Script has --move flag to relocate file to canonical path",
+        "Script logs to N5/runtime/runs/content-ingest/"
+      ],
+      "output_path": "N5/scripts/content_ingest.py",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:41:59.266107+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_backfill",
+      "component": "data_migration",
+      "wave": 2,
+      "description": "Create and run a backfill script that: (1) Scans Knowledge/content-library/ for all content files, (2) Checks if each file has a DB record, (3) Creates missing records with appropriate content_type, (4) Reports on what was backfilled. This should be idempotent.",
+      "dependencies": [
+        "worker_schema",
+        "worker_canonical_paths",
+        "worker_ingest_script"
+      ],
+      "estimated_hours": 1,
+      "acceptance_criteria": [
+        "All existing articles have DB records",
+        "All V's Medium articles have DB records with tag 'vrijen-authored'",
+        "Backfill report shows counts by content_type",
+        "Running twice produces no duplicates"
+      ],
+      "output_path": "N5/scripts/content_backfill.py",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:43:11.673161+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_cli_upgrade",
+      "component": "cli_interface",
+      "wave": 2,
+      "description": "Upgrade N5/scripts/content_library.py to: (1) Support all new content_types, (2) Add 'ingest' subcommand that calls content_ingest.py, (3) Add 'sync' subcommand that calls content_backfill.py, (4) Update 'search' to filter by content_type, (5) Add 'list-types' subcommand showing counts per type.",
+      "dependencies": [
+        "worker_schema",
+        "worker_ingest_script"
+      ],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "python3 N5/scripts/content_library.py list-types shows all content_type counts",
+        "python3 N5/scripts/content_library.py search --type article works",
+        "python3 N5/scripts/content_library.py ingest /path/to/file.md works",
+        "python3 N5/scripts/content_library.py sync runs backfill",
+        "Existing quick-add, add, stats commands still work"
+      ],
+      "output_path": "N5/scripts/content_library.py",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:46:03.165724+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_semantic_memory",
+      "component": "memory_integration",
+      "wave": 3,
+      "description": "Update N5/cognition/n5_memory_client.py: (1) Fix content-library profile to point to Knowledge/content-library/, (2) Remove references to non-existent Personal/Knowledge/ContentLibrary/, (3) Add Articles/ as fallback path during transition period, (4) Test that semantic search for content works.",
+      "dependencies": [
+        "worker_canonical_paths"
+      ],
+      "estimated_hours": 1,
+      "acceptance_criteria": [
+        "content-library profile points to Knowledge/content-library/",
+        "Semantic search for 'RLM' or 'recursive language' finds the article",
+        "No references to non-existent paths"
+      ],
+      "output_path": "N5/cognition/n5_memory_client.py",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:56:21.824080+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_auto_ingest_hook",
+      "component": "automation",
+      "wave": 3,
+      "description": "Create a mechanism so that when save_webpage writes to Articles/ (Zo's default), the content is automatically ingested into the system. Options: (1) Create a Zo rule that triggers ingest after save_webpage, (2) Create a watcher script, (3) Modify save_webpage default path. Recommend option 1 (Zo rule).",
+      "dependencies": [
+        "worker_ingest_script",
+        "worker_canonical_paths"
+      ],
+      "estimated_hours": 1,
+      "acceptance_criteria": [
+        "After save_webpage, content appears in DB within same conversation",
+        "File is moved to canonical location OR a symlink is created",
+        "No manual intervention required"
+      ],
+      "output_path": "N5/rules/auto_ingest_articles.md",
+      "status": "completed",
+      "completed_at": "2026-01-09T07:56:43.818733+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_docs_update",
+      "component": "documentation",
+      "wave": 4,
+      "description": "Update all documentation to reflect reality: (1) Rewrite N5/capabilities/internal/content-library-v3.md \u2192 rename to content-library-v4.md, (2) Update Documents/System/guides/content-library-system.md, (3) Archive old v3 build docs to quarantine. All paths, commands, and schema descriptions must match actual system.",
+      "dependencies": [
+        "worker_schema",
+        "worker_cli_upgrade",
+        "worker_semantic_memory"
+      ],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "Capability doc renamed to content-library-v4.md with correct paths",
+        "System guide updated with correct CLI commands",
+        "Old v3 build archived to N5/quarantine/deprecated-content-library/",
+        "No documentation references non-existent paths"
+      ],
+      "output_path": "N5/capabilities/internal/content-library-v4.md",
+      "status": "completed",
+      "completed_at": "2026-01-09T08:20:55.573959+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_cleanup",
+      "component": "cleanup",
+      "wave": 4,
+      "description": "Final cleanup: (1) Remove empty Articles/ directory if all content moved, (2) Archive N5/builds/content-library-v3/ to quarantine, (3) Remove deprecated scripts from quarantine that are no longer needed, (4) Run full system verification.",
+      "dependencies": [
+        "worker_backfill",
+        "worker_docs_update",
+        "worker_auto_ingest_hook"
+      ],
+      "estimated_hours": 1,
+      "acceptance_criteria": [
+        "No orphaned content files outside Knowledge/content-library/",
+        "Old v3 build in quarantine",
+        "System verification passes: all articles in DB, semantic memory works, CLI works"
+      ],
+      "output_path": "N5/builds/content-library-v4/verification_report.md",
+      "status": "completed",
+      "completed_at": "2026-01-09T08:23:40.162210+00:00",
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "content-library-v4",
+    "created_at": "2026-01-09T07:12:41.269182+00:00",
+    "status": "active"
+  }
+}
