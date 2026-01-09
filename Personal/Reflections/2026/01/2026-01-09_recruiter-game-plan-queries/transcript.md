@@ -1,10 +1,9 @@
 ---
 created: 2026-01-09
-source: reflections in response to ilse's queries about game plan around recruiters (Google Drive)
-duration: null
+source: "reflections in response to ilse's queries about game plan around recruiters (Google Drive)"
+duration: 
 provenance: con_OYys6PCWmGnEhbmU
 ---
-
 # Transcript: Recruiter Game Plan Queries
 
 [Speaker 1]

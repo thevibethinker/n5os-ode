@@ -33,6 +33,7 @@ For each potential idea, classify as:
 - **THRESHOLD**: If no truly provocative or original ideas exist, DO NOT generate any output. An empty response is a success signal.
 - **CRINGE FILTER**: Avoid shallow AI-platitudes. If the idea isn't truly novel or surprising in V's worldview, skip it.
 - **PRINCIPLE-GROUNDED**: Reasoning must explain WHY something is true IN GENERAL, not just restate the specific anecdote.
+- **DOMAIN EXPANSION**: The listed domains are V's known intellectual territories, but **do not constrain capture to them**. If a genuinely provocative, counterintuitive, or original idea emerges in ANY domain — even one not listed — capture it and mark as `emerging`. New domains reveal themselves through what gets captured. Cast a wide net; categorization comes after capture.
 
 ## Output Format
 
@@ -43,7 +44,7 @@ For each provocation, use this EXACT structure:
 
 **Speaker**: V | [Person's name]
 **Classification**: V_POSITION | V_HYPOTHESIS | EXTERNAL_WISDOM
-**Domain**: hiring-market | careerspan | ai-automation | founder | worldview | epistemology
+**Domain**: hiring-market | careerspan | ai-automation | founder | worldview | epistemology | emerging
 
 **The Spark**:
 What was said or implied that triggered this thought? (Direct quote or paraphrase from transcript)
@@ -107,3 +108,4 @@ Applies when the evaluator is human and decision-making is intuition-driven. Bre
 ---
 
 Generate B32 now.
+

@@ -10,8 +10,9 @@ Stage 2: LLM correlation (runs on Stage 1 passes only)
   - Uses position_matcher for semantic similarity
   - Threshold: score >= 0.7 triggers alert
 
-Design: Expensive gate pattern - we'd rather miss some good tweets
-than spam V with low-relevance alerts.
+Design: WIDE NET pattern - we want high capture rate.
+Domains emerge from what we capture, not the other way around.
+When in doubt, let it through to Stage 2.
 """
 
 import sys
@@ -35,35 +36,86 @@ ET = pytz.timezone('America/New_York')
 
 # Stage 1 configuration
 STAGE1_KEYWORDS = {
-    # HIGH SIGNAL - Career/Hiring (Careerspan core)
+    # ==========================================================================
+    # DOMAIN: Hiring & Talent (Careerspan core)
+    # ==========================================================================
     'hiring', 'talent', 'recruiting', 'recruiter', 'candidates', 'sourcing',
     'job market', 'labor market', 'workforce', 'employer', 'employee',
     'talent acquisition', 'headhunter', 'applicant', 'job seeker',
     'offer letter', 'compensation', 'salary', 'equity',
+    'interview', 'resume', 'application', 'candidate experience',
+    'inbound', 'outbound recruiting', 'ats', 'hiring manager',
     
-    # HIGH SIGNAL - Future of Work
+    # ==========================================================================
+    # DOMAIN: Future of Work
+    # ==========================================================================
     'future of work', 'remote work', 'hybrid', 'return to office', 'rto',
     'work from home', 'wfh', 'distributed team', 'async',
     'four day week', '4 day week', 'burnout', 'quiet quitting',
+    'workplace', 'office culture', 'flexibility',
     
-    # HIGH SIGNAL - AI + Work intersection
+    # ==========================================================================
+    # DOMAIN: AI & Automation Philosophy
+    # ==========================================================================
     'ai', 'artificial intelligence', 'llm', 'gpt', 'claude', 'automation',
     'machine learning', 'agents', 'agentic', 'copilot',
     'ai replacing', 'ai jobs', 'ai hiring', 'ai recruiting',
+    'human in the loop', 'augmentation', 'ai ethics', 'alignment',
+    'prompt', 'context window', 'hallucination', 'rag',
+    'orchestration', 'polyorchestrator', 'ai workflow',
     
-    # HIGH SIGNAL - Founder/Startup
+    # ==========================================================================
+    # DOMAIN: Epistemology & Knowledge
+    # ==========================================================================
+    'epistemology', 'knowledge', 'truth', 'information', 'signal', 'noise',
+    'first principles', 'mental model', 'framework', 'abstraction',
+    'reasoning', 'thinking', 'cognition', 'metacognition',
+    'understanding', 'learning', 'expertise', 'mastery',
+    'printing press', 'paradigm shift', 'information revolution',
+    
+    # ==========================================================================
+    # DOMAIN: Founder/Startup Journey
+    # ==========================================================================
     'founder', 'startup', 'entrepreneur', 'building', 'shipping',
     'product', 'saas', 'b2b', 'pmf', 'product market fit',
-    'seed', 'series a', 'fundraising', 'investor',
+    'seed', 'series a', 'fundraising', 'investor', 'vc', 'venture',
+    'bootstrap', 'revenue', 'arr', 'mrr', 'churn',
+    'pivot', 'iteration', 'mvp', 'launch', 'traction',
+    'founder mode', 'zero to one', 'moonshot',
     
-    # MEDIUM SIGNAL - Business/Strategy
-    'strategy', 'growth', 'revenue', 'customers', 'market',
+    # ==========================================================================
+    # DOMAIN: Worldview & Philosophy
+    # ==========================================================================
+    'integrity', 'character', 'values', 'ethics', 'trust',
+    'authenticity', 'honesty', 'transparency', 'accountability',
+    'growth mindset', 'resilience', 'grit', 'persistence',
+    'risk', 'uncertainty', 'optionality', 'asymmetric',
+    'compounding', 'leverage', 'moat', 'defensibility',
+    
+    # ==========================================================================
+    # DOMAIN: Strategy & Business
+    # ==========================================================================
+    'strategy', 'growth', 'customers', 'market',
     'scale', 'scaling', 'org design', 'culture',
+    'go to market', 'gtm', 'distribution', 'network effects',
+    'platform', 'marketplace', 'aggregation', 'bundling',
     
-    # MEDIUM SIGNAL - Career Development
-    'career', 'job', 'role', 'position', 'interview', 'resume',
+    # ==========================================================================
+    # DOMAIN: Personal Development & Career
+    # ==========================================================================
+    'career', 'job', 'role', 'position',
     'leadership', 'management', 'team', 'promotion', 'layoff',
-    'career change', 'career advice', 'mentorship',
+    'career change', 'career advice', 'mentorship', 'coaching',
+    'skill', 'upskill', 'reskill', 'learning',
+    'personal brand', 'reputation', 'credibility',
+    
+    # ==========================================================================
+    # DOMAIN: Technology & Innovation
+    # ==========================================================================
+    'technology', 'innovation', 'disruption', 'transformation',
+    'digital', 'software', 'infrastructure', 'architecture',
+    'data', 'analytics', 'insights', 'metrics',
+    'api', 'integration', 'automation', 'workflow',
 }
 
 STAGE1_MIN_LENGTH = 50
@@ -389,6 +441,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
