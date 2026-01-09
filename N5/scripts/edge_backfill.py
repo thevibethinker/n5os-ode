@@ -59,8 +59,8 @@ def find_meetings_for_period(period: str) -> List[Path]:
     """Find meetings for a given period (e.g., 'Q4-2025', '2025-12', 'all')."""
     meetings = []
     
-    # Find all Week-of directories
-    week_dirs = list(MEETINGS_ROOT.glob("Week-of-*"))
+    # Find all Week-of directories and sort them DESCENDING for LIFO
+    week_dirs = sorted(list(MEETINGS_ROOT.glob("Week-of-*")), reverse=True)
     
     for week_dir in week_dirs:
         # Extract date from week directory name
@@ -95,14 +95,18 @@ def find_meetings_for_period(period: str) -> List[Path]:
                 continue
         
         # Find meeting directories within week
+        week_meetings = []
         for meeting_dir in week_dir.iterdir():
             if meeting_dir.is_dir():
                 # Check if it has B01 (required for extraction)
                 b01_file = meeting_dir / "B01_DETAILED_RECAP.md"
                 if b01_file.exists():
-                    meetings.append(meeting_dir)
+                    week_meetings.append(meeting_dir)
+        
+        # Sort meetings within the week descending (newest first)
+        meetings.extend(sorted(week_meetings, reverse=True))
     
-    return sorted(meetings, reverse=True)
+    return meetings
 
 
 def meeting_to_id(meeting_path: Path) -> str:
@@ -392,6 +396,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

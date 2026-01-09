@@ -1,11 +1,14 @@
 ---
 created: 2026-01-09
 source: transcript.md
-blocks_generated: [R03, R04, R05, RIX]
+blocks_generated:
+  - R03
+  - R04
+  - R05
+  - RIX
 edges_created: 4
 provenance: process-reflection-framework-v3
 ---
-
 # Reflection Analysis: Recruiter Game Plan Queries
 
 **Date:** 2026-01-09 | **Word Count:** ~850

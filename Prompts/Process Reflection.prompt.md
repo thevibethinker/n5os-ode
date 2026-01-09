@@ -1,10 +1,14 @@
 ---
 description: Master orchestrator for processing reflections into structured R-blocks with memory integration
-tags: [reflection, orchestrator, blocks, memory, edges]
+tags:
+  - reflection
+  - orchestrator
+  - blocks
+  - memory
+  - edges
 tool: true
-version: 3.0
+version: 3
 ---
-
 # Process Reflection — Master Orchestrator
 
 **Purpose:** Transform raw reflection input (text or audio) into structured intelligence blocks (R01-R09), always run integration analysis (RIX), and file to canonical location with knowledge graph edges.
