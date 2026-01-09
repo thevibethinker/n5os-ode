@@ -157,8 +157,63 @@ This system teaches LLMs V's authentic voice through **transformation pairs** ra
 
 ---
 
+## DIRECTNESS CALIBRATION
+
+**Core Evolution (2026-01):** V wants more succinct, direct, non-hedging communication. This isn't "be blunt" — it's "stop wasting words when directness serves everyone better."
+
+### The Directness Spectrum
+
+| Level | Description | Use When |
+|-------|-------------|----------|
+| 0.5-0.6 | Diplomatic | Bad news, senior execs, delicate situations |
+| 0.7-0.8 | **Default target** | Most emails, follow-ups, requests |
+| 0.85+ | High directness | Team comms, close relationships, X/social |
+
+### Hedging Kill List (Top Offenders)
+
+These phrases add nothing. Cut them:
+
+- `just` ("just wanted to...") → Delete
+- `I think` (when you know) → Assert directly
+- `maybe` / `perhaps` → Make the recommendation
+- `kind of` / `sort of` → Be specific
+- `no rush` / `whenever you have time` → Name the timeline or stay silent
+- `feel free to` → Make the ask directly
+- `I was wondering if` → Ask the question
+
+### Directness Transformation Pattern
+
+**Before (hedging):**
+> Hey! Just wanted to quickly check in to see if you might have a few minutes sometime in the next week or so to potentially chat about the project we discussed? No rush at all, but it would be great to connect when you have a chance.
+
+**After (direct):**
+> Can we do 20 minutes Thursday to discuss the project?
+
+**What changed:**
+- Killed qualifiers ("just", "quickly", "potentially", "might")
+- Named the ask (20 minutes)
+- Proposed specific time (Thursday)
+- 54 words → 11 words
+
+### Warmth Without Hedging
+
+Directness ≠ coldness. V's warmth comes from:
+- **Specificity** ("loved your take on the pricing model")
+- **Genuine interest** (asking real questions, not performative ones)
+- **Respect for time** (getting to the point IS respectful)
+
+NOT from:
+- Softening language
+- Excessive qualifiers
+- Permission-seeking phrases
+
+**Reference:** Full hedging antipatterns in `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
+
+---
+
 ## ANTI-PATTERNS (Never Use)
 
+### Voice Anti-Patterns
 ❌ Single-sentence paragraphs for LinkedIn effect  
 ❌ Emoji in professional email  
 ❌ Performative vulnerability  
@@ -167,6 +222,15 @@ This system teaches LLMs V's authentic voice through **transformation pairs** ra
 ❌ Desperate or pushy language  
 ❌ Generic flattery  
 ❌ Excessive line breaks
+
+### Hedging Anti-Patterns (NEW)
+❌ `just wanted to` — Delete "just", make the point  
+❌ `I think maybe` — Pick one or neither  
+❌ `if you have time` — Propose a time or don't  
+❌ `no rush` — There usually is; be honest  
+❌ `feel free to ignore` — Why are you sending it?  
+❌ `does that make sense?` — Assume it does  
+❌ `sorry to bother you` — Don't apologize for existing
 
 ---
 
@@ -187,14 +251,26 @@ Now transform this style-free content into V's voice:
 ## VALIDATION CHECKLIST
 
 Before sending output, verify:
+
+### Voice Quality
 - [ ] Opens with warmth or rapport (not cold)
 - [ ] Uses specific details for credibility
-- [ ] Reduces pressure on recipient
 - [ ] Includes natural transitions
 - [ ] Has personality without being performative
 - [ ] Flows naturally (not choppy)
-- [ ] Avoids all anti-patterns
 - [ ] Sounds like something V would actually write
+
+### Directness Check (NEW)
+- [ ] No hedging qualifiers (`just`, `maybe`, `kind of`)
+- [ ] Asks are explicit, not buried
+- [ ] Timelines named when relevant (not "whenever")
+- [ ] No permission-seeking phrases
+- [ ] Word count justified (no filler)
+
+### Anti-Pattern Scan
+- [ ] No voice anti-patterns
+- [ ] No hedging anti-patterns
+- [ ] Directness level appropriate for context (0.7-0.8 default)
 
 ---
 
@@ -211,4 +287,6 @@ Before sending output, verify:
 - Transformation pair library: `file 'N5/prefs/communication/transformation-pairs-library.md'`
 - Social media voice (separate system): `file 'N5/prefs/communication/social-media-voice.md'`
 - Voice routing rules: `file 'N5/prefs/communication/voice-routing-rules.md'`
+
+
 

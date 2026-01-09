@@ -36,6 +36,10 @@ groups:
     description: "Content creation, writing, polished communication"
     files:
       - "N5/prefs/communication/patterns/patterns-index.md"
+      - "N5/prefs/communication/voice-transformation-system.md"
+      - "N5/prefs/communication/style-guides/hedging-antipatterns.md"
+      - "N5/prefs/communication/style-guides/directness-calibration.md"
+      - "N5/prefs/communication/style-guides/succinctness-pairs.md"
       
   research:
     description: "Deep dive, analysis, web research"
@@ -59,6 +63,7 @@ groups:
       
 # PRINCIPLES CONFIG
 principles_dir: "N5/prefs/principles"
+
 
 
 

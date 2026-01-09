@@ -229,6 +229,26 @@ Before generating, answer these:
 
 ---
 
+## DIRECTNESS VALIDATION (2026-01)
+
+**After generating intro, scan for hedging anti-patterns:**
+
+| Kill | Example | Fix |
+|------|---------|-----|
+| `just wanted to` | "Just wanted to connect you..." | "Connecting you with..." |
+| `if you have time` | "If you have time to chat..." | "Can we do 20 min Thursday?" |
+| `no rush` | "No rush on this..." | Name timeline or omit |
+| `feel free to` | "Feel free to reach out..." | "Let me know..." |
+| `I was wondering if` | "I was wondering if you might..." | "Can you...?" |
+
+**Directness target:** 0.75 for warm intros (balances warmth with clarity).
+
+**Run validation:** `python3 N5/scripts/hedging_check.py --file INTRO.md`
+
+**Reference:** `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
+
+---
+
 ## OUTPUT FORMAT
 
 ```markdown
@@ -283,12 +303,15 @@ When invoked:
 - Does the tone match the thrust?
 - Does it sound like V (not AI)?
 - Is there a specific context reference from the connector conversation?
+- **No hedging qualifiers (just, maybe, kind of)?**
+- **Ask is explicit, not buried?**
 
 If any answer is "no," revise.
 
 ---
 
 *This prompt generates connector-addressed warm intros using V's crisp articulation framework.*
+
 
 
 
