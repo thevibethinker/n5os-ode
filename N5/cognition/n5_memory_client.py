@@ -76,7 +76,6 @@ class N5MemoryClient:
             "content-library": {
                 "path_prefixes": [
                     "/home/workspace/Knowledge/content-library/",
-                    "/home/workspace/Personal/Knowledge/ContentLibrary/",
                 ]
             },
             "meetings": {
@@ -1055,6 +1054,7 @@ class N5MemoryClient:
         if row and row[0] == current_hash:
             return False
         return True
+
 
 
 

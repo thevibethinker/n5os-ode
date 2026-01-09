@@ -7,8 +7,8 @@ tags:
   - cleanup
   - conversation
 created: 2025-10-15
-last_edited: 2025-12-26
-version: 2.0
+last_edited: 2026-01-09
+version: 2.1
 ---
 
 # Close Conversation
@@ -84,9 +84,28 @@ set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")
 
 **Tier 3 Only:**
 - Enhance AAR with conversation context
-- Check: Did this create/modify N5 capabilities?
+- **Capability Graduation:** If build is complete, run graduation workflow (see below)
 - Extract lessons worth logging
 - Verify build workspace is complete
+
+### Capability Graduation (Tier 3 builds)
+
+```bash
+# Check if build qualifies
+python3 N5/scripts/capability_graduation.py check --build-slug <slug>
+
+# If eligible, generate scaffold
+python3 N5/scripts/capability_graduation.py graduate --build-slug <slug> --convo-id {CONVO_ID}
+```
+
+Then:
+1. Read the generated scaffold
+2. Complete all `[LLM: ...]` sections with real content from PLAN.md and conversation
+3. Remove the "Build Context" section
+4. Embed in semantic memory:
+   ```bash
+   python3 N5/scripts/capability_graduation.py embed --capability-path <path> --update-index
+   ```
 
 ### Step 4: Final Checks
 
@@ -115,4 +134,5 @@ End with:
 
 - **v2.0** (2025-12-26): Librarian now owns semantic close work
 - **v1.0** (2025-10-15): Initial tiered system
+
 

@@ -1,8 +1,8 @@
 ---
 created: 2025-12-18
-last_edited: 2025-12-26
-version: 3.1
-provenance: con_thiVbfdLjmmBE7ol
+last_edited: 2026-01-09
+version: 3.2
+provenance: con_JS1OqPU9pbYCCCjI
 ---
 
 # Conversation-End System v3.1
@@ -60,6 +60,7 @@ Tiered system that defaults to quick closure and escalates based on conversation
 | `conversation_end_standard.py` | Tier 2 execution |
 | `conversation_end_full.py` | Tier 3 execution |
 | `conversation_end_analyzer.py` | File analysis (shared) |
+| `capability_graduation.py` | Build → Capability graduation |
 
 ## What Each Tier Does
 
@@ -100,8 +101,31 @@ Tiered system that defaults to quick closure and escalates based on conversation
 - All Tier 2 Librarian steps, plus:
 10. Full AAR enhancement with conversation context
 11. Lesson extraction (if debug session)
-12. Capability registry check
+12. **Capability Graduation** (see below)
 13. Build STATUS.md verification
+
+### Capability Graduation (Tier 3 Only)
+
+When a build is complete, graduate it to the capability registry:
+
+```bash
+# Step 1: Check eligibility
+python3 N5/scripts/capability_graduation.py check --build-slug <slug>
+
+# Step 2: If eligible, generate scaffold
+python3 N5/scripts/capability_graduation.py graduate --build-slug <slug> --convo-id <convo-id>
+```
+
+**Librarian then:**
+1. Read the generated scaffold at `N5/capabilities/<category>/<slug>.md`
+2. Complete all `[LLM: ...]` sections using PLAN.md and conversation context
+3. Remove the "Build Context" section at the bottom
+4. Embed in semantic memory:
+   ```bash
+   python3 N5/scripts/capability_graduation.py embed --capability-path <path> --update-index
+   ```
+
+**Exclusions:** One-off builds (meeting-specific, mg2-*, con_*) are automatically excluded.
 
 ## Output Formats
 
@@ -138,5 +162,6 @@ python3 N5/scripts/conversation_end_full.py --convo-id <id>
 - `conversation_end_schema.md` (deleted)
 
 The old `conversation-end.md` will be archived after validation period.
+
 
 
