@@ -1,0 +1,64 @@
+{
+  "name": "Open Letters Series - Resume Industrial Complex",
+  "description": "Four open letters exposing the broken hiring system, addressed to each stakeholder",
+  "objective": "Establish V's intellectual priority; create canonical record; build toward Careerspan as the answer",
+  "key_decisions": [
+    "Format: Open letters to stakeholders, not essays",
+    "Order: Founders \u2192 Candidates \u2192 Talent Pros \u2192 Vendors",
+    "Tone: Advice-giving, high road, non-adversarial future",
+    "Each ~5 min read, staggered weekly publication",
+    "Letter 4 (Vendors) soft-pitches Careerspan acquisition"
+  ],
+  "relevant_files": [
+    "/home/.z/workspaces/con_bIdLfkhPNhEDW0hE/RESUME_INDUSTRIAL_COMPLEX_DOSSIER.md",
+    "/home/.z/workspaces/con_bIdLfkhPNhEDW0hE/OPEN_LETTERS_SERIES_FINAL.md",
+    "/home/.z/workspaces/con_bIdLfkhPNhEDW0hE/positions_for_ingestion.md"
+  ],
+  "workers": [
+    {
+      "id": "letter_1_founders",
+      "component": "Letter 1: To Founders",
+      "description": "Open letter to founders/hiring managers explaining why hiring feels broken",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "letter_2_candidates",
+      "component": "Letter 2: To Candidates",
+      "description": "Open letter validating candidate pain and redirecting from resume-optimization",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "letter_3_talent_pros",
+      "component": "Letter 3: To Talent Professionals",
+      "description": "Open letter acknowledging TA trap and offering exit path",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "letter_4_vendors",
+      "component": "Letter 4: To Vendors",
+      "description": "Warning to HR tech industry + Careerspan acquisition signal",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "open-letters-series",
+    "created_at": "2026-01-07T04:14:27.846840+00:00",
+    "status": "active"
+  }
+}
