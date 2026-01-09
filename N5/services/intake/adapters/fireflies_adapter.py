@@ -157,8 +157,11 @@ class FirefliesAdapter(BaseAdapter):
         if not date_val:
             return None
         
-        # Handle epoch timestamp
+        # Handle epoch timestamp (Fireflies uses milliseconds)
         if isinstance(date_val, (int, float)):
+            # If the timestamp is too large, it's likely in milliseconds
+            if date_val > 1e12:  # Anything over ~year 2001 in ms is > 1e12
+                date_val = date_val / 1000
             return datetime.fromtimestamp(date_val)
         
         # Handle ISO string
@@ -237,4 +240,5 @@ class FirefliesAdapter(BaseAdapter):
             return int(duration_str)
         
         return total_seconds if total_seconds > 0 else None
+
 

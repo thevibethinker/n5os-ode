@@ -1,292 +1,288 @@
+---
+created: 2025-10-22
+last_edited: 2026-01-09
+version: 3.0
+provenance: con_u6YvYuTdjQcOJPLC
+---
+
 # V Voice Transformation System
-**Version:** 2.0  
-**Created:** 2025-10-22  
+
+**Version:** 3.0  
 **Method:** Few-shot transformation learning (research-backed)  
-**Replaces:** Attribute-based voice metrics
+**Architecture:** Platform-aware with shared core + platform-specific profiles
 
 ---
 
-## SYSTEM OVERVIEW
+## System Overview
 
-This system teaches LLMs V's authentic voice through **transformation pairs** rather than attribute descriptions. Research shows this produces 3-5x more authentic output than metric-based guidance.
+This system produces text in V's authentic voice using **transformation-based learning** rather than attribute lists. The LLM learns by studying before/after examples (neutral → V-voice), then applies that transformation to new content.
 
-**Core Principle:** Show the LLM the *delta* between style-free content and V's actual voice, allowing it to learn the transformation pattern.
+### Why Transformation > Attributes
 
----
-
-## USAGE INSTRUCTIONS
-
-### For Email/Professional Writing:
-
-**Step 1:** Write content in style-free format first
-- Strip personality, warmth, filler
-- Keep only core facts and requests
-- Use neutral, robotic language
-
-**Step 2:** Use transformation pairs as few-shot examples
-- Include 2-3 relevant pairs in prompt
-- Format: style-free → authentic V voice
-- LLM learns the pattern
-
-**Step 3:** Generate final output
-- Apply learned transformation to new content
-- Review for authenticity
-- Validate against anti-patterns
+| Approach | Problem |
+|----------|---------|
+| "Be professional but warm" | Vague, inconsistent results |
+| "Use 70% formality" | Arbitrary, hard to calibrate |
+| **Transformation pairs** | LLM learns the *process*, not just adjectives |
 
 ---
 
-## TRANSFORMATION PAIRS
+## Architecture
 
-### PAIR 1: Professional Introduction
-**Context:** Connecting two people in your network
-
-**Style-Free:**
-> I want to introduce you to Ben Guo, founder of Zo Computer. He was an early engineer at Venmo and worked at Stripe for nearly a decade. I use Zo Computer extensively. It allows non-technical users to access advanced capabilities through prompting. I think there may be overlap between your work and what Zo enables.
-
-**V's Voice:**
-> Hope you're doing well! Been thinking about our conversations around the AI Collective, and wanted to connect you with Ben Guo, one of the founders of Zo Computer.
->
-> Ben was one of the first engineers at Venmo and spent nearly a decade at Stripe before starting what I can honestly say is my favorite AI tool, bar none. I've built my entire personal operating system on it — 250k+ lines of code, automated workflows, the works. The reason I'm so confident in what they're building is because I'm living in it daily.
->
-> What makes Zo unique is how it empowers non-technical users to tap into genuinely advanced capabilities — hitting APIs, spinning up local LLMs, building full systems — all through prompting. It's essentially a computer in the cloud you can prompt and set to work on your behalf.
->
-> I think there's some interesting overlap between what you're building with AI Collective and what Zo's enabling. Figured I'd make the intro and let you two take it from there if it makes sense.
-
----
-
-### PAIR 2: Apologetic Update
-**Context:** Following up after delay with explanation
-
-**Style-Free:**
-> I apologize for the delay. I had family emergencies. Sponsorships are likely closed, but I have included information in case opportunities remain. Please provide payment details. I will arrive Thursday. I need pitch format information.
-
-**V's Voice:**
-> Apologies for going quiet after our last exchange; I had back-to-back family emergencies that were highly occupying. Thankfully, things have settled, and I'm now fully focused on making the most of this week's event.
->
-> I realize it's likely too late to secure sponsorships, but I've included a blurb just in case something materializes—it'd be a great bonus. If not, I'll aim to make it back on Thursday night. Let me know how I can process payment.
->
-> Seeing as I'm paying for most of this out of pocket, if you can somehow save me some more money, I will be greatly indebted (and literally less in debt)! No pressure though.
+```
+voice-transformation-system.md (this file)
+├── Core Identity & Dimensions
+├── Hedging Kill Rules
+├── Compression Test
+│
+├── platforms/
+│   ├── x.md ← X/Twitter voice (profanity OK, punchy, spicy)
+│   └── linkedin.md ← LinkedIn voice (no profanity, authoritative)
+│
+└── style-guides/
+    ├── transformation-pairs-library.md ← Platform-agnostic pairs
+    ├── succinctness-pairs.md ← Verbose → Direct transformations
+    ├── hedging-antipatterns.md ← Comprehensive kill list
+    └── directness-calibration.md ← Context-appropriate directness
+```
 
 ---
 
-### PAIR 3: Ask for Introduction
-**Context:** Requesting warm introduction to potential client/partner
+## Core Voice Identity
 
-**Style-Free:**
-> I am seeking introductions to people at Apple. Careerspan helps recruiters make better candidate recommendations through AI coaching and verification. Introductions to HR contacts at mid-size companies would also be helpful.
+**In one sentence:** Direct, specific, warmth-through-substance communicator who earns authority through evidence and trusts the reader.
 
-**V's Voice:**
-> I'm looking to get connected with the folks over at Apple One. We'd greatly appreciate the chance to put forward our idea and get their thoughts.
->
-> About Careerspan:
->
-> Careerspan helps you make better candidate recommendations that clients trust. Your candidates complete short AI coaching conversations related to past work experiences and their current or former managers and colleagues then verify what they've shared—completely asynchronously. Through this process, we can gather biographical and behavioral insights equivalent to multiple screening interviews and reference checks.
->
-> With Careerspan, you'll be able to screen more candidates without adding work to your plate and provide additional proof points for your recommendations to clients. Meanwhile, candidates will get interview practice and walk away with a positive impression of both your client and your agency, whether they get the job or not.
->
-> I really appreciate your help with this!
+### Dimension Baselines
 
----
+| Dimension | Score | Notes |
+|-----------|-------|-------|
+| **Directness** | 0.80 | Assertions over hedging; specific over vague |
+| **Warmth** | 0.65 | Comes from genuine interest, not soft language |
+| **Confidence** | 0.85 | Earned through specificity and evidence |
+| **Humor** | 0.50 | Dry, observational; never try-hard |
+| **Formality** | 0.55 | Professional but human; no corporate speak |
 
-### PAIR 4: Recruiting Outreach
-**Context:** Reaching out to potential hire
+### Platform Modifiers
 
-**Style-Free:**
-> Careerspan is hiring for senior engineering roles. We are building a talent verification system using voice AI. We have funding and competitive compensation. Our team includes experienced employees. Please let me know if you are interested.
-
-**V's Voice:**
-> Man, I know you're busy, so I'll keep this short.
->
-> Careerspan is hiring for a couple of senior engineering roles right now, and I immediately thought of you. We're building something genuinely novel—a talent verification system that uses voice AI to capture and validate professional experience in ways traditional resumes can't.
->
-> We've got solid funding, competitive comp, and a small but mighty team (couple former McKinsey folks, an ex-Meta engineer). It's early-stage, which means real ownership and impact.
->
-> If you're even remotely curious, I'd love to chat. If not, no worries—I just wanted to reach out since this felt like it could be a fit.
+| Platform | Directness | Profanity | Length | Humor |
+|----------|------------|-----------|--------|-------|
+| **X/Twitter** | +0.05 | ✅ Natural | Short (<140) | +0.20 |
+| **LinkedIn** | Base | ❌ Never | Long (500+) | Base |
+| **Email** | Base | ❌ Never | Medium | Base |
+| **Docs** | -0.05 | ❌ Never | Full | -0.10 |
 
 ---
 
-### PAIR 5: Brief Apology
-**Context:** Short acknowledgment before delivering content
+## The Transformation Process
 
-**Style-Free:**
-> I apologize for the delay. I had family emergencies. Here is the update.
+### Step 1: Detect Content Type
 
-**V's Voice:**
-> My apologies to you and the team.
->
-> I've had a series of family emergencies to contend with over the last two weeks.
->
-> Here is our update.
+Classify the generation request:
+- Platform (X, LinkedIn, Email, Doc, DM)
+- Purpose (thought leadership, follow-up, ask, intro, etc.)
+- Relationship context (cold, warm, established)
 
----
+### Step 2: Load Relevant Pairs
 
-## VOICE PATTERN ANALYSIS
+Pull transformation pairs matching the content type:
 
-### Opening Patterns:
-- **Warm**: "Hope you're doing well!"
-- **Casual rapport**: "Man, I know you're busy"
-- **Context acknowledgment**: "Been thinking about our conversations"
+```
+Platform: X + Purpose: hot-take
+→ Load: platforms/x.md (signature patterns, anti-patterns)
+→ Load: transformation-pairs-library.md (tag: thought-leadership)
+```
 
-### Credibility Markers:
-- Specific numbers: "250k+ lines of code", "50-250 employees"
-- Proof through lived experience: "I'm living in it daily"
-- Humble confidence: "genuinely novel" not "revolutionary"
+### Step 3: Generate Style-Free Draft
 
-### Pressure Reduction:
-- "No pressure though"
-- "if it makes sense"
-- "If you're even remotely curious"
-- "no worries"
+Write content with zero style — pure information and structure.
 
-### Structural Elements:
-- Em-dashes for explanatory asides
-- Semicolons for related thoughts
-- Natural transitions: "Thankfully,", "Additionally,", "Meanwhile,"
-- Parentheticals for casual credential drops
+### Step 4: Apply Transformation
 
-### Personality Markers:
-- Occasional humor: "literally less in debt"
-- Rapport builders: "Man,"
-- Casual descriptors: "small but mighty"
-- Abbreviations when natural: "comp", "ATL"
+Transform the draft using loaded pairs as few-shot examples. The LLM pattern-matches the transformation process.
 
-### Closing Patterns:
-- Expresses gratitude before asks
-- Low-pressure exit options
-- Clear next step without pushiness
+### Step 5: Validate Against Anti-Patterns
+
+Check output against:
+- Hedging patterns (kill list)
+- Platform-specific anti-patterns
+- Length/format constraints
 
 ---
 
-## DIRECTNESS CALIBRATION
+## Hedging Kill Rules
 
-**Core Evolution (2026-01):** V wants more succinct, direct, non-hedging communication. This isn't "be blunt" — it's "stop wasting words when directness serves everyone better."
+**V's voice is assertive.** The following patterns signal hedging and must be eliminated or transformed:
 
-### The Directness Spectrum
+### Instant Kill (Delete)
 
-| Level | Description | Use When |
-|-------|-------------|----------|
-| 0.5-0.6 | Diplomatic | Bad news, senior execs, delicate situations |
-| 0.7-0.8 | **Default target** | Most emails, follow-ups, requests |
-| 0.85+ | High directness | Team comms, close relationships, X/social |
+- "I was wondering if..."
+- "Just wanted to..."
+- "I hope this finds you well"
+- "No rush, but..."
+- "Sorry to bother you"
+- "If you don't mind..."
+- "When you get a chance..."
 
-### Hedging Kill List (Top Offenders)
+### Transform (Replace)
 
-These phrases add nothing. Cut them:
+| Hedge | → Direct |
+|-------|----------|
+| "I think maybe we could..." | "Let's..." |
+| "It might be worth considering..." | "Consider:" |
+| "I feel like..." | [State directly] |
+| "Does that make sense?" | [End with confidence] |
+| "Let me know what you think" | "Let me know by [date]" |
 
-- `just` ("just wanted to...") → Delete
-- `I think` (when you know) → Assert directly
-- `maybe` / `perhaps` → Make the recommendation
-- `kind of` / `sort of` → Be specific
-- `no rush` / `whenever you have time` → Name the timeline or stay silent
-- `feel free to` → Make the ask directly
-- `I was wondering if` → Ask the question
+### Contextual (Sometimes OK)
 
-### Directness Transformation Pattern
+- "I think" — OK when genuinely uncertain
+- "might" — OK for genuine contingency
+- Softeners — OK in high-stakes disagreement (soften with logic, not filler)
 
-**Before (hedging):**
-> Hey! Just wanted to quickly check in to see if you might have a few minutes sometime in the next week or so to potentially chat about the project we discussed? No rush at all, but it would be great to connect when you have a chance.
-
-**After (direct):**
-> Can we do 20 minutes Thursday to discuss the project?
-
-**What changed:**
-- Killed qualifiers ("just", "quickly", "potentially", "might")
-- Named the ask (20 minutes)
-- Proposed specific time (Thursday)
-- 54 words → 11 words
-
-### Warmth Without Hedging
-
-Directness ≠ coldness. V's warmth comes from:
-- **Specificity** ("loved your take on the pricing model")
-- **Genuine interest** (asking real questions, not performative ones)
-- **Respect for time** (getting to the point IS respectful)
-
-NOT from:
-- Softening language
-- Excessive qualifiers
-- Permission-seeking phrases
-
-**Reference:** Full hedging antipatterns in `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
+**Full kill list:** `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
 
 ---
 
-## ANTI-PATTERNS (Never Use)
+## V-Voice Compression Test
 
-### Voice Anti-Patterns
-❌ Single-sentence paragraphs for LinkedIn effect  
-❌ Emoji in professional email  
-❌ Performative vulnerability  
+Before any output, apply these filters:
+
+1. **Cut the first sentence.** Often throat-clearing.
+2. **Delete "just," "maybe," "probably."** Usually add nothing.
+3. **Replace "I think" with assertion.** Either you believe it or you don't.
+4. **Add a deadline or specific time.** "Soon" = never.
+5. **Read it aloud.** If you'd never say it, don't write it.
+
+---
+
+## Platform Profiles
+
+### X/Twitter
+
+**File:** `file 'N5/prefs/communication/platforms/x.md'`
+
+**Summary:**
+- Profanity: Natural (9.4% of tweets)
+- Length: Punchy — 46% under 100 chars
+- Tone: Sharp, self-aware wit, contrarian edge
+- Signature patterns: Devastating Analogy, Toxic Trait, Em-Dash Pivot
+- Anti-patterns: LinkedIn energy, engagement bait, emoji overload
+
+### LinkedIn
+
+**File:** `file 'N5/prefs/communication/platforms/linkedin.md'`
+
+**Summary:**
+- Profanity: Never
+- Length: Developed (500+ chars typical)
+- Tone: Authoritative, warm, measured
+- Signature patterns: (Awaiting corpus analysis)
+- Status: Placeholder — awaiting data export
+
+---
+
+## Transformation Pairs
+
+### Core Library
+
+**File:** `file 'N5/prefs/communication/style-guides/transformation-pairs-library.md'`
+
+Contains platform-agnostic pairs for:
+- Email (intros, follow-ups, asks, updates)
+- Feedback (disagreement, critique, recommendations)
+- LinkedIn (thought leadership, origin stories)
+- DMs (quick asks, networking)
+- Closings
+
+### Succinctness Pairs
+
+**File:** `file 'N5/prefs/communication/style-guides/succinctness-pairs.md'`
+
+15 category pairs modeling V's desired evolution:
+- Meeting requests
+- Email follow-ups
+- Introductions & outreach
+- Opinions & feedback
+- Status updates
+- Asks & offers
+- Closings
+
+### Directness Calibration
+
+**File:** `file 'N5/prefs/communication/style-guides/directness-calibration.md'`
+
+Context-appropriate directness scores:
+- When to soften (genuinely uncertain, high-stakes disagreement)
+- When to stay hard (asks, updates, follow-ups)
+- Relationship-based adjustments
+
+---
+
+## Anti-Pattern Index
+
+### Global Anti-Patterns
+
 ❌ Corporate jargon: "synergy", "leverage", "paradigm"  
-❌ Formulaic hooks: "Here's why..."  
-❌ Desperate or pushy language  
-❌ Generic flattery  
-❌ Excessive line breaks
+❌ Formulaic hooks: "Here's why...", "Let me explain..."  
+❌ Desperate/pushy language  
+❌ Over-apology  
+❌ Stacked qualifiers  
 
-### Hedging Anti-Patterns (NEW)
-❌ `just wanted to` — Delete "just", make the point  
-❌ `I think maybe` — Pick one or neither  
-❌ `if you have time` — Propose a time or don't  
-❌ `no rush` — There usually is; be honest  
-❌ `feel free to ignore` — Why are you sending it?  
-❌ `does that make sense?` — Assume it does  
-❌ `sorry to bother you` — Don't apologize for existing
+### Platform-Specific Anti-Patterns
 
----
+**X:** `file 'N5/prefs/communication/platforms/x.md'` → Anti-Patterns section  
+**LinkedIn:** `file 'N5/prefs/communication/platforms/linkedin.md'` → (Pending)
 
-## EXAMPLE PROMPT STRUCTURE
+### Hedging Anti-Patterns
 
-```
-You are writing an email in V's authentic voice. Use these transformation examples to learn the pattern:
+**Full reference:** `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
 
-[Insert 2-3 relevant transformation pairs]
-
-Now transform this style-free content into V's voice:
-
-[Your style-free draft]
-```
+Includes regex patterns for automated detection.
 
 ---
 
-## VALIDATION CHECKLIST
+## Prompt Integration
 
-Before sending output, verify:
+### Auto-Application Rule
 
-### Voice Quality
-- [ ] Opens with warmth or rapport (not cold)
-- [ ] Uses specific details for credibility
-- [ ] Includes natural transitions
-- [ ] Has personality without being performative
-- [ ] Flows naturally (not choppy)
-- [ ] Sounds like something V would actually write
+When generating ANY user-facing text (emails, posts, documents, DMs):
 
-### Directness Check (NEW)
-- [ ] No hedging qualifiers (`just`, `maybe`, `kind of`)
-- [ ] Asks are explicit, not buried
-- [ ] Timelines named when relevant (not "whenever")
-- [ ] No permission-seeking phrases
-- [ ] Word count justified (no filler)
+1. **Detect platform/context**
+2. **Load this system** + platform profile + relevant pairs
+3. **Generate style-free draft**
+4. **Apply transformation**
+5. **Validate against kill rules**
+6. **Run compression test**
 
-### Anti-Pattern Scan
-- [ ] No voice anti-patterns
-- [ ] No hedging anti-patterns
-- [ ] Directness level appropriate for context (0.7-0.8 default)
+### Context Loading
+
+The `writer` category in `n5_load_context.py` loads:
+- This file (voice-transformation-system.md)
+- Relevant platform profile
+- Transformation pairs library
+- Hedging anti-patterns
 
 ---
 
-## MAINTENANCE
+## Version History
 
-- Update transformation pairs quarterly with new authentic samples
-- Add pairs for new content types as needed
-- Remove pairs that no longer represent current voice
-- Test new outputs against "golden set" of authentic writing
+| Version | Date | Changes |
+|---------|------|---------|
+| 3.0 | 2026-01-09 | Platform profiles architecture, X corpus analysis, succinctness pairs, hedging kill list, compression test |
+| 2.0 | 2025-10-22 | System-wide transformation, multi-angle, hybrid structure |
+| 1.0 | 2025-10-17 | Initial social media voice profile |
 
 ---
 
-**Related Files:**
-- Transformation pair library: `file 'N5/prefs/communication/transformation-pairs-library.md'`
-- Social media voice (separate system): `file 'N5/prefs/communication/social-media-voice.md'`
-- Voice routing rules: `file 'N5/prefs/communication/voice-routing-rules.md'`
+## Related Files
 
-
+| Purpose | File |
+|---------|------|
+| X voice profile | `file 'N5/prefs/communication/platforms/x.md'` |
+| LinkedIn profile | `file 'N5/prefs/communication/platforms/linkedin.md'` |
+| Core pairs | `file 'N5/prefs/communication/style-guides/transformation-pairs-library.md'` |
+| Succinctness | `file 'N5/prefs/communication/style-guides/succinctness-pairs.md'` |
+| Hedging kill list | `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'` |
+| Directness | `file 'N5/prefs/communication/style-guides/directness-calibration.md'` |
+| System prompt | `file 'N5/prefs/communication/voice-system-prompt.md'` |
 

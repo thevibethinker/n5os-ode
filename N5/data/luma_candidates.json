@@ -1,68 +1,5 @@
 [
   {
-    "id": "evt-W9Rh5KDugxNImkU",
-    "url": "https://lu.ma/rk6d7mze",
-    "title": "QPOP Party - Masked Revelry",
-    "description": "",
-    "event_date": "2026-01-04",
-    "event_time": "00:00",
-    "venue_name": "Queens County, New York",
-    "venue_address": "00:00, 21-38 44th Rd, Long Island City, NY 11101, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"ANIQUEEN\", \"url\": \"aniqueen\", \"avatar\": \"https://images.lumacdn.com/avatars/xo/56aceb9d-f9cd-40da-acae-7d40876c10be.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 47,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/vy/da151211-3b23-40a8-b477-67e7d9625e8d.png",
-    "source": "luma",
-    "invitation_status": "public",
-    "score": 7.0,
-    "status": "available"
-  },
-  {
-    "id": "evt-jUOqNGVWYEVl9Dl",
-    "url": "https://lu.ma/bxmhmdnf",
-    "title": "City Tavern & Table Backgammon Night",
-    "description": "",
-    "event_date": "2026-01-04",
-    "event_time": "22:00",
-    "venue_name": "Hell's Kitchen, New York, New York",
-    "venue_address": "City Tavern & Table, 629 W 57th St, New York, NY 10019, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Remington Davenport\", \"url\": \"usr-3NVrqXkeBW2nWJW\", \"avatar\": \"https://images.lumacdn.com/avatars/bd/d6572e39-5cb2-4c28-874a-9dfa35f62154\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 30,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/mg/7c1addbb-8a7d-48e0-adee-d4020ab85f24.png",
-    "source": "luma",
-    "invitation_status": "public",
-    "score": 6.0,
-    "status": "available"
-  },
-  {
-    "id": "evt-7fA1eVAzRpXWKoY",
-    "url": "https://lu.ma/7fkeqhkl",
-    "title": "Dry January Kickoff Party @ Hekate",
-    "description": "",
-    "event_date": "2026-01-04",
-    "event_time": "00:00",
-    "venue_name": "Alphabet City, New York, New York",
-    "venue_address": "Hekate Caf\u00e9 & Elixir Lounge, 167 Avenue B, New York, NY 10009, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Bright Nights Social\", \"url\": \"brightnights\", \"avatar\": \"https://images.lumacdn.com/avatars/jg/3c70be19-6ab5-4f67-8d8a-238725804010.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 0,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/kn/282bd0fc-9df8-4bee-b2a6-588543db959f.png",
-    "source": "luma",
-    "invitation_status": "public",
-    "score": 5.0,
-    "status": "waitlist"
-  },
-  {
     "id": "evt-5TFxNC0MK3RhnzA",
     "url": "https://lu.ma/xsojybez",
     "title": "Reading Rhythms Queens x Zenni \"New Year, New You\" January 8th",
@@ -80,7 +17,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/ou/f790e81f-525a-47fa-8f4a-0d2fd546d798.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 10.5,
+    "score": 10.0,
     "status": "available"
   },
   {
@@ -101,7 +38,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/ef/3467ced7-5182-436c-8bdf-44c685f1fdc8.jpg",
     "source": "luma",
     "invitation_status": "public",
-    "score": 10.0,
+    "score": 9.5,
     "status": "available"
   },
   {
@@ -122,7 +59,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/50/1d40d640-7fc1-4e94-898d-0ce89b66535d.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 9.5,
+    "score": 9.0,
     "status": "maybe"
   },
   {
@@ -143,7 +80,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/zd/70b212e6-271c-4650-9296-80da2c3536a9.jpg",
     "source": "luma",
     "invitation_status": "public",
-    "score": 9.0,
+    "score": 8.5,
     "status": "waitlist"
   },
   {
@@ -164,7 +101,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/1u/13029fef-7344-42b4-bacf-060a761859a5",
     "source": "luma",
     "invitation_status": "public",
-    "score": 9.0,
+    "score": 8.5,
     "status": "available"
   },
   {
@@ -248,7 +185,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/74/b63a2ce0-cba6-4544-afe2-facd7c5911f1.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 8.0,
+    "score": 7.5,
     "status": "maybe"
   },
   {
@@ -269,7 +206,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/fv/fdf2bcbd-6fb2-4112-a040-33ccdabcce0c.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 8.0,
+    "score": 7.5,
     "status": "available"
   },
   {
@@ -290,7 +227,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/uu/df00de3f-bde7-4465-8b75-c2bd5cdbbe22.jpg",
     "source": "luma",
     "invitation_status": "public",
-    "score": 8.0,
+    "score": 7.5,
     "status": "available"
   },
   {
@@ -311,7 +248,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/zg/562a137e-db91-4d27-95d8-97555e0e3eed.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 7.0,
+    "score": 6.5,
     "status": "available"
   },
   {
@@ -332,7 +269,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/0t/1895dd16-4c06-4e1d-850c-1d7dd2e84b7e.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 15.0,
+    "score": 14.5,
     "status": "available"
   },
   {
@@ -353,7 +290,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/qk/8f9feb19-40ee-47f6-a1b9-71ca7c2d6b68.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 10.0,
+    "score": 9.5,
     "status": "available"
   },
   {
@@ -374,7 +311,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/ir/2fd8daee-8910-41ee-88e5-a6975c9974b3.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 10.0,
+    "score": 9.5,
     "status": "available"
   },
   {
@@ -395,7 +332,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/45/de80fa5b-3de0-4129-a6c9-6ac8a845318b.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 9.0,
+    "score": 8.5,
     "status": "available"
   },
   {
@@ -479,8 +416,8 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/7k/b3d512af-8aca-4309-9385-2231c8b18fbe.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 10.0,
-    "status": "waitlist"
+    "score": 11.0,
+    "status": "maybe"
   },
   {
     "id": "evt-nxkQ5Pmzy0AOFtl",
@@ -521,7 +458,7 @@
     "cover_image_url": "https://images.lumacdn.com/gallery-images/4f/b0af1f45-496b-429a-bb01-ee7765a98fba.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 14.0,
+    "score": 15.0,
     "status": "available"
   },
   {

@@ -260,18 +260,43 @@ class MorningDigest:
                 else:
                     time_str = "a while ago"
 
-                # Try to get context from yaml file
+                # Try to get context from yaml file - improved extraction
                 context = ""
                 if yaml_path:
                     yaml_full_path = Path("/home/workspace") / yaml_path
                     if yaml_full_path.exists():
                         try:
-                            content = yaml_full_path.read_text()[:500]
-                            # Extract title or first line as context
+                            content = yaml_full_path.read_text()
+                            context_parts = []
+                            
+                            # Extract organization
                             for line in content.split('\n'):
-                                if line.startswith('title:') or line.startswith('# '):
-                                    context = line.replace('title:', '').replace('#', '').strip()[:60]
-                                    break
+                                if '**Organization:**' in line or 'organization:' in line.lower():
+                                    org = line.split(':', 1)[-1].strip().strip('*').strip()
+                                    if org and org != "'*Not yet enriched*'" and org != '*Not yet enriched*':
+                                        context_parts.append(org)
+                                        break
+                            
+                            # Extract role
+                            for line in content.split('\n'):
+                                if '**Role:**' in line or 'role:' in line.lower():
+                                    role = line.split(':', 1)[-1].strip().strip('*').strip()
+                                    if role and role != "'*Not yet enriched*'" and role != '*Not yet enriched*':
+                                        context_parts.append(role)
+                                        break
+                            
+                            # Fall back to email domain if no org/role
+                            if not context_parts:
+                                for line in content.split('\n'):
+                                    if 'email:' in line.lower() or '**Email:**' in line:
+                                        email = line.split(':', 1)[-1].strip().strip('*').strip()
+                                        if '@' in email:
+                                            domain = email.split('@')[1].split('.')[0].title()
+                                            if domain.lower() not in ['gmail', 'yahoo', 'hotmail', 'outlook', 'icloud']:
+                                                context_parts.append(f"@ {domain}")
+                                        break
+                            
+                            context = " · ".join(context_parts[:2]) if context_parts else ""
                         except:
                             pass
 
@@ -480,7 +505,7 @@ class MorningDigest:
             logger.error(f"Workout fetch failed: {e}")
             return "Workout plan unavailable. Check `file 'Personal/Health/WorkoutTracker/10K_Prep_Plan.md'`"
 
-    def generate_markdown(self, bio_context, workout, landscape, top_3_today, reconnects):
+    def generate_markdown(self, bio_context, workout, landscape, reconnects):
         """Generate the ONE daily digest markdown."""
         date_str = self.today.strftime("%A, %B %d")
 
@@ -504,11 +529,6 @@ class MorningDigest:
 
 ---
 
-### 🎯 Top 3 Today
-{top_3_today}
-
----
-
 ### 🤝 Reconnects
 {reconnects}
 
@@ -527,15 +547,14 @@ class MorningDigest:
         logger.info("Generating Morning Digest (v2)...")
 
         # Run parallel data fetching - only the sections we need
-        bio_context, workout, landscape, top_3_today, reconnects = await asyncio.gather(
+        bio_context, workout, landscape, reconnects = await asyncio.gather(
             self.get_bio_context(),
             self.get_todays_workout(),
             self.get_landscape(),
-            self.get_top_3_today(),
             self.get_reconnects()
         )
 
-        content = self.generate_markdown(bio_context, workout, landscape, top_3_today, reconnects)
+        content = self.generate_markdown(bio_context, workout, landscape, reconnects)
 
         # Save to file
         filename = f"morning-digest-{self.today.strftime('%Y-%m-%d')}.md"
@@ -595,6 +614,8 @@ if __name__ == "__main__":
         }))
     else:
         asyncio.run(digest.run(send=args.email, dry_run=args.dry_run))
+
+
 
 
 

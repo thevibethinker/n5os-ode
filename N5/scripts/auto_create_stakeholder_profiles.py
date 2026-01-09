@@ -33,7 +33,7 @@ WORKSPACE = Path("/home/workspace")
 # Import canonical paths
 from crm_paths import CRM_DB, CRM_INDIVIDUALS
 
-DB_PATH = CRM_DB  # Use canonical CRM database
+DB_PATH = Path("/home/workspace/N5/data/profiles.db")  # Override to use the operational tracking DB
 
 
 def scan_calendar_for_new_stakeholders(
@@ -383,7 +383,7 @@ def create_stakeholder_profile_auto(
         
 
         cursor.execute("""
-            INSERT INTO individuals (email, full_name, company, markdown_path, first_contact_date, created_at)
+            INSERT INTO profiles (email, name, organization, profile_path, meeting_date, created_at)
             VALUES (?, ?, ?, ?, ?, ?)
         """, (email, name, analysis['organization'], str(profile_rel_path), meeting_date, created_at))
 
@@ -485,3 +485,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     main(dry_run=not args.live)
+
+

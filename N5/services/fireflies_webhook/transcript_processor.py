@@ -11,10 +11,13 @@ import re
 import shutil
 import os
 
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from .fireflies_client import FirefliesClient
 from .webhook_processor import WebhookProcessor
-from ..intake.intake_engine import IntakeEngine
-from ..intake.models import IntakeSource
+from intake.intake_engine import IntakeEngine
+from intake.models import IntakeSource
 
 logger = logging.getLogger(__name__)
 
@@ -345,6 +348,7 @@ class TranscriptProcessor:
         # Fireflies may not provide word-level timing
         # Return empty list for now
         return []
+
 
 
 
