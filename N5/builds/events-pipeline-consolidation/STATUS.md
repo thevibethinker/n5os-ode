@@ -89,3 +89,22 @@ python3 N5/scripts/luma_unified_pipeline.py --dry-run
 python3 N5/scripts/luma_digest.py --preview --city nyc --num 5
 ```
 
+
+
+---
+
+## Graduation Status
+
+| Field | Value |
+|-------|-------|
+| **Graduated** | ✅ Yes |
+| **Graduation Date** | 2026-01-09 |
+| **Capability Doc** | `N5/capabilities/workflow/events-pipeline-consolidation.md` |
+
+This build has been graduated to the capability registry. The capability doc is now the source of truth for "what this does."
+
+## GRADUATED
+
+- **Date:** 2026-01-09
+- **Capability Doc:** `N5/capabilities/workflow/events-pipeline-consolidation.md`
+- **Provenance:** con_JS1OqPU9pbYCCCjI

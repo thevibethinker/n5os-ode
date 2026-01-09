@@ -41,3 +41,22 @@ build_slug: performance-intelligence
 ## Notes
 - The system is now fully automated. Every Sunday at 8 PM, your Zo will sync your biometric data, correlate it with your meetings, and email you a synthesis of your performance peaks and schedule recommendations.
 
+
+
+---
+
+## Graduation Status
+
+| Field | Value |
+|-------|-------|
+| **Graduated** | ✅ Yes |
+| **Graduation Date** | 2026-01-09 |
+| **Capability Doc** | `N5/capabilities/internal/performance-intelligence.md` |
+
+This build has been graduated to the capability registry. The capability doc is now the source of truth for "what this does."
+
+## GRADUATED
+
+- **Date:** 2026-01-09
+- **Capability Doc:** `N5/capabilities/internal/performance-intelligence.md`
+- **Provenance:** con_JS1OqPU9pbYCCCjI

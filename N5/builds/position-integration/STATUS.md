@@ -72,3 +72,22 @@ None.
 
 *Build completed: 2026-01-04 15:12 ET*
 
+
+
+---
+
+## Graduation Status
+
+| Field | Value |
+|-------|-------|
+| **Graduated** | ✅ Yes |
+| **Graduation Date** | 2026-01-09 |
+| **Capability Doc** | `N5/capabilities/integration/position-integration.md` |
+
+This build has been graduated to the capability registry. The capability doc is now the source of truth for "what this does."
+
+## GRADUATED
+
+- **Date:** 2026-01-09
+- **Capability Doc:** `N5/capabilities/integration/position-integration.md`
+- **Provenance:** con_JS1OqPU9pbYCCCjI
