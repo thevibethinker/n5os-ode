@@ -6,6 +6,15 @@
 candidates:
   # --- VERIFIED ACCOUNTS ---
   
+  - handle: "@asanwal"
+    name: "Anand Sanwal"
+    role: "CEO @ CB Insights"
+    category: "hr_tech"
+    why_monitor: "Data-driven takes on markets, hiring, and business trends. High-signal content with engaged audience."
+    followers: "~140k"
+    verified: true
+    verification_date: "2026-01-08"
+
   - handle: "@benjaminencz"
     name: "Benjamin Encz"
     role: "Co-Founder @ Ashby"
@@ -104,5 +113,6 @@ candidates:
 # - Edmund Cuthbert, Superposition - LinkedIn only, no X
 # - Sean Thorne, People Data Labs - company is @ppl_ai, personal TBD
 # - Konrad Kucharski, Aviato CRO - @KindKonrad exists but very small (9 followers)
+
 
 
