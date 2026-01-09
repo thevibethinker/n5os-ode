@@ -4,6 +4,10 @@ W6: Tweet Polling Agent
 
 Polls monitored X accounts every 15 minutes during approval hours.
 Stores new tweets and updates polling state.
+
+ARCHITECTURE: X List is primary SSOT for monitored accounts.
+YAML remains as fallback/override source.
+On each poll, we sync List → DB, then optionally YAML → DB, before polling.
 """
 
 import os
@@ -18,7 +22,17 @@ import pytz
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
+sys.path.insert(0, str(PROJECT_ROOT / "config"))
+
 from x_api import get_user_tweets
+from account_sync import sync_accounts
+from list_sync import sync_from_list
+
+# Import settings
+try:
+    from settings import DEFAULT_LIST_ID
+except ImportError:
+    DEFAULT_LIST_ID = "1703516711629054447"  # Fallback
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger("polling_agent")
@@ -33,15 +47,25 @@ def is_within_approval_hours() -> bool:
     return 8 <= now.hour < 22
 
 
-def get_monitored_accounts() -> list[dict]:
+def get_monitored_accounts(active_only: bool = True) -> list[dict]:
     """Get all monitored accounts ordered by priority."""
     conn = sqlite3.connect(TWEETS_DB)
     conn.row_factory = sqlite3.Row
-    accounts = conn.execute("""
-        SELECT id, username, last_tweet_id 
-        FROM monitored_accounts
-        ORDER BY priority DESC
-    """).fetchall()
+    
+    if active_only:
+        accounts = conn.execute("""
+            SELECT id, username, last_tweet_id, source
+            FROM monitored_accounts
+            WHERE active = 1 OR active IS NULL
+            ORDER BY priority DESC
+        """).fetchall()
+    else:
+        accounts = conn.execute("""
+            SELECT id, username, last_tweet_id, source, active
+            FROM monitored_accounts
+            ORDER BY priority DESC
+        """).fetchall()
+    
     conn.close()
     return [dict(a) for a in accounts]
 
@@ -135,18 +159,43 @@ def poll_account(account: dict) -> list[str]:
     return new_ids
 
 
-def poll_all_accounts(force: bool = False) -> list[str]:
+def poll_all_accounts(force: bool = False, list_id: str = None, skip_yaml: bool = False) -> list[str]:
     """Poll all monitored accounts."""
     if not force and not is_within_approval_hours():
         logger.info("Outside approval hours (8am-10pm ET), skipping poll")
         return []
     
-    accounts = get_monitored_accounts()
+    # Step 1: Sync from X List (primary SSOT)
+    effective_list_id = list_id or DEFAULT_LIST_ID
+    if effective_list_id:
+        logger.info(f"Syncing accounts from X List {effective_list_id}...")
+        try:
+            list_stats = sync_from_list(effective_list_id)
+            if list_stats.get("error"):
+                logger.error(f"List sync failed: {list_stats['error']}")
+            else:
+                if list_stats["added"]:
+                    logger.info(f"Added {len(list_stats['added'])} from list: {[a['username'] for a in list_stats['added']]}")
+                if list_stats["removed"]:
+                    logger.info(f"Deactivated {len(list_stats['removed'])} (removed from list): {[a['username'] for a in list_stats['removed']]}")
+        except Exception as e:
+            logger.error(f"Error syncing from list: {e}")
+    
+    # Step 2: Sync from YAML (fallback, unless --skip-yaml)
+    if not skip_yaml:
+        logger.info("Syncing accounts from YAML...")
+        sync_stats = sync_accounts()
+        if sync_stats["added"]:
+            logger.info(f"Added {len(sync_stats['added'])} new accounts from YAML: {sync_stats['added']}")
+    else:
+        logger.info("Skipping YAML sync (--skip-yaml)")
+    
+    accounts = get_monitored_accounts(active_only=True)
     if not accounts:
         logger.warning("No monitored accounts found in database")
         return []
     
-    logger.info(f"Polling {len(accounts)} monitored accounts")
+    logger.info(f"Polling {len(accounts)} active monitored accounts")
     
     all_new_ids = []
     for account in accounts:
@@ -167,13 +216,19 @@ def main():
     parser.add_argument("--force", action="store_true", help="Run even outside approval hours")
     parser.add_argument("--account", help="Poll specific account username only")
     parser.add_argument("--list-accounts", action="store_true", help="List monitored accounts")
+    parser.add_argument("--list-id", help=f"X List ID to sync from (default: {DEFAULT_LIST_ID})")
+    parser.add_argument("--skip-yaml", action="store_true", help="Skip YAML sync, use list only")
+    parser.add_argument("--include-inactive", action="store_true", help="Include inactive accounts in --list-accounts")
     args = parser.parse_args()
     
     if args.list_accounts:
-        accounts = get_monitored_accounts()
+        accounts = get_monitored_accounts(active_only=not args.include_inactive)
         print(f"Monitored accounts ({len(accounts)}):")
         for a in accounts:
-            print(f"  @{a['username']} (ID: {a['id']})")
+            source = a.get('source', 'yaml')
+            active = a.get('active', 1)
+            status = "✓" if active else "✗"
+            print(f"  [{status}] @{a['username']} (ID: {a['id']}, source: {source})")
         return
     
     if args.account:
@@ -192,10 +247,16 @@ def main():
         new_ids = poll_account(dict(account))
         print(json.dumps({"new_tweet_ids": new_ids}))
     else:
-        new_ids = poll_all_accounts(force=args.force)
+        new_ids = poll_all_accounts(
+            force=args.force, 
+            list_id=args.list_id,
+            skip_yaml=args.skip_yaml
+        )
         print(json.dumps({"new_tweet_ids": new_ids}))
 
 
 if __name__ == "__main__":
     main()
+
+
 

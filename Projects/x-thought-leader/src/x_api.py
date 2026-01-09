@@ -223,6 +223,198 @@ def complete_oauth_flow(oauth_verifier: str) -> Dict[str, str]:
     # Let's use a simpler approach for the CLI.
     return {"note": "Use initiate_oauth_flow to get the URL, then provide verifier."}
 
+# ============================================================
+# LIST ENDPOINTS (added Phase 1 - con_nRtJ8573Bwl836An)
+# ============================================================
+
+def get_list_info(list_id: str) -> Optional[Dict]:
+    """
+    Get list metadata (name, description, member_count).
+    
+    Args:
+        list_id: The X list ID
+        
+    Returns:
+        Dict with list info or None if not found/error
+    """
+    url = f"https://api.twitter.com/2/lists/{list_id}"
+    params = {
+        "list.fields": "created_at,description,member_count,name,owner_id,private"
+    }
+    response = _get_request(url, params=params)
+    if response and response.status_code == 200:
+        data = response.json()
+        return data.get('data')
+    return None
+
+
+def get_list_members(list_id: str, max_results: int = 100) -> List[Dict]:
+    """
+    Get all members of a list with pagination.
+    
+    Args:
+        list_id: The X list ID
+        max_results: Max results per page (1-100)
+        
+    Returns:
+        List of user dicts with id, username, name, description, public_metrics
+    """
+    url = f"https://api.twitter.com/2/lists/{list_id}/members"
+    max_results = max(1, min(max_results, 100))
+    params = {
+        "max_results": max_results,
+        "user.fields": "id,username,name,description,public_metrics,created_at"
+    }
+    
+    all_members = []
+    next_token = None
+    
+    while True:
+        if next_token:
+            params["pagination_token"] = next_token
+        
+        response = _get_request(url, params=params)
+        if not response or response.status_code != 200:
+            break
+            
+        data = response.json()
+        members = data.get('data', [])
+        all_members.extend(members)
+        
+        # Check for pagination
+        meta = data.get('meta', {})
+        next_token = meta.get('next_token')
+        if not next_token:
+            break
+            
+        logger.info(f"Fetched {len(all_members)} members so far, paginating...")
+    
+    logger.info(f"Total members fetched from list {list_id}: {len(all_members)}")
+    return all_members
+
+
+def get_list_tweets(list_id: str, max_results: int = 100, since_id: Optional[str] = None) -> List[Dict]:
+    """
+    Get recent tweets from a list timeline.
+    
+    Args:
+        list_id: The X list ID
+        max_results: Max results (1-100)
+        since_id: Only return tweets newer than this ID
+        
+    Returns:
+        List of tweet dicts
+    """
+    url = f"https://api.twitter.com/2/lists/{list_id}/tweets"
+    max_results = max(1, min(max_results, 100))
+    params = {
+        "max_results": max_results,
+        "tweet.fields": "created_at,public_metrics,author_id,referenced_tweets",
+        "expansions": "author_id",
+        "user.fields": "username,name"
+    }
+    if since_id:
+        params["since_id"] = since_id
+    
+    response = _get_request(url, params=params)
+    if response and response.status_code == 200:
+        data = response.json()
+        tweets = data.get('data', [])
+        
+        # Attach author info from includes
+        includes = data.get('includes', {})
+        users = {u['id']: u for u in includes.get('users', [])}
+        for tweet in tweets:
+            author_id = tweet.get('author_id')
+            if author_id and author_id in users:
+                tweet['author'] = users[author_id]
+        
+        return tweets
+    return []
+
+
+def add_list_member(list_id: str, user_id: str) -> bool:
+    """
+    Add a user to a list. Requires OAuth1 user context.
+    
+    Args:
+        list_id: The X list ID
+        user_id: The user ID to add
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    api_key = os.environ.get('X_API_KEY')
+    api_secret = os.environ.get('X_API_KEY_SECRET')
+    access_token = os.environ.get('X_ACCESS_TOKEN')
+    access_secret = os.environ.get('X_ACCESS_TOKEN_SECRET')
+    
+    if not all([api_key, api_secret, access_token, access_secret]):
+        logger.error("Missing OAuth1 credentials for list member management")
+        return False
+    
+    oauth = OAuth1Session(
+        api_key,
+        client_secret=api_secret,
+        resource_owner_key=access_token,
+        resource_owner_secret=access_secret
+    )
+    
+    url = f"https://api.x.com/2/lists/{list_id}/members"
+    response = oauth.post(url, json={"user_id": user_id})
+    
+    if response.status_code == 200:
+        logger.info(f"Added user {user_id} to list {list_id}")
+        return True
+    else:
+        logger.error(f"Failed to add user to list: {response.status_code} {response.text}")
+        return False
+
+
+def remove_list_member(list_id: str, user_id: str) -> bool:
+    """
+    Remove a user from a list. Requires OAuth1 user context.
+    """
+    api_key = os.environ.get('X_API_KEY')
+    api_secret = os.environ.get('X_API_KEY_SECRET')
+    access_token = os.environ.get('X_ACCESS_TOKEN')
+    access_secret = os.environ.get('X_ACCESS_TOKEN_SECRET')
+    
+    if not all([api_key, api_secret, access_token, access_secret]):
+        logger.error("Missing OAuth1 credentials for list member management")
+        return False
+    
+    oauth = OAuth1Session(
+        api_key,
+        client_secret=api_secret,
+        resource_owner_key=access_token,
+        resource_owner_secret=access_secret
+    )
+    
+    url = f"https://api.x.com/2/lists/{list_id}/members/{user_id}"
+    response = oauth.delete(url)
+    
+    if response.status_code == 200:
+        logger.info(f"Removed user {user_id} from list {list_id}")
+        return True
+    else:
+        logger.error(f"Failed to remove user from list: {response.status_code} {response.text}")
+        return False
+
+
+def lookup_user_by_username(username: str) -> Optional[Dict]:
+    """
+    Look up a user by username to get their ID.
+    """
+    username = username.lstrip('@')
+    url = f"https://api.x.com/2/users/by/username/{username}"
+    params = {"user.fields": "id,username,name,description,public_metrics"}
+    response = _get_request(url, params=params)
+    if response and response.status_code == 200:
+        return response.json().get('data')
+    return None
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="X API Wrapper CLI")
@@ -306,6 +498,10 @@ if __name__ == "__main__":
             print(f"Error completing OAuth flow: {e}")
     else:
         parser.print_help()
+
+
+
+
 
 
 
