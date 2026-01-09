@@ -30,14 +30,6 @@
 
 ---
 
-### Test move item
-
-**ID:** ef467673-061b-4d99-bca0-8dba351340fd
-
-**Created:** 2025-09-19T23:34:30.666266+00:00
-
----
-
 ### Recursive Cultural Feedback Loop: The phenomenon where AI training data latency drives fashion/meme resurgences.
 
 **ID:** f9933dec-91aa-4314-b6ea-8a689b7f66e4
@@ -63,20 +55,6 @@
 **Tags:** content, social-media, AI
 
 **Notes:** Cross-referenced from social-media-ideas (registry sync needed)
-
----
-
-### Recursive Cultural Feedback Loop: The phenomenon where AI training data latency drives fashion/meme resurgences.
-
-**ID:** 58bf7a0f-526f-49cd-a151-95c18e0e75f7
-
-**Created:** 2025-12-21T20:52:10.153990+00:00
-
-**Priority:** M
-
-**Tags:** AI, culture, strategy
-
-**Notes:** Captured during con_zK6PHskc2QXmUI7g
 
 ---
 
@@ -109,6 +87,36 @@ A game-based onboarding flow that teaches all Zo features (N5 navigation, tool u
 **Body:**
 
 Examine if the concept of robopsychology has any merit. Exploring the psychological frameworks for synthetic intelligence and human-agent interaction.
+
+---
+
+### The Recruiting Process Reduced: Sourcing → Matching → Verifying → Vetting → Onboarding (+ Outcome Quality Impact on Business Trajectory)
+
+**ID:** f8a3c2d1-7e5b-4a9f-b3c8-91d4e6f0a2b5
+
+**Created:** 2026-01-05T08:38:14.931548
+
+**Updated:** 2026-01-05T08:38:14.931674
+
+**Priority:** M
+
+**Tags:** careerspan, recruiting, strategy, framework
+
+**Notes:** Captured during con_KbRcpzfZ93boPrlz via Idea Lab
+
+---
+
+### Cracked AI Affirmations Generator
+
+**ID:** 81ff7289-a7a8-4124-8b56-088958aa72ee
+
+**Created:** 2026-01-09T06:49:39.965666+00:00
+
+**Priority:** H
+
+**Tags:** side-project,AI,audio,wellness
+
+**Notes:** Use ElevenLabs for voice (custom/cloned), Suno for background music, and ffmpeg for mixing. Aiming for tailored, high-impact affirmations.
 
 ---
 

@@ -1,0 +1,9 @@
+{
+  "name": "x-history-pre-jan-8",
+  "title": "X History - pre Jan-8",
+  "resources": [
+    {
+      "path": "data.duckdb"
+    }
+  ]
+}
