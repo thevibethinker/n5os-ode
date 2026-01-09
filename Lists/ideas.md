@@ -120,6 +120,42 @@ Examine if the concept of robopsychology has any merit. Exploring the psychologi
 
 ---
 
+### Strange Bedfellows: Politicians Twitter vs Voting Records
+
+**ID:** a3f2c891-7d4e-4b8a-9c1f-82e5d6f3a4b7
+
+**Created:** 2026-01-09T07:45:00+00:00
+
+**Priority:** M
+
+**Tags:** side-project, politics, data-analysis, X-API
+
+**Body:**
+
+Cross-reference Congress Twitter rhetoric against actual voting records to find mismatches. Uses free data sources: historical tweet datasets (no API needed) + voting records (GovTrack/ProPublica). Could crowdfund X API access for live monitoring. Potential outputs: who talks bipartisan but votes party-line, hawks who tweet dove, etc.
+
+**Notes:** Captured during con_dwfLKCPD7sRXvyNI. Deferred due to X API cost constraints (10K/month on Basic tier).
+
+---
+
+### Concentrated Metacognition Platform (SHAZAM for Cognition)
+
+**ID:** 2bafb6a4-3c01-4138-bee6-ef3e91293f20
+
+**Created:** 2026-01-09T09:40:05.255598+00:00
+
+**Priority:** H
+
+**Tags:** startup, AI, metacognition, elite-performers, data
+
+**Body:**
+
+A platform that extracts, structures, and compounds the metacognition of elite performers—turning individual wisdom into collective intelligence. The insight: the most valuable human data isn't task completion or expert demonstrations, it's concentrated metacognition—how exceptional people thought when the path wasn't obvious. Contributors get a force multiplier (access to the collective). In exchange, they articulate their reasoning. The result: a compounding asset of structured metacognition that can't be generated synthetically and can't be passively observed. Think: an AI-accessible corpus that channels the peak reasoning patterns of the world's best thinkers.
+
+**Notes:** Inspired by Ali's thesis on human data as $1T market. Related to Careerspan but focused on cognition capture. (con_6cvQn7zivBTJPvma)
+
+---
+
 
 ## Pinned
 
