@@ -1,0 +1,19 @@
+{
+  "source": "fireflies",
+  "source_id": "01KEHMDJ277STM2WWK9R5JXTFF",
+  "title": "Daily team stand-up",
+  "date": "2026-01-09",
+  "participants": [
+    "logan@theapply.ai,ilse@theapply.ai,danny@theapply.ai,rochel@mycareerspan.com,ilya@mycareerspan.com",
+    "logan@theapply.ai",
+    "ilse@theapply.ai",
+    "danny@theapply.ai",
+    "rochel@mycareerspan.com",
+    "ilya@mycareerspan.com"
+  ],
+  "host": "vrijen@mycareerspan.com",
+  "duration_seconds": 31,
+  "recording_url": "https://cdn.fireflies.ai/01KEHMDJ277STM2WWK9R5JXTFF/audio.mp3?Expires=1768188794&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZmlyZWZsaWVzLmFpLzAxS0VITURKMjc3U1RNMldXSzlSNUpYVEZGL2F1ZGlvLm1wMyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2ODE4ODc5NH19fV19&Signature=Gx6ensM51dc7G893uJjZlzTxI78OI5UgKonBUk1vzl46XCiDhgIheWaZrCNniMbvQuSvfRgHA6zPB~TAJrIiwDbq3WUh0GXTfGumx8CCnfWcOLP73f2ioM24EW3rgo7Ko-gahgamxWevtDTVJ5XPIFI7C77hyZNSt0gc7bBkuRhEWxnuYJXIFZ4iVXyKDPU1cEi6WT0NDjz52NgTjLJ24V~BGfm8DcJiQ213SRGVIsE7bOwFvrgme1haAVEJtwAjJVUyEWBzLeJslr5Z-Z810weMYJ12JPuaTHvKfI4CpSx2VZ75oqH5XTu7hlGprTcTwejPXPA2qHmGf~pLH3YPoA__&Key-Pair-Id=K25ZJR0UZVF4CM",
+  "ingested_at": "2026-01-09T15:34:36.396207",
+  "state": "raw"
+}

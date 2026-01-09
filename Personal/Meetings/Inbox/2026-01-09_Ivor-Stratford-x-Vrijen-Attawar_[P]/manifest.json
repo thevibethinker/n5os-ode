@@ -1,0 +1,54 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-09T12:15:00Z",
+  "meeting_folder": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar",
+  "meeting_date": "2026-01-09",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "B01_DETAILED_RECAP": true,
+    "B03_STAKEHOLDER_INTELLIGENCE": true,
+    "B03_DECISIONS": true,
+    "B05_ACTION_ITEMS": true,
+    "B06_BUSINESS_CONTEXT": true,
+    "B07_TONE_AND_CONTEXT": true,
+    "B14_BLURBS_REQUESTED": true,
+    "B21_KEY_MOMENTS": true,
+    "B25_DELIVERABLES": true,
+    "B26_MEETING_METADATA": true,
+    "B32_THOUGHT_PROVOKING_IDEAS": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "last_updated_at": "2026-01-09T17:20:00Z",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2026-01-09T17:46:33.406517+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2026-01-09T17:46:33.406530+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  },
+  "processed_at": "2026-01-09T17:48:46.715223+00:00",
+  "crm_synced": true
+}

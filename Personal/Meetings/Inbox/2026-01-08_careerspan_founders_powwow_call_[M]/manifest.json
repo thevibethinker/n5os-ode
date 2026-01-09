@@ -1,0 +1,16 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-09T13:16:34.836818",
+  "meeting_folder": "2026-01-08_careerspan_founders_powwow_call",
+  "meeting_date": "2026-01-08",
+  "status": "processed",
+  "processed_at": "2026-01-09T14:46:23Z",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_v3.0",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-09T14:46:23Z"
+}

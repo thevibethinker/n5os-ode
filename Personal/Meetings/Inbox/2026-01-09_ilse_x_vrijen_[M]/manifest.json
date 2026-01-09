@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-09T14:24:29.276948",
+  "meeting_folder": "2026-01-09_ilse_x_vrijen_",
+  "meeting_date": "2026-01-09",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "detailed_recap": true,
+    "decisions": true,
+    "action_items": true,
+    "business_context": true,
+    "tone_and_context": true,
+    "blurbs_requested": true,
+    "key_moments": true,
+    "deliverables": true,
+    "meeting_metadata": true,
+    "thought_provoking_ideas": true
+  },
+  "last_updated_by": "MG-6_State_Transition",
+  "last_updated_at": "2026-01-09T15:47:50-05:00",
+  "processed_at": "2026-01-09T15:47:50Z",
+  "meeting_type": "internal",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-09T15:46:46.673368"
+}

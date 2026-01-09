@@ -1,0 +1,18 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-09T16:17:09.961161",
+  "meeting_folder": "2026-01-09_Daily-team-stand-up",
+  "meeting_date": "2026-01-09",
+  "meeting_type": "internal",
+  "status": "processed",
+  "processed_at": "2026-01-09T16:47:30Z",
+  "crm_synced": true,
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_v3.0",
+  "mg2_completed_at": "2026-01-09T16:20:00Z"
+}
+
