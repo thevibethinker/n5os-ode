@@ -1,7 +1,7 @@
 ---
 created: 2025-12-16
-last_edited: 2025-12-16
-version: 1.0
+last_edited: 2026-01-09
+version: 1.1
 ---
 
 # Meeting Weekly Organization System
@@ -21,8 +21,10 @@ tags:
 entry_points:
 - type: script
   id: N5/scripts/meeting_weekly_organizer.py
+  args: --execute  # REQUIRED - script defaults to dry-run without this
 - type: agent
-  id: Auto-organize meetings into weekly folders
+  id: 9b813d5c-187b-4293-bb4f-652319043704
+  title: Weekly Meeting Organization [v2]
 owner: V
 change_type: new
 capability_file: N5/capabilities/workflows/meeting-weekly-organization.md
@@ -38,13 +40,23 @@ associated_files:
 ## What This Does
 
 Automatically organizes meetings from Inbox into weekly folders (Week-of-YYYY-MM-DD).
-Runs 4x/day via scheduled agent. Replaces old [M] → [P] → Archive manual pipeline.
-Only moves processed meetings ([M]/[P] suffix), leaving raw for MG-1.
+Runs 2x/day via scheduled agent (3:30 AM, 3:30 PM ET). 
+Only moves meetings with `manifest.json` status=processed.
+
+**CRITICAL:** Script defaults to dry-run. Must pass `--execute` flag to actually move files.
 
 ## How to Use It
 
-- How to trigger it (prompts, commands, UI entry points)
-- Typical usage patterns and workflows
+**Manual execution:**
+```bash
+# Preview what will be moved
+python3 /home/workspace/N5/scripts/meeting_weekly_organizer.py --dry-run
+
+# Actually move meetings
+python3 /home/workspace/N5/scripts/meeting_weekly_organizer.py --execute
+```
+
+**Automated via agent:** Agent ID `9b813d5c-187b-4293-bb4f-652319043704` runs 2x daily.
 
 ## Associated Files & Assets
 
@@ -63,6 +75,10 @@ flowchart TD
 
 ## Notes / Gotchas
 
-- Edge cases
-- Preconditions
-- Safety considerations
+- **BUG FIX (2026-01-09):** Agent was not passing `--execute` flag, causing all runs to be dry-run only. Fixed by updating agent instruction.
+- Script defaults to `--dry-run` for safety
+- Meetings must have `manifest.json` with `status: processed` to be moved
+- Edge case: meetings without parseable dates go to `Unknown-Week/`
+- Test/demo meetings get moved alongside real meetings (consider quarantine cleanup)
+
+
