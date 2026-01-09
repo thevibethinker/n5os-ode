@@ -37,3 +37,22 @@ provenance: con_JVzbW0S6LreS3vRW
 2. Verify email parsing works correctly
 3. Share URL with parents
 
+
+
+---
+
+## Graduation Status
+
+| Field | Value |
+|-------|-------|
+| **Graduated** | ✅ Yes |
+| **Graduation Date** | 2026-01-09 |
+| **Capability Doc** | `N5/capabilities/internal/wheres-v-revamp-v2.md` |
+
+This build has been graduated to the capability registry. The capability doc is now the source of truth for "what this does."
+
+## GRADUATED
+
+- **Date:** 2026-01-09
+- **Capability Doc:** `N5/capabilities/internal/wheres-v-revamp-v2.md`
+- **Provenance:** con_JS1OqPU9pbYCCCjI

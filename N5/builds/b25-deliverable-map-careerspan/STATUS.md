@@ -22,3 +22,22 @@ provenance: con_P6srz5pT7ehSsS1N
 - Progress: 3/3 (100%)
 
 
+
+
+---
+
+## Graduation Status
+
+| Field | Value |
+|-------|-------|
+| **Graduated** | ✅ Yes |
+| **Graduation Date** | 2026-01-09 |
+| **Capability Doc** | `N5/capabilities/internal/b25-deliverable-map-careerspan.md` |
+
+This build has been graduated to the capability registry. The capability doc is now the source of truth for "what this does."
+
+## GRADUATED
+
+- **Date:** 2026-01-09
+- **Capability Doc:** `N5/capabilities/internal/b25-deliverable-map-careerspan.md`
+- **Provenance:** con_JS1OqPU9pbYCCCjI
