@@ -1,0 +1,253 @@
+{
+  "name": "r-block-framework",
+  "description": "R-Block Framework: Central Theory & Deep Analysis Prompts for Reflection Engine",
+  "objective": "Transform skeleton R-block prompts into deep analytical frameworks with consistent substructure, plus integration layer for cross-reflection connections",
+  "key_decisions": [
+    "7-section common substructure for all R-blocks (Domain, Extraction, Analysis, Memory, Output, Connection Hooks, Worked Example)",
+    "RIX as architecturally distinct special block (always runs)",
+    "Both JSONL edges AND inline markdown for connections",
+    "<100 words = lightweight capture only",
+    "Query existing memory profiles; emergent integration-patterns store after 3+ occurrences",
+    "R04 (Market) as pilot block"
+  ],
+  "relevant_files": [
+    "N5/builds/r-block-framework/PLAN.md",
+    "N5/prefs/reflection_blocks_v2.md",
+    "Prompts/Blocks/Reflection/R04_Market.prompt.md",
+    "Prompts/Blocks/Generate_B08.prompt.md"
+  ],
+  "workers": [
+    {
+      "id": "w01_foundation",
+      "component": "base_template",
+      "description": "Create the base R-block template with 7-section structure. This is the common substructure all R-blocks inherit. Includes: Domain Definition, Extraction Framework, Analysis Dimensions, Memory Integration hooks, Output Schema, Connection Hooks, and Worked Example placeholder.",
+      "dependencies": [],
+      "output_files": [
+        "N5/templates/reflection/r_block_base.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:00:55.733212+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w02_edge_infra",
+      "component": "edge_infrastructure",
+      "description": "Create JSONL edge storage schema and query utilities. Define edge types (EXTENDS, CONTRADICTS, SUPPORTS, REFINES, ENABLES). Create N5/data/reflection_edges.jsonl with header. Build simple query script for finding connections.",
+      "dependencies": [],
+      "output_files": [
+        "N5/data/reflection_edges.jsonl",
+        "N5/scripts/reflection_edges.py"
+      ],
+      "estimated_hours": 1,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:00:55.880211+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w03_r04_pilot",
+      "component": "R04_Market",
+      "description": "Develop R04 (Market Signal) as the pilot block using base template. Deep framework for: market dynamics, competitive signals, distribution channels, timing indicators, trend validation. Include worked example from recruiter-game-plan reflection.",
+      "dependencies": [
+        "w01_foundation"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R04_Market.prompt.md"
+      ],
+      "estimated_hours": 3,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:03:20.523033+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w04_r01",
+      "component": "R01_Personal",
+      "description": "Develop R01 (Personal Insight) using base template. Framework for: emotional states, energy patterns, identity tensions, values conflicts, growth edges, self-awareness moments.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R01_Personal.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:40.616793+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w05_r02",
+      "component": "R02_Learning",
+      "description": "Develop R02 (Learning Note) using base template. Framework for: skill acquisition, knowledge gaps identified, mental model updates, expertise development, learning transfer opportunities.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R02_Learning.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:41.098015+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w06_r03",
+      "component": "R03_Strategic",
+      "description": "Develop R03 (Strategic Thought) using base template. Framework for: directional decisions, resource allocation, opportunity cost analysis, strategic bets, path dependencies, trap doors.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R03_Strategic.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:41.643181+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w07_r05",
+      "component": "R05_Product",
+      "description": "Develop R05 (Product Idea) using base template. Framework for: user problems, solution sketches, build vs buy, MVP scope, validation approach, Careerspan fit assessment.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R05_Product.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:42.169358+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w08_r06",
+      "component": "R06_Synthesis",
+      "description": "Develop R06 (Synthesis) using base template. Framework for: cross-domain connections, pattern recognition, framework building, mental model integration, theory development.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R06_Synthesis.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:42.659893+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w09_r07",
+      "component": "R07_Prediction",
+      "description": "Develop R07 (Prediction) using base template. Framework for: future state hypotheses, confidence levels, timeframes, falsification criteria, tracking hooks for later validation.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R07_Prediction.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:43.138034+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w10_r08",
+      "component": "R08_Venture",
+      "description": "Develop R08 (Venture Idea) using base template. Framework for: business model sketch, market size signals, competitive moat, resource requirements, why-not-Careerspan assessment.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R08_Venture.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:43.616226+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w11_r09",
+      "component": "R09_Content",
+      "description": "Develop R09 (Content Idea) using base template. Framework for: content thesis, target audience, format fit, uniqueness angle, timeliness, effort estimate.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R09_Content.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:44.094944+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w12_r00",
+      "component": "R00_Emergent",
+      "description": "Develop R00 (Emergent) using base template. Special block for content that doesn't fit R01-R09. Framework for: category suggestion, provisional structure, promotion criteria to new R-block type.",
+      "dependencies": [
+        "w01_foundation",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/R00_Emergent.prompt.md"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:44.606436+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w13_rix",
+      "component": "RIX_Integration",
+      "description": "Develop RIX (Integration) special block. Queries memory profiles (knowledge, positions, meetings), identifies connections to prior reflections and established positions, writes both JSONL edges and inline markdown. Includes promotion logic for emergent integration-patterns.",
+      "dependencies": [
+        "w01_foundation",
+        "w02_edge_infra",
+        "w03_r04_pilot"
+      ],
+      "output_files": [
+        "Prompts/Blocks/Reflection/RIX_Integration.prompt.md"
+      ],
+      "estimated_hours": 4,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:32:45.098617+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "w14_orchestrator",
+      "component": "process_reflection",
+      "description": "Rewrite Process Reflection as master orchestrator. Handles: input resolution (file/audio/Drive), word count gating, transcript classification, parallel R-block dispatch, RIX invocation, final output assembly. References all developed blocks.",
+      "dependencies": [
+        "w13_rix",
+        "w04_r01",
+        "w05_r02",
+        "w06_r03",
+        "w07_r05",
+        "w08_r06",
+        "w09_r07",
+        "w10_r08",
+        "w11_r09",
+        "w12_r00"
+      ],
+      "output_files": [
+        "Prompts/Process Reflection.prompt.md"
+      ],
+      "estimated_hours": 3,
+      "status": "completed",
+      "completed_at": "2026-01-09T12:35:50.901237+00:00",
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "r-block-framework",
+    "created_at": "2026-01-09T11:42:06.287715+00:00",
+    "status": "active"
+  }
+}

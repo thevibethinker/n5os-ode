@@ -1,0 +1,29 @@
+# Reflection Edges Schema
+# Each line is a JSON object representing a connection between content items
+#
+# Schema:
+# {
+#   "id": "edge_YYYYMMDD_NNN",           -- Unique edge identifier
+#   "from": "source_identifier",          -- Source content ID
+#   "from_type": "reflection|position|knowledge|meeting",
+#   "to": "target_identifier",            -- Target content ID
+#   "to_type": "reflection|position|knowledge|meeting",
+#   "edge_type": "EXTENDS|CONTRADICTS|SUPPORTS|REFINES|ENABLES",
+#   "evidence": "Quote or description establishing the connection",
+#   "confidence": "high|medium|low",
+#   "created": "ISO8601 timestamp",
+#   "created_by": "RIX|manual|import"
+# }
+#
+# Edge Types:
+# - EXTENDS: Builds upon, develops further
+# - CONTRADICTS: Challenges or conflicts with
+# - SUPPORTS: Provides evidence for
+# - REFINES: Narrows, clarifies, adds nuance
+# - ENABLES: Makes possible, unlocks
+#
+# Example edges below:
+
+{"id": "edge_20260109_001", "from": "2026-01-09_recruiter-game-plan", "from_type": "reflection", "to": "candidate-ownership-thesis", "to_type": "position", "edge_type": "EXTENDS", "evidence": "Discussion of treating candidates as customers directly builds on the candidate ownership model", "confidence": "high", "created": "2026-01-09T11:45:00Z", "created_by": "example"}
+{"id": "edge_20260109_002", "from": "2026-01-08_market-analysis", "from_type": "reflection", "to": "ai-recruiting-landscape", "to_type": "knowledge", "edge_type": "SUPPORTS", "evidence": "New data on Marvin and Ribbon validates prior competitive analysis", "confidence": "medium", "created": "2026-01-09T11:46:00Z", "created_by": "example"}
+{"id": "edge_20260109_003", "from": "2026-01-07_pricing-thoughts", "from_type": "reflection", "to": "2026-01-05_pricing-model", "to_type": "reflection", "edge_type": "REFINES", "evidence": "Added nuance about enterprise vs SMB pricing tiers", "confidence": "high", "created": "2026-01-09T11:47:00Z", "created_by": "example"}
