@@ -1,0 +1,150 @@
+tables:
+- name: account
+  row_count: 1
+  columns:
+  - name: account_id
+    type: VARCHAR
+  - name: username
+    type: VARCHAR
+  - name: display_name
+    type: VARCHAR
+  - name: email
+    type: VARCHAR
+  - name: created_at
+    type: VARCHAR
+  description: Your account information
+- name: blocks
+  row_count: 32
+  columns:
+  - name: account_id
+    type: VARCHAR
+  - name: user_link
+    type: VARCHAR
+  description: Accounts you blocked
+- name: deleted_tweets
+  row_count: 6
+  columns:
+  - name: id
+    type: VARCHAR
+    description: Tweet ID
+  - name: created_at
+    type: TIMESTAMP
+    description: When the tweet was posted
+  - name: full_text
+    type: VARCHAR
+    description: Tweet content
+- name: direct_messages
+  row_count: 146
+  columns:
+  - name: conversation_id
+    type: VARCHAR
+    description: Conversation thread ID
+  - name: message_id
+    type: VARCHAR
+    description: Individual message ID
+  - name: sender_id
+    type: VARCHAR
+    description: User ID who sent the message
+  - name: recipient_id
+    type: VARCHAR
+    description: User ID who received the message
+  - name: text
+    type: VARCHAR
+    description: Message content
+  - name: created_at
+    type: TIMESTAMP
+    description: When the message was sent
+  description: Direct message conversations
+- name: followers
+  row_count: 243
+  columns:
+  - name: account_id
+    type: VARCHAR
+    description: X user ID
+  - name: user_link
+    type: VARCHAR
+    description: Link to user profile
+  description: Accounts following you
+- name: following
+  row_count: 1442
+  columns:
+  - name: account_id
+    type: VARCHAR
+    description: X user ID
+  - name: user_link
+    type: VARCHAR
+    description: Link to user profile
+  description: Accounts you follow
+- name: likes
+  row_count: 1960
+  columns:
+  - name: tweet_id
+    type: VARCHAR
+    description: ID of the liked tweet
+  - name: full_text
+    type: VARCHAR
+    description: Content of the liked tweet
+  - name: expanded_url
+    type: VARCHAR
+    description: Link to the tweet
+  description: Tweets you liked
+- name: mutes
+  row_count: 12
+  columns:
+  - name: account_id
+    type: VARCHAR
+  - name: user_link
+    type: VARCHAR
+  description: Accounts you muted
+- name: note_tweets
+  row_count: 29
+  columns:
+  - name: id
+    type: VARCHAR
+  - name: text
+    type: VARCHAR
+  - name: created_at
+    type: TIMESTAMP
+  - name: updated_at
+    type: TIMESTAMP
+  description: Long-form tweets (notes)
+- name: tweets
+  row_count: 516
+  columns:
+  - name: id
+    type: VARCHAR
+    description: Tweet ID
+  - name: created_at
+    type: TIMESTAMP
+    description: When the tweet was posted
+  - name: full_text
+    type: VARCHAR
+    description: Tweet content
+  - name: favorite_count
+    type: INTEGER
+    description: Number of likes
+  - name: retweet_count
+    type: INTEGER
+    description: Number of retweets
+  - name: in_reply_to_user_id
+    type: VARCHAR
+    description: User ID this is replying to (if reply)
+  - name: in_reply_to_status_id
+    type: VARCHAR
+    description: Tweet ID this is replying to (if reply)
+  - name: is_retweet
+    type: BOOLEAN
+    description: Whether this is a retweet
+  - name: mentions
+    type: VARCHAR
+    description: JSON array of @mentioned usernames
+  - name: hashtags
+    type: VARCHAR
+    description: 'JSON array of #hashtags used'
+  - name: urls
+    type: VARCHAR
+    description: JSON array of URLs in tweet
+  - name: source
+    type: VARCHAR
+    description: Client used to post (Android, Web, etc.)
+  description: Your tweets/posts on X

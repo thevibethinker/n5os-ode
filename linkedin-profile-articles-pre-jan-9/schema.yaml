@@ -1,0 +1,61 @@
+tables:
+- name: articles
+  row_count: 3
+  columns:
+  - name: title
+    type: VARCHAR
+    description: Title of the article
+  - name: created_at
+    type: VARCHAR
+    description: When the article draft was created
+  - name: published_at
+    type: VARCHAR
+    description: When the article was published
+  - name: link
+    type: VARCHAR
+    description: URL link to the article on LinkedIn
+  - name: image_url
+    type: VARCHAR
+    description: URL of the article hero image
+  - name: content
+    type: VARCHAR
+    description: Full text content of the article
+  - name: file_path
+    type: VARCHAR
+  description: LinkedIn articles authored by the user
+- name: profile
+  row_count: 1
+  columns:
+  - name: First Name
+    type: VARCHAR
+    description: User first name
+  - name: Last Name
+    type: VARCHAR
+    description: User last name
+  - name: Maiden Name
+    type: VARCHAR
+  - name: Address
+    type: VARCHAR
+  - name: Birth Date
+    type: VARCHAR
+  - name: Headline
+    type: VARCHAR
+    description: User professional headline
+  - name: Summary
+    type: VARCHAR
+    description: User professional summary
+  - name: Industry
+    type: VARCHAR
+    description: Industry the user belongs to
+  - name: Zip Code
+    type: BIGINT
+  - name: Geo Location
+    type: VARCHAR
+    description: User geographic location
+  - name: Twitter Handles
+    type: VARCHAR
+  - name: Websites
+    type: VARCHAR
+  - name: Instant Messengers
+    type: VARCHAR
+  description: User profile information from LinkedIn

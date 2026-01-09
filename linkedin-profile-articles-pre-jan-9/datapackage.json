@@ -1,0 +1,9 @@
+{
+  "name": "linkedin-profile-articles-pre-jan-9",
+  "title": "LinkedIn (Profile, Articles) Pre Jan 9",
+  "resources": [
+    {
+      "path": "data.duckdb"
+    }
+  ]
+}
