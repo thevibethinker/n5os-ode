@@ -128,6 +128,7 @@ def enrich_synthesis(transcript_key_concepts: list[str]) -> dict:
 ## R06: Synthesis
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Synthesis Summary
@@ -142,6 +143,12 @@ def enrich_synthesis(transcript_key_concepts: list[str]) -> dict:
 
 #### Why This Matters
 [What this synthesis enables or explains]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote showing synthesis moment]

@@ -132,6 +132,7 @@ def enrich_product_idea(transcript_key_concepts: list[str]) -> dict:
 ## R05: Product Idea
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Product Summary
@@ -147,6 +148,12 @@ def enrich_product_idea(transcript_key_concepts: list[str]) -> dict:
 
 #### The Solution Sketch
 [1-2 paragraphs on the proposed feature]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote showing product insight]

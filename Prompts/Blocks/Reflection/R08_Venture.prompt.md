@@ -131,6 +131,7 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 ## R08: Venture Idea
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Venture Summary
@@ -146,6 +147,12 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 
 #### The Business Model Sketch
 [How this would make money]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote]

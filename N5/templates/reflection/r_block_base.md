@@ -157,6 +157,7 @@ Example: "If a competitor mentioned in the reflection exists in knowledge base,
 ## {{BLOCK_ID}}: {{BLOCK_NAME}}
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id or agent_id}
 **Source:** {source_file}
 **Confidence:** {overall_confidence}
 
@@ -170,6 +171,12 @@ Example: "If a competitor mentioned in the reflection exists in knowledge base,
 {{OPTIONAL_CONTENT}}
 
 ---
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {why this might connect}
+- `{concept_2}` — {why this might connect}
+- ...
 
 ### Connections Identified
 - Links to: {prior_reflections}
@@ -297,3 +304,4 @@ Any additional context, warnings, or guidance specific to this block.
 *Template Version: 1.0*
 *Last Updated: 2026-01-09*
 *Part of: R-Block Framework (r-block-framework)*
+

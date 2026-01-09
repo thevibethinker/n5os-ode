@@ -132,6 +132,7 @@ def enrich_prediction(transcript_key_concepts: list[str]) -> dict:
 ## R07: Prediction
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Prediction Summary
@@ -147,6 +148,12 @@ def enrich_prediction(transcript_key_concepts: list[str]) -> dict:
 
 #### Underlying Logic
 [Why V expects this]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence/Reasoning
 > [Direct quote with reasoning]

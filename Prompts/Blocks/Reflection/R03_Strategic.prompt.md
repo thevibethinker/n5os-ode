@@ -132,6 +132,7 @@ def enrich_strategic_thought(transcript_key_concepts: list[str]) -> dict:
 ## R03: Strategic Thought
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Strategic Summary
@@ -145,6 +146,12 @@ def enrich_strategic_thought(transcript_key_concepts: list[str]) -> dict:
 
 ### Alternatives Considered
 [What other options exist and why this one is preferred]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote showing strategic reasoning]

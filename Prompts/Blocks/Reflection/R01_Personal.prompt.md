@@ -141,6 +141,7 @@ def enrich_personal_insight(transcript_key_concepts: list[str]) -> dict:
 ## R01: Personal Insight
 
 **Generated:** {timestamp}
+**Provenance:** {conversation_id}
 **Source:** {reflection_file}
 
 ### Insight Summary
@@ -150,6 +151,12 @@ def enrich_personal_insight(transcript_key_concepts: list[str]) -> dict:
 
 ### Reflection
 [2-3 paragraphs exploring what V was feeling/experiencing and what it reveals]
+
+
+### Edge Candidates
+[Entities/concepts from this analysis that RIX should check for connections]
+- `{concept_1}` — {potential_connection_domain}
+- `{concept_2}` — {potential_connection_domain}
 
 ### Evidence
 > [Direct quote showing emotional/personal content]
