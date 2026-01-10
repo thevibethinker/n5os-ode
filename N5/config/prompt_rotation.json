@@ -1,0 +1,51 @@
+{
+  "description": "Prompt of the Day rotation config - prompts eligible for surfacing in daily digest",
+  "created": "2026-01-09",
+  "last_updated": "2026-01-09",
+  "categories": {
+    "self-reflection": {
+      "description": "Prompts that help V understand his own patterns and thinking",
+      "frequency": "weekly",
+      "prompts": [
+        {
+          "prompt": "Resonance Report",
+          "path": "Prompts/Resonance Report.prompt.md",
+          "last_surfaced": null,
+          "description": "View intellectual landscape - ideas rising, stabilizing, evolving"
+        }
+      ]
+    },
+    "system-health": {
+      "description": "Prompts for checking system status and hygiene",
+      "frequency": "weekly",
+      "prompts": [
+        {
+          "prompt": "Safety Check",
+          "path": "Prompts/Safety Check.prompt.md",
+          "last_surfaced": null,
+          "description": "Run N5 safety audit and compliance check"
+        },
+        {
+          "prompt": "Lists Health Check",
+          "path": "Prompts/Lists Health Check.prompt.md",
+          "last_surfaced": null,
+          "description": "Check health of list system"
+        }
+      ]
+    },
+    "knowledge-management": {
+      "description": "Prompts for organizing and reviewing accumulated knowledge",
+      "frequency": "biweekly",
+      "prompts": [
+        {
+          "prompt": "Lessons Review",
+          "path": "Prompts/Lessons Review.prompt.md",
+          "last_surfaced": null,
+          "description": "Review accumulated lessons and insights"
+        }
+      ]
+    }
+  },
+  "selection_logic": "Round-robin within category, categories rotate. Never repeat same prompt within frequency window."
+}
+

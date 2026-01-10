@@ -34,6 +34,14 @@ from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Optional
 import sqlite3
+from collections import defaultdict
+
+# Import contextual primer for resonance-aware extraction
+try:
+    from N5.scripts.resonance.contextual_primer import generate_context_block
+    HAS_PRIMER = True
+except ImportError:
+    HAS_PRIMER = False
 
 # Paths
 MEETINGS_ROOT = Path("/home/workspace/Personal/Meetings")
@@ -288,8 +296,13 @@ def show_batch(batch_file: str) -> Dict:
     }
 
 
-def generate_extraction_prompt(batch_file: str) -> str:
-    """Generate a prompt for Zo to extract edges from a batch."""
+def generate_extraction_prompt(batch_file: str, include_context: bool = True) -> str:
+    """Generate a prompt for Zo to extract edges from a batch.
+    
+    Args:
+        batch_file: Path to the batch JSON file
+        include_context: Whether to include the resonance contextual primer
+    """
     if "/" not in batch_file:
         batch_path = BACKFILL_DIR / batch_file
     else:
@@ -307,10 +320,21 @@ def generate_extraction_prompt(batch_file: str) -> str:
         "",
         "For each meeting below, extract edges using B33 format.",
         "Output JSONL (one JSON object per line) for all edges found.",
-        "",
-        "---",
         ""
     ]
+    
+    # Inject contextual primer if available and requested
+    if include_context and HAS_PRIMER:
+        try:
+            context_block = generate_context_block()
+            prompt_parts.append(context_block)
+            prompt_parts.append("")
+        except Exception as e:
+            prompt_parts.append(f"<!-- Context primer unavailable: {e} -->")
+            prompt_parts.append("")
+    
+    prompt_parts.append("---")
+    prompt_parts.append("")
     
     for i, meeting in enumerate(data["meetings"], 1):
         prompt_parts.append(f"## Meeting {i}: {meeting['meeting_id']}")
@@ -396,6 +420,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

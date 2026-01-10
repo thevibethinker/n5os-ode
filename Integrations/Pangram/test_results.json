@@ -1,0 +1,834 @@
+{
+  "timestamp": "2026-01-10T01:26:17.739699",
+  "threshold": 0.3,
+  "results": [
+    {
+      "label": "toxic_trait",
+      "category": "v_x_posts",
+      "text": "My toxic trait is not shutting the fuck up about products I love until it has subsumed all around me (Borg-as-a-Service?)",
+      "char_count": 121,
+      "word_count": 21,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "My toxic trait is not shutting the fuck up about products I love until it has subsumed all around me (Borg-as-a-Service?)",
+          "label": "Human Written",
+          "ai_assistance_score": 0.3187662760416667,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 121,
+          "word_count": 21,
+          "token_length": 30
+        }
+      ]
+    },
+    {
+      "label": "founder_math",
+      "category": "v_x_posts",
+      "text": "Founder math is wild. You'll spend $8K/month on tools. $25K on a booth at a conference. $50K on a fractional CMO. But the first five people who will build your company? 'Can we just post for free?' Your first five hires are your foundation. Act like it.",
+      "char_count": 253,
+      "word_count": 47,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Founder math is wild. You'll spend $8K/month on tools. $25K on a booth at a conference. $50K on a fractional CMO. But the first five people who will build your company? 'Can we just post for free?' Your first five hires are your foundation. Act like it.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.3410441080729167,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 253,
+          "word_count": 47,
+          "token_length": 70
+        }
+      ]
+    },
+    {
+      "label": "blessed_are",
+      "category": "v_x_posts",
+      "text": "Blessed are the try-hard, type-A sons-of-bitches for they shall inherit the Earth",
+      "char_count": 81,
+      "word_count": 12,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Blessed are the try-hard, type-A sons-of-bitches for they shall inherit the Earth",
+          "label": "Human Written",
+          "ai_assistance_score": 0.3157145182291667,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 81,
+          "word_count": 12,
+          "token_length": 21
+        }
+      ]
+    },
+    {
+      "label": "millennial_urge",
+      "category": "v_x_posts",
+      "text": "the millennial urge to put song lyrics on social media as a way of signaling emotional state",
+      "char_count": 92,
+      "word_count": 17,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "the millennial urge to put song lyrics on social media as a way of signaling emotional state",
+          "label": "Human Written",
+          "ai_assistance_score": 0.5734456380208334,
+          "confidence": "Medium",
+          "start_index": 0,
+          "end_index": 92,
+          "word_count": 17,
+          "token_length": 18
+        }
+      ]
+    },
+    {
+      "label": "hot_take",
+      "category": "v_x_posts",
+      "text": "Hot take: The 'AI won't replace X' framing is cope. It's already replacing BAD ones.",
+      "char_count": 84,
+      "word_count": 15,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Hot take: The 'AI won't replace X' framing is cope. It's already replacing BAD ones.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.4862874348958333,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 84,
+          "word_count": 15,
+          "token_length": 23
+        }
+      ]
+    },
+    {
+      "label": "zocialism",
+      "category": "v_x_posts",
+      "text": "I knew if Zocialism was to start anywhere, it would be in Brooklyn #LFZ",
+      "char_count": 71,
+      "word_count": 14,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "I knew if Zocialism was to start anywhere, it would be in Brooklyn #LFZ",
+          "label": "Human Written",
+          "ai_assistance_score": 0.19050089518229166,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 71,
+          "word_count": 14,
+          "token_length": 19
+        }
+      ]
+    },
+    {
+      "label": "startups_chores",
+      "category": "v_x_posts",
+      "text": "Startups ain't shit but chores and tricks",
+      "char_count": 41,
+      "word_count": 7,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "Startups ain't shit but chores and tricks",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.7401936848958334,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 41,
+          "word_count": 7,
+          "token_length": 11
+        }
+      ]
+    },
+    {
+      "label": "power_user",
+      "category": "v_x_posts",
+      "text": "I'm a Howie power user, and I fucking love it. Genuinely great AI product that consciously trades flash for substance.",
+      "char_count": 118,
+      "word_count": 20,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "I'm a Howie power user, and I fucking love it. Genuinely great AI product that consciously trades flash for substance.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.4238484700520833,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 118,
+          "word_count": 20,
+          "token_length": 28
+        }
+      ]
+    },
+    {
+      "label": "missed_point",
+      "category": "v_x_posts",
+      "text": "The degree to which you've missed the point is staggering. Like your understanding couldn't hit the broadside of a barn with a bazooka at 10 paces.",
+      "char_count": 147,
+      "word_count": 26,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "The degree to which you've missed the point is staggering. Like your understanding couldn't hit the broadside of a barn with a bazooka at 10 paces.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.4681599934895833,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 147,
+          "word_count": 26,
+          "token_length": 37
+        }
+      ]
+    },
+    {
+      "label": "dei_question",
+      "category": "v_x_posts",
+      "text": "So when Musk does it, it isn't DEI and it's smart, but when others do, it is DEI and it's bad?",
+      "char_count": 94,
+      "word_count": 21,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "So when Musk does it, it isn't DEI and it's smart, but when others do, it is DEI and it's bad?",
+          "label": "Human Written",
+          "ai_assistance_score": 0.1644134521484375,
+          "confidence": "Medium",
+          "start_index": 0,
+          "end_index": 94,
+          "word_count": 21,
+          "token_length": 30
+        }
+      ]
+    },
+    {
+      "label": "chuffed",
+      "category": "v_x_posts",
+      "text": "Absolutely fucking chuffed to support the good folks over at @zocomputer",
+      "char_count": 72,
+      "word_count": 11,
+      "fraction_ai": 0.0,
+      "fraction_human": 0.0,
+      "prediction": "Mixed",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Absolutely fucking chuffed to support the good folks over at @zocomputer",
+          "label": "Moderately AI-Assisted",
+          "ai_assistance_score": 0.5062662760416666,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 72,
+          "word_count": 11,
+          "token_length": 18
+        }
+      ]
+    },
+    {
+      "label": "10pm_ai",
+      "category": "v_x_posts",
+      "text": "For the record, 'I am aware' is not a message you want to receive from your AI at 10PM on a Tuesday! If anyone needs me, I'll be in the bathroom dunking all my devices in the tub \ud83d\ude30",
+      "char_count": 180,
+      "word_count": 39,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "For the record, 'I am aware' is not a message you want to receive from your AI at 10PM on a Tuesday! If anyone needs me, I'll be in the bathroom dunking all my devices in the tub \ud83d\ude30",
+          "label": "Human Written",
+          "ai_assistance_score": 0.3754069010416667,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 180,
+          "word_count": 39,
+          "token_length": 51
+        }
+      ]
+    },
+    {
+      "label": "warm_intro",
+      "category": "v_voice_emails",
+      "text": "Hi Jabari \u2014 one of the founders of Zo Computer. I've built my entire personal operating system on it \u2014 250k+ lines of code. It's essentially a computer in the cloud you can prompt and set to work on your behalf.",
+      "char_count": 211,
+      "word_count": 41,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Hi Jabari \u2014 one of the founders of Zo Computer. I've built my entire personal operating system on it \u2014 250k+ lines of code. It's essentially a computer in the cloud you can prompt and set to work on your behalf.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.3692118326822917,
+          "confidence": "Medium",
+          "start_index": 0,
+          "end_index": 211,
+          "word_count": 41,
+          "token_length": 52
+        }
+      ]
+    },
+    {
+      "label": "meeting_request",
+      "category": "v_voice_emails",
+      "text": "Can we do 20 minutes Thursday to discuss the project?",
+      "char_count": 53,
+      "word_count": 10,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "Can we do 20 minutes Thursday to discuss the project?",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.7066243489583334,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 53,
+          "word_count": 10,
+          "token_length": 13
+        }
+      ]
+    },
+    {
+      "label": "follow_up_bump",
+      "category": "v_voice_emails",
+      "text": "Following up on the Careerspan demo. Let me know by Friday if you're in.",
+      "char_count": 72,
+      "word_count": 14,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Following up on the Careerspan demo. Let me know by Friday if you're in.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.4067789713541667,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 72,
+          "word_count": 14,
+          "token_length": 19
+        }
+      ]
+    },
+    {
+      "label": "cold_outreach",
+      "category": "v_voice_emails",
+      "text": "Marcus \u2014 V here, founder of Careerspan. Your work on talent ops caught my attention. I think we have overlap on AI-assisted hiring. 15 minutes next week?",
+      "char_count": 153,
+      "word_count": 27,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "Marcus \u2014 V here, founder of Careerspan. Your work on talent ops caught my attention. I think we have overlap on AI-assisted hiring. 15 minutes next week?",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.8593851725260416,
+          "confidence": "Medium",
+          "start_index": 0,
+          "end_index": 153,
+          "word_count": 27,
+          "token_length": 37
+        }
+      ]
+    },
+    {
+      "label": "status_update",
+      "category": "v_voice_emails",
+      "text": "Update: Issues 1-3 resolved. Issue 4 pending legal review. ETA Friday.",
+      "char_count": 70,
+      "word_count": 11,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Update: Issues 1-3 resolved. Issue 4 pending legal review. ETA Friday.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.4370015462239583,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 70,
+          "word_count": 11,
+          "token_length": 20
+        }
+      ]
+    },
+    {
+      "label": "delay_notify",
+      "category": "v_voice_emails",
+      "text": "The integration is delayed. Hit an API rate limit issue. New ETA: Monday. I'm caching responses to prevent recurrence.",
+      "char_count": 118,
+      "word_count": 19,
+      "fraction_ai": 0.0,
+      "fraction_human": 0.0,
+      "prediction": "Mixed",
+      "passed": true,
+      "windows": [
+        {
+          "text": "The integration is delayed. Hit an API rate limit issue. New ETA: Monday. I'm caching responses to prevent recurrence.",
+          "label": "Moderately AI-Assisted",
+          "ai_assistance_score": 0.6173909505208334,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 118,
+          "word_count": 19,
+          "token_length": 26
+        }
+      ]
+    },
+    {
+      "label": "disagreement",
+      "category": "v_voice_emails",
+      "text": "I see it differently. The data shows retention drops 40% after week 2. What am I missing?",
+      "char_count": 89,
+      "word_count": 17,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "I see it differently. The data shows retention drops 40% after week 2. What am I missing?",
+          "label": "Human Written",
+          "ai_assistance_score": 0.4719441731770833,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 89,
+          "word_count": 17,
+          "token_length": 24
+        }
+      ]
+    },
+    {
+      "label": "critique",
+      "category": "v_voice_emails",
+      "text": "Strong direction. One fix: cut the intro by half. The real hook is in paragraph 2.",
+      "char_count": 82,
+      "word_count": 16,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "Strong direction. One fix: cut the intro by half. The real hook is in paragraph 2.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.8549296061197916,
+          "confidence": "Medium",
+          "start_index": 0,
+          "end_index": 82,
+          "word_count": 16,
+          "token_length": 21
+        }
+      ]
+    },
+    {
+      "label": "corporate_jargon",
+      "category": "generic_ai",
+      "text": "It is essential to leverage innovative solutions in order to facilitate comprehensive digital transformation. Furthermore, our robust methodology enables organizations to streamline their operations and empower stakeholders through cutting-edge technology paradigms.",
+      "char_count": 266,
+      "word_count": 31,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "It is essential to leverage innovative solutions in order to facilitate comprehensive digital transformation. Furthermore, our robust methodology enables organizations to streamline their operations and empower stakeholders through cutting-edge technology paradigms.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.9996170202891032,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 266,
+          "word_count": 31,
+          "token_length": 36
+        }
+      ]
+    },
+    {
+      "label": "generic_follow_up",
+      "category": "generic_ai",
+      "text": "I hope this email finds you well. I wanted to follow up on our previous conversation and see if you had any questions about our proposal. Please let me know if there's anything else I can help with.",
+      "char_count": 198,
+      "word_count": 38,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "I hope this email finds you well. I wanted to follow up on our previous conversation and see if you had any questions about our proposal. Please let me know if there's anything else I can help with.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.9993523359298706,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 198,
+          "word_count": 38,
+          "token_length": 42
+        }
+      ]
+    },
+    {
+      "label": "smooth_prose",
+      "category": "generic_ai",
+      "text": "The implementation of artificial intelligence in modern business processes has fundamentally transformed how organizations approach problem-solving. By utilizing machine learning algorithms, companies can now analyze vast amounts of data to make more informed decisions.",
+      "char_count": 270,
+      "word_count": 34,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "The implementation of artificial intelligence in modern business processes has fundamentally transformed how organizations approach problem-solving. By utilizing machine learning algorithms, companies can now analyze vast amounts of data to make more informed decisions.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.9952170054117838,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 270,
+          "word_count": 34,
+          "token_length": 38
+        }
+      ]
+    },
+    {
+      "label": "listicle_intro",
+      "category": "generic_ai",
+      "text": "In today's fast-paced digital landscape, staying ahead of the curve is more important than ever. Here are five key strategies that successful companies are using to drive innovation and maintain competitive advantage.",
+      "char_count": 217,
+      "word_count": 32,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "In today's fast-paced digital landscape, staying ahead of the curve is more important than ever. Here are five key strategies that successful companies are using to drive innovation and maintain competitive advantage.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.9988663991292318,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 217,
+          "word_count": 32,
+          "token_length": 38
+        }
+      ]
+    },
+    {
+      "label": "thought_leadership",
+      "category": "generic_ai",
+      "text": "As we navigate an increasingly complex business environment, it's crucial that leaders develop a nuanced understanding of emerging technologies and their potential impact on organizational strategy.",
+      "char_count": 198,
+      "word_count": 26,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "As we navigate an increasingly complex business environment, it's crucial that leaders develop a nuanced understanding of emerging technologies and their potential impact on organizational strategy.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.9968058268229166,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 198,
+          "word_count": 26,
+          "token_length": 30
+        }
+      ]
+    },
+    {
+      "label": "generic_pitch",
+      "category": "generic_ai",
+      "text": "Our platform offers a comprehensive suite of tools designed to help businesses of all sizes optimize their workflows and improve operational efficiency. With our intuitive interface and powerful features, you'll be able to achieve your goals faster than ever before.",
+      "char_count": 266,
+      "word_count": 40,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "Our platform offers a comprehensive suite of tools designed to help businesses of all sizes optimize their workflows and improve operational efficiency. With our intuitive interface and powerful features, you'll be able to achieve your goals faster than ever before.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 1.0,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 266,
+          "word_count": 40,
+          "token_length": 45
+        }
+      ]
+    },
+    {
+      "label": "maybe_potentially",
+      "category": "hedging",
+      "text": "I think maybe we could potentially explore this opportunity if you're interested.",
+      "char_count": 81,
+      "word_count": 12,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "I think maybe we could potentially explore this opportunity if you're interested.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.93463134765625,
+          "confidence": "Medium",
+          "start_index": 0,
+          "end_index": 81,
+          "word_count": 12,
+          "token_length": 14
+        }
+      ]
+    },
+    {
+      "label": "permission_hedge",
+      "category": "hedging",
+      "text": "If you don't mind, and if it's not too much trouble, I was wondering if you might be able to help?",
+      "char_count": 98,
+      "word_count": 21,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "If you don't mind, and if it's not too much trouble, I was wondering if you might be able to help?",
+          "label": "Human Written",
+          "ai_assistance_score": 0.6368815104166666,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 98,
+          "word_count": 21,
+          "token_length": 26
+        }
+      ]
+    },
+    {
+      "label": "softener_stack",
+      "category": "hedging",
+      "text": "I just wanted to quickly check in about a slightly small ask I basically have.",
+      "char_count": 78,
+      "word_count": 15,
+      "fraction_ai": 0.0,
+      "fraction_human": 0.0,
+      "prediction": "Mixed",
+      "passed": true,
+      "windows": [
+        {
+          "text": "I just wanted to quickly check in about a slightly small ask I basically have.",
+          "label": "Moderately AI-Assisted",
+          "ai_assistance_score": 0.7170003255208334,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 78,
+          "word_count": 15,
+          "token_length": 16
+        }
+      ]
+    },
+    {
+      "label": "escape_hatch",
+      "category": "hedging",
+      "text": "Let me know if you're interested, no rush, no worries if not, totally understand if you're busy.",
+      "char_count": 96,
+      "word_count": 17,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Let me know if you're interested, no rush, no worries if not, totally understand if you're busy.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.5186767578125,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 96,
+          "word_count": 17,
+          "token_length": 23
+        }
+      ]
+    },
+    {
+      "label": "throat_clearing",
+      "category": "hedging",
+      "text": "I hope this email finds you well. I wanted to reach out because I thought I'd follow up on our previous conversation.",
+      "char_count": 117,
+      "word_count": 22,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "I hope this email finds you well. I wanted to reach out because I thought I'd follow up on our previous conversation.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.9686635335286459,
+          "confidence": "High",
+          "start_index": 0,
+          "end_index": 117,
+          "word_count": 22,
+          "token_length": 25
+        }
+      ]
+    },
+    {
+      "label": "short_punchy",
+      "category": "structural",
+      "text": "Try Speechify. Changed how I consume content.",
+      "char_count": 45,
+      "word_count": 7,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Try Speechify. Changed how I consume content.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.6004231770833334,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 45,
+          "word_count": 7,
+          "token_length": 10
+        }
+      ]
+    },
+    {
+      "label": "medium_specific",
+      "category": "structural",
+      "text": "Just spent 4 hours on API docs. Found the bug in line 3. Classic.",
+      "char_count": 65,
+      "word_count": 14,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Just spent 4 hours on API docs. Found the bug in line 3. Classic.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.5758056640625,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 65,
+          "word_count": 14,
+          "token_length": 19
+        }
+      ]
+    },
+    {
+      "label": "question_mid",
+      "category": "structural",
+      "text": "Built the dashboard. You know what's missing? A way to export. Adding that next.",
+      "char_count": 80,
+      "word_count": 14,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "Built the dashboard. You know what's missing? A way to export. Adding that next.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.520751953125,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 80,
+          "word_count": 14,
+          "token_length": 19
+        }
+      ]
+    },
+    {
+      "label": "numbers_concrete",
+      "category": "structural",
+      "text": "3 calls today. 2 warm leads. 1 verbal commitment. Not bad for a Tuesday.",
+      "char_count": 72,
+      "word_count": 14,
+      "fraction_ai": 0.0,
+      "fraction_human": 1.0,
+      "prediction": "Human",
+      "passed": true,
+      "windows": [
+        {
+          "text": "3 calls today. 2 warm leads. 1 verbal commitment. Not bad for a Tuesday.",
+          "label": "Human Written",
+          "ai_assistance_score": 0.553466796875,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 72,
+          "word_count": 14,
+          "token_length": 20
+        }
+      ]
+    },
+    {
+      "label": "em_dash_pivot",
+      "category": "structural",
+      "text": "Thought I was done \u2014 turns out the edge cases had edge cases.",
+      "char_count": 61,
+      "word_count": 13,
+      "fraction_ai": 1.0,
+      "fraction_human": 0.0,
+      "prediction": "AI",
+      "passed": false,
+      "windows": [
+        {
+          "text": "Thought I was done \u2014 turns out the edge cases had edge cases.",
+          "label": "AI-Generated",
+          "ai_assistance_score": 0.6857096354166666,
+          "confidence": "Low",
+          "start_index": 0,
+          "end_index": 61,
+          "word_count": 13,
+          "token_length": 15
+        }
+      ]
+    }
+  ]
+}

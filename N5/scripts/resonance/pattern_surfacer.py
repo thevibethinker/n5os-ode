@@ -17,7 +17,7 @@ Usage:
 import argparse
 import json
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from collections import defaultdict
 from typing import Dict, List, Any
@@ -152,7 +152,7 @@ def generate_resonance_index() -> Dict:
     classified = classify_ideas(ideas)
     
     index = {
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "thresholds": THRESHOLDS,
         "total_ideas": len(ideas),
         "summary": {
@@ -277,6 +277,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

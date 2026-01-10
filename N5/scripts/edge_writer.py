@@ -82,7 +82,8 @@ def add_edge(
     target: str,
     meeting: Optional[str] = None,
     evidence: Optional[str] = None,
-    status: str = "active"
+    status: str = "active",
+    evolution_type: Optional[str] = None
 ) -> Dict[str, Any]:
     """
     Add a new edge to the graph.
@@ -94,6 +95,8 @@ def add_edge(
         meeting: Optional meeting ID where edge was captured
         evidence: Optional quote or description supporting edge
         status: Edge status (default: active)
+        evolution_type: Optional evolution type for 'evolves' relation
+                       (domain_expansion, refinement, challenge, abandonment)
     
     Returns:
         Dict with edge_id and status
@@ -101,6 +104,11 @@ def add_edge(
     # Validate relation
     if not validate_relation(relation):
         raise ValueError(f"Invalid relation '{relation}'. Valid relations: {', '.join(EDGE_TYPES.keys())}")
+    
+    # Validate evolution_type if provided
+    valid_evolution_types = ["domain_expansion", "refinement", "challenge", "abandonment"]
+    if evolution_type and evolution_type not in valid_evolution_types:
+        raise ValueError(f"Invalid evolution_type '{evolution_type}'. Valid types: {', '.join(valid_evolution_types)}")
     
     # Parse entity references
     source_type, source_id = parse_entity_ref(source)
@@ -134,9 +142,9 @@ def add_edge(
         cursor.execute("""
             INSERT INTO edges (
                 source_type, source_id, relation, target_type, target_id,
-                context_meeting_id, evidence, status
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (source_type, source_id, relation, target_type, target_id, meeting, evidence, status))
+                context_meeting_id, evidence, status, evolution_type
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (source_type, source_id, relation, target_type, target_id, meeting, evidence, status, evolution_type))
         
         conn.commit()
         edge_id = cursor.lastrowid
@@ -362,4 +370,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

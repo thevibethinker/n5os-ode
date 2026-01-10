@@ -1,11 +1,11 @@
 ---
 created: 2026-01-04
-last_edited: 2026-01-04
-version: 1.1
+last_edited: 2026-01-09
+version: 1.2
 provenance: con_JAADiniaFXpKQUTN
 tool: true
 description: "Generate B33 Decision Edges - extract context graph relationships from meeting intelligence"
-tags: [meetings, intelligence, blocks, context-graph, edges, positions]
+tags: [meetings, intelligence, blocks, context-graph, edges, positions, resonance]
 mg_stage: MG-2+
 status: canonical
 ---
@@ -50,6 +50,56 @@ The B33 block extracts these relationship types:
 | `supports_position` | Stance | Edge evidence validates V's documented position (Phase 4.5) |
 | `challenges_position` | Stance | Edge evidence contradicts V's documented position (Phase 4.5) |
 | `crystallized_from` | Chain | Position emerged from this evidence (Phase 4.5) |
+| `evolves` | Evolution | Idea has evolved from previous version (use with `evolution_type`) |
+
+<!-- INJECT_CONTEXT -->
+
+## Resonance-Aware Extraction
+
+This system uses a "Resonance Reservoir" to distinguish V's established mental models from genuinely novel ideas. The contextual primer (injected above when available) tells you what V already knows.
+
+### The Resonance Hierarchy
+
+| Level | Name | Frequency | Extraction Rule |
+|-------|------|-----------|-----------------|
+| **L0** | Cornerstone | 10+ meetings | Only extract if **EVOLUTION** detected (pivot, challenge, new domain) |
+| **L1** | Active Thesis | 4-9 meetings | Extract evolution only. Include `evolution_type` field. |
+| **L2** | Recurring Tool | 2-3 meetings | Extract if applied to **new domain**. Skip same-domain repetition. |
+| **L3** | Spark | 1 meeting | Extract fully! These are the valuable novel ideas. |
+
+### Evolution Types
+
+When extracting an evolved idea, include the `evolution_type` field:
+
+| Type | When to Use |
+|------|-------------|
+| `domain_expansion` | Same idea applied to new context/domain |
+| `refinement` | Idea sharpened, nuanced, or made more specific |
+| `challenge` | Idea questioned, contradicted, or tested |
+| `abandonment` | Idea explicitly dropped or superseded |
+
+### Example: Resonance-Aware Edge
+
+```json
+{
+  "source_type": "idea",
+  "source_id": "meaning-level-intelligence",
+  "relation": "evolves",
+  "target_type": "idea",
+  "target_id": "meaning-level-intelligence",
+  "evolution_type": "domain_expansion",
+  "evidence": "V applied meaning-level intelligence to personal productivity, not just hiring",
+  "context_meeting_id": "mtg_2026-01-09_xyz"
+}
+```
+
+### Key Question
+
+Before extracting any idea, ask: **"Is this genuinely new thinking, or V restating what he already believes?"**
+
+- If restating → Skip (unless there's evolution)
+- If new domain → Extract with `domain_expansion`
+- If truly novel → Extract fully as Spark
 
 ## Output
 
@@ -68,6 +118,7 @@ Creates `B33_DECISION_EDGES.jsonl` in the meeting folder:
 - **Attribution**: Carefully distinguish originator vs supporter
 - **V Identity**: Vrijen Attawar is always `vrijen` as person ID
 - **Position edges**: Only create when alignment/contradiction is CLEAR (don't force it)
+- **Resonance awareness**: Prioritize novel ideas over repetition of known patterns
 
 ## Pipeline Integration
 
@@ -87,5 +138,6 @@ Logs to `PROCESSING_LOG.jsonl` when run as part of MG pipeline.
 ## Review Flow
 
 Generated edges flow to the review queue (`N5/review/edges/`) unless `--auto-commit` is used. Use `edge_reviewer.py` to approve/reject before committing to `edges.db`.
+
 
 

@@ -21,7 +21,15 @@ CONFIG_PATH = PROJECT_ROOT / "config"
 POSITIONS_DB = Path("/home/workspace/N5/db/positions.db")
 
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
+sys.path.insert(0, "/home/workspace/Integrations/Pangram")
 from position_matcher import match_positions, get_position_context
+
+# Pangram AI detection (optional but recommended)
+try:
+    from pangram_validator import PangramValidator, validate_text
+    PANGRAM_AVAILABLE = True
+except ImportError:
+    PANGRAM_AVAILABLE = False
 
 
 class DraftGenerator:
@@ -29,10 +37,16 @@ class DraftGenerator:
     
     VARIANTS = ["supportive", "challenging", "spicy", "comedic"]
     MAX_CHARS = 280
+    PANGRAM_THRESHOLD = 0.3  # 30% AI max to pass
+    PANGRAM_MAX_RETRIES = 2  # Max regeneration attempts
     
-    def __init__(self):
+    def __init__(self, pangram_enabled: bool = False):
         self.voice_config = self._load_voice_config()
         self.voice_examples = self._load_voice_examples()
+        self.pangram_enabled = pangram_enabled and PANGRAM_AVAILABLE
+        self.pangram_validator = None
+        if self.pangram_enabled:
+            self.pangram_validator = PangramValidator(threshold=self.PANGRAM_THRESHOLD)
         
     def _load_voice_config(self) -> dict:
         """Load voice variants configuration."""
@@ -76,6 +90,96 @@ class DraftGenerator:
         
         truncated = text[:self.MAX_CHARS - 3].rsplit(' ', 1)[0] + "..."
         return truncated
+    
+    def _validate_pangram(self, text: str) -> tuple[bool, int, str]:
+        """
+        Validate text against Pangram AI detection.
+        
+        Returns: (passed, ai_percent, message)
+        """
+        if not self.pangram_enabled or not self.pangram_validator:
+            return True, 0, "Pangram disabled"
+        
+        try:
+            result = self.pangram_validator.check(text)
+            return result.passed, result.ai_percent, f"{result.ai_percent}% AI"
+        except Exception as e:
+            return True, 0, f"Pangram error: {e}"
+    
+    def _generate_with_pangram_validation(
+        self,
+        prompt: str,
+        variant: str,
+        max_retries: int = None
+    ) -> tuple[str, dict]:
+        """
+        Generate draft with Pangram validation and automatic retry.
+        
+        Returns: (draft_content, pangram_info)
+        """
+        if max_retries is None:
+            max_retries = self.PANGRAM_MAX_RETRIES
+        
+        pangram_info = {
+            "enabled": self.pangram_enabled,
+            "attempts": [],
+            "final_passed": None,
+            "final_ai_percent": None
+        }
+        
+        for attempt in range(max_retries + 1):
+            draft_content = self._call_llm(prompt)
+            draft_content = self._enforce_char_limit(draft_content)
+            
+            passed, ai_percent, msg = self._validate_pangram(draft_content)
+            
+            pangram_info["attempts"].append({
+                "attempt": attempt + 1,
+                "content": draft_content,
+                "ai_percent": ai_percent,
+                "passed": passed
+            })
+            
+            if passed or not self.pangram_enabled:
+                pangram_info["final_passed"] = passed
+                pangram_info["final_ai_percent"] = ai_percent
+                return draft_content, pangram_info
+            
+            if attempt < max_retries:
+                # Modify prompt for retry with Pangram feedback
+                prompt = self._add_pangram_feedback_to_prompt(
+                    prompt, draft_content, ai_percent, attempt + 1
+                )
+        
+        # Return best attempt (lowest AI score) if all failed
+        best = min(pangram_info["attempts"], key=lambda x: x["ai_percent"])
+        pangram_info["final_passed"] = False
+        pangram_info["final_ai_percent"] = best["ai_percent"]
+        return best["content"], pangram_info
+    
+    def _add_pangram_feedback_to_prompt(self, prompt: str, failed_draft: str, ai_percent: int, attempt: int) -> str:
+        """Add Pangram feedback to prompt for retry generation."""
+        feedback = f"""
+
+---
+
+PANGRAM AI DETECTION FEEDBACK (Attempt {attempt} failed: {ai_percent}% AI detected)
+
+Your previous draft was flagged as AI-generated:
+"{failed_draft}"
+
+To pass Pangram (target: <30% AI), apply these fixes:
+- Add specific numbers or dollar amounts
+- Vary sentence length dramatically (include 2-4 word sentences)  
+- Break template patterns with organic filler
+- Add personality markers (profanity, self-deprecation, parentheticals)
+- Replace generic references with specifics
+- Use period after name in intro, not em-dash
+
+Generate a MORE NATURAL version that sounds like authentic human writing.
+Generate ONLY the tweet text, nothing else:"""
+        
+        return prompt + feedback
     
     def get_correlated_tweets(self, min_score: float = 0.3, limit: int = 10) -> list[dict]:
         """Get tweets with position correlations ready for drafting."""
@@ -341,9 +445,12 @@ def main():
     parser.add_argument("--no-llm", action="store_true", help="Skip LLM calls (mock mode)")
     parser.add_argument("--show-drafts", help="Show drafts for a tweet ID")
     parser.add_argument("--format-sms", help="Format approval SMS for tweet ID")
+    parser.add_argument("--pangram", action="store_true", help="Enable Pangram AI detection validation")
+    parser.add_argument("--pangram-check", help="Check existing draft against Pangram by draft ID")
+    parser.add_argument("--pangram-test", help="Test text against Pangram (quick check)")
     
     args = parser.parse_args()
-    generator = DraftGenerator()
+    generator = DraftGenerator(pangram_enabled=args.pangram)
     
     if args.list_ready:
         tweets = generator.get_correlated_tweets(min_score=args.min_score)
@@ -374,12 +481,45 @@ def main():
         msg = generator.format_approval_message(args.format_sms)
         print(msg)
     
+    elif args.pangram_test:
+        if not PANGRAM_AVAILABLE:
+            print("Pangram not available. Check Integrations/Pangram/pangram_validator.py")
+            sys.exit(1)
+        passed, msg = validate_text(args.pangram_test)
+        print(f"\n{msg}")
+        print(f"Text: {args.pangram_test[:100]}..." if len(args.pangram_test) > 100 else f"Text: {args.pangram_test}")
+        sys.exit(0 if passed else 1)
+    
+    elif args.pangram_check:
+        if not PANGRAM_AVAILABLE:
+            print("Pangram not available. Check Integrations/Pangram/pangram_validator.py")
+            sys.exit(1)
+        with generator._get_conn() as conn:
+            cursor = conn.execute(
+                "SELECT content, variant FROM drafts WHERE id LIKE ?",
+                (f"{args.pangram_check}%",)
+            )
+            draft = cursor.fetchone()
+            if not draft:
+                print(f"Draft not found: {args.pangram_check}")
+                sys.exit(1)
+            
+            passed, msg = validate_text(draft["content"])
+            print(f"\n[{draft['variant'].upper()}] {msg}")
+            print(f"Content: {draft['content']}")
+            sys.exit(0 if passed else 1)
+    
     else:
         parser.print_help()
 
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
 
 
 

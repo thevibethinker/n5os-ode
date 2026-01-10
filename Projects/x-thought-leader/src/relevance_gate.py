@@ -1,24 +1,20 @@
 #!/usr/bin/env python3
 """
-Two-Stage Relevance Gate for X Thought Leadership Engine
+Semantic Relevance Gate for X Thought Leadership Engine
 
-Stage 1: Cheap heuristic filter (runs on ALL tweets)
-  - Keyword matching, length checks, retweet filtering
-  - ~80% of tweets filtered here (no LLM cost)
+ALL tweets go to LLM for semantic evaluation.
+Question: "Would V have something interesting to say about this?"
 
-Stage 2: LLM correlation (runs on Stage 1 passes only)
-  - Uses position_matcher for semantic similarity
-  - Threshold: score >= 0.7 triggers alert
-
-Design: WIDE NET pattern - we want high capture rate.
-Domains emerge from what we capture, not the other way around.
-When in doubt, let it through to Stage 2.
+Design: Per V's direction - "fuck the cost, make it all semantic"
+No keyword filtering. Wide capture → emergent domains.
 """
 
+import os
 import sys
-import re
+import json
 import sqlite3
 import logging
+import requests
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Tuple, Optional
@@ -34,206 +30,146 @@ logger = logging.getLogger("relevance_gate")
 TWEETS_DB = PROJECT_ROOT / "db" / "tweets.db"
 ET = pytz.timezone('America/New_York')
 
-# Stage 1 configuration
-STAGE1_KEYWORDS = {
-    # ==========================================================================
-    # DOMAIN: Hiring & Talent (Careerspan core)
-    # ==========================================================================
-    'hiring', 'talent', 'recruiting', 'recruiter', 'candidates', 'sourcing',
-    'job market', 'labor market', 'workforce', 'employer', 'employee',
-    'talent acquisition', 'headhunter', 'applicant', 'job seeker',
-    'offer letter', 'compensation', 'salary', 'equity',
-    'interview', 'resume', 'application', 'candidate experience',
-    'inbound', 'outbound recruiting', 'ats', 'hiring manager',
-    
-    # ==========================================================================
-    # DOMAIN: Future of Work
-    # ==========================================================================
-    'future of work', 'remote work', 'hybrid', 'return to office', 'rto',
-    'work from home', 'wfh', 'distributed team', 'async',
-    'four day week', '4 day week', 'burnout', 'quiet quitting',
-    'workplace', 'office culture', 'flexibility',
-    
-    # ==========================================================================
-    # DOMAIN: AI & Automation Philosophy
-    # ==========================================================================
-    'ai', 'artificial intelligence', 'llm', 'gpt', 'claude', 'automation',
-    'machine learning', 'agents', 'agentic', 'copilot',
-    'ai replacing', 'ai jobs', 'ai hiring', 'ai recruiting',
-    'human in the loop', 'augmentation', 'ai ethics', 'alignment',
-    'prompt', 'context window', 'hallucination', 'rag',
-    'orchestration', 'polyorchestrator', 'ai workflow',
-    
-    # ==========================================================================
-    # DOMAIN: Epistemology & Knowledge
-    # ==========================================================================
-    'epistemology', 'knowledge', 'truth', 'information', 'signal', 'noise',
-    'first principles', 'mental model', 'framework', 'abstraction',
-    'reasoning', 'thinking', 'cognition', 'metacognition',
-    'understanding', 'learning', 'expertise', 'mastery',
-    'printing press', 'paradigm shift', 'information revolution',
-    
-    # ==========================================================================
-    # DOMAIN: Founder/Startup Journey
-    # ==========================================================================
-    'founder', 'startup', 'entrepreneur', 'building', 'shipping',
-    'product', 'saas', 'b2b', 'pmf', 'product market fit',
-    'seed', 'series a', 'fundraising', 'investor', 'vc', 'venture',
-    'bootstrap', 'revenue', 'arr', 'mrr', 'churn',
-    'pivot', 'iteration', 'mvp', 'launch', 'traction',
-    'founder mode', 'zero to one', 'moonshot',
-    
-    # ==========================================================================
-    # DOMAIN: Worldview & Philosophy
-    # ==========================================================================
-    'integrity', 'character', 'values', 'ethics', 'trust',
-    'authenticity', 'honesty', 'transparency', 'accountability',
-    'growth mindset', 'resilience', 'grit', 'persistence',
-    'risk', 'uncertainty', 'optionality', 'asymmetric',
-    'compounding', 'leverage', 'moat', 'defensibility',
-    
-    # ==========================================================================
-    # DOMAIN: Strategy & Business
-    # ==========================================================================
-    'strategy', 'growth', 'customers', 'market',
-    'scale', 'scaling', 'org design', 'culture',
-    'go to market', 'gtm', 'distribution', 'network effects',
-    'platform', 'marketplace', 'aggregation', 'bundling',
-    
-    # ==========================================================================
-    # DOMAIN: Personal Development & Career
-    # ==========================================================================
-    'career', 'job', 'role', 'position',
-    'leadership', 'management', 'team', 'promotion', 'layoff',
-    'career change', 'career advice', 'mentorship', 'coaching',
-    'skill', 'upskill', 'reskill', 'learning',
-    'personal brand', 'reputation', 'credibility',
-    
-    # ==========================================================================
-    # DOMAIN: Technology & Innovation
-    # ==========================================================================
-    'technology', 'innovation', 'disruption', 'transformation',
-    'digital', 'software', 'infrastructure', 'architecture',
-    'data', 'analytics', 'insights', 'metrics',
-    'api', 'integration', 'automation', 'workflow',
-}
+# Basic hygiene (NOT topic filtering)
+MIN_TWEET_LENGTH = 30  # chars - very low bar
+MAX_TWEET_AGE_HOURS = 72  # allow slightly older tweets
 
-STAGE1_MIN_LENGTH = 50
-STAGE1_MAX_AGE_HOURS = 48
+# Semantic gate threshold
+SEMANTIC_THRESHOLD = 0.65  # score >= this triggers downstream
 
-# Stage 2 configuration
-STAGE2_THRESHOLD = 0.65  # Lowered from 0.7 to catch more borderline relevant tweets
+# V's engagement profile for semantic evaluation
+SEMANTIC_GATE_PROMPT = """You are evaluating whether V (@thevibethinker) would have something interesting to say about this tweet.
+
+V's engagement profile:
+- Founder of Careerspan (AI-powered hiring platform)
+- Deep interests: hiring/talent markets, AI/automation philosophy, epistemology & knowledge systems, founder journey, future of work, human potential
+- Writing style: adds non-obvious angles, reframes conversations, shares genuine insight, wit without snark
+- Engages when: he can contribute something substantive beyond "great point!", when the topic connects to his worldview
+- Does NOT engage with: pure news/announcements, memes without depth, promotional spam, hot takes lacking substance, outrage bait
+
+Tweet by @{author}:
+\"\"\"{tweet_text}\"\"\"
+
+Question: Would V have something genuinely interesting to contribute to this conversation?
+
+Think step by step:
+1. What is the core topic/claim?
+2. Does this connect to V's interests or expertise?
+3. Could V add a non-obvious angle or reframe?
+4. Is there enough substance to engage with?
+
+Score 0.0-1.0:
+- 0.0-0.3: No clear angle for V, off-topic, or low substance
+- 0.4-0.6: Tangentially relevant, V might engage if inspired
+- 0.7-1.0: V would definitely have something valuable to say
+
+Respond with ONLY valid JSON (no markdown, no explanation):
+{{"score": X.X, "reasoning": "one sentence why"}}"""
 
 
-def stage1_heuristic(tweet: dict) -> Tuple[bool, str, int]:
+def basic_hygiene(tweet: dict) -> Tuple[bool, str]:
     """
-    Fast heuristic filter (Stage 1).
+    Basic hygiene checks - NOT topic filtering.
     
-    Args:
-        tweet: dict with 'content', 'is_reply', 'created_at'
-        
+    Only rejects obvious spam/noise, not based on topic.
+    
     Returns:
-        (passed: bool, reason: str, stage: 1)
+        (passed: bool, reason: str)
     """
     content = tweet.get('content', '')
-    content_lower = content.lower()
     
-    # Reject pure retweets (but allow quote tweets)
+    # Reject pure retweets (no original thought)
     if content.startswith('RT @'):
-        return (False, 'retweet', 1)
+        return (False, 'pure_retweet')
     
-    # Reject if too short (likely low-signal)
-    if len(content) < STAGE1_MIN_LENGTH:
-        return (False, 'too_short', 1)
+    # Reject extremely short (likely low-signal)
+    if len(content) < MIN_TWEET_LENGTH:
+        return (False, f'too_short_{len(content)}_chars')
     
-    # Reject if reply to non-monitored account (harder to engage)
-    # Note: replies to monitored accounts are fine (we're in the conversation)
-    if tweet.get('is_reply') and not tweet.get('reply_to_monitored'):
-        return (False, 'reply_to_unknown', 1)
-    
-    # Reject if too old
+    # Reject if too old (stale conversation)
     created_at = tweet.get('created_at')
     if created_at:
         try:
             tweet_time = datetime.fromisoformat(created_at.replace('Z', '+00:00'))
             age = datetime.now(pytz.UTC) - tweet_time
-            if age > timedelta(hours=STAGE1_MAX_AGE_HOURS):
-                return (False, 'too_old', 1)
+            if age > timedelta(hours=MAX_TWEET_AGE_HOURS):
+                return (False, f'too_old_{int(age.total_seconds()//3600)}h')
         except (ValueError, TypeError):
             pass  # If we can't parse, don't reject on age
     
-    # Check for keyword matches
-    keyword_matches = []
-    for kw in STAGE1_KEYWORDS:
-        # Use word boundary matching for single words, substring for phrases
-        if ' ' in kw:
-            if kw in content_lower:
-                keyword_matches.append(kw)
-        else:
-            if re.search(rf'\b{re.escape(kw)}\b', content_lower):
-                keyword_matches.append(kw)
-    
-    if not keyword_matches:
-        return (False, 'no_keywords', 1)
-    
-    # Passed Stage 1
-    return (True, f'keywords:{",".join(keyword_matches[:3])}', 1)
+    return (True, 'hygiene_passed')
 
 
-def stage2_correlation(tweet: dict, min_score: float = STAGE2_THRESHOLD) -> Tuple[bool, str, int, float]:
+def call_semantic_gate(tweet_text: str, author: str) -> Tuple[float, str]:
     """
-    LLM-powered correlation check (Stage 2).
+    Call LLM to evaluate tweet relevance.
     
-    Uses position_matcher to compute semantic similarity with V's positions.
+    Uses Zo's /zo/ask API for semantic evaluation.
     
-    Args:
-        tweet: dict with 'content'
-        min_score: minimum score to pass (default 0.7)
-        
     Returns:
-        (passed: bool, reason: str, stage: 2, score: float)
+        (score: 0.0-1.0, reasoning: str)
     """
-    try:
-        from position_matcher import match_positions
-    except ImportError:
-        logger.error("position_matcher not available, falling back to pass-through")
-        return (True, 'matcher_unavailable', 2, 0.5)
+    prompt = SEMANTIC_GATE_PROMPT.format(
+        author=author,
+        tweet_text=tweet_text[:500]  # Truncate very long tweets
+    )
     
-    content = tweet.get('content', '')
+    token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
+    if not token:
+        logger.error("ZO_CLIENT_IDENTITY_TOKEN not set, cannot call semantic gate")
+        return (0.5, "token_missing_fallback")
     
     try:
-        matches = match_positions(content, top_n=3)
+        response = requests.post(
+            "https://api.zo.computer/zo/ask",
+            headers={
+                "authorization": token,
+                "content-type": "application/json"
+            },
+            json={
+                "input": prompt,
+                "output_format": {
+                    "type": "object",
+                    "properties": {
+                        "score": {"type": "number"},
+                        "reasoning": {"type": "string"}
+                    },
+                    "required": ["score", "reasoning"]
+                }
+            },
+            timeout=30
+        )
+        response.raise_for_status()
+        result = response.json()
+        output = result.get("output", {})
         
-        if not matches:
-            return (False, 'no_position_matches', 2, 0.0)
+        score = float(output.get("score", 0.0))
+        reasoning = output.get("reasoning", "no_reasoning")
         
-        top_score = matches[0].similarity_score
-        top_title = matches[0].title[:50] if hasattr(matches[0], 'title') else 'unknown'
+        # Clamp score to valid range
+        score = max(0.0, min(1.0, score))
         
-        if top_score >= min_score:
-            return (True, f'position:{top_title}|score:{top_score:.2f}', 2, top_score)
-        else:
-            return (False, f'below_threshold:{top_score:.2f}<{min_score}', 2, top_score)
-            
-    except Exception as e:
-        logger.error(f"Stage 2 error: {e}")
-        return (False, f'error:{str(e)[:50]}', 2, 0.0)
+        return (score, reasoning)
+        
+    except requests.exceptions.Timeout:
+        logger.warning("Semantic gate timeout")
+        return (0.5, "timeout_fallback")
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Semantic gate API error: {e}")
+        return (0.5, f"api_error_{str(e)[:30]}")
+    except (json.JSONDecodeError, KeyError, ValueError) as e:
+        logger.error(f"Semantic gate parse error: {e}")
+        return (0.5, f"parse_error_{str(e)[:30]}")
 
 
 def process_tweet(tweet_id: str) -> dict:
     """
-    Run a tweet through both gate stages.
+    Run a tweet through the semantic gate.
+    
+    1. Basic hygiene check (spam/retweets only)
+    2. LLM semantic evaluation (all hygiene-passing tweets)
     
     Updates DB with results and returns summary.
-    
-    Returns:
-        {
-            'tweet_id': str,
-            'passed': bool,
-            'stage': int (1 or 2),
-            'reason': str,
-            'score': float (0.0 if Stage 1 rejection)
-        }
     """
     conn = sqlite3.connect(TWEETS_DB)
     conn.row_factory = sqlite3.Row
@@ -248,57 +184,62 @@ def process_tweet(tweet_id: str) -> dict:
     
     tweet = dict(tweet_row)
     
-    # Stage 1: Heuristic filter
-    s1_passed, s1_reason, s1_stage = stage1_heuristic(tweet)
+    # Step 1: Basic hygiene (not topic filtering)
+    hygiene_passed, hygiene_reason = basic_hygiene(tweet)
     
-    if not s1_passed:
-        # Failed Stage 1, update DB and return
+    if not hygiene_passed:
         conn.execute("""
             UPDATE tweets 
-            SET gate_stage = ?, gate_passed = 0, gate_reason = ?
+            SET gate_stage = 0, gate_passed = 0, gate_reason = ?,
+                status = 'skipped'
             WHERE id = ?
-        """, (s1_stage, s1_reason, tweet_id))
+        """, (f'hygiene:{hygiene_reason}', tweet_id))
         conn.commit()
         conn.close()
         
-        logger.info(f"Tweet {tweet_id} failed Stage 1: {s1_reason}")
+        logger.info(f"Tweet {tweet_id} failed hygiene: {hygiene_reason}")
         return {
             'tweet_id': tweet_id,
             'passed': False,
-            'stage': 1,
-            'reason': s1_reason,
+            'stage': 0,
+            'reason': f'hygiene:{hygiene_reason}',
             'score': 0.0
         }
     
-    # Stage 2: LLM correlation
-    s2_passed, s2_reason, s2_stage, s2_score = stage2_correlation(tweet)
+    # Step 2: Semantic evaluation (all hygiene-passing tweets)
+    score, reasoning = call_semantic_gate(
+        tweet_text=tweet['content'],
+        author=tweet['author_username']
+    )
     
-    # Update DB with final results
+    passed = score >= SEMANTIC_THRESHOLD
+    
+    # Update DB
     conn.execute("""
         UPDATE tweets 
-        SET gate_stage = ?, gate_passed = ?, gate_reason = ?,
+        SET gate_stage = 2, gate_passed = ?, gate_reason = ?,
             correlation_score = ?, correlation_computed_at = CURRENT_TIMESTAMP,
             status = CASE WHEN ? = 1 THEN 'correlated' ELSE 'skipped' END
         WHERE id = ?
-    """, (s2_stage, 1 if s2_passed else 0, s2_reason, s2_score, 1 if s2_passed else 0, tweet_id))
+    """, (1 if passed else 0, reasoning[:200], score, 1 if passed else 0, tweet_id))
     conn.commit()
     conn.close()
     
-    status = "PASSED" if s2_passed else "failed"
-    logger.info(f"Tweet {tweet_id} {status} Stage 2: {s2_reason} (score={s2_score:.2f})")
+    status = "PASSED" if passed else "filtered"
+    logger.info(f"Tweet {tweet_id} {status}: score={score:.2f} - {reasoning[:60]}")
     
     return {
         'tweet_id': tweet_id,
-        'passed': s2_passed,
+        'passed': passed,
         'stage': 2,
-        'reason': s2_reason,
-        'score': s2_score
+        'reason': reasoning,
+        'score': score
     }
 
 
 def process_new_tweets(limit: int = 50) -> dict:
     """
-    Process all tweets with status='new' through the gate.
+    Process all tweets with status='new' through the semantic gate.
     
     Returns summary stats.
     """
@@ -314,19 +255,21 @@ def process_new_tweets(limit: int = 50) -> dict:
     conn.close()
     
     if not tweets:
-        logger.info("No new tweets to process through gate")
-        return {'processed': 0, 'stage1_passed': 0, 'stage2_passed': 0}
+        logger.info("No new tweets to process through semantic gate")
+        return {'processed': 0, 'passed': 0, 'filtered': 0}
     
-    logger.info(f"Processing {len(tweets)} tweets through relevance gate...")
+    logger.info(f"Processing {len(tweets)} tweets through SEMANTIC gate (no keyword filtering)...")
     
     stats = {
         'processed': 0,
-        'stage1_passed': 0,
-        'stage1_failed': 0,
-        'stage2_passed': 0,
-        'stage2_failed': 0,
-        'high_relevance': []  # Tweets that passed with score >= 0.7
+        'hygiene_rejected': 0,
+        'passed': 0,
+        'filtered': 0,
+        'high_relevance': [],  # score >= threshold
+        'avg_score': 0.0
     }
+    
+    scores = []
     
     for tweet_row in tweets:
         result = process_tweet(tweet_row['id'])
@@ -335,24 +278,29 @@ def process_new_tweets(limit: int = 50) -> dict:
         if result.get('error'):
             continue
         
-        if result['stage'] == 1:
-            stats['stage1_failed'] += 1
+        if result['stage'] == 0:
+            stats['hygiene_rejected'] += 1
         else:
-            stats['stage1_passed'] += 1
+            scores.append(result['score'])
             if result['passed']:
-                stats['stage2_passed'] += 1
-                if result['score'] >= STAGE2_THRESHOLD:
-                    stats['high_relevance'].append({
-                        'tweet_id': result['tweet_id'],
-                        'score': result['score'],
-                        'reason': result['reason']
-                    })
+                stats['passed'] += 1
+                stats['high_relevance'].append({
+                    'tweet_id': result['tweet_id'],
+                    'score': result['score'],
+                    'reason': result['reason']
+                })
             else:
-                stats['stage2_failed'] += 1
+                stats['filtered'] += 1
     
-    logger.info(f"Gate complete: {stats['stage1_passed']}/{stats['processed']} passed Stage 1, "
-                f"{stats['stage2_passed']} passed Stage 2, "
-                f"{len(stats['high_relevance'])} high-relevance")
+    if scores:
+        stats['avg_score'] = sum(scores) / len(scores)
+    
+    logger.info(
+        f"Semantic gate complete: {stats['passed']}/{stats['processed']} passed "
+        f"({100*stats['passed']/stats['processed']:.0f}%), "
+        f"avg_score={stats['avg_score']:.2f}, "
+        f"{stats['hygiene_rejected']} hygiene rejected"
+    )
     
     return stats
 
@@ -360,9 +308,6 @@ def process_new_tweets(limit: int = 50) -> dict:
 def get_alertable_tweets(limit: int = 10) -> list[dict]:
     """
     Get tweets that passed the gate and are ready for alerting.
-    
-    Returns tweets with gate_passed=1 and score >= threshold that
-    haven't been alerted yet.
     """
     conn = sqlite3.connect(TWEETS_DB)
     conn.row_factory = sqlite3.Row
@@ -377,47 +322,95 @@ def get_alertable_tweets(limit: int = 10) -> list[dict]:
           AND a.id IS NULL
         ORDER BY t.correlation_score DESC
         LIMIT ?
-    """, (STAGE2_THRESHOLD, limit)).fetchall()
+    """, (SEMANTIC_THRESHOLD, limit)).fetchall()
     conn.close()
     
     return [dict(t) for t in tweets]
 
 
+def reset_for_reprocessing(limit: int = 100) -> int:
+    """
+    Reset tweets so they can be reprocessed through the new semantic gate.
+    
+    Useful when changing gate logic.
+    """
+    conn = sqlite3.connect(TWEETS_DB)
+    
+    # SQLite doesn't support LIMIT in UPDATE, so select IDs first
+    cursor = conn.execute("""
+        SELECT id FROM tweets 
+        WHERE status IN ('skipped', 'correlated')
+        ORDER BY created_at DESC
+        LIMIT ?
+    """, (limit,))
+    ids = [row[0] for row in cursor.fetchall()]
+    
+    if not ids:
+        conn.close()
+        return 0
+    
+    placeholders = ','.join('?' * len(ids))
+    conn.execute(f"""
+        UPDATE tweets 
+        SET gate_stage = NULL, gate_passed = 0, gate_reason = NULL,
+            correlation_score = NULL, correlation_computed_at = NULL,
+            status = 'new'
+        WHERE id IN ({placeholders})
+    """, ids)
+    
+    count = len(ids)
+    conn.commit()
+    conn.close()
+    
+    logger.info(f"Reset {count} tweets for reprocessing")
+    return count
+
+
 def main():
     import argparse
-    import json
     
-    parser = argparse.ArgumentParser(description="Two-Stage Relevance Gate")
-    parser.add_argument("--process", action="store_true", help="Process new tweets through gate")
+    parser = argparse.ArgumentParser(description="Semantic Relevance Gate (no keyword filtering)")
+    parser.add_argument("--process", action="store_true", help="Process new tweets through semantic gate")
     parser.add_argument("--tweet-id", help="Process specific tweet")
     parser.add_argument("--limit", type=int, default=50, help="Max tweets to process")
     parser.add_argument("--alertable", action="store_true", help="List tweets ready for alerting")
     parser.add_argument("--stats", action="store_true", help="Show gate statistics")
-    parser.add_argument("--threshold", type=float, default=STAGE2_THRESHOLD, help="Stage 2 score threshold")
+    parser.add_argument("--reset", action="store_true", help="Reset tweets for reprocessing")
+    parser.add_argument("--threshold", type=float, default=SEMANTIC_THRESHOLD, help="Score threshold")
     args = parser.parse_args()
-    
-    threshold = args.threshold
     
     if args.stats:
         conn = sqlite3.connect(TWEETS_DB)
         stats = conn.execute("""
             SELECT 
                 COUNT(*) as total,
-                SUM(CASE WHEN gate_stage = 1 AND gate_passed = 0 THEN 1 ELSE 0 END) as stage1_rejected,
-                SUM(CASE WHEN gate_stage = 2 AND gate_passed = 0 THEN 1 ELSE 0 END) as stage2_rejected,
+                SUM(CASE WHEN gate_stage = 0 THEN 1 ELSE 0 END) as hygiene_rejected,
+                SUM(CASE WHEN gate_stage = 2 AND gate_passed = 0 THEN 1 ELSE 0 END) as semantic_filtered,
                 SUM(CASE WHEN gate_passed = 1 THEN 1 ELSE 0 END) as passed,
+                AVG(CASE WHEN gate_stage = 2 THEN correlation_score END) as avg_score,
                 AVG(CASE WHEN gate_passed = 1 THEN correlation_score END) as avg_pass_score
             FROM tweets
             WHERE gate_stage IS NOT NULL
         """).fetchone()
+        
+        unprocessed = conn.execute(
+            "SELECT COUNT(*) FROM tweets WHERE gate_stage IS NULL"
+        ).fetchone()[0]
         conn.close()
         
-        print("Gate Statistics:")
+        print("Semantic Gate Statistics:")
+        print(f"  Unprocessed: {unprocessed}")
         print(f"  Total processed: {stats[0]}")
-        print(f"  Stage 1 rejected: {stats[1]} ({100*stats[1]/stats[0]:.1f}%)" if stats[0] else "  Stage 1 rejected: 0")
-        print(f"  Stage 2 rejected: {stats[2]}")
-        print(f"  Passed: {stats[3]} ({100*stats[3]/stats[0]:.1f}%)" if stats[0] else "  Passed: 0")
-        print(f"  Avg pass score: {stats[4]:.2f}" if stats[4] else "  Avg pass score: N/A")
+        if stats[0]:
+            print(f"  Hygiene rejected: {stats[1]} ({100*stats[1]/stats[0]:.1f}%)")
+            print(f"  Semantic filtered: {stats[2]} ({100*stats[2]/stats[0]:.1f}%)")
+            print(f"  Passed: {stats[3]} ({100*stats[3]/stats[0]:.1f}%)")
+        print(f"  Avg score (all): {stats[4]:.2f}" if stats[4] else "  Avg score: N/A")
+        print(f"  Avg score (passed): {stats[5]:.2f}" if stats[5] else "  Avg pass score: N/A")
+        
+    elif args.reset:
+        count = reset_for_reprocessing(limit=args.limit)
+        print(f"Reset {count} tweets for reprocessing through semantic gate")
         
     elif args.alertable:
         tweets = get_alertable_tweets(limit=args.limit)
@@ -441,8 +434,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
 
 
