@@ -1,7 +1,7 @@
 ---
 created: 2026-01-09
 last_edited: 2026-01-09
-version: 1.0
+version: 1.1
 provenance: con_ctpO4tmxumzIn8RP
 tool: true
 description: "View your intellectual landscape - what ideas are rising, stabilizing, evolving, or decaying"
@@ -26,7 +26,7 @@ Generate a report of V's intellectual landscape based on the Context Graph.
 
 3. **Evolution Events** — Where ideas have been expanded, refined, challenged, or abandoned
 
-4. **Decay Watch** — Ideas you haven't mentioned in 30+ days
+4. **Decay Watch** — Ideas you haven't mentioned in 14+ days (two weeks of silence is meaningful signal)
 
 ## Execution
 
@@ -59,7 +59,7 @@ Present findings conversationally:
 **Under Challenge**:
 - {idea}: challenged by {person} on {date}
 
-**Decaying** (30+ days silent):
+**Decaying** (14+ days silent):
 - {idea}: last mentioned {date}
 
 ## When to Run
@@ -68,4 +68,5 @@ Present findings conversationally:
 - When feeling intellectually scattered
 - Before strategic planning sessions
 - When you want to see "what's sticking"
+
 
