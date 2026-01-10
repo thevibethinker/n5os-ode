@@ -14,6 +14,7 @@ class EdgeCategory(Enum):
     STANCE = "stance"            # Positions on ideas
     EXPECTATION = "expectation"  # Forward-looking outcomes
     CHAIN = "chain"              # Logical dependencies
+    EVOLUTION = "evolution"      # Idea evolution over time
 
 
 @dataclass
@@ -108,6 +109,12 @@ EDGE_TYPES: Dict[str, EdgeType] = {
         description="Edge evidence challenges this position",
         inverse="challenged_by_edge"
     ),
+    "evolves": EdgeType(
+        relation="evolves",
+        category=EdgeCategory.EVOLUTION,
+        description="Idea evolves over time",
+        inverse="evolved_from"
+    ),
 }
 
 
@@ -173,6 +180,7 @@ if __name__ == "__main__":
     print("\n\n=== Slug Examples ===")
     print(f"  'Context Graph System' -> {generate_slug('Context Graph System', 'idea')}")
     print(f"  'Build review queue for edges' -> {generate_slug('Build review queue for edges', 'decision')}")
+
 
 
 

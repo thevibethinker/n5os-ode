@@ -1,0 +1,18 @@
+{
+  "created": "2026-01-10T01:55:58.725307+00:00",
+  "completed_meetings": [
+    "mtg_2026-01-05_2026-01-05-Vrijen-attawar-and-nic-mahaney",
+    "mtg_2026-01-05_2026-01-05-David-x-careerspan-part-1",
+    "mtg_2026-01-08_2026-01-08-Logan-And-Vrijen-Finish-Their-Podcast",
+    "mtg_2026-01-05_2026-01-05-David-x-careerspan-part-2",
+    "mtg_2026-01-05_2026-01-05-Ilya-sync",
+    "mtg_2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron"
+  ],
+  "in_progress_batches": [],
+  "stats": {
+    "total_identified": 136,
+    "completed": 6,
+    "edges_added": 12
+  },
+  "updated": "2026-01-10T02:18:40.882575+00:00"
+}

@@ -1,39 +1,402 @@
 {
-  "generated_at": "2026-01-09T22:22:39.420342Z",
+  "generated_at": "2026-01-10T01:50:08.943604+00:00",
   "thresholds": {
     "cornerstone": 10,
     "active_thesis": 4,
     "recurring_tool": 2
   },
-  "total_ideas": 255,
+  "total_ideas": 157,
   "summary": {
-    "cornerstones": 0,
-    "active_theses": 3,
-    "recurring_tools": 38,
-    "sparks": 214
+    "cornerstones": 1,
+    "active_theses": 24,
+    "recurring_tools": 30,
+    "sparks": 102
   },
-  "cornerstones": [],
-  "active_theses": [
+  "cornerstones": [
     {
       "idea_slug": "latency-in-trust-networks",
       "label": "latency-in-trust-networks",
-      "frequency": 6,
+      "frequency": 11,
       "sessions": [
+        "backfill-2025-01-05-0430",
         "backfill-2025-01-05-0830",
         "backfill-2025-01-07-0630",
         "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030",
         "backfill-2026-01-05-1030",
         "backfill-2026-01-05-1830",
-        "backfill-2026-01-05-2030"
+        "backfill-2026-01-05-2030",
+        "backfill-2026-01-06-1230",
+        "backfill-2026-01-06-1430",
+        "mtg_2025-12-26_Careerspan-demo"
       ],
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "using",
-        "maintaining",
+        "schools",
+        "students",
+        "names.",
         "alum-school-student",
-        "slash",
-        "real-time"
+        "maintaining"
+      ]
+    }
+  ],
+  "active_theses": [
+    {
+      "idea_slug": "n5-scaffold-offer",
+      "label": "n5-scaffold-offer",
+      "frequency": 9,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2025-01-05-0630",
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030",
+        "backfill-2026-01-05-1830",
+        "backfill-2026-01-05-2030",
+        "backfill-2026-01-06-0630",
+        "backfill-2026-01-06-1430",
+        "backfill-2026-01-09-1830"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "attendees",
+        "system-design",
+        "starter",
+        "sign-ups",
+        "plans"
+      ]
+    },
+    {
+      "idea_slug": "acquihire-strategy",
+      "label": "acquihire-team-protection",
+      "frequency": 7,
+      "sessions": [
+        "backfill-2025-01-07-0630",
+        "backfill-2026-01-08-1030",
+        "backfill-2026-01-08-1235",
+        "backfill-2026-01-09-1235",
+        "backfill-2026-01-09-1430",
+        "backfill-2026-01-09-1630",
+        "backfill-2026-01-09-2030"
+      ],
+      "first_seen": "2026-01-07",
+      "last_seen": "2026-01-10",
+      "sample_contexts": [
+        "shared",
+        "focus",
+        "engaged",
+        "prioritizing",
+        "committing"
+      ]
+    },
+    {
+      "idea_slug": "resume-signal-decay-bloodbath",
+      "label": "resume-signal-decay-bloodbath",
+      "frequency": 7,
+      "sessions": [
+        "backfill-2025-01-07-1430",
+        "backfill-2025-01-07-2235",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1235",
+        "backfill-2026-01-08-1430"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-08",
+      "sample_contexts": [
+        "shared",
+        "model",
+        "decay",
+        "commoditized",
+        "committing"
+      ]
+    },
+    {
+      "idea_slug": "taste-curation-edge",
+      "label": "taste-curation-edge",
+      "frequency": 7,
+      "sessions": [
+        "backfill-2025-01-07-1030",
+        "backfill-2025-01-07-2235",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1430",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "irreducible",
+        "world.",
+        "converged",
+        "human",
+        "tasks,"
+      ]
+    },
+    {
+      "idea_slug": "team-outcome-in-acquisition",
+      "label": "team-outcome-in-acquisition",
+      "frequency": 7,
+      "sessions": [
+        "backfill-2025-01-05-0630",
+        "backfill-2025-01-07-1630",
+        "backfill-2025-01-08-2230",
+        "backfill-2026-01-07-0830",
+        "backfill-2026-01-07-2030",
+        "backfill-2026-01-09-0830",
+        "backfill-2026-01-09-1630"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "personal",
+        "loose",
+        "logan,",
+        "freedom,",
+        "willingness"
+      ]
+    },
+    {
+      "idea_slug": "ai-brand-crisis",
+      "label": "ai-brand-crisis",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-07-1030",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1235",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "requiring",
+        "spam,",
+        "actively",
+        "themselves",
+        "spam)"
+      ]
+    },
+    {
+      "idea_slug": "degrees-of-freedom-career",
+      "label": "degrees-of-freedom-career",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2025-01-09-0630",
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030",
+        "backfill-2026-01-06-0630",
+        "backfill-2026-01-06-1630"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "pivot",
+        "career",
+        "geometric",
+        "domain/role",
+        "model"
+      ]
+    },
+    {
+      "idea_slug": "information-standstill-thesis",
+      "label": "information-standstill-thesis",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2025-01-05-0830",
+        "backfill-2025-01-07-0630",
+        "backfill-2025-01-08-2230",
+        "backfill-2026-01-04-2030",
+        "batch_2026-01-04_dec-late"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "'gestalt'",
+        "concept",
+        "moving",
+        "human",
+        "currently"
+      ]
+    },
+    {
+      "idea_slug": "nyc-applied-ai-thesis",
+      "label": "nyc-applied-ai-thesis",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-07-1030",
+        "backfill-2025-01-07-2235",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-08-1235",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "fashion.'",
+        "applied",
+        "high-quality",
+        "'applied",
+        "'human-centric'"
+      ]
+    },
+    {
+      "idea_slug": "resume-consistency-tension",
+      "label": "resume-consistency-tension",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-05-2230",
+        "backfill-2026-01-06-1230",
+        "backfill-2026-01-06-2230",
+        "backfill-2026-01-09-2030",
+        "mtg_2025-12-26_Careerspan-demo"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-10",
+      "sample_contexts": [
+        "evaluate",
+        "inconsistency,",
+        "significantly",
+        "person",
+        "candidate."
+      ]
+    },
+    {
+      "idea_slug": "slam-dunk-vs-moonshot",
+      "label": "slam-dunk-vs-moonshot",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030",
+        "backfill-2026-01-05-1030",
+        "backfill-2026-01-08-1030",
+        "backfill-2026-01-09-1830"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "engaged",
+        "freedom'",
+        "outweighs",
+        "model",
+        "careerspan's"
+      ]
+    },
+    {
+      "idea_slug": "solopreneur-burden",
+      "label": "solopreneur-burden",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-07-1030",
+        "backfill-2025-01-07-1430",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1235",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "(psychotherapist)",
+        "builders",
+        "(rory's",
+        "content",
+        "wife)"
+      ]
+    },
+    {
+      "idea_slug": "three-freedoms-framework",
+      "label": "three-freedoms-framework",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2026-01-04-2030",
+        "backfill-2026-01-05-1030",
+        "backfill-2026-01-05-2030",
+        "backfill-2026-01-07-2030",
+        "batch_2026-01-04_recent"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-08",
+      "sample_contexts": [
+        "(workflows),",
+        "(ownership",
+        "personal",
+        "personas),",
+        "apartment"
+      ]
+    },
+    {
+      "idea_slug": "no-immediate-purchase",
+      "label": "no-immediate-purchase",
+      "frequency": 6,
+      "sessions": [
+        "backfill-2025-01-07-0630",
+        "backfill-2025-01-07-1630",
+        "backfill-2025-01-09-0630",
+        "backfill-2026-01-06-1630",
+        "backfill-2026-01-08-1030",
+        "backfill-2026-01-09-1830"
+      ],
+      "first_seen": "2026-01-06",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "premature",
+        "indicating",
+        "uncertain.",
+        "navigate",
+        "outcome"
+      ]
+    },
+    {
+      "idea_slug": "careerspan-semantic-approach",
+      "label": "careerspan-semantic-approach",
+      "frequency": 5,
+      "sessions": [
+        "backfill-2026-01-06-1630",
+        "backfill-2026-01-07-2030",
+        "backfill-2026-01-09-1030",
+        "backfill-2026-01-09-1430",
+        "batch_2026-01-04_recent"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "recommended",
+        "matching",
+        "conflicting",
+        "rephrases",
+        "against"
+      ]
+    },
+    {
+      "idea_slug": "human-potential-tank",
+      "label": "human-potential-tank",
+      "frequency": 5,
+      "sessions": [
+        "backfill-2025-01-07-1030",
+        "backfill-2025-01-07-1430",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1235"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-08",
+      "sample_contexts": [
+        "asserted",
+        "amplifies",
+        "potential.",
+        "potential,",
+        "potential"
       ]
     },
     {
@@ -50,35 +413,178 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "tasks",
+        "articulates",
+        "career",
         "entry-level",
-        "semantic",
-        "captured",
-        "concern:"
+        "foundational",
+        "elevate"
       ]
     },
     {
-      "idea_slug": "resume-signal-decay-bloodbath",
-      "label": "resume-signal-decay-bloodbath",
-      "frequency": 4,
+      "idea_slug": "productivity-as-home",
+      "label": "productivity-as-home",
+      "frequency": 5,
       "sessions": [
-        "backfill-2025-01-07-1430",
+        "backfill-2025-01-05-1430",
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030",
+        "backfill-2026-01-05-2230",
+        "backfill-2026-01-06-0630"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-06",
+      "sample_contexts": [
+        "personal",
+        "recap",
+        "share",
+        "agency,",
+        "utility"
+      ]
+    },
+    {
+      "idea_slug": "semantic-vs-syntactic-identity",
+      "label": "semantic-vs-syntactic-identity",
+      "frequency": 5,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030",
+        "backfill-2026-01-06-0830",
+        "mtg_2025-12-26_Careerspan-demo"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-06",
+      "sample_contexts": [
+        "tension",
+        "person",
+        "maintaining",
+        "meaning",
+        "notion"
+      ]
+    },
+    {
+      "idea_slug": "socratic-ai-over-answers",
+      "label": "socratic-ai-over-answers",
+      "frequency": 5,
+      "sessions": [
         "backfill-2025-01-07-2235",
         "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-06-2030",
         "backfill-2026-01-08-1235"
       ],
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "treat",
-        "incumbents",
-        "double",
-        "space",
-        "story-driven"
+        "shared",
+        "career",
+        "resonated",
+        "soul'",
+        "spent"
+      ]
+    },
+    {
+      "idea_slug": "vmock-comparison",
+      "label": "vmock-comparison",
+      "frequency": 5,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2025-01-05-0630",
+        "backfill-2025-01-05-1430",
+        "backfill-2026-01-05-2030",
+        "backfill-2026-01-07-0830"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-07",
+      "sample_contexts": [
+        "jobs,",
+        "matching",
+        "explains",
+        "meaningful",
+        "moving"
+      ]
+    },
+    {
+      "idea_slug": "cloaked-company-recruitment",
+      "label": "cloaked-company-recruitment",
+      "frequency": 4,
+      "sessions": [
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1235"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-08",
+      "sample_contexts": [
+        "'vetting'",
+        "layer",
+        "friction.",
+        "white-label",
+        "anonymizing/cloaking"
+      ]
+    },
+    {
+      "idea_slug": "information-to-gestalt",
+      "label": "information-to-gestalt",
+      "frequency": 4,
+      "sessions": [
+        "backfill-2025-01-07-1630",
+        "backfill-2026-01-06-0630",
+        "backfill-2026-01-07-1830",
+        "batch_2026-01-04_dec-late"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-07",
+      "sample_contexts": [
+        "addresses",
+        "extension",
+        "'gestalt'",
+        "agency,",
+        "self."
+      ]
+    },
+    {
+      "idea_slug": "moneyball-for-hiring",
+      "label": "moneyball-for-hiring",
+      "frequency": 4,
+      "sessions": [
+        "backfill-2025-01-05-0430",
+        "backfill-2025-01-05-0630",
+        "backfill-2025-01-08-0630",
+        "backfill-2026-01-06-0630"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-08",
+      "sample_contexts": [
+        "shared",
+        "systematic",
+        "analytics",
+        "career",
+        "management."
       ]
     }
   ],
   "recurring_tools": [
+    {
+      "idea_slug": "anthropomorphic-feedback-loop",
+      "label": "anthropomorphic-feedback-loop",
+      "frequency": 3,
+      "sessions": [
+        "backfill-2025-01-05-0830",
+        "backfill-2026-01-04-1830",
+        "backfill-2026-01-04-2030"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-05",
+      "sample_contexts": [
+        "utility,",
+        "utility",
+        "engaged",
+        "habit",
+        "accepting"
+      ]
+    },
     {
       "idea_slug": "careerspan-as-enrichment-layer",
       "label": "careerspan-as-enrichment-layer",
@@ -92,10 +598,10 @@
       "last_seen": "2026-01-07",
       "sample_contexts": [
         "pitched",
-        "enrichment",
-        "hiring",
+        "high-fidelity",
         "layer",
-        "long-term"
+        "candidate",
+        "themselves"
       ]
     },
     {
@@ -110,144 +616,106 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "growth,",
-        "business",
-        "'spiritual",
-        "metrics",
-        "financial"
+        "reframing",
+        "growth",
+        "expressed",
+        "through",
+        "regardless"
       ]
     },
     {
-      "idea_slug": "information-standstill-thesis",
-      "label": "information-standstill-thesis",
-      "frequency": 3,
-      "sessions": [
-        "backfill-2025-01-05-0430",
-        "backfill-2025-01-05-0830",
-        "backfill-2025-01-08-2230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "articulated",
-        "place",
-        "moves",
-        "intelligence.",
-        "thesis"
-      ]
-    },
-    {
-      "idea_slug": "moneyball-for-hiring",
-      "label": "moneyball-for-hiring",
-      "frequency": 3,
-      "sessions": [
-        "backfill-2025-01-05-0430",
-        "backfill-2025-01-05-0630",
-        "backfill-2025-01-08-0630"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "wenger's",
-        "shares",
-        "collections",
-        "hiring",
-        "shared"
-      ]
-    },
-    {
-      "idea_slug": "nyc-applied-ai-thesis",
-      "label": "nyc-applied-ai-thesis",
-      "frequency": 3,
-      "sessions": [
-        "backfill-2026-01-05-1230",
-        "backfill-2026-01-08-1235",
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "articulated",
-        "supply",
-        "area.",
-        "paula",
-        "extraction."
-      ]
-    },
-    {
-      "idea_slug": "semantic-vs-syntactic-identity",
-      "label": "semantic-vs-syntactic-identity",
-      "frequency": 3,
-      "sessions": [
-        "backfill-2025-01-05-0430",
-        "backfill-2026-01-04-1830",
-        "backfill-2026-01-06-0830"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "maintaining",
-        "challenging",
-        "michael",
-        "highlighting",
-        "forms"
-      ]
-    },
-    {
-      "idea_slug": "slam-dunk-vs-moonshot",
-      "label": "slam-dunk-vs-moonshot",
-      "frequency": 3,
-      "sessions": [
-        "backfill-2025-01-05-0430",
-        "backfill-2026-01-05-1030",
-        "backfill-2026-01-08-1030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "exploration",
-        "financially",
-        "growth,",
-        "winning",
-        "'spiritual"
-      ]
-    },
-    {
-      "idea_slug": "solopreneur-burden",
-      "label": "solopreneur-burden",
+      "idea_slug": "cofounder-lessons",
+      "label": "co-founder-toxicity-lesson",
       "frequency": 3,
       "sessions": [
         "backfill-2025-01-07-1030",
         "backfill-2025-01-07-1430",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-07",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "shared",
+        "reflected",
+        "co-founders",
+        "summarised",
+        "toxic,"
+      ]
+    },
+    {
+      "idea_slug": "data-as-ore",
+      "label": "data-as-ore",
+      "frequency": 3,
+      "sessions": [
+        "backfill-2025-01-07-1430",
+        "backfill-2026-01-06-1030",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-06",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "scraped",
+        "presented",
+        "extracted",
+        "human",
+        "authentic"
+      ]
+    },
+    {
+      "idea_slug": "medium-to-substack-shift",
+      "label": "medium-to-substack-shift",
+      "frequency": 3,
+      "sessions": [
+        "backfill-2026-01-06-1630",
+        "backfill-2026-01-07-0830",
+        "backfill-2026-01-07-1830"
+      ],
+      "first_seen": "2026-01-06",
+      "last_seen": "2026-01-07",
+      "sample_contexts": [
+        "recognizing",
+        "writing",
+        "relationship.",
+        "capture",
+        "long-form"
+      ]
+    },
+    {
+      "idea_slug": "reverse-flywheel",
+      "label": "reverse-flywheel",
+      "frequency": 3,
+      "sessions": [
+        "backfill-2025-01-07-1430",
+        "backfill-2026-01-05-1230",
+        "backfill-2026-01-06-1030"
+      ],
+      "first_seen": "2026-01-05",
+      "last_seen": "2026-01-07",
+      "sample_contexts": [
+        "usage",
+        "startups",
+        "loop.",
+        "breaks",
+        "can't"
+      ]
+    },
+    {
+      "idea_slug": "solo-first-cofounders-later",
+      "label": "solo-first-cofounders-later",
+      "frequency": 3,
+      "sessions": [
+        "backfill-2025-01-07-2235",
+        "backfill-2026-01-06-2030",
         "backfill-2026-01-08-1235"
       ],
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "modern",
-        "business",
-        "content",
-        "practitioners,",
-        "creator"
-      ]
-    },
-    {
-      "idea_slug": "three-freedoms-demo-structure",
-      "label": "three-freedoms-demo-structure",
-      "frequency": 3,
-      "sessions": [
-        "backfill-2026-01-04-2030",
-        "backfill-2026-01-07-2030",
-        "batch_2026-01-04_recent"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "(dashboard),",
-        "using",
-        "aligning",
-        "(pre-built",
-        "space"
+        "reflected",
+        "co-founders",
+        "started",
+        "might",
+        "quickly"
       ]
     },
     {
@@ -262,83 +730,48 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "likens",
+        "likened",
+        "confirmed",
+        "careerspan's",
         "framing,",
-        "endorsed",
-        "captures",
-        "essence"
+        "people"
       ]
     },
     {
-      "idea_slug": "ai-brand-crisis",
-      "label": "ai-brand-crisis",
+      "idea_slug": "toolbox-evaluation-process",
+      "label": "toolbox-evaluation-process",
+      "frequency": 3,
+      "sessions": [
+        "backfill-2025-01-08-2230",
+        "backfill-2026-01-07-2030",
+        "backfill-2026-01-09-0830"
+      ],
+      "first_seen": "2026-01-08",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "systematic",
+        "career",
+        "'resumes'",
+        "'toolbox'",
+        "focus"
+      ]
+    },
+    {
+      "idea_slug": "advice-individual-journey",
+      "label": "advice-individual-journey",
       "frequency": 2,
       "sessions": [
-        "backfill-2025-01-07-1030",
-        "backfill-2026-01-06-1030"
+        "backfill-2025-01-07-1430",
+        "backfill-2026-01-05-1230"
       ],
-      "first_seen": "2026-01-06",
+      "first_seen": "2026-01-05",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "identified",
-        "paula",
-        "actively",
-        "requiring",
-        "authenticity"
-      ]
-    },
-    {
-      "idea_slug": "ai-brand-crisis-authenticity",
-      "label": "ai-brand-crisis-authenticity",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-06-2030",
-        "backfill-2026-01-08-1235"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "identified",
-        "noise.'",
-        "'generative",
-        "paula",
-        "actively"
-      ]
-    },
-    {
-      "idea_slug": "anthropomorphic-feedback-loop",
-      "label": "anthropomorphic-feedback-loop",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2025-01-05-0830",
-        "backfill-2026-01-04-1830"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "offer",
-        "health",
-        "obligation",
-        "pixel",
-        "utility,"
-      ]
-    },
-    {
-      "idea_slug": "applied-ai-thesis",
-      "label": "applied-ai-thesis",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2025-01-07-1030",
-        "backfill-2026-01-06-1030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "articulated",
-        "healthcare,",
-        "supply",
-        "paula",
-        "extraction."
+        "reflected",
+        "vrijen",
+        "loved",
+        "building",
+        "businesses"
       ]
     },
     {
@@ -352,11 +785,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "likely",
-        "acquired,",
-        "willing",
-        "ensuring",
-        "stick"
+        "personal",
+        "balance",
+        "focus",
+        "logan,",
+        "likely"
       ]
     },
     {
@@ -370,11 +803,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "strategic",
-        "recruitment",
+        "evolution",
+        "careerspan",
+        "isn't",
         "specializing",
-        "discuss",
-        "painful"
+        "sourcing"
       ]
     },
     {
@@ -388,47 +821,29 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "michael",
-        "bullet",
+        "matching",
+        "engaged",
         "explains",
         "specific",
-        "recommended"
+        "'meaning"
       ]
     },
     {
-      "idea_slug": "careerspan-semantics-over-keywords",
-      "label": "careerspan-semantics-over-keywords",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-09-1030",
-        "batch_2026-01-04_recent"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "maintaining",
-        "prevent",
-        "based",
-        "experiences",
-        "system"
-      ]
-    },
-    {
-      "idea_slug": "cloaked-company-recruitment",
-      "label": "cloaked-company-recruitment",
+      "idea_slug": "cofounder-timing-thesis",
+      "label": "cofounder-timing-thesis",
       "frequency": 2,
       "sessions": [
         "backfill-2026-01-05-1230",
-        "backfill-2026-01-08-1235"
+        "backfill-2026-01-08-1430"
       ],
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "using",
-        "layer",
-        "white-label",
-        "client",
-        "representation"
+        "raise",
+        "instead",
+        "reflected",
+        "co-founders",
+        "build"
       ]
     },
     {
@@ -442,11 +857,65 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "'moving",
+        "currently",
+        "unlock",
         "place",
-        "moves",
-        "thesis",
-        "feels"
+        "don't",
+        "thesis"
+      ]
+    },
+    {
+      "idea_slug": "institutional-fatigue",
+      "label": "institutional-fatigue",
+      "frequency": 2,
+      "sessions": [
+        "backfill-2025-01-07-1030",
+        "backfill-2026-01-08-1430"
+      ],
+      "first_seen": "2026-01-07",
+      "last_seen": "2026-01-08",
+      "sample_contexts": [
+        "shared",
+        "education",
+        "career",
+        "terms,",
+        "having"
+      ]
+    },
+    {
+      "idea_slug": "internet-of-careers",
+      "label": "internet-of-careers",
+      "frequency": 2,
+      "sessions": [
+        "backfill-2026-01-06-1830",
+        "batch_2026-01-04_recent"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-06",
+      "sample_contexts": [
+        "contributed",
+        "avoiding",
+        "goal:",
+        "employers",
+        "individual"
+      ]
+    },
+    {
+      "idea_slug": "iron-triangle-of-integrity",
+      "label": "iron-triangle-of-integrity",
+      "frequency": 2,
+      "sessions": [
+        "backfill-2026-01-06-1830",
+        "batch_2026-01-04_recent"
+      ],
+      "first_seen": "2026-01-04",
+      "last_seen": "2026-01-06",
+      "sample_contexts": [
+        "expressed",
+        "christine",
+        "types.",
+        "intersecting",
+        "checks"
       ]
     },
     {
@@ -460,29 +929,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "exists",
-        "person's",
-        "bullet",
+        "(diligence,",
+        "matching",
         "explains",
-        "based"
-      ]
-    },
-    {
-      "idea_slug": "medium-to-substack-shift",
-      "label": "medium-to-substack-shift",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-07-0830",
-        "backfill-2026-01-07-1830"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "monetization",
-        "capture",
-        "relationship.",
-        "capabilities.",
-        "recognizing"
+        "model",
+        "careerspan's"
       ]
     },
     {
@@ -496,65 +947,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "personalizes",
-        "search",
         "(writing",
-        "current",
-        "david"
-      ]
-    },
-    {
-      "idea_slug": "productivity-as-home",
-      "label": "productivity-as-home",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-04-1830",
-        "backfill-2026-01-05-2230"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "tools",
-        "self-actualization",
-        "appreciate",
-        "current",
-        "acknowledging"
-      ]
-    },
-    {
-      "idea_slug": "resume-consistency-tension",
-      "label": "resume-consistency-tension",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-05-2230",
-        "mtg_2025-12-26_Careerspan-demo"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "applications.",
-        "maintaining",
-        "ai-generated",
-        "michael",
-        "highlighting"
-      ]
-    },
-    {
-      "idea_slug": "resume-signal-decay",
-      "label": "resume-signal-decay",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-06-1030",
-        "backfill-2026-01-06-2030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "signal.",
-        "chunky'",
-        "space",
-        "hiring",
-        "despite"
+        "human",
+        "promote",
+        "automated",
+        "networking"
       ]
     },
     {
@@ -568,11 +965,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
+        "shared",
         "soul'",
-        "thesis:",
-        "problem",
-        "wrong",
-        "paula"
+        "resonated",
+        "career",
+        "spent"
       ]
     },
     {
@@ -586,11 +983,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "month)",
-        "charging",
-        "ribbon",
-        "hiring",
-        "approach."
+        "dollars",
+        "interviews",
+        "500-1000/mo)",
+        "recruiter",
+        "careerspan's"
       ]
     },
     {
@@ -604,11 +1001,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "offering",
-        "offer",
-        "problem",
-        "scaffold",
-        "'cold"
+        "action",
+        "system-design",
+        "attempts",
+        "lever.",
+        "offer"
       ]
     },
     {
@@ -622,101 +1019,65 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "network",
-        "problem",
-        "reducing",
         "alums",
-        "trust"
+        "students",
+        "reducing",
+        "trust",
+        "through"
       ]
     },
     {
-      "idea_slug": "socratic-ai-over-answers",
-      "label": "socratic-ai-over-answers",
+      "idea_slug": "zapier-resumes-optional",
+      "label": "zapier-resumes-optional",
       "frequency": 2,
       "sessions": [
-        "backfill-2026-01-06-2030",
+        "backfill-2026-01-08-1430",
+        "backfill-2026-01-08-2030"
+      ],
+      "first_seen": "2026-01-08",
+      "last_seen": "2026-01-09",
+      "sample_contexts": [
+        "shared",
+        "left,",
+        "zapier",
+        "toward",
+        "zapier's"
+      ]
+    },
+    {
+      "idea_slug": "ats-data-migration-friction",
+      "label": "ats-data-migration-friction",
+      "frequency": 2,
+      "sessions": [
+        "backfill-2025-01-07-1430",
         "backfill-2026-01-08-1235"
       ],
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "soul'",
-        "identified",
-        "thesis:",
-        "problem",
-        "wrong"
+        "startups",
+        "explained",
+        "companies",
+        "people",
+        "habituated"
       ]
     },
     {
-      "idea_slug": "solopreneur-marketing-burden",
-      "label": "solopreneur-marketing-burden",
+      "idea_slug": "bypass-cold-start-problem",
+      "label": "bypass-cold-start-problem",
       "frequency": 2,
       "sessions": [
-        "backfill-2026-01-05-1230",
-        "backfill-2026-01-06-2030"
+        "backfill-2025-01-07-1630",
+        "backfill-2026-01-09-0830"
       ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-07",
+      "first_seen": "2026-01-07",
+      "last_seen": "2026-01-09",
       "sample_contexts": [
-        "modern",
-        "(rory's",
-        "business",
-        "creator",
-        "psychotherapy"
-      ]
-    },
-    {
-      "idea_slug": "taste-curation-edge",
-      "label": "taste-curation-edge",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2025-01-07-2235",
-        "backfill-2026-01-06-1030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "articulated",
-        "curation'",
-        "defensible",
-        "commoditizes",
-        "discussion"
-      ]
-    },
-    {
-      "idea_slug": "three-freedoms-framework",
-      "label": "three-freedoms-framework",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2025-01-05-0430",
-        "backfill-2026-01-05-1030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "personas),",
-        "framework",
-        "freedom",
-        "(reclaiming",
-        "ownership"
-      ]
-    },
-    {
-      "idea_slug": "trust-network-latency-reduction",
-      "label": "trust-network-latency-reduction",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2026-01-04-2030",
-        "backfill-2026-01-06-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "creates",
-        "network",
-        "platforms.",
-        "alums",
-        "magic"
+        "system-design",
+        "lever.",
+        "repo,",
+        "offer",
+        "accelerate"
       ]
     },
     {
@@ -730,136 +1091,33 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "michael",
-        "tools",
-        "caution",
-        "despite",
-        "candidate."
+        "selected",
+        "candidate.",
+        "indicating",
+        "candidate",
+        "caution"
       ]
     },
     {
-      "idea_slug": "no-immediate-purchase",
-      "label": "no-immediate-purchase",
+      "idea_slug": "team-outcome-uncertainty",
+      "label": "team-outcome-uncertainty",
       "frequency": 2,
       "sessions": [
-        "backfill-2025-01-09-0630",
-        "backfill-2026-01-08-1030"
+        "backfill-2026-01-08-1630",
+        "backfill-2026-01-09-1830"
       ],
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "michael",
-        "evaluation.",
-        "partnership",
-        "stated",
-        "creating"
-      ]
-    },
-    {
-      "idea_slug": "vmock-comparison",
-      "label": "vmock-comparison",
-      "frequency": 2,
-      "sessions": [
-        "backfill-2025-01-05-0430",
-        "backfill-2025-01-05-1430"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "differentiate",
-        "bullet",
-        "explains",
-        "specific",
-        "recommended."
+        "personal",
+        "loose",
+        "willingness",
+        "growth",
+        "expressed"
       ]
     }
   ],
   "sparks": [
-    {
-      "idea_slug": "acquihire-team-protection",
-      "label": "acquihire-team-protection",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-1430"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "stick",
-        "post-acquisition",
-        "something",
-        "expressed",
-        "loose'"
-      ]
-    },
-    {
-      "idea_slug": "advice-individual-journey",
-      "label": "advice-individual-journey",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1430"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "reflected",
-        "offering",
-        "building.",
-        "loved",
-        "business"
-      ]
-    },
-    {
-      "idea_slug": "advice-vs-individual-journey",
-      "label": "advice-vs-individual-journey",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "reflected",
-        "offering",
-        "loved",
-        "vrijen",
-        "between"
-      ]
-    },
-    {
-      "idea_slug": "ai-brand-authenticity-crisis",
-      "label": "ai-brand-authenticity-crisis",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "identified",
-        "'generative",
-        "paula",
-        "actively",
-        "'brand"
-      ]
-    },
-    {
-      "idea_slug": "ai-brand-crisis-dead-internet",
-      "label": "ai-brand-crisis-dead-internet",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "themselves",
-        "introduced",
-        "authenticity",
-        "generative",
-        "vrijen"
-      ]
-    },
     {
       "idea_slug": "ai-consulting-case-study-model",
       "label": "Use client work as consulting case studies/referrals",
@@ -870,11 +1128,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "study/referral",
-        "intent",
-        "business",
+        "consulting",
         "contributions",
-        "consulting"
+        "study/referral",
+        "business",
+        "explicitly"
       ]
     },
     {
@@ -887,28 +1145,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "important",
-        "expressed",
+        "robust",
+        "entities",
         "because",
-        "models",
-        "pausing"
-      ]
-    },
-    {
-      "idea_slug": "ai-information-standstill",
-      "label": "ai-information-standstill",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "using",
-        "\"move",
-        "actionability.",
-        "place",
-        "problem"
+        "expressed",
+        "holly"
       ]
     },
     {
@@ -922,27 +1163,10 @@
       "last_seen": "2026-01-07",
       "sample_contexts": [
         "country",
-        "productive,",
-        "raised",
-        "walks",
-        "'where's"
-      ]
-    },
-    {
-      "idea_slug": "ai-vs-vmock-explainability",
-      "label": "ai-vs-vmock-explainability",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-0630"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "moving",
-        "unlike",
-        "emphasized",
-        "particular",
-        "beyond"
+        "nature?",
+        "overload",
+        "freeing",
+        "freedom..."
       ]
     },
     {
@@ -955,79 +1179,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "(emory,",
+        "alumni",
         "highlighted",
-        "exclusive",
-        "talent",
-        "cornell)"
-      ]
-    },
-    {
-      "idea_slug": "anthropomorphic-habit-bot-loop",
-      "label": "anthropomorphic-habit-bot-loop",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "effectiveness",
-        "stems",
-        "health",
-        "noting",
-        "zo-integrated"
-      ]
-    },
-    {
-      "idea_slug": "applied-ai-nyc-thesis",
-      "label": "applied-ai-nyc-thesis",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-2235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "articulated",
-        "healthcare,",
-        "supply",
-        "breakthrough",
-        "paula"
-      ]
-    },
-    {
-      "idea_slug": "aquahire-strategy",
-      "label": "aquahire-strategy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-1235"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "discussed",
-        "making",
-        "likely",
-        "vrijen",
-        "'aqua-hires'"
-      ]
-    },
-    {
-      "idea_slug": "aqui-hire-exit-strategy",
-      "label": "aqui-hire-exit-strategy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1030"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "articulated",
-        "supportively",
-        "prioritizing",
-        "discussions,",
-        "loose'"
+        "cornell)",
+        "access",
+        "exclusive"
       ]
     },
     {
@@ -1041,27 +1197,10 @@
       "last_seen": "2026-01-07",
       "sample_contexts": [
         "pivot",
+        "close",
+        "candidate'",
         "engineering.",
-        "'ideal",
-        "explained",
-        "artificially"
-      ]
-    },
-    {
-      "idea_slug": "ats-bloodbath-resume-signal-decay",
-      "label": "ats-bloodbath-resume-signal-decay",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1430"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "generation,",
-        "treat",
-        "double",
-        "chunky'",
-        "space"
+        "primary"
       ]
     },
     {
@@ -1074,11 +1213,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "habituated",
+        "startups",
+        "ashby/greenhouse.",
+        "ats-heavy",
         "direct",
-        "justify",
-        "based",
-        "startups"
+        "companies"
       ]
     },
     {
@@ -1091,11 +1230,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "busking",
-        "revolution",
-        "logan",
-        "lecture",
-        "enterprises"
+        "shared",
+        "(payroll)",
+        "industrial",
+        "vrijen",
+        "insights"
       ]
     },
     {
@@ -1108,11 +1247,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "deployment",
+        "careerspan",
         "favor",
-        "avoids",
-        "constrained",
-        "finicky",
-        "consistency"
+        "maintain",
+        "lower"
       ]
     },
     {
@@ -1125,113 +1264,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "companies",
-        "through",
-        "source",
         "aligning",
-        "considering"
-      ]
-    },
-    {
-      "idea_slug": "career-degrees-of-freedom",
-      "label": "career-degrees-of-freedom",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "acceptability",
-        "market,",
-        "model",
-        "framing",
-        "geometric"
-      ]
-    },
-    {
-      "idea_slug": "career-pivot-degrees-freedom",
-      "label": "career-pivot-degrees-freedom",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "pivot",
-        "model",
-        "geometric",
-        "market",
-        "proposes"
-      ]
-    },
-    {
-      "idea_slug": "career-pivot-geometry",
-      "label": "career-pivot-geometry",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-09-0630"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "acceptability",
-        "model",
-        "freedom",
-        "market",
-        "(domain"
-      ]
-    },
-    {
-      "idea_slug": "careerspan-acquisition-strategy",
-      "label": "careerspan-acquisition-strategy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-1630"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "discussed",
-        "talent",
-        "likely",
-        "recognizing",
-        "'aqua-hires'"
-      ]
-    },
-    {
-      "idea_slug": "careerspan-semantic-approach",
-      "label": "careerspan-semantic-approach",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "maintaining",
-        "semantic",
-        "prevent",
-        "conflicting",
-        "based"
-      ]
-    },
-    {
-      "idea_slug": "careerspan-semantic-matching",
-      "label": "careerspan-semantic-matching",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-07-2030"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "maintaining",
-        "prevent",
-        "based",
-        "approach,",
-        "specific"
+        "mentioned",
+        "careerspan",
+        "incentives",
+        "through"
       ]
     },
     {
@@ -1244,11 +1281,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "slick",
+        "emphasized",
+        "willing",
         "itself",
-        "davis",
-        "point",
-        "expressed",
-        "emphasized"
+        "candidate"
       ]
     },
     {
@@ -1261,11 +1298,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "intends",
-        "design",
         "experience",
         "careerspan",
-        "rochel"
+        "intends",
+        "design",
+        "product"
       ]
     },
     {
@@ -1278,147 +1315,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "walkers,",
-        "dating",
+        "listening",
+        "value",
+        "nannies,",
         "technology",
-        "suggested",
-        "highlighting"
-      ]
-    },
-    {
-      "idea_slug": "cloaked-company-model",
-      "label": "cloaked-company-model",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "tradable",
-        "matchbox",
-        "anonymizing",
-        "while",
-        "vetting"
-      ]
-    },
-    {
-      "idea_slug": "cloaked-company-recruitment-model",
-      "label": "cloaked-company-recruitment-model",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-2030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "using",
-        "layer",
-        "white-label",
-        "front-end",
-        "'vetting'"
-      ]
-    },
-    {
-      "idea_slug": "co-founder-timing-thesis",
-      "label": "co-founder-timing-thesis",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1430"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "reflected",
-        "pressure.",
-        "first,",
-        "quickly",
-        "because"
-      ]
-    },
-    {
-      "idea_slug": "co-founder-toxicity-lesson",
-      "label": "co-founder-toxicity-lesson",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "relationship",
-        "first,",
-        "consider",
-        "later,",
-        "reflected"
-      ]
-    },
-    {
-      "idea_slug": "cofounder-breakup-lesson",
-      "label": "cofounder-breakup-lesson",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "first,",
-        "toxic",
-        "shared",
-        "consider",
-        "later,"
-      ]
-    },
-    {
-      "idea_slug": "cofounder-pressure-regret",
-      "label": "cofounder-pressure-regret",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1430"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "pressure.",
-        "summarised",
-        "first,",
-        "quickly",
-        "because"
-      ]
-    },
-    {
-      "idea_slug": "cofounder-solo-first-lesson",
-      "label": "cofounder-solo-first-lesson",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "reflected",
-        "pressure.",
-        "first,",
-        "quickly",
-        "because"
-      ]
-    },
-    {
-      "idea_slug": "cofounder-timing-thesis",
-      "label": "cofounder-timing-thesis",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "reflected",
-        "pressure.",
-        "first,",
-        "quickly",
-        "because"
+        "christine"
       ]
     },
     {
@@ -1431,11 +1332,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "email",
-        "'meaningful",
-        "condo/linkedin",
-        "automatically",
-        "tracks"
+        "system",
+        "across",
+        "david",
+        "identifies",
+        "timers"
       ]
     },
     {
@@ -1448,11 +1349,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "real-time",
-        "enables",
         "students",
-        "portfolio",
-        "presentation"
+        "enables",
+        "real-time",
+        "matching",
+        "careerspan"
       ]
     },
     {
@@ -1465,11 +1366,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "introduced",
-        "capital",
-        "recognized",
+        "animesh's",
+        "graphs:",
         "adopt",
-        "decided"
+        "graph",
+        "alignment"
       ]
     },
     {
@@ -1482,10 +1383,10 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "students",
         "'yapping'",
         "counselors",
-        "flesh",
-        "students",
+        "engage",
         "often"
       ]
     },
@@ -1499,45 +1400,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "creates",
-        "enrichment",
-        "layer",
+        "'angling'",
+        "consumed",
         "independent",
-        "specific"
-      ]
-    },
-    {
-      "idea_slug": "data-as-ore",
-      "label": "data-as-ore",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1430"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "process",
-        "human",
-        "extracted",
-        "resume.",
-        "experience"
-      ]
-    },
-    {
-      "idea_slug": "data-as-ore-metaphor",
-      "label": "data-as-ore-metaphor",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "process",
-        "human",
-        "framing",
-        "extracted",
-        "careerspans"
+        "layer",
+        "collected"
       ]
     },
     {
@@ -1550,11 +1417,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "companies",
-        "among",
         "scraping",
-        "differentiation",
-        "ranted"
+        "ranted",
+        "linkedin",
+        "among",
+        "companies"
       ]
     },
     {
@@ -1568,10 +1435,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "argues",
-        "structure",
-        "ending",
-        "signal",
-        "resume"
+        "current",
+        "unauthenticated",
+        "resume",
+        "outdated,"
       ]
     },
     {
@@ -1584,11 +1451,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "generic",
-        "through",
-        "fails",
         "approach",
-        "extract"
+        "because",
+        "fails",
+        "through",
+        "resume"
       ]
     },
     {
@@ -1601,11 +1468,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "intelligence.",
-        "incumbents",
-        "stems",
+        "underwhelming",
         "founders",
-        "investment"
+        "enjoying",
+        "intelligence.",
+        "defer"
       ]
     },
     {
@@ -1618,62 +1485,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "career",
         "provided",
-        "existing",
+        "framework",
         "expertise",
-        "separation",
         "based"
-      ]
-    },
-    {
-      "idea_slug": "degrees-of-freedom-career",
-      "label": "degrees-of-freedom-career",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-0430"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "acceptability",
-        "market.",
-        "model",
-        "described",
-        "(domain"
-      ]
-    },
-    {
-      "idea_slug": "degrees-of-freedom-career-model",
-      "label": "degrees-of-freedom-career-model",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-0630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "articulated",
-        "acceptability",
-        "market.",
-        "model",
-        "(domain"
-      ]
-    },
-    {
-      "idea_slug": "degrees-of-freedom-career-strategy",
-      "label": "degrees-of-freedom-career-strategy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-1830"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "model",
-        "market",
-        "geometric/mathematic",
-        "fundability",
-        "acceptability,"
       ]
     },
     {
@@ -1686,11 +1502,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "critiques",
+        "(poor",
+        "david",
+        "periodic",
         "positioning",
-        "existing",
-        "tools",
-        "(poor"
+        "condo"
       ]
     },
     {
@@ -1704,10 +1520,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "using",
-        "complex",
+        "(cheaper",
         "reasoning",
-        "models",
-        "vrijen"
+        "vrijen",
+        "possible"
       ]
     },
     {
@@ -1720,11 +1536,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "provider.",
-        "early-stage",
-        "'dependency/stabilit",
         "evaluate",
-        "startup"
+        "relying",
+        "before",
+        "'dependency/stabilit",
+        "concerns'"
       ]
     },
     {
@@ -1737,45 +1553,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "economic",
-        "framing",
-        "fatigue",
+        "individual",
         "discussion",
-        "surfaced"
-      ]
-    },
-    {
-      "idea_slug": "explainability-over-keywords",
-      "label": "explainability-over-keywords",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-1430"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "positioned",
-        "vmock",
-        "emphasizing",
-        "bullet",
-        "against"
-      ]
-    },
-    {
-      "idea_slug": "explainability-over-vmock",
-      "label": "explainability-over-vmock",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-2030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "unlike",
-        "positioned",
-        "vmock",
-        "particular",
-        "differentiator"
+        "social",
+        "economic",
+        "framing"
       ]
     },
     {
@@ -1788,11 +1570,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "skill)",
         "internalize",
-        "model",
-        "(challenge",
-        "search"
+        "applied",
+        "search",
+        "success",
+        "model"
       ]
     },
     {
@@ -1805,11 +1587,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "legacy",
-        "highlighting",
-        "executed",
-        "mutual",
-        "dictate"
+        "trades",
+        "real-time",
+        "signed",
+        "explained",
+        "plans"
       ]
     },
     {
@@ -1822,11 +1604,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
+        "etfs,",
         "real-time",
-        "liquidity",
+        "speed",
         "legacy",
-        "explained",
-        "unlike"
+        "explained"
       ]
     },
     {
@@ -1839,28 +1621,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "moves",
         "actionable.",
-        "framing",
-        "zoe's",
-        "'unlock'",
-        "control"
-      ]
-    },
-    {
-      "idea_slug": "gestalt-unlock",
-      "label": "gestalt-unlock",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "thesis",
-        "'unlock'",
-        "directly",
-        "gestalt\u2014the",
-        "problem"
+        "information",
+        "control",
+        "without"
       ]
     },
     {
@@ -1873,11 +1638,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "thesis",
-        "human",
         "higher",
-        "focusing",
-        "stack,"
+        "strategy",
+        "experts",
+        "human",
+        "thesis"
       ]
     },
     {
@@ -1890,11 +1655,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "high-leverage",
         "'outsized",
-        "(screamer",
-        "introduced",
-        "momentum"
+        "momentum",
+        "opportunities",
+        "high-leverage",
+        "concept"
       ]
     },
     {
@@ -1907,11 +1672,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "'better,'",
-        "moving",
-        "stack-ranking",
         "skills",
-        "'differently"
+        "'better,'",
+        "significant",
+        "'differently",
+        "stack-ranking"
       ]
     },
     {
@@ -1925,10 +1690,10 @@
       "last_seen": "2026-01-09",
       "sample_contexts": [
         "chunky'",
-        "signal,",
-        "hiring",
-        "despite",
-        "creating"
+        "attached",
+        "still",
+        "anchoring",
+        "candidates,"
       ]
     },
     {
@@ -1942,10 +1707,10 @@
       "last_seen": "2026-01-05",
       "sample_contexts": [
         "persists",
-        "signal.",
-        "hiring",
-        "automatically",
-        "despite"
+        "candidate",
+        "still",
+        "candidates,",
+        "found"
       ]
     },
     {
@@ -1958,113 +1723,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "deeper",
-        "tools",
         "shared",
-        "lower",
-        "interviewer"
-      ]
-    },
-    {
-      "idea_slug": "human-experience-as-ore",
-      "label": "human-experience-as-ore",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "'ore'",
-        "process",
-        "positioning",
-        "human",
-        "approach"
-      ]
-    },
-    {
-      "idea_slug": "human-potential-tank",
-      "label": "human-potential-tank",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "human",
-        "species.",
-        "vrijen",
-        "enough",
-        "potential:"
-      ]
-    },
-    {
-      "idea_slug": "human-potential-tank-metaphor",
-      "label": "human-potential-tank-metaphor",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-2030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "human",
-        "framing",
-        "potential.",
-        "actually",
-        "enough"
-      ]
-    },
-    {
-      "idea_slug": "human-tank-capacity",
-      "label": "human-tank-capacity",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "human",
-        "species.'",
-        "potential.",
-        "taste'",
-        "actually"
-      ]
-    },
-    {
-      "idea_slug": "human-tank-metaphor",
-      "label": "human-tank-metaphor",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "human",
-        "species.'",
-        "potential,",
-        "vrijen",
-        "enough"
-      ]
-    },
-    {
-      "idea_slug": "human-tank-remaining",
-      "label": "human-tank-remaining",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1430"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "potential",
-        "human",
-        "species.",
-        "actually",
-        "enough"
+        "toward",
+        "zapier's",
+        "candidate",
+        "provide"
       ]
     },
     {
@@ -2077,11 +1740,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "insight:",
-        "creates",
-        "personalization/owne",
-        "captures",
-        "along"
+        "requiring",
+        "'spiegel'",
+        "ownership",
+        "follow",
+        "software"
       ]
     },
     {
@@ -2094,11 +1757,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "sharp",
-        "strategic",
-        "creating",
-        "suggested",
-        "cash-generating"
+        "indie",
+        "career",
+        "hacking",
+        "cash-generating",
+        "utility"
       ]
     },
     {
@@ -2111,147 +1774,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "growth",
-        "logan",
-        "product",
-        "existing",
-        "leverage"
-      ]
-    },
-    {
-      "idea_slug": "information-overload-vs-action-thesis",
-      "label": "information-overload-vs-action-thesis",
-      "frequency": 1,
-      "sessions": [
-        "batch_2026-01-04_dec-late"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "feels",
-        "moving",
-        "words",
-        "because",
-        "making"
-      ]
-    },
-    {
-      "idea_slug": "information-standstill",
-      "label": "information-standstill",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-0630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "articulated",
-        "'moving",
-        "place",
-        "feels",
-        "don't"
-      ]
-    },
-    {
-      "idea_slug": "information-to-gestalt",
-      "label": "information-to-gestalt",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-07-1830"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "'unlock'",
-        "feeling",
-        "enabled",
-        "thesis",
-        "ownership"
-      ]
-    },
-    {
-      "idea_slug": "information-to-gestalt-transition",
-      "label": "information-to-gestalt-transition",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-0630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "'gestalt'",
-        "thesis",
-        "control",
-        "unlock",
-        "users"
-      ]
-    },
-    {
-      "idea_slug": "institutional-fatigue",
-      "label": "institutional-fatigue",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "dictated",
-        "helen",
-        "autonomy",
-        "second",
-        "career's"
-      ]
-    },
-    {
-      "idea_slug": "institutional-fatigue-autonomy-drive",
-      "label": "institutional-fatigue-autonomy-drive",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1430"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "dictated",
-        "helen",
-        "autonomy",
-        "profound",
-        "second"
-      ]
-    },
-    {
-      "idea_slug": "internet-of-careers",
-      "label": "internet-of-careers",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1830"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "goal:",
-        "burden",
-        "careers'",
-        "reiterated",
-        "professional"
-      ]
-    },
-    {
-      "idea_slug": "internet-of-careers-vision",
-      "label": "internet-of-careers-vision",
-      "frequency": 1,
-      "sessions": [
-        "batch_2026-01-04_recent"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "goal:",
-        "careers",
-        "burden",
-        "directly",
-        "dealing"
+        "personal",
+        "brands",
+        "agreed",
+        "strategy",
+        "independent"
       ]
     },
     {
@@ -2264,11 +1791,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "high-potential",
-        "competes",
-        "inefficiency:",
-        "talent",
-        "rates."
+        "rates.",
+        "agency'",
+        "inflated",
+        "everyone",
+        "alpha"
       ]
     },
     {
@@ -2281,45 +1808,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "exists",
+        "hidden",
         "argues",
-        "talent",
+        "slice",
         "invisible",
-        "slice"
-      ]
-    },
-    {
-      "idea_slug": "iron-triangle-of-integrity",
-      "label": "iron-triangle-of-integrity",
-      "frequency": 1,
-      "sessions": [
-        "batch_2026-01-04_recent"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "create",
-        "interview",
-        "expressed",
-        "ribbon's",
-        "excitement"
-      ]
-    },
-    {
-      "idea_slug": "latency-trust-networks",
-      "label": "latency-trust-networks",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1430"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "using",
-        "alums",
-        "2-story",
-        "orchestrator",
-        "state"
+        "talent"
       ]
     },
     {
@@ -2332,10 +1825,10 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "legacy",
-        "business",
-        "mutual",
-        "dictate",
+        "real-time",
+        "etfs)",
+        "explained",
+        "plans",
         "basis'"
       ]
     },
@@ -2349,11 +1842,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "articulated",
-        "opening",
-        "actively",
+        "matching",
         "utility,",
-        "complex'"
+        "utility",
+        "'superhuman",
+        "actively"
       ]
     },
     {
@@ -2366,11 +1859,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "deeper",
-        "signal,",
-        "justify",
-        "hiring",
-        "shared"
+        "shared",
+        "candidate.",
+        "zapier's",
+        "converged",
+        "quantity."
       ]
     },
     {
@@ -2383,11 +1876,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "portfolio",
-        "hiring",
-        "reorientation",
+        "toward",
+        "mentioned",
         "matching",
-        "employers"
+        "hiring",
+        "portfolio"
       ]
     },
     {
@@ -2400,28 +1893,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "email",
         "casual",
-        "clicking",
-        "identified",
-        "unstructured"
-      ]
-    },
-    {
-      "idea_slug": "medium-to-beehive-shift",
-      "label": "medium-to-beehive-shift",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "monetization",
-        "capture",
-        "capabilities.",
-        "beehive/substack",
-        "shift"
+        "email",
+        "linkedin",
+        "'meaningful",
+        "tracks"
       ]
     },
     {
@@ -2434,28 +1910,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "using",
-        "models'",
-        "models,",
+        "high-end",
         "produce",
-        "reserved"
-      ]
-    },
-    {
-      "idea_slug": "moneyball-for-hiring-pitch",
-      "label": "moneyball-for-hiring-pitch",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-0630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "'moneyball",
-        "wenger's",
-        "sports",
-        "pitch",
-        "talent"
+        "explained",
+        "intelligent",
+        "resume"
       ]
     },
     {
@@ -2468,45 +1927,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "architecture",
         "exploring",
         "search,",
         "multi-agent",
-        "analyst,",
-        "architecture"
-      ]
-    },
-    {
-      "idea_slug": "n5-repo-scaffold-offer",
-      "label": "n5-repo-scaffold-offer",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "offering",
-        "through",
-        "signs",
-        "decides",
-        "issue"
-      ]
-    },
-    {
-      "idea_slug": "n5-scaffold-as-gift-economy",
-      "label": "n5-scaffold-as-gift-economy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-0430"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "offer",
-        "demo,",
-        "problem",
-        "industrial-grade",
-        "decided"
+        "analyst,"
       ]
     },
     {
@@ -2519,11 +1944,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "critique",
         "shared",
         "trust",
-        "bloated,",
-        "relevance"
+        "relevance",
+        "expressed",
+        "'narrow"
       ]
     },
     {
@@ -2536,11 +1961,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "model",
-        "message",
         "touch",
-        "networking",
-        "'getting"
+        "(profile,",
+        "before",
+        "isn't",
+        "mental"
       ]
     },
     {
@@ -2553,11 +1978,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "career",
         "relationship",
-        "blind",
-        "inadvertently",
-        "'gatekeeper",
-        "coaching"
+        "applicant'",
+        "changes",
+        "explorer',"
       ]
     },
     {
@@ -2570,11 +1995,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "headcount",
-        "preserve",
-        "people",
-        "while",
-        "three"
+        "shared",
+        "co-founders",
+        "three",
+        "careerspan",
+        "runway"
       ]
     },
     {
@@ -2587,11 +2012,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "since",
+        "penalty-free.",
         "years",
-        "advised",
         "heavy",
-        "~280k"
+        "surrender",
+        "maturity,"
       ]
     },
     {
@@ -2604,45 +2029,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "arguing",
+        "world",
+        "skills",
+        "differentiator.",
         "commoditized,",
-        "maintaining",
-        "people",
-        "becomes"
-      ]
-    },
-    {
-      "idea_slug": "productivity-as-home-concept",
-      "label": "productivity-as-home-concept",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-0630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "'home'",
-        "'room'",
-        "isn't",
-        "self-actualization,",
-        "history"
-      ]
-    },
-    {
-      "idea_slug": "productivity-as-home-metaphor",
-      "label": "productivity-as-home-metaphor",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-1430"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "'home'",
-        "history,",
-        "reflecting",
-        "isn't",
-        "drawing"
+        "encouraged"
       ]
     },
     {
@@ -2656,27 +2047,10 @@
       "last_seen": "2026-01-05",
       "sample_contexts": [
         "country",
-        "raised",
+        "nature?",
         "freedom,",
-        "paula",
+        "raised",
         "paradox:"
-      ]
-    },
-    {
-      "idea_slug": "productivity-tool-as-home",
-      "label": "productivity-tool-as-home",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "'home'",
-        "framing",
-        "dashboard",
-        "owning",
-        "sense"
       ]
     },
     {
@@ -2689,11 +2063,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "patterns,",
-        "proxy",
-        "talent",
-        "defended",
-        "styles)"
+        "value.",
+        "agency",
+        "hidden",
+        "(reasoning",
+        "defended"
       ]
     },
     {
@@ -2706,11 +2080,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "articulated",
-        "human",
-        "asking",
+        "self-advocacy",
+        "utility",
+        "right",
         "unlock",
-        "right"
+        "human"
       ]
     },
     {
@@ -2723,28 +2097,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "version,",
+        "engineering",
+        "perceived",
         "friends",
-        "version",
-        "snarky",
-        "arguing",
         "culture"
-      ]
-    },
-    {
-      "idea_slug": "real-time-trust-network",
-      "label": "Reducing Latency in Alum-Student Matching",
-      "frequency": 1,
-      "sessions": [
-        "mtg_2025-12-26_Careerspan-demo"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "becomes",
-        "maintains",
-        "reaches",
-        "school",
-        "state"
       ]
     },
     {
@@ -2757,11 +2114,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "tool'",
+        "'financial",
         "providing",
         "superior",
-        "commissions",
-        "shifting",
-        "helping"
+        "'saas"
       ]
     },
     {
@@ -2774,10 +2131,10 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "unauthenticated",
+        "resume",
         "articulated",
         "premise:",
-        "structure",
-        "resume",
         "careerspan's"
       ]
     },
@@ -2791,11 +2148,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "fraud",
-        "costs",
-        "format",
-        "'baked-in",
-        "making"
+        "zero,",
+        "structures",
+        "generating",
+        "essential.",
+        "isn't"
       ]
     },
     {
@@ -2809,10 +2166,10 @@
       "last_seen": "2026-01-06",
       "sample_contexts": [
         "advocate",
-        "convince",
-        "reframed",
-        "shifting",
-        "evidence"
+        "document.",
+        "sales",
+        "sheet",
+        "resume"
       ]
     },
     {
@@ -2825,28 +2182,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "complex",
-        "expressed",
-        "frustration",
         "industrial",
+        "expressed",
+        "limitations",
+        "traditional",
         "resume"
-      ]
-    },
-    {
-      "idea_slug": "resume-tailoring-consistency",
-      "label": "resume-tailoring-consistency",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-1830"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "pushes",
-        "michael",
-        "highlighting",
-        "risks",
-        "detailed"
       ]
     },
     {
@@ -2859,62 +2199,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
+        "practice",
+        "paired",
+        "holly's",
         "acquirable.",
-        "choice:",
-        "cash-flow-positive",
-        "recruiting",
-        "paired"
-      ]
-    },
-    {
-      "idea_slug": "reverse-flywheel",
-      "label": "reverse-flywheel",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "forward",
-        "described",
-        "because",
-        "engineering",
-        "users"
-      ]
-    },
-    {
-      "idea_slug": "reverse-flywheel-alpha",
-      "label": "reverse-flywheel-alpha",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1430"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "users",
-        "startups",
-        "product",
-        "phenomenon",
-        "head-against-wall"
-      ]
-    },
-    {
-      "idea_slug": "reverse-flywheel-alpha-products",
-      "label": "reverse-flywheel-alpha-products",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "forward",
-        "won't",
-        "people",
-        "described",
-        "because"
+        "affirmed"
       ]
     },
     {
@@ -2927,130 +2216,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "model",
+        "interviews'",
+        "'spiritual",
         "approach",
-        "confidence",
         "discussed",
-        "victory'."
-      ]
-    },
-    {
-      "idea_slug": "scaffold-gift-economy",
-      "label": "scaffold-gift-economy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1430"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "offering",
-        "attempting",
-        "lever.",
-        "problem",
-        "system-design"
-      ]
-    },
-    {
-      "idea_slug": "scaffold-offer-cold-start",
-      "label": "scaffold-offer-cold-start",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-0630"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "offer",
-        "problem",
-        "industrial-grade",
-        "sign-ups,",
-        "lever"
-      ]
-    },
-    {
-      "idea_slug": "scaffold-offer-cold-start-bypass",
-      "label": "scaffold-offer-cold-start-bypass",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-2030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "offer",
-        "problem",
-        "attendees",
-        "industrial-grade",
-        "bypass"
-      ]
-    },
-    {
-      "idea_slug": "scaffold-offer-gift-economy",
-      "label": "scaffold-offer-gift-economy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-0630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "offer",
-        "problem",
-        "industrial-grade",
-        "decided",
-        "bypass"
-      ]
-    },
-    {
-      "idea_slug": "scaffold-offer-repo",
-      "label": "scaffold-offer-repo",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-1830"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "positioning",
-        "offer",
-        "vrijen",
-        "problem",
-        "users"
-      ]
-    },
-    {
-      "idea_slug": "scaffold-offer-strategy",
-      "label": "scaffold-offer-strategy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1830"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "offering",
-        "offer",
-        "tools",
-        "problem",
-        "scaffold"
-      ]
-    },
-    {
-      "idea_slug": "semantic-identity-modeling",
-      "label": "Semantic over Keyword Matching",
-      "frequency": 1,
-      "sessions": [
-        "mtg_2025-12-26_Careerspan-demo"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "exists",
-        "maintaining",
-        "rephrasing",
-        "while",
-        "emphasized"
+        "confidence"
       ]
     },
     {
@@ -3063,28 +2233,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "forms",
+        "canonical",
+        "person",
+        "resume",
         "challenging",
-        "resume.",
-        "truthfully",
-        "static"
-      ]
-    },
-    {
-      "idea_slug": "semantic-vs-syntactic-resume-identity",
-      "label": "semantic-vs-syntactic-resume-identity",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "maintaining",
-        "michael",
-        "highlighting",
-        "based",
-        "experiences"
+        "'meaningful"
       ]
     },
     {
@@ -3097,11 +2250,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "creates",
-        "candidates",
-        "better",
+        "reflective.",
+        "having",
         "psychological",
-        "between"
+        "observed",
+        "deals"
       ]
     },
     {
@@ -3114,45 +2267,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "mckinsey",
+        "skills",
+        "institutional",
+        "perceive",
         "people",
-        "explained",
-        "changed",
-        "institutional"
-      ]
-    },
-    {
-      "idea_slug": "slam-dunk-moonshot-dichotomy",
-      "label": "slam-dunk-moonshot-dichotomy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-2030"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "slam-dunk",
-        "vrijen",
-        "(even",
-        "success.",
-        "guaranteed"
-      ]
-    },
-    {
-      "idea_slug": "slam-dunk-vs-moonshot-dichotomy",
-      "label": "slam-dunk-vs-moonshot-dichotomy",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-04-1830"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "valuing",
-        "moonshot",
-        "financial",
-        "failure",
-        "despite"
+        "haven't"
       ]
     },
     {
@@ -3165,113 +2284,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "described",
-        "everyone",
         "contributions",
+        "described",
         "collective",
-        "benefit"
-      ]
-    },
-    {
-      "idea_slug": "socratic-ai-approach",
-      "label": "socratic-ai-approach",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "introduced",
-        "problem",
-        "wrong",
-        "question-asker",
-        "paula"
-      ]
-    },
-    {
-      "idea_slug": "socratic-ai-questions-over-answers",
-      "label": "socratic-ai-questions-over-answers",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "articulated",
-        "questions.",
-        "problem",
-        "paula",
-        "should"
-      ]
-    },
-    {
-      "idea_slug": "socratic-questions-over-answers",
-      "label": "socratic-questions-over-answers",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-2235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "thesis",
-        "human",
-        "asking",
-        "introduced",
-        "resonant"
-      ]
-    },
-    {
-      "idea_slug": "solo-build-first-cofounders-later",
-      "label": "solo-build-first-cofounders-later",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-2235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "reflected",
-        "pressure.",
-        "first,",
-        "quickly",
-        "because"
-      ]
-    },
-    {
-      "idea_slug": "solo-first-cofounders-later",
-      "label": "solo-first-cofounders-later",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-2030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "first,",
-        "toxic",
-        "consider",
-        "later,",
-        "reflected"
-      ]
-    },
-    {
-      "idea_slug": "solopreneur-content-burden",
-      "label": "solopreneur-content-burden",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "modern",
-        "psychotherapy",
-        "skilled",
-        "'hassle'",
-        "addition"
+        "socialist",
+        "where"
       ]
     },
     {
@@ -3284,11 +2301,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "model",
         "requiring",
-        "competitors",
+        "partners/distributio",
         "channels",
-        "partners/distributio"
+        "ribbon",
+        "platform"
       ]
     },
     {
@@ -3302,10 +2319,10 @@
       "last_seen": "2026-01-06",
       "sample_contexts": [
         "'matching",
-        "companies",
-        "game'",
-        "authenticated",
-        "commodity,"
+        "high-fidelity",
+        "without",
+        "interfaces",
+        "candidate"
       ]
     },
     {
@@ -3318,113 +2335,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "sports",
-        "davis",
-        "content",
-        "resume.",
-        "hiring"
-      ]
-    },
-    {
-      "idea_slug": "taste-and-curation-as-edge",
-      "label": "taste-and-curation-as-edge",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-2030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "human",
-        "competitive",
-        "taste'",
-        "advantages.",
-        "paula"
-      ]
-    },
-    {
-      "idea_slug": "taste-and-curation-edge",
-      "label": "taste-and-curation-edge",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1030"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "human",
-        "competitive",
-        "better",
-        "advantages.",
-        "vrijen"
-      ]
-    },
-    {
-      "idea_slug": "taste-as-sustainable-edge",
-      "label": "taste-as-sustainable-edge",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "posited",
-        "human",
-        "better",
-        "vrijen",
-        "taste"
-      ]
-    },
-    {
-      "idea_slug": "taste-curation-as-human-edge",
-      "label": "taste-curation-as-human-edge",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "positioning",
-        "human",
-        "taste'",
-        "contribution.",
-        "judgment"
-      ]
-    },
-    {
-      "idea_slug": "taste-curation-human-edge",
-      "label": "taste-curation-human-edge",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1430"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "posited",
-        "human",
-        "taste'",
-        "edges.",
-        "sustainable"
-      ]
-    },
-    {
-      "idea_slug": "three-freedoms-demo-framework",
-      "label": "three-freedoms-demo-framework",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-2030"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "'freedom':",
-        "freedom",
-        "(reclaiming",
-        "personal",
-        "personas"
+        "'stories'",
+        "generating",
+        "reflection",
+        "willingness",
+        "content"
       ]
     },
     {
@@ -3437,45 +2352,28 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "(sleep",
-        "insights",
+        "engaged",
         "morning",
+        "insights",
         "concept",
-        "mood)"
+        "quality"
       ]
     },
     {
-      "idea_slug": "triangle-of-integrity",
-      "label": "triangle-of-integrity",
+      "idea_slug": "two-story-minimum-readiness",
+      "label": "two-story-minimum-readiness",
       "frequency": 1,
       "sessions": [
-        "backfill-2026-01-06-1830"
+        "backfill-2026-01-09-2030"
       ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
+      "first_seen": "2026-01-10",
+      "last_seen": "2026-01-10",
       "sample_contexts": [
-        "interview",
-        "creating",
-        "prevent",
-        "'bsing'",
-        "ribbon"
-      ]
-    },
-    {
-      "idea_slug": "trust-network-latency",
-      "label": "trust-network-latency",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-0430"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "(2-story",
-        "maintaining",
-        "becomes",
-        "identified",
-        "real-time."
+        "students",
+        "trust",
+        "real-time",
+        "matching",
+        "having"
       ]
     },
     {
@@ -3488,11 +2386,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "monetization",
-        "motion",
-        "discussed",
         "talent",
-        "calls"
+        "active",
+        "replace",
+        "discussed",
+        "boards"
       ]
     },
     {
@@ -3505,11 +2403,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "framing",
-        "verification",
-        "candidates",
+        "selected",
+        "vrijen",
+        "solution",
         "ai-cheating",
-        "'steal"
+        "interviews"
       ]
     },
     {
@@ -3523,10 +2421,10 @@
       "last_seen": "2026-01-07",
       "sample_contexts": [
         "tech.",
-        "'vibe",
-        "introduced",
-        "identity",
-        "talented"
+        "skill",
+        "resonated",
+        "establish",
+        "concept"
       ]
     },
     {
@@ -3540,10 +2438,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "resonated",
-        "introduced",
         "industry",
-        "melissa's",
-        "coding"
+        "identity",
+        "desire",
+        "concept"
       ]
     },
     {
@@ -3556,45 +2454,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "'yapping'",
-        "flesh",
         "students",
-        "creating",
-        "interview"
-      ]
-    },
-    {
-      "idea_slug": "zapier-resumes-optional",
-      "label": "zapier-resumes-optional",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-2030"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "little",
-        "shared",
-        "zapier",
-        "interviewer",
-        "broader"
-      ]
-    },
-    {
-      "idea_slug": "zapier-resumes-optional-shift",
-      "label": "zapier-resumes-optional-shift",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1430"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "little",
-        "interpreting",
-        "shared",
-        "zapier",
-        "interviewer"
+        "'yapping'",
+        "star-formatted",
+        "answers",
+        "engage"
       ]
     },
     {
@@ -3608,10 +2472,10 @@
       "last_seen": "2026-01-06",
       "sample_contexts": [
         "'pick",
-        "space",
+        "building",
         "hotels.",
-        "metaphor",
-        "where"
+        "plans",
+        "space"
       ]
     },
     {
@@ -3624,27 +2488,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "check-ins",
         "showcased",
-        "health",
         "fitbit",
-        "text-based"
-      ]
-    },
-    {
-      "idea_slug": "zo-gestalt-unlock",
-      "label": "zo-gestalt-unlock",
-      "frequency": 1,
-      "sessions": [
-        "batch_2026-01-04_dec-late"
-      ],
-      "first_seen": "2026-01-04",
-      "last_seen": "2026-01-04",
-      "sample_contexts": [
-        "gestalt",
-        "unlock",
-        "control",
-        "totality"
+        "integration",
+        "zo-integrated",
+        "check-ins"
       ]
     },
     {
@@ -3657,79 +2505,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "items,",
-        "showcased",
-        "transcripts",
+        "action",
         "vrijen",
+        "command",
+        "latest",
         "deliverables,"
-      ]
-    },
-    {
-      "idea_slug": "acquihire-focus",
-      "label": "acquihire-focus",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-0630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "acknowledged",
-        "likely",
-        "business",
-        "raising",
-        "whether"
-      ]
-    },
-    {
-      "idea_slug": "ats-data-migration-friction",
-      "label": "ats-data-migration-friction",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1430"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "habituated",
-        "hires",
-        "justify",
-        "10-15+",
-        "despite"
-      ]
-    },
-    {
-      "idea_slug": "ats-data-migration-pain",
-      "label": "ats-data-migration-pain",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "habituated",
-        "hires",
-        "justify",
-        "10-15+",
-        "despite"
-      ]
-    },
-    {
-      "idea_slug": "ats-market-bloodbath",
-      "label": "ats-market-bloodbath",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-05-1230"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "incumbents",
-        "ashby",
-        "bases,",
-        "risky.",
-        "making"
       ]
     },
     {
@@ -3742,11 +2522,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "monetization",
-        "capture",
+        "writing",
         "mechanisms.",
-        "shift",
-        "audience"
+        "capture",
+        "long-form",
+        "decided"
       ]
     },
     {
@@ -3759,45 +2539,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "monetization",
+        "writing",
         "capture",
-        "capabilities.",
-        "beehive/substack",
-        "shift"
-      ]
-    },
-    {
-      "idea_slug": "bypass-cold-start-problem",
-      "label": "bypass-cold-start-problem",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "offering",
-        "problem",
-        "repo,",
-        "system-design",
-        "accelerate"
-      ]
-    },
-    {
-      "idea_slug": "careerspan-acquisition-exit",
-      "label": "careerspan-acquisition-exit",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1235"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "strong",
-        "solid",
-        "within",
-        "expects",
-        "target"
+        "long-form",
+        "decided",
+        "medium"
       ]
     },
     {
@@ -3810,11 +2556,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "signaling",
-        "meeting,",
-        "michael",
-        "tools",
-        "maher"
+        "maher",
+        "committing",
+        "initial",
+        "before",
+        "evaluation."
       ]
     },
     {
@@ -3827,11 +2573,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "commitment",
+        "maher",
+        "initial",
+        "partnership.",
         "approach",
-        "signaling",
-        "meeting,",
-        "cautious"
+        "careerspan"
       ]
     },
     {
@@ -3844,45 +2590,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
+        "close",
+        "partnership",
+        "engineering",
         "using",
-        "matchbox",
-        "distribution.",
-        "roles",
-        "(deeptune,"
-      ]
-    },
-    {
-      "idea_slug": "cmc-toolbox-review",
-      "label": "cmc-toolbox-review",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-0830"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "structured",
-        "michael",
-        "tools",
-        "starting",
-        "process,"
-      ]
-    },
-    {
-      "idea_slug": "cold-start-bypass",
-      "label": "cold-start-bypass",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-0830"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "reward",
-        "offer",
-        "attempting",
-        "lever.",
-        "problem"
+        "experiment"
       ]
     },
     {
@@ -3895,11 +2607,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "discussing",
-        "early-stage",
-        "infrastructure.",
-        "dependency",
-        "worry"
+        "stability",
+        "elly's",
+        "relying",
+        "concerns,",
+        "includes"
       ]
     },
     {
@@ -3912,9 +2624,9 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "extraction",
         "noisy",
         "quality",
+        "extraction",
         "concern"
       ]
     },
@@ -3928,11 +2640,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "first.",
+        "cmc's",
+        "initial",
         "approach",
-        "signaling",
-        "selecting",
-        "purchase"
+        "careerspan",
+        "decided"
       ]
     },
     {
@@ -3945,11 +2657,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "autonomy",
-        "preference",
         "expressed",
+        "indicating",
+        "locked",
         "while",
-        "loose'"
+        "preference"
       ]
     },
     {
@@ -3962,11 +2674,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "'last",
-        "human",
-        "requires",
+        "(writing",
+        "pushback",
+        "possible",
         "desirable",
-        "judgment"
+        "actual"
       ]
     },
     {
@@ -3979,45 +2691,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "relationships,",
-        "division",
-        "recruiting",
-        "requires",
-        "clear"
-      ]
-    },
-    {
-      "idea_slug": "no-immediate-decision",
-      "label": "no-immediate-decision",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1630"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "process",
-        "signaling",
-        "extends",
-        "meeting,",
-        "cautious"
-      ]
-    },
-    {
-      "idea_slug": "no-immediate-purchase-stance",
-      "label": "no-immediate-purchase-stance",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-0630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "lengthy",
-        "delay",
-        "meeting,",
-        "michael",
-        "derail"
+        "amplifier",
+        "clear",
+        "model",
+        "positions",
+        "signal"
       ]
     },
     {
@@ -4030,11 +2708,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "detect",
-        "thinking",
+        "patterns",
         "cognitive",
-        "mirror",
-        "patterns"
+        "thinking",
+        "detect",
+        "mirror"
       ]
     },
     {
@@ -4047,11 +2725,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "outcomes",
         "tension",
-        "preference",
-        "something",
         "expressed",
-        "loose'"
+        "members.",
+        "between"
       ]
     },
     {
@@ -4064,11 +2742,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "tension",
-        "freedom",
-        "expressed",
+        "ventures",
         "loose",
-        "ventures"
+        "personal",
+        "logan.",
+        "outcomes"
       ]
     },
     {
@@ -4081,28 +2759,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "tension",
-        "preference",
-        "something",
-        "expressed",
-        "logan,"
-      ]
-    },
-    {
-      "idea_slug": "premature-commitment",
-      "label": "premature-commitment",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "commitment",
-        "meeting,",
-        "michael",
-        "maher",
-        "premature"
+        "revealing",
+        "personal",
+        "outcomes",
+        "logan,",
+        "acknowledged"
       ]
     },
     {
@@ -4115,11 +2776,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "maher",
         "process",
-        "signaling",
-        "meeting,",
-        "michael",
-        "maher"
+        "initial",
+        "formal",
+        "extend"
       ]
     },
     {
@@ -4132,45 +2793,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "through",
-        "(vrijen's",
-        "authorization",
-        "account",
-        "trail"
-      ]
-    },
-    {
-      "idea_slug": "resume-consistency-customization",
-      "label": "resume-consistency-customization",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-2230"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "inconsistency,",
-        "michael",
-        "customizing",
-        "whether",
-        "expressed"
-      ]
-    },
-    {
-      "idea_slug": "resume-consistency-risk",
-      "label": "resume-consistency-risk",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-06-1230"
-      ],
-      "first_seen": "2026-01-06",
-      "last_seen": "2026-01-06",
-      "sample_contexts": [
-        "creating",
-        "first",
-        "cmc's",
-        "michael",
-        "conflicting"
+        "funds",
+        "policyholder's",
+        "regulatory",
+        "maintain",
+        "account"
       ]
     },
     {
@@ -4183,11 +2810,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "headcount",
-        "preserve",
-        "while",
-        "individuals",
-        "three"
+        "months",
+        "co-founders",
+        "three",
+        "careerspan",
+        "logan,"
       ]
     },
     {
@@ -4200,198 +2827,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "thesis",
-        "separating",
-        "getting",
-        "human",
-        "vrijen's"
-      ]
-    },
-    {
-      "idea_slug": "team-good-outcome",
-      "label": "team-good-outcome",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-07-1630"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "stick",
-        "preference",
-        "something",
-        "expressed",
-        "logan,"
-      ]
-    },
-    {
-      "idea_slug": "team-outcome-acquisition",
-      "label": "team-outcome-acquisition",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-1630"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "stick",
-        "preference",
-        "something",
-        "expressed",
-        "preferences"
-      ]
-    },
-    {
-      "idea_slug": "team-outcome-in-acquisition",
-      "label": "team-outcome-in-acquisition",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-08-2230"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "ensuring",
-        "potential",
-        "preference",
-        "something",
-        "logan"
-      ]
-    },
-    {
-      "idea_slug": "team-outcome-priority",
-      "label": "team-outcome-priority",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-05-0630"
-      ],
-      "first_seen": "2026-01-05",
-      "last_seen": "2026-01-05",
-      "sample_contexts": [
-        "preference",
-        "something",
-        "loose",
-        "focusing",
-        "ilsa/logan/vrijen"
-      ]
-    },
-    {
-      "idea_slug": "team-outcome-responsibility",
-      "label": "team-outcome-responsibility",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-07-0830"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "feels",
-        "needed.",
-        "wanting",
-        "freedom,",
-        "scenario,"
-      ]
-    },
-    {
-      "idea_slug": "team-outcome-uncertainty",
-      "label": "team-outcome-uncertainty",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-08-1630"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "acquisition,",
-        "balancing",
-        "welfare.",
-        "willing",
-        "stick"
-      ]
-    },
-    {
-      "idea_slug": "team-transition-continuity",
-      "label": "team-transition-continuity",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-09-0830"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "concern.",
-        "willing",
-        "stick",
-        "freedom",
-        "expressed"
-      ]
-    },
-    {
-      "idea_slug": "team-wellbeing-post-acquisition",
-      "label": "team-wellbeing-post-acquisition",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-07-2030"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "stick",
-        "post-acquisition",
-        "preference",
-        "something",
-        "expressed"
-      ]
-    },
-    {
-      "idea_slug": "toolbox-evaluation-process",
-      "label": "toolbox-evaluation-process",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2025-01-08-2230"
-      ],
-      "first_seen": "2026-01-09",
-      "last_seen": "2026-01-09",
-      "sample_contexts": [
-        "official",
-        "'resumes'",
-        "first",
-        "area.",
-        "michael"
-      ]
-    },
-    {
-      "idea_slug": "toolbox-evaluation-rigor",
-      "label": "toolbox-evaluation-rigor",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-07-2030"
-      ],
-      "first_seen": "2026-01-08",
-      "last_seen": "2026-01-08",
-      "sample_contexts": [
-        "area,",
-        "michael",
-        "vendor",
-        "before",
-        "stated"
-      ]
-    },
-    {
-      "idea_slug": "vmock-comparison-risk",
-      "label": "vmock-comparison-risk",
-      "frequency": 1,
-      "sessions": [
-        "backfill-2026-01-07-0830"
-      ],
-      "first_seen": "2026-01-07",
-      "last_seen": "2026-01-07",
-      "sample_contexts": [
-        "positioning",
-        "incumbents",
-        "creating",
-        "established",
-        "meeting,"
+        "founders",
+        "worth",
+        "again",
+        "better",
+        "filter"
       ]
     },
     {
@@ -4404,11 +2844,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "stick",
-        "tension",
-        "preference",
-        "something",
-        "expressed"
+        "revealing",
+        "personal",
+        "obligation.",
+        "acknowledged",
+        "willingness"
       ]
     }
   ]

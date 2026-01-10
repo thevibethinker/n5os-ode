@@ -47,6 +47,15 @@ except ImportError as e:
     print(f"Warning: Could not import edge_writer: {e}", file=sys.stderr)
     EDGE_WRITER_AVAILABLE = False
 
+# Try to import evolution tracker for resonance system integration
+EVOLUTION_TRACKER_AVAILABLE = False
+try:
+    sys.path.insert(0, str(Path(__file__).parent / "resonance"))
+    from evolution_tracker import analyze_edges_file as analyze_edges_for_evolution
+    EVOLUTION_TRACKER_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Could not import evolution_tracker: {e}", file=sys.stderr)
+
 
 def list_pending() -> List[Dict]:
     """List all pending edge files."""
@@ -149,6 +158,7 @@ def approve_edges(
         return result
     
     # Commit edges
+    committed_edges = []  # Track for evolution analysis
     for edge in edges:
         try:
             # Skip metadata lines
@@ -172,16 +182,36 @@ def approve_edges(
                 relation=edge["relation"],
                 target=target_ref,
                 meeting=meeting_id,
-                evidence=edge.get("evidence", "")
+                evidence=edge.get("evidence", ""),
+                evolution_type=edge.get("evolution_type")
             )
             
             if edge_result.get("status") in ["created", "duplicate"]:
                 result["committed"] += 1
+                committed_edges.append(edge)  # Track for evolution
             else:
                 result["errors"].append(f"Line {edge.get('_line_number')}: {edge_result}")
                 
         except Exception as e:
             result["errors"].append(f"Line {edge.get('_line_number')}: {str(e)}")
+    
+    # Run evolution tracking on committed edges
+    if committed_edges and EVOLUTION_TRACKER_AVAILABLE:
+        try:
+            import tempfile
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.jsonl', delete=False) as tf:
+                for edge in committed_edges:
+                    edge_with_meeting = {**edge, "context_meeting_id": meeting_id}
+                    tf.write(json.dumps(edge_with_meeting) + "\n")
+                temp_path = tf.name
+            
+            evolution_result = analyze_edges_for_evolution(temp_path)
+            result["evolution_events"] = evolution_result.get("evolution_events_detected", 0)
+            
+            # Clean up temp file
+            Path(temp_path).unlink(missing_ok=True)
+        except Exception as e:
+            result["evolution_tracking_error"] = str(e)
     
     # Move file to committed/
     if result["committed"] > 0:
@@ -455,6 +485,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
 

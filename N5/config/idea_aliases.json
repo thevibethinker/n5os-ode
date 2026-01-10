@@ -1,0 +1,148 @@
+{
+  "_description": "Canonical idea slug mappings. Key = variant, Value = canonical slug.",
+  "_updated": "2026-01-09",
+  "_note": "Apply with: python3 N5/scripts/resonance/apply_aliases.py",
+  
+  "human-tank-capacity": "human-potential-tank",
+  "human-tank-metaphor": "human-potential-tank",
+  "human-tank-remaining": "human-potential-tank",
+  "human-potential-tank-metaphor": "human-potential-tank",
+  
+  "degrees-of-freedom-career-model": "degrees-of-freedom-career",
+  "degrees-of-freedom-career-strategy": "degrees-of-freedom-career",
+  "career-degrees-of-freedom": "degrees-of-freedom-career",
+  "career-pivot-degrees-freedom": "degrees-of-freedom-career",
+  "career-pivot-geometry": "degrees-of-freedom-career",
+  
+  "scaffold-offer-cold-start": "n5-scaffold-offer",
+  "scaffold-offer-cold-start-bypass": "n5-scaffold-offer",
+  "scaffold-offer-gift-economy": "n5-scaffold-offer",
+  "scaffold-offer-repo": "n5-scaffold-offer",
+  "scaffold-offer-strategy": "n5-scaffold-offer",
+  "n5-repo-scaffold-offer": "n5-scaffold-offer",
+  "n5-scaffold-as-gift-economy": "n5-scaffold-offer",
+  "scaffold-gift-economy": "n5-scaffold-offer",
+  
+  "ai-brand-crisis-authenticity": "ai-brand-crisis",
+  "ai-brand-crisis-dead-internet": "ai-brand-crisis",
+  "ai-brand-authenticity-crisis": "ai-brand-crisis",
+  
+  "slam-dunk-vs-moonshot-dichotomy": "slam-dunk-vs-moonshot",
+  "slam-dunk-moonshot-dichotomy": "slam-dunk-vs-moonshot",
+  
+  "co-founder-timing-thesis": "cofounder-timing-thesis",
+  "co-founder-toxicity-lesson": "cofounder-lessons",
+  "cofounder-breakup-lesson": "cofounder-lessons",
+  "cofounder-pressure-regret": "cofounder-lessons",
+  "cofounder-solo-first-lesson": "solo-first-cofounders-later",
+  "solo-build-first-cofounders-later": "solo-first-cofounders-later",
+  
+  "taste-and-curation-as-edge": "taste-curation-edge",
+  "taste-and-curation-edge": "taste-curation-edge",
+  "taste-as-sustainable-edge": "taste-curation-edge",
+  "taste-curation-as-human-edge": "taste-curation-edge",
+  "taste-curation-human-edge": "taste-curation-edge",
+  
+  "socratic-ai-approach": "socratic-ai-over-answers",
+  "socratic-ai-questions-over-answers": "socratic-ai-over-answers",
+  "socratic-questions-over-answers": "socratic-ai-over-answers",
+  
+  "team-outcome-acquisition": "team-outcome-in-acquisition",
+  "team-outcome-priority": "team-outcome-in-acquisition",
+  "team-outcome-responsibility": "team-outcome-in-acquisition",
+  "team-good-outcome": "team-outcome-in-acquisition",
+  "team-wellbeing-post-acquisition": "team-outcome-in-acquisition",
+  "team-transition-continuity": "team-outcome-in-acquisition",
+  
+  "acquihire-team-protection": "acquihire-strategy",
+  "aquahire-acquisition-strategy": "acquihire-strategy",
+  "aquahire-strategy": "acquihire-strategy",
+  "aqui-hire-exit-strategy": "acquihire-strategy",
+  "acquihire-focus": "acquihire-strategy",
+  "careerspan-acquisition-strategy": "acquihire-strategy",
+  "careerspan-acquisition-exit": "acquihire-strategy",
+  
+  "ai-information-standstill": "information-standstill-thesis",
+  "information-standstill": "information-standstill-thesis",
+  "information-overload-vs-action-thesis": "information-standstill-thesis",
+  
+  "latency-trust-networks": "latency-in-trust-networks",
+  "trust-network-latency": "latency-in-trust-networks",
+  "trust-network-latency-reduction": "latency-in-trust-networks",
+  "real-time-trust-network": "latency-in-trust-networks",
+  
+  "productivity-as-home-concept": "productivity-as-home",
+  "productivity-as-home-metaphor": "productivity-as-home",
+  "productivity-tool-as-home": "productivity-as-home",
+  
+  "resume-signal-decay": "resume-signal-decay-bloodbath",
+  "ats-bloodbath-resume-signal-decay": "resume-signal-decay-bloodbath",
+  "ats-market-bloodbath": "resume-signal-decay-bloodbath",
+  
+  "data-as-ore-metaphor": "data-as-ore",
+  "human-experience-as-ore": "data-as-ore",
+  
+  "advice-vs-individual-journey": "advice-individual-journey",
+  
+  "careerspan-semantic-matching": "careerspan-semantic-approach",
+  "careerspan-semantics-over-keywords": "careerspan-semantic-approach",
+  "explainability-over-keywords": "careerspan-semantic-approach",
+  
+  "cloaked-company-recruitment-model": "cloaked-company-recruitment",
+  "cloaked-company-model": "cloaked-company-recruitment",
+  
+  "solopreneur-content-burden": "solopreneur-burden",
+  "solopreneur-marketing-burden": "solopreneur-burden",
+  
+  "three-freedoms-demo-framework": "three-freedoms-framework",
+  "three-freedoms-demo-structure": "three-freedoms-framework",
+  
+  "reverse-flywheel-alpha": "reverse-flywheel",
+  "reverse-flywheel-alpha-products": "reverse-flywheel",
+  
+  "information-to-gestalt-transition": "information-to-gestalt",
+  "gestalt-unlock": "information-to-gestalt",
+  "zo-gestalt-unlock": "information-to-gestalt",
+  
+  "no-immediate-purchase-decision": "no-immediate-purchase",
+  "no-immediate-purchase-stance": "no-immediate-purchase",
+  "no-immediate-decision": "no-immediate-purchase",
+  "premature-commitment": "no-immediate-purchase",
+  
+  "resume-consistency-concerns": "resume-consistency-tension",
+  "resume-consistency-customization": "resume-consistency-tension",
+  "resume-consistency-risk": "resume-consistency-tension",
+  "resume-tailoring-consistency": "resume-consistency-tension",
+  
+  "anthropomorphic-habit-bot-loop": "anthropomorphic-feedback-loop",
+  
+  "applied-ai-nyc-thesis": "nyc-applied-ai-thesis",
+  "applied-ai-thesis": "nyc-applied-ai-thesis",
+  
+  "internet-of-careers-vision": "internet-of-careers",
+  
+  "moneyball-for-hiring-pitch": "moneyball-for-hiring",
+  
+  "semantic-vs-syntactic-resume-identity": "semantic-vs-syntactic-identity",
+  "semantic-identity-modeling": "semantic-vs-syntactic-identity",
+  
+  "triangle-of-integrity": "iron-triangle-of-integrity",
+  
+  "institutional-fatigue-autonomy-drive": "institutional-fatigue",
+  
+  "ats-data-migration-pain": "ats-data-migration-friction",
+  
+  "toolbox-evaluation-rigor": "toolbox-evaluation-process",
+  "cmc-toolbox-review": "toolbox-evaluation-process",
+  
+  "zapier-resumes-optional-shift": "zapier-resumes-optional",
+  
+  "vmock-comparison-risk": "vmock-comparison",
+  "ai-vs-vmock-explainability": "vmock-comparison",
+  "explainability-over-vmock": "vmock-comparison",
+  
+  "cold-start-bypass": "bypass-cold-start-problem",
+  
+  "medium-to-beehive-shift": "medium-to-substack-shift"
+}
+

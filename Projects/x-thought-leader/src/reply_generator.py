@@ -2,14 +2,17 @@
 """
 AI Reply Generator for X Thought Leadership Engine
 
-Generates draft replies for high-relevance tweets using V's voice.
-Human-in-the-loop: V reviews/edits before posting.
+TWO-STAGE TRANSFORMATION APPROACH:
+1. Generate NEUTRAL insight (what to say)
+2. Transform to V's voice (how to say it)
 
-Workflow:
-1. relevance_gate.py identifies high-score tweets
-2. This module generates 2-3 reply variants per tweet
-3. Drafts go to approval queue (SMS alert + web UI)
-4. V approves/edits → post via API
+This separates content quality from style quality, allowing:
+- Iteration on the neutral version before transformation
+- Reuse of the transformation layer for other content types
+- Better debugging (is the insight weak, or the voice wrong?)
+
+Canonical voice system: N5/prefs/communication/voice-transformation-system.md
+X platform profile: N5/prefs/communication/platforms/x.md
 """
 
 import os
@@ -19,169 +22,275 @@ import sqlite3
 import logging
 import argparse
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import List, Dict, Optional
 
-# Setup
+import pytz
+
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-DB_PATH = PROJECT_ROOT / "db" / "tweets.db"
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)sZ %(levelname)s %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
+from voice_model import (
+    get_neutral_prompt, 
+    get_transform_prompt,
+    PLATFORM_VOICE,
+    TRANSFORMATION_PAIRS,
+    ANTI_PATTERNS
 )
-logger = logging.getLogger(__name__)
 
-# V's voice characteristics for reply generation
-V_VOICE_PROMPT = """You are helping V (@thevibethinker) write Twitter replies.
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
+logger = logging.getLogger("reply_generator")
 
-V's voice characteristics:
-- Founder of Careerspan (AI-powered hiring)
-- Thoughtful, not hot-take-bro
-- Adds genuine value, not just "Great point!"
-- Uses analogies and reframes
-- Occasionally contrarian but always substantive
-- Avoids: emojis overload, generic praise, self-promotion in replies
+TWEETS_DB = PROJECT_ROOT / "db" / "tweets.db"
+ET = pytz.timezone('America/New_York')
 
-V's core positions:
-- AI will transform hiring from pattern-matching to potential-matching
-- The "Library of Alexandria" framing: AI as personal knowledge infrastructure
-- Hiring is broken because we optimize for credentials over capability
-- Career coaching needs to evolve from advice-giving to system-building
+# Use Zo's API (same as relevance_gate.py)
+ZO_API_URL = "https://api.zo.computer/zo/ask"
 
-Reply style:
-- Lead with insight, not agreement
-- Add a non-obvious angle or reframe
-- Keep it tight (under 280 chars ideally, max 400)
-- Sound like a peer, not a fan
-"""
 
-def generate_reply_variants(tweet_text: str, tweet_author: str, context: str = "") -> List[Dict]:
-    """
-    Generate 2-3 reply variants for a tweet using Zo's /zo/ask API.
+# =============================================================================
+# LLM INTERFACE
+# =============================================================================
+
+NEUTRAL_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "insight": {"type": "string"},
+        "angle": {"type": "string", "enum": ["reframe", "question", "evidence", "connection", "challenge"]},
+        "strength": {"type": "number"}
+    },
+    "required": ["insight", "angle", "strength"]
+}
+
+TRANSFORM_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "transformed": {"type": "string"},
+        "technique": {"type": "string"},
+        "profanity_used": {"type": "boolean"},
+        "char_count": {"type": "integer"}
+    },
+    "required": ["transformed", "technique", "char_count"]
+}
+
+
+def call_llm(prompt: str, schema: dict = None) -> dict:
+    """Call Zo's /zo/ask API with optional JSON schema."""
+    auth_token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
+    if not auth_token:
+        logger.error("ZO_CLIENT_IDENTITY_TOKEN not set")
+        return {"error": "no_auth_token"}
     
-    Returns list of {variant: str, style: str, char_count: int}
-    """
-    prompt = f"""{V_VOICE_PROMPT}
-
-Tweet to reply to (by @{tweet_author}):
-\"\"\"{tweet_text}\"\"\"
-
-{f"Additional context: {context}" if context else ""}
-
-Generate exactly 3 reply variants:
-1. INSIGHT variant: Lead with a non-obvious observation or reframe
-2. QUESTION variant: Ask a thought-provoking follow-up question
-3. ADDITIVE variant: Build on their point with a specific example or data
-
-Format your response as JSON array:
-[
-  {{"style": "insight", "reply": "..."}},
-  {{"style": "question", "reply": "..."}},
-  {{"style": "additive", "reply": "..."}}
-]
-
-Keep each reply under 280 characters. No emojis. Sound like V, not a bot."""
-
+    headers = {
+        "authorization": auth_token,
+        "content-type": "application/json"
+    }
+    
+    payload = {"input": prompt}
+    
+    if schema:
+        payload["output_format"] = schema
+    
     try:
-        response = requests.post(
-            "https://api.zo.computer/zo/ask",
-            headers={
-                "authorization": os.environ["ZO_CLIENT_IDENTITY_TOKEN"],
-                "content-type": "application/json"
-            },
-            json={"input": prompt},
+        resp = requests.post(
+            ZO_API_URL,
+            headers=headers,
+            json=payload,
             timeout=60
         )
+        resp.raise_for_status()
+        result = resp.json()
         
-        if response.status_code == 200:
-            output = response.json().get('output', '')
-            
-            # Parse JSON from response
+        output = result.get("output", "")
+        
+        # If schema was provided, output should be dict; otherwise parse JSON from text
+        if schema and isinstance(output, dict):
+            return output
+        elif schema:
+            # Try to parse JSON from text response
             try:
-                # Find JSON array in response
-                start = output.find('[')
-                end = output.rfind(']') + 1
-                if start >= 0 and end > start:
-                    variants = json.loads(output[start:end])
-                    for v in variants:
-                        v['char_count'] = len(v.get('reply', ''))
-                    return variants
+                return json.loads(output)
             except json.JSONDecodeError:
-                logger.error(f"Failed to parse reply variants: {output[:200]}")
-                return []
+                # Extract JSON from text if wrapped
+                import re
+                json_match = re.search(r'\{[^{}]*\}', output, re.DOTALL)
+                if json_match:
+                    return json.loads(json_match.group())
+                return {"error": "json_parse_failed", "raw": output[:200]}
         else:
-            logger.error(f"Zo API error: {response.status_code} {response.text[:200]}")
-            return []
+            return {"text": output}
             
+    except requests.exceptions.Timeout:
+        logger.error("Zo API timeout")
+        return {"error": "timeout"}
     except Exception as e:
-        logger.error(f"Error generating replies: {e}")
-        return []
+        logger.error(f"Zo API error: {e}")
+        return {"error": str(e)}
 
 
-def queue_reply_drafts(tweet_id: str, variants: List[Dict]) -> int:
-    """
-    Save reply variants to the drafts table for approval.
-    Returns number of drafts queued.
-    """
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
+# =============================================================================
+# TWO-STAGE GENERATION
+# =============================================================================
+
+def generate_neutral_insight(tweet: dict) -> dict:
+    """Stage 1: Generate the raw insight (what to say)."""
+    prompt = get_neutral_prompt(
+        author=tweet['author_username'],
+        original_tweet=tweet['content'],
+        relevance_context=tweet.get('gate_reason', '')
+    )
     
-    # Ensure drafts table has reply columns
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS reply_drafts (
-            id TEXT PRIMARY KEY,
-            tweet_id TEXT NOT NULL,
-            variant_style TEXT,
-            reply_text TEXT,
-            char_count INTEGER,
-            status TEXT DEFAULT 'pending',
-            created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-            approved_at TEXT,
-            posted_at TEXT,
-            FOREIGN KEY(tweet_id) REFERENCES tweets(id)
-        )
-    """)
+    result = call_llm(prompt, schema=NEUTRAL_SCHEMA)
     
-    queued = 0
-    for v in variants:
-        import uuid
-        draft_id = str(uuid.uuid4())[:8]
+    if "error" in result:
+        return {"error": result["error"]}
+    
+    logger.info(f"Neutral insight generated: angle={result.get('angle')}, strength={result.get('strength', 0):.2f}")
+    return result
+
+
+def transform_to_voice(neutral_insight: str) -> dict:
+    """Stage 2: Transform neutral insight to V's voice."""
+    prompt = get_transform_prompt(neutral_insight)
+    
+    # Don't use schema - just get text and parse
+    result = call_llm(prompt, schema=None)
+    
+    if "error" in result:
+        return {"error": result["error"]}
+    
+    # Parse the text response
+    text = result.get("text", "")
+    
+    # Try to extract JSON from response
+    try:
+        import re
+        json_match = re.search(r'\{[^{}]*"transformed"[^{}]*\}', text, re.DOTALL)
+        if json_match:
+            parsed = json.loads(json_match.group())
+            logger.info(f"Transformed: {parsed.get('technique', 'unknown')}, {len(parsed.get('transformed', ''))} chars")
+            return parsed
+    except (json.JSONDecodeError, AttributeError):
+        pass
+    
+    # Fallback: treat entire response as the transformed text
+    # Clean up any markdown or extra formatting
+    cleaned = text.strip()
+    if cleaned.startswith('"') and cleaned.endswith('"'):
+        cleaned = cleaned[1:-1]
+    if cleaned.startswith("```") and cleaned.endswith("```"):
+        cleaned = cleaned[3:-3].strip()
+    
+    logger.info(f"Transformed (raw): {len(cleaned)} chars")
+    return {
+        "transformed": cleaned[:280],  # Enforce length limit
+        "technique": "raw_response",
+        "char_count": len(cleaned[:280]),
+        "profanity_used": False
+    }
+
+
+def generate_reply_variants(tweet: dict, num_variants: int = 3, dry_run: bool = False) -> List[dict]:
+    """Generate multiple reply variants using two-stage approach."""
+    variants = []
+    angles = ["reframe", "question", "evidence"]  # Different angles for variety
+    
+    for i, angle_hint in enumerate(angles[:num_variants]):
+        # Stage 1: Generate neutral insight
+        neutral_result = generate_neutral_insight(tweet)
         
-        cursor.execute("""
-            INSERT OR IGNORE INTO reply_drafts 
-            (id, tweet_id, variant_style, reply_text, char_count, status)
-            VALUES (?, ?, ?, ?, ?, 'pending')
-        """, (draft_id, tweet_id, v.get('style'), v.get('reply'), v.get('char_count')))
+        if "error" in neutral_result:
+            logger.warning(f"Variant {i+1} neutral generation failed: {neutral_result['error']}")
+            continue
         
-        if cursor.rowcount > 0:
-            queued += 1
+        neutral_text = neutral_result.get("insight", "")
+        if not neutral_text:
+            continue
+        
+        # Stage 2: Transform to voice
+        transform_result = transform_to_voice(neutral_text)
+        
+        if "error" in transform_result:
+            logger.warning(f"Variant {i+1} transform failed: {transform_result['error']}")
+            continue
+        
+        variant = {
+            "variant_type": neutral_result.get("angle", angle_hint),
+            "neutral_insight": neutral_text,
+            "insight_strength": neutral_result.get("strength", 0),
+            "reply_text": transform_result.get("transformed", ""),
+            "technique": transform_result.get("technique", ""),
+            "char_count": transform_result.get("char_count", len(transform_result.get("transformed", ""))),
+            "profanity_used": transform_result.get("profanity_used", False)
+        }
+        
+        if dry_run:
+            print(f"\n  [{variant['variant_type'].upper()}] (strength={variant['insight_strength']:.2f})")
+            print(f"  NEUTRAL: {variant['neutral_insight']}")
+            print(f"  TRANSFORMED ({variant['char_count']} chars): {variant['reply_text']}")
+            print(f"  Technique: {variant['technique']}")
+        else:
+            # Save to DB
+            save_draft(tweet['id'], variant)
+        
+        variants.append(variant)
     
+    return variants
+
+
+# =============================================================================
+# DATABASE OPERATIONS
+# =============================================================================
+
+def ensure_schema():
+    """Ensure reply_drafts table has neutral_insight column."""
+    conn = sqlite3.connect(TWEETS_DB)
+    
+    # Check if neutral_insight column exists
+    cursor = conn.execute("PRAGMA table_info(reply_drafts)")
+    columns = [row[1] for row in cursor.fetchall()]
+    
+    if "neutral_insight" not in columns:
+        conn.execute("ALTER TABLE reply_drafts ADD COLUMN neutral_insight TEXT")
+        conn.execute("ALTER TABLE reply_drafts ADD COLUMN insight_strength REAL")
+        conn.execute("ALTER TABLE reply_drafts ADD COLUMN technique TEXT")
+        conn.commit()
+        logger.info("Added neutral_insight columns to reply_drafts")
+    
+    conn.close()
+
+
+def save_draft(tweet_id: str, variant: dict):
+    """Save a reply draft to the database."""
+    conn = sqlite3.connect(TWEETS_DB)
+    conn.execute("""
+        INSERT INTO reply_drafts (
+            tweet_id, variant_type, reply_text, status, created_at,
+            neutral_insight, insight_strength, technique
+        ) VALUES (?, ?, ?, 'pending', CURRENT_TIMESTAMP, ?, ?, ?)
+    """, (
+        tweet_id,
+        variant['variant_type'],
+        variant['reply_text'],
+        variant.get('neutral_insight'),
+        variant.get('insight_strength'),
+        variant.get('technique')
+    ))
     conn.commit()
     conn.close()
-    return queued
 
 
-def get_tweets_needing_replies(limit: int = 10) -> List[Dict]:
-    """
-    Get high-relevance tweets that don't have reply drafts yet.
-    """
-    conn = sqlite3.connect(DB_PATH)
+def get_tweets_needing_replies(limit: int = 10) -> List[dict]:
+    """Get tweets that passed the gate but don't have replies yet."""
+    conn = sqlite3.connect(TWEETS_DB)
     conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    
-    cursor.execute("""
-        SELECT t.id, t.account_id, t.author_username, t.content, t.correlation_score,
-               t.created_at, ma.username as monitored_username
+    cursor = conn.execute("""
+        SELECT t.id, t.content, t.author_username, t.correlation_score, t.gate_reason
         FROM tweets t
-        LEFT JOIN monitored_accounts ma ON t.account_id = ma.id
-        WHERE t.gate_passed = 1 
-          AND t.correlation_score >= 0.6
-          AND t.id NOT IN (SELECT DISTINCT tweet_id FROM reply_drafts)
-        ORDER BY t.correlation_score DESC, t.created_at DESC
+        LEFT JOIN reply_drafts rd ON t.id = rd.tweet_id
+        WHERE t.gate_passed = 1 AND rd.id IS NULL
+        ORDER BY t.correlation_score DESC
         LIMIT ?
     """, (limit,))
     
@@ -190,59 +299,16 @@ def get_tweets_needing_replies(limit: int = 10) -> List[Dict]:
     return tweets
 
 
-def generate_batch_replies(limit: int = 5, dry_run: bool = False) -> Dict:
-    """
-    Generate reply drafts for high-relevance tweets.
-    """
-    tweets = get_tweets_needing_replies(limit)
-    
-    stats = {
-        'tweets_processed': 0,
-        'drafts_generated': 0,
-        'drafts_queued': 0,
-        'errors': 0
-    }
-    
-    for tweet in tweets:
-        logger.info(f"Generating replies for tweet {tweet['id']} by @{tweet.get('author_username', 'unknown')}")
-        
-        variants = generate_reply_variants(
-            tweet_text=tweet['content'],
-            tweet_author=tweet.get('author_username') or tweet.get('monitored_username', 'unknown')
-        )
-        
-        stats['tweets_processed'] += 1
-        stats['drafts_generated'] += len(variants)
-        
-        if variants and not dry_run:
-            queued = queue_reply_drafts(tweet['id'], variants)
-            stats['drafts_queued'] += queued
-        
-        if dry_run and variants:
-            print(f"\n--- Tweet by @{tweet.get('author_username', 'unknown')} ---")
-            print(f"{tweet['content'][:200]}...")
-            print(f"\nGenerated {len(variants)} reply variants:")
-            for v in variants:
-                print(f"  [{v['style']}] ({v['char_count']} chars): {v['reply']}")
-    
-    return stats
-
-
-def get_pending_drafts(limit: int = 20) -> List[Dict]:
-    """
-    Get pending reply drafts for review.
-    """
-    conn = sqlite3.connect(DB_PATH)
+def get_pending_drafts(limit: int = 10) -> List[dict]:
+    """Get pending drafts for review."""
+    conn = sqlite3.connect(TWEETS_DB)
     conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    
-    cursor.execute("""
-        SELECT rd.*, t.content as tweet_content, t.author_username,
-               t.correlation_score
+    cursor = conn.execute("""
+        SELECT rd.*, t.content as original_content, t.author_username, t.correlation_score as tweet_score
         FROM reply_drafts rd
         JOIN tweets t ON rd.tweet_id = t.id
         WHERE rd.status = 'pending'
-        ORDER BY t.correlation_score DESC, rd.created_at DESC
+        ORDER BY rd.created_at DESC
         LIMIT ?
     """, (limit,))
     
@@ -251,81 +317,190 @@ def get_pending_drafts(limit: int = 20) -> List[Dict]:
     return drafts
 
 
-def approve_draft(draft_id: str) -> bool:
-    """Mark a draft as approved."""
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("""
-        UPDATE reply_drafts 
-        SET status = 'approved', approved_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-    """, (draft_id,))
-    success = cursor.rowcount > 0
-    conn.commit()
-    conn.close()
-    return success
+# =============================================================================
+# MAIN GENERATION FLOW
+# =============================================================================
 
-
-def format_drafts_for_sms(drafts: List[Dict], max_drafts: int = 3) -> str:
-    """
-    Format top drafts for SMS notification.
-    """
-    if not drafts:
-        return "No pending reply drafts."
+def generate_replies(limit: int = 5, dry_run: bool = False) -> dict:
+    """Main entry point: generate replies for passed tweets."""
+    ensure_schema()
     
-    lines = ["🎯 Reply drafts ready:\n"]
+    tweets = get_tweets_needing_replies(limit)
     
-    for i, d in enumerate(drafts[:max_drafts], 1):
-        author = d.get('author_username', '?')
-        tweet_preview = d.get('tweet_content', '')[:50]
-        reply_preview = d.get('reply_text', '')[:80]
+    stats = {
+        "tweets_processed": 0,
+        "drafts_generated": 0,
+        "drafts_queued": 0,
+        "approach": "two-stage-transformation",
+        "errors": 0
+    }
+    
+    for tweet in tweets:
+        logger.info(f"Generating replies for tweet {tweet['id']} by @{tweet['author_username']} (score={tweet['correlation_score']:.2f})")
         
-        lines.append(f"{i}. @{author}: \"{tweet_preview}...\"")
-        lines.append(f"   → {reply_preview}...")
+        if dry_run:
+            print(f"\n{'='*70}")
+            print(f"Tweet by @{tweet['author_username']} (score={tweet['correlation_score']:.2f})")
+            print(f"{'='*70}")
+            print(f"{tweet['content'][:300]}...")
+            print(f"\nGate reason: {tweet.get('gate_reason', 'N/A')[:200]}...")
+        
+        try:
+            variants = generate_reply_variants(tweet, num_variants=3, dry_run=dry_run)
+            stats["tweets_processed"] += 1
+            stats["drafts_generated"] += len(variants)
+            
+            if not dry_run:
+                stats["drafts_queued"] += len(variants)
+                
+        except Exception as e:
+            logger.error(f"Error generating replies for {tweet['id']}: {e}")
+            stats["errors"] += 1
+    
+    return stats
+
+
+def format_drafts_for_sms(drafts: List[dict]) -> str:
+    """Format pending drafts for SMS alert."""
+    if not drafts:
+        return "No pending drafts"
+    
+    lines = ["🎯 X Reply Drafts Ready:\n"]
+    
+    for i, d in enumerate(drafts[:3], 1):
+        lines.append(f"{i}. @{d['author_username']} ({d.get('tweet_score', 0):.1f})")
+        lines.append(f"   NEUTRAL: {d.get('neutral_insight', 'N/A')[:60]}...")
+        lines.append(f"   REPLY: {d['reply_text'][:80]}...")
         lines.append("")
     
-    lines.append(f"Review: va.zo.computer → X Thought Leader")
-    
+    lines.append(f"Total pending: {len(drafts)}")
     return "\n".join(lines)
 
 
+# =============================================================================
+# ITERATION SUPPORT
+# =============================================================================
+
+def iterate_on_neutral(limit: int = 1) -> dict:
+    """
+    Re-transform existing drafts with their neutral insights.
+    Useful when tweaking the transformation prompt.
+    """
+    conn = sqlite3.connect(TWEETS_DB)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.execute("""
+        SELECT rd.id, rd.neutral_insight, rd.reply_text, rd.variant_type
+        FROM reply_drafts rd
+        WHERE rd.neutral_insight IS NOT NULL AND rd.status = 'pending'
+        ORDER BY rd.created_at DESC
+        LIMIT ?
+    """, (limit,))
+    
+    drafts = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    
+    stats = {"reviewed": 0, "regenerated": 0, "errors": 0}
+    
+    for draft in drafts:
+        stats["reviewed"] += 1
+        neutral_text = draft.get("neutral_insight")
+        
+        if not neutral_text:
+            continue
+        
+        print(f"\n--- Draft {draft['id']} ---")
+        print(f"NEUTRAL: {neutral_text}")
+        print(f"CURRENT: {draft['reply_text']}")
+        
+        # Re-transform
+        transform_result = transform_to_voice(neutral_text)
+        
+        if "error" not in transform_result and "transformed" in transform_result:
+            stats["regenerated"] += 1
+            print(f"NEW: {transform_result['transformed']}")
+            print(f"Technique: {transform_result.get('technique')}")
+        else:
+            stats["errors"] += 1
+            print(f"Error: {transform_result.get('error', 'unknown')}")
+    
+    return stats
+
+
+# =============================================================================
+# CLI
+# =============================================================================
+
 def main():
-    parser = argparse.ArgumentParser(description="AI Reply Generator")
-    parser.add_argument("--generate", action="store_true", help="Generate reply drafts for high-relevance tweets")
+    parser = argparse.ArgumentParser(description="X Reply Generator - Two-Stage Voice Transformation")
+    parser.add_argument("--generate", action="store_true", help="Generate replies for passed tweets")
     parser.add_argument("--limit", type=int, default=5, help="Max tweets to process")
-    parser.add_argument("--dry-run", action="store_true", help="Show drafts without saving")
-    parser.add_argument("--pending", action="store_true", help="Show pending drafts for review")
-    parser.add_argument("--approve", type=str, help="Approve a draft by ID")
-    parser.add_argument("--sms-preview", action="store_true", help="Show SMS notification preview")
+    parser.add_argument("--dry-run", action="store_true", help="Print drafts without saving")
+    parser.add_argument("--pending", action="store_true", help="Show pending drafts")
+    parser.add_argument("--stats", action="store_true", help="Show generation statistics")
+    parser.add_argument("--iterate", action="store_true", help="Re-transform existing neutral insights")
+    parser.add_argument("--tweet-id", type=str, help="Process specific tweet ID")
+    parser.add_argument("--sms-preview", action="store_true", help="Format pending drafts for SMS")
     
     args = parser.parse_args()
     
     if args.generate:
-        stats = generate_batch_replies(limit=args.limit, dry_run=args.dry_run)
+        stats = generate_replies(limit=args.limit, dry_run=args.dry_run)
         print(json.dumps(stats, indent=2))
         
     elif args.pending:
         drafts = get_pending_drafts(args.limit)
-        if not drafts:
-            print("No pending drafts.")
-        else:
-            print(f"\n{'='*70}")
-            print(f"PENDING REPLY DRAFTS ({len(drafts)} total)")
-            print(f"{'='*70}\n")
+        print(f"Pending drafts ({len(drafts)}):")
+        for d in drafts:
+            print(f"\n[@{d['author_username']}] {d['original_content'][:80]}...")
+            print(f"  NEUTRAL: {d.get('neutral_insight', 'N/A')[:100]}...")
+            print(f"  TRANSFORMED: {d['reply_text'][:100]}...")
+            print(f"  Variant: {d['variant_type']} | Score: {d.get('tweet_score', 'N/A')}")
             
-            for d in drafts:
-                print(f"Draft ID: {d['id']} | Style: {d['variant_style']} | Score: {d.get('correlation_score', '?')}")
-                print(f"Tweet by @{d.get('author_username', '?')}:")
-                print(f"  \"{d.get('tweet_content', '')[:100]}...\"")
-                print(f"Reply ({d['char_count']} chars):")
-                print(f"  \"{d['reply_text']}\"")
-                print()
-                
-    elif args.approve:
-        if approve_draft(args.approve):
-            print(f"✅ Draft {args.approve} approved")
-        else:
-            print(f"❌ Draft {args.approve} not found")
+    elif args.stats:
+        conn = sqlite3.connect(TWEETS_DB)
+        cursor = conn.execute("""
+            SELECT 
+                COUNT(*) as total,
+                AVG(LENGTH(reply_text)) as avg_len,
+                MIN(LENGTH(reply_text)) as min_len,
+                MAX(LENGTH(reply_text)) as max_len,
+                COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending,
+                COUNT(CASE WHEN status = 'approved' THEN 1 END) as approved,
+                COUNT(CASE WHEN status = 'rejected' THEN 1 END) as rejected
+            FROM reply_drafts
+        """)
+        row = cursor.fetchone()
+        conn.close()
+        
+        print("Reply Draft Statistics:")
+        print(f"  Total: {row[0]}")
+        print(f"  Pending: {row[4]}, Approved: {row[5]}, Rejected: {row[6]}")
+        if row[1]:
+            print(f"  Length: avg={row[1]:.0f}, min={row[2]}, max={row[3]}")
+            
+    elif args.iterate:
+        stats = iterate_on_neutral(limit=args.limit)
+        print(json.dumps(stats, indent=2))
+        
+    elif args.tweet_id:
+        ensure_schema()
+        conn = sqlite3.connect(TWEETS_DB)
+        conn.row_factory = sqlite3.Row
+        cursor = conn.execute("""
+            SELECT id, content, author_username, correlation_score, gate_reason
+            FROM tweets
+            WHERE id = ? AND gate_passed = 1
+        """, (args.tweet_id,))
+        row = cursor.fetchone()
+        conn.close()
+        
+        if not row:
+            print(f"Tweet {args.tweet_id} not found or not passed gate")
+            return
+            
+        tweet = dict(row)
+        variants = generate_reply_variants(tweet, dry_run=True)
+        print(f"\nGenerated {len(variants)} variants for @{tweet['author_username']}")
             
     elif args.sms_preview:
         drafts = get_pending_drafts(5)
@@ -337,5 +512,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

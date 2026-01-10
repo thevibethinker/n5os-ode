@@ -43,7 +43,8 @@ voice-transformation-system.md (this file)
     ├── transformation-pairs-library.md ← Platform-agnostic pairs
     ├── succinctness-pairs.md ← Verbose → Direct transformations
     ├── hedging-antipatterns.md ← Comprehensive kill list
-    └── directness-calibration.md ← Context-appropriate directness
+    ├── directness-calibration.md ← Context-appropriate directness
+    └── pangram-signals.md ← AI detection signals & optimization
 ```
 
 ---
@@ -253,6 +254,26 @@ When generating ANY user-facing text (emails, posts, documents, DMs):
 4. **Apply transformation**
 5. **Validate against kill rules**
 6. **Run compression test**
+7. **(Optional) Pangram check** — For high-stakes comms, test against AI detection
+
+### Pangram AI Detection Check
+
+For important communications, validate output doesn't read as AI-generated:
+
+```bash
+python3 /home/workspace/Integrations/Pangram/pangram.py check "output text"
+```
+
+**Target:** `fraction_ai < 0.3` (30%)
+
+**If failing, apply fixes from:** `file 'N5/prefs/communication/style-guides/pangram-signals.md'`
+
+**Quick fixes that lower AI score:**
+- Add specific dollar amounts or numbers
+- Vary sentence length dramatically (include 2-4 word sentences)
+- Break template structure with organic filler
+- Add one personality marker per paragraph
+- Replace generic references with specifics
 
 ### Context Loading
 
@@ -285,4 +306,6 @@ The `writer` category in `n5_load_context.py` loads:
 | Hedging kill list | `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'` |
 | Directness | `file 'N5/prefs/communication/style-guides/directness-calibration.md'` |
 | System prompt | `file 'N5/prefs/communication/voice-system-prompt.md'` |
+
+
 
