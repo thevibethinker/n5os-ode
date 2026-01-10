@@ -1,0 +1,112 @@
+{
+  "name": "Resonance System V2",
+  "description": "Enhance Context Graph with velocity tracking, cross-pollination detection, challenge resolution, idea genealogy, and external validation signals",
+  "objective": "Surface the dynamics of V's intellectual landscape - what's rising, converging, under challenge, evolving, and externally validated",
+  "key_decisions": [
+    "14-day decay threshold (week-scale, not 48-hour)",
+    "Velocity = simple week-over-week trend, no slope math",
+    "External validation v1 = list validators only, credibility scoring deferred",
+    "Schema versioning for resonance_index.json migration",
+    "Cache metrics in resonance_index.json, compute incrementally"
+  ],
+  "relevant_files": [
+    "N5/builds/resonance-v2/PLAN.md",
+    "N5/scripts/resonance/pattern_surfacer.py",
+    "N5/scripts/resonance/evolution_tracker.py",
+    "N5/data/resonance_index.json",
+    "N5/data/edges.db"
+  ],
+  "workers": [
+    {
+      "id": "worker_schema",
+      "component": "schema_versioning",
+      "description": "Phase 0: Add schema_version to resonance_index.json, create migration logic in pattern_surfacer.py load function. Old format (no version) = 1.0, new = 2.0. Add empty structures for velocity, co_occurrence, external_validations.",
+      "dependencies": [],
+      "estimated_hours": 1,
+      "status": "completed",
+      "completed_at": "2026-01-10T03:04:26.813376+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_velocity",
+      "component": "velocity_tracking",
+      "description": "Phase 1: Add compute_weekly_mentions() and compute_velocity() to pattern_surfacer.py. Group idea mentions by ISO week (last 8 weeks). Trend = 'rising'/'stable'/'falling' based on week-over-week comparison. Add 'Rising Ideas' section to report output.",
+      "dependencies": [
+        "worker_schema"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-10T03:10:20.533731+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_crosspoll",
+      "component": "cross_pollination",
+      "description": "Phase 2: Add build_co_occurrence_matrix() and detect_convergence() to pattern_surfacer.py. Build matrix of idea pairs sharing meetings (min 2). Detect pairs that were separate in first 4 weeks but now co-occur. Add 'Converging Ideas' section to report.",
+      "dependencies": [
+        "worker_schema"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-10T03:23:45.541039+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_challenge",
+      "component": "challenge_resolution",
+      "description": "Phase 3: Add get_challenge_status() to evolution_tracker.py. Query challenged_by edges with challenger identity, date, evidence. Track resolution status (pending/resolved/abandoned). Enhance 'Under Challenge' report section with resolution status.",
+      "dependencies": [
+        "worker_schema"
+      ],
+      "estimated_hours": 1.5,
+      "status": "completed",
+      "completed_at": "2026-01-10T03:36:18.964438+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_genealogy",
+      "component": "idea_genealogy",
+      "description": "Phase 4: Add derives_from edge type to edges.db if missing. Create build_genealogy() function returning ancestors, descendants, siblings. Add 'potential duplicate' warning for ideas with high co-occurrence + similar edges. Show lineage in report.",
+      "dependencies": [
+        "worker_schema"
+      ],
+      "estimated_hours": 2,
+      "status": "completed",
+      "completed_at": "2026-01-10T03:46:37.886212+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_validation",
+      "component": "external_validation",
+      "description": "Phase 5: Add get_external_validations() to pattern_surfacer.py. Query supported_by edges where source is external person. v1 = list validators with name, date, evidence (no credibility scoring). Add 'External Validation' section to report.",
+      "dependencies": [
+        "worker_schema"
+      ],
+      "estimated_hours": 1.5,
+      "status": "completed",
+      "completed_at": "2026-01-10T03:51:24.425767+00:00",
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_integration",
+      "component": "report_integration",
+      "description": "Final integration: Wire all new sections into pattern_surfacer.py report command. Ensure all 5 new sections render correctly. Run full report and verify output matches success criteria in PLAN.md.",
+      "dependencies": [
+        "worker_velocity",
+        "worker_crosspoll",
+        "worker_challenge",
+        "worker_genealogy",
+        "worker_validation"
+      ],
+      "estimated_hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "resonance-v2",
+    "created_at": "2026-01-10T02:59:55.760832+00:00",
+    "status": "active"
+  }
+}
