@@ -28,6 +28,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(mes
 logger = logging.getLogger("relevance_gate")
 
 TWEETS_DB = PROJECT_ROOT / "db" / "tweets.db"
+POSITIONS_DB = Path("/home/workspace/N5/data/positions.db")
 ET = pytz.timezone('America/New_York')
 
 # Basic hygiene (NOT topic filtering)
@@ -37,15 +38,68 @@ MAX_TWEET_AGE_HOURS = 72  # allow slightly older tweets
 # Semantic gate threshold
 SEMANTIC_THRESHOLD = 0.65  # score >= this triggers downstream
 
-# V's engagement profile for semantic evaluation
-SEMANTIC_GATE_PROMPT = """You are evaluating whether V (@thevibethinker) would have something interesting to say about this tweet.
 
-V's engagement profile:
+def load_positions(min_confidence: int = 3, limit: int = 30) -> list:
+    """
+    Load V's worldview positions for semantic context.
+    
+    Returns list of {domain, title, insight} dicts.
+    """
+    if not POSITIONS_DB.exists():
+        logger.warning(f"Positions DB not found: {POSITIONS_DB}")
+        return []
+    
+    conn = sqlite3.connect(POSITIONS_DB)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.execute("""
+        SELECT domain, title, insight 
+        FROM positions 
+        WHERE confidence >= ?
+        ORDER BY confidence DESC, updated_at DESC
+        LIMIT ?
+    """, (min_confidence, limit))
+    
+    positions = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    
+    logger.info(f"Loaded {len(positions)} positions (confidence >= {min_confidence})")
+    return positions
+
+
+def format_positions_for_prompt(positions: list) -> str:
+    """Format positions as concise context block."""
+    if not positions:
+        return "No positions loaded."
+    
+    # Group by domain
+    by_domain = {}
+    for p in positions:
+        domain = p['domain']
+        if domain not in by_domain:
+            by_domain[domain] = []
+        by_domain[domain].append(p)
+    
+    lines = []
+    for domain, pos_list in by_domain.items():
+        lines.append(f"\n**{domain.replace('-', ' ').title()}:**")
+        for p in pos_list[:3]:  # Max 3 per domain
+            lines.append(f"- {p['title']}: {p['insight'][:200]}...")
+    
+    return "\n".join(lines)
+
+
+# V's engagement profile for semantic evaluation (with positions placeholder)
+SEMANTIC_GATE_PROMPT_TEMPLATE = """You are evaluating whether V (@thevibethinker) would have something interesting to say about this tweet.
+
+V's core profile:
 - Founder of Careerspan (AI-powered hiring platform)
 - Deep interests: hiring/talent markets, AI/automation philosophy, epistemology & knowledge systems, founder journey, future of work, human potential
 - Writing style: adds non-obvious angles, reframes conversations, shares genuine insight, wit without snark
-- Engages when: he can contribute something substantive beyond "great point!", when the topic connects to his worldview
-- Does NOT engage with: pure news/announcements, memes without depth, promotional spam, hot takes lacking substance, outrage bait
+- Engages when: he can contribute something substantive, when the topic connects to his worldview
+- Does NOT engage with: pure news/announcements, memes without depth, promotional spam, hot takes lacking substance
+
+V's ACTUAL WORLDVIEW POSITIONS (high-confidence beliefs):
+{positions_context}
 
 Tweet by @{author}:
 \"\"\"{tweet_text}\"\"\"
@@ -54,17 +108,37 @@ Question: Would V have something genuinely interesting to contribute to this con
 
 Think step by step:
 1. What is the core topic/claim?
-2. Does this connect to V's interests or expertise?
-3. Could V add a non-obvious angle or reframe?
+2. Does this connect to V's positions or areas of conviction?
+3. Could V add a non-obvious angle, reframe, or connect to one of his positions?
 4. Is there enough substance to engage with?
 
 Score 0.0-1.0:
-- 0.0-0.3: No clear angle for V, off-topic, or low substance
+- 0.0-0.3: No connection to V's worldview, off-topic, or low substance
 - 0.4-0.6: Tangentially relevant, V might engage if inspired
-- 0.7-1.0: V would definitely have something valuable to say
+- 0.7-0.85: Clear connection to V's positions, good engagement opportunity
+- 0.85-1.0: Direct hit on V's core positions, high-value engagement
 
 Respond with ONLY valid JSON (no markdown, no explanation):
-{{"score": X.X, "reasoning": "one sentence why"}}"""
+{{"score": X.X, "reasoning": "one sentence why", "position_match": "title of matching position or null"}}"""
+
+
+# Cache positions for batch processing
+_positions_cache = None
+_positions_cache_time = None
+POSITIONS_CACHE_TTL = 300  # 5 minutes
+
+
+def get_cached_positions() -> list:
+    """Get positions with caching for batch operations."""
+    global _positions_cache, _positions_cache_time
+    
+    now = datetime.now()
+    if _positions_cache is None or _positions_cache_time is None or \
+       (now - _positions_cache_time).seconds > POSITIONS_CACHE_TTL:
+        _positions_cache = load_positions(min_confidence=3, limit=30)
+        _positions_cache_time = now
+    
+    return _positions_cache
 
 
 def basic_hygiene(tweet: dict) -> Tuple[bool, str]:
@@ -109,9 +183,12 @@ def call_semantic_gate(tweet_text: str, author: str) -> Tuple[float, str]:
     Returns:
         (score: 0.0-1.0, reasoning: str)
     """
-    prompt = SEMANTIC_GATE_PROMPT.format(
+    positions = get_cached_positions()
+    positions_context = format_positions_for_prompt(positions)
+    prompt = SEMANTIC_GATE_PROMPT_TEMPLATE.format(
         author=author,
-        tweet_text=tweet_text[:500]  # Truncate very long tweets
+        tweet_text=tweet_text[:500],  # Truncate very long tweets
+        positions_context=positions_context
     )
     
     token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
@@ -434,5 +511,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

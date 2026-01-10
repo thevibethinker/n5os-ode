@@ -25,19 +25,14 @@ import requests
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Optional
+import subprocess
 
 import pytz
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from voice_model import (
-    get_neutral_prompt, 
-    get_transform_prompt,
-    PLATFORM_VOICE,
-    TRANSFORMATION_PAIRS,
-    ANTI_PATTERNS
-)
+from voice_model import get_transform_prompt
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger("reply_generator")
@@ -97,7 +92,7 @@ def call_llm(prompt: str, schema: dict = None) -> dict:
             ZO_API_URL,
             headers=headers,
             json=payload,
-            timeout=60
+            timeout=120  # Increased from 60
         )
         resp.raise_for_status()
         result = resp.json()
@@ -133,108 +128,118 @@ def call_llm(prompt: str, schema: dict = None) -> dict:
 # TWO-STAGE GENERATION
 # =============================================================================
 
+NEUTRAL_PROMPT_TEMPLATE = """Analyze this tweet and generate a neutral insight that V could respond to.
+
+Tweet by @{author}: {tweet_content}
+
+V's areas of expertise: hiring/recruiting, career development, AI/tech, startups, human behavior
+
+Generate a brief (1-2 sentence) neutral insight - the SUBSTANCE of what V might say, without any style or voice.
+Focus on: what's interesting, what's missing, what contradiction exists, or what experience V has that's relevant.
+
+Output only the neutral insight, nothing else."""
+
+
 def generate_neutral_insight(tweet: dict) -> dict:
-    """Stage 1: Generate the raw insight (what to say)."""
-    prompt = get_neutral_prompt(
-        author=tweet['author_username'],
-        original_tweet=tweet['content'],
-        relevance_context=tweet.get('gate_reason', '')
+    """Stage 1: Generate neutral insight about what to say."""
+    prompt = NEUTRAL_PROMPT_TEMPLATE.format(
+        author=tweet.get('author_username', 'unknown'),
+        tweet_content=tweet.get('content', '')[:500]
     )
     
-    result = call_llm(prompt, schema=NEUTRAL_SCHEMA)
+    result = call_llm(prompt)
+    if not result or 'error' in result:
+        return {"error": result.get('error', 'unknown')}
     
-    if "error" in result:
-        return {"error": result["error"]}
-    
-    logger.info(f"Neutral insight generated: angle={result.get('angle')}, strength={result.get('strength', 0):.2f}")
-    return result
+    return {
+        "insight": result.get('text', ''),
+        "angle": "insight"
+    }
 
 
 def transform_to_voice(neutral_insight: str) -> dict:
     """Stage 2: Transform neutral insight to V's voice."""
     prompt = get_transform_prompt(neutral_insight)
     
-    # Don't use schema - just get text and parse
+    # No schema - just get plain text back
     result = call_llm(prompt, schema=None)
     
     if "error" in result:
         return {"error": result["error"]}
     
-    # Parse the text response
-    text = result.get("text", "")
+    # Get the text response
+    text = result.get("text", "").strip()
     
-    # Try to extract JSON from response
-    try:
-        import re
-        json_match = re.search(r'\{[^{}]*"transformed"[^{}]*\}', text, re.DOTALL)
-        if json_match:
-            parsed = json.loads(json_match.group())
-            logger.info(f"Transformed: {parsed.get('technique', 'unknown')}, {len(parsed.get('transformed', ''))} chars")
-            return parsed
-    except (json.JSONDecodeError, AttributeError):
-        pass
+    # Clean up any JSON wrapper if the model included it anyway
+    if text.startswith('{') and 'transformed' in text:
+        try:
+            import re
+            json_match = re.search(r'"transformed"\s*:\s*"([^"]+)"', text)
+            if json_match:
+                text = json_match.group(1)
+        except:
+            pass
     
-    # Fallback: treat entire response as the transformed text
-    # Clean up any markdown or extra formatting
-    cleaned = text.strip()
-    if cleaned.startswith('"') and cleaned.endswith('"'):
-        cleaned = cleaned[1:-1]
-    if cleaned.startswith("```") and cleaned.endswith("```"):
-        cleaned = cleaned[3:-3].strip()
+    # Clean up quotes and markdown
+    if text.startswith('"') and text.endswith('"'):
+        text = text[1:-1]
+    if text.startswith("```") and text.endswith("```"):
+        text = text[3:-3].strip()
+    if text.startswith("`") and text.endswith("`"):
+        text = text[1:-1]
     
-    logger.info(f"Transformed (raw): {len(cleaned)} chars")
+    # Enforce length limit
+    text = text[:280]
+    
+    logger.info(f"Transformed: {len(text)} chars")
     return {
-        "transformed": cleaned[:280],  # Enforce length limit
-        "technique": "raw_response",
-        "char_count": len(cleaned[:280]),
-        "profanity_used": False
+        "transformed": text,
+        "technique": "natural",
+        "char_count": len(text),
+        "profanity_used": any(word in text.lower() for word in ['fuck', 'shit', 'damn', 'hell'])
     }
 
 
-def generate_reply_variants(tweet: dict, num_variants: int = 3, dry_run: bool = False) -> List[dict]:
-    """Generate multiple reply variants using two-stage approach."""
+def generate_reply_variants(tweet: dict, num_variants: int = 3) -> list:
+    """Generate reply variants using two-stage approach."""
     variants = []
-    angles = ["reframe", "question", "evidence"]  # Different angles for variety
     
-    for i, angle_hint in enumerate(angles[:num_variants]):
-        # Stage 1: Generate neutral insight
+    for i in range(num_variants):
+        # Stage 1: Neutral insight
         neutral_result = generate_neutral_insight(tweet)
-        
         if "error" in neutral_result:
             logger.warning(f"Variant {i+1} neutral generation failed: {neutral_result['error']}")
             continue
         
-        neutral_text = neutral_result.get("insight", "")
-        if not neutral_text:
+        neutral_insight = neutral_result.get("insight", "")
+        logger.info(f"Neutral insight generated: {neutral_insight[:100]}...")
+        
+        # Stage 2: Transform to V's voice
+        transform_prompt = get_transform_prompt(
+            neutral_insight=neutral_insight,
+            original_tweet=tweet.get('content', '')[:500],
+            author=tweet.get('author_username', 'unknown')
+        )
+        
+        transform_result = call_llm(transform_prompt)
+        if not transform_result or 'error' in transform_result:
+            logger.warning(f"Variant {i+1} transform failed")
             continue
         
-        # Stage 2: Transform to voice
-        transform_result = transform_to_voice(neutral_text)
+        reply_text = transform_result.get('text', '').strip()
         
-        if "error" in transform_result:
-            logger.warning(f"Variant {i+1} transform failed: {transform_result['error']}")
-            continue
+        # Clean up any quotes or extra formatting
+        if reply_text.startswith('"') and reply_text.endswith('"'):
+            reply_text = reply_text[1:-1]
         
-        variant = {
-            "variant_type": neutral_result.get("angle", angle_hint),
-            "neutral_insight": neutral_text,
-            "insight_strength": neutral_result.get("strength", 0),
-            "reply_text": transform_result.get("transformed", ""),
-            "technique": transform_result.get("technique", ""),
-            "char_count": transform_result.get("char_count", len(transform_result.get("transformed", ""))),
-            "profanity_used": transform_result.get("profanity_used", False)
-        }
+        logger.info(f"Transformed: {reply_text[:80]}... ({len(reply_text)} chars)")
         
-        if dry_run:
-            print(f"\n  [{variant['variant_type'].upper()}] (strength={variant['insight_strength']:.2f})")
-            print(f"  NEUTRAL: {variant['neutral_insight']}")
-            print(f"  TRANSFORMED ({variant['char_count']} chars): {variant['reply_text']}")
-            print(f"  Technique: {variant['technique']}")
-        else:
-            # Save to DB
-            save_draft(tweet['id'], variant)
-        
-        variants.append(variant)
+        variants.append({
+            "neutral_insight": neutral_insight,
+            "reply_text": reply_text,
+            "char_count": len(reply_text),
+            "variant_style": "transformed",
+        })
     
     return variants
 
@@ -266,12 +271,12 @@ def save_draft(tweet_id: str, variant: dict):
     conn = sqlite3.connect(TWEETS_DB)
     conn.execute("""
         INSERT INTO reply_drafts (
-            tweet_id, variant_type, reply_text, status, created_at,
+            tweet_id, variant_style, reply_text, status, created_at,
             neutral_insight, insight_strength, technique
         ) VALUES (?, ?, ?, 'pending', CURRENT_TIMESTAMP, ?, ?, ?)
     """, (
         tweet_id,
-        variant['variant_type'],
+        variant['variant_style'],
         variant['reply_text'],
         variant.get('neutral_insight'),
         variant.get('insight_strength'),
@@ -346,7 +351,7 @@ def generate_replies(limit: int = 5, dry_run: bool = False) -> dict:
             print(f"\nGate reason: {tweet.get('gate_reason', 'N/A')[:200]}...")
         
         try:
-            variants = generate_reply_variants(tweet, num_variants=3, dry_run=dry_run)
+            variants = generate_reply_variants(tweet)
             stats["tweets_processed"] += 1
             stats["drafts_generated"] += len(variants)
             
@@ -389,7 +394,7 @@ def iterate_on_neutral(limit: int = 1) -> dict:
     conn = sqlite3.connect(TWEETS_DB)
     conn.row_factory = sqlite3.Row
     cursor = conn.execute("""
-        SELECT rd.id, rd.neutral_insight, rd.reply_text, rd.variant_type
+        SELECT rd.id, rd.neutral_insight, rd.reply_text, rd.variant_style
         FROM reply_drafts rd
         WHERE rd.neutral_insight IS NOT NULL AND rd.status = 'pending'
         ORDER BY rd.created_at DESC
@@ -427,6 +432,99 @@ def iterate_on_neutral(limit: int = 1) -> dict:
 
 
 # =============================================================================
+# PANGRAM VALIDATION
+# =============================================================================
+
+PANGRAM_CLI = Path("/home/workspace/Integrations/Pangram/pangram.py")
+
+def validate_with_pangram(text: str, threshold: float = 0.30) -> dict:
+    """
+    Validate text against Pangram AI detection.
+    Returns dict with passed, ai_score, and details.
+    """
+    ai_score, passed = check_pangram(text)
+    return {
+        "passed": passed,
+        "ai_score": ai_score,
+        "threshold": threshold,
+        "source": "pangram"
+    }
+
+
+def check_pangram(text: str) -> tuple[float, bool]:
+    """Check text against Pangram AI detector. Returns (ai_score, passed)."""
+    try:
+        result = subprocess.run(
+            ['python3', '/home/workspace/Integrations/Pangram/pangram.py', 'check', text],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        # Parse output for AI score
+        for line in result.stdout.split('\n'):
+            if 'AI Score:' in line:
+                # Extract percentage, e.g., "AI Score:     100.0% AI"
+                import re
+                match = re.search(r'(\d+\.?\d*)%', line)
+                if match:
+                    score = float(match.group(1)) / 100
+                    return score, score < 0.3
+        return 0.5, False  # Default if parsing fails
+    except Exception as e:
+        logger.warning(f"Pangram check failed: {e}")
+        return 0.5, False  # Don't block on Pangram errors
+
+
+def iterate_for_human_voice(reply: str, tweet_text: str, author: str, max_iterations: int = 2) -> tuple[str, float]:
+    """Iterate on reply until it passes Pangram or max iterations reached."""
+    
+    ai_score, passed = check_pangram(reply)
+    
+    if passed:
+        logger.info(f"Reply passed Pangram on first try: {ai_score*100:.0f}% AI")
+        return reply, ai_score
+    
+    current_reply = reply
+    for i in range(max_iterations):
+        logger.info(f"Pangram iteration {i+1}: {ai_score*100:.0f}% AI, attempting humanization...")
+        
+        feedback = """This sounds too AI-generated. Make it MORE CONVERSATIONAL:
+- React to what they said, don't make a manifesto
+- One observation, not stacked insights  
+- Specific details over clever abstractions
+- Natural imperfection — not every phrase needs to be quotable
+- Shorter sentences mixed with longer ones"""
+        
+        iteration_prompt = f"""This reply failed AI detection ({ai_score*100:.0f}% AI). Make it sound more human.
+
+CURRENT REPLY:
+{current_reply}
+
+ORIGINAL TWEET:
+@{author}: {tweet_text}
+
+FEEDBACK:
+{feedback}
+
+Generate a more natural, conversational version. Less polished. More like actually talking to someone.
+
+Return ONLY the new reply text, nothing else. Keep under 280 characters."""
+        
+        result = call_llm(iteration_prompt)
+        if result.get("success") and result.get("output"):
+            new_reply = result["output"].strip().strip('"')
+            if len(new_reply) < 300:
+                current_reply = new_reply
+                ai_score, passed = check_pangram(current_reply)
+                if passed:
+                    logger.info(f"Reply passed Pangram after iteration {i+1}: {ai_score*100:.0f}% AI")
+                    return current_reply, ai_score
+    
+    logger.warning(f"Reply still {ai_score*100:.0f}% AI after {max_iterations} iterations")
+    return current_reply, ai_score
+
+
+# =============================================================================
 # CLI
 # =============================================================================
 
@@ -454,7 +552,7 @@ def main():
             print(f"\n[@{d['author_username']}] {d['original_content'][:80]}...")
             print(f"  NEUTRAL: {d.get('neutral_insight', 'N/A')[:100]}...")
             print(f"  TRANSFORMED: {d['reply_text'][:100]}...")
-            print(f"  Variant: {d['variant_type']} | Score: {d.get('tweet_score', 'N/A')}")
+            print(f"  Variant: {d['variant_style']} | Score: {d.get('tweet_score', 'N/A')}")
             
     elif args.stats:
         conn = sqlite3.connect(TWEETS_DB)
@@ -499,7 +597,7 @@ def main():
             return
             
         tweet = dict(row)
-        variants = generate_reply_variants(tweet, dry_run=True)
+        variants = generate_reply_variants(tweet)
         print(f"\nGenerated {len(variants)} variants for @{tweet['author_username']}")
             
     elif args.sms_preview:
@@ -512,6 +610,16 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
 
 
 
