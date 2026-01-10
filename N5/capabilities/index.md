@@ -106,3 +106,5 @@ Each capability is documented in its own markdown file with:
 
 
 - `internal/capability-graduation-system` - [See doc](internal/capability-graduation-system.md)
+
+- `internal/resonance-reservoir` - [See doc](internal/resonance-reservoir.md)
