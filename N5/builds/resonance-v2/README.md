@@ -22,7 +22,7 @@ Surface the dynamics of V's intellectual landscape - what's rising, converging, 
 | worker_challenge | challenge_resolution | completed | worker_schema | 1.5h |
 | worker_genealogy | idea_genealogy | completed | worker_schema | 2h |
 | worker_validation | external_validation | completed | worker_schema | 1.5h |
-| worker_integration | report_integration | pending | worker_velocity, worker_crosspoll, worker_challenge, worker_genealogy, worker_validation | 1h |
+| worker_integration | report_integration | completed | worker_velocity, worker_crosspoll, worker_challenge, worker_genealogy, worker_validation | 1h |
 
 ## Key Decisions
 
