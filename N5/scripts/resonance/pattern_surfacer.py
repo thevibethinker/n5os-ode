@@ -27,6 +27,27 @@ from collections import defaultdict
 from typing import Dict, List, Any, Optional, Tuple
 from itertools import combinations
 
+# Import evolution_tracker functions for Phase 3 & 4 features
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from evolution_tracker import (
+        get_challenge_status,
+        get_ideas_with_lineage,
+        detect_potential_duplicates,
+        build_genealogy
+    )
+except ImportError:
+    # Graceful fallback if evolution_tracker not available
+    def get_challenge_status(idea_slug=None):
+        return {'total_challenges': 0, 'by_status': {'pending': 0, 'resolved': 0, 'abandoned': 0}, 'challenges': {'pending': [], 'resolved': [], 'abandoned': []}, 'stale_challenges': []}
+    def get_ideas_with_lineage():
+        return []
+    def detect_potential_duplicates(threshold=0.7):
+        return []
+    def build_genealogy(idea_id):
+        return {'ancestors': [], 'descendants': [], 'siblings': [], 'lineage_depth': 0}
+
 # Paths
 N5_ROOT = Path("/home/workspace/N5")
 EDGES_DB = N5_ROOT / "data" / "edges.db"
@@ -681,6 +702,105 @@ def generate_report(index: Dict) -> str:
                     lines.append(f"  > \"{evidence_preview}\"")
                 lines.append("")
     
+    # Under Challenge section - Phase 3 (Challenge Resolution Tracking)
+    challenge_status = get_challenge_status()
+    pending_challenges = challenge_status.get('challenges', {}).get('pending', [])
+    if pending_challenges:
+        # Build entity labels lookup for ideas
+        entity_labels = {}
+        for category in ["cornerstones", "active_theses", "recurring_tools", "sparks"]:
+            for idea in index.get(category, []):
+                entity_labels[idea["idea_slug"]] = idea["label"]
+        
+        lines.append("## ⚔️ Under Challenge — Ideas Being Tested")
+        lines.append("Ideas that have been questioned or challenged. Unresolved challenges need attention.")
+        lines.append("")
+        lines.append(f"**Status:** {challenge_status['by_status']['pending']} pending · {challenge_status['by_status']['resolved']} resolved · {challenge_status['by_status']['abandoned']} abandoned")
+        lines.append("")
+        
+        # Show stale challenges first (30+ days)
+        stale = challenge_status.get('stale_challenges', [])
+        if stale:
+            lines.append("### ⚠️ Stale Challenges (30+ days unresolved)")
+            for c in stale[:5]:
+                idea_label = entity_labels.get(c['entity_id'], c['entity_id'].replace('-', ' ').title())
+                challenger = c.get('challenger', 'unknown').replace('-', ' ').title()
+                days = c.get('days_unresolved', '?')
+                lines.append(f"- **{idea_label}** ← challenged by **{challenger}** ({days} days ago)")
+                if c.get('evidence'):
+                    evidence_preview = (c['evidence'][:80] + '...') if len(c['evidence']) > 80 else c['evidence']
+                    lines.append(f"  > _{evidence_preview}_")
+            lines.append("")
+        
+        # Recent pending challenges
+        lines.append("### Pending Challenges")
+        # Filter to show non-stale challenges
+        stale_ids = {c.get('edge_id') for c in stale}
+        recent_pending = [c for c in pending_challenges if c.get('edge_id') not in stale_ids]
+        for c in recent_pending[:8]:
+            idea_label = entity_labels.get(c['entity_id'], c['entity_id'].replace('-', ' ').title())
+            challenger = c.get('challenger', 'unknown').replace('-', ' ').title()
+            meeting = c.get('meeting_id', '')
+            lines.append(f"- **{idea_label}** ← challenged by **{challenger}**")
+            if c.get('evidence'):
+                evidence_preview = (c['evidence'][:80] + '...') if len(c['evidence']) > 80 else c['evidence']
+                lines.append(f"  > _{evidence_preview}_")
+            if meeting:
+                lines.append(f"  - Meeting: {meeting}")
+        if len(recent_pending) > 8:
+            lines.append(f"  - _...and {len(recent_pending) - 8} more_")
+        lines.append("")
+    
+    # Idea Lineage section - Phase 4 (Genealogy)
+    ideas_with_lineage = get_ideas_with_lineage()
+    potential_duplicates = detect_potential_duplicates()
+    
+    if ideas_with_lineage or potential_duplicates:
+        # Build entity labels lookup for ideas
+        entity_labels = {}
+        for category in ["cornerstones", "active_theses", "recurring_tools", "sparks"]:
+            for idea in index.get(category, []):
+                entity_labels[idea["idea_slug"]] = idea["label"]
+        
+        lines.append("## 🌳 Idea Lineage — Evolution & Heritage")
+        lines.append("Ideas that derive from or spawn other ideas, and potential duplicates to consolidate.")
+        lines.append("")
+        
+        # Show ideas with lineage (derives_from relationships)
+        if ideas_with_lineage:
+            # Separate roots (no ancestors, have descendants) from leaves (have ancestors, no descendants)
+            roots = [i for i in ideas_with_lineage if i.get('is_root')]
+            leaves = [i for i in ideas_with_lineage if i.get('is_leaf')]
+            
+            if roots:
+                lines.append("### 🌱 Root Ideas (spawned others)")
+                for idea in roots[:5]:
+                    idea_label = entity_labels.get(idea['idea_id'], idea['idea_id'].replace('-', ' ').title())
+                    desc_count = idea.get('descendant_count', 0)
+                    lines.append(f"- **{idea_label}** → spawned {desc_count} descendant(s)")
+                lines.append("")
+            
+            if leaves:
+                lines.append("### 🍃 Evolved Ideas (derived from others)")
+                for idea in leaves[:5]:
+                    idea_label = entity_labels.get(idea['idea_id'], idea['idea_id'].replace('-', ' ').title())
+                    depth = idea.get('lineage_depth', 0)
+                    lines.append(f"- **{idea_label}** — depth {depth} (has {idea.get('ancestor_count', 0)} ancestor(s))")
+                lines.append("")
+        
+        # Show potential duplicates
+        if potential_duplicates:
+            lines.append("### 🔍 Potential Duplicates (to consolidate)")
+            lines.append("These idea pairs have high co-occurrence and similar edge patterns.")
+            lines.append("")
+            for dup in potential_duplicates[:5]:
+                label_a = entity_labels.get(dup['idea_a'], dup['idea_a'].replace('-', ' ').title())
+                label_b = entity_labels.get(dup['idea_b'], dup['idea_b'].replace('-', ' ').title())
+                confidence = int(dup.get('confidence', 0) * 100)
+                shared = dup.get('shared_meetings', 0)
+                lines.append(f"- **{label_a}** ≈ **{label_b}** — {confidence}% similar ({shared} shared meetings)")
+            lines.append("")
+    
     # Cornerstones
     if index["cornerstones"]:
         lines.append("## 🏛️ Cornerstones (L0) — Your Foundational Beliefs")
@@ -767,6 +887,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

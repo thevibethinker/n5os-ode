@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-01-10T03:54:50.724974+00:00",
+  "generated_at": "2026-01-10T04:00:03.826012+00:00",
   "thresholds": {
     "cornerstone": 10,
     "active_thesis": 4,
@@ -5213,11 +5213,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "becomes",
-        "platforms",
-        "depends",
-        "require",
-        "instant"
+        "becoming",
+        "candidates.",
+        "vision",
+        "careerspan",
+        "careerspan,"
       ]
     }
   ],
@@ -5240,11 +5240,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "plans",
-        "through",
-        "sign-ups",
-        "starter",
-        "attendees"
+        "positioning",
+        "industrial-grade",
+        "vrijen",
+        "comes",
+        "through"
       ]
     },
     {
@@ -5263,11 +5263,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-10",
       "sample_contexts": [
-        "expressed",
-        "focus",
-        "engaged",
-        "discussions,",
-        "product"
+        "targeting",
+        "concerns",
+        "careerspan",
+        "noting",
+        "alone."
       ]
     },
     {
@@ -5286,11 +5286,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "chunky'",
-        "attached",
-        "enjoying",
-        "go-to-market,",
-        "decay"
+        "candidates,",
+        "premise",
+        "candidates.",
+        "customers,",
+        "quality"
       ]
     },
     {
@@ -5309,11 +5309,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "converged",
         "human",
-        "world.",
-        "irreducible",
-        "belief"
+        "positioning",
+        "defensible",
+        "liberating.",
+        "taste'"
       ]
     },
     {
@@ -5332,11 +5332,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "potential",
-        "acquisition",
-        "willingness",
+        "likely",
         "tempered",
-        "ensuring"
+        "outcomes",
+        "post-acquisition",
+        "tension"
       ]
     },
     {
@@ -5354,11 +5354,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "spam)",
-        "products",
         "spam,",
-        "actively",
-        "themselves"
+        "spam)",
+        "vrijen",
+        "internet",
+        "noise.'"
       ]
     },
     {
@@ -5376,11 +5376,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "domain/role",
-        "geometric",
-        "pivot",
-        "career",
-        "geometric/mathematic"
+        "vrijen",
+        "future",
+        "freedom",
+        "where",
+        "(domain"
       ]
     },
     {
@@ -5398,11 +5398,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "moving",
         "human",
-        "concept",
-        "'gestalt'",
-        "articulated"
+        "reveals",
+        "unlock",
+        "'moving",
+        "understanding"
       ]
     },
     {
@@ -5420,10 +5420,10 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "high-quality",
-        "'applied",
-        "applied",
-        "fashion.'",
+        "differentiated",
+        "vrijen",
+        "development.",
+        "supply",
         "human-centric"
       ]
     },
@@ -5442,11 +5442,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-10",
       "sample_contexts": [
-        "potential",
-        "candidate",
-        "resume",
-        "roles",
-        "inconsistency"
+        "maher",
+        "confusion,",
+        "cmc's",
+        "multiple",
+        "tailoring"
       ]
     },
     {
@@ -5464,11 +5464,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "engaged",
-        "degrees),",
-        "career",
-        "careerspan's",
-        "involve"
+        "'degrees",
+        "careerspan",
+        "proven",
+        "larger",
+        "distance"
       ]
     },
     {
@@ -5486,11 +5486,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "wife)",
-        "helen",
-        "content",
-        "builders",
-        "(rory's"
+        "vrijen",
+        "faces",
+        "creator",
+        "launch.",
+        "build"
       ]
     },
     {
@@ -5508,11 +5508,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "plans",
-        "three-part",
-        "ownership",
-        "freedoms.",
-        "moving"
+        "(workflows),",
+        "delivers",
+        "leaves",
+        "three",
+        "strategist),"
       ]
     },
     {
@@ -5530,11 +5530,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "uncertain.",
-        "indicating",
-        "premature",
-        "meeting,",
-        "stated"
+        "maher",
+        "derail",
+        "multi-stage",
+        "conversion",
+        "delay"
       ]
     },
     {
@@ -5551,11 +5551,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "conflicting",
-        "matching",
-        "recommended.",
-        "maintaining",
-        "consistency"
+        "cares",
+        "understanding",
+        "while",
+        "positioned",
+        "level'"
       ]
     },
     {
@@ -5572,11 +5572,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "potential",
         "human",
-        "potential.",
-        "potential,",
-        "asserted"
+        "replaces",
+        "enough",
+        "taste'",
+        "argued"
       ]
     },
     {
@@ -5593,11 +5593,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "potential",
-        "moving",
-        "resume",
+        "coaching",
         "human",
-        "elevate"
+        "maher",
+        "levels.",
+        "levels,"
       ]
     },
     {
@@ -5614,11 +5614,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "rooms",
-        "through",
-        "plans",
-        "self-actualization.",
-        "concept"
+        "intelligence",
+        "agency",
+        "drawing",
+        "vrijen",
+        "traveling"
       ]
     },
     {
@@ -5635,11 +5635,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "challenging",
-        "tension",
-        "robust",
+        "conflicts,",
+        "truthful",
         "demoed",
-        "meaning"
+        "tension",
+        "highlighting"
       ]
     },
     {
@@ -5656,11 +5656,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "themselves'",
-        "socratic",
         "human",
-        "self-advocacy,",
-        "right"
+        "tool,",
+        "positioning",
+        "vrijen",
+        "unlock"
       ]
     },
     {
@@ -5677,11 +5677,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "moving",
-        "meaningful",
-        "matching",
-        "explains",
-        "jobs,"
+        "keyword-matching",
+        "positioning",
+        "toolbox",
+        "particular",
+        "understanding"
       ]
     },
     {
@@ -5697,11 +5697,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "friction.",
-        "white-label",
-        "anonymizing/cloaking",
-        "layer",
-        "separate,"
+        "vrijen",
+        "vetting",
+        "while",
+        "'representation'",
+        "matchbox"
       ]
     },
     {
@@ -5717,11 +5717,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "ownership",
-        "self.",
-        "agency,",
-        "gestalt\u2014the",
-        "addresses"
+        "unlock",
+        "architecture",
+        "where",
+        "problem",
+        "feeling"
       ]
     },
     {
@@ -5737,11 +5737,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "hiring'",
+        "keyword-matching",
+        "articulated.",
+        "arson",
         "through",
-        "acquisition",
-        "meaningful",
-        "shared"
+        "thinking"
       ]
     }
   ],
@@ -5758,11 +5758,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "habit",
-        "utility,",
-        "utility",
-        "engaged",
-        "zo-integrated"
+        "check-ins,",
+        "rochel",
+        "vrijen",
+        "watch",
+        "conceptualized"
       ]
     },
     {
@@ -5777,11 +5777,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "candidate",
-        "through",
-        "high-fidelity",
-        "layer",
-        "themselves"
+        "technical",
+        "collection",
+        "works",
+        "discuss",
+        "through"
       ]
     },
     {
@@ -5796,11 +5796,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-07",
       "sample_contexts": [
+        "metrics",
+        "'spiritual",
         "through",
-        "regardless",
-        "success",
-        "acquisition",
-        "growth"
+        "growth",
+        "explores"
       ]
     },
     {
@@ -5815,11 +5815,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "shared",
-        "reflected",
-        "co-founders",
-        "consider",
-        "later,"
+        "quickly",
+        "organic",
+        "relationship",
+        "build",
+        "rather"
       ]
     },
     {
@@ -5835,10 +5835,10 @@
       "last_seen": "2026-01-09",
       "sample_contexts": [
         "human",
-        "socratic",
-        "extracted",
-        "presented",
-        "scraped"
+        "positioning",
+        "human-centric",
+        "process",
+        "rather"
       ]
     },
     {
@@ -5853,11 +5853,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "beehive/substack",
-        "importance",
         "capture,",
-        "capture",
-        "long-form"
+        "writing",
+        "owning",
+        "specifically",
+        "capabilities."
       ]
     },
     {
@@ -5872,11 +5872,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "loop.",
-        "usage",
-        "startups",
-        "engineers",
-        "won't"
+        "forward",
+        "fail.",
+        "dynamics",
+        "where",
+        "until"
       ]
     },
     {
@@ -5891,11 +5891,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "reflected",
+        "quickly",
+        "build",
+        "started",
         "co-founders",
-        "consider",
-        "later,",
-        "might"
+        "because"
       ]
     },
     {
@@ -5910,11 +5910,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "likens",
+        "framing,",
+        "careerspan",
         "likened",
-        "confirmed",
-        "people",
-        "careerspan's",
-        "framing,"
+        "confirmed"
       ]
     },
     {
@@ -5929,11 +5929,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "candidate",
-        "moving",
-        "resume",
-        "ensuring",
-        "focus"
+        "maher",
+        "other",
+        "categories.",
+        "toolbox",
+        "cmc's"
       ]
     },
     {
@@ -5947,11 +5947,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "pace.",
-        "between",
-        "business",
+        "building.",
+        "vrijen",
+        "learn",
         "loved",
-        "building"
+        "advice"
       ]
     },
     {
@@ -5965,11 +5965,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "committed",
-        "ensuring",
-        "expressed",
-        "focus",
-        "logan,"
+        "likely",
+        "reflects",
+        "outcomes",
+        "post-acquisition",
+        "future"
       ]
     },
     {
@@ -5983,11 +5983,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "clarified",
-        "competing",
-        "directly",
-        "specializing",
-        "sourcing"
+        "recruitment",
+        "sourcing",
+        "talent",
+        "discuss",
+        "directly"
       ]
     },
     {
@@ -6001,10 +6001,10 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "matching",
-        "engaged",
-        "explains",
-        "specific",
+        "feature",
+        "level'",
+        "careerspan",
+        "keyword",
         "because"
       ]
     },
@@ -6019,11 +6019,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "pressure.",
-        "again,",
+        "quickly",
         "because",
-        "instead",
-        "committing"
+        "first,",
+        "later,",
+        "again,"
       ]
     },
     {
@@ -6037,11 +6037,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "currently",
-        "because",
-        "feels",
+        "unlock",
+        "'moving",
+        "argues",
         "actionable",
-        "moves"
+        "rather"
       ]
     },
     {
@@ -6055,11 +6055,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "helen",
-        "having",
         "career's",
-        "shared",
-        "career"
+        "highlighting",
+        "terms,",
+        "second",
+        "helen"
       ]
     },
     {
@@ -6073,11 +6073,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "contributed",
-        "employers",
-        "goal:",
         "avoiding",
-        "socialist"
+        "layer.",
+        "collectively,",
+        "internet",
+        "where"
       ]
     },
     {
@@ -6091,11 +6091,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "christine",
-        "expressed",
+        "story",
+        "careerspan",
+        "across",
         "consistency",
-        "intersecting",
-        "checks"
+        "prevent"
       ]
     },
     {
@@ -6109,11 +6109,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "matching",
-        "explains",
-        "(diligence,",
-        "recommended,",
-        "careerspan's"
+        "capability",
+        "proactiveness)",
+        "where",
+        "level'",
+        "careerspan"
       ]
     },
     {
@@ -6128,10 +6128,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "human",
-        "(writing",
-        "networking",
-        "linkedin's",
-        "product"
+        "reflects",
+        "search",
+        "while",
+        "manual"
       ]
     },
     {
@@ -6145,11 +6145,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "socratic",
-        "'resumes",
-        "spent",
-        "starting",
-        "'editing"
+        "problem",
+        "ability",
+        "careerspan,",
+        "nature",
+        "noting"
       ]
     },
     {
@@ -6163,11 +6163,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "positioning",
+        "conversational",
+        "rochel",
         "interviews",
-        "500-1000/mo)",
-        "dollars",
-        "careerspan's",
-        "product"
+        "failure"
       ]
     },
     {
@@ -6181,11 +6181,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "attempts",
-        "action",
-        "system-design",
-        "scaffold",
-        "offer"
+        "industrial-grade",
+        "problem",
+        "gift-economy",
+        "offer",
+        "action"
       ]
     },
     {
@@ -6200,10 +6200,10 @@
       "last_seen": "2026-01-06",
       "sample_contexts": [
         "through",
-        "alums",
-        "students",
-        "reducing",
-        "trust"
+        "manual",
+        "solving",
+        "problem",
+        "constant"
       ]
     },
     {
@@ -6217,11 +6217,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "zapier's",
-        "resume",
-        "shared",
-        "left,",
-        "zapier"
+        "zapier",
+        "broader",
+        "where",
+        "toward",
+        "interviewer"
       ]
     },
     {
@@ -6235,11 +6235,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "explained",
-        "startups",
-        "people",
-        "companies",
-        "despite"
+        "infrequently",
+        "habituated",
+        "mid-stage",
+        "justify",
+        "them."
       ]
     },
     {
@@ -6253,11 +6253,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "system-design",
+        "industrial-grade",
         "repo,",
-        "offer",
-        "lever.",
-        "treating"
+        "problem",
+        "decided",
+        "gift-economy"
       ]
     },
     {
@@ -6271,11 +6271,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "candidate",
-        "caution",
-        "candidate.",
-        "indicating",
-        "selected"
+        "maher",
+        "toolbox",
+        "institutional",
+        "cmc's",
+        "reflects"
       ]
     },
     {
@@ -6289,11 +6289,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "willingness",
+        "outcomes",
         "growth",
-        "expressed",
-        "personal",
-        "loose"
+        "preference",
+        "ensure",
+        "acquisition,"
       ]
     }
   ],
@@ -6308,11 +6308,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "business",
-        "contributions",
-        "study/referral",
+        "explicitly",
+        "bonfire",
         "consulting",
-        "intent"
+        "stated",
+        "business"
       ]
     },
     {
@@ -6325,11 +6325,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "entities",
+        "concern",
         "because",
-        "expressed",
-        "robust",
-        "fintech"
+        "entities",
+        "checker",
+        "mis-labelled"
       ]
     },
     {
@@ -6342,11 +6342,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "articulating",
-        "'where's",
-        "increased",
+        "raised",
+        "paradox:",
+        "reward,",
         "freedom...",
-        "freeing"
+        "overload"
       ]
     },
     {
@@ -6359,11 +6359,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "(emory,",
-        "access",
-        "exclusive",
-        "highlighted",
-        "alumni"
+        "relationships",
+        "associations",
+        "cornell)",
+        "talent",
+        "highlighted"
       ]
     },
     {
@@ -6376,11 +6376,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "cognitive",
-        "between",
         "current",
-        "artificially",
-        "explained"
+        "engineering.",
+        "cognitive",
+        "employer's",
+        "primary"
       ]
     },
     {
@@ -6393,11 +6393,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "ats-heavy",
-        "ashby/greenhouse.",
-        "startups",
-        "people",
-        "companies"
+        "infrequently",
+        "habituated",
+        "mid-stage",
+        "justify",
+        "ats-heavy"
       ]
     },
     {
@@ -6410,11 +6410,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "current",
         "harvard",
+        "busking",
+        "budgets",
         "logan",
-        "software",
-        "insights"
+        "software"
       ]
     },
     {
@@ -6427,11 +6427,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "lightweight,",
-        "favor",
-        "maintain",
         "lower",
-        "careerspan"
+        "maintain",
+        "favor",
+        "avoids",
+        "deployment"
       ]
     },
     {
@@ -6444,11 +6444,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "through",
-        "space",
-        "considering",
+        "equity.",
         "incentives",
-        "careerspan"
+        "table",
+        "mentioned",
+        "space"
       ]
     },
     {
@@ -6461,11 +6461,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "candidate",
-        "emphasized",
+        "signal",
         "willing",
-        "itself",
-        "expressed"
+        "emphasized",
+        "candidate",
+        "employers"
       ]
     },
     {
@@ -6478,11 +6478,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "rochel",
         "design",
-        "intends",
         "careerspan",
-        "experience",
-        "rochel"
+        "intends",
+        "experience"
       ]
     },
     {
@@ -6495,11 +6495,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "christine",
+        "listening",
+        "walkers,",
+        "universal",
         "nannies,",
-        "technology",
-        "value",
-        "listening"
+        "christine"
       ]
     },
     {
@@ -6512,10 +6512,10 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "timers",
-        "automatically",
-        "check-in'",
+        "'meaningful",
         "identifies",
+        "timers",
+        "check-in'",
         "system"
       ]
     },
@@ -6529,11 +6529,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "magic",
-        "portfolio",
+        "enables",
+        "talent",
         "links.",
-        "concept",
-        "presentation"
+        "instant",
+        "matching"
       ]
     },
     {
@@ -6546,11 +6546,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "concept",
-        "alignment",
-        "animesh's",
-        "graphs:",
-        "adopt"
+        "intelligence",
+        "understanding",
+        "build",
+        "decision",
+        "recognized"
       ]
     },
     {
@@ -6563,11 +6563,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "often",
         "conversational",
-        "flesh",
+        "difficult",
         "engage",
-        "students"
+        "students",
+        "often"
       ]
     },
     {
@@ -6580,11 +6580,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "collected",
-        "application",
-        "independent",
-        "layer",
-        "'angling'"
+        "positioning",
+        "collection",
+        "applicable",
+        "fidelity",
+        "independent"
       ]
     },
     {
@@ -6597,11 +6597,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "differentiation",
-        "among",
-        "companies",
         "ranted",
-        "linkedin"
+        "among",
+        "linkedin",
+        "differentiation",
+        "companies"
       ]
     },
     {
@@ -6614,11 +6614,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "resume",
         "current",
-        "unauthenticated",
+        "signal",
         "argues",
-        "structure"
+        "ending",
+        "outdated,"
       ]
     },
     {
@@ -6631,11 +6631,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "through",
-        "resume",
-        "context",
+        "because",
         "conversational",
-        "because"
+        "deep-dives",
+        "generic",
+        "approach"
       ]
     },
     {
@@ -6649,10 +6649,10 @@
       "last_seen": "2026-01-07",
       "sample_contexts": [
         "stems",
-        "space",
+        "founders",
         "defer",
-        "despite",
-        "underwhelming"
+        "space",
+        "bloodbath"
       ]
     },
     {
@@ -6666,10 +6666,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "based",
+        "career",
         "provided",
-        "framework",
-        "expertise",
-        "career"
+        "degrees",
+        "expertise"
       ]
     },
     {
@@ -6682,11 +6682,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "periodic",
+        "condo",
         "positioning",
-        "david",
-        "(poor",
-        "reminders)"
+        "reminders)",
+        "build",
+        "periodic"
       ]
     },
     {
@@ -6699,11 +6699,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "(cheaper",
         "simulate",
-        "patterns",
-        "gpt-4o-mini)",
-        "clever",
-        "'dumbest"
+        "scripting/design",
+        "complex",
+        "patterns"
       ]
     },
     {
@@ -6716,11 +6716,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "evaluate",
+        "'dependency/stabilit",
         "concerns'",
-        "provider.",
-        "relying",
         "before",
-        "'dependency/stabilit"
+        "early-stage"
       ]
     },
     {
@@ -6733,11 +6733,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "framing",
-        "fatigue",
-        "mobility",
+        "barrier",
         "economic",
-        "systemic"
+        "individual",
+        "surfaced",
+        "mobility"
       ]
     },
     {
@@ -6750,11 +6750,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "model",
         "success",
-        "applied",
-        "search",
-        "state",
-        "internalize"
+        "rochel",
+        "skill)",
+        "search"
       ]
     },
     {
@@ -6767,11 +6767,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "plans",
-        "basis'",
-        "funds/insurance",
+        "legacy",
+        "architectures",
         "dictate",
-        "explained"
+        "basis'",
+        "highlighting"
       ]
     },
     {
@@ -6784,11 +6784,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "plans",
-        "financial",
         "funds/insurance",
-        "dictate",
-        "business"
+        "legacy",
+        "architectures",
+        "capital.",
+        "unlike"
       ]
     },
     {
@@ -6801,11 +6801,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "framing",
-        "directly",
-        "control",
+        "making",
         "without",
-        "problem"
+        "zoe's",
+        "directly",
+        "gestalt"
       ]
     },
     {
@@ -6818,11 +6818,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "experts",
-        "thesis",
         "human",
-        "higher",
-        "strategy"
+        "strategy",
+        "thesis",
+        "bolts.",
+        "focusing"
       ]
     },
     {
@@ -6835,11 +6835,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "concept",
-        "search",
-        "balancing",
-        "opportunities",
-        "high-leverage"
+        "(screamer",
+        "'normal'",
+        "diet,",
+        "maintain",
+        "without"
       ]
     },
     {
@@ -6852,11 +6852,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "candidate",
-        "moving",
-        "trade-offs,",
+        "acknowledging",
         "departure",
-        "significant"
+        "argued",
+        "bundles",
+        "candidate"
       ]
     },
     {
@@ -6869,11 +6869,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "chunky'",
-        "attached",
         "candidates,",
-        "anchoring",
-        "still"
+        "attached",
+        "tool.",
+        "chunky'",
+        "assessment"
       ]
     },
     {
@@ -6886,11 +6886,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "candidate",
-        "persists",
         "candidates,",
-        "still",
-        "managers"
+        "intelligence",
+        "found",
+        "attachment",
+        "improves"
       ]
     },
     {
@@ -6903,11 +6903,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "zapier's",
-        "candidate",
-        "shared",
+        "informational",
+        "assessment",
+        "where",
         "toward",
-        "attention"
+        "interviewer"
       ]
     },
     {
@@ -6920,11 +6920,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "ownership",
-        "requiring",
-        "'spiegel'",
-        "people",
-        "software"
+        "personalization/owne",
+        "angle",
+        "build",
+        "where",
+        "david's"
       ]
     },
     {
@@ -6937,11 +6937,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "utility",
+        "cash-generating",
+        "continuity.",
         "creating",
-        "resume",
-        "treating",
-        "during",
-        "utility"
+        "small"
       ]
     },
     {
@@ -6954,11 +6954,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "agreed",
         "expertise-led",
-        "influence",
-        "independent",
         "logan",
-        "growth"
+        "strategy",
+        "services"
       ]
     },
     {
@@ -6971,11 +6971,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "agency'",
-        "rates.",
-        "everyone",
-        "inflated",
-        "high-potential"
+        "high-potential",
+        "argued",
+        "unlock",
+        "alpha",
+        "visible"
       ]
     },
     {
@@ -6988,11 +6988,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "invisible",
+        "talent",
         "slice",
         "argues",
-        "hidden",
-        "talent"
+        "exists",
+        "invisible"
       ]
     },
     {
@@ -7005,11 +7005,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "plans",
-        "basis'",
+        "legacy",
+        "architectures",
         "dictate",
-        "explained",
-        "etfs)"
+        "basis'",
+        "mutual"
       ]
     },
     {
@@ -7022,11 +7022,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "actively",
-        "expressed",
-        "matching",
-        "utility,",
-        "utility"
+        "'superhuman",
+        "media",
+        "status",
+        "'resume",
+        "linkedin'"
       ]
     },
     {
@@ -7039,11 +7039,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "zapier's",
-        "converged",
+        "infrequently",
+        "quality",
         "quantity.",
-        "candidate.",
-        "shared"
+        "resumes",
+        "deeper"
       ]
     },
     {
@@ -7056,11 +7056,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "portfolio",
+        "mentioned",
+        "portal.",
         "hiring",
         "matching",
-        "toward",
-        "mentioned"
+        "employers"
       ]
     },
     {
@@ -7073,11 +7073,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "casual",
-        "'meaningful",
-        "tracks",
+        "unstructured",
+        "'snooze'",
         "email",
-        "linkedin"
+        "tracks",
+        "resets"
       ]
     },
     {
@@ -7090,10 +7090,10 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "resume",
-        "produce",
-        "explained",
-        "intelligent",
+        "absolute",
+        "multiple",
+        "reserved",
+        "single-shot",
         "high-end"
       ]
     },
@@ -7108,10 +7108,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "search,",
-        "multi-agent",
-        "exploring",
+        "narrative/structurin",
+        "bonfire",
         "architecture",
-        "agents"
+        "analyst,"
       ]
     },
     {
@@ -7124,11 +7124,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "expressed",
-        "shared",
-        "trust",
-        "relevance",
-        "employers"
+        "positioned",
+        "contextual",
+        "'narrow",
+        "bloated,",
+        "linkedin,"
       ]
     },
     {
@@ -7141,11 +7141,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "mental",
-        "(profile,",
-        "before",
-        "isn't",
-        "touch"
+        "message",
+        "model",
+        "house",
+        "touch",
+        "'getting"
       ]
     },
     {
@@ -7158,11 +7158,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "interface",
-        "proposed",
-        "'gatekeeper",
-        "hiring",
-        "solving"
+        "coaching",
+        "issues",
+        "making",
+        "explorer',",
+        "'gatekeeper"
       ]
     },
     {
@@ -7176,10 +7176,10 @@
       "last_seen": "2026-01-08",
       "sample_contexts": [
         "acquisition",
-        "preserve",
-        "while",
+        "runway",
+        "headcount",
         "three",
-        "careerspan"
+        "cutting"
       ]
     },
     {
@@ -7192,11 +7192,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "partial",
-        "advised",
+        "~280k",
+        "penalty-free.",
         "heavy",
         "surrender",
-        "maturity,"
+        "since"
       ]
     },
     {
@@ -7209,11 +7209,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "quirkiness",
         "technical",
-        "ultimate",
-        "encouraged",
-        "someone",
-        "commoditized,"
+        "becomes",
+        "commoditized,",
+        "resumes,"
       ]
     },
     {
@@ -7227,10 +7227,10 @@
       "last_seen": "2026-01-05",
       "sample_contexts": [
         "raised",
+        "paradox:",
         "reward,",
         "freedom,",
-        "country",
-        "nature?"
+        "country"
       ]
     },
     {
@@ -7243,11 +7243,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "patterns,",
-        "proxy",
         "capability",
-        "defended",
-        "(reasoning"
+        "agency",
+        "styles)",
+        "talent",
+        "qualitative"
       ]
     },
     {
@@ -7261,10 +7261,10 @@
       "last_seen": "2026-01-08",
       "sample_contexts": [
         "human",
-        "socratic",
+        "utility",
+        "asking",
         "right",
-        "unlock",
-        "utility"
+        "unlock"
       ]
     },
     {
@@ -7277,10 +7277,10 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "often",
-        "older",
-        "resume",
-        "differentiator",
+        "arguing",
+        "lacking",
+        "snarky",
+        "text-heavy",
         "culture"
       ]
     },
@@ -7294,11 +7294,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "candidate",
-        "proposed",
-        "superior",
         "non-recruiters",
-        "providing"
+        "'saas",
+        "'financial",
+        "helping",
+        "superior"
       ]
     },
     {
@@ -7311,11 +7311,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "resume",
+        "careerspan's",
+        "articulated",
+        "insufficient,",
         "unauthenticated",
-        "structure",
-        "premise:",
-        "careerspan's"
+        "structure"
       ]
     },
     {
@@ -7328,11 +7328,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "resume's",
-        "fraud",
-        "'baked-in",
         "costs",
-        "generating"
+        "failure",
+        "authentication'",
+        "high-signal-sounding",
+        "argued"
       ]
     },
     {
@@ -7345,11 +7345,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "resume",
-        "reframed",
-        "sales",
         "advocate",
-        "document."
+        "convince",
+        "reframed",
+        "shifting",
+        "sheet"
       ]
     },
     {
@@ -7362,11 +7362,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "kristen",
-        "limitations",
-        "resume",
-        "resumes",
-        "expressed"
+        "frustration",
+        "industrial",
+        "complex",
+        "traditional",
+        "limitations"
       ]
     },
     {
@@ -7379,11 +7379,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
+        "shame",
         "recruiting",
-        "tooling",
-        "choice:",
-        "cash-flow-positive",
-        "holly's"
+        "paired",
+        "differentiated",
+        "sustainable"
       ]
     },
     {
@@ -7396,11 +7396,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "ribbon's",
-        "discussed",
-        "context",
         "'failure",
-        "00-1000/mo"
+        "video",
+        "model",
+        "differentiated",
+        "'spiritual"
       ]
     },
     {
@@ -7413,11 +7413,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "resume",
-        "challenging",
-        "person",
+        "collection",
+        "argued",
+        "internal",
         "canonical",
-        "'meaningful"
+        "consistency,"
       ]
     },
     {
@@ -7430,11 +7430,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "candidate",
-        "between",
+        "reflective.",
         "space",
-        "deals",
-        "observed"
+        "observed",
+        "psychological",
+        "candidate"
       ]
     },
     {
@@ -7447,11 +7447,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "signals",
-        "explained",
-        "perceive",
+        "change",
         "haven't",
-        "skills"
+        "institutional",
+        "mckinsey",
+        "signals"
       ]
     },
     {
@@ -7464,10 +7464,10 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "benefit",
         "socialist",
-        "described",
+        "where",
         "collective",
-        "contributions",
         "everyone"
       ]
     },
@@ -7481,11 +7481,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "competitors",
-        "integrations.",
-        "platform",
-        "treating",
-        "depends"
+        "requiring",
+        "successful",
+        "sourcing",
+        "model",
+        "partners/distributio"
       ]
     },
     {
@@ -7498,11 +7498,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "candidate",
-        "actual",
-        "commodity,",
-        "high-fidelity",
-        "without"
+        "interfaces",
+        "without",
+        "argued",
+        "authenticated",
+        "coaching-first"
       ]
     },
     {
@@ -7515,11 +7515,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "candidate",
-        "willingness",
-        "content",
-        "differentiating",
-        "'story'"
+        "raised",
+        "completion",
+        "quality",
+        "generating",
+        "story"
       ]
     },
     {
@@ -7533,10 +7533,10 @@
       "last_seen": "2026-01-04",
       "sample_contexts": [
         "mood)",
-        "concept",
-        "engaged",
-        "morning",
-        "insights"
+        "quality",
+        "consolidating",
+        "rochel",
+        "morning"
       ]
     },
     {
@@ -7549,11 +7549,11 @@
       "first_seen": "2026-01-10",
       "last_seen": "2026-01-10",
       "sample_contexts": [
-        "careerspan,",
+        "network",
         "creating",
-        "prerequisite.",
-        "depends",
-        "matching"
+        "brokering",
+        "matching",
+        "depends"
       ]
     },
     {
@@ -7566,11 +7566,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "boards",
-        "calls",
-        "discussed",
-        "replace",
-        "active"
+        "static",
+        "talent",
+        "targeting",
+        "monetization",
+        "boards"
       ]
     },
     {
@@ -7583,11 +7583,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "framing",
+        "verification",
+        "phase",
+        "vrijen",
         "strongest",
-        "proposed",
-        "'steal",
-        "solution"
+        "candidates"
       ]
     },
     {
@@ -7600,11 +7600,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "talented",
-        "concept",
-        "establish",
-        "tech.",
-        "skill"
+        "technical",
+        "manual",
+        "middle",
+        "identity.",
+        "'vibe"
       ]
     },
     {
@@ -7617,11 +7617,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "desire",
-        "concept",
+        "industry",
+        "badass",
+        "melissa's",
         "identity",
-        "resonated",
-        "industry"
+        "concept"
       ]
     },
     {
@@ -7634,11 +7634,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "creating",
         "conversational",
-        "interface",
         "microphone",
-        "flesh"
+        "star-formatted",
+        "creating",
+        "interview"
       ]
     },
     {
@@ -7651,11 +7651,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "plans",
         "space",
-        "building",
-        "hotels.",
-        "'pick"
+        "versus",
+        "'pick",
+        "leaves",
+        "explicitly"
       ]
     },
     {
@@ -7668,11 +7668,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
+        "fitbit",
         "zo-integrated",
-        "showcased",
+        "rochel",
         "health",
-        "text-based",
-        "rochel"
+        "text-based"
       ]
     },
     {
@@ -7685,11 +7685,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "workflow",
-        "deliverables,",
-        "summaries",
-        "latest",
-        "action"
+        "command",
+        "action",
+        "vrijen",
+        "processes",
+        "generate"
       ]
     },
     {
@@ -7702,11 +7702,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "capture",
-        "long-form",
-        "decided",
+        "beehive/substack,",
+        "writing",
+        "mechanisms.",
         "medium",
-        "better"
+        "long-form"
       ]
     },
     {
@@ -7719,11 +7719,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "beehive/substack",
-        "capture",
+        "writing",
+        "capabilities.",
+        "medium",
         "long-form",
-        "decided",
-        "medium"
+        "monetization"
       ]
     },
     {
@@ -7736,11 +7736,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "caution",
-        "measured",
-        "before",
+        "maher",
         "evaluation.",
-        "committing"
+        "caution",
+        "signaling",
+        "explicitly"
       ]
     },
     {
@@ -7753,11 +7753,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "immediate",
+        "maher",
         "cautious",
-        "approach",
-        "careerspan",
-        "initial"
+        "signaling",
+        "partnership.",
+        "approach"
       ]
     },
     {
@@ -7770,11 +7770,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "high-priority",
         "roles",
-        "(deeptune,",
         "current",
-        "links"
+        "links",
+        "joint",
+        "experiment"
       ]
     },
     {
@@ -7787,11 +7787,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "referral",
-        "infrastructure.",
+        "concerns,",
         "indicating",
-        "relying",
-        "concerns,"
+        "stability",
+        "explicitly",
+        "includes"
       ]
     },
     {
@@ -7804,10 +7804,10 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "extraction",
         "concern",
-        "quality",
-        "noisy"
+        "noisy",
+        "extraction",
+        "quality"
       ]
     },
     {
@@ -7820,11 +7820,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "despite",
-        "decided",
+        "maher",
         "cautious",
-        "approach",
-        "careerspan"
+        "first.",
+        "signaling",
+        "cmc's"
       ]
     },
     {
@@ -7837,11 +7837,11 @@
       "first_seen": "2026-01-07",
       "last_seen": "2026-01-07",
       "sample_contexts": [
-        "locked",
-        "outcomes.",
-        "preference",
-        "expressed",
-        "indicating"
+        "loose'",
+        "concern",
+        "indicating",
+        "prioritizing",
+        "scenario"
       ]
     },
     {
@@ -7854,11 +7854,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "actual",
-        "'last",
         "human",
-        "desirable",
-        "pushback"
+        "judgment",
+        "pushback",
+        "message)",
+        "actual"
       ]
     },
     {
@@ -7871,11 +7871,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "amplifier",
         "clear",
-        "division",
-        "continues",
-        "signal"
+        "while",
+        "matchbox",
+        "careerspan",
+        "agreed"
       ]
     },
     {
@@ -7888,11 +7888,11 @@
       "first_seen": "2026-01-04",
       "last_seen": "2026-01-04",
       "sample_contexts": [
-        "cognitive",
-        "patterns",
         "mirror",
-        "detect",
-        "thinking"
+        "patterns",
+        "thinking",
+        "cognitive",
+        "detect"
       ]
     },
     {
@@ -7905,11 +7905,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "members.",
-        "between",
-        "preference",
-        "tension",
-        "acquisition"
+        "acquisition",
+        "concern",
+        "loose'",
+        "versus",
+        "outcomes"
       ]
     },
     {
@@ -7922,11 +7922,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "between",
-        "tension",
-        "expressed",
-        "obligation",
-        "logan."
+        "concern",
+        "ventures",
+        "members",
+        "logan.",
+        "versus"
       ]
     },
     {
@@ -7939,11 +7939,11 @@
       "first_seen": "2026-01-09",
       "last_seen": "2026-01-09",
       "sample_contexts": [
-        "between",
-        "preference",
+        "responsibility.",
+        "loose'",
+        "logan,",
         "acknowledged",
-        "willingness",
-        "tension"
+        "outcomes"
       ]
     },
     {
@@ -7956,11 +7956,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
+        "maher",
         "formal",
-        "process",
-        "initial",
-        "meeting,",
-        "evaluation"
+        "timeline.",
+        "signaling",
+        "explicitly"
       ]
     },
     {
@@ -7973,11 +7973,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "authorization",
-        "through",
+        "(vrijen's",
+        "regulatory",
+        "policyholder's",
         "maintain",
-        "account",
-        "policyholder's"
+        "through"
       ]
     },
     {
@@ -7990,11 +7990,11 @@
       "first_seen": "2026-01-08",
       "last_seen": "2026-01-08",
       "sample_contexts": [
-        "including",
         "acquisition",
-        "preserve",
-        "decided",
-        "while"
+        "logan,",
+        "runway",
+        "three",
+        "headcount"
       ]
     },
     {
@@ -8007,11 +8007,11 @@
       "first_seen": "2026-01-05",
       "last_seen": "2026-01-05",
       "sample_contexts": [
-        "getting",
-        "thesis",
-        "again",
         "human",
-        "better"
+        "better",
+        "founders",
+        "again",
+        "filter"
       ]
     },
     {
@@ -8024,11 +8024,11 @@
       "first_seen": "2026-01-06",
       "last_seen": "2026-01-06",
       "sample_contexts": [
-        "between",
-        "preference",
+        "loose'",
+        "outcome",
         "acknowledged",
-        "willingness",
-        "tension"
+        "around",
+        "willingness"
       ]
     }
   ]
