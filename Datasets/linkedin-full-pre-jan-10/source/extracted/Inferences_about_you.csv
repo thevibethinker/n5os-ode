@@ -1,0 +1,8 @@
+Category,Type of inference,Description,Inference
+Career inferences,Freelancer,"Based on factors such as your profile experience, summary, and headline.",true
+Career inferences,Human resources professional,Based on factors such as your industry and profile headline.,No
+Inferred interests,Affinity for Electric Vehicles,"Members who follow Pages in the Electric Vehicle space, hashtags related to electric vehicles, or have engaged with content on electric vehicles in the last 6 months. This inference is used by advertisers (most popular with Automotive companies) on LinkedIn to target audiences more likely to be interested in Electric Vehicles.",true
+Inferred personal characteristics,Inferred gender,Based on your first name and other factors.,UNKNOWN
+Job search inferences,Interested in a new job,Based on whether you searched for a job or clicked on a posting in the past 30 days.,true
+LinkedIn activity inferences,Influences financial opinion and conversations,Influences financial conversations on LinkedIn. Based on whether you follow channels or possess skills indicative of those who influence finance and government conversations.,true
+LinkedIn activity inferences,Active contributor who influences public opinion,"Active contributor on LinkedIn, such as in feed and in groups, who regularly influences public opinion and public policy. Based on factors such as your experience, industry, and activity in groups.",true

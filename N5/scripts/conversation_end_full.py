@@ -85,11 +85,15 @@ def read_debug_log_entries(debug_log_path: Path) -> List[Dict]:
     entries = []
     try:
         with open(debug_log_path) as f:
-            for line in f:
-                if line.strip():
+            for i, line in enumerate(f, 1):
+                if not line.strip():
+                    continue
+                try:
                     entries.append(json.loads(line.strip()))
+                except json.JSONDecodeError as e:
+                    logger.warning(f"Could not parse line {i} in debug log: {e}")
     except Exception as e:
-        logger.warning(f"Could not parse debug log: {e}")
+        logger.warning(f"Could not read debug log file {debug_log_path}: {e}")
     return entries
 
 
@@ -346,6 +350,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

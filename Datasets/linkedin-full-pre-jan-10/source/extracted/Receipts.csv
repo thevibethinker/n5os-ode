@@ -1,0 +1,23 @@
+First Name,Last Name,Billing Country,Postal Code,Transaction Made At,Payment Method Type,Invoice Number,Description,Tax Amount,Sub Total,Total Amount,Currency Code
+Sandeep,Attawar,in,600041,"6/26/22, 8:56 PM",CreditCard,7103310966,Premium Career Subscription renewal (Annual),43.18,239.88,283.06,USD
+Sandeep,Attawar,in,600041,"6/26/21, 8:57 PM",CreditCard,6555312833,"Premium Career Subscription (Annual), Credit from previous subscription purchase",40.66,225.88,266.54,USD
+Sandeep,Attawar,in,600041,"6/10/21, 7:46 PM",CreditCard,6499222083,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"5/10/21, 7:45 PM",CreditCard,6394338403,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"4/10/21, 7:46 PM",CreditCard,6301812443,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"3/10/21, 7:46 PM",CreditCard,6205360073,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"2/10/21, 7:46 PM",CreditCard,6113743853,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"1/10/21, 7:46 PM",CreditCard,6017414073,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"12/10/20, 7:46 PM",CreditCard,5937258493,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"11/10/20, 7:46 PM",CreditCard,5846193363,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"10/10/20, 7:46 PM",CreditCard,5751923773,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"9/10/20, 7:45 PM",CreditCard,5658731673,Premium Career Subscription renewal (Monthly),5.4,29.99,35.39,USD
+Sandeep,Attawar,in,600041,"8/10/20, 7:46 PM",CreditCard,5565591413,Premium Career Subscription (Monthly),5.4,29.99,35.39,USD
+Vrijen,Attawar,us,11217,"6/30/20, 7:09 PM",CreditCard,5702574394,Premium Career Subscription renewal (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"5/30/20, 7:09 PM",CreditCard,5613781844,Premium Career Subscription renewal (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"4/30/20, 7:10 PM",CreditCard,4586999236,Premium Career Subscription (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"3/25/20, 8:09 PM",CreditCard,4497710876,Premium Career Subscription renewal (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"2/25/20, 8:09 PM",CreditCard,4433584806,Premium Career Subscription renewal (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"1/25/20, 8:09 PM",CreditCard,4360514066,Premium Career Subscription renewal (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"12/25/19, 8:09 PM",CreditCard,4300282786,Premium Career Subscription renewal (Monthly),2.66,29.99,32.65,USD
+Vrijen,Attawar,us,11217,"11/25/19, 8:09 PM",CreditCard,4237327136,Premium Career Subscription (Monthly),0,0,0,USD
+Vrijen,Attawar,sg,437072,"4/4/18, 9:47 AM",CreditCard,3744490514,Premium Career Subscription (Monthly),0,0,0,SGD

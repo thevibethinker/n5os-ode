@@ -1,0 +1,112 @@
+{
+  "name": "Voice Control System (Modes, Moves, Retrieval, Rubric)",
+  "description": "Evolve LinkedIn reference blocks into a best-in-class voice control system: modes, moves library, anti-trope constitution, debranding, and evaluation rubric, wired into existing voice-library-v2 infrastructure.",
+  "objective": "Enable low-review, high-fidelity generation that moves like V across LinkedIn posts, emails, and memos, with professionalism as the primary adjustable variable.",
+  "key_decisions": [
+    "Voice stored at 3 resolutions: Atoms (phrases), Moves (thinking maneuvers), Monologues (reference blocks)",
+    "Do/Don't constitution includes explicit anti-tropes; exclude Not-X-But-Y as a reusable template but allow individual instances",
+    "Retrieval must be by rhetorical job + topic, not just semantic similarity",
+    "Debrand by role/entity abstraction while preserving motion and cadence",
+    "Evaluation via lightweight voice-fit rubric; aim for minimum ongoing review"
+  ],
+  "relevant_files": [
+    "N5/builds/voice-library-v2/PLAN.md",
+    "N5/builds/voice-library-v2/linkedin_corpus.jsonl",
+    "N5/review/voice/2026-01-12_linkedin-primitives_review.md",
+    "N5/data/voice_library.db",
+    "N5/data/voice_library_schema_v2.sql",
+    "N5/scripts/linkedin_voice_extractor.py",
+    "Documents/System/Sites-System.md"
+  ],
+  "workers": [
+    {
+      "id": "worker_modes",
+      "component": "voice_modes",
+      "description": "Derive 2-4 voice modes from the LinkedIn corpus (and existing reference blocks) and define how professionalism level modulates tone without changing core voice.",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_moves",
+      "component": "moves_library",
+      "description": "Extract and formalize a Moves Library (thinking maneuvers) from the corpus. Output moves with: name, intent, structure, examples, anti-examples.",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_constitution",
+      "component": "voice_constitution",
+      "description": "Create Do/Don't voice constitution (including anti-tropes). Must be actionable for generation prompts.",
+      "dependencies": [
+        "worker_moves"
+      ],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_debranding",
+      "component": "debranding_playbook",
+      "description": "Design debranding methodology and create a small set of debranded RB variants that preserve motion/cadence. Include entity abstraction rules and redaction heuristics.",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_rubric",
+      "component": "evaluation_rubric",
+      "description": "Design a 30-second voice-fit rubric and a minimal review loop. Provide scoring sheet template and thresholds.",
+      "dependencies": [
+        "worker_moves",
+        "worker_constitution"
+      ],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_retrieval_spec",
+      "component": "retrieval_strategy",
+      "description": "Define retrieval spec: how to select RBs/Atoms/Moves by topic + rhetorical job, plus tie-breakers and fallbacks. Output a schema and query strategy.",
+      "dependencies": [
+        "worker_moves"
+      ],
+      "estimated_hours": 3,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_wiring_plan",
+      "component": "integration_plan",
+      "description": "Inspect existing Vibe Writer wiring (prompts/scripts) and propose the smallest integration plan to consume: modes, moves, constitution, rubric, retrieval spec. NO implementation; only plan + affected files.",
+      "dependencies": [
+        "worker_modes",
+        "worker_moves",
+        "worker_constitution",
+        "worker_rubric",
+        "worker_retrieval_spec",
+        "worker_debranding"
+      ],
+      "estimated_hours": 3,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "voice-control-system",
+    "created_at": "2026-01-12T04:16:37.699378+00:00",
+    "status": "active"
+  }
+}

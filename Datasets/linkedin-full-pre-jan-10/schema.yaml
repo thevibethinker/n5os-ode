@@ -1,0 +1,340 @@
+tables:
+- name: comments
+  row_count: 689
+  columns:
+  - name: commented_at
+    type: TIMESTAMP
+    description: When the comment was created (parsed)
+  - name: commented_at_raw
+    type: VARCHAR
+    description: Date field as exported
+  - name: link
+    type: VARCHAR
+    description: Link to the activity/comment thread
+  - name: message
+    type: VARCHAR
+    description: Comment text
+  description: Your LinkedIn comments export (one row per comment)
+- name: connections
+  row_count: 3357
+  columns:
+  - name: first_name
+    type: VARCHAR
+    description: Connection first name
+  - name: last_name
+    type: VARCHAR
+    description: Connection last name
+  - name: profile_url
+    type: VARCHAR
+    description: Connection LinkedIn profile URL
+  - name: email_address
+    type: VARCHAR
+    description: Email address if the connection allows sharing (often blank)
+  - name: company
+    type: VARCHAR
+    description: Company name as exported at time of export
+  - name: position
+    type: VARCHAR
+    description: Job title as exported at time of export
+  - name: connected_on
+    type: DATE
+    description: Date you connected (parsed)
+  - name: connected_on_raw
+    type: VARCHAR
+    description: Connected On field as exported
+  description: LinkedIn connections (one row per connection)
+- name: education
+  row_count: 3
+  columns:
+  - name: school_name
+    type: VARCHAR
+    description: School name
+  - name: start_year
+    type: INTEGER
+    description: Start year (integer)
+  - name: end_year
+    type: INTEGER
+    description: End year (integer)
+  - name: degree_name
+    type: VARCHAR
+    description: Degree name (as exported)
+  - name: activities
+    type: VARCHAR
+    description: Activities/clubs field
+  - name: notes
+    type: VARCHAR
+    description: Notes field from export (often course lists)
+  description: Education entries from your LinkedIn profile (one row per school/program)
+- name: invitations
+  row_count: 993
+  columns:
+  - name: from_name
+    type: VARCHAR
+    description: Inviter name
+  - name: to_name
+    type: VARCHAR
+    description: Invitee name
+  - name: sent_at
+    type: TIMESTAMP
+    description: When invite was sent (parsed; timezone not included in export)
+  - name: sent_at_raw
+    type: VARCHAR
+    description: Sent At field as exported
+  - name: message
+    type: VARCHAR
+    description: Invitation message text (if provided)
+  - name: direction
+    type: VARCHAR
+    description: OUTGOING or INCOMING as exported
+  - name: inviter_profile_url
+    type: VARCHAR
+    description: Inviter LinkedIn profile URL
+  - name: invitee_profile_url
+    type: VARCHAR
+    description: Invitee LinkedIn profile URL
+  description: Connection invitations sent/received (one row per invite)
+- name: job_applications
+  row_count: 44
+  columns:
+  - name: applied_at
+    type: TIMESTAMP
+    description: Application timestamp parsed from export
+  - name: applied_at_raw
+    type: VARCHAR
+    description: Application Date field as exported
+  - name: contact_email
+    type: VARCHAR
+    description: Email used for the application (often your email)
+  - name: contact_phone_number
+    type: VARCHAR
+    description: Phone number used for the application
+  - name: company_name
+    type: VARCHAR
+    description: Company name
+  - name: job_title
+    type: VARCHAR
+    description: Job title
+  - name: job_url
+    type: VARCHAR
+    description: Job posting URL
+  - name: resume_name
+    type: VARCHAR
+    description: Resume filename used
+  - name: question_and_answers
+    type: VARCHAR
+    description: Raw Q&A blob from Easy Apply (may contain HTML)
+  description: Jobs you applied to via LinkedIn Easy Apply / job applications export
+    (one row per application)
+- name: learning
+  row_count: 343
+  columns:
+  - name: content_title
+    type: VARCHAR
+    description: Content title
+  - name: content_description
+    type: VARCHAR
+    description: Content description (may contain HTML)
+  - name: content_type
+    type: VARCHAR
+    description: Content type (e.g., Course)
+  - name: last_watched_at
+    type: TIMESTAMP
+    description: Last watched timestamp parsed from export (UTC removed; stored as
+      TIMESTAMP)
+  - name: last_watched_at_raw
+    type: VARCHAR
+    description: Last watched field as exported
+  - name: completed_at
+    type: TIMESTAMP
+    description: Completion timestamp parsed from export (UTC removed; stored as TIMESTAMP)
+  - name: completed_at_raw
+    type: VARCHAR
+    description: Completion field as exported
+  - name: content_saved
+    type: BOOLEAN
+    description: Whether the item was saved (boolean)
+  - name: video_notes
+    type: VARCHAR
+    description: Notes taken on videos field from export
+  - name: notes
+    type: VARCHAR
+    description: Notes field from export
+  description: LinkedIn Learning activity (one row per content item)
+- name: messages
+  row_count: 15101
+  columns:
+  - name: conversation_id
+    type: VARCHAR
+    description: LinkedIn conversation identifier
+  - name: conversation_title
+    type: VARCHAR
+    description: Conversation title if present (often blank)
+  - name: sender_name
+    type: VARCHAR
+    description: Sender display name
+  - name: sender_profile_url
+    type: VARCHAR
+    description: Sender LinkedIn profile URL
+  - name: recipient_names
+    type: VARCHAR
+    description: Recipient display names (comma-separated)
+  - name: recipient_profile_urls
+    type: VARCHAR
+    description: Recipient profile URLs (comma-separated, aligns to recipient_names)
+  - name: sent_at
+    type: TIMESTAMP
+    description: Timestamp parsed from exported DATE field (UTC)
+  - name: sent_at_raw
+    type: VARCHAR
+    description: DATE field as exported (string)
+  - name: subject
+    type: VARCHAR
+    description: Message subject (often blank)
+  - name: content
+    type: VARCHAR
+    description: Message body text
+  - name: folder
+    type: VARCHAR
+    description: Mailbox folder (e.g., INBOX)
+  - name: attachments
+    type: VARCHAR
+    description: Attachment field as exported
+  - name: is_from_v
+    type: BOOLEAN
+    description: True if sender_name equals Vrijen Attawar
+  description: LinkedIn messages export (one row per message)
+- name: positions
+  row_count: 14
+  columns:
+  - name: company_name
+    type: VARCHAR
+    description: Company or organization name
+  - name: title
+    type: VARCHAR
+    description: Role title
+  - name: description
+    type: VARCHAR
+    description: Role description text
+  - name: location
+    type: VARCHAR
+    description: Location string for the position
+  - name: started_on
+    type: DATE
+    description: Parsed start month (stored as DATE, first day of month)
+  - name: finished_on
+    type: DATE
+    description: Parsed end month (stored as DATE, first day of month); NULL means
+      ongoing
+  - name: started_on_raw
+    type: VARCHAR
+    description: Start date string as exported
+  - name: finished_on_raw
+    type: VARCHAR
+    description: End date string as exported
+  description: Work experience entries from your LinkedIn profile (one row per position)
+- name: profile
+  row_count: 1
+  columns:
+  - name: first_name
+    type: VARCHAR
+    description: First name on LinkedIn profile
+  - name: last_name
+    type: VARCHAR
+    description: Last name on LinkedIn profile
+  - name: maiden_name
+    type: VARCHAR
+    description: Maiden name (if present)
+  - name: address
+    type: VARCHAR
+    description: Profile address/location string from export
+  - name: birth_date_raw
+    type: VARCHAR
+    description: Birth date field as exported (often month/day, may omit year)
+  - name: headline
+    type: VARCHAR
+    description: LinkedIn headline
+  - name: summary
+    type: VARCHAR
+    description: LinkedIn About/Summary text
+  - name: industry
+    type: VARCHAR
+    description: Industry label on profile
+  - name: zip_code
+    type: INTEGER
+    description: Zip code from profile (if provided)
+  - name: geo_location
+    type: VARCHAR
+    description: LinkedIn geo location / metro area
+  - name: twitter_handles
+    type: VARCHAR
+    description: Twitter/X handles field from export
+  - name: websites
+    type: VARCHAR
+    description: Websites field from export
+  - name: instant_messengers
+    type: VARCHAR
+    description: Instant messenger handles field from export
+  description: Your LinkedIn profile export (single row) with headline/summary and
+    basic account info
+- name: reactions
+  row_count: 2125
+  columns:
+  - name: reacted_at
+    type: TIMESTAMP
+    description: When the reaction was recorded (parsed)
+  - name: reacted_at_raw
+    type: VARCHAR
+    description: Date field as exported
+  - name: reaction_type
+    type: VARCHAR
+    description: Reaction type (e.g., LIKE, EMPATHY)
+  - name: link
+    type: VARCHAR
+    description: Link to the reacted-to activity
+  description: Your LinkedIn reactions (likes, empathy, etc.) export (one row per
+    reaction)
+- name: search_queries
+  row_count: 10967
+  columns:
+  - name: searched_at
+    type: TIMESTAMP
+    description: When the search occurred (parsed, UTC)
+  - name: searched_at_raw
+    type: VARCHAR
+    description: Time field as exported
+  - name: search_query
+    type: VARCHAR
+    description: Search query string
+  description: LinkedIn search queries you performed (one row per search)
+- name: shares
+  row_count: 130
+  columns:
+  - name: shared_at
+    type: TIMESTAMP
+    description: When the share/post was created (parsed)
+  - name: shared_at_raw
+    type: VARCHAR
+    description: Date field as exported
+  - name: share_link
+    type: VARCHAR
+    description: Link to the share/post
+  - name: share_commentary
+    type: VARCHAR
+    description: Post text/commentary
+  - name: shared_url
+    type: VARCHAR
+    description: URL shared (if post shared a URL)
+  - name: media_url
+    type: VARCHAR
+    description: Media URL (if present)
+  - name: visibility
+    type: VARCHAR
+    description: Visibility setting as exported
+  description: Your LinkedIn shares/posts export (one row per share)
+- name: skills
+  row_count: 50
+  columns:
+  - name: skill_name
+    type: VARCHAR
+    description: Skill name
+  description: Skills listed on your LinkedIn profile (one row per skill)

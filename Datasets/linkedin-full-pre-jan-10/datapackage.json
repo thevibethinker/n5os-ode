@@ -1,0 +1,10 @@
+{
+  "name": "linkedin-full-pre-jan-10",
+  "title": "LinkedIn Full Export (pre Jan 10 2026)",
+  "resources": [
+    {
+      "path": "data.duckdb"
+    }
+  ]
+}
+
