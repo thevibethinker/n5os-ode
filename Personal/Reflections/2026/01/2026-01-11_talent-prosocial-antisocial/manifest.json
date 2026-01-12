@@ -1,0 +1,28 @@
+{
+  "slug": "talent-prosocial-antisocial",
+  "title": "Why Might Doesn't Make Right, But Talent Makes Possible",
+  "processed_at": "2026-01-11T17:10:00Z",
+  "word_count": 312,
+  "source": "google_drive",
+  "source_id": "1t2Dw5j6oA-CS8taMRNpFcQdOzuPwvJqo",
+  "source_filename": "Why might does not \"make right\", but talent does \"make possible\"",
+  "blocks_generated": ["R03", "R06", "R09", "RIX"],
+  "edges_created": 3,
+  "classification": {
+    "type": "worldview",
+    "relevant_blocks": ["R03", "R06", "R09"],
+    "confidence": {
+      "R03": 0.7,
+      "R06": 0.9,
+      "R09": 0.8
+    },
+    "primary_theme": "Talent as moral optionality - capability gaps drive antisocial behavior"
+  },
+  "flags": {
+    "r00_generated": false,
+    "super_connectors": [],
+    "promotion_candidates": ["talent-optionality-thesis"]
+  },
+  "provenance": "con_D6OoS5TNbRRtYLbS"
+}
+

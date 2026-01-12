@@ -307,7 +307,7 @@
           },
           "[ENRICH]": {
             "meaning": "Enrich contact profiles with external data",
-            "action": "Run CRM enrichment via Aviato, Nyne, Gmail analysis",
+            "action": "Run CRM enrichment via Aviato, Gmail analysis",
             "related_workflows": ["crm_enrich_profile", "org_enrich_profile"],
             "routes_to": ["Zo"]
           },
@@ -387,7 +387,7 @@
         "tags": {
           "[ORG]": {
             "meaning": "Create/update organization profile",
-            "action": "Build org profile from email context, enrich via Nyne",
+            "action": "Build org profile from email context, enrich via Aviato",
             "related_workflows": ["org_enrich_profile"],
             "routes_to": ["Zo"]
           },

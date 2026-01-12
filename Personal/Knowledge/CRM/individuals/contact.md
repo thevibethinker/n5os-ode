@@ -66,3 +66,8 @@ No emails found
 **Last email:** 2025-12-14  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-11 11:10
+
+First contact: October 15, 2024. Last contact: December 1, 2025. Total messages: 9 across ~7 threads. Key topics: humanUPtions career events and networking in NYC (e.g., events with Meta, OpenAI execs), promotional invites, warm intro to Career Duck founder James Wang. Relationship trajectory: new promotional contact → active event promoter with one intro → dormant (last activity Dec 2025).
