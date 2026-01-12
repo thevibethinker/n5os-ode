@@ -13,6 +13,8 @@ import type {
 } from "../types/pipeline";
 import { MODELS } from "../openai";
 import { extractQAPairs } from "./stage1-extract";
+import { analyzeQuestions } from "./stage2-questions";
+import { evaluateAnswers } from "./stage3-answers";
 
 // ============ Pipeline Entry Point ============
 
@@ -109,57 +111,52 @@ async function runStage1(transcript: string): Promise<StageResult<Stage1Output>>
   }
 }
 
-// ============ Stage 2: Question Analysis (STUB) ============
+// ============ Stage 2: Question Analysis (REAL IMPLEMENTATION) ============
 
 async function runStage2(stage1: Stage1Output, jobDescription: string): Promise<StageResult<Stage2Output>> {
   const startTime = Date.now();
-  // STUB: Return synthetic data until real implementation
-  return {
-    success: true,
-    data: {
-      analyzedQuestions: stage1.extractedQAs.map((qa, idx) => ({
-        qaId: qa.id,
-        type: idx % 2 === 0 ? 'behavioral' : 'situational' as const,
-        typeConfidence: 0.9,
-        isOutOfScope: false,
-        jdRequirementsMapped: ['req_001'],
-        priority: 'important' as const,
-        whatTheyreReallAsking: 'Stub: What they want to know',
-      })),
-      jdRequirements: [{ id: 'req_001', requirement: 'Leadership experience', category: 'Leadership', priority: 'must-have' as const }],
-      questionTypeBreakdown: { behavioral: 3, situational: 2, competency: 0, cultural: 0, technical: 0, logistical: 0 },
-      outOfScopeCount: 0,
-    },
-    durationMs: Date.now() - startTime,
-    model: MODELS.THINKING,
-  };
+  
+  try {
+    const data = await analyzeQuestions(stage1.extractedQAs, jobDescription);
+    
+    return {
+      success: true,
+      data,
+      durationMs: Date.now() - startTime,
+      model: MODELS.THINKING,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Stage 2 analysis failed",
+      durationMs: Date.now() - startTime,
+      model: MODELS.THINKING,
+    };
+  }
 }
 
-// ============ Stage 3: Answer Evaluation (STUB) ============
+// ============ Stage 3: Answer Evaluation (REAL IMPLEMENTATION) ============
 
 async function runStage3(stage1: Stage1Output, stage2: Stage2Output): Promise<StageResult<Stage3Output>> {
   const startTime = Date.now();
-  return {
-    success: true,
-    data: {
-      evaluatedAnswers: stage1.extractedQAs.map(qa => ({
-        qaId: qa.id,
-        sixQScore: { problem: true, stakes: true, thinking: false, action: true, result: true, lesson: false },
-        sixQMissing: ['thinking', 'lesson'],
-        flags: [{ type: 'green' as const, flag: 'Specific examples' }],
-        grade: 'B' as const,
-        gradeRationale: 'Stub rationale',
-        strengthSummary: 'Stub strength',
-        improvementSummary: 'Stub improvement',
-      })),
-      overallSixQProfile: { problem: 80, stakes: 70, thinking: 50, action: 90, result: 80, lesson: 40 },
-      greenFlagCount: 3,
-      redFlagCount: 1,
-      averageGrade: 'B',
-    },
-    durationMs: Date.now() - startTime,
-    model: MODELS.THINKING,
-  };
+  
+  try {
+    const data = await evaluateAnswers(stage1.extractedQAs, stage2);
+    
+    return {
+      success: true,
+      data,
+      durationMs: Date.now() - startTime,
+      model: MODELS.THINKING,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Stage 3 evaluation failed",
+      durationMs: Date.now() - startTime,
+      model: MODELS.THINKING,
+    };
+  }
 }
 
 // ============ Stage 4: Gap + Calibration (STUB) ============
@@ -254,6 +251,9 @@ export function generateSessionId(): string {
   ).join("");
   return `AMH-${segment()}-${segment()}`;
 }
+
+
+
 
 
 
