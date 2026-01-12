@@ -137,20 +137,20 @@ One-time purchase ($5) interview feedback tool. User pastes transcript, pays, ge
 - [x] Test: Extracts 4+ Q&A pairs from sample transcript (4/4 extracted)
 
 #### 8.4 Stage 2 — Question Analysis (gpt-5.1)
-- [ ] Create `src/lib/pipeline/stage2-questions.ts`
-- [ ] Input: ExtractedQA[] + jobDescription
-- [ ] Prompt: Classify each question type, map to JD requirements
-- [ ] Flag technical questions as OUT_OF_SCOPE
-- [ ] Output: `AnalyzedQuestion[]` with type, jdRequirementMapped, priority
-- [ ] Test: Correctly classifies behavioral vs situational vs technical
+- [x] Create `src/lib/pipeline/stage2-questions.ts`
+- [x] Input: ExtractedQA[] + jobDescription
+- [x] Prompt: Classify each question type, map to JD requirements
+- [x] Flag technical questions as OUT_OF_SCOPE
+- [x] Output: `AnalyzedQuestion[]` with type, jdRequirementMapped, priority
+- [x] Test: Correctly classifies behavioral vs situational vs technical ✓
 
 #### 8.5 Stage 3 — Answer Evaluation (gpt-5.1)
-- [ ] Create `src/lib/pipeline/stage3-answers.ts`
-- [ ] Input: AnalyzedQuestion[] + coaching-reference.md content
-- [ ] Prompt: Score each answer against 6Q, Red/Green flags
-- [ ] Skip evaluation for OUT_OF_SCOPE questions
-- [ ] Output: `EvaluatedAnswer[]` with scores, flags, grade
-- [ ] Test: Detects missing 6Q components, applies correct flags
+- [x] Create `src/lib/pipeline/stage3-answers.ts`
+- [x] Input: AnalyzedQuestion[] + coaching-reference.md content
+- [x] Prompt: Score each answer against 6Q, Red/Green flags
+- [x] Skip evaluation for OUT_OF_SCOPE questions
+- [x] Output: `EvaluatedAnswer[]` with scores, flags, grade
+- [x] Test: Detects missing 6Q components, applies correct flags ✓
 
 #### 8.6 Stage 4 — Gap + Calibration (gpt-5.1)
 - [ ] Create `src/lib/pipeline/stage4-gaps.ts`
@@ -239,8 +239,8 @@ Sites/interview-reviewer-staging/src/
 ## Status
 
 **Current Phase:** 8 (Multi-Stage Analysis Pipeline)  
-**Progress:** 35/35 MVP items (100%), 16/42 Phase 8 items (38%)  
-**Next Action:** Execute Phase 8.4 (Stage 2 — Question Analysis)
+**Progress:** 35/35 MVP items (100%), 28/42 Phase 8 items (67%)  
+**Next Action:** Execute Phase 8.6 (Stage 4 — Gap + Calibration)
 
 ---
 
@@ -249,6 +249,8 @@ Sites/interview-reviewer-staging/src/
 - Reference content is stubbed - V will provide coaching files later
 - System designed so content can be hot-swapped by updating `content/coaching-reference.md`
 - Open source from day 1 - no secrets in repo, all config via env vars
+
+
 
 
 
