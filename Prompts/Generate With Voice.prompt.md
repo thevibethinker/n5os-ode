@@ -1,11 +1,13 @@
 ---
-description: Generate text content using the voice transformation system with multi-angle
+description: |
+  Generate text content using the voice transformation system with multi-angle evaluation and hybrid structure.
 tool: true
-  evaluation and hybrid structure.
+version: 2.1
+last_edited: 2026-01-12
 tags: []
 ---
 # Command: generate-with-voice
-**Version:** 2.0  
+**Version:** 2.1  
 **Type:** Content Generation  
 **Auto-Applied:** Yes (runs automatically for all text generation)
 
@@ -170,13 +172,20 @@ Check against file 'N5/prefs/communication/quality-validation.json':
 
 ### Step 7.5: Novelty Injection (Optional)
 
-**Trigger conditions:**
-- Pangram AI score > 0.5 after transformation
+**Optional triggers (ad-hoc):**
+- If you choose to run Pangram and the AI score is high (> 0.5)
 - Content feels "correct but boring"
-- Topic is saturated (crowded space)
-- User explicitly requests ("make it spicier")
+- User explicitly asks for more edge/spice
 
 **Load strategies from:** `file 'N5/prefs/communication/style-guides/novelty-injection-prompts.md'`
+
+**Quick decision tree:**
+| Pangram Score | Action |
+|---------------|--------|
+| < 0.5 | No intervention needed |
+| 0.5 - 0.6 | Light touch: 1 forced primitive OR Socratic on 1-2 paragraphs |
+| 0.6 - 0.7 | Medium: Forced primitive + Socratic |
+| > 0.7 | Heavy: Start over with inversion, then primitive cascade |
 
 ```python
 # Check if novelty injection needed
@@ -388,5 +397,7 @@ User feedback in new conversation → system adapts → future outputs improve.
 ---
 
 **Status:** ACTIVE — Auto-applying to all text generation.
+
+
 
 

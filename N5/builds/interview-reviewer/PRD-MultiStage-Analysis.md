@@ -4,7 +4,6 @@ last_edited: 2026-01-12
 version: 1.2
 provenance: con_F2njykPaFaBaNmKN
 ---
-
 # PRD: Multi-Stage Analysis Pipeline
 
 **Product:** Am I Hired?  

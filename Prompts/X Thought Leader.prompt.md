@@ -239,26 +239,32 @@ When you receive a draft SMS:
 
 ## Pangram AI Detection
 
-Integrated with Pangram API to validate drafts don't read as AI-generated.
+Integrated with Pangram API to help you calibrate drafts so they don’t read as AI-generated.
 
-**Test text directly:**
+**Policy:** Pangram is **ad-hoc calibration**, not an automatic gate.
+- We do **not** auto-retry/regenerate based on Pangram
+- We surface an optional “you could run Pangram” reminder
+
+**Test text directly (ad-hoc):**
 ```bash
 python3 /home/workspace/Projects/x-thought-leader/src/draft_generator.py --pangram-test "your text here"
 ```
 
-**Check existing draft:**
+**Check existing draft (ad-hoc):**
 ```bash
 python3 /home/workspace/Projects/x-thought-leader/src/draft_generator.py --pangram-check <DRAFT_ID_PREFIX>
 ```
 
-**Generate with Pangram validation (auto-retry on fail):**
+**Optional: generate draft AND run a single Pangram check (no retries):**
 ```bash
 python3 /home/workspace/Projects/x-thought-leader/src/draft_generator.py --tweet-id <ID> --pangram
 ```
 
-**Threshold:** `fraction_ai < 0.3` (30%) to pass
+**Default reminder:** If you want, you can also run `@Pangram Check` on any final draft.
 
-**If drafts fail Pangram, apply fixes from:** `file 'N5/prefs/communication/style-guides/pangram-signals.md'`
+**Threshold (interpretation guideline):** `fraction_ai < 0.3` (30%) is a strong pass.
+
+**If drafts score high on Pangram, apply fixes from:** `file 'N5/prefs/communication/style-guides/pangram-signals.md'`
 
 ## Files
 
@@ -301,5 +307,6 @@ enhanced_prompt = inject_voice(draft_prompt, ctx)
 ---
 
 ## Draft Generation (Backup Mode)
+
 
 

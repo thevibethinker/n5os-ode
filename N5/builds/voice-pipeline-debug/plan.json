@@ -1,0 +1,72 @@
+{
+  "name": "Voice Pipeline Debug Cycle",
+  "description": "Orchestrated, evidence-based audit of Voice Library V2 + Voice Injection Layer + Pangram policy, producing a consolidated report and patch plan.",
+  "objective": "Identify correctness gaps and policy conflicts; prove runtime wiring; deliver patch-ready recommendations without applying changes.",
+  "key_decisions": [
+    "Phase 1 is read-only audit with evidence; Phase 2 is patch plan only.",
+    "Do not mistake prompt docs for runtime wiring; require script entrypoint proof.",
+    "Pangram should be ad-hoc calibration, not an automatic gate (unless explicitly re-authorized)."
+  ],
+  "relevant_files": [
+    "N5/scripts/voice_layer.py",
+    "N5/scripts/retrieve_primitives.py",
+    "N5/scripts/extract_voice_primitives.py",
+    "N5/data/voice_library.db",
+    "Prompts/Follow-Up Email Generator.prompt.md",
+    "Prompts/Blurb-Generator.prompt.md",
+    "Prompts/X Thought Leader.prompt.md",
+    "Prompts/Social Post Generate Multi Angle.prompt.md",
+    "Prompts/Generate With Voice.prompt.md",
+    "Prompts/Meeting Intelligence Generator.prompt.md",
+    "Prompts/Pangram Check.prompt.md",
+    "Prompts/Pangram.prompt.md",
+    "N5/builds/voice-pipeline-debug/PLAN.md"
+  ],
+  "workers": [
+    {
+      "id": "worker_runtime_wiring",
+      "component": "runtime_wiring_audit",
+      "description": "Find the real runtime entrypoints for each generator (email/blurb/X/social post). Prove whether voice injection is applied in code or only documented in prompts. Output a report with evidence (file paths + grep excerpts).",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_db_data_audit",
+      "component": "db_data_audit",
+      "description": "Audit voice_library.db for (a) sensitive primitives, (b) short/low-quality primitives, (c) domain distribution, (d) over-specific LinkedIn artifacts. Propose gating fields/filters. Output a report with counts and examples.",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_pangram_policy_audit",
+      "component": "pangram_policy_audit",
+      "description": "Inventory where Pangram is referenced as an auto-gate/auto-retry vs ad-hoc calibration. Identify conflicts and propose a single canonical Pangram workflow. Output a report + patch recommendations.",
+      "dependencies": [],
+      "estimated_hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "worker_doc_hygiene_audit",
+      "component": "doc_hygiene_audit",
+      "description": "Audit prompt frontmatter/version/provenance consistency for modified prompts and identify inconsistencies (e.g., footer vs frontmatter version, missing metadata). Output a report + patch suggestions.",
+      "dependencies": [],
+      "estimated_hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "voice-pipeline-debug",
+    "created_at": "2026-01-12T08:35:08.291952+00:00",
+    "status": "active"
+  }
+}

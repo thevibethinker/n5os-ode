@@ -102,6 +102,12 @@ Extract structured value from V's LinkedIn corpus (posts, articles, comments) an
 
 - **Cross-linked to writer context:** Portrait added to `N5/prefs/context_manifest.yaml` writer group
 - Future writing/content sessions will auto-load the portrait for voice consistency
+- **Position evidence:** 19 positions now have LinkedIn evidence links (`linkedin:post_XXX:YYYY-MM-DD` format)
+- **Tensions extracted:** 4 productive tensions added to `Knowledge/positions/_tensions.jsonl`:
+  1. Pragmatist vs. Revolutionary (resume reform vs. working within system)
+  2. Scale vs. Depth (AI coaching at scale vs. relational craft origin)
+  3. Critic vs. Builder (anti-AI-tool rhetoric while building AI tool)
+  4. Community vs. Competitive (ecosystem champion while positioning against competitors)
 - Finalized in: `con_KsRMF45IeXQHcMks` (2026-01-12)
 
 ## Provenance
@@ -110,5 +116,6 @@ Extract structured value from V's LinkedIn corpus (posts, articles, comments) an
 - Orchestrating conversation: `con_zTfB7kehxEEHmaoC`
 - Worker conversations: `con_Eqi8UqtcvJ8P3EuH` (W0), parallel workers for W1-W3
 - Finalization conversation: `con_KsRMF45IeXQHcMks` (cross-linking, state sync)
+
 
 

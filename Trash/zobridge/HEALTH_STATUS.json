@@ -1,0 +1,9 @@
+{
+  "parent_ok": true,
+  "child_outbox_ok": false,
+  "last_parent_ok": "2026-01-12T10:48:13Z",
+  "last_child_ok": null,
+  "consec_fail_parent": 0,
+  "consec_fail_child": 3787,
+  "total_checks": 3787
+}

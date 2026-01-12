@@ -124,7 +124,14 @@ def get_primitives(
         FROM primitives
         WHERE {' AND '.join(conditions)}
         ORDER BY 
-            distinctiveness_score DESC,
+            (
+              COALESCE(distinctiveness_score, 0)
+              - CASE
+                  WHEN LENGTH(TRIM(exact_text)) < 25 THEN 0.25
+                  WHEN LENGTH(TRIM(exact_text)) < 50 THEN 0.10
+                  ELSE 0
+                END
+            ) DESC,
             use_count ASC,
             RANDOM()
         LIMIT ?
@@ -347,4 +354,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

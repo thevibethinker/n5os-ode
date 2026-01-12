@@ -476,52 +476,9 @@ def check_pangram(text: str) -> tuple[float, bool]:
 
 
 def iterate_for_human_voice(reply: str, tweet_text: str, author: str, max_iterations: int = 2) -> tuple[str, float]:
-    """Iterate on reply until it passes Pangram or max iterations reached."""
-    
-    ai_score, passed = check_pangram(reply)
-    
-    if passed:
-        logger.info(f"Reply passed Pangram on first try: {ai_score*100:.0f}% AI")
-        return reply, ai_score
-    
-    current_reply = reply
-    for i in range(max_iterations):
-        logger.info(f"Pangram iteration {i+1}: {ai_score*100:.0f}% AI, attempting humanization...")
-        
-        feedback = """This sounds too AI-generated. Make it MORE CONVERSATIONAL:
-- React to what they said, don't make a manifesto
-- One observation, not stacked insights  
-- Specific details over clever abstractions
-- Natural imperfection — not every phrase needs to be quotable
-- Shorter sentences mixed with longer ones"""
-        
-        iteration_prompt = f"""This reply failed AI detection ({ai_score*100:.0f}% AI). Make it sound more human.
-
-CURRENT REPLY:
-{current_reply}
-
-ORIGINAL TWEET:
-@{author}: {tweet_text}
-
-FEEDBACK:
-{feedback}
-
-Generate a more natural, conversational version. Less polished. More like actually talking to someone.
-
-Return ONLY the new reply text, nothing else. Keep under 280 characters."""
-        
-        result = call_llm(iteration_prompt)
-        if result.get("success") and result.get("output"):
-            new_reply = result["output"].strip().strip('"')
-            if len(new_reply) < 300:
-                current_reply = new_reply
-                ai_score, passed = check_pangram(current_reply)
-                if passed:
-                    logger.info(f"Reply passed Pangram after iteration {i+1}: {ai_score*100:.0f}% AI")
-                    return current_reply, ai_score
-    
-    logger.warning(f"Reply still {ai_score*100:.0f}% AI after {max_iterations} iterations")
-    return current_reply, ai_score
+    """Ad-hoc Pangram check only (no iteration). Returns (reply, ai_score)."""
+    ai_score, _passed = check_pangram(reply)
+    return reply, ai_score
 
 
 # =============================================================================
@@ -610,6 +567,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
