@@ -38,7 +38,7 @@ class DraftGenerator:
     VARIANTS = ["supportive", "challenging", "spicy", "comedic"]
     MAX_CHARS = 280
     PANGRAM_THRESHOLD = 0.3  # 30% AI max to pass
-    PANGRAM_MAX_RETRIES = 2  # Max regeneration attempts
+    PANGRAM_MAX_RETRIES = 0  # Strict ad-hoc: no regeneration attempts
     
     def __init__(self, pangram_enabled: bool = False):
         self.voice_config = self._load_voice_config()
@@ -515,6 +515,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

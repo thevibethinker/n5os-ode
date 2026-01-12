@@ -1,16 +1,17 @@
 ---
 created: 2026-01-09
-last_edited: 2026-01-09
-version: 1.0
+last_edited: 2026-01-12
+version: 1.1
 title: Pangram
-description: Test text against Pangram AI detection API to optimize voice transformation
+description: Ad-hoc AI detection calibration using Pangram (not an automatic gate)
 tags: [integration, voice, writing, ai-detection]
 tool: true
 ---
 
-# Pangram AI Detection
+# Pangram AI Detection (Ad-Hoc)
 
-Test text against Pangram's AI detection API. Use this to iterate on voice transformation until outputs score as human-written.
+Use Pangram to **calibrate** outputs when you’re testing or diagnosing “sounds too AI.”  
+**Not part of the automatic generation pipeline**.
 
 ## Commands
 
@@ -21,46 +22,27 @@ python3 /home/workspace/Integrations/Pangram/pangram.py check --file path/to/fil
 
 # Detailed analysis
 python3 /home/workspace/Integrations/Pangram/pangram.py analyze "TEXT" --verbose
-
-# Iteration mode (shows what needs work)
-python3 /home/workspace/Integrations/Pangram/pangram.py iterate "TEXT" --target 0.3
 ```
 
-## Target
+> Optional: If you want guided interpretation inside Zo, use `@Pangram Check` and paste the draft.
 
-- **Pass:** `fraction_ai < 0.3` (30%)
-- Exit code 0 = human-like, Exit code 1 = AI-detected
+## Interpretation Guidelines
 
-## Voice Iteration Workflow
+- **Strong pass:** `fraction_ai < 0.3` (30%)
+- **Borderline:** `0.3–0.5`
+- **High AI signal:** `> 0.5`
 
-When testing voice transformation output:
+## Recommended Workflow (No Auto-Loops)
 
-1. Generate text using voice transformation system
-2. Run through Pangram: `pangram.py check "generated text"`
-3. If FAIL, use `pangram.py iterate "text"` to see problem segments
-4. Apply transformation pairs to fix flagged segments
-5. Re-test until passing
-
-## What Passes vs Fails
-
-**Passes (human-like):**
-- Specific numbers and dollar amounts
-- Short, varied sentence lengths
-- Questions mid-paragraph
-- Contractions (You'll, Can we)
-- Em-dashes and informal punctuation
-- Personal voice markers
-
-**Fails (AI-detected):**
-- Smooth, balanced prose
-- Corporate vocabulary (leverage, synergy, robust)
-- Formulaic structures
-- Overly consistent sentence rhythm
-- Signposting language (In conclusion, Furthermore)
+1. Generate content normally (with Voice Injection Layer active where applicable)
+2. If you’re unsure / testing: run a Pangram check (ad-hoc)
+3. If score is high: apply targeted edits (voice primitives, specificity, sentence rhythm), then re-check if desired
 
 ## Related Files
 
 - Voice system: `file 'N5/prefs/communication/voice-transformation-system.md'`
 - Transformation pairs: `file 'N5/prefs/communication/style-guides/transformation-pairs-library.md'`
 - Hedging patterns: `file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'`
+- Ad-hoc helper: `file 'Prompts/Pangram Check.prompt.md'`
+
 

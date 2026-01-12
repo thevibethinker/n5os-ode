@@ -1,5 +1,5 @@
 {
-  "analysis_date": "2026-01-11T13:06:03.171359+00:00",
+  "analysis_date": "2026-01-12T13:06:05.477257+00:00",
   "total_ideas_analyzed": 189,
   "total_meetings": 54,
   "recurring_themes": [
@@ -9,24 +9,6 @@
       "idea_count": 71,
       "recent_examples": [
         {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The Cadaver Supply Chain Problem",
-          "idea": "> **From tangent, but applicable:** Logan's biotech friend disrupted her industry by going directly to morgues instead of through middlemen. \"My middleman is charging me too much money\" → go direct to...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
           "title": "Standard observations about recruiter trust issues",
           "idea": "Standard observations about recruiter trust issues",
           "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
@@ -35,6 +17,24 @@
         {
           "title": "Implies geographic/institutional monopoly on talen...",
           "idea": "Implies geographic/institutional monopoly on talent pipelines",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "Companies don't recruit; they cultivate from early...",
+          "idea": "Companies don't recruit; they cultivate from early stages",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "Current hiring paradigm (post-job, resume, intervi...",
+          "idea": "Current hiring paradigm (post-job, resume, interview) becomes obsolete",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "AI didn't improve talent assessment; it may have m...",
+          "idea": "AI didn't improve talent assessment; it may have made it worse",
           "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         }
@@ -49,6 +49,12 @@
       "meeting_count": 27,
       "idea_count": 36,
       "recent_examples": [
+        {
+          "title": "Culture as the Operating System",
+          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
+          "meeting": "raw_meetin_Raw-Meeting-Test",
+          "date": "2026-01-08"
+        },
         {
           "title": "The Observer Effect in Automation",
           "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synt...",
@@ -68,12 +74,6 @@
           "date": "2026-01-08"
         },
         {
-          "title": "Culture as the Operating System",
-          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
-          "meeting": "raw_meetin_Raw-Meeting-Test",
-          "date": "2026-01-08"
-        },
-        {
           "title": "State Escalation",
           "idea": "Could the manifest system be used to trigger automatic \"emergency\" alerts if certain keywords (e.g., \"urgent,\" \"crisis\") are detected in B11 (Risks & Flags)?",
           "meeting": "2026-01-07_2026-01-07-Unprocessed-meeting-test",
@@ -83,47 +83,6 @@
       "date_range": {
         "earliest": "2025-12-15",
         "latest": "2026-01-08"
-      }
-    },
-    {
-      "theme": "product_strategy",
-      "meeting_count": 25,
-      "idea_count": 31,
-      "recent_examples": [
-        {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "Obvious conclusions about product-market fit",
-          "idea": "Obvious conclusions about product-market fit",
-          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The asset becomes the user's life story, not a res...",
-          "idea": "The asset becomes the user's life story, not a resume",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The asset becomes the user's life story, not a res...",
-          "idea": "The asset becomes the user's life story, not a resume",
-          "meeting": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
-          "date": "2026-01-09"
-        }
-      ],
-      "date_range": {
-        "earliest": "2025-12-15",
-        "latest": "2026-01-09"
       }
     },
     {
@@ -168,10 +127,57 @@
       }
     },
     {
+      "theme": "product_strategy",
+      "meeting_count": 25,
+      "idea_count": 31,
+      "recent_examples": [
+        {
+          "title": "Obvious conclusions about product-market fit",
+          "idea": "Obvious conclusions about product-market fit",
+          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The asset becomes the user's life story, not a res...",
+          "idea": "The asset becomes the user's life story, not a resume",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The Legitimacy Arbitrage",
+          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
+          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The 500-User Moat",
+          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
+          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The asset becomes the user's life story, not a res...",
+          "idea": "The asset becomes the user's life story, not a resume",
+          "meeting": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
+          "date": "2026-01-09"
+        }
+      ],
+      "date_range": {
+        "earliest": "2025-12-15",
+        "latest": "2026-01-09"
+      }
+    },
+    {
       "theme": "community_network",
       "meeting_count": 20,
       "idea_count": 22,
       "recent_examples": [
+        {
+          "title": "Monetization happens through compounding relations...",
+          "idea": "Monetization happens through compounding relationship, not transaction",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
         {
           "title": "The 500-User Moat",
           "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
@@ -182,12 +188,6 @@
           "title": "The Cadaver Supply Chain Problem",
           "idea": "> **From tangent, but applicable:** Logan's biotech friend disrupted her industry by going directly to morgues instead of through middlemen. \"My middleman is charging me too much money\" → go direct to...",
           "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "Monetization happens through compounding relations...",
-          "idea": "Monetization happens through compounding relationship, not transaction",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         },
         {
@@ -240,7 +240,7 @@
         {
           "title": "The \"Problem Stack\" Abstraction",
           "idea": "V's thesis is that AI should not just automate existing tasks (like resume checking), but should move human experts \"higher in the problem stack.\" This suggests a mental model where the value of a car...",
-          "meeting": "20251226_Careerspan_Demo_no_transcript",
+          "meeting": "2025-12-26_Careerspan-demo_[P]",
           "date": "2025-12-26"
         }
       ],
@@ -279,9 +279,9 @@
           "date": "2025-12-19"
         },
         {
-          "title": "The \"Business Journaling\" Pivot: Interstitial Data Harvesting",
-          "idea": "The transcript explores the fundamental tension between high-fidelity data collection and user friction. A provocative alternative emerged: **\"Business Journaling.\"** Instead of a high-stakes, one-tim...",
-          "meeting": "2025-12-19_ilsetheapplyai",
+          "title": "\"Sexy vs. Cheap\" as a Strategic Pivot",
+          "idea": "The conscious decision to ignore unit economics (OpenAI costs) in favor of high-friction removal. It suggests a thesis that in the current AI market, user delight and perceived \"magic\" (sexiness) are ...",
+          "meeting": "2025-12-19_ilse_x_vrijen_sync",
           "date": "2025-12-19"
         }
       ],
@@ -337,15 +337,15 @@
       "idea_count": 6,
       "recent_examples": [
         {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
           "title": "Monetization happens through compounding relations...",
           "idea": "Monetization happens through compounding relationship, not transaction",
           "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The Legitimacy Arbitrage",
+          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
+          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
           "date": "2026-01-09"
         },
         {
@@ -378,24 +378,6 @@
       "theme": "recruiting_future",
       "trajectory": [
         {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The Cadaver Supply Chain Problem",
-          "idea": "> **From tangent, but applicable:** Logan's biotech friend disrupted her industry by going directly to morgues instead of through middlemen. \"My middleman is charging me too much money\" → go direct to...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
           "title": "Standard observations about recruiter trust issues",
           "idea": "Standard observations about recruiter trust issues",
           "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
@@ -406,6 +388,24 @@
           "idea": "Implies geographic/institutional monopoly on talent pipelines",
           "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
+        },
+        {
+          "title": "Companies don't recruit; they cultivate from early...",
+          "idea": "Companies don't recruit; they cultivate from early stages",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "Current hiring paradigm (post-job, resume, intervi...",
+          "idea": "Current hiring paradigm (post-job, resume, interview) becomes obsolete",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "AI didn't improve talent assessment; it may have m...",
+          "idea": "AI didn't improve talent assessment; it may have made it worse",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
         }
       ],
       "span_days": 25
@@ -413,6 +413,12 @@
     {
       "theme": "personal_growth",
       "trajectory": [
+        {
+          "title": "Culture as the Operating System",
+          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
+          "meeting": "raw_meetin_Raw-Meeting-Test",
+          "date": "2026-01-08"
+        },
         {
           "title": "The Observer Effect in Automation",
           "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synt...",
@@ -432,12 +438,6 @@
           "date": "2026-01-08"
         },
         {
-          "title": "Culture as the Operating System",
-          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
-          "meeting": "raw_meetin_Raw-Meeting-Test",
-          "date": "2026-01-08"
-        },
-        {
           "title": "State Escalation",
           "idea": "Could the manifest system be used to trigger automatic \"emergency\" alerts if certain keywords (e.g., \"urgent,\" \"crisis\") are detected in B11 (Risks & Flags)?",
           "meeting": "2026-01-07_2026-01-07-Unprocessed-meeting-test",
@@ -445,42 +445,6 @@
         }
       ],
       "span_days": 24
-    },
-    {
-      "theme": "product_strategy",
-      "trajectory": [
-        {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "Obvious conclusions about product-market fit",
-          "idea": "Obvious conclusions about product-market fit",
-          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The asset becomes the user's life story, not a res...",
-          "idea": "The asset becomes the user's life story, not a resume",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The asset becomes the user's life story, not a res...",
-          "idea": "The asset becomes the user's life story, not a resume",
-          "meeting": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
-          "date": "2026-01-09"
-        }
-      ],
-      "span_days": 25
     },
     {
       "theme": "uncategorized",
@@ -519,8 +483,50 @@
       "span_days": 25
     },
     {
+      "theme": "product_strategy",
+      "trajectory": [
+        {
+          "title": "Obvious conclusions about product-market fit",
+          "idea": "Obvious conclusions about product-market fit",
+          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The asset becomes the user's life story, not a res...",
+          "idea": "The asset becomes the user's life story, not a resume",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The Legitimacy Arbitrage",
+          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
+          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The 500-User Moat",
+          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
+          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The asset becomes the user's life story, not a res...",
+          "idea": "The asset becomes the user's life story, not a resume",
+          "meeting": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
+          "date": "2026-01-09"
+        }
+      ],
+      "span_days": 25
+    },
+    {
       "theme": "community_network",
       "trajectory": [
+        {
+          "title": "Monetization happens through compounding relations...",
+          "idea": "Monetization happens through compounding relationship, not transaction",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
         {
           "title": "The 500-User Moat",
           "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
@@ -531,12 +537,6 @@
           "title": "The Cadaver Supply Chain Problem",
           "idea": "> **From tangent, but applicable:** Logan's biotech friend disrupted her industry by going directly to morgues instead of through middlemen. \"My middleman is charging me too much money\" → go direct to...",
           "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "Monetization happens through compounding relations...",
-          "idea": "Monetization happens through compounding relationship, not transaction",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         },
         {
@@ -557,13 +557,13 @@
   ],
   "theme_distribution": {
     "recruiting_future": 71,
-    "pricing_business": 6,
+    "uncategorized": 46,
     "product_strategy": 31,
     "community_network": 22,
-    "uncategorized": 46,
+    "pricing_business": 6,
+    "personal_growth": 36,
     "ai_philosophy": 17,
     "ai_replacement": 23,
-    "personal_growth": 36,
     "founder_life": 20
   }
 }

@@ -136,7 +136,11 @@ def get_primitives(
     
     # Build query
     where_clause = " AND ".join(conditions)
-    order_clause = "RANDOM()" if random_order else "distinctiveness_score DESC, use_count ASC"
+
+    if random_order:
+        order_clause = "RANDOM()"
+    else:
+        order_clause = "(COALESCE(distinctiveness_score,0) - CASE WHEN LENGTH(TRIM(exact_text)) < 25 THEN 0.25 WHEN LENGTH(TRIM(exact_text)) < 50 THEN 0.10 ELSE 0 END) DESC, use_count ASC"
     
     query = f"""
         SELECT 
@@ -416,5 +420,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

@@ -3,282 +3,225 @@ created: 2026-01-12
 last_edited: 2026-01-12
 version: 1.0
 provenance: con_TBnwuolXxSkp5t1D
-type: prompt_templates
+type: style_guide
 status: active
 ---
 
 # Novelty Injection Prompts
 
-**Purpose:** Break out of AI-generic patterns when content feels "correct but boring." These prompt templates inject creative constraints that force distinctive, V-like output.
+Part of Voice Library V2 (Phase 4: Chaos Factor).
 
-**Part of:** Voice Library V2 (Phase 4)
+These prompt templates break predictable AI patterns and inject distinctiveness into generated content. Use when content feels "correct but boring" or Pangram scores are too high.
 
 ---
 
-## When to Use
+## When to Use Novelty Injection
 
 | Trigger | Action |
 |---------|--------|
-| Pangram score > 0.5 after first pass | Apply Strategy 1 or 2 |
-| Content feels "correct but boring" | Apply Strategy 3 or 4 |
-| Topic is saturated (many people writing about it) | Apply Strategy 5 |
-| Explicitly requested ("make this spicier") | User's choice |
-| Draft lacks distinctive V-isms | Apply Strategy 1 with high-distinctiveness primitives |
+| Pangram AI score > 0.6 | Apply 1-2 strategies below |
+| Content feels generic/safe | Use Socratic Iteration or Inversion |
+| Topic is saturated (many write about it) | Use Constraint Prompting or Forced Primitive |
+| Explicit request ("make this spicier") | Use Multi-Angle Generation |
+| Opening paragraph is weak | Use Multi-Angle on first paragraph only |
 
 ---
 
 ## Strategy 1: Forced Primitive Injection
 
-**Use when:** Draft lacks V's linguistic fingerprint. Pangram score too high.
+**Purpose:** Guarantee usage of distinctive V-phrases/metaphors.
 
-**How it works:** Retrieve high-distinctiveness primitives (≥0.8) and force their inclusion.
-
-### Templates
-
+**Template:**
 ```
-You MUST incorporate this exact phrase somewhere in the piece: "[PRIMITIVE]"
+You MUST incorporate this [primitive_type] somewhere in the piece: "[primitive]"
 
-Find a natural place for it—don't force it awkwardly. The phrase should feel 
-like it belongs, not like it was stapled on.
+Integrate it naturally — don't force it if it truly doesn't fit, but try hard to find 
+a place where it resonates. The primitive should feel like it belongs, not like it 
+was inserted.
 ```
 
+**Example:**
 ```
-Rewrite this paragraph incorporating at least ONE of these V-isms:
-- "[PRIMITIVE_1]"
-- "[PRIMITIVE_2]"
-- "[PRIMITIVE_3]"
+You MUST incorporate this metaphor somewhere in the piece: "gardening position in 
+the midwest and an investment banking internship in New York City"
 
-Choose the one that fits most naturally. If none fit, explain why.
-```
-
-```
-This draft is missing V's voice. Inject this conceptual frame: "[FRAME]"
-
-The frame should shape how you present the main argument, not just appear 
-as a throwaway line.
+Use it to illustrate contrast, optionality, or the breadth of career paths.
 ```
 
-### Retrieval Command
+**Retrieval:**
 ```bash
-python3 N5/scripts/retrieve_primitives.py --min-distinctiveness 0.8 --count 5 --json
+python3 N5/scripts/retrieve_primitives.py --min-distinctiveness 0.8 --count 3 --json
 ```
 
 ---
 
 ## Strategy 2: Constraint Prompting
 
-**Use when:** Default framing is generic. Need fresh angles.
+**Purpose:** Force creative thinking by limiting available metaphor domains.
 
-**How it works:** Force explanation through an unexpected domain's lens.
+**Templates:**
 
-### Templates
-
+**Domain Lock:**
 ```
-Explain [CONCEPT] using ONLY metaphors from [DOMAIN].
+Explain [concept] using only metaphors from [domain].
 
 Domains to try:
-- Cooking/kitchen operations
-- Construction/architecture  
-- Gardening/cultivation
-- Sports/competition
-- Music/performance
-- Navigation/exploration
+- cooking/kitchen (recipes, ingredients, heat, timing)
+- gardening (seeds, seasons, pruning, harvest)
+- construction (foundations, scaffolding, blueprints)
+- sports (training, competition, teamwork, coaching)
+- music (rhythm, harmony, improvisation, composition)
+- navigation (maps, compass, waypoints, course correction)
 ```
 
+**Word Budget:**
 ```
-Describe this without using any of these words: [BANNED_WORDS]
-
-Common banned lists:
-- Business jargon: leverage, synergy, optimize, scalable, robust
-- AI-speak: delve, tapestry, embark, landscape, realm
-- Filler: very, really, actually, basically, essentially
+Rewrite this paragraph in exactly [N] words. Not approximately — exactly [N].
+This constraint forces you to choose every word deliberately.
 ```
 
+**Forbidden Words:**
 ```
-Write this as if explaining to [AUDIENCE]:
-- A skeptical CFO who hates buzzwords
-- A 10-year-old who asks "but why?" repeatedly
-- Someone who's been burned by this exact promise before
-- A founder who's heard 50 pitches today
-```
+Rewrite this without using any of these words: [list common/overused terms]
 
-### Domain Mapping (V's natural domains)
-| Topic | Natural V-domain |
-|-------|------------------|
-| Hiring/recruiting | Agriculture, filtering, sorting |
-| Career decisions | Portfolio theory, optionality |
-| Incentive design | Game theory, mechanism design |
-| Leadership | Coaching, gardening |
-| Tech products | Infrastructure, plumbing |
+Forbidden for career content: passionate, excited, leverage, synergy, innovative
+Forbidden for AI content: revolutionary, game-changing, cutting-edge, disrupt
+```
 
 ---
 
 ## Strategy 3: Multi-Angle Generation
 
-**Use when:** Not sure which framing works best. Want options.
+**Purpose:** Generate variety, then select best framing.
 
-**How it works:** Generate multiple versions with different approaches, then select.
-
-### Templates
-
+**Template:**
 ```
-Generate 3 versions of this [SECTION]:
+Generate 3 distinct versions of [this section/opening/paragraph]:
 
-Version A: Lead with the contrarian take
-Version B: Lead with a concrete story/example  
-Version C: Lead with a provocative question
+Version A: Lead with the counterintuitive insight
+Version B: Lead with a specific story or example  
+Version C: Lead with the stakes (what's at risk if reader ignores this)
 
-Keep each to ~[WORD_COUNT] words. I'll pick the best.
+Keep each version to [N] sentences. I'll pick the strongest opening.
 ```
 
+**For headlines/hooks:**
 ```
-Write 3 different opening hooks for this piece:
+Generate 5 different hooks for this piece:
 
-1. Start with a surprising statistic or fact
-2. Start with a "most people think X, but actually Y" inversion
-3. Start with a vivid, specific scenario
+1. Question that challenges assumption
+2. Surprising statistic or fact
+3. Contrarian statement
+4. Specific story in 1 sentence
+5. "What if" scenario
 
-Each hook should be 2-3 sentences max.
-```
-
-```
-Give me 3 framings for the core argument:
-
-1. The "it's not about X, it's about Y" reframe
-2. The "everyone's solving the wrong problem" frame
-3. The "here's what changed that makes this matter now" frame
-
-One paragraph each. Be specific to [TOPIC].
+No generic hooks. Each must make a reader stop scrolling.
 ```
 
 ---
 
 ## Strategy 4: Socratic Iteration
 
-**Use when:** Draft exists but feels flat. Need to push deeper.
+**Purpose:** Push past the obvious first draft through directed critique.
 
-**How it works:** Challenge the draft with pointed questions that force improvement.
+**Templates:**
 
-### Templates
-
+**Generic Detection:**
 ```
-This draft is correct but boring. Answer these questions, then rewrite:
-
-1. What would make a reader stop scrolling?
-2. What's the most surprising implication you haven't stated?
-3. Where are you hedging when you should be asserting?
-4. What's the one sentence that captures the whole point?
-
-Now rewrite paragraph [N] with more edge.
+This draft feels safe. Identify the 2 most generic sentences and rewrite them 
+with more specific, surprising language. What would make a reader screenshot this?
 ```
 
+**Scroll-Stop Test:**
 ```
-Play devil's advocate on this draft:
+Rewrite paragraph [N] with a more surprising angle. 
 
-1. What's the strongest objection someone could raise?
-2. Where does the logic have gaps?
-3. What are you assuming that might not be true?
-
-Address the strongest objection directly in the piece.
+Ask yourself: Would this make someone stop scrolling on LinkedIn? If not, 
+it's not sharp enough. Find the unexpected take.
 ```
 
+**"So What" Pressure:**
 ```
-This reads like AI wrote it. Specifically:
+For each claim in this draft, answer "so what?" 
 
-- Where is it too balanced/hedged?
-- Where does it use generic examples instead of specific ones?
-- Where does it tell instead of show?
-
-Fix those specific problems.
+If the answer isn't compelling, either cut the claim or sharpen it until 
+the "so what" is obvious and impactful.
 ```
 
 ---
 
 ## Strategy 5: Inversion Prompt
 
-**Use when:** Topic is saturated. Need to stand out from the crowd.
+**Purpose:** Surface contrarian angles and strengthen arguments by addressing opposition.
 
-**How it works:** Write the opposite take first, then find the real insight.
+**Templates:**
 
-### Templates
-
+**Contrarian Take:**
 ```
-Write the contrarian take on [TOPIC]:
+Write the contrarian take on this topic. What would someone who disagrees say, 
+and why might they be partially right?
 
-What would someone who disagrees say? Why might they be right?
-
-Don't strawman—give the strongest version of the opposing view.
-Then: what's the synthesis that's smarter than both positions?
+Then: Does this contrarian view reveal a nuance we should incorporate into 
+the main piece?
 ```
 
+**Steel Man Opposition:**
 ```
-Everyone says [COMMON WISDOM]. 
+What's the strongest argument against [position in draft]? 
 
-Write a piece arguing the opposite. Not to be edgy—because you 
-actually believe there's truth in the inversion.
-
-What evidence supports the contrarian view?
-```
-
-```
-What's the thing everyone in [FIELD] knows but doesn't say publicly?
-
-Write about that. Be specific. Name names if appropriate (or describe 
-the pattern without names if not).
+Write 2-3 sentences presenting that argument charitably. Then decide: 
+should we address this directly, or does it reveal a flaw in our thinking?
 ```
 
+**Flip the Frame:**
 ```
-Invert the framing:
+This piece argues [X]. Write a version that argues the opposite.
 
-Original: "[STANDARD_FRAMING]"
-Inverted: "[OPPOSITE_FRAMING]"
-
-Now write from the inverted frame. The inversion should reveal something 
-the original framing obscured.
+Not to publish — but to find the weak points in our original argument and 
+the strongest version of the counter-position.
 ```
 
 ---
 
-## Combination Patterns
+## Strategy 6: Primitive Cascade
 
-### Pattern A: Pangram Rescue
-When Pangram score > 0.5:
-1. Retrieve 3 high-distinctiveness primitives (Strategy 1)
-2. Identify the paragraph with highest AI probability
-3. Force primitive injection into that paragraph
-4. Re-check with Pangram
-5. Max 2 iterations
+**Purpose:** Layer multiple primitives for compound distinctiveness.
 
-### Pattern B: Boring-to-Bold
-When draft feels flat:
-1. Run Socratic Iteration (Strategy 4) to identify weak spots
-2. Apply Constraint Prompting (Strategy 2) to one section
-3. Generate 3 alternative hooks (Strategy 3)
-4. Select best combination
+**Template:**
+```
+Incorporate ALL of these primitives into the piece (naturally distributed):
 
-### Pattern C: Saturated Topic
-When topic is crowded:
-1. Write Inversion take first (Strategy 5)
-2. Identify the genuine insight from the inversion
-3. Reframe main piece around that insight
-4. Inject 1-2 primitives that reinforce the fresh angle
+1. [signature_phrase]: "[text]"
+2. [metaphor]: "[text]"  
+3. [conceptual_frame]: "[text]"
 
----
+Don't cluster them — spread across the piece. Each should feel like it 
+belongs in its location.
+```
 
-## Integration with Voice Library
-
-These prompts work best when combined with voice primitive retrieval:
-
+**Retrieval for cascade:**
 ```bash
-# Get primitives relevant to topic
-python3 N5/scripts/retrieve_primitives.py --topic "[TOPIC]" --count 5
-
-# Get high-distinctiveness for injection
-python3 N5/scripts/retrieve_primitives.py --min-distinctiveness 0.8 --random --count 3
-
-# Get domain-specific primitives
-python3 N5/scripts/retrieve_primitives.py --domains career,hiring --count 5
+# Get one of each type for maximum variety
+python3 N5/scripts/retrieve_primitives.py --type signature_phrase --count 1 --json
+python3 N5/scripts/retrieve_primitives.py --type metaphor --count 1 --json
+python3 N5/scripts/retrieve_primitives.py --type conceptual_frame --count 1 --json
 ```
+
+---
+
+## Combining Strategies
+
+**Light touch (Pangram 0.5-0.6):**
+- Apply Strategy 1 (single forced primitive) OR Strategy 4 (Socratic on 1-2 paragraphs)
+
+**Medium intervention (Pangram 0.6-0.7):**
+- Apply Strategy 1 + Strategy 4
+- OR Strategy 3 (multi-angle) on opening + Strategy 2 (constraint) on body
+
+**Heavy intervention (Pangram > 0.7):**
+- Start over with Strategy 5 (inversion) to find fresh angle
+- Then apply Strategy 6 (primitive cascade)
+- Final pass with Strategy 4 (Socratic on weakest sections)
 
 ---
 
@@ -286,11 +229,26 @@ python3 N5/scripts/retrieve_primitives.py --domains career,hiring --count 5
 
 | Anti-Pattern | Why It Fails |
 |--------------|--------------|
-| Forcing ALL retrieved primitives | Feels like a word salad |
-| Using novelty injection on every piece | Exhausting; loses impact |
-| Contrarian for contrarian's sake | Comes off as try-hard |
-| Banning too many words | Creates awkward circumlocutions |
-| Multi-angle on tight deadlines | Time sink; just pick one and ship |
+| Inject 5+ primitives in short piece | Feels forced, damages flow |
+| Use same primitive twice | Repetitive, loses impact |
+| Force metaphor that doesn't fit topic | Reader notices the stretch |
+| Apply all strategies at once | Overcorrection, loses coherence |
+| Skip Pangram re-check after injection | Don't know if intervention worked |
+
+---
+
+## Quick Reference
+
+```
+# Check if novelty injection needed
+python3 N5/scripts/voice_postcheck.py --text "..." --threshold 0.5
+
+# Get high-distinctiveness primitives for injection
+python3 N5/scripts/retrieve_primitives.py --min-distinctiveness 0.8 --count 3
+
+# After injection, re-check
+python3 N5/scripts/voice_postcheck.py --text "..." --threshold 0.5
+```
 
 ---
 
@@ -298,6 +256,6 @@ python3 N5/scripts/retrieve_primitives.py --domains career,hiring --count 5
 
 - **Retrieval:** `N5/scripts/retrieve_primitives.py`
 - **Post-check:** `N5/scripts/voice_postcheck.py`
-- **Voice System:** `N5/prefs/communication/voice-primitives-system.md`
+- **System spec:** `N5/prefs/communication/voice-primitives-system.md`
 - **Vibe Writer:** `Prompts/Generate With Voice.prompt.md`
 

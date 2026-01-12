@@ -7,6 +7,8 @@ interface TranscriptEntry {
   company: string;
   jobDescription: string;      // Now required
   selfAssessment: string;      // Replaced sentiment
+  customerName: string;        // For remarketing
+  customerEmail: string;       // For remarketing
   createdAt: number;
 }
 
@@ -19,7 +21,9 @@ export function storeTranscript(
   transcript: string,
   company: string,
   jobDescription: string,      // Now required
-  selfAssessment: string       // Replaced sentiment
+  selfAssessment: string,      // Replaced sentiment
+  customerName: string,        // For remarketing
+  customerEmail: string        // For remarketing
 ): void {
   // Clean expired entries first
   cleanExpired();
@@ -29,6 +33,8 @@ export function storeTranscript(
     company,
     jobDescription,
     selfAssessment,
+    customerName,
+    customerEmail,
     createdAt: Date.now(),
   });
 }
@@ -63,6 +69,7 @@ function cleanExpired(): void {
 
 // Run cleanup every 5 minutes
 setInterval(cleanExpired, 5 * 60 * 1000);
+
 
 
 

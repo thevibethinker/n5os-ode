@@ -15,7 +15,9 @@ db.exec(`
     id TEXT PRIMARY KEY,
     stripe_session_id TEXT,
     company TEXT,
-    sentiment TEXT,
+    self_assessment TEXT,
+    customer_name TEXT,
+    customer_email TEXT,
     created_at TEXT DEFAULT (datetime('now')),
     report_summary TEXT
   );
@@ -24,24 +26,40 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_sessions_created ON sessions(created_at);
 `);
 
+// Migration: Add new columns if they don't exist (for existing databases)
+try {
+  db.exec(`ALTER TABLE sessions ADD COLUMN customer_name TEXT`);
+} catch (e) { /* column exists */ }
+try {
+  db.exec(`ALTER TABLE sessions ADD COLUMN customer_email TEXT`);
+} catch (e) { /* column exists */ }
+try {
+  db.exec(`ALTER TABLE sessions ADD COLUMN report_json TEXT`);
+} catch (e) { /* column exists */ }
+
 export interface Session {
   id: string;
   stripe_session_id: string | null;
   company: string;
-  sentiment: string;
+  self_assessment: string;
+  customer_name: string | null;
+  customer_email: string | null;
   created_at: string;
   report_summary: string | null;
+  report_json: string | null;
 }
 
 export function createSession(
   id: string,
   company: string,
-  sentiment: string
+  selfAssessment: string,
+  customerName: string,
+  customerEmail: string
 ): void {
   const stmt = db.prepare(
-    "INSERT INTO sessions (id, company, sentiment) VALUES (?, ?, ?)"
+    "INSERT INTO sessions (id, company, self_assessment, customer_name, customer_email) VALUES (?, ?, ?, ?, ?)"
   );
-  stmt.run(id, company, sentiment);
+  stmt.run(id, company, selfAssessment, customerName, customerEmail);
 }
 
 export function updateSessionStripe(
@@ -56,12 +74,20 @@ export function updateSessionStripe(
 
 export function updateSessionReport(
   id: string,
-  reportSummary: string
+  reportSummary: string,
+  reportJson?: string
 ): void {
-  const stmt = db.prepare(
-    "UPDATE sessions SET report_summary = ? WHERE id = ?"
-  );
-  stmt.run(reportSummary, id);
+  if (reportJson) {
+    const stmt = db.prepare(
+      "UPDATE sessions SET report_summary = ?, report_json = ? WHERE id = ?"
+    );
+    stmt.run(reportSummary, reportJson, id);
+  } else {
+    const stmt = db.prepare(
+      "UPDATE sessions SET report_summary = ? WHERE id = ?"
+    );
+    stmt.run(reportSummary, id);
+  }
 }
 
 export function getSession(id: string): Session | undefined {
@@ -75,4 +101,7 @@ export function getSessionByStripe(stripeSessionId: string): Session | undefined
 }
 
 export default db;
+
+
+
 
