@@ -98,9 +98,17 @@ Extract structured value from V's LinkedIn corpus (posts, articles, comments) an
 2. **Content Library:** `file 'Knowledge/content-library/social-posts/linkedin/'` (31 files)
 3. **Source archive:** `file 'N5/builds/linkedin-knowledge-extraction/source-data/'`
 
+## Integration
+
+- **Cross-linked to writer context:** Portrait added to `N5/prefs/context_manifest.yaml` writer group
+- Future writing/content sessions will auto-load the portrait for voice consistency
+- Finalized in: `con_KsRMF45IeXQHcMks` (2026-01-12)
+
 ## Provenance
 
 - Build plan: `file 'N5/builds/linkedin-knowledge-extraction/PLAN.md'`
 - Orchestrating conversation: `con_zTfB7kehxEEHmaoC`
 - Worker conversations: `con_Eqi8UqtcvJ8P3EuH` (W0), parallel workers for W1-W3
+- Finalization conversation: `con_KsRMF45IeXQHcMks` (cross-linking, state sync)
+
 
