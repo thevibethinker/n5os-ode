@@ -8,6 +8,8 @@ tags:
   - thought-leadership
   - engagement
 tool: true
+version: 1.1
+last_edited: 2026-01-12
 ---
 # X Thought Leadership Engine
 
@@ -270,8 +272,34 @@ python3 /home/workspace/Projects/x-thought-leader/src/draft_generator.py --tweet
 
 When invoked, parse the user's intent and run the appropriate command from above. For multi-step operations like "run the full pipeline," execute the orchestrator with appropriate flags.
 
+## Voice Enhancement (Auto-Applied) ⭐ NEW in v1.1
 
+When generating drafts, the system automatically injects V's distinctive linguistic patterns from the Voice Library.
 
+**Implementation:**
+```python
+from N5.scripts.voice_layer import VoiceContext, inject_voice
 
+ctx = VoiceContext(
+    content_type="tweet",
+    platform="x",
+    purpose="thought-leadership",
+    topic_domains=position_domains,  # From matched positions
+)
+
+enhanced_prompt = inject_voice(draft_prompt, ctx)
+```
+
+**What happens automatically:**
+1. Layer retrieves 3 relevant primitives (favoring signature_phrase, metaphor, rhetorical_device)
+2. Primitives injected as context into draft generation
+3. LLM weaves patterns naturally — never forced
+4. Usage tracked to prevent repetition across tweets
+
+**Result:** Drafts incorporate V's distinctive voice patterns without mechanical insertion.
+
+---
+
+## Draft Generation (Backup Mode)
 
 

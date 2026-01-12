@@ -82,6 +82,36 @@ angles = generator.get_angles(content_type)
 # Returns 2-3 distinct messaging angles
 ```
 
+### Step 2.5: Voice Primitive Retrieval (NEW)
+```python
+from N5.scripts.retrieve_primitives import get_connection, get_primitives, mark_as_used
+
+# Retrieve relevant voice primitives based on content topic
+conn = get_connection()
+primitives = get_primitives(
+    conn,
+    count=5,  # 5-10 for longer pieces
+    topic=extract_topic(user_request),
+    min_distinctiveness=0.6,
+    exclude_recently_used=True,
+)
+mark_as_used(conn, [p["id"] for p in primitives])
+conn.close()
+
+# Available primitives for injection:
+# - Signature phrases (drop verbatim)
+# - Metaphors/analogies (adapt to context)
+# - Syntactic patterns (mirror structure)
+# - Conceptual frames (adopt framing)
+```
+
+**Integration guidance:**
+- Primitives are *raw material*, not mandatory inclusions
+- Use 1-3 per 500 words (don't over-inject)
+- Adapt metaphors/analogies to fit context
+- Signature phrases can be used verbatim
+- Track which primitives are used for throttling
+
 ### Step 3: Style-Free Drafts
 For each angle, generate style-free draft:
 - Focus on facts and structure
@@ -137,6 +167,50 @@ Check against file 'N5/prefs/communication/quality-validation.json':
 - Voice consistency
 - Structural requirements
 - Quality threshold
+
+### Step 7.5: Novelty Injection (Optional)
+
+**Trigger conditions:**
+- Pangram AI score > 0.5 after transformation
+- Content feels "correct but boring"
+- Topic is saturated (crowded space)
+- User explicitly requests ("make it spicier")
+
+**Load strategies from:** `file 'N5/prefs/communication/style-guides/novelty-injection-prompts.md'`
+
+```python
+# Check if novelty injection needed
+if pangram_score > 0.5 or user_requests_spice or topic_is_saturated:
+    
+    # Strategy 1: Forced Primitive Injection
+    high_dist_primitives = get_primitives(
+        conn, 
+        min_distinctiveness=0.8, 
+        count=3,
+        exclude_recently_used=True
+    )
+    # Prompt: "Rewrite [weakest paragraph] incorporating: [primitive]"
+    
+    # Strategy 2: Constraint Prompting
+    # Force explanation through unexpected domain lens
+    # E.g., "Explain using only cooking metaphors"
+    
+    # Strategy 3: Multi-Angle Generation
+    # "Generate 3 versions of this opening with different framings"
+    
+    # Strategy 4: Socratic Iteration
+    # "What would make a reader stop scrolling? Rewrite with more edge."
+    
+    # Strategy 5: Inversion Prompt
+    # "Write the contrarian take first, then find the synthesis"
+```
+
+**Combination patterns:**
+- **Pangram Rescue:** Inject high-distinctiveness primitives into AI-heavy paragraphs
+- **Boring-to-Bold:** Socratic challenge → constraint prompting → multi-angle hooks
+- **Saturated Topic:** Inversion first → extract genuine insight → reframe
+
+**Max iterations:** 2 per content piece (avoid over-engineering)
 
 ### Step 8: Output
 Present best angle to user.
@@ -314,3 +388,5 @@ User feedback in new conversation → system adapts → future outputs improve.
 ---
 
 **Status:** ACTIVE — Auto-applying to all text generation.
+
+

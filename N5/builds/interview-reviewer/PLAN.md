@@ -1,8 +1,8 @@
 ---
 created: 2026-01-12
 last_edited: 2026-01-12
-version: 1.0
-provenance: con_g62UmSAYGCHuZjmN
+version: 2.1
+provenance: con_F2njykPaFaBaNmKN
 ---
 
 # Build Plan: Am I Hired? (interview-reviewer)
@@ -105,51 +105,125 @@ One-time purchase ($5) interview feedback tool. User pastes transcript, pays, ge
 - [ ] Register user service
 - [ ] Smoke test end-to-end
 
-### Phase 7: Content Integration (BLOCKED - awaiting V's content)
-- [ ] V provides coaching reference files
-- [ ] Extract and structure content
-- [ ] Update `content/coaching-reference.md`
-- [ ] Test with real content
+### Phase 7: Content Integration (COMPLETED)
+- [x] V provides coaching reference files
+- [x] Extract and structure content
+- [x] Update `content/coaching-reference.md`
+- [x] Test with real content
+
+### Phase 8: Multi-Stage Analysis Pipeline
+**PRD:** `file 'N5/builds/interview-reviewer/PRD-MultiStage-Analysis.md'`
+
+#### 8.1 Form Updates
+- [x] Change JD field from optional → required
+- [x] Remove `sentiment` dropdown field
+- [x] Add `selfAssessment` textarea ("How do you feel it went? What concerns you?")
+- [x] Add optional `promoCode` text field
+- [x] Update form validation (JD required, selfAssessment required)
+- [x] Update `/submit` handler to pass new fields
+- [x] Test: Form submits with all new fields
+
+#### 8.2 Pipeline Infrastructure
+- [x] Create `src/lib/types/pipeline.ts` with TypeScript interfaces
+- [x] Create `src/lib/pipeline/` directory
+- [x] Update `src/lib/openai.ts` to support model selection per call
+- [x] Create `src/lib/pipeline/index.ts` (orchestrator)
+- [x] Test: Pipeline orchestrator can call stages sequentially
+
+#### 8.3 Stage 1 — Extract Q&A (gpt-5-mini)
+- [x] Create `src/lib/pipeline/stage1-extract.ts`
+- [x] Prompt: Parse transcript → structured Q&A pairs
+- [x] Output: `ExtractedQA[]` array
+- [x] Test: Extracts 4+ Q&A pairs from sample transcript (4/4 extracted)
+
+#### 8.4 Stage 2 — Question Analysis (gpt-5.1)
+- [ ] Create `src/lib/pipeline/stage2-questions.ts`
+- [ ] Input: ExtractedQA[] + jobDescription
+- [ ] Prompt: Classify each question type, map to JD requirements
+- [ ] Flag technical questions as OUT_OF_SCOPE
+- [ ] Output: `AnalyzedQuestion[]` with type, jdRequirementMapped, priority
+- [ ] Test: Correctly classifies behavioral vs situational vs technical
+
+#### 8.5 Stage 3 — Answer Evaluation (gpt-5.1)
+- [ ] Create `src/lib/pipeline/stage3-answers.ts`
+- [ ] Input: AnalyzedQuestion[] + coaching-reference.md content
+- [ ] Prompt: Score each answer against 6Q, Red/Green flags
+- [ ] Skip evaluation for OUT_OF_SCOPE questions
+- [ ] Output: `EvaluatedAnswer[]` with scores, flags, grade
+- [ ] Test: Detects missing 6Q components, applies correct flags
+
+#### 8.6 Stage 4 — Gap + Calibration (gpt-5.1)
+- [ ] Create `src/lib/pipeline/stage4-gaps.ts`
+- [ ] Input: AnalyzedQuestion[] + EvaluatedAnswer[] + JD + selfAssessment
+- [ ] Prompt: Compare demonstrated vs required, calibrate self-perception
+- [ ] Output: `GapAnalysis` with coverage and calibration delta
+- [ ] Test: Correctly identifies demonstrated vs missing JD requirements
+
+#### 8.7 Stage 5 — Synthesis (gpt-5.1)
+- [ ] Create `src/lib/pipeline/stage5-synthesis.ts`
+- [ ] Input: All previous stage outputs
+- [ ] Prompt: Generate final report with executive summary, verdict
+- [ ] Output: `AnalysisReport` with all sections
+- [ ] Test: Report contains all required sections
+
+#### 8.8 Report Output
+- [ ] Update success page to render new report structure
+- [ ] Add question type breakdown (pie chart via Chart.js or SVG)
+- [ ] Add JD coverage map visualization
+- [ ] Add calibration insight card
+- [ ] Generate memorable session ID (AMH-XXXX-XXXX format)
+- [ ] Display session ID on results page
+- [ ] Test: Full report renders correctly with all sections
+
+#### 8.9 Growth Mechanic
+- [ ] Create `src/lib/promo.ts` for promo code logic
+- [ ] Add promo_codes table to SQLite (code, created_at, expires_at, uses_remaining)
+- [ ] Add promo code validation in `/submit` handler
+- [ ] If valid promo → bypass payment, proceed to analysis
+- [ ] Decrement uses_remaining on each use
+- [ ] Add feedback CTA to results page with session ID
+- [ ] Test: Promo code bypasses payment, tracks usage correctly
 
 ---
 
-## Affected Files (Phase 0-1)
+## Affected Files (Phase 8)
 
 ```
-Sites/interview-reviewer-staging/
-├── package.json
-├── tsconfig.json
-├── src/
-│   ├── index.tsx          # Main Hono app
-│   ├── routes/
-│   │   ├── home.tsx       # Landing page
-│   │   ├── success.tsx    # Post-payment success
-│   │   └── api.ts         # API endpoints
-│   ├── components/
-│   │   └── Layout.tsx     # Page wrapper
-│   ├── lib/
-│   │   ├── db.ts          # SQLite setup
-│   │   ├── stripe.ts      # Stripe helpers
-│   │   ├── openai.ts      # OpenAI helpers
-│   │   └── ratelimit.ts   # Rate limiting
-│   └── content/
-│       └── coaching-reference.md  # Stub content
-├── public/
-│   └── styles.css
-└── README.md
+Sites/interview-reviewer-staging/src/
+├── index.tsx                    # UPDATE: Form fields, submission handler, report rendering
+├── lib/
+│   ├── openai.ts               # UPDATE: Add model selection parameter
+│   ├── session-store.ts        # UPDATE: Add selfAssessment field
+│   ├── db.ts                   # UPDATE: Add promo_codes table
+│   ├── promo.ts                # CREATE: Promo code validation
+│   ├── types/
+│   │   └── pipeline.ts         # CREATE: TypeScript interfaces
+│   └── pipeline/
+│       ├── index.ts            # CREATE: Pipeline orchestrator
+│       ├── stage1-extract.ts   # CREATE: Q&A extraction
+│       ├── stage2-questions.ts # CREATE: Question analysis
+│       ├── stage3-answers.ts   # CREATE: Answer evaluation
+│       ├── stage4-gaps.ts      # CREATE: Gap + calibration
+│       └── stage5-synthesis.ts # CREATE: Report synthesis
+└── content/
+    └── coaching-reference.md   # EXISTS: Already populated
 ```
 
 ---
 
-## Unit Tests (per phase)
+## Unit Tests (Phase 8)
 
-**Phase 0:** Server starts, health endpoint returns 200  
-**Phase 1:** Landing page renders, form elements present  
-**Phase 2:** Checkout creates Stripe session, success verifies payment  
-**Phase 3:** Analysis returns formatted report given test transcript  
-**Phase 4:** Metadata inserted, transcript NOT in database  
-**Phase 5:** Rate limiter triggers at threshold, circuit breaker activates  
-**Phase 6:** E2E flow works, privacy/terms pages load
+| Test | Description | Pass Criteria |
+|------|-------------|---------------|
+| 8.1 | Form validation | Rejects empty JD, rejects empty selfAssessment |
+| 8.2 | Pipeline orchestrator | Calls all 5 stages in sequence |
+| 8.3 | Stage 1 extraction | Extracts ≥5 Q&A pairs from sample transcript |
+| 8.4 | Stage 2 classification | Correctly identifies behavioral/situational/technical |
+| 8.5 | Stage 3 evaluation | Applies 6Q framework, detects red flags |
+| 8.6 | Stage 4 gaps | Identifies demonstrated vs missing JD requirements |
+| 8.7 | Stage 5 synthesis | Generates complete report with all sections |
+| 8.8 | Report rendering | All sections visible, pie chart renders |
+| 8.9 | Promo codes | Valid code bypasses payment, expired code rejected |
 
 ---
 
@@ -164,11 +238,9 @@ Sites/interview-reviewer-staging/
 
 ## Status
 
-**Current Phase:** 6 (Polish & Deploy)  
-**Progress:** 32/35 checklist items (91%)  
-**Blockers:** 
-- Stripe Connect test mode not set up — need to visit [Sell](/?t=sell) to enable
-- Phase 7 blocked awaiting V's content (doesn't block MVP)
+**Current Phase:** 8 (Multi-Stage Analysis Pipeline)  
+**Progress:** 35/35 MVP items (100%), 16/42 Phase 8 items (38%)  
+**Next Action:** Execute Phase 8.4 (Stage 2 — Question Analysis)
 
 ---
 
@@ -177,6 +249,12 @@ Sites/interview-reviewer-staging/
 - Reference content is stubbed - V will provide coaching files later
 - System designed so content can be hot-swapped by updating `content/coaching-reference.md`
 - Open source from day 1 - no secrets in repo, all config via env vars
+
+
+
+
+
+
 
 
 

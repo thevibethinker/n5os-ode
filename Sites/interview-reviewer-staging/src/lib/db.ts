@@ -15,7 +15,7 @@ db.exec(`
     id TEXT PRIMARY KEY,
     stripe_session_id TEXT,
     company TEXT,
-    sentiment TEXT,
+    self_assessment TEXT,
     created_at TEXT DEFAULT (datetime('now')),
     report_summary TEXT
   );
@@ -28,7 +28,7 @@ export interface Session {
   id: string;
   stripe_session_id: string | null;
   company: string;
-  sentiment: string;
+  self_assessment: string;
   created_at: string;
   report_summary: string | null;
 }
@@ -36,12 +36,12 @@ export interface Session {
 export function createSession(
   id: string,
   company: string,
-  sentiment: string
+  selfAssessment: string
 ): void {
   const stmt = db.prepare(
-    "INSERT INTO sessions (id, company, sentiment) VALUES (?, ?, ?)"
+    "INSERT INTO sessions (id, company, self_assessment) VALUES (?, ?, ?)"
   );
-  stmt.run(id, company, sentiment);
+  stmt.run(id, company, selfAssessment);
 }
 
 export function updateSessionStripe(
@@ -75,4 +75,5 @@ export function getSessionByStripe(stripeSessionId: string): Session | undefined
 }
 
 export default db;
+
 

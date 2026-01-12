@@ -1,9 +1,9 @@
 ---
 tool: true
-description: "Generates comprehensive intelligence blocks (B01-B26) for meetings in [M] state that lack them."
+description: "Generates comprehensive intelligence blocks (B01-B35) for meetings in [M] state that lack them."
 tags: [meetings, intelligence, blocks, automation]
 created: 2025-11-22
-version: 2.0
+version: 2.1
 mg_stage: MG-2
 status: canonical
 ---
@@ -29,6 +29,7 @@ For each such meeting:
     *   **B25_DELIVERABLES.md**: Specific files or data promised.
     *   **B26_MEETING_METADATA.md**: Tags, categorization, topics.
     *   **B32_THOUGHT_PROVOKING_IDEAS.md**: Identify 1-3 highly provocative themes, strategic "weirdness," or original mental models. **(CRITICAL: Strictly non-actionable, use high-threshold filter)**
+    *   **B35_LINGUISTIC_PRIMITIVES.jsonl**: Extract V's distinctive language patterns (analogies, metaphors, phrases, capture signals) for the Voice Library. See `Prompts/Blocks/Generate_B35.prompt.md` for extraction rules. Output as JSONL, one primitive per line. **(NEW: Feeds Voice Library V2)**
 
 3.  **Update Manifest:**
     Update `manifest.json` in the same folder so that it accurately reflects the new intelligence state. At minimum:
@@ -62,7 +63,8 @@ For each such meeting:
         "B21_KEY_MOMENTS",
         "B25_DELIVERABLES",
         "B26_MEETING_METADATA",
-        "B32_THOUGHT_PROVOKING_IDEAS"
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B35_LINGUISTIC_PRIMITIVES"
       ],
       "source": "Meeting Intelligence Generator [MG-2]"
     }
@@ -77,6 +79,7 @@ For each such meeting:
 ## Execution
 
 Run this prompt to populate missing intelligence and to ensure every processed [M] meeting is recorded in `Personal/Meetings/PROCESSING_LOG.jsonl`.
+
 
 
 

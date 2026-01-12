@@ -1,0 +1,25 @@
+{
+  "posts": {
+    "total": 130,
+    "original": 130,
+    "reshares": 0,
+    "date_range": [
+      "2020-04-17",
+      "2025-12-18"
+    ],
+    "total_words": 19393,
+    "avg_words_per_post": 149.2
+  },
+  "articles": {
+    "total": 3,
+    "total_words": 1827
+  },
+  "comments": {
+    "total": 727,
+    "date_range": [
+      "2019-07-17",
+      "2026-01-08"
+    ],
+    "total_words": 15059
+  }
+}

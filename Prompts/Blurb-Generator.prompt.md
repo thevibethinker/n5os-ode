@@ -6,16 +6,19 @@ description: |
   Produces output in V's voice with selective generation gate and forwardable email wrapper.
 tags: [communications, meetings, content-generation, tool-enabled, semantic-memory]
 tool: true
-version: 2.1
+version: 2.2
 created: 2025-11-17
-last_edited: 2026-01-03
+last_edited: 2026-01-12
 mg_stage: MG-3
 status: canonical
 ---
 
-# Blurb Generator v2.1
+# Blurb Generator v2.2
 
 Generate concise, specific blurbs from meeting intelligence—Short Blurbs (50-80 words) or Email Blurbs (150-250 words). Subject-flexible: works for V, Careerspan, or any topic identified in meeting intelligence.
+
+**v2.2 Key Changes:**
+- ⭐ PHASE 2.5: Voice Injection Layer (auto-applies V's linguistic primitives)
 
 **v2.1 Key Changes:**
 - ⭐ PHASE 1.1: Anti-hallucination gate (CRITICAL - prevents fabricated claims)
@@ -306,6 +309,39 @@ positions = client.search_profile(
 - **Subject = Other** → Synthesize from B21 + B25, use meeting-specific details
 
 **If subject unclear after all methods:** Ask user to clarify subject before generating.
+
+---
+
+### PHASE 2.5: VOICE INJECTION LAYER ⭐ NEW in v2.2
+
+**Purpose:** Auto-inject V's distinctive linguistic patterns. Fully automatic — no human review.
+
+**Implementation:**
+```python
+from N5.scripts.voice_layer import VoiceContext, inject_voice
+
+# Build context from blurb request
+ctx = VoiceContext(
+    content_type="blurb",
+    platform="email",  # or infer from recipient context
+    purpose="intro",
+    topic_domains=extracted_domains_from_subject,  # e.g., ["career", "hiring", "tech"]
+)
+
+# Auto-inject (happens before generation)
+enhanced_prompt = inject_voice(base_generation_prompt, ctx)
+```
+
+**What happens automatically:**
+1. Layer retrieves 3 relevant primitives from `voice_library.db`
+2. Primitives injected as context into generation prompt
+3. LLM weaves patterns naturally (never forced)
+4. Usage tracked to prevent repetition
+
+**Domain Extraction:**
+- From `subject_detail` in B14 request
+- From B06_BUSINESS_CONTEXT if available
+- Inferred from blurb subject/purpose
 
 ---
 
@@ -1081,6 +1117,7 @@ key_focus: Project approach, technical innovation, impact
 - Specificity: X/15
 - Wrapper: X/15
 ```
+
 
 
 

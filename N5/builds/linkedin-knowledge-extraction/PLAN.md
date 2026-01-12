@@ -31,10 +31,10 @@ Extract structured value from V's LinkedIn corpus (130 posts, 3 articles, 689 co
 ## Phase Checklist
 
 ### Phase 0: Foundation (W0)
-- [ ] Extract posts to `posts.jsonl` (date, text, URLs, visibility, is_reshare flag)
-- [ ] Extract articles to `articles.jsonl` (title, full text from HTML)
-- [ ] Extract comments to `comments.jsonl` (date, text, link)
-- [ ] Validate record counts match source
+- [x] Extract posts to `posts.jsonl` (date, text, URLs, visibility, is_reshare flag)
+- [x] Extract articles to `articles.jsonl` (title, full text from HTML)
+- [x] Extract comments to `comments.jsonl` (date, text, link)
+- [x] Validate record counts match source
 
 **Affected files:**
 - `Datasets/linkedin-full-pre-jan-10/source/extracted/Shares.csv` (read)
@@ -132,4 +132,5 @@ W0 (Foundation)
 | 2 | W2b, W3b | Yes | 1 each |
 | 3 | W4 | No | 1 |
 | **Total** | 7 workers | | 7-9 turns |
+
 

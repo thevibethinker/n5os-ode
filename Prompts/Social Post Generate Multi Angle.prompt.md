@@ -1,6 +1,8 @@
 ---
 description: 'Command: social-post-generate-multi-angle'
 tool: true
+version: 1.1
+last_edited: 2026-01-12
 tags:
 - social
 - content
@@ -61,6 +63,37 @@ Before generating, scan stable knowledge for enrichment details:
 - Quantified outcomes ("8 hours/week saved" not "more productive")
 
 **Light-touch rule:** Extract 3-5 enrichment details max. Don't overload.
+
+### Step 3.5: Voice Injection Layer ⭐ NEW in v1.1
+
+**Purpose:** Auto-inject V's distinctive linguistic patterns. Fully automatic — no human review.
+
+**Implementation:**
+```python
+from N5.scripts.voice_layer import VoiceContext, inject_voice
+
+ctx = VoiceContext(
+    content_type="post",
+    platform="linkedin",  # or "x" depending on target
+    purpose="thought-leadership",
+    topic_domains=extracted_from_source,  # e.g., ["career", "hiring", "ai"]
+)
+
+enhanced_prompt = inject_voice(generation_prompt, ctx)
+```
+
+**What happens automatically:**
+1. Layer retrieves 3 relevant primitives (favoring conceptual_frame, metaphor, rhetorical_device)
+2. Primitives injected as context into generation prompt
+3. LLM weaves patterns naturally — never forced
+4. Usage tracked to prevent repetition across posts
+
+**Domain Extraction:**
+- From source material topic/tags
+- From angle type (e.g., founder pain → ["entrepreneurship", "startup"])
+- Inferred from content analysis
+
+---
 
 ### Step 4: Generate Post (One Angle, Full Focus)
 
@@ -180,3 +213,4 @@ Intent: {aligned objective}
 **Version:** 1.0  
 **Created:** 2025-10-20  
 **Owner:** V (Careerspan)
+
