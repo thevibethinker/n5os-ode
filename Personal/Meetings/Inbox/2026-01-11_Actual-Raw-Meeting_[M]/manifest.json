@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "generated_at": "2026-01-09T01:16:48.475401",
+  "generated_at": "2026-01-11T21:17:40.960021",
   "meeting_folder": "2026-01-11_Actual-Raw-Meeting",
   "meeting_date": "2026-01-11",
   "status": "manifest_generated",
@@ -9,5 +9,5 @@
     "brief": false,
     "transcript_processed": true
   },
-  "last_updated_by": "MG-1_Prompt"
+  "last_updated_by": "MG-1_Agent"
 }

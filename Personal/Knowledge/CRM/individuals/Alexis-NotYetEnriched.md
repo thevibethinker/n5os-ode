@@ -59,3 +59,8 @@ No emails found
 **Last email:** 2025-11-24  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-11 11:11
+
+First contact: January 20, 2025. Last contact: January 27, 2025. Total messages: 5 (primarily one recurring thread). Key topics: Scheduling recurring monthly meetings '[Monthly] Vrijen / Alexis / Mishu' with Alexis and Mishal at Stitchsense.ai, including rescheduling discussions. Relationship trajectory: active collaborators (ongoing monthly syncs).

@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-10T13:26:22.589369",
+  "meeting_folder": "Test-Raw-No-Suffix",
+  "meeting_date": "2026-01-10",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-1_Prompt"
+}

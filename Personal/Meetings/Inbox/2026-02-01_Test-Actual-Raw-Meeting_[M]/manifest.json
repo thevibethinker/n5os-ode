@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-11T20:18:07.188449",
+  "meeting_folder": "2026-02-01_Test-Actual-Raw-Meeting",
+  "meeting_date": "2026-02-01",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-1_Prompt"
+}

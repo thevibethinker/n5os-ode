@@ -1,0 +1,759 @@
+{
+  "ranked_flights": [
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "John F. Kennedy International Airport",
+              "id": "JFK",
+              "time": "2026-01-22 12:00"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 13:50"
+            },
+            "duration": 110,
+            "airplane": "Airbus A220-300 Passenger",
+            "airline": "JetBlue",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+            "travel_class": "Economy",
+            "flight_number": "B6 285",
+            "legroom": "32 in",
+            "extensions": [
+              "Above average legroom (32 in)",
+              "Free Wi-Fi",
+              "In-seat power & USB outlets",
+              "Live TV",
+              "Carbon emissions estimate: 100 kg"
+            ]
+          }
+        ],
+        "total_duration": 110,
+        "carbon_emissions": {
+          "this_flight": 100000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -11
+        },
+        "price": 313,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJU3pWcVkwaE9VakJqY2sxQlMwOXNkbWRDUnkwdExTMHRMUzB0TFMxNWJHeG1OVUZCUVVGQlIyeHFOSEpuUXpZeGJFdEJFZ1ZDTmpJNE5Sb0xDUER6QVJBQ0dnTlZVMFE0SEhEdzh3RT0iLFtbIkpGSyIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkI2IiwiMjg1Il1dXQ=="
+      },
+      "score": 226.90666666666667,
+      "departure_airport": "JFK",
+      "source": "best_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 13:05"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 14:55"
+            },
+            "duration": 110,
+            "airplane": "Embraer 175",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5818",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "Carbon emissions estimate: 106 kg"
+            ],
+            "plane_and_crew_by": "Republic Airways Delta Connection"
+          }
+        ],
+        "total_duration": 110,
+        "carbon_emissions": {
+          "this_flight": 106000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -5
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERVNE1UZ2FDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTgxOCJdXV0="
+      },
+      "score": 181.82666666666665,
+      "departure_airport": "LGA",
+      "source": "best_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 11:35"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 13:29"
+            },
+            "duration": 114,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5199",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "Carbon emissions estimate: 109 kg"
+            ],
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 114,
+        "carbon_emissions": {
+          "this_flight": 110000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -2
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERVeE9Ua2FDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTE5OSJdXV0="
+      },
+      "score": 181.76,
+      "departure_airport": "LGA",
+      "source": "best_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 15:15"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 17:11"
+            },
+            "duration": 116,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5109",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Carbon emissions estimate: 118 kg"
+            ],
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 116,
+        "carbon_emissions": {
+          "this_flight": 118000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 5
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERVeE1Ea2FDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTEwOSJdXV0="
+      },
+      "score": 181.72666666666666,
+      "departure_airport": "LGA",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "John F. Kennedy International Airport",
+              "id": "JFK",
+              "time": "2026-01-22 12:29"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 14:22"
+            },
+            "duration": 113,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5028",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "Carbon emissions estimate: 115 kg"
+            ],
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 113,
+        "carbon_emissions": {
+          "this_flight": 115000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 3
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJU3pWcVkwaE9VakJqY2sxQlMwOXNkbWRDUnkwdExTMHRMUzB0TFMxNWJHeG1OVUZCUVVGQlIyeHFOSEpuUXpZeGJFdEJFZ1pFVERVd01qZ2FDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkpGSyIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTAyOCJdXV0="
+      },
+      "score": 171.77666666666667,
+      "departure_airport": "JFK",
+      "source": "best_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "John F. Kennedy International Airport",
+              "id": "JFK",
+              "time": "2026-01-22 19:30"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 21:25"
+            },
+            "duration": 115,
+            "airplane": "Airbus A220-300 Passenger",
+            "airline": "JetBlue",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+            "travel_class": "Economy",
+            "flight_number": "B6 2485",
+            "legroom": "32 in",
+            "extensions": [
+              "Above average legroom (32 in)",
+              "Free Wi-Fi",
+              "In-seat power & USB outlets",
+              "Live TV",
+              "Carbon emissions estimate: 100 kg"
+            ],
+            "often_delayed_by_over_30_min": true
+          }
+        ],
+        "total_duration": 115,
+        "carbon_emissions": {
+          "this_flight": 100000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -11
+        },
+        "price": 313,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJU3pWcVkwaE9VakJqY2sxQlMwOXNkbWRDUnkwdExTMHRMUzB0TFMxNWJHeG1OVUZCUVVGQlIyeHFOSEpuUXpZeGJFdEJFZ1pDTmpJME9EVWFDd2p3OHdFUUFob0RWVk5FT0J4dzhQTUIiLFtbIkpGSyIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkI2IiwiMjQ4NSJdXV0="
+      },
+      "score": 166.82333333333335,
+      "departure_airport": "JFK",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Newark Liberty International Airport",
+              "id": "EWR",
+              "time": "2026-01-22 15:35"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 17:19"
+            },
+            "duration": 104,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5260",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Carbon emissions estimate: 119 kg"
+            ],
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 104,
+        "carbon_emissions": {
+          "this_flight": 120000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 7
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJVTFGeFVIUlRTbHBzVjFWQlMyZzVXSGRDUnkwdExTMHRMUzB0TFMxNWJHOXFOa0ZCUVVGQlIyeHFOSEpqVDAxWU4wOUJFZ1pFVERVeU5qQWFDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkVXUiIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTI2MCJdXV0="
+      },
+      "score": 161.92666666666668,
+      "departure_airport": "EWR",
+      "source": "best_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 12:12"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 14:04"
+            },
+            "duration": 112,
+            "airplane": "Embraer 175",
+            "airline": "American",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+            "travel_class": "Economy",
+            "flight_number": "AA 4560",
+            "legroom": "30 in",
+            "extensions": [
+              "Average legroom (30 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Stream media to your device",
+              "Carbon emissions estimate: 139 kg"
+            ],
+            "plane_and_crew_by": "Republic Airways as American Eagle"
+          }
+        ],
+        "total_duration": 112,
+        "carbon_emissions": {
+          "this_flight": 140000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 25
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pCUVRRMU5qQWFDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkFBIiwiNDU2MCJdXV0="
+      },
+      "score": 131.79333333333332,
+      "departure_airport": "LGA",
+      "source": "best_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 15:26"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 17:26"
+            },
+            "duration": 120,
+            "airplane": "Embraer 175",
+            "airline": "American",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+            "travel_class": "Economy",
+            "flight_number": "AA 4497",
+            "legroom": "30 in",
+            "extensions": [
+              "Average legroom (30 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Stream media to your device",
+              "Carbon emissions estimate: 139 kg"
+            ],
+            "often_delayed_by_over_30_min": true,
+            "plane_and_crew_by": "Republic Airways as American Eagle"
+          }
+        ],
+        "total_duration": 120,
+        "carbon_emissions": {
+          "this_flight": 140000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 25
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pCUVRRME9UY2FDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkFBIiwiNDQ5NyJdXV0="
+      },
+      "score": 131.66,
+      "departure_airport": "LGA",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 06:25"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 08:14"
+            },
+            "duration": 109,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5256",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "Carbon emissions estimate: 109 kg"
+            ],
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 109,
+        "carbon_emissions": {
+          "this_flight": 110000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -2
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERVeU5UWWFDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTI1NiJdXV0="
+      },
+      "score": 121.84333333333333,
+      "departure_airport": "LGA",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 08:50"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 10:45"
+            },
+            "duration": 115,
+            "airplane": "Boeing 737",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 1253",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Free Wi-Fi",
+              "In-seat power & USB outlets",
+              "Live TV",
+              "Carbon emissions estimate: 78 kg"
+            ]
+          }
+        ],
+        "total_duration": 115,
+        "carbon_emissions": {
+          "this_flight": 79000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -29
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERFeU5UTWFDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiMTI1MyJdXV0="
+      },
+      "score": 121.74333333333334,
+      "departure_airport": "LGA",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "John F. Kennedy International Airport",
+              "id": "JFK",
+              "time": "2026-01-22 15:26"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 17:24"
+            },
+            "duration": 118,
+            "airplane": "Embraer 175",
+            "airline": "American",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+            "travel_class": "Economy",
+            "flight_number": "AA 4658",
+            "legroom": "30 in",
+            "extensions": [
+              "Average legroom (30 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Stream media to your device",
+              "Carbon emissions estimate: 113 kg"
+            ],
+            "often_delayed_by_over_30_min": true,
+            "plane_and_crew_by": "Republic Airways as American Eagle"
+          }
+        ],
+        "total_duration": 118,
+        "carbon_emissions": {
+          "this_flight": 113000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 1
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AA.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJU3pWcVkwaE9VakJqY2sxQlMwOXNkbWRDUnkwdExTMHRMUzB0TFMxNWJHeG1OVUZCUVVGQlIyeHFOSEpuUXpZeGJFdEJFZ1pCUVRRMk5UZ2FDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkpGSyIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkFBIiwiNDY1OCJdXV0="
+      },
+      "score": 121.69333333333333,
+      "departure_airport": "JFK",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 17:00"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 18:58"
+            },
+            "duration": 118,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 5232",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "Carbon emissions estimate: 109 kg"
+            ],
+            "often_delayed_by_over_30_min": true,
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 118,
+        "carbon_emissions": {
+          "this_flight": 110000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -2
+        },
+        "price": 367,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERVeU16SWFDd2pjbmdJUUFob0RWVk5FT0J4dzNKNEMiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNTIzMiJdXV0="
+      },
+      "score": 120.69333333333333,
+      "departure_airport": "LGA",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "LaGuardia Airport",
+              "id": "LGA",
+              "time": "2026-01-22 19:50"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 21:47"
+            },
+            "duration": 117,
+            "airplane": "Canadair RJ 900",
+            "airline": "Delta",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+            "travel_class": "Economy",
+            "flight_number": "DL 4956",
+            "legroom": "31 in",
+            "extensions": [
+              "Average legroom (31 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Carbon emissions estimate: 118 kg"
+            ],
+            "often_delayed_by_over_30_min": true,
+            "plane_and_crew_by": "Endeavor Air DBA Delta Connection"
+          }
+        ],
+        "total_duration": 117,
+        "carbon_emissions": {
+          "this_flight": 118000,
+          "typical_for_this_route": 112000,
+          "difference_percent": 5
+        },
+        "price": 397,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJZG1ScWRXaFJVVkZCZW5kQlNEWTRNV2RDUnkwdExTMHRMUzB0TFhCbWJtb3hPVUZCUVVGQlIyeHFOSEpqVFhBMFZtbEJFZ1pFVERRNU5UWWFDd2lUdGdJUUFob0RWVk5FT0J4d2s3WUMiLFtbIkxHQSIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIkRMIiwiNDk1NiJdXV0="
+      },
+      "score": 120.11000000000001,
+      "departure_airport": "LGA",
+      "source": "other_flights"
+    },
+    {
+      "flight": {
+        "flights": [
+          {
+            "departure_airport": {
+              "name": "Newark Liberty International Airport",
+              "id": "EWR",
+              "time": "2026-01-22 14:37"
+            },
+            "arrival_airport": {
+              "name": "Raleigh-Durham International Airport",
+              "id": "RDU",
+              "time": "2026-01-22 16:21"
+            },
+            "duration": 104,
+            "airplane": "Airbus A319",
+            "airline": "United",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+            "travel_class": "Economy",
+            "flight_number": "UA 1296",
+            "legroom": "30 in",
+            "extensions": [
+              "Average legroom (30 in)",
+              "Wi-Fi for a fee",
+              "In-seat power & USB outlets",
+              "Stream media to your device",
+              "Carbon emissions estimate: 103 kg"
+            ]
+          }
+        ],
+        "total_duration": 104,
+        "carbon_emissions": {
+          "this_flight": 104000,
+          "typical_for_this_route": 112000,
+          "difference_percent": -7
+        },
+        "price": 317,
+        "type": "Round trip",
+        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UA.png",
+        "extensions": [
+          "Checked baggage for a fee",
+          "Bag and fare conditions depend on the return flight"
+        ],
+        "departure_token": "WyJDalJJVTFGeFVIUlRTbHBzVjFWQlMyZzVXSGRDUnkwdExTMHRMUzB0TFMxNWJHOXFOa0ZCUVVGQlIyeHFOSEpqVDAxWU4wOUJFZ1pWUVRFeU9UWWFDd2pUOXdFUUFob0RWVk5FT0J4dzAvY0IiLFtbIkVXUiIsIjIwMjYtMDEtMjIiLCJSRFUiLG51bGwsIlVBIiwiMTI5NiJdXV0="
+      },
+      "score": 111.92666666666666,
+      "departure_airport": "EWR",
+      "source": "other_flights"
+    }
+  ],
+  "total_options": 35,
+  "price_insights": {
+    "lowest_price": 317,
+    "price_level": "high",
+    "typical_range": [
+      180,
+      255
+    ]
+  },
+  "search_params": {
+    "departure": "Home Airports",
+    "arrival": "RDU",
+    "outbound_date": "2026-01-22",
+    "return_date": "2026-01-24",
+    "time_pref": "midday",
+    "aircraft_pref": null
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "created": "2026-01-11",
+    "description": "Pre-defined tag domains for Content Library v4 hybrid taxonomy"
+  },
+  "domains": [
+    {
+      "id": "business-strategy",
+      "name": "Business & Strategy",
+      "description": "Strategic thinking, planning, business models, go-to-market",
+      "example_tags": ["pricing", "positioning", "competitive-analysis", "gtm", "partnerships"]
+    },
+    {
+      "id": "career-talent",
+      "name": "Career & Talent",
+      "description": "Career development, hiring, talent management, recruiting",
+      "example_tags": ["job-search", "interviewing", "resume", "coaching", "talent-acquisition"]
+    },
+    {
+      "id": "product-technology",
+      "name": "Product & Technology",
+      "description": "Product development, engineering, tech trends, AI/ML",
+      "example_tags": ["product-management", "ai", "engineering", "ux", "architecture"]
+    },
+    {
+      "id": "customer-community",
+      "name": "Customer & Community",
+      "description": "Customer success, community building, engagement, support",
+      "example_tags": ["customer-success", "community", "support", "engagement", "retention"]
+    },
+    {
+      "id": "industry-insights",
+      "name": "Industry Insights",
+      "description": "Market trends, competitor intel, industry news, research",
+      "example_tags": ["market-trends", "competitor-intel", "research", "funding", "startups"]
+    },
+    {
+      "id": "personal-meta",
+      "name": "Personal & Meta",
+      "description": "Personal development, productivity, meta-learning, wellness",
+      "example_tags": ["productivity", "learning", "wellness", "reflection", "habits"]
+    }
+  ]
+}
+

@@ -1,28 +1,27 @@
 {
   "manifest_version": "1.0",
-  "generated_at": "2026-01-09T14:24:29.276948",
+  "generated_at": "2026-01-09T19:30:45.682286",
   "meeting_folder": "2026-01-09_ilse_x_vrijen_",
   "meeting_date": "2026-01-09",
   "status": "processed",
+  "processed_at": "2026-01-10T14:47:00-05:00",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true,
-    "detailed_recap": true,
-    "decisions": true,
-    "action_items": true,
-    "business_context": true,
-    "tone_and_context": true,
-    "blurbs_requested": true,
-    "key_moments": true,
-    "deliverables": true,
-    "meeting_metadata": true,
-    "thought_provoking_ideas": true
+    "B01_DETAILED_RECAP": true,
+    "B03_STAKEHOLDER_INTELLIGENCE": true,
+    "B03_DECISIONS": true,
+    "B05_ACTION_ITEMS": true,
+    "B06_BUSINESS_CONTEXT": true,
+    "B07_TONE_AND_CONTEXT": true,
+    "B21_KEY_MOMENTS": true,
+    "B25_DELIVERABLES": true,
+    "B26_MEETING_METADATA": true,
+    "B32_THOUGHT_PROVOKING_IDEAS": true
   },
-  "last_updated_by": "MG-6_State_Transition",
-  "last_updated_at": "2026-01-09T15:47:50-05:00",
-  "processed_at": "2026-01-09T15:47:50Z",
-  "meeting_type": "internal",
+  "last_updated_by": "MG-6_Agent",
+  "last_updated_at": "2026-01-10T14:47:00-05:00",
   "crm_synced": true,
-  "crm_sync_timestamp": "2026-01-09T15:46:46.673368"
+  "crm_sync_timestamp": "2026-01-10T19:46:39.127833"
 }

@@ -2,6 +2,31 @@
 
 <!-- Generated MD view of JSONL -->
 
+## Inbox
+<!-- New items inserted below by n5_social_idea_add.py -->
+
+**ID:** I-2026-01-10-002  
+**Title:** Founder signal: career pivot tracking  
+**Body:**
+
+Idea: Track a person’s career pivots (role/function changes, industry switches, lateral vs step-up moves, gaps/sabbaticals, geographic jumps) as a proxy for ‘founder signal’—especially speed/intentionality of pivots, risk appetite, and narrative coherence. Could be a scoring rubric + timeline visualization; use it to identify high-upside founders early and to ask better diligence questions.
+
+**Tags:** founder-signal,career-pivots,scoring,rubric,early-stage
+
+---
+
+
+**ID:** I-2026-01-10-001  
+**Title:** Zo Drive for grassroots campaigning  
+**Body:**
+
+Use Zo Drive as an end-to-end grassroots campaigning engine: a shared Drive structure + scheduled agents that (1) ingest canvassing notes, call transcripts, and event RSVPs, (2) auto-summarize per precinct/issue, (3) generate outreach scripts + follow-ups, and (4) maintain a live dashboard of supporter status, volunteer shifts, and donation nudges. Treat Drive folders as the campaign’s operating system; Zo agents are the ‘field organizers’ that keep it updated.
+
+**Tags:** campaigning,grassroots,zo-drive,agents,ops
+
+---
+
+
 ## Open
 
 ### Zo Good - Article idea for first week using Zo
@@ -83,5 +108,6 @@ Rant about how everyone is using the same data. The long-term edge isn't the mod
 **Notes:** Captured in con_IoKQssucYCKjUUmt
 
 ---
+
 
 

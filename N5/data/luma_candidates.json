@@ -1,47 +1,5 @@
 [
   {
-    "id": "evt-E84go7xQIApQAm2",
-    "url": "https://lu.ma/39s6yxpg",
-    "title": "NYC EDITS",
-    "description": "",
-    "event_date": "2026-01-10",
-    "event_time": "20:00",
-    "venue_name": "Brookfield Place, New York, New York",
-    "venue_address": "Brookfield Place, 230 Vesey St, New York, NY 10281, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Nyc Edits\", \"url\": \"usr-2zOBGG80DadlOFy\", \"avatar\": \"https://cdn.lu.ma/avatars-default/avatar_28.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 68,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/io/bd5618b7-46b7-4c69-b980-327d0ae0932c.gif",
-    "source": "luma",
-    "invitation_status": "public",
-    "score": 7.5,
-    "status": "available"
-  },
-  {
-    "id": "evt-aA70ANKGoGlgBAE",
-    "url": "https://lu.ma/wj391q4v",
-    "title": "GreenHouse",
-    "description": "",
-    "event_date": "2026-01-10",
-    "event_time": "22:00",
-    "venue_name": "Bushwick, Kings County, New York",
-    "venue_address": "House of Yes, 2 Wyckoff Ave, Brooklyn, NY 11237, USA",
-    "location": "",
-    "organizer_name": "",
-    "organizers": "[{\"name\": \"Botanical Future\", \"url\": \"BotanicalFuture\", \"avatar\": \"https://images.lumacdn.com/avatars/pw/a614eb67-0d7d-49ce-95e2-c243bfcf9dcf.png\"}]",
-    "city": "nyc",
-    "price": "Free",
-    "attendee_count": 29,
-    "cover_image_url": "https://images.lumacdn.com/event-covers/eh/b703d0c5-7121-4397-ad87-661ef2eaac8d.png",
-    "source": "luma",
-    "invitation_status": "public",
-    "score": 5.5,
-    "status": "available"
-  },
-  {
     "id": "evt-UfeH7ZDg9xE0zWO",
     "url": "https://lu.ma/rtmmkub4",
     "title": "Vibe Coding with APIs",
@@ -59,7 +17,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/74/b63a2ce0-cba6-4544-afe2-facd7c5911f1.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 7.5,
+    "score": 7.0,
     "status": "maybe"
   },
   {
@@ -80,7 +38,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/fv/fdf2bcbd-6fb2-4112-a040-33ccdabcce0c.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 7.5,
+    "score": 7.0,
     "status": "available"
   },
   {
@@ -101,7 +59,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/uu/df00de3f-bde7-4465-8b75-c2bd5cdbbe22.jpg",
     "source": "luma",
     "invitation_status": "public",
-    "score": 7.5,
+    "score": 7.0,
     "status": "available"
   },
   {
@@ -122,7 +80,7 @@
     "cover_image_url": "https://images.lumacdn.com/event-covers/zg/562a137e-db91-4d27-95d8-97555e0e3eed.png",
     "source": "luma",
     "invitation_status": "public",
-    "score": 6.5,
+    "score": 6.0,
     "status": "available"
   },
   {

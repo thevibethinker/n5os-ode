@@ -1,52 +1,83 @@
 ---
-created: 2026-01-09
-last_edited: 2026-01-09
+created: 2026-01-10
+last_edited: 2026-01-10
 version: 1.0
-provenance: MG-2_Intelligence_Generator
+provenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141
+block_type: B05_ACTION_ITEMS
 ---
 
-# B05: Action Items
+# B05: Action Items — Ilse × Vrijen (Jan 9, 2026)
 
-## Ilse
+## Immediate Actions
 
-| ID | Action Item | Deadline | Priority |
-|----|-------------|----------|----------|
-| A1 | Reflect on product implications of talent-scanning-first pivot | Today | HIGH |
-| A2 | Determine what needs to be built differently given new strategic direction | Today | HIGH |
-| A3 | Update Logan on talent scanning pivot in daily standup | Today | HIGH |
-| A4 | Write up exactly what needs to be built before implementing | Before Monday | MEDIUM |
-| A5 | Deliver silent scans for Agave and Deep Tune roles | Monday | MEDIUM |
-| A6 | Figure out silent scan technical implementation (scripts outdated) | Before Monday | MEDIUM |
-
----
-
-## V (Vrijen)
-
-| ID | Action Item | Deadline | Priority |
-|----|-------------|----------|----------|
-| A7 | Communicate delay to Holly (silent scans coming Monday, not today) | Today | HIGH |
-| A8 | Share meeting notes with Ilse | Today | LOW |
-| A9 | Pull up JD links for Agave and Deep Tune (already sent yesterday) | N/A - Done | LOW |
+### A1: Inform Holly of Monday Timeline
+**Owner**: V  
+**Deadline**: Same day  
+**Status**: Pending  
+**Context**: Silent scans for Agave and Deep Tune roles cannot be delivered immediately due to strategic pivot requiring reflection time.
 
 ---
 
-## Unassigned / Shared
-
-| ID | Action Item | Owner | Deadline | Notes |
-|----|-------------|-------|----------|-------|
-| A10 | Draft recruiter onboarding agreement re: candidate data usage | TBD | TBD | Ilse flagged need; no owner assigned |
-| A11 | Align with Logan on talent scanning as go-forward direction | V + Ilse | Today (standup) | Ilse leading sync |
+### A2: Brief Logan on Strategic Pivot
+**Owner**: V / Ilse  
+**Deadline**: Today's standup  
+**Status**: Pending  
+**Context**: Logan needs to be aware that talent scanning is now the core product, not the employer portal.
 
 ---
 
-## Context Notes
+### A3: Reflect on Architectural Implications
+**Owner**: Ilse  
+**Deadline**: Before Monday  
+**Status**: In Progress  
+**Context**: The pivot from "employer portal as core" to "talent scanning as core" affects what needs to be built. Ilse needs time to sit with this and figure out the right approach.
 
-- **A5 dependency:** Ilse needs to first complete A1, A2, and A4 before the silent scans can be delivered. This is a conscious choice to avoid building the wrong thing.
+---
 
-- **Technical debt acknowledged:** Many scripts are outdated due to rapid iteration. Silent scan + employer portal don't currently work together.
+### A4: Write Up Build Plan
+**Owner**: Ilse  
+**Deadline**: Before starting Monday work  
+**Status**: Pending  
+**Context**: Ilse committed to documenting what needs to be built ahead of time rather than diving into code.
 
-- **Roles for silent scan:**
-  - Agave (via Holly)
-  - Deep Tune (via Holly)
-  - Both are Marvin-adjacent roles
+---
+
+### A5: Deliver Silent Scans for Holly
+**Owner**: Ilse  
+**Deadline**: Monday  
+**Status**: Pending  
+**Details**: 
+- Roles: Agave, Deep Tune
+- Format: CSV (will be missing full vibe checks, strengths/weaknesses)
+- V to tidy up CSV for better ergonomics
+
+---
+
+### A6: Share Meeting Notes
+**Owner**: V  
+**Deadline**: Same day  
+**Status**: Pending  
+**Context**: V mentioned sharing notes from this call.
+
+---
+
+## Strategic Actions (No Hard Deadline)
+
+### S1: Draft Recruiter Agreement Terms
+**Owner**: TBD  
+**Context**: Need explicit terms preventing recruiters from adding pre-list candidates to their own mailing lists without approval.
+
+---
+
+### S2: Explore Superposition Integration
+**Owner**: V  
+**Context**: Potential partnership where Careerspan provides talent access layer to Superposition's employer-side solution.
+
+---
+
+## Completed During Call
+
+- ✅ Aligned on pivot: talent scanning is core product
+- ✅ Clarified recruiter strategy is tactical, not a platform pivot
+- ✅ Agreed on click-to-submit requirement for applicants
 

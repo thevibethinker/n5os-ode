@@ -156,6 +156,24 @@ A platform that extracts, structures, and compounds the metacognition of elite p
 
 ---
 
+### Robopsychology Foundation: Empathetic AI Personality Baseline
+
+**ID:** 3c6c291e-3306-49a2-b55d-4c79e86a4e51
+
+**Created:** 2026-01-11T23:30:01.169628+00:00
+
+**Priority:** H
+
+**Tags:** startup, AI, robopsychology, alignment, empathy
+
+**Body:**
+
+A company focused on researching and developing a definitive personality baseline for helpful, constructive, and empathetic AI. The mission is to create a standardized, aligned 'soul' for synthetic intelligence that balances utility with rigorous safety and human alignment. Key output: a canonical, testable baseline for AI behavior and empathy.
+
+**Notes:** Added at V's request. Related to the 'Robopsychology: Merit & Validity' exploration idea.
+
+---
+
 
 ## Pinned
 

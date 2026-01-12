@@ -6,11 +6,12 @@ Under Stakeholder Intelligence Interface Contract (V1).
 
 - Manages enrichment_queue in N5/data/crm_v3.db.
 - Delegates Aviato enrichment to enrichment.aviato_enricher.
-- Delegates Nyne enrichment (selective/fallback) to enrichment.nyne_enricher.
 - Writes back enrichment status to crm_v3.db.
 - Appends Intelligence Log entries into Personal/Knowledge/CRM/individuals/<slug>.md.
 
 Viewer/join responsibilities remain in stakeholder_intel.py.
+
+NOTE: Nyne integration removed 2026-01-11 due to rate limiting issues.
 """
 
 import sys
@@ -25,7 +26,7 @@ from pathlib import Path
 # Add workspace to path for imports
 sys.path.insert(0, '/home/workspace')
 from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
-from N5.scripts.enrichment.nyne_enricher import enrich_with_fallback
+# Nyne removed 2026-01-11 - rate limit issues
 from N5.scripts.stakeholder_intel import extract_linkedin_metadata, query_linkedin_conversation
 
 # Import canonical paths
@@ -41,7 +42,7 @@ PROFILES_DIR = CRM_PROFILES_DIR  # Legacy YAML (for queue lookups)
 WORKSPACE = Path("/home/workspace")
 CRM_MARKDOWN_DIR = CRM_INDIVIDUALS  # Canonical output location
 STAGING_DIR = WORKSPACE / "N5" / "data" / "staging" / "aviato"
-NYNE_STAGING_DIR = WORKSPACE / "N5" / "data" / "staging" / "nyne"
+# NYNE_STAGING_DIR removed 2026-01-11
 
 
 def fetch_next_enrichment_job():
@@ -206,23 +207,6 @@ def save_aviato_raw_json(slug: str, data: dict) -> Path | None:
         return None
 
 
-def save_nyne_raw_json(slug: str, data: dict) -> Path | None:
-    """Save raw Nyne response JSON to staging directory.
-    
-    Returns path to saved file, or None if save failed.
-    """
-    NYNE_STAGING_DIR.mkdir(parents=True, exist_ok=True)
-    filename = f"{slug}.json"
-    path = NYNE_STAGING_DIR / filename
-    try:
-        with open(path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, default=str)
-        return path
-    except Exception as e:
-        print(f"  ⚠ Failed to save Nyne raw JSON: {e}")
-        return None
-
-
 def _append_linkedin_intel(slug: str) -> None:
     """Append a LinkedIn Intelligence snapshot for this slug, if metadata & data exist.
 
@@ -278,16 +262,14 @@ def _append_linkedin_intel(slug: str) -> None:
 
 
 async def enrich_profile_via_tools(profile_row: dict, cursor) -> dict:
-    """Enrich a single CRM profile using Aviato and Nyne, return structured result.
+    """Enrich a single CRM profile using Aviato, return structured result.
 
     profile_row is a row from the profiles table (NOT the queue join row).
 
     Returns dict with keys:
     - status: 'succeeded' | 'not_found' | 'failed'
     - aviato_data: mapped CRM-style dict or None
-    - aviato_result: full Aviato result dict (for Nyne fallback logic)
-    - nyne_data: Nyne enrichment data or None
-    - nyne_mode: 'full' | 'newsfeed_only' | 'skipped' | None
+    - aviato_result: full Aviato result dict
     - error: short error string if failed/not_found
     - slug: CRM slug if resolvable
     """
@@ -296,13 +278,13 @@ async def enrich_profile_via_tools(profile_row: dict, cursor) -> dict:
     primary_email = profile_row.get("primary_email")
     email = primary_email or raw_email
     
-    # Get LinkedIn URL if available (improves Nyne results)
+    # Get LinkedIn URL if available (improves Aviato results)
     linkedin_url = profile_row.get("linkedin_url")
 
     # Resolve CRM markdown slug for this profile id
     slug = _load_profile_slug(cursor, profile_id)
 
-    # Step 1: Call Aviato - returns dict with keys: success, data, error, markdown
+    # Call Aviato - returns dict with keys: success, data, error, markdown
     aviato_result = None
     try:
         aviato_result = await enrich_via_aviato(email, linkedin_url=linkedin_url)
@@ -311,39 +293,13 @@ async def enrich_profile_via_tools(profile_row: dict, cursor) -> dict:
 
     aviato_data = aviato_result.get('data') if aviato_result else None
     aviato_success = aviato_result.get('success', False) if aviato_result else False
-    
-    # Step 2: Call Nyne with selective/fallback logic
-    nyne_result = None
-    nyne_mode = None
-    try:
-        nyne_result = await enrich_with_fallback(
-            email=email,
-            linkedin_url=linkedin_url,
-            aviato_result=aviato_result
-        )
-        # Determine mode based on what happened
-        if nyne_result.get('data'):
-            # Check if this was full enrichment or newsfeed only
-            if nyne_result['data'].get('displayname') or nyne_result['data'].get('organizations'):
-                nyne_mode = 'full'
-            else:
-                nyne_mode = 'newsfeed_only'
-        elif nyne_result.get('success'):
-            nyne_mode = 'skipped'
-        else:
-            nyne_mode = 'failed'
-    except Exception as e:
-        nyne_result = {"success": False, "data": None, "error": str(e), "markdown": None}
-        nyne_mode = 'failed'
 
-    nyne_data = nyne_result.get('data') if nyne_result else None
-
-    # Determine overall status
-    if aviato_data or nyne_data:
+    # Determine overall status (Aviato-only)
+    if aviato_data:
         status = "succeeded"
         error = None
-    elif aviato_success and nyne_result and nyne_result.get('success'):
-        # Both succeeded but no data found
+    elif aviato_success:
+        # Succeeded but no data found
         status = "not_found"
         error = None
     else:
@@ -354,9 +310,6 @@ async def enrich_profile_via_tools(profile_row: dict, cursor) -> dict:
         "status": status,
         "aviato_data": aviato_data,
         "aviato_result": aviato_result,
-        "nyne_data": nyne_data,
-        "nyne_result": nyne_result,
-        "nyne_mode": nyne_mode,
         "error": error,
         "slug": slug,
         "markdown": aviato_result.get('markdown') if aviato_result else None
@@ -430,56 +383,6 @@ async def process_enrichment_job(job: dict, dry_run: bool = False) -> None:
             body = f"**Source:** aviato_api\n\n- Status: {result['status']}\n- Error: {result['aviato_result'].get('error')}"
             _append_intel_log(slug, "aviato_enrichment_error", body)
 
-        # Append Nyne intelligence (new)
-        nyne_mode = result.get("nyne_mode")
-        nyne_data = result.get("nyne_data")
-        nyne_result = result.get("nyne_result")
-        
-        print(f"  🔍 Nyne mode: {nyne_mode}")
-        
-        if nyne_data:
-            # Save raw JSON to staging
-            json_path = save_nyne_raw_json(slug, nyne_data)
-            if json_path:
-                print(f"  💾 Nyne raw JSON saved to {json_path}")
-            
-            # Use the pre-formatted markdown from nyne_enricher
-            if nyne_result and nyne_result.get('markdown'):
-                _append_intel_log(slug, f"nyne_enrichment_{nyne_mode}", nyne_result['markdown'])
-            else:
-                # Fallback: format manually
-                body_lines = ["**Source:** nyne_api", f"**Mode:** {nyne_mode}", ""]
-                if nyne_data.get('displayname'):
-                    body_lines.append(f"**Name:** {nyne_data['displayname']}")
-                if nyne_data.get('bio'):
-                    body_lines.append(f"**Bio:** {nyne_data['bio']}")
-                # Social profiles
-                social = nyne_data.get('social_profiles', {})
-                if social:
-                    body_lines.append("\n**Social Profiles:**")
-                    for platform, profile in social.items():
-                        if isinstance(profile, dict) and profile.get('url'):
-                            body_lines.append(f"- {platform.title()}: {profile['url']}")
-                        elif profile:
-                            body_lines.append(f"- {platform.title()}: {profile}")
-                # Contact info
-                phones = nyne_data.get('fullphone', [])
-                if phones:
-                    body_lines.append("\n**Phone Numbers:**")
-                    for phone in phones[:3]:
-                        if isinstance(phone, dict):
-                            body_lines.append(f"- {phone.get('fullphone', phone)}")
-                        else:
-                            body_lines.append(f"- {phone}")
-                body = "\n".join(body_lines)
-                _append_intel_log(slug, f"nyne_enrichment_{nyne_mode}", body)
-        elif nyne_mode == 'skipped':
-            _append_intel_log(slug, "nyne_enrichment_skipped", 
-                "**Source:** nyne_api\n**Status:** Skipped (rich Aviato data already available)")
-        elif nyne_mode == 'failed' and nyne_result and nyne_result.get('error'):
-            body = f"**Source:** nyne_api\n\n- Status: failed\n- Error: {nyne_result.get('error')}"
-            _append_intel_log(slug, "nyne_enrichment_error", body)
-
         # Always try to append LinkedIn intelligence if metadata exists
         _append_linkedin_intel(slug)
 
@@ -487,8 +390,6 @@ async def process_enrichment_job(job: dict, dry_run: bool = False) -> None:
     sources = []
     if result["aviato_data"]:
         sources.append("aviato_api")
-    if result["nyne_data"]:
-        sources.append("nyne_api")
     source_str = "+".join(sources) if sources else "none"
     
     if result["status"] == "succeeded":
@@ -718,6 +619,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
 
