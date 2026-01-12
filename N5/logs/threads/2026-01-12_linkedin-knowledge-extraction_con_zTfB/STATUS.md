@@ -72,16 +72,3 @@ W0 (Data Extraction)
 
 All 7 workers finished. See `COMPLETION_REPORT.md` for full summary.
 
-
-
----
-
-## Graduation Status
-
-| Field | Value |
-|-------|-------|
-| **Graduated** | ✅ Yes |
-| **Graduation Date** | 2026-01-12 |
-| **Capability Doc** | `N5/capabilities/internal/linkedin-knowledge-extraction.md` |
-
-This build has been graduated to the capability registry. The capability doc is now the source of truth for "what this does."
