@@ -1,7 +1,7 @@
 ---
 created: 2025-11-16
-last_edited: 2026-01-03
-version: 3.1
+last_edited: 2026-01-12
+version: 3.2
 tool: true
 description: Generate high-quality follow-up emails from meeting intelligence using voice transformation and semantic memory (with anti-hallucination)
 tags:
@@ -14,13 +14,16 @@ tags:
 mg_stage: MG-5
 status: canonical
 ---
-# Follow-Up Email Generator v3.1
+# Follow-Up Email Generator v3.2
 
 **Purpose:** Generate authentic, high-quality follow-up emails from meeting intelligence
 **Quality Bar:** Must score ≥90/100 on rubric (voice fidelity, semantic enrichment, organization, deliverables)
 **Voice System:** Uses V's voice transformation with style constraints
 **Semantic Memory:** Pulls context from CRM, meeting history, and V's positions
 **Anti-Hallucination:** All URLs, metrics, and company claims must be sourced from positioning file or content library
+
+**v3.2 Key Change:**
+- ⭐ PHASE 2.5: Voice Injection Layer (auto-applies V's linguistic primitives)
 
 **v3.1 Key Change:**
 - ⭐ PHASE 1.1: Anti-hallucination gate (prevents fabricated URLs, metrics, company claims)
@@ -322,6 +325,55 @@ Use the `similar_emails` results from PHASE 1.5 as few-shot examples for voice m
 - Body: Organized with bold headers + bullets
 - Closing: "Best,"
 - Length: 10-15 sentences typical when delivering multiple items
+
+---
+
+### PHASE 2.5: VOICE INJECTION LAYER ⭐ NEW in v3.2
+
+**Purpose:** Auto-inject V's distinctive linguistic patterns. Fully automatic — no human review.
+
+**Implementation:**
+```python
+from N5.scripts.voice_layer import VoiceContext, inject_voice
+
+# Build context from meeting
+ctx = VoiceContext(
+    content_type="email",
+    platform="email",
+    purpose="follow-up",
+    topic_domains=extracted_domains_from_meeting,  # e.g., ["hiring", "career", "partnership"]
+)
+
+# Auto-inject (happens before generation)
+enhanced_prompt = inject_voice(base_generation_prompt, ctx)
+```
+
+**What happens automatically:**
+1. Layer retrieves 3 relevant primitives from `voice_library.db`
+2. Primitives injected as context into generation prompt
+3. LLM weaves patterns naturally (never forced)
+4. Usage tracked to prevent repetition
+
+**Example injected fragment:**
+```
+## Voice Enhancement (Auto-Applied)
+
+Weave these V-distinctive patterns naturally into your writing:
+
+1. [metaphor] "talent optionality" — framing career moves as options
+2. [signature_phrase] "provenanced work history"
+3. [syntactic_pattern] "X isn't Y, it's Z"
+
+Guidelines:
+- Use what fits naturally, skip what doesn't
+- One distinctive element per paragraph max
+- Never force — if it feels mechanical, leave it out
+```
+
+**Domain Extraction (from meeting context):**
+- From B06_BUSINESS_CONTEXT: industry, sector
+- From B26_METADATA: meeting type, company sector
+- From conversation topics: inferred domains
 
 ---
 
@@ -660,6 +712,7 @@ Best,
 
 **Architect:** Vibe Architect + Vibe Operator
 **Migration Status:** Complete - Anti-Hallucination + Semantic Memory Integration (Jan 2026)
+
 
 
 

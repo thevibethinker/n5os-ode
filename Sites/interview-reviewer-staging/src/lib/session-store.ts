@@ -5,7 +5,8 @@
 interface TranscriptEntry {
   transcript: string;
   company: string;
-  sentiment: string;
+  jobDescription: string;      // Now required
+  selfAssessment: string;      // Replaced sentiment
   createdAt: number;
 }
 
@@ -17,7 +18,8 @@ export function storeTranscript(
   sessionId: string,
   transcript: string,
   company: string,
-  sentiment: string
+  jobDescription: string,      // Now required
+  selfAssessment: string       // Replaced sentiment
 ): void {
   // Clean expired entries first
   cleanExpired();
@@ -25,7 +27,8 @@ export function storeTranscript(
   store.set(sessionId, {
     transcript,
     company,
-    sentiment,
+    jobDescription,
+    selfAssessment,
     createdAt: Date.now(),
   });
 }
@@ -60,4 +63,6 @@ function cleanExpired(): void {
 
 // Run cleanup every 5 minutes
 setInterval(cleanExpired, 5 * 60 * 1000);
+
+
 

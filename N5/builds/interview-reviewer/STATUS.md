@@ -1,87 +1,79 @@
 ---
-created: 2026-01-12
+created: 2026-01-11
 last_edited: 2026-01-12
-version: 3.0
-provenance: con_g62UmSAYGCHuZjmN
+version: 2.1
+provenance: con_F2njykPaFaBaNmKN
 ---
 
-# Build Status: Am I Hired?
+# Interview Reviewer - Build Status
 
-## Current State
+## Current Phase: Phase 3 COMPLETE ✅ — Theory Stack Ready
 
-**Phase:** 6 (Polish & Deploy) — ✅ COMPLETE  
-**Progress:** 34/35 (97%)  
-**Last Updated:** 2026-01-12 01:45 ET
+### Phase 3: Content & Theory Integration (Completed 2026-01-12)
 
-## Deployment Summary
+**Coaching Reference** (`Sites/interview-reviewer-staging/src/content/coaching-reference.md`):
+- [x] Part I: Philosophy (Bragging Paradox, Composite Candidate Model)
+- [x] Part II: Evaluation Framework (6-Point "Art of The Brag" rubric)
+- [x] Part III: JD Integration framework
+- [x] Part IV: Red Flags Catalog (RF-1 through RF-10)
+- [x] Part V: Question Decomposition (taxonomy, OPM scale, True Intent)
+- [x] Part VI: Bidirectional Gap Analysis
 
-| Item | Status |
-|------|--------|
-| **Production URL** | https://interview-reviewer-va.zocomputer.io |
-| **Payment Link** | https://buy.stripe.com/28EeVd6gG6IR2vDaXIbsc00 |
-| **Service ID** | `svc_q4tMriEci0U` |
-| **Port** | 3500 |
-| **OpenAI** | ✅ Configured |
-| **Stripe** | ✅ Live mode ($5 one-time) |
+**Theory Documents** (`N5/builds/interview-reviewer/theory/`):
+- [x] 01-JD-DECOMPOSITION.md — Signal/noise separation, extraction rules, output schema
+- [x] 02-COMPETENCY-ONTOLOGY.md — 60 competencies, 8 clusters, synonym resolution
+- [x] 03-QUESTION-INFERENCE-RULES.md — Question→Competency inference, confidence scoring
 
-## What's Complete
+**Form Updates**:
+- [x] Added JD textarea field (to be made REQUIRED)
+- [x] JD passed through session store to analysis
 
-### ✅ Phase 0-4: Core Implementation
-- [x] Hono server scaffold
-- [x] Health endpoint (`/health`)
-- [x] Landing page with form
-- [x] In-memory transcript store (ephemeral)
-- [x] SQLite metadata DB (no transcript column)
-- [x] OpenAI analysis pipeline (stub content)
-- [x] Rate limiter (50/hour default)
-- [x] Circuit breaker (100 threshold)
-- [x] `/submit` POST endpoint
-- [x] `/success` page with payment verification
-- [x] Report formatting (markdown → HTML)
-- [x] Admin endpoint (`/admin/reset-circuit`)
-- [x] Demo page (`/demo`) for preview
+## Theory Stack Summary
 
-### ✅ Phase 5: Safety
-- [x] Rate limiting implemented
-- [x] Circuit breaker implemented
-- [x] Error pages
+| Document | Purpose |
+|----------|---------|
+| coaching-reference.md | How to evaluate answers (the "brain") |
+| 01-JD-DECOMPOSITION.md | How to parse JDs into requirements |
+| 02-COMPETENCY-ONTOLOGY.md | The vocabulary connecting JD ↔ Questions ↔ Evaluation |
+| 03-QUESTION-INFERENCE-RULES.md | How to infer what questions are testing |
 
-### ✅ Phase 6: Polish & Deploy
-- [x] README.md
-- [x] LICENSE (MIT)
-- [x] .gitignore
-- [x] `/privacy` page
-- [x] `/terms` page
-- [x] Stripe product created ($5 one-time, live mode)
-- [x] PAYMENT_LINK_URL env var set
-- [x] Deploy to production site
-- [x] Register user service
-- [x] Smoke test end-to-end
+**All theory content is complete. Ready for implementation.**
 
-### ⏳ Phase 7: Content Integration (Blocked)
-- [ ] V provides coaching reference files
-- [ ] Extract and structure content
-- [ ] Update `content/coaching-reference.md`
-- [ ] Test with real content
+## Next Phase: Implementation
 
-## Environment Variables (Production)
+Per PRD-MultiStage-Analysis.md, the 5-stage pipeline needs to be wired up:
 
-```
-BASE_URL=https://interview-reviewer-va.zocomputer.io
-PAYMENT_LINK_URL=https://buy.stripe.com/28EeVd6gG6IR2vDaXIbsc00
-OPENAI_API_KEY=sk-proj-...(set)
-ADMIN_KEY=my-umbrella-banana-reset-bull-2026
-```
+1. **Stage 1:** Input Collection (JD required, transcript, self-assessment)
+2. **Stage 2:** JD Analysis (use theory/01 + theory/02)
+3. **Stage 3:** Transcript Analysis (use coaching-reference + theory/03)
+4. **Stage 4:** Gap Analysis (JD requirements vs questions asked vs answers given)
+5. **Stage 5:** Report Generation (structured HTML output)
 
-## Files
+## Key Decisions (Phase 8)
+
+| Decision | Value |
+|----------|-------|
+| JD field | Required (not optional) |
+| Sentiment → selfAssessment | Free-form textarea |
+| Models | gpt-5.1-mini (Stage 1), gpt-5.1 (Stages 2-5) |
+| Promo codes | 5 uses, 90 days validity |
+| Pricing | $5 (unchanged) |
+
+## Key Files
 
 - **Staging:** `Sites/interview-reviewer-staging/`
 - **Production:** `Sites/interview-reviewer/`
 - **Plan:** `N5/builds/interview-reviewer/PLAN.md`
+- **PRD:** `N5/builds/interview-reviewer/PRD-MultiStage-Analysis.md`
+- **Theory:** `N5/builds/interview-reviewer/theory/`
 
-## Next Steps
+## Background Worker
 
-1. **V:** Provide coaching reference content (text files, frameworks, rubrics)
-2. **Builder:** Integrate content into `src/content/coaching-reference.md`
-3. **Optional:** Push to GitHub as open source
+- **ID:** WORKER_zrsF_20260112_065411
+- **Task:** Ingest coaching PDFs into `Knowledge/content-library/coaching/`
+- **Status:** Pending execution
+
+
+
+
 

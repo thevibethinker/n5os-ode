@@ -373,306 +373,241 @@ def cmd_chunk(args):
 
 
 # =============================================================================
-# STEP 3: Synthesis (Local Heuristics - No LLM)
+# STEP 3: LLM-Based Synthesis
 # =============================================================================
 
-# Generic engagement openers to EXCLUDE (too common, not distinctive)
-GENERIC_OPENERS = {
-    "couldn't agree more",
-    "couldn t agree more",
-    "love this",
-    "great post",
-    "thanks for sharing",
-    "well said",
-    "so true",
-    "this is great",
-    "great point",
-    "exactly this",
-    "100%",
-    "this resonates",
-    "spot on",
-    "nailed it",
-    "perfectly said",
-    "agree completely",
-    "absolutely",
-    "totally agree",
-    "yes yes yes",
-    "preach",
-    "louder for the people",
-    "this right here",
-    "underrated take",
-    "underrated post",
-    "here for this",
-    "following for",
-    "great share",
-    "interesting read",
-    "food for thought",
-    "makes you think",
-    "good stuff",
-    "nice one",
-    "congrats",
-    "congratulations",
-    "well deserved",
-    "so proud",
-    "amazing work",
-    "keep it up",
-    "keep going",
-}
+SYNTHESIS_PROMPT = """You are analyzing extracted linguistic primitives from V's LinkedIn writing.
 
-# Domain keywords for tagging
-DOMAIN_KEYWORDS = {
-    "career-coaching": ["career", "coaching", "coach", "transition", "pivot", "reinvention", "path", "trajectory", "growth"],
-    "hiring": ["hiring", "hire", "recruiter", "recruiting", "talent acquisition", "sourcing", "employer", "candidate experience"],
-    "recruiting": ["recruiting", "recruitment", "headhunter", "talent", "pipeline", "outreach", "sourcing"],
-    "interviewing": ["interview", "interviewing", "behavioral", "questions", "screening", "assessment"],
-    "job-search": ["job search", "job hunting", "apply", "application", "resume", "cv", "cover letter", "linkedin"],
-    "networking": ["network", "networking", "connection", "relationship", "warm intro", "referral"],
-    "leadership": ["leader", "leadership", "manage", "management", "team", "culture", "org"],
-    "entrepreneurship": ["founder", "startup", "entrepreneur", "venture", "business", "company"],
-    "personal-brand": ["brand", "branding", "visibility", "content", "thought leader", "presence"],
-    "skills": ["skill", "skills", "competency", "learning", "upskill", "reskill"],
-}
+For each primitive, provide:
+1. **distinctiveness** (0.0-1.0): How V-specific is this vs generic LinkedIn/professional speak?
+   - 1.0 = Highly distinctive, unmistakably V's voice
+   - 0.7-0.9 = Distinctive framing or metaphor, not common
+   - 0.4-0.6 = Somewhat distinctive but could appear elsewhere  
+   - 0.1-0.3 = Generic professional language
+   - 0.0 = Pure engagement fluff ("love this!", "couldn't agree more")
 
-# Pattern reversal detection patterns
-PATTERN_REVERSAL_PATTERNS = [
-    r"not\s+(?:about\s+)?(.{3,40})[\s—\-]+(?:it'?s\s+)?about\s+(.{3,40})",
-    r"it'?s\s+not\s+(.{3,40})[\s—\-]+it'?s\s+(.{3,40})",
-    r"the\s+(?:real\s+)?(?:question|problem|issue)\s+isn'?t\s+(.{3,40})[\s—\-]+(?:it'?s|but)\s+(.{3,40})",
-    r"stop\s+(?:asking|thinking|worrying)\s+(?:about\s+)?(.{3,40})[\s—\-]+(?:start|focus|instead)\s+(.{3,40})",
-    r"less\s+(.{3,20})\s*[,—\-]+\s*more\s+(.{3,20})",
-    r"(.{3,30})\s+is\s+overrated[\s,—\-]+(.{3,30})\s+is\s+underrated",
+2. **domains** (list): What domains does this relate to? Choose from:
+   - career, recruiting, job-search, hiring, talent
+   - leadership, management, culture, teams
+   - entrepreneurship, startups, business
+   - tech, ai, product
+   - communication, writing, content
+   - personal-growth, mindset
+   - (or other if none fit)
+
+3. **pattern_reversal** (boolean): Is this a "not X but Y" / "less X more Y" / inversion construct?
+
+4. **is_generic** (boolean): Should this be FILTERED OUT as generic engagement language?
+   - True for: "love this", "great post", "couldn't agree more", "so true", "this resonates", etc.
+   - False for: actual substantive phrases even if short
+
+## Primitives to Analyze
+{{primitives_json}}
+
+## Frequency Context (how often V uses these exact phrases in corpus)
+{{frequency_context}}
+
+## Output Format
+Return a JSON array with one object per primitive:
+```json
+[
+  {{
+    "id": "primitive_0",
+    "distinctiveness": 0.85,
+    "domains": ["career", "recruiting"],
+    "pattern_reversal": false,
+    "is_generic": false
+  }},
+  ...
 ]
+```
+
+Return ONLY the JSON array, no other text."""
 
 
-def is_generic_opener(text: str) -> bool:
-    """Check if text is a generic engagement opener."""
-    normalized = text.lower().strip()
-    # Direct match
-    if normalized in GENERIC_OPENERS:
-        return True
-    # Prefix match (e.g., "couldn't agree more with this")
-    for opener in GENERIC_OPENERS:
-        if normalized.startswith(opener):
-            return True
-    return False
-
-
-def compute_distinctiveness(text: str, prim_type: str, corpus_freq: dict) -> float:
-    """
-    Compute distinctiveness score (0-1) based on:
-    - Length (longer = more specific, up to a point)
-    - Presence of distinctive markers (em-dash, colon pivots)
-    - Type-specific bonuses
-    - Penalize very short or very generic
-    """
-    score = 0.5  # baseline
+async def run_synthesis_batch(session, primitives: list[dict], frequency_data: dict, batch_num: int) -> list[dict]:
+    """Score and classify a batch of primitives using LLM."""
     
-    # Length factor (sweet spot: 20-100 chars)
-    length = len(text)
-    if length < 15:
-        score -= 0.3  # too short, likely fragment
-    elif length < 30:
-        score -= 0.1
-    elif 30 <= length <= 100:
-        score += 0.1  # good length
-    elif length > 150:
-        score -= 0.05  # might be too context-specific
-    
-    # Structural markers (em-dash, pivot phrases)
-    if "—" in text:
-        score += 0.15
-    if ":" in text and len(text.split(":")) == 2:
-        score += 0.05
-    
-    # Type bonuses
-    if prim_type == "conceptual_frame":
-        score += 0.1
-    elif prim_type == "metaphor":
-        score += 0.1
-    elif prim_type == "analogy":
-        score += 0.1
-    elif prim_type == "signature_phrase":
-        score += 0.05
-    
-    # Penalize if contains generic engagement language
-    lower_text = text.lower()
-    generic_words = ["agree", "love this", "great", "thanks", "amazing", "awesome"]
-    for gw in generic_words:
-        if gw in lower_text and length < 50:
-            score -= 0.2
-            break
-    
-    # Bonus for specificity markers
-    specificity_markers = ["the", "a", "an"]  # Articles suggest concrete reference
-    if any(lower_text.startswith(m + " ") for m in specificity_markers):
-        score += 0.02
-    
-    # Clamp to [0, 1]
-    return max(0.0, min(1.0, score))
-
-
-def detect_domains(text: str) -> list[str]:
-    """Detect which domains a primitive relates to."""
-    lower_text = text.lower()
-    domains = []
-    for domain, keywords in DOMAIN_KEYWORDS.items():
-        for kw in keywords:
-            if kw.lower() in lower_text:
-                domains.append(domain)
-                break
-    return list(set(domains))
-
-
-def detect_pattern_reversal(text: str) -> bool:
-    """Detect if text uses a 'not X but Y' or similar reversal pattern."""
-    for pattern in PATTERN_REVERSAL_PATTERNS:
-        if re.search(pattern, text, re.IGNORECASE):
-            return True
-    # Also check for simple structural markers
-    lower = text.lower()
-    if "not about" in lower and "about" in lower[lower.find("not about")+10:]:
-        return True
-    if "isn't" in lower and ("it's" in lower or "but" in lower):
-        return True
-    return False
-
-
-def compute_synthesis():
-    """
-    Local synthesis: deduplicate, score, tag, rank primitives.
-    No LLM call - pure heuristics.
-    """
-    if not PRIMITIVES_RAW_FILE.exists():
-        log.error("Raw primitives not found. Run 'chunk' first.")
-        sys.exit(1)
-    
-    # Load raw primitives
-    raw_blocks = []
-    with open(PRIMITIVES_RAW_FILE) as f:
-        for line in f:
-            raw_blocks.append(json.loads(line))
-    
-    # Load frequency data for corpus-level signals
-    corpus_freq = {}
-    if FREQUENCY_FILE.exists():
-        with open(FREQUENCY_FILE) as f:
-            corpus_freq = json.load(f)
-    
-    # Extract all primitives with their source info
-    all_primitives = []
-    for block in raw_blocks:
-        source_id = block.get("source_id", "unknown")
-        for prim in block.get("primitives", []):
-            prim["source_ids"] = [source_id]
-            all_primitives.append(prim)
-    
-    log.info(f"Processing {len(all_primitives)} raw primitives...")
-    
-    # Step 1: Filter out generic openers
-    filtered = []
-    generic_count = 0
-    for p in all_primitives:
-        text = p.get("text", "").strip()
-        if is_generic_opener(text):
-            generic_count += 1
-            continue
-        if len(text) < 10:  # too short
-            continue
-        filtered.append(p)
-    
-    log.info(f"  Filtered out {generic_count} generic openers, {len(all_primitives) - len(filtered) - generic_count} too-short")
-    log.info(f"  Remaining: {len(filtered)} candidates")
-    
-    # Step 2: Deduplicate by normalized text
-    seen_texts = {}
-    deduplicated = []
-    for p in filtered:
-        text = p.get("text", "").strip()
-        norm_text = text.lower().strip()
-        
-        if norm_text in seen_texts:
-            # Merge source_ids
-            seen_texts[norm_text]["source_ids"].extend(p.get("source_ids", []))
-            seen_texts[norm_text]["frequency"] = len(set(seen_texts[norm_text]["source_ids"]))
-        else:
-            p["frequency"] = 1
-            seen_texts[norm_text] = p
-            deduplicated.append(p)
-    
-    log.info(f"  After dedup: {len(deduplicated)} unique primitives")
-    
-    # Step 3: Score, tag, and enrich each primitive
-    ranked = []
-    for i, p in enumerate(deduplicated):
-        text = p.get("text", "")
-        prim_type = p.get("type", "unknown")
-        
-        # Compute distinctiveness
-        distinctiveness = compute_distinctiveness(text, prim_type, corpus_freq)
-        
-        # Detect domains
-        domains = detect_domains(text)
-        
-        # Detect pattern reversal
-        is_reversal = detect_pattern_reversal(text)
-        
-        # Build tags
-        tags = domains.copy()
-        if is_reversal:
-            tags.append("pattern_reversal")
-        
-        # Compute final score (distinctiveness * log(frequency + 1))
-        import math
-        freq = p.get("frequency", 1)
-        score = distinctiveness * (1 + 0.1 * math.log(freq + 1))
-        
-        ranked.append({
-            "id": f"VP-{i+1:04d}",
-            "type": prim_type,
-            "text": text,
+    # Build primitives JSON for prompt
+    primitives_for_prompt = []
+    for i, p in enumerate(primitives):
+        primitives_for_prompt.append({
+            "id": f"primitive_{i}",
+            "type": p.get("type", "unknown"),
+            "text": p.get("text", ""),
             "extractable_form": p.get("extractable_form", ""),
-            "context": p.get("context", ""),
-            "score": round(score, 3),
-            "distinctiveness": round(distinctiveness, 3),
-            "frequency": freq,
-            "domains": domains,
-            "tags": tags,
-            "source_ids": list(set(p.get("source_ids", [])))[:5],  # cap at 5
+            "context": p.get("context", "")
         })
     
-    # Sort by score descending
-    ranked.sort(key=lambda x: x["score"], reverse=True)
+    # Build frequency context
+    freq_context = []
+    for p in primitives:
+        text = p.get("text", "").lower()
+        # Check if this phrase appears in frequency data
+        for ngram_type in ["3-gram", "4-gram", "5-gram"]:
+            ngrams = frequency_data.get("ngrams", {}).get(ngram_type, {})
+            for phrase, count in ngrams.items():
+                if phrase in text or text in phrase:
+                    freq_context.append(f"'{phrase}': {count}x in V's corpus")
+                    break
     
-    # Filter to score >= 0.4 (remove low-distinctiveness)
-    high_quality = [r for r in ranked if r["score"] >= 0.4]
-    log.info(f"  High quality (score >= 0.4): {len(high_quality)} primitives")
+    freq_str = "\n".join(freq_context[:20]) if freq_context else "No exact phrase matches in frequency data."
     
-    # Cap at 150 for review
-    final = high_quality[:150]
+    prompt = SYNTHESIS_PROMPT.replace("{{primitives_json}}", json.dumps(primitives_for_prompt, indent=2))
+    prompt = prompt.replace("{{frequency_context}}", freq_str)
     
-    # Write ranked primitives
-    with open(PRIMITIVES_RANKED_FILE, "w") as f:
-        for item in final:
-            f.write(json.dumps(item) + "\n")
+    try:
+        async with session.post(
+            "https://api.zo.computer/zo/ask",
+            headers={
+                "authorization": os.environ["ZO_CLIENT_IDENTITY_TOKEN"],
+                "content-type": "application/json"
+            },
+            json={"input": prompt},
+            timeout=aiohttp.ClientTimeout(total=120)
+        ) as resp:
+            if resp.status != 200:
+                logging.error(f"Batch {batch_num}: API error {resp.status}")
+                return []
+            
+            result = await resp.json()
+            output = result.get("output", "")
+            
+            # Parse JSON from response
+            # Try to extract JSON array from response
+            output = output.strip()
+            if output.startswith("```"):
+                # Remove markdown code fences
+                lines = output.split("\n")
+                output = "\n".join(lines[1:-1] if lines[-1].startswith("```") else lines[1:])
+            
+            scores = json.loads(output)
+            
+            # Merge scores back into primitives
+            results = []
+            for i, p in enumerate(primitives):
+                score_data = scores[i] if i < len(scores) else {}
+                p["distinctiveness"] = score_data.get("distinctiveness", 0.5)
+                p["domains"] = score_data.get("domains", [])
+                p["pattern_reversal"] = score_data.get("pattern_reversal", False)
+                p["is_generic"] = score_data.get("is_generic", False)
+                results.append(p)
+            
+            logging.info(f"Batch {batch_num}: Scored {len(results)} primitives")
+            return results
+            
+    except json.JSONDecodeError as e:
+        logging.error(f"Batch {batch_num}: JSON parse error: {e}")
+        logging.error(f"Raw output: {output[:500]}")
+        return []
+    except Exception as e:
+        logging.error(f"Batch {batch_num}: Error: {e}")
+        return []
+
+
+async def run_synthesis(raw_path: Path, freq_path: Path, output_path: Path):
+    """Run LLM-based synthesis on raw primitives."""
     
-    log.info(f"Synthesis complete: {len(final)} primitives written to {PRIMITIVES_RANKED_FILE}")
+    # Load raw primitives
+    primitives = []
+    with raw_path.open() as f:
+        for line in f:
+            obj = json.loads(line)
+            for p in obj.get("primitives", []):
+                p["source_id"] = obj.get("source_id")
+                primitives.append(p)
     
-    return final
+    logging.info(f"Loaded {len(primitives)} raw primitives")
+    
+    # Load frequency data
+    with freq_path.open() as f:
+        frequency_data = json.load(f)
+    
+    # Deduplicate by text (keep first occurrence)
+    seen_texts = set()
+    unique_primitives = []
+    for p in primitives:
+        text = p.get("text", "").strip().lower()
+        if text and text not in seen_texts:
+            seen_texts.add(text)
+            unique_primitives.append(p)
+    
+    logging.info(f"After dedup: {len(unique_primitives)} unique primitives")
+    
+    # Batch for LLM scoring
+    batch_size = 25
+    batches = [unique_primitives[i:i+batch_size] for i in range(0, len(unique_primitives), batch_size)]
+    
+    logging.info(f"Processing {len(batches)} batches of ~{batch_size} primitives each")
+    
+    async with aiohttp.ClientSession() as session:
+        semaphore = asyncio.Semaphore(5)  # Limit concurrency
+        
+        async def bounded_process(batch, batch_num):
+            async with semaphore:
+                return await run_synthesis_batch(session, batch, frequency_data, batch_num)
+        
+        tasks = [bounded_process(batch, i+1) for i, batch in enumerate(batches)]
+        batch_results = await asyncio.gather(*tasks)
+    
+    # Flatten and filter
+    all_scored = []
+    for results in batch_results:
+        all_scored.extend(results)
+    
+    # Filter out generics
+    filtered = [p for p in all_scored if not p.get("is_generic", False)]
+    logging.info(f"After filtering generics: {len(filtered)} primitives")
+    
+    # Filter by distinctiveness threshold
+    distinctive = [p for p in filtered if p.get("distinctiveness", 0) >= 0.4]
+    logging.info(f"After distinctiveness filter (>=0.4): {len(distinctive)} primitives")
+    
+    # Sort by distinctiveness
+    distinctive.sort(key=lambda x: x.get("distinctiveness", 0), reverse=True)
+    
+    # Build tags list for each
+    for p in distinctive:
+        tags = list(p.get("domains", []))
+        if p.get("pattern_reversal"):
+            tags.append("pattern_reversal")
+        p["tags"] = tags
+        p["score"] = p.get("distinctiveness", 0)
+    
+    # Write output
+    with output_path.open("w") as f:
+        for p in distinctive:
+            f.write(json.dumps(p) + "\n")
+    
+    logging.info(f"Wrote {len(distinctive)} primitives to {output_path}")
+    
+    # Stats
+    from collections import Counter
+    type_counts = Counter(p.get("type") for p in distinctive)
+    logging.info("By type:")
+    for t, c in type_counts.most_common():
+        logging.info(f"  {t}: {c}")
+    
+    return distinctive
 
 
 def cmd_synth(args):
-    """Step 3: Synthesis command (local heuristics, no LLM)."""
-    results = compute_synthesis()
+    """Step 3: LLM-based synthesis."""
+    raw_path = BUILD_DIR / "linkedin_primitives_raw.jsonl"
+    freq_path = BUILD_DIR / "linkedin_frequency.json"
+    output_path = BUILD_DIR / "linkedin_primitives_ranked.jsonl"
     
-    # Stats by type
-    type_counts = Counter(r["type"] for r in results)
+    if not raw_path.exists():
+        logging.error(f"Raw primitives not found: {raw_path}")
+        logging.error("Run 'chunk' step first")
+        return
     
-    print(f"\n✓ Synthesis complete (local heuristics)")
-    print(f"  Total ranked primitives: {len(results)}")
-    print(f"  By type:")
-    for t, c in type_counts.most_common():
-        print(f"    {t}: {c}")
-    print(f"  Output: {PRIMITIVES_RANKED_FILE}")
+    results = asyncio.run(run_synthesis(raw_path, freq_path, output_path))
+    
+    print(f"\n✓ Synthesis complete (LLM-scored)")
+    print(f"  Input: {raw_path}")
+    print(f"  Output: {output_path}")
+    print(f"  Primitives: {len(results)}")
 
 
 # =============================================================================
@@ -798,77 +733,138 @@ Review each primitive. Mark with:
 # =============================================================================
 
 def cmd_import(args):
-    """Step 5: Import approved primitives to voice_library.db."""
+    """Step 5: Import primitives to voice_library.db.
     
-    if not args.approved:
-        log.error("Must specify --approved file")
+    Two modes:
+    - --approved FILE: Import only [x] marked primitives from review markdown
+    - --threshold N: Bulk import all primitives with distinctiveness >= N
+    """
+    
+    primitives_to_import = []
+    
+    if args.threshold is not None:
+        # Bulk import by threshold
+        threshold = args.threshold
+        log.info(f"Bulk import mode: distinctiveness >= {threshold}")
+        
+        if not PRIMITIVES_RANKED_FILE.exists():
+            log.error(f"Ranked primitives not found: {PRIMITIVES_RANKED_FILE}")
+            log.error("Run 'synth' step first")
+            sys.exit(1)
+        
+        with open(PRIMITIVES_RANKED_FILE) as f:
+            for line in f:
+                item = json.loads(line)
+                if item.get("distinctiveness", 0) >= threshold:
+                    primitives_to_import.append(item)
+        
+        log.info(f"Found {len(primitives_to_import)} primitives above threshold {threshold}")
+    
+    elif args.approved:
+        # Import from reviewed markdown
+        review_file = Path(args.approved)
+        if not review_file.exists():
+            log.error(f"File not found: {review_file}")
+            sys.exit(1)
+        
+        content = review_file.read_text()
+        
+        # Find all [x] marked items - handle various formats
+        approved_patterns = [
+            r'\[x\s*\]\s*(?:None:|VP-\d+:)?\s*([^\n|]+)',
+            r'\[\s*x\]\s*(?:None:|VP-\d+:)?\s*([^\n|]+)',
+        ]
+        
+        approved_texts = set()
+        for pattern in approved_patterns:
+            matches = re.findall(pattern, content, re.IGNORECASE)
+            for m in matches:
+                approved_texts.add(m.strip().lower())
+        
+        if not approved_texts:
+            print("No approved primitives found (mark with [x])")
+            return
+        
+        log.info(f"Found {len(approved_texts)} approved primitives in review file")
+        
+        # Load full primitive data and match by text
+        with open(PRIMITIVES_RANKED_FILE) as f:
+            for line in f:
+                item = json.loads(line)
+                text = (item.get("text") or "").strip().lower()
+                if text in approved_texts:
+                    primitives_to_import.append(item)
+    
+    else:
+        log.error("Must specify either --approved FILE or --threshold N")
         sys.exit(1)
     
-    review_file = Path(args.approved)
-    if not review_file.exists():
-        log.error(f"File not found: {review_file}")
-        sys.exit(1)
-    
-    # Parse approved primitives from markdown
-    content = review_file.read_text()
-    
-    # Find all [x] marked items
-    approved_ids = re.findall(r'\[x\]\s+(VP-\d+):', content)
-    
-    if not approved_ids:
-        print("No approved primitives found (mark with [x])")
+    if not primitives_to_import:
+        print("No primitives to import")
         return
-    
-    log.info(f"Found {len(approved_ids)} approved primitives")
-    
-    # Load full primitive data
-    primitives_data = {}
-    with open(PRIMITIVES_RANKED_FILE) as f:
-        for line in f:
-            item = json.loads(line)
-            if item.get("id", "").startswith("VP-"):
-                primitives_data[item["id"]] = item
     
     # Import to voice_library.db
     import sqlite3
     conn = sqlite3.connect(str(VOICE_LIBRARY_DB))
     cursor = conn.cursor()
     
+    # Check existing count
+    cursor.execute("SELECT COUNT(*) FROM primitives")
+    start_count = cursor.fetchone()[0]
+    
     imported = 0
-    for pid in approved_ids:
-        if pid not in primitives_data:
-            log.warning(f"Primitive {pid} not found in ranked data, skipping")
+    skipped = 0
+    
+    for p in primitives_to_import:
+        text = (p.get("text") or "").strip()
+        if not text:
+            skipped += 1
             continue
         
-        p = primitives_data[pid]
+        # Check for duplicate
+        cursor.execute("SELECT id FROM primitives WHERE exact_text = ?", (text,))
+        if cursor.fetchone():
+            log.debug(f"Skipping duplicate: {text[:40]}...")
+            skipped += 1
+            continue
         
         # Generate new ID for voice library
         cursor.execute("SELECT COUNT(*) FROM primitives")
         count = cursor.fetchone()[0]
         new_id = f"VL-LI-{count+1:04d}"
         
+        # Build domains JSON
+        domains = p.get("domains", [])
+        tags = p.get("tags", [])
+        all_domains = list(set(domains + [t for t in tags if t != "pattern_reversal"]))
+        
         cursor.execute("""
             INSERT INTO primitives (
-                id, primitive_type, exact_text, pattern_template,
-                source, domains_json, created_at
-            ) VALUES (?, ?, ?, ?, ?, ?, datetime('now'))
+                id, exact_text, primitive_type,
+                distinctiveness_score, domains_json, status, notes
+            ) VALUES (?, ?, ?, ?, ?, 'approved', ?)
         """, (
             new_id,
+            text,
             p.get("type", "unknown"),
-            p.get("text", ""),
-            p.get("extractable_form", ""),
-            "linkedin",
-            json.dumps(p.get("domains", []))
+            p.get("distinctiveness", 0),
+            json.dumps(all_domains),
+            f"source: linkedin | extractable_form: {p.get('extractable_form', '')} | context: {p.get('context', '')}"
         ))
         
         imported += 1
-        log.info(f"  Imported {new_id}: {p.get('text', '')[:50]}...")
+        if imported <= 10:
+            log.info(f"  Imported {new_id}: {text[:50]}...")
+        elif imported == 11:
+            log.info("  ... (continuing)")
     
     conn.commit()
     conn.close()
     
     print(f"\n✓ Import complete")
     print(f"  Imported: {imported} primitives")
+    print(f"  Skipped: {skipped} (duplicates or empty)")
+    print(f"  Total in voice_library.db: {start_count + imported}")
     print(f"  Database: {VOICE_LIBRARY_DB}")
 
 
@@ -904,6 +900,7 @@ def main():
     # import
     import_parser = subparsers.add_parser("import", help="Step 5: Import approved to voice_library.db")
     import_parser.add_argument("--approved", type=str, help="Path to reviewed markdown file")
+    import_parser.add_argument("--threshold", type=float, help="Bulk import primitives with distinctiveness >= N")
     import_parser.set_defaults(func=cmd_import)
     
     args = parser.parse_args()
@@ -912,6 +909,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
 

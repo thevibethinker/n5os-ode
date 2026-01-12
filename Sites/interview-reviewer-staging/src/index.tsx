@@ -101,18 +101,34 @@ app.get("/", (c) => {
             
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">
-                How did it feel?
+                Job Description
               </label>
-              <select
-                name="sentiment"
+              <textarea
+                name="jobDescription"
                 required
-                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="">Select...</option>
-                <option value="positive">It went well</option>
-                <option value="mixed">Mixed feelings</option>
-                <option value="negative">It didn't go well</option>
-              </select>
+                rows={4}
+                placeholder="Paste the job description or key requirements here..."
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              ></textarea>
+              <p class="text-xs text-gray-500 mt-1">
+                We use this to compare your answers against what the role requires.
+              </p>
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                How do you feel it went?
+              </label>
+              <textarea
+                name="selfAssessment"
+                required
+                rows={3}
+                placeholder="What's your gut feeling? Any specific moments you're worried about? What do you think went well?"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              ></textarea>
+              <p class="text-xs text-gray-500 mt-1">
+                We'll compare your perception against the actual transcript to calibrate your self-assessment.
+              </p>
             </div>
 
             <div class="mb-6">
@@ -129,6 +145,18 @@ app.get("/", (c) => {
               <p class="text-xs text-gray-500 mt-1">
                 Your transcript is never saved to disk and is deleted immediately after analysis.
               </p>
+            </div>
+            
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-1">
+                Promo Code <span class="text-gray-400 font-normal">(optional)</span>
+              </label>
+              <input
+                type="text"
+                name="promoCode"
+                placeholder="e.g., THANKS-7K2X"
+                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
             </div>
 
             <button
@@ -170,14 +198,16 @@ app.post("/submit", async (c) => {
   const body = await c.req.parseBody();
   const transcript = body.transcript as string;
   const company = body.company as string;
-  const sentiment = body.sentiment as string;
+  const jobDescription = (body.jobDescription as string)?.trim() || "";
+  const selfAssessment = (body.selfAssessment as string)?.trim() || "";
+  const promoCode = (body.promoCode as string)?.trim() || undefined;
 
-  if (!transcript || !company || !sentiment) {
+  if (!transcript || !company || !jobDescription || !selfAssessment) {
     return c.html(
       <Layout title="Error - Am I Hired?">
         <div class="max-w-xl mx-auto px-4 py-16 text-center">
           <h1 class="text-2xl font-bold text-red-600 mb-4">Missing Information</h1>
-          <p class="text-gray-600 mb-6">Please fill in all fields.</p>
+          <p class="text-gray-600 mb-6">Please fill in all required fields (company, job description, self-assessment, and transcript).</p>
           <a href="/" class="text-blue-600 underline">Go back</a>
         </div>
       </Layout>
@@ -199,10 +229,10 @@ app.post("/submit", async (c) => {
 
   // Create session
   const sessionId = randomUUID();
-  createSession(sessionId, company, sentiment);
+  createSession(sessionId, company, selfAssessment);
   
   // Store transcript in memory only (never touches disk)
-  storeTranscript(sessionId, transcript, company, sentiment);
+  storeTranscript(sessionId, transcript, company, jobDescription, selfAssessment);
 
   const paymentLinkUrl = getPaymentLinkUrl();
   
@@ -237,10 +267,18 @@ app.post("/submit", async (c) => {
           <div class="text-left bg-gray-50 p-4 rounded mb-6">
             <div class="text-sm text-gray-500">Company</div>
             <div class="font-medium">{company}</div>
-            <div class="text-sm text-gray-500 mt-2">Your feeling</div>
-            <div class="font-medium capitalize">{sentiment}</div>
+            <div class="text-sm text-gray-500 mt-2">Job description</div>
+            <div class="font-medium">✓ Provided ({jobDescription.length.toLocaleString()} chars)</div>
+            <div class="text-sm text-gray-500 mt-2">Self-assessment</div>
+            <div class="font-medium text-sm text-gray-700 italic">"{selfAssessment.slice(0, 100)}{selfAssessment.length > 100 ? '...' : ''}"</div>
             <div class="text-sm text-gray-500 mt-2">Transcript length</div>
             <div class="font-medium">{transcript.length.toLocaleString()} characters</div>
+            {promoCode && (
+              <>
+                <div class="text-sm text-gray-500 mt-2">Promo code</div>
+                <div class="font-medium">{promoCode}</div>
+              </>
+            )}
           </div>
 
           <a
@@ -324,7 +362,8 @@ app.get("/success", async (c) => {
   const analysis = await analyzeInterview(
     transcriptData.transcript,
     transcriptData.company,
-    transcriptData.sentiment
+    transcriptData.selfAssessment,
+    transcriptData.jobDescription
   );
 
   // Delete transcript immediately after analysis
@@ -351,6 +390,7 @@ app.get("/success", async (c) => {
 
   // Parse the analysis sections
   const report = analysis.report;
+  const hadJobDescription = !!transcriptData.jobDescription;
 
   return c.html(
     <Layout title="Your Feedback - Am I Hired?">
@@ -365,6 +405,17 @@ app.get("/success", async (c) => {
         <div class="mb-6">
           <h2 class="text-2xl font-bold text-gray-900">Your Interview Feedback</h2>
           <p class="text-gray-500">Interview at {transcriptData.company}</p>
+          <div class="mt-2">
+            {hadJobDescription ? (
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                ✓ Analyzed against job requirements
+              </span>
+            ) : (
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                ℹ️ Generic analysis (no job description provided)
+              </span>
+            )}
+          </div>
         </div>
 
         <div class="bg-white rounded-lg border divide-y">
@@ -657,5 +708,9 @@ export default {
 };
 
 console.log(`🚀 Am I Hired? running on http://localhost:${PORT}`);
+
+
+
+
 
 

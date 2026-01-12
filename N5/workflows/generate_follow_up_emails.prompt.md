@@ -1,17 +1,19 @@
 ---
 created: 2025-11-17
-last_edited: 2025-12-26
-version: 3.2
-title: Follow-Up Email Generator v3.2
+last_edited: 2026-01-12
+version: 3.3
+title: Follow-Up Email Generator v3.3
 description: Generate follow-up emails for meetings using manifest status and semantic classification
 tags: [workflow, email, meetings, automation, semantic-analysis]
 tool: true
 ---
 
-# Follow-Up Email Generator v3.2
+# Follow-Up Email Generator v3.3
 
 **Purpose:** Generate follow-up emails for meetings using semantic classification  
 **Key Principle:** Scripts = Mechanics | LLM = Semantics | Never confuse the two
+
+**v3.3 Change:** Added Voice Injection Layer integration (auto-applies V's linguistic primitives).
 
 **v3.2 Change:** Now uses manifest.json status instead of `_[P]` folder suffix.
 The pipeline is: `intelligence_generated` → MG-5 → `processed` (ready for archival)
@@ -101,6 +103,41 @@ SKIP:
   "confidence": "high/medium/low"
 }
 ```
+
+### STEP 2.5: Voice Injection Layer (Automatic) ⭐ NEW in v3.3
+
+**Purpose:** Auto-inject V's distinctive linguistic patterns before generation. Fully automatic — no human review.
+
+**Implementation:**
+```python
+from N5.scripts.voice_layer import VoiceContext, inject_voice
+
+# Build context from meeting classification
+ctx = VoiceContext(
+    content_type="email",
+    platform="email",
+    purpose="follow-up",
+    topic_domains=extracted_from_B06_or_B26,  # e.g., ["hiring", "partnership", "career"]
+)
+
+# Auto-inject (happens before generation)
+enhanced_prompt = inject_voice(generation_prompt, ctx)
+```
+
+**What happens automatically:**
+1. Layer retrieves 3 relevant primitives from `voice_library.db`
+2. Primitives injected as context into generation prompt
+3. LLM weaves patterns naturally — never forced
+4. Usage tracked to prevent repetition across emails
+
+**Domain Extraction:**
+- From B06_BUSINESS_CONTEXT: industry, sector, discussion topics
+- From B26_METADATA: meeting type, stakeholder context
+- Inferred from B01 content analysis
+
+**Note:** This step runs automatically as part of the generation process. No manual intervention required.
+
+---
 
 ### STEP 3: Generate Email for TARGET_MEETING (Semantic - Vibe Writer)
 
@@ -230,7 +267,10 @@ If `needs_follow_up_email: true` for **TARGET_MEETING**:
 
 ---
 
+*v3.3 | 2026-01-12 | Added Voice Injection Layer integration (auto-applies V's linguistic primitives).*
+
 *v3.2 | 2025-12-26 | Changed to manifest-based status detection (no more [P] suffix requirement)*
+
 
 
 
