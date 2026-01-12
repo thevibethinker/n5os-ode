@@ -124,6 +124,9 @@ def apply_resolutions(review_file: Path) -> dict:
     conn = sqlite3.connect(CRM_DB)
     c = conn.cursor()
     
+    # Collect all updates first, then apply atomically
+    updates_to_apply = []
+    
     for match in profile_pattern.finditer(content):
         name = match.group(1).strip()
         profile_id = int(match.group(2))
@@ -135,20 +138,26 @@ def apply_resolutions(review_file: Path) -> dict:
             continue
         
         if checkbox == 'x' and '@' in email:
-            # Update the profile
-            try:
-                c.execute(
-                    "UPDATE profiles SET email = ?, primary_email = ? WHERE id = ?",
-                    (email, email, profile_id)
-                )
-                results["updated"].append(f"{name} → {email}")
-            except Exception as e:
-                results["errors"].append(f"{name}: {e}")
+            updates_to_apply.append((name, profile_id, email))
         else:
             results["skipped"].append(f"{name} (invalid format)")
     
-    conn.commit()
-    conn.close()
+    # Apply all updates in a single atomic transaction
+    try:
+        c.execute("BEGIN TRANSACTION")
+        for name, profile_id, email in updates_to_apply:
+            c.execute(
+                "UPDATE profiles SET email = ?, primary_email = ? WHERE id = ?",
+                (email, email, profile_id)
+            )
+            results["updated"].append(f"{name} → {email}")
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        results["errors"].append(f"Transaction failed, rolled back: {e}")
+        results["updated"] = []  # Clear any partial success messaging
+    finally:
+        conn.close()
     
     return results
 
@@ -193,4 +202,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
