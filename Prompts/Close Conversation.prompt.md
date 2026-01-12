@@ -7,15 +7,18 @@ tags:
   - cleanup
   - conversation
 created: 2025-10-15
-last_edited: 2026-01-09
-version: 2.1
+last_edited: 2026-01-12
+version: 3.0
 ---
 
 # Close Conversation
 
 Runs the formal **conversation-end workflow** with automatic tier detection.
 
-**Semantic work is owned by Librarian.** Scripts handle mechanics, Librarian handles crystallization.
+**CRITICAL PRINCIPLE:** Scripts handle mechanics. LLM (Librarian) handles all semantic work.
+- Scripts gather file lists, git status, paths, raw content
+- Scripts **DO NOT** write summaries, extract decisions, or generate AARs
+- Librarian **READS** the context and **WRITES** all semantic artifacts
 
 ## Quick Reference
 
@@ -68,44 +71,101 @@ python3 N5/scripts/conversation_end_full.py --convo-id {CONVO_ID}
 set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")
 ```
 
-**Librarian responsibilities by tier:**
+---
 
-**All Tiers:**
-- Audit SESSION_STATE: `python3 N5/scripts/session_state_manager.py audit --convo-id {CONVO_ID}`
-- Sync any missing state
-- Generate proper title (not pattern-based)
-- Write 2-3 sentence summary of what was discussed/accomplished
-- Verify artifacts are in correct locations
+## Librarian Semantic Work by Tier
 
-**Tier 2+ Only:**
-- Extract key decisions with rationale
-- Identify open items
-- Recommend file moves if needed
+### All Tiers (Tier 1+)
 
-**Tier 3 Only:**
-- Enhance AAR with conversation context
-- **Capability Graduation:** If build is complete, run graduation workflow (see below)
-- Extract lessons worth logging
-- Verify build workspace is complete
+1. **Read SESSION_STATE.md** from the conversation workspace (`/home/.z/workspaces/{CONVO_ID}/SESSION_STATE.md`)
+2. **Audit SESSION_STATE:** Run `python3 N5/scripts/session_state_manager.py audit --convo-id {CONVO_ID}`
+3. **Generate meaningful title** — Based on semantic understanding of what was discussed, NOT pattern matching
+4. **Write 2-3 sentence summary** — Real semantic summary of accomplishments, NOT template filling
+5. **Verify artifacts** are in correct locations
 
-### Capability Graduation (Tier 3 builds)
+### Tier 2+ Only
 
-```bash
-# Check if build qualifies
-python3 N5/scripts/capability_graduation.py check --build-slug <slug>
+6. **Extract key decisions with rationale** — Read the conversation context and identify actual decisions made, with WHY they were made
+7. **Identify open items** — Real open questions and next steps from semantic understanding
+8. **Recommend file moves** if needed
 
-# If eligible, generate scaffold
-python3 N5/scripts/capability_graduation.py graduate --build-slug <slug> --convo-id {CONVO_ID}
+### Tier 3 Only (CRITICAL: AAR GENERATION)
+
+**The script provides a context bundle. Librarian WRITES the AAR.**
+
+9. **Read the context bundle** from the script output (contains SESSION_STATE, debug logs, build context)
+
+10. **WRITE the After-Action Report:**
+    - Read SESSION_STATE.md and understand what ACTUALLY happened
+    - Read any PLAN.md or STATUS.md from build workspace
+    - Read DEBUG_LOG.jsonl if present to understand problems solved
+    - **Semantically synthesize** what was accomplished, what decisions were made and why, what was learned
+    - Write the AAR with real understanding — NOT template filling
+    
+11. **AAR Format:**
+```markdown
+---
+created: {DATE}
+last_edited: {DATE}
+version: 1.0
+provenance: {CONVO_ID}
+---
+
+# After-Action Report: {Descriptive Title}
+
+**Date:** {DATE}
+**Type:** {build|planning|research|debug|etc}
+**Conversation:** {CONVO_ID}
+
+## Objective
+
+{What was the goal of this conversation? Write 2-3 sentences based on your understanding.}
+
+## What Happened
+
+{Narrative description of what actually occurred. Organize into phases if there were distinct stages. Include:
+- What was built/changed/fixed
+- Key challenges encountered
+- How challenges were resolved}
+
+### Key Decisions
+
+{List decisions made with RATIONALE. Not just "Decided X" but "Decided X because Y"}
+
+### Artifacts Created
+
+| Artifact | Location | Purpose |
+|----------|----------|---------|
+| {name} | {path} | {why it was created} |
+
+## Lessons Learned
+
+### Process
+{What did we learn about how to do this kind of work?}
+
+### Technical
+{What technical insights emerged?}
+
+## Next Steps
+
+{What should happen next? What's unfinished?}
+
+## Outcome
+
+**Status:** {Completed | Incomplete | Blocked}
+
+{Brief outcome summary with before/after if applicable}
 ```
 
-Then:
-1. Read the generated scaffold
-2. Complete all `[LLM: ...]` sections with real content from PLAN.md and conversation
-3. Remove the "Build Context" section
-4. Embed in semantic memory:
-   ```bash
-   python3 N5/scripts/capability_graduation.py embed --capability-path <path> --update-index
-   ```
+12. **Save the AAR:** Write to `Records/AARs/{DATE}_{Slug}.md`
+
+13. **Capability Graduation** (if build is complete):
+    ```bash
+    python3 N5/scripts/capability_graduation.py check --build-slug <slug>
+    python3 N5/scripts/capability_graduation.py graduate --build-slug <slug> --convo-id {CONVO_ID}
+    ```
+
+14. **Extract lessons worth logging** — If significant learning occurred
 
 ### Step 4: Final Checks
 
@@ -126,13 +186,20 @@ End with:
 ✅ Conversation closed (Tier N)
 ```
 
+## Anti-Patterns (DO NOT DO)
+
+❌ **Do not use regex to extract decisions** — That produces garbage
+❌ **Do not template-fill AARs** — That produces garbage  
+❌ **Do not let scripts write semantic content** — Scripts are dumb, LLM is smart
+❌ **Do not claim "Done" without actual semantic analysis** — Read the files, understand them, write real content
+
 ## Full Documentation
 
 `file 'N5/prefs/operations/conversation-end-v3.md'`
 
 ## Version History
 
+- **v3.0** (2026-01-12): AAR generation moved entirely to Librarian. Scripts provide context only.
 - **v2.0** (2025-12-26): Librarian now owns semantic close work
 - **v1.0** (2025-10-15): Initial tiered system
-
 
