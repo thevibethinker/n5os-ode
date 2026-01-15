@@ -59,7 +59,7 @@ Return the JSON object with extractedQAs array.`;
     {
       model: MODELS.FAST,
       jsonMode: true,
-      maxTokens: 8000,
+      maxTokens: 16000,
     }
   );
 
@@ -79,7 +79,8 @@ Return the JSON object with extractedQAs array.`;
   try {
     parsed = JSON.parse(content);
   } catch (e) {
-    throw new Error(`Stage 1 failed to parse JSON: ${content.substring(0, 200)}...`);
+    console.error(`[Stage1] JSON parse failed. Content length: ${content.length}, last 200 chars: ${content.substring(content.length - 200)}`);
+    throw new Error(`Stage 1 failed: JSON parse error: ${e}`);
   }
 
   // Validate and normalize the output
@@ -103,6 +104,8 @@ Return the JSON object with extractedQAs array.`;
     extractionNotes: parsed.parsingNotes,
   };
 }
+
+
 
 
 

@@ -9,6 +9,7 @@ export interface PipelineInput {
   jobDescription: string;
   selfAssessment: string;
   sessionId: string;
+  customerName: string;          // Person being analyzed
 }
 
 // ============ Stage 1: Extract Q&A ============
@@ -184,9 +185,18 @@ export interface Verdict {
 export interface AnalysisReport {
   sessionId: string;
   company: string;
+  customerName: string;          // Person who submitted the interview
+  role?: string;                 // Role being interviewed for (extracted from JD/context)
   generatedAt: string;           // ISO timestamp
   
   executiveSummary: string;      // 2-3 sentences
+  
+  // Q&A Pairs from Stage 1 - the actual questions and answers
+  extractedQAs: Array<{
+    questionText: string;
+    answerText: string;
+    questionIndex: number;
+  }>;
   
   questionBreakdown: PieChartData[];
   
@@ -240,4 +250,6 @@ export interface PipelineResult {
   totalDurationMs: number;
   totalCostEstimate?: number;
 }
+
+
 

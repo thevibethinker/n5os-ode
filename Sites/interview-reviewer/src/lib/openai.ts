@@ -12,8 +12,8 @@ const openai = OPENAI_API_KEY ? new OpenAI({ apiKey: OPENAI_API_KEY }) : null;
 
 // ============ Model Constants ============
 export const MODELS = {
-  FAST: "gpt-5-mini",        // Stage 1: extraction (using gpt-5-mini; gpt-5.1-mini not yet available)
-  THINKING: "gpt-5.1",       // Stages 2-5: reasoning
+  FAST: "gpt-5-mini-2025-08-07",        // Stage 1: extraction
+  THINKING: "gpt-5.2-2025-12-11",       // Stages 2-5: reasoning
 } as const;
 
 export type ModelName = typeof MODELS[keyof typeof MODELS];
@@ -80,6 +80,7 @@ export async function callOpenAI<T = string>(
       try {
         data = JSON.parse(content) as T;
       } catch (parseError) {
+        console.error(`[OpenAI] JSON parse failed. Model: ${model}, Content length: ${content.length}, Finish reason: ${response.choices[0]?.finish_reason}, Last 300 chars: ${content.slice(-300)}`);
         return {
           success: false,
           error: `JSON parse error: ${parseError}`,
@@ -312,6 +313,8 @@ export async function analyzeInterview(
     };
   }
 }
+
+
 
 
 
