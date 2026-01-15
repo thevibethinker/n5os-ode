@@ -1,13 +1,49 @@
 ---
-created: 2026-01-07
-last_edited: 2026-01-07
+created: 2026-01-13
+last_edited: 2026-01-13
 version: 1.0
-provenance: con_8lkDrBe0ZeMJiSqB
+provenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141
+block: B14
 ---
 
 # B14: Blurbs Requested
 
-*No specific external warm introductions were promised during this call. However, the following internal descriptive blurb was requested for Jeffrey's review:*
+## No Explicit Blurbs Requested
 
-**Pilot Summary for Tech Buffalo:**
-"Careerspan is a Socratic talent platform that moves beyond the resume to create three-dimensional candidate profiles. For Tech Buffalo, it offers a way to provide automated career coaching to students while giving local employers a 'vibe check' on regional talent, helping to verify skills and retain graduates in the Buffalo ecosystem."
+This was a sales discovery call. No introductions or blurbs were explicitly requested.
+
+---
+
+## Potential Follow-Up Communications
+
+### Materials Email to Jeff
+**Purpose:** Deliver promised community examples and studies
+
+**Draft:**
+
+> Subject: Careerspan Community Materials - Tech Buffalo Follow-Up
+>
+> Jeff,
+>
+> Great connecting today. Really excited about the potential fit with Tech Buffalo's communities.
+>
+> As promised, here are the materials:
+>
+> **Community Examples:**
+> - [Attach community paraphernalia]
+>
+> **Pilot Studies:**
+> - UMass Eisenberg Business School (~150 students)
+> - Aspire Institute pilot
+>
+> Looking forward to your Calendly for next week. Happy to dig into which community - alumni vs. pre-career - makes most sense as a starting point.
+>
+> Thanks again to Nick for the intro.
+>
+> V
+
+---
+
+## Note
+V should package materials and send promptly to maintain momentum. Jeff indicated he'd send Calendly after reviewing.
+

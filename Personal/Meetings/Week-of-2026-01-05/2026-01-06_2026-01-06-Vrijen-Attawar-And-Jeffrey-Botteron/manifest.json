@@ -1,6 +1,6 @@
 {
   "manifest_version": "1.0",
-  "generated_at": "2026-01-07T15:16:35.960145",
+  "generated_at": "2026-01-13T23:16:30.505662Z",
   "meeting_folder": "2026-01-06_vrijen_attawar_and_jeffrey_botteron",
   "meeting_date": "2026-01-06",
   "status": "processed",
@@ -9,7 +9,48 @@
     "brief": true,
     "transcript_processed": true
   },
+  "intelligence_blocks": [
+    "B01_DETAILED_RECAP",
+    "B03_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B07_TONE_AND_CONTEXT",
+    "B14_BLURBS_REQUESTED",
+    "B21_KEY_MOMENTS",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B35_LINGUISTIC_PRIMITIVES"
+  ],
   "last_updated_by": "MG-2_Prompt",
-  "processed_at": "2026-01-08T22:48:46Z",
-  "crm_synced": true
+  "processed_at": "2026-01-13T23:46:21Z",
+  "crm_synced": true,
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2026-01-13T23:46:37.688151+00:00",
+      "output_file": "FOLLOW_UP_EMAIL.md",
+      "last_updated_by": "MG-5"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2026-01-13T23:46:37.688171+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  }
 }

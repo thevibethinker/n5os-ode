@@ -41,5 +41,7 @@
     "last_scan": "2025-11-23T11:48:36Z",
     "scan_run_id": "2025_11_23T114836Z_scheduled_task"
   },
-  "last_updated": "2025-11-23T13:05:19.026476"
+  "last_updated": "2025-11-23T13:05:19.026476",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:24.145998Z"
 }

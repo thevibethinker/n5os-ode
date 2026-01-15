@@ -16,5 +16,7 @@
     "status": "none_detected",
     "note": "No B07_WARM_INTRO_BIDIRECTIONAL.md block present in this run; warm intro drafts not generated."
   },
-  "last_updated_at": "2025-12-26T01:41:22.049354"
+  "last_updated_at": "2025-12-26T01:41:22.049354",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:24.991510Z"
 }

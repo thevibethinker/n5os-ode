@@ -31,5 +31,7 @@
   "transition_timestamp": "2025-11-30T15:04:32.683995",
   "cloaked": true,
   "cloaked_at": "2025-12-02T04:46:14.872Z",
-  "last_updated_at": "2025-12-26T01:27:22.346930"
+  "last_updated_at": "2025-12-26T01:27:22.346930",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:21.987990Z"
 }

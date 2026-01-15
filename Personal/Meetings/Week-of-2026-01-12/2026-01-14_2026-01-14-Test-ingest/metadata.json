@@ -1,0 +1,15 @@
+{
+  "source": "manual",
+  "source_id": null,
+  "title": "Test Ingest",
+  "date": "2026-01-14",
+  "participants": [
+    "John",
+    "Sarah"
+  ],
+  "host": null,
+  "duration_seconds": null,
+  "recording_url": null,
+  "ingested_at": "2026-01-14T17:17:34.101114",
+  "state": "raw"
+}

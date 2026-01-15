@@ -1,0 +1,13 @@
+{"type": "phrase", "primitive": "bada bing, bada boom, there's your game plan", "speaker": "V", "context": "Summarizing strategic recommendation for Zo GTM", "category": "conclusion_signal"}
+{"type": "phrase", "primitive": "I guarantee you will make us a lot of fucking money", "speaker": "V", "context": "High-conviction endorsement of business idea", "category": "commitment_signal"}
+{"type": "phrase", "primitive": "hit me", "speaker": "V", "context": "Inviting David to continue speaking", "category": "conversation_flow"}
+{"type": "phrase", "primitive": "let's keep chatting, let's keep yapping", "speaker": "V", "context": "Informal close maintaining engagement", "category": "relationship_signal"}
+{"type": "phrase", "primitive": "clutch together", "speaker": "V", "context": "Combining existing pieces rather than building new", "category": "build_philosophy"}
+{"type": "analogy", "primitive": "economic incentive: direct = e-commerce, indirect = careers", "speaker": "V", "context": "Framework for platform GTM strategy", "category": "strategic_framework"}
+{"type": "phrase", "primitive": "minimum MVP, true MVP", "speaker": "V", "context": "Emphasis on genuine minimalism vs feature-loaded MVP", "category": "build_philosophy"}
+{"type": "phrase", "primitive": "load up the credibility", "speaker": "V", "context": "Building trust before making bold proposals", "category": "relationship_strategy"}
+{"type": "phrase", "primitive": "shoot your shot", "speaker": "V", "context": "Encouraging David to pursue Zo opportunity independently", "category": "empowerment_signal"}
+{"type": "phrase", "primitive": "Spiegel as a service", "speaker": "David", "context": "Productizing David's networking advice", "category": "product_naming"}
+{"type": "phrase", "primitive": "stuck with writer's block", "speaker": "David", "context": "Core user pain point for networking tool", "category": "problem_framing"}
+{"type": "analogy", "primitive": "I'm a product manager, I'm not a salesperson... but I'm learning", "speaker": "David", "context": "Acknowledging skill gaps while showing growth mindset", "category": "self_positioning"}
+

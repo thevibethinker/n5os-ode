@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-14T22:18:28.883802",
+  "meeting_folder": "2026-01-14_Internal-Team-Sync_Simulated_Raw",
+  "meeting_date": "2026-01-14",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-1_Prompt"
+}

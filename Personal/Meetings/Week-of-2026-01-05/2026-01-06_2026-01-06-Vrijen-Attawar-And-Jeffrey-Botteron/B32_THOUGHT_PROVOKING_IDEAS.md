@@ -1,12 +1,36 @@
 ---
-created: 2026-01-07
-last_edited: 2026-01-07
+created: 2026-01-13
+last_edited: 2026-01-13
 version: 1.0
-provenance: con_8lkDrBe0ZeMJiSqB
+provenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141
+block: B32
 ---
 
-# B32: Thought Provoking Ideas
+# B32: Thought-Provoking Ideas
 
-1. **The Resume is an Identity Shadow:** Resumes have become "lying by omission," and AI has effectively killed the resume as a reliable signal. We are moving toward a world where "downloading yourself" into a platform is the only way to establish a verifiable, multi-dimensional identity.
-2. **Adversarial vs. Collaborative Hiring:** The HR tech industry's default assumption that the hiring market *must* be adversarial is a fundamental limitation. A "pro-candidate" system (coaching-first) actually yields better data for the employer by reducing the pressure to "brag" or "BS."
-3. **Longitudinal Verification vs. Point-in-Time Credentials:** The "billion-dollar question" isn't identity verification (low-hanging fruit) but the longitudinal verification of "je ne sais quoi." Can a platform capture 10 years of "stories" to prove a person isn't just a good interviewee, but a consistent performer?
+> **Note:** This block captures non-actionable provocations—strategic "weirdness," original mental models, or themes worth sitting with. High threshold filter applied.
+
+---
+
+## 1. The Zero Marginal Cost of Bullshit
+
+**Insight:** "The marginal cost of bullshit is now zero. AI can just spit out the perfect resume for any job."
+
+**Provocation:** This framing suggests the entire resume-based hiring infrastructure is fundamentally broken, not just inefficient. If perfect resumes are free to generate, the signal-to-noise ratio has collapsed. What other domains face the same dynamic? (Cover letters, LinkedIn profiles, application essays?) Is Careerspan's Socratic approach the only viable defense, or are there other anti-bullshit mechanisms?
+
+---
+
+## 2. Visibility vs. Qualification Framing
+
+**Insight:** "This is not a reflection of how qualified someone is. This is how much visibility do you have into them."
+
+**Provocation:** V's reframe neutralizes the "AI judging candidates" concern by repositioning Careerspan as a transparency tool, not a qualification scorer. But is this distinction sustainable? If employers use visibility scores as a proxy for qualification (which they will), does the framing matter? Or is it just marketing for the same underlying judgment?
+
+---
+
+## 3. Brain Drain as Community Problem
+
+**Insight:** Jeff's mission is preventing early-career talent from leaving Buffalo for NYC/Chicago after 2-3 years.
+
+**Provocation:** This is a coordination problem, not an information problem. Talent leaves because opportunities are concentrated elsewhere and social proof compounds. Can Careerspan actually solve this, or is it a visibility tool being asked to solve a market structure problem? The interesting question: what would it take to make staying in Buffalo the obvious choice for ambitious 25-year-olds?
+

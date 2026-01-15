@@ -19,5 +19,7 @@
   "transition_completed": true,
   "final_transition_timestamp": 1765811150.5480506,
   "transition_date_iso": "2025-12-15T15:05:50.550347+00:00",
-  "last_updated_at": "2025-12-26T01:40:01.020477"
+  "last_updated_at": "2025-12-26T01:40:01.020477",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:24.677869Z"
 }

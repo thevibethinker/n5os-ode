@@ -1,0 +1,18 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-14T20:17:34.355439",
+  "meeting_folder": "2026-01-14_V-Logan-Acquisition-Strategy",
+  "meeting_date": "2026-01-14",
+  "meeting_type": "internal",
+  "status": "processed",
+  "processed_at": "2026-01-14T21:51:00Z",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-14T21:50:16.310683",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_v3.0"
+}
+

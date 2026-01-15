@@ -1,0 +1,2 @@
+# B01: Detailed Recap
+Vrijen met with a strategic advisor to test the Granola transcription and blurb generation workflow. The discussion centered on how Careerspan is transitioning from a consumer-facing AI tool to a more robust enterprise-scale career coaching platform. V emphasized that the core methodology—turning messy career problems into structured frameworks—is what allows the AI to be effective. The goal for these blurbs is to capture that shift and provide clear, direct value statements for investors and partners.

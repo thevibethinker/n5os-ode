@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-13T20:16:57Z",
+  "meeting_folder": "2026-01-12_fxu-mjpr-tum",
+  "meeting_date": "2026-01-12",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "B01_DETAILED_RECAP": true,
+    "B03_STAKEHOLDER_INTELLIGENCE": true,
+    "B03_DECISIONS": true,
+    "B05_ACTION_ITEMS": true,
+    "B06_BUSINESS_CONTEXT": true,
+    "B07_TONE_AND_CONTEXT": true,
+    "B14_BLURBS_REQUESTED": true,
+    "B21_KEY_MOMENTS": true,
+    "B25_DELIVERABLES": true,
+    "B26_MEETING_METADATA": true,
+    "B32_THOUGHT_PROVOKING_IDEAS": true,
+    "B35_LINGUISTIC_PRIMITIVES": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "last_updated_at": "2026-01-13T21:20:00Z",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:23.923148Z"
+}

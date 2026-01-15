@@ -1,0 +1,16 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-14T17:18:03.290702",
+  "meeting_folder": "2026-01-14_Test-Ingest",
+  "meeting_date": "2026-01-14",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-14T18:46:36.594288",
+  "processed_at": "2026-01-14T18:46:47.036686"
+}

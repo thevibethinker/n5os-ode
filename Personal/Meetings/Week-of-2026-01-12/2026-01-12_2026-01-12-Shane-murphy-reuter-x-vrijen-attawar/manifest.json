@@ -1,0 +1,16 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-12T16:17:29.644830Z",
+  "meeting_folder": "2026-01-12_Shane-Murphy-Reuter-x-Vrijen-Attawar",
+  "meeting_date": "2026-01-12",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "processed_at": "2026-01-12T16:46:42.025757Z",
+  "meeting_type": "external",
+  "crm_synced": true
+}

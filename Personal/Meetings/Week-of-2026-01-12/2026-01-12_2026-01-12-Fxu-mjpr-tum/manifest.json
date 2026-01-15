@@ -1,0 +1,63 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-12T20:17:33.919789Z",
+  "meeting_folder": "2026-01-12_fxu-mjpr-tum",
+  "meeting_date": "2026-01-12",
+  "meeting_type": "partnership",
+  "participants": [
+    "Vrijen Attawar",
+    "David Speigel"
+  ],
+  "status": "processed",
+  "processed_at": "2026-01-12T20:50:06Z",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "blocks_present": [
+    "B01_DETAILED_RECAP",
+    "B03_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B07_TONE_AND_CONTEXT",
+    "B14_BLURBS_REQUESTED",
+    "B21_KEY_MOMENTS",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B35_LINGUISTIC_PRIMITIVES"
+  ],
+  "last_updated_by": "MG-2_Prompt",
+  "last_updated_at": "2026-01-12T20:20:00Z",
+  "system_states": {
+    "intelligence_blocks": {
+      "status": "not_started"
+    },
+    "follow_up_email": {
+      "status": "complete",
+      "completed_at": "2026-01-12T20:46:57.812285+00:00",
+      "last_updated_by": "MG-5",
+      "output_file": "FOLLOW_UP_EMAIL.md"
+    },
+    "warm_intro": {
+      "status": "not_started"
+    },
+    "blurbs": {
+      "status": "not_started",
+      "b14_exists": false
+    },
+    "ready_for_state_transition": {
+      "status": false,
+      "evaluated_at": "2026-01-12T20:46:57.812304+00:00",
+      "can_transition_to": "M",
+      "blocking_systems": [
+        "intelligence_blocks",
+        "warm_intro"
+      ]
+    }
+  },
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-12T20:49:33.464696"
+}

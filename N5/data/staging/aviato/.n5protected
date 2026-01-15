@@ -1,0 +1,12 @@
+{
+  "protected": true,
+  "reason": "Aviato enrichment cache - third-party PII",
+  "created": "2026-01-15T03:02:53.500475+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "name",
+    "email"
+  ],
+  "pii_note": "Cached enrichment responses with contact information"
+}

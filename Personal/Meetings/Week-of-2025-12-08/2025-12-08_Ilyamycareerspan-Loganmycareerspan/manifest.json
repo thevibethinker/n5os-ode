@@ -16,5 +16,7 @@
     "timestamp": "2025-12-12T20:51:27.313307+00:00",
     "status": "drafts_ready"
   },
-  "last_updated_at": "2025-12-26T01:50:15.081569"
+  "last_updated_at": "2025-12-26T01:50:15.081569",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:26.037000Z"
 }

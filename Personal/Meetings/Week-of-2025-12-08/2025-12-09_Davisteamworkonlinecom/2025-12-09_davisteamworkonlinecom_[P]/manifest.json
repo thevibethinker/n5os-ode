@@ -17,5 +17,7 @@
     "timestamp": "2025-12-10T22:56:12.384460+00:00",
     "status": "none_detected",
     "note": "No warm-intro opportunities detected in this run (B01/B03 contained no pending intros)."
-  }
+  },
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:25.512140Z"
 }

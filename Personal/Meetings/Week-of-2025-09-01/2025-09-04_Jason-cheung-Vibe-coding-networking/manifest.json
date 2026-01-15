@@ -30,5 +30,7 @@
   },
   "meeting_type": "external",
   "transition_timestamp": "2025-12-01T23:02:42.299182",
-  "last_updated_at": "2025-12-26T01:43:53.658909"
+  "last_updated_at": "2025-12-26T01:43:53.658909",
+  "crm_synced": true,
+  "processed_at": "2026-01-13T22:50:23.703304Z"
 }

@@ -1,0 +1,30 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-13T23:16:30.499415Z",
+  "meeting_folder": "2026-01-12_shane_murphy-reuter_x_vrijen_attawar",
+  "meeting_date": "2026-01-12",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "intelligence_blocks": [
+    "B01_DETAILED_RECAP",
+    "B03_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B07_TONE_AND_CONTEXT",
+    "B14_BLURBS_REQUESTED",
+    "B21_KEY_MOMENTS",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B35_LINGUISTIC_PRIMITIVES"
+  ],
+  "last_updated_by": "MG-2_Prompt",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-13T23:46:17.544638",
+  "processed_at": "2026-01-13T23:46:21Z"
+}

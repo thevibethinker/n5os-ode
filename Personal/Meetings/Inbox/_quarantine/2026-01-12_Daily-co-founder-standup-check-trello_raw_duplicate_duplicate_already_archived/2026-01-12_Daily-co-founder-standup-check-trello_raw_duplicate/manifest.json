@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-12T20:17:33.919532Z",
+  "meeting_folder": "2026-01-12_Daily-co-founder-standup-check-trello",
+  "meeting_date": "2026-01-12",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-1_Prompt"
+}
