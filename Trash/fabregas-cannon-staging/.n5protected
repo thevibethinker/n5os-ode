@@ -1,7 +1,0 @@
-{
-  "protected": true,
-  "reason": "Fabregas connections staging site - canonical dev copy; use promotion flow to sync to prod",
-  "created": "2025-12-07T21:25:00-05:00",
-  "created_by": "zo"
-}
-
