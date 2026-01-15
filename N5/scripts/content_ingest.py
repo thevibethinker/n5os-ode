@@ -36,6 +36,7 @@ TYPE_DIRECTORIES = {
     "book": "books",
     "framework": "frameworks",
     "social-post": "social-posts",
+    "inspiration": "inspiration",
 }
 
 # Path patterns for auto-detection
@@ -46,6 +47,7 @@ PATH_TYPE_PATTERNS = [
     (r"/books/", "book"),
     (r"/frameworks/", "framework"),
     (r"/social-posts/", "social-post"),
+    (r"/inspiration/", "inspiration"),
 ]
 
 
@@ -315,7 +317,7 @@ Examples:
         "--type", "-t",
         dest="content_type",
         choices=["article", "deck", "paper", "book", "framework", "social-post", 
-                 "link", "snippet", "podcast", "video", "quote"],
+                 "inspiration", "link", "snippet", "podcast", "video", "quote"],
         help="Content type (auto-detected if not specified)"
     )
     parser.add_argument(
@@ -393,4 +395,5 @@ Examples:
 
 if __name__ == "__main__":
     main()
+
 
