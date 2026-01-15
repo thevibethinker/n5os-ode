@@ -1,0 +1,13 @@
+{
+  "protected": true,
+  "reason": "CRM contact profiles",
+  "created": "2026-01-15T03:02:53.723534+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "name",
+    "email",
+    "phone"
+  ],
+  "pii_note": "Relationship management profiles with contact details"
+}

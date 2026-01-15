@@ -1,0 +1,12 @@
+{
+  "protected": true,
+  "reason": "Personal profiles and identity data",
+  "created": "2026-01-15T02:54:31.255054+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "name",
+    "email"
+  ],
+  "pii_note": "Personal profiles and identity information"
+}
