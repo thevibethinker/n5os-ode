@@ -527,6 +527,105 @@ async def get_booking_url(
         return None
 
 
+async def get_booking_url_from_token(
+    session: aiohttp.ClientSession,
+    booking_token: str,
+    departure_id: str,
+    arrival_id: str,
+    outbound_date: str,
+    prefer_airline: Optional[str] = None
+) -> Optional[str]:
+    """
+    Get direct airline booking URL from a booking_token.
+    Works for one-way and multi-city flights.
+    
+    Args:
+        session: aiohttp session
+        booking_token: The booking_token from a flight result
+        departure_id: Origin airport code (required by SerpApi)
+        arrival_id: Destination airport code (required by SerpApi)
+        outbound_date: Flight date YYYY-MM-DD (required by SerpApi)
+        prefer_airline: If set, prefer booking options from this airline (e.g. "JetBlue")
+    
+    Returns the direct airline booking URL or None if not available.
+    """
+    try:
+        params = {
+            "engine": "google_flights",
+            "api_key": get_api_key(),
+            "booking_token": booking_token,
+            "departure_id": departure_id,
+            "arrival_id": arrival_id,
+            "outbound_date": outbound_date,
+            "type": "2",  # One-way
+            "currency": "USD",
+            "hl": "en",
+            "gl": "us",
+        }
+        
+        async with session.get(SERPAPI_BASE, params=params, timeout=TIMEOUT) as resp:
+            if resp.status != 200:
+                logger.warning(f"Booking options request failed: HTTP {resp.status}")
+                return None
+            data = await resp.json()
+        
+        booking_options = data.get("booking_options", [])
+        if not booking_options:
+            logger.warning("No booking_options in response")
+            return None
+        
+        # Strategy: Find direct airline booking, preferring specified airline
+        airline_options = []
+        third_party_options = []
+        
+        for opt in booking_options:
+            together = opt.get("together", {})
+            br = together.get("booking_request", {})
+            
+            if not br.get("url") or not br.get("post_data"):
+                continue
+            
+            if together.get("airline"):  # Direct airline booking
+                airline_name = together.get("airline_name", "")
+                airline_options.append({
+                    "airline_name": airline_name,
+                    "url": br["url"],
+                    "post_data": br["post_data"],
+                    "price": together.get("price", 0)
+                })
+            else:
+                third_party_options.append({
+                    "name": together.get("book_with", "Unknown"),
+                    "url": br["url"],
+                    "post_data": br["post_data"],
+                    "price": together.get("price", 0)
+                })
+        
+        # Prefer specified airline if given
+        selected = None
+        if prefer_airline and airline_options:
+            for opt in airline_options:
+                if prefer_airline.lower() in opt["airline_name"].lower():
+                    selected = opt
+                    break
+        
+        # Fallback to first airline option
+        if not selected and airline_options:
+            selected = airline_options[0]
+        
+        # Last resort: third party
+        if not selected and third_party_options:
+            selected = third_party_options[0]
+        
+        if selected:
+            return await extract_airline_url(session, selected["url"], selected["post_data"])
+        
+        return None
+    except Exception as e:
+        logger.warning(f"Failed to get booking URL from token: {e}")
+        return None
+
+
 async def multi_airport_search(
     arrival: str,
     outbound_date: str,
@@ -612,27 +711,44 @@ async def multi_airport_search(
         
         ranked.sort(key=lambda x: x["score"], reverse=True)
         
-        # Fetch booking links for top results if requested (round-trip only)
-        if fetch_booking_links and return_date and ranked:
-            base_params = {
-                "engine": "google_flights",
-                "api_key": get_api_key(),
-                "departure_id": origins[0] if len(origins) == 1 else ranked[0]["departure_airport"],
-                "arrival_id": arrival,
-                "outbound_date": outbound_date,
-                "return_date": return_date,
-                "currency": "USD",
-                "hl": "en",
-                "gl": "us",
-            }
-            
-            # Fetch booking URLs for top 10 flights (to match display)
-            for item in ranked[:10]:
-                if item.get("departure_token"):
-                    # Update base_params with correct departure airport
-                    base_params["departure_id"] = item["departure_airport"]
-                    booking_url = await get_booking_url(session, base_params, item["departure_token"])
-                    item["booking_url"] = booking_url
+        # Fetch booking links for top results if requested
+        if fetch_booking_links and ranked:
+            if return_date:
+                # Round-trip: use departure_token flow
+                base_params = {
+                    "engine": "google_flights",
+                    "api_key": get_api_key(),
+                    "departure_id": origins[0] if len(origins) == 1 else ranked[0]["departure_airport"],
+                    "arrival_id": arrival,
+                    "outbound_date": outbound_date,
+                    "return_date": return_date,
+                    "currency": "USD",
+                    "hl": "en",
+                    "gl": "us",
+                }
+                
+                # Fetch booking URLs for top 10 flights (to match display)
+                for item in ranked[:10]:
+                    if item.get("departure_token"):
+                        # Update base_params with correct departure airport
+                        base_params["departure_id"] = item["departure_airport"]
+                        booking_url = await get_booking_url(session, base_params, item["departure_token"])
+                        item["booking_url"] = booking_url
+            else:
+                # One-way: use booking_token directly
+                for item in ranked[:10]:
+                    booking_token = item["flight"].get("booking_token")
+                    if booking_token:
+                        airline_name = item["flight"].get("flights", [{}])[0].get("airline", "")
+                        booking_url = await get_booking_url_from_token(
+                            session, 
+                            booking_token,
+                            departure_id=item["departure_airport"],
+                            arrival_id=arrival,
+                            outbound_date=outbound_date,
+                            prefer_airline=airline_name  # Prefer the same airline as the flight
+                        )
+                        item["booking_url"] = booking_url
     
     # Extract price insights
     insights = extract_price_insights(results)
@@ -915,6 +1031,10 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+
+
 
 
 

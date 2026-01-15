@@ -21,46 +21,57 @@ const STAGE5_SYSTEM_PROMPT = `You are a senior career coach synthesizing intervi
 
 Your task is to generate a FINAL ANALYSIS REPORT that is:
 1. HONEST but KIND - tell the truth without being harsh
-2. ACTIONABLE - every critique comes with a specific improvement
-3. CALIBRATED - adjust tone based on their self-perception vs reality
-4. MEMORABLE - use specific quotes and examples from their answers
+2. SPECIFIC - Use ACTUAL QUOTES from their answers. Never give generic feedback.
+3. ACTIONABLE - every critique comes with a specific improvement they can practice
+4. CALIBRATED - adjust tone based on their self-perception vs reality
+5. MEMORABLE - reference specific moments from THIS interview, not generic advice
 
-You will receive structured data from previous analysis stages. Your job is to synthesize this into human-readable feedback.
+**CRITICAL RULE: SPECIFICITY OVER GENERICS**
+- BAD: "You showed good communication skills"
+- GOOD: "When you said 'I led the team to reduce deployment time from 2 hours to 15 minutes,' you effectively quantified your impact"
+
+- BAD: "Could have been more specific about the company"  
+- GOOD: "When asked about Nike's mission, you said 'I love the brand' but didn't mention their recent sustainability initiatives or the 'Move to Zero' campaign"
+
+- BAD: "Your STAR format was incomplete"
+- GOOD: "In your answer about the cross-functional project, you explained the Situation and Action clearly, but when you said 'it went really well,' you missed quantifying the Result - what metrics improved?"
+
+You will receive structured data from previous analysis stages including ACTUAL QUOTES from their answers. Your job is to synthesize this into human-readable feedback that references these specific quotes.
 
 OUTPUT FORMAT (JSON):
 {
-  "executiveSummary": "2-3 sentence overview of performance. Be direct but encouraging.",
+  "executiveSummary": "2-3 sentence overview. MUST include at least one specific quote or moment from the interview.",
   
   "topAnswerFeedback": [
     {
       "questionSummary": "Brief description of what was asked",
       "questionType": "behavioral|situational|competency|cultural",
-      "whatTheySaid": "Brief paraphrase or key quote from their answer",
-      "whatWasGood": ["Specific strength 1", "Specific strength 2"],
-      "whatWasMissing": ["Gap 1", "Gap 2"],
-      "howToImprove": "One specific, actionable suggestion",
+      "whatTheySaid": "Direct quote or close paraphrase - be specific!",
+      "whatWasGood": ["Specific strength with quote", "Another specific strength"],
+      "whatWasMissing": ["Specific gap - what exactly was missing", "Another gap with example"],
+      "howToImprove": "Specific, actionable suggestion with an example of what they SHOULD have said",
       "grade": "A|B|C|D|F"
     }
   ],
   
   "calibrationInsight": {
     "deltaEmoji": "↑ if overconfident, ↓ if underconfident, → if realistic",
-    "narrative": "2-3 sentence insight about their self-awareness. Be supportive."
+    "narrative": "2-3 sentences comparing what they SAID in their self-assessment vs what the EVIDENCE shows. Use quotes from both."
   },
   
   "topImprovements": [
-    "Specific, actionable improvement #1",
-    "Specific, actionable improvement #2",
-    "Specific, actionable improvement #3"
+    "Specific improvement #1 - reference the exact answer that needed this",
+    "Specific improvement #2 - include what they should practice saying",
+    "Specific improvement #3 - give a concrete example"
   ],
   
   "verdict": {
     "overallGrade": "A/B+/B/B-/C+/C/C-/D/F",
-    "gradeDescription": "One sentence explaining the grade",
+    "gradeDescription": "One sentence explaining the grade with reference to specific moments",
     "hireLikelihood": "strong|moderate|uncertain|unlikely",
     "hireLikelihoodPercent": "e.g., 60-70%",
-    "keyRisk": "The main concern an interviewer would have",
-    "keyStrength": "The standout positive from this interview"
+    "keyRisk": "The main concern - be specific about which answer showed this",
+    "keyStrength": "The standout positive - quote the specific moment"
   },
   
   "technicalQuestionsNote": "Only include if technical questions were skipped. Otherwise null."
@@ -200,9 +211,18 @@ Generate the final report JSON. Include only the TOP 3-5 most important answer f
   const report: AnalysisReport = {
     sessionId: input.sessionId,
     company: input.company,
+    customerName: input.customerName || "Candidate",
+    role: extractRoleFromJD(input.jobDescription),
     generatedAt: new Date().toISOString(),
     
     executiveSummary: parsed.executiveSummary || "Analysis complete.",
+    
+    // Include extracted Q&A pairs from Stage 1
+    extractedQAs: stage1.extractedQAs.map(qa => ({
+      questionText: qa.questionText,
+      answerText: qa.answerText,
+      questionIndex: qa.questionIndex,
+    })),
     
     questionBreakdown: buildQuestionBreakdown(stage2),
     
@@ -256,6 +276,50 @@ Generate the final report JSON. Include only the TOP 3-5 most important answer f
   return report;
 }
 
+function extractRoleFromJD(jobDescription: string): string | undefined {
+  if (!jobDescription || jobDescription.length < 10) return undefined;
+  
+  // Normalize whitespace
+  const normalized = jobDescription.replace(/\\s+/g, ' ').trim();
+  
+  // Try to extract role/title from common patterns (ordered by specificity)
+  const patterns = [
+    // Explicit role statements
+    /(?:job\\s*title|position\\s*title|role)[:\\s]+["']?([^"'\\n,]+)["']?/i,
+    /(?:hiring|recruiting)\\s+(?:for\\s+)?(?:a\\s+|an\\s+)?([^\\n.]+?(?:engineer|manager|designer|analyst|developer|director|lead|specialist|coordinator|associate|consultant|executive|officer|head|vp|chief))/i,
+    /looking\\s+for\\s+(?:a\\s+|an\\s+)?([^\\n.]+?(?:engineer|manager|designer|analyst|developer|director|lead|specialist|coordinator|associate|consultant))/i,
+    // Role at start of JD
+    /^\\s*(?:about\\s+the\\s+role[:\\s]*)?([^\\n]{10,60}(?:engineer|manager|designer|analyst|developer|director|lead|specialist|coordinator|associate|consultant|executive|officer|head|vp))/im,
+    // Common header patterns
+    /^\\s*([a-z\\s]+(?:engineer|manager|designer|analyst|developer|director|lead|specialist|coordinator|associate|consultant))\\s*$/im,
+    // Fallback: "We are hiring a..." or "Join us as a..."
+    /(?:we\\s+are\\s+hiring|join\\s+us\\s+as|become\\s+our)\\s+(?:a\\s+|an\\s+)?([^\\n.]+)/i,
+    // Last resort: first line that looks like a title
+    /^\\s*([A-Z][a-zA-Z\\s]+(?:Engineer|Manager|Designer|Analyst|Developer|Director|Lead|Specialist|Coordinator|Associate|Consultant|Executive|Officer|Head|VP|Chief)[\\w\\s]*)/m,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = normalized.match(pattern);
+    if (match && match[1]) {
+      let role = match[1].trim();
+      // Clean up common suffixes
+      role = role.replace(/\\s*[-–]\\s*(?:remote|hybrid|onsite|full.?time|part.?time|contract).*$/i, '').trim();
+      role = role.replace(/\\s*\\(.*\\)\\s*$/, '').trim();
+      // Skip if it looks like a full sentence or too long
+      if (role.length > 80 || role.includes(' and ') || role.split(' ').length > 10) {
+        continue;
+      }
+      // Skip if too short
+      if (role.length < 5) {
+        continue;
+      }
+      return role;
+    }
+  }
+  
+  return undefined;
+}
+
 function buildSynthesisContext(
   input: PipelineInput,
   stage1: Stage1Output,
@@ -303,5 +367,8 @@ function getDeltaEmoji(delta: string): string {
     default: return "→";
   }
 }
+
+
+
 
 
