@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "description": "Registry of destinations for conversation-end commit suggestions",
+  "targets": [
+    {
+      "id": "learning_profile",
+      "name": "Learning Profile",
+      "destination": "Personal/Learning/my-learning-profile.md",
+      "description": "Record concepts learned or technical understanding gained",
+      "detection_hints": [
+        "teaching session",
+        "vibe teacher active",
+        "learned about",
+        "now understand",
+        "technical explanation"
+      ],
+      "commit_prompt": "What concepts or technical understanding did V gain in this conversation?",
+      "section_to_update": "## Learning Timeline"
+    },
+    {
+      "id": "content_library",
+      "name": "Content Library",
+      "destination": "Knowledge/content-library/",
+      "description": "Save excellent articles, papers, or resources worth preserving",
+      "detection_hints": [
+        "deep engagement with resource",
+        "positive response from V",
+        "returned to multiple times"
+      ],
+      "quality_gate": {
+        "threshold": "HIGH",
+        "criteria": [
+          "We dug deeply into the resource (not just skimmed)",
+          "V responded positively or expressed value",
+          "Inclusion would NOT weaken or create redundancy with existing library"
+        ],
+        "pushback_allowed": true,
+        "pushback_examples": [
+          "This overlaps significantly with [existing item] — skip unless it adds something distinct",
+          "We only skimmed this; revisit before committing",
+          "This is good but not reference-grade — consider Knowledge/notes instead"
+        ]
+      },
+      "commit_prompt": "Were any resources discovered that meet the HIGH bar for Content Library inclusion?",
+      "ingest_script": "python3 N5/scripts/content_ingest.py"
+    },
+    {
+      "id": "voice_library",
+      "name": "Voice Library",
+      "destination": "Knowledge/voice-library/",
+      "description": "Capture phrases, writing patterns, or style elements to preserve V's voice",
+      "detection_hints": [
+        "writing style",
+        "phrase",
+        "voice",
+        "tone",
+        "how V would say"
+      ],
+      "commit_prompt": "Were any distinctive phrases or writing patterns worth adding to the Voice Library?",
+      "note": "Categorization schema pending from worker WORKER_xv1y_20260113_163016"
+    },
+    {
+      "id": "git",
+      "name": "Git Repository",
+      "destination": "/home/workspace/.git",
+      "description": "Commit code or configuration changes to version control",
+      "detection_hints": [
+        "code changes",
+        "script created",
+        "configuration updated"
+      ],
+      "commit_prompt": "Are there code or configuration changes worth committing?"
+    }
+  ]
+}
+
