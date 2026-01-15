@@ -1,0 +1,14 @@
+{
+  "protected": true,
+  "reason": "LinkedIn data export - complete profile data",
+  "created": "2026-01-15T03:02:53.387113+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "name",
+    "email",
+    "phone",
+    "address"
+  ],
+  "pii_note": "Full LinkedIn export with connections, messages, profile data"
+}
