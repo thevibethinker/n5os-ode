@@ -1,425 +1,83 @@
 {
-  "version": "1.0.0",
-  "last_updated": "2025-10-16T06:28:00Z",
-  "description": "Centralized emoji legend for N5 OS - Single Source of Truth for emoji meanings across threads, lists, commands, and UI",
-  "emojis": [
-    {
-      "symbol": "✅",
-      "name": "completed",
-      "category": "status",
-      "meaning": "Completed successfully",
-      "contexts": ["threads", "tasks", "todos", "lists"],
-      "keywords": ["complete", "done", "finished", "success", "accomplished"],
-      "priority": 10,
-      "usage_notes": "Thread objectives fully achieved, no errors. Tasks finished successfully.",
-      "detection_rules": {
-        "positive": ["status=complete", "no_errors", "objectives_met"],
-        "negative": ["has_errors", "incomplete"]
+  "version": "2.0.0",
+  "last_updated": "2026-01-15",
+  "description": "V's 3-slot emoji system for thread titles: State | Type | Content",
+  "format": {
+    "pattern": "MMM DD | {state} {type} {content} Title",
+    "example": "Jan 14 | ✅ 👷🏽‍♂️ 🏗️ N5 Import Path Fixes",
+    "slots": 3,
+    "notes": "All 3 slots required. Use 📌 for normal threads."
+  },
+  "slots": {
+    "1_state": {
+      "description": "Thread completion/progress state",
+      "required": true,
+      "emojis": {
+        "✅": {"name": "complete", "meaning": "Thread completed successfully"},
+        "⏸️": {"name": "paused", "meaning": "Action pending, thread paused"},
+        "‼️": {"name": "critical", "meaning": "Critical action pending"},
+        "🚧": {"name": "in_progress", "meaning": "Work in progress, to be resumed"},
+        "❌": {"name": "failed", "meaning": "Thread ended with unresolved errors"}
       }
     },
-    {
-      "symbol": "❌",
-      "name": "failed",
-      "category": "status",
-      "meaning": "Failed or error",
-      "contexts": ["threads", "tasks", "system"],
-      "keywords": ["failed", "error", "unsuccessful", "broken", "crash"],
-      "priority": 100,
-      "usage_notes": "Thread ended with unresolved errors or failures. Critical issues.",
-      "detection_rules": {
-        "positive": ["has_errors", "exit_code!=0", "exception", "failed"],
-        "negative": ["status=complete", "resolved"]
+    "2_type": {
+      "description": "Thread structural type",
+      "required": true,
+      "emojis": {
+        "📌": {"name": "normal", "meaning": "Normal standalone thread (default)"},
+        "🐙": {"name": "orchestrator", "meaning": "Orchestrator thread coordinating workers"},
+        "👷🏽‍♂️": {"name": "worker", "meaning": "Worker thread spawned by orchestrator"},
+        "🔗": {"name": "linked", "meaning": "Part of a series (use with #N)"}
       }
     },
-    {
-      "symbol": "🐙",
-      "name": "orchestrator",
-      "category": "thread_type",
-      "meaning": "Orchestrator thread - coordinates multiple worker threads",
-      "contexts": ["threads"],
-      "keywords": ["orchestrator", "coordinator", "parent", "orchestration", "multi-worker"],
-      "priority": 95,
-      "usage_notes": "Orchestrator threads that spawn and coordinate worker threads. Parent of workers.",
-      "detection_rules": {
-        "positive": ["orchestrator", "parent_thread", "spawns_workers", "coordinator"],
-        "negative": ["worker_thread"]
+    "3_content": {
+      "description": "Primary content/work type",
+      "required": true,
+      "emojis": {
+        "🏗️": {"name": "build", "meaning": "Building functionality, features, systems"},
+        "🔎": {"name": "research", "meaning": "Search, query, research, investigation"},
+        "🛠️": {"name": "repair", "meaning": "Repair, debug, fix, troubleshoot"},
+        "🕸️": {"name": "site", "meaning": "Site/web app related work"},
+        "🪵": {"name": "log", "meaning": "Log entries, lists, tracking"},
+        "✍️": {"name": "content", "meaning": "Content creation, writing, drafting"},
+        "🪞": {"name": "reflection", "meaning": "Reflection, Socratic discourse, strategizing"},
+        "🤳": {"name": "social", "meaning": "Social media related work"},
+        "📊": {"name": "data", "meaning": "Data work, analytics, datasets"},
+        "💬": {"name": "comms", "meaning": "Communications, email, outreach"},
+        "🗂️": {"name": "organize", "meaning": "Organization, cleanup, filing"},
+        "📝": {"name": "planning", "meaning": "Planning, roadmapping, design"}
       }
-    },
-    {
-      "symbol": "👷",
-      "name": "worker",
-      "category": "thread_type",
-      "meaning": "Worker thread - executes specific task for orchestrator",
-      "contexts": ["threads"],
-      "keywords": ["worker", "child", "spawned", "subtask", "worker_thread"],
-      "priority": 90,
-      "usage_notes": "Worker threads spawned by orchestrator to execute specific tasks. Child of orchestrator.",
-      "detection_rules": {
-        "positive": ["worker_thread", "spawned_by", "child_thread", "worker"],
-        "negative": ["orchestrator", "parent"]
-      }
-    },
-    {
-      "symbol": "🚧",
-      "name": "in_progress",
-      "category": "status",
-      "meaning": "Work in progress / under construction",
-      "contexts": ["threads", "tasks", "projects"],
-      "keywords": ["wip", "progress", "building", "developing", "ongoing"],
-      "priority": 80,
-      "usage_notes": "Thread paused mid-work, to be resumed. Active development.",
-      "detection_rules": {
-        "positive": ["status=in_progress", "paused", "resume_later"],
-        "negative": ["status=complete", "abandoned"]
-      }
-    },
-    {
-      "symbol": "🔗",
-      "name": "linked",
-      "category": "relationship",
-      "meaning": "Linked or sequential threads",
-      "contexts": ["threads"],
-      "keywords": ["linked", "sequential", "series", "continuation", "part"],
-      "priority": 70,
-      "usage_notes": "Part of a series. Use with #N for sequence numbers (e.g., CRM Refactor #2)",
-      "detection_rules": {
-        "positive": ["has_sequence_number", "continuation_of", "follows"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "📰",
-      "name": "research",
-      "category": "content_type",
-      "meaning": "Research, articles, knowledge gathering",
-      "contexts": ["threads", "lists", "knowledge"],
-      "keywords": ["article", "research", "insights", "knowledge", "reading", "analysis", "study"],
-      "priority": 40,
-      "usage_notes": "Knowledge gathering, article processing, insights extraction",
-      "detection_rules": {
-        "positive": ["article", "research", "knowledge_base"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🎯",
-      "name": "strategy",
-      "category": "content_type",
-      "meaning": "Strategy, planning, GTM",
-      "contexts": ["threads", "tasks", "planning"],
-      "keywords": ["GTM", "strategy", "positioning", "planning", "roadmap", "vision", "goals"],
-      "priority": 40,
-      "usage_notes": "Strategic work, go-to-market planning, high-level vision",
-      "detection_rules": {
-        "positive": ["GTM", "strategy", "planning"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "📝",
-      "name": "documentation",
-      "category": "content_type",
-      "meaning": "Documentation work",
-      "contexts": ["threads", "tasks", "files"],
-      "keywords": ["document", "write", "draft", "README", "guide", "notes", "doc"],
-      "priority": 40,
-      "usage_notes": "Pure documentation work, writing guides, README files",
-      "detection_rules": {
-        "positive": ["documentation", "writing", "README"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🔧",
-      "name": "system",
-      "category": "content_type",
-      "meaning": "System or infrastructure work",
-      "contexts": ["threads", "tasks", "n5"],
-      "keywords": ["N5", "system", "infrastructure", "commands", "scripts", "workflow", "tools"],
-      "priority": 40,
-      "usage_notes": "N5 system improvements, infrastructure, tooling, automation",
-      "detection_rules": {
-        "positive": ["N5", "system", "infrastructure", "commands"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🐛",
-      "name": "bug_fix",
-      "category": "content_type",
-      "meaning": "Bug fix or debugging",
-      "contexts": ["threads", "tasks", "issues"],
-      "keywords": ["bug", "fix", "debug", "troubleshoot", "issue", "error", "patch"],
-      "priority": 60,
-      "usage_notes": "Debugging, troubleshooting, fixing issues (with resolution)",
-      "detection_rules": {
-        "positive": ["bug", "fix", "debug", "issue", "resolved"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "💬",
-      "name": "communication",
-      "category": "content_type",
-      "meaning": "Communication or messaging",
-      "contexts": ["threads", "tasks", "email"],
-      "keywords": ["email", "message", "outreach", "communication", "response", "follow-up", "slack"],
-      "priority": 40,
-      "usage_notes": "Email work, message drafting, outreach, communication tasks",
-      "detection_rules": {
-        "positive": ["email", "message", "communication"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🏗️",
-      "name": "architecture",
-      "category": "content_type",
-      "meaning": "Architecture or design work",
-      "contexts": ["threads", "planning", "design"],
-      "keywords": ["architecture", "design", "structure", "schema", "model", "framework"],
-      "priority": 40,
-      "usage_notes": "System architecture, design decisions, structural planning",
-      "detection_rules": {
-        "positive": ["architecture", "design", "schema"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "⚡",
-      "name": "performance",
-      "category": "content_type",
-      "meaning": "Performance or optimization",
-      "contexts": ["threads", "tasks", "optimization"],
-      "keywords": ["performance", "optimize", "speed", "efficiency", "fast", "refactor"],
-      "priority": 40,
-      "usage_notes": "Performance improvements, optimization work, speed enhancements",
-      "detection_rules": {
-        "positive": ["performance", "optimize", "efficiency"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🔒",
-      "name": "security",
-      "category": "content_type",
-      "meaning": "Security or privacy",
-      "contexts": ["threads", "tasks", "security"],
-      "keywords": ["security", "privacy", "auth", "permissions", "encryption", "vulnerability"],
-      "priority": 50,
-      "usage_notes": "Security improvements, auth work, privacy enhancements",
-      "detection_rules": {
-        "positive": ["security", "privacy", "auth"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🧪",
-      "name": "testing",
-      "category": "content_type",
-      "meaning": "Testing or validation",
-      "contexts": ["threads", "tasks", "qa"],
-      "keywords": ["test", "testing", "validation", "qa", "verify", "check"],
-      "priority": 40,
-      "usage_notes": "Testing, validation, QA work, verification tasks",
-      "detection_rules": {
-        "positive": ["test", "validation", "verify"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "📊",
-      "name": "data",
-      "category": "content_type",
-      "meaning": "Data work or analytics",
-      "contexts": ["threads", "tasks", "analysis"],
-      "keywords": ["data", "analytics", "metrics", "stats", "dashboard", "reporting"],
-      "priority": 40,
-      "usage_notes": "Data processing, analytics, metrics, reporting dashboards",
-      "detection_rules": {
-        "positive": ["data", "analytics", "metrics"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🎨",
-      "name": "design",
-      "category": "content_type",
-      "meaning": "UI/UX or visual design",
-      "contexts": ["threads", "tasks", "ui"],
-      "keywords": ["design", "UI", "UX", "interface", "visual", "layout", "styling"],
-      "priority": 40,
-      "usage_notes": "UI/UX work, visual design, interface improvements",
-      "detection_rules": {
-        "positive": ["UI", "UX", "design", "interface"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🚀",
-      "name": "deployment",
-      "category": "action",
-      "meaning": "Deployment or launch",
-      "contexts": ["threads", "tasks", "releases"],
-      "keywords": ["deploy", "launch", "release", "ship", "production", "live"],
-      "priority": 50,
-      "usage_notes": "Deployment, launch, going live, production releases",
-      "detection_rules": {
-        "positive": ["deploy", "launch", "production"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "📦",
-      "name": "package",
-      "category": "content_type",
-      "meaning": "Package or module work",
-      "contexts": ["threads", "tasks", "code"],
-      "keywords": ["package", "module", "library", "dependency", "npm", "pip"],
-      "priority": 40,
-      "usage_notes": "Package management, module work, dependency updates",
-      "detection_rules": {
-        "positive": ["package", "module", "dependency"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🔄",
-      "name": "sync",
-      "category": "action",
-      "meaning": "Sync or integration",
-      "contexts": ["threads", "tasks", "integration"],
-      "keywords": ["sync", "integration", "connect", "bridge", "api", "webhook"],
-      "priority": 40,
-      "usage_notes": "Integration work, syncing systems, API connections",
-      "detection_rules": {
-        "positive": ["sync", "integration", "api"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🗂️",
-      "name": "organization",
-      "category": "action",
-      "meaning": "Organization or cleanup",
-      "contexts": ["threads", "tasks", "files"],
-      "keywords": ["organize", "cleanup", "refactor", "restructure", "tidy"],
-      "priority": 30,
-      "usage_notes": "Organization, cleanup, refactoring, file management",
-      "detection_rules": {
-        "positive": ["cleanup", "organize", "refactor"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "💡",
-      "name": "idea",
-      "category": "content_type",
-      "meaning": "Ideas or brainstorming",
-      "contexts": ["threads", "lists", "planning"],
-      "keywords": ["idea", "brainstorm", "concept", "proposal", "suggestion"],
-      "priority": 30,
-      "usage_notes": "Brainstorming, ideas, concepts, proposals",
-      "detection_rules": {
-        "positive": ["idea", "brainstorm", "concept"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "📅",
-      "name": "meeting",
-      "category": "content_type",
-      "meaning": "Meeting or discussion",
-      "contexts": ["threads", "tasks", "calendar"],
-      "keywords": ["meeting", "discussion", "call", "sync", "standup", "review"],
-      "priority": 40,
-      "usage_notes": "Meetings, discussions, sync calls, reviews",
-      "detection_rules": {
-        "positive": ["meeting", "discussion", "call"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "⏰",
-      "name": "scheduled",
-      "category": "status",
-      "meaning": "Scheduled or recurring",
-      "contexts": ["tasks", "automation"],
-      "keywords": ["scheduled", "recurring", "cron", "automated", "periodic"],
-      "priority": 40,
-      "usage_notes": "Scheduled tasks, recurring automation, cron jobs",
-      "detection_rules": {
-        "positive": ["scheduled", "recurring", "cron"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🎓",
-      "name": "learning",
-      "category": "content_type",
-      "meaning": "Learning or tutorial",
-      "contexts": ["threads", "knowledge", "documentation"],
-      "keywords": ["learn", "tutorial", "education", "training", "course", "lesson"],
-      "priority": 30,
-      "usage_notes": "Learning, tutorials, educational content, training",
-      "detection_rules": {
-        "positive": ["learn", "tutorial", "education"],
-        "negative": []
-      }
-    },
-    {
-      "symbol": "🤝",
-      "name": "collaboration",
-      "category": "content_type",
-      "meaning": "Collaboration or partnership",
-      "contexts": ["threads", "tasks", "team"],
-      "keywords": ["collaboration", "team", "partner", "together", "shared"],
-      "priority": 30,
-      "usage_notes": "Collaborative work, team projects, partnerships",
-      "detection_rules": {
-        "positive": ["collaboration", "team", "partner"],
-        "negative": []
-      }
-    }
-  ],
-  "categories": {
-    "thread_type": {
-      "description": "Indicates the type of thread (orchestrator, worker, etc.)",
-      "emojis": ["🐙", "👷"]
-    },
-    "status": {
-      "description": "Indicates the current state or status of an item",
-      "emojis": ["✅", "❌", "🚧", "⏰"]
-    },
-    "content_type": {
-      "description": "Indicates the type of content or work being done",
-      "emojis": ["📰", "🎯", "📝", "🔧", "🐛", "💬", "🏗️", "⚡", "🔒", "🧪", "📊", "🎨", "📦", "💡", "📅", "🎓", "🤝"]
-    },
-    "action": {
-      "description": "Indicates an action or process",
-      "emojis": ["🚀", "🔄", "🗂️"]
-    },
-    "relationship": {
-      "description": "Indicates relationships between items",
-      "emojis": ["🔗"]
     }
   },
-  "usage_contexts": {
-    "threads": {
-      "description": "Thread titles in conversation list",
-      "priority_order": ["thread_type", "status", "relationship", "content_type", "action"]
+  "detection_hints": {
+    "state": {
+      "complete": ["status=closed", "all tasks done", "objectives met"],
+      "paused": ["waiting on", "pending", "to be resumed", "blocked"],
+      "critical": ["urgent", "critical", "ASAP", "blocking"],
+      "in_progress": ["WIP", "continuing", "mid-work"],
+      "failed": ["error", "failed", "crashed", "unresolved"]
     },
-    "tasks": {
-      "description": "Task items in lists and todos",
-      "priority_order": ["status", "content_type", "action"]
+    "type": {
+      "normal": ["default", "standalone", "single thread"],
+      "orchestrator": ["orchestrator", "spawns workers", "coordinates", "parent thread"],
+      "worker": ["worker", "spawned by", "W1-", "W2-", "WORKER_ASSIGNMENT"],
+      "linked": ["#2", "#3", "part of series", "continuation"]
     },
-    "files": {
-      "description": "File organization and naming",
-      "priority_order": ["content_type", "status"]
-    },
-    "knowledge": {
-      "description": "Knowledge base entries and articles",
-      "priority_order": ["content_type"]
+    "content": {
+      "build": ["build", "implement", "create", "feature", "capability"],
+      "research": ["research", "search", "find", "query", "investigate"],
+      "repair": ["fix", "debug", "repair", "troubleshoot", "bug"],
+      "site": ["site", "website", "web app", "deploy site"],
+      "log": ["log", "list", "track", "entries"],
+      "content": ["write", "draft", "content", "article", "post"],
+      "reflection": ["reflect", "strategy", "think through", "Socratic"],
+      "social": ["social", "twitter", "linkedin", "X post"],
+      "data": ["data", "dataset", "analytics", "metrics"],
+      "comms": ["email", "message", "outreach", "follow-up"],
+      "organize": ["cleanup", "organize", "file", "reconcile"],
+      "planning": ["plan", "roadmap", "design", "architecture"]
     }
   }
 }
+
+
