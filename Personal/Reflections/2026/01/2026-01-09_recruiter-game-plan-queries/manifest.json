@@ -1,21 +1,29 @@
 {
   "slug": "recruiter-game-plan-queries",
   "title": "Recruiter Game Plan Queries",
-  "processed_at": "2026-01-09T12:45:00Z",
-  "word_count": 850,
+  "processed_at": "2026-01-09T08:00:00Z",
+  "word_count": 982,
   "source": "google_drive",
+  "source_id": "1Ze852sOKZaFhSNrzmWj8aFOmyBGtAz7M",
   "source_filename": "reflections in response to ilse's queries about game plan around recruiters",
-  "blocks_generated": ["R03", "R04", "R05", "RIX"],
-  "edges_created": 4,
+  "blocks_generated": ["R03", "R04", "R05", "R07", "RIX"],
+  "edges_created": 3,
   "classification": {
-    "relevant_blocks": ["R03", "R04", "R05"],
-    "confidence": {"R03": 0.9, "R04": 0.85, "R05": 0.8},
-    "primary_theme": "recruiter go-to-market strategy with product feature discussion"
+    "relevant_blocks": ["R03", "R04", "R05", "R07"],
+    "confidence": {
+      "R03": 0.8,
+      "R04": 0.85,
+      "R05": 0.9,
+      "R07": 0.6
+    },
+    "primary_theme": "strategic product discussion about recruiter GTM and candidate ownership"
   },
   "flags": {
     "r00_generated": false,
-    "super_connectors": ["candidate-ownership-thesis"],
-    "promotion_candidates": ["recruiter-as-channel"]
+    "super_connectors": [],
+    "promotion_candidates": ["candidate-ownership-thesis"]
   },
-  "provenance": "process-reflection-framework-v3"
+  "provenance": "con_OYys6PCWmGnEhbmU",
+  "framework_version": "2.0"
 }
+
