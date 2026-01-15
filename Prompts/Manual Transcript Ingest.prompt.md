@@ -1,174 +1,162 @@
 ---
 created: 2025-12-23
-last_edited: 2025-12-23
-version: 1.0
+last_edited: 2026-01-14
+version: 2.1
 tool: true
 title: Manual Transcript Ingest
 description: >
-  Ingest a transcript from any source (Fathom, Fireflies, Zoom, Loom, Granola, etc.)
-  into the N5 meeting system. Creates canonical folder structure with metadata.
-  Uses Socratic clarification when information is missing.
+  Paste any transcript to ingest it into the N5 meeting system.
+  Automatically detects if speaker labels are missing and runs attribution pre-screen.
+  Creates canonical folder structure in Personal/Meetings/Inbox/ ready for pipeline processing.
 tags:
   - meetings
-  - transcripts
+  - transcript
+  - ingest
   - intake
-  - pseudo-webhook
-command: manual-ingest
-provenance: con_eCLbOiRyc7HgzEQp
 ---
 
 # Manual Transcript Ingest
 
-**Purpose:** Process a transcript from any source into the N5 meeting system, creating the canonical folder structure, metadata, and preparing it for the meeting intelligence pipeline.
-
-## Invocation
-
-```
-@Manual Transcript Ingest <paste transcript or provide file path>
-```
+Ingest a transcript from any source (Fathom, Fireflies, Zoom, Loom, Granola, voice memos, etc.) into the N5 meeting system.
 
 ## Workflow
 
-### Step 1: Receive Input
+When V pastes a transcript:
 
-Accept transcript in any of these formats:
-- **Direct paste:** User pastes transcript text directly
-- **File reference:** User provides `file 'path/to/transcript.txt'`
-- **Clipboard:** User says "from clipboard" or "I just copied it"
+### Step 1: Speaker Label Detection
 
-### Step 2: Analyze Transcript
+First, run the detection script:
+```bash
+python3 /home/workspace/N5/scripts/detect_speaker_labels.py --segments --text "<transcript>"
+```
 
-Run semantic analysis to extract:
-- **Date:** Look for explicit date mentions ("December 23", "today", "last Tuesday")
-- **Participants:** Extract speaker names from "Speaker: text" patterns
-- **Title:** Look for meeting title mentions or infer from context
-- **Duration:** If timestamps present, calculate duration
+**If `has_speaker_labels: true`** → Skip to Step 3 (Metadata Extraction)
 
-### Step 3: Socratic Clarification (if needed)
+**If `has_speaker_labels: false`** → Proceed to Step 2 (Speaker Attribution)
 
-If critical information is missing or ambiguous, ask:
+---
 
-**For missing date:**
-> I couldn't detect the meeting date from the transcript. When was this recorded?
-> - A specific date (e.g., "December 20")
-> - "Today" or "Yesterday"  
-> - "Last [day of week]"
+### Step 2: Speaker Attribution Pre-Screen
 
-**For ambiguous participants:**
-> I detected these speakers: [list]. Are these the correct participant names?
-> Should I add anyone else?
+When no speaker labels are detected, help V identify who said what.
 
-**For missing title:**
-> What should I call this meeting? (Or I can name it after the first participant)
+**2a. Analyze the segments returned by the detection script**
 
-### Step 3: Analyze Semantically
+Use your semantic understanding to:
+- Identify likely speaker count (usually 2, sometimes 3+)
+- Cluster segments by speaking style, perspective, role
+- Look for clues: "I" statements, questions vs answers, who's pitching vs receiving, technical vs non-technical language
 
-Analyze the transcript semantically to extract:
-1. **Meeting Title**: Generate a concise, human-readable title (e.g., "Partnership Sync - Ribbon & Careerspan")
-2. **Meeting Date**: Identify the recording date (Priority: Transcript mention > External metadata > Today)
-3. **Participants**: Extract speaker names (Vrijen Attawar, Christine Song, etc.)
-4. **Structured Utterances**: Convert the raw text into a list of speaker-mapped segments.
+**2b. Present attribution hypothesis to V**
 
-### Step 4: Execute Ingestion
+Format your response like this:
 
-Call the `manual_ingest.py` script with the `--json-input` flag, providing the parsed data in the following format:
+```
+📋 **Speaker Attribution Needed**
+
+I detected this transcript has no speaker labels. Based on the content, I see **[N] speakers**:
+
+**Speaker A** (tentative: [role guess, e.g., "the one pitching/asking questions"])
+- Segment 1: "Welcome to today's sync. I wanted to talk about..."
+- Segment 3: "Well, I think we could integrate our platforms..."
+- Segment 5: "I'm thinking a simple webhook setup..."
+
+**Speaker B** (tentative: [role guess, e.g., "the one receiving/responding"])
+- Segment 2: "That sounds great. What did you have in mind?"
+- Segment 4: "Thanks! We've been working hard on that..."
+
+**Who are these people?**
+- Speaker A = ?
+- Speaker B = ?
+```
+
+**2c. Wait for V's response**
+
+V will provide names like "Speaker A = me, Speaker B = Sarah from Acme"
+
+**2d. Apply labels to transcript**
+
+Once V confirms, mentally reconstruct the labeled transcript:
+```
+V: Welcome to today's sync. I wanted to talk about the partnership opportunity.
+Sarah: That sounds great. What did you have in mind?
+V: Well, I think we could integrate our platforms...
+```
+
+Use this labeled version for the ingest.
+
+---
+
+### Step 3: Metadata Extraction
+
+From the (now-labeled) transcript, extract:
+
+| Field | Source | Fallback |
+|-------|--------|----------|
+| **Title** | Meeting topic from content | Participant names joined |
+| **Date** | Explicit mention, timestamps | Ask V |
+| **Participants** | Speaker labels | Ask V |
+
+**Only ask V if truly undetectable:**
+- Date: No timestamps, no date mentions, no context clues
+- Participants: Already provided during attribution step
+
+---
+
+### Step 4: Execute Ingest
 
 ```bash
 python3 /home/workspace/N5/scripts/manual_ingest.py \
-  --json-input '{
-    "text": "<full transcript text>",
-    "title": "<title>",
-    "date": "YYYY-MM-DD",
-    "participants": ["Name 1", "Name 2"],
-    "utterances": [
-      {"speaker": "Name 1", "text": "...", "start_ms": 0},
-      {"speaker": "Name 2", "text": "...", "start_ms": 1000}
-    ]
-  }'
+  --text "<labeled_transcript>" \
+  --title "<extracted_title>" \
+  --date "<YYYY-MM-DD>" \
+  --participants "<comma,separated,names>"
 ```
 
-### Step 5: Report Results
+If duplicate detected, inform V and offer `--force` option.
 
-On success:
-> ✓ **Transcript ingested successfully**
-> 
-> **Folder:** `Personal/Meetings/Inbox/2025-12-23_Meeting-Name/`
-> **Date:** December 23, 2025
-> **Participants:** John, Jane
-> 
-> The meeting is now in the Inbox awaiting manifest generation.
-> Run `@Meeting Manifest Generation` to continue processing.
+---
 
-On duplicate detected:
-> ⚠️ **Duplicate detected**
-> 
-> This transcript appears to match an existing meeting:
-> `Personal/Meetings/Week-of-2025-12-16/2025-12-20_Same-Meeting/`
-> 
-> Do you want to:
-> 1. Skip (keep existing)
-> 2. Force re-ingest (create new folder)
-> 3. View the existing meeting
+### Step 5: Confirm
 
-## Date Resolution Priority
-
-1. **Semantic detection:** Scan transcript for date mentions
-2. **Calendar lookup:** Check Google Calendar for matching meetings
-3. **Explicit override:** User provides date via clarifying question
-4. **Today:** Default to current date
-
-## Examples
-
-### Example 1: Simple paste
+Report:
 ```
-User: @Manual Transcript Ingest
-John: Hey everyone, thanks for joining.
-Sarah: Happy to be here.
-John: Let's discuss the Q1 roadmap...
+✓ Ingested: Personal/Meetings/Inbox/YYYY-MM-DD_Title/
+  - transcript.md
+  - transcript.jsonl  
+  - metadata.json
 
-Zo: I detected 2 participants (John, Sarah) but couldn't find a date.
-    When was this meeting recorded?
-
-User: Yesterday
-
-Zo: ✓ Transcript ingested successfully
-    Folder: Personal/Meetings/Inbox/2025-12-22_John/
+Ready for manifest generation pipeline.
 ```
 
-### Example 2: With file
-```
-User: @Manual Transcript Ingest file 'Downloads/zoom_transcript.txt'
+---
 
-Zo: ✓ Transcript ingested successfully
-    Folder: Personal/Meetings/Inbox/2025-12-23_Team-Sync/
-    Date: December 23, 2025 (detected from transcript)
-    Participants: V, Mike, Lisa
-```
+## Output Structure
 
-### Example 3: Full override
-```
-User: @Manual Transcript Ingest --title "Board Meeting" --date 2025-12-15
-[transcript text]
-
-Zo: ✓ Transcript ingested successfully
-    Folder: Personal/Meetings/Inbox/2025-12-15_Board-Meeting/
-```
-
-## Technical Details
-
-- **Engine:** `N5/services/intake/intake_engine.py`
-- **CLI:** `N5/scripts/manual_ingest.py`
-- **Dedup DB:** `N5/data/intake_dedup.db`
-- **Output:** `Personal/Meetings/Inbox/<date>_<name>/`
-
-## Files Created
-
-Each ingested meeting creates:
 ```
 Personal/Meetings/Inbox/<date>_<name>/
-├── transcript.md      # Human-readable transcript
-├── transcript.jsonl   # Structured transcript with utterances
-└── metadata.json      # Meeting metadata for pipeline
+├── transcript.md      # Human-readable with frontmatter
+├── transcript.jsonl   # Structured utterances
+└── metadata.json      # Pipeline manifest seed
 ```
 
+The folder has **no suffix** initially — `Meeting Manifest Generation` adds `_[M]` when processing to manifest state.
+
+---
+
+## Speaker Attribution Heuristics
+
+When analyzing unlabeled transcripts, look for:
+
+| Signal | Interpretation |
+|--------|----------------|
+| Questions ending in "?" | Often interviewer/asker |
+| "I think...", "We could..." | Active proposer |
+| "That's interesting", "Makes sense" | Receiver/responder |
+| Technical jargon | Engineer/builder |
+| "Our product", "We've built" | Company representative |
+| "What's your timeline?" | Sales/BD angle |
+| "Let me check with..." | Junior or intermediary |
+
+**V is almost always one of the speakers** — look for Careerspan context, career coaching framing, or the "host" energy.
 
