@@ -1,7 +1,7 @@
 ---
 created: 2026-01-11
 last_edited: 2026-01-11
-version: 1.0
+version: 1
 provenance: con_D6OoS5TNbRRtYLbS
 position_id: talent-optionality-thesis
 topic: worldview/ethics-capability
@@ -12,7 +12,6 @@ defense_count: 0
 source_type: reflection
 source_id: 2026-01-11_talent-prosocial-antisocial
 ---
-
 # Position: Talent-Optionality Thesis
 
 ## Claim
