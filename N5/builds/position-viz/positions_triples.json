@@ -1,0 +1,790 @@
+[
+  {
+    "subject": "Hiring Signal Collapse",
+    "predicate": "prerequisite",
+    "object": "Self-Knowledge Deficit",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Hiring Signal Collapse",
+    "predicate": "extended_by",
+    "object": "Inbound Resurrection Through Friction",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Hiring Signal Collapse",
+    "predicate": "extended_by",
+    "object": "Assessment Signal Validity Framework",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Self-Knowledge Deficit",
+    "predicate": "supports",
+    "object": "Hiring Signal Collapse",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Self-Knowledge Deficit",
+    "predicate": "implied_by",
+    "object": "Inbound Resurrection Through Friction",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Inbound Resurrection Through Friction",
+    "predicate": "implies",
+    "object": "Self-Knowledge Deficit",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Inbound Resurrection Through Friction",
+    "predicate": "extends",
+    "object": "Hiring Signal Collapse",
+    "source_domain": "hiring-market"
+  },
+  {
+    "subject": "Information Engineering Distinction",
+    "predicate": "supports",
+    "object": "Polyorchestrator Model",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Information Engineering Distinction",
+    "predicate": "supports",
+    "object": "Sliding Knowledge Threshold",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Information Engineering Distinction",
+    "predicate": "implies",
+    "object": "Magic as Intent-Action Abstraction",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Polyorchestrator Model",
+    "predicate": "supported_by",
+    "object": "Information Engineering Distinction",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Polyorchestrator Model",
+    "predicate": "prerequisite",
+    "object": "Sliding Knowledge Threshold",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Sliding Knowledge Threshold",
+    "predicate": "supported_by",
+    "object": "Information Engineering Distinction",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Sliding Knowledge Threshold",
+    "predicate": "enables",
+    "object": "Polyorchestrator Model",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Sliding Knowledge Threshold",
+    "predicate": "supported_by",
+    "object": "Printing Press Parallel",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Sliding Knowledge Threshold",
+    "predicate": "enables",
+    "object": "Magic as Intent-Action Abstraction",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Printing Press Parallel",
+    "predicate": "supports",
+    "object": "Sliding Knowledge Threshold",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Magic as Intent-Action Abstraction",
+    "predicate": "implied_by",
+    "object": "Information Engineering Distinction",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Magic as Intent-Action Abstraction",
+    "predicate": "prerequisite",
+    "object": "Sliding Knowledge Threshold",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Assessment Signal Validity Framework",
+    "predicate": "related",
+    "object": "Cognitive Bootstrapping via Test Preparation",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Assessment Signal Validity Framework",
+    "predicate": "extends",
+    "object": "Hiring Signal Collapse",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Cognitive Bootstrapping via Test Preparation",
+    "predicate": "related",
+    "object": "Assessment Signal Validity Framework",
+    "source_domain": "education"
+  },
+  {
+    "subject": "Cognitive Bootstrapping via Test Preparation",
+    "predicate": "related",
+    "object": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking",
+    "source_domain": "education"
+  },
+  {
+    "subject": "Death of the Minimum Viable Existence",
+    "predicate": "prerequisite",
+    "object": "Genre Shift and Fractal Contribution",
+    "source_domain": "worldview"
+  },
+  {
+    "subject": "Rationality of Low-Trust Moonshots",
+    "predicate": "related",
+    "object": "Genre Shift and Fractal Contribution",
+    "source_domain": "worldview"
+  },
+  {
+    "subject": "Genre Shift and Fractal Contribution",
+    "predicate": "enables",
+    "object": "Death of the Minimum Viable Existence",
+    "source_domain": "worldview"
+  },
+  {
+    "subject": "Genre Shift and Fractal Contribution",
+    "predicate": "related",
+    "object": "Rationality of Low-Trust Moonshots",
+    "source_domain": "worldview"
+  },
+  {
+    "subject": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking",
+    "predicate": "related",
+    "object": "Cognitive Bootstrapping via Test Preparation",
+    "source_domain": "epistemology"
+  },
+  {
+    "subject": "Hiring Signal Collapse",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Self-Knowledge Deficit",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Inbound Resurrection Through Friction",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Integrity Gap as Scaling Risk",
+    "predicate": "belongs_to",
+    "object": "[PERSONAL-FOUNDATIONS]"
+  },
+  {
+    "subject": "Information Engineering Distinction",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "Polyorchestrator Model",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "Sliding Knowledge Threshold",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "Printing Press Parallel",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "Magic as Intent-Action Abstraction",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "The growth dividends of a 'moonshot' attempt\u2014even one...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "The current paradigm of AI automation often results...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "System design and complex technical infrastructure can be...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Market fundability and professional acceptability are functions of...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "The internal 'growth' derived from pursuing a high-risk...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Job seeking and hiring should be viewed as...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "A candidate's primary task is to 'artificially' close...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "High-intelligence outputs are more reliably achieved through orchestrated...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "The act of participating in a high-friction, high-effort...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Psychological safety and honesty are maximized when there...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Current AI implementations often create an 'Information Standstill'...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "In the AI era, the 'matching' component of...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "The most effective path to reducing hiring bias...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Career development tools must solve for the 'inertia...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "In the AI era, the decision to hire...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "As AI commoditizes content generation, 'input' (systematic listening...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Truth in human assessment is found at the...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The recruitment market is structured around a massive...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The future of recruitment lies in democratizing the...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "The 'Internet of Careers' functions as a collective...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Data companies that lack a proprietary acquisition channel...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Selling a manual methodology as a finished software...",
+    "predicate": "belongs_to",
+    "object": "[FOUNDER]"
+  },
+  {
+    "subject": "While Seed-stage startups offer higher theoretical financial 'alpha,'...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The strategic value in the labor market is...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Transforming the hiring process from an adversarial transaction...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "AI-driven automation of application materials effectively destroys the...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Integrity and character are best verified through a...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "The future of hiring shifts from a transactional...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "As generative AI commoditizes high-quality output, the true...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Truth in professional assessment is found at the...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "AI implementation should elevate human experts 'higher in...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Identity in the labor market is semantic, not...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "The developmental value of a high-difficulty 'moonshot' project...",
+    "predicate": "belongs_to",
+    "object": "[FOUNDER]"
+  },
+  {
+    "subject": "System design and technical scaffolding can be used...",
+    "predicate": "belongs_to",
+    "object": "[FOUNDER]"
+  },
+  {
+    "subject": "Social accountability in digital products is significantly more...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Complexity often obscures the most essential components of...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Optimal long-term physiological and skill growth requires disciplined...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "AI\u2019s primary value is in shifting human experts...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Systemic dominance in specific industries is often the...",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Maintaining a state of constant 'readiness' via AI-captured...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Intelligent and resilient system behavior is better achieved...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Data collected independent of a specific job application...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "A candidate's willingness to engage in high-effort, reflective...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Hiring should be viewed as an exercise in...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Maintaining a strict separation between candidate-facing and employer-facing...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "In a career pivot, a candidate's primary objective...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The recruitment market is systematically inefficient because it...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The most effective way to disrupt recruitment is...",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Vibe coding should be positioned as a strategic...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "The willingness of a candidate to engage with...",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Technical resilience in AI systems is best achieved...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "A truly effective productivity tool functions as a 'Home'\u2014a digital space that reflects the user's v",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "The efficacy of automated habit-tracking systems is driven by social obligation rather than function",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Career mobility is governed by a 'geometric distance' from an individual's existing domain and role ",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability oppo",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as ",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluati",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Data collected about a candidate independent of a specific job application is inherently higher fide",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Hiring should be treated as an optimization for 'bundles of skills' and 'trade-offs' rather than a l",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "LinkedIn's shift in focus from a professional utility to a social engagement network is actively des",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Internal self-assessment systematically lags external market signals. People often operate at a high",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "In an AI-augmented landscape, the transition from 'hacking' to 'human-centric scaling' is marked by ",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "AI interfaces that mimic human social bids create 'anthropomorphic friction' which outperforms tradi",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Dominant parallel institutions are often the 'scar tissue' of historical exclusion. Centers of gravi",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Reducing latency in trust networks transforms institutions from manual brokers into platform orchest",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Proprietary data sourcing is the only sustainable competitive advantage in the data services market.",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Selling a manual methodology as finished software\u2014'selling the product before it exists'\u2014is a high-v",
+    "predicate": "belongs_to",
+    "object": "[FOUNDER]"
+  },
+  {
+    "subject": "For mid-career specialists, the higher financial 'alpha' of Seed-stage startups is often negated by ",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes ",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Integrity and character are best verified not through deep interrogation, but through the triangulat",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Professional identity is semantic rather than syntactic; a person is a stable collection of 'meaning",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Assessment Signal Validity Framework",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "Cognitive Bootstrapping via Test Preparation",
+    "predicate": "belongs_to",
+    "object": "[EDUCATION]"
+  },
+  {
+    "subject": "Death of the Minimum Viable Existence",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Rationality of Low-Trust Moonshots",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Genre Shift and Fractal Contribution",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking",
+    "predicate": "belongs_to",
+    "object": "[EPISTEMOLOGY]"
+  },
+  {
+    "subject": "AI shifts experts higher in the problem stack",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Professional identity is narrative, not document",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "The efficacy of automated agents (like habit-tracking bots)...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "AI's primary role in professional services should be...",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Friction Economics: Scalable vs. Linear Work",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Hiring Stage Taxonomy: Sourcing, Screening, Evaluation",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Employer Oblige: The Case for Investing in Candidate Development",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Confidence Over Quality: What Candidate Scores Should Measure",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Self-Advocacy Ability as Public Good",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The Resume Industrial Complex",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Non-Adversarial Hiring for Top-Tier Talent",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Portable Trust: Scaling Referral-Quality Signal",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Human Data Signal Density Stratification",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Job hunting is a skill, not an event",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "AI has reduced the marginal cost of BS to zero",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "The self-advocacy skill gap is the real barrier",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Auto-apply tools are career self-sabotage",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Networking is strategic investment, not numbers game",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Referrals are the only reliable path in competitive markets",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Ghost jobs are a systemic problem requiring tiered response",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "Auto-apply is mutually assured destruction",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  },
+  {
+    "subject": "AI makes individuals as effective as teams",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Soft skills become more valuable in AI world",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Generic AI usage is detectable and disqualifying",
+    "predicate": "belongs_to",
+    "object": "[AI-AUTOMATION]"
+  },
+  {
+    "subject": "Everyone has valuable things to say about themselves",
+    "predicate": "belongs_to",
+    "object": "[CAREERSPAN]"
+  },
+  {
+    "subject": "Non-technical founders can build with AI",
+    "predicate": "belongs_to",
+    "object": "[FOUNDER]"
+  },
+  {
+    "subject": "Self-awareness enables strategic career pivots",
+    "predicate": "belongs_to",
+    "object": "[PERSONAL-FOUNDATIONS]"
+  },
+  {
+    "subject": "Energy management is the most underrated job search skill",
+    "predicate": "belongs_to",
+    "object": "[PERSONAL-FOUNDATIONS]"
+  },
+  {
+    "subject": "Niche platforms will displace generalist social networks",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Employers created the trust crisis they now face",
+    "predicate": "belongs_to",
+    "object": "[WORLDVIEW]"
+  },
+  {
+    "subject": "Most job descriptions are BS that wastes everyone's time",
+    "predicate": "belongs_to",
+    "object": "[HIRING-MARKET]"
+  }
+]
