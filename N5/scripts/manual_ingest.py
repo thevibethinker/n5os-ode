@@ -180,9 +180,9 @@ Examples:
             "success": result.success,
             "folder_path": result.folder_path,
             "meeting_date": result.folder_name,
-            "error": result.error,
+            "error": result.error_message,
             "duplicate_of": result.duplicate_of,
-            "validation_errors": result.validation_errors,
+            "validation_errors": [str(v) for v in result.validation_results],
         }
         print(json.dumps(output, indent=2))
     else:
@@ -190,11 +190,11 @@ Examples:
             print(f"✓ Successfully ingested transcript")
             print(f"  Folder: {result.folder_path}")
             print(f"  Date: {result.folder_name}")
-            if result.validation_errors:
-                print(f"  Warnings: {', '.join(result.validation_errors)}")
+            if result.validation_results:
+                print(f"  Warnings: {', '.join(str(v) for v in result.validation_results)}")
         else:
             print(f"✗ Failed to ingest transcript", file=sys.stderr)
-            print(f"  Error: {result.error}", file=sys.stderr)
+            print(f"  Error: {result.error_message}", file=sys.stderr)
             if result.duplicate_of:
                 print(f"  Duplicate of: {result.duplicate_of}", file=sys.stderr)
             sys.exit(1)
@@ -202,5 +202,7 @@ Examples:
 
 if __name__ == "__main__":
     main()
+
+
 
 
