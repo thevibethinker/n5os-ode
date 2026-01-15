@@ -35,5 +35,13 @@ These rules must NEVER be violated, regardless of conversation length:
    - Sleep <6hrs = DEFICIT MODE: Protect focus, avoid big decisions, lighter cognitive load
    - Consult `Personal/Health/synthesis/Vrijen-Bio-Context.md` for health-related planning
 
+7. PORT COLLISION PREVENTION
+   - BEFORE creating any user service or site with a specific port:
+     Run: `python3 N5/scripts/port_registry.py check <port>`
+   - If conflict: Use `python3 N5/scripts/port_registry.py next <range>` to get available port
+   - AFTER creating service: Update `N5/config/PORT_REGISTRY.md`
+   - This prevents the recurring 8765-type collisions
+
 === END CRITICAL REMINDERS ===
+
 
