@@ -7,8 +7,8 @@ tags:
   - cleanup
   - conversation
 created: 2025-10-15
-last_edited: 2026-01-12
-version: 3.0
+last_edited: 2026-01-14
+version: 3.2
 ---
 
 # Close Conversation
@@ -63,6 +63,30 @@ python3 N5/scripts/conversation_end_standard.py --convo-id {CONVO_ID}
 ```bash
 python3 N5/scripts/conversation_end_full.py --convo-id {CONVO_ID}
 ```
+
+### Step 2.5: PII Audit
+
+Scan files created/modified during this conversation for PII:
+
+```bash
+python3 N5/scripts/conversation_pii_audit.py --convo-id {CONVO_ID} --auto-mark
+```
+
+This will:
+- Scan artifacts listed in SESSION_STATE.md
+- Scan git-changed files in the workspace
+- Detect email, phone, SSN, credit card patterns
+- Auto-mark directories containing PII with `.n5protected` markers
+
+**If PII is detected:**
+- Review the findings table
+- Confirm directories are appropriately marked
+- If additional sensitive data exists, manually protect:
+  ```bash
+  python3 N5/scripts/n5_protect.py protect <path> --reason 'description' --pii --pii-categories <types>
+  ```
+
+**Skip this step if:** The conversation was purely discussion with no file creation.
 
 ### Step 3: Invoke Librarian for Semantic Close
 
@@ -172,6 +196,50 @@ provenance: {CONVO_ID}
 **Git Check:**
 If git changes detected, note them and ask about committing.
 
+### Step 5: Commit Target Suggestions (Triggering Options)
+
+**Load the commit targets registry:**
+```bash
+cat N5/config/commit_targets.json
+```
+
+**For each target, use SEMANTIC UNDERSTANDING to evaluate relevance:**
+
+| Target | Detection Question |
+|--------|-------------------|
+| **Learning Profile** | Did V ask questions? Did I explain technical concepts? Did understanding demonstrably increase? |
+| **Content Library** | Were articles read via `save_webpage` or `read_webpage`? Did V express this was valuable? Did we dig deeply (not just skim)? |
+| **Voice Library** | Did V use distinctive phrasing worth capturing? Did we discuss voice/tone? |
+| **Git** | Are there code or configuration changes visible in `git status`? |
+
+**Quality Gates:**
+- **Content Library has HIGH threshold** — Deep engagement + positive response required. Push back when inclusion would weaken coherence or add redundancy.
+- **Learning Profile** — Only suggest when genuine learning occurred, not just discussion.
+- **Voice Library** — Only suggest distinctive phrases, not routine writing.
+
+**Present options to V as a checklist (do NOT auto-commit):**
+
+```markdown
+## Commit Opportunities
+
+Based on this conversation, you may want to commit to:
+
+☐ **Learning Profile** — [Specific concepts learned, if any]
+☐ **Content Library** — [Articles/resources saved, if any]
+☐ **Voice Library** — [Distinctive phrases captured, if any]
+☐ **Git** — [Code changes detected, if any]
+
+Reply with which items to commit, or skip to close.
+```
+
+**If V confirms a commit:**
+- **Learning Profile**: Append entry to `## Learning Timeline` section in `Personal/Learning/my-learning-profile.md` with date and concept
+- **Content Library**: Run `python3 N5/scripts/content_ingest.py <path> --type <type> --move`
+- **Voice Library**: Append to appropriate section in `Knowledge/voice-library/` (categorization pending worker design)
+- **Git**: Run standard git add/commit flow
+
+**Important:** These are triggering options, not automatic. V must confirm before any commit.
+
 **Return to Operator:**
 ```
 set_active_persona("90a7486f-46f9-41c9-a98c-21931fa5c5f6")
@@ -199,7 +267,12 @@ End with:
 
 ## Version History
 
+- **v3.2** (2026-01-14): Added Step 2.5 - PII Audit. Auto-scans artifacts for PII and marks directories for protection.
+- **v3.1** (2026-01-13): Added Step 5 - Commit Target Suggestions. New registry-based system for suggesting commits to Learning Profile, Content Library, Voice Library, and Git.
 - **v3.0** (2026-01-12): AAR generation moved entirely to Librarian. Scripts provide context only.
 - **v2.0** (2025-12-26): Librarian now owns semantic close work
 - **v1.0** (2025-10-15): Initial tiered system
+
+
+
 
