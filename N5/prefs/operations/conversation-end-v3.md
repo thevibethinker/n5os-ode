@@ -1,214 +1,196 @@
 ---
 created: 2025-12-18
-last_edited: 2026-01-12
-version: 4.0
-provenance: con_wCDYWdPur68NGfGX
+last_edited: 2026-01-15
+version: 5.0
+provenance: con_A79BOqF7vZTQ8w0N
 ---
 
-# Conversation-End System v4.0
+# Conversation-End System v5.0
 
 > **Single Source of Truth** for conversation closure workflow.
 
 ## Overview
 
-Tiered system that defaults to quick closure and escalates based on conversation markers.
+Two-mode system with tiered depth for Full Close.
+
+| Mode | When | Purpose | Commits? |
+|------|------|---------|----------|
+| **Worker Close** | Thread has `parent_convo_id` or was spawned via `WORKER_ASSIGNMENT_*.md` | Clean handoff to orchestrator | ❌ NO |
+| **Full Close** | Normal or orchestrator thread | Complete finalization | ✅ YES |
 
 **CRITICAL Division of Labor:**
-- **Scripts** = Mechanics ONLY (file scanning, git status, path gathering, raw content reading)
-- **Librarian (LLM)** = ALL Semantics (summaries, decisions, AARs, lessons, state crystallization)
+- **Scripts** = Mechanics ONLY (file scanning, git status, path gathering)
+- **Librarian (LLM)** = ALL Semantics (titles, summaries, AARs, handoffs)
 
 **Scripts DO NOT:**
+- Generate titles (that's semantic)
 - Extract decisions (no regex)
 - Generate AARs (no template filling)
-- Write summaries (no pattern matching)
-- Make semantic judgments
 
-**Scripts DO:**
-- Scan files and categorize by type
-- Check git status
-- Read raw SESSION_STATE.md content
-- Gather debug log entries
-- Find build workspaces
-- Provide context bundles for LLM
+---
 
-| Tier | Name | Use Case | Cost Target | Time Target |
-|------|------|----------|-------------|-------------|
-| 1 | Quick | Simple discussions, Q&A | <$0.05 | <30s |
-| 2 | Standard | Research, substantial discussions | <$0.08 | <90s |
-| 3 | Full Build | Build/orchestrator sessions | <$0.20 | <180s |
+## Mode Detection
 
-## Persona Ownership
+Check SESSION_STATE.md:
+```yaml
+parent_convo_id: con_XXXXX  # Present → Worker
+orchestrator_id: con_XXXXX  # Present → Worker
+```
 
-| Phase | Owner | Responsibility |
-|-------|-------|----------------|
-| Tier Detection | Script | `conversation_end_router.py` |
-| Mechanical Close | Script | File lists, git status, context bundle |
-| Semantic Close | **Librarian** | Summaries, decisions, AARs, lessons, filing |
-| Final Output | Operator | Present results, handle git commit prompt |
+Or check for `WORKER_ASSIGNMENT_*.md` spawn pattern.
 
-**Librarian invocation:** `set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")`
+---
 
-## Tier Detection
+## Worker Close Flow
 
-**Default:** Tier 1 (Quick)
+Workers exist to complete a task for an orchestrator. Their close is about **handoff clarity**, not finalization.
 
-**Escalate to Tier 2 if:**
-- ≥3 file artifacts in conversation workspace
-- SESSION_STATE type = research/discussion with progress
-- Git changes detected
+### Worker Steps
 
-**Escalate to Tier 3 if:**
-- SESSION_STATE type = build OR orchestrator
-- Build workspace exists (`N5/builds/<slug>/`)
-- DEBUG_LOG.jsonl present
-- Build markers in conversation
+1. **Verify deliverables** — All promised artifacts exist in correct locations
+2. **Generate title** — `MMM DD | {State} 👷🏽‍♂️ {Content} [Parent-Topic] Task`
+3. **Write handoff summary** — Clear package for orchestrator review
+4. **Update SESSION_STATE** — Mark status complete
+5. **DO NOT COMMIT** — Orchestrator does atomic commit of all worker work
 
-**Manual Override:** `--tier=N` flag
+### Worker Title Pattern
 
-## Scripts
+```
+Jan 15 | ✅ 👷🏽‍♂️ 🛠️ [CRM-Consolidation] Fix Import Paths
+```
 
-| Script | Purpose |
-|--------|---------|
-| `conversation_end_router.py` | Tier detection |
-| `conversation_end_quick.py` | Tier 1: Basic file scan, session state update |
-| `conversation_end_standard.py` | Tier 2: File organization, git status, raw content |
-| `conversation_end_full.py` | Tier 3: Context bundle with build/debug info |
-| `capability_graduation.py` | Build → Capability graduation |
+The `[Parent-Topic]` tag = greppable lineage to orchestrator.
 
-## What Each Tier Does
-
-### Tier 1: Quick Close
-
-**Script (mechanics):**
-1. Scan workspace files
-2. Check git status
-3. Update SESSION_STATE status=closed
-
-**Librarian (semantics):**
-4. Read SESSION_STATE.md
-5. Generate meaningful title (semantic, not pattern-based)
-6. Write 2-3 sentence summary (real understanding)
-7. Audit SESSION_STATE for completeness
-
-### Tier 2: Standard Close
-
-**Script (mechanics):**
-- All Tier 1 script steps, plus:
-- Categorized file organization
-- Raw content gathering for LLM
-
-**Librarian (semantics):**
-- All Tier 1 Librarian steps, plus:
-8. Extract key decisions WITH RATIONALE (semantic, not regex)
-9. Identify open questions (semantic understanding)
-10. Recommend file moves based on content understanding
-
-### Tier 3: Full Build Close
-
-**Script (mechanics):**
-- All Tier 2 script steps, plus:
-- Build workspace detection
-- DEBUG_LOG.jsonl reading
-- PLAN.md / STATUS.md reading
-- **Output: Context bundle JSON** (NOT formatted AAR)
-
-**Librarian (semantics) — CRITICAL:**
-- All Tier 2 Librarian steps, plus:
-
-11. **WRITE the After-Action Report:**
-    - Read context bundle from script
-    - Read SESSION_STATE.md with semantic understanding
-    - Read PLAN.md, STATUS.md, DEBUG_LOG if present
-    - **Synthesize what actually happened** — narrative, not template
-    - **Extract real decisions with rationale** — not regex patterns
-    - **Identify real lessons** — based on understanding, not keyword matching
-    - Write the AAR to `Records/AARs/{DATE}_{Slug}.md`
-
-12. **Capability Graduation** (if build complete)
-13. **Lesson extraction** (semantic, from understanding)
-14. **Build STATUS.md verification**
-
-## AAR Template (for Librarian to FILL SEMANTICALLY)
+### Worker Handoff Template
 
 ```markdown
----
-created: {DATE}
-last_edited: {DATE}
-version: 1.0
-provenance: {CONVO_ID}
----
+## Worker Handoff: [Task Name]
 
-# After-Action Report: {Descriptive Title - Semantic}
+**Parent:** con_XXXXX
+**Status:** ✅ Complete | ⚠️ Partial | ❌ Blocked
 
-**Date:** {DATE}
-**Type:** {build|planning|research|debug|etc}
-**Conversation:** {CONVO_ID}
-
-## Objective
-
-{2-3 sentences from semantic understanding of conversation purpose}
-
-## What Happened
-
-{Narrative description organized by phases. What was built, challenges, resolutions.}
-
-### Key Decisions
-
-{Decisions WITH rationale. "Decided X because Y" not just "Decided X"}
+### What Was Done
+- [Accomplishments with file paths]
 
 ### Artifacts Created
+- `path/to/file.py` — [purpose]
 
-| Artifact | Location | Purpose |
-|----------|----------|---------|
+### Caveats for Orchestrator
+- [Decisions, assumptions, edge cases]
 
-## Lessons Learned
-
-### Process
-{Process insights from semantic understanding}
-
-### Technical
-{Technical insights from semantic understanding}
-
-## Next Steps
-
-{What's next, what's unfinished}
-
-## Outcome
-
-**Status:** {Completed | Incomplete | Blocked}
-{Brief outcome summary}
+### Ready for Commit
+- [ ] [Files list]
 ```
 
-## Anti-Patterns
+---
 
-❌ **Regex decision extraction** — Produces garbage like "chose to use the API"
-❌ **Template-filled AARs** — Produces hollow documents without understanding
-❌ **Scripts writing semantic content** — Scripts are pattern matchers, not reasoners
-❌ **Claiming "Done" without reading files** — Must read and understand before writing
+## Full Close Flow
 
-## Usage
+For normal threads (📌) and orchestrators (🐙).
 
-Invoke via prompt:
+### Tiers
+
+| Tier | Trigger | Steps |
+|------|---------|-------|
+| **Tier 1 (Quick)** | Default | Scan, title, summary |
+| **Tier 2 (Standard)** | ≥3 artifacts, research | + Decisions, recommendations |
+| **Tier 3 (Full)** | Builds, orchestrators | + AAR, lessons, graduation |
+
+### Full Close Steps
+
+**Tier 1 (All conversations):**
+1. Run mechanical script: `conversation_end_quick.py`
+2. PII audit (if files created)
+3. Generate title (semantic, 3-slot emoji)
+4. Write 2-3 sentence summary
+5. Audit SESSION_STATE complete
+
+**Tier 2 (Add):**
+6. Extract key decisions WITH RATIONALE
+7. Identify open items
+8. Recommend file moves
+
+**Tier 3 (Add):**
+9. Read context bundle
+10. Write After-Action Report
+11. Check capability graduation
+12. Extract lessons
+
+**For Orchestrators (Add):**
+- Review all worker handoffs
+- Generate consolidated workers summary
+- Execute atomic commit of all worker + orchestrator changes
+
+**Position Extraction (Conditional):**
+- If worldview positions developed → Extract and add to positions.db
+
+---
+
+## Title System
+
+**Format:** `MMM DD | {State} {Type} {Content} Semantic Title`
+
+### 3-Slot Emoji System
+
+| Slot | Required | Options |
+|------|----------|---------|
+| **State** | ✅ | ✅ complete, ⏸️ paused, ‼️ critical, 🚧 in-progress, ❌ failed |
+| **Type** | ✅ | 📌 normal, 🐙 orchestrator, 👷🏽‍♂️ worker, 🔗 linked |
+| **Content** | ✅ | 🏗️ build, 🔎 research, 🛠️ repair, 🕸️ site, 🪵 log, ✍️ content, 🪞 reflection, 🤳 social, 📊 data, 💬 comms, 🗂️ organize, 📝 planning |
+
+### Examples
+
 ```
-@Close Conversation
-@Close Conversation --tier=1
-@Close Conversation --tier=3
+Jan 15 | ✅ 📌 🏗️ CRM Query Interface Refactor
+Jan 15 | ✅ 🐙 🏗️ CRM Consolidation Build
+Jan 15 | ✅ 👷🏽‍♂️ 🛠️ [CRM-Consolidation] Fix Import Paths
+Jan 15 | ⏸️ 📌 🔎 Market Research Competitor Analysis
 ```
 
-Or directly via scripts:
+### Emoji Suggestions
+
+Librarian MAY suggest emojis based on detection hints in `N5/config/emoji-legend.json`, but final selection is semantic judgment, not pattern matching.
+
+---
+
+## Script Outputs
+
+Scripts gather context for Librarian. They output:
+
+```yaml
+conversation_id: con_XXXXX
+session_state: {parsed SESSION_STATE.md}
+files:
+  - path: /path/to/file
+    type: code|doc|config
+artifacts_count: N
+git_status: {staged, unstaged, untracked counts}
+```
+
+**Scripts DO NOT output titles, summaries, or decisions.**
+
+---
+
+## Entry Points
+
 ```bash
-# Auto-detect tier
+# Auto-detect tier and mode
 python3 N5/scripts/conversation_end_router.py --convo-id <id>
 
-# Execute specific tier
+# Direct tier execution (Full Close only)
 python3 N5/scripts/conversation_end_quick.py --convo-id <id>
 python3 N5/scripts/conversation_end_standard.py --convo-id <id>
 python3 N5/scripts/conversation_end_full.py --convo-id <id>
 ```
 
+Or via prompt: `@Close Conversation`
+
+---
+
 ## Version History
 
-- **v4.0** (2026-01-12): AAR generation fully owned by Librarian. Scripts provide context only. Removed all regex extraction.
+- **v5.0** (2026-01-15): Two-mode system. Worker Close (partial) vs Full Close. Workers defer commits. 3-slot emoji required. [Parent-Topic] greppable tags.
+- **v4.0** (2026-01-12): AAR generation owned by Librarian
 - **v3.2** (2026-01-09): Capability graduation flow
 - **v3.0** (2025-12-18): Tiered system with Librarian ownership
 

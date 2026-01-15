@@ -1,26 +1,125 @@
 ---
 title: Close Conversation
-description: Formal conversation close - auto-detects tier based on conversation type
+description: |
+  Unified conversation close - auto-detects mode (Worker vs Full) and tier.
+  Workers do partial close (handoff to orchestrator). Full close includes commits.
 tool: true
 tags:
   - session
   - cleanup
   - conversation
+  - positions
 created: 2025-10-15
-last_edited: 2026-01-14
-version: 3.2
+last_edited: 2026-01-15
+version: 5.0
+provenance: con_A79BOqF7vZTQ8w0N
 ---
 
 # Close Conversation
 
-Runs the formal **conversation-end workflow** with automatic tier detection.
+Runs the formal **conversation-end workflow** with automatic mode and tier detection.
 
-**CRITICAL PRINCIPLE:** Scripts handle mechanics. LLM (Librarian) handles all semantic work.
-- Scripts gather file lists, git status, paths, raw content
-- Scripts **DO NOT** write summaries, extract decisions, or generate AARs
-- Librarian **READS** the context and **WRITES** all semantic artifacts
+## Two Modes
 
-## Quick Reference
+| Mode | Detection | Purpose | Commits? |
+|------|-----------|---------|----------|
+| **Worker Close** | `parent_convo_id` in SESSION_STATE or spawned via `WORKER_ASSIGNMENT_*.md` | Package work for orchestrator review | ❌ NO |
+| **Full Close** | Normal thread OR orchestrator | Complete close with finalization | ✅ YES |
+
+## Core Principles
+
+- Scripts handle mechanics (file lists, git status, raw content)
+- LLM (Librarian) handles ALL semantic work (summaries, AARs, decisions, title)
+- Title generation is semantic (3-slot emoji system: State | Type | Content)
+- **Workers defer commits** to orchestrator - their job is clean handoff
+
+---
+
+## Step 0: Detect Mode
+
+Check SESSION_STATE.md for:
+```yaml
+parent_convo_id: con_XXXXX  # If present → Worker Close
+orchestrator_id: con_XXXXX  # If present → Worker Close
+```
+
+Or check if this conversation was spawned via `WORKER_ASSIGNMENT_*.md`.
+
+**If either condition → Worker Close mode**
+**Otherwise → Full Close mode**
+
+---
+
+# WORKER CLOSE MODE
+
+For threads spawned by an orchestrator. Goal: **clean handoff**, not finalization.
+
+## Worker Step 1: Verify Deliverables
+
+Check all work products exist and are in correct locations:
+- Files created? In the right paths?
+- Any artifacts promised but not delivered?
+- Any loose ends or caveats?
+
+## Worker Step 2: Generate Worker Title
+
+**Format:** `MMM DD | {State} 👷🏽‍♂️ {Content} [Parent-Topic] Task Description`
+
+The `[Parent-Topic]` tag creates **greppable lineage** to the orchestrator.
+
+**Example:**
+```
+Jan 15 | ✅ 👷🏽‍♂️ 🛠️ [CRM-Consolidation] Fix Import Paths
+Jan 15 | ✅ 👷🏽‍♂️ 🏗️ [CRM-Consolidation] Build Calendar Webhook
+```
+
+The `[Parent-Topic]` comes from the orchestrator's topic slug or SESSION_STATE.
+
+## Worker Step 3: Write Handoff Summary
+
+Create a clear handoff package for the orchestrator to review:
+
+```markdown
+## Worker Handoff: [Task Name]
+
+**Parent:** con_XXXXX (orchestrator)
+**Status:** ✅ Complete | ⚠️ Partial | ❌ Blocked
+
+### What Was Done
+- [Specific accomplishments with file paths]
+
+### Artifacts Created
+- `file 'path/to/artifact1.py'` — [purpose]
+- `file 'path/to/artifact2.md'` — [purpose]
+
+### Caveats / Notes for Orchestrator
+- [Anything the orchestrator should know]
+- [Decisions made, assumptions, edge cases]
+
+### Ready for Commit
+- [ ] [List of files ready for git commit]
+```
+
+## Worker Step 4: Update SESSION_STATE
+
+```bash
+python3 N5/scripts/session_state_manager.py update --convo-id {CONVO_ID} \
+  --status complete --message "Worker handoff ready for orchestrator review"
+```
+
+## Worker Step 5: DO NOT COMMIT
+
+⚠️ **Workers do NOT git commit.** The orchestrator reviews all worker handoffs and does a single atomic commit.
+
+**Worker close ends here.** Return control to orchestrator.
+
+---
+
+# FULL CLOSE MODE
+
+For normal threads and orchestrators. Includes commits and full finalization.
+
+## Tier Reference
 
 | Tier | When | Cost | Time |
 |------|------|------|------|
@@ -32,247 +131,191 @@ Runs the formal **conversation-end workflow** with automatic tier detection.
 
 - `--tier=1` / `--tier=2` / `--tier=3`: Force specific tier
 - `--dry-run`: Preview without changes
+- `--skip-positions`: Skip position extraction even if detected
 
-## Execution Steps
+---
 
-### Step 1: Detect Tier
-
-Run the router to determine appropriate tier:
+## Full Step 1: Detect Tier
 
 ```bash
 python3 N5/scripts/conversation_end_router.py --convo-id {CONVO_ID}
 ```
 
-Review the recommendation and signals. Override with `--tier=N` if needed.
+Review the recommendation. Override with `--tier=N` if needed.
 
-### Step 2: Execute Mechanical Close
+## Full Step 2: Execute Mechanical Close
 
-Based on the tier, run the appropriate script:
-
-**Tier 1 (Quick):**
 ```bash
+# Tier 1
 python3 N5/scripts/conversation_end_quick.py --convo-id {CONVO_ID}
-```
 
-**Tier 2 (Standard):**
-```bash
+# Tier 2
 python3 N5/scripts/conversation_end_standard.py --convo-id {CONVO_ID}
-```
 
-**Tier 3 (Full Build):**
-```bash
+# Tier 3
 python3 N5/scripts/conversation_end_full.py --convo-id {CONVO_ID}
 ```
 
-### Step 2.5: PII Audit
-
-Scan files created/modified during this conversation for PII:
+## Full Step 3: PII Audit
 
 ```bash
 python3 N5/scripts/conversation_pii_audit.py --convo-id {CONVO_ID} --auto-mark
 ```
 
-This will:
-- Scan artifacts listed in SESSION_STATE.md
-- Scan git-changed files in the workspace
-- Detect email, phone, SSN, credit card patterns
-- Auto-mark directories containing PII with `.n5protected` markers
+Skip if conversation was purely discussion with no file creation.
 
-**If PII is detected:**
-- Review the findings table
-- Confirm directories are appropriately marked
-- If additional sensitive data exists, manually protect:
-  ```bash
-  python3 N5/scripts/n5_protect.py protect <path> --reason 'description' --pii --pii-categories <types>
-  ```
+## Full Step 4: If Orchestrator — Review Workers
 
-**Skip this step if:** The conversation was purely discussion with no file creation.
+**For orchestrator threads only:**
 
-### Step 3: Invoke Librarian for Semantic Close
+1. List spawned workers:
+   ```bash
+   grep -r "parent_convo_id: {CONVO_ID}" /home/.z/workspaces/*/SESSION_STATE.md 2>/dev/null
+   ```
 
-**Switch to Librarian:**
+2. For each worker, check:
+   - Did it complete? (Check SESSION_STATE status)
+   - Read its handoff summary
+   - Verify artifacts exist
+
+3. Generate consolidated summary:
+   ```markdown
+   ## Workers Summary
+   - **W1 (con_XXX):** ✅ Import path fixes — 3 services updated
+   - **W2 (con_YYY):** ✅ Calendar webhook — new service deployed
+   - **W3 (con_ZZZ):** ⚠️ Partial — needs follow-up on X
+   ```
+
+## Full Step 5: Invoke Librarian for Semantic Close
+
 ```
 set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")
 ```
 
----
+### Title Generation (ALL Tiers)
 
-## Librarian Semantic Work by Tier
+**Format:** `MMM DD | {State} {Type} {Content} Semantic Title`
+
+**3-Slot Emoji System (from `N5/config/emoji-legend.json`):**
+
+| Slot | Purpose | Options |
+|------|---------|---------|
+| **State** | Thread completion | ✅ complete, ⏸️ paused, ‼️ critical, 🚧 in-progress, ❌ failed |
+| **Type** | Thread structure | 📌 normal, 🐙 orchestrator, 👷🏽‍♂️ worker, 🔗 linked |
+| **Content** | Work type | 🏗️ build, 🔎 research, 🛠️ repair, 🕸️ site, 🪵 log, ✍️ content, 🪞 reflection, 🤳 social, 📊 data, 💬 comms, 🗂️ organize, 📝 planning |
+
+**Examples:**
+- `Jan 15 | ✅ 📌 🏗️ CRM Query Interface Refactor`
+- `Jan 15 | ✅ 🐙 🏗️ CRM Consolidation Build`
+- `Jan 15 | ✅ 👷🏽‍♂️ 🛠️ [CRM-Consolidation] Fix Import Paths`
 
 ### All Tiers (Tier 1+)
 
-1. **Read SESSION_STATE.md** from the conversation workspace (`/home/.z/workspaces/{CONVO_ID}/SESSION_STATE.md`)
-2. **Audit SESSION_STATE:** Run `python3 N5/scripts/session_state_manager.py audit --convo-id {CONVO_ID}`
-3. **Generate meaningful title** — Based on semantic understanding of what was discussed, NOT pattern matching
-4. **Write 2-3 sentence summary** — Real semantic summary of accomplishments, NOT template filling
-5. **Verify artifacts** are in correct locations
+1. Read SESSION_STATE.md from `/home/.z/workspaces/{CONVO_ID}/`
+2. Audit: `python3 N5/scripts/session_state_manager.py audit --convo-id {CONVO_ID}`
+3. **Generate title** using 3-slot emoji system + semantic description
+4. Write 2-3 sentence summary (semantic, not template)
+5. Verify artifacts in correct locations
 
 ### Tier 2+ Only
 
-6. **Extract key decisions with rationale** — Read the conversation context and identify actual decisions made, with WHY they were made
-7. **Identify open items** — Real open questions and next steps from semantic understanding
-8. **Recommend file moves** if needed
+6. Extract key decisions WITH RATIONALE
+7. Identify open items and next steps
+8. Recommend file moves if needed
 
-### Tier 3 Only (CRITICAL: AAR GENERATION)
+### Tier 3 Only (AAR Generation)
 
-**The script provides a context bundle. Librarian WRITES the AAR.**
+9. Read context bundle from script output
+10. **WRITE the After-Action Report** (see AAR template in spec)
+11. Save to `Records/AARs/{DATE}_{Slug}.md`
+12. Check capability graduation: `python3 N5/scripts/capability_graduation.py check --build-slug <slug>`
+13. Extract lessons worth logging
 
-9. **Read the context bundle** from the script output (contains SESSION_STATE, debug logs, build context)
+## Full Step 6: Position Detection (Conditional)
 
-10. **WRITE the After-Action Report:**
-    - Read SESSION_STATE.md and understand what ACTUALLY happened
-    - Read any PLAN.md or STATUS.md from build workspace
-    - Read DEBUG_LOG.jsonl if present to understand problems solved
-    - **Semantically synthesize** what was accomplished, what decisions were made and why, what was learned
-    - Write the AAR with real understanding — NOT template filling
-    
-11. **AAR Format:**
-```markdown
----
-created: {DATE}
-last_edited: {DATE}
-version: 1.0
-provenance: {CONVO_ID}
----
+**Detect if this conversation developed worldview positions:**
 
-# After-Action Report: {Descriptive Title}
+Ask: Did this conversation involve:
+- Deep thinking about a topic?
+- V articulating a belief, stance, or position?
+- New evidence/reasoning for an existing belief?
+- Strategic or philosophical insights?
 
-**Date:** {DATE}
-**Type:** {build|planning|research|debug|etc}
-**Conversation:** {CONVO_ID}
+**If YES → Execute Position Extraction:**
 
-## Objective
-
-{What was the goal of this conversation? Write 2-3 sentences based on your understanding.}
-
-## What Happened
-
-{Narrative description of what actually occurred. Organize into phases if there were distinct stages. Include:
-- What was built/changed/fixed
-- Key challenges encountered
-- How challenges were resolved}
-
-### Key Decisions
-
-{List decisions made with RATIONALE. Not just "Decided X" but "Decided X because Y"}
-
-### Artifacts Created
-
-| Artifact | Location | Purpose |
-|----------|----------|---------|
-| {name} | {path} | {why it was created} |
-
-## Lessons Learned
-
-### Process
-{What did we learn about how to do this kind of work?}
-
-### Technical
-{What technical insights emerged?}
-
-## Next Steps
-
-{What should happen next? What's unfinished?}
-
-## Outcome
-
-**Status:** {Completed | Incomplete | Blocked}
-
-{Brief outcome summary with before/after if applicable}
-```
-
-12. **Save the AAR:** Write to `Records/AARs/{DATE}_{Slug}.md`
-
-13. **Capability Graduation** (if build is complete):
-    ```bash
-    python3 N5/scripts/capability_graduation.py check --build-slug <slug>
-    python3 N5/scripts/capability_graduation.py graduate --build-slug <slug> --convo-id {CONVO_ID}
-    ```
-
-14. **Extract lessons worth logging** — If significant learning occurred
-
-### Step 4: Final Checks
-
-**Git Check:**
-If git changes detected, note them and ask about committing.
-
-### Step 5: Commit Target Suggestions (Triggering Options)
-
-**Load the commit targets registry:**
 ```bash
-cat N5/config/commit_targets.json
+python3 N5/scripts/positions.py list
+python3 N5/scripts/positions.py audit
 ```
 
-**For each target, use SEMANTIC UNDERSTANDING to evaluate relevance:**
+**For each position candidate:**
 
-| Target | Detection Question |
-|--------|-------------------|
-| **Learning Profile** | Did V ask questions? Did I explain technical concepts? Did understanding demonstrably increase? |
-| **Content Library** | Were articles read via `save_webpage` or `read_webpage`? Did V express this was valuable? Did we dig deeply (not just skim)? |
-| **Voice Library** | Did V use distinctive phrasing worth capturing? Did we discuss voice/tone? |
-| **Git** | Are there code or configuration changes visible in `git status`? |
+1. Check overlap: `python3 N5/scripts/positions.py check-overlap "INSIGHT_TEXT" --threshold 0.4`
+2. Action based on similarity:
+   - ≥0.60: EXTEND existing position
+   - 0.50-0.59: Review carefully
+   - <0.50: CREATE new position
+3. Create or extend accordingly
 
-**Quality Gates:**
-- **Content Library has HIGH threshold** — Deep engagement + positive response required. Push back when inclusion would weaken coherence or add redundancy.
-- **Learning Profile** — Only suggest when genuine learning occurred, not just discussion.
-- **Voice Library** — Only suggest distinctive phrases, not routine writing.
+**If NO positions detected → Skip.**
 
-**Present options to V as a checklist (do NOT auto-commit):**
+## Full Step 7: Commit Target Suggestions
+
+Load registry: `cat N5/config/commit_targets.json`
+
+Present options (do NOT auto-commit):
 
 ```markdown
 ## Commit Opportunities
 
-Based on this conversation, you may want to commit to:
-
-☐ **Learning Profile** — [Specific concepts learned, if any]
-☐ **Content Library** — [Articles/resources saved, if any]
-☐ **Voice Library** — [Distinctive phrases captured, if any]
-☐ **Git** — [Code changes detected, if any]
+☐ **Learning Profile** — [Concepts learned, if any]
+☐ **Content Library** — [Articles saved, if any]
+☐ **Voice Library** — [Distinctive phrases, if any]
+☐ **Positions** — [Worldview claims extracted, if any]
+☐ **Git** — [Code changes, if any]
 
 Reply with which items to commit, or skip to close.
 ```
 
-**If V confirms a commit:**
-- **Learning Profile**: Append entry to `## Learning Timeline` section in `Personal/Learning/my-learning-profile.md` with date and concept
-- **Content Library**: Run `python3 N5/scripts/content_ingest.py <path> --type <type> --move`
-- **Voice Library**: Append to appropriate section in `Knowledge/voice-library/` (categorization pending worker design)
-- **Git**: Run standard git add/commit flow
+## Full Step 8: Execute Commits
 
-**Important:** These are triggering options, not automatic. V must confirm before any commit.
+Based on V's selection, execute the relevant commits.
 
-**Return to Operator:**
+For orchestrators with workers, this is the **atomic commit point** - all worker changes committed together.
+
+## Full Step 9: Return to Operator
+
 ```
 set_active_persona("90a7486f-46f9-41c9-a98c-21931fa5c5f6")
 ```
 
-## Output
+Present formatted close output. End with:
 
-Present the formatted close output per the tier template.
-
-End with:
 ```
 ✅ Conversation closed (Tier N)
 ```
 
-## Anti-Patterns (DO NOT DO)
+---
 
-❌ **Do not use regex to extract decisions** — That produces garbage
-❌ **Do not template-fill AARs** — That produces garbage  
-❌ **Do not let scripts write semantic content** — Scripts are dumb, LLM is smart
-❌ **Do not claim "Done" without actual semantic analysis** — Read the files, understand them, write real content
+## Anti-Patterns
 
-## Full Documentation
+❌ **Script-based title generation** — Title is semantic (LLM), not pattern matching
+❌ **Regex decision extraction** — Produces garbage
+❌ **Template-filled AARs** — Produces hollow documents
+❌ **Claiming "Done" without reading** — Must understand before writing
+❌ **Workers committing directly** — Defers to orchestrator for atomic commit
 
-`file 'N5/prefs/operations/conversation-end-v3.md'`
+## Documentation
+
+- **Spec:** `file 'N5/prefs/operations/conversation-end-v3.md'`
+- **Emoji Legend:** `file 'N5/config/emoji-legend.json'`
+- **Positions System:** `file 'N5/scripts/positions.py'`
 
 ## Version History
 
-- **v3.2** (2026-01-14): Added Step 2.5 - PII Audit. Auto-scans artifacts for PII and marks directories for protection.
-- **v3.1** (2026-01-13): Added Step 5 - Commit Target Suggestions. New registry-based system for suggesting commits to Learning Profile, Content Library, Voice Library, and Git.
-- **v3.0** (2026-01-12): AAR generation moved entirely to Librarian. Scripts provide context only.
-- **v2.0** (2025-12-26): Librarian now owns semantic close work
-- **v1.0** (2025-10-15): Initial tiered system
-
-
-
+- **v5.0** (2026-01-15): Two-mode system (Worker Close vs Full Close). Workers defer commits. 3-slot emoji required (📌 for normal). Greppable [Parent-Topic] tags for workers.
+- **v4.0** (2026-01-15): Folded Type B position extraction. Title generation now semantic.
+- **v3.2** (2026-01-14): Added PII Audit step
+- **v3.1** (2026-01-13): Added Commit Target Suggestions
+- **v3.0** (2026-01-12): AAR generation moved to Librarian
 

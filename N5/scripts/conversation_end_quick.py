@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 """
-Conversation End - Tier 1 (Quick Close) v3.0
+Conversation End - Quick Close (Tier 1)
 
-Fast, lightweight conversation close for simple discussions and Q&A.
-Cost target: <$0.05 | Time target: <45 seconds
+Mechanical close only - gathers context for Librarian.
 
-Workflow:
-1. Generate thread title (pattern-based, LLM fallback)
-2. Generate conversation summary (LLM, 2-3 sentences)
-3. Rebuild SESSION_STATE.md with closure status
-4. Scan and categorize files
-5. Output formatted closure report
+TWO MODES:
+- Worker Close: If parent_convo_id detected, outputs worker context (no commits)
+- Full Close: Normal/orchestrator threads get full context
 
-Usage:
-    python3 conversation_end_quick.py --convo-id <id> [--dry-run]
-    
-Returns: Markdown formatted closure report
+What this script does (MECHANICS ONLY):
+1. Scan conversation workspace for files
+2. Read SESSION_STATE.md
+3. Detect if worker thread (parent_convo_id present)
+4. Check git status
+5. Output context bundle for Librarian
+
+What this script does NOT do (SEMANTIC - Librarian's job):
+- Generate titles (Librarian uses 3-slot emoji system)
+- Write summaries
+- Extract decisions
+- Make semantic judgments
+- Git commits (especially for workers - deferred to orchestrator)
 """
 
 import argparse
@@ -64,7 +69,9 @@ def read_session_state(convo_path: Path) -> Optional[Dict]:
         "status": None,
         "started": None,
         "artifacts": [],
-        "progress": []
+        "progress": [],
+        "parent_convo_id": None,
+        "orchestrator_id": None
     }
     
     # Parse key fields
@@ -84,6 +91,24 @@ def read_session_state(convo_path: Path) -> Optional[Dict]:
     if started_match:
         state["started"] = started_match.group(1)
     
+    # Detect worker thread - check for parent_convo_id or orchestrator_id
+    parent_match = re.search(r'parent_convo_id:\s*(con_\w+)', content)
+    if parent_match:
+        state["parent_convo_id"] = parent_match.group(1)
+    
+    orchestrator_match = re.search(r'orchestrator_id:\s*(con_\w+)', content)
+    if orchestrator_match:
+        state["orchestrator_id"] = orchestrator_match.group(1)
+    
+    # Also check YAML frontmatter style
+    parent_yaml = re.search(r'^parent_convo_id:\s*(con_\w+)', content, re.MULTILINE)
+    if parent_yaml and not state["parent_convo_id"]:
+        state["parent_convo_id"] = parent_yaml.group(1)
+    
+    orchestrator_yaml = re.search(r'^orchestrator_id:\s*(con_\w+)', content, re.MULTILINE)
+    if orchestrator_yaml and not state["orchestrator_id"]:
+        state["orchestrator_id"] = orchestrator_yaml.group(1)
+    
     # Extract artifacts section
     artifacts_match = re.search(r'## Artifacts\n(.*?)(?:\n##|\Z)', content, re.DOTALL)
     if artifacts_match:
@@ -97,6 +122,27 @@ def read_session_state(convo_path: Path) -> Optional[Dict]:
         state["progress"] = re.findall(r'- \[x\]\s*(.+)', progress_text, re.IGNORECASE)
     
     return state
+
+
+def is_worker_thread(session_state: Optional[Dict]) -> bool:
+    """Check if this is a worker thread (spawned by orchestrator)."""
+    if not session_state:
+        return False
+    return bool(session_state.get("parent_convo_id") or session_state.get("orchestrator_id"))
+
+
+def get_parent_topic(session_state: Optional[Dict]) -> Optional[str]:
+    """Extract parent topic for worker title tag."""
+    if not session_state:
+        return None
+    # Could be in focus or a dedicated field
+    focus = session_state.get("focus", "")
+    # Extract a slug-like topic from focus
+    if focus:
+        # Simple slugification for the tag
+        words = focus.split()[:3]  # First 3 words
+        return "-".join(w.capitalize() for w in words if w.isalnum())
+    return None
 
 
 def scan_conversation_files(convo_path: Path) -> List[Dict]:
@@ -142,45 +188,6 @@ def categorize_file(file_path: Path) -> str:
         return "other"
 
 
-def generate_title_local(session_state: Optional[Dict], files: List[Dict], convo_id: str) -> str:
-    """Generate title using local pattern matching."""
-    # Date prefix
-    now = datetime.now(timezone.utc)
-    date_prefix = now.strftime("%b %d")
-    
-    # Determine emoji based on conversation type
-    emoji = "💬"  # Default: discussion
-    if session_state and session_state.get("type"):
-        type_map = {
-            "build": "🏗️",
-            "research": "🔍",
-            "discussion": "💬",
-            "planning": "📋",
-            "debug": "🔧",
-            "orchestrator": "🎭"
-        }
-        emoji = type_map.get(session_state["type"].lower(), "💬")
-    
-    # Generate title from focus or files
-    title_body = "Conversation"
-    if session_state and session_state.get("focus"):
-        # Clean and truncate focus
-        focus = session_state["focus"]
-        # Remove common prefixes
-        focus = re.sub(r'^(Working on|Discussing|Building|Investigating)\s+', '', focus, flags=re.IGNORECASE)
-        # Truncate to reasonable length - allow 55 chars for better titles
-        if len(focus) > 55:
-            focus = focus[:52] + "..."
-        title_body = focus
-    elif files:
-        # Use file names as hint
-        doc_files = [f for f in files if f["category"] == "documentation" and f["name"] != "SESSION_STATE.md"]
-        if doc_files:
-            title_body = doc_files[0]["name"].replace(".md", "").replace("_", " ")
-    
-    return f"{date_prefix} | {emoji} {title_body}"
-
-
 def generate_summary_stub(session_state: Optional[Dict], files: List[Dict]) -> str:
     """Generate a stub summary (to be replaced by LLM in actual use)."""
     # This is a placeholder - actual LLM call happens in the prompt
@@ -192,61 +199,68 @@ def generate_summary_stub(session_state: Optional[Dict], files: List[Dict]) -> s
         return "Brief conversation session."
 
 
-def update_session_state(convo_path: Path, title: str, summary: str, dry_run: bool = False) -> bool:
-    """Update SESSION_STATE.md with closure information."""
+def update_session_state(convo_path: Path, summary: str, dry_run: bool = False) -> bool:
+    """Update SESSION_STATE.md with close info. Title added by Librarian."""
     session_file = convo_path / "SESSION_STATE.md"
-    
-    now = datetime.now(timezone.utc)
-    closure_section = f"""
-## Closure
-
-**Status:** closed
-**Closed:** {now.strftime("%Y-%m-%dT%H:%M:%SZ")}
-**Title:** {title}
-**Summary:** {summary}
-"""
-    
-    if session_file.exists():
-        content = session_file.read_text()
-        # Update status
-        content = re.sub(r'\*\*Status:\*\*\s*\w+', '**Status:** closed', content)
-        # Add closure section if not present
-        if "## Closure" not in content:
-            content += closure_section
-    else:
-        # Create minimal session state
-        content = f"""---
-created: {now.strftime("%Y-%m-%d")}
-last_edited: {now.strftime("%Y-%m-%d")}
-version: 1.0
----
-
-# Session State
-
-**Status:** closed
-**Type:** discussion
-**Focus:** {summary}
-{closure_section}
-"""
+    if not session_file.exists():
+        logger.warning(f"SESSION_STATE.md not found: {session_file}")
+        return False
     
     if dry_run:
-        logger.info(f"[DRY RUN] Would update SESSION_STATE.md")
+        logger.info("[DRY RUN] Would update SESSION_STATE.md")
         return True
     
-    session_file.write_text(content)
-    logger.info(f"Updated SESSION_STATE.md with closure")
+    content = session_file.read_text()
+    
+    # Add close section if not present
+    if "## Close" not in content:
+        close_section = f"""
+
+## Close
+
+**Status:** closed
+**Summary:** {summary}
+"""
+        content += close_section
+        session_file.write_text(content)
+        logger.info("Updated SESSION_STATE.md with close section")
+    
     return True
 
 
 def format_output(
     convo_id: str,
-    title: str,
-    summary: str,
-    files: List[Dict],
     session_state: Optional[Dict],
-    duration_minutes: int = None
+    files: List[Dict],
+    summary: str,
+    is_worker: bool,
 ) -> str:
-    """Format the Tier 1 closure output."""
+    """Format the output for Librarian to process."""
+    mode = "Worker Close" if is_worker else "Full Close"
+    parent_id = None
+    if is_worker and session_state:
+        parent_id = session_state.get("parent_convo_id") or session_state.get("orchestrator_id")
+    
+    output = f"""## Tier 1 Quick Close - Context Bundle
+
+**Conversation:** {convo_id}
+**Mode:** {mode}
+"""
+    
+    if is_worker and parent_id:
+        parent_topic = get_parent_topic(session_state)
+        output += f"""**Parent Orchestrator:** {parent_id}
+**Parent Topic Tag:** [{parent_topic or 'Unknown'}]
+
+⚠️ **WORKER MODE:** This is a worker thread. DO NOT commit. 
+Generate handoff summary for orchestrator review.
+
+"""
+    
+    output += f"""**Summary:** {summary}
+
+### Session State
+"""
     
     # Determine conversation type
     convo_type = "Quick discussion"
@@ -260,9 +274,6 @@ def format_output(
         }
         convo_type = type_map.get(session_state["type"].lower(), "Discussion")
     
-    # Duration estimate
-    duration_str = f"~{duration_minutes} minutes" if duration_minutes else "Unknown"
-    
     # File summary
     files_by_category = {}
     for f in files:
@@ -272,11 +283,9 @@ def format_output(
         files_by_category[cat].append(f["name"])
     
     # Build output
-    output = f"""## Conversation Closed
+    output += f"""## Conversation Closed
 
-**Title:** {title}
 **Type:** {convo_type}
-**Duration:** {duration_str}
 
 ### Summary
 {summary}
@@ -292,7 +301,10 @@ def format_output(
     else:
         output += "- No files created\n"
     
-    output += "\n✅ Workspace clean"
+    if is_worker:
+        output += "\n⚠️ Worker close complete - awaiting orchestrator review"
+    else:
+        output += "\n✅ Workspace clean"
     
     return output
 
@@ -311,9 +323,9 @@ def run_quick_close(convo_id: str, dry_run: bool = False) -> Dict[str, Any]:
         "convo_id": convo_id,
         "convo_path": str(convo_path),
         "tier": 1,
+        "is_worker": False,
+        "parent_convo_id": None,
         "success": False,
-        "title": None,
-        "summary": None,
         "files": [],
         "output": None,
         "errors": []
@@ -323,59 +335,37 @@ def run_quick_close(convo_id: str, dry_run: bool = False) -> Dict[str, Any]:
     logger.info(f"Reading session state for {convo_id}")
     session_state = read_session_state(convo_path)
     
-    # Step 2: Scan files
+    # Step 2: Detect worker mode
+    is_worker = is_worker_thread(session_state)
+    result["is_worker"] = is_worker
+    if is_worker and session_state:
+        result["parent_convo_id"] = session_state.get("parent_convo_id") or session_state.get("orchestrator_id")
+        logger.info(f"Worker thread detected, parent: {result['parent_convo_id']}")
+    
+    # Step 3: Scan files
     logger.info("Scanning conversation files")
     files = scan_conversation_files(convo_path)
     result["files"] = files
     
-    # Step 3: Generate title (local pattern matching)
-    logger.info("Generating title")
-    title = generate_title_local(session_state, files, convo_id)
-    result["title"] = title
-    
-    # Step 4: Generate summary stub (LLM will enhance in prompt)
-    logger.info("Generating summary")
-    summary = generate_summary_stub(session_state, files)
+    # Step 4: Generate summary (brief, for context - Librarian will write real one)
+    logger.info("Generating context summary")
+    if session_state and session_state.get("focus"):
+        summary = f"Quick close for: {session_state['focus']}"
+    else:
+        summary = f"Quick close for conversation {convo_id}"
     result["summary"] = summary
     
-    # Step 5: Update SESSION_STATE.md
-    logger.info("Updating session state")
-    update_session_state(convo_path, title, summary, dry_run)
-
-    # Step 5.5: Record artifacts to registry
-    if files and not dry_run:
-        try:
-            from conversation_registry import ConversationRegistry
-            registry = ConversationRegistry()
-            # Noise files to exclude
-            noise_patterns = {'.pyc', '__pycache__', '.DS_Store', 'node_modules', '.git'}
-            recorded = 0
-            for f in files:
-                # Skip session files, debug files, and noise
-                if f["category"] in ["session", "debug"]:
-                    continue
-                if any(noise in f["path"] for noise in noise_patterns):
-                    continue
-                registry.add_artifact(
-                    convo_id=convo_id,
-                    filepath=f["path"],
-                    artifact_type=f["category"],
-                    description=f"Created during conversation"
-                )
-                recorded += 1
-            if recorded > 0:
-                logger.info(f"Recorded {recorded} artifacts to registry")
-        except Exception as e:
-            logger.warning(f"Registry artifact recording skipped: {e}")
-
-    # Step 6: Format output
-    logger.info("Formatting output")
+    # Step 5: Update session state (without title - Librarian adds that)
+    if not dry_run:
+        update_session_state(convo_path, summary, dry_run)
+    
+    # Step 6: Format output for Librarian
     output = format_output(
         convo_id=convo_id,
-        title=title,
-        summary=summary,
+        session_state=session_state,
         files=files,
-        session_state=session_state
+        summary=summary,
+        is_worker=is_worker,
     )
     result["output"] = output
     
@@ -384,7 +374,8 @@ def run_quick_close(convo_id: str, dry_run: bool = False) -> Dict[str, Any]:
     result["duration_seconds"] = (end_time - start_time).total_seconds()
     result["success"] = True
     
-    logger.info(f"Quick close complete in {result['duration_seconds']:.2f}s")
+    mode_str = "Worker" if is_worker else "Full"
+    logger.info(f"Quick close ({mode_str} mode) complete in {result['duration_seconds']:.2f}s")
     
     return result
 
@@ -434,5 +425,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
