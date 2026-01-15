@@ -1,1 +1,6 @@
-Protected build workspace created 2025-12-18
+{
+  "reason": "Protected build workspace created 2025-12-18",
+  "migrated_from_legacy": true,
+  "migration_date": "2026-01-15T03:03:48.005954+00:00",
+  "created": "2025-12-18T00:00:00+00:00"
+}

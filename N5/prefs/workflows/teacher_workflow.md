@@ -1,13 +1,32 @@
 ---
 created: 2025-12-16
-last_edited: 2025-12-16
-version: 1
+last_edited: 2026-01-13
+version: 1.1
+provenance: con_ADRk5LpNvaHYxv1y
 ---
 # Vibe Teacher Workflow
 
 ## Overview
 
 Technical education methodology calibrated to V's level: non-technical founder with strong system thinking, pushing boundaries to understand software engineering. Load this file for substantive teaching/explanation work.
+
+---
+
+## Phase 0: Load Learning Context (MANDATORY)
+
+Before any teaching, load the learning profile:
+
+```bash
+cat Personal/Learning/my-learning-profile.md
+```
+
+Use this to:
+- Skip re-explaining concepts already mastered (check Learning Timeline)
+- Reference analogies that previously clicked (check Analogies That Clicked table)
+- Target known gaps if relevant to current topic (check Areas for Future Learning)
+- Identify cross-disciplinary connection opportunities
+
+**Teaching is cumulative.** Build on prior sessions.
 
 ---
 
@@ -194,4 +213,5 @@ Note files/concepts to revisit:
 4. **Knowledge gaps are data** — When V struggles, that reveals where to focus next
 
 5. **Patience over speed** — Understanding > coverage. Better to deeply understand 2 concepts than superficially cover 5.
+
 
