@@ -1,0 +1,481 @@
+[
+  {
+    "orphan_id": "system-design-and-complex-technical-infrastructure",
+    "orphan_title": "System design and complex technical infrastructure can be...",
+    "proposals": [
+      {
+        "target_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+        "relationship": "supports",
+        "reasoning": "Providing a high-quality technical scaffold acts as the structural counterpart to 'vibe coding,' giving talented generalists the necessary infrastructure to cross the identity bridge into technical execution."
+      },
+      {
+        "target_id": "ai-makes-individuals-as-effective-as-teams",
+        "relationship": "implies",
+        "reasoning": "When complex infrastructure is provided as a 'gift-economy lever,' it removes the high-cost team requirement for sophisticated system design, allowing individuals to operate with team-level industrial capabilities."
+      },
+      {
+        "target_id": "ai-shifts-experts-higher-in-the-problem-stack",
+        "relationship": "extends",
+        "reasoning": "By bypassing the 'cold start' of infrastructure building, experts can immediately focus on higher-level semantic and architectural problems rather than base-level implementation."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"vibe-coding-functions-as-a-powerful-identity-bridg\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"Providing a high-quality technical scaffold acts as the structural counterpart to 'vibe coding,' giving talented generalists the necessary infrastructure to cross the identity bridge into technical execution.\"\n  },\n  {\n    \"target_id\": \"ai-makes-individuals-as-effective-as-teams\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"When complex infrastructure is pro"
+  },
+  {
+    "orphan_id": "market-fundability-and-professional-acceptability-",
+    "orphan_title": "Market fundability and professional acceptability are functions of...",
+    "proposals": [
+      {
+        "target_id": "career-mobility-is-governed-by-a-geometric-distanc",
+        "relationship": "supports",
+        "reasoning": "The orphan position provides the specific mechanism (degrees of freedom in domain and role) that defines the 'geometric distance' governing career mobility."
+      },
+      {
+        "target_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+        "relationship": "extends",
+        "reasoning": "Vibe coding serves as a practical bridge that reduces the 'geometric distance' for generalists by lowering the technical friction required for a professional pivot."
+      },
+      {
+        "target_id": "identity-in-the-labor-market-is-semantic-not",
+        "relationship": "implies",
+        "reasoning": "If market identity is semantic, then fundability depends on the proximity of one's current semantic 'core' to the target role's requirements."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"career-mobility-is-governed-by-a-geometric-distanc\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The orphan position provides the specific mechanism (degrees of freedom in domain and role) that defines the 'geometric distance' governing career mobility.\"\n  },\n  {\n    \"target_id\": \"vibe-coding-functions-as-a-powerful-identity-bridg\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"Vibe coding serves as a practical bridge that reduces the 'geometric distance'"
+  },
+  {
+    "orphan_id": "job-seeking-and-hiring-should-be-viewed-as",
+    "orphan_title": "Job seeking and hiring should be viewed as...",
+    "proposals": [
+      {
+        "target_id": "a-sustainable-job-search-requires-a-dietary-balanc",
+        "relationship": "supports",
+        "reasoning": "The orphan position provides the conceptual framework and 'dietary' analogy that underpins the practical requirement for balancing stable opportunities with outsized career bets."
+      },
+      {
+        "target_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+        "relationship": "extends",
+        "reasoning": "The concept of a risk-balanced 'dietary' approach to hiring extends the idea of skill bundle optimization by introducing risk variance as a primary dimension of the hiring decision."
+      },
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "prerequisite",
+        "reasoning": "Maintaining AI-captured 'readiness' is the operational prerequisite that allows a job seeker to pivot between baseline stability and experimental, high-variance growth opportunities."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"a-sustainable-job-search-requires-a-dietary-balanc\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The orphan position provides the conceptual framework and 'dietary' analogy that underpins the practical requirement for balancing stable opportunities with outsized career bets.\"\n  },\n  {\n    \"target_id\": \"hiring-should-be-treated-as-an-optimization-for-bu\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"The concept of a risk-balanced 'dietary' approach to hir"
+  },
+  {
+    "orphan_id": "psychological-safety-and-honesty-are-maximized-whe",
+    "orphan_title": "Psychological safety and honesty are maximized when there...",
+    "proposals": [
+      {
+        "target_id": "job-seeking-and-hiring-should-be-viewed-as",
+        "relationship": "supports",
+        "reasoning": "Separating candidate advocacy from employer representation creates the necessary 'safe container' for the vulnerable, high-signal dialogue required to view hiring as an exercise in mutual discovery rather than an adversarial transaction."
+      },
+      {
+        "target_id": "human-data-signal-density",
+        "relationship": "extends",
+        "reasoning": "A structural separation of concerns removes the conflict of interest that typically suppresses truth-telling, thereby increasing the 'signal density' and honesty of the data captured during the recruitment process."
+      },
+      {
+        "target_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+        "relationship": "prerequisite",
+        "reasoning": "True optimization for 'bundles of skills' and 'trade-offs' is only possible when candidates feel psychologically safe enough to be honest about their limitations and actual skill composition, which the separation of concerns facilitates."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"job-seeking-and-hiring-should-be-viewed-as\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"Separating candidate advocacy from employer representation creates the necessary 'safe container' for the vulnerable, high-signal dialogue required to view hiring as an exercise in mutual discovery rather than an adversarial transaction.\"\n  },\n  {\n    \"target_id\": \"human-data-signal-density\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"A structural separation of con"
+  },
+  {
+    "orphan_id": "in-the-ai-era-the-matching-component-of",
+    "orphan_title": "In the AI era, the 'matching' component of...",
+    "proposals": [
+      {
+        "target_id": "as-generative-ai-commoditizes-highquality-output-t",
+        "relationship": "extends",
+        "reasoning": "The orphan position applies the broader principle of AI-driven commoditization specifically to the recruitment matching process, identifying 'authenticated narrative' as the new high-value bottleneck."
+      },
+      {
+        "target_id": "human-data-signal-density",
+        "relationship": "supports",
+        "reasoning": "The emphasis on high-fidelity candidate narratives aligns with the need to move beyond low-signal data (resumes) toward higher density human data for effective evaluation."
+      },
+      {
+        "target_id": "ai-shifts-experts-higher-in-the-problem-stack",
+        "relationship": "implies",
+        "reasoning": "If matching is commoditized by AI, human recruiters must move 'higher in the stack' to focus on the more complex task of narrative acquisition and validation."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"as-generative-ai-commoditizes-highquality-output-t\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"The orphan position applies the broader principle of AI-driven commoditization specifically to the recruitment matching process, identifying 'authenticated narrative' as the new high-value bottleneck.\"\n  },\n  {\n    \"target_id\": \"human-data-signal-density\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The emphasis on high-fidelity candidate narratives aligns w"
+  },
+  {
+    "orphan_id": "career-development-tools-must-solve-for-the-inerti",
+    "orphan_title": "Career development tools must solve for the 'inertia...",
+    "proposals": [
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "prerequisite",
+        "reasoning": "Solving the 'inertia of self-reflection' is a necessary precursor to achieving the state of constant readiness required for real-time talent orchestration."
+      },
+      {
+        "target_id": "ai-interfaces-that-mimic-human-social-bids-create",
+        "relationship": "supports",
+        "reasoning": "The 'anthropomorphic friction' and social bids of human-like AI interfaces provide the necessary emotional and social pressure to overcome the high cognitive cost of self-reflection."
+      },
+      {
+        "target_id": "everyone-has-valuable-things-to-say-about-themselv",
+        "relationship": "implies",
+        "reasoning": "Since the obstacle to self-expression is 'inertia' and 'extraction cost' rather than a lack of substance, tools must focus on the mechanics of lowering that extraction barrier."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"maintaining-a-state-of-constant-readiness-via-aica\",\n    \"relationship\": \"prerequisite\",\n    \"reasoning\": \"Solving the 'inertia of self-reflection' is a necessary precursor to achieving the state of constant readiness required for real-time talent orchestration.\"\n  },\n  {\n    \"target_id\": \"ai-interfaces-that-mimic-human-social-bids-create\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The 'anthropomorphic friction' and social bids of human-like AI interfaces "
+  },
+  {
+    "orphan_id": "the-future-of-recruitment-lies-in-democratizing-th",
+    "orphan_title": "The future of recruitment lies in democratizing the...",
+    "proposals": [
+      {
+        "target_id": "ai-makes-individuals-as-effective-as-teams",
+        "relationship": "example_of",
+        "reasoning": "Democratizing recruitment by giving individuals professional-grade data superiority is a specific application of AI enabling a single person to perform at the level of a specialized agency or team."
+      },
+      {
+        "target_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+        "relationship": "extends",
+        "reasoning": "Just as vibe coding allows generalists to enter technical domains, this position extends that democratization to the financial side of recruitment, allowing non-professionals to cross the identity bridge into talent brokerage."
+      },
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "implies",
+        "reasoning": "If recruitment tools transition into financial instruments for human capital, it implies that the mechanical matching layer has been commoditized, shifting the value to the individual's ability to act as a sophisticated talent broker."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"ai-makes-individuals-as-effective-as-teams\",\n    \"relationship\": \"example_of\",\n    \"reasoning\": \"Democratizing recruitment by giving individuals professional-grade data superiority is a specific application of AI enabling a single person to perform at the level of a specialized agency or team.\"\n  },\n  {\n    \"target_id\": \"vibe-coding-functions-as-a-powerful-identity-bridg\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"Just as vibe coding allows generalists to e"
+  },
+  {
+    "orphan_id": "the-strategic-value-in-the-labor-market-is",
+    "orphan_title": "The strategic value in the labor market is...",
+    "proposals": [
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "extends",
+        "reasoning": "The orphan position provides the strategic rationale (moat construction) for why recruitment value has shifted from matching to high-fidelity narrative acquisition."
+      },
+      {
+        "target_id": "as-generative-ai-commoditizes-highquality-output-t",
+        "relationship": "implies",
+        "reasoning": "If high-quality output is commoditized by AI, then the labor market's value necessarily shifts to the unique 'inputs'\u2014the authenticated, high-fidelity data that feeds those systems."
+      },
+      {
+        "target_id": "identity-in-the-labor-market-is-semantic-not",
+        "relationship": "supports",
+        "reasoning": "The focus on 'authenticated narratives' as a moat supports the idea that labor market identity is an underlying collection of semantic experiences rather than a static resume."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"in-the-ai-era-the-matching-component-of\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"The orphan position provides the strategic rationale (moat construction) for why recruitment value has shifted from matching to high-fidelity narrative acquisition.\"\n  },\n  {\n    \"target_id\": \"as-generative-ai-commoditizes-highquality-output-t\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"If high-quality output is commoditized by AI, then the labor market's value necess"
+  },
+  {
+    "orphan_id": "the-future-of-hiring-shifts-from-a-transactional",
+    "orphan_title": "The future of hiring shifts from a transactional...",
+    "proposals": [
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "supports",
+        "reasoning": "A persistent mid-layer relationship is practically enabled by maintaining a state of constant readiness through AI-captured intelligence."
+      },
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "extends",
+        "reasoning": "The shift to a persistent mid-layer model redefines the matching component of hiring as a continuous background process rather than a point-in-time transaction."
+      },
+      {
+        "target_id": "job-seeking-and-hiring-should-be-viewed-as",
+        "relationship": "implies",
+        "reasoning": "Viewing hiring as a persistent relationship implies a transition away from the 'apply-now-or-never' transactional model."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"maintaining-a-state-of-constant-readiness-via-aica\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"A persistent mid-layer relationship is practically enabled by maintaining a state of constant readiness through AI-captured intelligence.\"\n  },\n  {\n    \"target_id\": \"in-the-ai-era-the-matching-component-of\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"The shift to a persistent mid-layer model redefines the matching component of hiring as a continuous backgro"
+  },
+  {
+    "orphan_id": "identity-in-the-labor-market-is-semantic-not",
+    "orphan_title": "Identity in the labor market is semantic, not...",
+    "proposals": [
+      {
+        "target_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+        "relationship": "supports",
+        "reasoning": "If identity is a collection of re-renderable experiences, then hiring naturally becomes an optimization for specific skill bundles rather than matching against a fixed, syntactic document like a resume."
+      },
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "implies",
+        "reasoning": "A semantic identity requires continuous capture of experiences to enable the truthful re-rendering into various forms at any moment of opportunity."
+      },
+      {
+        "target_id": "everyone-has-valuable-things-to-say-about-themselv",
+        "relationship": "extends",
+        "reasoning": "This moves from the premise that everyone possesses value to the specific mechanism of how that value is structured\u2014as a core semantic experience rather than a singular static output."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"hiring-should-be-treated-as-an-optimization-for-bu\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"If identity is a collection of re-renderable experiences, then hiring naturally becomes an optimization for specific skill bundles rather than matching against a fixed, syntactic document like a resume.\"\n  },\n  {\n    \"target_id\": \"maintaining-a-state-of-constant-readiness-via-aica\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"A semantic identity requires con"
+  },
+  {
+    "orphan_id": "maintaining-a-state-of-constant-readiness-via-aica",
+    "orphan_title": "Maintaining a state of constant 'readiness' via AI-captured...",
+    "proposals": [
+      {
+        "target_id": "ai-shifts-experts-higher-in-the-problem-stack",
+        "relationship": "extends",
+        "reasoning": "Moving experts from 'manual brokers' of data to 'platform orchestrators' is a specific organizational manifestation of shifting them higher in the problem stack."
+      },
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "implies",
+        "reasoning": "If AI collapses trust latency and readiness, it implies that the 'matching' component of recruiting is indeed being commoditized by real-time intelligence access."
+      },
+      {
+        "target_id": "as-ai-commoditizes-content-generation-input-system",
+        "relationship": "supports",
+        "reasoning": "The 'constant readiness' is only possible through the 'systematic listening' of the input systems that capture this intelligence."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"ai-shifts-experts-higher-in-the-problem-stack\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"Moving experts from 'manual brokers' of data to 'platform orchestrators' is a specific organizational manifestation of shifting them higher in the problem stack.\"\n  },\n  {\n    \"target_id\": \"in-the-ai-era-the-matching-component-of\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"If AI collapses trust latency and readiness, it implies that the 'matching' component of r"
+  },
+  {
+    "orphan_id": "maintaining-a-strict-separation-between-candidatef",
+    "orphan_title": "Maintaining a strict separation between candidate-facing and employer-facing...",
+    "proposals": [
+      {
+        "target_id": "human-data-signal-density",
+        "relationship": "supports",
+        "reasoning": "The psychological safety created by separating roles increases the signal density of the human data captured during the candidate discovery process."
+      },
+      {
+        "target_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+        "relationship": "supports",
+        "reasoning": "A separate candidate-facing representative allows for a more honest assessment of 'trade-offs' that is often obscured in a traditional, single-track 'selling' environment."
+      },
+      {
+        "target_id": "career-development-tools-must-solve-for-the-inerti",
+        "relationship": "extends",
+        "reasoning": "Solving for candidate inertia requires an environment of honesty and psychological safety that is best facilitated by separating advocacy from employer-facing evaluation."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"human-data-signal-density\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The psychological safety created by separating roles increases the signal density of the human data captured during the candidate discovery process.\"\n  },\n  {\n    \"target_id\": \"hiring-should-be-treated-as-an-optimization-for-bu\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"A separate candidate-facing representative allows for a more honest assessment of 'trade-offs' that is often o"
+  },
+  {
+    "orphan_id": "the-most-effective-way-to-disrupt-recruitment-is",
+    "orphan_title": "The most effective way to disrupt recruitment is...",
+    "proposals": [
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "extends",
+        "reasoning": "This position defines the specific mechanism\u2014democratizing financial incentives and data superiority\u2014that turns the AI-driven matching component into a disruptive brokerage model."
+      },
+      {
+        "target_id": "ai-makes-individuals-as-effective-as-teams",
+        "relationship": "implies",
+        "reasoning": "If AI makes individuals as effective as teams, then the disruption of recruitment relies on empowering those high-leverage individuals with the financial and data tools traditionally reserved for agencies."
+      },
+      {
+        "target_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+        "relationship": "supports",
+        "reasoning": "Democratizing recruitment data allows for a broader network of non-recruiters to optimize for 'bundles of skills' rather than relying on the rigid, legacy search filters of professional recruiters."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"in-the-ai-era-the-matching-component-of\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"This position defines the specific mechanism\u2014democratizing financial incentives and data superiority\u2014that turns the AI-driven matching component into a disruptive brokerage model.\"\n  },\n  {\n    \"target_id\": \"ai-makes-individuals-as-effective-as-teams\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"If AI makes individuals as effective as teams, then the disruption of recru"
+  },
+  {
+    "orphan_id": "career-mobility-is-governed-by-a-geometric-distanc",
+    "orphan_title": "Career mobility is governed by a 'geometric distance' from an individual's existing domain and role ",
+    "proposals": [
+      {
+        "target_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+        "relationship": "extends",
+        "reasoning": "Vibe coding serves as a mechanism to compress the 'geometric distance' for generalists by providing an identity bridge that allows them to bypass traditional domain/role gating."
+      },
+      {
+        "target_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+        "relationship": "supports",
+        "reasoning": "The geometric distance constraint explains why hiring markets default to 'trade-off' calculations rather than searching for perfect matches when candidates attempt to bridge new domains."
+      },
+      {
+        "target_id": "identity-in-the-labor-market-is-semantic-not",
+        "relationship": "implies",
+        "reasoning": "If identity is semantic, the 'geometric distance' is essentially the linguistic and conceptual gap between how a candidate's existing expertise is described versus the requirements of a new role or industry."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"vibe-coding-functions-as-a-powerful-identity-bridg\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"Vibe coding serves as a mechanism to compress the 'geometric distance' for generalists by providing an identity bridge that allows them to bypass traditional domain/role gating.\"\n  },\n  {\n    \"target_id\": \"hiring-should-be-treated-as-an-optimization-for-bu\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The geometric distance constraint explains why hiring mar"
+  },
+  {
+    "orphan_id": "a-sustainable-job-search-requires-a-dietary-balanc",
+    "orphan_title": "A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability oppo",
+    "proposals": [
+      {
+        "target_id": "career-development-tools-must-solve-for-the-inerti",
+        "relationship": "supports",
+        "reasoning": "The 'dietary balance' of stable opportunities provides the psychological momentum necessary to overcome the chronic inertia and friction inherent in career transitions."
+      },
+      {
+        "target_id": "job-seeking-and-hiring-should-be-viewed-as",
+        "relationship": "extends",
+        "reasoning": "Treating the job search as a 'dietary' portfolio extends the view of hiring as a strategic process by applying risk-management principles to the candidate's personal energy and effort allocation."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"career-development-tools-must-solve-for-the-inerti\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The 'dietary balance' of stable opportunities provides the psychological momentum necessary to overcome the chronic inertia and friction inherent in career transitions.\"\n  },\n  {\n    \"target_id\": \"job-seeking-and-hiring-should-be-viewed-as\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"Treating the job search as a 'dietary' portfolio extends the view of hirin"
+  },
+  {
+    "orphan_id": "there-is-a-strategic-advantage-in-decoupling-human",
+    "orphan_title": "There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluati",
+    "proposals": [
+      {
+        "target_id": "job-seeking-and-hiring-should-be-viewed-as",
+        "relationship": "supports",
+        "reasoning": "Decoupling reflection from evaluation allows the hiring process to function more effectively as a two-sided discovery mechanism rather than a one-sided assessment."
+      },
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "extends",
+        "reasoning": "Separating the human-centric reflection layer ensures that 'constant readiness' is built on honest self-discovery rather than performative data captured for an ATS."
+      },
+      {
+        "target_id": "everyone-has-valuable-things-to-say-about-themselv",
+        "relationship": "implies",
+        "reasoning": "If everyone has valuable self-insights, decoupling reflection from the high-stakes evaluation of an ATS is necessary to lower the barrier for individuals to actually express them."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"job-seeking-and-hiring-should-be-viewed-as\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"Decoupling reflection from evaluation allows the hiring process to function more effectively as a two-sided discovery mechanism rather than a one-sided assessment.\"\n  },\n  {\n    \"target_id\": \"maintaining-a-state-of-constant-readiness-via-aica\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"Separating the human-centric reflection layer ensures that 'constant readiness'"
+  },
+  {
+    "orphan_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+    "orphan_title": "Hiring should be treated as an optimization for 'bundles of skills' and 'trade-offs' rather than a l",
+    "proposals": [
+      {
+        "target_id": "identity-in-the-labor-market-is-semantic-not",
+        "relationship": "extends",
+        "reasoning": "If identity in the labor market is semantic rather than static, hiring must evolve from linear stack-ranking to a multidimensional optimization of how those semantic 'bundles of skills' fit a specific context."
+      },
+      {
+        "target_id": "job-seeking-and-hiring-should-be-viewed-as",
+        "relationship": "supports",
+        "reasoning": "Treating hiring as an optimization for skill bundles and trade-offs directly supports the view that hiring is a complex alignment problem rather than a simple filtering exercise."
+      },
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "implies",
+        "reasoning": "Shifting the focus to 'bundles' and 'trade-offs' implies that the true value of AI in hiring lies in navigating these complex, non-linear optimizations rather than just automating traditional screening."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"identity-in-the-labor-market-is-semantic-not\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"If identity in the labor market is semantic rather than static, hiring must evolve from linear stack-ranking to a multidimensional optimization of how those semantic 'bundles of skills' fit a specific context.\"\n  },\n  {\n    \"target_id\": \"job-seeking-and-hiring-should-be-viewed-as\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"Treating hiring as an optimization for "
+  },
+  {
+    "orphan_id": "self-reflection-is-subject-to-a-high-activation-en",
+    "orphan_title": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T",
+    "proposals": [
+      {
+        "target_id": "career-development-tools-must-solve-for-the-inerti",
+        "relationship": "supports",
+        "reasoning": "The orphan position provides the underlying psychological mechanism (high activation energy) that explains why career tools must solve for inertia rather than just utility."
+      },
+      {
+        "target_id": "the-efficacy-of-automated-habit-tracking-systems-i",
+        "relationship": "implies",
+        "reasoning": "If abstract utility cannot overcome the activation energy barrier for reflection, it implies that social obligation or anthropomorphic friction is required to provide the necessary 'pressure' to drive engagement."
+      },
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "prerequisite",
+        "reasoning": "Solving the activation energy barrier for self-reflection is a prerequisite for achieving the 'constant readiness' state where AI captures intelligence in real-time."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"career-development-tools-must-solve-for-the-inerti\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"The orphan position provides the underlying psychological mechanism (high activation energy) that explains why career tools must solve for inertia rather than just utility.\"\n  },\n  {\n    \"target_id\": \"the-efficacy-of-automated-habit-tracking-systems-i\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"If abstract utility cannot overcome the activation energy barr"
+  },
+  {
+    "orphan_id": "the-future-of-hiring-lies-in-a-persistent-mid-laye",
+    "orphan_title": "The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship",
+    "proposals": [
+      {
+        "target_id": "in-the-ai-era-the-matching-component-of",
+        "relationship": "extends",
+        "reasoning": "The 'mid-layer' provides the architectural mechanism to realize the continuous matching state necessitated by the AI era's shift in hiring dynamics."
+      },
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "reasoning": "A persistent mid-layer system serves as the infrastructure that enables individuals to maintain a state of constant readiness through ongoing data capture and archetype matching.",
+        "relationship": "implies"
+      },
+      {
+        "target_id": "job-seeking-and-hiring-should-be-viewed-as",
+        "relationship": "supports",
+        "reasoning": "Moving to a persistent mid-layer model transforms hiring from a reactive transaction into the continuous, relationship-based state described in this position."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"in-the-ai-era-the-matching-component-of\",\n    \"relationship\": \"extends\",\n    \"reasoning\": \"The 'mid-layer' provides the architectural mechanism to realize the continuous matching state necessitated by the AI era's shift in hiring dynamics.\"\n  },\n  {\n    \"target_id\": \"maintaining-a-state-of-constant-readiness-via-aica\",\n    \"reasoning\": \"A persistent mid-layer system serves as the infrastructure that enables individuals to maintain a state of constant readiness thr"
+  },
+  {
+    "orphan_id": "professional-identity-is-narrative-not-document",
+    "orphan_title": "Professional identity is narrative, not document",
+    "proposals": [
+      {
+        "target_id": "identity-in-the-labor-market-is-semantic-not",
+        "relationship": "supports",
+        "reasoning": "Both positions argue that professional identity is fundamentally rooted in meaning and experience (semantic) rather than formal syntax or fixed document structures."
+      },
+      {
+        "target_id": "everyone-has-valuable-things-to-say-about-themselv",
+        "relationship": "implies",
+        "reasoning": "If identity is a collection of narrative stories that can be re-rendered, it implies that individuals possess inherent value that simply requires proper narrative extraction and translation."
+      },
+      {
+        "target_id": "maintaining-a-state-of-constant-readiness-via-aica",
+        "relationship": "extends",
+        "reasoning": "The narrative nature of identity allows for a state of constant readiness because continuous AI capture provides the 'truthful re-rendering' of experiences into any required professional form."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"identity-in-the-labor-market-is-semantic-not\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"Both positions argue that professional identity is fundamentally rooted in meaning and experience (semantic) rather than formal syntax or fixed document structures.\"\n  },\n  {\n    \"target_id\": \"everyone-has-valuable-things-to-say-about-themselv\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"If identity is a collection of narrative stories that can be re-rendered, it"
+  },
+  {
+    "orphan_id": "human-data-signal-density",
+    "orphan_title": "Human Data Signal Density Stratification",
+    "proposals": [
+      {
+        "target_id": "as-generative-ai-commoditizes-highquality-output-t",
+        "relationship": "supports",
+        "reasoning": "High-density human data from top performers provides the 'true signal' that remains valuable even as generative models commoditize standard high-quality outputs."
+      },
+      {
+        "target_id": "ai-implementation-should-elevate-human-experts-hig",
+        "relationship": "implies",
+        "reasoning": "If premium human data consists of concentrated metacognition from top performers, AI systems should be designed to capture and leverage this density to move experts higher in the problem stack."
+      },
+      {
+        "target_id": "generic-ai-usage-is-detectable-and-disqualifying",
+        "relationship": "extends",
+        "reasoning": "Generic AI usage fails specifically because it lacks the 'premium-tier' signal density found in the out-of-distribution thinking of proven human performers."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"as-generative-ai-commoditizes-highquality-output-t\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"High-density human data from top performers provides the 'true signal' that remains valuable even as generative models commoditize standard high-quality outputs.\"\n  },\n  {\n    \"target_id\": \"ai-implementation-should-elevate-human-experts-hig\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"If premium human data consists of concentrated metacognition from top per"
+  },
+  {
+    "orphan_id": "everyone-has-valuable-things-to-say-about-themselv",
+    "orphan_title": "Everyone has valuable things to say about themselves",
+    "proposals": [
+      {
+        "target_id": "as-ai-commoditizes-content-generation-input-system",
+        "relationship": "supports",
+        "reasoning": "Since substance exists in everyone but extraction is the bottleneck, the value of AI shifts from generating the content to providing the systematic listening (input) required to reveal that latent value."
+      },
+      {
+        "target_id": "career-development-tools-must-solve-for-the-inerti",
+        "relationship": "implies",
+        "reasoning": "The inability of individuals to translate their own accomplishments into messaging creates the 'inertia' that career tools must solve through active extraction and packaging."
+      },
+      {
+        "target_id": "human-data-signal-density",
+        "relationship": "extends",
+        "reasoning": "This position identifies that the 'raw substance' of a candidate's value is often a low-density signal that requires a high-signal extraction process (coaching or good questions) to become legible to the market."
+      }
+    ],
+    "raw_response": "```json\n[\n  {\n    \"target_id\": \"as-ai-commoditizes-content-generation-input-system\",\n    \"relationship\": \"supports\",\n    \"reasoning\": \"Since substance exists in everyone but extraction is the bottleneck, the value of AI shifts from generating the content to providing the systematic listening (input) required to reveal that latent value.\"\n  },\n  {\n    \"target_id\": \"career-development-tools-must-solve-for-the-inerti\",\n    \"relationship\": \"implies\",\n    \"reasoning\": \"The inability of individuals to"
+  }
+]

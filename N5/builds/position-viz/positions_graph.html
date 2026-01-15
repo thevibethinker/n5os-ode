@@ -1,0 +1,723 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+                <link href="lib/tom-select/tom-select.css" rel="stylesheet">
+                <script src="lib/tom-select/tom-select.complete.min.js"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #1a1a2e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 900px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="Hiring Signal Collapse">Hiring Signal Collapse</option>
+                                
+                                    <option value="Self-Knowledge Deficit">Self-Knowledge Deficit</option>
+                                
+                                    <option value="Inbound Resurrection Through Friction">Inbound Resurrection Through Friction</option>
+                                
+                                    <option value="Assessment Signal Validity Framework">Assessment Signal Validity Framework</option>
+                                
+                                    <option value="Information Engineering Distinction">Information Engineering Distinction</option>
+                                
+                                    <option value="Polyorchestrator Model">Polyorchestrator Model</option>
+                                
+                                    <option value="Sliding Knowledge Threshold">Sliding Knowledge Threshold</option>
+                                
+                                    <option value="Magic as Intent-Action Abstraction">Magic as Intent-Action Abstraction</option>
+                                
+                                    <option value="Printing Press Parallel">Printing Press Parallel</option>
+                                
+                                    <option value="Cognitive Bootstrapping via Test Preparation">Cognitive Bootstrapping via Test Preparation</option>
+                                
+                                    <option value="Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking">Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking</option>
+                                
+                                    <option value="Death of the Minimum Viable Existence">Death of the Minimum Viable Existence</option>
+                                
+                                    <option value="Genre Shift and Fractal Contribution">Genre Shift and Fractal Contribution</option>
+                                
+                                    <option value="Rationality of Low-Trust Moonshots">Rationality of Low-Trust Moonshots</option>
+                                
+                                    <option value="[HIRING-MARKET]">[HIRING-MARKET]</option>
+                                
+                                    <option value="Integrity Gap as Scaling Risk">Integrity Gap as Scaling Risk</option>
+                                
+                                    <option value="[PERSONAL-FOUNDATIONS]">[PERSONAL-FOUNDATIONS]</option>
+                                
+                                    <option value="[EPISTEMOLOGY]">[EPISTEMOLOGY]</option>
+                                
+                                    <option value="The growth dividends of a 'moonshot' attempt—even one...">The growth dividends of a 'moonshot' attempt—even one...</option>
+                                
+                                    <option value="[WORLDVIEW]">[WORLDVIEW]</option>
+                                
+                                    <option value="The current paradigm of AI automation often results...">The current paradigm of AI automation often results...</option>
+                                
+                                    <option value="[AI-AUTOMATION]">[AI-AUTOMATION]</option>
+                                
+                                    <option value="System design and complex technical infrastructure can be...">System design and complex technical infrastructure can be...</option>
+                                
+                                    <option value="[CAREERSPAN]">[CAREERSPAN]</option>
+                                
+                                    <option value="Market fundability and professional acceptability are functions of...">Market fundability and professional acceptability are functions of...</option>
+                                
+                                    <option value="The internal 'growth' derived from pursuing a high-risk...">The internal 'growth' derived from pursuing a high-risk...</option>
+                                
+                                    <option value="Job seeking and hiring should be viewed as...">Job seeking and hiring should be viewed as...</option>
+                                
+                                    <option value="A candidate's primary task is to 'artificially' close...">A candidate's primary task is to 'artificially' close...</option>
+                                
+                                    <option value="High-intelligence outputs are more reliably achieved through orchestrated...">High-intelligence outputs are more reliably achieved through orchestrated...</option>
+                                
+                                    <option value="The act of participating in a high-friction, high-effort...">The act of participating in a high-friction, high-effort...</option>
+                                
+                                    <option value="Psychological safety and honesty are maximized when there...">Psychological safety and honesty are maximized when there...</option>
+                                
+                                    <option value="Current AI implementations often create an 'Information Standstill'...">Current AI implementations often create an 'Information Standstill'...</option>
+                                
+                                    <option value="In the AI era, the 'matching' component of...">In the AI era, the 'matching' component of...</option>
+                                
+                                    <option value="The most effective path to reducing hiring bias...">The most effective path to reducing hiring bias...</option>
+                                
+                                    <option value="Career development tools must solve for the 'inertia...">Career development tools must solve for the 'inertia...</option>
+                                
+                                    <option value="In the AI era, the decision to hire...">In the AI era, the decision to hire...</option>
+                                
+                                    <option value="As AI commoditizes content generation, 'input' (systematic listening...">As AI commoditizes content generation, 'input' (systematic listening...</option>
+                                
+                                    <option value="Truth in human assessment is found at the...">Truth in human assessment is found at the...</option>
+                                
+                                    <option value="The recruitment market is structured around a massive...">The recruitment market is structured around a massive...</option>
+                                
+                                    <option value="The future of recruitment lies in democratizing the...">The future of recruitment lies in democratizing the...</option>
+                                
+                                    <option value="The 'Internet of Careers' functions as a collective...">The 'Internet of Careers' functions as a collective...</option>
+                                
+                                    <option value="Data companies that lack a proprietary acquisition channel...">Data companies that lack a proprietary acquisition channel...</option>
+                                
+                                    <option value="Selling a manual methodology as a finished software...">Selling a manual methodology as a finished software...</option>
+                                
+                                    <option value="[FOUNDER]">[FOUNDER]</option>
+                                
+                                    <option value="While Seed-stage startups offer higher theoretical financial 'alpha,'...">While Seed-stage startups offer higher theoretical financial 'alpha,'...</option>
+                                
+                                    <option value="The strategic value in the labor market is...">The strategic value in the labor market is...</option>
+                                
+                                    <option value="Transforming the hiring process from an adversarial transaction...">Transforming the hiring process from an adversarial transaction...</option>
+                                
+                                    <option value="AI-driven automation of application materials effectively destroys the...">AI-driven automation of application materials effectively destroys the...</option>
+                                
+                                    <option value="Integrity and character are best verified through a...">Integrity and character are best verified through a...</option>
+                                
+                                    <option value="The future of hiring shifts from a transactional...">The future of hiring shifts from a transactional...</option>
+                                
+                                    <option value="As generative AI commoditizes high-quality output, the true...">As generative AI commoditizes high-quality output, the true...</option>
+                                
+                                    <option value="Truth in professional assessment is found at the...">Truth in professional assessment is found at the...</option>
+                                
+                                    <option value="AI implementation should elevate human experts 'higher in...">AI implementation should elevate human experts 'higher in...</option>
+                                
+                                    <option value="Identity in the labor market is semantic, not...">Identity in the labor market is semantic, not...</option>
+                                
+                                    <option value="The developmental value of a high-difficulty 'moonshot' project...">The developmental value of a high-difficulty 'moonshot' project...</option>
+                                
+                                    <option value="System design and technical scaffolding can be used...">System design and technical scaffolding can be used...</option>
+                                
+                                    <option value="Social accountability in digital products is significantly more...">Social accountability in digital products is significantly more...</option>
+                                
+                                    <option value="Complexity often obscures the most essential components of...">Complexity often obscures the most essential components of...</option>
+                                
+                                    <option value="Optimal long-term physiological and skill growth requires disciplined...">Optimal long-term physiological and skill growth requires disciplined...</option>
+                                
+                                    <option value="AI’s primary value is in shifting human experts...">AI’s primary value is in shifting human experts...</option>
+                                
+                                    <option value="Systemic dominance in specific industries is often the...">Systemic dominance in specific industries is often the...</option>
+                                
+                                    <option value="Maintaining a state of constant 'readiness' via AI-captured...">Maintaining a state of constant 'readiness' via AI-captured...</option>
+                                
+                                    <option value="Intelligent and resilient system behavior is better achieved...">Intelligent and resilient system behavior is better achieved...</option>
+                                
+                                    <option value="Data collected independent of a specific job application...">Data collected independent of a specific job application...</option>
+                                
+                                    <option value="A candidate's willingness to engage in high-effort, reflective...">A candidate's willingness to engage in high-effort, reflective...</option>
+                                
+                                    <option value="Hiring should be viewed as an exercise in...">Hiring should be viewed as an exercise in...</option>
+                                
+                                    <option value="Maintaining a strict separation between candidate-facing and employer-facing...">Maintaining a strict separation between candidate-facing and employer-facing...</option>
+                                
+                                    <option value="In a career pivot, a candidate's primary objective...">In a career pivot, a candidate's primary objective...</option>
+                                
+                                    <option value="The recruitment market is systematically inefficient because it...">The recruitment market is systematically inefficient because it...</option>
+                                
+                                    <option value="The most effective way to disrupt recruitment is...">The most effective way to disrupt recruitment is...</option>
+                                
+                                    <option value="Vibe coding should be positioned as a strategic...">Vibe coding should be positioned as a strategic...</option>
+                                
+                                    <option value="The willingness of a candidate to engage with...">The willingness of a candidate to engage with...</option>
+                                
+                                    <option value="Technical resilience in AI systems is best achieved...">Technical resilience in AI systems is best achieved...</option>
+                                
+                                    <option value="A truly effective productivity tool functions as a 'Home'—a digital space that reflects the user's v">A truly effective productivity tool functions as a 'Home'—a digital space that reflects the user's v</option>
+                                
+                                    <option value="The efficacy of automated habit-tracking systems is driven by social obligation rather than function">The efficacy of automated habit-tracking systems is driven by social obligation rather than function</option>
+                                
+                                    <option value="Career mobility is governed by a 'geometric distance' from an individual's existing domain and role ">Career mobility is governed by a 'geometric distance' from an individual's existing domain and role </option>
+                                
+                                    <option value="A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability oppo">A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability oppo</option>
+                                
+                                    <option value="Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ">Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ</option>
+                                
+                                    <option value="Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as ">Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as </option>
+                                
+                                    <option value="The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st">The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st</option>
+                                
+                                    <option value="There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluati">There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluati</option>
+                                
+                                    <option value="Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient">Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient</option>
+                                
+                                    <option value="Data collected about a candidate independent of a specific job application is inherently higher fide">Data collected about a candidate independent of a specific job application is inherently higher fide</option>
+                                
+                                    <option value="Hiring should be treated as an optimization for 'bundles of skills' and 'trade-offs' rather than a l">Hiring should be treated as an optimization for 'bundles of skills' and 'trade-offs' rather than a l</option>
+                                
+                                    <option value="LinkedIn's shift in focus from a professional utility to a social engagement network is actively des">LinkedIn's shift in focus from a professional utility to a social engagement network is actively des</option>
+                                
+                                    <option value="Internal self-assessment systematically lags external market signals. People often operate at a high">Internal self-assessment systematically lags external market signals. People often operate at a high</option>
+                                
+                                    <option value="Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T">Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T</option>
+                                
+                                    <option value="In an AI-augmented landscape, the transition from 'hacking' to 'human-centric scaling' is marked by ">In an AI-augmented landscape, the transition from 'hacking' to 'human-centric scaling' is marked by </option>
+                                
+                                    <option value="AI interfaces that mimic human social bids create 'anthropomorphic friction' which outperforms tradi">AI interfaces that mimic human social bids create 'anthropomorphic friction' which outperforms tradi</option>
+                                
+                                    <option value="Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai">Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai</option>
+                                
+                                    <option value="Dominant parallel institutions are often the 'scar tissue' of historical exclusion. Centers of gravi">Dominant parallel institutions are often the 'scar tissue' of historical exclusion. Centers of gravi</option>
+                                
+                                    <option value="The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne">The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne</option>
+                                
+                                    <option value="Reducing latency in trust networks transforms institutions from manual brokers into platform orchest">Reducing latency in trust networks transforms institutions from manual brokers into platform orchest</option>
+                                
+                                    <option value="Proprietary data sourcing is the only sustainable competitive advantage in the data services market.">Proprietary data sourcing is the only sustainable competitive advantage in the data services market.</option>
+                                
+                                    <option value="Selling a manual methodology as finished software—'selling the product before it exists'—is a high-v">Selling a manual methodology as finished software—'selling the product before it exists'—is a high-v</option>
+                                
+                                    <option value="For mid-career specialists, the higher financial 'alpha' of Seed-stage startups is often negated by ">For mid-career specialists, the higher financial 'alpha' of Seed-stage startups is often negated by </option>
+                                
+                                    <option value="The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes ">The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes </option>
+                                
+                                    <option value="Integrity and character are best verified not through deep interrogation, but through the triangulat">Integrity and character are best verified not through deep interrogation, but through the triangulat</option>
+                                
+                                    <option value="The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship">The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship</option>
+                                
+                                    <option value="Professional identity is semantic rather than syntactic; a person is a stable collection of 'meaning">Professional identity is semantic rather than syntactic; a person is a stable collection of 'meaning</option>
+                                
+                                    <option value="[EDUCATION]">[EDUCATION]</option>
+                                
+                                    <option value="AI shifts experts higher in the problem stack">AI shifts experts higher in the problem stack</option>
+                                
+                                    <option value="Professional identity is narrative, not document">Professional identity is narrative, not document</option>
+                                
+                                    <option value="The efficacy of automated agents (like habit-tracking bots)...">The efficacy of automated agents (like habit-tracking bots)...</option>
+                                
+                                    <option value="AI's primary role in professional services should be...">AI's primary role in professional services should be...</option>
+                                
+                                    <option value="Friction Economics: Scalable vs. Linear Work">Friction Economics: Scalable vs. Linear Work</option>
+                                
+                                    <option value="Hiring Stage Taxonomy: Sourcing, Screening, Evaluation">Hiring Stage Taxonomy: Sourcing, Screening, Evaluation</option>
+                                
+                                    <option value="Employer Oblige: The Case for Investing in Candidate Development">Employer Oblige: The Case for Investing in Candidate Development</option>
+                                
+                                    <option value="Confidence Over Quality: What Candidate Scores Should Measure">Confidence Over Quality: What Candidate Scores Should Measure</option>
+                                
+                                    <option value="Self-Advocacy Ability as Public Good">Self-Advocacy Ability as Public Good</option>
+                                
+                                    <option value="The Resume Industrial Complex">The Resume Industrial Complex</option>
+                                
+                                    <option value="Non-Adversarial Hiring for Top-Tier Talent">Non-Adversarial Hiring for Top-Tier Talent</option>
+                                
+                                    <option value="Portable Trust: Scaling Referral-Quality Signal">Portable Trust: Scaling Referral-Quality Signal</option>
+                                
+                                    <option value="Human Data Signal Density Stratification">Human Data Signal Density Stratification</option>
+                                
+                                    <option value="Job hunting is a skill, not an event">Job hunting is a skill, not an event</option>
+                                
+                                    <option value="AI has reduced the marginal cost of BS to zero">AI has reduced the marginal cost of BS to zero</option>
+                                
+                                    <option value="The self-advocacy skill gap is the real barrier">The self-advocacy skill gap is the real barrier</option>
+                                
+                                    <option value="Auto-apply tools are career self-sabotage">Auto-apply tools are career self-sabotage</option>
+                                
+                                    <option value="Networking is strategic investment, not numbers game">Networking is strategic investment, not numbers game</option>
+                                
+                                    <option value="Referrals are the only reliable path in competitive markets">Referrals are the only reliable path in competitive markets</option>
+                                
+                                    <option value="Ghost jobs are a systemic problem requiring tiered response">Ghost jobs are a systemic problem requiring tiered response</option>
+                                
+                                    <option value="Auto-apply is mutually assured destruction">Auto-apply is mutually assured destruction</option>
+                                
+                                    <option value="AI makes individuals as effective as teams">AI makes individuals as effective as teams</option>
+                                
+                                    <option value="Soft skills become more valuable in AI world">Soft skills become more valuable in AI world</option>
+                                
+                                    <option value="Generic AI usage is detectable and disqualifying">Generic AI usage is detectable and disqualifying</option>
+                                
+                                    <option value="Everyone has valuable things to say about themselves">Everyone has valuable things to say about themselves</option>
+                                
+                                    <option value="Non-technical founders can build with AI">Non-technical founders can build with AI</option>
+                                
+                                    <option value="Self-awareness enables strategic career pivots">Self-awareness enables strategic career pivots</option>
+                                
+                                    <option value="Energy management is the most underrated job search skill">Energy management is the most underrated job search skill</option>
+                                
+                                    <option value="Niche platforms will displace generalist social networks">Niche platforms will displace generalist social networks</option>
+                                
+                                    <option value="Employers created the trust crisis they now face">Employers created the trust crisis they now face</option>
+                                
+                                    <option value="Most job descriptions are BS that wastes everyone's time">Most job descriptions are BS that wastes everyone's time</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+              <div id="filter-menu" class="card-header">
+                <div class="row no-gutters">
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'item')"
+                            id="select-item"
+                        >
+                        <option value="">Select a network item</option>
+                        <option value="edge">edge</option>
+                        <option value="node">node</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="updateFilter(value, 'property')"
+                            id="select-property"
+                        >
+                        <option value="">Select a property...</option>
+                    </select>
+                  </div>
+                  <div class="col-3 pb-2">
+                    <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="select-value"
+                        >
+                        <option value="">Select value(s)...</option>
+                    </select>
+                  </div>
+                  <div class="col-1 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="highlightFilter(filter);">Filter</button>
+                  </div>
+                  <div class="col-2 pb-2">
+                    <button type="button" class="btn btn-primary btn-block" onclick="clearFilter(true)">Reset Selection</button>
+                  </div>
+                </div>
+              </div>
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+                  // explicitly using onItemAdd and this function as we need to save multiple values
+                  let updateValueFilter = function() {
+                      return function () {
+                      filter['value'].push(arguments[0])
+                      }
+                  }
+
+                  let valueControl = new TomSelect("#select-value",{
+                      maxItems: null,
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: updateValueFilter()
+                  });
+
+                  let addValues = function() {
+                      return function () {
+                          // clear the current value options and add the selected attribute values
+                          // tom-select handles duplicates
+                          let selectedProperty = arguments[0];
+                          valueControl.clear();
+                          valueControl.clearOptions();
+                          filter['value'] = []
+                          if (filter['item'] === 'node') {
+                              for (let each in allNodes) {
+                                  valueControl.addOption({
+                                      id:allNodes[each][selectedProperty],
+                                      title:allNodes[each][selectedProperty]
+                                  })
+                              }
+                          }
+                          else if (filter['item'] === 'edge') {
+                              for (let each in allEdges) {
+                                  valueControl.addOption({
+                                      id:allEdges[each][selectedProperty],
+                                      title:allEdges[each][selectedProperty]
+                                  })
+                              }
+                          }
+                      }
+                  };
+
+                  let propControl = new TomSelect("#select-property",{
+                      valueField: 'id',
+                      labelField: 'title',
+                      searchField: 'title',
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addValues()
+                  });
+
+                  let addProperties = function() {
+                      return function () {
+                          // loops through the selected network item and adds the attributes to dropdown
+                          // tom-select handles duplicates
+                          clearFilter(false)
+                          if (arguments[0] === 'edge') {
+                              for (let each in allEdges) {
+                                  if (allEdges.hasOwnProperty(each)) {
+                                      for (let eachProp in allEdges[each]) {
+                                          if (allEdges[each].hasOwnProperty(eachProp)) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                          else if (arguments[0] === 'node') {
+                              for (let each in allNodes) {
+                                  if (allNodes.hasOwnProperty(each)) {
+                                      for (let eachProp in allNodes[each]) {
+                                          if (allNodes[each].hasOwnProperty(eachProp)
+                                              && (eachProp !== 'hidden' && eachProp !== 'savedLabel'
+                                                  && eachProp !== 'hiddenLabel')) {
+                                              propControl.addOption({id: eachProp, title: eachProp})
+
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  };
+
+                  let itemControl = new TomSelect("#select-item",{
+                      create: false,
+                      sortField:{
+                          field: "text",
+                          direction: "asc"
+                      },
+                      onItemAdd: addProperties()
+                  });
+
+                  function clearFilter(reset) {
+                      // utility function to clear all the selected filter options
+                      // if reset is set to true, the existing filter will be removed
+                      // else, only the dropdown options are cleared
+                      propControl.clear();
+                      propControl.clearOptions();
+                      valueControl.clear();
+                      valueControl.clearOptions();
+                      filter = {
+                          item : '',
+                          property : '',
+                          value : []
+                      }
+                      if (reset) {
+                          itemControl.clear();
+                          filterHighlight({nodes: []})
+                      }
+                  }
+
+                  function updateFilter(value, key) {
+                      // key could be 'item' or 'property' and value is as selected in dropdown
+                      filter[key] = value
+                  }
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#FF6B6B", "font": {"color": "white"}, "id": "Hiring Signal Collapse", "label": "Hiring Signal Collapse", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Self-Knowledge Deficit", "label": "Self-Knowledge Deficit", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Inbound Resurrection Through Friction", "label": "Inbound Resurrection Through Friction", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Assessment Signal Validity Framework", "label": "Assessment Signal Validity Framework", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Information Engineering Distinction", "label": "Information Engineering Distinction", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Polyorchestrator Model", "label": "Polyorchestrator Model", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Sliding Knowledge Threshold", "label": "Sliding Knowledge Threshold", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Magic as Intent-Action Abstraction", "label": "Magic as Intent-Action Abstraction", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Printing Press Parallel", "label": "Printing Press Parallel", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Cognitive Bootstrapping via Test Preparation", "label": "Cognitive Bootstrapping via Test Preparation", "shape": "dot", "size": 25, "title": "Domain: education"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking", "label": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking", "shape": "dot", "size": 25, "title": "Domain: epistemology"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Death of the Minimum Viable Existence", "label": "Death of the Minimum Viable Existence", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Genre Shift and Fractal Contribution", "label": "Genre Shift and Fractal Contribution", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Rationality of Low-Trust Moonshots", "label": "Rationality of Low-Trust Moonshots", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "[HIRING-MARKET]", "label": "[HIRING-MARKET]", "shape": "box", "size": 40, "title": "Domain: hiring-market"}, {"color": "#96CEB4", "font": {"color": "white"}, "id": "Integrity Gap as Scaling Risk", "label": "Integrity Gap as Scaling Risk", "shape": "dot", "size": 25, "title": "Domain: personal-foundations"}, {"color": "#96CEB4", "font": {"color": "white"}, "id": "[PERSONAL-FOUNDATIONS]", "label": "[PERSONAL-FOUNDATIONS]", "shape": "box", "size": 40, "title": "Domain: personal-foundations"}, {"color": "#4ECDC4", "font": {"color": "white"}, "id": "[EPISTEMOLOGY]", "label": "[EPISTEMOLOGY]", "shape": "box", "size": 40, "title": "Domain: epistemology"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "The growth dividends of a \u0027moonshot\u0027 attempt\u2014even one...", "label": "The growth dividends of a \u0027moonshot\u0027 attempt\u2014even one...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "[WORLDVIEW]", "label": "[WORLDVIEW]", "shape": "box", "size": 40, "title": "Domain: worldview"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "The current paradigm of AI automation often results...", "label": "The current paradigm of AI automation often results...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#666666", "font": {"color": "white"}, "id": "[AI-AUTOMATION]", "label": "[AI-AUTOMATION]", "shape": "box", "size": 40, "title": "Domain: ai-automation"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "System design and complex technical infrastructure can be...", "label": "System design and complex technical infrastructure can be...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "[CAREERSPAN]", "label": "[CAREERSPAN]", "shape": "box", "size": 40, "title": "Domain: careerspan"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Market fundability and professional acceptability are functions of...", "label": "Market fundability and professional acceptability are functions of...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "The internal \u0027growth\u0027 derived from pursuing a high-risk...", "label": "The internal \u0027growth\u0027 derived from pursuing a high-risk...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Job seeking and hiring should be viewed as...", "label": "Job seeking and hiring should be viewed as...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "A candidate\u0027s primary task is to \u0027artificially\u0027 close...", "label": "A candidate\u0027s primary task is to \u0027artificially\u0027 close...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "High-intelligence outputs are more reliably achieved through orchestrated...", "label": "High-intelligence outputs are more reliably achieved through orchestrated...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The act of participating in a high-friction, high-effort...", "label": "The act of participating in a high-friction, high-effort...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Psychological safety and honesty are maximized when there...", "label": "Psychological safety and honesty are maximized when there...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Current AI implementations often create an \u0027Information Standstill\u0027...", "label": "Current AI implementations often create an \u0027Information Standstill\u0027...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "In the AI era, the \u0027matching\u0027 component of...", "label": "In the AI era, the \u0027matching\u0027 component of...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The most effective path to reducing hiring bias...", "label": "The most effective path to reducing hiring bias...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Career development tools must solve for the \u0027inertia...", "label": "Career development tools must solve for the \u0027inertia...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "In the AI era, the decision to hire...", "label": "In the AI era, the decision to hire...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "As AI commoditizes content generation, \u0027input\u0027 (systematic listening...", "label": "As AI commoditizes content generation, \u0027input\u0027 (systematic listening...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Truth in human assessment is found at the...", "label": "Truth in human assessment is found at the...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The recruitment market is structured around a massive...", "label": "The recruitment market is structured around a massive...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "The future of recruitment lies in democratizing the...", "label": "The future of recruitment lies in democratizing the...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "The \u0027Internet of Careers\u0027 functions as a collective...", "label": "The \u0027Internet of Careers\u0027 functions as a collective...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Data companies that lack a proprietary acquisition channel...", "label": "Data companies that lack a proprietary acquisition channel...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Selling a manual methodology as a finished software...", "label": "Selling a manual methodology as a finished software...", "shape": "dot", "size": 25, "title": "Domain: founder"}, {"color": "#666666", "font": {"color": "white"}, "id": "[FOUNDER]", "label": "[FOUNDER]", "shape": "box", "size": 40, "title": "Domain: founder"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "While Seed-stage startups offer higher theoretical financial \u0027alpha,\u0027...", "label": "While Seed-stage startups offer higher theoretical financial \u0027alpha,\u0027...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "The strategic value in the labor market is...", "label": "The strategic value in the labor market is...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Transforming the hiring process from an adversarial transaction...", "label": "Transforming the hiring process from an adversarial transaction...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "AI-driven automation of application materials effectively destroys the...", "label": "AI-driven automation of application materials effectively destroys the...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Integrity and character are best verified through a...", "label": "Integrity and character are best verified through a...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "The future of hiring shifts from a transactional...", "label": "The future of hiring shifts from a transactional...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "As generative AI commoditizes high-quality output, the true...", "label": "As generative AI commoditizes high-quality output, the true...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Truth in professional assessment is found at the...", "label": "Truth in professional assessment is found at the...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "AI implementation should elevate human experts \u0027higher in...", "label": "AI implementation should elevate human experts \u0027higher in...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Identity in the labor market is semantic, not...", "label": "Identity in the labor market is semantic, not...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "The developmental value of a high-difficulty \u0027moonshot\u0027 project...", "label": "The developmental value of a high-difficulty \u0027moonshot\u0027 project...", "shape": "dot", "size": 25, "title": "Domain: founder"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "System design and technical scaffolding can be used...", "label": "System design and technical scaffolding can be used...", "shape": "dot", "size": 25, "title": "Domain: founder"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Social accountability in digital products is significantly more...", "label": "Social accountability in digital products is significantly more...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Complexity often obscures the most essential components of...", "label": "Complexity often obscures the most essential components of...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Optimal long-term physiological and skill growth requires disciplined...", "label": "Optimal long-term physiological and skill growth requires disciplined...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "AI\u2019s primary value is in shifting human experts...", "label": "AI\u2019s primary value is in shifting human experts...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Systemic dominance in specific industries is often the...", "label": "Systemic dominance in specific industries is often the...", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Maintaining a state of constant \u0027readiness\u0027 via AI-captured...", "label": "Maintaining a state of constant \u0027readiness\u0027 via AI-captured...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Intelligent and resilient system behavior is better achieved...", "label": "Intelligent and resilient system behavior is better achieved...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Data collected independent of a specific job application...", "label": "Data collected independent of a specific job application...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "A candidate\u0027s willingness to engage in high-effort, reflective...", "label": "A candidate\u0027s willingness to engage in high-effort, reflective...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Hiring should be viewed as an exercise in...", "label": "Hiring should be viewed as an exercise in...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Maintaining a strict separation between candidate-facing and employer-facing...", "label": "Maintaining a strict separation between candidate-facing and employer-facing...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "In a career pivot, a candidate\u0027s primary objective...", "label": "In a career pivot, a candidate\u0027s primary objective...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The recruitment market is systematically inefficient because it...", "label": "The recruitment market is systematically inefficient because it...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "The most effective way to disrupt recruitment is...", "label": "The most effective way to disrupt recruitment is...", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Vibe coding should be positioned as a strategic...", "label": "Vibe coding should be positioned as a strategic...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The willingness of a candidate to engage with...", "label": "The willingness of a candidate to engage with...", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Technical resilience in AI systems is best achieved...", "label": "Technical resilience in AI systems is best achieved...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "A truly effective productivity tool functions as a \u0027Home\u0027\u2014a digital space that reflects the user\u0027s v", "label": "A truly effective productivity tool functions as a \u0027Home\u0027\u2014a digital space that reflects the user\u0027s v", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "The efficacy of automated habit-tracking systems is driven by social obligation rather than function", "label": "The efficacy of automated habit-tracking systems is driven by social obligation rather than function", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Career mobility is governed by a \u0027geometric distance\u0027 from an individual\u0027s existing domain and role ", "label": "Career mobility is governed by a \u0027geometric distance\u0027 from an individual\u0027s existing domain and role ", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "A sustainable job search requires a \u0027dietary\u0027 balance: a foundation of stable, high-probability oppo", "label": "A sustainable job search requires a \u0027dietary\u0027 balance: a foundation of stable, high-probability oppo", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ", "label": "Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as ", "label": "Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as ", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st", "label": "The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "There is a strategic advantage in decoupling \u0027human-centric reflection\u0027 from \u0027transactional evaluati", "label": "There is a strategic advantage in decoupling \u0027human-centric reflection\u0027 from \u0027transactional evaluati", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Building sophisticated outputs by orchestrating multiple \u0027dumb\u0027 mini-models creates a more resilient", "label": "Building sophisticated outputs by orchestrating multiple \u0027dumb\u0027 mini-models creates a more resilient", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Data collected about a candidate independent of a specific job application is inherently higher fide", "label": "Data collected about a candidate independent of a specific job application is inherently higher fide", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Hiring should be treated as an optimization for \u0027bundles of skills\u0027 and \u0027trade-offs\u0027 rather than a l", "label": "Hiring should be treated as an optimization for \u0027bundles of skills\u0027 and \u0027trade-offs\u0027 rather than a l", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "LinkedIn\u0027s shift in focus from a professional utility to a social engagement network is actively des", "label": "LinkedIn\u0027s shift in focus from a professional utility to a social engagement network is actively des", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Internal self-assessment systematically lags external market signals. People often operate at a high", "label": "Internal self-assessment systematically lags external market signals. People often operate at a high", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T", "label": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "In an AI-augmented landscape, the transition from \u0027hacking\u0027 to \u0027human-centric scaling\u0027 is marked by ", "label": "In an AI-augmented landscape, the transition from \u0027hacking\u0027 to \u0027human-centric scaling\u0027 is marked by ", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "AI interfaces that mimic human social bids create \u0027anthropomorphic friction\u0027 which outperforms tradi", "label": "AI interfaces that mimic human social bids create \u0027anthropomorphic friction\u0027 which outperforms tradi", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai", "label": "Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Dominant parallel institutions are often the \u0027scar tissue\u0027 of historical exclusion. Centers of gravi", "label": "Dominant parallel institutions are often the \u0027scar tissue\u0027 of historical exclusion. Centers of gravi", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne", "label": "The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Reducing latency in trust networks transforms institutions from manual brokers into platform orchest", "label": "Reducing latency in trust networks transforms institutions from manual brokers into platform orchest", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Proprietary data sourcing is the only sustainable competitive advantage in the data services market.", "label": "Proprietary data sourcing is the only sustainable competitive advantage in the data services market.", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Selling a manual methodology as finished software\u2014\u0027selling the product before it exists\u0027\u2014is a high-v", "label": "Selling a manual methodology as finished software\u2014\u0027selling the product before it exists\u0027\u2014is a high-v", "shape": "dot", "size": 25, "title": "Domain: founder"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "For mid-career specialists, the higher financial \u0027alpha\u0027 of Seed-stage startups is often negated by ", "label": "For mid-career specialists, the higher financial \u0027alpha\u0027 of Seed-stage startups is often negated by ", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes ", "label": "The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes ", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Integrity and character are best verified not through deep interrogation, but through the triangulat", "label": "Integrity and character are best verified not through deep interrogation, but through the triangulat", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "The future of hiring lies in a persistent \u0027mid-layer\u0027 system that maintains a long-term relationship", "label": "The future of hiring lies in a persistent \u0027mid-layer\u0027 system that maintains a long-term relationship", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Professional identity is semantic rather than syntactic; a person is a stable collection of \u0027meaning", "label": "Professional identity is semantic rather than syntactic; a person is a stable collection of \u0027meaning", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#666666", "font": {"color": "white"}, "id": "[EDUCATION]", "label": "[EDUCATION]", "shape": "box", "size": 40, "title": "Domain: education"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "AI shifts experts higher in the problem stack", "label": "AI shifts experts higher in the problem stack", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Professional identity is narrative, not document", "label": "Professional identity is narrative, not document", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "The efficacy of automated agents (like habit-tracking bots)...", "label": "The efficacy of automated agents (like habit-tracking bots)...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "AI\u0027s primary role in professional services should be...", "label": "AI\u0027s primary role in professional services should be...", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Friction Economics: Scalable vs. Linear Work", "label": "Friction Economics: Scalable vs. Linear Work", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Hiring Stage Taxonomy: Sourcing, Screening, Evaluation", "label": "Hiring Stage Taxonomy: Sourcing, Screening, Evaluation", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Employer Oblige: The Case for Investing in Candidate Development", "label": "Employer Oblige: The Case for Investing in Candidate Development", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Confidence Over Quality: What Candidate Scores Should Measure", "label": "Confidence Over Quality: What Candidate Scores Should Measure", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Self-Advocacy Ability as Public Good", "label": "Self-Advocacy Ability as Public Good", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The Resume Industrial Complex", "label": "The Resume Industrial Complex", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Non-Adversarial Hiring for Top-Tier Talent", "label": "Non-Adversarial Hiring for Top-Tier Talent", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Portable Trust: Scaling Referral-Quality Signal", "label": "Portable Trust: Scaling Referral-Quality Signal", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Human Data Signal Density Stratification", "label": "Human Data Signal Density Stratification", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Job hunting is a skill, not an event", "label": "Job hunting is a skill, not an event", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "AI has reduced the marginal cost of BS to zero", "label": "AI has reduced the marginal cost of BS to zero", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "The self-advocacy skill gap is the real barrier", "label": "The self-advocacy skill gap is the real barrier", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Auto-apply tools are career self-sabotage", "label": "Auto-apply tools are career self-sabotage", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Networking is strategic investment, not numbers game", "label": "Networking is strategic investment, not numbers game", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Referrals are the only reliable path in competitive markets", "label": "Referrals are the only reliable path in competitive markets", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Ghost jobs are a systemic problem requiring tiered response", "label": "Ghost jobs are a systemic problem requiring tiered response", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Auto-apply is mutually assured destruction", "label": "Auto-apply is mutually assured destruction", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "AI makes individuals as effective as teams", "label": "AI makes individuals as effective as teams", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Soft skills become more valuable in AI world", "label": "Soft skills become more valuable in AI world", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Generic AI usage is detectable and disqualifying", "label": "Generic AI usage is detectable and disqualifying", "shape": "dot", "size": 25, "title": "Domain: ai-automation"}, {"color": "#DDA0DD", "font": {"color": "white"}, "id": "Everyone has valuable things to say about themselves", "label": "Everyone has valuable things to say about themselves", "shape": "dot", "size": 25, "title": "Domain: careerspan"}, {"color": "#95A5A6", "font": {"color": "white"}, "id": "Non-technical founders can build with AI", "label": "Non-technical founders can build with AI", "shape": "dot", "size": 25, "title": "Domain: founder"}, {"color": "#96CEB4", "font": {"color": "white"}, "id": "Self-awareness enables strategic career pivots", "label": "Self-awareness enables strategic career pivots", "shape": "dot", "size": 25, "title": "Domain: personal-foundations"}, {"color": "#96CEB4", "font": {"color": "white"}, "id": "Energy management is the most underrated job search skill", "label": "Energy management is the most underrated job search skill", "shape": "dot", "size": 25, "title": "Domain: personal-foundations"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Niche platforms will displace generalist social networks", "label": "Niche platforms will displace generalist social networks", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#45B7D1", "font": {"color": "white"}, "id": "Employers created the trust crisis they now face", "label": "Employers created the trust crisis they now face", "shape": "dot", "size": 25, "title": "Domain: worldview"}, {"color": "#FF6B6B", "font": {"color": "white"}, "id": "Most job descriptions are BS that wastes everyone\u0027s time", "label": "Most job descriptions are BS that wastes everyone\u0027s time", "shape": "dot", "size": 25, "title": "Domain: hiring-market"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#E74C3C", "from": "Hiring Signal Collapse", "label": "prerequisite", "title": "prerequisite", "to": "Self-Knowledge Deficit", "width": 2}, {"arrows": "to", "color": "#2980B9", "from": "Hiring Signal Collapse", "label": "extended_by", "title": "extended_by", "to": "Inbound Resurrection Through Friction", "width": 2}, {"arrows": "to", "color": "#2980B9", "from": "Hiring Signal Collapse", "label": "extended_by", "title": "extended_by", "to": "Assessment Signal Validity Framework", "width": 2}, {"arrows": "to", "color": "#2ECC71", "from": "Self-Knowledge Deficit", "label": "supports", "title": "supports", "to": "Hiring Signal Collapse", "width": 2}, {"arrows": "to", "color": "#8E44AD", "from": "Self-Knowledge Deficit", "label": "implied_by", "title": "implied_by", "to": "Inbound Resurrection Through Friction", "width": 2}, {"arrows": "to", "color": "#9B59B6", "from": "Inbound Resurrection Through Friction", "label": "implies", "title": "implies", "to": "Self-Knowledge Deficit", "width": 2}, {"arrows": "to", "color": "#3498DB", "from": "Inbound Resurrection Through Friction", "label": "extends", "title": "extends", "to": "Hiring Signal Collapse", "width": 2}, {"arrows": "to", "color": "#2ECC71", "from": "Information Engineering Distinction", "label": "supports", "title": "supports", "to": "Polyorchestrator Model", "width": 2}, {"arrows": "to", "color": "#2ECC71", "from": "Information Engineering Distinction", "label": "supports", "title": "supports", "to": "Sliding Knowledge Threshold", "width": 2}, {"arrows": "to", "color": "#9B59B6", "from": "Information Engineering Distinction", "label": "implies", "title": "implies", "to": "Magic as Intent-Action Abstraction", "width": 2}, {"arrows": "to", "color": "#27AE60", "from": "Polyorchestrator Model", "label": "supported_by", "title": "supported_by", "to": "Information Engineering Distinction", "width": 2}, {"arrows": "to", "color": "#E74C3C", "from": "Polyorchestrator Model", "label": "prerequisite", "title": "prerequisite", "to": "Sliding Knowledge Threshold", "width": 2}, {"arrows": "to", "color": "#27AE60", "from": "Sliding Knowledge Threshold", "label": "supported_by", "title": "supported_by", "to": "Information Engineering Distinction", "width": 2}, {"arrows": "to", "color": "#1ABC9C", "from": "Sliding Knowledge Threshold", "label": "enables", "title": "enables", "to": "Polyorchestrator Model", "width": 2}, {"arrows": "to", "color": "#27AE60", "from": "Sliding Knowledge Threshold", "label": "supported_by", "title": "supported_by", "to": "Printing Press Parallel", "width": 2}, {"arrows": "to", "color": "#1ABC9C", "from": "Sliding Knowledge Threshold", "label": "enables", "title": "enables", "to": "Magic as Intent-Action Abstraction", "width": 2}, {"arrows": "to", "color": "#2ECC71", "from": "Printing Press Parallel", "label": "supports", "title": "supports", "to": "Sliding Knowledge Threshold", "width": 2}, {"arrows": "to", "color": "#8E44AD", "from": "Magic as Intent-Action Abstraction", "label": "implied_by", "title": "implied_by", "to": "Information Engineering Distinction", "width": 2}, {"arrows": "to", "color": "#E74C3C", "from": "Magic as Intent-Action Abstraction", "label": "prerequisite", "title": "prerequisite", "to": "Sliding Knowledge Threshold", "width": 2}, {"arrows": "to", "color": "#555555", "from": "Assessment Signal Validity Framework", "label": "related", "title": "related", "to": "Cognitive Bootstrapping via Test Preparation", "width": 2}, {"arrows": "to", "color": "#3498DB", "from": "Assessment Signal Validity Framework", "label": "extends", "title": "extends", "to": "Hiring Signal Collapse", "width": 2}, {"arrows": "to", "color": "#555555", "from": "Cognitive Bootstrapping via Test Preparation", "label": "related", "title": "related", "to": "Assessment Signal Validity Framework", "width": 2}, {"arrows": "to", "color": "#555555", "from": "Cognitive Bootstrapping via Test Preparation", "label": "related", "title": "related", "to": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking", "width": 2}, {"arrows": "to", "color": "#E74C3C", "from": "Death of the Minimum Viable Existence", "label": "prerequisite", "title": "prerequisite", "to": "Genre Shift and Fractal Contribution", "width": 2}, {"arrows": "to", "color": "#555555", "from": "Rationality of Low-Trust Moonshots", "label": "related", "title": "related", "to": "Genre Shift and Fractal Contribution", "width": 2}, {"arrows": "to", "color": "#1ABC9C", "from": "Genre Shift and Fractal Contribution", "label": "enables", "title": "enables", "to": "Death of the Minimum Viable Existence", "width": 2}, {"arrows": "to", "color": "#555555", "from": "Genre Shift and Fractal Contribution", "label": "related", "title": "related", "to": "Rationality of Low-Trust Moonshots", "width": 2}, {"arrows": "to", "color": "#555555", "from": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking", "label": "related", "title": "related", "to": "Cognitive Bootstrapping via Test Preparation", "width": 2}, {"arrows": "to", "color": "#BDC3C7", "from": "Hiring Signal Collapse", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Self-Knowledge Deficit", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Inbound Resurrection Through Friction", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Integrity Gap as Scaling Risk", "label": "belongs_to", "title": "belongs_to", "to": "[PERSONAL-FOUNDATIONS]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Information Engineering Distinction", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Polyorchestrator Model", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Sliding Knowledge Threshold", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Printing Press Parallel", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Magic as Intent-Action Abstraction", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The growth dividends of a \u0027moonshot\u0027 attempt\u2014even one...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The current paradigm of AI automation often results...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "System design and complex technical infrastructure can be...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Market fundability and professional acceptability are functions of...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The internal \u0027growth\u0027 derived from pursuing a high-risk...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Job seeking and hiring should be viewed as...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "A candidate\u0027s primary task is to \u0027artificially\u0027 close...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "High-intelligence outputs are more reliably achieved through orchestrated...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The act of participating in a high-friction, high-effort...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Psychological safety and honesty are maximized when there...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Current AI implementations often create an \u0027Information Standstill\u0027...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "In the AI era, the \u0027matching\u0027 component of...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The most effective path to reducing hiring bias...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Career development tools must solve for the \u0027inertia...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "In the AI era, the decision to hire...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "As AI commoditizes content generation, \u0027input\u0027 (systematic listening...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Truth in human assessment is found at the...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The recruitment market is structured around a massive...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The future of recruitment lies in democratizing the...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The \u0027Internet of Careers\u0027 functions as a collective...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Data companies that lack a proprietary acquisition channel...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Selling a manual methodology as a finished software...", "label": "belongs_to", "title": "belongs_to", "to": "[FOUNDER]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "While Seed-stage startups offer higher theoretical financial \u0027alpha,\u0027...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The strategic value in the labor market is...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Transforming the hiring process from an adversarial transaction...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI-driven automation of application materials effectively destroys the...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Integrity and character are best verified through a...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The future of hiring shifts from a transactional...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "As generative AI commoditizes high-quality output, the true...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Truth in professional assessment is found at the...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI implementation should elevate human experts \u0027higher in...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Identity in the labor market is semantic, not...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The developmental value of a high-difficulty \u0027moonshot\u0027 project...", "label": "belongs_to", "title": "belongs_to", "to": "[FOUNDER]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "System design and technical scaffolding can be used...", "label": "belongs_to", "title": "belongs_to", "to": "[FOUNDER]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Social accountability in digital products is significantly more...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Complexity often obscures the most essential components of...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Optimal long-term physiological and skill growth requires disciplined...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI\u2019s primary value is in shifting human experts...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Systemic dominance in specific industries is often the...", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Maintaining a state of constant \u0027readiness\u0027 via AI-captured...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Intelligent and resilient system behavior is better achieved...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Data collected independent of a specific job application...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "A candidate\u0027s willingness to engage in high-effort, reflective...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Hiring should be viewed as an exercise in...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Maintaining a strict separation between candidate-facing and employer-facing...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "In a career pivot, a candidate\u0027s primary objective...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The recruitment market is systematically inefficient because it...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The most effective way to disrupt recruitment is...", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Vibe coding should be positioned as a strategic...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The willingness of a candidate to engage with...", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Technical resilience in AI systems is best achieved...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "A truly effective productivity tool functions as a \u0027Home\u0027\u2014a digital space that reflects the user\u0027s v", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The efficacy of automated habit-tracking systems is driven by social obligation rather than function", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Career mobility is governed by a \u0027geometric distance\u0027 from an individual\u0027s existing domain and role ", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "A sustainable job search requires a \u0027dietary\u0027 balance: a foundation of stable, high-probability oppo", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as ", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "There is a strategic advantage in decoupling \u0027human-centric reflection\u0027 from \u0027transactional evaluati", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Building sophisticated outputs by orchestrating multiple \u0027dumb\u0027 mini-models creates a more resilient", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Data collected about a candidate independent of a specific job application is inherently higher fide", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Hiring should be treated as an optimization for \u0027bundles of skills\u0027 and \u0027trade-offs\u0027 rather than a l", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "LinkedIn\u0027s shift in focus from a professional utility to a social engagement network is actively des", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Internal self-assessment systematically lags external market signals. People often operate at a high", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "In an AI-augmented landscape, the transition from \u0027hacking\u0027 to \u0027human-centric scaling\u0027 is marked by ", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI interfaces that mimic human social bids create \u0027anthropomorphic friction\u0027 which outperforms tradi", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Dominant parallel institutions are often the \u0027scar tissue\u0027 of historical exclusion. Centers of gravi", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Reducing latency in trust networks transforms institutions from manual brokers into platform orchest", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Proprietary data sourcing is the only sustainable competitive advantage in the data services market.", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Selling a manual methodology as finished software\u2014\u0027selling the product before it exists\u0027\u2014is a high-v", "label": "belongs_to", "title": "belongs_to", "to": "[FOUNDER]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "For mid-career specialists, the higher financial \u0027alpha\u0027 of Seed-stage startups is often negated by ", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes ", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Integrity and character are best verified not through deep interrogation, but through the triangulat", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The future of hiring lies in a persistent \u0027mid-layer\u0027 system that maintains a long-term relationship", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Professional identity is semantic rather than syntactic; a person is a stable collection of \u0027meaning", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Assessment Signal Validity Framework", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Cognitive Bootstrapping via Test Preparation", "label": "belongs_to", "title": "belongs_to", "to": "[EDUCATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Death of the Minimum Viable Existence", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Rationality of Low-Trust Moonshots", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Genre Shift and Fractal Contribution", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking", "label": "belongs_to", "title": "belongs_to", "to": "[EPISTEMOLOGY]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI shifts experts higher in the problem stack", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Professional identity is narrative, not document", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The efficacy of automated agents (like habit-tracking bots)...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI\u0027s primary role in professional services should be...", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Friction Economics: Scalable vs. Linear Work", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Hiring Stage Taxonomy: Sourcing, Screening, Evaluation", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Employer Oblige: The Case for Investing in Candidate Development", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Confidence Over Quality: What Candidate Scores Should Measure", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Self-Advocacy Ability as Public Good", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The Resume Industrial Complex", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Non-Adversarial Hiring for Top-Tier Talent", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Portable Trust: Scaling Referral-Quality Signal", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Human Data Signal Density Stratification", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Job hunting is a skill, not an event", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI has reduced the marginal cost of BS to zero", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "The self-advocacy skill gap is the real barrier", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Auto-apply tools are career self-sabotage", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Networking is strategic investment, not numbers game", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Referrals are the only reliable path in competitive markets", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Ghost jobs are a systemic problem requiring tiered response", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Auto-apply is mutually assured destruction", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "AI makes individuals as effective as teams", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Soft skills become more valuable in AI world", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Generic AI usage is detectable and disqualifying", "label": "belongs_to", "title": "belongs_to", "to": "[AI-AUTOMATION]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Everyone has valuable things to say about themselves", "label": "belongs_to", "title": "belongs_to", "to": "[CAREERSPAN]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Non-technical founders can build with AI", "label": "belongs_to", "title": "belongs_to", "to": "[FOUNDER]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Self-awareness enables strategic career pivots", "label": "belongs_to", "title": "belongs_to", "to": "[PERSONAL-FOUNDATIONS]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Energy management is the most underrated job search skill", "label": "belongs_to", "title": "belongs_to", "to": "[PERSONAL-FOUNDATIONS]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Niche platforms will displace generalist social networks", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Employers created the trust crisis they now face", "label": "belongs_to", "title": "belongs_to", "to": "[WORLDVIEW]", "width": 1}, {"arrows": "to", "color": "#BDC3C7", "from": "Most job descriptions are BS that wastes everyone\u0027s time", "label": "belongs_to", "title": "belongs_to", "to": "[HIRING-MARKET]", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -3000,
+            "springConstant": 0.001,
+            "springLength": 150
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

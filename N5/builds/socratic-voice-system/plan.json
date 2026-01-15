@@ -1,0 +1,77 @@
+{
+  "name": "Socratic Voice System",
+  "description": "Build Pangram-resistant content generation through Socratic extraction + voice synthesis",
+  "objective": "Generate V-voice content that passes AI detection (<50% Pangram score) by extracting spoken articulation and arranging (not composing) using voice library patterns",
+  "key_decisions": [
+    "Socratic extraction BEFORE any generation",
+    "Paragraph-level chunks (3-5 sentences) preserve human token distribution",
+    "Tightening factor: 'Would V text this to a friend?'",
+    "Voice library sources: LinkedIn corpus (385 posts) + Canon articles"
+  ],
+  "relevant_files": [
+    "N5/prefs/communication/socratic-articulation-protocol.md",
+    "N5/builds/voice-library-v2/linkedin_corpus.jsonl",
+    "Knowledge/voice-library/voice-primitives.md",
+    "Knowledge/positions/worldview/talent-optionality-thesis.md",
+    "Personal/Knowledge/Canon/VibeThinker/",
+    "Knowledge/content-library/social-posts/linkedin/"
+  ],
+  "workers": [
+    {
+      "id": "W1_socratic_trial",
+      "component": "socratic_extraction_trial",
+      "description": "Run trial Socratic articulation on Talent-Optionality thesis with V. Extract spoken phrases, synthesize article, test with Pangram. Formalize procedure based on results.",
+      "dependencies": [],
+      "estimated_hours": 1,
+      "deliverables": [
+        "Extracted V phrases from interview",
+        "Synthesized article draft",
+        "Pangram test results",
+        "Formalized extraction procedure in N5/prefs/communication/"
+      ],
+      "context": {
+        "position_file": "Knowledge/positions/worldview/talent-optionality-thesis.md",
+        "target_format": "Thought leadership article, 500-600 words",
+        "protocol_file": "N5/prefs/communication/socratic-articulation-protocol.md",
+        "pangram_cmd": "python3 /home/workspace/Integrations/Pangram/pangram.py analyze \"...\" --verbose"
+      },
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W2_corpus_analysis",
+      "component": "linkedin_corpus_analysis",
+      "description": "Thoroughly analyze 385 LinkedIn posts to: (1) Define content-type taxonomy based on V's actual patterns, (2) Extract paragraph-level chunks for voice library, (3) Identify characteristic rhythms and transitions.",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "deliverables": [
+        "Content-type taxonomy with examples (update socratic-articulation-protocol.md)",
+        "Paragraph-level voice chunks (new file: Knowledge/voice-library/paragraph-chunks.jsonl)",
+        "Analysis report with pattern findings"
+      ],
+      "context": {
+        "corpus_file": "N5/builds/voice-library-v2/linkedin_corpus.jsonl",
+        "additional_sources": [
+          "Knowledge/content-library/social-posts/linkedin/",
+          "Personal/Knowledge/Canon/VibeThinker/"
+        ],
+        "output_location": "Knowledge/voice-library/",
+        "key_questions": [
+          "What are V's distinct post types?",
+          "What paragraph patterns appear across posts?",
+          "What transitions does V use between ideas?",
+          "What rhythmic signatures distinguish V's writing?"
+        ]
+      },
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "socratic-voice-system",
+    "created_at": "2026-01-12T21:16:53.585292+00:00",
+    "status": "active"
+  }
+}

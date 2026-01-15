@@ -1,47 +1,73 @@
 ---
 created: 2026-01-11
-last_edited: 2026-01-11
-build_slug: content-library-media-extension
+last_edited: 2026-01-13
+version: 1
+provenance: con_oLxcuAiX3K6tbxBL
 ---
+# Content Library Media Extension - Status
 
-# Build Status: Content Library v4 Media Extension
+**Status:** ✅ COMPLETE  
+**Completed:** 2026-01-13 19:10 ET
 
-## Quick Status
+## Summary
 
-| Metric | Value |
-|--------|-------|
-| **Overall Progress** | 0% |
-| **Current Phase** | Not started |
-| **Blocked?** | No |
-| **Plan File** | `N5/builds/content-library-media-extension/PLAN.md` |
+Extended Content Library v4 to support media files (audio, video, images) with metadata extraction, transcript linking, and batch ingestion.
 
-## Phase Progress
+## Completed Work
 
-- [ ] Phase 1: {{PHASE_1_NAME}} - Not started
-- [ ] Phase 2: {{PHASE_2_NAME}} - Not started
+### Worker 1: Schema & Foundation ✅
+- Created `content_library_media_migrate.py`
+- Added columns to `items` table: `file_path`, `mime_type`, `duration_seconds`, `dimensions`, `transcript_path`, `media_metadata`
+- Created directories: `audio/`, `video/`, `images/`, `transcripts/` under `Knowledge/content-library/`
 
-## Activity Log
+### Worker 2: Media Ingest ✅
+- Created `media_ingest.py` — single-file ingest with:
+  - ffprobe metadata extraction (duration, dimensions, bitrate)
+  - Transcript detection and linking (`.transcript.jsonl`)
+  - Automatic tagging (`needs-transcription`, `transcribed`)
+  - Hash-based deduplication
+  - Copy or move to canonical location
+- Created `media_batch_ingest.py` — recursive directory scanning with `--dry-run` support
 
-<!-- Append entries as work progresses. Format: YYYY-MM-DD HH:MM - Event -->
+### Worker 3: Integration & Query ✅
+- Created `content_query.py` — CLI query tool with:
+  - Filter by content type (`--type audio`)
+  - Filter by tag (`--tag needs-transcription`)
+  - Search in title/content (`--search keyword`)
+  - Multiple output formats (table, json, brief)
+- Created `test_content_library_media.py` — 11 tests, all passing
 
-| Timestamp | Event |
-|-----------|-------|
-| 2026-01-11 | Build initialized |
+## Artifacts
 
-## Blockers
+| File | Purpose |
+|------|---------|
+| `N5/scripts/content_library_media_migrate.py` | Schema migration |
+| `N5/scripts/media_ingest.py` | Single-file ingest |
+| `N5/scripts/media_batch_ingest.py` | Batch directory ingest |
+| `N5/scripts/content_query.py` | Query CLI |
+| `N5/scripts/test_content_library_media.py` | Test suite |
 
-<!-- List any blockers preventing progress -->
+## Usage Examples
 
-*None currently*
+```bash
+# Ingest a single media file (dry-run first)
+python3 N5/scripts/media_ingest.py /path/to/recording.mp3 --dry-run
+python3 N5/scripts/media_ingest.py /path/to/recording.mp3 --move
 
-## Artifacts Created
+# Batch ingest from a directory
+python3 N5/scripts/media_batch_ingest.py /path/to/media/ --dry-run
 
-<!-- List files created during this build -->
+# Query the content library
+python3 N5/scripts/content_query.py --type audio
+python3 N5/scripts/content_query.py --tag needs-transcription
+python3 N5/scripts/content_query.py --search "meeting" --format json
+```
 
-- `N5/builds/content-library-media-extension/PLAN.md` - Build plan
-- `N5/builds/content-library-media-extension/STATUS.md` - This file
+## Tests
 
-## Notes
+```
+Ran 11 tests in 0.021s — OK
+```
 
-<!-- Free-form notes, decisions, learnings -->
+All schema, directory, ingest, and query tests passing.
 

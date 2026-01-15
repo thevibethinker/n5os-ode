@@ -1,0 +1,42 @@
+{
+  "name": "vrijenattawar-domain-transition",
+  "description": "Prepare Zo to host vrijenattawar.com with system improvements",
+  "objective": "Clean up Sites mess, add Content Library inspiration category, establish folder-creation rule, scaffold new landing page",
+  "workers": [
+    {
+      "id": "A-system-improvements",
+      "component": "System Improvements",
+      "description": "Create folder-creation rule + convert frontend skill to prompt",
+      "dependencies": [],
+      "estimated_hours": 0.25,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "B-content-library-cleanup",
+      "component": "Content Library + Cleanup",
+      "description": "Add inspiration category to Content Library, move NYSKI there, delete mess",
+      "dependencies": [],
+      "estimated_hours": 0.67,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "C-sites-preparation",
+      "component": "Sites Preparation",
+      "description": "Delete misfiled sites, scaffold vrijenattawar-staging",
+      "dependencies": [],
+      "estimated_hours": 1.0,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "vrijenattawar-domain-transition",
+    "created_at": "2026-01-15T01:33:00.924725+00:00",
+    "status": "active"
+  }
+}
