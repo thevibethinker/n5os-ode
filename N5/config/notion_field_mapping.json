@@ -1,0 +1,48 @@
+{
+  "acquirer_targets": {
+    "database_id": "3a2d606f-99fb-4ecf-9f92-374d324f7247",
+    "local": {
+      "table": "deals",
+      "deal_type": "careerspan_acquirer",
+      "pipeline": "careerspan",
+      "id_prefix": "cs-acq"
+    },
+    "fields": {
+      "company": {"notion": "Company", "local": "company", "direction": "notion_to_local", "type": "title"},
+      "deal_temp": {"notion": "Deal Temp", "local": "temperature", "direction": "bidirectional", "type": "select"},
+      "status": {"notion": "Status", "local": "stage", "direction": "bidirectional", "type": "select"},
+      "category": {"notion": "Category", "local": "category", "direction": "notion_to_local", "type": "select"},
+      "proximity": {"notion": "Proximity", "local": "proximity", "direction": "notion_to_local", "type": "select"},
+      "intelligence_summary": {"notion": "Intelligence Summary", "local": null, "direction": "local_to_notion", "type": "rich_text"},
+      "last_meeting": {"notion": "Last Meeting", "local": "last_touched", "direction": "local_to_notion", "type": "date"},
+      "next_action": {"notion": "Next Action", "local": "next_action", "direction": "bidirectional", "type": "rich_text"}
+    }
+  },
+  "deal_brokers": {
+    "database_id": "2ec5c3d6-a5db-8007-a821-000bf97dee8b",
+    "local": {
+      "table": "deal_contacts",
+      "contact_type": "broker",
+      "pipeline": "careerspan"
+    },
+    "fields": {
+      "contact": {"notion": "Contact", "local": "full_name", "direction": "notion_to_local", "type": "title"},
+      "blurb": {"notion": "Blurb", "local": "blurb", "direction": "bidirectional", "type": "rich_text"},
+      "angle_strategy": {"notion": "Angle / Strategy", "local": "angle_strategy", "direction": "bidirectional", "type": "rich_text"}
+    }
+  },
+  "leadership_targets": {
+    "database_id": "2438ec09-5208-45d5-88b3-2d761099da9a",
+    "local": {
+      "table": "deal_contacts",
+      "contact_type": "leadership",
+      "pipeline": "careerspan"
+    },
+    "fields": {
+      "person": {"notion": "Person", "local": "full_name", "direction": "notion_to_local", "type": "title"},
+      "linkedin_url": {"notion": "LinkedIn URL", "local": "linkedin_url", "direction": "notion_to_local", "type": "url"},
+      "notes_thesis": {"notion": "Notes / thesis", "local": "notes", "direction": "bidirectional", "type": "rich_text"},
+      "second_degree": {"notion": "2nd degree connects", "local": "second_degree_connects", "direction": "bidirectional", "type": "rich_text"}
+    }
+  }
+}
