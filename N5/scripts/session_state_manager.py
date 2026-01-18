@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SESSION_STATE Manager v2.0 - Manage conversation state files
+SESSION_STATE Manager v2.1 - Manage conversation state files
 
 Commands:
   init    - Initialize SESSION_STATE.md for a conversation
@@ -11,6 +11,7 @@ Commands:
 
 Usage:
   python3 session_state_manager.py init --convo-id con_XXX [--type build|research|discussion|planning]
+  python3 session_state_manager.py init --convo-id con_XXX --build my-project --worker-num 1 --parent-topic "My Project"
   python3 session_state_manager.py update --convo-id con_XXX --field status --value active
   python3 session_state_manager.py sync --convo-id con_XXX --json '{"Progress": {...}, "Covered": [...]}'
   python3 session_state_manager.py check --convo-id con_XXX
@@ -62,15 +63,35 @@ class SessionStateManager:
         self.session_state_path = self.workspace_path / "SESSION_STATE.md"
     
     def init(self, conv_type: str = None, mode: str = None, user_message: str = None,
-             focus: str = None, objective: str = None) -> bool:
+             focus: str = None, objective: str = None,
+             build_id: str = None, worker_num: int = None, parent_topic: str = None) -> bool:
         """
         Initialize SESSION_STATE.md for the conversation.
+        
+        New params for worker support:
+          build_id: Build project slug (e.g., "deal-meeting-intel")
+          worker_num: Worker number within the build
+          parent_topic: Human-readable topic for greppable tags
         """
+        # Parse BUILD_CONTEXT from user_message if present
+        if user_message and not build_id:
+            parsed = self._parse_build_context(user_message)
+            if parsed:
+                build_id = parsed.get("build") or parsed.get("build_id")
+                worker_num = parsed.get("worker") or parsed.get("worker_num")
+                parent_topic = parsed.get("parent_topic") or parsed.get("topic")
+        
         # Auto-classify if no type provided
         if not conv_type and user_message:
             conv_type = self._classify_conversation(user_message)
         elif not conv_type:
             conv_type = "discussion"
+        
+        # Infer mode - worker if we have build context
+        if build_id and worker_num:
+            mode = "worker"
+        elif not mode:
+            mode = self._infer_mode()
         
         # Derive focus from user_message if not explicitly provided
         derived_focus = focus
@@ -80,25 +101,189 @@ class SessionStateManager:
         # Ensure workspace exists
         self.workspace_path.mkdir(parents=True, exist_ok=True)
         
-        # Generate template based on type
-        template = self._get_template(conv_type, mode)
+        now = datetime.now(timezone.utc)
         
-        # Replace TBD placeholders with actual values if available
-        if derived_focus:
-            template = template.replace("- **Focus:** TBD", f"- **Focus:** {derived_focus}")
-        if objective:
-            template = template.replace("- **Objective:** TBD", f"- **Objective:** {objective}")
+        # Build YAML frontmatter
+        frontmatter_lines = [
+            "---",
+            f"conversation_id: {self.convo_id}",
+            f"type: {conv_type}",
+            f"mode: {mode}",
+            f"status: active",
+            f"created: {now.isoformat()}",
+            f"last_updated: {now.isoformat()}",
+        ]
         
-        self.session_state_path.write_text(template)
+        # Add build context to frontmatter if this is a worker
+        if build_id:
+            frontmatter_lines.append(f"build_id: {build_id}")
+        if worker_num:
+            frontmatter_lines.append(f"worker_num: {worker_num}")
+        if parent_topic:
+            frontmatter_lines.append(f"parent_topic: {parent_topic}")
+        
+        frontmatter_lines.append("---")
+        frontmatter = "\n".join(frontmatter_lines)
+        
+        # Build content sections
+        content_parts = [frontmatter, ""]
+        
+        # Add Build Context section for workers
+        if build_id and worker_num:
+            content_parts.extend([
+                "## Build Context",
+                "",
+                f"- **Build:** {build_id}",
+                f"- **Worker:** {worker_num}",
+                f"- **Parent Topic:** {parent_topic or build_id}",
+                "",
+            ])
+        
+        content_parts.extend([
+            "## Metadata",
+            "",
+            f"- **Type:** {conv_type.title()}",
+            f"- **Mode:** {mode}",
+            f"- **Focus:** {derived_focus or 'TBD'}",
+            f"- **Objective:** {objective or 'TBD - Session initialized'}",
+            "",
+            "## Progress",
+            "",
+            "- **Overall:** 0%",
+            "- **Current Phase:** Initialization",
+            "- **Next Actions:** TBD",
+            "",
+            "## Covered",
+            "",
+            "- Session initialized",
+            "",
+            "## Topics",
+            "- TBD",
+            "",
+            "## Key Insights",
+            "- TBD",
+            "",
+            "## Decisions Made",
+            "- TBD",
+            "",
+            "## Open Questions",
+            "- TBD",
+            "",
+            "## Artifacts",
+            "",
+            "*Files created during this conversation*",
+            "- SESSION_STATE.md (permanent, conversation workspace)",
+            "",
+            "## Tags",
+            f"#{conv_type} #initialization",
+            "",
+            "### Quality Checks",
+            "- [ ] Error handling implemented",
+            "- [ ] Documentation complete",
+            "- [ ] No false completion (P15)",
+            "",
+        ])
+        
+        content = "\n".join(content_parts)
+        self.session_state_path.write_text(content)
         
         print(f"✓ Initialized SESSION_STATE.md for {self.convo_id}")
         print(f"  Type: {conv_type}")
-        if derived_focus:
-            print(f"  Focus: {derived_focus[:60]}{'...' if len(derived_focus) > 60 else ''}")
+        if build_id:
+            print(f"  Build: {build_id} (Worker {worker_num})")
+        print(f"  Focus: {derived_focus or 'TBD'}...")
         print(f"  Path: {self.session_state_path}")
         
         self._sync_to_db()
+        
         return True
+    
+    def _parse_build_context(self, message: str) -> dict:
+        """
+        Parse BUILD_CONTEXT block from user message.
+        
+        Looks for patterns like:
+          BUILD_CONTEXT:
+            build: deal-meeting-intel
+            worker: 1
+            parent_topic: Deal Intelligence
+        
+        Or inline: BUILD_CONTEXT: build=X worker=Y
+        """
+        result = {}
+        
+        # Try YAML-style block
+        yaml_pattern = r"BUILD_CONTEXT:\s*\n((?:\s+\w+:\s*.+\n?)+)"
+        match = re.search(yaml_pattern, message, re.IGNORECASE)
+        if match:
+            block = match.group(1)
+            for line in block.strip().split("\n"):
+                if ":" in line:
+                    key, value = line.split(":", 1)
+                    result[key.strip().lower().replace("-", "_")] = value.strip()
+            if result:
+                return result
+        
+        # Try inline style: BUILD_CONTEXT: build=X worker=Y
+        inline_pattern = r"BUILD_CONTEXT:\s*(.+?)(?:\n|$)"
+        match = re.search(inline_pattern, message, re.IGNORECASE)
+        if match:
+            inline = match.group(1)
+            for pair in re.findall(r"(\w+)=([^\s]+)", inline):
+                result[pair[0].lower()] = pair[1]
+            if result:
+                return result
+        
+        return None
+    
+    def _infer_mode(self) -> str:
+        """
+        Infer conversation mode from environmental signals.
+
+        Priority (first match wins):
+        1. build_id + worker_num in SESSION_STATE → "worker"
+        2. PARENT_ID or N5_PARENT_ID env var → "worker"
+        3. SESSION_STATE contains "Build Context:" → "worker"
+        4. SESSION_STATE contains "Parent Conversation:" → "worker"
+        5. worker_updates/ directory exists with files → "orchestrator"
+        6. N5_SCHEDULED=true env var → "scheduled"
+        7. Default → "standalone"
+
+        Returns: One of: standalone, worker, orchestrator, scheduled
+        """
+        import os
+
+        # Signal 1: Worker detection via environment
+        parent_id = os.environ.get("PARENT_ID") or os.environ.get("N5_PARENT_ID")
+        if parent_id:
+            return "worker"
+
+        # Signal 2: Worker detection via SESSION_STATE content
+        if self.session_state_path.exists():
+            content = self.session_state_path.read_text()
+            
+            # Check for build_id in frontmatter
+            if re.search(r"^build_id:\s*.+$", content, re.MULTILINE):
+                return "worker"
+            
+            # Check for Build Context section
+            if "## Build Context" in content:
+                return "worker"
+            
+            # Legacy: Parent Conversation
+            if "Parent Conversation:" in content:
+                return "worker"
+
+        # Signal 3: Orchestrator detection via worker_updates/
+        worker_updates_dir = self.workspace_path / "worker_updates"
+        if worker_updates_dir.exists() and any(worker_updates_dir.iterdir()):
+            return "orchestrator"
+
+        # Signal 4: Scheduled detection via environment
+        if os.environ.get("N5_SCHEDULED", "").lower() == "true":
+            return "scheduled"
+
+        return "standalone"
     
     def update(self, field: str, value: str) -> bool:
         """Update a single field in SESSION_STATE.md."""
@@ -476,51 +661,6 @@ class SessionStateManager:
         
         return max(scores, key=scores.get)
 
-    def _infer_mode(self) -> str:
-        """
-        Infer conversation mode from environmental signals.
-
-        Priority (first match wins):
-        1. PARENT_ID or N5_PARENT_ID env var → "worker"
-        2. SESSION_STATE contains "Parent Conversation:" → "worker"
-        3. worker_updates/ directory exists with files → "orchestrator"
-        4. N5_SCHEDULED=true env var → "scheduled"
-        5. Default → "standalone"
-
-        Returns: One of: standalone, worker, orchestrator, scheduled
-        """
-        import os
-
-        # Signal 1: Worker detection via environment
-        parent_id = os.environ.get("PARENT_ID") or os.environ.get("N5_PARENT_ID")
-        if parent_id:
-            return "worker"
-
-        # Signal 2: Worker detection via SESSION_STATE content
-        if self.session_state_path.exists():
-            try:
-                content = self.session_state_path.read_text()
-                if "Parent Conversation:" in content or "parent_id:" in content:
-                    return "worker"
-            except Exception:
-                pass  # If we can't read, continue to other signals
-
-        # Signal 3: Orchestrator detection via worker_updates directory
-        worker_updates = self.workspace_path / "worker_updates"
-        if worker_updates.exists():
-            try:
-                if any(worker_updates.iterdir()):
-                    return "orchestrator"
-            except Exception:
-                pass
-
-        # Signal 4: Scheduled task detection
-        if os.environ.get("N5_SCHEDULED") == "true":
-            return "scheduled"
-
-        # Default: standalone interactive session
-        return "standalone"
-
     def _get_template(self, conv_type: str, mode: str = None) -> str:
         """Get SESSION_STATE template for conversation type."""
         now = datetime.now(timezone.utc).isoformat()
@@ -659,6 +799,10 @@ def main():
     init_parser.add_argument("--message", help="User message for auto-classification")
     init_parser.add_argument("--focus", help="Explicit focus override")
     init_parser.add_argument("--objective", help="Explicit objective override")
+    # Worker context args
+    init_parser.add_argument("--build", dest="build_id", help="Build project slug (e.g., deal-meeting-intel)")
+    init_parser.add_argument("--worker-num", type=int, help="Worker number within the build")
+    init_parser.add_argument("--parent-topic", help="Human-readable topic for greppable tags")
     
     # Update command
     update_parser = subparsers.add_parser("update", help="Update a field")
@@ -688,7 +832,13 @@ def main():
     manager = SessionStateManager(args.convo_id)
     
     if args.command == "init":
-        success = manager.init(args.type, args.mode, args.message, args.focus, args.objective)
+        build_id = getattr(args, 'build_id', None)
+        worker_num = getattr(args, 'worker_num', None)
+        parent_topic = getattr(args, 'parent_topic', None)
+        success = manager.init(
+            args.type, args.mode, args.message, args.focus, args.objective,
+            build_id=build_id, worker_num=worker_num, parent_topic=parent_topic
+        )
         sys.exit(0 if success else 1)
     
     elif args.command == "update":
