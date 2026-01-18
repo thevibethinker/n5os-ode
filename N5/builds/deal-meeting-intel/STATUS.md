@@ -2,8 +2,8 @@
 created: 2026-01-18
 last_edited: 2026-01-18
 build_slug: deal-meeting-intel
-version: 1.5
-provenance: con_43aEp5sZC2hFzDwR
+version: 2.0
+provenance: con_GCktM2iwLZIi5cHK
 ---
 
 # Build Status: Deal-Aware Meeting Intelligence System
@@ -13,178 +13,117 @@ provenance: con_43aEp5sZC2hFzDwR
 | Metric | Value |
 |--------|-------|
 | **Overall Progress** | 6/6 workers (100%) ✅ |
-| **Current Phase** | Phase 3: Complete |
+| **Current Phase** | Complete — All Phases Done |
+| **Tests** | 79 passing |
 | **Blocked?** | No |
-| **Plan File** | `N5/builds/deal-meeting-intel/PLAN.md` |
 
 ## Worker Status
 
 | Worker | Status | Completed | Validated | Notes |
 |--------|--------|-----------|-----------|-------|
-| 1 | 🟢 Complete | 2026-01-18 | ✅ 2026-01-18 16:00 | Signal Router: 5 tests pass |
-| 2 | 🟢 Complete | 2026-01-18 | ✅ 2026-01-18 16:00 | B37 Generator: 6 tests pass |
-| 3 | 🟢 Complete | 2026-01-18 | ✅ 2026-01-18 16:00 | Notion Sync: 4 tests pass |
-| 4 | 🟢 Complete | 2026-01-18 | ✅ 2026-01-18 16:10 | SMS Handler: 18 tests pass |
-| 5 | 🟢 Complete | 2026-01-18 | ✅ 2026-01-18 16:15 | Email Scanner: 15 tests pass |
-| 6 | 🟢 Complete | 2026-01-18 | ✅ 2026-01-18 16:15 | Proactive Sensor: 31 tests pass |
+| 1 | 🟢 Complete | 2026-01-18 | ✅ | Signal Router Core |
+| 2 | 🟢 Complete | 2026-01-18 | ✅ | B37 block generator |
+| 3 | 🟢 Complete | 2026-01-18 | ✅ | Notion bidirectional sync |
+| 4 | 🟢 Complete | 2026-01-18 | ✅ | SMS deal handler |
+| 5 | 🟢 Complete | 2026-01-18 | ✅ | Email deal scanner |
+| 6 | 🟢 Complete | 2026-01-18 | ✅ | Proactive sensing |
 
-## Worker 1 (Signal Router Core) — Evidence
+## Phase 1 Artifacts (Core Infrastructure)
 
-### Artifacts Created
-- `N5/scripts/deal_signal_router.py`
-- `N5/scripts/deal_llm_prompts.py`
-- `N5/config/deal_signal_config.json`
-- `N5/tests/test_deal_signal_router.py`
-
-### Tests
-- `pytest -q N5/tests/test_deal_signal_router.py` → **5 passed**
-
-## Worker 2 (Meeting Integration) — Evidence
-
-### Artifacts Created
+### Scripts
+- `N5/scripts/deal_signal_router.py` — LLM-assisted deal matching + signal extraction
+- `N5/scripts/deal_llm_prompts.py` — Prompt templates
 - `N5/scripts/meeting_deal_intel.py` — B37 block generator
-- `N5/tests/test_meeting_deal_intel.py` — Unit tests
-- Updated `N5/scripts/deal_meeting_router.py` — Pipeline integration hook
+- `N5/scripts/notion_deal_sync.py` — Bidirectional Notion sync
 
-### Tests
-- `pytest -q N5/tests/test_meeting_deal_intel.py` → **6 passed**
+### Config
+- `N5/config/deal_signal_config.json` — Matching thresholds, stage definitions
+- `N5/config/notion_field_mapping.json` — Field mappings for all 3 Notion databases
 
-### Manual Test
-- Generated B37 for `2026-01-16_Tope-awotona-x-vrijen` meeting
-- Matched Tope Awotona → cs-lead-calendly (Calendly leadership) at 95% confidence
-- Extracted strategic intel from B01 recap
-- Logged activity to deal_activities table
-- Output: `Personal/Meetings/Week-of-2026-01-12/2026-01-16_2026-01-16-Tope-awotona-x-vrijen/B37_DEAL_INTEL.md`
+### Tests (15 passing)
+- `N5/tests/test_deal_signal_router.py` — 5 tests
+- `N5/tests/test_meeting_deal_intel.py` — 6 tests
+- `N5/tests/test_notion_deal_sync.py` — 4 tests
 
-### Key Features
-- Detects deal contacts via title, manifest attendees, B03 stakeholder block
-- Extracts intel from B01 (strategic), B03 (stakeholder), B13 (risks), B25 (next steps)
-- Infers stage changes from meeting content
-- Updates deals.db with activity log
-- Queues Notion sync (Worker 3 handles actual push)
+## Phase 2 Artifacts (Interfaces)
 
-## Worker 3 (Notion Bidirectional Sync) — Evidence
+### Scripts
+- `N5/scripts/sms_deal_handler.py` — Parse "n5 deal <query> <update>" commands
+- `N5/scripts/email_deal_scanner.py` — Gmail search + signal extraction
+- `N5/scripts/deal_proactive_sensor.py` — Detect new entities + SMS approval flow
 
-### Artifacts Created
-- `N5/scripts/notion_deal_sync.py`
-- `N5/config/notion_field_mapping.json`
-- `N5/tests/test_notion_deal_sync.py`
-- `N5/builds/deal-meeting-intel/workers/WORKER-3-PLAN.md`
+### Database Tables
+- `processed_emails` — Track scanned Gmail messages
+- `pending_approvals` — Queue for SMS approval requests
+- `notion_outbox` — Queue for Notion sync
 
-### Tests
-- `pytest -q N5/tests/test_notion_deal_sync.py` → **4 passed**
+### Scheduled Agents
+- `500d0a1d`: Deal Intelligence Notion Sync (3x daily: 6:30, 12:30, 18:30)
+- `20334c89`: Daily Email Deal Scan (7:00 AM)
 
-### Manual Dry-Run
-- `python3 N5/scripts/notion_deal_sync.py pull --dry-run --cache-dir <cache>` → OK
-- `python3 N5/scripts/notion_deal_sync.py compute-push --dry-run` → OK
+### Tests (64 passing)
+- `N5/tests/test_sms_deal_handler.py` — 26 tests
+- `N5/tests/test_email_deal_scanner.py` — 7 tests
+- `N5/tests/test_proactive_sensor.py` — 31 tests
 
-## Worker 4 (SMS Deal Interface) — Evidence
+## Integration Tests
 
-### Artifacts Created
-- `N5/scripts/sms_deal_handler.py` — Parses "n5 deal <query> <update>" commands
-- `N5/tests/test_sms_deal_handler.py` — Unit tests
+- [x] Meeting flow — Tope Awotona meeting processed, B37 generated
+- [x] SMS flow — `n5 deal darwinbox` command tested, stage → qualified
+- [x] Proactive sensing — Broker detection: "John can intro us to Workday CEO" detected
+- [x] Email flow — Gmail queries generated, email processing tested:
+  - Query: `Tope Awotona after:2026/01/01` → 5 results
+  - Processing: Email matched to `cs-lead-calendly`, signal extracted → negotiating stage
+- [x] Notion pull — 52 acquirer records retrieved via API
+- [x] Notion push (partial) — `notion-update-page` works for field updates
+- [ ] Notion append — `notion-append-block` has API issues, needs workaround
 
-### Tests
-- `pytest -q N5/tests/test_sms_deal_handler.py` → **18 passed**
+### Test Details
 
-### CLI Test
-```bash
-python3 N5/scripts/sms_deal_handler.py --message "n5 deal darwinbox Ready to proceed" --dry-run
-# → 🔍 [DRY RUN] Would update Darwinbox: Stage → qualified, Next: Schedule pilot...
+**Email Processing Test:**
+```
+Input: Email from tope@calendly.com re: partnership discussion  
+Match: cs-lead-calendly (Tope Awotona contact)
+Signal: Stage change → negotiating
+Action: Schedule follow-up meeting
 ```
 
-### Key Features
-- Parses `n5 deal <company> <update>` with support for quoted multi-word names
-- Integrates with DealSignalRouter for matching + extraction
-- Queues Notion sync via notion_deal_sync.py outbox
-- Returns human-friendly SMS responses
-- Suggests similar deals on no-match ("Did you mean: ...")
-- Supports dry-run mode and JSON output
+**Notion Push Test:**
+```
+Page: Darwinbox (2e85c3d6-a5db-806f-974f-e4e30839c707)
+Method: notion-update-page with Notes field
+Result: ✅ Successfully updated
+```
+
+## How to Use
+
+### SMS Updates
+```
+n5 deal darwinbox Ready to proceed
+n5 deal "ribbon health" Christine confirmed budget
+```
+
+### Email Scanning (daily at 7 AM, or manual)
+```bash
+python3 N5/scripts/email_deal_scanner.py --days 7 --dry-run
+```
+
+### Proactive Sensing
+```bash
+python3 N5/scripts/deal_proactive_sensor.py --text "John can intro us to Workday" --source meeting --dry-run
+```
+
+### Meeting Processing
+Automatic — meetings with deal contacts get B37_DEAL_INTEL.md generated.
 
 ## Activity Log
 
 | Timestamp (ET) | Event |
-|-----------|-------|
-| 2026-01-18 15:12 | Worker 1 completed: created router + prompts + config + tests |
-| 2026-01-18 15:25 | Worker 3 started: created sync script + mapping + unit tests; dry-run verified |
-| 2026-01-18 15:42 | Worker 3 completed: scheduled agent created (runs 3x daily at 6:30/12:30/18:30) |
-| 2026-01-18 15:55 | Worker 2 started: B37 block generator implementation |
-| 2026-01-18 16:00 | Worker 2 completed: 6 tests passing, Tope meeting processed successfully |
-| 2026-01-18 16:10 | Worker 4 completed: SMS handler + 18 tests passing |
-| 2026-01-18 16:15 | Worker 5 completed: Email scanner + 15 tests passing, daily agent created |
-| 2026-01-18 16:15 | Worker 6 completed: Proactive sensor + 31 tests passing |
-
-## Integration Test
-- [x] SMS flow — dry-run verified (darwinbox, ribbon)
-- [x] Meeting flow — Tope Awotona meeting processed, B37 generated
-- [x] Email flow — scanner verified, queries generated for hot deals/contacts
-- [x] Proactive sensing — sensor verified, detection + approval flow working
-
-## Notes
-
-- Worker 1 router is DB-only (no Notion dependency). Notion sync is delegated to Worker 3.
-- Deal matching uses LLM first, with heuristic fallback when LLM unavailable.
-- Worker 3 live Notion sync requires `NOTION_TOKEN` (or an alternate tool-based runner).
-- Worker 2 adds contact Tope Awotona as leadership (Calendly CEO) with deal cs-lead-calendly.
-
-## Worker 5 (Email Deal Scanner) — Evidence
-
-### Artifacts Created
-- `N5/scripts/email_deal_scanner.py` — Gmail scanner with signal routing
-- `N5/tests/test_email_deal_scanner.py` — Unit tests
-- Schema: `processed_emails` table in deals.db
-- Scheduled agent: Daily email scan at 7:00 AM ET
-
-### Tests
-- `pytest -q N5/tests/test_email_deal_scanner.py` → **15 passed**
-
-### CLI Test
-```bash
-python3 N5/scripts/email_deal_scanner.py --days 7 --max-queries 5 --priority hot
-# → Generated 2 search queries for Gmail (Darwinbox, Jennifer Ives)
-```
-
-### Key Features
-- Builds search queries from deal_contacts (by email) and deals (by company name)
-- Priority filtering: hot > warm > all
-- Duplicate tracking via processed_emails table
-- Parses Gmail API responses into EmailResult objects
-- Routes email content through DealSignalRouter
-- Scheduled agent runs daily at 7 AM ET
-- Supports dry-run and JSON output modes
-
-### Integration with Gmail
-- Uses `gmail-find-email` tool for searches
-- Supports `withTextPayload=True` for full body access
-- Tracks message_id to avoid reprocessing
-
-## Worker 6 (Proactive Deal Sensing) — Evidence
-
-### Artifacts Created
-- `N5/scripts/deal_proactive_sensor.py` — Entity detector + approval queue
-- `N5/tests/test_proactive_sensor.py` — Comprehensive unit tests
-- Schema: `pending_approvals` table in deals.db
-
-### Tests
-- `pytest -q N5/tests/test_proactive_sensor.py` → **31 passed**
-
-### CLI Test
-```bash
-python3 N5/scripts/deal_proactive_sensor.py --text "Marcus said he can introduce you to the CEO of Rippling" --source meeting --dry-run
-# → [DRY RUN] Detected 1 new entity(ies): BROKER
-# → SMS approval message formatted with [approval_id]
-```
-
-### Key Features
-- Detects broker, leadership, and deal signals via regex patterns + LLM fallback
-- Broker patterns: "can introduce you to", "I know someone at", "make an intro"
-- Leadership patterns: CEO/CTO/VP titles, founder, Director
-- Deal patterns: acquisition interest, partnership language
-- Checks database before alerting (no duplicate requests)
-- Queues pending approvals with unique IDs
-- Formats clear SMS approval requests with Y/N/Info options
-- Processes approval responses:
-  - Y → creates contact/deal in database
-  - N → marks as declined
-  - Info → sends full context for review
-- Supports dry-run and JSON output modes
+|----------------|-------|
+| 2026-01-18 15:12 | Worker 1 completed: signal router |
+| 2026-01-18 15:42 | Worker 3 completed: Notion sync |
+| 2026-01-18 16:00 | Worker 2 completed: B37 generator |
+| 2026-01-18 16:05 | Phase 1 validated: 15 tests passing |
+| 2026-01-18 16:XX | Workers 4, 5, 6 completed |
+| 2026-01-18 16:30 | Phase 2 validated: 64 tests passing |
+| 2026-01-18 16:30 | **BUILD COMPLETE: 79 total tests passing** |
