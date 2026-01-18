@@ -1,26 +1,33 @@
 ---
-person_id: husain
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Peterweddle"
+email_primary: "peterweddle@tatech.org"
+email_aliases: []
+organization: "Tatech"
+role: "[To be determined]"
+first_contact: "2026-01-22T14:00:00-05:00"
+last_updated: "2026-01-16"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-16"
 ---
 
-<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/husain.md) -->
-# Husain
+# Peterweddle
 
-**Organization:** Aspireleaders  
+**Organization:** Tatech  
 **Role:** [To be determined]  
-**Email:** husain@aspireleaders.org  
+**Email:** peterweddle@tatech.org  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-14T11:00:00-05:00  
-**Last Updated:** 2025-11-11
+**First Contact:** 2026-01-22T14:00:00-05:00  
+**Last Updated:** 2026-01-16
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Husain x V
+First contact via calendar invite: Peter Weddle x Vrijen
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** 1un2j14fkchm4k0bi80ov32aet  
-**Last email:** 2025-11-11  
+**Meeting IDs:** vlp1o0df6h7cqv2b27ekrop11k  
+**Last email:** 2026-01-16  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]

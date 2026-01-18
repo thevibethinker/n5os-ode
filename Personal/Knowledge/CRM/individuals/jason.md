@@ -1,26 +1,33 @@
 ---
-person_id: ceren
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Jason"
+email_primary: "jason@trynextbyte.com"
+email_aliases: []
+organization: "Trynextbyte"
+role: "[To be determined]"
+first_contact: "2026-01-20T13:00:00-05:00"
+last_updated: "2026-01-18"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-18"
 ---
 
-<!-- source: legacy_view (/home/workspace/Knowledge/crm/individuals/ceren.md) -->
-# Ceren
+# Jason
 
-**Organization:** Humantruths.Ai  
+**Organization:** Trynextbyte  
 **Role:** [To be determined]  
-**Email:** ceren@humantruths.ai  
+**Email:** jason@trynextbyte.com  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-26T09:00:00-05:00  
-**Last Updated:** 2025-11-26
+**First Contact:** 2026-01-20T13:00:00-05:00  
+**Last Updated:** 2026-01-18
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Ceren Koca x Vrijen Attawar
+First contact via calendar invite: Meet with Jason (tweeks) between Jason Madeano and Vrijen Attawar 
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** u0i4heh3qqqng6aksddu92n8n8  
-**Last email:** 2025-11-26  
+**Meeting IDs:** _dpq4gm2mcp968lpia5j54u3i71bmqi3le9qk0gr1dgn66rrd  
+**Last email:** 2026-01-18  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]

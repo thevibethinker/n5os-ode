@@ -156,6 +156,83 @@ def _load_profile_slug(cursor, profile_id: int) -> str | None:
     return name or None
 
 
+def _generate_canonical_slug(full_name: str) -> str:
+    """Generate a canonical slug from a full name.
+    
+    Examples:
+        "Julien Khaleghy" -> "julien-khaleghy"
+        "John O'Brien" -> "john-obrien"
+        "Mary Jane Watson-Smith" -> "mary-jane-watson-smith"
+    """
+    import re
+    if not full_name:
+        return ""
+    # Lowercase, replace spaces with hyphens, remove non-alphanumeric except hyphens
+    slug = full_name.lower().strip()
+    slug = re.sub(r"['\"]", "", slug)  # Remove apostrophes and quotes
+    slug = re.sub(r"[^a-z0-9\s-]", "", slug)  # Remove other special chars
+    slug = re.sub(r"\s+", "-", slug)  # Replace spaces with hyphens
+    slug = re.sub(r"-+", "-", slug)  # Collapse multiple hyphens
+    slug = slug.strip("-")  # Remove leading/trailing hyphens
+    return slug
+
+
+def _rename_enriched_profile(slug: str, aviato_data: dict | None) -> str:
+    """Rename a *-NotYetEnriched profile to its canonical slug after enrichment.
+    
+    Args:
+        slug: Current file slug (without .md extension)
+        aviato_data: Enrichment data containing 'full_name' key
+        
+    Returns:
+        New slug if renamed, or original slug if no rename needed/possible
+    """
+    # Only rename if current slug contains NotYetEnriched
+    if "-NotYetEnriched" not in slug and "-notyetenriched" not in slug.lower():
+        return slug
+    
+    # Determine new slug from aviato data or strip the suffix
+    new_slug = None
+    if aviato_data and aviato_data.get("full_name"):
+        new_slug = _generate_canonical_slug(aviato_data["full_name"])
+    
+    if not new_slug:
+        # Fall back: strip -NotYetEnriched suffix
+        new_slug = slug.replace("-NotYetEnriched", "").replace("-notyetenriched", "")
+        new_slug = new_slug.strip("-").lower()
+    
+    if not new_slug or new_slug == slug:
+        return slug
+    
+    # Check paths
+    old_path = CRM_MARKDOWN_DIR / f"{slug}.md"
+    new_path = CRM_MARKDOWN_DIR / f"{new_slug}.md"
+    
+    if not old_path.exists():
+        print(f"  ⚠ Cannot rename: source file not found: {old_path}")
+        return slug
+    
+    if new_path.exists():
+        print(f"  ⚠ Cannot rename: target file already exists: {new_path}")
+        return slug
+    
+    # Perform the rename
+    try:
+        old_path.rename(new_path)
+        print(f"  📝 Renamed: {slug}.md → {new_slug}.md")
+        
+        # Update person_id in frontmatter
+        content = new_path.read_text(encoding="utf-8", errors="ignore")
+        if f"person_id: {slug}" in content:
+            content = content.replace(f"person_id: {slug}", f"person_id: {new_slug}")
+            new_path.write_text(content, encoding="utf-8")
+        
+        return new_slug
+    except Exception as e:
+        print(f"  ⚠ Rename failed: {e}")
+        return slug
+
+
 def _append_intel_log(slug: str, heading: str, body: str) -> None:
     """Append a timestamped Intelligence Log entry into the CRM markdown file for slug.
 
@@ -379,6 +456,11 @@ async def process_enrichment_job(job: dict, dry_run: bool = False) -> None:
                     body_lines.append(f"- {k}: {v}")
             body = "\n".join(body_lines)
             _append_intel_log(slug, "aviato_enrichment", body)
+            
+            # Rename *-NotYetEnriched files to canonical slug after successful enrichment
+            new_slug = _rename_enriched_profile(slug, result["aviato_data"])
+            if new_slug != slug:
+                slug = new_slug  # Update slug for subsequent operations
         elif result["aviato_result"] and result["aviato_result"].get("error"):
             body = f"**Source:** aviato_api\n\n- Status: {result['status']}\n- Error: {result['aviato_result'].get('error')}"
             _append_intel_log(slug, "aviato_enrichment_error", body)

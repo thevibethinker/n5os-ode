@@ -1,26 +1,33 @@
 ---
-person_id: aditya
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Jonny"
+email_primary: "jonny@learningeconomy.io"
+email_aliases: []
+organization: "Learningeconomy.Io"
+role: "[To be determined]"
+first_contact: "2026-01-16T11:00:00-05:00"
+last_updated: "2026-01-15"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-15"
 ---
 
-<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/aditya.md) -->
-# Aditya
+# Jonny
 
-**Organization:** Sapphireventures  
+**Organization:** Learningeconomy.Io  
 **Role:** [To be determined]  
-**Email:** aditya@sapphireventures.com  
+**Email:** jonny@learningeconomy.io  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-26T15:00:00-05:00  
-**Last Updated:** 2025-11-20
+**First Contact:** 2026-01-16T11:00:00-05:00  
+**Last Updated:** 2026-01-15
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Sapphire Ventures x Careerspan
+First contact via calendar invite: Vrijen Attawar and Jonny Coreson
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** 2tur1ds5pb79fdqpc3u9ptnnlk  
-**Last email:** 2025-11-20  
+**Meeting IDs:** j8sq35bd4rtkpddjbel8v06o84  
+**Last email:** 2026-01-15  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]

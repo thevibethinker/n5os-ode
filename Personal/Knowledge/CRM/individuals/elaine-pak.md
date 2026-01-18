@@ -126,3 +126,8 @@ last_edited: 2025-11-29
 ⏳ Organization/role: Not yet determined
 ⏳ Use case: Unclear if she's building something or exploring solutions
 ⏳ Lead type: LD-NET confirmed (networking via alumni connection)
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-18 11:04
+
+First contact: 2025-10-06. Last contact: 2025-10-08. Total thread count: 8. Key topics: RAG-based chat assistant brainstorming. Relationship trajectory: dormant.

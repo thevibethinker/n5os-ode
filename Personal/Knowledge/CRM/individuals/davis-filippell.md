@@ -80,3 +80,8 @@ No emails found
 - **First Message:** 2025-12-01
 - **Last Message:** 2025-12-01
 - **Status:** ACTIVE
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-18 11:04
+
+First contact: 2025-12-01. Last contact: 2025-12-23. Total thread count: 10. Key topics: Partnership discussions, product demos. Relationship trajectory: active.

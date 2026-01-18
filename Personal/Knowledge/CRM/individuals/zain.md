@@ -1,26 +1,33 @@
 ---
-person_id: holly
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Zain"
+email_primary: "zain@pommon.com"
+email_aliases: []
+organization: "Pommon"
+role: "[To be determined]"
+first_contact: "2026-01-21T12:00:00-05:00"
+last_updated: "2026-01-16"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-16"
 ---
 
-<!-- source: legacy_view (/home/workspace/Knowledge/crm/individuals/holly.md) -->
-# Holly
+# Zain
 
-**Organization:** Trymatchbox  
+**Organization:** Pommon  
 **Role:** [To be determined]  
-**Email:** holly@trymatchbox.com  
+**Email:** zain@pommon.com  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-26T16:30:00-05:00  
-**Last Updated:** 2025-11-26
+**First Contact:** 2026-01-21T12:00:00-05:00  
+**Last Updated:** 2026-01-16
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Holly Sanders and Vrijen Attawar
+First contact via calendar invite: Zain x Vrijen Attawar
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** sfjv940fni6qulmohiu0kth0io  
-**Last email:** 2025-11-26  
+**Meeting IDs:** t2jll11i86kc0d5et83815dnak  
+**Last email:** 2026-01-16  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]

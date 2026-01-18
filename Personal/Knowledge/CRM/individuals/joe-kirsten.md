@@ -1,26 +1,33 @@
 ---
-person_id: nholuba
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Joe Kirsten"
+email_primary: "joe.kirsten@ramp.com"
+email_aliases: []
+organization: "Ramp"
+role: "[To be determined]"
+first_contact: "2026-01-23T13:00:00-05:00"
+last_updated: "2026-01-18"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-18"
 ---
 
-<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/nholuba.md) -->
-# Nholuba
+# Joe Kirsten
 
-**Organization:** Emory  
+**Organization:** Ramp  
 **Role:** [To be determined]  
-**Email:** nholuba@emory.edu  
+**Email:** joe.kirsten@ramp.com  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-14T15:00:00-05:00  
-**Last Updated:** 2025-11-13
+**First Contact:** 2026-01-23T13:00:00-05:00  
+**Last Updated:** 2026-01-18
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Nicole Holubar x Vrijen Attawar
+First contact via calendar invite: Ramp <> theapply.ai: Intro Call
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** mv5nkh74kdsfqo5lpmkov78qqc  
-**Last email:** 2025-11-13  
+**Meeting IDs:** 03qg65jcbrj57se0oo0c7l3jho  
+**Last email:** 2026-01-18  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
