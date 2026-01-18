@@ -3,17 +3,19 @@ description: |
   Orchestrate a multi-worker build project.
   
   The LLM defines the build plan with workers, dependencies, and context.
-  The script handles tracking, status, and generating spawn commands.
+  The script handles tracking, status, and generating spawn instructions.
   
   **Initialize:** Define plan as JSON, then init
   **Track:** Check status, get ready workers, mark complete
-  **Spawn:** Generate spawn commands with full context
+  **Spawn:** Generate copy-paste instructions with BUILD_CONTEXT
 tool: true
 tags:
   - build
   - orchestration
   - workers
   - parallel
+last_edited: 2026-01-18
+version: 2.0
 ---
 
 # Build Orchestrator
@@ -94,14 +96,45 @@ Returns workers whose dependencies are met.
 ### 4. Spawn Workers
 
 ```bash
-# Get spawn command for a ready worker
+# Get spawn instructions for a ready worker
 python3 N5/scripts/build_orchestrator_v2.py spawn-cmd \
     --project auth-system \
     --worker worker_schema \
     --parent con_XXXXX
 ```
 
-This generates a `spawn_worker_v2.py` command with full context.
+This generates **copy-paste instructions** with `BUILD_CONTEXT` block. Copy the instructions and paste into a new conversation to spawn the worker.
+
+**Example output:**
+```
+Execute Worker 1 (database_schema):
+
+BUILD_CONTEXT:
+  build: auth-system
+  worker: 1
+  parent_topic: Authentication System
+
+CONTEXT:
+No dependencies
+Relevant files:
+- `file 'N5/services/auth/README.md'`
+
+INSTRUCTIONS:
+- Read: `file 'N5/builds/auth-system/DESIGN.md'`
+- Read: `file 'N5/builds/auth-system/PLAN.md'`
+
+DELIVERABLES:
+Create SQLite schema for users, sessions, providers
+
+When complete:
+1. Update `file 'N5/builds/auth-system/STATUS.md'` with results
+2. Run close conversation workflow (will auto-notify orchestrator)
+```
+
+The `BUILD_CONTEXT` block is automatically parsed by `session_state_manager.py` at init, setting `mode: worker` and enabling:
+- Worker-specific close workflow (no git commits, handoff package)
+- Worker title format with `[Parent-Topic]` tag for grep-ability
+- Automatic orchestrator notification via `build_worker_complete.py`
 
 ### 5. Mark Complete
 

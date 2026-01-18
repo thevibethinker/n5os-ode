@@ -10,9 +10,9 @@ tags:
   - conversation
   - positions
 created: 2025-10-15
-last_edited: 2026-01-15
-version: 5.0
-provenance: con_A79BOqF7vZTQ8w0N
+last_edited: 2026-01-18
+version: 5.1
+provenance: con_VATFOKPkpp4aOjhw
 ---
 
 # Close Conversation
@@ -23,7 +23,7 @@ Runs the formal **conversation-end workflow** with automatic mode and tier detec
 
 | Mode | Detection | Purpose | Commits? |
 |------|-----------|---------|----------|
-| **Worker Close** | `parent_convo_id` in SESSION_STATE or spawned via `WORKER_ASSIGNMENT_*.md` | Package work for orchestrator review | ❌ NO |
+| **Worker Close** | `build_id` + `worker_num` in SESSION_STATE frontmatter | Package work for orchestrator review | ❌ NO |
 | **Full Close** | Normal thread OR orchestrator | Complete close with finalization | ✅ YES |
 
 ## Core Principles
@@ -37,16 +37,21 @@ Runs the formal **conversation-end workflow** with automatic mode and tier detec
 
 ## Step 0: Detect Mode
 
-Check SESSION_STATE.md for:
+Check SESSION_STATE.md frontmatter for build context:
 ```yaml
-parent_convo_id: con_XXXXX  # If present → Worker Close
-orchestrator_id: con_XXXXX  # If present → Worker Close
+build_id: my-project       # If present → Worker Close
+worker_num: 1              # Worker number
+parent_topic: My Project   # For greppable tags
 ```
 
-Or check if this conversation was spawned via `WORKER_ASSIGNMENT_*.md`.
+**Detection priority:**
+1. `build_id` + `worker_num` in SESSION_STATE frontmatter → Worker Close
+2. `## Build Context` section in SESSION_STATE → Worker Close  
+3. `mode: worker` in SESSION_STATE frontmatter → Worker Close
+4. Otherwise → Full Close mode
 
-**If either condition → Worker Close mode**
-**Otherwise → Full Close mode**
+**If Worker Close mode → Follow Worker Steps below**
+**Otherwise → Follow Full Close mode**
 
 ---
 
@@ -107,11 +112,27 @@ python3 N5/scripts/session_state_manager.py update --convo-id {CONVO_ID} \
   --status complete --message "Worker handoff ready for orchestrator review"
 ```
 
-## Worker Step 5: DO NOT COMMIT
+## Worker Step 5: Notify Build Orchestrator
+
+**NEW:** Update the build's STATUS.md and plan.json with completion info:
+
+```bash
+python3 N5/scripts/build_worker_complete.py --convo-id {CONVO_ID} \
+  --status complete --summary "Brief description of what was accomplished"
+```
+
+This automatically:
+- Updates the Worker Status table in `N5/builds/{build_id}/STATUS.md`
+- Updates `plan.json` if using build_orchestrator_v2
+- Appends to the Activity Log
+
+**Status options:** `complete`, `partial`, `blocked`
+
+## Worker Step 6: DO NOT COMMIT
 
 ⚠️ **Workers do NOT git commit.** The orchestrator reviews all worker handoffs and does a single atomic commit.
 
-**Worker close ends here.** Return control to orchestrator.
+**Worker close ends here.** Return control to V.
 
 ---
 
@@ -313,6 +334,7 @@ Present formatted close output. End with:
 
 ## Version History
 
+- **v5.1** (2026-01-18): Added build_id/worker_num detection. Added Worker Step 5 (build_worker_complete.py notification). Clearer mode detection priority.
 - **v5.0** (2026-01-15): Two-mode system (Worker Close vs Full Close). Workers defer commits. 3-slot emoji required (📌 for normal). Greppable [Parent-Topic] tags for workers.
 - **v4.0** (2026-01-15): Folded Type B position extraction. Title generation now semantic.
 - **v3.2** (2026-01-14): Added PII Audit step
