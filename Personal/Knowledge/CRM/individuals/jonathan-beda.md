@@ -59,3 +59,8 @@ Upcoming meeting on 2025-12-02
 **Last email:** 2025-11-27  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-18 11:04
+
+First contact: 2025-10-14. Last contact: 2025-12-02. Total thread count: 8. Key topics: Catch-up scheduling. Relationship trajectory: dormant.

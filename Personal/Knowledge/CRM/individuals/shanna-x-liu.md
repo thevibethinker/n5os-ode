@@ -66,3 +66,8 @@ No emails found
 **Last email:** 2025-12-02  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-18 11:04
+
+First contact: 2025-07-22. Last contact: 2025-11-25. Total thread count: 8. Key topics: McKinsey alumni events, VC meetups. Relationship trajectory: new.

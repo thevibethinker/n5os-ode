@@ -1,26 +1,33 @@
 ---
-person_id: srinidhi
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Vrijen"
+email_primary: "vrijen@substrate.run"
+email_aliases: []
+organization: "Substrate.Run"
+role: "[To be determined]"
+first_contact: "2026-01-20T13:00:00-05:00"
+last_updated: "2026-01-18"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-18"
 ---
 
-<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/srinidhi.md) -->
-# Srinidhi
+# Vrijen
 
-**Organization:** Agreedpro  
+**Organization:** Substrate.Run  
 **Role:** [To be determined]  
-**Email:** srinidhi@agreedpro.com  
+**Email:** vrijen@substrate.run  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-24T10:30:00-05:00  
-**Last Updated:** 2025-11-21
+**First Contact:** 2026-01-20T13:00:00-05:00  
+**Last Updated:** 2026-01-18
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Srinidhi Ranganathan x Vrijen Attawar
+First contact via calendar invite: Meet with Jason (tweeks) between Jason Madeano and Vrijen Attawar 
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** hpaisu5crm63kmc1e3apkbuojg  
-**Last email:** 2025-11-21  
+**Meeting IDs:** _dpq4gm2mcp968lpia5j54u3i71bmqi3le9qk0gr1dgn66rrd  
+**Last email:** 2026-01-18  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]

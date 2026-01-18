@@ -1,26 +1,33 @@
 ---
-person_id: alex
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Asher"
+email_primary: "asher@warmerjobs.com"
+email_aliases: []
+organization: "Warmerjobs"
+role: "[To be determined]"
+first_contact: "2026-01-16T13:30:00-05:00"
+last_updated: "2026-01-16"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-16"
 ---
 
-<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/alex.md) -->
-# Alex
+# Asher
 
-**Organization:** Hello.Cv  
+**Organization:** Warmerjobs  
 **Role:** [To be determined]  
-**Email:** alex@hello.cv  
+**Email:** asher@warmerjobs.com  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-12  
-**Last Updated:** 2025-11-10
+**First Contact:** 2026-01-16T13:30:00-05:00  
+**Last Updated:** 2026-01-16
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar meeting: f*ck resumes on 2025-11-12
+First contact via calendar invite: Vrijen Attawar and Asher King Abramson
 
 ### Key Objectives
 **Their asks:**
@@ -36,7 +43,7 @@ First contact via calendar meeting: f*ck resumes on 2025-11-12
 
 ## Interaction History
 
-No prior email history found. Calendar meeting scheduled.
+No emails found
 
 ---
 
@@ -55,16 +62,7 @@ No prior email history found. Calendar meeting scheduled.
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** 7t7nngoufpe4vofpuvm5hnn8lp  
-**Last email:** 2025-11-10  
+**Meeting IDs:** 6t1lo4dcfp1sp711hdnmkd67fg  
+**Last email:** 2026-01-16  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
-
-## Intelligence Log
-
-### 2025-11-30 18:33 UTC | aviato_enrichment_error
-
-**Source:** aviato_api
-
-- Status: failed
-- Error: too many values to unpack (expected 2)

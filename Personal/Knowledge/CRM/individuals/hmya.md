@@ -1,10 +1,15 @@
 ---
 person_id: hmya
-canonical_path: Personal/Knowledge/CRM/individuals/hmya.md
-role: compatibility_stub
 created: '2025-11-29'
 last_edited: '2025-11-29'
-version: '1.0'
 ---
 
-This CRM profile now lives at `Personal/Knowledge/CRM/individuals/hmya.md`.
+<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/hmya.md) -->
+# hmya
+
+- Source: Meeting 2025-10-10 (handle used from transcript)
+- Known info: handle only (no full name present)
+- Role: Participant in founder-level discussion
+- Notes: Requires LinkedIn enrichment and name resolution
+- Enrichment priority: HIGH
+- Related meetings: `N5/records/meetings/2025-10-10-17-51-00_spv-hmya-oeh`

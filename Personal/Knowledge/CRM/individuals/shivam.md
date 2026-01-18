@@ -66,3 +66,8 @@ No emails found
 **Last email:** 2025-12-02  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
+
+### Gmail Intelligence
+**Last Sync:** 2026-01-18 11:04
+
+First contact: 2025-12-10. Last contact: 2026-01-15. Total thread count: 10. Key topics: HR/talent events, candidate sharing. Relationship trajectory: active.

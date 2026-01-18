@@ -1,26 +1,33 @@
 ---
-person_id: mguerrero
-created: '2025-11-29'
-last_edited: '2025-11-29'
+name: "Strassmaz"
+email_primary: "strassmaz@gmail.com"
+email_aliases: []
+organization: "Personal (gmail.com)"
+role: "[To be determined]"
+first_contact: "2026-01-23T19:00:00-05:00"
+last_updated: "2026-01-18"
+lead_type: "LD-GEN"
+status: "active"
+interaction_count: 1
+last_interaction: "2026-01-18"
 ---
 
-<!-- source: legacy_inbox (/home/workspace/Personal/Knowledge/Legacy_Inbox/crm/individuals/mguerrero.md) -->
-# Mguerrero
+# Strassmaz
 
-**Organization:** Sapphireventures  
+**Organization:** Personal (gmail.com)  
 **Role:** [To be determined]  
-**Email:** mguerrero@sapphireventures.com  
+**Email:** strassmaz@gmail.com  
 **Lead Type:** LD-GEN  
 **Status:** Active  
-**First Contact:** 2025-11-26T15:00:00-05:00  
-**Last Updated:** 2025-11-20
+**First Contact:** 2026-01-23T19:00:00-05:00  
+**Last Updated:** 2026-01-18
 
 ---
 
 ## Relationship Context
 
 ### How We Met
-First contact via calendar invite: Sapphire Ventures x Careerspan
+First contact via calendar invite: FTI: Thinkers Multi-group BYOB potluck
 
 ### Key Objectives
 **Their asks:**
@@ -55,7 +62,7 @@ No emails found
 ## Auto-Generated Metadata
 
 **Email thread IDs:** [None yet]  
-**Meeting IDs:** 2tur1ds5pb79fdqpc3u9ptnnlk  
-**Last email:** 2025-11-20  
+**Meeting IDs:** 1b9qhdj4mevvee99lb96ki41ae_20260124T000000Z  
+**Last email:** 2026-01-18  
 **Last meeting:** [Pending]  
 **Response rate:** [To be tracked]
