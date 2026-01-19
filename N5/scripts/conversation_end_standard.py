@@ -318,7 +318,8 @@ def run_standard_close(convo_id: str, dry_run: bool = False) -> Dict[str, Any]:
     
     # Step 8: Update SESSION_STATE.md
     logger.info("Updating session state")
-    update_session_state(convo_path, title, summary, dry_run)
+    # Note: title is generated semantically by Librarian, not stored here
+    update_session_state(convo_path, summary, dry_run)
 
     # Step 9: Format output
     logger.info("Formatting output")

@@ -1,0 +1,8 @@
+R00_Emergent.prompt.md
+R03_Strategic.prompt.md
+R04_Market.prompt.md
+R05_Product.prompt.md
+R07_Prediction.prompt.md
+R08_Venture.prompt.md
+R09_Content.prompt.md
+RIX_Integration.prompt.md

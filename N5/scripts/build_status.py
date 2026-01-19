@@ -60,7 +60,13 @@ def parse_date_string(date_str: str | None) -> datetime | None:
 
 
 def extract_objective(build_dir: Path) -> str | None:
-    """Extract objective/description from PLAN.md if it exists."""
+    """Extract objective/description from PLAN.md if it exists.
+    
+    Returns None if:
+    - PLAN.md doesn't exist
+    - Objective line not found
+    - Objective contains template placeholders like {{...}}
+    """
     plan_file = build_dir / "PLAN.md"
     if not plan_file.exists():
         return None
@@ -72,10 +78,16 @@ def extract_objective(build_dir: Path) -> str | None:
             if line.strip().startswith('**Objective:**'):
                 # Extract the text after **Objective:**
                 obj = line.replace('**Objective:**', '').strip()
+                # Skip if it's a template placeholder
+                if obj.startswith('{{') and obj.endswith('}}'):
+                    return None
+                # Skip if it contains any template markers
+                if '{{' in obj:
+                    return None
                 # Truncate if too long
                 if len(obj) > 200:
                     obj = obj[:197] + '...'
-                return obj
+                return obj if obj else None
         return None
     except IOError:
         return None
@@ -125,15 +137,20 @@ def determine_build_status(
     created: str | None,
     complete_workers: int,
     total_workers: int,
-    last_activity: datetime | None
+    last_activity: datetime | None,
+    is_legacy: bool = False
 ) -> str:
-    """Determine build status based on simplified model.
+    """
+    Determine build status based on workers and activity.
     
-    - complete: all workers done (complete >= total > 0)
-    - pre-tracker: created before TRACKER_EPOCH
-    - stale: incomplete AND last_activity > 60 days ago (backlog)
-    - active: incomplete AND last_activity within 60 days (working)
-    - draft: no workers yet
+    Returns one of: "complete", "active", "draft", "stale", "pre-tracker"
+    
+    Args:
+        created: ISO date string when build was created
+        complete_workers: Number of completed workers
+        total_workers: Total number of workers
+        last_activity: Most recent activity timestamp
+        is_legacy: If True, this is a legacy build without orchestration structure
     """
     # Check if complete
     if total_workers > 0 and complete_workers >= total_workers:
@@ -150,9 +167,14 @@ def determine_build_status(
         if last_activity < threshold:
             return "stale"
     
-    # If no workers defined yet, it's a draft
+    # If no workers defined:
+    # - Legacy builds (no orchestration): assume complete (they predate worker system)
+    # - Modern builds: draft (waiting for architect to define workers)
     if total_workers == 0:
-        return "draft"
+        if is_legacy:
+            return "complete"
+        else:
+            return "draft"
     
     # Otherwise active
     return "active"
@@ -169,8 +191,10 @@ def scan_build_v2(build_dir: Path) -> dict | None:
     except (json.JSONDecodeError, IOError):
         return None
     
-    # If meta.json explicitly says complete, trust it (user closed the build)
-    explicit_complete = meta.get("status") == "complete"
+    # If meta.json explicitly says complete or abandoned, trust it (user closed/canceled the build)
+    meta_status = meta.get("status")
+    explicit_complete = meta_status == "complete"
+    explicit_abandoned = meta_status == "abandoned"
     
     completions_dir = build_dir / "completions"
     workers_dir = build_dir / "workers"
@@ -209,11 +233,16 @@ def scan_build_v2(build_dir: Path) -> dict | None:
     last_activity_str = last_activity.isoformat(timespec='seconds') if last_activity else None
     
     # Determine status
-    # If explicitly marked complete in meta.json, trust it
+    # If explicitly marked complete or abandoned in meta.json, trust it
     if explicit_complete:
         status = "complete"
+        # For explicitly complete builds, use meta.json worker counts (more accurate)
+        complete_workers = workers_data.get("complete", complete_workers)
+        total_workers = workers_data.get("total", total_workers)
+    elif explicit_abandoned:
+        status = "abandoned"
     else:
-        status = determine_build_status(created, complete_workers, total_workers, last_activity)
+        status = determine_build_status(created, complete_workers, total_workers, last_activity, is_legacy=False)
     
     # Calculate progress
     if total_workers > 0:
@@ -298,7 +327,7 @@ def scan_build_plan_json(build_dir: Path) -> dict | None:
     last_activity_str = last_activity.isoformat(timespec='seconds') if last_activity else None
     
     # Determine status
-    status = determine_build_status(created, complete_workers, total_workers, last_activity)
+    status = determine_build_status(created, complete_workers, total_workers, last_activity, is_legacy=False)
     
     # Calculate progress
     if total_workers > 0:
@@ -387,8 +416,8 @@ def scan_build_legacy(build_dir: Path) -> dict | None:
     last_activity = get_last_activity(build_dir)
     last_activity_str = last_activity.isoformat(timespec='seconds') if last_activity else None
     
-    # Determine status
-    status = determine_build_status(created, complete_workers, total_workers, last_activity)
+    # Determine status - pass is_legacy=True for builds without orchestration structure
+    status = determine_build_status(created, complete_workers, total_workers, last_activity, is_legacy=not has_v2_structure)
     
     build_info = {
         "slug": slug,

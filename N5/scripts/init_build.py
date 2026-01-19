@@ -176,7 +176,7 @@ def prescreen_builds(slug: str, title: str, skip: bool = False, strict: bool = F
         return True
 
 
-def create_meta_json(slug: str, title: str, build_type: str, today: str) -> dict:
+def create_meta_json(slug: str, title: str, build_type: str, today: str, objective: str | None = None) -> dict:
     """
     Create initial meta.json content.
     
@@ -185,6 +185,7 @@ def create_meta_json(slug: str, title: str, build_type: str, today: str) -> dict
         title: Build title
         build_type: One of VALID_TYPES
         today: ISO date string (YYYY-MM-DD)
+        objective: Optional one-sentence objective
         
     Returns:
         Dict representing meta.json content
@@ -193,7 +194,7 @@ def create_meta_json(slug: str, title: str, build_type: str, today: str) -> dict
         "schema_version": META_SCHEMA_VERSION,
         "slug": slug,
         "title": title,
-        "objective": None,
+        "objective": objective,
         "created": today,
         "status": "draft",
         "completed_at": None,
@@ -303,6 +304,7 @@ def init_build(
     title: str | None = None,
     build_type: str = "general",
     num_workers: int = 0,
+    objective: str | None = None,
     force: bool = False,
     skip_prescreen: bool = False,
     strict: bool = False
@@ -315,6 +317,7 @@ def init_build(
         title: Optional human-readable title
         build_type: Build type (code_build, content, research, general)
         num_workers: Number of worker stub files to generate (0 = none)
+        objective: Optional one-sentence objective for the build
         force: Overwrite existing build
         skip_prescreen: Skip incomplete builds check
         strict: Fail if incomplete builds found
@@ -365,7 +368,7 @@ def init_build(
     completions_dir.mkdir(exist_ok=True)
     
     # Create meta.json
-    meta_content = create_meta_json(slug, title, build_type, today)
+    meta_content = create_meta_json(slug, title, build_type, today, objective)
     if num_workers > 0:
         # Pre-populate worker stats if generating stubs
         meta_content["workers"]["total"] = num_workers
@@ -447,6 +450,9 @@ Build initialized. Awaiting Architect plan.
         plan_content = plan_content.replace("{{DATE}}", today)
         plan_content = plan_content.replace("{{TITLE}}", title)
         plan_content = plan_content.replace("{{SLUG}}", slug)
+        # Replace objective placeholder if objective provided
+        if objective:
+            plan_content = plan_content.replace("{{ONE_SENTENCE_OBJECTIVE}}", objective)
     else:
         # Fallback minimal plan if template missing
         plan_content = f"""---
@@ -524,6 +530,17 @@ build_slug: {slug}
     if num_workers > 0:
         generate_worker_stubs(build_dir, slug, num_workers)
     
+    # Auto-refresh build tracker dashboard
+    import subprocess
+    try:
+        subprocess.run(
+            ["python3", str(WORKSPACE / "N5" / "scripts" / "build_status.py"), "regenerate"],
+            capture_output=True,
+            timeout=10
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        pass  # Non-critical if this fails
+    
     return build_dir
 
 
@@ -533,7 +550,7 @@ def main():
         epilog="""
 Examples:
   python3 N5/scripts/init_build.py my-feature --title 'My Feature Build'
-  python3 N5/scripts/init_build.py calendar-v2 --type code_build --workers 5
+  python3 N5/scripts/init_build.py calendar-v2 --type code_build --workers 5 --objective 'Rebuild calendar UI with new design system'
   python3 N5/scripts/init_build.py quick-fix --skip-prescreen
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter
@@ -545,6 +562,10 @@ Examples:
     parser.add_argument(
         "--title", "-t",
         help="Human-readable build title (defaults to slug titlecased)"
+    )
+    parser.add_argument(
+        "--objective", "-o",
+        help="One-sentence objective for the build (prevents placeholder in tracker)"
     )
     parser.add_argument(
         "--type",
@@ -582,6 +603,7 @@ Examples:
         title=args.title,
         build_type=args.type,
         num_workers=args.workers,
+        objective=args.objective,
         force=args.force,
         skip_prescreen=args.skip_prescreen,
         strict=args.strict

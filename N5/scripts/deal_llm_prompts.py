@@ -193,3 +193,80 @@ Return ONLY valid JSON:
   "pipeline_hint": "careerspan|zo|null if unclear",
   "parse_error": "error message if invalid, null otherwise"
 }}"""
+
+
+# =============================================================================
+# EMAIL ANALYSIS PROMPT (for semantic deal signal extraction)
+# =============================================================================
+
+EMAIL_ANALYSIS_PROMPT = """You are analyzing an email for deal intelligence in V's CRM.
+
+## Email Being Analyzed:
+From: {sender}
+Subject: {subject}
+Date: {date}
+Preview: {snippet}
+
+## Known Contacts & Deals:
+{context}
+
+## Your Task:
+
+Analyze this email and determine:
+
+### 1. Person Match
+Does this email come from or mention any known contact?
+- Check the sender's name AND email address against the contact list
+- Consider: first names, last names, nicknames, email domains
+- Example: sender "vir@instalily.ai" should match contact "Vir" even if we don't have his email stored
+- Example: sender "Jennifer I." should match "Jennifer Ives"
+
+### 2. Deal Match  
+Does this email relate to any tracked deal?
+- Check if the sender's company matches a deal
+- Check if email content mentions a deal company
+- Consider the deal's pipeline and stage for context
+
+### 3. Email Discovery
+If you matched a contact who doesn't have an email in our DB (shows "no email"):
+- Extract their email address from the "From" field
+- This lets us enrich our contact database
+
+### 4. Signal Strength
+Rate the deal relevance:
+- "none": Automated, promotional, or completely irrelevant to deals
+- "weak": Tangentially related (e.g., newsletter mentioning a company)
+- "medium": Personal communication, not explicitly about deals
+- "strong": Explicit deal discussion, meeting setup, next steps, pricing
+
+### 5. Intelligence Extract (only if signal >= "medium")
+If relevant, extract:
+- Stage signal: Does this indicate deal progress?
+- Key facts: What's notable about this communication?
+- Next action: What should V do next?
+
+## Response Format
+
+Return ONLY valid JSON (no markdown, no explanation):
+
+{{
+  "matched_contact_id": "the contact id from the list, or null if no match",
+  "matched_deal_id": "the deal id from the list, or null if no match",
+  "discovered_email": "email@domain.com to store for the contact, or null",
+  "signal_strength": "none|weak|medium|strong",
+  "intel": {{
+    "stage_signal": "none|positive|negative|stage_change",
+    "inferred_stage": "stage name if stage_change, else null",
+    "key_facts": ["fact 1", "fact 2"],
+    "next_action": "what V should do next, or null",
+    "sentiment": "positive|neutral|negative"
+  }},
+  "skip_reason": "brief reason if signal_strength is none, else null",
+  "match_reasoning": "brief explanation of how you matched (for debugging)"
+}}
+
+Important:
+- If signal_strength is "none", intel should be null
+- discovered_email should only be set if we matched a contact AND that contact shows "(no email)" in the list
+- Be generous with matching — "Vir" and "vir@instalily.ai" are obviously the same person
+- match_reasoning helps debug false negatives, keep it brief"""

@@ -1,0 +1,47 @@
+{
+  "worker_id": "W1.3",
+  "status": "complete",
+  "summary": "Backfilled external_source for all 77 deals. Tested meeting routing workflow with 1 meeting. Documented routing workflow for remaining 327 meetings.",
+  "results": {
+    "external_source_backfilled": {
+      "zo_partnerships_sheet": 25,
+      "careerspan_acquirers_notion": 51,
+      "careerspan_leadership_notion": 1
+    },
+    "meetings_routed": 1,
+    "deal_activities_created": 0,
+    "routing_workflow_documented": true
+  },
+  "issues": [
+    "Brief mentioned 'leadership-*' pattern but actual ID was 'cs-lead-*' - handled both patterns",
+    "Test meeting had low relevance scores (0.10/0.15) so no deal linkage was appropriate"
+  ],
+  "recommendations": [
+    "For routing remaining 327 meetings, use /zo/ask batch processing with the deal_meeting_router.py prompts",
+    "Recommended batch size: 20 concurrent, to stay within cost/rate limits",
+    "Workflow: 1) Generate prompts with --output-prompts, 2) Batch process via /zo/ask, 3) Write B36 files, 4) Run --apply-results to create deal_activities for high-relevance meetings",
+    "Consider filtering meetings first - likely only 30-50% have any deal relevance",
+    "Meetings older than 6 months may not need routing (historical archive)"
+  ],
+  "files_created": [
+    "/home/workspace/Personal/Meetings/Week-of-2026-01-19/2026-01-20_2026-01-20-Truly-raw-meeting/B36_DEAL_ROUTING.json",
+    "/home/workspace/Personal/Meetings/Week-of-2026-01-19/2026-01-20_2026-01-20-Truly-raw-meeting/B36_DEAL_ROUTING.md"
+  ],
+  "routing_workflow_documentation": {
+    "is_manual": true,
+    "llm_in_loop": true,
+    "can_automate_with_zo_ask": true,
+    "recommended_approach": "Batch automation via /zo/ask API",
+    "workflow_steps": [
+      "1. Generate prompts: python3 deal_meeting_router.py --output-prompts prompts.jsonl",
+      "2. Create Python script that reads prompts.jsonl and calls /zo/ask for each",
+      "3. Parse LLM JSON responses and write B36_DEAL_ROUTING.json to each meeting folder",
+      "4. Also generate B36_DEAL_ROUTING.md (human-readable) from JSON",
+      "5. For meetings with relevance >= 0.70, add deal_activities entries",
+      "6. Update deal.source_meetings for linked deals"
+    ],
+    "estimated_cost": "327 meetings × ~$0.03/call = ~$10 total",
+    "estimated_time": "20-30 minutes with 20 concurrent calls"
+  },
+  "completed_at": "2026-01-19T02:38:00-05:00"
+}

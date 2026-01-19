@@ -5,6 +5,19 @@ build_slug: {{SLUG}}
 wave: {{WAVE}}
 depends_on: []
 thread_title: "[{{SLUG}}] W{{WAVE}}.{{SEQ}}: {{TASK_NAME}}"
+# MECE fields (required for validator)
+scope:
+  files:
+    - {{FILE_PATH_1}}
+    - {{FILE_PATH_2}}
+  responsibilities:
+    - "{{RESPONSIBILITY_1}}"
+  must_not_touch:
+    - {{EXCLUDED_PATH}}
+token_estimate:
+  brief_tokens: ~      # Auto-calculated by validator
+  file_tokens: ~       # Sum of owned files
+  total_pct: ~         # Percentage of context window
 ---
 
 # Worker Brief: {{TASK_NAME}}
@@ -14,6 +27,30 @@ thread_title: "[{{SLUG}}] W{{WAVE}}.{{SEQ}}: {{TASK_NAME}}"
 **Output(s):**
 - `{{OUTPUT_PATH_1}}` (CREATE/UPDATE)
 - `{{OUTPUT_PATH_2}}` (CREATE/UPDATE)
+
+---
+
+## MECE Declaration
+
+<!-- 
+REQUIRED: Explicit scope boundaries for MECE validation.
+Reference: N5/prefs/operations/mece-worker-framework.md
+-->
+
+**SCOPE:** {{SUMMARY_OF_OWNED_SCOPE}}
+
+**MUST DO:**
+1. {{SPECIFIC_ACTION_1}}
+2. {{SPECIFIC_ACTION_2}}
+3. {{SPECIFIC_ACTION_3}}
+
+**MUST NOT DO:**
+- {{FORBIDDEN_ACTION_1}} — {{WHY}}
+- {{EXCLUDED_SCOPE}} — owned by {{OTHER_WORKER}}
+
+**EXPECTED OUTPUT:**
+- {{DELIVERABLE_1}} — verified by {{VERIFICATION_METHOD}}
+- {{DELIVERABLE_2}} — verified by {{VERIFICATION_METHOD}}
 
 ---
 

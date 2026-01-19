@@ -1,0 +1,13 @@
+{
+  "slug": "notion-deals-sync",
+  "title": "Notion ↔ Deals Sync via Pipedream",
+  "objective": "Ingest Notion Deal Brokers + Leadership Targets into deals.db, then push Zo-enriched fields back to Notion via Pipedream.",
+  "status": "draft",
+  "type": "code_build",
+  "created": "2026-01-18",
+  "completed_at": null,
+  "workers": {
+    "total": 0,
+    "complete": 0
+  }
+}

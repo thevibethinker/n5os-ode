@@ -1,0 +1,3 @@
+R01_Personal.prompt.md
+R02_Learning.prompt.md
+R06_Synthesis.prompt.md
