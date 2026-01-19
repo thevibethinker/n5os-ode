@@ -30,6 +30,10 @@ DASHBOARD_DATA_FILE = DASHBOARD_DATA_DIR / "builds.json"
 STALE_THRESHOLD_DAYS = 7
 RECENT_COMPLETE_LIMIT = 10
 
+# Builds created before this date are considered "pre-tracker era"
+# They won't show as active - treated as legacy/archived
+TRACKER_EPOCH = "2026-01-18"
+
 
 def get_iso_timestamp() -> str:
     """Get current timestamp in ISO 8601 format with timezone."""
@@ -358,7 +362,7 @@ def scan_all_builds() -> list[dict]:
             builds.append(build_info)
             continue
         
-        # Try plan.json format (no meta.json but has plan.json)
+        # Try plan.json format
         build_info = scan_build_plan_json(build_dir)
         if build_info:
             builds.append(build_info)
@@ -368,6 +372,13 @@ def scan_all_builds() -> list[dict]:
         build_info = scan_build_legacy(build_dir)
         if build_info:
             builds.append(build_info)
+    
+    # Mark pre-tracker builds
+    for build in builds:
+        created = build.get("created", "1970-01-01")
+        if created < TRACKER_EPOCH and build.get("status") == "active":
+            build["status"] = "pre-tracker"
+            build["type"] = "pre-tracker"
     
     return builds
 
@@ -386,7 +397,7 @@ def sort_builds(builds: list[dict]) -> list[dict]:
 
 
 def filter_incomplete(builds: list[dict]) -> list[dict]:
-    """Filter to only active/incomplete builds."""
+    """Filter to only active/incomplete builds (excludes pre-tracker)."""
     return [b for b in builds if b.get("status") in ("active", "in_progress")]
 
 
@@ -508,17 +519,21 @@ def cmd_regenerate(args):
         clean = {k: v for k, v in b.items() if not k.startswith("_")}
         clean_builds.append(clean)
     
+    # Count by status (pre-tracker is separate from active)
     active_builds = [b for b in clean_builds if b.get("status") in ("active", "in_progress")]
     complete_builds = [b for b in clean_builds if b.get("status") == "complete"]
+    pre_tracker_builds = [b for b in clean_builds if b.get("status") == "pre-tracker"]
     stale_builds = [b for b in clean_builds if b.get("is_stale")]
     
     output = {
         "generated_at": get_iso_timestamp(),
+        "tracker_epoch": TRACKER_EPOCH,
         "builds": clean_builds,
         "summary": {
             "total": len(clean_builds),
             "active": len(active_builds),
             "complete": len(complete_builds),
+            "pre_tracker": len(pre_tracker_builds),
             "stale": len(stale_builds)
         }
     }
@@ -531,7 +546,7 @@ def cmd_regenerate(args):
     
     print(f"✓ Dashboard data regenerated")
     print(f"  File: {DASHBOARD_DATA_FILE.relative_to(WORKSPACE)}")
-    print(f"  Builds: {len(clean_builds)} total ({len(active_builds)} active)")
+    print(f"  Builds: {len(clean_builds)} total ({len(active_builds)} active, {len(pre_tracker_builds)} pre-tracker)")
 
 
 def main():
