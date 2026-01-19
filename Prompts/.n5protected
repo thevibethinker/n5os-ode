@@ -2,5 +2,11 @@
   "protected": true,
   "reason": "User prompt library (markdown @-invocable workflows). DO NOT MOVE. This is the canonical location referenced by Zo system and list_prompts tool.",
   "created": "2025-11-03T05:40:41.310902+00:00",
-  "created_by": "user"
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "email"
+  ],
+  "pii_marked_at": "2026-01-18T23:54:57.327335+00:00",
+  "pii_note": "PII detected during conversation close (con_hkrUsfzMMeOHkhfx)"
 }

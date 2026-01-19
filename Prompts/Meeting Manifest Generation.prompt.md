@@ -3,9 +3,10 @@ tool: true
 description: "Scans Personal/Meetings/Inbox for unprocessed meeting folders (no _[M] or _[P] suffix), generates manifest.json, and transitions them to [M] state."
 tags: [meetings, ingestion, manifest, automation]
 created: 2025-11-22
-version: 1.0
+version: 2.0
 mg_stage: MG-1
 status: canonical
+last_edited: 2026-01-17
 ---
 
 # Meeting Manifest Generation Workflow [MG-1]
@@ -20,6 +21,29 @@ status: canonical
     *   Ignore `_quarantine` or hidden files.
 
 2.  **Process Each Folder**
+
+    ### ⛔ GUARD RAILS (Check BEFORE any processing)
+    
+    **SKIP and move to `_quarantine` if ANY of these are true:**
+    
+    1. **Test/Fake Name Detection:** Folder name contains (case-insensitive):
+       - `Test`, `Sample`, `Simulated`, `Demo`, `Workflow`, `Raw-Meeting`, `Brand-New-Raw`, `Unprocessed`
+       - Exception: Names like `therapy_test` or `product_demo_with_client` where the word is part of real meeting context are OK — use judgment
+    
+    2. **Stub Transcript Detection:** Combined transcript content is < 500 bytes
+       - Real meetings have substantial content; stubs like `{"text": "This is a test"}` are ~50 bytes
+    
+    3. **Placeholder Content Detection:** Transcript contains ANY of these phrases:
+       - "This is a test transcript"
+       - "test transcript for MG"
+       - "Meeting content here"
+       - "Sample meeting content"
+       - "Placeholder"
+    
+    **When quarantining:** Move to `_quarantine/{folder_name}_failed_guard_{reason}`
+    
+    ---
+
     *   **Validation:** Check for `transcript.jsonl`.
         *   If `transcript.jsonl` exists: Proceed.
         *   If `transcript.md` or `transcript.txt` exists but no jsonl: Convert to `transcript.jsonl` (content: `{"text": "..."}`).
@@ -67,6 +91,16 @@ find /home/workspace/Personal/Meetings/Inbox -maxdepth 1 -type d \
   -not -name "_quarantine" \
   -not -name "Inbox"
 ```
+
+---
+
+## ➡️ Next Step (Optional)
+
+After MG-1 completes, you may want to run **MG-2** to generate intelligence blocks:
+
+> **Run next stage?** `@Meeting Block Generation`
+>
+> MG-2 generates intelligence blocks (B01-B35) from the transcript for each newly processed `_[M]` meeting.
 
 
 

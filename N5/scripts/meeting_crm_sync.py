@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
 MEETINGS_INBOX = WORKSPACE / "Personal/Meetings/Inbox"
-CRM_V3 = WORKSPACE / "N5/crm_v3/profiles"
+CRM_V3 = WORKSPACE / "Personal/Knowledge/CRM/individuals"
 SKIP_FLAG = "_skip_crm.flag"
 
 
@@ -45,11 +45,8 @@ def normalize_person_id(name: str) -> str:
 def find_crm_profile(person_id: str) -> Optional[Path]:
     """Find CRM profile by person_id."""
     # Try exact match first
-    for profile in CRM_V3.glob("*.yaml"):
+    for profile in CRM_V3.glob("*.md"):
         content = profile.read_text()
-        if f"person_id: {person_id}" in content:
-            return profile
-        # Also check filename
         if person_id in profile.name.lower():
             return profile
     return None
@@ -177,9 +174,9 @@ def append_to_interaction_timeline(profile_path: Path, meeting_metadata: Dict, s
     new_entry = '\n'.join(entry_lines)
     
     # Find Interaction Timeline section
-    timeline_marker = "## Interaction Timeline"
+    timeline_marker = "## Interaction History"
     if timeline_marker not in content:
-        logger.warning(f"No Interaction Timeline section in {profile_path.name}")
+        logger.warning(f"No Interaction History section in {profile_path.name}")
         return False
     
     # Insert new entry after the header

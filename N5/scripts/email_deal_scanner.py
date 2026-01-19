@@ -10,6 +10,13 @@ Usage (CLI for testing):
   python3 email_deal_scanner.py --days 7 --dry-run
   python3 email_deal_scanner.py --scan-contacts --dry-run
   python3 email_deal_scanner.py --query "from:specific@email.com" --dry-run
+  
+Backfill Usage:
+  python3 email_deal_scanner.py --days 30 --offset 0    # Last 30 days
+  python3 email_deal_scanner.py --days 30 --offset 30   # 30-60 days ago
+  python3 email_deal_scanner.py --days 30 --offset 60   # 60-90 days ago
+  python3 email_deal_scanner.py backfill --check        # Check backfill progress
+  python3 email_deal_scanner.py backfill --advance      # Advance backfill window
 
 Agentic Usage:
   1. Zo calls get_search_queries() to build Gmail queries
@@ -37,6 +44,8 @@ if str(_SCRIPT_DIR) not in sys.path:
 from deal_signal_router import DealSignalRouter
 
 DB_PATH = "/home/workspace/N5/data/deals.db"
+BACKFILL_STATE_FILE = "/home/workspace/N5/data/backfill_state.json"
+BACKFILL_DEFAULT_MAX_OFFSET = 60  # 2 months
 
 
 @dataclass
@@ -108,21 +117,32 @@ def get_deal_contacts() -> Tuple[List[dict], List[dict]]:
 def build_search_queries(
     days: int = 7,
     max_queries: int = 30,
-    priority: str = "hot"
+    priority: str = "hot",
+    offset: int = 0
 ) -> List[SearchQuery]:
     """
     Build Gmail search queries based on known contacts and deals.
     
     Args:
-        days: Number of days to look back
+        days: Number of days in the search window
         max_queries: Maximum number of queries to generate
         priority: Filter by temperature ('hot', 'warm', 'all')
+        offset: Days to skip from today (for backfill)
     
     Returns:
         List of SearchQuery objects ready for Gmail API
     """
     contacts, deals = get_deal_contacts()
-    after_date = (datetime.now() - timedelta(days=days)).strftime("%Y/%m/%d")
+    
+    # Calculate date range with offset
+    end_date = datetime.now() - timedelta(days=offset)
+    start_date = end_date - timedelta(days=days)
+    after_date = start_date.strftime("%Y/%m/%d")
+    before_date = end_date.strftime("%Y/%m/%d")
+    
+    date_filter = f"after:{after_date}"
+    if offset > 0:
+        date_filter += f" before:{before_date}"
     
     queries: List[SearchQuery] = []
     
@@ -136,7 +156,7 @@ def build_search_queries(
     for c in contacts_with_email[:max_queries // 3]:
         email = c["email"]
         queries.append(SearchQuery(
-            query=f"(from:{email} OR to:{email}) after:{after_date}",
+            query=f"(from:{email} OR to:{email}) {date_filter}",
             context_type="contact",
             context_id=c["id"],
             context_name=c["full_name"],
@@ -147,25 +167,23 @@ def build_search_queries(
     hot_deals = [d for d in deals if d.get("temperature") == "hot"]
     for d in hot_deals[:max_queries // 3]:
         company = d["company"]
-        # Escape company name for Gmail search
         company_query = f'"{company}"' if " " in company else company
         queries.append(SearchQuery(
-            query=f"{company_query} after:{after_date}",
+            query=f"{company_query} {date_filter}",
             context_type="deal",
             context_id=d["id"],
             context_name=company,
             pipeline=d.get("pipeline")
         ))
     
-    # Priority 3: Contacts by name (fuzzy - less reliable)
+    # Priority 3: Contacts by name (fuzzy)
     remaining_slots = max_queries - len(queries)
     contacts_by_name = [c for c in contacts if not c.get("email") and c.get("full_name")]
     for c in contacts_by_name[:remaining_slots]:
         name = c["full_name"]
-        # Only search for relatively unique names
         if len(name.split()) >= 2:
             queries.append(SearchQuery(
-                query=f'"{name}" after:{after_date}',
+                query=f'"{name}" {date_filter}',
                 context_type="contact",
                 context_id=c["id"],
                 context_name=name,
@@ -370,17 +388,189 @@ def get_scan_stats() -> dict:
     }
 
 
+def get_backfill_state() -> dict:
+    """Get current backfill state from file."""
+    if not Path(BACKFILL_STATE_FILE).exists():
+        return {
+            "status": "not_started",
+            "current_offset": 0,
+            "max_offset": BACKFILL_DEFAULT_MAX_OFFSET,
+            "window_days": 30,
+            "runs_completed": 0,
+            "total_runs_needed": 2,
+            "emails_processed": 0,
+            "signals_found": 0,
+            "started_at": None,
+            "last_run_at": None,
+            "completed_at": None
+        }
+    return json.loads(Path(BACKFILL_STATE_FILE).read_text())
+
+
+def save_backfill_state(state: dict) -> None:
+    """Save backfill state to file."""
+    Path(BACKFILL_STATE_FILE).parent.mkdir(parents=True, exist_ok=True)
+    Path(BACKFILL_STATE_FILE).write_text(json.dumps(state, indent=2))
+
+
+def advance_backfill(emails_processed: int = 0, signals_found: int = 0) -> dict:
+    """Advance backfill to next window, return updated state."""
+    state = get_backfill_state()
+    
+    if state["status"] == "not_started":
+        state["status"] = "in_progress"
+        state["started_at"] = datetime.now().isoformat()
+    
+    state["current_offset"] += state["window_days"]
+    state["runs_completed"] += 1
+    state["emails_processed"] += emails_processed
+    state["signals_found"] += signals_found
+    state["last_run_at"] = datetime.now().isoformat()
+    
+    # Check if complete
+    if state["current_offset"] >= state["max_offset"]:
+        state["status"] = "complete"
+        state["completed_at"] = datetime.now().isoformat()
+    
+    save_backfill_state(state)
+    return state
+
+
+def reset_backfill(max_offset: int = BACKFILL_DEFAULT_MAX_OFFSET) -> dict:
+    """Reset backfill state for a new run."""
+    state = {
+        "status": "not_started",
+        "current_offset": 0,
+        "max_offset": max_offset,
+        "window_days": 30,
+        "runs_completed": 0,
+        "total_runs_needed": (max_offset + 29) // 30,  # Ceiling division
+        "emails_processed": 0,
+        "signals_found": 0,
+        "started_at": None,
+        "last_run_at": None,
+        "completed_at": None
+    }
+    save_backfill_state(state)
+    return state
+
+
+def cmd_backfill(args):
+    """Handle backfill subcommand."""
+    state = get_backfill_state()
+    
+    if args.reset:
+        max_off = args.max_offset if args.max_offset else BACKFILL_DEFAULT_MAX_OFFSET
+        state = reset_backfill(max_offset=max_off)
+        print(f"✓ Backfill reset. Target: {max_off} days ({state['total_runs_needed']} runs)")
+        return
+    
+    if args.complete:
+        # Exit code 0 if complete, 1 if not - for agent self-destruct check
+        if state["status"] == "complete":
+            print("✓ Backfill complete")
+            sys.exit(0)
+        else:
+            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
+            print(f"⏳ Backfill in progress: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']} runs)")
+            sys.exit(1)
+    
+    if args.check:
+        # Human-readable status
+        if state["status"] == "not_started":
+            print(f"Backfill Status: not_started")
+            print(f"Target: {state['max_offset']} days ({state['total_runs_needed']} runs needed)")
+        elif state["status"] == "complete":
+            print(f"✅ Backfill COMPLETE")
+            print(f"Runs: {state['runs_completed']}")
+            print(f"Emails processed: {state['emails_processed']}")
+            print(f"Signals found: {state['signals_found']}")
+            print(f"Completed: {state['completed_at']}")
+        else:
+            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
+            window_start = state["current_offset"]
+            window_end = window_start + state["window_days"]
+            print(f"Backfill Status: {state['status']}")
+            print(f"Progress: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']} runs)")
+            print(f"Next window: {window_start}-{window_end} days ago")
+            print(f"Emails processed: {state['emails_processed']}")
+            print(f"Signals found: {state['signals_found']}")
+        
+        if args.json:
+            print(json.dumps(state, indent=2))
+        return
+    
+    if args.advance:
+        # Used by agent after successful scan
+        emails = args.emails_processed if args.emails_processed else 0
+        signals = args.signals_found if args.signals_found else 0
+        state = advance_backfill(emails_processed=emails, signals_found=signals)
+        
+        if state["status"] == "complete":
+            print(f"🎉 BACKFILL COMPLETE!")
+            print(f"Total runs: {state['runs_completed']}")
+            print(f"Total emails: {state['emails_processed']}")
+            print(f"Total signals: {state['signals_found']}")
+        else:
+            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
+            print(f"✓ Advanced to next window")
+            print(f"Progress: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']})")
+            print(f"Next offset: {state['current_offset']} days")
+        return
+    
+    # Default: show status
+    cmd_backfill_check(state, args.json if hasattr(args, 'json') else False)
+
+
+def cmd_backfill_check(state: dict, as_json: bool = False):
+    """Display backfill status."""
+    if as_json:
+        print(json.dumps(state, indent=2))
+    else:
+        if state["status"] == "not_started":
+            print(f"Backfill: not started (target: {state['max_offset']} days)")
+        elif state["status"] == "complete":
+            print(f"✅ Backfill complete ({state['runs_completed']} runs, {state['emails_processed']} emails)")
+        else:
+            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
+            print(f"Backfill: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']})")
+
+
 # ============================================================
-# CLI Interface (for testing and manual runs)
+# CLI Interface
 # ============================================================
 
 def main():
     parser = argparse.ArgumentParser(
         description="Email Deal Scanner - Scan Gmail for deal signals"
     )
+    
+    subparsers = parser.add_subparsers(dest="command")
+    
+    # Backfill subcommand
+    bp = subparsers.add_parser("backfill", help="Manage email backfill state")
+    bp.add_argument("--check", action="store_true", help="Show backfill status")
+    bp.add_argument("--complete", action="store_true", help="Check if complete (exit 0 if done, 1 if not)")
+    bp.add_argument("--advance", action="store_true", help="Advance to next window after scan")
+    bp.add_argument("--reset", action="store_true", help="Reset backfill state")
+    bp.add_argument("--max-offset", type=int, help=f"Max days to backfill (default: {BACKFILL_DEFAULT_MAX_OFFSET})")
+    bp.add_argument("--emails-processed", type=int, help="Emails processed in last run (for --advance)")
+    bp.add_argument("--signals-found", type=int, help="Signals found in last run (for --advance)")
+    bp.add_argument("--json", action="store_true", help="Output as JSON")
+    bp.set_defaults(func=cmd_backfill)
+    
+    # Main scan arguments
     parser.add_argument(
         "--days", type=int, default=7,
-        help="Number of days to look back (default: 7)"
+        help="Number of days in search window (default: 7)"
+    )
+    parser.add_argument(
+        "--offset", type=int, default=0,
+        help="Days to skip from today for backfill (default: 0)"
+    )
+    parser.add_argument(
+        "--batch-size", type=int, default=50,
+        help="Max emails to process per run (default: 50)"
     )
     parser.add_argument(
         "--max-queries", type=int, default=20,
@@ -413,6 +603,10 @@ def main():
     
     args = parser.parse_args()
     
+    if args.command == "backfill":
+        args.func(args)
+        return
+    
     if args.stats:
         stats = get_scan_stats()
         if args.json:
@@ -430,11 +624,11 @@ def main():
     queries = build_search_queries(
         days=args.days,
         max_queries=args.max_queries,
-        priority=args.priority
+        priority=args.priority,
+        offset=args.offset
     )
     
     if args.query:
-        # Add custom query
         queries.insert(0, SearchQuery(
             query=args.query,
             context_type="custom",
@@ -443,20 +637,29 @@ def main():
             pipeline=None
         ))
     
+    # Calculate date range for display
+    end_date = datetime.now() - timedelta(days=args.offset)
+    start_date = end_date - timedelta(days=args.days)
+    date_range = f"{start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}"
+    
     output = {
         "mode": "query_generation",
         "dry_run": args.dry_run,
         "days": args.days,
+        "offset": args.offset,
+        "date_range": date_range,
+        "batch_size": args.batch_size,
         "queries": [asdict(q) for q in queries],
-        "instructions": """
+        "instructions": f"""
 To execute these queries, Zo should:
 1. For each query, call: use_app_gmail(
      tool_name="gmail-find-email",
-     configured_props={"q": query["query"], "maxResults": 20, "withTextPayload": True}
+     configured_props={{"q": query["query"], "maxResults": {args.batch_size // len(queries) if queries else 10}}}
    )
 2. Parse results using email_deal_scanner.parse_gmail_response()
 3. Process each email using email_deal_scanner.process_email()
 4. Report summary of signals found
+5. Total batch limit: {args.batch_size} emails
         """
     }
     
@@ -464,7 +667,8 @@ To execute these queries, Zo should:
         print(json.dumps(output, indent=2))
     else:
         print(f"Generated {len(queries)} search queries for Gmail")
-        print(f"Days: {args.days}, Priority: {args.priority}")
+        print(f"Date range: {date_range} (offset: {args.offset} days)")
+        print(f"Batch size: {args.batch_size}")
         print("\nQueries:")
         for i, q in enumerate(queries, 1):
             print(f"  {i}. [{q.context_type}] {q.context_name}")

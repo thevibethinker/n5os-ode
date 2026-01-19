@@ -1,0 +1,24 @@
+---
+created: 2026-01-16
+last_edited: 2026-01-16
+version: 1.0
+source: calendly_booking
+email: test@example.com
+category: NETWORKING
+relationship_strength: weak
+---
+
+# Test User
+
+## Contact Information
+- **Email:** test@example.com
+- **Organization:** To be determined
+
+## Metadata
+- **Sources:** calendly_booking
+- **Source Count:** 1
+- **Total Meetings:** 0
+
+## Notes
+
+*Awaiting enrichment.*

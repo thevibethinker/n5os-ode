@@ -13,11 +13,15 @@ Review each position's domain assignment. Mark with:
 
 Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
-## ai-automation (20 positions)
+## ai-automation (28 positions)
+
+### [ ] `ai-adoption-is-currently-bottlenecked-by-a-lack-20260115`
+**AI adoption is currently bottlenecked by a lack of human metacognition rather**
+> AI adoption is currently bottlenecked by a lack of human metacognition rather than technical limitations. Employees stru...
 
 ### [ ] `ai-implementation-should-elevate-human-experts-hig`
 **AI implementation should elevate human experts 'higher in...**
-> AI implementation should elevate human experts 'higher in the problem stack' rather than simply automating existing low-...
+> AI implementation must elevate human experts 'higher in the problem stack' by transitioning the individual from a 'doer'...
 
 ### [ ] `ai-interfaces-that-mimic-human-social-bids-create`
 **AI interfaces that mimic human social bids create 'anthropomorphic friction' which outperforms tradi**
@@ -35,9 +39,17 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **AI's primary role in professional services should be...**
 > AI's primary role in professional services should be to shift human experts 'higher in the problem stack.' Automation sh...
 
+### [ ] `ainative-technical-architectures-should-prioritize-dynamic-duct-tape-20260115`
+**AI-native technical architectures should prioritize 'dynamic duct tape' and**
+> AI-native technical architectures should prioritize 'dynamic duct tape' and speed-to-learning over traditional engineeri...
+
 ### [ ] `ais-primary-value-is-in-shifting-human-experts`
 **AI’s primary value is in shifting human experts...**
-> AI’s primary value is in shifting human experts 'higher in the problem stack' rather than simply automating existing low...
+> AI’s primary value and implementation objective is in shifting human experts 'higher in the problem stack' rather than s...
+
+### [ ] `agentic-workflows-possess-an-inherent-semantic-20260115-mcwl`
+**Agentic workflows possess an inherent 'semantic hunger' that forces them to**
+> Agentic workflows possess an inherent 'semantic hunger' that forces them to synthesize intelligence even in the absence ...
 
 ### [ ] `as-ai-commoditizes-content-generation-input-system`
 **As AI commoditizes content generation, 'input' (systematic listening...**
@@ -45,15 +57,23 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `as-generative-ai-commoditizes-highquality-output-t`
 **As generative AI commoditizes high-quality output, the true...**
-> As generative AI commoditizes high-quality output, the true competitive moat shifts to 'input'—systematic listening and ...
+> As generative AI commoditizes high-quality output, the true competitive moat shifts from mere digitization to 'semantic ...
 
 ### [ ] `building-sophisticated-outputs-by-orchestrating-mu`
 **Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient**
 > Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient and cost-effective ...
 
+### [ ] `concentrating-productivity-through-ai-into-tiny-hyperproductive-teams-20260115`
+**Concentrating productivity through AI into tiny, hyper-productive teams creates**
+> Concentrating productivity through AI into tiny, hyper-productive teams creates a 'Control Paradox' where power shifts f...
+
 ### [ ] `current-ai-implementations-often-create-an-informa`
 **Current AI implementations often create an 'Information Standstill'...**
 > Current AI implementations often create an 'Information Standstill' where words are merely moved between locations witho...
+
+### [ ] `effective-knowledge-management-in-the-age-of-llms-20260115`
+**Effective knowledge management in the age of LLMs requires shifting from raw**
+> Effective knowledge management in the age of LLMs requires shifting from raw data retrieval to multi-layered semantic in...
 
 ### [ ] `generic-ai-usage-is-detectable-and-disqualifying`
 **Generic AI usage is detectable and disqualifying**
@@ -63,9 +83,17 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **High-intelligence outputs are more reliably achieved through orchestrated...**
 > High-intelligence outputs are more reliably achieved through orchestrated sequences of 'dumb' models rather than single-...
 
+### [ ] `high-intensity-inspiration-driven-vibe-coding-m-20260115`
+**High-intensity, inspiration-driven 'vibe coding' may be the optimal building mode in the AI era, sup**
+> High-intensity, inspiration-driven 'vibe coding' may be the optimal building mode in the AI era, superseding traditional...
+
 ### [ ] `intelligent-and-resilient-system-behavior-is-bette`
 **Intelligent and resilient system behavior is better achieved...**
 > Intelligent and resilient system behavior is better achieved through multi-step orchestration of low-capability models t...
+
+### [ ] `small-highfidelity-autonomous-agents-enable-hypergranular-knowledge-20260115`
+**Small, high-fidelity autonomous agents enable hyper-granular knowledge**
+> Small, high-fidelity autonomous agents enable hyper-granular knowledge management by removing the traditional overhead a...
 
 ### [ ] `soft-skills-become-more-valuable-in-ai-world`
 **Soft skills become more valuable in AI world**
@@ -87,6 +115,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **The efficacy of automated habit-tracking systems is driven by social obligation rather than function**
 > The efficacy of automated habit-tracking systems is driven by social obligation rather than functional utility. Users ar...
 
+### [ ] `traditional-credentials-are-lagging-indicators-of-past-performance-20260115` ⚠️ (suggests: hiring-market)
+**Traditional credentials are lagging indicators of past performance, whereas**
+> Traditional credentials are lagging indicators of past performance, whereas 'Agency'—quantified by responsiveness and th...
+
 ### [ ] `vibe-coding-functions-as-a-powerful-identity-bridg`
 **Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ**
 > Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circles. It rebrands 'no...
@@ -95,11 +127,15 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Vibe coding should be positioned as a strategic...**
 > Vibe coding should be positioned as a strategic identity bridge for generalists rather than a technical subset of softwa...
 
-## careerspan (22 positions)
+## careerspan (33 positions)
+
+### [ ] `a-platforms-value-is-derived-from-its-density-20260115` ⚠️ (suggests: hiring-market, epistemology)
+**A platform's value is derived from its density and exclusivity rather than its**
+> A platform's value is derived from its density and exclusivity rather than its accessibility. By closing open signups an...
 
 ### [ ] `a-sustainable-job-search-requires-a-dietary-balanc`
 **A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability oppo**
-> A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability opportunities to maintai...
+> A sustainable job search requires a diversified 'dietary' balance: a foundation of stable, high-probability opportunitie...
 
 ### [ ] `career-development-tools-must-solve-for-the-inerti`
 **Career development tools must solve for the 'inertia...**
@@ -108,6 +144,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 ### [ ] `career-mobility-is-governed-by-a-geometric-distanc`
 **Career mobility is governed by a 'geometric distance' from an individual's existing domain and role **
 > Career mobility is governed by a 'geometric distance' from an individual's existing domain and role expertise. The marke...
+
+### [ ] `database-liquidity-in-hiring-platforms-is-a-function-20260115` ⚠️ (suggests: hiring-market, ai-automation)
+**Database liquidity in hiring platforms is a function of time-bound engagement,**
+> Database liquidity in hiring platforms is a function of time-bound engagement, not cumulative volume. Defining 'active' ...
 
 ### [ ] `everyone-has-valuable-things-to-say-about-themselv` ⚠️ (suggests: ai-automation)
 **Everyone has valuable things to say about themselves**
@@ -123,7 +163,7 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `identity-in-the-labor-market-is-semantic-not`
 **Identity in the labor market is semantic, not...**
-> Identity in the labor market is semantic, not syntactic; a professional identity is a collection of meaningful experienc...
+> Identity in the labor market is semantic, not syntactic; a professional identity is a multidimensional collection of 'ed...
 
 ### [ ] `in-the-ai-era-the-matching-component-of` ⚠️ (suggests: hiring-market, ai-automation)
 **In the AI era, the 'matching' component of...**
@@ -133,6 +173,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Job seeking and hiring should be viewed as...**
 > Job seeking and hiring should be viewed as a 'dietary' balance of risk, mixing predictable standard opportunities with h...
 
+### [ ] `lowering-friction-in-a-selection-process-does-not-20260115` ⚠️ (suggests: hiring-market, epistemology)
+**Lowering friction in a selection process does not inevitably dilute signal;**
+> Lowering friction in a selection process does not inevitably dilute signal; rather, it can improve signal by ensuring th...
+
 ### [ ] `maintaining-a-state-of-constant-readiness-via-aica` ⚠️ (suggests: ai-automation, worldview)
 **Maintaining a state of constant 'readiness' via AI-captured...**
 > Maintaining a state of constant 'readiness' via AI-captured intelligence collapses the latency within trust networks. Th...
@@ -141,17 +185,29 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Maintaining a strict separation between candidate-facing and employer-facing...**
 > Maintaining a strict separation between candidate-facing and employer-facing representatives creates a psychological saf...
 
-### [ ] `market-fundability-and-professional-acceptability-` ⚠️ (suggests: ai-automation)
+### [ ] `market-fundability-and-professional-acceptability-`
 **Market fundability and professional acceptability are functions of...**
-> Market fundability and professional acceptability are functions of 'geometric distance' from an individual's career core...
+> Career mobility, market fundability, and professional acceptability are functions of 'geometric distance' from an indivi...
+
+### [ ] `mature-singlepurpose-widget-products-face-a-20260115-qnhs`
+**Mature, single-purpose 'widget' products face a hard value ceiling regardless**
+> Mature, single-purpose 'widget' products face a hard value ceiling regardless of how well they execute. Once the core ut...
 
 ### [ ] `professional-identity-is-narrative-not-document`
 **Professional identity is narrative, not document**
 > Professional identity is semantic and narratively driven, rather than syntactic and document-bound. A person is a collec...
 
+### [ ] `proprietary-data-is-the-only-remaining-defensible-20260115` ⚠️ (suggests: ai-automation)
+**Proprietary data is the only remaining defensible moat in an AI-commoditized market. The 'holy grail**
+> Proprietary data is the only remaining defensible moat in an AI-commoditized market. The 'holy grail' of strategy is max...
+
 ### [ ] `psychological-safety-and-honesty-are-maximized-whe` ⚠️ (suggests: hiring-market)
 **Psychological safety and honesty are maximized when there...**
 > Psychological safety and honesty are maximized when there is a structural 'Separation of Concerns' between candidate adv...
+
+### [ ] `reducing-friction-in-a-selection-process-20260115-okwk` ⚠️ (suggests: hiring-market, epistemology)
+**Reducing friction in a selection process does not necessarily dilute the**
+> Reducing friction in a selection process does not necessarily dilute the quality of candidates; instead, it can improve ...
 
 ### [ ] `self-reflection-is-subject-to-a-high-activation-en`
 **Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T**
@@ -160,6 +216,14 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 ### [ ] `system-design-and-complex-technical-infrastructure`
 **System design and complex technical infrastructure can be...**
 > System design and complex technical infrastructure can be used as a gift-economy lever to bypass the 'cold start' proble...
+
+### [ ] `the-advisory-market-suffers-from-a-20260115-vzbi` ⚠️ (suggests: ai-automation)
+**The advisory market suffers from a structural 'Diagnosis-Treatment' gap where**
+> The advisory market suffers from a structural 'Diagnosis-Treatment' gap where advisors provide insight without the capac...
+
+### [ ] `the-consulting-market-suffers-from-a-20260115-noyg` ⚠️ (suggests: ai-automation)
+**The consulting market suffers from a structural 'Advisory-Execution Gap' where**
+> The consulting market suffers from a structural 'Advisory-Execution Gap' where experts diagnose problems without providi...
 
 ### [ ] `the-future-of-hiring-lies-in-a-persistent-mid-laye` ⚠️ (suggests: hiring-market, ai-automation)
 **The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship**
@@ -173,6 +237,18 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **The future of recruitment lies in democratizing the...**
 > The future of recruitment lies in democratizing the recruiter's commission by empowering non-professionals with professi...
 
+### [ ] `the-highest-leverage-in-career-transitions-20260115-uudm` ⚠️ (suggests: ai-automation, founder)
+**The highest leverage in career transitions occurs at the 'translation layer'**
+> The highest leverage in career transitions occurs at the 'translation layer' between deep domain expertise and technical...
+
+### [ ] `the-highest-leverage-in-career-transitions-occurs-at-20260115` ⚠️ (suggests: ai-automation, founder)
+**The highest leverage in career transitions occurs at the translation layer**
+> The highest leverage in career transitions occurs at the translation layer where deep domain expertise is converted into...
+
+### [ ] `the-modern-hiring-market-suffers-from-referral-depletion-20260115` ⚠️ (suggests: hiring-market)
+**The modern hiring market suffers from 'referral depletion.' Referrals are**
+> The modern hiring market suffers from 'referral depletion.' Referrals are actually finite, slow-to-recharge social capit...
+
 ### [ ] `the-most-effective-way-to-disrupt-recruitment-is` ⚠️ (suggests: hiring-market, ai-automation)
 **The most effective way to disrupt recruitment is...**
 > The most effective way to disrupt recruitment is to democratize the recruiter's financial incentives and data superiorit...
@@ -183,7 +259,7 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `there-is-a-strategic-advantage-in-decoupling-human`
 **There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluati**
-> There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluation' in the hiring pr...
+> There is a strategic advantage in decoupling 'human-centric reflection' and the 'vulnerable' side of career discovery (s...
 
 ## education (1 positions)
 
@@ -191,11 +267,23 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Cognitive Bootstrapping via Test Preparation**
 > Standardized test preparation teaches a transferable cognitive modality—a way of thinking under constraint—that generali...
 
-## epistemology (7 positions)
+## epistemology (13 positions)
+
+### [ ] `aimediated-expression-creates-a-recursive-arms-20260115-urdl` ⚠️ (suggests: ai-automation)
+**AI-mediated expression creates a recursive arms race where the distinction**
+> AI-mediated expression creates a recursive arms race where the distinction between human and machine-generated content e...
 
 ### [ ] `assessment-signal-validity-framework`
 **Assessment Signal Validity Framework**
 > Standardized assessments function as signal transmission systems whose utility depends on three properties: construct va...
+
+### [ ] `in-an-agentic-and-aidriven-world-technical-literacy-20260115`
+**In an agentic and AI-driven world, technical literacy is the primary**
+> In an agentic and AI-driven world, technical literacy is the primary requirement for cognitive sovereignty. Without unde...
+
+### [ ] `in-an-agentic-aidriven-world-technical-20260115-lxpr`
+**In an agentic, AI-driven world, technical literacy is the primary requirement**
+> In an agentic, AI-driven world, technical literacy is the primary requirement for 'cognitive sovereignty.' Without under...
 
 ### [ ] `information-engineering-distinction` ⚠️ (suggests: education)
 **Information Engineering Distinction**
@@ -204,6 +292,14 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 ### [ ] `magic-as-intentaction-abstraction`
 **Magic as Intent-Action Abstraction**
 > Magic is intent-to-action abstraction—when abstraction becomes complete enough that you can say what you want and it hap...
+
+### [ ] `mastery-of-complex-systems-is-best-20260115-vyno` ⚠️ (suggests: education)
+**Mastery of complex systems is best achieved when learning is an accidental**
+> Mastery of complex systems is best achieved when learning is an accidental byproduct of pursuing a high-utility outcome....
+
+### [ ] `minimalist-or-tautological-documentation-within-a-20260115-lutz` ⚠️ (suggests: ai-automation, personal-foundations)
+**Minimalist or tautological documentation within a structural system provides**
+> Minimalist or tautological documentation within a structural system provides more utility than descriptive verbosity. Wh...
 
 ### [ ] `polyorchestrator-model`
 **Polyorchestrator Model**
@@ -217,11 +313,19 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Sliding Knowledge Threshold**
 > The minimum viable knowledge threshold for any capability is sliding downward like Moore's Law—AI compression continuous...
 
+### [ ] `the-existence-of-highfidelity-architectural-structures-for-capturing-20260115`
+**The existence of high-fidelity architectural structures for capturing wisdom**
+> The existence of high-fidelity architectural structures for capturing wisdom often precedes and dictates the quality of ...
+
 ### [ ] `vectorized-merit-selection-as-bundle-matching-not-`
 **Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking**
 > In education and hiring, 'merit' should be treated as a multi-dimensional capability vector rather than a single scalar ...
 
-## founder (5 positions)
+## founder (7 positions)
+
+### [ ] `company-value-is-hierarchical-and-nested-like-a-20260115`
+**Company value is hierarchical and nested like a 'Russian Doll,' where core**
+> Company value is hierarchical and nested like a 'Russian Doll,' where core assets (technology) provide a floor value tha...
 
 ### [ ] `nontechnical-founders-can-build-with-ai`
 **Non-technical founders can build with AI**
@@ -239,11 +343,15 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **System design and technical scaffolding can be used...**
 > System design and technical scaffolding can be used as a gift-economy lever to bypass the 'cold start' problem in comple...
 
+### [ ] `the-long-race-to-the-middle-is-a-20260115`
+**The 'long race to the middle' is a common failure mode where a startup**
+> The 'long race to the middle' is a common failure mode where a startup maintains just enough momentum to survive but nev...
+
 ### [ ] `the-developmental-value-of-a-highdifficulty-moonsh`
 **The developmental value of a high-difficulty 'moonshot' project...**
 > The developmental value of a high-difficulty 'moonshot' project often outweighs the strategic value of a guaranteed 'sla...
 
-## hiring-market (42 positions)
+## hiring-market (46 positions)
 
 ### [ ] `a-candidates-primary-task-is-to-artificially-close`
 **A candidate's primary task is to 'artificially' close...**
@@ -279,7 +387,7 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `data-collected-independent-of-a-specific-job-appli`
 **Data collected independent of a specific job application...**
-> Data collected independent of a specific job application is inherently higher fidelity than application-specific data. B...
+> Professional data collected independent of a specific job application is inherently higher fidelity than application-spe...
 
 ### [ ] `employer-oblige`
 **Employer Oblige: The Case for Investing in Candidate Development**
@@ -299,7 +407,7 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `hiring-signal-collapse`
 **Hiring Signal Collapse**
-> Inbound hiring is structurally broken at a fundamental level. Not broken in the sense of 'needs optimization' but broken...
+> Inbound hiring is structurally broken at a fundamental level because the underlying mechanism no longer produces valid s...
 
 ### [ ] `hiring-stage-taxonomy`
 **Hiring Stage Taxonomy: Sourcing, Screening, Evaluation**
@@ -311,7 +419,7 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `in-a-career-pivot-a-candidates-primary-objective`
 **In a career pivot, a candidate's primary objective...**
-> In a career pivot, a candidate's primary objective is not demonstrating work capacity, but 'narrative engineering' to ar...
+> In a career pivot, a candidate's primary objective is not demonstrating work capacity or technical competency in the wor...
 
 ### [ ] `in-an-ai-augmented-landscape-the-transition-from-h`
 **In an AI-augmented landscape, the transition from 'hacking' to 'human-centric scaling' is marked by **
@@ -345,6 +453,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Portable Trust: Scaling Referral-Quality Signal**
 > Referrals work because they carry trust signal — someone with reputation stakes their credibility on a candidate. But re...
 
+### [ ] `predictive-reputation-markets-can-solve-the-information-asymmetry-20260115`
+**Predictive reputation markets can solve the information asymmetry in recruiting**
+> Predictive reputation markets can solve the information asymmetry in recruiting by turning recruiter 'clout' into a trad...
+
 ### [ ] `referrals-are-the-only-reliable-path-in-competitiv`
 **Referrals are the only reliable path in competitive markets**
 > In overcompetitive application environments, the only reliable way to stand out is through referrals. Networking is unco...
@@ -365,9 +477,17 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **The act of participating in a high-friction, high-effort...**
 > The act of participating in a high-friction, high-effort reflection process is a more reliable indicator of candidate qu...
 
+### [ ] `the-hiring-stack-is-commoditizing-into-isolated-verticals-20260115`
+**The hiring stack is commoditizing into isolated verticals where deterministic**
+> The hiring stack is commoditizing into isolated verticals where deterministic tasks like verification and vetting are be...
+
 ### [ ] `the-most-effective-path-to-reducing-hiring-bias`
 **The most effective path to reducing hiring bias...**
 > The most effective path to reducing hiring bias is not through 'blind' algorithms, but by dismantling the adversarial na...
+
+### [ ] `the-rapid-evolution-of-ai-has-20260115-opjj` ⚠️ (suggests: ai-automation, epistemology)
+**The rapid evolution of AI has triggered a generalized existential anxiety among**
+> The rapid evolution of AI has triggered a generalized existential anxiety among high-level tech executives (CPOs/CTOs). ...
 
 ### [ ] `the-recruitment-market-is-structured-around-a-mass`
 **The recruitment market is structured around a massive...**
@@ -387,7 +507,11 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `the-traditional-resume-is-a-failed-data-structure-2025-12-22`
 **The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne**
-> The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulnerability now fully e...
+> The traditional resume is a failed and obsolete data structure rather than a document because it lacks intrinsic, inhere...
+
+### [ ] `the-transition-from-measuring-how-much-20260115-romy`
+**The transition from measuring 'how much we build' to 'what we changed'**
+> The transition from measuring 'how much we build' to 'what we changed' necessitates a fundamental redefinition of senior...
 
 ### [ ] `the-willingness-of-a-candidate-to-engage-in-deep-s`
 **The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st**
@@ -427,15 +551,37 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Self-awareness enables strategic career pivots**
 > Self-awareness and self-reflection are foundational to career success. Understanding your strengths, weaknesses, and wha...
 
-## worldview (24 positions)
+## product-strategy (1 positions)
+
+### [ ] `there-is-a-help-threshold-where-20260115-vnek` ⚠️ (suggests: ai-automation)
+**There is a 'help threshold' where providing assistance or tool adoption support**
+> There is a 'help threshold' where providing assistance or tool adoption support becomes net-negative. Beyond this point,...
+
+## worldview (36 positions)
 
 ### [ ] `a-truly-effective-productivity-tool-functions-as-a-2025-12-26`
 **A truly effective productivity tool functions as a 'Home'—a digital space that reflects the user's v**
 > A truly effective productivity tool functions as a 'Home'—a digital space that reflects the user's vulnerability, life h...
 
+### [ ] `ai-tooling-is-bifurcating-into-two-distinct-archetypes-20260115` ⚠️ (suggests: ai-automation)
+**AI tooling is bifurcating into two distinct archetypes: 'browser-bound'**
+> AI tooling is bifurcating into two distinct archetypes: 'browser-bound' wrappers for accessibility and 'terminal-native'...
+
+### [ ] `ainative-productivity-is-characterized-by-an-20260115-babn` ⚠️ (suggests: ai-automation)
+**AI-native productivity is characterized by an 'existential fragility' due to**
+> AI-native productivity is characterized by an 'existential fragility' due to extreme platform dependency. The massive ga...
+
+### [ ] `company-culture-functions-as-an-organizational-operating-system-20260115`
+**Company culture functions as an organizational operating system, and**
+> Company culture functions as an organizational operating system, and 'output-centricity'—the prioritization of volume ov...
+
 ### [ ] `complexity-often-obscures-the-most-essential-compo` ⚠️ (suggests: epistemology)
 **Complexity often obscures the most essential components of...**
 > Complexity often obscures the most essential components of a system. By stripping away all secondary noise to focus on t...
+
+### [ ] `corporate-culture-serves-as-the-companys-20260115-hzfs`
+**Corporate culture serves as the company's operating system, and a narrow focus**
+> Corporate culture serves as the company's operating system, and a narrow focus on 'output-centricity' acts as a critical...
 
 ### [ ] `data-companies-that-lack-a-proprietary-acquisition` ⚠️ (suggests: ai-automation)
 **Data companies that lack a proprietary acquisition channel...**
@@ -457,6 +603,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Genre Shift and Fractal Contribution**
 > Society requires a genre shift—not restoration of the old Minimum Viable Existence, but restoration of the meta-belief t...
 
+### [ ] `highperforming-professionals-often-experience-an-identity-lag-where-20260115` ⚠️ (suggests: ai-automation)
+**High-performing professionals often experience an 'identity lag' where their**
+> High-performing professionals often experience an 'identity lag' where their internal self-conception fails to keep pace...
+
 ### [ ] `integrity-and-character-are-best-verified-not-thro` ⚠️ (suggests: hiring-market, ai-automation, personal-foundations)
 **Integrity and character are best verified not through deep interrogation, but through the triangulat**
 > Integrity and character are best verified not through deep interrogation, but through the triangulation of consistent be...
@@ -469,6 +619,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Internal self-assessment systematically lags external market signals. People often operate at a high**
 > Internal self-assessment systematically lags external market signals. People often operate at a higher level of competen...
 
+### [ ] `linkedin-utility-gap-strategic-suicide-20260115` ⚠️ (suggests: epistemology)
+**LinkedIn's Strategic Suicide Creates a Utility Gap**
+> LinkedIn's shift in focus from a professional utility to a social engagement network is actively destroying its primary ...
+
 ### [ ] `linkedin-s-shift-in-focus-from-a-professional-util` ⚠️ (suggests: epistemology)
 **LinkedIn's shift in focus from a professional utility to a social engagement network is actively des**
 > LinkedIn's shift in focus from a professional utility to a social engagement network is actively destroying its primary ...
@@ -477,6 +631,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai**
 > Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restraint—the ability to st...
 
+### [ ] `longitudinal-storytelling-and-multiyear-relationship-building-serve-as-20260115`
+**Longitudinal storytelling and multi-year relationship building serve as the**
+> Longitudinal storytelling and multi-year relationship building serve as the most robust form of identity and expertise v...
+
 ### [ ] `niche-platforms-will-displace-generalist-social-ne`
 **Niche platforms will displace generalist social networks**
 > Niche social networks oriented around specific interests/communities will increasingly displace generalist platforms lik...
@@ -484,6 +642,14 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 ### [ ] `optimal-longterm-physiological-and-skill-growth-re` ⚠️ (suggests: ai-automation)
 **Optimal long-term physiological and skill growth requires disciplined...**
 > Optimal long-term physiological and skill growth requires disciplined restraint rather than maximal effort. Pushing to t...
+
+### [ ] `partial-modernization-of-legacy-systems-often-20260115-opsf` ⚠️ (suggests: ai-automation)
+**Partial modernization of legacy systems often increases friction rather than**
+> Partial modernization of legacy systems often increases friction rather than reducing it. When a single component is upg...
+
+### [ ] `product-adoption-can-be-driven-by-20260115-icjx` ⚠️ (suggests: hiring-market, ai-automation)
+**Product adoption can be driven by 'skill acquisition as a side effect,' where**
+> Product adoption can be driven by 'skill acquisition as a side effect,' where users gain platform competence unconscious...
 
 ### [ ] `professional-identity-is-semantic-rather-than-synt-20251226_C` ⚠️ (suggests: hiring-market, careerspan, epistemology, personal-foundations)
 **Professional identity is semantic rather than syntactic; a person is a stable collection of 'meaning**
@@ -499,11 +665,15 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 
 ### [ ] `reducing-latency-in-trust-networks-transforms-inst-20251226_C`
 **Reducing latency in trust networks transforms institutions from manual brokers into platform orchest**
-> Reducing latency in trust networks transforms institutions from manual brokers into platform orchestrators. By maintaini...
+> Reducing latency in trust networks transforms institutions from manual brokers into real-time platform orchestrators. By...
 
 ### [ ] `social-accountability-in-digital-products-is-signi` ⚠️ (suggests: ai-automation)
 **Social accountability in digital products is significantly more...**
 > Social accountability in digital products is significantly more effective when delivered through anthropomorphized chann...
+
+### [ ] `status-signaling-often-requires-the-manufacture-20260115-saxh` ⚠️ (suggests: ai-automation, epistemology)
+**Status signaling often requires the manufacture of 'curated scarcity' rather**
+> Status signaling often requires the manufacture of 'curated scarcity' rather than maximum availability. High-status indi...
 
 ### [ ] `strategic-focus-should-prioritize-the-most-fundame`
 **Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as **
@@ -512,6 +682,10 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 ### [ ] `systemic-dominance-in-specific-industries-is-often`
 **Systemic dominance in specific industries is often the...**
 > Systemic dominance in specific industries is often the 'scar tissue' of historical exclusion. When groups are barred fro...
+
+### [ ] `technical-product-adoption-is-driven-more-20260115-vfxe` ⚠️ (suggests: ai-automation, education)
+**Technical product adoption is driven more by immediate economic incentives than**
+> Technical product adoption is driven more by immediate economic incentives than by the quality of developer experience o...
 
 ### [ ] `the-internet-of-careers-functions-as-a-collective`
 **The 'Internet of Careers' functions as a collective...**
@@ -525,5 +699,9 @@ Positions flagged with ⚠️ have keyword mismatches (may be mis-domained).
 **The internal 'growth' derived from pursuing a high-risk...**
 > The internal 'growth' derived from pursuing a high-risk 'moonshot' can be more valuable than the external 'win' of a low...
 
+### [ ] `the-systematic-extraction-and-categorization-of-me-20260115` ⚠️ (suggests: hiring-market)
+**The systematic extraction and categorization of meeting metadata (B-blocks) creates a persistent 'se**
+> The systematic extraction and categorization of meeting metadata (B-blocks) creates a persistent 'semantic graph' of a p...
+
 ---
-**Summary:** 124 positions, 31 flagged for review
+**Summary:** 168 positions, 55 flagged for review

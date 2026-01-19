@@ -27,12 +27,9 @@ WORKSPACE = Path("/home/workspace")
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 DASHBOARD_DATA_DIR = WORKSPACE / "Sites" / "build-tracker" / "data"
 DASHBOARD_DATA_FILE = DASHBOARD_DATA_DIR / "builds.json"
-STALE_THRESHOLD_DAYS = 7
+STALE_THRESHOLD_DAYS = 60  # Builds inactive for 60+ days become stale/backlog
 RECENT_COMPLETE_LIMIT = 10
-
-# Builds created before this date are considered "pre-tracker era"
-# They won't show as active - treated as legacy/archived
-TRACKER_EPOCH = "2026-01-18"
+TRACKER_EPOCH = "2026-01-18"  # Builds before this are "pre-tracker"
 
 
 def get_iso_timestamp() -> str:
@@ -84,28 +81,81 @@ def extract_objective(build_dir: Path) -> str | None:
         return None
 
 
-def is_stale(build_info: dict, completions_dir: Path) -> bool:
-    """Determine if a build is stale (no activity in STALE_THRESHOLD_DAYS)."""
-    if build_info.get("status") != "active":
-        return False
+def get_last_activity(build_dir: Path) -> datetime | None:
+    """Get the most recent activity timestamp for a build.
     
-    now = datetime.now().astimezone()
-    threshold = now - timedelta(days=STALE_THRESHOLD_DAYS)
+    Checks: meta.json, completion files, worker briefs, PLAN.md
+    Returns the most recent mtime, or None if no files found.
+    """
+    candidates = []
     
-    # Check meta.json mtime
-    meta_mtime = build_info.get("_meta_mtime")
-    if meta_mtime and meta_mtime > threshold:
-        return False
+    # meta.json
+    meta = build_dir / "meta.json"
+    if meta.exists():
+        candidates.append(get_file_mtime(meta))
     
-    # Check latest completion file
+    # PLAN.md
+    plan = build_dir / "PLAN.md"
+    if plan.exists():
+        candidates.append(get_file_mtime(plan))
+    
+    # plan.json
+    plan_json = build_dir / "plan.json"
+    if plan_json.exists():
+        candidates.append(get_file_mtime(plan_json))
+    
+    # Completion files
+    completions_dir = build_dir / "completions"
     if completions_dir.exists():
-        completion_files = list(completions_dir.glob("W*.json"))
-        if completion_files:
-            latest_completion = max(get_file_mtime(f) for f in completion_files)
-            if latest_completion and latest_completion > threshold:
-                return False
+        for f in completions_dir.glob("*.json"):
+            candidates.append(get_file_mtime(f))
     
-    return True
+    # Worker briefs
+    workers_dir = build_dir / "workers"
+    if workers_dir.exists():
+        for f in workers_dir.glob("*.md"):
+            candidates.append(get_file_mtime(f))
+    
+    # Filter None and return max
+    valid = [c for c in candidates if c is not None]
+    return max(valid) if valid else None
+
+
+def determine_build_status(
+    created: str | None,
+    complete_workers: int,
+    total_workers: int,
+    last_activity: datetime | None
+) -> str:
+    """Determine build status based on simplified model.
+    
+    - complete: all workers done (complete >= total > 0)
+    - pre-tracker: created before TRACKER_EPOCH
+    - stale: incomplete AND last_activity > 60 days ago (backlog)
+    - active: incomplete AND last_activity within 60 days (working)
+    - draft: no workers yet
+    """
+    # Check if complete
+    if total_workers > 0 and complete_workers >= total_workers:
+        return "complete"
+    
+    # Check if pre-tracker
+    if created and created < TRACKER_EPOCH:
+        return "pre-tracker"
+    
+    # Check if stale (backlog) - no activity in 60 days
+    if last_activity:
+        now = datetime.now().astimezone()
+        threshold = now - timedelta(days=STALE_THRESHOLD_DAYS)
+        if last_activity < threshold:
+            return "stale"
+    
+    # If no workers defined yet, it's a draft
+    if total_workers == 0:
+        return "draft"
+    
+    # Otherwise active
+    return "active"
 
 
 def scan_build_v2(build_dir: Path) -> dict | None:
@@ -118,6 +168,9 @@ def scan_build_v2(build_dir: Path) -> dict | None:
         meta = json.loads(meta_file.read_text())
     except (json.JSONDecodeError, IOError):
         return None
+    
+    # If meta.json explicitly says complete, trust it (user closed the build)
+    explicit_complete = meta.get("status") == "complete"
     
     completions_dir = build_dir / "completions"
     workers_dir = build_dir / "workers"
@@ -147,39 +200,45 @@ def scan_build_v2(build_dir: Path) -> dict | None:
         worker_briefs = list(workers_dir.glob("W*.md"))
         total_workers = len(worker_briefs)
     
-    # Extract objective from PLAN.md if available
+    # Extract created date and objective
+    created = meta.get("created")
     objective = extract_objective(build_dir)
+    
+    # Get last activity timestamp
+    last_activity = get_last_activity(build_dir)
+    last_activity_str = last_activity.isoformat(timespec='seconds') if last_activity else None
+    
+    # Determine status
+    # If explicitly marked complete in meta.json, trust it
+    if explicit_complete:
+        status = "complete"
+    else:
+        status = determine_build_status(created, complete_workers, total_workers, last_activity)
+    
+    # Calculate progress
+    if total_workers > 0:
+        progress_pct = round((complete_workers / total_workers) * 100)
+    else:
+        progress_pct = 0
     
     build_info = {
         "slug": meta.get("slug", build_dir.name),
         "title": meta.get("title", build_dir.name),
-        "status": meta.get("status", "unknown"),
+        "status": status,
         "type": meta.get("type", "unknown"),
         "created": meta.get("created"),
         "completed_at": meta.get("completed_at"),
+        "last_activity": last_activity_str,
         "objective": objective,
         "workers": {
             "complete": complete_workers,
             "total": total_workers
         },
-        "progress_pct": 0,
+        "progress_pct": progress_pct,
         "path": str(build_dir.relative_to(WORKSPACE)),
         "_meta_mtime": get_file_mtime(meta_file),
         "_is_v2": True
     }
-    
-    # Calculate progress
-    total = build_info["workers"]["total"]
-    complete = build_info["workers"]["complete"]
-    if total > 0:
-        build_info["progress_pct"] = round((complete / total) * 100)
-        # Auto-detect completion: if all workers done, mark as complete
-        # (meta.json status may be stale)
-        if complete >= total:
-            build_info["status"] = "complete"
-    
-    # Check staleness
-    build_info["is_stale"] = is_stale(build_info, completions_dir)
     
     return build_info
 
@@ -234,6 +293,13 @@ def scan_build_plan_json(build_dir: Path) -> dict | None:
         mtime = get_file_mtime(plan_file)
         created = mtime.strftime("%Y-%m-%d") if mtime else None
     
+    # Get last activity
+    last_activity = get_last_activity(build_dir)
+    last_activity_str = last_activity.isoformat(timespec='seconds') if last_activity else None
+    
+    # Determine status
+    status = determine_build_status(created, complete_workers, total_workers, last_activity)
+    
     # Calculate progress
     if total_workers > 0:
         progress_pct = round((complete_workers / total_workers) * 100)
@@ -247,6 +313,7 @@ def scan_build_plan_json(build_dir: Path) -> dict | None:
         "type": plan.get("type", "code_build"),
         "created": created,
         "completed_at": None,
+        "last_activity": last_activity_str,
         "objective": objective,
         "workers": {
             "complete": complete_workers,
@@ -257,9 +324,6 @@ def scan_build_plan_json(build_dir: Path) -> dict | None:
         "_is_v2": True,
         "_meta_mtime": get_file_mtime(plan_file)
     }
-    
-    # Check staleness
-    build_info["is_stale"] = is_stale(build_info, completions_dir)
     
     return build_info
 
@@ -319,6 +383,13 @@ def scan_build_legacy(build_dir: Path) -> dict | None:
     # Extract objective if PLAN.md exists
     objective = extract_objective(build_dir)
     
+    # Get last activity
+    last_activity = get_last_activity(build_dir)
+    last_activity_str = last_activity.isoformat(timespec='seconds') if last_activity else None
+    
+    # Determine status
+    status = determine_build_status(created, complete_workers, total_workers, last_activity)
+    
     build_info = {
         "slug": slug,
         "title": slug.replace("-", " ").title(),
@@ -326,6 +397,7 @@ def scan_build_legacy(build_dir: Path) -> dict | None:
         "type": "code_build" if has_v2_structure else "legacy",
         "created": created,
         "completed_at": created if status == "complete" else None,
+        "last_activity": last_activity_str,
         "objective": objective,
         "workers": {
             "complete": complete_workers,
@@ -335,12 +407,6 @@ def scan_build_legacy(build_dir: Path) -> dict | None:
         "path": str(build_dir.relative_to(WORKSPACE)),
         "_is_v2": has_v2_structure
     }
-    
-    # Check staleness for active builds
-    if status == "active":
-        build_info["is_stale"] = is_stale(build_info, completions_dir)
-    else:
-        build_info["is_stale"] = False
     
     return build_info
 
@@ -426,7 +492,7 @@ def output_json(builds: list[dict], show_all: bool):
     
     active_builds = [b for b in clean_builds if b.get("status") in ("active", "in_progress")]
     complete_builds = [b for b in clean_builds if b.get("status") == "complete"]
-    stale_builds = [b for b in clean_builds if b.get("is_stale")]
+    stale_builds = [b for b in clean_builds if b.get("status") == "stale"]
     
     # Limit complete builds unless --all
     if not show_all and len(complete_builds) > RECENT_COMPLETE_LIMIT:
@@ -454,7 +520,7 @@ def output_human(builds: list[dict], show_all: bool, incomplete_only: bool):
     if active_builds:
         print("Active Builds:")
         for b in active_builds:
-            stale_flag = " ⚠️ stale" if b.get("is_stale") else ""
+            stale_flag = " ⚠️ stale" if b.get("status") == "stale" else ""
             workers = b.get("workers", {})
             complete = workers.get("complete", 0)
             total = workers.get("total", 0)
@@ -500,7 +566,7 @@ def output_human(builds: list[dict], show_all: bool, incomplete_only: bool):
     total = len(builds)
     active = len(active_builds)
     complete = len(complete_builds)
-    stale = len([b for b in builds if b.get("is_stale")])
+    stale = len([b for b in builds if b.get("status") == "stale"])
     
     print(f"Total: {total} builds ({active} active, {complete} complete)", end="")
     if stale > 0:
@@ -519,22 +585,24 @@ def cmd_regenerate(args):
         clean = {k: v for k, v in b.items() if not k.startswith("_")}
         clean_builds.append(clean)
     
-    # Count by status (pre-tracker is separate from active)
-    active_builds = [b for b in clean_builds if b.get("status") in ("active", "in_progress")]
+    active_builds = [b for b in clean_builds if b.get("status") == "active"]
     complete_builds = [b for b in clean_builds if b.get("status") == "complete"]
     pre_tracker_builds = [b for b in clean_builds if b.get("status") == "pre-tracker"]
-    stale_builds = [b for b in clean_builds if b.get("is_stale")]
+    stale_builds = [b for b in clean_builds if b.get("status") == "stale"]
+    draft_builds = [b for b in clean_builds if b.get("status") == "draft"]
     
     output = {
         "generated_at": get_iso_timestamp(),
         "tracker_epoch": TRACKER_EPOCH,
+        "stale_threshold_days": STALE_THRESHOLD_DAYS,
         "builds": clean_builds,
         "summary": {
             "total": len(clean_builds),
             "active": len(active_builds),
             "complete": len(complete_builds),
-            "pre_tracker": len(pre_tracker_builds),
-            "stale": len(stale_builds)
+            "draft": len(draft_builds),
+            "stale": len(stale_builds),
+            "pre_tracker": len(pre_tracker_builds)
         }
     }
     
@@ -546,7 +614,7 @@ def cmd_regenerate(args):
     
     print(f"✓ Dashboard data regenerated")
     print(f"  File: {DASHBOARD_DATA_FILE.relative_to(WORKSPACE)}")
-    print(f"  Builds: {len(clean_builds)} total ({len(active_builds)} active, {len(pre_tracker_builds)} pre-tracker)")
+    print(f"  Builds: {len(clean_builds)} total ({len(active_builds)} active, {len(stale_builds)} backlog, {len(pre_tracker_builds)} pre-tracker)")
 
 
 def main():

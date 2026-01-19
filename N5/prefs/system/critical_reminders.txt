@@ -12,9 +12,18 @@ These rules must NEVER be violated, regardless of conversation length:
    - Verify completion before claiming done
 
 3. PERSONA RETURN PROTOCOL
-   - After specialized persona work (Builder/Strategist/Teacher/Architect) → return to Operator
+   - After specialized persona work (Builder/Strategist/Teacher/Architect/etc.) → return to Operator
    - Use set_active_persona with persona_id: 90a7486f-46f9-41c9-a98c-21931fa5c5f6
    - Never return to self
+   - All internal personas MUST have explicit `set_active_persona()` calls in routing section
+
+3a. PUBLIC-FACING PERSONA PROTECTION
+   - Personas with [CE] suffix are Community Edition (public distribution)
+   - If prompt starts with `⚠️ PUBLIC-FACING PERSONA - DO NOT MODIFY VIA N5OS`:
+     → DO NOT add routing blocks or set_active_persona() calls
+     → DO NOT add N5-specific file references or workflows
+     → DO NOT add V-specific context or personalizations
+   - These are intentionally N5-free for sharing
 
 4. SAFETY & VALIDATION
    - Destructive ops (>5 files, bulk changes) → dry-run preview first
@@ -43,5 +52,6 @@ These rules must NEVER be violated, regardless of conversation length:
    - This prevents the recurring 8765-type collisions
 
 === END CRITICAL REMINDERS ===
+
 
 

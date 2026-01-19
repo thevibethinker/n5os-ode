@@ -33,9 +33,6 @@ try {
 try {
   db.exec(`ALTER TABLE sessions ADD COLUMN customer_email TEXT`);
 } catch (e) { /* column exists */ }
-try {
-  db.exec(`ALTER TABLE sessions ADD COLUMN report_json TEXT`);
-} catch (e) { /* column exists */ }
 
 export interface Session {
   id: string;
@@ -46,7 +43,6 @@ export interface Session {
   customer_email: string | null;
   created_at: string;
   report_summary: string | null;
-  report_json: string | null;
 }
 
 export function createSession(
@@ -74,20 +70,12 @@ export function updateSessionStripe(
 
 export function updateSessionReport(
   id: string,
-  reportSummary: string,
-  reportJson?: string
+  reportSummary: string
 ): void {
-  if (reportJson) {
-    const stmt = db.prepare(
-      "UPDATE sessions SET report_summary = ?, report_json = ? WHERE id = ?"
-    );
-    stmt.run(reportSummary, reportJson, id);
-  } else {
-    const stmt = db.prepare(
-      "UPDATE sessions SET report_summary = ? WHERE id = ?"
-    );
-    stmt.run(reportSummary, id);
-  }
+  const stmt = db.prepare(
+    "UPDATE sessions SET report_summary = ? WHERE id = ?"
+  );
+  stmt.run(reportSummary, id);
 }
 
 export function getSession(id: string): Session | undefined {
@@ -101,7 +89,6 @@ export function getSessionByStripe(stripeSessionId: string): Session | undefined
 }
 
 export default db;
-
 
 
 

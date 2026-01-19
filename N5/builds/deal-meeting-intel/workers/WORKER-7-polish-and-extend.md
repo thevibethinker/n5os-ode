@@ -1,16 +1,16 @@
 ---
 created: 2026-01-18
 last_edited: 2026-01-18
-version: 1.0
-provenance: con_GCktM2iwLZIi5cHK
+version: 2.0
+provenance: con_Eu1OoHRtx1VWaR6g
 worker_id: 7
 title: Polish & Extend - Notion Workaround, SMS Commands, B37 Template, Email Backfill
 est_time: 2 hours
 depends_on: [1, 2, 3, 4, 5, 6]
-status: ready
+status: complete
 ---
 
-# Worker 7: Polish & Extend
+# Worker 7: Polish & Extend ✅
 
 ## Context Summary
 
@@ -37,74 +37,56 @@ status: ready
 
 ---
 
-## Task 1: Notion Append Workaround
+## Task 1: Notion Append SOLUTION ✅
 
 ### Problem
 `notion-append-block` returns "Unknown error" — can't append content to pages.
 
-### Solution: Read-Modify-Write Pattern
+**SOLVED (2026-01-18):** `notion-append-block` DOES WORK for appending to page body content.
+The original issue was likely trying to append to database properties, not page body.
 
-Instead of appending, we:
-1. Read the current "Notes" or "Intelligence Summary" field
-2. Prepend new content to existing content
-3. Write back the combined content
+### Solution: Append Blocks to Page Body (NOT Property Update)
+
+**Discovery:** We don't need read-modify-write on properties. Instead:
+1. Use `notion-append-block` with `blockTypes: ["markdownContents"]`
+2. Content goes into the page BODY (not database property fields)
+3. This is BETTER because body supports rich formatting
 
 ### Implementation
 
-Update `N5/scripts/notion_deal_sync.py` to add a `prepend_intel` function:
+**Helper script:** `file 'N5/scripts/notion_intel_prepend.py'`
 
-```python
-def prepend_intel_to_page(
-    notion_page_id: str,
-    field_name: str,  # "Notes" or "Intelligence Summary"
-    new_content: str,
-    email: str = "vrijen@mycareerspan.com"
-) -> bool:
-    """
-    Prepend intel to a Notion field using read-modify-write.
-    
-    1. use_app_notion("notion-retrieve-page", pageId=notion_page_id)
-    2. Extract current field value
-    3. Prepend new_content with timestamp separator
-    4. use_app_notion("notion-update-page", pageId=..., propertyValues=[...])
-    """
-    # This needs to be executed by Zo since it uses app tools
-    pass
-```
-
-**Format for prepended intel:**
-```
----
-## [2026-01-18] Meeting: Tope Awotona Sync
-**Source:** Meeting B37 block
-**Stage:** engaged → negotiating
-
-### Key Facts
-- Confirmed interest in partnership
-- Budget approved by board
-- Timeline: Q1 2026
-
-### Next Action
-Schedule follow-up to discuss terms
-
----
-[Previous content below]
-```
-
-### Test
 ```bash
-# Retrieve current Notes field
-use_app_notion("notion-retrieve-page", {"pageId": "2e85c3d6-a5db-806f-974f-e4e30839c707"})
-
-# Update with prepended content
-use_app_notion("notion-update-page", {
-    "pageId": "2e85c3d6-a5db-806f-974f-e4e30839c707",
-    "propertyValues": [{
-        "propertyIdOrName": "Notes",
-        "propertyValue": "[NEW CONTENT]\n\n---\n\n[EXISTING CONTENT]"
-    }]
-})
+# Format intel for append
+python3 N5/scripts/notion_intel_prepend.py format-markdown \
+    --source-title "Meeting: Tope Awotona Sync" \
+    --source-type "meeting" \
+    --stage-before "engaged" \
+    --stage-after "qualified" \
+    --key-fact "In-person meeting scheduled Jan 30 NYC" \
+    --next-action "Send Howie dossier" \
+    --json
 ```
+
+**Zo tool call:**
+```python
+use_app_notion("notion-append-block", {
+    "pageId": "<notion_page_id>",
+    "blockTypes": ["markdownContents"],
+    "markdownContents": ["## [2026-01-18] Meeting Intel\n**Source:** meeting\n..."]
+}, email="vrijen@mycareerspan.com")
+```
+
+### Tested Successfully
+- **Page:** Darwinbox (`2e85c3d6-a5db-806f-974f-e4e30839c707`)
+- **Result:** 5 blocks appended (heading, paragraphs, bullets)
+- **Verified:** `notion-retrieve-block` shows content with `retrieveMarkdown: true`
+
+### Why This Is Better Than Property Update
+1. **Rich formatting** — Headers, bullets, bold preserved
+2. **No read-modify-write** — Direct append, no race conditions
+3. **More visible** — Page body content is primary, properties are metadata
+4. **Simpler** — One API call instead of retrieve→modify→update
 
 ---
 
@@ -280,14 +262,27 @@ create_agent(
 
 ## Task 5: Checklist
 
-- [ ] **Notion Workaround**: Implement read-modify-write prepend in `notion_deal_sync.py`
-- [ ] **Test Notion Prepend**: Update Darwinbox Notes field with test intel
-- [ ] **SMS Add Command**: Extend `sms_deal_handler.py` with `n5 deal add`
-- [ ] **SMS Status Command**: Add `n5 deal status <company>`
-- [ ] **B37 Regenerate**: Force-regenerate B37 for Tope meeting
-- [ ] **Email Backfill**: Add `--offset` and `--batch-size` flags
-- [ ] **Backfill Agent**: Create scheduled agent for gradual backfill
-- [ ] **Documentation**: Update ORCHESTRATOR.md with new commands
+- [x] **Notion Solution**: Discovered `notion-append-block` works for page body
+- [x] **Test Notion Append**: Darwinbox page body updated with test intel
+- [x] **SMS Add Command**: `n5 deal add <company> <pipeline> [notes]` ✓
+- [x] **SMS Status Command**: `n5 deal status <company>` ✓
+- [x] **SMS List Command**: `n5 deal list [hot|warm|cold|all]` ✓
+- [x] **B37 Regenerate**: Tope meeting B37 → v2.0 polished
+- [x] **Email Backfill**: Added `--offset`, `--batch-size`, backfill subcommand
+- [x] **Backfill Agent**: Created self-destructing agent `329c4489-db3d-46b0-8a3a-8e5e33d55b32`
+- [x] **Documentation**: ORCHESTRATOR.md updated to v4.0
+- [x] **Tests Fixed**: All 42 deal tests passing
+
+## Backfill Agent Details
+
+**Agent ID:** `329c4489-db3d-46b0-8a3a-8e5e33d55b32`
+**Schedule:** 2 AM daily × 3 runs (COUNT=3)
+**Target:** 60 days (2 months of email history)
+**Runs Needed:** 2 (30-day windows)
+**Features:**
+- Progress SMS notifications after each run
+- Self-destructs when backfill complete
+- State tracked in `/home/workspace/N5/data/backfill_state.json`
 
 ---
 

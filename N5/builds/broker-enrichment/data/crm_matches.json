@@ -1,0 +1,113 @@
+{
+  "search_completed": "2026-01-18T18:15:00-05:00",
+  "brokers": [
+    {
+      "name": "Jennifer Ives",
+      "notion_page_id": "2ec5c3d6-a5db-8001-915a-c7eb74d380fa",
+      "crm_profile": null,
+      "crm_status": "NOT_FOUND",
+      "meeting_found": false,
+      "action": "EMAIL_SEARCH"
+    },
+    {
+      "name": "Ajit Singh",
+      "notion_page_id": "2ec5c3d6-a5db-802b-a9ee-e5367995c5d9",
+      "crm_profile": null,
+      "crm_status": "NOT_FOUND",
+      "meeting_found": false,
+      "action": "EMAIL_SEARCH"
+    },
+    {
+      "name": "Kamina Singh",
+      "notion_page_id": "2ec5c3d6-a5db-804f-95f9-d95a150b84be",
+      "crm_profile": "Personal/Knowledge/CRM/individuals/kamina-singh.md",
+      "crm_status": "FOUND",
+      "meeting_found": true,
+      "meeting_path": "Personal/Meetings/Archive/2025-Q3/2025-09-16_kamina-singh_vml-event_[P]",
+      "extracted": {
+        "role": "Community organizer / Event lead (VML)",
+        "company": "VML",
+        "notes": "Strong connector to HR/recruitment executives (Northwell VP). Offered podcast intro and community contacts.",
+        "email": null
+      },
+      "action": "READY_TO_ENRICH"
+    },
+    {
+      "name": "Katherine Von Jan",
+      "notion_page_id": "2ec5c3d6-a5db-8056-9d06-de12d7d4debb",
+      "crm_profile": null,
+      "crm_status": "NOT_FOUND",
+      "meeting_found": false,
+      "action": "EMAIL_SEARCH"
+    },
+    {
+      "name": "Vir Kashyap",
+      "notion_page_id": "2ec5c3d6-a5db-8057-922b-c64323927ff7",
+      "crm_profile": null,
+      "crm_status": "NOT_FOUND",
+      "meeting_found": false,
+      "action": "EMAIL_SEARCH"
+    },
+    {
+      "name": "Colin Emerson",
+      "notion_page_id": "2ec5c3d6-a5db-805b-9ed7-f26d2d5eafb6",
+      "crm_profile": "Knowledge/crm/individuals/colinnavon.md",
+      "crm_status": "PARTIAL_MATCH",
+      "meeting_found": true,
+      "meeting_path": "Personal/Meetings/Week-of-2025-11-10/2025-11-12_Colinnavon-Vrijenattawar",
+      "action": "VERIFY_IDENTITY"
+    },
+    {
+      "name": "Michael Fanous",
+      "notion_page_id": "2ec5c3d6-a5db-8099-bd13-db047bc8407e",
+      "crm_profile": null,
+      "crm_status": "NOT_FOUND",
+      "meeting_found": false,
+      "action": "EMAIL_SEARCH"
+    },
+    {
+      "name": "Reliance",
+      "notion_page_id": "2ec5c3d6-a5db-80e6-a408-c4b14f0abbd1",
+      "crm_profile": null,
+      "crm_status": "ORG_NOT_PERSON",
+      "meeting_found": false,
+      "action": "CLARIFY_CONTACT"
+    },
+    {
+      "name": "Ray Batra",
+      "notion_page_id": "2ec5c3d6-a5db-80f4-98b4-eab69ff37d59",
+      "crm_profile": "Personal/Knowledge/CRM/individuals/ray-batra.md",
+      "crm_status": "FOUND",
+      "meeting_found": true,
+      "meeting_path": "Personal/Meetings/Week-of-2025-09-15/2025-09-16_Fohe-partnership-pilot",
+      "extracted": {
+        "role": "FOHE representative / community lead",
+        "company": "FOHE (community)",
+        "notes": "Lead contact in FOHE meeting. Asked clarifying questions about pilot scope and employer integration.",
+        "email": null
+      },
+      "action": "READY_TO_ENRICH"
+    },
+    {
+      "name": "Jeffrey Botteron",
+      "notion_page_id": "2ec5c3d6-a5db-80fd-aff4-c3ac5fd88ab7",
+      "notion_display_name": "Jeffery Bot",
+      "crm_profile": "Knowledge/crm/individuals/jeffrey-botteron.md",
+      "crm_status": "FOUND",
+      "meeting_found": true,
+      "meeting_path": "Personal/Meetings/Week-of-2026-01-05/2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron",
+      "extracted": {
+        "role": "[To be determined]",
+        "company": "Techbuffalo",
+        "email": "jbotteron@techbuffalo.org"
+      },
+      "action": "READY_TO_ENRICH"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "ready_to_enrich": 3,
+    "need_email_search": 5,
+    "need_clarification": 2
+  }
+}

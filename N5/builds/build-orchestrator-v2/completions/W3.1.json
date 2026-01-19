@@ -1,0 +1,56 @@
+{
+  "worker_id": "W3.1",
+  "status": "complete",
+  "completed_at": "2026-01-19T00:05:00+00:00",
+  "convo_id": "con_E8uIGOfPLSoPSEAV",
+  "files_created": [
+    "N5/scripts/build_status.py",
+    "Sites/build-tracker/data/builds.json"
+  ],
+  "files_modified": [],
+  "decisions": [
+    {
+      "decision": "Stale threshold set to 7 days",
+      "rationale": "Per brief specification. Checks both meta.json mtime AND latest completion file mtime - must have no activity on either for 7+ days to be flagged stale."
+    },
+    {
+      "decision": "Legacy builds default to 'complete' status",
+      "rationale": "With 140+ legacy builds and only 1 v2 build, defaulting to complete is safer than marking old work as 'active'. Only builds with STATUS.md containing 'active' or 'in progress' are flagged active."
+    },
+    {
+      "decision": "Dashboard data includes ALL builds, not limited",
+      "rationale": "The regenerate command writes full dataset for dashboard. The list command uses RECENT_COMPLETE_LIMIT=10 for human output only. Dashboard can filter/paginate client-side."
+    },
+    {
+      "decision": "Created Sites/build-tracker/data/ directory",
+      "rationale": "Dashboard site doesn't exist yet (W3.2's job), but creating data directory and JSON file provides immediate value and validates the data pipeline."
+    },
+    {
+      "decision": "JSON output matches update_build.py conventions per W2.2 recommendation",
+      "rationale": "Followed W2.2's recommendation: reused status --json field structure (workers.complete, workers.total, progress_pct, etc.) for consistency across tools."
+    }
+  ],
+  "recommendations": [
+    {
+      "for": "W3.2 (dashboard site)",
+      "recommendation": "builds.json is already generated at Sites/build-tracker/data/builds.json. The dashboard can read this directly. Consider making the dashboard call 'regenerate' on load or have a refresh button."
+    },
+    {
+      "for": "Orchestrator",
+      "recommendation": "Most builds (140/141) are legacy format. Over time, migrating important legacy builds to v2 format (adding meta.json) would improve status tracking. Low priority - legacy defaults work acceptably."
+    }
+  ],
+  "blockers": [],
+  "tests_run": [
+    "list → Shows 3 active, 138 complete, with progress bars and dates",
+    "list --incomplete → Correctly filters to 3 active builds only",
+    "list --json → Valid JSON with generated_at, builds array, summary stats",
+    "list --all → Shows all 141 builds instead of limiting to 10 recent",
+    "regenerate → Creates Sites/build-tracker/data/builds.json (52KB, 141 builds)"
+  ],
+  "notes_for_orchestrator": [
+    "The stale detection currently shows 0 stale builds because all active builds have recent file activity. The logic is implemented and will flag builds correctly once activity ages past 7 days.",
+    "Legacy build detection relies on STATUS.md file content analysis. Only 2 legacy builds were detected as 'active' (context-graph, unified-meeting-intake) - all others default to complete.",
+    "Consider adding a 'build_status.py migrate <slug>' command in future to convert legacy builds to v2 format."
+  ]
+}

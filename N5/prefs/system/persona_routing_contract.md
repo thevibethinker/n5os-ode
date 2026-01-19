@@ -1,7 +1,8 @@
 ---
 created: 2025-11-29
-last_edited: 2025-12-14
-version: 1.1
+last_edited: 2026-01-15
+version: 1.2
+provenance: con_HYZnpiKQ004nvcO8
 ---
 
 # Persona Routing Contract (System-Level)
@@ -275,5 +276,79 @@ This contract must operate in a **memory-first** way:
 **Bidirectional Handoffs:**
 - Trainer → Nutritionist: When diet, supplementation, or metabolic recovery is the bottleneck
 - Nutritionist → Trainer: When workout programming or physical recovery is the bottleneck
+
+
+---
+
+## 9. Enforcement Mechanisms (Added 2026-01-15)
+
+These mechanisms ensure personas actually return to Operator rather than getting "stuck":
+
+### 9.1 User Rule Enforcement
+
+A conditional rule fires after specialist persona work completes:
+- **Condition:** When completing work as Builder, Strategist, Teacher, etc.
+- **Action:** MUST call `set_active_persona("90a7486f-46f9-41c9-a98c-21931fa5c5f6")` with summary
+- **Rule ID:** `091bcb5c-505b-4e0c-835e-a4b2d1269b6e`
+
+### 9.2 Persona Time Tracking
+
+Script: `N5/scripts/persona_tracker.py`
+
+Tracks how long each specialist persona has been active:
+- **Warning at 5 exchanges:** "Consider returning to Operator"
+- **Alert at 8 exchanges:** "Specialist active too long - return to Operator"
+- Operator is exempt from tracking
+
+Usage:
+```bash
+python3 N5/scripts/persona_tracker.py start <persona_id> --convo <convo_id>
+python3 N5/scripts/persona_tracker.py increment --convo <convo_id>
+python3 N5/scripts/persona_tracker.py status --convo <convo_id>
+```
+
+### 9.3 Weekly Audit (Scheduled Task)
+
+Scheduled task runs every Sunday at 9am ET:
+- Validates all internal personas have routing blocks
+- Checks public-facing personas have protection notices
+- Reports any drift or non-compliance
+
+### 9.4 Audit Script
+
+Script: `N5/scripts/persona_audit.py`
+
+Validates persona routing compliance:
+- Checks for `## Routing & Handoff` section
+- Checks for `set_active_persona()` calls
+- Checks for explicit return-to-Operator instruction
+- Validates all referenced persona IDs are valid
+
+Usage:
+```bash
+# From Zo: list_personas output piped to audit
+python3 N5/scripts/persona_audit.py --fix < personas.json
+```
+
+---
+
+## 10. Public-Facing Persona Protection
+
+Personas marked with `[CE]` (Community Edition) or containing the header:
+```
+⚠️ PUBLIC-FACING PERSONA - DO NOT MODIFY VIA N5OS
+```
+
+Are **exempt** from routing requirements and must NOT be modified to add:
+- N5-specific file references
+- `set_active_persona()` calls
+- V-specific context or personalizations
+
+These personas are designed for public distribution and must remain N5-free.
+
+**Protected Personas:**
+- Vibe Coach [CE] (`055a17d1-feeb-4942-a2ad-9e0c05d39706`)
+- Vibe Researcher [CE] (`df9d8993-48b8-495c-bfba-c56405ae4158`)
+- Vibe Teacher [CE] (`ec461248-6230-4c6e-81a7-88c171b33a84`)
 
 

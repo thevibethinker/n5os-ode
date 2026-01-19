@@ -1,0 +1,167 @@
+{
+  "name": "n5os-ode-release-fix",
+  "description": "Bring n5os-ode export to release quality - fix broken references, missing files, placeholder values",
+  "objective": "A fresh Zo user can run BOOTLOADER without errors, all workflows work, no broken references",
+  "key_decisions": [
+    "Local path: N5/export/n5os-ode/",
+    "Repo URL: https://github.com/vrijenattawar/n5os-ode",
+    "Workers opened in separate threads, results committed to git",
+    "Each worker is self-contained and can be executed in any order once dependencies met"
+  ],
+  "relevant_files": [
+    "N5/export/n5os-ode/PLAN.md",
+    "N5/export/n5os-ode/README.md",
+    "N5/export/n5os-ode/BOOTLOADER.prompt.md"
+  ],
+  "workers": [
+    {
+      "id": "W1_placeholders",
+      "component": "placeholder_fixes",
+      "description": "Fix PROJECT_REPO placeholders in 6 Python scripts + add PyYAML to DEPENDENCIES.md",
+      "dependencies": [],
+      "estimated_hours": 0.5,
+      "tasks": [
+        "1.1: Replace PROJECT_REPO\u2192vrijenattawar in 6 scripts",
+        "2.2: Update docs/DEPENDENCIES.md to document PyYAML"
+      ],
+      "files_to_edit": [
+        "N5/export/n5os-ode/N5/scripts/n5_load_context.py",
+        "N5/export/n5os-ode/N5/scripts/content_ingest.py",
+        "N5/export/n5os-ode/N5/scripts/debug_logger.py",
+        "N5/export/n5os-ode/N5/scripts/journal.py",
+        "N5/export/n5os-ode/N5/scripts/n5_protect.py",
+        "N5/export/n5os-ode/N5/scripts/session_state_manager.py",
+        "N5/export/n5os-ode/docs/DEPENDENCIES.md"
+      ],
+      "verification": "rg 'PROJECT_REPO' N5/export/n5os-ode/ returns nothing",
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W2_init_build_script",
+      "component": "init_build_script",
+      "description": "Create the missing init_build.py script referenced by Build Capability prompt",
+      "dependencies": [],
+      "estimated_hours": 0.5,
+      "tasks": [
+        "1.2: Create N5/scripts/init_build.py with slug+title args, creates N5/builds/<slug>/ with PLAN.md, STATUS.md, artifacts/"
+      ],
+      "files_to_create": [
+        "N5/export/n5os-ode/N5/scripts/init_build.py"
+      ],
+      "verification": "python3 N5/export/n5os-ode/N5/scripts/init_build.py test --title 'Test' creates structure",
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W3_context_files",
+      "component": "missing_context_files",
+      "description": "Create 7 missing files referenced in context_manifest.yaml + n5_safety.py script",
+      "dependencies": [],
+      "estimated_hours": 1.0,
+      "tasks": [
+        "1.3: Create N5/prefs/operations/planning_prompt.md",
+        "1.3: Create N5/prefs/operations/scheduled-task-protocol.md",
+        "1.3: Create N5/prefs/communication/style-guide.md",
+        "1.3: Create N5/scripts/n5_safety.py",
+        "1.3: Create N5/schemas/index.schema.json",
+        "1.3: Create Knowledge/architectural/principles.md",
+        "1.3: Create Lists/POLICY.md"
+      ],
+      "files_to_create": [
+        "N5/export/n5os-ode/N5/prefs/operations/planning_prompt.md",
+        "N5/export/n5os-ode/N5/prefs/operations/scheduled-task-protocol.md",
+        "N5/export/n5os-ode/N5/prefs/communication/style-guide.md",
+        "N5/export/n5os-ode/N5/scripts/n5_safety.py",
+        "N5/export/n5os-ode/N5/schemas/index.schema.json",
+        "N5/export/n5os-ode/Knowledge/architectural/principles.md",
+        "N5/export/n5os-ode/Lists/POLICY.md"
+      ],
+      "verification": "python3 N5/export/n5os-ode/N5/scripts/n5_load_context.py build completes without errors",
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W4_prompts_fix",
+      "component": "prompt_references_fix",
+      "description": "Fix Close Conversation, Journal, Build Capability prompts - remove dead refs, fix script paths",
+      "dependencies": [
+        "W2_init_build_script"
+      ],
+      "estimated_hours": 0.75,
+      "tasks": [
+        "1.4: Simplify Close Conversation prompt (remove non-existent script refs)",
+        "2.3: Fix Journal prompt script paths (scripts/\u2192N5/scripts/)",
+        "3.3: Fix Build Capability prompt script paths"
+      ],
+      "files_to_edit": [
+        "N5/export/n5os-ode/Prompts/Close Conversation.prompt.md",
+        "N5/export/n5os-ode/Prompts/Journal.prompt.md",
+        "N5/export/n5os-ode/Prompts/Build Capability.prompt.md"
+      ],
+      "verification": "No file references to non-existent files in prompts",
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W5_docs_and_links",
+      "component": "documentation_and_links",
+      "description": "Fix prefs.md broken links + create N5/docs/, N5/README.md, LICENSE",
+      "dependencies": [],
+      "estimated_hours": 0.75,
+      "tasks": [
+        "1.5: Fix broken links in N5/prefs/prefs.md",
+        "2.1: Create LICENSE (MIT)",
+        "3.1: Create N5/docs/ARCHITECTURE.md stub",
+        "3.1: Create N5/docs/CONTRIBUTING.md stub",
+        "3.2: Create N5/README.md"
+      ],
+      "files_to_edit": [
+        "N5/export/n5os-ode/N5/prefs/prefs.md"
+      ],
+      "files_to_create": [
+        "N5/export/n5os-ode/LICENSE",
+        "N5/export/n5os-ode/N5/docs/ARCHITECTURE.md",
+        "N5/export/n5os-ode/N5/docs/CONTRIBUTING.md",
+        "N5/export/n5os-ode/N5/README.md"
+      ],
+      "verification": "All markdown links in N5/prefs/prefs.md resolve",
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": "W6_validation",
+      "component": "final_validation",
+      "description": "Run full verification checklist, fix any remaining issues, create final commit",
+      "dependencies": [
+        "W1_placeholders",
+        "W2_init_build_script",
+        "W3_context_files",
+        "W4_prompts_fix",
+        "W5_docs_and_links"
+      ],
+      "estimated_hours": 0.5,
+      "tasks": [
+        "Run verification checklist from PLAN.md",
+        "Fix any discovered issues",
+        "Validate Block prompts (Prompts/Blocks/*.prompt.md)",
+        "Validate reflection prompts (Prompts/reflections/*.prompt.md)",
+        "Git commit all changes with appropriate messages"
+      ],
+      "verification": "All 6 verification commands pass",
+      "status": "completed",
+      "completed_at": "2026-01-15T21:20:26.523820+00:00",
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "n5os-ode-release-fix",
+    "created_at": "2026-01-15T14:17:24.243088+00:00",
+    "status": "active"
+  }
+}

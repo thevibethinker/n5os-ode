@@ -7,9 +7,24 @@ Goal:
 - Notion is the human source of truth; local DB is the fast index + execution substrate
 - Intelligence Summary updates are append/prepend-only (never overwrite history)
 
-Auth:
-- Live Notion calls require env var `NOTION_TOKEN`.
-- Dry-run can operate on cached Notion JSON dumps (see --cache-dir).
+## TWO MODES OF OPERATION
+
+### Mode 1: Direct API (requires NOTION_TOKEN)
+Uses NotionClient class to call Notion API directly.
+Supports property updates and read-modify-write patterns.
+```bash
+export NOTION_TOKEN=secret_...
+python3 N5/scripts/notion_deal_sync.py push
+```
+
+### Mode 2: Pipedream Integration (via Zo's use_app_notion)
+Uses Zo's connected Notion app for API calls.
+BETTER for appending intel because notion-append-block works for page body.
+
+**SOLUTION DISCOVERED (2026-01-18):**
+- `notion-append-block` with `blockTypes: ["markdownContents"]` works for page body
+- This is BETTER than property updates because it supports rich formatting
+- Use `N5/scripts/notion_intel_prepend.py format-markdown` to generate content
 
 CLI (high-level):
   python3 N5/scripts/notion_deal_sync.py pull --dry-run --cache-dir /path/to/notion_cache

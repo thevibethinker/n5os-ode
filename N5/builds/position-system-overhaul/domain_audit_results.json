@@ -1,0 +1,1418 @@
+[
+  {
+    "position_id": "systemic-dominance-in-specific-industries-is-often",
+    "current_domain": "worldview",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "The insight describes a meta-principle regarding the historical and systemic evolution of institutional power and infrastructure. While it mentions 'industries', it is fundamentally a philosophical observation about social structures and centers of gravity that transcends any single technical or business domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-most-effective-path-to-reducing-hiring-bias",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses hiring bias and the structural dynamics of the recruitment process (recruiter-candidate interaction), which aligns perfectly with the hiring-market domain's focus on talent acquisition and employer-candidate relationships.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "intelligent-and-resilient-system-behavior-is-bette",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position specifically discusses AI architecture strategies (multi-step orchestration vs. single-shot prompts) and model capability tiers. This falls squarely within the 'AI technology, automation tools, LLMs, technology trends' definition for ai-automation.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "information-engineering-distinction",
+    "current_domain": "epistemology",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on how information is handled (epistemology), it specifically defines 'Information Engineering' as a 'missing craft'\u2014a key strategic and conceptual pillar of the Careerspan product and business philosophy. The distinction between Data and Information Engineering is a foundational Careerspan strategy for differentiating its qualitative intelligence engine.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "death-of-the-okay-life",
+    "current_domain": "worldview",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions hiring, AI, and professional paths, its core focus is a structural, meta-level observation about the breakdown of the social contract and the systemic shift in existence. It describes a foundational perspective on how the world is reorganizing, which fits 'worldview' (meta-beliefs/general principles) better than narrower domains like 'hiring-market' or 'ai-automation'.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "employer-oblige",
+    "current_domain": "hiring-market",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The insight explicitly discusses Careerspan's product strategy (coaching-based hiring tools) and its specific business philosophy (improving signal through candidate development). While it touches on the hiring market, it is primarily a strategic position regarding Careerspan's unique approach to that market.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "mature-singlepurpose-widget-products-face-a-20260115-qnhs",
+    "current_domain": "careerspan",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "small-highfidelity-autonomous-agents-enable-hypergranular-knowledge-20260115",
+    "current_domain": "ai-automation",
+    "correct_domain": "epistemology",
+    "confidence": "HIGH",
+    "reasoning": "While the position mentions 'autonomous agents' (AI), its core insight is about the *management of knowledge* and the *synthesis of information*. It addresses how we extract and file insights (knowledge systems) and the removal of overhead in the truth-seeking process, making 'epistemology' the more accurate domain for the underlying principle of granular knowledge management.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "magic-as-intentaction-abstraction",
+    "current_domain": "epistemology",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "professional-identity-is-narrative-not-document",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan builds around this insight, the belief itself describes the nature of professional identity and the shift from documents (resumes) to semantic narratives (talent acquisition), which is a fundamental 'hiring-market' dynamic rather than a company-specific strategy.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-rapid-evolution-of-ai-has-20260115-opjj",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "technical-product-adoption-is-driven-more-20260115-vfxe",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "dominant-parallel-institutions-are-often-the-scar",
+    "current_domain": "worldview",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "The insight describes a meta-principle regarding the historical development and sociological nature of institutions. It functions as a general principle/philosophy for understanding societal structures ('scar tissue of historical exclusion') rather than being specific to hiring, tech, or business strategy. It fits the 'Meta-beliefs, philosophy of life, general principles' definition perfectly.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "mastery-of-complex-systems-is-best-20260115-vyno",
+    "current_domain": "epistemology",
+    "correct_domain": "education",
+    "confidence": "HIGH",
+    "reasoning": "The core of the insight focuses on how mastery and learning are best achieved (accidental byproduct of utility) and how education should be structured (embedded in workflow). This maps directly to the 'education' domain (learning, teaching, skill acquisition) rather than 'epistemology', which deals with the nature of knowledge itself.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "soft-skills-become-more-valuable-in-ai-world",
+    "current_domain": "ai-automation",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the catalyst is AI, the core of the position relates to shifting value in the labor market, competitive advantage in careers, and how employer-candidate relationships evolve based on skill demand. It fits more cleanly under 'hiring-market' (dynamics of talent and job value) than 'ai-automation' (tools/trends).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "for-mid-career-specialists-the-higher-financial-al",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "the-recruitment-market-is-structured-around-a-mass",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses explicitly on recruitment market structure, sourcing inefficiencies, and the dynamics between employers and candidates (talent visibility/trust). This aligns perfectly with the 'hiring-market' domain definition.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "proprietary-data-is-the-only-remaining-defensible-20260115",
+    "current_domain": "careerspan",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "While the position mentions Careerspan context, it is a high-level strategic principle about moats, data defensibility, and market dynamics that fits more precisely under 'product-strategy' or 'ai-automation'. Given the focus on 'the holy grail of strategy' and 'defensible moats', 'product-strategy' is the strongest fit.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "friction-economics-scalable-vs-linear",
+    "current_domain": "hiring-market",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "While the insight discusses hiring dynamics (hiring-market), it explicitly contrasts the 'resume model' with the 'Careerspan model' and proposes an economically rational architecture that defines the company's core product thesis and strategic differentiation. This is a foundational Careerspan strategy position.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "employers-created-the-trust-crisis-they-now-face",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position touches on systemic dynamics, it is fundamentally an analysis of 'hiring, recruiting, talent acquisition, and employer-candidate relationships.' The 'worldview' domain is intended for meta-beliefs and philosophy spanning multiple domains; this insight is specific to the mechanics and evolution of the hiring ecosystem and trust within that market.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "minimalist-or-tautological-documentation-within-a-20260115-lutz",
+    "current_domain": "epistemology",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on system architecture, documentation utility, and design efficiency (minimizing cognitive load). While it touches on efficiency, it is fundamentally a product design and structural strategy principle rather than a philosophical inquiry into the nature of knowledge (epistemology).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-growth-dividends-of-a-moonshot-attempteven-one",
+    "current_domain": "worldview",
+    "correct_domain": "founder",
+    "confidence": "HIGH",
+    "reasoning": "While the insight has philosophical undertones (worldview), the specific terminology ('moonshot', 'financially', 'skill acquisition', 'high-risk objective') and the trade-off between risk and 'safe wins' are central themes of company building and startup psychology. The structural stress of aiming for ambitious goals is a foundational principle of the 'founder' domain as defined in the system.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "technical-resilience-in-ai-systems-is-best-achieve",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position centers on architectural strategy for AI systems, specifically the orchestration of models ('mini-models' vs 'frontier models') to achieve technical resilience. This aligns directly with the 'AI technology, automation tools, LLMs, technology trends' definition of the ai-automation domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "psychological-safety-and-honesty-are-maximized-whe",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan implements this model, the insight itself describes a fundamental structural dynamic of the hiring market (conflict of interest between candidate and employer representation) rather than a specific company decision or business model detail. It belongs in hiring-market as it relates to talent acquisition dynamics and candidate-employer relationships.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ghost-jobs-are-a-systemic-problem-requiring-tiered",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses job market dynamics (ghost jobs), recruiter behavior (pipeline building/investor signaling), and candidate strategy (tiered effort/mass application). These align perfectly with the hiring-market domain definition covering hiring, recruiting, and job market dynamics.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-recruitment-market-is-systematically-inefficie",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight explicitly addresses systemic inefficiencies in the 'recruitment market', 'talent pool', and 'hiring' signals. While it mentions semantic models (AI) and competitive alpha (Strategy), the core thesis is fundamentally about the mechanics of talent identification and market dynamics within the recruiting domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-internal-growth-derived-from-pursuing-a-highri",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "genre-shift-and-fractal-contribution",
+    "current_domain": "worldview",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "The position addresses meta-beliefs, societal genre shifts, and fractal meaning-making (family/community). These are foundational philosophical principles regarding human existence and cooperation that transcend specific functional domains like hiring or product strategy.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-current-paradigm-of-ai-automation-often-result",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "polyorchestrator-model",
+    "current_domain": "epistemology",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "reducing-friction-in-a-selection-process-20260115-okwk",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the mechanics of selection processes and candidate quality, which directly aligns with the 'hiring-market' domain (hiring, recruiting, talent acquisition). While it relates to Careerspan's business, the core observation is a market dynamic rather than a company-specific strategy.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-rise-of-ai-generated-applications-is-making-tr",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "the-internet-of-careers-functions-as-a-collective",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "highperforming-professionals-often-experience-an-identity-lag-where-20260115",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on internal self-conception (worldview), the core mechanism is specifically contextualized within 'career progression' and 'market value,' and the consequence is the failure to 'seek higher-level opportunities.' This aligns precisely with 'employer-candidate relationships' and 'job market dynamics' described in the hiring-market domain.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "hiring-should-be-viewed-as-an-exercise-in",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "the-efficacy-of-automated-agents-like-habittrackin",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "printing-press-parallel",
+    "current_domain": "epistemology",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "the-selfadvocacy-skill-gap-is-the-real-barrier",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "agentic-workflows-possess-an-inherent-semantic-20260115-mcwl",
+    "current_domain": "ai-automation",
+    "correct_domain": "epistemology",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the nature of 'semantic hunger,' meaning-creation, and failure modes of reasoning/knowledge systems. While it mentions agentic workflows (AI), its core assertion is about the cognitive/epistemic behavior of these systems (how they 'know' or fabricate truth) rather than technical implementation or automation trends.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-systematic-extraction-and-categorization-of-me-20260115",
+    "current_domain": "worldview",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The insight explicitly references 'B-blocks', which is a proprietary Careerspan/N5 architectural primitive (semantic metadata blocks). While the outcome relates to identity (worldview), the mechanism and strategy are core to the Careerspan product model and business logic.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "self-reflection-is-subject-to-a-high-activation-en",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions 'career development' (Careerspan context), the core thesis is about user behavior and the specific 'inertia of self-reflection' in the context of job seeking/career transitions. This is a fundamental dynamic of how candidates interact with the market and tools during high-stakes hiring moments, making 'hiring-market' the more precise domain for this specific psychological insight over a broad company strategy bucket.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-efficacy-of-automated-habit-tracking-systems-i",
+    "current_domain": "ai-automation",
+    "correct_domain": "personal-foundations",
+    "confidence": "HIGH",
+    "reasoning": "While the mechanism discussed is a bot (ai-automation), the core insight is about the psychology of habit formation and human compliance in a self-development context. 'personal-foundations' specifically covers 'Personal habits' and 'productivity', which is the primary subject matter of this position.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "hiring-signal-collapse",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The core insight focuses on the structural breakdown of inbound hiring, the collapse of signal in recruiting due to AI, and the resulting arbitrage opportunities for market participants. While it touches on AI-automation and epistemology (signal theory), the primary application and the specific problem being solved are firmly rooted in the mechanics of the hiring market and employer-candidate relationships.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "integrity-and-character-are-best-verified-not-thro",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "ai-adoption-is-currently-bottlenecked-by-a-lack-20260115",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The core of the insight focuses on 'AI adoption' and the relationship between human cognition and AI leverage. While it touches on 'epistemology' (metacognition) and 'personal-foundations' (cognitive processes), the primary thesis is about the current state and bottleneck of AI technology implementation in the workforce, which falls squarely under 'ai-automation' (AI technology, technology trends).",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "system-design-and-complex-technical-infrastructure",
+    "current_domain": "careerspan",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically describes a business strategy ('gift-economy lever') to solve a 'cold start' problem for adoption of technical infrastructure (like the N5 repo), which aligns directly with Careerspan's company-specific strategy and distribution model. While it touches on 'product-strategy', the focus on using specific technical assets as business levers for the company makes 'careerspan' the most accurate fit.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on AI-automation and epistemology, its core argument centers on the obsolescence of the resume as a fundamental data structure for talent acquisition. The proposed shift toward semantic professional identity models and signal alignment is a direct critique and transformation of hiring market dynamics and employer-candidate verification processes.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "sliding-knowledge-threshold",
+    "current_domain": "epistemology",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "hiring-stage-taxonomy",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically analyzes the structural stages of the hiring process (sourcing, screening, evaluation) and identifies industry-wide failure modes in candidate-employer dynamics. It maps directly to the hiring-market domain's focus on talent acquisition and market dynamics.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "integrity-and-character-are-best-verified-through-",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While 'integrity' is a worldview-level concept, the specific insight describes a technical methodology (triangulation of modalities like Voice/Story, Video, and Real-time Interview) specifically for 'verifying' character within a professional assessment context. This alignment with employer-candidate dynamics and recruiting mechanics makes 'hiring-market' the more precise and actionable domain for this position.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-transition-from-measuring-how-much-20260115-romy",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses the redefinition of seniority and roles (Senior role) based on outcome-accountability versus volume of output. This falls squarely within 'hiring-market' which covers talent acquisition, recruiting, and employer-candidate relationships (defining what a role is and how it's measured). While it has strategic implications, its core subject is the structure and definition of professional roles in the market.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-existence-of-highfidelity-architectural-structures-for-capturing-20260115",
+    "current_domain": "epistemology",
+    "correct_domain": "epistemology",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the structural nature of knowledge systems ('high-fidelity architectural structures for capturing wisdom') and how these systems dictate the quality and 'pull' of truth/signal. This aligns perfectly with the definition of epistemology (how we know things, knowledge systems). While it has implications for 'product-strategy', its fundamental claim is about the nature of knowledge acquisition and signal quality.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "traditional-credentials-are-lagging-indicators-of-past-performance-20260115",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "the-advisory-market-suffers-from-a-20260115-vzbi",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan may solve this problem, the insight itself describes a structural market failure within the broader advisory/recruiting market ('Diagnosis-Treatment' gap). It fits 'hiring-market' which covers employer-candidate relationships and market dynamics, or potentially 'product-strategy' if viewed as a problem to solve, but given the market-wide scope of the structural observation, 'hiring-market' is the most accurate categorical fit.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ai-implementation-should-elevate-human-experts-hig",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+    "current_domain": "ai-automation",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions AI technology ('vibe coding'), the core thrust is about 'identity bridges', 'traditional technical gatekeeping', and how 'generalists enter technical circles'. This describes labor market dynamics and candidate-employer relationship shifts rather than technical LLM trends or tool-specific implementation.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "in-a-career-pivot-a-candidates-primary-objective",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses specifically on the candidate-employer dynamic, recruitment pattern-matching, and the 'pivot' journey within the labor market. While it touches on 'narrative engineering' (epistemology) and 'idealized vision' (worldview), the primary application and context are rooted in hiring and talent acquisition mechanics.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "vectorized-merit-selection-as-bundle-matching-not-",
+    "current_domain": "epistemology",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position touches on 'epistemology' via multi-dimensional assessment and 'education' in its examples, its core utility and the primary context of 'merit selection', 'the role', and 'team/cohort' placement belongs to 'hiring-market'. The insight specifically targets the mechanics of recruiting and talent acquisition decision-making.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "internal-self-assessment-systematically-lags-exter",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on human psychology ('worldview'), the specific mechanism described\u2014lagging against 'external market signals', 'competence and value' recalculation, and 'tier-one institutional interest'\u2014places it firmly within the dynamics of talent valuation and the employer-candidate relationship. It describes how market forces act as the corrective mechanism for self-model errors, which is a core 'hiring-market' dynamic in the context of V's work.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-willingness-of-a-candidate-to-engage-in-deep-s",
+    "current_domain": "hiring-market",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically references 'completing a Careerspan story' as the central mechanism for the signal. While it relates to hiring, it is an observation about the efficacy and signaling power of a Careerspan-specific product feature and methodology, making 'careerspan' the most accurate domain.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-consulting-market-suffers-from-a-20260115-noyg",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan might apply this strategy, the insight itself describes a structural dynamic of the broader consulting and services market ('hiring-market'). It identifies a gap in how talent/expertise is deployed and executed, making it a market-level observation rather than a company-specific strategy or product decision.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "in-an-ai-augmented-landscape-the-transition-from-h",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the strategic significance of hiring a recruiter as a signal of operational maturity. This directly aligns with the 'hiring-market' domain definition, which covers recruiting, talent acquisition, and employer-candidate relationships.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "ai-interfaces-that-mimic-human-social-bids-create",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the design and psychological impact of AI interfaces (anthropomorphic friction) and their effectiveness in behavior change (habit tracking) compared to traditional UI. This falls directly under 'AI technology, automation tools, LLMs, technology trends' as it pertains to how AI entities are perceived and interacted with as tools vs. social agents.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "company-value-is-hierarchical-and-nested-like-a-20260115",
+    "current_domain": "founder",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The insight explicitly discusses Careerspan's company-specific strategy regarding value layers (tech, usage, case studies) and strategic contraction during runway crises, which aligns directly with 'careerspan' (company-specific strategy, product decisions). While it has 'founder' elements, its primary focus is the specific structural strategy of the Careerspan business model.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-willingness-of-a-candidate-to-engage-with",
+    "current_domain": "hiring-market",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "While the insight involves hiring dynamics, it specifically references a 'Careerspan story' and its use as a signal in the company's proprietary assessment methodology. This makes it a product/business model decision specific to Careerspan rather than a general hiring market dynamic.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ai-makes-individuals-as-effective-as-teams",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the efficacy of AI tools (LLMs), productivity multipliers in white-collar work, and the competitive necessity of AI adaptation. This aligns perfectly with the 'AI technology, automation tools, LLMs, and technology trends' definition of the ai-automation domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-future-of-hiring-lies-in-a-persistent-mid-laye",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan might implement this, the insight describes a fundamental shift in 'job market dynamics' and 'employer-candidate relationships' at large, which maps more accurately to hiring-market. It is an industry-level thesis about the evolution of the hiring model itself, rather than a specific Careerspan company strategy or business model decision.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "in-the-ai-era-the-decision-to-hire",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on recruiter hiring decisions, organizational maturity in the context of talent acquisition, and a structural shift in the recruitment industry away from automated matching. This aligns perfectly with the 'hiring-market' domain description covering hiring, recruiting, and job market dynamics.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "linkedin-s-shift-in-focus-from-a-professional-util",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "linkedin-utility-gap-strategic-suicide-20260115",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the degradation of LinkedIn as a professional matching tool and identifies a market opportunity for recruiting/hiring overlays. This falls squarely under hiring, recruiting, and job market dynamics rather than general meta-beliefs or philosophy (worldview).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "vibe-coding-should-be-positioned-as-a-strategic",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "nontechnical-founders-can-build-with-ai",
+    "current_domain": "founder",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "While the insight involves founders, the core driver of the shift is 'AI technology and automation tools' enabling non-technical building. The 'Stakes' specifically address how the definition of technicality is expanding through these tools, making 'ai-automation' a more precise thematic home than the broader 'founder' category.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "transforming-the-hiring-process-from-an-adversaria",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses the 'hiring process', 'recruiting', and the 'employer-candidate relationship' (coaching-led exploration vs adversarial transaction), which are core components of the hiring-market domain. While it has epistemological undertones regarding data quality, its primary focus and application are squarely within hiring dynamics.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "ai-shifts-experts-higher-in-the-problem-stack",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position focuses specifically on the role of AI in professional services and how automation fundamentally alters the workflow of human experts. While it touches on 'hiring-market' implications, the core thesis is about the nature of AI technology as a tool for repositioning human labor within the 'problem stack'.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-future-of-hiring-shifts-from-a-transactional",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight describes a fundamental shift in the macro dynamics of hiring and recruiting (from transactional to persistent mid-layer relationships). While Careerspan likely builds toward this vision, the insight itself defines a market-wide evolution rather than a company-specific strategy or product decision.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "inbound-resurrection-through-friction",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses 'inbound recruiting', 'auto-apply tools', and the 'employer-candidate relationship', which are the core components of the hiring-market domain definition.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "long-term-physiological-growth-is-often-sabotaged",
+    "current_domain": "worldview",
+    "correct_domain": "personal-foundations",
+    "confidence": "HIGH",
+    "reasoning": "While the insight has philosophical undertones, it specifically addresses physiological growth, conditioning, and discipline in effort/restraint. These are core components of personal habits, productivity, and lifestyle management (Personal Foundations) rather than broad meta-beliefs about the nature of the world (Worldview).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "a-sustainable-job-search-requires-a-dietary-balanc",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses the mechanics and psychological management of a 'job search', including candidate-side dynamics and opportunity balancing. While it relates to Careerspan's expertise, it describes a general principle of the 'hiring-market' and 'employer-candidate relationships' rather than Careerspan-specific company strategy or business model decisions.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "selling-a-manual-methodology-as-a-finished-softwar",
+    "current_domain": "founder",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "While this strategy is often employed by founders, the core insight focuses on the methodology of product development, finding product-market fit through service-based validation, and the technical/operational debt incurred during the transition to automated software. These are central themes of product strategy and design decisions.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "a-platforms-value-is-derived-from-its-density-20260115",
+    "current_domain": "careerspan",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "truth-in-human-assessment-is-found-at-the",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the core mechanics of human assessment and data integrity within the context of hiring. While it touches on 'truth' (epistemology), the specific application is focused on employer-candidate assessment dynamics and high-integrity data in recruiting.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "job-hunting-is-a-skill-not-an-event",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The core of the position addresses the dynamics between employers and candidates, the mechanics of job searching, and rejection feedback loops. While it contains elements of 'education' (skill acquisition) and 'personal-foundations' (daily habits), its primary utility and context are firmly rooted in the recruitment and talent acquisition space.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "longitudinal-storytelling-and-multiyear-relationship-building-serve-as-20260115",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses 'career history', 'identity and expertise verification' in a professional context, and 'independent platforms' as a counter to technical spoofing. While it has philosophical overtones, its primary application and value-add are within the hiring, recruiting, and talent acquisition space (hiring-market).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ainative-technical-architectures-should-prioritize-dynamic-duct-tape-20260115",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses AI-native technical architectures and the shift in engineering paradigms caused by AI's bridging capabilities. While it touches on 'product-strategy' through architectural investment choices, its primary anchor is the impact of AI technology on system design, making 'ai-automation' the most precise fit among the valid domains.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "career-development-tools-must-solve-for-the-inerti",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight is relevant to Careerspan's product strategy, it describes a fundamental dynamic of the candidate experience and the 'employer-candidate relationship' infrastructure (extracting professional narrative). It addresses a market-wide problem of how individuals engage with their career history, making 'hiring-market' the primary domain for the underlying truth, whereas 'careerspan' would be for company-specific implementation of the solution.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-future-of-recruitment-lies-in-democratizing-th",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position describes a strategy that Careerspan may adopt, the core of the insight is a fundamental thesis about the evolution of the recruitment industry and talent brokerage. The primary subject matter (recruiter commissions, talent brokers, human capital brokerage) aligns more strongly with 'hiring-market' than the company-specific 'careerspan' domain.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "selling-a-manual-methodology-as-finished-software",
+    "current_domain": "founder",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "While the insight involves a 'founder' decision, it specifically describes a strategic product development trade-off ('Manual-to-Product' debt) and its impact on product-market fit versus engineering stability. This falls more squarely under product thinking and design decisions than general entrepreneurship.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-highest-leverage-in-career-transitions-20260115-uudm",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions 'strategic arbitrage' and 'software logic' (Builder/Founder themes), the core thesis centers on 'career transitions' and the value of 'domain expertise' in that process. This aligns most closely with the hiring-market domain's focus on employer-candidate relationships and talent acquisition dynamics, rather than Careerspan's company-specific strategy.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "most-job-descriptions-are-bs-that-wastes-everyones",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the dynamics of recruitment, job descriptions, and the employer-candidate relationship. While it implies organizational dysfunction (founder) or a belief about truth in messaging (epistemology), its primary application and subject matter fall squarely within the 'hiring-market' domain as defined.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "truth-in-professional-assessment-is-found-at-the",
+    "current_domain": "hiring-market",
+    "correct_domain": "epistemology",
+    "confidence": "HIGH",
+    "reasoning": "While the context is 'professional assessment' (hiring), the core insight is about the nature of truth, the validation of knowledge systems, and the alignment of disparate planes of data to form a 'valid' narrative. This is fundamentally an epistemological position regarding how we determine truth/validity through triangulation and consistency, rather than a specific tactic for hiring or recruiting.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "niche-platforms-will-displace-generalist-social-ne",
+    "current_domain": "worldview",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "The position describes a fundamental shift in digital social structures and cultural trends (community vs. generalist dominance). While it touches on market dynamics, its scope is a broad societal observation rather than a specific product strategy or hiring-specific insight, making 'worldview' the most appropriate meta-category.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "while-seedstage-startups-offer-higher-theoretical-",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position specifically analyzes the trade-offs between different stages of companies (Seed vs. Series A/B) from the perspective of a 'mid-career specialist' making a career choice. This falls squarely within 'hiring-market' as it concerns employer-candidate relationships and market dynamics for talent.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "system-design-and-technical-scaffolding-can-be-use",
+    "current_domain": "founder",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on founder tactics (gift-economy, cold-start), the specific mechanism described ('Scaffold Offer' in 'complex implementations') is a core pillar of the Careerspan product strategy and delivery model. It is more accurately classified as a company-specific strategic decision than a general founder principle.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ais-primary-role-in-professional-services-should-b",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "career-mobility-is-governed-by-a-geometric-distanc",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight describes a fundamental dynamic of career transitions and market behavior (hiring/funding willingness) rather than a Careerspan-specific business decision or product feature. It fits perfectly into 'hiring-market' which covers job market dynamics and employer-candidate relationships.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-highest-leverage-in-career-transitions-occurs-at-20260115",
+    "current_domain": "careerspan",
+    "correct_domain": "founder",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the strategic leverage and arbitrage performed by non-technical founders when bridging domain expertise and software logic. While it mentions 'career transitions', the core theme is the founder's role in encoding wisdom into scalable software, which aligns more closely with 'founder' (entrepreneurship, company building) than 'careerspan' (company-specific strategy).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "networking-is-strategic-investment-not-numbers-gam",
+    "current_domain": "hiring-market",
+    "correct_domain": "personal-foundations",
+    "confidence": "HIGH",
+    "reasoning": "While the networking context is common in the job market, the core of this position focuses on the mindset and habits of building professional relationships and compounding social capital. It aligns more strongly with personal habits and self-development (personal-foundations) than with the mechanics of hiring, recruiting, or talent acquisition (hiring-market).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "optimal-longterm-physiological-and-skill-growth-re",
+    "current_domain": "worldview",
+    "correct_domain": "personal-foundations",
+    "confidence": "HIGH",
+    "reasoning": "While the insight has philosophical undertones (worldview), it specifically addresses 'physiological and skill growth', 'foundational conditioning', and 'performance peaks' through 'disciplined restraint'. These are canonical themes of personal habits, productivity, and lifestyle management, making 'personal-foundations' a more precise fit than the broader 'worldview' category.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "database-liquidity-in-hiring-platforms-is-a-function-20260115",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight describes a fundamental dynamic of hiring platforms and talent pool liquidity ('Database liquidity in hiring platforms is a function of time-bound engagement'). While this certainly informs Careerspan's strategy, the statement itself is a principle of the hiring market/talent acquisition domain rather than a Careerspan-specific business decision or internal model detail.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-developmental-value-of-a-highdifficulty-moonsh",
+    "current_domain": "founder",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions strategic and financial value (relevant to 'founder'), the core principle is a general philosophy regarding risk, learning, and the 'long-term ceiling' of capability. This is a meta-belief about growth that applies across all domains of life and business, making 'worldview' the most accurate classification.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "energy-management-is-the-most-underrated-job-searc",
+    "current_domain": "personal-foundations",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on personal energy (personal-foundations), the core argument is specifically framed within the context of 'job hunting' and 'job seekers'. The hiring-market domain explicitly covers 'employer-candidate relationships' and 'job market dynamics', making it the most accurate fit for advice specifically targeted at the job search process.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "as-ai-commoditizes-content-generation-input-system",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position centers on how AI (specifically LLMs) changes the value proposition of professional workflows (input vs output), which directly addresses AI technology, LLM capacity, and technology trends within the ai-automation domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-modern-hiring-market-suffers-from-referral-depletion-20260115",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan might have a point of view on this, the insight itself describes a structural dynamic of the broader hiring market and referral mechanics, which is the definition of the 'hiring-market' domain. It is not specifically about Careerspan's company strategy or internal product decisions.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ais-primary-value-is-in-shifting-human-experts",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "non-adversarial-hiring-top-tier",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The core of the insight focuses on employer-candidate relationships, match quality in the talent market, and the shift from commodity labor dynamics to differentiated talent coordination. While it has philosophical underpinnings (positive-sum games), its primary application and subject matter are explicitly situated within the recruiting and hiring domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "partial-modernization-of-legacy-systems-often-20260115-opsf",
+    "current_domain": "worldview",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "While the insight has philosophical undertones, it is fundamentally a technical and product systems observation about integration friction and system design. 'Worldview' is for meta-beliefs/philosophy; 'product-strategy' better captures the specific principle of localized versus holistic system upgrades and integration mismatch.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-long-race-to-the-middle-is-a-20260115",
+    "current_domain": "founder",
+    "correct_domain": "founder",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically describes a failure mode of startups ('race to the middle') and the strategic valuation of time vs. capital for an entrepreneur. This aligns perfectly with the 'founder' domain (Entrepreneurship, startup journey, company building).",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "integrity-gap-as-scaling-risk",
+    "current_domain": "personal-foundations",
+    "correct_domain": "founder",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on personal habits (personal-foundations), its primary thrust is about the causal link between a founder's internal state and the survival/scaling of their company. It frames personal integrity specifically as a prerequisite for 'long-term leadership' and 'company-building,' making it a core founder psychology/strategy insight.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "everyone-has-valuable-things-to-say-about-themselv",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions Careerspan, the core belief is about the human condition in the context of professional storytelling and the recruiting/coaching dynamic. It describes a fundamental truth about talent acquisition: the bottleneck is extraction and packaging of value, not the substance itself. This is a canonical 'hiring-market' dynamic rather than a company-specific strategy (careerspan) or a general life philosophy (worldview).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "portable-trust",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The core problem space (referrals vs. resumes vs. credentials) and the objective (hiring innovation) are fundamentally rooted in hiring, recruiting, and the employer-candidate trust dynamic, fitting squarely within the hiring-market domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "product-adoption-can-be-driven-by-20260115-icjx",
+    "current_domain": "worldview",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses product adoption mechanics, platform literacy, and the 'learn-then-build' model inversion. These are canonical components of product thinking and design decisions rather than general meta-beliefs or life philosophy (worldview).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-most-effective-way-to-disrupt-recruitment-is",
+    "current_domain": "careerspan",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The position describes a specific business model evolution and strategic pivot for the 'platform' (Careerspan) from SaaS to a financial instrument. This is a company-specific strategy and product decision rather than a general observation about the hiring market.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "as-generative-ai-commoditizes-highquality-output-t",
+    "current_domain": "ai-automation",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position mentions AI automation, its fundamental thesis addresses the competitive moat in recruiting (hiring-market) by shifting the focus from 'digitization' (storing candidate data) to 'semantic input' (systematically listening and interpreting context). The explicit reference to 'candidate data' and the shift in recruitment value-add places this squarely in the hiring-market domain rather than general AI trends.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "selfawareness-enables-strategic-career-pivots",
+    "current_domain": "personal-foundations",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight roots in self-awareness (personal-foundations), its primary application and value proposition are centered on navigating career paths, strategic pivots, and intentional trajectory management. In the context of the Careerspan position system, this insight serves to explain 'hiring-market' dynamics and the 'employer-candidate relationship' from the candidate's strategic perspective.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "a-candidates-primary-task-is-to-artificially-close",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the dynamics between candidates and employers, specifically focusing on the psychology of hiring and narrative construction within the job market. While it has philosophical undertones, its primary application and focus are squarely within 'hiring, recruiting, talent acquisition, and employer-candidate relationships.'",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position makes a fundamental claim about the nature of hiring and candidate evaluation ('category error', 'linear stack-ranking'). While Careerspan likely applies this philosophy, the statement itself is a general insight into the dynamics of talent acquisition and employer-candidate relationships, which maps directly to the 'hiring-market' domain description rather than company-specific strategy.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "predictive-reputation-markets-can-solve-the-information-asymmetry-20260115",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The core of the position addresses information asymmetry and efficiency within the hiring process, specifically targeting recruiter performance and resume limitations. While it incorporates market mechanisms, its primary utility and application are squarely within talent acquisition and recruiting dynamics.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "professional-identity-is-semantic-rather-than-synt-20251226_C",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight has semantic/epistemological overtones, its core subject is 'professional identity' and its 'truthful re-rendering into resumes, blurbs, and intros.' This directly addresses the 'employer-candidate relationships' and 'recruiting' dynamics specified in the hiring-market domain, rather than being a meta-belief about the general nature of reality (worldview).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses signal fidelity in the hiring process (candidates, resumes, credentials), which is the core of the hiring-market domain definition.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "building-sophisticated-outputs-by-orchestrating-mu",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses AI architecture, specifically the trade-off between frontier models and orchestrated modular systems. This aligns perfectly with the 'ai-automation' definition: 'AI technology, automation tools, LLMs, technology trends.' While there is a meta-structural element (modularity), it is grounded in technical AI execution rather than broader product strategy or general philosophy.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "human-data-signal-density",
+    "current_domain": "careerspan",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position centers on the 'human data market' and the differentiation of signal density for model training/AI systems. While it informs Careerspan's strategy, the fundamental claim is about AI data economics and the value of metacognition as 'premium-tier data' in the context of technology trends.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "there-is-a-strategic-advantage-in-decoupling-human",
+    "current_domain": "careerspan",
+    "correct_domain": "careerspan",
+    "confidence": "HIGH",
+    "reasoning": "The position explicitly mentions 'Careerspan' as a 'neutral third-party platform' and discusses its specific strategic advantage and business model (decoupling coaching from transactional hiring). This aligns perfectly with the 'Careerspan company-specific strategy' definition.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-strategic-value-in-the-labor-market-is",
+    "current_domain": "careerspan",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "referrals-are-the-only-reliable-path-in-competitiv",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position focuses on the mechanics of the job market, specifically the effectiveness of referrals versus direct applications and the impact of ATS systems on the hiring process. This aligns perfectly with the hiring-market domain definition.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "identity-in-the-labor-market-is-semantic-not",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan might apply this principle, the insight itself is a fundamental claim about how identity and expertise function within the broader labor market and recruiting landscape. It redefines the nature of professional identity and the role of the resume, placing it squarely within hiring and talent acquisition dynamics rather than company-specific strategy.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "there-is-a-help-threshold-where-20260115-vnek",
+    "current_domain": "product-strategy",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "The 'help threshold' is a structural law of systems and human interaction that applies universally (management, product, education, personal life) rather than being specific to product design or feature prioritization. It is a meta-principle regarding the trade-off between utility and overhead, placing it firmly in 'worldview'.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ai-has-reduced-the-marginal-cost-of-bs-to-zero",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position references AI (ai-automation) and rational actor behavior (worldview), its primary impact and focus is on the fundamental mechanics and 'trust collapse' of the hiring and recruiting ecosystem. It specifically addresses job applications, ATS systems, and the employer-candidate relationship.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "current-ai-implementations-often-create-an-informa",
+    "current_domain": "ai-automation",
+    "correct_domain": "epistemology",
+    "confidence": "HIGH",
+    "reasoning": "While the prompt mentions 'AI implementations', the core insight is about the 'Information Standstill' and the 'decoupling of information processing from human understanding'. This is fundamentally a position on how knowledge is consumed, processed, and understood, which falls squarely under Epistemology (knowledge systems and cognitive interaction) rather than technical AI-automation mechanics.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "concentrating-productivity-through-ai-into-tiny-hyperproductive-teams-20260115",
+    "current_domain": "ai-automation",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "proprietary-data-sourcing-is-the-only-sustainable",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "cognitive-bootstrapping-via-test-preparation",
+    "current_domain": "education",
+    "correct_domain": "education",
+    "confidence": "HIGH",
+    "reasoning": "The position focuses on cognitive development, pedagogical methods (test prep vs. K-12 curricula), and skill acquisition (transferable cognitive modalities). It directly maps to the 'education' domain definition covering learning, teaching, and skill acquisition.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "resume-industrial-complex",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses specifically on the institutional landscape and economic incentives of the hiring industry (ATS, recruiters, resume services). While it contains elements of product strategy or epistemology (signal validity), the primary focus is on the market dynamics and the 'industrial complex' surrounding the hiring process.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "a-truly-effective-productivity-tool-functions-as-a-2025-12-26",
+    "current_domain": "worldview",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the fundamental nature and philosophy of software design ('A truly effective productivity tool', 'digital space', 'Software design'), which aligns directly with the product-strategy domain (Product thinking, design decisions). While it touches on the self, the primary subject and actionable context are the design and function of a digital product.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "aidriven-automation-of-application-materials-effec",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses specifically on the collapse of traditional recruiting signals (resumes/cover letters) and the necessary shift in candidate evaluation methods, which are core components of the hiring-market domain. While it mentions AI, it is as a driver for changes in talent acquisition dynamics rather than a discussion of the technology itself.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "ai-tooling-is-bifurcating-into-two-distinct-archetypes-20260115",
+    "current_domain": "worldview",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position specifically discusses the bifurcation of AI tooling archetypes ('browser-bound' vs 'terminal-native') and the leverage of OS-first agents. This falls squarely under 'AI technology, automation tools, LLMs, technology trends' rather than the meta-philosophy or general principles of 'worldview'.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "rationality-of-lowtrust-moonshots",
+    "current_domain": "worldview",
+    "correct_domain": "worldview",
+    "confidence": "HIGH",
+    "reasoning": "The position addresses meta-beliefs about human behavior, systemic trust, and rational adaptation. While it touches on 'hiring-market' (scarcity) and 'epistemology' (perceived vs. absolute truths), its core function is to provide a philosophical framework ('worldview') for interpreting actions across multiple domains (politics, gambling, entrepreneurship) as strategic responses to system hardening.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "in-the-ai-era-the-matching-component-of",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan is the context, the insight describes a fundamental shift in recruiting and talent acquisition dynamics. The move from matching-as-commodity to high-fidelity narrative acquisition is a 'hiring-market' dynamic rather than a company-specific 'careerspan' strategy or product decision.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "effective-knowledge-management-in-the-age-of-llms-20260115",
+    "current_domain": "ai-automation",
+    "correct_domain": "epistemology",
+    "confidence": "HIGH",
+    "reasoning": "While the insight mentions LLMs, the core thrust is about the multi-layered transformation of information into higher-order abstractions for better queryability. This is fundamentally about knowledge systems and how we structure information to know/retrieve truth effectively, fitting 'epistemology' better than the more technical 'ai-automation' or 'personal-foundations' categories.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "self-advocacy-public-good",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position uses economic and philosophical frameworks (Tragedy of the Commons, public goods), its core application and conclusion center on the dynamics of the talent signal pool, candidate self-knowledge, and employer incentives within the recruitment ecosystem. It directly addresses the degradation of the hiring 'commons' caused by auto-apply bots and the lack of institutional coaching, making hiring-market the most precise fit.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "job-seeking-and-hiring-should-be-viewed-as",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan (the company) operates in this space, the insight itself is a philosophical stance on the mechanics of job seeking and hiring as a market activity, rather than a Careerspan-specific business strategy or product decision. It fits the 'hiring-market' domain definition (hiring, recruiting, employer-candidate relationships) more precisely.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "aimediated-expression-creates-a-recursive-arms-20260115-urdl",
+    "current_domain": "epistemology",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the technological impact of AI-mediated expression and the collapsing distinction between human and machine generation, which falls squarely under 'AI technology, automation tools, LLMs, technology trends' rather than the nature of knowledge itself (epistemology). While it has philosophical implications, the core subject is the automation of expression.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+    "current_domain": "worldview",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "While the insight has broad institutional implications, its core mechanism describes a shift in system architecture ('manual brokers' to 'real-time platform orchestrators') and technological leverage ('AI to maintain readiness'). This is a specific strategic thesis on how products and platforms should be built to capture network value, fitting the 'design decisions and feature prioritization' scope of product-strategy more precisely than the meta-level principles of worldview.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "generic-ai-usage-is-detectable-and-disqualifying",
+    "current_domain": "ai-automation",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position mentions AI usage, the core insight focuses on recruitment outcomes, recruiter reporting (25%+ disqualification rate), and the impact on a candidate's status in the job market. 'Hiring-market' captures the employer-candidate dynamic and disqualification criteria more precisely than 'ai-automation'.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "selfknowledge-deficit",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the insight touches on epistemology (self-knowledge) and ai-automation (removal of friction), the core argument is framed as the 'fundamental bottleneck in effective job seeking' and 'employer-candidate relationships.' It specifically addresses the shift in hiring dynamics and candidate behavior in the age of AI, making hiring-market the most operational and relevant domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "autoapply-is-mutually-assured-destruction",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly addresses the mechanics of job applications, recruiter filtering, and the resulting dynamics of the hiring market. It centers on the employer-candidate relationship and how it is mediated (and distorted) by AI tools, which is the core definition of the hiring-market domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "social-accountability-in-digital-products-is-signi",
+    "current_domain": "worldview",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses the efficacy of 'anthropomorphized channels' vs 'standard user interfaces' in digital products. While it references psychological friction, the core claim is an operational design principle for product engagement and feature prioritization rather than a high-level philosophical meta-belief (worldview).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "ainative-productivity-is-characterized-by-an-20260115-babn",
+    "current_domain": "worldview",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses 'AI-native productivity', 'platform dependency', and 'LLM providers'. These are core themes of the 'ai-automation' domain (AI technology, technology trends). While it has philosophical overtones, it is a specific observation about the technological and operational reality of building with AI, rather than a meta-belief spanning multiple non-technical domains.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "assessment-signal-validity-framework",
+    "current_domain": "epistemology",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "lowering-friction-in-a-selection-process-does-not-20260115",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses 'selection processes', 'candidates', and 'assessments'. While this informs Careerspan's strategy, the principle itself is a fundamental observation about hiring dynamics and talent acquisition hurdles rather than a company-specific business decision.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "data-collected-independent-of-a-specific-job-appli",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "company-culture-functions-as-an-organizational-operating-system-20260115",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the metaphor is philosophical ('operating system'), the core insight addresses organizational dynamics, 'output-centricity', and company culture within a business context. Given the available domains, 'hiring-market' (which includes 'employer-candidate relationships' and 'Hiring') or 'product-strategy' could apply, but 'hiring-market' is the closest fit for 'talent acquisition' and 'employer-candidate relationships' which are fundamentally shaped by organizational 'culture-as-OS'. However, re-evaluating the definitions, 'worldview' is for 'meta-beliefs'\u2014this specific insight is an operational theory of company culture, making it a better fit for 'hiring-market' or 'careerspan' if it were product-specific. Since it describes a systemic dynamic of hiring/talent environments, 'hiring-market' is the appropriate specialized domain.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "high-intensity-inspiration-driven-vibe-coding-m-20260115",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The core of the insight focuses on 'vibe coding' as a novel building mode enabled specifically by AI technology. While it touches on productivity (personal-foundations) and product thinking (product-strategy), the primary driver and categorical shift are defined by the AI era's technological impact on engineering labor. AI-automation is the strongest categorical fit for shifts in how software is built using these tools.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "status-signaling-often-requires-the-manufacture-20260115-saxh",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the core concept of 'status signaling' is a worldview-level principle, the second sentence specifically references 'tools that can simulate a busy state to preserve social capital.' In the context of the Careerspan position system, this pattern describes the specific dynamics of elite recruiting and the 'busy' state of high-value candidates or employers in the talent market. It directly informs the product-strategy for hiring tools, but 'hiring-market' captures the functional domain where this signaling behavior is operationalized as a market dynamic.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "confidence-over-quality-scores",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The core insight directly challenges the fundamental measurement frameworks used in recruiting and talent acquisition. While it touches on 'product-strategy' through the lens of tool design and 'epistemology' regarding certainty vs. quality, its primary impact and application are within the mechanics of 'employer-candidate relationships' and how the hiring market evaluates human potential. It redefines the value proposition of hiring tools, keeping it firmly rooted in the hiring-market domain.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "autoapply-tools-are-career-selfsabotage",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position directly critiques recruiting technology (auto-apply tools), analyzes job market dynamics (response rates, network vs. public postings), and examines the employer-candidate relationship (spammed applications/raising barriers). While it touches on 'metric fixation' (epistemology) and AI tools (ai-automation), the core argument is situated within the mechanics and health of the hiring ecosystem.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "the-act-of-participating-in-a-highfriction-higheff",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight specifically addresses 'candidate quality and intent' and 'resume' historical data, placing it squarely within the 'hiring-market' domain (Hiring, recruiting, talent acquisition). While it touches on 'epistemology' via proxy traits, its primary application and framing are focused on the employer-candidate evaluation process.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "in-an-agentic-aidriven-world-technical-20260115-lxpr",
+    "current_domain": "epistemology",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "in-an-agentic-and-aidriven-world-technical-literacy-20260115",
+    "current_domain": "epistemology",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The insight explicitly focuses on 'technical literacy' within an 'agentic and AI-driven world' and the logic of 'collaborative systems.' While it has epistemological implications (sovereignty and knowledge), its primary anchor is the impact of AI technology and automation tools on individual agency, making 'ai-automation' the most precise fit.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "maintaining-a-state-of-constant-readiness-via-aica",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position describes a structural shift in the recruitment landscape\u2014the transition from manual brokers to platform orchestrators and the collapse of latency in trust networks for talent access. While Careerspan (the company) builds products that facilitate this, the insight itself is a statement about 'Hiring, recruiting, and talent acquisition dynamics,' which aligns more accurately with the hiring-market domain than with company-specific strategy (careerspan).",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "complexity-often-obscures-the-most-essential-compo",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "data-companies-that-lack-a-proprietary-acquisition",
+    "current_domain": "worldview",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "strategic-focus-should-prioritize-the-most-fundame",
+    "current_domain": "worldview",
+    "correct_domain": "product-strategy",
+    "confidence": "HIGH",
+    "reasoning": "While the 'Hydrogen' metaphor has philosophical roots, the insight specifically applies this first-principles thinking to 'business challenges' and 'identifying the essential unit' of a system. This aligns more directly with 'Product Strategy' (product thinking, design decisions, feature prioritization) than the broader 'Worldview' (meta-beliefs/philosophy of life), as it provides an operational rubric for strategic focus in building and prioritizing.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "highintelligence-outputs-are-more-reliably-achieve",
+    "current_domain": "ai-automation",
+    "correct_domain": "ai-automation",
+    "confidence": "HIGH",
+    "reasoning": "The position focuses on the architectural strategy of using AI models (orchestrated sequences vs. single-shot prompts) to achieve high-intelligence outputs. This falls squarely within 'AI technology, automation tools, LLMs, technology trends'. While 'epistemology' deals with knowledge and 'product-strategy' deals with design decisions, the core of this claim is about the mechanics of AI system resilience and output quality.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "market-fundability-and-professional-acceptability-",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While Careerspan might utilize this insight, the core content describes universal job market dynamics, career mobility, and the mechanics of hiring/pivoting ('degrees of freedom' in industry vs. role), which is the definition of the hiring-market domain. It is a general market principle rather than a company-specific strategy.",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "data-collected-about-a-candidate-independent-of-a",
+    "current_domain": "hiring-market",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The position specifically addresses candidate data, the job application process, and employer-candidate dynamics (incentive to 'angle'). This aligns perfectly with the hiring-market domain definition: 'Hiring, recruiting, talent acquisition, job market dynamics, employer-candidate relationships.' While it touches on truth-seeking, it is situated squarely within the recruitment context.",
+    "change_needed": false,
+    "status": "success"
+  },
+  {
+    "position_id": "maintaining-a-strict-separation-between-candidatef",
+    "current_domain": "careerspan",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "The insight focuses on the psychological dynamics of the employer-candidate relationship and recruiting methodology. While it reflects Careerspan's approach, it is a general principle of talent acquisition strategy ('hiring-market') rather than a company-specific business model or internal strategy ('careerspan').",
+    "change_needed": true,
+    "status": "success"
+  },
+  {
+    "position_id": "the-hiring-stack-is-commoditizing-into-isolated-verticals-20260115",
+    "current_domain": "hiring-market",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "position_id": "corporate-culture-serves-as-the-companys-20260115-hzfs",
+    "current_domain": "worldview",
+    "correct_domain": "hiring-market",
+    "confidence": "HIGH",
+    "reasoning": "While the position uses 'operating system' and 'innovation' metaphors, the core thesis focuses on 'corporate culture' and the systemic failure of 'output-centricity' within organizations. This aligns most closely with the dynamics of employer-candidate relationships and how company culture impacts talent/acquisition dynamics in the hiring-market domain. Worldview is too broad for a specific organizational critique.",
+    "change_needed": true,
+    "status": "success"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "worker_id": "W3.2",
+  "status": "complete",
+  "completed_at": "2026-01-19T00:27:00+00:00",
+  "convo_id": "con_9qXNgo72hNAhoiN4",
+  "files_created": [
+    "Sites/build-tracker/src/pages/BuildTracker.tsx",
+    "Sites/build-tracker/src/App.tsx (rewritten)",
+    "Sites/build-tracker/zosite.json (updated)"
+  ],
+  "files_modified": [
+    "Sites/build-tracker/server.ts (added /api/builds endpoint with cache-control)",
+    "N5/scripts/build_status.py (added objective extraction, legacy builds always complete)",
+    "N5/config/PORT_REGISTRY.md (added port 50002 allocation)"
+  ],
+  "decisions": [
+    {
+      "decision": "Only v2 builds (with meta.json) show as active",
+      "rationale": "V's direction: legacy builds without metadata should not clutter the active builds view. Going forward, only builds with meta.json are tracked as active."
+    },
+    {
+      "decision": "Legacy builds auto-marked as complete with type='legacy'",
+      "rationale": "Preserves 142 legacy builds in completions list for historical reference, but removes them from active tracking."
+    },
+    {
+      "decision": "Progress bar colors: green ≥75%, yellow 25-74%, red <25%",
+      "rationale": "Visual feedback matching Domino's tracker style - green for near-done, yellow for in-progress, red for early/stale."
+    },
+    {
+      "decision": "Date parsing treats YYYY-MM-DD as local time",
+      "rationale": "Fixed bug where 2026-01-18 was displaying as Jan 17 due to UTC parsing shifting the date."
+    },
+    {
+      "decision": "API returns cache-control: no-cache headers",
+      "rationale": "Prevents browser caching stale build data. Refresh button now always fetches fresh data."
+    },
+    {
+      "decision": "Port 50002 from mid-ephemeral range",
+      "rationale": "Checked PORT_REGISTRY.md first - 50002 was next available in mid-ephemeral range."
+    }
+  ],
+  "recommendations": [
+    {
+      "for": "Orchestrator",
+      "recommendation": "voice-optimization-loop shows 0% with no workers - may need its meta.json workers field populated if it's a real active build."
+    },
+    {
+      "for": "Future enhancement",
+      "recommendation": "Consider adding click-through links from build cards to PLAN.md or build folders for quick access."
+    }
+  ],
+  "blockers": [],
+  "tests_run": [
+    "API /api/builds returns correct JSON with cache-control headers",
+    "Dashboard shows 2 active builds (only v2 with meta.json)",
+    "Dashboard shows 142 complete builds (including legacy)",
+    "Progress bar shows 80% green for build-orchestrator-v2",
+    "Date displays correctly as 'Jan 18' (local time)",
+    "Show All/Less toggle works for completions list",
+    "Refresh button fetches fresh data (no caching)"
+  ],
+  "notes_for_orchestrator": [
+    "W3.1's build_status.py was enhanced beyond the original brief to support objective extraction from PLAN.md and v2-only active filtering.",
+    "The dashboard aggregates worker counts across all active builds in the header (8/10 workers across active builds).",
+    "User service registered: svc_dPCD7n8_Yus at https://build-tracker-va.zocomputer.io"
+  ]
+}

@@ -36,6 +36,7 @@ app.get("/public/*", async (c) => {
 
 const getBaseUrl = () => process.env.BASE_URL || "http://localhost:3000";
 const getPaymentLinkUrl = () => process.env.PAYMENT_LINK_URL || "";
+const isMaintenanceMode = () => process.env.MAINTENANCE_MODE === "true";
 
 // Email rate limiter to avoid spam filters
 const emailRateLimiter = {
@@ -331,6 +332,7 @@ const Layout = ({ title, children }: { title: string; children: any }) => html`
 // ============ Landing Page ============
 app.get("/", (c) => {
   const paymentLinkUrl = getPaymentLinkUrl();
+  const maintenanceMode = isMaintenanceMode();
   
   return c.html(
     <Layout title="Did I Get It? — Expert Interview Feedback">
@@ -432,7 +434,12 @@ app.get("/", (c) => {
               <div class="card-hover bg-white rounded-2xl p-6 border border-stone-200 shadow-sm stagger-item">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center text-stone-600 font-bold text-lg mb-4">3</div>
                 <div class="font-semibold text-stone-900 mb-1">Get your feedback</div>
-                <div class="text-sm text-stone-500">Detailed analysis in under 5 minutes</div>
+                <div class="text-sm text-stone-500 mb-3">Detailed analysis in under 5 minutes</div>
+                <a href="/preview-results" class="inline-flex items-center gap-1.5 text-sm text-primary-600 hover:text-primary-700 font-medium transition group">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                  See a sample report
+                  <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
               </div>
             </div>
           </section>
@@ -557,12 +564,22 @@ app.get("/", (c) => {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                class="btn-shine w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-primary-600 hover:to-primary-700 transition shadow-lg shadow-primary-500/25"
-              >
-                Continue to Payment — $10
-              </button>
+              {maintenanceMode ? (
+                <button
+                  type="button"
+                  disabled
+                  class="w-full bg-stone-300 text-stone-500 py-4 px-6 rounded-xl font-semibold text-lg cursor-not-allowed"
+                >
+                  Temporarily Offline — Check back soon
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  class="btn-shine w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-primary-600 hover:to-primary-700 transition shadow-lg shadow-primary-500/25"
+                >
+                  Continue to Payment — $10
+                </button>
+              )}
               
               <p class="text-center text-xs text-stone-400 mt-4">
                 By continuing, you agree to our{" "}
@@ -970,7 +987,6 @@ app.get("/analyze/:sessionId", async (c) => {
     jobDescription: transcriptData.jobDescription,
     selfAssessment: transcriptData.selfAssessment,
     sessionId,
-    customerName: transcriptData.customerName || "Candidate",
   }).then(result => {
     // Note: transcript cleanup is handled by the 30-min expiry job in session-store.ts
     // Do NOT delete here - user may refresh or need to re-access
@@ -1046,30 +1062,6 @@ function ResultsPage({ report }: { report: AnalysisReport }) {
           <div>
             <p class="font-medium text-blue-900">Bookmark this page!</p>
             <p class="text-sm text-blue-700">This link is the only way to access your report. We've also emailed you a copy.</p>
-          </div>
-        </div>
-
-        {/* Interview Context Header */}
-        <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-6 mb-8 text-white animate-fade-in">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center text-2xl font-bold">
-              {report.customerName?.charAt(0)?.toUpperCase() || "?"}
-            </div>
-            <div>
-              <h2 class="text-2xl font-bold">{report.customerName || "Candidate"}</h2>
-              <p class="text-primary-100 text-sm">
-                Interview with <span class="font-semibold text-white">{report.company}</span>
-                {report.role && <span> for <span class="font-semibold text-white">{report.role}</span></span>}
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-3 text-sm">
-            <span class="px-3 py-1 bg-white/10 rounded-full">
-              {report.extractedQAs?.length || 0} questions analyzed
-            </span>
-            <span class="px-3 py-1 bg-white/10 rounded-full">
-              {new Date(report.generatedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-            </span>
           </div>
         </div>
 
@@ -1154,47 +1146,6 @@ function ResultsPage({ report }: { report: AnalysisReport }) {
 
         {/* Final Verdict */}
         <FinalVerdict verdict={report.verdict} />
-
-        {/* Q&A Transcript - Collapsible */}
-        {report.extractedQAs && report.extractedQAs.length > 0 && (
-          <div class="bg-white rounded-2xl border border-stone-200 mt-8 shadow-sm overflow-hidden">
-            <details class="group">
-              <summary class="p-6 bg-stone-50 cursor-pointer hover:bg-stone-100 transition-colors list-none flex items-center justify-between">
-                <h3 class="font-semibold text-stone-900 flex items-center gap-2">
-                  <svg class="w-5 h-5 text-stone-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                  Interview Q&A Transcript
-                  <span class="text-sm font-normal text-stone-400">({report.extractedQAs.length} questions)</span>
-                </h3>
-                <svg class="w-5 h-5 text-stone-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <div class="divide-y divide-stone-100">
-                {report.extractedQAs.map((qa: { questionText: string; answerText: string; questionIndex: number }, idx: number) => (
-                  <div key={idx} class="p-6">
-                    <div class="flex gap-4">
-                      <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm font-bold">
-                        Q{qa.questionIndex || idx + 1}
-                      </div>
-                      <div class="flex-1 min-w-0">
-                        <div class="mb-3">
-                          <span class="text-xs font-semibold text-primary-600 uppercase tracking-wide">Question</span>
-                          <p class="mt-1 text-stone-900 font-medium">{qa.questionText}</p>
-                        </div>
-                        <div class="bg-stone-50 rounded-xl p-4 border border-stone-100">
-                          <span class="text-xs font-semibold text-stone-500 uppercase tracking-wide">Your Answer</span>
-                          <p class="mt-1 text-stone-700 text-sm leading-relaxed whitespace-pre-wrap">{qa.answerText}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </details>
-          </div>
-        )}
 
         {/* Feedback CTA */}
         <div class="mt-8 text-center bg-gradient-to-br from-primary-50 to-orange-50 rounded-2xl p-8 border border-primary-100">
@@ -1627,15 +1578,6 @@ app.get("/admin/promo/list", (c) => {
 app.get("/preview-results", (c) => {
   const mockReport: AnalysisReport = {
     sessionId: "preview-demo-123",
-    company: "Acme Corp",
-    customerName: "Jane Smith",
-    role: "Senior Product Manager",
-    generatedAt: new Date().toISOString(),
-    extractedQAs: [
-      { questionText: "Tell me about a time you led a cross-functional project.", answerText: "At my previous company, I led a team of 8 people across engineering, design, and marketing to launch a new product feature. We faced significant challenges with timeline compression due to market pressures...", questionIndex: 1 },
-      { questionText: "How do you prioritize when everything is urgent?", answerText: "I use a combination of impact-effort matrices and stakeholder alignment. First, I assess the business impact of each item, then I consider the effort required and dependencies...", questionIndex: 2 },
-      { questionText: "What's your experience with data analysis tools?", answerText: "I'm proficient in Excel and have used SQL for basic queries. I typically work with data analysts to get insights for product decisions...", questionIndex: 3 },
-    ],
     executiveSummary: "You demonstrated strong communication skills and genuine enthusiasm for the role. Your STAR-format answers were well-structured, particularly when discussing your project management experience. However, you missed opportunities to quantify your impact and could have asked more strategic questions about the team's challenges.",
     questionBreakdown: [
       { type: "behavioral", count: 5, percentage: 42 },

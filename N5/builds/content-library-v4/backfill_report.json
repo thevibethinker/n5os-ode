@@ -1,16 +1,30 @@
 {
-  "timestamp": "2026-01-09T07:45:52.914001",
+  "timestamp": "2026-01-19T02:46:36.465729",
   "dry_run": true,
-  "scanned": 9,
-  "created": 9,
+  "scanned": 70,
+  "created": 70,
   "skipped": 0,
   "errors": 0,
   "by_type": {
-    "article": 9
+    "article": 11,
+    "inspiration": 2,
+    "link": 20,
+    "personal": 2,
+    "social-post": 35
   },
   "files": [
     {
       "file": "Knowledge/content-library/articles/Capital in the 22nd Century :: philiptrammell.substack.com.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/Did I Get It - Sample Report :: did-i-get-it-va.zocomputer.io.md",
+      "status": "dry_run",
+      "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/articles/Did I Get It- \u2014 Expert Interview Feedback :: did-i-get-it-va.zocomputer.io.md",
       "status": "dry_run",
       "content_type": "article"
     },
@@ -50,9 +64,304 @@
       "content_type": "article"
     },
     {
-      "file": "Knowledge/content-library/personal/V_GENETIC_PROFILE.md",
+      "file": "Knowledge/content-library/articles/x.com~~2fthevibethinker~~2fstatus~~2f2009538600149327951.md",
       "status": "dry_run",
       "content_type": "article"
+    },
+    {
+      "file": "Knowledge/content-library/inspiration/nyski-founders-club.md",
+      "status": "dry_run",
+      "content_type": "inspiration"
+    },
+    {
+      "file": "Knowledge/content-library/inspiration/nyski-inspiration.html",
+      "status": "dry_run",
+      "content_type": "inspiration"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/career-and-personal-branding-chat.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/careerspan-onboarding-with-vrijen-(ceo).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/chat-with-vrij-(careerspan).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/check-in-with-careerspan-founders.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/check-in-with-vrij-(careerspan)-(extended-availability).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/check-in-with-vrij-(careerspan).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/check-in-with-vrijen-(for-asia).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/check-in-with-vrijen-(in-india).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/connect-with-vrijen.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/deep-dive-with-careerspan-founders.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/deep-dive-with-vrij-(careerspan).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/discuss-with-vrij-(careerspan).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/extended-chat-with-careerspan-founders.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/friends-and-family-link-for-vrijen-(30m).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/friends-and-family-link-for-vrijen.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/product-feedback-session.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/quick-chat-with-careerspan-founders.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/calendly/touch-base-with-vrij-(careerspan).md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/github.com~~2fvrijenattawar.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/links/vrijenattawar.com.md",
+      "status": "dry_run",
+      "content_type": "link"
+    },
+    {
+      "file": "Knowledge/content-library/personal/V_GENETIC_PROFILE.md",
+      "status": "dry_run",
+      "content_type": "personal"
+    },
+    {
+      "file": "Knowledge/content-library/personal/psychographic-portrait-linkedin-2026-01.md",
+      "status": "dry_run",
+      "content_type": "personal"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/2026-01-09_human-data-signal-density-thread.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/2026-01-09_junior-pipeline-ai-equalizer.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2023-11-20_never-a-dull-day-building-with-logan-currie-its-be.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2024-01-10_ever-felt-your-dream-job-was-completely-out-of-rea.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2024-08-01_there-are-no-end-of-articles-like-this-one-that-al.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2024-10-08_reposting-this-for-visibility-merisendas-insights-.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2024-11-18_ill-do-this-one-more-time-for-the-people-in-the-ba.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-01-29_the-strategic-guide-to-cover-letters-yes-they-stil.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-01-31_the-real-strategic-networkers-workflow-because-ran.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-02-04_this-just-in-anthropic-yes-that-one-is-telling-job.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-02-06_stop-being-humble-its-killing-your-career-chances.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-02-07_the-art-of-personal-marketing-how-to-stand-out-in-.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-02-20_the-ever-incisive-rana-el-kaliouby-phd-gets-it-exa.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-03-17_i-had-a-fantastic-afternoon-last-friday-sharing-th.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-03-19_pastes-in-a-job-description.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-03-31_the-ai-job-application-arms-race-is-perpetuating-a.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-04-16_i-wanted-to-share-this-brilliant-piece-from-our-ow.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-06-03_thanks-so-much-to-close-cohen-career-consulting-fo.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-06-24_auto-apply-this-auto-apply-thatwhy-dont-you-stop-a.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-01_time-and-time-again-i-hear-chros-and-talent-leader.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-14_in-the-1998-tour-de-france-you-had-to-go-18-riders.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-15_a-dozen-future-of-work-founders-walk-into-a-zoom-r.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-22_warning-this-is-not-career-advice-its-advice-about.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-23_hard-skills-are-table-stakes.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-27_got-another-fascinating-job-recommendation-today-m.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-07-27_real-talk-every-founder-is-secretly-convinced-that.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-08-04_networking-is-literally-the-ceos-job.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-08-07_heres-a-fact-your-dream-hire-is-probably-terrible-.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-10-24_been-thinking-a-lot-about-why-most-career-tools-fa.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/2025-11-11_by-show-of-hands-how-many-of-you-look-at-more-than.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/_dont-get-spooked-by-ghost-jobs-a-smarter-approach-.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/_out-with-the-old-in-with-the-niche.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/linkedin/_the-auto-applycolypse-will-doom-us-all.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/personal-library-alexandria.md",
+      "status": "dry_run",
+      "content_type": "social-post"
+    },
+    {
+      "file": "Knowledge/content-library/social-posts/reply-guy-prayer-satire.md",
+      "status": "dry_run",
+      "content_type": "social-post"
     }
   ]
 }

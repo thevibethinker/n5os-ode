@@ -1,0 +1,544 @@
+{
+  "completed": [
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Vrijen-Attawar-and-Nic-Mahaney_001",
+      "decision": "MERGE",
+      "target_position_id": "identity-in-the-labor-market-is-semantic-not",
+      "confidence": "HIGH",
+      "reasoning": "The candidate provides a specific 'graph/3D' structural framework that enriches the existing semantic identity position by moving from general 'meaningful experiences' to the explicit mapping of 'edges and nodes' across a career.",
+      "candidate_insight": "Hiring is fundamentally a '3D' problem being addressed with '2D' tools. True candidate expertise is found not in static data points like job titles or skills, but in the 'edges and nodes'\u2014the contextu",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Vrijen-Attawar-and-Nic-Mahaney_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While [integrity-and-character-are-best-verified-through-] touches on multi-modal triangulation, this candidate introduces a distinct temporal thesis: that longitudinal duration and 'storytelling over time' on an independent platform provide a superior, spoof-resistant verification of identity compared to point-in-time methods.",
+      "candidate_insight": "Longitudinal storytelling and multi-year relationship building serve as the most robust form of identity and expertise verification. A career history verified over time on an independent platform is m",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Vrijen-Attawar-and-Nic-Mahaney_003",
+      "decision": "MERGE",
+      "target_position_id": "as-generative-ai-commoditizes-highquality-output-t",
+      "confidence": "HIGH",
+      "reasoning": "The candidate adds the specific 'digitization vs. innovation' historical context and 'semantic interpretation' nuance to the existing thesis that LLM value lies in structured ingestion/input.",
+      "candidate_insight": "The historical lack of progress in recruiting technology stems from confusing digitization with innovation. AI represents a true paradigm shift because it moves from merely storing candidate data to i",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Logan-x-Vrijen_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions focus on data fidelity and commoditized matching, this candidate introduces a distinct thesis on network topology\u2014specifically that exclusivity and vetted density, rather than accessibility, create the primary signal of platform value.",
+      "candidate_insight": "A platform's value is derived from its density and exclusivity rather than its accessibility. By closing open signups and routing entry through vetted communities, a job board transforms into a 'synth",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Logan-x-Vrijen_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While other positions in this domain focus on system architecture (orchestration) or the value of input over output, this candidate introduces a distinct thesis regarding human capital evaluation and the shift from credentials to 'Agency' as a performance metric.",
+      "candidate_insight": "Traditional credentials are lagging indicators of past performance, whereas 'Agency'\u2014quantified by responsiveness and the speed of a candidate's execution loop\u2014is a leading indicator of future impact.",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_HYPOTHESIS"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Logan-x-Vrijen_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The candidate presents a structural market thesis about the 'commoditization of deterministic tasks' vs the 'high-value unsolved sourcing problem' that is not captured by the existing positions' focus on signal, friction, and self-knowledge.",
+      "candidate_insight": "The hiring stack is commoditizing into isolated verticals where deterministic tasks like verification and vetting are becoming scale-driven commodity businesses. Sourcing and matching remain the high-",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Ilya-sync_001",
+      "decision": "MERGE",
+      "target_position_id": "ai-implementation-should-elevate-human-experts-hig",
+      "confidence": "HIGH",
+      "reasoning": "The candidate provides a specific operational 'manager of agents' model (N=100) that adds meaningful structural nuance to the existing thesis of elevating human experts 'higher in the problem stack.'",
+      "candidate_insight": "The future of individual productivity lies in the transition from 'doer' to 'manager of agents.' Individuals will oversee massive, distributed agentic workforces\u2014potentially managing teams of up to 10",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Ilya-sync_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions address technical orchestration and shifting human roles, this candidate identifies a specific psychological/cognitive bottleneck (metacognition and process decomposition) not currently captured.",
+      "candidate_insight": "AI adoption is currently bottlenecked by a lack of human metacognition rather than technical limitations. Employees struggle to leverage AI because they cannot consciously decompose their own intuitiv",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Ilya-sync_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position introduces a distinct thesis on 'time burned' as a catastrophic loss in the 'long race to the middle', which is not addressed by existing positions focused on PMF strategies, moonshots, or AI building.",
+      "candidate_insight": "The 'long race to the middle' is a common failure mode where a startup maintains just enough momentum to survive but never enough to achieve escape velocity. In this state, 'time burned' becomes a mor",
+      "candidate_domain": "founder",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_David-x-Careerspan-Part-2_001",
+      "decision": "MERGE",
+      "target_position_id": "ai-implementation-should-elevate-human-experts-hig",
+      "confidence": "HIGH",
+      "reasoning": "The candidate adds the critical 'diagnostic' nuance\u2014that manual labor by high-leverage individuals is a signal of infrastructure failure\u2014to the existing position about moving experts higher in the problem stack.",
+      "candidate_insight": "Manual data labor performed by high-leverage individuals represents a significant 'Savage Tax'\u2014a cumulative loss of strategic velocity. In an agentic environment, the persistence of manual workflow is",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_David-x-Careerspan-Part-2_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This candidate introduces a specific technical thesis on the structural bifurcation of AI tools (browser vs. OS-native) that is not represented in the existing worldview positions.",
+      "candidate_insight": "AI tooling is bifurcating into two distinct archetypes: 'browser-bound' wrappers for accessibility and 'terminal-native' agents for depth. The highest leverage for technical builders lies in OS-first ",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_David-x-Careerspan-Part-1_001",
+      "decision": "MERGE",
+      "target_position_id": "the-recruitment-market-is-structured-around-a-mass",
+      "confidence": "HIGH",
+      "reasoning": "The candidate's 'market-timing' and 'illiquidity' framing provides a precise mechanical explanation for the strategic alpha identified in the existing position regarding the 'invisible' talent pool.",
+      "candidate_insight": "Candidate sourcing is fundamentally a market-timing challenge rather than a simple discovery problem. The highest value ('alpha') in recruiting comes from accessing 'working but willing' talent that i",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_David-x-Careerspan-Part-1_002",
+      "decision": "MERGE",
+      "target_position_id": "in-the-ai-era-the-decision-to-hire",
+      "confidence": "HIGH",
+      "reasoning": "The candidate provides the specific market-side justification (the collapse of faith in automated matching) that necessitates the human-centric shift described in the target position.",
+      "candidate_insight": "The recruiting industry is moving away from a reliance on 'black-box' matching algorithms toward a model centered on curated pools and human-verified signals. This represents a collapse of faith in au",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Daily-co-founder-standup-check-trello_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position introduces a specific structural model of company value (hierarchical/nested) and a corresponding defensive strategy (strategic contraction) that is distinct from existing positions focused on building, selling, or implementation leverage.",
+      "candidate_insight": "Company value is hierarchical and nested like a 'Russian Doll,' where core assets (technology) provide a floor value that is amplified by subsequent layers (usage and case studies). This structure all",
+      "candidate_domain": "founder",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Daily-co-founder-standup-check-trello_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions address the collapse of hiring signals and the need for external validation, this introduces a specific market-based mechanism for quantifyng recruiter reputation and 'clout' as a verifiable asset.",
+      "candidate_insight": "Predictive reputation markets can solve the information asymmetry in recruiting by turning recruiter 'clout' into a tradable, verifiable asset. By incentivizing accuracy through a market mechanism, th",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260106_2026-01-05_Daily-co-founder-standup-check-trello_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position introduces a specific operational thesis on data decay and the temporal nature of 'liquidity' in hiring platforms that is not addressed by existing positions on matching, narrative, or relationship mid-layers.",
+      "candidate_insight": "Database liquidity in hiring platforms is a function of time-bound engagement, not cumulative volume. Defining 'active' status as a 30-day contribution window ensures that the available talent pool is",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260107_2026-01-06_Test-Meeting_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The candidate posits a specific causal relationship where the 'architectural structure' (system design) itself creates a functional vacuum that improves data quality, a structural-deterministic stance not captured by the existing epistemology positions.",
+      "candidate_insight": "The existence of high-fidelity architectural structures for capturing wisdom often precedes and dictates the quality of the data they eventually hold. A system's structural readiness creates a 'functi",
+      "candidate_domain": "epistemology",
+      "candidate_classification": "V_HYPOTHESIS"
+    },
+    {
+      "candidate_id": "cand_20260107_2026-01-06_David-x-Vrijen_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions focus on 'input as a moat' or 'model orchestration', this candidate introduces a specific technical thesis regarding multi-layered semantic indexing and the 'raw iron' to 'aluminum' state transformation as the solution to information silos.",
+      "candidate_insight": "Effective knowledge management in the age of LLMs requires shifting from raw data retrieval to multi-layered semantic indexing. Processing messy, high-volume data into higher-order abstractions (intel",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260107_2026-01-06_David-x-Vrijen_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover hiring infrastructure and data moats, none address the specific finite nature and 'recharge rate' of social capital in referral-based sourcing.",
+      "candidate_insight": "The modern hiring market suffers from 'referral depletion.' Referrals are actually finite, slow-to-recharge social capital stores (artisanal wells) rather than the scalable, renewable resource (tap wa",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_HYPOTHESIS"
+    },
+    {
+      "candidate_id": "cand_20260107_2026-01-06_David-x-Vrijen_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position introduces a specific thesis on 'health sovereignty' via the convergence of raw bio-data and local AI, which represents a distinct technological worldview not captured by the existing positions on growth, data acquisition, or productivity tools.",
+      "candidate_insight": "The traditional healthcare model of waiting for expert interpretation is being disrupted by 'personal health stacks' (Genetics + Wearables + LLMs). By loading raw biological data into a local AI, indi",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_real_raw_t_Real-Raw-Test_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover data moat and recruitment democratization, this candidate introduces a distinct thesis regarding the 'translation layer' of domain expertise into software as a specific form of strategic arbitrage.",
+      "candidate_insight": "The highest leverage in career transitions occurs at the translation layer where deep domain expertise is converted into technical implementation. Non-technical founders who bridge this gap perform a ",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_real_raw_t_Real-Raw-Test_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover AI's role in reducing knowledge thresholds and enabling orchestration, this candidate introduces a distinct ethical and sovereignty-based argument that technical literacy is the only defense against surrendering agency to UI/UX designers.",
+      "candidate_insight": "In an agentic and AI-driven world, technical literacy is the primary requirement for cognitive sovereignty. Without understanding the underlying logic of collaborative systems, individuals are restric",
+      "candidate_domain": "epistemology",
+      "candidate_classification": "V_HYPOTHESIS"
+    },
+    {
+      "candidate_id": "cand_20260108_raw_meeting_test_[M]_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While it shares systemic themes with existing positions, this candidate introduces a unique thesis specifically linking 'output-centricity' as a systemic cultural bug to the failure of innovation breakthroughs.",
+      "candidate_insight": "Company culture functions as an organizational operating system, and 'output-centricity'\u2014the prioritization of volume over value\u2014acts as a systemic bug. This misalignment inevitably leads to 'innovati",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_raw_meeting_test_[M]_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position introduces a distinct thesis on the redefinition of seniority benchmarks (output vs. outcome) that is not explicitly covered by the existing positions focused on signal collapse, friction, or recruitment mechanics.",
+      "candidate_insight": "The transition from output-based measurement to outcome-based measurement necessitates a total redefinition of 'Senior' level talent. Seniority should be defined by the magnitude of the change effecte",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_raw_meeting_test_[M]_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While other positions discuss narrative acquisition and friction of reflection, this candidate specifically challenges the 'friction-as-signal' dogma in selection processes, introducing a distinct thesis on signal optimization.",
+      "candidate_insight": "Lowering friction in a selection process does not inevitably dilute signal; rather, it can improve signal by ensuring the 'right' candidates\u2014who might otherwise opt out due to low-value hurdles\u2014actual",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_True-Raw-Test_001",
+      "decision": "MERGE",
+      "target_position_id": "professional-identity-is-semantic-rather-than-synt-20251226_C",
+      "confidence": "HIGH",
+      "reasoning": "The candidate adds a critical operational nuance by identifying meeting metadata (B-blocks) as the specific mechanism that builds the 'semantic graph' already described in the target position.",
+      "candidate_insight": "The systematic extraction and categorization of meeting metadata (B-blocks) creates a persistent 'semantic graph' of a professional life. This metadata layer serves as a more reliable record of identi",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_Raw-Meeting-B_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover task orchestration and the shift to structured input, this candidate uniquely addresses 'hyper-granular knowledge management' and the specific economic removal of overhead for high-fidelity information synthesis.",
+      "candidate_insight": "Small, high-fidelity autonomous agents enable hyper-granular knowledge management by removing the traditional overhead associated with information synthesis. This allows for the extraction and filing ",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_Raw-Meeting-A_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions touch on internal growth and self-actualization, none specifically address the 'identity lag' or psychological friction caused by a self-conception trailing behind objective career progression.",
+      "candidate_insight": "High-performing professionals often experience an 'identity lag' where their internal self-conception fails to keep pace with their actual career progression and market value. This creates a gap betwe",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_Raw-Meeting-A_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions focus on model orchestration (dumb models vs. high-end), this candidate introduces a novel thesis regarding infrastructure speed and 'dynamic duct tape' vs. traditional engineering robustness.",
+      "candidate_insight": "AI-native technical architectures should prioritize 'dynamic duct tape' and speed-to-learning over traditional engineering robustness. The ability for AI to bridge infrastructure gaps in real-time mak",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_Holly-x-V_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The candidate addresses the structural shift in power and organizational risk (Control Paradox/Blast Radius) resulting from AI-driven headcount reduction, which is distinct from existing positions focused on orchestration, input/output moats, or shifting experts in the stack.",
+      "candidate_insight": "Concentrating productivity through AI into tiny, hyper-productive teams creates a 'Control Paradox' where power shifts from founders to individual super-operators. As headcount shrinks, the 'Blast Rad",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_HYPOTHESIS"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_Holly-x-V_002",
+      "decision": "MERGE",
+      "target_position_id": "hiring-signal-collapse",
+      "confidence": "HIGH",
+      "reasoning": "The candidate adds a meaningful strategic dimension to the signal collapse thesis by identifying the specific 'arbitrage opportunity' and defining the 'Signal-to-Noise Guardian' as the emerging value-accruing entity.",
+      "candidate_insight": "The flooding of the market with low-integrity AI tools (e.g., mass-application slop) creates a massive arbitrage opportunity for 'integrity-heavy' products. Value is currently accruing to 'Signal-to-N",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260108_2026-01-07_Holly-x-V_003",
+      "decision": "MERGE",
+      "target_position_id": "the-recruitment-market-is-structured-around-a-mass",
+      "confidence": "HIGH",
+      "reasoning": "The candidate provides the 'why' (Primitive High-Trust Signals as a reaction to AI noise) behind the 'visible 30%' concentration described in the existing position.",
+      "candidate_insight": "As trust in generalized credentials collapses due to AI-generated noise, the market regresses to 'Primitive High-Trust Signals'\u2014expensive, hard-to-fake legacy credentials like ex-Stripe or Stanford. T",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260110_real_raw_t_Real-Raw-Test_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover data moats and semantic identity, this candidate introduces a distinct thesis on the 'strategic arbitrage' of the translation layer between domain wisdom and software logic.",
+      "candidate_insight": "The highest leverage in career transitions occurs at the 'translation layer' between deep domain expertise and technical implementation. Non-technical founders who bridge this gap perform a strategic ",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260110_real_raw_t_Real-Raw-Test_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover abstraction and sliding knowledge thresholds, this candidate introduces the distinct ethical/political stance that technical literacy is a prerequisite for autonomy ('cognitive sovereignty') rather than just efficiency.",
+      "candidate_insight": "In an agentic, AI-driven world, technical literacy is the primary requirement for 'cognitive sovereignty.' Without understanding the underlying logic of systems, individuals are merely 'users' of thei",
+      "candidate_domain": "epistemology",
+      "candidate_classification": "V_HYPOTHESIS"
+    },
+    {
+      "candidate_id": "cand_20260110_raw_meetin_Raw-Meeting-Test_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions touch on systemic growth and restraint, the candidate's specific stance on corporate culture as an 'operating system' and 'output-centricity' as an innovation-killing 'bug' is a distinct, uncaptured thesis.",
+      "candidate_insight": "Corporate culture serves as the company's operating system, and a narrow focus on 'output-centricity' acts as a critical bug that leads to innovation failure. When a system optimizes for volume of act",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260110_raw_meetin_Raw-Meeting-Test_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions address the mechanics of hiring (signal, friction, bias), this candidate specifically addresses the internal definition of 'seniority' and the shift from output-based to outcome-based evaluation.",
+      "candidate_insight": "The transition from measuring 'how much we build' to 'what we changed' necessitates a fundamental redefinition of seniority. A Senior role is not defined by technical output volume, but by the level o",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260110_raw_meetin_Raw-Meeting-Test_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions touch on data fidelity and matching, this candidate introduces a distinct thesis regarding the counter-intuitive relationship between process friction and candidate quality/signal-to-noise ratio.",
+      "candidate_insight": "Reducing friction in a selection process does not necessarily dilute the quality of candidates; instead, it can improve the signal-to-noise ratio by ensuring high-potential candidates are not filtered",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260110_2026-01-10_2026-01-10-Really-raw-meeting_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While related to information efficiency, this position introduces a specific structural thesis about the inverse relationship between architectural context and required documentation verbosity that isn't captured by existing epistemology entries.",
+      "candidate_insight": "Minimalist or tautological documentation within a structural system provides more utility than descriptive verbosity. When the system's architecture handles the context, the simplest possible label is",
+      "candidate_domain": "epistemology",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260110_2026-01-10_2026-01-10-Really-raw-meeting_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions focus on 'information standstill' and 'input as a moat', this candidate introduces a distinct mechanism of failure\u2014'semantic hunger'\u2014explaining why agentic systems hallucinate meaning when signals are absent.",
+      "candidate_insight": "Agentic workflows possess an inherent 'semantic hunger' that forces them to synthesize intelligence even in the absence of input signals. This drive to create meaning out of a vacuum is the primary fa",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The concept of a 'help threshold' where assistance becomes net-negative due to management overhead is not represented in existing positions, which focus instead on 'knowledge thresholds' and 'activation energy barriers'.",
+      "candidate_insight": "There is a 'help threshold' where providing assistance or tool adoption support becomes net-negative. Beyond this point, the overhead required to manage the change exceeds the utility gained by the re",
+      "candidate_domain": "product-strategy",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions touch on social signaling and tool design, none address the specific thesis of 'curated scarcity' or the 'busy state' as a deliberate tool-mediated strategy for social capital preservation.",
+      "candidate_insight": "Status signaling often requires the manufacture of 'curated scarcity' rather than maximum availability. High-status individuals require tools that can simulate a busy state to preserve social capital ",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions address recruitment commodities and moats, this candidate introduces a distinct thesis regarding the 'value ceiling' of utility-focused products and the inevitable stagnation of marginal innovation in narrow-scope widgets.",
+      "candidate_insight": "Mature, single-purpose 'widget' products face a hard value ceiling regardless of how well they execute. Once the core utility is perfected, the marginal value of further innovation within that narrow ",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Fxu-mjpr-tum_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position introduces a distinct economic-driven thesis on product adoption that prioritizes financial incentive over developer experience, which is not captured by the existing worldview positions.",
+      "candidate_insight": "Technical product adoption is driven more by immediate economic incentives than by the quality of developer experience or ease of use. A steep learning curve is acceptable to users if the direct path ",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Fxu-mjpr-tum_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover matching moats and scaffolding, this specifically addresses the structural 'Advisory-Execution Gap' in consulting through a hybrid model, which is a distinct strategic stance not currently represented.",
+      "candidate_insight": "The consulting market suffers from a structural 'Advisory-Execution Gap' where experts diagnose problems without providing the means to fix them. True market dominance lies in the hybrid model that pa",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Fxu-mjpr-tum_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions cover information compression and intent-to-action abstraction, none explicitly address the 'accidental byproduct' or 'embedded learning' pedagogical stance.",
+      "candidate_insight": "Mastery of complex systems is best achieved when learning is an accidental byproduct of pursuing a high-utility outcome. Education should be embedded within the workflow of a primary goal rather than ",
+      "candidate_domain": "epistemology",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The candidate addresses the collapse of the biological distinction in authenticity and a recursive arms race in expression, which is distinct from existing positions focused on knowledge thresholds, information engineering, and assessment signals.",
+      "candidate_insight": "AI-mediated expression creates a recursive arms race where the distinction between human and machine-generated content eventually collapses. Authenticity is becoming a function of quality and resonanc",
+      "candidate_domain": "epistemology",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello_002",
+      "decision": "MERGE",
+      "target_position_id": "vibe-coding-should-be-positioned-as-a-strategic",
+      "confidence": "HIGH",
+      "reasoning": "The candidate adds a significant operational nuance to the existing 'vibe coding' position by shifting the focus from 'identity' to 'building mode' and the compression of engineering timelines.",
+      "candidate_insight": "High-intensity, inspiration-driven 'vibe coding' may be the optimal building mode in the AI era, superseding traditional notions of sustainable pace and procedural discipline. Creative explosion, when",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260113_2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions touch on software utility and data supremacy, the candidate introduces a distinct 'existential fragility' thesis specifically regarding the trade-off between AI-native leverage and platform dependency risk.",
+      "candidate_insight": "AI-native productivity is characterized by an 'existential fragility' due to extreme platform dependency. The massive gains in leverage provided by LLM providers are offset by the risk of sudden, unil",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260114_2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The candidate addresses the localized friction caused by uneven system modernization (integration mismatch), which is a distinct architectural thesis not covered by existing positions.",
+      "candidate_insight": "Partial modernization of legacy systems often increases friction rather than reducing it. When a single component is upgraded while the surrounding ecosystem remains 'old school,' the new system becom",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260114_2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar_002",
+      "decision": "MERGE",
+      "target_position_id": "the-strategic-value-in-the-labor-market-is",
+      "confidence": "HIGH",
+      "reasoning": "The candidate reinforces the existing 'data as moat' position while adding a specific strategic nuance regarding the tension between private data capture and regulatory constraints like GDPR.",
+      "candidate_insight": "Proprietary data is the only remaining defensible moat in an AI-commoditized market. The 'holy grail' of strategy is maximizing private data capture while navigating the growing constraints of regulat",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260114_2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar_003",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "This position shifts focus from the mechanics of the hiring market to the psychological 'signaling lag' and existential anxiety of tech leaders, which is not captured by existing structural or process-oriented positions.",
+      "candidate_insight": "The rapid evolution of AI has triggered a generalized existential anxiety among high-level tech executives (CPOs/CTOs). Successful leaders now feel a 'signaling lag' where their current stability feel",
+      "candidate_domain": "hiring-market",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260114_2026-01-12_fxu-mjpr-tum_001",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "The candidate's focus on 'skill acquisition as a side effect' through high-utility product adoption is a distinct mechanism of platform growth not captured by the existing positions on moonshots, data supremacy, or anthropomorphized interfaces.",
+      "candidate_insight": "Product adoption can be driven by 'skill acquisition as a side effect,' where users gain platform competence unconsciously through the use of a high-utility application. Inverting the 'learn-then-buil",
+      "candidate_domain": "worldview",
+      "candidate_classification": "V_POSITION"
+    },
+    {
+      "candidate_id": "cand_20260114_2026-01-12_fxu-mjpr-tum_002",
+      "decision": "NEW",
+      "target_position_id": null,
+      "confidence": "HIGH",
+      "reasoning": "While existing positions touch on the 'Matching vs. Narrative' gap, this candidate addresses a distinct structural failure in the advisory/consulting market specifically regarding the 'Diagnosis vs. Implementation' divide.",
+      "candidate_insight": "The advisory market suffers from a structural 'Diagnosis-Treatment' gap where advisors provide insight without the capacity for implementation. This separation of knowing from doing creates a market f",
+      "candidate_domain": "careerspan",
+      "candidate_classification": "EXTERNAL_WISDOM"
+    },
+    {
+      "candidate_id": "cand_20260114_2026-01-12_fxu-mjpr-tum_003",
+      "decision": "MERGE",
+      "target_position_id": "as-generative-ai-commoditizes-highquality-output-t",
+      "confidence": "HIGH",
+      "reasoning": "The candidate provides the specific mechanism (persistent state management) for the previously established 'input-as-a-moat' thesis, evolving the 'patient listener' concept into a concrete structural defensibility.",
+      "candidate_insight": "Persistent state management\u2014the ability for an AI to maintain a continuous, evolving model of the user\u2014is the primary moat for AI applications, not the quality of the prompts or the model. Per-use too",
+      "candidate_domain": "ai-automation",
+      "candidate_classification": "V_POSITION"
+    }
+  ]
+}
