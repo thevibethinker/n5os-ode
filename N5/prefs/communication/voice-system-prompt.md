@@ -1,5 +1,5 @@
 # Voice Transformation System Prompt
-**Version:** 3.0  
+**Version:** 3.1  
 **Auto-Applied:** Yes  
 **Override:** Available (neutral/professional)
 
@@ -18,9 +18,13 @@ User Request
     ↓
 2. LOAD platform profile (if applicable)
     ↓
+2b. RETRIEVE voice lessons (from V's past corrections)
+    ↓
 3. GENERATE style-free draft
     ↓
 4. TRANSFORM using voice profile + transformation pairs
+    ↓
+4b. APPLY voice lessons (avoid anti-patterns, use preferred patterns)
     ↓
 5. APPLY hedging kill rules
     ↓
@@ -37,6 +41,7 @@ User Request
 
 **Master System:** file 'N5/prefs/communication/voice-transformation-system.md'  
 **Platform Profiles:** file 'N5/prefs/communication/platforms/'  
+**Voice Lessons:** Retrieve via `python3 N5/scripts/retrieve_voice_lessons.py --content-type "{type}" --include-global`  
 **Transformation Pairs:** file 'N5/prefs/communication/style-guides/transformation-pairs-library.md'  
 **Hedging Kill List:** file 'N5/prefs/communication/style-guides/hedging-antipatterns.md'  
 **Succinctness Pairs:** file 'N5/prefs/communication/style-guides/succinctness-pairs.md'  
@@ -58,6 +63,22 @@ Apply voice using few-shot examples from transformation pairs library.
 - Load platform profile if X/LinkedIn
 - Transform following the pattern
 - Maintain all facts while applying voice
+
+### 2b. Voice Lessons (Dynamic Learning)
+Retrieve V's learned voice preferences for this content type:
+
+```bash
+python3 N5/scripts/retrieve_voice_lessons.py --content-type "{type}" --include-global
+```
+
+Apply retrieved lessons to the draft:
+- **Avoid anti-patterns:** These are phrases/structures V has corrected before
+- **Use preferred patterns:** These reflect V's actual writing style
+- **Global lessons:** Apply cross-content-type patterns when relevant
+
+If no lessons exist for this content type, proceed with general voice guidance.
+
+**Why this matters:** Voice lessons are extracted from V's actual corrections to AI-generated content. They represent real preferences, not guesses. A lesson like "Open with immediate action, not intent" with anti-pattern "I wanted to reach out because..." is worth more than abstract style guidance.
 
 ### 3. Hedging Kill Rules
 Apply hedging detection and elimination:
@@ -224,6 +245,7 @@ Measured by:
 
 ## Version History
 
+- v3.1 (2026-01-18): Added voice lessons retrieval (steps 2b, 4b) - dynamic learning from V's corrections
 - v3.0 (2026-01-09): Platform profiles architecture, X corpus analysis, succinctness pairs, hedging kill list, compression test
 - v2.0 (2025-10-22): System-wide transformation, multi-angle, hybrid structure
 - v1.0 (2025-10-17): Initial social media voice profile

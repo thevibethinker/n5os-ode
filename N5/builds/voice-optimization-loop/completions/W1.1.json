@@ -1,0 +1,36 @@
+{
+  "worker_id": "W1.1",
+  "title": "Capture Infrastructure",
+  "status": "complete",
+  "completed_at": "2026-01-18T19:23:00-05:00",
+  "artifacts": {
+    "database_table": "N5/data/voice_library.db → feedback_pairs table",
+    "capture_script": "N5/scripts/voice_feedback_capture.py",
+    "voice_lessons": "N5/prefs/communication/voice-lessons.md"
+  },
+  "success_criteria": {
+    "feedback_pairs_table_exists": true,
+    "capture_stores_and_returns_id": true,
+    "duplicate_detection_works": true,
+    "list_shows_pairs": true,
+    "mark_analyzed_works": true,
+    "voice_lessons_shell_exists": true
+  },
+  "test_results": {
+    "capture_test": "✓ Captured feedback pair #1 (cold_email)",
+    "list_test": "Shows 1 pair with correct metadata",
+    "dedup_test": "⏭ Duplicate detected - existing pair #1 (cold_email)",
+    "mark_analyzed_test": "✓ Marked pair #1 as analyzed"
+  },
+  "schema_decisions": {
+    "hash_length": "32 chars (SHA256 truncated) - sufficient for dedup, not storage-heavy",
+    "analyzed_flag": "Simple 0/1 integer - can extend to enum later if needed (0=pending, 1=analyzed, 2=lessons_extracted)",
+    "content_hash_formula": "sha256(original + '||' + improved)[:32] - separator prevents collision edge cases"
+  },
+  "notes_for_orchestrator": [
+    "W2.1 (Diff Analyzer) should query: SELECT * FROM feedback_pairs WHERE analyzed = 0 ORDER BY created_at",
+    "Consider adding 'lessons_extracted_at' timestamp if you want to track when lessons were pulled, not just that they were",
+    "The content_type field is free-text - might want a canonical list in future to prevent 'cold_email' vs 'cold-email' drift",
+    "Script supports --conversation-id for provenance but it's optional - W2.1 could populate this retroactively from context"
+  ]
+}
