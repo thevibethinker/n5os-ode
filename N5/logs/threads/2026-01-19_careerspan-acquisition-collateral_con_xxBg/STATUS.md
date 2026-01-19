@@ -1,13 +1,11 @@
 ---
 created: 2026-01-17
-last_edited: 2026-01-19
-version: 1.1
+last_edited: 2026-01-17
+version: 1.0
 provenance: con_xxBgE2F5k5Q4AAo7
 ---
 
 # Build Status: careerspan-acquisition-collateral
-
-**Status:** ⏸️ Paused — Workers pending
 
 ## Workers
 
@@ -20,7 +18,7 @@ provenance: con_xxBgE2F5k5Q4AAo7
 ## Orchestrator Notes
 
 V will open three new threads and paste each worker brief. Workers will:
-1. Create the internal positioning document in `/home/workspace/Documents/Careerspan/`
+1. Create the internal positioning document
 2. Write completion report to `completions/W<n>.json`
 
 When all three are done, return to this orchestrator thread to synthesize.
@@ -31,8 +29,3 @@ When all three are done, return to this orchestrator thread to synthesize.
 - [ ] V: Open thread, paste W3 brief
 - [ ] Workers complete, write to completions/
 - [ ] Return here to synthesize
-
-## Key Context
-- Orchestrator convo: con_xxBgE2F5k5Q4AAo7
-- V priorities doc: `Documents/Careerspan/v_acquisition_priorities.md`
-- Wave 1 results: `/home/.z/workspaces/con_xxBgE2F5k5Q4AAo7/wave1_results/`

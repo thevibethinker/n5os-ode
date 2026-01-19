@@ -1,9 +1,16 @@
 {
   "worker_id": "W1",
   "status": "complete",
+  "completed_at": "2026-01-19T11:10:00-05:00",
+  "convo_id": "con_QJVioWFcwHgF0tii",
   "output_file": "/home/workspace/Documents/Careerspan/internal_positioning_internal_mobility.md",
   "summary": "Built comprehensive internal mobility positioning argument (v2.0). Core thesis: Careerspan is the 'signal capture layer' that talent marketplaces need but can't build. Incorporated V's feedback: zero marketing spend organic growth, 46%/90% hire failure stats, Marvin Ventures partnership, 'managers aren't talent spotters' framing, human-yet-detailed positioning.",
   "key_insight": "The most untapped talent source is the one you already have—but managers aren't talent spotters, and HR data doesn't capture aspirations. Careerspan solves both: an objective lens + the employee's own structured reflection.",
-  "version": "2.0",
-  "timestamp": "2026-01-19T09:50:00-05:00"
+  "artifacts": [
+    "Documents/Careerspan/internal_positioning_internal_mobility.md",
+    "N5/builds/careerspan-acquisition-collateral/NEW_DETAILS_FOR_OTHER_WORKERS.md"
+  ],
+  "learnings": "V provided significant new context mid-worker that applies to ALL workers: zero marketing spend (organic growth), 46% hire failure / 90% values-mindset stat, Marvin Ventures partnership, 'managers aren't talent spotters' framing. Created NEW_DETAILS doc for orchestrator to distribute.",
+  "concerns": "Other workers need to incorporate NEW_DETAILS - especially no GPT-4 references and the new stats/framing. Orchestrator should share this doc.",
+  "version": "2.0"
 }

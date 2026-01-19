@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "slug": "mindmap-concept-migration",
+  "title": "Mind Map: Migrate to Heterogeneous Concept Graph Architecture",
+  "objective": null,
+  "created": "2026-01-19",
+  "status": "draft",
+  "completed_at": null,
+  "type": "general",
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

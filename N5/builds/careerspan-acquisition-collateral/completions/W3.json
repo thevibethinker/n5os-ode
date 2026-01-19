@@ -2,7 +2,20 @@
   "worker_id": "W3",
   "status": "complete",
   "output_file": "/home/workspace/Documents/Careerspan/internal_positioning_matching_assessment.md",
-  "summary": "Built the strategic argument for Careerspan as a story-based assessment layer that captures authentic behavioral signals (self-awareness, communication quality, follow-through) through pro-candidate AI coaching—data that traditional aptitude tests and keyword matching cannot provide. Mapped to specific acquirer types: ATS platforms seeking differentiation (Greenhouse, Lever, Ashby) and assessment companies needing qualitative capability (Criteria, HireVue, PI).",
-  "key_insight": "The pro-candidate framing is Careerspan's secret weapon—candidates reveal authentically to a coach helping them succeed, while they perform/game for assessments evaluating them. This flips the data quality equation and produces behavioral signal no traditional assessment can capture.",
-  "timestamp": "2026-01-19T09:35:00-05:00"
+  "version": "2.0",
+  "summary": "Built comprehensive positioning document reframing Careerspan around the killer stat: 46% of hires fail within 18 months, 90% due to behavioral mismatch—not technical competence. This means the entire $3.5B assessment industry focuses on the 10% while ignoring the 90%. Careerspan captures behavioral signal through story-based assessment where candidates reveal (to a coach helping them) rather than perform (for an evaluator judging them). Mapped to specific acquirers with tailored pitches emphasizing 'we capture the 90% aptitude tests miss.'",
+  "key_insight": "The 46%/90% stat transforms the entire positioning. It's not 'Careerspan offers a better assessment.' It's 'The entire assessment industry is solving the wrong problem—10% of failures—while we solve the 90%.' This reframes Careerspan from incremental improvement to category correction.",
+  "changes_from_v1": [
+    "Added 46%/90% stat as the central economic argument",
+    "Reframed around '$200B problem' (cost of bad hires at scale)",
+    "Added comparison table showing why each existing tool category misses 90%",
+    "Incorporated zero-marketing-spend as product-market-fit signal",
+    "Added Marvin Ventures partnership as credibility signal",
+    "Added 'experience paradox' (feels human, produces structured data) as key differentiator",
+    "Strengthened scalability comparison with cost-per-candidate table",
+    "Developed tailored pitches for ATS vs assessment acquirers",
+    "Updated tech references (removed GPT-4, now 'multi-agent AI architecture')",
+    "Added 'The One-Liner' crystallization: 'We capture the 90% that aptitude tests miss'"
+  ],
+  "timestamp": "2026-01-19T10:42:00-05:00"
 }
