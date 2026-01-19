@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "slug": "orchestrator-mece",
-  "title": "Build Orchestrator MECE Upgrade",
+  "slug": "broker-detection",
+  "title": "Broker Detection & Sync in Deal Intelligence",
   "objective": null,
   "created": "2026-01-19",
   "status": "complete",
-  "completed_at": "2026-01-19T11:57:53+00:00",
+  "completed_at": "2026-01-19T08:41:15+00:00",
   "type": "general",
   "orchestrator_convo_id": null,
   "workers": {

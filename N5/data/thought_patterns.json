@@ -1,13 +1,31 @@
 {
-  "analysis_date": "2026-01-18T13:05:43.016533+00:00",
-  "total_ideas_analyzed": 154,
-  "total_meetings": 39,
+  "analysis_date": "2026-01-19T13:08:19.951551+00:00",
+  "total_ideas_analyzed": 159,
+  "total_meetings": 40,
   "recurring_themes": [
     {
       "theme": "uncategorized",
-      "meeting_count": 21,
-      "idea_count": 51,
+      "meeting_count": 22,
+      "idea_count": 55,
       "recent_examples": [
+        {
+          "title": "Some markets may resist efficiency improvements no...",
+          "idea": "Some markets may resist efficiency improvements not from ignorance but from economic rationality",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "\"Premium\" in service industries may partly be payi...",
+          "idea": "\"Premium\" in service industries may partly be paying for intentional inefficiency",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "The therapy market may be more receptive to schedu...",
+          "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
         {
           "title": "Market timing may be less about when you start and...",
           "idea": "Market timing may be less about when you start and more about execution velocity",
@@ -19,24 +37,6 @@
           "idea": "The \"first mover advantage\" may be a myth in AI-accelerated spaces",
           "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
           "date": "2026-01-16"
-        },
-        {
-          "title": "Capital efficiency in the early phase may actually...",
-          "idea": "Capital efficiency in the early phase may actually be a trap if it slows velocity",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Trust and disclosure UX may be the most undervalue...",
-          "idea": "Trust and disclosure UX may be the most undervalued startup competency",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "This engagement pattern could be valuable in conte...",
-          "idea": "This engagement pattern could be valuable in contexts far beyond career development",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
         }
       ],
       "date_range": {
@@ -46,9 +46,15 @@
     },
     {
       "theme": "recruiting_future",
-      "meeting_count": 19,
-      "idea_count": 46,
+      "meeting_count": 20,
+      "idea_count": 47,
       "recent_examples": [
+        {
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
+          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
+          "date": "2026-01-15"
+        },
         {
           "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
           "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
@@ -68,15 +74,9 @@
           "date": "2026-01-14"
         },
         {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "title": "Implies geographic/institutional monopoly on talen...",
+          "idea": "Implies geographic/institutional monopoly on talent pipelines",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         }
       ],
@@ -91,18 +91,6 @@
       "idea_count": 30,
       "recent_examples": [
         {
-          "title": "Products that achieve deep self-disclosure have fu...",
-          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
           "title": "Scheduling automation companies may inadvertently ...",
           "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
@@ -112,6 +100,18 @@
           "title": "Privacy requirements have hidden productivity cost...",
           "idea": "Privacy requirements have hidden productivity costs rarely quantified",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Products that achieve deep self-disclosure have fu...",
+          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
           "date": "2026-01-16"
         },
         {
@@ -132,12 +132,6 @@
       "idea_count": 21,
       "recent_examples": [
         {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
           "title": "Privacy requirements have hidden productivity cost...",
           "idea": "Privacy requirements have hidden productivity costs rarely quantified",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
@@ -147,6 +141,12 @@
           "title": "Solutions that solve the *workflow* of privacy (no...",
           "idea": "Solutions that solve the *workflow* of privacy (not just the compliance) may be undervalued",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
           "date": "2026-01-16"
         },
         {
@@ -214,6 +214,12 @@
       "idea_count": 13,
       "recent_examples": [
         {
+          "title": "Semi-technical founders lower barriers to entry",
+          "idea": "Semi-technical founders lower barriers to entry",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+          "date": "2026-01-16"
+        },
+        {
           "title": "Investor risk models for first-time founders shoul...",
           "idea": "Investor risk models for first-time founders should account for this structural gap",
           "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
@@ -232,15 +238,9 @@
           "date": "2026-01-16"
         },
         {
-          "title": "Semi-technical founders lower barriers to entry",
-          "idea": "Semi-technical founders lower barriers to entry",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Non-technical co-founders may be undervalued for t...",
-          "idea": "Non-technical co-founders may be undervalued for their empathy function",
-          "meeting": "2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins",
+          "title": "Calendly's Quiet Pivot Signals Category Collapse",
+          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
+          "meeting": "2026-01-15_2026-01-15-Chat",
           "date": "2026-01-15"
         }
       ],
@@ -255,6 +255,12 @@
       "idea_count": 12,
       "recent_examples": [
         {
+          "title": "Scheduling automation companies may inadvertently ...",
+          "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
           "title": "Thread",
           "idea": "\"The Interview Extinction Event: What Happens When Agents Do Round 1?\"",
           "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
@@ -264,12 +270,6 @@
           "title": "Deep Thought",
           "idea": "Agent coordination as a new form of diplomacy",
           "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Scheduling automation companies may inadvertently ...",
-          "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
           "date": "2026-01-16"
         },
         {
@@ -288,6 +288,47 @@
       "date_range": {
         "earliest": "2025-12-22",
         "latest": "2026-01-16"
+      }
+    },
+    {
+      "theme": "pricing_business",
+      "meeting_count": 6,
+      "idea_count": 6,
+      "recent_examples": [
+        {
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
+          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
+          "date": "2026-01-15"
+        },
+        {
+          "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
+          "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
+          "meeting": "2026-01-15_chat",
+          "date": "2026-01-15"
+        },
+        {
+          "title": "Unconventional business models discussed",
+          "idea": "Unconventional business models discussed",
+          "meeting": "2026-01-14_2026-01-14-Test-ingest",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "Monetization happens through compounding relations...",
+          "idea": "Monetization happens through compounding relationship, not transaction",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
+          "date": "2026-01-09"
+        },
+        {
+          "title": "The Legitimacy Arbitrage",
+          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
+          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "date": "2026-01-09"
+        }
+      ],
+      "date_range": {
+        "earliest": "2026-01-09",
+        "latest": "2026-01-15"
       }
     },
     {
@@ -330,53 +371,30 @@
         "earliest": "2025-12-22",
         "latest": "2026-01-14"
       }
-    },
-    {
-      "theme": "pricing_business",
-      "meeting_count": 5,
-      "idea_count": 5,
-      "recent_examples": [
-        {
-          "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
-          "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
-          "meeting": "2026-01-15_chat",
-          "date": "2026-01-15"
-        },
-        {
-          "title": "Unconventional business models discussed",
-          "idea": "Unconventional business models discussed",
-          "meeting": "2026-01-14_2026-01-14-Test-ingest",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "Monetization happens through compounding relations...",
-          "idea": "Monetization happens through compounding relationship, not transaction",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "Monetization happens through compounding relations...",
-          "idea": "Monetization happens through compounding relationship, not transaction",
-          "meeting": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
-          "date": "2026-01-09"
-        }
-      ],
-      "date_range": {
-        "earliest": "2026-01-09",
-        "latest": "2026-01-15"
-      }
     }
   ],
   "evolution_candidates": [
     {
       "theme": "uncategorized",
       "trajectory": [
+        {
+          "title": "Some markets may resist efficiency improvements no...",
+          "idea": "Some markets may resist efficiency improvements not from ignorance but from economic rationality",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "\"Premium\" in service industries may partly be payi...",
+          "idea": "\"Premium\" in service industries may partly be paying for intentional inefficiency",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "The therapy market may be more receptive to schedu...",
+          "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
         {
           "title": "Market timing may be less about when you start and...",
           "idea": "Market timing may be less about when you start and more about execution velocity",
@@ -388,24 +406,6 @@
           "idea": "The \"first mover advantage\" may be a myth in AI-accelerated spaces",
           "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
           "date": "2026-01-16"
-        },
-        {
-          "title": "Capital efficiency in the early phase may actually...",
-          "idea": "Capital efficiency in the early phase may actually be a trap if it slows velocity",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Trust and disclosure UX may be the most undervalue...",
-          "idea": "Trust and disclosure UX may be the most undervalued startup competency",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "This engagement pattern could be valuable in conte...",
-          "idea": "This engagement pattern could be valuable in contexts far beyond career development",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
         }
       ],
       "span_days": 25
@@ -413,6 +413,12 @@
     {
       "theme": "recruiting_future",
       "trajectory": [
+        {
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
+          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
+          "date": "2026-01-15"
+        },
         {
           "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
           "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
@@ -432,15 +438,9 @@
           "date": "2026-01-14"
         },
         {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They ...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
-          "date": "2026-01-09"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This invert...",
-          "meeting": "2026-01-09_2026-01-09-Daily-team-stand-up",
+          "title": "Implies geographic/institutional monopoly on talen...",
+          "idea": "Implies geographic/institutional monopoly on talent pipelines",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         }
       ],
@@ -449,18 +449,6 @@
     {
       "theme": "product_strategy",
       "trajectory": [
-        {
-          "title": "Products that achieve deep self-disclosure have fu...",
-          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
         {
           "title": "Scheduling automation companies may inadvertently ...",
           "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
@@ -471,6 +459,18 @@
           "title": "Privacy requirements have hidden productivity cost...",
           "idea": "Privacy requirements have hidden productivity costs rarely quantified",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Products that achieve deep self-disclosure have fu...",
+          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
           "date": "2026-01-16"
         },
         {
@@ -486,12 +486,6 @@
       "theme": "personal_growth",
       "trajectory": [
         {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
           "title": "Privacy requirements have hidden productivity cost...",
           "idea": "Privacy requirements have hidden productivity costs rarely quantified",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
@@ -501,6 +495,12 @@
           "title": "Solutions that solve the *workflow* of privacy (no...",
           "idea": "Solutions that solve the *workflow* of privacy (not just the compliance) may be undervalued",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
           "date": "2026-01-16"
         },
         {
@@ -556,14 +556,14 @@
     }
   ],
   "theme_distribution": {
+    "community_network": 18,
     "founder_life": 13,
-    "uncategorized": 51,
+    "uncategorized": 55,
+    "ai_replacement": 12,
     "product_strategy": 30,
     "personal_growth": 21,
-    "ai_replacement": 12,
-    "community_network": 18,
-    "recruiting_future": 46,
-    "pricing_business": 5,
+    "recruiting_future": 47,
+    "pricing_business": 6,
     "ai_philosophy": 9
   }
 }

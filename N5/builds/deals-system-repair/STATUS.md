@@ -12,8 +12,8 @@ provenance: con_ZGBnCCZnbKMYnfcF
 |-------|-------|
 | Build ID | deals-system-repair |
 | Started | 2026-01-19 02:25 ET |
-| Completed | 2026-01-19 03:10 ET |
-| Status | ✅ **COMPLETE** |
+| Wave 1-2 Completed | 2026-01-19 03:10 ET |
+| Status | 🔄 **WAVE 3 IN PROGRESS** |
 | Duration | ~45 minutes |
 
 ## Final Metrics
@@ -59,3 +59,29 @@ provenance: con_ZGBnCCZnbKMYnfcF
 - 7 meetings had parse errors (truncated API responses) — low priority
 - 175 meetings still unrouted (likely older or already-processed meetings without B01 recaps)
 - Agent 806f7fcc (Deal Sync & Meeting Router) instruction needs update to use new batch_meeting_router.py
+
+---
+
+## Wave 3: Process Fixes & Data Remediation
+
+**Triggered by:** V's data review session (con_1oLxG6Z1OMdnfDOr)
+**Plan:** `WAVE3_PLAN.md`
+
+### Issues Discovered
+| # | Issue | Type |
+|---|-------|------|
+| 1 | Jeffrey Botteron name wrong ("Jeffery Bot") | Data |
+| 2 | Calendly misclassified as leadership | Process |
+| 3 | Ivor Stratford → Handshake link missing | Process |
+| 4 | Vir → Handshake link missing | Process |
+| 5 | Ray angle_strategy possibly stale | Data |
+| 6 | Future Fit deal missing (Hamoon, meeting Tue) | Data |
+
+### Wave 3 Workers
+| ID | Task | Status | Assignee |
+|----|------|--------|----------|
+| W3.1 | Process Documentation | ☐ Pending | — |
+| W3.2 | Data Remediation | ☐ Pending (blocked by W3.1) | — |
+
+### Key Principle
+**Fix the underlying process first, then remediate data.**
