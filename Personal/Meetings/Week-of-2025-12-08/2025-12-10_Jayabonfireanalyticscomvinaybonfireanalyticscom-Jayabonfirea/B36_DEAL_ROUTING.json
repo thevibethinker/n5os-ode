@@ -1,0 +1,48 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is exclusively about Careerspan product deployment and acquisition strategy. No mention of Zo partnerships, integrations, or GTM opportunities.",
+  "careerspan_reasoning": "Meeting contains critical strategic intel: V disclosed active acquisition/sale exploration, named specific acquirer prospects (Teal, HireVue, Teamwork Online), discussed partnership-to-acquisition strategy (Coffee Space), and identified closing window due to competitors (Jack and Jill).",
+  "companies_mentioned": [
+    {
+      "name": "Bonfire Analytics",
+      "match_to_deal_id": null,
+      "context": "Jaya's company, product demo for potential Careerspan deployment"
+    },
+    {
+      "name": "Teal",
+      "match_to_deal_id": null,
+      "context": "Potential Careerspan acquirer"
+    },
+    {
+      "name": "HireVue",
+      "match_to_deal_id": null,
+      "context": "Former CEO mentioned as potential acquirer"
+    },
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Potential Careerspan acquirer"
+    },
+    {
+      "name": "Coffee Space",
+      "match_to_deal_id": null,
+      "context": "Partnership conversation target as pathway to acquisition"
+    },
+    {
+      "name": "Jack and Jill",
+      "match_to_deal_id": null,
+      "context": "Competitors creating urgency for acquisition window"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teal",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Named explicitly as potential Careerspan acquirer during strategic discussion about sale opportunities"
+    }
+  ],
+  "summary": "Highly relevant to Careerspan acquisition pipeline: V disclosed active sale exploration and named Teal, HireVue, and Teamwork Online as acquirer prospects. Zero relevance to Zo partnerships."
+}

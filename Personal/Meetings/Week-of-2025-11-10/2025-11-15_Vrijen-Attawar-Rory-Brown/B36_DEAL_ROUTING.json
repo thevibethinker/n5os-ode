@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "This is a personal finance meeting between V and his financial advisor at Ascenta Wealth. No discussion of Zo partnerships, GTM strategy, or partnership opportunities. Rory Brown is providing financial planning services, not exploring business partnerships.",
+  "careerspan_reasoning": "Direct relevance - meeting covers Careerspan's acquisition status (expecting exit within months), operational shifts (headcount reduction to 3), and bridge capital requirements. However, this is about funding the gap to exit rather than direct acquirer discussions.",
+  "companies_mentioned": [
+    {
+      "name": "Ascenta Wealth",
+      "match_to_deal_id": null,
+      "context": "Rory Brown's financial advisory firm, providing personal wealth management services to V and his father"
+    },
+    {
+      "name": "Friends Provident",
+      "match_to_deal_id": null,
+      "context": "Insurance/investment plan provider holding Vrijen's father's policy; source of potential bridge capital (~$280K SGD partial withdrawal)"
+    },
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "V's company, currently in acquisition phase with expected exit in few months, needs bridge capital"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This meeting is a personal finance advisory session focused on extracting bridge capital (~$280K SGD) from a Friends Provident plan to fund Careerspan during its final months before expected acquisition. No partnership or acquisition deal discussions occurred."
+}

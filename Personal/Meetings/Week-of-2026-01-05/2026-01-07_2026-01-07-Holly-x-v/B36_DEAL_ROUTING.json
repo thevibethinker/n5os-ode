@@ -1,0 +1,65 @@
+{
+  "zo_relevance_score": 0.3,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Minor relevance through V's offer to introduce Holly to Erica Beavers (Alpic) for ChatGPT App Store integration and technical advisor intros, but this is primarily a Careerspan strategic meeting",
+  "careerspan_reasoning": "Extremely high relevance. V explicitly stated Careerspan is 'all out on just somebody fucking buying us' and is in active discussions with Ellie AI and a well-funded Singaporean company. Holly offered to scan Careerspan talent against Matchbox's active roles. The entire conversation is about exit strategy, partnership possibilities, and positioning Careerspan as an acquisition target.",
+  "companies_mentioned": [
+    {
+      "name": "Matchbox",
+      "match_to_deal_id": null,
+      "context": "Holly Sanders' recruitment AI company; parallel to Careerspan's synthetic talent network model. Holly offered to scan Careerspan talent against Matchbox roles at Agave and Deep Tune."
+    },
+    {
+      "name": "Ellie AI",
+      "match_to_deal_id": null,
+      "context": "Kristen's company; V is in active discussions with them as a potential Careerspan acquirer"
+    },
+    {
+      "name": "Singaporean company (unnamed)",
+      "match_to_deal_id": null,
+      "context": "Well-funded Singaporean company V is in active discussions with regarding Careerspan acquisition"
+    },
+    {
+      "name": "Agave",
+      "match_to_deal_id": null,
+      "context": "Matchbox client with active roles - context only"
+    },
+    {
+      "name": "Deep Tune",
+      "match_to_deal_id": null,
+      "context": "Matchbox client with active roles - context only"
+    },
+    {
+      "name": "Alpic",
+      "match_to_deal_id": null,
+      "context": "Erica Beavers' company for ChatGPT App Store integration - context only"
+    },
+    {
+      "name": "11 Labs",
+      "match_to_deal_id": null,
+      "context": "AI interview tech provider - context only"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Ellie AI",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "V explicitly stated being in active discussions with Ellie AI (Kristen's company) as a potential Careerspan acquirer"
+    },
+    {
+      "company": "Matchbox",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.7,
+      "rationale": "Strategic founder-to-founder discussion with parallel challenges in talent/recruitment space. While no explicit acquisition discussions, the connection and offer to cross-reference talent suggest partnership or deal exploration"
+    },
+    {
+      "company": "Singaporean company (unnamed)",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "V explicitly described active discussions with a well-funded Singaporean company regarding Careerspan acquisition"
+    }
+  ],
+  "summary": "Highly relevant Careerspan acquisition meeting where V revealed exit intent and active acquisition discussions with Ellie AI and a Singaporean company. Matchbox founder collaboration explored talent matching and strategic partnership possibilities."
+}

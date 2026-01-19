@@ -1,0 +1,48 @@
+{
+  "zo_relevance_score": 0.25,
+  "careerspan_relevance_score": 0.65,
+  "zo_reasoning": "Investor runs a $20M fund investing at $3M-$4M ARR stage alongside larger funds. Potential portfolio partner relationship, but meeting focused primarily on Careerspan pitch rather than Zo services or GTM partnerships.",
+  "careerspan_reasoning": "Direct investor pitch meeting with fund manager who invests post-PMF at $3M-$4M ARR. Vrijen presented Careerspan's pivot to enterprise hiring platform and suggested talent pipeline could be portfolio differentiator. Active fundraising/funding conversation, not acquisition but highly relevant to Careerspan deal pipeline.",
+  "companies_mentioned": [
+    {
+      "name": "Zumba",
+      "match_to_deal_id": null,
+      "context": "Investor's previous employer, mentioned in background section"
+    },
+    {
+      "name": "Zoombini",
+      "match_to_deal_id": null,
+      "context": "Early childhood education company spun out from Zumba by the investor"
+    },
+    {
+      "name": "QED",
+      "match_to_deal_id": null,
+      "context": "Mentioned in valuation sensitivity discussion - requires $500M return per deal"
+    },
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "McKinsey alumni fund - Careerspan recently signed a deal with them (note: appears in existing deals list without specific ID)"
+    },
+    {
+      "name": "Emory",
+      "match_to_deal_id": null,
+      "context": "Working with Careerspan to support alumni"
+    },
+    {
+      "name": "Getro",
+      "match_to_deal_id": null,
+      "context": "Contrasted as 'shallow marketing' tool vs Careerspan's 'pattern disruption'"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Unnamed Miami VC Fund (Investor from Zumba/Zoombini)",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.75,
+      "rationale": "Active investor conversation with fund manager who invests at Careerspan's target stage ($3M-$4M ARR). Investor expressed interest in talent pipeline solution for portfolio. Lower confidence as investor remains unnamed in notes and this appears to be funding conversation rather than acquisition discussion."
+    }
+  ],
+  "summary": "Investor pitch meeting for Careerspan with Miami-based fund manager who invests at $3M-$4M ARR post-PMF. Careerspan positioned as enterprise hiring platform differentiator for fund's portfolio companies. Low relevance for Zo partnerships, moderate-high relevance for Careerspan funding pipeline."
+}

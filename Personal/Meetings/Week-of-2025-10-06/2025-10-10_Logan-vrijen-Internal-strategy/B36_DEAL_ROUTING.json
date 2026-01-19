@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.3,
+  "zo_reasoning": "Meeting discusses internal AI automation capabilities (Zoe protocol) which demonstrates Zo's potential value proposition, but contains no partnership discussions or external company engagements relevant to the Zo pipeline.",
+  "careerspan_reasoning": "Meeting is internal strategic planning for Careerspan covering fundraising strategy (Go Ahead Ventures, NY State Ventures), operational initiatives (WorkTech SHRM application), and advisor rollout. These are internal activities, not acquisition targets.",
+  "companies_mentioned": [
+    {
+      "name": "Go Ahead Ventures",
+      "match_to_deal_id": null,
+      "context": "VC firm proposed as fundraising target for Careerspan bridge round"
+    },
+    {
+      "name": "New York State Ventures",
+      "match_to_deal_id": null,
+      "context": "State venture fund mentioned as potential funding source for Careerspan"
+    },
+    {
+      "name": "WorkTech SHRM",
+      "match_to_deal_id": null,
+      "context": "Program application discussed for Careerspan visibility"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This is an internal Careerspan strategy meeting focused on fundraising (Go Ahead Ventures, NY State Ventures), AI automation capabilities, and operations (WorkTech SHRM program application). No external partnership or acquisition opportunities discussed."
+}

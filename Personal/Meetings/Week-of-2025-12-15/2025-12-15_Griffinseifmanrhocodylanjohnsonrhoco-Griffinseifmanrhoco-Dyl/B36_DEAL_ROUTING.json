@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.4,
+  "zo_reasoning": "Meeting is about Mercury banking onboarding for Careerspan's operational infrastructure. No partnership discussion, GTM strategy, or Zo-related collaboration.",
+  "careerspan_reasoning": "Relevant to Careerspan's operations (banking migration from Brex to Mercury, cash position, investor deposit expectations). Mercury is a vendor, not an acquirer or strategic deal target.",
+  "companies_mentioned": [
+    {
+      "name": "Mercury",
+      "match_to_deal_id": null,
+      "context": "Banking services provider Careerspan is migrating to from Brex. Vendor relationship for financial infrastructure."
+    },
+    {
+      "name": "Brex",
+      "match_to_deal_id": null,
+      "context": "Current banking provider Careerspan is migrating away from."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Operational meeting about Careerspan's banking migration from Brex to Mercury. Vendor relationship, not a strategic deal for either Zo or Careerspan pipelines."
+}

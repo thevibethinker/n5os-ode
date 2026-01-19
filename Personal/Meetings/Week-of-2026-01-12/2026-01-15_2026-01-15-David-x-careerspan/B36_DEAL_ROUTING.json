@@ -1,0 +1,43 @@
+{
+  "zo_relevance_score": 0.9,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Direct discussion of Zo GTM strategy including promotion tactics, theory of change for cross-platform leverage, data company partnership hypothesis, and influencer strategy. Actionable intro planned with Finn as power user.",
+  "careerspan_reasoning": "Potential partnership opportunity with Super Interviews/Super Jobs for candidate screening integration. Contacts identified (Andy Moat, Nate), pricing discussed ($100/mo or $250/3mo). Strategic alignment noted between their mock interview screening and Careerspan's approach.",
+  "companies_mentioned": [
+    {
+      "name": "Super Interviews",
+      "match_to_deal_id": null,
+      "context": "Potential Careerspan screening partnership, contact Andy Moat"
+    },
+    {
+      "name": "Super Jobs",
+      "match_to_deal_id": null,
+      "context": "Screening platform using mock interviews, reminded David of Careerspan"
+    },
+    {
+      "name": "Finn",
+      "match_to_deal_id": null,
+      "context": "LinkedIn creator (20K followers), AI content workflows, David to intro to Zo as power user"
+    },
+    {
+      "name": "Ben",
+      "match_to_deal_id": null,
+      "context": "David to email about Super Interviews connection"
+    },
+    {
+      "name": "Asher",
+      "match_to_deal_id": null,
+      "context": "Existing connection, V's call pushed to tomorrow"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Super Interviews",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Clear partnership opportunity for Careerspan screening, contacts identified (Andy Moat, Nate), pricing discussed, David to follow up"
+    }
+  ],
+  "summary": "Highly relevant to Zo GTM strategy with influencer partnerships and data company expansion; moderately relevant to Careerspan via Super Interviews screening integration opportunity."
+}

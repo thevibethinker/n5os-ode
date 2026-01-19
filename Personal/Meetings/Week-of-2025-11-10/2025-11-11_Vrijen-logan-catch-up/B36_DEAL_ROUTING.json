@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.0,
+  "zo_reasoning": "Purely personal/social catch-up meeting with no discussion of partnerships, integrations, GTM strategy, or any Zo-related business matters.",
+  "careerspan_reasoning": "No discussion of career coaching, Careerspan business, acquisition targets, or any relevant stakeholders. Entirely casual conversation.",
+  "companies_mentioned": [
+    {
+      "name": "Chaitanya (chaitanyanbox.com)",
+      "match_to_deal_id": null,
+      "context": "Mentioned in passing regarding calendar confusion/technical glitch; appears to be a personal contact, not a business entity."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This is a purely personal catch-up meeting between Vrijen and Logan with no business relevance, strategic discussions, or actionable deal intelligence for either Zo or Careerspan pipelines."
+}

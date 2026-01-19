@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Meeting is about Vrijen's other company (Careerspan), not Zo. No Zo GTM, partnership, or data integration discussions occurred. The data source companies listed in existing deals were not mentioned in the meeting content.",
+  "careerspan_reasoning": "Highly relevant sales prospect. Afraaz (Boomer) expressed immediate hiring needs, Vrijen pitched Careerspan's solution, and next steps (dummy account) indicate active sales pipeline progression. Afraaz is evaluating Careerspan vs. alternatives (LinkedIn, alumni routes).",
+  "companies_mentioned": [
+    {
+      "name": "Boomer",
+      "match_to_deal_id": null,
+      "context": "Afraaz's healthcare startup, potential Careerspan customer. Medicare-billed program with $1M revenue potential via clinic rev share."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Boomer",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.87,
+      "rationale": "Qualified prospect with active hiring bottleneck. Next steps agreed (dummy account demo). In consideration phase comparing Careerspan vs. alternatives. Healthcare founder with revenue potential ($1M clinic deal)."
+    }
+  ],
+  "summary": "This is a Careerspan sales meeting with qualified prospect Boomer (healthcare startup founder). Afraaz has immediate hiring needs and is evaluating Careerspan's platform, with next steps for a demo. No relevance to Zo partnerships."
+}

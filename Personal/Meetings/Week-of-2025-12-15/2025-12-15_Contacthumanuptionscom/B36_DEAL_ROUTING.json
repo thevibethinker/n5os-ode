@@ -1,0 +1,48 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Minimal Zo partnership relevance. No technical partnerships or GTM integrations discussed. Only indirect relevance through Kamina's network event success which could theoretically host Zo but not explicitly discussed.",
+  "careerspan_reasoning": "Highly relevant to Careerspan's acquisition pipeline and school GTM. Meeting covers: school traction (Cornell, Rice, UMass), networking event success, explicit offer to introduce to ASA's Jane Swift for potential acquisition, and strategic outreach recommendations.",
+  "companies_mentioned": [
+    {
+      "name": "ASA",
+      "match_to_deal_id": null,
+      "context": "Kamina offers to put a 'bee in the ear' of Jane Swift at ASA regarding potential Careerspan acquisition"
+    },
+    {
+      "name": "Taco Bell Foundation",
+      "match_to_deal_id": null,
+      "context": "Kamina had high-stakes meeting with Executive Director"
+    },
+    {
+      "name": "FedCap",
+      "match_to_deal_id": null,
+      "context": "Jim Malatros from FedCap spoke at Kamina's event"
+    },
+    {
+      "name": "Cornell University (Johnson School)",
+      "match_to_deal_id": null,
+      "context": "MBA program showing interest in Careerspan"
+    },
+    {
+      "name": "Rice University",
+      "match_to_deal_id": null,
+      "context": "Felix/Jim Pike showing interest, strong data points shared"
+    },
+    {
+      "name": "UMass",
+      "match_to_deal_id": null,
+      "context": "Part of 2025 success story for re-engagement blast"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "ASA",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Explicit introduction offer from Kamina to Jane Swift at ASA for potential Careerspan acquisition. High confidence as direct action opportunity."
+    }
+  ],
+  "summary": "Meeting primarily relevant to Careerspan's acquisition pipeline (ASA introduction) and school GTM strategy (Cornell, Rice, UMass traction, re-engagement blast). Minimal Zo partnership relevance."
+}

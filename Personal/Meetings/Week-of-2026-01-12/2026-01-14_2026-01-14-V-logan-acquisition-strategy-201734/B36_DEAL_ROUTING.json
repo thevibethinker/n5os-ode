@@ -1,0 +1,51 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Zo mentioned only as a tool used to generate acquisition targets database; no Zo partnership deals, integrations, or GTM strategies discussed.",
+  "careerspan_reasoning": "Explicit acquisition/exit targeting strategy session. Built prioritized target list of ~100 decision-makers, defined outreach framework, categorized targets by proximity/temperature/exit type, and discussed timeline for active outreach.",
+  "companies_mentioned": [
+    {
+      "name": "Ellie",
+      "match_to_deal_id": null,
+      "context": "Hot/warm target, aqui-hire potential, existing interested party"
+    },
+    {
+      "name": "Teal",
+      "match_to_deal_id": null,
+      "context": "In consideration as acquisition target"
+    },
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "In consideration as acquisition target"
+    },
+    {
+      "name": "Reliance Industries",
+      "match_to_deal_id": null,
+      "context": "First degree proximity connection"
+    },
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Warm connection"
+    },
+    {
+      "name": "Korn Ferry",
+      "match_to_deal_id": null,
+      "context": "Logan knows someone there"
+    },
+    {
+      "name": "LHC",
+      "match_to_deal_id": null,
+      "context": "Mentioned as potential target"
+    },
+    {
+      "name": "OOT",
+      "match_to_deal_id": null,
+      "context": "Checking connections"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Careerspan acquisition strategy session: built target list of potential acquirers (Ellie, Teal, Darwin Box, Reliance Industries) and defined outreach framework for 2-week social visibility campaign followed by active outreach. No Zo partnership relevance."
+}

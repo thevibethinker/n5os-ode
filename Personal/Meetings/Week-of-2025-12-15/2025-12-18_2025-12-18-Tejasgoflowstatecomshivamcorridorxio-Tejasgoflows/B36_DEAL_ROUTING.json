@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.65,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Flow State Canvas is a collaborative AI workspace product with potential Zo integration for events/developer community outreach. Build Space 2.0 event could serve as GTM channel for Zo partnerships.",
+  "careerspan_reasoning": "V directly involved representing Careerspan; discussion focused on integrating Careerspan's talent-vetting model for founder-co-founder matching in hackathon format. Strategic partnership opportunity.",
+  "companies_mentioned": [
+    {
+      "name": "Flow State",
+      "match_to_deal_id": null,
+      "context": "Tejas's company; Flow State Canvas product demoed as collaborative AI workspace with blueprints, scopes of work, and voice-enabled orbits"
+    },
+    {
+      "name": "Corridor X",
+      "match_to_deal_id": null,
+      "context": "Shivam's company; strategic partner in Build Space 2.0 initiative seeking to add value without sales positioning"
+    },
+    {
+      "name": "Build Space",
+      "match_to_deal_id": null,
+      "context": "Shut down community; vacuum creating opportunity for Build Space 2.0 initiative"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Flow State",
+      "deal_type": "zo_partnership",
+      "confidence": 0.72,
+      "rationale": "Flow State Canvas is an AI-powered collaborative workspace product suitable for Zo developer outreach and event partnerships. Product aligns with Zo's builder community focus. Below 0.85 threshold as early exploratory discussion."
+    }
+  ],
+  "summary": "Strategic collaboration meeting between Careerspan, Flow State, and Corridor X to create Build Space 2.0 community event program. Flow State Canvas product demoed with potential Careerspan integration for talent vetting and founder matching."
+}

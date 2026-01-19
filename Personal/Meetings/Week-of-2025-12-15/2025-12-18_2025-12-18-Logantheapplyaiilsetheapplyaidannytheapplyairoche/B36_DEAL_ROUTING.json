@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting focused entirely on Careerspan GTM strategy. No Zo partnerships, integrations, or ecosystem topics discussed.",
+  "careerspan_reasoning": "Core discussion preparing for meeting with Darwin Box leadership to position Careerspan for enterprise partnership/acquisition. Includes value proposition framing, strategic positioning, and competitive differentiation analysis.",
+  "companies_mentioned": [
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "Upcoming meeting with Darwin Box leadership (COO/Product team) to frame CareerSpan as internal mobility and leadership identification tool for MNCs"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Darwin Box",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Active GTM initiative with confirmed upcoming leadership meeting. Strategic value proposition developed: internal mobility and leadership identification for MNCs. Bespoke-at-scale positioning confirmed as differentiation."
+    }
+  ],
+  "summary": "Strategic prep meeting for Darwin Box leadership engagement, framing CareerSpan for enterprise partnership/acquisition with focus on internal mobility use case and bespoke-at-scale differentiation."
+}

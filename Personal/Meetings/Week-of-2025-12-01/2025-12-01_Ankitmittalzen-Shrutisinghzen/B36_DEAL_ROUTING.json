@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "No discussion of Zo partnerships, integrations, or GTM opportunities. This is purely a Careerspan internal bookkeeping/tax meeting.",
+  "careerspan_reasoning": "This is a Careerspan financial review meeting with Vrijen and Logan. RAB's request for 'Audited Financials December 24' suggests potential due diligence for Careerspan acquisition.",
+  "companies_mentioned": [
+    {
+      "name": "RAB",
+      "match_to_deal_id": null,
+      "context": "Requesting 'Audited Financials December 24' - potential acquirer conducting due diligence"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "RAB",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.86,
+      "rationale": "Explicit request for audited financials indicates active due diligence process for Careerspan acquisition"
+    }
+  ],
+  "summary": "Careerspan internal financial review with bookkeeper Zeni. RAB's request for audited financials suggests they may be conducting acquisition due diligence on Careerspan."
+}

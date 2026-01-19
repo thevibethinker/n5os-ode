@@ -1,0 +1,40 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.1,
+  "zo_reasoning": "Strategic discussion about building networking productivity tool as a Zo capability, MCP server distribution strategy for ChatGPT app store, and direct positioning of Aviato as reference brand for Zo enrichment partnerships",
+  "careerspan_reasoning": "Meeting focuses on PM networking automation tool, not Careerspan acquisition. David's work at Product Career Accelerator has minimal adjacency to career coaching/cohort-based model.",
+  "companies_mentioned": [
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "Aviato (CRM data) (zo_partnership)",
+      "context": "Identified as target enrichment partner, reference brand for Zo, potential affiliate model for Contact Out/Rocket Reach replacement workflow"
+    },
+    {
+      "name": "Plaid",
+      "match_to_deal_id": "null",
+      "context": "Madison from Credit Unions at Plaid is part of proposed venture collective; company not in existing deals list"
+    },
+    {
+      "name": "Contact Out",
+      "match_to_deal_id": "null",
+      "context": "Mentioned as existing workflow tool being replaced by Aviato"
+    },
+    {
+      "name": "Rocket Reach",
+      "match_to_deal_id": "null",
+      "context": "Mentioned as existing workflow tool being replaced by Aviato"
+    }
+  ],
+  "recommended_deal_links": [
+    "Aviato (CRM data) (zo_partnership)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "Plaid",
+      "deal_type": "zo_partnership",
+      "confidence": 0.6,
+      "rationale": "Madison from Plaid Credit Unions is part of proposed venture collective. Connection exists but partnership intent not explicitly stated. Lower confidence - needs exploration."
+    }
+  ],
+  "summary": "Strategic discussion about building a networking productivity tool as a Zo capability with MCP distribution. Aviato identified as primary enrichment partner. High relevance to Zo partnerships; minimal relevance to Careerspan."
+}

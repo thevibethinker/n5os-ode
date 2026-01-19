@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "This meeting is entirely about Careerspan's internal operations, strategy, and coaching. No Zo partnerships, GTM activities, or external deal discussions are mentioned.",
+  "careerspan_reasoning": "Meeting covers Careerspan's weekly progress including a new job posting sale, job board stats, Stories feature validation through PostHog data, sales strategy, and brand identity positioning.",
+  "companies_mentioned": [
+    {
+      "name": "PostHog",
+      "match_to_deal_id": null,
+      "context": "Analytics tool used to track application behavior and user story completion"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Founder coaching session focused on Careerspan operations and strategy; no external deal or partnership discussions. PostHog mentioned as an analytics tool, not a partnership target."
+}

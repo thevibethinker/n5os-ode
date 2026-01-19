@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Coffee Space is a founder-matching platform with 25k users and 1.5M interactions - potentially interesting as a Zo partnership for founder-targeted products, but low direct synergy with Zo's core business.",
+  "careerspan_reasoning": "Direct Careerspan pipeline opportunity. Coffee Space is expanding to 'Founding Teams' (engineers, ops, product, design) which aligns perfectly with Careerspan's thesis. Their 25k user base could benefit from Careerspan's deep data extraction capabilities. High strategic fit for partnership or potential acquisition.",
+  "companies_mentioned": [
+    {
+      "name": "Coffee Space",
+      "match_to_deal_id": null,
+      "context": "Primary company - founder matching platform with 25k users, expanding to founding team matching"
+    },
+    {
+      "name": "Superposition",
+      "match_to_deal_id": null,
+      "context": "AI-native headhunter currently partnered with Careerspan"
+    },
+    {
+      "name": "Matchbox",
+      "match_to_deal_id": null,
+      "context": "AI-native headhunter currently partnered with Careerspan"
+    },
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "McKinsey alumni fund partnered with Careerspan"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Coffee Space",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Direct strategic alignment: Coffee Space expanding to founding team matching creates natural distribution channel for Careerspan's deep data extraction tech. Both share LinkedIn/Indeed as common enemy. Explicitly discussed pipeline partnership and tech integration."
+    }
+  ],
+  "summary": "High-relevance Careerspan opportunity: Coffee Space (25k founder-matching users) discussed pipeline partnership and tech integration as they expand to founding team hiring. Low relevance for Zo partnerships beyond general founder ecosystem exposure."
+}

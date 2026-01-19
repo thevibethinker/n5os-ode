@@ -1,0 +1,40 @@
+{
+  "zo_relevance_score": 0.95,
+  "careerspan_relevance_score": 0.5,
+  "zo_reasoning": "Eric is a VC who previously invested in Zo's founders. V gave a full Zo demo showing meeting automation, Fireflies integration, and enrichment capabilities. Eric has clear pain points (LinkedIn scraping, meeting summaries, portfolio support) that Zo solves. High potential for Zo partnership + introducer to other VCs.",
+  "careerspan_reasoning": "V pitched Careerspan to Eric as a 'bat signal' for talent attraction, framed as a solution for his portfolio companies' hiring needs (finding disgruntled consultants for startups). Relevance is moderate - more as a B2B service to portfolio companies than acquisition.",
+  "companies_mentioned": [
+    {
+      "name": "Consonant VC",
+      "match_to_deal_id": null,
+      "context": "Eric's venture fund - primary meeting entity, potential Zo customer/partner"
+    },
+    {
+      "name": "Zo/Substrate",
+      "match_to_deal_id": null,
+      "context": "Ben and Rob's company - Eric invested in them previously, existing relationship"
+    },
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "Aviato (CRM data) (zo_partnership)",
+      "context": "V mentioned Aviato API as potential LinkedIn enrichment option, but noted human detection is superior"
+    },
+    {
+      "name": "Fireflies",
+      "match_to_deal_id": null,
+      "context": "Zo integration V demoed for automated meeting recording and transcription"
+    }
+  ],
+  "recommended_deal_links": [
+    "Aviato (CRM data) (zo_partnership)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "Consonant VC",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Eric Rubin (Consonant VC) is a VC who previously invested in Zo's founders and received a full Zo demo. He has explicit pain points (LinkedIn scraping, meeting summaries, portfolio company support) that Zo solves. High potential customer with VC ecosystem connections for introductions."
+    }
+  ],
+  "summary": "High relevance for Zo partnership: Eric Rubin (Consonant VC), existing investor in Zo's founders, received a full Zo demo and expressed clear pain points that Zo solves. Moderate Careerspan relevance: pitched as hiring solution for his portfolio companies."
+}

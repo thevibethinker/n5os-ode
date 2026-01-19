@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is purely Careerspan-focused with no Zo features, integrations, or partnership opportunities discussed. Existing deals are all data APIs/CRMs - no overlap.",
+  "careerspan_reasoning": "Direct partnership discussion with clear financial terms (5% kickback), defined roles (Careerspan as sourcing engine), and engagement metrics shared. Acquisition interest also mentioned, though tentatively.",
+  "companies_mentioned": [
+    {
+      "name": "sam",
+      "match_to_deal_id": null,
+      "context": "Primary partner for talent sourcing partnership; 5% kickback model confirmed; light acquisition interest expressed"
+    },
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "Upcoming collaboration mentioned (McKinsey alumni network)"
+    },
+    {
+      "name": "NextPlace",
+      "match_to_deal_id": null,
+      "context": "Potential collaboration with Ben Lang mentioned"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "High-relevance Careerspan partnership meeting with sam platform establishing sourcing role and 5% kickback model; acquisition interest is preliminary and lacks concrete next steps for deal creation."
+}

@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.0,
+  "zo_reasoning": "No Zo partnership or GTM discussion. V was operating in his Careerspan founder/career coach capacity, not representing Zo partnership opportunities.",
+  "careerspan_reasoning": "This was a B2C product demo and user onboarding meeting (Mel received a trial code). Mel is an individual user prospect, not a strategic partner, acquirer, or deal counterparty.",
+  "companies_mentioned": [
+    {
+      "name": "Resident Hospitality",
+      "match_to_deal_id": null,
+      "context": "Mel's former employer, background context only"
+    },
+    {
+      "name": "Blaze",
+      "match_to_deal_id": null,
+      "context": "Acquisition mentioned as part of Mel's career story"
+    },
+    {
+      "name": "Wonder",
+      "match_to_deal_id": null,
+      "context": "Example of F&B Tech company, Mel's target industry"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "B2C product demo meeting - not a deal or partnership opportunity. Mel is a Careerspan user prospect, not a strategic counterparty."
+}

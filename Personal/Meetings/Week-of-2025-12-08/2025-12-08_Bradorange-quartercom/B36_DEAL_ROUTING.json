@@ -1,0 +1,17 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Meeting focused exclusively on Careerspan product demo and recruiting tools. No Zo partnerships, features, or GTM strategies discussed. External recruiter business is not Zo-adjacent.",
+  "careerspan_reasoning": "Direct customer feedback session with product demonstration. Discussed market fit (high-volume vs. headhunting), product value proposition vs. traditional ATS, and roadmap planning based on recruiter input. Recruiter is potential customer/partner.",
+  "companies_mentioned": [],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Bradorange Recruiting",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "External recruiter (referred to as 'mate') provided detailed product feedback, identified specific use cases (high-volume inbound roles), and expressed interest in candidate insights/quick scan features. Active customer discussion with clear partnership potential."
+    }
+  ],
+  "summary": "Customer feedback meeting with external recruiter who found Careerspan valuable for high-volume inbound hiring but less relevant for elite headhunting. Discussed product roadmap and potential partnership features."
+}

@@ -1,0 +1,34 @@
+{
+  "zo_relevance_score": 0.75,
+  "careerspan_relevance_score": 0.8,
+  "zo_reasoning": "V demoed his Zo-powered productivity system to Calendly's CMO. Calendly is launching AI-powered CRM in July, creating clear partnership overlap. Meeting established direct awareness of Zo's capabilities with key decision-maker.",
+  "careerspan_reasoning": "V explicitly stated Careerspan is being positioned for sale to Shane (CMO) who will introduce V to Calendly's CEO Tobe. Creates direct acquirer awareness and potential post-exit employment opportunity.",
+  "companies_mentioned": [
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (CRM System) (zo_partnership)",
+      "context": "Primary meeting partner. Shane (CMO) shared Calendly's AI CRM pivot (July launch), demo'd V's system, committed CEO intro to Tobe"
+    },
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (leadership)",
+      "context": "Shane Murphy-Reuter (CMO) relationship established, will intro to CEO Tobe for potential role"
+    },
+    {
+      "name": "Howie AI",
+      "match_to_deal_id": null,
+      "context": "V's automated calendar booking system, demoed as part of productivity stack"
+    },
+    {
+      "name": "Superhuman",
+      "match_to_deal_id": null,
+      "context": "Mentioned as competitor in productivity space, doing similar auto-availability features"
+    }
+  ],
+  "recommended_deal_links": [
+    "Calendly (CRM System) (zo_partnership)",
+    "Calendly (leadership)"
+  ],
+  "create_new_deals": [],
+  "summary": "Direct CMO relationship with Calendly established; demoed Zo system while Calendly pivots to AI CRM; V disclosed Careerspan sale status with CEO intro committed, creating dual pipeline relevance."
+}

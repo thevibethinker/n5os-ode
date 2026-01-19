@@ -355,13 +355,127 @@ def auto_create_deal(company: str, deal_type: str, meeting_path: str, confidence
     return deal_id
 
 
+def apply_batch_results(results_file: str, dry_run: bool = False) -> dict:
+    """
+    Apply batch routing results - link high-relevance meetings to deals.
+    Creates deal_activities entries for meetings with relevance >= 0.70
+    """
+    import uuid
+    
+    conn = get_db()
+    c = conn.cursor()
+    
+    # Load results
+    results = []
+    with open(results_file) as f:
+        for line in f:
+            if line.strip():
+                results.append(json.loads(line))
+    
+    print(f"Processing {len(results)} routing results...")
+    
+    stats = {
+        'total': len(results),
+        'success': 0,
+        'errors': 0,
+        'zo_high': 0,
+        'cs_high': 0,
+        'activities_created': 0
+    }
+    
+    for r in results:
+        if r['status'] != 'success':
+            stats['errors'] += 1
+            continue
+        
+        stats['success'] += 1
+        classification = r['classification']
+        meeting_path = r['meeting_path']
+        meeting_name = r.get('meeting_name', Path(meeting_path).name)
+        
+        zo_score = classification.get('zo_relevance_score', 0)
+        cs_score = classification.get('careerspan_relevance_score', 0)
+        
+        if zo_score >= LINK_THRESHOLD:
+            stats['zo_high'] += 1
+        if cs_score >= LINK_THRESHOLD:
+            stats['cs_high'] += 1
+        
+        # Check for deal match in classification
+        deal_match = classification.get('deal_match')
+        if deal_match and deal_match != 'None':
+            # Try to find matching deal
+            c.execute('SELECT id, company FROM deals WHERE company LIKE ? OR id = ?', 
+                      (f'%{deal_match}%', deal_match))
+            deal = c.fetchone()
+            
+            if deal:
+                if not dry_run:
+                    c.execute('''
+                        INSERT INTO deal_activities (deal_id, activity_type, description, meeting_path, created_at)
+                        VALUES (?, ?, ?, ?, ?)
+                    ''', (
+                        deal['id'],
+                        'meeting_routed',
+                        f"Meeting linked via batch routing (Zo:{zo_score:.2f}, CS:{cs_score:.2f}): {meeting_name}",
+                        meeting_path,
+                        datetime.now().isoformat()
+                    ))
+                    stats['activities_created'] += 1
+                    print(f"  ✓ Linked {meeting_name[:40]}... to {deal['company']}")
+        
+        # Also create activities for high-relevance meetings without explicit match
+        elif zo_score >= LINK_THRESHOLD or cs_score >= LINK_THRESHOLD:
+            # Check companies mentioned
+            companies = classification.get('companies_mentioned', [])
+            for company in companies:
+                company_name = company.get('name') if isinstance(company, dict) else company
+                if not company_name:
+                    continue
+                
+                # Try to match to existing deal
+                c.execute('SELECT id, company FROM deals WHERE company LIKE ?', (f'%{company_name}%',))
+                deal = c.fetchone()
+                
+                if deal and not dry_run:
+                    c.execute('''
+                        INSERT INTO deal_activities (deal_id, activity_type, description, meeting_path, created_at)
+                        VALUES (?, ?, ?, ?, ?)
+                    ''', (
+                        deal['id'],
+                        'meeting_routed',
+                        f"Meeting linked (Zo:{zo_score:.2f}, CS:{cs_score:.2f}) via {company_name}: {meeting_name}",
+                        meeting_path,
+                        datetime.now().isoformat()
+                    ))
+                    stats['activities_created'] += 1
+                    print(f"  ✓ Linked {meeting_name[:40]}... to {deal['company']} (via {company_name})")
+                    break  # Only link once per meeting
+    
+    if not dry_run:
+        conn.commit()
+    conn.close()
+    
+    print(f"\n=== Batch Results Applied ===")
+    print(f"Total: {stats['total']}, Success: {stats['success']}, Errors: {stats['errors']}")
+    print(f"High Zo relevance: {stats['zo_high']}, High CS relevance: {stats['cs_high']}")
+    print(f"Deal activities created: {stats['activities_created']}")
+    
+    return stats
+
+
 def main():
     parser = argparse.ArgumentParser(description='Route meetings to deal pipelines')
     parser.add_argument('--limit', type=int, default=25, help='Max meetings to process')
     parser.add_argument('--dry-run', action='store_true', help='Preview without writing')
     parser.add_argument('--meeting-id', help='Process specific meeting folder name')
     parser.add_argument('--output-prompts', help='Output prompts to file for batch LLM processing')
+    parser.add_argument('--apply-results', help='Apply batch routing results from JSONL file')
     args = parser.parse_args()
+    
+    # Apply batch results if provided
+    if args.apply_results:
+        return apply_batch_results(args.apply_results, args.dry_run)
     
     # Find meetings needing routing
     if args.meeting_id:

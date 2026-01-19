@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "While Tech Buffalo is a community organization potentially interested in productivity tools, this meeting is overwhelmingly focused on Careerspan's sales pitch and talent development solutions. No specific Zo services or partnerships were discussed.",
+  "careerspan_reasoning": "This is a high-intent sales discovery call where V presented Careerspan's full product demo and business model to a warm lead (introduced by mutual connection). Jeff expressed strong resonance with the solution, identified 2 potential communities (alumni: 5-600 people, pre-career talent), and next steps are established (follow-up next week, sharing examples/studies). This is active pipeline material.",
+  "companies_mentioned": [
+    {
+      "name": "Tech Buffalo",
+      "match_to_deal_id": null,
+      "context": "Primary prospect - V pitched Careerspan's product to Jeffrey Botteron. Tech Buffalo is exploring build vs. buy for professionalizing their talent development offerings."
+    },
+    {
+      "name": "Emory",
+      "match_to_deal_id": null,
+      "context": "Referenced as comparable pilot case for Careerspan's alumni association model"
+    },
+    {
+      "name": "UMass Eisenberg",
+      "match_to_deal_id": null,
+      "context": "Referenced as comparable pilot case with ~150 students for Careerspan"
+    },
+    {
+      "name": "Aspire Institute",
+      "match_to_deal_id": null,
+      "context": "Referenced as comparable pilot case for Careerspan's university model"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Tech Buffalo",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Active sales discovery call with warm introduction (Nick). Jeff expressed strong resonance with Careerspan's approach to 'blowing up the black box' for pre-career talent. Identified 2 specific communities (alumni: 5-600 people, pre-career talent). Next steps confirmed: follow-up next week, sharing examples and studies. Deal stage: Discovery/Proposal."
+    }
+  ],
+  "summary": "High-intent Careerspan sales discovery call with Tech Buffalo (Jeffrey Botteron) via warm intro. Strong resonance expressed; two target communities identified (alumni 5-600 people, pre-career talent); follow-up scheduled for next week."
+}

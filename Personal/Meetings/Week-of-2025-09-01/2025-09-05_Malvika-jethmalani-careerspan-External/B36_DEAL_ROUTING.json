@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Meeting focuses on Careerspan's GTM strategy, HR community partnerships, and B2B customer acquisition rather than Zo platform integrations. No Zo-specific technical partnership discussions.",
+  "careerspan_reasoning": "Direct strategic planning for Careerspan's business development including HR community partnerships, community talent pipeline models, competitive intelligence on Boardy, and immediate customer outreach to VC client.",
+  "companies_mentioned": [
+    {
+      "name": "Boardy",
+      "match_to_deal_id": null,
+      "context": "Noted as a conceptual competitor gaining popularity in the market"
+    },
+    {
+      "name": "Women Shaping AI",
+      "match_to_deal_id": null,
+      "context": "Community group proposed as talent pipeline partner with potential placement fee revenue model"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Meeting focuses on Careerspan's GTM strategy through HR community partnerships (Transform, People Over Perks, Culture Geeks, Talent Collective) and community talent pipeline models, with no direct relevance to existing Zo data/API partnership deals."
+}

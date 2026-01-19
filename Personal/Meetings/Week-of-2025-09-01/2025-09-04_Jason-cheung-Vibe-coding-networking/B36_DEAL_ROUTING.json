@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Moderate relevance due to Windsurf sponsorship connection and Vibe Coding scene intelligence, but no direct GTM or partnership intent expressed. Jason's newsletter (3,300+ tech professionals) is a distribution channel but no partnership discussed.",
+  "careerspan_reasoning": "High relevance - meeting directly involves Vrijen (Careerspan founder) discussing his company's evolution to a matching platform. 'Reverse hiring' at Vibe Coding events aligns perfectly with Careerspan's business model. Jason's talent network (hackathon winners, OpenAI/Apple/Meta professionals) is directly relevant to candidate sourcing.",
+  "companies_mentioned": [
+    {
+      "name": "Windsurf",
+      "match_to_deal_id": null,
+      "context": "Sponsor of Vibe Coding face-off event on September 23rd, 6:00 PM in Brooklyn. Prize includes one year of Windsurf Pro and 3,000 credits."
+    },
+    {
+      "name": "Civic Hall",
+      "match_to_deal_id": null,
+      "context": "Potential event venue through Kamina connection; AV suite costs $5,000-$6,000 per day."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Windsurf",
+      "deal_type": "zo_partnership",
+      "confidence": 0.7,
+      "rationale": "Vibe Coding tool sponsor of NYC event scene; partnership opportunity for Zo integration or event sponsorship, though confidence is moderate as only sponsorship role mentioned, no direct partnership discussed."
+    }
+  ],
+  "summary": "Meeting primarily relevant to Careerspan's talent matching strategy (reverse hiring at Vibe Coding events, access to Jason's 3,300+ newsletter network). Windsurf sponsorship is potential Zo partnership but confidence below creation threshold."
+}

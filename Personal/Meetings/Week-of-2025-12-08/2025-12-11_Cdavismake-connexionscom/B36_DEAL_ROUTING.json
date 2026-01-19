@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.25,
+  "zo_reasoning": "Exploratory conversation with early-stage career-tech founder. No concrete partnership opportunities discussed. Connexions is pre-seed and focused on social networking rather than data or infrastructure that would align with Zo partnerships.",
+  "careerspan_reasoning": "Connexions operates in adjacent career-tech space targeting young professionals. V shared Careerspan's positioning but no strategic alignment or acquisition signals were evident. Primary value is ecosystem networking and potential channel introduction via Brandeis Career Services.",
+  "companies_mentioned": [
+    {
+      "name": "Connexions",
+      "match_to_deal_id": null,
+      "context": "Founder's company - mobile-first social network for young professionals, pre-seed stage, preparing beta launch"
+    },
+    {
+      "name": "Latte Connect",
+      "match_to_deal_id": null,
+      "context": "V offered intro to Jerry from Latte Connect as networking gesture"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Exploratory networking meeting with Connexions founder in career-tech space. V shared Careerspan context, offered Slack group membership and Latte Connect intro. No actionable deal signals for either pipeline."
+}

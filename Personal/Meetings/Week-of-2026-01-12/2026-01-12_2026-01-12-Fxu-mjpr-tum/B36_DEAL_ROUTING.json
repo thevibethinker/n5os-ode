@@ -1,0 +1,48 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "David Speigel is positioning himself as a product advisor and explicitly discussed building tools ON TOP of Zo as a partnership opportunity. The meeting explored revenue-generating product concepts that would drive Zo adoption, including SaaS subscription models. This is a clear partnership pipeline discussion.",
+  "careerspan_reasoning": "David tested V's interview analysis tool and discussed the 'careers vertical' as a natural fit for both V's Careerspan expertise and David's PM coaching business. While relevant, David is positioned more as partner/advisor rather than acquirer.",
+  "companies_mentioned": [
+    {
+      "name": "Google",
+      "match_to_deal_id": null,
+      "context": "David had a failed interview there, tested V's tool with Google ad tech job description"
+    },
+    {
+      "name": "Zo",
+      "match_to_deal_id": null,
+      "context": "Product platform being discussed as foundation for new tools"
+    },
+    {
+      "name": "Maven",
+      "match_to_deal_id": null,
+      "context": "David uses cohorts as teaching vehicle for PM courses"
+    },
+    {
+      "name": "Flow",
+      "match_to_deal_id": null,
+      "context": "Jamie McDermott's company, David partners with for call recording extraction"
+    },
+    {
+      "name": "Fathom",
+      "match_to_deal_id": null,
+      "context": "David uses for transcription of interviews"
+    },
+    {
+      "name": "Fireflies",
+      "match_to_deal_id": null,
+      "context": "V uses for recording, API plugs into Zo"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "David Speigel",
+      "deal_type": "zo_partnership",
+      "confidence": 0.87,
+      "rationale": "David explicitly discussed building productivity tools on top of Zo as a partnership opportunity, expressed strong interest in the careers vertical, and positioned himself as an advisor for growth-stage software companies like Zo. Clear alignment on economic incentives driving Zo adoption and potential revenue-sharing SaaS model."
+    }
+  ],
+  "summary": "This meeting was primarily a partnership exploration between V and David Speigel, focusing on building careers/productivity tools on top of Zo as a joint venture. David tested Careerspan's interview analysis tool and discussed SaaS business models, making this highly relevant to Zo partnerships and moderately relevant to Careerspan ecosystem expansion."
+}

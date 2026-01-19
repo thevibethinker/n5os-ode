@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Only tangential relevance - mention of an unnamed biotech startup in Cambridge (Kendall Square) through a friend-of-friend connection. No actionable details or direct pipeline implications.",
+  "careerspan_reasoning": "Core Careerspan activity - career coaching session focused on job hunting strategies, resume review, and career advice. This represents the type of client interaction that is central to Careerspan's service offering.",
+  "companies_mentioned": [
+    {
+      "name": "Unnamed biotech startup (Cambridge/Kendall Square)",
+      "match_to_deal_id": null,
+      "context": "Friend's former manager is now CTO of this company and reached out about potential contract work. Company remains unnamed and unidentified."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This is a core Careerspan career coaching session with no actionable deal pipeline implications. The only commercial mention is an indirect, unnamed biotech startup lead that lacks sufficient detail to create a deal."
+}

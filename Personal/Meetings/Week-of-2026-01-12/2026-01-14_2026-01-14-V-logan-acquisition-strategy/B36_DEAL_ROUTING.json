@@ -1,0 +1,71 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 1.0,
+  "zo_reasoning": "Meeting is entirely about Careerspan acquisition strategy. Zo is only mentioned as a tool Logan used to generate target lists. No Zo partnership, integration, or GTM discussions.",
+  "careerspan_reasoning": "Meeting is a dedicated acquisition strategy session covering target identification, outreach planning, timeline, classification system, and specific prospect evaluation. Directly operational to Careerspan deal pipeline.",
+  "companies_mentioned": [
+    {
+      "name": "Ellie",
+      "match_to_deal_id": null,
+      "context": "Hot warmth prospect, already asked about acquisition"
+    },
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Being added to priority acquisition list"
+    },
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "Under consideration as acquisition target"
+    },
+    {
+      "name": "Reliance Industries",
+      "match_to_deal_id": null,
+      "context": "First degree connection, potential acquirer"
+    },
+    {
+      "name": "Teal (David Fano)",
+      "match_to_deal_id": null,
+      "context": "First degree connection, PR exit category"
+    },
+    {
+      "name": "Korn Ferry",
+      "match_to_deal_id": null,
+      "context": "Logan has a contact there, potential acquirer"
+    },
+    {
+      "name": "Mockery.com",
+      "match_to_deal_id": null,
+      "context": "On the target list"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Ellie",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Explicitly stated as hot warmth prospect who has already asked about acquisition. Active conversation exists."
+    },
+    {
+      "company": "Teal",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "First degree connection (David Fano), identified as PR exit option. V has existing relationship."
+    },
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Being added to priority acquisition target list. Clear actionable prospect."
+    },
+    {
+      "company": "Darwin Box",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Explicitly under consideration as acquisition target."
+    }
+  ],
+  "summary": "Internal strategy session focused entirely on Careerspan acquisition planning, including target identification, outreach strategy, timeline, and prospect classification. No relevance to Zo partnership pipeline."
+}

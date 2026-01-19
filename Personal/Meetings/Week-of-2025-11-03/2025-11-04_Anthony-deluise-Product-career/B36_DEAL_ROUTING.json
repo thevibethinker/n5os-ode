@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "No Zo products, APIs, or partnership categories mentioned. Anthony's EdTech background (VisitDays) doesn't align with Zo's deal categories (CRM data, blockchain, financial data, etc.).",
+  "careerspan_reasoning": "V pitched Careerspan to Anthony, who represents the ideal target user (executive exploring next play). Discussion touched on career transition challenges, competitive landscape of AI career tools, and product positioning. VisitDays in campus recruiting space could represent expansion opportunity.",
+  "companies_mentioned": [
+    {
+      "name": "VisitDays",
+      "match_to_deal_id": null,
+      "context": "Anthony's former EdTech company (11 years), described as 'OS for campus recruiting' - full stack of events, tours, and communications for universities"
+    },
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "V's company, pitched to Anthony as a tool to record achievements and conduct capability inventory during career transition"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Meeting is relevant to Careerspan customer acquisition and competitive intelligence but not Zo partnerships. V pitched Careerspan to Anthony (ideal user profile) and discussed limitations of AI career tools; no actionable deals emerge from Zo partnership perspective."
+}

@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "No Zo partnerships or GTM strategy discussed. Entirely focused on Careerspan internal product and monetization decisions.",
+  "careerspan_relevance_score_reasoning": "Core strategy session on Careerspan's business model (recruiter monetization at $100), user acquisition approach, compute economics, and product positioning. Directly impacts acquisition value and go-to-market.",
+  "companies_mentioned": [
+    {
+      "name": "LinkedIn",
+      "match_to_deal_id": null,
+      "context": "Competitive benchmark for recruiter seat pricing ($300-$400/month vs Careerspan's proposed $100 fee)"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Careerspan strategy meeting focusing on recruiter monetization model ($100 pilot program) and prioritizing user quality over job volume. High relevance to Careerspan acquisition value but no actionable deal creation opportunities."
+}

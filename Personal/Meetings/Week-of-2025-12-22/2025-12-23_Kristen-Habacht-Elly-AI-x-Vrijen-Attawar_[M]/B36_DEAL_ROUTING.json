@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Minimal Zo relevance. Kondo was mentioned only as a product recommendation during rapport building. No Zo partnership discussions.",
+  "careerspan_reasoning": "High relevance. Direct strategic partnership discussion with Elly.ai for data stream/enrichment layer integration. V pitched Careerspan's candidate data extraction product and proposed white-labeling possibilities. Clear next step to discuss technical integration with co-founder Nick.",
+  "companies_mentioned": [
+    {
+      "name": "Elly.ai",
+      "match_to_deal_id": "null",
+      "context": "Primary partnership prospect. Proposed as platform where Careerspan would act as high-fidelity data stream/enrichment layer. Elly has notetaker, AI interviewer, and sourcing capabilities. Next step: meet with co-founder Nick for technical integration discussion."
+    },
+    {
+      "name": "Kondo",
+      "match_to_deal_id": "null",
+      "context": "V recommended Kondo for LinkedIn inbox management during rapport building phase. Not a deal discussion."
+    },
+    {
+      "name": "Juicebox",
+      "match_to_deal_id": "null",
+      "context": "Mentioned by Kristen as comparator - Elly is moving into sourcing similar to Juicebox."
+    },
+    {
+      "name": "Emory University",
+      "match_to_deal_id": "null",
+      "context": "V highlighted Careerspan's deep alumni association relationships, offering Elly exclusive access to talent pools."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Elly.ai",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Clear strategic partnership discussion with defined value proposition: Careerspan provides high-fidelity candidate data stream and alumni network access; Elly.ai provides ATS/interview platform. Active next step to meet co-founder Nick for technical integration and white-labeling discussion. High intent demonstrated from both sides."
+    }
+  ],
+  "summary": "Strategic partnership discussion between Careerspan and Elly.ai, positioning Careerspan as a high-fidelity data enrichment layer for Elly's AI hiring platform. Clear integration opportunity with next steps to discuss technical white-labeling with co-founder Nick."
+}

@@ -1,0 +1,59 @@
+{
+  "zo_relevance_score": 0.95,
+  "careerspan_relevance_score": 0.1,
+  "zo_reasoning": "Entire meeting focused on Zo's data partnerships strategy, prioritizing CRM and financial data partners for 'make money' use cases. Strategic framework discussion for partnership evaluation and multiple specific company targets.",
+  "careerspan_reasoning": "Only minimal relevance through brief mention of Anna Bao's Future of Higher Education group (5,000 members) for a potential hackathon. Source Stack's job posting data was discussed but deprioritized as indirect for 'make money' use case.",
+  "companies_mentioned": [
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "Aviato (CRM data) (zo_partnership)",
+      "context": "V emailed Conrad; launching consumer subscription API in CRM data space"
+    },
+    {
+      "name": "Nine (Nyne)",
+      "match_to_deal_id": "Nyne (CRM data) (zo_partnership)",
+      "context": "Michael Fanous reached out to Ben; competitive with Aviato in CRM data"
+    },
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (CRM System) (zo_partnership)",
+      "context": "Reorienting toward relationship management, CRM-adjacent"
+    },
+    {
+      "name": "Polymarket",
+      "match_to_deal_id": "Betting: Kalshi, Polymarket (zo_partnership)",
+      "context": "Prediction market platform; characterized as potential Zo vibe coding target"
+    },
+    {
+      "name": "Kalshi",
+      "match_to_deal_id": "Betting: Kalshi, Polymarket (zo_partnership)",
+      "context": "Prediction market platform; similar to Polymarket"
+    },
+    {
+      "name": "Crust Data",
+      "match_to_deal_id": "Crustdata (Human/corporate data) (zo_partnership)",
+      "context": "B2B data broker via API, YC F24 company"
+    },
+    {
+      "name": "Source Stack",
+      "match_to_deal_id": null,
+      "context": "Job posting data platform; deprioritized as indirect for 'make money' use case"
+    }
+  ],
+  "recommended_deal_links": [
+    "Aviato (CRM data) (zo_partnership)",
+    "Nyne (CRM data) (zo_partnership)",
+    "Calendly (CRM System) (zo_partnership)",
+    "Betting: Kalshi, Polymarket (zo_partnership)",
+    "Crustdata (Human/corporate data) (zo_partnership)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "Source Stack",
+      "deal_type": "zo_partnership",
+      "confidence": 0.6,
+      "rationale": "Job posting data platform mentioned but explicitly deprioritized during meeting as 'lower priority' and 'indirect' for 'make money' use cases. Worth tracking but not high urgency."
+    }
+  ],
+  "summary": "Highly relevant Zo partnership strategy meeting focused on data partnerships (CRM, financial, prediction markets). Multiple existing deal matches (Aviato, Nyne, Calendly, Kalshi/Polymarket, Crustdata). Minimal Careerspan relevance via brief hackathon discussion."
+}

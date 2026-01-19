@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Internal Careerspan strategy session with no Zo partnership or GTM overlap.",
+  "careerspan_reasoning": "Directly addresses Careerspan's LinkedIn content strategy and GTM approach for the job board launch.",
+  "companies_mentioned": [
+    {
+      "name": "David (founder case study)",
+      "match_to_deal_id": null,
+      "context": "Referenced as a specific user/founder for a case study showcasing Careerspan's value proposition."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan planning meeting focused on LinkedIn content strategy and GTM execution; no deal or partnership activity."
+}

@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "No mention of Zo, Zo partnerships, or GTM collaboration. This meeting is entirely about Careerspan's hiring platform.",
+  "careerspan_reasoning": "This is a sales meeting where V pitched Careerspan's platform to a potential customer (Daniel's startup). Daniel expressed interest and agreed to try the platform after term sheet signing - a strong warm lead.",
+  "companies_mentioned": [
+    {
+      "name": "veridueai",
+      "match_to_deal_id": null,
+      "context": "Daniel Csonth's early-stage startup, the potential customer being sold to. Needs AI Engineer, Front-end Engineer, Full-stack Engineer hiring."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "veridueai",
+      "deal_type": "careerspan_customer",
+      "confidence": 0.86,
+      "rationale": "Daniel Csonth agreed to try Careerspan's platform for hiring after term sheet is signed (early 2025). Specific hiring needs identified (AI Engineer, Front-end Engineer, Full-stack Engineer). Strong warm lead with clear next steps."
+    }
+  ],
+  "summary": "V pitched Careerspan to veridueai (Daniel Csonth's startup). Daniel expressed interest and agreed to try the platform for hiring AI, Front-end, and Full-stack engineers in early 2025 after term sheet signing."
+}

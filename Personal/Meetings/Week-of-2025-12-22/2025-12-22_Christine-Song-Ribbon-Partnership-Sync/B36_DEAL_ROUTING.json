@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is entirely focused on Careerspan's product demo and partnership opportunities. Only tangential Zo relevance if Zo has data partnerships that could complement the discussed integration, but no direct Zo business context.",
+  "careerspan_reasoning": "This is a direct partnership sync meeting for Careerspan. V demoed the Careerspan product (candidate and employer portals), discussed GTM strategy, and proposed a specific integration partnership with Ribbon called the 'Triangle of Integrity' combining interview data with career stories.",
+  "companies_mentioned": [
+    {
+      "name": "Ribbon",
+      "match_to_deal_id": null,
+      "context": "Primary counterpart - Christine Song from Ribbon. Meeting titled 'Ribbon Partnership Sync'. V proposed 'Triangle of Integrity' integration between Ribbon's interview data and Careerspan stories. Christine offered to introduce V to her team."
+    },
+    {
+      "name": "Superposition.ai",
+      "match_to_deal_id": null,
+      "context": "Mentioned as existing Careerspan partnership for sourcing and matching."
+    },
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "Mentioned as partnership target for VC talent pipeline monetization motion."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Ribbon",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Direct partnership sync meeting. V explicitly proposed 'Triangle of Integrity' integration between Ribbon's interview data and Careerspan's stories. Christine offered to introduce V to her team and requested a blurb. Clear actionable next steps with high confidence."
+    }
+  ],
+  "summary": "Highly relevant to Careerspan pipeline: partnership sync with Ribbon exploring data integration partnership. Christine offered introductions to her team and requested demo materials. Low relevance to Zo."
+}

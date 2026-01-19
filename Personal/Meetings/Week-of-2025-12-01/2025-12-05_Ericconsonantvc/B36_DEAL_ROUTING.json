@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.25,
+  "careerspan_relevance_score": 0.4,
+  "zo_reasoning": "VC connection could provide partnership introductions, but no substantive discussion recorded in this brief session.",
+  "careerspan_reasoning": "VCs are typical acquisition/partner channels; Eric from Consonant VC may be a relevant contact for Careerspan strategic discussions.",
+  "companies_mentioned": [
+    {
+      "name": "Consonant VC",
+      "match_to_deal_id": null,
+      "context": "Eric works at Consonant VC; this was a brief connection meeting."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Brief connection call with Eric from Consonant VC yielded no substantive discussion; maintains contact in the VC ecosystem for potential future strategic conversations."
+}

@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Meeting is entirely focused on Careerspan strategy and partnerships. No direct discussion of Zo's GTM, product roadmap, or partnerships. While 'data provider' and 'ZoomInfo for talent' concepts could theoretically align with Zo's data partnerships, these are Careerspan-specific initiatives, not Zo initiatives.",
+  "careerspan_reasoning": "Meeting is strategically significant for Careerspan's deal pipeline. Covers the pivot to 'talent sourcing API' model, discussions of potential partnerships (Alex's company, Ribbon), acquisition offers context, and a recruiter introduction via Pete. Directly relevant to partnership and potential acquisition conversations.",
+  "companies_mentioned": [
+    {
+      "name": "Alex's company",
+      "match_to_deal_id": null,
+      "context": "Potential partner; V set them up with employer account, exploring partnership"
+    },
+    {
+      "name": "Ribbon",
+      "match_to_deal_id": null,
+      "context": "Mentioned as potential partnership opportunity"
+    },
+    {
+      "name": "Pete",
+      "match_to_deal_id": null,
+      "context": "Cornellian recruiter in California, introduction facilitated by Jatin for potential partnership"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Strategic meeting focused on Careerspan's pivot to 'talent sourcing API' model, exploring partnerships with Alex's company and Ribbon, and setting up a recruiter introduction. No immediate Zo relevance; high Careerspan relevance for partnership pipeline."
+}

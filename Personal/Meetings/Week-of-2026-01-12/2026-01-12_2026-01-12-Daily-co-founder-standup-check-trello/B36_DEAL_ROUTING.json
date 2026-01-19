@@ -1,0 +1,39 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Discussion touches on Zo product capabilities (Stripe integration, vibe coding) and competitive dynamics (Claude Code API access), but no specific Zo partnership deals were discussed.",
+  "careerspan_reasoning": "Two active deals explicitly reviewed: Kin (bespoke talent intelligence, database migration) and Patrick (12k subscriber job board partnership). Both described as 'outstanding' items needing follow-up before V's meeting with Shane.",
+  "companies_mentioned": [
+    {
+      "name": "Kin",
+      "match_to_deal_id": null,
+      "context": "Canada-based company wanting bespoke talent intelligence and database migration work; noted to be in money crunch, pricing/scope needs figuring out"
+    },
+    {
+      "name": "Patrick",
+      "match_to_deal_id": null,
+      "context": "Tech community person with 12k subscribers for quarterly job board; potential partnership to serve his people jobs through Careerspan"
+    },
+    {
+      "name": "Shane",
+      "match_to_deal_id": null,
+      "context": "Person being met with, Logan planned to crash start of meeting"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Kin",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Active deal explicitly discussed - Canada-based company seeking bespoke talent intelligence and database migration services. Described as 'outstanding' item needing pricing/scope determination before V's 10:30 meeting with Shane."
+    },
+    {
+      "company": "Patrick",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Active partnership opportunity - 12k subscriber quarterly job board seeking to serve jobs through Careerspan platform. Logan noted this as 'outstanding' in his mind for follow-up."
+    }
+  ],
+  "summary": "Meeting primarily relevant to Careerspan pipeline with two active deals (Kin - talent intelligence services, Patrick - job board partnership) reviewed as outstanding items requiring follow-up. No specific Zo partnership deals discussed."
+}

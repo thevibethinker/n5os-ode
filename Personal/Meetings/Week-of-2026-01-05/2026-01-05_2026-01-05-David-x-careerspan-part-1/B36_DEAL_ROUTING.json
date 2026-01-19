@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting focuses entirely on Careerspan exit strategy, not Zo partnerships or GTM. No Zo-related companies, integrations, or partnership opportunities discussed.",
+  "careerspan_reasoning": "Core acquisition strategy session covering exit timeline (2 months), target valuation ($1M-$2M), specific buyer identification (Ellie AI, staffing agencies, recruiting firms), and acqui-hire planning.",
+  "companies_mentioned": [
+    {
+      "name": "Ellie AI",
+      "match_to_deal_id": null,
+      "context": "Identified as potential acquirer - AI interview video co-pilot company mentioned as prospective buyer for Careerspan"
+    },
+    {
+      "name": "Meta",
+      "match_to_deal_id": null,
+      "context": "Contextual reference - mentioned only as client background story example, not a deal target"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Ellie AI",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Explicitly named as potential acquirer for Careerspan in acquisition strategy discussion. AI interview co-pilot positioning aligns with Careerspan's vetting/sourcing value prop."
+    }
+  ],
+  "summary": "Core Careerspan acquisition strategy session defining $1M-$2M exit target within two months, identifying Ellie AI as primary prospective buyer with acqui-hire potential for the founding team."
+}

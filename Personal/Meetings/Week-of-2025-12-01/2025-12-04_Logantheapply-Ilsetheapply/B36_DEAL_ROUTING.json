@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Minimal relevance. Meeting is entirely focused on Careerspan product features, partnerships, and internal operations. No Zo-specific partnership or GTM discussions.",
+  "careerspan_reasoning": "Highly relevant. Meeting focuses on Careerspan's Direct Apply feature, partnership with Australian ATS company (25% bounty deal), pricing strategy, and job board promotion. Direct strategic and operational impact on Careerspan business.",
+  "companies_mentioned": [
+    {
+      "name": "Australian ATS company / Superposition clone / Try Matchbox",
+      "match_to_deal_id": null,
+      "context": "Potential strategic partnership with Careerspan involving 25% bounty and procedural data piping"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Australian ATS Company",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Explicitly discussed as a potential partnership with 25% bounty structure and data piping integration. Logan has task to get job board out and promote specific roles."
+    }
+  ],
+  "summary": "Strategic Careerspan meeting focused on Direct Apply feature implementation, partnership discussions with Australian ATS company (25% bounty deal), and internal pricing strategy."
+}

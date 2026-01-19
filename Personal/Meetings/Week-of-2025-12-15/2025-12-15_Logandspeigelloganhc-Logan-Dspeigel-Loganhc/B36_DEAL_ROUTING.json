@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.9,
+  "careerspan_relevance_score": 0.2,
+  "zo_reasoning": "Meeting focused on Zo product strategy (Join Decks browser integration, 'The Box' vs 'The Cookbook' webinar GTM, tone/personalization features, market segmentation for CRM/social proof use cases)",
+  "careerspan_reasoning": "Brief mention of 'job seekers' vs 'option maximizers' market segments, but framed as Zo product positioning rather than Careerspan-specific business",
+  "companies_mentioned": [
+    {
+      "name": "LinkedIn",
+      "match_to_deal_id": null,
+      "context": "Platform for social proof/intro suggestions feature via Join Decks middleware - relates to Kondo LinkedIn Messaging deal but LinkedIn itself is the platform, not the partnership"
+    },
+    {
+      "name": "Madison",
+      "match_to_deal_id": null,
+      "context": "John (CEO at Madison) mentioned in example LinkedIn post - no active deal identified"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "High Zo relevance: product strategy meeting covering browser integration (Join Decks), webinar GTM ('The Box' model), and CRM/social proof features. Low Careerspan relevance: only peripheral market segmentation discussion."
+}

@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Meeting mentions Vrijen's Zo-integrated health bot for personal use, but this is about personal productivity tools, not Zo partnership/business development.",
+  "careerspan_reasoning": "Final 15 minutes contains substantive Careerspan strategy discussion: acquisition strategy (aqua-hires), team composition (Ilsa/Logan/Vrijen), and competitive intelligence on Ribbon (AI recruiter charging $500-$1000/mo).",
+  "companies_mentioned": [
+    {
+      "name": "Ribbon",
+      "match_to_deal_id": null,
+      "context": "Competitive intelligence: AI recruiter charging $500-$1000/mo, video interview failure mentioned as learning point"
+    },
+    {
+      "name": "Habit Kit",
+      "match_to_deal_id": null,
+      "context": "Personal health app Rochel uses for step tracking"
+    },
+    {
+      "name": "Fitbit",
+      "match_to_deal_id": null,
+      "context": "Personal health tracking integration mentioned"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Ribbon",
+      "deal_type": "careerspan_competitor",
+      "confidence": 0.9,
+      "rationale": "Ribbon is a direct AI recruiter competitor charging $500-$1000/mo. Meeting highlights their approach and the failure of video interviews as key competitive intelligence for Careerspan positioning."
+    }
+  ],
+  "summary": "Meeting is primarily personal catch-up with 15 minutes of Careerspan strategic discussion focused on acquisition planning and competitive intelligence on Ribbon (AI recruiter). No direct Zo partnership relevance."
+}

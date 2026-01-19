@@ -1,0 +1,31 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.65,
+  "zo_reasoning": "David is starting a trial at Zoe and V has prior connection with Ben at Zoe. David's LLM AI security expertise could be relevant to Zo's domain, but this is primarily a candidate/user feedback meeting rather than a partnership discussion.",
+  "careerspan_reasoning": "The entire meeting focused on Careerspan product feedback (UX insights, onboarding flow, story generation, vibe check feature). Rochel (product designer) participated to capture actionable improvements. This feedback is relevant for product refinement, potentially supporting acquisition readiness.",
+  "companies_mentioned": [
+    {
+      "name": "Zoe",
+      "match_to_deal_id": null,
+      "context": "Company David applied to via Careerspan; V spoke with Ben at Zoe about ideal candidate profiles"
+    },
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "V's company, product discussed throughout meeting"
+    },
+    {
+      "name": "Adio",
+      "match_to_deal_id": null,
+      "context": "Recording app David tried (mentioned in passing)"
+    },
+    {
+      "name": "Fireflies",
+      "match_to_deal_id": null,
+      "context": "Recording app David prefers for Zoe integration"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "User feedback meeting for Careerspan product (David A as candidate applying to Zoe). Contains actionable UX insights for Careerspan but does not represent a direct partnership or acquisition opportunity."
+}

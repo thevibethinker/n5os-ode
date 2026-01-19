@@ -1,0 +1,41 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Discussion of post-exit collaboration on relationship-focused tech and Vrijen's technical growth, but no immediate Zo partnership opportunities. Meeting is primarily a peer founder catch-up.",
+  "careerspan_reasoning": "Vrijen explicitly discussed Careerspan's active exit exploration, acquisition interest from buyers, and received offers for intros to KKR and Rew Cohen as potential buyer connections.",
+  "companies_mentioned": [
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "Vrijen's company, actively seeking acquisition"
+    },
+    {
+      "name": "Warmer Jobs",
+      "match_to_deal_id": null,
+      "context": "Asher's side project, career tech company"
+    },
+    {
+      "name": "KKR",
+      "match_to_deal_id": null,
+      "context": "Private equity firm, Asher offered intro for Careerspan exit"
+    },
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (CRM System)",
+      "context": "Vrijen had intense call with Calendly founder"
+    }
+  ],
+  "recommended_deal_links": [
+    "Calendly (CRM System)",
+    "Kondo (LinkedIn Messaging)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "KKR",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.7,
+      "rationale": "Asher offered intro to KKR for Careerspan exit, but PE firms typically acquire later-stage companies. Confidence reduced due to potential stage mismatch."
+    }
+  ],
+  "summary": "Meeting focused on Careerspan's active exit search with Asher offering intros to KKR and Rew Cohen as potential buyer connections. Low Zo relevance as discussion centered on post-exit collaboration possibilities."
+}

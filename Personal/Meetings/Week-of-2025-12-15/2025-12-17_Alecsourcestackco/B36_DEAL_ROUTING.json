@@ -1,0 +1,44 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Discusses potential data partnerships (Marv Adventures portfolio job board polling) and Alec offered to make connections. SourceTech partnership potential unclear. Primarily Careerspan-focused.",
+  "careerspan_reasoning": "Meeting focused on acquisition strategy - 4-5 companies in talks, positioning for $M sale in 3-4 months, creating 'froth' to drive applications. Alec provided acquirer insights (resume builders, ATS companies) and offered warm intro to Peter Weddle (TA Talent Network).",
+  "companies_mentioned": [
+    {
+      "name": "SourceTech",
+      "match_to_deal_id": null,
+      "context": "Alec Barrett-Wilsdon's company, provided market insights and offered connections"
+    },
+    {
+      "name": "Marv Adventures",
+      "match_to_deal_id": null,
+      "context": "New partnership with ~50-100 portfolio companies; V plans to poll their job boards for data feed to Careerspan"
+    },
+    {
+      "name": "TA Talent Network / Peter Weddle",
+      "match_to_deal_id": null,
+      "context": "Alec offered warm intro as potential acquirer or strategic connection"
+    },
+    {
+      "name": "Getro",
+      "match_to_deal_id": null,
+      "context": "Sunsetting jobs data products, impact discussed on Marv Adventures"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Marv Adventures",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Explicit partnership established; V to poll ~50-100 portfolio company job boards for data feed to Careerspan. Data integration work planned."
+    },
+    {
+      "company": "Peter Weddle / TA Talent Network",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Alec offered warm intro as potential acquirer; meeting focused on Careerspan acquisition strategy. Directly relevant to pipeline."
+    }
+  ],
+  "summary": "Meeting focused on Careerspan's acquisition strategy (4-5 acquirers engaged, targeting $M sale in 3-4 months) with Alec offering connections. Marv Adventures partnership established for job board data polling; Alec offered warm intro to Peter Weddle (TA Talent Network)."
+}

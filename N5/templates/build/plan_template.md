@@ -79,6 +79,43 @@ status: draft
 
 ---
 
+## MECE Validation
+
+<!-- 
+MANDATORY for multi-worker builds.
+Reference: N5/prefs/operations/mece-worker-framework.md
+Run validator: python3 N5/scripts/mece_validator.py {{SLUG}}
+-->
+
+### Scope Coverage Matrix
+
+<!-- List ALL scope items from plan. Each must map to exactly ONE worker. -->
+
+| Scope Item | Worker | Status |
+|------------|--------|--------|
+| `{{FILE_1}}` | W1.1 | ✓ |
+| `{{FILE_2}}` | W1.2 | ✓ |
+| `{{RESPONSIBILITY}}` | W1.1 | ✓ |
+
+### Token Budget Summary
+
+<!-- Ensure each worker stays within context budget (target <30%, hard limit <40%). -->
+
+| Worker | Brief (tokens) | Files (tokens) | Total % | Status |
+|--------|----------------|----------------|---------|--------|
+| W1.1 | ~2,000 | ~8,000 | 5% | ✓ |
+| W1.2 | ~1,500 | ~6,000 | 3.75% | ✓ |
+
+### MECE Validation Result
+
+- [ ] All scope items assigned to exactly ONE worker (no overlaps)
+- [ ] All plan deliverables covered (no gaps)
+- [ ] All workers within 40% token budget
+- [ ] Wave dependencies are valid (no circular, no same-wave deps)
+- [ ] `python3 N5/scripts/mece_validator.py {{SLUG}}` passes
+
+---
+
 ## Worker Briefs
 
 <!-- For builds using v2 orchestrator: briefs are in `workers/` folder. -->
@@ -125,4 +162,3 @@ status: draft
 
 ### Rejected (with rationale):
 - {{WHAT_WAS_REJECTED}}: {{WHY}}
-

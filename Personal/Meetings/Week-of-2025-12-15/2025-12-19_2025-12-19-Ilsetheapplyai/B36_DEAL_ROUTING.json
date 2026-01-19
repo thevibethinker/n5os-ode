@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting focused entirely on Careerspan product/UX decisions with no Zo partnership or GTM strategy discussion. OpenAI and Microsoft Teams mentioned as tools/platforms, not partnership opportunities.",
+  "careerspan_reasoning": "Core Careerspan product meeting discussing story-completion UX, user friction, and prioritization of OpenAI processing for Careerspan. Pre-call sync for high-stakes Darwinbox meeting suggests potential acquisition or strategic partnership.",
+  "companies_mentioned": [
+    {
+      "name": "Darwinbox",
+      "match_to_deal_id": null,
+      "context": "$1B Indian HR tech company; focus of upcoming high-stakes meeting; potential target for handling AI-generated resume challenges"
+    },
+    {
+      "name": "OpenAI",
+      "match_to_deal_id": null,
+      "context": "API provider; moving processing to priority queue for UX improvement"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Darwinbox",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "$1B HR tech company with US market expansion goals; high-stakes pre-call sync indicates serious acquisition/partnership discussion; direct overlap with Careerspan's recruiting tech mission"
+    }
+  ],
+  "summary": "Careerspan product strategy meeting preparing for high-stakes Darwinbox ($1B HR tech) discussion, focused on UX optimization and technical priorities. Darwinbox represents potential acquisition or strategic partnership opportunity for Careerspan."
+}

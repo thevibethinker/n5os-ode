@@ -1,0 +1,59 @@
+{
+  "zo_relevance_score": 0.2,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Minimal direct relevance. Skills Nexus AI mentioned as labor market intelligence platform but meeting focused on Careerspan M&A, not Zo partnerships or infrastructure",
+  "careerspan_reasoning": "Primary purpose of meeting. Jonny provided M&A counsel based on his Worthy exit experience and offered two specific potential acquirer leads",
+  "companies_mentioned": [
+    {
+      "name": "Learning Economy",
+      "match_to_deal_id": null,
+      "context": "Jonny Coreson's company, provided M&A counsel based on his Worthy exit"
+    },
+    {
+      "name": "Skills Nexus AI",
+      "match_to_deal_id": null,
+      "context": "Robert Bagor's labor market intelligence platform at ~1% of Lightcast costs"
+    },
+    {
+      "name": "Micro Credential Multiverse",
+      "match_to_deal_id": null,
+      "context": "Robert Bagor's company"
+    },
+    {
+      "name": "Cohen Strategy Group",
+      "match_to_deal_id": null,
+      "context": "Matthew Cohen - investor in space, previously expressed interest if valuation made sense"
+    },
+    {
+      "name": "Ascent Funding",
+      "match_to_deal_id": null,
+      "context": "fka Ascent Education - would be interested in skills gap analysis capabilities"
+    },
+    {
+      "name": "Worthy",
+      "match_to_deal_id": null,
+      "context": "Jonny's previous company sold to Learning Economy Foundation"
+    },
+    {
+      "name": "Learn Card",
+      "match_to_deal_id": null,
+      "context": "Learning Economy's product, integrating Worthy IP as feature"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Cohen Strategy Group",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.8,
+      "rationale": "Matthew Cohen explicitly mentioned as investor in space who previously expressed interest if valuation made sense"
+    },
+    {
+      "company": "Ascent Funding",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.75,
+      "rationale": "Would be interested in skills gap analysis capabilities, potential strategic fit"
+    }
+  ],
+  "summary": "M&A-focused meeting where Jonny Coreson provided exit counsel to Vrijen and introduced two potential Careerspan acquirers: Cohen Strategy Group (investor, prior interest) and Ascent Funding (skills gap analysis interest)."
+}

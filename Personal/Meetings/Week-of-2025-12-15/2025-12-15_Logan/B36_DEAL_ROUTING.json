@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "No Zo partnership discussions or GTM strategy. Meeting focused entirely on Careerspan operations (job board, hiring, candidate sourcing). None of the existing Zo deal companies mentioned.",
+  "careerspan_reasoning": "Highly relevant to Careerspan business operations: job board launch metrics (80% retention), A/B testing hiring process, candidate sourcing strategy, and planned outreach to Transcend Network for recruiting services.",
+  "companies_mentioned": [
+    {
+      "name": "Kadima Careers",
+      "match_to_deal_id": null,
+      "context": "Erica's former employer, background context"
+    },
+    {
+      "name": "Transcend Network",
+      "match_to_deal_id": null,
+      "context": "V plans to message Liam about Careerspan recruiting services"
+    },
+    {
+      "name": "Google",
+      "match_to_deal_id": null,
+      "context": "Erica's former employer, background context"
+    },
+    {
+      "name": "Next Play",
+      "match_to_deal_id": null,
+      "context": "Platform where Careerspan job board launched"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Transcend Network",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.7,
+      "rationale": "V explicitly plans to message Liam about Careerspan recruiting services. Note: EdTech market described as 'brutal' with limited funding/hiring - consider market conditions before outreach."
+    }
+  ],
+  "summary": "Meeting focused on Careerspan operations: job board success (80% retention on Next Play), A/B testing hiring for David's roles, and planned outreach to Transcend Network. No Zo partnership relevance."
+}

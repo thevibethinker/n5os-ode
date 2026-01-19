@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Mentorship session with Ilya on sales philosophy; no Zo partnership terms or GTM collaboration discussed.",
+  "careerspan_reasoning": "Strategy session preparing for B2B sales meeting with Teamwork Online - direct pipeline opportunity with clear next steps and value proposition defined.",
+  "companies_mentioned": [
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Sales target - ATS for American sports teams with 8M candidates, pitched on dual-sided marketplace with Careerspan providing deep data"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Direct B2B sales opportunity discussed in strategy session. ATS with 8M candidates, pitched for partnership to transform into dual-sided marketplace using Careerspan's deep data and relationship tools."
+    }
+  ],
+  "summary": "Mentorship meeting preparing for Teamwork Online sales opportunity - a high-priority Careerspan pipeline deal involving ATS partnership to create dual-sided marketplace."
+}

@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "No Zo services, GTM strategies, or partnership opportunities discussed. Meeting was focused on Careerspan's product-market fit and candidate verification problem space.",
+  "careerspan_reasoning": "Highly relevant. Colin's experience at Amwell directly validates Careerspan's hypothesis about candidate misrepresentation and the market need for merit-based matching. Strategic validation from Logan Currie strengthens acquisition rationale.",
+  "companies_mentioned": [
+    {
+      "name": "Amwell",
+      "match_to_deal_id": null,
+      "context": "Colin's former employer where identity theft/fake candidate incident occurred, validating Careerspan's problem statement"
+    },
+    {
+      "name": "Tapjoy",
+      "match_to_deal_id": null,
+      "context": "Past employer context for Colin-Brady connection (mutual contact)"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Strategic validation meeting for Careerspan - Colin's experience at Amwell provides concrete proof point for candidate misrepresentation problem, but no direct Zo partnership or new acquisition opportunities created."
+}

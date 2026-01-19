@@ -63,14 +63,14 @@ def sync_zo_partnerships(dry_run: bool = False) -> dict:
     
     inserted = updated = 0
     for r in records:
-        deal_id = r.get('id') or f"zo-dp-{re.sub(r'[^a-z0-9]', '', r['company'].lower())[:20]}"
+        deal_id = r.get('id') or f"zo-dp-{re.sub(r'[^a-z0-9]', '', r['Company'].lower())[:20]}"
         
         c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
         exists = c.fetchone()
         
         metadata = {
-            'founder': r.get('founder'),
-            'implementation': r.get('implementation'),
+            'founder': r.get('Founder'),
+            'implementation': r.get('Implementation'),
             'last_synced': datetime.now().isoformat(),
             'source': 'google_sheets'
         }
@@ -82,9 +82,9 @@ def sync_zo_partnerships(dry_run: bool = False) -> dict:
                     owner = ?, notes = ?, metadata_json = ?, last_touched = ?
                 WHERE id = ?
             ''', (
-                r['company'], r.get('website'), r.get('category'),
-                r.get('warmth', '').lower() if r.get('warmth') else None,
-                r.get('owner'), r.get('notes'),
+                r['Company'], r.get('Website'), r.get('category'),
+                r.get('Warmth', '').lower() if r.get('Warmth') else None,
+                r.get('Liaison'), r.get('Notes'),
                 json.dumps(metadata), datetime.now().isoformat(), deal_id
             ))
             updated += 1
@@ -97,9 +97,9 @@ def sync_zo_partnerships(dry_run: bool = False) -> dict:
                     first_identified, last_touched
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
-                deal_id, 'zo_partnership', r['company'], r.get('website'),
-                r.get('category'), r.get('warmth', '').lower() if r.get('warmth') else None,
-                'identified', r.get('owner'), r.get('notes'),
+                deal_id, 'zo_partnership', r['Company'], r.get('Website'),
+                r.get('category'), r.get('Warmth', '').lower() if r.get('Warmth') else None,
+                'identified', r.get('Liaison'), r.get('Notes'),
                 'google_sheets', r.get('source_id', f"gsheet:{deal_id}"),
                 json.dumps(metadata), datetime.now().isoformat(), datetime.now().isoformat()
             ))
@@ -221,7 +221,25 @@ def sync_careerspan_leadership(dry_run: bool = False) -> dict:
     
     inserted = updated = 0
     for r in records:
-        deal_id = r.get('id')
+        # Generate deal ID from person name or notion_id
+        person = r.get('person', '').strip()
+        notion_id = r.get('notion_id', '')
+        deal_id = r.get('id') or f"cs-lead-{re.sub(r'[^a-z0-9]', '', person.lower())[:20]}" if person else f"cs-lead-{notion_id[:12]}"
+        
+        # Use person as company placeholder (actual company requires resolving company_relation)
+        company_placeholder = f"[Leadership: {person}]" if person else "[Unknown]"
+        
+        metadata = {
+            'notion_id': notion_id,
+            'notion_url': r.get('url'),
+            'linkedin_url': r.get('linkedin_url'),
+            'x_handle': r.get('x_handle'),
+            'second_degree_connects': r.get('2nd_degree_connects'),
+            'notes_thesis': r.get('notes_thesis'),
+            'company_relation_ids': r.get('company_relation', []),
+            'roles': r.get('roles', []),
+            'last_synced': datetime.now().isoformat(),
+        }
         
         c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
         exists = c.fetchone()
@@ -230,29 +248,28 @@ def sync_careerspan_leadership(dry_run: bool = False) -> dict:
             c.execute('''
                 UPDATE deals SET
                     company = ?, primary_contact = ?, category = ?,
-                    proximity = ?, temperature = ?, notes = ?,
+                    website = ?, notes = ?,
                     metadata_json = ?, last_touched = ?
                 WHERE id = ?
             ''', (
-                r.get('company'), r.get('contact_name'), 'leadership',
-                r.get('proximity'), r.get('temperature'), r.get('notes'),
-                r.get('metadata_json'), datetime.now().isoformat(), deal_id
+                company_placeholder, person, 'leadership',
+                r.get('linkedin_url'), r.get('notes_thesis'),
+                json.dumps(metadata), datetime.now().isoformat(), deal_id
             ))
             updated += 1
         else:
             c.execute('''
                 INSERT INTO deals (
                     id, deal_type, company, primary_contact, category,
-                    proximity, temperature, stage, owner, notes,
+                    stage, owner, website, notes,
                     source_system, source_id, metadata_json,
                     first_identified, last_touched
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
-                deal_id, 'careerspan_acquirer', r.get('company'),
-                r.get('contact_name'), 'leadership',
-                r.get('proximity'), r.get('temperature'),
-                'identified', 'V', r.get('notes'),
-                'notion', r.get('source_id'), r.get('metadata_json'),
+                deal_id, 'careerspan_acquirer', company_placeholder,
+                person, 'leadership',
+                'identified', 'V', r.get('linkedin_url'), r.get('notes_thesis'),
+                'notion', f"notion:{notion_id}", json.dumps(metadata),
                 datetime.now().isoformat(), datetime.now().isoformat()
             ))
             inserted += 1
@@ -434,122 +451,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-    
-    records = []
-    with open(cache_file, 'r') as f:
-        for line in f:
-            if line.strip():
-                records.append(json.loads(line))
-    
-    if dry_run:
-        print(f"[DRY RUN] Would sync {len(records)} deal broker records")
-        return {'status': 'dry_run', 'count': len(records)}
-    
-    conn = get_db()
-    c = conn.cursor()
-    
-    inserted = updated = 0
-    for r in records:
-        deal_id = r.get('id', f"broker-{re.sub(r'[^a-z0-9]', '', r.get('contact', 'unknown').lower())[:20]}")
-        
-        c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
-        exists = c.fetchone()
-        
-        metadata = {
-            'notion_id': r.get('notion_id'),
-            'notion_url': r.get('url'),
-            'angle': r.get('angle'),
-            'blurb': r.get('blurb'),
-            'last_synced': datetime.now().isoformat(),
-        }
-        
-        if exists:
-            c.execute('''
-                UPDATE deals SET
-                    company = ?, primary_contact = ?, metadata_json = ?, last_touched = ?
-                WHERE id = ?
-            ''', (
-                r.get('contact'), r.get('contact'),
-                json.dumps(metadata), datetime.now().isoformat(), deal_id
-            ))
-            updated += 1
-        else:
-            c.execute('''
-                INSERT INTO deals (
-                    id, deal_type, company, primary_contact, stage,
-                    source_system, metadata_json, first_identified, last_touched
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                deal_id, 'deal_broker', r.get('contact'), r.get('contact'),
-                'active', 'notion', json.dumps(metadata),
-                datetime.now().isoformat(), datetime.now().isoformat()
-            ))
-            inserted += 1
-    
-    conn.commit()
-    conn.close()
-    
-    print(f"✓ Deal Brokers synced: {inserted} inserted, {updated} updated")
-    return {'status': 'success', 'inserted': inserted, 'updated': updated}
-
-    
-    records = []
-    with open(cache_file, 'r') as f:
-        for line in f:
-            if line.strip():
-                records.append(json.loads(line))
-    
-    if dry_run:
-        print(f"[DRY RUN] Would sync {len(records)} leadership target records")
-        return {'status': 'dry_run', 'count': len(records)}
-    
-    conn = get_db()
-    c = conn.cursor()
-    
-    inserted = updated = 0
-    for r in records:
-        person_slug = re.sub(r'[^a-z0-9]', '', r.get('person', 'unknown').lower())[:25]
-        deal_id = f"lead-{person_slug}"
-        
-        c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
-        exists = c.fetchone()
-        
-        metadata = {
-            'notion_id': r.get('notion_id'),
-            'notion_url': r.get('url'),
-            'linkedin': r.get('linkedin'),
-            'x_handle': r.get('x_handle'),
-            'second_degree': r.get('second_degree'),
-            'notes': r.get('notes'),
-            'company_relation_id': r.get('company_id'),
-            'last_synced': datetime.now().isoformat(),
-        }
-        
-        if exists:
-            c.execute('''
-                UPDATE deals SET
-                    primary_contact = ?, website = ?, metadata_json = ?, last_touched = ?
-                WHERE id = ?
-            ''', (
-                r.get('person'), r.get('linkedin'),
-                json.dumps(metadata), datetime.now().isoformat(), deal_id
-            ))
-            updated += 1
-        else:
-            c.execute('''
-                INSERT INTO deals (
-                    id, deal_type, company, primary_contact, website, stage,
-                    source_system, metadata_json, first_identified, last_touched
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                deal_id, 'leadership_target', r.get('person'), r.get('person'),
-                r.get('linkedin'), 'identified', 'notion', json.dumps(metadata),
-                datetime.now().isoformat(), datetime.now().isoformat()
-            ))
-            inserted += 1
-    
-    conn.commit()
-    conn.close()
-    
-    print(f"✓ Leadership Targets synced: {inserted} inserted, {updated} updated")
-    return {'status': 'success', 'inserted': inserted, 'updated': updated}

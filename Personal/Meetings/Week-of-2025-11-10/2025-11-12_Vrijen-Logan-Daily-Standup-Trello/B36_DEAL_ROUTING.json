@@ -1,0 +1,49 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Minimal relevance. The meeting focuses on Careerspan-specific business development, partnerships, and acquisition discussions. Only tangential connection through potential partner integrations (Calendly mentioned in existing deals as CRM system).",
+  "careerspan_reasoning": "High relevance. Meeting covers active deal development: Marvin Ventures LOI for VC pricing, Future Fit negotiations requiring positioning strategy, Darwin Box follow-up, and Roll Out potential partnership. These directly impact Careerspan's GTM and acquisition pipeline.",
+  "companies_mentioned": [
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "Vrijen sent email requesting official recognition and flexible LOI for Careerspan to set pricing for VC services. Hopes to confirm before founder's dinner."
+    },
+    {
+      "name": "Future Fit",
+      "match_to_deal_id": null,
+      "context": "Significant time spent drafting response to Hamoon. Discussing team size (4 people), user base (3,500 signups, ~1,000 storytellers), tech stack (Firebase, Moodle, AI APIs, React), and framing strategy."
+    },
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "Email sent out, awaiting response."
+    },
+    {
+      "name": "Roll Out (Nicole)",
+      "match_to_deal_id": null,
+      "context": "Discussion about embedding with marketing team and potential service where alumni can pay to check specifically for their fellow alums."
+    },
+    {
+      "name": "Founders Circle",
+      "match_to_deal_id": null,
+      "context": "Potential membership at $2k/year. Vrijen skeptical but attending dinner with six tech people to evaluate network quality."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Marvin Ventures",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Active LOI process - Vrijen sent email requesting official recognition and flexible LOI. Clear action item with timeline (before founder's dinner). Represents VC partnership opportunity for Careerspan."
+    },
+    {
+      "company": "Future Fit",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Active negotiation requiring strategic framing response. Significant meeting time dedicated. Involves detailed positioning discussions (team size, user base, tech stack) - indicates substantive deal progression."
+    }
+  ],
+  "summary": "Meeting focused heavily on Careerspan deal pipeline with active negotiations at Marvin Ventures (LOI pending) and Future Fit (framing response), plus early-stage BD with Darwin Box and Roll Out. Low Zo relevance."
+}

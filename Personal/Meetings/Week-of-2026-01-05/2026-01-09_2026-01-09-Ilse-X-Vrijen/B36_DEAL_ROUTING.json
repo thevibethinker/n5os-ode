@@ -1,0 +1,36 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.35,
+  "zo_reasoning": "Meeting is entirely internal Careerspan product strategy discussion with no Zo partnership discussions, GTM considerations, or Zo-related business development content.",
+  "careerspan_reasoning": "Contains significant internal strategic pivot discussion for Careerspan (talent scanning as core product vs. employer portal) and potential partnership discussion with Superposition, but no acquisition-related conversations, buyer discussions, or M&A considerations.",
+  "companies_mentioned": [
+    {
+      "name": "Superposition",
+      "match_to_deal_id": null,
+      "context": "Described as 'Careerspan but on employer side' - conversational AI headhunter with 800-person talent community; discussed as potential partner where Careerspan could provide talent access layer"
+    },
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "Job board with roles that could be split among handpicked recruiters to generate success stories"
+    },
+    {
+      "name": "Holly",
+      "match_to_deal_id": null,
+      "context": "Client needing talent scans for Agave and Deep Tune roles, delivery expected Monday"
+    },
+    {
+      "name": "Agave",
+      "match_to_deal_id": null,
+      "context": "Company where Holly has open roles"
+    },
+    {
+      "name": "Deep Tune",
+      "match_to_deal_id": null,
+      "context": "Company where Holly has open roles"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan strategic meeting with major product pivot (talent scanning as core) and exploratory Superposition partnership discussion; no direct deal pipeline implications for acquisition or partnership creation."
+}

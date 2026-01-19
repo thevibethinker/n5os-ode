@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Meeting focuses on founder networking and podcast recording, with no discussion of data partnerships, APIs, or Zo GTM strategy. Only tangential connection is founder community engagement.",
+  "careerspan_reasoning": "Direct conversation between Vrijen (Careerspan founder) and Emily Velasco, a career coach specializing in job search stages (Alignment, Execution). Explicit discussion of collaboration opportunities, Vrijen promises to add Emily to founder Slack group, and Emily expresses interest in hosting Vrijen on her podcast. This represents a potential strategic partnership or referral relationship in the careers coaching ecosystem.",
+  "companies_mentioned": [
+    {
+      "name": "Scale AI",
+      "match_to_deal_id": null,
+      "context": "Cited by Vrijen as a previous guest at a founder event; not a current deal."
+    },
+    {
+      "name": "Emily Velasco",
+      "match_to_deal_id": null,
+      "context": "Career coach focusing on job search Stages 2 (Alignment) and 3 (Execution); potential collaboration partner for Careerspan."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Emily Velasco",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Career coach with complementary expertise (Stage 2/3 job search) to potential Discovery partners; Vrijen explicitly encourages collaboration and adds her to founder network; podcast opportunity provides marketing exposure. Actionable next step: follow up on partnership/referral relationship."
+    }
+  ],
+  "summary": "Meeting with Emily Velasco, a career coach focusing on job search Alignment and Execution stages, discussing collaboration opportunities and founder networking. High relevance to Careerspan due to complementary service offerings and Vrijen's expressed interest in partnership; minimal relevance to Zo partnerships."
+}

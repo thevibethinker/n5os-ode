@@ -1,0 +1,31 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "Career coaching session, not business development. V's data company rant is philosophical observation. No actionable partnership discussions or GTM strategy.",
+  "careerspan_reasoning": "Direct client engagement showcasing Careerspan's transferable skills AI coach value. Product being actively used for job hunting. Product use case observation, not acquisition signal.",
+  "companies_mentioned": [
+    {
+      "name": "Happenstance",
+      "match_to_deal_id": null,
+      "context": "Data scraping tool demo, triggered V's data company rant"
+    },
+    {
+      "name": "Skillcraft",
+      "match_to_deal_id": null,
+      "context": "Potential job for Rochel, V analyzed as 'good digging exercise'"
+    },
+    {
+      "name": "Oscar Health",
+      "match_to_deal_id": null,
+      "context": "V promised to prime intro for Rochel"
+    },
+    {
+      "name": "Interrupt",
+      "match_to_deal_id": null,
+      "context": "Product Lead role on Careerspan job board, V knows recruiter"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Client coaching session demonstrating Careerspan's transferable skills AI coach. Low deal pipeline relevance\u2014primarily product usage observation with no actionable partnership or acquisition signals."
+}

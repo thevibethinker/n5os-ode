@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Internal Careerspan team meeting with no Zo-specific partnerships, GTM strategy, or sales discussions. Content is entirely focused on Careerspan operations and product strategy.",
+  "careerspan_reasoning": "Strategic internal meeting about Careerspan's acquisition strategy, value proposition proof points, success metrics, and community engagement as a sales channel. Directly relevant to closing employer deals.",
+  "companies_mentioned": [
+    {
+      "name": "Lenny's Newsletter/Community",
+      "match_to_deal_id": null,
+      "context": "Mentioned as an example of engineering/data/design community to sponsor for team to dogfood the product and learn how to sell to those groups"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan strategic planning meeting focused on proving value proposition to employers through placement success stories, with community engagement identified as a key GTM channel. No specific external deals discussed."
+}

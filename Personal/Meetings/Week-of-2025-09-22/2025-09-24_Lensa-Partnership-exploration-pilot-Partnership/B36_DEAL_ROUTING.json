@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 1.0,
+  "zo_reasoning": "Meeting is exclusively about Careerspan's business operations and partnership with Lensa; no Zo-related products, GTM strategy, or technology mentioned",
+  "careerspan_reasoning": "Highly relevant: Strategic partnership with clear monetization pathway via CPC model ($0.15 CPC, $2,500 budget); pilot committed for October 2025 with dedicated Lensa analysts; expansion roadmap into new categories and user acquisition (200-400 users/week); Lensa as potential acquirer given Careerspan's proprietary matching engine and 75-80% engagement metrics",
+  "companies_mentioned": [
+    {
+      "name": "Lensa",
+      "match_to_deal_id": null,
+      "context": "Primary strategic partner - job board aggregator with 25M listings; committed to pilot with CPC model and dedicated analysts"
+    },
+    {
+      "name": "Appcast",
+      "match_to_deal_id": null,
+      "context": "Platform for the partnership - Careerspan to be set up as Master Publisher for CPC campaign management"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Lensa",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Strategic partnership with clear monetization pathway; pilot with CPC model and $2,500 budget; high-signal user base acquisition for Lensa with 75-80% open rates; expansion roadmap into Engineering and Growth roles; potential acquisition target given Careerspan's proprietary matching engine and engaged user community"
+    }
+  ],
+  "summary": "Careerspan-Lensa strategic partnership for job distribution and user acquisition with committed October 2025 pilot ($0.15 CPC, $2,500 budget), no Zo relevance."
+}

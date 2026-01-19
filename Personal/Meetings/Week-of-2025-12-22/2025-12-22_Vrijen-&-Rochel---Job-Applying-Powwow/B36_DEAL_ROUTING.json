@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.35,
+  "zo_reasoning": "Meeting focuses on personal job search advice for Rocko; no Zo partnerships, GTM, or ecosystem discussions. Minimal relevance.",
+  "careerspan_reasoning": "Discussion of Careerspan design challenges, existing Marvin Ventures partnership, and tactical positioning with A16Z/Insight Global. However, these are exploratory conversations through Rocko's personal network, not active deal pipelines.",
+  "companies_mentioned": [
+    {
+      "name": "A16Z (Andreessen Horowitz)",
+      "match_to_deal_id": null,
+      "context": "Rocko has existing connection with Jordan Mazer at A16Z; V suggests leveraging Careerspan's Marvin Ventures partnership as pretext to follow up."
+    },
+    {
+      "name": "Insight Global",
+      "match_to_deal_id": null,
+      "context": "Rocko has been in touch with Logan regarding Insight Global; V encourages following up to position Careerspan's AI-native product."
+    },
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "Referenced as existing Careerspan partner (McKinsey alumni) that could be leveraged as networking pretext."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Insight Global",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.86,
+      "rationale": "V explicitly suggests following up with Logan to position Careerspan's AI-native product. Staffing/consulting firms like Insight Global are natural acquirers or strategic partners for career coaching technology."
+    }
+  ],
+  "summary": "Meeting primarily focuses on Rocko's personal job search and networking strategies. Careerspan relevance centers on tactical positioning through Rocko's connections at A16Z and Insight Global, with Marvin Ventures as an existing partnership lever."
+}

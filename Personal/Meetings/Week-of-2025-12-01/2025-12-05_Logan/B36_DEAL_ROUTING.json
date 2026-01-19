@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.0,
+  "zo_reasoning": "Meeting was a brief connection check with no discussion of Zo partnerships, GTM strategies, or Zo-related topics.",
+  "careerspan_reasoning": "No mention of Careerspan, career coaching, or any acquisition-related business discussions.",
+  "companies_mentioned": [
+    {
+      "name": "Logan",
+      "match_to_deal_id": null,
+      "context": "Person connected on call - appears to be a contact name, not a company"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This meeting was a brief connection check with no substantive business discussion. No relevance to Zo partnership or Careerspan acquisition pipelines."
+}

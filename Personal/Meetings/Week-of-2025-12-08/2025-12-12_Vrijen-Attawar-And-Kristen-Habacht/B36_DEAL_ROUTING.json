@@ -1,0 +1,35 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Only Zo-relevant element is the mention of Kondo (already an existing deal). Meeting focuses entirely on Careerspan product and Elly.ai partnership, with no Zo partnerships or GTM strategy discussed.",
+  "careerspan_reasoning": "High-value partnership discussion where Vrijen presented Careerspan's product vision, demonstrated candidate matching technology, and proposed integration as a data enrichment layer. Clear next steps defined (intro to co-founder Nick for technical discussion).",
+  "companies_mentioned": [
+    {
+      "name": "Elly.ai",
+      "match_to_deal_id": null,
+      "context": "Primary company discussed - potential strategic partnership for Careerspan data integration/enrichment layer. Focuses on AI notetaker, AI interviewer, and sourcing."
+    },
+    {
+      "name": "Kondo",
+      "match_to_deal_id": "Kondo (LinkedIn Messaging) (zo_partnership)",
+      "context": "Vrijen recommended Kondo to Kristen for LinkedIn inbox management."
+    },
+    {
+      "name": "Juicebox",
+      "match_to_deal_id": null,
+      "context": "Mentioned as competitor/similar to Elly.ai in the sourcing space."
+    }
+  ],
+  "recommended_deal_links": [
+    "Kondo (LinkedIn Messaging) (zo_partnership)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "Elly.ai",
+      "deal_type": "careerspan_partnership",
+      "confidence": 0.9,
+      "rationale": "Active partnership discussion with clear product fit - Careerspan as data enrichment layer for Elly.ai's hiring platform. Next steps already defined (intro to co-founder Nick for technical integration, white-labeling discussion)."
+    }
+  ],
+  "summary": "High-relevance Careerspan partnership discussion with Elly.ai focusing on data integration as an enrichment layer; only marginal Zo relevance via Kondo mention."
+}

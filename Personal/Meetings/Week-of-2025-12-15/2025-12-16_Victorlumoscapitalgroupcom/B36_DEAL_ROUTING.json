@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.1,
+  "zo_reasoning": "Meeting with capital firm could relate to investment/partnership, but actual discussion content is unavailable - transcript captures only pre-Zoom greetings",
+  "careerspan_reasoning": "Capital firm could be an acquirer, but zero discussion content to validate - substantive conversation occurred on unrecorded Zoom",
+  "companies_mentioned": [
+    {
+      "name": "Lumos Capital Group",
+      "match_to_deal_id": "null",
+      "context": "Victor Hu's company, but no actual business discussion captured in transcript"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Transcript contains only 3 seconds of greetings before switching to Zoom; actual discussion content unavailable for pipeline assessment"
+}

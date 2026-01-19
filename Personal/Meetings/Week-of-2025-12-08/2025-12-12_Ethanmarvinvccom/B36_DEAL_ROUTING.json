@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.8,
+  "zo_reasoning": "Meeting is about Careerspan forming a partnership with Marvin (VC firm's Startup Stack), not a Zo partnership or GTM initiative. Marvin operates as a perk aggregator for portfolio founders, which is a different business model than Zo's data/API partnerships. No overlap with existing Zo deal types.",
+  "careerspan_reasoning": "Direct GTM partnership discussion where Careerspan secured a perk placement in Marvin's Startup Stack, giving exposure to their portfolio founder network. A 3-month free trial ($900 value) was agreed as the perk offer. This is a clear distribution channel partnership for user acquisition.",
+  "companies_mentioned": [
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "VC firm with Startup Stack platform; Ethan works there. Partnership established with perk placement for Careerspan."
+    },
+    {
+      "name": "Atio",
+      "match_to_deal_id": null,
+      "context": "Referenced during call as an example of how partner pages appear on Marvin's site."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Marvin",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Partnership established: Careerspan secured perk placement in Marvin's Startup Stack. Perk defined as one role 'on the house' for 3 months (~$900 value). Fillout.com form built for lead capture. Technical workflow agreed for redemption redirect. Deal is active and actionable."
+    }
+  ],
+  "summary": "Careerspan secured a partnership placement in Marvin VC's Startup Stack, offering a 3-month free trial perk to their portfolio founders. Direct GTM distribution channel established with lead capture form ready."
+}

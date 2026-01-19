@@ -1,0 +1,25 @@
+{
+  "zo_relevance_score": 0.8,
+  "careerspan_relevance_score": 0.35,
+  "zo_reasoning": "Meeting is direct preparation for Calendly partnership conversation; discussion of scheduling features, conversion tracking, and CRM positioning is directly relevant to Zo's partnership pipeline with scheduling companies",
+  "careerspan_reasoning": "Provides coaching workflow context (client-centric views, session tracking, conversion analytics) but primary focus is partnership strategy with Calendly, not Careerspan acquisition activity",
+  "companies_mentioned": [
+    {
+      "name": "Acuity Scheduler",
+      "match_to_deal_id": null,
+      "context": "Scheduling platform analyzed to understand coaching workflows as prep for Calendly conversation"
+    },
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (CRM System) (zo_partnership)",
+      "context": "Target of upcoming partnership meeting; meeting is prep for this conversation"
+    }
+  ],
+  "recommended_deal_links": [
+    "Calendly (CRM System) (zo_partnership)",
+    "Calendly (leadership)",
+    "Cal.com (zo_partnership)"
+  ],
+  "create_new_deals": [],
+  "summary": "Prep meeting for Calendly partnership; analyzed Acuity's scheduling workflows and conversion tracking features to inform Calendly positioning strategy"
+}

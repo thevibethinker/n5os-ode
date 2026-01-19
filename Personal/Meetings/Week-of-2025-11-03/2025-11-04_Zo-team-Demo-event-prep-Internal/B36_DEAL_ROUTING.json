@@ -1,0 +1,44 @@
+{
+  "zo_relevance_score": 0.55,
+  "careerspan_relevance_score": 0.1,
+  "zo_reasoning": "Internal GTM meeting preparing Zo demo event focused on user acquisition and partnership outreach. Event targets founders, operators, VCs with explicit sponsorship discussions for future partner pipeline development.",
+  "careerspan_reasoning": "No direct relevance to Careerspan business development or acquisition. Entirely Zo-focused event planning.",
+  "companies_mentioned": [
+    {
+      "name": "Row",
+      "match_to_deal_id": null,
+      "context": "Mentioned as potential event sponsor"
+    },
+    {
+      "name": "Oracle",
+      "match_to_deal_id": null,
+      "context": "Mentioned as potential event sponsor"
+    },
+    {
+      "name": "Cornell Hacker House",
+      "match_to_deal_id": null,
+      "context": "Mentioned as potential venue/sponsor"
+    },
+    {
+      "name": "Major League Hacking",
+      "match_to_deal_id": null,
+      "context": "Mentioned as potential sponsor"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Row",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Explicitly mentioned as potential event sponsor - clear partnership opportunity for Zo GTM"
+    },
+    {
+      "company": "Oracle",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Explicitly mentioned as potential event sponsor - clear partnership opportunity for Zo GTM"
+    }
+  ],
+  "summary": "Internal Zo GTM meeting for demo event prep with sponsorship potential (Row, Oracle). No direct Careerspan relevance."
+}

@@ -1,0 +1,39 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Discussion of general partnership strategy but entirely Careerspan-focused; no direct Zo partnership opportunities identified.",
+  "careerspan_reasoning": "Meeting focused entirely on Careerspan operations: Superposition partnership strategy, Teal CEO outreach (major career tech player with 2M users), job board management, and Pipedrive sales pipeline setup.",
+  "companies_mentioned": [
+    {
+      "name": "Superposition",
+      "match_to_deal_id": null,
+      "context": "Partnership strategy where V will introduce founders from McKinsey/Founders Club to Superposition, securing referral fees and ensuring employers use Careerspan links"
+    },
+    {
+      "name": "Teal",
+      "match_to_deal_id": null,
+      "context": "CEO reached out after seeing V's TikTok content; hour-long call scheduled for following week to explore potential alignment"
+    },
+    {
+      "name": "Pipedrive",
+      "match_to_deal_id": null,
+      "context": "CRM system for managing Careerspan sales pipeline; Ilya to review current setup"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teal",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "CEO of major career tech player (2M users) proactively reached out after seeing V's content; hour-long call scheduled for next week - high signal partnership opportunity"
+    },
+    {
+      "company": "Superposition",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Clear partnership strategy defined: V will leverage McKinsey/Founders Club networks to introduce founders to Superposition, with referral fees and link rental revenue model planned"
+    }
+  ],
+  "summary": "Highly Careerspan-focused meeting covering two partnership opportunities: Superposition (community-driven referral model) and Teal (CEO outreach with scheduled call). Also covered job board operations and Pipedrive CRM setup for sales pipeline management."
+}

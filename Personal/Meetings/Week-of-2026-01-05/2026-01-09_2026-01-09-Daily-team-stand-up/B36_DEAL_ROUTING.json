@@ -1,0 +1,41 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is entirely about Careerspan go-to-market strategy. No Zo partnerships, integrations, or Zo-related GTM discussed.",
+  "careerspan_reasoning": "Core strategic discussion of Careerspan's go-to-market, including detailed partnership proposal with Superposition recruiting firm, revenue share models, and recruiter acquisition strategy.",
+  "companies_mentioned": [
+    {
+      "name": "Superposition",
+      "match_to_deal_id": null,
+      "context": "Proposed recruiting firm partnership for McKinsey/Marvin placements, revenue share model, brand credibility, handles last-mile candidate outreach"
+    },
+    {
+      "name": "McKinsey",
+      "match_to_deal_id": null,
+      "context": "Mentioned as client type that Superposition serves (prestigious, relationship-based placements)"
+    },
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "Company that Superposition provides placements for alongside McKinsey"
+    },
+    {
+      "name": "Harvard Club of NYC",
+      "match_to_deal_id": null,
+      "context": "User acquisition target for NYC alumni network strategy"
+    },
+    {
+      "name": "Cornell Club of NYC",
+      "match_to_deal_id": null,
+      "context": "User acquisition target for NYC alumni network strategy"
+    },
+    {
+      "name": "AI Circle",
+      "match_to_deal_id": null,
+      "context": "Mentioned by Logan as NYC network to leverage (Albert referenced)"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan team stand-up focused on go-to-market strategy. Primary deal discussion: Superposition proposed as recruiting partner for brand credibility and revenue share on McKinsey/Marvin placements, with parallel approach of hungry individual recruiters for execution. NYC alumni club targeting also discussed."
+}

@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "No mention of Zo products, GTM, or partnerships. Meeting entirely focused on Careerspan's technology and potential partnership with Teamwork Online.",
+  "careerspan_reasoning": "Direct meeting with Teamwork Online, a sports hiring platform, including demo of Careerspan technology, discussion of integration points and business model, and committed next steps to meet again in early January.",
+  "companies_mentioned": [
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Primary meeting participant, sports hiring platform interested in potential partnership/integration with Careerspan's AI candidate matching and stories features"
+    },
+    {
+      "name": "New York Mets",
+      "match_to_deal_id": null,
+      "context": "Michelle Price's former employer, mentioned only in background context"
+    },
+    {
+      "name": "Boston Celtics",
+      "match_to_deal_id": null,
+      "context": "Michelle Price's former employer, mentioned only in background context"
+    },
+    {
+      "name": "Washington Nationals",
+      "match_to_deal_id": null,
+      "context": "Michelle Price's former employer, mentioned only in background context"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Direct meeting with Davis Filippell and Michelle Price; demo of Careerspan technology completed; interest expressed in integration of Careerspan's 'stories' feature; committed follow-up in early 2025 to explore collaboration; sports hiring platform with high candidate volume that could benefit from Careerspan's AI candidate matching."
+    }
+  ],
+  "summary": "Highly relevant to Careerspan pipeline - partnership meeting with Teamwork Online included product demo, integration discussion, and confirmed next steps. Irrelevant to Zo - no Zo products or partnerships discussed."
+}

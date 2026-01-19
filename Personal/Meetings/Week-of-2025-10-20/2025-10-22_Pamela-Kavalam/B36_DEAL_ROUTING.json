@@ -1,0 +1,39 @@
+{
+  "zo_relevance_score": 0.75,
+  "careerspan_relevance_score": 0.4,
+  "zo_reasoning": "V discussed Zo Computer productivity workflows targeting VCs, with Flybridge's Jesse identified as interested. Next Play community partnership could drive Zo adoption.",
+  "careerspan_reasoning": "Multiple acquisition parties have approached Careerspan, but V is pursuing a 'slow burn' community-led strategy instead of immediate exit. Meeting focused more on partnerships than acquisition.",
+  "companies_mentioned": [
+    {
+      "name": "Next Play",
+      "match_to_deal_id": null,
+      "context": "Ben's community where Careerspan could integrate as perk/workshop; warm introduction pending"
+    },
+    {
+      "name": "Flybridge",
+      "match_to_deal_id": null,
+      "context": "Jesse mentioned as highly interested in Zo productivity workflows for VC deal flow management"
+    },
+    {
+      "name": "Hustle Fund",
+      "match_to_deal_id": null,
+      "context": "Pam's firm; invited to co-brand or leverage Zero-to-Five ATS tool"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Next Play",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Pam explicitly suggested warm intro to Ben; Careerspan integration could drive Zo workflow adoption through community perk model"
+    },
+    {
+      "company": "Flybridge",
+      "deal_type": "zo_partnership",
+      "confidence": 0.85,
+      "rationale": "Jesse specifically identified as interested in AI productivity tools; V targeting VCs for Zo workflow consulting implementations"
+    }
+  ],
+  "summary": "Meeting focused on partnership opportunities rather than acquisition\u2014Next Play for Careerspan community integration and Flybridge for Zo productivity workflow adoption. While acquisition interest exists, V is pursuing slow burn community-led strategy."
+}

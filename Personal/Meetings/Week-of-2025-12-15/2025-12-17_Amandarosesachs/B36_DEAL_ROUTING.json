@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.2,
+  "zo_reasoning": "Personal coaching session with Amanda (romantic partner) - no business development, partnerships, or GTM strategy discussed. Entirely domestic coaching context.",
+  "careerspan_reasoning": "Demonstrates Careerspan's coaching methodology and resume framework (ACIS structure, v2 template) in practice, but is an internal client session showing product usage rather than acquisition-related business discussion.",
+  "companies_mentioned": [
+    {
+      "name": "Rewiring America",
+      "match_to_deal_id": null,
+      "context": "Amanda's work experience section needing resume bullet revision"
+    },
+    {
+      "name": "Tishman Center",
+      "match_to_deal_id": null,
+      "context": "Amanda's 2019 experience marked for removal from resume"
+    },
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "Vrijen's own company - providing coaching framework and templates"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Personal coaching session with Amanda about resume preparation - no relevance to either deal pipeline. Demonstrates Careerspan methodology but is domestic client work, not business development."
+}

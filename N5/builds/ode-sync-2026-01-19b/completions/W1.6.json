@@ -1,0 +1,47 @@
+{
+  "worker_id": "W1.6",
+  "task": "Validation harness + smoke test",
+  "status": "complete",
+  "completed_at": "2026-01-18T22:35:00-05:00",
+  "summary": "Ran all validation commands and fresh clone smoke test. Found critical issue: N5/templates/ was untracked. Staged templates and enhanced validator.",
+  "findings": {
+    "validation_passed": true,
+    "warnings_count": 38,
+    "errors_count": 0,
+    "critical_issues_found": [
+      {
+        "issue": "N5/templates/ directory was untracked - would be missing in fresh clone",
+        "resolution": "Staged N5/templates/ for commit (6 files including plan_template.md)"
+      }
+    ],
+    "placeholders_found": {
+      "status": "expected",
+      "note": "Placeholders like [TO BE FILLED], con_XXXXX are template defaults - expected behavior"
+    },
+    "gitignore_status": {
+      "templates/build/plan_template.md": "NOT ignored (verified)"
+    }
+  },
+  "changes_made": {
+    "scripts/validate_repo.py": {
+      "change": "Added required files check (section 1b)",
+      "reason": "Validator now errors if critical files like BOOTLOADER.prompt.md or plan_template.md are missing",
+      "lines_added": 9
+    },
+    "staged_files": [
+      "N5/templates/build/BUILD_template.md",
+      "N5/templates/build/README.md",
+      "N5/templates/build/meta_schema.json",
+      "N5/templates/build/plan_template.md",
+      "N5/templates/build/status_template.md",
+      "N5/templates/build/worker_brief_template.md"
+    ]
+  },
+  "smoke_test_results": {
+    "bootloader_exists": true,
+    "directories_verified": ["N5", "N5/scripts", "N5/prefs", "Prompts", "Knowledge", "N5/templates", "N5/templates/build"],
+    "plan_template_exists": true,
+    "validator_passes": true
+  },
+  "notes": "No git push performed per instructions. Templates now staged and will be included in commit."
+}

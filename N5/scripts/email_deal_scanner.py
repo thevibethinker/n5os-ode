@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sqlite3
 import sys
 from dataclasses import dataclass, asdict
@@ -112,6 +113,273 @@ def get_deal_contacts() -> Tuple[List[dict], List[dict]]:
     
     conn.close()
     return contacts, deals
+
+
+# =============================================================================
+# Broad Query + Pre-filter Functions (W1.1)
+# =============================================================================
+
+EXCLUDE_SENDER_PATTERNS = [
+    r'@linkedin\.com', r'@facebookmail\.com', r'notify\.', 
+    r'noreply@', r'no-reply@', r'mailer-daemon', r'postmaster@',
+    r'@github\.com', r'@notifications\.', r'digest@', r'newsletter@',
+    r'@mail\.asana\.com', r'@slack\.com'
+]
+
+EXCLUDE_SUBJECT_PATTERNS = [
+    r'weekly digest', r'daily digest', r'unsubscribe', 
+    r'reset password', r'verify your email', r'your .* receipt',
+    r'invitation to edit', r'shared .* with you', r'commented on',
+    r'assigned to you', r'mentioned you'
+]
+
+
+def get_broad_email_queries(days: int, offset: int = 0) -> List[dict]:
+    """Generate broad Gmail queries for semantic analysis.
+    
+    Args:
+        days: Number of days in the search window
+        offset: Days to skip from today (for backfill)
+    
+    Returns:
+        List of query dicts with 'query' and 'description' keys.
+    """
+    end_date = datetime.now() - timedelta(days=offset)
+    start_date = end_date - timedelta(days=days)
+    
+    date_filter = f"after:{start_date.strftime('%Y/%m/%d')} before:{end_date.strftime('%Y/%m/%d')}"
+    
+    return [
+        {
+            "query": f"-category:promotions -category:social -category:updates {date_filter}",
+            "description": f"All non-promotional emails from {start_date.date()} to {end_date.date()}"
+        }
+    ]
+
+
+def should_analyze_email(email: dict) -> Tuple[bool, str]:
+    """Pre-filter to exclude obvious noise.
+    
+    Args:
+        email: Dict with 'from' and 'subject' keys
+    
+    Returns:
+        Tuple of (should_analyze, skip_reason)
+    """
+    sender = email.get('from', '').lower()
+    subject = email.get('subject', '').lower()
+    
+    for pattern in EXCLUDE_SENDER_PATTERNS:
+        if re.search(pattern, sender, re.IGNORECASE):
+            return False, f"Excluded sender pattern: {pattern}"
+    
+    for pattern in EXCLUDE_SUBJECT_PATTERNS:
+        if re.search(pattern, subject, re.IGNORECASE):
+            return False, f"Excluded subject pattern: {pattern}"
+    
+    return True, ""
+
+
+def build_llm_context() -> str:
+    """Build deal/contact context string for LLM prompt.
+    
+    Returns:
+        Formatted string with known contacts and active deals.
+    """
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Get contacts (limit to avoid context overflow)
+    c.execute("""
+        SELECT id, full_name, email, company, pipeline 
+        FROM deal_contacts 
+        WHERE full_name IS NOT NULL
+        ORDER BY 
+            CASE WHEN email IS NOT NULL AND email != '' THEN 0 ELSE 1 END,
+            updated_at DESC
+        LIMIT 50
+    """)
+    contacts = [dict(r) for r in c.fetchall()]
+    
+    # Get deals
+    c.execute("""
+        SELECT id, company, primary_contact, pipeline, stage 
+        FROM deals 
+        WHERE company IS NOT NULL
+        ORDER BY last_touched DESC
+        LIMIT 30
+    """)
+    deals = [dict(r) for r in c.fetchall()]
+    
+    conn.close()
+    
+    context = "## Known Contacts:\n"
+    for contact in contacts:
+        email_str = f" <{contact['email']}>" if contact.get('email') else " (no email)"
+        company_str = f" @ {contact['company']}" if contact.get('company') else ""
+        context += f"- {contact['full_name']}{email_str}{company_str} [id: {contact['id']}]\n"
+    
+    context += "\n## Active Deals:\n"
+    for deal in deals:
+        contact_str = f" (contact: {deal['primary_contact']})" if deal.get('primary_contact') else ""
+        context += f"- {deal['company']} [{deal['pipeline']}/{deal['stage']}]{contact_str} [id: {deal['id']}]\n"
+    
+    return context
+
+
+def update_contact_email(contact_id: str, email: str, dry_run: bool = False) -> dict:
+    """Update a contact's email if currently empty.
+    
+    Returns dict with status and details.
+    """
+    if not contact_id or not email:
+        return {"updated": False, "reason": "Missing contact_id or email"}
+    
+    if dry_run:
+        return {"updated": True, "dry_run": True, "contact_id": contact_id, "email": email}
+    
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Check current state
+    c.execute("SELECT email FROM deal_contacts WHERE id = ?", (contact_id,))
+    row = c.fetchone()
+    
+    if not row:
+        conn.close()
+        return {"updated": False, "reason": f"Contact {contact_id} not found"}
+    
+    current_email = row['email']
+    if current_email and current_email.strip():
+        conn.close()
+        return {"updated": False, "reason": f"Contact already has email: {current_email}"}
+    
+    # Update
+    c.execute("""
+        UPDATE deal_contacts 
+        SET email = ?, updated_at = ?
+        WHERE id = ?
+    """, (email, datetime.now().isoformat(), contact_id))
+    
+    conn.commit()
+    conn.close()
+    
+    return {"updated": True, "contact_id": contact_id, "email": email}
+
+
+def format_email_for_llm(email: dict, context: str) -> str:
+    """Format an email + context into the analysis prompt.
+    
+    Args:
+        email: Gmail email dict with 'from', 'subject', 'date', 'snippet'
+        context: Pre-built context string from build_llm_context()
+    
+    Returns:
+        Formatted prompt string ready for LLM
+    """
+    # Import here to avoid circular imports at module load
+    from deal_llm_prompts import EMAIL_ANALYSIS_PROMPT
+    
+    return EMAIL_ANALYSIS_PROMPT.format(
+        sender=email.get('from', 'Unknown sender'),
+        subject=email.get('subject', '(no subject)'),
+        date=email.get('date', 'Unknown date'),
+        snippet=email.get('snippet', ''),
+        context=context
+    )
+
+
+def process_email_with_llm_analysis(
+    email: dict,
+    analysis: dict,
+    dry_run: bool = False
+) -> dict:
+    """Process an email using LLM analysis results.
+    
+    This function takes pre-computed LLM analysis (since Zo IS the LLM)
+    and performs the appropriate actions:
+    - Enriches contact email if discovered
+    - Routes signals through DealSignalRouter
+    - Marks email as processed
+    
+    Args:
+        email: Gmail email dict (id, from, subject, snippet, date)
+        analysis: LLM analysis result dict with:
+            - matched_contact_id
+            - matched_deal_id
+            - discovered_email
+            - signal_strength (none/weak/medium/strong)
+            - intel (dict with stage_signal, key_facts, etc.)
+            - match_reasoning
+        dry_run: If True, don't write to database
+    
+    Returns:
+        dict with processing results and actions taken
+    """
+    result = {
+        "message_id": email.get('id'),
+        "sender": email.get('from'),
+        "subject": email.get('subject'),
+        "signal_strength": analysis.get('signal_strength', 'none'),
+        "matched_contact_id": analysis.get('matched_contact_id'),
+        "matched_deal_id": analysis.get('matched_deal_id'),
+        "actions_taken": [],
+        "dry_run": dry_run
+    }
+    
+    # Contact email enrichment
+    discovered_email = analysis.get('discovered_email')
+    contact_id = analysis.get('matched_contact_id')
+    
+    if discovered_email and contact_id:
+        enrich_result = update_contact_email(contact_id, discovered_email, dry_run=dry_run)
+        if enrich_result.get('updated'):
+            result['actions_taken'].append(f"Enriched contact {contact_id} with email: {discovered_email}")
+    
+    # Signal routing
+    signal_strength = analysis.get('signal_strength', 'none')
+    intel = analysis.get('intel')
+    
+    if signal_strength in ('medium', 'strong') and intel:
+        deal_id = analysis.get('matched_deal_id')
+        
+        if deal_id and not dry_run:
+            # Route through existing DealSignalRouter
+            router = DealSignalRouter()
+            
+            # Build content summary for router
+            content = f"Email from {email.get('from')}\nSubject: {email.get('subject')}\n\n{email.get('snippet')}"
+            
+            route_result = router.process_signal(
+                source="email_scan",
+                content=content,
+                metadata={
+                    "message_id": email.get('id'),
+                    "sender": email.get('from'),
+                    "subject": email.get('subject'),
+                    "llm_intel": intel
+                },
+                context=deal_id,
+                dry_run=dry_run
+            )
+            
+            result['actions_taken'].append(f"Routed to deal {deal_id}: {route_result.action_taken}")
+    
+    # Mark as processed (skip if dry_run)
+    if not dry_run:
+        mark_email_processed(
+            message_id=email.get('id', ''),
+            thread_id=email.get('threadId', ''),
+            deal_id=analysis.get('matched_deal_id'),
+            contact_id=analysis.get('matched_contact_id'),
+            subject=email.get('subject', ''),
+            sender=email.get('from', ''),
+            signal_extracted=signal_strength in ('medium', 'strong'),
+            extraction_summary=analysis.get('match_reasoning')
+        )
+        result['actions_taken'].append("Marked as processed")
+    
+    return result
 
 
 def build_search_queries(

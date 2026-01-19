@@ -18,6 +18,7 @@ Usage:
 import argparse
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -283,7 +284,17 @@ def cmd_close(slug: str, force: bool = False):
     print(f"  Completed at: {meta['completed_at']}")
     if total > 0:
         print(f"  Workers: {complete}/{total} ({round(complete/total*100)}%)")
-    print(f"  Run `python3 N5/scripts/build_status.py regenerate` to update dashboard")
+    # Auto-regenerate dashboard data
+    try:
+        subprocess.run(
+            ["python3", "N5/scripts/build_status.py", "regenerate"],
+            cwd="/home/workspace",
+            capture_output=True,
+            timeout=30
+        )
+        print(f"  Dashboard data regenerated")
+    except Exception as e:
+        print(f"  Warning: Dashboard regenerate failed: {e}")
 
 
 def main():

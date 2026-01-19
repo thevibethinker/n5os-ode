@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.0,
+  "zo_reasoning": "Direct market research preparation for upcoming Calendly partnership conversation. V gathered first-hand insights from therapists to inform GTM strategy and positioning for Calendly, a key prospect in Zo's partnership pipeline.",
+  "careerspan_reasoning": "No relevance - this focuses on therapist scheduling tool preferences, which is unrelated to Careerspan's career coaching business model or customer base.",
+  "companies_mentioned": [
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly",
+      "context": "V mentioned an upcoming conversation with Calendly where therapists are a key audience; this meeting was research to understand therapist scheduling pain points to prepare for that conversation"
+    },
+    {
+      "name": "Microsoft Teams",
+      "match_to_deal_id": null,
+      "context": "Jen mentioned using Teams for HIPAA-encrypted video sessions, as part of her current tech stack"
+    }
+  ],
+  "recommended_deal_links": [
+    "Calendly"
+  ],
+  "create_new_deals": [],
+  "summary": "Highly relevant to Calendly partnership - this is pre-meeting market research to understand therapist scheduling pain points before V's upcoming Calendly conversation. No relevance to Careerspan pipeline."
+}

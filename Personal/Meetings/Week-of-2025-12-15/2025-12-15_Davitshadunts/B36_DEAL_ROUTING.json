@@ -1,0 +1,31 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Zo Computer mentioned only as a hiring target for Davit, not as a partnership opportunity. No new partnership or GTM discussions.",
+  "careerspan_reasoning": "Primary focus is Careerspan product walkthrough and user advocacy. Davit is an active user who agreed to spread word to Columbia classmates and Armenian community - strong user acquisition signal. Multiple company matches discussed (Deep Tune, True Meter, Zo Computer).",
+  "companies_mentioned": [
+    {
+      "name": "Zo Computer",
+      "match_to_deal_id": null,
+      "context": "Infrastructure role recommended to Davit, V offers personal advocacy"
+    },
+    {
+      "name": "Deep Tune",
+      "match_to_deal_id": null,
+      "context": "Davit interested, V to re-engage recruiter Holly"
+    },
+    {
+      "name": "True Meter",
+      "match_to_deal_id": null,
+      "context": "AI Native Backend Engineer role in SF, Davit asked to run through Careerspan"
+    },
+    {
+      "name": "Warmer Jobs",
+      "match_to_deal_id": null,
+      "context": "External tool suggested for LinkedIn leverage, discount code CAREERSPAN20 provided"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This is a user acquisition meeting for Careerspan with Davit Shadunts, a Columbia student becoming a Careerspan advocate. Not relevant to Zo partnership deals - Zo mentioned only as a potential employer for Davit."
+}

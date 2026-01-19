@@ -1,0 +1,36 @@
+{
+  "zo_relevance_score": 0.9,
+  "careerspan_relevance_score": 0.25,
+  "zo_reasoning": "Primary focus was Zo demonstration and partnership discussion with a potential collaborator ('Auntie'). Covered GTM strategy, target audience (founders without CTOs), and proposed collaborative 'Hack for Good' event.",
+  "careerspan_reasoning": "Brief mention of acquisition interest (4-5 companies) during conversation, but no specific acquirer discussed or action items related to Careerspan M&A.",
+  "companies_mentioned": [
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "null",
+      "context": "API used in live demo to research contact and draft outreach"
+    },
+    {
+      "name": "ChatGPT",
+      "match_to_deal_id": "null",
+      "context": "Mentioned as subscription Zo could replace"
+    },
+    {
+      "name": "Claude",
+      "match_to_deal_id": "null",
+      "context": "Mentioned as subscription Zo could replace"
+    },
+    {
+      "name": "Apollo",
+      "match_to_deal_id": "null",
+      "context": "Mentioned as subscription Zo could replace"
+    },
+    {
+      "name": "N8N",
+      "match_to_deal_id": "null",
+      "context": "Mentioned as subscription Zo could replace"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Primarily a Zo GTM/partnership meeting with potential collaborator proposing a collaborative hackathon event. Careerspan acquisition mentioned in passing but no actionable deal flow."
+}

@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.92,
+  "zo_reasoning": "Meeting is primarily about Careerspan product and partnerships; minimal Zo relevance aside from general partnership framework patterns discussed around data monetization models.",
+  "careerspan_reasoning": "Direct partnership discussion with Teamwork Online's President (decision-maker). Deep dive into Careerspan's tech (Stories, matching engine, cost structure). Three concrete integration paths explored. Next steps clearly defined for January follow-up.",
+  "companies_mentioned": [
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Primary counterpart - 25-year-old sports/entertainment hiring platform. President Davis Filippell and Business Ops Michelle Price attended. Discussed profile completion, assessment layer, and data monetization integrations."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "President Davis expressed clear interest (called tech 'slick', 'impressed'), reviewed product demo, discussed three integration paths, agreed to let ideas settle with January follow-up. Substantive BD meeting with decision-maker."
+    }
+  ],
+  "summary": "High-priority Careerspan pipeline meeting. Teamwork Online President engaged with Careerspan's Stories/matching engine, exploring three integration models. January follow-up scheduled."
+}

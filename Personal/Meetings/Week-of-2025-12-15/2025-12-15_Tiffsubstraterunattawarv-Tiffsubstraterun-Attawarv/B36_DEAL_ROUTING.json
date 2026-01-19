@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.15,
+  "zo_reasoning": "Meeting focused on Zo GTM strategy through community partnerships (Next Play, AI Collective) and explored a new Zo networking product concept ('Zo Social Graph') blending Gmail/LinkedIn data. Discussed event-based marketing and partnership channels for Zo.",
+  "careerspan_reasoning": "Brief mention of acquisition/sales conversations to end year, but no specific Careerspan-related deals, targets, or acquisition strategy discussed. Content primarily Zo-focused.",
+  "companies_mentioned": [
+    {
+      "name": "Next Play",
+      "match_to_deal_id": null,
+      "context": "Ben Lang's community (~1k members, $12/mo), open to hosting Zo events (virtual/IRL) as GTM channel"
+    },
+    {
+      "name": "AI Collective",
+      "match_to_deal_id": null,
+      "context": "Large community (~80-90k members) with Jersey head (Tejas), potential sponsorship/partnership for in-person events"
+    },
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "Aviato (CRM data) (zo_partnership)",
+      "context": "Proposed as preferred enrichment contacts tool within Zo's networking solution - existing partnership to leverage"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Meeting explored Zo GTM strategy through community partnerships with Next Play and AI Collective, plus a new networking product concept leveraging existing Aviato partnership for contact enrichment."
+}

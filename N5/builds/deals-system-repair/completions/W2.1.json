@@ -1,0 +1,18 @@
+{
+  "worker_id": "W2.1",
+  "status": "complete",
+  "summary": "Fixed 21 leadership records: updated deal_type from careerspan_acquirer to leadership, set external_source to careerspan_leadership_notion",
+  "results": {
+    "records_fixed": 21,
+    "deal_type_distribution": {
+      "careerspan_acquirer": 51,
+      "leadership": 22,
+      "zo_partnership": 25
+    },
+    "total_records": 98,
+    "external_source_coverage": "98/98"
+  },
+  "notes_for_orchestrator": "Found 22 cs-lead-* records total (not 21 as stated in brief). One record (cs-lead-calendly) already had correct deal_type='leadership' - likely from earlier testing. The UPDATE was idempotent so no harm done. All 22 records now have consistent deal_type='leadership' and external_source='careerspan_leadership_notion'.",
+  "issues": [],
+  "completed_at": "2026-01-19T02:41:00-05:00"
+}

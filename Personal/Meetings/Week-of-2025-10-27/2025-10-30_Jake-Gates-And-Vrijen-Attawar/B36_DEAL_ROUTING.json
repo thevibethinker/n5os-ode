@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "Minimal direct relevance to Zo partnerships. Only tenuous connection is Marvin's LinkedIn presence work, but no concrete GTM or data partnership discussed.",
+  "careerspan_reasoning": "Core meeting focus was introducing and explaining Careerspan's value proposition to a potential network node. V actively recruiting Jake as a connector within the Marvin ecosystem, which aligns with Careerspan's talent acquisition and representation mission.",
+  "companies_mentioned": [
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "Jake's current employer; V expressed interest in working with all Marvin founders, specifically mentioned previous call with Oscar. Potential Careerspan partnership/acquisition target for hiring solutions."
+    },
+    {
+      "name": "McKinsey",
+      "match_to_deal_id": null,
+      "context": "V's previous employer; Jake's career aspiration. Background context, not a deal candidate."
+    },
+    {
+      "name": "PayPal",
+      "match_to_deal_id": null,
+      "context": "Elizabeth Kenyan's employer. Mentioned only as a mutual connection."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Meeting focused on introducing Careerspan to Jake Gates, a Marvin employee who could serve as a connector within that ecosystem. Primarily network-building for Careerspan rather than concrete Zo partnership discussions."
+}

@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Meeting discusses internal Careerspan strategy only; no direct Zo partnership topics. Getro integration mentioned as a Careerspan integration opportunity, not a Zo partnership.",
+  "careerspan_reasoning": "Strategic pivot from mass scanning to 'quality over quantity' talent pool access is core to Careerspan product strategy and positioning. VC relationship discussions (43 North, Theron) inform pipeline targets and market positioning.",
+  "companies_mentioned": [
+    {
+      "name": "Getro",
+      "match_to_deal_id": null,
+      "context": "Discussed as potential integration partner for VC job board propagation"
+    },
+    {
+      "name": "43 North",
+      "match_to_deal_id": null,
+      "context": "VC providing feedback on wanting 'eyeballs' on candidates"
+    },
+    {
+      "name": "Theron",
+      "match_to_deal_id": null,
+      "context": "Example of urgent funding-dependent hiring need"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan stand-up covering strategic pivot to 'quality over quantity' positioning and VC talent pool access. Getro integration opportunity identified, but no formal deal discussions. Meeting informs Careerspan market positioning but represents internal strategy rather than external deal progress."
+}

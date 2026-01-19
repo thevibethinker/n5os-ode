@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting focuses entirely on Careerspan partnership, not Zo GTM or partnerships. No Zo product/integration discussed.",
+  "careerspan_reasoning": "Direct strategic partnership discussion between Careerspan and Edmund's company (likely Juicebox/Juice Labs). Covers revenue-share model, integration mechanics, talent pool cultivation, and product design partnership for technical hiring in NYC startup ecosystem.",
+  "companies_mentioned": [
+    {
+      "name": "Edmund Cuthbert's company (likely Juicebox/Juice Labs)",
+      "match_to_deal_id": null,
+      "context": "Strategic partnership target; candidate matching and story-based assessment platform"
+    },
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "NYC startup ecosystem target for talent placement"
+    },
+    {
+      "name": "New York Founders Club",
+      "match_to_deal_id": null,
+      "context": "NYC startup ecosystem for talent placement"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Edmund Cuthbert / Juicebox (Juice Labs)",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Active strategic partnership discussion with revenue-share model (25% of 10% salary fee), clear integration flow defined, mutual strategic alignment on story-based vs keyword-based hiring assessment."
+    }
+  ],
+  "summary": "Highly relevant Careerspan strategic partnership with Edmund Cuthbert's company (likely Juicebox/Juice Labs) for NYC startup technical hiring via revenue-share model and integrated candidate matching pipeline."
+}

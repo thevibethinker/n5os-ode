@@ -1,0 +1,41 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting focuses entirely on Careerspan's HR/ATS partnership and acquisition pipeline. None of the companies mentioned (Darwin Box, Teamwork Online, Teal, Ellie AI, Clara, Superposition) align with Zo's CRM/financial data partnerships.",
+  "careerspan_reasoning": "Core tactical update on Careerspan's partnership and acquisition strategy. Darwin Box identified as primary 'making money exit' target with largest potential payout. Multiple active leads being managed including Teamwork Online, Teal, Ellie AI, and Clara.",
+  "companies_mentioned": [
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "Call scheduled Friday with leadership/product; $300M raised, $180M for US expansion; primary target for 'making money exit'"
+    },
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "V meeting with Davis (President); ATS noted as surprisingly competent"
+    },
+    {
+      "name": "Teal",
+      "match_to_deal_id": null,
+      "context": "V handling logs and ongoing relationship"
+    },
+    {
+      "name": "Ellie AI",
+      "match_to_deal_id": null,
+      "context": "V selling Kristen Habakkt on Careerspan's tech; intro to co-founder Nick expected"
+    },
+    {
+      "name": "Clara",
+      "match_to_deal_id": null,
+      "context": "German founder interested in Careerspan's data quality and white-labeling potential"
+    },
+    {
+      "name": "Superposition",
+      "match_to_deal_id": null,
+      "context": "Strategic ally, not acquirer; wants to stay neutral in market"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Highly relevant Careerspan acquisition pipeline meeting covering 5 active partnership targets; Darwin Box flagged as primary exit candidate with largest payout potential. No Zo partnership relevance."
+}

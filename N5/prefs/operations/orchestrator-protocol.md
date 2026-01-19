@@ -22,6 +22,30 @@ mkdir -p /home/workspace/N5/builds/<project-name>
 
 **Location:** Always under `N5/builds/` for permanent storage
 
+### 1.5 MECE Validation (MANDATORY)
+
+**Before creating worker briefs, validate MECE principles.**
+
+Reference: `N5/prefs/operations/mece-worker-framework.md`
+
+**Why:** Ensures work is divided in a mutually exclusive, collectively exhaustive way while minimizing worker count.
+
+**Steps:**
+1. List ALL scope items from the plan (files, responsibilities, deliverables)
+2. Assign each item to exactly ONE worker
+3. Verify no overlaps (same item in multiple workers)
+4. Verify no gaps (items without an owner)
+5. Check token budgets (target <30%, hard limit <40% of context)
+6. After creating briefs, run: `python3 N5/scripts/mece_validator.py <project-name>`
+7. Fix any issues before launching workers
+
+**MECE Checklist:**
+- [ ] All scope items explicitly assigned
+- [ ] No overlapping scope between workers
+- [ ] No gaps in scope coverage
+- [ ] Each worker's token budget within limits
+- [ ] Validator passes: `python3 N5/scripts/mece_validator.py <slug>`
+
 ### 2. Create Worker Briefs
 
 Each worker brief must be a **self-contained markdown file** with:

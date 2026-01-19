@@ -1,0 +1,36 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Purely internal Careerspan strategy session with no discussion of Zo partnerships, integrations, or GTM alignment. No mention of Zo-related opportunities.",
+  "careerspan_reasoning": "Directly relevant strategic meeting covering Careerspan's core product pivot (verification), competitive landscape (Checker, Tofu, First Advantage), and immediate fundraising strategy.",
+  "companies_mentioned": [
+    {
+      "name": "Checker",
+      "match_to_deal_id": null,
+      "context": "Competitor in background verification space, mentioned as having significant funding"
+    },
+    {
+      "name": "Tofu",
+      "match_to_deal_id": null,
+      "context": "Competitor in background verification space, mentioned as having significant funding"
+    },
+    {
+      "name": "First Advantage",
+      "match_to_deal_id": null,
+      "context": "Competitor in background verification space, mentioned as having significant funding"
+    },
+    {
+      "name": "A16Z",
+      "match_to_deal_id": null,
+      "context": "VC firm mentioned as having funded competitors in the verification space"
+    },
+    {
+      "name": "Bright",
+      "match_to_deal_id": null,
+      "context": "Referenced as a benchmark or market leader in the verification space"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal strategy meeting on Careerspan's pivot to verification as core product, competitor analysis (Checker, Tofu, First Advantage), and fundraising preparation. No partnership or acquisition opportunities identified."
+}

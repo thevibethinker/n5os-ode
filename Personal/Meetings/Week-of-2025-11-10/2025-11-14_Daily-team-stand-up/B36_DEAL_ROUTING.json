@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.65,
+  "zo_reasoning": "Internal team meeting with no direct partnership discussions. Only peripheral relevance via Greenhouse mention as potential B2B SaaS data partner in HR Tech.",
+  "careerspan_reasoning": "Direct discussion of Careerspan's market positioning around identity verification in recruitment. Colin story validates Careerspan's core value proposition and opens consulting/opportunity doors. ATS discussion provides competitive intelligence on Greenhouse.",
+  "companies_mentioned": [
+    {
+      "name": "Greenhouse",
+      "match_to_deal_id": null,
+      "context": "Mentioned as ATS platform; discussion of B2B SaaS dynamics in HR Tech space, balance between full-service platform vs integrable service"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal team meeting with Careerspan-relevant market intelligence on identity theft in recruitment and ATS competitive landscape (Greenhouse), but no direct deal progression."
+}

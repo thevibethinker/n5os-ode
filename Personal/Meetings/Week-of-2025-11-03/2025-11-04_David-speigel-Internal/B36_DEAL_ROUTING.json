@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.45,
+  "zo_reasoning": "Meeting focuses heavily on V's relationship with Zo founders (Ben), an upcoming demo at South Park Commons to formalize working relationship, and V's positioning as someone with 'valuable go-to-market insights'. The shift from 'enthusiastic user' to strategic partner suggests a tangible partnership opportunity.",
+  "careerspan_reasoning": "Financial shock and 30-day notice period are operational/funding matters. Only direct acquisition reference is David's mention of 'Aqua-hire or sale opportunities' - a speculative note, not active deal discussion. SHRM accelerator represents funding opportunity, not acquisition.",
+  "companies_mentioned": [
+    {
+      "name": "Zo",
+      "match_to_deal_id": null,
+      "context": "V demoing for Zo team at South Park Commons; potential working relationship being formalized"
+    },
+    {
+      "name": "SHRM",
+      "match_to_deal_id": null,
+      "context": "Work Tech Accelerator application ($200k); seeking connection to Andy Biladeau"
+    },
+    {
+      "name": "People Collective",
+      "match_to_deal_id": null,
+      "context": "Jim Conti identified as second-degree connection to Andy Biladeau at SHRM"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Primary relevance is Zo partnership pipeline - V is advancing toward formal relationship with Zo founders via South Park Commons demo. Careerspan relevance is limited to operational/funding challenges; no active acquisition deals identified."
+}

@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.25,
+  "zo_reasoning": "Meeting is advisory consulting with an individual expert, not a company partnership or Zo GTM initiative. No mention of Zo-related partnerships.",
+  "careerspan_reasoning": "Directly relevant to Careerspan's GTM strategy and product positioning. David Speigel is advising on narrowing the Product niche and GTM motion. This is advisory work, not acquisition activity.",
+  "companies_mentioned": [
+    {
+      "name": "Alex Reshewski's Product Career Accelerator",
+      "match_to_deal_id": null,
+      "context": "David subcontracts for this organization, leading networking sessions for high-level PMs"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Advisory session with GTM expert David Speigel focused on Careerspan's go-to-market strategy and product niche positioning. No deal pipeline relevance beyond strategic advisory."
+}

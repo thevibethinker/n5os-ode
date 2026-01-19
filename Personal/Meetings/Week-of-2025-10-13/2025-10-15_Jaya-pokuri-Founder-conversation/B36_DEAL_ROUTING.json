@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.05,
+  "zo_reasoning": "V explicitly pitched Zo Computer as a solution for Bonfire's multi-agent AI architecture challenge. The meeting covered prompting strategies, agent orchestration, and 'vibe coding' - core Zo competencies. Bonfire is building sales intelligence combining web scraping, proprietary data, and narrative generation, which directly aligns with Zo's agentic AI capabilities.",
+  "careerspan_reasoning": "No meaningful connection to career coaching, talent acquisition, or professional development. The discussion focused entirely on AI infrastructure for sales intelligence in health tech.",
+  "companies_mentioned": [
+    {
+      "name": "Bonfire",
+      "match_to_deal_id": null,
+      "context": "Company being pitched - founder Jaya Pokuri and founding engineer Dennis. Building AI-driven sales intelligence for health tech."
+    },
+    {
+      "name": "Growth Therapy",
+      "match_to_deal_id": null,
+      "context": "Mentioned as Bonfire customer."
+    },
+    {
+      "name": "Headway",
+      "match_to_deal_id": null,
+      "context": "Mentioned as Bonfire customer."
+    },
+    {
+      "name": "Nourish",
+      "match_to_deal_id": null,
+      "context": "Mentioned as Bonfire customer."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Bonfire",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Direct founder conversation where V pitched Zo for Bonfire's multi-agent architecture. Jaya expressed need for prompting and agent orchestration expertise - core Zo strengths. High alignment: Bonfire's data + web + narrative agents map well to Zo's agentic platform."
+    }
+  ],
+  "summary": "Strategic founder conversation positioning Zo as infrastructure for Bonfire's multi-agent sales intelligence product. High-probability zo_partnership opportunity with clear technical fit."
+}

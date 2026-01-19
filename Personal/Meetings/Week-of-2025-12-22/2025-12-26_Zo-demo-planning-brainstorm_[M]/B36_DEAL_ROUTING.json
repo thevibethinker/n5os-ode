@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.05,
+  "zo_reasoning": "Internal Zo GTM/demo planning session. Mentions of Zapier/n8n are competitive comparisons, not partnership opportunities.",
+  "careerspan_reasoning": "Careerspan mentioned only as V's founder credential for the demo narrative, not for acquisition or business development.",
+  "companies_mentioned": [
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "V's founder role referenced for demo credibility"
+    },
+    {
+      "name": "Zapier",
+      "match_to_deal_id": null,
+      "context": "Competitive reference regarding workflow rigidity"
+    },
+    {
+      "name": "n8n",
+      "match_to_deal_id": null,
+      "context": "Competitive reference regarding workflow rigidity"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Zo demo planning session with no deal pipeline relevance. Competitive references to Zapier/n8n and personal founder credential mention of Careerspan."
+}

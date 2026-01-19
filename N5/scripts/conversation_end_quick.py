@@ -199,6 +199,41 @@ def generate_summary_stub(session_state: Optional[Dict], files: List[Dict]) -> s
         return "Brief conversation session."
 
 
+def generate_title_local(session_state: Optional[Dict], files: List[Dict], convo_id: str) -> str:
+    """Generate a stub title (actual semantic title by Librarian).
+    
+    This provides a fallback title based on SESSION_STATE focus.
+    The real title is generated semantically by the LLM during close.
+    """
+    # 3-slot emoji: State | Type | Content
+    state_emoji = "✅"  # Assume complete
+    type_emoji = "📌"   # Normal conversation
+    content_emoji = "💬" # Default discussion
+    
+    # Try to determine content emoji from session type
+    if session_state:
+        session_type = session_state.get("type", "").lower()
+        if session_type == "build":
+            content_emoji = "🏗️"
+        elif session_type == "research":
+            content_emoji = "🔎"
+        elif session_type == "planning":
+            content_emoji = "📝"
+        elif session_type == "discussion":
+            content_emoji = "💬"
+    
+    # Get focus/topic for title text
+    if session_state and session_state.get("focus"):
+        title_text = session_state["focus"][:50]
+    elif files:
+        # Use first notable file
+        title_text = f"Work on {len(files)} files"
+    else:
+        title_text = f"Session {convo_id[-8:]}"
+    
+    return f"{state_emoji} {type_emoji} {content_emoji} {title_text}"
+
+
 def update_session_state(convo_path: Path, summary: str, dry_run: bool = False) -> bool:
     """Update SESSION_STATE.md with close info. Title added by Librarian."""
     session_file = convo_path / "SESSION_STATE.md"

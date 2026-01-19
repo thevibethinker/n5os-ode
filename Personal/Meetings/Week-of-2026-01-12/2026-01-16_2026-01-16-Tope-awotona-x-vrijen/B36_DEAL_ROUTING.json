@@ -1,0 +1,24 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Direct engagement with Calendly CEO about Howie product feedback and agentic scheduling - strategic partnership discussion at highest level.",
+  "careerspan_reasoning": "Explicit acquisition/exit conversation where V disclosed Careerspan winding down and soft-pitched Calendly as potential acquirer. Tope asked about acquisition structure preferences.",
+  "companies_mentioned": [
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (leadership)",
+      "context": "CEO Tope Awotona engaged on Howie feedback, agentic scheduling, strategic partnership"
+    },
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (CRM System) (zo_partnership)",
+      "context": "Existing partnership deal now elevated to CEO-level engagement"
+    }
+  ],
+  "recommended_deal_links": [
+    "Calendly (leadership)",
+    "Calendly (CRM System) (zo_partnership)"
+  ],
+  "create_new_deals": [],
+  "summary": "High-level strategic meeting with Calendly CEO exploring both Zo partnership (Howie feedback, agentic scheduling) and potential Careerspan acquisition. Follow-up in-person session scheduled for Jan 30."
+}

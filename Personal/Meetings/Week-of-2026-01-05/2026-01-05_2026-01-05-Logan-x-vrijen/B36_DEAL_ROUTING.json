@@ -1,0 +1,21 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "No Zo business, GTM, or partnership initiatives discussed. Meeting is entirely about Careerspan's internal strategy and operations.",
+  "careerspan_reasoning": "Core strategic pivot meeting covering closed signup model, revenue mechanics, geographic targeting, HR tech landscape analysis, and operational priorities (Ilya contract, Angela Richards engagement).",
+  "companies_mentioned": [
+    {
+      "name": "Ellie",
+      "match_to_deal_id": null,
+      "context": "AI interview copilot in the vetting space; Vrijen sees them as a partner rather than a competitor."
+    },
+    {
+      "name": "Angela Richards (influencer)",
+      "match_to_deal_id": null,
+      "context": "Boston-based community influencer with TikTok following; active engagement with Careerspan."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This meeting is highly relevant to Careerspan's strategic development (closed community model, NYC/Boston focus, revenue model) but has minimal Zo deal pipeline relevance, with only one potential partnership mention (Ellie) that lacks actionable details."
+}

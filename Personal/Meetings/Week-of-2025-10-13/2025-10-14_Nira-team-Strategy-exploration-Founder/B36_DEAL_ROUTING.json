@@ -1,0 +1,43 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Nira is an AI-powered professional networking tool (AI Rolodex) with strong VC backing (South Park Commons, First Round, a16z) and clear partnership potential. V explicitly proposed a 'pay it forward' collaboration framework where Careerspan boosts Nira's visibility in communities. Anti-LinkedIn positioning aligns with Zo's focus on alternatives to mainstream platforms.",
+  "careerspan_reasoning": "This meeting was fundamentally about Careerspan's strategic pivot\u2014from VC-backed model to community-driven, influencer-led approach. V and Logan discussed their new direction in detail: collaborating with alumni communities, building personal brands, and leveraging tastemaker status. Nira's talent discovery platform could synergize with Careerspan's community engagement model.",
+  "companies_mentioned": [
+    {
+      "name": "Nira",
+      "match_to_deal_id": null,
+      "context": "AI-powered professional networking tool (AI Rolodex), currently ~1500 users, team of 6 in SF, preparing seed round in January. Founder Fei explored collaboration framework with V."
+    },
+    {
+      "name": "South Park Commons",
+      "match_to_deal_id": null,
+      "context": "Nira pre-seed investor"
+    },
+    {
+      "name": "First Round Capital",
+      "match_to_deal_id": null,
+      "context": "Nira pre-seed investor"
+    },
+    {
+      "name": "Andreessen Horowitz (a16z)",
+      "match_to_deal_id": null,
+      "context": "Nira pre-seed investor"
+    },
+    {
+      "name": "LinkedIn",
+      "match_to_deal_id": null,
+      "context": "Positioned as competitor/benchmark\u2014described as bloated 2D behemoth that fails job seekers and employers"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Nira",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "V explicitly proposed collaboration framework where Careerspan boosts Nira's visibility in communities. Strong VC backing (a16z, First Round, South Park Commons), AI-powered professional networking product aligns with Zo's focus on AI alternatives to mainstream platforms. Preparing seed round in Jan 2025\u2014optimal timing for partnership outreach."
+    }
+  ],
+  "summary": "High relevance meeting marking Careerspan's strategic pivot to community-driven model and exploring partnership with Nira (AI professional networking tool). V proposed mutual collaboration: Careerspan boosts Nira's community visibility while Nira provides talent discovery platform."
+}

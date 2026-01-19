@@ -1,0 +1,31 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "General founder networking forum with limited direct GTM alignment. Season (conversational AI CDP) and Dobzi (automation for mid-market) could have partnership potential but no clear immediate data/infrastructure synergy. More relationship-building than deal-driving.",
+  "careerspan_reasoning": "V's company was directly featured in the meeting - Careerspan was presented to the McKinsey alumni founder community as a coaching/matching platform. This represents pipeline awareness and potential acquirer exposure, not a deal lead itself.",
+  "companies_mentioned": [
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "V's company presented to the group - coaching product for candidates and matching tool for employers"
+    },
+    {
+      "name": "Season",
+      "match_to_deal_id": null,
+      "context": "Conversational AI for sports/gaming/fan engagement, $1.5M pre-seed fundraise, YC applicant"
+    },
+    {
+      "name": "Dobzi",
+      "match_to_deal_id": null,
+      "context": "Finance/procurement automation agents with Uber and HelloFresh as clients"
+    },
+    {
+      "name": "Ahmed Rashad's company",
+      "match_to_deal_id": null,
+      "context": "Data labeling and enrichment with experts from Mila, Stanford, Berkeley"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Founders networking meeting where Careerspan (V's company) was featured to McKinsey alumni, increasing pipeline exposure. No immediate actionable deal leads - Season and Dobzi represent potential partnership candidates but require deeper qualification before deal creation."
+}

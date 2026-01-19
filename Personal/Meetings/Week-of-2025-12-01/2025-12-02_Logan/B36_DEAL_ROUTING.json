@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Minimal Zo partnership relevance. The only potential Zo-relevant element is the Super Demo connection, where Joseph is described as having Sequoia chasing his investment. The meeting is almost entirely Careerspan-focused.",
+  "careerspan_reasoning": "Extremely relevant to Careerspan. The meeting covers concrete partnership discussions with Emory University (including specific deal terms like magic links and monetary value), GTM strategy for NY Founders Club, and value proposition refinement.",
+  "companies_mentioned": [
+    {
+      "name": "Emory University",
+      "match_to_deal_id": null,
+      "context": "Active partnership proposal with magic links deal sweetener ($1,500-$2,2250 value), pilot phase Dec 15, Alumni Employer phase Jan 15. White Glove onboarding planned."
+    },
+    {
+      "name": "Super Demo",
+      "match_to_deal_id": null,
+      "context": "Joseph (founder) described as high-value connection with Sequoia chasing his investment. Drink meetup planned as networking opportunity."
+    },
+    {
+      "name": "New York Founders Club",
+      "match_to_deal_id": null,
+      "context": "Target audience for Careerspan pitching. Strategy refined around value proposition 'Referral quality signal at inbound scale'."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Emory University",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Active deal with concrete terms: magic links as deal sweetener, $1,500-$2,2250 value for alumni recruiting, pilot phase kickoff Dec 15, Alumni Employer phase Jan 15, White Glove onboarding planned."
+    }
+  ],
+  "summary": "This meeting is highly relevant to Careerspan's pipeline, featuring an active partnership deal with Emory University with specific terms and timeline. Minor Zo relevance through Super Demo networking opportunity."
+}

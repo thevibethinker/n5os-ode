@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "Minimal Zo relevance. Discussion focused on Careerspan's thesis and AI in hiring. Sam's insights about Gen Z adoption of AI agents for career conversations is tangentially interesting but not actionable for Zo partnerships.",
+  "careerspan_reasoning": "Strong Careerspan relevance. Meeting covered Careerspan's thesis, differentiators vs competitors (Jack and Jill, Dex), and strategic insights on AI in hiring from London startup scene. Sam's McKinsey/QB background and network could provide valuable connections and market intelligence.",
+  "companies_mentioned": [
+    {
+      "name": "Jack and Jill",
+      "match_to_deal_id": null,
+      "context": "Competitor in career space mentioned by Sam in context of London startup scene"
+    },
+    {
+      "name": "Dex",
+      "match_to_deal_id": null,
+      "context": "Careerspan competitor mentioned as comparison point for engagement model"
+    },
+    {
+      "name": "McKinsey/QuantumBlack",
+      "match_to_deal_id": null,
+      "context": "Sam's former employer and shared background with V, not a deal target"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Networking meeting with former McKinsey/QB leader Sam Bourton covering Careerspan's thesis and AI hiring insights. Valuable competitor intelligence and market perspective, but no direct deal or partnership opportunities identified."
+}

@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Meeting focused on Careerspan partnerships, not Zo. Ribbon could potentially be a Zo data partner (candidate data) but this wasn't discussed - connection would be indirect.",
+  "careerspan_reasoning": "Primary topic was Careerspan-Ribbon partnership integration. Christine offered direct intro to Ribbon team. Clear action items (demo account, blurb). Fits Careerspan's ATS alternative/sourcing engine positioning.",
+  "companies_mentioned": [
+    {
+      "name": "Ribbon",
+      "match_to_deal_id": null,
+      "context": "Video-based candidate platform; potential partnership with Careerspan for 'iron triangle' of candidate validation"
+    },
+    {
+      "name": "529 Society",
+      "match_to_deal_id": null,
+      "context": "Christine's organization - confidential peer network for founders/executives"
+    },
+    {
+      "name": "Superposition.ai",
+      "match_to_deal_id": null,
+      "context": "Existing Careerspan partner mentioned during demo"
+    },
+    {
+      "name": "Marvin (McKinsey Alumni Fund)",
+      "match_to_deal_id": null,
+      "context": "Existing Careerspan partner mentioned during demo"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Ribbon",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Christine offered direct intro to Ribbon team. Video-based candidate data could complement Zo's data layer if partnership with Careerspan proceeds."
+    }
+  ],
+  "summary": "High-relevance Careerspan partnership opportunity with Ribbon (video candidate platform). Christine offered direct intro; clear next steps established. Secondary value in 529 Society networking but not directly deal-relevant."
+}

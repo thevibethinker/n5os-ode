@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 1.0,
+  "zo_reasoning": "Internal strategy meeting about Careerspan's go-to-market approach. No Zo partnerships discussed or companies from Zo deal pipeline mentioned.",
+  "careerspan_reasoning": "Meeting is entirely focused on Careerspan's value proposition, market positioning, supply strategy, and sales narrative - core strategic planning for the business.",
+  "companies_mentioned": [
+    {
+      "name": "Rise",
+      "match_to_deal_id": null,
+      "context": "Mentioned as upcoming call with founder to solidify a community partnership for talent sourcing - a Careerspan sourcing relationship, not a Zo partnership"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan strategy meeting discussing value proposition, market positioning as a 'mid-signal' alternative, and supply sourcing via community partnerships like Rise. No Zo partnership relevance or deal actions required."
+}

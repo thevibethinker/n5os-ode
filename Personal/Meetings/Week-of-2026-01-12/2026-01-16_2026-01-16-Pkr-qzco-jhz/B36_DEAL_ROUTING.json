@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Only tangentially relevant - Calendly appears in Zo partnership deals for CRM data access, but this meeting is about Careerspan acquisition, not Zo partnerships.",
+  "careerspan_reasoning": "This is a direct debrief on a founder-to-founder call with Tope Awotona about acquiring Careerspan. Includes deal terms ($3M range, equity/earn-out), strong buying signals, and strategic positioning. Critical pipeline intelligence.",
+  "companies_mentioned": [
+    {
+      "name": "Calendly",
+      "match_to_deal_id": null,
+      "context": "Primary target - Tope Awotona expressed strong interest, discussed acquisition terms ($3M), and V redirected him from video interviews to Careerspan thesis"
+    },
+    {
+      "name": "South Park Commons",
+      "match_to_deal_id": null,
+      "context": "V has a call to join, appears to be unrelated to deal pipelines"
+    },
+    {
+      "name": "Shane",
+      "match_to_deal_id": null,
+      "context": "Connected to Andrew, may provide intelligence on Calendly meeting reception - person, not company"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Calendly",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Founder-to-founder call completed with Tope Awotona showing strong interest (\"super in\"). Acquisition terms discussed ($3M range, equity/earn-out acceptable). Direct pipeline opportunity requiring tracking and follow-up."
+    }
+  ],
+  "summary": "High-value internal debrief on Calendly founder Tope Awotona's interest in acquiring Careerspan for ~$3M with equity/earn-out structure. Clear acquirer pipeline addition."
+}

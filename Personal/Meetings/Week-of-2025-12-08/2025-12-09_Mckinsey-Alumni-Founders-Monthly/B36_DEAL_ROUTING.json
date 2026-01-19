@@ -1,0 +1,58 @@
+{
+  "zo_relevance_score": 0.25,
+  "careerspan_relevance_score": 0.4,
+  "zo_reasoning": "Community event with founder updates reveals hiring needs and networking opportunities. Afraz (Medrock AI) explicitly seeking pre-med/gap-year hires could be a candidate for Careerspan, and community expresses interest in hiring support. However, no direct Zo GTM/partnership opportunities identified.",
+  "careerspan_reasoning": "Vrijen (Careerspan founder) participated and offered help with NYC networking/hiring. Meeting validates Careerspan's target market (startup founders) and surfaces potential customers in the McKinsey alumni community. No acquisition discussions or indicators present.",
+  "companies_mentioned": [
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "Vrijen's company - decentralized talent network/ATS for startups"
+    },
+    {
+      "name": "Medrock AI",
+      "match_to_deal_id": null,
+      "context": "Afraz's company - seeking pre-med/gap-year hires, potential customer"
+    },
+    {
+      "name": "Verido AI",
+      "match_to_deal_id": null,
+      "context": "Daniel's company - raising pre-seed, needs value-add angels/VCs"
+    },
+    {
+      "name": "Benchmark Labs",
+      "match_to_deal_id": null,
+      "context": "Ulrich's company - closing seed round, construction weather forecasting"
+    },
+    {
+      "name": "Livelihood",
+      "match_to_deal_id": null,
+      "context": "Lance's company - addiction recovery for elite professionals"
+    },
+    {
+      "name": "Latogen",
+      "match_to_deal_id": null,
+      "context": "Corey's company - personalized medicine/telehealth"
+    },
+    {
+      "name": "Capwell",
+      "match_to_deal_id": null,
+      "context": "Thomas's company - methane capture for oil/gas"
+    },
+    {
+      "name": "Season",
+      "match_to_deal_id": null,
+      "context": "Abby's company - AI platform for sports/gaming fan conversion"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Medrock AI",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.75,
+      "rationale": "Actively seeking pre-med/gap-year hires (high fit for Careerspan talent pool), validated revenue model ($200k+ net per provider), founder in trusted McKinsey alumni network"
+    }
+  ],
+  "summary": "McKinsey alumni founder community meeting revealed hiring needs and fundraising activity. Medrock AI actively hiring pre-med talent is the strongest prospect for Careerspan customer acquisition. No direct Zo partnership opportunities identified among attendees."
+}

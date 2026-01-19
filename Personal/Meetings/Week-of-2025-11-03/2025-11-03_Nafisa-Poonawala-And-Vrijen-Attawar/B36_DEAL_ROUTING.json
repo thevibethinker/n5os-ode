@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.0,
+  "zo_reasoning": "Meeting covers Zo product development (N5 system, agentic personas) and includes prep for a demo to the Zoho team at South Park Commons. While product-relevant, it's primarily development/demo prep rather than active partnership negotiation or GTM execution.",
+  "careerspan_reasoning": "No mention of Careerspan, career coaching, or acquisition discussions. Content is entirely about Zo system and personal health matters.",
+  "companies_mentioned": [
+    {
+      "name": "Zoho",
+      "match_to_deal_id": null,
+      "context": "V is preparing a demo for the Zoho team at South Park Commons, including their founder"
+    },
+    {
+      "name": "South Park Commons",
+      "match_to_deal_id": null,
+      "context": "Venue/event where V will demo Zo to the Zoho team and AI Circle investor"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Zoho",
+      "deal_type": "zo_partnership",
+      "confidence": 0.7,
+      "rationale": "V has an upcoming demo opportunity with Zoho team including their founder at South Park Commons. This could evolve into a partnership deal, but current meeting is prep-focused rather than confirmed pipeline opportunity."
+    }
+  ],
+  "summary": "Meeting is primarily product development conversation about Zo's N5 system with prep for an upcoming demo to Zoho team. Limited deal relevance as it's development/demo prep rather than active partnership negotiation."
+}

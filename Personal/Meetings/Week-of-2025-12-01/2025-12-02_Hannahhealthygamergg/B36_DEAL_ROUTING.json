@@ -1,0 +1,60 @@
+{
+  "zo_relevance_score": 0.25,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Exploratory discussion about potential partnerships with Handshake and Indeed (career/employment platforms). These could be data partnerships, but conversation was high-level with no commitment. Handshake as a college job board aligns with Zo's data focus, but requires follow-up to determine actual partnership potential.",
+  "careerspan_reasoning": "Direct discussion of Careerspan product and potential research partnership with Healthy Gamer GG. Meeting focused on establishing a longitudinal study using Careerspan, with shared demographic (18-35 students) between organizations. This represents a concrete B2B opportunity - Healthy Gamer as research partner/corporate sponsor for a university study using Careerspan.",
+  "companies_mentioned": [
+    {
+      "name": "Healthy Gamer GG",
+      "match_to_deal_id": null,
+      "context": "Primary contact for potential research partnership using Careerspan product with 18-35 demographic"
+    },
+    {
+      "name": "Handshake",
+      "match_to_deal_id": null,
+      "context": "College job board - potential funding partner and sponsor for university research study. V has existing PM contact."
+    },
+    {
+      "name": "Indeed",
+      "match_to_deal_id": null,
+      "context": "High-value potential partner - Dr. K recently spoke there, mentioned as both business and research opportunity"
+    },
+    {
+      "name": "American Institute of Boys and Men",
+      "match_to_deal_id": null,
+      "context": "Potential research partner for Healthy Gamer, Dr. K on advisory board"
+    },
+    {
+      "name": "Oracle",
+      "match_to_deal_id": null,
+      "context": "Secondary funding option mentioned, V has existing relationships"
+    },
+    {
+      "name": "UMass Amherst",
+      "match_to_deal_id": null,
+      "context": "Previous successful pilot with 110 students, 70% response rate - case study for future partnerships"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Healthy Gamer GG",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Clear B2B opportunity for research partnership using Careerspan product. Demographic alignment (18-35 male-skewed), shared research goals, and potential funding from AIBM make this actionable. Next step: define study parameters and approach funding partners."
+    },
+    {
+      "company": "Handshake",
+      "deal_type": "zo_partnership",
+      "confidence": 0.8,
+      "rationale": "College job board with potential to partner on university career research study. V has existing PM contact. Could provide access to student population data or become funding sponsor for the Healthy Gamer research study."
+    },
+    {
+      "company": "Indeed",
+      "deal_type": "zo_partnership",
+      "confidence": 0.75,
+      "rationale": "Recent relationship via Dr. K speaking at Indeed. Mentioned as high-value partner for both business and research. Could provide funding or job market data for the study."
+    }
+  ],
+  "summary": "Exploratory partnership discussion with Healthy Gamer GG for a longitudinal research study using Careerspan on student populations. Identified Handshake and Indeed as potential funding partners/sponsors. Meeting focused on study design, funding avenues, and leveraging previous UMass Amherst pilot success."
+}

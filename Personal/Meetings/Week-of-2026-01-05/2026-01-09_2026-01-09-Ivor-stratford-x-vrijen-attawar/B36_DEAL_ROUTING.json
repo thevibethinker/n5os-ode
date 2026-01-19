@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.2,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Morpheus Group (Ivor's firm) has annotation/data capabilities that could be Zo-relevant, but this conversation is overwhelmingly Careerspan-focused. Minimal direct Zo partnership value discussed.",
+  "careerspan_reasoning": "Highly strategic conversation with Ivor from Morpheus Group focused entirely on Careerspan's business model, product positioning, and growth strategy. Concrete next steps established: Ivor offering Handshake introduction via his new Strategic Ops hire and Andrea Patterson. This is active pipeline development.",
+  "companies_mentioned": [
+    {
+      "name": "Morpheus Group",
+      "match_to_deal_id": null,
+      "context": "Ivor Stratford's firm; discussion focused on Careerspan strategic advice. Ivor offers introductions and strategic guidance."
+    },
+    {
+      "name": "Handshake",
+      "match_to_deal_id": null,
+      "context": "College job board platform suggested by Ivor as perfect partner for Careerspan. Ivor proactively offering introduction through his new Strategic Ops hire and existing connections including Andrea Patterson. V confirms strong fit with career centers and existing university presence."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Handshake",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Ivor Stratford (Morpheus Group) proactively offered a concrete introduction path via his new Head of Strategic Ops and existing connections to Andrea Patterson at Handshake. The strategic fit is strong - Handshake provides college job boards and has annotation/labeling business, which aligns with Careerspan's career companion vision and existing university relationships. This is not just a lead - there's an actual introduction being facilitated."
+    }
+  ],
+  "summary": "Strategic Careerspan conversation with Ivor Stratford (Morpheus Group) resulting in concrete Handshake partnership introduction. High relevance to Careerspan pipeline with actionable next steps already established."
+}

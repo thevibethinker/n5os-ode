@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Minimal relevance. Only Aviato (Conrad) could have Zo data partnership overlap with 'intent to hire' signals, but this appears tailored to Careerspan's recruiting domain.",
+  "careerspan_reasoning": "Highly relevant. Meeting focuses entirely on Careerspan product strategy, customer (Skillcapped), new recruiting company lead from accelerator, and data partnership opportunity with Aviato for hiring signals.",
+  "companies_mentioned": [
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "Aviato (CRM data) (zo_partnership)",
+      "context": "Conrad offered sample data on 'intent to hire' signals beyond LinkedIn markers"
+    },
+    {
+      "name": "Skillcapped",
+      "match_to_deal_id": null,
+      "context": "Customer with job postings - high CTR but low applications, Logan has follow-up call"
+    },
+    {
+      "name": "Recruiting company (accelerator contact)",
+      "match_to_deal_id": null,
+      "context": "Lead from summer accelerator interested in building tech, previously interacted with Daniel Brady"
+    }
+  ],
+  "recommended_deal_links": [
+    "Aviato (CRM data) (zo_partnership)"
+  ],
+  "create_new_deals": [],
+  "summary": "Careerspan-focused meeting discussing customer engagement (Skillcapped), product UX pivot to direct-link jobs, and data partnership opportunity with Aviato for hiring intent signals. A new recruiting company lead from accelerator could become a prospective deal."
+}

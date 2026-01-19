@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "Meeting is a 1:1 career coaching intro, not a data/API partnership discussion. Melissa is an individual seeking career advice, not a company representative for Zo integration.",
+  "careerspan_reasoning": "V directly demoed Careerspan to Melissa, explained its AI capabilities for resume/interview prep, and provided a trial code. This is a prospective customer conversation.",
+  "companies_mentioned": [
+    {
+      "name": "Resident Hospitality/Blaze",
+      "match_to_deal_id": null,
+      "context": "Melissa's current employer in food/hospitality sector"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "This is a Careerspan prospect conversation, not a deal pipeline opportunity. Melissa is an individual potential customer who received a trial code; no partnership or acquisition relevance."
+}

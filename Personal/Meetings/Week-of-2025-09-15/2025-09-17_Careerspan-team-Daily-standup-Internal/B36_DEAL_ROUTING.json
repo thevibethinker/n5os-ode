@@ -1,0 +1,26 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.25,
+  "zo_reasoning": "Internal team standup with no direct Zo partnership discussions. GTM methodology references (Silent Scan, Word of Mouth) are tactical, not deal-specific.",
+  "careerspan_reasoning": "Careerspan team meeting covering internal operations, GTM execution, and logistics. No acquisition targets or deal candidates discussed.",
+  "companies_mentioned": [
+    {
+      "name": "UMass",
+      "match_to_deal_id": null,
+      "context": "Project/client reference for demo recording - appears to be existing client work"
+    },
+    {
+      "name": "Quantum Black / Sam Cat",
+      "match_to_deal_id": null,
+      "context": "Vrijen received invite - ambiguous whether person (Sam Cat) or company (Quantum Black)"
+    },
+    {
+      "name": "Masters of Scale",
+      "match_to_deal_id": null,
+      "context": "Conference/event attendance for networking"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Careerspan team standup focusing on ops and logistics. No actionable deal pipeline intelligence or acquisition targets identified."
+}

@@ -1,0 +1,46 @@
+{
+  "zo_relevance_score": 0.3,
+  "careerspan_relevance_score": 0.1,
+  "zo_reasoning": "Internal product demo meeting about Zo capabilities. Mentions Plaud, Granola, and Fireflies as transcript sources for Careerspan, but no partnership discussions or GTM strategies. Primarily educational/demo context.",
+  "careerspan_reasoning": "Demonstrates Careerspan meeting intelligence system but is an internal walkthrough of existing functionality, not an acquisition or partnership discussion.",
+  "companies_mentioned": [
+    {
+      "name": "Plaud",
+      "match_to_deal_id": null,
+      "context": "Transcript source for Careerspan (hardware meeting recorder)"
+    },
+    {
+      "name": "Granola",
+      "match_to_deal_id": null,
+      "context": "Transcript source for Careerspan"
+    },
+    {
+      "name": "Fireflies",
+      "match_to_deal_id": null,
+      "context": "Transcript source for Careerspan"
+    },
+    {
+      "name": "Evry Venture Studio",
+      "match_to_deal_id": null,
+      "context": "Parent company ecosystem"
+    },
+    {
+      "name": "Monologue",
+      "match_to_deal_id": null,
+      "context": "Evry dictation app"
+    },
+    {
+      "name": "Spiral",
+      "match_to_deal_id": null,
+      "context": "Evry marketing/LinkedIn app"
+    },
+    {
+      "name": "Quora",
+      "match_to_deal_id": null,
+      "context": "Evry email app (namesake coincidence with Q&A site)"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal Zo product demonstration to Speaker 1 covering core platform features and Careerspan meeting intelligence. Mentions Plaud, Granola, and Fireflies as transcript sources but no partnership discussions or deal progression."
+}

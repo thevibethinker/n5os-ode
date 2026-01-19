@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.35,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "V mentions Zo as a 'huge unlock' for Careerspan and plans demo to external co-founder, suggesting operational use case rather than partnership opportunity. Meeting focuses on Careerspan's internal strategy, not Zo GTM.",
+  "careerspan_reasoning": "Direct strategic discussion about Careerspan's business: shifting from fundraising to acquisition discussions, current employer traction (10 employers), beta test results, product positioning. Core deal pipeline relevant content.",
+  "companies_mentioned": [
+    {
+      "name": "LightSpeed",
+      "match_to_deal_id": null,
+      "context": "Mentioned as backers of founders who noticed Careerspan candidates - tangential reference, not a deal entity."
+    },
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "Vrijen's company, primary subject of meeting regarding acquisition strategy and product traction."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "LightSpeed",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.45,
+      "rationale": "Only mentioned as VC backing founders who noticed Careerspan candidates - extremely tangential. Not acquirer themselves. Below 0.85 threshold."
+    }
+  ],
+  "summary": "Meeting focuses on Careerspan's strategic pivot from fundraising to acquisition discussions, with ~10 employers as customers and candidate-side tech attracting market interest. Zo mentioned as internal tool for Careerspan, not partnership opportunity."
+}

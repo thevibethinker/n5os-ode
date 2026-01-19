@@ -1,0 +1,57 @@
+{
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Aviato and Nyne mentioned as contacts for validating Careerspan's data stream value, but this is Careerspan strategy context not Zo GTM partnerships",
+  "careerspan_reasoning": "Entire meeting is about Careerspan strategic pivot, acquisition target identification, 3-month exit timeline, and preparation for buyer outreach",
+  "companies_mentioned": [
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "Identified as potential acquisition target for Careerspan"
+    },
+    {
+      "name": "Korn Ferry",
+      "match_to_deal_id": null,
+      "context": "Identified as potential acquisition target for Careerspan"
+    },
+    {
+      "name": "Aviato",
+      "match_to_deal_id": "Aviato (CRM data) (zo_partnership)",
+      "context": "Vrijen will consult with Aviato contacts to validate Careerspan data stream value"
+    },
+    {
+      "name": "Nyne",
+      "match_to_deal_id": "Nyne (CRM data) (zo_partnership)",
+      "context": "Vrijen will consult with Nyne contacts to validate Careerspan data stream value"
+    },
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "Job source for ~200 roles to be ingested"
+    },
+    {
+      "name": "Getro",
+      "match_to_deal_id": null,
+      "context": "Potential job source for Careerspan scanning engine"
+    }
+  ],
+  "recommended_deal_links": [
+    "Aviato (CRM data) (zo_partnership)",
+    "Nyne (CRM data) (zo_partnership)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "Darwin Box",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.7,
+      "rationale": "Explicitly mentioned as acquisition target but no direct outreach specified yet"
+    },
+    {
+      "company": "Korn Ferry",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.7,
+      "rationale": "Explicitly mentioned as acquisition target with $3M-$5M budget profile"
+    }
+  ],
+  "summary": "Careerspan co-founder standup focused on B2C pivot, runway preservation (terminating Ilya), and 3-month acquisition strategy targeting Darwin Box and Korn Ferry; Aviato/Nyne contacts tapped for data validation."
+}

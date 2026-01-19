@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "Minimal relevance. While Shivam mentioned Aramco Ventures connections (potential VC partner), this meeting focused on Careerspan's product capabilities for talent sourcing, not Zo Computer's partnerships or GTM strategy.",
+  "careerspan_reasoning": "High relevance. This was a direct product demo and partnership exploration meeting where V demonstrated Careerspan's capabilities to Shivam for a potential customer/partner relationship involving AI talent matching for Indian engineers. Next steps include technical integration discussions.",
+  "companies_mentioned": [
+    {
+      "name": "Aramco Ventures",
+      "match_to_deal_id": null,
+      "context": "Shivam made connections at Saudi's biggest VC fund during 2-week business trek"
+    },
+    {
+      "name": "42 Geeks",
+      "match_to_deal_id": null,
+      "context": "Investor trip program V offered to introduce Shivam to"
+    },
+    {
+      "name": "Granola",
+      "match_to_deal_id": null,
+      "context": "Discussion about interview recording practices and kernel-level access"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Shivam Desai / AI Talent Sourcing",
+      "deal_type": "careerspan_partner",
+      "confidence": 0.88,
+      "rationale": "Partnership exploration meeting with clear product demo, complementary capabilities (Shivam's engineer network + Careerspan's intelligence layer), and explicit next steps for technical integration discussions."
+    }
+  ],
+  "summary": "Careerspan partnership exploration with Shivam Desai's AI talent sourcing operation targeting Indian engineers; product demo conducted with technical follow-up and integration planning as next steps."
+}

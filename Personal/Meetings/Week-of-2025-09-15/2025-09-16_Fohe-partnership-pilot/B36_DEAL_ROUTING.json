@@ -1,0 +1,23 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is exclusively about Careerspan's partnership with Fohe for job matching services. No Zo products, features, or partnerships discussed.",
+  "careerspan_reasoning": "Active strategic partnership discussion with concrete plans: joint member blast pilot, revenue share model agreed, and logistics (supply/demand) being worked out. Direct pipeline impact for Careerspan GTM.",
+  "companies_mentioned": [
+    {
+      "name": "Fohe",
+      "match_to_deal_id": null,
+      "context": "Primary partner in pilot partnership discussion; member blast coordination and revenue sharing agreed"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Fohe",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "Active partnership pilot with member blast planned, revenue share model confirmed, and value proposition validated. Clear next steps defined."
+    }
+  ],
+  "summary": "Fohe partnership pilot with member blast planned, revenue share model confirmed. High-confidence Careerspan pipeline opportunity."
+}

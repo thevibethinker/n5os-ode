@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.3,
+  "careerspan_relevance_score": 0.85,
+  "zo_reasoning": "43North operates as a VC fund/accelerator with startup portfolio that could potentially use Zo's capabilities, but conversation was primarily focused on Careerspan's talent signaling value proposition rather than Zo's core offerings.",
+  "careerspan_reasoning": "Strong alignment - Nick explicitly framed the 'LinkedIn 2.0 for university talent' problem and acknowledged Careerspan as the solution. He's positioned as a potential ecosystem champion and offered introduction to technical colleague Jeff for next steps.",
+  "companies_mentioned": [
+    {
+      "name": "43North",
+      "match_to_deal_id": null,
+      "context": "Primary contact - accelerator/VC fund backed by NY State, focused on job creation and economic development in Buffalo"
+    },
+    {
+      "name": "TechBuffalo",
+      "match_to_deal_id": null,
+      "context": "Sister non-profit organization focused on workforce and talent initiatives for university and early-career technical talent"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "43North",
+      "deal_type": "zo_partnership",
+      "confidence": 0.75,
+      "rationale": "Warm initial call with strong problem-solution fit, explicit offer to connect technical partner (Jeff), and systemic interest in solutions that scale across portfolio companies. Below 0.85 threshold due to early-stage nature - still needs follow-up with Jeff and pilot discussion."
+    }
+  ],
+  "summary": "Strong B2B opportunity for Careerspan: 43North/TechBuffalo ecosystem needs a talent signaling solution for university/early-career technical talent, and Nick sees Careerspan as the right fit. Not a Zo GTM play; partnership path requires follow-up with technical partner Jeff."
+}

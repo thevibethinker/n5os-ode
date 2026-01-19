@@ -1,0 +1,87 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "This meeting is entirely about Careerspan's acquisition strategy and operations. No mention of Zo products, partnerships, or GTM strategies. The meeting context is Careerspan-specific business development, not Zo ecosystem activity.",
+  "careerspan_reasoning": "The entire meeting focuses on Careerspan's strategic positioning, potential acquisition paths (Teal, Teamwork Online, Future Fit AI/ETS, HireView), sales wins, and operational priorities. Detailed discussion of negotiation strategy, liquidation preferences, and acquisition target evaluations directly aligns with Careerspan acquisition pipeline management.",
+  "companies_mentioned": [
+    {
+      "name": "Teal",
+      "match_to_deal_id": null,
+      "context": "Potential acquirer - David Fano company, viewed as quick solution but likely zero cash"
+    },
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Highly desirable acquisition target due to sports niche distribution and potential cash reserves"
+    },
+    {
+      "name": "Future Fit AI",
+      "match_to_deal_id": null,
+      "context": "Mentioned as 'cheapskate' acquisition option"
+    },
+    {
+      "name": "ETS",
+      "match_to_deal_id": null,
+      "context": "Mentioned as 'cheapskate' acquisition option"
+    },
+    {
+      "name": "HireView Guy",
+      "match_to_deal_id": null,
+      "context": "Acquisition path requiring VC raise as CEO, which Logan finds unattractive"
+    },
+    {
+      "name": "Decagon",
+      "match_to_deal_id": null,
+      "context": "Company with roles to promote on job board"
+    },
+    {
+      "name": "Yarn",
+      "match_to_deal_id": null,
+      "context": "Company with roles to promote on job board"
+    },
+    {
+      "name": "Agave",
+      "match_to_deal_id": null,
+      "context": "Company with roles to promote on job board"
+    },
+    {
+      "name": "Deep Tune",
+      "match_to_deal_id": null,
+      "context": "Company with roles to promote on job board"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teal",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Explicitly mentioned as potential acquirer with specific characteristics (quick solution, David Fano, likely zero cash). Logan and V are actively evaluating this path."
+    },
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Logan described this as 'highly desirable' and 'lovely little niche' with distribution in sports and potential cash reserves. Active acquisition target evaluation."
+    },
+    {
+      "company": "Future Fit AI",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Mentioned as an acquisition option (though described as 'cheapskate'). Part of active acquisition landscape discussion."
+    },
+    {
+      "company": "ETS",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Mentioned as an acquisition option (though described as 'cheapskate'). Part of active acquisition landscape discussion."
+    },
+    {
+      "company": "HireView Guy",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Mentioned as acquisition path requiring VC raise as CEO. Logan expressed hesitation but it's part of active evaluation."
+    }
+  ],
+  "summary": "This meeting is highly relevant to the Careerspan acquisition pipeline, with detailed evaluation of five acquisition targets (Teal, Teamwork Online, Future Fit AI, ETS, HireView). No relevance to Zo partnerships."
+}

@@ -1,0 +1,63 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.75,
+  "zo_reasoning": "This meeting is focused entirely on Careerspan's collaboration with Matchbox, not Zo's GTM or partnership strategy. No Zo products, partnerships, or GTM motions were discussed.",
+  "careerspan_reasoning": "Substantial strategic discussion with Matchbox founder Holly Sanders about integrating Careerspan as a filter/signal layer in front of Matchbox's ATS/recruiting workflows. Concrete collaboration model proposed with shared bounties, job link distribution, and complementary positioning. Matchbox could serve as distribution channel or potential acquisition target.",
+  "companies_mentioned": [
+    {
+      "name": "Matchbox",
+      "match_to_deal_id": null,
+      "context": "Holly Sanders' recruiting marketplace + ATS startup; collaboration partner for Careerspan"
+    },
+    {
+      "name": "Seek",
+      "match_to_deal_id": null,
+      "context": "CIO of Seek considering angel investment in Matchbox"
+    },
+    {
+      "name": "DeepTune",
+      "match_to_deal_id": null,
+      "context": "Live role Holly needs to fill, potential Careerspan distribution target"
+    },
+    {
+      "name": "Yarn",
+      "match_to_deal_id": null,
+      "context": "High-priority live role Holly needs to fill"
+    },
+    {
+      "name": "Agave",
+      "match_to_deal_id": null,
+      "context": "Slower-moving role Holly is working on"
+    },
+    {
+      "name": "Cursor",
+      "match_to_deal_id": null,
+      "context": "Mentioned as example of startup with brand gravity (contrast to Matchbox's target market)"
+    },
+    {
+      "name": "Ashby",
+      "match_to_deal_id": null,
+      "context": "ATS incumbent, competitor in market analysis"
+    },
+    {
+      "name": "Greenhouse",
+      "match_to_deal_id": null,
+      "context": "ATS incumbent, competitor in market analysis"
+    },
+    {
+      "name": "Zapier",
+      "match_to_deal_id": null,
+      "context": "Cited as example of company making resumes optional"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Matchbox",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "Clear strategic alignment with Careerspan - Matchbox provides ATS/recruiting marketplace infrastructure that Careerspan needs for distribution; collaboration model explicitly discussed with concrete action items (job links, shared bounties, candidate network integration). Founder has existing relationships with ~713 startups and ~600 with live roles. Strong potential for acquisition or deep strategic partnership."
+    }
+  ],
+  "summary": "Strategic collaboration discussion with Matchbox (Holly Sanders) about integrating Careerspan as a signal amplifier in front of Matchbox's recruiting workflows. Concrete action items proposed: shared job links, bounty arrangements, and distribution through Careerspan's candidate communities."
+}

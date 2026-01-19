@@ -1,0 +1,110 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 1.0,
+  "zo_reasoning": "No Zo GTM partnership or product features discussed; meeting is entirely Careerspan-focused acquisition strategy.",
+  "careerspan_reasoning": "Entire meeting focused on Careerspan acquisition pipeline: reviewed 9+ potential acquirers (Reliance, Raidency, Workday, Phenom, Clara, Paraform, Dover, Darwin Box, Teamwork Online), discussed financial/earnout strategy with Ray's advice, tax planning, and assigned specific outreach action items.",
+  "companies_mentioned": [
+    {
+      "name": "Reliance",
+      "match_to_deal_id": null,
+      "context": "Potential acquirer, meeting scheduled with 2 decision-makers, pitched as internal mobility solution"
+    },
+    {
+      "name": "Raidency",
+      "match_to_deal_id": null,
+      "context": "Large recruiting tech company, potential acquirer, Logan has warm intro via friend who left for LinkedIn"
+    },
+    {
+      "name": "LinkedIn",
+      "match_to_deal_id": null,
+      "context": "Nonprofit partnership opportunity via Logan's contact, not acquisition target"
+    },
+    {
+      "name": "Workday",
+      "match_to_deal_id": null,
+      "context": "Potential acquirer, long shot via Kathy Pham (VP AI at Workday)"
+    },
+    {
+      "name": "Phenom",
+      "match_to_deal_id": null,
+      "context": "Potential acquirer, team debated ownership of contact"
+    },
+    {
+      "name": "Clara",
+      "match_to_deal_id": null,
+      "context": "AI recruiter, acqui-hire opportunity, need to run demo scan (Ilse building capability)"
+    },
+    {
+      "name": "Paraform",
+      "match_to_deal_id": null,
+      "context": "AI recruiter, could plug into directly, V has contacts"
+    },
+    {
+      "name": "Dover",
+      "match_to_deal_id": null,
+      "context": "AI recruiter, financially struggling, PR exit opportunity, V had previous call with founder"
+    },
+    {
+      "name": "Darwin Box",
+      "match_to_deal_id": null,
+      "context": "Potential acquirer, V committed to email today (non-negotiable)"
+    },
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Potential acquirer, on V's list for today"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Reliance",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 1.0,
+      "rationale": "Meeting scheduled with 2 actual decision-makers, explicitly in acquisition conversations per meeting notes"
+    },
+    {
+      "company": "Raidency",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 1.0,
+      "rationale": "Large recruiting tech company, meeting scheduled with Logan's contact next week"
+    },
+    {
+      "company": "Workday",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Direct VP AI contact via Kathy Pham, email outreach planned with 'in acquisition conversations' messaging"
+    },
+    {
+      "company": "Clara",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 1.0,
+      "rationale": "Acqui-hire opportunity explicitly identified, demo scan action item assigned to Ilse"
+    },
+    {
+      "company": "Paraform",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "AI recruiter, V committed to hit up contacts, potential integration opportunity"
+    },
+    {
+      "company": "Dover",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "PR exit opportunity mentioned, V had previous call with founder, Unveesha connection to follow up"
+    },
+    {
+      "company": "Darwin Box",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "On pipeline list, V committed to email today (non-negotiable action item)"
+    },
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "On pipeline list, V committed to email today"
+    }
+  ],
+  "summary": "High relevance: Internal Careerspan leadership standup reviewing acquisition pipeline with 9+ active prospects, financial strategy (earnout/tax), and concrete outreach action items assigned to create competitive bidding dynamic."
+}

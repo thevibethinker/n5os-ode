@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Meeting focuses on Careerspan's B2B hiring product and GTM strategy. Teamwork Online is a hiring platform partner, not a data provider/API for Zo. No data partnerships or technical integrations discussed.",
+  "careerspan_reasoning": "High relevance: Teamwork Online is a vertical hiring platform with 1,500+ companies in sports/entertainment. Davis actively onboarded, tested the product, and discussed GTM fit. Strong potential as distribution channel or strategic acquirer.",
+  "companies_mentioned": [
+    {
+      "name": "Teamwork Online",
+      "match_to_deal_id": null,
+      "context": "Counterparty in meeting; vertical hiring platform for sports/entertainment with 1,500+ companies. Davis onboarded and tested Careerspan product."
+    },
+    {
+      "name": "Dex",
+      "match_to_deal_id": null,
+      "context": "Mentioned as conceptual competitor - described as 'intake form' vs Careerspan's coaching approach."
+    },
+    {
+      "name": "Jack and Jill",
+      "match_to_deal_id": null,
+      "context": "Mentioned as conceptual competitor alongside Dex."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Teamwork Online",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Davis actively tested product during meeting. Vertical hiring platform with 1,500+ companies provides immediate distribution opportunity. Deep domain expertise in sports/entertainment hiring makes them strong strategic partner or acquirer candidate."
+    }
+  ],
+  "summary": "Strategic product demo with Teamwork Online (1,500+ sports/entertainment hiring clients). Davis onboarded live, validating product-market fit. Strong potential as Careerspan distribution partner or acquisition target."
+}

@@ -1,0 +1,31 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "Meeting is purely about Careerspan's sales process to a university career center. No Zo-related companies, integrations, or partnerships discussed. Vrijen was presenting his own company's solution.",
+  "careerspan_reasoning": "This is a key sales demo meeting for Careerspan with Johnson (Cornell) CMC - a university career center prospect. Meeting covered product demo, pricing discussion, and partnership structure. Strong engagement from CMC team (Michael Maher, Amanda, Victoria, Chase).",
+  "companies_mentioned": [
+    {
+      "name": "Johnson (Cornell CMC)",
+      "match_to_deal_id": null,
+      "context": "Prospect - demoed Careerspan to CMC team, discussed pricing and partnership model"
+    },
+    {
+      "name": "UMass Amherst",
+      "match_to_deal_id": null,
+      "context": "Existing customer - cited as evidence of positive results"
+    },
+    {
+      "name": "Emory's Alumni Association",
+      "match_to_deal_id": null,
+      "context": "Co-design partner - mentioned as ongoing collaboration"
+    },
+    {
+      "name": "VMock",
+      "match_to_deal_id": null,
+      "context": "Competitor - mentioned as incumbent resume tool"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Careerspan sales demo to Johnson CMC showing strong engagement, but unclear if ready for formal deal tracking (next steps and commitment level not specified). Not relevant to Zo partnership pipeline."
+}

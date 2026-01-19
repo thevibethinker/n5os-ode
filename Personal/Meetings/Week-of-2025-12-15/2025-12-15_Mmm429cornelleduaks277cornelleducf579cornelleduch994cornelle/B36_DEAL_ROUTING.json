@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.0,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is about Careerspan's sales demo with Cornell Johnson; no discussion of Zo partnerships, GTM strategy, or Zo-related activities. All existing deals in the pipeline are Zo partnerships, unrelated to this Careerspan customer interaction.",
+  "careerspan_reasoning": "High-priority sales meeting with Cornell Johnson's Career Management Center actively evaluating Careerspan as their first resource in a tool reassessment cycle. Clear engagement indicators: demo completed, reference discussions initiated, follow-ups planned around onboarding and data sharing. No formal decision but strong prospect momentum.",
+  "companies_mentioned": [
+    {
+      "name": "Cornell Johnson",
+      "match_to_deal_id": null,
+      "context": "Prospective customer evaluating Careerspan for MBA career management"
+    },
+    {
+      "name": "Columbia SPS",
+      "match_to_deal_id": null,
+      "context": "Existing Careerspan user, offered as reference to Cornell"
+    },
+    {
+      "name": "UMass Eisenberg",
+      "match_to_deal_id": null,
+      "context": "Existing Careerspan user with proof-point data, offered as reference"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Cornell Johnson",
+      "deal_type": "careerspan_customer",
+      "confidence": 0.9,
+      "rationale": "Active evaluation in progress, first tool being assessed, references requested, onboarding interest expressed"
+    }
+  ],
+  "summary": "Cornell Johnson CMC is actively evaluating Careerspan as their first career resource in a reassessment cycle. Strong engagement with demo completion, reference requests, and interest in onboarding support\u2014no decision made but clear sales momentum."
+}

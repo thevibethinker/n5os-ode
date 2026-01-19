@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "No Zo technology, services, or partnerships discussed. Meeting focused purely on Careerspan-Marvin partnership.",
+  "careerspan_reasoning": "High relevance - formal partnership with Marvin founder community including integration into distribution channels (newsletter, perks, WhatsApp) and potential infrastructure replacement contract replacing Getro.",
+  "companies_mentioned": [
+    {
+      "name": "Marvin",
+      "match_to_deal_id": null,
+      "context": "Founder community company Oscar Marquina represents; partnership integration target for distribution channels and job board infrastructure"
+    },
+    {
+      "name": "Getro",
+      "match_to_deal_id": null,
+      "context": "Current provider Marvin uses for job board; target for replacement with Careerspan's platform"
+    },
+    {
+      "name": "Melly",
+      "match_to_deal_id": null,
+      "context": "Example company (Alan's) already using Careerspan; cited as success story"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Marvin",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Formal partnership confirmed with integration into Marvin's distribution channels (newsletter, perks, WhatsApp) and clear path to infrastructure replacement contract; Network Admin access granted; Marvin under Getro contract until Q3 2026 with goal to prove Careerspan superiority for formal arrangement."
+    }
+  ],
+  "summary": "Highly relevant to Careerspan pipeline: formal partnership with Marvin founder community for distribution integration and potential infrastructure replacement contract replacing Getro by Q3 2026."
+}

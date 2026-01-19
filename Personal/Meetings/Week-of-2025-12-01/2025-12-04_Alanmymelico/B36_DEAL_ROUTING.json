@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "This meeting is about Careerspan's recruitment platform pitch to a prospective customer, not about Zo partnerships or Zo Computer services. No Zo-related products, APIs, or integrations were discussed.",
+  "careerspan_reasoning": "Direct sales meeting for Careerspan's AI-driven recruitment platform. The prospect (Alan from Melly) expressed urgent hiring needs, acknowledged pain points with overseas hiring, and explicitly agreed to a pilot with the first 100 candidates free. Clear commitment and next steps established.",
+  "companies_mentioned": [
+    {
+      "name": "Melly",
+      "match_to_deal_id": null,
+      "context": "Alan's company experiencing hiring challenges; agreed to pilot Careerspan's platform for their open engineering role"
+    },
+    {
+      "name": "Corridor X",
+      "match_to_deal_id": null,
+      "context": "Placement firm mentioned as a potential introduction, not the primary focus of the meeting"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Melly",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.92,
+      "rationale": "Alan explicitly agreed to launch a Careerspan pilot for their urgent engineer hire, with Vrijen offering the first 100 candidates for free. Clear pain points identified (failed overseas hires, need for reliable engineers) and immediate next steps confirmed."
+    }
+  ],
+  "summary": "This meeting represents a direct Careerspan sales opportunity with Melly. Alan agreed to a pilot of Careerspan's AI recruitment platform for an urgent engineering hire after expressing frustration with failed overseas hires and lack of capacity to execute on feature requests."
+}

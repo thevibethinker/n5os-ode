@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.8,
+  "zo_reasoning": "Minimal direct relevance to Zo partnerships/GTM. No discussion of Zo-specific products, APIs, or integrations. The partnership model proposed is specific to Careerspan, not Zo's broader partner ecosystem.",
+  "careerspan_reasoning": "Highly relevant. Meeting involves a Careerspan product deep dive, GTM discussion with community partner, and explicit proposal for co-designing a matchmaking/monetization model. The participant's community of laid-off tech workers (37 attendees, 100 RSVPs, waitlists) represents a strong candidate acquisition channel. Also mentions existing partnerships (FOHI, Marvin Ventures) showing active GTM execution.",
+  "companies_mentioned": [
+    {
+      "name": "Amazon",
+      "match_to_deal_id": null,
+      "context": "Participant's final PM/DevRel interview, competitive context"
+    },
+    {
+      "name": "FOHI",
+      "match_to_deal_id": null,
+      "context": "Existing Careerspan community partner"
+    },
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "McKinsey's alumni fund, mentioned as existing partner"
+    },
+    {
+      "name": "Google",
+      "match_to_deal_id": null,
+      "context": "Singapore office connection from shared history period (2014-2018/19)"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Erica Community",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.7,
+      "rationale": "Active GTM discussion with community organizer of laid-off tech workers. Vrijen proposed co-designing matchmaking/monetization model. Community has proven traction (37 attendees, 100 RSVPs, waitlists). However, confidence below 0.85 threshold as this is more of a prospecting conversation than a committed partnership deal."
+    }
+  ],
+  "summary": "Careerspan product pitch to community organizer (Erica) with active GTM collaboration proposal for her laid-off tech worker community. Strong potential for candidate acquisition channel but partnership still in prospecting phase."
+}

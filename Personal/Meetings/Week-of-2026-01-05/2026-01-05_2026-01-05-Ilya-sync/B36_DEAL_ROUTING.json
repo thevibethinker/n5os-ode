@@ -1,0 +1,28 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.7,
+  "zo_reasoning": "Minimal relevance. Meeting focused on internal Careerspan financial issues and consultant offboarding. The AI/metacognition discussion is conceptual with no actionable insights for specific Zo partnerships or GTM. No companies from the existing Zo partnerships list were mentioned.",
+  "careerspan_reasoning": "Highly relevant to acquisition pipeline. Meeting explicitly discusses an existing acquisition conversation with LEAI. Reveals strategic shift to 'survive to April 1st' mode with focus on maximizing attractiveness for exit or aqua-hire. Preservation of IP/GTM assets noted for future execution. Financial shortfall context critical for understanding deal positioning.",
+  "companies_mentioned": [
+    {
+      "name": "LEAI",
+      "match_to_deal_id": null,
+      "context": "Explicitly mentioned as an existing acquisition conversation opportunity"
+    },
+    {
+      "name": "David Shekhlet",
+      "match_to_deal_id": null,
+      "context": "B2B sales contact Logan committed to introduce Ilya to for consulting opportunities"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "LEAI",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "Explicitly referenced as existing acquisition conversation. Meeting confirms Careerspan is actively seeking exit/aqua-hire opportunities and LEAI is a identified prospect. High confidence this warrants a formal deal track."
+    }
+  ],
+  "summary": "Primarily relevant to Careerspan acquisition pipeline due to explicit LEAI acquisition discussion and strategic shift to exit mode. Low relevance to Zo partnerships as no partner-specific topics or actionable insights were covered."
+}

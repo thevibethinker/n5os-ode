@@ -1,0 +1,44 @@
+{
+  "zo_relevance_score": 0.1,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Meeting is entirely focused on Careerspan partnership strategy. No Zo products, features, or GTM discussions occurred. Only peripheral connector mentions (Jessica Greenwald, MLH) but no Zo partnership intent.",
+  "careerspan_reasoning": "Direct strategic partnership discussion with Theresa Anoje's Social Impact SF community. Careerspan is using this as a trial case for their virtual recruiter model. Includes license deployment (100-200), employer access pipeline, and fits Careerspan's micro-community growth strategy.",
+  "companies_mentioned": [
+    {
+      "name": "Careerspan",
+      "match_to_deal_id": null,
+      "context": "Vrijen's company; primary subject of partnership discussion with Theresa's community as trial case"
+    },
+    {
+      "name": "Social Impact SF",
+      "match_to_deal_id": null,
+      "context": "Theresa Anoje's micro-community (100+ events) serving as trial case for Careerspan's virtual recruiter model"
+    },
+    {
+      "name": "Major League Hacking",
+      "match_to_deal_id": null,
+      "context": "V offered warm intro to MLH founder to support Theresa's upcoming Diversity and Equity Hackathon"
+    },
+    {
+      "name": "Nice Industries",
+      "match_to_deal_id": null,
+      "context": "Jessica Greenwald's company; facilitated the connection to Theresa"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Social Impact SF / Theresa Anoje",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.95,
+      "rationale": "Active trial case partnership with 100-200 licenses deployed. Careerspan has employer roles ready for this community. Fits core micro-community acquisition strategy."
+    },
+    {
+      "company": "Major League Hacking",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.85,
+      "rationale": "V offered warm introduction. Logan Currie has scheduled call with MLH (Amanda). Relevant for hackathon talent pipeline."
+    }
+  ],
+  "summary": "Careerspan strategic partnership meeting with Theresa Anoje's Social Impact SF community as a trial case for the virtual recruiter model. 100-200 licenses deployed, employer pipeline engaged. Intro offered to Major League Hacking for upcoming hackathon."
+}

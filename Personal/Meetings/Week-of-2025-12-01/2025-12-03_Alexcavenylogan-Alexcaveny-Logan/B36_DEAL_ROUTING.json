@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is exclusively about Careerspan's GTM strategy and VC platform partnerships. No Zo partnership discussions, integrations, or Zo customer acquisition topics mentioned.",
+  "careerspan_reasoning": "Directly covers Careerspan's primary GTM strategy targeting VC platform teams. Identifies Alumni Ventures as a warm lead with high interest, discusses competitor positioning against Getro, and outlines specific ICP targeting strategy for mid-sized VC funds.",
+  "companies_mentioned": [
+    {
+      "name": "Alumni Ventures",
+      "match_to_deal_id": null,
+      "context": "VC platform person showed clear interest in Careerspan's talent pipeline solution, represents high-priority warm lead for Careerspan sales"
+    },
+    {
+      "name": "Getro",
+      "match_to_deal_id": null,
+      "context": "Identified as primary competitor in the VC talent/job board space, described as lacking quality control"
+    },
+    {
+      "name": "Superposition AI",
+      "match_to_deal_id": null,
+      "context": "Existing partnership where Careerspan acts as candidate-side engine piping into Superposition's technical recruiting system"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Alumni Ventures",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.9,
+      "rationale": "VC platform person showed clear signal of interest in Careerspan's evergreen talent pipeline solution. Explicitly mentioned as having high interest compared to previous GTM attempts, representing a qualified warm lead in the target ICP (mid-sized VC Fund 2 or 3)."
+    }
+  ],
+  "summary": "Highly relevant to Careerspan pipeline: validates VC platform GTM strategy with warm lead from Alumni Ventures, identifies Superposition AI as existing partner, and defines target ICP of mid-sized VC funds. Irrelevant to Zo partnerships."
+}

@@ -1,0 +1,34 @@
+{
+  "zo_relevance_score": 0.85,
+  "careerspan_relevance_score": 0.25,
+  "zo_reasoning": "V evangelized Zo to Calendly's CPO, describing it as his focal point and showing it to others. Shane offered intro to CEO Tope about product/consulting roles, and noted Calendly is retooling R&D team with senior roles open. Direct engagement with Calendly leadership for potential partnership.",
+  "careerspan_reasoning": "V briefly mentioned positioning Careerspan for sale with good interest, but this was a status update in passing. No specific acquirer interest or discussion originated from this meeting itself.",
+  "companies_mentioned": [
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (CRM System) (zo_partnership)",
+      "context": "Shane Murphy-Reuter is Calendly CPO, discussed strategic direction toward multi-product/AI integration, CRM launching July"
+    },
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "Calendly (leadership)",
+      "context": "Shane offered intro to CEO Tope about product/consulting roles, noted senior R&D roles open"
+    },
+    {
+      "name": "Superhuman",
+      "match_to_deal_id": null,
+      "context": "V discussed workflow using Superhuman with command-J, whisper sync"
+    },
+    {
+      "name": "Whispered",
+      "match_to_deal_id": null,
+      "context": "V offered intro to Andy Moat who runs Whispered (GTM leaders network)"
+    }
+  ],
+  "recommended_deal_links": [
+    "Calendly (CRM System) (zo_partnership)",
+    "Calendly (leadership)"
+  ],
+  "create_new_deals": [],
+  "summary": "Direct engagement with Calendly CPO Shane Murphy-Reuter; evangelized Zo and secured offer for intro to CEO Tope about consulting/roles. Careerspan sale status mentioned but no deal-specific developments."
+}

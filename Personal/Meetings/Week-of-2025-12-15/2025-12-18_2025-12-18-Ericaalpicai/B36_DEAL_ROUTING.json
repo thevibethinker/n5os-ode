@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.9,
+  "careerspan_relevance_score": 0.4,
+  "zo_reasoning": "Direct partnership opportunity: V proposed Zo as backend for ChatGPT apps via Alpic's platform. V offered to introduce Alpic founders to Zo community (130+ members). Alpic's platform for MCP server deployment aligns with Zo's AI agent capabilities and could enable new distribution channels through ChatGPT App Store.",
+  "careerspan_reasoning": "V discussed building a CareerSpan app on Alpic as a 'plan Z' or field test before bringing to CareerSpan Head of AI. Also mentioned potential to open-source CareerSpan as backend for ChatGPT. More relevant as product strategy/test rather than acquisition opportunity.",
+  "companies_mentioned": [
+    {
+      "name": "Alpic",
+      "match_to_deal_id": null,
+      "context": "Main discussion partner - founder of Alpic/Outpik platform for MCP server deployment. V proposed Zo-Alpic integration for ChatGPT apps."
+    },
+    {
+      "name": "OpenAI",
+      "match_to_deal_id": null,
+      "context": "Mentioned for ChatGPT App Store opening to third-party submissions - contextual reference, not a deal target."
+    },
+    {
+      "name": "Anthropic",
+      "match_to_deal_id": null,
+      "context": "Mentioned for MCP protocol - contextual reference, not a deal target."
+    },
+    {
+      "name": "kiwi.com",
+      "match_to_deal_id": null,
+      "context": "Usage example shown in Alpic analytics (Anthropic employees using it) - not a deal target."
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Alpic",
+      "deal_type": "zo_partnership",
+      "confidence": 0.9,
+      "rationale": "V actively proposed Zo-Alpic integration: Zo as backend for ChatGPT apps with Alpic as middle layer. V offered to introduce Alpic founders to Zo community (130+ members). Clear mutual value: Alpic needs partners for their platform, Zo gains ChatGPT App Store distribution channel."
+    }
+  ],
+  "summary": "Highly relevant to Zo partnerships: V proposed integrating Zo with Alpic's MCP deployment platform for ChatGPT apps, offered community introductions, and discussed synergistic opportunity. Secondary relevance to Careerspan as potential test bed/field validation for the tech."
+}

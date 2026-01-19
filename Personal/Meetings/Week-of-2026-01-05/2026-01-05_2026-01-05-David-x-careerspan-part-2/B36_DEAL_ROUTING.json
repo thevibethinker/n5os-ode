@@ -1,0 +1,38 @@
+{
+  "zo_relevance_score": 0.2,
+  "careerspan_relevance_score": 0.5,
+  "zo_reasoning": "David is a potential Zo user ($9 subscriber) and V evangelized Zo capabilities, but this is consumer-level onboarding, not a partnership opportunity or GTM-focused discussion.",
+  "careerspan_reasoning": "Meeting titled 'David-x-careerspan-part-2' suggests ongoing prospect relationship. Initial discussion of 'career span strategy' before shifting to Zo indicates David may be a Careerspan client or prospect, though the conversation moved away from strategic planning.",
+  "companies_mentioned": [
+    {
+      "name": "Zo",
+      "match_to_deal_id": null,
+      "context": "Platform being demonstrated to David for workflow automation"
+    },
+    {
+      "name": "Fathom",
+      "match_to_deal_id": null,
+      "context": "David's current transcript recording tool causing workflow friction"
+    },
+    {
+      "name": "Lovable",
+      "match_to_deal_id": null,
+      "context": "App builder mentioned for comparison with Claude Code"
+    },
+    {
+      "name": "Gemini",
+      "match_to_deal_id": null,
+      "context": "AI model used for building Fathom integration"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "David Speigel",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.4,
+      "rationale": "David is a Careerspan prospect based on meeting series title and initial strategy discussion, but conversation shifted to Zo onboarding. Not confident enough to create deal as individual prospect tracking may not qualify as acquisition/deal pipeline item."
+    }
+  ],
+  "summary": "Meeting shifted from Careerspan strategy discussion to Zo Computer onboarding for David Speigel. David expressed frustration with Fathom workflow; V demonstrated Zo's automation capabilities. Low deal relevance\u2014this appears to be customer success/prospect nurturing rather than partnership or acquisition discussion."
+}

@@ -1,0 +1,47 @@
+{
+  "zo_relevance_score": 0.75,
+  "careerspan_relevance_score": 0.9,
+  "zo_reasoning": "Discusses building a 'Networker in a Box' product ON Zo that could be a GTM partnership opportunity. David positioned as potential promoter/teacher of this Zo-based tool. Strategic partnerships (Condo, Aviato) identified.",
+  "careerspan_reasoning": "David is a networking expert teaching webinars on job search and internal networking - directly adjacent to Careerspan's core mission. The 'Networker in a Box' concept aligns with Careerspan's career coaching value proposition. David could be a key acquisition target or strategic advisor.",
+  "companies_mentioned": [
+    {
+      "name": "Condo",
+      "match_to_deal": "Kondo (LinkedIn Messaging)",
+      "context": "Mitchell's Condo proposed as LinkedIn access sponsor, similar to Kondo's LinkedIn messaging focus"
+    },
+    {
+      "name": "Aviato",
+      "match_to_deal": "Aviato (CRM data)",
+      "context": "Asher's Aviato proposed as data endpoints partner"
+    },
+    {
+      "name": "Dex",
+      "match_to_deal": null,
+      "context": "Critiqued as competitor with poor execution (CRM for networking)"
+    },
+    {
+      "name": "Ben Lang / Cursor",
+      "match_to_deal": null,
+      "context": "Ben Lang mentioned as programmer willing to build via 'Next Play' program"
+    }
+  ],
+  "recommended_deal_links": [
+    "Aviato (CRM data)",
+    "Kondo (LinkedIn Messaging)"
+  ],
+  "create_new_deals": [
+    {
+      "company": "David (Networking Expert)",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "David is a networking expert with established webinar business. His expertise in job search, internal networking, and relationship management aligns directly with Careerspan's mission. He could be an acquisition target, strategic advisor, or co-founder for a networking-focused product line."
+    },
+    {
+      "company": "Condo",
+      "deal_type": "zo_partnership",
+      "confidence": 0.86,
+      "rationale": "Mitchell's Condo explicitly proposed as LinkedIn access sponsor for the 'Networker in a Box' product. Partnership would provide LinkedIn API/data access that David identified as critical gap."
+    }
+  ],
+  "summary": "Strategic meeting exploring 'Networker in a Box' product on Zo, with David as networking expert/potential partner. High relevance to Careerspan acquisition (David's expertise aligns with career coaching mission) and Zo partnerships (Condo/Aviato for LinkedIn/data access)."
+}

@@ -1,0 +1,6 @@
+152ef811c54c449e02427f2ee6cdf9699d6c938f
+152ef81 fix: Add build templates (force add, excluded by gitignore pattern)
+d0ae62a fix: Add missing directories and templates (N5/data, Records, build templates)
+bc66bcf feat: Add worker orchestration system (spawn_worker, build_orchestrator, prompts)
+8ba55e9 feat: Add semantic memory setup to bootloader (Phase 5)
+a64c8fe fix: day-1 zero-errors release prep

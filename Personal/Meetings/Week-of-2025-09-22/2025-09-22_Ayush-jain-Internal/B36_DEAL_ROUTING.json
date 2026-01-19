@@ -1,0 +1,16 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.15,
+  "zo_reasoning": "Zo is only mentioned as a tool being used internally for job aggregation automation. No discussion of Zo partnerships, GTM partnerships, or any deal-related activity for Zo.",
+  "careerspan_reasoning": "Internal operations meeting focused on delegating job processing workflow to Ayush and discussing potential GTM activities for user engagement. Mentions business health and pitch event but no acquisition conversations, acquirer interest, or M&A-related content.",
+  "companies_mentioned": [
+    {
+      "name": "Zo",
+      "match_to_deal_id": null,
+      "context": "Mentioned as V's cloud-based OS used for automating job aggregation for Careerspan"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [],
+  "summary": "Internal operations meeting with no deal relevance\u2014focused on delegating job processing workflow to Ayush and discussing GTM strategies for user engagement, with no mentions of partnerships, acquisitions, or external deal activity."
+}

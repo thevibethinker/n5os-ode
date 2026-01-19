@@ -1,0 +1,33 @@
+{
+  "zo_relevance_score": 0.05,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting is entirely about Careerspan business, Superposition partnership, and potential acquisition. No Zo partnership or GTM relevance.",
+  "careerspan_reasoning": "Direct discussion of Careerspan's strategic pivot, acquisition momentum, LOI with Marvin Ventures, and concrete partnership proposal with Superposition (revenue share model for sourcing). High relevance to acquisition pipeline.",
+  "companies_mentioned": [
+    {
+      "name": "Superposition",
+      "match_to_deal_id": null,
+      "context": "Potential partnership with revenue share (success fee) for candidates sourced via Careerspan; Edmund interested in Careerspan for designers/PMs"
+    },
+    {
+      "name": "Marvin Ventures",
+      "match_to_deal_id": null,
+      "context": "McKinsey alumni fund; V mentions existing LOI with 200 founders/400 active roles; potential acquirer or strategic partner"
+    },
+    {
+      "name": "Sunset",
+      "match_to_deal_id": null,
+      "context": "Company/consultancy recommended by Edmund for startup soft landings and wrapping up/pivoting; advisory connection, not acquirer"
+    }
+  ],
+  "recommended_deal_links": [],
+  "create_new_deals": [
+    {
+      "company": "Superposition",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Concrete partnership proposal with revenue share model; Edmund expressed specific interest in Careerspan for designers/PMs; clear workflow discussed (Superposition agent onboards company, generates JD, Careerspan filters/sources). This is a partnership that could evolve into acquisition given Careerspan's strategic pivot to acquisition."
+    }
+  ],
+  "summary": "Meeting focuses on Careerspan's strategic pivot toward acquisition with two key opportunities: (1) Superposition partnership with revenue share model for talent sourcing, and (2) existing LOI with Marvin Ventures. No Zo partnership relevance."
+}
