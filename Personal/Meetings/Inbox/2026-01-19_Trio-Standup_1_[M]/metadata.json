@@ -1,0 +1,16 @@
+{
+  "source": "fireflies",
+  "source_id": "01KFBE45175KXZQE7EE9M9RWKM",
+  "title": "Trio Standup",
+  "date": "2026-01-19",
+  "participants": [
+    "logan@theapply.ai,ilse@theapply.ai",
+    "logan@theapply.ai",
+    "ilse@theapply.ai"
+  ],
+  "host": "vrijen@mycareerspan.com",
+  "duration_seconds": 7,
+  "recording_url": "https://cdn.fireflies.ai/01KFBE45175KXZQE7EE9M9RWKM/audio.mp3?Expires=1769053074&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZmlyZWZsaWVzLmFpLzAxS0ZCRTQ1MTc1S1haUUU3RUU5TTlSV0tNL2F1ZGlvLm1wMyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2OTA1MzA3NH19fV19&Signature=cectyk4~5NyoVYlkZ2cG0MzRBt-di~pxXyq4kamsfs4ihljJQLdA~GBeBrwBoT3941qLIr6uaCRPrN5JtAoxFY5Cy~XmFGsI0iuGFXpjuryOlxfQ1K9REwP4NUX-OF7KcL-b~aH1IIRcrwACiPhHxLFIClO1rmiE9lHFZNq3r0ku2AoXJJyH2Yvbr33-zZKPMRtfMobVuFlNATD0PzvZqDh2Y0TutF5Z~wil-6~kidJkKhkviblhycUXN-FQkOHvSn6I9cnYqaIaWrp5Aq5ngwYczra4eL4HZR1yH~FG1wwx8ofsVxp3Cy5eL5oegGf1BaltmXjh7cFzYJrzN2sj-A__&Key-Pair-Id=K25ZJR0UZVF4CM",
+  "ingested_at": "2026-01-19T15:39:04.617933",
+  "state": "raw"
+}

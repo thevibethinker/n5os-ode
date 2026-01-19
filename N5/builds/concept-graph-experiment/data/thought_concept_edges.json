@@ -1,0 +1,1249 @@
+{
+  "edges": [
+    {
+      "thought_id": "ai-implementation-should-elevate-human-experts-hig",
+      "concept_id": "ai-commoditization",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "ai-implementation-should-elevate-human-experts-hig",
+      "concept_id": "problem-stack",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "ai-implementation-should-elevate-human-experts-hig",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "ai-interfaces-that-mimic-human-social-bids-create",
+      "concept_id": "friction-as-filter",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "ai-interfaces-that-mimic-human-social-bids-create",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "ai-interfaces-that-mimic-human-social-bids-create",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "ai-interfaces-that-mimic-human-social-bids-create",
+      "concept_id": "platform-shift",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "ai-makes-individuals-as-effective-as-teams",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "ai-shifts-experts-higher-in-the-problem-stack",
+      "concept_id": "ai-commoditization",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "ai-shifts-experts-higher-in-the-problem-stack",
+      "concept_id": "problem-stack",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "ai-shifts-experts-higher-in-the-problem-stack",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "ais-primary-role-in-professional-services-should-b",
+      "concept_id": "ai-commoditization",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "ais-primary-role-in-professional-services-should-b",
+      "concept_id": "problem-stack",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "ais-primary-role-in-professional-services-should-b",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "ais-primary-value-is-in-shifting-human-experts",
+      "concept_id": "ai-commoditization",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "ais-primary-value-is-in-shifting-human-experts",
+      "concept_id": "problem-stack",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "ais-primary-value-is-in-shifting-human-experts",
+      "concept_id": "geometric-distance",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "ais-primary-value-is-in-shifting-human-experts",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "as-ai-commoditizes-content-generation-input-system",
+      "concept_id": "ai-commoditization",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "as-generative-ai-commoditizes-highquality-output-t",
+      "concept_id": "ai-commoditization",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "as-generative-ai-commoditizes-highquality-output-t",
+      "concept_id": "problem-stack",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "as-generative-ai-commoditizes-highquality-output-t",
+      "concept_id": "assessment-validity",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "building-sophisticated-outputs-by-orchestrating-mu",
+      "concept_id": "orchestration",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "current-ai-implementations-often-create-an-informa",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "current-ai-implementations-often-create-an-informa",
+      "concept_id": "information-asymmetry",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "generic-ai-usage-is-detectable-and-disqualifying",
+      "concept_id": "ai-commoditization",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "highintelligence-outputs-are-more-reliably-achieve",
+      "concept_id": "orchestration",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "intelligent-and-resilient-system-behavior-is-bette",
+      "concept_id": "orchestration",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "soft-skills-become-more-valuable-in-ai-world",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "soft-skills-become-more-valuable-in-ai-world",
+      "concept_id": "problem-stack",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "soft-skills-become-more-valuable-in-ai-world",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "technical-resilience-in-ai-systems-is-best-achieve",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "technical-resilience-in-ai-systems-is-best-achieve",
+      "concept_id": "orchestration",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-current-paradigm-of-ai-automation-often-result",
+      "concept_id": "ai-commoditization",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "the-current-paradigm-of-ai-automation-often-result",
+      "concept_id": "information-asymmetry",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "the-efficacy-of-automated-agents-like-habittrackin",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-efficacy-of-automated-agents-like-habittrackin",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "the-efficacy-of-automated-agents-like-habittrackin",
+      "concept_id": "platform-shift",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "the-efficacy-of-automated-habit-tracking-systems-i",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-efficacy-of-automated-habit-tracking-systems-i",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "the-efficacy-of-automated-habit-tracking-systems-i",
+      "concept_id": "platform-shift",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "vibe-coding-functions-as-a-powerful-identity-bridg",
+      "concept_id": "narrative-identity",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "vibe-coding-should-be-positioned-as-a-strategic",
+      "concept_id": "narrative-identity",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "a-sustainable-job-search-requires-a-dietary-balanc",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "career-development-tools-must-solve-for-the-inerti",
+      "concept_id": "self-knowledge",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "career-development-tools-must-solve-for-the-inerti",
+      "concept_id": "platform-shift",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "career-mobility-is-governed-by-a-geometric-distanc",
+      "concept_id": "friction-as-filter",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "career-mobility-is-governed-by-a-geometric-distanc",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "career-mobility-is-governed-by-a-geometric-distanc",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "career-mobility-is-governed-by-a-geometric-distanc",
+      "concept_id": "geometric-distance",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+      "concept_id": "bundled-tradeoffs",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "human-data-signal-density",
+      "concept_id": "signal-decay",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "human-data-signal-density",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "human-data-signal-density",
+      "concept_id": "information-asymmetry",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "human-data-signal-density",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "identity-in-the-labor-market-is-semantic-not",
+      "concept_id": "narrative-identity",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "in-the-ai-era-the-matching-component-of",
+      "concept_id": "ai-commoditization",
+      "strength": 0.6
+    },
+    {
+      "thought_id": "job-seeking-and-hiring-should-be-viewed-as",
+      "concept_id": "moonshot-growth",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "maintaining-a-state-of-constant-readiness-via-aica",
+      "concept_id": "signal-decay",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "maintaining-a-state-of-constant-readiness-via-aica",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "maintaining-a-state-of-constant-readiness-via-aica",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "maintaining-a-state-of-constant-readiness-via-aica",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "maintaining-a-state-of-constant-readiness-via-aica",
+      "concept_id": "portable-trust",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "maintaining-a-state-of-constant-readiness-via-aica",
+      "concept_id": "scar-tissue-institutions",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "maintaining-a-strict-separation-between-candidatef",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "market-fundability-and-professional-acceptability-",
+      "concept_id": "geometric-distance",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "professional-identity-is-narrative-not-document",
+      "concept_id": "narrative-identity",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "self-reflection-is-subject-to-a-high-activation-en",
+      "concept_id": "friction-as-filter",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "self-reflection-is-subject-to-a-high-activation-en",
+      "concept_id": "self-knowledge",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "self-reflection-is-subject-to-a-high-activation-en",
+      "concept_id": "platform-shift",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "concept_id": "restraint-discipline",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "the-future-of-hiring-shifts-from-a-transactional",
+      "concept_id": "trust-networks",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-future-of-hiring-shifts-from-a-transactional",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "the-future-of-hiring-shifts-from-a-transactional",
+      "concept_id": "problem-stack",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "the-future-of-recruitment-lies-in-democratizing-th",
+      "concept_id": "information-asymmetry",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-most-effective-way-to-disrupt-recruitment-is",
+      "concept_id": "information-asymmetry",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-strategic-value-in-the-labor-market-is",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-strategic-value-in-the-labor-market-is",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "the-strategic-value-in-the-labor-market-is",
+      "concept_id": "assessment-validity",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "there-is-a-strategic-advantage-in-decoupling-human",
+      "concept_id": "assessment-validity",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "there-is-a-strategic-advantage-in-decoupling-human",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "cognitive-bootstrapping-via-test-preparation",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "cognitive-bootstrapping-via-test-preparation",
+      "concept_id": "portable-trust",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "assessment-signal-validity-framework",
+      "concept_id": "signal-decay",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "assessment-signal-validity-framework",
+      "concept_id": "information-asymmetry",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "assessment-signal-validity-framework",
+      "concept_id": "assessment-validity",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "assessment-signal-validity-framework",
+      "concept_id": "platform-shift",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "information-engineering-distinction",
+      "concept_id": "information-asymmetry",
+      "strength": 0.6
+    },
+    {
+      "thought_id": "information-engineering-distinction",
+      "concept_id": "restraint-discipline",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "polyorchestrator-model",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "polyorchestrator-model",
+      "concept_id": "orchestration",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "printing-press-parallel",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "printing-press-parallel",
+      "concept_id": "information-asymmetry",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "printing-press-parallel",
+      "concept_id": "scar-tissue-institutions",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "sliding-knowledge-threshold",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "sliding-knowledge-threshold",
+      "concept_id": "minimum-viable-existence",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "vectorized-merit-selection-as-bundle-matching-not-",
+      "concept_id": "assessment-validity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "vectorized-merit-selection-as-bundle-matching-not-",
+      "concept_id": "bundled-tradeoffs",
+      "strength": 0.8
+    },
+    {
+      "thought_id": "nontechnical-founders-can-build-with-ai",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "selling-a-manual-methodology-as-finished-software",
+      "concept_id": "moonshot-growth",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-developmental-value-of-a-highdifficulty-moonsh",
+      "concept_id": "moonshot-growth",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "a-candidates-primary-task-is-to-artificially-close",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+      "concept_id": "signal-decay",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+      "concept_id": "friction-as-filter",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "a-candidates-willingness-to-engage-in-higheffort-r",
+      "concept_id": "assessment-validity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "ai-has-reduced-the-marginal-cost-of-bs-to-zero",
+      "concept_id": "ai-commoditization",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "aidriven-automation-of-application-materials-effec",
+      "concept_id": "signal-decay",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "aidriven-automation-of-application-materials-effec",
+      "concept_id": "ai-commoditization",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "aidriven-automation-of-application-materials-effec",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "autoapply-is-mutually-assured-destruction",
+      "concept_id": "friction-as-filter",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "autoapply-is-mutually-assured-destruction",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "autoapply-is-mutually-assured-destruction",
+      "concept_id": "adversarial-dynamics",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "autoapply-is-mutually-assured-destruction",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "autoapply-tools-are-career-selfsabotage",
+      "concept_id": "restraint-discipline",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "confidence-over-quality-scores",
+      "concept_id": "assessment-validity",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "data-collected-about-a-candidate-independent-of-a",
+      "concept_id": "information-asymmetry",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "data-collected-about-a-candidate-independent-of-a",
+      "concept_id": "problem-stack",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "data-collected-independent-of-a-specific-job-appli",
+      "concept_id": "information-asymmetry",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "data-collected-independent-of-a-specific-job-appli",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "employer-oblige",
+      "concept_id": "adversarial-dynamics",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "for-mid-career-specialists-the-higher-financial-al",
+      "concept_id": "problem-stack",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "friction-economics-scalable-vs-linear",
+      "concept_id": "friction-as-filter",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "hiring-signal-collapse",
+      "concept_id": "signal-decay",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "hiring-signal-collapse",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "hiring-signal-collapse",
+      "concept_id": "bundled-tradeoffs",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "hiring-stage-taxonomy",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "hiring-stage-taxonomy",
+      "concept_id": "assessment-validity",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "hiring-should-be-viewed-as-an-exercise-in",
+      "concept_id": "bundled-tradeoffs",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "in-a-career-pivot-a-candidates-primary-objective",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "in-a-career-pivot-a-candidates-primary-objective",
+      "concept_id": "geometric-distance",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "in-an-ai-augmented-landscape-the-transition-from-h",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "in-an-ai-augmented-landscape-the-transition-from-h",
+      "concept_id": "geometric-distance",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "in-an-ai-augmented-landscape-the-transition-from-h",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "in-the-ai-era-the-decision-to-hire",
+      "concept_id": "signal-decay",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "in-the-ai-era-the-decision-to-hire",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "in-the-ai-era-the-decision-to-hire",
+      "concept_id": "information-asymmetry",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "in-the-ai-era-the-decision-to-hire",
+      "concept_id": "geometric-distance",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "in-the-ai-era-the-decision-to-hire",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "inbound-resurrection-through-friction",
+      "concept_id": "friction-as-filter",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "inbound-resurrection-through-friction",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "most-job-descriptions-are-bs-that-wastes-everyones",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "networking-is-strategic-investment-not-numbers-gam",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "networking-is-strategic-investment-not-numbers-gam",
+      "concept_id": "restraint-discipline",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "non-adversarial-hiring-top-tier",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "non-adversarial-hiring-top-tier",
+      "concept_id": "adversarial-dynamics",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "portable-trust",
+      "concept_id": "signal-decay",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "portable-trust",
+      "concept_id": "trust-networks",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "portable-trust",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "portable-trust",
+      "concept_id": "assessment-validity",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "portable-trust",
+      "concept_id": "portable-trust",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "referrals-are-the-only-reliable-path-in-competitiv",
+      "concept_id": "trust-networks",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "self-advocacy-public-good",
+      "concept_id": "self-knowledge",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "selfknowledge-deficit",
+      "concept_id": "self-knowledge",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "resume-industrial-complex",
+      "concept_id": "bundled-tradeoffs",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-act-of-participating-in-a-highfriction-higheff",
+      "concept_id": "friction-as-filter",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "the-act-of-participating-in-a-highfriction-higheff",
+      "concept_id": "assessment-validity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-most-effective-path-to-reducing-hiring-bias",
+      "concept_id": "adversarial-dynamics",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-recruitment-market-is-systematically-inefficie",
+      "concept_id": "signal-decay",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-recruitment-market-is-systematically-inefficie",
+      "concept_id": "information-asymmetry",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-rise-of-ai-generated-applications-is-making-tr",
+      "concept_id": "signal-decay",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "the-rise-of-ai-generated-applications-is-making-tr",
+      "concept_id": "ai-commoditization",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-rise-of-ai-generated-applications-is-making-tr",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "concept_id": "friction-as-filter",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "concept_id": "self-knowledge",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "concept_id": "ai-commoditization",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "concept_id": "ai-commoditization",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "concept_id": "signal-decay",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "concept_id": "friction-as-filter",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "concept_id": "self-knowledge",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "concept_id": "information-asymmetry",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-with",
+      "concept_id": "signal-decay",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-with",
+      "concept_id": "friction-as-filter",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-with",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-with",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-with",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "the-willingness-of-a-candidate-to-engage-with",
+      "concept_id": "assessment-validity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "transforming-the-hiring-process-from-an-adversaria",
+      "concept_id": "adversarial-dynamics",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "truth-in-human-assessment-is-found-at-the",
+      "concept_id": "self-knowledge",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "truth-in-human-assessment-is-found-at-the",
+      "concept_id": "assessment-validity",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "truth-in-human-assessment-is-found-at-the",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "truth-in-professional-assessment-is-found-at-the",
+      "concept_id": "self-knowledge",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "truth-in-professional-assessment-is-found-at-the",
+      "concept_id": "assessment-validity",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "while-seedstage-startups-offer-higher-theoretical-",
+      "concept_id": "problem-stack",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "energy-management-is-the-most-underrated-job-searc",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "energy-management-is-the-most-underrated-job-searc",
+      "concept_id": "assessment-validity",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "energy-management-is-the-most-underrated-job-searc",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "integrity-gap-as-scaling-risk",
+      "concept_id": "signal-decay",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "integrity-gap-as-scaling-risk",
+      "concept_id": "moonshot-growth",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "integrity-gap-as-scaling-risk",
+      "concept_id": "restraint-discipline",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "selfawareness-enables-strategic-career-pivots",
+      "concept_id": "self-knowledge",
+      "strength": 0.7
+    },
+    {
+      "thought_id": "selfawareness-enables-strategic-career-pivots",
+      "concept_id": "geometric-distance",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "a-truly-effective-productivity-tool-functions-as-a-2025-12-26",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "complexity-often-obscures-the-most-essential-compo",
+      "concept_id": "signal-decay",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "data-companies-that-lack-a-proprietary-acquisition",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "data-companies-that-lack-a-proprietary-acquisition",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "death-of-the-okay-life",
+      "concept_id": "minimum-viable-existence",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "dominant-parallel-institutions-are-often-the-scar",
+      "concept_id": "scar-tissue-institutions",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "employers-created-the-trust-crisis-they-now-face",
+      "concept_id": "signal-decay",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "employers-created-the-trust-crisis-they-now-face",
+      "concept_id": "friction-as-filter",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "employers-created-the-trust-crisis-they-now-face",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "employers-created-the-trust-crisis-they-now-face",
+      "concept_id": "information-asymmetry",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "employers-created-the-trust-crisis-they-now-face",
+      "concept_id": "portable-trust",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "genre-shift-and-fractal-contribution",
+      "concept_id": "problem-stack",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "genre-shift-and-fractal-contribution",
+      "concept_id": "minimum-viable-existence",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "integrity-and-character-are-best-verified-through-",
+      "concept_id": "narrative-identity",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "internal-self-assessment-systematically-lags-exter",
+      "concept_id": "signal-decay",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "internal-self-assessment-systematically-lags-exter",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "internal-self-assessment-systematically-lags-exter",
+      "concept_id": "problem-stack",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "internal-self-assessment-systematically-lags-exter",
+      "concept_id": "assessment-validity",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "linkedin-s-shift-in-focus-from-a-professional-util",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "linkedin-s-shift-in-focus-from-a-professional-util",
+      "concept_id": "problem-stack",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "linkedin-s-shift-in-focus-from-a-professional-util",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "linkedin-s-shift-in-focus-from-a-professional-util",
+      "concept_id": "platform-shift",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "long-term-physiological-growth-is-often-sabotaged",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "long-term-physiological-growth-is-often-sabotaged",
+      "concept_id": "moonshot-growth",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "long-term-physiological-growth-is-often-sabotaged",
+      "concept_id": "restraint-discipline",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "niche-platforms-will-displace-generalist-social-ne",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "niche-platforms-will-displace-generalist-social-ne",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "niche-platforms-will-displace-generalist-social-ne",
+      "concept_id": "platform-shift",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "optimal-longterm-physiological-and-skill-growth-re",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "optimal-longterm-physiological-and-skill-growth-re",
+      "concept_id": "moonshot-growth",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "optimal-longterm-physiological-and-skill-growth-re",
+      "concept_id": "restraint-discipline",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "professional-identity-is-semantic-rather-than-synt-20251226_C",
+      "concept_id": "narrative-identity",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "proprietary-data-sourcing-is-the-only-sustainable",
+      "concept_id": "ai-commoditization",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "proprietary-data-sourcing-is-the-only-sustainable",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "rationality-of-lowtrust-moonshots",
+      "concept_id": "trust-networks",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "rationality-of-lowtrust-moonshots",
+      "concept_id": "moonshot-growth",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "rationality-of-lowtrust-moonshots",
+      "concept_id": "portable-trust",
+      "strength": 0.4
+    },
+    {
+      "thought_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "concept_id": "trust-networks",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "concept_id": "orchestration",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "concept_id": "portable-trust",
+      "strength": 1.0
+    },
+    {
+      "thought_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "concept_id": "platform-shift",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "concept_id": "scar-tissue-institutions",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "social-accountability-in-digital-products-is-signi",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "systemic-dominance-in-specific-industries-is-often",
+      "concept_id": "scar-tissue-institutions",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "the-internet-of-careers-functions-as-a-collective",
+      "concept_id": "information-asymmetry",
+      "strength": 0.5
+    },
+    {
+      "thought_id": "the-internet-of-careers-functions-as-a-collective",
+      "concept_id": "anthropomorphic-engagement",
+      "strength": 0.3
+    },
+    {
+      "thought_id": "the-growth-dividends-of-a-moonshot-attempteven-one",
+      "concept_id": "ai-commoditization",
+      "strength": 0.2
+    },
+    {
+      "thought_id": "the-growth-dividends-of-a-moonshot-attempteven-one",
+      "concept_id": "moonshot-growth",
+      "strength": 0.9
+    },
+    {
+      "thought_id": "the-internal-growth-derived-from-pursuing-a-highri",
+      "concept_id": "moonshot-growth",
+      "strength": 1.0
+    }
+  ]
+}

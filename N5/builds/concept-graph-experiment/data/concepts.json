@@ -1,0 +1,202 @@
+{
+  "concepts": [
+    {
+      "id": "ai-commoditization",
+      "label": "AI Commoditization",
+      "description": "How AI reduces the cost and differentiation of previously valuable outputs",
+      "thought_count": 48,
+      "domains": [
+        "ai-automation",
+        "hiring-market"
+      ]
+    },
+    {
+      "id": "information-asymmetry",
+      "label": "Information Asymmetry",
+      "description": "Imbalances in information access that create market advantages or failures",
+      "thought_count": 26,
+      "domains": [
+        "hiring-market",
+        "careerspan",
+        "worldview"
+      ]
+    },
+    {
+      "id": "problem-stack",
+      "label": "Problem Stack Elevation",
+      "description": "Moving humans to higher-level problems while AI handles lower levels",
+      "thought_count": 19,
+      "domains": [
+        "ai-automation"
+      ]
+    },
+    {
+      "id": "anthropomorphic-engagement",
+      "label": "Anthropomorphic Engagement",
+      "description": "Human-like interfaces that drive behavior change through social dynamics",
+      "thought_count": 19,
+      "domains": [
+        "ai-automation",
+        "worldview"
+      ]
+    },
+    {
+      "id": "signal-decay",
+      "label": "Signal Decay",
+      "description": "The degradation of meaningful information in systems over time or through noise",
+      "thought_count": 16,
+      "domains": [
+        "hiring-market",
+        "ai-automation"
+      ]
+    },
+    {
+      "id": "assessment-validity",
+      "label": "Assessment Validity",
+      "description": "What makes evaluation signals trustworthy and meaningful",
+      "thought_count": 15,
+      "domains": [
+        "hiring-market",
+        "epistemology"
+      ]
+    },
+    {
+      "id": "friction-as-filter",
+      "label": "Friction as Filter",
+      "description": "Intentional effort barriers that separate high-quality from low-quality actors",
+      "thought_count": 12,
+      "domains": [
+        "hiring-market",
+        "careerspan"
+      ]
+    },
+    {
+      "id": "narrative-identity",
+      "label": "Narrative Identity",
+      "description": "Professional identity as constructed through stories rather than documents",
+      "thought_count": 12,
+      "domains": [
+        "careerspan",
+        "worldview",
+        "hiring-market"
+      ]
+    },
+    {
+      "id": "trust-networks",
+      "label": "Trust Networks",
+      "description": "Systems of relationship-based credibility and referral",
+      "thought_count": 11,
+      "domains": [
+        "hiring-market",
+        "careerspan",
+        "worldview"
+      ]
+    },
+    {
+      "id": "self-knowledge",
+      "label": "Self-Knowledge",
+      "description": "The importance of deep self-understanding for professional effectiveness",
+      "thought_count": 9,
+      "domains": [
+        "careerspan",
+        "personal-foundations",
+        "hiring-market"
+      ]
+    },
+    {
+      "id": "moonshot-growth",
+      "label": "Moonshot Growth",
+      "description": "The developmental value of high-risk, high-ambition endeavors",
+      "thought_count": 9,
+      "domains": [
+        "worldview",
+        "founder"
+      ]
+    },
+    {
+      "id": "platform-shift",
+      "label": "Platform Shift",
+      "description": "Transitions in how platforms create and capture value",
+      "thought_count": 9,
+      "domains": [
+        "worldview"
+      ]
+    },
+    {
+      "id": "geometric-distance",
+      "label": "Career Mobility Distance",
+      "description": "The measurable gap between current position and target role",
+      "thought_count": 7,
+      "domains": [
+        "careerspan"
+      ]
+    },
+    {
+      "id": "restraint-discipline",
+      "label": "Disciplined Restraint",
+      "description": "Long-term growth through intentional underperformance",
+      "thought_count": 7,
+      "domains": [
+        "worldview",
+        "personal-foundations"
+      ]
+    },
+    {
+      "id": "orchestration",
+      "label": "Orchestration",
+      "description": "Achieving complex outcomes through coordination of simpler components",
+      "thought_count": 6,
+      "domains": [
+        "ai-automation",
+        "epistemology"
+      ]
+    },
+    {
+      "id": "portable-trust",
+      "label": "Portable Trust",
+      "description": "Mechanisms for transferring credibility across contexts",
+      "thought_count": 6,
+      "domains": [
+        "careerspan",
+        "hiring-market"
+      ]
+    },
+    {
+      "id": "adversarial-dynamics",
+      "label": "Adversarial Dynamics",
+      "description": "Zero-sum competition and its alternatives in hiring/career systems",
+      "thought_count": 5,
+      "domains": [
+        "hiring-market"
+      ]
+    },
+    {
+      "id": "bundled-tradeoffs",
+      "label": "Bundled Tradeoffs",
+      "description": "Hiring as optimization across skill bundles rather than linear ranking",
+      "thought_count": 5,
+      "domains": [
+        "hiring-market",
+        "careerspan"
+      ]
+    },
+    {
+      "id": "scar-tissue-institutions",
+      "label": "Institutional Scar Tissue",
+      "description": "How parallel institutions emerge from historical exclusion",
+      "thought_count": 5,
+      "domains": [
+        "worldview"
+      ]
+    },
+    {
+      "id": "minimum-viable-existence",
+      "label": "Minimum Viable Existence",
+      "description": "The declining accessibility of stable middle-class life",
+      "thought_count": 3,
+      "domains": [
+        "worldview"
+      ]
+    }
+  ]
+}

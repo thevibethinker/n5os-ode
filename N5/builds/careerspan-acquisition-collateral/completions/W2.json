@@ -2,16 +2,9 @@
   "worker_id": "W2",
   "status": "complete",
   "output_file": "/home/workspace/Documents/Careerspan/internal_positioning_sourcing_tool.md",
-  "summary": "Built strategic positioning for Careerspan as a talent sourcing engine. Core argument enhanced with 46% hiring failure stat (90% soft-skill mismatches), internal talent angle, Marvin Ventures partnership, and zero marketing spend PMF signal. Emphasized human-first UX producing HR-grade data, and coaching capturing what reviews miss.",
-  "key_insight": "The 46% hiring failure rate (90% soft-skill mismatch) proves the resume-based sourcing paradigm is fundamentally broken. Careerspan's coaching approach captures exactly what resumes miss—values, mindset, and soft skills—while the community embedding model provides access competitors cannot buy.",
-  "changes_v1.1": [
-    "Added 46% hiring failure stat and 90% soft-skill mismatch framing to Section 2",
-    "Added 'untapped internal talent' angle with manager-as-talent-spotter problem",
-    "Enhanced Section 3.2 with 'human-first yet detailed' differentiator",
-    "Added 'coaching captures what reviews miss' (response to challenge, self-awareness trajectory, ambition-action gap)",
-    "Added Marvin Ventures partnership to proof points",
-    "Added zero marketing spend as PMF signal",
-    "Removed GPT-4 reference, updated to 'production multi-agent AI architecture'"
-  ],
-  "timestamp": "2026-01-19T09:52:00-05:00"
+  "summary": "Built strategic positioning for Careerspan as a talent sourcing engine. Core argument: 46% of hires fail (90% soft-skill mismatches) because resumes don't capture what matters. Careerspan solves this via community embedding (access) + coaching-based signal capture (depth). Added Marvin Ventures partnership and zero marketing spend as proof points.",
+  "key_insight": "LinkedIn could acquire this capability but cannot build it—they ARE the recruiter that communities distrust. Careerspan's coaching-first DNA is the moat.",
+  "version": "1.2",
+  "changes_from_feedback": "Removed internal mobility angle (v1.1 overcorrection). Document now purely focused on external talent sourcing. Kept all relevant new facts (46%/90% stat, Marvin Ventures, zero marketing, human-first/detailed signal capture) but applied them strictly to the sourcing argument.",
+  "timestamp": "2026-01-19T10:25:00-05:00"
 }

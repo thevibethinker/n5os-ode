@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "build_slug": "mindmap-concept-migration",
+  "created": "2026-01-19",
+  "purpose": "Cross-worker insights and lessons (append-only)",
+  "entries": [
+    {
+      "timestamp": "2026-01-19T16:49:07.622106",
+      "source": "W2.1",
+      "message": "ForceGraph2D d3Force configuration requires importing d3-force and using fg.d3Force() after graph mounts via useEffect. Key insight: heterogeneous node types need per-node charge/collision calculations, not global settings."
+    },
+    {
+      "timestamp": "2026-01-19T16:49:12.996820",
+      "source": "W2.1",
+      "message": "When filtering heterogeneous graph data, concepts have 'domains' (array) while thoughts have 'domain' (string) - filtering logic must handle both cases explicitly with type checks."
+    },
+    {
+      "timestamp": "2026-01-19T16:54:54.894467",
+      "source": "W2.1",
+      "message": "When using force-graph with data that has pre-set fx/fy positions, you MUST clear them if you want dynamic layout. Otherwise nodes with fixed positions anchor the simulation and unfixed nodes cluster at origin."
+    },
+    {
+      "timestamp": "2026-01-19T16:58:43.501415",
+      "source": "W2.1",
+      "message": "When thoughts connect to multiple concepts, they create indirect pulling between concepts via the link force. A radial force explicitly pushing concepts outward (strength 0.8, radius 250) is more effective than relying on charge repulsion alone."
+    },
+    {
+      "timestamp": "2026-01-19T17:04:37.918837",
+      "source": "W2.1",
+      "message": "Physics-only force layouts CANNOT distribute hub nodes when leaf nodes connect to multiple hubs. The link forces pull hubs together through shared leaves. Solution: PIN hubs using fx/fy and only let leaves move."
+    },
+    {
+      "timestamp": "2026-01-19T17:13:40.148036",
+      "source": "W2.2",
+      "message": "Dynamic centering pattern: zoomToFit alone may not properly center the graph. Use zoomToFit followed by centerAt(centroidX, centroidY) after a timeout (450ms) for reliable centering. Calculate centroid from all nodes with valid x/y coordinates."
+    },
+    {
+      "timestamp": "2026-01-19T17:20:19.111038",
+      "source": "W2.2",
+      "message": "Edge-to-edge canvas requires: (1) dimensionsRef to track viewport at data-fetch time, (2) responsive grid spacing calculated from dimensionsRef.current.width/height * 0.85, (3) zoomToFit with padding 0 (not 5 or 10). All three zoomToFit calls must use padding 0."
+    }
+  ]
+}

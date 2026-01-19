@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Graph Experiment</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Concept Graph Experiment</h1>
+            <p class="subtitle">Heterogeneous node architecture: Thoughts → Concepts</p>
+        </header>
+        
+        <div id="controls">
+            <div class="control-group">
+                <label>Show:</label>
+                <button id="show-all" class="active">All</button>
+                <button id="show-concepts">Concepts Only</button>
+            </div>
+            <div class="control-group">
+                <label>Filter Domain:</label>
+                <select id="domain-filter">
+                    <option value="all">All Domains</option>
+                </select>
+            </div>
+            <div class="stats" id="stats"></div>
+        </div>
+        
+        <div id="main">
+            <div id="graph-container">
+                <svg id="graph"></svg>
+            </div>
+            
+            <div id="sidebar">
+                <div id="detail-panel">
+                    <h2>Click a node to explore</h2>
+                    <p class="hint">
+                        <strong>Diamonds</strong> = Concepts (abstractions)<br>
+                        <strong>Circles</strong> = Thoughts (your positions)
+                    </p>
+                    <div id="legend">
+                        <h3>Legend</h3>
+                        <div class="legend-item">
+                            <span class="legend-shape diamond" style="background: #fbbf24;"></span>
+                            <span>Concept</span>
+                        </div>
+                        <div id="domain-legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="graph.js"></script>
+</body>
+</html>
