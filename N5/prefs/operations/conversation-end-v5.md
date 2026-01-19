@@ -1,13 +1,15 @@
 ---
 created: 2025-12-18
 last_edited: 2026-01-19
-version: 5.1
+version: 5.5
 provenance: con_eo8MNWLCgK7vjgUX
+related: Prompts/Close Conversation.prompt.md
 ---
 
-# Conversation-End System v5.1
+# Conversation-End System v5.5
 
 > **Single Source of Truth** for conversation closure workflow.
+> Executable prompt: `file 'Prompts/Close Conversation.prompt.md'`
 
 ## Overview
 
@@ -124,6 +126,8 @@ For normal threads (📌) and orchestrators (🐙).
 ---
 
 ## Knowledge Capture (Tier 2+)
+
+**⚠️ PROACTIVE SCANNING REQUIRED** — This step was being skipped too often. Always scan, even if you don't expect to find anything.
 
 Conversations often produce artifacts and insights worth preserving beyond the conversation itself. At close, actively scan for:
 
@@ -263,6 +267,7 @@ Or via prompt: `@Close Conversation`
 
 ## Version History
 
+- **v5.5** (2026-01-19): Added emphasis on proactive scanning for knowledge capture. Synced with prompt v5.5.
 - **v5.1** (2026-01-19): Knowledge Capture section — position extraction to positions.db + Content Library ingest hook at conversation-end. Detection heuristics and offer-based flow.
 - **v5.0** (2026-01-15): Two-mode system. Worker Close (partial) vs Full Close. Workers defer commits. 3-slot emoji required. [Parent-Topic] greppable tags.
 - **v4.0** (2026-01-12): AAR generation owned by Librarian
