@@ -313,6 +313,32 @@ Before marking project complete:
 
 ---
 
+## Single-Thread Builds (No Workers)
+
+Some builds are small enough that Architect executes directly without spawning workers. These still require proper closure.
+
+**When to use single-thread:**
+- Scope is < 5 files created/modified
+- No parallel work possible
+- Estimated execution < 30 minutes
+- Low risk / reversible changes
+
+**Single-thread execution flow:**
+1. Create build folder via `init_build.py`
+2. Create PLAN.md with checklist
+3. Execute work directly (no worker briefs needed)
+4. Check off items in PLAN.md as completed
+5. **CRITICAL: Close the build when done:**
+   ```bash
+   python3 N5/scripts/update_build.py close <slug>
+   ```
+
+**Common failure mode:** Architect completes the work but forgets to run `update_build.py close`, leaving the build in "draft" status forever.
+
+**Prevention:** The Architect persona must call `update_build.py close` at the end of any single-thread build, or explicitly note in PLAN.md if work is deferred.
+
+---
+
 ## Templates
 
 ### Worker Brief Template

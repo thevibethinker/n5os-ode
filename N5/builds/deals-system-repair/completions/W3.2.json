@@ -1,0 +1,22 @@
+{
+  "worker_id": "W3.2",
+  "status": "complete",
+  "changes": {
+    "deals_created": ["cs-acq-calendly", "cs-acq-futurefit"],
+    "deals_deleted": ["cs-lead-calendly"],
+    "contacts_updated": ["lead-ivorstratford", "broker-vir", "broker-ray", "broker-jefferybot"]
+  },
+  "verification": "All local database queries pass. Summary: 53 careerspan_acquirer (up from 51), 21 leadership (down from 22). Calendly now shows as engaged hot acquirer with Tope Awotona. Future Fit exists with Hamoon as contact.",
+  "blockers": [],
+  "acceptance_criteria": {
+    "jeffrey_botteron_name_local": "PASS - Updated to 'Jeffrey Botteron' in deal_contacts",
+    "jeffrey_botteron_name_notion": "PASS - Updated to 'Jeffrey Botteron' via Pipedream",
+    "calendly_is_acquirer": "PASS - cs-acq-calendly exists with deal_type=careerspan_acquirer, primary_contact=Tope Awotona",
+    "no_cs_lead_calendly": "PASS - Deleted",
+    "ivor_angle_strategy": "PASS - 'Handshake intro offered'",
+    "vir_angle_strategy": "PASS - 'Handshake'",
+    "ray_angle_strategy": "PASS - 'Calendly, Future Fit advisory' per brief",
+    "future_fit_deal_exists": "PASS - cs-acq-futurefit with Hamoon as contact"
+  },
+  "completed_at": "2026-01-19T03:40:00-05:00"
+}

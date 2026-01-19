@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zo.computer/schemas/B00_ZO_TAKE_HEED.schema.json",
+  "title": "B00 Zo Take Heed Entry",
+  "description": "Schema for a single Zo Take Heed cue extracted from meeting transcript",
+  "type": "object",
+  "required": ["id", "instruction", "task_type", "execution_policy"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ZTH-(REJECTED-)?[0-9]{3}$",
+      "description": "Sequential identifier (ZTH-001, ZTH-002, or ZTH-REJECTED-001 for rejected cues)"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "Transcript timestamp (HH:MM:SS) or position indicator (early/mid/late)"
+    },
+    "speaker": {
+      "type": "string",
+      "description": "Speaker who said the cue (must be V/Vrijen for valid cues)"
+    },
+    "raw_cue": {
+      "type": "string",
+      "description": "Exact text including trigger phrase"
+    },
+    "instruction": {
+      "type": "string",
+      "description": "Cleaned instruction without trigger phrase"
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "directive",
+        "blurb",
+        "follow_up_email",
+        "warm_intro",
+        "research",
+        "list_add",
+        "deal_add",
+        "deal_update",
+        "crm_contact",
+        "intro_lead",
+        "custom"
+      ],
+      "description": "Classified task type"
+    },
+    "execution_policy": {
+      "type": "string",
+      "enum": ["inline", "auto_execute", "queue"],
+      "description": "How this cue should be processed"
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Which outputs this cue affects (e.g., ['B01', 'B14'] or ['follow_up_email'])"
+    },
+    "context": {
+      "type": "string",
+      "description": "Brief context from surrounding transcript"
+    },
+    "additional_params": {
+      "type": "object",
+      "description": "Task-specific parameters (e.g., recipient_hint for warm_intro)",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "applied", "executed", "queued", "failed"],
+      "default": "pending",
+      "description": "Processing status (updated by pipeline)"
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "id": "ZTH-001",
+      "timestamp": "00:14:32",
+      "raw_cue": "Zo take heed, omit the pricing from the recap",
+      "instruction": "omit the pricing from the recap",
+      "task_type": "directive",
+      "execution_policy": "inline",
+      "scope": ["B01", "B14"],
+      "context": "During pricing discussion",
+      "additional_params": {}
+    },
+    {
+      "id": "ZTH-002",
+      "timestamp": "00:45:00",
+      "raw_cue": "Zo take heed, prep a follow-up email emphasizing integration",
+      "instruction": "prep a follow-up email emphasizing integration",
+      "task_type": "follow_up_email",
+      "execution_policy": "auto_execute",
+      "scope": ["follow_up_email"],
+      "context": "Meeting wrap-up",
+      "additional_params": {"recipient_hint": "attendees"}
+    }
+  ]
+}

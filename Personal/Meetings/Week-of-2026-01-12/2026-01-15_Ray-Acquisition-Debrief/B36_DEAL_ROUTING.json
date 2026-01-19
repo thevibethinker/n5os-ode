@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-01-19T08:20:00.000Z",
+  "meeting_name": "2026-01-15_Ray-Acquisition-Debrief",
+  "zo_relevance_score": 0.15,
+  "careerspan_relevance_score": 0.95,
+  "zo_reasoning": "Meeting mentions Hearth (Ray's company) but no active Zo partnership discussion. Minor mention of relationship building context.",
+  "careerspan_reasoning": "Core meeting topic is Careerspan acquisition strategy. Ray provides M&A advisory from direct experience. Multiple potential acquirers discussed including Calendly and Future Fit. High strategic value for acquisition process.",
+  "companies_mentioned": [
+    {
+      "name": "Calendly",
+      "match_to_deal_id": "calendly-leadership",
+      "context": "Potential acquirer - V meeting founder (Tope Awotona) on Friday"
+    },
+    {
+      "name": "Future Fit",
+      "match_to_deal_id": null,
+      "context": "Mission-aligned potential acquirer, expressed interest"
+    },
+    {
+      "name": "Hearth",
+      "match_to_deal_id": null,
+      "context": "Ray's company - context only, not a deal"
+    }
+  ],
+  "recommended_deal_links": ["calendly-leadership"],
+  "create_new_deals": [
+    {
+      "company": "Future Fit",
+      "deal_type": "careerspan_acquirer",
+      "confidence": 0.88,
+      "rationale": "Expressed acquisition interest in Careerspan, mission-aligned. V mentioned they 'spoke briefly and was interested'"
+    }
+  ],
+  "summary": "Strategic M&A advisory meeting with Ray (Hearth founder) about selling Careerspan. Calendly and Future Fit identified as active acquisition conversations. High Careerspan pipeline relevance.",
+  "routing_classification": "careerspan_acquisition_intel"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "slug": "broker-detection",
+  "title": "Broker Detection & Sync in Deal Intelligence",
+  "objective": null,
+  "created": "2026-01-19",
+  "status": "complete",
+  "completed_at": "2026-01-19T08:41:15+00:00",
+  "type": "general",
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}
