@@ -1,0 +1,224 @@
+{
+  "worker_id": "W1.2",
+  "build_slug": "content-library-v5",
+  "completed_at": "2026-01-18T21:12:00-05:00",
+  "status": "complete",
+
+  "schema_findings": {
+    "current_table": "items",
+    "total_rows": 177,
+    "content_types_in_use": ["article", "inspiration", "link", "snippet", "social-post"],
+    "current_columns": [
+      {"name": "id", "type": "TEXT", "pk": true, "notes": "Primary key, stable IDs used for meeting_booking items"},
+      {"name": "title", "type": "TEXT", "not_null": true},
+      {"name": "content_type", "type": "TEXT", "not_null": true, "notes": "De facto type field; no CHECK constraint in actual DB"},
+      {"name": "content", "type": "TEXT", "notes": "Stores body text (up to 10k chars per ingest)"},
+      {"name": "url", "type": "TEXT", "notes": "Primary URL for link-type items"},
+      {"name": "source", "type": "TEXT", "notes": "Origin system (manual, ingest, calendly, etc.)"},
+      {"name": "source_url", "type": "TEXT"},
+      {"name": "source_file_path", "type": "TEXT", "notes": "Canonical filesystem location"},
+      {"name": "tags", "type": "TEXT", "notes": "Legacy flat tags field (JSON or comma-sep); normalized tags table also exists"},
+      {"name": "notes", "type": "TEXT"},
+      {"name": "created_at", "type": "TEXT", "not_null": true, "default": "datetime('now')"},
+      {"name": "updated_at", "type": "TEXT", "not_null": true, "default": "datetime('now')"},
+      {"name": "ingested_at", "type": "TEXT"},
+      {"name": "deprecated", "type": "INTEGER", "not_null": true, "default": 0},
+      {"name": "expires_at", "type": "TEXT"},
+      {"name": "version", "type": "INTEGER", "not_null": true, "default": 1},
+      {"name": "last_used_at", "type": "TEXT"},
+      {"name": "confidence", "type": "INTEGER", "default": 3},
+      {"name": "has_content", "type": "INTEGER", "default": 0},
+      {"name": "has_summary", "type": "INTEGER", "default": 0},
+      {"name": "word_count", "type": "INTEGER"},
+      {"name": "has_embedding", "type": "INTEGER", "default": 0},
+      {"name": "file_path", "type": "TEXT", "notes": "Alternative to source_file_path; appears redundant"},
+      {"name": "mime_type", "type": "TEXT"},
+      {"name": "duration_seconds", "type": "INTEGER"},
+      {"name": "dimensions", "type": "TEXT"},
+      {"name": "transcript_path", "type": "TEXT"},
+      {"name": "media_metadata", "type": "TEXT"}
+    ],
+    "normalized_tags_table": {
+      "exists": true,
+      "schema": "(item_id TEXT FK, tag_key TEXT, tag_value TEXT, PK(item_id, tag_key, tag_value))",
+      "active_tag_keys": ["audience", "brand", "category", "category_path", "channel", "context", "duration", "entity", "format", "kind", "original_url", "owner", "provider", "purpose", "qr_code_path", "shortio_id", "status", "tone", "topic", "type"]
+    },
+    "mismatches": [
+      {
+        "issue": "content_library.py _create_schema() uses type CHECK('link','snippet') constraint",
+        "actual_db": "No constraint; content_type values: article, link, snippet, social-post, inspiration",
+        "severity": "medium",
+        "fix": "Remove legacy constraint from _create_schema(); use content_type universally"
+      },
+      {
+        "issue": "ContentItem dataclass has 'type' field, DB has 'content_type'",
+        "actual_db": "Code has hybrid handling (line 133-134) but dataclass schema is misleading",
+        "severity": "medium",
+        "fix": "Rename dataclass field to content_type; keep backward-compat alias"
+      },
+      {
+        "issue": "Duplicate path columns: source_file_path vs file_path",
+        "actual_db": "Both exist; source_file_path is used by content_ingest.py",
+        "severity": "low",
+        "fix": "Deprecate file_path, migrate any values to source_file_path"
+      },
+      {
+        "issue": "Tags stored in two places: items.tags TEXT and tags table",
+        "actual_db": "Calendly links use tags table; other items may use items.tags",
+        "severity": "medium",
+        "fix": "Standardize on tags table for structured tags; items.tags for legacy/flat"
+      }
+    ]
+  },
+
+  "recommended_schema_v5": {
+    "new_columns_to_add": [
+      {
+        "name": "subtype",
+        "type": "TEXT",
+        "default": null,
+        "rationale": "Finer classification within content_type (e.g., content_type=link + subtype=calendly/scheduling/resource)"
+      },
+      {
+        "name": "summary",
+        "type": "TEXT",
+        "default": null,
+        "rationale": "Short AI-generated or curated summary (distinct from full content)"
+      },
+      {
+        "name": "managed_fields",
+        "type": "TEXT",
+        "default": null,
+        "rationale": "JSON array tracking which fields were set by automation vs curated by human; enables merge-safe enrichment"
+      }
+    ],
+    "columns_to_deprecate": [
+      {
+        "name": "file_path",
+        "action": "soft_deprecate",
+        "rationale": "Redundant with source_file_path; migrate any existing values then ignore"
+      }
+    ],
+    "curated_context_strategy": {
+      "recommendation": "Use tags table with reserved tag_keys",
+      "reserved_keys_for_scheduling_links": {
+        "audience": "JSON array stored as comma-sep values (one row per value)",
+        "priority": "single value (high/medium/low)",
+        "use_when": "single text value",
+        "duration": "single value (15min, 30min, 45min)",
+        "context": "multi-value (email, meeting, scheduling, etc.)"
+      },
+      "rationale": "Tags table already exists with FK+index; avoids schema proliferation; flexible for future metadata"
+    },
+    "id_stability_recommendation": {
+      "pattern": "{content_type}_{subtype}_{slug}",
+      "example": "link_calendly_vrijen-work-30m",
+      "rationale": "Deterministic, human-readable, collision-resistant"
+    }
+  },
+
+  "migration_plan": {
+    "approach": "Incremental ALTER TABLE + backfill; no destructive changes",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Add new columns",
+        "sql": [
+          "ALTER TABLE items ADD COLUMN subtype TEXT DEFAULT NULL;",
+          "ALTER TABLE items ADD COLUMN summary TEXT DEFAULT NULL;",
+          "ALTER TABLE items ADD COLUMN managed_fields TEXT DEFAULT NULL;"
+        ],
+        "idempotent": true,
+        "notes": "SQLite ALTER TABLE ADD is idempotent if wrapped in try/except or checked"
+      },
+      {
+        "step": 2,
+        "action": "Backfill subtype for known patterns",
+        "sql": [
+          "UPDATE items SET subtype = 'calendly' WHERE id LIKE 'meeting_booking%' AND subtype IS NULL;",
+          "UPDATE items SET subtype = 'scheduling' WHERE content_type = 'link' AND (url LIKE '%calendly%' OR id LIKE '%meeting%') AND subtype IS NULL;"
+        ],
+        "notes": "Conservative backfill; only sets if subtype is null"
+      },
+      {
+        "step": 3,
+        "action": "Migrate file_path → source_file_path where needed",
+        "sql": [
+          "UPDATE items SET source_file_path = file_path WHERE source_file_path IS NULL AND file_path IS NOT NULL;"
+        ]
+      },
+      {
+        "step": 4,
+        "action": "Add index on subtype",
+        "sql": [
+          "CREATE INDEX IF NOT EXISTS idx_items_subtype ON items(subtype);"
+        ]
+      },
+      {
+        "step": 5,
+        "action": "Add composite index for common queries",
+        "sql": [
+          "CREATE INDEX IF NOT EXISTS idx_items_type_subtype ON items(content_type, subtype);"
+        ]
+      }
+    ],
+    "rollback_strategy": "Columns can be dropped if needed; data preserved in tags table"
+  },
+
+  "api_alignment_plan": {
+    "content_library_py_changes": [
+      {
+        "change": "Update ContentItem dataclass",
+        "details": "Add content_type (replacing type), subtype, summary, managed_fields; keep type as deprecated alias"
+      },
+      {
+        "change": "Remove legacy CHECK constraint from _create_schema()",
+        "details": "Replace type CHECK with content_type TEXT NOT NULL"
+      },
+      {
+        "change": "Update _row_to_item() mapping",
+        "details": "Map content_type, subtype, summary, managed_fields from row"
+      },
+      {
+        "change": "Add search by subtype parameter",
+        "details": "Allow search(subtype='calendly') to find all scheduling links"
+      },
+      {
+        "change": "Add merge-safe update method",
+        "details": "update_safe(item_id, fields_dict) that respects managed_fields"
+      }
+    ],
+    "backward_compatibility": [
+      "Keep .type property on ContentItem as alias for content_type",
+      "Keep 'type' parameter in search() but map to content_type internally",
+      "Keep dict-style access (__getitem__, get()) on ContentItem"
+    ]
+  },
+
+  "compat_risks": [
+    {
+      "risk": "Legacy callers expecting type='link' or type='snippet' only",
+      "mitigation": "Alias type→content_type; most callers already handle multiple types",
+      "severity": "low"
+    },
+    {
+      "risk": "tags table vs items.tags confusion",
+      "mitigation": "Document: tags table = structured KV pairs; items.tags = flat legacy storage",
+      "severity": "medium"
+    },
+    {
+      "risk": "managed_fields complexity for simple updates",
+      "mitigation": "Make managed_fields optional; simple add() still works without tracking",
+      "severity": "low"
+    }
+  ],
+
+  "notes_for_orchestrator": [
+    "DB schema is already richer than content_library.py assumes — the legacy CHECK constraint exists only in the create_schema code, not the actual DB",
+    "Calendly/meeting links already have good tag metadata (audience, duration, context, purpose) via tags table — recommend keeping this pattern vs dedicated columns",
+    "The managed_fields column is key to the 'never overwrite curated context' invariant — it tracks which fields were set by automation vs human",
+    "W1.3 (ingest normalization) should ensure summary field is populated; W1.4 (Calendly sync) should set managed_fields appropriately",
+    "Consider adding a uniqueness constraint on (content_type, subtype, url) or (source_file_path) in future hardening pass, but defer to avoid breaking existing duplicates",
+    "Duplicate items exist (e.g., vrijen_work_30m_primary vs meeting_booking_vrijen_only_work_30m_primary) — W2.2 dedupe should address"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "slug": "content-library-v5",
+  "title": "Content Library v5 Upgrade",
+  "objective": "Upgrade the Content Library to reliably ingest clean original text + summary, maintain file\u2194DB consistency, and add contextual metadata without overwriting curated fields.",
+  "created": "2026-01-19",
+  "status": "complete",
+  "completed_at": "2026-01-19T02:53:21+00:00",
+  "type": "code_build",
+  "orchestrator_convo_id": "con_GiPSVev8LxpKdAcO",
+  "workers": {
+    "total": 11,
+    "complete": 11,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [
+    {
+      "number": 1,
+      "status": "complete",
+      "workers": [
+        "W1.1",
+        "W1.2",
+        "W1.3",
+        "W1.4"
+      ]
+    },
+    {
+      "number": 2,
+      "status": "complete",
+      "workers": [
+        "W2.1",
+        "W2.2",
+        "W2.3"
+      ]
+    },
+    {
+      "number": 3,
+      "status": "complete",
+      "workers": [
+        "W3.1",
+        "W3.2",
+        "W3.3",
+        "W3.4"
+      ]
+    }
+  ],
+  "worker_details": [
+    {
+      "id": "W1.1",
+      "title": "Spec",
+      "status": "complete"
+    },
+    {
+      "id": "W1.2",
+      "title": "DB Schema + API",
+      "status": "complete"
+    },
+    {
+      "id": "W1.3",
+      "title": "Ingest Normalization",
+      "status": "complete"
+    },
+    {
+      "id": "W1.4",
+      "title": "Calendly DB Sync",
+      "status": "complete"
+    },
+    {
+      "id": "W2.1",
+      "title": "Sync/Backfill",
+      "status": "complete"
+    },
+    {
+      "id": "W2.2",
+      "title": "Migration/Dedupe",
+      "status": "complete"
+    },
+    {
+      "id": "W2.3",
+      "title": "Docs/Workflows",
+      "status": "complete"
+    },
+    {
+      "id": "W3.1",
+      "title": "Schema + API Fix",
+      "status": "complete"
+    },
+    {
+      "id": "W3.2",
+      "title": "Execute Migration",
+      "status": "complete"
+    },
+    {
+      "id": "W3.3",
+      "title": "Normalization Pipeline",
+      "status": "complete"
+    },
+    {
+      "id": "W3.4",
+      "title": "Docs Finalize",
+      "status": "complete"
+    }
+  ],
+  "gaps": [
+    "CLI --subtype flag not implemented (data exists, queryable via SQL)"
+  ]
+}

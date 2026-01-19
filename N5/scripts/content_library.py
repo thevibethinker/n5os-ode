@@ -47,7 +47,7 @@ DB_PATH = Path("/home/workspace/N5/data/content_library.db")
 class ContentItem:
     """A content library item (link or snippet)."""
     id: str
-    type: str  # 'link' or 'snippet'
+    type: str  # 'link' or 'snippet' - legacy, use content_type
     title: str
     content: Optional[str] = None
     url: Optional[str] = None
@@ -57,6 +57,11 @@ class ContentItem:
     created_at: Optional[str] = None
     updated_at: Optional[str] = None
     last_used_at: Optional[str] = None
+    # v5 fields
+    subtype: Optional[str] = None
+    summary: Optional[str] = None
+    managed_fields: Optional[str] = None  # JSON string of AI-managed field names
+    external_id: Optional[str] = None
     
     def __getitem__(self, key: str) -> Any:
         """Allow dict-style access for backward compatibility."""
@@ -144,6 +149,11 @@ class ContentLibrary:
             created_at=row["created_at"],
             updated_at=row["updated_at"],
             last_used_at=row["last_used_at"],
+            # v5 fields
+            subtype=row["subtype"] if "subtype" in row.keys() else None,
+            summary=row["summary"] if "summary" in row.keys() else None,
+            managed_fields=row["managed_fields"] if "managed_fields" in row.keys() else None,
+            external_id=row["external_id"] if "external_id" in row.keys() else None,
         )
     
     def _get_tags(self, conn: sqlite3.Connection, item_id: str) -> Dict[str, str]:
@@ -174,6 +184,7 @@ class ContentLibrary:
         query: Optional[str] = None,
         item_type: Optional[str] = None,
         content_type: Optional[str] = None,
+        subtype: Optional[str] = None,
         tags: Union[List[str], Dict[str, str], None] = None,
         include_deprecated: bool = False,
         limit: int = 50,
@@ -184,6 +195,7 @@ class ContentLibrary:
             query: Text search in title, content, notes
             item_type: 'link' or 'snippet' (legacy type field)
             content_type: Filter by content_type (article, deck, paper, etc.)
+            subtype: Filter by subtype (e.g., 'scheduling-link' within 'link')
             tags: Filter by tags. Can be:
                 - Dict: {"purpose": "signature", "channel": "email"} - all must match
                 - List: ["purpose:signature", "channel:email"] - same as dict
@@ -208,6 +220,10 @@ class ContentLibrary:
         if content_type:
             conditions.append("i.content_type = ?")
             params.append(content_type)
+        
+        if subtype:
+            conditions.append("i.subtype = ?")
+            params.append(subtype)
         
         if query:
             conditions.append("(i.title LIKE ? OR i.content LIKE ? OR i.notes LIKE ?)")
@@ -268,6 +284,10 @@ class ContentLibrary:
         tags: Union[List[str], Dict[str, str], None] = None,
         notes: Optional[str] = None,
         source: str = "manual",
+        subtype: Optional[str] = None,
+        summary: Optional[str] = None,
+        managed_fields: Optional[str] = None,
+        external_id: Optional[str] = None,
     ) -> ContentItem:
         """Add or update an item.
         
@@ -279,15 +299,19 @@ class ContentLibrary:
         now = datetime.now().isoformat()
         
         conn.execute("""
-            INSERT INTO items (id, type, title, content, url, notes, source, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO items (id, content_type, title, content, url, notes, source, created_at, updated_at, subtype, summary, managed_fields, external_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 title = excluded.title,
                 content = excluded.content,
                 url = excluded.url,
                 notes = excluded.notes,
-                updated_at = excluded.updated_at
-        """, (item_id, item_type, title, content, url, notes, source, now, now))
+                updated_at = excluded.updated_at,
+                subtype = excluded.subtype,
+                summary = excluded.summary,
+                managed_fields = excluded.managed_fields,
+                external_id = excluded.external_id
+        """, (item_id, item_type, title, content, url, notes, source, now, now, subtype, summary, managed_fields, external_id))
         
         if tags:
             conn.execute("DELETE FROM tags WHERE item_id = ?", (item_id,))

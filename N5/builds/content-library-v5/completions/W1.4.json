@@ -1,0 +1,87 @@
+{
+  "worker_id": "W1.4",
+  "completed_at": "2026-01-19T02:10:00Z",
+  "status": "complete",
+  
+  "recommended_approach": {
+    "choice": "Option C - Embed dedicated DB upsert in sync_links.py",
+    "rationale": [
+      "Self-contained: Calendly sync is a specialized integration with specific knowledge of event type structure",
+      "Atomic: Single transaction for both file and DB ensures consistency",
+      "Merge logic: Calendly-specific context inference (e.g., 'friends & family' → audience:personal) belongs in the sync script",
+      "Performance: No subprocess overhead from calling external scripts",
+      "Maintainability: All Calendly-related logic in one place"
+    ],
+    "rejected_alternatives": {
+      "option_a_content_ingest": "content_ingest.py is designed for single-file ingestion from frontmatter, not API-driven bulk sync",
+      "option_b_content_library_add": "content_library.py add() has schema drift (uses 'type' column vs actual 'content_type'), and doesn't support non-destructive merge for tags"
+    }
+  },
+  
+  "id_strategy": {
+    "format": "calendly_<slug_with_underscores>",
+    "fallback": "calendly_uuid_<uuid> when slug is null",
+    "examples": [
+      "calendly_friends_family_link_for_vrijen",
+      "calendly_30min",
+      "calendly_uuid_2df1e52a-1657-4d83-bfa0-5574c3e9fa63"
+    ],
+    "properties": [
+      "Deterministic: same event always produces same ID",
+      "Human-readable when slug available",
+      "Collision-free: Calendly slugs are unique per user",
+      "Stable across syncs"
+    ]
+  },
+  
+  "merge_policy": {
+    "curated_fields": ["audience", "priority", "use_when", "purpose", "context"],
+    "managed_fields": ["duration", "entity", "provider"],
+    "behavior": {
+      "curated": "Only fill if missing/empty - never overwrite existing values",
+      "managed": "Always update to current inferred value"
+    },
+    "implementation": "merge_tags() function compares existing vs new defaults, returns only safe changes"
+  },
+  
+  "implementation_notes": {
+    "files_modified": [
+      "Integrations/calendly/sync_links.py"
+    ],
+    "key_functions": {
+      "generate_stable_id()": "Creates deterministic DB id from event type slug or UUID",
+      "infer_context_defaults()": "Conservative heuristics for audience/purpose from event name",
+      "merge_tags()": "Implements non-destructive merge policy",
+      "upsert_db_record()": "INSERT or UPDATE with merge logic"
+    },
+    "cli_options": [
+      "--dry-run: Preview changes without writing",
+      "--db-only: Skip markdown file generation, only update DB"
+    ],
+    "context_inference": {
+      "audience_personal": "Event names containing 'friends', 'family', 'personal'",
+      "audience_professional": "Event names containing 'onboarding', 'product', 'feedback', 'enterprise', 'investor', 'founder'",
+      "always_set": "purpose=scheduling, entity=vrijen, provider=calendly, duration=<N>min"
+    }
+  },
+  
+  "tests": {
+    "dry_run_passed": true,
+    "sync_executed": true,
+    "idempotence_verified": true,
+    "merge_policy_verified": true,
+    "results": {
+      "files_synced": 18,
+      "db_created": 18,
+      "second_run_unchanged": 18,
+      "curated_tag_preserved": "use_when=general_scheduling was not overwritten"
+    }
+  },
+  
+  "notes_for_orchestrator": [
+    "SCHEMA ISSUE: content_library.py add() method uses INSERT with 'type' column but actual schema has 'content_type'. This will fail if anyone calls lib.add(). Should be fixed in W1.2.",
+    "LEGACY DATA: 7 Calendly items exist in DB from 'json_migration' source (vrijen_* IDs). These are separate from the new calendly_* IDs and may need migration/dedupe in W2.2.",
+    "RECOMMENDATION: Add 'subtype' tag for scheduling-link to align with taxonomy if W1.1 spec specifies subtypes.",
+    "SYNC TRIGGER: Consider adding Calendly sync to the daily scheduled task or webhook-based trigger."
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "worker_id": "W2.1",
+  "build_slug": "content-library-v5",
+  "completed_at": "2026-01-18T21:35:00-05:00",
+  "status": "complete",
+
+  "root_cause_historical_miss": {
+    "summary": "Calendly files were historically not in the DB because sync_links.py (pre-v5 upgrade) wrote ONLY markdown files — it had no DB write logic. The backfill process (content_backfill.py) DID scan the calendly folder (it scans all of Knowledge/content-library/), but the underlying ingest process likely failed silently due to schema mismatch.",
+    
+    "primary_causes": [
+      {
+        "cause": "sync_links.py wrote files but not DB records (pre-W1.4)",
+        "evidence": "W1.4 completion shows 'Option C - Embed dedicated DB upsert in sync_links.py' was the fix; this was a new capability",
+        "contribution": "100% of Calendly DB miss — no DB write ever happened"
+      },
+      {
+        "cause": "content_library.py add() has schema drift: uses 'type' column but actual DB has 'content_type'",
+        "evidence": "add() method: INSERT INTO items (id, type, ...) vs actual schema: content_type TEXT NOT NULL",
+        "contribution": "Would cause ANY caller of lib.add() to fail with SQL error"
+      },
+      {
+        "cause": "Backfill uses content_ingest.py which DOES use correct schema (content_type)",
+        "evidence": "content_ingest.py create_record() correctly uses content_type; backfill would have worked IF sync_links wrote files at correct paths",
+        "contribution": "Not a cause — backfill path is correct"
+      }
+    ],
+    
+    "historical_timeline": [
+      "1. sync_links.py (original) wrote markdown files to Knowledge/content-library/links/calendly/",
+      "2. sync_links.py did NOT create DB records — this was added in W1.4 upgrade",
+      "3. backfill would scan those files and attempt ingest via content_ingest.py",
+      "4. content_ingest.py correctly uses content_type, so backfill SHOULD have worked",
+      "5. However, if backfill was run BEFORE files existed, or if sync_links was never run, no files to backfill",
+      "6. W1.4 fixed the root cause by adding DB writes directly in sync_links.py"
+    ],
+    
+    "current_state_post_w1_4": {
+      "calendly_files": 18,
+      "calendly_db_records": 18,
+      "parity_achieved": true,
+      "source_field": "calendly-sync"
+    },
+    
+    "residual_issues": [
+      "7 legacy items exist from 'json_migration' source (vrijen_* IDs) that may be duplicates",
+      "content_library.py add() method is STILL broken (uses 'type' not 'content_type')"
+    ]
+  },
+
+  "sync_model_spec": {
+    "command": "python3 N5/scripts/content_library.py sync [--dry-run] [--repair] [--json]",
+    "description": "Reconcile filesystem content with DB, achieving a fixed-point state",
+    
+    "algorithm": {
+      "step_1_scan_files": {
+        "action": "Scan CANONICAL_ROOT (Knowledge/content-library/) for all content files",
+        "extensions": [".md", ".txt", ".pdf", ".html"],
+        "output": "Set<file_path>"
+      },
+      "step_2_scan_db": {
+        "action": "Query all items with non-null source_file_path",
+        "query": "SELECT id, source_file_path FROM items WHERE source_file_path IS NOT NULL AND deprecated = 0",
+        "output": "Map<source_file_path → id>"
+      },
+      "step_3_diff": {
+        "action": "Compute three sets",
+        "orphan_files": "files in filesystem but NOT in DB (file_paths - db_paths)",
+        "orphan_records": "DB records where source_file_path no longer exists",
+        "matched": "file_paths ∩ db_paths"
+      },
+      "step_4_reconcile": {
+        "orphan_files": {
+          "action": "Create DB record (if --repair) or flag for review",
+          "method": "Call ingest_file(filepath, move=False, dry_run=dry_run)",
+          "merge_aware": "If file has frontmatter with id, check if id exists in DB first"
+        },
+        "orphan_records": {
+          "action": "Flag record with recommended action (never auto-delete)",
+          "options": ["mark deprecated", "relocate source_file_path", "manual review"],
+          "destructive_delete": false
+        },
+        "matched": {
+          "action": "Optionally verify content/metadata consistency (hash check)",
+          "report_drift": true
+        }
+      },
+      "step_5_report": {
+        "output_format": "json",
+        "fields": ["orphan_files", "orphan_records", "matched", "actions_taken", "dry_run"]
+      }
+    },
+    
+    "idempotence_guarantee": {
+      "invariant": "Running sync twice with same filesystem/DB state produces 0 changes on second run",
+      "implementation": [
+        "Step 3 diff uses set operations — deterministic",
+        "Step 4 reconcile checks record_exists before insert",
+        "Repair actions are additive only (no destructive ops without --force)"
+      ],
+      "test": "TC-IDEMPOTENCE: run sync, run sync again, assert report shows 0 orphan_files and 0 orphan_records"
+    },
+    
+    "merge_awareness": {
+      "when_creating_from_orphan_file": [
+        "Parse frontmatter for existing id field",
+        "If id exists in DB but with different source_file_path, this is a MOVE not a new record",
+        "If file has curated tags in frontmatter, preserve them (don't overwrite with defaults)",
+        "Set managed_fields to track which fields were auto-populated"
+      ],
+      "curated_fields_protected": ["audience", "priority", "use_when", "purpose", "context"]
+    },
+    
+    "cli_flags": {
+      "--dry-run": "Show what would happen without making changes",
+      "--repair": "Automatically create records for orphan files (default: flag only)",
+      "--json": "Output structured JSON report",
+      "--include-deprecated": "Include deprecated records in scan",
+      "--verify-content": "Hash-check matched files for content drift"
+    }
+  },
+
+  "schema_alignment_recommendations": {
+    "critical_fix_required": {
+      "file": "N5/scripts/content_library.py",
+      "method": "add()",
+      "problem": "Uses INSERT INTO items (id, type, ...) but actual schema column is 'content_type'",
+      "fix": "Change 'type' to 'content_type' in the INSERT statement",
+      "breaking_change": false,
+      "notes": "This is a bug fix, not a schema change. The method has been broken."
+    },
+    
+    "columns_to_add": [
+      {
+        "name": "subtype",
+        "type": "TEXT",
+        "default": null,
+        "migration_sql": "ALTER TABLE items ADD COLUMN subtype TEXT;",
+        "index_sql": "CREATE INDEX IF NOT EXISTS idx_items_subtype ON items(subtype);",
+        "use_case": "Distinguish scheduling-link from generic link, profile from generic link, etc."
+      },
+      {
+        "name": "summary",
+        "type": "TEXT",
+        "default": null,
+        "migration_sql": "ALTER TABLE items ADD COLUMN summary TEXT;",
+        "use_case": "Short AI-generated or curated summary (distinct from full content)"
+      },
+      {
+        "name": "managed_fields",
+        "type": "TEXT",
+        "default": null,
+        "migration_sql": "ALTER TABLE items ADD COLUMN managed_fields TEXT;",
+        "use_case": "JSON array tracking which fields were set by automation vs curated by human"
+      }
+    ],
+    
+    "managed_fields_design": {
+      "storage": "DB column (TEXT, JSON array)",
+      "format": "[\"duration\", \"entity\", \"provider\"]",
+      "semantics": "Fields in this list were set by automation and CAN be overwritten by automation",
+      "not_in_list": "Fields NOT in managed_fields are considered curated and must NOT be overwritten",
+      "frontmatter_sync": "Optionally mirror in frontmatter as 'managed_by: automation' for transparency",
+      "precedence": "DB is source of truth; frontmatter is for human readability"
+    },
+    
+    "api_alignment": {
+      "content_library_py": {
+        "add_method": "Fix to use content_type; add optional subtype, summary, managed_fields params",
+        "search_method": "Add subtype filter parameter",
+        "new_method": "update_safe(item_id, fields) that respects managed_fields"
+      },
+      "content_ingest_py": {
+        "status": "Already uses content_type correctly",
+        "enhancement": "Add summary extraction, managed_fields tracking"
+      },
+      "backward_compat": {
+        "strategy": "Keep 'type' as deprecated alias on ContentItem dataclass",
+        "type_property": "@property def type(self): return self.content_type"
+      }
+    }
+  },
+
+  "repair_tool_design": {
+    "command": "python3 N5/scripts/content_sync.py repair [--dry-run] [--json]",
+    "description": "Repair file↔DB inconsistencies found by sync",
+    
+    "repair_actions": {
+      "orphan_file_to_db": {
+        "description": "Create DB record for file that exists but has no DB entry",
+        "implementation": [
+          "Parse file frontmatter for existing metadata",
+          "Detect content_type from path or frontmatter",
+          "Generate stable ID (or use frontmatter id if present)",
+          "Call create_record() with merge-aware logic",
+          "Set source='sync-repair' to track provenance"
+        ],
+        "merge_aware": [
+          "If frontmatter has curated tags, preserve them",
+          "If frontmatter has id that exists in DB at different path, update path instead of creating new record"
+        ],
+        "dry_run_output": {
+          "action": "would_create",
+          "file": "/path/to/file.md",
+          "proposed_id": "link_calendly_xyz",
+          "content_type": "link",
+          "tags_from_frontmatter": {"audience": "professional"}
+        }
+      },
+      
+      "orphan_db_to_flag": {
+        "description": "Flag DB record where source_file_path no longer exists",
+        "implementation": [
+          "DO NOT auto-delete (data loss risk)",
+          "Set deprecated=1 OR add tag 'orphan:true'",
+          "Log to repair report with recommended action"
+        ],
+        "recommended_actions": [
+          "manual_review: File may have been moved — check for similar filename elsewhere",
+          "mark_deprecated: If content is obsolete",
+          "recreate_file: If DB record is valuable, regenerate file from content"
+        ],
+        "dry_run_output": {
+          "action": "would_flag",
+          "record_id": "abc123",
+          "missing_path": "/path/that/no/longer/exists.md",
+          "recommendation": "manual_review"
+        }
+      },
+      
+      "path_mismatch_repair": {
+        "description": "DB record exists but source_file_path is wrong (file was moved)",
+        "detection": "File at path A, DB record with id X points to path B, but path A has frontmatter id=X",
+        "implementation": [
+          "Update source_file_path in DB to match actual file location",
+          "Set updated_at to now"
+        ]
+      }
+    },
+    
+    "output_format": {
+      "type": "json",
+      "schema": {
+        "timestamp": "ISO datetime",
+        "dry_run": "boolean",
+        "summary": {
+          "orphan_files_found": "int",
+          "orphan_files_repaired": "int",
+          "orphan_records_found": "int", 
+          "orphan_records_flagged": "int",
+          "path_mismatches_fixed": "int"
+        },
+        "actions": [
+          {
+            "type": "create_record | flag_orphan | fix_path",
+            "target": "file path or record id",
+            "status": "completed | dry_run | error",
+            "details": {}
+          }
+        ],
+        "errors": []
+      }
+    },
+    
+    "safety_guards": [
+      "Never delete files",
+      "Never delete DB records without explicit --delete-orphans flag",
+      "Always produce structured report for audit",
+      "Dry-run is default (must pass --execute to make changes)",
+      "Check .n5protected before any file operations"
+    ]
+  },
+
+  "tests": {
+    "unit_tests": [
+      {
+        "id": "T1",
+        "name": "sync_idempotence",
+        "description": "Run sync twice; second run should report 0 changes",
+        "setup": "Create test DB and test files in temp dir",
+        "steps": [
+          "Run sync --repair",
+          "Capture report1",
+          "Run sync --repair again",
+          "Capture report2"
+        ],
+        "assertion": "report2.orphan_files == 0 AND report2.orphan_records == 0"
+      },
+      {
+        "id": "T2",
+        "name": "orphan_file_ingestion",
+        "description": "File exists but not in DB; repair creates record",
+        "setup": "Create file at Knowledge/content-library/links/test.md, ensure no DB record",
+        "steps": ["Run repair --execute"],
+        "assertion": "DB record exists with correct source_file_path"
+      },
+      {
+        "id": "T3",
+        "name": "curated_context_preservation",
+        "description": "Repair does not overwrite curated tags",
+        "setup": [
+          "Create file with frontmatter: audience: investors",
+          "File has no DB record",
+          "Automation would default audience to 'general'"
+        ],
+        "steps": ["Run repair --execute"],
+        "assertion": "DB record has audience='investors', NOT 'general'"
+      },
+      {
+        "id": "T4",
+        "name": "orphan_record_flagging",
+        "description": "DB record exists but file is missing; record gets flagged",
+        "setup": "Create DB record pointing to non-existent file",
+        "steps": ["Run sync"],
+        "assertion": "Report includes orphan_record with recommendation"
+      },
+      {
+        "id": "T5",
+        "name": "path_mismatch_detection",
+        "description": "File was moved but DB not updated",
+        "setup": [
+          "Create file at path_A with frontmatter id=X",
+          "Create DB record with id=X pointing to path_B (old location)"
+        ],
+        "steps": ["Run sync"],
+        "assertion": "Report shows path_mismatch for id=X"
+      }
+    ],
+    
+    "integration_tests": [
+      {
+        "id": "IT1",
+        "name": "full_calendly_parity",
+        "description": "After sync, every Calendly file has a DB record",
+        "steps": [
+          "ls Knowledge/content-library/links/calendly/*.md | wc -l",
+          "SELECT COUNT(*) FROM items WHERE source_file_path LIKE '%calendly%'",
+          "Assert counts match"
+        ]
+      },
+      {
+        "id": "IT2",
+        "name": "backfill_then_sync_stable",
+        "description": "Running backfill then sync produces stable state",
+        "steps": [
+          "Run backfill",
+          "Run sync",
+          "Run sync again",
+          "Assert second sync has 0 changes"
+        ]
+      }
+    ]
+  },
+
+  "implementation_plan": {
+    "phase_1_fix_add_method": {
+      "file": "N5/scripts/content_library.py",
+      "change": "Fix add() to use content_type instead of type",
+      "priority": "critical",
+      "risk": "low (bug fix)"
+    },
+    "phase_2_add_sync_command": {
+      "option_a": "Enhance existing content_library.py sync subcommand",
+      "option_b": "Create dedicated N5/scripts/content_sync.py",
+      "recommendation": "Option A — keep CLI unified, add sync logic to content_library.py"
+    },
+    "phase_3_schema_migration": {
+      "file": "N5/scripts/migrate_content_library.py (new)",
+      "changes": [
+        "ALTER TABLE items ADD COLUMN subtype TEXT",
+        "ALTER TABLE items ADD COLUMN summary TEXT", 
+        "ALTER TABLE items ADD COLUMN managed_fields TEXT",
+        "CREATE INDEX idx_items_subtype ON items(subtype)"
+      ],
+      "idempotent": true
+    }
+  },
+
+  "notes_for_orchestrator": [
+    "CRITICAL BUG: content_library.py add() method uses 'type' column but actual DB has 'content_type'. This should be fixed immediately — any caller of lib.add() will get a SQL error.",
+    "ROOT CAUSE CONFIRMED: Calendly files weren't in DB because sync_links.py never wrote DB records (this was fixed in W1.4).",
+    "W1.4 FIXED THE IMMEDIATE ISSUE: Calendly sync now writes DB records. 18 files = 18 records. Parity achieved.",
+    "LEGACY DUPLICATES EXIST: 7 items from 'json_migration' source (vrijen_* IDs) may be duplicates of new calendly_* IDs. W2.2 should handle dedupe.",
+    "SCHEMA MIGRATION NEEDED: subtype, summary, managed_fields columns should be added (W1.2 spec). This is non-destructive.",
+    "REPAIR TOOL: Recommend creating repair subcommand that is dry-run by default and never deletes without explicit flag.",
+    "MERGE POLICY KEY: managed_fields column enables 'automation can update fields it set, but not curated fields'. This is the right pattern.",
+    "IMPLEMENTATION READY: This spec is detailed enough for a Builder to implement. No blocking questions remain."
+  ]
+}
