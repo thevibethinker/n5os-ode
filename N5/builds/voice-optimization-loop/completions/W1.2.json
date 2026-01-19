@@ -1,0 +1,86 @@
+{
+  "worker_id": "W1.2",
+  "title": "Primitives to Memory",
+  "status": "complete",
+  "completed_at": "2026-01-18T19:50:00-05:00",
+  
+  "deliverables": {
+    "script_created": "N5/scripts/sync_primitives_to_memory.py",
+    "primitives_synced": 419,
+    "embedding_provider": "openai (text-embedding-3-large)"
+  },
+  
+  "schema_documented": {
+    "table": "primitives",
+    "columns": {
+      "id": "TEXT PRIMARY KEY (e.g., VL-LI-0001)",
+      "exact_text": "TEXT NOT NULL - The actual phrase/analogy/metaphor",
+      "primitive_type": "TEXT NOT NULL - phrase | analogy | metaphor | pivot | etc",
+      "distinctiveness_score": "REAL - 0.0-1.0 from Pangram",
+      "novelty_flagged": "INTEGER - 1 if explicit capture signal",
+      "domains_json": "TEXT - JSON array of domain tags",
+      "use_count": "INTEGER - throttle tracking",
+      "last_used_at": "TEXT - ISO timestamp",
+      "status": "TEXT - candidate | approved | rejected | archived",
+      "created_at": "TEXT",
+      "updated_at": "TEXT",
+      "notes": "TEXT - Contains source, extractable_form, context"
+    },
+    "primitive_types_distribution": {
+      "signature_phrase": 129,
+      "conceptual_frame": 99,
+      "syntactic_pattern": 71,
+      "metaphor": 62,
+      "rhetorical_device": 34,
+      "analogy": 24
+    }
+  },
+  
+  "memory_format": {
+    "resource_path": "voice://primitives/{primitive_id}",
+    "block_type": "voice_primitive:{primitive_type}",
+    "content_template": "Voice primitive: \"{text}\"\nType: {type}\nPattern: {extractable_form}\nWhen to use: {context}\nDomains: {domains}\nSource: {source}\nDistinctiveness: {score}",
+    "tags_added": ["domain:{domain}", "primitive_type:{type}", "source:{source}"]
+  },
+  
+  "script_commands": {
+    "sync": "python3 N5/scripts/sync_primitives_to_memory.py sync [--dry-run]",
+    "status": "python3 N5/scripts/sync_primitives_to_memory.py status",
+    "resync": "python3 N5/scripts/sync_primitives_to_memory.py resync [--dry-run]"
+  },
+  
+  "auto_sync_recommendation": {
+    "approach": "A (Manual)",
+    "rationale": "Run sync script after adding primitives via retrieve_primitives.py add. Can hook into add_primitive() function later if automation desired.",
+    "future_automation": "Add post-add hook in retrieve_primitives.py or create scheduled agent for periodic sync"
+  },
+  
+  "success_criteria_met": {
+    "reads_all_419_primitives": true,
+    "stores_with_correct_type_tags": true,
+    "dry_run_mode_works": true,
+    "status_shows_sync_state": true,
+    "no_duplicates_on_resync": true
+  },
+  
+  "notes_for_orchestrator": {
+    "embedding_dimension_issue": {
+      "problem": "brain.db has 18 blocks with 384-dim embeddings (local model) mixed with 18,406 blocks at 3072-dim (OpenAI). Search fails when mixed dimensions encountered.",
+      "affected": "n5://positions/* paths have old 384-dim embeddings",
+      "solution": "Need to re-embed the 18 old resources with OpenAI model, or delete them. This is outside W1.2 scope but blocks semantic retrieval.",
+      "workaround": "Script now auto-loads embedding_provider from N5/cognition/config.yaml to ensure consistent dimensions going forward."
+    },
+    "lessons_sync_pattern": {
+      "recommendation": "W3.1 (lessons sync) can follow same pattern: virtual path like lessons://positions/{slug}, similar content format, same tag structure.",
+      "content_format_suggestion": "For lessons: Lesson: \"{title}\"\nPosition: {position_slug}\nKey insight: {core learning}\nContext: {situation}\nSource: {origin}\nTags: {tags}"
+    },
+    "memory_client_limitation": {
+      "issue": "N5MemoryClient.search() retrieves ALL vectors first, then filters. With mixed embedding dimensions, search crashes before filtering can exclude incompatible vectors.",
+      "fix_needed": "Memory client should filter by path prefix BEFORE fetching vectors, or handle dimension mismatches gracefully."
+    },
+    "config_auto_load": {
+      "added": "Script now reads embedding_provider from N5/cognition/config.yaml and sets N5_EMBEDDING_PROVIDER env var before importing memory client.",
+      "benefit": "Ensures consistent embedding dimensions without requiring env var to be set manually."
+    }
+  }
+}
