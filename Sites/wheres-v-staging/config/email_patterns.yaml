@@ -1,0 +1,205 @@
+---
+created: 2026-01-19
+last_edited: 2026-01-19
+version: 1.0
+provenance: con_POTUJQd3ub2QU0XS
+---
+
+# Email Pattern Registry for Where's V
+# Used to quickly identify travel-related emails for ingestion
+
+airlines:
+  jetblue:
+    from_patterns:
+      - "jetblue.com"
+      - "needtoknow.jetblue.com"
+      - "truebluetravel.com"
+    subject_keywords:
+      - "confirmation"
+      - "itinerary"
+      - "trip"
+      - "e-ticket"
+      - "check out the details"
+    confirmation_pattern: "[A-Z]{6}"
+    notes: "JetBlue sends separate emails per flight segment"
+
+  united:
+    from_patterns:
+      - "united.com"
+      - "notifications@united.com"
+    subject_keywords:
+      - "confirmation"
+      - "receipt"
+      - "itinerary"
+      - "e-ticket"
+    confirmation_pattern: "[A-Z]{6}"
+    notes: "United includes full itinerary in single email"
+
+  delta:
+    from_patterns:
+      - "delta.com"
+      - "deltaairlines.com"
+    subject_keywords:
+      - "confirmation"
+      - "e-ticket"
+      - "itinerary"
+    confirmation_pattern: "[A-Z]{6}"
+
+  american:
+    from_patterns:
+      - "aa.com"
+      - "americanairlines.com"
+    subject_keywords:
+      - "confirmation"
+      - "e-ticket"
+    confirmation_pattern: "[A-Z]{6}"
+
+  southwest:
+    from_patterns:
+      - "southwest.com"
+      - "luv.southwest.com"
+    subject_keywords:
+      - "confirmation"
+      - "itinerary"
+    confirmation_pattern: "[A-Z]{6}"
+
+  spirit:
+    from_patterns:
+      - "spirit.com"
+    subject_keywords:
+      - "confirmation"
+      - "itinerary"
+    confirmation_pattern: "[A-Z]{6}"
+
+rail:
+  amtrak:
+    from_patterns:
+      - "amtrak.com"
+      - "reservations@amtrak.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+      - "ticket"
+      - "e-ticket"
+    confirmation_pattern: "[A-Z0-9]{6,10}"
+    notes: "Check for Amtrak Guest Rewards emails too"
+
+hotels:
+  marriott:
+    from_patterns:
+      - "marriott.com"
+      - "email.marriott.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+    confirmation_pattern: "[0-9]{8,10}"
+
+  hilton:
+    from_patterns:
+      - "hilton.com"
+      - "doubletree.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+    confirmation_pattern: "[0-9]{10,13}"
+
+  hyatt:
+    from_patterns:
+      - "hyatt.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+    confirmation_pattern: "[A-Z0-9]{8,12}"
+
+  ihg:
+    from_patterns:
+      - "ihg.com"
+      - "intercontinental.com"
+      - "holidayinn.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+    confirmation_pattern: "[0-9]{9,12}"
+
+  airbnb:
+    from_patterns:
+      - "airbnb.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation confirmed"
+      - "upcoming trip"
+    confirmation_pattern: "[A-Z0-9]{10}"
+
+  vrbo:
+    from_patterns:
+      - "vrbo.com"
+      - "homeaway.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+    confirmation_pattern: "[A-Z0-9]{8,12}"
+
+booking_aggregators:
+  chase_travel:
+    from_patterns:
+      - "chase.com"
+      - "ultimaterewards.chase.com"
+    subject_keywords:
+      - "trip confirmation"
+      - "booking confirmation"
+      - "travel confirmation"
+    notes: "Chase Ultimate Rewards travel portal"
+
+  expedia:
+    from_patterns:
+      - "expedia.com"
+      - "expediamail.com"
+    subject_keywords:
+      - "confirmation"
+      - "itinerary"
+      - "booking"
+
+  hotels_com:
+    from_patterns:
+      - "hotels.com"
+    subject_keywords:
+      - "confirmation"
+      - "reservation"
+      - "booking"
+
+  kayak:
+    from_patterns:
+      - "kayak.com"
+    subject_keywords:
+      - "confirmation"
+      - "booking"
+
+  trueblue_travel:
+    from_patterns:
+      - "truebluetravel.com"
+      - "links.truebluetravel.com"
+    subject_keywords:
+      - "confirmation"
+      - "trip details"
+    notes: "JetBlue's travel portal for hotels/cars"
+
+# Combined Gmail query for broad sweep
+gmail_broad_query: |
+  (from:(jetblue.com OR united.com OR delta.com OR aa.com OR southwest.com OR spirit.com OR amtrak.com OR marriott.com OR hilton.com OR hyatt.com OR ihg.com OR airbnb.com OR vrbo.com OR expedia.com OR hotels.com OR chase.com OR truebluetravel.com) 
+  OR subject:(confirmation OR itinerary OR reservation OR e-ticket OR booking))
+  newer_than:90d
+
+# Exclusion patterns (marketing, not actual bookings)
+exclusions:
+  subject_patterns:
+    - "earn points"
+    - "sale"
+    - "deal"
+    - "offer"
+    - "newsletter"
+    - "unsubscribe"
+    - "cancel"  # Already cancelled
+  from_patterns:
+    - "marketing"
+    - "promo"
+    - "offers"

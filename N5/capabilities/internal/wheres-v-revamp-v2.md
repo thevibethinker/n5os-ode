@@ -14,19 +14,19 @@ name: Wheres V Revamp V2
 category: internal
 status: active
 confidence: high
-last_verified: '2026-01-09'
+last_verified: '2026-01-19'
 tags: [travel, tracking, automation, gmail]
 owner: V
 purpose: |
   Automated travel tracking system that scans Gmail for flight confirmations and presents a simplified, parent-friendly status dashboard.
 components:
-  - N5/builds/wheres-v-revamp-v2/PLAN.md
-  - Sites/wheres-v-staging/data/trips.jsonl
-  - Sites/wheres-v-staging/scripts/trip_store.py
-  - Prompts/wheres-v/flight_filter.prompt.md
-  - Prompts/wheres-v/flight_extractor.prompt.md
+  - N5/builds/wheres-v-multi-segment/PLAN.md
+  - Sites/wheres-v-staging/data/trips_v2.jsonl
+  - Sites/wheres-v-staging/data/legs_v2.jsonl
+  - Sites/wheres-v-staging/scripts/trip_store_v2.py
+  - Sites/wheres-v-staging/scripts/ingest_trips.py
   - Sites/wheres-v-staging/src/App.tsx
-  - Sites/wheres-v-staging/server/api.ts
+  - Sites/wheres-v-staging/server.ts
 operational_behavior: |
   A daily scheduled agent scans the "Travel Reservations" Gmail label. It uses a tiered LLM approach to filter for V's flights and extract structured details into a JSONL store, which feeds a single-page React status dashboard.
 interfaces:
