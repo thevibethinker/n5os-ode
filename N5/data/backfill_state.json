@@ -1,13 +1,13 @@
 {
-  "status": "complete",
-  "current_offset": 60,
+  "status": "not_started",
+  "current_offset": 0,
   "max_offset": 60,
   "window_days": 30,
-  "runs_completed": 2,
+  "runs_completed": 0,
   "total_runs_needed": 2,
-  "emails_processed": 24,
-  "signals_found": 4,
-  "started_at": "2026-01-19T07:09:06.392420",
-  "last_run_at": "2026-01-19T07:09:17.066733",
-  "completed_at": "2026-01-19T07:09:17.066740"
+  "emails_processed": 0,
+  "signals_found": 0,
+  "started_at": null,
+  "last_run_at": null,
+  "completed_at": null
 }
