@@ -5,7 +5,7 @@
   "meeting_date": "2026-01-09",
   "meeting_type": "internal",
   "status": "processed",
-  "processed_at": "2026-01-09T16:47:30Z",
+  "processed_at": "2026-01-17T01:46:22.149036Z",
   "crm_synced": true,
   "blocks_generated": {
     "stakeholder_intelligence": true,
@@ -15,4 +15,3 @@
   "last_updated_by": "MG-6_v3.0",
   "mg2_completed_at": "2026-01-09T16:20:00Z"
 }
-

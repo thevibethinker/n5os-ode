@@ -1,50 +1,44 @@
 ---
-created: 2026-01-13
-last_edited: 2026-01-13
+created: 2026-01-14
+last_edited: 2026-01-14
 version: 1.0
 provenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141
-block: B21
 ---
 
-# B21: Key Moments
+# B21 KEY MOMENTS
 
-## 1. The CBD Vape Review
-> "Have you ever tasted something that had no soul? That is what this tastes like. It's empty."
+## High-Leverage Quotes & Turning Points
 
-**Why it matters:** V's visceral description of attempting to substitute CBD for THC reveals how deeply embedded the weed habit is—it's not just chemical, it's experiential. The "soul" framing suggests V associates the habit with meaning-making.
+### 1. The Competitive Instinct Frame
+**Quote:** *"That competitive instinct... it drives you forward, but it's a thing that you have to learn to wrangle and channel. It's a very powerful, potent thing, but it can lead you down, even it can even become a thing that consumes itself, right, and leads to burnout. So it's an incredibly volatile but powerful attribute to have."*
 
----
-
-## 2. The Cry for Help Acknowledgment
-> "Those 12-hour long vibe coding sessions, as much a cry for help as anything."
-
-**Why it matters:** V directly names a behavior pattern (intense work immersion) as emotional avoidance. This level of self-awareness is rare and suggests readiness for deeper work.
+**Why it matters:** This is V's clearest articulation of how they understand their own drive. The self-awareness that it can "consume itself" suggests V is actively managing burnout risk.
 
 ---
 
-## 3. Travis Kelce Leadership Insight
-> "He's not blaming other people. Taking full accountability for, like, I need to work harder. I need to focus... he still lifts up the other players on his team. That is the kind of sportsmanship that's a leader."
+### 2. The Theory vs. Rule Insight
+**Quote:** *"You calibrate the advice for what someone can handle. Some people I've learned, I can't give them the theory. They just want the rule. For other folks, they can't even understand the rule. It doesn't compute unless you explain the theory."*
 
-**Why it matters:** V identifies accountability + team elevation as his leadership model. This is the template he aspires to and likely judges others by.
-
----
-
-## 4. The Unity Manifesto
-> "One of the key things that matter for a species at this stage of a civilization is: do we learn to fundamentally row in the same direction?"
-
-**Why it matters:** V frames collective action as civilizational necessity. This value (unity/solidarity) sits at the meta level—it's about humanity, not just personal relationships. Suggests V thinks in species-level terms.
+**Why it matters:** Meta-insight about V's professional practice (giving advice) and self-understanding (needs theory first). Directly applicable to how Careerspan should communicate.
 
 ---
 
-## 5. The Honor Code
-> "My sense of personal honor doesn't allow me to be that much of a personal hypocrite... if I apply a certain rule in one context, I will do my best to apply that in another context, regardless of whether it helps me or hurts me or helps my side or hurts my side."
+### 3. The Honor/Consistency Value
+**Quote:** *"My sense of personal honor doesn't allow me to be... at least that much of a personal hypocrite. If I apply a certain rule in one context, I will do my best to apply that in another context, regardless of whether it helps me or hurts me or helps my side or hurts my side."*
 
-**Why it matters:** V articulates a personal code that transcends tribalism. This is foundational to his identity and explains his discomfort with blind partisanship.
+**Why it matters:** This is a cornerstone value. It explains V's approach to ethics, decisions, and likely brand positioning. "Honor" as the framing is notable — not "fairness" or "consistency" but honor.
 
 ---
 
-## 6. The Kindness Reframe
-> "It's more about showing that I get... showing my love for the people that I care about."
+### 4. The Unity Imperative
+**Quote:** *"One of the key things that matter for a species at this stage of a civilization is: do we learn to fundamentally row in the same direction? Unity is what's going to save us, is us ganging together."*
 
-**Why it matters:** V's kindness is relational and attentive, not performative. His growth edge (being more mindful of how habits/ambitions affect others) acknowledges this attention isn't always present.
+**Why it matters:** V's worldview at civilizational scale. This connects personal values to macro-purpose. Could inform company mission articulation.
+
+---
+
+### 5. The Questions Until No Questions Self-Description
+**Quote:** *"I have only questions until I have no questions."*
+
+**Why it matters:** Concise self-portrait. Useful for understanding how V processes information, makes decisions, and likely frustrates people who want quick answers.
 

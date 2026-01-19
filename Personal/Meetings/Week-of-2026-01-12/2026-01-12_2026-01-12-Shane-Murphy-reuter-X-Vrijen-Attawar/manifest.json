@@ -26,5 +26,9 @@
   "last_updated_by": "MG-2_Prompt",
   "crm_synced": true,
   "crm_sync_timestamp": "2026-01-13T23:46:17.544638",
-  "processed_at": "2026-01-13T23:46:21Z"
+  "processed_at": "2026-01-13T23:46:21Z",
+  "follow_up_email_generated": "YES",
+  "follow_up_email_generated_at": "2026-01-18T20:40:00Z",
+  "follow_up_email_quality_score": 92,
+  "follow_up_email_last_updated_by": "MG-5_v3.2_agent_c7d010d5-02f5-4e5d-a0b5-2eb6a6565962"
 }

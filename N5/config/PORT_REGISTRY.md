@@ -58,6 +58,8 @@ provenance: con_u0LhWqxkPWYn44Fg
 | 9090 | prometheus | http | service | Prometheus monitoring |
 | 19999 | semantic-reindex | tcp | service | Semantic reindex service |
 | 50000 | vrijenattawar-staging | http | zosite | Personal site staging |
+| 50001 | calendly-auth | http | service | Calendly OAuth + webhook receiver |
+| 50002 | build-tracker | http | zosite | Build Tracker dashboard |
 | 50100 | vrijenattawar-staging | http | zosite | Personal site staging (alt) |
 | 50529 | n5-waitlist | http | service | N5 waitlist page |
 | 50838 | store-va | http | zosite | Store (prod) |
@@ -72,7 +74,7 @@ provenance: con_u0LhWqxkPWYn44Fg
 
 - **n5-services (8763-8844)** — next: 8791
 - **webhooks (8845-8899)** — next: 8846
-- **mid-ephemeral (50000-51999)** — next: 50530
+- **mid-ephemeral (50000-51999)** — next: 50003
 - **high-ephemeral (52000-58999)** — next: 52155
 
 ## Conflict History

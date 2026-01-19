@@ -5,8 +5,8 @@
   "created_by": "user",
   "contains_pii": true,
   "pii_categories": [
-    "ssn"
+    "phone"
   ],
-  "pii_note": "PII detected during conversation close (con_u0LhWqxkPWYn44Fg)",
-  "pii_marked_at": "2026-01-15T05:19:28.891066+00:00"
+  "pii_note": "PII detected during conversation close (con_hkrUsfzMMeOHkhfx)",
+  "pii_marked_at": "2026-01-18T23:54:56.619486+00:00"
 }

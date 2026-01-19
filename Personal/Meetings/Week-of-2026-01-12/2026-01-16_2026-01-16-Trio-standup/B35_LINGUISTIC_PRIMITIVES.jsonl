@@ -1,0 +1,4 @@
+{"type": "phrase", "text": "rock and roll", "context": "Expressing enthusiastic approval of feature delivery", "speaker": "V", "emotional_register": "high_energy_positive", "usage": "affirmation"}
+{"type": "phrase", "text": "Hell yeah", "context": "Double emphasis on approval - repeated twice", "speaker": "V", "emotional_register": "high_energy_positive", "usage": "affirmation"}
+{"type": "phrase", "text": "Howdy", "context": "Casual greeting - V uses this to open", "speaker": "V", "emotional_register": "friendly_informal", "usage": "greeting"}
+{"type": "capture_signal", "text": "That is exactly what we want", "context": "V confirming alignment with Ilse's goal of reducing coordination", "speaker": "V", "signal_type": "alignment_confirmation", "strength": "high"}

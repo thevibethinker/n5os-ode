@@ -1,0 +1,12 @@
+[
+  {
+    "worker": "Worker D (Insight Enrichment)",
+    "status": "error",
+    "error": ""
+  },
+  {
+    "worker": "Worker E (Thematic Connections)",
+    "status": "error",
+    "error": ""
+  }
+]

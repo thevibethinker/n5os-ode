@@ -1,0 +1,206 @@
+{
+  "processed": [
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "market-fundability-and-professional-acceptability-",
+      "similarity_score": 0.95,
+      "new_nuance": "Introduces the specific terminology of 'L-shaped' moves versus 'diagonal leaps' as a strategic framework for staging transitions. Explicitly identifies the 'anchor' concept\u2014where one dimension (role or domain) must remain fixed to maintain market legibility and mitigate perceived risk.",
+      "merge_recommendation": "Update the 'Stakes' or 'Insight' of the existing position to include the 'L-shaped' vs 'diagonal leap' strategy. Specifically, add that to maintain legibility and reduce resistance, pivots should be staged sequentially (one degree of freedom at a time) to preserve a recognizable anchor for market pattern-matching.",
+      "reasoning": "The candidate and Position 1 share the exact same core thesis regarding 'geometric distance' and 'degrees of freedom' in career pivots. While the candidate is worded slightly more toward Careerspan's advising strategy, it is a clear duplicate of the existing mental model. The 'L-shaped' move is the only distinct strategic addition.",
+      "candidate_id": "cand_20251228_2025-12-23_rochelmycareerspancom_002",
+      "candidate_insight": "Market acceptability and fundability in career pivots are determined by the geometric 'distance' between a candidate's current state and their target role. Career strategy can be modeled as a set of d"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "a-truly-effective-productivity-tool-functions-as-a-2025-12-26",
+      "similarity_score": 0.95,
+      "new_nuance": "The candidate introduces the concept of 'digital architecture' shaping 'thought patterns' and the importance of software being 'malleable' enough to leave 'traces' of personal history and 'lived-in' traits.",
+      "merge_recommendation": "Update the insight to explicitly mention that this digital home must be 'malleable' to allow for 'lived-in' traits. Expand the reasoning to include the idea that digital architecture (workflows and file structures) actively shapes thought patterns, and developers should prioritize features that allow users to leave 'traces' of their personal history.",
+      "reasoning": "The core insight\u2014software as a 'digital home' for self-actualization\u2014is identical to Position 1. The candidate provides slightly more technical depth regarding how this is achieved (malleability, traces, digital architecture influencing cognitive flow/thought patterns).",
+      "candidate_id": "cand_20251228_2025-12-26_Zo-demo-planning-brainstorm_002",
+      "candidate_insight": "A truly effective productivity tool functions as a 'digital home' rather than a mere utility. This level of software should reflect the user's vulnerability, history, and personal growth, making the a"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "ais-primary-value-is-in-shifting-human-experts",
+      "similarity_score": 0.95,
+      "new_nuance": "Specifically applies the 'problem stack' elevation to the career coaching domain, explicitly identifying the transition from 'mechanical editing' to 'high-level strategy' and 'objective alignment' as the key shift for Careerspan.",
+      "merge_recommendation": "Incorporate the career coaching example into the insight or examples section. The product implication should be explicitly noted: AI should be positioned not as a speed-multiplier for tasks (editing resumes), but as an architectural system for strategy.",
+      "reasoning": "The candidate's core insight\u2014shifting experts higher in the problem stack from tactical to strategic work\u2014is identical to Position 1. Positions 2, 3, and 4 are also variations of this same idea. The only difference is the domain-specific application to career coaching and Careerspan's product positioning.",
+      "candidate_id": "cand_20251228_20251226_Careerspan_Demo_001",
+      "candidate_insight": "AI\u2019s primary value lies in elevating human experts to higher levels of the 'problem stack' rather than simply automating low-level tasks. In career coaching, this means shifting the human focus from m"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "professional-identity-is-semantic-rather-than-synt-20251226_C",
+      "similarity_score": 0.95,
+      "new_nuance": "Introduces the mathematical/data-science analogy of 'high-dimensional data' vs. 'low-dimensional projection,' and the practical shift from a 'canonical document' to a 'readiness state' of modular units of meaning.",
+      "merge_recommendation": "Update the reasoning to include the dimensionality analogy: human experience as high-dimensional data being projected into low-dimensional forms (resumes) based on specific queries. Update the stakes/implications to emphasize the 'readiness state' over the search for a 'perfect' document, where experience is stored as modular units of meaning.",
+      "reasoning": "The candidate is a direct semantic duplicate of Position 1 (which itself seems to be the current lead in a set of overlapping positions). While Position 2 and 3 also share this core, Position 1 uses almost identical language. The candidate provides superior technical reasoning via the dimensionality analogy and a clear tactical implication regarding 'readiness state' that strengthens the existing position.",
+      "candidate_id": "cand_20251228_20251226_Careerspan_Demo_002",
+      "candidate_insight": "Professional identity is semantic rather than syntactic; a person is a collection of meaningful stories that can be re-rendered into different forms without losing internal consistency. The 'canonical"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "similarity_score": 0.95,
+      "new_nuance": "Specifically applies the 'readiness state' framework to schools and alumni associations, framing the transformation as moving from a 'pull' model (searching after request) to a 'sync' model (continuous alignment).",
+      "merge_recommendation": "Merge the school/alumni association example and the 'pull vs. sync' terminology. Updated Insight: 'Reducing latency in trust networks transforms institutions (like schools and alumni associations) from manual brokers into platform orchestrators. By moving from a reactive \"pull\" model to a continuous \"sync\" model\u2014maintaining a constant \"readiness state\" of talent data\u2014institutions eliminate the time-lag between requests and the delivery of qualified talent.'",
+      "reasoning": "The candidate is a near-identical semantic match for Position 1. While Position 1 is currently categorized under 'worldview' and the candidate is 'careerspan', they describe the exact same concept of institutional transformation via latency reduction and 'readiness states'. The candidate provides more concrete application to Careerspan's target market (schools) and sharper 'pull vs. sync' phrasing.",
+      "candidate_id": "cand_20251228_20251226_Careerspan_Demo_003",
+      "candidate_insight": "Reducing latency in trust-based networks transforms institutional roles from manual brokers to platform orchestrators. By maintaining a constant 'readiness state' of talent data, schools can eliminate"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "ai-implementation-should-elevate-human-experts-hig",
+      "similarity_score": 0.95,
+      "new_nuance": "Specific application to career coaching (moving from mechanical editing to career trajectory) and the identification of the 'expertise gap' as a specific risk of this transition.",
+      "merge_recommendation": "Incorporate the career coaching example (mechanical editing vs. holistic trajectory) into the 'Stakes' or 'Examples' section. Add the 'expertise gap' as a specific risk/consideration in the Reasoning or Stakes.",
+      "reasoning": "The core insight\u2014elevating experts 'higher in the problem stack' from execution to strategy\u2014is identical to Position 1. The reasoning about hierarchical value and syntactic operations also matches perfectly. The candidate simply provides a concrete vertical application (Careerspan/coaching) and identifies a specific risk (expertise gap) not explicitly detailed in the existing position.",
+      "candidate_id": "cand_20251228_2025-12-26_Careerspan-demo_001",
+      "candidate_insight": "AI implementation should aim to elevate human experts higher in the 'problem stack' rather than simply automating existing manual tasks. In career coaching, this means shifting the human's role from m"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "similarity_score": 0.95,
+      "new_nuance": "Specifically identifies the '2-story minimum' as the technical mechanism required to achieve the 'readiness state' and explicitly ties the transformation to Careerspan's model for alumni associations/schools.",
+      "merge_recommendation": "Update the existing insight to explicitly mention the mechanism and the specific institutional context. Recommended insight: 'Reducing latency in trust networks\u2014specifically through technical mechanisms like the 2-story minimum\u2014transforms institutions from manual brokers into real-time platform orchestrators. By maintaining a constant 'readiness state' (perpetually indexed candidate data) for participants, schools and alumni networks can facilitate trust-based referrals at the speed of digital interaction rather than manual search.'",
+      "reasoning": "This candidate is a clear duplicate of Position 1 (and highly related to Position 2). The core idea\u2014collapsing latency in trust networks via a readiness state\u2014is identical. The 'new' part is simply the application of this worldview position to the specific Careerspan product mechanism (2-story minimum) and the target vertical (alumni placement).",
+      "candidate_id": "cand_20251228_2025-12-26_Careerspan-demo_003",
+      "candidate_insight": "Reducing latency in trust networks transforms institutions from manual talent brokers into real-time platform orchestrators. Maintaining a constant 'readiness state' for candidates allows trust-based "
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "the-efficacy-of-automated-habit-tracking-systems-i",
+      "similarity_score": 0.95,
+      "new_nuance": "Specifically identifies 'anthropomorphization' and 'perceived human-like presence' as the mechanism for creating a 'psychological sense of duty.' Adds high-signal design stakes: optimizing for 'social cues (tone, response latency, perceived personality)' as a higher priority than feature density or data visualization.",
+      "merge_recommendation": "Update the existing position to explicitly mention anthropomorphization and the psychological duty to respond. Add the design implication that social cues like tone and response latency are more effective drivers of behavioral change than data visualization or feature density.",
+      "reasoning": "The candidate and Position 1 share nearly identical core insights and reasoning structures. Both argue that social obligation\u2014not utility\u2014drives habit-tracking efficacy. The candidate is a definitive duplicate but provides more refined terminology ('anthropomorphization') and concrete implementation stakes for AI developers.",
+      "candidate_id": "cand_20251228_2025-12-23_rochelmycareerspancom_001",
+      "candidate_insight": "The efficacy of automated habit-tracking systems is driven by social obligation rather than technical utility. A bot's ability to change behavior depends on its successful 'anthropomorphization'\u2014the u"
+    },
+    {
+      "verdict": "NEW",
+      "matched_position_id": null,
+      "similarity_score": 0.06,
+      "new_nuance": null,
+      "merge_recommendation": null,
+      "reasoning": "The candidate presents a specific worldview position regarding the 'strategic suicide' of LinkedIn due to incentive misalignment (ads/dwell time vs. professional utility). While Existing Position 5 touches on the hiring market being 'broken' by AI, this candidate focuses specifically on the platform-level decay of LinkedIn and the resulting 'Utility Gap' that creates a market opportunity for high-utility overlays. None of the existing positions capture this 'Utility Gap' thesis or the specific critique of social media engagement models cannibalizing professional tools.",
+      "candidate_id": "cand_20251228_2025-12-23_Kristen-Habacht-Elly-AI-x-Vrijen-Attawar_003",
+      "candidate_insight": "LinkedIn is committing 'strategic suicide' by prioritizing social media engagement (ads/attention) over its core professional utility (matching/trust). This pivot creates a massive market opening for "
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "the-internet-of-careers-functions-as-a-collective",
+      "similarity_score": 0.95,
+      "new_nuance": "Shifts the focus from the 'capital' itself to the organizational role of Careerspan as the 'steward' of the collective pot rather than a 'gatekeeper,' and explicitly identifies the 'reflection engine' as the mechanical vehicle for building this resource.",
+      "merge_recommendation": "Incorporate the 'steward vs. gatekeeper' distinction and the 'reflection engine' terminology into the Existing Position. The updated insight should emphasize that the high-fidelity exchange is maintained through a dedicated 'reflection engine' that converts individual qualitative effort into a common-pool resource.",
+      "reasoning": "The candidate and Position 1 share the exact core thesis: an 'Internet of Careers' built on a collective, high-fidelity data exchange of qualitative reflections to solve information asymmetry. The candidate's specific contribution is the tactical implication for Careerspan's identity (stewardship) and the naming of the 'reflection engine' as the core infrastructure.",
+      "candidate_id": "cand_20251228_2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar_003",
+      "candidate_insight": "A collective 'Internet of Careers' can be built by aggregating individual qualitative professional reflections into a shared data pot. This creates a high-fidelity data exchange that benefits both can"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "in-a-career-pivot-a-candidates-primary-objective",
+      "similarity_score": 0.92,
+      "new_nuance": "Specifically identifies 'narrative engineering' as a tool for 'risk elimination' rather than just closing a 'gap.' It emphasizes that this work must happen 'before the interview even begins' and frames the task as reframing past experiences into the 'vocabulary and value-systems' of the target role.",
+      "merge_recommendation": "Update the existing position to include the explicit focus on 'eliminating perceived risk before the interview' and the tactic of translating past experiences into the specific 'vocabulary and value-systems' of the target domain. Contrast 'story-shaping/bridge-building' against 'skill-acquisition' as the higher-leverage activity.",
+      "reasoning": "This is a near-exact match for Position 1. Both share the same 'primary objective' (narrative engineering vs demonstrating technical competency/work capacity) and the same mechanism (pre-solving pattern-matching). The candidate provides slightly more tactical depth regarding the use of vocabulary and the timing of risk mitigation.",
+      "candidate_id": "cand_20251228_2025-12-23_2025-12-23-Melhrubingmailcom_001",
+      "candidate_insight": "A candidate's primary objective during a career pivot is not demonstrating technical competency in the work itself, but using narrative engineering to artificially close the cognitive gap in the emplo"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "a-sustainable-job-search-requires-a-dietary-balanc",
+      "similarity_score": 0.95,
+      "new_nuance": "The candidate specifically introduces the 'win-rate' sensitivity of human motivation and the concept of 'ego-depletion' as the mechanical reason why moonshots cause burnout. It also introduces a specific categorization of leads by 'caloric value' for coaching applications.",
+      "merge_recommendation": "Append the 'win-rate' and 'ego-depletion' mechanics to the reasoning section. Update the stakes/insight to include the 'caloric value' categorization as a practical tool for the portfolio management approach.",
+      "reasoning": "The candidate is a direct match for Position 1, sharing the same 'dietary balance' and 'screamer shots' terminology. It expands on the psychological mechanics (ego-depletion, win-rate) and adds a coaching-specific application (caloric value categorization) that enriches the existing position.",
+      "candidate_id": "cand_20251228_2025-12-23_2025-12-23-Melhrubingmailcom_002",
+      "candidate_insight": "A sustainable job search requires a diversified 'diet' of opportunities, balancing high-probability 'stable' bets with high-leverage 'screamer shots.' This prevents the psychological burnout associate"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "there-is-a-strategic-advantage-in-decoupling-human",
+      "similarity_score": 0.95,
+      "new_nuance": "The explicit framing of Careerspan as the 'Switzerland' of hiring and the specific psychological concept of a 'safe container' to bypass the 'interview persona' created by power dynamics.",
+      "merge_recommendation": "Update the insight to emphasize Careerspan's positioning as a neutral 'Switzerland' entity. Merge the reasoning to explicitly mention that decoupling bypasses the 'interview persona' and 'safe container' dynamics that distorted direct candidate-employer communication.",
+      "reasoning": "The candidate and Position 1 share the exact same core thesis: the strategic advantage of decoupling reflection from transactional evaluation. The candidate provides more evocative language ('Switzerland', 'interview persona', 'safe container') that strengthens the existing position without changing its fundamental claim.",
+      "candidate_id": "cand_20251228_2025-12-23_2025-12-23-Davisteamworkonlinecom_002",
+      "candidate_insight": "There is a strategic advantage in decoupling the 'vulnerable' side of career discovery (self-reflection and coaching) from the 'transactional' side of hiring (ATS and applications). A neutral third pa"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "internal-self-assessment-systematically-lags-exter",
+      "similarity_score": 0.98,
+      "new_nuance": "Specific application to Careerspan's methodology: coaching should shift from introspection to active 'external signal-gathering' to force identity updates. It highlights the role of prestigious institutions (e.g., McKinsey) and high-status peer treatment as the specific catalysts for this recalculation.",
+      "merge_recommendation": "Append the 'Stakes' section to the existing position to ground the theory in Careerspan's operations. Explicitly mention that coaching must prioritize external signal-gathering to bridge the self-model gap before the candidate 'feels ready.'",
+      "reasoning": "The candidate is a near-identical match to Position 1. The core insight\u2014that internal models update slower than market signals\u2014is the same. The candidate adds valuable operational context for Careerspan (external signal-gathering) that should be merged into the existing position's 'Stakes' or 'Implications' field.",
+      "candidate_id": "cand_20251228_2025-12-22_Vrijen-&-Rochel---Job-Applying-Powwow_001",
+      "candidate_insight": "Internal self-assessment systematically lags external market signals. People often operate at a higher level than they permit themselves to believe until a formal institution or peer validation forces"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "the-recruitment-market-is-systematically-inefficie",
+      "similarity_score": 0.85,
+      "new_nuance": "The resume is specifically framed as a 'failed, unauthenticated data structure' that has reached its utility limit because AI now allows the 'cost of generating high-quality text' to drop to zero, effectively destroying the resume's signal-to-noise ratio.",
+      "merge_recommendation": "Update the insight to explicitly state that resumes are 'unauthenticated data structures' whose signal has been neutralized by zero-cost AI text generation. Shift the proposed solution from just a 'proxy for agency' to 'high-integrity, multi-source semantic models' that aggregate identity rather than parse static documents.",
+      "reasoning": "The candidate aligns perfectly with the existing position's critique of the recruitment market's over-reliance on resumes (the 'visible 30%'). While the existing position focuses on the inefficiency and the need for an 'agency proxy,' the candidate provides the technical mechanism for WHY the resume has failed (unauthenticated data structure + AI noise) and the specific technical evolution required (semantic identity aggregation). Merging them creates a stronger link between the market problem and Careerspan's technical solution.",
+      "candidate_id": "cand_20251228_2025-12-22_2025-12-22-Swd-Cvsh-Vys_001",
+      "candidate_insight": "The resume is a failed, unauthenticated data structure that has reached the end of its utility as a medium for hiring. The future of talent assessment lies in high-integrity, multi-source semantic mod"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "similarity_score": 0.95,
+      "new_nuance": "Specifically identifies the shift from static document analysis to 'Triangle of Integrity' models as the necessary industry evolution, and frames Careerspan's technical moat as the 'authentication of narratives through interaction.'",
+      "merge_recommendation": "Append the specific 'Triangle of Integrity' terminology to the insight. Update the reasoning to include the transition from static analysis to interactive authentication as the primary defense against zero-marginal-cost fraud.",
+      "reasoning": "The candidate and Position 1 share the exact same core thesis: the resume is an obsolete/failed data structure due to a lack of intrinsic authentication in an LLM-saturated environment. They even use the same 'dance of consistency' analogy. The candidate simply provides more specific 'Triangle of Integrity' branding for the solution.",
+      "candidate_id": "cand_20251228_2025-12-22_Christine-Song-Ribbon-Partnership-Sync_001",
+      "candidate_insight": "The traditional resume is an obsolete data structure because it lacks inherent authentication. In an AI-augmented world where high-signal-sounding fraud can be generated at zero marginal cost, the for"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "similarity_score": 0.92,
+      "new_nuance": "The explicit analogy of shifting from 'paper maps to GPS' and the specific shift in Careerspan's strategic focus from 'building a resume builder' to 'building a high-integrity data engine.'",
+      "merge_recommendation": "Integrate the GPS analogy into the reasoning section to illustrate the shift from static documents to dynamic models. Update the stakes to emphasize the move away from 'resume building' software toward 'data engine' architecture.",
+      "reasoning": "The candidate and Position 2 share the exact core thesis: the resume is a 'failed data structure.' While Position 2 focuses heavily on authentication and fraud (the 'why'), the candidate provides a clearer strategic 'so what' for Careerspan and a strong navigational analogy (GPS) that clarifies the transition from document to model.",
+      "candidate_id": "cand_20251228_2025-12-22_2025-12-22-Swd-Cvsh-Vys_001",
+      "candidate_insight": "The resume should be viewed as a failed data structure rather than a document. The future of hiring lies in moving beyond this medium entirely, favoring high-integrity, multi-source semantic models th"
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "similarity_score": 0.95,
+      "new_nuance": "The candidate explicitly identifies the specific mechanism of the latency bottleneck: the 'human-in-the-loop' within institutions like alumni associations and career offices. It also adds a sharper call to action: institutions should stop trying to 'match' manually and pivot entirely to data infrastructure maintenance.",
+      "merge_recommendation": "Update the Reasoning to explicitly mention the 'human-in-the-loop' as the primary latency bottleneck in institutions like alumni associations and university career offices. Incorporate the implication that institutional focus must shift from manual 'matching' to maintaining the underlying data infrastructure that sustains the 'ready state.'",
+      "reasoning": "Position 1 and the candidate share the exact same core thesis, including the specific phrasing 'manual brokers into platform orchestrators' and 'readiness state.' While Position 5 also touches on this, Position 1 is the direct semantic match. The candidate provides slightly more concrete institutional examples (schools/associations) and a more pointed strategic directive.",
+      "candidate_id": "cand_20251229_20251226_Careerspan_Demo_no_transcript_003",
+      "candidate_insight": "Reducing latency in trust-based networks transforms manual brokers into platform orchestrators. By maintaining a constant 'readiness state' through AI, institutions can activate their network's value "
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "data-collected-independent-of-a-specific-job-appli",
+      "similarity_score": 0.95,
+      "new_nuance": "Introduces the 'Hawthorne effect' as a psychological framework for data degradation in hiring and highlights the structural 'data moat' created by platforms that decouple profile building from the job application process.",
+      "merge_recommendation": "Integrate the specific mention of the 'Hawthorne effect' into the reasoning and expand the implications to include the strategic advantage of a 'structural data moat' for platforms that facilitate context-free talent data accumulation.",
+      "reasoning": "The candidate's core insight\u2014that data collected outside of a specific application context is higher fidelity because it removes the 'angling' incentive\u2014is identical to Position 1. However, the candidate adds significant depth by grounding this in a psychological principle (Hawthorne effect) and identifying a specific business implication (data moat).",
+      "candidate_id": "cand_20260103_2025-12-23_Kristen-Habacht-Elly-AI-x-Vrijen-Attawar_001",
+      "candidate_insight": "Professional data collected independent of a specific job application is higher fidelity than application-context data. Context-free extraction removes the incentive for candidates to angle responses "
+    },
+    {
+      "verdict": "DUPLICATE",
+      "matched_position_id": "hiring-should-be-treated-as-an-optimization-for-bu",
+      "similarity_score": 0.95,
+      "new_nuance": "Specifically identifies linear stack-ranking as a 'category error' and anchors the reasoning in the 'Pareto optimality' principle (optimization problems with multiple objectives cannot be reduced to one dimension without loss of information). Adds a concrete system implication: ATS needs to shift from 'score and rank' to a 'trade-off matrix' for hiring managers.",
+      "merge_recommendation": "Merge the mathematical framing (Pareto optimality) and the 'category error' terminology into the reasoning. Update the stakes to specifically advocate for a 'trade-off matrix' interface in ATS over traditional sorted lists.",
+      "reasoning": "The candidate and Position 1 share identical core DNA: the rejection of linear ranking in favor of multi-dimensional trade-offs. The candidate provides the formal name for the logic (Pareto optimality) and a sharper critique of current software (category error) that strengthens the existing position.",
+      "candidate_id": "cand_20260103_2025-12-23_Kristen-Habacht-Elly-AI-x-Vrijen-Attawar_002",
+      "candidate_insight": "Traditional hiring treats candidates as points on a single dimension when they are actually multi-dimensional bundles of capabilities with inherent trade-offs. No candidate is objectively 'better'\u2014onl"
+    }
+  ],
+  "remaining_count": 21,
+  "timestamp": "2026-01-15T06:51:47.066963"
+}

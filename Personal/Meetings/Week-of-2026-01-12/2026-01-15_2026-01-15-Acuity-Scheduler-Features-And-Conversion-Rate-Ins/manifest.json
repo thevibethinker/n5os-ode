@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-15T00:00:00.000000+00:00",
+  "meeting_folder": "2026-01-15_acuity_scheduler_features_and_conversion_rate_insights_for_coaching_platform",
+  "meeting_date": "2026-01-15",
+  "meeting_type": "internal",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "B01_DETAILED_RECAP": true,
+    "B03_DECISIONS": true,
+    "B03_STAKEHOLDER_INTELLIGENCE": true,
+    "B05_ACTION_ITEMS": true,
+    "B06_BUSINESS_CONTEXT": true,
+    "B07_TONE_AND_CONTEXT": true,
+    "B14_BLURBS_REQUESTED": true,
+    "B21_KEY_MOMENTS": true,
+    "B25_DELIVERABLES": true,
+    "B26_MEETING_METADATA": true,
+    "B32_THOUGHT_PROVOKING_IDEAS": true,
+    "B35_LINGUISTIC_PRIMITIVES": true
+  },
+  "last_updated_by": "MG-2_Agent",
+  "processed_at": "2026-01-16T17:47:50.609948+00:00",
+  "crm_synced": true
+}

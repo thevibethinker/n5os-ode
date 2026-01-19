@@ -12,5 +12,13 @@
   "last_updated_by": "MG-2_Prompt",
   "meeting_title": "2025-12-22_Christine-Song_Ribbon-Partnership-Sync",
   "processed_at": "2025-12-28T18:46:43.015711Z",
-  "crm_synced": true
+  "crm_synced": true,
+  "warm_intros_generated": {
+    "count": 1,
+    "status": "drafts_ready",
+    "timestamp": "2026-01-18T12:35:00-05:00",
+    "files": [
+      "INTRO_Christine-NYC-Founders-Club_connector.md"
+    ]
+  }
 }

@@ -1,0 +1,161 @@
+{
+  "merges": [
+    {
+      "candidate": "Vrijen-Attawar-and-Nic-Mahaney_001",
+      "target": "identity-in-the-labor-market-is-semantic-not",
+      "status": "merged"
+    },
+    {
+      "candidate": "Vrijen-Attawar-and-Nic-Mahaney_003",
+      "target": "as-generative-ai-commoditizes-highquality-output-t",
+      "status": "merged"
+    },
+    {
+      "candidate": "Ilya-sync_001",
+      "target": "ai-implementation-should-elevate-human-experts-hig",
+      "status": "merged"
+    },
+    {
+      "candidate": "David-x-Careerspan-Part-2_001",
+      "target": "ai-implementation-should-elevate-human-experts-hig",
+      "status": "merged"
+    },
+    {
+      "candidate": "David-x-Careerspan-Part-1_001",
+      "target": "the-recruitment-market-is-structured-around-a-mass",
+      "status": "merged"
+    },
+    {
+      "candidate": "David-x-Careerspan-Part-1_002",
+      "target": "in-the-ai-era-the-decision-to-hire",
+      "status": "merged"
+    },
+    {
+      "candidate": "Holly-x-V_002",
+      "target": "hiring-signal-collapse",
+      "status": "merged"
+    },
+    {
+      "candidate": "Holly-x-V_003",
+      "target": "the-recruitment-market-is-structured-around-a-mass",
+      "status": "merged"
+    }
+  ],
+  "promotions": [
+    {
+      "candidate": "cand_20260110_real_raw_t_Real-Raw-Test_001",
+      "position_id": "the-highest-leverage-in-career-transitions-20260115-uudm",
+      "domain": "careerspan",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260110_real_raw_t_Real-Raw-Test_002",
+      "position_id": "in-an-agentic-aidriven-world-technical-20260115-lxpr",
+      "domain": "epistemology",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260110_raw_meetin_Raw-Meeting-Test_001",
+      "position_id": "corporate-culture-serves-as-the-companys-20260115-hzfs",
+      "domain": "worldview",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260110_raw_meetin_Raw-Meeting-Test_002",
+      "position_id": "the-transition-from-measuring-how-much-20260115-romy",
+      "domain": "hiring-market",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260110_raw_meetin_Raw-Meeting-Test_003",
+      "position_id": "reducing-friction-in-a-selection-process-20260115-okwk",
+      "domain": "careerspan",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260110_2026-01-10_2026-01-10-Really-raw-meeting_001",
+      "position_id": "minimalist-or-tautological-documentation-within-a-20260115-lutz",
+      "domain": "epistemology",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260110_2026-01-10_2026-01-10-Really-raw-meeting_002",
+      "position_id": "agentic-workflows-possess-an-inherent-semantic-20260115-mcwl",
+      "domain": "ai-automation",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar_001",
+      "position_id": "there-is-a-help-threshold-where-20260115-vnek",
+      "domain": "product-strategy",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar_002",
+      "position_id": "status-signaling-often-requires-the-manufacture-20260115-saxh",
+      "domain": "worldview",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar_003",
+      "position_id": "mature-singlepurpose-widget-products-face-a-20260115-qnhs",
+      "domain": "careerspan",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Fxu-mjpr-tum_001",
+      "position_id": "technical-product-adoption-is-driven-more-20260115-vfxe",
+      "domain": "worldview",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Fxu-mjpr-tum_002",
+      "position_id": "the-consulting-market-suffers-from-a-20260115-noyg",
+      "domain": "careerspan",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Fxu-mjpr-tum_003",
+      "position_id": "mastery-of-complex-systems-is-best-20260115-vyno",
+      "domain": "epistemology",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello_001",
+      "position_id": "aimediated-expression-creates-a-recursive-arms-20260115-urdl",
+      "domain": "epistemology",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260113_2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello_003",
+      "position_id": "ainative-productivity-is-characterized-by-an-20260115-babn",
+      "domain": "worldview",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260114_2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar_001",
+      "position_id": "partial-modernization-of-legacy-systems-often-20260115-opsf",
+      "domain": "worldview",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260114_2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar_003",
+      "position_id": "the-rapid-evolution-of-ai-has-20260115-opjj",
+      "domain": "hiring-market",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260114_2026-01-12_fxu-mjpr-tum_001",
+      "position_id": "product-adoption-can-be-driven-by-20260115-icjx",
+      "domain": "worldview",
+      "status": "promoted"
+    },
+    {
+      "candidate": "cand_20260114_2026-01-12_fxu-mjpr-tum_002",
+      "position_id": "the-advisory-market-suffers-from-a-20260115-vzbi",
+      "domain": "careerspan",
+      "status": "promoted"
+    }
+  ],
+  "skipped": []
+}

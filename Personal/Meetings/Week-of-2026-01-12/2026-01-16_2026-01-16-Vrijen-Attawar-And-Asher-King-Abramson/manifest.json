@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-17T20:06:24Z",
+  "meeting_folder": "2026-01-16_vrijen_attawar_and_asher_king_abramson",
+  "meeting_date": "2026-01-16",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-2_Prompt",
+  "follow_up_email_generated": "YES",
+  "follow_up_email_generated_at": "2026-01-17T20:40:00Z",
+  "follow_up_email_quality_score": 92,
+  "processed_at": "2026-01-17T20:52:50.545716"
+}

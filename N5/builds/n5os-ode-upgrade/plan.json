@@ -1,0 +1,55 @@
+{
+  "name": "N5OS Ode Feature Upgrade",
+  "workers": [
+    {
+      "id": 1,
+      "component": "Conversation End System",
+      "deps": [],
+      "hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": 2,
+      "component": "Persona Routing Contract",
+      "deps": [],
+      "hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": 3,
+      "component": "Principles Library",
+      "deps": [],
+      "hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": 4,
+      "component": "Specialist Workflows",
+      "deps": [],
+      "hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    },
+    {
+      "id": 5,
+      "component": "Context Loading Upgrade",
+      "deps": [],
+      "hours": 1,
+      "status": "pending",
+      "completed_at": null,
+      "spawned_conversation": null
+    }
+  ],
+  "_meta": {
+    "project": "n5os-ode-upgrade",
+    "created_at": "2026-01-18T22:49:42.606277+00:00",
+    "status": "active"
+  }
+}

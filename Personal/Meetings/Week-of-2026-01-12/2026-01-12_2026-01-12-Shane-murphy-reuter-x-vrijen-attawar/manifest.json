@@ -12,5 +12,9 @@
   "last_updated_by": "MG-2_Prompt",
   "processed_at": "2026-01-12T16:46:42.025757Z",
   "meeting_type": "external",
-  "crm_synced": true
+  "crm_synced": true,
+  "follow_up_email_generated": "YES",
+  "follow_up_email_generated_at": "2026-01-17T18:45:00Z",
+  "follow_up_email_quality_score": 94,
+  "follow_up_email_last_updated_by": "MG-5_v3.2"
 }

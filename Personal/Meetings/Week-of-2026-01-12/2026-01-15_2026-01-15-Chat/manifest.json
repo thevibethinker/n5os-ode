@@ -1,0 +1,30 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-15T19:16:51.445135Z",
+  "meeting_folder": "2026-01-15_chat",
+  "meeting_date": "2026-01-15",
+  "status": "processed",
+  "processed_at": "2026-01-15T14:47:00-05:00",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "intelligence_blocks": [
+    "B01_DETAILED_RECAP",
+    "B03_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B07_TONE_AND_CONTEXT",
+    "B14_BLURBS_REQUESTED",
+    "B21_KEY_MOMENTS",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B35_LINGUISTIC_PRIMITIVES"
+  ],
+  "last_updated_by": "Zo (MG-6 workflow)",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-15T19:46:20.574057"
+}

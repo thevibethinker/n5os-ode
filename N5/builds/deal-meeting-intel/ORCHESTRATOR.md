@@ -1,14 +1,14 @@
 ---
 created: 2026-01-18
 last_edited: 2026-01-18
-version: 3.0
-provenance: con_GCktM2iwLZIi5cHK
+version: 4.0
+provenance: con_Eu1OoHRtx1VWaR6g
 ---
 # Deal Intelligence System — Build Orchestrator
 
 ## 🎉 BUILD COMPLETE
 
-All 6 workers completed and validated. **79 tests passing.**
+All 7 workers completed and validated. **79 tests passing + Worker 7 polish.**
 
 ## Workers
 
@@ -20,7 +20,7 @@ All 6 workers completed and validated. **79 tests passing.**
 | 4 | SMS Interface | "n5 deal" commands | ✅ Complete |
 | 5 | Email Scanner | Gmail signal extraction | ✅ Complete |
 | 6 | Proactive Sensing | New entity detection | ✅ Complete |
-| 7 | Polish & Extend | Notion workaround, SMS add, B37 template, email backfill | 🟡 Ready |
+| 7 | Polish & Extend | Notion append, SMS commands, backfill | ✅ Complete |
 
 ## Final Status
 
@@ -58,16 +58,76 @@ All 6 workers completed and validated. **79 tests passing.**
 
 ## How to Use
 
-### SMS Updates
-Text Zo with:
+### SMS Commands (via text to Zo)
+
+**Update a deal:**
 ```
-n5 deal darwinbox Ready to proceed
+n5 deal darwinbox Ready to proceed with pilot
 n5 deal "ribbon health" Christine confirmed budget
 ```
 
-### Manual Email Scan
+**Check deal status:**
+```
+n5 deal status calendly
+→ "Calendly: engaged (🔥hot). Last: today. Next: Send Howie dossier"
+```
+
+**List deals:**
+```
+n5 deal list hot
+→ "Hot deals: 🔥Darwinbox (identified) [CS]"
+
+n5 deal list all
+→ Lists top 15 active deals across pipelines
+```
+
+**Add new deal:**
+```
+n5 deal add "Acme Corp" careerspan Met at demo day
+n5 deal add "Cool Startup" zo Potential data partner
+```
+
+### Notion Intel Append
+
+The system can append deal intelligence to Notion page bodies:
+
 ```bash
-python3 N5/scripts/email_deal_scanner.py --days 7 --dry-run
+# Format intel for append
+python3 N5/scripts/notion_intel_prepend.py format-markdown \
+    --source-title "Meeting: Tope Sync" \
+    --source-type "meeting" \
+    --key-fact "In-person scheduled Jan 30" \
+    --next-action "Send Howie dossier" \
+    --json
+```
+
+Then via Zo:
+```python
+use_app_notion("notion-append-block", {
+    "pageId": "<page_id>",
+    "blockTypes": ["markdownContents"],
+    "markdownContents": ["<formatted markdown>"]
+}, email="vrijen@mycareerspan.com")
+```
+
+### Email Backfill
+
+**Scan with offset (for historical backfill):**
+```bash
+python3 N5/scripts/email_deal_scanner.py --days 30 --offset 0    # Last 30 days
+python3 N5/scripts/email_deal_scanner.py --days 30 --offset 30   # 30-60 days ago
+python3 N5/scripts/email_deal_scanner.py --days 30 --offset 60   # 60-90 days ago
+```
+
+**Check backfill progress:**
+```bash
+python3 N5/scripts/email_deal_scanner.py backfill --check
+→ "Backfill Status: in_progress. Progress: 33% (2 runs). Current window: 60-90 days ago"
+```
+
+**Advance backfill window (for scheduled agent):**
+```bash
+python3 N5/scripts/email_deal_scanner.py backfill --advance
 ```
 
 ### Manual Proactive Scan
@@ -84,14 +144,28 @@ python3 N5/scripts/deal_query.py contacts --type broker
 
 ## Integration Tests
 
-- [x] SMS flow — `n5 deal darwinbox` tested
-- [x] Meeting flow — Tope meeting → B37 generated
+- [x] SMS update flow — `n5 deal darwinbox` tested
+- [x] SMS status flow — `n5 deal status calendly` tested  
+- [x] SMS list flow — `n5 deal list hot` tested
+- [x] SMS add flow — `n5 deal add TestCorp careerspan` dry-run tested
+- [x] Meeting flow — Tope meeting → B37 v2.0 generated
+- [x] Notion append — Darwinbox page body updated
 - [x] Proactive sensing — Broker detection working
-- [ ] Live Email scan — Needs Gmail test
-- [ ] Live Notion push — Needs sync test
+- [x] Email backfill — offset/batch-size flags working
+- [ ] Live Email scan — Needs Gmail API test
+- [ ] Live Notion push (properties) — Needs sync test
+
+## Scheduled Agents
+
+| Agent | Schedule | Purpose |
+|-------|----------|---------|
+| Notion Sync | 3x daily | Push updates to Notion |
+| Email Scanner | 7 AM daily | Scan recent emails for signals |
+| *(TBD)* Email Backfill | Nightly x14 | Gradual historical backfill |
 
 ## Documentation
 
 - `file 'N5/builds/deal-meeting-intel/STATUS.md'` — Full status
 - `file 'N5/builds/deal-meeting-intel/DESIGN.md'` — System design
 - `file 'N5/builds/deal-meeting-intel/PLAN.md'` — Original plan
+- `file 'N5/builds/deal-meeting-intel/workers/WORKER-7-polish-and-extend.md'` — Polish tasks

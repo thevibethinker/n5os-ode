@@ -1,0 +1,11 @@
+{
+  "name": "ben-guo-linkedin-connections",
+  "title": "Ben Guo LinkedIn Connections",
+  "description": "LinkedIn connections export for Ben Guo — 2,718 connections from Dec 2010 to Jan 2026",
+  "resources": [
+    {
+      "path": "data.duckdb",
+      "format": "duckdb"
+    }
+  ]
+}

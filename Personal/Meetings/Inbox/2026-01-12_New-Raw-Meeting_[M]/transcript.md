@@ -1,1 +1,0 @@
-{"text": "Sample transcript content"}

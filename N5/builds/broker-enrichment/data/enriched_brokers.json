@@ -1,0 +1,163 @@
+{
+  "enrichment_completed": "2026-01-18T18:30:00-05:00",
+  "brokers": [
+    {
+      "name": "Jennifer Ives",
+      "notion_page_id": "2ec5c3d6-a5db-8001-915a-c7eb74d380fa",
+      "current_angle": "Connected to CoS at Findem - AI/startup recruiting",
+      "linkedin_found": false,
+      "gmail_found": false,
+      "status": "NO_DATA",
+      "notes": "Not in LinkedIn connections, no Gmail history. May be a referral or event contact.",
+      "action": "SKIP_OR_MANUAL"
+    },
+    {
+      "name": "Ajit Singh",
+      "notion_page_id": "2ec5c3d6-a5db-802b-a9ee-e5367995c5d9",
+      "current_angle": null,
+      "linkedin_found": false,
+      "gmail_found": true,
+      "gmail_email": "ajit@artiman.com",
+      "gmail_context": "Partner at Artiman VC. Met Aug 2018 via Dr. Sandeep Attawar intro. Had breakfast meeting, connected V to ApplyBoard (Brian Wilcove).",
+      "enriched": {
+        "current_org": "Artiman",
+        "blurb": "Partner at Artiman VC. Connected through Dr. Sandeep Attawar. Previously facilitated ApplyBoard intro.",
+        "angle_strategy": "VC with HRtech/EdTech portfolio. Could intro to portfolio companies or co-investors."
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Kamina Singh",
+      "notion_page_id": "2ec5c3d6-a5db-804f-95f9-d95a150b84be",
+      "current_angle": null,
+      "linkedin_found": false,
+      "crm_found": true,
+      "meeting_found": true,
+      "meeting_context": "VML event organizer. Strong connector to HR/recruitment executives (Northwell VP). Offered podcast intro and community contacts (Fordham, Mercy).",
+      "enriched": {
+        "current_org": "VML",
+        "blurb": "Community organizer and event lead at VML. Strong network in HR/recruitment (Northwell, Fordham, Mercy). Prefers non-promotional panel tone.",
+        "angle_strategy": "Event/community connector. Can intro to Northwell VP of Workforce Development and podcast opportunities."
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Katherine Von Jan",
+      "notion_page_id": "2ec5c3d6-a5db-8056-9d06-de12d7d4debb",
+      "current_angle": null,
+      "linkedin_found": true,
+      "linkedin_data": {
+        "company": "Tough Day",
+        "position": "Co-Founder and CEO",
+        "connected_on": "2025-05-15",
+        "profile_url": "https://www.linkedin.com/in/kvonjan"
+      },
+      "linkedin_messages_context": "Connected May 2025. V shared Spiral and custom voice extraction prompts with her. Casual AI/productivity exchange.",
+      "enriched": {
+        "current_org": "Tough Day",
+        "blurb": "Co-Founder and CEO of Tough Day. Connected via AI/productivity discussions. V shared voice extraction prompts.",
+        "angle_strategy": "Founder peer. Potential partnership or referral source in founder networks."
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Vir Kashyap",
+      "notion_page_id": "2ec5c3d6-a5db-8057-922b-c64323927ff7",
+      "current_angle": null,
+      "linkedin_found": true,
+      "linkedin_data": {
+        "company": "InstaLILY AI",
+        "position": "Advisor",
+        "connected_on": "2025-10-29",
+        "profile_url": "https://www.linkedin.com/in/vkash"
+      },
+      "linkedin_messages_context": "Met Oct 2025. Discussed Careerspan and hiring nuances. V asked for intro to InstaLILY hiring team. Vir said to email vir@instalily.ai.",
+      "enriched": {
+        "current_org": "InstaLILY AI",
+        "blurb": "Advisor at InstaLILY AI. Deep understanding of hiring challenges. Email: vir@instalily.ai",
+        "angle_strategy": "Talent intelligence expert. Potential intro to InstaLILY hiring team for Careerspan pilot.",
+        "email": "vir@instalily.ai"
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Colin Emerson",
+      "notion_page_id": "2ec5c3d6-a5db-805b-9ed7-f26d2d5eafb6",
+      "current_angle": "HRtech / talent intelligence",
+      "linkedin_found": true,
+      "linkedin_data": {
+        "company": "Harvey",
+        "position": "Enterprise Account Executive",
+        "connected_on": "2023-12-05",
+        "profile_url": "https://www.linkedin.com/in/colinemerson1"
+      },
+      "linkedin_messages_context": "Group thread with Logan Currie. Former Eightfold colleague. Connected V to podcast hosts Brandi and Maggie (HR content). Active broker making intros.",
+      "enriched": {
+        "current_org": "Harvey",
+        "blurb": "Enterprise AE at Harvey, former Eightfold. Connected via Logan Currie. Makes active intros to HR podcast hosts and talent intelligence contacts.",
+        "angle_strategy": "Ex-Eightfold network. Can intro to HR content creators and talent intelligence community.",
+        "linkedin_url": "https://www.linkedin.com/in/colinemerson1"
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Michael Fanous",
+      "notion_page_id": "2ec5c3d6-a5db-8099-bd13-db047bc8407e",
+      "current_angle": "Internal mobility / big enterprise",
+      "linkedin_found": false,
+      "gmail_found": true,
+      "gmail_context": "LinkedIn messages Dec 2025 and Jan 2026. Entrepreneur from South Park Commons.",
+      "enriched": {
+        "current_org": "South Park Commons",
+        "blurb": "Entrepreneur at South Park Commons. Recent LinkedIn connection (Dec 2025). Interested in internal mobility / big enterprise.",
+        "angle_strategy": "SPC founder network. Enterprise mobility focus aligns with Careerspan positioning."
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Nilesh Modi",
+      "notion_page_id": "2ec5c3d6-a5db-80e6-a408-c4b14f0abbd1",
+      "notion_display_name": "Reliance",
+      "current_angle": null,
+      "linkedin_found": false,
+      "gmail_found": false,
+      "status": "NO_DATA",
+      "notes": "Not in LinkedIn connections. Need manual lookup or intro source clarification.",
+      "action": "MANUAL_ENRICHMENT"
+    },
+    {
+      "name": "Ray Batra",
+      "notion_page_id": "2ec5c3d6-a5db-80f4-98b4-eab69ff37d59",
+      "current_angle": "Handshake",
+      "crm_found": true,
+      "meeting_found": true,
+      "meeting_context": "FOHE partnership pilot meeting Sep 2025. Asked clarifying questions about pilot scope and employer integration.",
+      "enriched": {
+        "current_org": "FOHE / Community",
+        "blurb": "FOHE community lead. Met during partnership pilot discussion. Thoughtful about employer integration and pilot scope.",
+        "angle_strategy": "Community/workforce development angle. Can connect to FOHE employer network."
+      },
+      "status": "READY_TO_PUSH"
+    },
+    {
+      "name": "Jeffrey Botteron",
+      "notion_page_id": "2ec5c3d6-a5db-80fd-aff4-c3ac5fd88ab7",
+      "notion_display_name": "Jeffery Bot",
+      "current_angle": null,
+      "crm_found": true,
+      "meeting_found": true,
+      "enriched": {
+        "current_org": "Techbuffalo",
+        "blurb": "Contact at Techbuffalo. Met Jan 2026. Email: jbotteron@techbuffalo.org",
+        "angle_strategy": "Techbuffalo network / regional tech community.",
+        "email": "jbotteron@techbuffalo.org"
+      },
+      "status": "READY_TO_PUSH"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "ready_to_push": 8,
+    "no_data": 2
+  }
+}

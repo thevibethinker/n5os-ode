@@ -1,0 +1,26 @@
+tables:
+- name: connections
+  row_count: 2718
+  columns:
+  - name: first_name
+    type: VARCHAR
+    description: First name of the connection
+  - name: last_name
+    type: VARCHAR
+    description: Last name of the connection (may include credentials like PhD, MBA)
+  - name: linkedin_url
+    type: VARCHAR
+    description: Full LinkedIn profile URL
+  - name: email
+    type: VARCHAR
+    description: Email address (often NULL — only visible if connection enabled sharing)
+  - name: company
+    type: VARCHAR
+    description: Current company/organization listed on profile
+  - name: position
+    type: VARCHAR
+    description: Current job title listed on profile
+  - name: connected_on
+    type: TIMESTAMP
+    description: Date the connection was established
+  description: LinkedIn connections — one row per connection in Ben Guo's network

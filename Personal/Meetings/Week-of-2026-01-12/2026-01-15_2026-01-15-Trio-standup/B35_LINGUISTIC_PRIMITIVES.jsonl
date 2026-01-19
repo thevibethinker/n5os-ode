@@ -1,0 +1,15 @@
+{"type": "analogy", "text": "Google watch is gaslighting me", "context": "V describing his sleep tracking device giving inaccurate data", "signal": "personification_of_tech", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "metaphor", "text": "her hair must be on fire", "context": "Describing how busy Kathy Pham at Workday must be", "signal": "intensity_marker", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "brokies", "context": "Describing Dover's financial situation", "signal": "casual_financial_assessment", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "take it and fuck it up", "context": "Describing how acquirers can manipulate earnout success metrics", "signal": "raw_warning", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "analogy", "text": "much hotter commodity in much hotter space", "context": "Comparing Careerspan favorably to Ray's company at exit", "signal": "market_positioning", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "metaphor", "text": "barely scratched the surface", "context": "Describing how many network connections remain untapped", "signal": "opportunity_framing", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "double in there", "context": "Describing having multiple connections at same company (Raidency)", "signal": "network_leverage", "source_speaker": "Logan", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "ball is in our court", "context": "Describing responsibility for next step with Clara", "signal": "ownership_marker", "source_speaker": "Logan", "meeting_date": "2026-01-15"}
+{"type": "capture_signal", "text": "paste this on my bathroom mirror", "context": "Logan's reaction to seeing favorable revenue scenarios", "signal": "emotional_commitment", "source_speaker": "Logan", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "arguing, bickering over you", "context": "Describing the ideal state of multiple acquirers competing", "signal": "negotiation_goal", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "analogy", "text": "corporate baddie", "context": "Describing someone who looks professional in a positive way", "signal": "appearance_assessment", "source_speaker": "Logan", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "PR exit", "context": "Describing an acquisition that's more about optics than value", "signal": "exit_type_taxonomy", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "acqui-hire", "context": "Describing Clara opportunity as team acquisition", "signal": "exit_type_taxonomy", "source_speaker": "V", "meeting_date": "2026-01-15"}
+{"type": "phrase", "text": "subsurface area that we face for taxes", "context": "Ilse's technical framing of tax exposure", "signal": "technical_metaphor", "source_speaker": "Ilse", "meeting_date": "2026-01-15"}
+

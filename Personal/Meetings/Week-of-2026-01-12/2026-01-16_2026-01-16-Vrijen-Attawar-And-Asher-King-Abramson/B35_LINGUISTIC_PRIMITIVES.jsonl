@@ -1,0 +1,17 @@
+{"type":"greeting","primitive":"Yo, yo, yo","category":"casual_opening","context":"Energetic, informal opening to establish rapport","speaker":"Vrijen"}
+{"type":"vernacular","primitive":"dude","category":"casual_address","context":"Informal address for male peers in casual conversation","speaker":"Vrijen"}
+{"type":"vernacular","primitive":"dog","category":"casual_address","context":"Informal address for male peers, more slang-heavy than 'dude'","speaker":"Vrijen"}
+{"type":"emphasis","primitive":"Fucking seriously, dog","category":"emphatic_agreement","context":"Strong agreement/affirmation with casual vernacular","speaker":"Vrijen"}
+{"type":"metaphor","primitive":"swarm and make a meal out of it","category":"scaling_execution","context":"Metaphor for aggressive execution and resource allocation to maximize opportunity","speaker":"Vrijen"}
+{"type":"self_deprecation","primitive":"skipped the being good at business and making money part and going straight to the sale","category":"founder_humor","context":"Humorous, honest framing of company trajectory acknowledging commercialization challenges","speaker":"Vrijen"}
+{"type":"network_confidence","primitive":"my Rolodex is always available to you","category":"network_offer","context":"Confident, generous offer of network access with established trust","speaker":"Vrijen"}
+{"type":"technical_growth","primitive":"carry my own weight","category":"technical_capability","context":"Expression of growing technical competence and self-sufficiency","speaker":"Vrijen"}
+{"type":"technical_concept","primitive":"vibe coding","category":"AI_development","context":"Reference to AI-assisted development workflow (using AI to write code)","speaker":"Vrijen"}
+{"type":"opportunity_recognition","primitive":"there's something there","category":"intuition","context":"Intuition about opportunity potential without full articulation","speaker":"Vrijen"}
+{"type":"collaboration","primitive":"jam on that","category":"collaboration","context":"Casual invitation to brainstorm or work together","speaker":"Vrijen"}
+{"type":"generosity","primitive":"I'm always happy to","category":"help_offer","context":"Readiness to help with no hesitation","speaker":"Vrijen"}
+{"type":"community_building","primitive":"bring that group of folks back together","category":"community","context":"Focus on community and gathering people together","speaker":"Vrijen"}
+{"type":"relationship_philosophy","primitive":"importance of capturing those relationship data, that relationship signal","category":"relationship_focus","context":"Philosophical focus on relationship data as strategic asset","speaker":"Vrijen"}
+{"type":"optimism","primitive":"It's opened up so much","category":"opportunity","context":"Recognition of expanding possibilities and opportunities","speaker":"Vrijen"}
+{"type":"network_value","primitive":"I've met so many more like founders since then","category":"network_growth","context":"Recognition of network expansion and value","speaker":"Vrijen"}
+{"type":"connection","primitive":"bunch of good connections came out of that too","category":"network_outcomes","context":"Valuing outcomes beyond immediate transaction (relationship building)","speaker":"Vrijen"}

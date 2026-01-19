@@ -1,0 +1,76 @@
+{
+  "created": "2026-01-17T15:37:30.576949",
+  "period": "all",
+  "batch_size": 3,
+  "status": "extracted",
+  "meetings": [
+    {
+      "meeting_id": "mtg_2026-01-20-2026-01-20-truly-raw-meeting",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2026-01-19/2026-01-20_2026-01-20-Truly-raw-meeting",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B01_DETAILED_RECAP",
+        "B25_DELIVERABLES",
+        "B03_DECISIONS",
+        "B26_MEETING_METADATA",
+        "B06_BUSINESS_CONTEXT",
+        "B07_TONE_AND_CONTEXT",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B14_BLURBS_REQUESTED",
+        "B05_ACTION_ITEMS"
+      ],
+      "b01_preview": "---\ncreated: 2026-01-14\nlast_edited: 2026-01-14\nversion: 1.0\nprovenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141\nblock: B01\n---\n\n# B01: Detailed Recap\n\n## Meeting Overview\n**Date:** 2026-01-20  \n**Participants:** V (Vrijen), N (unidentified team member)  \n**Format:** Internal discussion  \n\n## Chronological Summary\n\n### Outbound Scaling (V)\nV opened by identifying a key growth priority: \"We need to scale the outbound.\" This indicates a focus on expanding sales/business development activities.\n\n### SDR Hiring Proposal (N)\nN immediately agreed with the scaling need and proposed a solution: hiring more SDRs (Sales Development Representatives). This suggests:\n- The team recognizes capacity constraints\n- SDR-led outbound is the current model\n- There's alignment on growth approach\n\n### Board Communication (V)\nV committed to escalating: \"I'll talk to the board.\" This indicates:\n- Hiring requires board approval (likely headcount/budget implications)\n- V has direct board access\n- This is a strategic decision, not operational\n\n## Key Themes\n1. **Growth Focus** - Clear priority on scaling outbound sales capacity\n2. **Hiring as Solution** - Team aligned on SDR expansion\n3. **Board Involvement** - Strategic decisions require board engagement\n\n## Status\nBrief internal sync capturing a strategic growth decision.\n\n",
+      "b03_preview": "---\ncreated: 2026-01-14\nlast_edited: 2026-01-14\nversion: 1.0\nprovenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141\nblock: B03_DECISIONS\n---\n\n# B03: Decisions\n\n## Decisions Made\n1. **Scale Outbound** - V decided that scaling outbound is a priority\n2. **SDR Hiring** - Team aligned on hiring more SDRs as the solution\n3. **Board Escalation** - V committed to bringing this to the board\n\n## Decisions Pending\n- Board approval for SDR headcount\n- Number of SDRs to hire\n- Timeline for hiring\n\n## Rationale\nGrowth requires increased outbound capacity, which requires more SDRs, which requires board approval for headcount/budget.\n\n",
+      "attendees": [],
+      "meeting_type": "unknown"
+    },
+    {
+      "meeting_id": "mtg_2026-01-16-2026-01-16-vrijen-attawar-and-jonny-coreson",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
+      "blocks": [
+        "B05_ACTION_ITEMS",
+        "B06_BUSINESS_CONTEXT",
+        "B01_DETAILED_RECAP",
+        "B26_MEETING_METADATA",
+        "B14_BLURBS",
+        "B25_DELIVERABLES",
+        "B21_KEY_MOMENTS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B14_BLURBS_REQUESTED",
+        "B07_TONE_AND_CONTEXT",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B03_DECISIONS"
+      ],
+      "b01_preview": "---\ncreated: 2026-01-16\nlast_edited: 2026-01-16\nversion: 1.0\nprovenance: con_RqrAYUZyruvtvatG\nblock: B01\n---\n\n# B01: Detailed Recap\n\n## Meeting Overview\n**Date:** 2026-01-16  \n**Participants:** Vrijen Attawar (Careerspan), Jonny Coreson (Learning Economy)  \n**Type:** Strategic/M&A Discussion  \n**Duration:** ~20-25 minutes (estimated from transcript length)\n\n## Chronological Summary\n\n### Opening (0-3 min)\n- Warm reconnection after extended time apart\n- Jonny mentions he had planned to reach out about progress on the Lightcast replacement project they'd discussed previously\n- Brief confusion about V's meeting recorder (Jared Dunn reference)\n\n### Skills Nexus AI Introduction (3-8 min)\n- Jonny introduces **Robert Bagor** (Robert A. Badger) who has a company called **Micro Credential Multiverse**\n- Robert has built **Skills Nexus AI** - a labor market intelligence platform\n- Key value proposition: approximately **1% of Lightcast costs**\n- Robert has prior working relationship with Lightcast\n- UI/UX described as \"vibe Cody\" (rough) but pipes are well-laid\n- Aligns with previous conversations about democratizing access to labor market data\n\n### Careerspan Status Update (8-15 min)\nV provides candid founder-to-founder update on Careerspan's situation:\n\n**Timing Challenge:** \n- \"We had a great idea, we had a great team\"\n- \"Our timing was both too early and we were just not fast enough\"\n- \"Got screwed in two directions\"\n- Now sees seed-stage companies with \"exact same premise\" getting significant traction\n\n**Self-Reflection:**\n- Takes ownership: \"If I was a better founder, we would have done better\"\n- Philosophy: \"You start a company with the founder that you are, not the founder that you wish you could be\"\n- Jonny notes the postmortem is \"refreshing\" and \"very self-aware\"\n\n**Financial Situation:**\n- Raised: $1.025M equity + ~$500K debt\n- Revenue: \"Basically nothing\" - couple hundred dollars\n- All capital spent on IP (salaries) - no marketing spend\n- Cap table: Clean - investors, V, Logan, Ilsa, couple advisors\n\n**What Careerspan Has:**\n- Extremely high user engagement\n- High open rates, high engagement rates\n- Median activated user spends **45+ minutes** entering data\n- \"Cracked the UX of getting folks to share about themselves\"\n\n### M&A Discussion (15-22 min)\nJonny shares his own exit experience with Worthy and offers strategic counsel:\n\n**Jonny's Story:**\n- Sold Worthy to Learning Economy Foundation\n- Knew Taylor from Learning Economy before\n- Chose to integrate IP as a feature of Learn Card rather than start over\n- Learn Card being distributed to 50M+ scouts globally over next 5 years\n\n**M&A Options Discussed:**\n1. **Asset Sale** - IP without ongoing operations\n2. **Acquihire** - V operates inside acquiring company\n3. **Managing Director Role** - V continues as MD of Careerspan within acquirer\n\n**Key Insight from Jonny:**\n- Having \"customers that would be vital to the acquirer\" strengthens position\n- The engaged user base is valuable IP\n\n### Potential Acquirer Leads (22-25 min)\nJonny provides specific connections:\n\n1. **Matthew Cohen (Cohen Strategy Group)**\n   - Investor in multiple organizations in the space\n   - \"Well connected to adjacent players\" despite LinkedIn not showing it\n   - Previously expressed interest if valuation made sense\n\n2. **Ascent Funding** (fka Ascent Education)\n   - Makes college payment easier\n   - Would be interested in skills gap analysis capabilities\n\n### Product Demo Tease (end)\nV offers to show Jonny where the product currently stands - both employer and candidate sides\n",
+      "b03_preview": "---\ncreated: 2026-01-16\nlast_edited: 2026-01-16\nversion: 1.0\nprovenance: con_RqrAYUZyruvtvatG\nblock: B03\n---\n\n# B03: Decisions\n\n## Decisions Made\n\n### D1: Explore M&A/Acquisition Options\n**Decision:** V is actively exploring exit/acquisition options for Careerspan\n**Context:** Timing challenges and execution speed issues have made continued independent operation difficult\n**Rationale:** \"Too early and not fast enough\" - competitors with same premise now raising significant seed rounds\n\n### D2: Transparent Financial Disclosure\n**Decision:** V chose to be fully transparent about Careerspan's financial position with Jonny\n**Context:** Shared: $1.025M raised, ~$500K debt, minimal revenue\n**Rationale:** Building trust for potential M&A introductions\n\n### D3: Product Demo Follow-Up\n**Decision:** V will demo the current state of Careerspan (employer + candidate sides) to Jonny\n**Context:** Initiated at end of call\n**Rationale:** Help Jonny understand product value for M&A conversations\n\n## Decisions Deferred\n\n### DD1: Specific M&A Path\n**Deferred:** Choice between asset sale, acquihire, or MD role\n**Next Steps:** Explore connections provided by Jonny\n**Timeline:** Not specified\n\n### DD2: Skills Nexus AI Partnership\n**Deferred:** Whether to pursue collaboration with Robert Bagor's Skills Nexus AI\n**Next Steps:** V to review the platform link sent by Jonny\n**Timeline:** Not specified\n",
+      "attendees": [],
+      "meeting_type": "external"
+    },
+    {
+      "meeting_id": "mtg_2026-01-16-2026-01-16-trio-standup",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2026-01-12/2026-01-16_2026-01-16-Trio-standup",
+      "blocks": [
+        "B21_KEY_MOMENTS",
+        "B14_BLURBS_REQUESTED",
+        "B03_DECISIONS",
+        "B03_STAKEHOLDER_INTELLIGENCE",
+        "B25_DELIVERABLES",
+        "B07_TONE_AND_CONTEXT",
+        "B05_ACTION_ITEMS",
+        "B26_MEETING_METADATA",
+        "B01_DETAILED_RECAP",
+        "B14_BLURBS",
+        "B32_THOUGHT_PROVOKING_IDEAS",
+        "B06_BUSINESS_CONTEXT"
+      ],
+      "b01_preview": "---\ncreated: 2026-01-16\nlast_edited: 2026-01-16\nversion: 1.0\nprovenance: 074838b3-3b6f-4e5c-a843-858a7d072141\n---\n\n# B01 - Detailed Recap\n\n## Meeting Overview\n**Date:** 2026-01-16\n**Participants:** Vrijen Attawar (V), Ilse Funkhouser\n**Duration:** ~5 minutes\n**Type:** Product Standup / Feature Demo\n\n## Chronological Summary\n\n### Opening (00:00 - 00:15)\nQuick greetings exchanged. Ilse had prepared a document to walk V through new features.\n\n### Document Overview (00:15 - 00:41)\nIlse shared a document with two tabs covering AI functionality. She emphasized critical guardrails:\n- **Do not give employers access without explanation**\n- **Don't give too many credits** (cost control concern)\n\n### Role-Based Email & Silent Scans (00:41 - 01:44)\nIlse demonstrated:\n- Adding email addresses to roles for silent database scans\n- Silent scans provide basic candidate information\n- Roles must be **published** before scans work\n- \"Scan database\" button checks access permissions first\n\n### Threshold System Explanation (01:44 - 02:30)\nIlse clarified the threshold system:\n- **Public mode**: If full analysis score > threshold \u2192 candidate gets \"hey, you should apply\" email\n- **Silent mode**: Candidate never knows about the scan\n- **Vibe check threshold**: Below this, candidates can't continue to role match\n- Old \"preferences check\" logic has been incorporated\n\n### Auto-Apply Feature (02:30 - 03:10)\nKey feature walkthrough:\n- Auto-apply works with silent scans\n- Candidates are notified if they pass threshold\n- Email tone is \"tongue in cheek\" - literally says \"that's their problem now, not yours\"\n- **Minimum stories**: No limit enforced (but backend cap of 250 days)\n- This is being enabled so V can offer it to paying customers\n\n### Scan Safeguards (03:10 - 03:42)\nIlse explained technical safeguards:\n- System prevents multiple simultaneous scans on same role\n- Without this, scans would \"fail in exotic and dumb ways\"\n- UI shows existing scans with labels like \"Careerspan admin auto submission silent database scan\"\n\n### CSV Export Status (03:42 - 04:20)\nCurrent state:\n- CSV exports currently only show: email address + scores\n- V wants more data (\"bullshit\") in exports\n- Ilse acknowledges this but hasn't gotten to it yet\n- Candidates who pass threshold get emails with bottom-line recommendations\n- Example: \"Strong move forward candidate if you can provide light onboarding\"\n\n### Value Proposition & Wrap (04:20 - 05:14)\nIlse articulated the goal:\n- \"You don't need to bother me\" \u2192 Reduce manual coordination\n- V enthusiastically agreed: \"This is rock and roll\"\n\nV confirmed the goal is reducing friction in the process. Ilse signed off, noting she likely won't be back that day.\n\n## Key Takeaways\n1. **Silent scan feature is live** - Employers can scan candidate database without candidates knowing\n2. **Threshold system controls visibility** - Multiple layers (vibe check, full analysis, auto-apply)\n3. **Cost guardrails in place** - 250 day cap, credit warnings\n4. **CSV exports are minimal** - Enhancement needed for richer data\n5. **Team moving toward automation** - Reducing V-Ilse coordination overhead\n",
+      "b03_preview": "---\ncreated: 2026-01-16\nlast_edited: 2026-01-16\nversion: 1.0\nprovenance: 074838b3-3b6f-4e5c-a843-858a7d072141\n---\n\n# B03 - Decisions\n\n## Decisions Made\n\n### 1. Silent Scan Feature Enabled for Production\n**Decision:** Enable silent database scanning for employer use\n**Rationale:** Allows employers to scan candidate database without candidate awareness; enables auto-apply functionality\n**Owner:** Ilse (technical), V (business enablement)\n\n### 2. Credit/Day Limit Set at 250\n**Decision:** Backend cap of 250 days on scanning regardless of UI settings\n**Rationale:** Cost control - prevents runaway expenses from unlimited scans\n**Owner:** Ilse\n\n### 3. No Minimum Stories Restriction\n**Decision:** Remove minimum stories requirement from UI\n**Rationale:** V wants flexibility for paying customers\n**Owner:** Ilse (implemented)\n\n### 4. Duplicate Scan Prevention Active\n**Decision:** System will prevent multiple simultaneous scans on same role\n**Rationale:** Prevents \"exotic and dumb\" failure modes\n**Owner:** Ilse\n\n## Decisions Deferred\n\n### CSV Export Enhancement\n**Topic:** Adding more candidate data to CSV exports beyond email + scores\n**Status:** Acknowledged need, not yet implemented\n**Owner:** Ilse (future backlog)\n",
+      "attendees": [],
+      "meeting_type": "unknown"
+    }
+  ],
+  "edges_file": "/home/workspace/N5/review/edges/pending/batch_2026-01-17_1537.jsonl",
+  "edges_count": 16
+}

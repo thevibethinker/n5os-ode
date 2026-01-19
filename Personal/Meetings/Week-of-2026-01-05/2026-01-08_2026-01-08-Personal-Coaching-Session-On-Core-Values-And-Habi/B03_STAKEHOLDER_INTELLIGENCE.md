@@ -1,67 +1,71 @@
 ---
-created: 2026-01-13
-last_edited: 2026-01-13
+created: 2026-01-14
+last_edited: 2026-01-14
 version: 1.0
 provenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141
-block: B03
 ---
 
-# B03: Stakeholder Intelligence
+# B03 STAKEHOLDER INTELLIGENCE
 
-## Heather (Personal Coach)
-**Role:** Personal coach for V  
-**Session frequency:** Weekly, 4pm Eastern  
-**Relationship tenure:** Ongoing (this is not their first session)
+## Heather (Coach)
 
-### Professional Approach
-- Values-based coaching methodology
-- Blends personal development with practical habit change
-- Comfortable with tangents, uses them to build rapport
-- Non-judgmental about sensitive topics (weed, Taylor Swift fandom)
+**Role:** Personal/Executive Coach  
+**Relationship Stage:** Established coaching relationship (recurring weekly sessions)
 
-### Communication Style
-- Collaborative, not directive
-- Asks clarifying questions before labeling values
-- Uses homework assignments between sessions
-- Checks in on health/habits at start of sessions
+### Profile Signals
+- **Communication Style:** Warm, structured, values-based approach
+- **Method:** Socratic questioning, non-judgmental exploration
+- **Shared Traits with V:** Both need theory before rules, both ask many questions, similar curiosity-driven orientation
+- **Interests:** Taylor Swift fan, follows NFL through Travis Kelce's podcast
 
-### Key Insights About V She's Gathered
-- V is theory-first, needs understanding before rules
-- V has competitive instincts that need channeling
-- V's weed use is connected to weight/health goals
-- V's core values emerging: Kindness, Consistency/Honor, Unity
+### Coaching Approach
+- Uses health check-ins as entry point before deeper work
+- Pragmatic harm reduction vs. rigid abstinence (suggested parking weed issue until Feb trip)
+- Focuses on concrete action items paired with values articulation
+- Validates V's self-awareness while gently probing growth areas
 
-### Coaching Techniques Observed
-- Permission-based approach ("Do you want to jump into that or...")
-- Tactical de-escalation ("How about just putting weed on the back burner?")
-- Small action items grounded in existing behavior
-- Values articulation through questioning, not prescription
+### Key Dynamics
+- Strong rapport — V noted "we're very similar in many ways"
+- Comfortable discussing personal struggles (substances, weight, relationships)
+- Holds space for V's philosophical tangents while keeping session structured
+
+### Leverage Points
+- Shared intellectual curiosity creates natural alignment
+- V responds well to her structured + warm style
 
 ---
 
-## Referenced Individuals (Not Present)
+## V (Self-Profile from Session)
 
-### V's Wife
-- Had job interview day of session
-- Used Careerspan product for prep (V proud of this)
-- V helped her prep and engaged substantively after
+### Self-Disclosed Characteristics
+- **Competitive instinct:** Powerful but volatile, requires channeling
+- **Learning style:** "Only questions until I have no questions" — needs full context
+- **Communication:** Self-described as "baseline warm," possibly "too yappy"
+- **Values articulated:** Kindness, purpose, internal consistency/honor, unity
 
-### Joe (Founder friend)
-- Meeting V later that day
-- Having a tough time as a founder
-- V's kindness action item: bring him a joint
+### Current Challenges
+- Weed dependency affecting sleep, weight, and goals
+- Managing ambition's impact on relationships
+- Balancing intense work period with personal wellbeing
 
-### Heather's Husband
-- Seahawks fan, extremely competitive
-- Can't watch games anymore due to stress ("going to have a stroke")
-- Only follows scores on Twitter
+### Growth Areas Identified
+- Being more mindful of how habits/ambitions affect others
+- Converting values from abstract to concrete daily practice
 
-### V's Parents
-- February trip planned
-- Will be opportunity for V to quit weed (no access during trip)
+---
 
-### Taylor Swift & Travis Kelce
-- Extended discussion of leadership qualities
-- Travis's podcast noted for accountability/sportsmanship
-- Taylor's documentary "End of an Era" recommended to V
+## Mentioned Individuals
+
+**Joe** (Founder friend)
+- Having tough time (as founders do)
+- V planning to bring him a joint as kindness gesture
+
+**V's Wife**
+- Recently had interview
+- Uses Careerspan product
+- V helped her prep and engaged substantively on her experience
+
+**V's Husband (Heather's context)**
+- Intensely competitive about sports (can't watch Seahawks games)
+- Influence on their son's competitive tendencies
 

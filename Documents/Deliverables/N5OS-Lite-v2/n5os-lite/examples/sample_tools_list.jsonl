@@ -1,3 +1,0 @@
-{"name": "Planning Prompt", "slug": "planning-prompt", "type": "prompt", "description": "Think→Plan→Execute framework for system building", "tags": ["planning", "architecture", "workflow"], "created": "2025-11-03", "location": "Prompts/planning_prompt.md"}
-{"name": "Query List", "slug": "query-list", "type": "prompt", "description": "Search and retrieve from JSONL lists", "tags": ["lists", "search", "workflow"], "created": "2025-11-03", "location": "Prompts/query-list.md"}
-{"name": "List Validator", "slug": "validate-list", "type": "script", "description": "Validate JSONL list structure and format", "tags": ["validation", "lists", "python"], "created": "2025-11-03", "location": "scripts/validate_list.py"}
