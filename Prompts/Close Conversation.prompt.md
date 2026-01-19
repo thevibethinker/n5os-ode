@@ -10,9 +10,9 @@ tags:
   - conversation
   - positions
 created: 2025-10-15
-last_edited: 2026-01-18
-version: 5.3
-provenance: con_acsL39swzoCxrfWs
+last_edited: 2026-01-19
+version: 5.5
+provenance: con_eo8MNWLCgK7vjgUX
 ---
 
 # Close Conversation
@@ -32,6 +32,36 @@ Runs the formal **conversation-end workflow** with automatic mode and tier detec
 - LLM (Librarian) handles ALL semantic work (summaries, AARs, decisions, title)
 - Title generation is semantic (3-slot emoji system: State | Type | Content)
 - **Workers defer commits** to orchestrator - their job is clean handoff
+
+---
+
+## Step -1: SESSION_STATE Fallback (Defense-in-Depth)
+
+**Before any other close work, verify SESSION_STATE.md exists:**
+
+```bash
+ls /home/.z/workspaces/{CONVO_ID}/SESSION_STATE.md 2>/dev/null
+```
+
+**If MISSING:**
+1. Log the gap:
+   ```bash
+   echo "$(date -Iseconds) | ERROR | {CONVO_ID} - No SESSION_STATE at close (all layers failed)" >> /home/workspace/N5/logs/session_state_gaps.log
+   ```
+
+2. Create retrospective state:
+   ```bash
+   python3 N5/scripts/session_state_manager.py init --convo-id {CONVO_ID} --type discussion --message "Retrospective init at close - state was missing"
+   ```
+
+3. Populate from conversation context:
+   - Read conversation to understand what was discussed/built
+   - Sync meaningful values (Focus, Objective, Covered items)
+   - Mark Progress as "100%" if conversation is complete
+
+**Why this matters:** This is the last line of defense. If we reach close without SESSION_STATE, the init rule failed, Operator's state guardian failed, and Librarian wasn't invoked. The gaps log helps track how often this happens so we can fix upstream.
+
+**Proceed to Step 0 after state is verified/created.**
 
 ---
 
@@ -361,48 +391,116 @@ set_active_persona("1bb66f53-9e2a-4152-9b18-75c2ee2c25a3")
 12. Check capability graduation: `python3 N5/scripts/capability_graduation.py check --build-slug <slug>`
 13. Extract lessons worth logging
 
-## Full Step 6: Position Detection (Conditional)
+## Full Step 6: Position Extraction (Conditional)
 
-**Detect if this conversation developed worldview positions:**
+**ALWAYS scan for extractable positions.** This step was being skipped too often. Be proactive.
 
-Ask: Did this conversation involve:
-- Deep thinking about a topic?
-- V articulating a belief, stance, or position?
-- New evidence/reasoning for an existing belief?
-- Strategic or philosophical insights?
+### Detection Triggers (ANY of these = extract)
 
-**If YES → Execute Position Extraction:**
+| Signal | Example | Priority |
+|--------|---------|----------|
+| POV document created | `V-POV-*.md`, opinion pieces, manifestos | 🔴 HIGH |
+| V articulated a stance | "I believe...", "My position is...", "The way I see it..." | 🔴 HIGH |
+| Contrarian take developed | Disagreement with conventional wisdom, novel framing | 🔴 HIGH |
+| Socratic dialogue occurred | Back-and-forth that crystallized a belief | 🟡 MEDIUM |
+| Strategic insight emerged | Market thesis, competitive insight, career philosophy | 🟡 MEDIUM |
+| Evidence strengthened existing position | New data/anecdote supporting known belief | 🟡 MEDIUM |
 
-```bash
-python3 N5/scripts/positions.py list
-python3 N5/scripts/positions.py audit
+### Extraction Process
+
+**1. Identify position candidates** by re-reading the conversation:
+- What beliefs did V articulate or reinforce?
+- What insights emerged that have lasting value?
+- What would V want to remember believing?
+
+**2. For each candidate, structure it:**
+```json
+{
+  "insight": "2-3 sentence core belief",
+  "reasoning": "WHY this is true (transferable principle, not anecdote)",
+  "stakes": "So what? Implications for action or belief",
+  "conditions": "When this applies / boundary conditions",
+  "domain": "hiring-market | careerspan | ai-automation | founder | worldview | epistemology"
+}
 ```
 
-**For each position candidate:**
+**3. Check for overlap:**
+```bash
+python3 N5/scripts/positions.py check-overlap "INSIGHT_TEXT" --threshold 0.4
+```
 
-1. Check overlap: `python3 N5/scripts/positions.py check-overlap "INSIGHT_TEXT" --threshold 0.4`
-2. Action based on similarity:
-   - ≥0.60: EXTEND existing position
-   - 0.50-0.59: Review carefully
-   - <0.50: CREATE new position
-3. Create or extend accordingly
+**4. Action based on similarity:**
+- ≥0.60: EXTEND existing position (add evidence, refine)
+- 0.50-0.59: Present both to V, ask which action
+- <0.50: CREATE new position
 
-**If NO positions detected → Skip.**
+**5. Execute:**
+```bash
+# Create new
+python3 N5/scripts/positions.py add --domain "domain" --title "Title" --insight "..." --reasoning "..."
 
-## Full Step 7: Commit Target Suggestions
+# Extend existing
+python3 N5/scripts/positions.py extend <position_id> --evidence "New evidence from this conversation"
+```
+
+### Position Extraction Quality Bar
+
+✅ **Extract if:** The insight would inform future decisions, is falsifiable, has lasting relevance
+❌ **Skip if:** Purely tactical, context-dependent, or already well-captured elsewhere
+
+**Reference prompt:** `file 'N5/prompts/extract_positions_from_b32.md'` (applies beyond B32 contexts)
+
+## Full Step 7: Content Library + Commit Target Suggestions
+
+### 7a. Content Library Candidates (NEW)
+
+**Scan conversation artifacts for Content Library ingestibility:**
+
+| Artifact Type | Content Library Type | Ingest? |
+|--------------|---------------------|----------|
+| POV documents (`V-POV-*.md`) | `personal` | ✅ YES — reusable thought leadership |
+| Frameworks/models created | `framework` | ✅ YES — if generalizable |
+| Research synthesis | `article` | ✅ YES — if substantive |
+| Dossiers/profiles | `article` or `personal` | ⚠️ MAYBE — depends on reusability |
+| Meeting-specific docs | N/A | ❌ NO — context-bound |
+| Build artifacts (code) | N/A | ❌ NO — not content |
+
+**Detection heuristics:**
+- File created with reusable title (not context-specific like "Notes from Jan 16 call")
+- Content that could be shared externally or referenced later
+- Documents that capture V's thinking in a standalone way
+
+**If candidates found, present:**
+
+```markdown
+### 📚 Content Library Candidates
+
+These artifacts could be added to your Content Library:
+
+☐ `file 'Documents/V-POV-Productivity-Age-of-AI.md'` → `personal` (reusable POV piece)
+☐ `file 'Documents/Howie-Product-Dossier.md'` → `article` (reference doc)
+
+Want me to ingest any of these? (Reply with file names, or "skip")
+```
+
+**If V approves, ingest:**
+```bash
+python3 N5/scripts/content_ingest.py "<filepath>" --type <type> --move
+```
+
+### 7b. Other Commit Targets
 
 Load registry: `cat N5/config/commit_targets.json`
 
-Present options (do NOT auto-commit):
+Present all applicable options (do NOT auto-commit):
 
 ```markdown
 ## Commit Opportunities
 
+☐ **Positions** — [Extracted positions from Step 6, if any]
 ☐ **Learning Profile** — [Concepts learned, if any]
-☐ **Content Library** — [Articles saved, if any]
-☐ **Voice Library** — [Distinctive phrases, if any]
-☐ **Positions** — [Worldview claims extracted, if any]
-☐ **Git** — [Code changes, if any]
+☐ **Voice Library** — [Distinctive phrases worth saving, if any]
+☐ **Git** — [Code changes requiring commit, if any]
 
 Reply with which items to commit, or skip to close.
 ```
@@ -437,12 +535,16 @@ Present formatted close output. End with:
 
 ## Documentation
 
-- **Spec:** `file 'N5/prefs/operations/conversation-end-v3.md'`
+- **Spec:** `file 'N5/prefs/operations/conversation-end-v5.md'`
 - **Emoji Legend:** `file 'N5/config/emoji-legend.json'`
 - **Positions System:** `file 'N5/scripts/positions.py'`
+- **Content Library Ingest:** `file 'N5/scripts/content_ingest.py'`
+- **Position Extraction Prompt:** `file 'N5/prompts/extract_positions_from_b32.md'`
 
 ## Version History
 
+- **v5.5** (2026-01-19): Enhanced Step 6 (Position Extraction) with explicit triggers and extraction process — was being skipped too often. Added Step 7a (Content Library Candidates) to surface POV docs, frameworks, and reusable artifacts for optional ingestion. Fixed doc reference to v5.
+- **v5.4** (2026-01-19): Added Step -1 (SESSION_STATE Fallback) - if SESSION_STATE.md missing at close, create retrospective state and log to session_state_gaps.log for tracking. Strengthened conversation-start rule as complementary fix.
 - **v5.3** (2026-01-18): Fixed Worker Step 2 - post-close title now generates 3-slot emoji prefix based on outcome while preserving pre-decided base title. Pre-decided title is for thread naming at launch; post-close title reflects what actually happened.
 - **v5.2** (2026-01-18): V2 build orchestration support. Pre-decided title from `thread_title`. Structured completion via `update_build.py` with learnings/concerns fields. Orchestrator close reads completions before commit.
 - **v5.1** (2026-01-18): Added build_id/worker_num detection. Added Worker Step 5 (build_worker_complete.py notification). Clearer mode detection priority.
