@@ -45,6 +45,7 @@ import json
 import os
 import re
 import sqlite3
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -55,7 +56,22 @@ try:
 except Exception:
     requests = None  # type: ignore
 
+# Add script dir to path for imports
+_SCRIPT_DIR = Path(__file__).parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+
+# Import unified DB connection
+try:
+    from db_paths import get_db_connection as get_unified_db, N5_CORE_DB
+    UNIFIED_DB_AVAILABLE = True
+except ImportError:
+    UNIFIED_DB_AVAILABLE = False
+    N5_CORE_DB = None
+
+# Legacy DB for outbox operations
 DB_DEFAULT = "/home/workspace/N5/data/deals.db"
+UNIFIED_DB_DEFAULT = str(N5_CORE_DB) if N5_CORE_DB else None
 MAPPING_DEFAULT = "/home/workspace/N5/config/notion_field_mapping.json"
 NOTION_API_BASE = "https://api.notion.com/v1"
 NOTION_VERSION = "2022-06-28"
@@ -141,6 +157,18 @@ class NotionClient:
         resp = requests.patch(url, headers=self._headers(), data=json.dumps(payload), timeout=30)  # type: ignore
         if resp.status_code >= 400:
             raise RuntimeError(f"Notion update failed ({resp.status_code}): {resp.text[:400]}")
+
+    def create_page(self, database_id: str, properties: dict) -> dict:
+        """Create a new page in a database. Returns the created page object."""
+        url = f"{NOTION_API_BASE}/pages"
+        payload = {
+            "parent": {"database_id": database_id},
+            "properties": properties
+        }
+        resp = requests.post(url, headers=self._headers(), data=json.dumps(payload), timeout=30)  # type: ignore
+        if resp.status_code >= 400:
+            raise RuntimeError(f"Notion create page failed ({resp.status_code}): {resp.text[:400]}")
+        return resp.json()
 
 
 def _rt_plain_text(rt: List[dict]) -> str:
@@ -909,6 +937,63 @@ def push_outbox(db: DealDB, mapping: dict, notion: Optional[NotionClient], dry_r
                 notion.update_page_properties(page_id, props)
                 db.mark_outbox(outbox_id, status="synced", error=None)
                 continue
+
+            if action_type == "create":
+                # Create a new page in a Notion database
+                # payload should contain: database_id, properties
+                entity_type = item.get("entity_type")
+                
+                # Handle broker creation
+                if entity_type == "deal_broker":
+                    broker_cfg = mapping.get("deal_brokers")
+                    if not broker_cfg:
+                        raise RuntimeError("No deal_brokers mapping configured")
+                    
+                    database_id = broker_cfg["database_id"]
+                    fields = broker_cfg.get("fields", {})
+                    
+                    # Build properties from payload (BrokerCandidate.to_dict())
+                    props: Dict[str, Any] = {}
+                    
+                    # Contact (title field)
+                    contact_field = fields.get("contact", {})
+                    if contact_field.get("notion"):
+                        props[contact_field["notion"]] = notion_property_payload(
+                            "title", payload.get("name", "Unknown")
+                        )
+                    
+                    # Blurb (rich_text)
+                    blurb_field = fields.get("blurb", {})
+                    if blurb_field.get("notion"):
+                        blurb_content = f"""🤝 Confidence: {int(payload.get('confidence', 0) * 100)}%
+Relationship: {payload.get('relationship', 'Unknown')}
+Signals: {', '.join(payload.get('signals', []))}
+Source: {payload.get('source_meeting', 'Unknown')}"""
+                        props[blurb_field["notion"]] = notion_property_payload("rich_text", blurb_content)
+                    
+                    # Angle/Strategy (rich_text) - network access info
+                    angle_field = fields.get("angle_strategy", {})
+                    if angle_field.get("notion") and payload.get("network_access"):
+                        network_text = "Network access: " + ", ".join(payload.get("network_access", [])[:3])
+                        props[angle_field["notion"]] = notion_property_payload("rich_text", network_text)
+                    
+                    created_page = notion.create_page(database_id, props)
+                    
+                    # Update entity state with the new Notion page ID
+                    entity_id = item.get("entity_id")
+                    if entity_id and created_page.get("id"):
+                        db.upsert_entity_state(
+                            entity_type="deal_broker",
+                            entity_id=entity_id,
+                            notion_page_id=created_page["id"],
+                            notion_last_edited=created_page.get("last_edited_time"),
+                            local_updated_at=_now_iso()
+                        )
+                    
+                    db.mark_outbox(outbox_id, status="synced", error=None)
+                    continue
+                
+                raise RuntimeError(f"Unknown entity_type for create action: {entity_type}")
 
             raise RuntimeError(f"Unknown outbox action_type: {action_type}")
 

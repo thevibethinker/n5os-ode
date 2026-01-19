@@ -28,6 +28,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+# Broker detection
+try:
+    from broker_detector import detect_brokers, format_broker_section_md, BrokerCandidate, enrich_from_b_blocks
+    BROKER_DETECTION_AVAILABLE = True
+except ImportError:
+    BROKER_DETECTION_AVAILABLE = False
+
 # Import from Worker 1
 try:
     from deal_signal_router import DealSignalRouter, DealMatch, SignalExtraction
@@ -460,6 +467,30 @@ pipeline: {intel.pipeline}
         md += "\n## Recommended Actions\n"
         for i, action in enumerate(intel.recommended_actions[:5], 1):
             md += f"{i}. {action}\n"
+    
+    # Broker detection (new feature)
+    broker_section = ""
+    if BROKER_DETECTION_AVAILABLE:
+        try:
+            # Load transcript for broker detection
+            meeting_path = Path(intel.meeting_folder)
+            transcript_path = meeting_path / "transcript.md"
+            if transcript_path.exists():
+                transcript = transcript_path.read_text()
+                broker_candidates = detect_brokers(
+                    transcript=transcript,
+                    attendees=intel.attendees,
+                    meeting_folder=meeting_path.name
+                )
+                if broker_candidates:
+                    # Enrich from B-blocks
+                    enriched = [enrich_from_b_blocks(c, meeting_path) for c in broker_candidates]
+                    broker_section = format_broker_section_md(enriched)
+        except Exception as e:
+            broker_section = f"\n<!-- Broker detection error: {e} -->\n"
+    
+    if broker_section:
+        md += broker_section
     
     # Raw signal JSON
     md += f"""

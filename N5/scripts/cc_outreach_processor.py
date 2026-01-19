@@ -29,7 +29,18 @@ from vos_tag_parser import parse_vos_tags, VOSParseResult
 import sys
 sys.path.insert(0, "/home/workspace")
 
-from N5.lib.paths import N5_DATA_DIR, CRM_DB
+from N5.lib.paths import N5_DATA_DIR
+
+# Unified database connection
+try:
+    from N5.scripts.db_paths import get_db_connection, N5_CORE_DB
+except ImportError:
+    N5_CORE_DB = N5_DATA_DIR / "n5_core.db"
+    def get_db_connection(readonly=False):
+        import sqlite3
+        conn = sqlite3.connect(N5_CORE_DB)
+        conn.row_factory = sqlite3.Row
+        return conn
 
 logging.basicConfig(
     level=logging.INFO,
@@ -106,18 +117,17 @@ def extract_recipients(email_data: dict) -> list[str]:
 
 
 def find_crm_profile_by_email(email: str) -> Optional[dict]:
-    """Look up CRM profile by email address."""
-    if not CRM_DB.exists():
+    """Look up CRM profile by email address in unified database."""
+    if not N5_CORE_DB.exists():
         return None
     
-    conn = sqlite3.connect(CRM_DB)
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection(readonly=True)
     cursor = conn.cursor()
     
-    # Search in email field (may contain multiple)
+    # Search in email field
     cursor.execute("""
-        SELECT id, name, email, category, last_contact_at
-        FROM profiles
+        SELECT id, full_name as name, email, category, last_contact_date as last_contact_at
+        FROM people
         WHERE email LIKE ? OR email LIKE ?
     """, (f"%{email}%", f"%{email.lower()}%"))
     
@@ -130,22 +140,22 @@ def find_crm_profile_by_email(email: str) -> Optional[dict]:
 
 
 def update_crm_last_contact(profile_id: str, contact_date: datetime, dry_run: bool = False) -> bool:
-    """Update last_contact_at in CRM."""
+    """Update last_contact_date in unified database."""
     if dry_run:
-        logger.info(f"[DRY RUN] Would update CRM profile {profile_id} last_contact_at = {contact_date}")
+        logger.info(f"[DRY RUN] Would update CRM profile {profile_id} last_contact_date = {contact_date}")
         return True
     
-    conn = sqlite3.connect(CRM_DB)
+    conn = get_db_connection(readonly=False)
     cursor = conn.cursor()
     cursor.execute("""
-        UPDATE profiles 
-        SET last_contact_at = ?, updated_at = ?
+        UPDATE people 
+        SET last_contact_date = ?, updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
-    """, (contact_date.isoformat(), datetime.now().isoformat(), profile_id))
+    """, (contact_date.strftime("%Y-%m-%d"), profile_id))
     conn.commit()
     conn.close()
     
-    logger.info(f"Updated CRM profile {profile_id} last_contact_at = {contact_date}")
+    logger.info(f"Updated CRM profile {profile_id} last_contact_date = {contact_date}")
     return True
 
 

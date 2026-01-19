@@ -34,8 +34,18 @@ from N5.lib.paths import (
     N5_ROOT, N5_DIGESTS_DIR, PRODUCTIVITY_DB, WORKOUTS_DB, WELLNESS_DB, WORKSPACE_ROOT
 )
 
-# CRM database path
-CRM_DB_PATH = N5_ROOT / "data" / "crm_v3.db"
+# Unified database connection
+try:
+    from N5.scripts.db_paths import get_db_connection, N5_CORE_DB
+except ImportError:
+    # Fallback if db_paths not available
+    N5_CORE_DB = N5_ROOT / "data" / "n5_core.db"
+    def get_db_connection(readonly=False):
+        import sqlite3
+        conn = sqlite3.connect(N5_CORE_DB)
+        conn.row_factory = sqlite3.Row
+        return conn
+
 JOURNAL_DB_PATH = N5_ROOT / "data" / "journal.db"
 LISTS_DIR = Path("/home/workspace/Lists")
 
@@ -206,49 +216,40 @@ class MorningDigest:
     async def get_reconnects(self):
         """Module 5: Reconnects (2-3 people to reach out to)"""
         try:
-            if not CRM_DB_PATH.exists():
+            if not N5_CORE_DB.exists():
                 return "CRM database not found. Run CRM setup."
 
-            conn = sqlite3.connect(CRM_DB_PATH)
+            conn = get_db_connection(readonly=True)
             cursor = conn.cursor()
 
-            # Fix 4: Add last_suggested_at column if missing
-            cursor.execute("PRAGMA table_info(profiles)")
-            columns = [col[1] for col in cursor.fetchall()]
-            if 'last_suggested_at' not in columns:
-                cursor.execute("ALTER TABLE profiles ADD COLUMN last_suggested_at DATE")
-                conn.commit()
-
-            # Fix 4: Exclude recently suggested contacts (within 7 days)
+            # Query people table for reconnects - use last_contact_date field
             cursor.execute("""
-                SELECT name, category, last_contact_at, yaml_path, id
-                FROM profiles
-                WHERE last_contact_at IS NOT NULL
-                  AND date(last_contact_at) < date('now', '-30 days')
+                SELECT id, full_name, category, last_contact_date, markdown_path, company, title
+                FROM people
+                WHERE last_contact_date IS NOT NULL
+                  AND date(last_contact_date) < date('now', '-30 days')
                   AND category IN ('INVESTOR', 'NETWORKING', 'COMMUNITY', 'FOUNDER')
-                  AND (last_suggested_at IS NULL OR date(last_suggested_at) < date('now', '-7 days'))
-                ORDER BY last_contact_at ASC
+                  AND status = 'active'
+                ORDER BY last_contact_date ASC
                 LIMIT 3
             """)
 
             rows = cursor.fetchall()
-            
-            # Fix 4: Update last_suggested_at for returned contacts
-            if rows:
-                profile_ids = [row[4] for row in rows]
-                cursor.executemany(
-                    "UPDATE profiles SET last_suggested_at = date('now') WHERE id = ?",
-                    [(pid,) for pid in profile_ids]
-                )
-                conn.commit()
-            
             conn.close()
 
             if not rows:
                 return "Network is healthy. No reconnects needed this week."
 
             formatted = []
-            for name, category, last_contact, yaml_path, profile_id in rows:
+            for row in rows:
+                person_id = row['id']
+                name = row['full_name']
+                category = row['category']
+                last_contact = row['last_contact_date']
+                markdown_path = row['markdown_path']
+                company = row['company']
+                title = row['title']
+                
                 # Calculate days since contact
                 if last_contact:
                     try:
@@ -260,14 +261,19 @@ class MorningDigest:
                 else:
                     time_str = "a while ago"
 
-                # Try to get context from yaml file - improved extraction
-                context = ""
-                if yaml_path:
-                    yaml_full_path = Path("/home/workspace") / yaml_path
+                # Build context from unified DB fields
+                context_parts = []
+                if company and company != "TBD":
+                    context_parts.append(company)
+                if title and title != "TBD":
+                    context_parts.append(title)
+                
+                # Fallback to markdown file if no company/title
+                if not context_parts and markdown_path:
+                    yaml_full_path = Path("/home/workspace") / markdown_path
                     if yaml_full_path.exists():
                         try:
                             content = yaml_full_path.read_text()
-                            context_parts = []
                             
                             # Extract organization
                             for line in content.split('\n'):
@@ -284,22 +290,10 @@ class MorningDigest:
                                     if role and role != "'*Not yet enriched*'" and role != '*Not yet enriched*':
                                         context_parts.append(role)
                                         break
-                            
-                            # Fall back to email domain if no org/role
-                            if not context_parts:
-                                for line in content.split('\n'):
-                                    if 'email:' in line.lower() or '**Email:**' in line:
-                                        email = line.split(':', 1)[-1].strip().strip('*').strip()
-                                        if '@' in email:
-                                            domain = email.split('@')[1].split('.')[0].title()
-                                            if domain.lower() not in ['gmail', 'yahoo', 'hotmail', 'outlook', 'icloud']:
-                                                context_parts.append(f"@ {domain}")
-                                        break
-                            
-                            context = " · ".join(context_parts[:2]) if context_parts else ""
                         except:
                             pass
 
+                context = " · ".join(context_parts[:2]) if context_parts else ""
                 cat_display = category.title() if category else "Contact"
                 line = f"- **{name}** ({cat_display})\n  Last contact: {time_str}"
                 if context:

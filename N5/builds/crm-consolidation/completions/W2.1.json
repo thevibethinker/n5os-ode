@@ -1,0 +1,53 @@
+{
+  "worker_id": "W2.1",
+  "title": "CRM Script Updates",
+  "status": "complete",
+  "completed_at": "2026-01-19T07:10:00-05:00",
+  "summary": "Updated all 4 core CRM scripts to use unified n5_core.db database with 'people' table",
+  "artifacts": [
+    {
+      "path": "N5/scripts/crm_cli.py",
+      "action": "rewritten",
+      "description": "Complete rewrite to use db_paths.py, PEOPLE_TABLE, and unified DB patterns. Commands: create, search, intel, list, stats"
+    },
+    {
+      "path": "N5/scripts/crm_lookup.py",
+      "action": "rewritten",
+      "description": "Updated to use get_db_connection() and PEOPLE_TABLE. CRMLookupService provides O(1) email lookups and fuzzy name matching"
+    },
+    {
+      "path": "N5/scripts/crm_query_helper.py",
+      "action": "rewritten",
+      "description": "Updated all queries to use people table. Added get_person_deals() for deal_roles junction queries"
+    },
+    {
+      "path": "N5/scripts/crm_enrichment_worker.py",
+      "action": "rewritten",
+      "description": "Simplified to read from people table directly. Removed legacy enrichment_queue dependencies (queue can be rebuilt later if needed)"
+    }
+  ],
+  "verification": {
+    "crm_cli_help": "PASS - Shows all commands",
+    "crm_cli_list": "PASS - Lists 259 people from n5_core.db",
+    "crm_cli_stats": "PASS - Shows stats with deals and interactions",
+    "crm_lookup_stats": "PASS - Reports 259 people, 174 with email",
+    "crm_lookup_email": "PASS - Returns 'No match found' for test email",
+    "crm_query_helper_import": "PASS - No import errors",
+    "crm_enrichment_worker_import": "PASS - No import errors"
+  },
+  "notes_for_orchestrator": [
+    "crm_paths.py was already updated (by W1.1) to point CRM_DB to N5_CORE_DB - confirmed and leveraged",
+    "db_paths.py table constants (PEOPLE_TABLE, etc.) used consistently across all scripts",
+    "The old enrichment_queue table structure is NOT in n5_core.db - enrichment worker simplified to work without queue (queries people directly for enrichment candidates)",
+    "crm_calendar_helpers.py still uses old profiles table - should be addressed in separate worker if calendar webhook integration is needed",
+    "Some legacy imports (crm_paths.CRM_INDIVIDUALS) retained for markdown profile paths - these are unchanged"
+  ],
+  "checklist": {
+    "crm_cli_updated": true,
+    "crm_lookup_updated": true,
+    "crm_query_helper_updated": true,
+    "crm_enrichment_worker_updated": true,
+    "all_import_without_errors": true,
+    "completion_report_written": true
+  }
+}

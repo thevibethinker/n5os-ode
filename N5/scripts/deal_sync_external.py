@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 """
-External Deal Sync - One-way sync from external sources to deals.db
+External Deal Sync - One-way sync from external sources to unified n5_core.db
+
+Updated 2026-01-19: Now uses unified database with people + deal_roles tables.
 
 Sources:
   1. Zo Data Partnerships (Google Sheet)
   2. Careerspan Acquirer Targets (Notion - via browser scrape)
   3. Careerspan Leadership (Notion - via browser scrape)
+  4. Deal Brokers (Notion)
+  5. Leadership Targets (Notion)
 
 Usage:
-  python3 deal_sync_external.py [--source zo|acquirers|leadership|all] [--dry-run]
+  python3 deal_sync_external.py [--source zo|acquirers|leadership|brokers|all] [--dry-run]
 
 This script is called by the scheduled agent every 6 hours.
 For Notion sources, the actual data fetch is done by Zo's browser tools,
@@ -16,24 +20,102 @@ and this script processes the cached markdown files.
 """
 
 import argparse
-import sqlite3
 import json
 import re
 import os
 from datetime import datetime
 from pathlib import Path
+import sys
 
-DB_PATH = '/home/workspace/N5/data/deals.db'
+_SCRIPT_DIR = Path(__file__).parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+
+from db_paths import get_db_connection, N5_CORE_DB
+
 CACHE_DIR = '/home/workspace/N5/cache/deal_sync'
 
 # Ensure cache dir exists
 Path(CACHE_DIR).mkdir(parents=True, exist_ok=True)
 
 
-def get_db():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
+def ensure_organization_exists(name: str, domain: str = None, website: str = None) -> int:
+    """Get or create organization, return organization_id."""
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Try to find by name first
+    c.execute("SELECT id FROM organizations WHERE name = ?", (name,))
+    row = c.fetchone()
+    if row:
+        conn.close()
+        return row['id']
+    
+    # Create new
+    c.execute("""
+        INSERT INTO organizations (name, domain, website, source_db, created_at)
+        VALUES (?, ?, ?, 'external_sync', datetime('now'))
+    """, (name, domain, website))
+    org_id = c.lastrowid
+    conn.commit()
+    conn.close()
+    return org_id
+
+
+def ensure_person_exists(name: str, email: str = None, company: str = None, linkedin_url: str = None) -> int:
+    """Get or create person, return person_id."""
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Try to find by email first
+    if email:
+        c.execute("SELECT id FROM people WHERE email = ?", (email.lower(),))
+        row = c.fetchone()
+        if row:
+            conn.close()
+            return row['id']
+    
+    # Try by name + company
+    c.execute("""
+        SELECT id FROM people 
+        WHERE full_name = ? AND (company = ? OR company IS NULL)
+    """, (name, company))
+    row = c.fetchone()
+    if row:
+        conn.close()
+        return row['id']
+    
+    # Create new
+    c.execute("""
+        INSERT INTO people (full_name, email, company, linkedin_url, source_db, created_at)
+        VALUES (?, ?, ?, ?, 'external_sync', datetime('now'))
+    """, (name, email.lower() if email else None, company, linkedin_url))
+    person_id = c.lastrowid
+    conn.commit()
+    conn.close()
+    return person_id
+
+
+def create_deal_role(deal_id: str, person_id: int, role: str, context: str = None) -> None:
+    """Create a deal_role linking person to deal."""
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Check if already exists
+    c.execute("""
+        SELECT id FROM deal_roles 
+        WHERE deal_id = ? AND person_id = ? AND role = ?
+    """, (deal_id, person_id, role))
+    if c.fetchone():
+        conn.close()
+        return
+    
+    c.execute("""
+        INSERT INTO deal_roles (deal_id, person_id, role, context, added_at)
+        VALUES (?, ?, ?, ?, datetime('now'))
+    """, (deal_id, person_id, role, context))
+    conn.commit()
+    conn.close()
 
 
 def sync_zo_partnerships(dry_run: bool = False) -> dict:
@@ -58,52 +140,51 @@ def sync_zo_partnerships(dry_run: bool = False) -> dict:
         print(f"[DRY RUN] Would sync {len(records)} Zo partnership records")
         return {'status': 'dry_run', 'count': len(records)}
     
-    conn = get_db()
+    conn = get_db_connection()
     c = conn.cursor()
     
     inserted = updated = 0
     for r in records:
         deal_id = r.get('id') or f"zo-dp-{re.sub(r'[^a-z0-9]', '', r['Company'].lower())[:20]}"
+        company = r['Company']
         
         c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
         exists = c.fetchone()
         
-        metadata = {
-            'founder': r.get('Founder'),
-            'implementation': r.get('Implementation'),
-            'last_synced': datetime.now().isoformat(),
-            'source': 'google_sheets'
-        }
+        # Temperature mapping
+        raw_temp = r.get('Warmth', '').lower()
+        temperature = raw_temp if raw_temp in ('hot', 'warm', 'cold') else None
         
         if exists:
             c.execute('''
                 UPDATE deals SET
-                    company = ?, website = ?, category = ?, temperature = ?,
-                    owner = ?, notes = ?, metadata_json = ?, last_touched = ?
+                    company = ?, category = ?, temperature = ?,
+                    notes = ?, updated_at = datetime('now')
                 WHERE id = ?
             ''', (
-                r['Company'], r.get('Website'), r.get('category'),
-                r.get('Warmth', '').lower() if r.get('Warmth') else None,
-                r.get('Liaison'), r.get('Notes'),
-                json.dumps(metadata), datetime.now().isoformat(), deal_id
+                company, r.get('category'), temperature,
+                r.get('Notes'), deal_id
             ))
             updated += 1
         else:
             c.execute('''
                 INSERT INTO deals (
-                    id, deal_type, company, website, category,
-                    temperature, stage, owner, notes,
-                    source_system, source_id, metadata_json,
-                    first_identified, last_touched
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    id, deal_type, company, category,
+                    temperature, stage, pipeline, notes,
+                    external_source, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
             ''', (
-                deal_id, 'zo_partnership', r['Company'], r.get('Website'),
-                r.get('category'), r.get('Warmth', '').lower() if r.get('Warmth') else None,
-                'identified', r.get('Liaison'), r.get('Notes'),
-                'google_sheets', r.get('source_id', f"gsheet:{deal_id}"),
-                json.dumps(metadata), datetime.now().isoformat(), datetime.now().isoformat()
+                deal_id, 'zo_partnership', company, r.get('category'),
+                temperature, 'identified', 'zo', r.get('Notes'),
+                'google_sheets'
             ))
             inserted += 1
+        
+        # Create person for founder if provided
+        founder_name = r.get('Founder')
+        if founder_name:
+            person_id = ensure_person_exists(name=founder_name, company=company)
+            create_deal_role(deal_id, person_id, 'primary_contact', 'Founder')
     
     conn.commit()
     conn.close()
@@ -132,7 +213,7 @@ def sync_careerspan_acquirers(dry_run: bool = False) -> dict:
         print(f"[DRY RUN] Would sync {len(records)} Careerspan acquirer records")
         return {'status': 'dry_run', 'count': len(records)}
     
-    conn = get_db()
+    conn = get_db_connection()
     c = conn.cursor()
     
     # Temperature mapping: normalize Notion values to our schema
@@ -157,36 +238,49 @@ def sync_careerspan_acquirers(dry_run: bool = False) -> dict:
         c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
         exists = c.fetchone()
         
+        notion_page_id = r.get('notion_id')
+        
         if exists:
             c.execute('''
                 UPDATE deals SET
-                    company = ?, category = ?, proximity = ?, temperature = ?,
-                    exit_type = ?, website = ?, notes = ?, metadata_json = ?,
-                    last_touched = ?
+                    company = ?, category = ?, temperature = ?,
+                    notes = ?, notion_page_id = ?, updated_at = datetime('now')
                 WHERE id = ?
             ''', (
-                company, r.get('category'), r.get('proximity'),
-                temperature, r.get('deal type'), r.get('website'),
-                r.get('notes'), json.dumps(r), datetime.now().isoformat(),
-                deal_id
+                company, r.get('category'), temperature,
+                r.get('notes'), notion_page_id, deal_id
             ))
             updated += 1
         else:
             c.execute('''
                 INSERT INTO deals (
-                    id, deal_type, company, category, proximity, temperature,
-                    exit_type, stage, owner, website, notes,
-                    source_system, source_id, metadata_json,
-                    first_identified, last_touched
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    id, deal_type, company, category, temperature,
+                    stage, pipeline, notes, notion_page_id,
+                    external_source, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
             ''', (
                 deal_id, 'careerspan_acquirer', company, r.get('category'),
-                r.get('proximity'), temperature, r.get('deal type'),
-                'identified', 'V', r.get('website'), r.get('notes'),
-                'notion', f"notion:{deal_id}", json.dumps(r),
-                datetime.now().isoformat(), datetime.now().isoformat()
+                temperature, 'identified', 'careerspan', r.get('notes'),
+                notion_page_id, 'notion'
             ))
             inserted += 1
+        
+        # Create organization if we have enough info
+        if company:
+            website = r.get('website')
+            domain = None
+            if website:
+                # Extract domain from website
+                import urllib.parse
+                try:
+                    parsed = urllib.parse.urlparse(website)
+                    domain = parsed.netloc or parsed.path.split('/')[0]
+                except:
+                    pass
+            org_id = ensure_organization_exists(company, domain=domain, website=website)
+            
+            # Link deal to organization
+            c.execute('UPDATE deals SET organization_id = ? WHERE id = ?', (org_id, deal_id))
     
     conn.commit()
     conn.close()
@@ -198,7 +292,7 @@ def sync_careerspan_acquirers(dry_run: bool = False) -> dict:
 def sync_careerspan_leadership(dry_run: bool = False) -> dict:
     """
     Sync Careerspan Leadership from cached Notion scrape.
-    Leadership entries are stored as careerspan_acquirer with category='leadership'.
+    Leadership entries create people entries linked to deals via deal_roles.
     """
     cache_file = f"{CACHE_DIR}/careerspan_leadership.jsonl"
     
@@ -216,63 +310,52 @@ def sync_careerspan_leadership(dry_run: bool = False) -> dict:
         print(f"[DRY RUN] Would sync {len(records)} leadership records")
         return {'status': 'dry_run', 'count': len(records)}
     
-    conn = get_db()
+    conn = get_db_connection()
     c = conn.cursor()
     
     inserted = updated = 0
     for r in records:
-        # Generate deal ID from person name or notion_id
-        person = r.get('person', '').strip()
-        notion_id = r.get('notion_id', '')
-        deal_id = r.get('id') or f"cs-lead-{re.sub(r'[^a-z0-9]', '', person.lower())[:20]}" if person else f"cs-lead-{notion_id[:12]}"
+        person_name = r.get('person', '').strip()
+        if not person_name:
+            continue
         
-        # Use person as company placeholder (actual company requires resolving company_relation)
-        company_placeholder = f"[Leadership: {person}]" if person else "[Unknown]"
+        company = r.get('company')
+        linkedin_url = r.get('linkedin_url')
         
-        metadata = {
-            'notion_id': notion_id,
-            'notion_url': r.get('url'),
-            'linkedin_url': r.get('linkedin_url'),
-            'x_handle': r.get('x_handle'),
-            'second_degree_connects': r.get('2nd_degree_connects'),
-            'notes_thesis': r.get('notes_thesis'),
-            'company_relation_ids': r.get('company_relation', []),
-            'roles': r.get('roles', []),
-            'last_synced': datetime.now().isoformat(),
-        }
+        # Create or update person
+        c.execute("""
+            SELECT id FROM people 
+            WHERE full_name = ? AND (company = ? OR company IS NULL)
+        """, (person_name, company))
+        existing = c.fetchone()
         
-        c.execute('SELECT id FROM deals WHERE id = ?', (deal_id,))
-        exists = c.fetchone()
-        
-        if exists:
+        if existing:
+            person_id = existing['id']
             c.execute('''
-                UPDATE deals SET
-                    company = ?, primary_contact = ?, category = ?,
-                    website = ?, notes = ?,
-                    metadata_json = ?, last_touched = ?
+                UPDATE people SET
+                    company = ?, linkedin_url = ?, updated_at = datetime('now')
                 WHERE id = ?
-            ''', (
-                company_placeholder, person, 'leadership',
-                r.get('linkedin_url'), r.get('notes_thesis'),
-                json.dumps(metadata), datetime.now().isoformat(), deal_id
-            ))
+            ''', (company, linkedin_url, person_id))
             updated += 1
         else:
             c.execute('''
-                INSERT INTO deals (
-                    id, deal_type, company, primary_contact, category,
-                    stage, owner, website, notes,
-                    source_system, source_id, metadata_json,
-                    first_identified, last_touched
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                deal_id, 'careerspan_acquirer', company_placeholder,
-                person, 'leadership',
-                'identified', 'V', r.get('linkedin_url'), r.get('notes_thesis'),
-                'notion', f"notion:{notion_id}", json.dumps(metadata),
-                datetime.now().isoformat(), datetime.now().isoformat()
-            ))
+                INSERT INTO people (
+                    full_name, company, linkedin_url, category,
+                    source_db, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, datetime('now'), datetime('now'))
+            ''', (person_name, company, linkedin_url, 'FOUNDER', 'external_sync'))
+            person_id = c.lastrowid
             inserted += 1
+        
+        # Try to link to associated deal
+        if company:
+            c.execute("""
+                SELECT id FROM deals 
+                WHERE deal_type = 'careerspan_acquirer' AND company LIKE ?
+            """, (f'%{company}%',))
+            deal_match = c.fetchone()
+            if deal_match:
+                create_deal_role(deal_match['id'], person_id, 'decision_maker', 'Leadership target')
     
     conn.commit()
     conn.close()
@@ -281,9 +364,8 @@ def sync_careerspan_leadership(dry_run: bool = False) -> dict:
     return {'status': 'success', 'inserted': inserted, 'updated': updated}
 
 
-
 def sync_deal_brokers(dry_run: bool = False) -> dict:
-    """Sync Deal Brokers to deal_contacts table"""
+    """Sync Deal Brokers to people table with 'broker' role."""
     cache_file = f"{CACHE_DIR}/deal_brokers.jsonl"
     
     if not os.path.exists(cache_file):
@@ -300,45 +382,43 @@ def sync_deal_brokers(dry_run: bool = False) -> dict:
         print(f"[DRY RUN] Would sync {len(records)} broker records")
         return {'status': 'dry_run', 'count': len(records)}
     
-    conn = get_db()
+    conn = get_db_connection()
     c = conn.cursor()
     
     inserted = updated = 0
     for r in records:
-        contact_id = r.get('id', f"broker-{re.sub(r'[^a-z0-9]', '', r.get('contact', 'unknown').lower())[:20]}")
+        broker_name = r.get('contact', '').strip()
+        if not broker_name:
+            continue
         
-        c.execute('SELECT id FROM deal_contacts WHERE id = ?', (contact_id,))
-        exists = c.fetchone()
+        company = r.get('company')
         
-        if exists:
+        # Create or update person
+        c.execute("""
+            SELECT id FROM people WHERE full_name = ?
+        """, (broker_name,))
+        existing = c.fetchone()
+        
+        if existing:
+            person_id = existing['id']
             c.execute('''
-                UPDATE deal_contacts SET
-                    full_name = ?, company = ?, angle_strategy = ?,
-                    blurb = ?, notion_url = ?, metadata_json = ?, updated_at = ?
+                UPDATE people SET
+                    company = ?, updated_at = datetime('now')
                 WHERE id = ?
-            ''', (
-                r.get('contact'), r.get('company'), r.get('angle_strategy'),
-                r.get('blurb'), r.get('notion_url'),
-                json.dumps(r.get('metadata', {})), datetime.now().isoformat(),
-                contact_id
-            ))
+            ''', (company, person_id))
             updated += 1
         else:
             c.execute('''
-                INSERT INTO deal_contacts (
-                    id, contact_type, pipeline, full_name,
-                    company, angle_strategy, blurb, notion_url,
-                    source_system, source_id, metadata_json,
-                    created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                contact_id, 'broker', 'careerspan', r.get('contact'),
-                r.get('company'), r.get('angle_strategy'), r.get('blurb'),
-                r.get('notion_url'), 'notion', r.get('notion_id'),
-                json.dumps(r.get('metadata', {})),
-                datetime.now().isoformat(), datetime.now().isoformat()
-            ))
+                INSERT INTO people (
+                    full_name, company, category,
+                    source_db, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, datetime('now'), datetime('now'))
+            ''', (broker_name, company, 'ADVISOR', 'external_sync'))
+            person_id = c.lastrowid
             inserted += 1
+        
+        # Brokers can be linked to multiple deals - we'll create deal_roles
+        # when we have specific deal associations
     
     conn.commit()
     conn.close()
@@ -347,86 +427,35 @@ def sync_deal_brokers(dry_run: bool = False) -> dict:
     return {'status': 'success', 'inserted': inserted, 'updated': updated}
 
 
-def sync_leadership_targets(dry_run: bool = False) -> dict:
-    """Sync Leadership Targets to deal_contacts table"""
-    cache_file = f"{CACHE_DIR}/careerspan_leadership.jsonl"
-    
-    if not os.path.exists(cache_file):
-        print(f"⚠ Cache file not found: {cache_file}")
-        return {'status': 'skipped', 'reason': 'no_cache'}
-    
-    records = []
-    with open(cache_file, 'r') as f:
-        for line in f:
-            if line.strip():
-                records.append(json.loads(line))
-    
-    if dry_run:
-        print(f"[DRY RUN] Would sync {len(records)} leadership records")
-        return {'status': 'dry_run', 'count': len(records)}
-    
-    conn = get_db()
+def mark_synced(entity_type: str, entity_id: str, notion_page_id: str) -> None:
+    """Mark an entity as synced in sync_state table."""
+    conn = get_db_connection()
     c = conn.cursor()
-    
-    inserted = updated = 0
-    for r in records:
-        contact_id = r.get('id', f"lead-{re.sub(r'[^a-z0-9]', '', r.get('person', 'unknown').lower())[:20]}")
-        
-        # Try to find associated deal
-        company = r.get('company')
-        associated_deal = None
-        if company:
-            c.execute("SELECT id FROM deals WHERE deal_type = 'careerspan_acquirer' AND company LIKE ?", 
-                     (f'%{company}%',))
-            match = c.fetchone()
-            if match:
-                associated_deal = match['id']
-        
-        c.execute('SELECT id FROM deal_contacts WHERE id = ?', (contact_id,))
-        exists = c.fetchone()
-        
-        if exists:
-            c.execute('''
-                UPDATE deal_contacts SET
-                    full_name = ?, company = ?, linkedin_url = ?,
-                    second_degree_connects = ?, associated_deal_id = ?,
-                    notion_url = ?, metadata_json = ?, updated_at = ?
-                WHERE id = ?
-            ''', (
-                r.get('person'), company, r.get('linkedin_url'),
-                r.get('second_degree_connects'), associated_deal,
-                r.get('notion_url'), json.dumps(r.get('metadata', {})),
-                datetime.now().isoformat(), contact_id
-            ))
-            updated += 1
-        else:
-            c.execute('''
-                INSERT INTO deal_contacts (
-                    id, contact_type, pipeline, full_name,
-                    company, linkedin_url, second_degree_connects,
-                    associated_deal_id, notion_url,
-                    source_system, source_id, metadata_json,
-                    created_at, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                contact_id, 'leadership', 'careerspan', r.get('person'),
-                company, r.get('linkedin_url'), r.get('second_degree_connects'),
-                associated_deal, r.get('notion_url'),
-                'notion', r.get('notion_id'), json.dumps(r.get('metadata', {})),
-                datetime.now().isoformat(), datetime.now().isoformat()
-            ))
-            inserted += 1
-    
+    c.execute("""
+        INSERT OR REPLACE INTO sync_state 
+        (entity_type, entity_id, notion_page_id, last_push_at)
+        VALUES (?, ?, ?, datetime('now'))
+    """, (entity_type, entity_id, notion_page_id))
     conn.commit()
     conn.close()
-    
-    print(f"✓ Leadership Targets synced: {inserted} inserted, {updated} updated")
-    return {'status': 'success', 'inserted': inserted, 'updated': updated}
+
+
+def get_sync_state(entity_type: str, entity_id: str) -> dict:
+    """Get sync state for an entity."""
+    conn = get_db_connection(readonly=True)
+    c = conn.cursor()
+    c.execute("""
+        SELECT * FROM sync_state 
+        WHERE entity_type = ? AND entity_id = ?
+    """, (entity_type, entity_id))
+    row = c.fetchone()
+    conn.close()
+    return dict(row) if row else None
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Sync external deal sources to deals.db')
-    parser.add_argument('--source', choices=['zo', 'acquirers', 'leadership', 'all'],
+    parser = argparse.ArgumentParser(description='Sync external deal sources to n5_core.db')
+    parser.add_argument('--source', choices=['zo', 'acquirers', 'leadership', 'brokers', 'all'],
                         default='all', help='Which source to sync')
     parser.add_argument('--dry-run', action='store_true', help='Preview without writing')
     args = parser.parse_args()
@@ -442,12 +471,14 @@ def main():
     if args.source in ['leadership', 'all']:
         results['leadership'] = sync_careerspan_leadership(args.dry_run)
     
+    if args.source in ['brokers', 'all']:
+        results['brokers'] = sync_deal_brokers(args.dry_run)
+    
     print(f"\n=== Sync Summary ===")
     print(json.dumps(results, indent=2))
     
     return results
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-

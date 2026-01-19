@@ -1,499 +1,408 @@
 #!/usr/bin/env python3
 """
-CRM V3 Command Line Interface
+CRM CLI - Unified Database Interface
 
-Provides direct control over CRM data with simple, powerful commands:
-- Manual profile creation
-- Intelligent search
-- AI-powered intelligence synthesis
-- Enrichment queue management
-- Statistics and listing
-- Ad hoc stakeholder enrichment from LinkedIn URLs
+Command-line interface for CRM operations using the unified n5_core.db database.
+
+Updated 2026-01-19: Migrated from crm_v3.db/profiles to n5_core.db/people table.
+
+Commands:
+- create: Manually create a person
+- search: Search for people
+- intel: Get intelligence synthesis
+- list: List people
+- stats: Show CRM statistics
 """
 
 import argparse
-import sqlite3
 import sys
 import json
 from pathlib import Path
 from datetime import datetime, timedelta
-import asyncio
 
-# Add workspace to path for N5 lib imports
+# Add workspace to path for imports
 sys.path.insert(0, '/home/workspace')
-from N5.lib.paths import CRM_DB, CRM_PROFILES_DIR
 
-# Import helper functions
-sys.path.insert(0, '/home/workspace/N5/scripts')
-from crm_calendar_helpers import (
-    get_or_create_profile,
-    schedule_enrichment_job,
-    get_db_connection
+# Use unified database paths
+from N5.scripts.db_paths import (
+    get_db_connection,
+    N5_CORE_DB,
+    PEOPLE_TABLE,
+    ORGANIZATIONS_TABLE,
+    INTERACTIONS_TABLE,
+    DEALS_TABLE,
+    DEAL_ROLES_TABLE
 )
 
-sys.path.insert(0, '/home/workspace')
-from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
-
-# Use centralized paths from N5.lib.paths
-DB_PATH = str(CRM_DB)
-PROFILES_DIR = CRM_PROFILES_DIR
+# Profile directory for markdown files
+CRM_INDIVIDUALS = Path("/home/workspace/Personal/Knowledge/CRM/individuals")
 
 
-def create_profile(email: str, name: str, category: str = 'NETWORKING', notes: str = None):
+def create_person(email: str, name: str, category: str = 'NETWORKING', 
+                  company: str = None, title: str = None, notes: str = None):
     """
-    Manually create profile.
+    Manually create a person in the CRM.
     
     Args:
         email: Contact email
         name: Full name
-        category: NETWORKING | INVESTOR | ADVISOR | COMMUNITY
-        notes: Optional notes
+        category: NETWORKING | INVESTOR | ADVISOR | COMMUNITY | FOUNDER | CUSTOMER | PARTNER | OTHER
+        company: Optional company name
+        title: Optional job title
+        notes: Optional notes (appended to markdown profile)
     """
     try:
-        # Check if profile already exists
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT id, name, yaml_path FROM profiles WHERE email = ?", (email,))
+        
+        # Check if person already exists
+        cursor.execute(f"SELECT id, full_name, markdown_path FROM {PEOPLE_TABLE} WHERE email = ?", (email,))
         existing = cursor.fetchone()
         
         if existing:
-            print(f"⚠ Profile already exists: {existing[1]} (ID: {existing[0]})")
-            print(f"  Path: {existing[2]}")
+            print(f"⚠ Person already exists: {existing['full_name']} (ID: {existing['id']})")
+            if existing['markdown_path']:
+                print(f"  Path: {existing['markdown_path']}")
             conn.close()
             return
         
-        # Create profile using helper (doesn't accept category)
-        profile_id = get_or_create_profile(
-            email=email,
-            name=name,
-            source='manual_cli'
-        )
+        # Create person
+        cursor.execute(f"""
+            INSERT INTO {PEOPLE_TABLE} (full_name, email, category, company, title, first_contact_date, source_db)
+            VALUES (?, ?, ?, ?, ?, datetime('now'), 'manual_cli')
+        """, (name, email, category.upper(), company, title))
         
-        # Update category in database
-        cursor.execute("UPDATE profiles SET category = ? WHERE id = ?", (category, profile_id))
+        person_id = cursor.lastrowid
         conn.commit()
         
-        # Get yaml_path from database
-        cursor.execute("SELECT yaml_path FROM profiles WHERE id = ?", (profile_id,))
-        yaml_path = cursor.fetchone()[0]
-        yaml_file = Path(yaml_path)
+        # Create markdown profile if it doesn't exist
+        slug = email.split('@')[0].lower().replace('.', '-')
+        md_path = CRM_INDIVIDUALS / f"{slug}.md"
         
-        # Append notes to YAML if provided
-        if notes:
-            if yaml_file.exists():
-                with open(yaml_file, 'a') as f:
-                    f.write(f"\n# Manual Notes (CLI)\n{notes}\n")
-        
-        # Schedule immediate enrichment
-        schedule_enrichment_job(
-            profile_id=profile_id,
-            scheduled_for=datetime.now().isoformat(),
-            checkpoint='checkpoint_2',
-            priority=100,
-            trigger_source='manual'
-        )
+        if not md_path.exists():
+            CRM_INDIVIDUALS.mkdir(parents=True, exist_ok=True)
+            with open(md_path, 'w') as f:
+                f.write(f"---\nname: {name}\nemail: {email}\ncategory: {category}\n")
+                if company:
+                    f.write(f"company: {company}\n")
+                if title:
+                    f.write(f"title: {title}\n")
+                f.write(f"created: {datetime.now().strftime('%Y-%m-%d')}\n---\n\n")
+                f.write(f"# {name}\n\n")
+                if notes:
+                    f.write(f"## Notes\n\n{notes}\n")
+            
+            # Update markdown_path in database
+            cursor.execute(f"UPDATE {PEOPLE_TABLE} SET markdown_path = ? WHERE id = ?", 
+                          (str(md_path), person_id))
+            conn.commit()
         
         conn.close()
         
-        # Success message
-        print(f"✓ Profile created: {yaml_file.stem} (ID: {profile_id})")
+        print(f"✓ Person created: {name} (ID: {person_id})")
         print(f"  Email: {email}")
         print(f"  Category: {category}")
-        print(f"  Path: {yaml_path}")
-        print(f"  Enrichment: Queued (priority 100, immediate)")
+        if md_path.exists():
+            print(f"  Path: {md_path}")
         
     except Exception as e:
-        print(f"✗ Error creating profile: {e}", file=sys.stderr)
+        print(f"✗ Error creating person: {e}", file=sys.stderr)
         sys.exit(1)
 
 
-def search_profiles(email: str = None, name: str = None, company: str = None):
+def search_people(email: str = None, name: str = None, company: str = None):
     """
-    Search profiles by email, name, or company.
+    Search for people.
     
     Args:
         email: Exact email match
-        name: Fuzzy name search
-        company: Company domain search
+        name: Fuzzy name match
+        company: Company name match
     """
-    if not any([email, name, company]):
-        print("⚠ Please provide at least one search parameter (--email, --name, or --company)")
-        sys.exit(1)
-    
     try:
-        conn = get_db_connection()
+        conn = get_db_connection(readonly=True)
         cursor = conn.cursor()
         
-        # Build query
-        conditions = []
-        params = []
-        
         if email:
-            conditions.append("email = ?")
-            params.append(email)
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, title, category, last_contact_date
+                FROM {PEOPLE_TABLE}
+                WHERE email = ?
+            """, (email,))
+        elif name:
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, title, category, last_contact_date
+                FROM {PEOPLE_TABLE}
+                WHERE full_name LIKE ?
+                ORDER BY last_contact_date DESC
+                LIMIT 20
+            """, (f"%{name}%",))
+        elif company:
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, title, category, last_contact_date
+                FROM {PEOPLE_TABLE}
+                WHERE company LIKE ?
+                ORDER BY full_name
+                LIMIT 20
+            """, (f"%{company}%",))
+        else:
+            print("✗ Specify --email, --name, or --company", file=sys.stderr)
+            conn.close()
+            return
         
-        if name:
-            conditions.append("name LIKE ?")
-            params.append(f"%{name}%")
-        
-        if company:
-            conditions.append("email LIKE ?")
-            params.append(f"%@{company}%")
-        
-        query = f"""
-            SELECT id, email, name, category, last_contact_at, meeting_count, 
-                   profile_quality, yaml_path
-            FROM profiles
-            WHERE {' OR '.join(conditions)}
-            ORDER BY last_contact_at DESC NULLS LAST
-        """
-        
-        cursor.execute(query, params)
         results = cursor.fetchall()
         conn.close()
         
         if not results:
-            print("No profiles found.")
+            print("No results found.")
             return
         
-        print(f"Found {len(results)} profile(s):\n")
+        print(f"\n{'ID':<5} {'Name':<30} {'Company':<20} {'Category':<12} {'Last Contact'}")
+        print("-" * 90)
         
-        for i, row in enumerate(results, 1):
-            profile_id, email, name, category, last_contact, meeting_count, quality, yaml_path = row
-            
-            last_contact_str = last_contact if last_contact else "Never"
-            category_str = category if category else "Uncategorized"
-            
-            print(f"[{i}] {name} ({email})")
-            print(f"    Category: {category_str} | Quality: {quality} | Last Contact: {last_contact_str}")
-            print(f"    Meetings: {meeting_count} | Path: {yaml_path}\n")
-    
+        for row in results:
+            last_contact = row['last_contact_date'][:10] if row['last_contact_date'] else 'Never'
+            company_str = (row['company'] or '')[:18]
+            category_str = row['category'] or 'None'
+            print(f"{row['id']:<5} {row['full_name'][:28]:<30} {company_str:<20} {category_str:<12} {last_contact}")
+        
+        print()
+        
     except Exception as e:
-        print(f"✗ Error searching profiles: {e}", file=sys.stderr)
+        print(f"✗ Error searching: {e}", file=sys.stderr)
         sys.exit(1)
 
 
-def get_intelligence_synthesis(email: str = None, profile_id: int = None):
+def get_intelligence(email: str = None, person_id: int = None):
     """
-    AI-powered intelligence synthesis across all sources.
+    Get intelligence synthesis for a person.
     
     Args:
-        email: Profile email
-        profile_id: Profile database ID
+        email: Person's email
+        person_id: Person's ID
     """
-    if not email and not profile_id:
-        print("⚠ Please provide either --email or --id")
-        sys.exit(1)
-    
     try:
-        conn = get_db_connection()
+        conn = get_db_connection(readonly=True)
         cursor = conn.cursor()
         
-        # Fetch profile
-        if profile_id:
-            cursor.execute("""
-                SELECT id, email, name, yaml_path, category, last_contact_at, 
-                       meeting_count, profile_quality, relationship_strength
-                FROM profiles WHERE id = ?
-            """, (profile_id,))
-        else:
-            cursor.execute("""
-                SELECT id, email, name, yaml_path, category, last_contact_at, 
-                       meeting_count, profile_quality, relationship_strength
-                FROM profiles WHERE email = ?
+        # Find person
+        if email:
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, title, category, status, priority,
+                       first_contact_date, last_contact_date, markdown_path, linkedin_url
+                FROM {PEOPLE_TABLE}
+                WHERE email = ?
             """, (email,))
-        
-        profile = cursor.fetchone()
-        
-        if not profile:
-            print(f"✗ Profile not found")
-            conn.close()
-            sys.exit(1)
-        
-        profile_id, email, name, yaml_path, category, last_contact, meeting_count, quality, strength = profile
-        
-        # Read YAML file
-        yaml_file = Path(yaml_path)
-        yaml_content = ""
-        if yaml_file.exists():
-            with open(yaml_file, 'r') as f:
-                yaml_content = f.read()
-        
-        # Query intelligence sources
-        cursor.execute("""
-            SELECT source_type, source_path, summary, 
-                   source_date, created_at
-            FROM intelligence_sources
-            WHERE profile_id = ?
-            ORDER BY source_date DESC
-        """, (profile_id,))
-        sources = cursor.fetchall()
-        conn.close()
-        
-        # Display synthesis header
-        print(f"\n{'='*70}")
-        print(f"Intelligence Synthesis: {name} ({email})")
-        print(f"{'='*70}\n")
-        
-        # Overview section
-        print("Overview:")
-        print(f"- Profile ID: {profile_id}")
-        print(f"- Category: {category or 'Uncategorized'}")
-        print(f"- Quality: {quality}")
-        if strength:
-            print(f"- Relationship Strength: {strength}")
-        print()
-        
-        # Relationship context
-        print("Relationship:")
-        print(f"- Meetings: {meeting_count}")
-        print(f"- Last Contact: {last_contact or 'Never'}")
-        
-        # Calculate days since last contact
-        if last_contact:
-            try:
-                last_dt = datetime.fromisoformat(last_contact.replace('Z', '+00:00'))
-                days_ago = (datetime.now() - last_dt.replace(tzinfo=None)).days
-                print(f"- Days Since Contact: {days_ago}")
-            except:
-                pass
-        print()
-        
-        # Intelligence sources summary
-        print(f"Intelligence Sources ({len(sources)} total):")
-        if sources:
-            source_types = {}
-            for source in sources:
-                source_type = source[0]
-                source_types[source_type] = source_types.get(source_type, 0) + 1
-            
-            for source_type, count in source_types.items():
-                print(f"- {source_type}: {count}")
-            print()
-            
-            # Show recent sources
-            print("Recent Sources:")
-            for source in sources[:5]:
-                source_type, path, summary, source_date, created_at = source
-                summary_short = summary[:80] + "..." if summary and len(summary) > 80 else summary
-                print(f"- [{source_type}] {source_date}")
-                if path:
-                    print(f"  Path: {path}")
-                if summary_short:
-                    print(f"  {summary_short}")
+        elif person_id:
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, title, category, status, priority,
+                       first_contact_date, last_contact_date, markdown_path, linkedin_url
+                FROM {PEOPLE_TABLE}
+                WHERE id = ?
+            """, (person_id,))
         else:
-            print("- No intelligence sources yet")
-            print()
-        
-        # Profile data preview
-        print("Profile Data Preview:")
-        yaml_lines = yaml_content.split('\n')
-        preview_lines = yaml_lines[:15]
-        for line in preview_lines:
-            print(f"  {line}")
-        if len(yaml_lines) > 15:
-            print(f"  ... ({len(yaml_lines) - 15} more lines)")
-        print()
-        
-        print(f"{'='*70}")
-        print(f"Full profile: {yaml_path}")
-        print(f"{'='*70}\n")
-        
-    except Exception as e:
-        print(f"✗ Error generating intelligence: {e}", file=sys.stderr)
-        sys.exit(1)
-
-
-def queue_enrichment(email: str, priority: int = 100):
-    """
-    Manually queue enrichment for profile.
-    
-    Args:
-        email: Profile email
-        priority: Enrichment priority (100=immediate, 75=3-day, 25=gmail)
-    """
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        
-        # Find profile
-        cursor.execute("SELECT id, name FROM profiles WHERE email = ?", (email,))
-        profile = cursor.fetchone()
-        
-        if not profile:
-            print(f"✗ Profile not found: {email}")
+            print("✗ Specify --email or --id", file=sys.stderr)
             conn.close()
-            sys.exit(1)
+            return
         
-        profile_id, name = profile
+        person = cursor.fetchone()
         
-        # Determine checkpoint based on priority
-        checkpoint = 'checkpoint_2' if priority >= 75 else 'checkpoint_1'
+        if not person:
+            print("✗ Person not found", file=sys.stderr)
+            conn.close()
+            return
         
-        # Schedule enrichment
-        schedule_enrichment_job(
-            profile_id=profile_id,
-            scheduled_for=datetime.now().isoformat(),
-            checkpoint=checkpoint,
-            priority=priority,
-            trigger_source='manual'
-        )
+        pid = person['id']
+        
+        # Get interactions
+        cursor.execute(f"""
+            SELECT type, created_at, notes
+            FROM {INTERACTIONS_TABLE}
+            WHERE person_id = ?
+            ORDER BY created_at DESC
+            LIMIT 10
+        """, (pid,))
+        interactions = cursor.fetchall()
+        
+        # Get deal associations
+        cursor.execute(f"""
+            SELECT d.company, d.stage, d.temperature, dr.role
+            FROM {DEAL_ROLES_TABLE} dr
+            JOIN {DEALS_TABLE} d ON dr.deal_id = d.id
+            WHERE dr.person_id = ?
+        """, (pid,))
+        deals = cursor.fetchall()
         
         conn.close()
         
-        print(f"✓ Enrichment queued for: {name} ({email})")
-        print(f"  Profile ID: {profile_id}")
-        print(f"  Priority: {priority}")
-        print(f"  Scheduled: Immediate")
+        # Display synthesis
+        print(f"\n{'='*70}")
+        print(f"Intelligence Synthesis: {person['full_name']}")
+        print(f"{'='*70}\n")
+        
+        print("Profile:")
+        print(f"  Email: {person['email'] or 'N/A'}")
+        print(f"  Company: {person['company'] or 'N/A'}")
+        print(f"  Title: {person['title'] or 'N/A'}")
+        print(f"  Category: {person['category'] or 'Uncategorized'}")
+        print(f"  Status: {person['status'] or 'active'}")
+        print(f"  Priority: {person['priority'] or 'medium'}")
+        print()
+        
+        print("Tracking:")
+        print(f"  First Contact: {person['first_contact_date'] or 'Unknown'}")
+        print(f"  Last Contact: {person['last_contact_date'] or 'Never'}")
+        if person['linkedin_url']:
+            print(f"  LinkedIn: {person['linkedin_url']}")
+        print()
+        
+        if interactions:
+            print(f"Recent Interactions ({len(interactions)}):")
+            for i in interactions[:5]:
+                date_str = i['created_at'][:10] if i['created_at'] else 'N/A'
+                print(f"  - [{i['type']}] {date_str}: {(i['notes'] or '')[:50]}")
+            print()
+        
+        if deals:
+            print(f"Deal Associations ({len(deals)}):")
+            for d in deals:
+                print(f"  - {d['company']} ({d['role']}): {d['stage']} / {d['temperature']}")
+            print()
+        
+        if person['markdown_path']:
+            print(f"Profile: {person['markdown_path']}")
+        
+        print()
         
     except Exception as e:
-        print(f"✗ Error queueing enrichment: {e}", file=sys.stderr)
+        print(f"✗ Error getting intelligence: {e}", file=sys.stderr)
         sys.exit(1)
 
 
-def list_profiles(category: str = None, limit: int = 20):
+def list_people(category: str = None, limit: int = 20):
     """
-    List profiles with filters.
+    List people in the CRM.
     
     Args:
-        category: Filter by category (NETWORKING, INVESTOR, ADVISOR, COMMUNITY)
-        limit: Max number of profiles to show
+        category: Filter by category
+        limit: Maximum number to show
     """
     try:
-        conn = get_db_connection()
+        conn = get_db_connection(readonly=True)
         cursor = conn.cursor()
         
         if category:
-            query = """
-                SELECT id, name, email, category, profile_quality, last_contact_at
-                FROM profiles
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, category, last_contact_date
+                FROM {PEOPLE_TABLE}
                 WHERE category = ?
-                ORDER BY last_contact_at DESC NULLS LAST
+                ORDER BY last_contact_date DESC NULLS LAST
                 LIMIT ?
-            """
-            cursor.execute(query, (category, limit))
+            """, (category.upper(), limit))
         else:
-            query = """
-                SELECT id, name, email, category, profile_quality, last_contact_at
-                FROM profiles
-                ORDER BY last_contact_at DESC NULLS LAST
+            cursor.execute(f"""
+                SELECT id, full_name, email, company, category, last_contact_date
+                FROM {PEOPLE_TABLE}
+                ORDER BY last_contact_date DESC NULLS LAST
                 LIMIT ?
-            """
-            cursor.execute(query, (limit,))
+            """, (limit,))
         
         results = cursor.fetchall()
         conn.close()
         
         if not results:
-            print("No profiles found.")
+            print("No people found.")
             return
         
-        filter_str = f" (Category: {category})" if category else ""
-        print(f"Profiles{filter_str} (showing {len(results)}):\n")
+        print(f"\n{'ID':<5} {'Name':<30} {'Category':<12} {'Company':<20} {'Last Contact'}")
+        print("-" * 85)
         
         for row in results:
-            profile_id, name, email, cat, quality, last_contact = row
-            last_contact_str = last_contact if last_contact else "Never"
-            cat_str = cat if cat else "Uncategorized"
-            
-            print(f"[{profile_id:3d}] {name:30s} | {cat_str:12s} | {quality:10s} | {last_contact_str}")
+            last_contact = row['last_contact_date'][:10] if row['last_contact_date'] else 'Never'
+            category_str = row['category'] or 'None'
+            company_str = (row['company'] or '')[:18]
+            print(f"{row['id']:<5} {row['full_name'][:28]:<30} {category_str:<12} {company_str:<20} {last_contact}")
         
-        print()
+        print(f"\nShowing {len(results)} people\n")
         
     except Exception as e:
-        print(f"✗ Error listing profiles: {e}", file=sys.stderr)
+        print(f"✗ Error listing people: {e}", file=sys.stderr)
         sys.exit(1)
 
 
 def show_stats():
-    """
-    Display CRM statistics.
-    """
+    """Display CRM statistics."""
     try:
-        conn = get_db_connection()
+        conn = get_db_connection(readonly=True)
         cursor = conn.cursor()
         
-        # Total profiles
-        cursor.execute("SELECT COUNT(*) FROM profiles")
-        total_profiles = cursor.fetchone()[0]
+        # Total people
+        cursor.execute(f"SELECT COUNT(*) as count FROM {PEOPLE_TABLE}")
+        total_people = cursor.fetchone()['count']
         
-        # Profiles by category
-        cursor.execute("""
-            SELECT category, COUNT(*) 
-            FROM profiles 
+        # By category
+        cursor.execute(f"""
+            SELECT category, COUNT(*) as count
+            FROM {PEOPLE_TABLE}
             GROUP BY category
-            ORDER BY COUNT(*) DESC
+            ORDER BY count DESC
         """)
         by_category = cursor.fetchall()
         
-        # Profiles by quality
-        cursor.execute("""
-            SELECT profile_quality, COUNT(*) 
-            FROM profiles 
-            GROUP BY profile_quality
+        # By status
+        cursor.execute(f"""
+            SELECT status, COUNT(*) as count
+            FROM {PEOPLE_TABLE}
+            GROUP BY status
         """)
-        by_quality = cursor.fetchall()
+        by_status = cursor.fetchall()
         
-        # Enrichment queue
-        cursor.execute("""
-            SELECT COUNT(*) 
-            FROM enrichment_queue 
-            WHERE status = 'pending'
+        # Total organizations
+        cursor.execute(f"SELECT COUNT(*) as count FROM {ORGANIZATIONS_TABLE}")
+        total_orgs = cursor.fetchone()['count']
+        
+        # Total deals
+        cursor.execute(f"SELECT COUNT(*) as count FROM {DEALS_TABLE}")
+        total_deals = cursor.fetchone()['count']
+        
+        # Total interactions
+        cursor.execute(f"SELECT COUNT(*) as count FROM {INTERACTIONS_TABLE}")
+        total_interactions = cursor.fetchone()['count']
+        
+        # Recent activity (last 30 days)
+        cursor.execute(f"""
+            SELECT COUNT(*) as count
+            FROM {PEOPLE_TABLE}
+            WHERE last_contact_date >= date('now', '-30 days')
         """)
-        pending_jobs = cursor.fetchone()[0]
-        
-        # Enrichment queue by priority
-        cursor.execute("""
-            SELECT priority, COUNT(*) 
-            FROM enrichment_queue 
-            WHERE status = 'pending'
-            GROUP BY priority
-            ORDER BY priority DESC
-        """)
-        by_priority = cursor.fetchall()
-        
-        # Recent activity
-        seven_days_ago = (datetime.now() - timedelta(days=7)).isoformat()
-        cursor.execute("""
-            SELECT COUNT(*) 
-            FROM profiles 
-            WHERE created_at >= ?
-        """, (seven_days_ago,))
-        recent_profiles = cursor.fetchone()[0]
+        recent_contacts = cursor.fetchone()['count']
         
         conn.close()
         
         # Display
-        print("\n" + "="*50)
-        print("CRM V3 Statistics")
-        print("="*50 + "\n")
+        print("\n" + "=" * 50)
+        print("CRM Statistics (n5_core.db)")
+        print("=" * 50 + "\n")
         
-        print(f"Profiles: {total_profiles} total")
-        for cat, count in by_category:
-            cat_name = cat if cat else "Uncategorized"
-            print(f"  ├─ {cat_name}: {count}")
+        print(f"People: {total_people} total")
+        for row in by_category:
+            cat_name = row['category'] if row['category'] else "Uncategorized"
+            print(f"  ├─ {cat_name}: {row['count']}")
         print()
         
-        print("Quality:")
-        total_quality = sum(q[1] for q in by_quality)
-        for quality, count in by_quality:
-            pct = (count / total_quality * 100) if total_quality > 0 else 0
-            print(f"  ├─ {quality}: {count} ({pct:.0f}%)")
+        print("Status:")
+        for row in by_status:
+            status_name = row['status'] if row['status'] else "None"
+            print(f"  ├─ {status_name}: {row['count']}")
         print()
         
-        print(f"Enrichment Queue: {pending_jobs} pending jobs")
-        if by_priority:
-            for priority, count in by_priority:
-                priority_label = {
-                    100: "morning-of",
-                    75: "3-day",
-                    25: "gmail"
-                }.get(priority, f"priority-{priority}")
-                print(f"  ├─ Priority {priority} ({priority_label}): {count}")
+        print(f"Organizations: {total_orgs}")
+        print(f"Deals: {total_deals}")
+        print(f"Interactions: {total_interactions}")
         print()
         
-        print("Recent Activity:")
-        print(f"  └─ {recent_profiles} profiles added in last 7 days")
+        print("Activity:")
+        print(f"  └─ {recent_contacts} people contacted in last 30 days")
         print()
         
     except Exception as e:
@@ -501,126 +410,75 @@ def show_stats():
         sys.exit(1)
 
 
-async def linkedin_brief(linkedin_url: str, email: str | None = None, name: str | None = None):
-    """Generate an ad hoc Stakeholder Brief from a LinkedIn URL via Aviato.
-
-    This does NOT yet create or modify CRM profiles; it is purely for
-    on-demand due diligence. Future versions can optionally persist to CRM.
-    """
-    print("\n" + "=" * 70)
-    print("Stakeholder Brief (Aviato via LinkedIn)")
-    print("=" * 70 + "\n")
-    print(f"LinkedIn URL: {linkedin_url}")
-    if email:
-        print(f"Email (hint): {email}")
-    if name:
-        print(f"Name (hint): {name}")
-    print("\nFetching from Aviato...\n")
-
-    result = await enrich_via_aviato(email=email, name=name, linkedin_url=linkedin_url)
-
-    if result["success"] and result["data"] is not None:
-        print(result["markdown"])
-    elif result["success"] and result["data"] is None:
-        # Not found case already described in markdown
-        print(result["markdown"])
-    else:
-        # Error case
-        print(result["markdown"])
-
-    print("\n" + "=" * 70 + "\n")
-
-
 def main():
-    """Main CLI entry point"""
     parser = argparse.ArgumentParser(
-        description='CRM V3 Command Line Interface',
+        description="CRM CLI - Unified Database Interface",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  crm create --email john@example.com --name "John Doe"
-  crm search --name "John"
-  crm intel --email john@example.com
-  crm enrich --email john@example.com
-  crm list --category INVESTOR --limit 10
-  crm stats
-  crm linkedin-brief --url https://www.linkedin.com/in/example
+  %(prog)s create --email john@example.com --name "John Doe" --category INVESTOR
+  %(prog)s search --name "John"
+  %(prog)s search --company "Acme"
+  %(prog)s intel --email john@example.com
+  %(prog)s list --category INVESTOR --limit 10
+  %(prog)s stats
         """
     )
     
     subparsers = parser.add_subparsers(dest='command', required=True, help='Command to execute')
     
-    # crm create
-    create_parser = subparsers.add_parser('create', help='Create profile manually')
+    # create
+    create_parser = subparsers.add_parser('create', help='Create person manually')
     create_parser.add_argument('--email', required=True, help='Contact email')
     create_parser.add_argument('--name', required=True, help='Full name')
-    create_parser.add_argument('--category', default='NETWORKING', 
-                               choices=['NETWORKING', 'INVESTOR', 'ADVISOR', 'COMMUNITY'],
-                               help='Profile category')
+    create_parser.add_argument('--category', default='NETWORKING',
+                               choices=['NETWORKING', 'INVESTOR', 'ADVISOR', 'COMMUNITY', 
+                                       'FOUNDER', 'CUSTOMER', 'PARTNER', 'OTHER'],
+                               help='Person category')
+    create_parser.add_argument('--company', help='Company name')
+    create_parser.add_argument('--title', help='Job title')
     create_parser.add_argument('--notes', help='Optional notes')
     
-    # crm search
-    search_parser = subparsers.add_parser('search', help='Search profiles')
+    # search
+    search_parser = subparsers.add_parser('search', help='Search people')
     search_parser.add_argument('--email', help='Search by email (exact match)')
     search_parser.add_argument('--name', help='Search by name (fuzzy match)')
-    search_parser.add_argument('--company', help='Search by company domain')
+    search_parser.add_argument('--company', help='Search by company')
     
-    # crm intel
+    # intel
     intel_parser = subparsers.add_parser('intel', help='Get intelligence synthesis')
-    intel_parser.add_argument('--email', help='Profile email')
-    intel_parser.add_argument('--id', type=int, help='Profile ID')
+    intel_parser.add_argument('--email', help='Person email')
+    intel_parser.add_argument('--id', type=int, help='Person ID')
     
-    # crm enrich
-    enrich_parser = subparsers.add_parser('enrich', help='Queue enrichment manually')
-    enrich_parser.add_argument('--email', required=True, help='Profile email')
-    enrich_parser.add_argument('--priority', type=int, default=100,
-                               help='Priority (100=immediate, 75=3-day, 25=gmail)')
-    
-    # crm list
-    list_parser = subparsers.add_parser('list', help='List profiles')
-    list_parser.add_argument('--category', 
-                             choices=['NETWORKING', 'INVESTOR', 'ADVISOR', 'COMMUNITY'],
+    # list
+    list_parser = subparsers.add_parser('list', help='List people')
+    list_parser.add_argument('--category',
+                             choices=['NETWORKING', 'INVESTOR', 'ADVISOR', 'COMMUNITY',
+                                     'FOUNDER', 'CUSTOMER', 'PARTNER', 'OTHER'],
                              help='Filter by category')
-    list_parser.add_argument('--limit', type=int, default=20, help='Max profiles to show')
+    list_parser.add_argument('--limit', type=int, default=20, help='Max people to show')
     
-    # crm stats
-    stats_parser = subparsers.add_parser('stats', help='Show CRM statistics')
+    # stats
+    subparsers.add_parser('stats', help='Show CRM statistics')
     
-    # crm linkedin-brief
-    linkedin_parser = subparsers.add_parser('linkedin-brief', help='Ad hoc enrichment from a LinkedIn URL')
-    linkedin_parser.add_argument('--url', required=True, help='LinkedIn profile URL')
-    linkedin_parser.add_argument('--email', help='Optional email hint')
-    linkedin_parser.add_argument('--name', help='Optional name hint')
-
     args = parser.parse_args()
     
     # Route to appropriate function
     if args.command == 'create':
-        create_profile(args.email, args.name, args.category, args.notes)
+        create_person(args.email, args.name, args.category, 
+                     args.company, args.title, args.notes)
     elif args.command == 'search':
-        search_profiles(args.email, args.name, args.company)
+        search_people(args.email, args.name, args.company)
     elif args.command == 'intel':
-        get_intelligence_synthesis(args.email, args.id)
-    elif args.command == 'enrich':
-        queue_enrichment(args.email, args.priority)
+        get_intelligence(args.email, args.id)
     elif args.command == 'list':
-        list_profiles(args.category, args.limit)
+        list_people(args.category, args.limit)
     elif args.command == 'stats':
         show_stats()
-    elif args.command == 'linkedin-brief':
-        asyncio.run(linkedin_brief(args.url, args.email, args.name))
     else:
         parser.print_help()
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-

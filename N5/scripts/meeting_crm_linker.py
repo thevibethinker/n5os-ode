@@ -9,6 +9,8 @@ Responsibilities (Enrichment/Orchestration side):
 - Write meeting_crm_links.json into each meeting folder mapping participants → CRM slugs.
 
 Viewer/join responsibilities remain in stakeholder_intel.py (read-only).
+
+UPDATED 2026-01-19: Now uses unified n5_core.db for person lookups.
 """
 
 import argparse
@@ -24,6 +26,7 @@ WORKSPACE = Path("/home/workspace")
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from crm_paths import CRM_INDIVIDUALS, CRM_INDEX as CANONICAL_INDEX, MEETINGS_ROOT as CANONICAL_MEETINGS
+from db_paths import get_db_connection, PEOPLE_TABLE, INTERACTIONS_TABLE
 
 # Import optimized lookup service (WS1 optimization)
 try:
@@ -317,88 +320,167 @@ def _find_crm_slug_by_name_legacy(name: str, crm_index: Dict[str, Dict[str, str]
     return None
 
 
-def ensure_crm_profile(participant: Participant, crm_index: Dict[str, Dict[str, str]]) -> str:
-    """Return a CRM slug for the participant, creating a stub profile if needed.
-
-    Creation writes a minimal markdown file under Personal/Knowledge/CRM/individuals.
-    This respects the contract that CRM markdown is canonical for identity.
+def find_person_in_db(name: str = None, email: str = None) -> Optional[Dict]:
+    """Find person in unified database by name or email.
+    
+    Returns dict with id, full_name, email, markdown_path or None if not found.
     """
-    # Try to resolve existing
-    slug = find_crm_slug_by_name(participant.name, crm_index)
+    if not name and not email:
+        return None
+    
+    conn = get_db_connection(readonly=True)
+    try:
+        if email:
+            row = conn.execute(
+                f"SELECT id, full_name, email, markdown_path FROM {PEOPLE_TABLE} WHERE email = ?",
+                (email,)
+            ).fetchone()
+            if row:
+                return dict(row)
+        
+        if name:
+            # Try exact match first
+            row = conn.execute(
+                f"SELECT id, full_name, email, markdown_path FROM {PEOPLE_TABLE} WHERE full_name = ?",
+                (name,)
+            ).fetchone()
+            if row:
+                return dict(row)
+            
+            # Try case-insensitive match
+            row = conn.execute(
+                f"SELECT id, full_name, email, markdown_path FROM {PEOPLE_TABLE} WHERE LOWER(full_name) = LOWER(?)",
+                (name,)
+            ).fetchone()
+            if row:
+                return dict(row)
+        
+        return None
+    finally:
+        conn.close()
+
+
+def create_person_in_db(name: str, organization: str = None, markdown_path: str = None) -> int:
+    """Create a new person record in the unified database.
+    
+    Returns the new person's id.
+    """
+    conn = get_db_connection()
+    try:
+        cursor = conn.execute(
+            f"""INSERT INTO {PEOPLE_TABLE} (full_name, company, markdown_path, source_db)
+               VALUES (?, ?, ?, 'meeting_linker')""",
+            (name, organization, markdown_path)
+        )
+        conn.commit()
+        return cursor.lastrowid
+    finally:
+        conn.close()
+
+
+def record_meeting_interaction(person_id: int, meeting_id: str, meeting_folder: str, meeting_date: str = None):
+    """Record a meeting interaction for a person."""
+    from datetime import datetime
+    
+    conn = get_db_connection()
+    try:
+        # Check if interaction already exists
+        existing = conn.execute(
+            f"SELECT id FROM {INTERACTIONS_TABLE} WHERE person_id = ? AND source_ref = ?",
+            (person_id, meeting_folder)
+        ).fetchone()
+        
+        if not existing:
+            occurred_at = meeting_date or datetime.now().isoformat()
+            conn.execute(
+                f"""INSERT INTO {INTERACTIONS_TABLE} 
+                   (person_id, type, summary, source_ref, occurred_at)
+                   VALUES (?, 'meeting', ?, ?, ?)""",
+                (person_id, f"Meeting: {meeting_id}", meeting_folder, occurred_at)
+            )
+            conn.commit()
+    finally:
+        conn.close()
+
+
+def ensure_crm_profile(p: Participant, crm_index: Dict) -> Tuple[Optional[str], Optional[int]]:
+    """Ensure participant has a CRM profile in both markdown and database.
+    
+    Returns tuple of (crm_slug, person_id) where person_id is from n5_core.db.
+    """
+    # First check if person exists in the database
+    person = find_person_in_db(name=p.name)
+    
+    if person:
+        # Person exists in DB, get their slug from markdown_path
+        if person.get('markdown_path'):
+            slug = Path(person['markdown_path']).stem
+        else:
+            slug = None
+        return (slug, person['id'])
+    
+    # Check markdown index fallback
+    slug = find_crm_slug_by_name(p.name, crm_index)
+    
     if slug:
-        return slug
+        # Found in markdown, need to create DB entry
+        profile_path = CRM_ROOT / f"{slug}.md"
+        markdown_path = str(profile_path.relative_to(WORKSPACE)) if profile_path.exists() else None
+        person_id = create_person_in_db(p.name, p.organization, markdown_path)
+        return (slug, person_id)
+    
+    # Need to create both markdown and DB entry
+    slug = generate_slug(p.name)
+    profile_path = CRM_ROOT / f"{slug}.md"
+    
+    if not profile_path.exists():
+        from crm_paths import ensure_crm_dirs
+        ensure_crm_dirs()
+        
+        # Create markdown profile
+        profile_content = f"""---
+created: {__import__('datetime').date.today().isoformat()}
+last_edited: {__import__('datetime').date.today().isoformat()}
+version: 1.0
+provenance: meeting_crm_linker
+---
 
-    # Create a new slug from name (very simple; future: use central slugifier)
-    base_slug = "-".join(participant.name.strip().lower().split()) or "external-unknown"
-    slug = base_slug
-    counter = 2
-    while (CRM_ROOT / f"{slug}.md").exists():
-        slug = f"{base_slug}-{counter}"
-        counter += 1
+# {p.name}
 
-    # Write minimal CRM profile markdown
-    crm_path = CRM_ROOT / f"{slug}.md"
-    crm_path.parent.mkdir(parents=True, exist_ok=True)
-    content_lines = [
-        "---",
-        f"created: 2025-11-30",
-        f"last_edited: 2025-11-30",
-        "version: 1.0",
-        "---",
-        "",
-        f"# {participant.name}",
-        "",
-        "## Identity",
-        f"**Status:** {'internal' if participant.is_internal else 'external'}",
-        f"**Organization:** {participant.organization or 'Unknown'}",
-        "",
-        "## Intelligence Log",
-        "",
-    ]
-    crm_path.write_text("\n".join(content_lines), encoding="utf-8")
+**Organization:** {p.organization or '[Unknown]'}
+**Role:** [To be determined]
+**Status:** active
 
-    # Update in-memory index (path is relative from existing convention)
-    rel_path = f"Personal/Knowledge/CRM/individuals/{slug}.md"
-    crm_index[slug] = {"person_id": slug, "path": rel_path, "name": slug}
+## Interaction History
 
-    return slug
+*No interactions recorded yet.*
+"""
+        profile_path.write_text(profile_content, encoding="utf-8")
+    
+    # Create DB entry
+    markdown_path = str(profile_path.relative_to(WORKSPACE))
+    person_id = create_person_in_db(p.name, p.organization, markdown_path)
+    
+    return (slug, person_id)
 
 
 def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Optional[Dict]:
-    manifest_path = meeting_folder / "manifest.json"
-    manifest = load_manifest(manifest_path)
+    """Process a single meeting folder, linking participants to CRM."""
+    manifest = load_manifest(meeting_folder / "manifest.json")
     if not manifest:
         return None
 
-    meeting_type = manifest.get("meeting_type", "external")
-    if meeting_type == "internal":
-        return None
-
-    # Additional heuristics to detect internal meetings from folder name
-    folder_lower = meeting_folder.name.lower()
-    internal_indicators = [
-        'internal', 'standup', 'stand-up', 'stand_up', 'team_standup',
-        'cofounder', 'co-founder', 'war_room', 'war-room', 'daily_team',
-    ]
-    if any(ind in folder_lower for ind in internal_indicators):
-        return None
-
-    # Try multiple sources for participant names
-    selection = manifest.get("selection_notes", {})
-    raw_participants = selection.get("key_stakeholders", [])
-
-    # Fallback 1: Extract from B03/B08 stakeholder intelligence file
-    if not raw_participants:
-        raw_participants = extract_participants_from_b03(meeting_folder)
-
-    # Fallback 2: Extract from folder name
-    if not raw_participants:
-        raw_participants = extract_participants_from_folder_name(meeting_folder.name)
-
-    if not raw_participants:
+    meeting_type = manifest.get("meeting_type", "")
+    # Skip internal meetings
+    if meeting_type and meeting_type.lower() == "internal":
         return None
 
     crm_index = load_crm_index()
+    raw_participants = extract_participants(meeting_folder, manifest)
+
+    if not raw_participants:
+        return None
+
     participants: List[Participant] = [parse_participant(r) for r in raw_participants]
 
     links = {
@@ -406,6 +488,8 @@ def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Optional[Dic
         "meeting_type": meeting_type,
         "participants": [],
     }
+
+    meeting_date = manifest.get("start_time") or manifest.get("date")
 
     for p in participants:
         # Skip pure internal participants for linking, per enrichment posture
@@ -416,19 +500,36 @@ def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Optional[Dic
                     "name": p.name,
                     "organization": p.organization,
                     "is_internal": True,
-                    "crm_person_id": None,
+                    "crm_slug": None,
+                    "person_id": None,
                 }
             )
             continue
 
-        slug = ensure_crm_profile(p, crm_index) if not dry_run else find_crm_slug_by_name(p.name, crm_index)
+        if dry_run:
+            slug = find_crm_slug_by_name(p.name, crm_index)
+            person = find_person_in_db(name=p.name)
+            person_id = person['id'] if person else None
+        else:
+            slug, person_id = ensure_crm_profile(p, crm_index)
+            
+            # Record the meeting interaction
+            if person_id:
+                record_meeting_interaction(
+                    person_id, 
+                    manifest.get("meeting_id", "unknown"),
+                    str(meeting_folder),
+                    meeting_date
+                )
+        
         links["participants"].append(
             {
                 "raw": p.raw,
                 "name": p.name,
                 "organization": p.organization,
                 "is_internal": False,
-                "crm_person_id": slug,
+                "crm_slug": slug,
+                "person_id": person_id,
             }
         )
 

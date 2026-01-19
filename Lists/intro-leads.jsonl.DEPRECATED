@@ -1,0 +1,11 @@
+# DEPRECATED - 2026-01-19
+# Intro leads now route through deal_proactive_sensor.py → deals.db
+# See: N5/scripts/deal_proactive_sensor.py
+# 
+# The intro_lead task type in zth_spawn_worker.py now:
+# 1. Constructs broker signal text from ZTH entry
+# 2. Calls deal_proactive_sensor.py --text "<signal>" --source "meeting:<name>"
+# 3. Sensor queues for V's SMS approval
+# 4. On approval, creates deal_contacts entry with contact_type='broker'
+#
+# This file is kept for historical reference only

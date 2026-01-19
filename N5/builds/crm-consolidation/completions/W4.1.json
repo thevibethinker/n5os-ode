@@ -1,0 +1,37 @@
+{
+  "worker_id": "W4.1",
+  "title": "Cleanup & Deprecation",
+  "status": "complete",
+  "completed_at": "2026-01-19T07:46:00-05:00",
+  "convo_id": "con_7iVHhHkY4JchmABC",
+  "summary": "Deleted old databases and backups (not deprecated per V). Consolidated CRM/deal agents from 7 to 3. Verified unified n5_core.db functioning.",
+  "artifacts": [
+    "N5/builds/crm-consolidation/completions/W4.1.json"
+  ],
+  "learnings": "CC'ing va@zo.computer already triggers conversations, so scanning for CC'd emails is redundant. SQLite silently creates new empty DBs when connecting to non-existent paths - deletion is cleaner than deprecation.",
+  "concerns": "Many legacy scripts still reference old paths - they will error if run, which is correct behavior.",
+  "work_done": {
+    "databases_deleted": [
+      "N5/data/deals.db",
+      "N5/data/crm_v3.db",
+      "Personal/Knowledge/CRM/db/crm.db",
+      "N5/data/deals_backup_20260118_194134.db",
+      "Personal/Knowledge/CRM/db/crm_backup_*.db (3 files)"
+    ],
+    "agents_deleted": [
+      "Email Backfill Agent (c4c7c14d)",
+      "CC Outreach Tracker (89e59f3e)",
+      "Notion Deal Sync (500d0a1d)",
+      "Email Deal Scanner (20334c89)"
+    ],
+    "agents_updated": [
+      "Deal Sync Hub (806f7fcc) - absorbed Notion sync + email scan"
+    ],
+    "verification": {
+      "n5_core_people": 259,
+      "n5_core_deals": 99,
+      "n5_core_organizations": 152,
+      "cli_tools_working": true
+    }
+  }
+}

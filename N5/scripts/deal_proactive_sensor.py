@@ -2,6 +2,8 @@
 """
 Proactive Deal Sensor — Worker 6 (Proactive Sensing)
 
+Uses unified n5_core.db database with people table and deal_roles junction.
+
 Purpose:
 - Detect potential NEW deals/contacts that don't exist in the database
 - Broker signals: "I can introduce you to...", "Let me connect you with..."
@@ -29,7 +31,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sqlite3
 import sys
 import uuid
 from dataclasses import dataclass, asdict
@@ -37,14 +38,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Callable, List, Optional
 
-# Ensure we can import from the same directory
 _SCRIPT_DIR = Path(__file__).parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
+from db_paths import get_db_connection, N5_CORE_DB
 from deal_llm_prompts import NEW_DEAL_DETECTION_PROMPT
-
-DB_PATH_DEFAULT = "/home/workspace/N5/data/deals.db"
 
 
 # =============================================================================
@@ -141,11 +140,9 @@ COMPANY_PATTERN = r"\b(?:at|from|with)\s+([A-Z][a-zA-Z0-9]+(?:\s+[A-Z][a-zA-Z0-9
 class DealProactiveSensor:
     def __init__(
         self,
-        db_path: str = DB_PATH_DEFAULT,
         llm_callable: Optional[Callable[[str], str]] = None,
         sms_callable: Optional[Callable[[str], bool]] = None,
     ):
-        self.db_path = db_path
         self.llm_callable = llm_callable or self._default_llm_callable
         self.sms_callable = sms_callable  # If None, SMS won't be sent
         self._ensure_tables()
@@ -154,10 +151,9 @@ class DealProactiveSensor:
         """Default LLM stub - returns empty for heuristic fallback."""
         return ""
 
-    def connect(self) -> sqlite3.Connection:
-        conn = sqlite3.connect(self.db_path)
-        conn.row_factory = sqlite3.Row
-        return conn
+    def connect(self):
+        """Get database connection using unified db_paths."""
+        return get_db_connection()
 
     def _ensure_tables(self):
         """Ensure pending_approvals table exists."""
@@ -376,16 +372,16 @@ class DealProactiveSensor:
     # -------------------------
 
     def is_entity_known(self, entity: DetectedEntity) -> bool:
-        """Check if entity already exists in database."""
+        """Check if entity already exists in database (people or deals table)."""
         conn = self.connect()
         c = conn.cursor()
         
         name_lower = entity.name.lower()
         
         if entity.entity_type in ["broker", "leadership"]:
-            # Check deal_contacts
+            # Check people table (unified CRM)
             c.execute("""
-                SELECT 1 FROM deal_contacts 
+                SELECT 1 FROM people 
                 WHERE LOWER(full_name) LIKE ?
                 LIMIT 1
             """, (f"%{name_lower}%",))
@@ -592,37 +588,37 @@ Reply Y to add, N to skip.
             )
 
     def _create_entity(self, pending: ApprovalRequest) -> str:
-        """Create entity in database from approved request."""
+        """Create entity in database from approved request.
+        
+        For broker/leadership: Creates person in people table + deal_role entry
+        For deal: Creates deal in deals table
+        """
         conn = self.connect()
         c = conn.cursor()
         now = datetime.now().isoformat()
         
         if pending.entity_type in ["broker", "leadership"]:
-            # Create in deal_contacts
-            slug = pending.name.lower().replace(" ", "-")[:20]
-            contact_id = f"{pending.entity_type[:4]}-{slug}"
-            
-            # Handle collision
-            c.execute("SELECT id FROM deal_contacts WHERE id = ?", (contact_id,))
-            if c.fetchone():
-                contact_id = f"{contact_id}-{str(uuid.uuid4())[:4]}"
-            
+            # Create in people table (unified CRM)
             c.execute("""
-                INSERT INTO deal_contacts (
-                    id, contact_type, pipeline, full_name, company, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO people (full_name, company, created_at, updated_at)
+                VALUES (?, ?, ?, ?)
             """, (
-                contact_id,
-                pending.entity_type,
-                pending.pipeline or "careerspan",
                 pending.name,
                 pending.company,
                 now,
+                now,
             ))
+            
+            person_id = c.lastrowid
+            
+            # If there's a pipeline hint, create a placeholder deal_role
+            # The role maps: broker -> 'broker', leadership -> 'leadership'
+            # Note: No deal_id yet - this creates an unlinked person
+            # which can be linked to deals later via deal_roles
             
             conn.commit()
             conn.close()
-            return contact_id
+            return f"person-{person_id}"
         
         else:
             # Create in deals
@@ -636,16 +632,14 @@ Reply Y to add, N to skip.
             
             c.execute("""
                 INSERT INTO deals (
-                    id, deal_type, company, pipeline, stage, 
-                    first_identified, last_touched, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    id, deal_type, company, pipeline, stage, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
                 deal_id,
                 "acquisition",
                 pending.company or pending.name,
                 pending.pipeline or "careerspan",
                 "identified",
-                now,
                 now,
                 now,
             ))
@@ -788,11 +782,6 @@ Examples:
         help="Don't make any changes or send SMS"
     )
     parser.add_argument(
-        "--db-path",
-        default=DB_PATH_DEFAULT,
-        help=f"Path to deals database (default: {DB_PATH_DEFAULT})"
-    )
-    parser.add_argument(
         "--json",
         action="store_true",
         help="Output as JSON"
@@ -800,7 +789,7 @@ Examples:
     
     args = parser.parse_args()
     
-    sensor = DealProactiveSensor(db_path=args.db_path)
+    sensor = DealProactiveSensor()
     
     # Mode: List pending
     if args.list_pending:

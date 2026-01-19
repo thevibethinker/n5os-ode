@@ -48,6 +48,24 @@ CRM_PROFILES_DIR = CRM_V3_DIR / "profiles"
 CRM_DB_DIR = CRM_V3_DIR / "db"
 
 # =============================================================================
+# UNIFIED DATABASE (NEW - 2026-01-19)
+# =============================================================================
+
+N5_CORE_DB = N5_DATA_DIR / "n5_core.db"
+
+# =============================================================================
+# LEGACY DATABASES (DEPRECATED - use N5_CORE_DB instead)
+# =============================================================================
+
+LEGACY_DEALS_DB = N5_DATA_DIR / "deals.db"
+LEGACY_CRM_V3_DB = N5_DATA_DIR / "crm_v3.db"
+LEGACY_CRM_DB = WORKSPACE_ROOT / "Personal/Knowledge/CRM/db/crm.db"
+
+# Backward compatibility aliases (will be removed in future)
+DEALS_DB = N5_CORE_DB  # DEPRECATED: use N5_CORE_DB
+CRM_V3_DB = N5_CORE_DB  # DEPRECATED: use N5_CORE_DB
+
+# =============================================================================
 # DATABASE PATHS
 # =============================================================================
 
@@ -56,8 +74,8 @@ BRAIN_DB = N5_COGNITION_DIR / "brain.db"
 BRAIN_HNSW_INDEX = N5_COGNITION_DIR / "brain.hnsw"
 BRAIN_HNSW_IDS = N5_COGNITION_DIR / "brain.hnsw.ids"
 
-# CRM
-CRM_DB = N5_DATA_DIR / "crm_v3.db"
+# CRM (DEPRECATED - use N5_CORE_DB)
+CRM_DB = N5_CORE_DB
 
 # Conversations & Registry
 CONVERSATIONS_DB = N5_DATA_DIR / "conversations.db"
