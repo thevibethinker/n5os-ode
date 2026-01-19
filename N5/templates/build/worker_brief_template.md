@@ -69,6 +69,22 @@ Include:
 
 ---
 
+## Build Lesson Ledger
+
+**Before starting your work:**
+```bash
+python3 N5/scripts/build_lesson_ledger.py read {{SLUG}}
+```
+
+**When you discover something other workers should know:**
+```bash
+python3 N5/scripts/build_lesson_ledger.py append {{SLUG}} "Your lesson here" --source W{{WAVE}}.{{SEQ}}
+```
+
+**What qualifies as a lesson?** Cross-cutting insights, discovered constraints, API surprises, patterns that should be consistent, things V said that should propagate. See `file 'N5/prefs/operations/build-lesson-criteria.md'` for full criteria.
+
+---
+
 ## Context
 
 <!-- Everything the worker needs to know. Self-contained — worker should not need to read other files to understand the task. -->
@@ -99,6 +115,10 @@ Include:
 ---
 
 ## Report Back
+
+### Before You Finish
+- [ ] Check: Did you learn anything that other workers should know?
+- [ ] If yes: `python3 N5/scripts/build_lesson_ledger.py append {{SLUG}} "..." --source W{{WAVE}}.{{SEQ}}`
 
 When complete, include in your completion:
 - List of files created/modified

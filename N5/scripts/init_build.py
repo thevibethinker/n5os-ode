@@ -522,6 +522,18 @@ build_slug: {slug}
     status_file = build_dir / "STATUS.md"
     status_file.write_text(status_content)
     
+    # Create lesson ledger for cross-worker communication
+    ledger_content = {
+        "schema_version": "1.0",
+        "build_slug": slug,
+        "created": today,
+        "purpose": "Cross-worker insights and lessons (append-only)",
+        "entries": []
+    }
+    ledger_file = build_dir / "BUILD_LESSONS.json"
+    with open(ledger_file, "w") as f:
+        json.dump(ledger_content, f, indent=2)
+    
     # Create .n5protected marker
     protected_file = build_dir / ".n5protected"
     protected_file.write_text(f"Protected build workspace created {today}\nBuild type: {build_type}\n")
@@ -613,6 +625,7 @@ Examples:
     print(f"  ├── BUILD.md      (orchestrator document)")
     print(f"  ├── PLAN.md       (fill with Architect)")
     print(f"  ├── STATUS.md     (progress tracking)")
+    print(f"  ├── BUILD_LESSONS.json  (cross-worker ledger)")
     print(f"  ├── meta.json     (build state)")
     print(f"  ├── workers/      (worker briefs go here)")
     if args.workers > 0:
