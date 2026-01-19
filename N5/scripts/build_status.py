@@ -116,26 +116,32 @@ def scan_build_v2(build_dir: Path) -> dict | None:
         return None
     
     completions_dir = build_dir / "completions"
+    workers_dir = build_dir / "workers"
     workers_data = meta.get("workers", {})
     
+    # Determine total workers from meta.json
     # Handle two different workers schemas:
     # 1. New schema: workers: {total: X, complete: Y, ...}
     # 2. Old schema: workers: {W1.1: {...}, W1.2: {...}, ...}
     if "total" in workers_data:
-        # New schema - use the provided counts directly
+        # New schema - use the provided total
         total_workers = workers_data.get("total", 0)
-        complete_workers = workers_data.get("complete", 0)
     else:
         # Old schema - workers is a dict of worker_id -> worker_info
-        # Count worker keys that look like worker IDs (W*.*)
         worker_ids = [k for k in workers_data.keys() if k.startswith("W")]
         total_workers = len(worker_ids)
-        
-        # Count completion files to determine complete count
-        complete_workers = 0
-        if completions_dir.exists():
-            completion_files = list(completions_dir.glob("W*.json"))
-            complete_workers = len(completion_files)
+    
+    # ALWAYS count completion files as source of truth for complete count
+    # (meta.json counts may be stale)
+    complete_workers = 0
+    if completions_dir.exists():
+        completion_files = list(completions_dir.glob("W*.json"))
+        complete_workers = len(completion_files)
+    
+    # If no workers in meta but we have worker briefs, count those
+    if total_workers == 0 and workers_dir.exists():
+        worker_briefs = list(workers_dir.glob("W*.md"))
+        total_workers = len(worker_briefs)
     
     # Extract objective from PLAN.md if available
     objective = extract_objective(build_dir)
@@ -163,6 +169,90 @@ def scan_build_v2(build_dir: Path) -> dict | None:
     complete = build_info["workers"]["complete"]
     if total > 0:
         build_info["progress_pct"] = round((complete / total) * 100)
+        # Auto-detect completion: if all workers done, mark as complete
+        # (meta.json status may be stale)
+        if complete >= total:
+            build_info["status"] = "complete"
+    
+    # Check staleness
+    build_info["is_stale"] = is_stale(build_info, completions_dir)
+    
+    return build_info
+
+
+def scan_build_plan_json(build_dir: Path) -> dict | None:
+    """Scan a build directory with plan.json but no meta.json."""
+    plan_file = build_dir / "plan.json"
+    if not plan_file.exists():
+        return None
+    
+    try:
+        plan = json.loads(plan_file.read_text())
+    except (json.JSONDecodeError, IOError):
+        return None
+    
+    completions_dir = build_dir / "completions"
+    workers_dir = build_dir / "workers"
+    
+    # Count worker briefs for total (handle both W*.md and WORKER-*.md patterns)
+    total_workers = 0
+    if workers_dir.exists():
+        # Count all .md files that look like worker briefs
+        all_md = list(workers_dir.glob("*.md"))
+        # Filter out non-worker files (like README.md, PLAN.md standalone)
+        worker_briefs = [f for f in all_md if f.stem.upper().startswith(('W', 'WORKER'))]
+        total_workers = len(worker_briefs)
+    
+    # Count completion files for complete (handle W*.json and worker-*.json)
+    complete_workers = 0
+    if completions_dir.exists():
+        all_json = list(completions_dir.glob("*.json"))
+        complete_workers = len(all_json)
+    
+    # Determine status based on completion
+    if total_workers > 0 and complete_workers >= total_workers:
+        status = "complete"
+    elif complete_workers > 0 or total_workers > 0:
+        status = "active"
+    else:
+        status = "active"
+    
+    # Extract objective from PLAN.md
+    objective = extract_objective(build_dir)
+    
+    # Get title/name - plan.json might use "name", "title", or neither
+    title = plan.get("title") or plan.get("name") or build_dir.name.replace("-", " ").title()
+    slug = plan.get("slug") or build_dir.name
+    
+    # Get created date from plan.json or directory mtime
+    created = plan.get("created")
+    if not created:
+        mtime = get_file_mtime(plan_file)
+        created = mtime.strftime("%Y-%m-%d") if mtime else None
+    
+    # Calculate progress
+    if total_workers > 0:
+        progress_pct = round((complete_workers / total_workers) * 100)
+    else:
+        progress_pct = 0
+    
+    build_info = {
+        "slug": slug,
+        "title": title,
+        "status": status,
+        "type": plan.get("type", "code_build"),
+        "created": created,
+        "completed_at": None,
+        "objective": objective,
+        "workers": {
+            "complete": complete_workers,
+            "total": total_workers
+        },
+        "progress_pct": progress_pct,
+        "path": str(build_dir.relative_to(WORKSPACE)),
+        "_is_v2": True,
+        "_meta_mtime": get_file_mtime(plan_file)
+    }
     
     # Check staleness
     build_info["is_stale"] = is_stale(build_info, completions_dir)
@@ -171,9 +261,43 @@ def scan_build_v2(build_dir: Path) -> dict | None:
 
 
 def scan_build_legacy(build_dir: Path) -> dict | None:
-    """Scan a legacy build (no meta.json) and extract info."""
-    # Legacy builds always count as complete - we only track v2 builds as active
+    """Scan a legacy build (no meta.json, no plan.json) and extract info."""
     slug = build_dir.name
+    
+    # Check for workers/ and completions/ folders - if present, this might be active
+    workers_dir = build_dir / "workers"
+    completions_dir = build_dir / "completions"
+    
+    # Count workers and completions
+    total_workers = 0
+    complete_workers = 0
+    
+    if workers_dir.exists():
+        all_md = list(workers_dir.glob("*.md"))
+        worker_briefs = [f for f in all_md if f.stem.upper().startswith(('W', 'WORKER'))]
+        total_workers = len(worker_briefs)
+    
+    if completions_dir.exists():
+        all_json = list(completions_dir.glob("*.json"))
+        complete_workers = len(all_json)
+    
+    # Determine status - if we have workers, it's a v2-style build
+    has_v2_structure = total_workers > 0 or completions_dir.exists()
+    
+    if has_v2_structure:
+        if total_workers > 0 and complete_workers >= total_workers:
+            status = "complete"
+            progress_pct = 100
+        elif complete_workers > 0 or total_workers > 0:
+            status = "active"
+            progress_pct = round((complete_workers / total_workers) * 100) if total_workers > 0 else 0
+        else:
+            status = "active"
+            progress_pct = 0
+    else:
+        # True legacy - no workers structure
+        status = "complete"
+        progress_pct = 100
     
     # Try to get created date from directory mtime or STATUS.md
     created = None
@@ -191,22 +315,30 @@ def scan_build_legacy(build_dir: Path) -> dict | None:
     # Extract objective if PLAN.md exists
     objective = extract_objective(build_dir)
     
-    return {
+    build_info = {
         "slug": slug,
         "title": slug.replace("-", " ").title(),
-        "status": "complete",  # Legacy builds are always complete
-        "type": "legacy",
+        "status": status,
+        "type": "code_build" if has_v2_structure else "legacy",
         "created": created,
-        "completed_at": created,  # Assume completed when created for legacy
+        "completed_at": created if status == "complete" else None,
         "objective": objective,
         "workers": {
-            "complete": 0,
-            "total": 0
+            "complete": complete_workers,
+            "total": total_workers
         },
-        "progress_pct": 100,  # Legacy builds show as 100% (done)
+        "progress_pct": progress_pct,
         "path": str(build_dir.relative_to(WORKSPACE)),
-        "_is_v2": False
+        "_is_v2": has_v2_structure
     }
+    
+    # Check staleness for active builds
+    if status == "active":
+        build_info["is_stale"] = is_stale(build_info, completions_dir)
+    else:
+        build_info["is_stale"] = False
+    
+    return build_info
 
 
 def scan_all_builds() -> list[dict]:
@@ -220,8 +352,14 @@ def scan_all_builds() -> list[dict]:
         if not build_dir.is_dir():
             continue
         
-        # Try v2 format first
+        # Try v2 format first (meta.json)
         build_info = scan_build_v2(build_dir)
+        if build_info:
+            builds.append(build_info)
+            continue
+        
+        # Try plan.json format (no meta.json but has plan.json)
+        build_info = scan_build_plan_json(build_dir)
         if build_info:
             builds.append(build_info)
             continue
