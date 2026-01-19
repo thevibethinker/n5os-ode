@@ -1,0 +1,95 @@
+# Boilerplate Patterns to Strip (for heuristic fallback)
+# These patterns indicate navigation, footer, or UI elements that should be removed
+
+# Navigation
+Skip to content
+Skip to main content
+Navigation Menu
+Toggle navigation
+Main menu
+Primary menu
+Site navigation
+
+# Auth/Sign-in
+Sign in
+Sign up
+Log in
+Log out
+Create account
+Register
+
+# Footer markers
+Footer
+© 202
+© 20
+All rights reserved
+Terms of Service
+Terms of Use
+Privacy Policy
+Cookie Policy
+Cookies Settings
+Do not share my personal information
+Manage cookies
+
+# Social/Share
+Share this
+Share on
+Tweet this
+Follow us
+Connect with us
+
+# Newsletter/Subscribe
+Subscribe
+Newsletter
+Sign up for our newsletter
+Get updates
+Enter your email
+
+# Related content
+Related articles
+Related posts
+You might also like
+Recommended for you
+Read more
+See also
+More from
+
+# Comments
+Comments
+Leave a comment
+Join the conversation
+Reply
+
+# Ads/Promotional
+Advertisement
+Sponsored
+Promoted
+
+# GitHub-specific
+Folders and files
+Latest commit
+Commit history
+Branches
+Tags
+Go to file
+Contributors
+Stargazers
+Watchers
+Forks
+Report repository
+Releases
+No releases published
+Packages
+No packages published
+Languages
+
+# X/Twitter-specific
+Help Center
+Imprint
+Ads info
+© 202. X Corp
+
+# LinkedIn-specific
+See all .* employees
+Similar profiles
+People also viewed

@@ -1,18 +1,18 @@
 ---
 created: 2025-12-02
-last_edited: 2026-01-09
-version: 4.0
-provenance: content-library-v4-build
+last_edited: 2026-01-19
+version: 5.0
+provenance: con_GwpdTRRuFJGuT9Qv
 ---
 
-# Content Library v4 — System Guide
+# Content Library v5 — System Guide
 
-System-level documentation for the **Content Library v4** used across N5 workflows.
+System-level documentation for the **Content Library v5** used across N5 workflows.
 
 - **Canonical DB:** `file 'N5/data/content_library.db'`  
 - **Content Storage:** `file 'Knowledge/content-library/'`  
 - **CLI:** `file 'N5/scripts/content_library.py'`  
-- **Capability Doc:** `file 'N5/capabilities/internal/content-library-v4.md'`
+- **Capability Doc:** `file 'N5/capabilities/internal/content-library-v5.md'`
 
 ---
 
@@ -20,17 +20,26 @@ System-level documentation for the **Content Library v4** used across N5 workflo
 
 ### 1.1 Purpose
 
-Content Library v4 provides a **single source of truth** for:
+The Content Library is the **first port of call for shareable assets**—links, articles, snippets, and resources that V shares in emails, follow-ups, intros, and communications.
 
-- **Operational handles:** Links and snippets used in email, follow-ups, and automations
-- **Knowledge assets:** Articles, decks, social posts, podcasts, videos, books, papers, frameworks, and quotes
+**What it IS:**
+- Repository of things to share (Calendly links, articles, bio snippets, decks, trial codes)
+- Queryable index for communication workflows (email composer, follow-up generation)
+- Normalized storage for web-saved content
+
+**What it is NOT:**
+- A routing brain or decision engine
+- A CRM or contact database
+- A to-do or task tracker
 
 ### 1.2 Key Features
 
 - **Unified storage:** All content in `Knowledge/content-library/`
-- **Auto-ingest:** `save_webpage` automatically triggers ingestion
+- **Auto-ingest:** `save_webpage` automatically triggers ingestion with auto-detection
+- **Content types + subtypes:** Hierarchical classification for precise queries
+- **Normalization (v5):** Clean text extraction + summary generation for articles
 - **Semantic search:** Integrated with N5 Memory Client
-- **Streamlined CLI:** Simple commands for search, ingest, sync
+- **Calendly sync:** Automatic DB synchronization with merge-safe enrichment
 
 ---
 
@@ -41,14 +50,25 @@ Content Library v4 provides a **single source of truth** for:
 ```
 Knowledge/content-library/
 ├── .n5protected           # Protection marker (do not delete)
-├── articles/              # Saved articles from web
+├── articles/              # Substantive articles, blog posts (V's authored + reference)
 │   └── vrijen/            # V's authored articles
+├── audio/                 # Podcast episodes
 ├── books/                 # Book references
 ├── decks/                 # Presentations
 ├── frameworks/            # Conceptual frameworks
+├── images/                # Image assets
+├── inspiration/           # Inspirational content
+├── links/                 # Web links, profiles, resources (default for web-saved)
+│   ├── calendly/          # Calendly links (auto-synced)
+│   ├── profiles/          # Person/company profiles
+│   └── resources/         # Tools, products, reference pages
 ├── papers/                # Research papers
 ├── personal/              # Personal content
-└── social-posts/          # X/Twitter, LinkedIn posts
+├── quotes/                # Notable quotes
+├── snippets/              # Reusable text (bios, signatures)
+├── social-posts/          # X/Twitter, LinkedIn posts
+├── transcripts/           # Transcriptions
+└── video/                 # Video content
 
 N5/data/
 └── content_library.db     # SQLite database (single canonical source)
@@ -66,7 +86,9 @@ CREATE TABLE items (
     id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
     content_type TEXT NOT NULL,
+    subtype TEXT,                    -- v5: hierarchical classification
     content TEXT,
+    summary TEXT,                    -- v5: normalized summary
     url TEXT,
     source TEXT,
     source_url TEXT,
@@ -88,21 +110,33 @@ CREATE TABLE items (
 );
 ```
 
-### 2.3 Content Types
+### 2.3 Content Types and Subtypes
 
-| Type | Count | Description |
-|------|-------|-------------|
-| `link` | 114 | URLs (calendly, demos, resources) |
-| `snippet` | 13 | Reusable text (bios, signatures) |
-| `article` | 10 | Reference articles, blog posts |
-| `social-post` | 1 | X/Twitter posts |
-| `deck` | - | Presentations |
-| `podcast` | - | Podcast episodes |
-| `video` | - | Video content |
-| `book` | - | Book references |
-| `paper` | - | Research papers |
-| `framework` | - | Conceptual frameworks |
-| `quote` | - | Notable quotes |
+| Type | Subtype | Folder | Description |
+|------|---------|--------|-------------|
+| `link` | `tool` | links/ | Software tools, apps |
+| `link` | `product` | links/ | Products, services |
+| `link` | `resource` | links/resources/ | Reference pages, documentation |
+| `link` | `profile` | links/profiles/ | Person or company profiles |
+| `link` | `scheduling-link` | links/calendly/ | Calendly and scheduling URLs |
+| `article` | — | articles/ | Substantive articles, blog posts |
+| `snippet` | — | snippets/ | Reusable text (bios, signatures) |
+| `social-post` | — | social-posts/ | X/Twitter, LinkedIn posts |
+| `deck` | — | decks/ | Presentations |
+| `podcast` | — | audio/ | Podcast episodes |
+| `video` | — | video/ | Video content |
+| `book` | — | books/ | Book references |
+| `paper` | — | papers/ | Research papers |
+| `framework` | — | frameworks/ | Conceptual frameworks |
+| `quote` | — | quotes/ | Notable quotes |
+| `inspiration` | — | inspiration/ | Inspirational content |
+| `personal` | — | personal/ | Personal content |
+| `transcript` | — | transcripts/ | Transcriptions |
+
+**Auto-detection logic:** 
+- Web-saved content with `url:` in frontmatter defaults to `link` type
+- Calendly URLs → `subtype: scheduling-link`
+- Override with `--type` flag when ingesting
 
 ---
 
@@ -116,7 +150,7 @@ python3 N5/scripts/content_library.py <command> [options]
 
 | Command | Description |
 |---------|-------------|
-| `search` | Search items by type and/or query |
+| `search` | Search items by type, subtype, and/or query |
 | `get` | Get item by ID |
 | `stats` | Show statistics |
 | `tags` | List all tags |
@@ -130,14 +164,17 @@ python3 N5/scripts/content_library.py <command> [options]
 # List content types with counts
 python3 N5/scripts/content_library.py list-types
 
-# Search for articles
+# Search by type
 python3 N5/scripts/content_library.py search --type article
+
+# Search by subtype (v5)
+python3 N5/scripts/content_library.py search --subtype scheduling-link
 
 # Search with query
 python3 N5/scripts/content_library.py search --query "recursive language"
 
 # Combined search
-python3 N5/scripts/content_library.py search --type article --query "RLM"
+python3 N5/scripts/content_library.py search --type link --subtype tool --query "scheduling"
 
 # View statistics
 python3 N5/scripts/content_library.py stats
@@ -163,10 +200,10 @@ python3 N5/scripts/content_ingest.py <file> [options]
 #### Examples
 
 ```bash
-# Ingest an article
-python3 N5/scripts/content_ingest.py /path/to/article.md --type article
+# Auto-detect type and ingest
+python3 N5/scripts/content_ingest.py /path/to/file.md --move
 
-# Ingest and move to canonical location
+# Force type (override auto-detection)
 python3 N5/scripts/content_ingest.py /path/to/article.md --type article --move
 
 # Dry run
@@ -178,53 +215,202 @@ python3 N5/scripts/content_ingest.py /path/to/file.md --tags "vrijen-authored,me
 
 ---
 
-## 4. Workflows
+## 4. Operator Workflows
 
-### 4.1 Save Article from Web (Automatic)
+### 4.1 Add a Link (Structured, Minimal Content)
 
-The recommended workflow uses the auto-ingest rule:
+**When:** Adding a URL resource (tool, product, app, reference page) that doesn't need full article preservation.
 
-1. In conversation: `save_webpage https://example.com/article`
-2. File initially saves to `Articles/`
-3. **Auto-ingest rule triggers automatically:**
-   - Runs `python3 N5/scripts/content_ingest.py "<file>" --type article --move`
-   - File moves to `Knowledge/content-library/articles/`
-   - DB record created
-4. Confirmation: "Article ingested to Content Library"
+1. Create markdown file at `Knowledge/content-library/links/<slug>.md`
+2. Add frontmatter with required fields:
+   ```yaml
+   ---
+   created: YYYY-MM-DD
+   last_edited: YYYY-MM-DD
+   version: 1.0
+   provenance: <conversation_id>
+   type: link
+   subtype: tool|product|resource|profile|scheduling-link
+   url: https://example.com/resource
+   ---
+   ```
+3. Add H1 title and brief 'about' section (50-200 chars)
+4. Run: `python3 N5/scripts/content_ingest.py Knowledge/content-library/links/<slug>.md`
+5. Verify: `python3 N5/scripts/content_library.py get <id>`
 
-### 4.2 Manual Ingest
+**Expected artifacts:**
+- Markdown file at `links/<slug>.md`
+- DB record with `content_type=link`, `source_file_path` pointing to file
 
-For files not captured by auto-ingest:
+### 4.2 Add an Article (Full Content Preservation)
 
+**When:** Saving a substantive article, blog post, newsletter, or essay for future reference or sharing.
+
+1. Use `save_webpage` to save the article:
+   ```
+   save_webpage https://example.com/great-article
+   ```
+2. Auto-ingest rule triggers automatically with type auto-detection
+3. File moves to `articles/` folder
+4. DB record created with extracted content
+
+**For manual ingestion:**
 ```bash
-python3 N5/scripts/content_ingest.py /path/to/file.md --type article --move
+python3 N5/scripts/content_ingest.py <saved_file_path> --move
 ```
 
-### 4.3 Bulk Sync
+### 4.3 Add a Profile or Reference
 
-Ensure all files in `Knowledge/content-library/` have DB records:
+**When:** Storing information about a person, company, or reference resource.
 
-```bash
-python3 N5/scripts/content_library.py sync
-```
+1. Create file in appropriate subfolder:
+   - Profiles: `links/profiles/<name-slug>.md`
+   - Resources: `links/resources/<slug>.md`
+   - References: `papers/` or `books/`
+2. Add structured frontmatter:
+   ```yaml
+   ---
+   created: YYYY-MM-DD
+   last_edited: YYYY-MM-DD
+   version: 1.0
+   provenance: <conversation_id>
+   type: link
+   subtype: profile|resource|reference
+   url: https://example.com/profile
+   entity: <person-name or company>
+   ---
+   ```
+3. Add structured 'About' section with key facts
+4. Run: `python3 N5/scripts/content_ingest.py <file_path>`
 
-This is idempotent — running multiple times creates no duplicates.
+**For profiles, include:**
+- Name
+- Role/Title
+- Company
+- Key expertise areas
+- LinkedIn URL (if available)
+- Brief 1-2 sentence bio
 
-### 4.4 Search and Retrieve
+### 4.4 Add Media (Audio/Video/Deck)
 
-```bash
-# Find all articles about a topic
-python3 N5/scripts/content_library.py search --type article --query "career"
+**When:** Storing media files with searchable metadata.
 
-# Get specific item by ID
-python3 N5/scripts/content_library.py get vrijen_bio_medium
-```
+1. Place media file in appropriate folder:
+   - Audio: `audio/<slug>.mp3`
+   - Video: `video/<slug>.mp4`
+   - Decks: `decks/<slug>.pdf`
+2. Create companion markdown metadata file (same name, .md extension):
+   ```yaml
+   ---
+   created: YYYY-MM-DD
+   last_edited: YYYY-MM-DD
+   type: podcast|video|deck
+   media_file: <filename.ext>
+   duration: <duration in minutes>
+   ---
+   
+   # Title
+   
+   ## Description
+   Brief description of the media content.
+   ```
+3. Run: `python3 N5/scripts/content_ingest.py <metadata_file.md>`
 
 ---
 
-## 5. Integration Points
+## 5. Calendly Usage Workflow
 
-### 5.1 Semantic Memory
+Calendly links are stored as `subtype: scheduling-link` under `type: link`. Each active event type has:
+- A markdown file at `Knowledge/content-library/links/calendly/<slug>.md`
+- A DB record with `content_type=link` and subtype `scheduling-link`
+
+### 5.1 Storage Locations
+
+- **Files:** `Knowledge/content-library/links/calendly/`
+- **Database:** `N5/data/content_library.db` → items table
+- **Sync Script:** `Integrations/calendly/sync_links.py`
+
+### 5.2 Curated Context Fields
+
+These fields provide usage context and are **curated** (never overwritten by automation if already set):
+
+| Field | Purpose | Values |
+|-------|---------|--------|
+| `audience` | Who this link is for | personal, professional, investors, founders, enterprise, general |
+| `priority` | Relative importance when multiple links match | high, medium, low |
+| `use_when` | Contextual guidance for when to share this link | Free text description |
+
+**Examples:**
+- `audience: professional` → Client/prospect meetings
+- `audience: investors` → Investor pitch meetings
+- `use_when: General scheduling for new contacts`
+- `use_when: Existing clients who need extended time`
+
+### 5.3 Merge-Safe Behavior
+
+**Principle:** Automation fills defaults; humans curate context. Existing values are NEVER overwritten.
+
+| Field Type | Behavior |
+|------------|----------|
+| **Managed fields** (automation updates) | `duration`, `entity`, `provider`, `url`, `slug` |
+| **Curated fields** (fill if missing only) | `audience`, `priority`, `use_when`, `purpose`, `context` |
+
+```yaml
+# Example: Original file has audience: investors
+# Sync infers: audience: professional (from name pattern)
+# Result: audience: investors (original preserved)
+```
+
+### 5.4 Adding Curated Context to Calendly Links
+
+1. Open the file: `Knowledge/content-library/links/calendly/<slug>.md`
+2. Add curated fields to frontmatter:
+   ```yaml
+   audience: professional
+   priority: high
+   use_when: Schedule with enterprise prospects who need extended time
+   ```
+3. Save — sync will preserve these values on future runs
+
+---
+
+## 6. Normalization (v5)
+
+### 6.1 Overview
+
+v5 introduces content normalization for web-saved articles:
+- **Standard A (articles):** Heavy normalization — trafilatura extraction, heuristic stripping, summary generation
+- **Standard B (social posts):** Light normalization — minimal stripping, preserve voice/style
+
+### 6.2 Standard A: Article Normalization
+
+For substantive articles:
+
+1. **Clean text extraction** using trafilatura
+2. **Remove:** Navigation, footer, subscribe boxes, ads, cookie banners
+3. **Generate summary:** 2-3 sentence summary in frontmatter
+4. **Update DB:** Set `has_summary=1`, populate `summary` column
+
+### 6.3 Standard B: Social Post Normalization
+
+For social media content:
+
+1. **Light stripping:** Remove only clear boilerplate (follower counts, engagement metrics)
+2. **Preserve:** Voice, tone, hashtags, mentions — post content IS the value
+3. **No summary generation** — content is typically short enough
+
+### 6.4 When Normalization Runs
+
+Normalization is applied during ingestion when:
+- Content type is `article` or `social-post`
+- A companion HTML file exists (saved by `save_webpage`)
+- The `--normalize` flag is not explicitly disabled
+
+---
+
+## 7. Integration Points
+
+### 7.1 Semantic Memory
 
 The `content-library` profile enables semantic search:
 
@@ -237,13 +423,17 @@ for r in results:
     print(r['path'], r['score'])
 ```
 
-### 5.2 Auto-Ingest Rule
+### 7.2 Auto-Ingest Rule
 
 A Zo rule (user rule) triggers after `save_webpage`:
 
-> After using save_webpage to save an article to Articles/ or any local path, automatically ingest the saved article into the Content Library by running `python3 N5/scripts/content_ingest.py "<saved_file_path>" --type article --move`
+> After using save_webpage, automatically ingest the saved article into the Content Library:
+> 1. Run: `python3 N5/scripts/content_ingest.py "<saved_file_path>" --move`
+> 2. The script auto-detects content type from URL patterns and content
+> 3. File moves to appropriate `Knowledge/content-library/<type>/` folder
+> 4. Confirm: "Ingested to Content Library as <type>"
 
-### 5.3 N5 Communication Workflows
+### 7.3 N5 Communication Workflows
 
 Content library integrates with:
 - Follow-up email generation (calendly links, trial codes)
@@ -252,9 +442,9 @@ Content library integrates with:
 
 ---
 
-## 6. Maintenance
+## 8. Maintenance
 
-### 6.1 Health Checks
+### 8.1 Health Checks
 
 ```bash
 # Database integrity
@@ -265,9 +455,16 @@ python3 N5/scripts/content_library.py list-types
 
 # Statistics
 python3 N5/scripts/content_library.py stats
+
+# Check for URL duplicates
+sqlite3 N5/data/content_library.db "
+SELECT url, COUNT(*) FROM items 
+WHERE deprecated=0 AND url IS NOT NULL 
+GROUP BY url HAVING COUNT(*) > 1;
+"
 ```
 
-### 6.2 Verify File-DB Consistency
+### 8.2 Verify File-DB Consistency
 
 ```bash
 # Count files in storage
@@ -280,7 +477,7 @@ sqlite3 N5/data/content_library.db "SELECT COUNT(*) FROM items WHERE source_file
 python3 N5/scripts/content_library.py sync
 ```
 
-### 6.3 Backup
+### 8.3 Backup
 
 ```bash
 cp N5/data/content_library.db N5/data/backups/content_library_$(date +%Y%m%d).db
@@ -288,15 +485,16 @@ cp N5/data/content_library.db N5/data/backups/content_library_$(date +%Y%m%d).db
 
 ---
 
-## 7. Best Practices
+## 9. Best Practices
 
-### 7.1 Content Organization
+### 9.1 Content Organization
 
 - Articles go in `Knowledge/content-library/articles/`
 - V's authored content goes in `Knowledge/content-library/articles/vrijen/` with `vrijen-authored` tag
+- Calendly links go in `Knowledge/content-library/links/calendly/`
 - Use descriptive filenames (auto-generated from URL is fine)
 
-### 7.2 Tags Convention
+### 9.2 Tags Convention
 
 | Tag | Use Case |
 |-----|----------|
@@ -304,8 +502,9 @@ cp N5/data/content_library.db N5/data/backups/content_library_$(date +%Y%m%d).db
 | `careerspan` | Careerspan-related content |
 | `reference` | Reference material |
 | `archived` | Older content kept for reference |
+| `scheduling-link` | Calendly and scheduling URLs |
 
-### 7.3 ID Conventions
+### 9.3 ID Conventions
 
 - Use descriptive slugs: `trial_code_general`, `vrijen_calendly_founders`
 - Include entity prefix when relevant: `careerspan_deck_v2`
@@ -313,7 +512,7 @@ cp N5/data/content_library.db N5/data/backups/content_library_$(date +%Y%m%d).db
 
 ---
 
-## 8. Troubleshooting
+## 10. Troubleshooting
 
 ### File Not Found After Ingest
 
@@ -327,6 +526,9 @@ sqlite3 N5/data/content_library.db "SELECT source_file_path FROM items WHERE tit
 ```bash
 # Check for potential duplicates by title
 sqlite3 N5/data/content_library.db "SELECT title, COUNT(*) as cnt FROM items GROUP BY title HAVING cnt > 1;"
+
+# Check for URL duplicates
+sqlite3 N5/data/content_library.db "SELECT url, COUNT(*) as cnt FROM items WHERE url IS NOT NULL GROUP BY url HAVING cnt > 1;"
 ```
 
 ### Reset Database (⚠️ Destructive)
@@ -335,22 +537,22 @@ sqlite3 N5/data/content_library.db "SELECT title, COUNT(*) as cnt FROM items GRO
 # Only if truly needed - backs up first
 cp N5/data/content_library.db N5/data/content_library.db.backup
 rm N5/data/content_library.db
-python3 N5/scripts/migrations/content_library_v4_schema.py  # Recreate schema
+python3 N5/scripts/migrations/content_library_v5_schema.py  # Recreate schema
 python3 N5/scripts/content_library.py sync  # Re-import all files
 ```
 
 ---
 
-## 9. Migration History
+## 11. Migration History
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
 | v1 | Pre-2025 | JSON-based system |
 | v2 | 2025-11 | Split SQLite DBs |
 | v3 | 2025-12-02 | Unified DB, complex cutover |
-| **v4** | **2026-01-09** | Simplified: single DB, single storage location, auto-ingest |
+| v4 | 2026-01-09 | Simplified: single DB, single storage location, auto-ingest |
+| **v5** | **2026-01-19** | Subtypes, normalization (clean text + summary), Calendly DB sync, merge-safe enrichment |
 
 ---
 
-*Content Library v4 System Guide · 2026-01-09*
-
+*Content Library v5 — Last updated: 2026-01-19*

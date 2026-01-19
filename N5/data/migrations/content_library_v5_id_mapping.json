@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "migrated_at": "2026-01-19T02:46:12.466619",
+  "mappings": [
+    {
+      "old_id": "careerspan_trial_codes_non_profit_employers",
+      "new_id": "careerspan_trial_codes_general",
+      "url": "https://app.mycareerspan.com/create-account?oid=202oEi9w",
+      "tags_merged": []
+    },
+    {
+      "old_id": "meeting_booking_founders_vrijen_logan_check_in_30m",
+      "new_id": "calendly_uuid_2df1e52a-1657-4d83-bfa0-5574c3e9fa63",
+      "url": "https://calendly.com/d/3tw-swc-35s/check-in-with-careerspan-founders",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "meeting_booking_founders_vrijen_logan_extended_chat_45m",
+      "new_id": "calendly_uuid_a6cec49a-58d1-4cc1-b6aa-f8b0827b0197",
+      "url": "https://calendly.com/d/42r-vhg-brj/extended-chat-with-careerspan-founders",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "meeting_booking_vrijen_only_work_30m_primary",
+      "new_id": "calendly_30min",
+      "url": "https://calendly.com/v-at-careerspan/30min",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "meeting_booking_vrijen_only_work_30m_extended",
+      "new_id": "calendly_check_in_with_vrij_careerspan_30m_extended",
+      "url": "https://calendly.com/v-at-careerspan/check-in-with-vrij-careerspan-30m-extended",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "meeting_booking_vrijen_only_work_45m_primary",
+      "new_id": "calendly_extended_discussion_with_vrijen",
+      "url": "https://calendly.com/v-at-careerspan/extended-discussion-with-vrijen",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "meeting_booking_vrijen_only_friends_family_45m",
+      "new_id": "calendly_friends_family_link_for_vrijen",
+      "url": "https://calendly.com/v-at-careerspan/friends-family-link-for-vrijen",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "meeting_booking_vrijen_only_quick_sync_15m",
+      "new_id": "calendly_touching_base_with_vrijen_15_min",
+      "url": "https://calendly.com/v-at-careerspan/touching-base-with-vrijen-15-min",
+      "tags_merged": [
+        "type",
+        "category_path"
+      ]
+    },
+    {
+      "old_id": "case_notes_mckinsey",
+      "new_id": "guides_mckinsey_consulting_mba",
+      "url": "https://www.notion.so/vattawar/Interviewing-At-McKinsey-3903b5f328e54d11bb2275f8b3eafdcf",
+      "tags_merged": [
+        "purpose",
+        "topic",
+        "audience",
+        "tone",
+        "entity"
+      ]
+    }
+  ],
+  "deprecated": [
+    "vrijen_work_30m_primary",
+    "vrijen_work_30m_extended",
+    "vrijen_work_45m",
+    "vrijen_quick_sync_15m",
+    "vrijen_friends_family_45m"
+  ],
+  "subtype_backfill": {
+    "scheduling-link": 18,
+    "profile": 0,
+    "trial-code": 6
+  }
+}

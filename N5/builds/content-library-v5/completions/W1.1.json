@@ -1,0 +1,379 @@
+{
+  "worker_id": "W1.1",
+  "build_slug": "content-library-v5",
+  "status": "complete",
+  "completed_at": "2026-01-18T21:08:00-05:00",
+  "summary": "Produced comprehensive Content Library v5 spec covering taxonomy (types/subtypes), frontmatter schema per type, merge semantics (managed vs curated fields), stable ID strategy, and directory layout. Spec is implementation-ready.",
+  
+  "decisions": [
+    {
+      "id": "D1",
+      "topic": "Type vs Subtype split",
+      "decision": "Keep existing top-level types (article, link, snippet, social-post, etc.) in content_type column. Add new subtype column for finer classification within types.",
+      "rationale": "Minimizes schema disruption, preserves existing queries. Subtype is optional; default null means 'generic' within type."
+    },
+    {
+      "id": "D2",
+      "topic": "Stable ID strategy",
+      "decision": "Generate stable IDs via deterministic slug: slugify(type + '-' + subtype? + '-' + title_or_url_slug). Fallback to UUID for edge cases. IDs are immutable once created.",
+      "rationale": "Deterministic IDs enable dedupe, prevent duplicates on re-ingest. slug + collision suffix (_2, _3) handles rare collisions."
+    },
+    {
+      "id": "D3",
+      "topic": "Source of truth model",
+      "decision": "DB is the canonical index; filesystem files are canonical artifacts. DB.source_file_path points to the artifact. Sync reconciles both directions.",
+      "rationale": "Files contain rich content/context humans may edit; DB is queryable index. Neither alone is sufficient."
+    },
+    {
+      "id": "D4",
+      "topic": "Merge semantics",
+      "decision": "Three field categories: (1) managed (automation-owned, always overwritten), (2) curated (human-owned, never overwritten if non-empty), (3) derived (computed, refreshed on sync). Automation only fills missing curated fields.",
+      "rationale": "Protects human curation while allowing automation to set sensible defaults."
+    },
+    {
+      "id": "D5",
+      "topic": "Calendly integration",
+      "decision": "Calendly links are subtype 'scheduling-link' under type 'link'. Sync creates both file and DB record. DB stores uuid as external_id for idempotent updates.",
+      "rationale": "Unified into content library taxonomy. external_id enables reliable sync without duplicate creation."
+    }
+  ],
+  
+  "proposed_taxonomy": {
+    "types": {
+      "article": {
+        "description": "Long-form written content (saved webpages, essays, newsletters)",
+        "subtypes": ["blog", "newsletter", "essay", "news", "how-to", "opinion", null],
+        "directory": "articles"
+      },
+      "link": {
+        "description": "URL-centric resources (scheduling links, profiles, tools, references)",
+        "subtypes": ["scheduling-link", "profile", "resource", "reference", "download", "internal-tool", "demo", "trial-code", null],
+        "directory": "links"
+      },
+      "snippet": {
+        "description": "Reusable text blocks (bios, blurbs, boilerplate)",
+        "subtypes": ["bio", "blurb", "signature", "template", "hook", null],
+        "directory": "snippets"
+      },
+      "social-post": {
+        "description": "Social media content (LinkedIn, Twitter/X)",
+        "subtypes": ["linkedin", "twitter", "thread", null],
+        "directory": "social-posts"
+      },
+      "quote": {
+        "description": "Memorable quotes, soundbites",
+        "subtypes": [null],
+        "directory": "quotes"
+      },
+      "inspiration": {
+        "description": "Visual/conceptual inspiration",
+        "subtypes": [null],
+        "directory": "inspiration"
+      },
+      "framework": {
+        "description": "Mental models, frameworks, methodologies",
+        "subtypes": [null],
+        "directory": "frameworks"
+      },
+      "deck": {
+        "description": "Presentations, slide decks",
+        "subtypes": ["investor-deck", "sales-deck", "internal", null],
+        "directory": "decks"
+      },
+      "paper": {
+        "description": "Academic papers, research documents",
+        "subtypes": [null],
+        "directory": "papers"
+      },
+      "book": {
+        "description": "Books, long-form documents",
+        "subtypes": [null],
+        "directory": "books"
+      },
+      "audio": {
+        "description": "Audio content (podcasts, recordings)",
+        "subtypes": ["podcast", "recording", "interview", null],
+        "directory": "audio"
+      },
+      "video": {
+        "description": "Video content",
+        "subtypes": ["youtube", "demo", "recording", null],
+        "directory": "video"
+      },
+      "transcript": {
+        "description": "Transcripts of audio/video",
+        "subtypes": [null],
+        "directory": "transcripts"
+      },
+      "personal": {
+        "description": "Personal/private content",
+        "subtypes": [null],
+        "directory": "personal"
+      },
+      "image": {
+        "description": "Images and graphics",
+        "subtypes": ["headshot", "logo", "screenshot", "diagram", null],
+        "directory": "images"
+      }
+    }
+  },
+  
+  "frontmatter_schema": {
+    "universal_fields": {
+      "managed": [
+        {"field": "created", "type": "date", "required": true, "description": "Date item was created"},
+        {"field": "last_edited", "type": "date", "required": true, "description": "Date of last modification"},
+        {"field": "version", "type": "string", "required": true, "description": "Semantic version X.Y"},
+        {"field": "provenance", "type": "string", "required": true, "description": "Source identifier (conversation_id, agent_id, sync name)"},
+        {"field": "type", "type": "string", "required": true, "description": "Content type from taxonomy"},
+        {"field": "subtype", "type": "string", "required": false, "description": "Subtype within content type"},
+        {"field": "source", "type": "string", "required": false, "description": "Origin system (calendly, linkedin-export, manual, web)"},
+        {"field": "source_url", "type": "url", "required": false, "description": "Original URL if web-sourced"},
+        {"field": "word_count", "type": "integer", "required": false, "description": "Word count of body content"}
+      ],
+      "curated": [
+        {"field": "summary", "type": "string", "required": false, "description": "Short summary (1-3 sentences)"},
+        {"field": "audience", "type": "string", "required": false, "description": "Target audience (investors, customers, friends)"},
+        {"field": "priority", "type": "string", "required": false, "description": "Usage priority (primary, secondary, deprecated)"},
+        {"field": "use_when", "type": "string", "required": false, "description": "Context for when to use this item"},
+        {"field": "notes", "type": "string", "required": false, "description": "Internal notes"},
+        {"field": "tags", "type": "array", "required": false, "description": "Free-form tags"}
+      ]
+    },
+    "type_specific": {
+      "link": {
+        "managed": [
+          {"field": "url", "type": "url", "required": true, "description": "The actual link URL"}
+        ],
+        "curated": []
+      },
+      "scheduling-link": {
+        "managed": [
+          {"field": "url", "type": "url", "required": true},
+          {"field": "duration", "type": "integer", "required": false, "description": "Duration in minutes"},
+          {"field": "slug", "type": "string", "required": false, "description": "Calendly slug"},
+          {"field": "external_id", "type": "string", "required": false, "description": "Calendly UUID"}
+        ],
+        "curated": []
+      },
+      "social-post": {
+        "managed": [
+          {"field": "platform", "type": "string", "required": true, "description": "linkedin, twitter"},
+          {"field": "source_id", "type": "string", "required": false, "description": "Platform post ID"},
+          {"field": "posted_date", "type": "date", "required": false}
+        ],
+        "curated": [
+          {"field": "topic", "type": "string", "required": false},
+          {"field": "content_type", "type": "string", "required": false, "description": "story, how-to, opinion"},
+          {"field": "originality_score", "type": "integer", "required": false},
+          {"field": "evergreen_score", "type": "integer", "required": false}
+        ]
+      },
+      "article": {
+        "managed": [
+          {"field": "author", "type": "string", "required": false},
+          {"field": "published_date", "type": "date", "required": false}
+        ],
+        "curated": [
+          {"field": "topic", "type": "string", "required": false}
+        ]
+      },
+      "snippet": {
+        "managed": [],
+        "curated": [
+          {"field": "purpose", "type": "string", "required": false, "description": "signature, intro, closing"},
+          {"field": "channel", "type": "string", "required": false, "description": "email, linkedin, web"}
+        ]
+      }
+    }
+  },
+  
+  "merge_semantics": {
+    "categories": {
+      "managed": {
+        "description": "Automation-owned fields. Always written/updated by automation.",
+        "behavior": "Overwrite on every sync/ingest",
+        "fields": ["created", "last_edited", "version", "provenance", "type", "subtype", "source", "source_url", "word_count", "url", "duration", "slug", "external_id", "platform", "source_id", "posted_date", "author", "published_date"]
+      },
+      "curated": {
+        "description": "Human-owned contextual fields. Never overwritten if non-empty.",
+        "behavior": "Only fill if empty; never overwrite existing value",
+        "fields": ["summary", "audience", "priority", "use_when", "notes", "tags", "topic", "content_type", "originality_score", "evergreen_score", "purpose", "channel"]
+      },
+      "derived": {
+        "description": "Computed fields refreshed on sync.",
+        "behavior": "Recompute on each sync from content/metadata",
+        "fields": ["word_count", "has_content", "has_summary", "has_embedding"]
+      }
+    },
+    "merge_algorithm": [
+      "1. Load existing item (from file frontmatter or DB record)",
+      "2. For each field in incoming data:",
+      "   - If field is managed: overwrite unconditionally",
+      "   - If field is curated: only write if existing value is null/empty",
+      "   - If field is derived: recompute from content",
+      "3. Bump last_edited and version",
+      "4. Write back to file and/or DB"
+    ],
+    "default_values": {
+      "summary": "Auto-generate 1-2 sentence summary if missing",
+      "audience": null,
+      "priority": "secondary",
+      "use_when": null
+    }
+  },
+  
+  "directory_layout": {
+    "canonical_root": "Knowledge/content-library/",
+    "structure": {
+      "articles/": "Long-form content. Subdirs by topic optional (e.g., articles/vrijen/)",
+      "links/": "URL resources. Subdirs by source (e.g., links/calendly/)",
+      "snippets/": "Reusable text blocks. Flat structure.",
+      "social-posts/": "Social content. Subdirs by platform (e.g., social-posts/linkedin/)",
+      "quotes/": "Quote files. Flat.",
+      "inspiration/": "Visual/conceptual. Flat.",
+      "frameworks/": "Frameworks/models. Flat.",
+      "decks/": "Presentations. Flat or by purpose.",
+      "papers/": "Academic papers. Flat.",
+      "books/": "Books. Flat.",
+      "audio/": "Audio files + companion md. Flat.",
+      "video/": "Video files + companion md. Flat.",
+      "transcripts/": "Transcripts. Flat.",
+      "personal/": "Private content. Flat.",
+      "images/": "Images. Flat or by category."
+    },
+    "naming_conventions": {
+      "articles": "{slug} :: {domain}.md  OR  {YYYY-MM-DD}_{slug}.md",
+      "links": "{slug}.md  (e.g., calendly/{event-slug}.md)",
+      "social-posts": "{YYYY-MM-DD}_{slug}.md  OR  platform/{filename}.md",
+      "snippets": "{slug}.md"
+    }
+  },
+  
+  "stable_id_strategy": {
+    "format": "{type}-{subtype?}-{slug}",
+    "rules": [
+      "1. slugify(title) if title exists",
+      "2. For links: extract slug from URL path if possible",
+      "3. For Calendly: use event slug from API",
+      "4. Max length: 100 chars",
+      "5. Collision handling: append _2, _3, etc.",
+      "6. IDs are immutable once assigned"
+    ],
+    "examples": [
+      "link-scheduling-link-30min",
+      "link-profile-vrijenattawar",
+      "snippet-bio-vrijen-bio-short",
+      "article-blog-capital-22nd-century",
+      "social-post-linkedin-2024-01-10-dream-job"
+    ]
+  },
+  
+  "invariants": [
+    {
+      "id": "INV-1",
+      "name": "File-DB consistency",
+      "rule": "Every DB item with source_file_path must have that file exist; every file in canonical dirs should have a DB record",
+      "enforcement": "sync command checks both directions"
+    },
+    {
+      "id": "INV-2", 
+      "name": "No raw scrape",
+      "rule": "Body content must be clean text only (no nav, boilerplate, scripts). Ingest normalizes before storing.",
+      "enforcement": "Ingest pipeline applies trafilatura/readability extraction"
+    },
+    {
+      "id": "INV-3",
+      "name": "Curated preservation",
+      "rule": "Automation never overwrites non-empty curated fields",
+      "enforcement": "Merge logic checks existing values before write"
+    },
+    {
+      "id": "INV-4",
+      "name": "Stable IDs",
+      "rule": "Item IDs are deterministic and immutable",
+      "enforcement": "ID generated on first ingest, stored in frontmatter as item_id"
+    },
+    {
+      "id": "INV-5",
+      "name": "Sync idempotence",
+      "rule": "Running sync twice produces zero changes on second run",
+      "enforcement": "Sync only writes if actual change detected"
+    }
+  ],
+  
+  "test_cases": [
+    {
+      "id": "TC-1",
+      "name": "Article ingest (save_webpage output)",
+      "input": "Raw save_webpage markdown with nav/boilerplate",
+      "expected": "Clean article text in body, summary in frontmatter, no nav garbage"
+    },
+    {
+      "id": "TC-2",
+      "name": "Calendly sync creates file + DB",
+      "input": "Calendly API event_type payload",
+      "expected": "File at links/calendly/{slug}.md AND DB record with matching id"
+    },
+    {
+      "id": "TC-3",
+      "name": "Merge preserves curated fields",
+      "input": "Existing file with audience='investors'; re-sync with automation default",
+      "expected": "audience remains 'investors', not overwritten"
+    },
+    {
+      "id": "TC-4",
+      "name": "Merge fills missing curated",
+      "input": "Existing file with no priority; re-sync",
+      "expected": "priority set to 'secondary' (default)"
+    },
+    {
+      "id": "TC-5",
+      "name": "Sync idempotence",
+      "input": "Run sync twice",
+      "expected": "Second run reports 0 changes"
+    },
+    {
+      "id": "TC-6",
+      "name": "Stable ID collision",
+      "input": "Two items that would generate same slug",
+      "expected": "Second item gets _2 suffix"
+    },
+    {
+      "id": "TC-7",
+      "name": "Subtype from Calendly",
+      "input": "Calendly event",
+      "expected": "type=link, subtype=scheduling-link"
+    }
+  ],
+  
+  "open_questions": [
+    {
+      "id": "OQ-1",
+      "question": "Should summary be auto-generated via LLM on ingest, or should we defer to manual/batch?",
+      "recommendation": "Auto-generate short summary on ingest for new items without summary. Use simple extraction heuristic first, LLM fallback."
+    },
+    {
+      "id": "OQ-2",
+      "question": "How to handle items that exist in DB but not in filesystem (orphans)?",
+      "recommendation": "Sync command flags orphans. User can choose to delete DB record or recreate file."
+    },
+    {
+      "id": "OQ-3",
+      "question": "Should existing json_migration items be re-ID'd to new stable ID scheme?",
+      "recommendation": "Yes, during migration. Map old_id -> new_id in migration log for any callers."
+    }
+  ],
+  
+  "files_referenced": [
+    "N5/scripts/content_ingest.py",
+    "N5/scripts/content_library.py",
+    "N5/data/content_library.db",
+    "Knowledge/content-library/links/calendly/*.md",
+    "Knowledge/content-library/social-posts/linkedin/*.md",
+    "Knowledge/content-library/articles/",
+    "N5/builds/content-library-v5/PLAN.md"
+  ],
+  
+  "notes_for_orchestrator": "Spec is complete and implementation-ready. Key decisions: (1) subtype as new column, (2) three-category merge semantics (managed/curated/derived), (3) stable IDs via deterministic slugs, (4) DB is index, files are artifacts. W1.2 (DB schema) and W1.3 (ingest normalization) can proceed in parallel. W1.4 (Calendly sync) depends on W1.2 for schema. Migration worker (W2.2) will need the old_id -> new_id mapping strategy defined here."
+}

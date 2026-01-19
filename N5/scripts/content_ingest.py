@@ -28,7 +28,7 @@ DB_PATH = WORKSPACE_ROOT / "N5/data/content_library.db"
 CANONICAL_ROOT = WORKSPACE_ROOT / "Knowledge/content-library"
 LOG_ROOT = WORKSPACE_ROOT / "N5/runtime/runs/content-ingest"
 
-# Content type mappings
+# Content type mappings - maps type to canonical folder
 TYPE_DIRECTORIES = {
     "article": "articles",
     "deck": "decks",
@@ -37,6 +37,13 @@ TYPE_DIRECTORIES = {
     "framework": "frameworks",
     "social-post": "social-posts",
     "inspiration": "inspiration",
+    "link": "links",
+    "snippet": "snippets",
+    "podcast": "audio",
+    "video": "video",
+    "quote": "quotes",
+    "personal": "personal",
+    "transcript": "transcripts",
 }
 
 # Path patterns for auto-detection
@@ -48,7 +55,216 @@ PATH_TYPE_PATTERNS = [
     (r"/frameworks/", "framework"),
     (r"/social-posts/", "social-post"),
     (r"/inspiration/", "inspiration"),
+    (r"/links/", "link"),
+    (r"/snippets/", "snippet"),
+    (r"/audio/", "podcast"),
+    (r"/video/", "video"),
+    (r"/quotes/", "quote"),
+    (r"/personal/", "personal"),
+    (r"/transcripts/", "transcript"),
 ]
+
+
+# =============================================================================
+# NORMALIZATION FUNCTIONS (v5 - Content Library normalization pipeline)
+# =============================================================================
+
+def classify_ingest_mode(filepath: Path, frontmatter: dict) -> str:
+    """Classify content for appropriate extraction strategy.
+    
+    Returns: 'article', 'link', 'profile', 'social', 'resource'
+    """
+    url = frontmatter.get('url', '')
+    
+    # Social posts
+    if 'x.com' in url or 'twitter.com' in url or 'linkedin.com/posts' in url:
+        return 'social'
+    
+    # Profiles
+    if 'linkedin.com/in/' in url or 'github.com/' in url:
+        if '/in/' in url or url.count('/') <= 4:  # profile, not repo
+            return 'profile'
+    
+    # Articles (substantive content sites)
+    article_domains = ['substack.com', 'medium.com', 'nytimes.com', 'wsj.com', 
+                       'techcrunch.com', 'paulgraham.com', 'stratechery.com',
+                       'hbr.org', 'forbes.com', 'wired.com', 'arstechnica.com']
+    if any(d in url for d in article_domains):
+        return 'article'
+    
+    # Resources (docs, repos)
+    if 'github.com' in url or 'docs.' in url or 'readthedocs.io' in url:
+        return 'resource'
+    
+    # Default based on content length (will be refined after reading content)
+    return 'link'
+
+
+def find_companion_html(md_path: Path) -> Path | None:
+    """Find HTML companion file for a markdown file."""
+    html_path = md_path.with_suffix('.html')
+    if html_path.exists():
+        return html_path
+    # Also check conversation workspace pattern
+    stem = md_path.stem
+    parent = md_path.parent
+    for pattern in [f"{stem}.html", f"{stem}~~*.html"]:
+        matches = list(parent.glob(pattern))
+        if matches:
+            return matches[0]
+    return None
+
+
+def extract_with_trafilatura(html_path: Path) -> dict:
+    """Extract clean content from HTML using trafilatura."""
+    try:
+        import trafilatura
+    except ImportError:
+        return {'text': '', 'title': None, 'author': None, 'date': None, 'description': None}
+    
+    try:
+        html_content = html_path.read_text(encoding='utf-8', errors='ignore')
+    except Exception:
+        return {'text': '', 'title': None, 'author': None, 'date': None, 'description': None}
+    
+    # Extract with trafilatura
+    result = trafilatura.extract(
+        html_content,
+        include_comments=False,
+        include_tables=True,
+        no_fallback=False,
+        favor_precision=True,
+        output_format='txt'
+    )
+    
+    # Also get metadata
+    metadata = trafilatura.extract_metadata(html_content)
+    
+    return {
+        'text': result or '',
+        'title': metadata.title if metadata else None,
+        'author': metadata.author if metadata else None,
+        'date': metadata.date if metadata else None,
+        'description': metadata.description if metadata else None,
+    }
+
+
+def heuristic_strip_boilerplate(text: str) -> str:
+    """Remove common boilerplate patterns from text."""
+    if not text:
+        return text
+    
+    patterns_to_remove = [
+        r'^Skip to (?:main )?content.*$',
+        r'^Navigation.*$',
+        r'^Menu.*$',
+        r'^Search.*$',
+        r'^Subscribe.*$',
+        r'^Sign (?:in|up).*$',
+        r'^Log (?:in|out).*$',
+        r'^Follow (?:us )?on.*$',
+        r'^Share (?:this|on).*$',
+        r'^Advertisement.*$',
+        r'^Sponsored.*$',
+        r'^Related (?:articles?|posts?).*$',
+        r'^Read (?:more|next).*$',
+        r'^Comments?.*$',
+        r'^©.*\d{4}.*$',
+        r'^Privacy Policy.*$',
+        r'^Terms (?:of (?:Service|Use)|and Conditions).*$',
+        r'^Cookie (?:Policy|Settings).*$',
+        r'^All rights reserved.*$',
+        r'^\[.*\]\s*$',  # Empty link references
+    ]
+    
+    lines = text.split('\n')
+    filtered = []
+    for line in lines:
+        skip = False
+        stripped = line.strip()
+        for pattern in patterns_to_remove:
+            if re.match(pattern, stripped, re.IGNORECASE):
+                skip = True
+                break
+        if not skip:
+            filtered.append(line)
+    
+    # Remove excessive blank lines
+    result = '\n'.join(filtered)
+    result = re.sub(r'\n{4,}', '\n\n\n', result)
+    return result.strip()
+
+
+def generate_summary(text: str, max_chars: int = 200) -> str:
+    """Generate a short summary from text.
+    
+    Uses simple extraction heuristic (first meaningful paragraph).
+    LLM fallback could be added later.
+    """
+    if not text or len(text) < 50:
+        return ''
+    
+    # Split into paragraphs
+    paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
+    
+    # Skip very short paragraphs (likely headings)
+    for para in paragraphs:
+        if len(para) > 80 and not para.startswith('#'):
+            # Truncate if needed
+            if len(para) > max_chars:
+                # Try to break at sentence
+                sentences = para.split('. ')
+                summary = ''
+                for s in sentences:
+                    if len(summary) + len(s) < max_chars:
+                        summary += s + '. '
+                    else:
+                        break
+                return summary.strip() or para[:max_chars] + '...'
+            return para
+    
+    # Fallback: return first non-trivial content
+    if paragraphs:
+        return paragraphs[0][:max_chars] + ('...' if len(paragraphs[0]) > max_chars else '')
+    return ''
+
+
+def normalize_content(filepath: Path, frontmatter: dict, body: str, normalize: bool = True) -> tuple[dict, str]:
+    """Apply normalization pipeline to content.
+    
+    Returns: (updated_frontmatter, cleaned_body)
+    """
+    if not normalize:
+        return frontmatter, body
+    
+    # Classify content mode
+    mode = classify_ingest_mode(filepath, frontmatter)
+    
+    # Try trafilatura extraction if HTML companion exists
+    html_path = find_companion_html(filepath)
+    if html_path and mode in ('article', 'resource', 'profile', 'link'):
+        extracted = extract_with_trafilatura(html_path)
+        if extracted['text'] and len(extracted['text']) > 100:
+            body = extracted['text']
+            # Merge extracted metadata into frontmatter
+            for key in ('title', 'author', 'date', 'description'):
+                if extracted.get(key) and not frontmatter.get(key):
+                    frontmatter[key] = extracted[key]
+    
+    # Fallback: heuristic stripping (skip for social posts - preserve as-is)
+    if mode != 'social':
+        body = heuristic_strip_boilerplate(body)
+    
+    # Generate summary if not present
+    if not frontmatter.get('summary') and body:
+        frontmatter['summary'] = generate_summary(body)
+    
+    return frontmatter, body
+
+
+# =============================================================================
+# END NORMALIZATION FUNCTIONS
+# =============================================================================
 
 
 def setup_logging(dry_run: bool = False) -> Path:
@@ -115,16 +331,32 @@ def detect_content_type(filepath: Path) -> str:
     """Auto-detect content type from file path."""
     path_str = str(filepath)
     
+    # Check path patterns first
     for pattern, content_type in PATH_TYPE_PATTERNS:
         if re.search(pattern, path_str, re.IGNORECASE):
             return content_type
     
-    # Extension-based fallback
+    # Extension-based detection
     ext = filepath.suffix.lower()
     if ext == ".pdf":
         return "deck"
+    if ext in (".mp3", ".wav", ".m4a", ".ogg"):
+        return "podcast"
+    if ext in (".mp4", ".mov", ".avi", ".mkv"):
+        return "video"
     
-    return "article"  # Default
+    # Content-based heuristics for markdown files
+    if ext == ".md":
+        try:
+            content = filepath.read_text(encoding="utf-8")[:2000]
+            # Check frontmatter for URL field (indicates a saved webpage/link)
+            if content.startswith("---"):
+                if "\nurl:" in content.lower():
+                    return "link"
+        except:
+            pass
+    
+    return "link"  # Default to link for web-saved content (safer than article)
 
 
 def get_relative_path(filepath: Path) -> str:
@@ -137,7 +369,9 @@ def get_relative_path(filepath: Path) -> str:
 
 def get_canonical_path(content_type: str, filename: str) -> Path:
     """Get canonical storage path for content type."""
-    subdir = TYPE_DIRECTORIES.get(content_type, "articles")
+    subdir = TYPE_DIRECTORIES.get(content_type)
+    if subdir is None:
+        raise ValueError(f"Unknown content type '{content_type}'. Valid types: {list(TYPE_DIRECTORIES.keys())}")
     return CANONICAL_ROOT / subdir / filename
 
 
@@ -193,6 +427,7 @@ def ingest_file(
     dry_run: bool = False,
     move: bool = False,
     tags: list[str] = None,
+    normalize: bool = True,
 ) -> dict:
     """
     Ingest a single file into the Content Library.
@@ -226,6 +461,12 @@ def ingest_file(
     
     # Parse frontmatter
     frontmatter, body = parse_frontmatter(content)
+    
+    # Apply normalization pipeline (trafilatura extraction, boilerplate removal, summary generation)
+    frontmatter, body = normalize_content(filepath, frontmatter, body, normalize=normalize)
+    result["normalized"] = normalize
+    if frontmatter.get("summary"):
+        result["summary"] = frontmatter["summary"][:100] + "..." if len(frontmatter.get("summary", "")) > 100 else frontmatter.get("summary", "")
     
     # Extract metadata
     title = frontmatter.get("title") or extract_title_from_filename(filepath)
@@ -316,8 +557,7 @@ Examples:
     parser.add_argument(
         "--type", "-t",
         dest="content_type",
-        choices=["article", "deck", "paper", "book", "framework", "social-post", 
-                 "inspiration", "link", "snippet", "podcast", "video", "quote"],
+        choices=list(TYPE_DIRECTORIES.keys()),
         help="Content type (auto-detected if not specified)"
     )
     parser.add_argument(
@@ -339,6 +579,13 @@ Examples:
         "--quiet", "-q",
         action="store_true",
         help="Suppress output except errors"
+    )
+    parser.add_argument(
+        "--normalize",
+        dest="normalize",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Apply content normalization (default: True, use --no-normalize to disable)"
     )
     
     args = parser.parse_args()
@@ -363,6 +610,7 @@ Examples:
         dry_run=args.dry_run,
         move=args.move,
         tags=tags,
+        normalize=args.normalize,
     )
     
     # Log result

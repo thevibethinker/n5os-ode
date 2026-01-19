@@ -1,0 +1,57 @@
+{
+  "worker_id": "W3.3",
+  "build_slug": "content-library-v5",
+  "completed_at": "2026-01-19T02:45:00Z",
+  "status": "complete",
+  "functions_added": [
+    "classify_ingest_mode(filepath, frontmatter) -> str",
+    "find_companion_html(md_path) -> Path | None",
+    "extract_with_trafilatura(html_path) -> dict",
+    "heuristic_strip_boilerplate(text) -> str",
+    "generate_summary(text, max_chars=200) -> str",
+    "normalize_content(filepath, frontmatter, body, normalize=True) -> tuple[dict, str]"
+  ],
+  "files_modified": [
+    "N5/scripts/content_ingest.py"
+  ],
+  "cli_additions": {
+    "flag": "--normalize / --no-normalize",
+    "default": true,
+    "description": "Apply content normalization (trafilatura extraction, boilerplate removal, summary generation)"
+  },
+  "test_results": {
+    "heuristic_strip_boilerplate": {
+      "status": "passed",
+      "details": "Removes navigation, skip links, footer boilerplate; preserves content"
+    },
+    "generate_summary": {
+      "status": "passed",
+      "details": "Extracts first meaningful paragraph (>80 chars), truncates at sentence boundaries"
+    },
+    "classify_ingest_mode": {
+      "status": "passed",
+      "details": "Correctly classifies social, profile, article, resource, link modes"
+    },
+    "extract_with_trafilatura": {
+      "status": "passed",
+      "details": "274KB HTML -> 3.5KB text (98.7% reduction), extracts title/author/date metadata"
+    },
+    "full_pipeline_dry_run": {
+      "status": "passed",
+      "details": "Dry run on existing file works; normalization integrated into ingest_file"
+    }
+  },
+  "notes_for_orchestrator": [
+    "Normalization is now ON by default for all ingests",
+    "Without HTML companion files, normalization is limited to heuristic stripping (mild improvement)",
+    "With HTML companion files, trafilatura achieves 98%+ reduction with excellent metadata extraction",
+    "Summary generation uses simple heuristics (first meaningful paragraph) - LLM fallback can be added later",
+    "The auto-ingest user rule should be updated to remove explicit --type since we now auto-detect",
+    "Social posts (x.com, twitter.com, linkedin.com/posts) are preserved as-is (no heuristic stripping)"
+  ],
+  "lines_of_code_added": "~200 lines of normalization functions",
+  "integration_points": {
+    "ingest_file": "Now accepts normalize=True parameter, applies normalization before metadata extraction",
+    "result_dict": "Now includes 'normalized' (bool) and 'summary' (str, truncated) fields"
+  }
+}
