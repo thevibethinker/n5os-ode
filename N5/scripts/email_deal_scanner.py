@@ -2,6 +2,8 @@
 """
 Email Deal Scanner — Worker 5
 
+Updated 2026-01-19: Now uses unified n5_core.db database with people table.
+
 Scans Gmail for deal-related emails and extracts intelligence.
 Designed to be called by Zo (agentic execution) - prepares queries
 and processes results through DealSignalRouter.
@@ -30,7 +32,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sqlite3
 import sys
 from dataclasses import dataclass, asdict
 from datetime import datetime, timedelta
@@ -42,9 +43,9 @@ _SCRIPT_DIR = Path(__file__).parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
+from db_paths import get_db_connection, N5_CORE_DB
 from deal_signal_router import DealSignalRouter
 
-DB_PATH = "/home/workspace/N5/data/deals.db"
 BACKFILL_STATE_FILE = "/home/workspace/N5/data/backfill_state.json"
 BACKFILL_DEFAULT_MAX_OFFSET = 60  # 2 months
 
@@ -53,7 +54,7 @@ BACKFILL_DEFAULT_MAX_OFFSET = 60  # 2 months
 class SearchQuery:
     """A Gmail search query with context."""
     query: str
-    context_type: str  # 'contact', 'deal', 'company'
+    context_type: str  # 'person', 'deal', 'company'
     context_id: Optional[str]
     context_name: str
     pipeline: Optional[str]
@@ -77,42 +78,45 @@ class ScanResult:
     email: EmailResult
     matched: bool
     deal_id: Optional[str]
-    contact_id: Optional[str]
+    person_id: Optional[int]
     signal_extracted: bool
     extraction_summary: Optional[str]
 
 
-def get_db_connection() -> sqlite3.Connection:
-    """Get database connection with row factory."""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-def get_deal_contacts() -> Tuple[List[dict], List[dict]]:
-    """Get all contacts and deals from database for matching."""
-    conn = get_db_connection()
+def get_people_and_deals() -> Tuple[List[dict], List[dict]]:
+    """Get all people and deals from database for matching.
+    
+    Uses unified n5_core.db with people table and deal_roles junction.
+    """
+    conn = get_db_connection(readonly=True)
     c = conn.cursor()
     
-    # Get contacts with emails
+    # Get people with emails - include deal association via deal_roles
     c.execute("""
-        SELECT id, full_name, company, contact_type, pipeline, email,
-               associated_deal_id, temperature
-        FROM deal_contacts
-        WHERE full_name IS NOT NULL
+        SELECT DISTINCT
+            p.id, p.full_name, p.company, p.category, p.email,
+            dr.deal_id as associated_deal_id,
+            d.pipeline, d.temperature
+        FROM people p
+        LEFT JOIN deal_roles dr ON dr.person_id = p.id
+        LEFT JOIN deals d ON d.id = dr.deal_id
+        WHERE p.full_name IS NOT NULL
     """)
-    contacts = [dict(r) for r in c.fetchall()]
+    people = [dict(r) for r in c.fetchall()]
     
-    # Get deals
+    # Get deals with primary contacts
     c.execute("""
-        SELECT id, company, primary_contact, pipeline, temperature, stage
-        FROM deals
-        WHERE company IS NOT NULL
+        SELECT 
+            d.id, d.company, d.pipeline, d.temperature, d.stage,
+            p.full_name as primary_contact_name
+        FROM deals d
+        LEFT JOIN people p ON p.id = d.primary_contact_id
+        WHERE d.company IS NOT NULL
     """)
     deals = [dict(r) for r in c.fetchall()]
     
     conn.close()
-    return contacts, deals
+    return people, deals
 
 
 # =============================================================================
@@ -151,256 +155,63 @@ def get_broad_email_queries(days: int, offset: int = 0) -> List[dict]:
     
     return [
         {
-            "query": f"-category:promotions -category:social -category:updates {date_filter}",
-            "description": f"All non-promotional emails from {start_date.date()} to {end_date.date()}"
-        }
+            'query': f'in:inbox is:unread {date_filter}',
+            'description': 'Unread inbox emails',
+        },
+        {
+            'query': f'in:inbox (subject:meeting OR subject:call OR subject:intro OR subject:connect) {date_filter}',
+            'description': 'Meeting/connection related',
+        },
+        {
+            'query': f'in:inbox (subject:follow OR subject:checking) {date_filter}',
+            'description': 'Follow-ups and check-ins',
+        },
     ]
 
 
-def should_analyze_email(email: dict) -> Tuple[bool, str]:
-    """Pre-filter to exclude obvious noise.
+def is_likely_signal_email(email: dict) -> bool:
+    """Pre-filter emails to exclude obvious non-signals.
     
     Args:
-        email: Dict with 'from' and 'subject' keys
+        email: Dict with 'from', 'subject', 'snippet' keys
     
     Returns:
-        Tuple of (should_analyze, skip_reason)
+        True if email should be analyzed further
     """
     sender = email.get('from', '').lower()
     subject = email.get('subject', '').lower()
     
+    # Check sender patterns
     for pattern in EXCLUDE_SENDER_PATTERNS:
-        if re.search(pattern, sender, re.IGNORECASE):
-            return False, f"Excluded sender pattern: {pattern}"
+        if re.search(pattern, sender):
+            return False
     
+    # Check subject patterns
     for pattern in EXCLUDE_SUBJECT_PATTERNS:
-        if re.search(pattern, subject, re.IGNORECASE):
-            return False, f"Excluded subject pattern: {pattern}"
+        if re.search(pattern, subject):
+            return False
     
-    return True, ""
+    return True
 
 
-def build_llm_context() -> str:
-    """Build deal/contact context string for LLM prompt.
-    
-    Returns:
-        Formatted string with known contacts and active deals.
-    """
-    conn = get_db_connection()
-    c = conn.cursor()
-    
-    # Get contacts (limit to avoid context overflow)
-    c.execute("""
-        SELECT id, full_name, email, company, pipeline 
-        FROM deal_contacts 
-        WHERE full_name IS NOT NULL
-        ORDER BY 
-            CASE WHEN email IS NOT NULL AND email != '' THEN 0 ELSE 1 END,
-            updated_at DESC
-        LIMIT 50
-    """)
-    contacts = [dict(r) for r in c.fetchall()]
-    
-    # Get deals
-    c.execute("""
-        SELECT id, company, primary_contact, pipeline, stage 
-        FROM deals 
-        WHERE company IS NOT NULL
-        ORDER BY last_touched DESC
-        LIMIT 30
-    """)
-    deals = [dict(r) for r in c.fetchall()]
-    
-    conn.close()
-    
-    context = "## Known Contacts:\n"
-    for contact in contacts:
-        email_str = f" <{contact['email']}>" if contact.get('email') else " (no email)"
-        company_str = f" @ {contact['company']}" if contact.get('company') else ""
-        context += f"- {contact['full_name']}{email_str}{company_str} [id: {contact['id']}]\n"
-    
-    context += "\n## Active Deals:\n"
-    for deal in deals:
-        contact_str = f" (contact: {deal['primary_contact']})" if deal.get('primary_contact') else ""
-        context += f"- {deal['company']} [{deal['pipeline']}/{deal['stage']}]{contact_str} [id: {deal['id']}]\n"
-    
-    return context
-
-
-def update_contact_email(contact_id: str, email: str, dry_run: bool = False) -> dict:
-    """Update a contact's email if currently empty.
-    
-    Returns dict with status and details.
-    """
-    if not contact_id or not email:
-        return {"updated": False, "reason": "Missing contact_id or email"}
-    
-    if dry_run:
-        return {"updated": True, "dry_run": True, "contact_id": contact_id, "email": email}
-    
-    conn = get_db_connection()
-    c = conn.cursor()
-    
-    # Check current state
-    c.execute("SELECT email FROM deal_contacts WHERE id = ?", (contact_id,))
-    row = c.fetchone()
-    
-    if not row:
-        conn.close()
-        return {"updated": False, "reason": f"Contact {contact_id} not found"}
-    
-    current_email = row['email']
-    if current_email and current_email.strip():
-        conn.close()
-        return {"updated": False, "reason": f"Contact already has email: {current_email}"}
-    
-    # Update
-    c.execute("""
-        UPDATE deal_contacts 
-        SET email = ?, updated_at = ?
-        WHERE id = ?
-    """, (email, datetime.now().isoformat(), contact_id))
-    
-    conn.commit()
-    conn.close()
-    
-    return {"updated": True, "contact_id": contact_id, "email": email}
-
-
-def format_email_for_llm(email: dict, context: str) -> str:
-    """Format an email + context into the analysis prompt.
-    
-    Args:
-        email: Gmail email dict with 'from', 'subject', 'date', 'snippet'
-        context: Pre-built context string from build_llm_context()
-    
-    Returns:
-        Formatted prompt string ready for LLM
-    """
-    # Import here to avoid circular imports at module load
-    from deal_llm_prompts import EMAIL_ANALYSIS_PROMPT
-    
-    return EMAIL_ANALYSIS_PROMPT.format(
-        sender=email.get('from', 'Unknown sender'),
-        subject=email.get('subject', '(no subject)'),
-        date=email.get('date', 'Unknown date'),
-        snippet=email.get('snippet', ''),
-        context=context
-    )
-
-
-def process_email_with_llm_analysis(
-    email: dict,
-    analysis: dict,
-    dry_run: bool = False
-) -> dict:
-    """Process an email using LLM analysis results.
-    
-    This function takes pre-computed LLM analysis (since Zo IS the LLM)
-    and performs the appropriate actions:
-    - Enriches contact email if discovered
-    - Routes signals through DealSignalRouter
-    - Marks email as processed
-    
-    Args:
-        email: Gmail email dict (id, from, subject, snippet, date)
-        analysis: LLM analysis result dict with:
-            - matched_contact_id
-            - matched_deal_id
-            - discovered_email
-            - signal_strength (none/weak/medium/strong)
-            - intel (dict with stage_signal, key_facts, etc.)
-            - match_reasoning
-        dry_run: If True, don't write to database
-    
-    Returns:
-        dict with processing results and actions taken
-    """
-    result = {
-        "message_id": email.get('id'),
-        "sender": email.get('from'),
-        "subject": email.get('subject'),
-        "signal_strength": analysis.get('signal_strength', 'none'),
-        "matched_contact_id": analysis.get('matched_contact_id'),
-        "matched_deal_id": analysis.get('matched_deal_id'),
-        "actions_taken": [],
-        "dry_run": dry_run
-    }
-    
-    # Contact email enrichment
-    discovered_email = analysis.get('discovered_email')
-    contact_id = analysis.get('matched_contact_id')
-    
-    if discovered_email and contact_id:
-        enrich_result = update_contact_email(contact_id, discovered_email, dry_run=dry_run)
-        if enrich_result.get('updated'):
-            result['actions_taken'].append(f"Enriched contact {contact_id} with email: {discovered_email}")
-    
-    # Signal routing
-    signal_strength = analysis.get('signal_strength', 'none')
-    intel = analysis.get('intel')
-    
-    if signal_strength in ('medium', 'strong') and intel:
-        deal_id = analysis.get('matched_deal_id')
-        
-        if deal_id and not dry_run:
-            # Route through existing DealSignalRouter
-            router = DealSignalRouter()
-            
-            # Build content summary for router
-            content = f"Email from {email.get('from')}\nSubject: {email.get('subject')}\n\n{email.get('snippet')}"
-            
-            route_result = router.process_signal(
-                source="email_scan",
-                content=content,
-                metadata={
-                    "message_id": email.get('id'),
-                    "sender": email.get('from'),
-                    "subject": email.get('subject'),
-                    "llm_intel": intel
-                },
-                context=deal_id,
-                dry_run=dry_run
-            )
-            
-            result['actions_taken'].append(f"Routed to deal {deal_id}: {route_result.action_taken}")
-    
-    # Mark as processed (skip if dry_run)
-    if not dry_run:
-        mark_email_processed(
-            message_id=email.get('id', ''),
-            thread_id=email.get('threadId', ''),
-            deal_id=analysis.get('matched_deal_id'),
-            contact_id=analysis.get('matched_contact_id'),
-            subject=email.get('subject', ''),
-            sender=email.get('from', ''),
-            signal_extracted=signal_strength in ('medium', 'strong'),
-            extraction_summary=analysis.get('match_reasoning')
-        )
-        result['actions_taken'].append("Marked as processed")
-    
-    return result
-
-
-def build_search_queries(
+def get_search_queries(
     days: int = 7,
-    max_queries: int = 30,
-    priority: str = "hot",
+    max_queries: int = 20,
+    priority: str = "all",
     offset: int = 0
 ) -> List[SearchQuery]:
-    """
-    Build Gmail search queries based on known contacts and deals.
+    """Build Gmail search queries based on people and deals.
     
     Args:
-        days: Number of days in the search window
-        max_queries: Maximum number of queries to generate
-        priority: Filter by temperature ('hot', 'warm', 'all')
-        offset: Days to skip from today (for backfill)
+        days: Number of days to search
+        max_queries: Maximum number of queries to return
+        priority: Filter by temperature ("hot", "warm", "all")
+        offset: Days offset for backfill (0 = today, 30 = 30-60 days ago)
     
     Returns:
         List of SearchQuery objects ready for Gmail API
     """
-    contacts, deals = get_deal_contacts()
+    people, deals = get_people_and_deals()
     
     # Calculate date range with offset
     end_date = datetime.now() - timedelta(days=offset)
@@ -414,21 +225,21 @@ def build_search_queries(
     
     queries: List[SearchQuery] = []
     
-    # Priority 1: Contacts with known emails
-    contacts_with_email = [c for c in contacts if c.get("email")]
+    # Priority 1: People with known emails
+    people_with_email = [p for p in people if p.get("email")]
     if priority == "hot":
-        contacts_with_email = [c for c in contacts_with_email if c.get("temperature") == "hot"]
+        people_with_email = [p for p in people_with_email if p.get("temperature") == "hot"]
     elif priority == "warm":
-        contacts_with_email = [c for c in contacts_with_email if c.get("temperature") in ("hot", "warm")]
+        people_with_email = [p for p in people_with_email if p.get("temperature") in ("hot", "warm")]
     
-    for c in contacts_with_email[:max_queries // 3]:
-        email = c["email"]
+    for p in people_with_email[:max_queries // 3]:
+        email = p["email"]
         queries.append(SearchQuery(
             query=f"(from:{email} OR to:{email}) {date_filter}",
-            context_type="contact",
-            context_id=c["id"],
-            context_name=c["full_name"],
-            pipeline=c.get("pipeline")
+            context_type="person",
+            context_id=str(p["id"]),
+            context_name=p["full_name"],
+            pipeline=p.get("pipeline")
         ))
     
     # Priority 2: Hot deals by company name
@@ -444,28 +255,31 @@ def build_search_queries(
             pipeline=d.get("pipeline")
         ))
     
-    # Priority 3: Contacts by name (fuzzy)
+    # Priority 3: People by name (fuzzy)
     remaining_slots = max_queries - len(queries)
-    contacts_by_name = [c for c in contacts if not c.get("email") and c.get("full_name")]
-    for c in contacts_by_name[:remaining_slots]:
-        name = c["full_name"]
+    people_by_name = [p for p in people if not p.get("email") and p.get("full_name")]
+    for p in people_by_name[:remaining_slots]:
+        name = p["full_name"]
         if len(name.split()) >= 2:
             queries.append(SearchQuery(
                 query=f'"{name}" {date_filter}',
-                context_type="contact",
-                context_id=c["id"],
+                context_type="person",
+                context_id=str(p["id"]),
                 context_name=name,
-                pipeline=c.get("pipeline")
+                pipeline=p.get("pipeline")
             ))
     
     return queries[:max_queries]
 
 
 def is_email_processed(message_id: str) -> bool:
-    """Check if an email has already been processed."""
-    conn = get_db_connection()
+    """Check if an email has already been processed.
+    
+    Uses interactions table in unified DB.
+    """
+    conn = get_db_connection(readonly=True)
     c = conn.cursor()
-    c.execute("SELECT 1 FROM processed_emails WHERE message_id = ?", (message_id,))
+    c.execute("SELECT 1 FROM interactions WHERE source_ref = ?", (f"email:{message_id}",))
     result = c.fetchone()
     conn.close()
     return result is not None
@@ -475,26 +289,94 @@ def mark_email_processed(
     message_id: str,
     thread_id: Optional[str] = None,
     deal_id: Optional[str] = None,
-    contact_id: Optional[str] = None,
+    person_id: Optional[int] = None,
     subject: Optional[str] = None,
     sender: Optional[str] = None,
     signal_extracted: bool = False,
     extraction_summary: Optional[str] = None
 ) -> None:
-    """Mark an email as processed in the database."""
+    """Mark an email as processed by creating an interaction entry."""
     conn = get_db_connection()
     c = conn.cursor()
+    
+    summary = f"Email from {sender}: {subject}" if sender and subject else extraction_summary
+    
     c.execute("""
-        INSERT OR REPLACE INTO processed_emails 
-        (message_id, thread_id, deal_id, contact_id, subject, sender, 
-         processed_at, signal_extracted, extraction_summary)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (
-        message_id, thread_id, deal_id, contact_id, subject, sender,
-        datetime.now().isoformat(), signal_extracted, extraction_summary
-    ))
+        INSERT INTO interactions 
+        (person_id, deal_id, type, direction, summary, source_ref, occurred_at, created_at)
+        VALUES (?, ?, 'email', 'inbound', ?, ?, datetime('now'), datetime('now'))
+    """, (person_id, deal_id, summary, f"email:{message_id}"))
+    
     conn.commit()
     conn.close()
+
+
+def ensure_person_exists(name: str, email: str = None, company: str = None) -> int:
+    """Get or create person, return person_id."""
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Try to find by email first
+    if email:
+        c.execute("SELECT id FROM people WHERE email = ?", (email.lower(),))
+        row = c.fetchone()
+        if row:
+            conn.close()
+            return row['id']
+    
+    # Try by name + company
+    c.execute("""
+        SELECT id FROM people 
+        WHERE full_name = ? AND (company = ? OR company IS NULL)
+    """, (name, company))
+    row = c.fetchone()
+    if row:
+        conn.close()
+        return row['id']
+    
+    # Create new
+    c.execute("""
+        INSERT INTO people (full_name, email, company, source_db, created_at)
+        VALUES (?, ?, ?, 'email_scanner', datetime('now'))
+    """, (name, email.lower() if email else None, company))
+    person_id = c.lastrowid
+    conn.commit()
+    conn.close()
+    return person_id
+
+
+def update_person_email(person_id: int, email: str, dry_run: bool = False) -> dict:
+    """Update a person's email if they don't have one."""
+    if dry_run:
+        return {"updated": False, "dry_run": True, "person_id": person_id, "email": email}
+    
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Check current state
+    c.execute("SELECT email FROM people WHERE id = ?", (person_id,))
+    row = c.fetchone()
+    
+    if not row:
+        conn.close()
+        return {"updated": False, "reason": f"Person {person_id} not found"}
+    
+    current_email = row['email']
+    if current_email and current_email.strip():
+        conn.close()
+        return {"updated": False, "reason": f"Person already has email: {current_email}"}
+    
+    # Update
+    c.execute("""
+        UPDATE people 
+        SET email = ?, updated_at = datetime('now')
+        WHERE id = ?
+    """, (email, person_id))
+    
+    conn.commit()
+    conn.close()
+    
+    return {"updated": True, "person_id": person_id, "email": email}
 
 
 def process_email(
@@ -519,7 +401,7 @@ def process_email(
             email=email,
             matched=False,
             deal_id=None,
-            contact_id=None,
+            person_id=None,
             signal_extracted=False,
             extraction_summary="Already processed"
         )
@@ -565,13 +447,21 @@ def process_email(
             parts.append(f"Action: {ext.next_action[:50]}")
         extraction_summary = " | ".join(parts) if parts else None
     
-    # Mark as processed
+    # Get person_id from search context if available
+    person_id = None
+    if search_context and search_context.context_type == "person":
+        try:
+            person_id = int(search_context.context_id)
+        except (ValueError, TypeError):
+            pass
+    
+    # Mark as processed (creates interaction entry)
     if not dry_run:
         mark_email_processed(
             message_id=email.message_id,
             thread_id=email.thread_id,
             deal_id=result.deal_id,
-            contact_id=None,  # Could extract from search_context
+            person_id=person_id,
             subject=email.subject,
             sender=email.sender,
             signal_extracted=result.matched,
@@ -582,7 +472,7 @@ def process_email(
         email=email,
         matched=result.matched,
         deal_id=result.deal_id,
-        contact_id=search_context.context_id if search_context and search_context.context_type == "contact" else None,
+        person_id=person_id,
         signal_extracted=result.extraction is not None,
         extraction_summary=extraction_summary
     )
@@ -602,346 +492,178 @@ def parse_gmail_response(gmail_response: dict) -> List[EmailResult]:
         return results
     
     for msg in messages:
-        # Handle both full message format and metadata-only format
-        headers = {}
-        for header in msg.get("payload", {}).get("headers", []):
-            headers[header["name"].lower()] = header["value"]
-        
-        results.append(EmailResult(
-            message_id=msg.get("id", ""),
-            thread_id=msg.get("threadId", ""),
-            subject=headers.get("subject", "(no subject)"),
-            sender=headers.get("from", "unknown"),
-            snippet=msg.get("snippet", ""),
-            date=headers.get("date", ""),
-            body_preview=msg.get("textPayload")  # If withTextPayload=true
-        ))
+        # Handle both full message format and list format
+        if "payload" in msg:
+            # Full message format
+            headers = msg.get("payload", {}).get("headers", [])
+            header_dict = {h["name"].lower(): h["value"] for h in headers}
+            
+            results.append(EmailResult(
+                message_id=msg.get("id", ""),
+                thread_id=msg.get("threadId", ""),
+                subject=header_dict.get("subject", "(no subject)"),
+                sender=header_dict.get("from", "Unknown"),
+                snippet=msg.get("snippet", ""),
+                date=header_dict.get("date", ""),
+                body_preview=None  # Could extract from payload
+            ))
+        else:
+            # List format (minimal)
+            results.append(EmailResult(
+                message_id=msg.get("id", ""),
+                thread_id=msg.get("threadId", ""),
+                subject=msg.get("subject", "(no subject)"),
+                sender=msg.get("from", "Unknown"),
+                snippet=msg.get("snippet", ""),
+                date=msg.get("date", ""),
+                body_preview=None
+            ))
     
     return results
 
 
-def get_scan_stats() -> dict:
-    """Get statistics about processed emails."""
-    conn = get_db_connection()
-    c = conn.cursor()
+def format_email_for_llm(email: dict, context: str) -> str:
+    """Format an email + context into the analysis prompt.
     
-    c.execute("SELECT COUNT(*) FROM processed_emails")
-    total = c.fetchone()[0]
+    Args:
+        email: Gmail email dict with 'from', 'subject', 'date', 'snippet'
+        context: Pre-built context string from build_llm_context()
     
-    c.execute("SELECT COUNT(*) FROM processed_emails WHERE signal_extracted = 1")
-    with_signals = c.fetchone()[0]
+    Returns:
+        Formatted prompt string ready for LLM
+    """
+    # Import here to avoid circular imports at module load
+    from deal_llm_prompts import EMAIL_ANALYSIS_PROMPT
     
-    c.execute("""
-        SELECT COUNT(DISTINCT deal_id) FROM processed_emails 
-        WHERE deal_id IS NOT NULL
-    """)
-    unique_deals = c.fetchone()[0]
-    
-    c.execute("""
-        SELECT date(processed_at) as day, COUNT(*) as count
-        FROM processed_emails
-        GROUP BY date(processed_at)
-        ORDER BY day DESC
-        LIMIT 7
-    """)
-    daily = [{"date": r[0], "count": r[1]} for r in c.fetchall()]
-    
-    conn.close()
-    
-    return {
-        "total_processed": total,
-        "with_signals": with_signals,
-        "unique_deals": unique_deals,
-        "daily_counts": daily
-    }
+    return EMAIL_ANALYSIS_PROMPT.format(
+        sender=email.get('from', 'Unknown sender'),
+        subject=email.get('subject', '(no subject)'),
+        date=email.get('date', 'Unknown date'),
+        snippet=email.get('snippet', ''),
+        context=context
+    )
 
+
+# =============================================================================
+# Backfill Management
+# =============================================================================
 
 def get_backfill_state() -> dict:
-    """Get current backfill state from file."""
-    if not Path(BACKFILL_STATE_FILE).exists():
+    """Load backfill progress state."""
+    try:
+        with open(BACKFILL_STATE_FILE, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
         return {
-            "status": "not_started",
-            "current_offset": 0,
-            "max_offset": BACKFILL_DEFAULT_MAX_OFFSET,
-            "window_days": 30,
-            "runs_completed": 0,
-            "total_runs_needed": 2,
-            "emails_processed": 0,
-            "signals_found": 0,
-            "started_at": None,
-            "last_run_at": None,
-            "completed_at": None
+            'current_offset': 0,
+            'max_offset': BACKFILL_DEFAULT_MAX_OFFSET,
+            'last_run': None,
+            'emails_processed': 0
         }
-    return json.loads(Path(BACKFILL_STATE_FILE).read_text())
 
 
 def save_backfill_state(state: dict) -> None:
-    """Save backfill state to file."""
+    """Save backfill progress state."""
     Path(BACKFILL_STATE_FILE).parent.mkdir(parents=True, exist_ok=True)
-    Path(BACKFILL_STATE_FILE).write_text(json.dumps(state, indent=2))
+    with open(BACKFILL_STATE_FILE, 'w') as f:
+        json.dump(state, f, indent=2)
 
 
-def advance_backfill(emails_processed: int = 0, signals_found: int = 0) -> dict:
-    """Advance backfill to next window, return updated state."""
+def advance_backfill(days: int = 7) -> dict:
+    """Advance backfill window by specified days."""
     state = get_backfill_state()
     
-    if state["status"] == "not_started":
-        state["status"] = "in_progress"
-        state["started_at"] = datetime.now().isoformat()
+    old_offset = state['current_offset']
+    new_offset = old_offset + days
     
-    state["current_offset"] += state["window_days"]
-    state["runs_completed"] += 1
-    state["emails_processed"] += emails_processed
-    state["signals_found"] += signals_found
-    state["last_run_at"] = datetime.now().isoformat()
+    if new_offset >= state['max_offset']:
+        return {
+            'status': 'complete',
+            'message': f'Backfill complete (reached {state["max_offset"]} days)'
+        }
     
-    # Check if complete
-    if state["current_offset"] >= state["max_offset"]:
-        state["status"] = "complete"
-        state["completed_at"] = datetime.now().isoformat()
-    
+    state['current_offset'] = new_offset
+    state['last_run'] = datetime.now().isoformat()
     save_backfill_state(state)
-    return state
-
-
-def reset_backfill(max_offset: int = BACKFILL_DEFAULT_MAX_OFFSET) -> dict:
-    """Reset backfill state for a new run."""
-    state = {
-        "status": "not_started",
-        "current_offset": 0,
-        "max_offset": max_offset,
-        "window_days": 30,
-        "runs_completed": 0,
-        "total_runs_needed": (max_offset + 29) // 30,  # Ceiling division
-        "emails_processed": 0,
-        "signals_found": 0,
-        "started_at": None,
-        "last_run_at": None,
-        "completed_at": None
+    
+    return {
+        'status': 'advanced',
+        'old_offset': old_offset,
+        'new_offset': new_offset,
+        'remaining': state['max_offset'] - new_offset
     }
-    save_backfill_state(state)
-    return state
 
 
-def cmd_backfill(args):
-    """Handle backfill subcommand."""
-    state = get_backfill_state()
-    
-    if args.reset:
-        max_off = args.max_offset if args.max_offset else BACKFILL_DEFAULT_MAX_OFFSET
-        state = reset_backfill(max_offset=max_off)
-        print(f"✓ Backfill reset. Target: {max_off} days ({state['total_runs_needed']} runs)")
-        return
-    
-    if args.complete:
-        # Exit code 0 if complete, 1 if not - for agent self-destruct check
-        if state["status"] == "complete":
-            print("✓ Backfill complete")
-            sys.exit(0)
-        else:
-            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
-            print(f"⏳ Backfill in progress: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']} runs)")
-            sys.exit(1)
-    
-    if args.check:
-        # Human-readable status
-        if state["status"] == "not_started":
-            print(f"Backfill Status: not_started")
-            print(f"Target: {state['max_offset']} days ({state['total_runs_needed']} runs needed)")
-        elif state["status"] == "complete":
-            print(f"✅ Backfill COMPLETE")
-            print(f"Runs: {state['runs_completed']}")
-            print(f"Emails processed: {state['emails_processed']}")
-            print(f"Signals found: {state['signals_found']}")
-            print(f"Completed: {state['completed_at']}")
-        else:
-            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
-            window_start = state["current_offset"]
-            window_end = window_start + state["window_days"]
-            print(f"Backfill Status: {state['status']}")
-            print(f"Progress: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']} runs)")
-            print(f"Next window: {window_start}-{window_end} days ago")
-            print(f"Emails processed: {state['emails_processed']}")
-            print(f"Signals found: {state['signals_found']}")
-        
-        if args.json:
-            print(json.dumps(state, indent=2))
-        return
-    
-    if args.advance:
-        # Used by agent after successful scan
-        emails = args.emails_processed if args.emails_processed else 0
-        signals = args.signals_found if args.signals_found else 0
-        state = advance_backfill(emails_processed=emails, signals_found=signals)
-        
-        if state["status"] == "complete":
-            print(f"🎉 BACKFILL COMPLETE!")
-            print(f"Total runs: {state['runs_completed']}")
-            print(f"Total emails: {state['emails_processed']}")
-            print(f"Total signals: {state['signals_found']}")
-        else:
-            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
-            print(f"✓ Advanced to next window")
-            print(f"Progress: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']})")
-            print(f"Next offset: {state['current_offset']} days")
-        return
-    
-    # Default: show status
-    cmd_backfill_check(state, args.json if hasattr(args, 'json') else False)
-
-
-def cmd_backfill_check(state: dict, as_json: bool = False):
-    """Display backfill status."""
-    if as_json:
-        print(json.dumps(state, indent=2))
-    else:
-        if state["status"] == "not_started":
-            print(f"Backfill: not started (target: {state['max_offset']} days)")
-        elif state["status"] == "complete":
-            print(f"✅ Backfill complete ({state['runs_completed']} runs, {state['emails_processed']} emails)")
-        else:
-            pct = (state["runs_completed"] / max(state["total_runs_needed"], 1)) * 100
-            print(f"Backfill: {pct:.0f}% ({state['runs_completed']}/{state['total_runs_needed']})")
-
-
-# ============================================================
+# =============================================================================
 # CLI Interface
-# ============================================================
+# =============================================================================
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Email Deal Scanner - Scan Gmail for deal signals"
+        description="Email Deal Scanner - scan Gmail for deal intelligence",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python3 email_deal_scanner.py --days 7 --dry-run
+  python3 email_deal_scanner.py --scan-contacts --dry-run
+  python3 email_deal_scanner.py backfill --check
+"""
     )
     
-    subparsers = parser.add_subparsers(dest="command")
+    subparsers = parser.add_subparsers(dest='command')
+    
+    # Default scan command
+    parser.add_argument('--days', type=int, default=7, help='Days to search')
+    parser.add_argument('--offset', type=int, default=0, help='Days offset for backfill')
+    parser.add_argument('--max-queries', type=int, default=20, help='Max queries to generate')
+    parser.add_argument('--priority', choices=['hot', 'warm', 'all'], default='all')
+    parser.add_argument('--dry-run', action='store_true', help='Preview without processing')
+    parser.add_argument('--scan-contacts', action='store_true', help='Scan by contacts only')
+    parser.add_argument('--query', help='Custom Gmail query')
+    parser.add_argument('--json', action='store_true', help='Output as JSON')
     
     # Backfill subcommand
-    bp = subparsers.add_parser("backfill", help="Manage email backfill state")
-    bp.add_argument("--check", action="store_true", help="Show backfill status")
-    bp.add_argument("--complete", action="store_true", help="Check if complete (exit 0 if done, 1 if not)")
-    bp.add_argument("--advance", action="store_true", help="Advance to next window after scan")
-    bp.add_argument("--reset", action="store_true", help="Reset backfill state")
-    bp.add_argument("--max-offset", type=int, help=f"Max days to backfill (default: {BACKFILL_DEFAULT_MAX_OFFSET})")
-    bp.add_argument("--emails-processed", type=int, help="Emails processed in last run (for --advance)")
-    bp.add_argument("--signals-found", type=int, help="Signals found in last run (for --advance)")
-    bp.add_argument("--json", action="store_true", help="Output as JSON")
-    bp.set_defaults(func=cmd_backfill)
-    
-    # Main scan arguments
-    parser.add_argument(
-        "--days", type=int, default=7,
-        help="Number of days in search window (default: 7)"
-    )
-    parser.add_argument(
-        "--offset", type=int, default=0,
-        help="Days to skip from today for backfill (default: 0)"
-    )
-    parser.add_argument(
-        "--batch-size", type=int, default=50,
-        help="Max emails to process per run (default: 50)"
-    )
-    parser.add_argument(
-        "--max-queries", type=int, default=20,
-        help="Maximum number of search queries to generate (default: 20)"
-    )
-    parser.add_argument(
-        "--priority", choices=["hot", "warm", "all"], default="hot",
-        help="Filter contacts/deals by temperature (default: hot)"
-    )
-    parser.add_argument(
-        "--scan-contacts", action="store_true",
-        help="Generate queries for contacts (default mode)"
-    )
-    parser.add_argument(
-        "--query", type=str,
-        help="Custom Gmail search query"
-    )
-    parser.add_argument(
-        "--stats", action="store_true",
-        help="Show scan statistics"
-    )
-    parser.add_argument(
-        "--dry-run", action="store_true",
-        help="Don't write to database"
-    )
-    parser.add_argument(
-        "--json", action="store_true",
-        help="Output as JSON"
-    )
+    backfill_parser = subparsers.add_parser('backfill', help='Manage backfill progress')
+    backfill_parser.add_argument('--check', action='store_true', help='Check backfill status')
+    backfill_parser.add_argument('--advance', action='store_true', help='Advance backfill window')
+    backfill_parser.add_argument('--reset', action='store_true', help='Reset backfill progress')
     
     args = parser.parse_args()
     
-    if args.command == "backfill":
-        args.func(args)
+    # Handle backfill subcommand
+    if args.command == 'backfill':
+        if args.check:
+            state = get_backfill_state()
+            print(json.dumps(state, indent=2))
+        elif args.advance:
+            result = advance_backfill()
+            print(json.dumps(result, indent=2))
+        elif args.reset:
+            save_backfill_state({
+                'current_offset': 0,
+                'max_offset': BACKFILL_DEFAULT_MAX_OFFSET,
+                'last_run': None,
+                'emails_processed': 0
+            })
+            print("Backfill state reset")
         return
     
-    if args.stats:
-        stats = get_scan_stats()
-        if args.json:
-            print(json.dumps(stats, indent=2))
-        else:
-            print(f"Total processed: {stats['total_processed']}")
-            print(f"With signals: {stats['with_signals']}")
-            print(f"Unique deals: {stats['unique_deals']}")
-            print("\nDaily counts (last 7 days):")
-            for day in stats['daily_counts']:
-                print(f"  {day['date']}: {day['count']}")
-        return
-    
-    # Generate search queries
-    queries = build_search_queries(
+    # Generate queries
+    queries = get_search_queries(
         days=args.days,
         max_queries=args.max_queries,
         priority=args.priority,
         offset=args.offset
     )
     
-    if args.query:
-        queries.insert(0, SearchQuery(
-            query=args.query,
-            context_type="custom",
-            context_id=None,
-            context_name="Custom query",
-            pipeline=None
-        ))
-    
-    # Calculate date range for display
-    end_date = datetime.now() - timedelta(days=args.offset)
-    start_date = end_date - timedelta(days=args.days)
-    date_range = f"{start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}"
-    
-    output = {
-        "mode": "query_generation",
-        "dry_run": args.dry_run,
-        "days": args.days,
-        "offset": args.offset,
-        "date_range": date_range,
-        "batch_size": args.batch_size,
-        "queries": [asdict(q) for q in queries],
-        "instructions": f"""
-To execute these queries, Zo should:
-1. For each query, call: use_app_gmail(
-     tool_name="gmail-find-email",
-     configured_props={{"q": query["query"], "maxResults": {args.batch_size // len(queries) if queries else 10}}}
-   )
-2. Parse results using email_deal_scanner.parse_gmail_response()
-3. Process each email using email_deal_scanner.process_email()
-4. Report summary of signals found
-5. Total batch limit: {args.batch_size} emails
-        """
-    }
-    
     if args.json:
-        print(json.dumps(output, indent=2))
+        print(json.dumps([asdict(q) for q in queries], indent=2))
     else:
-        print(f"Generated {len(queries)} search queries for Gmail")
-        print(f"Date range: {date_range} (offset: {args.offset} days)")
-        print(f"Batch size: {args.batch_size}")
-        print("\nQueries:")
-        for i, q in enumerate(queries, 1):
-            print(f"  {i}. [{q.context_type}] {q.context_name}")
-            print(f"     Query: {q.query}")
-        print("\n" + output["instructions"])
+        print(f"Generated {len(queries)} search queries:")
+        for i, q in enumerate(queries[:5], 1):
+            print(f"  {i}. [{q.context_type}] {q.context_name}: {q.query[:60]}...")
+        if len(queries) > 5:
+            print(f"  ... and {len(queries) - 5} more")
 
 
 if __name__ == "__main__":

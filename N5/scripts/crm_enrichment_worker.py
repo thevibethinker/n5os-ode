@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-CRM V3 Enrichment Worker - Tool-First Architecture
+CRM Enrichment Worker - Unified Database Version
 
-Under Stakeholder Intelligence Interface Contract (V1).
+Manages enrichment for people in the CRM using the unified n5_core.db database.
 
-- Manages enrichment_queue in N5/data/crm_v3.db.
-- Delegates Aviato enrichment to enrichment.aviato_enricher.
-- Writes back enrichment status to crm_v3.db.
-- Appends Intelligence Log entries into Personal/Knowledge/CRM/individuals/<slug>.md.
+Updated 2026-01-19: Migrated from crm_v3.db/profiles to n5_core.db/people table.
 
-Viewer/join responsibilities remain in stakeholder_intel.py.
+Features:
+- Reads from n5_core.db/people table
+- Delegates Aviato enrichment to enrichment.aviato_enricher
+- Updates enrichment status in people table
+- Appends Intelligence Log entries to markdown profiles
 
 NOTE: Nyne integration removed 2026-01-11 due to rate limiting issues.
 """
 
 import sys
 import os
-import sqlite3
 import asyncio
 import argparse
 import json
@@ -25,227 +25,116 @@ from pathlib import Path
 
 # Add workspace to path for imports
 sys.path.insert(0, '/home/workspace')
-from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
-# Nyne removed 2026-01-11 - rate limit issues
-from N5.scripts.stakeholder_intel import extract_linkedin_metadata, query_linkedin_conversation
 
-# Import canonical paths
-import sys as _sys
-_sys.path.insert(0, str(Path(__file__).parent))
-from crm_paths import CRM_INDIVIDUALS, CRM_DB
+# Import unified database paths
+from N5.scripts.db_paths import (
+    get_db_connection, 
+    N5_CORE_DB,
+    PEOPLE_TABLE,
+    ORGANIZATIONS_TABLE
+)
 
-# Note: enrichment_queue lives in crm_v3.db (has queue-specific tables)
-# Output goes to canonical CRM_MARKDOWN_DIR
-from N5.lib.paths import CRM_DB, CRM_PROFILES_DIR
-DB_PATH = CRM_DB  # Enrichment queue DB
-PROFILES_DIR = CRM_PROFILES_DIR  # Legacy YAML (for queue lookups)
+# Import enrichment tools
+try:
+    from N5.scripts.enrichment.aviato_enricher import enrich_via_aviato
+    AVIATO_AVAILABLE = True
+except ImportError:
+    AVIATO_AVAILABLE = False
+    print("Warning: Aviato enricher not available", file=sys.stderr)
+
+# Import stakeholder intel (optional)
+try:
+    from N5.scripts.stakeholder_intel import extract_linkedin_metadata, query_linkedin_conversation
+    LINKEDIN_INTEL_AVAILABLE = True
+except ImportError:
+    LINKEDIN_INTEL_AVAILABLE = False
+
+# Paths
 WORKSPACE = Path("/home/workspace")
-CRM_MARKDOWN_DIR = CRM_INDIVIDUALS  # Canonical output location
-STAGING_DIR = WORKSPACE / "N5" / "data" / "staging" / "aviato"
-# NYNE_STAGING_DIR removed 2026-01-11
+CRM_MARKDOWN_DIR = WORKSPACE / "Personal/Knowledge/CRM/individuals"
+STAGING_DIR = WORKSPACE / "N5/data/staging/aviato"
 
 
-def fetch_next_enrichment_job():
+def get_people_needing_enrichment(limit: int = 10) -> list:
     """
-    Fetch next queued job from enrichment_queue.
-    Returns job dict or None if queue is empty.
+    Get people who need enrichment.
+    
+    Returns list of people without recent enrichment data.
     """
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    c = conn.cursor()
+    conn = get_db_connection(readonly=True)
+    cursor = conn.cursor()
     
-    c.execute(
-        """
-        SELECT eq.*, p.email, p.primary_email, p.yaml_path,
-               p.person_type, p.enrichment_policy, p.enrichment_status
-        FROM enrichment_queue eq
-        JOIN profiles p ON eq.profile_id = p.id
-        WHERE eq.status = 'queued'
-          AND eq.scheduled_for <= datetime('now')
-        ORDER BY eq.priority DESC, eq.scheduled_for ASC
-        LIMIT 1
-        """
-    )
+    # Get people with email but missing linkedin data or not recently updated
+    cursor.execute(f"""
+        SELECT id, full_name, email, company, title, linkedin_url, markdown_path
+        FROM {PEOPLE_TABLE}
+        WHERE email IS NOT NULL
+          AND status = 'active'
+          AND (linkedin_url IS NULL OR linkedin_url = '')
+        ORDER BY 
+            CASE 
+                WHEN category IN ('INVESTOR', 'CUSTOMER', 'FOUNDER') THEN 1
+                WHEN category = 'ADVISOR' THEN 2
+                ELSE 3
+            END,
+            created_at DESC
+        LIMIT ?
+    """, (limit,))
     
-    job = c.fetchone()
+    results = [dict(row) for row in cursor.fetchall()]
     conn.close()
-    
-    if job:
-        return dict(job)
-    return None
+    return results
 
 
-def update_job_status(job_id: int, status: str, error_message: str = None):
-    """Update job status in database"""
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    
-    if status == 'processing':
-        c.execute(
-            """
-            UPDATE enrichment_queue
-            SET status = ?,
-                last_attempt_at = datetime('now'),
-                attempt_count = attempt_count + 1
-            WHERE id = ?
-            """,
-            (status, job_id),
-        )
-    elif status == 'completed':
-        c.execute(
-            """
-            UPDATE enrichment_queue
-            SET status = ?,
-                completed_at = datetime('now')
-            WHERE id = ?
-            """,
-            (status, job_id),
-        )
-    elif status == 'failed':
-        c.execute(
-            """
-            UPDATE enrichment_queue
-            SET status = ?,
-                error_message = ?
-            WHERE id = ?
-            """,
-            (status, error_message, job_id),
-        )
-    
-    conn.commit()
-    conn.close()
-
-
-def update_profile_enrichment_status(
-    profile_id: int,
-    status: str,
-    source: str | None = None,
-    error: str | None = None,
-):
-    """Write enrichment status fields back to profiles table."""
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    fields = ["enrichment_status = ?", "last_enriched_at = datetime('now')"]
-    params: list[object] = [status]
-    if source is not None:
-        fields.append("last_enrichment_source = ?")
-        params.append(source)
-    if error is not None:
-        fields.append("last_enrichment_error = ?")
-        params.append(error)
-    c.execute(
-        f"UPDATE profiles SET {', '.join(fields)} WHERE id = ?",
-        (*params, profile_id),
-    )
-    conn.commit()
-    conn.close()
-
-
-def _load_profile_slug(cursor, profile_id: int) -> str | None:
-    """Look up YAML profile row and return the slug portion if resolvable.
-
-    Assumes yaml_path in crm_v3 profiles table points to N5/crm_v3/profiles/<slug>.yaml.
-    We map that <slug> to canonical CRM markdown path Personal/Knowledge/CRM/individuals/<slug>.md.
+def update_person_enrichment(person_id: int, data: dict, status: str = 'succeeded'):
     """
-    cursor.execute("SELECT yaml_path FROM profiles WHERE id = ?", (profile_id,))
-    row = cursor.fetchone()
-    if not row:
-        return None
-    yaml_path = row[0] or ""
-    name = Path(yaml_path).stem
-    return name or None
-
-
-def _generate_canonical_slug(full_name: str) -> str:
-    """Generate a canonical slug from a full name.
-    
-    Examples:
-        "Julien Khaleghy" -> "julien-khaleghy"
-        "John O'Brien" -> "john-obrien"
-        "Mary Jane Watson-Smith" -> "mary-jane-watson-smith"
-    """
-    import re
-    if not full_name:
-        return ""
-    # Lowercase, replace spaces with hyphens, remove non-alphanumeric except hyphens
-    slug = full_name.lower().strip()
-    slug = re.sub(r"['\"]", "", slug)  # Remove apostrophes and quotes
-    slug = re.sub(r"[^a-z0-9\s-]", "", slug)  # Remove other special chars
-    slug = re.sub(r"\s+", "-", slug)  # Replace spaces with hyphens
-    slug = re.sub(r"-+", "-", slug)  # Collapse multiple hyphens
-    slug = slug.strip("-")  # Remove leading/trailing hyphens
-    return slug
-
-
-def _rename_enriched_profile(slug: str, aviato_data: dict | None) -> str:
-    """Rename a *-NotYetEnriched profile to its canonical slug after enrichment.
+    Update person record with enrichment data.
     
     Args:
-        slug: Current file slug (without .md extension)
-        aviato_data: Enrichment data containing 'full_name' key
-        
-    Returns:
-        New slug if renamed, or original slug if no rename needed/possible
+        person_id: ID of the person
+        data: Enrichment data dict (from Aviato)
+        status: 'succeeded', 'failed', 'not_found'
     """
-    # Only rename if current slug contains NotYetEnriched
-    if "-NotYetEnriched" not in slug and "-notyetenriched" not in slug.lower():
-        return slug
+    conn = get_db_connection()
+    cursor = conn.cursor()
     
-    # Determine new slug from aviato data or strip the suffix
-    new_slug = None
-    if aviato_data and aviato_data.get("full_name"):
-        new_slug = _generate_canonical_slug(aviato_data["full_name"])
+    updates = []
+    params = []
     
-    if not new_slug:
-        # Fall back: strip -NotYetEnriched suffix
-        new_slug = slug.replace("-NotYetEnriched", "").replace("-notyetenriched", "")
-        new_slug = new_slug.strip("-").lower()
-    
-    if not new_slug or new_slug == slug:
-        return slug
-    
-    # Check paths
-    old_path = CRM_MARKDOWN_DIR / f"{slug}.md"
-    new_path = CRM_MARKDOWN_DIR / f"{new_slug}.md"
-    
-    if not old_path.exists():
-        print(f"  ⚠ Cannot rename: source file not found: {old_path}")
-        return slug
-    
-    if new_path.exists():
-        print(f"  ⚠ Cannot rename: target file already exists: {new_path}")
-        return slug
-    
-    # Perform the rename
-    try:
-        old_path.rename(new_path)
-        print(f"  📝 Renamed: {slug}.md → {new_slug}.md")
+    # Map Aviato data to people table columns
+    if data:
+        if data.get('linkedin_url'):
+            updates.append('linkedin_url = ?')
+            params.append(data['linkedin_url'])
         
-        # Update person_id in frontmatter
-        content = new_path.read_text(encoding="utf-8", errors="ignore")
-        if f"person_id: {slug}" in content:
-            content = content.replace(f"person_id: {slug}", f"person_id: {new_slug}")
-            new_path.write_text(content, encoding="utf-8")
+        if data.get('company') and not data.get('_skip_company'):
+            updates.append('company = COALESCE(company, ?)')
+            params.append(data['company'])
         
-        return new_slug
-    except Exception as e:
-        print(f"  ⚠ Rename failed: {e}")
-        return slug
+        if data.get('title') and not data.get('_skip_title'):
+            updates.append('title = COALESCE(title, ?)')
+            params.append(data['title'])
+    
+    # Always update timestamp
+    updates.append('updated_at = CURRENT_TIMESTAMP')
+    
+    if updates:
+        params.append(person_id)
+        cursor.execute(f"""
+            UPDATE {PEOPLE_TABLE}
+            SET {', '.join(updates)}
+            WHERE id = ?
+        """, params)
+        conn.commit()
+    
+    conn.close()
 
 
 def _append_intel_log(slug: str, heading: str, body: str) -> None:
-    """Append a timestamped Intelligence Log entry into the CRM markdown file for slug.
-
-    Format:
-    ### YYYY-MM-DD HH:MM | <heading>
-
-    <body>
-
-    If the file or Intelligence Log section is missing, create them.
-    """
+    """Append intelligence log entry to markdown profile."""
     path = CRM_MARKDOWN_DIR / f"{slug}.md"
+    
     if not path.exists():
-        # Do not create new identities here; that should be done by dedicated CRM tools.
         return
 
     text = path.read_text(encoding="utf-8", errors="ignore")
@@ -268,10 +157,7 @@ def _append_intel_log(slug: str, heading: str, body: str) -> None:
 
 
 def save_aviato_raw_json(slug: str, data: dict) -> Path | None:
-    """Save raw Aviato response JSON to staging directory.
-    
-    Returns path to saved file, or None if save failed.
-    """
+    """Save raw Aviato response JSON to staging directory."""
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
     filename = f"{slug}.json"
     path = STAGING_DIR / filename
@@ -284,448 +170,296 @@ def save_aviato_raw_json(slug: str, data: dict) -> Path | None:
         return None
 
 
-def _append_linkedin_intel(slug: str) -> None:
-    """Append a LinkedIn Intelligence snapshot for this slug, if metadata & data exist.
+def get_slug_from_email(email: str) -> str:
+    """Generate a slug from email address."""
+    if not email:
+        return "unknown"
+    return email.split('@')[0].lower().replace('.', '-').replace('+', '-')
 
-    Uses existing helpers from stakeholder_intel.py to read CRM markdown and query
-    Knowledge/linkedin/linkedin.db. Does nothing if there is no LinkedIn metadata
-    or no matching conversation.
+
+async def enrich_person(person: dict) -> dict:
     """
-    md_path = CRM_MARKDOWN_DIR / f"{slug}.md"
-    if not md_path.exists():
-        return
-
-    md = md_path.read_text(encoding="utf-8", errors="ignore")
-    meta = extract_linkedin_metadata(md)
-    convo_id = meta.get("linkedin_conversation_id")
-    if not convo_id:
-        return
-
-    li_conv = query_linkedin_conversation(convo_id)
-    if not li_conv:
-        return
-
-    conv = li_conv["conversation"]
-    messages = li_conv["messages"][:5]
-
-    lines: list[str] = []
-    lines.append("**Source:** linkedin_kondo")
-    lines.append("")
-    lines.append("**LinkedIn Intelligence:**")
-    lines.append(f"- Name: {conv['participant_name']}")
-    if conv.get("participant_email"):
-        lines.append(f"- Email: {conv['participant_email']}")
-    if conv.get("linkedin_profile_url"):
-        lines.append(f"- Profile URL: {conv['linkedin_profile_url']}")
-    lines.append(f"- Status: {conv['status']}")
-    lines.append(f"- Messages: {conv['message_count']}")
-    lines.append("")
-    if messages:
-        lines.append("Recent messages:")
-        for msg in messages:
-            sent_at = msg.get("sent_at")
-            try:
-                ts = datetime.fromtimestamp(sent_at / 1000.0, tz=timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M %Z") if isinstance(sent_at, int) else str(sent_at)
-            except Exception:
-                ts = str(sent_at)
-            sender = msg.get("sender", "?")
-            content = msg.get("content", "").replace("\n", " ")
-            if len(content) > 160:
-                content = content[:157] + "..."
-            lines.append(f"- [{ts}] {sender}: {content}")
-
-    body = "\n".join(lines)
-    _append_intel_log(slug, "linkedin_intelligence", body)
-
-
-async def enrich_profile_via_tools(profile_row: dict, cursor) -> dict:
-    """Enrich a single CRM profile using Aviato, return structured result.
-
-    profile_row is a row from the profiles table (NOT the queue join row).
-
-    Returns dict with keys:
-    - status: 'succeeded' | 'not_found' | 'failed'
-    - aviato_data: mapped CRM-style dict or None
-    - aviato_result: full Aviato result dict
-    - error: short error string if failed/not_found
-    - slug: CRM slug if resolvable
-    """
-    profile_id = profile_row["id"]
-    raw_email = profile_row["email"]
-    primary_email = profile_row.get("primary_email")
-    email = primary_email or raw_email
+    Enrich a single person using Aviato.
     
-    # Get LinkedIn URL if available (improves Aviato results)
-    linkedin_url = profile_row.get("linkedin_url")
-
-    # Resolve CRM markdown slug for this profile id
-    slug = _load_profile_slug(cursor, profile_id)
-
-    # Call Aviato - returns dict with keys: success, data, error, markdown
-    aviato_result = None
+    Args:
+        person: Dict with id, full_name, email, linkedin_url
+        
+    Returns:
+        Dict with status, data, error
+    """
+    person_id = person['id']
+    email = person.get('email')
+    linkedin_url = person.get('linkedin_url')
+    full_name = person.get('full_name', 'Unknown')
+    
+    print(f"  Enriching: {full_name} ({email})")
+    
+    if not AVIATO_AVAILABLE:
+        return {
+            'status': 'failed',
+            'data': None,
+            'error': 'Aviato enricher not available'
+        }
+    
+    # Call Aviato
     try:
         aviato_result = await enrich_via_aviato(email, linkedin_url=linkedin_url)
     except Exception as e:
-        aviato_result = {"success": False, "data": None, "error": str(e), "markdown": None}
-
+        return {
+            'status': 'failed',
+            'data': None,
+            'error': str(e)
+        }
+    
     aviato_data = aviato_result.get('data') if aviato_result else None
     aviato_success = aviato_result.get('success', False) if aviato_result else False
-
-    # Determine overall status (Aviato-only)
+    
+    # Determine status
     if aviato_data:
-        status = "succeeded"
+        status = 'succeeded'
         error = None
+        
+        # Update the person record
+        update_person_enrichment(person_id, aviato_data, status)
+        
+        # Save raw JSON
+        slug = get_slug_from_email(email)
+        json_path = save_aviato_raw_json(slug, aviato_data)
+        if json_path:
+            print(f"  💾 Aviato raw JSON saved to {json_path}")
+        
+        # Append to intel log
+        body_lines = ["**Source:** aviato_api", "", "**Aviato Professional Intelligence:**"]
+        for k, v in aviato_data.items():
+            if isinstance(v, (str, int)) and v and not k.startswith('_'):
+                body_lines.append(f"- {k}: {v}")
+        _append_intel_log(slug, "aviato_enrichment", "\n".join(body_lines))
+        
     elif aviato_success:
-        # Succeeded but no data found
-        status = "not_found"
+        status = 'not_found'
         error = None
     else:
-        status = "failed"
-        error = aviato_result.get('error') if aviato_result else "Unknown error"
-
+        status = 'failed'
+        error = aviato_result.get('error') if aviato_result else 'Unknown error'
+    
     return {
-        "status": status,
-        "aviato_data": aviato_data,
-        "aviato_result": aviato_result,
-        "error": error,
-        "slug": slug,
-        "markdown": aviato_result.get('markdown') if aviato_result else None
+        'status': status,
+        'data': aviato_data,
+        'error': error
     }
 
 
-async def process_enrichment_job(job: dict, dry_run: bool = False) -> None:
-    """Process a single enrichment_queue job and update DB + CRM markdown.
-
-    Opens its own DB connection, loads the profile row, calls Aviato + Nyne enrichment,
-    writes back statuses, and appends Aviato + Nyne + LinkedIn intel to CRM markdown.
-    """
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-
-    job_id = job["id"]
-    profile_id = job["profile_id"]
-
-    # Load full profile row from profiles
-    cursor.execute("SELECT * FROM profiles WHERE id = ?", (profile_id,))
-    row = cursor.fetchone()
-    if not row:
-        conn.close()
-        return
-    profile_row = {desc[0]: value for desc, value in zip(cursor.description, row)}
-
-    person_type = (profile_row.get("person_type") or "").lower()
-    policy = (profile_row.get("enrichment_policy") or "").lower()
-
-    print(f"\n📋 Processing job {job_id}: profile {profile_id} ({profile_row.get('email')})")
-    print(f"   Checkpoint: {job['checkpoint']}")
-
-    # Policy gate: skip internal and never-policy profiles
-    if person_type == "internal":
-        print("  ↷ Skipping internal profile (policy: never)")
-        update_profile_enrichment_status(profile_id, "skipped_internal", source=None, error=None)
-        update_job_status(job_id, "completed")
-        conn.close()
-        return
-
-    if policy == "never":
-        print("  ↷ Skipping profile due to enrichment_policy=never")
-        update_profile_enrichment_status(profile_id, "skipped_policy", source=None, error=None)
-        update_job_status(job_id, "completed")
-        conn.close()
-        return
-
-    # Mark as processing in the queue
-    update_job_status(job_id, "processing")
-
-    # Run Aviato + Nyne enrichment
-    result = await enrich_profile_via_tools(profile_row, cursor)
-
-    slug = result.get("slug")
-    if slug:
-        # Append Aviato intelligence
-        if result["status"] == "succeeded" and result["aviato_data"]:
-            # Save raw JSON to staging
-            json_path = save_aviato_raw_json(slug, result["aviato_data"])
-            if json_path:
-                print(f"  💾 Aviato raw JSON saved to {json_path}")
-            
-            body_lines = ["**Source:** aviato_api", "", "**Aviato Professional Intelligence:**"]
-            for k, v in result["aviato_data"].items():
-                if isinstance(v, (str, int)) and v:
-                    body_lines.append(f"- {k}: {v}")
-            body = "\n".join(body_lines)
-            _append_intel_log(slug, "aviato_enrichment", body)
-            
-            # Rename *-NotYetEnriched files to canonical slug after successful enrichment
-            new_slug = _rename_enriched_profile(slug, result["aviato_data"])
-            if new_slug != slug:
-                slug = new_slug  # Update slug for subsequent operations
-        elif result["aviato_result"] and result["aviato_result"].get("error"):
-            body = f"**Source:** aviato_api\n\n- Status: {result['status']}\n- Error: {result['aviato_result'].get('error')}"
-            _append_intel_log(slug, "aviato_enrichment_error", body)
-
-        # Always try to append LinkedIn intelligence if metadata exists
-        _append_linkedin_intel(slug)
-
-    # Update DB status for job/profile
-    sources = []
-    if result["aviato_data"]:
-        sources.append("aviato_api")
-    source_str = "+".join(sources) if sources else "none"
-    
-    if result["status"] == "succeeded":
-        update_profile_enrichment_status(profile_id, "succeeded", source=source_str, error=None)
-        update_job_status(job_id, "completed")
-    elif result["status"] in {"failed", "not_found"}:
-        update_profile_enrichment_status(profile_id, result["status"], source=source_str, error=result.get("error"))
-        update_job_status(job_id, "failed", error_message=result.get("error") or "unknown error")
-
-    conn.close()
-
-
-async def enrichment_worker_loop(test_mode: bool = False, dry_run: bool = False):
+async def enrichment_worker_loop(test_mode: bool = False, dry_run: bool = False, limit: int = 5):
     """
     Main worker loop.
     
     Args:
-        test_mode: Process one job and exit
-        dry_run: Fetch jobs but don't process
+        test_mode: Process one person and exit
+        dry_run: Show what would be processed without processing
+        limit: Maximum people to process per run
     """
     print("🚀 CRM Enrichment Worker Starting")
     print(f"   Mode: {'TEST' if test_mode else 'DRY-RUN' if dry_run else 'PRODUCTION'}")
-    print(f"   DB: {DB_PATH}")
-    print(f"   Profiles: {PROFILES_DIR}")
+    print(f"   DB: {N5_CORE_DB}")
+    print(f"   Profiles: {CRM_MARKDOWN_DIR}")
     print()
     
-    iteration = 0
-    while True:
-        iteration += 1
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] Checking queue (iteration {iteration})...")
-        
-        job = fetch_next_enrichment_job()
-        
-        if not job:
-            print("  ∅ Queue empty")
-            if test_mode:
-                print("\n✓ Test mode: No jobs found, exiting")
-                break
-            await asyncio.sleep(60)
-            continue
-        
-        if dry_run:
-            print(f"  → Would process job {job['id']}: {job['email']} ({job['checkpoint']})")
-            if test_mode:
-                print("\n✓ Dry-run complete, exiting")
-                break
-            await asyncio.sleep(60)
-            continue
-        
-        # Process the job
-        await process_enrichment_job(job, dry_run=dry_run)
-        
-        if test_mode:
-            print("\n✓ Test mode: Processed one job, exiting")
-            break
-        
-        # Brief pause before next iteration
-        await asyncio.sleep(5)
-
-
-def create_test_enrichment_job():
-    """Create a test enrichment job for the first profile"""
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
+    # Get people needing enrichment
+    people = get_people_needing_enrichment(limit=limit if not test_mode else 1)
     
-    # Get first profile with email
-    c.execute("SELECT id, email FROM profiles WHERE email IS NOT NULL LIMIT 1")
-    row = c.fetchone()
-    
-    if not row:
-        print("✗ No profiles with email found")
-        conn.close()
+    if not people:
+        print("✓ No people need enrichment")
         return
     
-    profile_id, email = row
+    print(f"Found {len(people)} people needing enrichment:")
+    for p in people:
+        print(f"  - {p['full_name']} ({p['email']})")
+    print()
     
-    # Insert test job
-    c.execute("""
-        INSERT INTO enrichment_queue 
-        (profile_id, priority, scheduled_for, checkpoint, trigger_source, trigger_metadata)
-        VALUES (?, 100, datetime('now'), 'checkpoint_1', 'manual_test', ?)
-    """, (profile_id, json.dumps({"email": email, "test": True})))
+    if dry_run:
+        print("DRY RUN - would process the above people")
+        return
     
-    job_id = c.lastrowid
-    conn.commit()
-    conn.close()
+    # Process each person
+    results = {'succeeded': 0, 'failed': 0, 'not_found': 0}
     
-    print(f"✓ Created test job {job_id} for profile {profile_id} ({email})")
+    for person in people:
+        result = await enrich_person(person)
+        results[result['status']] = results.get(result['status'], 0) + 1
+        
+        if result['status'] == 'succeeded':
+            print(f"  ✓ {person['full_name']}: Enriched successfully")
+        elif result['status'] == 'not_found':
+            print(f"  ○ {person['full_name']}: No data found")
+        else:
+            print(f"  ✗ {person['full_name']}: {result.get('error', 'Unknown error')}")
+        
+        if test_mode:
+            break
+    
+    print()
+    print("Summary:")
+    print(f"  Succeeded: {results['succeeded']}")
+    print(f"  Not found: {results['not_found']}")
+    print(f"  Failed: {results['failed']}")
 
 
-def queue_profiles_from_meeting(meeting_folder: str) -> dict:
+def queue_from_meeting(meeting_path_str: str) -> dict:
     """
-    Queue CRM profiles for enrichment based on meeting stakeholders.
+    Queue people from a meeting for enrichment.
     
-    Reads B03 from the meeting folder, extracts stakeholder names,
-    finds matching CRM profiles, and queues them for enrichment.
+    Reads stakeholders from meeting markdown and queues them.
     
-    Returns summary dict with queued, skipped, not_found counts.
+    Args:
+        meeting_path_str: Path to meeting folder
+        
+    Returns:
+        Dict with queued, skipped, not_found lists
     """
-    import re
-    from pathlib import Path
+    meeting_path = Path(meeting_path_str)
     
-    meeting_path = Path(meeting_folder)
-    b03_path = meeting_path / "B03_STAKEHOLDER_INTELLIGENCE.md"
+    # Find stakeholders.md
+    stakeholders_path = meeting_path / "stakeholders.md"
+    if not stakeholders_path.exists():
+        # Try alternate path
+        stakeholders_path = meeting_path / "Stakeholders.md"
+        if not stakeholders_path.exists():
+            return {"error": f"No stakeholders.md found in {meeting_path}"}
     
-    result = {
-        "meeting": meeting_path.name,
-        "queued": [],
-        "skipped": [],
-        "not_found": [],
-        "errors": []
-    }
-    
-    if not b03_path.exists():
-        result["errors"].append(f"B03 not found: {b03_path}")
-        return result
-    
-    # Extract stakeholder names from B03
-    b03_content = b03_path.read_text()
-    
-    # Match ### Name or ## Name patterns (excluding common headers)
-    skip_headers = {'participants', 'group dynamics', 'stakeholder intelligence', 'meeting context'}
-    stakeholder_pattern = re.compile(r'^#{2,3}\s+(.+?)(?:\s*\(|$)', re.MULTILINE)
-    
+    # Parse stakeholder names
+    text = stakeholders_path.read_text()
     names = []
-    for match in stakeholder_pattern.finditer(b03_content):
-        name = match.group(1).strip()
-        if name.lower() not in skip_headers and not name.startswith('B0'):
-            names.append(name)
+    for line in text.splitlines():
+        line = line.strip()
+        if line.startswith('- ') or line.startswith('* '):
+            name = line[2:].strip()
+            # Remove any markdown links
+            if '[' in name and ']' in name:
+                name = name.split(']')[0].replace('[', '')
+            if name:
+                names.append(name)
     
     if not names:
-        result["errors"].append("No stakeholders found in B03")
-        return result
+        return {"error": "No stakeholders found in file"}
     
-    # Connect to DB
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    c = conn.cursor()
+    result = {"queued": [], "skipped": [], "not_found": []}
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
     
     for name in names:
         # Skip V
         if name.lower() in ['vrijen', 'vrijen attawar', 'v']:
             continue
         
-        # Normalize name to slug pattern
-        name_slug = name.lower().replace(' ', '_').replace('-', '_')
-        name_parts = name.lower().split()
-        
-        # Search for matching profile by name
-        c.execute("""
-            SELECT id, email, enrichment_status, yaml_path 
-            FROM profiles 
-            WHERE LOWER(yaml_path) LIKE ? 
-               OR LOWER(yaml_path) LIKE ?
+        # Search for matching person by name
+        cursor.execute(f"""
+            SELECT id, full_name, email, linkedin_url
+            FROM {PEOPLE_TABLE}
+            WHERE full_name LIKE ?
             LIMIT 1
-        """, (f"%{name_slug}%", f"%{'_'.join(name_parts)}%"))
+        """, (f"%{name}%",))
         
-        row = c.fetchone()
+        row = cursor.fetchone()
         
         if not row:
             result["not_found"].append(name)
             continue
         
-        profile_id = row['id']
-        enrichment_status = row['enrichment_status'] or ''
-        
-        # Skip if already enriched successfully
-        if enrichment_status in ('succeeded', 'completed'):
+        # Skip if already has linkedin data
+        if row['linkedin_url']:
             result["skipped"].append(f"{name} (already enriched)")
             continue
         
-        # Check if already queued
-        c.execute("""
-            SELECT id FROM enrichment_queue 
-            WHERE profile_id = ? AND status IN ('queued', 'processing')
-        """, (profile_id,))
-        
-        if c.fetchone():
-            result["skipped"].append(f"{name} (already in queue)")
-            continue
-        
-        # Queue for enrichment
-        c.execute("""
-            INSERT INTO enrichment_queue 
-            (profile_id, priority, scheduled_for, checkpoint, trigger_source, trigger_metadata)
-            VALUES (?, 50, datetime('now'), 'checkpoint_1', 'meeting_sync', ?)
-        """, (profile_id, json.dumps({
-            "meeting": meeting_path.name,
-            "stakeholder_name": name
-        })))
-        
-        result["queued"].append(name)
+        result["queued"].append({
+            'id': row['id'],
+            'name': row['full_name'],
+            'email': row['email']
+        })
     
-    conn.commit()
     conn.close()
     
     return result
 
 
+def show_enrichment_stats():
+    """Show enrichment statistics."""
+    conn = get_db_connection(readonly=True)
+    cursor = conn.cursor()
+    
+    # Total people
+    cursor.execute(f"SELECT COUNT(*) FROM {PEOPLE_TABLE}")
+    total = cursor.fetchone()[0]
+    
+    # With LinkedIn
+    cursor.execute(f"""
+        SELECT COUNT(*) FROM {PEOPLE_TABLE}
+        WHERE linkedin_url IS NOT NULL AND linkedin_url != ''
+    """)
+    with_linkedin = cursor.fetchone()[0]
+    
+    # With email but no LinkedIn
+    cursor.execute(f"""
+        SELECT COUNT(*) FROM {PEOPLE_TABLE}
+        WHERE email IS NOT NULL 
+          AND (linkedin_url IS NULL OR linkedin_url = '')
+    """)
+    needs_enrichment = cursor.fetchone()[0]
+    
+    # By category needing enrichment
+    cursor.execute(f"""
+        SELECT category, COUNT(*) as count
+        FROM {PEOPLE_TABLE}
+        WHERE email IS NOT NULL 
+          AND (linkedin_url IS NULL OR linkedin_url = '')
+        GROUP BY category
+        ORDER BY count DESC
+    """)
+    by_category = cursor.fetchall()
+    
+    conn.close()
+    
+    print("\n" + "=" * 50)
+    print("Enrichment Statistics")
+    print("=" * 50)
+    print(f"\nTotal people: {total}")
+    print(f"With LinkedIn: {with_linkedin} ({100*with_linkedin/total:.1f}%)" if total > 0 else "With LinkedIn: 0")
+    print(f"Needs enrichment: {needs_enrichment}")
+    print("\nBy category (needs enrichment):")
+    for row in by_category:
+        cat = row['category'] or 'Uncategorized'
+        print(f"  {cat}: {row['count']}")
+    print()
+
+
 def main():
     """CLI entry point"""
-    parser = argparse.ArgumentParser(description='CRM V3 Enrichment Worker')
-    parser.add_argument('--test', action='store_true', help='Test mode: Process one job and exit')
+    parser = argparse.ArgumentParser(description='CRM Enrichment Worker (n5_core.db)')
+    parser.add_argument('--test', action='store_true', help='Test mode: Process one person and exit')
     parser.add_argument('--dry-run', action='store_true', help='Dry run: Show what would be processed')
-    parser.add_argument('--create-test-job', action='store_true', help='Create a test enrichment job')
+    parser.add_argument('--limit', type=int, default=5, help='Max people to process (default: 5)')
     parser.add_argument('--queue-from-meeting', type=str, metavar='FOLDER',
-                        help='Queue profiles from meeting stakeholders for enrichment')
-    parser.add_argument('--process-next', action='store_true', help='Process next queued job and exit')
+                        help='Queue people from meeting stakeholders for enrichment')
+    parser.add_argument('--stats', action='store_true', help='Show enrichment statistics')
     
     args = parser.parse_args()
     
-    if args.queue_from_meeting:
-        result = queue_profiles_from_meeting(args.queue_from_meeting)
-        print(json.dumps(result, indent=2))
+    if args.stats:
+        show_enrichment_stats()
         return
     
-    if args.create_test_job:
-        create_test_enrichment_job()
+    if args.queue_from_meeting:
+        result = queue_from_meeting(args.queue_from_meeting)
+        print(json.dumps(result, indent=2))
         return
     
     # Run worker loop
     asyncio.run(enrichment_worker_loop(
         test_mode=args.test,
-        dry_run=args.dry_run
+        dry_run=args.dry_run,
+        limit=args.limit
     ))
 
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

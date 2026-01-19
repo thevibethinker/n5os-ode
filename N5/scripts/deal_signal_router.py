@@ -2,11 +2,13 @@
 """ 
 Deal Signal Router — Worker 1 (Signal Router Core)
 
+Uses unified n5_core.db database with people table and deal_roles junction.
+
 Purpose:
 - Accept signals (sms/email/meeting/kondo)
 - Match to existing deal (LLM-assisted + heuristic fallback)
 - Extract structured intelligence (LLM-assisted + heuristic fallback)
-- Update deals.db (stage/next_action/last_touched) and log activities
+- Update deals and log activities
 
 This module is intentionally "core only": it does NOT require Notion.
 Notion sync is handled by Worker 3.
@@ -24,30 +26,27 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sqlite3
 from dataclasses import dataclass
 from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Tuple
-
-# Ensure we can import from the same directory
 import sys
-from pathlib import Path
+
 _SCRIPT_DIR = Path(__file__).parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
+from db_paths import get_db_connection, N5_CORE_DB
 from deal_llm_prompts import DEAL_MATCH_PROMPT, SIGNAL_EXTRACTION_PROMPT
 
-DB_PATH_DEFAULT = "/home/workspace/N5/data/deals.db"
 CONFIG_PATH_DEFAULT = "/home/workspace/N5/config/deal_signal_config.json"
 
 
 @dataclass
 class DealMatch:
     deal_id: Optional[str]
-    contact_id: Optional[str]
+    person_id: Optional[int]  # Changed from contact_id to person_id
     confidence: int
     match_reason: str
 
@@ -115,11 +114,9 @@ def _similarity(a: str, b: str) -> float:
 class DealSignalRouter:
     def __init__(
         self,
-        db_path: str = DB_PATH_DEFAULT,
         config_path: str = CONFIG_PATH_DEFAULT,
         llm_callable: Optional[Callable[[str], str]] = None,
     ):
-        self.db_path = db_path
         self.config_path = config_path
         self.config = self._load_config(config_path)
         self.llm_callable = llm_callable or self._default_llm_callable
@@ -151,10 +148,9 @@ class DealSignalRouter:
 
         return json.loads(p.read_text())
 
-    def _get_db(self) -> sqlite3.Connection:
-        conn = sqlite3.connect(self.db_path)
-        conn.row_factory = sqlite3.Row
-        return conn
+    def _get_db(self):
+        """Get database connection using unified db_paths."""
+        return get_db_connection()
 
     def _default_llm_callable(self, prompt: str) -> str:
         """Best-effort local LLM call wrapper.
@@ -162,14 +158,11 @@ class DealSignalRouter:
         NOTE: Unit tests should inject their own llm_callable.
         """
         try:
-            # Same directory import
             from llm_call import call_llm  # type: ignore
-
             return call_llm(prompt)
         except Exception:
             try:
                 from helpers.llm_helper import call_llm  # type: ignore
-
                 resp = call_llm(prompt, timeout=int(self.config.get("llm", {}).get("timeout_seconds", 30)))
                 return resp or ""
             except Exception:
@@ -183,30 +176,28 @@ class DealSignalRouter:
         limit_sql = "" if limit is None else f"LIMIT {int(limit)}"
         conn = self._get_db()
         c = conn.cursor()
-        c.execute(
-            f"""
-            SELECT id, pipeline, company, temperature, stage, primary_contact
+        c.execute(f"""
+            SELECT id, pipeline, company, temperature, stage
             FROM deals
             ORDER BY pipeline, company
             {limit_sql}
-            """
-        )
+        """)
         rows = [dict(r) for r in c.fetchall()]
         conn.close()
         return rows
 
-    def load_contacts(self, limit: Optional[int] = None) -> List[dict]:
+    def load_people_with_roles(self, limit: Optional[int] = None) -> List[dict]:
+        """Load people who have deal_roles (linked to deals)."""
         limit_sql = "" if limit is None else f"LIMIT {int(limit)}"
         conn = self._get_db()
         c = conn.cursor()
-        c.execute(
-            f"""
-            SELECT id, contact_type, pipeline, full_name, company, associated_deal_id
-            FROM deal_contacts
-            ORDER BY contact_type, full_name
+        c.execute(f"""
+            SELECT p.id, p.full_name, p.company, p.email, dr.role, dr.deal_id
+            FROM people p
+            JOIN deal_roles dr ON p.id = dr.person_id
+            ORDER BY p.full_name
             {limit_sql}
-            """
-        )
+        """)
         rows = [dict(r) for r in c.fetchall()]
         conn.close()
         return rows
@@ -225,23 +216,21 @@ class DealSignalRouter:
 
     def match_deal(self, query: str, context: str = "") -> DealMatch:
         deals_limit = int(self.config.get("matching", {}).get("max_deals_to_include", 100))
-        contacts_limit = int(self.config.get("matching", {}).get("max_contacts_to_include", 50))
+        people_limit = int(self.config.get("matching", {}).get("max_contacts_to_include", 50))
 
         deals = self.load_deals(limit=deals_limit)
-        contacts = self.load_contacts(limit=contacts_limit)
+        people = self.load_people_with_roles(limit=people_limit)
 
-        deal_list = "\n".join(
-            [
-                f"- {d['id']} | {d['pipeline']} | {d['company']} | stage={d.get('stage') or '-'} | temp={d.get('temperature') or '-'}"
-                for d in deals
-            ]
-        )
-        contact_list = "\n".join(
-            [
-                f"- {c['id']} | {c['contact_type']} | {c['pipeline']} | {c['full_name']} | {c.get('company') or '-'} | associated_deal_id={c.get('associated_deal_id') or '-'}"
-                for c in contacts
-            ]
-        )
+        deal_list = "\n".join([
+            f"- {d['id']} | {d['pipeline']} | {d['company']} | stage={d.get('stage') or '-'} | temp={d.get('temperature') or '-'}"
+            for d in deals
+        ])
+        
+        # Format people list for LLM (now with deal_id from junction table)
+        contact_list = "\n".join([
+            f"- person_id={p['id']} | role={p['role']} | {p['full_name']} | {p.get('company') or '-'} | deal_id={p.get('deal_id') or '-'}"
+            for p in people
+        ])
 
         prompt = DEAL_MATCH_PROMPT.format(
             query=query,
@@ -253,35 +242,36 @@ class DealSignalRouter:
         llm_data = _safe_json_loads(self.llm_callable(prompt))
         if llm_data and isinstance(llm_data, dict):
             deal_id = llm_data.get("deal_id")
-            contact_id = llm_data.get("contact_id")
+            # Support both contact_id (legacy) and person_id
+            person_id = llm_data.get("person_id") or llm_data.get("contact_id")
             try:
                 confidence = int(llm_data.get("confidence", 0))
             except Exception:
                 confidence = 0
             match_reason = str(llm_data.get("match_reason", ""))
 
-            # If LLM matched contact_id but not deal_id, resolve via associated_deal_id
-            if (not deal_id) and contact_id:
-                for c in contacts:
-                    if c["id"] == contact_id and c.get("associated_deal_id"):
-                        deal_id = c["associated_deal_id"]
+            # If LLM matched person_id but not deal_id, resolve via deal_roles
+            if (not deal_id) and person_id:
+                for p in people:
+                    if p["id"] == person_id and p.get("deal_id"):
+                        deal_id = p["deal_id"]
                         if confidence < 85:
                             confidence = max(confidence, 85)
-                        match_reason = match_reason or "Matched via contact associated_deal_id"
+                        match_reason = match_reason or "Matched via person's deal_role"
                         break
 
-            if deal_id or contact_id:
+            if deal_id or person_id:
                 return DealMatch(
                     deal_id=deal_id,
-                    contact_id=contact_id,
+                    person_id=int(person_id) if person_id else None,
                     confidence=max(0, min(100, confidence)),
                     match_reason=match_reason or "LLM match",
                 )
 
         # Heuristic fallback
-        return self._match_deal_heuristic(query=query, context=context, deals=deals, contacts=contacts)
+        return self._match_deal_heuristic(query=query, context=context, deals=deals, people=people)
 
-    def _match_deal_heuristic(self, query: str, context: str, deals: List[dict], contacts: List[dict]) -> DealMatch:
+    def _match_deal_heuristic(self, query: str, context: str, deals: List[dict], people: List[dict]) -> DealMatch:
         q = _normalize(query)
         if not q:
             return DealMatch(None, None, 0, "Empty query")
@@ -296,19 +286,19 @@ class DealSignalRouter:
             if _normalize(d.get("id")) == q:
                 return DealMatch(d["id"], None, 98, "Exact deal_id match")
 
-        # 3) Contact name match → associated_deal_id
-        best_contact: Tuple[Optional[dict], float] = (None, 0.0)
-        for c in contacts:
-            score = _similarity(q, _normalize(c.get("full_name")))
-            if score > best_contact[1]:
-                best_contact = (c, score)
+        # 3) Person name match → deal_id via deal_roles
+        best_person: Tuple[Optional[dict], float] = (None, 0.0)
+        for p in people:
+            score = _similarity(q, _normalize(p.get("full_name")))
+            if score > best_person[1]:
+                best_person = (p, score)
 
-        if best_contact[0] and best_contact[1] >= 0.86 and best_contact[0].get("associated_deal_id"):
+        if best_person[0] and best_person[1] >= 0.86 and best_person[0].get("deal_id"):
             return DealMatch(
-                deal_id=best_contact[0]["associated_deal_id"],
-                contact_id=best_contact[0]["id"],
-                confidence=int(round(best_contact[1] * 100)),
-                match_reason="Heuristic: contact name similarity",
+                deal_id=best_person[0]["deal_id"],
+                person_id=best_person[0]["id"],
+                confidence=int(round(best_person[1] * 100)),
+                match_reason="Heuristic: person name similarity",
             )
 
         # 4) Company fuzzy match
@@ -339,7 +329,7 @@ class DealSignalRouter:
             company=deal_context.get("company") or "",
             pipeline=deal_context.get("pipeline") or "",
             stage=deal_context.get("stage") or "identified",
-            last_touch=deal_context.get("last_touched") or "",
+            last_touch=deal_context.get("updated_at") or "",  # Changed from last_touched
             temperature=deal_context.get("temperature") or "",
         )
 
@@ -456,7 +446,6 @@ class DealSignalRouter:
     def process_signal(self, source: str, content: str, metadata: Optional[dict] = None, context: str = "", dry_run: bool = False) -> ProcessResult:
         metadata = metadata or {}
 
-        # For sms, often content starts with "n5 deal ..." — but Worker 4 owns strict SMS parsing.
         query = content
         match = self.match_deal(query=query, context=context)
 
@@ -506,7 +495,7 @@ class DealSignalRouter:
             confidence=match.confidence,
             action_taken="updated",
             extraction=extraction,
-            notes="Updated deals.db + logged activity",
+            notes="Updated n5_core.db + logged activity",
         )
 
     def _apply_update(self, deal: dict, source: str, content: str, extraction: SignalExtraction, metadata: dict):
@@ -515,25 +504,24 @@ class DealSignalRouter:
 
         now = _now_iso()
 
-        updates: Dict[str, Any] = {
-            "last_touched": now,
-            "updated_at": now,
-        }
+        updates: Dict[str, Any] = {}
 
         if extraction.inferred_stage:
             updates["stage"] = extraction.inferred_stage
 
+        # Note: new schema doesn't have next_action column - store in notes
         if extraction.next_action:
-            updates["next_action"] = extraction.next_action
-        if extraction.next_action_date:
-            updates["next_action_date"] = extraction.next_action_date
+            existing_notes = deal.get("notes") or ""
+            action_note = f"\n[{now[:10]}] Next action: {extraction.next_action}"
+            updates["notes"] = (existing_notes + action_note).strip()
 
-        # Apply deal update
-        set_clause = ", ".join([f"{k} = ?" for k in updates.keys()])
-        params = list(updates.values()) + [deal["id"]]
-        c.execute(f"UPDATE deals SET {set_clause} WHERE id = ?", params)
+        # Apply deal update if there are changes
+        if updates:
+            set_clause = ", ".join([f"{k} = ?" for k in updates.keys()])
+            params = list(updates.values()) + [deal["id"]]
+            c.execute(f"UPDATE deals SET {set_clause} WHERE id = ?", params)
 
-        # Log activity (append-only)
+        # Log activity using deal_activities table
         activity_desc = {
             "source": source,
             "content": content,
@@ -542,7 +530,6 @@ class DealSignalRouter:
                 "inferred_stage": extraction.inferred_stage,
                 "key_facts": extraction.key_facts,
                 "next_action": extraction.next_action,
-                "next_action_date": extraction.next_action_date,
                 "sentiment": extraction.sentiment,
                 "urgency": extraction.urgency,
             },
@@ -550,34 +537,28 @@ class DealSignalRouter:
             "timestamp": now,
         }
 
-        c.execute(
-            """
-            INSERT INTO deal_activities (deal_id, activity_type, description, channel, created_at)
+        c.execute("""
+            INSERT INTO deal_activities (deal_id, activity_type, description, performed_by, timestamp)
             VALUES (?, ?, ?, ?, ?)
-            """,
-            (
-                deal["id"],
-                "note",
-                json.dumps(activity_desc, ensure_ascii=False),
-                source,
-                now,
-            ),
-        )
+        """, (
+            deal["id"],
+            "note",
+            json.dumps(activity_desc, ensure_ascii=False),
+            source,
+            now,
+        ))
 
         # Also log stage change as separate activity (useful for dashboards)
         if extraction.inferred_stage and _normalize(extraction.inferred_stage) != _normalize(deal.get("stage")):
-            c.execute(
-                """
-                INSERT INTO deal_activities (deal_id, activity_type, description, channel, created_at)
+            c.execute("""
+                INSERT INTO deal_activities (deal_id, activity_type, description, performed_by, timestamp)
                 VALUES (?, 'stage_change', ?, ?, ?)
-                """,
-                (
-                    deal["id"],
-                    f"Stage changed to: {extraction.inferred_stage}. Reason: {extraction.stage_change_reason or ''}".strip(),
-                    source,
-                    now,
-                ),
-            )
+            """, (
+                deal["id"],
+                f"Stage changed to: {extraction.inferred_stage}. Reason: {extraction.stage_change_reason or ''}".strip(),
+                source,
+                now,
+            ))
 
         conn.commit()
         conn.close()
@@ -589,14 +570,13 @@ def _parse_args() -> argparse.Namespace:
     p.add_argument("--content", required=True, help="Signal content text")
     p.add_argument("--context", default="", help="Pipeline context hint (careerspan|zo)")
     p.add_argument("--dry-run", action="store_true", help="Do not write to DB")
-    p.add_argument("--db", default=DB_PATH_DEFAULT, help="Path to deals.db")
     p.add_argument("--config", default=CONFIG_PATH_DEFAULT, help="Path to deal signal config")
     return p.parse_args()
 
 
 def main():
     args = _parse_args()
-    router = DealSignalRouter(db_path=args.db, config_path=args.config)
+    router = DealSignalRouter(config_path=args.config)
     result = router.process_signal(source=args.source, content=args.content, context=args.context, dry_run=args.dry_run)
     print(json.dumps(result.__dict__, indent=2, default=str))
 

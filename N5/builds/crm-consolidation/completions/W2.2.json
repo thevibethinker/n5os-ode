@@ -1,0 +1,65 @@
+{
+  "worker_id": "W2.2",
+  "title": "Deal Script Updates",
+  "status": "complete",
+  "completed_at": "2026-01-19T07:25:00-05:00",
+  "artifacts": [
+    "N5/scripts/deal_cli.py",
+    "N5/scripts/deal_query.py",
+    "N5/scripts/deal_signal_router.py",
+    "N5/scripts/deal_proactive_sensor.py",
+    "N5/scripts/broker_detector.py"
+  ],
+  "summary": "Updated all 5 deal system scripts to use unified n5_core.db database via db_paths.py imports",
+  "changes": {
+    "deal_cli.py": [
+      "Replaced direct DB_PATH with import from db_paths.py",
+      "Updated get_db() to use get_db_connection()",
+      "Adapted show_deal() to fetch contacts via people + deal_roles junction",
+      "Added new 'contacts' subcommand to show deal contacts",
+      "Updated add_deal() to create person + deal_role when --contact provided",
+      "Updated summary() to show deal_roles statistics",
+      "Simplified schema usage (removed columns not in new schema like owner, thesis, next_action)"
+    ],
+    "deal_query.py": [
+      "Replaced DB_PATH with db_paths.py imports",
+      "Changed search() to query people table instead of deal_contacts",
+      "Changed list_contacts() to use deal_roles junction table",
+      "Updated summary() to show people linked via deal_roles"
+    ],
+    "deal_signal_router.py": [
+      "Removed db_path parameter, now uses db_paths.py",
+      "Changed contact_id to person_id throughout",
+      "Updated load_people_with_roles() to query people + deal_roles",
+      "Updated _match_deal_heuristic() to use people table",
+      "Adapted _apply_update() for new schema (notes instead of next_action column)",
+      "Updated deal_activities insert to use timestamp instead of created_at"
+    ],
+    "deal_proactive_sensor.py": [
+      "Removed db_path parameter, now uses db_paths.py",
+      "Updated is_entity_known() to check people table",
+      "Updated _create_entity() to create people entries instead of deal_contacts",
+      "Brokers/leadership now create person records (can be linked to deals via deal_roles later)"
+    ],
+    "broker_detector.py": [
+      "Added db_paths.py import",
+      "Completely rewrote persist_broker() to create people entries with broker notes",
+      "Updated queue_broker_notion_sync() to use get_db_connection()"
+    ]
+  },
+  "tests_passed": [
+    "deal_cli.py summary - Shows 99 deals, correct pipeline breakdown",
+    "deal_query.py summary - Shows 259 people in CRM, 0 linked to deals (deal_roles empty)",
+    "deal_query.py search 'darwinbox' - Finds deal AND matching person",
+    "deal_signal_router.py --dry-run - Correctly matches deal and extracts signal",
+    "deal_proactive_sensor.py --dry-run - Detects entities and formats SMS",
+    "broker_detector.py - Detects broker signals from transcript"
+  ],
+  "notes_for_orchestrator": [
+    "deal_roles table is currently empty (0 entries) - migration W1.x should populate this",
+    "New schema has fewer columns than old deals.db - fields like owner, thesis, next_action, last_touched are not present",
+    "Added notes-based workaround in signal_router for next_action since column doesn't exist",
+    "All scripts now consistently use get_db_connection() from db_paths.py",
+    "Added 'contacts' subcommand to deal_cli.py for viewing deal contacts"
+  ]
+}

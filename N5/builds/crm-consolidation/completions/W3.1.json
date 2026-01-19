@@ -1,0 +1,89 @@
+{
+  "worker_id": "W3.1",
+  "title": "Integration Scripts",
+  "status": "complete",
+  "completed_at": "2026-01-19T07:25:00Z",
+  "summary": "Updated all integration scripts to use unified database (n5_core.db via db_paths.py)",
+  
+  "files_modified": [
+    {
+      "path": "N5/scripts/morning_digest.py",
+      "changes": [
+        "Added import for db_paths (get_db_connection, N5_CORE_DB)",
+        "Replaced CRM_DB_PATH constant with N5_CORE_DB",
+        "Updated get_reconnects() to query 'people' table instead of 'profiles'",
+        "Field mapping: full_name, last_contact_date, markdown_path, company, title"
+      ]
+    },
+    {
+      "path": "N5/scripts/warm_intro_generator.py",
+      "changes": [
+        "Added import for db_paths (get_db_connection, N5_CORE_DB)",
+        "Implemented query_crm_profile() to query 'people' table with deals, interactions, relationships",
+        "Updated auto_create_crm_profiles() to INSERT into 'people' table instead of creating markdown files"
+      ]
+    },
+    {
+      "path": "N5/scripts/cc_outreach_processor.py",
+      "changes": [
+        "Added import for db_paths (get_db_connection, N5_CORE_DB)",
+        "Replaced CRM_DB from N5.lib.paths with N5_CORE_DB",
+        "Updated find_crm_profile_by_email() to query 'people' table",
+        "Updated update_crm_last_contact() to update 'people' table"
+      ]
+    },
+    {
+      "path": "N5/scripts/n5_networking_event_process.py",
+      "changes": [
+        "Added import for db_paths (get_db_connection, N5_CORE_DB)",
+        "Updated get_db_conn() to use get_db_connection()",
+        "Updated upsert_individual() to use 'people' table instead of 'individuals'"
+      ]
+    }
+  ],
+  
+  "files_identified_but_not_modified": [
+    {
+      "path": "N5/scripts/generate_followup_email_draft.py",
+      "reason": "Uses stakeholder_profile.md files from meeting folders, not CRM database - no changes needed"
+    },
+    {
+      "path": "N5/scripts/query_stakeholder_tags.py",
+      "reason": "Uses stakeholder_profile.md files from meeting folders, not CRM database - no changes needed"
+    },
+    {
+      "path": "N5/scripts/email_body_generator.py",
+      "reason": "Uses load_stakeholder_profile() from meeting folders, not CRM database - no changes needed"
+    }
+  ],
+  
+  "verification": {
+    "imports_tested": [
+      "morning_digest.py - OK",
+      "warm_intro_generator.py - OK",
+      "cc_outreach_processor.py - OK (CRM functions only, full import requires vos_tag_parser)",
+      "n5_networking_event_process.py - OK (CRM functions only, full import requires blocks.llm_client)"
+    ],
+    "no_old_table_refs": true,
+    "help_flags_working": [
+      "warm_intro_generator.py --help",
+      "morning_digest.py --help"
+    ]
+  },
+  
+  "notes_for_orchestrator": [
+    "n5_networking_event_process.py has missing dependency: blocks.llm_client - this is a pre-existing issue, not introduced by this work",
+    "cc_outreach_processor.py requires vos_tag_parser.py in same directory - works when run from N5/scripts/",
+    "Follow-up email generators use meeting-local stakeholder_profile.md files, not CRM database - this is by design for meeting context",
+    "All scripts now use db_paths.py fallback pattern for robustness"
+  ],
+  
+  "checklist": {
+    "warm_intro_generator_updated": true,
+    "morning_digest_updated": true,
+    "follow_up_generators_identified": true,
+    "follow_up_generators_updated": "N/A - use meeting-local profiles, not CRM DB",
+    "blurb_generators_identified": true,
+    "no_old_table_refs": true
+  }
+}

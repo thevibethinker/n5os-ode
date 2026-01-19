@@ -18,9 +18,21 @@ import sqlite3
 
 # Add N5 scripts to path
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, "/home/workspace")
 
 from blocks.llm_client import get_client
 from blocks.stakeholder_profile_generator import generate_stakeholder_profile
+
+# Unified database connection
+try:
+    from N5.scripts.db_paths import get_db_connection, N5_CORE_DB
+    DB_PATH = N5_CORE_DB
+except ImportError:
+    DB_PATH = Path("/home/workspace/N5/data/n5_core.db")
+    def get_db_connection(readonly=False):
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        return conn
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -36,18 +48,16 @@ EVENTS_INDEX = CRM_BASE / "events" / "index.jsonl"
 NETWORKING_LIST = WORKSPACE / "N5" / "lists" / "networking-contacts.jsonl"
 ESSENTIAL_LINKS = WORKSPACE / "N5" / "prefs" / "communication" / "essential-links.json"
 VOICE_PREFS = WORKSPACE / "N5" / "prefs" / "communication" / "voice.md"
-DB_PATH = WORKSPACE / "Knowledge" / "crm" / "crm.db"
 
 
 def get_db_conn():
-    """Get database connection with Row factory"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
+    """Get database connection with Row factory - uses unified n5_core.db"""
+    return get_db_connection(readonly=False)
+
 
 def upsert_individual(conn, individual):
     """
-    Insert or update individual record.
+    Insert or update individual record in unified people table.
     Returns individual_id.
     
     Args:
@@ -59,10 +69,10 @@ def upsert_individual(conn, individual):
     
     # Try to find existing by email or name
     if individual.get('email'):
-        cursor.execute("SELECT id FROM individuals WHERE email = ?", 
+        cursor.execute("SELECT id FROM people WHERE email = ?", 
                       (individual['email'],))
     else:
-        cursor.execute("SELECT id FROM individuals WHERE full_name = ?", 
+        cursor.execute("SELECT id FROM people WHERE full_name = ?", 
                       (individual['full_name'],))
     
     row = cursor.fetchone()
@@ -71,44 +81,49 @@ def upsert_individual(conn, individual):
         # Update existing
         individual_id = row['id']
         cursor.execute("""
-            UPDATE individuals SET
-                title = ?, company = ?, email = ?,
-                primary_category = ?, status = ?, tags = ?,
-                notes = ?, markdown_file_path = ?
+            UPDATE people SET
+                full_name = COALESCE(?, full_name),
+                email = COALESCE(?, email),
+                title = COALESCE(?, title),
+                company = COALESCE(?, company),
+                category = COALESCE(?, category),
+                status = COALESCE(?, status),
+                tags = COALESCE(?, tags),
+                markdown_path = COALESCE(?, markdown_path),
+                updated_at = CURRENT_TIMESTAMP
             WHERE id = ?
         """, (
+            individual.get('full_name'),
+            individual.get('email'),
             individual.get('title'),
             individual.get('company'),
-            individual.get('email'),
-            individual.get('primary_category', 'other'),
-            individual.get('status', 'prospect'),
-            individual.get('tags'),
-            individual.get('notes'),
+            individual.get('primary_category'),
+            individual.get('status', 'active'),
+            json.dumps(individual.get('tags', [])) if individual.get('tags') else None,
             individual.get('markdown_file_path'),
             individual_id
         ))
     else:
         # Insert new
         cursor.execute("""
-            INSERT INTO individuals (
-                full_name, title, company, email, 
-                primary_category, status, tags, source_type,
-                notes, markdown_file_path
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO people (
+                full_name, email, title, company, category, status, tags, 
+                markdown_path, source_db, first_contact_date, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, date('now'), CURRENT_TIMESTAMP)
         """, (
             individual['full_name'],
+            individual.get('email'),
             individual.get('title'),
             individual.get('company'),
-            individual.get('email'),
-            individual.get('primary_category', 'other'),
-            individual.get('status', 'prospect'),
-            individual.get('tags'),
-            individual.get('source_type'),
-            individual.get('notes'),
-            individual.get('markdown_file_path')
+            individual.get('primary_category', 'NETWORKING'),
+            individual.get('status', 'active'),
+            json.dumps(individual.get('tags', [])) if individual.get('tags') else None,
+            individual.get('markdown_file_path'),
+            'networking_event'
         ))
         individual_id = cursor.lastrowid
     
+    conn.commit()
     return individual_id
 
 def insert_interaction(conn, individual_id, interaction):

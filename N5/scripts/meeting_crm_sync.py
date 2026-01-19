@@ -2,26 +2,35 @@
 """
 Meeting → CRM Sync Script
 
-Syncs meeting intelligence (B03 Stakeholder Intelligence) to CRM V3 profiles.
+Syncs meeting intelligence (B03 Stakeholder Intelligence) to CRM profiles.
 Called during MG-6 state transition when meetings move to 'processed' status.
 
 Features:
 - Extracts stakeholder insights from B03 blocks
-- Appends to Interaction Timeline in CRM profiles
+- Creates interaction records in unified n5_core.db
+- Updates markdown CRM profiles with interaction timeline
 - Queues new stakeholders for enrichment
+
+UPDATED 2026-01-19: Now uses unified n5_core.db for all database operations.
 
 Usage:
     python3 meeting_crm_sync.py --meeting-folder <path>
-    python3 meeting_crm_sync.py --sync-all-processed
+    python3 meeting_crm_sync.py --scan
 """
 
 import argparse
 import json
 import logging
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 from typing import Optional, Dict, List, Any
+
+# Add parent to path for imports
+sys.path.insert(0, str(Path(__file__).parent))
+from db_paths import get_db_connection, PEOPLE_TABLE, INTERACTIONS_TABLE
+from crm_paths import CRM_INDIVIDUALS, MEETINGS_ROOT
 
 logging.basicConfig(
     level=logging.INFO,
@@ -30,23 +39,110 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 WORKSPACE = Path("/home/workspace")
-MEETINGS_INBOX = WORKSPACE / "Personal/Meetings/Inbox"
-CRM_V3 = WORKSPACE / "Personal/Knowledge/CRM/individuals"
+MEETINGS_INBOX = MEETINGS_ROOT / "Inbox"
+CRM_V3 = CRM_INDIVIDUALS
 SKIP_FLAG = "_skip_crm.flag"
 
 
 def normalize_person_id(name: str) -> str:
-    """Convert name to person_id format."""
-    # Remove special chars, lowercase, replace spaces with hyphens
+    """Convert name to person_id format (slug)."""
     clean = re.sub(r'[^\w\s-]', '', name.lower())
     return re.sub(r'\s+', '-', clean.strip())
 
 
+def find_person_by_name(name: str) -> Optional[Dict]:
+    """Find person in unified database by name.
+    
+    Returns dict with id, full_name, email, markdown_path or None.
+    """
+    conn = get_db_connection(readonly=True)
+    try:
+        # Try exact match
+        row = conn.execute(
+            f"SELECT id, full_name, email, markdown_path, company FROM {PEOPLE_TABLE} WHERE full_name = ?",
+            (name,)
+        ).fetchone()
+        if row:
+            return dict(row)
+        
+        # Try case-insensitive
+        row = conn.execute(
+            f"SELECT id, full_name, email, markdown_path, company FROM {PEOPLE_TABLE} WHERE LOWER(full_name) = LOWER(?)",
+            (name,)
+        ).fetchone()
+        if row:
+            return dict(row)
+        
+        return None
+    finally:
+        conn.close()
+
+
+def find_person_with_deals(name: str) -> Optional[Dict]:
+    """Find person with their deal involvement.
+    
+    Returns person info plus deal_involvement string.
+    """
+    conn = get_db_connection(readonly=True)
+    try:
+        row = conn.execute(
+            f"""
+            SELECT 
+                p.id, p.full_name, p.email, p.markdown_path, p.company,
+                GROUP_CONCAT(d.company || ' (' || dr.role || ')') as deal_involvement
+            FROM {PEOPLE_TABLE} p
+            LEFT JOIN deal_roles dr ON p.id = dr.person_id
+            LEFT JOIN deals d ON dr.deal_id = d.id
+            WHERE LOWER(p.full_name) = LOWER(?)
+            GROUP BY p.id
+            """,
+            (name,)
+        ).fetchone()
+        if row:
+            return dict(row)
+        return None
+    finally:
+        conn.close()
+
+
+def create_interaction(person_id: int, meeting_folder: str, meeting_id: str, 
+                       meeting_date: str, summary: str = None) -> int:
+    """Create an interaction record for a meeting.
+    
+    Returns the interaction id.
+    """
+    conn = get_db_connection()
+    try:
+        # Check if already exists
+        existing = conn.execute(
+            f"SELECT id FROM {INTERACTIONS_TABLE} WHERE person_id = ? AND source_ref = ?",
+            (person_id, meeting_folder)
+        ).fetchone()
+        
+        if existing:
+            return existing['id']
+        
+        cursor = conn.execute(
+            f"""INSERT INTO {INTERACTIONS_TABLE} 
+               (person_id, type, direction, summary, source_ref, occurred_at)
+               VALUES (?, 'meeting', 'bidirectional', ?, ?, ?)""",
+            (person_id, summary or f"Meeting: {meeting_id}", meeting_folder, meeting_date)
+        )
+        conn.commit()
+        return cursor.lastrowid
+    finally:
+        conn.close()
+
+
 def find_crm_profile(person_id: str) -> Optional[Path]:
-    """Find CRM profile by person_id."""
-    # Try exact match first
+    """Find CRM profile by person_id (slug)."""
+    # Direct path match
+    direct = CRM_V3 / f"{person_id}.md"
+    if direct.exists():
+        return direct
+    
+    # Fallback: scan for partial match
     for profile in CRM_V3.glob("*.md"):
-        content = profile.read_text()
         if person_id in profile.name.lower():
             return profile
     return None
@@ -62,7 +158,6 @@ def extract_stakeholder_from_b03(b03_path: Path) -> List[Dict[str, Any]]:
                     'process stage', 'b03', 'stakeholder intelligence'}
     
     # Look for ## or ### Name patterns (individual stakeholders)
-    # Format: ## Name or ### Name or ### 1. Name
     stakeholder_pattern = r'##{1,2}\s+(?:\d+\.\s*)?([^\n]+)\n((?:(?!##{1,2})[\s\S])*?)(?=##{1,2}|\Z)'
     matches = re.findall(stakeholder_pattern, content, re.MULTILINE)
     
@@ -75,7 +170,7 @@ def extract_stakeholder_from_b03(b03_path: Path) -> List[Dict[str, Any]]:
             continue
         if 'vrijen' in name.lower():
             continue
-        # Skip multi-person entries like "Victoria & Chase"
+        # Skip multi-person entries
         if ' & ' in name or ' and ' in name.lower():
             continue
             
@@ -85,7 +180,7 @@ def extract_stakeholder_from_b03(b03_path: Path) -> List[Dict[str, Any]]:
             'raw_section': section_content,
         }
         
-        # Extract specific fields from section content
+        # Extract specific fields
         for line in section_content.split('\n'):
             line_lower = line.lower()
             if '**role**:' in line_lower or '**title**:' in line_lower:
@@ -94,66 +189,19 @@ def extract_stakeholder_from_b03(b03_path: Path) -> List[Dict[str, Any]]:
                 stakeholder['organization'] = line.split(':', 1)[1].strip().strip('*')
             elif '**sentiment**:' in line_lower:
                 stakeholder['sentiment'] = line.split(':', 1)[1].strip().strip('*')
-            elif '**key signals**:' in line_lower or '**key interests**:' in line_lower:
+            elif '**signals**:' in line_lower or '**key signals**:' in line_lower:
                 stakeholder['signals'] = line.split(':', 1)[1].strip().strip('*')
-            elif '**skepticism**:' in line_lower or '**inquiry**:' in line_lower:
-                stakeholder['skepticism'] = line.split(':', 1)[1].strip().strip('*')
-            elif '**leverage**:' in line_lower:
-                stakeholder['leverage'] = line.split(':', 1)[1].strip().strip('*')
         
         stakeholders.append(stakeholder)
     
     return stakeholders
 
 
-def extract_meeting_metadata(meeting_folder: Path) -> Dict[str, Any]:
-    """Extract meeting metadata from manifest.json or B26."""
-    metadata = {
-        'meeting_id': meeting_folder.name,
-        'date': None,
-        'title': None,
-        'type': None,
-    }
-    
-    # Try manifest.json first
-    manifest = meeting_folder / "manifest.json"
-    if manifest.exists():
-        data = json.loads(manifest.read_text())
-        metadata['date'] = data.get('date', data.get('meeting_date'))
-        metadata['title'] = data.get('title', data.get('meeting_title'))
-        metadata['type'] = data.get('meeting_type')
-    
-    # Fallback to B26
-    b26 = meeting_folder / "B26_MEETING_METADATA.md"
-    if b26.exists():
-        content = b26.read_text()
-        # Handle both "**Field:**" and "- **Field:**" formats
-        date_match = re.search(r'-?\s*\*\*Date\*\*:\s*([\d-]+)', content)
-        title_match = re.search(r'-?\s*\*\*Title\*\*:\s*(.+)', content)
-        type_match = re.search(r'-?\s*\*\*Meeting Type\*\*:\s*(.+)', content)
-        
-        if date_match and not metadata['date']:
-            metadata['date'] = date_match.group(1).strip()
-        if title_match and not metadata['title']:
-            metadata['title'] = title_match.group(1).strip()
-        if type_match and not metadata['type']:
-            metadata['type'] = type_match.group(1).strip()
-    
-    # Extract date from folder name if needed
-    if not metadata['date']:
-        date_match = re.match(r'(\d{8})', meeting_folder.name)
-        if date_match:
-            d = date_match.group(1)
-            metadata['date'] = f"{d[:4]}-{d[4:6]}-{d[6:8]}"
-    
-    return metadata
-
-
-def append_to_interaction_timeline(profile_path: Path, meeting_metadata: Dict, stakeholder_intel: Dict) -> bool:
-    """Append meeting to the Interaction Timeline section of a CRM profile."""
+def update_crm_profile_timeline(profile_path: Path, meeting_metadata: Dict, 
+                                 stakeholder_intel: Dict, dry_run: bool = False) -> bool:
+    """Append meeting interaction to CRM profile's Interaction History section."""
     content = profile_path.read_text()
     
-    # Build timeline entry
     date = meeting_metadata.get('date', datetime.now().strftime('%Y-%m-%d'))
     title = meeting_metadata.get('title', 'Meeting')
     meeting_type = meeting_metadata.get('type', 'External')
@@ -179,7 +227,6 @@ def append_to_interaction_timeline(profile_path: Path, meeting_metadata: Dict, s
         logger.warning(f"No Interaction History section in {profile_path.name}")
         return False
     
-    # Insert new entry after the header
     parts = content.split(timeline_marker)
     if len(parts) != 2:
         logger.warning(f"Malformed Interaction Timeline in {profile_path.name}")
@@ -193,98 +240,142 @@ def append_to_interaction_timeline(profile_path: Path, meeting_metadata: Dict, s
         logger.info(f"Meeting {meeting_metadata['meeting_id']} already in timeline for {profile_path.name}")
         return True
     
-    # Find where to insert (after header, before first entry or ----)
+    # Find where to insert
     insert_point = after.find('\n\n')
     if insert_point == -1:
         insert_point = 0
     
     # Handle "No interactions recorded" placeholder
-    if "*No interactions recorded yet.*" in after:
-        after = after.replace("*No interactions recorded yet.*", "")
+    placeholder_pattern = r'\*No interactions recorded yet\.?\*'
+    after_cleaned = re.sub(placeholder_pattern, '', after)
     
-    new_content = (
-        before + 
-        timeline_marker + 
-        after[:insert_point + 2] + 
-        new_entry + "\n\n" +
-        after[insert_point + 2:]
-    )
+    # Insert new entry
+    new_after = after_cleaned[:insert_point] + '\n\n' + new_entry + after_cleaned[insert_point:]
+    new_content = before + timeline_marker + new_after
     
-    # Update last_edited in frontmatter
-    new_content = re.sub(
-        r'last_edited: [\d-]+',
-        f'last_edited: {datetime.now().strftime("%Y-%m-%d")}',
-        new_content
-    )
+    if not dry_run:
+        profile_path.write_text(new_content)
+        logger.info(f"Updated timeline in {profile_path.name}")
+    else:
+        logger.info(f"[DRY-RUN] Would update timeline in {profile_path.name}")
     
-    profile_path.write_text(new_content)
     return True
 
 
-def sync_meeting_to_crm(meeting_folder: Path, dry_run: bool = False) -> dict:
-    """Sync a single meeting's B03 stakeholder intelligence to CRM profiles."""
+def sync_meeting_to_crm(meeting_folder: Path, dry_run: bool = False) -> Dict[str, Any]:
+    """Sync a single meeting to CRM profiles and database."""
     result = {
-        'meeting': meeting_folder.name,
+        'meeting_folder': str(meeting_folder),
         'synced': [],
-        'skipped': [],
         'not_found': [],
-        'errors': []
+        'errors': [],
+        'db_interactions': []
     }
     
-    b03_path = meeting_folder / "B03_STAKEHOLDER_INTELLIGENCE.md"
-    if not b03_path.exists():
-        result['errors'].append("No B03_STAKEHOLDER_INTELLIGENCE.md found")
+    # Check for skip flag
+    if (meeting_folder / SKIP_FLAG).exists():
+        logger.info(f"Skipping {meeting_folder.name} - has skip flag")
         return result
     
-    # Extract metadata and stakeholders
-    metadata = extract_meeting_metadata(meeting_folder)
-    stakeholders = extract_stakeholder_from_b03(b03_path)
+    # Load manifest
+    manifest_path = meeting_folder / "manifest.json"
+    if not manifest_path.exists():
+        result['errors'].append("No manifest.json found")
+        return result
     
-    logger.info(f"Processing {meeting_folder.name}: {len(stakeholders)} stakeholders found")
+    manifest = json.loads(manifest_path.read_text())
+    meeting_metadata = {
+        'meeting_id': manifest.get('meeting_id', meeting_folder.name),
+        'title': manifest.get('title', manifest.get('summary', 'Meeting')),
+        'date': manifest.get('start_time', manifest.get('date', datetime.now().strftime('%Y-%m-%d'))),
+        'type': manifest.get('meeting_type', 'External')
+    }
+    
+    # Find B03 block
+    b03_paths = [
+        meeting_folder / "B03_STAKEHOLDER_INTELLIGENCE.md",
+        meeting_folder / "B03_STAKE_HOLDER_INTELLIGENCE.md",
+        meeting_folder / "B08_STAKEHOLDER_INTELLIGENCE.md",
+    ]
+    
+    b03_path = None
+    for path in b03_paths:
+        if path.exists():
+            b03_path = path
+            break
+    
+    if not b03_path:
+        result['errors'].append("No B03 stakeholder intelligence found")
+        return result
+    
+    # Extract stakeholders
+    stakeholders = extract_stakeholder_from_b03(b03_path)
+    logger.info(f"Found {len(stakeholders)} stakeholders in {meeting_folder.name}")
     
     for stakeholder in stakeholders:
+        name = stakeholder['name']
         person_id = stakeholder['person_id']
         
-        # Skip "Vrijen" (that's you)
-        if 'vrijen' in person_id.lower():
-            result['skipped'].append(f"{stakeholder['name']} (self)")
-            continue
+        # Check database for person (with deal info)
+        db_person = find_person_with_deals(name)
         
-        # Find CRM profile
-        profile_path = find_crm_profile(person_id)
-        
-        if not profile_path:
-            result['not_found'].append(stakeholder['name'])
-            logger.warning(f"No CRM profile found for {stakeholder['name']} ({person_id})")
-            continue
-        
-        if dry_run:
-            result['synced'].append(f"{stakeholder['name']} -> {profile_path.name}")
-            logger.info(f"[DRY-RUN] Would sync {stakeholder['name']} to {profile_path.name}")
-        else:
-            try:
-                success = append_to_interaction_timeline(profile_path, metadata, stakeholder)
-                if success:
-                    result['synced'].append(f"{stakeholder['name']} -> {profile_path.name}")
-                    logger.info(f"Synced {stakeholder['name']} to {profile_path.name}")
+        if db_person:
+            # Create interaction record in database
+            if not dry_run:
+                interaction_id = create_interaction(
+                    person_id=db_person['id'],
+                    meeting_folder=str(meeting_folder),
+                    meeting_id=meeting_metadata['meeting_id'],
+                    meeting_date=meeting_metadata['date'],
+                    summary=f"Meeting: {meeting_metadata['title']}"
+                )
+                result['db_interactions'].append({
+                    'person_id': db_person['id'],
+                    'interaction_id': interaction_id,
+                    'name': name
+                })
+            
+            # Also update markdown profile if it exists
+            if db_person.get('markdown_path'):
+                profile_path = WORKSPACE / db_person['markdown_path']
+                if profile_path.exists():
+                    success = update_crm_profile_timeline(
+                        profile_path, meeting_metadata, stakeholder, dry_run
+                    )
+                    if success:
+                        result['synced'].append(name)
+                    else:
+                        result['errors'].append(f"Failed to update timeline for {name}")
                 else:
-                    result['errors'].append(f"Failed to update {profile_path.name}")
-            except Exception as e:
-                result['errors'].append(f"{stakeholder['name']}: {str(e)}")
-                logger.error(f"Error syncing {stakeholder['name']}: {e}")
+                    result['synced'].append(f"{name} (DB only)")
+            else:
+                result['synced'].append(f"{name} (DB only)")
+        else:
+            # Fallback: Try markdown-only lookup
+            profile_path = find_crm_profile(person_id)
+            if profile_path:
+                success = update_crm_profile_timeline(
+                    profile_path, meeting_metadata, stakeholder, dry_run
+                )
+                if success:
+                    result['synced'].append(name)
+                else:
+                    result['errors'].append(f"Failed to update timeline for {name}")
+            else:
+                result['not_found'].append(name)
+                logger.warning(f"No CRM profile or DB entry found for: {name}")
     
     return result
 
 
 def scan_for_ready_meetings() -> List[Path]:
-    """Find meetings ready for CRM sync (processed status, has B03)."""
+    """Scan for meetings ready for CRM sync."""
     ready = []
     
     for folder in MEETINGS_INBOX.iterdir():
         if not folder.is_dir():
             continue
         
-        # Check manifest for processed status
         manifest_path = folder / "manifest.json"
         if manifest_path.exists():
             manifest = json.loads(manifest_path.read_text())
@@ -294,7 +385,6 @@ def scan_for_ready_meetings() -> List[Path]:
             if 'processed' in status.lower() or manifest.get('crm_synced') is False:
                 b03 = folder / "B03_STAKEHOLDER_INTELLIGENCE.md"
                 if b03.exists():
-                    # Check if not already synced
                     if not manifest.get('crm_synced', False):
                         ready.append(folder)
     
@@ -316,8 +406,13 @@ def main():
     parser.add_argument('--meeting-folder', type=str, help='Path to specific meeting folder')
     parser.add_argument('--scan', action='store_true', help='Scan for all ready meetings')
     parser.add_argument('--dry-run', action='store_true', help='Preview without changes')
+    parser.add_argument('--help-extended', action='store_true', help='Show extended help')
     
     args = parser.parse_args()
+    
+    if args.help_extended:
+        print(__doc__)
+        return
     
     if args.meeting_folder:
         folder = Path(args.meeting_folder)
@@ -348,14 +443,16 @@ def main():
         total_synced = sum(len(r['synced']) for r in all_results)
         total_not_found = sum(len(r['not_found']) for r in all_results)
         total_errors = sum(len(r['errors']) for r in all_results)
+        total_db = sum(len(r['db_interactions']) for r in all_results)
         
         print("\n" + "="*50)
         print("CRM SYNC SUMMARY")
         print("="*50)
-        print(f"Meetings processed: {len(all_results)}")
-        print(f"Profiles updated:   {total_synced}")
-        print(f"Profiles not found: {total_not_found}")
-        print(f"Errors:             {total_errors}")
+        print(f"Meetings processed:    {len(all_results)}")
+        print(f"Profiles updated:      {total_synced}")
+        print(f"DB interactions:       {total_db}")
+        print(f"Profiles not found:    {total_not_found}")
+        print(f"Errors:                {total_errors}")
         
         if args.dry_run:
             print("\n[DRY-RUN MODE] No files were modified.")
@@ -363,10 +460,5 @@ def main():
         parser.print_help()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-
-
-
-
-

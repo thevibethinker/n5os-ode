@@ -32,6 +32,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+# Add workspace to path for N5 lib imports
+sys.path.insert(0, '/home/workspace')
+
+# Unified database connection
+try:
+    from N5.scripts.db_paths import get_db_connection, N5_CORE_DB
+except ImportError:
+    N5_CORE_DB = Path("/home/workspace/N5/data/n5_core.db")
+    def get_db_connection(readonly=False):
+        import sqlite3
+        conn = sqlite3.connect(N5_CORE_DB)
+        conn.row_factory = sqlite3.Row
+        return conn
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)sZ %(levelname)s %(message)s"
@@ -273,13 +287,75 @@ def extract_resonant_details(meeting_folder: Path, person_names: List[str]) -> D
 
 def query_crm_profile(name: str) -> Optional[Dict]:
     """
-    Query CRM for person profile.
+    Query unified CRM (n5_core.db) for person profile.
     
-    Returns profile dict or None if not found.
+    Returns profile dict with person info, deals, and recent interactions, or None if not found.
     """
-    # TODO: Implement CRM query using crm_query_helper.py
-    # For now, return None (profiles will be auto-created)
-    return None
+    try:
+        conn = get_db_connection(readonly=True)
+        c = conn.cursor()
+        
+        # Search by name (fuzzy match)
+        # Extract first name for matching
+        first_name = name.split()[0] if name else ""
+        full_name_pattern = f"%{name.split('(')[0].strip()}%"
+        
+        c.execute("""
+            SELECT id, full_name, email, company, title, category, 
+                   linkedin_url, markdown_path, last_contact_date
+            FROM people 
+            WHERE full_name LIKE ? OR full_name LIKE ?
+            LIMIT 1
+        """, (full_name_pattern, f"%{first_name}%"))
+        
+        row = c.fetchone()
+        if not row:
+            conn.close()
+            return None
+        
+        person = dict(row)
+        person_id = person['id']
+        
+        # Get associated deals
+        c.execute("""
+            SELECT d.company, d.deal_type, d.stage, d.temperature, dr.role
+            FROM deals d
+            JOIN deal_roles dr ON d.id = dr.deal_id
+            WHERE dr.person_id = ?
+        """, (person_id,))
+        person['deals'] = [dict(r) for r in c.fetchall()]
+        
+        # Get recent interactions
+        c.execute("""
+            SELECT type, summary, occurred_at, direction
+            FROM interactions
+            WHERE person_id = ?
+            ORDER BY occurred_at DESC
+            LIMIT 5
+        """, (person_id,))
+        person['recent_interactions'] = [dict(r) for r in c.fetchall()]
+        
+        # Get relationships (for warm intro context)
+        c.execute("""
+            SELECT 
+                p2.full_name as connected_to,
+                r.relationship_type,
+                r.strength,
+                r.notes
+            FROM relationships r
+            JOIN people p2 ON (r.person_b_id = p2.id OR r.person_a_id = p2.id)
+            WHERE (r.person_a_id = ? OR r.person_b_id = ?)
+              AND p2.id != ?
+        """, (person_id, person_id, person_id))
+        person['relationships'] = [dict(r) for r in c.fetchall()]
+        
+        conn.close()
+        logger.info(f"✓ Found CRM profile for: {person['full_name']}")
+        return person
+        
+    except Exception as e:
+        logger.warning(f"Error querying CRM for '{name}': {e}")
+        return None
 
 
 def call_llm(prompt: str) -> str:
@@ -639,13 +715,12 @@ def generate_manifest(outbound_intros: List[Tuple[IntroData, Path]],
 
 def auto_create_crm_profiles(intro_data_list: List[IntroData], meeting_folder: Path, dry_run: bool = False) -> int:
     """
-    Auto-create minimal CRM profiles for people in intro list if they don't exist.
+    Auto-create minimal CRM profiles in unified database for people in intro list if they don't exist.
     
     Returns number of profiles created.
     """
-    crm_dir = Path("/home/workspace/Knowledge/crm/individuals")
-    if not crm_dir.exists():
-        logger.warning(f"CRM directory not found: {crm_dir}")
+    if not N5_CORE_DB.exists():
+        logger.warning(f"Unified database not found: {N5_CORE_DB}")
         return 0
     
     created_count = 0
@@ -665,73 +740,61 @@ def auto_create_crm_profiles(intro_data_list: List[IntroData], meeting_folder: P
             # Extract role/org from B08 bullet points
             for person in people_to_create:
                 if person in b08_text:
-                    # Simple heuristic: find lines mentioning person
                     lines = [l for l in b08_text.split('\n') if person in l]
                     if lines:
-                        b08_context[person] = '\n'.join(lines[:3])  # First 3 mentions
+                        b08_context[person] = '\n'.join(lines[:3])
         except Exception as e:
             logger.warning(f"Could not parse B08: {e}")
     
-    for person in people_to_create:
-        # Generate slug
-        slug = person.lower().strip()
-        # Remove parenthetical descriptions
-        slug = re.sub(r'\s*\([^)]*\)', '', slug)
-        slug = re.sub(r'[^\w\s-]', '', slug).strip()
-        slug = re.sub(r'[-\s]+', '-', slug)
+    try:
+        conn = get_db_connection(readonly=False)
+        c = conn.cursor()
         
-        profile_path = crm_dir / f"{slug}.md"
+        for person in people_to_create:
+            # Clean name (remove parenthetical descriptions)
+            clean_name = person.split('(')[0].strip()
+            
+            # Check if person already exists
+            c.execute("SELECT id FROM people WHERE full_name LIKE ?", (f"%{clean_name}%",))
+            if c.fetchone():
+                continue  # Skip existing
+            
+            # Extract role/org from intro data or B08
+            company = "TBD"
+            title = "TBD"
+            
+            # Check parenthetical in name for role/org
+            paren_match = re.search(r'\(([^)]+)\)', person)
+            if paren_match:
+                role_org = paren_match.group(1)
+                # Try to split into role @ company
+                if ' at ' in role_org.lower() or '@' in role_org:
+                    parts = re.split(r'\s+at\s+|\s*@\s*', role_org, flags=re.IGNORECASE)
+                    if len(parts) >= 2:
+                        title = parts[0].strip()
+                        company = parts[1].strip()
+                else:
+                    title = role_org
+            
+            if dry_run:
+                logger.info(f"[DRY RUN] Would create CRM profile: {clean_name} ({title} @ {company})")
+            else:
+                try:
+                    c.execute("""
+                        INSERT INTO people (full_name, company, title, category, status, source_db, created_at)
+                        VALUES (?, ?, ?, 'NETWORKING', 'active', 'warm_intro', CURRENT_TIMESTAMP)
+                    """, (clean_name, company, title))
+                    created_count += 1
+                    logger.info(f"✓ Created CRM profile: {clean_name}")
+                except Exception as e:
+                    logger.error(f"Failed to create profile for {clean_name}: {e}")
         
-        if profile_path.exists():
-            continue  # Skip existing
+        if not dry_run:
+            conn.commit()
+        conn.close()
         
-        # Extract role/org from intro data
-        role_org = ""
-        for intro in intro_data_list:
-            if intro.who == person or intro.to_whom == person:
-                # Check parenthetical in name
-                paren_match = re.search(r'\(([^)]+)\)', person)
-                if paren_match:
-                    role_org = paren_match.group(1)
-                    break
-        
-        # Minimal profile template
-        profile_content = f"""# {person.split('(')[0].strip()}
-
-## Overview
-
-**Role:** {role_org if role_org else "TBD"}
-**Organization:** TBD
-**Tags:** #warm-intro #auto-generated
-
-## Background
-
-Auto-generated from meeting intro block. Additional context needed.
-
-{b08_context.get(person, '')}
-
-## Interactions
-
-**First Mention:** {meeting_folder.name}
-
-## Notes
-
-Profile auto-created by warm-intro-generate. Update with additional details.
-
----
-*Generated:* {Path.cwd()}
-*Source:* {meeting_folder}
-"""
-        
-        if dry_run:
-            logger.info(f"[DRY RUN] Would create CRM profile: {profile_path}")
-        else:
-            try:
-                profile_path.write_text(profile_content)
-                logger.info(f"✓ Created CRM profile: {profile_path}")
-                created_count += 1
-            except Exception as e:
-                logger.error(f"Failed to create {profile_path}: {e}")
+    except Exception as e:
+        logger.error(f"Error creating CRM profiles: {e}")
     
     return created_count
 

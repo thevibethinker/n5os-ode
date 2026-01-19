@@ -2,6 +2,8 @@
 """
 SMS Deal Handler — Worker 4 (SMS Interface)
 
+Updated 2026-01-19: Now uses unified n5_core.db database
+
 Purpose:
 - Parse "n5 deal <command>" messages from SMS
 - Support commands: update, add, status, list
@@ -28,7 +30,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sqlite3
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -39,9 +40,12 @@ _SCRIPT_DIR = Path(__file__).parent
 if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
+from db_paths import get_db_connection, N5_CORE_DB
 from deal_signal_router import DealSignalRouter, ProcessResult
 
-DB_PATH_DEFAULT = "/home/workspace/N5/data/deals.db"
+# Legacy path for notion_deal_sync compatibility (still uses deals.db for outbox)
+LEGACY_DB_PATH = "/home/workspace/N5/data/deals.db"
+DB_PATH_DEFAULT = str(N5_CORE_DB)  # Unified database
 CONFIG_PATH_DEFAULT = "/home/workspace/N5/config/deal_signal_config.json"
 
 
@@ -154,16 +158,16 @@ def parse_sms_deal_command(message: str) -> ParsedCommand:
     return ParsedCommand(valid=True, command_type="update", query=parts[0], update=parts[1])
 
 
-def get_similar_deals(db_path: str, query: str, limit: int = 3) -> List[Tuple[str, str, int]]:
+def get_similar_deals(query: str, limit: int = 3) -> List[Tuple[str, str, int]]:
     """Find deals with similar company names."""
-    conn = sqlite3.connect(db_path)
+    conn = get_db_connection(readonly=True)
     c = conn.cursor()
     query_lower = query.lower()
     c.execute("SELECT id, company FROM deals WHERE company IS NOT NULL")
     
     results = []
     for row in c.fetchall():
-        deal_id, company = row
+        deal_id, company = row['id'], row['company']
         if not company:
             continue
         company_lower = company.lower()
@@ -181,7 +185,6 @@ def get_similar_deals(db_path: str, query: str, limit: int = 3) -> List[Tuple[st
 
 
 def queue_notion_sync(
-    db_path: str,
     deal_id: str,
     source_title: str,
     source_type: str,
@@ -189,23 +192,25 @@ def queue_notion_sync(
     next_action: Optional[str],
     dry_run: bool
 ) -> bool:
-    """Queue intel for Notion sync."""
+    """Queue intel for Notion sync. Uses legacy deals.db for outbox."""
     try:
+        # Import notion_deal_sync which still manages the outbox in deals.db
         from notion_deal_sync import DealDB, format_intel_entry
         
-        db = DealDB(db_path)
+        db = DealDB(LEGACY_DB_PATH)
         db.ensure_schema()
         
-        conn = db.connect()
+        # Get notion_page_id from unified DB
+        conn = get_db_connection(readonly=True)
         c = conn.cursor()
-        c.execute("SELECT external_id FROM deals WHERE id = ?", (deal_id,))
+        c.execute("SELECT notion_page_id FROM deals WHERE id = ?", (deal_id,))
         row = c.fetchone()
         conn.close()
         
-        if not row or not row[0]:
+        if not row or not row['notion_page_id']:
             return False
         
-        notion_page_id = row[0]
+        notion_page_id = row['notion_page_id']
         
         entry = format_intel_entry(
             date=datetime.now().date().isoformat(),
@@ -232,6 +237,52 @@ def queue_notion_sync(
         return False
 
 
+def log_deal_activity(deal_id: str, activity_type: str, description: str, performed_by: str = "sms") -> None:
+    """Log an activity to the deal_activities table."""
+    conn = get_db_connection()
+    c = conn.cursor()
+    c.execute("""
+        INSERT INTO deal_activities (deal_id, activity_type, description, performed_by, timestamp)
+        VALUES (?, ?, ?, ?, datetime('now'))
+    """, (deal_id, activity_type, description, performed_by))
+    conn.commit()
+    conn.close()
+
+
+def ensure_person_exists(name: str, email: str = None, company: str = None) -> int:
+    """Get or create person, return person_id."""
+    conn = get_db_connection()
+    c = conn.cursor()
+    
+    # Try to find by email first
+    if email:
+        c.execute("SELECT id FROM people WHERE email = ?", (email.lower(),))
+        row = c.fetchone()
+        if row:
+            conn.close()
+            return row['id']
+    
+    # Try by name + company
+    c.execute("""
+        SELECT id FROM people 
+        WHERE full_name = ? AND (company = ? OR company IS NULL)
+    """, (name, company))
+    row = c.fetchone()
+    if row:
+        conn.close()
+        return row['id']
+    
+    # Create new
+    c.execute("""
+        INSERT INTO people (full_name, email, company, source_db, created_at)
+        VALUES (?, ?, ?, 'sms_handler', datetime('now'))
+    """, (name, email.lower() if email else None, company))
+    person_id = c.lastrowid
+    conn.commit()
+    conn.close()
+    return person_id
+
+
 def handle_deal_add(company: str, pipeline: str, notes: Optional[str], db_path: str, dry_run: bool) -> SMSHandlerResult:
     """Handle 'n5 deal add <company> <pipeline> [notes]' command."""
     valid_pipelines = ["careerspan", "zo"]
@@ -254,23 +305,32 @@ def handle_deal_add(company: str, pipeline: str, notes: Optional[str], db_path: 
             dry_run=True, notion_queued=False
         )
     
-    conn = sqlite3.connect(db_path)
+    conn = get_db_connection()
     c = conn.cursor()
-    now = datetime.now().isoformat()
     
     try:
         c.execute("""
             INSERT INTO deals (id, deal_type, company, pipeline, stage, temperature, notes, created_at, updated_at)
-            VALUES (?, ?, ?, ?, 'identified', 'cold', ?, ?, ?)
-        """, (deal_id, deal_type, company, pipeline, notes or "", now, now))
+            VALUES (?, ?, ?, ?, 'identified', 'cold', ?, datetime('now'), datetime('now'))
+        """, (deal_id, deal_type, company, pipeline, notes or ""))
         conn.commit()
-    except sqlite3.IntegrityError:
-        conn.close()
-        return SMSHandlerResult(
-            success=False, matched=True, deal_id=deal_id, deal_company=company,
-            response=f"❌ Deal '{company}' already exists in {pipeline}",
-            dry_run=False, notion_queued=False
-        )
+        
+        # Log the activity
+        c.execute("""
+            INSERT INTO deal_activities (deal_id, activity_type, description, performed_by, timestamp)
+            VALUES (?, 'created', ?, 'sms', datetime('now'))
+        """, (deal_id, f"Deal created via SMS: {notes or 'No notes'}"))
+        conn.commit()
+        
+    except Exception as e:
+        if "UNIQUE constraint" in str(e) or "IntegrityError" in str(type(e).__name__):
+            conn.close()
+            return SMSHandlerResult(
+                success=False, matched=True, deal_id=deal_id, deal_company=company,
+                response=f"❌ Deal '{company}' already exists in {pipeline}",
+                dry_run=False, notion_queued=False
+            )
+        raise
     finally:
         conn.close()
     
@@ -283,7 +343,7 @@ def handle_deal_add(company: str, pipeline: str, notes: Optional[str], db_path: 
 
 def handle_deal_status(query: str, db_path: str, config_path: str) -> SMSHandlerResult:
     """Handle 'n5 deal status <company>' command."""
-    router = DealSignalRouter(db_path=db_path, config_path=config_path)
+    router = DealSignalRouter(config_path=config_path)
     match = router.match_deal(query=query, context="")
     
     if not match.deal_id:
@@ -293,11 +353,10 @@ def handle_deal_status(query: str, db_path: str, config_path: str) -> SMSHandler
             dry_run=False, notion_queued=False
         )
     
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection(readonly=True)
     c = conn.cursor()
     c.execute("""
-        SELECT company, stage, temperature, next_action, next_action_date, last_touched, pipeline
+        SELECT company, stage, temperature, notes, updated_at, pipeline
         FROM deals WHERE id = ?
     """, (match.deal_id,))
     row = c.fetchone()
@@ -314,23 +373,20 @@ def handle_deal_status(query: str, db_path: str, config_path: str) -> SMSHandler
     company = d['company']
     stage = d['stage'] or 'unknown'
     temp = d['temperature'] or ''
-    next_action = d['next_action'] or ''
-    last_touched = d['last_touched'] or ''
+    updated_at = d['updated_at'] or ''
     
-    if last_touched:
+    if updated_at:
         try:
-            lt = datetime.fromisoformat(last_touched.replace('Z', '+00:00').replace('+00:00', ''))
+            lt = datetime.fromisoformat(updated_at.replace('Z', '+00:00').replace('+00:00', ''))
             days_ago = (datetime.now() - lt).days
             last_str = "today" if days_ago == 0 else "yesterday" if days_ago == 1 else f"{days_ago}d ago"
         except:
-            last_str = last_touched[:10]
+            last_str = updated_at[:10]
     else:
         last_str = "never"
     
     temp_emoji = {"hot": "🔥", "warm": "🌡️", "cold": "❄️"}.get(temp, "")
     response = f"{company}: {stage} ({temp}{temp_emoji}). Last: {last_str}."
-    if next_action:
-        response += f" Next: {next_action}"
     
     return SMSHandlerResult(
         success=True, matched=True, deal_id=match.deal_id, deal_company=company,
@@ -340,8 +396,7 @@ def handle_deal_status(query: str, db_path: str, config_path: str) -> SMSHandler
 
 def handle_deal_list(temp_filter: str, db_path: str) -> SMSHandlerResult:
     """Handle 'n5 deal list [hot|warm|cold|all]' command."""
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection(readonly=True)
     c = conn.cursor()
     
     if temp_filter == "all":
@@ -379,8 +434,101 @@ def handle_deal_list(temp_filter: str, db_path: str) -> SMSHandlerResult:
     response = f"{header}\n" + "\n".join(lines)
     
     return SMSHandlerResult(
-        success=True, matched=True, deal_id=None, deal_company=None,
+        success=True, matched=False, deal_id=None, deal_company=None,
         response=response, dry_run=False, notion_queued=False
+    )
+
+
+def handle_deal_update(parsed: ParsedCommand, config_path: str, dry_run: bool) -> SMSHandlerResult:
+    """Handle default deal update command."""
+    router = DealSignalRouter(config_path=config_path)
+    match = router.match_deal(query=parsed.query, context="")
+    
+    if not match.deal_id:
+        suggestions = get_similar_deals(parsed.query)
+        if suggestions:
+            suggest_text = ", ".join([f"{s[1]} ({s[2]}%)" for s in suggestions[:3]])
+            response = f"⚠️ No deal found for '{parsed.query}'. Did you mean: {suggest_text}?"
+        else:
+            response = f"⚠️ No deal match found for '{parsed.query}'"
+        return SMSHandlerResult(
+            success=True, matched=False, deal_id=None, deal_company=None,
+            response=response, dry_run=dry_run, notion_queued=False
+        )
+    
+    conn = get_db_connection(readonly=True)
+    c = conn.cursor()
+    c.execute("SELECT company FROM deals WHERE id = ?", (match.deal_id,))
+    row = c.fetchone()
+    conn.close()
+    
+    if not row:
+        return SMSHandlerResult(
+            success=False, matched=True, deal_id=match.deal_id, deal_company=None,
+            response=f"❌ Deal '{match.deal_id}' not found in database",
+            dry_run=dry_run, notion_queued=False
+        )
+    
+    company = row['company']
+    full_content = f"n5 deal {parsed.query} {parsed.update}"
+    
+    process_result = router.process_signal(
+        source='sms',
+        content=full_content,
+        metadata={'query': parsed.query, 'update': parsed.update},
+        context='',
+        dry_run=dry_run
+    )
+    
+    if not process_result.success:
+        return SMSHandlerResult(
+            success=False, matched=True, deal_id=match.deal_id, deal_company=company,
+            response=f"❌ Error processing update: {process_result.notes}",
+            dry_run=dry_run, notion_queued=False, process_result=process_result
+        )
+    
+    action_parts = []
+    if process_result.extraction:
+        ext = process_result.extraction
+        if ext.inferred_stage and ext.stage_signal == 'stage_change':
+            action_parts.append(f"Stage → {ext.inferred_stage}")
+        if ext.next_action:
+            action_parts.append(f"Next: {ext.next_action[:50]}")
+        if ext.sentiment and ext.sentiment != 'neutral':
+            action_parts.append(f"({ext.sentiment})")
+    
+    if not action_parts:
+        action_parts.append("activity logged")
+    action_text = ", ".join(action_parts)
+    
+    notion_queued = False
+    if process_result.extraction and not dry_run:
+        ext = process_result.extraction
+        notion_queued = queue_notion_sync(
+            deal_id=match.deal_id,
+            source_title=f"SMS Update: {datetime.now().strftime('%Y-%m-%d')}",
+            source_type='sms',
+            key_facts=ext.key_facts if ext.key_facts else [parsed.update[:200]],
+            next_action=ext.next_action,
+            dry_run=dry_run
+        )
+        
+        # Log activity to unified DB
+        log_deal_activity(
+            deal_id=match.deal_id,
+            activity_type='sms_update',
+            description=f"SMS update: {parsed.update[:200]}"
+        )
+    
+    if dry_run:
+        response = f"🔍 [DRY RUN] Would update {company}: {action_text}"
+    else:
+        notion_suffix = " (Notion queued)" if notion_queued else ""
+        response = f"✓ Updated {company}: {action_text}{notion_suffix}"
+    
+    return SMSHandlerResult(
+        success=True, matched=True, deal_id=match.deal_id, deal_company=company,
+        response=response, dry_run=dry_run, notion_queued=notion_queued, process_result=process_result
     )
 
 
