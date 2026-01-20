@@ -1,0 +1,61 @@
+# Backpressure Validation Rules
+# Default configuration for automated validation gates
+#
+# Backpressure = tests + lints + type checks + custom validators
+# Part of the "Ralph Wiggum" AI coding technique
+#
+# created: 2026-01-19
+# version: 1.0
+# provenance: con_JXNEEygOTtGTqYEd
+
+defaults:
+  # pytest - unit/integration tests
+  pytest:
+    enabled: true
+    args:
+      - "-q"           # Quiet output
+      - "--tb=short"   # Short tracebacks
+    fail_on: error     # error | warning | never
+
+  # ruff - fast Python linter (fallback: flake8)
+  ruff:
+    enabled: true
+    args:
+      - "check"
+      - "."
+    fail_on: error
+
+  # mypy - static type checker (opt-in)
+  mypy:
+    enabled: false     # Set to true to enable
+    args:
+      - "--ignore-missing-imports"
+    fail_on: warning
+
+  # Custom validators - add your own
+  # Each entry needs: name, command, fail_on
+  custom: []
+    # Example:
+    # - name: security-scan
+    #   command: bandit -r .
+    #   fail_on: error
+    # - name: docstring-check
+    #   command: interrogate -v .
+    #   fail_on: warning
+
+
+# Per-build overrides
+# Create a backpressure.yaml in your build folder to override these defaults
+#
+# Example build-local config (N5/builds/my-build/backpressure.yaml):
+# ---
+# defaults:
+#   pytest:
+#     enabled: true
+#     args: ["-v", "--cov=src"]
+#   mypy:
+#     enabled: true
+#   custom:
+#     - name: my-validator
+#       command: python validate.py
+#       fail_on: error

@@ -2,6 +2,13 @@
 Fathom Adapter for Unified Meeting Intake
 
 Transforms Fathom webhook payload → UnifiedTranscript
+
+---
+created: 2025-12-23
+last_edited: 2026-01-19
+version: 2.0
+provenance: con_uRvg5R7OPDTissJB
+---
 """
 
 import re
@@ -20,6 +27,25 @@ class FathomAdapter(BaseAdapter):
     Adapter for Fathom.ai transcripts.
     
     Handles webhook payloads from Fathom's new_meeting_content_ready event.
+    
+    Fathom payload structure (as of 2026-01):
+    {
+        "recording_id": int,
+        "title": str,
+        "meeting_title": str,
+        "recording_start_time": "2026-01-19T20:01:32Z",
+        "recording_end_time": "2026-01-19T20:27:37Z",
+        "share_url": "https://fathom.video/share/...",
+        "calendar_invitees": [
+            {"name": "Ben Guo", "email": "ben@substrate.run", "matched_speaker_display_name": "Ben Guo", ...}
+        ],
+        "transcript": [
+            {"speaker": {"display_name": "Ben Guo", "matched_calendar_invitee_email": "..."}, "text": "...", "timestamp": "00:00:01"}
+        ],
+        "default_summary": str | null,
+        "action_items": list | null,
+        ...
+    }
     """
     
     source = IntakeSource.FATHOM
@@ -27,21 +53,27 @@ class FathomAdapter(BaseAdapter):
     def adapt(self, payload: Dict[str, Any]) -> UnifiedTranscript:
         """Transform Fathom payload to UnifiedTranscript"""
         
-        # Fathom payload structure (from webhook)
         recording_id = payload.get("recording_id")
         title = payload.get("title") or payload.get("meeting_title", "")
         
-        # Get transcript text - Fathom sends it directly in payload
-        transcript_text = payload.get("transcript") or ""
+        # Get transcript - Fathom sends it as a LIST of utterance objects
+        transcript_raw = payload.get("transcript") or []
         
-        # Parse structured transcript if available
-        utterances = self._parse_transcript_text(transcript_text)
+        # Parse based on type
+        if isinstance(transcript_raw, list):
+            utterances = self._parse_transcript_list(transcript_raw)
+        elif isinstance(transcript_raw, str):
+            # Fallback for legacy string format
+            utterances = self._parse_transcript_text(transcript_raw)
+        else:
+            logger.warning(f"Unknown transcript format: {type(transcript_raw)}")
+            utterances = []
         
-        # If utterances parsed, rebuild full_text with speaker labels
+        # Build full_text from utterances
         if utterances:
             full_text = "\n".join([f"{u.speaker}: {u.text}" for u in utterances])
         else:
-            full_text = transcript_text
+            full_text = transcript_raw if isinstance(transcript_raw, str) else ""
         
         # Extract participants
         participants = self.extract_participants(payload)
@@ -52,59 +84,127 @@ class FathomAdapter(BaseAdapter):
         # Get summary if available
         summary = payload.get("default_summary") or payload.get("summary")
         
-        # Get duration
-        duration = payload.get("duration_seconds") or payload.get("duration")
-        if isinstance(duration, str):
-            duration = self._parse_duration(duration)
+        # Calculate duration from start/end times
+        duration = self._calculate_duration(payload)
         
         return UnifiedTranscript(
             source=self.source,
             full_text=full_text,
             detected_date=detected_date,
             participants=participants,
-            host=payload.get("organizer_email") or payload.get("host"),
+            host=payload.get("organizer_email") or payload.get("recorded_by", {}).get("email"),
             utterances=utterances,
             title=title,
             duration_seconds=duration,
-            recording_url=payload.get("url") or payload.get("video_url"),
+            recording_url=payload.get("url") or payload.get("share_url"),
             source_id=str(recording_id) if recording_id else None,
             summary=summary,
             raw_payload=payload,
         )
     
+    def _parse_transcript_list(self, transcript_list: List[Dict[str, Any]]) -> List[Utterance]:
+        """Parse Fathom's list-of-objects transcript format into utterances.
+        
+        Each item in the list has structure:
+        {
+            "speaker": {"display_name": "Name", "matched_calendar_invitee_email": "..."},
+            "text": "What they said",
+            "timestamp": "00:01:23"
+        }
+        """
+        utterances = []
+        
+        for item in transcript_list:
+            if not isinstance(item, dict):
+                continue
+            
+            # Extract speaker name
+            speaker_obj = item.get("speaker", {})
+            if isinstance(speaker_obj, dict):
+                speaker = speaker_obj.get("display_name") or speaker_obj.get("name") or "Unknown"
+            elif isinstance(speaker_obj, str):
+                speaker = speaker_obj
+            else:
+                speaker = "Unknown"
+            
+            text = item.get("text", "")
+            timestamp = item.get("timestamp", "")
+            
+            # Convert timestamp to milliseconds
+            start_ms = self._timestamp_to_ms(timestamp) if timestamp else None
+            
+            if text:  # Only add if there's actual text
+                utterances.append(Utterance(
+                    speaker=speaker.strip(),
+                    text=text.strip(),
+                    start_ms=start_ms,
+                ))
+        
+        return utterances
+    
     def extract_participants(self, payload: Dict[str, Any]) -> List[str]:
         """Extract participant names from Fathom data"""
         participants = []
         
-        # Try attendees/participants fields
+        # Primary: calendar_invitees (Fathom's main participant field)
+        invitees = payload.get("calendar_invitees", [])
+        for p in invitees:
+            if isinstance(p, dict):
+                # Prefer matched_speaker_display_name (actual speaker), then name, then email
+                name = (
+                    p.get("matched_speaker_display_name") or 
+                    p.get("name") or 
+                    p.get("email", "").split("@")[0]
+                )
+                if name and name not in participants:
+                    participants.append(name)
+            elif isinstance(p, str) and p not in participants:
+                participants.append(p)
+        
+        # Fallback: try other fields
         for field in ["attendees", "participants", "invitees"]:
+            if participants:
+                break
             raw = payload.get(field, [])
             if raw:
                 for p in raw:
                     if isinstance(p, dict):
                         name = p.get("name") or p.get("email") or p.get("displayName")
-                        if name:
+                        if name and name not in participants:
                             participants.append(name)
-                    elif isinstance(p, str):
+                    elif isinstance(p, str) and p not in participants:
                         participants.append(p)
         
-        # Fallback: extract from transcript
+        # Last resort: extract speakers from transcript
         if not participants:
-            transcript = payload.get("transcript", "")
-            speakers = self._extract_speakers_from_text(transcript)
-            participants = list(speakers)
+            transcript_raw = payload.get("transcript", [])
+            if isinstance(transcript_raw, list):
+                speakers = set()
+                for item in transcript_raw:
+                    if isinstance(item, dict):
+                        speaker_obj = item.get("speaker", {})
+                        if isinstance(speaker_obj, dict):
+                            name = speaker_obj.get("display_name")
+                            if name and name not in ["Unknown", "Speaker"]:
+                                speakers.add(name)
+                participants = list(speakers)
+            elif isinstance(transcript_raw, str):
+                speakers = self._extract_speakers_from_text(transcript_raw)
+                participants = list(speakers)
         
         return participants
     
     def detect_date_semantic(self, payload: Dict[str, Any]) -> Optional[str]:
         """Attempt to detect meeting date from transcript content"""
         # First check payload metadata
-        for field in ["date", "start_time", "meeting_date", "recorded_at"]:
+        for field in ["date", "recording_start_time", "start_time", "meeting_date", "recorded_at"]:
             if payload.get(field):
                 return str(payload.get(field))
         
-        # Search in transcript
+        # Search in transcript (for string format)
         transcript = payload.get("transcript", "")
+        if isinstance(transcript, list):
+            return None  # Can't search list for date patterns
         if not transcript:
             return None
         
@@ -130,8 +230,8 @@ class FathomAdapter(BaseAdapter):
     
     def _parse_date(self, payload: Dict[str, Any]) -> Optional[datetime]:
         """Parse date from Fathom payload"""
-        # Try various date fields
-        for field in ["date", "start_time", "meeting_date", "recorded_at", "created_at"]:
+        # Try various date fields (recording_start_time is primary for Fathom)
+        for field in ["recording_start_time", "date", "start_time", "meeting_date", "recorded_at", "created_at"]:
             date_val = payload.get(field)
             if not date_val:
                 continue
@@ -156,15 +256,39 @@ class FathomAdapter(BaseAdapter):
         
         return None
     
+    def _calculate_duration(self, payload: Dict[str, Any]) -> Optional[int]:
+        """Calculate duration in seconds from start/end times"""
+        # First check explicit duration field
+        duration = payload.get("duration_seconds") or payload.get("duration")
+        if duration:
+            if isinstance(duration, (int, float)):
+                return int(duration)
+            if isinstance(duration, str):
+                parsed = self._parse_duration(duration)
+                if parsed:
+                    return parsed
+        
+        # Calculate from start/end times
+        start_str = payload.get("recording_start_time")
+        end_str = payload.get("recording_end_time")
+        
+        if start_str and end_str:
+            try:
+                start = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
+                end = datetime.fromisoformat(end_str.replace("Z", "+00:00"))
+                return int((end - start).total_seconds())
+            except (ValueError, TypeError):
+                pass
+        
+        return None
+    
     def _parse_transcript_text(self, transcript: str) -> List[Utterance]:
-        """Parse Fathom's transcript format into utterances"""
+        """Parse Fathom's legacy text transcript format into utterances (fallback)"""
         if not transcript:
             return []
         
         utterances = []
         
-        # Fathom format is typically "Speaker Name: text" or timestamped
-        # Pattern: "Speaker Name: text" or "[00:00:00] Speaker Name: text"
         lines = transcript.split("\n")
         
         for line in lines:
@@ -213,6 +337,8 @@ class FathomAdapter(BaseAdapter):
     
     def _timestamp_to_ms(self, ts: str) -> int:
         """Convert HH:MM:SS to milliseconds"""
+        if not ts:
+            return 0
         parts = ts.split(":")
         if len(parts) == 3:
             h, m, s = map(int, parts)
@@ -241,4 +367,3 @@ class FathomAdapter(BaseAdapter):
         if s: total += int(s.group(1))
         
         return total if total > 0 else None
-

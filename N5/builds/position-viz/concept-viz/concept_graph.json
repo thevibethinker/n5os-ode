@@ -1,0 +1,3208 @@
+{
+  "nodes": [
+    {
+      "id": "c:ai-commoditization",
+      "type": "concept",
+      "label": "AI Commoditization",
+      "description": "How AI reduces the cost and differentiation of previously valuable outputs",
+      "thought_count": 48,
+      "domains": [
+        "ai-automation",
+        "hiring-market"
+      ],
+      "color": "#fbbf24",
+      "size": 116
+    },
+    {
+      "id": "c:information-asymmetry",
+      "type": "concept",
+      "label": "Information Asymmetry",
+      "description": "Imbalances in information access that create market advantages or failures",
+      "thought_count": 26,
+      "domains": [
+        "hiring-market",
+        "careerspan",
+        "worldview"
+      ],
+      "color": "#fbbf24",
+      "size": 72
+    },
+    {
+      "id": "c:problem-stack",
+      "type": "concept",
+      "label": "Problem Stack Elevation",
+      "description": "Moving humans to higher-level problems while AI handles lower levels",
+      "thought_count": 19,
+      "domains": [
+        "ai-automation"
+      ],
+      "color": "#fbbf24",
+      "size": 58
+    },
+    {
+      "id": "c:anthropomorphic-engagement",
+      "type": "concept",
+      "label": "Anthropomorphic Engagement",
+      "description": "Human-like interfaces that drive behavior change through social dynamics",
+      "thought_count": 19,
+      "domains": [
+        "ai-automation",
+        "worldview"
+      ],
+      "color": "#fbbf24",
+      "size": 58
+    },
+    {
+      "id": "c:signal-decay",
+      "type": "concept",
+      "label": "Signal Decay",
+      "description": "The degradation of meaningful information in systems over time or through noise",
+      "thought_count": 16,
+      "domains": [
+        "hiring-market",
+        "ai-automation"
+      ],
+      "color": "#fbbf24",
+      "size": 52
+    },
+    {
+      "id": "c:assessment-validity",
+      "type": "concept",
+      "label": "Assessment Validity",
+      "description": "What makes evaluation signals trustworthy and meaningful",
+      "thought_count": 15,
+      "domains": [
+        "hiring-market",
+        "epistemology"
+      ],
+      "color": "#fbbf24",
+      "size": 50
+    },
+    {
+      "id": "c:friction-as-filter",
+      "type": "concept",
+      "label": "Friction as Filter",
+      "description": "Intentional effort barriers that separate high-quality from low-quality actors",
+      "thought_count": 12,
+      "domains": [
+        "hiring-market",
+        "careerspan"
+      ],
+      "color": "#fbbf24",
+      "size": 44
+    },
+    {
+      "id": "c:narrative-identity",
+      "type": "concept",
+      "label": "Narrative Identity",
+      "description": "Professional identity as constructed through stories rather than documents",
+      "thought_count": 12,
+      "domains": [
+        "careerspan",
+        "worldview",
+        "hiring-market"
+      ],
+      "color": "#fbbf24",
+      "size": 44
+    },
+    {
+      "id": "c:trust-networks",
+      "type": "concept",
+      "label": "Trust Networks",
+      "description": "Systems of relationship-based credibility and referral",
+      "thought_count": 11,
+      "domains": [
+        "hiring-market",
+        "careerspan",
+        "worldview"
+      ],
+      "color": "#fbbf24",
+      "size": 42
+    },
+    {
+      "id": "c:self-knowledge",
+      "type": "concept",
+      "label": "Self-Knowledge",
+      "description": "The importance of deep self-understanding for professional effectiveness",
+      "thought_count": 9,
+      "domains": [
+        "careerspan",
+        "personal-foundations",
+        "hiring-market"
+      ],
+      "color": "#fbbf24",
+      "size": 38
+    },
+    {
+      "id": "c:moonshot-growth",
+      "type": "concept",
+      "label": "Moonshot Growth",
+      "description": "The developmental value of high-risk, high-ambition endeavors",
+      "thought_count": 9,
+      "domains": [
+        "worldview",
+        "founder"
+      ],
+      "color": "#fbbf24",
+      "size": 38
+    },
+    {
+      "id": "c:platform-shift",
+      "type": "concept",
+      "label": "Platform Shift",
+      "description": "Transitions in how platforms create and capture value",
+      "thought_count": 9,
+      "domains": [
+        "worldview"
+      ],
+      "color": "#fbbf24",
+      "size": 38
+    },
+    {
+      "id": "c:geometric-distance",
+      "type": "concept",
+      "label": "Career Mobility Distance",
+      "description": "The measurable gap between current position and target role",
+      "thought_count": 7,
+      "domains": [
+        "careerspan"
+      ],
+      "color": "#fbbf24",
+      "size": 34
+    },
+    {
+      "id": "c:restraint-discipline",
+      "type": "concept",
+      "label": "Disciplined Restraint",
+      "description": "Long-term growth through intentional underperformance",
+      "thought_count": 7,
+      "domains": [
+        "worldview",
+        "personal-foundations"
+      ],
+      "color": "#fbbf24",
+      "size": 34
+    },
+    {
+      "id": "c:orchestration",
+      "type": "concept",
+      "label": "Orchestration",
+      "description": "Achieving complex outcomes through coordination of simpler components",
+      "thought_count": 6,
+      "domains": [
+        "ai-automation",
+        "epistemology"
+      ],
+      "color": "#fbbf24",
+      "size": 32
+    },
+    {
+      "id": "c:portable-trust",
+      "type": "concept",
+      "label": "Portable Trust",
+      "description": "Mechanisms for transferring credibility across contexts",
+      "thought_count": 6,
+      "domains": [
+        "careerspan",
+        "hiring-market"
+      ],
+      "color": "#fbbf24",
+      "size": 32
+    },
+    {
+      "id": "c:adversarial-dynamics",
+      "type": "concept",
+      "label": "Adversarial Dynamics",
+      "description": "Zero-sum competition and its alternatives in hiring/career systems",
+      "thought_count": 5,
+      "domains": [
+        "hiring-market"
+      ],
+      "color": "#fbbf24",
+      "size": 30
+    },
+    {
+      "id": "c:bundled-tradeoffs",
+      "type": "concept",
+      "label": "Bundled Tradeoffs",
+      "description": "Hiring as optimization across skill bundles rather than linear ranking",
+      "thought_count": 5,
+      "domains": [
+        "hiring-market",
+        "careerspan"
+      ],
+      "color": "#fbbf24",
+      "size": 30
+    },
+    {
+      "id": "c:scar-tissue-institutions",
+      "type": "concept",
+      "label": "Institutional Scar Tissue",
+      "description": "How parallel institutions emerge from historical exclusion",
+      "thought_count": 5,
+      "domains": [
+        "worldview"
+      ],
+      "color": "#fbbf24",
+      "size": 30
+    },
+    {
+      "id": "c:minimum-viable-existence",
+      "type": "concept",
+      "label": "Minimum Viable Existence",
+      "description": "The declining accessibility of stable middle-class life",
+      "thought_count": 3,
+      "domains": [
+        "worldview"
+      ],
+      "color": "#fbbf24",
+      "size": 26
+    },
+    {
+      "id": "t:ai-implementation-should-elevate-human-experts-hig",
+      "type": "thought",
+      "label": "AI implementation should elevate human experts 'higher in...",
+      "full_title": "AI implementation should elevate human experts 'higher in...",
+      "insight_preview": "AI implementation should elevate human experts 'higher in the problem stack' rather than simply automating existing low-level tasks. The objective is ",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ai-interfaces-that-mimic-human-social-bids-create",
+      "type": "thought",
+      "label": "AI interfaces that mimic human social bids create 'anthropom",
+      "full_title": "AI interfaces that mimic human social bids create 'anthropomorphic friction' which outperforms tradi",
+      "insight_preview": "AI interfaces that mimic human social bids create 'anthropomorphic friction' which outperforms traditional UI utility for behavior change. The success",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ai-makes-individuals-as-effective-as-teams",
+      "type": "thought",
+      "label": "AI makes individuals as effective as teams",
+      "full_title": "AI makes individuals as effective as teams",
+      "insight_preview": "AI tools can make a single well-trained person as effective as several non-AI-enabled individuals. White collar workers face this reality whether they",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ai-shifts-experts-higher-in-the-problem-stack",
+      "type": "thought",
+      "label": "AI shifts experts higher in the problem stack",
+      "full_title": "AI shifts experts higher in the problem stack",
+      "insight_preview": "AI's primary role in professional services should be to shift human experts 'higher in the problem stack.' Automation should not merely replace human ",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ais-primary-role-in-professional-services-should-b",
+      "type": "thought",
+      "label": "AI's primary role in professional services should be...",
+      "full_title": "AI's primary role in professional services should be...",
+      "insight_preview": "AI's primary role in professional services should be to shift human experts 'higher in the problem stack.' Automation should not merely replace human ",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ais-primary-value-is-in-shifting-human-experts",
+      "type": "thought",
+      "label": "AI\u2019s primary value is in shifting human experts...",
+      "full_title": "AI\u2019s primary value is in shifting human experts...",
+      "insight_preview": "AI\u2019s primary value is in shifting human experts 'higher in the problem stack' rather than simply automating existing low-level tasks. This transition ",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:as-ai-commoditizes-content-generation-input-system",
+      "type": "thought",
+      "label": "As AI commoditizes content generation, 'input' (systematic l",
+      "full_title": "As AI commoditizes content generation, 'input' (systematic listening...",
+      "insight_preview": "As AI commoditizes content generation, 'input' (systematic listening and understanding) becomes a more defensible moat than 'output'. The primary valu",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:as-generative-ai-commoditizes-highquality-output-t",
+      "type": "thought",
+      "label": "As generative AI commoditizes high-quality output, the true.",
+      "full_title": "As generative AI commoditizes high-quality output, the true...",
+      "insight_preview": "As generative AI commoditizes high-quality output, the true competitive moat shifts to 'input'\u2014systematic listening and deep understanding. The value ",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:building-sophisticated-outputs-by-orchestrating-mu",
+      "type": "thought",
+      "label": "Building sophisticated outputs by orchestrating multiple 'du",
+      "full_title": "Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient",
+      "insight_preview": "Building sophisticated outputs by orchestrating multiple 'dumb' mini-models creates a more resilient and cost-effective system than relying on a singl",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:current-ai-implementations-often-create-an-informa",
+      "type": "thought",
+      "label": "Current AI implementations often create an 'Information Stan",
+      "full_title": "Current AI implementations often create an 'Information Standstill'...",
+      "insight_preview": "Current AI implementations often create an 'Information Standstill' where words are merely moved between locations without being consumed. This repres",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:generic-ai-usage-is-detectable-and-disqualifying",
+      "type": "thought",
+      "label": "Generic AI usage is detectable and disqualifying",
+      "full_title": "Generic AI usage is detectable and disqualifying",
+      "insight_preview": "Using ChatGPT with generic prompts produces recognizable output that recruiters can spot immediately. 'Garbage in, garbage out' - limited context and ",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:highintelligence-outputs-are-more-reliably-achieve",
+      "type": "thought",
+      "label": "High-intelligence outputs are more reliably achieved through",
+      "full_title": "High-intelligence outputs are more reliably achieved through orchestrated...",
+      "insight_preview": "High-intelligence outputs are more reliably achieved through orchestrated sequences of 'dumb' models rather than single-shot high-end model prompts. S",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:intelligent-and-resilient-system-behavior-is-bette",
+      "type": "thought",
+      "label": "Intelligent and resilient system behavior is better achieved",
+      "full_title": "Intelligent and resilient system behavior is better achieved...",
+      "insight_preview": "Intelligent and resilient system behavior is better achieved through multi-step orchestration of low-capability models than through single-shot prompt",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:soft-skills-become-more-valuable-in-ai-world",
+      "type": "thought",
+      "label": "Soft skills become more valuable in AI world",
+      "full_title": "Soft skills become more valuable in AI world",
+      "insight_preview": "In a world where AI handles technical output, competitive advantage shifts to soft skills - how well you work with other humans. Problem decomposition",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:technical-resilience-in-ai-systems-is-best-achieve",
+      "type": "thought",
+      "label": "Technical resilience in AI systems is best achieved...",
+      "full_title": "Technical resilience in AI systems is best achieved...",
+      "insight_preview": "Technical resilience in AI systems is best achieved by orchestrating 'dumb' mini-models to produce sophisticated results, rather than relying on a sin",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-current-paradigm-of-ai-automation-often-result",
+      "type": "thought",
+      "label": "The current paradigm of AI automation often results...",
+      "full_title": "The current paradigm of AI automation often results...",
+      "insight_preview": "The current paradigm of AI automation often results in an 'Information Standstill' where processing power is wasted on moving data between unread silo",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-efficacy-of-automated-agents-like-habittrackin",
+      "type": "thought",
+      "label": "The efficacy of automated agents (like habit-tracking bots).",
+      "full_title": "The efficacy of automated agents (like habit-tracking bots)...",
+      "insight_preview": "The efficacy of automated agents (like habit-tracking bots) is driven primarily by their perceived humanity rather than their technical utility. Users",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-efficacy-of-automated-habit-tracking-systems-i",
+      "type": "thought",
+      "label": "The efficacy of automated habit-tracking systems is driven b",
+      "full_title": "The efficacy of automated habit-tracking systems is driven by social obligation rather than function",
+      "insight_preview": "The efficacy of automated habit-tracking systems is driven by social obligation rather than functional utility. Users are more likely to comply with a",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:vibe-coding-functions-as-a-powerful-identity-bridg",
+      "type": "thought",
+      "label": "Vibe coding functions as a powerful identity bridge for tale",
+      "full_title": "Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circ",
+      "insight_preview": "Vibe coding functions as a powerful identity bridge for talented generalists to enter technical circles. It rebrands 'non-technical' proximity to AI a",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:vibe-coding-should-be-positioned-as-a-strategic",
+      "type": "thought",
+      "label": "Vibe coding should be positioned as a strategic...",
+      "full_title": "Vibe coding should be positioned as a strategic...",
+      "insight_preview": "Vibe coding should be positioned as a strategic identity bridge for generalists rather than a technical subset of software engineering. It allows tale",
+      "domain": "ai-automation",
+      "color": "#3b82f6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:a-sustainable-job-search-requires-a-dietary-balanc",
+      "type": "thought",
+      "label": "A sustainable job search requires a 'dietary' balance: a fou",
+      "full_title": "A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability oppo",
+      "insight_preview": "A sustainable job search requires a 'dietary' balance: a foundation of stable, high-probability opportunities to maintain psychological and financial ",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:career-development-tools-must-solve-for-the-inerti",
+      "type": "thought",
+      "label": "Career development tools must solve for the 'inertia...",
+      "full_title": "Career development tools must solve for the 'inertia...",
+      "insight_preview": "Career development tools must solve for the 'inertia of self-reflection' rather than just providing utility. The high cognitive and emotional cost of ",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:career-mobility-is-governed-by-a-geometric-distanc",
+      "type": "thought",
+      "label": "Career mobility is governed by a 'geometric distance' from a",
+      "full_title": "Career mobility is governed by a 'geometric distance' from an individual's existing domain and role ",
+      "insight_preview": "Career mobility is governed by a 'geometric distance' from an individual's existing domain and role expertise. The market's willingness to fund or hir",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:everyone-has-valuable-things-to-say-about-themselv",
+      "type": "thought",
+      "label": "Everyone has valuable things to say about themselves",
+      "full_title": "Everyone has valuable things to say about themselves",
+      "insight_preview": "In a decade of career coaching, V has never met someone who didn't have valuable things to say about themselves. The problem is extraction and packagi",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:hiring-should-be-treated-as-an-optimization-for-bu",
+      "type": "thought",
+      "label": "Hiring should be treated as an optimization for 'bundles of ",
+      "full_title": "Hiring should be treated as an optimization for 'bundles of skills' and 'trade-offs' rather than a l",
+      "insight_preview": "Hiring should be treated as an optimization for 'bundles of skills' and 'trade-offs' rather than a linear stack-ranking of candidates. No candidate is",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:human-data-signal-density",
+      "type": "thought",
+      "label": "Human Data Signal Density Stratification",
+      "full_title": "Human Data Signal Density Stratification",
+      "insight_preview": "Not all human data has equal learning signal density. There is commodity-tier data (annotation, labeling) and premium-tier data: concentrated metacogn",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:identity-in-the-labor-market-is-semantic-not",
+      "type": "thought",
+      "label": "Identity in the labor market is semantic, not...",
+      "full_title": "Identity in the labor market is semantic, not...",
+      "insight_preview": "Identity in the labor market is semantic, not syntactic; a professional identity is a collection of meaningful experiences that can be truthfully re-r",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:in-the-ai-era-the-matching-component-of",
+      "type": "thought",
+      "label": "In the AI era, the 'matching' component of...",
+      "full_title": "In the AI era, the 'matching' component of...",
+      "insight_preview": "In the AI era, the 'matching' component of recruitment is a commodity that will be solved by general-purpose algorithms. The true competitive moat has",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:job-seeking-and-hiring-should-be-viewed-as",
+      "type": "thought",
+      "label": "Job seeking and hiring should be viewed as...",
+      "full_title": "Job seeking and hiring should be viewed as...",
+      "insight_preview": "Job seeking and hiring should be viewed as a 'dietary' balance of risk, mixing predictable standard opportunities with high-variance, high-reward 'out",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "type": "thought",
+      "label": "Maintaining a state of constant 'readiness' via AI-captured.",
+      "full_title": "Maintaining a state of constant 'readiness' via AI-captured...",
+      "insight_preview": "Maintaining a state of constant 'readiness' via AI-captured intelligence collapses the latency within trust networks. This shifts institutional roles ",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:maintaining-a-strict-separation-between-candidatef",
+      "type": "thought",
+      "label": "Maintaining a strict separation between candidate-facing and",
+      "full_title": "Maintaining a strict separation between candidate-facing and employer-facing...",
+      "insight_preview": "Maintaining a strict separation between candidate-facing and employer-facing representatives creates a psychological safety zone that facilitates deep",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:market-fundability-and-professional-acceptability-",
+      "type": "thought",
+      "label": "Market fundability and professional acceptability are functi",
+      "full_title": "Market fundability and professional acceptability are functions of...",
+      "insight_preview": "Market fundability and professional acceptability are functions of 'geometric distance' from an individual's career core. Success in a pivot is determ",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:professional-identity-is-narrative-not-document",
+      "type": "thought",
+      "label": "Professional identity is narrative, not document",
+      "full_title": "Professional identity is narrative, not document",
+      "insight_preview": "Professional identity is semantic and narratively driven, rather than syntactic and document-bound. A person is a collection of meaningful experiences",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:psychological-safety-and-honesty-are-maximized-whe",
+      "type": "thought",
+      "label": "Psychological safety and honesty are maximized when there...",
+      "full_title": "Psychological safety and honesty are maximized when there...",
+      "insight_preview": "Psychological safety and honesty are maximized when there is a structural 'Separation of Concerns' between candidate advocacy and employer representat",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:self-reflection-is-subject-to-a-high-activation-en",
+      "type": "thought",
+      "label": "Self-reflection is subject to a high activation energy barri",
+      "full_title": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. T",
+      "insight_preview": "Self-reflection is subject to a high activation energy barrier that utility alone cannot overcome. Tools designed for career development must solve fo",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:system-design-and-complex-technical-infrastructure",
+      "type": "thought",
+      "label": "System design and complex technical infrastructure can be...",
+      "full_title": "System design and complex technical infrastructure can be...",
+      "insight_preview": "System design and complex technical infrastructure can be used as a gift-economy lever to bypass the 'cold start' problem. By providing a pre-built, h",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "type": "thought",
+      "label": "The future of hiring lies in a persistent 'mid-layer' system",
+      "full_title": "The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship",
+      "insight_preview": "The future of hiring lies in a persistent 'mid-layer' system that maintains a long-term relationship between candidate archetypes and firm needs, repl",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-future-of-hiring-shifts-from-a-transactional",
+      "type": "thought",
+      "label": "The future of hiring shifts from a transactional...",
+      "full_title": "The future of hiring shifts from a transactional...",
+      "insight_preview": "The future of hiring shifts from a transactional 'apply-now-or-never' model to a persistent 'mid-layer' relationship. This system maintains a continuo",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-future-of-recruitment-lies-in-democratizing-th",
+      "type": "thought",
+      "label": "The future of recruitment lies in democratizing the...",
+      "full_title": "The future of recruitment lies in democratizing the...",
+      "insight_preview": "The future of recruitment lies in democratizing the recruiter's commission by empowering non-professionals with professional-grade data superiority. B",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-most-effective-way-to-disrupt-recruitment-is",
+      "type": "thought",
+      "label": "The most effective way to disrupt recruitment is...",
+      "full_title": "The most effective way to disrupt recruitment is...",
+      "insight_preview": "The most effective way to disrupt recruitment is to democratize the recruiter's financial incentives and data superiority to non-recruiters. By provid",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-strategic-value-in-the-labor-market-is",
+      "type": "thought",
+      "label": "The strategic value in the labor market is...",
+      "full_title": "The strategic value in the labor market is...",
+      "insight_preview": "The strategic value in the labor market is shifting from 'matching algorithms' to the acquisition and validation of high-fidelity candidate data. Matc",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:there-is-a-strategic-advantage-in-decoupling-human",
+      "type": "thought",
+      "label": "There is a strategic advantage in decoupling 'human-centric ",
+      "full_title": "There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluati",
+      "insight_preview": "There is a strategic advantage in decoupling 'human-centric reflection' from 'transactional evaluation' in the hiring process. A neutral third party l",
+      "domain": "careerspan",
+      "color": "#22c55e",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:cognitive-bootstrapping-via-test-preparation",
+      "type": "thought",
+      "label": "Cognitive Bootstrapping via Test Preparation",
+      "full_title": "Cognitive Bootstrapping via Test Preparation",
+      "insight_preview": "Standardized test preparation teaches a transferable cognitive modality\u2014a way of thinking under constraint\u2014that generalizes beyond the test itself. Am",
+      "domain": "education",
+      "color": "#06b6d4",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:assessment-signal-validity-framework",
+      "type": "thought",
+      "label": "Assessment Signal Validity Framework",
+      "full_title": "Assessment Signal Validity Framework",
+      "insight_preview": "Standardized assessments function as signal transmission systems whose utility depends on three properties: construct validity (the signal maps onto w",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:information-engineering-distinction",
+      "type": "thought",
+      "label": "Information Engineering Distinction",
+      "full_title": "Information Engineering Distinction",
+      "insight_preview": "Information Engineering is a discipline distinct from Data Engineering\u2014the deliberate manipulation of qualitative information to accelerate real-world",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:magic-as-intentaction-abstraction",
+      "type": "thought",
+      "label": "Magic as Intent-Action Abstraction",
+      "full_title": "Magic as Intent-Action Abstraction",
+      "insight_preview": "Magic is intent-to-action abstraction\u2014when abstraction becomes complete enough that you can say what you want and it happens, the experience is phenom",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:polyorchestrator-model",
+      "type": "thought",
+      "label": "Polyorchestrator Model",
+      "full_title": "Polyorchestrator Model",
+      "insight_preview": "The Polyorchestrator is a new knowledge worker type\u2014a conductor who translates between domains and orchestrates specialists, compressing learning to j",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:printing-press-parallel",
+      "type": "thought",
+      "label": "Printing Press Parallel",
+      "full_title": "Printing Press Parallel",
+      "insight_preview": "Information transmission costs are collapsing now as they did with the printing press in the Renaissance, enabling new modes of intellectual work. The",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:sliding-knowledge-threshold",
+      "type": "thought",
+      "label": "Sliding Knowledge Threshold",
+      "full_title": "Sliding Knowledge Threshold",
+      "insight_preview": "The minimum viable knowledge threshold for any capability is sliding downward like Moore's Law\u2014AI compression continuously reduces how much you need t",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:vectorized-merit-selection-as-bundle-matching-not-",
+      "type": "thought",
+      "label": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ra",
+      "full_title": "Vectorized Merit: Selection as Bundle Matching, Not Stack Ranking",
+      "insight_preview": "In education and hiring, 'merit' should be treated as a multi-dimensional capability vector rather than a single scalar score. Most real decisions are",
+      "domain": "epistemology",
+      "color": "#ec4899",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:nontechnical-founders-can-build-with-ai",
+      "type": "thought",
+      "label": "Non-technical founders can build with AI",
+      "full_title": "Non-technical founders can build with AI",
+      "insight_preview": "AI tools (like Zo) have unlocked building for non-technical founders. 'Builder' is no longer an unfulfilled ambition limited to those who code. V's pe",
+      "domain": "founder",
+      "color": "#f59e0b",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:selling-a-manual-methodology-as-a-finished-softwar",
+      "type": "thought",
+      "label": "Selling a manual methodology as a finished software...",
+      "full_title": "Selling a manual methodology as a finished software...",
+      "insight_preview": "Selling a manual methodology as a finished software product ('selling the product before it exists') is a high-leverage strategy to find immediate pro",
+      "domain": "founder",
+      "color": "#f59e0b",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:selling-a-manual-methodology-as-finished-software",
+      "type": "thought",
+      "label": "Selling a manual methodology as finished software\u2014'selling t",
+      "full_title": "Selling a manual methodology as finished software\u2014'selling the product before it exists'\u2014is a high-v",
+      "insight_preview": "Selling a manual methodology as finished software\u2014'selling the product before it exists'\u2014is a high-variance strategy that creates immediate product-ma",
+      "domain": "founder",
+      "color": "#f59e0b",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:system-design-and-technical-scaffolding-can-be-use",
+      "type": "thought",
+      "label": "System design and technical scaffolding can be used...",
+      "full_title": "System design and technical scaffolding can be used...",
+      "insight_preview": "System design and technical scaffolding can be used as a gift-economy lever to bypass the 'cold start' problem in complex implementations. Providing a",
+      "domain": "founder",
+      "color": "#f59e0b",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:the-developmental-value-of-a-highdifficulty-moonsh",
+      "type": "thought",
+      "label": "The developmental value of a high-difficulty 'moonshot' proj",
+      "full_title": "The developmental value of a high-difficulty 'moonshot' project...",
+      "insight_preview": "The developmental value of a high-difficulty 'moonshot' project often outweighs the strategic value of a guaranteed 'slam dunk' victory. Even when a m",
+      "domain": "founder",
+      "color": "#f59e0b",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:a-candidates-primary-task-is-to-artificially-close",
+      "type": "thought",
+      "label": "A candidate's primary task is to 'artificially' close...",
+      "full_title": "A candidate's primary task is to 'artificially' close...",
+      "insight_preview": "A candidate's primary task is to 'artificially' close the perceived skill or experience gap in an employer's mind through narrative construction. Tech",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "type": "thought",
+      "label": "A candidate's willingness to engage in high-effort, reflecti",
+      "full_title": "A candidate's willingness to engage in high-effort, reflective...",
+      "insight_preview": "A candidate's willingness to engage in high-effort, reflective exercises\u2014such as writing a 'story'\u2014is a higher-fidelity signal of professional quality",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ai-has-reduced-the-marginal-cost-of-bs-to-zero",
+      "type": "thought",
+      "label": "AI has reduced the marginal cost of BS to zero",
+      "full_title": "AI has reduced the marginal cost of BS to zero",
+      "insight_preview": "The marginal cost of producing fake/inflated job applications is now effectively zero due to AI, which is fundamentally breaking the hiring market. Jo",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:aidriven-automation-of-application-materials-effec",
+      "type": "thought",
+      "label": "AI-driven automation of application materials effectively de",
+      "full_title": "AI-driven automation of application materials effectively destroys the...",
+      "insight_preview": "AI-driven automation of application materials effectively destroys the information value of traditional inbound signals like resumes and cover letters",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:autoapply-is-mutually-assured-destruction",
+      "type": "thought",
+      "label": "Auto-apply is mutually assured destruction",
+      "full_title": "Auto-apply is mutually assured destruction",
+      "insight_preview": "Humans use AI to spam applications; companies use AI to filter spam. This arms race benefits no one and creates a tragic equilibrium where genuine tal",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:autoapply-tools-are-career-selfsabotage",
+      "type": "thought",
+      "label": "Auto-apply tools are career self-sabotage",
+      "full_title": "Auto-apply tools are career self-sabotage",
+      "insight_preview": "Auto-apply tools exploit desperate job seekers with vanity metrics while actually harming their chances. They rely on 'metric fixation' bias - making ",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:confidence-over-quality-scores",
+      "type": "thought",
+      "label": "Confidence Over Quality: What Candidate Scores Should Measur",
+      "full_title": "Confidence Over Quality: What Candidate Scores Should Measure",
+      "insight_preview": "Most hiring tools produce \"quality scores\" that purport to rank candidates from best to worst. This framing is wrong: \"Quality\" implies objective meas",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:data-collected-about-a-candidate-independent-of-a",
+      "type": "thought",
+      "label": "Data collected about a candidate independent of a specific j",
+      "full_title": "Data collected about a candidate independent of a specific job application is inherently higher fide",
+      "insight_preview": "Data collected about a candidate independent of a specific job application is inherently higher fidelity than data collected during an application pro",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:data-collected-independent-of-a-specific-job-appli",
+      "type": "thought",
+      "label": "Data collected independent of a specific job application...",
+      "full_title": "Data collected independent of a specific job application...",
+      "insight_preview": "Data collected independent of a specific job application is inherently higher fidelity than application-specific data. By removing the 'angling' incen",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:employer-oblige",
+      "type": "thought",
+      "label": "Employer Oblige: The Case for Investing in Candidate Develop",
+      "full_title": "Employer Oblige: The Case for Investing in Candidate Development",
+      "insight_preview": "Employers mistakenly believe that \"strengthening candidates weakens employer negotiating position.\" This is zero-sum thinking applied to a positive-su",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:for-mid-career-specialists-the-higher-financial-al",
+      "type": "thought",
+      "label": "For mid-career specialists, the higher financial 'alpha' of ",
+      "full_title": "For mid-career specialists, the higher financial 'alpha' of Seed-stage startups is often negated by ",
+      "insight_preview": "For mid-career specialists, the higher financial 'alpha' of Seed-stage startups is often negated by the psychological costs and lack of structure. Ser",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:friction-economics-scalable-vs-linear",
+      "type": "thought",
+      "label": "Friction Economics: Scalable vs. Linear Work",
+      "full_title": "Friction Economics: Scalable vs. Linear Work",
+      "insight_preview": "There are two types of friction in hiring systems. Linear friction (the resume model) requires candidates to do N units of work for N applications, wi",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:ghost-jobs-are-a-systemic-problem-requiring-tiered",
+      "type": "thought",
+      "label": "Ghost jobs are a systemic problem requiring tiered response",
+      "full_title": "Ghost jobs are a systemic problem requiring tiered response",
+      "insight_preview": "18-22% of job postings are 'ghost jobs' with no intent to hire. Rational response is tiered effort: save energy for high-alignment roles, use streamli",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:hiring-signal-collapse",
+      "type": "thought",
+      "label": "Hiring Signal Collapse",
+      "full_title": "Hiring Signal Collapse",
+      "insight_preview": "Inbound hiring is structurally broken at a fundamental level. Not broken in the sense of 'needs optimization' but broken in the sense of 'the underlyi",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:hiring-stage-taxonomy",
+      "type": "thought",
+      "label": "Hiring Stage Taxonomy: Sourcing, Screening, Evaluation",
+      "full_title": "Hiring Stage Taxonomy: Sourcing, Screening, Evaluation",
+      "insight_preview": "Hiring breaks into three distinct stages with different failure modes: (1) Sourcing \u2014 finding candidates to consider. Most \"AI hiring\" tools optimize ",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:hiring-should-be-viewed-as-an-exercise-in",
+      "type": "thought",
+      "label": "Hiring should be viewed as an exercise in...",
+      "full_title": "Hiring should be viewed as an exercise in...",
+      "insight_preview": "Hiring should be viewed as an exercise in navigating trade-offs between 'bundles of skills' rather than a stack-ranking of candidates. No candidate is",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:in-a-career-pivot-a-candidates-primary-objective",
+      "type": "thought",
+      "label": "In a career pivot, a candidate's primary objective...",
+      "full_title": "In a career pivot, a candidate's primary objective...",
+      "insight_preview": "In a career pivot, a candidate's primary objective is not demonstrating work capacity, but 'narrative engineering' to artificially close the cognitive",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:in-an-ai-augmented-landscape-the-transition-from-h",
+      "type": "thought",
+      "label": "In an AI-augmented landscape, the transition from 'hacking' ",
+      "full_title": "In an AI-augmented landscape, the transition from 'hacking' to 'human-centric scaling' is marked by ",
+      "insight_preview": "In an AI-augmented landscape, the transition from 'hacking' to 'human-centric scaling' is marked by the deliberate hiring of a recruiter. The ability ",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:in-the-ai-era-the-decision-to-hire",
+      "type": "thought",
+      "label": "In the AI era, the decision to hire...",
+      "full_title": "In the AI era, the decision to hire...",
+      "insight_preview": "In the AI era, the decision to hire a dedicated recruiter is a high-signal indicator of organizational maturity and a transition to human-centric scal",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:inbound-resurrection-through-friction",
+      "type": "thought",
+      "label": "Inbound Resurrection Through Friction",
+      "full_title": "Inbound Resurrection Through Friction",
+      "insight_preview": "Inbound recruiting can be resurrected\u2014not by reducing friction, but by deliberately adding it. Auto-apply tools failed because they removed all barrie",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:job-hunting-is-a-skill-not-an-event",
+      "type": "thought",
+      "label": "Job hunting is a skill, not an event",
+      "full_title": "Job hunting is a skill, not an event",
+      "insight_preview": "Job hunting should be treated as a continuous skill to develop, not a desperate activity performed only when unemployed. The feedback loop in traditio",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:most-job-descriptions-are-bs-that-wastes-everyones",
+      "type": "thought",
+      "label": "Most job descriptions are BS that wastes everyone's time",
+      "full_title": "Most job descriptions are BS that wastes everyone's time",
+      "insight_preview": "Many job postings contain meaningless titles ('Chief Happiness Engineer'), empty spin ('thrives in ambiguity' masking confusion), and deceptive compen",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:networking-is-strategic-investment-not-numbers-gam",
+      "type": "thought",
+      "label": "Networking is strategic investment, not numbers game",
+      "full_title": "Networking is strategic investment, not numbers game",
+      "insight_preview": "Most professionals sabotage networking by treating it as a numbers game (random connection requests) rather than strategic investment. Rushing to ask ",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:non-adversarial-hiring-top-tier",
+      "type": "thought",
+      "label": "Non-Adversarial Hiring for Top-Tier Talent",
+      "full_title": "Non-Adversarial Hiring for Top-Tier Talent",
+      "insight_preview": "For top-tier talent, the welfare gain from right-match hiring (right employer + right employee) is large enough that both parties can split the surplu",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:portable-trust",
+      "type": "thought",
+      "label": "Portable Trust: Scaling Referral-Quality Signal",
+      "full_title": "Portable Trust: Scaling Referral-Quality Signal",
+      "insight_preview": "Referrals work because they carry trust signal \u2014 someone with reputation stakes their credibility on a candidate. But referrals don't scale because tr",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:referrals-are-the-only-reliable-path-in-competitiv",
+      "type": "thought",
+      "label": "Referrals are the only reliable path in competitive markets",
+      "full_title": "Referrals are the only reliable path in competitive markets",
+      "insight_preview": "In overcompetitive application environments, the only reliable way to stand out is through referrals. Networking is uncomfortable but necessary becaus",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:self-advocacy-public-good",
+      "type": "thought",
+      "label": "Self-Advocacy Ability as Public Good",
+      "full_title": "Self-Advocacy Ability as Public Good",
+      "insight_preview": "The ability to articulate one's own value \u2014 self-advocacy \u2014 is a public good subject to tragedy of the commons dynamics. No individual employer is inc",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:selfknowledge-deficit",
+      "type": "thought",
+      "label": "Self-Knowledge Deficit",
+      "full_title": "Self-Knowledge Deficit",
+      "insight_preview": "The fundamental bottleneck in effective job seeking isn't resume writing or interview skills\u2014it's self-knowledge. Most candidates cannot articulate wh",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:resume-industrial-complex",
+      "type": "thought",
+      "label": "The Resume Industrial Complex",
+      "full_title": "The Resume Industrial Complex",
+      "insight_preview": "A self-reinforcing ecosystem of ATS vendors, resume optimization services, HR software, and recruiting agencies has emerged around the resume as the c",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-act-of-participating-in-a-highfriction-higheff",
+      "type": "thought",
+      "label": "The act of participating in a high-friction, high-effort...",
+      "full_title": "The act of participating in a high-friction, high-effort...",
+      "insight_preview": "The act of participating in a high-friction, high-effort reflection process is a more reliable indicator of candidate quality and intent than the hist",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-most-effective-path-to-reducing-hiring-bias",
+      "type": "thought",
+      "label": "The most effective path to reducing hiring bias...",
+      "full_title": "The most effective path to reducing hiring bias...",
+      "insight_preview": "The most effective path to reducing hiring bias is not through 'blind' algorithms, but by dismantling the adversarial nature of the recruitment proces",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-recruitment-market-is-structured-around-a-mass",
+      "type": "thought",
+      "label": "The recruitment market is structured around a massive...",
+      "full_title": "The recruitment market is structured around a massive...",
+      "insight_preview": "The recruitment market is structured around a massive inefficiency where competition is hyper-concentrated on the 'visible 30%' of talent\u2014those with p",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:the-recruitment-market-is-systematically-inefficie",
+      "type": "thought",
+      "label": "The recruitment market is systematically inefficient because",
+      "full_title": "The recruitment market is systematically inefficient because it...",
+      "insight_preview": "The recruitment market is systematically inefficient because it over-indexes on 'visible' signals like prestige titles and resumes, which represent on",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-rise-of-ai-generated-applications-is-making-tr",
+      "type": "thought",
+      "label": "The rise of AI-generated applications is making traditional ",
+      "full_title": "The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes ",
+      "insight_preview": "The rise of AI-generated applications is making traditional inbound hiring signals, such as resumes and cover letters, completely obsolete. To find tr",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "type": "thought",
+      "label": "The self-advocacy skill gap is the real barrier",
+      "full_title": "The self-advocacy skill gap is the real barrier",
+      "insight_preview": "Most job seekers fail not because they lack qualifications, but because they cannot effectively communicate their value. This 'self-advocacy skill gap",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "type": "thought",
+      "label": "The traditional resume is a failed data structure because it",
+      "full_title": "The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulne",
+      "insight_preview": "The traditional resume is a failed data structure because it lacks intrinsic authentication, a vulnerability now fully exploited by the zero cost of L",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "type": "thought",
+      "label": "The willingness of a candidate to engage in deep self-reflec",
+      "full_title": "The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan st",
+      "insight_preview": "The willingness of a candidate to engage in deep self-reflection, such as completing a Careerspan story, is a more powerful signal than the content th",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-willingness-of-a-candidate-to-engage-with",
+      "type": "thought",
+      "label": "The willingness of a candidate to engage with...",
+      "full_title": "The willingness of a candidate to engage with...",
+      "insight_preview": "The willingness of a candidate to engage with a high-friction, high-reflection task (like a Careerspan story) is a higher-fidelity signal of quality a",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:transforming-the-hiring-process-from-an-adversaria",
+      "type": "thought",
+      "label": "Transforming the hiring process from an adversarial transact",
+      "full_title": "Transforming the hiring process from an adversarial transaction...",
+      "insight_preview": "Transforming the hiring process from an adversarial transaction into a non-adversarial, coaching-led exploration is a more effective solution to bias ",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:truth-in-human-assessment-is-found-at-the",
+      "type": "thought",
+      "label": "Truth in human assessment is found at the...",
+      "full_title": "Truth in human assessment is found at the...",
+      "insight_preview": "Truth in human assessment is found at the intersection of three disparate contexts: self-reflection, interview performance, and external validation. H",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:truth-in-professional-assessment-is-found-at-the",
+      "type": "thought",
+      "label": "Truth in professional assessment is found at the...",
+      "full_title": "Truth in professional assessment is found at the...",
+      "insight_preview": "Truth in professional assessment is found at the intersection of three disparate planes: self-reflection, interview performance, and external validati",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:while-seedstage-startups-offer-higher-theoretical-",
+      "type": "thought",
+      "label": "While Seed-stage startups offer higher theoretical financial",
+      "full_title": "While Seed-stage startups offer higher theoretical financial 'alpha,'...",
+      "insight_preview": "While Seed-stage startups offer higher theoretical financial 'alpha,' they often carry a disproportionate cost in mental health and lack the structura",
+      "domain": "hiring-market",
+      "color": "#f97316",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:energy-management-is-the-most-underrated-job-searc",
+      "type": "thought",
+      "label": "Energy management is the most underrated job search skill",
+      "full_title": "Energy management is the most underrated job search skill",
+      "insight_preview": "Energy and confidence management are the absolute most underrated part of job hunting. Job seekers are humans participating in a draining process, not",
+      "domain": "personal-foundations",
+      "color": "#14b8a6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:integrity-gap-as-scaling-risk",
+      "type": "thought",
+      "label": "Integrity Gap as Scaling Risk",
+      "full_title": "Integrity Gap as Scaling Risk",
+      "insight_preview": "Long-term leadership and company-building cannot rest on a hidden personal collapse; if your day-to-day life is driven by vices, clutter, and avoidanc",
+      "domain": "personal-foundations",
+      "color": "#14b8a6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:selfawareness-enables-strategic-career-pivots",
+      "type": "thought",
+      "label": "Self-awareness enables strategic career pivots",
+      "full_title": "Self-awareness enables strategic career pivots",
+      "insight_preview": "Self-awareness and self-reflection are foundational to career success. Understanding your strengths, weaknesses, and what makes you happy enables plan",
+      "domain": "personal-foundations",
+      "color": "#14b8a6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:a-truly-effective-productivity-tool-functions-as-a-2025-12-26",
+      "type": "thought",
+      "label": "A truly effective productivity tool functions as a 'Home'\u2014a ",
+      "full_title": "A truly effective productivity tool functions as a 'Home'\u2014a digital space that reflects the user's v",
+      "insight_preview": "A truly effective productivity tool functions as a 'Home'\u2014a digital space that reflects the user's vulnerability, life history, and sense of self. Sof",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:complexity-often-obscures-the-most-essential-compo",
+      "type": "thought",
+      "label": "Complexity often obscures the most essential components of..",
+      "full_title": "Complexity often obscures the most essential components of...",
+      "insight_preview": "Complexity often obscures the most essential components of a system. By stripping away all secondary noise to focus on the 'Hydrogen'\u2014the most fundame",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:data-companies-that-lack-a-proprietary-acquisition",
+      "type": "thought",
+      "label": "Data companies that lack a proprietary acquisition channel..",
+      "full_title": "Data companies that lack a proprietary acquisition channel...",
+      "insight_preview": "Data companies that lack a proprietary acquisition channel or unique data 'supremacy' are structurally destined for failure. Repackaging public datase",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:death-of-the-okay-life",
+      "type": "thought",
+      "label": "Death of the Minimum Viable Existence",
+      "full_title": "Death of the Minimum Viable Existence",
+      "insight_preview": "The 'Minimum Viable Existence'\u2014a dignified middle-class life achievable through conventional effort\u2014is systemically dying. Capital concentration and t",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:dominant-parallel-institutions-are-often-the-scar",
+      "type": "thought",
+      "label": "Dominant parallel institutions are often the 'scar tissue' o",
+      "full_title": "Dominant parallel institutions are often the 'scar tissue' of historical exclusion. Centers of gravi",
+      "insight_preview": "Dominant parallel institutions are often the 'scar tissue' of historical exclusion. Centers of gravity that appear to be bids for dominance are freque",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:employers-created-the-trust-crisis-they-now-face",
+      "type": "thought",
+      "label": "Employers created the trust crisis they now face",
+      "full_title": "Employers created the trust crisis they now face",
+      "insight_preview": "Employers created the current hiring dysfunction by filtering on superficial signals (prestigious degrees, brand-name employers, keywords) rather than",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:genre-shift-and-fractal-contribution",
+      "type": "thought",
+      "label": "Genre Shift and Fractal Contribution",
+      "full_title": "Genre Shift and Fractal Contribution",
+      "insight_preview": "Society requires a genre shift\u2014not restoration of the old Minimum Viable Existence, but restoration of the meta-belief that contribution pathways exis",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:integrity-and-character-are-best-verified-not-thro",
+      "type": "thought",
+      "label": "Integrity and character are best verified not through deep i",
+      "full_title": "Integrity and character are best verified not through deep interrogation, but through the triangulat",
+      "insight_preview": "Integrity and character are best verified not through deep interrogation, but through the triangulation of consistent behavior across multiple modalit",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:integrity-and-character-are-best-verified-through-",
+      "type": "thought",
+      "label": "Integrity and character are best verified through a...",
+      "full_title": "Integrity and character are best verified through a...",
+      "insight_preview": "Integrity and character are best verified through a 'triangulation' of distinct communication modalities\u2014Voice/Story, Video, and Real-time Interview\u2014r",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:internal-self-assessment-systematically-lags-exter",
+      "type": "thought",
+      "label": "Internal self-assessment systematically lags external market",
+      "full_title": "Internal self-assessment systematically lags external market signals. People often operate at a high",
+      "insight_preview": "Internal self-assessment systematically lags external market signals. People often operate at a higher level of competence and value than they interna",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:linkedin-s-shift-in-focus-from-a-professional-util",
+      "type": "thought",
+      "label": "LinkedIn's shift in focus from a professional utility to a s",
+      "full_title": "LinkedIn's shift in focus from a professional utility to a social engagement network is actively des",
+      "insight_preview": "LinkedIn's shift in focus from a professional utility to a social engagement network is actively destroying its primary value proposition. By optimizi",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:long-term-physiological-growth-is-often-sabotaged",
+      "type": "thought",
+      "label": "Long-term physiological growth is often sabotaged by short-t",
+      "full_title": "Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restrai",
+      "insight_preview": "Long-term physiological growth is often sabotaged by short-term over-exertion. Discipline in restraint\u2014the ability to stay below one's maximum capacit",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:niche-platforms-will-displace-generalist-social-ne",
+      "type": "thought",
+      "label": "Niche platforms will displace generalist social networks",
+      "full_title": "Niche platforms will displace generalist social networks",
+      "insight_preview": "Niche social networks oriented around specific interests/communities will increasingly displace generalist platforms like Facebook. Users want authent",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:optimal-longterm-physiological-and-skill-growth-re",
+      "type": "thought",
+      "label": "Optimal long-term physiological and skill growth requires di",
+      "full_title": "Optimal long-term physiological and skill growth requires disciplined...",
+      "insight_preview": "Optimal long-term physiological and skill growth requires disciplined restraint rather than maximal effort. Pushing to the absolute limit early in a c",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:professional-identity-is-semantic-rather-than-synt-20251226_C",
+      "type": "thought",
+      "label": "Professional identity is semantic rather than syntactic; a p",
+      "full_title": "Professional identity is semantic rather than syntactic; a person is a stable collection of 'meaning",
+      "insight_preview": "Professional identity is semantic rather than syntactic; a person is a stable collection of 'meaningful stories' rather than a static document. These ",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:proprietary-data-sourcing-is-the-only-sustainable",
+      "type": "thought",
+      "label": "Proprietary data sourcing is the only sustainable competitiv",
+      "full_title": "Proprietary data sourcing is the only sustainable competitive advantage in the data services market.",
+      "insight_preview": "Proprietary data sourcing is the only sustainable competitive advantage in the data services market. Companies that rely on scraping and repackaging c",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:rationality-of-lowtrust-moonshots",
+      "type": "thought",
+      "label": "Rationality of Low-Trust Moonshots",
+      "full_title": "Rationality of Low-Trust Moonshots",
+      "insight_preview": "Low-trust behaviors\u2014entrepreneurial fraud, political extremism (e.g., Trump vote), gambling, sports betting\u2014represent rational adaptation to perceived",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "type": "thought",
+      "label": "Reducing latency in trust networks transforms institutions f",
+      "full_title": "Reducing latency in trust networks transforms institutions from manual brokers into platform orchest",
+      "insight_preview": "Reducing latency in trust networks transforms institutions from manual brokers into platform orchestrators. By maintaining a constant 'readiness state",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:social-accountability-in-digital-products-is-signi",
+      "type": "thought",
+      "label": "Social accountability in digital products is significantly m",
+      "full_title": "Social accountability in digital products is significantly more...",
+      "insight_preview": "Social accountability in digital products is significantly more effective when delivered through anthropomorphized channels rather than standard user ",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:strategic-focus-should-prioritize-the-most-fundame",
+      "type": "thought",
+      "label": "Strategic focus should prioritize the most fundamental, irre",
+      "full_title": "Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as ",
+      "insight_preview": "Strategic focus should prioritize the most fundamental, irreducible components of a system. Just as hydrogen is the most abundant and basic element in",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": false
+    },
+    {
+      "id": "t:systemic-dominance-in-specific-industries-is-often",
+      "type": "thought",
+      "label": "Systemic dominance in specific industries is often the...",
+      "full_title": "Systemic dominance in specific industries is often the...",
+      "insight_preview": "Systemic dominance in specific industries is often the 'scar tissue' of historical exclusion. When groups are barred from existing power centers, they",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-internet-of-careers-functions-as-a-collective",
+      "type": "thought",
+      "label": "The 'Internet of Careers' functions as a collective...",
+      "full_title": "The 'Internet of Careers' functions as a collective...",
+      "insight_preview": "The 'Internet of Careers' functions as a collective high-fidelity data exchange where individual qualitative reflections serve as the 'socialist' capi",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-growth-dividends-of-a-moonshot-attempteven-one",
+      "type": "thought",
+      "label": "The growth dividends of a 'moonshot' attempt\u2014even one...",
+      "full_title": "The growth dividends of a 'moonshot' attempt\u2014even one...",
+      "insight_preview": "The growth dividends of a 'moonshot' attempt\u2014even one that fails financially\u2014often outweigh the cumulative value of multiple 'slam dunk' successes. Th",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    },
+    {
+      "id": "t:the-internal-growth-derived-from-pursuing-a-highri",
+      "type": "thought",
+      "label": "The internal 'growth' derived from pursuing a high-risk...",
+      "full_title": "The internal 'growth' derived from pursuing a high-risk...",
+      "insight_preview": "The internal 'growth' derived from pursuing a high-risk 'moonshot' can be more valuable than the external 'win' of a low-risk 'slam dunk'. The value o",
+      "domain": "worldview",
+      "color": "#8b5cf6",
+      "size": 8,
+      "connected": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "t:ai-implementation-should-elevate-human-experts-hig",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:ai-implementation-should-elevate-human-experts-hig",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:ai-implementation-should-elevate-human-experts-hig",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:ai-interfaces-that-mimic-human-social-bids-create",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:ai-interfaces-that-mimic-human-social-bids-create",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:ai-interfaces-that-mimic-human-social-bids-create",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:ai-interfaces-that-mimic-human-social-bids-create",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:ai-makes-individuals-as-effective-as-teams",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:ai-shifts-experts-higher-in-the-problem-stack",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:ai-shifts-experts-higher-in-the-problem-stack",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:ai-shifts-experts-higher-in-the-problem-stack",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:ais-primary-role-in-professional-services-should-b",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:ais-primary-role-in-professional-services-should-b",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:ais-primary-role-in-professional-services-should-b",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:ais-primary-value-is-in-shifting-human-experts",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:ais-primary-value-is-in-shifting-human-experts",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:ais-primary-value-is-in-shifting-human-experts",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:ais-primary-value-is-in-shifting-human-experts",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:as-ai-commoditizes-content-generation-input-system",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:as-generative-ai-commoditizes-highquality-output-t",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:as-generative-ai-commoditizes-highquality-output-t",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:as-generative-ai-commoditizes-highquality-output-t",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:building-sophisticated-outputs-by-orchestrating-mu",
+      "target": "c:orchestration",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:current-ai-implementations-often-create-an-informa",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:current-ai-implementations-often-create-an-informa",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:generic-ai-usage-is-detectable-and-disqualifying",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:highintelligence-outputs-are-more-reliably-achieve",
+      "target": "c:orchestration",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:intelligent-and-resilient-system-behavior-is-bette",
+      "target": "c:orchestration",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:soft-skills-become-more-valuable-in-ai-world",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:soft-skills-become-more-valuable-in-ai-world",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:soft-skills-become-more-valuable-in-ai-world",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:technical-resilience-in-ai-systems-is-best-achieve",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:technical-resilience-in-ai-systems-is-best-achieve",
+      "target": "c:orchestration",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-current-paradigm-of-ai-automation-often-result",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:the-current-paradigm-of-ai-automation-often-result",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:the-efficacy-of-automated-agents-like-habittrackin",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-efficacy-of-automated-agents-like-habittrackin",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:the-efficacy-of-automated-agents-like-habittrackin",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:the-efficacy-of-automated-habit-tracking-systems-i",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-efficacy-of-automated-habit-tracking-systems-i",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:the-efficacy-of-automated-habit-tracking-systems-i",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:vibe-coding-functions-as-a-powerful-identity-bridg",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:vibe-coding-functions-as-a-powerful-identity-bridg",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:vibe-coding-should-be-positioned-as-a-strategic",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:a-sustainable-job-search-requires-a-dietary-balanc",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:career-development-tools-must-solve-for-the-inerti",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:career-development-tools-must-solve-for-the-inerti",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:career-mobility-is-governed-by-a-geometric-distanc",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:career-mobility-is-governed-by-a-geometric-distanc",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:career-mobility-is-governed-by-a-geometric-distanc",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:career-mobility-is-governed-by-a-geometric-distanc",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:hiring-should-be-treated-as-an-optimization-for-bu",
+      "target": "c:bundled-tradeoffs",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:human-data-signal-density",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:human-data-signal-density",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:human-data-signal-density",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:human-data-signal-density",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:identity-in-the-labor-market-is-semantic-not",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:in-the-ai-era-the-matching-component-of",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.6
+    },
+    {
+      "source": "t:job-seeking-and-hiring-should-be-viewed-as",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "target": "c:portable-trust",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:maintaining-a-state-of-constant-readiness-via-aica",
+      "target": "c:scar-tissue-institutions",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:maintaining-a-strict-separation-between-candidatef",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:market-fundability-and-professional-acceptability-",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:professional-identity-is-narrative-not-document",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:self-reflection-is-subject-to-a-high-activation-en",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:self-reflection-is-subject-to-a-high-activation-en",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:self-reflection-is-subject-to-a-high-activation-en",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:the-future-of-hiring-lies-in-a-persistent-mid-laye",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:the-future-of-hiring-shifts-from-a-transactional",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-future-of-hiring-shifts-from-a-transactional",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:the-future-of-hiring-shifts-from-a-transactional",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:the-future-of-recruitment-lies-in-democratizing-th",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-most-effective-way-to-disrupt-recruitment-is",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-strategic-value-in-the-labor-market-is",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-strategic-value-in-the-labor-market-is",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:the-strategic-value-in-the-labor-market-is",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:there-is-a-strategic-advantage-in-decoupling-human",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:there-is-a-strategic-advantage-in-decoupling-human",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:cognitive-bootstrapping-via-test-preparation",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:cognitive-bootstrapping-via-test-preparation",
+      "target": "c:portable-trust",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:assessment-signal-validity-framework",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:assessment-signal-validity-framework",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:assessment-signal-validity-framework",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:assessment-signal-validity-framework",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:information-engineering-distinction",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.6
+    },
+    {
+      "source": "t:information-engineering-distinction",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:polyorchestrator-model",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:polyorchestrator-model",
+      "target": "c:orchestration",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:printing-press-parallel",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:printing-press-parallel",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:printing-press-parallel",
+      "target": "c:scar-tissue-institutions",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:sliding-knowledge-threshold",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:sliding-knowledge-threshold",
+      "target": "c:minimum-viable-existence",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:vectorized-merit-selection-as-bundle-matching-not-",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:vectorized-merit-selection-as-bundle-matching-not-",
+      "target": "c:bundled-tradeoffs",
+      "type": "embodies",
+      "strength": 0.8
+    },
+    {
+      "source": "t:nontechnical-founders-can-build-with-ai",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:selling-a-manual-methodology-as-finished-software",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-developmental-value-of-a-highdifficulty-moonsh",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:a-candidates-primary-task-is-to-artificially-close",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:a-candidates-willingness-to-engage-in-higheffort-r",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:ai-has-reduced-the-marginal-cost-of-bs-to-zero",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:aidriven-automation-of-application-materials-effec",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:aidriven-automation-of-application-materials-effec",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:aidriven-automation-of-application-materials-effec",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:autoapply-is-mutually-assured-destruction",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:autoapply-is-mutually-assured-destruction",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:autoapply-is-mutually-assured-destruction",
+      "target": "c:adversarial-dynamics",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:autoapply-is-mutually-assured-destruction",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:autoapply-tools-are-career-selfsabotage",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:confidence-over-quality-scores",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:data-collected-about-a-candidate-independent-of-a",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:data-collected-about-a-candidate-independent-of-a",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:data-collected-independent-of-a-specific-job-appli",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:data-collected-independent-of-a-specific-job-appli",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:employer-oblige",
+      "target": "c:adversarial-dynamics",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:for-mid-career-specialists-the-higher-financial-al",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:friction-economics-scalable-vs-linear",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:hiring-signal-collapse",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:hiring-signal-collapse",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:hiring-signal-collapse",
+      "target": "c:bundled-tradeoffs",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:hiring-stage-taxonomy",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:hiring-stage-taxonomy",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:hiring-should-be-viewed-as-an-exercise-in",
+      "target": "c:bundled-tradeoffs",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:in-a-career-pivot-a-candidates-primary-objective",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:in-a-career-pivot-a-candidates-primary-objective",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:in-an-ai-augmented-landscape-the-transition-from-h",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:in-an-ai-augmented-landscape-the-transition-from-h",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:in-an-ai-augmented-landscape-the-transition-from-h",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:in-the-ai-era-the-decision-to-hire",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:in-the-ai-era-the-decision-to-hire",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:in-the-ai-era-the-decision-to-hire",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:in-the-ai-era-the-decision-to-hire",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:in-the-ai-era-the-decision-to-hire",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:inbound-resurrection-through-friction",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:inbound-resurrection-through-friction",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:most-job-descriptions-are-bs-that-wastes-everyones",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:networking-is-strategic-investment-not-numbers-gam",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:networking-is-strategic-investment-not-numbers-gam",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:non-adversarial-hiring-top-tier",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:non-adversarial-hiring-top-tier",
+      "target": "c:adversarial-dynamics",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:portable-trust",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:portable-trust",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:portable-trust",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:portable-trust",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:portable-trust",
+      "target": "c:portable-trust",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:referrals-are-the-only-reliable-path-in-competitiv",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:self-advocacy-public-good",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:selfknowledge-deficit",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:resume-industrial-complex",
+      "target": "c:bundled-tradeoffs",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-act-of-participating-in-a-highfriction-higheff",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:the-act-of-participating-in-a-highfriction-higheff",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-most-effective-path-to-reducing-hiring-bias",
+      "target": "c:adversarial-dynamics",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-recruitment-market-is-systematically-inefficie",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-recruitment-market-is-systematically-inefficie",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-rise-of-ai-generated-applications-is-making-tr",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:the-rise-of-ai-generated-applications-is-making-tr",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-rise-of-ai-generated-applications-is-making-tr",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-selfadvocacy-skill-gap-is-the-real-barrier",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:the-traditional-resume-is-a-failed-data-structure-2025-12-22",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-in-deep-s",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-with",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-with",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-with",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-with",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-with",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:the-willingness-of-a-candidate-to-engage-with",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:transforming-the-hiring-process-from-an-adversaria",
+      "target": "c:adversarial-dynamics",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:truth-in-human-assessment-is-found-at-the",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:truth-in-human-assessment-is-found-at-the",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:truth-in-human-assessment-is-found-at-the",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:truth-in-professional-assessment-is-found-at-the",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:truth-in-professional-assessment-is-found-at-the",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:while-seedstage-startups-offer-higher-theoretical-",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:energy-management-is-the-most-underrated-job-searc",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:energy-management-is-the-most-underrated-job-searc",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:energy-management-is-the-most-underrated-job-searc",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:integrity-gap-as-scaling-risk",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:integrity-gap-as-scaling-risk",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:integrity-gap-as-scaling-risk",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:selfawareness-enables-strategic-career-pivots",
+      "target": "c:self-knowledge",
+      "type": "embodies",
+      "strength": 0.7
+    },
+    {
+      "source": "t:selfawareness-enables-strategic-career-pivots",
+      "target": "c:geometric-distance",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:a-truly-effective-productivity-tool-functions-as-a-2025-12-26",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:complexity-often-obscures-the-most-essential-compo",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:data-companies-that-lack-a-proprietary-acquisition",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:data-companies-that-lack-a-proprietary-acquisition",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:death-of-the-okay-life",
+      "target": "c:minimum-viable-existence",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:dominant-parallel-institutions-are-often-the-scar",
+      "target": "c:scar-tissue-institutions",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:employers-created-the-trust-crisis-they-now-face",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:employers-created-the-trust-crisis-they-now-face",
+      "target": "c:friction-as-filter",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:employers-created-the-trust-crisis-they-now-face",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:employers-created-the-trust-crisis-they-now-face",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:employers-created-the-trust-crisis-they-now-face",
+      "target": "c:portable-trust",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:genre-shift-and-fractal-contribution",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:genre-shift-and-fractal-contribution",
+      "target": "c:minimum-viable-existence",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:integrity-and-character-are-best-verified-through-",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:internal-self-assessment-systematically-lags-exter",
+      "target": "c:signal-decay",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:internal-self-assessment-systematically-lags-exter",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:internal-self-assessment-systematically-lags-exter",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:internal-self-assessment-systematically-lags-exter",
+      "target": "c:assessment-validity",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:linkedin-s-shift-in-focus-from-a-professional-util",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:linkedin-s-shift-in-focus-from-a-professional-util",
+      "target": "c:problem-stack",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:linkedin-s-shift-in-focus-from-a-professional-util",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:linkedin-s-shift-in-focus-from-a-professional-util",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:long-term-physiological-growth-is-often-sabotaged",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:long-term-physiological-growth-is-often-sabotaged",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:long-term-physiological-growth-is-often-sabotaged",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:niche-platforms-will-displace-generalist-social-ne",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:niche-platforms-will-displace-generalist-social-ne",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:niche-platforms-will-displace-generalist-social-ne",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:optimal-longterm-physiological-and-skill-growth-re",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:optimal-longterm-physiological-and-skill-growth-re",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:optimal-longterm-physiological-and-skill-growth-re",
+      "target": "c:restraint-discipline",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:professional-identity-is-semantic-rather-than-synt-20251226_C",
+      "target": "c:narrative-identity",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:proprietary-data-sourcing-is-the-only-sustainable",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:proprietary-data-sourcing-is-the-only-sustainable",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:rationality-of-lowtrust-moonshots",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:rationality-of-lowtrust-moonshots",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:rationality-of-lowtrust-moonshots",
+      "target": "c:portable-trust",
+      "type": "embodies",
+      "strength": 0.4
+    },
+    {
+      "source": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "target": "c:trust-networks",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "target": "c:orchestration",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "target": "c:portable-trust",
+      "type": "embodies",
+      "strength": 1.0
+    },
+    {
+      "source": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "target": "c:platform-shift",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:reducing-latency-in-trust-networks-transforms-inst-20251226_C",
+      "target": "c:scar-tissue-institutions",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:social-accountability-in-digital-products-is-signi",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:systemic-dominance-in-specific-industries-is-often",
+      "target": "c:scar-tissue-institutions",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:the-internet-of-careers-functions-as-a-collective",
+      "target": "c:information-asymmetry",
+      "type": "embodies",
+      "strength": 0.5
+    },
+    {
+      "source": "t:the-internet-of-careers-functions-as-a-collective",
+      "target": "c:anthropomorphic-engagement",
+      "type": "embodies",
+      "strength": 0.3
+    },
+    {
+      "source": "t:the-growth-dividends-of-a-moonshot-attempteven-one",
+      "target": "c:ai-commoditization",
+      "type": "embodies",
+      "strength": 0.2
+    },
+    {
+      "source": "t:the-growth-dividends-of-a-moonshot-attempteven-one",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 0.9
+    },
+    {
+      "source": "t:the-internal-growth-derived-from-pursuing-a-highri",
+      "target": "c:moonshot-growth",
+      "type": "embodies",
+      "strength": 1.0
+    }
+  ],
+  "stats": {
+    "total_thoughts": 124,
+    "total_concepts": 20,
+    "total_edges": 249,
+    "connected_thoughts": 113,
+    "orphan_thoughts": 11,
+    "coverage_pct": 91.1,
+    "avg_concepts_per_thought": 2.0,
+    "cross_domain_bridges": [
+      {
+        "concept": "AI Commoditization",
+        "domains": [
+          "ai-automation",
+          "hiring-market"
+        ],
+        "thought_count": 48
+      },
+      {
+        "concept": "Information Asymmetry",
+        "domains": [
+          "hiring-market",
+          "careerspan",
+          "worldview"
+        ],
+        "thought_count": 26
+      },
+      {
+        "concept": "Anthropomorphic Engagement",
+        "domains": [
+          "ai-automation",
+          "worldview"
+        ],
+        "thought_count": 19
+      },
+      {
+        "concept": "Signal Decay",
+        "domains": [
+          "hiring-market",
+          "ai-automation"
+        ],
+        "thought_count": 16
+      },
+      {
+        "concept": "Assessment Validity",
+        "domains": [
+          "hiring-market",
+          "epistemology"
+        ],
+        "thought_count": 15
+      }
+    ],
+    "top_concepts": [
+      [
+        "ai-commoditization",
+        48
+      ],
+      [
+        "information-asymmetry",
+        26
+      ],
+      [
+        "problem-stack",
+        19
+      ],
+      [
+        "anthropomorphic-engagement",
+        19
+      ],
+      [
+        "signal-decay",
+        16
+      ]
+    ]
+  },
+  "domain_colors": {
+    "hiring-market": "#f97316",
+    "worldview": "#8b5cf6",
+    "careerspan": "#22c55e",
+    "ai-automation": "#3b82f6",
+    "epistemology": "#ec4899",
+    "founder": "#f59e0b",
+    "personal-foundations": "#14b8a6",
+    "education": "#06b6d4",
+    "product-strategy": "#ef4444"
+  },
+  "concept_color": "#fbbf24"
+}
