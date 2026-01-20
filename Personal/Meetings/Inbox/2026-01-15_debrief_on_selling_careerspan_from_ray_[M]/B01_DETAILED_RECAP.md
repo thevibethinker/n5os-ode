@@ -1,0 +1,16 @@
+B01 Detailed Recap
+- **Context & Mansions**: Caller Dave is on a West Coast relationship-building trip; this log is a quick, 20‑minute check-in about Careerspan’s exit readiness. Dave is tracking momentum—two additional pilots wrap next week, pushing member base over 20–25 so that at least one cohort can run. Meanwhile Vrijen is actively talking to both talent-focused opportunities (e.g., Calendly via Talent GM Shane for a pure hiring outcome) and more mission/technology aligned teams (Future Fit, a Singapore Series E player, plus a 30‑40 company target list built in priority order based on where they know someone and perceived strategic fit).
+
+- **Strategic Patterns**: Dave repeatedly likens the exit hunt to a sales funnel: of 30–40 targets, expect ~5–6 real interest, ~2–3 serious, and likely only 1 firm offer unless you manage pipeline timing. He urges keeping skepticism high (“everything is a no until it’s a yes”), intentionally pacing outreach so negotiations converge, and running multiple threads in parallel to create leverage—especially important because runway is about three months before pressure becomes untenable. Raising about $1M from friends/family/angels plus ~$200–300k debt, Careerspan cannot afford to accept a lone “symbolic win”; multiple bids enable better optics and financial returns, especially to cover investor paybacks and support the AI lead’s landing.
+
+- **Dealcraft & Structure Guidance**: Dave stresses understanding exit mechanics (asset sale vs. share transfer), confirming trajectories with legal counsel, and designing creative payout structures. Earnouts are common: acquirers push risk into future milestones, so Vrijen should model scenarios with conservative base values, time-based caps, or rev-share/metric-linked earnouts and avoid locking into multi-year obligations if not aligned. He recounts a prior exit where earnout value evaporated because milestones weren’t met, so it’s critical to negotiate caps, define clear performance thresholds, and plan for “what if earnout doesn’t materialize” by securing at least two credible offers.
+
+- **Immediate Actions**:
+  1. Prioritize sending Dave the one-pager or materials he requested so he can flag another potential acquirer.
+  2. Prepare a pipeline map with timing phases (slow-play vs. fast-play) to keep negotiations aligned and increase the chance of simultaneous bids.
+  3. Build a simple model contrasting upfront value + earnout structures for the most concrete prospects, highlighting downside if earnout targets slide.
+  4. Plan the “soft-landing” plan for teammates (AI head and others) to present in offers, emphasizing Careerspan’s flexibility and desire to keep the product mind at least attached briefly after an acquisition.
+
+- **Implications**: Treat each inbound as a sales motion—document statuses, skepticism levels, and leverage. Focus on buyers who care about the product/tech (not just talent) to protect deliverable value and the option for earnouts tied to monetizable assets. Keep runway and investor payback visibility high as due diligence unfolds.
+
+Timestamp: 2026-01-19 15:45 EST

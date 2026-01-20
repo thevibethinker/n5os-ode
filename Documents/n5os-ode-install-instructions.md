@@ -14,16 +14,23 @@ Hey! Here's how to install N5OS Ode — a lightweight personal operating system 
 
 ## Installation (5 minutes)
 
-### Step 1: Clone the repo
+### Step 1: Clone the Repo
 
-Open a new conversation with your Zo and say:
+In your Zo terminal (or ask Zo to run this):
 
-```
-Clone the n5os-ode repo from GitHub:
+```bash
 git clone https://github.com/vrijenattawar/n5os-ode.git
 ```
 
-### Step 2: Run the bootloader
+### Step 2: Run the Installer
+
+```bash
+cd n5os-ode && bash install.sh
+```
+
+This moves everything to your workspace root and cleans up the `n5os-ode/` folder.
+
+### Step 3: Run the Bootloader
 
 Once cloned, say:
 
@@ -39,7 +46,7 @@ Your Zo will:
 5. Set up semantic memory
 6. Validate everything works
 
-### Step 3: Personalize (optional but recommended)
+### Step 4: Personalize (optional but recommended)
 
 After the bootloader finishes:
 

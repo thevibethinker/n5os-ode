@@ -1,7 +1,7 @@
 ---
 created: 2026-01-18
 last_edited: 2026-01-18
-version: 1.0
+version: 1
 provenance: MG-5_v3.2_agent
 recipient: 2026
 company: 
@@ -9,7 +9,6 @@ meeting_date: 2026-01-19
 quality_score: TBD
 status: draft
 ---
-
 # Follow-Up Email – 2026 [Follow-up]
 
 Hi 2026,

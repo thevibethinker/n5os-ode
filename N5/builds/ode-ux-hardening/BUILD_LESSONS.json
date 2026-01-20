@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "build_slug": "ode-ux-hardening",
+  "created": "2026-01-19",
+  "purpose": "Cross-worker insights and lessons (append-only)",
+  "entries": []
+}

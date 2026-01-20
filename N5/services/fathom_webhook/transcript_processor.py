@@ -14,7 +14,6 @@ import os
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from .fathom_client import FathomClient
 from .webhook_processor import WebhookProcessor
 from intake.intake_engine import IntakeEngine
 from intake.models import IntakeSource
@@ -26,12 +25,11 @@ class TranscriptProcessor:
     
     def __init__(
         self,
-        fathom_client: Optional[FathomClient] = None,
         webhook_processor: Optional[WebhookProcessor] = None,
         inbox_path: Path = Path("/home/workspace/Personal/Meetings/Inbox"),
         meetings_root: Path = Path("/home/workspace/Personal/Meetings")
     ):
-        self.fathom_client = fathom_client or FathomClient()
+        # Note: FathomClient not needed since webhook payloads contain full transcript
         self.webhook_processor = webhook_processor or WebhookProcessor()
         self.intake_engine = IntakeEngine()
         self.inbox_path = inbox_path

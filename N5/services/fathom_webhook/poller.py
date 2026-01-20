@@ -10,7 +10,6 @@ import sys
 from typing import Optional
 
 from .transcript_processor import TranscriptProcessor
-from .config import Config
 
 logging.basicConfig(
     level=logging.INFO,
@@ -46,17 +45,7 @@ class WebhookPoller:
         """Start polling loop"""
         logger.info(f"Starting Fathom webhook poller (interval={self.interval}s, batch={self.batch_size})")
         
-        # Validate configuration
-        valid, error = Config.validate()
-        if not valid:
-            logger.error(f"Configuration invalid: {error}")
-            sys.exit(1)
-        
-        # Test Fathom API connection
-        if not self.processor.fathom_client.test_connection():
-            logger.error("Failed to connect to Fathom API")
-            # We don't sys.exit(1) here in case it's a transient network issue, 
-            # but we log it. Actually, for a service, we should probably keep trying.
+        # Note: No API key validation needed - webhook payloads contain full transcript
         
         self.running = True
         

@@ -1,0 +1,48 @@
+# Struggle Detection Configuration
+# Used by: N5/scripts/struggle_detector.py
+# Reference: Ralph Methodology - detect agent spinning/struggling
+---
+created: 2026-01-19
+last_edited: 2026-01-19
+version: 1.0
+provenance: con_qOBEM74fjShjy2Me
+
+thresholds:
+  circular_error:
+    # Same error appears N+ times in DEBUG_LOG.jsonl
+    min_repetitions: 3
+    window_minutes: 30
+    severity: STRUGGLING
+    description: "Same error pattern repeating without resolution"
+
+  stalled_progress:
+    # SESSION_STATE.md shows same progress % for N updates
+    unchanged_updates: 5
+    severity: STUCK
+    description: "Progress percentage unchanged across multiple state updates"
+
+  revert_cycles:
+    # Git log shows apply-revert-apply pattern
+    min_cycles: 2
+    look_back_commits: 20
+    severity: STRUGGLING
+    description: "Code changes being reverted then reapplied"
+
+  repeated_hypothesis:
+    # Same hypothesis tried multiple times in DEBUG_LOG.jsonl
+    min_repetitions: 3
+    similarity_threshold: 0.7
+    window_entries: 15
+    severity: STRUGGLING
+    description: "Same fix hypothesis tried repeatedly without success"
+
+severity_escalation:
+  # How patterns combine to determine overall status
+  HEALTHY: "0 patterns detected"
+  STRUGGLING: "1-2 patterns detected"
+  STUCK: "3+ patterns OR any STUCK-severity pattern"
+
+recommendations:
+  HEALTHY: "Continue"
+  STRUGGLING: "Intervene - consider switching approach or adding context"
+  STUCK: "Fresh start - agent likely needs reset with new context"

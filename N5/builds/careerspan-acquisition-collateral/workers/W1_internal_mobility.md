@@ -1,11 +1,10 @@
 ---
 created: 2026-01-17
 last_edited: 2026-01-17
-version: 1.0
+version: 1
 provenance: con_xxBgE2F5k5Q4AAo7
 worker_id: W1
 ---
-
 # Worker Brief: Internal Mobility Positioning
 
 **Pre-decided thread title:** `[careerspan-acquisition-collateral] W1.1: Internal Mobility One-Pager`

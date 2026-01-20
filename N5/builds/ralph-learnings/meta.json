@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "slug": "ralph-learnings",
+  "title": "Ralph Learnings Implementation",
+  "objective": null,
+  "created": "2026-01-20",
+  "status": "complete",
+  "completed_at": "2026-01-20T01:33:43+00:00",
+  "type": "code_build",
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

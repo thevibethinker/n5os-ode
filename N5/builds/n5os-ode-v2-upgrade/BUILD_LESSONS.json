@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "build_slug": "n5os-ode-v2-upgrade",
+  "created": "2026-01-19",
+  "purpose": "Cross-worker insights and lessons (append-only)",
+  "entries": [
+    {
+      "timestamp": "2026-01-19T17:55:03.167761",
+      "source": "W1.1",
+      "message": "Prompts/Blocks/ directory contains V-specific references (careerspan, Vrijen Attawar) that were NOT sanitized - outside W1.1 scope but may need cleanup in a future pass"
+    },
+    {
+      "timestamp": "2026-01-19T18:06:55.282010",
+      "source": "ORCH",
+      "message": "W1.3 gaps resolved by orchestrator: Added 4 missing conversation_end scripts (quick/standard/full/pii_audit) and sanitized Prompts/Blocks/*.prompt.md for V-specific references"
+    },
+    {
+      "timestamp": "2026-01-19T18:12:16.448025",
+      "source": "W2.1",
+      "message": "PROJECT_REPO references in PLAN.md, CHANGELOG.md, and validate_repo.py are legitimate meta-documentation (discussing the task or validation patterns), not placeholders. Do not replace these - only actual placeholders in Python script headers need vrijenattawar URLs."
+    }
+  ]
+}

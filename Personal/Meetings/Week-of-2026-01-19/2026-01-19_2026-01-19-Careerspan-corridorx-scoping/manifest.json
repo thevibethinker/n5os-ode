@@ -3,14 +3,14 @@
   "generated_at": "2026-01-19T17:05:00Z",
   "meeting_folder": "2026-01-19_CareerSpan-CorridorX-Scoping",
   "meeting_date": "2026-01-19",
-  "status": "manifest_generated",
+  "status": "processed",
   "blocks_generated": {
     "stakeholder_intelligence": true,
     "brief": true,
     "transcript_processed": true
   },
-  "last_updated_by": "MG-2_Prompt",
+  "last_updated_by": "MG-6_Agent",
   "zo_take_heed_count": 0,
   "zo_take_heed_summary": [],
-  "last_updated_at": "2026-01-19T17:16:26.880506"
+  "last_updated_at": "2026-01-19T17:52:49.198100"
 }

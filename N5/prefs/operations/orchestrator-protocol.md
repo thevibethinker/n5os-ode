@@ -298,6 +298,117 @@ N5/builds/<project>/
 
 ---
 
+---
+
+## Backpressure Gate
+
+After each worker completes, run backpressure validation to catch issues early:
+
+**When to run:**
+- After every worker reports completion
+- Before launching dependent workers
+- Before final merge/close
+
+**How to run:**
+```bash
+python3 N5/scripts/backpressure.py <slug>
+```
+
+**Interpret results:**
+
+| Status | Action |
+|--------|--------|
+| **PASS** (exit 0) | Proceed to next worker or merge |
+| **WARN** (exit 1) | Review warnings; proceed if acceptable |
+| **FAIL** (exit 2) | Worker must address issues before proceeding |
+
+**If FAIL persists after worker retry:**
+1. Check struggle detector for circular patterns
+2. Consider loop runner for automated retry with fresh context
+3. Escalate to V if fundamentally stuck
+
+**Per-build configuration:**
+Place `backpressure.yaml` in build folder to override defaults.
+See: `N5/prefs/operations/backpressure-protocol.md` for full details.
+
+---
+
+## Struggle Detection
+
+Monitor long-running or complex workers for signs of being stuck:
+
+**When to check:**
+- Worker taking significantly longer than estimated
+- Worker reports multiple unsuccessful attempts
+- During orchestrator monitoring sweeps
+
+**How to run:**
+```bash
+python3 N5/scripts/struggle_detector.py --build-slug <slug>
+python3 N5/scripts/struggle_detector.py --convo-id <conversation-id>
+```
+
+**Interpret results:**
+
+| Status | Action |
+|--------|--------|
+| **HEALTHY** (exit 0) | Continue; no intervention needed |
+| **STRUGGLING** (exit 1) | Increase monitoring; consider intervention |
+| **STUCK** (exit 2) | Pause work; fresh context restart or escalate |
+
+**Patterns detected:**
+- `circular_error`: Same error 3+ times in DEBUG_LOG
+- `stalled_progress`: Progress % unchanged across updates
+- `revert_cycles`: Apply-revert-apply pattern in git
+- `repeated_hypothesis`: Same fix tried multiple times
+
+---
+
+## Loop Runner (For Stuck Workers)
+
+When a worker is stuck but the task is well-specified, use automated retry with fresh context:
+
+**When to use:**
+- Worker has hit STUCK status on struggle detector
+- Task is mechanical/well-defined (not requiring creative judgment)
+- Worker has a clear, executable brief
+
+**How to run:**
+```bash
+# Dry run first (default)
+python3 N5/scripts/loop_runner.py --prompt <brief.md> --build-slug <slug>
+
+# Execute with monitoring
+python3 N5/scripts/loop_runner.py --prompt <brief.md> --build-slug <slug> --execute
+```
+
+**Safety limits:**
+- Default max: 10 iterations
+- Hard limit: 20 iterations (requires `--force` to exceed)
+- Each iteration logged to `loop_history.jsonl` in build folder
+- Backpressure checked between iterations
+- Struggle detection runs to catch loops
+
+**Success criteria:**
+- Iteration ends when backpressure passes
+- Or when max iterations reached
+- Or when struggle detector flags STUCK
+
+**Reference:** See loop prompt template at `N5/templates/loop_prompt.md`
+
+---
+
+## Build Health Dashboard
+
+Consolidated view of build status, workers, backpressure, and struggle detection:
+
+```bash
+python3 N5/scripts/build_dashboard.py <slug>
+python3 N5/scripts/build_dashboard.py <slug> --json
+```
+
+Use during orchestrator monitoring to get full build health at a glance.
+
 ## Completion Checklist
 
 Before marking project complete:
