@@ -37,5 +37,11 @@
     "active",
     "archived",
     "deprecated"
+  ],
+  "products": [
+    "careerspan",
+    "zo",
+    "n5",
+    "standalone"
   ]
 }

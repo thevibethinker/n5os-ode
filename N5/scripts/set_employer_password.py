@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """One-off employer password setup tool.
 
+---
+product: careerspan
+version: 1.1
+created: 2025-10-10
+updated: 2026-01-20
+requires_confirm: true
+supports_dry_run: true
+audit_log: N5/logs/careerspan_audit.jsonl
+---
+
 Usage examples:
 
   # Generate a random password and DO NOT call the API (dry run)
@@ -24,12 +34,50 @@ import string
 import sys
 import urllib.request
 import urllib.error
+from datetime import datetime, timezone
+from pathlib import Path
 from typing import Optional
 
 
 BASE_URL_DEFAULT = "https://the-apply-ai--dossier-ai-all-main-fastapi-app.modal.run"
 ENDPOINT_PATH = "/etc/set-employer-password"
 TIMEOUT_SECONDS = 300  # 5 minutes, per API docs
+
+AUDIT_LOG_PATH = Path("/home/workspace/N5/logs/careerspan_audit.jsonl")
+
+
+def write_audit_log(
+    operation: str,
+    employer_email: str,
+    payload: dict,
+    dry_run: bool,
+    result: str,
+    http_status: Optional[int] = None,
+    response: Optional[dict] = None,
+    error_detail: Optional[str] = None,
+) -> None:
+    """Append an audit entry to the JSONL log."""
+    AUDIT_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    
+    entry = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "operation": operation,
+        "employer_email": employer_email,
+        "payload": {k: v for k, v in payload.items() if k != "new_password"},  # Never log passwords
+        "payload_has_password": "new_password" in payload,
+        "dry_run": dry_run,
+        "result": result,
+    }
+    
+    if http_status is not None:
+        entry["http_status"] = http_status
+    if response is not None:
+        entry["response"] = response
+    if error_detail is not None:
+        entry["error_detail"] = error_detail
+    
+    with open(AUDIT_LOG_PATH, "a") as f:
+        f.write(json.dumps(entry) + "\n")
 
 
 def generate_password(length: int = 20) -> str:
@@ -109,7 +157,16 @@ def set_employer_password(
     if dry_run:
         print("[DRY RUN] Would POST to:", url)
         print("[DRY RUN] Payload:")
-        print(json.dumps(payload, indent=2))
+        print(json.dumps({k: v for k, v in payload.items() if k != "new_password"}, indent=2))
+        print("[DRY RUN] (password redacted from display)")
+        
+        write_audit_log(
+            operation="set_employer_password",
+            employer_email=email,
+            payload=payload,
+            dry_run=True,
+            result="dry_run",
+        )
         return None
 
     token = get_founder_token()
@@ -125,7 +182,19 @@ def set_employer_password(
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
             body = resp.read().decode("utf-8")
-            return json.loads(body)
+            response_data = json.loads(body)
+            
+            write_audit_log(
+                operation="set_employer_password",
+                employer_email=email,
+                payload=payload,
+                dry_run=False,
+                result="success",
+                http_status=resp.status,
+                response=response_data,
+            )
+            return response_data
+            
     except urllib.error.HTTPError as exc:
         # Read error body for details
         try:
@@ -134,6 +203,16 @@ def set_employer_password(
             detail = err_data.get("detail", str(err_data))
         except Exception:
             detail = err_body if err_body else str(exc)
+        
+        write_audit_log(
+            operation="set_employer_password",
+            employer_email=email,
+            payload=payload,
+            dry_run=False,
+            result="error",
+            http_status=exc.code,
+            error_detail=detail,
+        )
         
         # Provide helpful context for common errors
         if exc.code == 401 or exc.code == 403:
@@ -171,10 +250,28 @@ def set_employer_password(
                 file=sys.stderr,
             )
         sys.exit(1)
+        
     except urllib.error.URLError as exc:
+        write_audit_log(
+            operation="set_employer_password",
+            employer_email=email,
+            payload=payload,
+            dry_run=False,
+            result="error",
+            error_detail=f"URLError: {exc.reason}",
+        )
         print(f"ERROR: Request to {url} failed: {exc.reason}", file=sys.stderr)
         sys.exit(1)
+        
     except Exception as exc:
+        write_audit_log(
+            operation="set_employer_password",
+            employer_email=email,
+            payload=payload,
+            dry_run=False,
+            result="error",
+            error_detail=f"Unexpected: {str(exc)}",
+        )
         print(f"ERROR: Unexpected error: {exc}", file=sys.stderr)
         sys.exit(1)
 
@@ -221,5 +318,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
