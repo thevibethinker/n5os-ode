@@ -1,0 +1,32 @@
+{
+  "worker_id": "W1.2",
+  "build_slug": "careerspan-scan-mgmt",
+  "delivered_at_utc": "2026-01-21T02:30:00Z",
+  "deliverables": [
+    "N5/scripts/manage_employer_scan_access.py"
+  ],
+  "tests_performed": [
+    {
+      "command": "python3 N5/scripts/manage_employer_scan_access.py --help",
+      "expected": "Help text prints and exits 0",
+      "observed": "Pass"
+    },
+    {
+      "command": "python3 N5/scripts/manage_employer_scan_access.py test@example.com --enable --credits 1 --dry-run",
+      "expected": "Prints preview, does not call API, writes audit log",
+      "observed": "Pass"
+    },
+    {
+      "command": "python3 N5/scripts/manage_employer_scan_access.py test@example.com --enable --credits 1",
+      "expected": "Refuses to execute without --confirm (non-zero exit)",
+      "observed": "Pass (exit code 2)"
+    }
+  ],
+  "notes_for_orchestrator": [
+    "Script is standard-library-only (urllib/json/argparse), mirroring set_employer_password.py.",
+    "Safety: always prints preview; blocks API call unless --confirm; --dry-run never calls API.",
+    "Audit logging: appends JSONL to N5/logs/careerspan_audit.jsonl for dry-runs, blocked (missing --confirm) attempts, success, and errors.",
+    "When --allowed-orgs is used without --org-scanning-enabled, script prints a warning but proceeds (per spec)."
+  ],
+  "lessons_for_ledger": []
+}
