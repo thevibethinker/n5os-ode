@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Roey\u0027s",
+    "startTime": "2019-11-13T18:00:00Z",
+    "endTime": "2019-11-13T20:00:00Z",
+    "partySize": 2,
+    "service": "Roey\u0027s",
+    "address": "New York, 1 Perry Street, New York, US"
+  },
+  "uniqueId": "17697832374436345864",
+  "lastModifiedTime": "2019-11-12T23:47:39.699924Z"
+}

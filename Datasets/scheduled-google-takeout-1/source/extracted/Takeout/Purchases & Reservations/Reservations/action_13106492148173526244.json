@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "LaRina Pastificio \u0026 Vino",
+    "startTime": "2023-06-11T21:30:00Z",
+    "endTime": "2023-06-11T23:00:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 387 Myrtle Avenue, New York, US"
+  },
+  "uniqueId": "13106492148173526244",
+  "lastModifiedTime": "2023-06-11T20:57:09.126587Z"
+}

@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Casa Thirteen",
+    "startTime": "2025-12-06T21:00:00Z",
+    "endTime": "2025-12-06T22:30:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 173 Bowery, New York, US"
+  },
+  "uniqueId": "6019224425971606978",
+  "lastModifiedTime": "2025-12-06T19:35:04.168732Z"
+}

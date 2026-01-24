@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Coltivare",
+    "startTime": "2022-01-04T23:00:00Z",
+    "endTime": "2022-01-05T01:00:00Z",
+    "partySize": 2,
+    "service": "Coltivare",
+    "address": "New York, 235 South Cayuga Street, Ithaca, US"
+  },
+  "uniqueId": "17485078906871264048",
+  "lastModifiedTime": "2022-01-04T20:23:29.922541Z"
+}

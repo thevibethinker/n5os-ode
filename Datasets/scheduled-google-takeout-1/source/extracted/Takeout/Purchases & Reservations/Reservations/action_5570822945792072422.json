@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Soda Club",
+    "startTime": "2023-07-06T22:30:00Z",
+    "endTime": "2023-07-07T00:00:00Z",
+    "partySize": 4,
+    "service": "Dining Reservation",
+    "address": "New York, 95 Avenue A, New York, US"
+  },
+  "uniqueId": "5570822945792072422",
+  "lastModifiedTime": "2023-06-27T00:55:42.319950Z"
+}

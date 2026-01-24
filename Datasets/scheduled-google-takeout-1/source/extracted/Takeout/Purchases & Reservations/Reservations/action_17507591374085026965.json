@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "MáLà Project Bryant Park",
+    "startTime": "2019-10-31T21:30:00Z",
+    "endTime": "2019-10-31T23:00:00Z",
+    "partySize": 4,
+    "service": "Dining Reservation",
+    "address": "New York, 41 West 46th Street, New York, US"
+  },
+  "uniqueId": "17507591374085026965",
+  "lastModifiedTime": "2019-10-31T21:07:39.076759Z"
+}

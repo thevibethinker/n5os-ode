@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Barn Joo Union Square",
+    "startTime": "2024-07-20T16:00:00Z",
+    "endTime": "2024-07-20T18:00:00Z",
+    "partySize": 2,
+    "service": "Barn Joo Union Square",
+    "address": "New York, 35 Union Square West, New York, US"
+  },
+  "uniqueId": "17565941551743180204",
+  "lastModifiedTime": "2024-07-20T14:20:11.339019Z"
+}

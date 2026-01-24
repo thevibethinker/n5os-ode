@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Haymaker Bar and Kitchen",
+    "startTime": "2020-02-27T18:00:00Z",
+    "endTime": "2020-02-27T20:00:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 252 West 29th Street, New York, US"
+  },
+  "uniqueId": "10451602794836923003",
+  "lastModifiedTime": "2020-02-27T05:35:32.718397Z"
+}

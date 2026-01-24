@@ -1,0 +1,193 @@
+{
+  "createdTime": "2012-04-07T22:44:58.198Z",
+  "modifiedTime": "2025-12-21T01:35:56.066Z",
+  "deviceSettings": [{
+    "deviceTag": 1346554070,
+    "reportingEnabled": false,
+    "devicePrettyName": "SM-F936B",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2025-12-22T18:13:46.576Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2025-12-22T18:13:46.576Z"
+    },
+    "androidOsLevel": 36,
+    "deviceSpec": {
+      "manufacturer": "samsung",
+      "brand": "samsung",
+      "product": "q4qxxx",
+      "device": "q4q",
+      "model": "SM-F936B",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true,
+      "observedPlaceVisitsFor30PercentOfTheLast7d": true
+    }
+  }, {
+    "deviceTag": 938025062,
+    "reportingEnabled": false,
+    "devicePrettyName": "Pixel 10 Pro",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2025-10-04T00:34:54.851Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2025-10-04T00:34:54.851Z"
+    },
+    "androidOsLevel": 36,
+    "deviceSpec": {
+      "manufacturer": "Google",
+      "brand": "google",
+      "product": "blazer",
+      "device": "blazer",
+      "model": "Pixel 10 Pro",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true
+    }
+  }, {
+    "deviceTag": 205619812,
+    "reportingEnabled": false,
+    "devicePrettyName": "Pixel 10 Pro",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2025-09-03T07:41:57.103Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2025-09-03T07:41:57.103Z"
+    },
+    "androidOsLevel": 36,
+    "deviceSpec": {
+      "manufacturer": "Google",
+      "brand": "google",
+      "product": "blazer",
+      "device": "blazer",
+      "model": "Pixel 10 Pro",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true,
+      "observedPlaceVisitsFor30PercentOfTheLast7d": true
+    }
+  }, {
+    "deviceTag": -1329626992,
+    "reportingEnabled": false,
+    "devicePrettyName": "Pixel 10 Pro",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2025-08-28T00:58:26.229Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2025-08-28T00:58:26.229Z"
+    },
+    "androidOsLevel": 36,
+    "deviceSpec": {
+      "manufacturer": "Google",
+      "brand": "google",
+      "product": "blazer",
+      "device": "blazer",
+      "model": "Pixel 10 Pro",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true
+    }
+  }, {
+    "deviceTag": 1313495103,
+    "reportingEnabled": false,
+    "devicePrettyName": "Pixel 9",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2024-10-21T00:14:50.518Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2024-10-21T00:14:50.518Z"
+    },
+    "androidOsLevel": 36,
+    "deviceSpec": {
+      "manufacturer": "Google",
+      "brand": "google",
+      "product": "tokay",
+      "device": "tokay",
+      "model": "Pixel 9",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true
+    }
+  }, {
+    "deviceTag": 1808681635,
+    "reportingEnabled": false,
+    "devicePrettyName": "Pixel 9",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2024-08-22T00:38:32.584Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2024-10-08T00:29:47.532Z"
+    },
+    "androidOsLevel": 36,
+    "deviceSpec": {
+      "manufacturer": "Google",
+      "brand": "google",
+      "product": "tokay",
+      "device": "tokay",
+      "model": "Pixel 9",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true
+    }
+  }, {
+    "deviceTag": 1846212546,
+    "reportingEnabled": false,
+    "devicePrettyName": "SM-X700",
+    "platformType": "ANDROID",
+    "deviceCreationTime": "2022-07-21T00:48:20.701Z",
+    "latestLocationReportingSettingChange": {
+      "reportingEnabledModificationTime": "2024-10-08T21:26:51.804Z"
+    },
+    "androidOsLevel": 35,
+    "deviceSpec": {
+      "manufacturer": "samsung",
+      "brand": "samsung",
+      "product": "gts8wifixx",
+      "device": "gts8wifi",
+      "model": "SM-X700",
+      "isLowRam": false
+    },
+    "deviceActiveness": {
+      "hasSavedTimelineData": true
+    }
+  }],
+  "hasReportedLocations": true,
+  "hasSetRetention": false,
+  "storeVisitControl": {
+    "enabled": true,
+    "updateTime": "2022-07-11T22:53:47.840721312Z"
+  },
+  "encryptedBackupsControls": {
+    "1313495103": {
+      "enabled": false
+    },
+    "1346554070": {
+      "enabled": false
+    },
+    "1808681635": {
+      "enabled": false
+    },
+    "1846212546": {
+      "enabled": false
+    },
+    "-1329626992": {
+      "enabled": false
+    },
+    "205619812": {
+      "enabled": true,
+      "updateTime": "2025-12-21T01:35:56.066973821Z"
+    },
+    "938025062": {
+      "enabled": false
+    }
+  },
+  "retentionControl": {
+    "retentionWindowDays": 2147483647
+  },
+  "timelineEnabled": true,
+  "timelineDeletionTime": "2024-10-09T22:24:51.026Z",
+  "googleOpinionRewardsControl": {
+    "enabled": false,
+    "updateTime": "2024-08-02T11:45:18.327832563Z"
+  }
+}

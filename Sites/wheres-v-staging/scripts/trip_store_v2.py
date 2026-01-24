@@ -401,7 +401,9 @@ def get_current_state() -> dict:
         "next_destination": None,
         "next_flight": None,
         "next_return": None,
-        "countdown_days": None
+        "countdown_days": None,
+        "hours_until_departure": None,
+        "minutes_until_departure": None
     }
     
     if active_leg:
@@ -412,35 +414,109 @@ def get_current_state() -> dict:
     elif next_leg:
         flight = next_leg.get("flight", {})
         dep_str = flight.get("departure_time")
+        arr_str = flight.get("arrival_time")
         if dep_str:
             try:
                 dep_time = _parse_time(dep_str)
-                days_until = (dep_time - now).days
-                if days_until <= 7:
+                time_until = dep_time - now
+                days_until = time_until.days
+                hours_until = time_until.total_seconds() / 3600
+                minutes_until = time_until.total_seconds() / 60
+                
+                context["countdown_days"] = days_until
+                context["hours_until_departure"] = round(hours_until, 1)
+                context["minutes_until_departure"] = round(minutes_until)
+                
+                dest = next_leg.get("destination_city") or flight.get("arrival_airport", "destination")
+                departure_airport = flight.get("departure_airport", "the airport")
+                
+                if hours_until <= 0:
+                    # Flight should have departed - check if we're in the arrival window
+                    if arr_str:
+                        arr_time = _parse_time(arr_str)
+                        if now <= arr_time:
+                            # Currently in flight
+                            state = "in_transit"
+                            message = f"V is flying to {dest}"
+                            active_leg = next_leg
+                        elif (now - arr_time).total_seconds() <= 7200:  # Within 2 hours of landing
+                            state = "landed"
+                            message = f"V has landed in {dest}"
+                            active_leg = next_leg
+                elif minutes_until <= 45:
+                    # Within 45 minutes - boarding
+                    state = "boarding"
+                    message = f"V is boarding flight to {dest}"
+                    active_leg = next_leg
+                elif hours_until <= 2:
+                    # Within 2 hours - at airport
+                    state = "at_airport"
+                    message = f"V is at {departure_airport}"
+                    active_leg = next_leg
+                elif days_until == 0:
+                    # Same day but more than 2 hours out
+                    state = "traveling_today"
+                    message = f"V is traveling to {dest} today"
+                    active_leg = next_leg
+                elif days_until <= 7:
+                    # Within a week
                     state = "pre_departure"
-                    dest = next_leg.get("destination_city") or flight.get("arrival_airport", "destination")
                     message = f"V is preparing for {dest}"
-                    context["countdown_days"] = days_until
-                    current_trip = next((t for t in trips if next_leg["trip_id"] == t["id"]), None)
+                    active_leg = next_leg
+                
+                current_trip = next((t for t in trips if next_leg["trip_id"] == t["id"]), None)
             except (ValueError, TypeError):
                 pass
     
-    # At destination: after arrival but before return departure
-    if current_trip and not active_leg:
-        trip_legs = get_legs_for_trip(current_trip["id"])
-        if len(trip_legs) >= 2:
-            first_arr_str = trip_legs[0].get("flight", {}).get("arrival_time")
-            last_dep_str = trip_legs[-1].get("flight", {}).get("departure_time")
-            if first_arr_str and last_dep_str:
-                try:
-                    first_arr = _parse_time(first_arr_str)
-                    last_dep = _parse_time(last_dep_str)
-                    if first_arr < now < last_dep:
-                        state = "at_destination"
-                        dest = trip_legs[0].get("destination_city") or trip_legs[0].get("flight", {}).get("arrival_airport")
-                        message = f"V is in {dest}"
-                except (ValueError, TypeError):
-                    pass
+    # At destination check: are we between legs in an active trip?
+    # This should happen BEFORE the next_leg logic overrides the state
+    for trip in trips:
+        trip_legs = get_legs_for_trip(trip["id"])
+        if len(trip_legs) < 2:
+            continue
+        
+        for i in range(len(trip_legs) - 1):
+            current_leg_data = trip_legs[i]
+            next_leg_data = trip_legs[i + 1]
+            
+            # Get arrival of current leg
+            current_transport = current_leg_data.get("flight") or current_leg_data.get("train", {})
+            current_arr_str = current_transport.get("arrival_time")
+            
+            # Get departure of next leg
+            next_transport = next_leg_data.get("flight") or next_leg_data.get("train", {})
+            next_dep_str = next_transport.get("departure_time")
+            
+            if not current_arr_str or not next_dep_str:
+                continue
+            
+            try:
+                current_arr = _parse_time(current_arr_str)
+                next_dep = _parse_time(next_dep_str)
+                
+                # If we're between this leg's arrival and next leg's departure
+                if current_arr <= now < next_dep:
+                    state = "at_destination"
+                    dest = current_leg_data.get("destination_city") or current_transport.get("arrival_airport")
+                    message = f"V is in {dest}"
+                    current_trip = trip
+                    active_leg = current_leg_data
+                    
+                    # Update context
+                    context["leg_number"] = i + 1
+                    context["total_legs"] = len(trip_legs)
+                    
+                    # Calculate time until next leg
+                    time_until_next = next_dep - now
+                    context["hours_until_departure"] = round(time_until_next.total_seconds() / 3600, 1)
+                    context["countdown_days"] = time_until_next.days
+                    break
+            except (ValueError, TypeError):
+                continue
+        
+        # If we found at_destination state, break outer loop too
+        if state == "at_destination":
+            break
     
     # Build context - last destination
     if last_trip:
@@ -485,6 +561,32 @@ def get_current_state() -> dict:
             context["leg_number"] = next((i+1 for i, l in enumerate(trip_legs) if l["id"] == active_leg["id"]), 1)
             context["total_legs"] = len(trip_legs)
     
+    # Build upcoming legs for 7-day itinerary
+    upcoming_legs_7day = []
+    seven_days_from_now = now + timedelta(days=7)
+    
+    for leg in legs:
+        transport = leg.get("flight") or leg.get("train")
+        if not transport:
+            continue
+        dep_str = transport.get("departure_time")
+        if not dep_str:
+            continue
+        try:
+            dep_time = _parse_time(dep_str)
+            # Include legs departing between now and 7 days from now
+            if now <= dep_time <= seven_days_from_now:
+                upcoming_legs_7day.append({
+                    "leg": leg,
+                    "departure_time": dep_time
+                })
+        except (ValueError, TypeError):
+            continue
+    
+    # Sort by departure time
+    upcoming_legs_7day.sort(key=lambda x: x["departure_time"])
+    upcoming_legs_list = [item["leg"] for item in upcoming_legs_7day]
+
     return {
         "state": state,
         "current_leg": active_leg,
@@ -492,7 +594,8 @@ def get_current_state() -> dict:
         "last_trip": last_trip,
         "next_trip": next_trip,
         "message": message,
-        "context": context
+        "context": context,
+        "upcoming_legs": upcoming_legs_list
     }
 
 
@@ -634,6 +737,48 @@ if __name__ == "__main__":
             print(json.dumps(result, indent=2, default=str))
         else:
             print(json.dumps({"error": "Trip not found"}))
+            sys.exit(1)
+    elif cmd == "set-staying-with":
+        # Usage: trip_store_v2.py set-staying-with <leg_id> <name> [--phone <phone>] [--notes <notes>]
+        if len(sys.argv) < 4:
+            print("Usage: trip_store_v2.py set-staying-with <leg_id> <name> [--phone <phone>] [--notes <notes>]")
+            sys.exit(1)
+        
+        leg_id = sys.argv[2]
+        name = sys.argv[3]
+        phone = None
+        notes = None
+        
+        # Parse optional args
+        i = 4
+        while i < len(sys.argv):
+            if sys.argv[i] == "--phone" and i + 1 < len(sys.argv):
+                phone = sys.argv[i + 1]
+                i += 2
+            elif sys.argv[i] == "--notes" and i + 1 < len(sys.argv):
+                notes = sys.argv[i + 1]
+                i += 2
+            else:
+                i += 1
+        
+        staying_with = {"name": name, "phone": phone, "notes": notes}
+        result = update_leg(leg_id, {"staying_with": staying_with, "hotel": None})
+        if result:
+            print(json.dumps(result, indent=2, default=str))
+        else:
+            print(json.dumps({"error": "Leg not found"}))
+            sys.exit(1)
+    elif cmd == "clear-staying-with":
+        # Usage: trip_store_v2.py clear-staying-with <leg_id>
+        if len(sys.argv) < 3:
+            print("Usage: trip_store_v2.py clear-staying-with <leg_id>")
+            sys.exit(1)
+        leg_id = sys.argv[2]
+        result = update_leg(leg_id, {"staying_with": None})
+        if result:
+            print(json.dumps(result, indent=2, default=str))
+        else:
+            print(json.dumps({"error": "Leg not found"}))
             sys.exit(1)
     else:
         print(f"Unknown command: {cmd}")

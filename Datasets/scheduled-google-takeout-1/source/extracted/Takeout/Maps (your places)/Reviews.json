@@ -1,0 +1,602 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9824144,
+          40.6970524
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2026-01-10T16:43:19.499444Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x200c9a7f50b6b87e",
+        "location": {
+          "address": "2 Prince St 8th Floor, Brooklyn, NY 11201, United States",
+          "country_code": "US",
+          "name": "Krank"
+        },
+        "review_text_published": "I attended four months last year and had an extremely positive experience during that time. I unfortunately had a mix-up where my card was left on file, but Krank was extremely responsive and immediately sorted out my issues and gave me a full refund for the period that I had not attended beyond my contract.\n\nDan did not offer to compensate me in any way to post this, but I did feel compelled to share a positive experience with a grerat small business owner in this area, especially one that runs a tight ship like him.\n\nI was shocked to know that they've been around here for over a decade, which speaks to the staying power and popularity of Krank and the awesome community they've built in our little part of BK!"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9827412,
+          40.6919261
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-12-19T15:45:27.351348Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x3d6d2aedd1e6651d",
+        "location": {
+          "address": "292 Flatbush Ave Ext Suite A, Brooklyn, NY 11201, United States",
+          "name": "GoodVets Downtown Brooklyn"
+        },
+        "questions": [
+          {
+            "question": "Price assessment",
+            "selected_option": "Reasonable price"
+          }
+        ],
+        "review_text_published": "This goodvets has been a godsend! They take great care of my little guys. The staff is always very caring and responsive to our requests. Could not recommend more highly!"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.8377154,
+          32.8489670
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-03-28T00:26:20.344362Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x4151d14e138484",
+        "location": {
+          "name": "Lets Hibachi Catering Charleston"
+        },
+        "review_text_published": "Jeffery is the best. He fixed my relationship problems. I can't believe I tried to find true love before I met the J-man. All jokes aside, he's the best."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -74.0871041,
+          40.8439589
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2025-01-30T17:45:34.365186Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x9eba8248494cbc63",
+        "location": {
+          "address": "71 Hackensack St, Wood-Ridge, NJ 07075, United States",
+          "name": "Chirico & Calabro"
+        },
+        "review_text_published": "Mel is the absolute best. I trust him with the business of my closest friends and family. He's a no bs, reliable, and hardworking person who has always delivered on what he says. He's also staffed his office with great, helpful folks like Christine. I strongly recommend working with Chirico & Calabro if you have any personal or business tax needs in the tri-state area. I say this as someone who worked with him while employed as a salaried worker filing jointly and owner of a tech company."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9921165,
+          40.6912662
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-11-14T16:17:49.616552Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xaaa8409925926e3b",
+        "location": {
+          "address": "41 Schermerhorn St #1115, Brooklyn, NY 11201, United States",
+          "name": "Brook-Clean"
+        },
+        "review_text_published": "Very happy with Brook Clean. Barbara was extremely pleasant and professional in addition to doing a great job on our place. We went for the deep clean first as we had had several months go by since our last cleaning. Zsuzsanna was also very prompt and professional when coordinating our appointment. Highly recommend!"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9733109,
+          40.6930934
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-08-07T00:31:38.336260Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xbe4a98048cdc4311",
+        "location": {
+          "address": "330 Myrtle Ave, Brooklyn, NY 11205, United States",
+          "country_code": "US",
+          "name": "Glin Thai Bistro"
+        },
+        "questions": [
+          {
+            "question": "Service",
+            "selected_option": "Dine in"
+          },
+          {
+            "question": "Meal type",
+            "selected_option": "Dinner"
+          },
+          {
+            "question": "Price per person",
+            "selected_option": "$20–30"
+          },
+          {
+            "question": "Food",
+            "rating": 5
+          },
+          {
+            "question": "Service",
+            "rating": 5
+          },
+          {
+            "question": "Atmosphere",
+            "rating": 5
+          },
+          {
+            "question": "Vegetarian offerings",
+            "selected_options": [
+              "Clearly labeled vegetarian dishes"
+            ]
+          },
+          {
+            "question": "Vegetarian options",
+            "text_answer": "I couldn't eat any of the specials but they had tofu/vegetable versions of all the classics."
+          },
+          {
+            "question": "Can you share more about these topics?",
+            "selected_options": [
+              "Vegetarian options"
+            ]
+          }
+        ],
+        "review_text_published": "Longtime fan of glin. Some of the best thai food in bk, especially now that they have the new menu. Try the veggie curry (ghang). Thank you for a lovely dinner and experience to Grace and the team!"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -84.4611880,
+          33.8979159
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2024-06-03T15:59:00.964946Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x101ea6cf99c86f35",
+        "location": {
+          "address": "280 Interstate N Cir SE UNIT 450, Atlanta, GA 30339, United States",
+          "name": "Levine & Eskandari LLC"
+        },
+        "review_text_published": "I had an excellent experience working with Ken Levine. He's a thorough professional that got my Green Card over the line with minimal hassle. I actually had a slight complication in my case that required additional thought before submission, but Ken was able to handle it all. His paralelgal Sheida was also highly efficient and helpful. I could not recommend his services or the firm more strongly."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9897966,
+          40.6879189
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-08-16T00:23:26.168469Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x9d065619a8582aff",
+        "location": {
+          "address": "110 Smith St, Brooklyn, NY 11201, United States",
+          "country_code": "US",
+          "name": "Tipsy Grape"
+        },
+        "questions": [
+          {
+            "question": "Price per person",
+            "selected_option": "$20–30"
+          },
+          {
+            "question": "Food",
+            "rating": 5
+          },
+          {
+            "question": "Service",
+            "rating": 5
+          },
+          {
+            "question": "Atmosphere",
+            "rating": 5
+          }
+        ],
+        "review_text_published": "They have delightful cheese, lots of wine, and extremely nice staff. Would highly recommend. \"I do like the ambience\" - the wife."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9828197,
+          40.6940444
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2023-04-27T13:59:00.965961Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x26192f761598f82c",
+        "location": {
+          "address": "343 Gold St, Brooklyn, NY 11201, United States",
+          "name": "AVA Fort Greene"
+        },
+        "review_text_published": "Day one and we're so pleased to be here. The staff is really attentive and helpful. Shout out to Christian the super for helping us start our stay comfortably by sorting out our apt's plumbing.\n\nEdit 1:\nWant to shout out Marc and Kenyon for making our renewal process so easy! Very accommodating group, very grateful for them"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          23.9444255,
+          37.7237693
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2022-09-19T16:21:32.827803Z",
+        "five_star_rating_published": 1,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xd09b3df761a7b267",
+        "location": {
+          "address": "52nd km Athens - Sounion Ave Anavyssos Beach, Palea Fokea, 190 13, Greece",
+          "country_code": "GR",
+          "name": "Plaza Resort Hotel"
+        },
+        "questions": [
+          {
+            "question": "Travel group",
+            "selected_option": "Family"
+          },
+          {
+            "question": "Rooms",
+            "rating": 1
+          },
+          {
+            "question": "Service",
+            "rating": 1
+          },
+          {
+            "question": "Location",
+            "rating": 1
+          }
+        ],
+        "review_text_published": "THESE PEOPLE HAVE STOLEN MY MONEY AND ARE REFUSING TO PAY ME BACK. I HAVE BEEN WAITING OVER A YEAR TO HAVE MY MONEY REFUNDED. THIS HOTEL IS RUN BY CHEATS AND SCAMMERS."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -75.9527229,
+          42.0920100
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2021-07-17T01:27:56.591788Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x56f31c40e8886a04",
+        "location": {
+          "address": "4700 Vestal Pkwy E, Vestal, NY 13850, United States",
+          "country_code": "US",
+          "name": "Red Chili Restaurant"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -78.0211572,
+          41.7744749
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2021-01-25T17:25:49.665368Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xcabd023ab58761df",
+        "location": {
+          "address": "133 N Main St, Coudersport, PA 16915, United States",
+          "country_code": "US",
+          "name": "Hotel Crittenden"
+        },
+        "questions": [
+          {
+            "question": "Service",
+            "rating": 5
+          }
+        ],
+        "review_text_published": "Just want to leave a quick shout-out to the Hotel Critterden and its proprietor. We couldn't stay there on this visit, but she was extremely helpful despite our not being able to do so. We received a lot of assistance with our trip logistics that made visiting Cherry State much easier. I can't speak to the premises, but I can confidently say the hotel's staffed by really excellent people."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9904025,
+          40.7142123
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-11-27T04:42:06.542252Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x579084c6ad6adcd2",
+        "location": {
+          "address": "162 E Broadway, New York, NY 10002, United States",
+          "country_code": "US",
+          "name": "Jajaja Mexicana"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9805621,
+          40.7569293
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-10-31T22:40:16.691042Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xc4ee2d7b7d9b534a",
+        "location": {
+          "address": "41 W 46th St, New York, NY 10036, United States",
+          "country_code": "US",
+          "name": "MáLà Project Bryant Park"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9802669,
+          40.7800898
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-10-28T00:16:01.261358Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x6e21d141e50b1e60",
+        "location": {
+          "address": "307 Amsterdam Ave, New York, NY 10023, United States",
+          "country_code": "US",
+          "name": "Sala Thai"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9887192,
+          40.7214355
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-10-16T03:35:14.833081Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x2d90ee2e11c895ea",
+        "location": {
+          "address": "167 Orchard St, New York, NY 10002, United States",
+          "country_code": "US",
+          "name": "The Slipper Room"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.8945861,
+          1.3087885
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-07-21T00:35:38.907Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x720aa9fa1e9ae667",
+        "location": {
+          "address": "188-9 Tanjong Katong Rd, Singapore 436990",
+          "country_code": "SG",
+          "name": "Gym n Tonic Pte Ltd"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.8596912,
+          1.3111042
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-05-31T17:02:42.924Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x6578fcfc8003836c",
+        "location": {
+          "address": "119 Tyrwhitt Rd, Singapore 207547",
+          "country_code": "SG",
+          "name": "Druggists | Craft Beer Taproom Restaurant Singapore"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.8537619,
+          1.2942639
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-05-04T12:32:16.811Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xd8961f08c92ca48c",
+        "location": {
+          "address": "80 Bras Basah Rd, Singapore 189560",
+          "country_code": "SG",
+          "name": "Fairmont Singapore"
+        },
+        "review_text_published": "Stayed for one night and had a few meals at the Fairmont. Excellent room size and service. Fantastic Italian restaurant, if a bit pricey even by SG standards.would recommend."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          121.5539349,
+          25.0408963
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-04-15T17:47:33.459Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xa73bdffcf54caf18",
+        "location": {
+          "address": "No. 21, Alley 11, Lane 216, Section 4, Zhongxiao E Rd, Da’an District, Taipei City, Taiwan 106",
+          "country_code": "TW",
+          "name": "ON TAP"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          121.5543568,
+          25.0403438
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-04-15T17:47:25.620Z",
+        "five_star_rating_published": 3,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x1c36c2fef158738e",
+        "location": {
+          "address": "No. 3號, Lane 126, Yanji St, Da’an District, Taipei City, Taiwan 106",
+          "country_code": "TW",
+          "name": "Macho Tacos 瑪丘墨式餅舖 (延吉 Yanji)"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          121.5525077,
+          25.0282640
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-04-15T17:47:20.034Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0xdbca6e92b90a8d05",
+        "location": {
+          "address": "No. 30號, Lane 11, Leli Rd, Da’an District, Taipei City, Taiwan 106",
+          "country_code": "TW",
+          "name": "The Villa"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          121.5482607,
+          25.0429766
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-04-15T17:47:14.221Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x53120d6df3d63300",
+        "location": {
+          "address": "No. 27號, Lane 101, Section 4, Zhongxiao E Rd, Da’an District, Taipei City, Taiwan 106",
+          "country_code": "TW",
+          "name": "Herban Kitchen & Bar"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.8552859,
+          1.2965032
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2016-10-15T12:39:24.321Z",
+        "five_star_rating_published": 5,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x74fb9b3e2109c3b6",
+        "location": {
+          "address": "14 Purvis St, Singapore 188593",
+          "country_code": "SG",
+          "name": "Hotel Kai"
+        },
+        "review_text_published": "Lovely ambience, very quiet and relaxed bar. I appreciate that it isn't too populated. Good drinks deals."
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.8944455,
+          1.3960767
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2016-09-05T08:49:22.133Z",
+        "five_star_rating_published": 4,
+        "google_maps_url": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x0:0x46bd008b22cf731e",
+        "location": {
+          "address": "Singapore 000000",
+          "country_code": "SG",
+          "name": "Capri by Fraser, Changi City"
+        },
+        "review_text_published": "Nice location, bit far away from public transport. Seemed a tad desolated. Great bars nesrby though."
+      },
+      "type": "Feature"
+    }
+  ]
+}

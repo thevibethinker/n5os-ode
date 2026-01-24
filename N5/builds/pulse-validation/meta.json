@@ -1,0 +1,18 @@
+{
+  "slug": "pulse-validation",
+  "title": "Pulse System Validation Build",
+  "build_type": "general",
+  "status": "pending",
+  "total_streams": 1,
+  "current_stream": 1,
+  "drops": {
+    "D1.1": {
+      "name": "Validate Pulse System",
+      "stream": 1,
+      "depends_on": [],
+      "status": "pending"
+    }
+  },
+  "currents": {},
+  "created_at": "2026-01-24T16:35:00+00:00"
+}

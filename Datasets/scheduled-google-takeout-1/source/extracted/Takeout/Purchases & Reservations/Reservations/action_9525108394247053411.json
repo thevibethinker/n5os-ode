@@ -1,0 +1,14 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "bar/code NYC",
+    "startTime": "2025-01-31T23:45:00Z",
+    "endTime": "2025-02-01T00:15:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 43 West 32nd Street, New York, US",
+    "canceled": true
+  },
+  "uniqueId": "9525108394247053411",
+  "lastModifiedTime": "2025-02-01T01:44:57.973276Z"
+}

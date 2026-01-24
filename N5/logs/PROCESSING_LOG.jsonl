@@ -1,0 +1,4 @@
+{"timestamp": "2026-01-20T20:52:09.481564Z", "meeting_id": "2026-01-15_chat_[M]", "action": "verify_blocks", "status": "error", "details": "Block verification failed: Missing block: B01"}
+{"timestamp": "2026-01-20T20:52:09.481991Z", "meeting_id": "2025-12-23_Meeting-with-Vrijen-Ankit_[M]", "action": "verify_blocks", "status": "error", "details": "Block verification failed: Missing block: B01"}
+{"timestamp": "2026-01-20T20:54:27.378088Z", "meeting_id": "2026-01-15_chat_[M]", "action": "transition_to_processed", "status": "success", "details": "CRM: 0 created, 0 updated"}
+{"timestamp": "2026-01-20T20:54:27.378348Z", "meeting_id": "2025-12-23_Meeting-with-Vrijen-Ankit_[M]", "action": "verify_blocks", "status": "error", "details": "Block verification failed: Missing block: B03"}

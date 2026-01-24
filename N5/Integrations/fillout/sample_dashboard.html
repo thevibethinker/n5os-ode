@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals of AI Productivity — Survey Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .dashboard { max-width: 1400px; margin: 0 auto; }
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle { color: #888; margin-bottom: 2rem; font-size: 1.1rem; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 1.5rem; 
+        }
+        .card { 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 16px; 
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card h2 { 
+            font-size: 1rem; 
+            color: #888; 
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .gauge { 
+            text-align: center; 
+            padding: 2rem 0;
+        }
+        .gauge-value { 
+            font-size: 4rem; 
+            font-weight: 700;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gauge-label { color: #888; margin-top: 0.5rem; font-size: 1.2rem; }
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .stat-label { color: #aaa; }
+        .stat-bar { 
+            height: 8px; 
+            background: rgba(255,255,255,0.1); 
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .stat-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+        .big-number { font-size: 3rem; font-weight: 700; color: #667eea; }
+        canvas { max-height: 250px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>📊 Fundamentals of AI Productivity</h1>
+        <p class="subtitle">Pre-Session Survey • 2 responses (anonymous)</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h2>😊 Room Sentiment</h2>
+                <div class="gauge">
+                    <div class="gauge-value">0.0</div>
+                    <div class="gauge-label">out of 5 — 😰 Anxious</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🎯 Biggest Challenges</h2>
+                <canvas id="challengesChart"></canvas>
+            </div>
+            
+            <div class="card">
+                <h2>⏰ Time Lost Weekly</h2>
+                <canvas id="timeLostChart"></canvas>
+            </div>
+            
+            <div class="card">
+                <h2>🛠️ Tools You're Using</h2>
+                <canvas id="toolsChart"></canvas>
+            </div>
+            
+            <div class="card">
+                <h2>👥 Seniority Mix</h2>
+                <canvas id="seniorityChart"></canvas>
+            </div>
+            
+            <div class="card">
+                <h2>📋 What You Want</h2>
+                <canvas id="wantChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const chartColors = ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe', '#43e97b', '#38f9d7'];
+        
+        function createPieChart(id, data) {
+            new Chart(document.getElementById(id), {
+                type: 'doughnut',
+                data: {
+                    labels: data.map(d => d.label.substring(0, 30)),
+                    datasets: [{
+                        data: data.map(d => d.value),
+                        backgroundColor: chartColors,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'right', labels: { color: '#aaa' } } }
+                }
+            });
+        }
+        
+        function createBarChart(id, data) {
+            new Chart(document.getElementById(id), {
+                type: 'bar',
+                data: {
+                    labels: data.map(d => d.label.substring(0, 25)),
+                    datasets: [{
+                        data: data.map(d => d.value),
+                        backgroundColor: '#667eea',
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                        y: { ticks: { color: '#aaa' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+        
+        createPieChart('challengesChart', []);
+        createPieChart('timeLostChart', []);
+        createBarChart('toolsChart', []);
+        createPieChart('seniorityChart', []);
+        createBarChart('wantChart', []);
+    </script>
+</body>
+</html>

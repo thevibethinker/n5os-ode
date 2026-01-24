@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Spicy Moon West Village",
+    "startTime": "2022-11-12T17:00:00Z",
+    "endTime": "2022-11-12T18:30:00Z",
+    "partySize": 6,
+    "service": "Dining Reservation",
+    "address": "New York, 68 West 3rd Street, New York, US"
+  },
+  "uniqueId": "8456869055110025492",
+  "lastModifiedTime": "2022-11-04T17:19:04.641080Z"
+}

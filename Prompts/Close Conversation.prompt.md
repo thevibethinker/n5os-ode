@@ -69,14 +69,21 @@ ls /home/.z/workspaces/{CONVO_ID}/SESSION_STATE.md 2>/dev/null
 
 Check SESSION_STATE.md frontmatter for build context:
 
-**V2 Build System (preferred):**
+**Pulse System (current):**
 ```yaml
-worker_id: W1.1              # V2 worker identifier
+drop_id: D1.1                # Pulse Drop identifier
 build_slug: my-project       # Build folder name
-thread_title: "[my-project] W1.1: Task Name"  # Pre-decided title
+thread_title: "[my-project] D1.1: Task Name"  # Pre-decided title
 ```
 
-**Legacy format:**
+**Legacy V2 format:**
+```yaml
+worker_id: W1.1              # Legacy worker identifier
+build_slug: my-project       # Build folder name
+thread_title: "[my-project] W1.1: Task Name"
+```
+
+**Legacy V1 format:**
 ```yaml
 build_id: my-project       # If present → Worker Close
 worker_num: 1              # Worker number
@@ -84,13 +91,14 @@ parent_topic: My Project   # For greppable tags
 ```
 
 **Detection priority:**
-1. `worker_id` + `build_slug` in SESSION_STATE frontmatter → Worker Close (v2)
-2. `build_id` + `worker_num` in SESSION_STATE frontmatter → Worker Close (legacy)
-3. `## Build Context` section in SESSION_STATE → Worker Close  
-4. `mode: worker` in SESSION_STATE frontmatter → Worker Close
-5. Otherwise → Full Close mode
+1. `drop_id` + `build_slug` in SESSION_STATE frontmatter → Drop Close (Pulse)
+2. `worker_id` + `build_slug` in SESSION_STATE frontmatter → Worker Close (legacy v2)
+3. `build_id` + `worker_num` in SESSION_STATE frontmatter → Worker Close (legacy v1)
+4. `## Build Context` section in SESSION_STATE → Worker Close  
+5. `mode: worker` in SESSION_STATE frontmatter → Worker Close
+6. Otherwise → Full Close mode
 
-**If Worker Close mode → Follow Worker Steps below**
+**If Drop/Worker Close mode → Follow Worker Steps below**
 **Otherwise → Follow Full Close mode**
 
 ---

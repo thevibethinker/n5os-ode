@@ -1,0 +1,22 @@
+{
+  "slug": "eightfold-lawsuit-thoughts",
+  "title": "Eightfold Lawsuit & Market Implications",
+  "processed_at": "2026-01-22T17:00:00Z",
+  "word_count": 602,
+  "source": "google_drive",
+  "source_id": "1Nue5tTB77zJWz09X4WvmXXhyXGurEOlE",
+  "source_filename": "Thoughts on eightfold class action lawsuit",
+  "blocks_generated": ["R03", "R04", "R07", "RIX"],
+  "edges_created": 4,
+  "classification": {
+    "relevant_blocks": ["R03", "R04", "R07"],
+    "confidence": {"R04": 0.95, "R03": 0.85, "R07": 0.80},
+    "primary_theme": "Market disruption analysis — AI screening lawsuit threat to third-party data companies"
+  },
+  "flags": {
+    "r00_generated": false,
+    "super_connectors": [],
+    "promotion_candidates": ["candidate-experience-as-differentiator"]
+  },
+  "provenance": "con_fKuarVgFEEq7rtox"
+}

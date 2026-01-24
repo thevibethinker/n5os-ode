@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Beyond Sushi - Vegan Restaurant",
+    "startTime": "2024-02-21T22:30:00Z",
+    "endTime": "2024-02-22T00:00:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 134 West 37th Street, New York, US"
+  },
+  "uniqueId": "10887089452483626771",
+  "lastModifiedTime": "2024-02-21T20:53:38.408752Z"
+}

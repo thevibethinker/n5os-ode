@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Woodland",
+    "startTime": "2023-09-07T22:00:00Z",
+    "endTime": "2023-09-07T23:30:00Z",
+    "partySize": 5,
+    "service": "Reservations",
+    "address": "New York, 572 Fulton Street, New York, US"
+  },
+  "uniqueId": "17742478372654905784",
+  "lastModifiedTime": "2023-09-07T20:05:24.199619Z"
+}

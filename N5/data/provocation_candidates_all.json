@@ -1,35 +1,110 @@
 {
-  "scan_date": "2026-01-19T13:08:19.887422+00:00",
+  "scan_date": "2026-01-24T13:07:02.760454+00:00",
   "window_days": "all",
-  "meetings_scanned": 139,
-  "total_ideas": 519,
+  "meetings_scanned": 143,
+  "total_ideas": 532,
   "candidates": [
     {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-      "meeting_date": "2026-01-16",
-      "meeting_name": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "meeting_folder": "Week-of-2026-01-19/2026-01-23_2026-01-23-Anna-bao",
+      "meeting_date": "2026-01-23",
+      "meeting_name": "2026-01-23_2026-01-23-Anna-bao",
       "ideas": [
         {
-          "title": "Exits happen through networks, not markets",
-          "idea": "Exits happen through networks, not markets",
+          "title": "Process additions (volunteer flow)",
+          "idea": "Process additions (volunteer flow)",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Platforms derive power from relationship monopoly",
-          "idea": "Platforms derive power from relationship monopoly",
+          "title": "Role redistribution (Anna to Vrijen)",
+          "idea": "Role redistribution (Anna to Vrijen)",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Relationship quality is the next data frontier",
-          "idea": "Relationship quality is the next data frontier",
+          "title": "Tool consolidation (Luma)",
+          "idea": "Tool consolidation (Luma)",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Semi-technical founders lower barriers to entry",
-          "idea": "Semi-technical founders lower barriers to entry",
+          "title": "Venue knowledge transfer",
+          "idea": "Venue knowledge transfer",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-19/2026-01-21_2026-01-21-Zain-x-vrijen-attawar/2026-01-21_Zain-x-Vrijen-Attawar",
+      "meeting_date": "2026-01-21",
+      "meeting_name": "2026-01-21_Zain-x-Vrijen-Attawar",
+      "ideas": [
+        {
+          "title": "What integrity actually is (not a constraint but a...",
+          "idea": "What integrity actually is (not a constraint but a value floor)",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "How to use AI (not to amplify but to stabilize)",
+          "idea": "How to use AI (not to amplify but to stabilize)",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "How networking works (not through targeting but th...",
+          "idea": "How networking works (not through targeting but through graph density)",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-19/2026-01-19_2026-01-19-Trio-standup-1",
+      "meeting_date": "2026-01-19",
+      "meeting_name": "2026-01-19_2026-01-19-Trio-standup-1",
+      "ideas": [
+        {
+          "title": "Team demonstrates clear alignment on priorities",
+          "idea": "Team demonstrates clear alignment on priorities",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Constructive approach to problem-solving",
+          "idea": "Constructive approach to problem-solving",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Proactive planning for next steps",
+          "idea": "Proactive planning for next steps",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-19/2026-01-19_2026-01-19-Careerspan-corridorx-scoping",
+      "meeting_date": "2026-01-19",
+      "meeting_name": "2026-01-19_2026-01-19-Careerspan-corridorx-scoping",
+      "ideas": [
+        {
+          "title": "Team demonstrates clear alignment on priorities",
+          "idea": "Team demonstrates clear alignment on priorities",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Constructive approach to problem-solving",
+          "idea": "Constructive approach to problem-solving",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Proactive planning for next steps",
+          "idea": "Proactive planning for next steps",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -73,6 +148,37 @@
         {
           "title": "The therapy market may be more receptive to schedu...",
           "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "meeting_date": "2026-01-16",
+      "meeting_name": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "ideas": [
+        {
+          "title": "Exits happen through networks, not markets",
+          "idea": "Exits happen through networks, not markets",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Platforms derive power from relationship monopoly",
+          "idea": "Platforms derive power from relationship monopoly",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Relationship quality is the next data frontier",
+          "idea": "Relationship quality is the next data frontier",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Semi-technical founders lower barriers to entry",
+          "idea": "Semi-technical founders lower barriers to entry",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -165,6 +271,43 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief",
+      "meeting_date": "2026-01-15",
+      "meeting_name": "2026-01-15_Ray-Acquisition-Debrief",
+      "ideas": [
+        {
+          "title": "\"Earnout doesn't come out the way you hope for and dream for\"",
+          "idea": "**Source**: Ray (from direct experience) Ray's company had $1M+ earnout potential but he \"walked away with basically nothing\" because \"the company fucked it up.\" This is a sobering reminder that earnout-heavy structures shift execution risk to the acquirer while tying up the seller's potential upside. **Implication**: Push for more upfront value vs. earnout. If forced into earnout structure, be extremely conservative in expectations. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"It's like negotiating job offers\"",
+          "idea": "**Source**: Ray The acquisition process parallels job negotiations - leverage comes from having multiple options. Ray was \"hopeful for 2-3\" competing offers but only got one, which reduced his leverage. **Implication**: Don't go exclusive early. Cultivate multiple conversations simultaneously, even if some feel less promising. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Pace Management as Strategic Tool",
+          "idea": "**Source**: Ray \"You got to be smart with your timing... slow play some conversations and try to speed up other conversations such that they end up getting to roughly the same point in time.\" **Implication**: This isn't just about having multiple options - it's about orchestrating them to create a moment of maximum leverage. Response time is a negotiation tool. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Personal Commitment as Non-Negotiable",
+          "idea": "**Source**: Ray \"Do you want to get tied to this company for X number of years? I did not.\" Ray capped his commitment at 1 year max. This wasn't just about minimizing risk - it was about maintaining personal freedom and optionality. **Implication**: Determine maximum acceptable commitment period BEFORE negotiations. This becomes a constraint that shapes which deals are acceptable. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value proposition varies by buyer. **Implication**: May need different positioning/pitch for different acquirer types. Mission-aligned (Future Fit) vs. capability acquisition (Calendly) require different value narratives. --- ## Questions This Raises 1. **What's V's maximum acceptable commitment period?** 1 year like Ray? 2 years? This shapes the deal landscape. 2. **How to balance upfront certainty vs. earnout upside?** Given Ray's experience, what's the minimum acceptable upfront component? 3. **Who is the \"one other potential\" Ray mentioned?** Follow up on materials to understand this opportunity. 4. **What makes Careerspan's tech defensible?** If it's truly general purpose, what prevents acquirers from building vs. buying?",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup",
       "meeting_date": "2026-01-15",
       "meeting_name": "2026-01-15_2026-01-15-Trio-standup",
@@ -185,19 +328,6 @@
           "title": "Specific company assessments: Tactical intel, not ...",
           "idea": "Specific company assessments: Tactical intel, not conceptual insight",
           "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Chat",
-      "meeting_date": "2026-01-15",
-      "meeting_name": "2026-01-15_2026-01-15-Chat",
-      "ideas": [
-        {
-          "title": "Calendly's Quiet Pivot Signals Category Collapse",
-          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" the boundaries dissolve. Every productivity tool becomes a CRM. **Question:** Does Zo win by racing to relationship management, or by remaining the integration layer while others fight for CRM positioning? --- *Note: These ideas are observation-level, not recommendation-level. No actions implied.*",
-          "provenance": "",
           "category": "Uncategorized"
         }
       ]
@@ -264,37 +394,13 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief",
+      "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Chat",
       "meeting_date": "2026-01-15",
-      "meeting_name": "2026-01-15_Ray-Acquisition-Debrief",
+      "meeting_name": "2026-01-15_2026-01-15-Chat",
       "ideas": [
         {
-          "title": "\"Earnout doesn't come out the way you hope for and dream for\"",
-          "idea": "**Source**: Ray (from direct experience) Ray's company had $1M+ earnout potential but he \"walked away with basically nothing\" because \"the company fucked it up.\" This is a sobering reminder that earnout-heavy structures shift execution risk to the acquirer while tying up the seller's potential upside. **Implication**: Push for more upfront value vs. earnout. If forced into earnout structure, be extremely conservative in expectations. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"It's like negotiating job offers\"",
-          "idea": "**Source**: Ray The acquisition process parallels job negotiations - leverage comes from having multiple options. Ray was \"hopeful for 2-3\" competing offers but only got one, which reduced his leverage. **Implication**: Don't go exclusive early. Cultivate multiple conversations simultaneously, even if some feel less promising. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Pace Management as Strategic Tool",
-          "idea": "**Source**: Ray \"You got to be smart with your timing... slow play some conversations and try to speed up other conversations such that they end up getting to roughly the same point in time.\" **Implication**: This isn't just about having multiple options - it's about orchestrating them to create a moment of maximum leverage. Response time is a negotiation tool. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Personal Commitment as Non-Negotiable",
-          "idea": "**Source**: Ray \"Do you want to get tied to this company for X number of years? I did not.\" Ray capped his commitment at 1 year max. This wasn't just about minimizing risk - it was about maintaining personal freedom and optionality. **Implication**: Determine maximum acceptable commitment period BEFORE negotiations. This becomes a constraint that shapes which deals are acceptable. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"General Purpose Tech\" as Double-Edged Sword",
-          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value proposition varies by buyer. **Implication**: May need different positioning/pitch for different acquirer types. Mission-aligned (Future Fit) vs. capability acquisition (Calendly) require different value narratives. --- ## Questions This Raises 1. **What's V's maximum acceptable commitment period?** 1 year like Ray? 2 years? This shapes the deal landscape. 2. **How to balance upfront certainty vs. earnout upside?** Given Ray's experience, what's the minimum acceptable upfront component? 3. **Who is the \"one other potential\" Ray mentioned?** Follow up on materials to understand this opportunity. 4. **What makes Careerspan's tech defensible?** If it's truly general purpose, what prevents acquirers from building vs. buying?",
+          "title": "Calendly's Quiet Pivot Signals Category Collapse",
+          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" the boundaries dissolve. Every productivity tool becomes a CRM. **Question:** Does Zo win by racing to relationship management, or by remaining the integration layer while others fight for CRM positioning? --- *Note: These ideas are observation-level, not recommendation-level. No actions implied.*",
           "provenance": "",
           "category": "Uncategorized"
         }
@@ -327,37 +433,6 @@
           "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
           "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests effective mentorship is about network access, not knowledge transfer. **Why It's Provocative:** Traditional mentorship assumes the mentor has knowledge the mentee lacks. But in a world where knowledge is Google-able and skills are learnable, the only scarce resource is access to people and opportunities. The mentor's value isn't what they know—it's who they're willing to introduce you to. **Strategic Implications:** Leadership development programs focused on skills training may be fundamentally misaligned. The most powerful development lever isn't coaching or coursework—it's network design. Organizations should optimize not for \"knowledge transfer\" but for \"network density\"—increasing the number and quality of connections each person can access. --- ## Synthesis These four ideas share a common thread: **the shift from assets to relationships**. Whether it's user data revealing value propositions, software categories dissolving into relationship graphs, business development relying on dormant network edges, or mentorship being about access rather than knowledge—the underlying pattern is the same. The most valuable things aren't the ones you own or build, but the ones you're connected to. This suggests Careerspan's competitive moat won't be its algorithms or features—it will be the density and quality of relationships it facilitates, both for users and for the business itself. The question \"what's your business model?\" becomes less interesting than \"what relationships do you steward?\"",
           "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-14_2026-01-14-Test-ingest",
-      "meeting_date": "2026-01-14",
-      "meeting_name": "2026-01-14_2026-01-14-Test-ingest",
-      "ideas": [
-        {
-          "title": "Unconventional business models discussed",
-          "idea": "Unconventional business models discussed",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Novel market insights",
-          "idea": "Novel market insights",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Counterintuitive observations",
-          "idea": "Counterintuitive observations",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Original frameworks or mental models",
-          "idea": "Original frameworks or mental models",
-          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -413,26 +488,32 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar",
-      "meeting_date": "2026-01-12",
-      "meeting_name": "2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar",
+      "meeting_folder": "Week-of-2026-01-12/2026-01-14_2026-01-14-Test-ingest",
+      "meeting_date": "2026-01-14",
+      "meeting_name": "2026-01-14_2026-01-14-Test-ingest",
       "ideas": [
         {
-          "title": "The \"Help Worth Offering\" Intuition",
-          "idea": "**The Idea:** There's a calculable threshold beyond which helping someone adopt new tools becomes net-negative for both parties. **V's Framing:** \"Over the years I've developed an intuition for how much I can help someone and more importantly how much help is even worth offering because sometimes it just ends up being more.\" **Why This Is Interesting:** - Maps to product design: Features can hurt adoption if they require too much system-change - Suggests a \"help calculus\" that factors in the helper's cost, not just the recipient's benefit - The phrase \"more\" (trailing off) implies the cost is hard to articulate but viscerally felt **Implication for Calendly:** Their SMB therapist market may have a \"help threshold\" that determines product design boundaries. ---",
-          "provenance": "",
+          "title": "Unconventional business models discussed",
+          "idea": "Unconventional business models discussed",
+          "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The Inverse Busy Signal Problem",
-          "idea": "**The Idea:** High-status individuals need to manufacture the appearance of busyness, while most productivity tools assume users want maximum efficiency/availability. **V's Framing:** \"Not all of us want to look this fucking free. Some of us want to look like we have more things to do than a fully empty calendar. So I actually have to like my VC calendar... I have to have all these workarounds to make it look more busy than it is.\" **Why This Is Interesting:** - Reveals a class of \"anti-efficiency\" use cases productivity tools ignore - Status signaling is a legitimate workflow requirement - Current tools optimize for truth; some users need curated fiction **Strategic Weirdness:** A product feature for \"controlled scarcity signaling\" might be more valuable than more efficiency features. ---",
-          "provenance": "",
+          "title": "Novel market insights",
+          "idea": "Novel market insights",
+          "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The Widget Ceiling",
-          "idea": "**The Idea:** Mature, single-purpose products (\"widgets\") face an inherent value ceiling regardless of execution quality. **Shane's Framing:** \"Our original product was incredible for what it was, but it's kind of like a widget. It does its job really, really well, but it's not particularly innovative. And we sort of tapped out the amount of value that we can give our customers.\" **Why This Is Interesting:** - Explicit acknowledgment from inside that \"doing one thing well\" has limits - The widget ceiling forces platform plays or adjacency expansion - Contrasts with \"do one thing\" startup wisdom **Pattern Recognition:** This is the Calendly → CRM pivot thesis in one sentence. --- ## Strategic Non-Observation These ideas are captured for intellectual compounding. They are NOT action items, NOT product suggestions, and NOT meant to trigger any workflow. They are seeds for future synthesis.",
-          "provenance": "",
+          "title": "Counterintuitive observations",
+          "idea": "Counterintuitive observations",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Original frameworks or mental models",
+          "idea": "Original frameworks or mental models",
+          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -463,6 +544,31 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar",
+      "meeting_date": "2026-01-12",
+      "meeting_name": "2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar",
+      "ideas": [
+        {
+          "title": "The \"Help Worth Offering\" Intuition",
+          "idea": "**The Idea:** There's a calculable threshold beyond which helping someone adopt new tools becomes net-negative for both parties. **V's Framing:** \"Over the years I've developed an intuition for how much I can help someone and more importantly how much help is even worth offering because sometimes it just ends up being more.\" **Why This Is Interesting:** - Maps to product design: Features can hurt adoption if they require too much system-change - Suggests a \"help calculus\" that factors in the helper's cost, not just the recipient's benefit - The phrase \"more\" (trailing off) implies the cost is hard to articulate but viscerally felt **Implication for Calendly:** Their SMB therapist market may have a \"help threshold\" that determines product design boundaries. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Inverse Busy Signal Problem",
+          "idea": "**The Idea:** High-status individuals need to manufacture the appearance of busyness, while most productivity tools assume users want maximum efficiency/availability. **V's Framing:** \"Not all of us want to look this fucking free. Some of us want to look like we have more things to do than a fully empty calendar. So I actually have to like my VC calendar... I have to have all these workarounds to make it look more busy than it is.\" **Why This Is Interesting:** - Reveals a class of \"anti-efficiency\" use cases productivity tools ignore - Status signaling is a legitimate workflow requirement - Current tools optimize for truth; some users need curated fiction **Strategic Weirdness:** A product feature for \"controlled scarcity signaling\" might be more valuable than more efficiency features. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Widget Ceiling",
+          "idea": "**The Idea:** Mature, single-purpose products (\"widgets\") face an inherent value ceiling regardless of execution quality. **Shane's Framing:** \"Our original product was incredible for what it was, but it's kind of like a widget. It does its job really, really well, but it's not particularly innovative. And we sort of tapped out the amount of value that we can give our customers.\" **Why This Is Interesting:** - Explicit acknowledgment from inside that \"doing one thing well\" has limits - The widget ceiling forces platform plays or adjacency expansion - Contrasts with \"do one thing\" startup wisdom **Pattern Recognition:** This is the Calendly → CRM pivot thesis in one sentence. --- ## Strategic Non-Observation These ideas are captured for intellectual compounding. They are NOT action items, NOT product suggestions, and NOT meant to trigger any workflow. They are seeds for future synthesis.",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum",
       "meeting_date": "2026-01-12",
       "meeting_name": "2026-01-12_fxu-mjpr-tum",
@@ -483,6 +589,31 @@
           "title": "State Management as Moat (Not Just Technical Challenge)",
           "idea": "**The Idea:** V's repeated concern about auth/state management reveals something deeper: > \"I'm afraid of like building something with Auth that has like a login and a state.\" **What's Provocative:** State management—knowing who a user is across sessions—is typically framed as technical overhead. But V's concern suggests the opposite: whoever solves elegant state for AI tools gets defensibility. Per-use tools are commodities (anyone can build). Persistent-state tools create lock-in through accumulated context. The technical challenge IS the moat. **Strategic Implication:** The winning career AI tool won't be the one with best prompts—it'll be the one that remembers your voice, history, and goals without requiring you to re-explain. First to solve lightweight auth wins the category. --- ## Threshold Check All three ideas are: - Non-actionable in immediate context (no clear next step) - Strategically weird (challenge conventional thinking) - Original framing (not standard business advice)",
           "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-05/2026-01-09_2026-01-09-Ilse-X-Vrijen",
+      "meeting_date": "2026-01-09",
+      "meeting_name": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+      "ideas": [
+        {
+          "title": "Standard observations about recruiter trust issues",
+          "idea": "Standard observations about recruiter trust issues",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Tactical notes about technical debt",
+          "idea": "Tactical notes about technical debt",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Obvious conclusions about product-market fit",
+          "idea": "Obvious conclusions about product-market fit",
+          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -579,31 +710,6 @@
         {
           "title": "❌ University budget timing (external constraint, n...",
           "idea": "❌ University budget timing (external constraint, not idea)",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-05/2026-01-09_2026-01-09-Ilse-X-Vrijen",
-      "meeting_date": "2026-01-09",
-      "meeting_name": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
-      "ideas": [
-        {
-          "title": "Standard observations about recruiter trust issues",
-          "idea": "Standard observations about recruiter trust issues",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Tactical notes about technical debt",
-          "idea": "Tactical notes about technical debt",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Obvious conclusions about product-market fit",
-          "idea": "Obvious conclusions about product-market fit",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -732,6 +838,100 @@
       ]
     },
     {
+      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-08_2026-01-08-Testing-raw-folder",
+      "meeting_date": "2026-01-08",
+      "meeting_name": "2026-01-08_2026-01-08-Testing-raw-folder",
+      "ideas": [
+        {
+          "title": "Substantive Context",
+          "idea": "The input is a placeholder/test string rather than a real meeting record. (Impact: High)",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Decision",
+          "idea": "Per the \"Threshold\" guideline (\"If no truly provocative or original ideas exist, DO NOT generate any output\"), I must provide an empty response.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Action",
+          "idea": "Return an empty string/success signal as defined by the protocol.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/raw_meetin_Raw-Meeting-Test",
+      "meeting_date": "2026-01-08",
+      "meeting_name": "raw_meetin_Raw-Meeting-Test",
+      "ideas": [
+        {
+          "title": "Culture as the Operating System",
+          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Outcome vs. Output",
+          "idea": "Shifting from measuring \"how much we build\" to \"what we changed\" requires a fundamental change in the definition of a \"Senior\" role.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Friction as Signal",
+          "idea": "The idea that reducing friction (as seen in the 20% completion rate increase) actually *improves* signal by allowing the right candidates to finish the process.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-08_2026-01-08-Test-execution-meeting",
+      "meeting_date": "2026-01-08",
+      "meeting_name": "2026-01-08_2026-01-08-Test-execution-meeting",
+      "ideas": [
+        {
+          "title": "Semantic Minimums",
+          "idea": "This test explores the \"minimum viable signal\" required to trigger a complex intelligence mapping. How much meaning can be compressed into a single sentence before the downstream synthesis breaks?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Observer Effect in Automation",
+          "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synthesized.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-08_2026-01-08-Raw-meeting-demo",
+      "meeting_date": "2026-01-08",
+      "meeting_name": "2026-01-08_2026-01-08-Raw-meeting-demo",
+      "ideas": [
+        {
+          "title": "The \"Fragility of Truth\" in Minimalist Contexts",
+          "idea": "The test transcript—consisting of a single sentence claiming to be a \"test for the MG-1 workflow\"—raises a provocative question about the minimum viable signal required to establish systemic trust. In a world of increasing automation, we often accept \"test\" tokens as neutral placeholders, yet they are the primary architects of edge-case failure. - **Strategic 'Weirdness':** We trust the \"test\" label more than the content itself, creating a blind spot where system integrity is assumed rather than verified.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Semantic Weight vs. Token Count",
+          "idea": "This meeting demonstrates a radical asymmetry: the meta-context (generating an intelligence block B32) carries significantly more weight than the primary source material. It suggests a future where the \"processing infrastructure\" becomes the dominant narrative force, potentially overshadowing the raw human input it was designed to serve. - **Mental Model:** *The Observer's Gravity*—where the act of analysis creates more information than the event being analyzed.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Workflow as Performance",
+          "idea": "The explicit naming of the \"MG-1 workflow\" within the transcript suggests a self-aware data point. It is not just a test; it is a performance of a test. This highlights the \"Hawthorne Effect\" in automated systems: data behaves differently when it \"knows\" it is being routed through a specific intelligence pipeline. - **Implication:** True \"raw\" data may be an impossibility in highly structured environments like N5. 2026-01-08 13:21:15 ET",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2026-01-05/2026-01-08_2026-01-08-Testing-raw-folder",
       "meeting_date": "2026-01-08",
       "meeting_name": "2026-01-08_2026-01-08-Testing-raw-folder",
@@ -782,100 +982,6 @@
       ]
     },
     {
-      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-08_2026-01-08-Test-execution-meeting",
-      "meeting_date": "2026-01-08",
-      "meeting_name": "2026-01-08_2026-01-08-Test-execution-meeting",
-      "ideas": [
-        {
-          "title": "Semantic Minimums",
-          "idea": "This test explores the \"minimum viable signal\" required to trigger a complex intelligence mapping. How much meaning can be compressed into a single sentence before the downstream synthesis breaks?",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The Observer Effect in Automation",
-          "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synthesized.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-08_2026-01-08-Testing-raw-folder",
-      "meeting_date": "2026-01-08",
-      "meeting_name": "2026-01-08_2026-01-08-Testing-raw-folder",
-      "ideas": [
-        {
-          "title": "Substantive Context",
-          "idea": "The input is a placeholder/test string rather than a real meeting record. (Impact: High)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Decision",
-          "idea": "Per the \"Threshold\" guideline (\"If no truly provocative or original ideas exist, DO NOT generate any output\"), I must provide an empty response.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Action",
-          "idea": "Return an empty string/success signal as defined by the protocol.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-08_2026-01-08-Raw-meeting-demo",
-      "meeting_date": "2026-01-08",
-      "meeting_name": "2026-01-08_2026-01-08-Raw-meeting-demo",
-      "ideas": [
-        {
-          "title": "The \"Fragility of Truth\" in Minimalist Contexts",
-          "idea": "The test transcript—consisting of a single sentence claiming to be a \"test for the MG-1 workflow\"—raises a provocative question about the minimum viable signal required to establish systemic trust. In a world of increasing automation, we often accept \"test\" tokens as neutral placeholders, yet they are the primary architects of edge-case failure. - **Strategic 'Weirdness':** We trust the \"test\" label more than the content itself, creating a blind spot where system integrity is assumed rather than verified.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Semantic Weight vs. Token Count",
-          "idea": "This meeting demonstrates a radical asymmetry: the meta-context (generating an intelligence block B32) carries significantly more weight than the primary source material. It suggests a future where the \"processing infrastructure\" becomes the dominant narrative force, potentially overshadowing the raw human input it was designed to serve. - **Mental Model:** *The Observer's Gravity*—where the act of analysis creates more information than the event being analyzed.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Workflow as Performance",
-          "idea": "The explicit naming of the \"MG-1 workflow\" within the transcript suggests a self-aware data point. It is not just a test; it is a performance of a test. This highlights the \"Hawthorne Effect\" in automated systems: data behaves differently when it \"knows\" it is being routed through a specific intelligence pipeline. - **Implication:** True \"raw\" data may be an impossibility in highly structured environments like N5. 2026-01-08 13:21:15 ET",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/raw_meetin_Raw-Meeting-Test",
-      "meeting_date": "2026-01-08",
-      "meeting_name": "raw_meetin_Raw-Meeting-Test",
-      "ideas": [
-        {
-          "title": "Culture as the Operating System",
-          "idea": "If culture is the OS of a company, then \"output-centricity\" is a bug that causes \"innovation crashes.\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Outcome vs. Output",
-          "idea": "Shifting from measuring \"how much we build\" to \"what we changed\" requires a fundamental change in the definition of a \"Senior\" role.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Friction as Signal",
-          "idea": "The idea that reducing friction (as seen in the 20% completion rate increase) actually *improves* signal by allowing the right candidates to finish the process.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Inbox/_quarantine/test-cleanup-20260109/2026-01-07_2026-01-07-Unprocessed-meeting-test",
       "meeting_date": "2026-01-07",
       "meeting_name": "2026-01-07_2026-01-07-Unprocessed-meeting-test",
@@ -890,56 +996,6 @@
           "title": "State Escalation",
           "idea": "Could the manifest system be used to trigger automatic \"emergency\" alerts if certain keywords (e.g., \"urgent,\" \"crisis\") are detected in B11 (Risks & Flags)?",
           "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-26_Zo-demo-planning-brainstorm_[M]",
-      "meeting_date": "2025-12-26",
-      "meeting_name": "2025-12-26_Zo-demo-planning-brainstorm_[M]",
-      "ideas": [
-        {
-          "title": "The Information Standstill:",
-          "idea": "We are using AI to \"move words from one place you don't read them to another place you don't read them.\" This identifies a fundamental decoupling of information *processing* from human *understanding*.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Productivity as \"Home\":",
-          "idea": "The idea that a productivity tool isn't just a utility, but a \"home\" that reflects one's vulnerability and life history. Building a \"room\" in software as an act of self-actualization.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The Scaffold Offer:",
-          "idea": "By offering his own N5 repo, V is attempting to bypass the \"cold start\" problem of industrial-grade AI hardware, treating system-design as a gift-economy lever.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-26_Careerspan-demo_[P]",
-      "meeting_date": "2025-12-26",
-      "meeting_name": "2025-12-26_Careerspan-demo_[P]",
-      "ideas": [
-        {
-          "title": "The \"Problem Stack\" Abstraction",
-          "idea": "V's thesis is that AI should not just automate existing tasks (like resume checking), but should move human experts \"higher in the problem stack.\" This suggests a mental model where the value of a career coach is not in the \"nuts and bolts\" of bullet point editing, but in the higher-level strategy, goals, and objectives of the candidate. This raises the question: what happens to the \"entry-level\" expertise if the foundational tasks are entirely handled by AI?",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Semantic vs. Syntactic Identity",
-          "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V's model argues that a person is a collection of \"meaningful stories\" that can be truthfully re-rendered into different forms without losing internal consistency. This challenges the traditional notion of a \"canonical resume\" as a static document.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Latency in Trust Networks",
-          "idea": "V noted the \"fall in latency\" when an alum reaches out to a school and has to wait days or weeks for candidate names. By using AI to maintain a constant \"readiness state\" for every student (via the 2-story minimum), the \"trust network\" (Alums → School → Students) becomes real-time. This transforms the school's role from a *manual broker* of talent to a *platform orchestrator* of talent.",
-          "provenance": "",
           "category": "Uncategorized"
         }
       ]
@@ -970,44 +1026,50 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-23_melhrubingmailcom",
-      "meeting_date": "2025-12-23",
-      "meeting_name": "2025-12-23_melhrubingmailcom",
+      "meeting_folder": "Week-of-2025-12-22/2025-12-26_Careerspan-demo_[P]",
+      "meeting_date": "2025-12-26",
+      "meeting_name": "2025-12-26_Careerspan-demo_[P]",
       "ideas": [
         {
-          "title": "Career as a \"Diet\"",
-          "idea": "V's analogy of hiring/job seeking as a diet consisting of a mix of standard opportunities and \"outsized bets\" (the 40-yard screamer).",
-          "provocation": "",
+          "title": "The \"Problem Stack\" Abstraction",
+          "idea": "V's thesis is that AI should not just automate existing tasks (like resume checking), but should move human experts \"higher in the problem stack.\" This suggests a mental model where the value of a career coach is not in the \"nuts and bolts\" of bullet point editing, but in the higher-level strategy, goals, and objectives of the candidate. This raises the question: what happens to the \"entry-level\" expertise if the foundational tasks are entirely handled by AI?",
+          "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Artificial Gap Closure",
-          "idea": "The idea that a candidate must \"artificially\" close the skills gap in an employer's mind by providing a compelling narrative that mitigates perceived weaknesses.",
-          "provocation": "",
+          "title": "Semantic vs. Syntactic Identity",
+          "idea": "Michael Maher's concern about \"different resumes for the same job\" highlights a tension between *syntactic identity* (the exact words on a page) and *semantic identity* (the underlying experience). V's model argues that a person is a collection of \"meaningful stories\" that can be truthfully re-rendered into different forms without losing internal consistency. This challenges the traditional notion of a \"canonical resume\" as a static document.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Latency in Trust Networks",
+          "idea": "V noted the \"fall in latency\" when an alum reaches out to a school and has to wait days or weeks for candidate names. By using AI to maintain a constant \"readiness state\" for every student (via the 2-story minimum), the \"trust network\" (Alums → School → Students) becomes real-time. This transforms the school's role from a *manual broker* of talent to a *platform orchestrator* of talent.",
+          "provenance": "",
           "category": "Uncategorized"
         }
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-23_2025-12-23-Rochelmycareerspancom",
-      "meeting_date": "2025-12-23",
-      "meeting_name": "2025-12-23_2025-12-23-Rochelmycareerspancom",
+      "meeting_folder": "Week-of-2025-12-22/2025-12-26_Zo-demo-planning-brainstorm_[M]",
+      "meeting_date": "2025-12-26",
+      "meeting_name": "2025-12-26_Zo-demo-planning-brainstorm_[M]",
       "ideas": [
         {
-          "title": "The 'Anthropomorphic Friction' Hypothesis",
-          "idea": "V suggests that the success of his habit tracking isn't due to the *ease* of the UI, but the *guilt/compulsion* of responding to an anthropomorphized text message. The 'human-ness' of the AI acts as a social accountability layer that traditional apps lack.",
+          "title": "The Information Standstill:",
+          "idea": "We are using AI to \"move words from one place you don't read them to another place you don't read them.\" This identifies a fundamental decoupling of information *processing* from human *understanding*.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Plateau via Over-Exertion",
-          "idea": "The counter-intuitive mental model that pushing yourself to your limit early in fitness prevents the physiological conditioning required for long-term growth. Discipline in *restraint* is more valuable than discipline in *effort* for heart health.",
+          "title": "Productivity as \"Home\":",
+          "idea": "The idea that a productivity tool isn't just a utility, but a \"home\" that reflects one's vulnerability and life history. Building a \"room\" in software as an act of self-actualization.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Institution-Building as a Response to Exclusion",
-          "idea": "The idea that 'dominance' in certain fields (like Jewish hospitals or Hollywood) is actually a fossilized record of historical exclusion—a 'scar tissue' of sorts where communities were forced to build their own parallel systems which then became powerful centers of gravity.",
+          "title": "The Scaffold Offer:",
+          "idea": "By offering his own N5 repo, V is attempting to bypass the \"cold start\" problem of industrial-grade AI hardware, treating system-design as a gift-economy lever.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -1033,6 +1095,31 @@
         {
           "title": "Separation of Concerns:",
           "idea": "V's observation that having a \"separation between who deals with the candidate and who deals with the employer\" creates a better psychological space for candidates to be honest and reflective.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-22/2025-12-23_2025-12-23-Melhrubingmailcom",
+      "meeting_date": "2025-12-23",
+      "meeting_name": "2025-12-23_2025-12-23-Melhrubingmailcom",
+      "ideas": [
+        {
+          "title": "Artificial Gap Closing",
+          "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative engineering.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Hiring as a Diet",
+          "idea": "The concept of managing a job search like a diet, balancing stable \"normal\" opportunities with high-leverage \"outsized bets\" (screamer shots) to maintain momentum without burning out.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Vibe Coding as a Career Lever",
+          "idea": "Positioning vibe coding not as a technical skill, but as a \"badass\" industry identity bridge for talented generalists.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -1089,26 +1176,70 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-23_2025-12-23-Melhrubingmailcom",
+      "meeting_folder": "Week-of-2025-12-22/2025-12-23_2025-12-23-Rochelmycareerspancom",
       "meeting_date": "2025-12-23",
-      "meeting_name": "2025-12-23_2025-12-23-Melhrubingmailcom",
+      "meeting_name": "2025-12-23_2025-12-23-Rochelmycareerspancom",
       "ideas": [
         {
-          "title": "Artificial Gap Closing",
-          "idea": "The idea that a candidate's primary job in a pivot is not to \"do the work,\" but to artificially close the cognitive gap between their current self and the employer's \"ideal candidate\" via narrative engineering.",
+          "title": "The 'Anthropomorphic Friction' Hypothesis",
+          "idea": "V suggests that the success of his habit tracking isn't due to the *ease* of the UI, but the *guilt/compulsion* of responding to an anthropomorphized text message. The 'human-ness' of the AI acts as a social accountability layer that traditional apps lack.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Hiring as a Diet",
-          "idea": "The concept of managing a job search like a diet, balancing stable \"normal\" opportunities with high-leverage \"outsized bets\" (screamer shots) to maintain momentum without burning out.",
+          "title": "Plateau via Over-Exertion",
+          "idea": "The counter-intuitive mental model that pushing yourself to your limit early in fitness prevents the physiological conditioning required for long-term growth. Discipline in *restraint* is more valuable than discipline in *effort* for heart health.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Vibe Coding as a Career Lever",
-          "idea": "Positioning vibe coding not as a technical skill, but as a \"badass\" industry identity bridge for talented generalists.",
+          "title": "Institution-Building as a Response to Exclusion",
+          "idea": "The idea that 'dominance' in certain fields (like Jewish hospitals or Hollywood) is actually a fossilized record of historical exclusion—a 'scar tissue' of sorts where communities were forced to build their own parallel systems which then became powerful centers of gravity.",
           "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-22/2025-12-23_melhrubingmailcom",
+      "meeting_date": "2025-12-23",
+      "meeting_name": "2025-12-23_melhrubingmailcom",
+      "ideas": [
+        {
+          "title": "Career as a \"Diet\"",
+          "idea": "V's analogy of hiring/job seeking as a diet consisting of a mix of standard opportunities and \"outsized bets\" (the 40-yard screamer).",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Artificial Gap Closure",
+          "idea": "The idea that a candidate must \"artificially\" close the skills gap in an employer's mind by providing a compelling narrative that mitigates perceived weaknesses.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-22/2025-12-22_Vrijen-&-Rochel---Job-Applying-Powwow",
+      "meeting_date": "2025-12-22",
+      "meeting_name": "2025-12-22_Vrijen-&-Rochel---Job-Applying-Powwow",
+      "ideas": [
+        {
+          "title": "The Signaling Lag",
+          "idea": "Internal understanding of self often lags behind external market validation. V notes that external signals (like McKinsey or being treated as a peer by Ryan) act as \"evidence\" that forces an internal recalculation of one's own level. The provocation: we are often operating at a \"higher level\" than we permit ourselves to believe until a formal institution validates it.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Design Problem of Readiness",
+          "idea": "Why don't we work on our careers at the right times? The psychological barrier to using tools like Careerspan *before* an interview exists because the \"first stories\" feel too expensive to extract without the immediate pressure of a high-stakes meeting. This suggests that career tools shouldn't just be \"useful,\" they must solve for the **inertia of self-reflection**.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Recruiter Funding Signal",
+          "idea": "A company's ability to pay a recruiter is a more significant signal of maturity in the AI era than it was previously. AI allows startups to stay smaller for longer; thus, hiring a recruiter is a deliberate \"Series A\" style move into human-centric scaling, marking the end of the pure \"hacking\" phase.",
+          "provenance": "",
           "category": "Uncategorized"
         }
       ]
@@ -1139,25 +1270,25 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-22_Vrijen-&-Rochel---Job-Applying-Powwow",
+      "meeting_folder": "Week-of-2025-12-22/2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
       "meeting_date": "2025-12-22",
-      "meeting_name": "2025-12-22_Vrijen-&-Rochel---Job-Applying-Powwow",
+      "meeting_name": "2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
       "ideas": [
         {
-          "title": "The Signaling Lag",
-          "idea": "Internal understanding of self often lags behind external market validation. V notes that external signals (like McKinsey or being treated as a peer by Ryan) act as \"evidence\" that forces an internal recalculation of one's own level. The provocation: we are often operating at a \"higher level\" than we permit ourselves to believe until a formal institution validates it.",
+          "title": "The \"Invisible 70%\" Hypothesis",
+          "idea": "The standard recruitment market operates on a massive inefficiency: everyone competes for the 30% of talent that is \"visible\" through standard signals (titles, prestige companies, resumes), leading to 60% inflated market rates. The real alpha lies in building a \"proxy for agency\" to unlock the other 70% of invisible, high-potential talent.",
           "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The Design Problem of Readiness",
-          "idea": "Why don't we work on our careers at the right times? The psychological barrier to using tools like Careerspan *before* an interview exists because the \"first stories\" feel too expensive to extract without the immediate pressure of a high-stakes meeting. This suggests that career tools shouldn't just be \"useful,\" they must solve for the **inertia of self-reflection**.",
+          "title": "The \"Recruiter Commission\" Democratization",
+          "idea": "Instead of building tools *for* recruiters, Careerspan's pivot suggests that the real opportunity is *making everyone else a recruiter* by providing them with the data superiority required to claim a commission. This shifts the platform from a \"SaaS tool\" to a \"Financial Instrument/Brokerage.\"",
           "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The Recruiter Funding Signal",
-          "idea": "A company's ability to pay a recruiter is a more significant signal of maturity in the AI era than it was previously. AI allows startups to stay smaller for longer; thus, hiring a recruiter is a deliberate \"Series A\" style move into human-centric scaling, marking the end of the pure \"hacking\" phase.",
+          "title": "The \"Internet of Careers\" as a Socialist Data Pot",
+          "idea": "A mental model where individual professional reflections (qualitative data) are contributed to a collective \"pot.\" The exchange is \"socialist\" in the sense that the benefits of high-fidelity data exchange are collectively felt by both candidates and employers, fixing the \"conflict of interest\" inherent in owning both sides of the hiring equation.",
           "provenance": "",
           "category": "Uncategorized"
         }
@@ -1208,31 +1339,6 @@
         {
           "title": "Non-Adversarial Hiring as a Solution to Bias",
           "idea": "V implies that the \"bias talk\" in HR tech has been eclipsed by a more fundamental problem: the adversarial nature of the application process. By making the interface a career coaching tool first, the relationship changes from \"gatekeeper vs. applicant\" to \"partner vs. explorer,\" which may inadvertently solve more bias issues than traditional \"blind hiring\" algorithms ever could.",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-22/2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
-      "meeting_date": "2025-12-22",
-      "meeting_name": "2025-12-22_Jatin-Sandilya-x-Vrijen-Attawar",
-      "ideas": [
-        {
-          "title": "The \"Invisible 70%\" Hypothesis",
-          "idea": "The standard recruitment market operates on a massive inefficiency: everyone competes for the 30% of talent that is \"visible\" through standard signals (titles, prestige companies, resumes), leading to 60% inflated market rates. The real alpha lies in building a \"proxy for agency\" to unlock the other 70% of invisible, high-potential talent.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Recruiter Commission\" Democratization",
-          "idea": "Instead of building tools *for* recruiters, Careerspan's pivot suggests that the real opportunity is *making everyone else a recruiter* by providing them with the data superiority required to claim a commission. This shifts the platform from a \"SaaS tool\" to a \"Financial Instrument/Brokerage.\"",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Internet of Careers\" as a Socialist Data Pot",
-          "idea": "A mental model where individual professional reflections (qualitative data) are contributed to a collective \"pot.\" The exchange is \"socialist\" in the sense that the benefits of high-fidelity data exchange are collectively felt by both candidates and employers, fixing the \"conflict of interest\" inherent in owning both sides of the hiring equation.",
           "provenance": "",
           "category": "Uncategorized"
         }
@@ -1351,68 +1457,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
-      "meeting_date": "2025-12-18",
-      "meeting_name": "2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
-      "ideas": [
-        {
-          "title": "The Death of the Resume for Builders:",
-          "idea": "If the Careerspan story-based model succeeds here, does it signal the end of the resume for the \"Indie Hacker\" economy? Could \"stories of teamwork\" be the new primary currency of tech hiring?",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Conversational Scoping:",
-          "idea": "Tejas’s idea of an AI that listens to a \"lobby\" of voices and automatically spins up a \"Strategy Room\" or \"Scope of Work\" removes the friction of documentation. How does this change the speed of moving from \"Idea\" to \"Code\"?",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Refugee\" Market:",
-          "idea": "Identifying 17,000 people as \"refugees\" of a failed community is a powerful framing. What other defunct platforms have orphaned communities waiting for a new home?",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Taste as a Moat:",
-          "idea": "In a world where LLMs generate perfect code, Tejas argues that \"taste\" and \"design\" are the only differentiators left. How do we quantify or teach \"taste\" to AI-augmented builders?",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Non-Salesy Ecosystems:",
-          "idea": "Shivam’s insistence on not being a \"salesman\" suggests a shift in how service businesses must operate in builder communities. Value must be permissionless and integrated, not pitched.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
-      "meeting_date": "2025-12-18",
-      "meeting_name": "2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
-      "ideas": [
-        {
-          "title": "The \"Rote\" Inversion",
-          "idea": "The idea that the larger a company becomes, the more its hiring becomes \"rote,\" creating a massive value-gap for \"semantic intelligence\" that big players like Workday cannot easily fill due to architectural rigidity.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Bespoke at Scale",
-          "idea": "A mental model for AI services that suggests the value isn't just automation, but the ability to apply high-cost \"bespoke\" human-level judgment (semantics) at \"scale\" (thousands of applicants) without the human cost.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The Passive Market Transparency Flywheel",
-          "idea": "V's hypothesis that being the only company to show applicants *how* they are being judged could act as a gravity well for \"passive\" job seekers who want self-improvement data even if they don't get the job.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-12-15/2025-12-18_2025-12-18-Logantheapplyaidspeigelgmailcomloganhcgmailcom-Lo",
       "meeting_date": "2025-12-18",
       "meeting_name": "2025-12-18_2025-12-18-Logantheapplyaidspeigelgmailcomloganhcgmailcom-Lo",
@@ -1488,6 +1532,68 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
+      "meeting_date": "2025-12-18",
+      "meeting_name": "2025-12-18_2025-12-18-Tejasgoflowstatecomshivamcorridorxio-Tejasgoflows",
+      "ideas": [
+        {
+          "title": "The Death of the Resume for Builders:",
+          "idea": "If the Careerspan story-based model succeeds here, does it signal the end of the resume for the \"Indie Hacker\" economy? Could \"stories of teamwork\" be the new primary currency of tech hiring?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Conversational Scoping:",
+          "idea": "Tejas’s idea of an AI that listens to a \"lobby\" of voices and automatically spins up a \"Strategy Room\" or \"Scope of Work\" removes the friction of documentation. How does this change the speed of moving from \"Idea\" to \"Code\"?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Refugee\" Market:",
+          "idea": "Identifying 17,000 people as \"refugees\" of a failed community is a powerful framing. What other defunct platforms have orphaned communities waiting for a new home?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Taste as a Moat:",
+          "idea": "In a world where LLMs generate perfect code, Tejas argues that \"taste\" and \"design\" are the only differentiators left. How do we quantify or teach \"taste\" to AI-augmented builders?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Non-Salesy Ecosystems:",
+          "idea": "Shivam’s insistence on not being a \"salesman\" suggests a shift in how service businesses must operate in builder communities. Value must be permissionless and integrated, not pitched.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
+      "meeting_date": "2025-12-18",
+      "meeting_name": "2025-12-18_2025-12-18-Logantheapplyaiilsetheapplyaidannytheapplyairoche",
+      "ideas": [
+        {
+          "title": "The \"Rote\" Inversion",
+          "idea": "The idea that the larger a company becomes, the more its hiring becomes \"rote,\" creating a massive value-gap for \"semantic intelligence\" that big players like Workday cannot easily fill due to architectural rigidity.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Bespoke at Scale",
+          "idea": "A mental model for AI services that suggests the value isn't just automation, but the ability to apply high-cost \"bespoke\" human-level judgment (semantics) at \"scale\" (thousands of applicants) without the human cost.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Passive Market Transparency Flywheel",
+          "idea": "V's hypothesis that being the only company to show applicants *how* they are being judged could act as a gravity well for \"passive\" job seekers who want self-improvement data even if they don't get the job.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2025-12-15/2025-12-17_Annabao9595",
       "meeting_date": "2025-12-17",
       "meeting_name": "2025-12-17_Annabao9595",
@@ -1513,25 +1619,44 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-17_Amandarosesachs",
+      "meeting_folder": "Week-of-2025-12-15/2025-12-17_Eric-Rubin-(Consonant-VC)-Zo-Demo",
       "meeting_date": "2025-12-17",
-      "meeting_name": "2025-12-17_Amandarosesachs",
+      "meeting_name": "2025-12-17_Eric-Rubin-(Consonant-VC)-Zo-Demo",
       "ideas": [
         {
-          "title": "The \"Six-Second Filter\" as a Cognitive Proxy",
-          "idea": "The meeting highlights a specific mental model for high-stakes evaluation: the transition from a 6-second instinctive \"vibe check\" to a 30-second cognitive screen. This suggests that in network-based ecosystems, the initial data packet (the resume) doesn't function as a record of truth, but rather as a \"polished signal\" of trustworthiness and aesthetic alignment. The idea here is that professional legitimacy is often granted not by the content of one's experience, but by the *form* in which that experience is presented, especially when the interaction is mediated by a referral.",
+          "title": "The \"Aha\" Paradox of Non-Technical Agency",
+          "idea": "Vrijen’s experience suggests that the most profound \"magic\" in agentic systems isn't technical capability, but the *psychological release from technical shackling*. The value of Zo for V isn't just the output, but the shift in self-identity from \"dependent on engineers\" to \"autonomous builder.\"",
           "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The \"Hidden World of the Resume\" vs. Digital Portability",
-          "idea": "There is a strategic \"weirdness\" in how legacy document structures (like the Cornell MBA template) interact with modern cloud platforms (Google Drive). Vrijen mentions the \"hidden world\" of the resume—referring to the invisible table structures and formatting blocks that make a document \"clean\" but also \"brittle.\" This identifies a tension between *visual perfection* and *digital interoperability*. It poses a provocative question: at what point does the structural complexity of a professional artifact become a liability to its owner's ability to iterate on their own narrative?",
+          "title": "Intuition vs. Automation in Sourcing",
+          "idea": "Eric's refusal to automate his LinkedIn searches highlights a critical \"signal gap.\" If the best candidates are those who *don't* update their profiles, AI-driven scrapers are inherently biased toward low-quality/active seekers. This suggests that the next frontier of recruiting isn't better scraping, but better *bait* (the \"bat signal\").",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-17_Alecsourcestackco",
+      "meeting_date": "2025-12-17",
+      "meeting_name": "2025-12-17_Alecsourcestackco",
+      "ideas": [
+        {
+          "title": "The Carcinization of HR Tech (Convergent Evolution of Mediocrity)",
+          "idea": "Vrijen posits a \"crabs of HR tech\" theory—the idea that regardless of the starting point, all bad HR technology eventually evolves into the same failed design patterns: the resume, the static profile, and the basic ATS. This suggests a structural gravity in the industry that forces innovation back into legacy containers, implying that to truly escape the \"crab\" state, one must break the underlying biological (structural) constraints of the talent market, not just the interface.",
           "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "\"The Real Time for Job Searching\" as a Psychological Pivot",
-          "idea": "Amanda’s realization that losing previous \"conversations\" since March was actually a \"silver lining\" points to a non-obvious mental model: the **Re-drafting Advantage**. By being forced to start over, she can \"give it better content\" from the perspective of her current, more evolved self. This suggests that \"data loss\" in a career context can serve as a forced cognitive reset, stripping away outdated self-perceptions and allowing for a \"real-time\" alignment with current market needs.",
+          "title": "Acquisitions as \"Funny Churn\"",
+          "idea": "Alec notes that SourceStack is seeing customers churn not because they are unhappy, but because they are being acquired—and then the *acquirers* become the customers. This re-contextualizes \"churn\" from a signal of product failure to a signal of \"ecosystem success.\" It suggests a meta-strategy where a startup's value is validated by its customers' liquidity events, creating a \"nice rollover\" effect that bypasses traditional sales cycles.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Resume Builder\" Existential Crisis",
+          "idea": "The realization that LLMs have turned \"resume building\" from a high-friction WYSIWYG service into a \"one-shot\" commodity creates a specific flavor of fear in the market. The idea here isn't just about automation; it's about the total collapse of a software category's primary value prop. If a resume can be \"spun up\" instantly, the builder isn't a tool anymore—it's just a skin on a prompt. This identifies a \"lagging generation\" of tools that are structurally incapable of surviving the shift from \"creation\" to \"generation.\"",
           "provenance": "",
           "category": "Uncategorized"
         }
@@ -1594,45 +1719,57 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-17_Alecsourcestackco",
+      "meeting_folder": "Week-of-2025-12-15/2025-12-17_Amandarosesachs",
       "meeting_date": "2025-12-17",
-      "meeting_name": "2025-12-17_Alecsourcestackco",
+      "meeting_name": "2025-12-17_Amandarosesachs",
       "ideas": [
         {
-          "title": "The Carcinization of HR Tech (Convergent Evolution of Mediocrity)",
-          "idea": "Vrijen posits a \"crabs of HR tech\" theory—the idea that regardless of the starting point, all bad HR technology eventually evolves into the same failed design patterns: the resume, the static profile, and the basic ATS. This suggests a structural gravity in the industry that forces innovation back into legacy containers, implying that to truly escape the \"crab\" state, one must break the underlying biological (structural) constraints of the talent market, not just the interface.",
+          "title": "The \"Six-Second Filter\" as a Cognitive Proxy",
+          "idea": "The meeting highlights a specific mental model for high-stakes evaluation: the transition from a 6-second instinctive \"vibe check\" to a 30-second cognitive screen. This suggests that in network-based ecosystems, the initial data packet (the resume) doesn't function as a record of truth, but rather as a \"polished signal\" of trustworthiness and aesthetic alignment. The idea here is that professional legitimacy is often granted not by the content of one's experience, but by the *form* in which that experience is presented, especially when the interaction is mediated by a referral.",
           "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Acquisitions as \"Funny Churn\"",
-          "idea": "Alec notes that SourceStack is seeing customers churn not because they are unhappy, but because they are being acquired—and then the *acquirers* become the customers. This re-contextualizes \"churn\" from a signal of product failure to a signal of \"ecosystem success.\" It suggests a meta-strategy where a startup's value is validated by its customers' liquidity events, creating a \"nice rollover\" effect that bypasses traditional sales cycles.",
+          "title": "The \"Hidden World of the Resume\" vs. Digital Portability",
+          "idea": "There is a strategic \"weirdness\" in how legacy document structures (like the Cornell MBA template) interact with modern cloud platforms (Google Drive). Vrijen mentions the \"hidden world\" of the resume—referring to the invisible table structures and formatting blocks that make a document \"clean\" but also \"brittle.\" This identifies a tension between *visual perfection* and *digital interoperability*. It poses a provocative question: at what point does the structural complexity of a professional artifact become a liability to its owner's ability to iterate on their own narrative?",
           "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The \"Resume Builder\" Existential Crisis",
-          "idea": "The realization that LLMs have turned \"resume building\" from a high-friction WYSIWYG service into a \"one-shot\" commodity creates a specific flavor of fear in the market. The idea here isn't just about automation; it's about the total collapse of a software category's primary value prop. If a resume can be \"spun up\" instantly, the builder isn't a tool anymore—it's just a skin on a prompt. This identifies a \"lagging generation\" of tools that are structurally incapable of surviving the shift from \"creation\" to \"generation.\"",
+          "title": "\"The Real Time for Job Searching\" as a Psychological Pivot",
+          "idea": "Amanda’s realization that losing previous \"conversations\" since March was actually a \"silver lining\" points to a non-obvious mental model: the **Re-drafting Advantage**. By being forced to start over, she can \"give it better content\" from the perspective of her current, more evolved self. This suggests that \"data loss\" in a career context can serve as a forced cognitive reset, stripping away outdated self-perceptions and allowing for a \"real-time\" alignment with current market needs.",
           "provenance": "",
           "category": "Uncategorized"
         }
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-17_Eric-Rubin-(Consonant-VC)-Zo-Demo",
-      "meeting_date": "2025-12-17",
-      "meeting_name": "2025-12-17_Eric-Rubin-(Consonant-VC)-Zo-Demo",
+      "meeting_folder": "Inbox/_quarantine/2025-12-16_logantheapplyaiilsetheapplyaidannytheapplyairochelmycareerspancomilyamycareerspancom_logantheapplyai_ilsetheapplyai_dannytheapplyai_duplicate",
+      "meeting_date": "2025-12-16",
+      "meeting_name": "2025-12-16_logantheapplyaiilsetheapplyaidannytheapplyairochelmycareerspancomilyamycareerspancom_logantheapplyai_ilsetheapplyai_dannytheapplyai_duplicate",
       "ideas": [
         {
-          "title": "The \"Aha\" Paradox of Non-Technical Agency",
-          "idea": "Vrijen’s experience suggests that the most profound \"magic\" in agentic systems isn't technical capability, but the *psychological release from technical shackling*. The value of Zo for V isn't just the output, but the shift in self-identity from \"dependent on engineers\" to \"autonomous builder.\"",
-          "provenance": "",
+          "title": "Privacy as a Feature",
+          "idea": "Ilse noted that their methodology works well for performance reviews and promotion tracking, but only if users feel their data is private.",
+          "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Intuition vs. Automation in Sourcing",
-          "idea": "Eric's refusal to automate his LinkedIn searches highlights a critical \"signal gap.\" If the best candidates are those who *don't* update their profiles, AI-driven scrapers are inherently biased toward low-quality/active seekers. This suggests that the next frontier of recruiting isn't better scraping, but better *bait* (the \"bat signal\").",
-          "provenance": "",
+          "title": "The \"Internal\" Pivot",
+          "idea": "Could the core technology be sold as an internal performance review / attrition prediction tool? (e.g., determining if people are likely to leave based on their \"vibe check\" equivalents).",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Correcting the Understanding of Friction",
+          "idea": "V's point that \"your understanding of friction is wrong\" to employers—employers often *want* friction to filter candidates, but it needs to be the *right* kind of friction (data-gathering vs. ergonomic hurdles).",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Cadence as Signal",
+          "idea": "Using the frequency and behavior of LinkedIn profile updates/posts as a leading indicator for \"open to hire\" before the candidate even knows it.",
+          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -1694,62 +1831,6 @@
       ]
     },
     {
-      "meeting_folder": "Inbox/_quarantine/2025-12-16_logantheapplyaiilsetheapplyaidannytheapplyairochelmycareerspancomilyamycareerspancom_logantheapplyai_ilsetheapplyai_dannytheapplyai_duplicate",
-      "meeting_date": "2025-12-16",
-      "meeting_name": "2025-12-16_logantheapplyaiilsetheapplyaidannytheapplyairochelmycareerspancomilyamycareerspancom_logantheapplyai_ilsetheapplyai_dannytheapplyai_duplicate",
-      "ideas": [
-        {
-          "title": "Privacy as a Feature",
-          "idea": "Ilse noted that their methodology works well for performance reviews and promotion tracking, but only if users feel their data is private.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Internal\" Pivot",
-          "idea": "Could the core technology be sold as an internal performance review / attrition prediction tool? (e.g., determining if people are likely to leave based on their \"vibe check\" equivalents).",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Correcting the Understanding of Friction",
-          "idea": "V's point that \"your understanding of friction is wrong\" to employers—employers often *want* friction to filter candidates, but it needs to be the *right* kind of friction (data-gathering vs. ergonomic hurdles).",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Cadence as Signal",
-          "idea": "Using the frequency and behavior of LinkedIn profile updates/posts as a leading indicator for \"open to hire\" before the candidate even knows it.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-16_Logantheapply-Ilsetheapply",
-      "meeting_date": "2025-12-16",
-      "meeting_name": "2025-12-16_Logantheapply-Ilsetheapply",
-      "ideas": [
-        {
-          "title": "The \"One-Time Story\" Arbitrage",
-          "idea": "The strategic bet that candidates will trade the friction of a deep, one-time storytelling process for the ability to never have to \"tailor a resume\" again. This shifts Careerspan from a tool to a data-asset repository.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Signal vs. Intent",
-          "idea": "The exploration of hire signals *beyond* the standard \"Open to Work\" banner (e.g., posting cadence, LinkedIn checking frequency). This moves hiring from reactive (responding to a status) to predictive (analyzing behavior changes).",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "User Ego Alignment",
-          "idea": "The realization that users don't care about \"Career span,\" they care about \"Skillcapped\" (the employer). The product succeeds only when it becomes an invisible conduit that proves the user's worth to the specific target they desire.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-12-15/2025-12-16_Victor-hu-Lumos-capital",
       "meeting_date": "2025-12-16",
       "meeting_name": "2025-12-16_Victor-hu-Lumos-capital",
@@ -1769,31 +1850,6 @@
         {
           "title": "The \"Build vs. Partner\" Tension in Portfolio AI Integration",
           "idea": "Victor’s mention of a portfolio company debating whether to **build or partner for AI coaching** reveals a broader strategic \"weirdness\" in the current VC landscape. Investors are increasingly evaluating startups not just as standalone bets, but as modular components that could fulfill the internal AI-capability gaps of their *other* portfolio companies. This suggests a shift toward \"Portfolio as an Ecosystem,\" where a founder's GTM strategy (as Victor explicitly mentioned wanting to discuss) might increasingly prioritize becoming a \"core utility\" for a VC's broader cluster of companies.",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-16_Victorlumoscapitalgroupcom",
-      "meeting_date": "2025-12-16",
-      "meeting_name": "2025-12-16_Victorlumoscapitalgroupcom",
-      "ideas": [
-        {
-          "title": "The Frictionless Pivot",
-          "idea": "The immediate transition from a mobile/phone connection to a Zoom interface within 15 seconds highlights the modern \"pre-meeting\" ritual. It suggests that for high-stakes professional interactions, the audio-only or \"on-the-go\" modality is increasingly viewed as a temporary staging area rather than a workspace. The \"weirdness\" lies in the social protocol where the first 30 seconds of a call are dedicated entirely to migrating to a different medium.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Digital Hospitality",
-          "idea": "Victor’s proactive offer to provide the Zoom link (\"I do. Let me just share it with you\") represents a micro-demonstration of \"platform agency.\" In the hierarchy of digital interactions, the person hosting the link often implicitly sets the environment and tempo of the conversation.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Substantive Void\" Problem",
-          "idea": "This meeting artifact represents a perfect example of a \"transitional meeting\"—a recording that exists solely to document the intent to meet elsewhere. It raises the question of how AI systems should value \"empty\" metadata: is the fact that the meeting *moved* more important than the content that followed? --- *Note: Due to the transcript capturing only the first 3 seconds of the interaction before moving to Zoom, these themes focus on the mechanics of the transition itself.*",
           "provenance": "",
           "category": "Uncategorized"
         }
@@ -1825,6 +1881,100 @@
         {
           "title": "AI as a Distribution Channel",
           "idea": "V is demonstrating products on behalf of others (Zo). Is there a \"V-as-a-Channel\" strategy for Careerspan's ecosystem?",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-16_Logantheapply-Ilsetheapply",
+      "meeting_date": "2025-12-16",
+      "meeting_name": "2025-12-16_Logantheapply-Ilsetheapply",
+      "ideas": [
+        {
+          "title": "The \"One-Time Story\" Arbitrage",
+          "idea": "The strategic bet that candidates will trade the friction of a deep, one-time storytelling process for the ability to never have to \"tailor a resume\" again. This shifts Careerspan from a tool to a data-asset repository.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Signal vs. Intent",
+          "idea": "The exploration of hire signals *beyond* the standard \"Open to Work\" banner (e.g., posting cadence, LinkedIn checking frequency). This moves hiring from reactive (responding to a status) to predictive (analyzing behavior changes).",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "User Ego Alignment",
+          "idea": "The realization that users don't care about \"Career span,\" they care about \"Skillcapped\" (the employer). The product succeeds only when it becomes an invisible conduit that proves the user's worth to the specific target they desire.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-16_Victorlumoscapitalgroupcom",
+      "meeting_date": "2025-12-16",
+      "meeting_name": "2025-12-16_Victorlumoscapitalgroupcom",
+      "ideas": [
+        {
+          "title": "The Frictionless Pivot",
+          "idea": "The immediate transition from a mobile/phone connection to a Zoom interface within 15 seconds highlights the modern \"pre-meeting\" ritual. It suggests that for high-stakes professional interactions, the audio-only or \"on-the-go\" modality is increasingly viewed as a temporary staging area rather than a workspace. The \"weirdness\" lies in the social protocol where the first 30 seconds of a call are dedicated entirely to migrating to a different medium.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Digital Hospitality",
+          "idea": "Victor’s proactive offer to provide the Zoom link (\"I do. Let me just share it with you\") represents a micro-demonstration of \"platform agency.\" In the hierarchy of digital interactions, the person hosting the link often implicitly sets the environment and tempo of the conversation.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Substantive Void\" Problem",
+          "idea": "This meeting artifact represents a perfect example of a \"transitional meeting\"—a recording that exists solely to document the intent to meet elsewhere. It raises the question of how AI systems should value \"empty\" metadata: is the fact that the meeting *moved* more important than the content that followed? --- *Note: Due to the transcript capturing only the first 3 seconds of the interaction before moving to Zoom, these themes focus on the mechanics of the transition itself.*",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-15_Davitshadunts",
+      "meeting_date": "2025-12-15",
+      "meeting_name": "2025-12-15_Davitshadunts",
+      "ideas": [
+        {
+          "title": "The \"Production Gap\" Lag",
+          "idea": "The conversation highlights a specific market inefficiency: highly qualified researchers (Columbia AI) are being filtered out of the \"Agentic AI\" boom because they were in school during the 12-month period the tech became \"production-ready.\" This suggests that \"production experience\" is currently being used as a proxy for \"speed of adaptation\" rather than fundamental skill, creating a significant arbitrage opportunity for founders willing to look at academic/research backgrounds.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Semantic Tailoring vs. Keyword Optimization",
+          "idea": "V's focus on \"semantically tailored\" resumes that rewrite stories rather than just substituting keywords represents a shift from \"gaming the ATS\" to \"aligning narratives.\" This suggests that the future of recruitment is not about matching skills to bullet points, but about matching professional \"myths\" (stories) to company \"needs.\"",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "High-Trust Score Thresholds for Advocacy",
+          "idea": "V's explicit mention of a \"score of 80+\" as a trigger for personal advocacy introduces a \"proof-of-work\" mechanic into high-trust referrals. It suggests that AI-driven scoring can serve as a risk-mitigation tool for mentors, allowing them to scale their advocacy without diluting their reputation.",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-15/2025-12-15_Griffinseifmanrhocodylanjohnsonrhoco-Griffinseifmanrhoco-Dyl",
+      "meeting_date": "2025-12-15",
+      "meeting_name": "2025-12-15_Griffinseifmanrhocodylanjohnsonrhoco-Griffinseifmanrhoco-Dyl",
+      "ideas": [
+        {
+          "title": "The Service Alpha",
+          "idea": "In an era of automated fintech (Brex/Ramp), Mercury is leaning into \"service-focus\" and implementation managers as a premium closing tool for founders, suggesting that human-mediated onboarding is becoming a luxury differentiator in commoditized banking.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Butt Bit\" Weather Model",
+          "idea": "A casual reference to weather staying nice for a \"butt bit\" as a micro-metric for temporary stability—paralleling the founder's view of cash runways during a bootstrap phase: temporary but pleasant while it lasts.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -1881,20 +2031,26 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-15_Griffinseifmanrhocodylanjohnsonrhoco-Griffinseifmanrhoco-Dyl",
+      "meeting_folder": "Week-of-2025-12-15/2025-12-15_Mmm429cornelleduaks277cornelleducf579cornelleduch994cornelle",
       "meeting_date": "2025-12-15",
-      "meeting_name": "2025-12-15_Griffinseifmanrhocodylanjohnsonrhoco-Griffinseifmanrhoco-Dyl",
+      "meeting_name": "2025-12-15_Mmm429cornelleduaks277cornelleducf579cornelleduch994cornelle",
       "ideas": [
         {
-          "title": "The Service Alpha",
-          "idea": "In an era of automated fintech (Brex/Ramp), Mercury is leaning into \"service-focus\" and implementation managers as a premium closing tool for founders, suggesting that human-mediated onboarding is becoming a luxury differentiator in commoditized banking.",
-          "provocation": "",
+          "title": "The Semantic Mirror: AI as a Non-Judgmental Witness",
+          "idea": "A recurring theme in the meeting was the observation that certain cohorts (e.g., female public school teachers) felt more comfortable \"yapping\" to an AI than to a human coach. This suggests a mental model where the AI serves as a \"Semantic Mirror\"—a non-judgmental witness that allows for raw, unpolished self-expression. The provocative implication is that the *absence* of human judgment is a feature, not a bug, for psychological safety in high-stakes career transitions.",
+          "provenance": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The \"Butt Bit\" Weather Model",
-          "idea": "A casual reference to weather staying nice for a \"butt bit\" as a micro-metric for temporary stability—paralleling the founder's view of cash runways during a bootstrap phase: temporary but pleasant while it lasts.",
-          "provocation": "",
+          "title": "The ATS as a \"Dead Technology\" Zombie",
+          "idea": "Vrijen posits that the Applicant Tracking System (ATS) is effectively dead because AI can now generate content that perfectly \"fakes\" its requirements, leading to \"pipeline clogging.\" This creates a strategic \"weirdness\" where traditional resume advice is optimized for a technology that is functionally obsolete. The emerging mental model shifts the focus from \"passing the machine\" to \"signaling above-average effort\" (e.g., physical mail or hyper-personalized outreach) to bypass the AI-induced noise.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Sphere vs. Slice\" Ontology of Experience",
+          "idea": "The analogy of a professional experience as a \"sphere\" and a resume bullet as a \"slice\" (or line cutting through it) represents an original mental model for career data. It suggests that a single \"beefy\" experience has infinite potential \"slices\" (bullets) depending on the target job's semantic requirements. This contradicts the traditional static view of a resume and implies that \"who you are\" is a multi-dimensional volume that can only be represented through dynamic, context-dependent projections.",
+          "provenance": "",
           "category": "Uncategorized"
         }
       ]
@@ -1925,56 +2081,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-15_Mmm429cornelleduaks277cornelleducf579cornelleduch994cornelle",
-      "meeting_date": "2025-12-15",
-      "meeting_name": "2025-12-15_Mmm429cornelleduaks277cornelleducf579cornelleduch994cornelle",
-      "ideas": [
-        {
-          "title": "The Semantic Mirror: AI as a Non-Judgmental Witness",
-          "idea": "A recurring theme in the meeting was the observation that certain cohorts (e.g., female public school teachers) felt more comfortable \"yapping\" to an AI than to a human coach. This suggests a mental model where the AI serves as a \"Semantic Mirror\"—a non-judgmental witness that allows for raw, unpolished self-expression. The provocative implication is that the *absence* of human judgment is a feature, not a bug, for psychological safety in high-stakes career transitions.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The ATS as a \"Dead Technology\" Zombie",
-          "idea": "Vrijen posits that the Applicant Tracking System (ATS) is effectively dead because AI can now generate content that perfectly \"fakes\" its requirements, leading to \"pipeline clogging.\" This creates a strategic \"weirdness\" where traditional resume advice is optimized for a technology that is functionally obsolete. The emerging mental model shifts the focus from \"passing the machine\" to \"signaling above-average effort\" (e.g., physical mail or hyper-personalized outreach) to bypass the AI-induced noise.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Sphere vs. Slice\" Ontology of Experience",
-          "idea": "The analogy of a professional experience as a \"sphere\" and a resume bullet as a \"slice\" (or line cutting through it) represents an original mental model for career data. It suggests that a single \"beefy\" experience has infinite potential \"slices\" (bullets) depending on the target job's semantic requirements. This contradicts the traditional static view of a resume and implies that \"who you are\" is a multi-dimensional volume that can only be represented through dynamic, context-dependent projections.",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-15/2025-12-15_Davitshadunts",
-      "meeting_date": "2025-12-15",
-      "meeting_name": "2025-12-15_Davitshadunts",
-      "ideas": [
-        {
-          "title": "The \"Production Gap\" Lag",
-          "idea": "The conversation highlights a specific market inefficiency: highly qualified researchers (Columbia AI) are being filtered out of the \"Agentic AI\" boom because they were in school during the 12-month period the tech became \"production-ready.\" This suggests that \"production experience\" is currently being used as a proxy for \"speed of adaptation\" rather than fundamental skill, creating a significant arbitrage opportunity for founders willing to look at academic/research backgrounds.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Semantic Tailoring vs. Keyword Optimization",
-          "idea": "V's focus on \"semantically tailored\" resumes that rewrite stories rather than just substituting keywords represents a shift from \"gaming the ATS\" to \"aligning narratives.\" This suggests that the future of recruitment is not about matching skills to bullet points, but about matching professional \"myths\" (stories) to company \"needs.\"",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "High-Trust Score Thresholds for Advocacy",
-          "idea": "V's explicit mention of a \"score of 80+\" as a trigger for personal advocacy introduces a \"proof-of-work\" mechanic into high-trust referrals. It suggests that AI-driven scoring can serve as a risk-mitigation tool for mentors, allowing them to scale their advocacy without diluting their reputation.",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-12-15/2025-12-15_Contacthumanuptionscom",
       "meeting_date": "2025-12-15",
       "meeting_name": "2025-12-15_Contacthumanuptionscom",
@@ -1994,125 +2100,6 @@
         {
           "title": "PR Exit vs. Value Exit",
           "idea": "The distinction between an acquisition that \"looks good\" (PR exit) and one that \"pays well.\" The strategic decision to prioritize an exit that provides stability for the team/advisors even if the founders \"missed the boat\" on a massive windfall.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Jonathan-Beda-X-Vrijen",
-      "meeting_date": "2025-12-12",
-      "meeting_name": "2025-12-12_Jonathan-Beda-X-Vrijen",
-      "ideas": [
-        {
-          "title": "The Resume as a Failed Data Stream",
-          "idea": "Vrijen posits that resumes are a fundamentally \"crap-heavy\" data stream (99% noise). Most AI attempts to fix hiring fail because they try to \"extract gold\" from this low-quality source. The provocative shift is that you cannot fix hiring through better extraction; you must fix it through **high-friction data collection**. Friction is not a bug; it is the only way to generate a high-signal data stream.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"Badges of Legitimacy\" vs. Utility",
-          "idea": "The Investor admits that tools like Getro may have de minimis utility but serve as \"badges of legitimacy\" for LPs and founders. This highlights a \"signaling tax\" in VC—where funds pay for tools not for their function, but to look like a \"real\" fund. The strategic opportunity is identifying where these signals have become so standardized that they actually signal mediocrity rather than excellence.",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Market Darwinism (Recessions as Forest Fires)",
-          "idea": "The idea that economic downturns are biological necessities (\"Forest fires, plagues\") to clear the \"deck of all of the crappy players.\" This suggests that the current \"vicious\" market isn't just an obstacle but a cleansing mechanism that restores the \"feedback loop\" that was broken in 2021.",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Alexcaveny",
-      "meeting_date": "2025-12-12",
-      "meeting_name": "2025-12-12_Alexcaveny",
-      "ideas": [
-        {
-          "title": "The Agency Proxy",
-          "idea": "The hypothesis that the job search process is the ultimate litmus test for human agency. If an environment of \"seemingly helpless odds\" doesn't provoke a pivot, it may signal a fundamental lack of intrinsic agency.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Shame in Entrepreneurship",
-          "idea": "The dual-shame of founders—feeling ashamed to ask for \"unfashionable\" traits in employees (vibe, performance) while also feeling performative shame if they aren't appearing \"hard enough.\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The Excellence Barrier",
-          "idea": "The idea that most people \"don't see excellence and what excellence can do for your life,\" and therefore don't find it intrinsically desirable. This suggests a \"vicious cycle\" where the inability to feel the reward of being \"fucking awesome\" at something prevents the effort required to reach that state.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Ethanmarvinvccom",
-      "meeting_date": "2025-12-12",
-      "meeting_name": "2025-12-12_Ethanmarvinvccom",
-      "ideas": [
-        {
-          "title": "The Resume as a Self-Knowledge Problem",
-          "idea": "Careerspan's thesis that the resume is an *output* of self-reflection rather than a formatting exercise. This suggests that the bottleneck in the labor market isn't documentation, but the lack of internal clarity in job seekers.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Screening Agent\" vs. The ATS",
-          "idea": "Moving from a passive repository of candidates (ATS) to an active \"agent\" that filters. The shift from *managing* a fire hose of inbound applications to *refusing* to show any but the top 5% represents a fundamental shift in the power dynamic of hiring software.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Ericakh",
-      "meeting_date": "2025-12-12",
-      "meeting_name": "2025-12-12_Ericakh",
-      "ideas": [
-        {
-          "title": "The Narrative Parity Gap",
-          "idea": "The idea that \"qualitative strengths\" are often invisible to current HR tech, and that AI's true role in recruiting might not be *filtering* but *articulating*—leveling the playing field for those who are \"bad at advocating for themselves.\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Artisanal Application\" Paradox",
-          "idea": "In an era of AI-driven \"Auto-apply,\" the effort put into a handcrafted application is essentially unnoticeable by the systems designed to process it. This suggests a total breakdown in the \"effort-to-reward\" loop of the labor market.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Anti-Cyclical Career Preparation",
-          "idea": "The observation that people work on their careers at the \"exact wrong time\" (when they are emotionally depleted). The concept of \"Story Storing\" during months of high achievement, rather than during the job hunt, as a way to remain permanently \"job-hunt ready.\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Vrijen-Attawar-And-Kristen-Habacht",
-      "meeting_date": "2025-12-12",
-      "meeting_name": "2025-12-12_Vrijen-Attawar-And-Kristen-Habacht",
-      "ideas": [
-        {
-          "title": "The \"Data Agnosticism\" Advantage",
-          "idea": "Careerspan's insight that data collected *independent* of a specific job application is higher fidelity because it removes the \"angling\" incentive. This creates a \"Pure Talent\" profile that is universally applicable and more honest.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Hiring as a Trade-Off Engine",
-          "idea": "Moving away from stack-ranking (1-10) to \"bundles of skills\" and \"trade-offs.\" This acknowledges that no candidate is \"better,\" only \"differently fit\" for a specific context, which is a significant departure from standard ATS logic.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "LinkedIn's Strategic Suicide",
-          "idea": "The idea that LinkedIn's pursuit of \"social media network\" status (engagement/ads) is actively destroying its core utility as a professional network (utility/matching), creating a massive opening for \"Superhuman for LinkedIn\" overlays.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -2150,6 +2137,125 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Ethanmarvinvccom",
+      "meeting_date": "2025-12-12",
+      "meeting_name": "2025-12-12_Ethanmarvinvccom",
+      "ideas": [
+        {
+          "title": "The Resume as a Self-Knowledge Problem",
+          "idea": "Careerspan's thesis that the resume is an *output* of self-reflection rather than a formatting exercise. This suggests that the bottleneck in the labor market isn't documentation, but the lack of internal clarity in job seekers.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Screening Agent\" vs. The ATS",
+          "idea": "Moving from a passive repository of candidates (ATS) to an active \"agent\" that filters. The shift from *managing* a fire hose of inbound applications to *refusing* to show any but the top 5% represents a fundamental shift in the power dynamic of hiring software.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Vrijen-Attawar-And-Kristen-Habacht",
+      "meeting_date": "2025-12-12",
+      "meeting_name": "2025-12-12_Vrijen-Attawar-And-Kristen-Habacht",
+      "ideas": [
+        {
+          "title": "The \"Data Agnosticism\" Advantage",
+          "idea": "Careerspan's insight that data collected *independent* of a specific job application is higher fidelity because it removes the \"angling\" incentive. This creates a \"Pure Talent\" profile that is universally applicable and more honest.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Hiring as a Trade-Off Engine",
+          "idea": "Moving away from stack-ranking (1-10) to \"bundles of skills\" and \"trade-offs.\" This acknowledges that no candidate is \"better,\" only \"differently fit\" for a specific context, which is a significant departure from standard ATS logic.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "LinkedIn's Strategic Suicide",
+          "idea": "The idea that LinkedIn's pursuit of \"social media network\" status (engagement/ads) is actively destroying its core utility as a professional network (utility/matching), creating a massive opening for \"Superhuman for LinkedIn\" overlays.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Alexcaveny",
+      "meeting_date": "2025-12-12",
+      "meeting_name": "2025-12-12_Alexcaveny",
+      "ideas": [
+        {
+          "title": "The Agency Proxy",
+          "idea": "The hypothesis that the job search process is the ultimate litmus test for human agency. If an environment of \"seemingly helpless odds\" doesn't provoke a pivot, it may signal a fundamental lack of intrinsic agency.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Shame in Entrepreneurship",
+          "idea": "The dual-shame of founders—feeling ashamed to ask for \"unfashionable\" traits in employees (vibe, performance) while also feeling performative shame if they aren't appearing \"hard enough.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Excellence Barrier",
+          "idea": "The idea that most people \"don't see excellence and what excellence can do for your life,\" and therefore don't find it intrinsically desirable. This suggests a \"vicious cycle\" where the inability to feel the reward of being \"fucking awesome\" at something prevents the effort required to reach that state.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Ericakh",
+      "meeting_date": "2025-12-12",
+      "meeting_name": "2025-12-12_Ericakh",
+      "ideas": [
+        {
+          "title": "The Narrative Parity Gap",
+          "idea": "The idea that \"qualitative strengths\" are often invisible to current HR tech, and that AI's true role in recruiting might not be *filtering* but *articulating*—leveling the playing field for those who are \"bad at advocating for themselves.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Artisanal Application\" Paradox",
+          "idea": "In an era of AI-driven \"Auto-apply,\" the effort put into a handcrafted application is essentially unnoticeable by the systems designed to process it. This suggests a total breakdown in the \"effort-to-reward\" loop of the labor market.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Anti-Cyclical Career Preparation",
+          "idea": "The observation that people work on their careers at the \"exact wrong time\" (when they are emotionally depleted). The concept of \"Story Storing\" during months of high achievement, rather than during the job hunt, as a way to remain permanently \"job-hunt ready.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-12_Jonathan-Beda-X-Vrijen",
+      "meeting_date": "2025-12-12",
+      "meeting_name": "2025-12-12_Jonathan-Beda-X-Vrijen",
+      "ideas": [
+        {
+          "title": "The Resume as a Failed Data Stream",
+          "idea": "Vrijen posits that resumes are a fundamentally \"crap-heavy\" data stream (99% noise). Most AI attempts to fix hiring fail because they try to \"extract gold\" from this low-quality source. The provocative shift is that you cannot fix hiring through better extraction; you must fix it through **high-friction data collection**. Friction is not a bug; it is the only way to generate a high-signal data stream.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"Badges of Legitimacy\" vs. Utility",
+          "idea": "The Investor admits that tools like Getro may have de minimis utility but serve as \"badges of legitimacy\" for LPs and founders. This highlights a \"signaling tax\" in VC—where funds pay for tools not for their function, but to look like a \"real\" fund. The strategic opportunity is identifying where these signals have become so standardized that they actually signal mediocrity rather than excellence.",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Market Darwinism (Recessions as Forest Fires)",
+          "idea": "The idea that economic downturns are biological necessities (\"Forest fires, plagues\") to clear the \"deck of all of the crappy players.\" This suggests that the current \"vicious\" market isn't just an obstacle but a cleansing mechanism that restores the \"feedback loop\" that was broken in 2021.",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2025-12-08/2025-12-11_Vrijen-Attawar-And-Oscar-Marquina",
       "meeting_date": "2025-12-11",
       "meeting_name": "2025-12-11_Vrijen-Attawar-And-Oscar-Marquina",
@@ -2176,56 +2282,6 @@
           "title": "The \"One-Click Apply\" Network Effect",
           "idea": "Vrijen mentions that anyone who has used Careerspan enough can become a \"top candidate\" for a role. This implies a future where Careerspan isn't just a tool for founders, but a credentialing system for candidates, where \"Careerspan-vetted\" carries its own weight in high-stakes communities like Marvin.",
           "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-11_Cdavismake-connexionscom",
-      "meeting_date": "2025-12-11",
-      "meeting_name": "2025-12-11_Cdavismake-connexionscom",
-      "ideas": [
-        {
-          "title": "The Data Moat",
-          "idea": "V’s assertion that the only \"resilient advantage\" in a crowded market is proprietary data access through \"painful\" user motions like self-reflection.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Reciprocity as Algorithm",
-          "idea": "Celia’s idea of building a professional social network based on sociological \"reciprocity\" rather than ad-centric \"likes.\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Tutoring as Founder Boot Camp",
-          "idea": "Both founders spent years in tutoring; is there a correlation between the communication skills needed for test prep and the skills needed for early-stage founder sales/pitching?",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
-      "meeting_date": "2025-12-11",
-      "meeting_name": "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
-      "ideas": [
-        {
-          "title": "The \"Sponsorship\" Myth",
-          "idea": "Most founders avoid international students because they fear complex sponsorship. Vrijen posits that for OPT (the first year), the administrative load is negligible (30 mins), creating a massive arbitrage opportunity for early-stage startups to get elite talent.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Resume as \"Zero Signal\"",
-          "idea": "Vrijen’s core thesis is that resumes are now entirely detached from performance. The move toward \"Stories\" and voice-input reflection as a vetting gate suggests a future where *articulation* and *reflection* are the primary filters, not credentials.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"Unsexy\" Scaling",
-          "idea": "The idea that a $1M revenue stream in a tech startup is currently bottlenecked by a human making phone calls—and that the solution isn't \"better code\" but \"better low-cost humans\"—is a grounded reminder of early-stage operational reality.",
-          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -2262,6 +2318,56 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+      "meeting_date": "2025-12-11",
+      "meeting_name": "2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+      "ideas": [
+        {
+          "title": "The \"Sponsorship\" Myth",
+          "idea": "Most founders avoid international students because they fear complex sponsorship. Vrijen posits that for OPT (the first year), the administrative load is negligible (30 mins), creating a massive arbitrage opportunity for early-stage startups to get elite talent.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Resume as \"Zero Signal\"",
+          "idea": "Vrijen’s core thesis is that resumes are now entirely detached from performance. The move toward \"Stories\" and voice-input reflection as a vetting gate suggests a future where *articulation* and *reflection* are the primary filters, not credentials.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"Unsexy\" Scaling",
+          "idea": "The idea that a $1M revenue stream in a tech startup is currently bottlenecked by a human making phone calls—and that the solution isn't \"better code\" but \"better low-cost humans\"—is a grounded reminder of early-stage operational reality.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-11_Cdavismake-connexionscom",
+      "meeting_date": "2025-12-11",
+      "meeting_name": "2025-12-11_Cdavismake-connexionscom",
+      "ideas": [
+        {
+          "title": "The Data Moat",
+          "idea": "V’s assertion that the only \"resilient advantage\" in a crowded market is proprietary data access through \"painful\" user motions like self-reflection.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Reciprocity as Algorithm",
+          "idea": "Celia’s idea of building a professional social network based on sociological \"reciprocity\" rather than ad-centric \"likes.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Tutoring as Founder Boot Camp",
+          "idea": "Both founders spent years in tutoring; is there a correlation between the communication skills needed for test prep and the skills needed for early-stage founder sales/pitching?",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2025-12-08/2025-12-11_Vrijen-Attawar-And-Oscar-Marquina/2025-12-11_vrijen_attawar_and_oscar_marquina",
       "meeting_date": "2025-12-11",
       "meeting_name": "2025-12-11_vrijen_attawar_and_oscar_marquina",
@@ -2281,6 +2387,37 @@
         {
           "title": "Scraping as a Commodity vs. Moat",
           "idea": "Oscar views scraping as a utility (why he uses Getro), but Vrijen views the network effect of the candidates *on top* of the scraped data as the moat. The provocation: A service that only scrapes is a temporary bridge; a service that scrapes to feed a vetting engine is a permanent infrastructure.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-10_Jayabonfireanalyticscomvinaybonfireanalyticscom-Jayabonfirea",
+      "meeting_date": "2025-12-10",
+      "meeting_name": "2025-12-10_Jayabonfireanalyticscomvinaybonfireanalyticscom-Jayabonfirea",
+      "ideas": [
+        {
+          "title": "The Partnership-as-Diligence Model",
+          "idea": "The idea that \"anyone looking to acquire you would partner with you anyway.\" This reframes business development as a pre-M&A dating phase.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Talent Call",
+          "idea": "Keeping a \"low-cost talent intake\" open even when not actively hiring to build a \"warm\" bench of candidate stories.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "High-Friction as a Feature",
+          "idea": "In a world of LinkedIn \"easy apply\" spam, intentionally introducing friction (voice/chat stories) serves as an immediate signal of candidate intent and quality.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Founder Fatigue and Market Windows",
+          "idea": "V's observation that a product can be \"amazing\" but still lose its \"genre-defining\" window to a competitor, leading to a shift in strategy from \"growth\" to \"honorable exit.\"",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -2313,37 +2450,6 @@
           "title": "Community-Led Growth in the Bay Area",
           "idea": "- The Coffee Space founder's reliance on Livia for \"tips from people doing growth\" highlights that even in a digital-first matching market, local community and high-trust human nodes (like Livia) remain the primary engine for early-stage startup traction.",
           "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-10_Jayabonfireanalyticscomvinaybonfireanalyticscom-Jayabonfirea",
-      "meeting_date": "2025-12-10",
-      "meeting_name": "2025-12-10_Jayabonfireanalyticscomvinaybonfireanalyticscom-Jayabonfirea",
-      "ideas": [
-        {
-          "title": "The Partnership-as-Diligence Model",
-          "idea": "The idea that \"anyone looking to acquire you would partner with you anyway.\" This reframes business development as a pre-M&A dating phase.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The Talent Call",
-          "idea": "Keeping a \"low-cost talent intake\" open even when not actively hiring to build a \"warm\" bench of candidate stories.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "High-Friction as a Feature",
-          "idea": "In a world of LinkedIn \"easy apply\" spam, intentionally introducing friction (voice/chat stories) serves as an immediate signal of candidate intent and quality.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Founder Fatigue and Market Windows",
-          "idea": "V's observation that a product can be \"amazing\" but still lose its \"genre-defining\" window to a competitor, leading to a shift in strategy from \"growth\" to \"honorable exit.\"",
-          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -2510,31 +2616,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-08/2025-12-08_Bradorange-quartercom",
-      "meeting_date": "2025-12-08",
-      "meeting_name": "2025-12-08_Bradorange-quartercom",
-      "ideas": [
-        {
-          "title": "Semantic Screening vs. Arbitrary Ranking",
-          "idea": "The move away from \"Harvard = Yes\" toward \"Actionable semantic evidence\" as a hiring philosophy.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Proof of Humanity\" Hurdle",
-          "idea": "Using a tool like Careerspan not just for data, but as a barrier to filter out bots and low-intent applicants who won't spend 15 minutes talking.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Internal vs. External Recruitment Needs",
-          "idea": "The tension between high-volume efficiency (Careerspan's current strength) and low-volume, high-touch headhunting (the recruiter's current mode). How does the \"laddering up\" feature eventually serve the latter?",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-12-08/2025-12-08_Ilyamycareerspan-Loganmycareerspan",
       "meeting_date": "2025-12-08",
       "meeting_name": "2025-12-08_Ilyamycareerspan-Loganmycareerspan",
@@ -2554,6 +2635,31 @@
         {
           "title": "Variable Cost Transparency",
           "idea": "Should the sales team have real-time visibility into the \"variable cost burn\" of existing accounts to inform renewal strategies?",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-08/2025-12-08_Bradorange-quartercom",
+      "meeting_date": "2025-12-08",
+      "meeting_name": "2025-12-08_Bradorange-quartercom",
+      "ideas": [
+        {
+          "title": "Semantic Screening vs. Arbitrary Ranking",
+          "idea": "The move away from \"Harvard = Yes\" toward \"Actionable semantic evidence\" as a hiring philosophy.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Proof of Humanity\" Hurdle",
+          "idea": "Using a tool like Careerspan not just for data, but as a barrier to filter out bots and low-intent applicants who won't spend 15 minutes talking.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Internal vs. External Recruitment Needs",
+          "idea": "The tension between high-volume efficiency (Careerspan's current strength) and low-volume, high-touch headhunting (the recruiter's current mode). How does the \"laddering up\" feature eventually serve the latter?",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -2666,19 +2772,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-01/2025-12-05_Logan",
-      "meeting_date": "2025-12-05",
-      "meeting_name": "2025-12-05_Logan",
-      "ideas": [
-        {
-          "title": "No substantial ideas were developed in this connec...",
-          "idea": "No substantial ideas were developed in this connection phase.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-12-01/2025-12-05_Logantheapply-Ilsetheapply",
       "meeting_date": "2025-12-05",
       "meeting_name": "2025-12-05_Logantheapply-Ilsetheapply",
@@ -2710,6 +2803,19 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2025-12-01/2025-12-05_Logan",
+      "meeting_date": "2025-12-05",
+      "meeting_name": "2025-12-05_Logan",
+      "ideas": [
+        {
+          "title": "No substantial ideas were developed in this connec...",
+          "idea": "No substantial ideas were developed in this connection phase.",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2025-12-01/2025-12-05_Rgj-bduo-zer/2025-12-05_rgj-bduo-zer_[P]",
       "meeting_date": "2025-12-05",
       "meeting_name": "2025-12-05_rgj-bduo-zer_[P]",
@@ -2730,6 +2836,37 @@
           "title": "The Fatigue Trap (Energy Arbitrage)",
           "idea": "The colleague's struggle with the \"excuse\" of being tired highlights a critical problem in career transitions: Energy Arbitrage. Working a \"placeholder\" job can provide financial stability but at a high cost to \"search energy,\" potentially extending the transition period significantly.",
           "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-12-01/2025-12-04_Mihirinvoicebutlerai",
+      "meeting_date": "2025-12-04",
+      "meeting_name": "2025-12-04_Mihirinvoicebutlerai",
+      "ideas": [
+        {
+          "title": "The Cost of \"Free\"",
+          "idea": "Mihir's observation that \"you can't demand anything if it's free\" regarding office space—and how that applies to business relationships and product expectations.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Qualitative Filtering vs. Keyword Matching",
+          "idea": "The idea that 95% of the market is stuck in \"keyword hell,\" and the winner in recruiting tech will be whoever can automate the \"Socratic reflection\" of a coach.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Founder Goal Alignment",
+          "idea": "Mihir's perspective that achieving any set goal (like finding a spouse) is a valid signal of founder-market fit/execution ability.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Skeleton Crew\" Advantage",
+          "idea": "V mentioning the decision not to raise and operating with a skeleton crew to position for acquisition—challenging the \"growth at all costs\" VC narrative.",
+          "provocation": "",
           "category": "Uncategorized"
         }
       ]
@@ -2791,37 +2928,6 @@
         {
           "title": "Human-in-the-Loop Automation",
           "idea": "The counter-intuitive idea that more automation requires *better* (not less) human confirmation at critical deal-breaking junctures.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-12-01/2025-12-04_Mihirinvoicebutlerai",
-      "meeting_date": "2025-12-04",
-      "meeting_name": "2025-12-04_Mihirinvoicebutlerai",
-      "ideas": [
-        {
-          "title": "The Cost of \"Free\"",
-          "idea": "Mihir's observation that \"you can't demand anything if it's free\" regarding office space—and how that applies to business relationships and product expectations.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Qualitative Filtering vs. Keyword Matching",
-          "idea": "The idea that 95% of the market is stuck in \"keyword hell,\" and the winner in recruiting tech will be whoever can automate the \"Socratic reflection\" of a coach.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Founder Goal Alignment",
-          "idea": "Mihir's perspective that achieving any set goal (like finding a spouse) is a valid signal of founder-market fit/execution ability.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Skeleton Crew\" Advantage",
-          "idea": "V mentioning the decision not to raise and operating with a skeleton crew to position for acquisition—challenging the \"growth at all costs\" VC narrative.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -2976,31 +3082,31 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-01/2025-12-02_Logantheapply-Ilsetheapply",
+      "meeting_folder": "Week-of-2025-12-01/2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
       "meeting_date": "2025-12-02",
-      "meeting_name": "2025-12-02_Logantheapply-Ilsetheapply",
+      "meeting_name": "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
       "ideas": [
         {
-          "title": "The \"Slow Burn\" Paradox",
-          "idea": "Is Careerspan inherently a tool for companies that *aren't* in a rush? If funding is dependent on a hire (e.g., Theron), does the \"quality-first\" approach become a liability or a luxury?",
+          "title": "Intent vs. Attributes",
+          "idea": "How much does \"high intent\" (someone really wanting a specific job) offset a lack of perfect \"on-paper attributes\"? Can AI quantify the value of passion/conviction?",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "VCs as Distribution, not just Buyers",
-          "idea": "By integrating with tools like Getro, does Careerspan move from being a \"tool for founders\" to a \"standard for VCs\"?",
+          "title": "Headless Recruitment APIs",
+          "idea": "The shift from two-sided marketplaces to \"High-taste consumer-facing candidate products\" that function as APIs for employer tools.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "\"X-Ray Vision\" for Hiring",
-          "idea": "How can this marketing theme be translated into a literal UI feature that justifies the \"Quality over Quantity\" claim?",
+          "title": "Reasoning vs. Rules",
+          "idea": "The technical and philosophical argument that recruitment is a \"dynamical system\" that cannot be solved with if-else statements, but requires LLM-based reasoning over context deficits and spikes.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Mass Scanning vs. Curation",
-          "idea": "The decision to kill mass scanning is a bet on the human-in-the-loop/curation model. How does this scale technically compared to the competitors offering \"500 resumes for every job\"?",
+          "title": "The \"One-Two Punch\"",
+          "idea": "Using small, high-conviction communities (Marvin, NY Founders Club) as the \"hardest test\" for new recruitment AI tools before scaling.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -3038,31 +3144,31 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-12-01/2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+      "meeting_folder": "Week-of-2025-12-01/2025-12-02_Logantheapply-Ilsetheapply",
       "meeting_date": "2025-12-02",
-      "meeting_name": "2025-12-02_30-Min-Call-With-Edmund-Between-Edmund-Cuthbert-An",
+      "meeting_name": "2025-12-02_Logantheapply-Ilsetheapply",
       "ideas": [
         {
-          "title": "Intent vs. Attributes",
-          "idea": "How much does \"high intent\" (someone really wanting a specific job) offset a lack of perfect \"on-paper attributes\"? Can AI quantify the value of passion/conviction?",
+          "title": "The \"Slow Burn\" Paradox",
+          "idea": "Is Careerspan inherently a tool for companies that *aren't* in a rush? If funding is dependent on a hire (e.g., Theron), does the \"quality-first\" approach become a liability or a luxury?",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Headless Recruitment APIs",
-          "idea": "The shift from two-sided marketplaces to \"High-taste consumer-facing candidate products\" that function as APIs for employer tools.",
+          "title": "VCs as Distribution, not just Buyers",
+          "idea": "By integrating with tools like Getro, does Careerspan move from being a \"tool for founders\" to a \"standard for VCs\"?",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Reasoning vs. Rules",
-          "idea": "The technical and philosophical argument that recruitment is a \"dynamical system\" that cannot be solved with if-else statements, but requires LLM-based reasoning over context deficits and spikes.",
+          "title": "\"X-Ray Vision\" for Hiring",
+          "idea": "How can this marketing theme be translated into a literal UI feature that justifies the \"Quality over Quantity\" claim?",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The \"One-Two Punch\"",
-          "idea": "Using small, high-conviction communities (Marvin, NY Founders Club) as the \"hardest test\" for new recruitment AI tools before scaling.",
+          "title": "Mass Scanning vs. Curation",
+          "idea": "The decision to kill mass scanning is a bet on the human-in-the-loop/curation model. How does this scale technically compared to the competitors offering \"500 resumes for every job\"?",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -3261,6 +3367,37 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2025-11-10/2025-11-12_Colinnavon-Vrijenattawar",
+      "meeting_date": "2025-11-12",
+      "meeting_name": "2025-11-12_Colinnavon-Vrijenattawar",
+      "ideas": [
+        {
+          "title": "The \"Earbud Candidate\" as the New Normal:",
+          "idea": "Colin’s observation that \"they passed a technical interview as if they had an earbud and a guy was in a van\" suggests that technical interviews are currently being \"hacked\" in real-time. How can Careerspan build an assessment that is fundamentally \"handler-proof\"?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Recruiters as Infrastructure Scapegoats:",
+          "idea": "Colin was fired for a failure in a background check and I-9 process he didn't control. This suggests a massive gap in corporate liability and insurance for remote hires. Is there a \"Security for Talent Acquisition\" market play here?",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The Pivot to Merit:",
+          "idea": "Vrijen's philosophy of \"compare and contrast on merit versus ranking\" is a radical departure from the standard \"top 10 candidates\" approach. In a world of fake identities, \"Merit\" becomes a security feature, not just a quality filter.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Digital Nomad\" Variance:",
+          "idea": "Brady is cited as the gold standard of a \"well-traveled/nomad\" engineer. Bad actors are using \"sick parents\" and \"temporary moves\" (as seen in the Benjamin Clark case) to mimic this nomad behavior and hide their lack of physical presence/authenticity. We need to distinguish between \"Remote Merit\" and \"Anonymous Fraud.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2025-11-10/2025-11-12_Vrijen-Logan-Daily-Standup-Trello",
       "meeting_date": "2025-11-12",
       "meeting_name": "2025-11-12_Vrijen-Logan-Daily-Standup-Trello",
@@ -3323,31 +3460,31 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-11-10/2025-11-12_Colinnavon-Vrijenattawar",
-      "meeting_date": "2025-11-12",
-      "meeting_name": "2025-11-12_Colinnavon-Vrijenattawar",
+      "meeting_folder": "Week-of-2025-11-10/2025-11-11_Edmund-Cuthbert-30-Min-Call",
+      "meeting_date": "2025-11-11",
+      "meeting_name": "2025-11-11_Edmund-Cuthbert-30-Min-Call",
       "ideas": [
         {
-          "title": "The \"Earbud Candidate\" as the New Normal:",
-          "idea": "Colin’s observation that \"they passed a technical interview as if they had an earbud and a guy was in a van\" suggests that technical interviews are currently being \"hacked\" in real-time. How can Careerspan build an assessment that is fundamentally \"handler-proof\"?",
+          "title": "Talent as a Traffic Light",
+          "idea": "Moving away from stack-ranking (thermometer) to trade-off space evaluation (traffic light).",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "Recruiters as Infrastructure Scapegoats:",
-          "idea": "Colin was fired for a failure in a background check and I-9 process he didn't control. This suggests a massive gap in corporate liability and insurance for remote hires. Is there a \"Security for Talent Acquisition\" market play here?",
+          "title": "Forward-Deployed Engineer Alpha",
+          "idea": "The idea that \"latent signals\" for customer-facing engineers are best captured via AI coaching/interaction rather than static resumes.",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The Pivot to Merit:",
-          "idea": "Vrijen's philosophy of \"compare and contrast on merit versus ranking\" is a radical departure from the standard \"top 10 candidates\" approach. In a world of fake identities, \"Merit\" becomes a security feature, not just a quality filter.",
+          "title": "The API for Sourcing",
+          "idea": "Shifting from a full-stack marketplace to a \"picks and shovels\" API (intent-driven People Data Labs).",
           "provocation": "",
           "category": "Uncategorized"
         },
         {
-          "title": "The \"Digital Nomad\" Variance:",
-          "idea": "Brady is cited as the gold standard of a \"well-traveled/nomad\" engineer. Bad actors are using \"sick parents\" and \"temporary moves\" (as seen in the Benjamin Clark case) to mimic this nomad behavior and hide their lack of physical presence/authenticity. We need to distinguish between \"Remote Merit\" and \"Anonymous Fraud.\"",
+          "title": "AI Talent Agents",
+          "idea": "The future transition to sports-agent-style representation for top-tier AI-enabled talent.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -3416,37 +3553,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-11-10/2025-11-11_Edmund-Cuthbert-30-Min-Call",
-      "meeting_date": "2025-11-11",
-      "meeting_name": "2025-11-11_Edmund-Cuthbert-30-Min-Call",
-      "ideas": [
-        {
-          "title": "Talent as a Traffic Light",
-          "idea": "Moving away from stack-ranking (thermometer) to trade-off space evaluation (traffic light).",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Forward-Deployed Engineer Alpha",
-          "idea": "The idea that \"latent signals\" for customer-facing engineers are best captured via AI coaching/interaction rather than static resumes.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The API for Sourcing",
-          "idea": "Shifting from a full-stack marketplace to a \"picks and shovels\" API (intent-driven People Data Labs).",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "AI Talent Agents",
-          "idea": "The future transition to sports-agent-style representation for top-tier AI-enabled talent.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-11-03/2025-11-07_Ilse-midday-chat-Internal",
       "meeting_date": "2025-11-07",
       "meeting_name": "2025-11-07_Ilse-midday-chat-Internal",
@@ -3472,6 +3578,37 @@
         {
           "title": "The \"Fisherman's Net\" Analogy",
           "idea": "Sourcing not by a broad net (job boards) but by visiting specific \"parts of the water\" (communities) to find specific \"fish.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-11-03/2025-11-04_Ilya-kucherenko-Internal-onboarding",
+      "meeting_date": "2025-11-04",
+      "meeting_name": "2025-11-04_Ilya-kucherenko-Internal-onboarding",
+      "ideas": [
+        {
+          "title": "Culture vs. Upbringing:",
+          "idea": "Ilya poses the question: \"How much of our personality is culture versus upbringing?\" This suggests a potential marketing angle for Careerspan—understanding the \"why\" behind career choices and professional identity.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Predatory Eagle\" Strategy:",
+          "idea": "Ilya's approach to market leadership—flying high, observing precisely, and striking with urgency—could be codified into a Careerspan \"GTM playbook.\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Stubbornly Persistent Preferences:",
+          "idea": "Vrijen's observation that preferences are persistent suggests that Careerspan's AI agents should optimize for long-term alignment with a user's core nature rather than fleeting trends.",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The \"Harmless Assassin\" Kermit Archetype:",
+          "idea": "Rochel's Kermit analogy (looking harmless but being highly skilled) is a powerful metaphor for professional branding: combining approachability with deep expertise.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -3540,37 +3677,6 @@
         {
           "title": "Gamified Motivation",
           "idea": "Using \"Arsenal dashboards\" and \"first team\" metaphors to drive productivity for \"sports-brain\" users.",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2025-11-03/2025-11-04_Ilya-kucherenko-Internal-onboarding",
-      "meeting_date": "2025-11-04",
-      "meeting_name": "2025-11-04_Ilya-kucherenko-Internal-onboarding",
-      "ideas": [
-        {
-          "title": "Culture vs. Upbringing:",
-          "idea": "Ilya poses the question: \"How much of our personality is culture versus upbringing?\" This suggests a potential marketing angle for Careerspan—understanding the \"why\" behind career choices and professional identity.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Predatory Eagle\" Strategy:",
-          "idea": "Ilya's approach to market leadership—flying high, observing precisely, and striking with urgency—could be codified into a Careerspan \"GTM playbook.\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Stubbornly Persistent Preferences:",
-          "idea": "Vrijen's observation that preferences are persistent suggests that Careerspan's AI agents should optimize for long-term alignment with a user's core nature rather than fleeting trends.",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The \"Harmless Assassin\" Kermit Archetype:",
-          "idea": "Rochel's Kermit analogy (looking harmless but being highly skilled) is a powerful metaphor for professional branding: combining approachability with deep expertise.",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -3707,37 +3813,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2025-10-13/2025-10-14_Nira-team-Strategy-exploration-Founder",
-      "meeting_date": "2025-10-14",
-      "meeting_name": "2025-10-14_Nira-team-Strategy-exploration-Founder",
-      "ideas": [
-        {
-          "title": "The \"Anti-LinkedIn\" Operating System",
-          "idea": "The idea that a professional network should not be a static 2D page, but a dynamic interface that \"speaks\" to you based on your specific needs. LinkedIn's failure is its \"one-size-fits-all\" profile; Nira's breakthrough is the \"Dynamic Name Card.\"",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "$20M ARR with 15 People",
-          "idea": "A radical challenge to the \"hyper-growth\" startup model. This suggests a future where AI and extreme operational efficiency allow tiny teams to generate massive revenue, effectively decoupling \"scale\" from \"headcount.\"",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"Tastemaker\" as a Business Model",
-          "idea": "Careerspan's pivot suggests that for non-technical founders, \"Influence + Curation\" might be a more sustainable and disruptive path than \"VC + Sales.\" Being the person who says \"I recommend this\" holds more power in high-trust communities than being the person who says \"Please buy this.\"",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"Narrow Networks\" vs. The Wide Web",
-          "idea": "The value of the internet is increasingly found in small, gated, high-trust groups rather than open platforms. The next \"social\" boom might be tools that help us manage these disparate, high-signal clusters (Narrow Networks).",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2025-10-13/2025-10-14_Logan-vrijen-Internal-strategy",
       "meeting_date": "2025-10-14",
       "meeting_name": "2025-10-14_Logan-vrijen-Internal-strategy",
@@ -3764,6 +3839,37 @@
           "title": "\"Manual to Magic\"",
           "idea": "The strategy of \"doing things that don't scale\" (Ilse's manual checks) to win a high valuation before a single line of automated code is written.",
           "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2025-10-13/2025-10-14_Nira-team-Strategy-exploration-Founder",
+      "meeting_date": "2025-10-14",
+      "meeting_name": "2025-10-14_Nira-team-Strategy-exploration-Founder",
+      "ideas": [
+        {
+          "title": "The \"Anti-LinkedIn\" Operating System",
+          "idea": "The idea that a professional network should not be a static 2D page, but a dynamic interface that \"speaks\" to you based on your specific needs. LinkedIn's failure is its \"one-size-fits-all\" profile; Nira's breakthrough is the \"Dynamic Name Card.\"",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "$20M ARR with 15 People",
+          "idea": "A radical challenge to the \"hyper-growth\" startup model. This suggests a future where AI and extreme operational efficiency allow tiny teams to generate massive revenue, effectively decoupling \"scale\" from \"headcount.\"",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"Tastemaker\" as a Business Model",
+          "idea": "Careerspan's pivot suggests that for non-technical founders, \"Influence + Curation\" might be a more sustainable and disruptive path than \"VC + Sales.\" Being the person who says \"I recommend this\" holds more power in high-trust communities than being the person who says \"Please buy this.\"",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"Narrow Networks\" vs. The Wide Web",
+          "idea": "The value of the internet is increasingly found in small, gated, high-trust groups rather than open platforms. The next \"social\" boom might be tools that help us manage these disparate, high-signal clusters (Narrow Networks).",
+          "provenance": "",
           "category": "Uncategorized"
         }
       ]

@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Chama Mama",
+    "startTime": "2025-05-23T22:30:00Z",
+    "endTime": "2025-05-24T00:00:00Z",
+    "partySize": 4,
+    "service": "Dining Reservation",
+    "address": "New York, 121 Montague Street, New York, US"
+  },
+  "uniqueId": "17480653533926708009",
+  "lastModifiedTime": "2025-05-23T00:24:51.481506Z"
+}

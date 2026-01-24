@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Rubirosa",
+    "startTime": "2020-02-11T17:00:00Z",
+    "endTime": "2020-02-11T18:30:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 235 Mulberry Street, New York, US"
+  },
+  "uniqueId": "17057886107350688840",
+  "lastModifiedTime": "2020-02-05T23:07:01.347595Z"
+}

@@ -1,145 +1,161 @@
 ---
 created: 2026-01-19
-last_edited: 2026-01-19
-version: 2.0
-provenance: con_tS4hAxDAg1s9KSni
+last_edited: 2026-01-21
+version: 3.0
+provenance: con_FEudMIeup8B6jAvE
+document_type: internal_strategy
 ---
 
-# Internal Positioning: Careerspan as Matching/Assessment Layer
+# Internal Positioning: Careerspan as Matching / Assessment Layer
 
 ## Executive Summary
 
-**The hiring market has a $200B+ problem:** 46% of new hires fail within 18 months, and 90% of those failures are due to values, mindset, and soft skills mismatch—not technical competence. Yet the entire assessment industry ($3.5B) focuses on measuring aptitude.
+**Inbound is broken because the core artifact lost its signal.** The resume used to proxy for effort, communication, self-advocacy, and agency. In an AI-native market, that proxy collapses: polished artifacts are cheap, volume explodes, and teams hit an attentional speed limit on screening.
 
-**Careerspan is the solution:** A story-based assessment system that captures authentic behavioral signals through pro-candidate AI coaching. It extracts what traditional tools cannot measure—communication quality, self-awareness, growth mindset, follow-through—through 40+ minutes of genuine self-reflection that candidates won't game because it serves their interests too.
+**Careerspan replaces the broken channel with a higher-signal channel.** It gets candidates to do 40+ minutes of guided self-reflection (story capture) because the experience is framed as coaching, not evaluation. That yields two powerful outputs:
+1) **Richer, structured signal** (AISS stories + derived evidence) that is harder to fake over time than a static application.
+2) **Process signal** (follow-through, clarity, responsiveness) that becomes an early-funnel proxy for agency.
 
-**The wedge:** Candidates perform for assessments, but reveal to coaches. Careerspan's pro-candidate framing unlocks data quality that no adversarial assessment can match.
+**What this enables for an acquirer:**
+- **Faster triage and matching** when inbound floods: shortlist-quality information in hours, not days/weeks.
+- **More transparency** in why a candidate is recommended (traceable evidence from stories, not opaque keyword scoring).
+- **A high-signal, pre-selected pool**: the people who complete Careerspan skew disproportionately toward high agency and self-reflection.
 
----
-
-## The $200B Problem: Hiring is Broken at the Behavioral Layer
-
-### The Failure Rate is Catastrophic
-
-**46% of new hires fail within 18 months.**
-
-Of those failures, **90% are due to values, mindset, and soft skills mismatch**—not technical competence.
-
-Let that sink in. The industry spends billions on:
-- Aptitude tests (cognitive ability, technical skills)
-- Keyword-based resume screening
-- Video analysis of presentation style
-
-But 90% of failures come from something else entirely: behavioral fit, cultural alignment, self-awareness, growth mindset.
-
-**External hiring is essentially a coin flip.** And yet every tool in the market is optimized for the 10% of failures that come from technical incompetence.
-
-### The Economic Impact
-
-A bad hire at the mid-level costs 50-200% of annual salary when you factor in:
-- Recruiting costs (wasted)
-- Onboarding and training (wasted)
-- Lost productivity during ramp
-- Team disruption from turnover
-- Replacement search costs
-
-For a $100K role, that's $50K-$200K per bad hire. At a 46% failure rate, companies are hemorrhaging money on a problem the assessment industry isn't solving.
-
-### Why Existing Tools Fail
-
-| Tool Category | What It Measures | Why It Misses 90% of Failures |
-|---------------|------------------|-------------------------------|
-| **Cognitive tests** (SHL, Criteria) | Aptitude, problem-solving | Tells you nothing about values, mindset, or how someone works with others |
-| **Personality inventories** (DISC, MBTI) | Stated traits | Self-reported, easily gamed, no behavioral validation |
-| **Video analysis** (HireVue) | Presentation style | Surface-level; bias concerns; doesn't capture depth |
-| **Keyword matching** (ATS) | Resume content | Candidates game keywords; false positives everywhere |
-| **Reference checks** | Past manager opinions | Biased, liability-constrained, expensive |
-| **Behavioral interviews** | Actual behavioral signal | Expensive, inconsistent, happens too late in funnel |
-
-The only method that actually captures behavioral signal—structured behavioral interviews—is:
-- **Expensive:** $300-500+ in recruiter/interviewer time per candidate
-- **Inconsistent:** Quality depends on interviewer skill
-- **Late-funnel:** Happens after you've already invested in screening
-
-**The market needs behavioral signal earlier in the funnel, at scale, without human bottlenecks.**
-
-This is Careerspan's opportunity.
+**Critical honesty (per internal feedback):**
+- The *signal capture + candidate engagement* is demonstrable (4,000 signups; 1,500 activated; 35% completing 3+ stories; $0 marketing spend).
+- The *end-to-end “automatic matching at scale”* is the productization path. Ilse has validated the matching framework manually; scaling it into a hardened product surface is the next step.
 
 ---
 
-## The Careerspan Solution: Story-Based Behavioral Assessment
+## 1. The Core Problem: Inbound Collapsed Under Its Own Weight
 
-### The Core Insight
+### 1.1 The resume was a proxy — and the proxy broke
 
-**Candidates perform for assessments, but reveal to coaches.**
+Recruiters historically used resumes as a compressed signal bundle:
+- **Effort** (care taken, iteration)
+- **Communication** (clarity, structure)
+- **Self-advocacy** (ability to represent impact)
+- **Agency** (diligence correlates with agency)
 
-Every traditional assessment is adversarial. The company is evaluating you. Of course you optimize for appearance over truth.
+In other words: **the artifact wasn’t just reporting signal — it *was* a meaningful part of the signal.**
 
-Careerspan flips this dynamic. The AI is a career coach helping you articulate your value. Candidates engage authentically because:
-- They want to discover their own stories
-- The output (refined stories) benefits them directly
-- The interaction feels supportive, not evaluative
+In the AI-native market, that entire mechanism degrades:
+- **Artifacts are cheap** → “polish” no longer implies effort or agency
+- **Volume spikes** → inbound becomes a denial-of-service problem
+- **Screening bottlenecks** → teams hit an attentional speed limit
 
-**This is the data quality breakthrough.** Same information, totally different incentive structure, radically better signal.
+Result: **Most inbound funnels are now high volume + low trust.** You can’t scale decision-quality hiring by reading more resumes.
 
-### How It Works
+### 1.2 The business consequence: time-to-hire explodes, quality collapses
 
-1. **Story Extraction:** The AI coach guides candidates through 3+ career stories, using the AISS framework (Action, Impact, Scale, Skill) to probe for specifics.
+When inbound is noise:
+- Screening time expands (or becomes random)
+- Top candidates get lost (false negatives)
+- Teams over-index on shallow heuristics (pedigree, keyword proximity)
+- Hiring slows down at the exact moment companies need to move faster
 
-2. **Depth Probing:** Vague answers get follow-up questions. "You led the project" → Who else was on the team? What was your specific contribution? How did you handle disagreement?
-
-3. **Behavioral Signal Extraction:** The system analyzes:
-   - Communication quality (clarity, structure, precision)
-   - Self-awareness (acknowledges limitations, gives credit to others)
-   - Growth mindset (how they frame failures and challenges)
-   - Response to feedback (how they engage with AI probing)
-   - Follow-through signals (concrete impact metrics vs. hand-wavy contributions)
-
-4. **Structured Output:** Stories decompose into AISS components, enabling apples-to-apples candidate comparison.
-
-5. **Competency Matching:** Stories map to role-specific competencies using semantic understanding, not keyword matching.
-
-### The Experience Paradox
-
-This is Careerspan's secret weapon: **It feels human and intuitive (like working with a coach), yet produces highly detailed, structured HR-grade data.**
-
-Traditional assessment tools choose between:
-- **Detailed but clinical:** Structured tests that feel like bureaucratic hoop-jumping
-- **Human but unstructured:** Coaching that produces qualitative insights hard to compare
-
-Careerspan delivers both. Users describe it as engaging and valuable for their own development—but under the hood, it's generating structured behavioral profiles comparable across candidates.
+Acquirers in ATS / Talent CRM / matching tech all share the same pain: **they are asked to automate a broken input.**
 
 ---
 
-## Five Competitive Advantages
+## 2. The Careerspan Solution: A New Signal Channel + Transparent Evidence
 
-### 1. Captures the 90%
+### 2.1 The wedge: candidates perform for assessments, but reveal to coaches
 
-Traditional assessments focus on technical competence—the 10% of failures. Careerspan captures values, mindset, and soft skills—the 90%.
+Most “assessment” dynamics are adversarial: candidates optimize for appearance.
 
-**What story-based assessment surfaces:**
-- **Self-awareness:** Do they acknowledge limitations? Give credit to others?
-- **Growth mindset:** How do they talk about failures and challenges?
-- **Communication quality:** Can they articulate clearly? Structure a narrative?
-- **Follow-through:** Stories with measurable impact vs. vague contributions
-- **Response to feedback:** How do they engage when the AI probes deeper?
-- **Pattern recognition:** What themes emerge across multiple career stories?
+Careerspan flips incentives by behaving like a coach:
+- The candidate gets immediate value (clarity, better stories, better positioning)
+- The interaction feels human and supportive
+- The system probes until specifics emerge
 
-None of this shows up in a cognitive test or personality inventory.
+This yields *higher-quality truthfulness* than the standard application/assessment funnel.
 
-### 2. Behavioral Signal From Process Data
+### 2.2 What Careerspan produces (and why it’s better for matching)
 
-**35% of activated users complete 3+ stories.** That's 40+ minutes of deep self-reflection.
+**Inputs:** 3+ career stories captured through guided conversation.
 
-What does completing 3 stories tell you about a candidate?
-- They follow through on commitments (completed a non-trivial task)
-- They're capable of sustained self-reflection (rare skill)
-- They value self-improvement (proactive investment)
-- They can engage productively with AI tools (increasingly important)
+**Outputs:**
+- **AISS stories** (Action–Impact–Scale–Skill) with concrete detail
+- **Derived evidence** (what the candidate actually did, how they reason, how they communicate)
+- **Competency mapping** (semantic, not keyword)
+- **Process signal** (follow-through, responsiveness, clarity under probing)
 
-This is **process data as signal**—a layer of assessment that traditional tools completely miss. The act of completing Careerspan is itself informative.
+**Transparency advantage:**
+Instead of “the model says this candidate is a fit,” Careerspan can show:
+- which story supports which competency
+- what evidence led to the conclusion
+- where the candidate is strong vs. unproven
 
-### 3. Catches Spin Through Depth
+That transparency matters disproportionately for acquirers because it:
+- reduces risk of black-box matching backlash
+- helps recruiters trust the system
+- makes audits/explanations possible
+
+---
+
+## 3. Why This Works Now (and Didn’t Before)
+
+### 3.1 The new artifact restores the lost proxy
+
+If the resume used to proxy for agency/effort, Careerspan restores that proxy in a more honest way:
+- Completing 3 stories is **non-trivial effort**
+- Sustained self-reflection is a **rare, valuable trait**
+- Engagement under probing reveals **communication + thinking quality**
+
+**Selection bias becomes a feature:** the people who complete Careerspan skew high-agency by construction.
+
+### 3.2 Speed: shortlist-quality signal in hours
+
+Because the signal is structured and comparable, a platform can:
+- generate a shortlist quickly once a role is defined
+- avoid multi-day resume screening cycles
+- reduce time-to-hire in inbound-heavy funnels
+
+This is especially valuable for:
+- high-growth teams
+- high-volume roles
+- platforms whose customers demand faster fill times
+
+---
+
+## 4. Competitive Advantages (Reframed without the old stat)
+
+### 4.1 Early-funnel signal without human bottlenecks
+
+Behavioral interviews produce signal but don’t scale.
+
+Careerspan captures comparable depth **before** humans invest time, because the “coach” is AI.
+
+### 4.2 Harder to game than static artifacts
+
+You can prompt-engineer a resume.
+
+It’s substantially harder to maintain a fake persona across:
+- multiple stories
+- probing follow-ups
+- consistency checks
+- concrete detail requirements (impact/scale)
+
+### 4.3 Traceable matching, not opaque scoring
+
+Careerspan’s best positioning is not “we have the best model,” but:
+- **we have the best input channel**
+- and we can show our work (evidence-to-competency)
+
+### 4.4 The matching framework is validated; scaling it is productization
+
+**Validated:** Ilse has tested manual matching using role decomposition + story-to-competency mapping with high accuracy.
+
+**Productization path:**
+1) Role decomposition templates
+2) Competency taxonomy + weighting
+3) Evidence extraction + scoring rubrics
+4) Recruiter-facing UI for transparency + overrides
+
+This keeps us honest: we’re not claiming magic; we’re claiming a defensible system built on better signal.
+
+### 4. Catches Spin Through Depth
 
 "But it's self-reported—candidates will still spin."
 
@@ -151,242 +167,89 @@ Three mechanisms catch spin:
 
 **Structural analysis.** The AISS framework demands concrete details—impact metrics, scale numbers, specific actions. Stories without specifics flag as weaker signals.
 
-You can game a 5-point scale. You can't sustain a false persona across 40 minutes of probing questions about real experiences.
-
-### 4. Real Matching, Not Keyword Matching
-
-Current state: ATS matches keywords in resumes to keywords in job descriptions. Candidates game keywords. Recruiters drown in false positives.
-
-Careerspan's approach:
-1. **Decompose the role** into component competencies (actual capabilities, not keywords)
-2. **Map candidate stories** to competencies using semantic understanding
-3. **Surface gaps** where the role requires X but candidate has no stories demonstrating X
-4. **Rank by fit** using weighted competency matching
-
-**Validation:** Ilse (CTO) has tested manual matching using this framework with high accuracy. The tech works—it's a matter of productizing.
-
-### 5. Scales Where Alternatives Don't
-
-| Method | Cost Per Candidate | Scales? |
-|--------|-------------------|---------|
-| Behavioral interviews | $300-500+ (interviewer time) | No |
-| Reference checks | $50-200+ (time + vendor) | Somewhat |
-| Career coaching | $200-500/hour | No |
-| **Careerspan** | SaaS pricing (~$20-50) | Yes |
-
-The AI handles the coaching interaction. No human in the loop. 4,000 users have already gone through the system with zero incremental human cost.
-
-This is the only method that provides behavioral signal at the top of the funnel, at scale, without human bottlenecks.
+> Note: We don’t claim to identify *which* tool wrote a response. Instead, the interaction is designed so that generic, copy/pasted fluff (AI-written or not) performs poorly: specificity, cross-story consistency, and the ability to handle probing follow-ups are what score well.
 
 ---
 
-## Proof Points
+## 5. Proof Points (What we can say confidently)
 
-### Traction Metrics
+### Engagement / “New artifact” proof
 
-| Metric | Value | Why It Matters |
-|--------|-------|----------------|
-| Total signups | 4,000 | Market validation |
-| Activated users | 1,500 | Deep engagement, not just curiosity |
-| Avg. stories per activated user | 2 | ~40 min of reflection each |
-| Users with 3+ stories | 35% | Exceptional retention/commitment signal |
-| Marketing spend | $0 | All organic—strong product-market fit signal |
+- Total signups: **4,000**
+- Activated users: **1,500**
+- Users with 3+ stories: **35%**
+- Marketing spend: **$0**
 
-### Credibility Signals
+Interpretation:
+- People will do deep self-reflection when the tool serves them.
+- The resulting dataset is not resume-shaped; it’s conversation-shaped.
 
-**Institutional Partners:**
-- Peace Corps
-- Emory University
-- Columbia University
-- humanUPtions
+### Credibility signals
 
-**Strategic Partnership:**
-- **Marvin Ventures** (McKinsey's alumni-run venture fund) — Careerspan is the official sourcing partner
-- This relationship validates the matching capability for high-caliber talent
+**Institutional partners:** Peace Corps, Emory University, Columbia University, humanUPtions
 
-### Technical Capability
-
-- **Multi-agent AI architecture:** Specialized agents for different coaching tasks
-- **AISS Framework:** Proprietary structure for extracting and comparing career narratives
-- **Semantic matching:** Beyond keywords—actual competency mapping
-- **Role decomposition:** Breaks roles into mappable skill components
-
-### Team
-
-- **V (Founder):** 10+ years career coaching → deep domain expertise on what signals predict success
-- **Logan:** Harvard Ed School, Project on Workforce → academic rigor, workforce research expertise
-- **Ilse (CTO):** Technical execution, validated matching approach
+**Strategic partnership:** Marvin Ventures (official sourcing partner)
 
 ---
 
-## Target Acquirers
+## 6. Target Acquirers (and the “why now” angle)
 
-### Tier 1: ATS Platforms Seeking Differentiation
+### Tier 1: ATS / Talent Platforms (own the funnel, suffer the inbound collapse)
 
-**Greenhouse / Lever / Ashby**
+**Greenhouse / Lever / Ashby / iCIMS / SmartRecruiters**
 
-*Why they'd care:*
-- The modern ATS is commoditizing. AI features are table stakes.
-- A proprietary assessment layer that actually predicts quality-of-hire would be a major differentiator.
-- Careerspan's pro-candidate approach aligns with their brand positioning.
+- Their customers are asking for “AI matching,” but the input medium is broken.
+- Careerspan gives them a differentiated matching layer built on a new input channel.
 
-*Integration angle:*
-- Careerspan as "candidate prep" that generates structured behavioral profiles
-- Better matches → faster screening → reduced bad hires
-- Unique capability competitors can't easily replicate
+**Pitch:**
+> “Inbound is broken because resumes lost their signal. We create a higher-signal channel and a transparent matching layer that reduces screening load and improves time-to-hire.”
 
-*The pitch:* "46% of hires fail due to behavioral mismatch. Your ATS screens for keywords. We screen for the signals that actually predict success."
+### Tier 2: Matching / Assessment companies (need defensible signal)
 
-**iCIMS / SmartRecruiters**
+They can add models, but without changing the input, they’re optimizing noise.
 
-*Why they'd care:*
-- Enterprise buyers demand AI capabilities
-- Need to match Workday's AI roadmap
-- High-volume hiring means even small quality-of-hire improvements have massive ROI
+**Pitch:**
+> “We’re not another test. We’re a coaching-first channel that reliably produces structured evidence. Add this to your suite and you finally have a signal source worth matching on.”
 
-*Integration angle:*
-- Enterprise assessment module for high-volume roles
-- Behavioral signal helps triage 10,000-applicant funnels
-- Premium feature for enterprise tier
+### Tier 3: Staffing / RPO / high-volume operators (speed as the wedge)
 
-### Tier 2: Assessment Companies Needing Behavioral Capability
+They live and die by fill speed and candidate throughput.
 
-**Criteria Corp / SHL / Pymetrics**
-
-*Why they'd care:*
-- Traditional assessments face a ceiling—cognitive tests are commoditizing
-- The 90% stat is damning: aptitude testing misses most failure modes
-- Story-based behavioral assessment is the obvious next frontier—but they lack the tech
-
-*Acquisition thesis:*
-- Buy the capability rather than build (2-3 year head start)
-- Careerspan's AISS framework + multi-agent architecture is defensible
-- Defensive: if a competitor acquires this first, it becomes a threat
-
-*The pitch:* "Your tests predict the 10% of failures from technical incompetence. We capture the 90% that comes from behavioral mismatch."
-
-**HireVue**
-
-*Why they'd care:*
-- Video assessment faces bias backlash and regulatory pressure
-- Story-based assessment is more defensible and candidate-friendly
-- Diversifies their approach to behavioral signal
-
-*Integration angle:*
-- Replace or augment video analysis with story-based profiling
-- Better PR story: "We help candidates tell their stories" vs. "We analyze your facial expressions"
-
-**Predictive Index**
-
-*Why they'd care:*
-- PI's behavioral assessments are all self-reported inventories
-- Story-based assessment validates claimed traits with actual behavior
-- "You say you're collaborative—show me the story"
-
-*Integration angle:*
-- Verification layer for PI's existing assessments
-- Premium add-on that strengthens the core product
-
-### Tier 3: Emerging AI HR Platforms
-
-**Paradox / Phenom / Beamery**
-
-*Why they'd care:*
-- Building full-stack hiring solutions—assessment is a missing piece
-- Proprietary AI capability is strategic moat
-- V's domain expertise (10+ years coaching) is hard to replicate
-
-*Strategic value:*
-- Differentiated AI capability (multi-agent architecture)
-- Proven UX (40-min engagement is exceptional)
-- Team expertise + tech as package
+**Pitch:**
+> “Shortlist-quality signal in hours. Higher trust in recommendations because the evidence is visible.”
 
 ---
 
-## Objections & Rebuttals
+## 7. Objections & Rebuttals (updated)
 
-### "The assessment market is crowded"
+### Objection: “This is still self-reported.”
 
-**The crowded part is aptitude testing.** Cognitive tests, personality inventories, skills assessments—these are commoditizing.
+**Rebuttal:** Yes — but the *mechanism* matters.
+- The candidate is incentivized to be real because the tool helps them.
+- Probing + multi-story consistency forces specificity.
+- The process itself produces signal (follow-through, clarity, responsiveness).
 
-Story-based behavioral assessment is a blue ocean. No one has cracked authentic qualitative signal at scale. Traditional assessment companies lack the AI sophistication. AI companies lack the coaching domain expertise.
+### Objection: “Do you have proven quality-of-hire lift?”
 
-Careerspan sits at the intersection.
+**Rebuttal:** Not yet longitudinally. The honest claim is:
+- We have a proven engagement mechanism that produces richer evidence than resumes.
+- We have validated matching methodology.
+- An acquirer can run the study faster with their existing funnel volume.
 
-### "Story-based assessment can't scale"
+### Objection: “Why can’t we just add this as a feature?”
 
-It already has. 4,000 users with zero incremental human cost.
-
-The AI handles the entire coaching interaction. Unlike behavioral interviews ($300-500+ each) or reference checks (human time), Careerspan scales like any SaaS product.
-
-### "The data is still self-reported"
-
-Yes, but with radically different incentives and validation mechanisms.
-
-**Incentives:** Candidates have no reason to game a tool that's helping them. They're not being evaluated—they're being coached. The authentic engagement shows up in the data quality.
-
-**Validation:** Depth probing, cross-story consistency, and structural analysis catch spin. You can lie on a 5-point scale. You can't sustain a false narrative across 40 minutes of follow-up questions.
-
-### "This is a feature, not a company"
-
-Fair concern. Counterpoints:
-
-1. **The UX is the hard part.** Getting candidates to do 40 minutes of genuine reflection is a major achievement. Assessment companies can't just bolt on "story collection" and get the same engagement—the pro-candidate framing and coaching approach is essential.
-
-2. **AISS + multi-agent architecture is defensible tech.** The framework for extracting, analyzing, and matching career stories has been refined through 1,500 activated users.
-
-3. **Domain expertise compounds.** V's 10 years of career coaching informs how the AI probes. This isn't easily replicated by a team without coaching background.
-
-That said—this objection is exactly why acqui-hire may be the optimal outcome. The team + tech is more valuable integrated into a platform than standalone.
-
-### "No proven quality-of-hire correlation"
-
-True. We don't have longitudinal data showing Careerspan-screened candidates outperform others.
-
-What we have:
-- **The 46%/90% stat:** Most failures are behavioral, and we capture behavioral signal
-- **Manual matching validation:** Ilse tested; high accuracy
-- **Process signal:** Completion rates correlate with traits employers want
-- **Framework ready for validation:** AISS structure enables future studies
-
-The honest pitch to an acquirer: "The hypothesis is strong. You'd need to run the study. But given that 90% of failures are behavioral, and we're the only tool capturing behavioral signal at scale, the bet makes sense."
-
----
-
-## The Strategic Narrative
-
-### For ATS Acquirers
-
-"Your ATS is a workflow tool. Everyone has one. The differentiation now is in AI that actually improves outcomes.
-
-46% of hires fail within 18 months. 90% of those failures are behavioral—values, mindset, soft skills. Your keyword matching can't detect any of that.
-
-Careerspan captures behavioral signal at scale. We've cracked getting candidates to do 40 minutes of genuine self-reflection—because we positioned it as coaching, not evaluation. That data predicts success better than any aptitude test.
-
-Integrate us, and you're no longer 'another ATS.' You're the platform that actually reduces bad hires."
-
-### For Assessment Acquirers
-
-"Your tests measure aptitude. But 90% of hire failures come from behavioral mismatch—values, mindset, soft skills. Your tests miss it entirely.
-
-Careerspan fills the gap. Story-based assessment captures what self-reported inventories can't: how someone actually thinks, communicates, responds to challenge. And because we positioned it as career coaching, candidates engage authentically.
-
-This is the capability gap in your product line. Buy us, and you own the behavioral assessment layer that completes the picture."
-
-### The One-Liner
-
-**"We capture the 90% that aptitude tests miss."**
+**Rebuttal:** The hard part is not “collect stories.” The hard part is:
+- candidate incentives (coaching-first)
+- sustained engagement (40+ minutes)
+- structured decomposition (AISS)
+- evidence-to-competency traceability
 
 ---
 
 ## Summary
 
-**The problem:** 46% of new hires fail within 18 months. 90% of failures are behavioral (values, mindset, soft skills)—not technical. The entire $3.5B assessment industry focuses on the 10%.
+Inbound hiring collapsed because the resume stopped functioning as a proxy for effort, communication, and agency — and volume exceeded human screening capacity.
 
-**The solution:** Careerspan's story-based assessment captures authentic behavioral signals through pro-candidate AI coaching. Candidates reveal to coaches; they perform for assessments. This inverted dynamic produces data quality traditional tools can't match.
+Careerspan restores signal by creating a new artifact (guided story capture) that candidates willingly complete because it serves them. That produces structured, traceable evidence that enables transparent matching and faster shortlisting.
 
-**The proof:** 4,000 signups (zero marketing spend), 35% completing 3+ stories (40 min engagement), institutional partnerships (Peace Corps, Emory, Columbia), strategic validation (Marvin Ventures).
-
-**The ask:** An acquirer who needs behavioral assessment capability—either ATS platforms seeking differentiation (Greenhouse, Lever, Ashby) or assessment companies filling a product gap (Criteria, HireVue, PI).
-
-**The pitch:** "Hiring is a coin flip because you're measuring the wrong things. We measure what actually predicts success. Here's the team and tech to integrate it into your platform."
+For an acquirer, this is a way to stop “AI matching” from being lipstick on a broken funnel — and instead own a differentiated input channel + matching layer that customers can trust.

@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Savelli",
+    "startTime": "2024-07-06T22:30:00Z",
+    "endTime": "2024-07-07T00:30:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 195 Smith Street, New York, US"
+  },
+  "uniqueId": "17936507724562260141",
+  "lastModifiedTime": "2024-07-06T21:25:19.863581Z"
+}
