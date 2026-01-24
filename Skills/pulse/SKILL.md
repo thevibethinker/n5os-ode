@@ -51,6 +51,146 @@ python3 Skills/pulse/scripts/pulse.py resume <slug>
 python3 Skills/pulse/scripts/pulse.py finalize <slug>
 ```
 
+## Sentinel Setup
+
+Pulse requires a **Sentinel** scheduled agent to monitor builds and text on meaningful events.
+
+**Create Sentinel at build start:**
+```
+RRULE: FREQ=MINUTELY;INTERVAL=3;COUNT=120
+Delivery: sms
+
+Instruction:
+Pulse Sentinel for build: <slug>
+
+1. Run: python3 Skills/pulse/scripts/pulse.py status <slug>
+2. Check for:
+   - New completions → Text: "[PULSE] D#.# complete. Progress: X/16"
+   - Dead drops (>15 min running) → Text: "[PULSE] D#.# may be dead (>15min). Reply 'retry' or 'skip'"
+   - Build complete → Text: "[PULSE] Build <slug> COMPLETE" then delete yourself
+3. If no changes, stay silent
+
+Build folder: N5/builds/<slug>/
+```
+
+**Delete Sentinel when done:**
+After build completes, delete the Sentinel agent to stop polling.
+
+**Note:** Sentinel creation requires the Zo agent API (create_agent tool), which is only available in interactive/scheduled contexts — not from Python scripts. The LLM orchestrating the build must create the Sentinel.
+
+## Pulse v2 Features
+
+### Task Queue
+- Multi-channel intake: `n5 task <description>` via SMS, email "Task: X", or chat
+- Task types: code_build, research, content, analysis, hybrid
+- Commands: `python3 N5/pulse/queue_manager.py add|list|prioritize|advance|next`
+
+### Interview System
+- Fragment-based async collection
+- Multi-channel aggregation (SMS + email + chat)
+- JSONL storage: `N5/pulse/interviews/<task-id>/fragments.jsonl`
+- Seeded judgment with LLM evaluation
+- Commands: `python3 N5/pulse/interview_manager.py start|add|status|seed`
+
+### Plan Review
+- Auto-sync to Google Drive: `Zo/Pulse Builds/<slug>/`
+- SMS notification with shareable link
+- Approval flow: "go" to build, "revise: X" for feedback
+- Commands: `python3 N5/pulse/plan_sync.py sync|notify|approve`
+
+### Tidying Swarm
+- 5 hygiene Drops post-build:
+  - Artifact verification
+  - Dead code detection
+  - Import cleanup
+  - Documentation gaps
+  - Test coverage check
+- Auto-fix for safe issues
+- Escalation for ambiguous findings
+
+### Telemetry
+- Persona + model attribution on all events
+- Requirements tracking during builds
+- Feedback → learnings pipeline
+- Commands: `python3 N5/pulse/telemetry_manager.py log|query|export`
+- Requirements: `python3 N5/pulse/requirements_tracker.py capture|list|export`
+
+## v2 Lifecycle
+
+```
+pending → interviewing → seeded → planning → plan_review → building → tidying → complete
+```
+
+### Stage Transitions
+
+| From | To | Trigger |
+|------|----|---------|
+| pending | interviewing | Task intake via any channel |
+| interviewing | seeded | LLM judges ≥0.8 confidence |
+| seeded | planning | `pulse.py plan <task>` |
+| planning | plan_review | `plan_sync.py sync <slug>` |
+| plan_review | building | V responds "go" |
+| building | tidying | All Drops complete |
+| tidying | complete | Health score ≥0.9 or V approves |
+
+### v2 Lifecycle Diagram
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ 1. INTAKE (multi-channel)                                   │
+│    - SMS: "n5 task <description>"                           │
+│    - Email: Subject starts with "Task:"                     │
+│    - Chat: Direct request                                   │
+│    → Creates task in queue_manager.py                       │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 2. INTERVIEW (async, fragment-based)                        │
+│    - Zo asks clarifying questions via same channel          │
+│    - Fragments stored in interviews/<task-id>/              │
+│    - LLM evaluates completeness (seeded judgment)           │
+│    - Exits when confidence ≥0.8                             │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 3. PLANNING (Architect creates PLAN.md)                     │
+│    - Decompose into Streams/Drops                           │
+│    - Generate meta.json + drop briefs                       │
+│    - MECE validation on worker scopes                       │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 4. PLAN REVIEW (human-in-the-loop)                          │
+│    - Sync to Google Drive: Zo/Pulse Builds/<slug>/          │
+│    - SMS V with review link                                 │
+│    - Wait for "go" or "revise: <feedback>"                  │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 5. BUILD (automated orchestration)                          │
+│    - Create git snapshot (safety)                           │
+│    - Inject system learnings into briefs                    │
+│    - Spawn Drops via /zo/ask                                │
+│    - Tick loop: monitor, filter, escalate                   │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 6. TIDYING (automated hygiene)                              │
+│    - Spawn 5 tidying Drops                                  │
+│    - Auto-fix safe issues                                   │
+│    - Escalate ambiguous findings                            │
+│    - Calculate health score                                 │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────┐
+│ 7. FINALIZE                                                 │
+│    - Verify all artifacts exist                             │
+│    - Run integration tests                                  │
+│    - Harvest learnings from deposits                        │
+│    - SMS: Finalization result                               │
+└─────────────────────────────────────────────────────────────┘
+```
+
 ## Build Folder Structure
 
 ```
@@ -82,50 +222,16 @@ N5/builds/<slug>/
 | `pulse_learnings.py` | Capture/propagate learnings (build + system) |
 | `pulse_integration_test.py` | Post-build integration tests |
 
-## Lifecycle
+### v2 Scripts (in N5/pulse/)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│ 1. INTERVIEW (pulse-interview skill)                        │
-│    - Extract scope, constraints, risks                      │
-│    - Decompose into Streams/Drops                           │
-│    - Generate meta.json + drop briefs                       │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 2. START (pulse.py start <slug>)                            │
-│    - Create git snapshot (safety)                           │
-│    - Inject system learnings into briefs                    │
-│    - SMS: Build started                                     │
-│    - Spawn Stream 1 Drops                                   │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 3. TICK LOOP (sentinel or manual)                           │
-│    Every 3 minutes:                                         │
-│    - Check for deposits                                     │
-│    - Run Filter on new deposits                             │
-│    - Detect dead Drops (>15 min)                            │
-│    - Spawn Dredge for forensics                             │
-│    - Advance Stream if complete                             │
-│    - Spawn ready Drops                                      │
-│    - SMS escalation on failures/deaths                      │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 4. COMPLETE                                                 │
-│    - All Drops terminal (complete/failed/dead)              │
-│    - SMS: Build complete/partial                            │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 5. FINALIZE (pulse.py finalize <slug>)                      │
-│    - Verify all artifacts exist                             │
-│    - Run integration tests                                  │
-│    - Harvest learnings from deposits                        │
-│    - SMS: Finalization result                               │
-└─────────────────────────────────────────────────────────────┘
-```
+| Script | Purpose |
+|--------|---------|
+| `queue_manager.py` | Task queue CRUD operations |
+| `interview_manager.py` | Async interview orchestration |
+| `plan_sync.py` | Google Drive sync + approval flow |
+| `sms_intake.py` | SMS command routing |
+| `telemetry_manager.py` | Event logging with attribution |
+| `requirements_tracker.py` | Capture V's requirements/preferences |
 
 ## SMS Commands
 
@@ -134,6 +240,7 @@ Text these to control Pulse:
 - `pulse done` — Mark builds complete, delete Sentinel
 - `pulse pause` — Pause ticking (agent stays alive)
 - `pulse resume` — Resume ticking
+- `n5 task <description>` — Add task to queue (v2)
 
 ## meta.json Structure
 
@@ -242,3 +349,4 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 - `file 'N5/learnings/SYSTEM_LEARNINGS.json'` — System-wide learnings
 - `file 'N5/config/pulse_control.json'` — Sentinel control state
 - `file 'Documents/System/Build-Orchestrator-System.md'` — Legacy manual system
+- `file 'N5/pulse/'` — v2 scripts directory

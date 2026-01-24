@@ -1,0 +1,128 @@
+{
+  "slug": "pulse-v2",
+  "learnings": [
+    {
+      "text": "D0.1 discovered validators were ALREADY wired into tick loop from prior build - verify existing implementation before scoping new work",
+      "source": "manual",
+      "added_at": "2026-01-24T21:54:18.787359+00:00",
+      "tags": [
+        "build-planning",
+        "duplicate-work"
+      ]
+    },
+    {
+      "text": "D0.1 Foundation created ALL D1.1 deliverables proactively. D1.1 became verification-only. Plan wave independence more carefully.",
+      "source": "D1.1",
+      "added_at": "2026-01-24T22:02:36.880933+00:00",
+      "tags": [
+        "build-planning",
+        "wave-overlap"
+      ]
+    },
+    {
+      "text": "[D1.1] Queue + Config also found work already complete - queue_manager.py and pulse_v2_config.json existed with MORE functionality than brief spec. Pattern: Prior builds completed significant Pulse v2 infrastructure. Remaining Drops should CHECK EXISTING FILES before implementing.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:02:58.093297+00:00",
+      "tags": []
+    },
+    {
+      "text": "D0.1 Foundation scope was too broad - created all D1.1 deliverables proactively. Future builds: ensure wave independence by explicit scope boundaries. Workers should CHECK EXISTING before implementing.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:05:18.286111+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.2 interview_manager.py was already fully implemented and tested. All features (CRUD, JSONL storage, synthesis, seeded marking) work correctly. The existing implementation includes bonus features: list-all interviews, delete with --force protection, robust error handling, and auto-creation on add_fragment.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:07:18.850473+00:00",
+      "tags": []
+    },
+    {
+      "text": "Lesson injection script broke YAML frontmatter by inserting between --- markers. Fixed: lesson block must go AFTER complete frontmatter, not inside it.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:10:56.139287+00:00",
+      "tags": []
+    },
+    {
+      "text": "LLM API call to Zo Computer API timed out during seeded_judge test (120s timeout). Consider using heuristic fallback by default and shorter timeouts (30-60s) for production availability checks. Graceful degradation is working correctly.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:12:41.368981+00:00",
+      "tags": []
+    },
+    {
+      "text": "Sentinel must be created at build start and persist throughout. It externally observes workers, texts on completion or 15-min timeout. Workers should NOT self-report - separation of concerns.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:12:52.582604+00:00",
+      "tags": []
+    },
+    {
+      "text": "Sentinel should CHECK every N minutes but only TEXT when: (1) status change (drop complete), (2) 12-min warning, (3) 15-min dead + action prompt. Delivery method on agent is for final result, use send_sms_to_user tool for conditional notifications.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:15:06.700299+00:00",
+      "tags": []
+    },
+    {
+      "text": "google_drive-add-file-sharing-preference API returns 'permission role field required' error - use webViewLink for shareable access instead (D3.2)",
+      "source": "manual",
+      "added_at": "2026-01-24T22:22:58.742079+00:00",
+      "tags": [
+        "drive-api,sharing"
+      ]
+    },
+    {
+      "text": "D3.1 plan_generator.py queue advance was using invalid status 'planned' - must be 'planning' per queue_manager valid_statuses",
+      "source": "manual",
+      "added_at": "2026-01-24T22:23:54.509398+00:00",
+      "tags": [
+        "queue-status"
+      ]
+    },
+    {
+      "text": "pulse_integration_test.py already exists with full test runner functionality (http, file_exists, command, service_running, file_contains) - no need to reimplement for D4.1",
+      "source": "manual",
+      "added_at": "2026-01-24T22:35:29.825841+00:00",
+      "tags": []
+    },
+    {
+      "text": "Tidying templates use template_type: hygiene_check and priority: N (1-5) in frontmatter. D4.2 can iterate these in priority order. Templates are reports, not Drop briefs.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:35:34.600151+00:00",
+      "tags": [
+        "D4.1"
+      ]
+    },
+    {
+      "text": "Tidying swarm configuration (tidying_swarm.enabled, tidying_swarm.auto_fix_threshold) already existed in pulse_v2_config.json. D4.2 consumed existing config rather than creating new one. Pattern: check config files early.",
+      "source": "D4.2",
+      "added_at": "2026-01-24T22:41:46.351721+00:00",
+      "tags": [
+        "config",
+        "tidying"
+      ]
+    },
+    {
+      "text": "D5.3 depends on D5.1/D5.2 for telemetry_manager.py and requirements_tracker.py scripts - persona updates reference scripts that don't exist yet. Consider dependency ordering in future builds.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:50:31.478300+00:00",
+      "tags": []
+    },
+    {
+      "text": "D6.2 Lesson: VibeTeacher modules were partially implemented by D6.1 (glossary.json existed), but Python modules (moment_generator.py, teaching_manager.py, build_review.py) were missing. D6.2 implemented these modules and wired them into review_manager.py and feedback_extractor.py.",
+      "source": "manual",
+      "added_at": "2026-01-24T23:02:01.146376+00:00",
+      "tags": []
+    },
+    {
+      "text": {
+        "text": "D0.1 Foundation created ALL D1.1 deliverables proactively. D1.1 became verification-only. Plan wave independence more carefully.",
+        "tags": [
+          "build-planning",
+          "wave-overlap"
+        ]
+      },
+      "source": "Drop:D1.1",
+      "added_at": "2026-01-24T23:02:10.810291+00:00",
+      "tags": []
+    }
+  ]
+}
