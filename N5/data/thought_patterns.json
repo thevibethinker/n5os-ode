@@ -1,94 +1,53 @@
 {
-  "analysis_date": "2026-01-19T13:08:19.951551+00:00",
-  "total_ideas_analyzed": 159,
-  "total_meetings": 40,
+  "analysis_date": "2026-01-24T13:07:02.865176+00:00",
+  "total_ideas_analyzed": 140,
+  "total_meetings": 33,
   "recurring_themes": [
     {
       "theme": "uncategorized",
       "meeting_count": 22,
-      "idea_count": 55,
+      "idea_count": 61,
       "recent_examples": [
         {
-          "title": "Some markets may resist efficiency improvements no...",
-          "idea": "Some markets may resist efficiency improvements not from ignorance but from economic rationality",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
+          "title": "Process additions (volunteer flow)",
+          "idea": "Process additions (volunteer flow)",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "\"Premium\" in service industries may partly be payi...",
-          "idea": "\"Premium\" in service industries may partly be paying for intentional inefficiency",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
+          "title": "Role redistribution (Anna to Vrijen)",
+          "idea": "Role redistribution (Anna to Vrijen)",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "The therapy market may be more receptive to schedu...",
-          "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
+          "title": "Tool consolidation (Luma)",
+          "idea": "Tool consolidation (Luma)",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "Market timing may be less about when you start and...",
-          "idea": "Market timing may be less about when you start and more about execution velocity",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
+          "title": "Venue knowledge transfer",
+          "idea": "Venue knowledge transfer",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "The \"first mover advantage\" may be a myth in AI-ac...",
-          "idea": "The \"first mover advantage\" may be a myth in AI-accelerated spaces",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
+          "title": "What integrity actually is (not a constraint but a...",
+          "idea": "What integrity actually is (not a constraint but a value floor)",
+          "meeting": "2026-01-21_Zain-x-Vrijen-Attawar",
+          "date": "2026-01-21"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-22",
-        "latest": "2026-01-16"
-      }
-    },
-    {
-      "theme": "recruiting_future",
-      "meeting_count": 20,
-      "idea_count": 47,
-      "recent_examples": [
-        {
-          "title": "\"General Purpose Tech\" as Double-Edged Sword",
-          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
-          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
-          "date": "2026-01-15"
-        },
-        {
-          "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
-          "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
-          "meeting": "2026-01-15_chat",
-          "date": "2026-01-15"
-        },
-        {
-          "title": "Exit Type as Portfolio, Not Binary",
-          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
-          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "Temperature vs. Distance",
-          "idea": "**The Idea:** Relationship value has two distinct dimensions: proximity (how many degrees removed) and temperature (how recently/intensely engaged). These correlate but aren't the same — a first-degre...",
-          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "Implies geographic/institutional monopoly on talen...",
-          "idea": "Implies geographic/institutional monopoly on talent pipelines",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-          "date": "2026-01-09"
-        }
-      ],
-      "date_range": {
-        "earliest": "2025-12-22",
-        "latest": "2026-01-15"
+        "earliest": "2025-12-26",
+        "latest": "2026-01-23"
       }
     },
     {
       "theme": "product_strategy",
-      "meeting_count": 18,
-      "idea_count": 30,
+      "meeting_count": 17,
+      "idea_count": 29,
       "recent_examples": [
         {
           "title": "Scheduling automation companies may inadvertently ...",
@@ -122,14 +81,14 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-22",
+        "earliest": "2025-12-26",
         "latest": "2026-01-16"
       }
     },
     {
       "theme": "personal_growth",
-      "meeting_count": 14,
-      "idea_count": 21,
+      "meeting_count": 12,
+      "idea_count": 17,
       "recent_examples": [
         {
           "title": "Privacy requirements have hidden productivity cost...",
@@ -163,15 +122,21 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-22",
+        "earliest": "2025-12-26",
         "latest": "2026-01-16"
       }
     },
     {
       "theme": "community_network",
-      "meeting_count": 13,
-      "idea_count": 18,
+      "meeting_count": 11,
+      "idea_count": 16,
       "recent_examples": [
+        {
+          "title": "How networking works (not through targeting but th...",
+          "idea": "How networking works (not through targeting but through graph density)",
+          "meeting": "2026-01-21_Zain-x-Vrijen-Attawar",
+          "date": "2026-01-21"
+        },
         {
           "title": "Exits happen through networks, not markets",
           "idea": "Exits happen through networks, not markets",
@@ -195,64 +160,58 @@
           "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
           "meeting": "2026-01-15_2026-01-15-Chat",
           "date": "2026-01-15"
-        },
-        {
-          "title": "The Convergence of All SaaS into Relationship Management",
-          "idea": "**The Idea:** Calendly's pivot from scheduling to \"relationship management\" suggests a deeper trend: every category of software that touches human communication eventually tries to become the system o...",
-          "meeting": "2026-01-15_chat",
-          "date": "2026-01-15"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-22",
-        "latest": "2026-01-16"
+        "earliest": "2025-12-26",
+        "latest": "2026-01-21"
       }
     },
     {
-      "theme": "founder_life",
+      "theme": "recruiting_future",
       "meeting_count": 11,
-      "idea_count": 13,
+      "idea_count": 26,
       "recent_examples": [
         {
-          "title": "Semi-technical founders lower barriers to entry",
-          "idea": "Semi-technical founders lower barriers to entry",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Investor risk models for first-time founders shoul...",
-          "idea": "Investor risk models for first-time founders should account for this structural gap",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Serial founders may have an unfair advantage not f...",
-          "idea": "Serial founders may have an unfair advantage not from domain expertise but from meta-skills",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "The popular advice to \"move fast and break things\"...",
-          "idea": "The popular advice to \"move fast and break things\" may be precisely wrong for first-time founders who need time to develop judgment",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Calendly's Quiet Pivot Signals Category Collapse",
-          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
-          "meeting": "2026-01-15_2026-01-15-Chat",
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
+          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
           "date": "2026-01-15"
+        },
+        {
+          "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
+          "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
+          "meeting": "2026-01-15_chat",
+          "date": "2026-01-15"
+        },
+        {
+          "title": "Exit Type as Portfolio, Not Binary",
+          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
+          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "Temperature vs. Distance",
+          "idea": "**The Idea:** Relationship value has two distinct dimensions: proximity (how many degrees removed) and temperature (how recently/intensely engaged). These correlate but aren't the same — a first-degre...",
+          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "Standard observations about recruiter trust issues",
+          "idea": "Standard observations about recruiter trust issues",
+          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+          "date": "2026-01-09"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-22",
-        "latest": "2026-01-16"
+        "earliest": "2025-12-26",
+        "latest": "2026-01-15"
       }
     },
     {
       "theme": "ai_replacement",
-      "meeting_count": 10,
-      "idea_count": 12,
+      "meeting_count": 8,
+      "idea_count": 10,
       "recent_examples": [
         {
           "title": "Scheduling automation companies may inadvertently ...",
@@ -286,8 +245,90 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-22",
+        "earliest": "2025-12-26",
         "latest": "2026-01-16"
+      }
+    },
+    {
+      "theme": "founder_life",
+      "meeting_count": 8,
+      "idea_count": 10,
+      "recent_examples": [
+        {
+          "title": "Semi-technical founders lower barriers to entry",
+          "idea": "Semi-technical founders lower barriers to entry",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Investor risk models for first-time founders shoul...",
+          "idea": "Investor risk models for first-time founders should account for this structural gap",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Serial founders may have an unfair advantage not f...",
+          "idea": "Serial founders may have an unfair advantage not from domain expertise but from meta-skills",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "The popular advice to \"move fast and break things\"...",
+          "idea": "The popular advice to \"move fast and break things\" may be precisely wrong for first-time founders who need time to develop judgment",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Non-technical co-founders may be undervalued for t...",
+          "idea": "Non-technical co-founders may be undervalued for their empathy function",
+          "meeting": "2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins",
+          "date": "2026-01-15"
+        }
+      ],
+      "date_range": {
+        "earliest": "2026-01-12",
+        "latest": "2026-01-16"
+      }
+    },
+    {
+      "theme": "ai_philosophy",
+      "meeting_count": 6,
+      "idea_count": 9,
+      "recent_examples": [
+        {
+          "title": "Team demonstrates clear alignment on priorities",
+          "idea": "Team demonstrates clear alignment on priorities",
+          "meeting": "2026-01-19_2026-01-19-Trio-standup-1",
+          "date": "2026-01-19"
+        },
+        {
+          "title": "Team demonstrates clear alignment on priorities",
+          "idea": "Team demonstrates clear alignment on priorities",
+          "meeting": "2026-01-19_2026-01-19-Careerspan-corridorx-scoping",
+          "date": "2026-01-19"
+        },
+        {
+          "title": "Exit Type as Portfolio, Not Binary",
+          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
+          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "Semantic Minimums",
+          "idea": "This test explores the \"minimum viable signal\" required to trigger a complex intelligence mapping. How much meaning can be compressed into a single sentence before the downstream synthesis breaks?",
+          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
+          "date": "2026-01-08"
+        },
+        {
+          "title": "The Observer Effect in Automation",
+          "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synt...",
+          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
+          "date": "2026-01-08"
+        }
+      ],
+      "date_range": {
+        "earliest": "2026-01-07",
+        "latest": "2026-01-19"
       }
     },
     {
@@ -330,47 +371,6 @@
         "earliest": "2026-01-09",
         "latest": "2026-01-15"
       }
-    },
-    {
-      "theme": "ai_philosophy",
-      "meeting_count": 6,
-      "idea_count": 9,
-      "recent_examples": [
-        {
-          "title": "Exit Type as Portfolio, Not Binary",
-          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
-          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "Semantic Minimums",
-          "idea": "This test explores the \"minimum viable signal\" required to trigger a complex intelligence mapping. How much meaning can be compressed into a single sentence before the downstream synthesis breaks?",
-          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
-          "date": "2026-01-08"
-        },
-        {
-          "title": "The Observer Effect in Automation",
-          "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synt...",
-          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
-          "date": "2026-01-08"
-        },
-        {
-          "title": "The \"Fragility of Truth\" in Minimalist Contexts",
-          "idea": "The test transcript—consisting of a single sentence claiming to be a \"test for the MG-1 workflow\"—raises a provocative question about the minimum viable signal required to establish systemic trust. In...",
-          "meeting": "2026-01-08_2026-01-08-Raw-meeting-demo",
-          "date": "2026-01-08"
-        },
-        {
-          "title": "Semantic Weight vs. Token Count",
-          "idea": "This meeting demonstrates a radical asymmetry: the meta-context (generating an intelligence block B32) carries significantly more weight than the primary source material. It suggests a future where th...",
-          "meeting": "2026-01-08_2026-01-08-Raw-meeting-demo",
-          "date": "2026-01-08"
-        }
-      ],
-      "date_range": {
-        "earliest": "2025-12-22",
-        "latest": "2026-01-14"
-      }
     }
   ],
   "evolution_candidates": [
@@ -378,73 +378,37 @@
       "theme": "uncategorized",
       "trajectory": [
         {
-          "title": "Some markets may resist efficiency improvements no...",
-          "idea": "Some markets may resist efficiency improvements not from ignorance but from economic rationality",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
+          "title": "Process additions (volunteer flow)",
+          "idea": "Process additions (volunteer flow)",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "\"Premium\" in service industries may partly be payi...",
-          "idea": "\"Premium\" in service industries may partly be paying for intentional inefficiency",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
+          "title": "Role redistribution (Anna to Vrijen)",
+          "idea": "Role redistribution (Anna to Vrijen)",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "The therapy market may be more receptive to schedu...",
-          "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
+          "title": "Tool consolidation (Luma)",
+          "idea": "Tool consolidation (Luma)",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "Market timing may be less about when you start and...",
-          "idea": "Market timing may be less about when you start and more about execution velocity",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
+          "title": "Venue knowledge transfer",
+          "idea": "Venue knowledge transfer",
+          "meeting": "2026-01-23_2026-01-23-Anna-bao",
+          "date": "2026-01-23"
         },
         {
-          "title": "The \"first mover advantage\" may be a myth in AI-ac...",
-          "idea": "The \"first mover advantage\" may be a myth in AI-accelerated spaces",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
+          "title": "What integrity actually is (not a constraint but a...",
+          "idea": "What integrity actually is (not a constraint but a value floor)",
+          "meeting": "2026-01-21_Zain-x-Vrijen-Attawar",
+          "date": "2026-01-21"
         }
       ],
-      "span_days": 25
-    },
-    {
-      "theme": "recruiting_future",
-      "trajectory": [
-        {
-          "title": "\"General Purpose Tech\" as Double-Edged Sword",
-          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
-          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
-          "date": "2026-01-15"
-        },
-        {
-          "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
-          "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
-          "meeting": "2026-01-15_chat",
-          "date": "2026-01-15"
-        },
-        {
-          "title": "Exit Type as Portfolio, Not Binary",
-          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
-          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "Temperature vs. Distance",
-          "idea": "**The Idea:** Relationship value has two distinct dimensions: proximity (how many degrees removed) and temperature (how recently/intensely engaged). These correlate but aren't the same — a first-degre...",
-          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
-          "date": "2026-01-14"
-        },
-        {
-          "title": "Implies geographic/institutional monopoly on talen...",
-          "idea": "Implies geographic/institutional monopoly on talent pipelines",
-          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-          "date": "2026-01-09"
-        }
-      ],
-      "span_days": 24
+      "span_days": 28
     },
     {
       "theme": "product_strategy",
@@ -480,7 +444,7 @@
           "date": "2026-01-15"
         }
       ],
-      "span_days": 25
+      "span_days": 21
     },
     {
       "theme": "personal_growth",
@@ -516,11 +480,17 @@
           "date": "2026-01-15"
         }
       ],
-      "span_days": 25
+      "span_days": 21
     },
     {
       "theme": "community_network",
       "trajectory": [
+        {
+          "title": "How networking works (not through targeting but th...",
+          "idea": "How networking works (not through targeting but through graph density)",
+          "meeting": "2026-01-21_Zain-x-Vrijen-Attawar",
+          "date": "2026-01-21"
+        },
         {
           "title": "Exits happen through networks, not markets",
           "idea": "Exits happen through networks, not markets",
@@ -544,26 +514,56 @@
           "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
           "meeting": "2026-01-15_2026-01-15-Chat",
           "date": "2026-01-15"
-        },
-        {
-          "title": "The Convergence of All SaaS into Relationship Management",
-          "idea": "**The Idea:** Calendly's pivot from scheduling to \"relationship management\" suggests a deeper trend: every category of software that touches human communication eventually tries to become the system o...",
-          "meeting": "2026-01-15_chat",
-          "date": "2026-01-15"
         }
       ],
-      "span_days": 25
+      "span_days": 26
+    },
+    {
+      "theme": "recruiting_future",
+      "trajectory": [
+        {
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value prop...",
+          "meeting": "2026-01-15_Ray-Acquisition-Debrief",
+          "date": "2026-01-15"
+        },
+        {
+          "title": "The Mentorship Paradox: Value Through Giving Access Rather Than Direction",
+          "idea": "**The Idea:** Vrijen consistently frames interactions as valuable for Tiffany's network (\"she'll be a good person to be in your network\") rather than focusing on teaching or directing. This suggests e...",
+          "meeting": "2026-01-15_chat",
+          "date": "2026-01-15"
+        },
+        {
+          "title": "Exit Type as Portfolio, Not Binary",
+          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
+          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "Temperature vs. Distance",
+          "idea": "**The Idea:** Relationship value has two distinct dimensions: proximity (how many degrees removed) and temperature (how recently/intensely engaged). These correlate but aren't the same — a first-degre...",
+          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "Standard observations about recruiter trust issues",
+          "idea": "Standard observations about recruiter trust issues",
+          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+          "date": "2026-01-09"
+        }
+      ],
+      "span_days": 20
     }
   ],
   "theme_distribution": {
-    "community_network": 18,
-    "founder_life": 13,
-    "uncategorized": 55,
-    "ai_replacement": 12,
-    "product_strategy": 30,
-    "personal_growth": 21,
-    "recruiting_future": 47,
-    "pricing_business": 6,
-    "ai_philosophy": 9
+    "uncategorized": 61,
+    "community_network": 16,
+    "ai_philosophy": 9,
+    "ai_replacement": 10,
+    "product_strategy": 29,
+    "personal_growth": 17,
+    "founder_life": 10,
+    "recruiting_future": 26,
+    "pricing_business": 6
   }
 }

@@ -1,0 +1,174 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9842436,
+          40.6804106
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2020-05-17T01:18:05Z",
+        "google_maps_url": "http://maps.google.com/?cid=2105663428146618568",
+        "location": {
+          "address": "190 3rd Ave, Brooklyn, NY 11217, United States",
+          "name": "BluePearl Pet Hospital"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9805205,
+          40.6882938
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-11-07T15:44:04Z",
+        "google_maps_url": "http://maps.google.com/?cid=17613865158706912452",
+        "location": {
+          "address": "Brooklyn, NY 11217, United States",
+          "country_code": "US",
+          "name": "Nevins St"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9777890,
+          40.6841618
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-11-07T15:44:00Z",
+        "google_maps_url": "http://maps.google.com/?cid=2355862153532277592",
+        "location": {
+          "address": "Brooklyn, NY 11217, United States",
+          "country_code": "US",
+          "name": "Atlantic Av Barclays Ctr"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.9736666,
+          40.6859773
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2019-11-07T15:43:57Z",
+        "google_maps_url": "http://maps.google.com/?cid=10611377368961447844",
+        "location": {
+          "address": "Brooklyn, NY 11217, United States",
+          "country_code": "US",
+          "name": "Lafayette Av"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.7879068,
+          1.2986242
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2017-01-16T11:04:02Z",
+        "google_maps_url": "http://maps.google.com/?cid=6152346299771566659",
+        "location": {
+          "address": "1 Fusionopolis Wy, #01-08 Connexis, Singapore 138632",
+          "country_code": "SG",
+          "name": "Pietrasanta The Italian Restaurant"
+        }
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2014-07-22T08:09:17Z",
+        "google_maps_url": "http://maps.google.com/?q=Indus Rd, Singapore&ftid=0x31da198268ba6d63:0xeaebe36e0d42eb49",
+        "Comment": "No location information is available for this saved place"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2014-04-22T17:34:29Z",
+        "google_maps_url": "http://maps.google.com/?q=1050 Crown Pointe Pkwy #1590, Atlanta, GA 30338&ftid=0x88f50956d89a5867:0x264805754f212a86",
+        "Comment": "No location information is available for this saved place"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2013-08-15T23:34:57Z",
+        "google_maps_url": "http://maps.google.com/?q=1672 Grist Mill Dr, Marietta, GA 30062, USA&ftid=0x88f51397e5beeb5f:0x3691a0ae7847b28",
+        "Comment": "No location information is available for this saved place"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2012-10-13T18:08:12Z",
+        "google_maps_url": "http://maps.google.com/?q=Publix+%4033.790187,-84.304607",
+        "Comment": "No location information is available for this saved place"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "date": "2012-06-08T06:54:44Z",
+        "google_maps_url": "http://maps.google.com/?q=18.976417,72.807883",
+        "Comment": "No location information is available for this saved place"
+      },
+      "type": "Feature"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Sabai Thai",
+    "startTime": "2022-08-01T22:45:00Z",
+    "endTime": "2022-08-02T00:15:00Z",
+    "partySize": 3,
+    "service": "Reservations",
+    "address": "New York, 432 Park Avenue South, New York, US"
+  },
+  "uniqueId": "6853201041026485766",
+  "lastModifiedTime": "2022-08-01T18:52:22.140112Z"
+}

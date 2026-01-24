@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Dino",
+    "startTime": "2024-03-17T23:00:00Z",
+    "endTime": "2024-03-18T00:30:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 222 DeKalb Avenue, New York, US"
+  },
+  "uniqueId": "10123459956076257931",
+  "lastModifiedTime": "2024-03-17T19:55:01.968216Z"
+}

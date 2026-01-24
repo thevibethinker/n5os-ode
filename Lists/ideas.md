@@ -184,6 +184,36 @@ A company focused on researching and developing a definitive personality baselin
 
 ---
 
+### Future of Higher Ed NYC Co-Lead Announcement Post
+
+**ID:** 4cc70c06-5f9c-414b-9ac1-9819e733ec53
+
+**Created:** 2026-01-20T22:24:25.861733+00:00
+
+**Priority:** H
+
+**Tags:** content, linkedin, higher-ed, announcement
+
+**Notes:** V is being announced as NYC co-lead for the Future of Higher Education group. Create a celebratory/announcement post for LinkedIn. (con_S8lTgJbzGaCtnZxl)
+
+---
+
+### Expertise Diffusion Dynamics: Tracing Innovation Edge Propagation in Competitive Systems
+
+**ID:** 4931bbfe-9a52-4d21-91dd-0a5b8471fbc9
+
+**Created:** 2026-01-21T06:05:46.455213+00:00
+
+**Priority:** M
+
+**Tags:** side-project, systems-thinking, game-theory, meta-dynamics
+
+**Body:**
+
+Exploring how expertise and competitive edges propagate through systems—especially competitive environments. Key dynamics to examine: (1) The innovation surge pattern where an innovator pulls ahead by discovering a new meta/approach; (2) The normalization phase as that edge diffuses through the system and competitors catch up; (3) The strategies and incentives around preserving vs. sharing edges; (4) What determines diffusion speed and resistance. Relevant domains: esports metas, trading strategies, startup moats, academic research priority races. Could be a think-piece, simulation, or framework.
+
+---
+
 
 ## Pinned
 

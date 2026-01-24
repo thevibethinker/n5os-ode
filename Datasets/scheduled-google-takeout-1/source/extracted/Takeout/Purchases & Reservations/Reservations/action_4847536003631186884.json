@@ -1,0 +1,14 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Sereneco",
+    "startTime": "2023-01-01T17:30:00Z",
+    "endTime": "2023-01-01T19:00:00Z",
+    "partySize": 4,
+    "service": "Reservations",
+    "address": "New York, 113 Franklin Street, New York, US",
+    "canceled": true
+  },
+  "uniqueId": "4847536003631186884",
+  "lastModifiedTime": "2023-01-01T17:12:09.495912Z"
+}

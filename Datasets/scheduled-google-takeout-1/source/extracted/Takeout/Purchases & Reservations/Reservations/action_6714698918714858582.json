@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Chama Mama",
+    "startTime": "2022-10-30T16:00:00Z",
+    "endTime": "2022-10-30T17:30:00Z",
+    "partySize": 6,
+    "service": "Dining Reservation",
+    "address": "New York, 149 West 14th Street, New York, US"
+  },
+  "uniqueId": "6714698918714858582",
+  "lastModifiedTime": "2025-10-30T11:10:00.257603Z"
+}

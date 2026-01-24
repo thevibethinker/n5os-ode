@@ -24,9 +24,18 @@
     "B32_THOUGHT_PROVOKING_IDEAS": true,
     "B35_LINGUISTIC_PRIMITIVES": true
   },
-  "last_updated_by": "MG-5_Prompt",
+  "last_updated_by": "MG-2_Prompt",
   "last_updated_at": "2026-01-17T14:40:00Z",
   "processed_at": "2026-01-09T19:48:30Z",
   "crm_synced": true,
-  "crm_sync_timestamp": "2026-01-09T19:46:49.465535"
+  "crm_sync_timestamp": "2026-01-09T19:46:49.465535",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "zo_take_heed_processed": {
+    "count": 0,
+    "auto_executed": [],
+    "queued": [],
+    "directives_applied": []
+  },
+  "last_updated": "2026-01-22T11:20:28.201615+00:00"
 }

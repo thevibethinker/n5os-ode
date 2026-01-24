@@ -1,0 +1,14 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Sweet Polly",
+    "startTime": "2023-08-02T23:00:00Z",
+    "endTime": "2023-08-03T00:30:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 71 6th Avenue, New York, US",
+    "canceled": true
+  },
+  "uniqueId": "9202755153572757208",
+  "lastModifiedTime": "2023-08-01T18:46:05.980619Z"
+}

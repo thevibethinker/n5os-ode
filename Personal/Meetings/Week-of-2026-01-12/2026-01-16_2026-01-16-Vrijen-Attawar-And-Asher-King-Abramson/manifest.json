@@ -13,5 +13,31 @@
   "follow_up_email_generated": "YES",
   "follow_up_email_generated_at": "2026-01-17T20:40:00Z",
   "follow_up_email_quality_score": 92,
-  "processed_at": "2026-01-17T20:52:50.545716"
+  "processed_at": "2026-01-22T17:59:05.084151+00:00",
+  "crm_synced": true,
+  "crm_sync_stats": {
+    "profiles_created": 16,
+    "profiles_updated": 1,
+    "profiles_not_found": [
+      "Asking Asher",
+      "Maintaining Warmer",
+      "Mutual Interests",
+      "Power Balance",
+      "Collaboration Potential",
+      "Relationship Signals",
+      "Key Interests",
+      "Believes Careerspan",
+      "Warmer Jobs",
+      "Potential Leverage",
+      "Stakeholder Intelligence",
+      "Careerspan Founder",
+      "Vrijen Attawar",
+      "Relationship Dynamics",
+      "Built Warmer",
+      "Praises Vrijen"
+    ],
+    "errors": []
+  },
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
 }

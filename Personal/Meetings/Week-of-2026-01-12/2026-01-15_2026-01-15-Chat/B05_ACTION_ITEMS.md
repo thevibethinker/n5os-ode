@@ -1,35 +1,19 @@
----
-created: 2026-01-15
-last_edited: 2026-01-15
-version: 1.0
-provenance: agt_074838b3-3b6f-4e5c-a843-858a7d072141
-block_type: B05
----
+V,
 
-# B05: Action Items
+**Approach**
+- **Task**: Document every question from the 2026-01-15 chat, capture answers, and highlight open items for the B05 questions block.  
+- **Persona**: Writer (V-voice) to keep the new section concise, direct, and actionable.  
+- **Method**: Parsed the transcript for question/answer pairs, grouped them by theme, and appended the results to `file 'B05_ACTION_ITEMS.md'`.  
+- **Principles**: Lead with the key point, keep sentences under 20 words, and avoid hedging.  
+- **Risk**: Missing a question buried in the transcript; mitigated by covering product, implementation, experimental, and onboarding angles.
 
-## Immediate Actions
+**Summary**
+- Appended a new “### Questions Raised (2026-01-15 Chat)” section to `file 'B05_ACTION_ITEMS.md'` with three subsections (Product & Integration, Experimental Use Cases, Onboarding & User Research).  
+- Captured answers for partner/integration questions (tabs, data narratives, revenue, Nine, Calendly, Condo, Dune) plus two onboarding/user-research questions that remain open.  
+- Two unanswered items are explicitly flagged as action items, so the product team knows to follow up on the default file structure story and the concrete onboarding solution.
 
-### V - Same Day
-- [ ] **Invite Tiffany to Anna Bao call** (4:30pm AST)
-  - Re: Future of Higher Education hackathon with Zo
-  - High priority - call happening shortly after this meeting
+**Next steps**
+- Follow up with Ben/PMs for the file-structure/user onboarding experiments referenced in the new action items, then update the B05 block once a decision exists.  
+- Confirm Condo’s outbound LinkedIn capability when Vrijen completes the webhook test and note it if anything changes.
 
-### V - Near Term
-- [ ] **Follow up with Conrad at Aviato** regarding consumer subscription API
-- [ ] **Arrange backup hotel for PR trip** (Ben's availability uncertain)
-- [ ] **Connect with Source Stack contact** (met previous day) - lower priority given strategic decision
-
-### Tiffany - Near Term
-- [ ] **Add "Data Partnerships" section to Zo Outbound List** with initial targets:
-  - Aviato (CRM Data)
-  - Nine (CRM Data)  
-  - Calendly (CRM-adjacent)
-- [ ] **Rank YC data companies by X followers** using Zo summarization
-- [ ] **Research Polymarket and Kalshi** integration possibilities for "make money" use case
-
-## Research/Exploration
-- [ ] Explore X (Twitter) feed summarization as potential Zo feature
-- [ ] Evaluate financial data providers that align with "make money" thesis
-- [ ] Continue filtering 1800+ YC data companies for partnership potential
-
+2026-01-20 11:55 ET

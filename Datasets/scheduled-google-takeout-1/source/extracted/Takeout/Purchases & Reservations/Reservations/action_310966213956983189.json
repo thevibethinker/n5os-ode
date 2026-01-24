@@ -1,0 +1,14 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "TAGMO",
+    "startTime": "2023-09-07T00:00:00Z",
+    "endTime": "2023-09-07T01:30:00Z",
+    "partySize": 4,
+    "service": "Reservations",
+    "address": "New York, 226 Front Street, New York, US",
+    "canceled": true
+  },
+  "uniqueId": "310966213956983189",
+  "lastModifiedTime": "2023-09-01T03:23:42.481569Z"
+}

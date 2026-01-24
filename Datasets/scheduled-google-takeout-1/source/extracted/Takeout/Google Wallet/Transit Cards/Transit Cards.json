@@ -1,0 +1,109 @@
+{
+  "closedLoopAccountCardsList": {
+    "closedLoopAccountCard": [{
+      "issuerData": {
+        "displayName": "Clipper"
+      },
+      "status": "ACCOUNT_CARD_STATUS_ACTIVE",
+      "issuanceTime": "1750816507000",
+      "expirationTime": "2697433200000",
+      "displayCardNumber": "1600544921",
+      "concessionClassification": "ADULT",
+      "purchaseUrl": "",
+      "cardOwner": {
+        "fullName": "",
+        "role": "",
+        "idNumber": "",
+        "orgLabel": "",
+        "orgName": ""
+      },
+      "displayConcessionClassification": {
+        "defaultValue": {
+          "language": "en-US",
+          "value": "ADULT"
+        }
+      }
+    }]
+  },
+  "closedLoopDeviceCardsList": {
+    "closedLoopDeviceCard": [{
+      "status": "DEVICE_CARD_STATUS_ACTIVE"
+    }]
+  },
+  "closedLoopAccountProductsList": {
+    "closedLoopAccountProduct": [{
+      "productDisplayData": {
+        "displayIssuerProductId": "Balance",
+        "expiryTime": "0",
+        "productPurchaseDetails": {
+          "purchaseTransactionReference": "",
+          "purchaseDateTime": "0",
+          "productPrice": {
+          },
+          "repurchaseUrl": ""
+        },
+        "displayProductName": {
+          "defaultValue": {
+            "language": "en-US",
+            "value": "Balance"
+          }
+        },
+        "balanceDetails": {
+          "amountInMicros": "14600000",
+          "currency": "USD"
+        },
+        "supportedIssuerData": [{
+          "displayName": "AC Transit"
+        }, {
+          "displayName": "BART"
+        }, {
+          "displayName": "Caltrain"
+        }, {
+          "displayName": "County Connection"
+        }, {
+          "displayName": "Tri Delta"
+        }, {
+          "displayName": "WestCAT"
+        }, {
+          "displayName": "Wheels or LAVTA"
+        }, {
+          "displayName": "FAST"
+        }, {
+          "displayName": "Napa VINE"
+        }, {
+          "displayName": "SolTrans"
+        }, {
+          "displayName": "Vacaville (City Coach)"
+        }, {
+          "displayName": "Golden Gate Transit"
+        }, {
+          "displayName": "Marin Transit"
+        }, {
+          "displayName": "SMART"
+        }, {
+          "displayName": "SamTrans"
+        }, {
+          "displayName": "VTA"
+        }, {
+          "displayName": "Muni"
+        }, {
+          "displayName": "Sonoma County Transit"
+        }, {
+          "displayName": "Union City Transit"
+        }, {
+          "displayName": "Petaluma"
+        }, {
+          "displayName": "Santa Rosa (City Bus)"
+        }, {
+          "displayName": "Golden Gate Ferry"
+        }, {
+          "displayName": "WETA"
+        }]
+      },
+      "externalAutoLoadSettings": {
+        "partnerAutoloadState": "EXTERNAL_AUTO_LOAD_STATE_DISABLED"
+      },
+      "numberOfRenewals": 0
+    }]
+  }
+}

@@ -1,0 +1,143 @@
+tables:
+- name: maps_reviews
+  row_count: 25
+  columns:
+  - name: place_name
+    type: VARCHAR
+    description: Place name
+  - name: address
+    type: VARCHAR
+    description: Full address
+  - name: rating
+    type: INTEGER
+    description: Star rating (1-5)
+  - name: review_text
+    type: VARCHAR
+    description: Written review content
+  - name: reviewed_at
+    type: TIMESTAMP
+    description: When the review was posted
+  - name: google_maps_url
+    type: VARCHAR
+    description: Google Maps link
+  - name: longitude
+    type: DOUBLE
+    description: Longitude coordinate
+  - name: latitude
+    type: DOUBLE
+    description: Latitude coordinate
+  description: Google Maps reviews written — one row per review
+- name: maps_saved_places
+  row_count: 10
+  columns:
+  - name: name
+    type: VARCHAR
+    description: Place name
+  - name: address
+    type: VARCHAR
+    description: Full address
+  - name: saved_at
+    type: TIMESTAMP
+    description: When the place was saved
+  - name: google_maps_url
+    type: VARCHAR
+    description: Google Maps link
+  - name: longitude
+    type: DOUBLE
+    description: Longitude coordinate
+  - name: latitude
+    type: DOUBLE
+    description: Latitude coordinate
+  description: Google Maps saved/starred places — one row per place
+- name: reservations
+  row_count: 55
+  columns:
+  - name: unique_id
+    type: VARCHAR
+    description: Google internal reservation ID
+  - name: name
+    type: VARCHAR
+    description: Reservation type (e.g., Dining Reservation)
+  - name: merchant_name
+    type: VARCHAR
+    description: Restaurant or venue name
+  - name: service
+    type: VARCHAR
+    description: Service type
+  - name: address
+    type: VARCHAR
+    description: Venue address
+  - name: party_size
+    type: INTEGER
+    description: Number of people in reservation
+  - name: start_time
+    type: TIMESTAMP
+    description: Reservation start time
+  - name: end_time
+    type: TIMESTAMP
+    description: Reservation end time
+  - name: last_modified
+    type: TIMESTAMP
+    description: When the reservation was last modified
+  description: Dining and other reservations from Google — one row per booking
+- name: search_thumbs
+  row_count: 10
+  columns:
+  - name: title
+    type: VARCHAR
+    description: Movie or show title
+  - name: rating
+    type: VARCHAR
+    description: Thumbs Up or Thumbs Down
+  - name: rated_at
+    type: TIMESTAMP
+    description: When the rating was given
+  - name: updated_at
+    type: TIMESTAMP
+    description: When the rating was last updated
+  description: Google Search thumbs up/down ratings for movies/shows
+- name: youtube_search_history
+  row_count: 11
+  columns:
+  - name: query
+    type: VARCHAR
+    description: Search query text
+  - name: searched_at
+    type: TIMESTAMP
+    description: When the search was performed
+  description: YouTube search queries — one row per search
+- name: youtube_subscriptions
+  row_count: 19
+  columns:
+  - name: channel_id
+    type: VARCHAR
+    description: YouTube channel ID
+  - name: channel_url
+    type: VARCHAR
+    description: Full channel URL
+  - name: channel_name
+    type: VARCHAR
+    description: Channel display name
+  description: YouTube channel subscriptions — one row per subscribed channel
+- name: youtube_watch_history
+  row_count: 110
+  columns:
+  - name: video_id
+    type: VARCHAR
+    description: YouTube video ID (from URL)
+  - name: title
+    type: VARCHAR
+    description: Video or song title
+  - name: url
+    type: VARCHAR
+    description: Full YouTube URL
+  - name: watched_at
+    type: TIMESTAMP
+    description: When the video was watched
+  - name: is_music
+    type: BOOLEAN
+    description: True if from YouTube Music
+  - name: platform
+    type: VARCHAR
+    description: YouTube or YouTube Music
+  description: YouTube and YouTube Music watch history — one row per video watched

@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Island Vintage Wine Bar",
+    "startTime": "2022-06-11T03:00:00Z",
+    "endTime": "2022-06-11T05:00:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "Hawaii, 2301 Kalākaua Avenue, Honolulu, US"
+  },
+  "uniqueId": "5503801552460109306",
+  "lastModifiedTime": "2022-06-10T23:25:58.571587Z"
+}

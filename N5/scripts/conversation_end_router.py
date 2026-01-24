@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Conversation End Router v3.0
+Conversation End Router v3.1
 
 Determines which tier of conversation-end workflow to execute based on:
+- Worker markers in SESSION_STATE (worker_id, build_slug) → Always Tier 1 Worker
 - SESSION_STATE.md content (if present)
 - Build workspace presence
 - DEBUG_LOG.jsonl presence  
@@ -10,6 +11,7 @@ Determines which tier of conversation-end workflow to execute based on:
 - Git changes in user workspace
 
 Tier Logic:
+- Tier 1 Worker: Build worker threads (lightweight close, no commits)
 - Tier 1 (Quick): Default for simple discussions, Q&A
 - Tier 2 (Standard): ≥3 artifacts OR research/substantial discussion
 - Tier 3 (Full Build): Build/orchestrator work, debug sessions, capability changes
@@ -24,6 +26,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -78,10 +81,37 @@ def parse_session_state(convo_path: Path) -> dict:
         "type": None,
         "focus": None,
         "has_artifacts": False,
-        "progress_items": 0
+        "progress_items": 0,
+        # Worker detection fields
+        "worker_id": None,
+        "build_slug": None,
+        "parent_convo_id": None,
+        "orchestrator_id": None,
     }
     
-    # Look for Type field
+    # Parse YAML frontmatter for worker markers
+    frontmatter_match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    if frontmatter_match:
+        frontmatter = frontmatter_match.group(1)
+        
+        # Worker markers
+        worker_id_match = re.search(r'^worker_id:\s*(.+)$', frontmatter, re.MULTILINE)
+        if worker_id_match:
+            result["worker_id"] = worker_id_match.group(1).strip().strip('"\'')
+        
+        build_slug_match = re.search(r'^build_slug:\s*(.+)$', frontmatter, re.MULTILINE)
+        if build_slug_match:
+            result["build_slug"] = build_slug_match.group(1).strip().strip('"\'')
+        
+        parent_match = re.search(r'^parent_convo_id:\s*(con_\w+)', frontmatter, re.MULTILINE)
+        if parent_match:
+            result["parent_convo_id"] = parent_match.group(1)
+        
+        orchestrator_match = re.search(r'^orchestrator_id:\s*(con_\w+)', frontmatter, re.MULTILINE)
+        if orchestrator_match:
+            result["orchestrator_id"] = orchestrator_match.group(1)
+    
+    # Look for Type field (anywhere in file)
     for line in content.split("\n"):
         line_lower = line.lower().strip()
         if line_lower.startswith("type:"):
@@ -93,8 +123,29 @@ def parse_session_state(convo_path: Path) -> dict:
         elif line.startswith("- ") and ("☑" in line or "[x]" in line.lower()):
             result["progress_items"] += 1
     
+    # Log worker detection
+    if result["worker_id"] or result["build_slug"]:
+        logger.info(f"Worker markers detected: worker_id={result['worker_id']}, build_slug={result['build_slug']}")
+    
     logger.info(f"SESSION_STATE parsed: type={result['type']}, progress_items={result['progress_items']}")
     return result
+
+
+def check_worker_markers(session_state: dict) -> dict:
+    """Check if this is a build worker conversation based on SESSION_STATE markers."""
+    is_worker = bool(
+        session_state.get("worker_id") or 
+        session_state.get("build_slug") or
+        session_state.get("parent_convo_id") or
+        session_state.get("orchestrator_id")
+    )
+    
+    return {
+        "is_worker": is_worker,
+        "worker_id": session_state.get("worker_id"),
+        "build_slug": session_state.get("build_slug"),
+        "parent_convo_id": session_state.get("parent_convo_id") or session_state.get("orchestrator_id")
+    }
 
 
 def count_artifacts(convo_path: Path) -> int:
@@ -244,12 +295,41 @@ def determine_tier(
         if force_tier in [1, 2, 3]:
             return {
                 "tier": force_tier,
+                "variant": None,
                 "reason": f"Manual override: --force-tier={force_tier}",
                 "confidence": "high",
                 "signals": ["manual_override"]
             }
         else:
             logger.warning(f"Invalid force_tier {force_tier}, ignoring")
+    
+    # ═══════════════════════════════════════════════════════════════════════
+    # EARLY EXIT: Worker detection (highest priority)
+    # Workers ALWAYS get Tier 1 with variant="worker" - lightweight close
+    # ═══════════════════════════════════════════════════════════════════════
+    worker_info = check_worker_markers(session_state)
+    if worker_info["is_worker"]:
+        worker_id = worker_info["worker_id"] or "unknown"
+        build_slug = worker_info["build_slug"] or "unknown"
+        parent = worker_info["parent_convo_id"]
+        
+        reason_parts = [f"Build worker detected: {worker_id}"]
+        if build_slug != "unknown":
+            reason_parts.append(f"build={build_slug}")
+        if parent:
+            reason_parts.append(f"parent={parent}")
+        
+        logger.info(f"Worker detected - routing to Tier 1 Worker: {worker_id} @ {build_slug}")
+        
+        return {
+            "tier": 1,
+            "variant": "worker",
+            "reason": ", ".join(reason_parts),
+            "confidence": "high",
+            "signals": ["worker_markers"],
+            "worker_info": worker_info
+        }
+    # ═══════════════════════════════════════════════════════════════════════
     
     signals = []
     tier = 1  # Default

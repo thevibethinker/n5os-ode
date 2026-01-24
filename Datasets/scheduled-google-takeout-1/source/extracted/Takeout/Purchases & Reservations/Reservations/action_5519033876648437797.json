@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Sama Street",
+    "startTime": "2019-10-06T00:00:00Z",
+    "endTime": "2019-10-06T01:30:00Z",
+    "partySize": 7,
+    "service": "Reservations",
+    "address": "New York, 988 Manhattan Avenue, New York, US"
+  },
+  "uniqueId": "5519033876648437797",
+  "lastModifiedTime": "2019-10-05T21:06:42.869762Z"
+}

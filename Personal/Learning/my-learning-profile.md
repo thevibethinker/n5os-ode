@@ -1,6 +1,6 @@
 ---
 created: 2026-01-13
-last_edited: 2026-01-13
+last_edited: 2026-01-21
 version: 1.0
 provenance: con_ADRk5LpNvaHYxv1y
 ---
@@ -30,7 +30,7 @@ provenance: con_ADRk5LpNvaHYxv1y
 
 - [ ] Deep understanding of async/await patterns
 - [ ] Git branching strategies beyond basics
-- [ ] Database query optimization
+- [x] Database query optimization — Row vs column storage, OLTP vs OLAP (Jan 2026)
 - [ ] HTTP internals and request lifecycle
 - [ ] Testing methodologies and when to apply each
 
@@ -55,7 +55,7 @@ provenance: con_ADRk5LpNvaHYxv1y
 
 ### 2026-01
 
-<!-- Entries added via conversation-end commit -->
+- **Jan 21:** Row-oriented vs column-oriented databases (DuckDB vs SQLite). Grasped that query type determines tool choice, not user count. Caught the "trick question" about dashboard data needing analytics. Understands OLTP vs OLAP distinction and when each applies.
 
 ---
 
@@ -68,6 +68,7 @@ provenance: con_ADRk5LpNvaHYxv1y
 | APIs | Career coaching intake forms | Familiar domain, clear parallel |
 | State machines | Meeting lifecycle states ([M] → [P] → [C]) | Already uses daily |
 | Schemas | Job description requirements | Defines what's valid |
+| Row vs column storage | Filing cabinet (client folders) vs spreadsheet columns | Physical layout determines access speed |
 
 ---
 

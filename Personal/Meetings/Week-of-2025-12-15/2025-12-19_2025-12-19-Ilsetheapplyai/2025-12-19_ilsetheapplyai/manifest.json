@@ -1,0 +1,22 @@
+{
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "last_updated_by": "MG-2_Prompt",
+  "status": "processed",
+  "meeting_type": "internal",
+  "processed_at": "2026-01-24T11:55:00Z",
+  "crm_synced": true,
+  "crm_profiles_synced": 3,
+  "crm_profiles_updated": 3,
+  "crm_profiles_created": 0,
+  "mg6_processed": {
+    "timestamp": "2026-01-24T11:55:00Z",
+    "agent": "MG-6_Agent",
+    "source": "Meeting State Transition [MG-6]"
+  }
+}

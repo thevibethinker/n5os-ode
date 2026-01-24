@@ -1,0 +1,41 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-19T23:07:22.760187",
+  "meeting_folder": "2026-01-19_Chat-with-Ben-Zo-cofounder-Vrijen-Attawar",
+  "meeting_date": "2026-01-19",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Agent",
+  "last_updated_at": "2026-01-21T16:42:04Z",
+  "zo_take_heed_count": 1,
+  "zo_take_heed_summary": [
+    {
+      "id": "ZTH-001",
+      "type": "directive",
+      "status": "applied"
+    }
+  ],
+  "zo_take_heed_processed": {
+    "count": 1,
+    "auto_executed": [],
+    "queued": [],
+    "directives_applied": [
+      "ZTH-001"
+    ]
+  },
+  "transition_history": [
+    {
+      "from": "intelligence_generated",
+      "to": "processed",
+      "timestamp": "2026-01-21T16:42:04Z",
+      "agent": "MG-6_Agent",
+      "notes": "Auto-transition after CRM sync"
+    }
+  ],
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-21T16:42:04Z"
+}

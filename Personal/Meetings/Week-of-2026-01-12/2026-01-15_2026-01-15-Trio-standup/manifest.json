@@ -23,8 +23,10 @@
     "B32_THOUGHT_PROVOKING_IDEAS": true,
     "B35_LINGUISTIC_PRIMITIVES": true
   },
-  "last_updated_by": "MG-6_Worker",
+  "last_updated_by": "MG-2_Prompt",
   "last_updated_at": "2026-01-15T11:48:30-05:00",
   "crm_synced": true,
-  "crm_sync_timestamp": "2026-01-15T16:46:59.806384"
+  "crm_sync_timestamp": "2026-01-15T16:46:59.806384",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
 }

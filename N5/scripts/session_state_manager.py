@@ -117,8 +117,10 @@ class SessionStateManager:
         # Add build context to frontmatter if this is a worker
         if build_id:
             frontmatter_lines.append(f"build_id: {build_id}")
+            frontmatter_lines.append(f"build_slug: {build_id}")  # Alias for router detection
         if worker_num:
             frontmatter_lines.append(f"worker_num: {worker_num}")
+            frontmatter_lines.append(f"worker_id: W{worker_num}")  # Formatted ID for router detection
         if parent_topic:
             frontmatter_lines.append(f"parent_topic: {parent_topic}")
         
@@ -801,7 +803,7 @@ def main():
     init_parser.add_argument("--objective", help="Explicit objective override")
     # Worker context args
     init_parser.add_argument("--build", dest="build_id", help="Build project slug (e.g., deal-meeting-intel)")
-    init_parser.add_argument("--worker-num", type=int, help="Worker number within the build")
+    init_parser.add_argument("--worker-num", type=str, help="Worker number within the build (e.g., 1, 2.1)")
     init_parser.add_argument("--parent-topic", help="Human-readable topic for greppable tags")
     
     # Update command

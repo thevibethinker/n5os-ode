@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Bar Bombón",
+    "startTime": "2023-10-23T21:30:00Z",
+    "endTime": "2023-10-23T23:30:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "Pennsylvania, 133 South 18th Street, Philadelphia, US"
+  },
+  "uniqueId": "4244642420641638904",
+  "lastModifiedTime": "2023-10-23T20:15:28.820999Z"
+}

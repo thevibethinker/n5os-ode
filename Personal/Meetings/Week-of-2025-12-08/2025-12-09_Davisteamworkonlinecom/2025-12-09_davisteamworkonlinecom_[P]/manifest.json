@@ -9,7 +9,7 @@
     "brief": true,
     "transcript_processed": true
   },
-  "last_updated_by": "MG-2_Worker",
+  "last_updated_by": "MG-2_Prompt",
   "meeting_type": "external",
   "last_updated_at": "2025-12-26T01:52:51.914296",
   "warm_intros_generated": {
@@ -19,5 +19,7 @@
     "note": "No warm-intro opportunities detected in this run (B01/B03 contained no pending intros)."
   },
   "crm_synced": true,
-  "processed_at": "2026-01-13T22:50:25.512140Z"
+  "processed_at": "2026-01-13T22:50:25.512140Z",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
 }

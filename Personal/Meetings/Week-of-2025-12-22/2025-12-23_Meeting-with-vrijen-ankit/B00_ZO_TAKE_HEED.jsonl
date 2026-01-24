@@ -1,0 +1,5 @@
+- Extraction: scanned the full transcript for every “Zo take heed” variant, found none, so there were no cues to capture or downstream directives to seed.  
+- Artifact: `file 'B00_ZO_TAKE_HEED.jsonl'` now simply records `# No Zo Take Heed cues detected in this transcript` to reflect the absence of triggers.  
+- Next: drop the next transcript (or any future “Zo take heed” line) in and I’ll rerun B00 extraction immediately.  
+
+Timestamp: 2026-01-20 09:58:00 ET

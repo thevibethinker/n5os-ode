@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "The Grand Delancey",
+    "startTime": "2023-09-06T23:30:00Z",
+    "endTime": "2023-09-07T01:00:00Z",
+    "partySize": 4,
+    "service": "Reservations",
+    "address": "New York, 81 Norfolk Street, New York, US"
+  },
+  "uniqueId": "5351213081035130086",
+  "lastModifiedTime": "2023-09-06T23:07:50.861014Z"
+}

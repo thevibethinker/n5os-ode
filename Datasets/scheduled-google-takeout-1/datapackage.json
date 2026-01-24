@@ -1,0 +1,10 @@
+{
+  "name": "scheduled-google-takeout-1",
+  "title": "Scheduled Google Takeout #1",
+  "resources": [
+    {
+      "path": "data.duckdb"
+    }
+  ],
+  "sourceTemplate": "google"
+}

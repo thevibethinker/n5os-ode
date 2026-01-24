@@ -1,3 +1,5 @@
+type Timezone = 'ET' | 'IST';
+
 interface Flight {
   number: string;
   departure_airport: string;
@@ -13,30 +15,28 @@ interface HeroHomeProps {
   nextFlight?: Flight | null;
   nextReturn?: Flight | null;
   nextTripNotes?: string | null;
-  timezone: 'ET' | 'IST';
+  timezone: Timezone;
   onToggleTimezone: () => void;
 }
 
-function formatTime(isoString: string, tz: 'ET' | 'IST'): string {
+function formatTime(isoString: string, tz: Timezone): string {
   const date = new Date(isoString);
-  const options: Intl.DateTimeFormatOptions = {
+  return date.toLocaleTimeString('en-US', {
     hour: 'numeric',
     minute: '2-digit',
     hour12: true,
     timeZone: tz === 'ET' ? 'America/New_York' : 'Asia/Kolkata'
-  };
-  return date.toLocaleTimeString('en-US', options);
+  });
 }
 
-function formatDate(isoString: string, tz: 'ET' | 'IST'): string {
+function formatDate(isoString: string, tz: Timezone): string {
   const date = new Date(isoString);
-  const options: Intl.DateTimeFormatOptions = {
+  return date.toLocaleDateString('en-US', {
     weekday: 'short',
     month: 'short',
     day: 'numeric',
     timeZone: tz === 'ET' ? 'America/New_York' : 'Asia/Kolkata'
-  };
-  return date.toLocaleDateString('en-US', options);
+  });
 }
 
 export function HeroHome({ 
@@ -52,22 +52,21 @@ export function HeroHome({
   return (
     <div className="text-center">
       {/* Main status card */}
-      <div className="bg-emerald-50 border-2 border-emerald-100 rounded-2xl p-8 mb-6">
-        <div className="text-4xl mb-4">🏠</div>
-        <p className="text-2xl font-semibold text-emerald-800">{message}</p>
+      <div className="bg-gradient-to-b from-emerald-900/30 to-zinc-900 border border-emerald-700/50 rounded-2xl p-8 mb-6">
+        <div className="text-5xl mb-4">🏠</div>
+        <p className="text-2xl font-semibold text-white">{message}</p>
       </div>
 
       {/* Next trip details */}
       {nextDestination && (
-        <div className="bg-white border border-gray-200 rounded-xl p-5 text-left">
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5 text-left">
           <div className="flex justify-between items-center mb-3">
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">
+            <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wide">
               Next Trip → {nextDestination}
             </h3>
-            {/* Timezone toggle */}
             <button 
               onClick={onToggleTimezone}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded transition-colors"
+              className="text-xs bg-zinc-800 hover:bg-zinc-700 px-2 py-1 rounded transition-colors text-zinc-400"
             >
               {timezone}
             </button>
@@ -75,25 +74,25 @@ export function HeroHome({
 
           {/* Trip notes */}
           {nextTripNotes && (
-            <div className="mb-4 p-3 bg-amber-50 border border-amber-100 rounded-lg">
-              <p className="text-sm text-amber-800">{nextTripNotes}</p>
+            <div className="mb-4 p-3 bg-zinc-800/50 border border-zinc-700 rounded-lg">
+              <p className="text-sm text-zinc-300">{nextTripNotes}</p>
             </div>
           )}
 
           {/* Outbound flight */}
           {nextFlight && (
-            <div className="flex justify-between items-center py-3 border-b border-gray-100">
+            <div className="flex justify-between items-center py-3 border-b border-zinc-800">
               <div>
-                <div className="font-semibold text-gray-800">
+                <div className="font-semibold text-white">
                   🛫 {formatDate(nextFlight.departure_time, timezone)}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-zinc-500">
                   {nextFlight.departure_airport} → {nextFlight.arrival_airport}
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-medium text-gray-700">{nextFlight.number}</div>
-                <div className="text-sm text-gray-400">{formatTime(nextFlight.departure_time, timezone)}</div>
+                <div className="font-medium text-zinc-300">{nextFlight.number}</div>
+                <div className="text-sm text-zinc-500">{formatTime(nextFlight.departure_time, timezone)}</div>
               </div>
             </div>
           )}
@@ -102,16 +101,16 @@ export function HeroHome({
           {nextReturn && (
             <div className="flex justify-between items-center py-3">
               <div>
-                <div className="font-semibold text-gray-800">
+                <div className="font-semibold text-white">
                   🛬 {formatDate(nextReturn.departure_time, timezone)}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-zinc-500">
                   {nextReturn.departure_airport} → {nextReturn.arrival_airport}
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-medium text-gray-700">{nextReturn.number}</div>
-                <div className="text-sm text-gray-400">{formatTime(nextReturn.departure_time, timezone)}</div>
+                <div className="font-medium text-zinc-300">{nextReturn.number}</div>
+                <div className="text-sm text-zinc-500">{formatTime(nextReturn.departure_time, timezone)}</div>
               </div>
             </div>
           )}
@@ -120,11 +119,10 @@ export function HeroHome({
 
       {/* Last destination */}
       {lastDestination && !nextDestination && (
-        <div className="mt-4 text-sm text-gray-400">
+        <div className="mt-4 text-sm text-zinc-600">
           Last trip: {lastDestination}
         </div>
       )}
     </div>
   );
 }
-

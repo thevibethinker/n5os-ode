@@ -1,0 +1,7 @@
+{
+  "name": "product-walken-fit",
+  "local_port": 50023,
+  "publish": {
+    "published_port": 50024
+  }
+}

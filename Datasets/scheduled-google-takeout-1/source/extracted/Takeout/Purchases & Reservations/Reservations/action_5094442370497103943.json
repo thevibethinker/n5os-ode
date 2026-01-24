@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Kana Soho Bar \u0026 Restaurant",
+    "startTime": "2022-12-15T23:00:00Z",
+    "endTime": "2022-12-16T01:00:00Z",
+    "partySize": 2,
+    "service": "Kana Soho Bar \u0026 Restaurant",
+    "address": "New York, 324 Spring Street, New York, US"
+  },
+  "uniqueId": "5094442370497103943",
+  "lastModifiedTime": "2022-12-05T13:17:09.415473Z"
+}

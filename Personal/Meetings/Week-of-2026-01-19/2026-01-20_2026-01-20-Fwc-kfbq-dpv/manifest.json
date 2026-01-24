@@ -1,0 +1,31 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-20T17:08:57.497792+00:00",
+  "meeting_folder": "2026-01-20_fwc-kfbq-dpv",
+  "meeting_date": "2026-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6 Agent (f339ca26-473b-4956-abb6-2e9d4bc20f01)",
+  "zo_take_heed_count": 0,
+  "last_updated": "2026-01-22T11:59:10.497705",
+  "last_updated_at": "2026-01-22T02:11:53.135509+00:00",
+  "zo_take_heed_summary": [],
+  "zo_take_heed_processed": {
+    "count": 0,
+    "auto_executed": [],
+    "queued": [],
+    "directives_applied": []
+  },
+  "crm_synced": true,
+  "processed_at": "2026-01-22T17:59:05.069187+00:00",
+  "crm_sync_stats": {
+    "profiles_created": 0,
+    "profiles_updated": 1,
+    "profiles_not_found": [],
+    "errors": []
+  }
+}

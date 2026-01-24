@@ -1,0 +1,18 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-20T17:08:57.495910+00:00",
+  "meeting_folder": "2026-01-20_Impromptu-Google-Meet-Meeting",
+  "meeting_date": "2026-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6",
+  "zo_take_heed_count": 0,
+  "last_updated": "2026-01-20T20:16:53.399019+00:00",
+  "processed_at": "2026-01-22T15:09:38.890297",
+  "crm_synced": true,
+  "crm_profiles_updated": []
+}

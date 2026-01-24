@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "Saketumi Asian Bistro",
+    "startTime": "2022-12-08T23:45:00Z",
+    "endTime": "2022-12-09T00:45:00Z",
+    "partySize": 4,
+    "service": "Saketumi Asian Bistro",
+    "address": "New York, 118 Montague Street, New York, US"
+  },
+  "uniqueId": "2974973952842820983",
+  "lastModifiedTime": "2022-12-08T22:34:46.329450Z"
+}

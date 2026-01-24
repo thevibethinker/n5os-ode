@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Gran Morsi",
+    "startTime": "2023-02-09T23:15:00Z",
+    "endTime": "2023-02-10T01:15:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 22 Warren Street, New York, US"
+  },
+  "uniqueId": "9853312339967417816",
+  "lastModifiedTime": "2023-02-09T22:56:17.739129Z"
+}

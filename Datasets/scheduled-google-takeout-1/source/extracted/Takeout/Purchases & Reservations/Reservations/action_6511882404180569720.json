@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Glin Thai Bistro",
+    "startTime": "2023-10-29T00:15:00Z",
+    "endTime": "2023-10-29T01:45:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 330 Myrtle Avenue, New York, US"
+  },
+  "uniqueId": "6511882404180569720",
+  "lastModifiedTime": "2023-10-28T23:39:56.722381Z"
+}

@@ -1,0 +1,190 @@
+{"trips": [
+  {
+    "id": "41C6C8E7472F3E51",
+    "place_visit": [
+      {"id": "SOURCE_ID"},
+      {
+        "id": "DESTINATION_ID",
+        "place": {
+          "lat_lng": {
+            "latitude": 40.7421893,
+            "longitude": -73.98799129999999
+          },
+          "semantic_type": "TYPE_UNKNOWN"
+        }
+      }
+    ],
+    "transition": [{
+      "route": {"travel_mode": "DRIVE"},
+      "origin": {"visit_id": "SOURCE_ID"},
+      "destination": {"visit_id": "DESTINATION_ID"}
+    }]
+  },
+  {
+    "id": "46F839F96A1E2514",
+    "place_visit": [
+      {
+        "id": "SOURCE_ID",
+        "place": {"semantic_type": "TYPE_HOME"}
+      },
+      {
+        "id": "DESTINATION_ID",
+        "place": {
+          "lat_lng": {
+            "latitude": 40.688359,
+            "longitude": -73.9569763
+          },
+          "semantic_type": "TYPE_UNKNOWN"
+        }
+      }
+    ],
+    "transition": [{
+      "route": {
+        "travel_mode": "TRANSIT",
+        "transit": {"route": {"leg": [
+          {
+            "mode": "WALKING",
+            "destination": "Hoyt - Schermerhorn St"
+          },
+          {
+            "mode": "TRANSIT",
+            "destination": "Classon Av"
+          },
+          {"mode": "WALKING"}
+        ]}}
+      },
+      "origin": {"visit_id": "SOURCE_ID"},
+      "destination": {"visit_id": "DESTINATION_ID"}
+    }]
+  },
+  {
+    "id": "5121F5904968C3D2",
+    "place_visit": [
+      {
+        "id": "SOURCE_ID",
+        "place": {
+          "lat_lng": {
+            "latitude": 40.727517899999995,
+            "longitude": -73.9796928
+          },
+          "semantic_type": "TYPE_UNKNOWN"
+        }
+      },
+      {
+        "id": "DESTINATION_ID",
+        "place": {"semantic_type": "TYPE_HOME"}
+      }
+    ],
+    "transition": [{
+      "route": {
+        "travel_mode": "TRANSIT",
+        "transit": {"route": {"leg": [
+          {
+            "mode": "WALKING",
+            "destination": "Delancey St\u2013 Essex St"
+          },
+          {
+            "mode": "TRANSIT",
+            "destination": "Jay St - MetroTech"
+          },
+          {"mode": "WALKING"}
+        ]}}
+      },
+      "origin": {"visit_id": "SOURCE_ID"},
+      "destination": {"visit_id": "DESTINATION_ID"}
+    }]
+  },
+  {
+    "id": "5247BE702F855DEC",
+    "place_visit": [
+      {
+        "id": "SOURCE_ID",
+        "place": {
+          "lat_lng": {
+            "latitude": 40.7300055,
+            "longitude": -73.9993554
+          },
+          "semantic_type": "TYPE_UNKNOWN"
+        }
+      },
+      {
+        "id": "DESTINATION_ID",
+        "place": {
+          "lat_lng": {
+            "latitude": 40.763034999999995,
+            "longitude": -73.9781505
+          },
+          "semantic_type": "TYPE_UNKNOWN"
+        }
+      }
+    ],
+    "transition": [{
+      "route": {
+        "travel_mode": "TRANSIT",
+        "transit": {"route": {"leg": [
+          {
+            "mode": "WALKING",
+            "destination": "W 4 St"
+          },
+          {
+            "mode": "TRANSIT",
+            "destination": "57 St"
+          },
+          {"mode": "WALKING"}
+        ]}}
+      },
+      "origin": {"visit_id": "SOURCE_ID"},
+      "destination": {"visit_id": "DESTINATION_ID"}
+    }]
+  },
+  {
+    "recurrence": {"weekly_pattern": {"day": [
+      {"day": 3},
+      {"day": 4}
+    ]}},
+    "id": "commute_to_home",
+    "place_visit": [
+      {
+        "departure_timing": {"time": {
+          "hour": 21,
+          "minute": 30
+        }},
+        "id": "246D99CE46A1E7F4",
+        "place": {"semantic_type": "TYPE_WORK"}
+      },
+      {
+        "id": "246D99CE499F9FC0",
+        "place": {"semantic_type": "TYPE_HOME"}
+      }
+    ],
+    "transition": [{
+      "origin": {"visit_id": "246D99CE46A1E7F4"},
+      "destination": {"visit_id": "246D99CE499F9FC0"}
+    }]
+  },
+  {
+    "recurrence": {"weekly_pattern": {"day": [
+      {"day": 3},
+      {"day": 4}
+    ]}},
+    "id": "commute_to_work",
+    "place_visit": [
+      {
+        "id": "246D99CE21FFE9A3",
+        "place": {"semantic_type": "TYPE_HOME"}
+      },
+      {
+        "id": "246D99CE23ACC3D8",
+        "place": {"semantic_type": "TYPE_WORK"},
+        "arrival_timing": {"time": {
+          "hour": 17,
+          "minute": 15
+        }}
+      }
+    ],
+    "transition": [{
+      "origin": {"visit_id": "246D99CE21FFE9A3"},
+      "destination": {"visit_id": "246D99CE23ACC3D8"}
+    }]
+  }
+]}

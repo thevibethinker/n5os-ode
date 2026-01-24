@@ -1,29 +1,40 @@
 {
   "data": {
-    "contact_first_name": "Corey",
-    "contact_last_name": "Shen",
-    "contact_connected_at": "2026-01-10T13:13:13.000Z",
+    "contact_first_name": "Holly",
+    "contact_last_name": "Sanders",
+    "contact_connected_at": "2025-08-07T15:12:10.000Z",
     "contact_connected_by": "vrijenattawar",
-    "contact_linkedin_handle": "corey-shen-92306a313",
-    "contact_linkedin_uid": "1334877867",
-    "contact_linkedin_url": "https://www.linkedin.com/in/corey-shen-92306a313",
-    "contact_headline": "Student-Athlete at Phillips Academy",
-    "contact_location": "Los Angeles, California, United States",
-    "contact_picture": "https://media.licdn.com/dms/image/v2/D5603AQHQxV7gEHQcXw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731033266152?e=1770249600&v=beta&t=4sPWGCPnIkwLtF7GeDvo0Ke98AfULMqaIObWuVOEHGw",
-    "conversation_latest_content": "Thank you! Did you have any updates from James V? Or are there any other potential startups looking for extra help/interns? I would be happy to reach out to them.",
-    "conversation_latest_timestamp": "2026-01-15T15:25:57.800Z",
-    "conversation_starred": false,
-    "conversation_status": "waiting_for_my_reply",
+    "contact_linkedin_handle": null,
+    "contact_linkedin_uid": "397232268",
+    "contact_linkedin_url": "https://www.linkedin.com/in/ACoAABetSIwBlI8hULKgPm7OMxTjjEwuH_Q8r6Q",
+    "contact_headline": "Founder @ Matchbox | Built for Startups",
+    "contact_location": null,
+    "contact_picture": "https://media.licdn.com/dms/image/v2/D5603AQF_fewrhlJIKw/profile-displayphoto-shrink_200_200/B56ZX0A8fCHEAY-/0/1743555643822?e=1770854400&v=beta&t=1_gq-B4HXvXzaq95Uh5A6M1BVKkFt4tIivcP3UlNut8",
+    "conversation_latest_content": "Do send ",
+    "conversation_latest_timestamp": "2026-01-22T20:58:47.292Z",
+    "conversation_starred": true,
+    "conversation_status": "waiting_for_their_reply",
     "conversation_state": "in_inbox",
-    "kondo_url": "https://app.trykondo.com/inboxes/all/315826042%2B2-YzZhNzMwZjYtNmU2Ni00NDZjLWFjMGEtYzI1N2U2NzdlMjc0XzEwMA%3D%3D",
-    "kondo_note": "",
-    "kondo_labels": []
+    "kondo_url": "https://app.trykondo.com/inboxes/all/315826042%2B2-NWMxM2FkMzktZTExMy00ODk2LWE2NDEtYmFiYmY0NGMxZjAyXzEwMA%3D%3D",
+    "kondo_note": null,
+    "kondo_labels": [
+      {
+        "kondo_label_id": "33204022-157c-451c-98b1-26665d6562a1",
+        "kondo_label_name": "Founder",
+        "kondo_labeled_at": "2025-08-27T11:02:44.565Z"
+      },
+      {
+        "kondo_label_id": "4a5833e3-6d72-4234-867d-825f72d92d84",
+        "kondo_label_name": "Hiring-side",
+        "kondo_labeled_at": "2025-08-27T11:02:44.565Z"
+      }
+    ]
   },
   "event": {
-    "_id": "JbU6wNzo--bbNliuP1d9ERpmHRhl5KW9wCoUphwriGk",
+    "_id": "VD8fMPdhF6XQAJwIZZ0ECC3oh1I4C-XN-zFUl7zUDew",
     "email": "attawar.v@gmail.com",
     "teamspace": "3de4a246-2706-4091-8197-02af81cc5411",
-    "timestamp": 1768568560914,
+    "timestamp": 1769117018156,
     "type": "general-update",
     "webhook": "550acaf9-638d-4c62-8758-7a750dc89313",
     "workspace": "6055c6e5-55d3-4bc6-b8a4-2f796a504c5a"

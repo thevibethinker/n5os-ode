@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "L\u0027Amico",
+    "startTime": "2024-04-27T22:30:00Z",
+    "endTime": "2024-04-28T00:00:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 849 6th Avenue, New York, US"
+  },
+  "uniqueId": "5562120738021451534",
+  "lastModifiedTime": "2024-04-27T14:20:13.584668Z"
+}

@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Graziella\u0027s of Brooklyn Wood Burning Pizza",
+    "startTime": "2024-07-19T23:00:00Z",
+    "endTime": "2024-07-20T00:30:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 232 Vanderbilt Avenue, New York, US"
+  },
+  "uniqueId": "16908050766132055187",
+  "lastModifiedTime": "2024-07-19T20:09:35.906792Z"
+}

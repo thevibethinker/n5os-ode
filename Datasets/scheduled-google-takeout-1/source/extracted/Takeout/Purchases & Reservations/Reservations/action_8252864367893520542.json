@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Nourish Thai",
+    "startTime": "2024-07-20T23:00:00Z",
+    "endTime": "2024-07-21T00:00:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 637A Vanderbilt Avenue, New York, US"
+  },
+  "uniqueId": "8252864367893520542",
+  "lastModifiedTime": "2024-07-20T19:28:59.803504Z"
+}

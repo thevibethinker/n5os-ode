@@ -5,7 +5,7 @@
     "transcript_processed": true
   },
   "generated_at": "2025-12-04T22:42:57.445267Z",
-  "last_updated_by": "MG-2_Worker",
+  "last_updated_by": "MG-2_Prompt",
   "manifest_version": "1.0",
   "meeting_date": "2025-12-04",
   "meeting_folder": "2025-12-04_alanmymelico",
@@ -46,5 +46,7 @@
     }
   },
   "crm_synced": true,
-  "processed_at": "2026-01-13T22:50:24.929195Z"
+  "processed_at": "2026-01-13T22:50:24.929195Z",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
 }

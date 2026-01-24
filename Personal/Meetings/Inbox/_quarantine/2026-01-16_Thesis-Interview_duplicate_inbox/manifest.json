@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-20T20:03:00.096548+00:00",
+  "meeting_folder": "2026-01-16_Thesis-Interview",
+  "meeting_date": "2026-01-16",
+  "status": "manifest_generated",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": false,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-1_Prompt"
+}

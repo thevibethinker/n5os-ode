@@ -1,0 +1,54 @@
+{
+  "meeting_id": "2026-01-21_Zain-x-Vrijen-Attawar",
+  "title": "Zain x Vrijen Attawar",
+  "date": "2026-01-21",
+  "duration_seconds": 2160,
+  "participants": [
+    "Vrijen Attawar",
+    "Zain Yousaf"
+  ],
+  "host": "vrijen@mycareerspan.com",
+  "source": "fireflies",
+  "source_id": "01KFGQZ6R9NA2AT9FJW0A8HHCA",
+  "state": "processed",
+  "meeting_type": "networking_introduction",
+  "blocks_generated": {
+    "transcript_processed": true,
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "zo_take_heed_count": 0,
+    "zo_take_heed_processed": true
+  },
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "blocks_list": [
+    "B00_ZO_TAKE_HEED.jsonl",
+    "B01_DETAILED_RECAP.md",
+    "B03_STAKEHOLDER_INTELLIGENCE.md",
+    "B03_DECISIONS.md",
+    "B05_ACTION_ITEMS.md",
+    "B06_BUSINESS_CONTEXT.md",
+    "B07_TONE_AND_CONTEXT.md",
+    "B14_BLURBS_REQUESTED.md",
+    "B21_KEY_MOMENTS.md",
+    "B25_DELIVERABLES.md",
+    "B26_MEETING_METADATA.md",
+    "B32_THOUGHT_PROVOKING_IDEAS.md",
+    "B35_LINGUISTIC_PRIMITIVES.jsonl"
+  ],
+  "last_updated_by": "MG-6_Agent",
+  "last_updated": "2026-01-22T23:15:00Z",
+  "status": "processed",
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-23T15:09:27.944664+00:00",
+  "transition_history": [
+    {
+      "from": "processed",
+      "to": "processed",
+      "timestamp": "2026-01-23T15:09:27.944692+00:00",
+      "agent": "MG-6_Agent",
+      "notes": "Auto-transition after CRM sync"
+    }
+  ],
+  "last_updated_at": "2026-01-23T15:09:27.944697+00:00"
+}

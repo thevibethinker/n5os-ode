@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Divya\u0027s Kitchen",
+    "startTime": "2024-01-19T23:30:00Z",
+    "endTime": "2024-01-20T01:30:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 25 1st Avenue, New York, US"
+  },
+  "uniqueId": "3250441172373359854",
+  "lastModifiedTime": "2024-01-19T18:09:15.481301Z"
+}

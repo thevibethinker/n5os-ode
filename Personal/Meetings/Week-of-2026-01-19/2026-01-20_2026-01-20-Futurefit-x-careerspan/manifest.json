@@ -1,0 +1,35 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-20T23:22:14",
+  "meeting_folder": "2026-01-20_FutureFit-x-Careerspan",
+  "meeting_date": "2026-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "blocks_generated_list": [
+    "B01_DETAILED_RECAP",
+    "B03_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B07_TONE_AND_CONTEXT",
+    "B14_BLURBS_REQUESTED",
+    "B21_KEY_MOMENTS",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B35_LINGUISTIC_PRIMITIVES"
+  ],
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-22T15:09:39.031827",
+  "processed_at": "2026-01-22T15:09:39.038524",
+  "crm_profiles_updated": [
+    "Hamoon Ekhtiari"
+  ]
+}

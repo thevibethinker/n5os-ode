@@ -12,5 +12,16 @@
   "last_updated_by": "MG-6_Agent",
   "zo_take_heed_count": 0,
   "zo_take_heed_summary": [],
-  "last_updated_at": "2026-01-19T17:52:49.198100"
+  "last_updated_at": "2026-01-19T17:52:49.198100",
+  "crm_synced": true,
+  "processed_at": "2026-01-22T17:59:05.050787+00:00",
+  "crm_sync_stats": {
+    "profiles_created": 2,
+    "profiles_updated": 2,
+    "profiles_not_found": [
+      "Vrijen Attawar",
+      "Stakeholder Intelligence"
+    ],
+    "errors": []
+  }
 }

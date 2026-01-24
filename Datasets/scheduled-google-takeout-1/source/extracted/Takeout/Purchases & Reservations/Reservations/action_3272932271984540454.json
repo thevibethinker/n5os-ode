@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Ladybird",
+    "startTime": "2024-04-09T23:15:00Z",
+    "endTime": "2024-04-10T00:45:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 111 East 7th Street, New York, US"
+  },
+  "uniqueId": "3272932271984540454",
+  "lastModifiedTime": "2024-04-09T21:38:28.375591Z"
+}

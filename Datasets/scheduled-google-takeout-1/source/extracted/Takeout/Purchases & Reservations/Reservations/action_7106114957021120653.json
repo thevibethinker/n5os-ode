@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "Westville Dumbo",
+    "startTime": "2022-08-10T23:00:00Z",
+    "endTime": "2022-08-11T01:00:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 81 Washington Street, New York, US"
+  },
+  "uniqueId": "7106114957021120653",
+  "lastModifiedTime": "2022-08-10T17:44:37.860078Z"
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "prompt-to-skill",
+  "title": "Prompt-to-Skill Conversion System",
+  "build_type": "system_design",
+  "status": "planning",
+  "created": "2026-01-24T17:20:00Z",
+  "total_streams": 2,
+  "current_stream": 0,
+  "model": "anthropic:claude-opus-4-5-20251101",
+  "drops": {},
+  "currents": {}
+}

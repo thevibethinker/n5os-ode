@@ -22,6 +22,44 @@ token_estimate:
 
 # Worker Brief: {{TASK_NAME}}
 
+---
+
+## ⚠️ INITIALIZATION (EXECUTE FIRST)
+
+**Before any other work**, initialize session state with worker markers:
+
+```bash
+python3 N5/scripts/session_state_manager.py init \
+  --convo-id <YOUR_CONVO_ID> \
+  --type build \
+  --build {{SLUG}} \
+  --worker-num {{WAVE}}.{{SEQ}} \
+  --message "Worker W{{WAVE}}.{{SEQ}}: {{TASK_NAME}}"
+```
+
+This ensures proper close routing (Tier 1 Worker, not Full Close).
+
+---
+
+## ⚠️ LAUNCH VALIDATION (EXECUTE AFTER INIT)
+
+```bash
+python3 N5/scripts/validate_worker_launch.py {{SLUG}} W{{WAVE}}.{{SEQ}}
+```
+
+**If validation FAILS (exit code 1):**
+- ❌ DO NOT proceed with any work
+- The script has written a "blocked" completion report
+- Close this conversation immediately
+- Report to orchestrator that launch was blocked
+
+**If you need to override (V explicitly authorized):**
+```bash
+python3 N5/scripts/validate_worker_launch.py {{SLUG}} W{{WAVE}}.{{SEQ}} --force
+```
+
+---
+
 **Your Mission:** {{ONE_SENTENCE_MISSION}}
 
 **Output(s):**

@@ -22,11 +22,13 @@
     "B32_THOUGHT_PROVOKING_IDEAS": true,
     "B35_LINGUISTIC_PRIMITIVES": true
   },
-  "last_updated_by": "MG-2_Agent",
+  "last_updated_by": "MG-2_Prompt",
   "processed_at": "2026-01-16T17:47:50.609948+00:00",
   "crm_synced": true,
   "follow_up_email_generated": "YES",
   "follow_up_email_generated_at": "2026-01-17T18:45:00Z",
   "follow_up_email_quality_score": 94,
-  "follow_up_email_last_updated_by": "MG-5_v3.2"
+  "follow_up_email_last_updated_by": "MG-5_v3.2",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
 }

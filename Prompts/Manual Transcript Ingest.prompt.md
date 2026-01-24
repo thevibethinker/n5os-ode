@@ -4,17 +4,14 @@ last_edited: 2026-01-14
 version: 2.1
 tool: true
 title: Manual Transcript Ingest
-description: >
-  Paste any transcript to ingest it into the N5 meeting system.
-  Automatically detects if speaker labels are missing and runs attribution pre-screen.
-  Creates canonical folder structure in Personal/Meetings/Inbox/ ready for pipeline processing.
+description: |
+  Paste any transcript to ingest it into the N5 meeting system. Automatically detects if speaker labels are missing and runs attribution pre-screen. Creates canonical folder structure in Personal/Meetings/Inbox/ ready for pipeline processing.
 tags:
   - meetings
   - transcript
   - ingest
   - intake
 ---
-
 # Manual Transcript Ingest
 
 Ingest a transcript from any source (Fathom, Fireflies, Zoom, Loom, Granola, voice memos, etc.) into the N5 meeting system.

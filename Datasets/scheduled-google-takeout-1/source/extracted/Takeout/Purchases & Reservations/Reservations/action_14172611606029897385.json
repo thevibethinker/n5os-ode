@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "The Purple Tongue Wine Bar",
+    "startTime": "2024-08-08T22:30:00Z",
+    "endTime": "2024-08-09T00:30:00Z",
+    "partySize": 2,
+    "service": "Dining Reservation",
+    "address": "New York, 410 West 43rd Street, New York, US"
+  },
+  "uniqueId": "14172611606029897385",
+  "lastModifiedTime": "2024-08-07T21:54:07.053326Z"
+}

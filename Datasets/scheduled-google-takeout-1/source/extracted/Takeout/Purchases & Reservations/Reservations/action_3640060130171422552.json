@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Booking",
+    "merchantName": "L\u0027Antica Pizzeria Da Michele NYC",
+    "startTime": "2024-08-23T23:00:00Z",
+    "endTime": "2024-08-24T00:30:00Z",
+    "partySize": 2,
+    "service": "Reservations",
+    "address": "New York, 2 Bank Street, New York, US"
+  },
+  "uniqueId": "3640060130171422552",
+  "lastModifiedTime": "2024-08-20T07:26:30.087461Z"
+}

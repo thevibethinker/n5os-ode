@@ -1,0 +1,2 @@
+Rebuilt `file 'B03_DECISIONS.md'` to capture three decisions from the Ray debrief: (1) run the exit hunt like a sales pipeline with multiple live bidders, (2) treat any PR-style outcome as acceptable while hedging founder/Head-of-AI transitions, and (3) model deal structures now so earnouts stay short and tied to realistic milestones. Let me know if you want a follow-up note or want to surface any of these for the next meeting.  
+`2026-01-20 12:22 ET`

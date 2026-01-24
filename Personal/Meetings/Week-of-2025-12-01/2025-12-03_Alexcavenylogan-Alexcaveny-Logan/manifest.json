@@ -9,7 +9,7 @@
     "brief": true,
     "transcript_processed": true
   },
-  "last_updated_by": "MG-2_Worker",
+  "last_updated_by": "MG-2_Prompt",
   "warm_intros_generated": {
     "count": 0,
     "timestamp": "2025-12-15T03:22:19.884808-05:00",
@@ -45,5 +45,7 @@
   "last_transitioned_at": "2025-12-15T13:20:04.819944",
   "last_updated_at": "2025-12-26T01:40:48.065022",
   "crm_synced": true,
-  "processed_at": "2026-01-13T22:50:24.601866Z"
+  "processed_at": "2026-01-13T22:50:24.601866Z",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
 }

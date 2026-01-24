@@ -1,0 +1,13 @@
+{
+  "booking": {
+    "name": "Dining Reservation",
+    "merchantName": "MáLà Project",
+    "startTime": "2019-12-29T18:00:00Z",
+    "endTime": "2019-12-29T19:30:00Z",
+    "partySize": 3,
+    "service": "Dining Reservation",
+    "address": "New York, 122 1st Avenue, New York, US"
+  },
+  "uniqueId": "12820514545125733777",
+  "lastModifiedTime": "2019-12-24T23:59:12.585782Z"
+}
