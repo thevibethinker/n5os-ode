@@ -1,0 +1,7 @@
+{
+  "form_id": "jPQRwpT4nGus",
+  "rrule": "FREQ=DAILY;INTERVAL=1;COUNT=30",
+  "instruction": "You are the Survey Analysis Agent for form jPQRwpT4nGus.\n\nYour task is to:\n1. Check for new submissions via the Fillout API using the existing client at Skills/dynamic-survey-analyzer/scripts/fillout_client.py\n2. If new submissions exist (count > previous), regenerate analysis:\n   - Run quantitative analysis using existing scripts\n   - Update the dashboard using generate_dashboard.py\n   - Update the analysis.md synthesis document\n3. Update the meta.json with timestamp and submission count\n4. Do NOT send notifications unless there's a significant change (>20% increase in responses)\n\nForm context:\n- Form ID: jPQRwpT4nGus\n- Previous submission count: Check Datasets/survey-analyses/jPQRwpT4nGus/meta.json\n\nAnalysis location:\n- Datasets/survey-analyses/jPQRwpT4nGus/\n\nUse the existing tools and scripts - do not create new workflows. Focus on incremental updates based on new data.",
+  "delivery_method": "none",
+  "days": 30
+}

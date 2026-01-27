@@ -1,0 +1,1027 @@
+{
+  "responses": [
+    {
+      "submissionId": "4ce53224-939e-47cb-9b66-ca8c77ba7337",
+      "submissionTime": "2026-01-25T00:48:06.360Z",
+      "lastUpdatedAt": "2026-01-25T00:48:06.360Z",
+      "startedAt": "2026-01-25T00:48:06.360Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc.",
+            "B2B AI: Copilot, Harvey AI, Figma, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc.",
+            "IDE/ADEs: Cursor, Warp, Antigravity, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I'm an advanced user looking to level up further"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Learning how to build my own system over time"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "Founding Engineer"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Applied AI Engineering"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Mid Level"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "fd180e47-e19d-4765-b29d-d509ddc02d91",
+      "submissionTime": "2026-01-25T01:05:17.475Z",
+      "lastUpdatedAt": "2026-01-25T01:05:17.475Z",
+      "startedAt": "2026-01-25T01:05:17.475Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "I use AI features within traditional products e.g. Word, Adobe, etc.",
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "Consumer (non-Chatbot) AI: Canva, Jasper, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc.",
+            "B2B AI: Copilot, Harvey AI, Figma, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc.",
+            "IDE/ADEs: Cursor, Warp, Antigravity, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "3-5 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "Principal designer"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Design"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Senior in years, curious in mindset"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "ee0321e7-fb60-4bcf-b5fa-2f4d1cedee99",
+      "submissionTime": "2026-01-25T01:38:57.657Z",
+      "lastUpdatedAt": "2026-01-25T01:38:57.657Z",
+      "startedAt": "2026-01-25T01:38:57.657Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "I use AI features within traditional products e.g. Word, Adobe, etc.",
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "B2B AI: Copilot, Harvey AI, Figma, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I know the basics but can't level up"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "No idea"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Marketing "
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Senior IC"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "f72128d0-1745-40fd-b0fb-212281992fad",
+      "submissionTime": "2026-01-25T02:20:51.988Z",
+      "lastUpdatedAt": "2026-01-25T02:20:51.988Z",
+      "startedAt": "2026-01-25T02:20:51.988Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "No"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "develop good prompt structure for vibe coding"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "downloading and reach research articles, teaching students how to write research articles"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "I am an investigator training students and postdoctoral fellows. I also manage my division"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "I work at Carnegie Institution for Science, study biology."
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Senior Investigator and manager"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "da72787f-f656-41a2-9c67-2205e71ebd61",
+      "submissionTime": "2026-01-25T03:55:16.853Z",
+      "lastUpdatedAt": "2026-01-25T03:55:16.853Z",
+      "startedAt": "2026-01-25T03:55:16.250Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I know the basics but can't level up"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Simple tactics I can use immediately"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "Less than 1 hour"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "MBA Career Coach"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Career Services "
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Mid life crisis "
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "3cadc697-71c1-4598-9cd9-2a9d7bced61b",
+      "submissionTime": "2026-01-25T04:52:59.836Z",
+      "lastUpdatedAt": "2026-01-25T04:52:59.836Z",
+      "startedAt": "2026-01-25T04:52:59.145Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc.",
+            "IDE/ADEs: Cursor, Warp, Antigravity, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI daily and have built some workflows"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "4 = 😊 Optimistic / Interested"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "Building charts, slides, data modeling"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Finance"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Manager"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "94176696-661c-4a44-bfad-bdfa6c79f7e7",
+      "submissionTime": "2026-01-25T05:43:30.772Z",
+      "lastUpdatedAt": "2026-01-25T05:43:30.772Z",
+      "startedAt": "2026-01-25T05:43:29.969Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I get results but they're inconsistent"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "4 = 😊 Optimistic / Interested"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "Effective reaching out notes/emails, research of companies, Groceries list"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "Strategy manager"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Strategy"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Mid-level"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "1e1166e0-fe79-4d97-91b1-a74a4abe23ce",
+      "submissionTime": "2026-01-25T09:33:29.552Z",
+      "lastUpdatedAt": "2026-01-25T09:33:29.552Z",
+      "startedAt": "2026-01-25T09:33:29.066Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "I use AI features within traditional products e.g. Word, Adobe, etc.",
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc.",
+            "IDE/ADEs: Cursor, Warp, Antigravity, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Getting templates/prompts I can copy"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "Generating LinkedIn content, sorting emails, meeting notes and follow ups"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Data"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Management"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "5de93a0b-69ac-41b5-9df3-9b92a61baee9",
+      "submissionTime": "2026-01-25T18:48:13.311Z",
+      "lastUpdatedAt": "2026-01-25T18:48:13.311Z",
+      "startedAt": "2026-01-25T18:48:12.808Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "5 = 🚀 Excited / All-in"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Learning how to build my own system over time"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": null
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "strategic partnerships leader"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Partnerships"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Senior IC"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "fd375509-7be3-41ba-a5ff-b68cbce91a0b",
+      "submissionTime": "2026-01-25T19:14:01.311Z",
+      "lastUpdatedAt": "2026-01-25T19:14:01.311Z",
+      "startedAt": "2026-01-25T19:14:00.757Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI daily and have built some workflows"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "3 = 😐 Neutral / Curious"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "Looking for relevant LinkedIn content"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "1-3 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "Brand Designer"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Design"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Senior IC"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "2e79d8dc-58ca-4d60-aea0-dde5f5686f9d",
+      "submissionTime": "2026-01-26T03:24:43.857Z",
+      "lastUpdatedAt": "2026-01-26T03:24:43.857Z",
+      "startedAt": "2026-01-26T03:24:43.419Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I know the basics but can't level up"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "3 = 😐 Neutral / Curious"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Understanding how to think about AI differently"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "Job applications"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "3-5 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "Team lead customer success"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Customer success"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "Senior "
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    },
+    {
+      "submissionId": "149e29c1-20eb-4e93-9c53-444449739e8b",
+      "submissionTime": "2026-01-27T01:12:54.921Z",
+      "lastUpdatedAt": "2026-01-27T01:12:54.921Z",
+      "startedAt": "2026-01-27T01:12:54.402Z",
+      "questions": [
+        {
+          "id": "dGZw",
+          "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+          "type": "MultipleChoice",
+          "value": "Yes"
+        },
+        {
+          "id": "bxyM",
+          "name": "What AI tools or features are you currently using? (select all that apply)",
+          "type": "Checkboxes",
+          "value": [
+            "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+            "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+            "Agentic AI: Claude Code, Manus, Zo.computer, etc.",
+            "IDE/ADEs: Cursor, Warp, Antigravity, etc."
+          ]
+        },
+        {
+          "id": "qgxH",
+          "name": "What's your biggest challenge with AI tools right now?",
+          "type": "MultipleChoice",
+          "value": "I'm overwhelmed by all the options"
+        },
+        {
+          "id": "sLMq",
+          "name": "How would you describe your current AI usage?",
+          "type": "MultipleChoice",
+          "value": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "qurD",
+          "name": "How do you FEEL about AI right now?",
+          "type": "MultipleChoice",
+          "value": "4 = 😊 Optimistic / Interested"
+        },
+        {
+          "id": "qJQ5",
+          "name": "What would make this session valuable for you?",
+          "type": "MultipleChoice",
+          "value": "Learning how to build my own system over time"
+        },
+        {
+          "id": "nkxv",
+          "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+          "type": "ShortAnswer",
+          "value": "emails, content, research"
+        },
+        {
+          "id": "moGb",
+          "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "type": "MultipleChoice",
+          "value": "5-10 hours"
+        },
+        {
+          "id": "tVXP",
+          "name": "What's your current role or title?",
+          "type": "ShortAnswer",
+          "value": "Vice President"
+        },
+        {
+          "id": "dfLX",
+          "name": "What function or department do you work in?",
+          "type": "ShortAnswer",
+          "value": "Sales"
+        },
+        {
+          "id": "dYMW",
+          "name": "How would you describe your current career stage?",
+          "type": "ShortAnswer",
+          "value": "VP"
+        }
+      ],
+      "calculations": [],
+      "urlParameters": [],
+      "quiz": {},
+      "documents": [],
+      "scheduling": [],
+      "payments": []
+    }
+  ],
+  "totalResponses": 12,
+  "pageCount": 1
+}
