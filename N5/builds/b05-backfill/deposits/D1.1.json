@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "files_modified": ["Prompts/Blocks/Generate_B05.prompt.md"],
+  "files_deleted": ["Prompts/Generate_B05_Action_Items.prompt.md"],
+  "verification": "grep shows 'decomposition' in merged file",
+  "details": {
+    "consolidation_completed": true,
+    "new_version": "3.0",
+    "decomposition_keywords_present": true,
+    "task_system_metadata_preserved": true,
+    "frontmatter_updated": true
+  }
+}

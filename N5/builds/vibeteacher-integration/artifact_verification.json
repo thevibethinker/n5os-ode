@@ -1,0 +1,55 @@
+{
+  "slug": "vibeteacher-integration",
+  "timestamp": "2026-01-25T00:19:38.020619+00:00",
+  "drops": {
+    "D1.1": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "missing": []
+    },
+    "D1.3": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse_learnings.py",
+        "N5/builds/pulse-v2/deposits/D3.1-plan-generator.json"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse_learnings.py",
+        "N5/builds/pulse-v2/deposits/D3.1-plan-generator.json"
+      ],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [
+        "/home/workspace/N5/builds/pulse-v2/FINALIZATION.json",
+        "/home/workspace/N5/builds/pulse-v2/teaching_moments.jsonl",
+        "/home/workspace/N5/builds/pulse-v2/BUILD_LESSONS.json"
+      ],
+      "verified": [
+        "/home/workspace/N5/builds/pulse-v2/FINALIZATION.json",
+        "/home/workspace/N5/builds/pulse-v2/teaching_moments.jsonl",
+        "/home/workspace/N5/builds/pulse-v2/BUILD_LESSONS.json"
+      ],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 7,
+    "verified": 7,
+    "missing": 0,
+    "errors": 0
+  },
+  "passed": true
+}

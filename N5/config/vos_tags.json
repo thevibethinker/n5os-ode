@@ -413,6 +413,59 @@
             "routes_to": ["Zo"]
           }
         }
+      },
+      "recall_recording": {
+        "description": "Recall.ai bot recording control tags (calendar events)",
+        "tags": {
+          "[NR]": {
+            "meaning": "No Record - skip this meeting",
+            "action": "Recall bot will not join this meeting",
+            "context": "calendar_event_title",
+            "routes_to": [
+              "Zo"
+            ]
+          },
+          "[SKIP]": {
+            "meaning": "Skip recording (alias for [NR])",
+            "action": "Recall bot will not join this meeting",
+            "context": "calendar_event_title",
+            "routes_to": [
+              "Zo"
+            ]
+          },
+          "[REC]": {
+            "meaning": "Force record this meeting",
+            "action": "Record even if video link not auto-detected. Also useful to ensure recording.",
+            "context": "calendar_event_title",
+            "routes_to": [
+              "Zo"
+            ]
+          },
+          "[AUDIO]": {
+            "meaning": "Audio only recording",
+            "action": "Use audio_only layout - no video capture, smaller file",
+            "context": "calendar_event_title",
+            "routes_to": [
+              "Zo"
+            ]
+          },
+          "[GALLERY]": {
+            "meaning": "Gallery view recording",
+            "action": "Use gallery_view_v2 layout instead of speaker view",
+            "context": "calendar_event_title",
+            "routes_to": [
+              "Zo"
+            ]
+          },
+          "[INTERNAL]": {
+            "meaning": "Internal meeting marker",
+            "action": "Mark meeting as internal for processing pipeline (different recap handling)",
+            "context": "calendar_event_title",
+            "routes_to": [
+              "Zo"
+            ]
+          }
+        }
       }
     }
   },

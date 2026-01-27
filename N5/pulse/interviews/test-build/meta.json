@@ -1,0 +1,8 @@
+{
+  "task_id": "test-build",
+  "created_at": "2026-01-25T01:26:43.942919Z",
+  "status": "seeded",
+  "fragment_count": 3,
+  "last_fragment_at": "2026-01-25T01:28:11.583366Z",
+  "seeded_at": "2026-01-25T01:28:47.966687Z"
+}

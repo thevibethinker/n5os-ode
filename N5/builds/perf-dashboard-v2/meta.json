@@ -1,0 +1,79 @@
+{
+  "slug": "perf-dashboard-v2",
+  "title": "Performance Intelligence Dashboard v2",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 1,
+  "current_stream": 1,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "drops": {
+    "D1.1": {
+      "name": "Data Layer Consolidation",
+      "stream": 1,
+      "current": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T04:05:58.866040+00:00",
+      "conversation_id": "con_AuaolpCVFZUTQ5hP"
+    },
+    "D1.2": {
+      "name": "Calendar Integration",
+      "stream": 1,
+      "current": 2,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "failure_reason": "",
+      "completed_at": "2026-01-26T04:30:00Z"
+    },
+    "D1.3": {
+      "name": "Weather Integration",
+      "stream": 1,
+      "current": 3,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "completed_at": "2026-01-26T04:45:00Z"
+    },
+    "D1.4": {
+      "name": "Dashboard Generator Rewrite",
+      "stream": 1,
+      "current": 4,
+      "depends_on": [
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "completed_at": "2026-01-26T05:15:43.745000+00:00"
+    },
+    "D1.5": {
+      "name": "Testing and Polish",
+      "stream": 1,
+      "current": 5,
+      "depends_on": [
+        "D1.4"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "completed_at": "2026-01-26T05:15:43.745020+00:00"
+    }
+  },
+  "currents": {
+    "1": [
+      "D1.1",
+      "D1.2",
+      "D1.3",
+      "D1.4",
+      "D1.5"
+    ]
+  },
+  "created_at": "2026-01-26T03:05:00Z",
+  "orchestrator_conversation_id": "con_H2rUeFjHpuRueJYI",
+  "started_at": "2026-01-26T04:01:23.787807+00:00",
+  "completed_at": "2026-01-26T05:15:43.745023+00:00"
+}

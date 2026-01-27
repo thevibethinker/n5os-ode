@@ -2,11 +2,92 @@
   "slug": "prompt-to-skill",
   "title": "Prompt-to-Skill Conversion System",
   "build_type": "system_design",
-  "status": "planning",
+  "status": "closed",
   "created": "2026-01-24T17:20:00Z",
-  "total_streams": 2,
-  "current_stream": 0,
-  "model": "anthropic:claude-opus-4-5-20251101",
-  "drops": {},
-  "currents": {}
+  "total_streams": 3,
+  "current_stream": 3,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "drops": {
+    "D1.1": {
+      "name": "Create prompt-to-skill skill",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T17:52:10.759302+00:00",
+      "conversation_id": "con_5hGMggLdGmYQAJat",
+      "completed_at": "2026-01-24T17:58:50.288228+00:00"
+    },
+    "D1.2": {
+      "name": "Create N5/lib/close/ shared library",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T17:56:19.774385+00:00",
+      "conversation_id": "con_XdyF3M8p5eVTtxbM",
+      "completed_at": "2026-01-24T18:01:26.674224+00:00"
+    },
+    "D1.3": {
+      "name": "Build missing N5 scripts",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T17:58:00.587245+00:00",
+      "conversation_id": "con_DuVb3kEyPH9bGovF",
+      "completed_at": "2026-01-24T18:01:47.395961+00:00"
+    },
+    "D2.1": {
+      "name": "Create thread-close skill",
+      "stream": 2,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T18:03:41.382505+00:00",
+      "conversation_id": "con_jiphnkNeGg0pxReO",
+      "completed_at": "2026-01-24T23:14:31.119327+00:00"
+    },
+    "D2.2": {
+      "name": "Create drop-close skill",
+      "stream": 2,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T18:07:59.678850+00:00",
+      "conversation_id": "con_xSZ0RqtION0JentG",
+      "completed_at": "2026-01-24T23:14:31.119327+00:00"
+    },
+    "D2.3": {
+      "name": "Create build-close skill",
+      "stream": 2,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T18:10:00.717962+00:00",
+      "conversation_id": "con_4q2Z25OBEXSQpJBg",
+      "completed_at": "2026-01-24T23:14:31.119327+00:00"
+    },
+    "D3.1": {
+      "name": "Integration tests + expunge",
+      "stream": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2",
+        "D2.3"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete",
+      "completed_at": "2026-01-24T23:14:31.119327+00:00"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-24T17:46:54.202097+00:00",
+  "completed_at": "2026-01-24T23:17:51.190762+00:00"
 }

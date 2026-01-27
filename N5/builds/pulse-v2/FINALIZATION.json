@@ -1,0 +1,14 @@
+{
+  "slug": "pulse-v2",
+  "timestamp": "2026-01-25T00:17:59.440097+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for pulse-v2\n   Artifacts: 11/11 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: pulse-v2\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/pulse-v2/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 2,
+  "success": true
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "ode-cleanup",
+  "learnings": [
+    {
+      "text": "GitHub force-push preserved content but destroyed history. Always verify existing directory structure before copying to avoid conflicts like duplicate Skills/ files.",
+      "source": "manual",
+      "added_at": "2026-01-26T23:45:38.861096+00:00",
+      "tags": []
+    },
+    {
+      "text": "Added GitHub workflow that warns on low commit count detection, which could indicate force push history loss. Script runs basic validation on commit count vs. expected baseline.",
+      "source": "manual",
+      "added_at": "2026-01-27T02:17:20.152541+00:00",
+      "tags": []
+    }
+  ]
+}

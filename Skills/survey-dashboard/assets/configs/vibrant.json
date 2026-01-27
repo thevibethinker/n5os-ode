@@ -1,0 +1,27 @@
+{
+  "name": "Vibrant Playful",
+  "description": "Colorful, bold, energetic - for consumer/B2C audiences",
+  "gamma": {
+    "theme": "gamma",
+    "format": "webpage",
+    "mode": "preserve",
+    "amount": "detailed",
+    "images": "aiGenerated",
+    "image_model": "flux-1-quick",
+    "dimensions": "fluid",
+    "cards": 10
+  },
+  "branding": {
+    "title_prefix": "What You Told Us",
+    "cta_text": "Join the Conversation",
+    "cta_text_secondary": "Your Turn!"
+  },
+  "colors": {
+    "primary": "#8B5CF6",
+    "secondary": "#EC4899",
+    "background": "#FFFFFF",
+    "text": "#1F2937",
+    "accent": "#F59E0B"
+  },
+  "tone": "friendly, energetic, conversational, fun"
+}

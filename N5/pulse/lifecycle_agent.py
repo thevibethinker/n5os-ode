@@ -1,0 +1,185 @@
+#!/usr/bin/env python3
+"""
+Lifecycle Agent for Pulse v3
+
+Polls task queue and advances state automatically:
+- queued → interviewing (start interview)
+- interviewing → seeded (when confidence ≥ threshold)
+- seeded → planning (generate plan)
+- planning → plan_review (initiate HITL, respecting availability)
+- approved → building (delegate to pulse.py start)
+
+Usage:
+  python3 lifecycle_agent.py tick              # Single tick
+  python3 lifecycle_agent.py tick --dry-run    # Show what would happen
+  python3 lifecycle_agent.py status            # Show lifecycle status
+"""
+
+import json
+import subprocess
+import sys
+from pathlib import Path
+from datetime import datetime, timezone
+
+WORKSPACE = Path("/home/workspace")
+PULSE_DIR = WORKSPACE / "N5" / "pulse"
+CONFIG_PATH = WORKSPACE / "Skills" / "pulse" / "config" / "pulse_v2_config.json"
+
+def load_config():
+    """Load Pulse v2/v3 config."""
+    if CONFIG_PATH.exists():
+        return json.loads(CONFIG_PATH.read_text())
+    return {
+        "interview": {"seeded_threshold": 0.8},
+        "lifecycle": {
+            "poll_interval_minutes": 5,
+            "max_seeded_attempts": 10
+        }
+    }
+
+def run_cmd(cmd: list) -> dict:
+    """Run command and return parsed JSON output."""
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode == 0:
+        try:
+            return json.loads(result.stdout)
+        except:
+            return {"raw": result.stdout}
+    return {"error": result.stderr or result.stdout}
+
+def tick(dry_run: bool = False):
+    """Single tick of lifecycle advancement."""
+    config = load_config()
+    threshold = config.get("interview", {}).get("seeded_threshold", 0.8)
+    
+    # Get all tasks
+    tasks_result = run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "list"])
+    tasks = tasks_result.get("tasks", [])
+    
+    if not tasks:
+        print(json.dumps({"tick": "complete", "actions": [], "message": "No tasks in queue"}))
+        return
+    
+    actions = []
+    
+    for task in tasks:
+        task_id = task["id"]
+        slug = task.get("slug", task_id)
+        status = task["status"]
+        title = task.get("title", slug)
+        
+        action = None
+        
+        if status == "queued":
+            # Start interview
+            if not dry_run:
+                run_cmd(["python3", str(PULSE_DIR / "interview_manager.py"), "create", task_id])
+                run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "advance", task_id, "interviewing"])
+            action = {"task": slug, "from": "queued", "to": "interviewing", "action": "started_interview"}
+            
+        elif status == "interviewing":
+            # Check fragment count and run seeded judge
+            interview_status = run_cmd(["python3", str(PULSE_DIR / "interview_manager.py"), "status", task_id])
+            fragment_count = interview_status.get("interview", {}).get("fragment_count", 0)
+            
+            if fragment_count > 0:
+                # Run seeded judgment
+                judgment = run_cmd(["python3", str(PULSE_DIR / "seeded_judge.py"), "evaluate", task_id])
+                
+                if judgment.get("seeded") and judgment.get("confidence", 0) >= threshold:
+                    if not dry_run:
+                        run_cmd(["python3", str(PULSE_DIR / "interview_manager.py"), 
+                                "mark-seeded", task_id, "--confidence", str(judgment["confidence"])])
+                        run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "advance", task_id, "seeded"])
+                    action = {"task": slug, "from": "interviewing", "to": "seeded", 
+                             "action": "seeded_judgment_passed", "confidence": judgment["confidence"]}
+                else:
+                    action = {"task": slug, "status": "interviewing", 
+                             "action": "awaiting_fragments", "confidence": judgment.get("confidence", 0)}
+            else:
+                action = {"task": slug, "status": "interviewing", "action": "no_fragments_yet"}
+                
+        elif status == "seeded":
+            # Generate plan
+            if not dry_run:
+                result = run_cmd(["python3", str(PULSE_DIR / "plan_generator.py"), "generate", task_id])
+                if result.get("success"):
+                    run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "advance", task_id, "planning"])
+                    action = {"task": slug, "from": "seeded", "to": "planning", "action": "plan_generated"}
+                else:
+                    action = {"task": slug, "status": "seeded", "action": "plan_generation_failed", "error": result.get("error")}
+            else:
+                action = {"task": slug, "from": "seeded", "to": "planning", "action": "would_generate_plan"}
+                
+        elif status == "planning":
+            # Check availability then initiate HITL review
+            avail_result = run_cmd(["python3", str(PULSE_DIR / "availability_checker.py"), "check"])
+            
+            if avail_result.get("available", True):
+                build_slug = task.get("build_slug", slug)
+                if not dry_run:
+                    result = run_cmd(["python3", str(PULSE_DIR / "review_manager.py"), "initiate", build_slug])
+                    if result.get("success"):
+                        run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "advance", task_id, "plan_review"])
+                action = {"task": slug, "from": "planning", "to": "plan_review", "action": "hitl_initiated"}
+            else:
+                action = {"task": slug, "status": "planning", "action": "deferred_unavailable", 
+                         "next_window": avail_result.get("next_window")}
+                
+        elif status == "approved":
+            # Start the build
+            build_slug = task.get("build_slug", slug)
+            if not dry_run:
+                subprocess.run(["python3", str(WORKSPACE / "Skills" / "pulse" / "scripts" / "pulse.py"), 
+                              "start", build_slug])
+                run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "advance", task_id, "building"])
+            action = {"task": slug, "from": "approved", "to": "building", "action": "build_started"}
+        
+        if action:
+            actions.append(action)
+    
+    result = {
+        "tick": "complete",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "dry_run": dry_run,
+        "tasks_processed": len(tasks),
+        "actions": actions
+    }
+    print(json.dumps(result, indent=2))
+
+def show_status():
+    """Show current lifecycle status."""
+    tasks_result = run_cmd(["python3", str(PULSE_DIR / "queue_manager.py"), "list"])
+    tasks = tasks_result.get("tasks", [])
+    
+    status_counts = {}
+    for task in tasks:
+        s = task["status"]
+        status_counts[s] = status_counts.get(s, 0) + 1
+    
+    result = {
+        "total_tasks": len(tasks),
+        "by_status": status_counts,
+        "tasks": [{"slug": t.get("slug"), "status": t["status"], "title": t.get("title")} for t in tasks]
+    }
+    print(json.dumps(result, indent=2))
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Pulse Lifecycle Agent")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    
+    tick_parser = subparsers.add_parser("tick", help="Run single lifecycle tick")
+    tick_parser.add_argument("--dry-run", action="store_true", help="Show what would happen")
+    
+    subparsers.add_parser("status", help="Show lifecycle status")
+    
+    args = parser.parse_args()
+    
+    if args.command == "tick":
+        tick(dry_run=args.dry_run)
+    elif args.command == "status":
+        show_status()
+
+if __name__ == "__main__":
+    main()

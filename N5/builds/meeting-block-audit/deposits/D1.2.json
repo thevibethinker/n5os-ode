@@ -1,0 +1,53 @@
+{
+  "drop_id": "D1.2",
+  "completed_at": "2026-01-26T23:30:00Z",
+  "summary": "Skill created 2026-01-26, never committed to git, processor.py uses inline prompts and never referenced canonical prompt files",
+  "findings": {
+    "skill_created_date": "2026-01-26",
+    "skill_created_timestamp": "21:10:55 UTC",
+    "processor_created_timestamp": "23:21:00 UTC", 
+    "git_committed": false,
+    "processor_references_prompts": false,
+    "processor_uses_inline_prompts": true,
+    "legacy_system_prompts_exist": true,
+    "canonical_prompts_still_exist": true,
+    "legacy_prompts_were_deleted": true,
+    "provenance_conversation": "con_TRpqstPn1qgxSiAb"
+  },
+  "timeline": [
+    {"date": "2026-01-26 21:10:55 UTC", "event": "Skills/meeting-ingestion/SKILL.md created"},
+    {"date": "2026-01-26 23:21:00 UTC", "event": "processor.py created with inline BLOCK_DEFINITIONS"},
+    {"date": "2026-01-26 (unknown time)", "event": "13 legacy meeting prompts deleted per references/legacy_prompts.md"}
+  ],
+  "root_cause": "processor.py was written from scratch with inline BLOCK_DEFINITIONS hardcoded in the script, completely bypassing the canonical Prompts/Blocks/ files",
+  "evidence": {
+    "no_git_history": "git log --all --oneline -- Skills/meeting-ingestion/ returned empty",
+    "inline_prompts_in_processor": "BLOCK_DEFINITIONS dict hardcoded in processor.py lines 44-59",
+    "no_prompt_loading": "grep -i 'prompts' Skills/meeting-ingestion/scripts/processor.py returned no matches",
+    "canonical_prompts_unused": "37 prompt files exist in Prompts/Blocks/ but none referenced by processor.py",
+    "legacy_reference_doc": "references/legacy_prompts.md documents 13 deleted prompt files from con_TRpqstPn1qgxSiAb"
+  },
+  "prompt_files_found": [
+    "Prompts/Blocks/Generate_B01.prompt.md",
+    "Prompts/Blocks/Generate_B03.prompt.md", 
+    "Prompts/Blocks/Generate_B05.prompt.md",
+    "Prompts/Blocks/Generate_B06.prompt.md",
+    "Prompts/Blocks/Generate_B08.prompt.md",
+    "Prompts/Blocks/Generate_B21.prompt.md",
+    "Prompts/Blocks/Generate_B25.prompt.md",
+    "Prompts/Blocks/Generate_B26.prompt.md"
+  ],
+  "used_by_other_scripts": [
+    "N5/scripts/edge_extractor.py uses Generate_B33.prompt.md",
+    "N5/scripts/test_voice_pipeline.py uses Generate_B35.prompt.md", 
+    "N5/scripts/extract_voice_primitives.py uses Generate_B35.prompt.md",
+    "N5/workers/worker_generate_blocks.py loads all prompts from Prompts/Blocks/",
+    "generate_blocks.py (root) maps 11 block codes to prompt files"
+  ],
+  "gap_analysis": {
+    "canonical_system_exists": "worker_generate_blocks.py and generate_blocks.py properly load prompt files",
+    "skill_bypassed_canonical": "meeting-ingestion skill reimplemented prompts as hardcoded strings",
+    "no_cross_reference": "processor.py does not import or reference any existing prompt loading logic",
+    "parallel_implementations": "Two different approaches to same intelligence blocks exist simultaneously"
+  }
+}

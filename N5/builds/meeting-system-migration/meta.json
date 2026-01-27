@@ -1,0 +1,73 @@
+{
+  "slug": "meeting-system-migration",
+  "title": "Meeting System Migration + Agent Audit",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 4,
+  "current_stream": 4,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "created_at": "2026-01-26T20:30:00Z",
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_Tq9eOqW4T0rTnKvb",
+    "moment": "Full meeting system migration requested",
+    "branched_at": "2026-01-26T20:30:00Z"
+  },
+  "drops": {
+    "D1.1": {
+      "name": "Full Agent Audit",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T21:05:00Z",
+      "completed_at": "2026-01-26T21:06:00Z"
+    },
+    "D1.2": {
+      "name": "Meeting Prompt Audit",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T21:05:00Z",
+      "completed_at": "2026-01-26T21:06:00Z"
+    },
+    "D2.1": {
+      "name": "Add Archive Command to Skill",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T21:08:00Z",
+      "completed_at": "2026-01-26T21:10:00Z"
+    },
+    "D3.1": {
+      "name": "Agent Migration",
+      "stream": 3,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T21:11:00Z",
+      "completed_at": "2026-01-26T21:14:00Z"
+    },
+    "D4.1": {
+      "name": "Final Cleanup",
+      "stream": 4,
+      "depends_on": [
+        "D3.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T21:15:00Z",
+      "completed_at": "2026-01-26T21:20:00Z"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-26T21:05:00Z"
+}

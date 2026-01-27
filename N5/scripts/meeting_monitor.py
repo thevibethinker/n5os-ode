@@ -1,23 +1,33 @@
 #!/usr/bin/env python3
 """
-Meeting Monitor - Priority 3
-Polling loop that checks calendar every 15 minutes for new meetings with N5OS tags.
+Meeting Monitor - Intelligent meeting detection and digest coordination
+
 Detects urgent meetings, generates digest content, and coordinates processing.
+Provides intelligent meeting processing with calendar integration.
 """
 
+import os
 import sys
-import time
+import json
 import logging
-from datetime import datetime
-from pathlib import Path
 import pytz
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Any, Optional
 
-# Add N5/scripts to path
-script_dir = Path(__file__).parent
-sys.path.insert(0, str(script_dir))
+# Add workspace to Python path for imports
+sys.path.insert(0, '/home/workspace')
 
-from meeting_processor import MeetingProcessor
-from meeting_api_integrator import MeetingAPIIntegrator
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
+logger = logging.getLogger(__name__)
+
+# Parse timezone from config
+if TIMEZONE == 'UTC':
+    TZ = pytz.UTC
+else:
+    TZ = pytz.timezone(TIMEZONE)
 
 
 class MeetingMonitor:

@@ -1,0 +1,98 @@
+{
+  "drop_id": "D6.1",
+  "title": "VibeTeacher Core",
+  "status": "complete",
+  "completed_at": "2026-01-24T23:01:00+00:00",
+  "tested": true,
+  "test_results": [
+    {
+      "test": "Glossary matching for 'non-overlapping' -> 'MECE decomposition'",
+      "input": "This looks like those sort of non-overlapping worker assignments",
+      "result": "Successfully detected MECE decomposition teaching moment",
+      "status": "pass"
+    },
+    {
+      "test": "Teaching moment storage to teaching_moments.jsonl",
+      "result": "Moment stored with id tm-1ea14d40, acknowledged/absorbed flags working",
+      "status": "pass"
+    },
+    {
+      "test": "Pending moments retrieval",
+      "result": "get_pending_moments() correctly filters by acknowledged flag",
+      "status": "pass"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "file",
+      "path": "N5/pulse/teaching/glossary.json",
+      "description": "Technical vocabulary storage with 10 pre-populated Pulse terms. Schema: term, definition, v_description, precise_term, context, first_encountered, absorbed, usage_count"
+    },
+    {
+      "type": "file",
+      "path": "N5/pulse/teaching/moment_generator.py",
+      "description": "Generate teaching moments using glossary matching (detect_imprecision) and LLM analysis (generate_moment_with_llm). Handles term tracking, absorption, and usage counts."
+    },
+    {
+      "type": "file",
+      "path": "N5/pulse/teaching/teaching_manager.py",
+      "description": "Orchestrate VibeTeacher at HITL checkpoints. Non-blocking moment storage to teaching_moments.jsonl. CLI with activate, pending, acknowledge, sms-summary commands."
+    }
+  ],
+  "success_criteria": [
+    {
+      "criterion": "Glossary schema supports all required fields",
+      "status": "pass",
+      "notes": "All required fields present: term, definition, v_description, precise_term, context, first_encountered, absorbed, usage_count"
+    },
+    {
+      "criterion": "Moment generator detects imprecise language",
+      "status": "pass",
+      "notes": "detect_imprecision() uses substring matching and word overlap (40% threshold). Test: 'non-overlapping' -> 'MECE decomposition' ✓"
+    },
+    {
+      "criterion": "Teaching moments non-blocking",
+      "status": "pass",
+      "notes": "activate_at_checkpoint() stores moments without requiring acknowledgement. Returns moment for optional display, build continues."
+    },
+    {
+      "criterion": "Moments stored with absorbed tracking",
+      "status": "pass",
+      "notes": "teaching_moments.jsonl stores each moment with acknowledged/absorbed flags. mark_absorbed() updates glossary term.absorbed = True"
+    },
+    {
+      "criterion": "Integration hooks at all 4 checkpoints",
+      "status": "ready",
+      "notes": "activate_at_checkpoint() ready for integration with seeded_judge.py, review_manager.py, feedback_extractor.py. D6.2 will implement hooks."
+    }
+  ],
+  "implementation_notes": [
+    "No existing VibeTeacher implementation found. Created from scratch in N5/pulse/teaching/",
+    "Glossary pre-populated with 10 Pulse-specific terms: MECE, Drop, Stream, Deposit, Brief, Seeded, HITL, Orchestrator, Current, Pulse",
+    "Teaching moments stored build-local at N5/builds/<slug>/teaching_moments.jsonl (one JSONL per build)",
+    "Glossary matching uses substring matching first, then word overlap for fuzzy detection",
+    "Absorption tracking allows reducing repeat explanations once V demonstrates understanding",
+    "CLI tested: activate, pending, acknowledge, sms-summary commands working correctly",
+    "Integration documented in D6.1 brief - hooks ready for D6.2 implementation"
+  ],
+  "integration_readiness": {
+    "seeded_judge.py": "Ready - call activate_at_checkpoint('interview_complete', task_id, synthesis.get('combined_text')) after marking seeded",
+    "review_manager.py": "Ready - call activate_at_checkpoint('plan_review', slug, response) when V responds in process_review_response()",
+    "feedback_extractor.py": "Ready - call activate_at_checkpoint('feedback', slug, feedback) when extracting learnings",
+    "build_close": "Ready - get_pending_for_sms() can be called at build end for digest"
+  },
+  "known_limitations": [
+    "Glossary matching is simple (substring + word overlap), may need LLM fallback for complex patterns",
+    "Finding moments across all builds (acknowledge_moment) iterates all build directories - inefficient for large numbers",
+    "LLM analysis (generate_moment_with_llm) stubbed - would use Zo API for novel pattern detection",
+    "No init.py to prevent relative import conflicts - direct imports required"
+  ],
+  "learnings": [
+    "Separate glossary.json from SYSTEM_LEARNINGS.json - different purposes (vocabulary vs process)",
+    "Pre-populating glossary with domain-specific terms accelerates teaching from day 1",
+    "Teaching moments must be non-blocking to avoid disrupting build flow",
+    "Absorption tracking reduces repeat explanations once V demonstrates understanding",
+    "CLI testing with real inputs critical for validation (found import issues through testing)",
+    "Avoid __init__.py in multi-file teaching package to prevent relative import conflicts"
+  ]
+}

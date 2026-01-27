@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
 """
-Meeting Auto-Monitor
-Checks Google Drive for new transcripts and triggers Zo to process them.
-
-This script is designed to be run on a schedule (every hour).
-It downloads new transcripts and maintains a processing log.
+Meeting Auto Monitor - Automated discovery and queueing of new meetings
+Monitors Google Drive folders for new transcripts and queues them for processing.
 """
+
 import json
 import logging
-from datetime import datetime
+import hashlib
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Set
+from typing import List, Dict, Optional, Set
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)sZ %(levelname)s %(message)s',
-    datefmt='%Y-%m-%dT%H:%M:%S'
-)
+# Add workspace to Python path for imports
+import sys
+sys.path.insert(0, '/home/workspace')
+
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
+WORKSPACE = Path(WORKSPACE)
+
 # Paths
-WORKSPACE = Path("/home/workspace")
 PROCESSED_LOG = WORKSPACE / "N5" / "logs" / "meeting-processing" / "processed_transcripts.jsonl"
 STAGING_DIR = WORKSPACE / "Documents" / "Meetings" / "_staging"
 QUEUE_DIR = WORKSPACE / "N5" / "queues" / "meeting-processing"

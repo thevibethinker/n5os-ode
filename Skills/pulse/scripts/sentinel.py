@@ -17,9 +17,10 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
+from pulse_common import PATHS, WORKSPACE
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
-CONTROL_FILE = Path("/home/workspace/N5/config/pulse_control.json")
+BUILDS_DIR = PATHS.BUILDS
+CONTROL_FILE = PATHS.WORKSPACE / "N5" / "config" / "pulse_control.json"
 
 def get_control_state() -> dict:
     """Read control state, create default if missing"""

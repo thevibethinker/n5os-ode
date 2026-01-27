@@ -1,0 +1,16 @@
+{
+  "slug": "workos-integration",
+  "timestamp": "2026-01-25T05:10:45.451997+00:00",
+  "drops": {
+    "D1.1": {
+      "error": "Expecting value: line 30 column 83 (char 1374)"
+    }
+  },
+  "summary": {
+    "total_artifacts": 0,
+    "verified": 0,
+    "missing": 0,
+    "errors": 1
+  },
+  "passed": true
+}

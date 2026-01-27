@@ -2,5 +2,11 @@
   "protected": true,
   "reason": "system_data_registries_logs_meeting_tracking",
   "created": "2025-11-06T18:49:26+00:00",
-  "created_by": "system"
+  "created_by": "system",
+  "contains_pii": true,
+  "pii_categories": [
+    "email"
+  ],
+  "pii_marked_at": "2026-01-26T05:24:24.243480+00:00",
+  "pii_note": "PII detected during conversation close (con_WxPUSXG566miX5VX)"
 }

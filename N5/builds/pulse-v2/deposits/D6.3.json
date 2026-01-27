@@ -1,0 +1,33 @@
+{
+  "drop_id": "D6.3",
+  "title": "Architectural Principles Update",
+  "status": "complete",
+  "completed_at": "2026-01-24T17:58:00Z",
+  "conversation_id": "con_LhnxuEVVapCNdXle",
+  "artifacts": [
+    "N5/prefs/system/build_principles.md",
+    "N5/prefs/operations/pulse_v2_guidelines.md",
+    "N5/prefs/system/persona_routing_contract.md",
+    "N5/prefs/system/model_preferences.md"
+  ],
+  "summary": "Created/updated 4 architectural documents codifying Pulse v2 patterns and decisions",
+  "findings": {
+    "already_existed": [
+      "persona_routing_contract.md (updated with Pulse v2 routing section 7.2)"
+    ],
+    "newly_created": [
+      "build_principles.md - Core build orchestration principles",
+      "pulse_v2_guidelines.md - Operational guidelines for Pulse v2",
+      "model_preferences.md - Default model configuration"
+    ]
+  },
+  "checklist": {
+    "build_principles_created": true,
+    "pulse_v2_guidelines_created": true,
+    "persona_routing_updated": true,
+    "model_preferences_created": true,
+    "all_docs_have_frontmatter": true,
+    "principles_reflect_build_decisions": true
+  },
+  "notes_for_orchestrator": "This is D6.3, the final Drop in Stream 6 (Documentation). All architectural decisions from the Pulse v2 planning are now codified in N5/prefs/. The persona_routing_contract.md now includes section 7.2 for Pulse v2 routing, which references Skills/pulse/ rather than the old N5/pulse/ path."
+}

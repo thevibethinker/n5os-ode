@@ -1,0 +1,54 @@
+{
+  "slug": "task-system-wiring",
+  "title": "Task System Wiring - Meeting & Close Integration",
+  "build_type": "code_build",
+  "status": "active",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "orchestrator_convo": "con_OaZwIOzCydglh4r4",
+  "drops": {
+    "D1.1": {
+      "name": "b05-decomposer-upgrade",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "meeting-staging-bridge",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.3": {
+      "name": "close-hooks-what-next",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.1": {
+      "name": "thread-close-wiring",
+      "stream": 2,
+      "depends_on": [
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.2": {
+      "name": "integration-test",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "running"
+    }
+  },
+  "currents": {}
+}

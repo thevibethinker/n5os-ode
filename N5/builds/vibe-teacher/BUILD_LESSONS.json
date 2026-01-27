@@ -1,0 +1,17 @@
+{
+  "slug": "vibe-teacher",
+  "learnings": [
+    {
+      "text": "Glossary builds up over time automatically - no need for manual curation. Absorption tracking prevents repeat teaching on the same concepts. (Source: D6.1)",
+      "source": "manual",
+      "added_at": "2026-01-24T22:59:21.676470+00:00",
+      "tags": []
+    },
+    {
+      "text": "Word overlap matching requires careful tuning - direct substring matching was too rigid. Using a 40% threshold on expanded word sets works better for catching imprecise phrasing. (Source: D6.1)",
+      "source": "manual",
+      "added_at": "2026-01-24T22:59:31.333694+00:00",
+      "tags": []
+    }
+  ]
+}

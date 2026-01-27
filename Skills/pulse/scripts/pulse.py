@@ -23,11 +23,13 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
+from pulse_common import PATHS, WORKSPACE
+
 # Paths
-WORKSPACE = Path("/home/workspace")
-BUILDS_DIR = WORKSPACE / "N5" / "builds"
-CONVERSATIONS_DB = WORKSPACE / "N5" / "data" / "conversations.db"
-SKILLS_DIR = WORKSPACE / "Skills" / "pulse" / "scripts"
+# WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
+BUILDS_DIR = PATHS.BUILDS
+CONVERSATIONS_DB = PATHS.WORKSPACE / "N5" / "data" / "conversations.db"
+SKILLS_DIR = PATHS.SCRIPTS
 
 # Config
 DEFAULT_POLL_INTERVAL = 180  # 3 minutes
@@ -201,7 +203,7 @@ async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> 
 FIRST ACTION (before anything else):
 Run this command to register yourself:
 ```bash
-python3 /home/workspace/N5/scripts/session_state_manager.py init --convo-id $(cat /proc/self/cgroup | grep -o 'con_[^/]*' | head -1 || echo "unknown") --type build --build {slug} --worker-num {drop_id} --message "Drop {drop_id}: {brief.split(chr(10))[0][:50]}"
+python3 {str(PATHS.WORKSPACE)}/N5/scripts/session_state_manager.py init --convo-id $(cat /proc/self/cgroup | grep -o 'con_[^/]*' | head -1 || echo "unknown") --type build --build {slug} --worker-num {drop_id} --message "Drop {drop_id}: {brief.split(chr(10))[0][:50]}"
 ```
 
 THEN EXECUTE:

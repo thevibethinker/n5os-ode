@@ -1,0 +1,44 @@
+{
+  "slug": "b05-backfill",
+  "title": "B05 Consolidation & Semantic Backfill",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "orchestrator_convo": "con_BTFIhYsxr3P3CzaR",
+  "drops": {
+    "D1.1": {
+      "name": "B05 Prompt Consolidation",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T03:59:30.954408+00:00",
+      "conversation_id": "con_kRUuihtAmxEeatF4"
+    },
+    "D1.2": {
+      "name": "Semantic Extraction Pipeline",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "failure_reason": "",
+      "completed_at": "2026-01-26T05:01:26.295009+00:00"
+    },
+    "D2.1": {
+      "name": "Interactive Review & Import",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete",
+      "completed_at": "2026-01-26T05:16:27.716039+00:00"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-26T03:57:54.394313+00:00",
+  "completed_at": "2026-01-27T02:59:03.039395"
+}

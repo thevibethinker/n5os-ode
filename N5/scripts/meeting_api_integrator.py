@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
 """
-Meeting API Integrator
-Integrates Google Calendar and Gmail APIs for meeting prep pipeline
+Meeting API Integrator - Google Calendar and Gmail Integration
 """
 
+import os
 import json
+import logging
+import pytz
 import re
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
 
-import pytz
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
+logger = logging.getLogger(__name__)
 
-TIMEZONE = pytz.timezone('America/New_York')
+# Parse timezone from config
+if TIMEZONE == 'UTC':
+    TZ = pytz.UTC
+else:
+    TZ = pytz.timezone(TIMEZONE)
 
 
 class MeetingAPIIntegrator:
@@ -41,7 +50,7 @@ class MeetingAPIIntegrator:
             List of calendar events with N5OS tags
         """
         # Calculate time range
-        now = datetime.now(TIMEZONE)
+        now = datetime.now(TZ)
         time_min = now.isoformat()
         time_max = (now + timedelta(days=days_ahead)).isoformat()
         
@@ -236,7 +245,7 @@ class MeetingAPIIntegrator:
         try:
             # Get date
             internal_date = message.get('internalDate', '0')
-            date = datetime.fromtimestamp(int(internal_date) / 1000, tz=TIMEZONE)
+            date = datetime.fromtimestamp(int(internal_date) / 1000, tz=TZ)
             date_str = date.strftime('%Y-%m-%d')
             
             # Get subject

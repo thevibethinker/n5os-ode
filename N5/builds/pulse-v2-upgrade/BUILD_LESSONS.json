@@ -1,0 +1,14 @@
+{
+  "slug": "pulse-v2-upgrade",
+  "learnings": [
+    {
+      "text": "VibeTeacher uses separate glossary.json from SYSTEM_LEARNINGS.json. Different purposes: vocabulary tracking vs process learnings.",
+      "source": "manual",
+      "added_at": "2026-01-24T22:57:43.365893+00:00",
+      "tags": [
+        "teaching",
+        "glossary"
+      ]
+    }
+  ]
+}

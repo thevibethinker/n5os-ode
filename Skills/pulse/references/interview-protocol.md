@@ -1,19 +1,19 @@
 ---
 created: 2026-01-24
-last_edited: 2026-01-24
-version: 1.0
-provenance: con_T0QGg2ryaDjCTxVj
+last_edited: 2026-01-25
+version: 2.0
+provenance: con_xrhltA7BHuQGYNyw
 ---
 
 # Pulse Interview Protocol
 
-Pre-build interview to decompose work into Streams and Drops.
+Pre-build interview to decompose work into Streams, Drops, and Checkpoints.
 
 ## When to Use
 
 Before any build that will use Pulse orchestration.
 
-## The Four Questions
+## The Five Questions
 
 ### 1. What are we building?
 - Concrete deliverables (files, features, systems)
@@ -37,16 +37,44 @@ These become **Currents** (sequential chains within a Stream).
 - External dependencies
 - Potential blockers
 
+### 5. Where are the checkpoints?
+Checkpoints are **strategic quality gates** at high-risk junctures.
+
+**Identify build type:**
+- API build? Data pipeline? Frontend? Integration?
+- What typically goes wrong with this type?
+
+**Identify high-risk handoffs:**
+- Where does one Drop's bad output cascade to multiple downstream Drops?
+- Where must multiple Drops' outputs be consistent?
+
+**Place checkpoints:**
+- 1-2 checkpoints per build is typical
+- Each checkpoint gets a specific verification brief
+- Reference: `Skills/pulse/drops/checkpoint-template.md`
+
+| Build Type | Common Checkpoint Placements |
+|------------|------------------------------|
+| API | After schema, before frontend integration |
+| Data Pipeline | After ingest, after transform |
+| Frontend | After components, before deploy |
+| Integration | After both sides built, before E2E |
+
 ## Output
 
-Generate `meta.json` and Drop briefs in `N5/builds/<slug>/`.
+Generate in `N5/builds/<slug>/`:
+- `meta.json` — Build metadata with streams, drops, checkpoints
+- `drops/D*.md` — Drop briefs
+- `drops/C*.md` — Checkpoint briefs
 
 ## Decomposition Patterns
 
 ### Layer Cake (most common)
 ```
 Stream 1: Foundation (schema, types, config)
+    → Checkpoint C1: Verify foundation consistency
 Stream 2: Core (business logic, APIs)
+    → Checkpoint C2: Verify API matches schema
 Stream 3: Surface (UI, integrations)
 ```
 
@@ -55,11 +83,12 @@ Stream 3: Surface (UI, integrations)
 Stream 1: Feature A (full stack)
 Stream 2: Feature B (full stack)
 Stream 3: Feature C (full stack)
+    → Checkpoint C1: Verify features don't conflict
 ```
 
 ### Pipeline
 ```
-Current 1: Ingest → Transform → Validate → Store
+Current 1: Ingest → Checkpoint → Transform → Checkpoint → Validate → Store
 ```
 
 ## Anti-Patterns
@@ -67,3 +96,5 @@ Current 1: Ingest → Transform → Validate → Store
 - **Too granular**: >5 Drops per Stream = overhead exceeds value
 - **False parallelism**: Drops that actually depend on each other
 - **Missing dependencies**: Drop assumes artifact that doesn't exist yet
+- **No checkpoints**: Complex builds without quality gates = cascade failures
+- **Over-checkpointing**: >3 checkpoints = decompose the build differently

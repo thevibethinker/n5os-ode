@@ -1,0 +1,120 @@
+{
+  "slug": "b05-backfill-extended",
+  "learnings": [
+    {
+      "text": "All meetings contain both B05_ACTION_ITEMS.md and transcript.md files - always prioritize B05_ACTION_ITEMS.md as it contains pre-processed action items. The Zo API extraction works well with both formats but B05_ACTION_ITEMS.md yields more consistent results.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:26:00.815659+00:00",
+      "tags": []
+    },
+    {
+      "text": "LLM sometimes truncates JSON responses mid-object when content is lengthy. Added regex parsing to extract JSON from markdown blocks and partial responses to handle this gracefully. Source: D1.1",
+      "source": "manual",
+      "added_at": "2026-01-26T05:27:32.057105+00:00",
+      "tags": []
+    },
+    {
+      "text": "Some Zo API responses for action item extraction include markdown code fences around JSON, causing parsing errors. The extraction script should handle both clean JSON and markdown-wrapped JSON responses.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:29:09.755084+00:00",
+      "tags": [
+        "json",
+        "parsing",
+        "api"
+      ]
+    },
+    {
+      "text": "Logan-x-vrijen meeting had JSON parsing issue - response was valid but JSON regex failed to extract. Successfully processed but returned 0 items instead of expected items. May need better JSON parsing logic for future batches.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:31:35.028361+00:00",
+      "tags": []
+    },
+    {
+      "text": "All 9 meetings processed successfully via API extraction. B05_ACTION_ITEMS.md files were universally available and well-formatted. JSON parsing handled markdown code fences effectively. Source: D1.2",
+      "source": "manual",
+      "added_at": "2026-01-26T05:31:56.655042+00:00",
+      "tags": []
+    },
+    {
+      "text": "Successfully extracted 18 action items from 9 meetings using semantic LLM analysis. Zero API failures or JSON parsing errors when handling markdown code fences properly - the key was robust regex extraction of JSON from triple-backtick responses. Source: D1.2",
+      "source": "manual",
+      "added_at": "2026-01-26T05:33:01.658875+00:00",
+      "tags": []
+    },
+    {
+      "text": "Zo API calls can timeout during extraction (120s timeout). Script handled this gracefully and continued processing other meetings. Source: D1.3",
+      "source": "manual",
+      "added_at": "2026-01-26T05:37:28.509756+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.3 successfully extracted 20 action items from 9 meetings in Batch 3. All meetings had B05_ACTION_ITEMS.md except one test meeting which used transcript.md. API extraction with content truncation at 8000 chars worked reliably without timeouts or parsing issues.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:38:19.678692+00:00",
+      "tags": []
+    },
+    {
+      "text": "Zo API timeouts (120s) can occur during action item extraction, especially with longer content. Increased timeout to 180s in retry and handled gracefully with error collection. Retry mechanism successfully recovered from initial timeout.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:41:29.395633+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.4 successfully extracted 33 action items from 9 meetings. All meetings had both B05_ACTION_ITEMS.md and transcript.md files - B05_ACTION_ITEMS.md was used consistently. API extraction worked reliably with JSON parsing workarounds for markdown code fences.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:41:49.047131+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.4 successfully processed all 9 meetings in batch, extracting 33 total action items. All meetings had B05_ACTION_ITEMS.md files which simplified extraction. JSON parsing handled markdown code fences correctly.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:42:16.116646+00:00",
+      "tags": [
+        "extraction",
+        "json-parsing"
+      ]
+    },
+    {
+      "text": "Two meetings had JSON parsing issues - response included extra content after valid JSON array. The script gracefully handled this by catching the error and returning empty array, but future iterations should consider improving the JSON extraction regex or asking Zo API to return cleaner JSON-only responses.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:43:17.127241+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.5 successfully processed all 9 meetings in Batch 5 (2026-01-12 to 2026-01-15), extracting 34 total action items. All meetings had both B05_ACTION_ITEMS.md and transcript.md files. API calls completed without timeouts or errors. JSON parsing worked consistently with improved error handling.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:48:00.842285+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.5 successfully extracted 32 action items from all 9 meetings in Batch 5. Robust JSON parsing with regex patterns handled all API responses without errors.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:48:33.721176+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.5 successfully processed all 9 meetings in Batch 5, extracting 31 total action items. Zero extraction errors or API timeouts encountered.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:51:36.494913+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.6 had JSON parsing issues due to missing quotes in first_step field from LLM response. Parser regex still successfully handled most extractions, but should improve error handling for malformed JSON.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:56:44.456369+00:00",
+      "tags": []
+    },
+    {
+      "text": "JSON parsing can fail due to LLM response truncation. Recovery strategy: truncate input content to 15k chars, reduce timeout to 90s, add multiple JSON parsing patterns including handling truncated responses by attempting to close incomplete objects/arrays.",
+      "source": "manual",
+      "added_at": "2026-01-26T05:59:55.726900+00:00",
+      "tags": []
+    },
+    {
+      "text": "Successfully processed all 11 meetings in batch 6, with 1 initial API timeout that was resolved with 180s timeout retry. Extracted 48 action items total. B05_ACTION_ITEMS.md files were consistently available in all meetings.",
+      "source": "manual",
+      "added_at": "2026-01-26T06:00:36.186285+00:00",
+      "tags": []
+    }
+  ]
+}

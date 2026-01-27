@@ -1,0 +1,28 @@
+{
+  "drop_id": "D3.1",
+  "convo_id": "con_6YDAhoBXSDnow6Nk",
+  "status": "complete",
+  "completed_at": "2026-01-26T01:05:00.000Z",
+  "summary": "Updated thread-close skill to integrate with new task-system Skill. Replaced old close_hooks.py regex-based approach with context.py script calls for AI reasoning. Updated SKILL.md, core.py, added task.py commands, deprecated old files.",
+  "artifacts": [
+    "Skills/thread-close/SKILL.md",
+    "N5/lib/close/core.py",
+    "Skills/task-system/scripts/task.py",
+    "N5/task_system/close_hooks.py",
+    "N5/task_system/action_tagger.py",
+    "Skills/thread-close/integration-test-scenario.md",
+    "N5/builds/task-system-skill/deposits/D3.1.json"
+  ],
+  "learnings": "The context.py script doesn't return task_id in output yet - it returns matching_tasks array and suggested_task_id. The core.py needs to handle this structure. Added 'update' and 'tag-conversation' commands to task.py to support the full flow described in the brief.",
+  "concerns": null,
+  "decisions": [
+    {
+      "decision": "Keep old N5/task_system/ files with deprecation notices instead of deleting",
+      "rationale": "Allows 1-2 month transition period for any code still importing them directly. Safe removal date documented in deprecation notices (2026-03-01)."
+    },
+    {
+      "decision": "Add integration test scenario to thread-close",
+      "rationale": "Provides concrete example of full flow from detection → assessment → user choice → update. Helpful for testing and documentation."
+    }
+  ]
+}

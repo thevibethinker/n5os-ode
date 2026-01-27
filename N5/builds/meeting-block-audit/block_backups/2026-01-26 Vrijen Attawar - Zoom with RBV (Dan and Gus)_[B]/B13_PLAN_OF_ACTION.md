@@ -1,0 +1,3 @@
+Generated `B13: Risks & Opportunities` block for the RBV meeting transcript. The analysis surfaces the key strategic dynamics around Careerspan's first-party data advantage as an ethical differentiation from Eightfold's scraped data model, the emerging partnership opportunity with RBV's expert-weighted capital allocation platform, and the tension between team fatigue/exit urgency versus pursuing optimal strategic fit. The analysis also maps competitive risks from similar community platforms and the broader reputational uncertainty facing the HR AI category.
+
+*January 26, 2026, 7:15 PM ET*

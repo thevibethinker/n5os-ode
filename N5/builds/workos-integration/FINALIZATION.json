@@ -1,0 +1,14 @@
+{
+  "slug": "workos-integration",
+  "timestamp": "2026-01-25T05:10:45.403708+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for workos-integration\n   Artifacts: 0/0 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: workos-integration\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/workos-integration/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 0,
+  "success": true
+}

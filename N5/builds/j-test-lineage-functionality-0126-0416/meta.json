@@ -1,0 +1,28 @@
+{
+  "slug": "j-test-lineage-functionality-0126-0416",
+  "title": "Test lineage functionality",
+  "build_type": "code_build",
+  "launch_mode": "jettison",
+  "status": "pending",
+  "total_streams": 1,
+  "current_stream": 0,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "lineage": {
+    "parent_type": "build",
+    "parent_ref": "pulse-variants",
+    "parent_conversation": "con_IMnAph368y8itaRK",
+    "moment": "Testing D1.2 implementation",
+    "branched_at": "2026-01-26T04:16:24.277787+00:00"
+  },
+  "drops": {
+    "D1.1": {
+      "name": "jettison-task",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "manual",
+      "status": "pending"
+    }
+  },
+  "currents": {},
+  "created_at": "2026-01-26T04:16:24.277802+00:00"
+}

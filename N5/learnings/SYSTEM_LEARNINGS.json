@@ -2,7 +2,132 @@
   "meta": {
     "description": "System-wide learnings that apply across all builds",
     "created": "2026-01-24",
-    "version": "1.0"
+    "version": "2.0",
+    "migrated_at": "2026-01-26T02:12:57.781069+00:00"
   },
-  "learnings": []
+  "learnings": [
+    {
+      "text": "The interview should ask about deadlines explicitly",
+      "category": "timing",
+      "source": "sms",
+      "origin_build": "test-build",
+      "added_at": "2026-01-24T22:44:16.852994+00:00",
+      "source_feedback": "The interview should ask about deadlines explicitly",
+      "tags": [
+        "timing"
+      ],
+      "applied": false,
+      "applied_to": [],
+      "confidence": 0.8500000000000001,
+      "validated_count": 3,
+      "last_validated": "2026-01-26T02:28:38.144441+00:00",
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "This approach should be more non-overlapping and idempotent",
+      "category": "process",
+      "source": "sms",
+      "origin_build": "pulse-v2",
+      "added_at": "2026-01-24T22:59:30.576615+00:00",
+      "source_feedback": "This approach should be more non-overlapping and idempotent",
+      "tags": [
+        "process"
+      ],
+      "applied": false,
+      "applied_to": [],
+      "confidence": 0.0,
+      "validated_count": 0,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "invalidated",
+      "disputed_by": "D1.1",
+      "dispute_reason": "Test dispute from D1.1"
+    },
+    {
+      "text": "VibeTeacher: 'teach' SMS command retrieves teaching moments from builds, 'absorbed: <term>' marks glossary terms as learned",
+      "source": "manual",
+      "added_at": "2026-01-24T23:01:11.056993+00:00",
+      "tags": [],
+      "origin_build": "pulse-v2",
+      "confidence": 0.7,
+      "validated_count": 0,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "VibeTeacher uses simple pattern matching for imprecision detection (6 patterns: MECE, atomic, idempotent, checkpoint, decomposition, parallelizable) - should expand with LLM analysis for better coverage",
+      "source": "manual",
+      "added_at": "2026-01-24T23:01:33.591910+00:00",
+      "tags": [],
+      "origin_build": "pulse-v2",
+      "confidence": 0.7,
+      "validated_count": 0,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Test v2 learning with custom confidence",
+      "source": "manual",
+      "added_at": "2026-01-26T02:13:57.421745+00:00",
+      "tags": [
+        "testing"
+      ],
+      "origin_build": "watts-principles",
+      "confidence": 0.9,
+      "validated_count": 0,
+      "last_validated": null,
+      "decay_days": 60,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "D1.1 test: confidence scoring and status tracking prevents AI contamination",
+      "source": "manual",
+      "added_at": "2026-01-26T02:28:54.991776+00:00",
+      "tags": [
+        "watts-principles,testing"
+      ],
+      "origin_build": "watts-principles",
+      "confidence": 0.9,
+      "validated_count": 0,
+      "last_validated": null,
+      "decay_days": 45,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "CLI command syntax in brief had errors: validate, dispute, invalidate use <index> not <slug> <index> for system learnings. Brief showed validate <slug> <index> but actual implementation is validate <index>.",
+      "source": "manual",
+      "added_at": "2026-01-26T02:29:50.641185+00:00",
+      "tags": [
+        "documentation,cli"
+      ],
+      "origin_build": "watts-principles",
+      "confidence": 1.0,
+      "validated_count": 0,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    }
+  ]
 }

@@ -1,0 +1,43 @@
+{
+  "slug": "pulse-test",
+  "title": "Pulse System Validation",
+  "build_type": "general",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "drops": {
+    "D1.1": {
+      "name": "Create test file A",
+      "stream": 1,
+      "depends_on": [],
+      "status": "complete",
+      "started_at": "2026-01-24T15:56:05.108630+00:00",
+      "conversation_id": "con_pgT6GFpwbT4GsiCs",
+      "completed_at": "2026-01-24T15:59:35.295354+00:00"
+    },
+    "D1.2": {
+      "name": "Create test file B",
+      "stream": 1,
+      "depends_on": [],
+      "status": "complete",
+      "started_at": "2026-01-24T15:56:52.138905+00:00",
+      "conversation_id": "con_kVXjAihnhRfPRQty",
+      "completed_at": "2026-01-24T15:59:35.295374+00:00"
+    },
+    "D2.1": {
+      "name": "Combine A and B",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "status": "complete",
+      "started_at": "2026-01-24T16:00:20.333236+00:00",
+      "conversation_id": "con_BkZdWhQwDuIrfIsZ",
+      "completed_at": "2026-01-24T16:28:22.488355+00:00"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-24T15:55:24.789769+00:00",
+  "completed_at": "2026-01-24T16:28:22.488390+00:00"
+}

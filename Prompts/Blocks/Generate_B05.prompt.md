@@ -1,14 +1,31 @@
 ---
-description: Generate B05 Action Items block - commitments and to-dos from meeting
-tags: [meeting-intelligence, block-generation, b05, action-items]
+description: Generate B05 Action Items block with structured decomposition
+tags: [meeting-intelligence, block-generation, b05, action-items, task-decomposition]
 tool: true
 created: 2025-11-03
-last_edited: 2026-01-21
-version: 2.0
+last_edited: 2026-01-26
+version: 3.0
+provenance: con_kRUuihtAmxEeatF4
 ---
-# Generate Block B05: Action Items
 
-Extract explicit commitments, to-dos, and follow-up actions from the transcript.
+# Generate B05: Action Items with Decomposition
+
+Extract action items from the meeting transcript and decompose each one with actionable metadata.
+
+## Your Task
+
+Read the meeting transcript and extract ALL action items. For each action item, provide structured decomposition including:
+- First actionable step (2-minute rule)
+- Priority bucket inference
+- Time estimate
+- Domain/project classification
+- Milestone structure (if multi-step)
+
+## Input
+
+You will receive:
+1. **Transcript content** - Full meeting transcript
+2. **Meeting metadata** (optional) - Context about meeting type, participants
 
 ## Output Format
 
@@ -27,28 +44,88 @@ provenance: {agent_id or conversation_id}
 ```markdown
 # B05: Action Items
 
-## Immediate Actions (Next 48 Hours)
+## Action Items
 
-| Owner | Action | Context | Mentioned At |
-|-------|--------|---------|--------------|
-| {Name} | {Specific deliverable} | {Why/what triggered this} | {Approximate timestamp} |
+### 1. [Action item title]
+- **Owner**: [Name or "Unassigned"]
+- **Priority**: [external|strategic|urgent|normal]
+- **First Step**: [Specific 2-minute actionable step]
+- **Estimated**: [X min]
+- **Domain**: [Careerspan|Zo|Personal|Other]
+- **Project**: [Inferred project name or omit if not applicable]
+- **Milestones**: 
+  1. [Milestone 1]
+  2. [Milestone 2]
+  3. [Milestone 3 (if applicable)]
 
-## Near-Term Actions (This Week)
-
-| Owner | Action | Context | Deadline |
-|-------|--------|---------|----------|
-| ... | ... | ... | ... |
-
-## Open Loops / Follow-Ups
-
-- **{Topic}**: {What needs resolution} — Owner: {Name}
-- ...
-
-## Commitments Made
-
-- {Name} committed to {specific action} for {recipient/purpose}
-- ...
+### 2. [Another action item]
+[... same structure ...]
 ```
+
+## Priority Bucket Definitions
+
+- **external**: Commitment to external party (investors, partners, customers) - always high priority
+- **strategic**: Long-term impact, foundational work, decisions that shape direction
+- **urgent**: Time-sensitive, deadline-driven, blocking other work
+- **normal**: Routine tasks, ongoing work without time pressure
+
+## Domain Inference
+
+Based on context:
+- **Careerspan**: Careerspan business, clients, partnerships, product work
+- **Zo**: Zo system development, N5 tasks, personal productivity infrastructure
+- **Personal**: Non-work items (health, finances, relationships)
+- **Other**: Everything else (unclear context)
+
+## First Step Rule (2-Minute Rule)
+
+The "First Step" should be:
+- Actionable in 2 minutes or less
+- Clearly defined (no ambiguity)
+- The absolute smallest move forward
+- Not "think about" or "plan to" - must be DO
+
+Examples:
+- ✅ "Open email to Sarah, write 2-sentence check-in"
+- ✅ "Create new folder for project files"
+- ✅ "Draft agenda bullet points"
+- ❌ "Plan the project"
+- ❌ "Think about approach"
+- ❌ "Research the topic" (too vague)
+
+## Time Estimation Guidelines
+
+- **5 min**: Quick email, message, small edit
+- **15 min**: Draft document, review materials, focused work
+- **30 min**: Substantial writing, call prep, research
+- **60 min+**: Deep work, complex deliverable
+
+Be realistic - prefer overestimation by 20% than underestimation.
+
+## Milestone Structure
+
+For multi-step items (estimated >30 min), break down:
+1. First step (already captured, repeat if it's the first milestone)
+2. Intermediate steps
+3. Completion/final step
+
+Example:
+```markdown
+### Draft partnership proposal
+- **Estimated**: 60 min
+- **Milestones**:
+  1. Open previous template (2 min)
+  2. Customize for this partner (25 min)
+  3. Internal review with V (20 min)
+  4. Final polish (15 min)
+```
+
+## Owner Attribution
+
+Default to "Vrijen" unless:
+- Explicitly assigned to someone else in the transcript
+- Clear it's the counterparty's responsibility
+- Use "Unassigned" if ownership is ambiguous
 
 ## Extraction Rules
 
@@ -61,33 +138,19 @@ provenance: {agent_id or conversation_id}
    - Use actual names from transcript
    - If unclear who owns it, note "TBD - needs clarification"
 
-3. **INCLUDE CONTEXT**
-   - Why was this action mentioned?
-   - What triggered the commitment?
-   - Who is the recipient/beneficiary?
+3. **INCLUDE CONTEXT IN DECOMPOSITION**
+   - Use domain/project inference to provide context
+   - Include milestone structure for multi-step items
 
-4. **TIME SENSITIVITY**
-   - Note any explicit deadlines ("by Friday", "next week")
-   - Infer urgency from context if not explicit
+## Quality Standards
 
-## Anti-Patterns (NEVER DO THESE)
+- **No hallucinations**: Only extract items explicitly discussed
+- **No vague items**: Every item must be specific and actionable
+- **Preserve context**: Include domain/project inference rationale in notes if helpful
+- **Complete decomposition**: Every item must have all required fields
 
-❌ Copying transcript quotes verbatim
-❌ "- Speaker: [quote from transcript]"
-❌ Generic actions like "follow up" without specifics
-❌ Including discussion points that aren't actionable
-❌ Missing owner/accountability
+## Example Output
 
-## Example of GOOD vs BAD Output
-
-**BAD:**
-```markdown
-### Action Items
-- Vrijen Attawar: I'll call you and explain why.
-- Trinayaan: Let me just give you context.
-```
-
-**GOOD:**
 ```markdown
 ---
 created: 2026-01-21
@@ -98,23 +161,59 @@ provenance: agent_xyz123
 
 # B05: Action Items
 
-## Immediate Actions (Next 48 Hours)
+## Action Items
 
-| Owner | Action | Context | Mentioned At |
-|-------|--------|---------|--------------|
-| Vrijen | Send intro email to Ben at Zo | Trinayaan expressed interest in AI productivity tools | ~15:00 |
-| Trinayaan | Share GitHub repo with take-home project feedback | Discussed hiring process pain points | ~22:00 |
+### 1. Follow up with Sarah about partnership
+- **Owner**: Vrijen
+- **Priority**: external (commitment to external party)
+- **First Step**: Open email to Sarah, write 2-sentence check-in
+- **Estimated**: 5 min
+- **Domain**: Careerspan
+- **Project**: Partnerships
+- **Milestones**: 
+  1. Draft email
+  2. Send email
+  3. Await response
 
-## Open Loops / Follow-Ups
+### 2. Review investor memo
+- **Owner**: Vrijen
+- **Priority**: strategic
+- **First Step**: Open memo draft, read first section
+- **Estimated**: 15 min
+- **Domain**: Careerspan
+- **Project**: Fundraising
+- **Milestones**:
+  1. Read memo
+  2. Add comments
+  3. Send feedback
 
-- **Careerspan partnership**: Explore whether coaching data could help with technical hiring signal — Owner: Vrijen
-- **Interview process feedback system**: Trinayaan mentioned building something, V offered to help test — Owner: Both
-
-## Commitments Made
-
-- Vrijen committed to making an introduction to the Zo team
-- Trinayaan committed to sharing his hiring process analysis
+### 3. Schedule team retrospective
+- **Owner**: Vrijen
+- **Priority**: normal
+- **First Step**: Open calendar, find 1-hour slot next week
+- **Estimated**: 5 min
+- **Domain**: Zo
+- **Project**: Team management
+- **Milestones**: (single-step task, no milestones needed)
 ```
+
+## No Action Items?
+
+If no action items are found in the transcript, output:
+
+```markdown
+# B05: Action Items
+
+No action items identified in this meeting.
+```
+
+## Process
+
+1. Read transcript thoroughly
+2. Identify action items (look for: "I'll", "Need to", "Let's", "Follow up", "Schedule", etc.)
+3. For each item, decompose according to format
+4. Output in structured markdown format above
+5. Ensure all required fields are populated
 
 ---
 

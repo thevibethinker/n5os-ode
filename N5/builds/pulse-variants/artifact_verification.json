@@ -1,0 +1,49 @@
+{
+  "slug": "pulse-variants",
+  "timestamp": "2026-01-26T05:21:37.806314+00:00",
+  "drops": {
+    "D1.1": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py (modified with lineage functionality)"
+      ],
+      "verified": [],
+      "missing": [
+        "Skills/pulse/scripts/pulse.py (modified with lineage functionality)"
+      ]
+    },
+    "D2.2": {
+      "claimed": [
+        "Skills/pulse/SKILL.md"
+      ],
+      "verified": [
+        "Skills/pulse/SKILL.md"
+      ],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 4,
+    "verified": 3,
+    "missing": 1,
+    "errors": 0
+  },
+  "passed": false
+}

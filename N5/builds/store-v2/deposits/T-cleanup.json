@@ -1,0 +1,114 @@
+{
+  "drop_id": "T-cleanup",
+  "build_slug": "store-v2",
+  "check_type": "cleanup",
+  "timestamp": "2026-01-25T04:05:00Z",
+  "findings": [
+    {
+      "type": "backup_file",
+      "file": "pulse-sanitized/scripts/pulse.py.backup",
+      "safe_to_remove": true,
+      "reason": "Development backup file"
+    },
+    {
+      "type": "backup_file", 
+      "file": "pulse-claude/pulse-sanitized/scripts/pulse.py.backup",
+      "safe_to_remove": true,
+      "reason": "Development backup file"
+    },
+    {
+      "type": "backup_file",
+      "file": "pulse-zo-extracted/pulse-sanitized/scripts/pulse.py.backup", 
+      "safe_to_remove": true,
+      "reason": "Development backup file"
+    },
+    {
+      "type": "unused_variable",
+      "file": "pulse-sanitized/scripts/pulse.py",
+      "line": 35,
+      "variable": "DEFAULT_POLL_INTERVAL",
+      "safe_to_remove": true
+    },
+    {
+      "type": "unused_variable",
+      "file": "pulse-sanitized/scripts/pulse.py",
+      "line": 648,
+      "variable": "deposits_dir",
+      "safe_to_remove": true
+    },
+    {
+      "type": "unused_variable",
+      "file": "pulse-sanitized/scripts/pulse_safety.py",
+      "line": 122,
+      "variable": "branch_name",
+      "safe_to_remove": true
+    },
+    {
+      "type": "commented_code",
+      "file": "pulse-sanitized/scripts/pulse_learnings.py",
+      "start_line": 194,
+      "end_line": 198,
+      "lines": 4,
+      "preview": "# Handle different formats:\n# 1. List of objects with \"text\" field...",
+      "safe_to_remove": false,
+      "reason": "Documentation comment, not commented-out code"
+    },
+    {
+      "type": "debug_print",
+      "file": "pulse-sanitized/scripts/pulse.py",
+      "line_count": 186,
+      "safe_to_remove": false,
+      "reason": "Intentional logging statements, not debug artifacts"
+    }
+  ],
+  "auto_fixable": [
+    {
+      "type": "backup_file",
+      "files": [
+        "pulse-sanitized/scripts/pulse.py.backup",
+        "pulse-claude/pulse-sanitized/scripts/pulse.py.backup",
+        "pulse-zo-extracted/pulse-sanitized/scripts/pulse.py.backup"
+      ],
+      "fix": "Remove backup files"
+    }
+  ],
+  "requires_review": [
+    {
+      "type": "unused_variables",
+      "severity": "low",
+      "count": 24,
+      "issue": "Multiple unused variables across duplicate artifact directories",
+      "recommendation": "Consider cleaning up unused variables, but many may be intentionally kept for interface compatibility"
+    },
+    {
+      "type": "duplicate_artifacts",
+      "severity": "medium", 
+      "issue": "Three copies of identical code in different artifact directories",
+      "recommendation": "Consider consolidating artifacts to single canonical version"
+    },
+    {
+      "type": "print_statements",
+      "severity": "low",
+      "count": 558,
+      "issue": "Large number of print statements, but most are intentional logging",
+      "recommendation": "Print statements appear to be intentional logging infrastructure, not debug artifacts"
+    }
+  ],
+  "summary": {
+    "total_findings": 27,
+    "auto_fixed": 3,
+    "requires_review": 24,
+    "lines_removed": 0,
+    "files_removed": 3
+  },
+  "health_contribution": 0.8,
+  "notes": [
+    "Most print statements are intentional logging infrastructure, not debug artifacts",
+    "Unused variables found but many may be kept for interface compatibility",
+    "Three artifact directories contain identical code - potential consolidation opportunity",
+    "Backup files successfully removed as they are clear development artifacts"
+  ],
+  "auto_fixes_applied": [
+    "Removed 3 .backup files (pulse.py.backup in each artifact directory)"
+  ]
+}

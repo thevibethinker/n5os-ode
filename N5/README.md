@@ -21,9 +21,10 @@ N5/
 ├── scripts/           Python automation scripts
 ├── prefs/             System preferences and protocols
 ├── config/            Configuration files
-├── lists/             Action tracking (todos, lessons, etc.)
+├── lists/             Action tracking (todos, lessons, etc..)
 ├── logs/              Thread exports and system logs
 ├── records/           Meeting records and processing outputs
+├── Skills/            Automated workflow skills (meeting-ingestion, pulse, etc.)
 └── System Documentation/  Quick reference guides
 ```
 
@@ -33,6 +34,8 @@ N5/
 
 - **Meeting Intelligence:** `command 'meeting-process'`
 - **Thread Management:** `command 'thread-export'`
+- **Meeting Ingestion:** `skill 'meeting-ingestion'` - Automated transcript processing from Google Drive
+- **Build Orchestration:** `skill 'pulse'` - Automated parallel build execution system
 - **Git Safety:** `python3 N5/scripts/n5_git_check.py`
 - **Recipes System:** See `file 'N5/prefs/operations/recipe-execution-guide.md'`
 
@@ -43,6 +46,7 @@ N5/
 - **Full System Tour:** `file 'Documents/N5.md'`
 - **Architecture:** `file 'Knowledge/architectural/architectural_principles.md'`
 - **System Docs:** `file 'Documents/System/README.md'` (guides, architecture, personas)
+- **Skills:** `file 'Skills/'` (automated workflow capabilities)
 
 ---
 

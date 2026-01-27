@@ -332,12 +332,12 @@ class CalendarScheduler:
             (event.get("summary", ""), "summary"),
         ]
 
-        url_pattern = r'(https?://(?:zoom\.us|meet\.google\.com|teams\.microsoft\.com|webex\.com)/[^\s"\'<>]+)'
+        url_pattern = r'(https?://(?:[\w\-]+\.)*zoom\.us|meet\.google\.com|teams\.microsoft\.com|webex\.com)/[^\s"\'<>]+'
 
         for text, source in text_fields:
-            match = re.search(url_pattern, text, re.IGNORECASE)
+            match = re.search(url_pattern, text)
             if match:
-                link = match.group(1)
+                link = match.group(0)
                 logger.debug(f"Found video link in {source}: {link}")
                 return link
 

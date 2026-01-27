@@ -1,0 +1,10 @@
+{
+  "slug": "workos-integration",
+  "timestamp": "2026-01-25T05:10:45.589101+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

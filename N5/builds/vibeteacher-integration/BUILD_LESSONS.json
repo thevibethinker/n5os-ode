@@ -1,0 +1,47 @@
+{
+  "slug": "vibeteacher-integration",
+  "learnings": [
+    {
+      "text": "The VibeTeacher integration was already complete. The requested code block was present at exactly the right location (step 3.5) between harvest learnings and save results. Testing with 'python3 Skills/pulse/scripts/pulse.py finalize pulse-v2' confirmed the integration works correctly, producing teaching moments and including them in SMS summaries.",
+      "source": "Drop:D1.1",
+      "added_at": "2026-01-25T00:15:58.607573+00:00",
+      "tags": []
+    },
+    {
+      "text": "The VibeTeacher integration was already completed by a previous Drop or development work. The implementation in lines 1256-1281 of finalize_build() matches the requirements exactly: fetches teaching data, formats term names (first 3), adds count suffix for additional terms, includes CTA, handles errors gracefully, and appends to both success/failure SMS paths.",
+      "source": "Drop:D1.2",
+      "added_at": "2026-01-25T00:15:58.608023+00:00",
+      "tags": []
+    },
+    {
+      "text": "Pulse deposit learnings can have multiple formats - list of objects with 'text' field, list of strings, or single strings. The harvest function needed to handle all three formats and skip malformed JSON files gracefully.",
+      "source": "Drop:D1.3",
+      "added_at": "2026-01-25T00:15:58.608962+00:00",
+      "tags": []
+    },
+    {
+      "text": "The VibeTeacher integration was already complete. The requested code block was present at exactly the right location (step 3.5) between harvest learnings and save results. Testing with 'python3 Skills/pulse/scripts/pulse.py finalize pulse-v2' confirmed the integration works correctly, producing teaching moments and including them in SMS summaries.",
+      "source": "Drop:D1.1",
+      "added_at": "2026-01-25T00:19:38.708966+00:00",
+      "tags": []
+    },
+    {
+      "text": "The VibeTeacher integration was already completed by a previous Drop or development work. The implementation in lines 1256-1281 of finalize_build() matches the requirements exactly: fetches teaching data, formats term names (first 3), adds count suffix for additional terms, includes CTA, handles errors gracefully, and appends to both success/failure SMS paths.",
+      "source": "Drop:D1.2",
+      "added_at": "2026-01-25T00:19:38.709506+00:00",
+      "tags": []
+    },
+    {
+      "text": "Fixed two issues: (1) Enhanced extract_learnings_from_deposit() to handle both list-of-objects and list-of-strings formats for learnings in deposits, (2) Fixed invalid JSON syntax in D3.1-plan-generator.json where string values were missing quotes. The harvest command now correctly extracts text from structured learning objects with 'text' and 'tags' fields.",
+      "source": "Drop:D1.3",
+      "added_at": "2026-01-25T00:19:38.710244+00:00",
+      "tags": []
+    },
+    {
+      "text": "All VibeTeacher integrations are functioning correctly. The finalize process properly activates teaching, captures teaching moments, and includes teaching summaries in SMS notifications. No regressions detected in existing finalize flow.",
+      "source": "Drop:D2.1",
+      "added_at": "2026-01-25T00:19:38.710945+00:00",
+      "tags": []
+    }
+  ]
+}

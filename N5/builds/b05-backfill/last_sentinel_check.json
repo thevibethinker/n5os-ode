@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-01-26T05:15:00Z",
+  "reported": {
+    "D1.1": "complete",
+    "D1.2": "complete",
+    "D2.1": "pending"
+  },
+  "stream": 2
+}

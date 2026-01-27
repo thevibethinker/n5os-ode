@@ -7,13 +7,21 @@ Canonical source of truth for all ingested meetings (registry-first architecture
 import sqlite3
 import json
 import logging
+import pytz
 from datetime import datetime, UTC
 from pathlib import Path
 from typing import Optional, Dict, List, Any
 from contextlib import contextmanager
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
+
+# Parse timezone from config
+if TIMEZONE == 'UTC':
+    TZ = UTC
+else:
+    TZ = pytz.timezone(TIMEZONE)
 
 
 class MeetingRegistry:
@@ -22,7 +30,7 @@ class MeetingRegistry:
     Registry-first: this is source of truth, filesystem is storage.
     """
     
-    def __init__(self, db_path: str = "/home/workspace/N5/data/meeting_registry.db"):
+    def __init__(self, db_path: str = REGISTRY_DB):
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_db()
@@ -79,7 +87,7 @@ class MeetingRegistry:
         if missing:
             raise ValueError(f"Missing required fields: {missing}")
         
-        created_at = datetime.now(UTC).isoformat().replace('+00:00', 'Z')
+        created_at = datetime.now(TZ).isoformat().replace('+00:00', 'Z')
         
         with self._get_conn() as conn:
             conn.execute("""

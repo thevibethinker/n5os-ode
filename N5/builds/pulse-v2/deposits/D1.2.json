@@ -1,0 +1,50 @@
+{
+  "drop_id": "D1.2",
+  "build_slug": "pulse-v2",
+  "title": "Interview Storage",
+  "status": "complete",
+  "completed_at": "2026-01-24T22:06:45Z",
+  "artifacts": [
+    {
+      "path": "N5/pulse/interview_manager.py",
+      "type": "python_script",
+      "description": "Interview CRUD and fragment handling CLI with JSONL-based storage",
+      "verified": true
+    },
+    {
+      "path": "N5/pulse/interviews/",
+      "type": "directory",
+      "description": "Interview storage directory (per-task subdirectories)",
+      "verified": true
+    }
+  ],
+  "verification": {
+    "tests_passed": [
+      "Interview creation works",
+      "Fragments append to JSONL correctly",
+      "Multiple channels (sms, email, chat) can contribute fragments",
+      "Synthesis aggregates all fragments with combined_text",
+      "Seeded marking updates status and prevents new fragments",
+      "All CLI commands work (create, add, list, synthesize, mark-seeded, get-synthesis, status, list-all, delete)",
+      "Force flag required to delete seeded interviews",
+      "No deprecation warnings (fixed to use timezone-aware datetime)"
+    ],
+    "edge_cases_tested": [
+      "Auto-create interview on first fragment if doesn't exist",
+      "Reject fragments after interview is seeded",
+      "Force flag required to delete seeded interviews",
+      "Empty interview cannot be synthesized"
+    ]
+  },
+  "implementation_notes": {
+    "storage_structure": "N5/pulse/interviews/<task-id>/ with meta.json, fragments.jsonl, synthesis.json, seed_judgment.json",
+    "auto_create": "add_fragment auto-creates interview if it doesn't exist",
+    "seeded_protection": "Once seeded, cannot add more fragments",
+    "delete_protection": "Seeded interviews require --force flag to delete",
+    "extra_commands": "Added list-all and delete commands beyond brief spec for management"
+  },
+  "notes_for_orchestrator": "File already existed when Drop started - verified all functionality and fixed deprecation warnings. D2.1 (Intake) and D2.2 (Availability) can now use interview_manager.py for fragment storage. JSONL append-only pattern is simple and works well. Added extra management commands (list-all, delete) that weren't in brief but useful for debugging/cleanup.",
+  "blockers": [],
+  "dependencies_satisfied": ["D0.1"],
+  "tokens_used_estimate": 4500
+}

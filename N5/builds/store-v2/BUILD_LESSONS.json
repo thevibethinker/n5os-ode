@@ -1,0 +1,29 @@
+{
+  "slug": "store-v2",
+  "learnings": [
+    {
+      "text": "The catalog.json file already exists at Sites/store-va/data/catalog.json - created in previous work. When working with existing data files, verify schema before building loader. tsconfig.json already has resolveJsonModule: true for Zo sites - no additional config needed.",
+      "source": "manual",
+      "added_at": "2026-01-25T03:53:58.654495+00:00",
+      "tags": []
+    },
+    {
+      "text": "YAML multiline parsing: Use manual regex-based parsing instead of yaml.safe_load to handle | literal block scalars without requiring PyYAML dependency. The parsing needs to collect all indented lines after | marker.",
+      "source": "manual",
+      "added_at": "2026-01-25T03:54:54.814423+00:00",
+      "tags": []
+    },
+    {
+      "text": "Path sanitization: Patterns must account for paths at end of string ($), before various separators, and in quoted contexts. Use character class like ([/\\s\"'\\'\\)]|$) to capture context and preserve it.",
+      "source": "manual",
+      "added_at": "2026-01-25T03:54:54.817632+00:00",
+      "tags": []
+    },
+    {
+      "text": "Image Generation: Inspect tailwind.config/CSS variables for specific color names (e.g. 'zinc-900', 'sky-400') to align generated aesthetics with UI. [Source: D1.3]",
+      "source": "manual",
+      "added_at": "2026-01-25T04:00:44.852031+00:00",
+      "tags": []
+    }
+  ]
+}

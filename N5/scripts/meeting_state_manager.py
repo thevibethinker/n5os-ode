@@ -1,25 +1,32 @@
 #!/usr/bin/env python3
 """
-Meeting State Manager
-Tracks processed calendar events to prevent duplicate research
+Meeting State Manager - Track processed meeting events and timestamps
 """
 
 import json
-import os
+import logging
 import shutil
+import pytz
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Dict, Any, Optional
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
 
-import pytz
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-STATE_FILE = Path("/home/workspace/Personal/Meetings/.processed.json")
-TIMEZONE = pytz.timezone('America/New_York')
+STATE_FILE = Path(STAGING_DIR) / ".processed.json"
+
+# Parse timezone from config
+if TIMEZONE == 'UTC':
+    TZ = pytz.UTC
+else:
+    TZ = pytz.timezone(TIMEZONE)
 
 
 def _get_timestamp() -> str:
     """Get current timestamp in ET timezone"""
-    return datetime.now(TIMEZONE).isoformat()
+    return datetime.now(TZ).isoformat()
 
 
 def _ensure_directory() -> None:

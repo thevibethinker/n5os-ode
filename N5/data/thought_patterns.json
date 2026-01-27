@@ -1,12 +1,12 @@
 {
-  "analysis_date": "2026-01-24T13:07:02.865176+00:00",
-  "total_ideas_analyzed": 140,
-  "total_meetings": 33,
+  "analysis_date": "2026-01-27T13:02:48.018921+00:00",
+  "total_ideas_analyzed": 131,
+  "total_meetings": 30,
   "recurring_themes": [
     {
       "theme": "uncategorized",
-      "meeting_count": 22,
-      "idea_count": 61,
+      "meeting_count": 19,
+      "idea_count": 58,
       "recent_examples": [
         {
           "title": "Process additions (volunteer flow)",
@@ -33,22 +33,34 @@
           "date": "2026-01-23"
         },
         {
-          "title": "What integrity actually is (not a constraint but a...",
-          "idea": "What integrity actually is (not a constraint but a value floor)",
-          "meeting": "2026-01-21_Zain-x-Vrijen-Attawar",
-          "date": "2026-01-21"
+          "title": "Volunteer commitment",
+          "idea": "30-60 minutes/week, 1-3 years",
+          "meeting": "2026-01-22_2026-01-22-Fohe-local-lead-onboarding",
+          "date": "2026-01-22"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-26",
+        "earliest": "2026-01-08",
         "latest": "2026-01-23"
       }
     },
     {
       "theme": "product_strategy",
-      "meeting_count": 17,
-      "idea_count": 29,
+      "meeting_count": 16,
+      "idea_count": 28,
       "recent_examples": [
+        {
+          "title": "Products that achieve deep self-disclosure have fu...",
+          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
+        },
         {
           "title": "Scheduling automation companies may inadvertently ...",
           "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
@@ -62,34 +74,28 @@
           "date": "2026-01-16"
         },
         {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Products that achieve deep self-disclosure have fu...",
-          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Hair care product conversation: Personal, not stra...",
-          "idea": "Hair care product conversation: Personal, not strategic",
-          "meeting": "2026-01-15_2026-01-15-Trio-standup",
+          "title": "Calendly's Quiet Pivot Signals Category Collapse",
+          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
+          "meeting": "2026-01-15_2026-01-15-Chat",
           "date": "2026-01-15"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-26",
+        "earliest": "2026-01-08",
         "latest": "2026-01-16"
       }
     },
     {
       "theme": "personal_growth",
-      "meeting_count": 12,
-      "idea_count": 17,
+      "meeting_count": 11,
+      "idea_count": 15,
       "recent_examples": [
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
+        },
         {
           "title": "Privacy requirements have hidden productivity cost...",
           "idea": "Privacy requirements have hidden productivity costs rarely quantified",
@@ -100,12 +106,6 @@
           "title": "Solutions that solve the *workflow* of privacy (no...",
           "idea": "Solutions that solve the *workflow* of privacy (not just the compliance) may be undervalued",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
           "date": "2026-01-16"
         },
         {
@@ -122,15 +122,21 @@
         }
       ],
       "date_range": {
-        "earliest": "2025-12-26",
+        "earliest": "2026-01-07",
         "latest": "2026-01-16"
       }
     },
     {
       "theme": "community_network",
-      "meeting_count": 11,
-      "idea_count": 16,
+      "meeting_count": 10,
+      "idea_count": 15,
       "recent_examples": [
+        {
+          "title": "Career development",
+          "idea": "Build leadership, event planning, community skills",
+          "meeting": "2026-01-22_2026-01-22-Fohe-local-lead-onboarding",
+          "date": "2026-01-22"
+        },
         {
           "title": "How networking works (not through targeting but th...",
           "idea": "How networking works (not through targeting but through graph density)",
@@ -154,23 +160,17 @@
           "idea": "Relationship quality is the next data frontier",
           "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
           "date": "2026-01-16"
-        },
-        {
-          "title": "Calendly's Quiet Pivot Signals Category Collapse",
-          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
-          "meeting": "2026-01-15_2026-01-15-Chat",
-          "date": "2026-01-15"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-26",
-        "latest": "2026-01-21"
+        "earliest": "2026-01-08",
+        "latest": "2026-01-22"
       }
     },
     {
       "theme": "recruiting_future",
-      "meeting_count": 11,
-      "idea_count": 26,
+      "meeting_count": 9,
+      "idea_count": 22,
       "recent_examples": [
         {
           "title": "\"General Purpose Tech\" as Double-Edged Sword",
@@ -197,56 +197,15 @@
           "date": "2026-01-14"
         },
         {
-          "title": "Standard observations about recruiter trust issues",
-          "idea": "Standard observations about recruiter trust issues",
-          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+          "title": "Implies geographic/institutional monopoly on talen...",
+          "idea": "Implies geographic/institutional monopoly on talent pipelines",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         }
       ],
       "date_range": {
-        "earliest": "2025-12-26",
+        "earliest": "2026-01-08",
         "latest": "2026-01-15"
-      }
-    },
-    {
-      "theme": "ai_replacement",
-      "meeting_count": 8,
-      "idea_count": 10,
-      "recent_examples": [
-        {
-          "title": "Scheduling automation companies may inadvertently ...",
-          "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
-          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Thread",
-          "idea": "\"The Interview Extinction Event: What Happens When Agents Do Round 1?\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Deep Thought",
-          "idea": "Agent coordination as a new form of diplomacy",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "State Management as Moat (Not Just Technical Challenge)",
-          "idea": "**The Idea:** V's repeated concern about auth/state management reveals something deeper: > \"I'm afraid of like building something with Auth that has like a login and a state.\" **What's Provocative:** ...",
-          "meeting": "2026-01-12_fxu-mjpr-tum",
-          "date": "2026-01-12"
-        },
-        {
-          "title": "The Observer Effect in Automation",
-          "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synt...",
-          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
-          "date": "2026-01-08"
-        }
-      ],
-      "date_range": {
-        "earliest": "2025-12-26",
-        "latest": "2026-01-16"
       }
     },
     {
@@ -254,12 +213,6 @@
       "meeting_count": 8,
       "idea_count": 10,
       "recent_examples": [
-        {
-          "title": "Semi-technical founders lower barriers to entry",
-          "idea": "Semi-technical founders lower barriers to entry",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-          "date": "2026-01-16"
-        },
         {
           "title": "Investor risk models for first-time founders shoul...",
           "idea": "Investor risk models for first-time founders should account for this structural gap",
@@ -279,9 +232,15 @@
           "date": "2026-01-16"
         },
         {
-          "title": "Non-technical co-founders may be undervalued for t...",
-          "idea": "Non-technical co-founders may be undervalued for their empathy function",
-          "meeting": "2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins",
+          "title": "Semi-technical founders lower barriers to entry",
+          "idea": "Semi-technical founders lower barriers to entry",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Calendly's Quiet Pivot Signals Category Collapse",
+          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
+          "meeting": "2026-01-15_2026-01-15-Chat",
           "date": "2026-01-15"
         }
       ],
@@ -291,44 +250,44 @@
       }
     },
     {
-      "theme": "ai_philosophy",
+      "theme": "ai_replacement",
       "meeting_count": 6,
-      "idea_count": 9,
+      "idea_count": 8,
       "recent_examples": [
         {
-          "title": "Team demonstrates clear alignment on priorities",
-          "idea": "Team demonstrates clear alignment on priorities",
-          "meeting": "2026-01-19_2026-01-19-Trio-standup-1",
-          "date": "2026-01-19"
+          "title": "Thread",
+          "idea": "\"The Interview Extinction Event: What Happens When Agents Do Round 1?\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
         },
         {
-          "title": "Team demonstrates clear alignment on priorities",
-          "idea": "Team demonstrates clear alignment on priorities",
-          "meeting": "2026-01-19_2026-01-19-Careerspan-corridorx-scoping",
-          "date": "2026-01-19"
+          "title": "Deep Thought",
+          "idea": "Agent coordination as a new form of diplomacy",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
         },
         {
-          "title": "Exit Type as Portfolio, Not Binary",
-          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
-          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
-          "date": "2026-01-14"
+          "title": "Scheduling automation companies may inadvertently ...",
+          "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
+          "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+          "date": "2026-01-16"
         },
         {
-          "title": "Semantic Minimums",
-          "idea": "This test explores the \"minimum viable signal\" required to trigger a complex intelligence mapping. How much meaning can be compressed into a single sentence before the downstream synthesis breaks?",
-          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
-          "date": "2026-01-08"
+          "title": "State Management as Moat (Not Just Technical Challenge)",
+          "idea": "**The Idea:** V's repeated concern about auth/state management reveals something deeper: > \"I'm afraid of like building something with Auth that has like a login and a state.\" **What's Provocative:** ...",
+          "meeting": "2026-01-12_fxu-mjpr-tum",
+          "date": "2026-01-12"
         },
         {
-          "title": "The Observer Effect in Automation",
-          "idea": "By labeling this a \"test transcript,\" the system's analysis shifts from \"natural intelligence gathering\" to \"structural validation,\" potentially changing the way future \"natural\" interactions are synt...",
-          "meeting": "2026-01-08_2026-01-08-Test-execution-meeting",
+          "title": "The \"Fragility of Truth\" in Minimalist Contexts",
+          "idea": "The test transcript—consisting of a single sentence claiming to be a \"test for the MG-1 workflow\"—raises a provocative question about the minimum viable signal required to establish systemic trust. In...",
+          "meeting": "2026-01-08_2026-01-08-Raw-meeting-demo",
           "date": "2026-01-08"
         }
       ],
       "date_range": {
         "earliest": "2026-01-07",
-        "latest": "2026-01-19"
+        "latest": "2026-01-16"
       }
     },
     {
@@ -371,6 +330,47 @@
         "earliest": "2026-01-09",
         "latest": "2026-01-15"
       }
+    },
+    {
+      "theme": "ai_philosophy",
+      "meeting_count": 5,
+      "idea_count": 8,
+      "recent_examples": [
+        {
+          "title": "Team demonstrates clear alignment on priorities",
+          "idea": "Team demonstrates clear alignment on priorities",
+          "meeting": "2026-01-19_2026-01-19-Trio-standup-1",
+          "date": "2026-01-19"
+        },
+        {
+          "title": "Exit Type as Portfolio, Not Binary",
+          "idea": "**The Idea:** V and Logan aren't pursuing \"an exit\" — they're managing a portfolio of exit types with different risk/reward profiles. Cash acquisition, aqui-hire, and PR exit are all acceptable outcom...",
+          "meeting": "2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734",
+          "date": "2026-01-14"
+        },
+        {
+          "title": "The \"Fragility of Truth\" in Minimalist Contexts",
+          "idea": "The test transcript—consisting of a single sentence claiming to be a \"test for the MG-1 workflow\"—raises a provocative question about the minimum viable signal required to establish systemic trust. In...",
+          "meeting": "2026-01-08_2026-01-08-Raw-meeting-demo",
+          "date": "2026-01-08"
+        },
+        {
+          "title": "Semantic Weight vs. Token Count",
+          "idea": "This meeting demonstrates a radical asymmetry: the meta-context (generating an intelligence block B32) carries significantly more weight than the primary source material. It suggests a future where th...",
+          "meeting": "2026-01-08_2026-01-08-Raw-meeting-demo",
+          "date": "2026-01-08"
+        },
+        {
+          "title": "Workflow as Performance",
+          "idea": "The explicit naming of the \"MG-1 workflow\" within the transcript suggests a self-aware data point. It is not just a test; it is a performance of a test. This highlights the \"Hawthorne Effect\" in autom...",
+          "meeting": "2026-01-08_2026-01-08-Raw-meeting-demo",
+          "date": "2026-01-08"
+        }
+      ],
+      "date_range": {
+        "earliest": "2026-01-07",
+        "latest": "2026-01-19"
+      }
     }
   ],
   "evolution_candidates": [
@@ -402,17 +402,29 @@
           "date": "2026-01-23"
         },
         {
-          "title": "What integrity actually is (not a constraint but a...",
-          "idea": "What integrity actually is (not a constraint but a value floor)",
-          "meeting": "2026-01-21_Zain-x-Vrijen-Attawar",
-          "date": "2026-01-21"
+          "title": "Volunteer commitment",
+          "idea": "30-60 minutes/week, 1-3 years",
+          "meeting": "2026-01-22_2026-01-22-Fohe-local-lead-onboarding",
+          "date": "2026-01-22"
         }
       ],
-      "span_days": 28
+      "span_days": 15
     },
     {
       "theme": "product_strategy",
       "trajectory": [
+        {
+          "title": "Products that achieve deep self-disclosure have fu...",
+          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
+          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
+          "date": "2026-01-16"
+        },
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+          "date": "2026-01-16"
+        },
         {
           "title": "Scheduling automation companies may inadvertently ...",
           "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
@@ -426,29 +438,23 @@
           "date": "2026-01-16"
         },
         {
+          "title": "Calendly's Quiet Pivot Signals Category Collapse",
+          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
+          "meeting": "2026-01-15_2026-01-15-Chat",
+          "date": "2026-01-15"
+        }
+      ],
+      "span_days": 8
+    },
+    {
+      "theme": "personal_growth",
+      "trajectory": [
+        {
           "title": "Blog",
           "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
           "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
           "date": "2026-01-16"
         },
-        {
-          "title": "Products that achieve deep self-disclosure have fu...",
-          "idea": "Products that achieve deep self-disclosure have fundamentally different economics",
-          "meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Hair care product conversation: Personal, not stra...",
-          "idea": "Hair care product conversation: Personal, not strategic",
-          "meeting": "2026-01-15_2026-01-15-Trio-standup",
-          "date": "2026-01-15"
-        }
-      ],
-      "span_days": 21
-    },
-    {
-      "theme": "personal_growth",
-      "trajectory": [
         {
           "title": "Privacy requirements have hidden productivity cost...",
           "idea": "Privacy requirements have hidden productivity costs rarely quantified",
@@ -459,12 +465,6 @@
           "title": "Solutions that solve the *workflow* of privacy (no...",
           "idea": "Solutions that solve the *workflow* of privacy (not just the compliance) may be undervalued",
           "meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-          "date": "2026-01-16"
-        },
-        {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
           "date": "2026-01-16"
         },
         {
@@ -480,11 +480,17 @@
           "date": "2026-01-15"
         }
       ],
-      "span_days": 21
+      "span_days": 9
     },
     {
       "theme": "community_network",
       "trajectory": [
+        {
+          "title": "Career development",
+          "idea": "Build leadership, event planning, community skills",
+          "meeting": "2026-01-22_2026-01-22-Fohe-local-lead-onboarding",
+          "date": "2026-01-22"
+        },
         {
           "title": "How networking works (not through targeting but th...",
           "idea": "How networking works (not through targeting but through graph density)",
@@ -508,15 +514,9 @@
           "idea": "Relationship quality is the next data frontier",
           "meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
           "date": "2026-01-16"
-        },
-        {
-          "title": "Calendly's Quiet Pivot Signals Category Collapse",
-          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" th...",
-          "meeting": "2026-01-15_2026-01-15-Chat",
-          "date": "2026-01-15"
         }
       ],
-      "span_days": 26
+      "span_days": 14
     },
     {
       "theme": "recruiting_future",
@@ -546,24 +546,24 @@
           "date": "2026-01-14"
         },
         {
-          "title": "Standard observations about recruiter trust issues",
-          "idea": "Standard observations about recruiter trust issues",
-          "meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
+          "title": "Implies geographic/institutional monopoly on talen...",
+          "idea": "Implies geographic/institutional monopoly on talent pipelines",
+          "meeting": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
           "date": "2026-01-09"
         }
       ],
-      "span_days": 20
+      "span_days": 7
     }
   ],
   "theme_distribution": {
-    "uncategorized": 61,
-    "community_network": 16,
-    "ai_philosophy": 9,
-    "ai_replacement": 10,
-    "product_strategy": 29,
-    "personal_growth": 17,
+    "uncategorized": 58,
+    "community_network": 15,
+    "ai_philosophy": 8,
     "founder_life": 10,
-    "recruiting_future": 26,
+    "product_strategy": 28,
+    "personal_growth": 15,
+    "ai_replacement": 8,
+    "recruiting_future": 22,
     "pricing_business": 6
   }
 }

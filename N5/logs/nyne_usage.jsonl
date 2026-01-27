@@ -20,3 +20,5 @@
 {"timestamp": "2026-01-11T23:52:01.966039Z", "lookup_key": "unknown+Elaine_P_elainep@placeholder.local", "endpoint": "person/enrichment", "success": false, "found": false, "credits_used": 0, "error": "Rate limit exceeded (429)"}
 {"timestamp": "2026-01-11T23:52:07.545581Z", "lookup_key": "unknown+Jonathan_Beda_jonathanbeda@placeholder.local", "endpoint": "person/enrichment", "success": false, "found": false, "credits_used": 0, "error": "Rate limit exceeded (429)"}
 {"timestamp": "2026-01-11T23:52:13.022148Z", "lookup_key": "unknown+david_speigel@placeholder.local", "endpoint": "person/enrichment", "success": false, "found": false, "credits_used": 0, "error": "Rate limit exceeded (429)"}
+{"timestamp": "2026-01-27T02:27:21.569384Z", "lookup_key": "https://www.linkedin.com/in/hamoon", "endpoint": "person/newsfeed", "success": false, "found": false, "credits_used": 0, "error": "Rate limit exceeded (429)"}
+{"timestamp": "2026-01-27T11:35:03.367441Z", "lookup_key": "https://www.linkedin.com/in/ACoAAABhuewBTdl9Me1u-_sZLbjFXBIIprz-MvQ", "endpoint": "person/newsfeed", "success": false, "found": false, "credits_used": 0, "error": "Rate limit exceeded (429)"}

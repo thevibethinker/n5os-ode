@@ -18,12 +18,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-WORKSPACE = Path("/home/workspace")
+from pulse_common import PATHS, WORKSPACE
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 
 
-def run_cmd(cmd: str, cwd: str = "/home/workspace") -> tuple[int, str, str]:
+def run_cmd(cmd: str, cwd: str = None) -> tuple[int, str, str]:
     """Run a shell command and return (returncode, stdout, stderr)"""
+    cwd = cwd or str(PATHS.WORKSPACE)
     result = subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True)
     return result.returncode, result.stdout, result.stderr
 

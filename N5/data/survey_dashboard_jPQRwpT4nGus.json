@@ -1,0 +1,20 @@
+{
+  "last_update": "2026-01-27T10:30:00.499359",
+  "last_gamma_url": "https://gamma.app/docs/v16ocjglmkwht8w",
+  "response_count": 12,
+  "history": [
+    {
+      "timestamp": "2026-01-27T10:26:20.667202",
+      "url": "https://gamma.app/docs/541hlocw5tjd25b",
+      "response_count": 12,
+      "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-01-27T10:30:00.499359",
+      "url": "https://gamma.app/docs/v16ocjglmkwht8w",
+      "response_count": 12,
+      "config": "Zo Computer Style"
+    }
+  ],
+  "config_used": "/home/workspace/Skills/survey-dashboard/assets/configs/zo-style.json"
+}

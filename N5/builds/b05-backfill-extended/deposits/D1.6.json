@@ -1,0 +1,468 @@
+{
+  "status": "complete",
+  "meetings_processed": 11,
+  "items_extracted": 51,
+  "items": [
+    {
+      "title": "Send acquisition materials to Ray for buyer introduction",
+      "priority": "strategic",
+      "first_step": "Open existing one-pager/deck and compose email to Ray",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - materials needed for Ray to introduce to prospect",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Research asset purchase vs stock acquisition structures",
+      "priority": "strategic",
+      "first_step": "Open ChatGPT and query: 'What are the key differences and implications of asset purchase vs stock acquisition for selling a small business?'",
+      "estimate_min": 45,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - understand deal structure options",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Research earnouts and creative compensation structures",
+      "priority": "strategic",
+      "first_step": "Open ChatGPT and query: 'What are common earnout structures, pitfalls, and creative compensation alternatives for small business acquisitions?'",
+      "estimate_min": 45,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - learn compensation structure options",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Consult with lawyer about deal structures",
+      "priority": "strategic",
+      "first_step": "Draft email to lawyer requesting 30-min call to discuss asset vs stock purchase structures for Careerspan exit",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - get legal guidance on deal structure",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Work target list with timing management strategy",
+      "priority": "strategic",
+      "first_step": "Open target list document and add a column for 'play speed' (slow/fast) to categorize each target",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - organize outreach timing strategy",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Ask Ray for additional buyer introductions",
+      "priority": "normal",
+      "first_step": "Send follow-up email/text to Ray: 'Any progress on the additional buyer introduction you mentioned?'",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - get at least one more buyer intro",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Build financial model for offer scenarios",
+      "priority": "strategic",
+      "first_step": "Open spreadsheet and create tabs for 'base case', 'conservative case', and 'bull case' with columns for valuation terms",
+      "estimate_min": 90,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - evaluate and compare offers",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Maintain skepticism and funnel discipline (ongoing)",
+      "priority": "strategic",
+      "first_step": "Create simple tracking sheet with columns: Prospect Name, Source, Contact Date, Status (In Funnel/Qualified/No), Notes",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Careerspan Exit Process - track and qualify all inbound buyer interest",
+      "source_meeting": "2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray"
+    },
+    {
+      "title": "Plan Visit with Amanda",
+      "priority": "normal",
+      "first_step": "Text Amanda to coordinate visit date for Beth's tech setup day",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Coordinate with Amanda to visit Beth for tech setup day",
+      "source_meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An"
+    },
+    {
+      "title": "Research Therapist Practice Management Tools",
+      "priority": "normal",
+      "first_step": "Open browser and search for 'therapist practice management tools scheduling notes insurance'",
+      "estimate_min": 60,
+      "domain": "Personal",
+      "context": "Look into therapist-specific platforms that handle notes, insurance, and scheduling",
+      "source_meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An"
+    },
+    {
+      "title": "Use Insights in Calendly Conversation",
+      "priority": "urgent",
+      "first_step": "Draft key points from Beth's pain points (HIPAA, personal touch, dual calendar friction) for Calendly conversation",
+      "estimate_min": 10,
+      "domain": "Personal",
+      "context": "Incorporate therapist pain points into Calendly conversation (HIPAA, personal touch, dual calendar friction)",
+      "source_meeting": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An"
+    },
+    {
+      "title": "Review shared AI overview document",
+      "priority": "normal",
+      "first_step": "Open and scan the shared document to understand structure and key sections",
+      "estimate_min": 15,
+      "domain": "Zo",
+      "context": "Ilse provided documentation for the new features",
+      "source_meeting": "2026-01-16_2026-01-16-Trio-standup"
+    },
+    {
+      "title": "Experiment with scan settings and thresholds",
+      "priority": "normal",
+      "first_step": "Access scan settings and adjust threshold values to observe impact",
+      "estimate_min": 20,
+      "domain": "Zo",
+      "context": "Test the silent scan, auto-apply, vibe check features",
+      "source_meeting": "2026-01-16_2026-01-16-Trio-standup"
+    },
+    {
+      "title": "Provide update on scan usage",
+      "priority": "urgent",
+      "first_step": "Check current scan usage metrics and prepare brief summary",
+      "estimate_min": 5,
+      "domain": "Zo",
+      "context": "Feedback loop for Ilse",
+      "source_meeting": "2026-01-16_2026-01-16-Trio-standup"
+    },
+    {
+      "title": "Organize career tech founder gathering",
+      "priority": "strategic",
+      "first_step": "Create a Trello board with columns: Guest List, Venue, Logistics, and Outreach; add at least 5 target founders to Guest List",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "From B05 action items - Plan and host gathering of career tech founders in early February 2026 to provide valuable networking",
+      "source_meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson"
+    },
+    {
+      "title": "Continue Careerspan exit process",
+      "priority": "strategic",
+      "first_step": "Review and warm outreach to 3 PE firms from the buyer network with updated pitch deck",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "From B05 action items - Ongoing acquisition pursuit through warm intros and buyer network",
+      "source_meeting": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson"
+    },
+    {
+      "title": "Follow up on LHH outplacement opportunity",
+      "priority": "strategic",
+      "first_step": "Review Cameron and Beth's LinkedIn profiles that Asher shared in chat",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "LHH acquisition outreach - Cameron (new technology) and Beth (research/technology) are key contacts",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Send Asher intros to Bay Area growth roles",
+      "priority": "normal",
+      "first_step": "Draft LinkedIn messages with brief context about Asher for Tim Hay and Jay Banya",
+      "estimate_min": 15,
+      "domain": "Personal",
+      "context": "Networking support for Asher - Tim Hay (D.AGI company), Jay Banya (growth roles)",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Facilitate intro to Joseph at Superdemo",
+      "priority": "normal",
+      "first_step": "Send Asher Joseph's LinkedIn after Asher confirms interest",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Networking support for Asher - Superdemo has growth marketer and front-end engineer roles",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Share Agave custom solutions engineer opportunity",
+      "priority": "normal",
+      "first_step": "Send job link or recruiter contact for Agave solutions engineer role",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Networking support for Asher - Agave custom solutions engineer role",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Pursue Handshake acquisition conversation",
+      "priority": "strategic",
+      "first_step": "Check status with the \"guy\" helping get through to Handshake",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Careerspan acquisition outreach - positioning as data pipeline for white-collar America's top talent",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Explore Jack and Jill acquisition fit",
+      "priority": "normal",
+      "first_step": "Research Jack and Jill's current offerings and leadership",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Careerspan acquisition outreach - serves job seekers, potential strategic fit",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Explore Hiring Cafe partnership/acquisition",
+      "priority": "normal",
+      "first_step": "Revisit Hiring Cafe's site (haven't checked in a while)",
+      "estimate_min": 20,
+      "domain": "Careerspan",
+      "context": "Careerspan acquisition outreach - assess fit with employer portal and matching tech",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Re-organize career tech founder group",
+      "priority": "normal",
+      "first_step": "Schedule for first week of February",
+      "estimate_min": 10,
+      "domain": "Personal",
+      "context": "Career tech community building - invite core group, structure around market challenges",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Coordinate NYC intro opportunities",
+      "priority": "low",
+      "first_step": "Think through which NYC connections would be valuable to meet",
+      "estimate_min": 15,
+      "domain": "Personal",
+      "context": "NYC networking - identify contacts for acquisition/partnership before May/June trip",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Post-exit collaboration with Asher",
+      "priority": "external",
+      "first_step": "Create a note to revisit after Careerspan exit closes",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Future collaboration - relationship data capture, network analysis, vibe coding project",
+      "source_meeting": "2026-01-16_2026-01-16-Asher-king-abramson"
+    },
+    {
+      "title": "Review Skills Nexus AI Platform",
+      "priority": "strategic",
+      "first_step": "Open the link Jonny sent and review the homepage and key features for 2 minutes",
+      "estimate_min": 45,
+      "domain": "Careerspan",
+      "context": "Jonny sent link to Robert Bagor's Skills Nexus AI platform. Review for potential partnership or competitive intelligence.",
+      "source_meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson"
+    },
+    {
+      "title": "Follow Up with Matthew Cohen",
+      "priority": "strategic",
+      "first_step": "Draft email to Matthew introducing yourself and mentioning Jonny's connection",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Explore M&A possibilities through Cohen Strategy Group. Matthew has connections to adjacent players including Ascent Funding.",
+      "source_meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson"
+    },
+    {
+      "title": "Research Ascent Funding",
+      "priority": "normal",
+      "first_step": "Visit Ascent Funding's website and spend 2 minutes understanding their core value proposition",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Understand their business model (college payment facilitation) and how Careerspan's skills gap analysis could fit.",
+      "source_meeting": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson"
+    },
+    {
+      "title": "Create General One-Pager",
+      "priority": "strategic",
+      "first_step": "Outline key sections and messages for pitch document",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Prepare general pitch materials",
+      "source_meeting": "2026-01-16_2026-01-16-Pkr-qzco-jhz"
+    },
+    {
+      "title": "Join South Park Commons Call",
+      "priority": "urgent",
+      "first_step": "Dial into SPC call immediately",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Catch second half of SPC call (deadline: immediately after debrief)",
+      "source_meeting": "2026-01-16_2026-01-16-Pkr-qzco-jhz"
+    },
+    {
+      "title": "Process Tope Meeting",
+      "priority": "strategic",
+      "first_step": "Run meeting-ingestion skill on Tope conversation",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Run Zo meeting processing on Tope conversation (was in progress when interrupted)",
+      "source_meeting": "2026-01-16_2026-01-16-Pkr-qzco-jhz"
+    },
+    {
+      "title": "Prepare Howie Product Feedback Dossier",
+      "priority": "strategic",
+      "first_step": "Open notes doc and list top 3 UX observations from Howie.ai usage",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Explicitly requested by Tope, valuable for building relationship. Include UX observations, pricing tier analysis, human-in-loop insights. Deadline: Before January 30th meeting.",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Confirm January 30th NYC Meeting",
+      "priority": "urgent",
+      "first_step": "Send calendar invite to Tope with 2-3 time slot options",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Critical relationship touchpoint with Tope Awotona. Lock in time/location for in-person meeting. Bring laptop, prepare demo.",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Prepare Demo of Productivity Setup",
+      "priority": "strategic",
+      "first_step": "List Zo workflows and integrations to showcase in demo",
+      "estimate_min": 45,
+      "domain": "Zo",
+      "context": "Tope expressed interest in seeing V's productivity setup. Curate impressive walkthrough of AI productivity stack including Zo integration. Deadline: January 30th.",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Research Calendly's M&A History",
+      "priority": "normal",
+      "first_step": "Search 'Calendly acquisitions' and note any past deals",
+      "estimate_min": 20,
+      "domain": "Careerspan",
+      "context": "Understand if/how Calendly has done acquisitions before to inform strategy for potential acquisition conversation. Deadline: Before January 30th.",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Brief Team on Conversation",
+      "priority": "normal",
+      "first_step": "Draft 3 key takeaways to share with co-founder and Head of AI",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Share key insights from Tope conversation to keep team aligned on potential exit paths. Deadline: Within 2-3 days.",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Send calendar invite to Tiffany for Anna call",
+      "priority": "urgent",
+      "first_step": "Open calendar and create invite for Tiffany with date/time",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Call scheduled for 4:30pm EST about Future of Higher Education hackathon",
+      "source_meeting": "2026-01-15_chat"
+    },
+    {
+      "title": "Add Data Partnerships section to outbound list spreadsheet",
+      "priority": "normal",
+      "first_step": "Open outbound spreadsheet and add 'Data Partnerships' tab/section",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Include Aviato, Nine, Calendly with proper categorization",
+      "source_meeting": "2026-01-15_chat"
+    },
+    {
+      "title": "Run Siddhanth's connections through Zo for partnership leads",
+      "priority": "strategic",
+      "first_step": "Request Siddhanth's connection list via email or text",
+      "estimate_min": 90,
+      "domain": "Zo",
+      "context": "V offered during thesis interview to cross-reference Siddhanth's network with Zo partnership opportunities and include him on partnership distribution list",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    },
+    {
+      "title": "Prepare Howie Product Feedback Dossier",
+      "priority": "urgent",
+      "first_step": "Open Howie.ai and start documenting UX observations",
+      "estimate_min": 90,
+      "domain": "Careerspan",
+      "context": "Compile detailed feedback on Howie.ai scheduling product for Tope before January 30th meeting",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Confirm January 30th NYC Meeting",
+      "priority": "urgent",
+      "first_step": "Email Tope to confirm availability and logistics",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Lock in time/location for in-person meeting with Tope, critical relationship touchpoint",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Prepare Demo of Productivity Setup",
+      "priority": "urgent",
+      "first_step": "Take screenshots of Zo dashboard and key workflows",
+      "estimate_min": 60,
+      "domain": "Zo",
+      "context": "Curate impressive walkthrough of AI productivity stack for Tope, include Zo integration",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Research Calendly's M&A History",
+      "priority": "strategic",
+      "first_step": "Search for 'Calendly acquisitions M&A history'",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Understand Calendly's acquisition approach to inform potential exit strategy conversation",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Brief Team on Conversation",
+      "priority": "normal",
+      "first_step": "Draft summary of key insights to share",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Share key insights with co-founder and Head of AI to align on potential exit paths",
+      "source_meeting": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen"
+    },
+    {
+      "title": "Demo productivity system to Calendly founder",
+      "priority": "strategic",
+      "first_step": "Confirm meeting time and location with Calendly founder for in-person demo",
+      "estimate_min": 60,
+      "domain": "Zo",
+      "context": "Post-interview discussion about productivity tools; committed to demo in two weeks",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    },
+    {
+      "title": "Process Siddhanth's connections through Zo",
+      "priority": "normal",
+      "first_step": "Email Siddhanth requesting his connection list",
+      "estimate_min": 30,
+      "domain": "Zo",
+      "context": "Offered to analyze connections to help identify relevant opportunities and make cold outreach easier",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    },
+    {
+      "title": "Create partnership distribution list",
+      "priority": "normal",
+      "first_step": "Open partnership opportunities sheet and compile relevant data points",
+      "estimate_min": 45,
+      "domain": "Zo",
+      "context": "Promised to create distribution list and include Siddhanth; mentioned 'meant to put together something to distribute today'",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    },
+    {
+      "title": "Complete connections distribution list",
+      "priority": "normal",
+      "first_step": "Open Zo and create a new contact list for Siddhanth with relevant professional connections",
+      "estimate_min": 15,
+      "domain": "Zo",
+      "context": "V offered to run Siddhanth's connections through Zo system and share relevant partnership/research opportunities",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    },
+    {
+      "title": "Share Calendly founder transcript",
+      "priority": "external",
+      "first_step": "Send Siddhanth the transcript from the Calendly founder conversation",
+      "estimate_min": 5,
+      "domain": "Zo",
+      "context": "Siddhanth expressed interest in reviewing the Calendly founder transcript about productivity's 'next big thing'",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    },
+    {
+      "title": "Cross-reference Siddhanth's connections for partnership leads",
+      "priority": "strategic",
+      "first_step": "Load Siddhanth's contact list into Zo's partnership matching system",
+      "estimate_min": 10,
+      "domain": "Zo",
+      "context": "V doing partnership work for Zo and offered to cross-reference Siddhanth's connections against partnership opportunities",
+      "source_meeting": "2026-01-16_2026-01-16-Thesis-interview"
+    }
+  ],
+  "errors": [],
+  "notes_for_orchestrator": "D1.6 extracted 51 action items from 11 meetings (batch 2026-01-15 to 2026-01-16). Used B05_ACTION_ITEMS.md where available, fell back to transcript.md. Semantic extraction via Zo API. Initially had timeout on thesis meeting but successfully retried with extended timeout."
+}

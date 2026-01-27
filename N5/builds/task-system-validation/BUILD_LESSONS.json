@@ -1,0 +1,27 @@
+{
+  "slug": "task-system-validation",
+  "learnings": [
+    {
+      "text": "Task CLI (task.py) and Stage CLI (stage.py) are STUBS by design - they output [STUB] messages. This is intentional per code comments. Implementation pending D2.2. Do NOT report this as a bug.",
+      "source": "manual",
+      "added_at": "2026-01-26T02:31:42.708814+00:00",
+      "tags": []
+    },
+    {
+      "text": "Python import path fix for task-system: When importing db.py from a script, you must cd into /home/workspace/Skills/task-system/scripts first, then import using 'import db' directly (not 'from Skills.task_system.scripts import db'). The relative import path depends on working directory. --source D1.2",
+      "source": "manual",
+      "added_at": "2026-01-26T02:40:59.984140+00:00",
+      "tags": []
+    },
+    {
+      "text": "BUG: briefing.py 'staged' subcommand doesn't print output - generate_staged_review() works but CLI handler at ~line 687 needs 'print(output)' added",
+      "source": "manual",
+      "added_at": "2026-01-26T03:07:13.959242+00:00",
+      "tags": [
+        "bug",
+        "CLI",
+        "briefing"
+      ]
+    }
+  ]
+}
