@@ -1,65 +1,120 @@
 ---
 created: 2026-01-24
 last_edited: 2026-01-24
-version: 1.0
+version: 2.0
 provenance: con_plquQK5mpVEUO74p
 ---
 
-# Build Plan: Prompt-to-Skill Conversion System
+# Build Plan: Prompt-to-Skill Conversion System (v2)
 
 ## Open Questions
 
-1. ~~Should we create a `prompt-to-skill` skill that automates future conversions?~~ **YES** - V confirmed systematic/repeatable process
-2. ~~Full migration vs wrapper?~~ **FULL MIGRATION** - V confirmed
-3. ~~What to do with missing scripts?~~ **BUILD THEM** - V confirmed
-4. ~~What to do with original prompt?~~ **EXPUNGE** - V confirmed
+All resolved. ✓
 
 ## Objective
 
-Create a systematic, repeatable process for converting high-eligibility prompts to Agent Skills format, then apply it to `Close Conversation.prompt.md` as the first case.
+Convert `Close Conversation.prompt.md` into **three focused skills** with shared logic in `N5/lib/close/` (SSOT) and built-in fail-safes.
 
-**Two deliverables:**
-1. `Skills/prompt-to-skill/` — The conversion process itself (reusable)
-2. `Skills/conversation-close/` — First application (the converted skill)
+**Deliverables:**
+1. `Skills/prompt-to-skill/` — The conversion process (reusable)
+2. `Skills/thread-close/` — Normal interactive threads
+3. `Skills/drop-close/` — Pulse worker deposits
+4. `Skills/build-close/` — Post-build synthesis
+5. `N5/lib/close/` — Shared library (SSOT)
+
+---
+
+## Architecture
+
+### Three Skills, One Library
+
+```
+N5/lib/close/                    # SSOT - authoritative shared code
+├── __init__.py
+├── core.py                      # Tier routing, main logic
+├── emoji.py                     # 3-slot emoji system
+├── positions.py                 # Position extraction
+├── content_library.py           # Content library candidates
+├── aar.py                       # AAR generation
+├── guards.py                    # Fail-safe validators (NEW)
+└── templates/
+    └── aar.md.template
+
+Skills/thread-close/             # Full interactive close
+├── SKILL.md
+└── scripts/
+    └── close.py                 # Thin wrapper → N5/lib/close
+
+Skills/drop-close/               # Pulse worker deposits
+├── SKILL.md
+└── scripts/
+    └── close.py                 # Thin wrapper → N5/lib/close
+
+Skills/build-close/              # Post-build synthesis
+├── SKILL.md
+└── scripts/
+    └── close.py                 # Thin wrapper → N5/lib/close
+```
+
+### Fail-Safe Guards
+
+Each skill wrapper validates context before executing:
+
+```python
+# Skills/thread-close/scripts/close.py
+from N5.lib.close import guards, core
+
+def main():
+    state = guards.load_session_state(convo_id)
+    
+    # FAIL-SAFE: Detect wrong skill
+    if state.get('drop_id'):
+        guards.warn_wrong_skill(
+            called="thread-close",
+            suggested="drop-close",
+            reason="SESSION_STATE has drop_id"
+        )
+        return 1
+    
+    if state.get('build_slug') and '--build' not in sys.argv:
+        guards.warn_wrong_skill(
+            called="thread-close", 
+            suggested="build-close",
+            reason="Build context detected"
+        )
+        return 1
+    
+    # Proceed with correct skill
+    return core.run_thread_close(convo_id, tier=args.tier)
+```
+
+### Guard Behaviors
+
+| Context Detected | Called Skill | Behavior |
+|------------------|--------------|----------|
+| `drop_id` in SESSION_STATE | thread-close | ⚠️ Suggest drop-close, exit |
+| `drop_id` in SESSION_STATE | build-close | ⚠️ Suggest drop-close, exit |
+| `build_slug` without drop | thread-close | ⚠️ Suggest build-close, exit |
+| Normal thread | drop-close | ⚠️ Suggest thread-close, exit |
+| Normal thread | build-close | ⚠️ Suggest thread-close, exit |
+| Build complete | drop-close | ⚠️ Suggest build-close, exit |
 
 ---
 
 ## Checklist
 
 ### Stream 1: Foundation (Parallel)
-- [ ] D1.1: Create `prompt-to-skill` skill structure and conversion process doc
-- [ ] D1.2: Create `conversation-close` skill structure (scaffold only)
-- [ ] D1.3: Build missing scripts (`update_build.py`, `build_worker_complete.py`)
+- [ ] D1.1: Create `prompt-to-skill` skill
+- [ ] D1.2: Create `N5/lib/close/` shared library
+- [ ] D1.3: Build missing N5 scripts (`update_build.py`, `build_worker_complete.py`)
 
-### Stream 2: Migration (Sequential after Stream 1)
-- [ ] D2.1: Migrate conversation-close scripts to skill
-- [ ] D2.2: Migrate references/assets to skill
-- [ ] D2.3: Write SKILL.md with full instructions
-- [ ] D2.4: Integration test + expunge original prompt
+### Stream 2: Skills (Parallel, depends on Stream 1)
+- [ ] D2.1: Create `thread-close` skill
+- [ ] D2.2: Create `drop-close` skill  
+- [ ] D2.3: Create `build-close` skill
 
----
-
-## Architecture Decision: Skill Structure
-
-### Alternative A: Thin Wrapper (REJECTED)
-Keep scripts in `N5/scripts/`, skill just references them.
-- ❌ Not portable
-- ❌ Doesn't reduce N5/scripts sprawl
-- ❌ Violates "skills are self-contained" principle
-
-### Alternative B: Full Migration (SELECTED)
-Move all close-related scripts into skill, with CLI entry point.
-- ✅ Self-contained, portable
-- ✅ Clear ownership
-- ✅ Matches Agent Skills spec intent
-- ⚠️ More work upfront
-
-### Alternative C: Hybrid (CONSIDERED)
-Move unique scripts, symlink shared utilities.
-- ❌ Complexity without clear benefit
-- ❌ Symlinks break portability
-
-**Decision:** Alternative B — Full Migration
+### Stream 3: Finalize (Sequential, depends on Stream 2)
+- [ ] D3.1: Integration tests + expunge original prompt
 
 ---
 
@@ -67,169 +122,222 @@ Move unique scripts, symlink shared utilities.
 
 ### D1.1: prompt-to-skill Skill
 
-**Scope:**
-- `Skills/prompt-to-skill/SKILL.md` — Conversion process documentation
-- `Skills/prompt-to-skill/scripts/assess.py` — Score a prompt for skill eligibility
-- `Skills/prompt-to-skill/scripts/scaffold.py` — Generate skill folder structure
-- `Skills/prompt-to-skill/assets/skill-template/` — Template SKILL.md
+**Mission:** Create the reusable conversion process.
 
-**Files Created:**
+**Files:**
 ```
 Skills/prompt-to-skill/
 ├── SKILL.md
 ├── scripts/
-│   ├── assess.py
-│   └── scaffold.py
+│   ├── assess.py          # Score prompt for skill eligibility
+│   └── scaffold.py        # Generate skill folder structure
 └── assets/
     └── skill-template/
         └── SKILL.md.template
 ```
 
 **Success Criteria:**
-- `python3 Skills/prompt-to-skill/scripts/assess.py "Prompts/X.prompt.md"` returns eligibility score
-- `python3 Skills/prompt-to-skill/scripts/scaffold.py conversation-close` creates folder structure
+- `python3 Skills/prompt-to-skill/scripts/assess.py "Prompts/X.prompt.md"` returns score
+- `python3 Skills/prompt-to-skill/scripts/scaffold.py my-skill` creates structure
 
 ---
 
-### D1.2: conversation-close Scaffold
+### D1.2: N5/lib/close/ Shared Library
 
-**Scope:**
-- Create empty skill structure
-- No content yet (populated in Stream 2)
+**Mission:** Create SSOT for all close logic. This is the heavy lift.
 
-**Files Created:**
+**Files:**
 ```
-Skills/conversation-close/
-├── SKILL.md (stub)
-├── scripts/
-├── references/
-└── assets/
+N5/lib/close/
+├── __init__.py
+├── core.py                # Main logic: tier routing, session state
+├── emoji.py               # 3-slot emoji system, title generation
+├── positions.py           # Position extraction from conversations
+├── content_library.py     # Content library candidate detection
+├── aar.py                 # AAR generation
+├── guards.py              # Fail-safe context validators
+├── pii.py                 # PII audit
+└── templates/
+    ├── tier1.md.template
+    ├── tier3-aar.md.template
+    └── build-aar.md.template
 ```
+
+**Key modules:**
+
+`guards.py`:
+```python
+def load_session_state(convo_id: str) -> dict
+def detect_context(state: dict) -> str  # Returns: "thread" | "drop" | "build"
+def warn_wrong_skill(called: str, suggested: str, reason: str) -> None
+def validate_thread_context(state: dict) -> tuple[bool, str]
+def validate_drop_context(state: dict) -> tuple[bool, str]
+def validate_build_context(slug: str) -> tuple[bool, str]
+```
+
+`core.py`:
+```python
+def run_thread_close(convo_id: str, tier: int = None, dry_run: bool = False) -> int
+def run_drop_close(convo_id: str, drop_id: str, build_slug: str) -> int
+def run_build_close(slug: str, dry_run: bool = False) -> int
+```
+
+**Source:** Migrate logic from:
+- `N5/scripts/conversation_end_router.py`
+- `N5/scripts/conversation_end_quick.py`
+- `N5/scripts/conversation_end_standard.py`
+- `N5/scripts/conversation_end_full.py`
+- `N5/scripts/conversation_pii_audit.py`
+- `N5/config/emoji-legend.json`
+- `N5/config/commit_targets.json`
+- `N5/prefs/operations/conversation-end-v5.md`
+
+**Success Criteria:**
+- `from N5.lib.close import core, guards` works
+- All functions importable and documented
 
 ---
 
-### D1.3: Missing Scripts
+### D1.3: Missing N5 Scripts
 
-**Scope:**
-- `N5/scripts/update_build.py` — Build state management (referenced by Close Conversation)
-- `N5/scripts/build_worker_complete.py` — Worker completion notification
+**Mission:** Create build-system utilities referenced by Close Conversation.
 
-These are referenced by the prompt but don't exist. Build them.
+**Files:**
+- `N5/scripts/update_build.py` — Build state management
+- `N5/scripts/build_worker_complete.py` — Legacy worker notification
 
-**Note:** These stay in N5/scripts because they're build-system utilities, not close-specific.
-
-**Files Created:**
-- `/home/workspace/N5/scripts/update_build.py`
-- `/home/workspace/N5/scripts/build_worker_complete.py`
+**Note:** These stay in N5/scripts (build-system, not close-specific).
 
 **Success Criteria:**
 - `python3 N5/scripts/update_build.py status <slug>` works
-- `python3 N5/scripts/build_worker_complete.py --help` works
+- `python3 N5/scripts/update_build.py complete <slug> <drop_id> --decisions '[...]'` works
 
 ---
 
-## Phase 2: Migration
+## Phase 2: Skills
 
-### D2.1: Migrate Scripts
+### D2.1: thread-close Skill
 
-**Scope:**
-Move these from `N5/scripts/` to `Skills/conversation-close/scripts/`:
-- `conversation_end_router.py`
-- `conversation_end_quick.py`
-- `conversation_end_standard.py`
-- `conversation_end_full.py`
-- `conversation_pii_audit.py`
+**Mission:** Create skill for normal interactive threads.
 
-Create new unified CLI:
-- `close.py` — Main entry point (`python3 Skills/conversation-close/scripts/close.py --help`)
-
-**Files Moved:**
-- `N5/scripts/conversation_end_*.py` → `Skills/conversation-close/scripts/`
-- `N5/scripts/conversation_pii_audit.py` → `Skills/conversation-close/scripts/`
-
-**Files Created:**
-- `Skills/conversation-close/scripts/close.py` (new CLI wrapper)
-
----
-
-### D2.2: Migrate References/Assets
-
-**Scope:**
-Copy (not move, these may be used elsewhere) to skill:
-- `N5/prefs/operations/conversation-end-v5.md` → `references/`
-- `N5/config/emoji-legend.json` → `assets/`
-- `N5/config/commit_targets.json` → `assets/`
-- Templates → `assets/templates/`
-
-**Files Created:**
+**Files:**
 ```
-Skills/conversation-close/
-├── references/
-│   └── conversation-end-v5.md
-└── assets/
-    ├── emoji-legend.json
-    ├── commit_targets.json
-    └── templates/
-        ├── tier1-output.md
-        └── tier3-aar.md
+Skills/thread-close/
+├── SKILL.md
+└── scripts/
+    └── close.py
 ```
 
+**SKILL.md content:**
+- When to use: Normal threads, manual orchestrators
+- Quick start: `python3 Skills/thread-close/scripts/close.py --convo-id <id>`
+- Tiers explained (1/2/3)
+- What it does: SESSION_STATE check, tier routing, position extraction, AAR
+
+**close.py** (~50 lines):
+- Parse args (--convo-id, --tier, --dry-run)
+- Load session state
+- **Guard check:** If drop context → warn, suggest drop-close, exit
+- **Guard check:** If build context → warn, suggest build-close, exit
+- Call `core.run_thread_close()`
+- Format output
+
 ---
 
-### D2.3: Write SKILL.md
+### D2.2: drop-close Skill
 
-**Scope:**
-Full skill documentation with:
-- Frontmatter (name, description)
-- Quick start
-- Two modes (Worker Close, Full Close)
-- CLI reference
-- Integration with Pulse/builds
+**Mission:** Create skill for Pulse worker deposits.
 
-**Source:** Derive from `Close Conversation.prompt.md` content
+**Files:**
+```
+Skills/drop-close/
+├── SKILL.md
+└── scripts/
+    └── close.py
+```
+
+**SKILL.md content:**
+- When to use: Pulse Drops (headless workers)
+- Quick start: `python3 Skills/drop-close/scripts/close.py --convo-id <id>`
+- What it does: Write structured deposit, NO commits, handoff to orchestrator
+- Deposit format documented
+
+**close.py** (~50 lines):
+- Parse args (--convo-id)
+- Load session state
+- **Guard check:** If no drop_id → warn, suggest thread-close, exit
+- Extract drop_id, build_slug from state
+- Call `core.run_drop_close()`
+- Write deposit JSON
 
 ---
 
-### D2.4: Integration Test + Expunge
+### D2.3: build-close Skill
 
-**Scope:**
-1. Run skill on a test conversation
-2. Verify all modes work
-3. Archive original prompt to `Prompts/Archive/`
-4. Update any references to point to skill
+**Mission:** Create skill for post-build synthesis.
+
+**Files:**
+```
+Skills/build-close/
+├── SKILL.md
+└── scripts/
+    └── close.py
+```
+
+**SKILL.md content:**
+- When to use: After Pulse build completes (via `pulse finalize`)
+- Quick start: `python3 Skills/build-close/scripts/close.py --slug <build-slug>`
+- What it does: Aggregate deposits, synthesize decisions, extract positions, generate build AAR
+
+**close.py** (~60 lines):
+- Parse args (--slug, --dry-run)
+- **Guard check:** Build exists and is terminal
+- **Guard check:** Not a single-drop scenario (suggest drop-close)
+- Read all deposits from `N5/builds/<slug>/deposits/`
+- Call `core.run_build_close()`
+- Write BUILD_CLOSE.md, BUILD_AAR.md
+
+---
+
+## Phase 3: Finalize
+
+### D3.1: Integration Tests + Expunge
+
+**Mission:** Verify everything works, clean up old code.
+
+**Tests:**
+1. `thread-close --dry-run` on a test thread
+2. `drop-close` with mock drop context
+3. `build-close --dry-run` on a completed build
+4. **Guard tests:** Call wrong skill, verify warning
+
+**Expunge steps:**
+1. `grep -r "Close Conversation" /home/workspace` — find references
+2. `grep -r "conversation_end_" /home/workspace` — find old script refs
+3. Archive: `mv "Prompts/Close Conversation.prompt.md" "Prompts/Archive/"`
+4. Create redirect stub at original location
+5. Delete old scripts from N5/scripts/ (after confirming no other refs)
 
 **Success Criteria:**
-- `python3 Skills/conversation-close/scripts/close.py --convo-id con_test --dry-run` works
-- Original prompt archived
-- No broken references
-
----
-
-## Trap Doors (Irreversible Decisions)
-
-| Decision | Reversibility | Mitigation |
-|----------|---------------|------------|
-| Moving scripts out of N5/scripts | Medium | Git history preserves; can move back |
-| Deleting original prompt | Low | Archive first, don't delete |
-| Breaking existing scheduled tasks | High | Grep for references before expunge |
+- All three skills work in isolation
+- Guards catch wrong invocations
+- No dangling references to old prompt/scripts
 
 ---
 
 ## MECE Validation
 
-| Item | Owner | Exclusions |
-|------|-------|------------|
-| prompt-to-skill SKILL.md | D1.1 | — |
-| assess.py, scaffold.py | D1.1 | — |
-| conversation-close scaffold | D1.2 | Content (D2.*) |
-| update_build.py | D1.3 | — |
-| build_worker_complete.py | D1.3 | — |
-| Script migration | D2.1 | References (D2.2) |
-| Reference/asset migration | D2.2 | Scripts (D2.1) |
-| SKILL.md content | D2.3 | — |
-| Testing + expunge | D2.4 | — |
+| Scope Item | Owner | Must Not Touch |
+|------------|-------|----------------|
+| prompt-to-skill SKILL.md + scripts | D1.1 | N5/lib/close |
+| N5/lib/close/* (all modules) | D1.2 | Skills/**/close.py |
+| update_build.py, build_worker_complete.py | D1.3 | N5/lib/close |
+| Skills/thread-close/* | D2.1 | drop-close, build-close |
+| Skills/drop-close/* | D2.2 | thread-close, build-close |
+| Skills/build-close/* | D2.3 | thread-close, drop-close |
+| Testing + expunge | D3.1 | Creating new code |
 
-No overlaps. No gaps. ✓
+✅ No overlaps. No gaps.
 
 ---
 
@@ -237,40 +345,31 @@ No overlaps. No gaps. ✓
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| Scheduled tasks reference old prompt | Medium | High | Grep before expunge, update refs |
-| Scripts have hidden dependencies | Low | Medium | Test each script in isolation |
-| Import paths break after move | Medium | Medium | Update imports, add __init__.py |
-
----
-
-## Success Criteria
-
-1. **prompt-to-skill skill works:** Can assess any prompt and scaffold a skill
-2. **conversation-close skill works:** All three tiers execute correctly
-3. **Worker close works:** Pulse drops can close via skill
-4. **Original expunged:** Prompt archived, no dangling references
-5. **Process documented:** Future conversions can follow same pattern
+| Import path issues with N5/lib | Medium | Medium | Test imports early in D1.2 |
+| Guards too aggressive (false positives) | Low | Medium | Include --force flag to bypass |
+| Old scripts have hidden dependents | Medium | High | Grep thoroughly before delete |
 
 ---
 
 ## Estimated Effort
 
-| Drop | Complexity | Est. Time |
-|------|------------|-----------|
-| D1.1 | Medium | 15 min |
-| D1.2 | Low | 5 min |
-| D1.3 | Medium | 20 min |
-| D2.1 | Medium | 15 min |
-| D2.2 | Low | 10 min |
-| D2.3 | Medium | 15 min |
-| D2.4 | Low | 10 min |
+| Drop | Description | Complexity | Est. Time |
+|------|-------------|------------|-----------|
+| D1.1 | prompt-to-skill skill | Medium | 15 min |
+| D1.2 | N5/lib/close/ library | **High** | 35 min |
+| D1.3 | Missing N5 scripts | Medium | 15 min |
+| D2.1 | thread-close skill | Low | 10 min |
+| D2.2 | drop-close skill | Low | 10 min |
+| D2.3 | build-close skill | Low | 10 min |
+| D3.1 | Tests + expunge | Medium | 15 min |
 
-**Total:** ~90 min of Zo execution time
+**Total:** ~110 min Zo execution time
 
 ---
 
 ## Execution Mode
 
-**Recommended:** Pulse with auto-spawn
+**Pulse with auto-spawn:**
 - Stream 1: D1.1, D1.2, D1.3 in parallel
-- Stream 2: D2.1 → D2.2 → D2.3 → D2.4 sequential (dependencies)
+- Stream 2: D2.1, D2.2, D2.3 in parallel (all depend on D1.2)
+- Stream 3: D3.1 sequential (depends on all of Stream 2)

@@ -1,0 +1,53 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-24T23:04:38.257853Z",
+  "meeting_folder": "2025-01-20_Jason-Madeano-Tweeks-x-Vrijen-Attawar",
+  "meeting_date": "2025-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "detailed_recap": true,
+    "action_items": true,
+    "business_context": true,
+    "tone_and_context": true,
+    "key_moments": true,
+    "deliverables": true,
+    "meeting_metadata": true,
+    "thought_provoking_ideas": true,
+    "linguistic_primitives": true
+  },
+  "blocks_list": [
+    "B00_ZO_TAKE_HEED.jsonl",
+    "B01_DETAILED_RECAP.md",
+    "B03_STAKEHOLDER_INTELLIGENCE.md",
+    "B03_DECISIONS.md",
+    "B05_ACTION_ITEMS.md",
+    "B06_BUSINESS_CONTEXT.md",
+    "B07_TONE_AND_CONTEXT.md",
+    "B14_BLURBS_REQUESTED.md",
+    "B21_KEY_MOMENTS.md",
+    "B25_DELIVERABLES.md",
+    "B26_MEETING_METADATA.md",
+    "B32_THOUGHT_PROVOKING_IDEAS.md",
+    "B35_LINGUISTIC_PRIMITIVES.jsonl"
+  ],
+  "last_updated_by": "MG-6_Agent",
+  "last_updated": "2026-01-25T11:35:00Z",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": "No Zo Take Heed cues detected in this transcript",
+  "processed_at": "2026-01-25T11:56:02.339193",
+  "last_updated_at": "2026-01-25T11:56:02.339196",
+  "transition_history": [
+    {
+      "from": "blocks_generated",
+      "to": "processed",
+      "timestamp": "2026-01-25T11:56:02.339198",
+      "agent": "MG-6_Agent",
+      "notes": "Auto-transition after MG-6 processing"
+    }
+  ],
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-25T15:10:41.589456"
+}

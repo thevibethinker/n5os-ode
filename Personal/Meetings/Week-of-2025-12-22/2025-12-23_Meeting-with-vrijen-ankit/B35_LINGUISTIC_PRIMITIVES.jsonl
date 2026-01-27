@@ -1,4 +1,10 @@
-- Extracted four of V’s distinctive phrases from the RBI/tax conversation, each tagged with the relevant domains and context (compliance trade-offs, acquisition smoothing, trust in the accounting relationship, and the ask for certifications).  
-- Saved the JSONL output to `file 'B35_LINGUISTIC_PRIMITIVES.jsonl'`.
-
-2026-01-20 10:52 AM EST
+{"type": "distinctive_phrase", "pattern": "bains", "frequency": 303, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "text", "frequency": 253, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "null", "frequency": 253, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "speaker", "frequency": 252, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "start", "frequency": 252, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "attawar", "frequency": 185, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "vineet", "frequency": 153, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "nvineet", "frequency": 150, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "that", "frequency": 144, "context": "repeated_usage"}
+{"type": "distinctive_phrase", "pattern": "vrijen", "frequency": 107, "context": "repeated_usage"}

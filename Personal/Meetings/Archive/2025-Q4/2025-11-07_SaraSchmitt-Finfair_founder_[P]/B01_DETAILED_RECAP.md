@@ -1,95 +1,112 @@
 ---
-created: 2025-11-09
-last_edited: 2025-11-09
+created: 2026-01-24T17:32:10.246569
+last_edited: 2026-01-24T17:32:10.246574
 version: 1.0
+provenance: MG-2 automated generation
 ---
 
-# DETAILED_RECAP
+# B01: Detailed Recap
+
+## Meeting Overview
+This is an automatically generated recap based on meeting transcript.
+
+## Chronological Summary
+
+**\
+00:00**\
+Sara Schmitt\
+With Amarildo again. So I. Like, we knew at that point, like, that were
+going to continue working together on projects going forward. And we
+also wanted our marketing person to come with us. So we\'re kind of like
+a band of three. And then the CTO were like, we love you, Kevin.
+However, you are too rich for our taste. Like, he\'s got partly, like,
+his family situation, but he also just. He spends money in a way that
+we\'re like, whoa, dude. Like, this is not startup level. He needs to go
+work at Google. He needs to go do a different job. And we\'re like, I
+don\'t care if we\'re locked up and can\'t work together for four years
+because not working with him again, like, it was good. We had. We had
+the ride together. No.
+
+**\
+00:36**\
+Sara Schmitt\
+No bad feelings, but we\'re just not a fit for our lifestyle stages.
+And, like, how we spend money and salary demands killed our Runway,
+frankly. Like, the. We would have preferred to hire engineers who were
+more willing to take equity and take risks and make sacrifices or
+offshore. Like, that was. That was just a mess. So I think that was. So
+in that case, we\'re like, so emerald and Kevin and don\'t. Can\'t
+solicit or compete, but they are at will. They\'re W2s. And Hammerildo
+is now the CEO of the new company. He\'s on the board. I\'m the coo.
+Heaven\'s the cto. So we run it. We cleaned house the day we came in. So
+the two days after we came in, we fired most of their team except the
+ones we liked. We kept them.
+
+**\
+01:22**\
+Sara Schmitt\
+And that was, like, part of it was, they were terrible. Like, there are
+people still working at this company that are unable to do work. And
+I\'m shocked, like, that. I\'ve never worked with people or seen people
+this incompetent on a compliance call with their compliance person.
+I\'ve learned compliance in the past five months. I knew zero about it
+in February. Now I know a decent amount, but I\'m not certified. I
+don\'t. I should not do bank compliance. And she asks me in a call.
+She\'s like, what should the. Like, the wording be? Or what should we do
+here? I\'m like, you\'re the certified one. Kelsey, what the. Like, she.
+She could not. Didn\'t know. Like, what do I tell customers? I\'m like,
+yeah. And so I\'m, like, laying it out for. I was like, seriously, like,
+so there was a lot. Yeah.
+
+**\
+02:03**\
+Sara Schmitt\
+You were paying a customer support person in the US in LA and in the OC
+who serves a total of 50 customers because that\'s all they had.
+They\'re paying them \$167,000 a year. No, no. I asked him. I was like.
+I interviewed him one day. I was like, what do you. What do you tell me,
+like, about what you do? And he\'s like, I really like going to Taylor
+Swift concerts. And I\'m like, what? I was so. That\'s amazing. It was
+so. If you want a good time, read the glassdoor reviews on Finfair. I
+would. We were all crying, laughing, reading them, because this company
+is. Is a. Is kind of a mess. The founder has money. We now control \$90
+million in the bank, and the money\'s. And we have money in our
+accounts, so that\'s real. And so as long as we.
+
+**\
+03:02**\
+Sara Schmitt\
+We killed the product off, we killed off the one that, you know, had
+risk and like, that we didn\'t like. And that was, you know, I don\'t
+think. I don\'t think money laundering was occurring in it. It\'s a
+shit. It was a shitty credit card. But we\'re like, this is not good.
+And we will rebuild their program to be a compliant and quality program.
+So, yeah, like, just win, win.
+
+**\
+03:24**\
+Logan Currie\
+That\'s awesome.
+
+**\
+03:26**\
+Sara Schmitt\
+Kind of wild. I mean, part of this is like the team, like, we just work
+well together. We were all in lockstep and Amarildo is a phenomenal
+negotiator. And I was like, this is gonna. This is. Yeah, we\'re gonna.
+We\'re gonna go places. Because he can just get in a room and get the
+terms. Yeah, yeah.
+
+**\
+03:46**\
+Logan Currie\
+Nice to catch you up. They. The buyer wanted to close in four weeks. O
+
+## Key Discussion Points
+[Automated extraction would go here - requires LLM processing]
+
+## Participants
+[Participant extraction would go here - requires LLM processing]
 
 ---
-**Feedback**: - [ ] Useful
----
-
-## Key Decisions and Agreements
-
-### 1. **Post-Acquisition Team Restructuring Completed**
-- **Decision:** Cleaned house immediately upon acquisition; fired most non-aligned team members
-- **Owner:** Sara, Amarildo, heaven (CTO)
-- **Why it matters:** Set tone for cultural integration and operational excellence
-- **Rationale:** Previous team had performance gaps (incompetence on compliance calls, poor customer support engagement)
-- **Outcome:** Rebuilt team with only quality hires; compliance person fired; customer support person was unproductive
-
-### 2. **Product Rationalization & Risk Mitigation**
-- **Decision:** Killed problematic product line immediately (credit card product with compliance risk)
-- **Owner:** Sara's team
-- **Why it matters:** Eliminated legal/regulatory risk; allowed team to focus on building compliant program
-- **Rationale:** Previous product had money laundering risk signals; not worth the compliance burden
-- **Outcome:** Positioned to rebuild product roadmap around compliance-first principles
-
-### 3. **Deal Structure: Earnout Concessions**
-- **Decision:** Strategically gave away earnout incentives to overcome buyer's last-minute deal friction
-- **Owner:** Sara, Amarildo negotiation team
-- **Why it matters:** Deal closed successfully despite buyer backing out mid-process
-- **Rationale:** Founders didn't trust buyer would pay earnouts anyway; cash received was sufficient; earnouts were throwaway leverage
-- **Outcome:** Deal wired successfully in 6 weeks despite buyer hesitation
-
-### 4. **Legal & Investor Alignment Strategy**
-- **Decision:** Kept cap table "friendly" by managing equity/SAFEs carefully; maintained investor goodwill throughout process
-- **Owner:** Sara's team
-- **Why it matters:** 520C voting rule required shareholder approval; non-hostile cap table made process smooth
-- **Rationale:** Section 520C requires ≥1% shareholders to approve founder comp if exit compensation exceeds 3× average salary
-- **Outcome:** Only 3 people needed to vote; all approved; deal moved forward without shareholder friction
-
-## Strategic Context
-
-### Acquisition Narrative
-
-Sara's team (3 co-founders) acquired Finfair, a fintech company with $90M+ in the bank but severe operational/cultural problems:
-- Previous team had 50+ compliance/product people serving only 50 customers at $167k/person cost
-- Customer service person spent more time at Taylor Swift concerts than supporting users
-- Compliance officer couldn't answer basic questions; needed guidance from CEO
-- Company had been hemorrhaging cash on poor hires and bad decisions
-
-**The Opportunity:** Clear strategic fit—Sara's operational excellence and product rigor could transform Finfair from chaotic to compliant/efficient. Acquisition announced quickly; deal structure offered strategic leverage.
-
-**The Stress:** 6-week closing window with significant deal friction:
-- Buyer changed terms Friday before close (claimed ignorance of LOI he signed)
-- Team burning runway; deal collapse = zero salary scenario + fire sale
-- Health impact was severe: Sara's cholesterol +30, A1C pre-diabetic, blood pressure elevated significantly
-- Every day was edge-of-seat stress waiting for wires
-
-**The Resolution:** Team held alignment (Emeraldo & Sara willing to walk with nothing; heaven willing to accept loss scenario); legal team (Presidio) executed flawlessly; deal closed with buyer concessions on earnout vs. cash.
-
-### Key Insights on Founder Alignment
-
-Critical realization: **Cap table composition determines deal success.** If even one shareholder is non-friendly, the 520C vote blocks the deal entirely (shareholder says "no" = deal blows up, founder gets nothing). This means:
-- Every equity hire must be someone you'd trust in an acquisition scenario
-- Angel investors need to be vetted for founder-friendliness, not just capital
-- Avoid investors who are motivated to extract maximum value at founder expense
-
-### Deal Negotiation Learnings
-
-**What Worked:**
-- Presidio legal firm (friend referral) executed flawlessly; $65k well-spent
-- Early advisor consultation (Joe Proto, advisory board members) provided strategic framing
-- Internal alignment on "minimum acceptable outcome" (Sara & Amarildo willing to walk; heaven bought into loss scenario)
-- Strategic concessions on earnouts (gave away $X of equity to secure cash close)
-
-**What Was Harder:**
-- Buyer's last-minute bad faith negotiation (claiming LOI ignorance)
-- Balancing transparency on founder compensation with equity holders (520C vote exposure)
-- Managing external pressure (Money20/20 event looming; fire sale scenario possible)
-
-## Critical Next Action
-
-**Item:** Finfair operational stabilization & team integration
-
-**Owner:** Sara's team (with post-acquisition support from buyer)
-
-**Deliverable:** Build compliant product roadmap; hire quality compliance people; establish corporate culture (moving scared, shelter-animal team to healthy organization)
-
-**Timeline:** Ongoing; 90-day operational integration window
-
-**Purpose:** Ensure acquired company becomes stable, profitable platform for long-term value; position Sara's team to move on to next venture once succession planning complete
-
-**Dependencies:** Buyer's continued support; Sara's bandwidth to manage integration while exploring next opportunities
+*Note: This is a stub B01 generated by MG-2. Full detailed analysis requires LLM processing of the full transcript.*

@@ -1,0 +1,27 @@
+{
+  "slug": "task-system-wiring",
+  "learnings": [
+    {
+      "text": "D1.3: close_hooks.py uses get_task_by_id() from task_registry - ensure task_registry has test tasks for integration testing. The task creation function create_task() is imported and used in create_followup_task() - verify it accepts parent_task_id parameter.",
+      "source": "manual",
+      "added_at": "2026-01-26T00:03:53.946636+00:00",
+      "tags": []
+    },
+    {
+      "text": "Meeting folder state: [R] marker is NOT in folder names. State is tracked in manifest.json (status field). find_unprocessed_meetings() should check manifest.json['status'] instead of folder name pattern.",
+      "source": "manual",
+      "added_at": "2026-01-26T00:08:21.401061+00:00",
+      "tags": [
+        "parsing"
+      ]
+    },
+    {
+      "text": "Pattern: gather_thread_context() is the single source of truth for context data. Wrapper scripts (close.py, drop-close.py) should only add presentation-layer flags (like is_action_conversation) for easier LLM consumption. This cleanly separates mechanics from semantics.",
+      "source": "manual",
+      "added_at": "2026-01-26T00:13:57.537299+00:00",
+      "tags": [
+        "pattern,architecture"
+      ]
+    }
+  ]
+}

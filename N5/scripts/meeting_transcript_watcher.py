@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
 """
-Meeting Transcript Watcher
+Meeting Transcript Watcher - Google Drive Monitor
+
 Monitors Google Drive for new transcripts and creates processing requests for Zo.
+Runs periodically to check for new transcript files and queue them for processing.
 """
-import asyncio
+
 import json
-import logging
+import hashlib
+import asyncio
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Set
-import hashlib
+from typing import List, Dict, Any, Optional, Set
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)sZ %(levelname)s %(message)s',
-    datefmt='%Y-%m-%dT%H:%M:%S'
-)
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
+
+import logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-WORKSPACE = Path("/home/workspace")
-STATE_DIR = WORKSPACE / "N5" / "state" / "meeting_watcher"
+WORKSPACE = Path(WORKSPACE)
 REQUESTS_DIR = WORKSPACE / "N5" / "queue" / "meeting_processing_requests"
-DOWNLOADS_DIR = WORKSPACE / "Documents" / "Meetings" / "_incoming"
+STATE_FILE = WORKSPACE / "N5" / "data" / "transcript_watcher_state.json"
+DOWNLOADS_DIR = WORKSPACE / "Downloads" / "Meetings"
 
-STATE_DIR.mkdir(parents=True, exist_ok=True)
+# Ensure directories exist
 REQUESTS_DIR.mkdir(parents=True, exist_ok=True)
+STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
 DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
-
-STATE_FILE = STATE_DIR / "processed_transcripts.json"
 
 
 class TranscriptWatcher:

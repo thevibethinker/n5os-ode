@@ -1,0 +1,161 @@
+{
+  "id": "3e894ce0-d53c-49cd-8f47-bfdc659ee375",
+  "meeting_url": {
+    "meeting_id": "tni-eqyh-sah",
+    "platform": "google_meet"
+  },
+  "bot_name": "Jared Dunn, Chief of Staff (AI Notetaker)",
+  "join_at": "2026-01-25T02:47:53.171425Z",
+  "recording_config": {
+    "realtime_endpoints": [],
+    "retention": {
+      "type": "forever"
+    },
+    "video_mixed_layout": "speaker_view",
+    "video_mixed_mp4": {},
+    "participant_events": {},
+    "meeting_metadata": {},
+    "video_mixed_participant_video_when_screenshare": "overlap",
+    "start_recording_on": "participant_join"
+  },
+  "status_changes": [
+    {
+      "code": "joining_call",
+      "message": null,
+      "created_at": "2026-01-25T02:47:54.946141Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_waiting_room",
+      "message": null,
+      "created_at": "2026-01-25T02:48:04.192806Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_call_not_recording",
+      "message": null,
+      "created_at": "2026-01-25T02:48:07.393174Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_call_recording",
+      "message": null,
+      "created_at": "2026-01-25T02:48:07.505251Z",
+      "sub_code": null
+    },
+    {
+      "code": "call_ended",
+      "message": null,
+      "created_at": "2026-01-25T02:49:19.543506Z",
+      "sub_code": "call_ended_by_host"
+    },
+    {
+      "code": "recording_done",
+      "message": null,
+      "created_at": "2026-01-25T02:49:20.915741Z",
+      "sub_code": null
+    },
+    {
+      "code": "done",
+      "message": null,
+      "created_at": "2026-01-25T02:49:21.028008Z",
+      "sub_code": null
+    }
+  ],
+  "recordings": [
+    {
+      "id": "cf07ba29-6cdf-4e4a-8fcd-7fe19a9e75c7",
+      "created_at": "2026-01-25T02:48:07.505251Z",
+      "started_at": "2026-01-25T02:48:07.505251Z",
+      "completed_at": "2026-01-25T02:49:20.915741Z",
+      "expires_at": null,
+      "status": {
+        "code": "done",
+        "sub_code": null,
+        "updated_at": "2026-01-25T02:49:20.915741Z"
+      },
+      "media_shortcuts": {
+        "video_mixed": {
+          "id": "f05e7c24-d9e6-4b9b-ba3d-68936729ba4a",
+          "created_at": "2026-01-25T02:48:07.505251Z",
+          "status": {
+            "code": "done",
+            "sub_code": null,
+            "updated_at": "2026-01-25T02:49:20.915741Z"
+          },
+          "metadata": {},
+          "data": {
+            "download_url": "https://us-west-2-recallai-production-bot-data.s3.amazonaws.com/_workspace-35d42844-318b-471b-9028-732b7dcc698b/recordings/cf07ba29-6cdf-4e4a-8fcd-7fe19a9e75c7/video_mixed/f05e7c24-d9e6-4b9b-ba3d-68936729ba4a/bot/3e894ce0-d53c-49cd-8f47-bfdc659ee375/AROA3Z2PRSQANGTUQXHNJ%3Ai-0a6e322896ca1a342/video.mp4?AWSAccessKeyId=ASIA3Z2PRSQAKGY6TGZ2&Signature=e2rfy0ASfC8tWGCUugHqcqatbcg%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEFIaCXVzLXdlc3QtMiJHMEUCIQD5LYpUY6enq3n5sjPPNjAU80UTdo5BkeiG50tXJLHTAgIgRS43FGIdcGAV3hNuvwdh2gw9MdRiB8gLK44Z1dLtxI4quwUIGxAAGgw4MTEzNzg3NzUwNDAiDKSKaszY3wbj7H9NMSqYBaPQ%2FC8J1oXTE8GHG%2BgbeJenqxtID3U7Z9HYV%2FbgzV%2FtYKVmAJjrjpjDA6gOpY3KvtK35HER9H%2BKDxQavZFKYbiUOQ2W5jCUdZi6RubOkHf4HZVW%2BSKHIioEfp2EEkAfIFwXZNAa4DAckauurdwZNujXYWirkWcwTRkH3H0aoBJtpontXty2RZUEjhiKzr%2FAivQc1hTsArOREkxQxL2GTP3%2FbTsRI2knR5Q68gepZSDMtGTquW1j1e7Oit3pyFoGAZ%2BSS1LcZHkmp5GpTPRgXKoWB0jaAv7hbWL3RcFku48o1Pf4rK7QVe3Xb1OILcRDCfXO20fBj28XZJzjqUDYasU%2Fgxb6RAFtg7Iu5x7zsyPle8nXN9CSwvoZ3yqpz04ObpBoCCzjvDvNFArQntnA69q4SsUegyjIXxWMdj2PpKNvnCYySo8CktwobE%2FDQ7E9V5r5179aLvrdRBYbwPzHNlfNBWpeOoNzWsjpOfE6Au%2BqmIuB3FeCiqy%2Fmgv3WI7vstCySHknQwdTirvCv4lsMQ8XazsfnLQq20wfLQxPt9tWbH2kkxZRVji57KAd1kDl0NJN0BMYzen83D6pQPq4zu8MFAdKcx7oeSp5O3l1zo08YcQJyqMDZgdtftb2WMDgTnBxCgmV6vZq5TLLqPad6keFgfJweGjG8jV55Hvq%2BaqfMcehSFFDUA%2Bmu9qZHWX6LqkqWIT%2BmKhp9U8lFNKtcSDn8zzOk2kR3K22staLMoQeJpvkedWy30Md0%2BM%2FI9AQPnBggq6%2FZtD9dI6gS7XsZSQfBLA8dmVb1ZMVZQAiEPl92691snLDIbQ12ejHTaKAzLQW%2F50m%2BqsjpQIuZJkDVivSg7X7gyJZp%2F0QRiSyG%2FIwrqHatpKf8e4wnfbVywY6sQEnulNtabQ8ep9XQrVEWcas6oFOyIELgntdjs1mYGLPvTvEN0zfWymsx3z5LCQn%2Bc05jL5Q3T6h%2Fsfz3xPEZEiHp83eMxhSkVerO7IgV55f3GfdmCjaaSJVQDo2fW1aHUpm01Ngt3Cq6YM03HJNHMdKgqmiciaM7aTbVJMs6ZtmmwD0BK3t0MZ6zE0Vh5hbSrV07qD2RZghiO8ZgiRMHVqYeRKA%2FfRDfE0ZTdYBUfiKF8I%3D&Expires=1769331118"
+          },
+          "format": "mp4"
+        },
+        "transcript": null,
+        "participant_events": {
+          "id": "6f7873fc-743d-47f9-a34a-3a0c2f04ac31",
+          "created_at": "2026-01-25T02:48:07.505251Z",
+          "status": {
+            "code": "done",
+            "sub_code": null,
+            "updated_at": "2026-01-25T02:49:20.915741Z"
+          },
+          "metadata": {},
+          "data": {
+            "participant_events_download_url": "https://us-west-2.recall.ai/api/v1/download/participant_events?token=eyJpZCI6IjZmNzg3M2ZjLTc0M2QtNDdmOS1hMzRhLTNhMGMyZjA0YWMzMSJ9%3A1vjqEI%3As_em5bu065zEB11ZPJ48T1T9suLkQZJTPfMXgSoEdF0",
+            "speaker_timeline_download_url": "https://us-west-2.recall.ai/api/v1/download/speaker_timeline?token=eyJpZCI6IjZmNzg3M2ZjLTc0M2QtNDdmOS1hMzRhLTNhMGMyZjA0YWMzMSJ9%3A1vjqEI%3As_em5bu065zEB11ZPJ48T1T9suLkQZJTPfMXgSoEdF0",
+            "participants_download_url": "https://us-west-2.recall.ai/api/v1/download/participants?token=eyJpZCI6IjZmNzg3M2ZjLTc0M2QtNDdmOS1hMzRhLTNhMGMyZjA0YWMzMSJ9%3A1vjqEI%3As_em5bu065zEB11ZPJ48T1T9suLkQZJTPfMXgSoEdF0"
+          }
+        },
+        "meeting_metadata": {
+          "id": "27b7b025-e95c-48ce-871f-f2b95a7f0810",
+          "created_at": "2026-01-25T02:48:07.505251Z",
+          "status": {
+            "code": "done",
+            "sub_code": null,
+            "updated_at": "2026-01-25T02:49:20.915741Z"
+          },
+          "metadata": {},
+          "data": {
+            "title": null,
+            "zoom": null
+          }
+        },
+        "audio_mixed": null
+      },
+      "metadata": {}
+    }
+  ],
+  "automatic_leave": {
+    "waiting_room_timeout": 900,
+    "noone_joined_timeout": 900,
+    "everyone_left_timeout": {
+      "timeout": 120,
+      "activate_after": null
+    },
+    "in_call_not_recording_timeout": 3600,
+    "recording_permission_denied_timeout": 30,
+    "silence_detection": {
+      "timeout": 3600,
+      "activate_after": 1200
+    },
+    "bot_detection": {
+      "using_participant_events": {
+        "timeout": 600,
+        "activate_after": 1200
+      },
+      "using_participant_names": {
+        "timeout": 600,
+        "activate_after": 120,
+        "matches": [
+          "notetaker",
+          "recorder",
+          "assistant"
+        ]
+      }
+    }
+  },
+  "calendar_meetings": [],
+  "zoom": {
+    "request_recording_permission_on_host_join": true
+  },
+  "metadata": {}
+}

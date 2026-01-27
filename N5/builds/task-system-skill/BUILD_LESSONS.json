@@ -1,0 +1,11 @@
+{
+  "slug": "task-system-skill",
+  "learnings": [
+    {
+      "text": "context.py import fix: Must use relative import 'from db import' instead of 'from task_system.scripts.db import' when script is in Scripts/task-system/scripts/ directory. Source: D3.2",
+      "source": "manual",
+      "added_at": "2026-01-26T01:06:24.552161+00:00",
+      "tags": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "pulse-v2",
+  "timestamp": "2026-01-25T00:17:59.637052+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

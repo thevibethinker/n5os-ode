@@ -1,0 +1,69 @@
+{"id":"LP-001","pattern":"dude","type":"filler","context":"casual conversational filler, used to establish rapport","examples":["Hey, jason.","Sorry for being late, dog.","Dude, this is such a cool product."],"frequency":"high"}
+
+{"id":"LP-002","pattern":"like","type":"filler","context":"quotative filler and thought continuance marker","examples":["I think it's just such a clever cool product to fuck with the ui.","It's like taking the source, saying, how do we interpret this in a new way?","I'm like, so more context."],"frequency":"high"}
+
+{"id":"LP-003","pattern":"basically","type":"simplifier","context":"reduction of complex concepts to core essence","examples":["I guess that's what it's doing, right? It's basically taking the source...","Like, you don't get it. Like, imagine being able to, like, say, hey, I don't need those fields."],"frequency":"medium"}
+
+{"id":"LP-004","pattern":"essentially","type":"simplifier","context":"similar to basically, used to distill complexity","examples":["I believe the future of productivity involves collapsing the surface area of products to a few really essential ones..."],"frequency":"medium"}
+
+{"id":"LP-005","pattern":"the territory is not the map","type":"analogy","context":"philosophical/metaphorical framework for distinguishing signal from proxy","examples":["It's like a classic. Like the territory is not the map. Like the thing that you're testing for is not the thing that you're testing."],"frequency":"low"}
+
+{"id":"LP-006","pattern":"so","type":"transition","context":"conversational bridge and thought restart","examples":["So our hypothesis is, how do we create a new data layer?","So. Would love to chat about that, but. Yeah, keep going."],"frequency":"high"}
+
+{"id":"LP-007","pattern":"totally","type":"agreement","context":"strong affirmation of other's ideas","examples":["Oh, wow. Okay.","Right has moved past. Yeah.","Totally. That's a good start."],"frequency":"medium"}
+
+{"id":"LP-008","pattern":"just","type":"qualifier","context":"downplaying complexity, emphasis on simplicity or immediacy","examples":["I was actually just showing my co founder.","I just think it's such a clever cool product.","So I'm just talking this out loud."],"frequency":"high"}
+
+{"id":"LP-009","pattern":"right?","type":"confirmation","context":"seeking agreement/validation","examples":["It's basically taking the source, saying, how do we interpret this in a new way per the instructions, and then dumping it back in, right?"],"frequency":"medium"}
+
+{"id":"LP-010","pattern":"the thing is","type":"attention-grabber","context":"introducing counterpoint or nuanced perspective","examples":["The problem ultimately in the market is that folks are unable to distinguish the difference between what is signal and what is a proxy for signal."],"frequency":"medium"}
+
+{"id":"LP-011","pattern":"in theory","type":"contrast","context":"setting up ideal vs practical comparison","examples":["In theory, the onboarding that would have been cool. Would have been. What's your favorite website?"],"frequency":"medium"}
+
+{"id":"LP-012","pattern":"my belief is","type":"hedging","context":"presenting opinion or hypothesis","examples":["My belief is that it is creating the magic moment of like."],"frequency":"medium"}
+
+{"id":"LP-013","pattern":"I think","type":"hedging","context":"presenting thought or opinion","examples":["I think it's just such a clever cool product to fuck with the ui.","I think for me, I'm trying to more so carve out a niche around, like, Essentially hyper productivity."],"frequency":"high"}
+
+{"id":"LP-014","pattern":"my feeling is","type":"hedging","context":"presenting intuitive assessment","examples":["My feeling is that it will be the winners that can personalize but are also trusted by customers to hold the personalization data."],"frequency":"medium"}
+
+{"id":"LP-015","pattern":"at the end of the day","type":"conclusion","context":"summary statement","examples":["At the end of the day, that's the problem, right?"],"frequency":"low"}
+
+{"id":"LP-016","pattern":"look","type":"attention-grabber","context":"starting important point","examples":["Look, I think for me..."],"frequency":"low"}
+
+{"id":"LP-017","pattern":"here's the thing","type":"attention-grabber","context":"introducing problem or complexity","examples":["Here's the thing: the territory is not the map."],"frequency":"low"}
+
+{"id":"LP-018","pattern":"here's the kicker","type":"attention-grabber","context":"introducing surprising or crucial point","examples":["Here's the kicker: the entire keyword based system is fucked."],"frequency":"low"}
+
+{"id":"LP-019","pattern":"the reality is","type":"assertion","context":"stating contrary or deeper truth","examples":["The reality is that folks are unable to distinguish the difference between what is signal and what is a proxy for signal."],"frequency":"medium"}
+
+{"id":"LP-020","pattern":"you know","type":"filler","context":"conversational filler, seeking shared understanding","examples":["Like, you know, how many headers you win in a football game, right?"],"frequency":"medium"}
+
+{"id":"LP-021","pattern":"you see what I'm saying?","type":"confirmation","context":"seeking comprehension","examples":["[context: explaining complex concept] You see what I'm saying?"],"frequency":"medium"}
+
+{"id":"LP-022","pattern":"let me send you","type":"action","context":"offering resources, information, or connections","examples":["I'll send you like little gifs or like screen recordings as I use it.","Let me send you my co founders so I'll introd logs."],"frequency":"medium"}
+
+{"id":"LP-023","pattern":"here's what I'm thinking","type":"exposition","context":"sharing thought process","examples":["Here's what I'm thinking: you don't even use the tweaks extension to make that mock and show to your engineer."],"frequency":"low"}
+
+{"id":"LP-024","pattern":"I'm just talking this out loud","type":"meta-commentary","context":"awareness of spontaneous thinking","examples":["So I'm just talking this out loud. In theory, the onboarding that would have been cool."],"frequency":"low"}
+
+{"id":"LP-025","pattern":"super down","type":"enthusiasm","context":"strong willingness/interest","examples":["I'm super. I'm like, so more context.","I was like, so more context. I'm super down to jump on the call."],"frequency":"medium"}
+
+{"id":"LP-026","pattern":"sick","type":"enthusiasm","context":"positive reaction, slang for "cool"","examples":["Sick. Dude. Yes."],"frequency":"low"}
+
+{"id":"LP-027","pattern":"bro","type":"casual address","context":"informal address, masculine-coded","examples":["replace all of the word zo with bro."],"frequency":"low"}
+
+{"id":"LP-028","pattern":"fuck with","type":"casual verb","context":"informal expression for interacting/modifying","examples":["I think it's just such a clever cool product to fuck with the ui."],"frequency":"low"}
+
+{"id":"LP-029","pattern":"turds","type":"informal metaphor","context":"strong negative description of low-quality items","examples":["It's like sifting through 99 turds to get, like, one lump of gold."],"frequency":"low"}
+
+{"id":"LP-030","pattern":"fucked","type":"informal description","context":"describing broken systems","examples":["the entire keyword based system is fucked."],"frequency":"low"}
+
+{"id":"LP-031","pattern":"gods","type":"hyperbole","context":"exaggerated positive description","examples":["how do we make products that weight, like, literally turn us into, like, gods?"],"frequency":"low"}
+
+{"id":"LP-032","pattern":"shitty","type":"informal description","context":"negative description","examples":["How do you make LinkedIn less of a shitty place for applicants?"],"frequency":"low"}
+
+{"id":"LP-033","pattern":"dog","type":"casual address","context":"informal address, similar to "dude"","examples":["Sorry for being late, dog."],"frequency":"low"}
+
+{"id":"LP-034","pattern":"you got it, man","type":"closing","context":"casual agreement/confirmation","examples":["You got it, man. I got to run, but it was great chatting."],"frequency":"low"}
+
+{"id":"LP-035","pattern":"great to meet you","type":"closing","context":"standard polite closing","examples":["Great to meet you."],"frequency":"low"}

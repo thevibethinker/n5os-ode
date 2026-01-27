@@ -1,65 +1,90 @@
+```markdown
 ---
-created: 2026-01-22
-last_edited: 2026-01-22
+created: 2026-01-26
+last_edited: 2026-01-26
 version: 1.0
-provenance: con_9jGldlDgYqohbn30
+provenance: con_DFA1XjAsNEufbFSq
+block_id: B05
+block_name: ACTION_ITEMS
+meeting_id: 2026-01-21_2026-01-21-Zain-x-vrijen-attawar
 ---
 
-# B05: Action Items
+## Action Items
 
-## Vrijen Attawar
+### 1. Share idea visualization source code with Zain
+- **Owner**: Vrijen Attawar
+- **Priority**: normal
+- **First Step**: Send Zain the direct link to the mind page and source code repository for the meeting idea visualization system
+- **Estimated**: 10 min
+- **Domain**: Zo
+- **Project**: Zo personal workflow
+- **Milestones**: 
+  1. Send links and access to Zain
+  2. Follow up to ensure Zain has access and answer any questions
 
-- [ ] **Send Zo demo link to Zain** (meeting processing pipeline with idea tracking and visualization)
-- [ ] **Share open source repository link** with Zain (meeting processing pipeline, content library, personas)
-- [ ] **Introduce Zain to FOHE community** (Future of Higher Education)
-- [ ] **Introduce Zain to Vrijen's NYC FOHE co-lead** (unnamed female co-lead)
-- [ ] **Connect Zain with PM at Plaid** (via FOHE network)
-- [ ] **Connect Zain with networking coach** (via FOHE network)
-- [ ] **Schedule coffee with Zain** next week (in-person, NYC)
-- [ ] **Text Zain** to coordinate coffee timing (numbers exchanged)
+### 2. Share Zo functionality repo with Zain
+- **Owner**: Vrijen Attawar
+- **Priority**: normal
+- **First Step**: Send Zain the repository link containing core Zo functionality (meeting processing pipeline, content library, personas)
+- **Estimated**: 5 min
+- **Domain**: Zo
+- **Project**: Zo personal workflow
+- **Milestones**:
+  1. Share repo link via email or direct message
 
-## Zain Yousaf
+### 3. Introduce Zain to FOHE group members
+- **Owner**: Vrijen Attawar
+- **Priority**: normal
+- **First Step**: Send intro email connecting Zain with Ray Batra and Jake Wisebound (FOHE founders)
+- **Estimated**: 15 min
+- **Domain**: Careerspan/Other
+- **Project**: FOHE NYC community building
+- **Milestones**:
+  1. Intro to FOHE founders
+  2. Intro to NYC FOHE co-lead
+  3. Encourage Zain to apply/join FOHE
 
-- [ ] **Follow up via text** to schedule coffee next week
-- [ ] **Explore FOHE community** (Vrijen's recommendation for edtech network)
-- [ ] **Review Vrijen's Zo demo** when link received
-- [ ] **Explore Vrijen's open source repository** when shared
-- [ ] **Follow up with Vrijen** after coffee/FOHE introductions
-- [ ] **Consider collaboration opportunities** with Vrijen (aligned values on human-centered AI)
+### 4. Introduce Zain to Plaid PM and networking coach
+- **Owner**: Vrijen Attawar
+- **Priority**: low
+- **First Step**: Draft intro emails to the Plaid PM and networking coach on behalf of Zain
+- **Estimated**: 20 min
+- **Domain**: Other
+- **Project**: Network building
+- **Milestones**:
+  1. Send first intro
+  2. Send second intro
 
-## Joint / Collaborative
+### 5. Schedule coffee with Zain
+- **Owner**: Zain Yousaf
+- **Priority**: normal
+- **First Step**: Text Vrijen to coordinate coffee time for next week
+- **Estimated**: 5 min
+- **Domain**: Personal
+- **Project**: Relationship building
+- **Milestones**:
+  1. Text Vrijen with preferred times
+  2. Confirm coffee date and location
 
-- [ ] **Coordinate coffee timing** via text message
-- [ ] **Continue conversation** around new collaboration models
-- [ ] **Explore how Zo systems** could accelerate Zain's productivity/content workflow
+### 6. Explore FOHE membership for Zain
+- **Owner**: Zain Yousaf
+- **Priority**: normal
+- **First Step**: Visit FOHE website and review membership/application process
+- **Estimated**: 15 min
+- **Domain**: Other
+- **Project**: FOHE community
+- **Milestones**:
+  1. Review FOHE and determine fit
+  2. Submit application if aligned
 
----
-
-## Status Summary
-
-**Total Action Items:** 12
-**Vrijen's Items:** 8
-**Zain's Items:** 6
-**Joint/Collaborative:** 3
-**High Priority (time-sensitive):** Coffee scheduling next week
-**Medium Priority (relationship building):** FOHE introductions, sharing Zo resources
-**Low Priority (exploratory):** Collaboration discussions, long-term project alignment
-
----
-
-## Owner Matrix
-
-| Action Item | Owner | Deadline | Priority |
-|-------------|---------|-----------|
-| Send Zo demo link | Vrijen | Immediate | Medium |
-| Share open source repo | Vrijen | Immediate | Medium |
-| Intro to FOHE | Vrijen | This week | High |
-| Intro to FOHE co-lead | Vrijen | This week | High |
-| Connect to Plaid PM | Vrijen | This week | Medium |
-| Connect to networking coach | Vrijen | This week | Medium |
-| Schedule coffee | Both | Next week | High |
-| Text for coffee coordination | Both | This week | High |
-| Explore FOHE | Zain | Next week | Medium |
-| Review Zo demo | Zain | After receipt | Low |
-| Explore repository | Zain | After receipt | Low |
-| Follow up after coffee | Zain | Post-coffee | Medium |
+### 7. Review Vrijen's Zo repo for inspiration
+- **Owner**: Zain Yousaf
+- **Priority**: low
+- **First Step**: After receiving the repo link, review the meeting processing pipeline and content library setup
+- **Estimated**: 30 min
+- **Domain**: Zo
+- **Project**: Zo personal workflow exploration
+- **Milestones**:
+  1. Initial review of repo structure
+  2. Identify components worth adopting
+```

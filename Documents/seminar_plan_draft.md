@@ -1,10 +1,9 @@
 ---
 created: 2026-01-21
 last_edited: 2026-01-21
-version: 4.0
+version: 4
 provenance: con_CDQZwhK7WBueZgnV
 ---
-
 # Fundamentals of AI Productivity — Seminar Plan v4
 
 ## The Refined Thesis

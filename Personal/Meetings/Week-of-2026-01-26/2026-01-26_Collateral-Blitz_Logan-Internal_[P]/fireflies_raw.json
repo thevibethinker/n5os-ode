@@ -1,0 +1,36 @@
+{
+  "id": "01KFXGQYFJ0MRB3ARR19NSJ7A7",
+  "title": "Collateral Blitz",
+  "date": 1769443500000,
+  "duration": 30,
+  "participants": [
+    "logan@mycareerspan.com"
+  ],
+  "transcript_url": "https://app.fireflies.ai/view/01KFXGQYFJ0MRB3ARR19NSJ7A7",
+  "audio_url": null,
+  "video_url": null,
+  "sentences": null,
+  "summary": {
+    "keywords": [
+      "First-party data",
+      "Demo video",
+      "Sourcing/matching",
+      "Internal mobility",
+      "Outreach email",
+      "Talent scan"
+    ],
+    "action_items": "\n**Vrijen Attawar**\nCreate a 45-60 second demo video showing the scan function and first-party data advantages, using anonymized real data (28:46)\nCollaborate with Zoe for a tight 45-second script for the demo video (28:52)\nPrepare email body copy for outreach and collect contact emails for deployment (11:54)\n\n**Logan Currie**\nDevelop email content aligned with demo video for outreach; build two versions (sourcing/matching and internal mobility) (08:54)\nUse LinkedIn data export to identify additional suitable prospect companies for outreach (29:27)\nSend outreach email to kbj for prospect identification and ensure follow-up to leverage her connections (28:05)\n",
+    "outline": null,
+    "shorthand_bullet": "\ud83d\udc65 **Introductions and Casual Start** (00:00 - 04:00)\nBrief chatting including personal notes about a participant\u2019s life event impacting availability.\n\ud83d\udcc4 **Discussion of Ray\u2019s Documents and Sharing Links** (01:45 - 02:39)\nLogistics for sharing and loading documents for ingestion.\n\ud83d\udce7 **Review of External Email Style and Approach** (05:18 - 07:00)\nAnalysis of an email from Springboard focusing on directness and high-level value delivery.\nPresentation of assets and workforce board leads to create immediate interest.\n\ud83d\udcac **Discussion on Collateral and Value Communication** (07:00 - 08:54)\nCritique of current collateral and discussion on creating a concise, visual email approach.\nEmphasis on conveying value quickly without excessive explanation.\n\ud83c\udfa5 **Strategy for Video Demo Development** (08:54 - 11:53)\nPlanning to record a demo video to highlight first-party data collection.\nShowcase scan functionality with potential voiceover and scripting support from Zoe.\n\u2709\ufe0f **Content and Hook Development for Outreach** (11:53 - 20:45)\nDeveloping email messaging focusing on current market challenges.\nEmphasizing the first-party data advantage and its role in sourcing and internal mobility.\n\ud83d\udd0d **Segmentation of Use Cases** (20:47 - 21:56)\nTwo video/message versions proposed: one for sourcing/matching/external hiring and another for internal mobility.\nTailored hooks and messaging for each version.\n\ud83d\udcca **Review and Categorization of Prospective Companies** (21:56 - 26:00)\nCategorizing companies into internal mobility vs. sourcing/matching.\nAssessing prior contacts and responses.\n\ud83d\udcc5 **Preparation for Follow-up and Outreach Execution** (26:00 - 29:51)\nAssigning tasks for email and video collateral creation.\nPrioritizing sourcing/matching video first before internal mobility video.\n\u2705 **Final Coordination and Next Steps Confirmation** (29:51 - 30:00)\nAgreement on roles and respective tasks to complete the collateral blitz and outreach.\n",
+    "overview": "- **Video Demo Creation:** Team to make a 45-60 second video demo showcasing first-party human data for talent sourcing.\n\n- **Targeted Messaging:** Two video versions will highlight external sourcing and internal mobility, addressing audience pain points.\n\n- **Outreach Focus:** Segmentation by recruiting needs; prioritize Reliance and Uber for internal mobility due to scale.\n\n- **Product Positioning:** Careerspan framed as a \u201chuman data company\u201d to differentiate from competitors using third-party data.\n\n- **Pipeline Management:** Detailed prospect categorization to enhance outreach; emphasis on concise, engaging content for communication.\n\n- **Tech Proof Points:** Use of real anonymized scan data in demos to validate product efficacy and enhance buyer understanding."
+  },
+  "organizer_email": "vrijen@mycareerspan.com",
+  "meeting_attendees": [
+    {
+      "displayName": null,
+      "email": "logan@mycareerspan.com",
+      "name": null,
+      "location": null
+    }
+  ]
+}

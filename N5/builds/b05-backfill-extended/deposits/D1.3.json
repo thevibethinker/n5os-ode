@@ -1,0 +1,153 @@
+{
+  "status": "complete",
+  "meetings_processed": 9,
+  "items_extracted": 16,
+  "items": [
+    {
+      "title": "Intro to Emily (Podcast Host)",
+      "priority": "strategic",
+      "first_step": "Draft introduction email connecting Holly to Emily for O1 visa profile building",
+      "estimate_min": 10,
+      "domain": "Personal",
+      "context": "Help Holly build her profile and 'extraordinary ability' evidence for the O1 visa",
+      "source_meeting": "2026-01-07_2026-01-07-Holly-x-v"
+    },
+    {
+      "title": "Intro to Chris Russell (Job Board Podcast)",
+      "priority": "strategic",
+      "first_step": "Draft introduction email connecting Holly to Chris for podcast appearance",
+      "estimate_min": 10,
+      "domain": "Personal",
+      "context": "Provide Holly another platform to demonstrate leadership and industry expertise for O1 visa momentum",
+      "source_meeting": "2026-01-07_2026-01-07-Holly-x-v"
+    },
+    {
+      "title": "Intro to Erica Beavers (Alpic)",
+      "priority": "normal",
+      "first_step": "Draft introduction email connecting Holly to Erica for ChatGPT App Store exploration",
+      "estimate_min": 10,
+      "domain": "Personal",
+      "context": "Explore connecting Holly's product (Matchbox) to the ChatGPT App Store via MCP connectors",
+      "source_meeting": "2026-01-07_2026-01-07-Holly-x-v"
+    },
+    {
+      "title": "Consult with friend regarding O1 visa costs",
+      "priority": "strategic",
+      "first_step": "Send message to friend requesting O1 visa cost benchmarks for Holly",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Help Holly benchmark costs for the O1 visa application process",
+      "source_meeting": "2026-01-07_2026-01-07-Holly-x-v"
+    },
+    {
+      "title": "Intro to Careerspan Head of AI",
+      "priority": "normal",
+      "first_step": "Draft introduction email connecting Holly to Head of AI for technical eval",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Provide Holly with a technical resource to evaluate tech stack/state of product she is considering buying",
+      "source_meeting": "2026-01-07_2026-01-07-Holly-x-v"
+    },
+    {
+      "title": "Scan candidate pool for Agave and Deep Tune roles",
+      "priority": "urgent",
+      "first_step": "Contact Holly to get role details and job requirements for Agave and Deep Tune",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Help Holly place candidates to generate short-term revenue/runway via split share agreement",
+      "source_meeting": "2026-01-07_2026-01-07-Holly-x-v"
+    },
+    {
+      "title": "Watch the SNL 'Kid by the Well' skit",
+      "priority": "normal",
+      "first_step": "Open browser and search for SNL 'Kid by the Well' skit on YouTube",
+      "estimate_min": 10,
+      "domain": "Other",
+      "context": "Referenced in relation to Gra during podcast discussion",
+      "source_meeting": "2026-01-08_2026-01-08-Logan-And-Vrijen-Finish-Their-Podcast"
+    },
+    {
+      "title": "Complete values homework",
+      "priority": "urgent",
+      "first_step": "Write answers to 'How do I exhibit it today?' and 'What is a way I can be more true to it?' for Kindness, Consistency/Honor, and Unity/Solidarity",
+      "estimate_min": 45,
+      "domain": "Personal",
+      "context": "Two questions per value (exhibit today, be more true), due before Jan 15",
+      "source_meeting": "2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi"
+    },
+    {
+      "title": "Bring Joe a joint",
+      "priority": "normal",
+      "first_step": "Text Joe to coordinate meeting or drop-off for today",
+      "estimate_min": 10,
+      "domain": "Personal",
+      "context": "Kindness action item for founder friend, due today",
+      "source_meeting": "2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi"
+    },
+    {
+      "title": "Continue exercise routine",
+      "priority": "normal",
+      "first_step": "Complete today's workout session",
+      "estimate_min": 30,
+      "domain": "Personal",
+      "context": "Counterweight to delayed weed quit, ongoing commitment",
+      "source_meeting": "2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi"
+    },
+    {
+      "title": "Watch Taylor Swift documentary",
+      "priority": "normal",
+      "first_step": "Check streaming availability of 'End of an Era'",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Leadership insights, optional task",
+      "source_meeting": "2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi"
+    },
+    {
+      "title": "Inform Holly of Monday Timeline",
+      "priority": "urgent",
+      "first_step": "Send message to Holly explaining timeline delay due to strategic pivot",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Silent scans for Agave and Deep Tune roles cannot be delivered immediately due to strategic pivot requiring reflection time.",
+      "source_meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen"
+    },
+    {
+      "title": "Brief Logan on Strategic Pivot",
+      "priority": "urgent",
+      "first_step": "Prepare talking points for today's standup about talent scanning as core product",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Logan needs to be aware that talent scanning is now the core product, not the employer portal.",
+      "source_meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen"
+    },
+    {
+      "title": "Tidy Up Silent Scans CSV",
+      "priority": "normal",
+      "first_step": "Review and format the CSV Ilse generates for better ergonomics",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Ilse will deliver silent scans for Agave and Deep Tune roles in CSV format. V to tidy up for better ergonomics.",
+      "source_meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen"
+    },
+    {
+      "title": "Share Meeting Notes",
+      "priority": "normal",
+      "first_step": "Send meeting notes to relevant team members",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "V mentioned sharing notes from this call.",
+      "source_meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen"
+    },
+    {
+      "title": "Explore Superposition Integration",
+      "priority": "strategic",
+      "first_step": "Send initial outreach email to Superposition about partnership opportunity",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Potential partnership where Careerspan provides talent access layer to Superposition's employer-side solution.",
+      "source_meeting": "2026-01-09_2026-01-09-Ilse-X-Vrijen"
+    }
+  ],
+  "errors": [],
+  "notes_for_orchestrator": "Processed 9/9 meetings, extracted 16 total items"
+}

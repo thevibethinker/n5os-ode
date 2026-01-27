@@ -1,118 +1,83 @@
 ---
-created: 2026-01-21
-last_edited: 2026-01-21
+created: 2026-01-27
+last_edited: 2026-01-27
 version: 1.0
-provenance: con_NSN9yLztN8SQG92P
+provenance: con_Jc97WwrqOmaN77IU
 ---
 
 # B01: Detailed Recap
 
 ## Meeting Overview
-This was an introductory meeting between Careerspan and FutureFit to explore potential partnership opportunities. The conversation covered team introductions, backgrounds, product capabilities, and strategic alignment.
+An introductory partnership discussion between Careerspan (Vrijen, Logan, Ilse) and FutureFit (Hamoon, Katya). The conversation explored potential acquisition/merger scenarios, with FutureFit indicating strong interest in bringing the Careerspan team aboard. The discussion covered Careerspan's product philosophy, technical approach, and team backgrounds, followed by FutureFit's transparent positioning about integration and deal-breaker exploration.
 
 ## Chronological Discussion
 
-### Opening Introductions (Early)
-The meeting opened with pleasantries between both teams. Hamoon Ekhtiari from FutureFit initiated introductions and set expectations for the 34-45 minute discussion.
+### Introductions and Careerspan Overview (0:00-15:00)
+The meeting opened with team introductions. Hamoon from FutureFit set expectations for a 34-45 minute exploratory call. Vrijen provided Careerspan's background: he and Logan met 10.5 years ago working in college admissions and standardized test prep, focusing on narrative design. After Vrijen's MBA at McKinsey and Logan's edtech experience in Asia (Thailand, China, Singapore), they reunited to build Careerspan around the concept of using AI as a "smart mirror" to help people advocate for themselves.
 
-### Careerspan Team Introduction
-Vrijen Attawar (co-founder) provided an overview of Careerspan:
-- **Founding Story**: Vrijen and Logan met 10.5 years ago working in college admissions and standardized test prep
-- **Core Competency**: Narrative design - helping people tell their stories effectively for employers and universities
-- **Evolution**: Both founders went different directions (Vrijen to MBA/McKinsey, Logan to edtech in Asia, then Harvard) before reuniting
-- **Product Vision**: AI as a "smart mirror" helping people articulate who they are, then reflecting back optimal attributes for career direction
-- **Current State**: ~4,000 users, $0 marketing spend, extremely high engagement (35% complete at least one story, median 40-45 minutes of deep reflection)
-- **Strategic Pivot**: Realized job seekers are hard to monetize; shifted focus to connecting people to opportunities via the data captured
-- **Key Insight**: Careerspan has a better ATS through the coaching experience and data capture mechanism
+**Key Points:**
+- Careerspan has ~4,000 users with $0 in marketing spend
+- 35% of users complete at least one story
+- Median user spends 40-45 minutes in deep reflection with the AI
+- Team: Vrijen (co-founder, MBA McKinsey), Logan (co-founder, edtech in Asia), Ilse (head of AI, joined 2.5 years ago)
 
-### Ilse Funkhouser Introduction
-- **Role**: Head of AI, technical lead, joined 2.5 years ago
-- **Background**: Started in project management, fell into Ruby on Rails development when short-staffed during a lawsuit
-- **Previous Work**: Financial software using behavioral techniques (increasing 401k contributions), graph theory for automated web testing
-- **Career Philosophy**: Loves being "the dumbest person in the room" to learn from domain experts
-- **Motivation**: Discovered how horrible job search processes are and wanted to build software that actually helps people
+**Interesting Details:**
+- Vrijen emphasized job seekers are difficult to monetize ("reasons of the heart and reasons of the purse")
+- The real value: Careerspan's data capture through coaching conversations creates "way better ATS data" than traditional approaches
+- Ilse's joke about her role: "Poke the AI with a stick when it misbehaves"
 
-### Logan Currie Introduction
-- **Background**: Edtech experience in Asia (Thailand, China, Singapore), majority in China/Shanghai
-- **Career Arc**: Started at New Pathway Education (employee #3 in 2010), scaled to 400+ employees
-- **Current Perspective**: Feels like a "career anthropologist" observing the changing landscape
-- **Core Passion**: Helping individuals find agency in dealing with big systems
-- **Academic Approach**: Brings research-backed methodology, studied Mandarin, postgraduate certificate in education, Master's in education and learning design
-- **Recent Focus**: Experiments on job market trends, increasing visibility, learning in public, translating research into products
+### Ilse's Technical Background (15:00-25:00)
+Hamoon asked about Ilse's career journey from project management to software engineering to data/AI. Ilse described falling into software engineering at her first job after college (math major hired by a company that "had really good luck hiring math majors"), learning Ruby on Rails when short-staffed during a $30M lawsuit with Morningstar. She worked on various industries including "wastewater heat mapping for fracking" (calling it "the most evil thing I've ever done"), then pursued her master's in data science before co-founding a company building automated software testing platforms using graph theory.
 
-### FutureFit Team Introduction
-**Katya Simpson**:
-- **Role**: Strategy and ops portfolio at FutureFit, previously ran AI team
-- **Background**: AI world before business strategy, excited about ethical AI products
+**Key Points:**
+- Ilse values being "the dumbest person in the room" for learning
+- Built financial software using behavioral techniques to increase 401k contributions
+- Her last company raised $17M before she left during COVID
+- Core philosophy: "using AI to do something that isn't evil is really good"
 
-**Hamoon Ekhtiari**:
-- **Role**: "Help desk" title on slack, spends most time in support across various structures
-- **Company**: 30+ people, end-to-end journey from career exploration to job connection
-- **Geographic Scope**: North America primarily, some Europe
-- **Business Model**: B2B/B2G only - partners with state governments and industry groups, no direct-to-consumer
-- **Partnership Interest**: Excited about Careerspan's work in helping people narrate and articulate experiences
-- **Transparency Note**: Acknowledged a very live deal in market (stepped away briefly)
-- **Likely Path**: Would involve Careerspan team joining FutureFit, but doesn't necessarily mean carrying on the tech as-is
+### Technical Deep-Dive on Job Description Analysis (25:00-35:00)
+Hamoon asked about the best AI feature Ilse has built for Careerspan. Ilse described the job description breakdown system: parsing JDs into 10-12 soft skills, hard skills, and responsibilities (~30 items total), each with importance level and mastery requirements. She tracks which skills map to which responsibilities at what mastery levels.
 
-### Technical Discussion (Mid-Meeting)
-Katya asked about Careerspan's technical analysis approach:
+**Decisions:**
+- Using closed-source models (OpenAI) for this component
+- No fine-tuned models needed for low-volume job descriptions
+- Multi-shot LLM prompts exploded into parallel atomic LLM tasks
 
-Vrijen explained:
-- **Key Differentiator**: Ilse's ability to atomize tasks into sensible components, keeping costs low
-- **Engineering Philosophy**: Decompose tasks effectively to use simpler models vs. reflexively throwing powerful models at problems
-- **Analysis Approach**: Rather than a specific methodology, they do thorough analysis with high volume output
-- **Cost Efficiency**: High bang-for-buck through strategic model selection
+Vrijen added context: Ilse's standout engineering capability is atomizing tasks effectively to use cheaper models ("dumb models") rather than reflexively throwing the most powerful models at problems.
 
-### Data-Driven Decision Making
-Katya asked for an example of data-driven decision making:
+### Logan's Background and Interests (35:00-45:00)
+Logan described his through line: "helping an individual find more agency and dealing with big systems" over 16+ years. He emphasized translating research-backed approaches into visceral, practical applications. Recent focus has been on where the job market is going, including learning in public and the dying resume signal.
 
-Ilse shared the story completion metrics discussion:
-- **Metric**: Average number of story completions for new users
-- **Context**: After shifting focus from coaching to employer marketplace
-- **The Debate**: Should they still care about story completions as a KPI?
-- **Ilse's Position**: No - if jobs are on the platform and that's the only way to access them, users will use it regardless
-- **Decision**: Made softer landing for new users to guide them through and show benefits, but prioritized employer side over boosting completions
-- **Current Reality**: 2.5-3% organic returns month-on-month as users come back for specific tasks
-- **Vrijen's Insight**: Data accrues over time - depth of engagement is a function of time as a user
+**Key Points:**
+- Spent majority of career in edtech in Asia (New Pathway Education, employee #3, scaled to 400+ employees)
+- Studying Mandarin, postgraduate certificate in education, Master's in education and learning design
+- Passionate about marketing across channels (LinkedIn, newsletter, TikTok) and translating frameworks into products
 
-### Deal Breakers Discussion
-Hamoon asked what would be non-starters in a partnership:
+### FutureFit's Positioning and Deal Breakers Discussion (45:00-End)
+Hamoon provided FutureFit context: team of 30+ people, end-to-end career services (exploration, training, wraparound supports, job connection), partners with state governments and industry groups across North America and Europe. **Critical positioning:** FutureFit does not do direct-to-consumer.
 
-**Vrijen**:
-- Comfortable with joining an established product
-- Startup energy can apply to solving problems regardless of company type
-- No venture-backed startup requirement
+**Major Disclosure:**
+Hamoon stated that in this scenario, the "likely path" would be welcoming the Careerspan team over to their side—essentially an acquisition. He was transparent that this "doesn't necessarily mean carrying on of the tech exactly as it exists today" but emphasized mission alignment.
 
-**Ilse**:
-- Comfortable with established product
-- Concerned about being "the only woman" scenario if joining established team
+He then explored deal breakers and frustration points:
 
-**Logan**:
-- Enjoys zero-to-one challenges but also relationship building
-- Strong at partnership building and go-to-market
-- Sales experience across 5 countries including governments (Chinese officials, Singaporean government)
-- Thrives on customer-facing work once product is understood
+**Vrijen's requirements:**
+- Wants to stay in touch with tech, ideally through product-oriented role with AI exposure or external non-competitive pursuit
+- **Non-negotiable:** Must sell the power of the UX they built—not just looking at it as technology. Believes Careerspan is "the best team in the market, bar none" at understanding candidate user experience and generating tangibly better data than resume parsing.
 
-### FutureFit Priorities and Culture
-**Katya**:
-- **Culture**: Defined by curiosity - present on leadership team and individual contributors
-- **Priorities**: Year focused on digging deeper into product principles
-- **Tagline**: "GPS for your career"
-- **Product Scope**: Holistic package for job seekers + matching/profiling resources for government entities + wraparound services
-- **Technical Interest**: Potential overlap in technical foundations, especially around matching algorithms and cost-effective NLP methods
+**Logan's preferences:**
+- Wants to wear "mini hats" and contribute broadly
+- **Deal breaker:** Being boxed into "you're doing this and only this"
+- Enjoys being thrown in the deep end and adapting
 
-**Vrijen Response**:
-- Excited that consumer care remains front and center despite B2B model
-- Interested in discussion about where Careerspan's tech can have maximum effect
-- Wants conversational approach, not "marching orders"
-- Team is "massive nerds" who love learning and remain humble
-
-### Closing (Late Meeting)
-Both teams expressed appreciation for the conversation. Vrijen noted how comfortable and engaged his team felt. Katya confirmed they would likely circle back (Simone was mentioned).
+The transcript cuts off mid-sentence during Logan's response.
 
 ## Key Takeaways
-- Strong cultural alignment on curiosity and learning
-- FutureFit is B2B/B2G only (no direct-to-consumer)
-- Partnership would likely involve Careerspan team joining FutureFit, potentially with tech integration
-- Both sides expressed openness to conversational vs. directive approach
-- NDA mentioned as next step before deeper technical discussions
+
+- **Acquisition signal:** FutureFit explicitly positioned this as a potential team acquisition scenario, stating "welcome you and the team over to our side" while noting the tech may not continue as-is
+- **Product differentiation:** Careerspan's core value proposition is user experience design that generates superior candidate data through conversational reflection, not NLP/ML algorithms
+- **Strong technical discipline:** Ilse's engineering philosophy prioritizes task atomization and cost efficiency over model power, enabling high-quality analysis at low compute cost
+- **Cultural alignment:** Both teams emphasize mission-driven work helping people navigate career transitions and "better jobs faster and cheaper"
+- **Business model alignment required:** FutureFit is B2B/B2G only (no DTC), which Vrijen acknowledged earlier as the monetization challenge for job seekers
+- **Team integration risk:** Hamoon proactively surfaced the identity challenge of joining an existing organization with different brand/product, seeking to understand deal breakers upfront
+- **NDA likely needed:** Technical discussions would require NDA before deeper dives (implied by Ilse's deferral on details)

@@ -1,0 +1,8 @@
+{
+  "slug": "meeting-system-migration",
+  "last_check": "2026-01-26T21:15:00Z",
+  "last_completed_count": 4,
+  "last_completed_drops": ["D1.1", "D1.2", "D2.1", "D3.1"],
+  "last_status": "active",
+  "last_notified_running": []
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "task-system-validation",
+  "title": "Task System Validation & Backfill",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "orchestrator_convo": "con_OaZwIOzCydglh4r4",
+  "drops": {
+    "D1.1": {
+      "name": "Comprehensive Debug",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "Task Backfill Strategy & Execution",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.1": {
+      "name": "Full Flow Test",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    }
+  },
+  "currents": {},
+  "completed_at": "2026-01-26T03:01:40.137471"
+}

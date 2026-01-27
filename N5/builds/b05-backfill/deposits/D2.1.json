@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "items_reviewed": 54,
+  "items_promoted": 26,
+  "items_dismissed": 28,
+  "dismiss_reasons": {
+    "already_done": 5,
+    "garbage_data": 3,
+    "not_actionable": 8,
+    "unchecked_by_v": 12
+  },
+  "notes_for_orchestrator": "V reviewed all 54 items. 26 promoted to task system, 28 dismissed. Build complete."
+}

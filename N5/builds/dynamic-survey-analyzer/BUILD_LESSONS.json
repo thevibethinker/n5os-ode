@@ -1,0 +1,59 @@
+{
+  "slug": "dynamic-survey-analyzer",
+  "learnings": [
+    {
+      "text": "Fillout API stores emoji-labeled sentiment questions as full text strings (e.g., '5 = \ud83d\ude80 Excited / All-in' not just '5'). D1.2 analysis script must parse these to extract numeric scores for sentiment analysis. Pattern: 'N = emoji Text' - extract N.",
+      "source": "manual",
+      "added_at": "2026-01-25T03:15:58.044579+00:00",
+      "tags": []
+    },
+    {
+      "text": "This form uses a screening question (dGZw) to filter attendees vs. non-attendees. D1.2 should filter out 'No' responses from all analysis. Consider standardizing this pattern for future event surveys.",
+      "source": "manual",
+      "added_at": "2026-01-25T03:16:04.262686+00:00",
+      "tags": []
+    },
+    {
+      "text": "Screening questions in Fillout forms don't always filter API responses - ineligible responses may be included in the dataset, requiring manual filtering",
+      "source": "manual",
+      "added_at": "2026-01-25T03:25:54.670684+00:00",
+      "tags": []
+    },
+    {
+      "text": "Survey with 100% uniform sentiment responses indicates selection bias, tribal signaling, or flawed design - sentiment data is effectively broken and cannot support correlation analysis",
+      "source": "manual",
+      "added_at": "2026-01-25T03:25:54.673655+00:00",
+      "tags": []
+    },
+    {
+      "text": "'Scratching the surface' is not a beginner state but a permanent condition for anyone staying current with AI - curriculum should reflect this",
+      "source": "manual",
+      "added_at": "2026-01-25T03:25:54.682531+00:00",
+      "tags": []
+    },
+    {
+      "text": "Bug found in fillout_client.py: _detect_account() was returning account name string but was assigned to api_key variable, causing 400 errors. Fixed by returning API key directly instead of account name.",
+      "source": "manual",
+      "added_at": "2026-01-25T03:29:07.977202+00:00",
+      "tags": []
+    },
+    {
+      "text": "Dashboard should include data quality warnings section when anomalies detected (e.g., 100% max sentiment, small sample size) (D2.1)",
+      "source": "manual",
+      "added_at": "2026-01-25T03:36:07.521606+00:00",
+      "tags": []
+    },
+    {
+      "text": "Sentiment scale with 100% uniform max values requires data quality warnings in dashboard and analysis - likely tribal signaling not actual sentiment (D2.1)",
+      "source": "manual",
+      "added_at": "2026-01-25T03:36:07.532897+00:00",
+      "tags": []
+    },
+    {
+      "text": "Analysis synthesis needs explicit Level Upper insight markers (\ud83d\udd2e) to distinguish novel perspectives from standard findings (D2.1)",
+      "source": "manual",
+      "added_at": "2026-01-25T03:36:07.555089+00:00",
+      "tags": []
+    }
+  ]
+}

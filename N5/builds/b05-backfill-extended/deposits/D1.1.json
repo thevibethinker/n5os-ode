@@ -1,0 +1,144 @@
+{
+  "status": "complete",
+  "meetings_processed": 9,
+  "items_extracted": 15,
+  "items": [
+    {
+      "title": "Prepare GTM narrative",
+      "priority": "normal",
+      "first_step": "Draft outline of key GTM points",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Victor Hu from Lumos Capital showed partnership interest; follow-up needed before next call",
+      "source_meeting": "2025-12-16_Victor-hu-Lumos-capital"
+    },
+    {
+      "title": "Research Lumos Capital portfolio",
+      "priority": "normal",
+      "first_step": "Visit Lumos Capital website and list portfolio companies",
+      "estimate_min": 45,
+      "domain": "Careerspan",
+      "context": "Victor Hu meeting; identify relevant companies in portfolio for potential synergies",
+      "source_meeting": "2025-12-16_Victor-hu-Lumos-capital"
+    },
+    {
+      "title": "Send Careerspan materials to Eric",
+      "priority": "strategic",
+      "first_step": "Gather Careerspan materials and draft email to Eric",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Eric requested materials to review Careerspan as a potential tool for portfolio company hiring",
+      "source_meeting": "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo"
+    },
+    {
+      "title": "Share talent sourcing workflows for Zo",
+      "priority": "strategic",
+      "first_step": "Prepare document outlining analogous talent sourcing workflows including Aviato/enrichment",
+      "estimate_min": 30,
+      "domain": "Zo",
+      "context": "Eric expressed interest in how Zo handles talent sourcing workflows, potentially involving Aviato and enrichment",
+      "source_meeting": "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo"
+    },
+    {
+      "title": "Continue demoing meeting processing system",
+      "priority": "normal",
+      "first_step": "Set up next demo session with Eric to complete meeting processing system logic walkthrough",
+      "estimate_min": 5,
+      "domain": "Zo",
+      "context": "Demo was interrupted before completing the meeting processing system logic explanation",
+      "source_meeting": "2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo"
+    },
+    {
+      "title": "Monitor OpenAI billing and API limits",
+      "priority": "normal",
+      "first_step": "Log into OpenAI dashboard and check current usage and billing status",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Ongoing monitoring need for API usage and costs",
+      "source_meeting": "2025-12-19_ilse_x_vrijen_sync"
+    },
+    {
+      "title": "Resolve 2FA access issues or provide billing visibility to Ilse",
+      "priority": "urgent",
+      "first_step": "Check OpenAI account settings for 2FA configuration and team access options",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Ilse needs access to billing information; access blocked by 2FA",
+      "source_meeting": "2025-12-19_ilse_x_vrijen_sync"
+    },
+    {
+      "title": "Update 'Padre' on product roadmap and recent sync",
+      "priority": "strategic",
+      "first_step": "Draft brief summary of current product roadmap status and key decisions from this sync",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Need to align stakeholder (Padre) on product direction",
+      "source_meeting": "2025-12-19_ilse_x_vrijen_sync"
+    },
+    {
+      "title": "Search for missing green card",
+      "priority": "urgent",
+      "first_step": "Check desk drawers, wallet, and common document storage locations",
+      "estimate_min": 30,
+      "domain": "Personal",
+      "context": "Personal document search scheduled for Saturday",
+      "source_meeting": "2025-12-19_ilse_x_vrijen_sync"
+    },
+    {
+      "title": "Send Ribbon team pitch/blurb to Christine",
+      "priority": "normal",
+      "first_step": "Draft 3-sentence Ribbon pitch for Christine",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Partnership sync with Christine Song at Ribbon",
+      "source_meeting": "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+    },
+    {
+      "title": "Provide demo account and sign-up links to Christine",
+      "priority": "normal",
+      "first_step": "Generate demo account link and sign-up URLs",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Enable Ribbon team access to Careerspan demo and applicant accounts",
+      "source_meeting": "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+    },
+    {
+      "title": "Send two targeted blurb emails",
+      "priority": "strategic",
+      "first_step": "Draft Ribbon/Partnerships email blurb",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Send separate blurbs to Ribbon/Partnerships and VC Talent contacts per partnership agreement",
+      "source_meeting": "2025-12-22_Christine-Song-Ribbon-Partnership-Sync"
+    },
+    {
+      "title": "Provide $190k loan agreement document",
+      "priority": "urgent",
+      "first_step": "Draft and send formal loan agreement document to Vineet/Shruti",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Non-interest-bearing loan needs documentation to update ledgers from equity to liability classification",
+      "source_meeting": "2025-12-23_Meeting-with-vrijen-ankit"
+    },
+    {
+      "title": "Share production/marketing invoices",
+      "priority": "strategic",
+      "first_step": "Send email with available invoices; note Upwork pending until Logan recovers",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Auditors/acquirers require supporting documentation for transactions like $3,100, $2,300, $5,000",
+      "source_meeting": "2025-12-23_Meeting-with-vrijen-ankit"
+    },
+    {
+      "title": "Resolve $4,500 payroll refund",
+      "priority": "strategic",
+      "first_step": "Contact Megan to arrange refund collection before books close",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "W-2 totals will be impacted; team handling classification change, but collection needed",
+      "source_meeting": "2025-12-23_Meeting-with-vrijen-ankit"
+    }
+  ],
+  "errors": [],
+  "notes_for_orchestrator": "Processed 9 meetings from batch 1 (2025-12-16 to 2025-12-23). Used B05_ACTION_ITEMS.md when available, falling back to transcript.md. Extracted 15 action items total."
+}

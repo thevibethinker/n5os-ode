@@ -1,0 +1,35 @@
+# Template: Google Drive Folder IDs Configuration
+# Copy this file to drive_locations.yaml and replace placeholders with your actual Google Drive folder IDs
+# Created: 2025-01-26
+# Version: 1.0
+
+# INSTRUCTIONS:
+# 1. Copy this template: cp drive_locations.yaml.template drive_locations.yaml
+# 2. Replace all FOLDER_ID_PLACEHOLDER values with your actual Google Drive folder IDs
+# 3. To get a folder ID: Right-click folder in Google Drive → Share → Copy link
+#    Extract the ID from: https://drive.google.com/drive/folders/FOLDER_ID_HERE
+# 4. Test your config with: python3 N5/scripts/validate_drive_locations.py
+
+meetings:
+  transcripts_inbox: "FOLDER_ID_PLACEHOLDER"
+  # Google Drive folder for meeting transcript .docx files from Fireflies
+  # Used by meeting ingestion workflow
+  # Example: "1JOoPs3WpsIbJWfU7jiD-s6kcQnvFg5VV"
+
+# OPTIONAL: Add additional Drive locations as your system grows
+# documents:
+#   careerspan_materials: "FOLDER_ID_PLACEHOLDER"
+#   company_resources: "FOLDER_ID_PLACEHOLDER"
+#
+# shared:
+#   team_resources: "FOLDER_ID_PLACEHOLDER"
+#   client_deliverables: "FOLDER_ID_PLACEHOLDER"
+#
+# archives:
+#   old_meetings: "FOLDER_ID_PLACEHOLDER"
+#   historical_docs: "FOLDER_ID_PLACEHOLDER"
+
+# SECURITY NOTES:
+# - Keep this file private (it's in .gitignore)
+# - Folder IDs are not secret but should not be committed to public repos
+# - Ensure Drive API access is properly configured in your Google Cloud Console

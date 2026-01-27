@@ -1,0 +1,21 @@
+# Conversation Close - Tier 1 (Quick)
+
+**Conversation ID:** {convo_id}
+**Date:** {date}
+**Tier:** 1 (Quick Close)
+
+## Title
+
+{title}
+
+## Summary
+
+{summary}
+
+## Session State
+
+{session_state}
+
+## Artifacts Created
+
+{artifact_list}

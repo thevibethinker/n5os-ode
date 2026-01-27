@@ -1,0 +1,8 @@
+{
+  "last_check": "2026-01-27T00:55:00Z",
+  "completed_drops": ["D1.1", "D1.2", "D1.3"],
+  "last_stream": 1,
+  "sent_build_complete": false,
+  "last_notified": "2026-01-27T00:55:00Z",
+  "notification_reason": "D1.3 completed - Stream 1 done, awaiting Stream 2 start"
+}

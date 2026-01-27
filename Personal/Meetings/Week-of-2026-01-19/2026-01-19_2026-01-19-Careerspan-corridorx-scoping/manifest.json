@@ -1,27 +1,18 @@
 {
-  "manifest_version": "1.0",
-  "generated_at": "2026-01-19T17:05:00Z",
-  "meeting_folder": "2026-01-19_CareerSpan-CorridorX-Scoping",
-  "meeting_date": "2026-01-19",
-  "status": "processed",
-  "blocks_generated": {
-    "stakeholder_intelligence": true,
-    "brief": true,
-    "transcript_processed": true
-  },
-  "last_updated_by": "MG-6_Agent",
-  "zo_take_heed_count": 0,
-  "zo_take_heed_summary": [],
-  "last_updated_at": "2026-01-19T17:52:49.198100",
-  "crm_synced": true,
-  "processed_at": "2026-01-22T17:59:05.050787+00:00",
-  "crm_sync_stats": {
-    "profiles_created": 2,
-    "profiles_updated": 2,
-    "profiles_not_found": [
-      "Vrijen Attawar",
-      "Stakeholder Intelligence"
-    ],
-    "errors": []
-  }
+  "meeting_id": "2026-01-19_2026-01-19-Careerspan-corridorx-scoping",
+  "date": "2026-01-19",
+  "participants": [
+    "careerspancorridorxscoping"
+  ],
+  "meeting_type": "external",
+  "blocks_generated": [
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA"
+  ],
+  "processed_at": "2026-01-27T02:33:30.359255Z"
 }

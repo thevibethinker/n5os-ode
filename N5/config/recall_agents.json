@@ -1,0 +1,23 @@
+{
+  "agents": {
+    "primary_sync": {
+      "title": "⇱ Recall Calendar Sync",
+      "agent_id": "81fd553f-60de-46b1-94f4-1e00d233650b",
+      "cornerstone": true,
+      "created_at": "2026-01-25T02:22:27Z"
+    },
+    "off_hours_sync": {
+      "title": "Recall Calendar Sync (Off-hours)",
+      "agent_id": "5ce46763-e8bb-4387-93dd-1adf32bedbbe",
+      "cornerstone": false,
+      "created_at": "2026-01-25T02:22:49Z"
+    },
+    "health_check": {
+      "title": "Recall Bot Health Check",
+      "agent_id": "63ac046b-7355-412e-bca6-6d40eb7b50f3",
+      "cornerstone": false,
+      "created_at": "2026-01-25T02:23:06Z"
+    }
+  },
+  "updated_at": "2026-01-25T02:23:30Z"
+}

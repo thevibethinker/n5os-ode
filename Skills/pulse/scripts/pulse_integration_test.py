@@ -45,8 +45,8 @@ import requests
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
+from pulse_common import PATHS, WORKSPACE
 
-WORKSPACE = Path("/home/workspace")
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 
 

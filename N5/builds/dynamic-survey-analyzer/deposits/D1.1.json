@@ -1,0 +1,191 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "timestamp": "2026-01-25T03:10:00Z",
+  "artifacts": [
+    "Skills/dynamic-survey-analyzer/SKILL.md"
+  ],
+  "data": {
+    "interpretation_framework": {
+      "form_id": "jPQRwpT4nGus",
+      "form_name": "Next Play - Fundamentals of AI Productivity Pre-Event Survey",
+      "question_classification": {
+        "high_signal": [
+          {
+            "id": "bxyM",
+            "name": "What AI tools or features are you currently using? (select all that apply)",
+            "type": "Checkboxes",
+            "rationale": "Reveals current AI maturity and toolset diversity. Multi-select indicates depth of AI adoption."
+          },
+          {
+            "id": "qgxH",
+            "name": "What's your biggest challenge with AI tools right now?",
+            "type": "MultipleChoice",
+            "rationale": "Primary pain point identification - directly informs session content priorities."
+          },
+          {
+            "id": "qurD",
+            "name": "How do you FEEL about AI right now?",
+            "type": "MultipleChoice",
+            "rationale": "Emotional sentiment affects learning receptivity. Scale 1-5 enables sentiment scoring."
+          },
+          {
+            "id": "qJQ5",
+            "name": "What would make this session valuable for you?",
+            "type": "MultipleChoice",
+            "rationale": "Direct expectation setting - matches content to participant needs."
+          },
+          {
+            "id": "moGb",
+            "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+            "type": "MultipleChoice",
+            "rationale": "Quantifies opportunity size for AI productivity gains."
+          }
+        ],
+        "demographic": [
+          {
+            "id": "tVXP",
+            "name": "What's your current role or title?",
+            "type": "ShortAnswer",
+            "rationale": "Professional context for tailoring examples."
+          },
+          {
+            "id": "dfLX",
+            "name": "What function or department do you work in?",
+            "type": "ShortAnswer",
+            "rationale": "Industry/function segmentation."
+          },
+          {
+            "id": "dYMW",
+            "name": "How would you describe your current career stage?",
+            "type": "ShortAnswer",
+            "rationale": "Career maturity influences learning needs."
+          }
+        ],
+        "open_ended": [
+          {
+            "id": "nkxv",
+            "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+            "type": "ShortAnswer",
+            "rationale": "High-signal qualitative data - identifies specific automation opportunities."
+          }
+        ],
+        "screening": [
+          {
+            "id": "dGZw",
+            "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+            "type": "MultipleChoice",
+            "rationale": "Eligibility gate - 'No' responses should be excluded from analysis."
+          }
+        ]
+      },
+      "analysis_hypotheses": [
+        "Participants who self-report as 'advanced users' will have higher 'time spent on repetitive tasks' values (inverse relationship - advanced users optimize earlier)",
+        "Sentiment score (Q5) will positively correlate with 'current AI usage' level (Q4)",
+        "Participants reporting 'overwhelmed by options' as their challenge will select multiple tool types in Q2 (paradox of choice)",
+        "Those seeking 'templates/prompts to copy' (Q6) will skew toward lower 'current AI usage' levels",
+        "B2B AI and Agentic AI tool users will report higher sentiment scores compared to those only using consumer chatbots",
+        "Role/function will correlate with tool preferences (e.g., engineers may prefer IDE/ADEs, marketers prefer Canva/Jasper)"
+      ],
+      "expected_correlations": [
+        {
+          "source": "sLMq",
+          "source_name": "How would you describe your current AI usage?",
+          "target": "qurD",
+          "target_name": "How do you FEEL about AI right now?",
+          "expected_direction": "positive",
+          "rationale": "Higher usage typically correlates with higher comfort/excitement"
+        },
+        {
+          "source": "qgxH",
+          "source_name": "What's your biggest challenge with AI tools right now?",
+          "target": "qJQ5",
+          "target_name": "What would make this session valuable for you?",
+          "expected_direction": "conditional",
+          "rationale": "Challenge type should map to desired value (e.g., 'don't know where to start' → 'simple tactics')"
+        },
+        {
+          "source": "bxyM",
+          "source_name": "What AI tools or features are you currently using?",
+          "target": "sLMq",
+          "target_name": "How would you describe your current AI usage?",
+          "expected_direction": "positive",
+          "rationale": "More diverse tool selection should correlate with higher usage self-assessment"
+        },
+        {
+          "source": "qurD",
+          "source_name": "How do you FEEL about AI right now?",
+          "target": "moGb",
+          "target_name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+          "expected_direction": "negative",
+          "rationale": "Higher AI optimism may correlate with lower perceived wasted time (already optimized)"
+        }
+      ],
+      "themes_to_watch": [
+        {
+          "theme": "Adoption Paradox",
+          "description": "Participants using many AI tools but feeling overwhelmed - indicates quantity over quality adoption",
+          "signal_questions": ["bxyM", "qgxH"]
+        },
+        {
+          "theme": "The Ceiling Effect",
+          "description": "Advanced users stuck at plateau level - indicates need for intermediate/advanced content",
+          "signal_questions": ["sLMq", "qgxH"]
+        },
+        {
+          "theme": "Opportunity Quantification",
+          "description": "Revealing how much time respondents report on repetitive tasks - potential AI productivity gain",
+          "signal_questions": ["moGb", "nkxv"]
+        },
+        {
+          "theme": "Tool Stack Sophistication",
+          "description": "Movement from consumer chatbots to B2B/agentic tools as maturity indicator",
+          "signal_questions": ["bxyM", "sLMq", "qurD"]
+        },
+        {
+          "theme": "Content Mode Gap",
+          "description": "Mismatch between what attendees want (templates vs. mindset) vs. what challenge suggests they need",
+          "signal_questions": ["qgxH", "qJQ5"]
+        }
+      ],
+      "metrics_to_track": {
+        "ai_maturity_score": {
+          "description": "Composite score based on tool diversity (bxyM), usage frequency (sLMq), and sentiment (qurD)",
+          "calculation": "weighted sum of normalized values"
+        },
+        "productivity_opportunity_hours": {
+          "description": "Average hours per week on repetitive tasks, weighted by number of respondents",
+          "calculation": "mean of moGb responses mapped to hourly values"
+        },
+        "sentiment_distribution": {
+          "description": "Distribution of qurD responses (1-5 scale)",
+          "calculation": "histogram with percentage breakdown"
+        },
+        "tool_adoption_heatmap": {
+          "description": "Cross-tabulation of role/function vs. tool types",
+          "calculation": "counts per intersection cell"
+        }
+      },
+      "exclusions": {
+        "responses_to_exclude": "Responses where dGZw value is 'No' (not attending)",
+        "fields_to_exclude_from_correlations": ["tVXP", "dfLX", "dYMW", "nkxv"],
+        "fields_to_exclude_from_correlations_reason": "Demographic fields and open-ended text excluded from statistical correlations - used for segmentation and qualitative analysis only"
+      }
+    },
+    "form_summary": {
+      "form_id": "jPQRwpT4nGus",
+      "form_name": "Next Play - Fundamentals of AI Productivity Pre-Event Survey",
+      "question_count": 11,
+      "submission_count": 4,
+      "question_types": {
+        "MultipleChoice": 6,
+        "Checkboxes": 1,
+        "ShortAnswer": 4
+      },
+      "structured_questions": 7,
+      "open_ended_questions": 4,
+      "screening_question": "dGZw"
+    }
+  },
+  "handoff_notes": "Framework created based on form structure. 4 submissions currently available. Key insight: This is a pre-event survey for an AI productivity workshop, so analysis should focus on informing session content. Sentiment question (qurD) uses emoji labels but values are stored as text - D1.2 should handle emoji-to-score mapping. The open-ended 'repetitive tasks' question (nkxv) is high-value for identifying use cases but may have null responses (as seen in sample). Recommend D1.3 challenge the 'adoption paradox' hypothesis - it's possible high tool diversity genuinely reflects experimentation rather than poor focus."
+}

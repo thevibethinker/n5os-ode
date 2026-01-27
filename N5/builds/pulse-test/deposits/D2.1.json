@@ -1,0 +1,12 @@
+{
+  "drop_id": "D2.1",
+  "build_slug": "pulse-test",
+  "stream": 2,
+  "status": "completed",
+  "completed_at": "2026-01-24T15:56:30+00:00",
+  "artifacts": {
+    "combined_file": "artifacts/combined.txt"
+  },
+  "output_summary": "Successfully combined outputs from D1.1 and D1.2 into combined.txt",
+  "notes": "Content from test-a.txt and test-b.txt merged into single file"
+}

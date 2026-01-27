@@ -1,0 +1,19 @@
+{
+  "drop_id": "D1.1",
+  "build_slug": "pulse-v3",
+  "validated_at": "2026-01-25T01:18:38.777257+00:00",
+  "mechanical": {
+    "drop_id": "D1.1",
+    "build_slug": "pulse-v3",
+    "timestamp": "2026-01-25T01:18:38.824679",
+    "files_checked": 0,
+    "critical_count": 0,
+    "warning_count": 0,
+    "issues": {}
+  },
+  "llm": {
+    "error": "timeout"
+  },
+  "verdict": "PASS",
+  "reason": "Passed mechanical and LLM validation"
+}

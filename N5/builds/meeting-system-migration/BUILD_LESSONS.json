@@ -1,0 +1,11 @@
+{
+  "slug": "meeting-system-migration",
+  "learnings": [
+    {
+      "text": "MG-5 (Meeting Follow-Up Generation) agent 5579f899 is deprecated (set active:false), but prompt file Prompts/Meeting Follow-Up Generation.prompt.md may still be needed. Review during D3.1 agent migration phase.",
+      "source": "manual",
+      "added_at": "2026-01-26T21:06:29.105735+00:00",
+      "tags": []
+    }
+  ]
+}

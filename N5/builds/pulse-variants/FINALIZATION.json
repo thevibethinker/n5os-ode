@@ -1,0 +1,14 @@
+{
+  "slug": "pulse-variants",
+  "timestamp": "2026-01-26T05:21:37.753094+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for pulse-variants\n   Artifacts: 3/4 verified, 1 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: pulse-variants\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/pulse-variants/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 0,
+  "success": true
+}

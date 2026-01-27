@@ -1,37 +1,61 @@
+```markdown
 ---
-created: 2026-01-21
-last_edited: 2026-01-21
+created: 2026-01-26
+last_edited: 2026-01-26
 version: 1.0
-provenance: con_bh5k93ZbU89ck4vx
+provenance: con_uax7yUvDGszhZ3QB
+block_id: B05
+block_name: ACTION_ITEMS
+meeting_id: 2026-01-20_2026-01-20-Trinayaan-hariharan-x-vrijen-attawar
 ---
 
-# B05: Action Items
+## Action Items
 
-## Immediate Actions (Next 48 Hours)
+### 1. Onboard Trinayaan to Career Tech Founder Sessions
+- **Owner**: Vrijen Attawar
+- **Priority**: normal
+- **First Step**: Send email to Trinayaan with session coordination details and add him to the founder Slack group
+- **Estimated**: 15 min
+- **Domain**: Careerspan
+- **Project**: Career Tech Founder Community
+- **Milestones**: 
+  1. Send onboarding email with session details and expectations
+  2. Add Trinayaan to Slack group
+  3. Schedule brief sync to discuss coordination responsibilities
 
-| Owner | Action | Context | Deadline |
-|-------|--------|---------|----------|
-| Trinayaan | Send email to Vrijen with contact details | To get added to slack group and receive event coordination details | Within 48 hours |
-| Vrijen | Add Trinayaan to career tech founder slack group | Provide access to 20-30 founders network and session context | Within 48 hours |
-| Vrijen | Send detailed email about career tech founder sessions | Include coordination needs, time commitment, and upcoming topics | Within 48 hours |
+### 2. Follow up on Session Coordination
+- **Owner**: Trinayaan Hariharan
+- **Priority**: normal
+- **First Step**: Send email to Vrijen confirming interest and availability for session coordination role
+- **Estimated**: 5 min
+- **Domain**: Careerspan
+- **Project**: Career Tech Founder Community
+- **Milestones**: 
+  1. Send confirmation email to Vrijen
+  2. Review current session schedule and speaker lineup
+  3. Identify first session to support
 
-## Near-Term Actions (This Week)
+### 3. Evaluate Zo for Georgia Tech Hackathon
+- **Owner**: Trinayaan Hariharan
+- **Priority**: strategic
+- **First Step**: Visit Zo website and review product capabilities and hackathon documentation
+- **Estimated**: 30 min
+- **Domain**: Zo
+- **Project**: Georgia Tech Hackathon Partnership
+- **Milestones**: 
+  1. Research Zo product and capabilities
+  2. Assess fit for Georgia Tech hackathon audience
+  3. Prepare brief summary of findings for Vrijen
 
-| Owner | Action | Context | Deadline |
-|-------|--------|---------|----------|
-| Trinayaan | Help coordinate career tech founder sessions | Basic coordination work (1-2 hours/week) in exchange for network access and speaker exposure | Ongoing (once/month sessions) |
-| Trinayaan | Explore Zo product | Evaluate interest in organizing Georgia Tech hackathon with Zo sponsorship | This week |
-
-## Open Loops / Follow-Ups
-
-- **Career tech founder sessions coordination**: Vrijen needs operational help running monthly sessions; Trinayaan has relevant experience from Oracle Startup Exchange mentorship program (500+ students mentored) — Owner: Both
-- **Zo hackathon opportunity**: Vrijen is Zo brand evangelist; Zo founders want hackathons. If Trinayaan is interested in organizing at Georgia Tech, Vrijen can facilitate introduction — Owner: TBD (Trinayaan to confirm interest)
-- **Hiring assessment product exploration**: Both interested in improving technical hiring assessment (particularly AI usage and thinking ability). Vrijen suggested multiple niching opportunities (communication skills assessment, team culture matching) that Trinayaan could explore — Owner: Trinayaan
-
-## Commitments Made
-
-- Trinayaan committed to sending an email to Vrijen to initiate coordination
-- Trinayaan committed to bringing Oracle Startup Exchange mentorship/coordination experience to Vrijen's founder sessions
-- Vrijen committed to adding Trinayaan to the career tech founder slack group for network access
-- Vrijen committed to sending detailed information about the founder sessions coordination needs
-- Vrijen committed to introducing Trinayaan to Zo founders if there's interest in a Georgia Tech hackathon
+### 4. Connect Trinayaan with Zo Team (if interested)
+- **Owner**: Vrijen Attawar
+- **Priority**: strategic
+- **First Step**: Wait for Trinayaan's assessment, then email Zo founders with introduction and hackathon context
+- **Estimated**: 10 min
+- **Domain**: Zo
+- **Project**: Georgia Tech Hackathon Partnership
+- **Milestones**: 
+  1. Receive Trinayaan's assessment
+  2. Email Zo founders with introduction
+  3. Schedule intro call between Trinayaan and Zo team
+```

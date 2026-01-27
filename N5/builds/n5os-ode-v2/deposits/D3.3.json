@@ -1,0 +1,33 @@
+{
+  "drop_id": "D3.3",
+  "build_slug": "n5os-ode-v2",
+  "status": "complete",
+  "title": "Update Main README",
+  "completion_time": "2026-01-26T19:50:00Z",
+  "model": "anthropic:claude-sonnet-5-2-20250114",
+  "summary": "Updated N5/README.md to include Meeting Ingestion and Pulse features in Key Systems section, added Skills/ to Structure section, and updated Documentation section.",
+  "deliverables": [
+    {
+      "file": "N5/README.md",
+      "type": "documentation", 
+      "description": "Main N5 system README with Meeting Ingestion and Pulse features added"
+    }
+  ],
+  "changes_made": {
+    "structure_section": "Added Skills/ folder to directory tree: 'Automated workflow skills (meeting-ingestion, pulse, etc.)'",
+    "key_systems_section": "Added Meeting Ingestion and Build Orchestration entries with descriptions",
+    "documentation_section": "Added Skills reference for automated workflow capabilities"
+  },
+  "git_diff": "diff --git a/N5/README.md b/N5/README.md\nindex c6f6c3ec..2c709163 100644\n--- a/N5/README.md\n+++ b/N5/README.md\n@@ -21,9 +21,10 @@ N5/\n ├── scripts/           Python automation scripts\n ├── prefs/             System preferences and protocols\n ├── config/            Configuration files\n-├── lists/             Action tracking (todos, lessons, etc.)\n+├── lists/             Action tracking (todos, lessons, etc..)\n ├── logs/              Thread exports and system logs\n ├── records/           Meeting records and processing outputs\n+├── Skills/            Automated workflow skills (meeting-ingestion, pulse, etc.)\n └── System Documentation/  Quick reference guides\n ```\n \n@@ -33,6 +34,8 @@ N5/\n \n - **Meeting Intelligence:** `command 'meeting-process'`\n - **Thread Management:** `command 'thread-export'`\n+- **Meeting Ingestion:** `skill 'meeting-ingestion'` - Automated transcript processing from Google Drive\n+- **Build Orchestration:** `skill 'pulse'` - Automated parallel build execution system\n - **Git Safety:** `python3 N5/scripts/n5_git_check.py`\n - **Recipes System:** See `file 'N5/prefs/operations/recipe-execution-guide.md'`\n \n@@ -43,6 +46,7 @@ N5/\n - **Full System Tour:** `file 'Documents/N5.md'`\n - **Architecture:** `file 'Knowledge/architectural/architectural_principles.md'`\n - **System Docs:** `file 'Documents/System/README.md'` (guides, architecture, personas)\n+- **Skills:** `file 'Skills/'` (automated workflow capabilities)\n \n ---\n",
+  "blockers": null,
+  "next_actions": null,
+  "lessons_learned": [
+    "Meeting Ingestion skill provides unified transcript processing pipeline from Google Drive",
+    "Pulse skill enables automated parallel build orchestration with monitoring"
+  ],
+  "quality_check": {
+    "requirements_met": true,
+    "documentation_updated": true,
+    "backwards_compatible": true
+  }
+}

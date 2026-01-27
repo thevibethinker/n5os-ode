@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-01-26T05:15:19Z",
+  "drops_seen": [
+    "D1.1",
+    "D1.2",
+    "D1.3"
+  ],
+  "deposits_seen": [
+    "D1.1.json",
+    "D1.1_filter.json",
+    "D1.2.json",
+    "D1.3.json"
+  ],
+  "email_sent": true,
+  "last_email_summary": "3/5 Complete (60%) - D1.3 completed, D1.4 pending"
+}

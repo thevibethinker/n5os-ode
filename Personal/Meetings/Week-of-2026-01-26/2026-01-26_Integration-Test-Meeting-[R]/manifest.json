@@ -1,0 +1,15 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-26T00:15:00Z",
+  "meeting_folder": "2026-01-26_Integration-Test-Meeting-[R]",
+  "meeting_date": "2026-01-26",
+  "meeting_type": "internal",
+  "status": "processed",
+  "blocks_generated": {
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "Integration Test",
+  "processed_at": "2026-01-26T00:15:00Z",
+  "crm_synced": true
+}

@@ -1,0 +1,128 @@
+{
+  "slug": "adhd-todo-research",
+  "learnings": [
+    {
+      "text": "ADHD users value simplicity over feature richness - successful apps have single-purpose interfaces rather than kitchen-sink approaches. This contradicts typical productivity app wisdom.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:05:59.524744+00:00",
+      "tags": []
+    },
+    {
+      "text": "Task initiation paralysis is the core ADHD challenge that most productivity apps miss - they assume organizing tasks solves the problem, but ADHD users need help STARTING tasks, not just organizing them.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:06:08.118814+00:00",
+      "tags": []
+    },
+    {
+      "text": "ACTs cognitive defusion (I'm having the thought that...) is more effective for ADHD emotional dysregulation than CBT-style cognitive challenging. Create distance from thoughts rather than arguing with them.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:06:26.101975+00:00",
+      "tags": [
+        "D1.4"
+      ]
+    },
+    {
+      "text": "Task systems should HIDE overwhelming backlogs, not display them. Showing giant unread counts or overdue lists triggers the Wall of Awful. Focus on What's next? not What's pending?",
+      "source": "manual",
+      "added_at": "2026-01-25T21:06:26.112975+00:00",
+      "tags": [
+        "D1.4"
+      ]
+    },
+    {
+      "text": "Email avoidance is specifically exacerbated by RSD and social evaluation fears, not just task aversion. System design should reduce perceived social stakes through templates and AI assistance.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:06:26.150848+00:00",
+      "tags": [
+        "D1.4"
+      ]
+    },
+    {
+      "text": "Eat the Frog (tackle hardest task first) often backfires for ADHD brains - creates paralysis if the task feels impossible. Alternative: start with quick wins to build momentum.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:06:26.168906+00:00",
+      "tags": [
+        "D1.4"
+      ]
+    },
+    {
+      "text": "Body doubling is among the most effective ADHD productivity strategies per ADDitude surveys and research. Systems should prioritize social presence/accountability features.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:06:53.737999+00:00",
+      "tags": [
+        "adhd",
+        "productivity",
+        "body-doubling"
+      ]
+    },
+    {
+      "text": "Market fragmentation: ADHD users juggle 3-5 apps (task breakdown, focus, gamification, tasks) because no single tool effectively combines multiple mechanisms. This creates cognitive overhead that defeats the productivity purpose. Recommendation: design for integration of core mechanisms rather than single-purpose tools.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:07:01.458872+00:00",
+      "tags": []
+    },
+    {
+      "text": "Time blindness is a fundamental ADHD deficit - task systems must explicitly externalize time perception through visual cues, timers, and deadline urgencies.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:07:04.158377+00:00",
+      "tags": [
+        "adhd",
+        "time-blindness"
+      ]
+    },
+    {
+      "text": "Gamification requires immediate feedback: Forest (growing tree), Finch (happy birb), TickTick (daily summaries) succeed with instant dopamine hits. Delayed rewards (long streaks, leaderboards) fail for ADHD brains. Design for immediate gratification.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:07:21.081761+00:00",
+      "tags": []
+    },
+    {
+      "text": "Task initiation is the core bottleneck: Apps that provide AI-powered task breakdown (Goblin Tools Magic ToDo) consistently help users overcome executive dysfunction. First step must be immediately actionable\u2014overwhelming tasks cause abandonment.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:07:21.086300+00:00",
+      "tags": []
+    },
+    {
+      "text": "Body doubling effectiveness: Focusmate and similar apps report 90%+ reduction in procrastination. Social presence activates accountability circuits in ADHD brain more effectively than any notification or reminder. Critical insight: external motivation beats internal willpower.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:07:21.096269+00:00",
+      "tags": []
+    },
+    {
+      "text": "Shame vs guilt distinction is critical for ADHD accountability systems - shame triggers avoidance/defensiveness while guilt motivates repair. ADHD users are particularly vulnerable to shame spirals due to RSD (Rejection Sensitive Dysphoria).",
+      "source": "manual",
+      "added_at": "2026-01-25T21:10:21.111298+00:00",
+      "tags": []
+    },
+    {
+      "text": "Arsenal FC theming would likely work for V's productivity system because ADHD brains respond to personal interest-based theming - it leverages existing passion rather than adding cognitive load. The key insight: personalization beats sophistication for ADHD users.",
+      "source": "manual",
+      "added_at": "2026-01-25T21:11:36.882885+00:00",
+      "tags": []
+    },
+    {
+      "text": "Visual clutter physically degrades neural efficiency in ADHD brains (Yale 2024 study) - email interfaces with promotions/badges/unread counts create cognitive overhead before users even start processing",
+      "source": "manual",
+      "added_at": "2026-01-25T21:13:29.932340+00:00",
+      "tags": []
+    },
+    {
+      "text": "ACT's cognitive defusion techniques (I'm having the thought that...) are more effective than CBT thought challenging for anxiety-driven task avoidance in ADHD",
+      "source": "manual",
+      "added_at": "2026-01-25T21:13:36.005781+00:00",
+      "tags": []
+    },
+    {
+      "text": "Email avoidance is driven by the paradox: folders needed for retrieval but filing requires high executive function at moment of receipt, creating the Piler vs Filer trap",
+      "source": "manual",
+      "added_at": "2026-01-25T21:13:40.864783+00:00",
+      "tags": []
+    },
+    {
+      "text": "Gamification follows predictable failure pattern: 2-4 weeks effectiveness due to novelty wear-off, requiring refresh mechanisms and variable rewards to maintain engagement beyond initial dopamine spike",
+      "source": "manual",
+      "added_at": "2026-01-25T21:21:00.090137+00:00",
+      "tags": []
+    }
+  ]
+}

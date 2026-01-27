@@ -1,0 +1,62 @@
+{
+  "slug": "zo-task-system",
+  "learnings": [
+    {
+      "text": "The task_registry.py module in N5/task-system/ is the canonical interface - all other Drops should import from it rather than direct SQL access. Domain and project auto-creation happens automatically when creating tasks. Priority ordering: urgent > strategic > external > normal (implemented in views).",
+      "source": "manual",
+      "added_at": "2026-01-25T22:42:55.270543+00:00",
+      "tags": [
+        "interface",
+        "api-design"
+      ]
+    },
+    {
+      "text": "Action inference patterns need better capture groups to extract task names from phrases like 'memo for X'. The second capture group (for X) is what matters.",
+      "source": "manual",
+      "added_at": "2026-01-25T22:45:43.335557+00:00",
+      "tags": []
+    },
+    {
+      "text": "Task IDs in tasks.db are INTEGER, not TEXT. Must convert to string when storing in action_conversations.db and querying.",
+      "source": "manual",
+      "added_at": "2026-01-25T22:45:43.363379+00:00",
+      "tags": []
+    },
+    {
+      "text": "Cannot JOIN across SQLite databases. When querying tasks.db from action_tagger.py, query separately and merge results in Python.",
+      "source": "manual",
+      "added_at": "2026-01-25T22:45:43.378887+00:00",
+      "tags": []
+    },
+    {
+      "text": "Morning briefing agent needs dual trigger handling: (1) Daily scheduled run at 8AM ET for initial briefing, (2) SMS reply trigger for adjustment processing. The same agent prompt handles both cases based on context (has reply content or not).",
+      "source": "manual",
+      "added_at": "2026-01-25T22:48:22.303038+00:00",
+      "tags": [
+        "D2.2"
+      ]
+    },
+    {
+      "text": "SMS interface limitation: evening accountability cannot handle full domain/project selection for staged task promotion due to character limits. Solution: mark as 'promoted_pending' and require manual review via browser. Other drops considering SMS interactions should plan for this constraint.",
+      "source": "manual",
+      "added_at": "2026-01-25T22:48:31.485516+00:00",
+      "tags": []
+    },
+    {
+      "text": "D2.2 depends on D1.1, but morning_briefing.py was already created by D2.1. The file includes all required functions for both D2.2 and D2.3. Priority order in morning briefing shows STRATEGIC first (user preference), while D1.1's SQL view shows URGENT first - this is intentional per brief. Calendar integration returns placeholder data pending OAuth setup.",
+      "source": "manual",
+      "added_at": "2026-01-25T22:50:47.111127+00:00",
+      "tags": [
+        "D2.2"
+      ]
+    },
+    {
+      "text": "Close hooks pattern matching needs flexible word boundary detection. Added standalone patterns for 'drafted', 'saved', 'created', 'built' to capture work completion evidence. These work better than complex patterns that depend on specific noun combinations.",
+      "source": "manual",
+      "added_at": "2026-01-25T22:53:01.490703+00:00",
+      "tags": [
+        "close-hooks,pattern-matching"
+      ]
+    }
+  ]
+}

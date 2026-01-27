@@ -1,0 +1,12 @@
+{
+  "last_check": "2026-01-26T09:20:00.000000+00:00",
+  "last_observed": {
+    "complete": 6,
+    "running": 0,
+    "pending": 1,
+    "failed": 0
+  },
+  "last_alert": "2026-01-26T09:20:00.000000+00:00",
+  "alert_type": "stream1_complete_d21_ready",
+  "note": "Stream 1 complete - alerted V that D2.1 is ready for manual aggregation"
+}

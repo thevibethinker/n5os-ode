@@ -1,0 +1,42 @@
+{
+  "build_slug": "prompt-to-skill",
+  "created": "2026-01-24T17:46:54Z",
+  "last_updated": "2026-01-24T23:14:39.166033+00:00",
+  "lessons": [
+    {
+      "source": "D1.1",
+      "lesson": "The Close Conversation prompt scored 37 points, well above the conversion threshold of 15, confirming it's a strong candidate for skill conversion. The assessment factors work well to identify complex prompts with multiple phases, script references, and structured elements.",
+      "timestamp": "2026-01-24T23:14:39.165637+00:00"
+    },
+    {
+      "source": "D1.2",
+      "lesson": "Consolidated existing close logic successfully. The guards module is critical as a fail-safe - it provides context validation to prevent wrong skill usage. Core architecture with three context types (drop, build, thread) maps cleanly to the existing tier system. Template system supports variable substitution for consistent formatting.",
+      "timestamp": "2026-01-24T23:14:39.165731+00:00"
+    },
+    {
+      "source": "D1.3",
+      "lesson": "Fixed deprecation warnings for datetime.utcnow() by using datetime.now(timezone.utc). Both scripts tested successfully and meet the specified requirements.",
+      "timestamp": "2026-01-24T17:57:12.544054"
+    },
+    {
+      "source": "D2.1",
+      "lesson": "The fail-safe guard system is working correctly - it detected this Drop context and properly suggested drop-close instead of thread-close. The --force override works as expected for testing/edge cases.",
+      "timestamp": "2026-01-24T23:14:39.165856+00:00"
+    },
+    {
+      "source": "D2.3",
+      "lesson": "Build-close is the key innovation - aggregates context that individual closes would miss. The skill was already created correctly, possibly by another worker or previous task execution.",
+      "timestamp": "2026-01-24T23:14:39.165916+00:00"
+    },
+    {
+      "source": "D3.1",
+      "lesson": "Redirect stub pattern works well - keeps old path functional while guiding to new location",
+      "timestamp": "2026-01-24T18:10:00Z"
+    },
+    {
+      "source": "D2.2",
+      "lesson": "The session state manager initially created worker_id field instead of drop_id field. Core close logic checks for both drop_id and worker_id, with drop_id taking precedence. Guard system successfully prevents misuse of close skills across contexts.",
+      "timestamp": "2026-01-24T23:14:39.166024+00:00"
+    }
+  ]
+}

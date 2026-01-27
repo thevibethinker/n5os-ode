@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-26T16:58:35.699879Z",
+  "meeting_folder": "2026-01-26_Collateral-Blitz_Logan-Internal",
+  "meeting_date": "2026-01-26",
+  "meeting_type": "internal",
+  "participants": [
+    "Vrijen Attawar",
+    "Logan Currie"
+  ],
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": false,
+    "brief": true,
+    "transcript_processed": true,
+    "detailed_recap": true,
+    "decisions": true,
+    "action_items": true,
+    "metadata": true,
+    "transcript_jsonl": true
+  },
+  "source": "fireflies",
+  "fireflies_id": "01KFXGQYFJ0MRB3ARR19NSJ7A7",
+  "last_updated_by": "MG-2_Manual_Complete",
+  "notes": "Full speaker-attributed transcript now available (492 sentences)",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": []
+}

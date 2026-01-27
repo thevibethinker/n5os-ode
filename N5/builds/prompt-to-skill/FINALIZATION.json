@@ -1,0 +1,14 @@
+{
+  "slug": "prompt-to-skill",
+  "timestamp": "2026-01-24T18:07:15.351460+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for prompt-to-skill\n   Artifacts: 23/23 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: prompt-to-skill\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/prompt-to-skill/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 1265,
+  "success": true
+}

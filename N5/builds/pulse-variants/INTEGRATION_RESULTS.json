@@ -1,0 +1,10 @@
+{
+  "slug": "pulse-variants",
+  "timestamp": "2026-01-26T05:21:37.955252+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

@@ -1,0 +1,1 @@
+I need to check for prior relationship context before generating the B08 block. Let me first initialize the session state and then search the semantic memory.Now let me check for prior relationship context and meeting history in the semantic memory:Let me search for existing CRM and meeting records directly:

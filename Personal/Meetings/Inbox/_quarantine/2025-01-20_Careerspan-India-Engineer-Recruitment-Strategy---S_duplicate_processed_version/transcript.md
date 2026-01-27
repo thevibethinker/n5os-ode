@@ -1,0 +1,78 @@
+# Careerspan India Engineer Recruitment Strategy - Shivam
+
+---
+source: manual
+date: 2025-01-20
+participants: V, Shivam, Logan
+---
+
+## Transcript
+
+V: Yo, dog. How's it going?
+Shivam: Good. Fast day, fast morning.
+V: Yes. Fucking seriously, man. I just sat down and started getting fucking pummeled the moment I got my desk.
+Shivam: Yeah. Sunny.
+V: Logs is going to join. She wanted to say hi and also is far more.
+Shivam: Hello? Hello? Hello. Good morning. Happy new year. You too. How are you? Good. Hopefully we're working on something interesting here, but, yeah, good to catch up. It's been a few months. I know I'm excited. To hopefully be able to collab on this. This is exciting. Vrijen was just catching me up on him. Yeah, I just got off the phone with an engineer in India. I just messaged like eight last night. Some of the top engineers I have in my pool, and even he had some great feedback right there's. A mismatch between what US Companies think they need to hire and how they access some of good talent abroad. And then between the candidate side, there's just some gaps that we think we can fill. That. Yeah. So go ahead, v.
+V: No, I was just going to say Shivam. If you have a few minutes after the hour Mark, I have an idea for you if you're high touch with customers. But yeah, I mostly wanted to stay focused and get you quickly check in. What kind of language do you need? You shared some thoughts we were discussing as well before you responded, but essentially we have a rough sense of what we could say to these engineers. Wanted to discuss with you. What do you think we should be saying? We can contribute to that with our own pov. And then what do we need to get them to get them on careers plan?
+Shivam: An. You get them? Yeah. What do we need to tell the engineers? Right. Starting there. Yes. So the model today. Right. Whenever I get a requirement from a US Company, I go to my vendors or I source myself. We're just sending resumes. That's not a good evaluation or it doesn't paint a good picture or a complete picture of who the person is. I think careers. Yeah. Careerspan would be that tool that gives you a much better picture of who you're actually considering. And so I think that just at the basic level, what the function Careerspan would provide to start with, Okay? Cool. So in that scenario, if I'm just playing it out, you, instead of sending a kind of resume of, like, oh, this is your person. V. I'm thinking of the employer portal. You could essentially send, like, here's three candidates. And here's their Careerspan profile, which basically is as you can have an elevator pitch, which is just like cool. This is them in a nutshell. Then you can dig as much as you want, plus resume plus GitHub, a full package. And look, if we can start getting 10 right as a first round and then 20 and then 25, 50. Right. And then I think it becomes a super robust marketplace.
+V: Do you think? On the strength of us sending some, maybe a landing page or some collateral. And you saying, hey, man, trust me, this will make a difference. You think we can at least get like 30 to 50% of them, do one story?
+Shivam: Yeah, right. I talked to this guy, right? His concern was, yeah, us startups don't have budget, right? They want to nickel and dime and pay low compensation.
+V: Yeah. Fuck all the wages.
+Shivam: But the deals that I'm working on, right, These are at 100k a year, 120, 150k a year, which not all of them are going to be like that. Not saying all of my deals are like that, but that is very competitive in India. And so then he was like, okay, wow. So you're working with solid funded startups that have put capital behind their India or global hires.
+V: Right, of course, yeah. Super. Yeah.
+Shivam: So I think, yeah, we have the demand. It's not like fucking huge demand, but we just want to keep drilling into that ICP with this very high quality engineering audience in India.
+V: Yeah. And I guarantee the UX of, hey, I gave this guy a job. And within X amount because it sounds like we have the perfect environment. We have engineers that will fit the mold, because you have that instinct, and I totally trust that. And it very much seems like the case. You have the companies, which is perfect because that's kind of the fucking hard part, and.
+Shivam: Got it. But I'm starting to get. That's a gap. I need to get the business right. I need to get more of that.
+V: Right. But I think companies will come the moment word gets out that you're able to present them with candidates quickly.
+Shivam: Exactly. That's the bet. Or the thesis. That's my hypothesis exactly.
+V: Totally. Yeah. So we need at least a handful of engineers to pop up and do, like, a handful of stories, each, like, one or two, ideally.
+Shivam: Yeah. Yeah.
+V: So, yeah, what's the pathway to getting that done? Is sort of the question. Looks, do we have any sort of existing collateral or anything? Demos we can share, like, anything based on what we already possess?
+Shivam: Yep. I mean. Yeah, what we can do is what we were just talking about. I can spin up, like a quick custom landing page, if you think that would be helpful. I mean, the homepage itself lays out, you know, what the benefits are for job seekers. I think what it would potentially do, what we could do is just make it super specific to your value prop that you're offering, which is just like, yo, do this thing and then I'll be able to get you a job faster is essentially like. Or I'll be more likely to be able to place you in a really competitive salary job because I have a better idea of your strengths and then how to present you, essentially. Yep, that's exactly right. Yeah. And it's not like, you know, you're going to get placed today. We're just building this pool that over time, we can hopefully match you with the correct opportunity. And we start with this. Right. I have a list of around 65, 80 engineers. We start with this list, but then if I see. If we see the traction, I can then pump this out on my Instagram, my LinkedIn, and I think it could get fraction, right. Yeah. Because they're super active on both those platforms, Indians in general. So let me. Let me spin up that landing page for you and just. You just take a quick look. If you have any, like, logos or anything like that that you want to send through or just a website, collaborate in any way. In my head of Ops, V met him. So, yeah, we're all on this, right? We're all like, yeah, heads down. This is definitely a priority for our side. And then we met Elise or Elise. Right. Yesterday.
+V: Yeah, he's awesome. Ilsa? Yeah.
+Shivam: Sorry. Yes. Okay. Yeah.
+V: No. Good.
+Shivam: And so, yes, there's another piece that. So right now we just scoped the supply side, and then on the demand side, we have this intake form that would be the customer mode to fill out. So it's a form you list out what kind of roles you're looking for. Tech stacks, your website, what. Does success look like, et cetera. And that would then create a JD Or a hiring role in career spam. And she said it should be easy. From my lovable development.
+V: Yeah.
+Shivam: Perfect.
+V: Yeah. Which, which on that point. Shivam. Yeah. Do you. Do you normally do an intake interview with these companies, right?
+Shivam: Perfect. Yes, we always have calls. But now I want to drive traffic to this demand form. Right. So this is the customer side.
+V: What. What you can also do. And I can. I'm happy to figure out a way to help you figure this out, but, like, something that tends to be because. One of the things that I observed in my inter ring founders was they really responded to this idea of us being able to tell them, hey, just send me a voice message. So what I'm saying is, if you can even get them to, like, through that ux, like send you a voice message or upload a message or something like that, or just like, you know, dictate, like, type something out. From an AI perspective, it's pretty easy to tell your AI, hey, take this.
+Shivam: Yeah.
+V: Turn it into a rubric that you can assess against and add that to the job description in a structured way. So you have, like, an enhanced job description, but it's an actual pain point that, like, a lot of the times these founders, they, like, they're so compressed on time that they'll just, like, generate a jd, send it, but it doesn't actually represent what they want. Or even worse, it'll be some recruiter that doesn't actually know what they want, right?
+Shivam: Oh, yeah. Yeah, yeah.
+V: So just like, in. In service of standing out, it could be a helpful little thing that should be pretty easy to do.
+Shivam: No, no. I love the idea. Yeah. And I've used, like, flow and all those. Or whatever, those whisper flow and those things.
+V: Yeah, it should be pretty easy to do through through, like, Zapier Automations and.
+Shivam: Yeah. Okay, let me, like, write that down. And see if that's possible and lovable. Yeah.
+V: Go ahead. This is. This is exciting, man.
+Shivam: Yeah. I think we can get some results quickly. Yeah. And we can see if this is even, you know, worth going forward. But I think this week we can get a lot of data or next two weeks. I don't want to push it too fast or assume like, you know, it can move that fast, but I have the engineering pool, right? So the supply side could be done relatively quickly.
+V: I'm stoked. Yeah. Totally. Yeah. Yeah, it's really. It's really just a function of how quickly they. They fill up, because at that point then it's just, what, like a couple hour lag between getting a JD and scanning against it.
+Shivam: Right.
+V: In fact, if you think, if you think just to merge some ideas, if you think it'll be more enticing if you want to take your like, sickest job, like the one that will attract the most people, we can either on your page, if you have a posting or unlovable, or on our notion. Board, make a page with the JD and the Careerspan link and like, maybe a little explainer. Like, if you want to know what Careerspan is, go to this website.
+Shivam: Yeah. That's a good idea, V. Yeah, yeah. Well, I v. I can just put that on the landing page basically of like the. Yeah, yeah, yeah, yeah, yeah. So I think that would be like, these are the types of jobs that shivm is sourcing. Again, no guarantees, but like, these are what we're working to do. And then shivam. I don't know if there's any in terms of proof points or kind of getting V to your point around, like getting them on more quickly. Like if there's one or two engineers that you think are like hella eager and good representations if they would even be willing to like go if once they do Careerspan, like maybe do a quick call with me where I can just video them talking about it or whatever. Like, I always love doing the user research, but then if we had basically, like two or three testimonials of, like, yeah, this really helped me.
+V: Can you do that? Ah, perfect. Perfect.
+Shivam: And I felt more prepped or whatever it is then that I think would then be able to kind of ramp up the hype. Right. So just having some.
+V: Yeah, we can get the. Yeah. Yeah, I think we. I mean, sounds like we should get the landing page out first, but it seems like this would be a good. Yeah. Not to say otherwise, but yeah.
+Shivam: Yeah, yeah, yeah. I'll get that out first. Totally. Yeah, yeah. That would be like. I know. I love the idea. 2.0. Yeah. Yes, because I need to talk to them first. Right. I'm not totally pitching them anything. I'm just saying, look, I would love to hop on a call or we talk. If you don't want to. If you don't want to call. But they've said, yeah, let's connect. They've all said, let's connect. So there's interest. Right. The three that responded.
+V: Yeah. I think, seeing, seeing it. And, like, honestly, we can even scumbag it a little bit, dude. Like, if, you know, like, an internal dev that will just, like, use it quickly and, like, say something nice in the next couple of hours. Like, that would be sick. If you have someone that'll just, like, do us a solid. I think it's just because I think Logan's right. Like, if she sees. If you see someone that's like, yeah, this helped me. Like, I think that is very powerful. But, yeah, I think if we can. So long as we get the page out.
+Shivam: But can we just use other testimonials? Can you just use even mine? We've got other testimonials, so, like, it's fine. I can just put those up high. Like it's not. It's more. Yeah.
+V: Yeah, we don't. Yeah, I think it was more Indian engineer subtype, but yeah, we have other testimonials. I'll just stick those up for now. Cool. Let's get this landing page out.
+Shivam: Yeah, but, no, for the user research. Logan, I think that's. I understand why you want to do that. So, yeah, let me. There's some steps, right? The funnel. I got to connect with these guys, then submit. Like, send them a doc or like, a process flow of what this could look like, and I'll. Send that to you before. So, yeah, we're aligned. And then send it out to the engineers.
+V: Sounds good. Sounds good.
+Shivam: Sounds good. Sounds good. Yeah. All right, cool. Anything else? The lovable stuff. V, that integration, that is what I'm a little bit more concerned about. I have my ENG team. That said, you know, this also looks pretty doable and easy, right? Setting up on my framer, embedding it on framer, and then. That pulls from lovable, which, you know, sends the payload to you guys. I think is the, you know, high level verbal process flow. But anything there you need, you would flag.
+V: Nice. Amazing. No, no, no. That sounds perfect. Yeah. Ilsa, if it passes, it also sends check. Then it's fucking doable, so I have no doubt.
+Shivam: Okay. She said it was easy. She said it looks super easy.
+V: Yeah. Yeah. If she says it's easy, that it's even more doable. Yeah. And it seems like your engines agree, too, so that's perfect.
+Shivam: Okay, okay. Yeah.
+V: All right, all right.
+Shivam: Okay? Yeah, man.
+V: I got a jump. I have to chitchat with Ilsa. Anything else we need to chat through or Logan?
+Shivam: Yeah, all good. I'll get the page up, and then we can just compare this on collaterals and stuff, and then. Yeah, let's rock and roll. Yeah. We could have a group chat.
+V: Should have got this. Yeah, I think we do, right? If we don't. I'll set one up. I'll check.
+Shivam: We might. Okay. And we'll see you tomorrow.
+V: I'll check. Right. Now. Cool. Read them all.
+Shivam: Yeah. Yeah, if you're still good.
+V: Dude.
+Shivam: Yeah. Yeah. All right, guys. Have a great day. See you all.

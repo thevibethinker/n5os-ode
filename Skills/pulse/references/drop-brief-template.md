@@ -1,8 +1,8 @@
 ---
 created: 2026-01-24
-last_edited: 2026-01-24
-version: 1.0
-provenance: con_T0QGg2ryaDjCTxVj
+last_edited: 2026-01-25
+version: 1.1
+provenance: con_xrhltA7BHuQGYNyw
 ---
 
 # Drop Brief Template
@@ -65,6 +65,31 @@ The Filter will verify these criteria. Be specific and verifiable.
 
 - Don't X
 - Don't Y
+
+## Technique Selection
+
+**Skills-First:**
+Before building new functionality, check if a relevant skill exists:
+```bash
+find /home/workspace/Skills -name "SKILL.md"
+```
+- If reusable skill exists → USE IT
+- If building reusable functionality → CREATE A SKILL under `Skills/<name>/`
+- One-off scripts are OK for: build-specific glue, simple file ops, throwaway validation
+
+**LLM vs Python/Regex:**
+| Task | Use LLM (`/zo/ask`) | Use Python/Regex |
+|------|---------------------|------------------|
+| Extract meaning from text | ✅ | ❌ |
+| Classify/categorize content | ✅ | ❌ |
+| Parse unstructured/natural language | ✅ | ❌ |
+| Structured JSON/CSV parsing | ❌ | ✅ |
+| Math/calculations | ❌ | ✅ |
+| File operations | ❌ | ✅ |
+
+**Red flags (switch to LLM):** Regex has 3+ alternations, parsing human text, pattern keeps breaking on edge cases.
+
+Log technique decisions to BUILD_LESSONS.json for other Drops.
 
 ---
 

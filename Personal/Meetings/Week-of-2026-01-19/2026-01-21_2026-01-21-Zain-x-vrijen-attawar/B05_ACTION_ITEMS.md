@@ -1,72 +1,148 @@
+```markdown
 ---
-created: 2026-01-21
-last_edited: 2026-01-21
+created: 2026-01-26
+last_edited: 2026-01-26
 version: 1.0
-provenance: agent_0a08e6a8-0a03-4131-a805-c249bf5617ae
+provenance: con_IQMXGpJDDEmTzlN3
+block_id: B05
+block_name: ACTION_ITEMS
+meeting_id: 2026-01-21_2026-01-21-Zain-x-vrijen-attawar
 ---
 
-# B05: Action Items
+## Action Items
 
-## Vrijen Attawar
-
-**[PENDING] Share Zo source code with Zain**
-- **Context**: Offered during conversation after demonstrating meeting intelligence system
-- **Details**: Provide access to source code; guide on key components (meeting pipeline, content library, personas)
+### 1. Share Zo meeting idea tracking source code with Zain
 - **Owner**: Vrijen
-- **Timeline**: Post-call
+- **Priority**: normal
+- **First Step**: Send the direct link and source code for the meeting tracking/idea graph system to Zain via text/email
+- **Estimated**: 5 min
+- **Domain**: Zo
+- **Project**: Zo knowledge graph system
+- **Milestones**:
+  1. Send source code and demo link
+  2. Follow up for feedback/questions
 
-**[PENDING] Introduce Zain to FOHE leadership**
-- **Context**: Zain's background and interests strongly align with FOHE mission; Vrijen joining as NYC co-lead
-- **Details**: Connect Zain with FOHE co-lead (Ray/Jake), PM at Plaid, networking coach
+### 2. Share Zo templates repo with Zain
 - **Owner**: Vrijen
-- **Timeline**: Post-call (introduction timing dependent on FOHE schedules)
+- **Priority**: normal
+- **First Step**: Send the GitHub repo link for Zo core functionality (meeting pipeline, content library, personas) to Zain
+- **Estimated**: 2 min
+- **Domain**: Zo
+- **Project**: Zo skill distribution
+- **Milestones**:
+  1. Send repo link with brief context
+  2. Answer any questions Zain has about implementation
 
-**[PENDING] Coordinate coffee meetup with Zain**
-- **Context**: Agreed during call before technical issues arose
-- **Details**: Determine logistics; confirm location/time; discuss collaboration opportunities
-- **Owner**: Vrijen (initiator), Zain (confirming)
-- **Timeline**: "Next week" (per Vrijen suggestion); coordinate via text
-
-**[PENDING] Text Zain to resolve coffee scheduling**
-- **Context**: Audio issues during call prevented completion of conversation
-- **Details**: Reach out via text to arrange coffee; confirm mutual availability
+### 3. Introduce Zain to FOHE (Future of Higher Education) community
 - **Owner**: Vrijen
-- **Timeline**: Immediate (post-call)
+- **Priority**: normal
+- **First Step**: Send intro email to Ray Batra and Jake Wisebound introducing Zain and his work
+- **Estimated**: 10 min
+- **Domain**: Personal/Networking
+- **Project**: FOHE NYC chapter expansion
+- **Milestones**:
+  1. Send warm intro to FOHE founders
+  2. Encourage Zain to apply/join the community
 
----
+### 4. Introduce Zain to NYC FOHE co-lead
+- **Owner**: Vrijen
+- **Priority**: normal
+- **First Step**: Connect Zain with the FOHE NYC co-lead for local collaboration
+- **Estimated**: 5 min
+- **Domain**: Personal/Networking
+- **Project**: FOHE networking
+- **Milestones**:
+  1. Send email intro
+  2. Suggest coffee/meetup between the three
 
-## Zain Yousaf
+### 5. Introduce Zain to Vrijen's NYC network (PM at Plaid, networking coach)
+- **Owner**: Vrijen
+- **Priority**: normal
+- **First Step**: Compile and send batch intros to relevant contacts who align with Zain's interests
+- **Estimated**: 10 min
+- **Domain**: Personal/Networking
+- **Project**: NYC independent founder community
+- **Milestones**:
+  1. Identify 2-3 relevant contacts
+  2. Send individual intros with context
 
-**[PENDING] Try Zo platform**
-- **Context**: Vrijen demonstrated meeting intelligence system and recommended; Zain expressed curiosity
-- **Details**: Sign up for Zo; explore meeting processing pipeline; test content library spin-up; review persona system
+### 6. Coordinate coffee meeting between Vrijen and Zain
+- **Owner**: Vrijen (to initiate)
+- **Priority**: normal
+- **First Step**: Text Zain to coordinate coffee time for the upcoming week
+- **Estimated**: 2 min
+- **Domain**: Personal
+- **Project**: Relationship building
+- **Milestones**:
+  1. Text Zain (numbers were exchanged)
+  2. Schedule and meet for coffee
+
+### 7. Vrijen to explore Zain's content
+- **Owner**: Vrijen
+- **Priority**: normal
+- **First Step**: Visit Zain's social media/content platforms to understand his work and perspective
+- **Estimated**: 15 min
+- **Domain**: Personal/Research
+- **Project**: Understanding Zain's work
+- **Milestones**:
+  1. Browse Zain's content channels
+  2. Optionally share feedback or connect on specific topics
+
+### 8. Zain to explore FOHE (Future of Higher Education)
 - **Owner**: Zain
-- **Timeline**: Post-call
+- **Priority**: normal
+- **First Step**: Visit FOHE website/community to understand if it aligns with his work
+- **Estimated**: 5 min
+- **Domain**: Personal/Networking
+- **Project**: Future of work community engagement
+- **Milestones**:
+  1. Explore FOHE website/community
+  2. Decide whether to apply for membership
 
-**[PENDING] Explore Vrijen's Zo repo**
-- **Context**: Vrijen mentioned repo with core functionality
-- **Details**: Check out repo; review meeting processing pipeline implementation; explore content library features; test persona system
+### 9. Zain to explore Vrijen's Zo repo
 - **Owner**: Zain
-- **Timeline**: Post-call
+- **Priority**: normal
+- **First Step**: Visit the GitHub repo Vrijen shared and identify components useful for his own work
+- **Estimated**: 10 min
+- **Domain**: Zo
+- **Project**: Zo skill exploration
+- **Milestones**:
+  1. Review repo structure and key features
+  2. Identify templates/skills to adapt for own use
 
-**[PENDING] Connect with Vrijen to arrange coffee**
-- **Context**: Agreed during call before technical issues
-- **Details**: Coordinate location and time; prepare questions about collaboration, Zo, FOHE
+### 10. Refine interview prep tool prompts before relaunch
+- **Owner**: Vrijen
+- **Priority**: normal
+- **First Step**: Review current prompt performance and iterate for higher quality output
+- **Estimated**: 30 min
+- **Domain**: Careerspan
+- **Project**: Interview prep critique tool
+- **Milestones**:
+  1. Analyze feedback from existing users
+  2. Refine prompting strategy
+  3. Relaunch paid version once quality threshold met
+
+### 11. Continue Careerspan sales conversations
+- **Owner**: Vrijen (with Logan)
+- **Priority**: strategic
+- **First Step**: Prepare/update materials for ongoing acquisition discussions
+- **Estimated**: 1 hour
+- **Domain**: Careerspan
+- **Project**: Careerspan exit/acquisition
+- **Milestones**:
+  1. Update pitch/deck materials
+  2. Continue talks with interested parties
+  3. Navigate to successful transaction
+
+### 12. Plan in-person future of work events
 - **Owner**: Zain
-- **Timeline**: "Next week" (coordinate via Vrijen's text)
-
-**[PENDING] Consider FOHE membership**
-- **Context**: Vrijen recommended as selective community for edtech executives; strong alignment with Zain's interests
-- **Details**: Research FOHE; evaluate membership value; discuss with Vrijen before introduction
-- **Owner**: Zain
-- **Timeline**: Before introduction
-
----
-
-## Joint/Follow-up Items
-
-**[PENDING] Schedule follow-up conversation**
-- **Context**: Technical difficulties interrupted call; both interested in continuing
-- **Details**: Reconnect via Zoom or coffee; deeper dive into collaboration opportunities
-- **Owner**: Both (joint coordination)
-- **Timeline**: Post-text coordination
+- **Priority**: strategic
+- **First Step**: Outline event concept, format, and target audience for late 2026
+- **Estimated**: 1 hour
+- **Domain**: Personal/Business
+- **Project**: Future of work community events
+- **Milestones**:
+  1. Define event concept and goals
+  2. Identify potential partners/venue
+  3. Plan and execute first event
+```

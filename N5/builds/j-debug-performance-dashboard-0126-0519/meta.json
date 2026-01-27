@@ -1,0 +1,29 @@
+{
+  "slug": "j-debug-performance-dashboard-0126-0519",
+  "title": "Debug Performance Dashboard v2 build - validate all scripts work correctly, check data flow, verify ",
+  "build_type": "code_build",
+  "launch_mode": "jettison",
+  "status": "complete",
+  "total_streams": 1,
+  "current_stream": 0,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "lineage": {
+    "parent_type": "build",
+    "parent_ref": "perf-dashboard-v2",
+    "parent_conversation": "con_H2rUeFjHpuRueJYI",
+    "moment": "Post-build QA requested by V",
+    "branched_at": "2026-01-26T05:19:52.559980+00:00"
+  },
+  "drops": {
+    "D1.1": {
+      "name": "jettison-task",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "manual",
+      "status": "complete"
+    }
+  },
+  "currents": {},
+  "created_at": "2026-01-26T05:19:52.559994+00:00",
+  "completed_at": "2026-01-26T05:24:52.366019"
+}

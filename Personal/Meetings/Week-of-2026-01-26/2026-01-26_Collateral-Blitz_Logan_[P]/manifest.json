@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-26T17:51:28.058865+00:00",
+  "meeting_folder": "2026-01-26_Collateral-Blitz_Logan",
+  "meeting_date": "2026-01-26",
+  "meeting_type": "internal",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "detailed_recap": true,
+    "decisions": true,
+    "action_items": true,
+    "tone_context": true,
+    "key_moments": true,
+    "deliverables": true,
+    "metadata": true,
+    "business_context": true,
+    "blurbs": true,
+    "thought_provoking_ideas": true,
+    "linguistic_primitives": true
+  },
+  "last_updated_by": "Meeting State Transition [MG-6]",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "last_updated": "2026-01-26T20:57:08.117667+00:00"
+}

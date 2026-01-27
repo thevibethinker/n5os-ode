@@ -5,10 +5,29 @@
   "meeting_date": "2025-11-15",
   "status": "processed",
   "blocks_generated": {
-    "stakeholder_intelligence": false,
-    "brief": false,
-    "transcript_processed": true
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true,
+    "decisions": true,
+    "action_items": true,
+    "business_context": true,
+    "tone_context": true,
+    "blurbs": true,
+    "key_moments": true,
+    "deliverables": true,
+    "metadata": true,
+    "thought_provoking_ideas": true,
+    "linguistic_primitives": true
   },
-  "last_updated_by": "MG-6_Prompt",
-  "transitioned_at": "2025-11-25T21:01:27.959612"
+  "last_updated_by": "MG-2_Prompt",
+  "transitioned_at": "2025-11-25T21:01:27.959612",
+  "zo_take_heed_count": 1,
+  "zo_take_heed_summary": [
+    {
+      "id": "ZTH-001",
+      "type": "custom",
+      "status": "processed"
+    }
+  ],
+  "last_updated": "2026-01-26T21:43:18.578935"
 }

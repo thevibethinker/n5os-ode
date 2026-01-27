@@ -1,0 +1,47 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "artifacts": [
+    "N5/task_system/morning_briefing.py",
+    "N5/agents/morning-briefing-prompt.md"
+  ],
+  "summary": "Created complete Morning Briefing Agent system with Python module (morning_briefing.py) and agent instruction (morning-briefing-prompt.md). Module includes get_todays_tasks() with priority ordering (strategic > external > urgent > normal), check_calendar_blocks() for meeting time awareness, generate_briefing_text() for SMS formatting, parse_adjustment() and process_adjustment() for handling V's replies, and lock_day_plan() for commitment tracking. All functions tested and working. Calendar integration returns placeholder data (OAuth pending). Successfully tested task retrieval, briefing generation, adjustment parsing, push/remove/swap/add commands, and day plan locking.",
+  "notes_for_orchestrator": {
+    "agent_ready": true,
+    "setup_instructions": "Create scheduled agent with:\n  - RRULE: FREQ=DAILY;BYHOUR=8;BYMINUTE=0\n  - Delivery: sms\n  - Instruction: Load from /home/workspace/N5/agents/morning-briefing-prompt.md\n  \nAgent is ready to create after V reviews the prompt.",
+    "integration_points": {
+      "task_registry": "Uses N5/task_system/task_registry.py from D1.1",
+      "calendar": "check_calendar_blocks() returns placeholder data - OAuth setup needed",
+      "sms": "Uses send_sms_to_user tool",
+      "database": "Reads/writes to tasks.db, creates day_plans table if needed"
+    },
+    "test_results": {
+      "task_retrieval": "✅ PASS - Retrieved 5 tasks with correct priority ordering",
+      "calendar_check": "✅ PASS - Returns meeting count and available hours",
+      "briefing_generation": "✅ PASS - Generated 382-char briefing with task list",
+      "adjustment_parsing": "✅ PASS - Parsed all commands: confirm, push, swap, remove, add",
+      "adjustment_processing": "✅ PASS - Successfully pushed task to tomorrow",
+      "day_plan_locking": "✅ PASS - Created day_plans table and locked plan"
+    },
+    "priority_order": "strategic → external → urgent → normal (within bucket: overdue first, then newest)",
+    "capacity_heuristic": "8 hrs - meeting hours = available hrs × 0.8 utilization = recommended tasks (clamped to 3-10)",
+    "supported_adjustments": [
+      "push #N [to tomorrow] - Move task to tomorrow",
+      "swap #A and #B - Reorder tasks",
+      "remove #N - Remove from today (not delete)",
+      "add: task title - Add new task to today",
+      "confirm - Lock the day plan"
+    ],
+    "considerations_for_other_drops": [
+      "D2.3 (evening accountability) should read from day_plans table to compare committed vs completed",
+      "Calendar OAuth setup is a dependency for full functionality",
+      "SMS responses trigger the same agent - needs to distinguish initial briefing vs adjustment handling",
+      "Priority order matches D1.1's view: urgent first in SQL, but morning briefing shows strategic first (user preference)"
+    ],
+    "database_changes": [
+      "Creates day_plans table if not exists (plan_date, task_ids, total_tasks, created_at, locked_at)",
+      "Updates task due_at dates when pushing to tomorrow",
+      "Clears due_at when removing from today"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "watts-principles",
+  "learnings": [
+    {
+      "text": "This build implements Jarrod Watts' AI orchestration principles - focus on anti-contamination (impossibility detection, contradiction detection) and quality gates (prompt lint, plateau detection)",
+      "source": "orchestrator",
+      "added_at": "2026-01-26T02:15:00Z",
+      "tags": [
+        "context",
+        "source"
+      ]
+    },
+    {
+      "text": "sentence-transformers is already installed on this system - use it for semantic similarity in contradiction and plateau detection",
+      "source": "orchestrator",
+      "added_at": "2026-01-26T02:15:00Z",
+      "tags": [
+        "dependency",
+        "tools"
+      ]
+    },
+    {
+      "text": "SYSTEM_LEARNINGS.json already exists at N5/learnings/SYSTEM_LEARNINGS.json with 4 entries - migration must preserve these",
+      "source": "orchestrator",
+      "added_at": "2026-01-26T02:15:00Z",
+      "tags": [
+        "data",
+        "migration"
+      ]
+    },
+    {
+      "text": "When adding --format arguments to argparse subparsers, ensure main() passes args.format to format_output() calls. Build command currently ignores --format flag.",
+      "source": "manual",
+      "added_at": "2026-01-26T02:47:07.173233+00:00",
+      "tags": [
+        "argparse",
+        "cli"
+      ]
+    },
+    {
+      "text": "Contradiction detector: single-sided negation detection (one text has 'never/not/no' while similar text doesn't) catches contradictions that paired patterns miss - use similarity threshold of 0.7+ to avoid false positives",
+      "source": "manual",
+      "added_at": "2026-01-26T02:50:42.983104+00:00",
+      "tags": [
+        "watts-principles,contradiction,learning"
+      ]
+    },
+    {
+      "text": "Test learning with contradiction: The API requires authentication",
+      "source": "manual",
+      "added_at": "2026-01-26T02:56:24.497412+00:00",
+      "tags": []
+    },
+    {
+      "text": "All four Watts Principles detection tools integrated into Pulse workflow: impossibility audit (pre-build), prompt lint (pre-build), contradiction detection (learning add), plateau detection (in-tick). Documentation created with full principles guide and quick reference.",
+      "source": "manual",
+      "added_at": "2026-01-26T02:59:42.767021+00:00",
+      "tags": []
+    },
+    {
+      "text": "Test learning with no contradiction",
+      "source": "test",
+      "added_at": "2026-01-26T03:00:20.972151+00:00",
+      "tags": []
+    },
+    {
+      "text": "All Pulse safety checks (impossibility audit, prompt lint, contradiction detection, plateau detection) must use try/except for graceful fallback - detectors may not be available in all environments",
+      "source": "manual",
+      "added_at": "2026-01-26T03:01:40.101875+00:00",
+      "tags": []
+    }
+  ]
+}

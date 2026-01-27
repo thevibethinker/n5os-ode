@@ -1,0 +1,79 @@
+{
+  "slug": "adhd-todo-research",
+  "title": "ADHD-Optimized Task System Research",
+  "build_type": "research",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 1,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "orchestrator_convo": "con_OaZwIOzCydglh4r4",
+  "drops": {
+    "D1.1": {
+      "name": "adhd-task-management-science",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "dead",
+      "started_at": "2026-01-25T21:01:29.554164+00:00",
+      "conversation_id": "con_hpDBXBVAgAb8E9WG",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 186 minutes"
+    },
+    "D1.2": {
+      "name": "adhd-productivity-apps-landscape",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "dead",
+      "started_at": "2026-01-25T21:06:23.040891+00:00",
+      "conversation_id": "con_MYb1rmW1y2E1QLsY",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 181 minutes"
+    },
+    "D1.3": {
+      "name": "external-accountability-psychology",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "dead",
+      "started_at": "2026-01-25T21:10:58.208267+00:00",
+      "conversation_id": "con_DzKMo7XmGxmHcCEh",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 177 minutes"
+    },
+    "D1.4": {
+      "name": "anxiety-task-avoidance-breaking",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "dead",
+      "started_at": "2026-01-25T21:15:07.049334+00:00",
+      "conversation_id": "con_luMdxCCnCtoKPh37",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 173 minutes"
+    },
+    "D1.5": {
+      "name": "gamification-adhd-effectiveness",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "failed",
+      "failure_reason": ""
+    },
+    "D2.1": {
+      "name": "synthesis-design-principles",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3",
+        "D1.4",
+        "D1.5"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-25T20:49:20.050769+00:00"
+}

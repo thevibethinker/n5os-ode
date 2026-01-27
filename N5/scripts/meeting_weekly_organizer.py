@@ -1,60 +1,66 @@
 #!/usr/bin/env python3
 """
-Reorganize meetings into weekly folders and clean up structure.
-Version: 2.0 (2025-12-26)
-Changes:
+Meeting Weekly Organizer - Inbox-focused meeting organizer for V's OOO briefings
+
+CHANGELOG:
 - CRITICAL: Now uses manifest.json status field instead of folder suffixes
-- Ready status: 'processed' or 'intelligence_generated' (blocks complete)
+- Status awareness: ready_for_followup vs still processing (manifest_generated, mg2_in_progress)  
 - Not ready: 'manifest_generated', 'mg2_completed' (still processing)
 - Restricted to Inbox-only processing (never scans root Meetings folder)
-- Prevents touching archival content
-Run with --dry-run first to preview changes.
+
+This script safely identifies meetings ready for weekly roundup by reading their
+manifest.json status field and respecting ongoing MG processing.
 """
-import os
-import sys
+
 import json
+import logging
 import shutil
 import argparse
-import logging
-from pathlib import Path
-from datetime import datetime, timedelta
 from collections import defaultdict
+from pathlib import Path
+from typing import List, Dict, Any, Tuple, Optional
+from datetime import datetime, timedelta
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)sZ %(levelname)s %(message)s"
+    format="%(asctime)s %(levelname)s %(message)s"
 )
 logger = logging.getLogger(__name__)
 
-INBOX = Path("/home/workspace/Personal/Meetings/Inbox")
-MEETINGS = Path("/home/workspace/Personal/Meetings")
+# Core paths
+INBOX = Path(STAGING_DIR)
+MEETINGS = Path(MEETINGS_DIR)
 
-# Status values that indicate a meeting is ready for archival
-# CRITICAL: 'processed' means follow-up email is done
-# 'intelligence_generated' now requires FOLLOW_UP_EMAIL.md to be present
-READY_STATUSES = {'processed'}
-
-# Status that means intelligence is done but may still need follow-up email
-NEEDS_FOLLOWUP_CHECK_STATUSES = {'intelligence_generated', 'mg2_completed'}
+# Meeting readiness patterns (now from manifest.json status)
+READY_STATUSES = {
+    'ready_for_followup',
+    'crm_synced',
+    'complete'
+}
 
 # Status values that indicate a meeting is still being processed
 PROCESSING_STATUSES = {'manifest_generated', 'mg2_in_progress'}
 
+# Status values that need follow-up email checks
+NEEDS_FOLLOWUP_CHECK_STATUSES = {'intelligence_generated'}
+
 
 def send_alert(message: str):
     """Send SMS alert for failures."""
-    try:
-        import subprocess
-        result = subprocess.run(
-            ["python3", "/home/workspace/N5/scripts/send_sms_notification.py", 
-             "--message", f"⚠️ Meeting Organizer: {message}"],
-            capture_output=True, text=True, timeout=30
-        )
-        if result.returncode != 0:
-            logger.error(f"Failed to send SMS alert: {result.stderr}")
-    except Exception as e:
-        logger.error(f"SMS alert failed: {e}")
+    if ENABLE_SMS:
+        try:
+            import subprocess
+            result = subprocess.run(
+                ["python3", f"{WORKSPACE}/N5/scripts/send_sms_notification.py", 
+                 "--message", f"⚠️ Meeting Organizer: {message}"],
+                capture_output=True, text=True, timeout=30
+            )
+            if result.returncode != 0:
+                logger.error(f"Failed to send SMS alert: {result.stderr}")
+        except Exception as e:
+            logger.error(f"SMS alert failed: {e}")
 
 
 def get_manifest_status(meeting_dir: Path) -> tuple[str, dict]:

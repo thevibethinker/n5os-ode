@@ -1,0 +1,44 @@
+{
+  "slug": "pulse-dashboard-integration",
+  "title": "Integrate Pulse System with Build Tracker Dashboard",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "created_at": "2026-01-24T17:25:00+00:00",
+  "dead_threshold_seconds": 900,
+  "drops": {
+    "D1.1": {
+      "name": "Create sync script",
+      "stream": 1,
+      "depends_on": [],
+      "status": "complete",
+      "spawn_mode": "auto",
+      "started_at": "2026-01-24T18:30:35.797980+00:00",
+      "completed_at": "2026-01-24T18:30:15+00:00",
+      "conversation_id": "con_6z5AmbIbKEazHwPM"
+    },
+    "D1.2": {
+      "name": "Update server.ts",
+      "stream": 1,
+      "depends_on": [],
+      "status": "complete",
+      "spawn_mode": "auto",
+      "started_at": "2026-01-24T18:32:34.246746+00:00",
+      "completed_at": "2026-01-24T18:30:00+00:00",
+      "conversation_id": "con_J754HFFtjfr5nJAW"
+    },
+    "D2.1": {
+      "name": "Update frontend components",
+      "stream": 2,
+      "depends_on": ["D1.1", "D1.2"],
+      "status": "complete",
+      "spawn_mode": "manual",
+      "completed_at": "2026-01-24T20:45:00+00:00",
+      "notes": "Frontend already had Pulse-compatible interfaces. Verified manually."
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-24T18:28:40.458114+00:00",
+  "completed_at": "2026-01-24T20:45:00+00:00"
+}

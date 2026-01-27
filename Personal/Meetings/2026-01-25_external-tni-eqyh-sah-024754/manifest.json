@@ -1,0 +1,39 @@
+{
+  "manifest_version": "2.0",
+  "generated_at": "2026-01-25T02:51:59.823465+00:00",
+  "meeting_folder": "2026-01-25_external-tni-eqyh-sah-024754",
+  "meeting_date": "2026-01-25",
+  "meeting_type": "external",
+  "meeting_title": "tni-eqyh-sah",
+  "recall_bot_id": "3e894ce0-d53c-49cd-8f47-bfdc659ee375",
+  "recall_region": "us-west-2",
+  "recall_meeting_url": {
+    "meeting_id": "tni-eqyh-sah",
+    "platform": "google_meet"
+  },
+  "recall_meeting_id": "tni-eqyh-sah",
+  "participants": [],
+  "participant_count": 0,
+  "recording_duration_seconds": 86,
+  "video_retention_days": null,
+  "video_expires_at": "2026-07-24T02:47:54.946141+00:00",
+  "status": "pending_processing",
+  "artifacts": {
+    "audio": null,
+    "video": null,
+    "transcript_json": null,
+    "transcript_txt": null,
+    "participants_json": "participants.json",
+    "recall_metadata": "recall_metadata.json"
+  },
+  "blocks_generated": {
+    "transcript_processed": false,
+    "brief": false,
+    "stakeholder_intelligence": false,
+    "decisions": false,
+    "tone_and_context": false
+  },
+  "zo_take_heed_count": 0,
+  "last_updated_by": "recall-ai-depositor",
+  "last_updated": "2026-01-25T02:51:59.823477+00:00"
+}

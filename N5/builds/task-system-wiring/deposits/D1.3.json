@@ -1,0 +1,37 @@
+{
+  "drop_id": "D1.3",
+  "status": "complete",
+  "summary": "Enhanced close_hooks.py with milestone-aware assessment, 'what next' inference, and follow-up task creation capabilities. The system now intelligently recognizes partial task completion and surfaces the next step either from explicit milestones or inferred from task patterns.",
+  "files_modified": [
+    "N5/task_system/close_hooks.py"
+  ],
+  "new_functions": [
+    "infer_next_step() - Infers immediate next step based on task structure and progress",
+    "create_followup_task() - Creates follow-up task linked to original task",
+    "enhanced assess_task_completion() - Returns milestone descriptions, next_step, suggested_action",
+    "enhanced generate_close_prompt() - Shows WHAT NEXT and follow-up options",
+    "enhanced update_task_from_conversation() - Supports follow-up task creation with create_followup param"
+  ],
+  "patterns_implemented": [
+    "draft -> review and polish -> finalize -> send/publish",
+    "research -> summarize findings -> share/present results -> take action on findings",
+    "meet -> send follow-up -> complete action items -> document outcomes",
+    "review -> provide feedback -> request revisions -> finalize approval",
+    "plan -> execute first step -> review with stakeholders -> begin implementation",
+    "email -> await response -> follow up if needed -> schedule next action"
+  ],
+  "enhanced_features": {
+    "milestone_tracking": "Tracks completed/remaining milestones with descriptions",
+    "next_step_inference": "Priority: explicit milestones > task patterns > generic fallback",
+    "time_estimates": "Built-in time estimates for common next step types",
+    "close_prompt": "Shows completed work, remaining work, WHAT NEXT with type label, and options",
+    "followup_tasks": "Can auto-create follow-up tasks with inherited domain/project/priority"
+  },
+  "notes_for_orchestrator": "D2.1 should call the new API:\n- assess_task_completion() returns milestone descriptions and next_step info\n- update_task_from_conversation() accepts create_followup=True to auto-create follow-up\n- The prompt shows [followup] option for partial tasks with clear next step\n- Task patterns are in TASK_PATTERNS dict at module level\n- create_task() must accept parent_task_id parameter for follow-up linking\n- Lesson logged: verify task_registry.create_task() accepts parent_task_id parameter",
+  "integration_points": {
+    "thread_close": "Should call handle_action_conversation_close() to get enhanced prompt",
+    "drop_close": "Should assess completion and optionally create follow-up task",
+    "task_registry": "Uses get_task_by_id(), update_task(), complete_task(), create_task()"
+  },
+  "testing": "Created test_close_hooks.py to verify pattern inference, milestone logic, and API structure. All imports successful and pattern matching works correctly."
+}

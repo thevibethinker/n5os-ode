@@ -1,0 +1,88 @@
+{
+  "slug": "ode-cleanup",
+  "title": "N5OS Ode Version Cleanup & Sync Hardening",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 3,
+  "current_stream": 3,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "created_at": "2026-01-26T23:35:00Z",
+  "drops": {
+    "D1.1": {
+      "name": "Delete orphan + backup local export",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T23:29:16.047993+00:00",
+      "conversation_id": "con_4xZzGiNpHkMtAF1q",
+      "completed_at": "2026-01-26T23:42:28.933674+00:00"
+    },
+    "D1.2": {
+      "name": "Merge GitHub content into local export",
+      "stream": 1,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T23:45:47.656475+00:00",
+      "conversation_id": "con_cf6ztTcw4nwTbbwv",
+      "completed_at": "2026-01-27T00:50:29.053531+00:00"
+    },
+    "D1.3": {
+      "name": "Push corrected repo to GitHub + clean Inbox",
+      "stream": 1,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-27T00:52:28.262676+00:00",
+      "conversation_id": "con_bdx69R7s4RwuhHKx",
+      "completed_at": "2026-01-27T02:14:19.244792+00:00"
+    },
+    "D2.1": {
+      "name": "Add protection mechanisms",
+      "stream": 2,
+      "depends_on": [
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-27T02:17:40.704898+00:00",
+      "conversation_id": "con_vHDZOLDP5SvBiTSU",
+      "completed_at": "2026-01-27T02:21:11.603127+00:00"
+    },
+    "D3.1": {
+      "name": "End-to-end validation",
+      "stream": 3,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-27T02:34:27.456021+00:00",
+      "conversation_id": "con_BSDKGACCDaY9p3gV",
+      "failed_at": "2026-01-27T02:26:49.480326+00:00",
+      "failure_reason": "Two key issues: (1) validate_repo.py not found - expected to exist and pass per brief, got 'not_found'. (2) Broken references in prompts found - brief expected empty array, got 3 references including 'path/to/artifact1.py' which appear to be template placeholders. Also no evidence that install.sh was tested in simulated workspace as required.",
+      "completed_at": "2026-01-27T02:43:29.650814+00:00"
+    }
+  },
+  "currents": {
+    "1": [
+      "D1.1",
+      "D1.2",
+      "D1.3"
+    ],
+    "2": [
+      "D2.1"
+    ],
+    "3": [
+      "D3.1"
+    ]
+  },
+  "started_at": "2026-01-26T23:27:51.397196+00:00",
+  "completed_at": "2026-01-27T02:43:29.654955+00:00"
+}

@@ -1,0 +1,171 @@
+{
+  "status": "complete",
+  "meetings_processed": 9,
+  "items_extracted": 18,
+  "items": [
+    {
+      "title": "Send product access credentials",
+      "priority": "urgent",
+      "first_step": "Create employer and employee dummy accounts in staging",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Send employer and employee side logins (with dummy account) for Nic to evaluate",
+      "source_meeting": "2026-01-05_2026-01-05-Vrijen-attawar-and-nic-mahaney"
+    },
+    {
+      "title": "Notify Ilya of contract termination",
+      "priority": "urgent",
+      "first_step": "Draft termination notice email with 5-day notice timeline",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "5-day notice period required for contract termination",
+      "source_meeting": "2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello"
+    },
+    {
+      "title": "Audit secondary expenses",
+      "priority": "strategic",
+      "first_step": "Pull last 3 months of expense data from accounting software",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Goal is to cut expenses in half to extend runway",
+      "source_meeting": "2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello"
+    },
+    {
+      "title": "Review War Room document for outreach",
+      "priority": "strategic",
+      "first_step": "Open War Room doc and identify top 5 senior contacts",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Shared with Logan - fishing expedition outreach to industry contacts",
+      "source_meeting": "2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello"
+    },
+    {
+      "title": "Speak to Aviato and Nyne contacts",
+      "priority": "strategic",
+      "first_step": "Message first contact to schedule acquisition advice call",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Seeking acquisition advice and data valuation insights",
+      "source_meeting": "2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello"
+    },
+    {
+      "title": "Provide Getro admin credentials to Ilse",
+      "priority": "normal",
+      "first_step": "Find Getro login credentials and share securely with Ilse",
+      "estimate_min": 3,
+      "domain": "Careerspan",
+      "context": "Ilse needs access to investigate Getro backend for job ingestion",
+      "source_meeting": "2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello"
+    },
+    {
+      "title": "Send David Fireflies meeting notes",
+      "priority": "normal",
+      "first_step": "Open Fireflies and locate transcript for 2026-01-05 meeting",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Follow-up from meeting with David about Careerspan strategy",
+      "source_meeting": "2026-01-05_2026-01-05-David-x-careerspan-part-1"
+    },
+    {
+      "title": "Speak to Ellie AI founders about partnership/acquisition",
+      "priority": "strategic",
+      "first_step": "Research Ellie AI and draft introductory email to founders",
+      "estimate_min": 120,
+      "domain": "Careerspan",
+      "context": "Strategic exploration of potential partnership or acquisition opportunities",
+      "source_meeting": "2026-01-05_2026-01-05-David-x-careerspan-part-1"
+    },
+    {
+      "title": "Draft thought leadership content on hiring market",
+      "priority": "strategic",
+      "first_step": "Create outline for 'Emperor has no clothes' hiring market narrative",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Thought leadership development exposing market dynamics",
+      "source_meeting": "2026-01-05_2026-01-05-David-x-careerspan-part-1"
+    },
+    {
+      "title": "Coordinate with Rahul regarding sync",
+      "priority": "urgent",
+      "first_step": "Email or message Rahul to reschedule the sync and free time for Ilya's offboarding walkthroughs",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Rescheduling Rahul to prioritize Ilya's offboarding walkthroughs",
+      "source_meeting": "2026-01-05_2026-01-05-Ilya-sync"
+    },
+    {
+      "title": "Send David public repo link",
+      "priority": "urgent",
+      "first_step": "Find the public repo link and send it to David",
+      "estimate_min": 10,
+      "domain": "Zo",
+      "context": "From meeting with David - needs repo with Personas and basic file system setup",
+      "source_meeting": "2026-01-05_2026-01-05-David-x-careerspan-part-2"
+    },
+    {
+      "title": "Coordinate call with Ilia",
+      "priority": "urgent",
+      "first_step": "Send Ilia a message confirming the 3 PM call for today",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Critical contract/project discussion with 5-day notice requirement",
+      "source_meeting": "2026-01-05_2026-01-05-Logan-x-vrijen"
+    },
+    {
+      "title": "Validate Sourcing logic with HR Tech seniors",
+      "priority": "strategic",
+      "first_step": "Draft outreach message to 2-3 senior HR tech contacts for validation",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Validate sourcing + matching play against acquisition logic in current market",
+      "source_meeting": "2026-01-05_2026-01-05-Logan-x-vrijen"
+    },
+    {
+      "title": "WhatsApp Rahul",
+      "priority": "urgent",
+      "first_step": "Send WhatsApp message to Rahul about hiring coordination",
+      "estimate_min": 2,
+      "domain": "Careerspan",
+      "context": "Coordinate on ongoing hiring and puzzle pieces",
+      "source_meeting": "2026-01-05_2026-01-05-Logan-x-vrijen"
+    },
+    {
+      "title": "Send community examples/paraphernalia",
+      "priority": "urgent",
+      "first_step": "Gather community example files into a shared folder",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Light materials for Jeff to review",
+      "source_meeting": "2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron"
+    },
+    {
+      "title": "Send UMass Eisenberg pilot study",
+      "priority": "urgent",
+      "first_step": "Locate the UMass Eisenberg pilot study summary document",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "~150 student pilot results",
+      "source_meeting": "2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron"
+    },
+    {
+      "title": "Send Aspire Institute study",
+      "priority": "urgent",
+      "first_step": "Find and organize the Aspire Institute study results",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Informal study results",
+      "source_meeting": "2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron"
+    },
+    {
+      "title": "Prepare pricing options for follow-up",
+      "priority": "strategic",
+      "first_step": "Outline pricing tiers for free community vs. employer-paid model",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Free community vs. per-person license",
+      "source_meeting": "2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron"
+    }
+  ],
+  "errors": [],
+  "notes_for_orchestrator": "Extracted 18 total action items from 9 meetings. No errors."
+}

@@ -1,0 +1,20 @@
+{
+  "drop_id": "T-integration_test",
+  "build_slug": "store-v2",
+  "check_type": "integration_test",
+  "findings": [],
+  "auto_fixable": [],
+  "requires_review": [],
+  "skipped": true,
+  "reason": "No INTEGRATION_TESTS.json found in build directory or artifacts",
+  "health_contribution": 1.0,
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "status": "complete",
+  "timestamp": "2026-01-24T22:55:00Z",
+  "notes": "Integration test hygiene check skipped - no integration test definition file present"
+}

@@ -1,0 +1,27 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-24T23:04:38.255064Z",
+  "meeting_folder": "2025-01-20_Alex-Forman-x-Vrijen-Attawar",
+  "meeting_date": "2025-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Agent",
+  "last_updated": "2026-01-25T11:25:00Z",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "processed_at": "2026-01-25T11:56:02.338622",
+  "last_updated_at": "2026-01-25T11:56:02.338626",
+  "transition_history": [
+    {
+      "from": "blocks_generated",
+      "to": "processed",
+      "timestamp": "2026-01-25T11:56:02.338628",
+      "agent": "MG-6_Agent",
+      "notes": "Auto-transition after MG-6 processing"
+    }
+  ]
+}

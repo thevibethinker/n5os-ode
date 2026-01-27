@@ -19,12 +19,13 @@ from meeting_normalizer import (
     generate_meeting_id,
     parse_folder_name
 )
+from meeting_config import WORKSPACE, MEETINGS_DIR, STAGING_DIR, LOG_DIR, REGISTRY_DB, TIMEZONE, ENABLE_SMS
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)sZ %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-MEETINGS_DIR = Path("/home/workspace/Personal/Meetings")
-LOG_FILE = Path("/home/workspace/N5/logs/meeting_orchestrator.log")
+MEETINGS_DIR = Path(MEETINGS_DIR)
+LOG_FILE = Path(LOG_DIR) / "meeting_orchestrator.log"
 
 
 class MeetingOrchestrator:

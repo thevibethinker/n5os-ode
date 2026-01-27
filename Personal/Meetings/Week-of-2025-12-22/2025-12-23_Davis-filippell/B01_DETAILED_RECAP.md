@@ -1,9 +1,92 @@
-Summary:
-- Captured the 2025-12-23 CareerSpan × TeamWork Online discussion in `file 'B01_DETAILED_RECAP.md'`, covering the candidate story demo, the multi-dimensional matching signal, TeamWork’s MVP Access framing, pricing models ($250–$350/job, candidate stories < $1 today, target $0.20–$0.30), and the data-sharing/assessment guardrails (Gunderson privacy work + consent before exposing CareerSpan stories externally).
-- Logged the risks/trade-offs TeamWork flagged (who pays for richer data, keeping stories private, embedding CareerSpan as an add-on) plus the integration posture (CareerSpan stays on the candidate side while TeamWork keeps the employer view, with CareerSpan insights feeding TeamWork without employers viewing raw narratives).
-- Listed concrete follow-up steps (share the dummy account, send the early-January note, document pricing/consent, and confirm the separation of candidate/employer ownership) so the partnership momentum keeps moving.
+---
+created: 2026-01-24T17:32:10.237003
+last_edited: 2026-01-24T17:32:10.237007
+version: 1.0
+provenance: MG-2 automated generation
+---
 
-Action:
-- Review `file 'B01_DETAILED_RECAP.md'` and let me know if you want edits, additions, or a short follow-up note drafted for Davis + Michelle.
+# B01: Detailed Recap
 
-2026-01-20 09:30:00 EST
+## Meeting Overview
+This is an automatically generated recap based on meeting transcript.
+
+## Chronological Summary
+
+Vrijen Attawar: Hey, how's it going, Michelle?
+Vrijen Attawar: I'm good.
+Vrijen Attawar: How are you?
+Vrijen Attawar: I'm good.
+Vrijen Attawar: I'm good.
+Vrijen Attawar: Amazing.
+Vrijen Attawar: Oh, there you are.
+Michelle Price: We're just waiting on Davis.
+Michelle Price: I know he's coming from another meeting right before this, so he might be a couple minutes.
+Michelle Price: No sweat.
+Vrijen Attawar: What's that jersey behind you?
+Michelle Price: That is a parting gift from my time at the New York Mets.
+Michelle Price: Oh, cool.
+Michelle Price: Yeah, so obviously TeamWork Online.
+Michelle Price: I don't know how much homework you did to us, but we're a hiring platform.
+Michelle Price: In sports and entertainment.
+Michelle Price: And so my background before coming to TeamWork was working at the team side of the business.
+Michelle Price: So I worked for the Celtics, the New York Mets, and the Washington Nationals.
+Michelle Price: And I have a Celtics jersey, but the frame's broken.
+Michelle Price: So I have to get that fixed.
+Michelle Price: But eventually there'll be a couple up there.
+Vrijen Attawar: Fair enough.
+Vrijen Attawar: That is cool.
+Vrijen Attawar: That's so awesome.
+Vrijen Attawar: I'm a big Arsenal fan, so Premier League fan.
+Vrijen Attawar: But I just like, it's just, I always love clicking.
+Vrijen Attawar: Working with folks that also like sports or at least are part of that world because it is just so awesome.
+Vrijen Attawar: Yeah.
+Michelle Price: Well, and I see you're Emory and then Cornell.
+Michelle Price: Is that right?
+Vrijen Attawar: Emory and Cornell.
+Vrijen Attawar: Yeah, yeah.
+Vrijen Attawar: Both not schools renowned for their athletic prowess, I must admit.
+Vrijen Attawar: Emory used to have like an Emory football undefeated jersey because we didn't even have a football team.
+Vrijen Attawar: So, you know, that's sort of nerdy repartee is more sort of my sport.
+Vrijen Attawar: But, you know, I try to mix it up here.
+Michelle Price: There's a, we have a woman on our team, on our partnerships team.
+Michelle Price: She went to Emory and she played softball there.
+Michelle Price: Oh, cool.
+Vrijen Attawar: Yeah.
+Michelle Price: So she's, she's, I've heard that joke from her before too, of like undefeated.
+Michelle Price: My, my family, my brother went to Columbia and I feel like Columbia also has a similar joke of something about their athletics.
+Vrijen Attawar: Yeah, yeah, yeah.
+Vrijen Attawar: Yeah.
+Vrijen Attawar: The Ivy leagues in general, they are not exactly.
+Vrijen Attawar: Not exactly the athletic powerhouses that they aren't, but it is what it is.
+Vrijen Attawar: But yeah, it's really cool to meet you.
+Vrijen Attawar: So what do you do within TeamWork?
+Vrijen Attawar: Yeah.
+Michelle Price: So Davis, who you've been talking to, is the president of the company.
+Michelle Price: I help oversee business operations.
+Michelle Price: So making sure it all works.
+Michelle Price: Whenever it is, we do something.
+Michelle Price: I'm the one that makes sure it all.
+Michelle Price: Hell yeah.
+Vrijen Attawar: Yeah, we need, this is arguably the most important role, is the glue that keeps it all running.
+Vrijen Attawar: That's cool.
+Michelle Price: The tech stuff, product development and things like that.
+Michelle Price: And then where I come in is usually just sort of like implementation, messaging out to customers, things like that.
+Michelle Price: And then obviously working with our internal team to make sure it's good as well.
+Michelle Price: A little bit of everything.
+Michelle Price: How about you?
+Michelle Price: How long have you been in this world?
+Vrijen Attawar: In HR tech?
+Vrijen Attawar: Ooh.
+Vrijen Attawar: Well, we've been in...
+Vrijen Attawar: Started this company, or had the idea roughly three years ago, three years and a month ago.
+Vrijen Attawar: It was actually the day ChadGPT launched, so I was in day one, I get to say, you know, and then left my job.
+Vrijen Attawar: I was working at Mc
+
+## Key Discussion Points
+[Automated extraction would go here - requires LLM processing]
+
+## Participants
+[Participant extraction would go here - requires LLM processing]
+
+---
+*Note: This is a stub B01 generated by MG-2. Full detailed analysis requires LLM processing of the full transcript.*

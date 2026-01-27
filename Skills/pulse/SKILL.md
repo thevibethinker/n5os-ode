@@ -14,8 +14,9 @@ Pulse orchestrates complex builds by:
 1. **Spawning Drops** (workers) via `/zo/ask` API
 2. **Monitoring** for deposits, timeouts, failures
 3. **Filtering** deposits via LLM judgment
-4. **Escalating** via SMS when issues arise
-5. **Finalizing** with safety checks, integration tests, and learning harvest
+4. **Checkpoint verification** at strategic quality gates
+5. **Escalating** via email/SMS when issues arise
+6. **Finalizing** with safety checks, integration tests, and learning harvest
 
 ## Terminology (Flow Metaphor)
 
@@ -25,9 +26,13 @@ Pulse orchestrates complex builds by:
 | **Stream** | Parallel execution batch (like Wave) |
 | **Drop** | Individual worker/task (synonym: Worker) |
 | **Current** | Sequential chain within a Stream |
+| **Checkpoint** | Strategic quality gate verifying cross-Drop consistency |
 | **Deposit** | Worker's completion report |
 | **Filter** | LLM judgment of deposit quality |
 | **Dredge** | Forensics worker for dead Drops |
+| **Jettison** | Connected-but-independent build spawned as tangent off-ramp |
+| **Lineage** | Parent-child relationship graph between builds |
+| **Launch Mode** | How a build was spawned: orchestrated, manual, or jettison |
 
 ## Quick Start
 
@@ -49,32 +54,259 @@ python3 Skills/pulse/scripts/pulse.py resume <slug>
 
 # Post-build finalization
 python3 Skills/pulse/scripts/pulse.py finalize <slug>
+
+# Create jettison (off-ramp build)
+pulse jettison "<task>" [--from <parent>] [--type <type>]
+
+# View build lineage DAG
+pulse lineage [<slug>] [--format tree|json]
 ```
+
+## Jettison Launch Mode
+
+Jettisons are **off-ramp builds** — when you hit a tangent worth pursuing without derailing your current thread.
+
+### When to Use
+
+- Debugging issue surfaces mid-build that needs isolated investigation
+- Interesting idea emerges that deserves its own exploration
+- Current task has a prerequisite that should be handled separately
+- You want to branch off without losing the parent context
+
+### Command Syntax
+
+```bash
+# Basic jettison
+pulse jettison "fix the rate limiting issue"
+
+# Explicit parent build
+pulse jettison "debug the API" --from adhd-todo-research
+
+# Explicit type (overrides auto-detection)
+pulse jettison "explore gamification approaches" --type research
+
+# Custom moment description
+pulse jettison "handle auth edge case" --moment "Discovered during D1.2 execution"
+```
+
+### Type Auto-Detection
+
+Jettison auto-detects build type from keywords:
+
+| Keywords | Detected Type |
+|----------|---------------|
+| fix, bug, debug, error, refactor | `code_build` |
+| research, explore, investigate, analyze | `research` |
+| draft, write, content, blog, email | `content` |
+| plan, design, architect, strategy | `planning` |
+| (default) | `code_build` |
+
+### Output
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║  JETTISON CREATED                                            ║
+╚══════════════════════════════════════════════════════════════╝
+
+Build:  j-fix-rate-limit-0126-0410
+Type:   code_build
+Folder: N5/builds/j-fix-rate-limit-0126-0410/
+
+Launch prompt (copy to new thread):
+────────────────────────────────────────────────────────────────
+Load and execute: file 'N5/builds/j-fix-rate-limit-0126-0410/drops/D1.1-jettison-task.md'
+────────────────────────────────────────────────────────────────
+```
+
+### Jettison Workflow
+
+1. **Trigger**: You're in a conversation, hit a tangent
+2. **Create**: Run `pulse jettison "<task>"` 
+3. **Launch**: Copy the launch prompt to a new thread
+4. **Execute**: The new thread loads the brief and executes
+5. **Complete**: Worker writes deposit to jettison's own folder
+6. **Notify**: Email sent on completion
+
+### Jettison vs Regular Build
+
+| Aspect | Regular Build | Jettison |
+|--------|---------------|----------|
+| Launch mode | Orchestrated (Pulse spawns) | Manual (you copy-paste) |
+| Folder | `N5/builds/<slug>/` | `N5/builds/j-<slug>/` |
+| Parent tracking | Optional | Always tracked (lineage) |
+| Learnings | Build-specific | Inherits from parent |
+| Worker count | Multiple (streams) | Single (D1.1 only) |
+
+## Lineage Tracking
+
+Builds can have parent-child relationships, forming a DAG (directed acyclic graph).
+
+### Lineage Schema
+
+Every build's `meta.json` can include:
+
+```json
+{
+  "lineage": {
+    "parent_type": "build",           // build, jettison, conversation, or null
+    "parent_ref": "adhd-todo-research", // slug or convo_id
+    "parent_conversation": "con_xyz",   // where jettison was triggered
+    "moment": "D1.2 hit rate limits",   // what triggered this
+    "branched_at": "2026-01-25T23:00:00Z"
+  }
+}
+```
+
+### Visualizing Lineage
+
+```bash
+# Show full lineage DAG
+pulse lineage
+
+# Show specific build's ancestry and descendants
+pulse lineage adhd-todo-research
+
+# JSON output for scripting
+pulse lineage --format json
+```
+
+### Example Output
+
+```
+Build Lineage
+========================================
+
+adhd-todo-research [R] ✓
+├── j-ratelimit-debug ⚡ ●
+│   └── j-api-redesign [P]⚡ ○
+└── j-gamification-tangent [R]⚡ ✓
+
+pulse-variants ✓
+
+Legend: ✓ complete  ● running  ○ pending  ✗ failed  ⚡ jettison
+Types: [R] research  [C] content  [P] planning
+```
+
+### Learnings Inheritance
+
+When a jettison is created from a parent build:
+1. Parent's `BUILD_LESSONS.json` is copied to jettison
+2. Lessons are marked with "inherited from: <parent>"
+3. Jettison can add its own lessons
+4. Learnings do NOT flow back to parent (one-way branch)
 
 ## Sentinel Setup
 
-Pulse requires a **Sentinel** scheduled agent to monitor builds and text on meaningful events.
+Pulse requires a **Sentinel** scheduled agent to monitor builds and report via email (preferred) or SMS.
 
-**Create Sentinel at build start:**
+### Email Sentinel (Recommended)
+
+Email provides richer updates and allows detailed replies.
+
+**Create Email Sentinel at build start:**
+```
+RRULE: FREQ=MINUTELY;INTERVAL=5;COUNT=100
+Delivery: email
+
+Instruction:
+Pulse Sentinel for build: <slug>
+
+1. Run: python3 Skills/pulse/scripts/pulse.py status <slug> --json
+2. Parse the status and compose an email update.
+
+EMAIL FORMAT:
+Subject: [PULSE] <slug> - <status_summary>
+
+Body:
+## Build: <slug>
+**Status:** <stream X of Y> | **Progress:** <completed>/<total> Drops (<pct>%)
+
+### Stream Status
+| Stream | Status | Drops |
+|--------|--------|-------|
+| S1 | complete | D1.1 ✓, D1.2 ✓ |
+| S2 | running | D2.1 ✓, D2.2 ⏳ (8 min) |
+| S3 | pending | - |
+
+### Recent Activity (since last email)
+- D2.1 completed: "Implemented webhook handler" 
+- D2.2 started 8 minutes ago
+
+### Concerns
+- ⚠️ D2.2 running >15 min → may be stuck
+- ⚠️ D1.2 deposit has WARN: "Consider extracting to skill"
+
+### Reply Commands
+Reply to this email with any of:
+- `status` — Get detailed status
+- `retry D2.2` — Retry a stuck/failed Drop
+- `skip D2.2` — Skip a Drop and continue
+- `pause` — Pause the build
+- `resume` — Resume paused build
+- `stop` — Stop the build entirely
+- `<other instructions>` — Free-form guidance
+
+---
+Build folder: N5/builds/<slug>/
+Orchestrator: <conversation_id>
+
+3. ONLY send email if:
+   - New completions since last check
+   - Drop running >15 min (potential dead drop)
+   - Build complete
+   - Stream advanced
+   - Any FAIL verdict from Filter
+   
+4. If build complete: Send final summary email, then delete yourself.
+
+5. If no meaningful changes, stay silent (don't spam).
+```
+
+### SMS Sentinel (Fallback)
+
+Use SMS for brief, urgent alerts when email isn't being checked.
+
 ```
 RRULE: FREQ=MINUTELY;INTERVAL=3;COUNT=120
 Delivery: sms
 
 Instruction:
-Pulse Sentinel for build: <slug>
+Pulse SMS Sentinel for build: <slug>
 
 1. Run: python3 Skills/pulse/scripts/pulse.py status <slug>
-2. Check for:
-   - New completions → Text: "[PULSE] D#.# complete. Progress: X/16"
-   - Dead drops (>15 min running) → Text: "[PULSE] D#.# may be dead (>15min). Reply 'retry' or 'skip'"
-   - Build complete → Text: "[PULSE] Build <slug> COMPLETE" then delete yourself
-3. If no changes, stay silent
-
-Build folder: N5/builds/<slug>/
+2. ONLY text if:
+   - Drop FAILED → "[PULSE] ❌ D#.# FAILED: <reason>. Reply 'retry' or 'skip'"
+   - Drop dead (>15 min) → "[PULSE] ⚠️ D#.# may be dead. Reply 'retry' or 'skip'"
+   - Build complete → "[PULSE] ✅ <slug> COMPLETE"
+3. For routine progress, stay silent (email handles that).
 ```
 
-**Delete Sentinel when done:**
-After build completes, delete the Sentinel agent to stop polling.
+### Dual Sentinel (Email + SMS)
+
+For critical builds, run both:
+- Email Sentinel: Every 5 min, detailed updates
+- SMS Sentinel: Every 3 min, urgent alerts only (failures, dead drops)
+
+### Email Reply Processing
+
+When V replies to a Sentinel email, the reply is processed as a conversation with Zo. The Sentinel instruction should include:
+
+```
+If this is a reply to a previous Sentinel email, parse the command:
+- "status" → Run full status and reply
+- "retry D#.#" → Mark drop for retry, run: python3 Skills/pulse/scripts/pulse.py retry <slug> D#.#
+- "skip D#.#" → Skip drop: python3 Skills/pulse/scripts/pulse.py skip <slug> D#.#
+- "pause" → python3 Skills/pulse/scripts/pulse.py pause <slug>
+- "resume" → python3 Skills/pulse/scripts/pulse.py resume <slug>
+- "stop" → python3 Skills/pulse/scripts/pulse.py stop <slug>
+- Free-form text → Log as guidance to N5/builds/<slug>/guidance.md and acknowledge
+```
+
+### Delete Sentinel When Done
+
+After build completes, the Sentinel should delete itself. If it doesn't, manually delete via:
+- SMS: `pulse done` or `pulse stop`
+- Chat: Delete the scheduled agent
 
 **Note:** Sentinel creation requires the Zo agent API (create_agent tool), which is only available in interactive/scheduled contexts — not from Python scripts. The LLM orchestrating the build must create the Sentinel.
 
@@ -114,6 +346,79 @@ After build completes, delete the Sentinel agent to stop polling.
 - Feedback → learnings pipeline
 - Commands: `python3 N5/pulse/telemetry_manager.py log|query|export`
 - Requirements: `python3 N5/pulse/requirements_tracker.py capture|list|export`
+
+## Pulse v3 Features (Lifecycle Automation)
+
+### Automated Lifecycle
+Pulse v3 automates the entire pre-build pipeline:
+
+```
+queued → interviewing → seeded → planning → plan_review → building → tidying → complete
+```
+
+The **Lifecycle Agent** polls every 5 minutes and advances tasks automatically:
+
+| From State | To State | Trigger |
+|------------|----------|---------|
+| queued | interviewing | Automatic on task creation |
+| interviewing | seeded | Seeded judgment confidence ≥ 0.8 |
+| seeded | planning | Plan generated |
+| planning | plan_review | V available (respects calendar/quiet hours) |
+| approved | building | Automatic |
+
+### Lifecycle Commands
+
+```bash
+# Start lifecycle automation
+python3 Skills/pulse/scripts/pulse.py lifecycle start
+
+# Stop lifecycle automation  
+python3 Skills/pulse/scripts/pulse.py lifecycle stop
+
+# Check lifecycle status
+python3 Skills/pulse/scripts/pulse.py lifecycle status
+
+# Manual single tick (useful for testing)
+python3 Skills/pulse/scripts/pulse.py lifecycle tick
+python3 Skills/pulse/scripts/pulse.py lifecycle tick --dry-run
+```
+
+### Fragment Tagging
+
+Tag SMS responses to route to specific interviews:
+
+```
+#task-my-build This is my response about the feature requirements
+```
+
+If you have one open interview, responses auto-route. With multiple open interviews, you'll be prompted to use a tag.
+
+### Auto-Fix Dispatch
+
+Tidying findings with confidence ≥ 0.9 auto-fix. Lower confidence findings escalate for manual review.
+
+Configure in `pulse_v2_config.json`:
+```json
+{
+  "auto_fix": {
+    "enabled": true,
+    "confidence_threshold": 0.9
+  }
+}
+```
+
+### Availability-Aware Reviews
+
+HITL plan reviews respect V's availability:
+- Checks Google Calendar for meetings
+- Respects quiet hours (configurable, default 10pm-7am ET)
+- Looks for `[DW]` (Deep Work) markers in calendar events
+- Defers review until next available window
+
+Force review regardless of availability:
+```bash
+python3 N5/pulse/review_manager.py initiate my-build --force
+```
 
 ## v2 Lifecycle
 
@@ -253,6 +558,14 @@ Text these to control Pulse:
   "total_streams": 2,
   "current_stream": 1,
   "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated|manual|jettison",
+  "lineage": {
+    "parent_type": "build|jettison|conversation|null",
+    "parent_ref": "slug or convo_id",
+    "parent_conversation": "convo_id",
+    "moment": "description",
+    "branched_at": "ISO timestamp"
+  },
   "drops": {
     "D1.1": {
       "name": "Task name",

@@ -1,0 +1,52 @@
+{
+  "bot_id": "13cd2372-cff7-49ef-9aaf-7f5ab8148b74",
+  "meeting_url": {
+    "meeting_id": "tni-eqyh-sah",
+    "platform": "google_meet"
+  },
+  "status_changes": [
+    {
+      "code": "joining_call",
+      "message": null,
+      "created_at": "2026-01-25T02:46:46.750040Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_waiting_room",
+      "message": null,
+      "created_at": "2026-01-25T02:46:55.946645Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_call_not_recording",
+      "message": null,
+      "created_at": "2026-01-25T02:46:59.455053Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_call_recording",
+      "message": null,
+      "created_at": "2026-01-25T02:46:59.573306Z",
+      "sub_code": null
+    },
+    {
+      "code": "call_ended",
+      "message": null,
+      "created_at": "2026-01-25T02:49:07.093219Z",
+      "sub_code": "bot_received_leave_call"
+    },
+    {
+      "code": "recording_done",
+      "message": null,
+      "created_at": "2026-01-25T02:49:09.030542Z",
+      "sub_code": null
+    },
+    {
+      "code": "done",
+      "message": null,
+      "created_at": "2026-01-25T02:49:09.139784Z",
+      "sub_code": null
+    }
+  ],
+  "participants": []
+}

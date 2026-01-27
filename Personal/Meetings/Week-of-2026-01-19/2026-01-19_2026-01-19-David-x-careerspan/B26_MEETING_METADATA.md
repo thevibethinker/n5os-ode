@@ -1,23 +1,28 @@
-**Meeting ID:** 01KFBMWQ4ETF74YXMWA21S1PQM  
+# B26: Meeting Metadata Summary
+
+**Meeting ID:** david-2026-01-19  
 **Date:** 2026-01-19  
-**Duration:** ~1.5 minutes  
-**Format:** Video (camera off at Vrijen’s request)  
-**Attendees:** David Speigel; Vrijen Attawar  
+**Duration:** ~1 minute (per transcript)  
+**Format:** Video call (camera off, screen sharing)  
+**Attendees:** David Speigel, Vrijen Attawar
 
 ### Stakeholder Classification
-Primary: Strategic partner / early adopter (David is hands-on with Zo and wants the ODE/meeting pipeline exported into his workflows).  
-Secondary: Prospective advisor and connector (Vrijen is building the content-library + Build Orchestrator experience and seeking integrations/podcasts).
+Primary: Client/Collaborator  
+Secondary: N/A
 
 ### CRM Tags
-- **[LD-TYPE: StrategicPartner]** – David is already running Zo, exploring Fathom → Zoe automation, and asking for the internal operating-system export (not a cold lead).  
-- **[GPT-PHASE: Implementation]** – They are actively cloning repos, running bootloader/personalize prompts, and wiring the Fathom webhook → meeting ingestion pipeline.  
-- **[A-LEVEL: A2]** – High attention: the call is about delivering repo updates, managing workspace cleanliness, and coordinating next steps, so momentum is strong and time-sensitive.
+**[LD-CLIENT]** - David is an ongoing Careerspan contact receiving technical Zo implementation guidance
+
+**[GPT-PHASE:IMPLEMENTATION]** - Meeting focused on system setup, architecture explanation, and backfill planning
+
+**[A-LEVEL:ACTIVE]** - High engagement with David actively participating, taking notes, asking clarifying questions, and expressing clear interest in Zo capabilities
 
 ### Key Themes
-1. Building a durable meeting ingestion pipeline: Fathom → webhook → folder → Zo processing pipeline + modular “blocks” that can be combined as needed.  
-2. Creating a content library and semantic memory so knowledge can be stored as a database rather than unmanaged folders.  
-3. Exporting the meeting/block/functionality stack (ODE + recs) into David’s workspace, including bootloader/personalize scripts and accompanying rules.  
-4. Differentiating Zo persistence + orchestration from Claude code/ChatGPT pipelines, emphasizing statefulness, modular worker files, and conversation closing rituals.  
-5. Networking/intros – David wants introductions (e.g., Ben Erez, Supra community) and to sync Zo demos with his own outreach tools (Valley, Dripify) to expand the platform’s reach.
+1. **Zo Architecture Overview**: Build Orchestrator system, Conversation Close workflow, and manual replication of Claude Code parallel execution patterns
+2. **Fathom Integration**: Planning webhook setup to deliver transcripts directly to Zo, bypassing expiring Zapier automation
+3. **Backfill Strategy**: One-time processing of existing aggregated networking transcripts (PCA group, 1-on-1 sessions) into individual files
+4. **Content Library System**: Database layer for storing modular learnings, articles, quotes with semantic organization beyond folder structures
+5. **Learning Module Extraction**: David's goal of identifying new concepts/questions across calls, deduplicating, and creating slides for unique learning units
+6. **System Comparison**: Zo's persistence and state management vs Claude Code's ephemeral sessions, Gmail-like threaded organization
 
-**Timestamp:** 2026-01-19 16:05 ET
+9:25 PM ET

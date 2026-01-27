@@ -1,46 +1,55 @@
+---
+
 # B25: Deliverable Content Map
 
 ## Committed Deliverables
 
 | Item | Promised By | Promised When | Status | Link/File | Notes |
 |------|-------------|---------------|--------|-----------|-------|
-| Odeguard meeting-processing + Build Orchestrator + Conversation Close + semantic-memory setup | Us | 1/19 call (repo push) | IN_PROGRESS | GitHub repo (pushed into root, now appearing under `N5OS`) | Bootloader/personalize/semantic memory flows still need confirmation; once David runs `@bootloader`, `@personalize`, and verifies semantic memory entries we can document the resulting worker files and state. |
-| Fathom API + webhook + folder automation plan (designated transcript drop location + format) | Us | During meeting (prompt submitted to Zoe) | IN_PROGRESS | – | Need to capture the exact folder naming convention, webhook payload schema, and handoff instructions so David can point Fathom at the folder without Zapier; plan generation underway inside Zo. |
-| Transcript backfill / module dedup + content-library update (detect new concept modules, export MD Conversations db capability into ODE) | Us | Asked during meeting (backfill conversation) | IN_PROGRESS | – | Requires defining the container for extracted insights (slides vs. concept modules), exporting the Conversations DB, and wiring the new capability into the ODE repo before the experience is handed off. |
-| Intro to Ben Erez + Supra/Sidebar community session (coffee/office visit + possible podcast) | Them | Next few days (per discussion) | PENDING | – | David will share Ben’s availability and mention Zoe’s desire to host him at the office/podcast; no confirmed date yet. |
-
-*Note: `B02_COMMITMENTS` context was not yet surfaced in this workspace, so every deliverable above is sourced directly from the 1/19 transcript segments.*
+| GitHub repo with core functionality | Us | Delivered during call | READY | Link shared in Zo | Vrijen mentioned "most of the functionality" was built; wants to do "one or two more scopes" |
+| Meeting processing system framework | Us | Delivered during call | READY | Included in GitHub | Part of the shared repository |
+| Content library system framework | Us | Delivered during call | READY | Included in GitHub | Part of the shared repository |
+| Setup instructions for semantic memory | Us | Delivered during call | READY | Included in GitHub | Part of the shared repository |
+| Build Orchestrator system | Us | Delivered during call | READY | Included in GitHub | Allows dividing work into workers for parallel execution |
+| Conversation Close system | Us | Delivered during call | READY | Included in GitHub | Handles cleanup, commit, and artifact identification after work |
+| Fathom to Zo integration | Us | To be set up | IN_PROGRESS | - | David needs to configure Fathom webhook; Zapier trial ended so automation needs replacement |
+| One-time backfill of existing transcripts | Us | To be started next | PENDING | - | Will process David's existing networking transcripts (PCA Group networking, I.P. one-on-ones) |
 
 ## Resources Mentioned
 
 **Shared during meeting:**
-- Odeguard system GitHub (Build Orchestrator, Conversation Close, semantic memory setup) – pushed to David’s environment via the repo clone and bootloader/personalize instructions.
-- Mind map (second link shared) that maps Vrijen’s key beliefs/ideas and illustrates the desired modular capture of insights.
-- Fathom settings screen (API access + Zo integration) referenced while configuring the webhook.
+- GitHub repository: Contains framework for meeting processing, content library, semantic memory setup, Build Orchestrator, and Conversation Close
+- Mind map link: Visual representation of Vrijen's key ideas and beliefs (David viewed on phone)
+- Fathom transcripts in Google Drive: "PCA Group networking December through July" and other networking documents (I.P. one-on-ones)
 
 **Requested for follow-up:**
-- Instruction doc for David outlining the “ongoing”, high-level habits for working with Zoe (close conversations, bootloader/personalize, what to ask).
-- Confirmation of the specific folders/transcript files that the Fathom webhook should drop into so the pipeline stays consistent.
+- Fathom webhook configuration: David needs to set up direct Fathom to Zo connection to replace Zapier automation
+- Transcript parsing: Zo needs to parse the consolidated networking transcript file and save into individual files for processing
 
 ## Links & References
 
 **URLs shared:**
-- No explicit URLs survived in the transcript capture (GitHub/mind map mentions were verbal; need to confirm exact links post-call).
+- GitHub repository (link shared in Zo chat for review)
 
 **Documents referenced:**
-- Mind map (second link from Vrijen) describing the intersection of key ideas/operating principles.
-- Fathom API docs/settings screen (used to copy API key + webhook).
+- PCA Group networking December through July: Consolidated transcript file in David's Google Drive
+- I.P. one-on-one transcripts: Referenced by David as second networking document (location not confirmed)
+- Fathom automation: Previous Zapier-based automation that needs replacement with direct Zo integration
 
 ## Follow-Up Content Needs
 
 **Items to prepare before follow-up:**
-- [ ] Document the outcome of running `@bootloader`, `@personalize`, and the semantic memory setup so we can confirm the worker files and knowledge updates.
-- [ ] Finalize the Fathom API + webhook implementation plan (folder pattern, payload format, automation steps) and capture it as a standalone instruction set.
-- [ ] Build the transcript-processing backfill: split the aggregated file, tag new concepts/modules, and catalog the results inside the content library/MD Conversations database.
+- [ ] Configure Fathom webhook to drop transcripts into Zo folder with specified naming pattern
+- [ ] Design metadata structure for content library based on David's "modules of unique learnings" concept
+- [ ] Plan backfill workflow for processing existing consolidated transcripts
 
 **Items to request from them:**
-- [ ] Clarify whether the extracted units should map to slide decks, concept modules, or both, so the “container” for new learnings is locked in before we export it into ODE.
-- [ ] Confirm Ben Erez’s availability and preferred format (office visit + Supra/Sidebar session) so Zoe can follow up with the right people.
-- [ ] Share the exact GitHub and mind map URLs (and any repo paths) used in the call for reference in the follow-up email.
+- [ ] Confirmation on whether David wants to proceed with one-time backfill before setting up ongoing automation
+- [ ] Access to second networking transcript file (I.P. one-on-ones) for complete backfill
+- [ ] Feedback on GitHub review once David completes the in-call Zo review
 
-Timestamp: 2026-01-19 16:12 ET
+---
+
+**Note:** This deliverable map was generated from the meeting transcript. The B02_COMMITMENTS block was not available for cross-reference. Status reflects deliverables as of meeting end; GitHub repo was delivered during call, while automation setup and backfill remain pending.
+
+*Generated from David x Careerspan meeting on 2026-01-19*

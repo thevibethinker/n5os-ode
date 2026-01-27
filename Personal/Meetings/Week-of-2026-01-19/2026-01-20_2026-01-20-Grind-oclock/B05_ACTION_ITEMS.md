@@ -1,45 +1,91 @@
-yaml
+```markdown
 ---
-created: 2026-01-21
-last_edited: 2026-01-21
+created: 2026-01-26
+last_edited: 2026-01-26
 version: 1.0
-provenance: con_xkHHbcGGNsZXd7kz
+provenance: con_IQMXGpJDDEmTzlN3
+block_id: B05
+block_name: ACTION_ITEMS
+meeting_id: 2026-01-20_2026-01-20-Grind-oclock
 ---
 
-# B05: Action Items
+## Action Items
 
-## Immediate Actions (Next 48 Hours)
+### 1. Get Corridor X engineers signed up and using Careerspan
+- **Owner**: Vrijen
+- **Priority**: strategic
+- **First Step**: Send the corridorio org code to Shivam and confirm 15-20 engineers can sign up
+- **Estimated**: 15 min
+- **Domain**: Careerspan
+- **Project**: Corridor X Pilot
+- **Milestones**: 
+  1. Share org code with Shivam
+  2. Confirm engineers sign up
+  3. Shivam starts running jobs through Careerspan
 
-| Owner | Action | Context | Deadline/When |
-|-------|--------|---------|---------------|
-| Vrijen | Reply to Shivam with Corridor IO org code | Engineers are keen to sign up; need to get ~15-20 engineers on board | Immediately after call |
-| Vrijen | Fix positioning papers — remove "46% new hires fail" premise and retool matching section | Logan provided feedback that this premise isn't the most urgent problem; matching arguments need to be grounded | Before talking to Ilsa |
-| Vrijen | Send voice message to Ilsa | Addressing communication issues; wants to calmly resolve tension after positioning paper feedback | After fixing papers |
-| Vrijen | Cancel/reschedule today's LinkedIn post to Thursday | Logan noted last week's post didn't go through; shift to Careerspan-focused today | Today |
-| Vrijen | Post about Careerspan today (not the scheduled LinkedIn content) | Aligning content schedule; today should be Careerspan-focused | Today |
-| Vrijen & Logan | Jump on call with Shivam to update/equip him | Shivam asking to chat; needs collateral/advice onboarding his engineers | Immediately |
+### 2. Reorient Careerspan positioning documents
+- **Owner**: Vrijen
+- **Priority**: strategic
+- **First Step**: Remove "46% of new hires fail" premise from matching/sourcing arguments
+- **Estimated**: 20 min
+- **Domain**: Careerspan
+- **Project**: Positioning & Narrative Alignment
+- **Milestones**: 
+  1. Remove 46% failure stat premise
+  2. Pivot sourcing argument to "inbound is broken"
+  3. Reorient matching argument away from cultural fit claims
+  4. Review revised version with Logan
 
-## Near-Term Actions (This Week)
+### 3. Create stakeholder-specific one-pagers from positioning docs
+- **Owner**: Logan
+- **Priority**: normal
+- **First Step**: Create one-page distilled version for recruiting stakeholders
+- **Estimated**: 30 min
+- **Domain**: Careerspan
+- **Project**: Positioning & Narrative Alignment
+- **Milestones**: 
+  1. Create recruiting one-pager
+  2. Create AI matching tech one-pager
+  3. Create additional stakeholder one-pagers as needed
 
-| Owner | Action | Context | Deadline |
-|-------|--------|---------|----------|
-| Vrijen & Logan | Create one-pager language for external distribution | Distilling comprehensive positioning doc into crisp one-pagers for each stakeholder type | This week |
-| Vrijen | Run revised positioning through Zo/Cloud for argument check | Ensure no critical arguments are missing before finalizing language | After paper fixes |
-| Logan | Create specific landing page or visual for Indian engineers | "US Corporate speak encoder" concept; show before/after of how Careerspan represents them | TBD |
-| Vrijen & Logan | Refine Operation Eyeballs strategy | Shift from "everything is broken" to optimistic approach highlighting cool companies/founders | Ongoing |
+### 4. Run positioning papers through LLM for additional critique
+- **Owner**: Logan
+- **Priority**: normal
+- **First Step**: Run comprehensive positioning doc through Zo/LLM and capture any missing arguments or criticisms
+- **Estimated**: 15 min
+- **Domain**: Careerspan
+- **Project**: Positioning & Narrative Alignment
 
-## Open Loops / Follow-Ups
+### 5. Create collateral for Corridor X engineer onboarding
+- **Owner**: Logan (landing page), Vrijen (messaging guidance)
+- **Priority**: strategic
+- **First Step**: Create landing page/material demonstrating how Careerspan helps Indian engineers appear more polished to US companies ("US Corporate speak encoder")
+- **Estimated**: 45 min
+- **Domain**: Careerspan
+- **Project**: Corridor X Pilot
+- **Milestones**: 
+  1. Create specific landing page for Indian engineers
+  2. Provide Shivam with messaging: "This will help me get you a job faster"
+  3. Share collateral with Shivam
 
-- **Positioning paper feedback from Ilsa**: Vrijen hasn't fully processed Ilsa's comments yet; feels they're filled with snark. Needs to extract useful feedback while managing communication dynamic — Owner: Vrijen
-- **Corridor X onboarding collateral**: Shivam needs language/materials to convince his engineers to sign up and understand value proposition — Owner: Vrijen & Logan
-- **Trio call reschedule**: Moving to 10:30 AM going forward, but needs to be confirmed for today after Ilsa work — Owner: Logan
-- **Internal mobility/sourcing positioning**: Need to confirm these sections of positioning papers are acceptable after removing 46% premise — Owner: Vrijen
+### 6. Publish Operation Eyeballs LinkedIn post (rescheduled to Thursday)
+- **Owner**: Vrijen
+- **Priority**: normal
+- **First Step**: Reframe post to highlight interesting companies hiring, not doom/gloom headlines
+- **Estimated**: 10 min
+- **Domain**: Zo
+- **Project**: Operation Eyeballs
+- **Milestones**: 
+  1. Rewrite post with positive/optimistic tone
+  2. Include CTA for founders to get featured
+  3. Include Careerspan plug at the end
+  4. Publish on Thursday
 
-## Commitments Made
-
-- Vrijen committed to fixing the positioning papers (removing 46% premise, retooling matching) before speaking with Ilsa
-- Vrijen committed to working with Logan on one-pager language rather than doing it alone
-- Logan committed to potentially creating a specific landing page for Indian engineers / "US Corporate speak encoder" visual
-- Both committed to shifting Operation Eyeballs tone to be more optimistic and community-focused rather than doom/gloom
-- Vrijen committed to posting Careerspan content today and rescheduling the other LinkedIn post to Thursday
-- Shivam's Corridor X committed to onboarding 15-20 engineers and running jobs through Careerspan
+### 7. Quick call with Shivam to provide guidance and collateral
+- **Owner**: Vrijen, Logan
+- **Priority**: strategic
+- **First Step**: Jump on group WhatsApp call with Shivam to understand his needs and provide collateral
+- **Estimated**: 10 min
+- **Domain**: Careerspan
+- **Project**: Corridor X Pilot
+```

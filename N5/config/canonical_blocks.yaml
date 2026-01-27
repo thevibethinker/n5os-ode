@@ -52,20 +52,36 @@ blocks:
   B05_ACTION_ITEMS:
     category: core
     name: "Action Items & Next Steps"
-    description: "Actionable next steps organized by timeline"
-    output_format: "markdown with checkboxes"
-    typical_length: "300-700 words"
+    description: "Actionable next steps with decomposition metadata - first step, priority, time estimates, domain/project inference, and milestone structure for multi-step items"
+    output_format: "markdown with structured sections"
+    typical_length: "500-1000 words"
     priority: 1
     always_generate: true
     conditional: "if no action items, mark as not_applicable with deletion_reason"
     requires:
       - transcript
     structure:
-      timeline_categories:
-        - "Immediate (This Week)"
-        - "Short-term (Next 2 weeks)"
-        - "Medium-term (Next month)"
-      format: "checklist"
+      item_format: "structured sections per action item"
+      required_fields:
+        - title
+        - owner
+        - priority_bucket
+        - first_step
+        - estimated_minutes
+        - domain_name
+      optional_fields:
+        - project_name
+        - milestones
+      priority_buckets:
+        - "external (commitment to external party)"
+        - "strategic (long-term impact)"
+        - "urgent (time-sensitive)"
+        - "normal (routine)"
+      domains:
+        - "Careerspan"
+        - "Zo"
+        - "Personal"
+        - "Other"
 
   B14_BLURBS_REQUESTED:
     category: core

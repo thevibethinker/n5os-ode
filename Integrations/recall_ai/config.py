@@ -48,7 +48,7 @@ WEBHOOK_PORT = 8846
 
 # Default bot configuration
 DEFAULT_BOT_CONFIG = {
-    "bot_name": "Jared Dunn, Chief of Staff (AI Notetaker)",
+    "bot_name": "Donald Dunn, Chief of Staff (AI Notetaker)",
     "recording_config": {
         "video_mixed_layout": "speaker_view",
         "screenshare_behavior": "overlap",

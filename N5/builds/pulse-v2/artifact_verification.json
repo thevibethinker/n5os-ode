@@ -1,0 +1,133 @@
+{
+  "slug": "pulse-v2",
+  "timestamp": "2026-01-25T00:17:59.490474+00:00",
+  "drops": {
+    "D0.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D0.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.1": {
+      "claimed": [
+        "Skills/pulse/config/pulse_v2_config.json",
+        "N5/pulse/queue_manager.py",
+        "N5/pulse/task_queue.json"
+      ],
+      "verified": [
+        "Skills/pulse/config/pulse_v2_config.json",
+        "N5/pulse/queue_manager.py",
+        "N5/pulse/task_queue.json"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "N5/pulse/interview_manager.py",
+        "N5/pulse/interviews/"
+      ],
+      "verified": [
+        "N5/pulse/interview_manager.py",
+        "N5/pulse/interviews/"
+      ],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.1-plan-generator": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.3": {
+      "claimed": [
+        "N5/pulse/review_manager.py",
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "verified": [
+        "N5/pulse/review_manager.py",
+        "Skills/pulse/scripts/pulse.py"
+      ],
+      "missing": []
+    },
+    "D4.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D4.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D5.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D5.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D5.3": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D6.3": {
+      "claimed": [
+        "N5/prefs/system/build_principles.md",
+        "N5/prefs/operations/pulse_v2_guidelines.md",
+        "N5/prefs/system/persona_routing_contract.md",
+        "N5/prefs/system/model_preferences.md"
+      ],
+      "verified": [
+        "N5/prefs/system/build_principles.md",
+        "N5/prefs/operations/pulse_v2_guidelines.md",
+        "N5/prefs/system/persona_routing_contract.md",
+        "N5/prefs/system/model_preferences.md"
+      ],
+      "missing": []
+    },
+    "D6.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D6.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 11,
+    "verified": 11,
+    "missing": 0,
+    "errors": 0
+  },
+  "passed": true
+}

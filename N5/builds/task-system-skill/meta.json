@@ -1,0 +1,79 @@
+{
+  "slug": "task-system-skill",
+  "title": "Task System Skill Restructure",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 3,
+  "current_stream": 3,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "drops": {
+    "D1.1": {
+      "name": "scaffold-skill-structure",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "migrate-db-layer",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.1": {
+      "name": "context-gatherers",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.2": {
+      "name": "skill-md-reasoning-instructions",
+      "stream": 2,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.3": {
+      "name": "briefing-scripts",
+      "stream": 2,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D3.1": {
+      "name": "thread-close-integration",
+      "stream": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T00:59:45.572469+00:00",
+      "conversation_id": "con_lHtpjCIT1r5yG0GN"
+    },
+    "D3.2": {
+      "name": "integration-test",
+      "stream": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2",
+        "D2.3",
+        "D3.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    }
+  },
+  "currents": {},
+  "completed_at": "2026-01-26T01:07:17.722344Z"
+}

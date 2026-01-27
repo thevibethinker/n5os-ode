@@ -1,0 +1,23 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "timestamp": "2026-01-26T04:12:00Z",
+  "summary": "Successfully implemented pulse jettison command with all required functionality including type auto-detection, slug generation, lineage tracking, and proper build scaffolding",
+  "artifacts": [
+    "Skills/pulse/scripts/pulse.py"
+  ],
+  "decisions": [
+    "Added jettison command as a subparser of the main pulse.py argparse structure",
+    "Implemented type auto-detection using keyword matching for code_build, research, content, and planning",
+    "Used j-<task>-<timestamp> format for slug generation with stopword filtering",
+    "Created basic scaffold_jettison_build function as placeholder for D1.2's implementation",
+    "Set spawn_mode to 'manual' for jettison drops to require manual launch",
+    "Included lineage tracking in meta.json with parent_slug, parent_convo, and moment fields"
+  ],
+  "concerns": [
+    "scaffold_jettison_build is currently a basic implementation - D1.2 should enhance it with proper lineage schema",
+    "Slug conflict resolution works but could be more elegant",
+    "Type auto-detection uses simple keyword matching - could be enhanced with more sophisticated NLP"
+  ],
+  "notes_for_orchestrator": "All success criteria met. Command works as expected with proper argument parsing, type detection, and launch prompt generation. Files are properly scaffolded and ready for manual launch."
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "store-v2",
+  "title": "Store Enhancements: Export Pipeline + UX",
+  "build_type": "code_build",
+  "status": "active",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "created_at": "2026-01-25T03:36:00Z",
+  "drops": {
+    "D1.1": {
+      "name": "skill-export-pipeline-core",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-25T03:49:53.083722+00:00",
+      "conversation_id": "con_la0mHkLhF6JWVAS5"
+    },
+    "D1.2": {
+      "name": "store-catalog-integration",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-25T03:53:59.476012+00:00",
+      "conversation_id": "con_0YU3NxlqU1Xq6MJG"
+    },
+    "T-integration_test": {
+      "stream": 2,
+      "status": "dead",
+      "type": "tidying",
+      "hygiene_check": "integration_test",
+      "auto_fix": false,
+      "priority": 1,
+      "started_at": "2026-01-25T03:59:44.034704+00:00",
+      "conversation_id": "con_jXKRrzd3yZNFGQzt",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 1208 minutes"
+    },
+    "T-reference_check": {
+      "stream": 2,
+      "status": "dead",
+      "type": "tidying",
+      "hygiene_check": "reference_check",
+      "auto_fix": true,
+      "priority": 2,
+      "started_at": "2026-01-25T04:02:13.470736+00:00",
+      "conversation_id": "con_NyOtK0HCALPCAC11",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 1206 minutes"
+    },
+    "T-stub_scan": {
+      "stream": 2,
+      "status": "dead",
+      "type": "tidying",
+      "hygiene_check": "stub_scan",
+      "auto_fix": false,
+      "priority": 3,
+      "started_at": "2026-01-25T04:05:06.175003+00:00",
+      "conversation_id": "con_KmrKITVlDOnID2OH",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 1203 minutes"
+    },
+    "T-dedup": {
+      "stream": 2,
+      "status": "dead",
+      "type": "tidying",
+      "hygiene_check": "dedup",
+      "auto_fix": false,
+      "priority": 4,
+      "started_at": "2026-01-25T04:07:12.644614+00:00",
+      "conversation_id": "con_VMrfMFsn3RmyFD1j",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 1201 minutes"
+    },
+    "T-cleanup": {
+      "stream": 2,
+      "status": "dead",
+      "type": "tidying",
+      "hygiene_check": "cleanup",
+      "auto_fix": true,
+      "priority": 5,
+      "started_at": "2026-01-25T04:09:48.359309+00:00",
+      "conversation_id": "con_q2MjmD2ygcAKd1w0",
+      "marked_dead_at": "2026-01-26T00:07:50.684646+00:00",
+      "dead_reason": "Running for 1198 minutes"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-25T03:45:47.334152+00:00",
+  "tidying_stream": 2,
+  "stage": "tidying",
+  "tidying_started_at": "2026-01-25T03:58:38.836717+00:00"
+}

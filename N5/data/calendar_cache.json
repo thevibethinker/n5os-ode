@@ -1,0 +1,157 @@
+{
+  "cached_at": "2026-01-26T05:13:52.283842",
+  "events": [
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-19T08:15:00-05:00",
+      "end": "2026-01-19T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Chat with Ben (Zo cofounder) (Vrijen Attawar)",
+      "start": "2026-01-19T15:00:00-05:00",
+      "end": "2026-01-19T15:30:00-05:00",
+      "duration_min": 30,
+      "description": "<b>Booked by</b>\nVrijen Attawar\nattawar.v@gmail.com",
+      "is_all_day": false
+    },
+    {
+      "title": "Vrijen / Tiffany",
+      "start": "2026-01-19T15:30:00-05:00",
+      "end": "2026-01-19T16:00:00-05:00",
+      "duration_min": 30,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "BLOCK",
+      "start": "2026-01-19T16:00:00-05:00",
+      "end": "2026-01-19T17:30:00-05:00",
+      "duration_min": 90,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-20T08:15:00-05:00",
+      "end": "2026-01-20T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-21T08:15:00-05:00",
+      "end": "2026-01-21T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-22T08:15:00-05:00",
+      "end": "2026-01-22T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Flight to Raleigh (B6 285)",
+      "start": "2026-01-22T12:00:00-05:00",
+      "end": "2026-01-22T13:50:00-05:00",
+      "duration_min": 110,
+      "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DP1jyW5uk5KTNa6jY5WH821QA8Z1jy7uOI\n",
+      "is_all_day": false
+    },
+    {
+      "title": "NY DMV REAL ID / EDL Appointment",
+      "start": "2026-01-23T08:00:00-05:00",
+      "end": "2026-01-23T08:30:00-05:00",
+      "duration_min": 30,
+      "description": "Reservation Confirmed for REAL ID / Enhanced Driver License (EDL).\n\nConfirmation Number: 849218056\nName: Vrijen Attawar\nPhone: (857) 869-3264\nEmail: attawar.v@gmail.com\nSelected Service: Upgrade to a REAL ID or Enhanced Driver License (EDL)\nLocation: Brooklyn Atlantic Center, 625 Atlantic Avenue, 2nd Floor, Brooklyn, NY 11217\nDate: January 23, 2026\nTime: 8:00 AM (America/New_York)\n\nBarcode PDF on Google Drive (click to view barcode at the counter):\nhttps://drive.google.com/file/d/1Kci9JmKiC48dDIMlFHUZjFwFGF2hoG80/view?usp=drivesdk\n\nOriginal DMV reservation portal:\nhttps://public.nydmvreservation.com/?v=849218056#",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-23T08:15:00-05:00",
+      "end": "2026-01-23T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Block",
+      "start": "2026-01-23T13:30:00-05:00",
+      "end": "2026-01-23T17:15:00-05:00",
+      "duration_min": 225,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-24T08:15:00-05:00",
+      "end": "2026-01-24T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Every week will be better if I make this weekend better",
+      "start": "2026-01-24T10:00:00-05:00",
+      "end": "2026-01-24T10:30:00-05:00",
+      "duration_min": 30,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Flight to LGA (DL 5332)",
+      "start": "2026-01-24T11:50:00-05:00",
+      "end": "2026-01-24T13:33:00-05:00",
+      "duration_min": 103,
+      "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DMaklSsMqUWUzdNFXhwqPk2l1y31FUOiDg\n",
+      "is_all_day": false
+    },
+    {
+      "title": "[REC] Recall Test Meeting",
+      "start": "2026-01-24T21:45:00-05:00",
+      "end": "2026-01-24T22:00:00-05:00",
+      "duration_min": 15,
+      "description": "Testing Recall.ai bot integration.\n\nV-OS Tags: [REC]",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-25T08:15:00-05:00",
+      "end": "2026-01-25T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Daily Centering Task",
+      "start": "2026-01-26T08:15:00-05:00",
+      "end": "2026-01-26T08:30:00-05:00",
+      "duration_min": 15,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Vrijen / Tiffany",
+      "start": "2026-01-26T15:30:00-05:00",
+      "end": "2026-01-26T16:00:00-05:00",
+      "duration_min": 30,
+      "description": "",
+      "is_all_day": false
+    },
+    {
+      "title": "Nylas",
+      "start": "2026-01-26T16:30:00-05:00",
+      "end": "2026-01-26T17:00:00-05:00",
+      "duration_min": 30,
+      "description": "",
+      "is_all_day": false
+    }
+  ]
+}

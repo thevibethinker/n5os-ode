@@ -1,0 +1,10 @@
+{
+  "lessons": [
+    {
+      "text": "interview_manager.py list-all does NOT accept --status flag. Must filter interviews client-side by checking i.get('status') == 'open' in the results list.",
+      "drop": "D2.2",
+      "timestamp": "2026-01-25T01:29:00Z"
+    }
+  ],
+  "version": "1.0"
+}

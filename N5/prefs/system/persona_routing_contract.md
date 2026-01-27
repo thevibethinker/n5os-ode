@@ -1,8 +1,8 @@
 ---
 created: 2025-11-29
-last_edited: 2026-01-15
-version: 1.2
-provenance: con_HYZnpiKQ004nvcO8
+last_edited: 2026-01-24
+version: 1.3
+provenance: con_LhnxuEVVapCNdXle
 ---
 
 # Persona Routing Contract (System-Level)
@@ -234,6 +234,40 @@ Persona routing decisions must never violate these rules; routing exists to help
 - Plan template: `N5/templates/build/plan_template.md`
 - Init script: `N5/scripts/init_build.py`
 - Architect persona: `74e0a70d-398a-4337-bcab-3e5a3a9d805c`
+
+## 7.2 Pulse v2 Build Routing (NEW)
+
+When in Pulse v2 build context (managed by `Skills/pulse/`):
+
+### Intake Phase
+- **Task intake** → Operator (handles queue, classifies task)
+- **Interview responses** → Operator (routes to interview handler)
+
+### Planning Phase
+- **Plan generation** → Architect (creates PLAN.md, defines Streams/Drops)
+- **Plan review** → V (HITL checkpoint, approval required)
+
+### Execution Phase
+- **Build execution** → Pulse orchestrator (automated Drop spawning)
+- **Drop work** → Spawned Zo instances (isolated per-Drop)
+- **Validation** → Code validator + LLM filter (automated)
+
+### Post-Build Phase
+- **Tidying** → Pulse (automated hygiene Drops)
+- **Teaching moments** → VibeTeacher activation (non-blocking)
+- **Build close** → Operator (final commit, cleanup)
+
+### Key Differences from v1
+
+1. **Automated spawning**: Drops spawn via `/zo/ask` by default, not manual thread creation
+2. **Validation gates**: All Deposits pass through code_validator + llm_filter
+3. **Sentinel monitoring**: Background agent monitors build health every 3 min
+4. **Lesson ledger**: Cross-Drop learnings propagate via `BUILD_LESSONS.json`
+
+### Reference
+- Pulse Skill: `Skills/pulse/SKILL.md`
+- Config: `Skills/pulse/config/pulse_v2_config.json`
+- Principles: `N5/prefs/system/build_principles.md`
 
 ## 8. Semantic Memory Integration (Thin Rules, Fat Memory)
 

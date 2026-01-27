@@ -1,0 +1,212 @@
+{
+  "slug": "pulse-v2",
+  "title": "Pulse v2: Research/Content Orchestration with Interview Gates",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 7,
+  "current_stream": 7,
+  "model": "anthropic:claude-opus-4-5-20251101",
+  "created_at": "2026-01-24T21:40:00Z",
+  "provenance": "con_pf8ZLEBtIiuNJzIs",
+  "known_v1_issues": [
+    "Validators not wired into tick loop (D0.1 fixes this)",
+    "Manual stream advancement",
+    "No interview/plan-review stages"
+  ],
+  "drops": {
+    "D0.1": {
+      "name": "Validator Wiring Fix",
+      "stream": 0,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T21:54:33.405189+00:00",
+      "conversation_id": "con_GwCzVZbTgsMhUiad",
+      "completed_at": "2026-01-24T22:00:33.026249+00:00",
+      "validation": {
+        "drop_id": "D0.1",
+        "build_slug": "pulse-v2",
+        "validated_at": "2026-01-24T21:58:32.964408+00:00",
+        "mechanical": {
+          "drop_id": "D0.1",
+          "build_slug": "pulse-v2",
+          "timestamp": "2026-01-24T21:58:33.013666",
+          "files_checked": 0,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": {
+          "error": "timeout"
+        },
+        "verdict": "PASS",
+        "reason": "Passed mechanical and LLM validation"
+      }
+    },
+    "D1.1": {
+      "name": "Queue + Config",
+      "stream": 1,
+      "depends_on": [
+        "D0.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T22:03:18.294759+00:00",
+      "conversation_id": "con_cRHnZsDVO11zEKlL"
+    },
+    "D1.2": {
+      "name": "Interview Storage",
+      "stream": 1,
+      "depends_on": [
+        "D0.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-24T22:07:27.973666+00:00",
+      "conversation_id": "con_UF1TDYhNiGZbFAk7"
+    },
+    "D2.1": {
+      "name": "Multi-Channel Intake",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.2": {
+      "name": "Availability + Seeded Judge",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "spawned_at": "2026-01-24T22:07:54Z"
+    },
+    "D3.1": {
+      "name": "Plan Generator",
+      "stream": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "spawned_at": "2026-01-24T22:40:00Z",
+      "completed_at": "2026-01-24T22:24:02.089282+00:00"
+    },
+    "D3.2": {
+      "name": "Google Drive Outpost",
+      "stream": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "spawned_at": "2026-01-24T22:40:00Z"
+    },
+    "D3.3": {
+      "name": "Review Flow + Pulse.py Stages",
+      "stream": 3,
+      "depends_on": [
+        "D3.1",
+        "D3.2"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete",
+      "completed_at": "2026-01-24T22:30:00Z"
+    },
+    "D4.1": {
+      "name": "Tidying Drop Templates",
+      "stream": 4,
+      "depends_on": [
+        "D3.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "spawned_at": "2026-01-24T23:00:00Z",
+      "started_at": "2026-01-24T22:36:14.875202+00:00",
+      "conversation_id": "con_e4ufkxq0fplasq8B"
+    },
+    "D4.2": {
+      "name": "Tidying Orchestration",
+      "stream": 4,
+      "depends_on": [
+        "D4.1"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete"
+    },
+    "D5.1": {
+      "name": "Telemetry + Requirements Tracker",
+      "stream": 5,
+      "depends_on": [
+        "D4.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D5.2": {
+      "name": "Feedback Extractor",
+      "stream": 5,
+      "depends_on": [
+        "D4.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D5.3": {
+      "name": "Persona Updates + Docs",
+      "stream": 5,
+      "depends_on": [
+        "D5.1",
+        "D5.2"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete"
+    },
+    "D6.1": {
+      "name": "Moment Generator",
+      "stream": 6,
+      "depends_on": [
+        "D5.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D6.2": {
+      "name": "HITL Integration + Final Review",
+      "stream": 6,
+      "depends_on": [
+        "D6.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D6.3": {
+      "name": "Architectural Principles Update",
+      "stream": 6,
+      "depends_on": [
+        "D6.2"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-24T21:43:37.889222+00:00",
+  "drive_sync": {
+    "synced_at": "2026-01-24T22:21:39.446756Z",
+    "folder_path": "Zo/Pulse Builds/pulse-v2",
+    "folder_id": "1GMkqfkTIDvFvS0GXFjtq3Q2rTWOqi0J2",
+    "file_id": "1NnQ-ukF_5B7HtsOTfV-VHjLTwumFeE6p",
+    "shareable_link": "https://drive.google.com/file/d/1NnQ-ukF_5B7HtsOTfV-VHjLTwumFeE6p/view?usp=drivesdk",
+    "sync_failed": false
+  },
+  "finalized_at": "2026-01-25T00:17:59.769872+00:00",
+  "finalization_passed": true
+}

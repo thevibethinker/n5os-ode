@@ -1,0 +1,15 @@
+{
+  "slug": "perf-dashboard-v2",
+  "learnings": [
+    {
+      "text": "Google Calendar API integration via /zo/ask requires ZO_CLIENT_IDENTITY_TOKEN environment variable. This token may not be available in all execution contexts, causing 'NoneType' errors. Consider fallback error handling or alternative calendar access methods for production dashboard.",
+      "source": "manual",
+      "added_at": "2026-01-26T04:14:58.390679+00:00",
+      "tags": [
+        "calendar",
+        "api",
+        "tokens"
+      ]
+    }
+  ]
+}

@@ -1,12 +1,17 @@
-### Action Items
+Generated `file 'Personal/Meetings/2026-01-16_2026-01-16-asher-king-abramson/B05_ACTION_ITEMS.md'` with 10 action items extracted from the transcript:
 
-- Asher King-Abramson: Let's see.
-- Vrijen Attawar: The future is going to be who has the hotline to the hot talent.
-- Vrijen Attawar: Like I actually, I actually think that it's going to flip in a bit because of how hard it is to find good talent.
-- Vrijen Attawar: Talent is just going to get hotter.
-- Vrijen Attawar: And for the rest of us, it's going to be like, you know, playing like, you know, maybe you have like LeBron potential, but you're playing like in some  city that nobody knows or has heard of.
-- Vrijen Attawar: We got one guy that's going to hopefully help us get through to Handshake.
-- Vrijen Attawar: I'm just going to grab some water back in here, yeah.
-- Vrijen Attawar: They're going to write the most banger, like Harvard Business School case studies on LinkedIn's failure in about 10 years.
-- Vrijen Attawar: But yeah, these fuckers are going to stick around.
-- Asher King-Abramson: Let's...
+**Key Categories:**
+- **Careerspan acquisition outreach** (5 items): LHH, Handshake, Jack and Jill, Hiring Cafe exploration
+- **Networking support for Asher** (4 items): Bay Area growth roles, Superdemo, Agave
+- **Future collaboration** (1 item): Career tech founder group + post-exit project with Asher
+
+**Strategic Priority Items:**
+1. LHH outplacement intro (Cameron + Beth)
+2. Handshake acquisition conversation (data pipeline play)
+
+**Timeboxed Quick Wins:**
+- Send Agave/Superdemo role info
+- Coordinate Bay Area intros
+- Schedule February founder meetup
+
+All items include decomposition: owner, priority, 2-minute first step, estimated time, domain, project, and multi-step milestones.

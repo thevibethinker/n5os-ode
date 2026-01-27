@@ -1,0 +1,77 @@
+{
+  "slug": "zo-task-system",
+  "title": "Zo Task System MVP",
+  "build_type": "code_build",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "orchestrator_convo": "con_OaZwIOzCydglh4r4",
+  "drops": {
+    "D1.1": {
+      "name": "task-registry-schema",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "conversation-action-tagging",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.3": {
+      "name": "pre-task-staging-table",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.1": {
+      "name": "thread-close-hooks",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.2": {
+      "name": "morning-briefing-agent",
+      "stream": 2,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.3": {
+      "name": "evening-accountability-agent",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    }
+  },
+  "currents": {},
+  "lessons": [
+    {
+      "source": "CODE_REVIEW",
+      "lesson": "Task status constants must match exactly across modules. action_tagger used 'active' but task_registry uses 'pending'. Always grep for status constants."
+    },
+    {
+      "source": "CODE_REVIEW",
+      "lesson": "When multiple modules define priority ordering (CASE WHEN clauses), ensure they're consistent. Strategic-first is V's preferred order."
+    },
+    {
+      "source": "CODE_REVIEW",
+      "lesson": "When passing dicts to database functions that expect JSON strings, always json.dumps() explicitly."
+    }
+  ]
+}

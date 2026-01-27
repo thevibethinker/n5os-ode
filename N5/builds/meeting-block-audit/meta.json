@@ -1,0 +1,66 @@
+{
+  "slug": "meeting-block-audit",
+  "title": "Meeting Intelligence Block Quality Audit",
+  "build_type": "analysis",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "created_at": "2026-01-26T23:40:00Z",
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_UacHjTFMbOOcRuTX",
+    "moment": "V discovered degraded meeting block quality from new processor",
+    "branched_at": "2026-01-26T23:40:00Z"
+  },
+  "drops": {
+    "D1.1": {
+      "name": "Meeting Block Quality Scan",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T23:32:05.894946+00:00",
+      "conversation_id": "con_LaKgYHOMxcf7ZRfY",
+      "completed_at": "2026-01-26T23:42:29.617862+00:00"
+    },
+    "D1.2": {
+      "name": "Git History + Provenance Trace",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T23:34:20.984852+00:00",
+      "conversation_id": "con_BhteeW3ybgcRCnfE",
+      "completed_at": "2026-01-26T23:43:27.660163+00:00"
+    },
+    "D1.3": {
+      "name": "Processor Fix",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T23:37:30.117160+00:00",
+      "conversation_id": "con_wdRDHFo8ULWcNNoS",
+      "completed_at": "2026-01-26T23:44:12.034401+00:00"
+    },
+    "D2.1": {
+      "name": "Audit Report Compilation",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-01-26T23:46:04.743174+00:00",
+      "conversation_id": "con_40G9pdMxWidWINbg",
+      "completed_at": "2026-01-27T00:50:12.860099+00:00"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-26T23:29:03.241465+00:00",
+  "completed_at": "2026-01-27T00:50:12.862621+00:00"
+}

@@ -34,3 +34,18 @@ bun run server.ts
 
 Registered as user service `wheres-v`.
 
+## Environment Variables
+
+The following environment variables are required for WorkOS AuthKit integration:
+
+- `WORKOS_API_KEY` — Your WorkOS API key (from WorkOS dashboard)
+- `WORKOS_CLIENT_ID` — Your WorkOS Client ID (from WorkOS dashboard)
+- `WORKOS_COOKIE_PASSWORD` — 32-character random string for session encryption
+- `WORKOS_REDIRECT_URI` — OAuth callback URL (e.g., `https://wheres-v.example.com/callback`)
+- `WHERES_V_ALLOWED_EMAILS` — Comma-separated list of authorized emails (case-insensitive)
+
+Generate a 32-character cookie password with:
+```bash
+openssl rand -base64 24 | cut -c1-32
+```
+

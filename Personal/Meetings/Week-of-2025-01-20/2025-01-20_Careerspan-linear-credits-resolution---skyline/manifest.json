@@ -1,0 +1,26 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-25T11:40:00.000000Z",
+  "meeting_folder": "2025-01-20_Careerspan-Linear-Credits-Resolution---Skyline",
+  "meeting_date": "2025-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "last_updated_by": "MG-6_Agent",
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": [],
+  "processed_at": "2026-01-25T11:56:02.339747",
+  "last_updated_at": "2026-01-25T11:56:02.339750",
+  "transition_history": [
+    {
+      "from": "blocks_generated",
+      "to": "processed",
+      "timestamp": "2026-01-25T11:56:02.339752",
+      "agent": "MG-6_Agent",
+      "notes": "Auto-transition after MG-6 processing"
+    }
+  ]
+}

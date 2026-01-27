@@ -1,0 +1,179 @@
+{
+  "tests": [
+    {
+      "name": "Artifact exists: content_library.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/content_library.py"
+      }
+    },
+    {
+      "name": "Artifact exists: emoji.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/emoji.py"
+      }
+    },
+    {
+      "name": "Artifact exists: aar.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/aar.py"
+      }
+    },
+    {
+      "name": "Artifact exists: pii.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/pii.py"
+      }
+    },
+    {
+      "name": "Artifact exists: build-aar.md.template",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/templates/build-aar.md.template"
+      }
+    },
+    {
+      "name": "Artifact exists: SKILL.md",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/thread-close/SKILL.md"
+      }
+    },
+    {
+      "name": "Artifact exists: assess.py",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/prompt-to-skill/scripts/assess.py"
+      }
+    },
+    {
+      "name": "Artifact exists: close.py",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/drop-close/scripts/close.py"
+      }
+    },
+    {
+      "name": "Artifact exists: close.py",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/thread-close/scripts/close.py"
+      }
+    },
+    {
+      "name": "Artifact exists: SKILL.md.template",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/prompt-to-skill/assets/skill-template/SKILL.md.template"
+      }
+    },
+    {
+      "name": "Artifact exists: SKILL.md",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/build-close/SKILL.md"
+      }
+    },
+    {
+      "name": "Artifact exists: SKILL.md",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/drop-close/SKILL.md"
+      }
+    },
+    {
+      "name": "Artifact exists: update_build.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/scripts/update_build.py"
+      }
+    },
+    {
+      "name": "Artifact exists: SKILL.md",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/prompt-to-skill/SKILL.md"
+      }
+    },
+    {
+      "name": "Artifact exists: core.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/core.py"
+      }
+    },
+    {
+      "name": "Artifact exists: __init__.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/__init__.py"
+      }
+    },
+    {
+      "name": "Artifact exists: tier3-aar.md.template",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/templates/tier3-aar.md.template"
+      }
+    },
+    {
+      "name": "Artifact exists: scaffold.py",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/prompt-to-skill/scripts/scaffold.py"
+      }
+    },
+    {
+      "name": "Artifact exists: Close Conversation.prompt.md.archived-2026-01-24",
+      "type": "file_exists",
+      "config": {
+        "path": "Prompts/Archive/Close Conversation.prompt.md.archived-2026-01-24"
+      }
+    },
+    {
+      "name": "Artifact exists: close.py",
+      "type": "file_exists",
+      "config": {
+        "path": "Skills/build-close/scripts/close.py"
+      }
+    },
+    {
+      "name": "Artifact exists: build_worker_complete.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/scripts/build_worker_complete.py"
+      }
+    },
+    {
+      "name": "Artifact exists: positions.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/positions.py"
+      }
+    },
+    {
+      "name": "Artifact exists: Close Conversation.prompt.md",
+      "type": "file_exists",
+      "config": {
+        "path": "Prompts/Close Conversation.prompt.md"
+      }
+    },
+    {
+      "name": "Artifact exists: guards.py",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/guards.py"
+      }
+    },
+    {
+      "name": "Artifact exists: tier1.md.template",
+      "type": "file_exists",
+      "config": {
+        "path": "N5/lib/close/templates/tier1.md.template"
+      }
+    }
+  ]
+}

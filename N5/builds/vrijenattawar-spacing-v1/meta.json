@@ -1,0 +1,31 @@
+{
+  "slug": "vrijenattawar-spacing-v1",
+  "title": "vrijenattawar.com Spacing & Mobile Responsiveness",
+  "build_type": "code_build",
+  "status": "complete",
+  "created": "2026-01-25T00:10:00Z",
+  "completed": "2026-01-25T00:16:00Z",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "google:gemini-2.5-flash",
+  "target_file": "Sites/vrijenattawar-staging/src/pages/PersonalLanding.tsx",
+  "drops": {
+    "D1.1": {
+      "name": "Spacing & Name Stacking",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "brief": "drops/D1.1-spacing-name-stacking.md"
+    },
+    "D2.1": {
+      "name": "Button Grid & Footer Anchoring",
+      "stream": 2,
+      "depends_on": ["D1.1"],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "brief": "drops/D2.1-button-grid-footer.md"
+    }
+  },
+  "currents": {}
+}

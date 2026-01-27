@@ -1,0 +1,29 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-01-25T11:05:00Z",
+  "meeting_folder": "2025-01-20_Careerspan-India-Engineer-Recruitment-Strategy---S_[M]",
+  "meeting_date": "2025-01-20",
+  "status": "processed",
+  "blocks_generated": {
+    "stakeholder_intelligence": true,
+    "brief": true,
+    "transcript_processed": true
+  },
+  "zo_take_heed_count": 0,
+  "zo_take_heed_summary": "No Zo Take Heed cues detected in this transcript",
+  "last_updated_by": "MG-6_Agent",
+  "last_updated": "2026-01-25T11:45:00Z",
+  "processed_at": "2026-01-25T11:56:02.340288",
+  "last_updated_at": "2026-01-25T11:56:02.340291",
+  "transition_history": [
+    {
+      "from": "blocks_generated",
+      "to": "processed",
+      "timestamp": "2026-01-25T11:56:02.340292",
+      "agent": "MG-6_Agent",
+      "notes": "Auto-transition after MG-6 processing"
+    }
+  ],
+  "crm_synced": true,
+  "crm_sync_timestamp": "2026-01-25T15:10:41.643824"
+}

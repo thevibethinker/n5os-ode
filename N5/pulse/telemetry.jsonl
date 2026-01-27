@@ -1,0 +1,1 @@
+{"timestamp": "2026-01-24T22:46:16.776215Z", "event_type": "error", "data": {"message": "Test error"}, "context": {"persona_id": null, "persona_name": "Builder", "model_name": null, "used_default_model": null, "build_slug": "test-build", "conversation_id": null, "drop_id": null}}

@@ -1,400 +1,571 @@
 #!/usr/bin/env python3
 """
-Enhanced Contradiction Detection
+Contradiction Detector CLI for N5 Learnings
 
-Semantic analysis of contradictions across strategic partner sessions.
+Detects contradictions between new learnings and existing ones using:
+1. Semantic similarity (sentence-transformers)
+2. Pattern-based contradiction signals
+3. LLM verification for ambiguous cases
 
-Features:
-- Cross-session contradiction matching
-- Logical inconsistency detection
-- Resolution tracking
-- Integration with weekly review
+Usage:
+    python3 contradiction_detector.py check "new learning text"
+    python3 contradiction_detector.py scan
+    python3 contradiction_detector.py scan --build <slug>
+    python3 contradiction_detector.py compare "text A" "text B"
 """
 
+import argparse
 import json
-import logging
-import re
-from pathlib import Path
+import os
+import sys
+from typing import Dict, List, Tuple, Optional
 from datetime import datetime
-from typing import Dict, List, Optional, Any, Tuple
-from collections import defaultdict
+import requests
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)sZ %(levelname)s %(message)s',
-    datefmt='%Y-%m-%dT%H:%M:%S'
-)
-logger = logging.getLogger(__name__)
-
-# Paths
-WORKSPACE = Path("/home/workspace")
-SESSIONS_DIR = WORKSPACE / "N5/sessions/strategic-partner"
-CONTRADICTIONS_DIR = SESSIONS_DIR / "contradictions"
-CONTRADICTIONS_DB = CONTRADICTIONS_DIR / "contradictions.jsonl"
-
-# Create directories
-CONTRADICTIONS_DIR.mkdir(parents=True, exist_ok=True)
+# Learnings paths
+SYSTEM_LEARNINGS_PATH = "/home/workspace/N5/learnings/SYSTEM_LEARNINGS.json"
+BUILDS_PATH = "/home/workspace/N5/builds"
 
 
 class ContradictionDetector:
-    """
-    Detects and tracks contradictions across strategic sessions
-    """
+    """Detects contradictions in learnings using semantic similarity and pattern matching."""
     
-    def __init__(self):
-        self.contradictions = []
-        self.contradiction_patterns = self._init_patterns()
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
+        """Initialize detector with sentence transformer model."""
+        from sentence_transformers import SentenceTransformer
+        self.model = SentenceTransformer(model_name)
         
-        logger.info("Contradiction Detector initialized")
+    def get_embedding(self, text: str) -> List[float]:
+        """Get sentence embedding for text."""
+        return self.model.encode(text)
     
-    def _init_patterns(self) -> List[Dict]:
-        """
-        Initialize contradiction detection patterns
-        
-        Common logical contradictions to detect
-        """
-        return [
-            {
-                'pattern_id': 'goal_mismatch',
-                'description': 'Stated goal conflicts with stated approach',
-                'keywords': [
-                    (['enterprise', 'corporate', 'b2b'], ['smb', 'small business', 'b2c']),
-                    (['speed', 'fast', 'quick'], ['quality', 'thorough', 'deep']),
-                    (['growth', 'scale', 'expand'], ['focus', 'niche', 'specialized'])
-                ]
-            },
-            {
-                'pattern_id': 'resource_mismatch',
-                'description': 'Resource constraints conflict with ambition',
-                'keywords': [
-                    (['team of 4', 'small team', 'limited'], ['enterprise', 'multiple products', 'expand']),
-                    (['3 months', 'short timeline'], ['major pivot', 'rebuild', 'significant change'])
-                ]
-            },
-            {
-                'pattern_id': 'priority_conflict',
-                'description': 'Multiple stated priorities that compete for same resources',
-                'keywords': [
-                    (['priority', 'urgent', 'critical'], ['also priority', 'equally important'])
-                ]
-            },
-            {
-                'pattern_id': 'value_prop_tension',
-                'description': 'Value proposition elements that conflict',
-                'keywords': [
-                    (['trust', 'credibility', 'verification'], ['speed', 'efficiency', 'fast']),
-                    (['customization', 'personalized'], ['scalable', 'automated', 'standardized'])
-                ]
-            }
-        ]
+    def compute_similarity(self, text1: str, text2: str) -> float:
+        """Compute cosine similarity between two texts."""
+        import numpy as np
+        emb1 = self.get_embedding(text1)
+        emb2 = self.get_embedding(text2)
+        return float(np.dot(emb1, emb2) / (np.linalg.norm(emb1) * np.linalg.norm(emb2)))
     
-    def extract_statements_from_session(self, session_file: Path) -> List[Dict]:
-        """Extract key statements from session for contradiction analysis"""
-        statements = []
-        
-        try:
-            content = session_file.read_text(encoding='utf-8')
-            
-            # Parse session date
-            filename = session_file.stem
-            date_str = filename.split('-session-')[0]
-            session_date = datetime.strptime(date_str, "%Y-%m-%d")
-            
-            # Extract statements (simple approach for MVP)
-            # Look for key phrases: "should", "need to", "priority is", "goal is"
-            
-            lines = content.split('\n')
-            for i, line in enumerate(lines):
-                line = line.strip()
-                
-                # Look for assertion patterns
-                if any(phrase in line.lower() for phrase in [
-                    'should', 'need to', 'priority', 'goal', 'must',
-                    'focus on', 'important', 'critical'
-                ]):
-                    statements.append({
-                        'text': line,
-                        'session_file': str(session_file),
-                        'session_date': session_date.isoformat(),
-                        'line_number': i + 1
-                    })
-            
-            logger.info(f"  {session_file.name}: {len(statements)} statements")
-            
-            return statements
-        
-        except Exception as e:
-            logger.error(f"Failed to extract statements from {session_file}: {e}")
+    def load_system_learnings(self) -> List[Dict]:
+        """Load all system learnings."""
+        if not os.path.exists(SYSTEM_LEARNINGS_PATH):
             return []
-    
-    def detect_pattern_contradictions(self, 
-                                     statements: List[Dict]) -> List[Dict]:
-        """
-        Detect pattern-based contradictions
         
-        Checks for known contradiction patterns across statements
+        with open(SYSTEM_LEARNINGS_PATH, 'r') as f:
+            data = json.load(f)
+            return data.get('learnings', [])
+    
+    def load_build_learnings(self, build_slug: str) -> List[Dict]:
+        """Load learnings from a specific build ledger."""
+        ledger_path = os.path.join(BUILDS_PATH, build_slug, "BUILD_LESSONS.json")
+        if not os.path.exists(ledger_path):
+            return []
+        
+        with open(ledger_path, 'r') as f:
+            data = json.load(f)
+            return data.get('learnings', [])
+    
+    def detect_contradiction_patterns(self, text1: str, text2: str) -> List[str]:
+        """Detect pattern-based contradiction signals."""
+        signals = []
+        t1_lower = text1.lower()
+        t2_lower = text2.lower()
+        
+        # Single-sided negation detection (high similarity + negation in one but not the other)
+        negation_words = ["not", "never", "no", "cannot", "can't", "doesn't", "don't", "won't", "isn't", "aren't", "shouldn't", "mustn't"]
+        
+        has_negation_1 = any(neg in t1_lower for neg in negation_words)
+        has_negation_2 = any(neg in t2_lower for neg in negation_words)
+        
+        # If one has negation and the other doesn't, signal potential contradiction
+        if has_negation_1 and not has_negation_2:
+            negations = [neg for neg in negation_words if neg in t1_lower]
+            signals.append(f"Single-sided negation: '{', '.join(negations)}' in learning A but not B")
+        elif has_negation_2 and not has_negation_1:
+            negations = [neg for neg in negation_words if neg in t2_lower]
+            signals.append(f"Single-sided negation: '{', '.join(negations)}' in learning B but not A")
+        
+        # Paired negation patterns
+        negation_pairs = [
+            ("does not", "does"),
+            ("doesn't", "does"),
+            ("do not", "do"),
+            ("don't", "do"),
+            ("cannot", "can"),
+            ("can't", "can"),
+            ("will not", "will"),
+            ("won't", "will"),
+            ("is not", "is"),
+            ("isn't", "is"),
+            ("are not", "are"),
+            ("aren't", "are"),
+            ("should not", "should"),
+            ("shouldn't", "should"),
+            ("must not", "must"),
+            ("never", "always"),
+            ("optional", "required"),
+            ("disabled", "enabled"),
+            ("off", "on"),
+            ("false", "true"),
+            ("no", "yes"),
+            ("require", "allow"),
+            ("requires", "allows"),
+            ("required", "allowed"),
+            ("must", "can"),
+            ("mandatory", "optional"),
+            ("forbidden", "permitted"),
+        ]
+        
+        for neg, aff in negation_pairs:
+            if neg in t1_lower and aff in t2_lower:
+                signals.append(f"Negation: '{neg}' in learning A vs '{aff}' in learning B")
+            elif neg in t2_lower and aff in t1_lower:
+                signals.append(f"Negation: '{neg}' in learning B vs '{aff}' in learning A")
+        
+        # Opposite directional words
+        opposite_pairs = [
+            ("increase", "decrease"),
+            ("add", "remove"),
+            ("include", "exclude"),
+            ("before", "after"),
+            ("first", "last"),
+            ("start", "stop"),
+            ("enable", "disable"),
+            ("allow", "block"),
+            ("permit", "deny"),
+        ]
+        
+        for word1, word2 in opposite_pairs:
+            if word1 in t1_lower and word2 in t2_lower:
+                signals.append(f"Opposite: '{word1}' in learning A vs '{word2}' in learning B")
+            elif word1 in t2_lower and word2 in t1_lower:
+                signals.append(f"Opposite: '{word2}' in learning A vs '{word1}' in learning B")
+        
+        # Number/time contradictions (basic detection)
+        import re
+        numbers1 = re.findall(r'\d+(?:\.\d+)?(?:\s*(?:min|hour|second|sec|hr|day|week|month|year))?', text1)
+        numbers2 = re.findall(r'\d+(?:\.\d+)?(?:\s*(?:min|hour|second|sec|hr|day|week|month|year))?', text2)
+        
+        if numbers1 and numbers2 and len(numbers1) == len(numbers2) == 1:
+            # If both have different numbers, might be contradiction
+            try:
+                num1 = float(re.search(r'\d+\.?\d*', numbers1[0]).group())
+                num2 = float(re.search(r'\d+\.?\d*', numbers2[0]).group())
+                if abs(num1 - num2) > (num1 * 0.5):  # More than 50% difference
+                    signals.append(f"Number mismatch: '{numbers1[0]}' vs '{numbers2[0]}'")
+            except:
+                pass
+        
+        return signals
+    
+    def llm_verify_contradiction(self, text1: str, text2: str) -> Dict[str, any]:
+        """Use LLM to verify if two statements contradict each other."""
+        try:
+            token = os.environ.get('ZO_CLIENT_IDENTITY_TOKEN')
+            if not token:
+                return {"verified": False, "reason": "No ZO_CLIENT_IDENTITY_TOKEN"}
+            
+            prompt = f"""Analyze these two statements and determine if they contradict each other.
+
+Statement A: "{text1}"
+Statement B: "{text2}"
+
+Respond with exactly one of these words:
+- CONTRADICT: The statements clearly contradict each other
+- CONSISTENT: The statements do not contradict (they can both be true or are unrelated)
+- AMBIGUOUS: More context is needed to determine if they contradict
+
+Respond with only the word, nothing else."""
+            
+            response = requests.post(
+                "https://api.zo.computer/zo/ask",
+                headers={
+                    "authorization": token,
+                    "content-type": "application/json"
+                },
+                json={"input": prompt}
+            )
+            
+            result = response.json()
+            llm_output = result.get("output", "").strip().upper()
+            
+            if "CONTRADICT" in llm_output:
+                return {"verified": True, "llm_result": "CONTRADICT"}
+            elif "CONSISTENT" in llm_output:
+                return {"verified": False, "llm_result": "CONSISTENT"}
+            else:
+                return {"verified": False, "llm_result": "AMBIGUOUS"}
+                
+        except Exception as e:
+            return {"verified": False, "error": str(e)}
+    
+    def find_contradictions(
+        self,
+        new_text: str,
+        learnings: List[Dict],
+        use_llm: bool = True,
+        similarity_threshold: float = 0.7
+    ) -> List[Dict]:
+        """
+        Find contradictions between new text and existing learnings.
+        
+        Args:
+            new_text: The new learning text to check
+            learnings: List of existing learning dicts
+            use_llm: Whether to use LLM verification for high-similarity pairs
+            similarity_threshold: Minimum similarity to consider learnings related
+        
+        Returns:
+            List of contradiction findings
         """
         contradictions = []
         
-        # Check each pattern
-        for pattern in self.contradiction_patterns:
-            for keyword_pair in pattern['keywords']:
-                if len(keyword_pair) != 2:
+        for idx, learning in enumerate(learnings):
+            existing_text = learning.get('text', '')
+            if not existing_text:
+                continue
+            
+            # Skip if learning is already invalidated
+            if learning.get('status') == 'invalidated':
+                continue
+            
+            # Compute semantic similarity
+            similarity = self.compute_similarity(new_text, existing_text)
+            
+            # Only check for contradiction if similarity is above threshold
+            if similarity < similarity_threshold:
+                continue
+            
+            # Detect pattern-based signals
+            signals = self.detect_contradiction_patterns(new_text, existing_text)
+            
+            # If no patterns found but high similarity, use LLM verification
+            contradiction_confidence = "LOW"
+            llm_result = None
+            
+            if not signals and similarity > 0.85 and use_llm:
+                llm_verify = self.llm_verify_contradiction(new_text, existing_text)
+                if llm_verify.get("verified"):
+                    signals.append(f"LLM verified contradiction")
+                    contradiction_confidence = "HIGH"
+                    llm_result = llm_verify.get("llm_result")
+                elif llm_verify.get("llm_result") == "AMBIGUOUS":
+                    contradiction_confidence = "MEDIUM"
+            elif signals:
+                # Have pattern signals
+                if similarity > 0.85:
+                    contradiction_confidence = "HIGH"
+                elif similarity > 0.75:
+                    contradiction_confidence = "MEDIUM"
+                else:
+                    contradiction_confidence = "LOW"
+            
+            # If we have contradiction signals or high LLM verification
+            if signals or (llm_result == "CONTRADICT"):
+                contradictions.append({
+                    "index": idx,
+                    "learning": existing_text,
+                    "similarity": similarity,
+                    "contradiction_confidence": contradiction_confidence,
+                    "signals": signals,
+                    "llm_result": llm_result,
+                    "added_at": learning.get('added_at'),
+                    "origin_build": learning.get('origin_build'),
+                    "status": learning.get('status')
+                })
+        
+        return contradictions
+    
+    def scan_internal_contradictions(self, learnings: List[Dict], use_llm: bool = False) -> List[Tuple[int, int, Dict]]:
+        """
+        Scan for internal contradictions within a set of learnings.
+        
+        Returns:
+            List of (index_a, index_b, contradiction_info) tuples
+        """
+        contradictions = []
+        
+        for i in range(len(learnings)):
+            for j in range(i + 1, len(learnings)):
+                text1 = learnings[i].get('text', '')
+                text2 = learnings[j].get('text', '')
+                
+                if not text1 or not text2:
                     continue
                 
-                keywords_a, keywords_b = keyword_pair
+                # Skip if either is invalidated
+                if learnings[i].get('status') == 'invalidated' or learnings[j].get('status') == 'invalidated':
+                    continue
                 
-                # Find statements with keywords A
-                statements_a = [
-                    s for s in statements
-                    if any(kw in s['text'].lower() for kw in keywords_a)
-                ]
+                similarity = self.compute_similarity(text1, text2)
                 
-                # Find statements with keywords B
-                statements_b = [
-                    s for s in statements
-                    if any(kw in s['text'].lower() for kw in keywords_b)
-                ]
+                if similarity < 0.7:
+                    continue
                 
-                # If both exist, potential contradiction
-                if statements_a and statements_b:
-                    # Check if from different sessions (cross-session)
-                    sessions_a = set(s['session_date'] for s in statements_a)
-                    sessions_b = set(s['session_date'] for s in statements_b)
+                signals = self.detect_contradiction_patterns(text1, text2)
+                
+                if signals or similarity > 0.9:
+                    contradiction_confidence = "HIGH" if similarity > 0.85 else "MEDIUM"
                     
-                    if sessions_a != sessions_b or len(statements_a) + len(statements_b) > 2:
-                        contradiction = {
-                            'pattern_id': pattern['pattern_id'],
-                            'description': pattern['description'],
-                            'keywords_a': keywords_a,
-                            'keywords_b': keywords_b,
-                            'statements_a': statements_a[:2],  # Sample
-                            'statements_b': statements_b[:2],  # Sample
-                            'sessions_involved': list(sessions_a | sessions_b),
-                            'detected_date': datetime.now().isoformat(),
-                            'status': 'open',
-                            'priority': self._assess_priority(len(sessions_a | sessions_b), len(statements_a) + len(statements_b))
-                        }
-                        contradictions.append(contradiction)
-        
-        logger.info(f"Detected {len(contradictions)} pattern contradictions")
+                    contradictions.append({
+                        "index_a": i,
+                        "index_b": j,
+                        "text_a": text1,
+                        "text_b": text2,
+                        "similarity": similarity,
+                        "contradiction_confidence": contradiction_confidence,
+                        "signals": signals,
+                        "added_at_a": learnings[i].get('added_at'),
+                        "added_at_b": learnings[j].get('added_at'),
+                        "origin_build_a": learnings[i].get('origin_build'),
+                        "origin_build_b": learnings[j].get('origin_build')
+                    })
         
         return contradictions
     
-    def detect_direct_contradictions(self, statements: List[Dict]) -> List[Dict]:
-        """
-        Detect direct logical contradictions
+    def format_contradiction_report(self, new_text: str, contradictions: List[Dict]) -> str:
+        """Format contradiction findings as a readable report."""
+        lines = []
+        lines.append("=" * 60)
+        lines.append("CONTRADICTION CHECK")
+        lines.append("=" * 60)
+        lines.append("")
+        lines.append(f"New Learning: \"{new_text}\"")
+        lines.append("")
         
-        Looks for opposing statements about same topic
-        """
-        contradictions = []
+        if not contradictions:
+            lines.append("✓ No contradictions found")
+            return "\n".join(lines)
         
-        # Group statements by topic (simple keyword clustering)
-        topic_statements = defaultdict(list)
+        lines.append(f"⚠️  FOUND {len(contradictions)} POTENTIAL CONTRADICTION(S)")
+        lines.append("")
         
-        for stmt in statements:
-            # Extract topic keywords (simple approach)
-            text_lower = stmt['text'].lower()
+        for c in contradictions:
+            lines.append(f"Existing Learning (index {c['index']}, added {c.get('added_at', 'unknown')}):")
+            lines.append(f"  \"{c['learning']}\"")
+            lines.append("")
+            lines.append(f"Similarity: {c['similarity']:.2f}")
+            lines.append(f"Contradiction Confidence: {c['contradiction_confidence']}")
             
-            # Check for common topics
-            topics = []
-            if 'pricing' in text_lower or 'price' in text_lower:
-                topics.append('pricing')
-            if 'enterprise' in text_lower or 'corporate' in text_lower:
-                topics.append('enterprise')
-            if 'product' in text_lower or 'feature' in text_lower:
-                topics.append('product')
-            if 'partnership' in text_lower or 'partner' in text_lower:
-                topics.append('partnership')
+            if c['origin_build']:
+                lines.append(f"Origin Build: {c['origin_build']}")
             
-            for topic in topics:
-                topic_statements[topic].append(stmt)
-        
-        # Check for opposing sentiments within same topic
-        for topic, stmts in topic_statements.items():
-            if len(stmts) >= 2:
-                # Simple sentiment check (production would be more sophisticated)
-                positive = [s for s in stmts if any(w in s['text'].lower() for w in ['should', 'yes', 'good', 'proceed'])]
-                negative = [s for s in stmts if any(w in s['text'].lower() for w in ['concern', 'risk', 'but', 'however'])]
-                
-                if positive and negative:
-                    contradiction = {
-                        'type': 'direct',
-                        'topic': topic,
-                        'positive_statements': positive[:2],
-                        'negative_statements': negative[:2],
-                        'sessions_involved': list(set([s['session_date'] for s in stmts])),
-                        'detected_date': datetime.now().isoformat(),
-                        'status': 'open',
-                        'priority': 'high' if len(set([s['session_date'] for s in stmts])) > 2 else 'medium'
-                    }
-                    contradictions.append(contradiction)
-        
-        logger.info(f"Detected {len(contradictions)} direct contradictions")
-        
-        return contradictions
-    
-    def _assess_priority(self, session_count: int, statement_count: int) -> str:
-        """Assess contradiction priority"""
-        if session_count >= 3 or statement_count >= 8:
-            return 'high'
-        elif session_count >= 2 or statement_count >= 4:
-            return 'medium'
-        else:
-            return 'low'
-    
-    def load_existing_contradictions(self) -> List[Dict]:
-        """Load previously detected contradictions"""
-        contradictions = []
-        
-        if not CONTRADICTIONS_DB.exists():
-            return contradictions
-        
-        try:
-            with open(CONTRADICTIONS_DB, 'r', encoding='utf-8') as f:
-                for line in f:
-                    line = line.strip()
-                    if line:
-                        contradictions.append(json.loads(line))
+            lines.append("")
+            lines.append("Signals:")
+            for signal in c['signals']:
+                lines.append(f"  - {signal}")
             
-            logger.info(f"Loaded {len(contradictions)} existing contradictions")
-            return contradictions
-        
-        except Exception as e:
-            logger.error(f"Failed to load contradictions: {e}")
-            return []
-    
-    def save_contradictions(self, contradictions: List[Dict]):
-        """Save detected contradictions"""
-        try:
-            with open(CONTRADICTIONS_DB, 'w', encoding='utf-8') as f:
-                for contradiction in contradictions:
-                    f.write(json.dumps(contradiction) + '\n')
+            if c['llm_result']:
+                lines.append(f"  - LLM Result: {c['llm_result']}")
             
-            logger.info(f"✓ Saved {len(contradictions)} contradictions to {CONTRADICTIONS_DB}")
+            lines.append("")
+            lines.append("Recommendation:")
+            lines.append("  1. Verify which learning is correct")
+            lines.append("  2. Use `pulse_learnings.py invalidate <index>` on the incorrect one")
+            lines.append("  3. Or use `pulse_learnings.py dispute <index>` if context-dependent")
+            lines.append("")
+            lines.append("-" * 60)
+            lines.append("")
         
-        except Exception as e:
-            logger.error(f"Failed to save contradictions: {e}")
+        return "\n".join(lines)
+
+
+def check_before_adding(new_text: str, tags: list = None) -> dict:
+    """
+    Check for contradictions before adding a new learning.
     
-    def analyze_sessions(self, session_files: List[Path]) -> Dict:
-        """
-        Analyze sessions for contradictions
-        
-        Returns detected contradictions
-        """
-        logger.info("=" * 70)
-        logger.info("CONTRADICTION DETECTION")
-        logger.info("=" * 70)
-        
-        # Extract statements from all sessions
-        all_statements = []
-        for session_file in session_files:
-            statements = self.extract_statements_from_session(session_file)
-            all_statements.extend(statements)
-        
-        logger.info(f"Extracted {len(all_statements)} statements from {len(session_files)} sessions")
-        
-        # Detect pattern-based contradictions
-        pattern_contradictions = self.detect_pattern_contradictions(all_statements)
-        
-        # Detect direct contradictions
-        direct_contradictions = self.detect_direct_contradictions(all_statements)
-        
-        # Combine and deduplicate
-        all_contradictions = pattern_contradictions + direct_contradictions
-        
-        # Load existing and merge
-        existing = self.load_existing_contradictions()
-        
-        # Simple deduplication (production would be smarter)
-        # For MVP, just append new ones
-        for contradiction in all_contradictions:
-            contradiction['id'] = f"C{len(existing) + 1}"
-            existing.append(contradiction)
-        
-        # Save
-        self.save_contradictions(existing)
-        
-        logger.info("=" * 70)
-        logger.info("✅ CONTRADICTION DETECTION COMPLETE")
-        logger.info("=" * 70)
-        logger.info(f"New contradictions: {len(all_contradictions)}")
-        logger.info(f"Total tracked: {len(existing)}")
-        
+    This is the integration function for use by other scripts.
+    
+    Args:
+        new_text: The new learning text to check
+        tags: Optional tags for the learning (not used in detection)
+    
+    Returns:
+        {
+            "can_add": bool,
+            "contradictions": [...],
+            "action_required": "none|review|resolve"
+        }
+    """
+    detector = ContradictionDetector()
+    learnings = detector.load_system_learnings()
+    
+    contradictions = detector.find_contradictions(new_text, learnings)
+    
+    # Filter by confidence threshold
+    high_conf_contradictions = [c for c in contradictions if c['contradiction_confidence'] == 'HIGH']
+    med_conf_contradictions = [c for c in contradictions if c['contradiction_confidence'] == 'MEDIUM']
+    
+    if high_conf_contradictions:
         return {
-            'new_contradictions': all_contradictions,
-            'total_contradictions': existing,
-            'count_new': len(all_contradictions),
-            'count_total': len(existing)
+            "can_add": False,
+            "contradictions": high_conf_contradictions,
+            "action_required": "resolve",
+            "reason": "High confidence contradictions found"
+        }
+    elif med_conf_contradictions:
+        return {
+            "can_add": False,
+            "contradictions": med_conf_contradictions,
+            "action_required": "review",
+            "reason": "Medium confidence contradictions found"
+        }
+    else:
+        return {
+            "can_add": True,
+            "contradictions": [],
+            "action_required": "none",
+            "reason": "No contradictions found"
         }
 
 
 def main():
-    """CLI entry point"""
-    import argparse
-    
     parser = argparse.ArgumentParser(
-        description="Contradiction Detector - Enhanced semantic analysis"
+        description="Detect contradictions in N5 learnings",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Check if new learning contradicts existing
+  python3 contradiction_detector.py check "The API allows unauthenticated access"
+  
+  # Scan all system learnings for internal contradictions
+  python3 contradiction_detector.py scan
+  
+  # Scan specific build learnings
+  python3 contradiction_detector.py scan --build watts-principles
+  
+  # Compare two specific texts
+  python3 contradiction_detector.py compare "API requires auth" "No auth needed"
+  
+  # Integration function (for scripts):
+  from contradiction_detector import check_before_adding
+  result = check_before_adding("new learning text")
+  if not result["can_add"]:
+      print(f"Cannot add: {result['reason']}")
+        """
     )
     
-    parser.add_argument('--days', type=int, default=7,
-                       help='Number of days to analyze (default: 7)')
-    parser.add_argument('--show-all', action='store_true',
-                       help='Show all contradictions (not just new)')
+    subparsers = parser.add_subparsers(dest='command', help='Available commands')
+    
+    # Check command
+    check_parser = subparsers.add_parser('check', help='Check new learning against existing')
+    check_parser.add_argument('text', help='New learning text to check')
+    check_parser.add_argument('--no-llm', action='store_true', help='Skip LLM verification')
+    check_parser.add_argument('--threshold', type=float, default=0.7, 
+                             help='Similarity threshold (default: 0.7)')
+    
+    # Scan command
+    scan_parser = subparsers.add_parser('scan', help='Scan for internal contradictions')
+    scan_parser.add_argument('--build', help='Build slug to scan (default: all system learnings)')
+    scan_parser.add_argument('--no-llm', action='store_true', help='Skip LLM verification')
+    
+    # Compare command
+    compare_parser = subparsers.add_parser('compare', help='Compare two texts directly')
+    compare_parser.add_argument('text1', help='First text')
+    compare_parser.add_argument('text2', help='Second text')
+    compare_parser.add_argument('--no-llm', action='store_true', help='Skip LLM verification')
     
     args = parser.parse_args()
     
-    # Find sessions in window
-    from datetime import timedelta
-    end_date = datetime.now()
-    start_date = end_date - timedelta(days=args.days)
+    if not args.command:
+        parser.print_help()
+        return
     
-    sessions = []
-    if SESSIONS_DIR.exists():
-        for session_file in SESSIONS_DIR.glob("*-session-*.md"):
-            try:
-                filename = session_file.stem
-                date_str = filename.split('-session-')[0]
-                session_date = datetime.strptime(date_str, "%Y-%m-%d")
-                
-                if start_date <= session_date <= end_date:
-                    sessions.append(session_file)
-            except:
-                continue
-    
-    logger.info(f"Analyzing {len(sessions)} sessions from past {args.days} days")
-    
-    # Run detection
     detector = ContradictionDetector()
-    results = detector.analyze_sessions(sessions)
     
-    # Print results
-    print(f"\n{'='*70}")
-    print("CONTRADICTION DETECTION RESULTS")
-    print(f"{'='*70}")
-    print(f"New contradictions: {results['count_new']}")
-    print(f"Total tracked: {results['count_total']}")
-    
-    contradictions_to_show = results['total_contradictions'] if args.show_all else results['new_contradictions']
-    
-    if contradictions_to_show:
-        print(f"\nContradictions (showing {len(contradictions_to_show)}):")
+    if args.command == 'check':
+        # Load system learnings
+        learnings = detector.load_system_learnings()
         
-        for contradiction in contradictions_to_show:
-            print(f"\n[{contradiction.get('id', 'NEW')}] {contradiction.get('description', contradiction.get('topic', 'Contradiction'))}")
-            print(f"  Priority: {contradiction.get('priority', 'unknown').upper()}")
-            print(f"  Status: {contradiction.get('status', 'open')}")
-            print(f"  Sessions: {len(contradiction.get('sessions_involved', []))}")
+        if not learnings:
+            print("No existing learnings found")
+            return
+        
+        # Find contradictions
+        contradictions = detector.find_contradictions(
+            args.text,
+            learnings,
+            use_llm=not args.no_llm,
+            similarity_threshold=args.threshold
+        )
+        
+        # Format and print report
+        report = detector.format_contradiction_report(args.text, contradictions)
+        print(report)
+        
+    elif args.command == 'scan':
+        if args.build:
+            # Load specific build learnings
+            learnings = detector.load_build_learnings(args.build)
+            print(f"Scanning build '{args.build}' learnings...")
+        else:
+            # Load system learnings
+            learnings = detector.load_system_learnings()
+            print("Scanning all system learnings...")
+        
+        if not learnings:
+            print("No learnings found")
+            return
+        
+        print(f"Found {len(learnings)} learnings to check\n")
+        
+        # Scan for internal contradictions
+        contradictions = detector.scan_internal_contradictions(learnings)
+        
+        if not contradictions:
+            print("✓ No internal contradictions found")
+            return
+        
+        print(f"⚠️  Found {len(contradictions)} internal contradiction(s):\n")
+        print("=" * 60)
+        
+        for c in contradictions:
+            print(f"\nLearning {c['index_a']} vs Learning {c['index_b']}")
+            print(f"Similarity: {c['similarity']:.2f}")
+            print(f"Confidence: {c['contradiction_confidence']}")
+            print(f"\nText A (from {c.get('origin_build_a', 'unknown')}):")
+            print(f"  \"{c['text_a']}\"")
+            print(f"\nText B (from {c.get('origin_build_b', 'unknown')}):")
+            print(f"  \"{c['text_b']}\"")
             
-            if 'positive_statements' in contradiction:
-                print(f"  Positive stance: {contradiction['positive_statements'][0]['text'][:80]}...")
-            if 'negative_statements' in contradiction:
-                print(f"  Negative stance: {contradiction['negative_statements'][0]['text'][:80]}...")
-    
-    print(f"\n{'='*70}\n")
-    
-    return 0
+            if c['signals']:
+                print("\nSignals:")
+                for signal in c['signals']:
+                    print(f"  - {signal}")
+            
+            print("\n" + "-" * 60)
+        
+    elif args.command == 'compare':
+        # Direct comparison of two texts
+        similarity = detector.compute_similarity(args.text1, args.text2)
+        signals = detector.detect_contradiction_patterns(args.text1, args.text2)
+        
+        print("=" * 60)
+        print("DIRECT COMPARISON")
+        print("=" * 60)
+        print(f"\nText A: \"{args.text1}\"")
+        print(f"\nText B: \"{args.text2}\"")
+        print(f"\nSimilarity: {similarity:.2f}")
+        
+        if signals:
+            print(f"\n⚠️  Contradiction signals found:")
+            for signal in signals:
+                print(f"  - {signal}")
+        else:
+            print("\n✓ No contradiction signals found")
+        
+        if not args.no_llm and similarity > 0.85:
+            print("\nVerifying with LLM...")
+            llm_result = detector.llm_verify_contradiction(args.text1, args.text2)
+            if llm_result.get('verified'):
+                print(f"  LLM Result: CONTRADICT confirmed")
+            elif llm_result.get('llm_result') == 'CONSISTENT':
+                print(f"  LLM Result: No contradiction")
+            else:
+                print(f"  LLM Result: Ambiguous (more context needed)")
+        else:
+            print("\n(Use --llm flag to enable LLM verification for high-similarity pairs)")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()

@@ -1,0 +1,18 @@
+{
+  "drop_id": "D2.1",
+  "status": "complete",
+  "summary": "Created calendar_scheduler.py core sync logic with full meeting link detection (Zoom, Google Meet, Teams, Webex), skip marker support ([NR], [SKIP], [NO RECORD]), deduplication via iCalUID-based event keys, orphaned bot cleanup for cancelled/deleted events, and join time calculation respecting Recall's 10+ minute minimum requirement. All 6 test suites pass (22/22 individual tests).",
+  "files_created": [
+    "Integrations/recall_ai/calendar_scheduler.py",
+    "Integrations/recall_ai/test_calendar_scheduler.py"
+  ],
+  "files_modified": [],
+  "blockers": [],
+  "learnings": [
+    "The existing calendar_scheduler.py file used a different architecture (SQLite database) than specified in brief (JSON state file). Overwrote to match brief requirements.",
+    "Test showed that link extraction requires full URL protocol (https://) - pattern matching needs to capture protocol prefix.",
+    "Join time calculation has timing edge cases - near-future events need adjustment to meet Recall's minimum 10-minute requirement.",
+    "Video link detection patterns work reliably across all major platforms (Zoom, Google Meet, Teams, Webex).",
+    "Skip markers work correctly in various title positions (beginning, middle, end)."
+  ]
+}

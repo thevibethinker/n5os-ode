@@ -1,0 +1,16 @@
+{
+  "last_check": "2026-01-26T04:26:00Z",
+  "last_status": {
+    "complete": 2,
+    "running": 0,
+    "pending": 2,
+    "failed": 0,
+    "total": 4
+  },
+  "last_notified": {
+    "D1.1": "complete",
+    "D1.2": "complete",
+    "D2.1": "pending",
+    "D2.2": "pending"
+  }
+}

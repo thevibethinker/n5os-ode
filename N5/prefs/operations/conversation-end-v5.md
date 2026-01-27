@@ -1,12 +1,20 @@
 ---
-created: 2025-12-18
-last_edited: 2026-01-19
-version: 5.5
-provenance: con_eo8MNWLCgK7vjgUX
-related: Prompts/Close Conversation.prompt.md
+title: Conversation End Workflow v5
+description: Specification for conversation closure - now implemented via skills
+related: Skills/thread-close/, Skills/drop-close/, Skills/build-close/
+version: 5.1
+updated: 2026-01-24
 ---
 
-# Conversation-End System v5.5
+> **Note (2026-01-24):** This specification is now implemented via three skills:
+> - `Skills/thread-close/` — Interactive threads (Full Close)
+> - `Skills/drop-close/` — Pulse Drop workers (Worker Close)  
+> - `Skills/build-close/` — Post-Pulse build synthesis (Build Close)
+>
+> The original prompt at `Prompts/Close Conversation.prompt.md` is deprecated.
+> Shared logic lives in `N5/lib/close/`.
+
+# Conversation End Workflow v5
 
 > **Single Source of Truth** for conversation closure workflow.
 > Executable prompt: `file 'Prompts/Close Conversation.prompt.md'`

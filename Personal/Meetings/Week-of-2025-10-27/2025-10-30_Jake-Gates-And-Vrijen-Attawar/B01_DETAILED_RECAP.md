@@ -1,48 +1,145 @@
 ---
-created: 2025-12-26
-last_edited: 2025-12-26
+created: 2026-01-24T17:32:10.230701
+last_edited: 2026-01-24T17:32:10.230705
 version: 1.0
-provenance: agent_074838b3-3b6f-4e5c-a843-858a7d072141
+provenance: MG-2 automated generation
 ---
 
-# B01: Detailed Recap - Jake Gates x Vrijen Attawar (2025-10-30)
+# B01: Detailed Recap
 
-## Overview
-Vrijen Attawar (V) met with Jake Gates, a UK-born student currently studying in upstate New York (Rochester) and working part-time for Marvin. The conversation focused on Jake's career aspirations (consulting/McKinsey), V's background and startup (Careerspan), and a mutual interest in the Marvin community.
+## Meeting Overview
+This is an automatically generated recap based on meeting transcript.
 
-## Discussion Points
+## Chronological Summary
 
-### 1. Introduction and Background
-- Jake is originally from the UK, attended a UWC (United World College) between 2022-2024, and is now studying in Rochester, NY.
-- V has a strong connection to the UWC community through his previous work in Asia (MUN, college coaching in Singapore).
-- Jake is currently working part-time (5 hours/week) for Marvin, focusing on their LinkedIn presence and newsletter.
+**\
+00:02**\
+Vrijen Attawar\
+Hey, how\'s it going Jake?
 
-### 2. Career Aspirations and Consulting
-- Jake expressed interest in consulting and startups.
-- V shared his experience transitioning from business school to McKinsey in a three-and-a-half-month "sprint."
-- V offered to share his McKinsey casing and networking notes with Jake, encouraging him to distribute them freely.
-- V mentioned several mutual connections, including Elizabeth Kenyan (now at PayPal) and Ulrich.
+**\
+00:04**\
+Jake Gates\
+Good, how are you doing?
 
-### 3. Careerspan and the Candidate Experience
-- V introduced Careerspan, emphasizing that the "real problem" for candidates is self-understanding rather than just resume creation.
-- He described Careerspan's conversational coaching model, inspired by the McKinsey PEI (Personal Experience Interview) process.
-- V explained how Careerspan uses semantic matching (reading and understanding stories) rather than keyword-based filtering to identify talent.
-- V's goal is to build the "densest concentration of talent in the world" and scale the process of representing oneself to decision-makers.
+**\
+00:06**\
+Vrijen Attawar\
+Good, good. It is good to meet you my friend.
 
-### 4. Marvin Partnership and Feedback
-- V discussed his goal of working with all Marvin founders (mentioning a previous call with Oscar).
-- He asked Jake for his perspective on hiring pain points within the Marvin organization.
-- Jake shared his own experience getting the Marvin role through his network (dean of students at Rochester).
-- Jake mentioned he will be studying abroad in Thailand (Bangkok) next semester while continuing to work remotely for Marvin.
+**\
+00:08**\
+Jake Gates\
+Yeah, you too. Thank you for chatting today. I\'m excited to have a
+quick chat.
 
-### 5. Personal Brand and Startup Philosophy
-- Jake asked about defining "Why you?" and how to stand out.
-- V advised against the pressure of being "unique" or "best," instead suggesting Jake identify the "three lines" or "pillars" of his personal brand.
-- V shared his reasons for leaving McKinsey after nine months to pursue Careerspan: a "frankly unreasonable amount of confidence" in the idea and a "litmus test" of not being able to live with someone else solving the problem first.
-- V encouraged Jake's entrepreneurial spirit, noting that "good, well-intentioned folks" are needed to solve difficult problems like hiring.
+**\
+00:14**\
+Vrijen Attawar\
+Yeah, absolutely. You\'re from the, you\'re from the uk?
 
-### 6. Study Abroad and Remote Work
-- Jake is moving to Bangkok, Thailand, for his second semester of sophomore year.
-- He chose Thailand for the experience and cost-effectiveness (housing and food).
-- Marvin has agreed to let him work remotely during this period.
+**\
+00:18**\
+Jake Gates\
+Yeah, I\'m from the UK but currently studying in upstate New York so.
 
+**\
+00:23**\
+Vrijen Attawar\
+Oh yeah, you went to a uwc. I remember that. Hell yeah.
+
+**\
+00:28**\
+Jake Gates\
+You went to, you know, you say.
+
+**\
+00:29**\
+Vrijen Attawar\
+No, I had, I did a lot of mun in Asia so I just had like outpoint like
+100 friends from UWC and then I also. You were there with 22 to 24.
+It\'s relatively recent. I also worked in Singapore doing college
+admissions coaching and career coaching for a while. So I worked with a
+ton of the east and Dover kids. Like so many. Yeah, some great kids. I
+like, I remember in high school myself wanted to go to UWC at one point
+or the other. It\'s like it\'s a very cool school.
+
+**\
+01:02**\
+Jake Gates\
+Yeah, no I did love it and it\'s. That sort of brought me to the States,
+otherwise I wouldn\'t be here, which is nice. And now trying to figure
+it all out, where I want to do go, what I want to do. And currently
+landed a position with Marvin which is awesome because I know it\'s a
+great community of like people all wanting to do such cool things. So
+I\'m really excited to meet everyone. I saw you\'re on the guest list
+for the dinner in New York City next month. Yeah, yeah, I\'ll see you
+there.
+
+**\
+01:34**\
+Vrijen Attawar\
+You live in New York?
+
+**\
+01:35**\
+Jake Gates\
+I\'m in, I\'m in Rochester so I\'m like four or five hour drive out the
+city. So I\'m gonna fly down, go to the dinner and take a bus back at
+midnight.
+
+**\
+01:46**\
+Vrijen Attawar\
+My man. Tough, tough stuff. No, it\'s, it\'s that hardcore north. I mean
+that\'s the problem with going to school in the in upstate. Right. I
+went to my MBA and yeah, you just gotta, you know, schlep your ass down
+to the city to do any of the networking. Any of the good networking.
+Yep. And how\'s. So I see here you\'re okay, you\'re still in school,
+you\'re doing this part time or over the summer, is that right?
+
+**\
+02:13**\
+Jake Gates\
+Yeah, this is like a part time thing. I\'m helping them out with sort
+of, I know their LinkedIn games really down and their newsletter and
+things like that. So just trying to keep that going. But I\'m only doing
+five hours a week which turns out to be Nothing. So I\'m gonna try and
+do some more eventually, but help them out with like organizing the
+little stuff like the founder showcases. And also I want to get into
+consulting and I\'m interested in start field. So I\'m like in the
+perfect place.
+
+**\
+02:39**\
+Vrijen Attawar\
+You know, so maybe, I mean, you\'re in pretty, you\'re in pretty decent
+sort of shape already. But let me give you a little something to make
+your life easier. I actually want to encourage you to share this with as
+many folks as possible because I\'m a firm believer that knowledge
+should not be free or should not be gate kept. So I put these together.
+My business school program. This went pretty viral in a bunch of
+business schools. I just sort of am the kind of bloke that keeps
+extremely diligent notes. And so I have a general version and I have a
+version for McKinsey specifically. Yeah, the McKinsey one. Fucking
+slaps. I went from like not knowing what casing was or what a consultant
+actually did to getting a call from McKinsey with my offer in about
+three and a half months.
+
+**\
+03:41**\
+Vrijen Attawar\
+So I was a lot like packing information. Yeah, it was a, it was a very
+intense sprint. But, you know, I, I put down a lot of stuff that I, I
+think does help move the needle for folks. So, you know, feel free to
+check that out. Feel free to use it, feel free to share it. There\'s
+actually, I guess she did
+
+## Key Discussion Points
+[Automated extraction would go here - requires LLM processing]
+
+## Participants
+[Participant extraction would go here - requires LLM processing]
+
+---
+*Note: This is a stub B01 generated by MG-2. Full detailed analysis requires LLM processing of the full transcript.*

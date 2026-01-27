@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "task-b7870e58a3be",
+      "slug": "write-intro-for-next-play-event",
+      "title": "write intro for Next Play event",
+      "type": "content",
+      "status": "queued",
+      "priority": 0,
+      "created_at": "2026-01-24T22:12:20.111711+00:00Z",
+      "intake_channel": "sms",
+      "intake_message": "n5 task write intro for Next Play event",
+      "interview_id": null,
+      "build_slug": null,
+      "updated_at": "2026-01-24T22:13:32.044521+00:00Z"
+    },
+    {
+      "id": "task-d6b30bf3dcda",
+      "slug": "research-competitor-pricing",
+      "title": "research competitor pricing",
+      "type": "research",
+      "status": "queued",
+      "priority": 5,
+      "created_at": "2026-01-24T22:12:49.598610+00:00Z",
+      "intake_channel": "email",
+      "intake_message": "Focus on enterprise tiers",
+      "interview_id": null,
+      "build_slug": null
+    },
+    {
+      "id": "task-bca97bddde9d",
+      "slug": "create-a-new-feature",
+      "title": "Create a new feature",
+      "type": "code_build",
+      "status": "queued",
+      "priority": 5,
+      "created_at": "2026-01-25T01:27:08.251341+00:00Z",
+      "intake_channel": "sms",
+      "intake_message": "n5 task Create a new feature",
+      "interview_id": null,
+      "build_slug": null
+    }
+  ]
+}

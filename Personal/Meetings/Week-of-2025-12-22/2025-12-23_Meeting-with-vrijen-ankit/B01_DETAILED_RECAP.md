@@ -1,5 +1,90 @@
-V, B01 now captures the RBI close ask (unaudited Jan‑1–Dec‑24 + Apr–Mar packages plus CPA certification), the $190K non‑interest loan reclassification, the outstanding payroll refund, and the invoice/loan documentation needs you flagged, along with the action list for Vineet/Ankit/Shruti to push the December 24 numbers across the finish line. You can review the full block in `file 'Personal/Meetings/Inbox/2025-12-23_Meeting-with-Vrijen-Ankit_[P]/B01_DETAILED_RECAP.md'`.
+---
+created: 2026-01-24T17:32:10.243323
+last_edited: 2026-01-24T17:32:10.243328
+version: 1.0
+provenance: MG-2 automated generation
+---
 
-Next steps: share the recap, confirm the Upwork invoice availability, and close any remaining RBI deliverables.
+# B01: Detailed Recap
 
-2026-01-20 10:07 EST
+## Meeting Overview
+This is an automatically generated recap based on meeting transcript.
+
+## Chronological Summary
+
+Vineet Bains: I think he might be like joining again.
+Vineet Bains: Hi, can you hear me?
+Vineet Bains: Yes, we can hear you very clearly.
+Vineet Bains: How are you today?
+Vineet Bains: Amazing.
+Vineet Bains: I'm doing well.
+Vineet Bains: Thanks.
+Vrijen Attawar: Thanks so much for jumping on a short notice, y'all.
+Vineet Bains: We are always there for you, Vrijen.
+Vineet Bains: Just let us know.
+Vineet Bains: No, you guys are, and I really appreciate it.
+Vrijen Attawar: We can keep this quick.
+Vrijen Attawar: I actually got a good resolution from the accounting site on India.
+Vrijen Attawar: They're essentially just saying, hey, if you could package up the year's finances, the books, it's fine if they're unaudited, but if we can also supply with that whatever the CPA certification is for Zeni as an org or for the individual filer, I don't know what the kind of relevant cert would be in the accounting world, but whatever that is, if you could just provide that, that would be immensely helpful.
+Vrijen Attawar: And then we'll
+Vrijen Attawar: just basically submit and say, hey, these are qualified folks that have prepared the accounts.
+Vrijen Attawar: You know, we don't need an audited set.
+Vrijen Attawar: You know, this is the folks that you can sort of are reliable enough.
+Vrijen Attawar: So that's pretty much it.
+Vrijen Attawar: That's the entirety of the ask.
+Vrijen Attawar: If you could just generate that for me, you know, I wanted to, obviously, I think I sent an email, but wanted to jump on a call and sort of communicate that.
+Vrijen Attawar: And then if that sounds good, that's pretty much all I need for 2025.
+Vrijen Attawar: Perfect, makes sense.
+Vineet Bains: So I just wanted to recollect on that part.
+Vineet Bains: So for which particular period you're looking for the financial?
+Vineet Bains: Is it from the January 1st, 10 November?
+Vineet Bains: 1st to December.
+Vrijen Attawar: Yes, please.
+Vrijen Attawar: January 1st to December.
+Vrijen Attawar: Okay.
+Vineet Bains: Okay.
+Vineet Bains: Well, make sense.
+Vineet Bains: That's the financial year in India, right?
+Vrijen Attawar: January, December?
+Vrijen Attawar: No.
+Vineet Bains: In India, it depends upon the entity, but usually it varies from April to March.
+Vineet Bains: April to March.
+Vineet Bains: Okay.
+Vineet Bains: Yeah.
+Vineet Bains: I am.
+Vrijen Attawar: because it's not our, let's see.
+Vrijen Attawar: This is the confusing part.
+Vrijen Attawar: I think we had this issue last year as well.
+Vrijen Attawar: You know what?
+Vrijen Attawar: Could you just give me both?
+Vrijen Attawar: Could you just give me like the annual and the last fiscal year?
+Vrijen Attawar: Okay, okay.
+Vrijen Attawar: Just in case if it's not too bad.
+Vrijen Attawar: Yeah.
+Vrijen Attawar: And then that addresses the issue.
+Vrijen Attawar: Okay.
+Vineet Bains: We'll give you that for sure.
+Vineet Bains: But I think we have some couple of open items.
+Vineet Bains: think there are only two or three.
+Vineet Bains: So once it's resolved, I think that we can give you the updated numbers.
+Vineet Bains: And you want it now?
+Vineet Bains: Or is it any way you can wait?
+Vineet Bains: Because we are almost in the last week of this month.
+Vineet Bains: And we can do one thing that in the next week, once after 31st, we can give you the updated final numbers still for the complete 25.
+Vineet Bains: Oh, actually, good news.
+Vrijen Attawar: We only need numbers till the 24th.
+Vrijen Attawar: Does that help?
+Vineet Bains: 24th of December, yeah.
+Vrijen Attawar: I think the idea is that it's some sort of RBI deadline that's in about two, three days.
+Vrijen Attawar: So that we need to hit, you know, if it's a matter of just resolving a couple of items on this call, I'm happy to do that.
+Vrijen Attawar: If it's matter of, yeah, if it's a matter of any sort of work that needs to be done after this act, then that maybe complicates things.
+Vrijen Attawar: I guess the last set of closed books that you can give us would 
+
+## Key Discussion Points
+[Automated extraction would go here - requires LLM processing]
+
+## Participants
+[Participant extraction would go here - requires LLM processing]
+
+---
+*Note: This is a stub B01 generated by MG-2. Full detailed analysis requires LLM processing of the full transcript.*

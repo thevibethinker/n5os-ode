@@ -1,20 +1,17 @@
-# Action Items
+Generated B05 Action Items with full decomposition. Extracted **8 action items** from the CareerSpan <> CorridorX scoping call:
 
-**Generated:** 2026-01-19T17:16:26.879429
+**High-priority external commitments:**
+- Ilse setting up CorridorX employer account with full configuration (45 min)
+- Ilse configuring webhook notifications (20 min)
+- Ilse sharing candidate email examples (10 min)
+- Shivam onboarding first 15 engineers (60 min, committed to "today and tomorrow")
 
-## By Speaker
-### Ilse Funkhouser
+**Normal priority planning/coordinating:**
+- Wednesday meeting scheduling (5 min)
+- KPI definition session (30 min)
+- Potential webinars for Indian engineers (15 min)
+- Talent mixer event integration (30 min)
 
-- [ ] Review meeting notes
-- [ ] Follow up on discussed items
+All items include 2-minute rule first steps, realistic estimates, and milestone breakdowns for multi-step tasks.
 
-### Shivam Desai
-
-- [ ] Review meeting notes
-- [ ] Follow up on discussed items
-
-### Vrijen Attawar
-
-- [ ] Review meeting notes
-- [ ] Follow up on discussed items
-
+*2026-01-27 9:20 PM ET*

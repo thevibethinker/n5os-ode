@@ -1,0 +1,26 @@
+{
+  "name": "Corporate Professional",
+  "description": "Gray, clean, professional - for enterprise audiences",
+  "gamma": {
+    "theme": "chimney-smoke",
+    "format": "webpage",
+    "mode": "preserve",
+    "amount": "detailed",
+    "images": "noImages",
+    "dimensions": "fluid",
+    "cards": 10
+  },
+  "branding": {
+    "title_prefix": "Survey Results",
+    "cta_text": "Participate in Survey",
+    "cta_text_secondary": "Share Your Feedback"
+  },
+  "colors": {
+    "primary": "#4A4A4A",
+    "secondary": "#7A7A7A",
+    "background": "#FAFAFA",
+    "text": "#333333",
+    "accent": "#2563EB"
+  },
+  "tone": "professional, formal, data-focused, concise"
+}

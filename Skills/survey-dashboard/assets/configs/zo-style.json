@@ -1,0 +1,26 @@
+{
+  "name": "Zo Computer Style",
+  "description": "Soft blue, sky, white - matches zo.computer aesthetic",
+  "gamma": {
+    "theme": "breeze",
+    "format": "webpage",
+    "mode": "preserve",
+    "amount": "detailed",
+    "images": "noImages",
+    "dimensions": "fluid",
+    "cards": 10
+  },
+  "branding": {
+    "title_prefix": "Live Survey Insights",
+    "cta_text": "Take the Survey",
+    "cta_text_secondary": "Add Your Voice to the Data"
+  },
+  "colors": {
+    "primary": "#4A90D9",
+    "secondary": "#87CEEB",
+    "background": "#FFFFFF",
+    "text": "#1A1A1A",
+    "accent": "#5BA4E6"
+  },
+  "tone": "data-driven, conversational, clean, minimal"
+}

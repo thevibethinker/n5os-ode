@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "summary": "Audited 39 meeting-related prompts (13 main prompts + 26 block generators)",
+  "findings": {
+    "total_found": 39,
+    "categories": {
+      "DELETE": [
+        {
+          "path": "Prompts/Meeting Blurb Generation.prompt.md",
+          "reason": "Replaced by Zo Take Heed system (2026-01-19)",
+          "blocked_by": null
+        },
+        {
+          "path": "Prompts/Meeting_Block_Selector.prompt.md",
+          "reason": "Replaced by meeting-ingestion skill's manifest generation",
+          "blocked_by": null
+        }
+      ],
+      "DELETE_AFTER_MIGRATION": [
+        {
+          "path": "Prompts/Meeting Manifest Generation.prompt.md",
+          "reason": "Used by MG-1 agent to generate manifests",
+          "blocked_by": "agent:0c53b7ba"
+        },
+        {
+          "path": "Prompts/Meeting Block Generation.prompt.md",
+          "reason": "Used by MG-2 agent to generate intelligence blocks",
+          "blocked_by": "agent:0a08e6a8"
+        },
+        {
+          "path": "Prompts/Meeting Warm Intro Generation.prompt.md",
+          "reason": "Used by MG-4 agent to generate warm intro emails",
+          "blocked_by": "agent:ce6995b8"
+        },
+        {
+          "path": "Prompts/Meeting State Transition.prompt.md",
+          "reason": "Used by MG-6 agent to transition meeting states",
+          "blocked_by": "agent:f339ca26"
+        }
+      ],
+      "KEEP": [
+        {
+          "path": "Prompts/Internal Meeting Process.prompt.md",
+          "reason": "Reference document for MECEM principles and B40-B48 blocks"
+        },
+        {
+          "path": "Prompts/Meeting Prep Digest.prompt.md",
+          "reason": "Active command: meeting-prep-digest still used for daily meeting prep"
+        }
+      ],
+      "ARCHIVE": [
+        {
+          "path": "Prompts/Archive/meetings_legacy/Meeting Auto Process.prompt.md",
+          "reason": "Legacy auto-process workflow (already in archive)"
+        },
+        {
+          "path": "Prompts/Archive/meetings_legacy/Meeting State Transition.prompt.md",
+          "reason": "Duplicate legacy version (already in archive)"
+        },
+        {
+          "path": "Prompts/Archive/meetings_legacy/Meeting Auto Processor.prompt.md",
+          "reason": "Legacy processor (already in archive)"
+        },
+        {
+          "path": "Prompts/Archive/meetings_legacy/Meeting Mark C-State.prompt.md",
+          "reason": "Legacy state marking (already in archive)"
+        },
+        {
+          "path": "Prompts/Archive/meetings_legacy/Meeting Archive.prompt.md",
+          "reason": "Legacy archiver (deprecated as mover, read-only reference now)"
+        },
+        {
+          "path": "Prompts/Archive/meetings_legacy/meeting-placement-cleanup.prompt.md",
+          "reason": "Legacy cleanup (already in archive)"
+        },
+        {
+          "path": "N5/workflows/meeting-to-akiflow.md",
+          "reason": "Future workflow design (never implemented, historical reference)"
+        }
+      ]
+    },
+    "block_prompts": {
+      "B00": "Prompts/Blocks/Generate_B00.prompt.md",
+      "B01": "Prompts/Blocks/Generate_B01.prompt.md",
+      "B02": "Prompts/Blocks/Generate_B02.prompt.md",
+      "B03": "Prompts/Blocks/Generate_B03.prompt.md",
+      "B04": "Prompts/Blocks/Generate_B04.prompt.md",
+      "B05": "Prompts/Blocks/Generate_B05.prompt.md",
+      "B06": "Prompts/Blocks/Generate_B06.prompt.md",
+      "B07": "Prompts/Blocks/Generate_B07.prompt.md",
+      "B08": "Prompts/Blocks/Generate_B08.prompt.md",
+      "B09": "Prompts/Blocks/Generate_B09.prompt.md",
+      "B10": "Prompts/Blocks/Generate_B10.prompt.md",
+      "B11": "Prompts/Blocks/Generate_B11.prompt.md",
+      "B12": "Prompts/Blocks/Generate_B12.prompt.md",
+      "B13": "Prompts/Blocks/Generate_B13.prompt.md",
+      "B14": "Prompts/Blocks/Generate_B14.prompt.md",
+      "B15": "Prompts/Blocks/Generate_B15.prompt.md",
+      "B16": "Prompts/Blocks/Generate_B16.prompt.md",
+      "B17": "Prompts/Blocks/Generate_B17.prompt.md",
+      "B20": "Prompts/Blocks/Generate_B20.prompt.md",
+      "B21": "Prompts/Blocks/Generate_B21.prompt.md",
+      "B22": "Prompts/Blocks/Generate_B22.prompt.md",
+      "B23": "Prompts/Blocks/Generate_B23.prompt.md",
+      "B24": "Prompts/Blocks/Generate_B24.prompt.md",
+      "B25": "Prompts/Blocks/Generate_B25.prompt.md",
+      "B26": "Prompts/Blocks/Generate_B26.prompt.md",
+      "B27": "Prompts/Blocks/Generate_B27.prompt.md",
+      "B28": "Prompts/Blocks/Generate_B28.prompt.md",
+      "B31": "Prompts/Blocks/Generate_B31.prompt.md",
+      "B32": "Prompts/Blocks/Generate_B32.prompt.md",
+      "B33": "Prompts/Blocks/Generate_B33.prompt.md",
+      "B35": "Prompts/Blocks/Generate_B35.prompt.md",
+      "B40": "Prompts/Blocks/Generate_B40.prompt.md",
+      "B41": "Prompts/Blocks/Generate_B41.prompt.md",
+      "B42": "Prompts/Blocks/Generate_B42.prompt.md",
+      "B43": "Prompts/Blocks/Generate_B43.prompt.md",
+      "B44": "Prompts/Blocks/Generate_B44.prompt.md",
+      "B45": "Prompts/Blocks/Generate_B45.prompt.md",
+      "B46": "Prompts/Blocks/Generate_B46.prompt.md",
+      "B47": "Prompts/Blocks/Generate_B47.prompt.md",
+      "B48": "Prompts/Blocks/Generate_B48.prompt.md"
+    }
+  },
+  "artifacts": [
+    "N5/builds/meeting-system-migration/artifacts/prompt-deletion-manifest.md"
+  ]
+}
